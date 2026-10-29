@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -77,6 +77,7 @@ FAMILY_DESC = {
     "C6": "vtable identity slot count (EXACT)",
     "C7": "param/return variance",
     "C8": "global object identity",
+    "C9": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -2176,12 +2177,110 @@ def main():
             "dom_sizes": {(cl.get("root") if isinstance(cl, dict) else str(cl)): m.bit_count()
                           for (cl, m) in constrained},
             "dom_names": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
-                          [names[i] for i in range(n) if (m >> i) & 1][:8]
-                          for (cl, m) in constrained if 0 < m.bit_count() <= 8},
+                          [names[i] for i in range(n) if (m >> i) & 1][:64]
+                          for (cl, m) in constrained if 0 < m.bit_count() <= 64},
             "dom_ents": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
                          list(cl.get("ents") or [])[:6]
                          for (cl, m) in constrained if 0 < m.bit_count() <= 8},
         }
+
+    # ---------------- C9：vtable 槽位归属（函数 -> 拥有它的类）----------------
+    # 二进制事实：若函数 F 出现在类 C 的某个 vtable 槽上，则 F 的 this 必为
+    # C 或其后代。这是**正向**槽位证据（C3 只检查"接收者类拥有该槽"，未反查
+    # "该函数属于哪个类的槽"）。实测在域 7-64 的宽簇里有 315/1350 命中。
+    _AUTH_PATH = os.path.join(ROOT, "anchors", "vtable_slot_authority.json")
+    _ALIGN_PATH = os.path.join(ROOT, "anchors", "class_name_align.json")
+    c9_owner = {}
+    if os.path.exists(_AUTH_PATH):
+        _auth = jload(_AUTH_PATH)
+        _align = (jload(_ALIGN_PATH, {}) or {}).get("rtti_to_canon") or {}
+        for _cls, _v in _auth.items():
+            _k = _cls[1:] if _cls.startswith(".") else _cls
+            _canon = (_align.get(_k) or {}).get("canon") or _cls
+            _ci = resolve(_canon)
+            if _ci is None:
+                continue
+            for _idx, _s in (_v.get("slots") or {}).items():
+                _a = (_s or {}).get("addr")
+                if not _a:
+                    continue
+                try:
+                    _fa = int(str(_a), 16)
+                except ValueError:
+                    continue
+                c9_owner[_fa] = c9_owner.get(_fa, 0) | (1 << _ci)
+        for _eid in list(ents.keys()):
+            if not _eid.startswith("T:"):
+                continue
+            try:
+                _fn = int(_eid[2:], 16)
+            except ValueError:
+                continue
+            _m9 = c9_owner.get(_fn)
+            if not _m9:
+                continue
+            _allowed9 = 0
+            for _ci9 in range(n):
+                if (_m9 >> _ci9) & 1:
+                    _allowed9 |= allowed_of(_ci9)
+            if _allowed9:
+                fam["C9"][_eid] = fam["C9"].get(_eid, FULL) & _allowed9
+                census["C9"] += 1
+        # C9 是二进制事实（该函数确实被登记在那些类的 vtable 槽上）；
+        # C2 的 pin 来自函数名/原型推断。二者不相交时以 C9 为准，丢弃 C2 pin。
+        c2_refuted_by_slot = 0
+        for _eid9, _m9v in list(fam["C9"].items()):
+            _m2v = fam["C2"].get(_eid9)
+            if _m2v is None:
+                continue
+            if (_m2v & _m9v) == 0:
+                fam["C2"][_eid9] = FULL
+                c2_pin_log.setdefault(_eid9, []).append(["refuted_by_slot_owner", "", ""])
+                c2_refuted_by_slot += 1
+        print("[C9] C2 pins refuted by slot ownership: %d" % c2_refuted_by_slot, flush=True)
+
+        # C9 自身的边界：若某实体的 C9 掩码与 C1（成员访问）完全不相交，
+        # 说明该函数的 vtable 槽归属来自错误分表（实测 20/15544）。此时
+        # 保留成员证据、丢弃 C9（二进制分表比"访问偏移"更易出错）。
+        c9_dropped = 0
+        def _member_covers(ci, o, w):
+            mem = U["members"][ci] or {}
+            for off, mw in mem.items():
+                if off <= o and (mw is None or o + w <= off + (mw or 4)):
+                    return True
+            return False
+        for _eid9b in list(fam["C9"].keys()):
+            _m9b = fam["C9"][_eid9b]
+            _obs = (ents.get(_eid9b) or {}).get("obs") or set()
+            if not _obs:
+                continue
+            # 只要该掩码里**存在**一个类能覆盖全部观测，就保留（掩码本身是并集语义）
+            _ok9 = any(
+                all(_member_covers(ci, o, (w or 4)) for (o, w) in _obs)
+                for ci in range(n) if (_m9b >> ci) & 1
+            )
+            if not _ok9:
+                del fam["C9"][_eid9b]
+                c9_dropped += 1
+        print("[C9] dropped (owner class lacks the observed members): %d" % c9_dropped, flush=True)
+
+        # C9 若与其他所有族（C2..C8）的交集为空，说明它与既有证据直接冲突，
+        # 此时丢弃 C9（保留其他族）。这是 C9 的最后一道自洽门。
+        c9_dropped2 = 0
+        for _eid in list(fam["C9"].keys()):
+            _mm = fam["C9"][_eid]
+            for _f9 in FAMILIES:
+                if _f9 in ("C1", "C9"):
+                    continue
+                _o9 = fam[_f9].get(_eid)
+                if _o9 is not None:
+                    _mm &= _o9
+            if _mm == 0:
+                del fam["C9"][_eid]
+                c9_dropped2 += 1
+        print("[C9] dropped (empty intersection with other families): %d" % c9_dropped2, flush=True)
+        print("[C9] evidence=%d entities=%d (slot-owner functions: %d)"
+              % (census["C9"], len(fam["C9"]), len(c9_owner)), flush=True)
 
     family_table = []
     enabled = []
@@ -2566,7 +2665,8 @@ def main():
         for cl, nm in (res.get("dom_names") or {}).items():
             _asg[cl] = {"candidates": nm,
                         "ents": _ents.get(cl, []),
-                        "confidence": "forced" if len(nm) == 1 else "narrow"}
+                        "confidence": ("forced" if len(nm) == 1 else
+                                       ("narrow" if len(nm) <= 8 else "wide"))}
         with io.open(apath, "w", encoding="utf-8") as fh:
             json.dump(_asg, fh, ensure_ascii=False, indent=0)
         print("[out] %s (%d assignments, forced=%d narrow=%d)"
