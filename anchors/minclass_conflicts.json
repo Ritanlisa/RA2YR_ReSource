@@ -107,12 +107,12 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 770,
-  "K_upper": 818,
-  "lower_bound": 770,
-  "constrained_clusters": 16423,
+  "K": 771,
+  "K_upper": 811,
+  "lower_bound": 771,
+  "constrained_clusters": 16431,
   "free_clusters": 26647,
-  "conflicts": 48,
+  "conflicts": 40,
   "c1_gaps": 0,
   "universe": 1597,
   "entities": 43827
@@ -231,22 +231,22 @@
   {
    "family": "C6",
    "desc": "vtable identity slot count (EXACT)",
-   "evidence": 1684,
-   "entities_touched": 1394,
-   "clusters_constrained": 16262,
-   "clusters_pinned": 6900,
+   "evidence": 1377,
+   "entities_touched": 1377,
+   "clusters_constrained": 16270,
+   "clusters_pinned": 6908,
    "clusters_free": 26806,
-   "pinned_classes": 767,
-   "forced_classes": 767,
-   "conflicts": 50,
+   "pinned_classes": 768,
+   "forced_classes": 768,
+   "conflicts": 42,
    "c1_gaps": 0,
-   "K": 767,
-   "K_upper": 817,
-   "K_total": 767,
-   "K_greedy": 768,
-   "delta_forced": -7,
-   "delta_K": -7,
-   "lower_bound": 767,
+   "K": 768,
+   "K_upper": 810,
+   "K_total": 768,
+   "K_greedy": 769,
+   "delta_forced": -6,
+   "delta_K": -6,
+   "lower_bound": 768,
    "merges": 1,
    "bad_cover": 0
   },
@@ -255,20 +255,20 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 16336,
-   "clusters_pinned": 6965,
+   "clusters_constrained": 16344,
+   "clusters_pinned": 6973,
    "clusters_free": 26732,
-   "pinned_classes": 768,
-   "forced_classes": 768,
-   "conflicts": 50,
+   "pinned_classes": 769,
+   "forced_classes": 769,
+   "conflicts": 42,
    "c1_gaps": 0,
-   "K": 768,
-   "K_upper": 818,
-   "K_total": 768,
-   "K_greedy": 769,
+   "K": 769,
+   "K_upper": 811,
+   "K_total": 769,
+   "K_greedy": 770,
    "delta_forced": 1,
    "delta_K": 1,
-   "lower_bound": 768,
+   "lower_bound": 769,
    "merges": 1,
    "bad_cover": 0
   },
@@ -277,20 +277,20 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 16423,
-   "clusters_pinned": 7078,
+   "clusters_constrained": 16431,
+   "clusters_pinned": 7086,
    "clusters_free": 26647,
-   "pinned_classes": 770,
-   "forced_classes": 770,
-   "conflicts": 48,
+   "pinned_classes": 771,
+   "forced_classes": 771,
+   "conflicts": 40,
    "c1_gaps": 0,
-   "K": 770,
-   "K_upper": 818,
-   "K_total": 770,
-   "K_greedy": 771,
+   "K": 771,
+   "K_upper": 811,
+   "K_total": 771,
+   "K_greedy": 772,
    "delta_forced": 2,
    "delta_K": 2,
-   "lower_bound": 770,
+   "lower_bound": 771,
    "merges": 1,
    "bad_cover": 0
   }
@@ -1051,164 +1051,6 @@
    ]
   },
   {
-   "cluster": "R:58BF70:ecx",
-   "entities": [
-    "T:58BF70"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     1
-    ],
-    [
-     26,
-     1
-    ],
-    [
-     27,
-     1
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     1
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     1
-    ],
-    [
-     53,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1018,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0058BF70",
-     "RandomMap"
-    ]
-   ],
-   "c2_pinned": [
-    "RandomMap"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:58C070:ecx",
-   "entities": [
-    "T:58C070"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     53,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1038,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x0058C070",
-     "TileNode"
-    ]
-   ],
-   "c2_pinned": [
-    "TileNode"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
    "cluster": "R:5980C0:ecx",
    "entities": [
     "T:5980C0"
@@ -1251,63 +1093,6 @@
    ],
    "pinned_excluded_by": [
     "C1"
-   ]
-  },
-  {
-   "cluster": "R:5AC290:ecx",
-   "entities": [
-    "T:5AC290"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     53,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1038,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x005AC290",
-     "RandomMap"
-    ]
-   ],
-   "c2_pinned": [
-    "RandomMap"
-   ],
-   "pinned_excluded_by": [
-    "C6"
    ]
   },
   {
@@ -1483,99 +1268,6 @@
    ],
    "c2_pinned": [
     "ArtConfig"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:5D0070:ecx",
-   "entities": [
-    "T:5D0070"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     49,
-     1
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     4
-    ],
-    [
-     68,
-     4
-    ],
-    [
-     73,
-     1
-    ],
-    [
-     76,
-     4
-    ],
-    [
-     84,
-     4
-    ],
-    [
-     88,
-     4
-    ],
-    [
-     92,
-     4
-    ],
-    [
-     97,
-     1
-    ],
-    [
-     100,
-     4
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1011,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x005D0070",
-     "SessionClass"
-    ]
-   ],
-   "c2_pinned": [
-    "SessionClass"
    ],
    "pinned_excluded_by": [
     "C6"
@@ -1941,103 +1633,6 @@
    ]
   },
   {
-   "cluster": "R:635F20:ecx",
-   "entities": [
-    "T:635F20"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     17,
-     1
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     28,
-     1
-    ],
-    [
-     29,
-     1
-    ],
-    [
-     140,
-     4
-    ],
-    [
-     144,
-     4
-    ],
-    [
-     148,
-     4
-    ],
-    [
-     152,
-     1
-    ],
-    [
-     153,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 1008,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00635F20",
-     "ScriptAction"
-    ]
-   ],
-   "c2_pinned": [
-    "ScriptAction"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
    "cluster": "R:658DE0:ecx",
    "entities": [
     "T:658DE0"
@@ -2097,107 +1692,6 @@
    ],
    "c2_pinned": [
     "RadarHashVector"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:665650:ecx",
-   "entities": [
-    "T:665650"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     24,
-     4
-    ],
-    [
-     32,
-     4
-    ],
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     4
-    ],
-    [
-     44,
-     4
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     4
-    ],
-    [
-     56,
-     4
-    ],
-    [
-     60,
-     4
-    ],
-    [
-     64,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 996,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00665650",
-     "RulesClass"
-    ]
-   ],
-   "c2_pinned": [
-    "RulesClass"
    ],
    "pinned_excluded_by": [
     "C6"
@@ -2933,208 +2427,6 @@
    ],
    "pinned_excluded_by": [
     "C1"
-   ]
-  },
-  {
-   "cluster": "R:6970A0:ecx",
-   "entities": [
-    "T:6970A0"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     0,
-     4
-    ],
-    [
-     4,
-     4
-    ],
-    [
-     12,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     20,
-     4
-    ],
-    [
-     28,
-     4
-    ],
-    [
-     32,
-     1
-    ],
-    [
-     36,
-     4
-    ],
-    [
-     40,
-     1
-    ],
-    [
-     41,
-     1
-    ],
-    [
-     42,
-     1
-    ],
-    [
-     43,
-     1
-    ],
-    [
-     44,
-     1
-    ],
-    [
-     48,
-     4
-    ],
-    [
-     52,
-     1
-    ],
-    [
-     53,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 996,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x006970A0",
-     "SessionClass"
-    ]
-   ],
-   "c2_pinned": [
-    "SessionClass"
-   ],
-   "pinned_excluded_by": [
-    "C6"
-   ]
-  },
-  {
-   "cluster": "R:697840:ecx",
-   "entities": [
-    "T:697840"
-   ],
-   "n_entities": 1,
-   "obs": [
-    [
-     1680,
-     4
-    ],
-    [
-     1684,
-     4
-    ],
-    [
-     1688,
-     4
-    ],
-    [
-     1693,
-     1
-    ],
-    [
-     2288,
-     4
-    ],
-    [
-     2292,
-     4
-    ],
-    [
-     2296,
-     4
-    ],
-    [
-     2301,
-     1
-    ],
-    [
-     10252,
-     4
-    ],
-    [
-     10256,
-     4
-    ],
-    [
-     10260,
-     4
-    ],
-    [
-     10265,
-     1
-    ],
-    [
-     10276,
-     4
-    ],
-    [
-     10280,
-     4
-    ],
-    [
-     10284,
-     4
-    ],
-    [
-     10289,
-     1
-    ]
-   ],
-   "exact": [],
-   "flags": {
-    "empty_domain": true
-   },
-   "family_domain_sizes": {
-    "C1": 996,
-    "C2": 1,
-    "C3": 1597,
-    "C4": 1597,
-    "C5": 1597,
-    "C6": 522,
-    "C7": 1597,
-    "C8": 1597
-   },
-   "reason": "empty_domain",
-   "c2_pins": [
-    [
-     "self",
-     "0x00697840",
-     "ObjectManager"
-    ]
-   ],
-   "c2_pinned": [
-    "ObjectManager"
-   ],
-   "pinned_excluded_by": [
-    "C6"
    ]
   },
   {

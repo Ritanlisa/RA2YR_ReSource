@@ -1524,7 +1524,19 @@ def main():
             known_sc |= (1 << i)
     unknown_sc = FULL & known_sc
     if facts:
+        # X154: 派生类构造会先装基类 vtable、后装派生类 vtable（MSVC 语义）。
+        # 逐条 install 施加 C6 会把"先装的基类槽数"当成对象的槽数，与 C4 钉出的
+        # 派生类互相矛盾（实测 24 个冲突）。对象的运行时类 = **最后一次**在
+        # offset 0 安装的 vtable，故按 (fn, off) 取 site 最大者。
+        _final_install = {}
         for fn, site, off, sym in facts["this_installs"]:
+            if off != 0:
+                continue
+            key = fn
+            cur = _final_install.get(key)
+            if cur is None or site > cur[0]:
+                _final_install[key] = (site, sym)
+        for fn, (site, sym) in _final_install.items():
             ci = resolve(sym)
             if ci is None:
                 continue
