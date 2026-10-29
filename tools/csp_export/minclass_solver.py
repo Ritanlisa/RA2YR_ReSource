@@ -61,6 +61,7 @@ import glob
 import io
 import json
 import os
+import sys
 import re
 import time
 
@@ -752,6 +753,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--strict-c1", action="store_true",
+                    help="C1 严格模式：稀疏布局不再「未知放行」，所有类都必须真正"
+                         "覆盖被访问的字节区间。用于检验 K 是否被万能空类支配。")
     ap.add_argument("--no-families", default="")
     ap.add_argument("--max-pair-improve", type=int, default=40000)
     ap.add_argument("--evidence", choices=("none", "spec", "spec+proto"), default="spec",
@@ -1127,7 +1131,9 @@ def main():
         key = (o, w)
         m = c1_range_cache.get(key)
         if m is None:
-            m = sparse_mask                       # 稀疏布局：未知 → 放行
+            # --strict-c1：稀疏布局不再放行，所有类都必须真正覆盖被访问的字节区间。
+            # 这是检验 K 是否被「万能空类」支配的开关（Math 覆盖 968 簇就是该漏洞）。
+            m = 0 if "--strict-c1" in sys.argv else sparse_mask
             for ci in dense_list:
                 if covers(ci, o, w):
                     m |= (1 << ci)
