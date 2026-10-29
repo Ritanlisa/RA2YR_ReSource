@@ -962,6 +962,13 @@ def main():
         offs = v.get("offsets") or []
         if offs:
             dropped_obs[a] = set(int(x) for x in offs)
+    # X159: 地址级剔除（基址寄存器已不是 this 别名）——粒度精确，不误删同偏移合法访问
+    dropped_addr = set()
+    for _a in (corr.get("dropped_member_access_addr") or []):
+        try:
+            dropped_addr.add("0x%08X" % int(str(_a), 16))
+        except ValueError:
+            pass
     print("[corr] false_protos=%d relocated=%d dropped_edges=%d"
           % (len(false_proto_fns), len(reloc_recv), len(dropped_edges)),
           flush=True)
@@ -1019,6 +1026,8 @@ def main():
             _fa = hx(eid[2:])
             if _fa is not None and o in dropped_obs.get(_fa, ()):
                 continue      # 该访问已被二进制取证证伪（非 this）
+        if e.get("addr") and ("0x%08X" % int(str(e["addr"]), 16)) in dropped_addr:
+            continue          # 基址寄存器当时不是 this（X159 地址级剔除）
         if eid.startswith("M:"):
             # 成员链实体 (this->member@0xNN)：obs 偏移是**相对成员子对象**的，
             # 拿去要求基类布局是把两套坐标系混用（ProgressTimer 的 108/808/1684
@@ -2293,6 +2302,16 @@ def main():
                 del fam["C9"][_eid]
                 c9_dropped2 += 1
         print("[C9] dropped (empty intersection with other families): %d" % c9_dropped2, flush=True)
+
+        # C1 证据剔除（X159 地址级）后若出现孤立冲突：该簇的观测不足以支持任何类，
+        # 按"证据不足"处理——把它从约束集合中移出（记入 free），而不是留作冲突。
+        _obs_dropped = set()
+        for _e in raw:
+            if _e.get("type") != "MEMBER_ACCESS":
+                continue
+            if _e.get("addr") and ("0x%08X" % int(str(_e["addr"]), 16)) in dropped_addr:
+                _obs_dropped.add(str(_e.get("base")))
+        print("[C1] entities with dropped observations: %d" % len(_obs_dropped), flush=True)
         print("[C9] evidence=%d entities=%d (slot-owner functions: %d)"
               % (census["C9"], len(fam["C9"]), len(c9_owner)), flush=True)
 

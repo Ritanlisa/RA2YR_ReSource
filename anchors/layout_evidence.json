@@ -50999,7 +50999,7 @@
 },
 "WebBrowser": {
 "declared_size": 20,
-"observed_extent": 12,
+"observed_extent": 1037,
 "extent_source": [
 "ctor_types",
 "verified_this_access_2026_10_29"
@@ -51030,6 +51030,11 @@
 ],
 "site": "0x773600",
 "ins": "mov eax, [ebx+8]"
+},
+{
+"off": 1036,
+"width": 1,
+"count": 1
 }
 ],
 "samples": [

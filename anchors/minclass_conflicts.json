@@ -111,8 +111,8 @@
   "K": 785,
   "K_upper": 785,
   "lower_bound": 785,
-  "constrained_clusters": 15551,
-  "free_clusters": 27567,
+  "constrained_clusters": 15535,
+  "free_clusters": 27583,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1400,
@@ -122,11 +122,11 @@
   {
    "family": "C1",
    "desc": "member access (offset, obs_w<=member_w)",
-   "evidence": 81988,
-   "entities_touched": 10121,
-   "clusters_constrained": 10067,
+   "evidence": 70410,
+   "entities_touched": 9846,
+   "clusters_constrained": 9795,
    "clusters_pinned": 0,
-   "clusters_free": 33051,
+   "clusters_free": 33323,
    "pinned_classes": 0,
    "forced_classes": 0,
    "conflicts": 0,
@@ -146,9 +146,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 14502,
    "entities_touched": 9341,
-   "clusters_constrained": 13159,
-   "clusters_pinned": 5183,
-   "clusters_free": 29957,
+   "clusters_constrained": 13074,
+   "clusters_pinned": 5181,
+   "clusters_free": 30042,
    "pinned_classes": 589,
    "forced_classes": 589,
    "conflicts": 2,
@@ -168,9 +168,9 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 13742,
-   "clusters_pinned": 5183,
-   "clusters_free": 29374,
+   "clusters_constrained": 13671,
+   "clusters_pinned": 5181,
+   "clusters_free": 29445,
    "pinned_classes": 589,
    "forced_classes": 589,
    "conflicts": 2,
@@ -190,9 +190,9 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1295,
    "entities_touched": 1295,
-   "clusters_constrained": 13749,
-   "clusters_pinned": 6160,
-   "clusters_free": 29368,
+   "clusters_constrained": 13709,
+   "clusters_pinned": 6158,
+   "clusters_free": 29408,
    "pinned_classes": 751,
    "forced_classes": 751,
    "conflicts": 1,
@@ -212,9 +212,9 @@
    "desc": "operator new size (EXACT)",
    "evidence": 842,
    "entities_touched": 839,
-   "clusters_constrained": 14582,
-   "clusters_pinned": 6160,
-   "clusters_free": 28535,
+   "clusters_constrained": 14542,
+   "clusters_pinned": 6158,
+   "clusters_free": 28575,
    "pinned_classes": 751,
    "forced_classes": 751,
    "conflicts": 1,
@@ -234,9 +234,9 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 14582,
-   "clusters_pinned": 6160,
-   "clusters_free": 28535,
+   "clusters_constrained": 14542,
+   "clusters_pinned": 6158,
+   "clusters_free": 28575,
    "pinned_classes": 751,
    "forced_classes": 751,
    "conflicts": 1,
@@ -256,9 +256,9 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 14656,
-   "clusters_pinned": 6225,
-   "clusters_free": 28461,
+   "clusters_constrained": 14616,
+   "clusters_pinned": 6223,
+   "clusters_free": 28501,
    "pinned_classes": 752,
    "forced_classes": 752,
    "conflicts": 1,
@@ -278,9 +278,9 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 14742,
-   "clusters_pinned": 6338,
-   "clusters_free": 28376,
+   "clusters_constrained": 14702,
+   "clusters_pinned": 6336,
+   "clusters_free": 28416,
    "pinned_classes": 753,
    "forced_classes": 753,
    "conflicts": 0,
@@ -299,10 +299,10 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
-   "entities_touched": 6089,
-   "clusters_constrained": 15551,
+   "entities_touched": 6100,
+   "clusters_constrained": 15535,
    "clusters_pinned": 7199,
-   "clusters_free": 27567,
+   "clusters_free": 27583,
    "pinned_classes": 785,
    "forced_classes": 785,
    "conflicts": 0,
@@ -321,9 +321,9 @@
  "conflicts": [],
  "diagnostics": {
   "no_layout_match": {
-   "count": 30,
+   "count": 28,
    "by_cause": {
-    "suspicious_large_offset": 30
+    "suspicious_large_offset": 28
    },
    "samples": [
     {
@@ -598,10 +598,6 @@
        4
       ],
       [
-       48,
-       4
-      ],
-      [
        52,
        4
       ],
@@ -638,7 +634,11 @@
        1
       ],
       [
-       494,
+       501,
+       1
+      ],
+      [
+       508,
        1
       ]
      ],
@@ -817,18 +817,6 @@
      ],
      "obs": [
       [
-       4,
-       4
-      ],
-      [
-       8,
-       1
-      ],
-      [
-       12,
-       4
-      ],
-      [
        96,
        4
       ],
@@ -863,63 +851,17 @@
       [
        21412,
        4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:500B40:ecx",
-     "entities": [
-      "T:500B40"
-     ],
-     "obs": [
+      ],
       [
-       48,
+       21416,
        4
       ],
       [
-       52,
+       22092,
        4
       ],
       [
-       388,
-       4
-      ],
-      [
-       464,
-       4
-      ],
-      [
-       468,
-       4
-      ],
-      [
-       476,
-       4
-      ],
-      [
-       480,
-       4
-      ],
-      [
-       488,
-       4
-      ],
-      [
-       493,
-       1
-      ],
-      [
-       588,
-       4
-      ],
-      [
-       780,
-       4
-      ],
-      [
-       22108,
+       22276,
        4
       ]
      ],
@@ -1021,48 +963,6 @@
       [
        22392,
        1
-      ],
-      [
-       90280,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:502A80:ecx",
-     "entities": [
-      "T:502A80"
-     ],
-     "obs": [
-      [
-       344,
-       4
-      ],
-      [
-       348,
-       4
-      ],
-      [
-       352,
-       4
-      ],
-      [
-       784,
-       4
-      ],
-      [
-       90280,
-       4
-      ],
-      [
-       90284,
-       4
-      ],
-      [
-       90288,
-       4
       ]
      ],
      "exact": [],
@@ -1558,14 +1458,14 @@
   },
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
-   "entities_ge2": 7193,
-   "matched_strict": 6116,
-   "no_match": 1077,
+   "entities_ge2": 6630,
+   "matched_strict": 5672,
+   "no_match": 958,
    "by_cause": {
-    "width_mismatch_only": 768,
-    "suspicious_large_offset": 215,
+    "width_mismatch_only": 668,
+    "suspicious_large_offset": 197,
     "param_unknown_class": 78,
-    "no_class_has_all_offsets_sparse_layout": 16
+    "no_class_has_all_offsets_sparse_layout": 15
    },
    "samples": [
     {
@@ -1585,36 +1485,6 @@
       ],
       [
        28,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:402440",
-     "obs": [
-      [
-       12,
-       4
-      ],
-      [
-       164,
-       1
-      ],
-      [
-       164,
-       4
-      ],
-      [
-       188,
-       4
-      ],
-      [
-       212,
-       4
-      ],
-      [
-       360,
        4
       ]
      ],
@@ -1703,28 +1573,6 @@
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:402720",
-     "obs": [
-      [
-       164,
-       1
-      ],
-      [
-       164,
-       4
-      ],
-      [
-       212,
-       4
-      ],
-      [
-       360,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
      "entity": "T:404700",
      "obs": [
       [
@@ -1771,62 +1619,6 @@
       ],
       [
        480,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:4048B0",
-     "obs": [
-      [
-       24,
-       1
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       168,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:404BB0",
-     "obs": [
-      [
-       24,
-       1
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       488,
-       4
-      ],
-      [
-       616,
-       4
-      ],
-      [
-       620,
-       4
-      ],
-      [
-       624,
-       4
-      ],
-      [
-       628,
        4
       ]
      ],
@@ -1888,10 +1680,6 @@
        1
       ],
       [
-       24,
-       4
-      ],
-      [
        28,
        4
       ],
@@ -1900,27 +1688,15 @@
        4
       ],
       [
-       36,
-       4
-      ],
-      [
-       168,
-       4
-      ],
-      [
-       176,
-       4
-      ],
-      [
-       312,
-       4
-      ],
-      [
        320,
        4
       ],
       [
        324,
+       4
+      ],
+      [
+       344,
        4
       ]
      ],
@@ -1943,26 +1719,6 @@
       ],
       [
        8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       4
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       28,
        4
       ]
      ],
@@ -2031,18 +1787,6 @@
       ],
       [
        244,
-       4
-      ],
-      [
-       472,
-       4
-      ],
-      [
-       476,
-       4
-      ],
-      [
-       480,
        4
       ]
      ],
@@ -2139,20 +1883,6 @@
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:4137A0",
-     "obs": [
-      [
-       9604,
-       4
-      ],
-      [
-       9616,
-       4
-      ]
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "entity": "T:413800",
      "obs": [
       [
@@ -2209,52 +1939,6 @@
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:414BB0",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       144,
-       1
-      ],
-      [
-       172,
-       4
-      ],
-      [
-       280,
-       4
-      ],
-      [
-       540,
-       4
-      ],
-      [
-       632,
-       4
-      ],
-      [
-       636,
-       1
-      ],
-      [
-       692,
-       4
-      ],
-      [
-       764,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
      "entity": "T:415C60",
      "obs": [
       [
@@ -2279,6 +1963,210 @@
       ]
      ],
      "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "P:4197C0:0",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       20,
+       1
+      ],
+      [
+       72,
+       4
+      ],
+      [
+       300,
+       1
+      ],
+      [
+       1444,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "P:41D540:0",
+     "obs": [
+      [
+       20,
+       1
+      ],
+      [
+       660,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:41D860",
+     "obs": [
+      [
+       36,
+       4
+      ],
+      [
+       40,
+       4
+      ],
+      [
+       44,
+       4
+      ],
+      [
+       48,
+       4
+      ],
+      [
+       52,
+       4
+      ],
+      [
+       60,
+       1
+      ],
+      [
+       61,
+       1
+      ],
+      [
+       76,
+       4
+      ],
+      [
+       80,
+       4
+      ],
+      [
+       84,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:4202F0",
+     "obs": [
+      [
+       0,
+       2
+      ],
+      [
+       131072,
+       4
+      ],
+      [
+       131076,
+       4
+      ]
+     ],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "entity": "P:420F40:0",
+     "obs": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       28,
+       4
+      ],
+      [
+       32,
+       4
+      ],
+      [
+       40,
+       4
+      ],
+      [
+       56,
+       4
+      ],
+      [
+       176,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "P:421EA0:0",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       6,
+       2
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       72,
+       4
+      ],
+      [
+       156,
+       4
+      ],
+      [
+       832,
+       4
+      ],
+      [
+       854,
+       1
+      ],
+      [
+       1972,
+       4
+      ],
+      [
+       5244,
+       4
+      ]
+     ],
+     "cause": "suspicious_large_offset"
     }
    ]
   },
