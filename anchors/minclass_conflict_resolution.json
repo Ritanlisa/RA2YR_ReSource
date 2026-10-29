@@ -1,0 +1,383 @@
+[
+ {
+  "cluster": "M:41D860:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 816,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6FDD50:0",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1",
+   "C3",
+   "C9"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6FDD50:0",
+  "dropped_family": "C1",
+  "remaining_families": [
+   "C3",
+   "C9"
+  ],
+  "domain_after": 1,
+  "class_after": "InfantryClass"
+ },
+ {
+  "cluster": "M:6E9050:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EA080:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EA0D0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EA870:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EB380:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EB490:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EB870:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EBAD0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EC370:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EC3D0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EC7D0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EC9A0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ECA70:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ECCE0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ED090:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ED200:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ED4D0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6ED7E0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EDCA0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EDDC0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EDF10:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EDFD0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EE050:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EE310:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EE5C0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EF110:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EF4D0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EF5F0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EF610:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EF700:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EFA10:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EFC70:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6EFE60:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6F0130:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:6F03F0:this:0x54",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 821,
+  "class_after": null
+ },
+ {
+  "cluster": "M:722440:this:0xf4",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 1006,
+  "class_after": null
+ },
+ {
+  "cluster": "M:7228B0:this:0xf4",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 1006,
+  "class_after": null
+ },
+ {
+  "cluster": "M:722AF0:this:0xf4",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 1006,
+  "class_after": null
+ },
+ {
+  "cluster": "M:746100:this:0x6bc",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 816,
+  "class_after": null
+ }
+]

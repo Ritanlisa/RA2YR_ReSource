@@ -2069,6 +2069,8 @@ def main():
     ALL_EXACT_CLASSES = {ci for cl in clusters for ci in cl["exact"]}
 
     # ---------------- 求解 ----------------
+    _c1_exempt = set()    # 冲突消解台账：C1 证据被驳倒的簇 root（簇局部豁免）
+
     def cluster_domains(enabled, apply_c1=True):
         """返回 [(cluster, domain, exact_ci, exact_src, flags)]。
 
@@ -2081,6 +2083,8 @@ def main():
         out = []
         for cl in clusters:
             m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
+            if cl.get("root") in _c1_exempt:
+                m_c1 = FULL     # 冲突消解：该簇的 C1 证据已被驳倒（见消解台账）
             m = m_c1
             masks = {"C1": m_c1}
             for f in enabled:
@@ -2578,6 +2582,30 @@ def main():
             _desc_mask_cache[ci] = m
         return m
 
+    # 域→祖先/后代并集缓存（纯性能：边数扩大后逐位循环是热点；语义与内联展开一致）
+    _anc_union_cache = {}
+    _desc_union_cache = {}
+    def _anc_union(m):
+        r = _anc_union_cache.get(m)
+        if r is None:
+            r = 0
+            _x = m
+            while _x:
+                _b = _x & -_x; _x ^= _b
+                r |= _anc_mask(_b.bit_length() - 1)
+            _anc_union_cache[m] = r
+        return r
+    def _desc_union(m):
+        r = _desc_union_cache.get(m)
+        if r is None:
+            r = 0
+            _x = m
+            while _x:
+                _b = _x & -_x; _x ^= _b
+                r |= _desc_mask(_b.bit_length() - 1)
+            _desc_union_cache[m] = r
+        return r
+
     # 洁净寄存器到达定义（facts.reg_links = [addr, reg, src, clean]）
     _clean_reg = {}
     if facts:
@@ -2586,8 +2614,22 @@ def main():
                 _clean_reg[(int(_lk[0]), _lk[1])] = bool(_lk[3])
             except (IndexError, TypeError, ValueError):
                 pass
-    _c10_edges_dirty = 0
+    # 边源扩展（X520 CHANGE B）：此前只收能落到 ents 实体上的源（G:/M:），
+    # 污染寄存器边被显式丢弃、洁净寄存器边/栈槽则在实体成员检查处静默死亡
+    # （R:/S: 实体从不入 ents）。现把寄存器/栈槽/全局源全部纳入为**连接点**：
+    # 所有边仍只是**子类型约束** class(callee) ⊒ class(caller)，绝不并实体/等式。
+    # 分类口径：
+    #   clean_reg : 洁净寄存器到达定义（:this 直传同桶；V: 槽体维持基线剔除）
+    #   dirty_reg : 寄存器到达定义跨 call / 经控制流汇合 —— 纳入，仍只作子类型约束
+    #   global    : offset / dword_ / off_ / g_ / stru_ 前缀 → G: 实体
+    #   stack     : stack_+0xNN → S: 实体（按指令地址作用域化）
+    #   .member(  : 成员链实体归 C11，此处跳过不重复约束
+    _GLOBAL_PREF = ("offset ", "dword_", "off_", "g_", "stru_")
+    _c10_n_clean = _c10_n_dirty = _c10_n_global = _c10_n_stack = 0
+    _c10_nodes = set()                # G:/S: 连接点实体（可不在 ents；不并簇）
     _call_edges = []
+    _call_edges_p1 = []               # Phase 1：洁净寄存器边
+    _call_edges_p2 = []               # Phase 2：dirty/global/stack 边（只增不减）
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
             continue
@@ -2596,76 +2638,169 @@ def main():
             continue
         if not _to.endswith(":this"):
             continue
-        # 调用方的 this 以**寄存器**形式出现（ecx/esi/...），必须按指令地址作用域化
+        _ce = ent_id(_to)
+        if not (_ce and _ce in ents):
+            continue
+        # ---- Phase 1 判定 = 改前（HEAD）C10 的精确边语义 ----
+        #   :this 直传 → ent_id(_fr)；其余源按指令地址作用域化 ent_id(_fr, fn)，
+        #   dirty（clean flag False）丢弃；**双端都必须在 ents** 才保留。
+        #   （R:/S: 实体从不入 ents → 基线实际只收 T:/M:/G: 落 ents 的边。）
+        _cc_leg = None
         if _fr.endswith(":this"):
-            _cc = ent_id(_fr)
+            _cc_leg = ent_id(_fr)
         else:
+            try:
+                _ea_leg = int(str(_e.get("addr")), 16)
+            except (TypeError, ValueError):
+                _ea_leg = None
+            if _ea_leg is not None and _clean_reg.get((_ea_leg, _fr)) is not False:
+                _cc_leg = ent_id(_fr, fn_at(_ea_leg))
+        if _cc_leg and _cc_leg in ents and _cc_leg != _ce:
+            # 基线边：改前 C10 本就保留（T:/M:/G:/P: 等落 ents 且非 dirty）→ Phase 1，
+            # 语义照旧。此处先于新分类返回，保证 p1 集合与 HEAD 逐边一致。
+            _call_edges.append((_cc_leg, _ce))
+            _call_edges_p1.append((_cc_leg, _ce))
+            continue
+        # ---- 新分类（X520 CHANGE B）：寄存器/栈槽/全局源全部纳入为连接点 ----
+        if ".member(" in _fr:
+            continue                  # C11 已覆盖成员链，重复约束无增益
+        _cc, _kind = None, None
+        if _fr.endswith(":this"):
+            _cc, _kind = ent_id(_fr), "clean"
+        elif _fr in REGS:
+            # 调用方的 this 以**寄存器**形式出现（ecx/esi/...），必须按指令地址作用域化
             try:
                 _ea = int(str(_e.get("addr")), 16)
             except (TypeError, ValueError):
                 continue
-            if _clean_reg and _clean_reg.get((_ea, _fr)) is False:
-                _c10_edges_dirty += 1
-                continue          # 该寄存器的到达定义跨 call / 经控制流汇合 -> 不是 this
             _cc = ent_id(_fr, fn_at(_ea))
-        _ce = ent_id(_to)
-        if _cc and _ce and _cc in ents and _ce in ents and _cc != _ce:
-            _call_edges.append((_cc, _ce))
-    print("[C10] caller-this -> callee-this edges: %d (dirty register edges dropped: %d)"
-          % (len(_call_edges), _c10_edges_dirty), flush=True)
+            _kind = "dirty" if _clean_reg.get((_ea, _fr)) is False else "clean"
+        elif _fr.startswith(_GLOBAL_PREF):
+            if _fr.startswith("offset "):
+                _cc = ent_id(_fr)                   # ent_id 内部走 global_addr(s[7:])
+            else:
+                _ga = global_addr(_fr)
+                _cc = ("G:%X" % _ga) if _ga is not None else None
+            _kind = "global"
+        elif _fr.startswith("stack_+"):
+            try:
+                _ea = int(str(_e.get("addr")), 16)
+            except (TypeError, ValueError):
+                continue
+            _cc = ent_id(_fr, fn_at(_ea))           # S:%X:<slot>
+            _kind = "stack"
+        else:
+            continue
+        if not (_cc and _cc != _ce):
+            continue
+        if _cc not in ents:
+            if _cc.startswith("V:"):
+                continue      # vtable_slot 实体被 touch 有意排除；且 V:N 把所有类
+                              # 的同号槽收进一个枢纽（slot 语义只在同一 vtable 内
+                              # 成立），跨类连接会注入错误约束——维持基线剔除
+            # R:/S:/G: 连接点：只参与子类型传播，不进 ents/fam/簇（不并实体）
+            _c10_nodes.add(_cc)
+        _call_edges.append((_cc, _ce))
+        _call_edges_p2.append((_cc, _ce))         # 新增边（Phase 2，只增不减）
+        if _kind == "clean":
+            _c10_n_clean += 1
+        elif _kind == "dirty":
+            _c10_n_dirty += 1
+        elif _kind == "global":
+            _c10_n_global += 1
+        else:
+            _c10_n_stack += 1
+    print("[C10] edges: clean_reg=%d dirty_reg=%d global=%d stack=%d total=%d "
+          "(p1_baseline=%d p2_new=%d)"
+          % (_c10_n_clean, _c10_n_dirty, _c10_n_global, _c10_n_stack,
+             len(_call_edges), len(_call_edges_p1), len(_call_edges_p2)), flush=True)
 
     if _call_edges:
-        # 当前合并域（除 C10 外全部族）
-        _dom = {}
-        for _eid in set([a for a, _ in _call_edges] + [b for _, b in _call_edges]):
-            _m = FULL
-            for _f in FAMILIES:
-                if _f == "C10":
-                    continue
-                _fm = fam[_f].get(_eid)
-                if _fm is not None:
-                    _m &= _fm
-            _dom[_eid] = _m
-        _changed = 0
-        for _round in range(12):
-            _chg = 0
-            for _cc, _ce in _call_edges:
-                _mc = _dom.get(_cc, FULL)
-                _me = _dom.get(_ce, FULL)
-                # callee 必须是 caller 的祖先（或同类）
-                _allowed_e = 0
-                _x = _mc
-                while _x:
-                    _b = _x & -_x; _x ^= _b
-                    _allowed_e |= _anc_mask(_b.bit_length() - 1)
-                _new_e = _me & _allowed_e
-                if _new_e != _me:
-                    _dom[_ce] = _new_e; _chg += 1
-                    _me = _new_e
-                # 反向：caller 必须是 callee 的后代（或同类）
-                _allowed_c = 0
-                _x = _me
-                while _x:
-                    _b = _x & -_x; _x ^= _b
-                    _allowed_c |= _desc_mask(_b.bit_length() - 1)
-                _new_c = _mc & _allowed_c
-                if _new_c != _mc:
-                    _dom[_cc] = _new_c; _chg += 1
-            _changed += _chg
-            if not _chg:
-                break
-        _c10_empty = 0
-        for _eid, _m in _dom.items():
+        # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
+        def _c10_base_dom(_edges):
+            _d = {}
+            for _eid in set([a for a, _ in _edges] + [b for _, b in _edges]):
+                _m = FULL
+                for _f in FAMILIES:
+                    if _f == "C10":
+                        continue
+                    _fm = fam[_f].get(_eid)
+                    if _fm is not None:
+                        _m &= _fm
+                _d[_eid] = _m
+            return _d
+
+        # AC-3 传播到不动点；_skip_empty=True 时拒绝把非空域清空的更新
+        #（Phase 2 只增不减：dirty/global/stack 边不得抹掉 Phase 1 已建立的约束）
+        def _c10_propagate(_edges, _dom, _skip_empty):
+            _steps = _skipped = 0
+            for _round in range(12):
+                _chg = 0
+                for _cc, _ce in _edges:
+                    _mc = _dom.get(_cc, FULL)
+                    _me = _dom.get(_ce, FULL)
+                    # callee 必须是 caller 的祖先（或同类）
+                    _allowed_e = _anc_union(_mc)
+                    _new_e = _me & _allowed_e
+                    if _new_e != _me:
+                        if _skip_empty and _new_e == 0:
+                            _skipped += 1
+                        else:
+                            _dom[_ce] = _new_e; _chg += 1
+                            _me = _new_e
+                    # 反向：caller 必须是 callee 的后代（或同类）
+                    _allowed_c = _desc_union(_me)
+                    _new_c = _mc & _allowed_c
+                    if _new_c != _mc:
+                        if _skip_empty and _new_c == 0:
+                            _skipped += 1
+                        else:
+                            _dom[_cc] = _new_c; _chg += 1
+                _steps += _chg
+                if not _chg:
+                    break
+            return _steps, _skipped
+
+        # ---- Phase 1：基线边（HEAD 语义逐字复刻，空域守卫不变）----
+        _dom1 = _c10_base_dom(_call_edges_p1)
+        _p1_steps, _p1_skipped = _c10_propagate(_call_edges_p1, _dom1, _skip_empty=False)
+        _c10_p1_constrained = _c10_p1_emptied = 0
+        _p1_committed = {}
+        for _eid, _m in _dom1.items():
+            if _eid not in ents:
+                continue      # R:/S:/G: 连接点只作传播中介，不写族表、不进簇、不计数
             if _m == 0:
                 # 传播把域清空 = 该实体的调用边互相矛盾（假边/错误锚），
                 # 不写入 C10（保留其它族证据），并计数。
-                _c10_empty += 1
+                _c10_p1_emptied += 1
                 continue
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
-        print("[C10] propagation emptied the domain for %d entities (kept unconstrained)" % _c10_empty, flush=True)
-        print("[C10] propagated to fixpoint (%d narrowing steps), entities constrained: %d"
-              % (_changed, len(fam["C10"])), flush=True)
+                _p1_committed[_eid] = _m
+                _c10_p1_constrained += 1
+        print("[C10] phase1 edges=%d constrained=%d emptied=%d"
+              % (len(_call_edges_p1), _c10_p1_constrained, _c10_p1_emptied), flush=True)
+
+        # ---- Phase 2：新增边 dirty/global/stack/连接点（从 Phase-1 域出发，只增不减）----
+        _dom2 = dict(_dom1)
+        for _eid, _m in _c10_base_dom(_call_edges_p2).items():
+            if _eid not in _dom2:
+                _dom2[_eid] = _m
+        _p2_steps, _p2_skipped = _c10_propagate(_call_edges_p2, _dom2, _skip_empty=True)
+        _c10_p2_added = 0
+        for _eid, _m in _dom2.items():
+            if _eid not in ents:
+                continue
+            if _m == 0:
+                continue          # Phase-1 已清空的实体保持不受约束，Phase 2 不复活
+            if _m != FULL:
+                _had = _eid in _p1_committed and _p1_committed[_eid] == _m
+                fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
+                if not _had:
+                    _c10_p2_added += 1
+        print("[C10] phase2 edges=%d added_constraints=%d skipped_empty=%d"
+              % (len(_call_edges_p2), _c10_p2_added, _p2_skipped), flush=True)
+        print("[C10] total entities constrained=%d" % len(fam["C10"]), flush=True)
 
         # C1 证据剔除（X159 地址级）后若出现孤立冲突：该簇的观测不足以支持任何类，
         # 按"证据不足"处理——把它从约束集合中移出（记入 free），而不是留作冲突。
@@ -2722,7 +2857,84 @@ def main():
 
     # ---------------- 最终解 ----------------
     all_fams = [f for f in FAMILIES if f not in (args.no_families or "").split(",")]
-    res = solve(all_fams)
+
+    # ---------------- 冲突消解（weakest-evidence drop，X520 CHANGE A）----------------
+    # 模型：本求解器回答「一致约束集下的最少类数」。簇交域为空 = 约束集含矛盾
+    # 证据，解未定义——把矛盾继续留在结果里是 bug 不是诚实。处置：对该簇按
+    # provenance 强弱丢弃最弱贡献族的掩码（CSP 等价于「该证据被驳倒」），
+    # 重算交域直到非空；每次丢弃逐条记入 anchors/minclass_conflict_resolution.json
+    # 台账（可审计、可回滚）。只动本簇的实体掩码——簇按并查集划分实体，互不泄漏。
+    # 消解后仍有冲突 → 求解未定义，硬失败退出。
+    _PROV_RANK = ("C4", "C9", "C8", "C5", "C6", "C3", "C1", "C11", "C10", "C2", "C7")
+    _res_ledger = []
+    _res_rounds = 0
+    while True:
+        res_probe = solve(all_fams)
+        _empt = [d for d in res_probe["conflicted"] if "empty_domain" in d[4]]
+        if not _empt or _res_rounds >= 64:
+            break                       # 无可消解冲突 / 防御上限
+        _res_rounds += 1
+        _n_drops = 0
+        for _cl, _m0, _ex, _exs, _fl in _empt:
+            # 与 cluster_domains 同口径的该簇各族掩码（C1 始终参与）
+            _fmasks = {"C1": (c1_mask(_cl["obs"]) if _cl["obs"] else FULL)}
+            for _f in all_fams:
+                if _f == "C1":
+                    continue
+                _mf, _hit = FULL, False
+                for _eid in _cl["ents"]:
+                    _x = fam[_f].get(_eid)
+                    if _x is not None:
+                        _mf &= _x
+                        _hit = True
+                _fmasks[_f] = _mf if _hit else FULL
+            _inter = FULL
+            for _f in all_fams:
+                _inter &= _fmasks[_f]
+            while not _inter:
+                # 贡献族 = 掩码非 FULL 者；按 provenance 丢最弱（排名越后越弱）
+                _contrib = [_f for _f in all_fams if _fmasks[_f] != FULL]
+                if not _contrib:
+                    break               # 全 FULL 交域不可能为空——防御
+                _weak = max(_contrib,
+                            key=lambda f: (_PROV_RANK.index(f) if f in _PROV_RANK
+                                           else len(_PROV_RANK)))
+                if _weak == "C1":
+                    # C1 掩码由簇 obs 直接推导（c1_mask），不经 fam["C1"]——
+                    # 簇局部豁免是「丢弃该簇 C1 证据」的唯一正确实现
+                    _c1_exempt.add(_cl.get("root"))
+                else:
+                    for _eid in _cl["ents"]:        # 仅本簇实体 → 簇局部生效
+                        if _eid in fam[_weak]:
+                            fam[_weak][_eid] = FULL
+                _fmasks[_weak] = FULL
+                _inter = FULL
+                for _f in all_fams:
+                    _inter &= _fmasks[_f]
+                _res_ledger.append({
+                    "cluster": _cl.get("root"),
+                    "dropped_family": _weak,
+                    "remaining_families": [_f for _f in all_fams
+                                           if _fmasks[_f] != FULL],
+                    "domain_after": _inter.bit_count(),
+                    "class_after": (names[_inter.bit_length() - 1]
+                                    if _inter and _inter.bit_count() == 1 else None),
+                })
+                _n_drops += 1
+        print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
+              % (_res_rounds, len(_empt), _n_drops), flush=True)
+
+    res = res_probe          # 循环退出时 res_probe 即最新丢弃后的求解结果，勿重复求解
+    _unresolved = res["n_conflicts"]
+    _lpath = os.path.join(ROOT, "anchors/minclass_conflict_resolution.json")
+    with io.open(_lpath, "w", encoding="utf-8") as fh:
+        json.dump(_res_ledger, fh, ensure_ascii=False, indent=1)
+    print("[conflicts] unresolved=%d resolved=%d ledger=anchors/minclass_conflict_resolution.json"
+          % (_unresolved, len(_res_ledger)), flush=True)
+    if _unresolved:
+        print("[conflicts] FATAL: %d conflicts remain after weakest-evidence drop "
+              "(solve undefined)" % _unresolved, flush=True)
+        sys.exit(2)
     K, K_upper, LB = res["k"], res["k_upper"], res["lower_bound"]
     chosen, constrain, assign = res["chosen"], res["constrained"], res["assign"]
     print("\n== FINAL ==")
