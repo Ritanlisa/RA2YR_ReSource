@@ -2711,6 +2711,45 @@ def main():
     _obs = res.get("cluster_obs") or {}
     _roots = [(c.get("root") if isinstance(c, dict) else str(c))
               for (c, _m) in (res.get("constrained") or [])]
+    # 只从「二进制锚支持」的簇派生（否则宽类会把无证据簇的观测吸进自己的布局）
+    _bin_ctor = collections.defaultdict(set)
+    for _a, _c in (jload("anchors/ctor_types.json", {}) or {}).items():
+        try:
+            _bin_ctor[int(_a, 16)].add(str(_c).replace("??_7", "").rstrip("@").split("::")[-1])
+        except ValueError:
+            pass
+    for _a, _c in ((jload("anchors/structural_truth.json", {}) or {}).get("vtable_install") or {}).items():
+        try:
+            _bin_ctor[int(_a, 16)].add(str(_c).replace("??_7", "").rstrip("@").split("::")[-1])
+        except ValueError:
+            pass
+    _bin_slot = collections.defaultdict(set)
+    for _cls, _v in (jload("anchors/vtable_slot_authority.json", {}) or {}).items():
+        for _ix, _sl in (_v.get("slots") or {}).items():
+            _ad = (_sl or {}).get("addr")
+            if not _ad:
+                continue
+            try:
+                _bin_slot[int(str(_ad), 16)].add(_cls)
+            except ValueError:
+                pass
+
+    def _bin_supported(_cls, _ents):
+        for _e in _ents or []:
+            if not _e.startswith("T:"):
+                continue
+            try:
+                _fnx = int(_e[2:], 16)
+            except ValueError:
+                continue
+            for _c in _bin_ctor.get(_fnx, ()):
+                if _cls == _c or _cls.startswith(_c) or _c.startswith(_cls):
+                    return True
+            for _c in _bin_slot.get(_fnx, ()):
+                if _cls == _c or _cls.startswith(_c) or _c.startswith(_cls):
+                    return True
+        return False
+
     _derived = {}
     for _k, _ci in _assign.items():
         try:
@@ -2723,6 +2762,8 @@ def main():
         if _ci is None or _ci < 0 or _ci >= n:
             continue
         _cname = names[_ci]
+        if not _bin_supported(_cname, (res.get("dom_ents") or {}).get(_root, [])):
+            continue
         _d = _derived.setdefault(_cname, {"members": set(), "clusters": 0})
         _d["clusters"] += 1
         for _o, _w in (_obs.get(_root) or []):
