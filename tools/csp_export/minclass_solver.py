@@ -347,13 +347,36 @@ def build_universe(use_evidence=True):
         if v is not None:
             vtables[i].add(v)
 
+    # ---- 二进制 vtable 范围证据（.rdata text-run 实测，2026-10-29）----
+    # anchors/vtable_extent_evidence.json: 每类 primary vtable 的真实槽位数
+    # （从 ??_7/??_R4 符号地址起连续 .text 指针计数，RTTI COL 边界止）。
+    # slot_set |= {0..extent-1}（C3 成员资格）；slot_count = extent（C6，
+    # 二进制实测优先于 authority 的 claimed 计数）。
+    ext_ev = jload("anchors/vtable_extent_evidence.json", {}) or {}
+    n_ext = 0
+    for cls, pc in (ext_ev.get("per_class") or {}).items():
+        i = resolve(cls)
+        if i is None:
+            continue
+        pri = pc.get("primary")
+        if not pri:
+            continue
+        ext = pri.get("extent")
+        if not isinstance(ext, int) or ext <= 0:
+            continue
+        n_ext += 1
+        ss = slot_set[i] if slot_set[i] is not None else set()
+        ss |= set(range(ext))
+        slot_set[i] = ss
+        slot_count[i] = ext
+
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
         "members": members, "has_layout": has_layout, "size": size,
         "eff_size": eff_size, "n_evidence": n_ev,
         "anc": anc, "desc": desc, "vtables": vtables, "slot_count": slot_count,
         "slot_set": slot_set, "n_layout": sum(1 for x in has_layout if x),
-        "n_auth": auth_hit,
+        "n_auth": auth_hit, "n_extent": n_ext,
         "n_desc_edges": sum(len(d) for d in desc), "desc_mi_probe": mi_probe,
     }
 
@@ -895,6 +918,67 @@ def main():
         ents[eid]["raw"].add(raw_id)
         return eid
 
+    # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
+    # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
+    #                     槽位超出该类 primary vtable 实测范围）→ 跳过其
+    #                     FUNC_PARAM self-pin 与 M: 成员链解析。
+    # relocated_vtable_receivers : CALL_VTABLE 接收者实为成员子对象 → 改挂实体。
+    # dropped_vtable_edges : 接收者寄存器链与 this 无关且不可解析 → 丢弃边。
+    corr = jload("anchors/minclass_evidence_corrections.json", {}) or {}
+    false_proto_fns = set()
+    for k in (corr.get("false_this_protos") or {}):
+        a = hx(k)
+        if a is not None:
+            false_proto_fns.add(a)
+    reloc_recv = {}
+    for k, v in (corr.get("relocated_vtable_receivers") or {}).items():
+        a = hx(k)
+        if a is not None and isinstance(v, dict) and v.get("receiver"):
+            reloc_recv[a] = v["receiver"]
+    dropped_edges = set()
+    for k in (corr.get("dropped_vtable_edges") or {}):
+        a = hx(k)
+        if a is not None:
+            dropped_edges.add(a)
+    dropped_obs = {}
+    for k, v in (corr.get("dropped_member_access") or {}).items():
+        a = hx(k)
+        if a is None or not isinstance(v, dict):
+            continue
+        offs = v.get("offsets") or []
+        if offs:
+            dropped_obs[a] = set(int(x) for x in offs)
+    print("[corr] false_protos=%d relocated=%d dropped_edges=%d"
+          % (len(false_proto_fns), len(reloc_recv), len(dropped_edges)),
+          flush=True)
+
+    # ---- 规则 P：类二进制身份门（name-derived pin 不是证据）----
+    # 二进制身份 = RTTI primary vtable（vtable_extent_evidence）或
+    # ctor/vtable-install 锚（ctor_types / structural_truth）。二者皆无的类
+    # 是命名轮发明名，其 C2 pin 与真类 pin 相交为空时制造假冲突。
+    identified = set()
+    for _cls, _pc in ((jload("anchors/vtable_extent_evidence.json", {}) or {})
+                      .get("per_class") or {}).items():
+        if _pc.get("primary"):
+            _ci = resolve(_cls)
+            if _ci is not None:
+                identified.add(_ci)
+    for _a, _cn in (jload("anchors/ctor_types.json", {}) or {}).items():
+        _ci = resolve(_cn)
+        if _ci is not None:
+            identified.add(_ci)
+    for _a, _cn in ((jload("anchors/structural_truth.json", {}) or {})
+                    .get("vtable_install") or {}).items():
+        _ci = resolve(_cn)
+        if _ci is not None:
+            identified.add(_ci)
+    unidentified_pins = collections.Counter()
+
+    def pin_class_identified(ci):
+        return ci in identified
+
+
+
     for e in raw:
         if e.get("type") != "MEMBER_ACCESS":
             continue
@@ -908,6 +992,10 @@ def main():
         w = e.get("width")
         w = int(w) if isinstance(w, (int, float)) and w > 0 else None
         touch(eid, e.get("base"))
+        if eid.startswith("T:"):
+            _fa = hx(eid[2:])
+            if _fa is not None and o in dropped_obs.get(_fa, ()):
+                continue      # 该访问已被二进制取证证伪（非 this）
         ents[eid]["obs"].add((o, w))
         census["C1"] += 1
 
@@ -1051,9 +1139,83 @@ def main():
             return []
         return [[o, w] for (o, w) in obs if not covers(ci, o, w if w else 4)]
 
-    # ---------------- C2：this 传递 ----------------
+        # ---- 规则 H：调用方多样性证伪被调方原型 ----
+    # 同一被调方的 this 寄存器收到 >=3 个不同来源实体、且这些来源的
+    # self-pin 类两两无公共后代 -> 没有任何类能同时充当这些对象的类，
+    # 被调方原型 this 类被证伪（与 false_proto 同等处理）。
+    self_pin_cls = {}          # entity id -> class index (direct proto evidence)
+    for _e2 in raw:
+        if _e2.get("type") != "FUNC_PARAM":
+            continue
+        _fr2 = _e2.get("from")
+        if not (isinstance(_fr2, str) and _fr2.endswith(":this")):
+            continue
+        _a2 = hx(_fr2.split(":")[0])
+        if _a2 is None or _a2 in false_proto_fns:
+            continue
+        _pr2 = parse_proto((protos.get("0x%08X" % _a2)
+                            or protos.get("0x%x" % _a2) or {}).get("proto"))
+        _ci2 = None
+        if _pr2 and _pr2[1] == "__thiscall" and _pr2[2] and "this" in _pr2[2][0]:
+            _ci2 = type_class(_pr2[2][0])
+        if _ci2 is None and _a2 in owner_of_fn:
+            _ci2 = owner_of_fn[_a2][0]      # 名字派生（与 C2 分支一致）
+        if _ci2 is not None and pin_class_identified(_ci2):
+            self_pin_cls["T:%X" % _a2] = _ci2
+    reg_sources = collections.defaultdict(set)
+    for _e in raw:
+        if _e.get("type") != "CALL_ARG":
+            continue
+        _fr, _to = _e.get("from"), _e.get("to")
+        if not (isinstance(_fr, str) and isinstance(_to, str)):
+            continue
+        if _fr not in REGS or not _to.endswith(":this"):
+            continue
+        _callee = hx(_to.split(":")[0])
+        if _callee is None:
+            continue
+        _sr = site_reg.get((hx(_e.get("addr")) or 0, _fr))
+        if _sr and _sr[1] and _sr[0] in ents:
+            reg_sources[_callee].add(_sr[0])
+    ruleh_falsified = {}
+    for _callee, _srcs in reg_sources.items():
+        if len(_srcs) < 3:
+            continue
+        clss = list(dict.fromkeys(self_pin_cls[s] for s in _srcs
+                                  if s in self_pin_cls))
+        if len(clss) < 3:
+            continue
+        disjoint = True
+        for _i in range(len(clss)):
+            for _j in range(_i + 1, len(clss)):
+                if allowed_of(clss[_i]) & allowed_of(clss[_j]):
+                    disjoint = False
+                    break
+            if not disjoint:
+                break
+        if disjoint and _callee not in false_proto_fns:
+            false_proto_fns.add(_callee)
+            ruleh_falsified[_callee] = [names[c] for c in clss[:6]]
+    if ruleh_falsified:
+        print("[ruleH] callee protos falsified by caller diversity: %d (%s)"
+              % (len(ruleh_falsified),
+                 ", ".join("%s<-%s" % (hex(k), v[0])
+                           for k, v in list(ruleh_falsified.items())[:6])),
+              flush=True)
+# ---------------- C2：this 传递 ----------------
     c2_pin_log = {}
     name_proto_disagree = set()
+    rule_s2_records = []
+    c2_kind_mask = collections.defaultdict(dict)
+
+    def c2_kind_hit(eid, kind, allowed):
+        km = c2_kind_mask[eid]
+        if allowed is not None:
+            if kind == "self":
+                km[kind] = ((km.get(kind) if km.get(kind) is not None
+                             else FULL) & allowed)
+            else:
+                km.setdefault(kind, []).append(allowed)
     for e in raw:
         if e.get("type") != "CALL_ARG":
             continue
@@ -1067,11 +1229,17 @@ def main():
         callee = hx(to.split(":")[0])
         if callee is None or callee not in owner_of_fn:
             continue
+        if callee in false_proto_fns:
+            continue          # 被调方原型 this 类已被二进制证伪
+        if not pin_class_identified(owner_of_fn[callee][0]):
+            unidentified_pins[names[owner_of_fn[callee][0]]] += 1
+            continue          # 规则 P：被调方类无二进制身份，pin 非证据
         if fr in REGS:
             # 寄存器实参：经洁净到达定义解析回调用方 this 实体后直接钉 C2
             # （约束通道，非合并——不再依赖跨帧等式传播）
             sr = site_reg.get((hx(e.get("addr")) or 0, fr))
             if sr and sr[1] and sr[0] in ents:
+                c2_kind_hit(sr[0], "reg", allowed_of(owner_of_fn[callee][0]))
                 fam["C2"][sr[0]] = fam["C2"].get(sr[0], FULL) & allowed_of(owner_of_fn[callee][0])
                 c2_pin_log.setdefault(sr[0], []).append(
                     ["reg", "0x%08X" % callee, names[owner_of_fn[callee][0]]])
@@ -1080,6 +1248,7 @@ def main():
         target = ent_id(fr, fn_at(hx(e.get("addr")) or 0))
         if target is None or target not in ents:
             continue
+        c2_kind_hit(target, "edge", allowed_of(owner_of_fn[callee][0]))
         fam["C2"][target] = fam["C2"].get(target, FULL) & allowed_of(owner_of_fn[callee][0])
         c2_pin_log.setdefault(target, []).append(
             ["edge", "0x%08X" % callee, names[owner_of_fn[callee][0]]])
@@ -1093,6 +1262,8 @@ def main():
         a = hx(fr.split(":")[0])
         if a is None:
             continue
+        if a in false_proto_fns:
+            continue          # 该函数原型 this 类已被二进制证伪（corrections）
         target = ent_id(fr)
         if target not in ents:
             continue
@@ -1101,6 +1272,9 @@ def main():
         ci_this = None
         if pr and pr[1] == "__thiscall" and pr[2] and "this" in pr[2][0]:
             ci_this = type_class(pr[2][0])
+        if ci_this is not None and not pin_class_identified(ci_this):
+            unidentified_pins[names[ci_this]] += 1
+            ci_this = None    # 规则 P：proto 类无二进制身份
         if ci_this is not None:
             # proto 的 this 类型是二进制直接证据：优先于名字派生的 owner。
             # 二者不兼容时（实测 931 个函数，名字多把方法错挂到 AbstractClass 等
@@ -1110,8 +1284,12 @@ def main():
             if a in owner_of_fn and owner_of_fn[a][0] != ci_this:
                 name_proto_disagree.add(a)
         elif a in owner_of_fn:
-            m &= allowed_of(owner_of_fn[a][0])
+            if pin_class_identified(owner_of_fn[a][0]):
+                m &= allowed_of(owner_of_fn[a][0])
+            else:
+                unidentified_pins[names[owner_of_fn[a][0]]] += 1
         if m != FULL:
+            c2_kind_hit(target, "self", m)
             fam["C2"][target] = fam["C2"].get(target, FULL) & m
             c2_pin_log.setdefault(target, []).append(
                 ["self", "0x%08X" % a,
@@ -1119,6 +1297,45 @@ def main():
             census["C2"] += 1
     print("[C2] evidence=%d entities=%d name_proto_disagree=%d (proto this preferred)"
           % (census["C2"], len(fam["C2"]), len(name_proto_disagree)), flush=True)
+    if unidentified_pins:
+        print("[C2] rule-P unidentified-class pins skipped: %d (%s)"
+              % (sum(unidentified_pins.values()),
+                 ", ".join("%s=%d" % kv
+                           for kv in unidentified_pins.most_common(12))), flush=True)
+
+    # ---- 规则 G/J：实体级 C2 域修正 ----
+    # G: 实体同时持有 self-pin（直接证据，且未被规则 S 证伪）与 reg/edge-pin
+    #    （经由被调方原型，两跳推导），二者类不相交时至多一个为真 -> 保留
+    #    self-pin 域，丢弃 reg/edge 域（计数并记录）。
+    # J: 实体仅有 edge-pin 且来自 >=2 个不相交类 = 多态汇合槽（同一内存槽
+    #    在不同程序点持有不同对象）；单变量域取各边域的并（每条边的约束
+    #    仍按其站点成立），交集语义对汇合槽是过约束。
+    rule_g_drops = 0
+    rule_j_unions = 0
+    for _eid, _m in list(fam["C2"].items()):
+        if _m:
+            continue
+        _km = c2_kind_mask.get(_eid)
+        if not _km:
+            continue
+        if _km.get("self"):
+            fam["C2"][_eid] = _km["self"]
+            rule_g_drops += 1
+            continue
+        _u = 0
+        for _k, _l in _km.items():
+            if _k == "self" or not _l:
+                continue
+            for _mm in _l:
+                _u |= _mm
+        if _u:
+            fam["C2"][_eid] = _u
+            rule_j_unions += 1
+    if rule_g_drops or rule_j_unions:
+        print("[ruleGJ] reg/edge pins dropped by self-pin: %d; "
+              "junction unions: %d" % (rule_g_drops, rule_j_unions), flush=True)
+
+
 
     # ---------------- C3：虚表槽位（3 值：满足 ∪ 未知）----------------
     slot_mask = collections.defaultdict(int)
@@ -1136,6 +1353,7 @@ def main():
     def c3_mask(slot):
         return slot_mask.get(slot, 0) | unknown_slot
 
+    c3_garbage_slots = collections.Counter()
     for e in raw:
         if e.get("type") != "CALL_VTABLE":
             continue
@@ -1144,12 +1362,48 @@ def main():
             slot = int(e.get("vtable_slot"))
         except (TypeError, ValueError):
             continue
-        target = ent_id(recv, fn_at(hx(e.get("addr")) or 0)) if recv else None
+        if not (0 <= slot <= 400):
+            # 提取伪影（如 0x4000000000000001）：物理不可能的槽位，丢弃并计数
+            c3_garbage_slots[slot] += 1
+            continue
+        site = hx(e.get("addr")) or 0
+        if site in dropped_edges:
+            continue
+        if site in reloc_recv:
+            recv = reloc_recv[site]
+        target = ent_id(recv, fn_at(site)) if recv else None
         if target is None or target not in ents:
             continue
         fam["C3"][target] = fam["C3"].get(target, FULL) & c3_mask(slot)
         census["C3"] += 1
+    if c3_garbage_slots:
+        print("[C3] garbage slots dropped: %s"
+              % dict(c3_garbage_slots), flush=True)
     print("[C3] evidence=%d entities=%d" % (census["C3"], len(fam["C3"])), flush=True)
+    # ---- 规则 S2：C3 二进制证据驳回 C2 pin ----
+    # 实体的 C2 族域与 C3 域（虚表槽位实测）交为空 -> 钉住族中每个类都缺
+    # 某个被调槽位，即该类不可能是接收者类；C2 pin（til/proto 推导）被
+    # 二进制证据驳回 -> 丢弃 C2 pin，保留 C3。
+    rule_s2_drops = 0
+    for _eid, _m in list(fam["C2"].items()):
+        if not _m:
+            continue
+        _c3 = fam["C3"].get(_eid)
+        if _c3 is None:
+            continue
+        if _m & _c3:
+            continue
+        dropped_pins = c2_pin_log.get(_eid, [])[:4]
+        fam["C2"][_eid] = FULL
+        rule_s2_drops += 1
+        c2_pin_log.pop(_eid, None)
+        rule_s2_records.append({"entity": _eid,
+                                "pin_classes": [names[i] for i in range(n)
+                                                if (_m >> i) & 1][:8],
+                                "c3_classes": _c3.bit_count()})
+    if rule_s2_drops:
+        print("[ruleS2] C2 pins refuted by C3 dropped: %d" % rule_s2_drops,
+              flush=True)
 
     # ---------------- C4：ctor/dtor 装表 EXACT ----------------
     src = collections.defaultdict(lambda: {"export": set(), "committed": set()})
@@ -1361,11 +1615,16 @@ def main():
     print("[C6] slot_count class_db vs authority disagreements=%d" % len(sc_disagree), flush=True)
 
     c8_entities = set()
+    c8_cast_dropped = []
+    c8_gtype = {}
     for eid in list(ents):
         if not eid.startswith("G:"):
             continue
         ci = global_class(int(eid[2:], 16))
         if ci is not None:
+            if not pin_class_identified(ci):
+                continue          # 规则 P 同源：无名分 invented 类不构成证据
+            c8_gtype[eid] = ci
             exact[eid].append((ci, "C8:global-type"))
             census["C8"] += 1
             exact_count["C8"] += 1
@@ -1375,11 +1634,21 @@ def main():
         addr = global_addr(nm)
         if ci is not None and addr is not None:
             eid = "G:%X" % addr
-            if eid in ents:
-                exact[eid].append((ci, "C8:cast-type"))
-                census["C8"] += 1
-                exact_count["C8"] += 1
-                c8_entities.add(eid)
+            if eid not in ents:
+                continue
+            if not pin_class_identified(ci):
+                unidentified_pins[names[ci]] += 1
+                continue          # cast 到无身份类 = 命名轮噪声
+            if eid in c8_gtype and c8_gtype[eid] != ci:
+                # 名称证据与 cast 多数派冲突：名称证据胜出（AGENTS 裁决）
+                c8_cast_dropped.append({"global": eid,
+                                        "kept": names[c8_gtype[eid]],
+                                        "dropped": names[ci]})
+                continue
+            exact[eid].append((ci, "C8:cast-type"))
+            census["C8"] += 1
+            exact_count["C8"] += 1
+            c8_entities.add(eid)
     for fn, site, dst, sym in (facts or {}).get("global_installs", []):
         ci = resolve(sym)
         g = global_addr(dst)
@@ -1401,6 +1670,10 @@ def main():
     root_exact = {}
     for eid, lst in exact.items():
         root_exact.setdefault(uf.find(eid), set()).update(ci for ci, _s in lst)
+    root_self_cls = collections.defaultdict(set)
+    for _eid, _ci in self_pin_cls.items():
+        root_self_cls[uf.find(_eid)].add(_ci)
+
 
     def un(a, b, channel):
         if a is None or b is None:
@@ -1417,9 +1690,12 @@ def main():
                                        "a_classes": [names[c] for c in sorted(ea)],
                                        "b_classes": [names[c] for c in sorted(eb)]})
             return False          # EXACT 硬约束：不合并，记录矛盾证据
+        _cra, _crb = root_self_cls.get(ra, set()), root_self_cls.get(rb, set())
         uf.union(a, b)
         nr = uf.find(a)
         root_exact[nr] = ea | eb
+        if _cra or _crb:
+            root_self_cls[nr] = _cra | _crb
         ch_stats[channel]["unions"] += 1
         return True
 
@@ -1499,6 +1775,8 @@ def main():
             return None
         if which != "this":
             return None
+        if fn in false_proto_fns:
+            return None       # 外围函数类归属被证伪，成员链不可信
         own = owner_of_fn.get(fn)
         if own is None:
             return None
@@ -1509,6 +1787,15 @@ def main():
                 return type_class(rec.get("type") or "")
         return None
 
+    root_self_cls.clear()
+    print("[dbg] self_pin_cls=%d" % len(self_pin_cls), flush=True)
+    for _probe in ("T:41D540", "T:41DC80", "T:544CB0", "T:547020"):
+        _r = uf.find(_probe)
+        print("[dbg] %s root=%s cls=%s selfkey=%s" %
+              (_probe, _r, [names[c] for c in root_self_cls.get(_r, ())],
+                _probe in self_pin_cls), flush=True)
+    for _eid, _ci in self_pin_cls.items():
+        root_self_cls[uf.find(_eid)].add(_ci)
     multi_joins = sum(1 for s in target_froms.values() if len(s) > 1)
     for channel, fe, te, kind, clean, site in cands:
         detail = {"channel": channel, "from": fe, "to": te, "site": "0x%X" % site}
@@ -1529,6 +1816,22 @@ def main():
                 continue
         elif kind not in ("T", "P"):
             reject("unproven_kind", detail)
+            continue
+        _ra, _rb = uf.find(fe), uf.find(te)
+        _ca, _cb = root_self_cls.get(_ra, set()), root_self_cls.get(_rb, set())
+        _incomp = False
+        for _x in _ca:
+            for _y in _cb:
+                if not (allowed_of(_x) & allowed_of(_y)):
+                    _incomp = True
+                    break
+            if _incomp:
+                break
+        if _incomp:
+            # 规则 M：两侧 self-pin 类无公共后代 -> same-object 主张被证伪
+            reject("self_pin_incompatible",
+                   {"channel": channel, "from": fe, "to": te,
+                    "cls": sorted(names[c] for c in (_ca | _cb))[:4]})
             continue
         un(fe, te, channel)
 
@@ -2115,6 +2418,10 @@ def main():
             "evidence_note": ("default=spec（非循环口径）；spec+proto 为循环备选口径"),
             "merge_policy": "proven-same-object (X152)",
             "rejected_merges": dict(rejected_merges),
+            "ruleGJ": {"reg_drops": rule_g_drops, "junction_unions": rule_j_unions},
+            "ruleS2": {"c2_drops": rule_s2_drops,
+                       "records": rule_s2_records[:80]},
+            "c8_cast_dropped": c8_cast_dropped[:50],
             "K": K, "K_upper": K_upper, "lower_bound": LB,
             "constrained_clusters": len(constrain), "free_clusters": res["free"],
             "conflicts": res["n_conflicts"], "c1_gaps": res["c1_gaps"],
