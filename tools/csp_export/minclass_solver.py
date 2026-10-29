@@ -2188,7 +2188,7 @@ def main():
                           for (cl, m) in constrained if 0 < m.bit_count() <= 64},
             "dom_ents": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
                          list(cl.get("ents") or [])[:6]
-                         for (cl, m) in constrained if 0 < m.bit_count() <= 8},
+                         for (cl, m) in constrained if 0 < m.bit_count() <= 64},
             "cluster_obs": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
                             sorted(cl.get("obs") or [])
                             for (cl, m) in constrained},
@@ -2720,6 +2720,26 @@ def main():
             "clusters": _d["clusters"],
             "members": [[o, w] for o, w in _ms],
         }
+    # 导出逐簇分配（供二进制锚过滤后的重新派生）
+    _clusters = {}
+    for _k, _ci in _assign.items():
+        try:
+            _idx = int(_k)
+        except (TypeError, ValueError):
+            continue
+        if not (0 <= _idx < len(_roots)):
+            continue
+        if _ci is None or _ci < 0 or _ci >= n:
+            continue
+        _r = _roots[_idx]
+        _clusters[_r] = {"class": names[_ci],
+                         "obs": [[int(o), int(w or 4)] for o, w in (_obs.get(_r) or [])],
+                         "ents": list((res.get("dom_ents") or {}).get(_r, []))}
+    _cpath = os.path.join(ROOT, "anchors/minclass_clusters.json")
+    with io.open(_cpath, "w", encoding="utf-8") as fh:
+        json.dump(_clusters, fh, ensure_ascii=False, indent=0)
+    print("[out] %s (%d clusters)" % (_cpath, len(_clusters)), flush=True)
+
     _dpath = os.path.join(ROOT, "anchors/derived_layouts.json")
     with io.open(_dpath, "w", encoding="utf-8") as fh:
         json.dump(_dl, fh, ensure_ascii=False, indent=0)
