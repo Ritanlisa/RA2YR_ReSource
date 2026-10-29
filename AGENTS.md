@@ -1304,7 +1304,8 @@ python tools/type_infer/auto_name.py
 ## 下一会话快速接手指引
 
 > **2026-10-28 编译收敛 + 结构证据轮（当前状态，接手先核对）**
-> HEAD `bff59531`，MSVC **20,697**（本轮 22,176 → 20,697，**−1,479**，0 fatal）。门：def-count PASS 17,498 / qmark clean（0 残留）/ vtable 标识符 0 / CSP verify 7/7 ALL PASS（TOP 0 / ORPHAN 138,020 / ANCHORED 403,817）。逐文件基线 = `.omo/x189/perfile_base.json`（594 文件）。
+> HEAD `b33a2581`，MSVC **20,697**（本轮 22,176 → 20,697，**−1,479**，0 fatal）。门：def-count PASS 17,498 / qmark clean（0 残留）/ vtable 标识符 0 / CSP verify 7/7 ALL PASS（TOP 0 / ORPHAN 86,016 / ANCHORED 463,207）。逐文件基线 = `.omo/x189/perfile_base.json`（594 文件）。
+> **最小类数 CSP 求解器（新，`tools/csp_export/minclass_solver.py`，2026-10-29）**：按「候选集=类布局/继承/槽位/长度，约束=调用/运算/虚表，目标=最少类数」建模，C1–C8 八族 + 逐族仪器 + 冲突台账。当前 **K_min=775 / LB=775 / 冲突=0**（spec 口径，确定性双跑字节一致）。可信度分层：**47.0% 的簇（7,064/15,034）被证据唯一确定 → 768 个类是被强制的**；29.4% 的簇域 >500（无判别力，`Math` 这类稀疏类会被贪心覆盖选中，`--strict-c1` 可暴露：K=642/冲突 1,993）。**已证伪的口径**：曾报 K=438/0 冲突，实为规则 P 丢弃 419 个有真实布局证据的类（`ScenarioClass` 120 pin/60 成员、`RulesClass` 50/830），已修正为“有任一成员访问即认定存在”。**勿重跑**：`--evidence spec+proto` 是循环口径（用 proto 类验证 proto 布局）。
 > **结构证据三件套（本轮新增，均已入库）**：①`anchors/rtti_base_arrays.json` — IDA `??_R2` 的 **954 类精确基类表**，lattice 第一优先层次源；②`anchors/vtable_slot_authority.json` — **954 类 / 13,204 主表槽 / 13,188 带原型（100%）**，每槽 `{addr,name,proto}`，另记 260 次级表 + 162 未归属表（多继承/无 RTTI 遗留）；③`anchors/global_cast_types.json` — 全局类型证据（**28 个**：16 名称证据 + 12 cast 多数派），生成器 `tools/type_infer/gen_global_cast_types.py`。
 > **全局类型取证结论（勿重跑）**：IDA 自身对对象全局只给兜底类型（`IUnknown`/`ObjectClass*`），全量导出 3,928 个全局里绝大多数是字符串字面量；把它当锚 **+77 TOP 冲突**，已停用。cast 用法证据才是上限，且**名称证据必须压过 cast**（`g_TacticalClass_Instance` 被我们自己的错代码 cast 成 Coord 112 次）。
 > **已实测证伪、勿重跑**：批量 retype（MSVC **+20**）；语法层微修（长尾，单点 −1）；C2352 纯头文件修法（**0 个**合格符号）；`LoadFileSHP` 改 const（级联进函数体）；pad 名称合并（**净 0**）；语义成员补建（权威表无此成员=发明符号）；`String::Assign` 改 static-form（**净 +6**，C2660 反涨 19）；非 e4 头文件类型修正（**净 0**，说明手写头已正确）。
