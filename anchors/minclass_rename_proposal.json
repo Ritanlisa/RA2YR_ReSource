@@ -60,133 +60,133 @@
 "current": "AbstractClass::getTileIndex",
 "new": "Blitter::ScalarDtor",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00499CE0",
 "current": "AbstractClass::setTileIndex",
 "new": "Blitter::ScalarDtor_2",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00499D00",
 "current": "AbstractClass::getOverlayType",
 "new": "Blitter::ScalarDtor_3",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00499D20",
 "current": "AbstractClass::setOverlayFlags",
 "new": "Blitter::ScalarDtor_4",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00499DA0",
 "current": "AbstractClass::clearOverlayFlags",
 "new": "RLEBlitter::ScalarDtor",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A1A0",
 "current": "BlitTransXlatAlpha_ushort::Constructor_Blitter",
 "new": "Blitter::ScalarDtor_5",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A1C0",
 "current": "BlitTransXlatAlpha_ushort::Constructor_Blitter_0",
 "new": "Blitter::ScalarDtor_6",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A1E0",
 "current": "BlitTransXlatAlpha_ushort::Constructor_Blitter_1",
 "new": "Blitter::ScalarDtor_7",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A380",
 "current": "BlitTransLucent25Alpha_ushort::Constructor_Blitter",
 "new": "Blitter::ScalarDtor_8",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A3A0",
 "current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter",
 "new": "Blitter::ScalarDtor_9",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A3C0",
 "current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0",
 "new": "Blitter::ScalarDtor_10",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A3E0",
 "current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
 "new": "Blitter::ScalarDtor_11",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A400",
 "current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2",
 "new": "Blitter::ScalarDtor_12",
 "class": "Blitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A760",
 "current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter",
 "new": "RLEBlitter::ScalarDtor_2",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A780",
 "current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0",
 "new": "RLEBlitter::ScalarDtor_3",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A7A0",
 "current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1",
 "new": "RLEBlitter::ScalarDtor_4",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A9A0",
 "current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter",
 "new": "RLEBlitter::ScalarDtor_5",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A9C0",
 "current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0",
 "new": "RLEBlitter::ScalarDtor_6",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0049A9E0",
 "current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1",
 "new": "RLEBlitter::ScalarDtor_7",
 "class": "RLEBlitter",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x004CAB50",
@@ -214,84 +214,84 @@
 "current": "TypeList_Infantry::Add",
 "new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_InfantryTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512A40",
 "current": "HouseTypeClass_36::QueryInterface",
 "new": "VectorClass_cptr_UnitTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_UnitTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512A90",
 "current": "HouseTypeClass_28::QueryInterface",
 "new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_AircraftTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512AE0",
 "current": "InfantryTypeVector::QueryInterface",
 "new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_InfantryTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512B30",
 "current": "UnitTypeVector::QueryInterface",
 "new": "VectorClass_cptr_UnitTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_UnitTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512B80",
 "current": "HouseTypeClass_36::Constructor",
 "new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_AircraftTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00512E20",
 "current": "TypeList_Infantry::Constructor",
 "new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_InfantryTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005131F0",
 "current": "TypeList_Infantry::Constructor_0",
 "new": "VectorClass_cptr_UnitTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_UnitTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005135C0",
 "current": "TypeList_Infantry::Constructor_1",
 "new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_AircraftTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00524FC0",
 "current": "WarheadTypeClass::QueryInterface",
 "new": "VectorClass_cptr_AnimTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_AnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00525010",
 "current": "DynamicVectorClass_AnimType::Add",
 "new": "VectorClass_cptr_AnimTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_AnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005252B0",
 "current": "DynamicVectorClass_cptr_AnimTypeClass::Add",
 "new": "VectorClass_cptr_AnimTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_AnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0052AE20",
@@ -310,331 +310,331 @@
 {
 "fn": "0x00535CD0",
 "current": "CreateTeamCommand::performAction_0",
-"new": "CommandClass::ScalarDtor",
-"class": "CommandClass",
-"source": "install"
+"new": "CreateTeamCommandClass::ScalarDtor",
+"class": "CreateTeamCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00535D00",
 "current": "CreateTeamCommand::performAction_1",
-"new": "CommandClass::ScalarDtor_2",
+"new": "CommandClass::ScalarDtor",
 "class": "CommandClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x00536090",
 "current": "CreateTeamCommand::performAction_22",
-"new": "CommandClass::ScalarDtor_3",
-"class": "CommandClass",
-"source": "install"
+"new": "SelectTeamCommandClass::ScalarDtor",
+"class": "SelectTeamCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00536180",
 "current": "CreateTeamCommand::performAction_23",
-"new": "CommandClass::ScalarDtor_4",
-"class": "CommandClass",
-"source": "install"
+"new": "AddTeamCommandClass::ScalarDtor",
+"class": "AddTeamCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00536270",
 "current": "CreateTeamCommand::performAction_24",
-"new": "CommandClass::ScalarDtor_5",
-"class": "CommandClass",
-"source": "install"
+"new": "CenterTeamCommandClass::ScalarDtor",
+"class": "CenterTeamCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00536580",
 "current": "CreateTeamCommand::performAction_25",
-"new": "CommandClass::ScalarDtor_6",
-"class": "CommandClass",
-"source": "install"
+"new": "TauntCommandClass::ScalarDtor",
+"class": "TauntCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00537FA0",
 "current": "CreateTeamCommand::performAction_198",
-"new": "CommandClass::ScalarDtor_7",
-"class": "CommandClass",
-"source": "install"
+"new": "MultiplayerDebugCommandClass::ScalarDtor",
+"class": "MultiplayerDebugCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00537FC0",
 "current": "CreateTeamCommand::performAction_199",
-"new": "CommandClass::ScalarDtor_8",
-"class": "CommandClass",
-"source": "install"
+"new": "MultiplayerSyncCommandClass::ScalarDtor",
+"class": "MultiplayerSyncCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00537FE0",
 "current": "CreateTeamCommand::performAction_200",
-"new": "CommandClass::ScalarDtor_9",
-"class": "CommandClass",
-"source": "install"
+"new": "FollowCommandClass::ScalarDtor",
+"class": "FollowCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538000",
 "current": "CreateTeamCommand::performAction_201",
-"new": "CommandClass::ScalarDtor_10",
-"class": "CommandClass",
-"source": "install"
+"new": "View1CommandClass::ScalarDtor",
+"class": "View1CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538020",
 "current": "CreateTeamCommand::performAction_202",
-"new": "CommandClass::ScalarDtor_11",
-"class": "CommandClass",
-"source": "install"
+"new": "View2CommandClass::ScalarDtor",
+"class": "View2CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538040",
 "current": "CreateTeamCommand::performAction_203",
-"new": "CommandClass::ScalarDtor_12",
-"class": "CommandClass",
-"source": "install"
+"new": "View3CommandClass::ScalarDtor",
+"class": "View3CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538060",
 "current": "CreateTeamCommand::performAction_204",
-"new": "CommandClass::ScalarDtor_13",
-"class": "CommandClass",
-"source": "install"
+"new": "View4CommandClass::ScalarDtor",
+"class": "View4CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538080",
 "current": "CreateTeamCommand::performAction_205",
-"new": "CommandClass::ScalarDtor_14",
-"class": "CommandClass",
-"source": "install"
+"new": "SetView1CommandClass::ScalarDtor",
+"class": "SetView1CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005380A0",
 "current": "CreateTeamCommand::performAction_206",
-"new": "CommandClass::ScalarDtor_15",
-"class": "CommandClass",
-"source": "install"
+"new": "SetView2CommandClass::ScalarDtor",
+"class": "SetView2CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005380C0",
 "current": "CreateTeamCommand::performAction_207",
-"new": "CommandClass::ScalarDtor_16",
-"class": "CommandClass",
-"source": "install"
+"new": "SetView3CommandClass::ScalarDtor",
+"class": "SetView3CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005380E0",
 "current": "CreateTeamCommand::performAction_208",
-"new": "CommandClass::ScalarDtor_17",
-"class": "CommandClass",
-"source": "install"
+"new": "SetView4CommandClass::ScalarDtor",
+"class": "SetView4CommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538100",
 "current": "CreateTeamCommand::performAction_209",
-"new": "CommandClass::ScalarDtor_18",
-"class": "CommandClass",
-"source": "install"
+"new": "OptionsCommandClass::ScalarDtor",
+"class": "OptionsCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538120",
 "current": "CreateTeamCommand::performAction_210",
-"new": "CommandClass::ScalarDtor_19",
-"class": "CommandClass",
-"source": "install"
+"new": "SidebarUpCommandClass::ScalarDtor",
+"class": "SidebarUpCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538140",
 "current": "CreateTeamCommand::performAction_211",
-"new": "CommandClass::ScalarDtor_20",
-"class": "CommandClass",
-"source": "install"
+"new": "SidebarDownCommandClass::ScalarDtor",
+"class": "SidebarDownCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538160",
 "current": "CreateTeamCommand::performAction_212",
-"new": "CommandClass::ScalarDtor_21",
-"class": "CommandClass",
-"source": "install"
+"new": "CenterREventCommandClass::ScalarDtor",
+"class": "CenterREventCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538180",
 "current": "CreateTeamCommand::performAction_213",
-"new": "CommandClass::ScalarDtor_22",
-"class": "CommandClass",
-"source": "install"
+"new": "BeaconPlacementCommandClass::ScalarDtor",
+"class": "BeaconPlacementCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005381A0",
 "current": "CreateTeamCommand::performAction_214",
-"new": "CommandClass::ScalarDtor_23",
-"class": "CommandClass",
-"source": "install"
+"new": "ToggleSellCommandClass::ScalarDtor",
+"class": "ToggleSellCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005381C0",
 "current": "CreateTeamCommand::performAction_215",
-"new": "CommandClass::ScalarDtor_24",
-"class": "CommandClass",
-"source": "install"
+"new": "ToggleRepairCommandClass::ScalarDtor",
+"class": "ToggleRepairCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005381E0",
 "current": "CreateTeamCommand::performAction_216",
-"new": "CommandClass::ScalarDtor_25",
-"class": "CommandClass",
-"source": "install"
+"new": "AllianceCommandClass::ScalarDtor",
+"class": "AllianceCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538200",
 "current": "CreateTeamCommand::performAction_217",
-"new": "CommandClass::ScalarDtor_26",
-"class": "CommandClass",
-"source": "install"
+"new": "CenterBaseCommandClass::ScalarDtor",
+"class": "CenterBaseCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538220",
 "current": "CreateTeamCommand::performAction_218",
-"new": "CommandClass::ScalarDtor_27",
-"class": "CommandClass",
-"source": "install"
+"new": "CenterViewCommandClass::ScalarDtor",
+"class": "CenterViewCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538240",
 "current": "CreateTeamCommand::performAction_219",
-"new": "CommandClass::ScalarDtor_28",
-"class": "CommandClass",
-"source": "install"
+"new": "ScatterCommandClass::ScalarDtor",
+"class": "ScatterCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538260",
 "current": "CreateTeamCommand::performAction_220",
-"new": "CommandClass::ScalarDtor_29",
-"class": "CommandClass",
-"source": "install"
+"new": "GuardCommandClass::ScalarDtor",
+"class": "GuardCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538280",
 "current": "CreateTeamCommand::performAction_221",
-"new": "CommandClass::ScalarDtor_30",
-"class": "CommandClass",
-"source": "install"
+"new": "StopCommandClass::ScalarDtor",
+"class": "StopCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005382A0",
 "current": "CreateTeamCommand::performAction_222",
-"new": "CommandClass::ScalarDtor_31",
-"class": "CommandClass",
-"source": "install"
+"new": "AllToCheerCommandClass::ScalarDtor",
+"class": "AllToCheerCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005382C0",
 "current": "CreateTeamCommand::performAction_223",
-"new": "CommandClass::ScalarDtor_32",
-"class": "CommandClass",
-"source": "install"
+"new": "DeployCommandClass::ScalarDtor",
+"class": "DeployCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005382E0",
 "current": "CreateTeamCommand::performAction_224",
-"new": "CommandClass::ScalarDtor_33",
-"class": "CommandClass",
-"source": "install"
+"new": "PrevObjectCommandClass::ScalarDtor",
+"class": "PrevObjectCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538300",
 "current": "CreateTeamCommand::performAction_225",
-"new": "CommandClass::ScalarDtor_34",
-"class": "CommandClass",
-"source": "install"
+"new": "NextObjectCommandClass::ScalarDtor",
+"class": "NextObjectCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538320",
 "current": "CreateTeamCommand::performAction_226",
-"new": "CommandClass::ScalarDtor_35",
-"class": "CommandClass",
-"source": "install"
+"new": "PlanningModeCommandClass::ScalarDtor",
+"class": "PlanningModeCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538340",
 "current": "CreateTeamCommand::performAction_227",
-"new": "CommandClass::ScalarDtor_36",
-"class": "CommandClass",
-"source": "install"
+"new": "CombatantSelectCommandClass::ScalarDtor",
+"class": "CombatantSelectCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538360",
 "current": "CreateTeamCommand::performAction_228",
-"new": "CommandClass::ScalarDtor_37",
-"class": "CommandClass",
-"source": "install"
+"new": "TypeSelectCommandClass::ScalarDtor",
+"class": "TypeSelectCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538380",
 "current": "CreateTeamCommand::performAction_229",
-"new": "CommandClass::ScalarDtor_38",
-"class": "CommandClass",
-"source": "install"
+"new": "HealthNavCommandClass::ScalarDtor",
+"class": "HealthNavCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005383A0",
 "current": "CreateTeamCommand::performAction_230",
-"new": "CommandClass::ScalarDtor_39",
-"class": "CommandClass",
-"source": "install"
+"new": "VeterancyNavCommandClass::ScalarDtor",
+"class": "VeterancyNavCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005383C0",
 "current": "CreateTeamCommand::performAction_231",
-"new": "CommandClass::ScalarDtor_40",
-"class": "CommandClass",
-"source": "install"
+"new": "SetStructureTabCommandClass::ScalarDtor",
+"class": "SetStructureTabCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005383E0",
 "current": "CreateTeamCommand::performAction_232",
-"new": "CommandClass::ScalarDtor_41",
-"class": "CommandClass",
-"source": "install"
+"new": "SetDefenseTabCommandClass::ScalarDtor",
+"class": "SetDefenseTabCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538400",
 "current": "CreateTeamCommand::performAction_233",
-"new": "CommandClass::ScalarDtor_42",
-"class": "CommandClass",
-"source": "install"
+"new": "SetUnitTabCommandClass::ScalarDtor",
+"class": "SetUnitTabCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538420",
 "current": "CreateTeamCommand::performAction_234",
-"new": "CommandClass::ScalarDtor_43",
-"class": "CommandClass",
-"source": "install"
+"new": "SetInfantryTabCommandClass::ScalarDtor",
+"class": "SetInfantryTabCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538440",
 "current": "CreateTeamCommand::performAction_235",
-"new": "CommandClass::ScalarDtor_44",
-"class": "CommandClass",
-"source": "install"
+"new": "ScreenCaptureCommandClass::ScalarDtor",
+"class": "ScreenCaptureCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538460",
 "current": "CreateTeamCommand::performAction_236",
-"new": "CommandClass::ScalarDtor_45",
-"class": "CommandClass",
-"source": "install"
+"new": "PageUserCommandClass::ScalarDtor",
+"class": "PageUserCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x00538480",
 "current": "CreateTeamCommand::performAction_237",
-"new": "CommandClass::ScalarDtor_46",
-"class": "CommandClass",
-"source": "install"
+"new": "CursorPositionCommandClass::ScalarDtor",
+"class": "CursorPositionCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x005384A0",
 "current": "CreateTeamCommand::performAction_238",
-"new": "CommandClass::ScalarDtor_47",
-"class": "CommandClass",
-"source": "install"
+"new": "DeleteCommandClass::ScalarDtor",
+"class": "DeleteCommandClass",
+"source": "proto(folded)"
 },
 {
 "fn": "0x0053C780",
@@ -711,35 +711,35 @@
 "current": "AbstractClass::checkVisibility",
 "new": "AbstractClass::ScalarDtor",
 "class": "AbstractClass",
-"source": "proto"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005D8030",
 "current": "AbstractClass::updateVisibilityState",
 "new": "AbstractClass::ScalarDtor_2",
 "class": "AbstractClass",
-"source": "proto"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005D8050",
 "current": "AbstractClass::processFogReveal",
 "new": "AbstractClass::ScalarDtor_3",
 "class": "AbstractClass",
-"source": "proto"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005D8070",
 "current": "AbstractClass::checkShroudState",
 "new": "AbstractClass::ScalarDtor_4",
 "class": "AbstractClass",
-"source": "proto"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005D8090",
 "current": "AbstractClass::updateShroudMap",
 "new": "AbstractClass::ScalarDtor_5",
 "class": "AbstractClass",
-"source": "proto"
+"source": "proto(folded)"
 },
 {
 "fn": "0x005EF290",
@@ -760,14 +760,14 @@
 "current": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor",
 "new": "DialogControl_OwnerDraw::ScalarDtor",
 "class": "DialogControl_OwnerDraw",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x006244C0",
 "current": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0",
 "new": "SimpleDialogControl_OwnerDraw::ScalarDtor",
 "class": "SimpleDialogControl_OwnerDraw",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x00631F40",
@@ -788,7 +788,7 @@
 "current": "AbstractClass::checkAICondition",
 "new": "AbstractClass::ScalarDtor_6",
 "class": "AbstractClass",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x0065D6A0",
@@ -802,63 +802,63 @@
 "current": "TypeList_VoxelAnim::Add",
 "new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_VoxelAnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067A9E0",
 "current": "TypeList_VoxelAnim::TypeList_vt00",
 "new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_SmudgeTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067AA30",
 "current": "TypeList_cptr_TerrainTypeClass::Add",
 "new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor",
 "class": "VectorClass_cptr_TerrainTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C010",
 "current": "TypeList_VoxelAnim::Constructor",
 "new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_VoxelAnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C060",
 "current": "DynamicVectorClass_cptr_VoxelAnimTypeClass::Add",
 "new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_VoxelAnimTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C0B0",
 "current": "SmudgeTypeVector::QueryInterface",
 "new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_SmudgeTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C100",
 "current": "TypeList_VoxelAnim::Constructor_0",
 "new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_SmudgeTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C150",
 "current": "TypeList_cptr_TerrainTypeClass::Constructor",
 "new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor_2",
 "class": "VectorClass_cptr_TerrainTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x0067C1A0",
 "current": "TypeList_VoxelAnim::Constructor_1",
 "new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor_3",
 "class": "VectorClass_cptr_TerrainTypeClass",
-"source": "install"
+"source": "proto(folded)"
 },
 {
 "fn": "0x006910A0",
@@ -900,35 +900,35 @@
 "current": "Campaign_WorldDominationTour::QueryInterface",
 "new": "Campaign_WorldDominationTour::ScalarDtor",
 "class": "Campaign_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x007667A0",
 "current": "Conflict_WorldDominationTour::QueryInterface",
 "new": "Conflict_WorldDominationTour::ScalarDtor",
 "class": "Conflict_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x00767880",
 "current": "COMClass::coUninitialize",
 "new": "FlagGameOption_WorldDominationTour::ScalarDtor",
 "class": "FlagGameOption_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x007678C0",
 "current": "MapSizeGameOption_WorldDominationTour::QueryInterface",
 "new": "MapSizeGameOption_WorldDominationTour::ScalarDtor",
 "class": "MapSizeGameOption_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x00767C10",
 "current": "History_WorldDominationTour::QueryInterface",
 "new": "History_WorldDominationTour::ScalarDtor",
 "class": "History_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x0076AC90",
@@ -942,35 +942,35 @@
 "current": "CampaignProperties_WorldDominationTour::QueryInterface",
 "new": "CampaignProperties_WorldDominationTour::ScalarDtor",
 "class": "CampaignProperties_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x0076F6C0",
 "current": "State_WorldDominationTour::QueryInterface",
 "new": "State_WorldDominationTour::ScalarDtor",
 "class": "State_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x00770020",
 "current": "Territory_WorldDominationTour::QueryInterface",
 "new": "Territory_WorldDominationTour::ScalarDtor",
 "class": "Territory_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x00771A30",
 "current": "Territory_WorldDominationTour_8::QueryInterface",
 "new": "Anim_Voices_WorldDominationTour::ScalarDtor",
 "class": "Anim_Voices_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x007B0440",
 "current": "StreamWrapper::QueryInterface",
 "new": "FactionSelectDialogControl_WorldDominationTour::ScalarDtor",
 "class": "FactionSelectDialogControl_WorldDominationTour",
-"source": "proto"
+"source": "install"
 },
 {
 "fn": "0x007BA300",
