@@ -1092,6 +1092,7 @@ class TypeInferenceEngine:
         self._load_vslot_return_anchors(valid_classes)
         self._load_ida_callarg_types(valid_classes)
         self._load_minclass_strong_anchors(valid_classes)
+        self._load_ida_lvar_anchors(valid_classes)
         self._load_callarg_param_anchors(valid_classes)
         self._load_def_reclass_anchors(valid_classes, member_types)
 
@@ -1355,6 +1356,47 @@ class TypeInferenceEngine:
         if addr is not None:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
+
+    def _load_ida_lvar_anchors(self, valid_classes):
+        """X157: IDA Hex-Rays 局部变量类型锚（全量 lvar 导出 + 桥接）。
+
+        来源 anchors/ida_lvar_anchors.json：19,023 个函数的 161,635 个 lvar 里
+        14,368 个是类指针，按 this/param/寄存器 defea/栈槽 桥接到约束图变量后
+        得到 8,405 条锚（其中 1,587 条纠正既有类类型、571 条把标量补成类）。
+        这是 IDA 侧最直接的局部变量类型证据，rank 5。
+        """
+        _p = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "ida_lvar_anchors.json"))
+        if not os.path.exists(_p):
+            print("  ida_lvar: file missing", file=sys.stderr)
+            return
+        with open(_p, "r", encoding="utf-8") as _f:
+            _d = json.load(_f)
+        n = 0
+        n_skip = 0
+        for _var, _cls in _d.items():
+            vid = self.var_to_id.get(_var)
+            if vid is None:
+                continue
+            lt = self._to_lattice_type(_cls, valid_classes)
+            if lt is None or lt in (VOID_PTR, TOP):
+                continue
+            # 冲突弃权：与该变量既有锚不相容时跳过（保持 TOP=0）
+            _bad = False
+            for _prev in self.anchor_by_var.get(vid, ()):
+                _m = self.lattice.meet(_prev.lattice_type, lt)
+                if _m in (TOP,):
+                    _bad = True
+                    break
+            if _bad:
+                n_skip += 1
+                continue
+            a = Anchor(vid, _var, lt, "ida_lvar")
+            self.anchors.append(a)
+            self.anchor_by_var[vid].append(a)
+            n += 1
+        print(f"  ida_lvar anchors: {n} (conflicts abstained: {n_skip})", file=sys.stderr)
 
     def _load_minclass_strong_anchors(self, valid_classes):
         """X156: min-class 求解器的「装表支持」强锚（763 条）。
@@ -2706,6 +2748,7 @@ class TypeInferenceEngine:
             "callarg_param": 3,
             "ida_callarg": 4,
             "minclass_strong": 5,
+            "ida_lvar": 5,
             "ida_param_s2": 4,
             "cast_explicit": 3,
             "global_cast": 3,
