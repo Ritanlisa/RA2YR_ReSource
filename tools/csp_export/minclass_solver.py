@@ -138,8 +138,13 @@ class UF:
 # ==========================================================================
 # 1. 类宇宙
 # ==========================================================================
-def build_universe(use_evidence=True):
+def build_universe(use_evidence=True, prune_dead=False):
     db = jload("anchors/class_db.json")["classes"]
+    if prune_dead:
+        _dead = set(jload("anchors/dead_classes.json", []) or [])
+        _before = len(db)
+        db = {k: v for k, v in db.items() if k not in _dead}
+        print("[universe] pruned dead classes: %d -> %d" % (_before, len(db)), flush=True)
     lay = jload("tools/class_layouts.json")
     align = jload("anchors/class_name_align.json", {})
     malias = jload("anchors/mangled_alias.json", {})
@@ -754,6 +759,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--prune-dead", action="store_true",
+                    help="从候选宇宙剔除零引用死类（anchors/dead_classes.json）")
     ap.add_argument("--dump-domains", action="store_true",
                     help="写出每簇候选域大小（判断多少簇真正被证据确定）")
     ap.add_argument("--strict-c1", action="store_true",
@@ -771,7 +778,7 @@ def main():
     args = ap.parse_args()
 
     t_start = time.time()
-    U = build_universe(use_evidence=(args.evidence != "none"))
+    U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
     FULL = (1 << n) - 1
     print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "

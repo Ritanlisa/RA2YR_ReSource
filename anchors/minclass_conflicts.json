@@ -36,21 +36,21 @@
      "pin_classes": [
       "CellClass"
      ],
-     "c3_classes": 1137
+     "c3_classes": 952
     },
     {
      "entity": "T:71A760",
      "pin_classes": [
       "TagClass"
      ],
-     "c3_classes": 1081
+     "c3_classes": 896
     },
     {
      "entity": "T:71AB60",
      "pin_classes": [
       "FactoryClass"
      ],
-     "c3_classes": 1081
+     "c3_classes": 896
     },
     {
      "entity": "T:44F820",
@@ -60,14 +60,14 @@
       "INIEntry@INIClass",
       "INISection@INIClass"
      ],
-     "c3_classes": 1081
+     "c3_classes": 896
     },
     {
      "entity": "T:6B7230",
      "pin_classes": [
       "SpawnManagerClass"
      ],
-     "c3_classes": 1081
+     "c3_classes": 896
     },
     {
      "entity": "T:6E5FE0",
@@ -77,7 +77,7 @@
       "INIEntry@INIClass",
       "INISection@INIClass"
      ],
-     "c3_classes": 1180
+     "c3_classes": 995
     },
     {
      "entity": "T:727880",
@@ -87,7 +87,7 @@
       "INIEntry@INIClass",
       "INISection@INIClass"
      ],
-     "c3_classes": 1180
+     "c3_classes": 995
     }
    ]
   },
@@ -108,14 +108,14 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 791,
-  "K_upper": 791,
-  "lower_bound": 791,
-  "constrained_clusters": 15564,
-  "free_clusters": 27554,
+  "K": 785,
+  "K_upper": 785,
+  "lower_bound": 785,
+  "constrained_clusters": 15551,
+  "free_clusters": 27567,
   "conflicts": 0,
   "c1_gaps": 0,
-  "universe": 1597,
+  "universe": 1400,
   "entities": 43827
  },
  "family_table": [
@@ -144,22 +144,22 @@
   {
    "family": "C2",
    "desc": "this passing (arg class ⊑ callee this-class)",
-   "evidence": 14503,
-   "entities_touched": 9342,
+   "evidence": 14502,
+   "entities_touched": 9341,
    "clusters_constrained": 13159,
-   "clusters_pinned": 5197,
+   "clusters_pinned": 5183,
    "clusters_free": 29957,
-   "pinned_classes": 592,
-   "forced_classes": 592,
+   "pinned_classes": 589,
+   "forced_classes": 589,
    "conflicts": 2,
    "c1_gaps": 0,
-   "K": 596,
-   "K_upper": 598,
-   "K_total": 596,
-   "K_greedy": 596,
-   "delta_forced": 592,
-   "delta_K": 595,
-   "lower_bound": 596,
+   "K": 593,
+   "K_upper": 595,
+   "K_total": 593,
+   "K_greedy": 593,
+   "delta_forced": 589,
+   "delta_K": 592,
+   "lower_bound": 593,
    "merges": 0,
    "bad_cover": 0
   },
@@ -169,19 +169,19 @@
    "evidence": 14110,
    "entities_touched": 2252,
    "clusters_constrained": 13742,
-   "clusters_pinned": 5197,
+   "clusters_pinned": 5183,
    "clusters_free": 29374,
-   "pinned_classes": 592,
-   "forced_classes": 592,
+   "pinned_classes": 589,
+   "forced_classes": 589,
    "conflicts": 2,
    "c1_gaps": 0,
-   "K": 596,
-   "K_upper": 598,
-   "K_total": 596,
-   "K_greedy": 596,
+   "K": 593,
+   "K_upper": 595,
+   "K_total": 593,
+   "K_greedy": 593,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 596,
+   "lower_bound": 593,
    "merges": 0,
    "bad_cover": 0
   },
@@ -191,19 +191,19 @@
    "evidence": 1295,
    "entities_touched": 1295,
    "clusters_constrained": 13749,
-   "clusters_pinned": 6174,
+   "clusters_pinned": 6160,
    "clusters_free": 29368,
-   "pinned_classes": 754,
-   "forced_classes": 754,
+   "pinned_classes": 751,
+   "forced_classes": 751,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 754,
-   "K_upper": 755,
-   "K_total": 754,
-   "K_greedy": 754,
+   "K": 751,
+   "K_upper": 752,
+   "K_total": 751,
+   "K_greedy": 751,
    "delta_forced": 162,
    "delta_K": 158,
-   "lower_bound": 754,
+   "lower_bound": 751,
    "merges": 0,
    "bad_cover": 0
   },
@@ -213,19 +213,19 @@
    "evidence": 842,
    "entities_touched": 839,
    "clusters_constrained": 14582,
-   "clusters_pinned": 6174,
+   "clusters_pinned": 6160,
    "clusters_free": 28535,
-   "pinned_classes": 754,
-   "forced_classes": 754,
+   "pinned_classes": 751,
+   "forced_classes": 751,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 754,
-   "K_upper": 755,
-   "K_total": 754,
-   "K_greedy": 755,
+   "K": 751,
+   "K_upper": 752,
+   "K_total": 751,
+   "K_greedy": 752,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 754,
+   "lower_bound": 751,
    "merges": 1,
    "bad_cover": 0
   },
@@ -235,19 +235,19 @@
    "evidence": 1377,
    "entities_touched": 1377,
    "clusters_constrained": 14582,
-   "clusters_pinned": 6174,
+   "clusters_pinned": 6160,
    "clusters_free": 28535,
-   "pinned_classes": 754,
-   "forced_classes": 754,
+   "pinned_classes": 751,
+   "forced_classes": 751,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 754,
-   "K_upper": 755,
-   "K_total": 754,
-   "K_greedy": 755,
+   "K": 751,
+   "K_upper": 752,
+   "K_total": 751,
+   "K_greedy": 752,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 754,
+   "lower_bound": 751,
    "merges": 1,
    "bad_cover": 0
   },
@@ -257,19 +257,19 @@
    "evidence": 79,
    "entities_touched": 79,
    "clusters_constrained": 14656,
-   "clusters_pinned": 6239,
+   "clusters_pinned": 6225,
    "clusters_free": 28461,
-   "pinned_classes": 755,
-   "forced_classes": 755,
+   "pinned_classes": 752,
+   "forced_classes": 752,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 755,
-   "K_upper": 756,
-   "K_total": 755,
-   "K_greedy": 756,
+   "K": 752,
+   "K_upper": 753,
+   "K_total": 752,
+   "K_greedy": 753,
    "delta_forced": 1,
    "delta_K": 1,
-   "lower_bound": 755,
+   "lower_bound": 752,
    "merges": 1,
    "bad_cover": 0
   },
@@ -279,41 +279,41 @@
    "evidence": 158,
    "entities_touched": 158,
    "clusters_constrained": 14742,
-   "clusters_pinned": 6352,
+   "clusters_pinned": 6338,
    "clusters_free": 28376,
-   "pinned_classes": 756,
-   "forced_classes": 756,
+   "pinned_classes": 753,
+   "forced_classes": 753,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 756,
-   "K_upper": 756,
-   "K_total": 756,
-   "K_greedy": 757,
+   "K": 753,
+   "K_upper": 753,
+   "K_total": 753,
+   "K_greedy": 754,
    "delta_forced": 1,
    "delta_K": 1,
-   "lower_bound": 756,
+   "lower_bound": 753,
    "merges": 1,
    "bad_cover": 0
   },
   {
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
-   "evidence": 6466,
-   "entities_touched": 6102,
-   "clusters_constrained": 15564,
-   "clusters_pinned": 7215,
-   "clusters_free": 27554,
-   "pinned_classes": 789,
-   "forced_classes": 789,
+   "evidence": 6384,
+   "entities_touched": 6089,
+   "clusters_constrained": 15551,
+   "clusters_pinned": 7199,
+   "clusters_free": 27567,
+   "pinned_classes": 785,
+   "forced_classes": 785,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 791,
-   "K_upper": 791,
-   "K_total": 791,
-   "K_greedy": 791,
-   "delta_forced": 33,
-   "delta_K": 35,
-   "lower_bound": 791,
+   "K": 785,
+   "K_upper": 785,
+   "K_total": 785,
+   "K_greedy": 785,
+   "delta_forced": 32,
+   "delta_K": 32,
+   "lower_bound": 785,
    "merges": 0,
    "bad_cover": 0
   }
@@ -1559,10 +1559,10 @@
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7193,
-   "matched_strict": 6125,
-   "no_match": 1068,
+   "matched_strict": 6116,
+   "no_match": 1077,
    "by_cause": {
-    "width_mismatch_only": 759,
+    "width_mismatch_only": 768,
     "suspicious_large_offset": 215,
     "param_unknown_class": 78,
     "no_class_has_all_offsets_sparse_layout": 16
@@ -4085,54 +4085,6 @@
     "vtable": "0x7E5338"
    },
    {
-    "class": "RLEBlitTransXlatZRead",
-    "class_db": 6,
-    "authority": 3,
-    "vtable": "0x7E5560"
-   },
-   {
-    "class": "RLEBlitTransXlat",
-    "class_db": 6,
-    "authority": 3,
-    "vtable": "0x7E55C0"
-   },
-   {
-    "class": "BlitTransXlat",
-    "class_db": 10,
-    "authority": 5,
-    "vtable": "0x7E5A20"
-   },
-   {
-    "class": "BlitPlainXlat",
-    "class_db": 10,
-    "authority": 5,
-    "vtable": "0x7E5A38"
-   },
-   {
-    "class": "RLEBlitTransXlatZRead",
-    "class_db": 6,
-    "authority": 3,
-    "vtable": "0x7E5AC0"
-   },
-   {
-    "class": "RLEBlitTransXlat",
-    "class_db": 6,
-    "authority": 3,
-    "vtable": "0x7E5B00"
-   },
-   {
-    "class": "BlitTransXlat",
-    "class_db": 10,
-    "authority": 5,
-    "vtable": "0x7E5B58"
-   },
-   {
-    "class": "BlitPlainXlat",
-    "class_db": 10,
-    "authority": 5,
-    "vtable": "0x7E5B70"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -5457,6 +5409,54 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7EEBE4"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EEC04"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EEC24"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EEC44"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EEC8C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EECAC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EECCC"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EECEC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EED20"
    }
   ],
   "c7_variance_violations": [
@@ -8961,7 +8961,7 @@
     "param_class": "CellClass"
    }
   ],
-  "c7_variance_violation_count": 1636,
+  "c7_variance_violation_count": 1631,
   "equality_channels": {
    "callarg_direct": {
     "unions": 121,

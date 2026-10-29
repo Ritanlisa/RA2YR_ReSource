@@ -1,2949 +1,904 @@
 {
- "meta": {
-  "audit": {
-   "authority": {
-    "classes": 954,
-    "primary_slots": 13204,
-    "secondary_slots": 840,
-    "secondary_tables": 260,
-    "slots_with_proto": 13188
-   },
-   "known_good_reproduction": {
-    "BuildingClass": 322,
-    "FootClass": 341,
-    "MissionClass": 157,
-    "ObjectClass": 122,
-    "RadioClass": 161,
-    "TechnoClass": 309
-   },
-   "method": "binary vtable capacity (primary + every secondary) vs depth-0 `virtual` count in class body",
-   "over_classes": [
-    "?$List@PAUINIEntry@INIClass@@",
-    "?$List@PAUINISection@INIClass@@",
-    "?$List@PAVMixFileClass@@",
-    "?$VectorCursor@IV?$DynamicVectorClass@I@@",
-    "?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@",
-    "?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@",
-    "?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@",
-    "?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@",
-    "?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@",
-    "?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@",
-    "?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@",
-    "BlowStraw",
-    "CD",
-    "ConnectionClass",
-    "ConnectionPointClass",
-    "EnumConnectionPointsClass",
-    "EnumConnectionsClass",
-    "GScreenClass",
-    "INIClass",
-    "LoadProgressMgr",
-    "MSFont",
-    "MultiplayerBattleTeam",
-    "RandomStraw",
-    "ScoreAnimClass"
-   ],
-   "regen_of_vtable_slot_authority": "0 value diffs (pure function of x128 + slot signatures)",
-   "report": ".omo/x191/virtual_audit.md",
-   "unnamed_vtables": {
-    "after_real_unnamed": 0,
-    "before": 162,
-    "high_confidence_attributions": 0,
-    "real_tables_attributed": 1214,
-    "real_vtables_among_them": 0
-   },
-   "virtual_audit": {
-    "NO_HEADER": 207,
-    "OK": 231,
-    "OVER": 24,
-    "UNDER": 492
-   }
-  },
-  "falsification": [
-   "1214/1214 real vtables have ??_R4<Class>@@6B@ at [vt-4]; 0/162 of these do",
-   "1177 ??_7<Class>@@6B@ symbols exist in the IDB and all are inside the x128 universe",
-   "no install instruction (mov <mem>, offset V) exists for any of the 162",
-   "146/162 have zero slots that are function starts; the other 16 are jump/atexit/branch tables"
-  ],
-  "generated_by": ".omo/x191/build_attribution.py",
-  "idb": "gamemd.exe.i64",
-  "method": [
-   "xrefs_to(V) -> decode instruction -> containing function",
-   "install = mov <mem>, offset V (vtable store); push/cmp/mov reg, offset V are string/compare uses",
-   "[vt-4] resolved: a real MSVC vftable points at a ??_R4<Class>@@6B@ COL",
-   "??_7<Class>@@6B@ data symbols enumerated as the authoritative primary-vftable universe"
-  ],
-  "result": {
-   "attributed": 0,
-   "entries": 162,
-   "kinds": {
-    "fnptr_array": 9,
-    "mixed_fnptr_array": 7,
-    "non_vtable_data": 146
-   },
-   "non_vtable_artifacts": 162,
-   "real_vtables": 0
-  },
-  "source": "anchors/vtable_authority_x128.json (162 entries with class=null) + live IDA xref/insn scan"
- },
- "vtables": {
-  "0x7F371C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F371C",
-   "xref_total": 0
-  },
-  "0x7F95C4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F95C4",
-   "xref_total": 0
-  },
-  "0x7F9634": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F9634",
-   "xref_total": 0
-  },
-  "0x7F9654": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F9654",
-   "xref_total": 0
-  },
-  "0x7F96F8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 13,
-   "vtable": "0x7F96F8",
-   "xref_total": 0
-  },
-  "0x7F9770": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x87C200",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aSat",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 8,
-   "vtable": "0x7F9770",
-   "xref_total": 1
-  },
-  "0x7F979C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F979C",
-   "xref_total": 0
-  },
-  "0x7F9848": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x87C4CC",
-     "func_name": null,
-     "insn": "off_87C4CC"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_7F9848",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F9848",
-   "xref_total": 1
-  },
-  "0x7F98F4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F98F4",
-   "xref_total": 0
-  },
-  "0x7F9900": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F9900",
-   "xref_total": 0
-  },
-  "0x7F9EC4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7F9EC4",
-   "xref_total": 0
-  },
-  "0x7FA274": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 3,
-   "vtable": "0x7FA274",
-   "xref_total": 0
-  },
-  "0x7FA2D4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7D7397",
-     "func_name": "_ProcessCodePage",
-     "insn": "push    offset off_7FA2D4; Str2"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_7FA2D4",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA2D4",
-   "xref_total": 1
-  },
-  "0x7FA2E4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA2E4",
-   "xref_total": 0
-  },
-  "0x7FA2F4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA2F4",
-   "xref_total": 0
-  },
-  "0x7FA300": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA300",
-   "xref_total": 0
-  },
-  "0x7FA30C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA30C",
-   "xref_total": 0
-  },
-  "0x7FA318": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA318",
-   "xref_total": 0
-  },
-  "0x7FA324": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA324",
-   "xref_total": 0
-  },
-  "0x7FA330": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA330",
-   "xref_total": 0
-  },
-  "0x7FA3E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 3,
-   "vtable": "0x7FA3E8",
-   "xref_total": 0
-  },
-  "0x7FA43C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 3,
-   "vtable": "0x7FA43C",
-   "xref_total": 0
-  },
-  "0x7FA458": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA458",
-   "xref_total": 0
-  },
-  "0x7FA470": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA470",
-   "xref_total": 0
-  },
-  "0x7FA47C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA47C",
-   "xref_total": 0
-  },
-  "0x7FA48C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 2,
-   "vtable": "0x7FA48C",
-   "xref_total": 0
-  },
-  "0x80F220": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F11C",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_ADVAPI32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F220",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 9,
-   "vtable": "0x80F220",
-   "xref_total": 1
-  },
-  "0x80F250": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 5,
-   "vtable": "0x80F250",
-   "xref_total": 0
-  },
-  "0x80F278": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F108",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_GDI32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F278",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 22,
-   "vtable": "0x80F278",
-   "xref_total": 1
-  },
-  "0x80F2D4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F1E4",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_IMM32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F2D4",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 6,
-   "vtable": "0x80F2D4",
-   "xref_total": 1
-  },
-  "0x80F2F0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F0E0",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_KERNEL32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F2F0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 162,
-   "vtable": "0x80F2F0",
-   "xref_total": 1
-  },
-  "0x80F5B4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F0F4",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_USER32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F5B4",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 96,
-   "vtable": "0x80F5B4",
-   "xref_total": 1
-  },
-  "0x80F738": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F1BC",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_VERSION"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F738",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 3,
-   "vtable": "0x80F738",
-   "xref_total": 1
-  },
-  "0x80F748": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F16C",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_WINMM"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F748",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 5,
-   "vtable": "0x80F748",
-   "xref_total": 1
-  },
-  "0x80F7B0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F1F8",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_binkw32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F7B0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 13,
-   "vtable": "0x80F7B0",
-   "xref_total": 1
-  },
-  "0x80F7E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x80F144",
-     "func_name": null,
-     "insn": "__IMPORT_DESCRIPTOR_ole32"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_80F7E8",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".rdata",
-   "slot_count": 15,
-   "vtable": "0x80F7E8",
-   "xref_total": 1
-  },
-  "0x812004": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 216,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 3944,
-   "vtable": "0x812004",
-   "xref_total": 0
-  },
-  "0x815DAC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 4,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x815DAC",
-   "xref_total": 0
-  },
-  "0x815DC4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 3,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x815DC4",
-   "xref_total": 0
-  },
-  "0x81632C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 11,
-   "vtable": "0x81632C",
-   "xref_total": 0
-  },
-  "0x81636C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x81636C",
-   "xref_total": 0
-  },
-  "0x817288": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x817288",
-   "xref_total": 0
-  },
-  "0x817588": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x817588",
-   "xref_total": 0
-  },
-  "0x8182DC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x8182DC",
-   "xref_total": 0
-  },
-  "0x8186E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x429432",
-     "func_name": "sub_429420",
-     "insn": "push    offset psz; psz"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "psz",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 6,
-   "vtable": "0x8186E8",
-   "xref_total": 1
-  },
-  "0x8190DC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x45002B",
-     "func_name": "BuildingClass::ReadConstructionData",
-     "insn": "push    (offset stru_8190C8.Name+14h); Format"
-    },
-    {
-     "from_addr": "0x450056",
-     "func_name": "BuildingClass::ReadConstructionData",
-     "insn": "push    (offset stru_8190C8.Name+14h); Format"
-    },
-    {
-     "from_addr": "0x49D75F",
-     "func_name": "SerializeCampaignOptions",
-     "insn": "push    (offset stru_8190C8.Name+14h); Format"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8190DC",
-   "xref_total": 4
-  },
-  "0x81B164": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x46BF2E",
-     "func_name": "BulletTypeClass::LoadFromINI",
-     "insn": "push    offset off_81B164; unsigned __int8 *"
-    },
-    {
-     "from_addr": "0x714B1B",
-     "func_name": "ObjectTypeClass::LoadExtras",
-     "insn": "push    offset off_81B164; unsigned __int8 *"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_81B164",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x81B164",
-   "xref_total": 2
-  },
-  "0x81D98C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7E5284",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_81D98C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x81D98C",
-   "xref_total": 1
-  },
-  "0x82052C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B96D2",
-     "func_name": "TextRenderer::RenderCentered",
-     "insn": "push    offset aSD; BufferCount"
-    },
-    {
-     "from_addr": "0x4B96E3",
-     "func_name": "TextRenderer::RenderCentered",
-     "insn": "push    offset aSD; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aSD",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82052C",
-   "xref_total": 2
-  },
-  "0x820544": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B9A52",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset off_820544; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_820544",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x820544",
-   "xref_total": 1
-  },
-  "0x820558": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B9A2F",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset off_820558; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_820558",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x820558",
-   "xref_total": 1
-  },
-  "0x82056C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82056C",
-   "xref_total": 0
-  },
-  "0x820578": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B9A18",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset off_820578; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_820578",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x820578",
-   "xref_total": 1
-  },
-  "0x820594": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B99E9",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset off_820594; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_820594",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x820594",
-   "xref_total": 1
-  },
-  "0x8205A8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B99D5",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset off_8205A8; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8205A8",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8205A8",
-   "xref_total": 1
-  },
-  "0x8205BC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4B99AD",
-     "func_name": "DisplayBuildingInfoPanel",
-     "insn": "push    offset aNameS_0; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aNameS_0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8205BC",
-   "xref_total": 1
-  },
-  "0x820804": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4C40A6",
-     "func_name": "CreditsPower::Display",
-     "insn": "mov     edi, offset off_820804"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_820804",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x820804",
-   "xref_total": 1
-  },
-  "0x82081C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x4C409A",
-     "func_name": "CreditsPower::Display",
-     "insn": "mov     edi, offset off_82081C"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82081C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 7,
-   "vtable": "0x82081C",
-   "xref_total": 1
-  },
-  "0x825BAC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x527607",
-     "func_name": "INIClass::SetInt",
-     "insn": "push    offset off_825BAC; Format"
-    },
-    {
-     "from_addr": "0x5276A8",
-     "func_name": "INIClass::SetIntFormat",
-     "insn": "push    offset off_825BAC; Format"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_825BAC",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x825BAC",
-   "xref_total": 2
-  },
-  "0x825CC0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x825CC0",
-   "xref_total": 0
-  },
-  "0x8278B4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x537A60",
-     "func_name": "Commands::ddtor",
-     "insn": "mov     eax, offset g_INI_Key_De; \"De\""
-    },
-    {
-     "from_addr": "0x537AC0",
-     "func_name": "CreateTeamCommand::performAction_189",
-     "insn": "mov     eax, offset g_INI_Key_De; \"De\""
-    },
-    {
-     "from_addr": "0x55DFE7",
-     "func_name": "SyncDelayClass::ProcessNetworkSync",
-     "insn": "push    offset g_INI_Key_De; String2"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "g_INI_Key_De",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8278B4",
-   "xref_total": 3
-  },
-  "0x8278C0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x537A70",
-     "func_name": "Commands::Release",
-     "insn": "mov     eax, offset off_8278C0"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8278C0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x8278C0",
-   "xref_total": 1
-  },
-  "0x8278D8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8278D8",
-   "xref_total": 0
-  },
-  "0x8278E4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8278E4",
-   "xref_total": 0
-  },
-  "0x8278F0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x537A80",
-     "func_name": "Commands::StubReturn8550640",
-     "insn": "mov     eax, offset off_8278F0"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8278F0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8278F0",
-   "xref_total": 1
-  },
-  "0x8278FC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x8278FC",
-   "xref_total": 0
-  },
-  "0x827914": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x827914",
-   "xref_total": 0
-  },
-  "0x827920": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x827920",
-   "xref_total": 0
-  },
-  "0x82794C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x537AD0",
-     "func_name": "CreateTeamCommand::performAction_190",
-     "insn": "mov     eax, offset aGameSyncLoggin; \"Game sync logging\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aGameSyncLoggin",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x82794C",
-   "xref_total": 1
-  },
-  "0x827960": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x827960",
-   "xref_total": 0
-  },
-  "0x827970": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x537AE0",
-     "func_name": "CreateTeamCommand::performAction_191",
-     "insn": "mov     eax, offset off_827970"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_827970",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x827970",
-   "xref_total": 1
-  },
-  "0x82797C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82797C",
-   "xref_total": 0
-  },
-  "0x827988": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x827988",
-   "xref_total": 0
-  },
-  "0x82799C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x82799C",
-   "xref_total": 0
-  },
-  "0x8279AC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8279AC",
-   "xref_total": 0
-  },
-  "0x828708": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542E37",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828708; BufferCount"
-    },
-    {
-     "from_addr": "0x55F54A",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_828708; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828708",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x828708",
-   "xref_total": 2
-  },
-  "0x828724": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542DA6",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828724; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828724",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x828724",
-   "xref_total": 1
-  },
-  "0x828748": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542D42",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828748; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828748",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x828748",
-   "xref_total": 1
-  },
-  "0x82876C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542CDC",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_82876C; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82876C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82876C",
-   "xref_total": 1
-  },
-  "0x828788": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542C78",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828788; BufferCount"
-    },
-    {
-     "from_addr": "0x55F4DB",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_828788; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828788",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x828788",
-   "xref_total": 2
-  },
-  "0x8287A4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542BB9",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_8287A4; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8287A4",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x8287A4",
-   "xref_total": 1
-  },
-  "0x8287C8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8287C8",
-   "xref_total": 0
-  },
-  "0x8287DC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542AED",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_8287DC; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8287DC",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x8287DC",
-   "xref_total": 1
-  },
-  "0x828814": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5429FE",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828814; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828814",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x828814",
-   "xref_total": 1
-  },
-  "0x828830": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5428BC",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_828830; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_828830",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x828830",
-   "xref_total": 1
-  },
-  "0x828848": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5427ED",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset aFspsD; \"FSPS : %d\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aFspsD",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x828848",
-   "xref_total": 1
-  },
-  "0x828864": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x828864",
-   "xref_total": 0
-  },
-  "0x82887C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5426CF",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_82887C; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82887C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 6,
-   "vtable": "0x82887C",
-   "xref_total": 1
-  },
-  "0x8288A0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x542657",
-     "func_name": "ScoreBoard::Render",
-     "insn": "push    offset off_8288A0; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_8288A0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x8288A0",
-   "xref_total": 1
-  },
-  "0x82A0E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x55EA4B",
-     "func_name": "Chat::ProcessMessages",
-     "insn": "push    offset off_82A0E8; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82A0E8",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82A0E8",
-   "xref_total": 1
-  },
-  "0x82A18C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x55F615",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_82A18C; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82A18C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82A18C",
-   "xref_total": 1
-  },
-  "0x82A1D0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x55F423",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_82A1D0; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82A1D0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x82A1D0",
-   "xref_total": 1
-  },
-  "0x82A1E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82A1E8",
-   "xref_total": 0
-  },
-  "0x82A1F4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x55F3A3",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_82A1F4; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82A1F4",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x82A1F4",
-   "xref_total": 1
-  },
-  "0x82A224": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x55F2F0",
-     "func_name": "DrawHUD",
-     "insn": "push    offset off_82A224; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_82A224",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82A224",
-   "xref_total": 1
-  },
-  "0x82B754": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x82B198",
-     "func_name": null,
-     "insn": "<data>"
-    },
-    {
-     "from_addr": "0x82B254",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aCar",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82B754",
-   "xref_total": 2
-  },
-  "0x82BA5C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x82BA5C",
-   "xref_total": 0
-  },
-  "0x82C5C8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5B5B62",
-     "func_name": "ModemGame::UpdatePlayerNameAndColor",
-     "insn": "push    offset aSS; BufferCount"
-    },
-    {
-     "from_addr": "0x5B95D5",
-     "func_name": "ModemGuest::UpdateGuestPlayerInfo",
-     "insn": "push    offset aSS; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aSS",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x82C5C8",
-   "xref_total": 2
-  },
-  "0x82E198": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 6,
-   "vtable": "0x82E198",
-   "xref_total": 0
-  },
-  "0x831820": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5E584A",
-     "func_name": "SetupNetworkLobbyDialog",
-     "insn": "push    offset off_831820; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_831820",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x831820",
-   "xref_total": 1
-  },
-  "0x831830": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x831830",
-   "xref_total": 0
-  },
-  "0x83183C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x83183C",
-   "xref_total": 0
-  },
-  "0x832A08": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5F32EB",
-     "func_name": "NullModemClass::Negotiate",
-     "insn": "push    offset off_832A08"
-    },
-    {
-     "from_addr": "0x69610A",
-     "func_name": "NetworkDialog::InitModemSettings",
-     "insn": "mov     edi, offset off_832A08"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_832A08",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x832A08",
-   "xref_total": 2
-  },
-  "0x832AE0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x5F82DA",
-     "func_name": "VoxelAnimType::LoadAnim",
-     "insn": "push    offset off_832AE0; Format"
-    },
-    {
-     "from_addr": "0x5F837B",
-     "func_name": "VoxelAnimType::LoadAnim",
-     "insn": "push    offset off_832AE0; Format"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_832AE0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x832AE0",
-   "xref_total": 2
-  },
-  "0x835870": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x835870",
-   "xref_total": 0
-  },
-  "0x836468": {
-   "class": null,
-   "col": "unk_836468",
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x836464",
-     "func_name": null,
-     "insn": "off_836464"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "unk_836468",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x836468",
-   "xref_total": 1
-  },
-  "0x839354": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x6541F4",
-     "func_name": "RenderScoreboardSidebar",
-     "insn": "push    offset asc_839354; \"________\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "asc_839354",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x839354",
-   "xref_total": 1
-  },
-  "0x83A5C8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83A5C8",
-   "xref_total": 0
-  },
-  "0x83D5A8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x67D082",
-     "func_name": "SaveScenarioClassGame_AdjustMPSaveFileName",
-     "insn": "push    offset off_83D5A8"
-    },
-    {
-     "from_addr": "0x67E56C",
-     "func_name": "Game::LoadSaved",
-     "insn": "push    offset off_83D5A8"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_83D5A8",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x83D5A8",
-   "xref_total": 2
-  },
-  "0x83D6C0": {
-   "class": null,
-   "col": "g_INI_Key_GameType",
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x681C71",
-     "func_name": "ScenarioPropertyReadCOM",
-     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
-    },
-    {
-     "from_addr": "0x681D07",
-     "func_name": "ScenarioPropertyReadCOM",
-     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
-    },
-    {
-     "from_addr": "0x681DA3",
-     "func_name": "ScenarioPropertyReadCOM",
-     "insn": "cmp     eax, offset g_INI_Key_GameType; \"GameType\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "g_INI_Key_GameType",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x83D6C0",
-   "xref_total": 12
-  },
-  "0x83D6D4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "aCampaign_0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x83D6D4",
-   "xref_total": 0
-  },
-  "0x83D6E8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 7,
-   "vtable": "0x83D6E8",
-   "xref_total": 0
-  },
-  "0x83D708": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x83D708",
-   "xref_total": 0
-  },
-  "0x83D724": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x83D724",
-   "xref_total": 0
-  },
-  "0x83D73C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "aExecutableName",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 7,
-   "vtable": "0x83D73C",
-   "xref_total": 0
-  },
-  "0x83D75C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x83D75C",
-   "xref_total": 0
-  },
-  "0x83D770": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x83D770",
-   "xref_total": 0
-  },
-  "0x83D784": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83D784",
-   "xref_total": 0
-  },
-  "0x83D790": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "aStartTime",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83D790",
-   "xref_total": 0
-  },
-  "0x83D79C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83D79C",
-   "xref_total": 0
-  },
-  "0x83D7A8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 8,
-   "vtable": "0x83D7A8",
-   "xref_total": 0
-  },
-  "0x83D7CC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x83D7CC",
-   "xref_total": 0
-  },
-  "0x83D7DC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 1,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "mixed_fnptr_array",
-   "seq": ".data",
-   "slot_count": 6,
-   "vtable": "0x83D7DC",
-   "xref_total": 0
-  },
-  "0x83D7F8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x83D65C",
-     "func_name": null,
-     "insn": "off_83D65C"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_83D7F8",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 10,
-   "vtable": "0x83D7F8",
-   "xref_total": 1
-  },
-  "0x83DC38": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x686FC5",
-     "func_name": "ScenarioClass::LoadMap",
-     "insn": "push    offset aMissing; \"MISSING:\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aMissing",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x83DC38",
-   "xref_total": 1
-  },
-  "0x83F0FC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83F0FC",
-   "xref_total": 0
-  },
-  "0x83F4CC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x699EA2",
-     "func_name": "SessionClass::LoadMissionList",
-     "insn": "push    offset off_83F4CC; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_83F4CC",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x83F4CC",
-   "xref_total": 1
-  },
-  "0x83F4DC": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x699E88",
-     "func_name": "SessionClass::LoadMissionList",
-     "insn": "push    offset off_83F4DC; BufferCount"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_83F4DC",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x83F4DC",
-   "xref_total": 1
-  },
-  "0x8421F8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x8421F8",
-   "xref_total": 0
-  },
-  "0x842208": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421E0",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aRight_0",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x842208",
-   "xref_total": 1
-  },
-  "0x842214": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421D8",
-     "func_name": null,
-     "insn": "off_8421D8"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aLeft",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x842214",
-   "xref_total": 1
-  },
-  "0x842220": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421C8",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_842220",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x842220",
-   "xref_total": 1
-  },
-  "0x84222C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421C0",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_84222C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84222C",
-   "xref_total": 1
-  },
-  "0x842238": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421B8",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aPosition",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x842238",
-   "xref_total": 1
-  },
-  "0x84224C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421B0",
-     "func_name": null,
-     "insn": "<data>"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_84224C",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x84224C",
-   "xref_total": 1
-  },
-  "0x842260": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x8421A8",
-     "func_name": null,
-     "insn": "off_8421A8"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_842260",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x842260",
-   "xref_total": 1
-  },
-  "0x842328": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x6CA183",
-     "func_name": "ParseMovieSubtitles",
-     "insn": "push    offset aEn; String"
-    },
-    {
-     "from_addr": "0x6CA18E",
-     "func_name": "ParseMovieSubtitles",
-     "insn": "push    offset aEn; String2"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aEn",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x842328",
-   "xref_total": 2
-  },
-  "0x842354": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x6C9F7C",
-     "func_name": "ParseMovieSubtitles",
-     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
-    },
-    {
-     "from_addr": "0x6C9F87",
-     "func_name": "ParseMovieSubtitles",
-     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
-    },
-    {
-     "from_addr": "0x6CA291",
-     "func_name": "sub_6CA1E0",
-     "insn": "push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "g_INI_Key_BeginMovie",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x842354",
-   "xref_total": 4
-  },
-  "0x845820": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x734EDE",
-     "func_name": "GetStringCSF",
-     "insn": "push    offset aMissingHs; \"MISSING:'%hs'\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aMissingHs",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x845820",
-   "xref_total": 1
-  },
-  "0x845840": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x845840",
-   "xref_total": 0
-  },
-  "0x845854": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 10,
-   "vtable": "0x845854",
-   "xref_total": 0
-  },
-  "0x845880": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 11,
-   "vtable": "0x845880",
-   "xref_total": 0
-  },
-  "0x846840": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x756843",
-     "func_name": "Voxel::ProcessColor",
-     "insn": "call    funcs_756843[esi*4]"
-    }
-   ],
-   "fn_start_slots": 32,
-   "idt_name": "funcs_756843",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 32,
-   "vtable": "0x846840",
-   "xref_total": 1
-  },
-  "0x84962C": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7737E3",
-     "func_name": "WebBrowser::LoadURLFromRegistry",
-     "insn": "push    offset aFr; Source"
-    },
-    {
-     "from_addr": "0x773CD8",
-     "func_name": "WebBrowser::Clone",
-     "insn": "push    offset aFr; Source"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aFr",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84962C",
-   "xref_total": 2
-  },
-  "0x8496B8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x773B1C",
-     "func_name": "WebBrowser::Write",
-     "insn": "push    offset aMain; \"Main\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aMain",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x8496B8",
-   "xref_total": 1
-  },
-  "0x8496C4": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x773CAF",
-     "func_name": "WebBrowser::Clone",
-     "insn": "push    offset aBadpageHtm; \"BadPage.htm\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aBadpageHtm",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x8496C4",
-   "xref_total": 1
-  },
-  "0x84A014": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84A014",
-   "xref_total": 0
-  },
-  "0x84A078": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84A078",
-   "xref_total": 0
-  },
-  "0x84A118": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84A118",
-   "xref_total": 0
-  },
-  "0x84A720": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84A720",
-   "xref_total": 0
-  },
-  "0x84AAA0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7A4012",
-     "func_name": "ComStreamClass::Write",
-     "insn": "mov     ecx, offset aUnknownStatus; \"Unknown Status\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aUnknownStatus",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x84AAA0",
-   "xref_total": 1
-  },
-  "0x84AAB0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x84AAB0",
-   "xref_total": 0
-  },
-  "0x84AB90": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7A496C",
-     "func_name": "CChatEventSink::HandleServerList",
-     "insn": "push    offset aMgl; \"MGL\""
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "aMgl",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 5,
-   "vtable": "0x84AB90",
-   "xref_total": 1
-  },
-  "0x84D780": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7AF311",
-     "func_name": "StaticString::Factory",
-     "insn": "push    offset off_84D780; char *"
-    }
-   ],
-   "fn_start_slots": 0,
-   "idt_name": "off_84D780",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x84D780",
-   "xref_total": 1
-  },
-  "0x86E0D8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 6914,
-   "vtable": "0x86E0D8",
-   "xref_total": 0
-  },
-  "0x875910": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 0,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "non_vtable_data",
-   "seq": ".data",
-   "slot_count": 4,
-   "vtable": "0x875910",
-   "xref_total": 0
-  },
-  "0x877074": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 2,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x877074",
-   "xref_total": 0
-  },
-  "0x877084": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 2,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x877084",
-   "xref_total": 0
-  },
-  "0x87B1F0": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 2,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x87B1F0",
-   "xref_total": 0
-  },
-  "0x87B200": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [],
-   "fn_start_slots": 2,
-   "idt_name": "",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 2,
-   "vtable": "0x87B200",
-   "xref_total": 0
-  },
-  "0x87BEB8": {
-   "class": null,
-   "col": null,
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7CBDAF",
-     "func_name": "__cinit",
-     "insn": "mov     eax, off_87BEB8"
-    }
-   ],
-   "fn_start_slots": 3,
-   "idt_name": "off_87BEB8",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 3,
-   "vtable": "0x87BEB8",
-   "xref_total": 1
-  },
-  "0x87C4D0": {
-   "class": null,
-   "col": "off_7F9848",
-   "confidence": "none",
-   "evidence": [
-    {
-     "from_addr": "0x7C8F6D",
-     "func_name": "__cfltcvt_init_13",
-     "insn": "mov     off_87C4D0, eax"
-    },
-    {
-     "from_addr": "0x7CE64F",
-     "func_name": "__output",
-     "insn": "call    off_87C4D0"
-    },
-    {
-     "from_addr": "0x7D255E",
-     "func_name": "__woutput",
-     "insn": "call    off_87C4D0"
-    }
-   ],
-   "fn_start_slots": 6,
-   "idt_name": "off_87C4D0",
-   "install_sites": 0,
-   "kind": "fnptr_array",
-   "seq": ".data",
-   "slot_count": 6,
-   "vtable": "0x87C4D0",
-   "xref_total": 4
-  }
- }
+"0x7F371C": [],
+"0x7F95C4": [],
+"0x7F9634": [],
+"0x7F9654": [],
+"0x7F96F8": [],
+"0x7F9770": [
+[
+"0x0087C200",
+"",
+"",
+"dd offset aSat"
+]
+],
+"0x7F979C": [],
+"0x7F9848": [
+[
+"0x0087C4CC",
+"",
+"",
+"dd offset off_7F9848"
+]
+],
+"0x7F98F4": [],
+"0x7F9900": [],
+"0x7F9EC4": [],
+"0x7FA274": [],
+"0x7FA2D4": [
+[
+"0x007D7397",
+"_ProcessCodePage",
+"0x007D7374",
+"push    offset off_7FA2D4; Str2"
+]
+],
+"0x7FA2E4": [],
+"0x7FA2F4": [],
+"0x7FA300": [],
+"0x7FA30C": [],
+"0x7FA318": [],
+"0x7FA324": [],
+"0x7FA330": [],
+"0x7FA3E8": [],
+"0x7FA43C": [],
+"0x7FA458": [],
+"0x7FA470": [],
+"0x7FA47C": [],
+"0x7FA48C": [],
+"0x80F220": [
+[
+"0x0080F11C",
+"",
+"",
+"dd rva off_80F220; Import Name Table"
+]
+],
+"0x80F250": [],
+"0x80F278": [
+[
+"0x0080F108",
+"",
+"",
+"dd rva off_80F278; Import Name Table"
+]
+],
+"0x80F2D4": [
+[
+"0x0080F1E4",
+"",
+"",
+"dd rva off_80F2D4; Import Name Table"
+]
+],
+"0x80F2F0": [
+[
+"0x0080F0E0",
+"",
+"",
+"dd rva off_80F2F0; Import Name Table"
+]
+],
+"0x80F5B4": [
+[
+"0x0080F0F4",
+"",
+"",
+"dd rva off_80F5B4; Import Name Table"
+]
+],
+"0x80F738": [
+[
+"0x0080F1BC",
+"",
+"",
+"dd rva off_80F738; Import Name Table"
+]
+],
+"0x80F748": [
+[
+"0x0080F16C",
+"",
+"",
+"dd rva off_80F748; Import Name Table"
+]
+],
+"0x80F7B0": [
+[
+"0x0080F1F8",
+"",
+"",
+"dd rva off_80F7B0; Import Name Table"
+]
+],
+"0x80F7E8": [
+[
+"0x0080F144",
+"",
+"",
+"dd rva off_80F7E8; Import Name Table"
+]
+],
+"0x812004": [],
+"0x815DAC": [],
+"0x815DC4": [],
+"0x81632C": [],
+"0x81636C": [],
+"0x817288": [],
+"0x817588": [],
+"0x8182DC": [],
+"0x8186E8": [
+[
+"0x00429432",
+"sub_429420",
+"0x00429420",
+"push    offset psz; psz"
+]
+],
+"0x8190DC": [
+[
+"0x0045002B",
+"BuildingClass::ReadConstructionData",
+"0x0044FEC0",
+"push    (offset stru_8190C8.Name+14h); Format"
+],
+[
+"0x00450056",
+"BuildingClass::ReadConstructionData",
+"0x0044FEC0",
+"push    (offset stru_8190C8.Name+14h); Format"
+],
+[
+"0x0049D75F",
+"SerializeCampaignOptions",
+"0x0049D680",
+"push    (offset stru_8190C8.Name+14h); Format"
+],
+[
+"0x00728370",
+"InfantryClass::SetMission",
+"0x00728280",
+"push    (offset stru_8190C8.Name+14h); Format"
+]
+],
+"0x81B164": [
+[
+"0x0046BF2E",
+"BulletTypeClass::LoadFromINI",
+"0x0046BEE0",
+"push    offset off_81B164; unsigned __int8 *"
+],
+[
+"0x00714B1B",
+"ObjectTypeClass::LoadExtras",
+"0x00712170",
+"push    offset off_81B164; unsigned __int8 *"
+]
+],
+"0x81D98C": [
+[
+"0x007E5284",
+"",
+"",
+"dd offset off_81D98C"
+]
+],
+"0x82052C": [
+[
+"0x004B96D2",
+"TextRenderer::RenderCentered",
+"0x004B96A0",
+"push    offset aSD; BufferCount"
+],
+[
+"0x004B96E3",
+"TextRenderer::RenderCentered",
+"0x004B96A0",
+"push    offset aSD; BufferCount"
+]
+],
+"0x820544": [
+[
+"0x004B9A52",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset off_820544; BufferCount"
+]
+],
+"0x820558": [
+[
+"0x004B9A2F",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset off_820558; BufferCount"
+]
+],
+"0x82056C": [],
+"0x820578": [
+[
+"0x004B9A18",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset off_820578; BufferCount"
+]
+],
+"0x820594": [
+[
+"0x004B99E9",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset off_820594; BufferCount"
+]
+],
+"0x8205A8": [
+[
+"0x004B99D5",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset off_8205A8; BufferCount"
+]
+],
+"0x8205BC": [
+[
+"0x004B99AD",
+"DisplayBuildingInfoPanel",
+"0x004B9890",
+"push    offset aNameS_0; BufferCount"
+]
+],
+"0x820804": [
+[
+"0x004C40A6",
+"CreditsPower::Display",
+"0x004C3E30",
+"mov     edi, offset off_820804"
+]
+],
+"0x82081C": [
+[
+"0x004C409A",
+"CreditsPower::Display",
+"0x004C3E30",
+"mov     edi, offset off_82081C"
+]
+],
+"0x825BAC": [
+[
+"0x00527607",
+"INIClass::SetInt",
+"0x005275C0",
+"push    offset off_825BAC; Format"
+],
+[
+"0x005276A8",
+"INIClass::SetIntFormat",
+"0x00527640",
+"push    offset off_825BAC; Format"
+]
+],
+"0x825CC0": [],
+"0x8278B4": [
+[
+"0x00537A60",
+"Commands::ddtor",
+"0x00537A60",
+"mov     eax, offset g_INI_Key_De; \"De\""
+],
+[
+"0x00537AC0",
+"CreateTeamCommand::performAction_189",
+"0x00537AC0",
+"mov     eax, offset g_INI_Key_De; \"De\""
+],
+[
+"0x0055DFE7",
+"SyncDelayClass::ProcessNetworkSync",
+"0x0055DEE0",
+"push    offset g_INI_Key_De; String2"
+]
+],
+"0x8278C0": [
+[
+"0x00537A70",
+"Commands::Release",
+"0x00537A70",
+"mov     eax, offset off_8278C0"
+]
+],
+"0x8278D8": [],
+"0x8278E4": [],
+"0x8278F0": [
+[
+"0x00537A80",
+"Commands::StubReturn8550640",
+"0x00537A80",
+"mov     eax, offset off_8278F0"
+]
+],
+"0x8278FC": [],
+"0x827914": [],
+"0x827920": [],
+"0x82794C": [
+[
+"0x00537AD0",
+"CreateTeamCommand::performAction_190",
+"0x00537AD0",
+"mov     eax, offset aGameSyncLoggin; \"Game sync logging\""
+]
+],
+"0x827960": [],
+"0x827970": [
+[
+"0x00537AE0",
+"CreateTeamCommand::performAction_191",
+"0x00537AE0",
+"mov     eax, offset off_827970"
+]
+],
+"0x82797C": [],
+"0x827988": [],
+"0x82799C": [],
+"0x8279AC": [],
+"0x828708": [
+[
+"0x00542E37",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828708; BufferCount"
+],
+[
+"0x0055F54A",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_828708; BufferCount"
+]
+],
+"0x828724": [
+[
+"0x00542DA6",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828724; BufferCount"
+]
+],
+"0x828748": [
+[
+"0x00542D42",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828748; BufferCount"
+]
+],
+"0x82876C": [
+[
+"0x00542CDC",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_82876C; BufferCount"
+]
+],
+"0x828788": [
+[
+"0x00542C78",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828788; BufferCount"
+],
+[
+"0x0055F4DB",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_828788; BufferCount"
+]
+],
+"0x8287A4": [
+[
+"0x00542BB9",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_8287A4; BufferCount"
+]
+],
+"0x8287C8": [],
+"0x8287DC": [
+[
+"0x00542AED",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_8287DC; BufferCount"
+]
+],
+"0x828814": [
+[
+"0x005429FE",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828814; BufferCount"
+]
+],
+"0x828830": [
+[
+"0x005428BC",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_828830; BufferCount"
+]
+],
+"0x828848": [
+[
+"0x005427ED",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset aFspsD; \"FSPS : %d\""
+]
+],
+"0x828864": [],
+"0x82887C": [
+[
+"0x005426CF",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_82887C; BufferCount"
+]
+],
+"0x8288A0": [
+[
+"0x00542657",
+"ScoreBoard::Render",
+"0x00542620",
+"push    offset off_8288A0; BufferCount"
+]
+],
+"0x82A0E8": [
+[
+"0x0055EA4B",
+"Chat::ProcessMessages",
+"0x0055E420",
+"push    offset off_82A0E8; BufferCount"
+]
+],
+"0x82A18C": [
+[
+"0x0055F615",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_82A18C; BufferCount"
+]
+],
+"0x82A1D0": [
+[
+"0x0055F423",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_82A1D0; BufferCount"
+]
+],
+"0x82A1E8": [],
+"0x82A1F4": [
+[
+"0x0055F3A3",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_82A1F4; BufferCount"
+]
+],
+"0x82A224": [
+[
+"0x0055F2F0",
+"DrawHUD",
+"0x0055F1E0",
+"push    offset off_82A224; BufferCount"
+]
+],
+"0x82B754": [
+[
+"0x0082B198",
+"",
+"",
+"dd offset aCar"
+],
+[
+"0x0082B254",
+"",
+"",
+"dd offset aCar"
+]
+],
+"0x82BA5C": [],
+"0x82C5C8": [
+[
+"0x005B5B62",
+"ModemGame::UpdatePlayerNameAndColor",
+"0x005B5AD0",
+"push    offset aSS; BufferCount"
+],
+[
+"0x005B95D5",
+"ModemGuest::UpdateGuestPlayerInfo",
+"0x005B9550",
+"push    offset aSS; BufferCount"
+]
+],
+"0x82E198": [],
+"0x831820": [
+[
+"0x005E584A",
+"SetupNetworkLobbyDialog",
+"0x005E3D10",
+"push    offset off_831820; BufferCount"
+]
+],
+"0x831830": [],
+"0x83183C": [],
+"0x832A08": [
+[
+"0x005F32EB",
+"NullModemClass::Negotiate",
+"0x005F3170",
+"push    offset off_832A08"
+],
+[
+"0x0069610A",
+"NetworkDialog::InitModemSettings",
+"0x00695FD0",
+"mov     edi, offset off_832A08"
+]
+],
+"0x832AE0": [
+[
+"0x005F82DA",
+"VoxelAnimType::LoadAnim",
+"0x005F8110",
+"push    offset off_832AE0; Format"
+],
+[
+"0x005F837B",
+"VoxelAnimType::LoadAnim",
+"0x005F8110",
+"push    offset off_832AE0; Format"
+]
+],
+"0x835870": [],
+"0x836468": [
+[
+"0x00836464",
+"",
+"",
+"dd offset unk_836468"
+]
+],
+"0x839354": [
+[
+"0x006541F4",
+"RenderScoreboardSidebar",
+"0x00653FA0",
+"push    offset asc_839354; \"________\""
+]
+],
+"0x83A5C8": [],
+"0x83D5A8": [
+[
+"0x0067D082",
+"SaveScenarioClassGame_AdjustMPSaveFileName",
+"0x0067CEF0",
+"push    offset off_83D5A8"
+],
+[
+"0x0067E56C",
+"Game::LoadSaved",
+"0x0067E440",
+"push    offset off_83D5A8"
+]
+],
+"0x83D6C0": [
+[
+"0x00681C71",
+"ScenarioPropertyReadCOM",
+"0x00681840",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x00681D07",
+"ScenarioPropertyReadCOM",
+"0x00681840",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x00681DA3",
+"ScenarioPropertyReadCOM",
+"0x00681840",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x00682181",
+"Map_Read",
+"0x00682150",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x00682266",
+"Map_Read_682240",
+"0x00682240",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x006824D7",
+"Map_Read_6824B0",
+"0x006824B0",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x00682683",
+"WriteStringCOM",
+"0x00682640",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+],
+[
+"0x0068279D",
+"GameOptions_Load",
+"0x00682780",
+"cmp     eax, offset g_INI_Key_GameType; \"GameType\""
+]
+],
+"0x83D6D4": [],
+"0x83D6E8": [],
+"0x83D708": [],
+"0x83D724": [],
+"0x83D73C": [],
+"0x83D75C": [],
+"0x83D770": [],
+"0x83D784": [],
+"0x83D790": [],
+"0x83D79C": [],
+"0x83D7A8": [],
+"0x83D7CC": [],
+"0x83D7DC": [],
+"0x83D7F8": [
+[
+"0x0083D65C",
+"",
+"",
+"dd offset off_83D7F8"
+]
+],
+"0x83DC38": [
+[
+"0x00686FC5",
+"ScenarioClass::LoadMap",
+"0x00686B20",
+"push    offset aMissing; \"MISSING:\""
+]
+],
+"0x83F0FC": [],
+"0x83F4CC": [
+[
+"0x00699EA2",
+"SessionClass::LoadMissionList",
+"0x00699980",
+"push    offset off_83F4CC; BufferCount"
+]
+],
+"0x83F4DC": [
+[
+"0x00699E88",
+"SessionClass::LoadMissionList",
+"0x00699980",
+"push    offset off_83F4DC; BufferCount"
+]
+],
+"0x8421F8": [],
+"0x842208": [
+[
+"0x008421E0",
+"",
+"",
+"dd offset aRight_0"
+]
+],
+"0x842214": [
+[
+"0x008421D8",
+"",
+"",
+"dd offset aLeft"
+]
+],
+"0x842220": [
+[
+"0x008421C8",
+"",
+"",
+"dd offset off_842220"
+]
+],
+"0x84222C": [
+[
+"0x008421C0",
+"",
+"",
+"dd offset off_84222C"
+]
+],
+"0x842238": [
+[
+"0x008421B8",
+"",
+"",
+"dd offset aPosition"
+]
+],
+"0x84224C": [
+[
+"0x008421B0",
+"",
+"",
+"dd offset off_84224C"
+]
+],
+"0x842260": [
+[
+"0x008421A8",
+"",
+"",
+"dd offset off_842260"
+]
+],
+"0x842328": [
+[
+"0x006CA183",
+"ParseMovieSubtitles",
+"0x006C9F10",
+"push    offset aEn; String"
+],
+[
+"0x006CA18E",
+"ParseMovieSubtitles",
+"0x006C9F10",
+"push    offset aEn; String2"
+]
+],
+"0x842354": [
+[
+"0x006C9F7C",
+"ParseMovieSubtitles",
+"0x006C9F10",
+"push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+],
+[
+"0x006C9F87",
+"ParseMovieSubtitles",
+"0x006C9F10",
+"push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+],
+[
+"0x006CA291",
+"sub_6CA1E0",
+"0x006CA1E0",
+"push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+],
+[
+"0x006CA29C",
+"sub_6CA1E0",
+"0x006CA1E0",
+"push    offset g_INI_Key_BeginMovie; \"BeginMovie\""
+]
+],
+"0x845820": [
+[
+"0x00734EDE",
+"GetStringCSF",
+"0x00734E60",
+"push    offset aMissingHs; \"MISSING:'%hs'\""
+]
+],
+"0x845840": [],
+"0x845854": [],
+"0x845880": [],
+"0x846840": [
+[
+"0x00756843",
+"Voxel::ProcessColor",
+"0x00756590",
+"call    funcs_756843[esi*4]"
+]
+],
+"0x84962C": [
+[
+"0x007737E3",
+"WebBrowser::LoadURLFromRegistry",
+"0x00773600",
+"push    offset aFr; Source"
+],
+[
+"0x00773CD8",
+"WebBrowser::Clone",
+"0x00773BC0",
+"push    offset aFr; Source"
+]
+],
+"0x8496B8": [
+[
+"0x00773B1C",
+"WebBrowser::Write",
+"0x00773B10",
+"push    offset aMain; \"Main\""
+]
+],
+"0x8496C4": [
+[
+"0x00773CAF",
+"WebBrowser::Clone",
+"0x00773BC0",
+"push    offset aBadpageHtm; \"BadPage.htm\""
+]
+],
+"0x84A014": [],
+"0x84A078": [],
+"0x84A118": [],
+"0x84A720": [],
+"0x84AAA0": [
+[
+"0x007A4012",
+"ComStreamClass::Write",
+"0x007A3D90",
+"mov     ecx, offset aUnknownStatus; \"Unknown Status\""
+]
+],
+"0x84AAB0": [],
+"0x84AB90": [
+[
+"0x007A496C",
+"CChatEventSink::HandleServerList",
+"0x007A41C0",
+"push    offset aMgl; \"MGL\""
+]
+],
+"0x84D780": [
+[
+"0x007AF311",
+"StaticString::Factory",
+"0x007AF2A0",
+"push    offset off_84D780; char *"
+]
+],
+"0x86E0D8": [],
+"0x875910": [],
+"0x877074": [],
+"0x877084": [],
+"0x87B1F0": [],
+"0x87B200": [],
+"0x87BEB8": [
+[
+"0x007CBDAF",
+"__cinit",
+"0x007CBDAF",
+"mov     eax, off_87BEB8"
+]
+],
+"0x87C4D0": [
+[
+"0x007C8F6D",
+"__cfltcvt_init_13",
+"0x007C8F5E",
+"mov     off_87C4D0, eax"
+],
+[
+"0x007CE64F",
+"__output",
+"0x007CE2A5",
+"call    off_87C4D0"
+],
+[
+"0x007D255E",
+"__woutput",
+"0x007D21BE",
+"call    off_87C4D0"
+],
+[
+"0x007DD8B2",
+"_output",
+"0x007DD505",
+"call    off_87C4D0"
+]
+]
 }
