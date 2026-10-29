@@ -2173,7 +2173,14 @@ def main():
             "n_conflicts": len(conflicted), "pinned_classes": len(pinned_classes),
             "forced_classes": len(forced), "bad_cover": bad_cover,
             "flagged": flagged, "diag_flagged": diag_flagged,
-            "dom_sizes": {str(cl): m.bit_count() for (cl, m) in constrained},
+            "dom_sizes": {(cl.get("root") if isinstance(cl, dict) else str(cl)): m.bit_count()
+                          for (cl, m) in constrained},
+            "dom_names": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
+                          [names[i] for i in range(n) if (m >> i) & 1][:8]
+                          for (cl, m) in constrained if 0 < m.bit_count() <= 8},
+            "dom_ents": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
+                         list(cl.get("ents") or [])[:6]
+                         for (cl, m) in constrained if 0 < m.bit_count() <= 8},
         }
 
     family_table = []
@@ -2553,6 +2560,19 @@ def main():
         with io.open(dpath, "w", encoding="utf-8") as fh:
             json.dump(res["dom_sizes"], fh, ensure_ascii=False)
         print("[out] %s" % dpath, flush=True)
+        apath = os.path.join(ROOT, "anchors/minclass_assignments.json")
+        _asg = {}
+        _ents = res.get("dom_ents") or {}
+        for cl, nm in (res.get("dom_names") or {}).items():
+            _asg[cl] = {"candidates": nm,
+                        "ents": _ents.get(cl, []),
+                        "confidence": "forced" if len(nm) == 1 else "narrow"}
+        with io.open(apath, "w", encoding="utf-8") as fh:
+            json.dump(_asg, fh, ensure_ascii=False, indent=0)
+        print("[out] %s (%d assignments, forced=%d narrow=%d)"
+              % (apath, len(_asg),
+                 sum(1 for v in _asg.values() if v["confidence"] == "forced"),
+                 sum(1 for v in _asg.values() if v["confidence"] == "narrow")), flush=True)
     rpath = os.path.join(ROOT, "anchors/minclass_result.json")
     with io.open(rpath, "w", encoding="utf-8") as fh:
         json.dump(result, fh, ensure_ascii=False, indent=1)
