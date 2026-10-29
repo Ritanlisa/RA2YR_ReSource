@@ -1,0 +1,22 @@
+{
+"universe_classes": 1597,
+"binary_identity_B1_or_B2": 462,
+"B1_vtable_extent": 369,
+"B2_ctor_install": 336,
+"S1_our_layout_size": 1282,
+"derived_layout_classes": 791,
+"trusted_derived_layout_classes": 354,
+"derived_coverage_vs_real_accesses": {
+"classes_compared": 196,
+"classes_with_coverage_ge_80pct": 58,
+"median_coverage": 0.62,
+"mean_coverage": 0.57
+},
+"provenance": {
+"B1": "IDA .rdata scan (vtable_extent_evidence.json) - binary",
+"B2": "ctor/dtor mov [this],offset ??_7X (ctor_types/structural_truth) - binary",
+"B3": "real [this+off] instructions in raw_constraints MEMBER_ACCESS - binary",
+"S1": "class_layouts.json size - OUR OWN inference (from our til) - NOT independent",
+"S2": "class_db.json size - same, NOT independent"
+}
+}
