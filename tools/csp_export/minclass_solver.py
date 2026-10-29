@@ -1005,6 +1005,11 @@ def main():
             _fa = hx(eid[2:])
             if _fa is not None and o in dropped_obs.get(_fa, ()):
                 continue      # 该访问已被二进制取证证伪（非 this）
+        if eid.startswith("M:"):
+            # 成员链实体 (this->member@0xNN)：obs 偏移是**相对成员子对象**的，
+            # 拿去要求基类布局是把两套坐标系混用（ProgressTimer 的 108/808/1684
+            # 就是这么来的）。成员类未知时 C1 无从判定，跳过。
+            continue
         ents[eid]["obs"].add((o, w))
         census["C1"] += 1
 
