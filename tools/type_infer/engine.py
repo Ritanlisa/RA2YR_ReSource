@@ -1091,6 +1091,7 @@ class TypeInferenceEngine:
         self._load_ida_proto_anchors(valid_classes)
         self._load_vslot_return_anchors(valid_classes)
         self._load_ida_callarg_types(valid_classes)
+        self._load_minclass_strong_anchors(valid_classes)
         self._load_callarg_param_anchors(valid_classes)
         self._load_def_reclass_anchors(valid_classes, member_types)
 
@@ -1354,6 +1355,34 @@ class TypeInferenceEngine:
         if addr is not None:
             return self.var_to_id.get(f"0x{addr:08X}.return")
         return None
+
+    def _load_minclass_strong_anchors(self, valid_classes):
+        """X156: min-class 求解器的「装表支持」强锚（763 条）。
+
+        来源 anchors/minclass_strong_assignments.json：实体的类由**二进制 vtable
+        装表**直接支持（不是名字推断）。这类证据强于名字与 proto this，rank 5。
+        """
+        _p = os.path.normpath(os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+            "anchors", "minclass_strong_assignments.json"))
+        if not os.path.exists(_p):
+            print("  minclass_strong: file missing", file=sys.stderr)
+            return
+        with open(_p, "r", encoding="utf-8") as _f:
+            _d = json.load(_f)
+        n = 0
+        for _var, _rec in _d.items():
+            vid = self.var_to_id.get(_var)
+            if vid is None:
+                continue
+            lt = self._to_lattice_type(_rec.get("class"), valid_classes)
+            if lt is None or lt in (VOID_PTR, TOP):
+                continue
+            a = Anchor(vid, _var, lt, "minclass_strong")
+            self.anchors.append(a)
+            self.anchor_by_var[vid].append(a)
+            n += 1
+        print(f"  minclass_strong anchors: {n}", file=sys.stderr)
 
     def _load_ida_callarg_types(self, valid_classes):
         """X202: IDA 调用点实参类型 -> 实参锚 + 参数 S2 相互约束。"""
@@ -2676,6 +2705,7 @@ class TypeInferenceEngine:
             "vslot_return": 3,
             "callarg_param": 3,
             "ida_callarg": 4,
+            "minclass_strong": 5,
             "ida_param_s2": 4,
             "cast_explicit": 3,
             "global_cast": 3,

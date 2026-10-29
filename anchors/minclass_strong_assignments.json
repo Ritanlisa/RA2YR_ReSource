@@ -1,0 +1,5343 @@
+{
+"0x004019A0:this": {
+"class": "CCFileClass",
+"evidence": "vtable_install",
+"install": "CCFileClass",
+"fn": "0x004019A0",
+"current_name": "CCFileClass::Destru_vt00"
+},
+"0x0040C110:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_CommandClass",
+"fn": "0x0040C110",
+"current_name": "EventClass::queueEvent"
+},
+"0x0040C160:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_CommandClass",
+"fn": "0x0040C160",
+"current_name": "MoveFeedback::Constructor"
+},
+"0x0040D290:this": {
+"class": "MouseClass",
+"evidence": "vtable_install",
+"install": "MouseClass",
+"fn": "0x0040D290",
+"current_name": "MouseClass::InitMouse"
+},
+"0x0040E320:this": {
+"class": "GenericNode",
+"evidence": "vtable_install",
+"install": "GenericNode",
+"fn": "0x0040E320",
+"current_name": "GenericNode::Constructor"
+},
+"0x0040E390:this": {
+"class": "GenericNode",
+"evidence": "vtable_install",
+"install": "GenericNode",
+"fn": "0x0040E390",
+"current_name": "sub_40E390"
+},
+"0x0040E3E0:this": {
+"class": "GenericList",
+"evidence": "vtable_install",
+"install": "GenericList",
+"fn": "0x0040E3E0",
+"current_name": "sub_40E3E0"
+},
+"0x0040E4C0:this": {
+"class": "GenericList",
+"evidence": "vtable_install",
+"install": "GenericList",
+"fn": "0x0040E4C0",
+"current_name": "sub_40E4C0"
+},
+"0x00410170:this": {
+"class": "AbstractClass",
+"evidence": "vtable_install",
+"install": "AbstractClass",
+"fn": "0x00410170",
+"current_name": "AbstractClass::Constructor"
+},
+"0x004101C0:this": {
+"class": "AbstractClass",
+"evidence": "vtable_install",
+"install": "AbstractClass",
+"fn": "0x004101C0",
+"current_name": "AbstractClass::InitVtables"
+},
+"0x004101F0:this": {
+"class": "AbstractClass",
+"evidence": "vtable_install",
+"install": "AbstractClass",
+"fn": "0x004101F0",
+"current_name": "AbstractClass::DTOR"
+},
+"0x004105A0:this": {
+"class": "AbstractClass",
+"evidence": "vtable_install",
+"install": "AbstractClass",
+"fn": "0x004105A0",
+"current_name": "AbstractClass::COMStub_8"
+},
+"0x00410800:this": {
+"class": "AbstractTypeClass",
+"evidence": "vtable_install",
+"install": "AbstractTypeClass",
+"fn": "0x00410800",
+"current_name": "AbstractTypeClass::Constructor"
+},
+"0x00410960:this": {
+"class": "AbstractTypeClass",
+"evidence": "vtable_install",
+"install": "AbstractTypeClass",
+"fn": "0x00410960",
+"current_name": "AbstractTypeClass::Init"
+},
+"0x004109C0:this": {
+"class": "AbstractTypeClass",
+"evidence": "vtable_install",
+"install": "AbstractTypeClass",
+"fn": "0x004109C0",
+"current_name": "AbstractTypeClass::Dtor"
+},
+"0x00410C30:this": {
+"class": "AbstractTypeClass",
+"evidence": "vtable_install",
+"install": "AbstractTypeClass",
+"fn": "0x00410C30",
+"current_name": "AbstractTypeClass::ddtor"
+},
+"0x00414080:this": {
+"class": "AircraftClass",
+"evidence": "vtable_install",
+"install": "AircraftClass",
+"fn": "0x00414080",
+"current_name": "AircraftClass::Destruct"
+},
+"0x0041C8B0:this": {
+"class": "AircraftTypeClass",
+"evidence": "vtable_install",
+"install": "AircraftTypeClass",
+"fn": "0x0041C8B0",
+"current_name": "AircraftTypeClass::AircraftTypeClass"
+},
+"0x0041CFE0:this": {
+"class": "AircraftTypeClass",
+"evidence": "vtable_install",
+"install": "AircraftTypeClass",
+"fn": "0x0041CFE0",
+"current_name": "AircraftTypeClass::ddtor"
+},
+"0x0041D300:this": {
+"class": "AirstrikeClass",
+"evidence": "vtable_install",
+"install": "AirstrikeClass",
+"fn": "0x0041D300",
+"current_name": "AbstractClass::Create"
+},
+"0x0041D380:this": {
+"class": "AirstrikeClass",
+"evidence": "vtable_install",
+"install": "AirstrikeClass",
+"fn": "0x0041D380",
+"current_name": "AirstrikeClass::AirstrikeClass"
+},
+"0x0041DD50:this": {
+"class": "AirstrikeClass",
+"evidence": "vtable_install",
+"install": "AirstrikeClass",
+"fn": "0x0041DD50",
+"current_name": "AirstrikeClass::CopyTo"
+},
+"0x0041E350:this": {
+"class": "AITriggerTypeClass",
+"evidence": "vtable_install",
+"install": "AITriggerTypeClass",
+"fn": "0x0041E350",
+"current_name": "AnimTypeClass::Construct2"
+},
+"0x0041FFF0:this": {
+"class": "AITriggerTypeClass",
+"evidence": "vtable_install",
+"install": "AITriggerTypeClass",
+"fn": "0x0041FFF0",
+"current_name": "AITriggerTypeClass::ddtor"
+},
+"0x00420960:this": {
+"class": "AlphaShapeClass",
+"evidence": "vtable_install",
+"install": "AlphaShapeClass",
+"fn": "0x00420960",
+"current_name": "AlphaShapeClass::CTOR"
+},
+"0x00420AF0:this": {
+"class": "AlphaShapeClass",
+"evidence": "vtable_install",
+"install": "AlphaShapeClass",
+"fn": "0x00420AF0",
+"current_name": "AlphaShapeClass::Constructor"
+},
+"0x00421730:this": {
+"class": "AlphaShapeClass",
+"evidence": "vtable_install",
+"install": "AlphaShapeClass",
+"fn": "0x00421730",
+"current_name": "AlphaShapeClass::SDDTOR"
+},
+"0x00421EA0:this": {
+"class": "AnimClass",
+"evidence": "vtable_install",
+"install": "AnimClass",
+"fn": "0x00421EA0",
+"current_name": "AnimClass::ctor"
+},
+"0x00422720:this": {
+"class": "AnimClass",
+"evidence": "vtable_install",
+"install": "AnimClass",
+"fn": "0x00422720",
+"current_name": "AnimClass::SimpleCtor"
+},
+"0x004228E0:this": {
+"class": "AnimClass",
+"evidence": "vtable_install",
+"install": "AnimClass",
+"fn": "0x004228E0",
+"current_name": "AnimClass::Destruct"
+},
+"0x00427270:this": {
+"class": "Animate",
+"evidence": "vtable_install",
+"install": "Animate",
+"fn": "0x00427270",
+"current_name": "AbstractClass::setMapCoords"
+},
+"0x00427530:this": {
+"class": "AnimTypeClass",
+"evidence": "vtable_install",
+"install": "AnimTypeClass",
+"fn": "0x00427530",
+"current_name": "AnimTypeClass::Construct"
+},
+"0x00428EA0:this": {
+"class": "AnimTypeClass",
+"evidence": "vtable_install",
+"install": "AnimTypeClass",
+"fn": "0x00428EA0",
+"current_name": "AnimTypeClass::ddtor"
+},
+"0x0042E6F0:this": {
+"class": "BaseClass",
+"evidence": "vtable_install",
+"install": "BaseClass",
+"fn": "0x0042E6F0",
+"current_name": "BaseClass::Constructor"
+},
+"0x0042F1E0:this": {
+"class": "BaseClass",
+"evidence": "vtable_install",
+"install": "BaseClass",
+"fn": "0x0042F1E0",
+"current_name": "BaseClass::Construct"
+},
+"0x00431A30:this": {
+"class": "BufferIOFileClass",
+"evidence": "vtable_install",
+"install": "BufferIOFileClass",
+"fn": "0x00431A30",
+"current_name": "ObjectClass::Set"
+},
+"0x00431B20:this": {
+"class": "BufferIOFileClass",
+"evidence": "vtable_install",
+"install": "BufferIOFileClass",
+"fn": "0x00431B20",
+"current_name": "BufferIOFileClass::Constructor"
+},
+"0x00431B80:this": {
+"class": "BufferIOFileClass",
+"evidence": "vtable_install",
+"install": "BufferIOFileClass",
+"fn": "0x00431B80",
+"current_name": "BufferIOFileClass::Dtor"
+},
+"0x00432610:this": {
+"class": "BufferIOFileClass",
+"evidence": "vtable_install",
+"install": "BufferIOFileClass",
+"fn": "0x00432610",
+"current_name": "BufferIOFileClass::QueryInterface"
+},
+"0x00433880:this": {
+"class": "BitFont",
+"evidence": "vtable_install",
+"install": "BitFont",
+"fn": "0x00433880",
+"current_name": "BitTextClass::ParseFontData"
+},
+"0x00434A40:this": {
+"class": "BitFont",
+"evidence": "vtable_install",
+"install": "BitFont",
+"fn": "0x00434A40",
+"current_name": "BufferIOFileClass::Constructor_BitFont"
+},
+"0x00434AD0:this": {
+"class": "BitTextClass",
+"evidence": "vtable_install",
+"install": "BitText",
+"fn": "0x00434AD0",
+"current_name": "BitTextClass::LoadFont"
+},
+"0x00435560:this": {
+"class": "BitTextClass",
+"evidence": "vtable_install",
+"install": "BitText",
+"fn": "0x00435560",
+"current_name": "BufferIOFileClass::Constructor_BitText"
+},
+"0x004370C0:this": {
+"class": "BuildingLightClass",
+"evidence": "vtable_install",
+"install": "BuildingLightClass",
+"fn": "0x004370C0",
+"current_name": "BuildingLightClass::SDDTOR"
+},
+"0x004385D0:this": {
+"class": "BombClass",
+"evidence": "vtable_install",
+"install": "BombClass",
+"fn": "0x004385D0",
+"current_name": "BombClass::AbstractClass"
+},
+"0x004393F0:this": {
+"class": "BombClass",
+"evidence": "vtable_install",
+"install": "BombClass",
+"fn": "0x004393F0",
+"current_name": "BombClass::CopyTo"
+},
+"0x0043A350:this": {
+"class": "NeuronClass",
+"evidence": "vtable_install",
+"install": "NeuronClass",
+"fn": "0x0043A350",
+"current_name": "NeuronClass::NeuronClass"
+},
+"0x0043A600:this": {
+"class": "BrainClass",
+"evidence": "vtable_install",
+"install": "BrainClass",
+"fn": "0x0043A600",
+"current_name": "sub_43A600"
+},
+"0x0043A9C0:this": {
+"class": "NeuronClass",
+"evidence": "vtable_install",
+"install": "NeuronClass",
+"fn": "0x0043A9C0",
+"current_name": "NeuronClass::Reset"
+},
+"0x0043AA90:this": {
+"class": "BrainClass",
+"evidence": "vtable_install",
+"install": "BrainClass",
+"fn": "0x0043AA90",
+"current_name": "sub_43AA90"
+},
+"0x0045A9C0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ParticleSystemTypeClass",
+"fn": "0x0045A9C0",
+"current_name": "TypeList_Particle::Add"
+},
+"0x0045AA10:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ParticleSystemTypeClass",
+"fn": "0x0045AA10",
+"current_name": "VectorClass_ptr_Reestablish::Constructor"
+},
+"0x0045AD80:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ParticleSystemTypeClass",
+"fn": "0x0045AD80",
+"current_name": "VectorClass::ConstructorWithVtable"
+},
+"0x0045DD90:this": {
+"class": "BuildingTypeClass",
+"evidence": "vtable_install",
+"install": "BuildingTypeClass",
+"fn": "0x0045DD90",
+"current_name": "BuildingTypeClass::ConstructFull"
+},
+"0x0045E520:this": {
+"class": "BuildingTypeClass",
+"evidence": "vtable_install",
+"install": "BuildingTypeClass",
+"fn": "0x0045E520",
+"current_name": "BuildingTypeClass::loadBuildingProperty_b_545E520"
+},
+"0x0045E580:this": {
+"class": "BuildingTypeClass",
+"evidence": "vtable_install",
+"install": "BuildingTypeClass",
+"fn": "0x0045E580",
+"current_name": "BuildingTypeClass::CleanupMembers"
+},
+"0x00466380:this": {
+"class": "BulletClass",
+"evidence": "vtable_install",
+"install": "BulletClass",
+"fn": "0x00466380",
+"current_name": "BulletClass::BulletClass"
+},
+"0x00466560:this": {
+"class": "BulletClass",
+"evidence": "vtable_install",
+"install": "BulletClass",
+"fn": "0x00466560",
+"current_name": "BulletClass::Dtor"
+},
+"0x0046BBC0:this": {
+"class": "BulletTypeClass",
+"evidence": "vtable_install",
+"install": "BulletTypeClass",
+"fn": "0x0046BBC0",
+"current_name": "BulletTypeClass::Construct"
+},
+"0x0046C890:this": {
+"class": "BulletTypeClass",
+"evidence": "vtable_install",
+"install": "BulletTypeClass",
+"fn": "0x0046C890",
+"current_name": "BulletTypeClass::ddtor"
+},
+"0x0046CB60:this": {
+"class": "CampaignClass",
+"evidence": "vtable_install",
+"install": "CampaignClass",
+"fn": "0x0046CB60",
+"current_name": "CampaignClass::CampaignClass"
+},
+"0x0046D090:this": {
+"class": "CampaignClass",
+"evidence": "vtable_install",
+"install": "CampaignClass",
+"fn": "0x0046D090",
+"current_name": "CampaignClass::DTOR"
+},
+"0x0046D330:this": {
+"class": "CampaignScore",
+"evidence": "vtable_install",
+"install": "CampaignScoreClass",
+"fn": "0x0046D330",
+"current_name": "MPCooperative::initGame"
+},
+"0x0046D350:this": {
+"class": "CampaignScore",
+"evidence": "vtable_install",
+"install": "CampaignScoreClass",
+"fn": "0x0046D350",
+"current_name": "sub_46D350"
+},
+"0x00470C00:this": {
+"class": "CampaignEndScoreClass",
+"evidence": "vtable_install",
+"install": "CampaignEndScoreClass",
+"fn": "0x00470C00",
+"current_name": "MPCooperative::startGame"
+},
+"0x00470C30:this": {
+"class": "CampaignEndScoreClass",
+"evidence": "vtable_install",
+"install": "CampaignEndScoreClass",
+"fn": "0x00470C30",
+"current_name": "sub_470C30"
+},
+"0x00471500:this": {
+"class": "CampaignScore",
+"evidence": "vtable_install",
+"install": "CampaignScoreClass",
+"fn": "0x00471500",
+"current_name": "CampaignScore::Constructor_CampaignScoreClass"
+},
+"0x00471520:this": {
+"class": "CampaignEndScoreClass",
+"evidence": "vtable_install",
+"install": "CampaignEndScoreClass",
+"fn": "0x00471520",
+"current_name": "CampaignScore::Constructor_CampaignEndScoreClass"
+},
+"0x004717D0:this": {
+"class": "CaptureManagerClass",
+"evidence": "vtable_install",
+"install": "CaptureManagerClass",
+"fn": "0x004717D0",
+"current_name": "CaptureManagerClass::CaptureManagerClass"
+},
+"0x00471890:this": {
+"class": "CaptureManagerClass",
+"evidence": "vtable_install",
+"install": "CaptureManagerClass",
+"fn": "0x00471890",
+"current_name": "SmallFunc_471890"
+},
+"0x004729C0:this": {
+"class": "CaptureManagerClass",
+"evidence": "vtable_install",
+"install": "CaptureManagerClass",
+"fn": "0x004729C0",
+"current_name": "CaptureManagerClass::ddtor"
+},
+"0x00473750:this": {
+"class": "CarryoverClass",
+"evidence": "vtable_install",
+"install": "CarryoverClass",
+"fn": "0x00473750",
+"current_name": "sub_473750"
+},
+"0x004739F0:this": {
+"class": "CCFileClass",
+"evidence": "vtable_install",
+"install": "CCFileClass",
+"fn": "0x004739F0",
+"current_name": "CCFileClass::Construct"
+},
+"0x00473A30:this": {
+"class": "CCFileClass",
+"evidence": "vtable_install",
+"install": "CCFileClass",
+"fn": "0x00473A30",
+"current_name": "CCFileClass::Construct2"
+},
+"0x00473A80:this": {
+"class": "CCFileClass",
+"evidence": "vtable_install",
+"install": "CCFileClass",
+"fn": "0x00473A80",
+"current_name": "CCFileClass::Construct3"
+},
+"0x0047BB60:this": {
+"class": "CellClass",
+"evidence": "vtable_install",
+"install": "CellClass",
+"fn": "0x0047BB60",
+"current_name": "CellClass::DTOR"
+},
+"0x0047BBF0:this": {
+"class": "CellClass",
+"evidence": "vtable_install",
+"install": "CellClass",
+"fn": "0x0047BBF0",
+"current_name": "CellClass::Construct"
+},
+"0x00488280:this": {
+"class": "CheckListClass",
+"evidence": "vtable_install",
+"install": "CheckListClass",
+"fn": "0x00488280",
+"current_name": "sub_488280"
+},
+"0x004886E0:this": {
+"class": "CheckListClass",
+"evidence": "vtable_install",
+"install": "CheckListClass",
+"fn": "0x004886E0",
+"current_name": "CheckListClass::QueryInterface"
+},
+"0x00488760:this": {
+"class": "ColorListClass",
+"evidence": "vtable_install",
+"install": "ColorListClass",
+"fn": "0x00488760",
+"current_name": "sub_488760"
+},
+"0x004887F0:this": {
+"class": "ColorListClass",
+"evidence": "vtable_install",
+"install": "ColorListClass",
+"fn": "0x004887F0",
+"current_name": "sub_4887F0"
+},
+"0x00488F00:this": {
+"class": "ColorListClass",
+"evidence": "vtable_install",
+"install": "ColorListClass",
+"fn": "0x00488F00",
+"current_name": "ColorListClass::QueryInterface"
+},
+"0x0048B0E0:this": {
+"class": "CommBufferClass",
+"evidence": "vtable_install",
+"install": "CommBufferClass",
+"fn": "0x0048B0E0",
+"current_name": "sub_48B0E0"
+},
+"0x0048B1F0:this": {
+"class": "CommBufferClass",
+"evidence": "vtable_install",
+"install": "CommBufferClass",
+"fn": "0x0048B1F0",
+"current_name": "sub_48B1F0"
+},
+"0x0048BE60:this": {
+"class": "ConnectionClass",
+"evidence": "vtable_install",
+"install": "ConnectionClass",
+"fn": "0x0048BE60",
+"current_name": "IPXConnClass::initConnection"
+},
+"0x0048BEE0:this": {
+"class": "ConnectionClass",
+"evidence": "vtable_install",
+"install": "ConnectionClass",
+"fn": "0x0048BEE0",
+"current_name": "ConnectionClass::dtor"
+},
+"0x0048C650:this": {
+"class": "ConnectionClass",
+"evidence": "vtable_install",
+"install": "ConnectionClass",
+"fn": "0x0048C650",
+"current_name": "ConnectionClass::QueryInterface"
+},
+"0x0048E520:this": {
+"class": "ControlClass",
+"evidence": "vtable_install",
+"install": "ControlClass",
+"fn": "0x0048E520",
+"current_name": "ControlClass::Construct"
+},
+"0x0048E570:this": {
+"class": "ControlClass",
+"evidence": "vtable_install",
+"install": "ControlClass",
+"fn": "0x0048E570",
+"current_name": "ControlClass::CtorFromData"
+},
+"0x0048E740:this": {
+"class": "ConvertClass",
+"evidence": "vtable_install",
+"install": "ConvertClass",
+"fn": "0x0048E740",
+"current_name": "ConvertClass::Construct"
+},
+"0x00490400:this": {
+"class": "ConvertClass",
+"evidence": "vtable_install",
+"install": "ConvertClass",
+"fn": "0x00490400",
+"current_name": "sub_490400"
+},
+"0x00491210:this": {
+"class": "ConvertClass",
+"evidence": "vtable_install",
+"install": "ConvertClass",
+"fn": "0x00491210",
+"current_name": "VectorClass_ptr_ConvertClass::Constructor_ConvertClass"
+},
+"0x00499CA0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499CA0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_4"
+},
+"0x00499CC0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499CC0",
+"current_name": "AbstractClass::getTileIndex"
+},
+"0x00499CE0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499CE0",
+"current_name": "AbstractClass::setTileIndex"
+},
+"0x00499D00:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499D00",
+"current_name": "AbstractClass::getOverlayType"
+},
+"0x00499D20:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499D20",
+"current_name": "AbstractClass::setOverlayFlags"
+},
+"0x00499D40:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499D40",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_9"
+},
+"0x00499D60:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499D60",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_10"
+},
+"0x00499D80:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499D80",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_11"
+},
+"0x00499DA0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499DA0",
+"current_name": "AbstractClass::clearOverlayFlags"
+},
+"0x00499DC0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499DC0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_13"
+},
+"0x00499DE0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499DE0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_14"
+},
+"0x00499E00:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499E00",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_15"
+},
+"0x00499E20:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499E20",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_16"
+},
+"0x00499E40:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499E40",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_17"
+},
+"0x00499E60:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499E60",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_18"
+},
+"0x00499E80:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499E80",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_19"
+},
+"0x00499EA0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499EA0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_20"
+},
+"0x00499EC0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499EC0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_21"
+},
+"0x00499EE0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499EE0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_22"
+},
+"0x00499F00:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x00499F00",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_23"
+},
+"0x00499F20:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499F20",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_24"
+},
+"0x00499F40:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499F40",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_25"
+},
+"0x00499F60:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499F60",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_26"
+},
+"0x00499F80:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499F80",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_27"
+},
+"0x00499FA0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499FA0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_28"
+},
+"0x00499FC0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499FC0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_29"
+},
+"0x00499FE0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x00499FE0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_30"
+},
+"0x0049A000:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A000",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_31"
+},
+"0x0049A020:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A020",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_32"
+},
+"0x0049A040:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A040",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_33"
+},
+"0x0049A060:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A060",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_34"
+},
+"0x0049A080:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A080",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_35"
+},
+"0x0049A0A0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A0A0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_36"
+},
+"0x0049A0C0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A0C0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_37"
+},
+"0x0049A0E0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A0E0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_38"
+},
+"0x0049A100:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A100",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_39"
+},
+"0x0049A120:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A120",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_40"
+},
+"0x0049A140:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A140",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_41"
+},
+"0x0049A160:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A160",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_42"
+},
+"0x0049A180:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A180",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_43"
+},
+"0x0049A1A0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A1A0",
+"current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter"
+},
+"0x0049A1C0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A1C0",
+"current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter_0"
+},
+"0x0049A1E0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A1E0",
+"current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter_1"
+},
+"0x0049A380:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A380",
+"current_name": "BlitTransLucent25Alpha_ushort::Constructor_Blitter"
+},
+"0x0049A3A0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A3A0",
+"current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter"
+},
+"0x0049A3C0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A3C0",
+"current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0"
+},
+"0x0049A3E0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A3E0",
+"current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1"
+},
+"0x0049A400:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x0049A400",
+"current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2"
+},
+"0x0049A760:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A760",
+"current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter"
+},
+"0x0049A780:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A780",
+"current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0"
+},
+"0x0049A7A0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A7A0",
+"current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1"
+},
+"0x0049A7C0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A7C0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_55"
+},
+"0x0049A7E0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A7E0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_56"
+},
+"0x0049A800:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A800",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_57"
+},
+"0x0049A820:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A820",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_58"
+},
+"0x0049A840:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A840",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_59"
+},
+"0x0049A860:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A860",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_60"
+},
+"0x0049A880:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A880",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_61"
+},
+"0x0049A8A0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A8A0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_62"
+},
+"0x0049A8C0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A8C0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_63"
+},
+"0x0049A8E0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A8E0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_64"
+},
+"0x0049A900:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A900",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_65"
+},
+"0x0049A920:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A920",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_66"
+},
+"0x0049A940:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A940",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_67"
+},
+"0x0049A960:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A960",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_68"
+},
+"0x0049A980:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A980",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_69"
+},
+"0x0049A9A0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A9A0",
+"current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter"
+},
+"0x0049A9C0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A9C0",
+"current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0"
+},
+"0x0049A9E0:this": {
+"class": "RLEBlitter",
+"evidence": "vtable_install",
+"install": "RLEBlitter",
+"fn": "0x0049A9E0",
+"current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1"
+},
+"0x0049F9B0:this": {
+"class": "CounterClass",
+"evidence": "vtable_install",
+"install": "CounterClass",
+"fn": "0x0049F9B0",
+"current_name": "CounterClass::Construct"
+},
+"0x0049FBE0:this": {
+"class": "CounterClass",
+"evidence": "vtable_install",
+"install": "CounterClass",
+"fn": "0x0049FBE0",
+"current_name": "CounterClass::Load"
+},
+"0x004A02B0:this": {
+"class": "EnumConnectionsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionsClass",
+"fn": "0x004A02B0",
+"current_name": "sub_4A02B0"
+},
+"0x004A0380:this": {
+"class": "EnumConnectionsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionsClass",
+"fn": "0x004A0380",
+"current_name": "sub_4A0380"
+},
+"0x004A0450:this": {
+"class": "EnumConnectionsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionsClass",
+"fn": "0x004A0450",
+"current_name": "sub_4A0450"
+},
+"0x004A0870:this": {
+"class": "ConnectionPointClass",
+"evidence": "vtable_install",
+"install": "ConnectionPointClass",
+"fn": "0x004A0870",
+"current_name": "ConnectionPointClass::Construct"
+},
+"0x004A08D0:this": {
+"class": "ConnectionPointClass",
+"evidence": "vtable_install",
+"install": "ConnectionPointClass",
+"fn": "0x004A08D0",
+"current_name": "sub_4A08D0"
+},
+"0x004A0C20:this": {
+"class": "EnumConnectionPointsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionPointsClass",
+"fn": "0x004A0C20",
+"current_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor"
+},
+"0x004A0CE0:this": {
+"class": "EnumConnectionPointsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionPointsClass",
+"fn": "0x004A0CE0",
+"current_name": "sub_4A0CE0"
+},
+"0x004A0DB0:this": {
+"class": "EnumConnectionPointsClass",
+"evidence": "vtable_install",
+"install": "EnumConnectionPointsClass",
+"fn": "0x004A0DB0",
+"current_name": "sub_4A0DB0"
+},
+"0x004A2820:this": {
+"class": "CStreamClass",
+"evidence": "vtable_install",
+"install": "CStreamClass",
+"fn": "0x004A2820",
+"current_name": "VectorClass_K_8::Constructor"
+},
+"0x004A2880:this": {
+"class": "CStreamClass",
+"evidence": "vtable_install",
+"install": "CStreamClass",
+"fn": "0x004A2880",
+"current_name": "sub_4A2880"
+},
+"0x004A53B0:this": {
+"class": "Dial8Class",
+"evidence": "vtable_install",
+"install": "Dial8Class",
+"fn": "0x004A53B0",
+"current_name": "Dial8Class::Constructor"
+},
+"0x004A7A30:this": {
+"class": "DiskLaserClass",
+"evidence": "vtable_install",
+"install": "DiskLaserClass",
+"fn": "0x004A7A30",
+"current_name": "DiskLaserClass::DiskLaserClass"
+},
+"0x004A7C90:this": {
+"class": "DiskLaserClass",
+"evidence": "vtable_install",
+"install": "DiskLaserClass",
+"fn": "0x004A7C90",
+"current_name": "DiskLaserClass::CopyTo"
+},
+"0x004A8730:this": {
+"class": "DisplayClass",
+"evidence": "vtable_install",
+"install": "DisplayClass",
+"fn": "0x004A8730",
+"current_name": "RadarClass::RenderSpySatellite"
+},
+"0x004AF540:this": {
+"class": "DriveLocomotionClass",
+"evidence": "vtable_install",
+"install": "DriveLocomotionClass",
+"fn": "0x004AF540",
+"current_name": "LocomotionClass::Initialize"
+},
+"0x004B4D00:this": {
+"class": "DriveLocomotionClass",
+"evidence": "vtable_install",
+"install": "DriveLocomotionClass",
+"fn": "0x004B4D00",
+"current_name": "DriveLocomotionClass::ProcessMove"
+},
+"0x004B4E10:this": {
+"class": "DropListClass",
+"evidence": "vtable_install",
+"install": "DropListClass",
+"fn": "0x004B4E10",
+"current_name": "sub_4B4E10"
+},
+"0x004B55F0:this": {
+"class": "DropListClass",
+"evidence": "vtable_install",
+"install": "DropListClass",
+"fn": "0x004B55F0",
+"current_name": "DropListClass::QueryInterface"
+},
+"0x004B5AB0:this": {
+"class": "DropPodLocomotionClass",
+"evidence": "vtable_install",
+"install": "DropPodLocomotionClass",
+"fn": "0x004B5AB0",
+"current_name": "SmallFunc_4B5AB0"
+},
+"0x004B66F0:this": {
+"class": "DropPodLocomotionClass",
+"evidence": "vtable_install",
+"install": "DropPodLocomotionClass",
+"fn": "0x004B66F0",
+"current_name": "DropPodLocomotionClass::ProcessMove"
+},
+"0x004C2FC0:this": {
+"class": "EditClass",
+"evidence": "vtable_install",
+"install": "EditClass",
+"fn": "0x004C2FC0",
+"current_name": "sub_4C2FC0"
+},
+"0x004C30B0:this": {
+"class": "EditClass",
+"evidence": "vtable_install",
+"install": "EditClass",
+"fn": "0x004C30B0",
+"current_name": "DropListClass::Constructor"
+},
+"0x004C5370:this": {
+"class": "EMPulseClass",
+"evidence": "vtable_install",
+"install": "EMPulseClass",
+"fn": "0x004C5370",
+"current_name": "Helper_4C5370"
+},
+"0x004C5AC0:this": {
+"class": "EMPulseClass",
+"evidence": "vtable_install",
+"install": "EMPulseClass",
+"fn": "0x004C5AC0",
+"current_name": "EMPulseClass::CopyTo"
+},
+"0x004C98B0:this": {
+"class": "FactoryClass",
+"evidence": "vtable_install",
+"install": "FactoryClass",
+"fn": "0x004C98B0",
+"current_name": "TeamTypeClass::Construct"
+},
+"0x004CA770:this": {
+"class": "FactoryClass",
+"evidence": "vtable_install",
+"install": "FactoryClass",
+"fn": "0x004CA770",
+"current_name": "FactoryClass::CopyTo"
+},
+"0x004CAB50:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TechnoTypeClass",
+"fn": "0x004CAB50",
+"current_name": "FactoryClass_33::QueryInterface"
+},
+"0x004CABA0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TechnoTypeClass",
+"fn": "0x004CABA0",
+"current_name": "AbstractClass::resetScriptState"
+},
+"0x004CABF0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TechnoTypeClass",
+"fn": "0x004CABF0",
+"current_name": "TechnoTypeVector::Constructor"
+},
+"0x004CC9A0:this": {
+"class": "FlyLocomotionClass",
+"evidence": "vtable_install",
+"install": "FlyLocomotionClass",
+"fn": "0x004CC9A0",
+"current_name": "FlyLocomotionClass::LocomotionClass"
+},
+"0x004CCA70:this": {
+"class": "FlyLocomotionClass",
+"evidence": "vtable_install",
+"install": "FlyLocomotionClass",
+"fn": "0x004CCA70",
+"current_name": "sub_4CCA70"
+},
+"0x004D03A0:this": {
+"class": "FlyLocomotionClass",
+"evidence": "vtable_install",
+"install": "FlyLocomotionClass",
+"fn": "0x004D03A0",
+"current_name": "FlyLocomotionClass::ProcessMove"
+},
+"0x004D08B0:this": {
+"class": "FoggedObjectClass",
+"evidence": "vtable_install",
+"install": "FoggedObjectClass",
+"fn": "0x004D08B0",
+"current_name": "ObjectClass::Construct"
+},
+"0x004D0980:this": {
+"class": "FoggedObjectClass",
+"evidence": "vtable_install",
+"install": "FoggedObjectClass",
+"fn": "0x004D0980",
+"current_name": "FoggedObjectClass::InitBuildingFog"
+},
+"0x004D0C40:this": {
+"class": "FoggedObjectClass",
+"evidence": "vtable_install",
+"install": "FoggedObjectClass",
+"fn": "0x004D0C40",
+"current_name": "FoggedObjectClass::InitTerrainFog"
+},
+"0x004D0EF0:this": {
+"class": "FoggedObjectClass",
+"evidence": "vtable_install",
+"install": "FoggedObjectClass",
+"fn": "0x004D0EF0",
+"current_name": "FoggedObjectClass::Constructor"
+},
+"0x004D1370:this": {
+"class": "FoggedObjectClass",
+"evidence": "vtable_install",
+"install": "FoggedObjectClass",
+"fn": "0x004D1370",
+"current_name": "FoggedObjectClass::InitDrawRecord"
+},
+"0x004D31E0:this": {
+"class": "FootClass",
+"evidence": "vtable_install",
+"install": "FootClass",
+"fn": "0x004D31E0",
+"current_name": "FootClass::Construct"
+},
+"0x004D3540:this": {
+"class": "FootClass",
+"evidence": "vtable_install",
+"install": "FootClass",
+"fn": "0x004D3540",
+"current_name": "FootClass::PostLoadInit"
+},
+"0x004D3590:this": {
+"class": "FootClass",
+"evidence": "vtable_install",
+"install": "FootClass",
+"fn": "0x004D3590",
+"current_name": "FootClass::Destruct"
+},
+"0x004E12F0:this": {
+"class": "GadgetClass",
+"evidence": "vtable_install",
+"install": "GadgetClass",
+"fn": "0x004E12F0",
+"current_name": "GadgetClass::Construct"
+},
+"0x004E1390:this": {
+"class": "GadgetClass",
+"evidence": "vtable_install",
+"install": "GadgetClass",
+"fn": "0x004E1390",
+"current_name": "GadgetClass::Dtor"
+},
+"0x004E1A60:this": {
+"class": "GadgetClass",
+"evidence": "vtable_install",
+"install": "GadgetClass",
+"fn": "0x004E1A60",
+"current_name": "GadgetClass::QueryInterface"
+},
+"0x004E2500:this": {
+"class": "GaugeClass",
+"evidence": "vtable_install",
+"install": "GaugeClass",
+"fn": "0x004E2500",
+"current_name": "ListClass::Constructor"
+},
+"0x004E8270:this": {
+"class": "VersionClass",
+"evidence": "vtable_install",
+"install": "VersionClass",
+"fn": "0x004E8270",
+"current_name": "HouseClass::initAngerStruct"
+},
+"0x004F21A0:this": {
+"class": "GraphicMenu",
+"evidence": "vtable_install",
+"install": "GraphicMenu",
+"fn": "0x004F21A0",
+"current_name": "HouseClass::processTargetSelection"
+},
+"0x004F2F10:this": {
+"class": "GraphicMenuAnimItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuAnimItem",
+"fn": "0x004F2F10",
+"current_name": "sub_4F2F10"
+},
+"0x004F30E0:this": {
+"class": "GraphicMenuAnimItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuAnimItem",
+"fn": "0x004F30E0",
+"current_name": "GraphicMenuAnimItem::QueryInterface"
+},
+"0x004F3460:this": {
+"class": "GraphicMenuImageItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuImageItem",
+"fn": "0x004F3460",
+"current_name": "sub_4F3460"
+},
+"0x004F3840:this": {
+"class": "GraphicMenuImageItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuImageItem",
+"fn": "0x004F3840",
+"current_name": "GraphicMenuImageItem::QueryInterface"
+},
+"0x004F3A50:this": {
+"class": "GraphicMenuItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuItem",
+"fn": "0x004F3A50",
+"current_name": "GraphicMenuItem::Constructor"
+},
+"0x004F3A70:this": {
+"class": "GraphicMenuItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuItem",
+"fn": "0x004F3A70",
+"current_name": "GraphicMenuItem::Dtor"
+},
+"0x004F3B20:this": {
+"class": "GraphicMenuItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuItem",
+"fn": "0x004F3B20",
+"current_name": "GraphicMenuItem_Destru::QueryInterface"
+},
+"0x004F3C40:this": {
+"class": "GraphicMenuShortcutItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuShortcutItem",
+"fn": "0x004F3C40",
+"current_name": "sub_4F3C40"
+},
+"0x004F3F60:this": {
+"class": "GraphicMenuShortcutItem",
+"evidence": "vtable_install",
+"install": "GraphicMenuShortcutItem",
+"fn": "0x004F3F60",
+"current_name": "GraphicMenuShortcutItem::QueryInterface"
+},
+"0x004F5190:this": {
+"class": "HouseClass",
+"evidence": "vtable_install",
+"install": "HouseClass",
+"fn": "0x004F5190",
+"current_name": "HouseClass::Constructor"
+},
+"0x004F7140:this": {
+"class": "HouseClass",
+"evidence": "vtable_install",
+"install": "HouseClass",
+"fn": "0x004F7140",
+"current_name": "HouseClass::Destruct"
+},
+"0x0050E7E0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TeamTypeClass",
+"fn": "0x0050E7E0",
+"current_name": "VectorClass_BuildingType::Constructor"
+},
+"0x0050E8C0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TeamTypeClass",
+"fn": "0x0050E8C0",
+"current_name": "VectorClass__N_18::Constructor"
+},
+"0x0050FFF0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_BuildingTypeClass",
+"fn": "0x0050FFF0",
+"current_name": "VectorClass_BuildingType::Get"
+},
+"0x00510040:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_BuildingTypeClass",
+"fn": "0x00510040",
+"current_name": "VectorClass_UScoutStruct___33::QueryInterface"
+},
+"0x00510310:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TeamTypeClass",
+"fn": "0x00510310",
+"current_name": "VectorClass_BuildingType::Constructor_0"
+},
+"0x005105A0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_BuildingTypeClass",
+"fn": "0x005105A0",
+"current_name": "VectorClass::BuildingTypeConstructor"
+},
+"0x005113F0:this": {
+"class": "HouseTypeClass",
+"evidence": "vtable_install",
+"install": "HouseTypeClass",
+"fn": "0x005113F0",
+"current_name": "SuperWeaponTypeClass::Construct"
+},
+"0x00511650:this": {
+"class": "HouseTypeClass",
+"evidence": "vtable_install",
+"install": "HouseTypeClass",
+"fn": "0x00511650",
+"current_name": "HouseTypeClass::loadVeteranWeapons"
+},
+"0x005116A0:this": {
+"class": "HouseTypeClass",
+"evidence": "vtable_install",
+"install": "HouseTypeClass",
+"fn": "0x005116A0",
+"current_name": "HouseTypeClass::Dtor"
+},
+"0x00512760:this": {
+"class": "HouseTypeClass",
+"evidence": "vtable_install",
+"install": "HouseTypeClass",
+"fn": "0x00512760",
+"current_name": "HouseTypeClass::Destructor"
+},
+"0x005129F0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_InfantryTypeClass",
+"fn": "0x005129F0",
+"current_name": "TypeList_Infantry::Add"
+},
+"0x00512A40:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_UnitTypeClass",
+"fn": "0x00512A40",
+"current_name": "HouseTypeClass_36::QueryInterface"
+},
+"0x00512A90:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AircraftTypeClass",
+"fn": "0x00512A90",
+"current_name": "HouseTypeClass_28::QueryInterface"
+},
+"0x00512AE0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_InfantryTypeClass",
+"fn": "0x00512AE0",
+"current_name": "InfantryTypeVector::QueryInterface"
+},
+"0x00512B30:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_UnitTypeClass",
+"fn": "0x00512B30",
+"current_name": "UnitTypeVector::QueryInterface"
+},
+"0x00512B80:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AircraftTypeClass",
+"fn": "0x00512B80",
+"current_name": "HouseTypeClass_36::Constructor"
+},
+"0x00512E20:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_InfantryTypeClass",
+"fn": "0x00512E20",
+"current_name": "TypeList_Infantry::Constructor"
+},
+"0x005131F0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_UnitTypeClass",
+"fn": "0x005131F0",
+"current_name": "TypeList_Infantry::Constructor_0"
+},
+"0x005135C0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AircraftTypeClass",
+"fn": "0x005135C0",
+"current_name": "TypeList_Infantry::Constructor_1"
+},
+"0x005138F0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_InfantryTypeClass",
+"fn": "0x005138F0",
+"current_name": "InfantryTypeVector::Construct2"
+},
+"0x00513940:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_UnitTypeClass",
+"fn": "0x00513940",
+"current_name": "UnitTypeVector::ConstructUnitTypeVectorClass"
+},
+"0x00513990:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AircraftTypeClass",
+"fn": "0x00513990",
+"current_name": "AircraftTypeVector::Constructor"
+},
+"0x00513C20:this": {
+"class": "HoverLocomotionClass",
+"evidence": "vtable_install",
+"install": "HoverLocomotionClass",
+"fn": "0x00513C20",
+"current_name": "LocomotionClass::ProcessData"
+},
+"0x00513D00:this": {
+"class": "HoverLocomotionClass",
+"evidence": "vtable_install",
+"install": "HoverLocomotionClass",
+"fn": "0x00513D00",
+"current_name": "sub_513D00"
+},
+"0x005172C0:this": {
+"class": "HoverLocomotionClass",
+"evidence": "vtable_install",
+"install": "HoverLocomotionClass",
+"fn": "0x005172C0",
+"current_name": "HoverLocomotionClass::ProcessMove"
+},
+"0x00517D90:this": {
+"class": "InfantryClass",
+"evidence": "vtable_install",
+"install": "InfantryClass",
+"fn": "0x00517D90",
+"current_name": "InfantryClass::Destruct"
+},
+"0x005236A0:this": {
+"class": "InfantryTypeClass",
+"evidence": "vtable_install",
+"install": "InfantryTypeClass",
+"fn": "0x005236A0",
+"current_name": "InfantryTypeClass::Constructor"
+},
+"0x00523980:this": {
+"class": "InfantryTypeClass",
+"evidence": "vtable_install",
+"install": "InfantryTypeClass",
+"fn": "0x00523980",
+"current_name": "InfantryTypeClass::Constructor_523980"
+},
+"0x005239D0:this": {
+"class": "InfantryTypeClass",
+"evidence": "vtable_install",
+"install": "InfantryTypeClass",
+"fn": "0x005239D0",
+"current_name": "InfantryClass::ProcessAnimation"
+},
+"0x00524D70:this": {
+"class": "InfantryTypeClass",
+"evidence": "vtable_install",
+"install": "InfantryTypeClass",
+"fn": "0x00524D70",
+"current_name": "InfantryTypeClass::ddtor"
+},
+"0x00524FC0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimTypeClass",
+"fn": "0x00524FC0",
+"current_name": "WarheadTypeClass::QueryInterface"
+},
+"0x00525010:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimTypeClass",
+"fn": "0x00525010",
+"current_name": "DynamicVectorClass_AnimType::Add"
+},
+"0x005252B0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimTypeClass",
+"fn": "0x005252B0",
+"current_name": "DynamicVectorClass_cptr_AnimTypeClass::Add"
+},
+"0x00525680:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimTypeClass",
+"fn": "0x00525680",
+"current_name": "AnimTypeVector::Constructor"
+},
+"0x005256F0:this": {
+"class": "INIClass",
+"evidence": "vtable_install",
+"install": "INIClass",
+"fn": "0x005256F0",
+"current_name": "HashTable::DestroyHashTableINIClass"
+},
+"0x0052ACE0:this": {
+"class": "GenericList",
+"evidence": "vtable_install",
+"install": "GenericList",
+"fn": "0x0052ACE0",
+"current_name": "GenericList::Constructor"
+},
+"0x0052AE20:this": {
+"class": "GenericNode",
+"evidence": "vtable_install",
+"install": "GenericNode",
+"fn": "0x0052AE20",
+"current_name": "Delegate::Constructor_GenericNode"
+},
+"0x0052AF00:this": {
+"class": "INIEntry@INIClass",
+"evidence": "vtable_install",
+"install": "INIEntry@INIClass",
+"fn": "0x0052AF00",
+"current_name": "INIClass::findSection"
+},
+"0x0052AFC0:this": {
+"class": "GenericList",
+"evidence": "vtable_install",
+"install": "GenericList",
+"fn": "0x0052AFC0",
+"current_name": "WarheadTypeClass::ReadParticleSystems"
+},
+"0x00535A70:this": {
+"class": "CCFileClass",
+"evidence": "vtable_install",
+"install": "CCFileClass",
+"fn": "0x00535A70",
+"current_name": "CCFileClass::Destruct"
+},
+"0x00535AA0:this": {
+"class": "INIClass",
+"evidence": "vtable_install",
+"install": "INIClass",
+"fn": "0x00535AA0",
+"current_name": "INIClass::INIClass"
+},
+"0x00535C00:this": {
+"class": "CreateTeamCommand",
+"evidence": "vtable_install",
+"install": "CreateTeamCommandClass",
+"fn": "0x00535C00",
+"current_name": "CreateTeamCommand::Construct"
+},
+"0x00535CD0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00535CD0",
+"current_name": "CreateTeamCommand::performAction_0"
+},
+"0x00535D00:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00535D00",
+"current_name": "CreateTeamCommand::performAction_1"
+},
+"0x00535FC0:this": {
+"class": "SelectTeamCommand",
+"evidence": "vtable_install",
+"install": "SelectTeamCommandClass",
+"fn": "0x00535FC0",
+"current_name": "SelectTeamCommand::Construct"
+},
+"0x00536090:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00536090",
+"current_name": "CreateTeamCommand::performAction_22"
+},
+"0x005360B0:this": {
+"class": "AddTeamCommand",
+"evidence": "vtable_install",
+"install": "AddTeamCommandClass",
+"fn": "0x005360B0",
+"current_name": "AddTeamCommand::Construct"
+},
+"0x00536180:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00536180",
+"current_name": "CreateTeamCommand::performAction_23"
+},
+"0x005361A0:this": {
+"class": "CenterTeamCommand",
+"evidence": "vtable_install",
+"install": "CenterTeamCommandClass",
+"fn": "0x005361A0",
+"current_name": "CenterTeamCommand::Construct"
+},
+"0x00536270:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00536270",
+"current_name": "CreateTeamCommand::performAction_24"
+},
+"0x00536290:this": {
+"class": "TauntCommandClass",
+"evidence": "vtable_install",
+"install": "TauntCommandClass",
+"fn": "0x00536290",
+"current_name": "TauntCommandClass::Construct"
+},
+"0x00536580:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00536580",
+"current_name": "CreateTeamCommand::performAction_25"
+},
+"0x00537B40:this": {
+"class": "ScreenCaptureCommandClass",
+"evidence": "vtable_install",
+"install": "ScreenCaptureCommandClass",
+"fn": "0x00537B40",
+"current_name": "ScreenCaptureCommandClass::Constructor"
+},
+"0x00537DD0:this": {
+"class": "PageUserCommandClass",
+"evidence": "vtable_install",
+"install": "PageUserCommandClass",
+"fn": "0x00537DD0",
+"current_name": "PageUserCommandClass::PageUserCommandClass"
+},
+"0x00537E70:this": {
+"class": "CursorPositionCommandClass",
+"evidence": "vtable_install",
+"install": "CursorPositionCommandClass",
+"fn": "0x00537E70",
+"current_name": "CursorPositionCommandClass::Constructor"
+},
+"0x00537F10:this": {
+"class": "DeleteCommandClass",
+"evidence": "vtable_install",
+"install": "DeleteCommandClass",
+"fn": "0x00537F10",
+"current_name": "DeleteCommandClass::Constructor"
+},
+"0x00537FA0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00537FA0",
+"current_name": "CreateTeamCommand::performAction_198"
+},
+"0x00537FC0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00537FC0",
+"current_name": "CreateTeamCommand::performAction_199"
+},
+"0x00537FE0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00537FE0",
+"current_name": "CreateTeamCommand::performAction_200"
+},
+"0x00538000:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538000",
+"current_name": "CreateTeamCommand::performAction_201"
+},
+"0x00538020:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538020",
+"current_name": "CreateTeamCommand::performAction_202"
+},
+"0x00538040:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538040",
+"current_name": "CreateTeamCommand::performAction_203"
+},
+"0x00538060:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538060",
+"current_name": "CreateTeamCommand::performAction_204"
+},
+"0x00538080:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538080",
+"current_name": "CreateTeamCommand::performAction_205"
+},
+"0x005380A0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005380A0",
+"current_name": "CreateTeamCommand::performAction_206"
+},
+"0x005380C0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005380C0",
+"current_name": "CreateTeamCommand::performAction_207"
+},
+"0x005380E0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005380E0",
+"current_name": "CreateTeamCommand::performAction_208"
+},
+"0x00538100:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538100",
+"current_name": "CreateTeamCommand::performAction_209"
+},
+"0x00538120:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538120",
+"current_name": "CreateTeamCommand::performAction_210"
+},
+"0x00538140:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538140",
+"current_name": "CreateTeamCommand::performAction_211"
+},
+"0x00538160:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538160",
+"current_name": "CreateTeamCommand::performAction_212"
+},
+"0x00538180:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538180",
+"current_name": "CreateTeamCommand::performAction_213"
+},
+"0x005381A0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005381A0",
+"current_name": "CreateTeamCommand::performAction_214"
+},
+"0x005381C0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005381C0",
+"current_name": "CreateTeamCommand::performAction_215"
+},
+"0x005381E0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005381E0",
+"current_name": "CreateTeamCommand::performAction_216"
+},
+"0x00538200:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538200",
+"current_name": "CreateTeamCommand::performAction_217"
+},
+"0x00538220:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538220",
+"current_name": "CreateTeamCommand::performAction_218"
+},
+"0x00538240:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538240",
+"current_name": "CreateTeamCommand::performAction_219"
+},
+"0x00538260:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538260",
+"current_name": "CreateTeamCommand::performAction_220"
+},
+"0x00538280:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538280",
+"current_name": "CreateTeamCommand::performAction_221"
+},
+"0x005382A0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005382A0",
+"current_name": "CreateTeamCommand::performAction_222"
+},
+"0x005382C0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005382C0",
+"current_name": "CreateTeamCommand::performAction_223"
+},
+"0x005382E0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005382E0",
+"current_name": "CreateTeamCommand::performAction_224"
+},
+"0x00538300:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538300",
+"current_name": "CreateTeamCommand::performAction_225"
+},
+"0x00538320:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538320",
+"current_name": "CreateTeamCommand::performAction_226"
+},
+"0x00538340:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538340",
+"current_name": "CreateTeamCommand::performAction_227"
+},
+"0x00538360:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538360",
+"current_name": "CreateTeamCommand::performAction_228"
+},
+"0x00538380:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538380",
+"current_name": "CreateTeamCommand::performAction_229"
+},
+"0x005383A0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005383A0",
+"current_name": "CreateTeamCommand::performAction_230"
+},
+"0x005383C0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005383C0",
+"current_name": "CreateTeamCommand::performAction_231"
+},
+"0x005383E0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005383E0",
+"current_name": "CreateTeamCommand::performAction_232"
+},
+"0x00538400:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538400",
+"current_name": "CreateTeamCommand::performAction_233"
+},
+"0x00538420:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538420",
+"current_name": "CreateTeamCommand::performAction_234"
+},
+"0x00538440:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538440",
+"current_name": "CreateTeamCommand::performAction_235"
+},
+"0x00538460:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538460",
+"current_name": "CreateTeamCommand::performAction_236"
+},
+"0x00538480:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x00538480",
+"current_name": "CreateTeamCommand::performAction_237"
+},
+"0x005384A0:this": {
+"class": "CommandClass",
+"evidence": "vtable_install",
+"install": "CommandClass",
+"fn": "0x005384A0",
+"current_name": "CreateTeamCommand::performAction_238"
+},
+"0x0053C780:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimClass",
+"fn": "0x0053C780",
+"current_name": "DeleteCommandClass_28::QueryInterface"
+},
+"0x0053C7D0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AnimClass",
+"fn": "0x0053C7D0",
+"current_name": "DeleteCommandClass_28::Constructor"
+},
+"0x0053F430:this": {
+"class": "IPXConnClass",
+"evidence": "vtable_install",
+"install": "IPXConnClass",
+"fn": "0x0053F430",
+"current_name": "IPXConnClass::constructor"
+},
+"0x0053F850:this": {
+"class": "IPXConnClass",
+"evidence": "vtable_install",
+"install": "IPXConnClass",
+"fn": "0x0053F850",
+"current_name": "IPXConnClass::QueryInterface"
+},
+"0x0053FA90:this": {
+"class": "IPXGlobalConnClass",
+"evidence": "vtable_install",
+"install": "IPXGlobalConnClass",
+"fn": "0x0053FA90",
+"current_name": "Network_Init_53FA90"
+},
+"0x005408F0:this": {
+"class": "IPXManagerClass",
+"evidence": "vtable_install",
+"install": "IPXManagerClass",
+"fn": "0x005408F0",
+"current_name": "sub_5408F0"
+},
+"0x00543100:this": {
+"class": "ConnManClass",
+"evidence": "vtable_install",
+"install": "ConnManClass",
+"fn": "0x00543100",
+"current_name": "IPXManagerClass::getPlayerName"
+},
+"0x00543780:this": {
+"class": "IsometricTileClass",
+"evidence": "vtable_install",
+"install": "IsometricTileClass",
+"fn": "0x00543780",
+"current_name": "IsometricTileClass::IsometricTileClass"
+},
+"0x00543B10:this": {
+"class": "IsometricTileClass",
+"evidence": "vtable_install",
+"install": "IsometricTileClass",
+"fn": "0x00543B10",
+"current_name": "AbstractClass::CreateInstance"
+},
+"0x005447C0:this": {
+"class": "IsometricTileTypeClass",
+"evidence": "vtable_install",
+"install": "IsometricTileTypeClass",
+"fn": "0x005447C0",
+"current_name": "TerrainTypeClass::Construct"
+},
+"0x00544A70:this": {
+"class": "IsometricTileTypeClass",
+"evidence": "vtable_install",
+"install": "IsometricTileTypeClass",
+"fn": "0x00544A70",
+"current_name": "IsometricTileTypeClass::CleanupMembers"
+},
+"0x0054AC40:this": {
+"class": "JumpjetLocomotionClass",
+"evidence": "vtable_install",
+"install": "JumpjetLocomotionClass",
+"fn": "0x0054AC40",
+"current_name": "LocomotionClass::Update"
+},
+"0x0054DFA0:this": {
+"class": "JumpjetLocomotionClass",
+"evidence": "vtable_install",
+"install": "JumpjetLocomotionClass",
+"fn": "0x0054DFA0",
+"current_name": "JumpjetLocomotionClass::ProcessAttach"
+},
+"0x00551FF0:this": {
+"class": "LCWPipe",
+"evidence": "vtable_install",
+"install": "LCWPipe",
+"fn": "0x00551FF0",
+"current_name": "LCWPipe::Constructor"
+},
+"0x00552060:this": {
+"class": "LCWPipe",
+"evidence": "vtable_install",
+"install": "LCWPipe",
+"fn": "0x00552060",
+"current_name": "LCWPipe::Dtor"
+},
+"0x00552390:this": {
+"class": "LCWPipe",
+"evidence": "vtable_install",
+"install": "LCWPipe",
+"fn": "0x00552390",
+"current_name": "LCWPipe_Destru::QueryInterface"
+},
+"0x005523E0:this": {
+"class": "LCWStraw",
+"evidence": "vtable_install",
+"install": "LCWStraw",
+"fn": "0x005523E0",
+"current_name": "LCWStraw::Constructor"
+},
+"0x00552450:this": {
+"class": "LCWStraw",
+"evidence": "vtable_install",
+"install": "LCWStraw",
+"fn": "0x00552450",
+"current_name": "LCWStraw::Dtor"
+},
+"0x005525F0:this": {
+"class": "LCWStraw",
+"evidence": "vtable_install",
+"install": "LCWStraw",
+"fn": "0x005525F0",
+"current_name": "LCWStraw_Destru::QueryInterface"
+},
+"0x00554760:this": {
+"class": "LightSourceClass",
+"evidence": "vtable_install",
+"install": "LightSourceClass",
+"fn": "0x00554760",
+"current_name": "LightSourceClass::Construct"
+},
+"0x00554830:this": {
+"class": "LightSourceClass",
+"evidence": "vtable_install",
+"install": "LightSourceClass",
+"fn": "0x00554830",
+"current_name": "LightSourceClass::Constructor"
+},
+"0x00555150:this": {
+"class": "LightSourceClass",
+"evidence": "vtable_install",
+"install": "LightSourceClass",
+"fn": "0x00555150",
+"current_name": "LightSourceClass::CopyTo"
+},
+"0x00555DA0:this": {
+"class": "LightConvertClass",
+"evidence": "vtable_install",
+"install": "LightConvertClass",
+"fn": "0x00555DA0",
+"current_name": "LightConvertClass::Constructor"
+},
+"0x00556510:this": {
+"class": "LightConvertClass",
+"evidence": "vtable_install",
+"install": "LightConvertClass",
+"fn": "0x00556510",
+"current_name": "sub_556510"
+},
+"0x00556520:this": {
+"class": "LightConvertClass",
+"evidence": "vtable_install",
+"install": "LightConvertClass",
+"fn": "0x00556520",
+"current_name": "sub_556520"
+},
+"0x005565A0:this": {
+"class": "LinkClass",
+"evidence": "vtable_install",
+"install": "LinkClass",
+"fn": "0x005565A0",
+"current_name": "LinkClass::Destruct"
+},
+"0x00557230:this": {
+"class": "ListClass",
+"evidence": "vtable_install",
+"install": "ListClass",
+"fn": "0x00557230",
+"current_name": "ListClass::Construct"
+},
+"0x00557380:this": {
+"class": "ListClass",
+"evidence": "vtable_install",
+"install": "ListClass",
+"fn": "0x00557380",
+"current_name": "sub_557380"
+},
+"0x00557600:this": {
+"class": "ListClass",
+"evidence": "vtable_install",
+"install": "ListClass",
+"fn": "0x00557600",
+"current_name": "ListClass::Destruct"
+},
+"0x00558060:this": {
+"class": "ListClass",
+"evidence": "vtable_install",
+"install": "ListClass",
+"fn": "0x00558060",
+"current_name": "ListClass::Destru_vt00"
+},
+"0x005581A0:this": {
+"class": "GaugeClass",
+"evidence": "vtable_install",
+"install": "GaugeClass",
+"fn": "0x005581A0",
+"current_name": "sub_5581A0"
+},
+"0x00558740:this": {
+"class": "LoadOptions",
+"evidence": "vtable_install",
+"install": "LoadOptionsClass",
+"fn": "0x00558740",
+"current_name": "LoadOptions::LoadOptions"
+},
+"0x00558790:this": {
+"class": "LoadOptions",
+"evidence": "vtable_install",
+"install": "LoadOptionsClass",
+"fn": "0x00558790",
+"current_name": "LoadOptions::Cleanup"
+},
+"0x0055A0D0:this": {
+"class": "LoadOptions",
+"evidence": "vtable_install",
+"install": "LoadOptionsClass",
+"fn": "0x0055A0D0",
+"current_name": "LoadOptions::QueryInterface"
+},
+"0x0055A6C0:this": {
+"class": "LocomotionClass",
+"evidence": "vtable_install",
+"install": "LocomotionClass",
+"fn": "0x0055A6C0",
+"current_name": "LocomotionClass::Init"
+},
+"0x0055A6F0:this": {
+"class": "LocomotionClass",
+"evidence": "vtable_install",
+"install": "LocomotionClass",
+"fn": "0x0055A6F0",
+"current_name": "LocomotionClass::Construct"
+},
+"0x0055C2B0:this": {
+"class": "LZOPipe",
+"evidence": "vtable_install",
+"install": "LZOPipe",
+"fn": "0x0055C2B0",
+"current_name": "LZOPipe::Constructor"
+},
+"0x0055C310:this": {
+"class": "LZOPipe",
+"evidence": "vtable_install",
+"install": "LZOPipe",
+"fn": "0x0055C310",
+"current_name": "LZOPipe::Destructor"
+},
+"0x0055C6D0:this": {
+"class": "LZOPipe",
+"evidence": "vtable_install",
+"install": "LZOPipe",
+"fn": "0x0055C6D0",
+"current_name": "LZOPipe_Destru::QueryInterface"
+},
+"0x0055C720:this": {
+"class": "LZOStraw",
+"evidence": "vtable_install",
+"install": "LZOStraw",
+"fn": "0x0055C720",
+"current_name": "LZOStraw::Constructor"
+},
+"0x0055C780:this": {
+"class": "LZOStraw",
+"evidence": "vtable_install",
+"install": "LZOStraw",
+"fn": "0x0055C780",
+"current_name": "LZOStraw::Destructor"
+},
+"0x0055C990:this": {
+"class": "LZOStraw",
+"evidence": "vtable_install",
+"install": "LZOStraw",
+"fn": "0x0055C990",
+"current_name": "LZOStraw_Destru::QueryInterface"
+},
+"0x00565090:this": {
+"class": "MapClass",
+"evidence": "vtable_install",
+"install": "MapClass",
+"fn": "0x00565090",
+"current_name": "RadarClass::RenderMapPreview"
+},
+"0x00565190:this": {
+"class": "MapClass",
+"evidence": "vtable_install",
+"install": "MapClass",
+"fn": "0x00565190",
+"current_name": "RadarClass::Render"
+},
+"0x005652C0:this": {
+"class": "MapClass",
+"evidence": "vtable_install",
+"install": "MapClass",
+"fn": "0x005652C0",
+"current_name": "MapClass::Destruct"
+},
+"0x00595680:this": {
+"class": "MapSeedClass",
+"evidence": "vtable_install",
+"install": "MapSeedClass",
+"fn": "0x00595680",
+"current_name": "MapSeedClass::Constructor"
+},
+"0x005AC650:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_BuildingTypeClass",
+"fn": "0x005AC650",
+"current_name": "TypeList_BuildingType::Add"
+},
+"0x005AFEF0:this": {
+"class": "MechLocomotionClass",
+"evidence": "vtable_install",
+"install": "MechLocomotionClass",
+"fn": "0x005AFEF0",
+"current_name": "SmallFunc_5AFEF0"
+},
+"0x005AFF50:this": {
+"class": "MechLocomotionClass",
+"evidence": "vtable_install",
+"install": "MechLocomotionClass",
+"fn": "0x005AFF50",
+"current_name": "sub_5AFF50"
+},
+"0x005B1B50:this": {
+"class": "MechLocomotionClass",
+"evidence": "vtable_install",
+"install": "MechLocomotionClass",
+"fn": "0x005B1B50",
+"current_name": "MechLocomotionClass::ProcessMove"
+},
+"0x005B2DA0:this": {
+"class": "MissionClass",
+"evidence": "vtable_install",
+"install": "MissionClass",
+"fn": "0x005B2DA0",
+"current_name": "RadioClass::Constructor"
+},
+"0x005B3A60:this": {
+"class": "MissionClass",
+"evidence": "vtable_install",
+"install": "MissionClass",
+"fn": "0x005B3A60",
+"current_name": "AbstractClass::getWeaponRange"
+},
+"0x005B3C20:this": {
+"class": "MixFileClass",
+"evidence": "vtable_install",
+"install": "MixFileClass",
+"fn": "0x005B3C20",
+"current_name": "MixFileClass::FromFile"
+},
+"0x005B45C0:this": {
+"class": "BlowStraw",
+"evidence": "vtable_install",
+"install": "BlowStraw",
+"fn": "0x005B45C0",
+"current_name": "BlowStraw::QueryInterface"
+},
+"0x005B46E0:this": {
+"class": "GenericList",
+"evidence": "vtable_install",
+"install": "GenericList",
+"fn": "0x005B46E0",
+"current_name": "AbstractClass::getWeaponSpeed"
+},
+"0x005BDF70:this": {
+"class": "MouseClass",
+"evidence": "vtable_install",
+"install": "MouseClass",
+"fn": "0x005BDF70",
+"current_name": "MouseClass::LoadGameAssets"
+},
+"0x005BE9B0:this": {
+"class": "TabClass",
+"evidence": "vtable_install",
+"install": "TabClass@@6B@_0",
+"fn": "0x005BE9B0",
+"current_name": "MouseClass::drawCursor"
+},
+"0x005C0630:this": {
+"class": "MovieHandle",
+"evidence": "vtable_install",
+"install": "MovieHandle",
+"fn": "0x005C0630",
+"current_name": "sub_5C0630"
+},
+"0x005C0DD0:this": {
+"class": "MultiplayerBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerBattle",
+"fn": "0x005C0DD0",
+"current_name": "MPBattleClass::initGame"
+},
+"0x005C0E10:this": {
+"class": "MultiplayerBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerBattle",
+"fn": "0x005C0E10",
+"current_name": "sub_5C0E10"
+},
+"0x005C0FE0:this": {
+"class": "MultiplayerBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerBattle",
+"fn": "0x005C0FE0",
+"current_name": "ScenarioClass::initAI"
+},
+"0x005C1470:this": {
+"class": "MPCooperative",
+"evidence": "vtable_install",
+"install": "MPCooperative",
+"fn": "0x005C1470",
+"current_name": "MPCooperative::ctor"
+},
+"0x005C5CE0:this": {
+"class": "FreeForAll",
+"evidence": "vtable_install",
+"install": "FreeForAll",
+"fn": "0x005C5CE0",
+"current_name": "MPBattleClass::MPFreeForAllClass"
+},
+"0x005C5D20:this": {
+"class": "FreeForAll",
+"evidence": "vtable_install",
+"install": "FreeForAll",
+"fn": "0x005C5D20",
+"current_name": "sub_5C5D20"
+},
+"0x005C5E40:this": {
+"class": "FreeForAll",
+"evidence": "vtable_install",
+"install": "FreeForAll",
+"fn": "0x005C5E40",
+"current_name": "ScenarioClass::executeTriggerActions"
+},
+"0x005C6150:this": {
+"class": "MultiplayerManBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerManBattle",
+"fn": "0x005C6150",
+"current_name": "MPBattleClass::MPManBattleClass"
+},
+"0x005C6190:this": {
+"class": "MultiplayerManBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerManBattle",
+"fn": "0x005C6190",
+"current_name": "sub_5C6190"
+},
+"0x005C61A0:this": {
+"class": "MultiplayerManBattle",
+"evidence": "vtable_install",
+"install": "MultiplayerManBattle",
+"fn": "0x005C61A0",
+"current_name": "MultiplayerManBattle::QueryInterface"
+},
+"0x005C93E0:this": {
+"class": "Megawealth",
+"evidence": "vtable_install",
+"install": "Megawealth",
+"fn": "0x005C93E0",
+"current_name": "MPBattleClass::MPMegawealthClass"
+},
+"0x005C9420:this": {
+"class": "Megawealth",
+"evidence": "vtable_install",
+"install": "Megawealth",
+"fn": "0x005C9420",
+"current_name": "sub_5C9420"
+},
+"0x005C9440:this": {
+"class": "Megawealth",
+"evidence": "vtable_install",
+"install": "Megawealth",
+"fn": "0x005C9440",
+"current_name": "Megawealth::QueryInterface"
+},
+"0x005C9470:this": {
+"class": "MultiplayerObserverTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerObserverTeam",
+"fn": "0x005C9470",
+"current_name": "MPCombatTeam::Constructor"
+},
+"0x005CA630:this": {
+"class": "MultiplayerSiege",
+"evidence": "vtable_install",
+"install": "MultiplayerSiege",
+"fn": "0x005CA630",
+"current_name": "MPBattleClass::MPSiegeClass"
+},
+"0x005CA670:this": {
+"class": "MultiplayerSiege",
+"evidence": "vtable_install",
+"install": "MultiplayerSiege",
+"fn": "0x005CA670",
+"current_name": "sub_5CA670"
+},
+"0x005CABD0:this": {
+"class": "MultiplayerSiege",
+"evidence": "vtable_install",
+"install": "MultiplayerSiege",
+"fn": "0x005CABD0",
+"current_name": "MultiplayerSiege::QueryInterface"
+},
+"0x005CAE10:this": {
+"class": "MultiplayerSiegeDefenderTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeDefenderTeam",
+"fn": "0x005CAE10",
+"current_name": "MPCombatTeam::MPTeam"
+},
+"0x005CAE60:this": {
+"class": "MultiplayerSiegeDefenderTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeDefenderTeam",
+"fn": "0x005CAE60",
+"current_name": "sub_5CAE60"
+},
+"0x005CAEB0:this": {
+"class": "MultiplayerSiegeAttackerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeAttackerTeam",
+"fn": "0x005CAEB0",
+"current_name": "MPCombatTeam::Constructor2"
+},
+"0x005CAF00:this": {
+"class": "MultiplayerSiegeAttackerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeAttackerTeam",
+"fn": "0x005CAF00",
+"current_name": "sub_5CAF00"
+},
+"0x005CAF10:this": {
+"class": "MultiplayerSiegeDefenderTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeDefenderTeam",
+"fn": "0x005CAF10",
+"current_name": "MultiplayerSiegeDefenderTeam::QueryInterface"
+},
+"0x005CAF40:this": {
+"class": "MultiplayerSiegeAttackerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerSiegeAttackerTeam",
+"fn": "0x005CAF40",
+"current_name": "MultiplayerSiegeAttackerTeam::QueryInterface"
+},
+"0x005CB3A0:this": {
+"class": "UnholyAlliance",
+"evidence": "vtable_install",
+"install": "UnholyAlliance",
+"fn": "0x005CB3A0",
+"current_name": "MPBattleClass::MPUnholyAllianceClass"
+},
+"0x005CB3E0:this": {
+"class": "UnholyAlliance",
+"evidence": "vtable_install",
+"install": "UnholyAlliance",
+"fn": "0x005CB3E0",
+"current_name": "sub_5CB3E0"
+},
+"0x005CB540:this": {
+"class": "UnholyAlliance",
+"evidence": "vtable_install",
+"install": "UnholyAlliance",
+"fn": "0x005CB540",
+"current_name": "UnholyAlliance::QueryInterface"
+},
+"0x005CB6C0:this": {
+"class": "MSAnim",
+"evidence": "vtable_install",
+"install": "MSAnim",
+"fn": "0x005CB6C0",
+"current_name": "VtableStub::5CB6C0"
+},
+"0x005CB6D0:this": {
+"class": "MSShapeAnim",
+"evidence": "vtable_install",
+"install": "MSShapeAnim",
+"fn": "0x005CB6D0",
+"current_name": "MSShapeAnim::Constructor"
+},
+"0x005CC250:this": {
+"class": "MSOverlayAnim",
+"evidence": "vtable_install",
+"install": "MSOverlayAnim",
+"fn": "0x005CC250",
+"current_name": "MSOverlayAnim::Init"
+},
+"0x005CCA20:this": {
+"class": "MSVQAnim",
+"evidence": "vtable_install",
+"install": "MSVQAnim",
+"fn": "0x005CCA20",
+"current_name": "MSVQAnim::Construct"
+},
+"0x005CCC30:this": {
+"class": "MSVQAnim",
+"evidence": "vtable_install",
+"install": "MSVQAnim",
+"fn": "0x005CCC30",
+"current_name": "MSVQAnim::ConstructMSVQAnimHidden"
+},
+"0x005CD330:this": {
+"class": "MSBitPrintAnim",
+"evidence": "vtable_install",
+"install": "MSAnim",
+"fn": "0x005CD330",
+"current_name": "MSBitPrintAnim::Construct"
+},
+"0x005CE640:this": {
+"class": "MSPCXAnim",
+"evidence": "vtable_install",
+"install": "MSAnim",
+"fn": "0x005CE640",
+"current_name": "MSPCXAnim::Construct"
+},
+"0x005CEB60:this": {
+"class": "MSAnim",
+"evidence": "vtable_install",
+"install": "MSAnim",
+"fn": "0x005CEB60",
+"current_name": "ScenarioClass::checkWinningConditions"
+},
+"0x005D1AA0:this": {
+"class": "MSEngine",
+"evidence": "vtable_install",
+"install": "MSEngine",
+"fn": "0x005D1AA0",
+"current_name": "MSEngine::Construct"
+},
+"0x005D1B30:this": {
+"class": "MSEngine",
+"evidence": "vtable_install",
+"install": "MSEngine",
+"fn": "0x005D1B30",
+"current_name": "MSEngine::Destruct"
+},
+"0x005D2E00:this": {
+"class": "MSFont",
+"evidence": "vtable_install",
+"install": "MSFont",
+"fn": "0x005D2E00",
+"current_name": "CampaignClass::Constructor_1"
+},
+"0x005D2E30:this": {
+"class": "MSFont",
+"evidence": "vtable_install",
+"install": "MSFont",
+"fn": "0x005D2E30",
+"current_name": "MSFont::Constructor_MSFont"
+},
+"0x005D5B60:this": {
+"class": "MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "MultiplayerGameMode",
+"fn": "0x005D5B60",
+"current_name": "MultiplayerGameMode::Construct"
+},
+"0x005D5D20:this": {
+"class": "MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "MultiplayerGameMode",
+"fn": "0x005D5D20",
+"current_name": "MultiplayerGameMode::Dtor"
+},
+"0x005D7580:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D7580",
+"current_name": "sub_5D7580"
+},
+"0x005D7CD0:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D7CD0",
+"current_name": "sub_5D7CD0"
+},
+"0x005D7F20:this": {
+"class": "MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "MultiplayerGameMode",
+"fn": "0x005D7F20",
+"current_name": "MultiplayerGameMode::QueryInterface"
+},
+"0x005D7FD0:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D7FD0",
+"current_name": "AbstractClass::checkVisibility"
+},
+"0x005D7FF0:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D7FF0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_127"
+},
+"0x005D8010:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D8010",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_128"
+},
+"0x005D8030:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D8030",
+"current_name": "AbstractClass::updateVisibilityState"
+},
+"0x005D8050:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D8050",
+"current_name": "AbstractClass::processFogReveal"
+},
+"0x005D8070:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D8070",
+"current_name": "AbstractClass::checkShroudState"
+},
+"0x005D8090:this": {
+"class": "InitializerBase@MultiplayerGameMode",
+"evidence": "vtable_install",
+"install": "InitializerBase@MultiplayerGameMode",
+"fn": "0x005D8090",
+"current_name": "AbstractClass::updateShroudMap"
+},
+"0x005D8C50:this": {
+"class": "MultiplayerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerTeam",
+"fn": "0x005D8C50",
+"current_name": "MultiplayerTeam::Constructor"
+},
+"0x005D8C80:this": {
+"class": "MultiplayerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerTeam",
+"fn": "0x005D8C80",
+"current_name": "MultiplayerTeam::Destructor"
+},
+"0x005D8D50:this": {
+"class": "MultiplayerTeam",
+"evidence": "vtable_install",
+"install": "MultiplayerTeam",
+"fn": "0x005D8D50",
+"current_name": "MultiplayerTeam_Destru::QueryInterface"
+},
+"0x005EEEC0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_MultiMission",
+"fn": "0x005EEEC0",
+"current_name": "VectorClass_cptr_MultiMission::GetAt"
+},
+"0x005EEF10:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_MultiMission",
+"fn": "0x005EEF10",
+"current_name": "VectorClass_cptr_MultiMission::Constructor"
+},
+"0x005EF0B0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_MultiMission",
+"fn": "0x005EF0B0",
+"current_name": "MultiMissionVector::Constructor"
+},
+"0x005EF100:this": {
+"class": "NullModemConnClass",
+"evidence": "vtable_install",
+"install": "NullModemConnClass",
+"fn": "0x005EF100",
+"current_name": "NullModemClass::initConnection"
+},
+"0x005EF290:this": {
+"class": "NullModemConnClass",
+"evidence": "vtable_install",
+"install": "NullModemConnClass",
+"fn": "0x005EF290",
+"current_name": "VectorClass_cptr_MultiMission::j_vt00"
+},
+"0x005F15C0:this": {
+"class": "NullModemClass",
+"evidence": "vtable_install",
+"install": "NullModemClass",
+"fn": "0x005F15C0",
+"current_name": "sub_5F15C0"
+},
+"0x005F3900:this": {
+"class": "ObjectClass",
+"evidence": "vtable_install",
+"install": "ObjectClass",
+"fn": "0x005F3900",
+"current_name": "ObjectClass::ctor"
+},
+"0x005F3B50:this": {
+"class": "ObjectClass",
+"evidence": "vtable_install",
+"install": "ObjectClass",
+"fn": "0x005F3B50",
+"current_name": "ObjectClass::Init"
+},
+"0x005F3B80:this": {
+"class": "ObjectClass",
+"evidence": "vtable_install",
+"install": "ObjectClass",
+"fn": "0x005F3B80",
+"current_name": "ObjectClass::Dtor"
+},
+"0x005F7090:this": {
+"class": "ObjectTypeClass",
+"evidence": "vtable_install",
+"install": "ObjectTypeClass",
+"fn": "0x005F7090",
+"current_name": "ObjectTypeClass::ConstructFull"
+},
+"0x005F7320:this": {
+"class": "ObjectTypeClass",
+"evidence": "vtable_install",
+"install": "ObjectTypeClass",
+"fn": "0x005F7320",
+"current_name": "ObjectTypeClass::Construct"
+},
+"0x005F7400:this": {
+"class": "ObjectTypeClass",
+"evidence": "vtable_install",
+"install": "ObjectTypeClass",
+"fn": "0x005F7400",
+"current_name": "ObjectTypeClass::Destruct"
+},
+"0x005FC380:this": {
+"class": "OverlayClass",
+"evidence": "vtable_install",
+"install": "OverlayClass",
+"fn": "0x005FC380",
+"current_name": "Object::SpawnAtCell"
+},
+"0x005FDF70:this": {
+"class": "OverlayClass",
+"evidence": "vtable_install",
+"install": "OverlayClass",
+"fn": "0x005FDF70",
+"current_name": "Object::DrawObject"
+},
+"0x005FE250:this": {
+"class": "OverlayTypeClass",
+"evidence": "vtable_install",
+"install": "OverlayTypeClass",
+"fn": "0x005FE250",
+"current_name": "OverlayTypeClass::OverlayTypeClass"
+},
+"0x005FEF30:this": {
+"class": "OverlayTypeClass",
+"evidence": "vtable_install",
+"install": "OverlayTypeClass",
+"fn": "0x005FEF30",
+"current_name": "OverlayTypeClass::ddtor"
+},
+"0x00624080:this": {
+"class": "DialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "DialogControl@OwnerDraw",
+"fn": "0x00624080",
+"current_name": "sub_624080"
+},
+"0x00624090:this": {
+"class": "DialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "DialogControl@OwnerDraw",
+"fn": "0x00624090",
+"current_name": "sub_624090"
+},
+"0x00624110:this": {
+"class": "SimpleDialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "SimpleDialogControl@OwnerDraw",
+"fn": "0x00624110",
+"current_name": "SimpleDialogControl::Constructor"
+},
+"0x00624130:this": {
+"class": "DialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "DialogControl@OwnerDraw",
+"fn": "0x00624130",
+"current_name": "OwnerDrawControl::InitVtable"
+},
+"0x006244A0:this": {
+"class": "DialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "DialogControl@OwnerDraw",
+"fn": "0x006244A0",
+"current_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor"
+},
+"0x006244C0:this": {
+"class": "DialogControl@OwnerDraw",
+"evidence": "vtable_install",
+"install": "DialogControl@OwnerDraw",
+"fn": "0x006244C0",
+"current_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0"
+},
+"0x00629210:this": {
+"class": "ParasiteClass",
+"evidence": "vtable_install",
+"install": "ParasiteClass",
+"fn": "0x00629210",
+"current_name": "ParasiteClass::Constructor"
+},
+"0x006292B0:this": {
+"class": "ParasiteClass",
+"evidence": "vtable_install",
+"install": "ParasiteClass",
+"fn": "0x006292B0",
+"current_name": "ParasiteClass::ParasiteClass"
+},
+"0x006293E0:this": {
+"class": "ParasiteClass",
+"evidence": "vtable_install",
+"install": "ParasiteClass",
+"fn": "0x006293E0",
+"current_name": "AbstractClass::ProcessData"
+},
+"0x0062AF70:this": {
+"class": "ParasiteClass",
+"evidence": "vtable_install",
+"install": "ParasiteClass",
+"fn": "0x0062AF70",
+"current_name": "ParasiteClass::UpdateParasite"
+},
+"0x0062BB20:this": {
+"class": "ParticleClass",
+"evidence": "vtable_install",
+"install": "ParticleClass",
+"fn": "0x0062BB20",
+"current_name": "ObjectClass::ProcessUpdate"
+},
+"0x0062D9A0:this": {
+"class": "ParticleClass",
+"evidence": "vtable_install",
+"install": "ParticleClass",
+"fn": "0x0062D9A0",
+"current_name": "ParticleClass::UpdateParticle"
+},
+"0x0062DC50:this": {
+"class": "ParticleSystemClass",
+"evidence": "vtable_install",
+"install": "ParticleSystemClass",
+"fn": "0x0062DC50",
+"current_name": "ParticleSystemClass::Constructor"
+},
+"0x0062DF20:this": {
+"class": "ParticleSystemClass",
+"evidence": "vtable_install",
+"install": "ParticleSystemClass",
+"fn": "0x0062DF20",
+"current_name": "ParticleClass::ProcessCreation"
+},
+"0x00631C80:this": {
+"class": "Pipe",
+"evidence": "vtable_install",
+"install": "Pipe",
+"fn": "0x00631C80",
+"current_name": "Pipe::Dtor"
+},
+"0x00631E30:this": {
+"class": "PixelFXClass",
+"evidence": "vtable_install",
+"install": "PixelFXClass",
+"fn": "0x00631E30",
+"current_name": "TacticalClass::saveConfig"
+},
+"0x00631F30:this": {
+"class": "PixelFXClass",
+"evidence": "vtable_install",
+"install": "PixelFXClass",
+"fn": "0x00631F30",
+"current_name": "sub_631F30"
+},
+"0x00631F40:this": {
+"class": "PixelFXClass",
+"evidence": "vtable_install",
+"install": "PixelFXClass",
+"fn": "0x00631F40",
+"current_name": "GameClass::saveGameState"
+},
+"0x00632F90:this": {
+"class": "BlowPipe",
+"evidence": "vtable_install",
+"install": "BlowPipe",
+"fn": "0x00632F90",
+"current_name": "BlowPipe::QueryInterface"
+},
+"0x00633050:this": {
+"class": "PKStrawClass",
+"evidence": "vtable_install",
+"install": "PKStraw",
+"fn": "0x00633050",
+"current_name": "PKStrawClass::Initialize"
+},
+"0x0063F6B0:this": {
+"class": "PowerClass",
+"evidence": "vtable_install",
+"install": "PowerClass",
+"fn": "0x0063F6B0",
+"current_name": "RadarClass::Create"
+},
+"0x006429E0:this": {
+"class": "ProgressScreenClass",
+"evidence": "vtable_install",
+"install": "ProgressScreenClass",
+"fn": "0x006429E0",
+"current_name": "sub_6429E0"
+},
+"0x006440A0:this": {
+"class": "ParticleSystemTypeClass",
+"evidence": "vtable_install",
+"install": "ParticleSystemTypeClass",
+"fn": "0x006440A0",
+"current_name": "OverlayTypeClass::Construct"
+},
+"0x00644960:this": {
+"class": "ParticleSystemTypeClass",
+"evidence": "vtable_install",
+"install": "ParticleSystemTypeClass",
+"fn": "0x00644960",
+"current_name": "ParticleSystemTypeClass::ddtor"
+},
+"0x00644BE0:this": {
+"class": "ParticleTypeClass",
+"evidence": "vtable_install",
+"install": "ParticleTypeClass",
+"fn": "0x00644BE0",
+"current_name": "BuildingTypeClass::Construct"
+},
+"0x00645950:this": {
+"class": "ParticleTypeClass",
+"evidence": "vtable_install",
+"install": "ParticleTypeClass",
+"fn": "0x00645950",
+"current_name": "ParticleTypeClass::ddtor"
+},
+"0x00652960:this": {
+"class": "RadarClass",
+"evidence": "vtable_install",
+"install": "RadarClass",
+"fn": "0x00652960",
+"current_name": "RadarClass::Construct"
+},
+"0x00652C00:this": {
+"class": "RadarClass",
+"evidence": "vtable_install",
+"install": "RadarClass",
+"fn": "0x00652C00",
+"current_name": "RadarClass::Destruct"
+},
+"0x006587A0:this": {
+"class": "RadarClass",
+"evidence": "vtable_install",
+"install": "RadarClass",
+"fn": "0x006587A0",
+"current_name": "RadarClass::Destru_vt04"
+},
+"0x0065A750:this": {
+"class": "RadioClass",
+"evidence": "vtable_install",
+"install": "RadioClass",
+"fn": "0x0065A750",
+"current_name": "RadioClass::Release"
+},
+"0x0065A7E0:this": {
+"class": "RadioClass",
+"evidence": "vtable_install",
+"install": "RadioClass",
+"fn": "0x0065A7E0",
+"current_name": "Helper_65A7E0"
+},
+"0x0065B1E0:this": {
+"class": "RadSiteClass",
+"evidence": "vtable_install",
+"install": "RadSiteClass",
+"fn": "0x0065B1E0",
+"current_name": "RadSiteClass::RadSiteClass"
+},
+"0x0065B2F0:this": {
+"class": "RadSiteClass",
+"evidence": "vtable_install",
+"install": "RadSiteClass",
+"fn": "0x0065B2F0",
+"current_name": "RadSiteClass::Constructor"
+},
+"0x0065C250:this": {
+"class": "RAMFileClass",
+"evidence": "vtable_install",
+"install": "RAMFileClass",
+"fn": "0x0065C250",
+"current_name": "WinMain_Helper_65C250"
+},
+"0x0065C610:this": {
+"class": "FileClass",
+"evidence": "vtable_install",
+"install": "FileClass",
+"fn": "0x0065C610",
+"current_name": "AbstractClass::processAITrigger"
+},
+"0x0065CA80:this": {
+"class": "RawFileClass",
+"evidence": "vtable_install",
+"install": "RawFileClass",
+"fn": "0x0065CA80",
+"current_name": "RawFileClass::Construct"
+},
+"0x0065D430:this": {
+"class": "rc_ptr_base",
+"evidence": "vtable_install",
+"install": "rc_ptr_base",
+"fn": "0x0065D430",
+"current_name": "ComPtr::Constructor"
+},
+"0x0065D460:this": {
+"class": "rc_ptr_base",
+"evidence": "vtable_install",
+"install": "rc_ptr_base",
+"fn": "0x0065D460",
+"current_name": "ComPtr::Release"
+},
+"0x0065D4D0:this": {
+"class": "rc_ptr_base",
+"evidence": "vtable_install",
+"install": "rc_ptr_base",
+"fn": "0x0065D4D0",
+"current_name": "AbstractClass::checkAICondition"
+},
+"0x0065D660:this": {
+"class": "ReferenceCounted",
+"evidence": "vtable_install",
+"install": "ReferenceCounted",
+"fn": "0x0065D660",
+"current_name": "ReferenceCounted::Constructor"
+},
+"0x0065D6A0:this": {
+"class": "ReferenceCounted",
+"evidence": "vtable_install",
+"install": "ReferenceCounted",
+"fn": "0x0065D6A0",
+"current_name": "COMClass::initInterface"
+},
+"0x00661C70:this": {
+"class": "RandomStraw",
+"evidence": "vtable_install",
+"install": "RandomStraw",
+"fn": "0x00661C70",
+"current_name": "RandomStraw::QueryInterface"
+},
+"0x00661EC0:this": {
+"class": "RocketLocomotionClass",
+"evidence": "vtable_install",
+"install": "RocketLocomotionClass",
+"fn": "0x00661EC0",
+"current_name": "RocketLocomotionClass::RocketLocomotionClass"
+},
+"0x00661F30:this": {
+"class": "RocketLocomotionClass",
+"evidence": "vtable_install",
+"install": "RocketLocomotionClass",
+"fn": "0x00661F30",
+"current_name": "sub_661F30"
+},
+"0x006635C0:this": {
+"class": "RocketLocomotionClass",
+"evidence": "vtable_install",
+"install": "RocketLocomotionClass",
+"fn": "0x006635C0",
+"current_name": "RocketLocomotionClass::ProcessMove"
+},
+"0x00679FA0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_BuildingTypeClass",
+"fn": "0x00679FA0",
+"current_name": "RulesClass::readMaximums"
+},
+"0x00679FD0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_UnitTypeClass",
+"fn": "0x00679FD0",
+"current_name": "RulesClass::readInfantryTypes"
+},
+"0x0067A000:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_AircraftTypeClass",
+"fn": "0x0067A000",
+"current_name": "RulesClass::readCountries"
+},
+"0x0067A030:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_InfantryTypeClass",
+"fn": "0x0067A030",
+"current_name": "TypeList::InfantryCleanup"
+},
+"0x0067A060:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TerrainTypeClass",
+"fn": "0x0067A060",
+"current_name": "RulesClass::readVehicleTypes"
+},
+"0x0067A990:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_VoxelAnimTypeClass",
+"fn": "0x0067A990",
+"current_name": "TypeList_VoxelAnim::Add"
+},
+"0x0067A9E0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_SmudgeTypeClass",
+"fn": "0x0067A9E0",
+"current_name": "TypeList_VoxelAnim::TypeList_vt00"
+},
+"0x0067AA30:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TerrainTypeClass",
+"fn": "0x0067AA30",
+"current_name": "TypeList_cptr_TerrainTypeClass::Add"
+},
+"0x0067C010:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_VoxelAnimTypeClass",
+"fn": "0x0067C010",
+"current_name": "TypeList_VoxelAnim::Constructor"
+},
+"0x0067C060:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_VoxelAnimTypeClass",
+"fn": "0x0067C060",
+"current_name": "DynamicVectorClass_cptr_VoxelAnimTypeClass::Add"
+},
+"0x0067C0B0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_SmudgeTypeClass",
+"fn": "0x0067C0B0",
+"current_name": "SmudgeTypeVector::QueryInterface"
+},
+"0x0067C100:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_SmudgeTypeClass",
+"fn": "0x0067C100",
+"current_name": "TypeList_VoxelAnim::Constructor_0"
+},
+"0x0067C150:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TerrainTypeClass",
+"fn": "0x0067C150",
+"current_name": "TypeList_cptr_TerrainTypeClass::Constructor"
+},
+"0x0067C1A0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TerrainTypeClass",
+"fn": "0x0067C1A0",
+"current_name": "TypeList_VoxelAnim::Constructor_1"
+},
+"0x0067C310:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_VoxelAnimTypeClass",
+"fn": "0x0067C310",
+"current_name": "VoxelAnimTypeVector::Constructor"
+},
+"0x0067C3A0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_SmudgeTypeClass",
+"fn": "0x0067C3A0",
+"current_name": "Game::LockMutex"
+},
+"0x0067C430:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_TerrainTypeClass",
+"fn": "0x0067C430",
+"current_name": "RulesClass::readIQ"
+},
+"0x006905F0:this": {
+"class": "ScoreFontClass",
+"evidence": "vtable_install",
+"install": "ScoreFontClass",
+"fn": "0x006905F0",
+"current_name": "sub_6905F0"
+},
+"0x00690F30:this": {
+"class": "ScoreAnimClass",
+"evidence": "vtable_install",
+"install": "ScoreAnimClass",
+"fn": "0x00690F30",
+"current_name": "ScoreScreen::Constructor"
+},
+"0x00690FE0:this": {
+"class": "ScoreAnimClass",
+"evidence": "vtable_install",
+"install": "ScoreAnimClass",
+"fn": "0x00690FE0",
+"current_name": "ScoreAnimClass::Constructor_ScoreAnimClass"
+},
+"0x00691000:this": {
+"class": "ScoreAnimClass",
+"evidence": "vtable_install",
+"install": "ScoreAnimClass",
+"fn": "0x00691000",
+"current_name": "ScoreAnimClass::Constructor_ScoreAnimClass_0"
+},
+"0x00691020:this": {
+"class": "ScoreAnimClass",
+"evidence": "vtable_install",
+"install": "ScoreAnimClass",
+"fn": "0x00691020",
+"current_name": "ScoreAnimClass::Constructor_ScoreAnimClass_1"
+},
+"0x00691040:this": {
+"class": "ScoreFontClass",
+"evidence": "vtable_install",
+"install": "ScoreFontClass",
+"fn": "0x00691040",
+"current_name": "ScoreFontClass::QueryInterface"
+},
+"0x006910A0:this": {
+"class": "ScoreFontClass",
+"evidence": "vtable_install",
+"install": "ScoreFontClass",
+"fn": "0x006910A0",
+"current_name": "ScoreAnimClass::Constructor_ScoreFontClass"
+},
+"0x00691100:this": {
+"class": "ScoreFontClass",
+"evidence": "vtable_install",
+"install": "ScoreFontClass",
+"fn": "0x00691100",
+"current_name": "ScoreFontClass::Constructor_ScoreFontClass"
+},
+"0x006913C0:this": {
+"class": "ScriptClass",
+"evidence": "vtable_install",
+"install": "ScriptClass",
+"fn": "0x006913C0",
+"current_name": "ScriptClass::Construct"
+},
+"0x006916B0:this": {
+"class": "ScriptTypeClass",
+"evidence": "vtable_install",
+"install": "ScriptTypeClass",
+"fn": "0x006916B0",
+"current_name": "ScriptTypeClass::Constructor"
+},
+"0x00691EE0:this": {
+"class": "ScriptClass",
+"evidence": "vtable_install",
+"install": "ScriptClass",
+"fn": "0x00691EE0",
+"current_name": "ScriptClass::ProcessEvent"
+},
+"0x00691FA0:this": {
+"class": "ScriptTypeClass",
+"evidence": "vtable_install",
+"install": "ScriptTypeClass",
+"fn": "0x00691FA0",
+"current_name": "ScriptTypeClass::ddtor"
+},
+"0x00692290:this": {
+"class": "ScrollClass",
+"evidence": "vtable_install",
+"install": "ScrollClass",
+"fn": "0x00692290",
+"current_name": "SmallFunc_692290"
+},
+"0x0069DCF0:this": {
+"class": "ShapeButtonClass",
+"evidence": "vtable_install",
+"install": "ShapeButtonClass",
+"fn": "0x0069DCF0",
+"current_name": "ShapeButtonClass::Init"
+},
+"0x0069DD30:this": {
+"class": "ShapeButtonClass",
+"evidence": "vtable_install",
+"install": "ShapeButtonClass",
+"fn": "0x0069DD30",
+"current_name": "ShapeButtonClass::Constructor"
+},
+"0x0069DDC0:this": {
+"class": "ShapeButtonClass",
+"evidence": "vtable_install",
+"install": "ShapeButtonClass",
+"fn": "0x0069DDC0",
+"current_name": "ShapeButtonClass::Destructor"
+},
+"0x0069EC50:this": {
+"class": "ShipLocomotionClass",
+"evidence": "vtable_install",
+"install": "ShipLocomotionClass",
+"fn": "0x0069EC50",
+"current_name": "LocomotionClass::Process"
+},
+"0x006A42B0:this": {
+"class": "ShipLocomotionClass",
+"evidence": "vtable_install",
+"install": "ShipLocomotionClass",
+"fn": "0x006A42B0",
+"current_name": "ShipLocomotionClass::ProcessMove"
+},
+"0x006A4550:this": {
+"class": "SideClass",
+"evidence": "vtable_install",
+"install": "SideClass",
+"fn": "0x006A4550",
+"current_name": "SideClass::Construct"
+},
+"0x006A4930:this": {
+"class": "SideClass",
+"evidence": "vtable_install",
+"install": "SideClass",
+"fn": "0x006A4930",
+"current_name": "SideClass::Init"
+},
+"0x006A4E60:this": {
+"class": "SidebarClass",
+"evidence": "vtable_install",
+"install": "SidebarClass",
+"fn": "0x006A4E60",
+"current_name": "TabClass::initTabData"
+},
+"0x006AC840:this": {
+"class": "DisplayClass",
+"evidence": "vtable_install",
+"install": "DisplayClass",
+"fn": "0x006AC840",
+"current_name": "System_Init_6AC840"
+},
+"0x006AF1A0:this": {
+"class": "SlaveManagerClass",
+"evidence": "vtable_install",
+"install": "SlaveManagerClass",
+"fn": "0x006AF1A0",
+"current_name": "SlaveManagerClass::ctor"
+},
+"0x006AF360:this": {
+"class": "SlaveManagerClass",
+"evidence": "vtable_install",
+"install": "SlaveManagerClass",
+"fn": "0x006AF360",
+"current_name": "SlaveManagerClass::Constructor"
+},
+"0x006AF4A0:this": {
+"class": "SlaveManagerClass",
+"evidence": "vtable_install",
+"install": "SlaveManagerClass",
+"fn": "0x006AF4A0",
+"current_name": "SlaveManagerClass::Constructor_SlaveManagerClass"
+},
+"0x006B1B20:this": {
+"class": "SliderClass",
+"evidence": "vtable_install",
+"install": "SliderClass",
+"fn": "0x006B1B20",
+"current_name": "SliderClass::Constructor"
+},
+"0x006B1D00:this": {
+"class": "SliderClass",
+"evidence": "vtable_install",
+"install": "SliderClass",
+"fn": "0x006B1D00",
+"current_name": "SliderClass::Destructor"
+},
+"0x006B4A50:this": {
+"class": "SmudgeClass",
+"evidence": "vtable_install",
+"install": "SmudgeClass",
+"fn": "0x006B4A50",
+"current_name": "UnitClass::Create"
+},
+"0x006B4FA0:this": {
+"class": "SmudgeClass",
+"evidence": "vtable_install",
+"install": "SmudgeClass",
+"fn": "0x006B4FA0",
+"current_name": "UnitClass::DestroySmudge"
+},
+"0x006B5260:this": {
+"class": "SmudgeTypeClass",
+"evidence": "vtable_install",
+"install": "SmudgeTypeClass",
+"fn": "0x006B5260",
+"current_name": "SmudgeTypeClass::SmudgeTypeClass"
+},
+"0x006B6160:this": {
+"class": "SmudgeTypeClass",
+"evidence": "vtable_install",
+"install": "SmudgeTypeClass",
+"fn": "0x006B6160",
+"current_name": "SmudgeTypeClass::ddtor"
+},
+"0x006B6C90:this": {
+"class": "SpawnManagerClass",
+"evidence": "vtable_install",
+"install": "SpawnManagerClass",
+"fn": "0x006B6C90",
+"current_name": "SpawnManagerClass::SpawnManagerClass"
+},
+"0x006B6EA0:this": {
+"class": "SpawnManagerClass",
+"evidence": "vtable_install",
+"install": "SpawnManagerClass",
+"fn": "0x006B6EA0",
+"current_name": "SpawnManagerClass::Constructor"
+},
+"0x006B7010:this": {
+"class": "SpawnManagerClass",
+"evidence": "vtable_install",
+"install": "SpawnManagerClass",
+"fn": "0x006B7010",
+"current_name": "SpawnManagerClass::Constructor_SpawnManagerClass"
+},
+"0x006BEE40:this": {
+"class": "?$TClassFactory@VCStreamClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VCStreamClass",
+"fn": "0x006BEE40",
+"current_name": "ClassFactory_CStream::Construct"
+},
+"0x006BEFC0:this": {
+"class": "?$TClassFactory@VWaveClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VWaveClass",
+"fn": "0x006BEFC0",
+"current_name": "ClassFactory_Wave::Construct"
+},
+"0x006BF140:this": {
+"class": "?$TClassFactory@VTerrainTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTerrainTypeClass",
+"fn": "0x006BF140",
+"current_name": "COMClassFactory_3::Construct"
+},
+"0x006BF2C0:this": {
+"class": "?$TClassFactory@VTerrainClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTerrainClass",
+"fn": "0x006BF2C0",
+"current_name": "COMClassFactory_4::Construct"
+},
+"0x006BF440:this": {
+"class": "?$TClassFactory@VSuperWeaponTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSuperWeaponTypeClass",
+"fn": "0x006BF440",
+"current_name": "COMClassFactory_5::Construct"
+},
+"0x006BF5C0:this": {
+"class": "?$TClassFactory@VSuperClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSuperClass",
+"fn": "0x006BF5C0",
+"current_name": "COMClassFactory_6::Construct"
+},
+"0x006BF740:this": {
+"class": "?$TClassFactory@VTactical@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTactical",
+"fn": "0x006BF740",
+"current_name": "COMClassFactory_7::Construct"
+},
+"0x006BF8C0:this": {
+"class": "?$TClassFactory@VCellClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VCellClass",
+"fn": "0x006BF8C0",
+"current_name": "COMClassFactory_8::Construct"
+},
+"0x006BFA40:this": {
+"class": "?$TClassFactory@VEMPulseClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VEMPulseClass",
+"fn": "0x006BFA40",
+"current_name": "COMClassFactory_9::Construct"
+},
+"0x006BFBC0:this": {
+"class": "?$TClassFactory@VLightSourceClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VLightSourceClass",
+"fn": "0x006BFBC0",
+"current_name": "COMClassFactory_10::Construct"
+},
+"0x006BFD40:this": {
+"class": "?$TClassFactory@VSideClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSideClass",
+"fn": "0x006BFD40",
+"current_name": "WinMain_Helper_6BFD40"
+},
+"0x006BFEC0:this": {
+"class": "?$TClassFactory@VTiberiumClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTiberiumClass",
+"fn": "0x006BFEC0",
+"current_name": "WinMain_Helper_6BFEC0"
+},
+"0x006C0040:this": {
+"class": "?$TClassFactory@VTubeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTubeClass",
+"fn": "0x006C0040",
+"current_name": "WinMain_Helper_6C0040"
+},
+"0x006C01C0:this": {
+"class": "?$TClassFactory@VCampaignClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VCampaignClass",
+"fn": "0x006C01C0",
+"current_name": "WinMain_Helper_6C01C0"
+},
+"0x006C0340:this": {
+"class": "?$TClassFactory@VBuildingLightClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBuildingLightClass",
+"fn": "0x006C0340",
+"current_name": "WinMain_Helper_6C0340"
+},
+"0x006C04C0:this": {
+"class": "?$TClassFactory@VWaypointPathClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VWaypointPathClass",
+"fn": "0x006C04C0",
+"current_name": "WinMain_Helper_6C04C0"
+},
+"0x006C0640:this": {
+"class": "?$TClassFactory@VTemporalClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTemporalClass",
+"fn": "0x006C0640",
+"current_name": "WinMain_Helper_6C0640"
+},
+"0x006C07C0:this": {
+"class": "?$TClassFactory@VAirstrikeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAirstrikeClass",
+"fn": "0x006C07C0",
+"current_name": "WinMain_Helper_6C07C0"
+},
+"0x006C0940:this": {
+"class": "?$TClassFactory@VSpawnManagerClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSpawnManagerClass",
+"fn": "0x006C0940",
+"current_name": "WinMain_Helper_6C0940"
+},
+"0x006C0AC0:this": {
+"class": "?$TClassFactory@VSlaveManagerClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSlaveManagerClass",
+"fn": "0x006C0AC0",
+"current_name": "COMClassFactory::CreateInstance"
+},
+"0x006C0C40:this": {
+"class": "?$TClassFactory@VCaptureManagerClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VCaptureManagerClass",
+"fn": "0x006C0C40",
+"current_name": "WinMain_Helper_6C0C40"
+},
+"0x006C0DC0:this": {
+"class": "?$TClassFactory@VDiskLaserClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VDiskLaserClass",
+"fn": "0x006C0DC0",
+"current_name": "WinMain_Helper_6C0DC0"
+},
+"0x006C0F40:this": {
+"class": "?$TClassFactory@VParasiteClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VParasiteClass",
+"fn": "0x006C0F40",
+"current_name": "WinMain_Helper_6C0F40"
+},
+"0x006C10C0:this": {
+"class": "?$TClassFactory@VBombClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBombClass",
+"fn": "0x006C10C0",
+"current_name": "WinMain_Helper_6C10C0"
+},
+"0x006C1240:this": {
+"class": "?$TClassFactory@VRadSiteClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VRadSiteClass",
+"fn": "0x006C1240",
+"current_name": "WinMain_Helper_6C1240"
+},
+"0x006C13C0:this": {
+"class": "?$TClassFactory@VTEventClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTEventClass",
+"fn": "0x006C13C0",
+"current_name": "WinMain_Helper_6C13C0"
+},
+"0x006C1540:this": {
+"class": "?$TClassFactory@VVoxelAnimTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VVoxelAnimTypeClass",
+"fn": "0x006C1540",
+"current_name": "WinMain_Helper_6C1540"
+},
+"0x006C16C0:this": {
+"class": "?$TClassFactory@VVoxelAnimClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VVoxelAnimClass",
+"fn": "0x006C16C0",
+"current_name": "WinMain_Helper_6C16C0"
+},
+"0x006C1840:this": {
+"class": "?$TClassFactory@VTActionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTActionClass",
+"fn": "0x006C1840",
+"current_name": "WinMain_Helper_6C1840"
+},
+"0x006C19C0:this": {
+"class": "?$TClassFactory@VTriggerClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTriggerClass",
+"fn": "0x006C19C0",
+"current_name": "WinMain_Helper_6C19C0"
+},
+"0x006C1B40:this": {
+"class": "?$TClassFactory@VTriggerTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTriggerTypeClass",
+"fn": "0x006C1B40",
+"current_name": "WinMain_Helper_6C1B40"
+},
+"0x006C1CC0:this": {
+"class": "?$TClassFactory@VScriptClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VScriptClass",
+"fn": "0x006C1CC0",
+"current_name": "WinMain_Helper_6C1CC0"
+},
+"0x006C1E40:this": {
+"class": "?$TClassFactory@VScriptTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VScriptTypeClass",
+"fn": "0x006C1E40",
+"current_name": "WinMain_Helper_6C1E40"
+},
+"0x006C1FC0:this": {
+"class": "?$TClassFactory@VTagClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTagClass",
+"fn": "0x006C1FC0",
+"current_name": "WinMain_Helper_6C1FC0"
+},
+"0x006C2140:this": {
+"class": "?$TClassFactory@VTagTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTagTypeClass",
+"fn": "0x006C2140",
+"current_name": "WinMain_Helper_6C2140"
+},
+"0x006C22C0:this": {
+"class": "?$TClassFactory@VTeamClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTeamClass",
+"fn": "0x006C22C0",
+"current_name": "WinMain_Helper_6C22C0"
+},
+"0x006C2440:this": {
+"class": "?$TClassFactory@VTeamTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTeamTypeClass",
+"fn": "0x006C2440",
+"current_name": "WinMain_Helper_6C2440"
+},
+"0x006C25C0:this": {
+"class": "?$TClassFactory@VTaskForceClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTaskForceClass",
+"fn": "0x006C25C0",
+"current_name": "WinMain_Helper_6C25C0"
+},
+"0x006C2740:this": {
+"class": "?$TClassFactory@VUnitTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VUnitTypeClass",
+"fn": "0x006C2740",
+"current_name": "WinMain_Helper_6C2740"
+},
+"0x006C28C0:this": {
+"class": "?$TClassFactory@VBuildingTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBuildingTypeClass",
+"fn": "0x006C28C0",
+"current_name": "WinMain_Helper_6C28C0"
+},
+"0x006C2A40:this": {
+"class": "?$TClassFactory@VAircraftTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAircraftTypeClass",
+"fn": "0x006C2A40",
+"current_name": "WinMain_Helper_6C2A40"
+},
+"0x006C2BC0:this": {
+"class": "?$TClassFactory@VInfantryTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VInfantryTypeClass",
+"fn": "0x006C2BC0",
+"current_name": "WinMain_Helper_6C2BC0"
+},
+"0x006C2D40:this": {
+"class": "?$TClassFactory@VBulletTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBulletTypeClass",
+"fn": "0x006C2D40",
+"current_name": "WinMain_Helper_6C2D40"
+},
+"0x006C2EC0:this": {
+"class": "?$TClassFactory@VIsometricTileTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VIsometricTileTypeClass",
+"fn": "0x006C2EC0",
+"current_name": "WinMain_Helper_6C2EC0"
+},
+"0x006C3040:this": {
+"class": "?$TClassFactory@VOverlayTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VOverlayTypeClass",
+"fn": "0x006C3040",
+"current_name": "WinMain_Helper_6C3040"
+},
+"0x006C31C0:this": {
+"class": "?$TClassFactory@VSmudgeTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VSmudgeTypeClass",
+"fn": "0x006C31C0",
+"current_name": "WinMain_Helper_6C31C0"
+},
+"0x006C3340:this": {
+"class": "?$TClassFactory@VUnitClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VUnitClass",
+"fn": "0x006C3340",
+"current_name": "WinMain_Helper_6C3340"
+},
+"0x006C34C0:this": {
+"class": "?$TClassFactory@VBuildingClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBuildingClass",
+"fn": "0x006C34C0",
+"current_name": "WinMain_Helper_6C34C0"
+},
+"0x006C3640:this": {
+"class": "?$TClassFactory@VAircraftClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAircraftClass",
+"fn": "0x006C3640",
+"current_name": "WinMain_Helper_6C3640"
+},
+"0x006C37C0:this": {
+"class": "?$TClassFactory@VInfantryClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VInfantryClass",
+"fn": "0x006C37C0",
+"current_name": "WinMain_Helper_6C37C0"
+},
+"0x006C3940:this": {
+"class": "?$TClassFactory@VAnimClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAnimClass",
+"fn": "0x006C3940",
+"current_name": "WinMain_Helper_6C3940"
+},
+"0x006C3AC0:this": {
+"class": "?$TClassFactory@VAnimTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAnimTypeClass",
+"fn": "0x006C3AC0",
+"current_name": "WinMain_Helper_6C3AC0"
+},
+"0x006C3C40:this": {
+"class": "?$TClassFactory@VHouseTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VHouseTypeClass",
+"fn": "0x006C3C40",
+"current_name": "WinMain_Helper_6C3C40"
+},
+"0x006C3DC0:this": {
+"class": "?$TClassFactory@VHouseClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VHouseClass",
+"fn": "0x006C3DC0",
+"current_name": "WinMain_Helper_6C3DC0"
+},
+"0x006C3F40:this": {
+"class": "?$TClassFactory@VDriveLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VDriveLocomotionClass",
+"fn": "0x006C3F40",
+"current_name": "WinMain_Helper_6C3F40"
+},
+"0x006C40C0:this": {
+"class": "?$TClassFactory@VJumpjetLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VJumpjetLocomotionClass",
+"fn": "0x006C40C0",
+"current_name": "WinMain_Helper_6C40C0"
+},
+"0x006C4240:this": {
+"class": "?$TClassFactory@VHoverLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VHoverLocomotionClass",
+"fn": "0x006C4240",
+"current_name": "WinMain_Helper_6C4240"
+},
+"0x006C43C0:this": {
+"class": "?$TClassFactory@VRocketLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VRocketLocomotionClass",
+"fn": "0x006C43C0",
+"current_name": "WinMain_Helper_6C43C0"
+},
+"0x006C4540:this": {
+"class": "?$TClassFactory@VTunnelLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTunnelLocomotionClass",
+"fn": "0x006C4540",
+"current_name": "WinMain_Helper_6C4540"
+},
+"0x006C46C0:this": {
+"class": "?$TClassFactory@VWalkLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VWalkLocomotionClass",
+"fn": "0x006C46C0",
+"current_name": "WinMain_Helper_6C46C0"
+},
+"0x006C4840:this": {
+"class": "?$TClassFactory@VDropPodLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VDropPodLocomotionClass",
+"fn": "0x006C4840",
+"current_name": "WinMain_Helper_6C4840"
+},
+"0x006C49C0:this": {
+"class": "?$TClassFactory@VFlyLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VFlyLocomotionClass",
+"fn": "0x006C49C0",
+"current_name": "WinMain_Helper_6C49C0"
+},
+"0x006C4B40:this": {
+"class": "?$TClassFactory@VTeleportLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VTeleportLocomotionClass",
+"fn": "0x006C4B40",
+"current_name": "WinMain_Helper_6C4B40"
+},
+"0x006C4CC0:this": {
+"class": "?$TClassFactory@VMechLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VMechLocomotionClass",
+"fn": "0x006C4CC0",
+"current_name": "WinMain_Helper_6C4CC0"
+},
+"0x006C4E40:this": {
+"class": "?$TClassFactory@VShipLocomotionClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VShipLocomotionClass",
+"fn": "0x006C4E40",
+"current_name": "WinMain_Helper_6C4E40"
+},
+"0x006C4FC0:this": {
+"class": "?$TClassFactory@VBulletClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VBulletClass",
+"fn": "0x006C4FC0",
+"current_name": "WinMain_Helper_6C4FC0"
+},
+"0x006C5140:this": {
+"class": "?$TClassFactory@VFactoryClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VFactoryClass",
+"fn": "0x006C5140",
+"current_name": "WinMain_Helper_6C5140"
+},
+"0x006C52C0:this": {
+"class": "?$TClassFactory@VWarheadTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VWarheadTypeClass",
+"fn": "0x006C52C0",
+"current_name": "WinMain_Helper_6C52C0"
+},
+"0x006C5440:this": {
+"class": "?$TClassFactory@VWeaponTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VWeaponTypeClass",
+"fn": "0x006C5440",
+"current_name": "WinMain_Helper_6C5440"
+},
+"0x006C55C0:this": {
+"class": "?$TClassFactory@VParticleClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VParticleClass",
+"fn": "0x006C55C0",
+"current_name": "WinMain_Helper_6C55C0"
+},
+"0x006C5740:this": {
+"class": "?$TClassFactory@VParticleTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VParticleTypeClass",
+"fn": "0x006C5740",
+"current_name": "WinMain_Helper_6C5740"
+},
+"0x006C58C0:this": {
+"class": "?$TClassFactory@VParticleSystemClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VParticleSystemClass",
+"fn": "0x006C58C0",
+"current_name": "WinMain_Helper_6C58C0"
+},
+"0x006C5A40:this": {
+"class": "?$TClassFactory@VParticleSystemTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VParticleSystemTypeClass",
+"fn": "0x006C5A40",
+"current_name": "WinMain_Helper_6C5A40"
+},
+"0x006C5BC0:this": {
+"class": "?$TClassFactory@VAITriggerTypeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAITriggerTypeClass",
+"fn": "0x006C5BC0",
+"current_name": "WinMain_Helper_6C5BC0"
+},
+"0x006C5D40:this": {
+"class": "?$TClassFactory@VNeuronClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VNeuronClass",
+"fn": "0x006C5D40",
+"current_name": "WinMain_Helper_6C5D40"
+},
+"0x006C5EC0:this": {
+"class": "?$TClassFactory@VFoggedObjectClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VFoggedObjectClass",
+"fn": "0x006C5EC0",
+"current_name": "WinMain_Helper_6C5EC0"
+},
+"0x006C6040:this": {
+"class": "?$TClassFactory@VAlphaShapeClass@@",
+"evidence": "vtable_install",
+"install": "?$TClassFactory@VAlphaShapeClass",
+"fn": "0x006C6040",
+"current_name": "WinMain_Helper_6C6040"
+},
+"0x006C6540:this": {
+"class": "StaticButtonClass",
+"evidence": "vtable_install",
+"install": "StaticButtonClass",
+"fn": "0x006C6540",
+"current_name": "sub_6C6540"
+},
+"0x006C6880:this": {
+"class": "StaticButtonClass",
+"evidence": "vtable_install",
+"install": "StaticButtonClass",
+"fn": "0x006C6880",
+"current_name": "StaticButtonClass::QueryInterface"
+},
+"0x006C9850:this": {
+"class": "Straw",
+"evidence": "vtable_install",
+"install": "Straw",
+"fn": "0x006C9850",
+"current_name": "Straw::Dtor"
+},
+"0x006CAEC0:this": {
+"class": "SuperClass",
+"evidence": "vtable_install",
+"install": "SuperClass",
+"fn": "0x006CAEC0",
+"current_name": "SuperClass::Constructor"
+},
+"0x006CAF90:this": {
+"class": "SuperClass",
+"evidence": "vtable_install",
+"install": "SuperClass",
+"fn": "0x006CAF90",
+"current_name": "SuperClass::Construct"
+},
+"0x006CB120:this": {
+"class": "SuperClass",
+"evidence": "vtable_install",
+"install": "SuperClass",
+"fn": "0x006CB120",
+"current_name": "SuperClass::CleanupMembers"
+},
+"0x006CE5B0:this": {
+"class": "SuperWeaponTypeClass",
+"evidence": "vtable_install",
+"install": "SuperWeaponTypeClass",
+"fn": "0x006CE5B0",
+"current_name": "SuperWeaponTypeClass::SuperWeaponTypeClass"
+},
+"0x006CEFE0:this": {
+"class": "SuperWeaponTypeClass",
+"evidence": "vtable_install",
+"install": "SuperWeaponTypeClass",
+"fn": "0x006CEFE0",
+"current_name": "SuperWeaponTypeClass::SDDTOR"
+},
+"0x006CF1D0:this": {
+"class": "SwizzleManagerClass",
+"evidence": "vtable_install",
+"install": "SwizzleManagerClass",
+"fn": "0x006CF1D0",
+"current_name": "SmallFunc_6CF1D0"
+},
+"0x006CFE20:this": {
+"class": "TabClass",
+"evidence": "vtable_install",
+"install": "TabClass@@6B@_0",
+"fn": "0x006CFE20",
+"current_name": "TabClass::Constructor"
+},
+"0x006D1C20:this": {
+"class": "Tactical",
+"evidence": "vtable_install",
+"install": "Tactical",
+"fn": "0x006D1C20",
+"current_name": "TacticalMap::Construct"
+},
+"0x006D1E30:this": {
+"class": "Tactical",
+"evidence": "vtable_install",
+"install": "Tactical",
+"fn": "0x006D1E30",
+"current_name": "SmallFunc_6D1E30"
+},
+"0x006D1E80:this": {
+"class": "Tactical",
+"evidence": "vtable_install",
+"install": "Tactical",
+"fn": "0x006D1E80",
+"current_name": "sub_6D1E80"
+},
+"0x006DC470:this": {
+"class": "Tactical",
+"evidence": "vtable_install",
+"install": "Tactical",
+"fn": "0x006DC470",
+"current_name": "Tactical::UpdateView"
+},
+"0x006DD000:this": {
+"class": "TActionClass",
+"evidence": "vtable_install",
+"install": "TActionClass",
+"fn": "0x006DD000",
+"current_name": "TActionClass::ctor"
+},
+"0x006E4660:this": {
+"class": "TActionClass",
+"evidence": "vtable_install",
+"install": "TActionClass",
+"fn": "0x006E4660",
+"current_name": "TActionClass::Destructor"
+},
+"0x006E4DE0:this": {
+"class": "TagClass",
+"evidence": "vtable_install",
+"install": "TagClass",
+"fn": "0x006E4DE0",
+"current_name": "TeknoClass::GetType"
+},
+"0x006E4F60:this": {
+"class": "TagClass",
+"evidence": "vtable_install",
+"install": "TagClass",
+"fn": "0x006E4F60",
+"current_name": "TagClass::Destructor"
+},
+"0x006E5B60:this": {
+"class": "TagTypeClass",
+"evidence": "vtable_install",
+"install": "TagTypeClass",
+"fn": "0x006E5B60",
+"current_name": "TagTypeClass::Construct"
+},
+"0x006E5CA0:this": {
+"class": "TagTypeClass",
+"evidence": "vtable_install",
+"install": "TagTypeClass",
+"fn": "0x006E5CA0",
+"current_name": "TagTypeClass::CleanupMembers"
+},
+"0x006E7E80:this": {
+"class": "TaskForceClass",
+"evidence": "vtable_install",
+"install": "TaskForceClass",
+"fn": "0x006E7E80",
+"current_name": "TaskForceClass::Construct"
+},
+"0x006E87F0:this": {
+"class": "TaskForceClass",
+"evidence": "vtable_install",
+"install": "TaskForceClass",
+"fn": "0x006E87F0",
+"current_name": "TaskForceClass::ExecuteAction"
+},
+"0x006E8A90:this": {
+"class": "TeamClass",
+"evidence": "vtable_install",
+"install": "TeamClass",
+"fn": "0x006E8A90",
+"current_name": "MissionClass::Construct"
+},
+"0x006E8DE0:this": {
+"class": "TeamClass",
+"evidence": "vtable_install",
+"install": "TeamClass",
+"fn": "0x006E8DE0",
+"current_name": "TeamClass::Destructor"
+},
+"0x006F06E0:this": {
+"class": "TeamTypeClass",
+"evidence": "vtable_install",
+"install": "TeamTypeClass",
+"fn": "0x006F06E0",
+"current_name": "TechnoTypeClass::LoadBase"
+},
+"0x006F20D0:this": {
+"class": "TeamTypeClass",
+"evidence": "vtable_install",
+"install": "TeamTypeClass",
+"fn": "0x006F20D0",
+"current_name": "TeamTypeClass::ddtor"
+},
+"0x006F2B40:this": {
+"class": "TechnoClass",
+"evidence": "vtable_install",
+"install": "TechnoClass",
+"fn": "0x006F2B40",
+"current_name": "TechnoClass::TechnoClass"
+},
+"0x006F4300:this": {
+"class": "TechnoClass",
+"evidence": "vtable_install",
+"install": "TechnoClass",
+"fn": "0x006F4300",
+"current_name": "TechnoClass::Constructor"
+},
+"0x00711840:this": {
+"class": "TechnoTypeClass",
+"evidence": "vtable_install",
+"install": "TechnoTypeClass",
+"fn": "0x00711840",
+"current_name": "TechnoTypeClass::Construct"
+},
+"0x00711AE0:this": {
+"class": "TechnoTypeClass",
+"evidence": "vtable_install",
+"install": "TechnoTypeClass",
+"fn": "0x00711AE0",
+"current_name": "TechnoTypeClass::DTOR"
+},
+"0x00717B70:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ParticleSystemTypeClass",
+"fn": "0x00717B70",
+"current_name": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface"
+},
+"0x00718000:this": {
+"class": "TeleportLocomotionClass",
+"evidence": "vtable_install",
+"install": "TeleportLocomotionClass",
+"fn": "0x00718000",
+"current_name": "TeleportLocomotionClass::TeleportLocomotionClass"
+},
+"0x0071A450:this": {
+"class": "TemporalClass",
+"evidence": "vtable_install",
+"install": "TemporalClass",
+"fn": "0x0071A450",
+"current_name": "TemporalClass::Constructor"
+},
+"0x0071A4E0:this": {
+"class": "TemporalClass",
+"evidence": "vtable_install",
+"install": "TemporalClass",
+"fn": "0x0071A4E0",
+"current_name": "TemporalClass::TemporalClass"
+},
+"0x0071B1B0:this": {
+"class": "TemporalClass",
+"evidence": "vtable_install",
+"install": "TemporalClass",
+"fn": "0x0071B1B0",
+"current_name": "TemporalClass::ProcessEvent"
+},
+"0x0071B7B0:this": {
+"class": "TerrainClass",
+"evidence": "vtable_install",
+"install": "TerrainClass",
+"fn": "0x0071B7B0",
+"current_name": "TerrainClass::CleanupMembers"
+},
+"0x0071BB90:this": {
+"class": "TerrainClass",
+"evidence": "vtable_install",
+"install": "TerrainClass",
+"fn": "0x0071BB90",
+"current_name": "TerrainClass::Construct"
+},
+"0x0071BDF0:this": {
+"class": "TerrainClass",
+"evidence": "vtable_install",
+"install": "TerrainClass",
+"fn": "0x0071BDF0",
+"current_name": "ObjectClass::ProcessFoggedState"
+},
+"0x0071DA80:this": {
+"class": "TerrainTypeClass",
+"evidence": "vtable_install",
+"install": "TerrainTypeClass",
+"fn": "0x0071DA80",
+"current_name": "TerrainTypeClass::TerrainTypeClass"
+},
+"0x0071E360:this": {
+"class": "TerrainTypeClass",
+"evidence": "vtable_install",
+"install": "TerrainTypeClass",
+"fn": "0x0071E360",
+"current_name": "TerrainTypeClass::ddtor"
+},
+"0x0071E6A0:this": {
+"class": "TEventClass",
+"evidence": "vtable_install",
+"install": "TEventClass",
+"fn": "0x0071E6A0",
+"current_name": "TActionClass::TActionClass"
+},
+"0x0071FA80:this": {
+"class": "TEventClass",
+"evidence": "vtable_install",
+"install": "TEventClass",
+"fn": "0x0071FA80",
+"current_name": "TEventClass::Fire"
+},
+"0x0071FF20:this": {
+"class": "TextButtonClass",
+"evidence": "vtable_install",
+"install": "TextButtonClass",
+"fn": "0x0071FF20",
+"current_name": "sub_71FF20"
+},
+"0x007216C0:this": {
+"class": "TiberiumClass",
+"evidence": "vtable_install",
+"install": "TiberiumClass",
+"fn": "0x007216C0",
+"current_name": "TiberiumClass::TiberiumClass"
+},
+"0x00721880:this": {
+"class": "TiberiumClass",
+"evidence": "vtable_install",
+"install": "TiberiumClass",
+"fn": "0x00721880",
+"current_name": "TiberiumClass::CleanupMembers"
+},
+"0x00723E60:this": {
+"class": "ToggleClass",
+"evidence": "vtable_install",
+"install": "ToggleClass",
+"fn": "0x00723E60",
+"current_name": "ToggleClass::Construct"
+},
+"0x00724000:this": {
+"class": "ToolTipManager",
+"evidence": "vtable_install",
+"install": "ToolTipManager",
+"fn": "0x00724000",
+"current_name": "MainWindowProc_Helper_724000"
+},
+"0x007240B0:this": {
+"class": "ToolTipManager",
+"evidence": "vtable_install",
+"install": "ToolTipManager",
+"fn": "0x007240B0",
+"current_name": "ToolTipClass::updateString"
+},
+"0x00724EF0:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ToolTip",
+"fn": "0x00724EF0",
+"current_name": "ToolTipClass::compareString"
+},
+"0x00724F40:this": {
+"class": "VectorClass",
+"evidence": "vtable_install",
+"install": "VectorClass_cptr_ToolTip",
+"fn": "0x00724F40",
+"current_name": "ToolTipManager_7::QueryInterface"
+},
+"0x00725FA0:this": {
+"class": "TriggerClass",
+"evidence": "vtable_install",
+"install": "TriggerClass",
+"fn": "0x00725FA0",
+"current_name": "TriggerClass::Construct"
+},
+"0x00726950:this": {
+"class": "TriggerClass",
+"evidence": "vtable_install",
+"install": "TriggerClass",
+"fn": "0x00726950",
+"current_name": "TriggerClass::CheckCondition"
+},
+"0x00726C80:this": {
+"class": "TriggerTypeClass",
+"evidence": "vtable_install",
+"install": "TriggerTypeClass",
+"fn": "0x00726C80",
+"current_name": "TriggerTypeClass::Construct"
+},
+"0x00726E00:this": {
+"class": "TriggerTypeClass",
+"evidence": "vtable_install",
+"install": "TriggerTypeClass",
+"fn": "0x00726E00",
+"current_name": "TriggerClass::ProcessEvents"
+},
+"0x00727FD0:this": {
+"class": "TubeClass",
+"evidence": "vtable_install",
+"install": "TubeClass",
+"fn": "0x00727FD0",
+"current_name": "TubeClass::Construct"
+},
+"0x00728710:this": {
+"class": "TubeClass",
+"evidence": "vtable_install",
+"install": "TubeClass",
+"fn": "0x00728710",
+"current_name": "TubeClass::ProcessEvent"
+},
+"0x00728A00:this": {
+"class": "TunnelLocomotionClass",
+"evidence": "vtable_install",
+"install": "TunnelLocomotionClass",
+"fn": "0x00728A00",
+"current_name": "SmallFunc_728A00"
+},
+"0x0072A440:this": {
+"class": "TextLabelClass",
+"evidence": "vtable_install",
+"install": "TextLabelClass",
+"fn": "0x0072A440",
+"current_name": "MessageListClass::clearMessages"
+},
+"0x007353C0:this": {
+"class": "UnitClass",
+"evidence": "vtable_install",
+"install": "UnitClass",
+"fn": "0x007353C0",
+"current_name": "UnitClass::Construct"
+},
+"0x00735780:this": {
+"class": "UnitClass",
+"evidence": "vtable_install",
+"install": "UnitClass",
+"fn": "0x00735780",
+"current_name": "UnitClass::Destructor"
+},
+"0x007470D0:this": {
+"class": "UnitTypeClass",
+"evidence": "vtable_install",
+"install": "UnitTypeClass",
+"fn": "0x007470D0",
+"current_name": "UnitTypeClass::UnitTypeClass"
+},
+"0x007493B0:this": {
+"class": "VoxelAnimClass",
+"evidence": "vtable_install",
+"install": "VoxelAnimClass",
+"fn": "0x007493B0",
+"current_name": "DamageAnimClass::Constructor"
+},
+"0x007498D0:this": {
+"class": "VoxelAnimClass",
+"evidence": "vtable_install",
+"install": "VoxelAnimClass",
+"fn": "0x007498D0",
+"current_name": "ObjectClass::Initialize"
+},
+"0x007499F0:this": {
+"class": "VoxelAnimClass",
+"evidence": "vtable_install",
+"install": "VoxelAnimClass",
+"fn": "0x007499F0",
+"current_name": "VoxelAnimClass::CleanupMembers"
+},
+"0x0074AD80:this": {
+"class": "VoxelAnimTypeClass",
+"evidence": "vtable_install",
+"install": "VoxelAnimTypeClass",
+"fn": "0x0074AD80",
+"current_name": "VoxelAnimTypeClass::Constructor"
+},
+"0x0074BA30:this": {
+"class": "VoxelAnimTypeClass",
+"evidence": "vtable_install",
+"install": "VoxelAnimTypeClass",
+"fn": "0x0074BA30",
+"current_name": "VoxelAnimTypeClass::ddtor"
+},
+"0x0074C420:this": {
+"class": "VeinholeMonsterClass",
+"evidence": "vtable_install",
+"install": "VeinholeMonsterClass",
+"fn": "0x0074C420",
+"current_name": "VeinholeMonsterClass::Construct"
+},
+"0x0074C5B0:this": {
+"class": "VeinholeMonsterClass",
+"evidence": "vtable_install",
+"install": "VeinholeMonsterClass",
+"fn": "0x0074C5B0",
+"current_name": "VeinholeMonsterClass::Constructor"
+},
+"0x0074C9F0:this": {
+"class": "VeinholeMonsterClass",
+"evidence": "vtable_install",
+"install": "VeinholeMonsterClass",
+"fn": "0x0074C9F0",
+"current_name": "DestroyVeinholeMonster"
+},
+"0x0074F730:this": {
+"class": "VersionClass",
+"evidence": "vtable_install",
+"install": "VersionClass",
+"fn": "0x0074F730",
+"current_name": "sub_74F730"
+},
+"0x0075AA90:this": {
+"class": "WalkLocomotionClass",
+"evidence": "vtable_install",
+"install": "WalkLocomotionClass",
+"fn": "0x0075AA90",
+"current_name": "VoxelAnimClass::Reset"
+},
+"0x0075CBE0:this": {
+"class": "WalkLocomotionClass",
+"evidence": "vtable_install",
+"install": "WalkLocomotionClass",
+"fn": "0x0075CBE0",
+"current_name": "WalkLocomotionClass::ProcessMove"
+},
+"0x0075CEC0:this": {
+"class": "WarheadTypeClass",
+"evidence": "vtable_install",
+"install": "WarheadTypeClass",
+"fn": "0x0075CEC0",
+"current_name": "WarheadTypeClass::Construct"
+},
+"0x0075D230:this": {
+"class": "WarheadTypeClass",
+"evidence": "vtable_install",
+"install": "WarheadTypeClass",
+"fn": "0x0075D230",
+"current_name": "AbstractClass::ProcessInit"
+},
+"0x0075E510:this": {
+"class": "WarheadTypeClass",
+"evidence": "vtable_install",
+"install": "WarheadTypeClass",
+"fn": "0x0075E510",
+"current_name": "WarheadTypeClass::Destructor"
+},
+"0x0075E950:this": {
+"class": "WaveClass",
+"evidence": "vtable_install",
+"install": "WaveClass",
+"fn": "0x0075E950",
+"current_name": "WaveClass::Constructor"
+},
+"0x0075EBE0:this": {
+"class": "WaveClass",
+"evidence": "vtable_install",
+"install": "WaveClass",
+"fn": "0x0075EBE0",
+"current_name": "VoxelAnimClass::Constructor"
+},
+"0x0075ED30:this": {
+"class": "WaveClass",
+"evidence": "vtable_install",
+"install": "WaveClass",
+"fn": "0x0075ED30",
+"current_name": "WaveClass::Destructor"
+},
+"0x00763200:this": {
+"class": "WaveClass",
+"evidence": "vtable_install",
+"install": "WaveClass",
+"fn": "0x00763200",
+"current_name": "WaveClass::ddtor"
+},
+"0x00763730:this": {
+"class": "WaypointPathClass",
+"evidence": "vtable_install",
+"install": "WaypointPathClass",
+"fn": "0x00763730",
+"current_name": "WaypointPathClass::Init"
+},
+"0x00763810:this": {
+"class": "WaypointPathClass",
+"evidence": "vtable_install",
+"install": "WaypointPathClass",
+"fn": "0x00763810",
+"current_name": "WaypointPathClass::Construct"
+},
+"0x00763E20:this": {
+"class": "WaypointPathClass",
+"evidence": "vtable_install",
+"install": "WaypointPathClass",
+"fn": "0x00763E20",
+"current_name": "WaypointPathClass::ProcessEvent"
+},
+"0x00765600:this": {
+"class": "Campaign@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Campaign@WorldDominationTour",
+"fn": "0x00765600",
+"current_name": "Campaign_WorldDominationTour::QueryInterface"
+},
+"0x007667A0:this": {
+"class": "Conflict@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Conflict@WorldDominationTour",
+"fn": "0x007667A0",
+"current_name": "Conflict_WorldDominationTour::QueryInterface"
+},
+"0x00767300:this": {
+"class": "GameOption@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "GameOption@WorldDominationTour",
+"fn": "0x00767300",
+"current_name": "GameOption_WorldDominationTour::Constructor"
+},
+"0x00767880:this": {
+"class": "GameOption@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "GameOption@WorldDominationTour",
+"fn": "0x00767880",
+"current_name": "COMClass::coUninitialize"
+},
+"0x007678C0:this": {
+"class": "GameOption@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "GameOption@WorldDominationTour",
+"fn": "0x007678C0",
+"current_name": "MapSizeGameOption_WorldDominationTour::QueryInterface"
+},
+"0x00767C10:this": {
+"class": "History@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "History@WorldDominationTour",
+"fn": "0x00767C10",
+"current_name": "History_WorldDominationTour::QueryInterface"
+},
+"0x00767E90:this": {
+"class": "MSFrameAnim",
+"evidence": "vtable_install",
+"install": "MSFrameAnim",
+"fn": "0x00767E90",
+"current_name": "sub_767E90"
+},
+"0x00767EC0:this": {
+"class": "MSFrameAnim",
+"evidence": "vtable_install",
+"install": "MSFrameAnim",
+"fn": "0x00767EC0",
+"current_name": "sub_767EC0"
+},
+"0x007680C0:this": {
+"class": "Map@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Map@WorldDominationTour",
+"fn": "0x007680C0",
+"current_name": "WorldDomination::SetupTerritoryNodes"
+},
+"0x00769BD0:this": {
+"class": "MSFrameAnim",
+"evidence": "vtable_install",
+"install": "MSFrameAnim",
+"fn": "0x00769BD0",
+"current_name": "MSFrameAnim::QueryInterface"
+},
+"0x0076ABE0:this": {
+"class": "WDTState",
+"evidence": "vtable_install",
+"install": "WDTState",
+"fn": "0x0076ABE0",
+"current_name": "sub_76ABE0"
+},
+"0x0076AC90:this": {
+"class": "WDTState",
+"evidence": "vtable_install",
+"install": "WDTState",
+"fn": "0x0076AC90",
+"current_name": "File::LoadWDT"
+},
+"0x0076AFC0:this": {
+"class": "WDTState",
+"evidence": "vtable_install",
+"install": "WDTState",
+"fn": "0x0076AFC0",
+"current_name": "WDTState::Constructor_WDTState"
+},
+"0x0076C030:this": {
+"class": "CampaignProperties@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "CampaignProperties@WorldDominationTour",
+"fn": "0x0076C030",
+"current_name": "CampaignProperties_WorldDominationTour::QueryInterface"
+},
+"0x0076C290:this": {
+"class": "Selection@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Selection@WorldDominationTour",
+"fn": "0x0076C290",
+"current_name": "ConstructWDTSelection"
+},
+"0x0076C6E0:this": {
+"class": "Selection@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Selection@WorldDominationTour",
+"fn": "0x0076C6E0",
+"current_name": "SelectionInitializeWOL"
+},
+"0x0076F6C0:this": {
+"class": "State@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "State@WorldDominationTour",
+"fn": "0x0076F6C0",
+"current_name": "State_WorldDominationTour::QueryInterface"
+},
+"0x00770020:this": {
+"class": "Territory@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Territory@WorldDominationTour",
+"fn": "0x00770020",
+"current_name": "Territory_WorldDominationTour::QueryInterface"
+},
+"0x00771850:this": {
+"class": "Anim@Voices@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Anim@Voices@WorldDominationTour",
+"fn": "0x00771850",
+"current_name": "sub_771850"
+},
+"0x00771890:this": {
+"class": "Anim@Voices@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Anim@Voices@WorldDominationTour",
+"fn": "0x00771890",
+"current_name": "sub_771890"
+},
+"0x00771A30:this": {
+"class": "Anim@Voices@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "Anim@Voices@WorldDominationTour",
+"fn": "0x00771A30",
+"current_name": "Territory_WorldDominationTour_8::QueryInterface"
+},
+"0x00771C70:this": {
+"class": "WeaponTypeClass",
+"evidence": "vtable_install",
+"install": "WeaponTypeClass",
+"fn": "0x00771C70",
+"current_name": "WeaponTypeClass::Constructor"
+},
+"0x00771F00:this": {
+"class": "WeaponTypeClass",
+"evidence": "vtable_install",
+"install": "WeaponTypeClass",
+"fn": "0x00771F00",
+"current_name": "WeaponTypeClass::loadWeaponProperties"
+},
+"0x00771F50:this": {
+"class": "WeaponTypeClass",
+"evidence": "vtable_install",
+"install": "WeaponTypeClass",
+"fn": "0x00771F50",
+"current_name": "WeaponTypeClass::Destructor"
+},
+"0x007740A0:this": {
+"class": "WebBrowser",
+"evidence": "vtable_install",
+"install": "WebBrowser",
+"fn": "0x007740A0",
+"current_name": "WebBrowser::GoForward"
+},
+"0x00774120:this": {
+"class": "WinModemClass",
+"evidence": "vtable_install",
+"install": "WinModemClass",
+"fn": "0x00774120",
+"current_name": "WinModemClass::Construct"
+},
+"0x00775610:this": {
+"class": "WinModemClass",
+"evidence": "vtable_install",
+"install": "WinModemClass",
+"fn": "0x00775610",
+"current_name": "WinModemClass::QueryInterface"
+},
+"0x007784A0:this": {
+"class": "CCToolTip",
+"evidence": "vtable_install",
+"install": "CCToolTip",
+"fn": "0x007784A0",
+"current_name": "CCToolTip::QueryInterface"
+},
+"0x0077B030:this": {
+"class": "PlayerProfile",
+"evidence": "vtable_install",
+"install": "PlayerProfile",
+"fn": "0x0077B030",
+"current_name": "PlayerProfile::QueryInterface"
+},
+"0x007A2FC0:this": {
+"class": "CNetUtilEventSink",
+"evidence": "vtable_install",
+"install": "CNetUtilEventSink",
+"fn": "0x007A2FC0",
+"current_name": "System_Init_7A2FC0"
+},
+"0x007A41A0:this": {
+"class": "CChatEventSink",
+"evidence": "vtable_install",
+"install": "CChatEventSink",
+"fn": "0x007A41A0",
+"current_name": "System_Init_7A41A0"
+},
+"0x007AC5D0:this": {
+"class": "WonlineStringDialogControl",
+"evidence": "vtable_install",
+"install": "WonlineStringDialogControl",
+"fn": "0x007AC5D0",
+"current_name": "WonlineStringDialogControl::QueryInterface"
+},
+"0x007AC610:this": {
+"class": "WonlineStringDialogControl",
+"evidence": "vtable_install",
+"install": "WonlineStringDialogControl",
+"fn": "0x007AC610",
+"current_name": "CreateGameWOL_Create_7AC610"
+},
+"0x007AC630:this": {
+"class": "WonlineStringDialogControl",
+"evidence": "vtable_install",
+"install": "WonlineStringDialogControl",
+"fn": "0x007AC630",
+"current_name": "WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl"
+},
+"0x007AD410:this": {
+"class": "?$CComObject@VCDownloadEventSink@@@ATL",
+"evidence": "vtable_install",
+"install": "?$CComObject@VCDownloadEventSink@@@ATL",
+"fn": "0x007AD410",
+"current_name": "System_Init_7AD410"
+},
+"0x007AF500:this": {
+"class": "FactionSelectDialogControl@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "FactionSelectDialogControl@WorldDominationTour",
+"fn": "0x007AF500",
+"current_name": "Team_Start_7AF500"
+},
+"0x007B0440:this": {
+"class": "FactionSelectDialogControl@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "FactionSelectDialogControl@WorldDominationTour",
+"fn": "0x007B0440",
+"current_name": "StreamWrapper::QueryInterface"
+},
+"0x007B0490:this": {
+"class": "FactionSelectDialogControl@WorldDominationTour",
+"evidence": "vtable_install",
+"install": "FactionSelectDialogControl@WorldDominationTour",
+"fn": "0x007B0490",
+"current_name": "Team_Start_7B0490"
+},
+"0x007B19C0:this": {
+"class": "WinsockInterfaceClass",
+"evidence": "vtable_install",
+"install": "WinsockInterfaceClass",
+"fn": "0x007B19C0",
+"current_name": "IPXInterfaceClass::bindSocket"
+},
+"0x007B1AB0:this": {
+"class": "WinsockInterfaceClass",
+"evidence": "vtable_install",
+"install": "WinsockInterfaceClass",
+"fn": "0x007B1AB0",
+"current_name": "WinsockInterfaceClass::WinsockInterfaceClass"
+},
+"0x007B2780:this": {
+"class": "WinsockInterfaceClass",
+"evidence": "vtable_install",
+"install": "WinsockInterfaceClass",
+"fn": "0x007B2780",
+"current_name": "WinsockInterfaceClass::Destru_vt00"
+},
+"0x007B2DB0:this": {
+"class": "UDPInterfaceClass",
+"evidence": "vtable_install",
+"install": "UDPInterfaceClass",
+"fn": "0x007B2DB0",
+"current_name": "Network::finalizeSession"
+},
+"0x007B2E50:this": {
+"class": "UDPInterfaceClass",
+"evidence": "vtable_install",
+"install": "UDPInterfaceClass",
+"fn": "0x007B2E50",
+"current_name": "sub_7B2E50"
+},
+"0x007B4170:this": {
+"class": "UDPInterfaceClass",
+"evidence": "vtable_install",
+"install": "UDPInterfaceClass",
+"fn": "0x007B4170",
+"current_name": "UDPInterfaceClass::Destructor"
+},
+"0x007B8730:this": {
+"class": "MouseClass",
+"evidence": "vtable_install",
+"install": "Mouse",
+"fn": "0x007B8730",
+"current_name": "MouseClass::Construct"
+},
+"0x007BA300:this": {
+"class": "MouseClass",
+"evidence": "vtable_install",
+"install": "Mouse",
+"fn": "0x007BA300",
+"current_name": "WWMouseClass::updateHotspot"
+},
+"0x007BA420:this": {
+"class": "FilePipe",
+"evidence": "vtable_install",
+"install": "FilePipe",
+"fn": "0x007BA420",
+"current_name": "FilePipe::Destructor"
+},
+"0x007BA590:this": {
+"class": "FileStraw",
+"evidence": "vtable_install",
+"install": "FileStraw",
+"fn": "0x007BA590",
+"current_name": "FileStraw::Destructor"
+},
+"0x007BC640:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x007BC640",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_148"
+},
+"0x007BC660:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x007BC660",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_149"
+},
+"0x007BC680:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x007BC680",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_150"
+},
+"0x007BC6A0:this": {
+"class": "Blitter",
+"evidence": "vtable_install",
+"install": "Blitter",
+"fn": "0x007BC6A0",
+"current_name": "??_Gfacet_locale_std__UAEPAXI_Z_151"
+},
+"0x007CA971:this": {
+"class": "__non_rtti_object",
+"evidence": "vtable_install",
+"install": "__non_rtti_object",
+"fn": "0x007CA971",
+"current_name": "??0__non_rtti_object_QAE_PBD_Z"
+},
+"0x007CA9B4:this": {
+"class": "__non_rtti_object",
+"evidence": "vtable_install",
+"install": "__non_rtti_object",
+"fn": "0x007CA9B4",
+"current_name": "sub_7CA9B4"
+},
+"0x007CA9CC:this": {
+"class": "bad_typeid",
+"evidence": "vtable_install",
+"install": "bad_typeid",
+"fn": "0x007CA9CC",
+"current_name": "sub_7CA9CC"
+},
+"0x007CAC34:this": {
+"class": "bad_cast",
+"evidence": "vtable_install",
+"install": "bad_cast",
+"fn": "0x007CAC34",
+"current_name": "sub_7CAC34"
+},
+"0x007D2E6E:this": {
+"class": "exception",
+"evidence": "vtable_install",
+"install": "exception",
+"fn": "0x007D2E6E",
+"current_name": "sub_7D2E6E"
+},
+"0x007D2E9B:this": {
+"class": "exception",
+"evidence": "vtable_install",
+"install": "exception",
+"fn": "0x007D2E9B",
+"current_name": "??0exception_QAE_ABQBD_Z"
+},
+"0x007D2ED8:this": {
+"class": "exception",
+"evidence": "vtable_install",
+"install": "exception",
+"fn": "0x007D2ED8",
+"current_name": "??0exception_QAE_ABV0__Z"
+},
+"0x007D2F41:this": {
+"class": "exception",
+"evidence": "vtable_install",
+"install": "exception",
+"fn": "0x007D2F41",
+"current_name": "Exception::Destructor"
+},
+"0x007DCDC0:this": {
+"class": "_com_error",
+"evidence": "vtable_install",
+"install": "_com_error",
+"fn": "0x007DCDC0",
+"current_name": "ThrowErrorCOM_Helper"
+},
+"0x007DCE0E:this": {
+"class": "_com_error",
+"evidence": "vtable_install",
+"install": "_com_error",
+"fn": "0x007DCE0E",
+"current_name": "sub_7DCE0E"
+},
+"0x007DCE3B:this": {
+"class": "_com_error",
+"evidence": "vtable_install",
+"install": "_com_error",
+"fn": "0x007DCE3B",
+"current_name": "sub_7DCE3B"
+},
+"0x007B0D90:this": {
+"class": "IPXInterfaceClass",
+"evidence": "vtable_install",
+"install": "IPXInterfaceClass",
+"fn": "0x007B0D90",
+"current_name": "IPXInterfaceClass::Construct"
+}
+}

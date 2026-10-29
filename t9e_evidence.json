@@ -1,9 +1,9 @@
 {
  "note": "T9e arithmetic typing rules (X142b) — evidence ledger",
- "total_fired": 2563,
+ "total_fired": 2552,
  "by_rule": {
-  "int-arith": 1806,
-  "ptr-plus": 743,
+  "int-arith": 1804,
+  "ptr-plus": 734,
   "const-store": 9,
   "call-arg": 5
  },
@@ -9613,20 +9613,6 @@
    "edge": "ADD int-operand from=0x0062D2A0::eax_v0x62D356 @ 0x62D35F"
   },
   {
-   "root": 687703,
-   "var": "0x0062DC50::edi_v0x62DC64",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0062DC50::esi_v0x62DC57 @ 0x62DC64"
-  },
-  {
-   "root": 687902,
-   "var": "0x0062E070::esi_v0x62E11E",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0062E070::edi_v0x62E073 @ 0x62E11E"
-  },
-  {
    "root": 688092,
    "var": "0x0062E4C0::ecx_v0x62E56A",
    "rule": "int-arith",
@@ -9662,13 +9648,6 @@
    "edge": "ADD from=0x0062E6D0::ebx_v0x62E70E @ 0x62E7F1"
   },
   {
-   "root": 688223,
-   "var": "0x0062E6D0::esi_v0x62E7B0",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0062E6D0::edi_v0x62E77C @ 0x62E7B0"
-  },
-  {
    "root": 688372,
    "var": "0x0062E840::edx_v0x62EA2C",
    "rule": "ptr-plus",
@@ -9690,13 +9669,6 @@
    "edge": "ADD from=0x0062F230::eax_v0x62F4D8 @ 0x62F4E4"
   },
   {
-   "root": 688780,
-   "var": "0x0062F230::ecx_v0x62F648",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x0062F230::edi_v0x62F240 @ 0x62F648"
-  },
-  {
    "root": 688782,
    "var": "0x0062F230::ecx_v0x62F680",
    "rule": "ptr-plus",
@@ -9716,13 +9688,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD from=0x0062F230::eax_v0x62F7B7 @ 0x62F7C3"
-  },
-  {
-   "root": 689193,
-   "var": "0x0062FE90::esi_v0x62FEAA",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0062FE90::edi_v0x62FE9C @ 0x62FEAA"
   },
   {
    "root": 689245,
@@ -13365,6 +13330,13 @@
    "edge": "ADD int-operand from=0x006E8340::edi_v0x6E83BC @ 0x6E83E6"
   },
   {
+   "root": 835437,
+   "var": "0x006E8A90::edi_v0x6E8CF1",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x006E8A90::esi_v0x6E8A92 @ 0x6E8CF1"
+  },
+  {
    "root": 836063,
    "var": "0x006E9140::ecx_v0x6E97DA",
    "rule": "int-arith",
@@ -13461,6 +13433,13 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "ADD index operand of 0x006EF4D0::eax_v0x6EF523 @ 0x6EF523"
+  },
+  {
+   "root": 842426,
+   "var": "0x006F1C80::eax_v0x6F1E02",
+   "rule": "int-arith",
+   "tier": 4,
+   "edge": "ADD int-operand from=0x006F1C80::esi_v0x6F1DF5 @ 0x6F1E02"
   },
   {
    "root": 842724,
@@ -15416,11 +15395,11 @@
    "edge": "ADD from=0x007665D0::edx_v0x76670A @ 0x766710"
   },
   {
-   "root": 929293,
-   "var": "0x00766A10::ecx_v0x766A2A",
-   "rule": "int-arith",
-   "tier": 4,
-   "edge": "ADD int-operand from=0x00766A10::esi_v0x766A19 @ 0x766A2A"
+   "root": 929122,
+   "var": "0x007667A0::ecx_v0x7667A3",
+   "rule": "ptr-plus",
+   "tier": 1,
+   "edge": "ADD from=0x007667A0::esi_v0x7667A1 @ 0x7667A3"
   },
   {
    "root": 929480,
@@ -15603,48 +15582,6 @@
    "rule": "int-arith",
    "tier": 4,
    "edge": "SCALE @ 0x76C7EB"
-  },
-  {
-   "root": 934597,
-   "var": "0x0076C6E0::ecx_v0x76C8F8",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C8F8"
-  },
-  {
-   "root": 934598,
-   "var": "0x0076C6E0::ecx_v0x76C903",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C903"
-  },
-  {
-   "root": 934600,
-   "var": "0x0076C6E0::ecx_v0x76C922",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C922"
-  },
-  {
-   "root": 934601,
-   "var": "0x0076C6E0::ecx_v0x76C933",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C933"
-  },
-  {
-   "root": 934602,
-   "var": "0x0076C6E0::ecx_v0x76C93B",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C93B"
-  },
-  {
-   "root": 934603,
-   "var": "0x0076C6E0::ecx_v0x76C949",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x0076C6E0::esi_v0x76C6E6 @ 0x76C949"
   },
   {
    "root": 934673,
@@ -16695,20 +16632,6 @@
    "rule": "ptr-plus",
    "tier": 1,
    "edge": "ADD reverse to=0x007A9550::esi_v0x7A9616 @ 0x7A9616"
-  },
-  {
-   "root": 979712,
-   "var": "0x007AC5D0::ecx_v0x7AC5D3",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x007AC5D0::esi_v0x7AC5D1 @ 0x7AC5D3"
-  },
-  {
-   "root": 979727,
-   "var": "0x007AC610::ecx_v0x7AC618",
-   "rule": "ptr-plus",
-   "tier": 1,
-   "edge": "ADD from=0x007AC610::esi_v0x7AC611 @ 0x7AC618"
   },
   {
    "root": 979787,
@@ -17955,23 +17878,23 @@
   "edges": 259189,
   "anchors": {
    "imm": 48961,
-   "mem": 1609,
-   "math": 7374,
-   "total": 57944
+   "mem": 1600,
+   "math": 7375,
+   "total": 57936
   },
   "pending": {
-   "mem": 18683,
+   "mem": 18709,
    "math": 0
   },
   "skip": {
-   "math_typed": 55317,
+   "math_typed": 55316,
    "pop": 48326,
    "unknown": 41699,
    "mem_no_base_or_disp": 17118,
    "lea": 13380,
-   "mem_no_member_type": 6709,
+   "mem_no_member_type": 6733,
    "mem_same_root": 3363,
-   "mem_typed": 1711,
+   "mem_typed": 1694,
    "math_frozen": 1148,
    "mem_stack_base": 361,
    "mem_base_unscoped": 88,
@@ -17980,13 +17903,13 @@
    "mem_dest_conflict": 2
   },
   "mem_classes_top": {
-   "int": 1098,
+   "int": 1094,
    "char[1]": 161,
-   "char[2]": 68,
+   "char[2]": 67,
    "char[4]": 36,
    "char[3]": 36,
-   "ObjectClass": 30,
-   "AbstractClass": 24,
+   "ObjectClass": 28,
+   "AbstractClass": 22,
    "char[12]": 12,
    "IUnknown": 12,
    "bool": 12,
