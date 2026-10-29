@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -78,6 +78,7 @@ FAMILY_DESC = {
     "C7": "param/return variance",
     "C8": "global object identity",
     "C9": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
+    "C10": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -759,6 +760,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--no-name-pins", action="store_true",
+                    help="disable name/proto-this derived class pins")
     ap.add_argument("--prune-dead", action="store_true",
                     help="从候选宇宙剔除零引用死类（anchors/dead_classes.json）")
     ap.add_argument("--dump-domains", action="store_true",
@@ -803,7 +806,10 @@ def main():
 
     # ---------------- 函数声明类（提前定义：proto 证据通道与 C2 共用） ----------------
     owner_of_fn = {}
-    for a, v in protos.items():
+    _NO_NAME_PINS = "--no-name-pins" in sys.argv
+    if _NO_NAME_PINS:
+        print("[names] name-derived class pins DISABLED", flush=True)
+    for a, v in ({} if _NO_NAME_PINS else protos).items():
         nm = (v or {}).get("name") or ""
         if "::" in nm:
             ci = resolve(nm.split("::")[0])
@@ -1309,7 +1315,7 @@ def main():
         m = FULL
         pr = parse_proto((protos.get("0x%08X" % a) or protos.get("0x%x" % a) or {}).get("proto"))
         ci_this = None
-        if pr and pr[1] == "__thiscall" and pr[2] and "this" in pr[2][0]:
+        if (not _NO_NAME_PINS) and pr and pr[1] == "__thiscall" and pr[2] and "this" in pr[2][0]:
             ci_this = type_class(pr[2][0])
         if ci_this is not None and not pin_class_identified(ci_this):
             unidentified_pins[names[ci_this]] += 1
@@ -2302,6 +2308,120 @@ def main():
                 del fam["C9"][_eid]
                 c9_dropped2 += 1
         print("[C9] dropped (empty intersection with other families): %d" % c9_dropped2, flush=True)
+
+    # ---------------- C10：调用图子类型约束（AC-3 传播到不动点）----------------
+    # 用户裁定：函数名默认是错的，不能作为类身份锚。
+    # 唯一可靠的调用语义是：若 caller 把自己的 this 传给 callee 作为 this，
+    # 则 class(callee) 必须是 class(caller) 的**祖先或同类**（子类型关系）。
+    # 以二进制锚（C4 装表 / C9 槽位 / C8 全局）为种子，在 7,113 条 this 传递边
+    # 上做弧相容传播，直到不再收窄。这是一次性求解的一部分，不改变任何证据。
+    _anc_mask_cache = {}
+    _desc_mask_cache = {}
+    def _anc_mask(ci):
+        m = _anc_mask_cache.get(ci)
+        if m is None:
+            m = 1 << ci
+            for a in U["anc"][ci]:
+                m |= (1 << a)
+            _anc_mask_cache[ci] = m
+        return m
+    def _desc_mask(ci):
+        m = _desc_mask_cache.get(ci)
+        if m is None:
+            m = 1 << ci
+            for d in U["desc"][ci]:
+                m |= (1 << d)
+            _desc_mask_cache[ci] = m
+        return m
+
+    # 洁净寄存器到达定义（facts.reg_links = [addr, reg, src, clean]）
+    _clean_reg = {}
+    if facts:
+        for _lk in (facts.get("reg_links") or ()):
+            try:
+                _clean_reg[(int(_lk[0]), _lk[1])] = bool(_lk[3])
+            except (IndexError, TypeError, ValueError):
+                pass
+    _c10_edges_dirty = 0
+    _call_edges = []
+    for _e in raw:
+        if _e.get("type") != "CALL_ARG":
+            continue
+        _fr, _to = _e.get("from"), _e.get("to")
+        if not (isinstance(_fr, str) and isinstance(_to, str)):
+            continue
+        if not _to.endswith(":this"):
+            continue
+        # 调用方的 this 以**寄存器**形式出现（ecx/esi/...），必须按指令地址作用域化
+        if _fr.endswith(":this"):
+            _cc = ent_id(_fr)
+        else:
+            try:
+                _ea = int(str(_e.get("addr")), 16)
+            except (TypeError, ValueError):
+                continue
+            if _clean_reg and _clean_reg.get((_ea, _fr)) is False:
+                _c10_edges_dirty += 1
+                continue          # 该寄存器的到达定义跨 call / 经控制流汇合 -> 不是 this
+            _cc = ent_id(_fr, fn_at(_ea))
+        _ce = ent_id(_to)
+        if _cc and _ce and _cc in ents and _ce in ents and _cc != _ce:
+            _call_edges.append((_cc, _ce))
+    print("[C10] caller-this -> callee-this edges: %d (dirty register edges dropped: %d)"
+          % (len(_call_edges), _c10_edges_dirty), flush=True)
+
+    if _call_edges:
+        # 当前合并域（除 C10 外全部族）
+        _dom = {}
+        for _eid in set([a for a, _ in _call_edges] + [b for _, b in _call_edges]):
+            _m = FULL
+            for _f in FAMILIES:
+                if _f == "C10":
+                    continue
+                _fm = fam[_f].get(_eid)
+                if _fm is not None:
+                    _m &= _fm
+            _dom[_eid] = _m
+        _changed = 0
+        for _round in range(12):
+            _chg = 0
+            for _cc, _ce in _call_edges:
+                _mc = _dom.get(_cc, FULL)
+                _me = _dom.get(_ce, FULL)
+                # callee 必须是 caller 的祖先（或同类）
+                _allowed_e = 0
+                _x = _mc
+                while _x:
+                    _b = _x & -_x; _x ^= _b
+                    _allowed_e |= _anc_mask(_b.bit_length() - 1)
+                _new_e = _me & _allowed_e
+                if _new_e != _me:
+                    _dom[_ce] = _new_e; _chg += 1
+                    _me = _new_e
+                # 反向：caller 必须是 callee 的后代（或同类）
+                _allowed_c = 0
+                _x = _me
+                while _x:
+                    _b = _x & -_x; _x ^= _b
+                    _allowed_c |= _desc_mask(_b.bit_length() - 1)
+                _new_c = _mc & _allowed_c
+                if _new_c != _mc:
+                    _dom[_cc] = _new_c; _chg += 1
+            _changed += _chg
+            if not _chg:
+                break
+        _c10_empty = 0
+        for _eid, _m in _dom.items():
+            if _m == 0:
+                # 传播把域清空 = 该实体的调用边互相矛盾（假边/错误锚），
+                # 不写入 C10（保留其它族证据），并计数。
+                _c10_empty += 1
+                continue
+            if _m != FULL:
+                fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
+        print("[C10] propagation emptied the domain for %d entities (kept unconstrained)" % _c10_empty, flush=True)
+        print("[C10] propagated to fixpoint (%d narrowing steps), entities constrained: %d"
+              % (_changed, len(fam["C10"])), flush=True)
 
         # C1 证据剔除（X159 地址级）后若出现孤立冲突：该簇的观测不足以支持任何类，
         # 按"证据不足"处理——把它从约束集合中移出（记入 free），而不是留作冲突。
