@@ -177,15 +177,15 @@ public:
     bool IncreaseTiberium(int idx_tiberium, int amount);
     void ReduceTiberium(int amount);  // 0x480A80
     void SetMapCoords(const CoordStruct& coords);
-    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    // wrapper: delegates to Animate::ScalarDtor at 0x427270
     int GetFloorHeight(const Point2D& subcoords) const;
-    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    // wrapper: delegates to Animate::ScalarDtor at 0x427270
     CoordStruct* GetCenterCoords(CoordStruct* out) const;
     // design: inline accessor, inlined at all call sites
     CoordStruct GetCenterCoords() const;
-    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    // wrapper: delegates to Animate::ScalarDtor at 0x427270
     void ActivateVeins();
-    // wrapper: delegates to AbstractClass::setMapCoords at 0x427270
+    // wrapper: delegates to Animate::ScalarDtor at 0x427270
     bool DrawObjectsCloaked(int owner_house_idx) const;
 
     // design: inline accessor, inlined at all call sites

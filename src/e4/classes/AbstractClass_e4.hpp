@@ -258,7 +258,7 @@ int DTOR(); // 0x4101F0
     int COMStub_Return0_118();  // 0x4264F0
     int COMStub_Return0_119();  // 0x426500
     int getCoordCenter2();  // 0x426510
-    std::locale::facet *  setMapCoords(char a2);  // 0x427270
+    std::locale::facet *  ScalarDtor(char a2);  // 0x427270
     int COMStub_Return0_190();  // 0x459DC0
     int COMStub_Return0_205();  // 0x459DE0
     int COMStub_Return0_270();  // 0x459E60

@@ -1156,7 +1156,7 @@ int AbstractClass::getMapCoords()
 
 // 0x427270
 namespace gamemd {
-std::locale::facet * AbstractClass::setMapCoords(char a2)
+std::locale::facet * Animate::ScalarDtor(char a2)
 {
 
   /* X11: ptr_0 install elided (implicit via Animate virtuals 0x427279) */

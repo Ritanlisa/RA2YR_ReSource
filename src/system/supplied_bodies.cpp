@@ -767,7 +767,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
 
 // 0x435560
 namespace gamemd {
-unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
+unsigned int * BitText::ScalarDtor(char a2) {
     Text *v3; // esi
 
     /* X11: ptr_0 install elided (X67 star-deref, RHS g_ptr_7E3A80) */  /*0x435564*/
