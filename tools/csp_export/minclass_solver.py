@@ -2182,6 +2182,13 @@ def main():
             "dom_ents": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
                          list(cl.get("ents") or [])[:6]
                          for (cl, m) in constrained if 0 < m.bit_count() <= 8},
+            "cluster_obs": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
+                            sorted(cl.get("obs") or [])
+                            for (cl, m) in constrained},
+            "assign_map": {((_cl.get("root") if isinstance(_cl, dict) else str(_cl))): _c
+                           for _cl, _c in (assign or {}).items()},
+            "constrained_sample": [type(constrained[0][0]).__name__ if constrained else "none",
+                                   (constrained[0][0] if constrained else None)],
         }
 
     # ---------------- C9：vtable 槽位归属（函数 -> 拥有它的类）----------------
@@ -2673,6 +2680,44 @@ def main():
               % (apath, len(_asg),
                  sum(1 for v in _asg.values() if v["confidence"] == "forced"),
                  sum(1 for v in _asg.values() if v["confidence"] == "narrow")), flush=True)
+    # ---- 由解直接读出类布局（内容是解的输出，不是输入）----
+    _assign = res.get("assign_map") or {}
+    _obs = res.get("cluster_obs") or {}
+    _roots = [(c.get("root") if isinstance(c, dict) else str(c))
+              for (c, _m) in (res.get("constrained") or [])]
+    _derived = {}
+    for _k, _ci in _assign.items():
+        try:
+            _idx = int(_k)
+        except (TypeError, ValueError):
+            continue
+        if not (0 <= _idx < len(_roots)):
+            continue
+        _root = _roots[_idx]
+        if _ci is None or _ci < 0 or _ci >= n:
+            continue
+        _cname = names[_ci]
+        _d = _derived.setdefault(_cname, {"members": set(), "clusters": 0})
+        _d["clusters"] += 1
+        for _o, _w in (_obs.get(_root) or []):
+            _o = int(_o); _w = int(_w or 4)
+            if _o > 4096:
+                continue      # 伪偏移（提取噪声），不进入派生布局
+            _d["members"].add((_o, _w))
+    _dl = {}
+    for _cname, _d in _derived.items():
+        _ms = sorted(_d["members"])
+        _dl[_cname] = {
+            "member_count": len(_ms),
+            "extent": (max(o + w for o, w in _ms) if _ms else 0),
+            "clusters": _d["clusters"],
+            "members": [[o, w] for o, w in _ms],
+        }
+    _dpath = os.path.join(ROOT, "anchors/derived_layouts.json")
+    with io.open(_dpath, "w", encoding="utf-8") as fh:
+        json.dump(_dl, fh, ensure_ascii=False, indent=0)
+    print("[out] %s (%d classes, members derived from the solution)" % (_dpath, len(_dl)), flush=True)
+
     rpath = os.path.join(ROOT, "anchors/minclass_result.json")
     with io.open(rpath, "w", encoding="utf-8") as fh:
         json.dump(result, fh, ensure_ascii=False, indent=1)
