@@ -1,0 +1,14 @@
+{
+"Class_7E8C94": 1,
+"ContextBase": 1,
+"SchedulerBase": 3,
+"InternalContextBase": 1,
+"SchedulerProxy": 2,
+"ExternalContextBase": 1,
+"WNDCLASSA": 1,
+"LOGFONTA": 1,
+"OLECHAR": 1,
+"wint_t": 1,
+"tm": 1,
+"ICreateErrorInfo": 1
+}
