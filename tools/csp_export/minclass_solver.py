@@ -753,6 +753,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--dump-domains", action="store_true",
+                    help="写出每簇候选域大小（判断多少簇真正被证据确定）")
     ap.add_argument("--strict-c1", action="store_true",
                     help="C1 严格模式：稀疏布局不再「未知放行」，所有类都必须真正"
                          "覆盖被访问的字节区间。用于检验 K 是否被万能空类支配。")
@@ -2171,6 +2173,7 @@ def main():
             "n_conflicts": len(conflicted), "pinned_classes": len(pinned_classes),
             "forced_classes": len(forced), "bad_cover": bad_cover,
             "flagged": flagged, "diag_flagged": diag_flagged,
+            "dom_sizes": {str(cl): m.bit_count() for (cl, m) in constrained},
         }
 
     family_table = []
@@ -2545,6 +2548,11 @@ def main():
         "family_table": table_out,
         "chosen_classes": class_counts,
     }
+    if getattr(args, "dump_domains", False):
+        dpath = os.path.join(ROOT, "anchors/minclass_domains.json")
+        with io.open(dpath, "w", encoding="utf-8") as fh:
+            json.dump(res["dom_sizes"], fh, ensure_ascii=False)
+        print("[out] %s" % dpath, flush=True)
     rpath = os.path.join(ROOT, "anchors/minclass_result.json")
     with io.open(rpath, "w", encoding="utf-8") as fh:
         json.dump(result, fh, ensure_ascii=False, indent=1)
