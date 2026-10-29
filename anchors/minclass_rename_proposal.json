@@ -1,0 +1,982 @@
+[
+{
+"fn": "0x0040C110",
+"current": "EventClass::queueEvent",
+"new": "VectorClass_cptr_CommandClass::ScalarDtor",
+"class": "VectorClass_cptr_CommandClass",
+"source": "install"
+},
+{
+"fn": "0x0040C160",
+"current": "MoveFeedback::Constructor",
+"new": "VectorClass_cptr_CommandClass::ScalarDtor_2",
+"class": "VectorClass_cptr_CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00427270",
+"current": "AbstractClass::setMapCoords",
+"new": "Animate::ScalarDtor",
+"class": "Animate",
+"source": "install"
+},
+{
+"fn": "0x00434A40",
+"current": "BufferIOFileClass::Constructor_BitFont",
+"new": "BitFont::ScalarDtor",
+"class": "BitFont",
+"source": "install"
+},
+{
+"fn": "0x00435560",
+"current": "BufferIOFileClass::Constructor_BitText",
+"new": "BitText::ScalarDtor",
+"class": "BitText",
+"source": "install"
+},
+{
+"fn": "0x0045A9C0",
+"current": "TypeList_Particle::Add",
+"new": "VectorClass_cptr_ParticleSystemTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_ParticleSystemTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00471520",
+"current": "CampaignScore::Constructor_CampaignEndScoreClass",
+"new": "CampaignEndScoreClass::ScalarDtor",
+"class": "CampaignEndScoreClass",
+"source": "install"
+},
+{
+"fn": "0x00491210",
+"current": "VectorClass_ptr_ConvertClass::Constructor_ConvertClass",
+"new": "ConvertClass::ScalarDtor",
+"class": "ConvertClass",
+"source": "install"
+},
+{
+"fn": "0x00499CC0",
+"current": "AbstractClass::getTileIndex",
+"new": "Blitter::ScalarDtor",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x00499CE0",
+"current": "AbstractClass::setTileIndex",
+"new": "Blitter::ScalarDtor_2",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x00499D00",
+"current": "AbstractClass::getOverlayType",
+"new": "Blitter::ScalarDtor_3",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x00499D20",
+"current": "AbstractClass::setOverlayFlags",
+"new": "Blitter::ScalarDtor_4",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x00499DA0",
+"current": "AbstractClass::clearOverlayFlags",
+"new": "RLEBlitter::ScalarDtor",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A1A0",
+"current": "BlitTransXlatAlpha_ushort::Constructor_Blitter",
+"new": "Blitter::ScalarDtor_5",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A1C0",
+"current": "BlitTransXlatAlpha_ushort::Constructor_Blitter_0",
+"new": "Blitter::ScalarDtor_6",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A1E0",
+"current": "BlitTransXlatAlpha_ushort::Constructor_Blitter_1",
+"new": "Blitter::ScalarDtor_7",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A380",
+"current": "BlitTransLucent25Alpha_ushort::Constructor_Blitter",
+"new": "Blitter::ScalarDtor_8",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A3A0",
+"current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter",
+"new": "Blitter::ScalarDtor_9",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A3C0",
+"current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0",
+"new": "Blitter::ScalarDtor_10",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A3E0",
+"current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
+"new": "Blitter::ScalarDtor_11",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A400",
+"current": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2",
+"new": "Blitter::ScalarDtor_12",
+"class": "Blitter",
+"source": "install"
+},
+{
+"fn": "0x0049A760",
+"current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter",
+"new": "RLEBlitter::ScalarDtor_2",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A780",
+"current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0",
+"new": "RLEBlitter::ScalarDtor_3",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A7A0",
+"current": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1",
+"new": "RLEBlitter::ScalarDtor_4",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A9A0",
+"current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter",
+"new": "RLEBlitter::ScalarDtor_5",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A9C0",
+"current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0",
+"new": "RLEBlitter::ScalarDtor_6",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x0049A9E0",
+"current": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1",
+"new": "RLEBlitter::ScalarDtor_7",
+"class": "RLEBlitter",
+"source": "install"
+},
+{
+"fn": "0x004CAB50",
+"current": "FactoryClass_33::QueryInterface",
+"new": "VectorClass_cptr_TechnoTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_TechnoTypeClass",
+"source": "install"
+},
+{
+"fn": "0x004CABA0",
+"current": "AbstractClass::resetScriptState",
+"new": "VectorClass_cptr_TechnoTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_TechnoTypeClass",
+"source": "install"
+},
+{
+"fn": "0x004E8270",
+"current": "HouseClass::initAngerStruct",
+"new": "VersionClass::ScalarDtor",
+"class": "VersionClass",
+"source": "install"
+},
+{
+"fn": "0x005129F0",
+"current": "TypeList_Infantry::Add",
+"new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_InfantryTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512A40",
+"current": "HouseTypeClass_36::QueryInterface",
+"new": "VectorClass_cptr_UnitTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_UnitTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512A90",
+"current": "HouseTypeClass_28::QueryInterface",
+"new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_AircraftTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512AE0",
+"current": "InfantryTypeVector::QueryInterface",
+"new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_InfantryTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512B30",
+"current": "UnitTypeVector::QueryInterface",
+"new": "VectorClass_cptr_UnitTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_UnitTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512B80",
+"current": "HouseTypeClass_36::Constructor",
+"new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_AircraftTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00512E20",
+"current": "TypeList_Infantry::Constructor",
+"new": "VectorClass_cptr_InfantryTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_InfantryTypeClass",
+"source": "install"
+},
+{
+"fn": "0x005131F0",
+"current": "TypeList_Infantry::Constructor_0",
+"new": "VectorClass_cptr_UnitTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_UnitTypeClass",
+"source": "install"
+},
+{
+"fn": "0x005135C0",
+"current": "TypeList_Infantry::Constructor_1",
+"new": "VectorClass_cptr_AircraftTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_AircraftTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00524FC0",
+"current": "WarheadTypeClass::QueryInterface",
+"new": "VectorClass_cptr_AnimTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_AnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00525010",
+"current": "DynamicVectorClass_AnimType::Add",
+"new": "VectorClass_cptr_AnimTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_AnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x005252B0",
+"current": "DynamicVectorClass_cptr_AnimTypeClass::Add",
+"new": "VectorClass_cptr_AnimTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_AnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0052AE20",
+"current": "Delegate::Constructor_GenericNode",
+"new": "GenericNode::ScalarDtor",
+"class": "GenericNode",
+"source": "install"
+},
+{
+"fn": "0x0052AFC0",
+"current": "WarheadTypeClass::ReadParticleSystems",
+"new": "GenericList::ScalarDtor",
+"class": "GenericList",
+"source": "install"
+},
+{
+"fn": "0x00535CD0",
+"current": "CreateTeamCommand::performAction_0",
+"new": "CommandClass::ScalarDtor",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00535D00",
+"current": "CreateTeamCommand::performAction_1",
+"new": "CommandClass::ScalarDtor_2",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00536090",
+"current": "CreateTeamCommand::performAction_22",
+"new": "CommandClass::ScalarDtor_3",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00536180",
+"current": "CreateTeamCommand::performAction_23",
+"new": "CommandClass::ScalarDtor_4",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00536270",
+"current": "CreateTeamCommand::performAction_24",
+"new": "CommandClass::ScalarDtor_5",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00536580",
+"current": "CreateTeamCommand::performAction_25",
+"new": "CommandClass::ScalarDtor_6",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00537FA0",
+"current": "CreateTeamCommand::performAction_198",
+"new": "CommandClass::ScalarDtor_7",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00537FC0",
+"current": "CreateTeamCommand::performAction_199",
+"new": "CommandClass::ScalarDtor_8",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00537FE0",
+"current": "CreateTeamCommand::performAction_200",
+"new": "CommandClass::ScalarDtor_9",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538000",
+"current": "CreateTeamCommand::performAction_201",
+"new": "CommandClass::ScalarDtor_10",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538020",
+"current": "CreateTeamCommand::performAction_202",
+"new": "CommandClass::ScalarDtor_11",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538040",
+"current": "CreateTeamCommand::performAction_203",
+"new": "CommandClass::ScalarDtor_12",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538060",
+"current": "CreateTeamCommand::performAction_204",
+"new": "CommandClass::ScalarDtor_13",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538080",
+"current": "CreateTeamCommand::performAction_205",
+"new": "CommandClass::ScalarDtor_14",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005380A0",
+"current": "CreateTeamCommand::performAction_206",
+"new": "CommandClass::ScalarDtor_15",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005380C0",
+"current": "CreateTeamCommand::performAction_207",
+"new": "CommandClass::ScalarDtor_16",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005380E0",
+"current": "CreateTeamCommand::performAction_208",
+"new": "CommandClass::ScalarDtor_17",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538100",
+"current": "CreateTeamCommand::performAction_209",
+"new": "CommandClass::ScalarDtor_18",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538120",
+"current": "CreateTeamCommand::performAction_210",
+"new": "CommandClass::ScalarDtor_19",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538140",
+"current": "CreateTeamCommand::performAction_211",
+"new": "CommandClass::ScalarDtor_20",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538160",
+"current": "CreateTeamCommand::performAction_212",
+"new": "CommandClass::ScalarDtor_21",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538180",
+"current": "CreateTeamCommand::performAction_213",
+"new": "CommandClass::ScalarDtor_22",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005381A0",
+"current": "CreateTeamCommand::performAction_214",
+"new": "CommandClass::ScalarDtor_23",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005381C0",
+"current": "CreateTeamCommand::performAction_215",
+"new": "CommandClass::ScalarDtor_24",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005381E0",
+"current": "CreateTeamCommand::performAction_216",
+"new": "CommandClass::ScalarDtor_25",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538200",
+"current": "CreateTeamCommand::performAction_217",
+"new": "CommandClass::ScalarDtor_26",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538220",
+"current": "CreateTeamCommand::performAction_218",
+"new": "CommandClass::ScalarDtor_27",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538240",
+"current": "CreateTeamCommand::performAction_219",
+"new": "CommandClass::ScalarDtor_28",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538260",
+"current": "CreateTeamCommand::performAction_220",
+"new": "CommandClass::ScalarDtor_29",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538280",
+"current": "CreateTeamCommand::performAction_221",
+"new": "CommandClass::ScalarDtor_30",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005382A0",
+"current": "CreateTeamCommand::performAction_222",
+"new": "CommandClass::ScalarDtor_31",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005382C0",
+"current": "CreateTeamCommand::performAction_223",
+"new": "CommandClass::ScalarDtor_32",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005382E0",
+"current": "CreateTeamCommand::performAction_224",
+"new": "CommandClass::ScalarDtor_33",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538300",
+"current": "CreateTeamCommand::performAction_225",
+"new": "CommandClass::ScalarDtor_34",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538320",
+"current": "CreateTeamCommand::performAction_226",
+"new": "CommandClass::ScalarDtor_35",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538340",
+"current": "CreateTeamCommand::performAction_227",
+"new": "CommandClass::ScalarDtor_36",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538360",
+"current": "CreateTeamCommand::performAction_228",
+"new": "CommandClass::ScalarDtor_37",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538380",
+"current": "CreateTeamCommand::performAction_229",
+"new": "CommandClass::ScalarDtor_38",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005383A0",
+"current": "CreateTeamCommand::performAction_230",
+"new": "CommandClass::ScalarDtor_39",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005383C0",
+"current": "CreateTeamCommand::performAction_231",
+"new": "CommandClass::ScalarDtor_40",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005383E0",
+"current": "CreateTeamCommand::performAction_232",
+"new": "CommandClass::ScalarDtor_41",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538400",
+"current": "CreateTeamCommand::performAction_233",
+"new": "CommandClass::ScalarDtor_42",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538420",
+"current": "CreateTeamCommand::performAction_234",
+"new": "CommandClass::ScalarDtor_43",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538440",
+"current": "CreateTeamCommand::performAction_235",
+"new": "CommandClass::ScalarDtor_44",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538460",
+"current": "CreateTeamCommand::performAction_236",
+"new": "CommandClass::ScalarDtor_45",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x00538480",
+"current": "CreateTeamCommand::performAction_237",
+"new": "CommandClass::ScalarDtor_46",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x005384A0",
+"current": "CreateTeamCommand::performAction_238",
+"new": "CommandClass::ScalarDtor_47",
+"class": "CommandClass",
+"source": "install"
+},
+{
+"fn": "0x0053C780",
+"current": "DeleteCommandClass_28::QueryInterface",
+"new": "VectorClass_cptr_AnimClass::ScalarDtor",
+"class": "VectorClass_cptr_AnimClass",
+"source": "install"
+},
+{
+"fn": "0x0053C7D0",
+"current": "DeleteCommandClass_28::Constructor",
+"new": "VectorClass_cptr_AnimClass::ScalarDtor_2",
+"class": "VectorClass_cptr_AnimClass",
+"source": "install"
+},
+{
+"fn": "0x00543100",
+"current": "IPXManagerClass::getPlayerName",
+"new": "ConnManClass::ScalarDtor",
+"class": "ConnManClass",
+"source": "install"
+},
+{
+"fn": "0x00543B10",
+"current": "AbstractClass::CreateInstance",
+"new": "IsometricTileClass::ScalarDtor",
+"class": "IsometricTileClass",
+"source": "install"
+},
+{
+"fn": "0x005AC650",
+"current": "TypeList_BuildingType::Add",
+"new": "VectorClass_cptr_BuildingTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_BuildingTypeClass",
+"source": "install"
+},
+{
+"fn": "0x005B3A60",
+"current": "AbstractClass::getWeaponRange",
+"new": "MissionClass::ScalarDtor",
+"class": "MissionClass",
+"source": "install"
+},
+{
+"fn": "0x005B46E0",
+"current": "AbstractClass::getWeaponSpeed",
+"new": "GenericList::ScalarDtor_2",
+"class": "GenericList",
+"source": "install"
+},
+{
+"fn": "0x005C0FE0",
+"current": "ScenarioClass::initAI",
+"new": "MultiplayerBattle::ScalarDtor",
+"class": "MultiplayerBattle",
+"source": "install"
+},
+{
+"fn": "0x005C5E40",
+"current": "ScenarioClass::executeTriggerActions",
+"new": "FreeForAll::ScalarDtor",
+"class": "FreeForAll",
+"source": "install"
+},
+{
+"fn": "0x005CEB60",
+"current": "ScenarioClass::checkWinningConditions",
+"new": "MSAnim::ScalarDtor",
+"class": "MSAnim",
+"source": "install"
+},
+{
+"fn": "0x005D7FD0",
+"current": "AbstractClass::checkVisibility",
+"new": "AbstractClass::ScalarDtor",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x005D8030",
+"current": "AbstractClass::updateVisibilityState",
+"new": "AbstractClass::ScalarDtor_2",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x005D8050",
+"current": "AbstractClass::processFogReveal",
+"new": "AbstractClass::ScalarDtor_3",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x005D8070",
+"current": "AbstractClass::checkShroudState",
+"new": "AbstractClass::ScalarDtor_4",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x005D8090",
+"current": "AbstractClass::updateShroudMap",
+"new": "AbstractClass::ScalarDtor_5",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x005EF290",
+"current": "VectorClass_cptr_MultiMission::j_vt00",
+"new": "NullModemConnClass::ScalarDtor",
+"class": "NullModemConnClass",
+"source": "install"
+},
+{
+"fn": "0x005FDF70",
+"current": "Object::DrawObject",
+"new": "OverlayClass::ScalarDtor",
+"class": "OverlayClass",
+"source": "install"
+},
+{
+"fn": "0x006244A0",
+"current": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor",
+"new": "DialogControl_OwnerDraw::ScalarDtor",
+"class": "DialogControl_OwnerDraw",
+"source": "proto"
+},
+{
+"fn": "0x006244C0",
+"current": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0",
+"new": "SimpleDialogControl_OwnerDraw::ScalarDtor",
+"class": "SimpleDialogControl_OwnerDraw",
+"source": "proto"
+},
+{
+"fn": "0x00631F40",
+"current": "GameClass::saveGameState",
+"new": "PixelFXClass::ScalarDtor",
+"class": "PixelFXClass",
+"source": "install"
+},
+{
+"fn": "0x0065C610",
+"current": "AbstractClass::processAITrigger",
+"new": "FileClass::ScalarDtor",
+"class": "FileClass",
+"source": "install"
+},
+{
+"fn": "0x0065D4D0",
+"current": "AbstractClass::checkAICondition",
+"new": "AbstractClass::ScalarDtor_6",
+"class": "AbstractClass",
+"source": "proto"
+},
+{
+"fn": "0x0065D6A0",
+"current": "COMClass::initInterface",
+"new": "ReferenceCounted::ScalarDtor",
+"class": "ReferenceCounted",
+"source": "install"
+},
+{
+"fn": "0x0067A990",
+"current": "TypeList_VoxelAnim::Add",
+"new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_VoxelAnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067A9E0",
+"current": "TypeList_VoxelAnim::TypeList_vt00",
+"new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_SmudgeTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067AA30",
+"current": "TypeList_cptr_TerrainTypeClass::Add",
+"new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor",
+"class": "VectorClass_cptr_TerrainTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C010",
+"current": "TypeList_VoxelAnim::Constructor",
+"new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_VoxelAnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C060",
+"current": "DynamicVectorClass_cptr_VoxelAnimTypeClass::Add",
+"new": "VectorClass_cptr_VoxelAnimTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_VoxelAnimTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C0B0",
+"current": "SmudgeTypeVector::QueryInterface",
+"new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_SmudgeTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C100",
+"current": "TypeList_VoxelAnim::Constructor_0",
+"new": "VectorClass_cptr_SmudgeTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_SmudgeTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C150",
+"current": "TypeList_cptr_TerrainTypeClass::Constructor",
+"new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_TerrainTypeClass",
+"source": "install"
+},
+{
+"fn": "0x0067C1A0",
+"current": "TypeList_VoxelAnim::Constructor_1",
+"new": "VectorClass_cptr_TerrainTypeClass::ScalarDtor_3",
+"class": "VectorClass_cptr_TerrainTypeClass",
+"source": "install"
+},
+{
+"fn": "0x006910A0",
+"current": "ScoreAnimClass::Constructor_ScoreFontClass",
+"new": "ScoreFontClass::ScalarDtor",
+"class": "ScoreFontClass",
+"source": "install"
+},
+{
+"fn": "0x006B4FA0",
+"current": "UnitClass::DestroySmudge",
+"new": "SmudgeClass::ScalarDtor",
+"class": "SmudgeClass",
+"source": "install"
+},
+{
+"fn": "0x00717B70",
+"current": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface",
+"new": "VectorClass_cptr_ParticleSystemTypeClass::ScalarDtor_2",
+"class": "VectorClass_cptr_ParticleSystemTypeClass",
+"source": "install"
+},
+{
+"fn": "0x00724EF0",
+"current": "ToolTipClass::compareString",
+"new": "VectorClass_cptr_ToolTip::ScalarDtor",
+"class": "VectorClass_cptr_ToolTip",
+"source": "install"
+},
+{
+"fn": "0x00724F40",
+"current": "ToolTipManager_7::QueryInterface",
+"new": "VectorClass_cptr_ToolTip::ScalarDtor_2",
+"class": "VectorClass_cptr_ToolTip",
+"source": "install"
+},
+{
+"fn": "0x00765600",
+"current": "Campaign_WorldDominationTour::QueryInterface",
+"new": "Campaign_WorldDominationTour::ScalarDtor",
+"class": "Campaign_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x007667A0",
+"current": "Conflict_WorldDominationTour::QueryInterface",
+"new": "Conflict_WorldDominationTour::ScalarDtor",
+"class": "Conflict_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x00767880",
+"current": "COMClass::coUninitialize",
+"new": "FlagGameOption_WorldDominationTour::ScalarDtor",
+"class": "FlagGameOption_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x007678C0",
+"current": "MapSizeGameOption_WorldDominationTour::QueryInterface",
+"new": "MapSizeGameOption_WorldDominationTour::ScalarDtor",
+"class": "MapSizeGameOption_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x00767C10",
+"current": "History_WorldDominationTour::QueryInterface",
+"new": "History_WorldDominationTour::ScalarDtor",
+"class": "History_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x0076AC90",
+"current": "File::LoadWDT",
+"new": "WDTState::ScalarDtor",
+"class": "WDTState",
+"source": "install"
+},
+{
+"fn": "0x0076C030",
+"current": "CampaignProperties_WorldDominationTour::QueryInterface",
+"new": "CampaignProperties_WorldDominationTour::ScalarDtor",
+"class": "CampaignProperties_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x0076F6C0",
+"current": "State_WorldDominationTour::QueryInterface",
+"new": "State_WorldDominationTour::ScalarDtor",
+"class": "State_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x00770020",
+"current": "Territory_WorldDominationTour::QueryInterface",
+"new": "Territory_WorldDominationTour::ScalarDtor",
+"class": "Territory_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x00771A30",
+"current": "Territory_WorldDominationTour_8::QueryInterface",
+"new": "Anim_Voices_WorldDominationTour::ScalarDtor",
+"class": "Anim_Voices_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x007B0440",
+"current": "StreamWrapper::QueryInterface",
+"new": "FactionSelectDialogControl_WorldDominationTour::ScalarDtor",
+"class": "FactionSelectDialogControl_WorldDominationTour",
+"source": "proto"
+},
+{
+"fn": "0x007BA300",
+"current": "WWMouseClass::updateHotspot",
+"new": "Mouse::ScalarDtor",
+"class": "Mouse",
+"source": "install"
+}
+]
