@@ -972,6 +972,15 @@ def main():
         _ci = resolve(_cn)
         if _ci is not None:
             identified.add(_ci)
+    # 规则 P 修正：非多态类可以既无 RTTI 表也无 ctor 锚，但只要有**真实成员访问**
+    # 就是二进制存在的类（ScenarioClass/TacticalClass/RulesClass/Cell 等 419 个）。
+    # 把「零证据」才算虚构，否则会丢掉 2,460 条合法 pin（实测）。
+    _ev_cls = (jload("anchors/layout_evidence.json", {}) or {}).get("classes") or {}
+    for _cn, _rec in _ev_cls.items():
+        if (_rec.get("extra_offsets") or []):
+            _ci = resolve(_cn)
+            if _ci is not None:
+                identified.add(_ci)
     unidentified_pins = collections.Counter()
 
     def pin_class_identified(ci):
