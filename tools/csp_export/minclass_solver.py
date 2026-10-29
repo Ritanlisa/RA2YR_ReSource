@@ -1097,6 +1097,116 @@ def main():
     exact = collections.defaultdict(list)
     c1_gaps = []                                # C1 无解（布局缺口），不丢实体
 
+    # ---- 继承链成员展开（结构性修复）----
+    # class_layouts 里 61% 的派生类**只列自身成员**，不含基类成员：
+    # OverlayClass 缺 45 个、HouseClass 缺 [0,4,8,12,33]、InfantryClass 334 而
+    # 基类 FootClass 384。C1 因此把合法的继承访问当成反证（578 个假冲突）。
+    _parents = {}
+    try:
+        _raw_layouts = jload("tools/class_layouts.json", {}) or {}
+        for _cn, _rec in _raw_layouts.items():
+            if isinstance(_rec, dict) and _rec.get("parent"):
+                _ci = resolve(_cn)
+                _pi = resolve(_rec["parent"])
+                if _ci is not None and _pi is not None and _ci != _pi:
+                    _parents[_ci] = _pi
+    except Exception:
+        _parents = {}
+    _inherit_added = 0
+    _depth_cache = {}
+    def _chain(ci):
+        out = []; seen = set(); cur = ci; d = 0
+        while cur in _parents and cur not in seen and d < 16:
+            seen.add(cur); cur = _parents[cur]; out.append(cur); d += 1
+        return out
+    for _ci in range(n):
+        for _anc in _chain(_ci):
+            if not U["has_layout"][_anc]:
+                continue
+            for _o, _w in U["members"][_anc].items():
+                if _o not in U["members"][_ci]:
+                    U["members"][_ci][_o] = _w
+                    _inherit_added += 1
+    print("[layouts] inheritance flattening: %d parent links, %d inherited members added"
+          % (len(_parents), _inherit_added), flush=True)
+
+    # ---- 二进制身份锚定的成员表补全（非循环）----
+    # 身份只来自二进制：ctor vtable 装表 / vtable 槽位归属 / 全局单例。
+    # 一旦身份确定，该类所有函数在 this 上的访问偏移就是**该类的真实成员**，
+    # 把它们并入成员表，C1 才有判别力（此前只有残缺的声明成员表，847/1,282
+    # 个类被当成"稀疏=放行"，C1 一条都没钉住）。
+    _id_funcs = collections.defaultdict(set)
+    for _a, _cn in (jload("anchors/ctor_types.json", {}) or {}).items():
+        _ci = resolve(_cn); _fa = hx(_a)
+        if _ci is not None and _fa is not None:
+            _id_funcs[_ci].add(_fa)
+    for _a, _cn in ((jload("anchors/structural_truth.json", {}) or {})
+                    .get("vtable_install") or {}).items():
+        _ci = resolve(_cn); _fa = hx(_a)
+        if _ci is not None and _fa is not None:
+            _id_funcs[_ci].add(_fa)
+    _auth = jload("anchors/vtable_slot_authority.json", {}) or {}
+    for _cn, _rec in (_auth.get("classes") or {}).items():
+        _ci = resolve(_cn)
+        if _ci is None:
+            continue
+        for _sl in (_rec.get("slots") or []):
+            if isinstance(_sl, dict) and _sl.get("addr"):
+                _fa = hx(str(_sl["addr"]))
+                if _fa is not None:
+                    _id_funcs[_ci].add(_fa)
+    _fn_obs = collections.defaultdict(list)
+    for _e in raw:
+        if _e.get("type") != "MEMBER_ACCESS":
+            continue
+        _b = _e.get("base")
+        if not (isinstance(_b, str) and _b.endswith(":this")):
+            continue
+        _fa = hx(_b.split(":")[0])
+        if _fa is None:
+            continue
+        if _e.get("addr") and ("0x%08X" % int(str(_e["addr"]), 16)) in dropped_addr:
+            continue
+        try:
+            _o = int(_e.get("offset") or 0)
+        except (TypeError, ValueError):
+            continue
+        _w = _e.get("width")
+        _w = int(_w) if isinstance(_w, (int, float)) and _w > 0 else 4
+        _fn_obs[_fa].append((_o, _w))
+    _vfslots = {}
+    try:
+        _vfslots = jload(".omo/x443/vfptr_slots.json", {}) or {}
+    except Exception:
+        _vfslots = {}
+    _bin_added = 0
+    _bin_classes = 0
+    for _ci, _fns in _id_funcs.items():
+        _add = {}
+        for _fa in _fns:
+            for (_o, _w) in _fn_obs.get(_fa, ()):
+                if _o > 0x10000:
+                    continue          # 远超对象体的偏移属成员链，跳过
+                _add[_o] = max(_add.get(_o, 0), _w)
+        _vfn = resolve(_cn) if False else None
+        if _add:
+            _bin_classes += 1
+        for _o, _w in _add.items():
+            if _o not in U["members"][_ci]:
+                U["members"][_ci][_o] = _w
+                _bin_added += 1
+    # 自身 vfptr 槽（多继承 0/4/8/12）：来自 ctor 装表序列的前导连续区
+    for _cn, _offs in (_vfslots or {}).items():
+        _ci = resolve(_cn)
+        if _ci is None:
+            continue
+        for _o in _offs:
+            if _o <= 0x20 and _o not in U["members"][_ci]:
+                U["members"][_ci][_o] = 4
+                _bin_added += 1
+    print("[layouts] binary-identity member completion: %d classes, %d members added"
+          % (_bin_classes, _bin_added), flush=True)
+
     # ---------------- C1：成员偏移 ----------------
     # C1 密度门：布局只覆盖 >=70% dword 的类视为"完整"，缺失偏移可判负；
     # 稀疏布局（观测得到的成员表）缺失偏移不算反证 —— 实测证明多数布局是稀疏的：
