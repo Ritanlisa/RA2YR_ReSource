@@ -4,1658 +4,3080 @@
 "current_name": "EventClass::queueEvent",
 "name_class": "EventClass",
 "installed_class": "VectorClass_cptr_CommandClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0040C160",
 "current_name": "MoveFeedback::Constructor",
 "name_class": "MoveFeedback",
 "installed_class": "VectorClass_cptr_CommandClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0041D300",
 "current_name": "AbstractClass::Create",
 "name_class": "AbstractClass",
 "installed_class": "AirstrikeClass",
-"solver_class": "AirstrikeClass"
+"solver_class": "AirstrikeClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0041E350",
 "current_name": "AnimTypeClass::Construct2",
 "name_class": "AnimTypeClass",
 "installed_class": "AITriggerTypeClass",
-"solver_class": "AITriggerTypeClass"
+"solver_class": "AITriggerTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00427270",
 "current_name": "AbstractClass::setMapCoords",
 "name_class": "AbstractClass",
 "installed_class": "Animate",
-"solver_class": "Animate"
+"solver_class": "Animate",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00431A30",
 "current_name": "ObjectClass::Set",
 "name_class": "ObjectClass",
 "installed_class": "BufferIOFileClass",
-"solver_class": "BufferIOFileClass"
+"solver_class": "BufferIOFileClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00433880",
 "current_name": "BitTextClass::ParseFontData",
 "name_class": "BitTextClass",
 "installed_class": "BitFont",
-"solver_class": "BitFont"
+"solver_class": "BitFont",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00434A40",
 "current_name": "BufferIOFileClass::Constructor_BitFont",
 "name_class": "BufferIOFileClass",
 "installed_class": "BitFont",
-"solver_class": "BitFont"
+"solver_class": "BitFont",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00435560",
 "current_name": "BufferIOFileClass::Constructor_BitText",
 "name_class": "BufferIOFileClass",
 "installed_class": "BitText",
-"solver_class": "BitTextClass"
+"solver_class": "BitTextClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0045A9C0",
 "current_name": "TypeList_Particle::Add",
 "name_class": "TypeList_Particle",
 "installed_class": "VectorClass_cptr_ParticleSystemTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0046D330",
 "current_name": "MPCooperative::initGame",
 "name_class": "MPCooperative",
 "installed_class": "CampaignScoreClass",
-"solver_class": "CampaignScore"
+"solver_class": "CampaignScore",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00470C00",
 "current_name": "MPCooperative::startGame",
 "name_class": "MPCooperative",
 "installed_class": "CampaignEndScoreClass",
-"solver_class": "CampaignEndScoreClass"
+"solver_class": "CampaignEndScoreClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00471520",
 "current_name": "CampaignScore::Constructor_CampaignEndScoreClass",
 "name_class": "CampaignScore",
 "installed_class": "CampaignEndScoreClass",
-"solver_class": "CampaignEndScoreClass"
+"solver_class": "CampaignEndScoreClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0048BE60",
 "current_name": "IPXConnClass::initConnection",
 "name_class": "IPXConnClass",
 "installed_class": "ConnectionClass",
-"solver_class": "ConnectionClass"
+"solver_class": "ConnectionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00491210",
 "current_name": "VectorClass_ptr_ConvertClass::Constructor_ConvertClass",
 "name_class": "VectorClass_ptr_ConvertClass",
 "installed_class": "ConvertClass",
-"solver_class": "ConvertClass"
+"solver_class": "ConvertClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00499CC0",
 "current_name": "AbstractClass::getTileIndex",
 "name_class": "AbstractClass",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00499CE0",
 "current_name": "AbstractClass::setTileIndex",
 "name_class": "AbstractClass",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00499D00",
 "current_name": "AbstractClass::getOverlayType",
 "name_class": "AbstractClass",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00499D20",
 "current_name": "AbstractClass::setOverlayFlags",
 "name_class": "AbstractClass",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00499DA0",
 "current_name": "AbstractClass::clearOverlayFlags",
 "name_class": "AbstractClass",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A1A0",
 "current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter",
 "name_class": "BlitTransXlatAlpha_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A1C0",
 "current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter_0",
 "name_class": "BlitTransXlatAlpha_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A1E0",
 "current_name": "BlitTransXlatAlpha_ushort::Constructor_Blitter_1",
 "name_class": "BlitTransXlatAlpha_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A380",
 "current_name": "BlitTransLucent25Alpha_ushort::Constructor_Blitter",
 "name_class": "BlitTransLucent25Alpha_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A3A0",
 "current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter",
 "name_class": "BlitTransXlatAlphaZRead_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A3C0",
 "current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0",
 "name_class": "BlitTransXlatAlphaZRead_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A3E0",
 "current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
 "name_class": "BlitTransXlatAlphaZRead_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A400",
 "current_name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2",
 "name_class": "BlitTransXlatAlphaZRead_ushort",
 "installed_class": "Blitter",
-"solver_class": "Blitter"
+"solver_class": "Blitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A760",
 "current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter",
 "name_class": "BlitTransLucent25AlphaZReadWrite_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A780",
 "current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0",
 "name_class": "BlitTransLucent25AlphaZReadWrite_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A7A0",
 "current_name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1",
 "name_class": "BlitTransLucent25AlphaZReadWrite_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A9A0",
 "current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter",
 "name_class": "RLEBlitTransZRemapXlatAlpha_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A9C0",
 "current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0",
 "name_class": "RLEBlitTransZRemapXlatAlpha_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0049A9E0",
 "current_name": "RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1",
 "name_class": "RLEBlitTransZRemapXlatAlpha_ushort",
 "installed_class": "RLEBlitter",
-"solver_class": "RLEBlitter"
+"solver_class": "RLEBlitter",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x004A0C20",
 "current_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor",
 "name_class": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
 "installed_class": "EnumConnectionPointsClass",
-"solver_class": "EnumConnectionPointsClass"
+"solver_class": "EnumConnectionPointsClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x004A2820",
 "current_name": "VectorClass_K_8::Constructor",
 "name_class": "VectorClass_K_8",
 "installed_class": "CStreamClass",
-"solver_class": "CStreamClass"
+"solver_class": "CStreamClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004A8730",
 "current_name": "RadarClass::RenderSpySatellite",
 "name_class": "RadarClass",
 "installed_class": "DisplayClass",
-"solver_class": "DisplayClass"
+"solver_class": "DisplayClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004AF540",
 "current_name": "LocomotionClass::Initialize",
 "name_class": "LocomotionClass",
 "installed_class": "DriveLocomotionClass",
-"solver_class": "DriveLocomotionClass"
+"solver_class": "DriveLocomotionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004C30B0",
 "current_name": "DropListClass::Constructor",
 "name_class": "DropListClass",
 "installed_class": "EditClass",
-"solver_class": "EditClass"
+"solver_class": "EditClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004C98B0",
 "current_name": "TeamTypeClass::Construct",
 "name_class": "TeamTypeClass",
 "installed_class": "FactoryClass",
-"solver_class": "FactoryClass"
+"solver_class": "FactoryClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004CAB50",
 "current_name": "FactoryClass_33::QueryInterface",
 "name_class": "FactoryClass_33",
 "installed_class": "VectorClass_cptr_TechnoTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x004CABA0",
 "current_name": "AbstractClass::resetScriptState",
 "name_class": "AbstractClass",
 "installed_class": "VectorClass_cptr_TechnoTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x004CABF0",
 "current_name": "TechnoTypeVector::Constructor",
 "name_class": "TechnoTypeVector",
 "installed_class": "VectorClass_cptr_TechnoTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004D08B0",
 "current_name": "ObjectClass::Construct",
 "name_class": "ObjectClass",
 "installed_class": "FoggedObjectClass",
-"solver_class": "FoggedObjectClass"
+"solver_class": "FoggedObjectClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004E2500",
 "current_name": "ListClass::Constructor",
 "name_class": "ListClass",
 "installed_class": "GaugeClass",
-"solver_class": "GaugeClass"
+"solver_class": "GaugeClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x004E8270",
 "current_name": "HouseClass::initAngerStruct",
 "name_class": "HouseClass",
 "installed_class": "VersionClass",
-"solver_class": "VersionClass"
+"solver_class": "VersionClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x004F21A0",
 "current_name": "HouseClass::processTargetSelection",
 "name_class": "HouseClass",
 "installed_class": "GraphicMenu",
-"solver_class": "GraphicMenu"
+"solver_class": "GraphicMenu",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x005113F0",
 "current_name": "SuperWeaponTypeClass::Construct",
 "name_class": "SuperWeaponTypeClass",
 "installed_class": "HouseTypeClass",
-"solver_class": "HouseTypeClass"
+"solver_class": "HouseTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x005129F0",
 "current_name": "TypeList_Infantry::Add",
 "name_class": "TypeList_Infantry",
 "installed_class": "VectorClass_cptr_InfantryTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512A40",
 "current_name": "HouseTypeClass_36::QueryInterface",
 "name_class": "HouseTypeClass_36",
 "installed_class": "VectorClass_cptr_UnitTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512A90",
 "current_name": "HouseTypeClass_28::QueryInterface",
 "name_class": "HouseTypeClass_28",
 "installed_class": "VectorClass_cptr_AircraftTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512AE0",
 "current_name": "InfantryTypeVector::QueryInterface",
 "name_class": "InfantryTypeVector",
 "installed_class": "VectorClass_cptr_InfantryTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512B30",
 "current_name": "UnitTypeVector::QueryInterface",
 "name_class": "UnitTypeVector",
 "installed_class": "VectorClass_cptr_UnitTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512B80",
 "current_name": "HouseTypeClass_36::Constructor",
 "name_class": "HouseTypeClass_36",
 "installed_class": "VectorClass_cptr_AircraftTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00512E20",
 "current_name": "TypeList_Infantry::Constructor",
 "name_class": "TypeList_Infantry",
 "installed_class": "VectorClass_cptr_InfantryTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005131F0",
 "current_name": "TypeList_Infantry::Constructor_0",
 "name_class": "TypeList_Infantry",
 "installed_class": "VectorClass_cptr_UnitTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005135C0",
 "current_name": "TypeList_Infantry::Constructor_1",
 "name_class": "TypeList_Infantry",
 "installed_class": "VectorClass_cptr_AircraftTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005138F0",
 "current_name": "InfantryTypeVector::Construct2",
 "name_class": "InfantryTypeVector",
 "installed_class": "VectorClass_cptr_InfantryTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00513940",
 "current_name": "UnitTypeVector::ConstructUnitTypeVectorClass",
 "name_class": "UnitTypeVector",
 "installed_class": "VectorClass_cptr_UnitTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00513990",
 "current_name": "AircraftTypeVector::Constructor",
 "name_class": "AircraftTypeVector",
 "installed_class": "VectorClass_cptr_AircraftTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00513C20",
 "current_name": "LocomotionClass::ProcessData",
 "name_class": "LocomotionClass",
 "installed_class": "HoverLocomotionClass",
-"solver_class": "HoverLocomotionClass"
+"solver_class": "HoverLocomotionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005239D0",
 "current_name": "InfantryClass::ProcessAnimation",
 "name_class": "InfantryClass",
 "installed_class": "InfantryTypeClass",
-"solver_class": "InfantryTypeClass"
+"solver_class": "InfantryTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x00524FC0",
 "current_name": "WarheadTypeClass::QueryInterface",
 "name_class": "WarheadTypeClass",
 "installed_class": "VectorClass_cptr_AnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00525010",
 "current_name": "DynamicVectorClass_AnimType::Add",
 "name_class": "DynamicVectorClass_AnimType",
 "installed_class": "VectorClass_cptr_AnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005252B0",
 "current_name": "DynamicVectorClass_cptr_AnimTypeClass::Add",
 "name_class": "DynamicVectorClass_cptr_AnimTypeClass",
 "installed_class": "VectorClass_cptr_AnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00525680",
 "current_name": "AnimTypeVector::Constructor",
 "name_class": "AnimTypeVector",
 "installed_class": "VectorClass_cptr_AnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005256F0",
 "current_name": "HashTable::DestroyHashTableINIClass",
 "name_class": "HashTable",
 "installed_class": "INIClass",
-"solver_class": "INIClass"
+"solver_class": "INIClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0052AE20",
 "current_name": "Delegate::Constructor_GenericNode",
 "name_class": "Delegate",
 "installed_class": "GenericNode",
-"solver_class": "GenericNode"
+"solver_class": "GenericNode",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0052AF00",
 "current_name": "INIClass::findSection",
 "name_class": "INIClass",
 "installed_class": "INIEntry@INIClass",
-"solver_class": "INIEntry@INIClass"
+"solver_class": "INIEntry@INIClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0052AFC0",
 "current_name": "WarheadTypeClass::ReadParticleSystems",
 "name_class": "WarheadTypeClass",
 "installed_class": "GenericList",
-"solver_class": "GenericList"
+"solver_class": "GenericList",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00535CD0",
 "current_name": "CreateTeamCommand::performAction_0",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00535D00",
 "current_name": "CreateTeamCommand::performAction_1",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00536090",
 "current_name": "CreateTeamCommand::performAction_22",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00536180",
 "current_name": "CreateTeamCommand::performAction_23",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00536270",
 "current_name": "CreateTeamCommand::performAction_24",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00536580",
 "current_name": "CreateTeamCommand::performAction_25",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00537FA0",
 "current_name": "CreateTeamCommand::performAction_198",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00537FC0",
 "current_name": "CreateTeamCommand::performAction_199",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00537FE0",
 "current_name": "CreateTeamCommand::performAction_200",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538000",
 "current_name": "CreateTeamCommand::performAction_201",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538020",
 "current_name": "CreateTeamCommand::performAction_202",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538040",
 "current_name": "CreateTeamCommand::performAction_203",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538060",
 "current_name": "CreateTeamCommand::performAction_204",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538080",
 "current_name": "CreateTeamCommand::performAction_205",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005380A0",
 "current_name": "CreateTeamCommand::performAction_206",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005380C0",
 "current_name": "CreateTeamCommand::performAction_207",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005380E0",
 "current_name": "CreateTeamCommand::performAction_208",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538100",
 "current_name": "CreateTeamCommand::performAction_209",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538120",
 "current_name": "CreateTeamCommand::performAction_210",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538140",
 "current_name": "CreateTeamCommand::performAction_211",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538160",
 "current_name": "CreateTeamCommand::performAction_212",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538180",
 "current_name": "CreateTeamCommand::performAction_213",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005381A0",
 "current_name": "CreateTeamCommand::performAction_214",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005381C0",
 "current_name": "CreateTeamCommand::performAction_215",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005381E0",
 "current_name": "CreateTeamCommand::performAction_216",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538200",
 "current_name": "CreateTeamCommand::performAction_217",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538220",
 "current_name": "CreateTeamCommand::performAction_218",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538240",
 "current_name": "CreateTeamCommand::performAction_219",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538260",
 "current_name": "CreateTeamCommand::performAction_220",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538280",
 "current_name": "CreateTeamCommand::performAction_221",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005382A0",
 "current_name": "CreateTeamCommand::performAction_222",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005382C0",
 "current_name": "CreateTeamCommand::performAction_223",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005382E0",
 "current_name": "CreateTeamCommand::performAction_224",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538300",
 "current_name": "CreateTeamCommand::performAction_225",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538320",
 "current_name": "CreateTeamCommand::performAction_226",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538340",
 "current_name": "CreateTeamCommand::performAction_227",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538360",
 "current_name": "CreateTeamCommand::performAction_228",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538380",
 "current_name": "CreateTeamCommand::performAction_229",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005383A0",
 "current_name": "CreateTeamCommand::performAction_230",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005383C0",
 "current_name": "CreateTeamCommand::performAction_231",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005383E0",
 "current_name": "CreateTeamCommand::performAction_232",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538400",
 "current_name": "CreateTeamCommand::performAction_233",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538420",
 "current_name": "CreateTeamCommand::performAction_234",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538440",
 "current_name": "CreateTeamCommand::performAction_235",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538460",
 "current_name": "CreateTeamCommand::performAction_236",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00538480",
 "current_name": "CreateTeamCommand::performAction_237",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005384A0",
 "current_name": "CreateTeamCommand::performAction_238",
 "name_class": "CreateTeamCommand",
 "installed_class": "CommandClass",
-"solver_class": "CommandClass"
+"solver_class": "CommandClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0053C780",
 "current_name": "DeleteCommandClass_28::QueryInterface",
 "name_class": "DeleteCommandClass_28",
 "installed_class": "VectorClass_cptr_AnimClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0053C7D0",
 "current_name": "DeleteCommandClass_28::Constructor",
 "name_class": "DeleteCommandClass_28",
 "installed_class": "VectorClass_cptr_AnimClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00543100",
 "current_name": "IPXManagerClass::getPlayerName",
 "name_class": "IPXManagerClass",
 "installed_class": "ConnManClass",
-"solver_class": "ConnManClass"
+"solver_class": "ConnManClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00543B10",
 "current_name": "AbstractClass::CreateInstance",
 "name_class": "AbstractClass",
 "installed_class": "IsometricTileClass",
-"solver_class": "IsometricTileClass"
+"solver_class": "IsometricTileClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005447C0",
 "current_name": "TerrainTypeClass::Construct",
 "name_class": "TerrainTypeClass",
 "installed_class": "IsometricTileTypeClass",
-"solver_class": "IsometricTileTypeClass"
+"solver_class": "IsometricTileTypeClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0054AC40",
 "current_name": "LocomotionClass::Update",
 "name_class": "LocomotionClass",
 "installed_class": "JumpjetLocomotionClass",
-"solver_class": "JumpjetLocomotionClass"
+"solver_class": "JumpjetLocomotionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00565090",
 "current_name": "RadarClass::RenderMapPreview",
 "name_class": "RadarClass",
 "installed_class": "MapClass",
-"solver_class": "MapClass"
+"solver_class": "MapClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00565190",
 "current_name": "RadarClass::Render",
 "name_class": "RadarClass",
 "installed_class": "MapClass",
-"solver_class": "MapClass"
+"solver_class": "MapClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x005AC650",
 "current_name": "TypeList_BuildingType::Add",
 "name_class": "TypeList_BuildingType",
 "installed_class": "VectorClass_cptr_BuildingTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005B2DA0",
 "current_name": "RadioClass::Constructor",
 "name_class": "RadioClass",
 "installed_class": "MissionClass",
-"solver_class": "MissionClass"
+"solver_class": "MissionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005B3A60",
 "current_name": "AbstractClass::getWeaponRange",
 "name_class": "AbstractClass",
 "installed_class": "MissionClass",
-"solver_class": "MissionClass"
+"solver_class": "MissionClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005B46E0",
 "current_name": "AbstractClass::getWeaponSpeed",
 "name_class": "AbstractClass",
 "installed_class": "GenericList",
-"solver_class": "GenericList"
+"solver_class": "GenericList",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005BE9B0",
 "current_name": "MouseClass::drawCursor",
 "name_class": "MouseClass",
 "installed_class": "TabClass@@6B@_0",
-"solver_class": "TabClass"
+"solver_class": "TabClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x005C0DD0",
 "current_name": "MPBattleClass::initGame",
 "name_class": "MPBattleClass",
 "installed_class": "MultiplayerBattle",
-"solver_class": "MultiplayerBattle"
+"solver_class": "MultiplayerBattle",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005C0FE0",
 "current_name": "ScenarioClass::initAI",
 "name_class": "ScenarioClass",
 "installed_class": "MultiplayerBattle",
-"solver_class": "MultiplayerBattle"
+"solver_class": "MultiplayerBattle",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005C5CE0",
 "current_name": "MPBattleClass::MPFreeForAllClass",
 "name_class": "MPBattleClass",
 "installed_class": "FreeForAll",
-"solver_class": "FreeForAll"
+"solver_class": "FreeForAll",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005C5E40",
 "current_name": "ScenarioClass::executeTriggerActions",
 "name_class": "ScenarioClass",
 "installed_class": "FreeForAll",
-"solver_class": "FreeForAll"
+"solver_class": "FreeForAll",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005C6150",
 "current_name": "MPBattleClass::MPManBattleClass",
 "name_class": "MPBattleClass",
 "installed_class": "MultiplayerManBattle",
-"solver_class": "MultiplayerManBattle"
+"solver_class": "MultiplayerManBattle",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005C93E0",
 "current_name": "MPBattleClass::MPMegawealthClass",
 "name_class": "MPBattleClass",
 "installed_class": "Megawealth",
-"solver_class": "Megawealth"
+"solver_class": "Megawealth",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005C9470",
 "current_name": "MPCombatTeam::Constructor",
 "name_class": "MPCombatTeam",
 "installed_class": "MultiplayerObserverTeam",
-"solver_class": "MultiplayerObserverTeam"
+"solver_class": "MultiplayerObserverTeam",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CA630",
 "current_name": "MPBattleClass::MPSiegeClass",
 "name_class": "MPBattleClass",
 "installed_class": "MultiplayerSiege",
-"solver_class": "MultiplayerSiege"
+"solver_class": "MultiplayerSiege",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CAE10",
 "current_name": "MPCombatTeam::MPTeam",
 "name_class": "MPCombatTeam",
 "installed_class": "MultiplayerSiegeDefenderTeam",
-"solver_class": "MultiplayerSiegeDefenderTeam"
+"solver_class": "MultiplayerSiegeDefenderTeam",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CAEB0",
 "current_name": "MPCombatTeam::Constructor2",
 "name_class": "MPCombatTeam",
 "installed_class": "MultiplayerSiegeAttackerTeam",
-"solver_class": "MultiplayerSiegeAttackerTeam"
+"solver_class": "MultiplayerSiegeAttackerTeam",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CB3A0",
 "current_name": "MPBattleClass::MPUnholyAllianceClass",
 "name_class": "MPBattleClass",
 "installed_class": "UnholyAlliance",
-"solver_class": "UnholyAlliance"
+"solver_class": "UnholyAlliance",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CB6C0",
 "current_name": "VtableStub::5CB6C0",
 "name_class": "VtableStub",
 "installed_class": "MSAnim",
-"solver_class": "MSAnim"
+"solver_class": "MSAnim",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005CEB60",
 "current_name": "ScenarioClass::checkWinningConditions",
 "name_class": "ScenarioClass",
 "installed_class": "MSAnim",
-"solver_class": "MSAnim"
+"solver_class": "MSAnim",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005D2E00",
 "current_name": "CampaignClass::Constructor_1",
 "name_class": "CampaignClass",
 "installed_class": "MSFont",
-"solver_class": "MSFont"
+"solver_class": "MSFont",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x005D7FD0",
 "current_name": "AbstractClass::checkVisibility",
 "name_class": "AbstractClass",
 "installed_class": "InitializerBase@MultiplayerGameMode",
-"solver_class": "InitializerBase@MultiplayerGameMode"
+"solver_class": "InitializerBase@MultiplayerGameMode",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005D8030",
 "current_name": "AbstractClass::updateVisibilityState",
 "name_class": "AbstractClass",
 "installed_class": "InitializerBase@MultiplayerGameMode",
-"solver_class": "InitializerBase@MultiplayerGameMode"
+"solver_class": "InitializerBase@MultiplayerGameMode",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005D8050",
 "current_name": "AbstractClass::processFogReveal",
 "name_class": "AbstractClass",
 "installed_class": "InitializerBase@MultiplayerGameMode",
-"solver_class": "InitializerBase@MultiplayerGameMode"
+"solver_class": "InitializerBase@MultiplayerGameMode",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005D8070",
 "current_name": "AbstractClass::checkShroudState",
 "name_class": "AbstractClass",
 "installed_class": "InitializerBase@MultiplayerGameMode",
-"solver_class": "InitializerBase@MultiplayerGameMode"
+"solver_class": "InitializerBase@MultiplayerGameMode",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005D8090",
 "current_name": "AbstractClass::updateShroudMap",
 "name_class": "AbstractClass",
 "installed_class": "InitializerBase@MultiplayerGameMode",
-"solver_class": "InitializerBase@MultiplayerGameMode"
+"solver_class": "InitializerBase@MultiplayerGameMode",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005EF0B0",
 "current_name": "MultiMissionVector::Constructor",
 "name_class": "MultiMissionVector",
 "installed_class": "VectorClass_cptr_MultiMission",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005EF100",
 "current_name": "NullModemClass::initConnection",
 "name_class": "NullModemClass",
 "installed_class": "NullModemConnClass",
-"solver_class": "NullModemConnClass"
+"solver_class": "NullModemConnClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005EF290",
 "current_name": "VectorClass_cptr_MultiMission::j_vt00",
 "name_class": "VectorClass_cptr_MultiMission",
 "installed_class": "NullModemConnClass",
-"solver_class": "NullModemConnClass"
+"solver_class": "NullModemConnClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x005FC380",
 "current_name": "Object::SpawnAtCell",
 "name_class": "Object",
 "installed_class": "OverlayClass",
-"solver_class": "OverlayClass"
+"solver_class": "OverlayClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x005FDF70",
 "current_name": "Object::DrawObject",
 "name_class": "Object",
 "installed_class": "OverlayClass",
-"solver_class": "OverlayClass"
+"solver_class": "OverlayClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00624130",
 "current_name": "OwnerDrawControl::InitVtable",
 "name_class": "OwnerDrawControl",
 "installed_class": "DialogControl@OwnerDraw",
-"solver_class": "DialogControl@OwnerDraw"
+"solver_class": "DialogControl@OwnerDraw",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006244A0",
 "current_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor",
 "name_class": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode",
 "installed_class": "DialogControl@OwnerDraw",
-"solver_class": "DialogControl@OwnerDraw"
+"solver_class": "DialogControl@OwnerDraw",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x006244C0",
 "current_name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0",
 "name_class": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode",
 "installed_class": "DialogControl@OwnerDraw",
-"solver_class": "DialogControl@OwnerDraw"
+"solver_class": "DialogControl@OwnerDraw",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x006293E0",
 "current_name": "AbstractClass::ProcessData",
 "name_class": "AbstractClass",
 "installed_class": "ParasiteClass",
-"solver_class": "ParasiteClass"
+"solver_class": "ParasiteClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0062BB20",
 "current_name": "ObjectClass::ProcessUpdate",
 "name_class": "ObjectClass",
 "installed_class": "ParticleClass",
-"solver_class": "ParticleClass"
+"solver_class": "ParticleClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0062DF20",
 "current_name": "ParticleClass::ProcessCreation",
 "name_class": "ParticleClass",
 "installed_class": "ParticleSystemClass",
-"solver_class": "ParticleSystemClass"
+"solver_class": "ParticleSystemClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00631E30",
 "current_name": "TacticalClass::saveConfig",
 "name_class": "TacticalClass",
 "installed_class": "PixelFXClass",
-"solver_class": "PixelFXClass"
+"solver_class": "PixelFXClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00631F40",
 "current_name": "GameClass::saveGameState",
 "name_class": "GameClass",
 "installed_class": "PixelFXClass",
-"solver_class": "PixelFXClass"
+"solver_class": "PixelFXClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0063F6B0",
 "current_name": "RadarClass::Create",
 "name_class": "RadarClass",
 "installed_class": "PowerClass",
-"solver_class": "PowerClass"
+"solver_class": "PowerClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006440A0",
 "current_name": "OverlayTypeClass::Construct",
 "name_class": "OverlayTypeClass",
 "installed_class": "ParticleSystemTypeClass",
-"solver_class": "ParticleSystemTypeClass"
+"solver_class": "ParticleSystemTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00644BE0",
 "current_name": "BuildingTypeClass::Construct",
 "name_class": "BuildingTypeClass",
 "installed_class": "ParticleTypeClass",
-"solver_class": "ParticleTypeClass"
+"solver_class": "ParticleTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x0065C610",
 "current_name": "AbstractClass::processAITrigger",
 "name_class": "AbstractClass",
 "installed_class": "FileClass",
-"solver_class": "FileClass"
+"solver_class": "FileClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0065D430",
 "current_name": "ComPtr::Constructor",
 "name_class": "ComPtr",
 "installed_class": "rc_ptr_base",
-"solver_class": "rc_ptr_base"
+"solver_class": "rc_ptr_base",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0065D460",
 "current_name": "ComPtr::Release",
 "name_class": "ComPtr",
 "installed_class": "rc_ptr_base",
-"solver_class": "rc_ptr_base"
+"solver_class": "rc_ptr_base",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0065D4D0",
 "current_name": "AbstractClass::checkAICondition",
 "name_class": "AbstractClass",
 "installed_class": "rc_ptr_base",
-"solver_class": "rc_ptr_base"
+"solver_class": "rc_ptr_base",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0065D6A0",
 "current_name": "COMClass::initInterface",
 "name_class": "COMClass",
 "installed_class": "ReferenceCounted",
-"solver_class": "ReferenceCounted"
+"solver_class": "ReferenceCounted",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00679FA0",
 "current_name": "RulesClass::readMaximums",
 "name_class": "RulesClass",
 "installed_class": "VectorClass_cptr_BuildingTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x00679FD0",
 "current_name": "RulesClass::readInfantryTypes",
 "name_class": "RulesClass",
 "installed_class": "VectorClass_cptr_UnitTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0067A000",
 "current_name": "RulesClass::readCountries",
 "name_class": "RulesClass",
 "installed_class": "VectorClass_cptr_AircraftTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0067A030",
 "current_name": "TypeList::InfantryCleanup",
 "name_class": "TypeList",
 "installed_class": "VectorClass_cptr_InfantryTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0067A060",
 "current_name": "RulesClass::readVehicleTypes",
 "name_class": "RulesClass",
 "installed_class": "VectorClass_cptr_TerrainTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0067A990",
 "current_name": "TypeList_VoxelAnim::Add",
 "name_class": "TypeList_VoxelAnim",
 "installed_class": "VectorClass_cptr_VoxelAnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067A9E0",
 "current_name": "TypeList_VoxelAnim::TypeList_vt00",
 "name_class": "TypeList_VoxelAnim",
 "installed_class": "VectorClass_cptr_SmudgeTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067AA30",
 "current_name": "TypeList_cptr_TerrainTypeClass::Add",
 "name_class": "TypeList_cptr_TerrainTypeClass",
 "installed_class": "VectorClass_cptr_TerrainTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C010",
 "current_name": "TypeList_VoxelAnim::Constructor",
 "name_class": "TypeList_VoxelAnim",
 "installed_class": "VectorClass_cptr_VoxelAnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C060",
 "current_name": "DynamicVectorClass_cptr_VoxelAnimTypeClass::Add",
 "name_class": "DynamicVectorClass_cptr_VoxelAnimTypeClass",
 "installed_class": "VectorClass_cptr_VoxelAnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C0B0",
 "current_name": "SmudgeTypeVector::QueryInterface",
 "name_class": "SmudgeTypeVector",
 "installed_class": "VectorClass_cptr_SmudgeTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C100",
 "current_name": "TypeList_VoxelAnim::Constructor_0",
 "name_class": "TypeList_VoxelAnim",
 "installed_class": "VectorClass_cptr_SmudgeTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C150",
 "current_name": "TypeList_cptr_TerrainTypeClass::Constructor",
 "name_class": "TypeList_cptr_TerrainTypeClass",
 "installed_class": "VectorClass_cptr_TerrainTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C1A0",
 "current_name": "TypeList_VoxelAnim::Constructor_1",
 "name_class": "TypeList_VoxelAnim",
 "installed_class": "VectorClass_cptr_TerrainTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0067C310",
 "current_name": "VoxelAnimTypeVector::Constructor",
 "name_class": "VoxelAnimTypeVector",
 "installed_class": "VectorClass_cptr_VoxelAnimTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0067C3A0",
 "current_name": "Game::LockMutex",
 "name_class": "Game",
 "installed_class": "VectorClass_cptr_SmudgeTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0067C430",
 "current_name": "RulesClass::readIQ",
 "name_class": "RulesClass",
 "installed_class": "VectorClass_cptr_TerrainTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00690F30",
 "current_name": "ScoreScreen::Constructor",
 "name_class": "ScoreScreen",
 "installed_class": "ScoreAnimClass",
-"solver_class": "ScoreAnimClass"
+"solver_class": "ScoreAnimClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006910A0",
 "current_name": "ScoreAnimClass::Constructor_ScoreFontClass",
 "name_class": "ScoreAnimClass",
 "installed_class": "ScoreFontClass",
-"solver_class": "ScoreFontClass"
+"solver_class": "ScoreFontClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0069EC50",
 "current_name": "LocomotionClass::Process",
 "name_class": "LocomotionClass",
 "installed_class": "ShipLocomotionClass",
-"solver_class": "ShipLocomotionClass"
+"solver_class": "ShipLocomotionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006A4E60",
 "current_name": "TabClass::initTabData",
 "name_class": "TabClass",
 "installed_class": "SidebarClass",
-"solver_class": "SidebarClass"
+"solver_class": "SidebarClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006B4A50",
 "current_name": "UnitClass::Create",
 "name_class": "UnitClass",
 "installed_class": "SmudgeClass",
-"solver_class": "SmudgeClass"
+"solver_class": "SmudgeClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006B4FA0",
 "current_name": "UnitClass::DestroySmudge",
 "name_class": "UnitClass",
 "installed_class": "SmudgeClass",
-"solver_class": "SmudgeClass"
+"solver_class": "SmudgeClass",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x006BEE40",
 "current_name": "ClassFactory_CStream::Construct",
 "name_class": "ClassFactory_CStream",
 "installed_class": "?$TClassFactory@VCStreamClass",
-"solver_class": "?$TClassFactory@VCStreamClass@@"
+"solver_class": "?$TClassFactory@VCStreamClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BEFC0",
 "current_name": "ClassFactory_Wave::Construct",
 "name_class": "ClassFactory_Wave",
 "installed_class": "?$TClassFactory@VWaveClass",
-"solver_class": "?$TClassFactory@VWaveClass@@"
+"solver_class": "?$TClassFactory@VWaveClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF140",
 "current_name": "COMClassFactory_3::Construct",
 "name_class": "COMClassFactory_3",
 "installed_class": "?$TClassFactory@VTerrainTypeClass",
-"solver_class": "?$TClassFactory@VTerrainTypeClass@@"
+"solver_class": "?$TClassFactory@VTerrainTypeClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF2C0",
 "current_name": "COMClassFactory_4::Construct",
 "name_class": "COMClassFactory_4",
 "installed_class": "?$TClassFactory@VTerrainClass",
-"solver_class": "?$TClassFactory@VTerrainClass@@"
+"solver_class": "?$TClassFactory@VTerrainClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF440",
 "current_name": "COMClassFactory_5::Construct",
 "name_class": "COMClassFactory_5",
 "installed_class": "?$TClassFactory@VSuperWeaponTypeClass",
-"solver_class": "?$TClassFactory@VSuperWeaponTypeClass@@"
+"solver_class": "?$TClassFactory@VSuperWeaponTypeClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF5C0",
 "current_name": "COMClassFactory_6::Construct",
 "name_class": "COMClassFactory_6",
 "installed_class": "?$TClassFactory@VSuperClass",
-"solver_class": "?$TClassFactory@VSuperClass@@"
+"solver_class": "?$TClassFactory@VSuperClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF740",
 "current_name": "COMClassFactory_7::Construct",
 "name_class": "COMClassFactory_7",
 "installed_class": "?$TClassFactory@VTactical",
-"solver_class": "?$TClassFactory@VTactical@@"
+"solver_class": "?$TClassFactory@VTactical@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BF8C0",
 "current_name": "COMClassFactory_8::Construct",
 "name_class": "COMClassFactory_8",
 "installed_class": "?$TClassFactory@VCellClass",
-"solver_class": "?$TClassFactory@VCellClass@@"
+"solver_class": "?$TClassFactory@VCellClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BFA40",
 "current_name": "COMClassFactory_9::Construct",
 "name_class": "COMClassFactory_9",
 "installed_class": "?$TClassFactory@VEMPulseClass",
-"solver_class": "?$TClassFactory@VEMPulseClass@@"
+"solver_class": "?$TClassFactory@VEMPulseClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006BFBC0",
 "current_name": "COMClassFactory_10::Construct",
 "name_class": "COMClassFactory_10",
 "installed_class": "?$TClassFactory@VLightSourceClass",
-"solver_class": "?$TClassFactory@VLightSourceClass@@"
+"solver_class": "?$TClassFactory@VLightSourceClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006C0AC0",
 "current_name": "COMClassFactory::CreateInstance",
 "name_class": "COMClassFactory",
 "installed_class": "?$TClassFactory@VSlaveManagerClass",
-"solver_class": "?$TClassFactory@VSlaveManagerClass@@"
+"solver_class": "?$TClassFactory@VSlaveManagerClass@@",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006E4DE0",
 "current_name": "TeknoClass::GetType",
 "name_class": "TeknoClass",
 "installed_class": "TagClass",
-"solver_class": "TagClass"
+"solver_class": "TagClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x006E8A90",
 "current_name": "MissionClass::Construct",
 "name_class": "MissionClass",
 "installed_class": "TeamClass",
-"solver_class": "TeamClass"
+"solver_class": "TeamClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x006F06E0",
 "current_name": "TechnoTypeClass::LoadBase",
 "name_class": "TechnoTypeClass",
 "installed_class": "TeamTypeClass",
-"solver_class": "TeamTypeClass"
+"solver_class": "TeamTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": true
 },
 {
 "fn": "0x00717B70",
 "current_name": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface",
 "name_class": "TypeList_cptr_ParticleSystemTypeClass",
 "installed_class": "VectorClass_cptr_ParticleSystemTypeClass",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0071BDF0",
 "current_name": "ObjectClass::ProcessFoggedState",
 "name_class": "ObjectClass",
 "installed_class": "TerrainClass",
-"solver_class": "TerrainClass"
+"solver_class": "TerrainClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0071E6A0",
 "current_name": "TActionClass::TActionClass",
 "name_class": "TActionClass",
 "installed_class": "TEventClass",
-"solver_class": "TEventClass"
+"solver_class": "TEventClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x007240B0",
 "current_name": "ToolTipClass::updateString",
 "name_class": "ToolTipClass",
 "installed_class": "ToolTipManager",
-"solver_class": "ToolTipManager"
+"solver_class": "ToolTipManager",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x00724EF0",
 "current_name": "ToolTipClass::compareString",
 "name_class": "ToolTipClass",
 "installed_class": "VectorClass_cptr_ToolTip",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00724F40",
 "current_name": "ToolTipManager_7::QueryInterface",
 "name_class": "ToolTipManager_7",
 "installed_class": "VectorClass_cptr_ToolTip",
-"solver_class": "VectorClass"
+"solver_class": "VectorClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00726E00",
 "current_name": "TriggerClass::ProcessEvents",
 "name_class": "TriggerClass",
 "installed_class": "TriggerTypeClass",
-"solver_class": "TriggerTypeClass"
+"solver_class": "TriggerTypeClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0072A440",
 "current_name": "MessageListClass::clearMessages",
 "name_class": "MessageListClass",
 "installed_class": "TextLabelClass",
-"solver_class": "TextLabelClass"
+"solver_class": "TextLabelClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x007493B0",
 "current_name": "DamageAnimClass::Constructor",
 "name_class": "DamageAnimClass",
 "installed_class": "VoxelAnimClass",
-"solver_class": "VoxelAnimClass"
+"solver_class": "VoxelAnimClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x007498D0",
 "current_name": "ObjectClass::Initialize",
 "name_class": "ObjectClass",
 "installed_class": "VoxelAnimClass",
-"solver_class": "VoxelAnimClass"
+"solver_class": "VoxelAnimClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0075AA90",
 "current_name": "VoxelAnimClass::Reset",
 "name_class": "VoxelAnimClass",
 "installed_class": "WalkLocomotionClass",
-"solver_class": "WalkLocomotionClass"
+"solver_class": "WalkLocomotionClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x0075D230",
 "current_name": "AbstractClass::ProcessInit",
 "name_class": "AbstractClass",
 "installed_class": "WarheadTypeClass",
-"solver_class": "WarheadTypeClass"
+"solver_class": "WarheadTypeClass",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0075EBE0",
 "current_name": "VoxelAnimClass::Constructor",
 "name_class": "VoxelAnimClass",
 "installed_class": "WaveClass",
-"solver_class": "WaveClass"
+"solver_class": "WaveClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00765600",
 "current_name": "Campaign_WorldDominationTour::QueryInterface",
 "name_class": "Campaign_WorldDominationTour",
 "installed_class": "Campaign@WorldDominationTour",
-"solver_class": "Campaign@WorldDominationTour"
+"solver_class": "Campaign@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007667A0",
 "current_name": "Conflict_WorldDominationTour::QueryInterface",
 "name_class": "Conflict_WorldDominationTour",
 "installed_class": "Conflict@WorldDominationTour",
-"solver_class": "Conflict@WorldDominationTour"
+"solver_class": "Conflict@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00767300",
 "current_name": "GameOption_WorldDominationTour::Constructor",
 "name_class": "GameOption_WorldDominationTour",
 "installed_class": "GameOption@WorldDominationTour",
-"solver_class": "GameOption@WorldDominationTour"
+"solver_class": "GameOption@WorldDominationTour",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x00767880",
 "current_name": "COMClass::coUninitialize",
 "name_class": "COMClass",
 "installed_class": "GameOption@WorldDominationTour",
-"solver_class": "GameOption@WorldDominationTour"
+"solver_class": "GameOption@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007678C0",
 "current_name": "MapSizeGameOption_WorldDominationTour::QueryInterface",
 "name_class": "MapSizeGameOption_WorldDominationTour",
 "installed_class": "GameOption@WorldDominationTour",
-"solver_class": "GameOption@WorldDominationTour"
+"solver_class": "GameOption@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00767C10",
 "current_name": "History_WorldDominationTour::QueryInterface",
 "name_class": "History_WorldDominationTour",
 "installed_class": "History@WorldDominationTour",
-"solver_class": "History@WorldDominationTour"
+"solver_class": "History@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007680C0",
 "current_name": "WorldDomination::SetupTerritoryNodes",
 "name_class": "WorldDomination",
 "installed_class": "Map@WorldDominationTour",
-"solver_class": "Map@WorldDominationTour"
+"solver_class": "Map@WorldDominationTour",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 },
 {
 "fn": "0x0076AC90",
 "current_name": "File::LoadWDT",
 "name_class": "File",
 "installed_class": "WDTState",
-"solver_class": "WDTState"
+"solver_class": "WDTState",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0076C030",
 "current_name": "CampaignProperties_WorldDominationTour::QueryInterface",
 "name_class": "CampaignProperties_WorldDominationTour",
 "installed_class": "CampaignProperties@WorldDominationTour",
-"solver_class": "CampaignProperties@WorldDominationTour"
+"solver_class": "CampaignProperties@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x0076F6C0",
 "current_name": "State_WorldDominationTour::QueryInterface",
 "name_class": "State_WorldDominationTour",
 "installed_class": "State@WorldDominationTour",
-"solver_class": "State@WorldDominationTour"
+"solver_class": "State@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00770020",
 "current_name": "Territory_WorldDominationTour::QueryInterface",
 "name_class": "Territory_WorldDominationTour",
 "installed_class": "Territory@WorldDominationTour",
-"solver_class": "Territory@WorldDominationTour"
+"solver_class": "Territory@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x00771A30",
 "current_name": "Territory_WorldDominationTour_8::QueryInterface",
 "name_class": "Territory_WorldDominationTour_8",
 "installed_class": "Anim@Voices@WorldDominationTour",
-"solver_class": "Anim@Voices@WorldDominationTour"
+"solver_class": "Anim@Voices@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007B0440",
 "current_name": "StreamWrapper::QueryInterface",
 "name_class": "StreamWrapper",
 "installed_class": "FactionSelectDialogControl@WorldDominationTour",
-"solver_class": "FactionSelectDialogControl@WorldDominationTour"
+"solver_class": "FactionSelectDialogControl@WorldDominationTour",
+"shape": "deleting_dtor",
+"score": 3,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007B19C0",
 "current_name": "IPXInterfaceClass::bindSocket",
 "name_class": "IPXInterfaceClass",
 "installed_class": "WinsockInterfaceClass",
-"solver_class": "WinsockInterfaceClass"
+"solver_class": "WinsockInterfaceClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x007B2DB0",
 "current_name": "Network::finalizeSession",
 "name_class": "Network",
 "installed_class": "UDPInterfaceClass",
-"solver_class": "UDPInterfaceClass"
+"solver_class": "UDPInterfaceClass",
+"shape": "install_only",
+"score": 1,
+"has_install": true,
+"has_test1": false,
+"has_del": false,
+"has_ret4": false
 },
 {
 "fn": "0x007BA300",
 "current_name": "WWMouseClass::updateHotspot",
 "name_class": "WWMouseClass",
 "installed_class": "Mouse",
-"solver_class": "MouseClass"
+"solver_class": "MouseClass",
+"shape": "deleting_dtor",
+"score": 4,
+"has_install": true,
+"has_test1": true,
+"has_del": true,
+"has_ret4": true
 },
 {
 "fn": "0x007D2F41",
 "current_name": "Exception::Destructor",
 "name_class": "Exception",
 "installed_class": "exception",
-"solver_class": "exception"
+"solver_class": "exception",
+"shape": "install_only",
+"score": 2,
+"has_install": true,
+"has_test1": false,
+"has_del": true,
+"has_ret4": false
 }
 ]
