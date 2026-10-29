@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -79,6 +79,7 @@ FAMILY_DESC = {
     "C8": "global object identity",
     "C9": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
     "C10": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
+    "C11": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -1034,11 +1035,8 @@ def main():
                 continue      # 该访问已被二进制取证证伪（非 this）
         if e.get("addr") and ("0x%08X" % int(str(e["addr"]), 16)) in dropped_addr:
             continue          # 基址寄存器当时不是 this（X159 地址级剔除）
-        if eid.startswith("M:"):
-            # 成员链实体 (this->member@0xNN)：obs 偏移是**相对成员子对象**的，
-            # 拿去要求基类布局是把两套坐标系混用（ProgressTimer 的 108/808/1684
-            # 就是这么来的）。成员类未知时 C1 无从判定，跳过。
-            continue
+        # 成员链实体（this->member@0xNN）的 obs 偏移是**相对该子对象**的，
+        # 正是子对象自己的成员 —— 此前整类丢弃，白白损失 1,499 个实体的证据。
         ents[eid]["obs"].add((o, w))
         census["C1"] += 1
 
@@ -1627,9 +1625,17 @@ def main():
             ctor_calls[fn].append((a, tgt, reg))
         for lst in ctor_calls.values():
             lst.sort()
+        _c5_exact = 0
+        _c5_fallback = 0
         for fn, site, size, dest in facts["alloc_sites"]:
             eid = "N:%X" % site
-            m = size_mask(size) | unknown_size
+            # 分配尺寸是二进制事实：精确匹配优先；无布局的类不借此白拿通行证
+            m = size_mask(size)
+            if not m:
+                m = unknown_size          # 尺寸表本身失真时才退回通配
+                _c5_fallback += 1
+            else:
+                _c5_exact += 1
             if m and m != FULL:
                 fam["C5"][eid] = fam["C5"].get(eid, FULL) & m
                 census["C5"] += 1
@@ -1648,6 +1654,7 @@ def main():
                             c5_link.append((eid, t_eid))
                             size_obs[ci][size] += 1
                     break
+    print("[C5] alloc size exact=%d fallback=%d" % (_c5_exact, _c5_fallback), flush=True)
     print("[C5] alloc_sites=%d size_validated_links=%d classes_with_size_evidence=%d"
           % (len((facts or {}).get("alloc_sites", [])), len(c5_link), len(size_obs)), flush=True)
 
@@ -2418,6 +2425,133 @@ def main():
                 del fam["C9"][_eid]
                 c9_dropped2 += 1
         print("[C9] dropped (empty intersection with other families): %d" % c9_dropped2, flush=True)
+
+    # ---------------- C11：成员链三向类型约束 ----------------
+    # 对 this->member@NN 生成的子对象实体 M，三者互为约束：
+    #   容器类 c_C  ·  该 offset 的成员类型 pair[(c_C, NN)]  ·  子对象类 c_M
+    # C++ 语义：成员静态类型是上界，故 c_M ⊑ pair[(c_C, NN)]（祖先或同类）。
+    _member_pairs = {}
+    try:
+        _layouts11 = jload("tools/class_layouts.json", {}) or {}
+        _mt11 = jload("anchors/member_types.json", {}) or {}
+        def _nm11(t):
+            t = re.sub(r"\bconst\b", "", str(t or "")).replace("*", "").replace("&", "").strip()
+            return t
+        def _rs11(n):
+            if n in _layouts11:
+                return n
+            b = n.split("<")[0].strip()
+            return b if b in _layouts11 else None
+        for _cn, _rec11 in _layouts11.items():
+            for _off11, _m11 in ((_rec11.get("offsets") or {}) if isinstance(_rec11, dict) else {}).items():
+                _tn = _rs11(_nm11((_m11 or {}).get("type")))
+                _ci11 = resolve(_cn); _ti11 = resolve(_tn) if _tn else None
+                if _ci11 is not None and _ti11 is not None:
+                    _member_pairs[(_ci11, int(_off11))] = _ti11
+        _rx11 = re.compile(r"^(.*)\+0x([0-9A-Fa-f]+)$")
+        for _k11, _v11 in _mt11.items():
+            _mm11 = _rx11.match(_k11)
+            if not _mm11:
+                continue
+            _ci11 = resolve(_mm11.group(1))
+            _tn = _rs11(_nm11((_v11 or {}).get("type")))
+            _ti11 = resolve(_tn) if _tn else None
+            if _ci11 is not None and _ti11 is not None:
+                _member_pairs.setdefault((_ci11, int(_mm11.group(2), 16)), _ti11)
+    except Exception:
+        _member_pairs = {}
+    print("[C11] class-typed member evidence: %d (class,offset) pairs, %d classes"
+          % (len(_member_pairs), len({c for c, _ in _member_pairs})), flush=True)
+
+    _desc_c11 = {}
+    def _desc_mask11(ci):
+        m = _desc_c11.get(ci)
+        if m is None:
+            m = 1 << ci
+            for d in U["desc"][ci]:
+                m |= (1 << d)
+            _desc_c11[ci] = m
+        return m
+
+    _m_links = []          # (M 实体, 容器实体, offset)
+    for _eid11 in ents:
+        if not _eid11.startswith("M:"):
+            continue
+        _p11 = _eid11.split(":")
+        if len(_p11) != 4:
+            continue
+        try:
+            _off11 = int(_p11[3], 16)
+        except ValueError:
+            try:
+                _off11 = int(_p11[3])
+            except ValueError:
+                continue
+        _w11 = _p11[2]
+        _cont = ("P:%s:param%s" % (_p11[1], _w11[1:])) if _w11.startswith("p") else ("T:%s" % _p11[1])
+        if _cont in ents:
+            _m_links.append((_eid11, _cont, _off11))
+    print("[C11] member-chain links (M -> container): %d" % len(_m_links), flush=True)
+
+    if _m_links:
+        _dom11 = {}
+        for _e11 in set([x[0] for x in _m_links] + [x[1] for x in _m_links]):
+            _m11 = FULL
+            for _f11 in FAMILIES:
+                if _f11 == "C11":
+                    continue
+                _fm11 = fam[_f11].get(_e11)
+                if _fm11 is not None:
+                    _m11 &= _fm11
+            _dom11[_e11] = _m11
+        _c11_steps = 0
+        for _round in range(8):
+            _chg = 0
+            for _mk, _ck, _off in _m_links:
+                _dm = _dom11.get(_mk, FULL)
+                _dc = _dom11.get(_ck, FULL)
+                # 子对象必须是容器该成员静态类型的后代（或同类）
+                _allowed_m = 0
+                _has_ev = False
+                _x = _dc
+                while _x:
+                    _b = _x & -_x; _x ^= _b
+                    _ci = _b.bit_length() - 1
+                    _t = _member_pairs.get((_ci, _off))
+                    if _t is None:
+                        continue
+                    _has_ev = True
+                    _allowed_m |= _desc_mask11(_t)
+                if _has_ev:
+                    _nm = _dm & _allowed_m
+                    if _nm != _dm and _nm != 0:
+                        _dom11[_mk] = _nm; _dm = _nm; _chg += 1
+                # 反向：容器必须有一个候选类，其该成员类型能与子对象候选相容
+                _allowed_c = 0
+                _x = _dc
+                while _x:
+                    _b = _x & -_x; _x ^= _b
+                    _ci = _b.bit_length() - 1
+                    _t = _member_pairs.get((_ci, _off))
+                    if _t is None:
+                        _allowed_c |= _b        # 无证据的类不排除（稀疏布局）
+                    elif (_desc_mask11(_t) & _dm):
+                        _allowed_c |= _b
+                _nc = _dc & _allowed_c
+                if _nc != _dc and _nc != 0:
+                    _dom11[_ck] = _nc; _chg += 1
+            _c11_steps += _chg
+            if not _chg:
+                break
+        _c11_empty = 0
+        for _e11, _mm in _dom11.items():
+            if _mm == 0:
+                _c11_empty += 1
+                continue
+            if _mm != FULL:
+                fam["C11"][_e11] = fam["C11"].get(_e11, FULL) & _mm
+        print("[C11] propagated (%d narrowing steps), entities constrained: %d, emptied: %d"
+              % (_c11_steps, len(fam["C11"]), _c11_empty), flush=True)
 
     # ---------------- C10：调用图子类型约束（AC-3 传播到不动点）----------------
     # 用户裁定：函数名默认是错的，不能作为类身份锚。

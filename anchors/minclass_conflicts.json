@@ -11,7 +11,8 @@
    "C7",
    "C8",
    "C9",
-   "C10"
+   "C10",
+   "C11"
   ],
   "reg_flow": true,
   "evidence_mode": "spec",
@@ -50,12 +51,12 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 479,
-  "K_upper": 479,
-  "lower_bound": 479,
-  "constrained_clusters": 14251,
-  "free_clusters": 28851,
-  "conflicts": 0,
+  "K": 505,
+  "K_upper": 546,
+  "lower_bound": 505,
+  "constrained_clusters": 17005,
+  "free_clusters": 26056,
+  "conflicts": 41,
   "c1_gaps": 0,
   "universe": 1400,
   "entities": 43827
@@ -64,11 +65,11 @@
   {
    "family": "C1",
    "desc": "member access (offset, obs_w<=member_w)",
-   "evidence": 70410,
-   "entities_touched": 9846,
-   "clusters_constrained": 9780,
+   "evidence": 75406,
+   "entities_touched": 11345,
+   "clusters_constrained": 11279,
    "clusters_pinned": 0,
-   "clusters_free": 33322,
+   "clusters_free": 31823,
    "pinned_classes": 0,
    "forced_classes": 0,
    "conflicts": 0,
@@ -88,9 +89,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 9780,
+   "clusters_constrained": 11279,
    "clusters_pinned": 0,
-   "clusters_free": 33322,
+   "clusters_free": 31823,
    "pinned_classes": 0,
    "forced_classes": 0,
    "conflicts": 0,
@@ -110,9 +111,9 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 10483,
+   "clusters_constrained": 11981,
    "clusters_pinned": 0,
-   "clusters_free": 32619,
+   "clusters_free": 31121,
    "pinned_classes": 0,
    "forced_classes": 0,
    "conflicts": 0,
@@ -132,20 +133,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1295,
    "entities_touched": 1295,
-   "clusters_constrained": 10541,
+   "clusters_constrained": 12039,
    "clusters_pinned": 1295,
-   "clusters_free": 32561,
+   "clusters_free": 31063,
    "pinned_classes": 328,
    "forced_classes": 328,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 328,
-   "K_upper": 328,
-   "K_total": 328,
-   "K_greedy": 328,
+   "K": 329,
+   "K_upper": 329,
+   "K_total": 329,
+   "K_greedy": 329,
    "delta_forced": 328,
-   "delta_K": 327,
-   "lower_bound": 328,
+   "delta_K": 328,
+   "lower_bound": 329,
    "merges": 0,
    "bad_cover": 0
   },
@@ -154,20 +155,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 842,
    "entities_touched": 839,
-   "clusters_constrained": 11374,
-   "clusters_pinned": 1295,
-   "clusters_free": 31728,
-   "pinned_classes": 328,
-   "forced_classes": 328,
+   "clusters_constrained": 12872,
+   "clusters_pinned": 1437,
+   "clusters_free": 30230,
+   "pinned_classes": 342,
+   "forced_classes": 342,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 328,
-   "K_upper": 328,
-   "K_total": 328,
-   "K_greedy": 329,
-   "delta_forced": 0,
-   "delta_K": 0,
-   "lower_bound": 328,
+   "K": 350,
+   "K_upper": 350,
+   "K_total": 350,
+   "K_greedy": 351,
+   "delta_forced": 14,
+   "delta_K": 21,
+   "lower_bound": 350,
    "merges": 1,
    "bad_cover": 0
   },
@@ -176,20 +177,20 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 11374,
-   "clusters_pinned": 1295,
-   "clusters_free": 31728,
-   "pinned_classes": 328,
-   "forced_classes": 328,
+   "clusters_constrained": 12872,
+   "clusters_pinned": 1437,
+   "clusters_free": 30230,
+   "pinned_classes": 342,
+   "forced_classes": 342,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 328,
-   "K_upper": 328,
-   "K_total": 328,
-   "K_greedy": 329,
+   "K": 350,
+   "K_upper": 350,
+   "K_total": 350,
+   "K_greedy": 351,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 328,
+   "lower_bound": 350,
    "merges": 1,
    "bad_cover": 0
   },
@@ -198,20 +199,20 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 11448,
-   "clusters_pinned": 1360,
-   "clusters_free": 31654,
-   "pinned_classes": 336,
-   "forced_classes": 336,
+   "clusters_constrained": 12946,
+   "clusters_pinned": 1502,
+   "clusters_free": 30156,
+   "pinned_classes": 349,
+   "forced_classes": 349,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 336,
-   "K_upper": 336,
-   "K_total": 336,
-   "K_greedy": 337,
-   "delta_forced": 8,
-   "delta_K": 8,
-   "lower_bound": 336,
+   "K": 357,
+   "K_upper": 357,
+   "K_total": 357,
+   "K_greedy": 358,
+   "delta_forced": 7,
+   "delta_K": 7,
+   "lower_bound": 357,
    "merges": 1,
    "bad_cover": 0
   },
@@ -220,20 +221,20 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 11585,
-   "clusters_pinned": 1516,
-   "clusters_free": 31517,
-   "pinned_classes": 353,
-   "forced_classes": 353,
+   "clusters_constrained": 13083,
+   "clusters_pinned": 1658,
+   "clusters_free": 30019,
+   "pinned_classes": 366,
+   "forced_classes": 366,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 353,
-   "K_upper": 353,
-   "K_total": 353,
-   "K_greedy": 354,
+   "K": 372,
+   "K_upper": 372,
+   "K_total": 372,
+   "K_greedy": 373,
    "delta_forced": 17,
-   "delta_K": 17,
-   "lower_bound": 353,
+   "delta_K": 15,
+   "lower_bound": 372,
    "merges": 1,
    "bad_cover": 0
   },
@@ -241,53 +242,1833 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
-   "entities_touched": 6100,
-   "clusters_constrained": 13618,
-   "clusters_pinned": 4011,
-   "clusters_free": 29484,
-   "pinned_classes": 478,
-   "forced_classes": 478,
-   "conflicts": 0,
+   "entities_touched": 6136,
+   "clusters_constrained": 15115,
+   "clusters_pinned": 4171,
+   "clusters_free": 27986,
+   "pinned_classes": 491,
+   "forced_classes": 491,
+   "conflicts": 1,
    "c1_gaps": 0,
-   "K": 478,
-   "K_upper": 478,
-   "K_total": 478,
-   "K_greedy": 480,
+   "K": 496,
+   "K_upper": 497,
+   "K_total": 496,
+   "K_greedy": 496,
    "delta_forced": 125,
-   "delta_K": 125,
-   "lower_bound": 478,
-   "merges": 2,
+   "delta_K": 124,
+   "lower_bound": 496,
+   "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
-   "entities_touched": 1060,
-   "clusters_constrained": 14251,
-   "clusters_pinned": 4045,
-   "clusters_free": 28851,
-   "pinned_classes": 479,
-   "forced_classes": 479,
-   "conflicts": 0,
+   "entities_touched": 1974,
+   "clusters_constrained": 16518,
+   "clusters_pinned": 4251,
+   "clusters_free": 26583,
+   "pinned_classes": 494,
+   "forced_classes": 494,
+   "conflicts": 1,
    "c1_gaps": 0,
-   "K": 479,
-   "K_upper": 479,
-   "K_total": 479,
-   "K_greedy": 479,
-   "delta_forced": 1,
-   "delta_K": 1,
-   "lower_bound": 479,
+   "K": 498,
+   "K_upper": 499,
+   "K_total": 498,
+   "K_greedy": 498,
+   "delta_forced": 3,
+   "delta_K": 2,
+   "lower_bound": 498,
+   "merges": 0,
+   "bad_cover": 0
+  },
+  {
+   "family": "C11",
+   "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
+   "evidence": 0,
+   "entities_touched": 3474,
+   "clusters_constrained": 17005,
+   "clusters_pinned": 4720,
+   "clusters_free": 26056,
+   "pinned_classes": 501,
+   "forced_classes": 501,
+   "conflicts": 41,
+   "c1_gaps": 0,
+   "K": 505,
+   "K_upper": 546,
+   "K_total": 505,
+   "K_greedy": 505,
+   "delta_forced": 7,
+   "delta_K": 7,
+   "lower_bound": 505,
    "merges": 0,
    "bad_cover": 0
   }
  ],
- "conflicts": [],
+ "conflicts": [
+  {
+   "cluster": "M:41D860:this:0x54",
+   "entities": [
+    "M:41D860:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     3576,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 816,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "P:6FDD50:0",
+   "entities": [
+    "T:51DF60",
+    "P:6FDD50:0",
+    "P:6FDD50:3"
+   ],
+   "n_entities": 3,
+   "obs": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     13,
+     1
+    ],
+    [
+     16,
+     4
+    ],
+    [
+     20,
+     1
+    ],
+    [
+     20,
+     4
+    ],
+    [
+     28,
+     4
+    ],
+    [
+     33,
+     1
+    ],
+    [
+     44,
+     4
+    ],
+    [
+     60,
+     4
+    ],
+    [
+     72,
+     4
+    ],
+    [
+     112,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     132,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 814,
+    "C2": 1400,
+    "C3": 896,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6E9050:this:0x54",
+   "entities": [
+    "M:6E9050:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     692,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EA080:this:0x54",
+   "entities": [
+    "M:6EA080:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EA0D0:this:0x54",
+   "entities": [
+    "M:6EA0D0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EA870:this:0x54",
+   "entities": [
+    "M:6EA870:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     176,
+     4
+    ],
+    [
+     696,
+     4
+    ],
+    [
+     1448,
+     4
+    ],
+    [
+     1492,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EB380:this:0x54",
+   "entities": [
+    "M:6EB380:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EB490:this:0x54",
+   "entities": [
+    "M:6EB490:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EB870:this:0x54",
+   "entities": [
+    "M:6EB870:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     692,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EBAD0:this:0x54",
+   "entities": [
+    "M:6EBAD0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     20,
+     1
+    ],
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     180,
+     4
+    ],
+    [
+     692,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1652,
+     4
+    ],
+    [
+     1673,
+     1
+    ],
+    [
+     1678,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EC370:this:0x54",
+   "entities": [
+    "M:6EC370:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     981,
+     1
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EC3D0:this:0x54",
+   "entities": [
+    "M:6EC3D0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EC7D0:this:0x54",
+   "entities": [
+    "M:6EC7D0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EC9A0:this:0x54",
+   "entities": [
+    "M:6EC9A0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     764,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ECA70:this:0x54",
+   "entities": [
+    "M:6ECA70:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     764,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ECCE0:this:0x54",
+   "entities": [
+    "M:6ECCE0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ED090:this:0x54",
+   "entities": [
+    "M:6ED090:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     156,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ED200:this:0x54",
+   "entities": [
+    "M:6ED200:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     276,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ED4D0:this:0x54",
+   "entities": [
+    "M:6ED4D0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     540,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ],
+    [
+     1732,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6ED7E0:this:0x54",
+   "entities": [
+    "M:6ED7E0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     692,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EDCA0:this:0x54",
+   "entities": [
+    "M:6EDCA0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ],
+    [
+     1652,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EDDC0:this:0x54",
+   "entities": [
+    "M:6EDDC0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EDF10:this:0x54",
+   "entities": [
+    "M:6EDF10:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EDFD0:this:0x54",
+   "entities": [
+    "M:6EDFD0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     116,
+     1
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EE050:this:0x54",
+   "entities": [
+    "M:6EE050:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EE310:this:0x54",
+   "entities": [
+    "M:6EE310:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     540,
+     4
+    ],
+    [
+     764,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EE5C0:this:0x54",
+   "entities": [
+    "M:6EE5C0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     140,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EF110:this:0x54",
+   "entities": [
+    "M:6EF110:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     108,
+     4
+    ],
+    [
+     129,
+     1
+    ],
+    [
+     144,
+     1
+    ],
+    [
+     280,
+     4
+    ],
+    [
+     536,
+     4
+    ],
+    [
+     1444,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EF4D0:this:0x54",
+   "entities": [
+    "M:6EF4D0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EF5F0:this:0x54",
+   "entities": [
+    "M:6EF5F0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     240,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EF610:this:0x54",
+   "entities": [
+    "M:6EF610:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EF700:this:0x54",
+   "entities": [
+    "M:6EF700:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EFA10:this:0x54",
+   "entities": [
+    "M:6EFA10:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     540,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EFC70:this:0x54",
+   "entities": [
+    "M:6EFC70:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6EFE60:this:0x54",
+   "entities": [
+    "M:6EFE60:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6F0130:this:0x54",
+   "entities": [
+    "M:6F0130:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     156,
+     4
+    ],
+    [
+     540,
+     4
+    ],
+    [
+     1496,
+     4
+    ],
+    [
+     1673,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:6F03F0:this:0x54",
+   "entities": [
+    "M:6F03F0:this:0x54"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     764,
+     4
+    ],
+    [
+     1496,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 821,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:722440:this:0xf4",
+   "entities": [
+    "M:722440:this:0xf4"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     4,
+     4
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     12,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1006,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:7228B0:this:0xf4",
+   "entities": [
+    "M:7228B0:this:0xf4"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     4,
+     4
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     12,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1006,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:722AF0:this:0xf4",
+   "entities": [
+    "M:722AF0:this:0xf4"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     4,
+     4
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     12,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 1006,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  },
+  {
+   "cluster": "M:746100:this:0x6bc",
+   "entities": [
+    "M:746100:this:0x6bc"
+   ],
+   "n_entities": 1,
+   "obs": [
+    [
+     3434,
+     1
+    ],
+    [
+     3476,
+     1
+    ],
+    [
+     3477,
+     1
+    ]
+   ],
+   "exact": [],
+   "flags": {
+    "empty_domain": true
+   },
+   "family_domain_sizes": {
+    "C1": 816,
+    "C2": 1400,
+    "C3": 1400,
+    "C4": 1400,
+    "C5": 1400,
+    "C6": 1400,
+    "C7": 1400,
+    "C8": 1400,
+    "C9": 1400,
+    "C10": 1400,
+    "C11": 1
+   },
+   "reason": "empty_domain"
+  }
+ ],
  "diagnostics": {
   "no_layout_match": {
-   "count": 28,
+   "count": 32,
    "by_cause": {
-    "suspicious_large_offset": 28
+    "suspicious_large_offset": 32
    },
    "samples": [
     {
@@ -320,6 +2101,76 @@
       ],
       [
        131076,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:42A460:this:0x10",
+     "entities": [
+      "M:42A460:this:0x10"
+     ],
+     "obs": [
+      [
+       1048576,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:42A460:this:0xc",
+     "entities": [
+      "M:42A460:this:0xc"
+     ],
+     "obs": [
+      [
+       1572864,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:42A5B0:this:0xc",
+     "entities": [
+      "M:42A5B0:this:0xc"
+     ],
+     "obs": [
+      [
+       1572864,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:42A5B0:this:0x10",
+     "entities": [
+      "M:42A5B0:this:0x10"
+     ],
+     "obs": [
+      [
+       1048576,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:42A6D0:this:0x10",
+     "entities": [
+      "M:42A6D0:this:0x10"
+     ],
+     "obs": [
+      [
+       1048576,
        4
       ]
      ],
@@ -1029,69 +2880,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "R:5BDC80:ecx",
-     "entities": [
-      "T:5BDC80"
-     ],
-     "obs": [
-      [
-       21852,
-       1
-      ],
-      [
-       21856,
-       4
-      ],
-      [
-       21864,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:5BDDC0:ecx",
-     "entities": [
-      "T:5BDDC0"
-     ],
-     "obs": [
-      [
-       21852,
-       1
-      ],
-      [
-       21856,
-       4
-      ],
-      [
-       21864,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6A5030:0",
-     "entities": [
-      "T:5BDF50",
-      "P:6A5030:0"
-     ],
-     "obs": [
-      [
-       21852,
-       1
-      ],
-      [
-       21860,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:5BDF70:ecx",
      "entities": [
       "T:5BDF70"
@@ -1268,6 +3056,50 @@
      "cause": "suspicious_large_offset"
     },
     {
+     "cluster": "M:702D40:this:0x21c",
+     "entities": [
+      "M:702D40:this:0x21c"
+     ],
+     "obs": [
+      [
+       21556,
+       4
+      ],
+      [
+       21640,
+       4
+      ],
+      [
+       21644,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "M:703230:this:0x21c",
+     "entities": [
+      "M:703230:this:0x21c"
+     ],
+     "obs": [
+      [
+       21556,
+       4
+      ],
+      [
+       21640,
+       4
+      ],
+      [
+       21644,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
      "cluster": "R:7B19C0:ecx",
      "entities": [
       "T:7B19C0"
@@ -1422,14 +3254,15 @@
   },
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
-   "entities_ge2": 6630,
-   "matched_strict": 5672,
-   "no_match": 958,
+   "entities_ge2": 7277,
+   "matched_strict": 6211,
+   "no_match": 1066,
    "by_cause": {
-    "width_mismatch_only": 668,
-    "suspicious_large_offset": 197,
-    "param_unknown_class": 78,
-    "no_class_has_all_offsets_sparse_layout": 15
+    "width_mismatch_only": 816,
+    "suspicious_large_offset": 173,
+    "param_unknown_class": 56,
+    "no_class_has_all_offsets_sparse_layout": 11,
+    "member_chain_unknown_class": 10
    },
    "samples": [
     {
@@ -1531,6 +3364,40 @@
       ],
       [
        212,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "M:402F60:this:0xf8",
+     "obs": [
+      [
+       144,
+       4
+      ],
+      [
+       148,
+       4
+      ],
+      [
+       152,
+       4
+      ],
+      [
+       156,
+       4
+      ],
+      [
+       164,
+       1
+      ],
+      [
+       212,
+       4
+      ],
+      [
+       360,
        4
       ]
      ],
@@ -1667,6 +3534,52 @@
      "cause": "width_mismatch_only"
     },
     {
+     "entity": "M:4055C0:this:0x24",
+     "obs": [
+      [
+       12,
+       4
+      ],
+      [
+       16,
+       1
+      ],
+      [
+       16,
+       4
+      ],
+      [
+       64,
+       4
+      ],
+      [
+       76,
+       4
+      ],
+      [
+       88,
+       4
+      ],
+      [
+       92,
+       4
+      ],
+      [
+       96,
+       4
+      ],
+      [
+       100,
+       4
+      ],
+      [
+       104,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
      "entity": "T:4071C0",
      "obs": [
       [
@@ -1683,6 +3596,58 @@
       ],
       [
        8,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "M:407A30:this:0xc0",
+     "obs": [
+      [
+       12,
+       1
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       32,
+       4
+      ],
+      [
+       36,
+       4
+      ],
+      [
+       128,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "M:407A60:this:0xc0",
+     "obs": [
+      [
+       12,
+       1
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       32,
+       4
+      ],
+      [
+       36,
+       4
+      ],
+      [
+       128,
        4
       ]
      ],
@@ -1751,20 +3716,6 @@
       ],
       [
        244,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:40D290",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       21784,
        4
       ]
      ],
@@ -1903,6 +3854,20 @@
      "cause": "width_mismatch_only"
     },
     {
+     "entity": "M:414BB0:this:0x2b4",
+     "obs": [
+      [
+       20,
+       1
+      ],
+      [
+       544,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
      "entity": "T:415C60",
      "obs": [
       [
@@ -1923,6 +3888,36 @@
       ],
       [
        1747,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "M:4190B0:this:0x6c4",
+     "obs": [
+      [
+       968,
+       4
+      ],
+      [
+       972,
+       4
+      ],
+      [
+       1504,
+       4
+      ],
+      [
+       1668,
+       4
+      ],
+      [
+       3580,
+       1
+      ],
+      [
+       3597,
        1
       ]
      ],
@@ -1961,176 +3956,6 @@
       ]
      ],
      "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "P:41D540:0",
-     "obs": [
-      [
-       20,
-       1
-      ],
-      [
-       660,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:41D860",
-     "obs": [
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       48,
-       4
-      ],
-      [
-       52,
-       4
-      ],
-      [
-       60,
-       1
-      ],
-      [
-       61,
-       1
-      ],
-      [
-       76,
-       4
-      ],
-      [
-       80,
-       4
-      ],
-      [
-       84,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:4202F0",
-     "obs": [
-      [
-       0,
-       2
-      ],
-      [
-       131072,
-       4
-      ],
-      [
-       131076,
-       4
-      ]
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "entity": "P:420F40:0",
-     "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       28,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       56,
-       4
-      ],
-      [
-       176,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "P:421EA0:0",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       6,
-       2
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       72,
-       4
-      ],
-      [
-       156,
-       4
-      ],
-      [
-       832,
-       4
-      ],
-      [
-       854,
-       1
-      ],
-      [
-       1972,
-       4
-      ],
-      [
-       5244,
-       4
-      ]
-     ],
-     "cause": "suspicious_large_offset"
     }
    ]
   },
