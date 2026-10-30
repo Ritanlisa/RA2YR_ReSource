@@ -766,6 +766,12 @@ def main():
                     help="disable name/proto-this derived class pins")
     ap.add_argument("--prune-dead", action="store_true",
                     help="从候选宇宙剔除零引用死类（anchors/dead_classes.json）")
+    ap.add_argument("--proven-universe", dest="proven_universe", action="store_true",
+                    default=True,
+                    help="proven universe（默认开）：无布局且无二进制证据的幻影类从"
+                         "所有族掩码与候选枚举中剔除（掩码级，祖先类保留）。")
+    ap.add_argument("--no-proven-universe", dest="proven_universe", action="store_false",
+                    help="禁用 proven universe——回归基线口径。")
     ap.add_argument("--dump-domains", action="store_true",
                     help="写出每簇候选域大小（判断多少簇真正被证据确定）")
     ap.add_argument("--strict-c1", action="store_true",
@@ -1167,6 +1173,92 @@ def main():
                     _inherit_added += 1
     print("[layouts] inheritance flattening: %d parent links, %d inherited members added"
           % (len(_parents), _inherit_added), flush=True)
+
+    # ---- A：proven universe（幻影类剔除）----
+    # 人肉鉴定只考虑二进制里真实存在的类；「无布局且无二进制证据」的幻影类
+    # 对 C1 恒为 FULL 放行（has_layout=False → 稀疏掩码放行），坐在每一个域里
+    # 抬高全部域宽。实现为掩码级剔除（不重排宇宙数组，避免重编号涟漪）：
+    # cluster_domains 求交时统一与 proven 掩码相交，候选枚举因此见不到幻影类。
+    # 保留判据（任一成立）：
+    #   (1) tools/class_layouts.json 有含成员的布局记录；
+    #   (2) 二进制身份 = identified 集（extent/ctor 装表/structural truth）+
+    #       singleton_types 存储锚定；
+    #   (3) anchors/layout_evidence.json 记录了 extra_offsets（并入 identified）；
+    #   (4) anchors/vtable_slot_authority.json 里拥有 vtable。
+    # 层次保护：kept 类的祖先（_parents 链 + rtti_base_arrays + class_db
+    # full_ancestors，传递闭包）一律保留，否则 anc/desc 展开断链。
+    _proven_mask = FULL
+    proven_keep = None
+    if getattr(args, "proven_universe", True):
+        _keep = set(identified)
+        for _rec in (jload("anchors/singleton_types.json", {}) or {}).values():
+            _ci = resolve((_rec or {}).get("type"))
+            if _ci is not None:
+                _keep.add(_ci)
+        _lay_prov = jload("tools/class_layouts.json", {}) or {}
+        _laycls = {r for r, rec in _lay_prov.items()
+                   if isinstance(rec, dict) and (rec.get("offsets") or {})}
+        _align_prov = jload("anchors/class_name_align.json", {}) or {}
+        _r2c_prov = {k: v["canon"] for k, v in
+                     (_align_prov.get("rtti_to_canon") or {}).items()}
+        for _i, _c in enumerate(names):
+            _recs = [_c] + [r for r in (U["db"][_c].get("rtti_names") or []) if r != _c]
+            for _r in _recs:
+                if _r in _laycls or (_r in _r2c_prov and _r2c_prov[_r] in _laycls):
+                    _keep.add(_i)
+                    break
+        for _cls in (jload("anchors/vtable_slot_authority.json", {}) or {}):
+            _ci = resolve(_cls)
+            if _ci is not None:
+                _keep.add(_ci)
+        # 祖先保留（多源直接祖先 → 传递闭包）
+        _rtti_base_prov = jload("anchors/rtti_base_arrays.json", {}) or {}
+        _anc_direct = {}
+        for _i, _c in enumerate(names):
+            _rec = U["db"][_c]
+            _anc = set()
+            for _a in _rec.get("full_ancestors") or []:
+                _j = resolve(_a)
+                if _j is not None:
+                    _anc.add(_j)
+            _rns = [_c] + [r for r in (_rec.get("rtti_names") or []) if r != _c]
+            for _rn in _rns:
+                for _a in _rtti_base_prov.get(_rn) or []:
+                    _j = resolve(_a)
+                    if _j is not None:
+                        _anc.add(_j)
+                for _src in [_rn] + ([_r2c_prov[_rn]] if _rn in _r2c_prov else []):
+                    _lr = _lay_prov.get(_src)
+                    _p = _lr.get("parent") if isinstance(_lr, dict) else None
+                    if _p:
+                        _j = resolve(_p)
+                        if _j is not None:
+                            _anc.add(_j)
+            if _anc:
+                _anc_direct[_i] = _anc
+        _stack = list(_keep)
+        while _stack:
+            _i = _stack.pop()
+            for _j in _anc_direct.get(_i, ()):
+                if _j not in _keep:
+                    _keep.add(_j)
+                    _stack.append(_j)
+        proven_keep = _keep
+        _proven_mask = 0
+        for _i in proven_keep:
+            _proven_mask |= (1 << _i)
+    _n_phantom = n - (_proven_mask.bit_count() if proven_keep is not None else n)
+    print("[universe] proven=%d dropped_phantom=%d (no_layout_no_proof)"
+          % (n - _n_phantom, _n_phantom), flush=True)
+    _proven_cell = [_proven_mask]      # 单元格：K 对照（was）时临时置 FULL 重解
+
+    def _pfm(m):
+        """proven 掩码过滤。FULL（未知/无证据）保持 FULL——与真·宇宙剔除同口径：
+        未知 = kept 宇宙上的任意类 = 自由簇，不进覆盖问题；只有具体掩码才剥幻影位。"""
+        _p = _proven_cell[0]
+        if _p == FULL or m == FULL:
+            return m
+        return m & _p
 
     # ---- 二进制身份锚定的成员表补全（非循环）----
     # 身份只来自二进制：ctor vtable 装表 / vtable 槽位归属 / 全局单例。
@@ -1977,6 +2069,77 @@ def main():
           % (c15_exact_n, c15_amb_n, len(fam["C15"]), c15_pool_exact,
              c15_skipped_ctor, c15_not_entity, c15_no_minimal), flush=True)
 
+    # ---------------- C11b：成员链类型导出 ----------------
+    # M 实体 = 容器的 this->member(NN)。容器类被 C4/C15 钉住时，该成员的**声明类型**
+    # 就是子对象的类（人眼分析用的正是这条：AircraftClass+0x6C4 -> AircraftTypeClass）。
+    # 类型来源：class_layouts 成员 type + member_types.json 的 Class+0xNN 记录。
+    _c11b_exact = _c11b_containers = _c11b_unres = _c11b_nocont = 0
+    _decl11b = {}
+    try:
+        _lay11b = jload("tools/class_layouts.json", {}) or {}
+        _mt11b = jload("anchors/member_types.json", {}) or {}
+        def _strip11b(t):
+            t = re.sub(r"\bconst\b", "", str(t or "")).replace("*", "").replace("&", "").strip()
+            if "<" in t:
+                t = t.split("<")[0].strip()
+            return t
+        for _cn11b, _rec11b in _lay11b.items():
+            _ci11b = resolve(_cn11b)
+            if _ci11b is None or not isinstance(_rec11b, dict):
+                continue
+            for _o11b, _m11b in (_rec11b.get("offsets") or {}).items():
+                _ti11b = resolve(_strip11b((_m11b or {}).get("type")))
+                if _ti11b is not None:
+                    _decl11b[(_ci11b, int(_o11b))] = _ti11b
+        _rx11b = re.compile(r"^(.*)\+0[xX]([0-9A-Fa-f]+)$")
+        for _k11b, _v11b in _mt11b.items():
+            _mm11b = _rx11b.match(_k11b)
+            if not _mm11b:
+                continue
+            _ci11b = resolve(_mm11b.group(1))
+            _ti11b = resolve(_strip11b((_v11b or {}).get("type")))
+            if _ci11b is not None and _ti11b is not None:
+                _decl11b.setdefault((_ci11b, int(_mm11b.group(2), 16)), _ti11b)
+    except Exception:
+        _decl11b = {}
+    _fn_exact_c = {}
+    for _eidc, _lstc in exact.items():
+        if not _eidc.startswith("T:"):
+            continue
+        _setc = {_ci for _ci, _s in _lstc}
+        if len(_setc) == 1:
+            _fn_exact_c[_eidc] = next(iter(_setc))
+    for _eidc in list(ents.keys()):
+        if not _eidc.startswith("M:"):
+            continue
+        _pc = _eidc.split(":")
+        if len(_pc) != 4 or _pc[2] != "this":
+            continue
+        _cic = _fn_exact_c.get("T:" + _pc[1])
+        if _cic is None:
+            _c11b_nocont += 1
+            continue
+        _c11b_containers += 1
+        try:
+            _oc = int(_pc[3], 16)
+        except ValueError:
+            try:
+                _oc = int(_pc[3])
+            except ValueError:
+                continue
+        _tic = _decl11b.get((_cic, _oc))
+        if _tic is None:
+            _c11b_unres += 1
+            continue
+        if exact.get(_eidc) and any(_ci != _tic for _ci, _s in exact[_eidc]):
+            continue
+        exact[_eidc].append((_tic, "C11b:member-type"))
+        exact_count["C11"] += 1
+        census["C11"] += 1
+        _c11b_exact += 1
+    print("[C11b] member-type exact=%d (containers=%d unresolved_type=%d no_container=%d)"
+          % (_c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,
@@ -2197,6 +2360,7 @@ def main():
             m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
             if cl.get("root") in _c1_exempt:
                 m_c1 = FULL     # 冲突消解：该簇的 C1 证据已被驳倒（见消解台账）
+            m_c1 = _pfm(m_c1)   # proven universe：幻影类从 C1 掩码剔除
             m = m_c1
             masks = {"C1": m_c1}
             for f in enabled:
@@ -2209,7 +2373,7 @@ def main():
                     if fm is not None:
                         mf &= fm
                         hit = True
-                masks[f] = mf if hit else FULL
+                masks[f] = _pfm(mf) if hit else FULL   # proven universe：逐族剔除
                 m &= masks[f]
             exs = {}
             for ci, ss in cl["exact"].items():
@@ -2547,6 +2711,8 @@ def main():
     #   容器类 c_C  ·  该 offset 的成员类型 pair[(c_C, NN)]  ·  子对象类 c_M
     # C++ 语义：成员静态类型是上界，故 c_M ⊑ pair[(c_C, NN)]（祖先或同类）。
     _member_pairs = {}
+    _n_layout_pairs11 = 0
+    _n_mt_pairs11 = 0
     try:
         _layouts11 = jload("tools/class_layouts.json", {}) or {}
         _mt11 = jload("anchors/member_types.json", {}) or {}
@@ -2564,7 +2730,10 @@ def main():
                 _ci11 = resolve(_cn); _ti11 = resolve(_tn) if _tn else None
                 if _ci11 is not None and _ti11 is not None:
                     _member_pairs[(_ci11, int(_off11))] = _ti11
-        _rx11 = re.compile(r"^(.*)\+0x([0-9A-Fa-f]+)$")
+                    _n_layout_pairs11 += 1
+        _n_after_layouts11 = len(_member_pairs)
+        # 键解析容错：+0x / +0X 前缀、大小写十六进制、模板名（.* 贪婪已覆盖 @/$）
+        _rx11 = re.compile(r"^(.*)\+0[xX]([0-9A-Fa-f]+)$")
         for _k11, _v11 in _mt11.items():
             _mm11 = _rx11.match(_k11)
             if not _mm11:
@@ -2574,8 +2743,86 @@ def main():
             _ti11 = resolve(_tn) if _tn else None
             if _ci11 is not None and _ti11 is not None:
                 _member_pairs.setdefault((_ci11, int(_mm11.group(2), 16)), _ti11)
+        _n_mt_pairs11 = len(_member_pairs) - _n_after_layouts11
     except Exception:
         _member_pairs = {}
+
+    # ---- B：二进制派生成员类型 ----
+    # 人肉鉴定依据「+0xNN 处存的是 X 类」。声明侧（layouts/member_types）之外，
+    # 从事实侧补全：容器函数有 C15/C4 EXACT 类（exact["T:fn"] 唯一且同源），
+    # 且该 M 子对象实体的族掩码交集为单类（= class(M) 被既有证据精确钉死）
+    # → (容器类, offset) -> 子对象类 是二进制事实。
+    # 仅 this 链（M:<fn>:this:<off>）——参数链偏移相对形参对象，不并入容器成员表。
+    # 注：M 子对象实体从不携带也从不并入 exact[] 身份（实测 3,669 个 M 实体
+    # 0 个与 exact 载体同簇），故「class(M) 本身精确」的可用口径 = 族掩码单点域。
+    # ---- B：二进制派生成员类型 ----
+    # 人肉鉴定依据「+0xNN 处存的是 X 类」。声明侧（layouts/member_types）之外，
+    # 从事实侧补全：容器函数有 C15/C4 EXACT 类（exact["T:fn"] 唯一且同源），且
+    # class(M) 被既有证据唯一钉死。class(M) 的可用机械口径（按序尝试）：
+    #   (d) M 实体所属簇的全族掩码交集为单类；
+    #   (c) 子对象观测的 C1 布局覆盖唯一。
+    # 仅 this 链——参数链偏移相对形参对象，不并入容器成员表。
+    # ⚠ 实测（2026-10-30）：M 实体进 C11 时**零类证据**——exact[] 只挂 T:/G:、
+    # 各族掩码不写 M:、C1 覆盖从不成单点（3,457 个 M:this 中 0 命中）。M 的类
+    # 只能由 C11 传播（消费 member_pairs）导出，故本通道目前结构性为空
+    # （binary_derived=0）；保留实现：未来任何族开始给 M: 实体供证据时自动生效。
+    _n_binary_pairs11 = 0
+    _fn_exact11 = {}
+    for _a11, _lst11 in exact.items():
+        if not _a11.startswith("T:"):
+            continue
+        _cls11 = set()
+        for _ci11, _s11 in _lst11:
+            if _s11.startswith(("C4", "C15")):
+                _cls11.add(_ci11)
+        if len(_cls11) == 1:
+            _fn_exact11[_a11] = next(iter(_cls11))
+    _clu_of_ent11 = {}
+    for _cl11x in clusters:
+        for _e11x in _cl11x.get("ents") or ():
+            _clu_of_ent11[_e11x] = _cl11x
+    for _eid11b in ents:
+        if not _eid11b.startswith("M:"):
+            continue
+        _p11b = _eid11b.split(":")
+        if len(_p11b) != 4 or _p11b[2] != "this":
+            continue
+        _cc11b = _fn_exact11.get("T:%s" % _p11b[1])
+        if _cc11b is None:
+            continue
+        _clu11 = _clu_of_ent11.get(_eid11b)
+        _obs11 = sorted(_clu11.get("obs") or set()) if _clu11 else []
+        _mm11s = FULL
+        _hit11 = False
+        for _e11y in (_clu11.get("ents") or ()) if _clu11 else ():
+            for _f11x in FAMILIES:
+                if _f11x in ("C1", "C11"):
+                    continue
+                _x11 = fam[_f11x].get(_e11y)
+                if _x11 is not None:
+                    _mm11s &= _x11
+                    _hit11 = True
+        _c1m11 = c1_mask(_obs11) if _obs11 else FULL
+        _cls_cd = _mm11s.bit_length() - 1 if (_hit11 and 0 != _mm11s != FULL
+                                              and _mm11s.bit_count() == 1) else None
+        _cls_c1 = _c1m11.bit_length() - 1 if (_obs11 and 0 != _c1m11 != FULL
+                                              and _c1m11.bit_count() == 1) else None
+        try:
+            _off11b = int(_p11b[3], 16)
+        except ValueError:
+            try:
+                _off11b = int(_p11b[3])
+            except ValueError:
+                continue
+        for _src_cls in (_cls_cd, _cls_c1):
+            if _src_cls is None:
+                continue
+            if (_cc11b, _off11b) not in _member_pairs:
+                _member_pairs[(_cc11b, _off11b)] = _src_cls
+                _n_binary_pairs11 += 1
+    print("[C11] member-type sources: layouts=%d member_types=%d binary_derived=%d total=%d"
+          % (_n_layout_pairs11, _n_mt_pairs11, _n_binary_pairs11, len(_member_pairs)),
+          flush=True)
     print("[C11] class-typed member evidence: %d (class,offset) pairs, %d classes"
           % (len(_member_pairs), len({c for c, _ in _member_pairs})), flush=True)
 
@@ -2738,6 +2985,7 @@ def main():
     #   .member(  : 成员链实体归 C11，此处跳过不重复约束
     _GLOBAL_PREF = ("offset ", "dword_", "off_", "g_", "stru_")
     _c10_n_clean = _c10_n_dirty = _c10_n_global = _c10_n_stack = 0
+    _c16_param_edges = 0      # C16：目标为被调方参数的 this 传递边（只进 Phase 2）
     _c10_nodes = set()                # G:/S: 连接点实体（可不在 ents；不并簇）
     _call_edges = []
     _call_edges_p1 = []               # Phase 1：洁净寄存器边
@@ -2748,17 +2996,22 @@ def main():
         _fr, _to = _e.get("from"), _e.get("to")
         if not (isinstance(_fr, str) and isinstance(_to, str)):
             continue
-        if not _to.endswith(":this"):
+        _is_param_target = "::param" in _to
+        if not (_to.endswith(":this") or _is_param_target):
             continue
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
             continue
+        if _is_param_target:
+            _c16_param_edges += 1
         # ---- Phase 1 判定 = 改前（HEAD）C10 的精确边语义 ----
         #   :this 直传 → ent_id(_fr)；其余源按指令地址作用域化 ent_id(_fr, fn)，
         #   dirty（clean flag False）丢弃；**双端都必须在 ents** 才保留。
         #   （R:/S: 实体从不入 ents → 基线实际只收 T:/M:/G: 落 ents 的边。）
         _cc_leg = None
-        if _fr.endswith(":this"):
+        if _is_param_target:
+            pass                  # C16：参数目标不进 Phase 1（p1 必须与 HEAD 逐边一致）
+        elif _fr.endswith(":this"):
             _cc_leg = ent_id(_fr)
         else:
             try:
@@ -2826,6 +3079,9 @@ def main():
           "(p1_baseline=%d p2_new=%d)"
           % (_c10_n_clean, _c10_n_dirty, _c10_n_global, _c10_n_stack,
              len(_call_edges), len(_call_edges_p1), len(_call_edges_p2)), flush=True)
+
+    print("[C16] param edges=%d (this-target edges=%d)"
+          % (_c16_param_edges, len(_call_edges) - _c16_param_edges), flush=True)
 
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
@@ -3143,12 +3399,25 @@ def main():
 
     K, K_upper, LB = res["k"], res["k_upper"], res["lower_bound"]
     chosen, constrain, assign = res["chosen"], res["constrained"], res["assign"]
+    if proven_keep is not None:
+        # A：proven universe 的 K 对照——同一约束集，关掉掩码过滤重解一次。
+        # fam 掩码本身从未被过滤（过滤只在 cluster_domains 求交处），
+        # 故关掉即真实还原未剔除口径。
+        _proven_cell[0] = FULL
+        _res_was = solve(all_fams)
+        _proven_cell[0] = _proven_mask
+        _k_was = _res_was["k"]
+    else:
+        _k_was = None
     print("\n== FINAL ==")
     print("K_min=%d  K_upper(=K+conflicts)=%d  lower_bound=%d  constrained=%d free=%d "
           "conflicts=%d c1_gaps=%d exact_conflicts=%d unassigned=%d"
           % (K, K_upper, LB, len(constrain), res["free"], res["n_conflicts"],
              res["c1_gaps"], res["exact_conflicts"], len(constrain) - len(assign)),
           flush=True)
+    if _k_was is not None:
+        print("[universe] K_min with proven universe=%d (was %d)" % (K, _k_was),
+              flush=True)
     # 覆盖口径：域大小=1 的簇数 / 受约束簇数；forced/narrow/wide 与 assignments
     # 写出器同阈值（=1 / 2..8 / >8）。
     _cov = collections.Counter()

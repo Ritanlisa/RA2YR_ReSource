@@ -9,6 +9,16 @@
   "class_after": null
  },
  {
+  "cluster": "P:5117D0:1",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 832,
+  "class_after": null
+ },
+ {
   "cluster": "M:6E9050:this:0x54",
   "dropped_family": "C11",
   "remaining_families": [
@@ -357,6 +367,20 @@
    "C1"
   ],
   "domain_after": 816,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CAAE4:4",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
+  "class_after": null
+ },
+ {
+  "cluster": "P:748360:0",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
   "class_after": null
  }
 ]

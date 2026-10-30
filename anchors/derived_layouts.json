@@ -236,9 +236,9 @@
 ]
 },
 "MouseClass": {
-"member_count": 17,
+"member_count": 20,
 "extent": 324,
-"clusters": 14,
+"clusters": 15,
 "members": [
 [
 0,
@@ -294,6 +294,18 @@
 ],
 [
 248,
+4
+],
+[
+252,
+4
+],
+[
+256,
+4
+],
+[
+260,
 4
 ],
 [
@@ -835,7 +847,7 @@
 "AircraftClass": {
 "member_count": 128,
 "extent": 1750,
-"clusters": 244,
+"clusters": 236,
 "members": [
 [
 0,
@@ -4906,7 +4918,7 @@
 "ColorListClass": {
 "member_count": 14,
 "extent": 404,
-"clusters": 18,
+"clusters": 10,
 "members": [
 [
 0,
@@ -6844,9 +6856,9 @@
 ]
 },
 "DisplayClass": {
-"member_count": 6,
-"extent": 24,
-"clusters": 20,
+"member_count": 8,
+"extent": 252,
+"clusters": 23,
 "members": [
 [
 0,
@@ -6871,32 +6883,6 @@
 [
 20,
 4
-]
-]
-},
-"ScrollClass": {
-"member_count": 2,
-"extent": 16,
-"clusters": 23,
-"members": [
-[
-0,
-4
-],
-[
-12,
-4
-]
-]
-},
-"PowerClass": {
-"member_count": 6,
-"extent": 264,
-"clusters": 33,
-"members": [
-[
-0,
-4
 ],
 [
 244,
@@ -6905,17 +6891,20 @@
 [
 248,
 4
-],
+]
+]
+},
+"ScrollClass": {
+"member_count": 2,
+"extent": 16,
+"clusters": 39,
+"members": [
 [
-252,
+0,
 4
 ],
 [
-256,
-4
-],
-[
-260,
+12,
 4
 ]
 ]
@@ -8624,7 +8613,7 @@
 "UnitClass": {
 "member_count": 115,
 "extent": 3607,
-"clusters": 90,
+"clusters": 98,
 "members": [
 [
 0,
@@ -9135,6 +9124,45 @@
 ],
 [
 32,
+4
+]
+]
+},
+"ToggleClass": {
+"member_count": 8,
+"extent": 52,
+"clusters": 12,
+"members": [
+[
+0,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+24,
+4
+],
+[
+44,
+1
+],
+[
+45,
+1
+],
+[
+48,
 4
 ]
 ]
@@ -15371,6 +15399,17 @@
 ]
 ]
 },
+"PowerClass": {
+"member_count": 1,
+"extent": 4,
+"clusters": 10,
+"members": [
+[
+0,
+4
+]
+]
+},
 "ProgressScreenClass": {
 "member_count": 18,
 "extent": 132,
@@ -15819,7 +15858,7 @@
 "RadarClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 11,
+"clusters": 14,
 "members": [
 [
 0,
@@ -16439,7 +16478,7 @@
 "ShapeButtonClass": {
 "member_count": 20,
 "extent": 93,
-"clusters": 7,
+"clusters": 6,
 "members": [
 [
 0,
@@ -21395,45 +21434,6 @@
 ]
 ]
 },
-"ToggleClass": {
-"member_count": 8,
-"extent": 52,
-"clusters": 3,
-"members": [
-[
-0,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-44,
-1
-],
-[
-45,
-1
-],
-[
-48,
-4
-]
-]
-},
 "ToolTipManager": {
 "member_count": 18,
 "extent": 608,
@@ -23504,7 +23504,7 @@
 "CChatEventSink": {
 "member_count": 2,
 "extent": 8,
-"clusters": 46,
+"clusters": 1,
 "members": [
 [
 0,
@@ -24020,7 +24020,7 @@
 "?$CComObject@VCChatEventSink@@@ATL": {
 "member_count": 0,
 "extent": 0,
-"clusters": 3,
+"clusters": 48,
 "members": []
 },
 "SetInfantryTabCommandClass": {
