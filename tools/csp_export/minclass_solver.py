@@ -3167,10 +3167,13 @@ def main():
 
     # 洁净寄存器到达定义（facts.reg_links = [addr, reg, src, clean]）
     _clean_reg = {}
+    _site_src = {}   # (调用点, 寄存器) -> 该点寄存器的到达定义来源实体
     if facts:
         for _lk in (facts.get("reg_links") or ()):
             try:
                 _clean_reg[(int(_lk[0]), _lk[1])] = bool(_lk[3])
+                if len(_lk) >= 3 and _lk[2]:
+                    _site_src[(int(_lk[0]), _lk[1])] = _lk[2]
             except (IndexError, TypeError, ValueError):
                 pass
     # 边源扩展（X520 CHANGE B）：此前只收能落到 ents 实体上的源（G:/M:），
@@ -3233,13 +3236,20 @@ def main():
         if _fr.endswith(":this"):
             _cc, _kind = ent_id(_fr), "clean"
         elif _fr in REGS:
-            # 调用方的 this 以**寄存器**形式出现（ecx/esi/...），必须按指令地址作用域化
+            # 调用方的 this 以**寄存器**形式出现（ecx/esi/...）。
+            # 优先用该调用点上寄存器的**到达定义来源**（facts.reg_links）：
+            # 同一点上它装的就是那个对象，比整函数聚合的 R:<fn>:<reg> 精确得多。
             try:
                 _ea = int(str(_e.get("addr")), 16)
             except (TypeError, ValueError):
                 continue
-            _cc = ent_id(_fr, fn_at(_ea))
-            _kind = "dirty" if _clean_reg.get((_ea, _fr)) is False else "clean"
+            _srcreg = _site_src.get((_ea, _fr))
+            if _srcreg and _srcreg in ents:
+                _cc = _srcreg
+                _kind = "clean"
+            else:
+                _cc = ent_id(_fr, fn_at(_ea))
+                _kind = "dirty" if _clean_reg.get((_ea, _fr)) is False else "clean"
         elif _fr.startswith(_GLOBAL_PREF):
             if _fr.startswith("offset "):
                 _cc = ent_id(_fr)                   # ent_id 内部走 global_addr(s[7:])
