@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15", "C18"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -80,6 +80,7 @@ FAMILY_DESC = {
     "C9": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
     "C10": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
     "C11": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
+    "C18": "binary offset-signature match (class member offsets observed in its own functions)",
     "C15": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
 }
 
@@ -2188,9 +2189,14 @@ def main():
             continue
         _c18_tried += 1
         _hit18 = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18)]
+        if not _hit18:
+            continue
+        _mask18 = 0
+        for _ci in _hit18:
+            _mask18 |= (1 << _ci)
+        fam["C18"][_eid18] = fam["C18"].get(_eid18, FULL) & _mask18
         if len(_hit18) != 1:
-            if _hit18:
-                _c18_amb += 1
+            _c18_amb += 1
             continue
         if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
             continue
