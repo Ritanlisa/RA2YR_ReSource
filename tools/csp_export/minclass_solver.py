@@ -2201,6 +2201,66 @@ def main():
     print("[C18] binary-signature exact=%d (tried=%d ambiguous=%d)"
           % (_c18_exact, _c18_tried, _c18_amb), flush=True)
 
+    # C18b：多类覆盖时取**唯一最小签名**（拟合最紧的那个类）。
+    # 防误判门：观测 >= 3 条且最大偏移 >= 0x40 —— 只看 +0..+16 的簇任何小类都能覆盖，
+    # 那是假精度，不许钉。
+    _c18b_exact = _c18b_amb = 0
+    for _eid18b in list(ents.keys()):
+        if exact.get(_eid18b):
+            continue
+        _obs18b = ents[_eid18b].get("obs") or set()
+        if len(_obs18b) < 3:
+            continue
+        if max(_o for (_o, _w) in _obs18b) < 0x40:
+            continue
+        _hit18b = [(_ci, len(_s)) for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18b)]
+        if len(_hit18b) < 2:
+            continue
+        _hit18b.sort(key=lambda x: x[1])
+        if _hit18b[0][1] < _hit18b[1][1]:
+            exact[_eid18b].append((_hit18b[0][0], "C18b:minimal-signature"))
+            exact_count["C18"] = exact_count.get("C18", 0) + 1
+            census["C18"] = census.get("C18", 0) + 1
+            _c18b_exact += 1
+        else:
+            _c18b_amb += 1
+    print("[C18b] minimal-signature exact=%d (tied=%d)" % (_c18b_exact, _c18b_amb), flush=True)
+
+    # C18c：级联——用刚定类的函数扩充签名表，再跑一轮唯一覆盖。
+    # 签名仍然只由汇编的 (offset,width) 构成，新定类的函数把它们自己的访问并进所属类。
+    _c18c_rounds = []
+    for _r18 in range(3):
+        _cls_sig18 = collections.defaultdict(set)
+        for _eid18c, _lst18c in exact.items():
+            if not _eid18c.startswith("T:"):
+                continue
+            _cset18c = {_ci for _ci, _src in _lst18c}
+            if len(_cset18c) != 1:
+                continue
+            _f18c = hx(_eid18c[2:])
+            if _f18c is None:
+                continue
+            _cls_sig18[next(iter(_cset18c))] |= _sig18.get(_f18c, set())
+        _cls_big18 = {_ci: _s for _ci, _s in _cls_sig18.items() if len(_s) >= 5}
+        _c18c_n = 0
+        for _eid18c in list(ents.keys()):
+            if exact.get(_eid18c):
+                continue
+            _obs18c = ents[_eid18c].get("obs") or set()
+            if len(_obs18c) < 3 or max(_o for (_o, _w) in _obs18c) < 0x40:
+                continue
+            _hit18c = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18c)]
+            if len(_hit18c) == 1:
+                exact[_eid18c].append((_hit18c[0], "C18c:cascade"))
+                exact_count["C18"] = exact_count.get("C18", 0) + 1
+                census["C18"] = census.get("C18", 0) + 1
+                _c18c_n += 1
+        _c18c_rounds.append(_c18c_n)
+        if not _c18c_n:
+            break
+    print("[C18c] cascade exact per round=%s (classes in signature table=%d)"
+          % (_c18c_rounds, len(_cls_big18)), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,

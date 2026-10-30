@@ -234,15 +234,6 @@
   "class_after": null
  },
  {
-  "cluster": "M:746100:this:0x6bc",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 816,
-  "class_after": null
- },
- {
   "cluster": "P:7CAAE4:4",
   "dropped_family": "C10",
   "remaining_families": [],

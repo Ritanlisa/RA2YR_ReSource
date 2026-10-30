@@ -25,7 +25,7 @@
    "member_chain_unproven": 267,
    "reg_flow_tainted": 891,
    "global_unproven": 1407,
-   "self_pin_incompatible": 626
+   "self_pin_incompatible": 625
   },
   "ruleGJ": {
    "reg_drops": 0,
@@ -55,7 +55,7 @@
   "K": 543,
   "K_upper": 543,
   "lower_bound": 543,
-  "constrained_clusters": 25819,
+  "constrained_clusters": 25825,
   "free_clusters": 17566,
   "conflicts": 0,
   "c1_gaps": 0,
@@ -68,20 +68,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 13133,
-   "clusters_pinned": 5412,
+   "clusters_constrained": 13139,
+   "clusters_pinned": 6065,
    "clusters_free": 30252,
-   "pinned_classes": 467,
-   "forced_classes": 467,
+   "pinned_classes": 469,
+   "forced_classes": 469,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 467,
-   "K_upper": 467,
-   "K_total": 467,
-   "K_greedy": 467,
-   "delta_forced": 467,
-   "delta_K": 467,
-   "lower_bound": 467,
+   "K": 469,
+   "K_upper": 469,
+   "K_total": 469,
+   "K_greedy": 469,
+   "delta_forced": 469,
+   "delta_K": 469,
+   "lower_bound": 469,
    "merges": 0,
    "bad_cover": 0
   },
@@ -90,20 +90,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 13133,
-   "clusters_pinned": 5412,
+   "clusters_constrained": 13139,
+   "clusters_pinned": 6065,
    "clusters_free": 30252,
-   "pinned_classes": 467,
-   "forced_classes": 467,
+   "pinned_classes": 469,
+   "forced_classes": 469,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 467,
-   "K_upper": 467,
-   "K_total": 467,
-   "K_greedy": 467,
+   "K": 469,
+   "K_upper": 469,
+   "K_total": 469,
+   "K_greedy": 469,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 467,
+   "lower_bound": 469,
    "merges": 0,
    "bad_cover": 0
   },
@@ -112,20 +112,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 13750,
-   "clusters_pinned": 5412,
+   "clusters_constrained": 13756,
+   "clusters_pinned": 6065,
    "clusters_free": 29635,
-   "pinned_classes": 467,
-   "forced_classes": 467,
+   "pinned_classes": 469,
+   "forced_classes": 469,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 467,
-   "K_upper": 467,
-   "K_total": 467,
-   "K_greedy": 467,
+   "K": 469,
+   "K_upper": 469,
+   "K_total": 469,
+   "K_greedy": 469,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 467,
+   "lower_bound": 469,
    "merges": 0,
    "bad_cover": 0
   },
@@ -134,8 +134,8 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1297,
    "entities_touched": 1297,
-   "clusters_constrained": 13810,
-   "clusters_pinned": 6636,
+   "clusters_constrained": 13816,
+   "clusters_pinned": 7289,
    "clusters_free": 29575,
    "pinned_classes": 502,
    "forced_classes": 502,
@@ -145,8 +145,8 @@
    "K_upper": 502,
    "K_total": 502,
    "K_greedy": 502,
-   "delta_forced": 35,
-   "delta_K": 35,
+   "delta_forced": 33,
+   "delta_K": 33,
    "lower_bound": 502,
    "merges": 0,
    "bad_cover": 0
@@ -156,8 +156,8 @@
    "desc": "operator new size (EXACT)",
    "evidence": 842,
    "entities_touched": 839,
-   "clusters_constrained": 14643,
-   "clusters_pinned": 6778,
+   "clusters_constrained": 14649,
+   "clusters_pinned": 7431,
    "clusters_free": 28742,
    "pinned_classes": 516,
    "forced_classes": 516,
@@ -178,8 +178,8 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 14643,
-   "clusters_pinned": 6778,
+   "clusters_constrained": 14649,
+   "clusters_pinned": 7431,
    "clusters_free": 28742,
    "pinned_classes": 516,
    "forced_classes": 516,
@@ -200,8 +200,8 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 14717,
-   "clusters_pinned": 6843,
+   "clusters_constrained": 14723,
+   "clusters_pinned": 7496,
    "clusters_free": 28668,
    "pinned_classes": 523,
    "forced_classes": 523,
@@ -222,8 +222,8 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 14854,
-   "clusters_pinned": 6999,
+   "clusters_constrained": 14860,
+   "clusters_pinned": 7652,
    "clusters_free": 28531,
    "pinned_classes": 534,
    "forced_classes": 534,
@@ -244,8 +244,8 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
    "entities_touched": 6136,
-   "clusters_constrained": 15201,
-   "clusters_pinned": 6999,
+   "clusters_constrained": 15207,
+   "clusters_pinned": 7652,
    "clusters_free": 28184,
    "pinned_classes": 534,
    "forced_classes": 534,
@@ -266,8 +266,8 @@
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
    "entities_touched": 13791,
-   "clusters_constrained": 25272,
-   "clusters_pinned": 7174,
+   "clusters_constrained": 25278,
+   "clusters_pinned": 7821,
    "clusters_free": 18111,
    "pinned_classes": 536,
    "forced_classes": 536,
@@ -288,15 +288,15 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 391,
    "entities_touched": 3641,
-   "clusters_constrained": 25792,
-   "clusters_pinned": 7378,
+   "clusters_constrained": 25799,
+   "clusters_pinned": 8021,
    "clusters_free": 17564,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 29,
+   "conflicts": 28,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 572,
+   "K_upper": 571,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 3,
@@ -310,15 +310,15 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 25792,
-   "clusters_pinned": 7382,
+   "clusters_constrained": 25799,
+   "clusters_pinned": 8024,
    "clusters_free": 17564,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 29,
+   "conflicts": 28,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 572,
+   "K_upper": 571,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 0,
@@ -568,27 +568,7 @@
        4
       ],
       [
-       252,
-       4
-      ],
-      [
-       256,
-       4
-      ],
-      [
        260,
-       4
-      ],
-      [
-       264,
-       4
-      ],
-      [
-       284,
-       4
-      ],
-      [
-       288,
        4
       ],
       [
@@ -602,6 +582,26 @@
       [
        4440,
        1
+      ],
+      [
+       4468,
+       2
+      ],
+      [
+       4470,
+       2
+      ],
+      [
+       4472,
+       2
+      ],
+      [
+       4472,
+       4
+      ],
+      [
+       4474,
+       2
       ]
      ],
      "exact": [
@@ -8905,8 +8905,8 @@
   "c7_variance_violation_count": 1631,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 120,
-    "exact_conflicts": 70,
+    "unions": 119,
+    "exact_conflicts": 74,
     "examples": [
      {
       "a": "G:87F5F0",
@@ -8981,9 +8981,19 @@
     "examples": []
    },
    "reg_def": {
-    "unions": 547,
-    "exact_conflicts": 6,
+    "unions": 542,
+    "exact_conflicts": 12,
     "examples": [
+     {
+      "a": "T:41D540",
+      "b": "T:41DC80",
+      "a_classes": [
+       "AirstrikeClass"
+      ],
+      "b_classes": [
+       "SlaveManagerClass"
+      ]
+     },
      {
       "a": "T:4B4E10",
       "b": "T:4C2FC0",
@@ -9005,6 +9015,16 @@
       ]
      },
      {
+      "a": "T:544CB0",
+      "b": "T:547020",
+      "a_classes": [
+       "IsometricTileTypeClass"
+      ],
+      "b_classes": [
+       "AnimTypeClass"
+      ]
+     },
+     {
       "a": "T:555DA0",
       "b": "T:48E740",
       "a_classes": [
@@ -9015,33 +9035,13 @@
       ]
      },
      {
-      "a": "T:6B1B20",
-      "b": "T:4E2500",
+      "a": "T:5C1470",
+      "b": "P:5D5B60:0",
       "a_classes": [
-       "SliderClass"
+       "MPCooperative"
       ],
       "b_classes": [
-       "GaugeClass"
-      ]
-     },
-     {
-      "a": "T:6D03A0",
-      "b": "P:6A5310:0",
-      "a_classes": [
-       "TabClass"
-      ],
-      "b_classes": [
-       "ConvertClass"
-      ]
-     },
-     {
-      "a": "T:7B3430",
-      "b": "P:7B1DE0:0",
-      "a_classes": [
-       "UDPInterfaceClass"
-      ],
-      "b_classes": [
-       "WinsockInterfaceClass"
+       "TriggerClass"
       ]
      }
     ]
@@ -9062,7 +9062,7 @@
     "member_chain_unproven": 267,
     "reg_flow_tainted": 891,
     "global_unproven": 1407,
-    "self_pin_incompatible": 626
+    "self_pin_incompatible": 625
    },
    "examples": {
     "unproven_kind": [
