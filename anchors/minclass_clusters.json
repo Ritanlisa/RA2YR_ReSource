@@ -315,7 +315,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4022C0"
+]
 },
 "R:402330:ecx": {
 "class": "ConvertClass",
@@ -353,7 +355,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:402330"
+]
 },
 "M:402330:this:0x168": {
 "class": "DeployCommandClass",
@@ -366,7 +370,7 @@
 "ents": []
 },
 "P:401000:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 164,
@@ -385,7 +389,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4023F0",
+"P:401000:0"
+]
 },
 "R:402430:ecx": {
 "class": "ScriptClass",
@@ -403,7 +410,7 @@
 "ents": []
 },
 "R:4024A0:ecx": {
-"class": "AudioSample",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -478,10 +485,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4024A0"
+]
 },
 "R:402550:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 164,
@@ -500,7 +509,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:402550"
+]
 },
 "R:4025B0:ecx": {
 "class": "IUnknown",
@@ -704,7 +715,7 @@
 "ents": []
 },
 "M:402F60:this:0xf8": {
-"class": "VectorClass",
+"class": "ConvertClass",
 "obs": [
 [
 144,
@@ -808,7 +819,7 @@
 "ents": []
 },
 "R:403820:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -891,7 +902,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:403820"
+]
 },
 "P:7C8EC0:4": {
 "class": "SwizzleManagerClass",
@@ -1086,7 +1099,7 @@
 "ents": []
 },
 "M:404140:this:0xb0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 144,
@@ -1238,7 +1251,7 @@
 "ents": []
 },
 "M:4048B0:this:0x24": {
-"class": "AircraftClass",
+"class": "ConvertClass",
 "obs": [
 [
 16,
@@ -1314,7 +1327,7 @@
 "ents": []
 },
 "R:404DD0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 24,
@@ -1325,7 +1338,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:404DD0"
+]
 },
 "R:405130:ecx": {
 "class": "RawFileClass",
@@ -1402,7 +1417,7 @@
 "ents": []
 },
 "M:4052F0:this:0xb0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 144,
@@ -1438,7 +1453,7 @@
 ]
 },
 "R:4053E0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 28,
@@ -1457,10 +1472,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4053E0"
+]
 },
 "R:405430:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 28,
@@ -1479,7 +1496,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:405430"
+]
 },
 "R:405490:ecx": {
 "class": "OverlayClass",
@@ -1514,7 +1533,7 @@
 ]
 },
 "R:4055C0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 24,
@@ -1541,10 +1560,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4055C0"
+]
 },
 "M:4055C0:this:0x24": {
-"class": "BuildingClass",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -1596,7 +1617,7 @@
 ]
 },
 "M:4055C0:this:0xb0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 144,
@@ -2145,7 +2166,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4079C0"
+]
 },
 "M:4079C0:this:0xc0": {
 "class": "OverlayClass",
@@ -2178,7 +2201,7 @@
 "ents": []
 },
 "M:407A30:this:0xc0": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -2201,7 +2224,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:407A30:this:0xc0"
+]
 },
 "R:407A60:ecx": {
 "class": "OverlayClass",
@@ -2214,7 +2239,7 @@
 "ents": []
 },
 "M:407A60:this:0xc0": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -2237,10 +2262,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:407A60:this:0xc0"
+]
 },
 "R:407A90:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -2271,7 +2298,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:407A90"
+]
 },
 "P:407B60:0": {
 "class": "DeployCommandClass",
@@ -3042,7 +3071,7 @@
 "ents": []
 },
 "M:40A340:this:0x158": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -3138,7 +3167,7 @@
 ]
 },
 "R:40A6D0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 220,
@@ -3153,7 +3182,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:40A6D0"
+]
 },
 "M:40A6D0:this:0x158": {
 "class": "SpawnManagerClass",
@@ -7689,7 +7720,7 @@
 ]
 },
 "P:4166C0:0": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -7724,7 +7755,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:4166C0:0"
+]
 },
 "R:416AF0:ecx": {
 "class": "TechnoClass",
@@ -7732,7 +7765,7 @@
 "ents": []
 },
 "P:416AF0:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 628,
@@ -7743,7 +7776,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:416AF0:0"
+]
 },
 "R:416D50:ecx": {
 "class": "Carryall",
@@ -8340,7 +8375,7 @@
 "ents": []
 },
 "P:41B7F0:0": {
-"class": "BulletTypeClass",
+"class": "TerrainTypeClass",
 "obs": [
 [
 0,
@@ -8355,7 +8390,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:41B7F0:0"
+]
 },
 "M:41B7F0:p0:0xa0": {
 "class": "IsometricTileTypeClass",
@@ -9193,7 +9230,7 @@
 ]
 },
 "P:41D380:0": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1564,
@@ -9220,7 +9257,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:41D380:0"
+]
 },
 "R:41D540:ecx": {
 "class": "AirstrikeClass",
@@ -9281,7 +9320,7 @@
 ]
 },
 "M:41D540:this:0x5c": {
-"class": "BuildingClass",
+"class": "FootClass",
 "obs": [
 [
 660,
@@ -9469,7 +9508,7 @@
 "ents": []
 },
 "M:41DA20:this:0x5c": {
-"class": "BuildingClass",
+"class": "FootClass",
 "obs": [
 [
 764,
@@ -9503,7 +9542,7 @@
 "ents": []
 },
 "M:41DB40:this:0x5c": {
-"class": "BuildingClass",
+"class": "FootClass",
 "obs": [
 [
 764,
@@ -9531,7 +9570,7 @@
 ]
 },
 "P:41DC80:0": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 660,
@@ -9542,7 +9581,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:41DC80:0"
+]
 },
 "R:41DD10:ecx": {
 "class": "TabClass",
@@ -10862,7 +10903,7 @@
 ]
 },
 "P:420F40:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -10909,7 +10950,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:420F40:0"
+]
 },
 "R:421730:ecx": {
 "class": "AlphaShapeClass",
@@ -11361,7 +11404,7 @@
 ]
 },
 "M:421EA0:this:0xc8": {
-"class": "HoverLocomotionClass",
+"class": "AnimTypeClass",
 "obs": [
 [
 688,
@@ -11860,7 +11903,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:422CA0:this:0xc8"
+]
 },
 "P:422CA0:0": {
 "class": "ScenarioClass",
@@ -11940,7 +11985,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:422CA0:this:0xfc"
+]
 },
 "P:439B00:2": {
 "class": "AnimClass",
@@ -11979,7 +12026,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:423930:this:0xc8"
+]
 },
 "R:423AC0:ecx": {
 "class": "AnimClass",
@@ -12221,7 +12270,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:423AC0:this:0xc8"
+]
 },
 "P:423AC0:0": {
 "class": "RulesClass",
@@ -12308,7 +12359,7 @@
 "ents": []
 },
 "R:424B50:ecx": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -12423,7 +12474,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:424CE0:this:0xc8"
+]
 },
 "R:424F00:ecx": {
 "class": "OverlayClass",
@@ -12477,7 +12530,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:424F00:this:0xc8"
+]
 },
 "R:425150:ecx": {
 "class": "AnimClass",
@@ -13009,7 +13064,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4266D0"
+]
 },
 "R:426750:ecx": {
 "class": "AnimFile",
@@ -14022,7 +14079,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:428DE0"
+]
 },
 "R:428E60:ecx": {
 "class": "AnimTypeClass",
@@ -14149,7 +14208,7 @@
 "ents": []
 },
 "R:429A90:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -14208,7 +14267,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:429A90"
+]
 },
 "M:429A90:this:0x14": {
 "class": "RandomStraw",
@@ -14387,7 +14448,7 @@
 ]
 },
 "R:42A6D0:ecx": {
-"class": "Tactical",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -14478,7 +14539,9 @@
 2
 ]
 ],
-"ents": []
+"ents": [
+"T:42A6D0"
+]
 },
 "M:42A6D0:this:0x10": {
 "class": "TechnoClass",
@@ -15709,7 +15772,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:42E780:0"
+]
 },
 "M:42E780:p0:0xe54": {
 "class": "MissionClass",
@@ -16971,7 +17036,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:431450:0"
+]
 },
 "R:431700:ecx": {
 "class": "DropPodLocomotionClass",
@@ -19039,7 +19106,7 @@
 ]
 },
 "P:436BE0:0": {
-"class": "WaveClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -19070,7 +19137,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:436BE0:0"
+]
 },
 "M:436BE0:this:0xe4": {
 "class": "OverlayClass",
@@ -19289,7 +19358,7 @@
 "ents": []
 },
 "P:4373B0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -19332,7 +19401,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4373B0:0"
+]
 },
 "P:437A10:0": {
 "class": "TEventClass",
@@ -21421,7 +21492,7 @@
 ]
 },
 "P:43D030:0": {
-"class": "BuildingClass",
+"class": "TechnoClass",
 "obs": [
 [
 266,
@@ -21432,7 +21503,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:43D030:0"
+]
 },
 "R:43D290:ecx": {
 "class": "BuildingClass",
@@ -21663,7 +21736,7 @@
 "ents": []
 },
 "R:43E7B0:ecx": {
-"class": "FootClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -21887,7 +21960,7 @@
 ]
 },
 "R:43EF90:ecx": {
-"class": "AircraftClass",
+"class": "BuildingClass",
 "obs": [
 [
 248,
@@ -22712,7 +22785,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:440580:p0:0x520"
+]
 },
 "R:4415F0:ecx": {
 "class": "BuildingClass",
@@ -24509,7 +24584,7 @@
 ]
 },
 "R:447780:ecx": {
-"class": "AircraftClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -26186,7 +26261,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:44ACF0:0"
+]
 },
 "M:44ACF0:p0:0x520": {
 "class": "BuildingTypeClass",
@@ -27419,7 +27496,7 @@
 "ents": []
 },
 "M:4509D0:this:0x21c": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -27627,7 +27704,7 @@
 ]
 },
 "P:452170:0": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 104,
@@ -27638,7 +27715,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:452170:0"
+]
 },
 "R:4521C0:ecx": {
 "class": "AircraftClass",
@@ -27661,7 +27740,7 @@
 "ents": []
 },
 "R:452260:ecx": {
-"class": "HouseClass",
+"class": "BuildingClass",
 "obs": [
 [
 128,
@@ -27737,7 +27816,7 @@
 ]
 },
 "R:452360:ecx": {
-"class": "HouseClass",
+"class": "BuildingClass",
 "obs": [
 [
 128,
@@ -28698,7 +28777,7 @@
 "ents": []
 },
 "P:451E40:4": {
-"class": "UnitClass",
+"class": "BuildingClass",
 "obs": [
 [
 1312,
@@ -28709,7 +28788,10 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4545D0",
+"P:451E40:4"
+]
 },
 "R:454730:ecx": {
 "class": "OverlayClass",
@@ -29226,7 +29308,7 @@
 "ents": []
 },
 "M:455C20:p0:0x8": {
-"class": "AircraftClass",
+"class": "BuildingClass",
 "obs": [
 [
 1312,
@@ -29253,7 +29335,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:455C20:p0:0x8"
+]
 },
 "R:455D50:ecx": {
 "class": "BuildingClass",
@@ -29365,7 +29449,7 @@
 "ents": []
 },
 "P:455F10:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -29400,7 +29484,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:455F10:0"
+]
 },
 "P:45EC90:1": {
 "class": "MissionClass",
@@ -29809,7 +29895,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4575B0"
+]
 },
 "M:4575B0:this:0x21c": {
 "class": "HouseClass",
@@ -30042,7 +30130,7 @@
 "ents": []
 },
 "R:457DE0:ecx": {
-"class": "IUnknown",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -30082,7 +30170,7 @@
 ]
 },
 "R:458200:ecx": {
-"class": "UnitClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -30118,7 +30206,7 @@
 ]
 },
 "R:458330:ecx": {
-"class": "AircraftClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -30185,7 +30273,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4585C0"
+]
 },
 "R:458750:ecx": {
 "class": "AircraftClass",
@@ -30394,7 +30484,7 @@
 ]
 },
 "R:459470:ecx": {
-"class": "IUnknown",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -30430,7 +30520,7 @@
 ]
 },
 "R:4595C0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -30449,7 +30539,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4595C0"
+]
 },
 "R:459840:ecx": {
 "class": "UnitTypeClass",
@@ -32999,7 +33091,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:45ECA0"
+]
 },
 "R:45ECE0:ecx": {
 "class": "BuildingTypeClass",
@@ -33117,7 +33211,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:45F1D0"
+]
 },
 "R:45F230:ecx": {
 "class": "BuildingTypeClass",
@@ -33647,7 +33743,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:465300:0"
+]
 },
 "R:465570:ecx": {
 "class": "BuildingTypeClass",
@@ -34054,7 +34152,7 @@
 ]
 },
 "R:4664C0:ecx": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 108,
@@ -34109,7 +34207,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4664C0"
+]
 },
 "P:4664C0:0": {
 "class": "HouseClass",
@@ -34127,7 +34227,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4664C0:0"
+]
 },
 "R:466560:ecx": {
 "class": "BulletClass",
@@ -34431,7 +34533,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:4666E0:this:0xac"
+]
 },
 "M:4666E0:this:0x10c": {
 "class": "GenericNode",
@@ -34565,7 +34669,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:468090:this:0xac"
+]
 },
 "P:468090:0": {
 "class": "TechnoClass",
@@ -34648,7 +34754,7 @@
 ]
 },
 "P:468670:0": {
-"class": "WaveClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -34679,7 +34785,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:468670:0"
+]
 },
 "R:468670:ecx": {
 "class": "BulletClass",
@@ -34852,7 +34960,7 @@
 "ents": []
 },
 "R:4690B0:ecx": {
-"class": "AircraftClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -35166,7 +35274,7 @@
 "ents": []
 },
 "M:4690B0:p0:0x6c4": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 3278,
@@ -35177,7 +35285,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:4690B0:p0:0x6c4"
+]
 },
 "M:4690B0:p0:0x21c": {
 "class": "GenericNode",
@@ -35264,7 +35374,7 @@
 ]
 },
 "P:46B0C0:0": {
-"class": "AnimTypeClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -35283,7 +35393,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:46B0C0:0"
+]
 },
 "M:46B0C0:p0:0x4": {
 "class": "Blitter",
@@ -39106,7 +39218,7 @@
 ]
 },
 "P:478E30:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -39133,7 +39245,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:478E30:0"
+]
 },
 "R:478E30:ecx": {
 "class": "CCToolTip",
@@ -40384,7 +40498,7 @@
 "ents": []
 },
 "R:47F6A0:ecx": {
-"class": "BuildingClass",
+"class": "ConvertClass",
 "obs": [
 [
 36,
@@ -41343,7 +41457,7 @@
 ]
 },
 "M:481A00:p0:0x21c": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 36,
@@ -41370,7 +41484,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:481A00:p0:0x21c"
+]
 },
 "M:481A00:p0:0x8e8": {
 "class": "DeployCommandClass",
@@ -45136,7 +45252,7 @@
 "ents": []
 },
 "R:48EBF0:ecx": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -45548,7 +45664,7 @@
 ]
 },
 "R:490490:ecx": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -45907,7 +46023,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:490490"
+]
 },
 "R:490B90:ecx": {
 "class": "OverlayClass",
@@ -51320,7 +51438,7 @@
 ]
 },
 "R:49B610:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -51403,10 +51521,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:49B610"
+]
 },
 "R:49B660:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -51489,7 +51609,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:49B660"
+]
 },
 "R:49B720:ecx": {
 "class": "WaypointPathClass",
@@ -51664,7 +51786,7 @@
 "ents": []
 },
 "R:49C0D0:ecx": {
-"class": "VectorClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -51756,7 +51878,7 @@
 ]
 },
 "R:49C5A0:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -51823,7 +51945,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:49C5A0"
+]
 },
 "P:49C5A0:0": {
 "class": "Struct",
@@ -51964,7 +52088,7 @@
 "ents": []
 },
 "R:49CCF0:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -52031,7 +52155,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:49CCF0"
+]
 },
 "P:49D070:0": {
 "class": "WOL",
@@ -54484,7 +54610,7 @@
 "ents": []
 },
 "R:4A3270:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -54515,7 +54641,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4A3270"
+]
 },
 "R:4A3370:ecx": {
 "class": "OverlayClass",
@@ -55649,7 +55777,7 @@
 "ents": []
 },
 "M:4A7340:this:0x24": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -55664,7 +55792,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:4A7340:this:0x24"
+]
 },
 "R:4A7900:ecx": {
 "class": "DynamicVectorClass",
@@ -56372,19 +56502,7 @@
 4
 ],
 [
-4508,
-1
-],
-[
-4512,
-4
-],
-[
 4636,
-4
-],
-[
-4640,
 4
 ],
 [
@@ -56400,10 +56518,6 @@
 4
 ],
 [
-4668,
-4
-],
-[
 4672,
 4
 ],
@@ -56413,10 +56527,6 @@
 ],
 [
 4696,
-4
-],
-[
-4724,
 4
 ],
 [
@@ -56436,55 +56546,7 @@
 4
 ],
 [
-5292,
-4
-],
-[
-5296,
-4
-],
-[
-5300,
-4
-],
-[
-5336,
-1
-],
-[
 5337,
-1
-],
-[
-5338,
-1
-],
-[
-21396,
-4
-],
-[
-21400,
-4
-],
-[
-21404,
-4
-],
-[
-21408,
-4
-],
-[
-21413,
-1
-],
-[
-21414,
-1
-],
-[
-21415,
 1
 ],
 [
@@ -56516,9 +56578,9 @@
 "T:4A8BF0",
 "T:4AA440",
 "T:4ACAC0",
-"T:4AEB10",
-"T:4AEB30",
-"T:5673A0"
+"T:5673A0",
+"T:5683C0",
+"T:5687F0"
 ]
 },
 "R:4A8D50:ecx": {
@@ -57183,7 +57245,7 @@
 "ents": []
 },
 "R:4ACE70:ecx": {
-"class": "DisplayClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -57405,6 +57467,38 @@
 ],
 "ents": [
 "T:4AEAD0"
+]
+},
+"R:4AEB10:ecx": {
+"class": "DisplayClass",
+"obs": [
+[
+4508,
+1
+],
+[
+4512,
+4
+]
+],
+"ents": [
+"T:4AEB10"
+]
+},
+"R:4AEB30:ecx": {
+"class": "DisplayClass",
+"obs": [
+[
+4508,
+1
+],
+[
+4512,
+4
+]
+],
+"ents": [
+"T:4AEB30"
 ]
 },
 "R:4AEB50:ecx": {
@@ -57978,7 +58072,7 @@
 "ents": []
 },
 "P:4B0AD0:0": {
-"class": "OverlayClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -58001,7 +58095,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4B0AD0:0"
+]
 },
 "R:4B0AD0:ecx": {
 "class": "OverlayClass",
@@ -59101,7 +59197,7 @@
 ]
 },
 "R:4B5630:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -59204,10 +59300,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4B5630"
+]
 },
 "R:4B56E0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 12,
@@ -59298,7 +59396,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4B56E0"
+]
 },
 "R:4B5780:ecx": {
 "class": "LinkClass",
@@ -60515,7 +60615,7 @@
 ]
 },
 "P:4BB0D0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -60554,7 +60654,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4BB0D0:0"
+]
 },
 "R:4BB0D0:ecx": {
 "class": "DSurface",
@@ -60689,7 +60791,7 @@
 ]
 },
 "P:4BC750:0": {
-"class": "MechLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -60724,7 +60826,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4BC750:0"
+]
 },
 "R:4BDF00:ecx": {
 "class": "DSurface",
@@ -60743,7 +60847,7 @@
 ]
 },
 "P:4BDF00:0": {
-"class": "BaseClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -60790,7 +60894,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4BDF00:0"
+]
 },
 "R:4BEAC0:ecx": {
 "class": "WOL",
@@ -60856,7 +60962,7 @@
 ]
 },
 "P:4BFD30:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -60907,10 +61013,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4BFD30:0"
+]
 },
 "P:4C0750:0": {
-"class": "BaseClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -60957,7 +61065,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4C0750:0"
+]
 },
 "R:4C0750:ecx": {
 "class": "DSurface",
@@ -60984,7 +61094,7 @@
 ]
 },
 "P:4C0E30:0": {
-"class": "DropPodLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -61007,7 +61117,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4C0E30:0"
+]
 },
 "R:4C1AC0:ecx": {
 "class": "DSurface",
@@ -61077,7 +61189,7 @@
 "ents": []
 },
 "P:4C1F20:0": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -61116,10 +61228,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4C1F20:0"
+]
 },
 "M:4C1F20:p0:0x174": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 15,
@@ -61134,7 +61248,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:4C1F20:p0:0x174"
+]
 },
 "R:4C2790:ecx": {
 "class": "MSVQAnim",
@@ -63184,7 +63300,7 @@
 "ents": []
 },
 "M:4C9C70:this:0x58": {
-"class": "AircraftClass",
+"class": "BuildingClass",
 "obs": [
 [
 540,
@@ -65015,7 +65131,7 @@
 "ents": []
 },
 "P:4CFDA0:0": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 8,
@@ -65026,7 +65142,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:4CFDA0:0"
+]
 },
 "P:4CFE20:0": {
 "class": "Node",
@@ -65867,7 +65985,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:4D1890:p0:0x1518"
+]
 },
 "M:4D1890:p0:0x8": {
 "class": "Node",
@@ -66997,7 +67117,7 @@
 ]
 },
 "P:4D4280:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -67016,7 +67136,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4D4280:0"
+]
 },
 "M:4D4280:this:0x2b4": {
 "class": "AbstractClass",
@@ -69289,7 +69411,7 @@
 ]
 },
 "P:4DC340:0": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -69316,7 +69438,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4DC340:0"
+]
 },
 "R:4DC760:ecx": {
 "class": "DropPodLocomotionClass",
@@ -69550,7 +69674,7 @@
 ]
 },
 "R:4DDF90:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -69905,7 +70029,7 @@
 ]
 },
 "R:4DF1A0:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1476,
@@ -69995,7 +70119,7 @@
 "ents": []
 },
 "R:4DF280:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1480,
@@ -70006,7 +70130,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4DF280"
+]
 },
 "R:4DF310:ecx": {
 "class": "AircraftClass",
@@ -70021,7 +70147,7 @@
 ]
 },
 "R:4DF320:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70041,7 +70167,7 @@
 ]
 },
 "R:4DF3A0:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70065,7 +70191,7 @@
 ]
 },
 "R:4DF4B0:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -72036,7 +72162,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4E2B50:0"
+]
 },
 "M:4E2B50:p0:0x174": {
 "class": "WaveClass",
@@ -83876,7 +84004,7 @@
 "ents": []
 },
 "P:5117D0:1": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 52,
@@ -83899,7 +84027,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F6540",
+"P:5117D0:1"
+]
 },
 "P:4F6910:0": {
 "class": "HouseClass",
@@ -83913,7 +84044,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4F6910:0"
+]
 },
 "P:4F69D0:0": {
 "class": "IsometricTileTypeClass",
@@ -83956,7 +84089,7 @@
 "ents": []
 },
 "R:4F6EC0:ecx": {
-"class": "WaveClass",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -84019,7 +84152,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F6EC0"
+]
 },
 "P:7258D0:4": {
 "class": "HouseClass",
@@ -84725,7 +84860,7 @@
 "ents": []
 },
 "R:4F9370:ecx": {
-"class": "SuperWeapon",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -84736,7 +84871,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F9370"
+]
 },
 "R:4F93E0:ecx": {
 "class": "HouseClass",
@@ -84845,7 +84982,7 @@
 "ents": []
 },
 "R:4F9970:ecx": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 108,
@@ -84860,7 +84997,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F9970"
+]
 },
 "R:4F9A10:ecx": {
 "class": "HouseClass",
@@ -85071,7 +85210,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FA910"
+]
 },
 "R:4FAA10:ecx": {
 "class": "HouseClass",
@@ -85101,7 +85242,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FAA10"
+]
 },
 "R:4FAD20:ecx": {
 "class": "HouseClass",
@@ -85190,7 +85333,7 @@
 ]
 },
 "R:4FB0E0:ecx": {
-"class": "TechnoClass",
+"class": "HouseClass",
 "obs": [
 [
 492,
@@ -85326,7 +85469,9 @@
 2
 ]
 ],
-"ents": []
+"ents": [
+"T:4FBE40"
+]
 },
 "R:4FBF60:ecx": {
 "class": "HouseClass",
@@ -85340,7 +85485,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FBF60"
+]
 },
 "M:4FBF60:this:0x34": {
 "class": "OverlayClass",
@@ -85366,7 +85513,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FC060"
+]
 },
 "M:4FC060:this:0x34": {
 "class": "OverlayClass",
@@ -85381,7 +85530,7 @@
 ]
 },
 "R:4FC0B0:ecx": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 492,
@@ -86217,7 +86366,7 @@
 "ents": []
 },
 "R:500510:ecx": {
-"class": "Sidebar",
+"class": "HouseClass",
 "obs": [
 [
 21420,
@@ -86244,7 +86393,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:500510"
+]
 },
 "R:5005B0:ecx": {
 "class": "Sidebar",
@@ -86496,7 +86647,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:501750"
+]
 },
 "P:501A20:1": {
 "class": "HouseClass",
@@ -86514,7 +86667,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5018C0",
+"P:501A20:1"
+]
 },
 "R:501AC0:ecx": {
 "class": "HouseClass",
@@ -86587,7 +86743,7 @@
 "ents": []
 },
 "R:502A80:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 344,
@@ -86606,7 +86762,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:502A80"
+]
 },
 "R:502D60:ecx": {
 "class": "HouseClass",
@@ -86883,7 +87041,7 @@
 "ents": []
 },
 "P:5117D0:2": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 52,
@@ -86894,7 +87052,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5051E0",
+"P:5117D0:2"
+]
 },
 "M:5051E0:this:0x34": {
 "class": "OverlayClass",
@@ -87387,7 +87548,7 @@
 ]
 },
 "R:508DF0:ecx": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 108,
@@ -87510,7 +87671,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:509140"
+]
 },
 "M:509140:this:0x53ac": {
 "class": "FactoryClass",
@@ -87541,7 +87704,7 @@
 ]
 },
 "P:509140:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -87603,7 +87766,7 @@
 "ents": []
 },
 "R:5093C0:ecx": {
-"class": "House",
+"class": "HouseClass",
 "obs": [
 [
 22024,
@@ -87614,7 +87777,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5093C0"
+]
 },
 "R:509400:ecx": {
 "class": "HouseClass",
@@ -87639,7 +87804,7 @@
 "ents": []
 },
 "R:509700:ecx": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 36,
@@ -87658,7 +87823,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:509700"
+]
 },
 "R:5098F0:ecx": {
 "class": "HouseClass",
@@ -87922,7 +88089,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50A350"
+]
 },
 "R:50A490:ecx": {
 "class": "HouseClass",
@@ -88150,10 +88319,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:50A5C0:p0:0x520"
+]
 },
 "R:50AF10:ecx": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 501,
@@ -88216,10 +88387,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50B1D0"
+]
 },
 "R:50B370:ecx": {
-"class": "Sidebar",
+"class": "HouseClass",
 "obs": [
 [
 21420,
@@ -88242,7 +88415,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50B370"
+]
 },
 "R:50B6F0:ecx": {
 "class": "IUnknown",
@@ -88293,7 +88468,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50B840"
+]
 },
 "P:50B920:0": {
 "class": "ScrollClass",
@@ -88351,7 +88528,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:50BC90"
+]
 },
 "R:50BCD0:ecx": {
 "class": "HouseClass",
@@ -88365,7 +88544,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:50BCD0"
+]
 },
 "R:50BD10:ecx": {
 "class": "HouseClass",
@@ -88552,7 +88733,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50CBF0",
+"P:4E0E80:2"
+]
 },
 "P:50CBF0:0": {
 "class": "DropPodLocomotionClass",
@@ -88759,7 +88943,7 @@
 "ents": []
 },
 "R:50DB00:ecx": {
-"class": "TerrainClass",
+"class": "HouseClass",
 "obs": [
 [
 120,
@@ -88770,7 +88954,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50DB00"
+]
 },
 "P:50DB00:0": {
 "class": "HouseClass",
@@ -88879,7 +89065,7 @@
 ]
 },
 "R:50E010:ecx": {
-"class": "FootClass",
+"class": "TechnoClass",
 "obs": [
 [
 492,
@@ -88894,10 +89080,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50E010"
+]
 },
 "R:50E0E0:ecx": {
-"class": "FootClass",
+"class": "TechnoClass",
 "obs": [
 [
 492,
@@ -88912,7 +89100,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50E0E0"
+]
 },
 "R:50E1B0:ecx": {
 "class": "MissionClass",
@@ -91671,7 +91861,7 @@
 ]
 },
 "P:511850:0": {
-"class": "SideClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -91710,7 +91900,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:511850:0"
+]
 },
 "R:512170:ecx": {
 "class": "HouseTypeClass",
@@ -93501,7 +93693,7 @@
 "ents": []
 },
 "R:514F70:ecx": {
-"class": "RadBeam",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -93671,7 +93863,7 @@
 "ents": []
 },
 "R:515ED0:ecx": {
-"class": "MechLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -93726,7 +93918,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:515ED0"
+]
 },
 "M:515ED0:this:0xc": {
 "class": "AircraftClass",
@@ -93870,7 +94064,7 @@
 ]
 },
 "M:5164D0:this:0xc": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 144,
@@ -95009,7 +95203,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:519630:p0:0x520"
+]
 },
 "M:519630:p0:0x21c": {
 "class": "HouseClass",
@@ -95270,7 +95466,7 @@
 ]
 },
 "R:51B350:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -95305,7 +95501,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:51B350"
+]
 },
 "M:51B350:this:0x6c0": {
 "class": "InfantryTypeClass",
@@ -95599,7 +95797,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:51BF90:p0:0x520"
+]
 },
 "M:51BF90:p0:0x21c": {
 "class": "BuildingTypeClass",
@@ -96804,7 +97004,7 @@
 ]
 },
 "R:5200B0:ecx": {
-"class": "UnitClass",
+"class": "InfantryClass",
 "obs": [
 [
 0,
@@ -96950,7 +97150,7 @@
 ]
 },
 "M:5202F0:this:0x5a4": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 52,
@@ -97074,7 +97274,7 @@
 ]
 },
 "P:5206B0:0": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 960,
@@ -97089,7 +97289,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:5206B0:0"
+]
 },
 "R:520AE0:ecx": {
 "class": "UnitClass",
@@ -98069,7 +98271,7 @@
 ]
 },
 "P:4585C0:0": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -105147,7 +105349,7 @@
 "ents": []
 },
 "P:542620:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -105182,7 +105384,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:542620:0"
+]
 },
 "R:542EC0:ecx": {
 "class": "IPXManagerClass",
@@ -105991,7 +106195,7 @@
 "ents": []
 },
 "P:546DA0:0": {
-"class": "TerrainTypeClass",
+"class": "AnimTypeClass",
 "obs": [
 [
 164,
@@ -106018,7 +106222,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:546DA0:0"
+]
 },
 "M:547020:this:0xa4": {
 "class": "SHPReference",
@@ -106319,7 +106525,7 @@
 "ents": []
 },
 "R:549E90:ecx": {
-"class": "TerrainClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 164,
@@ -106338,7 +106544,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:549E90"
+]
 },
 "M:549E90:this:0xa4": {
 "class": "SHPReference",
@@ -107037,7 +107245,7 @@
 "ents": []
 },
 "R:54B980:ecx": {
-"class": "MovementClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -107076,7 +107284,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:54B980"
+]
 },
 "M:54B980:this:0xc": {
 "class": "OverlayClass",
@@ -107487,7 +107697,7 @@
 "ents": []
 },
 "M:54D0F0:this:0xc": {
-"class": "OverlayClass",
+"class": "BuildingClass",
 "obs": [
 [
 116,
@@ -108303,7 +108513,7 @@
 "ents": []
 },
 "R:54FE60:ecx": {
-"class": "WaveClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -108418,7 +108628,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:54FE60"
+]
 },
 "R:550080:ecx": {
 "class": "OverlayClass",
@@ -110916,7 +111128,7 @@
 "ents": []
 },
 "R:557570:ecx": {
-"class": "ListClass",
+"class": "ConvertClass",
 "obs": [
 [
 20,
@@ -111127,7 +111339,7 @@
 ]
 },
 "P:4E1550:2": {
-"class": "ListClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -114220,7 +114432,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:5683C0:p0:0x520"
+]
 },
 "P:5687F0:0": {
 "class": "OverlayClass",
@@ -114268,7 +114482,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:5687F0:p0:0x520"
+]
 },
 "R:568BB0:ecx": {
 "class": "MapClass",
@@ -114820,7 +115036,7 @@
 ]
 },
 "R:56D6E0:ecx": {
-"class": "MapClass",
+"class": "ConvertClass",
 "obs": [
 [
 80,
@@ -115136,7 +115352,7 @@
 ]
 },
 "P:575220:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -115159,10 +115375,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:575220:0"
+]
 },
 "P:575870:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -115185,7 +115403,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:575870:0"
+]
 },
 "P:575EE0:0": {
 "class": "GenericNode",
@@ -116841,7 +117061,7 @@
 ]
 },
 "P:5840C0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -116904,7 +117124,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:5840C0:0"
+]
 },
 "P:584550:0": {
 "class": "AbstractTypeClass",
@@ -119952,7 +120174,7 @@
 "ents": []
 },
 "P:58C800:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -119999,7 +120221,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:58C800:0"
+]
 },
 "R:58D0A0:ecx": {
 "class": "GUID",
@@ -120104,7 +120328,7 @@
 "ents": []
 },
 "P:58D620:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -120163,7 +120387,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:58D620:0"
+]
 },
 "R:58E5D0:ecx": {
 "class": "DropPodLocomotionClass",
@@ -120350,7 +120576,7 @@
 "ents": []
 },
 "P:591740:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -120393,10 +120619,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:591740:0"
+]
 },
 "P:591D80:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -120431,7 +120659,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:591D80:0"
+]
 },
 "P:594190:0": {
 "class": "Blitter",
@@ -121804,7 +122034,7 @@
 "ents": []
 },
 "P:59E740:0": {
-"class": "TiberiumClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -121827,7 +122057,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:59E740:0"
+]
 },
 "P:5A0160:0": {
 "class": "ScriptClass",
@@ -121860,7 +122092,7 @@
 "ents": []
 },
 "P:5A0410:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -121899,7 +122131,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:5A0410:0"
+]
 },
 "P:5A0700:4": {
 "class": "ParticleSystemTypeClass",
@@ -126001,7 +126235,7 @@
 "ents": []
 },
 "R:5B49B0:ecx": {
-"class": "TabClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -126064,7 +126298,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5B49B0"
+]
 },
 "R:5B4EE0:ecx": {
 "class": "WOL",
@@ -126279,7 +126515,7 @@
 "ents": []
 },
 "R:5B77E0:ecx": {
-"class": "ModemHost",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -126346,7 +126582,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5B77E0"
+]
 },
 "R:5B82F0:ecx": {
 "class": "WOL",
@@ -128188,7 +128426,7 @@
 "ents": []
 },
 "R:5C23B0:ecx": {
-"class": "AnimTypeClass",
+"class": "MPCooperative",
 "obs": [
 [
 64,
@@ -128199,10 +128437,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5C23B0"
+]
 },
 "R:5C2500:ecx": {
-"class": "AnimTypeClass",
+"class": "MPCooperative",
 "obs": [
 [
 64,
@@ -128213,7 +128453,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5C2500"
+]
 },
 "R:5C2680:ecx": {
 "class": "MPCooperative",
@@ -128250,7 +128492,7 @@
 "ents": []
 },
 "P:5C2DE0:0": {
-"class": "MPCooperative",
+"class": "RadarClass",
 "obs": [
 [
 0,
@@ -128261,7 +128503,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:5C2DE0:0"
+]
 },
 "P:5E6520:1": {
 "class": "MPCooperative",
@@ -137364,7 +137608,7 @@
 "ents": []
 },
 "P:5ED5A0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -137431,7 +137675,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:5ED5A0:0"
+]
 },
 "P:5EE510:0": {
 "class": "GenericNode",
@@ -138036,7 +138282,7 @@
 ]
 },
 "R:5F16E0:ecx": {
-"class": "SpawnManagerClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -138107,7 +138353,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5F16E0"
+]
 },
 "M:5F16E0:this:0x38": {
 "class": "ScriptClass",
@@ -140629,7 +140877,7 @@
 "ents": []
 },
 "R:5F7900:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -140826,7 +141074,7 @@
 ]
 },
 "R:5F9070:ecx": {
-"class": "SmudgeTypeClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 0,
@@ -141302,7 +141550,7 @@
 "ents": []
 },
 "R:5FA620:ecx": {
-"class": "GameSettings",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -141405,10 +141653,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5FA620"
+]
 },
 "R:5FAD10:ecx": {
-"class": "GameSettings",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -141499,7 +141749,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5FAD10"
+]
 },
 "R:5FB050:ecx": {
 "class": "WaypointPathClass",
@@ -142739,7 +142991,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:60B1D0:0"
+]
 },
 "P:60B350:0": {
 "class": "MapSeed",
@@ -142783,7 +143037,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:60B420:0"
+]
 },
 "P:60B610:0": {
 "class": "WaveClass",
@@ -142801,7 +143057,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:60B610:0"
+]
 },
 "R:60C540:ecx": {
 "class": "TechnoClass",
@@ -142914,7 +143172,7 @@
 "ents": []
 },
 "M:60D540:p0:0x204": {
-"class": "WaveClass",
+"class": "TechnoClass",
 "obs": [
 [
 56,
@@ -142925,7 +143183,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:60D540:p0:0x204"
+]
 },
 "P:60F9A0:0": {
 "class": "BulletTypeClass",
@@ -142982,7 +143242,7 @@
 "ents": []
 },
 "R:6107E0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -143021,7 +143281,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6107E0"
+]
 },
 "P:610CA0:0": {
 "class": "InfantryTypeClass",
@@ -143592,7 +143854,7 @@
 "ents": []
 },
 "P:61C690:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -143635,7 +143897,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:61C690:0"
+]
 },
 "P:61D950:0": {
 "class": "UnitClass",
@@ -143714,7 +143978,7 @@
 "ents": []
 },
 "P:6214B0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -143729,7 +143993,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6214B0:0"
+]
 },
 "P:6217E0:0": {
 "class": "DropPodLocomotionClass",
@@ -146513,7 +146779,7 @@
 "ents": []
 },
 "M:6297F0:this:0x28": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -146727,7 +146993,7 @@
 ]
 },
 "M:62A260:this:0x24": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 108,
@@ -146766,7 +147032,7 @@
 ]
 },
 "M:62A4A0:this:0x24": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 108,
@@ -146790,7 +147056,7 @@
 ]
 },
 "M:62A4A0:this:0x28": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 808,
@@ -148249,7 +148515,7 @@
 ]
 },
 "P:62DC50:0": {
-"class": "OverlayClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -148276,7 +148542,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:62DC50:0"
+]
 },
 "R:62DF20:ecx": {
 "class": "ParticleSystemClass",
@@ -148678,7 +148946,7 @@
 "ents": []
 },
 "R:62F230:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 156,
@@ -148721,7 +148989,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:62F230"
+]
 },
 "M:62F230:this:0xac": {
 "class": "ParticleSystemTypeClass",
@@ -148770,7 +149040,7 @@
 "ents": []
 },
 "R:62F9A0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -148809,7 +149079,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:62F9A0"
+]
 },
 "P:62F9A0:0": {
 "class": "Node",
@@ -150532,7 +150804,7 @@
 "ents": []
 },
 "P:6349B0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -150555,7 +150827,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6349B0:0"
+]
 },
 "R:634B20:ecx": {
 "class": "SideClass",
@@ -150647,7 +150921,7 @@
 "ents": []
 },
 "R:635060:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 28,
@@ -150670,7 +150944,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:635060"
+]
 },
 "R:635120:ecx": {
 "class": "SideClass",
@@ -150851,7 +151127,7 @@
 "ents": []
 },
 "R:635C10:ecx": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -150866,10 +151142,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:635C10"
+]
 },
 "R:635DB0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 36,
@@ -150888,7 +151166,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:635DB0"
+]
 },
 "R:635DF0:ecx": {
 "class": "DeployCommandClass",
@@ -150911,7 +151191,7 @@
 "ents": []
 },
 "R:635F20:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -150974,10 +151254,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:635F20"
+]
 },
 "R:635F80:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151016,7 +151298,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:635F80"
+]
 },
 "R:636110:ecx": {
 "class": "AI",
@@ -151029,7 +151313,7 @@
 "ents": []
 },
 "R:636120:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151068,10 +151352,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:636120"
+]
 },
 "R:636310:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151110,7 +151396,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:636310"
+]
 },
 "R:636520:ecx": {
 "class": "DynamicVectorClass",
@@ -151157,7 +151445,7 @@
 "ents": []
 },
 "P:634290:3": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151184,7 +151472,10 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:636590",
+"P:634290:3"
+]
 },
 "P:636590:0": {
 "class": "DropPodLocomotionClass",
@@ -151263,7 +151554,7 @@
 "ents": []
 },
 "R:636B50:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151290,7 +151581,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:636B50"
+]
 },
 "P:636B50:0": {
 "class": "DeployCommandClass",
@@ -151303,7 +151596,7 @@
 "ents": []
 },
 "R:636CE0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -151326,7 +151619,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:636CE0"
+]
 },
 "R:636D90:ecx": {
 "class": "NetworkDialog",
@@ -151349,7 +151644,7 @@
 "ents": []
 },
 "R:636E60:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -151364,7 +151659,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:636E60"
+]
 },
 "R:636EB0:ecx": {
 "class": "GenericNode",
@@ -151655,7 +151952,7 @@
 "ents": []
 },
 "P:639BC0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -151686,7 +151983,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:639BC0:0"
+]
 },
 "P:639E30:0": {
 "class": "AI",
@@ -153784,7 +154083,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:640450:0"
+]
 },
 "R:6406E0:ecx": {
 "class": "ScrollClass",
@@ -153852,7 +154153,7 @@
 "ents": []
 },
 "P:641140:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -153879,7 +154180,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:641140:0"
+]
 },
 "M:641140:p0:0xe4": {
 "class": "ScriptClass",
@@ -156220,7 +156523,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:652CD0"
+]
 },
 "R:652CF0:ecx": {
 "class": "RadarClass",
@@ -156429,7 +156734,7 @@
 ]
 },
 "R:653FA0:ecx": {
-"class": "ScenarioClass",
+"class": "RadarClass",
 "obs": [
 [
 4580,
@@ -156452,7 +156757,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:653FA0"
+]
 },
 "P:4AE6B0:0": {
 "class": "RadarClass",
@@ -156476,7 +156783,7 @@
 ]
 },
 "P:567230:2": {
-"class": "MouseClass",
+"class": "RadarClass",
 "obs": [
 [
 244,
@@ -156582,7 +156889,7 @@
 ]
 },
 "P:6547C0:0": {
-"class": "SmudgeTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -156625,7 +156932,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6547C0:0"
+]
 },
 "R:655050:ecx": {
 "class": "XSurface",
@@ -156728,6 +157037,22 @@
 ]
 ],
 "ents": []
+},
+"R:655740:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+4696,
+4
+],
+[
+5337,
+1
+]
+],
+"ents": [
+"T:655740"
+]
 },
 "R:6557F0:ecx": {
 "class": "IUnknown",
@@ -156855,6 +157180,46 @@
 "T:655A90"
 ]
 },
+"R:655B20:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+4636,
+4
+],
+[
+4640,
+4
+],
+[
+4668,
+4
+],
+[
+4696,
+4
+],
+[
+4724,
+4
+],
+[
+5292,
+4
+],
+[
+5296,
+4
+],
+[
+5300,
+4
+]
+],
+"ents": [
+"T:655B20"
+]
+},
 "R:655C50:ecx": {
 "class": "TacticalClass",
 "obs": [
@@ -156923,7 +157288,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:656150"
+]
 },
 "P:656150:0": {
 "class": "HouseClass",
@@ -157068,7 +157435,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:656CB0"
+]
 },
 "R:656DE0:ecx": {
 "class": "RadarClass",
@@ -157080,6 +157449,54 @@
 ],
 "ents": [
 "T:656DE0"
+]
+},
+"R:656DF0:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+5296,
+4
+],
+[
+5336,
+1
+]
+],
+"ents": [
+"T:656DF0"
+]
+},
+"R:656E50:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+5292,
+4
+],
+[
+5296,
+4
+]
+],
+"ents": [
+"T:656E50"
+]
+},
+"R:656E90:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+5337,
+1
+],
+[
+5338,
+1
+]
+],
+"ents": [
+"T:656E90"
 ]
 },
 "R:656EC0:ecx": {
@@ -157213,7 +157630,7 @@
 "ents": []
 },
 "P:656EC0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -157248,7 +157665,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:656EC0:0"
+]
 },
 "R:6578F0:ecx": {
 "class": "TacticalClass",
@@ -157261,7 +157680,7 @@
 "ents": []
 },
 "R:6579E0:ecx": {
-"class": "ScenarioClass",
+"class": "RadarClass",
 "obs": [
 [
 4580,
@@ -157300,7 +157719,25 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6579E0"
+]
+},
+"R:657CE0:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+4636,
+4
+],
+[
+4640,
+4
+]
+],
+"ents": [
+"T:657CE0"
+]
 },
 "P:657DA0:0": {
 "class": "GenericNode",
@@ -157732,7 +158169,7 @@
 ]
 },
 "R:6593F0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -157851,7 +158288,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6593F0"
+]
 },
 "P:659470:0": {
 "class": "AbstractTypeClass",
@@ -158012,7 +158451,7 @@
 "ents": []
 },
 "R:659650:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -158107,7 +158546,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:659650"
+]
 },
 "M:659650:this:0x4": {
 "class": "GenericNode",
@@ -158198,7 +158639,7 @@
 "ents": []
 },
 "R:659AC0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 32,
@@ -158269,10 +158710,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:659AC0"
+]
 },
 "R:659E30:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 36,
@@ -158311,7 +158754,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:659E30"
+]
 },
 "R:659EE0:ecx": {
 "class": "OverlayClass",
@@ -158360,7 +158805,7 @@
 "ents": []
 },
 "P:4CACB0:1": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [
 [
 32,
@@ -161546,7 +161991,7 @@
 "ents": []
 },
 "P:6620F0:0": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -174201,7 +174646,7 @@
 "ents": []
 },
 "R:681280:ecx": {
-"class": "GameState",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1000,
@@ -174212,10 +174657,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:681280"
+]
 },
 "R:6812A0:ecx": {
-"class": "GameState",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1000,
@@ -174226,7 +174673,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6812A0"
+]
 },
 "P:6812A0:0": {
 "class": "DeployCommandClass",
@@ -174277,7 +174726,7 @@
 "ents": []
 },
 "R:6812E0:ecx": {
-"class": "GameOptions",
+"class": "TechnoClass",
 "obs": [
 [
 392,
@@ -174292,7 +174741,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6812E0"
+]
 },
 "P:681840:0": {
 "class": "CarryoverClass",
@@ -175339,7 +175790,7 @@
 "ents": []
 },
 "P:688ED0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -175362,7 +175813,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:688ED0:0"
+]
 },
 "R:689310:ecx": {
 "class": "HouseClass",
@@ -176198,7 +176651,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:68C710"
+]
 },
 "P:68C710:0": {
 "class": "AbstractTypeClass",
@@ -177690,7 +178145,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:692610:p0:0x520"
+]
 },
 "R:692B60:ecx": {
 "class": "ScrollClass",
@@ -177708,7 +178165,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:692B60"
+]
 },
 "P:692B60:0": {
 "class": "DropPodLocomotionClass",
@@ -179530,7 +179989,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:699980:0"
+]
 },
 "R:69A1F0:ecx": {
 "class": "SessionClass",
@@ -179864,7 +180325,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69B760"
+]
 },
 "R:69B7E0:ecx": {
 "class": "SessionClass",
@@ -182439,7 +182902,7 @@
 "ents": []
 },
 "P:6A01A0:0": {
-"class": "OverlayClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -182462,7 +182925,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6A01A0:0"
+]
 },
 "R:6A01A0:ecx": {
 "class": "OverlayClass",
@@ -183438,7 +183903,7 @@
 ]
 },
 "P:6A5310:0": {
-"class": "TabClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -183466,8 +183931,7 @@
 ]
 ],
 "ents": [
-"P:6A5310:0",
-"T:6D03A0"
+"P:6A5310:0"
 ]
 },
 "P:653010:0": {
@@ -183498,6 +183962,46 @@
 "T:6A5310",
 "P:653010:0",
 "P:653010:2"
+]
+},
+"R:6A5F20:ecx": {
+"class": "SidebarClass",
+"obs": [
+[
+21404,
+4
+],
+[
+21408,
+4
+],
+[
+21413,
+1
+],
+[
+21414,
+1
+]
+],
+"ents": [
+"T:6A5F20"
+]
+},
+"R:6A60A0:ecx": {
+"class": "SidebarClass",
+"obs": [
+[
+21404,
+4
+],
+[
+21414,
+1
+]
+],
+"ents": [
+"T:6A60A0"
 ]
 },
 "R:6A60E0:ecx": {
@@ -183539,6 +184043,38 @@
 "obs": [],
 "ents": [
 "T:6A6140"
+]
+},
+"R:6A6300:ecx": {
+"class": "SidebarClass",
+"obs": [
+[
+0,
+4
+],
+[
+21396,
+4
+],
+[
+21400,
+4
+],
+[
+21404,
+4
+],
+[
+21414,
+1
+],
+[
+21415,
+1
+]
+],
+"ents": [
+"T:6A6300"
 ]
 },
 "R:6A6610:ecx": {
@@ -183635,6 +184171,22 @@
 ],
 "ents": []
 },
+"R:6A7590:ecx": {
+"class": "SidebarClass",
+"obs": [
+[
+21404,
+4
+],
+[
+21415,
+1
+]
+],
+"ents": [
+"T:6A7590"
+]
+},
 "R:6A7780:ecx": {
 "class": "SidebarClass",
 "obs": [
@@ -183705,6 +184257,26 @@
 ],
 "ents": []
 },
+"R:6A7D20:ecx": {
+"class": "SidebarClass",
+"obs": [
+[
+0,
+4
+],
+[
+21404,
+4
+],
+[
+21414,
+1
+]
+],
+"ents": [
+"T:6A7D20"
+]
+},
 "R:6A7D70:ecx": {
 "class": "SidebarClass",
 "obs": [],
@@ -183713,7 +184285,7 @@
 ]
 },
 "R:6A80A0:ecx": {
-"class": "TabClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -183792,7 +184364,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6A80A0"
+]
 },
 "R:6A81B0:ecx": {
 "class": "TabClass",
@@ -184868,7 +185442,7 @@
 "ents": []
 },
 "M:6AFD60:this:0x24": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 172,
@@ -188157,7 +188731,7 @@
 "ents": []
 },
 "P:6B8F00:0": {
-"class": "DropPodLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -188184,7 +188758,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6B8F00:0"
+]
 },
 "R:6B9450:ecx": {
 "class": "ScriptClass",
@@ -188431,7 +189007,7 @@
 "ents": []
 },
 "P:6BA690:0": {
-"class": "AnimTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -188462,7 +189038,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6BA690:0"
+]
 },
 "R:6BAC40:ecx": {
 "class": "GenericNode",
@@ -192324,7 +192902,7 @@
 "ents": []
 },
 "M:6CB560:this:0x28": {
-"class": "SuperWeaponTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 96,
@@ -192424,7 +193002,7 @@
 "ents": []
 },
 "R:6CB830:ecx": {
-"class": "SuperClass",
+"class": "ConvertClass",
 "obs": [
 [
 36,
@@ -192475,7 +193053,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6CB830"
+]
 },
 "M:6CB830:this:0x68": {
 "class": "AnimTypeClass",
@@ -192708,7 +193288,7 @@
 ]
 },
 "R:6CC080:ecx": {
-"class": "SuperClass",
+"class": "ConvertClass",
 "obs": [
 [
 36,
@@ -192747,7 +193327,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6CC080"
+]
 },
 "M:6CC080:this:0x28": {
 "class": "WeaponTypeClass",
@@ -194863,7 +195445,7 @@
 "ents": []
 },
 "R:6D2420:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -194906,7 +195488,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D2420"
+]
 },
 "R:6D2540:ecx": {
 "class": "Tactical",
@@ -195308,7 +195892,11 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D3D10",
+"T:6D9B50",
+"P:6D9B50:2"
+]
 },
 "P:6D4B50:0": {
 "class": "WOL",
@@ -195575,7 +196163,10 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6D6000",
+"P:6D8640:2"
+]
 },
 "R:6D6070:ecx": {
 "class": "Tactical",
@@ -195609,10 +196200,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6D6070"
+]
 },
 "R:6D6170:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 3428,
@@ -195623,7 +196216,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D6170"
+]
 },
 "P:6D6170:0": {
 "class": "ScrollClass",
@@ -195640,7 +196235,7 @@
 "ents": []
 },
 "R:6D6190:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -195659,7 +196254,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D6190"
+]
 },
 "P:6D62E0:0": {
 "class": "WOL",
@@ -195843,7 +196440,7 @@
 "ents": []
 },
 "P:6D7840:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -195898,7 +196495,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6D7840:0"
+]
 },
 "P:6D7C00:0": {
 "class": "ScrollClass",
@@ -195997,7 +196596,7 @@
 "ents": []
 },
 "R:6D8530:ecx": {
-"class": "UnitTypeClass",
+"class": "Tactical",
 "obs": [
 [
 3428,
@@ -196016,7 +196615,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D8530"
+]
 },
 "R:6D8B30:ecx": {
 "class": "TacticalClass",
@@ -196085,7 +196686,7 @@
 "ents": []
 },
 "P:6D8DB0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -196128,10 +196729,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6D8DB0:0"
+]
 },
 "R:6D9CE0:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -196146,7 +196749,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D9CE0"
+]
 },
 "P:6D9CE0:0": {
 "class": "BuildingTypeClass",
@@ -196159,7 +196764,7 @@
 "ents": []
 },
 "R:6D9EF0:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -196174,10 +196779,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D9EF0"
+]
 },
 "R:6D9F80:ecx": {
-"class": "UnitTypeClass",
+"class": "Tactical",
 "obs": [
 [
 3472,
@@ -196196,7 +196803,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D9F80"
+]
 },
 "P:6D9F80:0": {
 "class": "DeployCommandClass",
@@ -196213,7 +196822,7 @@
 "ents": []
 },
 "R:6D9FC0:ecx": {
-"class": "UnitTypeClass",
+"class": "Tactical",
 "obs": [
 [
 3472,
@@ -196232,7 +196841,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D9FC0"
+]
 },
 "P:6D9FC0:0": {
 "class": "DeployCommandClass",
@@ -196249,7 +196860,7 @@
 "ents": []
 },
 "R:6D9FF0:ecx": {
-"class": "UnitTypeClass",
+"class": "Tactical",
 "obs": [
 [
 3472,
@@ -196268,7 +196879,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6D9FF0"
+]
 },
 "R:6DA080:ecx": {
 "class": "Tactical",
@@ -196302,10 +196915,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA080"
+]
 },
 "R:6DA160:ecx": {
-"class": "PlayerClass",
+"class": "Tactical",
 "obs": [
 [
 3472,
@@ -196324,10 +196939,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA160"
+]
 },
 "R:6DA180:ecx": {
-"class": "PlayerClass",
+"class": "Tactical",
 "obs": [
 [
 3472,
@@ -196346,10 +196963,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA180"
+]
 },
 "R:6DA230:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 3428,
@@ -196360,7 +196979,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA230"
+]
 },
 "P:6DA360:0": {
 "class": "WOL",
@@ -196373,7 +196994,7 @@
 "ents": []
 },
 "R:6DA380:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -196388,7 +197009,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA380"
+]
 },
 "P:6DA380:0": {
 "class": "OverlayClass",
@@ -196405,7 +197028,7 @@
 "ents": []
 },
 "R:6DA5C0:ecx": {
-"class": "OverlayClass",
+"class": "Tactical",
 "obs": [
 [
 176,
@@ -196420,7 +197043,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA5C0"
+]
 },
 "R:6DA7D0:ecx": {
 "class": "Tactical",
@@ -196442,7 +197067,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:6DA7D0"
+]
 },
 "P:6DA9D0:0": {
 "class": "SmudgeTypeClass",
@@ -198403,7 +199030,7 @@
 ]
 },
 "P:6E42D0:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -198414,7 +199041,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E42D0:0"
+]
 },
 "R:6E4320:ecx": {
 "class": "HouseClass",
@@ -198433,7 +199062,7 @@
 ]
 },
 "P:6E4320:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -198444,7 +199073,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E4320:0"
+]
 },
 "R:6E4360:ecx": {
 "class": "HouseClass",
@@ -198459,7 +199090,7 @@
 ]
 },
 "P:6E4360:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -198470,7 +199101,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E4360:0"
+]
 },
 "R:6E43A0:ecx": {
 "class": "HouseClass",
@@ -198485,7 +199118,7 @@
 ]
 },
 "P:6E43A0:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 600,
@@ -198496,7 +199129,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E43A0:0"
+]
 },
 "R:6E43E0:ecx": {
 "class": "AbstractClass",
@@ -199915,7 +200550,7 @@
 "ents": []
 },
 "R:6E8000:ecx": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -199970,10 +200605,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6E8000"
+]
 },
 "P:6E8000:0": {
-"class": "ScriptClass",
+"class": "ConvertClass",
 "obs": [
 [
 16,
@@ -200012,7 +200649,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E8000:0"
+]
 },
 "R:6E8160:ecx": {
 "class": "ScriptClass",
@@ -200463,7 +201102,7 @@
 "ents": []
 },
 "M:6E9050:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 692,
@@ -200478,7 +201117,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6E9050:this:0x54"
+]
 },
 "P:6E9050:0": {
 "class": "WOL",
@@ -200683,7 +201324,7 @@
 "ents": []
 },
 "M:6E9140:this:0x2c": {
-"class": "CampaignClass",
+"class": "HouseClass",
 "obs": [
 [
 494,
@@ -200737,7 +201378,7 @@
 "ents": []
 },
 "M:6EA080:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -200748,7 +201389,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EA080:this:0x54"
+]
 },
 "P:691590:3": {
 "class": "OverlayClass",
@@ -201484,7 +202127,7 @@
 "ents": []
 },
 "M:6EC370:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 981,
@@ -201495,7 +202138,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6EC370:this:0x54"
+]
 },
 "P:6E9050:1": {
 "class": "TabCameoListClass",
@@ -201508,7 +202153,7 @@
 "ents": []
 },
 "M:6EC3A0:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -201519,7 +202164,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EC3A0:this:0x54"
+]
 },
 "R:6EC3D0:ecx": {
 "class": "DropPodLocomotionClass",
@@ -201774,7 +202421,7 @@
 "ents": []
 },
 "M:6EC9A0:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 764,
@@ -201785,7 +202432,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6EC9A0:this:0x54"
+]
 },
 "R:6ECA70:ecx": {
 "class": "BombClass",
@@ -201806,7 +202455,7 @@
 "ents": []
 },
 "M:6ECA70:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 764,
@@ -201817,7 +202466,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6ECA70:this:0x54"
+]
 },
 "P:6ECCE0:0": {
 "class": "AircraftTypeClass",
@@ -202229,7 +202880,7 @@
 "ents": []
 },
 "M:6EDCA0:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -202240,7 +202891,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6EDCA0:this:0x54"
+]
 },
 "P:6EDCA0:0": {
 "class": "WOL",
@@ -202463,7 +203116,7 @@
 "ents": []
 },
 "M:6EE310:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 540,
@@ -202478,7 +203131,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6EE310:this:0x54"
+]
 },
 "M:6EE310:this:0x24": {
 "class": "ScriptTypeClass",
@@ -202967,7 +203622,7 @@
 "ents": []
 },
 "M:6EF700:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -202978,7 +203633,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EF700:this:0x54"
+]
 },
 "R:6EF9E0:ecx": {
 "class": "OverlayClass",
@@ -203009,7 +203666,7 @@
 "ents": []
 },
 "M:6EFA10:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 540,
@@ -203024,7 +203681,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EFA10:this:0x54"
+]
 },
 "R:6EFC70:ecx": {
 "class": "DropPodLocomotionClass",
@@ -203037,7 +203696,7 @@
 "ents": []
 },
 "M:6EFC70:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -203048,7 +203707,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EFC70:this:0x54"
+]
 },
 "R:6EFE60:ecx": {
 "class": "DropPodLocomotionClass",
@@ -203065,7 +203726,7 @@
 "ents": []
 },
 "M:6EFE60:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1496,
@@ -203076,7 +203737,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6EFE60:this:0x54"
+]
 },
 "R:6F0130:ecx": {
 "class": "DropPodLocomotionClass",
@@ -203089,7 +203752,7 @@
 "ents": []
 },
 "M:6F0130:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 156,
@@ -203108,7 +203771,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:6F0130:this:0x54"
+]
 },
 "R:6F03B0:ecx": {
 "class": "DynamicVectorClass",
@@ -203131,7 +203796,7 @@
 "ents": []
 },
 "M:6F03F0:this:0x54": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 764,
@@ -203142,7 +203807,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6F03F0:this:0x54"
+]
 },
 "R:6F06E0:ecx": {
 "class": "TeamTypeClass",
@@ -203925,7 +204592,7 @@
 "ents": []
 },
 "P:6F1E20:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -203964,7 +204631,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6F1E20:0"
+]
 },
 "M:6F1E20:p0:0x5d4": {
 "class": "GenericNode",
@@ -205566,7 +206235,7 @@
 "ents": []
 },
 "R:6F3820:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:6F3820"
@@ -206434,7 +207103,7 @@
 ]
 },
 "R:6F77B0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:6F77B0"
@@ -207494,7 +208163,7 @@
 ]
 },
 "R:6FB170:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -207518,7 +208187,7 @@
 ]
 },
 "R:6FB470:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -207542,7 +208211,7 @@
 ]
 },
 "R:6FB740:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -207996,7 +208665,7 @@
 ]
 },
 "R:6FCDB0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -208127,7 +208796,7 @@
 ]
 },
 "R:6FD570:ecx": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -209081,7 +209750,7 @@
 "ents": []
 },
 "R:702D40:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -209169,7 +209838,7 @@
 ]
 },
 "R:703230:ecx": {
-"class": "UnitClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -209271,7 +209940,7 @@
 "ents": []
 },
 "R:7036C0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -209299,7 +209968,7 @@
 ]
 },
 "R:703770:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -209496,7 +210165,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:705270:0"
+]
 },
 "R:705CA0:ecx": {
 "class": "BuildingClass",
@@ -209623,7 +210294,7 @@
 ]
 },
 "P:706640:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -209650,7 +210321,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:706640:0"
+]
 },
 "M:706640:this:0x294": {
 "class": "RawFileClass",
@@ -210080,7 +210753,7 @@
 ]
 },
 "R:707E60:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:707E60"
@@ -210455,7 +211128,7 @@
 ]
 },
 "P:709290:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -210478,7 +211151,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:709290:0",
+"T:709480"
+]
 },
 "R:709550:ecx": {
 "class": "TechnoClass",
@@ -210496,7 +211172,7 @@
 "ents": []
 },
 "R:709820:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -210576,7 +211252,7 @@
 ]
 },
 "R:709A90:ecx": {
-"class": "UnitClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -210772,7 +211448,7 @@
 ]
 },
 "R:70ADC0:ecx": {
-"class": "UnitClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -210808,7 +211484,7 @@
 ]
 },
 "R:70AF50:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -210852,7 +211528,7 @@
 ]
 },
 "R:70B1D0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -210918,7 +211594,7 @@
 "ents": []
 },
 "R:70B570:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -211455,7 +212131,7 @@
 ]
 },
 "R:70D1D0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -211913,7 +212589,7 @@
 ]
 },
 "R:70DE70:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -211941,7 +212617,7 @@
 ]
 },
 "R:70E000:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212024,7 +212700,7 @@
 "ents": []
 },
 "R:70E280:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212064,7 +212740,7 @@
 ]
 },
 "R:70E300:ecx": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 424,
@@ -212098,7 +212774,7 @@
 "ents": []
 },
 "R:70E4B0:ecx": {
-"class": "WaveClass",
+"class": "HouseClass",
 "obs": [
 [
 436,
@@ -212113,7 +212789,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:70E4B0"
+]
 },
 "R:70E5A0:ecx": {
 "class": "MissionClass",
@@ -212184,7 +212862,7 @@
 "ents": []
 },
 "R:70ED80:ecx": {
-"class": "UnitClass",
+"class": "TechnoClass",
 "obs": [
 [
 476,
@@ -212208,7 +212886,7 @@
 ]
 },
 "R:70EE30:ecx": {
-"class": "UnitClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212352,7 +213030,7 @@
 ]
 },
 "R:70F670:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212368,7 +213046,7 @@
 ]
 },
 "R:70F6A0:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212384,7 +213062,7 @@
 ]
 },
 "R:70F6E0:ecx": {
-"class": "MovieClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212395,7 +213073,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:70F6E0"
+]
 },
 "R:70F770:ecx": {
 "class": "WarheadTypeClass",
@@ -212520,7 +213200,7 @@
 "ents": []
 },
 "R:70FC90:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212548,7 +213228,7 @@
 ]
 },
 "R:70FD70:ecx": {
-"class": "FootClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -212600,7 +213280,7 @@
 "ents": []
 },
 "M:70FE50:this:0x1cc": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 464,
@@ -212658,7 +213338,7 @@
 ]
 },
 "M:70FEE0:this:0x2ac": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 20,
@@ -212690,7 +213370,7 @@
 ]
 },
 "R:710410:ecx": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 300,
@@ -214749,7 +215429,7 @@
 ]
 },
 "R:711EC0:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1740,
@@ -214799,7 +215479,7 @@
 "ents": []
 },
 "R:712040:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -214843,7 +215523,7 @@
 ]
 },
 "R:712130:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 2200,
@@ -214854,7 +215534,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:712130"
+]
 },
 "M:712130:this:0x898": {
 "class": "WarheadTypeClass",
@@ -216128,7 +216810,7 @@
 ]
 },
 "R:716290:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -217205,7 +217887,7 @@
 "ents": []
 },
 "M:7187A0:this:0xc": {
-"class": "FootClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -217261,7 +217943,7 @@
 "ents": []
 },
 "M:718B70:this:0xc": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 4,
@@ -217671,7 +218353,7 @@
 ]
 },
 "M:71A760:this:0x28": {
-"class": "FootClass",
+"class": "TechnoClass",
 "obs": [
 [
 280,
@@ -217845,7 +218527,7 @@
 ]
 },
 "M:71ABC0:this:0x28": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -217917,7 +218599,7 @@
 "ents": []
 },
 "M:71AD40:this:0x28": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 624,
@@ -217989,7 +218671,7 @@
 ]
 },
 "M:71ADE0:this:0x28": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 624,
@@ -218073,7 +218755,7 @@
 ]
 },
 "M:71AF20:this:0x28": {
-"class": "OverlayClass",
+"class": "TechnoClass",
 "obs": [
 [
 540,
@@ -218595,7 +219277,7 @@
 ]
 },
 "M:71C070:this:0xc8": {
-"class": "TerrainClass",
+"class": "HouseClass",
 "obs": [
 [
 200,
@@ -218606,7 +219288,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:71C070:this:0xc8"
+]
 },
 "R:71C110:ecx": {
 "class": "TerrainClass",
@@ -218621,7 +219305,7 @@
 ]
 },
 "M:71C110:this:0xc8": {
-"class": "TerrainClass",
+"class": "HouseClass",
 "obs": [
 [
 200,
@@ -218632,7 +219316,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:71C110:this:0xc8"
+]
 },
 "R:71C1B0:ecx": {
 "class": "TerrainClass",
@@ -218964,7 +219650,7 @@
 ]
 },
 "P:71D000:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 2,
@@ -218995,7 +219681,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:71D000:0"
+]
 },
 "R:71D150:ecx": {
 "class": "TerrainClass",
@@ -220106,7 +220794,7 @@
 "ents": []
 },
 "R:720480:ecx": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 640,
@@ -220125,7 +220813,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:720480"
+]
 },
 "P:526960:4": {
 "class": "ScriptClass",
@@ -220476,7 +221166,7 @@
 "ents": []
 },
 "P:721140:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 640,
@@ -220495,7 +221185,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:721140:0"
+]
 },
 "R:721210:ecx": {
 "class": "GenericNode",
@@ -221900,7 +222592,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:724200"
+]
 },
 "R:724510:ecx": {
 "class": "ToolTipManager",
@@ -221981,7 +222675,7 @@
 "ents": []
 },
 "R:724730:ecx": {
-"class": "HashTable",
+"class": "ToolTipManager",
 "obs": [
 [
 0,
@@ -222000,7 +222694,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:724730"
+]
 },
 "R:7248C0:ecx": {
 "class": "TooltipClass",
@@ -222036,7 +222732,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:724A30"
+]
 },
 "R:724AB0:ecx": {
 "class": "ToolTipManager",
@@ -222391,7 +223089,7 @@
 "ents": []
 },
 "P:725C70:0": {
-"class": "DropPodLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -222406,7 +223104,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:725C70:0"
+]
 },
 "R:725FA0:ecx": {
 "class": "TriggerClass",
@@ -224227,7 +224927,7 @@
 "ents": []
 },
 "P:732950:0": {
-"class": "COMClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -224246,7 +224946,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:732950:0"
+]
 },
 "R:733160:ecx": {
 "class": "TechnoClass",
@@ -225704,7 +226406,7 @@
 ]
 },
 "M:7393C0:this:0x6c4": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1028,
@@ -226363,7 +227065,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:739EC0:p0:0x520"
+]
 },
 "M:739EC0:this:0x5a4": {
 "class": "ScriptClass",
@@ -227478,7 +228182,7 @@
 ]
 },
 "M:740810:this:0x21c": {
-"class": "HouseClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 499,
@@ -227489,7 +228193,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:740810:this:0x21c"
+]
 },
 "R:740A90:ecx": {
 "class": "UnitClass",
@@ -228315,7 +229021,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:741970:p0:0x520"
+]
 },
 "M:741970:p0:0xe4": {
 "class": "OverlayClass",
@@ -228393,7 +229101,7 @@
 ]
 },
 "M:7438F0:this:0x6c4": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 3368,
@@ -229016,7 +229724,7 @@
 ]
 },
 "R:7468C0:ecx": {
-"class": "UnitClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -229063,7 +229771,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7468C0"
+]
 },
 "M:7468C0:this:0x6c4": {
 "class": "AircraftTypeClass",
@@ -231105,7 +231815,7 @@
 ]
 },
 "P:74C5B0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -235710,7 +236420,7 @@
 "ents": []
 },
 "R:75F330:ecx": {
-"class": "OverlayClass",
+"class": "TechnoClass",
 "obs": [
 [
 188,
@@ -235890,7 +236600,7 @@
 ]
 },
 "P:75FA90:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -235925,7 +236635,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:75FA90:0"
+]
 },
 "R:760190:ecx": {
 "class": "OverlayClass",
@@ -235988,7 +236700,7 @@
 ]
 },
 "P:7602E0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -236023,7 +236735,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:7602E0:0"
+]
 },
 "R:7609E0:ecx": {
 "class": "OverlayClass",
@@ -236060,7 +236774,7 @@
 "ents": []
 },
 "P:7609E0:0": {
-"class": "DropPodLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -236083,7 +236797,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:7609E0:0"
+]
 },
 "R:760F50:ecx": {
 "class": "WaveClass",
@@ -236106,7 +236822,7 @@
 ]
 },
 "P:762AF0:1": {
-"class": "IUnknown",
+"class": "WaveClass",
 "obs": [
 [
 0,
@@ -236403,7 +237119,7 @@
 ]
 },
 "R:762AF0:ecx": {
-"class": "IUnknown",
+"class": "WaveClass",
 "obs": [
 [
 0,
@@ -238881,7 +239597,7 @@
 ]
 },
 "R:768000:ecx": {
-"class": "ReferenceCounted",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -238984,7 +239700,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:768000"
+]
 },
 "R:7680C0:ecx": {
 "class": "Map@WorldDominationTour",
@@ -239047,7 +239765,7 @@
 ]
 },
 "R:7681E0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -239118,7 +239836,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7681E0"
+]
 },
 "R:768F50:ecx": {
 "class": "DropPodLocomotionClass",
@@ -241462,7 +242182,7 @@
 "ents": []
 },
 "R:76EA20:ecx": {
-"class": "UnitTypeClass",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 1116,
@@ -241473,7 +242193,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:76EA20"
+]
 },
 "R:76EAF0:ecx": {
 "class": "AircraftClass",
@@ -242299,7 +243021,7 @@
 "ents": []
 },
 "R:7717A0:ecx": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 960,
@@ -242310,7 +243032,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7717A0"
+]
 },
 "R:771850:ecx": {
 "class": "Anim@Voices@WorldDominationTour",
@@ -242377,7 +243101,7 @@
 ]
 },
 "M:7718A0:this:0x1c": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 960,
@@ -242388,7 +243112,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:7718A0:this:0x1c"
+]
 },
 "R:771900:ecx": {
 "class": "Anim@Voices@WorldDominationTour",
@@ -244470,7 +245196,7 @@
 "ents": []
 },
 "P:789B60:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -244509,7 +245235,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:789B60:0"
+]
 },
 "P:78A470:0": {
 "class": "AI",
@@ -244542,7 +245270,7 @@
 "ents": []
 },
 "P:78AC10:0": {
-"class": "AircraftClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -244565,7 +245293,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:78AC10:0"
+]
 },
 "P:78D120:0": {
 "class": "FoggedObjectClass",
@@ -247097,7 +247827,7 @@
 ]
 },
 "R:7B1CA0:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 12,
@@ -247161,7 +247891,7 @@
 ]
 },
 "P:7B1DE0:0": {
-"class": "UDPInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -247178,15 +247908,10 @@
 [
 258156,
 4
-],
-[
-258864,
-4
 ]
 ],
 "ents": [
-"P:7B1DE0:0",
-"T:7B3430"
+"P:7B1DE0:0"
 ]
 },
 "P:7B2050:0": {
@@ -247873,6 +248598,18 @@
 ],
 "ents": [
 "T:7B33D0"
+]
+},
+"R:7B3430:ecx": {
+"class": "UDPInterfaceClass",
+"obs": [
+[
+258864,
+4
+]
+],
+"ents": [
+"T:7B3430"
 ]
 },
 "R:7B3450:ecx": {
@@ -249492,7 +250229,7 @@
 "ents": []
 },
 "R:7B8730:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -250626,7 +251363,7 @@
 ]
 },
 "P:7BA8C0:0": {
-"class": "DropPodLocomotionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -250653,7 +251390,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:7BA8C0:0"
+]
 },
 "R:7BAB90:ecx": {
 "class": "DSurface",
@@ -251969,7 +252708,7 @@
 "ents": []
 },
 "R:7BE4A0:ecx": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 68,
@@ -252012,7 +252751,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:7BE4A0"
+]
 },
 "R:7BE660:ecx": {
 "class": "FootClass",
@@ -253123,7 +253864,7 @@
 "ents": []
 },
 "M:7C61CF:p0:0x8": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -253178,7 +253919,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:7C61CF:p0:0x8"
+]
 },
 "P:7C7371:0": {
 "class": "OverlayClass",
@@ -253698,7 +254441,7 @@
 "ents": []
 },
 "P:7CCB2E:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -253753,7 +254496,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:7CCB2E:0"
+]
 },
 "P:7CCFB3:0": {
 "class": "CreditsScreen",
@@ -254611,7 +255356,7 @@
 "ents": []
 },
 "P:7D6494:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -254786,7 +255531,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:7D6494:0"
+]
 },
 "P:7D68FB:0": {
 "class": "CarryoverClass",
@@ -256122,7 +256869,7 @@
 ]
 },
 "R:410260:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": []
 },
@@ -256313,7 +257060,7 @@
 ]
 },
 "R:4103E0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:4103E0"
@@ -257101,7 +257848,7 @@
 ]
 },
 "R:410300:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": []
 },
@@ -257707,7 +258454,7 @@
 ]
 },
 "R:5AE590:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:5AE590"
@@ -258365,7 +259112,7 @@
 ]
 },
 "R:410310:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": []
 },
@@ -258377,7 +259124,7 @@
 ]
 },
 "R:5B2FA0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2FA0"
@@ -258807,7 +259554,7 @@
 ]
 },
 "R:5D26F0:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:5D26F0"
@@ -260899,7 +261646,7 @@
 "ents": []
 },
 "R:410450:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": []
 },
@@ -263879,6 +264626,13 @@
 "T:7AD580"
 ]
 },
+"R:6D03A0:ecx": {
+"class": "TabClass",
+"obs": [],
+"ents": [
+"T:6D03A0"
+]
+},
 "P:414080:0": {
 "class": "AircraftClass",
 "obs": [],
@@ -264324,7 +265078,7 @@
 ]
 },
 "R:5CEB50:ecx": {
-"class": "MSPrintAnim",
+"class": "MSFadeAnim",
 "obs": [],
 "ents": [
 "T:5CEB50"
@@ -265315,7 +266069,7 @@
 ]
 },
 "R:7B1720:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1720"
@@ -265840,7 +266594,7 @@
 ]
 },
 "R:7B1730:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1730"
@@ -266078,7 +266832,7 @@
 ]
 },
 "R:41BEF0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:41BEF0"
@@ -266183,7 +266937,7 @@
 ]
 },
 "R:4104B0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:4104B0"
@@ -266554,7 +267308,7 @@
 ]
 },
 "R:7B1740:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1740"
@@ -266673,7 +267427,7 @@
 ]
 },
 "R:7B1750:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1750"
@@ -266982,7 +267736,7 @@
 ]
 },
 "R:4AEBE0:ecx": {
-"class": "DisplayClass",
+"class": "RadarClass",
 "obs": [],
 "ents": [
 "T:4AEBE0"
@@ -268516,7 +269270,7 @@
 ]
 },
 "R:4AAD20:ecx": {
-"class": "DisplayClass",
+"class": "RadarClass",
 "obs": [],
 "ents": [
 "T:4AAD20"
@@ -268895,7 +269649,7 @@
 ]
 },
 "R:70E340:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:70E340"
@@ -268980,14 +269734,14 @@
 ]
 },
 "R:5F43B0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5F43B0"
 ]
 },
 "R:5F43C0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5F43C0"
@@ -269036,14 +269790,14 @@
 ]
 },
 "R:41BE90:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:41BE90"
 ]
 },
 "R:6FFE00:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:6FFE00"
@@ -269183,7 +269937,7 @@
 ]
 },
 "R:5F6960:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5F6960"
@@ -269267,7 +270021,7 @@
 ]
 },
 "R:70DD90:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:70DD90"
@@ -269281,21 +270035,21 @@
 ]
 },
 "R:5B2E10:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2E10"
 ]
 },
 "R:5B2E20:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2E20"
 ]
 },
 "R:5B2E30:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2E30"
@@ -269365,14 +270119,14 @@
 ]
 },
 "R:5B2ED0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2ED0"
 ]
 },
 "R:5B2EE0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2EE0"
@@ -269400,7 +270154,7 @@
 ]
 },
 "R:41BFF0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:41BFF0"
@@ -269456,35 +270210,35 @@
 ]
 },
 "R:6F60C0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:6F60C0"
 ]
 },
 "R:5B2F80:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2F80"
 ]
 },
 "R:5B2F90:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2F90"
 ]
 },
 "R:5B2FB0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2FB0"
 ]
 },
 "R:5B2FC0:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:5B2FC0"
@@ -269687,7 +270441,7 @@
 ]
 },
 "R:708C10:ecx": {
-"class": "InfantryClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "T:708C10"
@@ -330267,7 +331021,7 @@
 ]
 },
 "M:768000:this:0x28": {
-"class": "TypeList",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "M:768000:this:0x28"
@@ -332897,7 +333651,7 @@
 "ents": []
 },
 "N:6C0D3E": {
-"class": "MSPrintAnim",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "N:6C0D3E"
@@ -333183,7 +333937,7 @@
 ]
 },
 "N:6C073E": {
-"class": "MSPrintAnim",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "N:6C073E"
@@ -333467,7 +334221,7 @@
 ]
 },
 "N:6F40AE": {
-"class": "MSPrintAnim",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "N:6F40AE"
@@ -333481,7 +334235,7 @@
 ]
 },
 "N:6F4185": {
-"class": "MSPrintAnim",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "N:6F4185"
@@ -334562,7 +335316,7 @@
 ]
 },
 "N:59442E": {
-"class": "MSPrintAnim",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "N:59442E"

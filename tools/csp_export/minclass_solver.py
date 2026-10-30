@@ -2140,6 +2140,67 @@ def main():
     print("[C11b] member-type exact=%d (containers=%d unresolved_type=%d no_container=%d)"
           % (_c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
 
+    # ---------------- C18：二进制偏移签名匹配 ----------------
+    # 只用汇编事实：一个类自己那些已确认函数在 this 上访问的 (offset,width) 集合，
+    # 就是该类在二进制里的成员签名。若某簇的观测集被**恰好一个**类的签名覆盖，
+    # 该簇的类即为那个类。不依赖 IDA 类型、不依赖成员名、不依赖函数名。
+    _c18_exact = _c18_tried = _c18_amb = 0
+    _sig18 = collections.defaultdict(set)
+    for _e18 in raw:
+        if _e18.get("type") != "MEMBER_ACCESS":
+            continue
+        _b18 = _e18.get("base")
+        if not (isinstance(_b18, str) and _b18.endswith(":this")):
+            continue
+        _f18 = hx(_b18.split(":")[0])
+        if _f18 is None:
+            continue
+        try:
+            _o18 = int(_e18.get("offset") or 0)
+        except (TypeError, ValueError):
+            continue
+        _w18 = _e18.get("width")
+        _w18 = int(_w18) if isinstance(_w18, (int, float)) and _w18 > 0 else 4
+        _sig18[_f18].add((_o18, _w18))
+    _cls_sig18 = collections.defaultdict(set)
+    for _eid18, _lst18 in exact.items():
+        if not _eid18.startswith("T:"):
+            continue
+        _cset18 = {_ci for _ci, _src in _lst18}
+        if len(_cset18) != 1:
+            continue
+        _f18 = hx(_eid18[2:])
+        if _f18 is None:
+            continue
+        _cls_sig18[next(iter(_cset18))] |= _sig18.get(_f18, set())
+    _cls_big18 = {_ci: _s for _ci, _s in _cls_sig18.items() if len(_s) >= 5}
+    print("[C18] binary offset signatures: classes=%d (>=5 offsets)" % len(_cls_big18), flush=True)
+
+    def _cov18(_s, _obs):
+        for (_o, _w) in _obs:
+            if not any(_a <= _o and _o + _w <= _a + _b for (_a, _b) in _s):
+                return False
+        return True
+
+    for _eid18 in list(ents.keys()):
+        _obs18 = ents[_eid18].get("obs") or set()
+        if len(_obs18) < 2:
+            continue
+        _c18_tried += 1
+        _hit18 = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18)]
+        if len(_hit18) != 1:
+            if _hit18:
+                _c18_amb += 1
+            continue
+        if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
+            continue
+        exact[_eid18].append((_hit18[0], "C18:binary-signature"))
+        exact_count["C18"] = exact_count.get("C18", 0) + 1
+        census["C18"] = census.get("C18", 0) + 1
+        _c18_exact += 1
+    print("[C18] binary-signature exact=%d (tried=%d ambiguous=%d)"
+          % (_c18_exact, _c18_tried, _c18_amb), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,
@@ -2314,6 +2375,25 @@ def main():
 
     for a_eid, b_eid in c5_link:
         un(a_eid, b_eid, "new_ctor")
+
+    # ---- C17：洁净寄存器 = 函数 this（同一对象的等式）----
+    # facts.reg_links = [site, reg, src, clean]；clean=True 表示该寄存器的到达定义
+    # 未经跨调用/控制流汇合，即在此点它装的就是 src 那个对象。当 src 正是本函数的
+    # this（T:<fn>）时，R:<fn>:<reg> 与 T:<fn> 是同一对象 -> 并入同簇。
+    _c17_n = 0
+    if facts:
+        for _lk17 in (facts.get("reg_links") or ()):
+            try:
+                _site17, _reg17, _src17, _clean17 = _lk17[0], _lk17[1], _lk17[2], _lk17[3]
+            except (IndexError, TypeError):
+                continue
+            if not _clean17 or not isinstance(_src17, str) or not _src17.startswith("T:"):
+                continue
+            _reid17 = "R:%s:%s" % (_src17[2:], _reg17)
+            if _reid17 in ents and _src17 in ents:
+                un(_reid17, _src17, "reg_same_object")
+                _c17_n += 1
+    print("[C17] clean register == function this unions: %d" % _c17_n, flush=True)
 
     print("[merge-census] candidates=%d (callarg_direct=%d reg_def=%d) "
           "targets=%d multi_source_joins=%d"

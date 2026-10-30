@@ -55,7 +55,7 @@
   "K": 543,
   "K_upper": 543,
   "lower_bound": 543,
-  "constrained_clusters": 25804,
+  "constrained_clusters": 25819,
   "free_clusters": 17566,
   "conflicts": 0,
   "c1_gaps": 0,
@@ -68,20 +68,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 13118,
-   "clusters_pinned": 4895,
+   "clusters_constrained": 13133,
+   "clusters_pinned": 5412,
    "clusters_free": 30252,
-   "pinned_classes": 466,
-   "forced_classes": 466,
+   "pinned_classes": 467,
+   "forced_classes": 467,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 466,
-   "K_upper": 466,
-   "K_total": 466,
-   "K_greedy": 466,
-   "delta_forced": 466,
-   "delta_K": 466,
-   "lower_bound": 466,
+   "K": 467,
+   "K_upper": 467,
+   "K_total": 467,
+   "K_greedy": 467,
+   "delta_forced": 467,
+   "delta_K": 467,
+   "lower_bound": 467,
    "merges": 0,
    "bad_cover": 0
   },
@@ -90,20 +90,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 13118,
-   "clusters_pinned": 4895,
+   "clusters_constrained": 13133,
+   "clusters_pinned": 5412,
    "clusters_free": 30252,
-   "pinned_classes": 466,
-   "forced_classes": 466,
+   "pinned_classes": 467,
+   "forced_classes": 467,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 466,
-   "K_upper": 466,
-   "K_total": 466,
-   "K_greedy": 466,
+   "K": 467,
+   "K_upper": 467,
+   "K_total": 467,
+   "K_greedy": 467,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 466,
+   "lower_bound": 467,
    "merges": 0,
    "bad_cover": 0
   },
@@ -112,20 +112,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 13735,
-   "clusters_pinned": 4895,
+   "clusters_constrained": 13750,
+   "clusters_pinned": 5412,
    "clusters_free": 29635,
-   "pinned_classes": 466,
-   "forced_classes": 466,
+   "pinned_classes": 467,
+   "forced_classes": 467,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 466,
-   "K_upper": 466,
-   "K_total": 466,
-   "K_greedy": 466,
+   "K": 467,
+   "K_upper": 467,
+   "K_total": 467,
+   "K_greedy": 467,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 466,
+   "lower_bound": 467,
    "merges": 0,
    "bad_cover": 0
   },
@@ -134,8 +134,8 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1297,
    "entities_touched": 1297,
-   "clusters_constrained": 13795,
-   "clusters_pinned": 6192,
+   "clusters_constrained": 13810,
+   "clusters_pinned": 6636,
    "clusters_free": 29575,
    "pinned_classes": 502,
    "forced_classes": 502,
@@ -145,8 +145,8 @@
    "K_upper": 502,
    "K_total": 502,
    "K_greedy": 502,
-   "delta_forced": 36,
-   "delta_K": 36,
+   "delta_forced": 35,
+   "delta_K": 35,
    "lower_bound": 502,
    "merges": 0,
    "bad_cover": 0
@@ -156,8 +156,8 @@
    "desc": "operator new size (EXACT)",
    "evidence": 842,
    "entities_touched": 839,
-   "clusters_constrained": 14628,
-   "clusters_pinned": 6334,
+   "clusters_constrained": 14643,
+   "clusters_pinned": 6778,
    "clusters_free": 28742,
    "pinned_classes": 516,
    "forced_classes": 516,
@@ -178,8 +178,8 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 14628,
-   "clusters_pinned": 6334,
+   "clusters_constrained": 14643,
+   "clusters_pinned": 6778,
    "clusters_free": 28742,
    "pinned_classes": 516,
    "forced_classes": 516,
@@ -200,8 +200,8 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 14702,
-   "clusters_pinned": 6399,
+   "clusters_constrained": 14717,
+   "clusters_pinned": 6843,
    "clusters_free": 28668,
    "pinned_classes": 523,
    "forced_classes": 523,
@@ -222,8 +222,8 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 14839,
-   "clusters_pinned": 6555,
+   "clusters_constrained": 14854,
+   "clusters_pinned": 6999,
    "clusters_free": 28531,
    "pinned_classes": 534,
    "forced_classes": 534,
@@ -244,8 +244,8 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
    "entities_touched": 6136,
-   "clusters_constrained": 15186,
-   "clusters_pinned": 6555,
+   "clusters_constrained": 15201,
+   "clusters_pinned": 6999,
    "clusters_free": 28184,
    "pinned_classes": 534,
    "forced_classes": 534,
@@ -254,11 +254,11 @@
    "K": 538,
    "K_upper": 538,
    "K_total": 538,
-   "K_greedy": 539,
+   "K_greedy": 538,
    "delta_forced": 0,
    "delta_K": 0,
    "lower_bound": 538,
-   "merges": 1,
+   "merges": 0,
    "bad_cover": 0
   },
   {
@@ -266,15 +266,15 @@
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
    "entities_touched": 13791,
-   "clusters_constrained": 25256,
-   "clusters_pinned": 6732,
+   "clusters_constrained": 25272,
+   "clusters_pinned": 7174,
    "clusters_free": 18111,
    "pinned_classes": 536,
    "forced_classes": 536,
-   "conflicts": 3,
+   "conflicts": 2,
    "c1_gaps": 0,
    "K": 539,
-   "K_upper": 542,
+   "K_upper": 541,
    "K_total": 539,
    "K_greedy": 539,
    "delta_forced": 2,
@@ -288,15 +288,15 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 391,
    "entities_touched": 3641,
-   "clusters_constrained": 25763,
-   "clusters_pinned": 6948,
+   "clusters_constrained": 25792,
+   "clusters_pinned": 7378,
    "clusters_free": 17564,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 43,
+   "conflicts": 29,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 586,
+   "K_upper": 572,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 3,
@@ -310,15 +310,15 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 25763,
-   "clusters_pinned": 6953,
+   "clusters_constrained": 25792,
+   "clusters_pinned": 7382,
    "clusters_free": 17564,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 43,
+   "conflicts": 29,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 586,
+   "K_upper": 572,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 0,
@@ -550,9 +550,9 @@
       "T:4A8BF0",
       "T:4AA440",
       "T:4ACAC0",
-      "T:4AEB10",
-      "T:4AEB30",
-      "T:5673A0"
+      "T:5673A0",
+      "T:5683C0",
+      "T:5687F0"
      ],
      "obs": [
       [
@@ -1429,8 +1429,7 @@
     {
      "cluster": "P:7B1DE0:0",
      "entities": [
-      "P:7B1DE0:0",
-      "T:7B3430"
+      "P:7B1DE0:0"
      ],
      "obs": [
       [
@@ -1448,14 +1447,10 @@
       [
        258156,
        4
-      ],
-      [
-       258864,
-       4
       ]
      ],
      "exact": [
-      "UDPInterfaceClass"
+      "WinsockInterfaceClass"
      ],
      "cause": "suspicious_large_offset"
     },
@@ -8910,8 +8905,8 @@
   "c7_variance_violation_count": 1631,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 133,
-    "exact_conflicts": 8,
+    "unions": 120,
+    "exact_conflicts": 70,
     "examples": [
      {
       "a": "G:87F5F0",
@@ -8924,53 +8919,53 @@
       ]
      },
      {
-      "a": "G:ABC604",
-      "b": "T:54EBF0",
+      "a": "G:87F7E8",
+      "b": "T:6A6300",
       "a_classes": [
-       "DynamicVector"
+       "MouseClass"
       ],
       "b_classes": [
-       "VectorClass"
+       "SidebarClass"
       ]
      },
      {
-      "a": "G:ABFDA0",
-      "b": "T:5D89F0",
+      "a": "G:87F7E8",
+      "b": "T:6A6300",
       "a_classes": [
-       "MultiplayerGameMode"
+       "MouseClass"
       ],
       "b_classes": [
-       "VectorClass"
+       "SidebarClass"
       ]
      },
      {
-      "a": "G:ABFDA0",
-      "b": "T:5D89F0",
+      "a": "G:87F7E8",
+      "b": "T:6A6300",
       "a_classes": [
-       "MultiplayerGameMode"
+       "MouseClass"
       ],
       "b_classes": [
-       "VectorClass"
+       "SidebarClass"
       ]
      },
      {
-      "a": "G:ABFDA0",
-      "b": "T:5D89F0",
+      "a": "G:87F7E8",
+      "b": "T:6A6300",
       "a_classes": [
-       "MultiplayerGameMode"
+       "MouseClass"
       ],
       "b_classes": [
-       "VectorClass"
+       "SidebarClass"
       ]
      },
      {
-      "a": "G:ABFDA0",
-      "b": "T:5D89F0",
+      "a": "G:87F7E8",
+      "b": "T:655740",
       "a_classes": [
-       "MultiplayerGameMode"
+       "MouseClass"
       ],
       "b_classes": [
-       "VectorClass"
+       "RadarClass"
       ]
      }
     ]
@@ -8986,8 +8981,8 @@
     "examples": []
    },
    "reg_def": {
-    "unions": 549,
-    "exact_conflicts": 4,
+    "unions": 547,
+    "exact_conflicts": 6,
     "examples": [
      {
       "a": "T:4B4E10",
@@ -9027,6 +9022,26 @@
       ],
       "b_classes": [
        "GaugeClass"
+      ]
+     },
+     {
+      "a": "T:6D03A0",
+      "b": "P:6A5310:0",
+      "a_classes": [
+       "TabClass"
+      ],
+      "b_classes": [
+       "ConvertClass"
+      ]
+     },
+     {
+      "a": "T:7B3430",
+      "b": "P:7B1DE0:0",
+      "a_classes": [
+       "UDPInterfaceClass"
+      ],
+      "b_classes": [
+       "WinsockInterfaceClass"
       ]
      }
     ]
