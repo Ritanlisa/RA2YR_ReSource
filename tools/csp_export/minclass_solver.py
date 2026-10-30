@@ -2261,6 +2261,60 @@ def main():
     print("[C18c] cascade exact per round=%s (classes in signature table=%d)"
           % (_c18c_rounds, len(_cls_big18)), flush=True)
 
+    # ---------------- C19：构造调用给出源实体的类 ----------------
+    # 汇编事实：`lea ecx,[ebp-18]; call Foo::Foo` / `mov ecx,ebx; call Foo::Foo`
+    # —— 被构造对象的类就是 Foo。C4 已用装表把 Foo 的 ctor 钉死，这里反向把
+    # **传给它的 this 源实体**定为 Foo。
+    # 防误判：源若正是本函数自己的 this（T:fn），那是派生类构造里"传自身给基类 ctor"，
+    # 对象真实类是派生类，不能记成基类 —— 跳过。
+    _c19_exact = _c19_skip_self = _c19_noent = 0
+    _ctor_exact19 = {}
+    for _eid19, _lst19 in exact.items():
+        if not _eid19.startswith("T:"):
+            continue
+        _s19 = {_ci for _ci, _src in _lst19 if str(_src).startswith("C4")}
+        if len(_s19) == 1:
+            _ctor_exact19[_eid19] = next(iter(_s19))
+    for _e19 in raw:
+        if _e19.get("type") != "CALL_ARG":
+            continue
+        _to19 = str(_e19.get("to") or "")
+        if not _to19.endswith(":this"):
+            continue
+        _c19 = _ctor_exact19.get("T:" + ("%X" % hx(_to19.split(":")[0]))) if hx(_to19.split(":")[0]) is not None else None
+        if _c19 is None:
+            continue
+        _fr19 = str(_e19.get("from") or "")
+        try:
+            _a19 = int(str(_e19.get("addr")), 16)
+        except (TypeError, ValueError):
+            continue
+        _fn19 = fn_at(_a19)
+        if _fr19.endswith(":this"):
+            _src19 = ent_id(_fr19)
+        elif ".member(" in _fr19:
+            _src19 = ent_id(_fr19, _fn19)
+        elif _fr19 in REGS or _fr19.startswith("stack_+"):
+            _src19 = ent_id(_fr19, _fn19)
+        else:
+            continue
+        if not _src19 or _src19 not in ents:
+            _c19_noent += 1
+            continue
+        if _fn19 is not None and _src19 == "T:%X" % _fn19:
+            _c19_skip_self += 1
+            continue
+        if exact.get(_src19) and any(_ci != _c19 for _ci, _src in exact[_src19]):
+            continue
+        if any(_ci == _c19 for _ci, _src in exact.get(_src19, ())):
+            continue
+        exact[_src19].append((_c19, "C19:ctor-arg"))
+        exact_count["C19"] = exact_count.get("C19", 0) + 1
+        census["C19"] = census.get("C19", 0) + 1
+        _c19_exact += 1
+    print("[C19] ctor-argument exact=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
+          % (_c19_exact, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,

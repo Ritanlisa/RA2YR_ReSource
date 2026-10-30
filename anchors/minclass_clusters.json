@@ -71810,7 +71810,7 @@
 "ents": []
 },
 "R:4E1640:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E1640"
@@ -71877,7 +71877,7 @@
 ]
 },
 "R:4E1A00:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E1A00"
@@ -262627,7 +262627,7 @@
 ]
 },
 "R:7A41C0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A41C0"
@@ -263780,7 +263780,7 @@
 ]
 },
 "R:7A4C10:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A4C10"
@@ -264640,7 +264640,7 @@
 ]
 },
 "R:7A5240:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A5240"
@@ -265417,7 +265417,7 @@
 ]
 },
 "R:7A5290:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A5290"
@@ -265613,7 +265613,7 @@
 ]
 },
 "R:7A55F0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A55F0"
@@ -266262,7 +266262,7 @@
 ]
 },
 "R:7AA870:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AA870"
@@ -266410,7 +266410,7 @@
 ]
 },
 "R:7A5690:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A5690"
@@ -266537,7 +266537,7 @@
 ]
 },
 "R:7A5890:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A5890"
@@ -267062,7 +267062,7 @@
 ]
 },
 "R:7A70E0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A70E0"
@@ -267587,7 +267587,7 @@
 ]
 },
 "R:7AB330:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB330"
@@ -267685,7 +267685,7 @@
 ]
 },
 "R:7AAFB0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AAFB0"
@@ -267734,7 +267734,7 @@
 ]
 },
 "R:488690:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:488690"
@@ -267804,7 +267804,7 @@
 ]
 },
 "R:7AB170:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB170"
@@ -267916,7 +267916,7 @@
 ]
 },
 "R:7A7110:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A7110"
@@ -268063,7 +268063,7 @@
 ]
 },
 "R:7A8DA0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A8DA0"
@@ -268175,7 +268175,7 @@
 ]
 },
 "R:7A8FC0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A8FC0"
@@ -268301,7 +268301,7 @@
 ]
 },
 "R:7AA6A0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AA6A0"
@@ -268336,7 +268336,7 @@
 ]
 },
 "R:48E650:ecx": {
-"class": "ToggleClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:48E650"
@@ -268420,7 +268420,7 @@
 ]
 },
 "R:7AA6D0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AA6D0"
@@ -268484,7 +268484,7 @@
 ]
 },
 "R:7A5220:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A5220"
@@ -268505,7 +268505,7 @@
 ]
 },
 "R:7A8260:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A8260"
@@ -268519,7 +268519,7 @@
 ]
 },
 "R:4E19F0:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E19F0"
@@ -268547,7 +268547,7 @@
 ]
 },
 "R:7A7EA0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A7EA0"
@@ -268610,7 +268610,7 @@
 ]
 },
 "R:7A7B60:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A7B60"
@@ -268659,7 +268659,7 @@
 ]
 },
 "R:7AB670:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB670"
@@ -268715,7 +268715,7 @@
 ]
 },
 "R:7AB340:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB340"
@@ -268764,7 +268764,7 @@
 ]
 },
 "R:7A9970:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A9970"
@@ -268848,7 +268848,7 @@
 ]
 },
 "R:7A9800:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A9800"
@@ -268876,7 +268876,7 @@
 ]
 },
 "R:4E1510:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E1510"
@@ -268904,7 +268904,7 @@
 ]
 },
 "R:7A9200:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A9200"
@@ -268932,7 +268932,7 @@
 ]
 },
 "R:4E1520:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E1520"
@@ -269037,7 +269037,7 @@
 ]
 },
 "R:7AB350:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB350"
@@ -269164,7 +269164,7 @@
 ]
 },
 "R:7AB440:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB440"
@@ -269283,7 +269283,7 @@
 ]
 },
 "R:7AB3C0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB3C0"
@@ -269451,7 +269451,7 @@
 ]
 },
 "R:7A4EC0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A4EC0"
@@ -269542,7 +269542,7 @@
 ]
 },
 "R:7AB8E0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB8E0"
@@ -269647,7 +269647,7 @@
 ]
 },
 "R:7ABD40:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7ABD40"
@@ -269766,7 +269766,7 @@
 ]
 },
 "R:7ABAF0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7ABAF0"
@@ -269843,7 +269843,7 @@
 ]
 },
 "R:7ABFA0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7ABFA0"
@@ -269892,7 +269892,7 @@
 ]
 },
 "R:7AC220:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC220"
@@ -269941,7 +269941,7 @@
 ]
 },
 "R:7AC4A0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC4A0"
@@ -270032,7 +270032,7 @@
 ]
 },
 "R:7AC4B0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC4B0"
@@ -270123,7 +270123,7 @@
 ]
 },
 "R:7A8ED0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A8ED0"
@@ -270172,7 +270172,7 @@
 ]
 },
 "R:7A9110:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A9110"
@@ -270221,7 +270221,7 @@
 ]
 },
 "R:7AB0A0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB0A0"
@@ -270263,7 +270263,7 @@
 ]
 },
 "R:7AB260:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AB260"
@@ -270305,7 +270305,7 @@
 ]
 },
 "R:7A9550:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7A9550"
@@ -270354,7 +270354,7 @@
 ]
 },
 "R:7AC4C0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC4C0"
@@ -270403,7 +270403,7 @@
 ]
 },
 "R:7AC4D0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC4D0"
@@ -270438,7 +270438,7 @@
 ]
 },
 "R:7AC4E0:ecx": {
-"class": "?$CComObject@VCChatEventSink@@@ATL",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "T:7AC4E0"
@@ -288283,14 +288283,14 @@
 ]
 },
 "R:4E14A0:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E14A0"
 ]
 },
 "R:4E14B0:ecx": {
-"class": "ToggleClass",
+"class": "ListClass",
 "obs": [],
 "ents": [
 "T:4E14B0"
@@ -292718,9 +292718,11 @@
 "ents": []
 },
 "M:52CD70:this:0x14A8": {
-"class": "TechnoClass",
+"class": "CCFileClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:52CD70:this:0x14A8"
+]
 },
 "P:66D3A0:1": {
 "class": "TechnoClass",
@@ -298392,9 +298394,11 @@
 "ents": []
 },
 "M:597430:this:0x18": {
-"class": "TechnoClass",
+"class": "rc_ptr_base",
 "obs": [],
-"ents": []
+"ents": [
+"M:597430:this:0x18"
+]
 },
 "P:597730:0": {
 "class": "TechnoClass",
@@ -307100,9 +307104,11 @@
 "ents": []
 },
 "M:636310:this:0x8": {
-"class": "TechnoClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:636310:this:0x8"
+]
 },
 "P:634290:4": {
 "class": "TechnoClass",
@@ -311419,9 +311425,11 @@
 ]
 },
 "M:66D530:this:0x10": {
-"class": "TechnoClass",
+"class": "TypeList",
 "obs": [],
-"ents": []
+"ents": [
+"M:66D530:this:0x10"
+]
 },
 "P:4770E0:0": {
 "class": "TechnoClass",
@@ -311429,14 +311437,18 @@
 "ents": []
 },
 "M:66D530:this:0x3A0": {
-"class": "TechnoClass",
+"class": "TypeList",
 "obs": [],
-"ents": []
+"ents": [
+"M:66D530:this:0x3A0"
+]
 },
 "M:66D530:this:0x3D8": {
-"class": "TechnoClass",
+"class": "TypeList",
 "obs": [],
-"ents": []
+"ents": [
+"M:66D530:this:0x3D8"
+]
 },
 "G:83CB90": {
 "class": "TechnoClass",
@@ -316487,9 +316499,11 @@
 "ents": []
 },
 "M:69E580:this:0x8": {
-"class": "TechnoClass",
+"class": "CCFileClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:69E580:this:0x8"
+]
 },
 "M:69E580:this:0x14": {
 "class": "ScrollClass",
@@ -316663,7 +316677,7 @@
 "ents": []
 },
 "P:63F7C0:1": {
-"class": "ToggleClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "P:63F7C0:1"
@@ -318270,7 +318284,7 @@
 "ents": []
 },
 "T:6D09C0": {
-"class": "ToggleClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "T:6D09C0"
@@ -318282,7 +318296,7 @@
 "ents": []
 },
 "P:69DE00:3": {
-"class": "ToggleClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "P:69DE00:3"
@@ -321781,9 +321795,11 @@
 "ents": []
 },
 "M:70C690:this:0x8": {
-"class": "TechnoClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:70C690:this:0x8"
+]
 },
 "M:70C690:this:0x98": {
 "class": "BuildingClass",
@@ -325893,7 +325909,7 @@
 "ents": []
 },
 "M:76E430:this:0x440": {
-"class": "TypeList",
+"class": "rc_ptr_base",
 "obs": [],
 "ents": [
 "M:76E430:this:0x440"
@@ -325987,9 +326003,11 @@
 "ents": []
 },
 "M:76FB90:this:0x4": {
-"class": "TechnoClass",
+"class": "CCFileClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:76FB90:this:0x4"
+]
 },
 "P:473A30:3": {
 "class": "TechnoClass",
@@ -326002,9 +326020,11 @@
 "ents": []
 },
 "M:76FC50:this:0x4": {
-"class": "TechnoClass",
+"class": "CCFileClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:76FC50:this:0x4"
+]
 },
 "M:76FD40:this:0x24": {
 "class": "TechnoClass",
@@ -331360,14 +331380,18 @@
 "ents": []
 },
 "M:4B55F0:this:0xb0": {
-"class": "TechnoClass",
+"class": "ListClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:4B55F0:this:0xb0"
+]
 },
 "M:4B55F0:this:0x50": {
-"class": "TechnoClass",
+"class": "ShapeButtonClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:4B55F0:this:0x50"
+]
 },
 "M:4C32E0:this:0x2c": {
 "class": "TechnoClass",
@@ -331464,12 +331488,14 @@
 "ents": []
 },
 "M:557230:this:0x58": {
-"class": "TechnoClass",
+"class": "ShapeButtonClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:557230:this:0x58"
+]
 },
 "M:557230:this:0xb8": {
-"class": "TechnoClass",
+"class": "ShapeButtonClass",
 "obs": [],
 "ents": [
 "M:557230:this:0xb8"
@@ -331500,9 +331526,11 @@
 ]
 },
 "M:5AE5A0:this:0x50": {
-"class": "TechnoClass",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:5AE5A0:this:0x50"
+]
 },
 "M:5B01C0:this:0x21c": {
 "class": "TechnoClass",
@@ -331957,6 +331985,13 @@
 "obs": [],
 "ents": []
 },
+"M:7667A0:this:0x8": {
+"class": "rc_ptr_base",
+"obs": [],
+"ents": [
+"M:7667A0:this:0x8"
+]
+},
 "M:766A10:this:0x14": {
 "class": "LZOStraw",
 "obs": [],
@@ -332013,6 +332048,13 @@
 "M:767880:this:0x14"
 ]
 },
+"M:767C10:this:0x8": {
+"class": "rc_ptr_base",
+"obs": [],
+"ents": [
+"M:767C10:this:0x8"
+]
+},
 "M:767E90:this:0x14": {
 "class": "LZOStraw",
 "obs": [],
@@ -332049,8 +332091,15 @@
 "obs": [],
 "ents": []
 },
+"M:76C030:this:0x8": {
+"class": "rc_ptr_base",
+"obs": [],
+"ents": [
+"M:76C030:this:0x8"
+]
+},
 "M:76C290:this:0x458": {
-"class": "VectorClass",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "M:76C290:this:0x458"
@@ -332096,6 +332145,13 @@
 "class": "TechnoClass",
 "obs": [],
 "ents": []
+},
+"M:76F6C0:this:0x8": {
+"class": "rc_ptr_base",
+"obs": [],
+"ents": [
+"M:76F6C0:this:0x8"
+]
 },
 "M:76F970:this:0xc": {
 "class": "TechnoClass",
@@ -332309,7 +332365,7 @@
 ]
 },
 "N:5CC7D9": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:5CC7D9"
@@ -332459,7 +332515,7 @@
 ]
 },
 "N:6C99FA": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:6C99FA"
@@ -332825,7 +332881,7 @@
 ]
 },
 "N:4A0778": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0778"
@@ -332887,21 +332943,21 @@
 ]
 },
 "N:4C425F": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4C425F"
 ]
 },
 "N:4BA7EA": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA7EA"
 ]
 },
 "N:4BA8DF": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA8DF"
@@ -332983,7 +333039,7 @@
 ]
 },
 "N:4339E4": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4339E4"
@@ -333557,7 +333613,7 @@
 ]
 },
 "N:641278": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:641278"
@@ -333766,7 +333822,7 @@
 "ents": []
 },
 "N:642629": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:642629"
@@ -333979,7 +334035,7 @@
 "ents": []
 },
 "N:654762": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:654762"
@@ -334111,7 +334167,7 @@
 ]
 },
 "N:68CEBD": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:68CEBD"
@@ -334158,14 +334214,14 @@
 "ents": []
 },
 "N:76EA93": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:76EA93"
 ]
 },
 "N:76EB80": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:76EB80"
@@ -334480,7 +334536,7 @@
 "ents": []
 },
 "N:641E27": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:641E27"
@@ -334686,7 +334742,7 @@
 ]
 },
 "N:6BFB3E": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:6BFB3E"
@@ -334766,7 +334822,7 @@
 ]
 },
 "N:6C4DBE": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:6C4DBE"
@@ -335293,7 +335349,7 @@
 "ents": []
 },
 "N:549F09": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:549F09"
@@ -335572,7 +335628,7 @@
 ]
 },
 "N:502506": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:502506"
@@ -335793,7 +335849,7 @@
 "ents": []
 },
 "N:407BB3": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:407BB3"
@@ -335907,14 +335963,14 @@
 ]
 },
 "N:4A01A8": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A01A8"
 ]
 },
 "N:4A0B38": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0B38"
@@ -336185,56 +336241,56 @@
 "ents": []
 },
 "N:5340EC": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5340EC"
 ]
 },
 "N:534152": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:534152"
 ]
 },
 "N:5341C8": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5341C8"
 ]
 },
 "N:53427A": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53427A"
 ]
 },
 "N:5342AA": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342AA"
 ]
 },
 "N:5342EB": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342EB"
 ]
 },
 "N:53436E": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53436E"
 ]
 },
 "N:5343DB": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5343DB"
@@ -336276,7 +336332,7 @@
 ]
 },
 "N:53B488": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53B488"
@@ -336392,7 +336448,7 @@
 "ents": []
 },
 "N:5B4210": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5B4210"
@@ -336406,7 +336462,7 @@
 ]
 },
 "N:5C0864": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:5C0864"
@@ -337028,14 +337084,14 @@
 ]
 },
 "N:76C5CE": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:76C5CE"
 ]
 },
 "N:76C62E": {
-"class": "ToggleClass",
+"class": "CChatEventSink",
 "obs": [],
 "ents": [
 "N:76C62E"
@@ -337321,7 +337377,7 @@
 ]
 },
 "N:7D52DD": {
-"class": "EnumConnectionsClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:7D52DD"
