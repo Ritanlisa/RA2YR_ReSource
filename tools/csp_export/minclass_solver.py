@@ -772,6 +772,13 @@ def main():
                          "覆盖被访问的字节区间。用于检验 K 是否被万能空类支配。")
     ap.add_argument("--no-families", default="")
     ap.add_argument("--max-pair-improve", type=int, default=40000)
+    ap.add_argument("--extra-callargs", nargs="?",
+                    const="anchors/supplementary_call_args.json",
+                    default="anchors/supplementary_call_args.json", metavar="PATH",
+                    help="补充 CALL_ARG 边文件（调用点实参 → 被调方 this），缺省启用；"
+                         "与 raw 既有边按 (addr, to) 去重后原样追加，下游零特判。")
+    ap.add_argument("--no-extra-callargs", action="store_true",
+                    help="禁用 --extra-callargs（回归基线口径）。")
     ap.add_argument("--evidence", choices=("none", "spec", "spec+proto"), default="spec",
                     help="none=不用访问证据（HEAD 基线口径）; "
                          "spec=仅 anchors/layout_evidence.json (ctor_types/vtable_install)，"
@@ -801,6 +808,38 @@ def main():
           % eff_bump, flush=True)
 
     raw = jload("tools/type_infer/constraints/raw_constraints.json")["constraints"]
+
+    # ---------------- 补充 CALL_ARG 边（--extra-callargs / --no-extra-callargs） ----------------
+    # 与既有边按 (addr, to) 去重后**原样追加**进 raw——下游（touch / C2 / C7 / C10 /
+    # merge 候选 / 赋值）看到的即合并后的完整列表，不做任何特判。
+    # addr 归一化为整数比较（"0x00401019" 与 "0x401019" 视为同址）。
+    if args.no_extra_callargs:
+        print("[extra] disabled (--no-extra-callargs)", flush=True)
+    else:
+        _xj = jload(args.extra_callargs)
+        if not _xj:
+            print("[extra] file not found: %s (skipped)" % args.extra_callargs, flush=True)
+        else:
+            _xed = _xj.get("edges") or []
+
+            def _dkey(_e):
+                _a = hx(_e.get("addr"))
+                return ((_a if _a is not None else _e.get("addr")), _e.get("to"))
+
+            _seen = set()
+            for _e in raw:
+                _seen.add(_dkey(_e))
+            _append = []
+            for _e in _xed:
+                _k = _dkey(_e)
+                if _k in _seen:
+                    continue
+                _seen.add(_k)
+                _append.append(_e)
+            raw.extend(_append)
+            print("[extra] loaded=%d appended=%d duplicates=%d"
+                  % (len(_xed), len(_append), len(_xed) - len(_append)), flush=True)
+
     protos = jload("anchors/ida_function_protos.json", {})
     faddrs = sorted(int(a, 16) for a in protos)
     print("[data] raw edges=%d functions=%d" % (len(raw), len(protos)), flush=True)
@@ -2935,6 +2974,100 @@ def main():
         print("[conflicts] FATAL: %d conflicts remain after weakest-evidence drop "
               "(solve undefined)" % _unresolved, flush=True)
         sys.exit(2)
+
+    # ---------------- 赋值规则：most-specific compatible class ----------------
+    # K 由覆盖求解确定（chosen 不动）；这里只重选每簇的**报告类**。
+    # 规则（EXACT 身份恒最优先）：
+    #   0) EXACT（ctor/vtable/global 二进制身份）→ 恒保留；
+    #   1) 簇无观测 → most-special 无意义（退化为"全宇宙最小类"，如 size=4 的
+    #      ILocomotion 吸走全部无证据簇）→ 保留覆盖赋值（no_obs_kept）；
+    #   2) 有观测簇的资格 = 候选按 C1 同款字节区间语义（covers()）覆盖**全部**
+    #      观测；无一全覆盖 → 保留覆盖赋值（no_cover_kept）；
+    #   3) 排序 = 成员精确命中数降序（成员表恰有该偏移且宽度 >= 观测宽度；
+    #      仅被宽成员/外层数组"区间罩住"不算命中）→ eff_size 升序（0/None=+inf）
+    #      → 成员数升序 → 字典序（确定性 tie-break）。
+    def _exact_ci_of(_cl):
+        _exs = {}
+        for _ci, _ss in (_cl.get("exact") or {}).items():
+            _kept = [s for s in (_ss or [])
+                     if not (s.startswith("C4") and "C4" not in all_fams)
+                     and not (s.startswith("C8") and "C8" not in all_fams)]
+            if _kept:
+                _exs[_ci] = _kept
+        return next(iter(_exs)) if len(_exs) == 1 else None
+
+    _strict_cov_cache = {}
+
+    def _strict_cov_mask(o, w):
+        """C1 同款 covers() 语义的严格覆盖掩码（不限 dense；跨簇缓存）。"""
+        key = (o, w)
+        msk = _strict_cov_cache.get(key)
+        if msk is None:
+            msk = 0
+            for ci in range(n):
+                if covers(ci, o, w):
+                    msk |= (1 << ci)
+            _strict_cov_cache[key] = msk
+        return msk
+
+    _old_assign = dict(res.get("assign") or {})
+    _new_assign, _changed, _exact_kept = {}, 0, 0
+    _no_obs_kept, _no_cover_kept = 0, 0
+    _ex_root, _ex_old, _ex_new = None, None, None
+    for _ci_cl, (_cl, _m) in enumerate(res["constrained"]):
+        _obs = sorted(_cl.get("obs") or set())
+        _prev = _old_assign.get(_ci_cl)
+        _exci = _exact_ci_of(_cl)
+        if _exci is not None and (_m >> _exci) & 1:
+            _pick = _exci
+            _exact_kept += 1
+        elif not _obs:
+            _pick = _prev                    # 无观测：保留覆盖赋值
+            _no_obs_kept += 1
+        else:
+            _elig = _m
+            for (_o, _w) in _obs:
+                _elig &= _strict_cov_mask(_o, _w if _w else 4)
+                if not _elig:
+                    break
+            if not _elig:
+                _pick = _prev                # 无候选全覆盖：保留覆盖赋值
+                _no_cover_kept += 1
+            else:
+                _obs_l = [(_o, (_w if _w else 4)) for (_o, _w) in _obs]
+
+                def _rank(_ci, _obs_l=_obs_l):
+                    _mem = U["members"][_ci] or {}
+                    _hits = 0
+                    for (o, w) in _obs_l:
+                        _mw = _mem.get(o)
+                        if isinstance(_mw, int) and _mw >= w:
+                            _hits += 1
+                    _sz = U["eff_size"][_ci]
+                    return (-_hits, int(_sz) if _sz else float("inf"),
+                            len(_mem), names[_ci])
+
+                _cands = [i for i in range(n) if (_elig >> i) & 1]
+                _pick = min(_cands, key=_rank)
+        if _pick is None:
+            continue
+        _new_assign[_ci_cl] = _pick
+        if _prev != _pick:
+            _changed += 1
+            if _ex_new is None and _obs:     # top_example 必须是有观测簇
+                _ex_root = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
+                _ex_old, _ex_new = _prev, _pick
+    print("[assign] most-specific: changed=%d exact_kept=%d no_obs_kept=%d "
+          "no_cover_kept=%d top_example=%s->%s"
+          % (_changed, _exact_kept, _no_obs_kept, _no_cover_kept,
+             _ex_root if _ex_root is not None else "none",
+             ("%s->%s" % (names[_ex_old] if _ex_old is not None else "?",
+                          names[_ex_new] if _ex_new is not None else "?"))
+             if _ex_new is not None else "none"), flush=True)
+    res["assign"] = _new_assign
+    res["assign_map"] = {((_cl.get("root") if isinstance(_cl, dict) else str(_cl))): _c
+                         for _cl, _c in _new_assign.items()}
+
     K, K_upper, LB = res["k"], res["k_upper"], res["lower_bound"]
     chosen, constrain, assign = res["chosen"], res["constrained"], res["assign"]
     print("\n== FINAL ==")
@@ -2943,24 +3076,28 @@ def main():
           % (K, K_upper, LB, len(constrain), res["free"], res["n_conflicts"],
              res["c1_gaps"], res["exact_conflicts"], len(constrain) - len(assign)),
           flush=True)
+    # 覆盖口径：域大小=1 的簇数 / 受约束簇数；forced/narrow/wide 与 assignments
+    # 写出器同阈值（=1 / 2..8 / >8）。
+    _cov = collections.Counter()
+    _uniq = 0
+    for (_cl, _m) in constrain:
+        _s = _m.bit_count()
+        if _s == 1:
+            _uniq += 1
+            _cov["forced"] += 1
+        elif _s <= 8:
+            _cov["narrow"] += 1
+        else:
+            _cov["wide"] += 1
+    _tot = len(constrain)
+    print("[coverage] unique=%d total=%d pct=%.1f%%   (pct = unique-domain clusters / "
+          "constrained clusters)  forced=%d narrow=%d wide=%d"
+          % (_uniq, _tot, (100.0 * _uniq / _tot) if _tot else 0.0,
+             _cov["forced"], _cov["narrow"], _cov["wide"]), flush=True)
 
-    # 赋值释义：K 由覆盖求解确定；每个簇在"已选类 ∩ 域"里选支持度最高者，
-    # 避免宽域稀疏类（Options）把无信息簇全部吞掉，使每类实体数不可解释。
-    support2 = collections.Counter()
-    cover_sz = collections.Counter()
-    for (cl, m) in constrain:
-        if m.bit_count() == 1:
-            support2[m.bit_length() - 1] += 1
-    for ci in ALL_EXACT_CLASSES:
-        support2[ci] += 1
-    for c in chosen:
-        cover_sz[c] = sum(1 for (cl, m) in constrain if (m >> c) & 1)
-    assign = {}
-    for ci_cl, (cl, m) in enumerate(constrain):
-        c = max((x for x in chosen if (m >> x) & 1),
-                key=lambda x: (support2[x], -cover_sz[x], -x), default=None)
-        if c is not None:
-            assign[ci_cl] = c
+    # 赋值释义：K 由覆盖求解确定；每簇报告类 = most-specific compatible class
+    #（见上方 most-specific 规则），域内最特异布局胜出，EXACT 身份恒保留。
+    assign = dict(_new_assign)
 
     per_class = collections.defaultdict(lambda: {"clusters": 0, "entities": 0,
                                                  "families": collections.Counter()})
@@ -3271,9 +3408,21 @@ def main():
         apath = os.path.join(ROOT, "anchors/minclass_assignments.json")
         _asg = {}
         _ents = res.get("dom_ents") or {}
+        # most-specific 赋值落到该文件（assign_map 键 = str(constrained 下标)）
+        _roots_aw = [(c.get("root") if isinstance(c, dict) else str(c))
+                     for (c, _m) in (res.get("constrained") or [])]
+        _cls_by_root = {}
+        for _kk, _cc in (res.get("assign_map") or {}).items():
+            try:
+                _ii = int(_kk)
+            except (TypeError, ValueError):
+                continue
+            if 0 <= _ii < len(_roots_aw) and _cc is not None and 0 <= _cc < n:
+                _cls_by_root[_roots_aw[_ii]] = names[_cc]
         for cl, nm in (res.get("dom_names") or {}).items():
             _asg[cl] = {"candidates": nm,
                         "ents": _ents.get(cl, []),
+                        "class": _cls_by_root.get(cl),
                         "confidence": ("forced" if len(nm) == 1 else
                                        ("narrow" if len(nm) <= 8 else "wide"))}
         with io.open(apath, "w", encoding="utf-8") as fh:
