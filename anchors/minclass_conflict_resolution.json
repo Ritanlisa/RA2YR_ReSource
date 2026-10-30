@@ -9,27 +9,6 @@
   "class_after": null
  },
  {
-  "cluster": "P:6FDD50:0",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1",
-   "C3",
-   "C9"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:6FDD50:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3",
-   "C9"
-  ],
-  "domain_after": 1,
-  "class_after": "InfantryClass"
- },
- {
   "cluster": "M:6E9050:this:0x54",
   "dropped_family": "C11",
   "remaining_families": [

@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -80,6 +80,7 @@ FAMILY_DESC = {
     "C9": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
     "C10": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
     "C11": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
+    "C15": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -1904,6 +1905,78 @@ def main():
           % (census["C8"], len(c8_entities), len((facts or {}).get("global_installs", []))),
           flush=True)
 
+    # ---------------- C15：静态 vtable 归属（唯一最小 owner → EXACT）----------------
+    # 纯二进制证据（anchors/vtable_slot_authority.json，.rdata 实测，不用函数名）：
+    # 函数 F 出现在类集合 S 的 vtable 上（按槽位地址去重）。最小 owner 定义：
+    # c ∈ S 是最小的当且仅当不存在 d ∈ S (d≠c) 使 c ∈ ancestors(d)
+    # （祖先链 = class_layouts.json 的 parent 链，20 级上限；不在 layouts 里的
+    # 类无祖先，仍可作最小 owner）。
+    #   |min(S)| == 1 → 该类即 F 的类（EXACT，复用 C4 的 exact[eid] 通道）
+    #   |min(S)| > 1  → COMDAT 折叠共享实现 / 多继承：仅注册族掩码收窄（3 值语义）
+    # 顺序约束：C4/C8 既有 EXACT 优先——T:F 已有身份则跳过（skipped_ctor_conflict）。
+    # 本块必须位于等式合并之前：root_exact 需含 C15 身份，合并器才能拒绝把两个
+    # EXACT 类不相交的实体并进同一簇（否则 exact_conflict 簇会逃过冲突消解）。
+    c15_owner = collections.defaultdict(int)
+    for _cls, _rec in (jload("anchors/vtable_slot_authority.json", {}) or {}).items():
+        _ci = resolve(_cls)
+        if _ci is None:
+            continue
+        for _sv in (_rec.get("slots") or {}).values():
+            _fa = hx((_sv or {}).get("addr"))
+            if _fa is not None:
+                c15_owner[_fa] |= (1 << _ci)
+    _c15_anc_cache = {}
+
+    def _c15_ancestors(ci):
+        """class_layouts parent 链（不含自身），20 级上限；无链类 = 无祖先。"""
+        out = _c15_anc_cache.get(ci)
+        if out is None:
+            out = set()
+            cur = ci
+            for _ in range(20):
+                cur = _parents.get(cur)
+                if cur is None or cur in out:
+                    break
+                out.add(cur)
+            _c15_anc_cache[ci] = out
+        return out
+
+    c15_exact_n = c15_amb_n = c15_skipped_ctor = c15_not_entity = 0
+    c15_no_minimal = c15_pool_exact = 0
+    for _fa, _om in sorted(c15_owner.items()):
+        _lst = [i for i in range(n) if (_om >> i) & 1]
+        _minimal = [c for c in _lst
+                    if not any(c in _c15_ancestors(d) for d in _lst if d != c)]
+        if not _minimal:
+            c15_no_minimal += 1        # 祖先链成环等脏数据：无可判定 owner，跳过
+            continue
+        if len(_minimal) > 1:
+            c15_amb_n += 1
+            _eid = "T:%X" % _fa
+            if _eid in ents:
+                _mamb = 0
+                for c in _minimal:
+                    _mamb |= (1 << c)
+                fam["C15"][_eid] = fam["C15"].get(_eid, FULL) & _mamb
+                census["C15"] += 1
+            continue
+        c15_pool_exact += 1
+        _eid = "T:%X" % _fa
+        if _eid not in ents:
+            c15_not_entity += 1       # C4 同款守卫：只标注已有观测的实体
+            continue
+        if exact.get(_eid):
+            c15_skipped_ctor += 1     # C4/C8 既有身份优先，不覆盖
+            continue
+        exact[_eid].append((_minimal[0], "C15:vtable-owner"))
+        exact_count["C15"] += 1
+        census["C15"] += 1
+        c15_exact_n += 1
+    print("[C15] vtable-owner exact=%d ambiguous=%d entities=%d "
+          "(pool_exact=%d skipped_ctor_conflict=%d not_entity=%d no_minimal=%d)"
+          % (c15_exact_n, c15_amb_n, len(fam["C15"]), c15_pool_exact,
+             c15_skipped_ctor, c15_not_entity, c15_no_minimal), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,
@@ -2865,7 +2938,7 @@ def main():
         if f == "C1":
             ents_touched = sum(1 for r in ents.values() if r["obs"])
         else:
-            ents_touched = len(fam[f]) + (exact_count[f] if f in ("C4", "C8") else 0)
+            ents_touched = len(fam[f]) + (exact_count[f] if f in ("C4", "C8", "C15") else 0)
         pinned = sum(1 for (cl, m) in res["constrained"] if m.bit_count() == 1)
         k_total = res["k"]                          # 全簇（含冲突 best-effort）覆盖
         family_table.append({
@@ -2904,7 +2977,7 @@ def main():
     # 重算交域直到非空；每次丢弃逐条记入 anchors/minclass_conflict_resolution.json
     # 台账（可审计、可回滚）。只动本簇的实体掩码——簇按并查集划分实体，互不泄漏。
     # 消解后仍有冲突 → 求解未定义，硬失败退出。
-    _PROV_RANK = ("C4", "C9", "C8", "C5", "C6", "C3", "C1", "C11", "C10", "C2", "C7")
+    _PROV_RANK = ("C4", "C9", "C8", "C5", "C6", "C3", "C1", "C11", "C10", "C2", "C7", "C15")
     _res_ledger = []
     _res_rounds = 0
     while True:
