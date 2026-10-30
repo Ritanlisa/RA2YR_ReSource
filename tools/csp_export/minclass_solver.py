@@ -1637,7 +1637,9 @@ def main():
     unknown_slot = FULL & ~c3_known["any"]
 
     def c3_mask(slot):
-        return slot_mask.get(slot, 0) | unknown_slot
+        # 虚调用要求接收者**必须是多态类**（有 vtable）——无 vtable 信息的类不能当接收者。
+        # 基线把 unknown_slot 无条件并进来，等于给每个接收者域白加全部无布局类。
+        return slot_mask.get(slot, 0)
 
     c3_garbage_slots = collections.Counter()
     for e in raw:
