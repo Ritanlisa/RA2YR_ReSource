@@ -19,6 +19,197 @@
   "class_after": null
  },
  {
+  "cluster": "R:404BB0:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 221,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40B140:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40B700:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40B960:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40BEB0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40C290:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40C880:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40CCA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40CCD0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 3,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40D5A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40E850:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40EF20:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40F640:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:40FC10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:473430:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:473430:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 4,
+  "class_after": null
+ },
+ {
+  "cluster": "R:41DE40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4203D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:421860:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:421EA0:0",
   "dropped_family": "C10",
   "remaining_families": [
@@ -46,12 +237,33 @@
   "class_after": null
  },
  {
-  "cluster": "P:42A5B0:3",
-  "dropped_family": "C10",
+  "cluster": "R:42D600:ecx",
+  "dropped_family": "C18",
   "remaining_families": [
-   "C1"
+   "C1",
+   "C15"
   ],
-  "domain_after": 150,
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:42F490:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:42F620:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -70,6 +282,96 @@
    "C1"
   ],
   "domain_after": 235,
+  "class_after": null
+ },
+ {
+  "cluster": "R:45A180:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:45A3E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:45A640:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:45A760:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:46B660:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:472B40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:472DA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:477FC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4782E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -105,12 +407,79 @@
   "class_after": null
  },
  {
+  "cluster": "P:578540:2",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
+  "class_after": null
+ },
+ {
   "cluster": "P:489280:0",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
   ],
   "domain_after": 119,
+  "class_after": null
+ },
+ {
+  "cluster": "R:48AD70:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:49AE80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:49EA30:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:49EB50:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4A0F80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4A1240:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -123,32 +492,161 @@
   "class_after": null
  },
  {
-  "cluster": "R:4A3640:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 101,
-  "class_after": null
- },
- {
-  "cluster": "P:4ACE70:0",
-  "dropped_family": "C10",
+  "cluster": "R:4A4B30:ecx",
+  "dropped_family": "C18",
   "remaining_families": [
    "C1",
-   "C3"
+   "C15"
   ],
-  "domain_after": 71,
+  "domain_after": 2,
   "class_after": null
  },
  {
-  "cluster": "P:4BBCA0:0",
+  "cluster": "R:4A7D80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4B0AD0:ecx",
   "dropped_family": "C18",
   "remaining_families": [
    "C1",
    "C3"
   ],
-  "domain_after": 53,
+  "domain_after": 19,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4B9CA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4B9F00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4C2CA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CA405:2",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CA405:2",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 631,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4C4A00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CA530:4",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CA530:4",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 1018,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4C5BC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4CA8F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4CD2A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 6,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4D1890:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 66,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4D29B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -171,6 +669,466 @@
   "class_after": null
  },
  {
+  "cluster": "R:4E0320:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E0580:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E07E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E9200:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E9460:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E96C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E9920:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E9B80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4E9DE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EA040:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EA2A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EA420:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EA680:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EA8E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EAB40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EADA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EB000:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EB260:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EB4C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EB720:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EB980:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EBBE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EBE40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EC0A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EC300:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EC560:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EC7C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ECA20:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ECC80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ECEE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ED140:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ED3A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ED600:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4ED860:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EDAC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EDD20:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EDF80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EE1E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EE440:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EE6A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EE900:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EEB60:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EEDC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EF020:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4EF280:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4F28E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "R:500B40:ecx",
   "dropped_family": "C10",
   "remaining_families": [
@@ -190,15 +1148,6 @@
   "class_after": null
  },
  {
-  "cluster": "R:50A5C0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 101,
-  "class_after": null
- },
- {
   "cluster": "P:50DB00:0",
   "dropped_family": "C10",
   "remaining_families": [
@@ -208,12 +1157,140 @@
   "class_after": null
  },
  {
+  "cluster": "R:50DEF0:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 108,
+  "class_after": null
+ },
+ {
   "cluster": "R:50DF30:ecx",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
   ],
   "domain_after": 108,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50E000:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 108,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50E910:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50EC20:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50EE80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50F1B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50F4E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50F740:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50F9A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:50FC00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:512C40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:513010:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5133E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -232,6 +1309,75 @@
    "C1"
   ],
   "domain_after": 141,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5250D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:525A10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:525A10:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 986,
+  "class_after": null
+ },
+ {
+  "cluster": "R:526420:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:526420:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 986,
+  "class_after": null
+ },
+ {
+  "cluster": "R:526B10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:526B10:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 27,
   "class_after": null
  },
  {
@@ -254,12 +1400,307 @@
   "class_after": null
  },
  {
-  "cluster": "P:7CA405:3",
+  "cluster": "R:528C00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:528C00:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 27,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52AAF0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C6",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52AAF0:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C6",
+   "C11"
+  ],
+  "domain_after": 8,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52AB80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C6",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52AB80:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C6",
+   "C11"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52B0A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:52B0A0:ecx",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 1269,
+  "domain_after": 672,
+  "class_after": null
+ },
+ {
+  "cluster": "R:538520:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:53C520:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:53DAA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:54A250:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:54A4B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:54E8F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:551330:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5552C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:555520:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:556F10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:558240:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:55A1B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:5683C0:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 181,
+  "class_after": null
+ },
+ {
+  "cluster": "P:42DD60:5",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "P:42FCB0:4",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:42FCB0:4",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 285,
+  "class_after": null
+ },
+ {
+  "cluster": "R:589300:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5896F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:589CA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:589EB0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:58A110:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:58A260:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -291,6 +1732,46 @@
   "class_after": null
  },
  {
+  "cluster": "R:5AC6A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5ACA60:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5ACCC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5AD0F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:4C9480:2",
   "dropped_family": "C18",
   "remaining_families": [
@@ -301,7 +1782,7 @@
   "class_after": null
  },
  {
-  "cluster": "R:5BCB90:ecx",
+  "cluster": "R:5BCC40:ecx",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
@@ -310,7 +1791,7 @@
   "class_after": null
  },
  {
-  "cluster": "R:5BCE10:ecx",
+  "cluster": "R:5BCC90:ecx",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
@@ -319,21 +1800,272 @@
   "class_after": null
  },
  {
-  "cluster": "R:5BD0D0:ecx",
-  "dropped_family": "C10",
+  "cluster": "R:5C0AD0:ecx",
+  "dropped_family": "C18",
   "remaining_families": [
-   "C1"
+   "C1",
+   "C15"
   ],
-  "domain_after": 111,
+  "domain_after": 2,
   "class_after": null
  },
  {
-  "cluster": "R:5BD2E0:ecx",
+  "cluster": "R:5C5130:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5C5390:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5C55F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7B4630:4",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7B4630:4",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 111,
+  "domain_after": 743,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D07F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D0AE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D0D40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D0FA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D1200:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D1460:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D27E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D2A40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:473A80:1",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:473A80:1",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 10,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D5150:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D53B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D82F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D8550:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5D9410:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 76,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5EEC10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5F6060:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5F9B60:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5F9B60:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 672,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5F9B80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:600020:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -353,6 +2085,65 @@
    "C1"
   ],
   "domain_after": 226,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7C8974:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7C8974:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 1018,
+  "class_after": null
+ },
+ {
+  "cluster": "R:627E10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6281F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6288A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:62B0D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -383,6 +2174,75 @@
   "class_after": null
  },
  {
+  "cluster": "R:63DD40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:63E050:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:63E310:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:63E650:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:63E950:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:63F810:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 124,
+  "class_after": null
+ },
+ {
+  "cluster": "P:641DB0:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 57,
+  "class_after": null
+ },
+ {
   "cluster": "P:6475F0:0",
   "dropped_family": "C18",
   "remaining_families": [
@@ -390,6 +2250,36 @@
    "C3"
   ],
   "domain_after": 104,
+  "class_after": null
+ },
+ {
+  "cluster": "R:658910:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:65A240:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:65BF50:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -403,6 +2293,54 @@
   "class_after": null
  },
  {
+  "cluster": "R:65FE00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:65FE00:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 430,
+  "class_after": null
+ },
+ {
+  "cluster": "P:660730:2",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:660730:2",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 986,
+  "class_after": null
+ },
+ {
+  "cluster": "R:660CE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:4135D0:2",
   "dropped_family": "C18",
   "remaining_families": [
@@ -410,6 +2348,109 @@
    "C3"
   ],
   "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "R:664810:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:67AAF0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:67AE70:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:67B1F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:683610:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
+  "class_after": null
+ },
+ {
+  "cluster": "R:686700:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 126,
+  "class_after": null
+ },
+ {
+  "cluster": "R:689670:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
+  "class_after": null
+ },
+ {
+  "cluster": "R:689910:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
+  "class_after": null
+ },
+ {
+  "cluster": "R:689E90:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
+  "class_after": null
+ },
+ {
+  "cluster": "R:68AD70:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
+  "class_after": null
+ },
+ {
+  "cluster": "P:4A1DB0:2",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 110,
   "class_after": null
  },
  {
@@ -440,6 +2481,46 @@
   "class_after": null
  },
  {
+  "cluster": "R:69C970:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:69CD40:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:69CFA0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:69D200:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "M:69E500:this:0x18",
   "dropped_family": "C11",
   "remaining_families": [
@@ -455,6 +2536,26 @@
    "C1"
   ],
   "domain_after": 537,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6A01A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 19,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6AF6C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
   "class_after": null
  },
  {
@@ -478,6 +2579,115 @@
   "class_after": null
  },
  {
+  "cluster": "R:6B1470:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6B16D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6B4440:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6B8220:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6B84E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7B4630:3",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7B4630:3",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 540,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6C61D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6C89E0:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 102,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6C8B10:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 85,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6CA820:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:6CC390:0",
   "dropped_family": "C10",
   "remaining_families": [
@@ -494,6 +2704,66 @@
    "C3"
   ],
   "domain_after": 10,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6CF560:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6D6AD0:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 272,
+  "class_after": null
+ },
+ {
+  "cluster": "P:578350:2",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:578350:2",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 9,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6DC5E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6DC9D0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -516,6 +2786,26 @@
   "class_after": null
  },
  {
+  "cluster": "R:6E4850:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6E6540:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:6E9140:0",
   "dropped_family": "C1",
   "remaining_families": [
@@ -534,6 +2824,15 @@
   "class_after": null
  },
  {
+  "cluster": "P:6ED7E0:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 119,
+  "class_after": null
+ },
+ {
   "cluster": "P:6EAEE0:3",
   "dropped_family": "C18",
   "remaining_families": [
@@ -541,6 +2840,16 @@
    "C3"
   ],
   "domain_after": 6,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6EE800:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 25,
   "class_after": null
  },
  {
@@ -571,6 +2880,16 @@
   "class_after": null
  },
  {
+  "cluster": "R:6F2290:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:6F7CA0:0",
   "dropped_family": "C10",
   "remaining_families": [
@@ -609,6 +2928,66 @@
   "class_after": null
  },
  {
+  "cluster": "R:6FDB80:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6FDB80:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 41,
+  "class_after": null
+ },
+ {
+  "cluster": "R:704000:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "R:704240:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "R:717880:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 150,
+  "class_after": null
+ },
+ {
+  "cluster": "R:718B70:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
   "cluster": "R:71AB60:ecx",
   "dropped_family": "C18",
   "remaining_families": [
@@ -616,6 +2995,76 @@
    "C3"
   ],
   "domain_after": 6,
+  "class_after": null
+ },
+ {
+  "cluster": "R:71B2A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "M:71E940:this:0x34",
+  "dropped_family": "C11",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 223,
+  "class_after": null
+ },
+ {
+  "cluster": "R:71FC00:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:723790:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:724C90:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "P:4C9480:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10",
+   "C11"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:4C9480:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C11"
+  ],
+  "domain_after": 17,
   "class_after": null
  },
  {
@@ -635,15 +3084,6 @@
    "C3"
   ],
   "domain_after": 6,
-  "class_after": null
- },
- {
-  "cluster": "M:73B140:this:0x21c",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 102,
   "class_after": null
  },
  {
@@ -676,6 +3116,64 @@
   "class_after": null
  },
  {
+  "cluster": "R:74F3C0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:751930:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7536B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:759260:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 175,
+  "class_after": null
+ },
+ {
+  "cluster": "R:759830:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 229,
+  "class_after": null
+ },
+ {
+  "cluster": "R:75A490:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:75ADA0:0",
   "dropped_family": "C18",
   "remaining_families": [
@@ -686,12 +3184,101 @@
   "class_after": null
  },
  {
+  "cluster": "R:75C240:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7640B0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:764460:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7657F0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:766BC0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:769DE0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:76A130:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:76B870:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
   "cluster": "P:767BB0:3",
   "dropped_family": "C10",
   "remaining_families": [
    "C1"
   ],
   "domain_after": 187,
+  "class_after": null
+ },
+ {
+  "cluster": "R:770270:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 189,
   "class_after": null
  },
  {
@@ -715,6 +3302,16 @@
   "class_after": null
  },
  {
+  "cluster": "P:786270:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 51,
+  "class_after": null
+ },
+ {
   "cluster": "P:7864C0:0",
   "dropped_family": "C18",
   "remaining_families": [
@@ -722,6 +3319,86 @@
    "C3"
   ],
   "domain_after": 25,
+  "class_after": null
+ },
+ {
+  "cluster": "P:787770:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "P:796B90:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 27,
+  "class_after": null
+ },
+ {
+  "cluster": "P:799080:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 49,
+  "class_after": null
+ },
+ {
+  "cluster": "P:79CBA0:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 21,
+  "class_after": null
+ },
+ {
+  "cluster": "P:79E520:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 102,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7AD090:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7B28A0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:7B4320:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C15"
+  ],
+  "domain_after": 2,
   "class_after": null
  },
  {
@@ -790,7 +3467,21 @@
   "class_after": null
  },
  {
+  "cluster": "P:7C8EF4:2",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
+  "class_after": null
+ },
+ {
   "cluster": "P:5257C0:4",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
+  "class_after": null
+ },
+ {
+  "cluster": "P:4A1DE0:1",
   "dropped_family": "C10",
   "remaining_families": [],
   "domain_after": 1400,
@@ -804,7 +3495,7 @@
   "class_after": null
  },
  {
-  "cluster": "P:734E60:3",
+  "cluster": "P:7C9FF0:4",
   "dropped_family": "C10",
   "remaining_families": [],
   "domain_after": 1400,
@@ -825,13 +3516,12 @@
   "class_after": null
  },
  {
-  "cluster": "P:7AF2A0:0",
+  "cluster": "P:4A8BF0:1",
   "dropped_family": "C10",
   "remaining_families": [
-   "C3",
-   "C11"
+   "C3"
   ],
-  "domain_after": 471,
+  "domain_after": 224,
   "class_after": null
  }
 ]

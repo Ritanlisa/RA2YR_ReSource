@@ -9350,7 +9350,7 @@
 "HouseTypeClass": {
 "member_count": 60,
 "extent": 425,
-"clusters": 17,
+"clusters": 18,
 "members": [
 [
 0,
@@ -10954,7 +10954,7 @@
 ]
 },
 "IsometricTileTypeClass": {
-"member_count": 28,
+"member_count": 29,
 "extent": 757,
 "clusters": 15,
 "members": [
@@ -10977,6 +10977,10 @@
 [
 164,
 4
+],
+[
+168,
+1
 ],
 [
 660,
@@ -12185,7 +12189,7 @@
 ]
 },
 "MPCooperative": {
-"member_count": 37,
+"member_count": 41,
 "extent": 833,
 "clusters": 43,
 "members": [
@@ -12195,6 +12199,22 @@
 ],
 [
 4,
+1
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+60,
+4
+],
+[
+64,
 1
 ],
 [
@@ -19649,7 +19669,7 @@
 "TiberiumClass": {
 "member_count": 35,
 "extent": 296,
-"clusters": 14,
+"clusters": 13,
 "members": [
 [
 0,

@@ -2249,7 +2249,10 @@ def main():
         if len(_obs18) < 2:
             continue
         _c18_tried += 1
-        _hit18 = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18)]
+        _need18 = max(_o + _w for (_o, _w) in _obs18)
+        _hit18 = [_ci for _ci, _s in _cls_big18.items()
+                  if _cov18(_s, _obs18)
+                  and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18)]
         if not _hit18:
             continue
         _mask18 = 0
@@ -2276,11 +2279,15 @@ def main():
         if exact.get(_eid18b):
             continue
         _obs18b = ents[_eid18b].get("obs") or set()
-        if len(_obs18b) < 3:
+        # 抽样对照 YRpp 实证：门槛 3 条观测时 C18b 的 66/98 条判定与 YRpp 矛盾 —— 太松。
+        if len(_obs18b) < 6:
             continue
         if max(_o for (_o, _w) in _obs18b) < 0x40:
             continue
-        _hit18b = [(_ci, len(_s)) for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18b)]
+        _need18b = max(_o + _w for (_o, _w) in _obs18b)
+        _hit18b = [(_ci, len(_s)) for _ci, _s in _cls_big18.items()
+                   if _cov18(_s, _obs18b)
+                   and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18b)]
         if len(_hit18b) < 2:
             continue
         _hit18b.sort(key=lambda x: x[1])
@@ -4264,6 +4271,10 @@ def main():
             _r = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
             _mask_of[_r] = _m
         _ok = _out = _nocl = 0
+        _excluded_src = collections.Counter()
+        _root_members = {}
+        for _cl0 in clusters:
+            _root_members[(_cl0.get('root') if isinstance(_cl0, dict) else str(_cl0))] = _cl0.get('ents') or []
         _excluded = []
         for _as, _cn in _yr.items():
             _a = hx(_as)
@@ -4283,11 +4294,17 @@ def main():
                 _ok += 1
             else:
                 _out += 1
+                _src_e = set()
+                for _mm in (_root_members.get(_r) or ()):
+                    for _ci_s, _s_s in exact.get(_mm, ()):
+                        _src_e.add(str(_s_s).split(":")[0])
+                _excluded_src["+".join(sorted(_src_e)) or "?"] += 1
                 if len(_excluded) < 25:
-                    _excluded.append((_r, _cn, _m.bit_count()))
+                    _excluded.append((_r, _cn, _m.bit_count(), "+".join(sorted(_src_e))))
         print("[audit] YRpp in-domain=%d  EXCLUDED=%d  no-cluster=%d" % (_ok, _out, _nocl))
-        for _r, _cn, _d in _excluded:
-            print("   EXCLUDED %-22s YRpp=%s  domain=%d" % (_r, _cn, _d))
+        print("[audit] excluded by exact-source: %s" % dict(_excluded_src))
+        for _r, _cn, _d, _s4 in _excluded:
+            print("   EXCLUDED %-22s YRpp=%-24s domain=%d src=%s" % (_r, _cn, _d, _s4))
     if getattr(args, "explain", None):
         _want = str(args.explain).upper()
         for _cl, _m in res.get("constrained") or ():
@@ -4298,6 +4315,11 @@ def main():
             print("[explain] %s" % _root)
             print("  domain=%d" % len(_cands))
             print("  members=%s" % ((_cl.get("ents") or [])[:12],))
+            _srcs = {}
+            for _m2 in (_cl.get("ents") or []):
+                for _ci2, _s2 in exact.get(_m2, ()):
+                    _srcs.setdefault(names[_ci2], []).append(_s2)
+            print("  exact_sources=%s" % _srcs)
             print("  obs=%s" % sorted(_cl.get("obs") or ())[:20])
             print("  candidates=%s" % _cands[:40])
             for _f in FAMILIES:
