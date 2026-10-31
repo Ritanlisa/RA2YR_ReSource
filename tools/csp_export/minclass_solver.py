@@ -763,6 +763,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
     ap.add_argument("--no-name-pins", action="store_true",
                     help="disable name/proto-this derived class pins")
     ap.add_argument("--prune-dead", action="store_true",
@@ -1460,26 +1461,6 @@ def main():
                     break
             if m and _need:
                 m &= c1_size_mask(_need)
-            # 成员条目硬匹配：类必须**真的有**该偏移的成员条目（宽度够），
-            # 不允许仅靠数组/宽成员的区间"覆盖"。若没有任何候选满足，则退回区间口径。
-            if m:
-                _exm = 0
-                for (o, w) in key:
-                    _ww = w if w else 4
-                    _ek = (o, _ww)
-                    _em = _exact_member_cache.get(_ek)
-                    if _em is None:
-                        _em = 0
-                        for _i2 in range(n):
-                            _mw = U["members"][_i2].get(o)
-                            if isinstance(_mw, int) and _mw >= _ww:
-                                _em |= (1 << _i2)
-                        _exact_member_cache[_ek] = _em
-                    _exm = _em if not _exm else (_exm & _em)
-                    if not _exm:
-                        break
-                if _exm:
-                    m = _exm
             c1_cache[key] = m
         return m
 
@@ -3748,15 +3729,18 @@ def main():
                 _obs_l = [(_o, (_w if _w else 4)) for (_o, _w) in _obs]
 
                 def _rank(_ci, _obs_l=_obs_l):
+                    # 命中率优先（稀疏布局的类只命中一部分是正常的），同率取尺寸更贴近需求的
                     _mem = U["members"][_ci] or {}
                     _hits = 0
                     for (o, w) in _obs_l:
                         _mw = _mem.get(o)
                         if isinstance(_mw, int) and _mw >= w:
                             _hits += 1
+                    _rate = (_hits / float(len(_obs_l))) if _obs_l else 0.0
+                    _need = max(o + w for (o, w) in _obs_l) if _obs_l else 0
                     _sz = U["eff_size"][_ci]
-                    return (-_hits, int(_sz) if _sz else float("inf"),
-                            len(_mem), names[_ci])
+                    _gap = abs(int(_sz) - _need) if _sz else float("inf")
+                    return (-_rate, _gap, -_hits, len(_mem), names[_ci])
 
                 _cands = [i for i in range(n) if (_elig >> i) & 1]
                 # 链上取最大派生：若候选集构成一条继承链（存在一个元素是其余全部的后代），
@@ -4136,6 +4120,22 @@ def main():
         "family_table": table_out,
         "chosen_classes": class_counts,
     }
+    if getattr(args, "explain", None):
+        _want = str(args.explain).upper()
+        for _cl, _m in res.get("constrained") or ():
+            _root = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
+            if _root.upper() != _want:
+                continue
+            _cands = [names[i] for i in range(len(names)) if (_m >> i) & 1]
+            print("[explain] %s" % _root)
+            print("  domain=%d" % len(_cands))
+            print("  obs=%s" % sorted(_cl.get("obs") or ())[:20])
+            print("  candidates=%s" % _cands[:40])
+            for _f in FAMILIES:
+                _fm = fam[_f].get(_root)
+                if _fm is not None and _fm != FULL:
+                    print("    %s allows %d: %s" % (_f, _fm.bit_count(),
+                          [names[i] for i in range(len(names)) if (_fm >> i) & 1][:12]))
     if getattr(args, "dump_domains", False):
         dpath = os.path.join(ROOT, "anchors/minclass_domains.json")
         with io.open(dpath, "w", encoding="utf-8") as fh:
