@@ -1408,6 +1408,7 @@ def main():
         return m
 
     _size_ok_cache = {}
+    _exact_member_cache = {}
 
     def c1_size_mask(need):
         """对象尺寸硬下界：类的 effective_size 必须 >= 已观测到的最大访问末端。
@@ -1440,6 +1441,26 @@ def main():
                     break
             if m and _need:
                 m &= c1_size_mask(_need)
+            # 成员条目硬匹配：类必须**真的有**该偏移的成员条目（宽度够），
+            # 不允许仅靠数组/宽成员的区间"覆盖"。若没有任何候选满足，则退回区间口径。
+            if m:
+                _exm = 0
+                for (o, w) in key:
+                    _ww = w if w else 4
+                    _ek = (o, _ww)
+                    _em = _exact_member_cache.get(_ek)
+                    if _em is None:
+                        _em = 0
+                        for _i2 in range(n):
+                            _mw = U["members"][_i2].get(o)
+                            if isinstance(_mw, int) and _mw >= _ww:
+                                _em |= (1 << _i2)
+                        _exact_member_cache[_ek] = _em
+                    _exm = _em if not _exm else (_exm & _em)
+                    if not _exm:
+                        break
+                if _exm:
+                    m = _exm
             c1_cache[key] = m
         return m
 
