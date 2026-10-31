@@ -31,8 +31,8 @@
   "K_min": 570,
   "K_upper": 570,
   "lower_bound": 570,
-  "constrained_clusters": 26122,
-  "free_clusters": 17261,
+  "constrained_clusters": 26126,
+  "free_clusters": 17257,
   "conflicts": 0,
   "c1_gaps": 0,
   "entities": 44094,
@@ -44,9 +44,9 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 13592,
-   "clusters_pinned": 7025,
-   "clusters_free": 29791,
+   "clusters_constrained": 13600,
+   "clusters_pinned": 7033,
+   "clusters_free": 29783,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 0,
@@ -66,9 +66,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 13592,
-   "clusters_pinned": 7025,
-   "clusters_free": 29791,
+   "clusters_constrained": 13600,
+   "clusters_pinned": 7033,
+   "clusters_free": 29783,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 0,
@@ -88,9 +88,9 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 14158,
-   "clusters_pinned": 7034,
-   "clusters_free": 29218,
+   "clusters_constrained": 14166,
+   "clusters_pinned": 7042,
+   "clusters_free": 29210,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 7,
@@ -110,9 +110,9 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1297,
    "entities_touched": 1297,
-   "clusters_constrained": 14217,
-   "clusters_pinned": 8244,
-   "clusters_free": 29159,
+   "clusters_constrained": 14225,
+   "clusters_pinned": 8252,
+   "clusters_free": 29151,
    "pinned_classes": 533,
    "forced_classes": 533,
    "conflicts": 7,
@@ -132,9 +132,9 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 15008,
-   "clusters_pinned": 8385,
-   "clusters_free": 28368,
+   "clusters_constrained": 15016,
+   "clusters_pinned": 8393,
+   "clusters_free": 28360,
    "pinned_classes": 546,
    "forced_classes": 546,
    "conflicts": 7,
@@ -154,9 +154,9 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 15008,
-   "clusters_pinned": 8385,
-   "clusters_free": 28368,
+   "clusters_constrained": 15016,
+   "clusters_pinned": 8393,
+   "clusters_free": 28360,
    "pinned_classes": 546,
    "forced_classes": 546,
    "conflicts": 7,
@@ -176,9 +176,9 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 15079,
-   "clusters_pinned": 8447,
-   "clusters_free": 28294,
+   "clusters_constrained": 15087,
+   "clusters_pinned": 8455,
+   "clusters_free": 28286,
    "pinned_classes": 552,
    "forced_classes": 552,
    "conflicts": 10,
@@ -198,9 +198,9 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 15217,
-   "clusters_pinned": 8601,
-   "clusters_free": 28156,
+   "clusters_constrained": 15225,
+   "clusters_pinned": 8609,
+   "clusters_free": 28148,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 10,
@@ -220,9 +220,9 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
    "entities_touched": 6146,
-   "clusters_constrained": 15468,
-   "clusters_pinned": 8602,
-   "clusters_free": 27905,
+   "clusters_constrained": 15476,
+   "clusters_pinned": 8610,
+   "clusters_free": 27897,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 10,
@@ -242,9 +242,9 @@
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
    "entities_touched": 16065,
-   "clusters_constrained": 25731,
-   "clusters_pinned": 9597,
-   "clusters_free": 17598,
+   "clusters_constrained": 25735,
+   "clusters_pinned": 9604,
+   "clusters_free": 17594,
    "pinned_classes": 563,
    "forced_classes": 563,
    "conflicts": 54,
@@ -264,9 +264,9 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 391,
    "entities_touched": 3659,
-   "clusters_constrained": 26057,
-   "clusters_pinned": 9840,
-   "clusters_free": 17256,
+   "clusters_constrained": 26061,
+   "clusters_pinned": 9847,
+   "clusters_free": 17252,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 70,
@@ -286,9 +286,9 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 26052,
-   "clusters_pinned": 9846,
-   "clusters_free": 17256,
+   "clusters_constrained": 26056,
+   "clusters_pinned": 9853,
+   "clusters_free": 17252,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 75,
@@ -308,9 +308,9 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 1311,
    "entities_touched": 6680,
-   "clusters_constrained": 26018,
-   "clusters_pinned": 9853,
-   "clusters_free": 17256,
+   "clusters_constrained": 26022,
+   "clusters_pinned": 9860,
+   "clusters_free": 17252,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 109,
@@ -329,10 +329,10 @@
  "chosen_classes": [
   {
    "class": "AbstractClass",
-   "clusters": 9175,
-   "entities": 9229,
+   "clusters": 9172,
+   "entities": 9226,
    "families": {
-    "C10": 8744,
+    "C10": 8741,
     "C11": 589,
     "C18": 45,
     "C3": 348,
@@ -386,11 +386,11 @@
   },
   {
    "class": "ConvertClass",
-   "clusters": 618,
-   "entities": 636,
+   "clusters": 619,
+   "entities": 637,
    "families": {
     "C18": 243,
-    "EXACT": 161,
+    "EXACT": 162,
     "C11": 73,
     "C10": 519,
     "C3": 28,
@@ -449,13 +449,13 @@
   },
   {
    "class": "HouseClass",
-   "clusters": 349,
-   "entities": 362,
+   "clusters": 351,
+   "entities": 364,
    "families": {
     "C11": 117,
     "C18": 84,
-    "C10": 194,
-    "EXACT": 173,
+    "C10": 196,
+    "EXACT": 175,
     "C3": 24,
     "C6": 2,
     "C9": 20,
@@ -547,7 +547,7 @@
    "entities": 200,
    "families": {
     "C9": 17,
-    "EXACT": 27,
+    "EXACT": 28,
     "C3": 10,
     "C6": 5,
     "C10": 188,
@@ -765,15 +765,15 @@
   },
   {
    "class": "AnimClass",
-   "clusters": 85,
-   "entities": 103,
+   "clusters": 86,
+   "entities": 104,
    "families": {
     "C3": 14,
     "C6": 3,
-    "C10": 25,
+    "C10": 26,
     "C11": 31,
     "C18": 19,
-    "EXACT": 49,
+    "EXACT": 50,
     "C5": 16,
     "C9": 59,
     "C15": 35
@@ -1023,6 +1023,21 @@
    }
   },
   {
+   "class": "MapSeedClass",
+   "clusters": 55,
+   "entities": 57,
+   "families": {
+    "C18": 42,
+    "EXACT": 49,
+    "C10": 25,
+    "C3": 5,
+    "C11": 13,
+    "C6": 1,
+    "C9": 9,
+    "C5": 5
+   }
+  },
+  {
    "class": "HouseTypeClass",
    "clusters": 54,
    "entities": 55,
@@ -1034,21 +1049,6 @@
     "C6": 4,
     "C9": 14,
     "C5": 3
-   }
-  },
-  {
-   "class": "MapSeedClass",
-   "clusters": 54,
-   "entities": 56,
-   "families": {
-    "C18": 42,
-    "EXACT": 48,
-    "C10": 25,
-    "C3": 5,
-    "C11": 13,
-    "C6": 1,
-    "C9": 9,
-    "C5": 5
    }
   },
   {
@@ -2075,6 +2075,15 @@
    }
   },
   {
+   "class": "SessionClass",
+   "clusters": 25,
+   "entities": 28,
+   "families": {
+    "C10": 6,
+    "EXACT": 6
+   }
+  },
+  {
    "class": "HoverLocomotionClass",
    "clusters": 25,
    "entities": 26,
@@ -2113,15 +2122,6 @@
     "C18": 2,
     "C10": 13,
     "C11": 3
-   }
-  },
-  {
-   "class": "SessionClass",
-   "clusters": 24,
-   "entities": 27,
-   "families": {
-    "C10": 6,
-    "EXACT": 5
    }
   },
   {
@@ -3626,6 +3626,20 @@
    "families": {}
   },
   {
+   "class": "ToggleClass",
+   "clusters": 7,
+   "entities": 8,
+   "families": {
+    "C11": 1,
+    "C9": 2,
+    "C10": 5,
+    "C15": 1,
+    "C6": 1,
+    "C18": 3,
+    "EXACT": 5
+   }
+  },
+  {
    "class": "MSBitPrintAnim",
    "clusters": 7,
    "entities": 7,
@@ -3779,20 +3793,6 @@
    "families": {
     "C10": 1,
     "EXACT": 1
-   }
-  },
-  {
-   "class": "ToggleClass",
-   "clusters": 6,
-   "entities": 7,
-   "families": {
-    "C11": 1,
-    "C9": 2,
-    "C10": 5,
-    "C15": 1,
-    "C6": 1,
-    "C18": 3,
-    "EXACT": 4
    }
   },
   {

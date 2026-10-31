@@ -286511,6 +286511,13 @@
 "obs": [],
 "ents": []
 },
+"G:A8B238": {
+"class": "SessionClass",
+"obs": [],
+"ents": [
+"G:A8B238"
+]
+},
 "P:541370:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -301020,9 +301027,11 @@
 "ents": []
 },
 "G:A9FAC4": {
-"class": "AbstractClass",
+"class": "AnimClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:A9FAC4"
+]
 },
 "G:A9FA48": {
 "class": "AbstractClass",
@@ -301030,14 +301039,18 @@
 "ents": []
 },
 "G:A9FACC": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:A9FACC"
+]
 },
 "G:A9FAC8": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:A9FAC8"
+]
 },
 "G:A9FA60": {
 "class": "DynamicVector",
@@ -304977,6 +304990,13 @@
 "obs": [],
 "ents": [
 "P:579B70:3"
+]
+},
+"G:ABDFD8": {
+"class": "MapSeedClass",
+"obs": [],
+"ents": [
+"G:ABDFD8"
 ]
 },
 "P:5A00C0:0": {
@@ -317766,6 +317786,13 @@
 "obs": [],
 "ents": [
 "P:69DE00:0"
+]
+},
+"G:B0B3A0": {
+"class": "ToggleClass",
+"obs": [],
+"ents": [
+"G:B0B3A0"
 ]
 },
 "P:653810:0": {
@@ -332619,6 +332646,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:B0FB88": {
+"class": "ConvertClass",
+"obs": [],
+"ents": [
+"G:B0FB88"
+]
 },
 "T:72E2D0": {
 "class": "AbstractClass",

@@ -2406,6 +2406,33 @@ def main():
     print("[C22] YRpp fn->class exact=%d (conflicts_with_binary=%d, pool=%d)"
           % (_c22_exact, _c22_conflict, len(_yrpp22)), flush=True)
 
+    # ---------------- C23：YRpp 全局变量类型 ----------------
+    # YRpp 的 `DEFINE_REFERENCE(Type, Name, 0xADDR)` 给出了全局变量地址与类型的权威对应。
+    # 对 `G:<addr>` 实体直接定类（外部参照，二进制冲突时丢弃）。
+    _c23_exact = _c23_conflict = 0
+    try:
+        _yrpp23 = (jload("anchors/yrpp_globals.json", {}) or {}).get("map") or {}
+    except Exception:
+        _yrpp23 = {}
+    for _a23s, _cn23 in _yrpp23.items():
+        _a23 = hx(_a23s)
+        _ci23 = resolve(_cn23)
+        if _a23 is None or _ci23 is None:
+            continue
+        _eid23 = "G:%X" % _a23
+        if _eid23 not in ents:
+            continue
+        if exact.get(_eid23):
+            if any(_ci != _ci23 for _ci, _src in exact[_eid23]):
+                _c23_conflict += 1
+            continue
+        exact[_eid23].append((_ci23, "C23:yrpp-global"))
+        exact_count["C23"] = exact_count.get("C23", 0) + 1
+        census["C23"] = census.get("C23", 0) + 1
+        _c23_exact += 1
+    print("[C23] YRpp global types exact=%d (conflicts=%d, pool=%d)"
+          % (_c23_exact, _c23_conflict, len(_yrpp23)), flush=True)
+
     # ---------------- C21：单函数自己的访问集合 vs 类布局 ----------------
     # C18 用的是「整簇观测并集」，会把同簇里多个函数的访问混在一起，掩盖单函数的指纹。
     # 这里对**每个函数**单独取它在 this 上的 (offset,width) 集合，要求某个类的布局
