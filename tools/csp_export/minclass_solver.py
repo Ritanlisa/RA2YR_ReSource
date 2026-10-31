@@ -2376,6 +2376,36 @@ def main():
     print("[C19] ctor-argument exact=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
           % (_c19_exact, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
 
+    # ---------------- C22：YRpp 外部参照（函数地址 -> 类）----------------
+    # 用户批准的外部参照：YRpp 头文件里每个虚函数都写明 `JMP_THIS(0xADDR)` 与所属类，
+    # 是社区长期维护的权威映射。优先级低于二进制（C4/C15/C11b），仅在无既有身份时使用；
+    # 与既有身份冲突时丢弃并计数（二进制优先）。
+    _c22_exact = _c22_conflict = 0
+    try:
+        _yrpp22 = (jload("anchors/yrpp_fn_class.json", {}) or {}).get("map") or {}
+    except Exception:
+        _yrpp22 = {}
+    for _a22s, _cn22 in _yrpp22.items():
+        _a22 = hx(_a22s)
+        if _a22 is None:
+            continue
+        _ci22 = resolve(_cn22)
+        if _ci22 is None:
+            continue
+        _eid22 = "T:%X" % _a22
+        if _eid22 not in ents:
+            continue
+        if exact.get(_eid22):
+            if any(_ci != _ci22 for _ci, _src in exact[_eid22]):
+                _c22_conflict += 1          # 二进制身份优先，丢弃外部参照
+            continue
+        exact[_eid22].append((_ci22, "C22:yrpp"))
+        exact_count["C22"] = exact_count.get("C22", 0) + 1
+        census["C22"] = census.get("C22", 0) + 1
+        _c22_exact += 1
+    print("[C22] YRpp fn->class exact=%d (conflicts_with_binary=%d, pool=%d)"
+          % (_c22_exact, _c22_conflict, len(_yrpp22)), flush=True)
+
     # ---------------- C21：单函数自己的访问集合 vs 类布局 ----------------
     # C18 用的是「整簇观测并集」，会把同簇里多个函数的访问混在一起，掩盖单函数的指纹。
     # 这里对**每个函数**单独取它在 this 上的 (offset,width) 集合，要求某个类的布局

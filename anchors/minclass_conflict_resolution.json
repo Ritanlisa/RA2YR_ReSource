@@ -292,74 +292,6 @@
   "class_after": null
  },
  {
-  "cluster": "R:4E13F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 14,
-  "class_after": null
- },
- {
-  "cluster": "R:4E1450:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 14,
-  "class_after": null
- },
- {
-  "cluster": "R:4E1460:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 14,
-  "class_after": null
- },
- {
-  "cluster": "R:4E1530:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4F54A0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 101,
-  "class_after": null
- },
- {
-  "cluster": "R:4F9A50:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 103,
-  "class_after": null
- },
- {
-  "cluster": "R:4FE3E0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 101,
-  "class_after": null
- },
- {
   "cluster": "R:500B40:ecx",
   "dropped_family": "C10",
   "remaining_families": [
@@ -412,16 +344,6 @@
    "C1"
   ],
   "domain_after": 108,
-  "class_after": null
- },
- {
-  "cluster": "P:5163B0:1",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 6,
   "class_after": null
  },
  {
@@ -717,31 +639,12 @@
   "class_after": null
  },
  {
-  "cluster": "P:7D5408:1",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:7D5408:1",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 490,
-  "class_after": null
- },
- {
   "cluster": "M:69E500:this:0x18",
   "dropped_family": "C11",
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 536,
+  "domain_after": 537,
   "class_after": null
  },
  {
@@ -750,16 +653,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 536,
-  "class_after": null
- },
- {
-  "cluster": "R:6A6A00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 109,
+  "domain_after": 537,
   "class_after": null
  },
  {
@@ -1025,16 +919,6 @@
  },
  {
   "cluster": "R:70C5F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 4,
-  "class_after": null
- },
- {
-  "cluster": "R:70E1A0:ecx",
   "dropped_family": "C18",
   "remaining_families": [
    "C1",

@@ -226,7 +226,7 @@
 "MouseClass": {
 "member_count": 23,
 "extent": 344,
-"clusters": 56,
+"clusters": 57,
 "members": [
 [
 0,
@@ -751,7 +751,7 @@
 "DSurface": {
 "member_count": 11,
 "extent": 36,
-"clusters": 41,
+"clusters": 40,
 "members": [
 [
 0,
@@ -836,7 +836,7 @@
 "Surface": {
 "member_count": 1,
 "extent": 4,
-"clusters": 4,
+"clusters": 5,
 "members": [
 [
 0,
@@ -845,9 +845,9 @@
 ]
 },
 "AircraftClass": {
-"member_count": 93,
+"member_count": 92,
 "extent": 1750,
-"clusters": 242,
+"clusters": 238,
 "members": [
 [
 0,
@@ -931,10 +931,6 @@
 ],
 [
 268,
-4
-],
-[
-276,
 4
 ],
 [
@@ -1226,7 +1222,7 @@
 "IsometricTileClass": {
 "member_count": 11,
 "extent": 176,
-"clusters": 35,
+"clusters": 32,
 "members": [
 [
 0,
@@ -1270,6 +1266,149 @@
 ],
 [
 172,
+4
+]
+]
+},
+"ObjectClass": {
+"member_count": 34,
+"extent": 172,
+"clusters": 13,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+20,
+1
+],
+[
+36,
+4
+],
+[
+40,
+4
+],
+[
+44,
+4
+],
+[
+48,
+4
+],
+[
+52,
+4
+],
+[
+56,
+4
+],
+[
+100,
+4
+],
+[
+104,
+1
+],
+[
+108,
+4
+],
+[
+112,
+4
+],
+[
+116,
+1
+],
+[
+120,
+4
+],
+[
+124,
+4
+],
+[
+128,
+1
+],
+[
+129,
+1
+],
+[
+130,
+1
+],
+[
+131,
+1
+],
+[
+132,
+1
+],
+[
+136,
+4
+],
+[
+140,
+1
+],
+[
+141,
+1
+],
+[
+142,
+1
+],
+[
+143,
+1
+],
+[
+144,
+1
+],
+[
+148,
+4
+],
+[
+152,
+1
+],
+[
+153,
+1
+],
+[
+156,
+4
+],
+[
+168,
 4
 ]
 ]
@@ -1803,7 +1942,7 @@
 "AnimClass": {
 "member_count": 53,
 "extent": 415,
-"clusters": 63,
+"clusters": 62,
 "members": [
 [
 0,
@@ -4382,7 +4521,7 @@
 "CarryoverClass": {
 "member_count": 10,
 "extent": 32,
-"clusters": 11,
+"clusters": 6,
 "members": [
 [
 0,
@@ -4510,13 +4649,21 @@
 ]
 ]
 },
-"StaticButtonClass": {
-"member_count": 12,
-"extent": 56,
-"clusters": 19,
+"GadgetClass": {
+"member_count": 11,
+"extent": 36,
+"clusters": 29,
 "members": [
 [
 0,
+4
+],
+[
+4,
+4
+],
+[
+8,
 4
 ],
 [
@@ -4549,18 +4696,6 @@
 ],
 [
 32,
-4
-],
-[
-36,
-4
-],
-[
-48,
-4
-],
-[
-52,
 4
 ]
 ]
@@ -6411,7 +6546,7 @@
 "Dial8Class": {
 "member_count": 42,
 "extent": 192,
-"clusters": 13,
+"clusters": 4,
 "members": [
 [
 0,
@@ -6932,7 +7067,7 @@
 "DropPodLocomotionClass": {
 "member_count": 5,
 "extent": 48,
-"clusters": 11,
+"clusters": 9,
 "members": [
 [
 0,
@@ -6957,9 +7092,9 @@
 ]
 },
 "EditClass": {
-"member_count": 11,
+"member_count": 10,
 "extent": 72,
-"clusters": 5,
+"clusters": 3,
 "members": [
 [
 0,
@@ -6971,10 +7106,6 @@
 ],
 [
 24,
-4
-],
-[
-32,
 4
 ],
 [
@@ -7352,9 +7483,9 @@
 ]
 },
 "FootClass": {
-"member_count": 151,
+"member_count": 152,
 "extent": 1736,
-"clusters": 42,
+"clusters": 44,
 "members": [
 [
 0,
@@ -7414,6 +7545,10 @@
 ],
 [
 188,
+4
+],
+[
+276,
 4
 ],
 [
@@ -7965,7 +8100,7 @@
 "InfantryClass": {
 "member_count": 128,
 "extent": 3477,
-"clusters": 87,
+"clusters": 86,
 "members": [
 [
 0,
@@ -8484,7 +8619,7 @@
 "UnitClass": {
 "member_count": 100,
 "extent": 3607,
-"clusters": 79,
+"clusters": 80,
 "members": [
 [
 0,
@@ -8884,68 +9019,6 @@
 ],
 [
 3606,
-1
-]
-]
-},
-"GadgetClass": {
-"member_count": 11,
-"extent": 36,
-"clusters": 3,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-28,
-1
-],
-[
-29,
-1
-],
-[
-30,
-1
-],
-[
-32,
-4
-]
-]
-},
-"RTacticalClass@RadarClass": {
-"member_count": 1,
-"extent": 29,
-"clusters": 3,
-"members": [
-[
-28,
 1
 ]
 ]
@@ -11376,7 +11449,7 @@
 "LinkClass": {
 "member_count": 3,
 "extent": 12,
-"clusters": 2,
+"clusters": 7,
 "members": [
 [
 0,
@@ -13182,153 +13255,10 @@
 ]
 ]
 },
-"ObjectClass": {
-"member_count": 34,
-"extent": 172,
-"clusters": 8,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-20,
-1
-],
-[
-36,
-4
-],
-[
-40,
-4
-],
-[
-44,
-4
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-56,
-4
-],
-[
-100,
-4
-],
-[
-104,
-1
-],
-[
-108,
-4
-],
-[
-112,
-4
-],
-[
-116,
-1
-],
-[
-120,
-4
-],
-[
-124,
-4
-],
-[
-128,
-1
-],
-[
-129,
-1
-],
-[
-130,
-1
-],
-[
-131,
-1
-],
-[
-132,
-1
-],
-[
-136,
-4
-],
-[
-140,
-1
-],
-[
-141,
-1
-],
-[
-142,
-1
-],
-[
-143,
-1
-],
-[
-144,
-1
-],
-[
-148,
-4
-],
-[
-152,
-1
-],
-[
-153,
-1
-],
-[
-156,
-4
-],
-[
-168,
-4
-]
-]
-},
 "TechnoClass": {
 "member_count": 243,
 "extent": 1747,
-"clusters": 51,
+"clusters": 54,
 "members": [
 [
 0,
@@ -14500,37 +14430,6 @@
 [
 410,
 1
-]
-]
-},
-"SmudgeClass": {
-"member_count": 6,
-"extent": 176,
-"clusters": 12,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-116,
-1
-],
-[
-172,
-4
 ]
 ]
 },
@@ -17566,7 +17465,7 @@
 "RocketLocomotionClass": {
 "member_count": 15,
 "extent": 92,
-"clusters": 11,
+"clusters": 12,
 "members": [
 [
 0,
@@ -18141,6 +18040,37 @@
 ],
 [
 96,
+4
+]
+]
+},
+"SmudgeClass": {
+"member_count": 6,
+"extent": 176,
+"clusters": 10,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+116,
+1
+],
+[
+172,
 4
 ]
 ]
@@ -19387,6 +19317,45 @@
 ],
 [
 4,
+4
+]
+]
+},
+"StaticButtonClass": {
+"member_count": 8,
+"extent": 56,
+"clusters": 6,
+"members": [
+[
+0,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+24,
+4
+],
+[
+36,
+4
+],
+[
+48,
+4
+],
+[
+52,
 4
 ]
 ]
@@ -20641,7 +20610,7 @@
 "TeleportLocomotionClass": {
 "member_count": 12,
 "extent": 626,
-"clusters": 9,
+"clusters": 10,
 "members": [
 [
 0,
@@ -21521,7 +21490,7 @@
 "TextLabelClass": {
 "member_count": 14,
 "extent": 76,
-"clusters": 5,
+"clusters": 4,
 "members": [
 [
 0,
@@ -23695,6 +23664,12 @@
 "member_count": 0,
 "extent": 0,
 "clusters": 3,
+"members": []
+},
+"RTacticalClass@RadarClass": {
+"member_count": 0,
+"extent": 0,
+"clusters": 2,
 "members": []
 },
 "SBGadgetClass@SidebarClass": {
