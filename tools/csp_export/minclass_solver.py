@@ -2433,6 +2433,54 @@ def main():
     print("[C23] YRpp global types exact=%d (conflicts=%d, pool=%d)"
           % (_c23_exact, _c23_conflict, len(_yrpp23)), flush=True)
 
+    # ---------------- C24：全局变量的具体类 ----------------
+    # 全局变量是**具体实例**，不是基类句柄：若某全局被当作 this 传给已知类 C 的方法，
+    # 该全局就是 C（或 C 的后代）。因此在它所有已知被调方类中取**最派生者**。
+    # 与函数的方法归属方向相反（函数取最基类，全局取最派生类），依据是"实例 vs 声明"。
+    _c24_exact = _c24_amb = 0
+    _g_callees = collections.defaultdict(set)
+    for _e24 in raw:
+        if _e24.get("type") != "CALL_ARG":
+            continue
+        _to24 = str(_e24.get("to") or "")
+        if not _to24.endswith(":this"):
+            continue
+        _fr24 = str(_e24.get("from") or "")
+        if not (_fr24.startswith("offset ") or _fr24.startswith("dword_") or _fr24.startswith("g_")):
+            continue
+        _g24 = ent_id(_fr24)
+        if not _g24 or not _g24.startswith("G:"):
+            continue
+        _a24 = hx(_to24.split(":")[0])
+        if _a24 is None:
+            continue
+        _cls24 = _fn_class_seed.get(_a24) if "_fn_class_seed" in dir() else None
+        if _cls24 is None:
+            _lst24 = exact.get("T:%X" % _a24)
+            if _lst24:
+                _cs24 = {_ci for _ci, _src in _lst24}
+                if len(_cs24) == 1:
+                    _cls24 = next(iter(_cs24))
+        if _cls24 is not None:
+            _g_callees[_g24].add(_cls24)
+    for _g24, _cs24 in _g_callees.items():
+        if _g24 not in ents or exact.get(_g24):
+            continue
+        _max24 = None
+        for _ci24 in _cs24:
+            if all(_ci24 == _cj or _cj in U["anc"][_ci24] for _cj in _cs24):
+                _max24 = _ci24
+                break
+        if _max24 is None:
+            _c24_amb += 1
+            continue
+        exact[_g24].append((_max24, "C24:global-instance"))
+        exact_count["C24"] = exact_count.get("C24", 0) + 1
+        census["C24"] = census.get("C24", 0) + 1
+        _c24_exact += 1
+    print("[C24] global-instance exact=%d (ambiguous=%d, globals_with_known_callees=%d)"
+          % (_c24_exact, _c24_amb, len(_g_callees)), flush=True)
+
     # ---------------- C21：单函数自己的访问集合 vs 类布局 ----------------
     # C18 用的是「整簇观测并集」，会把同簇里多个函数的访问混在一起，掩盖单函数的指纹。
     # 这里对**每个函数**单独取它在 this 上的 (offset,width) 集合，要求某个类的布局

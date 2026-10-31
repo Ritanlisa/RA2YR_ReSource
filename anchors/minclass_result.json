@@ -31,8 +31,8 @@
   "K_min": 570,
   "K_upper": 570,
   "lower_bound": 570,
-  "constrained_clusters": 26126,
-  "free_clusters": 17257,
+  "constrained_clusters": 26208,
+  "free_clusters": 17175,
   "conflicts": 0,
   "c1_gaps": 0,
   "entities": 44094,
@@ -44,9 +44,9 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 13600,
-   "clusters_pinned": 7033,
-   "clusters_free": 29783,
+   "clusters_constrained": 14341,
+   "clusters_pinned": 7774,
+   "clusters_free": 29042,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 0,
@@ -66,9 +66,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 13600,
-   "clusters_pinned": 7033,
-   "clusters_free": 29783,
+   "clusters_constrained": 14341,
+   "clusters_pinned": 7774,
+   "clusters_free": 29042,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 0,
@@ -88,9 +88,9 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 14166,
-   "clusters_pinned": 7042,
-   "clusters_free": 29210,
+   "clusters_constrained": 14907,
+   "clusters_pinned": 7783,
+   "clusters_free": 28469,
    "pinned_classes": 506,
    "forced_classes": 506,
    "conflicts": 7,
@@ -110,9 +110,9 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1297,
    "entities_touched": 1297,
-   "clusters_constrained": 14225,
-   "clusters_pinned": 8252,
-   "clusters_free": 29151,
+   "clusters_constrained": 14966,
+   "clusters_pinned": 8993,
+   "clusters_free": 28410,
    "pinned_classes": 533,
    "forced_classes": 533,
    "conflicts": 7,
@@ -132,9 +132,9 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 15016,
-   "clusters_pinned": 8393,
-   "clusters_free": 28360,
+   "clusters_constrained": 15757,
+   "clusters_pinned": 9134,
+   "clusters_free": 27619,
    "pinned_classes": 546,
    "forced_classes": 546,
    "conflicts": 7,
@@ -154,9 +154,9 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 15016,
-   "clusters_pinned": 8393,
-   "clusters_free": 28360,
+   "clusters_constrained": 15757,
+   "clusters_pinned": 9134,
+   "clusters_free": 27619,
    "pinned_classes": 546,
    "forced_classes": 546,
    "conflicts": 7,
@@ -176,9 +176,9 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 15087,
-   "clusters_pinned": 8455,
-   "clusters_free": 28286,
+   "clusters_constrained": 15828,
+   "clusters_pinned": 9196,
+   "clusters_free": 27545,
    "pinned_classes": 552,
    "forced_classes": 552,
    "conflicts": 10,
@@ -198,9 +198,9 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 15225,
-   "clusters_pinned": 8609,
-   "clusters_free": 28148,
+   "clusters_constrained": 15966,
+   "clusters_pinned": 9350,
+   "clusters_free": 27407,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 10,
@@ -220,9 +220,9 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
    "entities_touched": 6146,
-   "clusters_constrained": 15476,
-   "clusters_pinned": 8610,
-   "clusters_free": 27897,
+   "clusters_constrained": 16217,
+   "clusters_pinned": 9351,
+   "clusters_free": 27156,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 10,
@@ -242,9 +242,9 @@
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
    "entities_touched": 16065,
-   "clusters_constrained": 25735,
-   "clusters_pinned": 9604,
-   "clusters_free": 17594,
+   "clusters_constrained": 25817,
+   "clusters_pinned": 10344,
+   "clusters_free": 17512,
    "pinned_classes": 563,
    "forced_classes": 563,
    "conflicts": 54,
@@ -264,9 +264,9 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 391,
    "entities_touched": 3659,
-   "clusters_constrained": 26061,
-   "clusters_pinned": 9847,
-   "clusters_free": 17252,
+   "clusters_constrained": 26143,
+   "clusters_pinned": 10587,
+   "clusters_free": 17170,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 70,
@@ -286,9 +286,9 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 26056,
-   "clusters_pinned": 9853,
-   "clusters_free": 17252,
+   "clusters_constrained": 26138,
+   "clusters_pinned": 10593,
+   "clusters_free": 17170,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 75,
@@ -308,9 +308,9 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 1311,
    "entities_touched": 6680,
-   "clusters_constrained": 26022,
-   "clusters_pinned": 9860,
-   "clusters_free": 17252,
+   "clusters_constrained": 26104,
+   "clusters_pinned": 10600,
+   "clusters_free": 17170,
    "pinned_classes": 567,
    "forced_classes": 567,
    "conflicts": 109,
@@ -329,10 +329,10 @@
  "chosen_classes": [
   {
    "class": "AbstractClass",
-   "clusters": 9172,
-   "entities": 9226,
+   "clusters": 8519,
+   "entities": 8573,
    "families": {
-    "C10": 8741,
+    "C10": 8088,
     "C11": 589,
     "C18": 45,
     "C3": 348,
@@ -385,14 +385,24 @@
    }
   },
   {
+   "class": "StringTable",
+   "clusters": 668,
+   "entities": 668,
+   "families": {
+    "EXACT": 650,
+    "C10": 647,
+    "C5": 18
+   }
+  },
+  {
    "class": "ConvertClass",
-   "clusters": 619,
-   "entities": 637,
+   "clusters": 621,
+   "entities": 639,
    "families": {
     "C18": 243,
-    "EXACT": 162,
+    "EXACT": 169,
     "C11": 73,
-    "C10": 519,
+    "C10": 517,
     "C3": 28,
     "C6": 13,
     "C9": 1,
@@ -832,7 +842,7 @@
     "C10": 41,
     "C11": 23,
     "C18": 63,
-    "EXACT": 28,
+    "EXACT": 29,
     "C3": 7,
     "C6": 1,
     "C9": 4,
@@ -909,18 +919,6 @@
    }
   },
   {
-   "class": "CommandClass",
-   "clusters": 67,
-   "entities": 67,
-   "families": {
-    "C6": 47,
-    "C9": 48,
-    "C10": 48,
-    "EXACT": 48,
-    "C5": 18
-   }
-  },
-  {
    "class": "LinkClass",
    "clusters": 65,
    "entities": 66,
@@ -949,6 +947,21 @@
    }
   },
   {
+   "class": "ObjectClass",
+   "clusters": 61,
+   "entities": 62,
+   "families": {
+    "C10": 40,
+    "C11": 18,
+    "C18": 35,
+    "C9": 8,
+    "C15": 10,
+    "EXACT": 33,
+    "C3": 17,
+    "C6": 3
+   }
+  },
+  {
    "class": "MSShapeAnim",
    "clusters": 61,
    "entities": 64,
@@ -960,21 +973,6 @@
     "C6": 2,
     "EXACT": 4,
     "C9": 3
-   }
-  },
-  {
-   "class": "ObjectClass",
-   "clusters": 60,
-   "entities": 61,
-   "families": {
-    "C10": 39,
-    "C11": 18,
-    "C18": 35,
-    "C9": 8,
-    "C15": 10,
-    "EXACT": 32,
-    "C3": 17,
-    "C6": 3
    }
   },
   {
@@ -1222,6 +1220,17 @@
    }
   },
   {
+   "class": "CommandClass",
+   "clusters": 49,
+   "entities": 49,
+   "families": {
+    "C6": 47,
+    "C9": 48,
+    "C10": 48,
+    "EXACT": 48
+   }
+  },
+  {
    "class": "NeuronClass",
    "clusters": 48,
    "entities": 48,
@@ -1333,6 +1342,16 @@
     "C9": 8,
     "C11": 4,
     "C3": 2
+   }
+  },
+  {
+   "class": "VoxClass",
+   "clusters": 44,
+   "entities": 44,
+   "families": {
+    "C10": 2,
+    "EXACT": 42,
+    "C5": 2
    }
   },
   {
@@ -1699,6 +1718,16 @@
    }
   },
   {
+   "class": "FileSystem",
+   "clusters": 33,
+   "entities": 33,
+   "families": {
+    "C10": 1,
+    "EXACT": 30,
+    "C5": 3
+   }
+  },
+  {
    "class": "TerrainClass",
    "clusters": 32,
    "entities": 35,
@@ -1812,6 +1841,18 @@
    }
   },
   {
+   "class": "ScenarioClass",
+   "clusters": 30,
+   "entities": 31,
+   "families": {
+    "C7": 1,
+    "C10": 11,
+    "EXACT": 19,
+    "C3": 1,
+    "C11": 1
+   }
+  },
+  {
    "class": "VQMovieHandle",
    "clusters": 30,
    "entities": 31,
@@ -1859,18 +1900,6 @@
     "EXACT": 9,
     "C15": 1,
     "C9": 5
-   }
-  },
-  {
-   "class": "ScenarioClass",
-   "clusters": 29,
-   "entities": 30,
-   "families": {
-    "C7": 1,
-    "C10": 10,
-    "EXACT": 18,
-    "C3": 1,
-    "C11": 1
    }
   },
   {
@@ -1931,21 +1960,6 @@
    }
   },
   {
-   "class": "CaptureManagerClass",
-   "clusters": 28,
-   "entities": 29,
-   "families": {
-    "C6": 3,
-    "C10": 19,
-    "C18": 13,
-    "EXACT": 17,
-    "C3": 1,
-    "C11": 7,
-    "C9": 7,
-    "C5": 2
-   }
-  },
-  {
    "class": "NullModemClass",
    "clusters": 28,
    "entities": 28,
@@ -1970,6 +1984,21 @@
     "EXACT": 22,
     "C6": 2,
     "C9": 9
+   }
+  },
+  {
+   "class": "ShapeButtonClass",
+   "clusters": 27,
+   "entities": 29,
+   "families": {
+    "C10": 11,
+    "C6": 3,
+    "C18": 10,
+    "EXACT": 26,
+    "C5": 1,
+    "C9": 4,
+    "C3": 1,
+    "C15": 1
    }
   },
   {
@@ -2014,6 +2043,20 @@
     "C11": 10,
     "C6": 2,
     "EXACT": 18
+   }
+  },
+  {
+   "class": "CaptureManagerClass",
+   "clusters": 26,
+   "entities": 27,
+   "families": {
+    "C6": 3,
+    "C10": 19,
+    "C18": 13,
+    "EXACT": 17,
+    "C3": 1,
+    "C11": 7,
+    "C9": 7
    }
   },
   {
@@ -2344,21 +2387,6 @@
    }
   },
   {
-   "class": "ShapeButtonClass",
-   "clusters": 21,
-   "entities": 23,
-   "families": {
-    "C10": 11,
-    "C6": 3,
-    "C18": 10,
-    "EXACT": 20,
-    "C5": 1,
-    "C9": 4,
-    "C3": 1,
-    "C15": 1
-   }
-  },
-  {
    "class": "SliderClass",
    "clusters": 21,
    "entities": 25,
@@ -2402,6 +2430,21 @@
    "families": {
     "C10": 1,
     "C11": 1
+   }
+  },
+  {
+   "class": "EditClass",
+   "clusters": 20,
+   "entities": 22,
+   "families": {
+    "C18": 11,
+    "EXACT": 14,
+    "C11": 2,
+    "C3": 2,
+    "C6": 3,
+    "C10": 12,
+    "C9": 1,
+    "C5": 5
    }
   },
   {
@@ -2472,21 +2515,6 @@
     "C9": 4,
     "C3": 4,
     "C15": 1
-   }
-  },
-  {
-   "class": "EditClass",
-   "clusters": 19,
-   "entities": 21,
-   "families": {
-    "C18": 11,
-    "EXACT": 13,
-    "C11": 2,
-    "C3": 2,
-    "C6": 3,
-    "C10": 11,
-    "C9": 1,
-    "C5": 5
    }
   },
   {
@@ -2677,6 +2705,17 @@
    }
   },
   {
+   "class": "AudioController",
+   "clusters": 16,
+   "entities": 17,
+   "families": {
+    "C10": 7,
+    "C11": 6,
+    "C18": 7,
+    "EXACT": 14
+   }
+  },
+  {
    "class": "TaskForceClass",
    "clusters": 16,
    "entities": 16,
@@ -2804,17 +2843,6 @@
    }
   },
   {
-   "class": "AudioController",
-   "clusters": 14,
-   "entities": 15,
-   "families": {
-    "C10": 7,
-    "C11": 6,
-    "C18": 7,
-    "EXACT": 12
-   }
-  },
-  {
    "class": "INILinkNode",
    "clusters": 14,
    "entities": 14,
@@ -2828,6 +2856,19 @@
    "clusters": 14,
    "entities": 14,
    "families": {}
+  },
+  {
+   "class": "GenericNode",
+   "clusters": 14,
+   "entities": 14,
+   "families": {
+    "C6": 3,
+    "C10": 12,
+    "C18": 3,
+    "EXACT": 14,
+    "C9": 2,
+    "C11": 2
+   }
   },
   {
    "class": "SlaveManagerClass",
@@ -3289,19 +3330,6 @@
    }
   },
   {
-   "class": "GenericNode",
-   "clusters": 9,
-   "entities": 9,
-   "families": {
-    "C6": 3,
-    "C10": 7,
-    "C18": 3,
-    "EXACT": 9,
-    "C9": 2,
-    "C11": 2
-   }
-  },
-  {
    "class": "MSFadeAnim",
    "clusters": 9,
    "entities": 10,
@@ -3454,6 +3482,19 @@
    }
   },
   {
+   "class": "LayerClass",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "C9": 2,
+    "C18": 2,
+    "EXACT": 6,
+    "C3": 2,
+    "C10": 2,
+    "C5": 2
+   }
+  },
+  {
    "class": "LocomotionClass",
    "clusters": 8,
    "entities": 8,
@@ -3542,6 +3583,15 @@
     "C18": 3,
     "EXACT": 4,
     "C3": 1
+   }
+  },
+  {
+   "class": "VocClass",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "EXACT": 7,
+    "C10": 1
    }
   },
   {
@@ -3658,19 +3708,6 @@
    "clusters": 7,
    "entities": 7,
    "families": {}
-  },
-  {
-   "class": "LayerClass",
-   "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C9": 2,
-    "C18": 2,
-    "EXACT": 5,
-    "C3": 2,
-    "C10": 1,
-    "C5": 2
-   }
   },
   {
    "class": "GraphicMenuShortcutItem",
@@ -3980,15 +4017,6 @@
     "EXACT": 3,
     "C11": 2,
     "C9": 1
-   }
-  },
-  {
-   "class": "VocClass",
-   "clusters": 6,
-   "entities": 6,
-   "families": {
-    "EXACT": 5,
-    "C10": 1
    }
   },
   {
@@ -6051,15 +6079,6 @@
    }
   },
   {
-   "class": "StringTable",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "EXACT": 4,
-    "C10": 1
-   }
-  },
-  {
    "class": "GameOption@WorldDominationTour",
    "clusters": 4,
    "entities": 6,
@@ -6084,15 +6103,6 @@
    }
   },
   {
-   "class": "VoxClass",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C10": 2,
-    "EXACT": 4
-   }
-  },
-  {
    "class": "ProgressTimer",
    "clusters": 4,
    "entities": 4,
@@ -6100,16 +6110,6 @@
     "C3": 1,
     "C11": 4,
     "EXACT": 1
-   }
-  },
-  {
-   "class": "FileSystem",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C10": 1,
-    "EXACT": 1,
-    "C5": 3
    }
   },
   {
@@ -6470,6 +6470,18 @@
    "entities": 3,
    "families": {
     "C5": 2
+   }
+  },
+  {
+   "class": "RandomStraw",
+   "clusters": 3,
+   "entities": 4,
+   "families": {
+    "C9": 1,
+    "EXACT": 3,
+    "C6": 1,
+    "C10": 2,
+    "C18": 1
    }
   },
   {
@@ -7047,18 +7059,6 @@
     "C10": 2,
     "EXACT": 2,
     "C9": 1
-   }
-  },
-  {
-   "class": "RandomStraw",
-   "clusters": 2,
-   "entities": 3,
-   "families": {
-    "C9": 1,
-    "EXACT": 2,
-    "C6": 1,
-    "C10": 2,
-    "C18": 1
    }
   },
   {

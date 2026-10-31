@@ -276948,9 +276948,11 @@
 "ents": []
 },
 "G:88719C": {
-"class": "AbstractClass",
+"class": "GenericNode",
 "obs": [],
-"ents": []
+"ents": [
+"G:88719C"
+]
 },
 "P:40E320:0": {
 "class": "AbstractClass",
@@ -276965,9 +276967,11 @@
 ]
 },
 "G:887224": {
-"class": "AbstractClass",
+"class": "GenericNode",
 "obs": [],
-"ents": []
+"ents": [
+"G:887224"
+]
 },
 "G:887218": {
 "class": "GenericNode",
@@ -276977,9 +276981,11 @@
 ]
 },
 "G:887144": {
-"class": "AbstractClass",
+"class": "GenericNode",
 "obs": [],
-"ents": []
+"ents": [
+"G:887144"
+]
 },
 "G:887138": {
 "class": "GenericNode",
@@ -276989,9 +276995,11 @@
 ]
 },
 "G:8870DC": {
-"class": "AbstractClass",
+"class": "GenericNode",
 "obs": [],
-"ents": []
+"ents": [
+"G:8870DC"
+]
 },
 "G:8870D0": {
 "class": "GenericNode",
@@ -277037,7 +277045,7 @@
 "ents": []
 },
 "G:887598": {
-"class": "ConvertClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "G:887598"
@@ -281536,9 +281544,11 @@
 "ents": []
 },
 "G:818AC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:818AC4"
+]
 },
 "G:818AD8": {
 "class": "AbstractClass",
@@ -281560,15 +281570,24 @@
 ]
 },
 "G:818AB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:818AB0"
+]
 },
 "R:752700:ecx": {
 "class": "VoxClass",
 "obs": [],
 "ents": [
 "T:752700"
+]
+},
+"G:818A9C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:818A9C"
 ]
 },
 "T:750920": {
@@ -281611,6 +281630,13 @@
 "obs": [],
 "ents": [
 "P:65FA70:0"
+]
+},
+"G:818A68": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:818A68"
 ]
 },
 "R:430F30:ecx": {
@@ -283507,6 +283533,13 @@
 "obs": [],
 "ents": []
 },
+"G:818E58": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:818E58"
+]
+},
 "P:703590:1": {
 "class": "IUnknown",
 "obs": [],
@@ -283705,6 +283738,13 @@
 "M:445F80:this:0xEA0"
 ]
 },
+"G:818F18": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:818F18"
+]
+},
 "P:6FFEC0:1": {
 "class": "AbstractClass",
 "obs": [],
@@ -283762,6 +283802,13 @@
 "obs": [],
 "ents": [
 "P:448070:0"
+]
+},
+"G:818FAC": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:818FAC"
 ]
 },
 "M:448260:this:0xDF8": {
@@ -283921,6 +283968,13 @@
 "obs": [],
 "ents": [
 "M:4496B0:this:0xDF8"
+]
+},
+"G:819030": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:819030"
 ]
 },
 "P:6AF580:0": {
@@ -284132,6 +284186,13 @@
 "obs": [],
 "ents": [
 "T:44F820"
+]
+},
+"G:8190C8": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8190C8"
 ]
 },
 "R:44FE60:ecx": {
@@ -284584,11 +284645,32 @@
 "obs": [],
 "ents": []
 },
+"G:8191E4": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8191E4"
+]
+},
 "P:50BC90:0": {
 "class": "AbstractClass",
 "obs": [],
 "ents": [
 "P:50BC90:0"
+]
+},
+"G:819198": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:819198"
+]
+},
+"G:81911C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:81911C"
 ]
 },
 "M:457630:this:0xDF8": {
@@ -284642,6 +284724,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:81926C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:81926C"
+]
 },
 "M:4585C0:this:0x684": {
 "class": "AbstractClass",
@@ -286220,9 +286309,11 @@
 ]
 },
 "G:81B454": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B454"
+]
 },
 "G:81B304": {
 "class": "AbstractClass",
@@ -286230,14 +286321,18 @@
 "ents": []
 },
 "G:81B448": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B448"
+]
 },
 "G:81B438": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B438"
+]
 },
 "P:60F760:0": {
 "class": "AbstractClass",
@@ -286300,9 +286395,11 @@
 ]
 },
 "G:81B2EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B2EC"
+]
 },
 "P:734E60:4": {
 "class": "IUnknown",
@@ -286348,9 +286445,11 @@
 ]
 },
 "G:81B42C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B42C"
+]
 },
 "T:5E2EF0": {
 "class": "AbstractClass",
@@ -286549,39 +286648,53 @@
 "ents": []
 },
 "G:81B470": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B470"
+]
 },
 "G:81B514": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B514"
+]
 },
 "G:81B500": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B500"
+]
 },
 "G:81B4E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B4E8"
+]
 },
 "G:81B4D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B4D0"
+]
 },
 "G:81B4B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B4B8"
+]
 },
 "G:81B4AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81B4AC"
+]
 },
 "M:470D30:this:0x60": {
 "class": "BuildingTypeClass",
@@ -288083,9 +288196,11 @@
 "ents": []
 },
 "G:81C1D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81C1D4"
+]
 },
 "R:623CD0:ecx": {
 "class": "AbstractClass",
@@ -289032,6 +289147,27 @@
 "T:74FFC0"
 ]
 },
+"G:81CEB8": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:81CEB8"
+]
+},
+"G:81CE80": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:81CE80"
+]
+},
+"G:81CE40": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:81CE40"
+]
+},
 "P:4834A0:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -289708,9 +289844,11 @@
 "ents": []
 },
 "G:81D4E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81D4E8"
+]
 },
 "G:81D4F8": {
 "class": "AbstractClass",
@@ -289723,9 +289861,11 @@
 "ents": []
 },
 "G:81D58C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81D58C"
+]
 },
 "P:734E60:5": {
 "class": "AbstractClass",
@@ -289738,9 +289878,11 @@
 "ents": []
 },
 "G:81D57C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:81D57C"
+]
 },
 "P:7241A0:0": {
 "class": "AbstractClass",
@@ -290255,9 +290397,11 @@
 "ents": []
 },
 "G:89F534": {
-"class": "AbstractClass",
+"class": "GenericNode",
 "obs": [],
-"ents": []
+"ents": [
+"G:89F534"
+]
 },
 "P:49B660:0": {
 "class": "AbstractClass",
@@ -290488,9 +290632,11 @@
 "ents": []
 },
 "G:89F5D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:89F5D8"
+]
 },
 "G:81F35C": {
 "class": "AbstractClass",
@@ -291687,6 +291833,13 @@
 "T:734270"
 ]
 },
+"G:82012C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:82012C"
+]
+},
 "R:732600:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -292103,9 +292256,11 @@
 "ents": []
 },
 "G:82019C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82019C"
+]
 },
 "P:551B90:0": {
 "class": "AbstractClass",
@@ -292788,9 +292943,11 @@
 "ents": []
 },
 "G:820494": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820494"
+]
 },
 "R:4B96A0:ecx": {
 "class": "BuildingClass",
@@ -293475,9 +293632,11 @@
 ]
 },
 "G:820E30": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820E30"
+]
 },
 "G:820E44": {
 "class": "AbstractClass",
@@ -293576,9 +293735,11 @@
 ]
 },
 "G:820DF0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820DF0"
+]
 },
 "P:5D3BA0:5": {
 "class": "IUnknown",
@@ -293588,14 +293749,18 @@
 ]
 },
 "G:820DE4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820DE4"
+]
 },
 "G:820DD4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820DD4"
+]
 },
 "P:5D3490:0": {
 "class": "IUnknown",
@@ -293605,9 +293770,11 @@
 ]
 },
 "G:820DBC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820DBC"
+]
 },
 "T:67CEF0": {
 "class": "ScenarioClass",
@@ -293617,9 +293784,11 @@
 ]
 },
 "G:820DAC": {
-"class": "AbstractClass",
+"class": "ScenarioClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:820DAC"
+]
 },
 "P:6646C0:0": {
 "class": "AbstractClass",
@@ -293687,9 +293856,11 @@
 "ents": []
 },
 "G:820C38": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:820C38"
+]
 },
 "T:777080": {
 "class": "Game",
@@ -294353,6 +294524,13 @@
 "obs": [],
 "ents": []
 },
+"G:822620": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:822620"
+]
+},
 "P:4D9920:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -294794,9 +294972,11 @@
 "ents": []
 },
 "G:8229A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8229A8"
+]
 },
 "G:8229C0": {
 "class": "AbstractClass",
@@ -294804,69 +294984,95 @@
 "ents": []
 },
 "G:822990": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822990"
+]
 },
 "G:822978": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822978"
+]
 },
 "G:822964": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822964"
+]
 },
 "G:82294C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82294C"
+]
 },
 "G:822934": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822934"
+]
 },
 "G:82291C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82291C"
+]
 },
 "G:822908": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822908"
+]
 },
 "G:8228F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8228F4"
+]
 },
 "G:8228E0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8228E0"
+]
 },
 "G:8228C8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8228C8"
+]
 },
 "G:8228AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8228AC"
+]
 },
 "G:8229DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8229DC"
+]
 },
 "G:8229EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8229EC"
+]
 },
 "R:4E3B90:ecx": {
 "class": "AbstractClass",
@@ -294930,104 +295136,144 @@
 "ents": []
 },
 "G:822AC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822AC4"
+]
 },
 "G:822AB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822AB0"
+]
 },
 "G:822A9C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A9C"
+]
 },
 "G:822A88": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A88"
+]
 },
 "G:822A70": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A70"
+]
 },
 "G:822A58": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A58"
+]
 },
 "G:822A40": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A40"
+]
 },
 "G:822A28": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A28"
+]
 },
 "G:822A14": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822A14"
+]
 },
 "G:8229FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8229FC"
+]
 },
 "G:822B68": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B68"
+]
 },
 "G:822B58": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B58"
+]
 },
 "G:822B48": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B48"
+]
 },
 "G:822B38": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B38"
+]
 },
 "G:822B24": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B24"
+]
 },
 "G:822B10": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B10"
+]
 },
 "G:822AFC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822AFC"
+]
 },
 "G:822AEC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822AEC"
+]
 },
 "G:822ADC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822ADC"
+]
 },
 "G:822B7C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B7C"
+]
 },
 "T:4E45A0": {
 "class": "AbstractClass",
@@ -295051,9 +295297,11 @@
 ]
 },
 "G:822B90": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822B90"
+]
 },
 "R:4E5310:ecx": {
 "class": "AbstractClass",
@@ -295091,24 +295339,32 @@
 ]
 },
 "G:822BEC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822BEC"
+]
 },
 "G:822BE0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822BE0"
+]
 },
 "G:822BD4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822BD4"
+]
 },
 "G:822BC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822BC8"
+]
 },
 "T:4E5B60": {
 "class": "AbstractClass",
@@ -295118,9 +295374,11 @@
 ]
 },
 "G:822BF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:822BF8"
+]
 },
 "R:4E5D60:ecx": {
 "class": "AbstractClass",
@@ -295151,6 +295409,13 @@
 "obs": [],
 "ents": [
 "P:5B3700:1"
+]
+},
+"G:A8E7B0": {
+"class": "RandomStraw",
+"obs": [],
+"ents": [
+"G:A8E7B0"
 ]
 },
 "G:A8E8E8": {
@@ -295201,19 +295466,25 @@
 "ents": []
 },
 "G:8240F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8240F0"
+]
 },
 "G:8240E4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8240E4"
+]
 },
 "G:8240D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8240D8"
+]
 },
 "T:603E40": {
 "class": "AbstractClass",
@@ -296377,10 +296648,19 @@
 "obs": [],
 "ents": []
 },
-"G:824714": {
-"class": "AbstractClass",
+"G:82473C": {
+"class": "VoxClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:82473C"
+]
+},
+"G:824714": {
+"class": "StringTable",
+"obs": [],
+"ents": [
+"G:824714"
+]
 },
 "G:824724": {
 "class": "AbstractClass",
@@ -296432,6 +296712,13 @@
 "obs": [],
 "ents": [
 "M:4F9370:this:0x28"
+]
+},
+"G:82474C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:82474C"
 ]
 },
 "P:4F9700:0": {
@@ -296519,9 +296806,11 @@
 "ents": []
 },
 "G:8247F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8247F8"
+]
 },
 "P:4F9F90:0": {
 "class": "HouseClass",
@@ -296538,9 +296827,18 @@
 ]
 },
 "G:82481C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82481C"
+]
+},
+"G:824808": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:824808"
+]
 },
 "P:6F0AB0:1": {
 "class": "VectorClass",
@@ -296638,6 +296936,13 @@
 "obs": [],
 "ents": [
 "P:750920:1"
+]
+},
+"G:8249A0": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8249A0"
 ]
 },
 "P:4FB840:0": {
@@ -296761,9 +297066,25 @@
 "ents": []
 },
 "G:824C18": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:824C18"
+]
+},
+"G:824C08": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:824C08"
+]
+},
+"G:824B70": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:824B70"
+]
 },
 "M:4FC6D0:this:0x2BC": {
 "class": "TypeList",
@@ -296798,15 +297119,26 @@
 "obs": [],
 "ents": []
 },
-"G:824CC0": {
-"class": "AbstractClass",
+"G:824C2C": {
+"class": "VoxClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:824C2C"
+]
+},
+"G:824CC0": {
+"class": "StringTable",
+"obs": [],
+"ents": [
+"G:824CC0"
+]
 },
 "G:824CA0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:824CA0"
+]
 },
 "P:4FCE00:0": {
 "class": "AbstractClass",
@@ -297086,6 +297418,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:824E4C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:824E4C"
+]
 },
 "M:5025F0:this:0x34": {
 "class": "AbstractClass",
@@ -297530,9 +297869,11 @@
 "ents": []
 },
 "G:824FC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:824FC8"
+]
 },
 "M:50A5C0:this:0x4": {
 "class": "AbstractClass",
@@ -297674,6 +298015,13 @@
 "obs": [],
 "ents": [
 "P:50E000:0"
+]
+},
+"G:824FE4": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:824FE4"
 ]
 },
 "P:50E1B0:0": {
@@ -298159,6 +298507,13 @@
 "P:522910:0"
 ]
 },
+"G:825538": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:825538"
+]
+},
 "R:570050:ecx": {
 "class": "MapClass",
 "obs": [],
@@ -298252,9 +298607,11 @@
 ]
 },
 "G:825550": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:825550"
+]
 },
 "M:51F3E0:this:0x2B4": {
 "class": "AbstractClass",
@@ -298371,6 +298728,13 @@
 "obs": [],
 "ents": [
 "T:5228C0"
+]
+},
+"G:8255B0": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8255B0"
 ]
 },
 "R:522D50:ecx": {
@@ -299502,6 +299866,13 @@
 "T:4A38D0"
 ]
 },
+"G:82604C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:82604C"
+]
+},
 "P:5BDA80:0": {
 "class": "IUnknown",
 "obs": [],
@@ -299517,9 +299888,11 @@
 ]
 },
 "G:825FD0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:825FD0"
+]
 },
 "G:825FB8": {
 "class": "AbstractClass",
@@ -299527,14 +299900,18 @@
 "ents": []
 },
 "G:825FB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:825FB0"
+]
 },
 "G:825FA0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:825FA0"
+]
 },
 "T:4790B0": {
 "class": "AbstractClass",
@@ -299762,14 +300139,18 @@
 "ents": []
 },
 "G:826368": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826368"
+]
 },
 "G:82635C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82635C"
+]
 },
 "P:5D3490:1": {
 "class": "IUnknown",
@@ -299806,9 +300187,11 @@
 "ents": []
 },
 "G:8262F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8262F0"
+]
 },
 "T:683AB0": {
 "class": "ScenarioClass",
@@ -299853,15 +300236,26 @@
 "G:8263F0"
 ]
 },
-"G:8263C8": {
-"class": "AbstractClass",
+"G:8263E0": {
+"class": "VocClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:8263E0"
+]
+},
+"G:8263C8": {
+"class": "StringTable",
+"obs": [],
+"ents": [
+"G:8263C8"
+]
 },
 "G:8263B0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8263B0"
+]
 },
 "G:826444": {
 "class": "AbstractClass",
@@ -299986,34 +300380,46 @@
 "ents": []
 },
 "G:8264F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8264F0"
+]
 },
 "G:8264DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8264DC"
+]
 },
 "G:8264C8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8264C8"
+]
 },
 "G:8264B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8264B4"
+]
 },
 "G:8264A0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8264A0"
+]
 },
 "G:82648C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82648C"
+]
 },
 "R:52FC20:ecx": {
 "class": "Game",
@@ -300189,29 +300595,39 @@
 "ents": []
 },
 "G:826888": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826888"
+]
 },
 "G:82687C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82687C"
+]
 },
 "G:82686C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82686C"
+]
 },
 "G:826858": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826858"
+]
 },
 "G:826844": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826844"
+]
 },
 "G:826900": {
 "class": "AbstractClass",
@@ -300244,9 +300660,11 @@
 "ents": []
 },
 "G:82696C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82696C"
+]
 },
 "G:826960": {
 "class": "AbstractClass",
@@ -300455,64 +300873,88 @@
 "ents": []
 },
 "G:826F94": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826F94"
+]
 },
 "G:826FA4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826FA4"
+]
 },
 "G:826FB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826FB0"
+]
 },
 "G:826FD8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826FD8"
+]
 },
 "G:826FEC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826FEC"
+]
 },
 "G:826FFC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:826FFC"
+]
 },
 "G:827020": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827020"
+]
 },
 "G:827030": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827030"
+]
 },
 "G:827054": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827054"
+]
 },
 "G:827068": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827068"
+]
 },
 "G:827088": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827088"
+]
 },
 "G:827098": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827098"
+]
 },
 "G:8270D8": {
 "class": "AbstractClass",
@@ -300520,14 +300962,18 @@
 "ents": []
 },
 "G:8270E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8270E8"
+]
 },
 "G:8270F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8270F8"
+]
 },
 "R:7311C0:ecx": {
 "class": "BuildingClass",
@@ -300549,14 +300995,18 @@
 "ents": []
 },
 "G:827148": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827148"
+]
 },
 "G:82715C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82715C"
+]
 },
 "R:7314C0:ecx": {
 "class": "AbstractClass",
@@ -300569,14 +301019,18 @@
 "ents": []
 },
 "G:8271B0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8271B0"
+]
 },
 "G:8271C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8271C0"
+]
 },
 "R:7313A0:ecx": {
 "class": "AbstractClass",
@@ -300589,19 +301043,25 @@
 "ents": []
 },
 "G:827204": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827204"
+]
 },
 "G:827218": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827218"
+]
 },
 "G:827224": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827224"
+]
 },
 "P:7350C0:1": {
 "class": "AbstractClass",
@@ -300609,19 +301069,25 @@
 "ents": []
 },
 "G:827240": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827240"
+]
 },
 "G:827250": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827250"
+]
 },
 "G:827260": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827260"
+]
 },
 "T:4AA2B0": {
 "class": "MapClass",
@@ -300631,269 +301097,375 @@
 ]
 },
 "G:827288": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827288"
+]
 },
 "G:82729C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82729C"
+]
 },
 "G:8272A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8272A8"
+]
 },
 "G:8272D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8272D0"
+]
 },
 "G:8272E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8272E8"
+]
 },
 "G:827310": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827310"
+]
 },
 "G:827320": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827320"
+]
 },
 "G:827340": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827340"
+]
 },
 "G:827358": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827358"
+]
 },
 "G:827384": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827384"
+]
 },
 "G:827398": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827398"
+]
 },
 "G:8273C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8273C0"
+]
 },
 "G:8273D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8273D0"
+]
 },
 "G:8273F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8273F4"
+]
 },
 "G:827404": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827404"
+]
 },
 "G:827428": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827428"
+]
 },
 "G:827438": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827438"
+]
 },
 "G:82745C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82745C"
+]
 },
 "G:827470": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827470"
+]
 },
 "G:827494": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827494"
+]
 },
 "G:8274A0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8274A0"
+]
 },
 "G:8274C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8274C0"
+]
 },
 "G:8274CC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8274CC"
+]
 },
 "G:8274EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8274EC"
+]
 },
 "G:8274FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8274FC"
+]
 },
 "G:827520": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827520"
+]
 },
 "G:827530": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827530"
+]
 },
 "G:827558": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827558"
+]
 },
 "G:827568": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827568"
+]
 },
 "G:82758C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82758C"
+]
 },
 "G:82759C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82759C"
+]
 },
 "G:8275C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8275C0"
+]
 },
 "G:8275D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8275D0"
+]
 },
 "G:8275E4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8275E4"
+]
 },
 "G:8275F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8275F8"
+]
 },
 "G:827624": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827624"
+]
 },
 "G:827634": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827634"
+]
 },
 "G:827658": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827658"
+]
 },
 "G:827668": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827668"
+]
 },
 "G:827688": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827688"
+]
 },
 "G:82769C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82769C"
+]
 },
 "G:8276B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8276B4"
+]
 },
 "G:8276C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8276C0"
+]
 },
 "G:8276DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8276DC"
+]
 },
 "G:8276F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8276F0"
+]
 },
 "G:827710": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827710"
+]
 },
 "G:827724": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827724"
+]
 },
 "G:827744": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827744"
+]
 },
 "G:827758": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827758"
+]
 },
 "G:827778": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827778"
+]
 },
 "G:82778C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82778C"
+]
 },
 "G:8277B0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8277B0"
+]
 },
 "G:8277C4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8277C4"
+]
 },
 "P:6D6190:0": {
 "class": "AbstractClass",
@@ -300901,54 +301473,74 @@
 "ents": []
 },
 "G:8277E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8277E8"
+]
 },
 "G:8277FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8277FC"
+]
 },
 "G:827820": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827820"
+]
 },
 "G:827834": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827834"
+]
 },
 "G:827858": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827858"
+]
 },
 "G:82786C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82786C"
+]
 },
 "G:827884": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827884"
+]
 },
 "G:827890": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827890"
+]
 },
 "G:827A28": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827A28"
+]
 },
 "G:827A34": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827A34"
+]
 },
 "G:827A48": {
 "class": "AbstractClass",
@@ -300963,39 +301555,53 @@
 ]
 },
 "G:827A88": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827A88"
+]
 },
 "G:827A98": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827A98"
+]
 },
 "G:827AE8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827AE8"
+]
 },
 "G:827AF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827AF8"
+]
 },
 "G:827B04": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827B04"
+]
 },
 "G:827B44": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827B44"
+]
 },
 "G:827B50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:827B50"
+]
 },
 "P:65D460:0": {
 "class": "rc_ptr",
@@ -301074,9 +301680,11 @@
 ]
 },
 "G:82804C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82804C"
+]
 },
 "G:828034": {
 "class": "AbstractClass",
@@ -301142,10 +301750,19 @@
 "P:539EB0:1"
 ]
 },
-"G:828060": {
-"class": "AbstractClass",
+"G:828080": {
+"class": "VoxClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:828080"
+]
+},
+"G:828060": {
+"class": "StringTable",
+"obs": [],
+"ents": [
+"G:828060"
+]
 },
 "T:53AC80": {
 "class": "ScenarioClass",
@@ -301162,9 +301779,11 @@
 ]
 },
 "G:82809C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82809C"
+]
 },
 "P:53AE50:0": {
 "class": "AbstractClass",
@@ -301214,9 +301833,18 @@
 ]
 },
 "G:8280B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8280B8"
+]
+},
+"G:A9F9B8": {
+"class": "AudioController",
+"obs": [],
+"ents": [
+"G:A9F9B8"
+]
 },
 "R:684240:ecx": {
 "class": "IUnknown",
@@ -302716,159 +303344,221 @@
 ]
 },
 "G:829AAC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829AAC"
+]
 },
 "G:829A9C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A9C"
+]
 },
 "G:829A8C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A8C"
+]
 },
 "G:829A80": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A80"
+]
 },
 "G:829A70": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A70"
+]
 },
 "G:829A60": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A60"
+]
 },
 "G:829A50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A50"
+]
 },
 "G:829A44": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A44"
+]
 },
 "G:829A30": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A30"
+]
 },
 "G:829A20": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A20"
+]
 },
 "G:829A0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A0C"
+]
 },
 "G:829A00": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829A00"
+]
 },
 "G:8299F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299F4"
+]
 },
 "G:8299E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299E8"
+]
 },
 "G:8299DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299DC"
+]
 },
 "G:8299D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299D0"
+]
 },
 "G:8299C4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299C4"
+]
 },
 "G:8299B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299B8"
+]
 },
 "G:8299AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299AC"
+]
 },
 "G:8299A0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8299A0"
+]
 },
 "G:829994": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829994"
+]
 },
 "G:829984": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829984"
+]
 },
 "G:829974": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829974"
+]
 },
 "G:829960": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829960"
+]
 },
 "G:82994C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82994C"
+]
 },
 "G:829938": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829938"
+]
 },
 "G:829928": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829928"
+]
 },
 "G:829918": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829918"
+]
 },
 "G:829908": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829908"
+]
 },
 "G:8298F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8298F4"
+]
 },
 "G:8298DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8298DC"
+]
 },
 "T:554280": {
 "class": "ConvertClass",
@@ -303333,9 +304023,11 @@
 "ents": []
 },
 "G:829F4C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F4C"
+]
 },
 "P:5596A0:0": {
 "class": "AbstractClass",
@@ -303343,9 +304035,11 @@
 "ents": []
 },
 "G:829F34": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F34"
+]
 },
 "G:829F24": {
 "class": "AbstractClass",
@@ -303360,19 +304054,25 @@
 ]
 },
 "G:829F1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F1C"
+]
 },
 "G:829F14": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F14"
+]
 },
 "G:829EF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829EF8"
+]
 },
 "P:7CB4AA:0": {
 "class": "IUnknown",
@@ -303387,14 +304087,18 @@
 "ents": []
 },
 "G:829ED4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829ED4"
+]
 },
 "G:829EBC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829EBC"
+]
 },
 "R:6083E0:ecx": {
 "class": "AbstractClass",
@@ -303407,9 +304111,11 @@
 "ents": []
 },
 "G:829EA4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829EA4"
+]
 },
 "M:558DD0:this:0x20": {
 "class": "AbstractClass",
@@ -303441,9 +304147,11 @@
 "ents": []
 },
 "G:829F84": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F84"
+]
 },
 "G:829F7C": {
 "class": "AbstractClass",
@@ -303458,9 +304166,11 @@
 ]
 },
 "G:829F94": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829F94"
+]
 },
 "T:623230": {
 "class": "AbstractClass",
@@ -303473,24 +304183,32 @@
 "ents": []
 },
 "G:829FA0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829FA0"
+]
 },
 "G:829FB4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829FB4"
+]
 },
 "G:829FC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829FC8"
+]
 },
 "G:829FE0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:829FE0"
+]
 },
 "M:55A0D0:this:0x20": {
 "class": "AbstractClass",
@@ -303610,9 +304328,11 @@
 "ents": []
 },
 "G:8A0390": {
-"class": "AbstractClass",
+"class": "LayerClass",
 "obs": [],
-"ents": []
+"ents": [
+"G:8A0390"
+]
 },
 "P:55F6E0:0": {
 "class": "CCFileClass",
@@ -303660,9 +304380,11 @@
 ]
 },
 "G:82A15C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A15C"
+]
 },
 "G:82A170": {
 "class": "AbstractClass",
@@ -303670,9 +304392,11 @@
 "ents": []
 },
 "G:82A150": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A150"
+]
 },
 "P:5D4210:0": {
 "class": "AbstractClass",
@@ -303725,9 +304449,11 @@
 "ents": []
 },
 "G:82A13C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A13C"
+]
 },
 "P:7CB4CC:0": {
 "class": "IUnknown",
@@ -303742,14 +304468,18 @@
 "ents": []
 },
 "G:82A124": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A124"
+]
 },
 "G:82A108": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A108"
+]
 },
 "G:82A0F8": {
 "class": "AbstractClass",
@@ -303762,14 +304492,18 @@
 "ents": []
 },
 "G:82A0D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A0D4"
+]
 },
 "G:82A0BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A0BC"
+]
 },
 "P:7CB4CC:2": {
 "class": "IUnknown",
@@ -303779,9 +304513,11 @@
 ]
 },
 "G:82A0A4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A0A4"
+]
 },
 "P:7CA45F:1": {
 "class": "IUnknown",
@@ -303791,9 +304527,11 @@
 ]
 },
 "G:82A08C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A08C"
+]
 },
 "T:735090": {
 "class": "CCFileClass",
@@ -303865,9 +304603,11 @@
 "ents": []
 },
 "G:82A290": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A290"
+]
 },
 "G:82A2A8": {
 "class": "AbstractClass",
@@ -303912,34 +304652,46 @@
 "ents": []
 },
 "G:82A378": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A378"
+]
 },
 "G:82A364": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A364"
+]
 },
 "G:82A34C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A34C"
+]
 },
 "G:82A334": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A334"
+]
 },
 "G:82A314": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A314"
+]
 },
 "G:82A2F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A2F4"
+]
 },
 "G:ABFEC8": {
 "class": "SelectClass@StripClass@SidebarClass",
@@ -304022,9 +304774,11 @@
 "ents": []
 },
 "G:82A57C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82A57C"
+]
 },
 "P:4F4220:0": {
 "class": "AbstractClass",
@@ -306062,9 +306816,11 @@
 ]
 },
 "G:82BA2C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82BA2C"
+]
 },
 "P:595680:0": {
 "class": "IUnknown",
@@ -306334,24 +307090,32 @@
 "ents": []
 },
 "G:82BC3C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82BC3C"
+]
 },
 "G:82BC4C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82BC4C"
+]
 },
 "G:82BC5C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82BC5C"
+]
 },
 "G:82BC70": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82BC70"
+]
 },
 "G:82BDCC": {
 "class": "AbstractClass",
@@ -307456,9 +308220,11 @@
 ]
 },
 "G:82C108": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C108"
+]
 },
 "P:5ADF20:0": {
 "class": "AbstractClass",
@@ -307884,44 +308650,60 @@
 "ents": []
 },
 "G:82C528": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C528"
+]
 },
 "G:82C520": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C520"
+]
 },
 "G:82C514": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C514"
+]
 },
 "G:82C508": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C508"
+]
 },
 "G:82C4FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C4FC"
+]
 },
 "G:82C4EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C4EC"
+]
 },
 "G:82C4E0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C4E0"
+]
 },
 "G:82C4D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C4D4"
+]
 },
 "T:776E10": {
 "class": "AbstractClass",
@@ -307982,14 +308764,18 @@
 "ents": []
 },
 "G:82C754": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C754"
+]
 },
 "G:82C72C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C72C"
+]
 },
 "P:74FD60:0": {
 "class": "IUnknown",
@@ -308004,19 +308790,25 @@
 "ents": []
 },
 "G:82C6FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C6FC"
+]
 },
 "G:82C6E4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C6E4"
+]
 },
 "G:82C6D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C6D4"
+]
 },
 "T:74FD20": {
 "class": "VersionClass",
@@ -308062,9 +308854,11 @@
 "ents": []
 },
 "G:82C6AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C6AC"
+]
 },
 "T:693B70": {
 "class": "AbstractClass",
@@ -308115,9 +308909,11 @@
 "ents": []
 },
 "G:82C7BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C7BC"
+]
 },
 "P:735060:0": {
 "class": "AbstractClass",
@@ -308125,9 +308921,11 @@
 "ents": []
 },
 "G:82C7CC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C7CC"
+]
 },
 "P:6425F0:0": {
 "class": "AbstractClass",
@@ -308176,9 +308974,11 @@
 ]
 },
 "G:82C9FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82C9FC"
+]
 },
 "P:5B9550:0": {
 "class": "AbstractClass",
@@ -308264,14 +309064,18 @@
 ]
 },
 "G:82CBE4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82CBE4"
+]
 },
 "G:82CBD4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82CBD4"
+]
 },
 "T:623310": {
 "class": "AbstractClass",
@@ -308279,9 +309083,11 @@
 "ents": []
 },
 "G:82CB70": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82CB70"
+]
 },
 "P:694760:1": {
 "class": "IUnknown",
@@ -308363,6 +309169,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:82D00C": {
+"class": "VocClass",
+"obs": [],
+"ents": [
+"G:82D00C"
+]
 },
 "P:5BD0D0:0": {
 "class": "AbstractClass",
@@ -308850,9 +309663,11 @@
 ]
 },
 "G:82DC78": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82DC78"
+]
 },
 "M:5C2680:this:0x40": {
 "class": "ConvertClass",
@@ -308982,9 +309797,11 @@
 "ents": []
 },
 "G:82DF04": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82DF04"
+]
 },
 "M:5C3EC0:this:0x40": {
 "class": "TypeList",
@@ -309004,9 +309821,11 @@
 "ents": []
 },
 "G:82DF50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82DF50"
+]
 },
 "P:5C4F30:0": {
 "class": "AbstractClass",
@@ -309098,9 +309917,11 @@
 ]
 },
 "G:82FD30": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FD30"
+]
 },
 "G:82FD40": {
 "class": "AbstractClass",
@@ -309125,9 +309946,11 @@
 "ents": []
 },
 "G:82FEB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FEB0"
+]
 },
 "G:82FE24": {
 "class": "AbstractClass",
@@ -309135,9 +309958,11 @@
 "ents": []
 },
 "G:82FE84": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FE84"
+]
 },
 "G:ABF958": {
 "class": "AbstractClass",
@@ -309159,9 +309984,11 @@
 ]
 },
 "G:82FF1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FF1C"
+]
 },
 "G:82FF2C": {
 "class": "AbstractClass",
@@ -309176,19 +310003,25 @@
 ]
 },
 "G:82FF0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FF0C"
+]
 },
 "G:82FEF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FEF8"
+]
 },
 "G:82FEE8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FEE8"
+]
 },
 "R:5CA7D0:ecx": {
 "class": "MultiplayerSiege",
@@ -309227,14 +310060,18 @@
 ]
 },
 "G:82FFE4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:82FFE4"
+]
 },
 "G:830044": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:830044"
+]
 },
 "R:5CB590:ecx": {
 "class": "WinModemClass",
@@ -310241,14 +311078,18 @@
 "ents": []
 },
 "G:83122C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83122C"
+]
 },
 "G:831204": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831204"
+]
 },
 "P:69BBF0:0": {
 "class": "AbstractClass",
@@ -310312,9 +311153,11 @@
 "ents": []
 },
 "G:831278": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831278"
+]
 },
 "G:831288": {
 "class": "AbstractClass",
@@ -310357,19 +311200,25 @@
 "ents": []
 },
 "G:8312F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8312F0"
+]
 },
 "G:8312DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8312DC"
+]
 },
 "G:8312C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8312C0"
+]
 },
 "R:5DBB60:ecx": {
 "class": "AbstractClass",
@@ -310506,9 +311355,11 @@
 ]
 },
 "G:8314AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8314AC"
+]
 },
 "T:7757E0": {
 "class": "AbstractClass",
@@ -310518,9 +311369,11 @@
 ]
 },
 "G:83149C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83149C"
+]
 },
 "T:5E2CD0": {
 "class": "AbstractClass",
@@ -310528,19 +311381,25 @@
 "ents": []
 },
 "G:831480": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831480"
+]
 },
 "G:831470": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831470"
+]
 },
 "G:831460": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831460"
+]
 },
 "P:5DC350:0": {
 "class": "AbstractClass",
@@ -310558,14 +311417,18 @@
 "ents": []
 },
 "G:831450": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831450"
+]
 },
 "G:831438": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831438"
+]
 },
 "P:540C60:4": {
 "class": "AbstractClass",
@@ -310776,19 +311639,25 @@
 ]
 },
 "G:8315C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8315C0"
+]
 },
 "G:831580": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831580"
+]
 },
 "G:83156C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83156C"
+]
 },
 "G:AC0224": {
 "class": "AbstractClass",
@@ -310826,14 +311695,18 @@
 "ents": []
 },
 "G:831660": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831660"
+]
 },
 "G:831644": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831644"
+]
 },
 "M:5E00B0:this:0x6B8": {
 "class": "UnitTypeClass",
@@ -310865,9 +311738,11 @@
 "ents": []
 },
 "G:8315D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8315D8"
+]
 },
 "T:5E3D10": {
 "class": "BuildingClass",
@@ -310950,9 +311825,11 @@
 "ents": []
 },
 "G:83168C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83168C"
+]
 },
 "R:5E2620:ecx": {
 "class": "AbstractClass",
@@ -311115,9 +311992,11 @@
 "ents": []
 },
 "G:8317C4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8317C4"
+]
 },
 "G:8317F4": {
 "class": "AbstractClass",
@@ -311125,9 +312004,11 @@
 "ents": []
 },
 "G:831998": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831998"
+]
 },
 "T:793A10": {
 "class": "AbstractClass",
@@ -311217,14 +312098,18 @@
 "ents": []
 },
 "G:831870": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831870"
+]
 },
 "G:831854": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831854"
+]
 },
 "G:831820": {
 "class": "AbstractClass",
@@ -311232,9 +312117,11 @@
 "ents": []
 },
 "G:831804": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831804"
+]
 },
 "P:77ED00:0": {
 "class": "AbstractClass",
@@ -311360,14 +312247,18 @@
 "ents": []
 },
 "G:831A38": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831A38"
+]
 },
 "G:831A30": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831A30"
+]
 },
 "G:831A88": {
 "class": "AbstractClass",
@@ -311385,9 +312276,11 @@
 "ents": []
 },
 "G:831AF0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831AF0"
+]
 },
 "G:831C18": {
 "class": "AbstractClass",
@@ -311410,39 +312303,53 @@
 "ents": []
 },
 "G:831C80": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C80"
+]
 },
 "G:831C74": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C74"
+]
 },
 "G:831C68": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C68"
+]
 },
 "G:831C58": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C58"
+]
 },
 "G:831C4C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C4C"
+]
 },
 "G:831C40": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C40"
+]
 },
 "G:831C2C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831C2C"
+]
 },
 "P:7CA5D3:5": {
 "class": "AbstractClass",
@@ -311489,39 +312396,53 @@
 "ents": []
 },
 "G:831D34": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831D34"
+]
 },
 "G:831D20": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831D20"
+]
 },
 "G:831D0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831D0C"
+]
 },
 "G:831CF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831CF8"
+]
 },
 "G:831CE4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831CE4"
+]
 },
 "G:831CCC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831CCC"
+]
 },
 "G:831CBC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831CBC"
+]
 },
 "P:4E4170:1": {
 "class": "AbstractClass",
@@ -311706,14 +312627,18 @@
 "ents": []
 },
 "G:831D84": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831D84"
+]
 },
 "G:831D6C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831D6C"
+]
 },
 "T:5EE510": {
 "class": "AbstractClass",
@@ -311748,9 +312673,11 @@
 "ents": []
 },
 "G:831DC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831DC4"
+]
 },
 "P:5EE6F0:1": {
 "class": "AbstractClass",
@@ -311857,9 +312784,11 @@
 "ents": []
 },
 "G:831E70": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831E70"
+]
 },
 "P:5F16E0:4": {
 "class": "IUnknown",
@@ -311891,14 +312820,18 @@
 "ents": []
 },
 "G:831E54": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831E54"
+]
 },
 "G:831E3C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831E3C"
+]
 },
 "R:5EFF70:ecx": {
 "class": "AbstractClass",
@@ -311906,14 +312839,18 @@
 "ents": []
 },
 "G:831EA0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831EA0"
+]
 },
 "G:831EB4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831EB4"
+]
 },
 "P:5F1FA0:1": {
 "class": "AbstractClass",
@@ -311921,14 +312858,18 @@
 "ents": []
 },
 "G:8320F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8320F0"
+]
 },
 "G:832068": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832068"
+]
 },
 "P:5F2950:1": {
 "class": "ConvertClass",
@@ -311943,34 +312884,46 @@
 "ents": []
 },
 "G:831FF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831FF8"
+]
 },
 "G:831FC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831FC4"
+]
 },
 "G:831F8C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831F8C"
+]
 },
 "G:831F54": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831F54"
+]
 },
 "G:831F14": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831F14"
+]
 },
 "G:831ED4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:831ED4"
+]
 },
 "R:5F2CE0:ecx": {
 "class": "AbstractClass",
@@ -311983,9 +312936,11 @@
 "ents": []
 },
 "G:8321BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8321BC"
+]
 },
 "M:5F19C0:this:0x4": {
 "class": "BuildingClass",
@@ -312033,9 +312988,11 @@
 ]
 },
 "G:832718": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832718"
+]
 },
 "G:832730": {
 "class": "AbstractClass",
@@ -312053,54 +313010,74 @@
 "ents": []
 },
 "G:832618": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832618"
+]
 },
 "G:832604": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832604"
+]
 },
 "G:8325C8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8325C8"
+]
 },
 "G:832584": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832584"
+]
 },
 "G:83253C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83253C"
+]
 },
 "G:8324F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8324F8"
+]
 },
 "G:8324B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8324B4"
+]
 },
 "G:832474": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832474"
+]
 },
 "G:832460": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832460"
+]
 },
 "G:832858": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832858"
+]
 },
 "G:8327D8": {
 "class": "AbstractClass",
@@ -312138,9 +313115,11 @@
 "ents": []
 },
 "G:8329D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8329D4"
+]
 },
 "G:832970": {
 "class": "AbstractClass",
@@ -312148,9 +313127,11 @@
 "ents": []
 },
 "G:832958": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832958"
+]
 },
 "G:832934": {
 "class": "AbstractClass",
@@ -312163,9 +313144,11 @@
 "ents": []
 },
 "G:832914": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:832914"
+]
 },
 "G:832904": {
 "class": "AbstractClass",
@@ -312834,9 +313817,11 @@
 "ents": []
 },
 "G:83334C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83334C"
+]
 },
 "G:833370": {
 "class": "AbstractClass",
@@ -313328,9 +314313,11 @@
 ]
 },
 "G:835868": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:835868"
+]
 },
 "T:610950": {
 "class": "BuildingClass",
@@ -315402,14 +316389,18 @@
 "ents": []
 },
 "G:83676C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83676C"
+]
 },
 "G:836794": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836794"
+]
 },
 "P:6316E0:0": {
 "class": "ConvertClass",
@@ -315905,9 +316896,11 @@
 ]
 },
 "G:836BB8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836BB8"
+]
 },
 "G:836BD4": {
 "class": "AbstractClass",
@@ -315922,9 +316915,11 @@
 ]
 },
 "G:836B9C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836B9C"
+]
 },
 "R:63A230:ecx": {
 "class": "AbstractClass",
@@ -315932,9 +316927,11 @@
 "ents": []
 },
 "G:836B8C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836B8C"
+]
 },
 "R:652230:ecx": {
 "class": "AbstractClass",
@@ -316010,14 +317007,18 @@
 "ents": []
 },
 "G:836C1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C1C"
+]
 },
 "G:836C00": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C00"
+]
 },
 "M:6386E0:this:0x4": {
 "class": "AbstractClass",
@@ -316073,14 +317074,18 @@
 "ents": []
 },
 "G:836C50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C50"
+]
 },
 "G:836C6C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C6C"
+]
 },
 "M:639210:this:0x4": {
 "class": "AbstractClass",
@@ -316142,19 +317147,25 @@
 "ents": []
 },
 "G:836C80": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C80"
+]
 },
 "G:836C9C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836C9C"
+]
 },
 "G:836CF0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836CF0"
+]
 },
 "P:63A5A0:0": {
 "class": "AbstractClass",
@@ -316174,19 +317185,25 @@
 "ents": []
 },
 "G:836D7C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836D7C"
+]
 },
 "G:836D44": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836D44"
+]
 },
 "G:836D28": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836D28"
+]
 },
 "P:63A8E0:0": {
 "class": "AbstractClass",
@@ -316255,9 +317272,11 @@
 "ents": []
 },
 "G:836D0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836D0C"
+]
 },
 "M:63B0A0:this:0x4": {
 "class": "AbstractClass",
@@ -316535,6 +317554,13 @@
 "T:63F7B0"
 ]
 },
+"G:836D9C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:836D9C"
+]
+},
 "P:63F960:1": {
 "class": "AbstractClass",
 "obs": [],
@@ -316589,14 +317615,23 @@
 "ents": []
 },
 "G:836DA8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:836DA8"
+]
 },
 "P:658770:0": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:836DE4": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:836DE4"
+]
 },
 "P:6D62E0:1": {
 "class": "AbstractClass",
@@ -316612,6 +317647,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:836DF4": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:836DF4"
+]
 },
 "P:642740:2": {
 "class": "AbstractClass",
@@ -317327,19 +318369,25 @@
 "ents": []
 },
 "G:837484": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837484"
+]
 },
 "G:837474": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837474"
+]
 },
 "G:837460": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837460"
+]
 },
 "T:649CA0": {
 "class": "AbstractClass",
@@ -317402,9 +318450,11 @@
 "ents": []
 },
 "G:837714": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837714"
+]
 },
 "G:A8BB28": {
 "class": "AbstractClass",
@@ -317412,54 +318462,74 @@
 "ents": []
 },
 "G:837700": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837700"
+]
 },
 "G:8376EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8376EC"
+]
 },
 "G:8376D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8376D4"
+]
 },
 "G:8376BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8376BC"
+]
 },
 "G:8376A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8376A8"
+]
 },
 "G:837690": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837690"
+]
 },
 "G:83767C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83767C"
+]
 },
 "G:837668": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837668"
+]
 },
 "G:837654": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837654"
+]
 },
 "G:837638": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837638"
+]
 },
 "T:64AD10": {
 "class": "AbstractClass",
@@ -317511,14 +318581,18 @@
 ]
 },
 "G:8379E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8379E8"
+]
 },
 "G:8379D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8379D8"
+]
 },
 "M:64AAE0:this:0x6F": {
 "class": "AbstractClass",
@@ -317526,9 +318600,11 @@
 "ents": []
 },
 "G:837A30": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837A30"
+]
 },
 "T:64AAE0": {
 "class": "AbstractClass",
@@ -317560,14 +318636,18 @@
 ]
 },
 "G:837DF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837DF8"
+]
 },
 "G:837DE8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:837DE8"
+]
 },
 "T:64CDA0": {
 "class": "BuildingClass",
@@ -317739,6 +318819,20 @@
 "G:B04A10"
 ]
 },
+"G:B04978": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B04978"
+]
+},
+"G:B04910": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B04910"
+]
+},
 "P:4A8730:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -317795,6 +318889,13 @@
 "G:B0B3A0"
 ]
 },
+"G:B07DF8": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B07DF8"
+]
+},
 "P:653810:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -317835,14 +318936,18 @@
 "ents": []
 },
 "G:839378": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:839378"
+]
 },
 "G:839368": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:839368"
+]
 },
 "P:6547C0:1": {
 "class": "IUnknown",
@@ -318280,9 +319385,11 @@
 ]
 },
 "G:839734": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:839734"
+]
 },
 "P:660730:0": {
 "class": "AbstractClass",
@@ -323531,7 +324638,7 @@
 "ents": []
 },
 "G:8A38E0": {
-"class": "ConvertClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "G:8A38E0"
@@ -323946,9 +325053,11 @@
 "ents": []
 },
 "G:83D854": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83D854"
+]
 },
 "G:83D8A8": {
 "class": "AbstractClass",
@@ -323990,9 +325099,11 @@
 "ents": []
 },
 "G:83DA4C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83DA4C"
+]
 },
 "P:552BE0:1": {
 "class": "AbstractClass",
@@ -324098,9 +325209,11 @@
 "ents": []
 },
 "G:83DB0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83DB0C"
+]
 },
 "T:5C9720": {
 "class": "AbstractClass",
@@ -324125,9 +325238,11 @@
 "ents": []
 },
 "G:83DB24": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83DB24"
+]
 },
 "M:685DC0:this:0x34CC": {
 "class": "Movie",
@@ -324140,6 +325255,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:83DB34": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83DB34"
+]
 },
 "R:686B20:ecx": {
 "class": "BuildingClass",
@@ -324857,9 +325979,11 @@
 "ents": []
 },
 "G:83E3AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E3AC"
+]
 },
 "G:83E3C4": {
 "class": "AbstractClass",
@@ -324879,9 +326003,11 @@
 "ents": []
 },
 "G:83E390": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E390"
+]
 },
 "P:690F30:0": {
 "class": "AbstractClass",
@@ -324908,24 +326034,32 @@
 ]
 },
 "G:83E378": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E378"
+]
 },
 "G:83E368": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E368"
+]
 },
 "G:83E358": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E358"
+]
 },
 "G:83E34C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E34C"
+]
 },
 "R:68EF20:ecx": {
 "class": "WinModemClass",
@@ -324935,9 +326069,11 @@
 ]
 },
 "G:83E33C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E33C"
+]
 },
 "G:83E32C": {
 "class": "AbstractClass",
@@ -324962,9 +326098,11 @@
 "ents": []
 },
 "G:83E310": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E310"
+]
 },
 "R:68EC20:ecx": {
 "class": "WinModemClass",
@@ -325170,9 +326308,11 @@
 "ents": []
 },
 "G:83E9E4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83E9E4"
+]
 },
 "P:7C8D20:5": {
 "class": "AbstractClass",
@@ -325210,19 +326350,25 @@
 "ents": []
 },
 "G:83EC10": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83EC10"
+]
 },
 "G:83EBF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83EBF8"
+]
 },
 "G:83EBBC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83EBBC"
+]
 },
 "G:83ECE0": {
 "class": "AbstractClass",
@@ -325230,9 +326376,11 @@
 "ents": []
 },
 "G:83ECC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83ECC4"
+]
 },
 "G:83ECF4": {
 "class": "AbstractClass",
@@ -325545,9 +326693,11 @@
 "ents": []
 },
 "G:83F4B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83F4B8"
+]
 },
 "T:6994F0": {
 "class": "AbstractClass",
@@ -325865,6 +327015,13 @@
 "P:69DDC0:1"
 ]
 },
+"G:B0B328": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B0B328"
+]
+},
 "G:B0B408": {
 "class": "ShapeButtonClass",
 "obs": [],
@@ -325956,6 +327113,20 @@
 "obs": [],
 "ents": []
 },
+"G:83FA58": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA58"
+]
+},
+"G:83FA4C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA4C"
+]
+},
 "P:4A38D0:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -325966,16 +327137,177 @@
 "obs": [],
 "ents": []
 },
+"G:83FA40": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA40"
+]
+},
 "G:83FA34": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:83FA28": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA28"
+]
+},
+"G:83FA1C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA1C"
+]
+},
+"G:83FA10": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA10"
+]
+},
+"G:83FA04": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83FA04"
+]
+},
+"G:83F9F8": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9F8"
+]
+},
+"G:83F9EC": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9EC"
+]
+},
+"G:83F9E0": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9E0"
+]
+},
+"G:83F9D4": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9D4"
+]
+},
+"G:83F9C8": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9C8"
+]
+},
+"G:83F9BC": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9BC"
+]
+},
+"G:83F9B0": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9B0"
+]
+},
+"G:83F9A4": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F9A4"
+]
+},
+"G:83F998": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F998"
+]
+},
+"G:83F98C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F98C"
+]
+},
+"G:83F980": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F980"
+]
+},
+"G:83F974": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F974"
+]
+},
+"G:83F968": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F968"
+]
+},
+"G:83F95C": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F95C"
+]
+},
+"G:83F950": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F950"
+]
+},
+"G:83F944": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F944"
+]
+},
+"G:83F938": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:83F938"
+]
 },
 "T:5004E0": {
 "class": "ObjectTypeClass",
 "obs": [],
 "ents": [
 "T:5004E0"
+]
+},
+"G:83FA64": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FA64"
 ]
 },
 "R:6AC430:ecx": {
@@ -326029,6 +327361,13 @@
 "T:6A8420"
 ]
 },
+"G:83FA80": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FA80"
+]
+},
 "M:6A8B30:this:0x24": {
 "class": "AbstractClass",
 "obs": [],
@@ -326067,9 +327406,11 @@
 "ents": []
 },
 "G:83FB2C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FB2C"
+]
 },
 "M:6A9540:this:0x4": {
 "class": "AbstractClass",
@@ -326092,29 +327433,39 @@
 "ents": []
 },
 "G:83FB1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FB1C"
+]
 },
 "G:83FB10": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FB10"
+]
 },
 "G:83FB00": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FB00"
+]
 },
 "G:83FAF0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FAF0"
+]
 },
 "G:83FAE0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FAE0"
+]
 },
 "M:6AA600:this:0x30": {
 "class": "BuildingTypeClass",
@@ -326135,10 +327486,24 @@
 "P:5BDC80:4"
 ]
 },
+"G:83FB8C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FB8C"
+]
+},
 "M:6AAD00:this:0x28": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:83FB78": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FB78"
+]
 },
 "R:6CC070:ecx": {
 "class": "AbstractClass",
@@ -326147,10 +327512,31 @@
 "T:6CC070"
 ]
 },
+"G:83FB6C": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FB6C"
+]
+},
 "M:6AAD00:this:0x30": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:83FB58": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FB58"
+]
+},
+"G:83FB38": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:83FB38"
+]
 },
 "R:6ABB60:ecx": {
 "class": "AbstractClass",
@@ -326185,14 +327571,18 @@
 ]
 },
 "G:83FC2C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FC2C"
+]
 },
 "G:83FC1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FC1C"
+]
 },
 "G:B079B0": {
 "class": "AbstractClass",
@@ -326200,14 +327590,18 @@
 "ents": []
 },
 "G:83FBFC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FBFC"
+]
 },
 "G:83FBCC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FBCC"
+]
 },
 "P:68CA50:2": {
 "class": "AbstractClass",
@@ -326237,9 +327631,11 @@
 "ents": []
 },
 "G:83FC68": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FC68"
+]
 },
 "T:6ACEE0": {
 "class": "AbstractClass",
@@ -326289,9 +327685,11 @@
 "ents": []
 },
 "G:83FC3C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FC3C"
+]
 },
 "P:69B540:0": {
 "class": "AbstractClass",
@@ -326299,9 +327697,11 @@
 "ents": []
 },
 "G:83FC88": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:83FC88"
+]
 },
 "T:5E2F80": {
 "class": "AbstractClass",
@@ -326818,9 +328218,11 @@
 "ents": []
 },
 "G:840DF8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840DF8"
+]
 },
 "G:840E0C": {
 "class": "AbstractClass",
@@ -326843,9 +328245,11 @@
 "ents": []
 },
 "G:840DCC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840DCC"
+]
 },
 "G:840D5C": {
 "class": "AbstractClass",
@@ -326863,9 +328267,11 @@
 "ents": []
 },
 "G:840C38": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840C38"
+]
 },
 "P:777C30:0": {
 "class": "AbstractClass",
@@ -326883,14 +328289,18 @@
 "ents": []
 },
 "G:840C1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840C1C"
+]
 },
 "G:840C0C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840C0C"
+]
 },
 "T:6BB9A0": {
 "class": "AbstractClass",
@@ -326908,9 +328318,11 @@
 "ents": []
 },
 "G:840BC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:840BC8"
+]
 },
 "G:887058": {
 "class": "CCINIClass",
@@ -327193,6 +328605,13 @@
 "obs": [],
 "ents": []
 },
+"G:B0BF28": {
+"class": "AudioController",
+"obs": [],
+"ents": [
+"G:B0BF28"
+]
+},
 "G:842194": {
 "class": "AbstractClass",
 "obs": [],
@@ -327371,6 +328790,13 @@
 "P:6CE320:0"
 ]
 },
+"G:8423FC": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8423FC"
+]
+},
 "P:6CE240:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -327397,6 +328823,13 @@
 "obs": [],
 "ents": [
 "M:6CC390:this:0x694"
+]
+},
+"G:8425A4": {
+"class": "VoxClass",
+"obs": [],
+"ents": [
+"G:8425A4"
 ]
 },
 "T:752A40": {
@@ -327573,6 +329006,20 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"G:B0CCB0": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B0CCB0"
+]
+},
+"G:B0CC40": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"G:B0CC40"
+]
 },
 "R:6D0260:ecx": {
 "class": "ScrollClass",
@@ -327946,9 +329393,11 @@
 ]
 },
 "G:842A50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:842A50"
+]
 },
 "P:6D4E20:0": {
 "class": "IUnknown",
@@ -332654,6 +334103,20 @@
 "G:B0FB88"
 ]
 },
+"G:845540": {
+"class": "FileSystem",
+"obs": [],
+"ents": [
+"G:845540"
+]
+},
+"G:845530": {
+"class": "ConvertClass",
+"obs": [],
+"ents": [
+"G:845530"
+]
+},
 "T:72E2D0": {
 "class": "AbstractClass",
 "obs": [],
@@ -332704,9 +334167,11 @@
 "ents": []
 },
 "G:845584": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845584"
+]
 },
 "G:845598": {
 "class": "AbstractClass",
@@ -332714,24 +334179,32 @@
 "ents": []
 },
 "G:845568": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845568"
+]
 },
 "G:8455FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8455FC"
+]
 },
 "G:8455EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8455EC"
+]
 },
 "G:8455DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8455DC"
+]
 },
 "T:6DC430": {
 "class": "AbstractClass",
@@ -332776,14 +334249,18 @@
 ]
 },
 "G:8455C8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8455C8"
+]
 },
 "G:8455B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8455B4"
+]
 },
 "P:7343E0:0": {
 "class": "AbstractClass",
@@ -332796,39 +334273,53 @@
 "ents": []
 },
 "G:845638": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845638"
+]
 },
 "G:845624": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845624"
+]
 },
 "G:845618": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845618"
+]
 },
 "G:84560C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84560C"
+]
 },
 "G:84566C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84566C"
+]
 },
 "G:845660": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845660"
+]
 },
 "G:845648": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845648"
+]
 },
 "P:733E10:1": {
 "class": "IUnknown",
@@ -332874,9 +334365,11 @@
 "ents": []
 },
 "G:B13EB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:B13EB0"
+]
 },
 "R:734990:ecx": {
 "class": "StringTable",
@@ -333186,9 +334679,11 @@
 ]
 },
 "G:845958": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845958"
+]
 },
 "G:845964": {
 "class": "AbstractClass",
@@ -333196,14 +334691,18 @@
 "ents": []
 },
 "G:845948": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:845948"
+]
 },
 "G:84593C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84593C"
+]
 },
 "M:746B20:this:0x6C4": {
 "class": "UnitTypeClass",
@@ -335636,14 +337135,18 @@
 "ents": []
 },
 "G:848D60": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848D60"
+]
 },
 "G:848D40": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848D40"
+]
 },
 "P:76BFB0:0": {
 "class": "WinModemClass",
@@ -335779,9 +337282,11 @@
 "ents": []
 },
 "G:848DD8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848DD8"
+]
 },
 "G:848DE4": {
 "class": "AbstractClass",
@@ -335789,9 +337294,11 @@
 "ents": []
 },
 "G:848DCC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848DCC"
+]
 },
 "P:76F0C0:0": {
 "class": "AbstractClass",
@@ -335893,9 +337400,11 @@
 ]
 },
 "G:848F24": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848F24"
+]
 },
 "P:76EAF0:0": {
 "class": "IUnknown",
@@ -335989,9 +337498,11 @@
 "ents": []
 },
 "G:848F54": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:848F54"
+]
 },
 "P:7693A0:2": {
 "class": "VectorClass",
@@ -336122,19 +337633,25 @@
 "ents": []
 },
 "G:8490C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8490C0"
+]
 },
 "G:8490A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8490A8"
+]
 },
 "G:84908C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84908C"
+]
 },
 "M:76DAD0:this:0x4": {
 "class": "AbstractClass",
@@ -336142,14 +337659,18 @@
 "ents": []
 },
 "G:849078": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:849078"
+]
 },
 "G:849064": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:849064"
+]
 },
 "R:76DFD0:ecx": {
 "class": "AbstractClass",
@@ -336231,14 +337752,18 @@
 "ents": []
 },
 "G:8490F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8490F0"
+]
 },
 "G:8490D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8490D8"
+]
 },
 "P:76E750:0": {
 "class": "AbstractClass",
@@ -337137,9 +338662,11 @@
 "ents": []
 },
 "G:84A0C4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A0C4"
+]
 },
 "G:84A0D0": {
 "class": "AbstractClass",
@@ -337162,9 +338689,11 @@
 "ents": []
 },
 "G:84A0AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A0AC"
+]
 },
 "G:84A0A4": {
 "class": "AbstractClass",
@@ -337172,9 +338701,11 @@
 "ents": []
 },
 "G:84A098": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A098"
+]
 },
 "G:84A090": {
 "class": "AbstractClass",
@@ -337182,9 +338713,11 @@
 "ents": []
 },
 "G:84A084": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A084"
+]
 },
 "G:84A07C": {
 "class": "AbstractClass",
@@ -337192,9 +338725,11 @@
 "ents": []
 },
 "G:84A074": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A074"
+]
 },
 "G:84A06C": {
 "class": "AbstractClass",
@@ -337202,9 +338737,11 @@
 "ents": []
 },
 "G:84A060": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A060"
+]
 },
 "G:84A058": {
 "class": "AbstractClass",
@@ -337212,9 +338749,11 @@
 "ents": []
 },
 "G:84A04C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A04C"
+]
 },
 "G:84A044": {
 "class": "AbstractClass",
@@ -337222,9 +338761,11 @@
 "ents": []
 },
 "G:84A038": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A038"
+]
 },
 "G:84A030": {
 "class": "AbstractClass",
@@ -337232,9 +338773,11 @@
 "ents": []
 },
 "G:84A020": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A020"
+]
 },
 "G:84A018": {
 "class": "AbstractClass",
@@ -337242,9 +338785,11 @@
 "ents": []
 },
 "G:84A00C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A00C"
+]
 },
 "G:84A004": {
 "class": "AbstractClass",
@@ -337252,9 +338797,11 @@
 "ents": []
 },
 "G:849FF4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:849FF4"
+]
 },
 "G:849FEC": {
 "class": "AbstractClass",
@@ -337262,9 +338809,11 @@
 "ents": []
 },
 "G:849FDC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:849FDC"
+]
 },
 "P:7B5A40:0": {
 "class": "IUnknown",
@@ -337397,9 +338946,11 @@
 "ents": []
 },
 "G:84A16C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A16C"
+]
 },
 "R:77A9F0:ecx": {
 "class": "ConvertClass",
@@ -337421,19 +338972,25 @@
 "ents": []
 },
 "G:84A1AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A1AC"
+]
 },
 "G:84A194": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A194"
+]
 },
 "G:84A180": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A180"
+]
 },
 "G:B75E48": {
 "class": "rc_ptr",
@@ -337470,9 +339027,11 @@
 "ents": []
 },
 "G:84A41C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A41C"
+]
 },
 "G:84A430": {
 "class": "AbstractClass",
@@ -337485,9 +339044,11 @@
 "ents": []
 },
 "G:84A44C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A44C"
+]
 },
 "R:77D4C0:ecx": {
 "class": "AbstractClass",
@@ -337522,14 +339083,18 @@
 "ents": []
 },
 "G:84A494": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A494"
+]
 },
 "G:84A484": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A484"
+]
 },
 "G:84A52C": {
 "class": "AbstractClass",
@@ -337651,14 +339216,18 @@
 "ents": []
 },
 "G:84A5D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A5D0"
+]
 },
 "G:84A5BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A5BC"
+]
 },
 "G:B77AD0": {
 "class": "AbstractClass",
@@ -337676,9 +339245,11 @@
 "ents": []
 },
 "G:84A5E4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A5E4"
+]
 },
 "G:B777A0": {
 "class": "AbstractClass",
@@ -337741,44 +339312,60 @@
 ]
 },
 "G:84A64C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A64C"
+]
 },
 "G:84A640": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A640"
+]
 },
 "G:84A634": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A634"
+]
 },
 "G:84A628": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A628"
+]
 },
 "G:84A61C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A61C"
+]
 },
 "G:84A610": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A610"
+]
 },
 "G:84A604": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A604"
+]
 },
 "G:84A5F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A5F8"
+]
 },
 "G:B76520": {
 "class": "AbstractClass",
@@ -337813,19 +339400,25 @@
 ]
 },
 "G:84A690": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A690"
+]
 },
 "G:84A6C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A6C0"
+]
 },
 "G:84A6AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A6AC"
+]
 },
 "P:77E820:0": {
 "class": "AbstractClass",
@@ -337855,9 +339448,11 @@
 "ents": []
 },
 "G:8353A4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8353A4"
+]
 },
 "T:780A90": {
 "class": "AbstractClass",
@@ -337865,9 +339460,11 @@
 "ents": []
 },
 "G:8353B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8353B8"
+]
 },
 "P:781130:0": {
 "class": "AbstractClass",
@@ -337880,24 +339477,32 @@
 "ents": []
 },
 "G:84A710": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A710"
+]
 },
 "G:84A6FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A6FC"
+]
 },
 "G:84A6E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A6E8"
+]
 },
 "G:84A6D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A6D0"
+]
 },
 "P:7ACA00:0": {
 "class": "AbstractClass",
@@ -337959,19 +339564,25 @@
 "ents": []
 },
 "G:84A770": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A770"
+]
 },
 "G:84A764": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A764"
+]
 },
 "G:84A744": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A744"
+]
 },
 "G:84A738": {
 "class": "AbstractClass",
@@ -338024,9 +339635,11 @@
 "ents": []
 },
 "G:84A930": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A930"
+]
 },
 "M:785740:this:0x6BC": {
 "class": "AnimTypeClass",
@@ -338041,9 +339654,11 @@
 "ents": []
 },
 "G:84B380": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B380"
+]
 },
 "T:4E34A0": {
 "class": "AbstractClass",
@@ -338056,9 +339671,11 @@
 "ents": []
 },
 "G:84B3D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B3D8"
+]
 },
 "P:786390:0": {
 "class": "AbstractClass",
@@ -338083,9 +339700,11 @@
 ]
 },
 "G:84B430": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B430"
+]
 },
 "P:792BE0:0": {
 "class": "IUnknown",
@@ -338107,9 +339726,11 @@
 "ents": []
 },
 "G:84B420": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B420"
+]
 },
 "P:7AE180:0": {
 "class": "AbstractClass",
@@ -338144,9 +339765,11 @@
 "ents": []
 },
 "G:84B5D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B5D0"
+]
 },
 "G:B778D8": {
 "class": "DynamicClass",
@@ -338198,9 +339821,11 @@
 "ents": []
 },
 "G:84B5F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B5F4"
+]
 },
 "P:7ADB00:1": {
 "class": "AbstractClass",
@@ -338208,9 +339833,11 @@
 "ents": []
 },
 "G:84B5E8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B5E8"
+]
 },
 "P:5E2CD0:1": {
 "class": "IUnknown",
@@ -338252,9 +339879,11 @@
 "ents": []
 },
 "G:84B644": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B644"
+]
 },
 "G:84B698": {
 "class": "AbstractClass",
@@ -338279,19 +339908,25 @@
 "ents": []
 },
 "G:84B7D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B7D8"
+]
 },
 "G:84B794": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B794"
+]
 },
 "G:84B77C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B77C"
+]
 },
 "G:84B740": {
 "class": "AbstractClass",
@@ -338299,34 +339934,46 @@
 "ents": []
 },
 "G:84B704": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B704"
+]
 },
 "G:84B6F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B6F0"
+]
 },
 "G:84B6DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B6DC"
+]
 },
 "G:84B6C8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B6C8"
+]
 },
 "G:84B6B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B6B8"
+]
 },
 "G:84B6A4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B6A4"
+]
 },
 "P:79BA60:0": {
 "class": "IUnknown",
@@ -338336,9 +339983,11 @@
 ]
 },
 "G:84B844": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B844"
+]
 },
 "R:789B60:ecx": {
 "class": "BuildingClass",
@@ -338370,29 +340019,39 @@
 "ents": []
 },
 "G:84B8D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B8D0"
+]
 },
 "G:84B8BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B8BC"
+]
 },
 "G:84B8A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B8A8"
+]
 },
 "G:84B8F8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B8F8"
+]
 },
 "G:84B8EC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B8EC"
+]
 },
 "R:78A6B0:ecx": {
 "class": "IUnknown",
@@ -338402,9 +340061,11 @@
 ]
 },
 "G:84B90C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B90C"
+]
 },
 "R:78A8F0:ecx": {
 "class": "IUnknown",
@@ -338414,9 +340075,11 @@
 ]
 },
 "G:84B924": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B924"
+]
 },
 "G:84B224": {
 "class": "AbstractClass",
@@ -338431,9 +340094,11 @@
 ]
 },
 "G:84B9E0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B9E0"
+]
 },
 "G:84B9B0": {
 "class": "AbstractClass",
@@ -338446,24 +340111,32 @@
 "ents": []
 },
 "G:84B99C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B99C"
+]
 },
 "G:84B988": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B988"
+]
 },
 "G:84B974": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B974"
+]
 },
 "G:84B9F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B9F4"
+]
 },
 "G:84B94C": {
 "class": "AbstractClass",
@@ -338471,9 +340144,11 @@
 "ents": []
 },
 "G:84B940": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B940"
+]
 },
 "P:780E30:0": {
 "class": "AbstractClass",
@@ -338505,9 +340180,11 @@
 "ents": []
 },
 "G:84BA04": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BA04"
+]
 },
 "T:77DC90": {
 "class": "VectorClass",
@@ -338529,24 +340206,32 @@
 ]
 },
 "G:84BAE0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BAE0"
+]
 },
 "G:84BAA8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BAA8"
+]
 },
 "G:84BA8C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BA8C"
+]
 },
 "G:84BA50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BA50"
+]
 },
 "P:5E8D00:0": {
 "class": "AbstractClass",
@@ -338554,29 +340239,39 @@
 "ents": []
 },
 "G:84BB60": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB60"
+]
 },
 "G:84BB34": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB34"
+]
 },
 "G:84BB28": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB28"
+]
 },
 "G:84BB1C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB1C"
+]
 },
 "G:84BAFC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BAFC"
+]
 },
 "G:B75F6C": {
 "class": "AbstractClass",
@@ -338598,9 +340293,11 @@
 ]
 },
 "G:84BBC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BBC8"
+]
 },
 "T:78F7F0": {
 "class": "BuildingClass",
@@ -338610,19 +340307,25 @@
 ]
 },
 "G:84BBB0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BBB0"
+]
 },
 "G:84BB80": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB80"
+]
 },
 "G:84BB6C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BB6C"
+]
 },
 "G:84ACE0": {
 "class": "AbstractClass",
@@ -338630,19 +340333,25 @@
 "ents": []
 },
 "G:8338D4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8338D4"
+]
 },
 "G:833768": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:833768"
+]
 },
 "G:8315FC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:8315FC"
+]
 },
 "G:84BBE0": {
 "class": "AbstractClass",
@@ -338675,29 +340384,39 @@
 "ents": []
 },
 "G:84BD44": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BD44"
+]
 },
 "G:84BD00": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BD00"
+]
 },
 "G:84BCA8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BCA8"
+]
 },
 "G:84BC50": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BC50"
+]
 },
 "G:84BC3C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84BC3C"
+]
 },
 "T:5DA040": {
 "class": "IUnknown",
@@ -338731,9 +340450,11 @@
 "ents": []
 },
 "G:84C600": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84C600"
+]
 },
 "M:795650:this:0x4": {
 "class": "AbstractClass",
@@ -338751,9 +340472,11 @@
 "ents": []
 },
 "G:84CC5C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CC5C"
+]
 },
 "G:B76914": {
 "class": "AbstractClass",
@@ -338975,14 +340698,18 @@
 "ents": []
 },
 "G:84CDC4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CDC4"
+]
 },
 "G:84CDB4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CDB4"
+]
 },
 "G:84CDA8": {
 "class": "AbstractClass",
@@ -338990,14 +340717,18 @@
 "ents": []
 },
 "G:84CD90": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CD90"
+]
 },
 "G:84CD78": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CD78"
+]
 },
 "R:79C040:ecx": {
 "class": "AbstractClass",
@@ -339007,9 +340738,11 @@
 ]
 },
 "G:84CE18": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84CE18"
+]
 },
 "T:79BA60": {
 "class": "AbstractClass",
@@ -339105,24 +340838,32 @@
 "ents": []
 },
 "G:84B15C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B15C"
+]
 },
 "G:84D0AC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D0AC"
+]
 },
 "G:84D08C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D08C"
+]
 },
 "G:84D048": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D048"
+]
 },
 "G:84D1F0": {
 "class": "AbstractClass",
@@ -339150,9 +340891,11 @@
 "ents": []
 },
 "G:84D1B8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D1B8"
+]
 },
 "G:84D1B0": {
 "class": "AbstractClass",
@@ -339239,9 +340982,11 @@
 ]
 },
 "G:84D484": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D484"
+]
 },
 "G:84D478": {
 "class": "FreeForAll",
@@ -339251,9 +340996,11 @@
 ]
 },
 "G:84D464": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D464"
+]
 },
 "G:84D458": {
 "class": "FreeForAll",
@@ -339263,9 +341010,11 @@
 ]
 },
 "G:84D440": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D440"
+]
 },
 "G:84D438": {
 "class": "FreeForAll",
@@ -339275,9 +341024,11 @@
 ]
 },
 "G:84D060": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D060"
+]
 },
 "G:84D430": {
 "class": "FreeForAll",
@@ -339287,9 +341038,11 @@
 ]
 },
 "G:84D418": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D418"
+]
 },
 "G:84D410": {
 "class": "FreeForAll",
@@ -339306,9 +341059,11 @@
 ]
 },
 "G:84D3F0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D3F0"
+]
 },
 "G:84D3E8": {
 "class": "FreeForAll",
@@ -339325,39 +341080,53 @@
 ]
 },
 "G:84D3B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D3B4"
+]
 },
 "G:84D4F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D4F4"
+]
 },
 "G:84D4DC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D4DC"
+]
 },
 "G:84D4BC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D4BC"
+]
 },
 "G:84D5CC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D5CC"
+]
 },
 "G:84D5B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D5B4"
+]
 },
 "G:84D598": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D598"
+]
 },
 "G:84D590": {
 "class": "AbstractClass",
@@ -339365,29 +341134,39 @@
 "ents": []
 },
 "G:84D570": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D570"
+]
 },
 "G:84D550": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D550"
+]
 },
 "G:84D53C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D53C"
+]
 },
 "G:84D520": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D520"
+]
 },
 "G:84D508": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D508"
+]
 },
 "R:7A2330:ecx": {
 "class": "AbstractClass",
@@ -339415,9 +341194,11 @@
 "ents": []
 },
 "G:84D694": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D694"
+]
 },
 "T:7A29E0": {
 "class": "AbstractClass",
@@ -339430,9 +341211,11 @@
 "ents": []
 },
 "G:84A9F4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84A9F4"
+]
 },
 "P:7ADCD0:1": {
 "class": "AbstractClass",
@@ -339454,19 +341237,25 @@
 ]
 },
 "G:84ABA4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ABA4"
+]
 },
 "G:84AAE8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AAE8"
+]
 },
 "G:84ABEC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ABEC"
+]
 },
 "G:84ABE4": {
 "class": "AbstractClass",
@@ -339479,34 +341268,46 @@
 "ents": []
 },
 "G:84ABCC": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ABCC"
+]
 },
 "G:84ABB8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ABB8"
+]
 },
 "G:84AC00": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AC00"
+]
 },
 "G:84AC90": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AC90"
+]
 },
 "G:84AC84": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AC84"
+]
 },
 "G:84AC2C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AC2C"
+]
 },
 "G:84AC14": {
 "class": "AbstractClass",
@@ -339514,14 +341315,18 @@
 "ents": []
 },
 "G:84ACC8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ACC8"
+]
 },
 "G:84ACB4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84ACB4"
+]
 },
 "G:B73E10": {
 "class": "AbstractClass",
@@ -339529,29 +341334,39 @@
 "ents": []
 },
 "G:84AD74": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AD74"
+]
 },
 "G:84AD60": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AD60"
+]
 },
 "G:84AD54": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AD54"
+]
 },
 "G:84AD40": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AD40"
+]
 },
 "G:84AD20": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84AD20"
+]
 },
 "G:B765F8": {
 "class": "AbstractClass",
@@ -339626,29 +341441,39 @@
 "ents": []
 },
 "G:84B00C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B00C"
+]
 },
 "G:84B06C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B06C"
+]
 },
 "G:84B058": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B058"
+]
 },
 "G:84B044": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B044"
+]
 },
 "G:84B034": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B034"
+]
 },
 "G:84A21C": {
 "class": "FreeForAll",
@@ -339680,34 +341505,46 @@
 "ents": []
 },
 "G:84B0D0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B0D0"
+]
 },
 "G:84B0C0": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B0C0"
+]
 },
 "G:84B0A8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B0A8"
+]
 },
 "G:84B090": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B090"
+]
 },
 "G:84B07C": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B07C"
+]
 },
 "G:84B190": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B190"
+]
 },
 "P:7AEE90:1": {
 "class": "WinModemClass",
@@ -339741,19 +341578,25 @@
 "ents": []
 },
 "G:84B234": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B234"
+]
 },
 "G:84B254": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B254"
+]
 },
 "G:84B244": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B244"
+]
 },
 "P:7CD680:4": {
 "class": "FreeForAll",
@@ -339773,14 +341616,18 @@
 "ents": []
 },
 "G:84B274": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B274"
+]
 },
 "G:84B264": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84B264"
+]
 },
 "P:7AE5B0:0": {
 "class": "AbstractClass",
@@ -339817,24 +341664,32 @@
 ]
 },
 "G:84D744": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D744"
+]
 },
 "G:84D730": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D730"
+]
 },
 "G:84D768": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D768"
+]
 },
 "G:84D758": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D758"
+]
 },
 "M:7AD9D0:this:0x8": {
 "class": "AbstractClass",
@@ -339926,9 +341781,11 @@
 "ents": []
 },
 "G:84D7D8": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D7D8"
+]
 },
 "G:84D818": {
 "class": "AbstractClass",
@@ -339968,9 +341825,11 @@
 "ents": []
 },
 "G:84D8B4": {
-"class": "AbstractClass",
+"class": "StringTable",
 "obs": [],
-"ents": []
+"ents": [
+"G:84D8B4"
+]
 },
 "G:84D8A8": {
 "class": "AbstractClass",
@@ -342817,6 +344676,27 @@
 "M:729480:this:0xc"
 ]
 },
+"G:844BAC": {
+"class": "ConvertClass",
+"obs": [],
+"ents": [
+"G:844BAC"
+]
+},
+"G:844BB8": {
+"class": "ConvertClass",
+"obs": [],
+"ents": [
+"G:844BB8"
+]
+},
+"G:844BBC": {
+"class": "ConvertClass",
+"obs": [],
+"ents": [
+"G:844BBC"
+]
+},
 "M:7404B0:this:0x21c": {
 "class": "HouseClass",
 "obs": [],
@@ -343206,7 +345086,7 @@
 "ents": []
 },
 "N:76F479": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -343663,12 +345543,12 @@
 ]
 },
 "N:471DCE": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
 "N:4727CA": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -343771,7 +345651,7 @@
 "ents": []
 },
 "N:76F506": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -344728,7 +346608,7 @@
 "ents": []
 },
 "N:5F1725": {
-"class": "CaptureManagerClass",
+"class": "VoxClass",
 "obs": [],
 "ents": [
 "N:5F1725"
@@ -344839,7 +346719,7 @@
 ]
 },
 "N:53B089": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -344866,12 +346746,12 @@
 ]
 },
 "N:59BC23": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
 "N:5A0924": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -345142,12 +347022,12 @@
 "ents": []
 },
 "N:6AF223": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
 "N:6B1232": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -345829,7 +347709,7 @@
 ]
 },
 "N:42A741": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -345860,7 +347740,7 @@
 ]
 },
 "N:554C56": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -346056,7 +347936,7 @@
 "ents": []
 },
 "N:5A2901": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -346107,12 +347987,12 @@
 ]
 },
 "N:59C9AF": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
 "N:58D675": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -347094,7 +348974,7 @@
 "ents": []
 },
 "N:5A462A": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -347104,7 +348984,7 @@
 "ents": []
 },
 "N:5A4BA5": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -347160,7 +349040,7 @@
 ]
 },
 "N:5C0885": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
@@ -347723,7 +349603,7 @@
 "ents": []
 },
 "N:7530BF": {
-"class": "CaptureManagerClass",
+"class": "VoxClass",
 "obs": [],
 "ents": [
 "N:7530BF"
@@ -347873,7 +349753,7 @@
 "ents": []
 },
 "N:7959C7": {
-"class": "CommandClass",
+"class": "StringTable",
 "obs": [],
 "ents": []
 },
