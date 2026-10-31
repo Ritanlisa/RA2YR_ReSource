@@ -67,7 +67,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15", "C18"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15", "C18", "C26"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -81,6 +81,7 @@ FAMILY_DESC = {
     "C10": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
     "C11": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
     "C18": "binary offset-signature match (class member offsets observed in its own functions)",
+    "C26": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
     "C15": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
 }
 
@@ -763,6 +764,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--no-c26-locality", action="store_true", help="disable C26 link-order locality")
     ap.add_argument("--audit-yrpp", action="store_true",
                     help="check whether each YRpp function->class mapping is still in its cluster's domain")
     ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
@@ -2803,6 +2805,60 @@ def main():
                          "exact": exs})
     print("[clusters] %d (entities %d)" % (len(clusters), len(ents)), flush=True)
 
+    # ---- C26（可选，默认关闭）：链接序局部性，硬约束形态 ----
+    if not getattr(args, "no_c26_locality", False):
+        _pts26 = {}
+        for _eid26, _lst26 in exact.items():
+            if not _eid26.startswith("T:"):
+                continue
+            _cs26 = {_ci for _ci, _src in _lst26}
+            if len(_cs26) == 1:
+                _a26 = hx(_eid26[2:])
+                if _a26 is not None:
+                    _pts26[_a26] = next(iter(_cs26))
+        for _as26, _cn26 in ((jload("anchors/yrpp_fn_class.json", {}) or {}).get("map") or {}).items():
+            _a26b = hx(_as26); _ci26b = resolve(_cn26)
+            if _a26b is not None and _ci26b is not None:
+                _pts26.setdefault(_a26b, _ci26b)
+        _s26 = sorted(_pts26.items()); _ad26 = [x[0] for x in _s26]
+        import bisect as _b26
+        _c26 = 0
+        for _cl26 in clusters:
+            _r26 = (_cl26.get("root") if isinstance(_cl26, dict) else str(_cl26))
+            # 局部性只对**函数自身**成立（T: 实体）：0xADDR 是该函数地址。
+            # 对 P:/R:/M:/G:/N: 实体，0xADDR 是**外层函数**地址，与实体自身的类无关 ——
+            # 早期版本没区分，导致 363 个冲突（实证：P:413850:0 的 C10 与 C26 交集为空）。
+            if not str(_r26).startswith("T:"):
+                continue
+            _pp26 = str(_r26).split(":")
+            if len(_pp26) < 2: continue
+            _a26c = hx(_pp26[1])
+            if _a26c is None: continue
+            _i26 = _b26.bisect_left(_ad26, _a26c)
+            _cnt26 = collections.Counter()
+            _lo26 = _i26 - 1
+            while _lo26 >= 0 and _a26c - _ad26[_lo26] <= 0x100:
+                _cnt26[_s26[_lo26][1]] += 1; _lo26 -= 1
+            _hi26 = _i26
+            while _hi26 < len(_ad26) and _ad26[_hi26] - _a26c <= 0x100:
+                if _ad26[_hi26] != _a26c: _cnt26[_s26[_hi26][1]] += 1
+                _hi26 += 1
+            if not _cnt26: continue
+            _mc26 = _cnt26.most_common(2)
+            if _mc26[0][1] < 3 or (len(_mc26) > 1 and _mc26[1][1] == _mc26[0][1]): continue
+            _cur26 = FULL
+            for _f26 in FAMILIES:
+                if _f26 in ("C26", "C1"): continue
+                _fm26 = fam[_f26].get(_r26)
+                if _fm26 is not None: _cur26 &= _fm26
+            if _cl26.get("obs"):
+                _cur26 &= c1_mask(_cl26["obs"])
+            _lc26 = _mc26[0][0]
+            if _cur26.bit_count() > 1 and ((_cur26 >> _lc26) & 1):
+                fam["C26"][_r26] = 1 << _lc26
+                _c26 += 1
+        print("[C26] locality (hard) applied=%d" % _c26, flush=True)
+
     # ---- 布局补全：用「已二进制定类」簇的观测补全该类的成员表 ----
     # 身份来自 C4/C15（装表/槽位），簇内观测来自同一对象 -> 这些偏移就是该类的真实成员。
     # 实测：986 条观测的大簇，最好的类也只覆盖 302 条 —— 声明布局缺了约 70% 的真实成员，
@@ -3800,6 +3856,8 @@ def main():
                 _n_drops += 1
         print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
               % (_res_rounds, len(_empt), _n_drops), flush=True)
+        if _n_drops == 0:
+            break                      # 零丢弃 = 无法再靠"丢最弱族"消解，直接退出
 
     res = res_probe          # 循环退出时 res_probe 即最新丢弃后的求解结果，勿重复求解
     _unresolved = res["n_conflicts"]
@@ -3811,6 +3869,15 @@ def main():
     if _unresolved:
         print("[conflicts] FATAL: %d conflicts remain after weakest-evidence drop "
               "(solve undefined)" % _unresolved, flush=True)
+        for _cc in (res.get("conflicted") or [])[:6]:
+            _clI, _mI, _exI, _exsI, _flI = _cc[0], _cc[1], _cc[2], _cc[3], _cc[4]
+            _rI = (_clI.get("root") if isinstance(_clI, dict) else str(_clI))
+            print("  UNRESOLVED %s flags=%s exact=%s domain=%d obs=%d"
+                  % (_rI, sorted(_flI), _exsI, _mI.bit_count(), len(_clI.get("obs") or ())), flush=True)
+            for _fI in FAMILIES:
+                _fmI = fam[_fI].get(_rI)
+                if _fmI is not None and _fmI != FULL:
+                    print("     %-4s %d" % (_fI, _fmI.bit_count()), flush=True)
         sys.exit(2)
 
     # ---------------- 赋值规则：most-specific compatible class ----------------
