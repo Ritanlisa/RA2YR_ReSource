@@ -1158,6 +1158,25 @@ def main():
                     _parents[_ci] = _pi
     except Exception:
         _parents = {}
+    # 补 RTTI 精确基类表（954 类）：class_layouts 只给了 103 条父链，是布局稀疏的主因。
+    # rtti_base_arrays.json = 类 -> [自身, 直接基类, ...]（二进制 ??_R2 表，权威）。
+    _rtti_links = 0
+    try:
+        _rtti = jload("anchors/rtti_base_arrays.json", {}) or {}
+        for _cn, _bases in _rtti.items():
+            if not isinstance(_bases, (list, tuple)) or len(_bases) < 2:
+                continue
+            _ci = resolve(_cn)
+            _pi = resolve(_bases[1])
+            if _ci is None or _pi is None or _ci == _pi:
+                continue
+            if _parents.get(_ci) is None:
+                _parents[_ci] = _pi
+                _rtti_links += 1
+    except Exception:
+        _rtti_links = 0
+    print("[layouts] RTTI base links added: %d (total parent links=%d)"
+          % (_rtti_links, len(_parents)), flush=True)
     _inherit_added = 0
     _depth_cache = {}
     def _chain(ci):

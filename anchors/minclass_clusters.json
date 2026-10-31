@@ -190,7 +190,7 @@
 ]
 },
 "R:401F80:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -200,7 +200,7 @@
 "ents": []
 },
 "R:401F90:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -210,7 +210,7 @@
 "ents": []
 },
 "R:401FB0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -252,7 +252,7 @@
 ]
 },
 "R:402020:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -262,7 +262,7 @@
 "ents": []
 },
 "P:7C8E17:5": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 464,
@@ -304,7 +304,7 @@
 ]
 },
 "M:402220:this:0xac": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 232,
@@ -380,7 +380,7 @@
 ]
 },
 "M:402330:this:0x168": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -415,7 +415,7 @@
 ]
 },
 "R:402430:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 164,
@@ -581,7 +581,7 @@
 ]
 },
 "R:4026A0:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 212,
@@ -691,7 +691,7 @@
 ]
 },
 "R:402AF0:ecx": {
-"class": "EnumConnectionsClass",
+"class": "ScrollClass",
 "obs": [
 [
 20,
@@ -823,7 +823,7 @@
 ]
 },
 "R:4034A0:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 240,
@@ -1186,7 +1186,7 @@
 ]
 },
 "P:4041D0:0": {
-"class": "ConvertClass",
+"class": "DropListClass",
 "obs": [
 [
 64,
@@ -1378,7 +1378,7 @@
 ]
 },
 "R:404D80:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 168,
@@ -1406,7 +1406,7 @@
 ]
 },
 "R:405130:ecx": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -1416,7 +1416,7 @@
 "ents": []
 },
 "R:405160:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -1426,7 +1426,7 @@
 "ents": []
 },
 "R:405190:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -1436,7 +1436,7 @@
 "ents": []
 },
 "R:4052E0:ecx": {
-"class": "LinkClass",
+"class": "ScrollClass",
 "obs": [
 [
 24,
@@ -1566,7 +1566,7 @@
 ]
 },
 "R:405490:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 344,
@@ -1590,7 +1590,7 @@
 ]
 },
 "M:4054A0:this:0xb0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 192,
@@ -1740,7 +1740,7 @@
 "ents": []
 },
 "R:4059F0:ecx": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 192,
@@ -1762,7 +1762,7 @@
 "ents": []
 },
 "R:405A00:ecx": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 192,
@@ -1790,7 +1790,7 @@
 ]
 },
 "P:4047B0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 192,
@@ -1983,7 +1983,7 @@
 "ents": []
 },
 "R:406310:ecx": {
-"class": "SwizzleManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 36,
@@ -1993,7 +1993,7 @@
 "ents": []
 },
 "R:4065F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -2273,7 +2273,7 @@
 ]
 },
 "R:407A30:ecx": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 192,
@@ -2313,7 +2313,7 @@
 ]
 },
 "R:407A60:ecx": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 192,
@@ -2419,7 +2419,7 @@
 ]
 },
 "R:407F80:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 136,
@@ -2471,7 +2471,7 @@
 ]
 },
 "R:408070:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -2481,7 +2481,7 @@
 "ents": []
 },
 "R:4080B0:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -2491,7 +2491,7 @@
 "ents": []
 },
 "R:4080C0:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -2613,7 +2613,7 @@
 ]
 },
 "R:408540:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -2717,7 +2717,7 @@
 ]
 },
 "R:408840:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -2889,7 +2889,7 @@
 ]
 },
 "R:408EC0:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -2899,7 +2899,7 @@
 "ents": []
 },
 "R:408ED0:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -2909,7 +2909,7 @@
 "ents": []
 },
 "R:4090F0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -3009,7 +3009,7 @@
 ]
 },
 "R:409330:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -3111,7 +3111,7 @@
 "ents": []
 },
 "P:403870:3": {
-"class": "MouseClass",
+"class": "CellClass",
 "obs": [
 [
 76,
@@ -3136,7 +3136,7 @@
 ]
 },
 "R:40A2D0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 344,
@@ -3196,7 +3196,7 @@
 ]
 },
 "M:40A340:this:0x168": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -3322,7 +3322,7 @@
 ]
 },
 "M:40A6D0:this:0x158": {
-"class": "DropPodLocomotionClass",
+"class": "PlayerProfile",
 "obs": [
 [
 100,
@@ -5256,7 +5256,7 @@
 ]
 },
 "M:40E340:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -5266,7 +5266,7 @@
 "ents": []
 },
 "M:40E340:p0:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -5318,7 +5318,7 @@
 ]
 },
 "M:40E390:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -6460,7 +6460,7 @@
 ]
 },
 "R:410410:ecx": {
-"class": "AbstractClass",
+"class": "CellClass",
 "obs": [
 [
 16,
@@ -7167,7 +7167,7 @@
 "ents": []
 },
 "P:4134A0:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -7257,7 +7257,7 @@
 "ents": []
 },
 "P:413800:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -7281,7 +7281,7 @@
 "ents": []
 },
 "R:413A70:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -7321,7 +7321,7 @@
 ]
 },
 "M:413F80:this:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -8194,7 +8194,7 @@
 ]
 },
 "R:4197C0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1728,
@@ -8544,7 +8544,7 @@
 ]
 },
 "P:41B6A0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -8561,9 +8561,7 @@
 1
 ]
 ],
-"ents": [
-"M:41B6A0:p0:0x4"
-]
+"ents": []
 },
 "P:41B7F0:0": {
 "class": "TerrainTypeClass",
@@ -8598,7 +8596,7 @@
 ]
 },
 "P:41B840:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -9031,7 +9029,7 @@
 ]
 },
 "R:41C3F0:ecx": {
-"class": "GadgetClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -9505,7 +9503,7 @@
 ]
 },
 "M:41D540:this:0x50": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -9597,7 +9595,7 @@
 ]
 },
 "R:41D830:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 60,
@@ -9763,7 +9761,7 @@
 ]
 },
 "M:41DB40:this:0x50": {
-"class": "MissionClass",
+"class": "ScrollClass",
 "obs": [
 [
 660,
@@ -10412,7 +10410,7 @@
 ]
 },
 "P:41EE90:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 64,
@@ -10498,7 +10496,7 @@
 ]
 },
 "M:41F580:this:0xdc": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -10510,7 +10508,7 @@
 ]
 },
 "M:41F580:this:0xe0": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -10606,7 +10604,7 @@
 ]
 },
 "R:41FD30:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 216,
@@ -10618,7 +10616,7 @@
 ]
 },
 "R:41FD40:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 220,
@@ -12006,7 +12004,7 @@
 ]
 },
 "M:4228E0:this:0xcc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 132,
@@ -12645,7 +12643,7 @@
 ]
 },
 "M:424B50:this:0xcc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 132,
@@ -12985,7 +12983,7 @@
 ]
 },
 "M:425410:this:0xcc": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -13107,7 +13105,7 @@
 ]
 },
 "R:425670:ecx": {
-"class": "AircraftClass",
+"class": "AnimClass",
 "obs": [
 [
 0,
@@ -13195,7 +13193,7 @@
 ]
 },
 "P:425D10:0": {
-"class": "ObjectClass",
+"class": "AnimClass",
 "obs": [
 [
 0,
@@ -13285,7 +13283,7 @@
 ]
 },
 "P:4265B0:0": {
-"class": "GadgetClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -14428,7 +14426,7 @@
 ]
 },
 "P:429210:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -14510,7 +14508,7 @@
 ]
 },
 "M:429830:p0:0xe8": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -14734,7 +14732,7 @@
 "ents": []
 },
 "M:42A5B0:this:0x14": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -14744,7 +14742,7 @@
 "ents": []
 },
 "M:42A5B0:this:0x68": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -14860,7 +14858,7 @@
 "ents": []
 },
 "M:42A6D0:this:0x14": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -14870,7 +14868,7 @@
 "ents": []
 },
 "M:42A6D0:this:0x68": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -14924,7 +14922,7 @@
 ]
 },
 "M:42A900:this:0x14": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -14934,7 +14932,7 @@
 "ents": []
 },
 "M:42A900:this:0x68": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -15164,7 +15162,7 @@
 ]
 },
 "M:42C290:p0:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -15215,7 +15213,7 @@
 ]
 },
 "R:42CF80:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -15278,9 +15276,7 @@
 2
 ]
 ],
-"ents": [
-"T:42D470"
-]
+"ents": []
 },
 "P:42D490:0": {
 "class": "CellClass",
@@ -15306,9 +15302,7 @@
 2
 ]
 ],
-"ents": [
-"T:42D510"
-]
+"ents": []
 },
 "P:42D510:0": {
 "class": "AbstractClass",
@@ -16111,7 +16105,7 @@
 ]
 },
 "M:42E780:p0:0xe54": {
-"class": "MissionClass",
+"class": "ScrollClass",
 "obs": [
 [
 660,
@@ -16123,7 +16117,7 @@
 ]
 },
 "R:42E800:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -16221,7 +16215,7 @@
 ]
 },
 "P:42EB50:1": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -16251,7 +16245,7 @@
 ]
 },
 "R:42EBE0:ecx": {
-"class": "EnumConnectionsClass",
+"class": "ScrollClass",
 "obs": [
 [
 28,
@@ -16331,7 +16325,7 @@
 ]
 },
 "M:42F260:this:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -16634,12 +16628,10 @@
 2
 ]
 ],
-"ents": [
-"M:42F620:this:0x4"
-]
+"ents": []
 },
 "R:42F670:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -16732,9 +16724,7 @@
 2
 ]
 ],
-"ents": [
-"M:42F7F0:this:0x4"
-]
+"ents": []
 },
 "R:42F840:ecx": {
 "class": "VectorClass",
@@ -16808,9 +16798,7 @@
 2
 ]
 ],
-"ents": [
-"M:42F930:this:0x4"
-]
+"ents": []
 },
 "R:42F970:ecx": {
 "class": "VectorClass",
@@ -17155,7 +17143,7 @@
 "ents": []
 },
 "R:430650:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 272,
@@ -18326,7 +18314,7 @@
 ]
 },
 "P:432750:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -18360,7 +18348,7 @@
 "ents": []
 },
 "R:432BD0:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionClass",
 "obs": [
 [
 4,
@@ -18376,7 +18364,7 @@
 ]
 },
 "R:432C10:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 32,
@@ -18386,7 +18374,7 @@
 "ents": []
 },
 "R:432C30:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -18396,7 +18384,7 @@
 "ents": []
 },
 "R:432C50:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionClass",
 "obs": [
 [
 4,
@@ -18484,7 +18472,7 @@
 ]
 },
 "M:432E40:this:0x4": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -18819,7 +18807,7 @@
 ]
 },
 "R:433CE0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -18889,7 +18877,7 @@
 ]
 },
 "R:434100:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -19504,9 +19492,7 @@
 1
 ]
 ],
-"ents": [
-"M:4361D0:this:0xe0"
-]
+"ents": []
 },
 "P:4361D0:0": {
 "class": "CellClass",
@@ -19631,7 +19617,7 @@
 ]
 },
 "M:436BE0:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -19643,7 +19629,7 @@
 ]
 },
 "M:436BE0:p0:0xe4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -19749,7 +19735,7 @@
 ]
 },
 "M:436F40:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -20073,7 +20059,7 @@
 ]
 },
 "R:4381D0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -20095,7 +20081,7 @@
 ]
 },
 "R:438300:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -20317,7 +20303,7 @@
 ]
 },
 "M:438A90:this:0x28": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -20327,7 +20313,7 @@
 "ents": []
 },
 "M:438A90:this:0x24": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -20337,7 +20323,7 @@
 "ents": []
 },
 "M:438A90:this:0x2c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -20407,7 +20393,7 @@
 ]
 },
 "P:438BF0:0": {
-"class": "DropPodLocomotionClass",
+"class": "PlayerProfile",
 "obs": [
 [
 104,
@@ -22705,7 +22691,7 @@
 "ents": []
 },
 "M:43F180:this:0x294": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -22951,7 +22937,7 @@
 ]
 },
 "M:43FB20:this:0x294": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -25974,7 +25960,7 @@
 "ents": []
 },
 "M:448260:this:0x294": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -26665,7 +26651,7 @@
 ]
 },
 "M:449C30:this:0x34": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -27250,7 +27236,7 @@
 ]
 },
 "P:44D760:0": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -27384,7 +27370,7 @@
 ]
 },
 "P:44D880:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -28090,7 +28076,7 @@
 ]
 },
 "M:4509D0:this:0x584": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -28620,7 +28606,7 @@
 ]
 },
 "R:4525F0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1312,
@@ -30404,7 +30390,7 @@
 ]
 },
 "M:456E00:this:0x294": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -31179,7 +31165,7 @@
 ]
 },
 "M:459470:this:0x2e4": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 740,
@@ -31215,7 +31201,7 @@
 ]
 },
 "R:459840:ecx": {
-"class": "UnitTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 1312,
@@ -35229,7 +35215,7 @@
 ]
 },
 "M:4666E0:this:0x10c": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -35251,7 +35237,7 @@
 ]
 },
 "M:4666E0:this:0xb0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -35518,7 +35504,7 @@
 ]
 },
 "M:468670:this:0xb0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -35598,7 +35584,7 @@
 ]
 },
 "M:468BB0:this:0xb0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -35645,7 +35631,7 @@
 ]
 },
 "M:468D80:this:0x128": {
-"class": "XSurface",
+"class": "ScrollClass",
 "obs": [
 [
 340,
@@ -35977,7 +35963,7 @@
 ]
 },
 "M:4690B0:p0:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -36005,7 +35991,7 @@
 ]
 },
 "M:4690B0:p0:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -36079,7 +36065,7 @@
 ]
 },
 "M:46A310:this:0xb0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -36157,7 +36143,7 @@
 ]
 },
 "R:46B270:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 304,
@@ -36169,7 +36155,7 @@
 ]
 },
 "R:46B280:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -37149,9 +37135,7 @@
 1
 ]
 ],
-"ents": [
-"M:471A50:this:0x48"
-]
+"ents": []
 },
 "R:471C90:ecx": {
 "class": "TextLabelClass",
@@ -37371,7 +37355,7 @@
 ]
 },
 "R:4722C0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -37381,7 +37365,7 @@
 "ents": []
 },
 "R:4722D0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -37415,7 +37399,7 @@
 ]
 },
 "R:4723B0:ecx": {
-"class": "CaptureManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 72,
@@ -37427,7 +37411,7 @@
 ]
 },
 "M:4723B0:this:0x48": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -37459,7 +37443,7 @@
 ]
 },
 "M:472640:this:0x48": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 131,
@@ -37517,7 +37501,7 @@
 ]
 },
 "M:4726F0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -38199,7 +38183,7 @@
 "ents": []
 },
 "R:473500:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -38745,7 +38729,7 @@
 ]
 },
 "R:476D80:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 64,
@@ -38755,7 +38739,7 @@
 "ents": []
 },
 "P:526470:1": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -38765,7 +38749,7 @@
 "ents": []
 },
 "R:476EA0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -38775,7 +38759,7 @@
 "ents": []
 },
 "R:477740:ecx": {
-"class": "Pipe",
+"class": "BlowPipe",
 "obs": [
 [
 0,
@@ -38787,7 +38771,7 @@
 ]
 },
 "R:4777B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -39001,7 +38985,7 @@
 ]
 },
 "R:4779E0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -39248,7 +39232,7 @@
 ]
 },
 "R:477DB0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -39314,7 +39298,7 @@
 ]
 },
 "R:477EC0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -39590,7 +39574,7 @@
 ]
 },
 "M:4782E0:this:0x4": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 1,
@@ -39658,7 +39642,7 @@
 ]
 },
 "M:478470:this:0x4": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 1,
@@ -39738,7 +39722,7 @@
 ]
 },
 "M:4785F0:this:0x4": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 1,
@@ -39826,7 +39810,7 @@
 ]
 },
 "R:478720:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -39895,9 +39879,7 @@
 1
 ]
 ],
-"ents": [
-"T:4787E0"
-]
+"ents": []
 },
 "R:478850:ecx": {
 "class": "VectorClass",
@@ -39947,9 +39929,7 @@
 1
 ]
 ],
-"ents": [
-"T:4788E0"
-]
+"ents": []
 },
 "P:4788E0:0": {
 "class": "LightSourceClass",
@@ -40157,7 +40137,7 @@
 ]
 },
 "P:47AE10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -40200,7 +40180,7 @@
 ]
 },
 "P:47B3A0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -40700,7 +40680,7 @@
 ]
 },
 "R:47C3D0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 232,
@@ -40712,7 +40692,7 @@
 ]
 },
 "M:47C3D0:this:0xe8": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 228,
@@ -40750,7 +40730,7 @@
 "ents": []
 },
 "R:47C520:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -40966,7 +40946,7 @@
 ]
 },
 "M:47DD70:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -40978,7 +40958,7 @@
 ]
 },
 "M:47DD70:this:0xe8": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -41086,7 +41066,7 @@
 ]
 },
 "M:47E8A0:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -41276,7 +41256,7 @@
 ]
 },
 "M:47EC90:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -41456,7 +41436,7 @@
 ]
 },
 "M:47F6A0:p0:0xe0": {
-"class": "MissionClass",
+"class": "ScrollClass",
 "obs": [
 [
 660,
@@ -41524,7 +41504,7 @@
 ]
 },
 "R:47FDE0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -41744,7 +41724,7 @@
 ]
 },
 "M:480510:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -41796,7 +41776,7 @@
 ]
 },
 "R:480A30:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -41923,7 +41903,7 @@
 "ents": []
 },
 "R:481130:ecx": {
-"class": "MapClass",
+"class": "SidebarClass",
 "obs": [
 [
 296,
@@ -42054,7 +42034,7 @@
 ]
 },
 "R:481810:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -42386,7 +42366,7 @@
 ]
 },
 "M:481A00:p0:0x8e8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -42420,19 +42400,17 @@
 ]
 },
 "M:481A00:p0:0x28": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 180,
 4
 ]
 ],
-"ents": [
-"M:481A00:p0:0x28"
-]
+"ents": []
 },
 "R:483410:ecx": {
-"class": "MouseClass",
+"class": "MapClass",
 "obs": [
 [
 80,
@@ -42497,7 +42475,7 @@
 ]
 },
 "R:483610:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 320,
@@ -42593,7 +42571,7 @@
 ]
 },
 "M:4838E0:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -42605,7 +42583,7 @@
 ]
 },
 "P:483C10:0": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -42753,7 +42731,7 @@
 "ents": []
 },
 "R:484050:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 36,
@@ -42863,7 +42841,7 @@
 "ents": []
 },
 "R:484680:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 260,
@@ -43018,9 +42996,7 @@
 4
 ]
 ],
-"ents": [
-"T:484FF0"
-]
+"ents": []
 },
 "R:485010:ecx": {
 "class": "CellClass",
@@ -43060,7 +43036,7 @@
 ]
 },
 "M:485080:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 48,
@@ -43257,7 +43233,7 @@
 ]
 },
 "P:485460:0": {
-"class": "AircraftClass",
+"class": "BulletClass",
 "obs": [
 [
 2,
@@ -43319,7 +43295,7 @@
 ]
 },
 "P:485AF0:0": {
-"class": "AircraftClass",
+"class": "BulletClass",
 "obs": [
 [
 0,
@@ -43387,7 +43363,7 @@
 ]
 },
 "R:4863A0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -43461,7 +43437,7 @@
 ]
 },
 "R:4866D0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -43471,7 +43447,7 @@
 "ents": []
 },
 "R:4866F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -43645,7 +43621,7 @@
 ]
 },
 "R:486A70:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -43655,7 +43631,7 @@
 "ents": []
 },
 "R:486BF0:ecx": {
-"class": "SwizzleManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 36,
@@ -43729,7 +43705,7 @@
 ]
 },
 "R:486D90:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 220,
@@ -43741,7 +43717,7 @@
 ]
 },
 "P:486D90:0": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 220,
@@ -43771,7 +43747,7 @@
 "ents": []
 },
 "R:4870B0:ecx": {
-"class": "DynamicVector",
+"class": "PlayerProfile",
 "obs": [
 [
 120,
@@ -43851,7 +43827,7 @@
 ]
 },
 "R:487630:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 300,
@@ -43891,7 +43867,7 @@
 ]
 },
 "R:4876F0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 300,
@@ -43943,7 +43919,7 @@
 ]
 },
 "R:4879B0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -43997,7 +43973,7 @@
 ]
 },
 "R:487C10:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 284,
@@ -44019,7 +43995,7 @@
 "ents": []
 },
 "R:487C70:ecx": {
-"class": "ObjectClass",
+"class": "VoxelAnimClass",
 "obs": [
 [
 248,
@@ -44059,7 +44035,7 @@
 ]
 },
 "R:487D50:ecx": {
-"class": "HouseTypeClass",
+"class": "CellClass",
 "obs": [
 [
 283,
@@ -44401,7 +44377,7 @@
 ]
 },
 "R:4886A0:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 28,
@@ -44413,7 +44389,7 @@
 ]
 },
 "R:4886B0:ecx": {
-"class": "ListClass",
+"class": "CheckListClass",
 "obs": [
 [
 68,
@@ -45401,7 +45377,7 @@
 ]
 },
 "R:48BA80:ecx": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -45411,7 +45387,7 @@
 "ents": []
 },
 "R:48BA90:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 32,
@@ -45683,7 +45659,7 @@
 ]
 },
 "R:48C320:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 4,
@@ -45697,7 +45673,7 @@
 "ents": []
 },
 "M:48C320:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -45763,7 +45739,7 @@
 ]
 },
 "R:48C5A0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 4,
@@ -45777,7 +45753,7 @@
 "ents": []
 },
 "M:48C5A0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -45870,7 +45846,7 @@
 ]
 },
 "R:48E600:ecx": {
-"class": "ControlClass",
+"class": "SliderClass",
 "obs": [
 [
 40,
@@ -45882,7 +45858,7 @@
 ]
 },
 "R:48E610:ecx": {
-"class": "ControlClass",
+"class": "SliderClass",
 "obs": [
 [
 36,
@@ -45894,7 +45870,7 @@
 ]
 },
 "R:48E620:ecx": {
-"class": "ControlClass",
+"class": "ToggleClass",
 "obs": [
 [
 40,
@@ -47238,7 +47214,7 @@
 ]
 },
 "R:4913F0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -47278,7 +47254,7 @@
 "ents": []
 },
 "R:4914C0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -47500,7 +47476,7 @@
 ]
 },
 "R:491820:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -47600,7 +47576,7 @@
 ]
 },
 "P:491B40:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -47728,7 +47704,7 @@
 ]
 },
 "R:4924C0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -47830,7 +47806,7 @@
 "ents": []
 },
 "R:492670:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -48046,7 +48022,7 @@
 ]
 },
 "R:492B00:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -48562,7 +48538,7 @@
 ]
 },
 "R:493600:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -50146,7 +50122,7 @@
 ]
 },
 "R:4960A0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -52790,7 +52766,7 @@
 ]
 },
 "R:49BC80:ecx": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [
 [
 68,
@@ -52806,7 +52782,7 @@
 ]
 },
 "R:49BCA0:ecx": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [
 [
 64,
@@ -52822,7 +52798,7 @@
 ]
 },
 "R:49BCC0:ecx": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [
 [
 56,
@@ -52858,7 +52834,7 @@
 ]
 },
 "P:49BE40:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -54318,7 +54294,7 @@
 ]
 },
 "P:4A0160:0": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -54328,7 +54304,7 @@
 "ents": []
 },
 "P:4A0180:0": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -54438,7 +54414,7 @@
 ]
 },
 "P:4A0610:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -54532,7 +54508,7 @@
 ]
 },
 "P:4A0AF0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -54542,7 +54518,7 @@
 "ents": []
 },
 "P:4A0B10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -54842,7 +54818,7 @@
 ]
 },
 "M:4A0F80:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -54904,7 +54880,7 @@
 ]
 },
 "M:4A10D0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -54978,7 +54954,7 @@
 ]
 },
 "M:4A1200:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -55328,7 +55304,7 @@
 ]
 },
 "R:4A2350:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -55360,7 +55336,7 @@
 ]
 },
 "R:4A2370:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 4,
@@ -55384,7 +55360,7 @@
 ]
 },
 "R:4A2600:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -55528,7 +55504,7 @@
 ]
 },
 "P:4A2A20:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -55660,7 +55636,7 @@
 ]
 },
 "P:4A2EA0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55670,7 +55646,7 @@
 "ents": []
 },
 "P:4A2EE0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55680,7 +55656,7 @@
 "ents": []
 },
 "P:4A2F10:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55690,7 +55666,7 @@
 "ents": []
 },
 "P:4A2F40:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55700,7 +55676,7 @@
 "ents": []
 },
 "P:4A2F80:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55710,7 +55686,7 @@
 "ents": []
 },
 "P:4A2FC0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55720,7 +55696,7 @@
 "ents": []
 },
 "P:4A2FF0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -55799,16 +55775,14 @@
 ]
 },
 "R:4A33A0:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:4A33A0"
-]
+"ents": []
 },
 "P:4A33A0:0": {
 "class": "ScrollClass",
@@ -56690,16 +56664,14 @@
 ]
 },
 "R:4A5950:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 180,
 4
 ]
 ],
-"ents": [
-"T:4A5950"
-]
+"ents": []
 },
 "P:4A59E0:0": {
 "class": "SwizzleManagerClass",
@@ -56878,7 +56850,7 @@
 ]
 },
 "R:4A71A0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 48,
@@ -56988,7 +56960,7 @@
 ]
 },
 "R:4A7900:ecx": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 36,
@@ -57290,7 +57262,7 @@
 ]
 },
 "R:4A7FE0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -57691,11 +57663,35 @@
 4
 ],
 [
+4672,
+4
+],
+[
+4676,
+4
+],
+[
 4696,
 4
 ],
 [
+5264,
+4
+],
+[
+5272,
+4
+],
+[
 5337,
+1
+],
+[
+21404,
+4
+],
+[
+21414,
 1
 ],
 [
@@ -57727,9 +57723,9 @@
 "T:4A8BF0",
 "T:4AA440",
 "T:4ACAC0",
-"T:5673A0",
 "T:5683C0",
-"T:5687F0"
+"T:5687F0",
+"T:56B3F0"
 ]
 },
 "R:4A8D50:ecx": {
@@ -57775,7 +57771,7 @@
 ]
 },
 "R:4A95A0:ecx": {
-"class": "DisplayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 4476,
@@ -57794,9 +57790,7 @@
 2
 ]
 ],
-"ents": [
-"M:4A95A0:this:0x117c"
-]
+"ents": []
 },
 "M:4A9650:this:0x118c": {
 "class": "GUID",
@@ -57806,9 +57800,7 @@
 2
 ]
 ],
-"ents": [
-"M:4A9650:this:0x118c"
-]
+"ents": []
 },
 "P:4A9720:0": {
 "class": "ObjectClass",
@@ -57911,7 +57903,7 @@
 ]
 },
 "R:4AAD30:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -57935,7 +57927,7 @@
 ]
 },
 "M:4AAD30:this:0x11a4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -57945,7 +57937,7 @@
 "ents": []
 },
 "R:4AAE90:ecx": {
-"class": "DisplayClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -57995,7 +57987,7 @@
 "ents": []
 },
 "R:4AB9B0:ecx": {
-"class": "DisplayClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -58095,7 +58087,7 @@
 ]
 },
 "R:4AC310:ecx": {
-"class": "DisplayClass",
+"class": "MouseClass",
 "obs": [
 [
 4520,
@@ -58157,7 +58149,7 @@
 "ents": []
 },
 "R:4AC380:ecx": {
-"class": "DisplayClass",
+"class": "MouseClass",
 "obs": [
 [
 4531,
@@ -58185,7 +58177,7 @@
 ]
 },
 "R:4AC660:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -58261,7 +58253,7 @@
 ]
 },
 "P:4AC700:0": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -58285,7 +58277,7 @@
 "ents": []
 },
 "R:4AC820:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -58321,7 +58313,7 @@
 ]
 },
 "R:4AC8C0:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -58357,7 +58349,7 @@
 ]
 },
 "R:4AC960:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -58393,7 +58385,7 @@
 ]
 },
 "P:4AC960:0": {
-"class": "SliderClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 48,
@@ -58541,7 +58533,7 @@
 "ents": []
 },
 "P:545000:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -58617,7 +58609,7 @@
 ]
 },
 "R:4AEAD0:ecx": {
-"class": "DisplayClass",
+"class": "TabClass",
 "obs": [
 [
 0,
@@ -58805,7 +58797,7 @@
 ]
 },
 "P:4AF720:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -58859,7 +58851,7 @@
 ]
 },
 "R:4AFAA0:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 36,
@@ -59375,7 +59367,7 @@
 ]
 },
 "P:4B0EF0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -59687,7 +59679,7 @@
 ]
 },
 "M:4B0F20:p0:0xe4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -60051,7 +60043,7 @@
 ]
 },
 "P:4B4C00:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -60061,7 +60053,7 @@
 "ents": []
 },
 "P:4B4C10:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 88,
@@ -60071,7 +60063,7 @@
 "ents": []
 },
 "P:4B4C20:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -60259,7 +60251,7 @@
 "ents": []
 },
 "P:4B5210:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 132,
@@ -60345,7 +60337,7 @@
 ]
 },
 "M:4B54E0:this:0xa8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -60660,7 +60652,7 @@
 ]
 },
 "R:4B5830:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -60737,7 +60729,7 @@
 ]
 },
 "P:4B6440:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -60747,7 +60739,7 @@
 "ents": []
 },
 "P:4B6470:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -60757,7 +60749,7 @@
 "ents": []
 },
 "P:4B6610:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -60871,7 +60863,7 @@
 ]
 },
 "R:4B6BB0:ecx": {
-"class": "EnumConnectionsClass",
+"class": "ScrollClass",
 "obs": [
 [
 16,
@@ -61053,7 +61045,7 @@
 ]
 },
 "M:4B6C30:p0:0x20": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -61063,7 +61055,7 @@
 "ents": []
 },
 "M:4B6C30:p0:0x24": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -61832,7 +61824,7 @@
 ]
 },
 "R:4BAFE0:ecx": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -61977,7 +61969,7 @@
 ]
 },
 "P:4BBCA0:0": {
-"class": "MechLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -62617,7 +62609,7 @@
 ]
 },
 "R:4C2C10:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 32,
@@ -62932,7 +62924,7 @@
 ]
 },
 "R:4C30E0:ecx": {
-"class": "EditClass",
+"class": "DropListClass",
 "obs": [
 [
 0,
@@ -62988,7 +62980,7 @@
 ]
 },
 "P:4C3110:0": {
-"class": "NetworkDialog",
+"class": "WWMouseClass",
 "obs": [
 [
 148,
@@ -63072,7 +63064,7 @@
 ]
 },
 "R:4C3420:ecx": {
-"class": "EditClass",
+"class": "DropListClass",
 "obs": [
 [
 0,
@@ -63108,7 +63100,7 @@
 ]
 },
 "R:4C3570:ecx": {
-"class": "EditClass",
+"class": "DropListClass",
 "obs": [
 [
 52,
@@ -63477,7 +63469,7 @@
 "ents": []
 },
 "R:4C4FC0:ecx": {
-"class": "EnumConnectionsClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -63989,7 +63981,7 @@
 ]
 },
 "P:4C6320:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -63999,7 +63991,7 @@
 "ents": []
 },
 "P:4C6340:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -64391,7 +64383,7 @@
 ]
 },
 "R:4C9680:ecx": {
-"class": "EnumConnectionsClass",
+"class": "ScrollClass",
 "obs": [
 [
 20,
@@ -64553,7 +64545,7 @@
 ]
 },
 "R:4C9C50:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 92,
@@ -64724,7 +64716,7 @@
 ]
 },
 "R:4C9FB0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 88,
@@ -64774,7 +64766,7 @@
 ]
 },
 "M:4C9FF0:this:0x58": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -64810,7 +64802,7 @@
 ]
 },
 "R:4CA120:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -64940,7 +64932,7 @@
 ]
 },
 "M:4CA430:this:0x58": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -65354,7 +65346,7 @@
 ]
 },
 "R:4CB580:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65378,7 +65370,7 @@
 ]
 },
 "R:4CB5E0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65402,7 +65394,7 @@
 ]
 },
 "R:4CB640:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65426,7 +65418,7 @@
 ]
 },
 "R:4CB6A0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65450,7 +65442,7 @@
 ]
 },
 "R:4CB700:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65474,7 +65466,7 @@
 ]
 },
 "R:4CB760:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65498,7 +65490,7 @@
 ]
 },
 "R:4CB7C0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65522,7 +65514,7 @@
 ]
 },
 "R:4CB830:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65558,7 +65550,7 @@
 ]
 },
 "R:4CB8B0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65578,7 +65570,7 @@
 ]
 },
 "R:4CB920:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -65771,7 +65763,7 @@
 ]
 },
 "P:4CCA20:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -66133,7 +66125,7 @@
 ]
 },
 "M:4CD600:p0:0x5a4": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 1312,
@@ -66169,7 +66161,7 @@
 ]
 },
 "M:4CE5A0:this:0xc": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 108,
@@ -66394,12 +66386,10 @@
 1
 ]
 ],
-"ents": [
-"M:4CE840:p0:0x6c4"
-]
+"ents": []
 },
 "R:4CF950:ecx": {
-"class": "BufferIOFileClass",
+"class": "ParasiteClass",
 "obs": [
 [
 12,
@@ -66445,7 +66435,7 @@
 ]
 },
 "M:4CFA70:this:0xc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -66457,7 +66447,7 @@
 ]
 },
 "P:4CFC10:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -66481,7 +66471,7 @@
 "ents": []
 },
 "P:4CFCF0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -66531,7 +66521,7 @@
 ]
 },
 "P:4CFE20:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -66593,7 +66583,7 @@
 ]
 },
 "R:4D02B0:ecx": {
-"class": "SwizzleManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 36,
@@ -67634,7 +67624,7 @@
 ]
 },
 "M:4D29B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -67696,7 +67686,7 @@
 ]
 },
 "M:4D2B50:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -67770,7 +67760,7 @@
 ]
 },
 "M:4D2CD0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -68561,7 +68551,7 @@
 ]
 },
 "M:4D4280:this:0x5dc": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 320,
@@ -70293,7 +70283,7 @@
 ]
 },
 "P:4DA530:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -70439,7 +70429,7 @@
 ]
 },
 "R:4DB8A0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1652,
@@ -72393,7 +72383,7 @@
 ]
 },
 "M:4E07E0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -72455,7 +72445,7 @@
 ]
 },
 "M:4E0990:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -72633,7 +72623,7 @@
 ]
 },
 "M:4E0CA0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -72823,7 +72813,7 @@
 ]
 },
 "R:4E13F0:ecx": {
-"class": "GadgetClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -72855,7 +72845,7 @@
 ]
 },
 "R:4E1450:ecx": {
-"class": "GadgetClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -72875,7 +72865,7 @@
 ]
 },
 "R:4E1460:ecx": {
-"class": "GadgetClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -72895,19 +72885,17 @@
 ]
 },
 "R:4E1470:ecx": {
-"class": "ShapeButtonClass",
+"class": "ScrollClass",
 "obs": [
 [
 30,
 1
 ]
 ],
-"ents": [
-"T:4E1470"
-]
+"ents": []
 },
 "R:4E1480:ecx": {
-"class": "ControlClass",
+"class": "EditClass",
 "obs": [
 [
 0,
@@ -72919,7 +72907,7 @@
 ]
 },
 "R:4E14C0:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -72941,7 +72929,7 @@
 "ents": []
 },
 "R:4E1530:ecx": {
-"class": "GadgetClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -72957,7 +72945,7 @@
 ]
 },
 "R:4E1550:ecx": {
-"class": "GadgetClass",
+"class": "RTacticalClass@RadarClass",
 "obs": [
 [
 28,
@@ -72969,7 +72957,7 @@
 ]
 },
 "R:4E1570:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -73013,14 +73001,14 @@
 ]
 },
 "R:4E1640:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E1640"
 ]
 },
 "R:4E1920:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -73032,7 +73020,7 @@
 ]
 },
 "R:4E1960:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 28,
@@ -73044,7 +73032,7 @@
 ]
 },
 "R:4E1970:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 29,
@@ -73056,7 +73044,7 @@
 ]
 },
 "R:4E19A0:ecx": {
-"class": "ControlClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 32,
@@ -73068,7 +73056,7 @@
 ]
 },
 "R:4E19D0:ecx": {
-"class": "ControlClass",
+"class": "EditClass",
 "obs": [
 [
 32,
@@ -73080,14 +73068,14 @@
 ]
 },
 "R:4E1A00:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E1A00"
 ]
 },
 "R:4E1A20:ecx": {
-"class": "GadgetClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 12,
@@ -73191,7 +73179,7 @@
 ]
 },
 "P:4E2500:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 72,
@@ -73201,7 +73189,7 @@
 "ents": []
 },
 "R:4E2580:ecx": {
-"class": "GaugeClass",
+"class": "TriColorGaugeClass",
 "obs": [
 [
 0,
@@ -73217,7 +73205,7 @@
 ]
 },
 "P:4E2580:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -73227,7 +73215,7 @@
 "ents": []
 },
 "R:4E25A0:ecx": {
-"class": "GaugeClass",
+"class": "TriColorGaugeClass",
 "obs": [
 [
 0,
@@ -73391,7 +73379,7 @@
 ]
 },
 "R:4E2830:ecx": {
-"class": "GaugeClass",
+"class": "TriColorGaugeClass",
 "obs": [
 [
 45,
@@ -73403,7 +73391,7 @@
 ]
 },
 "R:4E29A0:ecx": {
-"class": "GaugeClass",
+"class": "TriColorGaugeClass",
 "obs": [
 [
 0,
@@ -73483,7 +73471,7 @@
 ]
 },
 "P:4E2A50:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -73513,7 +73501,7 @@
 ]
 },
 "P:4E2AF0:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -73543,7 +73531,7 @@
 ]
 },
 "P:4E2B20:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -73690,7 +73678,7 @@
 ]
 },
 "R:4E30B0:ecx": {
-"class": "GaugeClass",
+"class": "SliderClass",
 "obs": [
 [
 45,
@@ -73702,7 +73690,7 @@
 ]
 },
 "P:4E4170:0": {
-"class": "EnumConnectionPointsClass",
+"class": "ScrollClass",
 "obs": [
 [
 40,
@@ -83416,7 +83404,7 @@
 "ents": []
 },
 "P:4F1CA0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -83450,7 +83438,7 @@
 ]
 },
 "R:4F2640:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -84056,7 +84044,7 @@
 ]
 },
 "R:4F3B10:ecx": {
-"class": "GraphicMenuAnimItem",
+"class": "GraphicMenuShortcutItem",
 "obs": [
 [
 12,
@@ -84221,7 +84209,7 @@
 "ents": []
 },
 "P:4F4240:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -84291,16 +84279,14 @@
 ]
 },
 "P:4F4410:0": {
-"class": "ShapeButtonClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
 4
 ]
 ],
-"ents": [
-"P:4F4410:0"
-]
+"ents": []
 },
 "R:4F4450:ecx": {
 "class": "MouseClass",
@@ -84315,16 +84301,14 @@
 ]
 },
 "P:4F4450:0": {
-"class": "LinkClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
 4
 ]
 ],
-"ents": [
-"P:4F4450:0"
-]
+"ents": []
 },
 "R:4F4480:ecx": {
 "class": "MouseClass",
@@ -85574,7 +85558,7 @@
 ]
 },
 "P:4F6E60:0": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -86077,7 +86061,7 @@
 ]
 },
 "M:4F7870:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 184,
@@ -86351,7 +86335,7 @@
 ]
 },
 "M:4F8440:p0:0x8e8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -86601,7 +86585,7 @@
 ]
 },
 "M:4F9B70:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 192,
@@ -86777,7 +86761,7 @@
 ]
 },
 "R:4FAE50:ecx": {
-"class": "DynamicVector",
+"class": "ScrollClass",
 "obs": [
 [
 600,
@@ -86923,7 +86907,7 @@
 ]
 },
 "R:4FB840:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -87016,16 +87000,14 @@
 ]
 },
 "M:4FBF60:this:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:4FBF60:this:0x34"
-]
+"ents": []
 },
 "R:4FC060:ecx": {
 "class": "HouseClass",
@@ -87044,16 +87026,14 @@
 ]
 },
 "M:4FC060:this:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:4FC060:this:0x34"
-]
+"ents": []
 },
 "R:4FC0B0:ecx": {
 "class": "HouseClass",
@@ -87240,7 +87220,7 @@
 ]
 },
 "M:4FCE00:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 192,
@@ -88572,16 +88552,14 @@
 ]
 },
 "M:502D60:this:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:502D60:this:0x34"
-]
+"ents": []
 },
 "P:503040:0": {
 "class": "CarryoverClass",
@@ -88665,7 +88643,7 @@
 ]
 },
 "R:505310:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -89008,7 +88986,7 @@
 ]
 },
 "M:507B80:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 188,
@@ -89036,7 +89014,7 @@
 ]
 },
 "M:507D70:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 188,
@@ -89064,7 +89042,7 @@
 ]
 },
 "M:507F60:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 188,
@@ -89235,7 +89213,7 @@
 ]
 },
 "R:5090F0:ecx": {
-"class": "Voxel",
+"class": "ScrollClass",
 "obs": [
 [
 524,
@@ -89375,16 +89353,14 @@
 ]
 },
 "M:5092F0:p0:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:5092F0:p0:0x34"
-]
+"ents": []
 },
 "R:5093C0:ecx": {
 "class": "HouseClass",
@@ -89834,7 +89810,7 @@
 "ents": []
 },
 "M:50A5C0:this:0x5708": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -90205,7 +90181,7 @@
 ]
 },
 "R:50BD30:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -90282,7 +90258,7 @@
 ]
 },
 "R:50C160:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -90308,7 +90284,7 @@
 ]
 },
 "P:50C210:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -90334,7 +90310,7 @@
 ]
 },
 "M:50C340:this:0x34": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 188,
@@ -90931,9 +90907,7 @@
 2
 ]
 ],
-"ents": [
-"P:50E470:0"
-]
+"ents": []
 },
 "R:50E4A0:ecx": {
 "class": "TypeList",
@@ -91800,7 +91774,7 @@
 ]
 },
 "M:50EE80:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -91862,7 +91836,7 @@
 ]
 },
 "M:50F000:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -91936,7 +91910,7 @@
 ]
 },
 "M:50F170:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -91976,7 +91950,7 @@
 ]
 },
 "M:50F1B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -92038,7 +92012,7 @@
 ]
 },
 "M:50F330:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -92112,7 +92086,7 @@
 ]
 },
 "M:50F4A0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -92562,7 +92536,7 @@
 ]
 },
 "M:50FC00:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -92624,7 +92598,7 @@
 ]
 },
 "M:50FDB0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -92726,7 +92700,7 @@
 ]
 },
 "M:50FFB0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -94136,7 +94110,7 @@
 ]
 },
 "R:512BD0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94242,7 +94216,7 @@
 ]
 },
 "R:512DC0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94332,7 +94306,7 @@
 ]
 },
 "R:512F20:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94374,7 +94348,7 @@
 ]
 },
 "R:512FA0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94480,7 +94454,7 @@
 ]
 },
 "R:513190:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94570,7 +94544,7 @@
 ]
 },
 "R:5132F0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94612,7 +94586,7 @@
 ]
 },
 "R:513370:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94718,7 +94692,7 @@
 ]
 },
 "R:513560:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94808,7 +94782,7 @@
 ]
 },
 "R:5136C0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94850,7 +94824,7 @@
 ]
 },
 "R:513740:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -94884,7 +94858,7 @@
 "ents": []
 },
 "R:5137D0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -95166,7 +95140,7 @@
 ]
 },
 "P:5142A0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -95360,7 +95334,7 @@
 ]
 },
 "P:514C80:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -95728,7 +95702,7 @@
 ]
 },
 "P:516370:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -95923,7 +95897,7 @@
 ]
 },
 "M:516BF0:p0:0x8": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -95933,7 +95907,7 @@
 "ents": []
 },
 "P:516C70:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -96104,9 +96078,7 @@
 1
 ]
 ],
-"ents": [
-"P:517440:0"
-]
+"ents": []
 },
 "R:5175F0:ecx": {
 "class": "EnumConnectionsClass",
@@ -97027,7 +96999,7 @@
 ]
 },
 "M:519630:p0:0xe8c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -97509,7 +97481,7 @@
 ]
 },
 "M:51BF90:this:0x69c": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -97861,7 +97833,7 @@
 ]
 },
 "P:51DBD0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -98354,7 +98326,7 @@
 ]
 },
 "M:51E140:this:0x5a4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -99848,7 +99820,7 @@
 ]
 },
 "M:5224F0:this:0x6c0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -99872,7 +99844,7 @@
 ]
 },
 "R:522540:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1728,
@@ -100201,7 +100173,7 @@
 ]
 },
 "R:522CB0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -100213,7 +100185,7 @@
 ]
 },
 "R:522D00:ecx": {
-"class": "IsometricTileClass",
+"class": "SideClass",
 "obs": [
 [
 0,
@@ -101036,7 +101008,7 @@
 ]
 },
 "R:524F20:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -101126,7 +101098,7 @@
 ]
 },
 "R:525060:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -101232,7 +101204,7 @@
 ]
 },
 "R:525250:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -101322,7 +101294,7 @@
 ]
 },
 "R:5253B0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -101540,7 +101512,7 @@
 "ents": []
 },
 "M:5257C0:this:0x3c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -101614,7 +101586,7 @@
 ]
 },
 "M:525A60:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -101624,7 +101596,7 @@
 "ents": []
 },
 "M:525A60:p0:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -101648,7 +101620,7 @@
 "ents": []
 },
 "M:525A60:p0:0x24": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -101740,7 +101712,7 @@
 ]
 },
 "R:526950:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -101792,7 +101764,7 @@
 "ents": []
 },
 "P:526CC0:0": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -102020,7 +101992,7 @@
 "ents": []
 },
 "P:528660:0": {
-"class": "EnumConnectionPointsClass",
+"class": "PlayerProfile",
 "obs": [
 [
 0,
@@ -102058,7 +102030,7 @@
 "ents": []
 },
 "M:528660:p0:0x14": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102134,7 +102106,7 @@
 ]
 },
 "M:528F00:p0:0x8": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -102398,7 +102370,7 @@
 ]
 },
 "M:52AAF0:this:0x14": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102408,7 +102380,7 @@
 "ents": []
 },
 "M:52AAF0:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102508,7 +102480,7 @@
 "ents": []
 },
 "M:52AB80:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102518,7 +102490,7 @@
 "ents": []
 },
 "M:52AB80:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -102576,7 +102548,7 @@
 ]
 },
 "M:52AD50:this:0x14": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102586,7 +102558,7 @@
 "ents": []
 },
 "M:52AD50:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102596,7 +102568,7 @@
 "ents": []
 },
 "M:52AD50:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -102626,7 +102598,7 @@
 ]
 },
 "M:52AE20:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -102714,7 +102686,7 @@
 ]
 },
 "R:52AF50:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -103108,7 +103080,7 @@
 "ents": []
 },
 "P:530460:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -103118,7 +103090,7 @@
 "ents": []
 },
 "P:5312A0:0": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -104659,7 +104631,7 @@
 ]
 },
 "R:539890:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -104669,7 +104641,7 @@
 "ents": []
 },
 "R:539AE0:ecx": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -104679,7 +104651,7 @@
 "ents": []
 },
 "P:539AE0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -105471,7 +105443,7 @@
 ]
 },
 "P:53EDC0:0": {
-"class": "GadgetClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -105813,7 +105785,7 @@
 ]
 },
 "P:53FCB0:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -105835,7 +105807,7 @@
 ]
 },
 "M:53FF10:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -105857,7 +105829,7 @@
 ]
 },
 "M:53FFA0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -105939,7 +105911,7 @@
 ]
 },
 "M:540030:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -105971,7 +105943,7 @@
 ]
 },
 "M:5400D0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -105993,7 +105965,7 @@
 ]
 },
 "M:540110:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -106023,7 +105995,7 @@
 ]
 },
 "M:540110:p0:0xd0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -106033,7 +106005,7 @@
 "ents": []
 },
 "R:5402B0:ecx": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 196,
@@ -106329,7 +106301,7 @@
 ]
 },
 "R:540C50:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -106381,7 +106353,7 @@
 "ents": []
 },
 "M:540C60:this:0x50": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106413,7 +106385,7 @@
 ]
 },
 "M:540D10:this:0x48": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106457,7 +106429,7 @@
 ]
 },
 "M:540D40:this:0x48": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106501,7 +106473,7 @@
 ]
 },
 "M:540D60:this:0x48": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106537,7 +106509,7 @@
 ]
 },
 "M:540D80:this:0x4c": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106557,7 +106529,7 @@
 ]
 },
 "M:540D80:this:0x50": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -106577,7 +106549,7 @@
 ]
 },
 "R:540DC0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -106587,7 +106559,7 @@
 "ents": []
 },
 "R:540E70:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -106669,7 +106641,7 @@
 ]
 },
 "R:540FC0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -106679,7 +106651,7 @@
 "ents": []
 },
 "R:541000:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -106877,7 +106849,7 @@
 ]
 },
 "M:5414C0:this:0x50": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -106960,7 +106932,7 @@
 ]
 },
 "M:541820:this:0x48": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -106970,7 +106942,7 @@
 "ents": []
 },
 "M:541820:this:0x4c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -107064,7 +107036,7 @@
 ]
 },
 "M:5422D0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107094,7 +107066,7 @@
 ]
 },
 "M:5422F0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107124,7 +107096,7 @@
 ]
 },
 "M:542310:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107154,7 +107126,7 @@
 ]
 },
 "M:542330:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107240,7 +107212,7 @@
 ]
 },
 "M:542450:this:0x50": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107250,7 +107222,7 @@
 "ents": []
 },
 "R:5424C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -107270,7 +107242,7 @@
 "ents": []
 },
 "R:542500:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -107280,7 +107252,7 @@
 "ents": []
 },
 "M:542500:this:0x50": {
-"class": "Megawealth",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 4,
@@ -107388,7 +107360,7 @@
 ]
 },
 "M:542EC0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107398,7 +107370,7 @@
 "ents": []
 },
 "M:542EC0:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107408,7 +107380,7 @@
 "ents": []
 },
 "M:542EC0:this:0x50": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107418,7 +107390,7 @@
 "ents": []
 },
 "R:542F30:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -107428,7 +107400,7 @@
 "ents": []
 },
 "R:542FC0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -107450,7 +107422,7 @@
 ]
 },
 "M:542FE0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107460,7 +107432,7 @@
 "ents": []
 },
 "P:542FE0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -107470,7 +107442,7 @@
 "ents": []
 },
 "R:543050:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -107480,7 +107452,7 @@
 "ents": []
 },
 "R:543080:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -107500,7 +107472,7 @@
 "ents": []
 },
 "R:543090:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -107520,7 +107492,7 @@
 "ents": []
 },
 "R:5430C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -108271,7 +108243,7 @@
 ]
 },
 "R:547230:ecx": {
-"class": "MissionClass",
+"class": "ScrollClass",
 "obs": [
 [
 660,
@@ -108487,7 +108459,7 @@
 ]
 },
 "M:549B70:this:0x2bc": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -108557,7 +108529,7 @@
 ]
 },
 "M:549E90:this:0xa4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -109187,7 +109159,7 @@
 ]
 },
 "P:54AE50:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -109249,7 +109221,7 @@
 ]
 },
 "P:54B6E0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -109303,7 +109275,7 @@
 ]
 },
 "M:54B980:this:0xc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -109439,7 +109411,7 @@
 ]
 },
 "M:54BD30:this:0xc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 116,
@@ -109671,7 +109643,7 @@
 ]
 },
 "P:54D0D0:0": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -109805,7 +109777,7 @@
 ]
 },
 "R:54D6D0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -109883,7 +109855,7 @@
 "ents": []
 },
 "P:54DC60:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -111777,7 +111749,7 @@
 ]
 },
 "R:554A80:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -111839,7 +111811,7 @@
 ]
 },
 "P:554AF0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -112562,7 +112534,7 @@
 ]
 },
 "R:5565F0:ecx": {
-"class": "GadgetClass",
+"class": "CarryoverClass",
 "obs": [
 [
 4,
@@ -112578,7 +112550,7 @@
 ]
 },
 "R:556600:ecx": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -112636,7 +112608,7 @@
 ]
 },
 "R:5566A0:ecx": {
-"class": "GadgetClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -112656,7 +112628,7 @@
 ]
 },
 "R:5566D0:ecx": {
-"class": "GadgetClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -112676,7 +112648,7 @@
 ]
 },
 "R:556700:ecx": {
-"class": "GadgetClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -112716,7 +112688,7 @@
 ]
 },
 "M:556730:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -112726,7 +112698,7 @@
 "ents": []
 },
 "M:556730:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -112768,7 +112740,7 @@
 ]
 },
 "R:556B30:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -112790,7 +112762,7 @@
 ]
 },
 "R:556B50:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -113176,7 +113148,7 @@
 ]
 },
 "P:557230:0": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [
 [
 28,
@@ -113445,7 +113417,7 @@
 ]
 },
 "R:557830:ecx": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [],
 "ents": [
 "T:557830"
@@ -113549,7 +113521,7 @@
 ]
 },
 "R:557AC0:ecx": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [
 [
 56,
@@ -113565,7 +113537,7 @@
 ]
 },
 "R:557AE0:ecx": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [
 [
 56,
@@ -113585,7 +113557,7 @@
 ]
 },
 "R:557B00:ecx": {
-"class": "ListClass",
+"class": "CheckListClass",
 "obs": [
 [
 364,
@@ -113597,7 +113569,7 @@
 ]
 },
 "R:557B10:ecx": {
-"class": "ListClass",
+"class": "CheckListClass",
 "obs": [
 [
 0,
@@ -113641,7 +113613,7 @@
 ]
 },
 "P:557B70:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -113759,7 +113731,7 @@
 ]
 },
 "R:557D10:ecx": {
-"class": "ListClass",
+"class": "CheckListClass",
 "obs": [
 [
 48,
@@ -113897,7 +113869,7 @@
 ]
 },
 "R:557F40:ecx": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [
 [
 0,
@@ -113925,7 +113897,7 @@
 ]
 },
 "P:557F40:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -113975,7 +113947,7 @@
 ]
 },
 "R:558010:ecx": {
-"class": "ListClass",
+"class": "ColorListClass",
 "obs": [
 [
 56,
@@ -114947,7 +114919,7 @@
 "ents": []
 },
 "P:55AD10:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -115863,9 +115835,7 @@
 2
 ]
 ],
-"ents": [
-"P:5657E0:0"
-]
+"ents": []
 },
 "P:4F42A0:2": {
 "class": "MapClass",
@@ -115913,7 +115883,7 @@
 ]
 },
 "R:565AA0:ecx": {
-"class": "MapClass",
+"class": "MouseClass",
 "obs": [
 [
 316,
@@ -115949,7 +115919,7 @@
 ]
 },
 "R:565BC0:ecx": {
-"class": "WaveClass",
+"class": "MouseClass",
 "obs": [
 [
 308,
@@ -115969,7 +115939,7 @@
 ]
 },
 "R:565C10:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 240,
@@ -116355,7 +116325,7 @@
 ]
 },
 "P:421B60:3": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -116403,6 +116373,27 @@
 "P:567230:0"
 ]
 },
+"P:6D20E0:2": {
+"class": "DisplayClass",
+"obs": [
+[
+244,
+4
+],
+[
+248,
+4
+],
+[
+316,
+4
+]
+],
+"ents": [
+"T:5673A0",
+"P:6D20E0:2"
+]
+},
 "P:5673A0:0": {
 "class": "HouseClass",
 "obs": [
@@ -116444,16 +116435,14 @@
 ]
 },
 "M:5673A0:p0:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:5673A0:p0:0x34"
-]
+"ents": []
 },
 "P:567F70:0": {
 "class": "AnimClass",
@@ -116531,10 +116520,7 @@
 2
 ]
 ],
-"ents": [
-"P:568300:0",
-"T:4A1AA0"
-]
+"ents": []
 },
 "R:568350:ecx": {
 "class": "VeinholeMonsterClass",
@@ -116597,7 +116583,7 @@
 ]
 },
 "P:5687F0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -116649,7 +116635,7 @@
 ]
 },
 "R:568BB0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -116761,7 +116747,7 @@
 ]
 },
 "R:56A080:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 292,
@@ -116789,7 +116775,7 @@
 ]
 },
 "R:56A4C0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 292,
@@ -116833,7 +116819,7 @@
 ]
 },
 "R:56A980:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 292,
@@ -116909,7 +116895,7 @@
 ]
 },
 "R:56B0F0:ecx": {
-"class": "MouseClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -117045,7 +117031,7 @@
 ]
 },
 "M:56C510:this:0x14": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -117062,9 +117048,7 @@
 2
 ]
 ],
-"ents": [
-"M:56C510:this:0x68"
-]
+"ents": []
 },
 "P:56C510:0": {
 "class": "CounterClass",
@@ -117116,12 +117100,10 @@
 2
 ]
 ],
-"ents": [
-"P:56D100:0"
-]
+"ents": []
 },
 "R:56D230:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -117131,7 +117113,7 @@
 "ents": []
 },
 "R:56D3F0:ecx": {
-"class": "MouseClass",
+"class": "VeinholeMonsterClass",
 "obs": [
 [
 108,
@@ -117267,7 +117249,7 @@
 ]
 },
 "P:56DA10:4": {
-"class": "WWMouseClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:56DAE0",
@@ -117751,7 +117733,7 @@
 ]
 },
 "R:577AB0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 0,
@@ -117811,7 +117793,7 @@
 ]
 },
 "R:577BB0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 0,
@@ -117875,7 +117857,7 @@
 ]
 },
 "R:577C90:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 0,
@@ -117991,7 +117973,7 @@
 ]
 },
 "R:578100:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -118023,7 +118005,7 @@
 ]
 },
 "R:578290:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -118055,7 +118037,7 @@
 ]
 },
 "R:578350:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -118473,7 +118455,7 @@
 ]
 },
 "P:57B990:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -118607,7 +118589,7 @@
 ]
 },
 "P:57CBE0:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -119105,7 +119087,7 @@
 ]
 },
 "R:581090:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -119589,7 +119571,7 @@
 ]
 },
 "R:5855A0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -119686,7 +119668,7 @@
 ]
 },
 "R:5866C0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -119834,7 +119816,7 @@
 ]
 },
 "R:587180:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 212,
@@ -119963,7 +119945,7 @@
 ]
 },
 "M:5880A0:p0:0x520": {
-"class": "MapClass",
+"class": "ScrollClass",
 "obs": [
 [
 5824,
@@ -119987,7 +119969,7 @@
 ]
 },
 "R:588960:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 328,
@@ -120019,7 +120001,7 @@
 ]
 },
 "R:588AC0:ecx": {
-"class": "HouseTypeClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -120667,7 +120649,7 @@
 "ents": []
 },
 "M:589300:this:0x4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 2,
@@ -120739,7 +120721,7 @@
 ]
 },
 "M:5894D0:this:0x4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 2,
@@ -120833,7 +120815,7 @@
 "ents": []
 },
 "R:589680:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -120881,7 +120863,7 @@
 ]
 },
 "M:5896A0:this:0x4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 2,
@@ -121175,7 +121157,7 @@
 ]
 },
 "R:589C50:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -121941,7 +121923,7 @@
 ]
 },
 "R:58ABD0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -122455,7 +122437,7 @@
 ]
 },
 "R:58C070:ecx": {
-"class": "LightSourceClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -122639,7 +122621,7 @@
 ]
 },
 "R:58D120:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -122689,7 +122671,7 @@
 ]
 },
 "P:58D410:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -122969,7 +122951,7 @@
 ]
 },
 "P:590FD0:1": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -123125,7 +123107,7 @@
 ]
 },
 "P:42FCB0:5": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 32,
@@ -123189,7 +123171,7 @@
 ]
 },
 "P:594F40:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -124145,9 +124127,7 @@
 4
 ]
 ],
-"ents": [
-"T:59A6C0"
-]
+"ents": []
 },
 "P:59A8F0:0": {
 "class": "SwizzleManagerClass",
@@ -124172,7 +124152,7 @@
 "ents": []
 },
 "P:5ADA40:5": {
-"class": "TerrainTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -124189,7 +124169,7 @@
 ]
 },
 "P:42B1F0:0": {
-"class": "IsometricTileTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 776,
@@ -124202,7 +124182,7 @@
 ]
 },
 "P:42B1F0:1": {
-"class": "IsometricTileTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 776,
@@ -124215,7 +124195,7 @@
 ]
 },
 "P:59B740:0": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -124326,7 +124306,7 @@
 "ents": []
 },
 "M:59BBC0:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -124343,12 +124323,10 @@
 2
 ]
 ],
-"ents": [
-"M:59BBC0:p0:0x4"
-]
+"ents": []
 },
 "R:59C580:ecx": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 60,
@@ -124540,7 +124518,7 @@
 ]
 },
 "P:5A0160:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -124698,9 +124676,7 @@
 2
 ]
 ],
-"ents": [
-"M:5A08D0:p0:0x4"
-]
+"ents": []
 },
 "P:5A1190:0": {
 "class": "LightSourceClass",
@@ -124927,7 +124903,7 @@
 ]
 },
 "P:5A6510:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -125085,7 +125061,7 @@
 "ents": []
 },
 "R:5A82E0:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -125097,7 +125073,7 @@
 ]
 },
 "P:5A82E0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -125393,7 +125369,7 @@
 ]
 },
 "R:5AC290:ecx": {
-"class": "LightSourceClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -125553,7 +125529,7 @@
 ]
 },
 "R:5AC430:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -125935,7 +125911,7 @@
 ]
 },
 "R:5AC900:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -126644,7 +126620,7 @@
 ]
 },
 "R:5AD660:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -126751,7 +126727,7 @@
 ]
 },
 "R:5AD7D0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -127357,7 +127333,7 @@
 ]
 },
 "P:5AFF70:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -127423,7 +127399,7 @@
 ]
 },
 "P:5B0060:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -127481,7 +127457,7 @@
 ]
 },
 "P:5B0170:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -128604,7 +128580,7 @@
 ]
 },
 "M:5B3F50:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -128614,7 +128590,7 @@
 "ents": []
 },
 "M:5B3F50:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -128781,7 +128757,7 @@
 ]
 },
 "M:5B4630:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -128791,7 +128767,7 @@
 "ents": []
 },
 "M:5B4630:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -129915,7 +129891,7 @@
 ]
 },
 "R:5BD5C0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -130392,7 +130368,7 @@
 ]
 },
 "M:5C0380:this:0x10": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -130547,7 +130523,7 @@
 ]
 },
 "P:5C0640:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -131159,7 +131135,7 @@
 ]
 },
 "P:5C2A60:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -131249,7 +131225,7 @@
 ]
 },
 "R:5C3EC0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -131466,7 +131442,7 @@
 ]
 },
 "P:5C46E0:0": {
-"class": "ScenarioClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -133637,7 +133613,7 @@
 ]
 },
 "R:5CC690:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -134052,7 +134028,7 @@
 ]
 },
 "R:5CD330:ecx": {
-"class": "MSBitPrintAnim",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -134096,7 +134072,7 @@
 ]
 },
 "R:5CD3C0:ecx": {
-"class": "NeuronClass",
+"class": "ScrollClass",
 "obs": [
 [
 48,
@@ -134278,7 +134254,7 @@
 ]
 },
 "M:5CD570:this:0x34": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -134482,7 +134458,7 @@
 ]
 },
 "M:5CE0C0:this:0x34": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -134534,7 +134510,7 @@
 ]
 },
 "P:7B7180:4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -134568,7 +134544,7 @@
 ]
 },
 "M:5CE3A0:this:0x34": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -134578,7 +134554,7 @@
 "ents": []
 },
 "R:5CE4A0:ecx": {
-"class": "MSAnim",
+"class": "MSFrameAnim",
 "obs": [
 [
 0,
@@ -134642,7 +134618,7 @@
 ]
 },
 "R:5CE640:ecx": {
-"class": "MSPCXAnim",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -135877,7 +135853,7 @@
 ]
 },
 "M:5D07F0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -135939,7 +135915,7 @@
 ]
 },
 "M:5D0950:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -136013,7 +135989,7 @@
 ]
 },
 "M:5D0AA0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -138144,7 +138120,7 @@
 ]
 },
 "R:5D4400:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 692,
@@ -138596,7 +138572,7 @@
 ]
 },
 "M:5D53B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -138658,7 +138634,7 @@
 ]
 },
 "M:5D5530:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -138732,7 +138708,7 @@
 ]
 },
 "M:5D56A0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -138996,7 +138972,7 @@
 ]
 },
 "R:5D5DC0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 63,
@@ -139008,7 +138984,7 @@
 ]
 },
 "R:5D5DD0:ecx": {
-"class": "MPCooperative",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 60,
@@ -139020,7 +138996,7 @@
 ]
 },
 "R:5D5DE0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 63,
@@ -139032,7 +139008,7 @@
 ]
 },
 "R:5D6350:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 52,
@@ -139081,7 +139057,7 @@
 ]
 },
 "R:5D6540:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -139129,7 +139105,7 @@
 ]
 },
 "R:5D67B0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -139943,7 +139919,7 @@
 ]
 },
 "P:7B7140:1": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -140404,7 +140380,7 @@
 ]
 },
 "P:5E74E0:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -140574,7 +140550,7 @@
 ]
 },
 "P:5EE510:0": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 44,
@@ -140984,7 +140960,7 @@
 ]
 },
 "P:48BF10:0": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -141021,9 +140997,7 @@
 2
 ]
 ],
-"ents": [
-"M:5EF190:this:0x50"
-]
+"ents": []
 },
 "P:5EF190:0": {
 "class": "AI",
@@ -141324,7 +141298,7 @@
 ]
 },
 "R:5F19C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -141344,7 +141318,7 @@
 "ents": []
 },
 "R:5F19E0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -141390,7 +141364,7 @@
 ]
 },
 "M:5F1BC0:this:0x38": {
-"class": "NeuronClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 40,
@@ -141410,7 +141384,7 @@
 ]
 },
 "R:5F1BF0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 60,
@@ -141468,7 +141442,7 @@
 ]
 },
 "R:5F1EA0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -141500,7 +141474,7 @@
 ]
 },
 "M:5F1EE0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141522,7 +141496,7 @@
 ]
 },
 "M:5F1F00:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141532,7 +141506,7 @@
 "ents": []
 },
 "R:5F1F20:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -141564,7 +141538,7 @@
 ]
 },
 "M:5F1F70:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141650,7 +141624,7 @@
 ]
 },
 "R:5F2950:ecx": {
-"class": "SwizzleManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 36,
@@ -141660,7 +141634,7 @@
 "ents": []
 },
 "R:5F3170:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -141738,7 +141712,7 @@
 ]
 },
 "M:5F35D0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141760,7 +141734,7 @@
 ]
 },
 "M:5F35F0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141782,7 +141756,7 @@
 ]
 },
 "M:5F3610:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -141804,7 +141778,7 @@
 ]
 },
 "M:5F3630:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -142234,7 +142208,7 @@
 ]
 },
 "R:5F44A0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 131,
@@ -142312,7 +142286,7 @@
 ]
 },
 "M:5F4870:this:0x520": {
-"class": "MapClass",
+"class": "ScrollClass",
 "obs": [
 [
 5824,
@@ -142468,7 +142442,7 @@
 ]
 },
 "M:5F5230:this:0x34": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -142478,7 +142452,7 @@
 "ents": []
 },
 "M:5F5230:this:0x30": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -142637,7 +142611,7 @@
 ]
 },
 "P:5F5B50:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -142765,7 +142739,7 @@
 ]
 },
 "R:5F5F30:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 164,
@@ -142845,7 +142819,7 @@
 ]
 },
 "P:5F60A0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -142855,7 +142829,7 @@
 "ents": []
 },
 "P:5F6120:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -142959,7 +142933,7 @@
 ]
 },
 "M:5F6250:this:0x30": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -142969,7 +142943,7 @@
 "ents": []
 },
 "M:5F6250:this:0x34": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -143073,7 +143047,7 @@
 ]
 },
 "R:5F6690:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 144,
@@ -143285,7 +143259,7 @@
 ]
 },
 "R:5F6DA0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 136,
@@ -144066,7 +144040,7 @@
 ]
 },
 "P:5F9070:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -144092,7 +144066,7 @@
 ]
 },
 "R:5F92D0:ecx": {
-"class": "ObjectTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 0,
@@ -144492,7 +144466,7 @@
 ]
 },
 "R:5FA470:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -144502,7 +144476,7 @@
 "ents": []
 },
 "R:5FA590:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 60,
@@ -144802,7 +144776,7 @@
 "ents": []
 },
 "R:5FBF70:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -144812,7 +144786,7 @@
 "ents": []
 },
 "R:5FBF80:ecx": {
-"class": "SliderClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 76,
@@ -144828,7 +144802,7 @@
 ]
 },
 "R:5FC000:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -145588,7 +145562,7 @@
 ]
 },
 "P:5FF850:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 96,
@@ -146164,7 +146138,7 @@
 ]
 },
 "M:60D540:p0:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -146236,7 +146210,7 @@
 "ents": []
 },
 "M:610570:p0:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -146386,7 +146360,7 @@
 ]
 },
 "M:610CA0:p0:0xc": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -146702,7 +146676,7 @@
 ]
 },
 "M:617250:p0:0xc": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -146712,7 +146686,7 @@
 "ents": []
 },
 "M:617250:p0:0x64": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -146834,7 +146808,7 @@
 "ents": []
 },
 "M:618D40:p0:0x64": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -146844,7 +146818,7 @@
 "ents": []
 },
 "M:618D40:p0:0xc": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -146854,7 +146828,7 @@
 "ents": []
 },
 "M:618D40:p0:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -146980,7 +146954,7 @@
 ]
 },
 "P:6208F0:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -147026,7 +147000,7 @@
 ]
 },
 "P:6217E0:0": {
-"class": "TemporalClass",
+"class": "ScrollClass",
 "obs": [
 [
 96,
@@ -147132,16 +147106,14 @@
 ]
 },
 "R:6234B0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 52,
 4
 ]
 ],
-"ents": [
-"T:6234B0"
-]
+"ents": []
 },
 "R:623560:ecx": {
 "class": "DiskLaserClass",
@@ -147156,7 +147128,7 @@
 ]
 },
 "R:6235B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -147596,7 +147568,7 @@
 ]
 },
 "M:6249A0:this:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -148139,7 +148111,7 @@
 ]
 },
 "M:625C00:this:0x4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 4,
@@ -148307,7 +148279,7 @@
 ]
 },
 "R:626370:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 256,
@@ -148475,7 +148447,7 @@
 ]
 },
 "R:6274F0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -148511,7 +148483,7 @@
 ]
 },
 "P:627590:0": {
-"class": "WaveClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -148573,7 +148545,7 @@
 "ents": []
 },
 "M:627590:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -148583,7 +148555,7 @@
 "ents": []
 },
 "P:627590:4": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -148593,7 +148565,7 @@
 "ents": []
 },
 "R:627A10:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -149813,7 +149785,7 @@
 ]
 },
 "M:6294D0:this:0x44": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -149851,7 +149823,7 @@
 ]
 },
 "R:629710:ecx": {
-"class": "SliderClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 76,
@@ -150024,7 +149996,7 @@
 ]
 },
 "M:6297F0:this:0x24": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -150072,7 +150044,7 @@
 ]
 },
 "M:629FD0:this:0x28": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 108,
@@ -150271,7 +150243,7 @@
 ]
 },
 "R:62A8E0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -150747,9 +150719,7 @@
 1
 ]
 ],
-"ents": [
-"M:62B5E0:p0:0x2bc"
-]
+"ents": []
 },
 "P:62B5E0:0": {
 "class": "LightSourceClass",
@@ -151556,7 +151526,7 @@
 "ents": []
 },
 "P:62D810:0": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 304,
@@ -152238,7 +152208,7 @@
 ]
 },
 "P:62F230:0": {
-"class": "WeaponTypeClass",
+"class": "VeinholeMonsterClass",
 "obs": [
 [
 0,
@@ -152453,7 +152423,7 @@
 ]
 },
 "M:630100:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -152463,7 +152433,7 @@
 "ents": []
 },
 "M:630100:this:0xe4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -152834,7 +152804,7 @@
 "ents": []
 },
 "M:631CC0:this:0x4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -152856,7 +152826,7 @@
 ]
 },
 "R:631D30:ecx": {
-"class": "Pipe",
+"class": "FilePipe",
 "obs": [
 [
 4,
@@ -153120,7 +153090,7 @@
 ]
 },
 "P:632D10:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -153130,7 +153100,7 @@
 "ents": []
 },
 "M:632D10:this:0x18": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -153318,7 +153288,7 @@
 ]
 },
 "M:6330C0:this:0x18": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -153462,7 +153432,7 @@
 "ents": []
 },
 "R:633A50:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -153472,7 +153442,7 @@
 "ents": []
 },
 "R:633A60:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -153502,7 +153472,7 @@
 "ents": []
 },
 "R:633A90:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -153512,7 +153482,7 @@
 "ents": []
 },
 "R:633AA0:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -153552,16 +153522,14 @@
 ]
 },
 "R:633B00:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:633B00"
-]
+"ents": []
 },
 "R:633B10:ecx": {
 "class": "DropPodLocomotionClass",
@@ -153576,52 +153544,44 @@
 ]
 },
 "R:633B20:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:633B20"
-]
+"ents": []
 },
 "R:633B30:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:633B30"
-]
+"ents": []
 },
 "R:633B40:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:633B40"
-]
+"ents": []
 },
 "R:633B70:ecx": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"T:633B70"
-]
+"ents": []
 },
 "R:633B80:ecx": {
 "class": "DropPodLocomotionClass",
@@ -153695,7 +153655,7 @@
 ]
 },
 "R:633E50:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -153829,7 +153789,7 @@
 ]
 },
 "R:6342E0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -153871,7 +153831,7 @@
 ]
 },
 "R:6343B0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -153903,7 +153863,7 @@
 "ents": []
 },
 "R:634470:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -153951,7 +153911,7 @@
 ]
 },
 "R:634700:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -153977,7 +153937,7 @@
 ]
 },
 "R:6347A0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -154007,7 +153967,7 @@
 ]
 },
 "R:634810:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -154017,7 +153977,7 @@
 "ents": []
 },
 "R:634880:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -154027,7 +153987,7 @@
 "ents": []
 },
 "R:634950:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -154037,7 +153997,7 @@
 "ents": []
 },
 "R:634960:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -154175,7 +154135,7 @@
 ]
 },
 "P:705D20:3": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 48,
@@ -154185,7 +154145,7 @@
 "ents": []
 },
 "P:634E10:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -154491,7 +154451,7 @@
 ]
 },
 "R:635DF0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -154501,7 +154461,7 @@
 "ents": []
 },
 "R:635E90:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -154721,7 +154681,7 @@
 ]
 },
 "R:636520:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -154731,7 +154691,7 @@
 "ents": []
 },
 "R:636530:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -154741,7 +154701,7 @@
 "ents": []
 },
 "R:636540:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -154844,7 +154804,7 @@
 ]
 },
 "R:636980:ecx": {
-"class": "EnumConnectionsClass",
+"class": "ScrollClass",
 "obs": [
 [
 20,
@@ -154914,7 +154874,7 @@
 ]
 },
 "P:636B50:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -154964,7 +154924,7 @@
 ]
 },
 "R:636DC0:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -155044,7 +155004,7 @@
 ]
 },
 "R:636FC0:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -155056,7 +155016,7 @@
 ]
 },
 "R:636FD0:ecx": {
-"class": "NetworkDialog",
+"class": "WWMouseClass",
 "obs": [
 [
 148,
@@ -155068,7 +155028,7 @@
 ]
 },
 "R:637020:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 152,
@@ -155078,7 +155038,7 @@
 "ents": []
 },
 "R:637030:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 153,
@@ -155138,7 +155098,7 @@
 ]
 },
 "R:637D00:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -155280,7 +155240,7 @@
 ]
 },
 "P:639A50:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -155578,7 +155538,7 @@
 "ents": []
 },
 "P:635830:1": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -155588,7 +155548,7 @@
 "ents": []
 },
 "R:63CF10:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -155612,7 +155572,7 @@
 ]
 },
 "R:63CFC0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -155636,7 +155596,7 @@
 ]
 },
 "R:63D2D0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -157892,7 +157852,7 @@
 ]
 },
 "R:642AD0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 96,
@@ -157902,7 +157862,7 @@
 "ents": []
 },
 "R:642B10:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 128,
@@ -157912,7 +157872,7 @@
 "ents": []
 },
 "R:642B20:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 128,
@@ -157922,7 +157882,7 @@
 "ents": []
 },
 "R:642B30:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 128,
@@ -158024,7 +157984,7 @@
 ]
 },
 "R:642DF0:ecx": {
-"class": "DynamicVector",
+"class": "PlayerProfile",
 "obs": [
 [
 120,
@@ -158135,7 +158095,7 @@
 ]
 },
 "R:643E60:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "PlayerProfile",
 "obs": [
 [
 100,
@@ -158145,7 +158105,7 @@
 "ents": []
 },
 "R:643E70:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "PlayerProfile",
 "obs": [
 [
 100,
@@ -159025,7 +158985,7 @@
 ]
 },
 "R:645A70:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -159317,7 +159277,7 @@
 ]
 },
 "P:647260:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -159327,19 +159287,17 @@
 "ents": []
 },
 "M:647260:p0:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:647260:p0:0x34"
-]
+"ents": []
 },
 "P:6475F0:0": {
-"class": "AlphaShapeClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -159370,9 +159328,7 @@
 4
 ]
 ],
-"ents": [
-"P:6475F0:0"
-]
+"ents": []
 },
 "P:648710:0": {
 "class": "GadgetClass",
@@ -159683,16 +159639,14 @@
 ]
 },
 "M:650A90:p0:0x34": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 180,
 4
 ]
 ],
-"ents": [
-"M:650A90:p0:0x34"
-]
+"ents": []
 },
 "P:6516F0:0": {
 "class": "FontClass",
@@ -160277,7 +160231,7 @@
 ]
 },
 "P:567230:2": {
-"class": "RadarClass",
+"class": "MouseClass",
 "obs": [
 [
 244,
@@ -160431,7 +160385,7 @@
 ]
 },
 "R:655050:ecx": {
-"class": "XSurface",
+"class": "MouseClass",
 "obs": [
 [
 260,
@@ -160553,7 +160507,7 @@
 ]
 },
 "R:6557F0:ecx": {
-"class": "Radar",
+"class": "MouseClass",
 "obs": [
 [
 5264,
@@ -160641,7 +160595,7 @@
 ]
 },
 "R:6558D0:ecx": {
-"class": "MouseClass",
+"class": "ScrollClass",
 "obs": [
 [
 4696,
@@ -160876,38 +160830,6 @@
 "P:656580:0"
 ]
 },
-"R:6565A0:ecx": {
-"class": "RadarClass",
-"obs": [
-[
-260,
-4
-],
-[
-4636,
-4
-],
-[
-4672,
-4
-],
-[
-4676,
-4
-],
-[
-5264,
-4
-],
-[
-5272,
-4
-]
-],
-"ents": [
-"T:6565A0"
-]
-},
 "R:656750:ecx": {
 "class": "TacticalClass",
 "obs": [
@@ -160949,7 +160871,7 @@
 ]
 },
 "P:4AE720:1": {
-"class": "RadarClass",
+"class": "PowerClass",
 "obs": [
 [
 4648,
@@ -161707,7 +161629,7 @@
 ]
 },
 "R:658DE0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -161973,7 +161895,7 @@
 ]
 },
 "R:659530:ecx": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -161985,7 +161907,7 @@
 ]
 },
 "R:659540:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -161997,7 +161919,7 @@
 ]
 },
 "R:659550:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 88,
@@ -162143,7 +162065,7 @@
 ]
 },
 "M:659650:this:0x4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -162928,7 +162850,7 @@
 ]
 },
 "P:65AB80:0": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -162976,7 +162898,7 @@
 ]
 },
 "R:65AD30:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -163296,7 +163218,7 @@
 ]
 },
 "R:65B4B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -163554,7 +163476,7 @@
 ]
 },
 "R:65B8F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 72,
@@ -163888,7 +163810,7 @@
 ]
 },
 "R:65C2A0:ecx": {
-"class": "RAMFileClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -164642,7 +164564,7 @@
 ]
 },
 "R:65D480:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -164668,7 +164590,7 @@
 ]
 },
 "P:65D510:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -164678,7 +164600,7 @@
 "ents": []
 },
 "P:65D5C0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -165017,7 +164939,7 @@
 ]
 },
 "R:6607D0:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -165340,12 +165262,10 @@
 1
 ]
 ],
-"ents": [
-"P:6613A0:0"
-]
+"ents": []
 },
 "P:6614F0:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -165355,7 +165275,7 @@
 "ents": []
 },
 "P:661510:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -165427,7 +165347,7 @@
 ]
 },
 "R:661770:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -165437,7 +165357,7 @@
 "ents": []
 },
 "R:661850:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -165447,7 +165367,7 @@
 "ents": []
 },
 "R:661960:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -165457,7 +165377,7 @@
 "ents": []
 },
 "R:661A60:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -165604,7 +165524,7 @@
 ]
 },
 "P:661F90:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 60,
@@ -165873,7 +165793,7 @@
 ]
 },
 "P:4135D0:2": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 12,
@@ -165890,7 +165810,7 @@
 ]
 },
 "M:663030:this:0xc": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -165926,7 +165846,7 @@
 ]
 },
 "M:6632E0:p0:0x8": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1732,
@@ -166111,7 +166031,7 @@
 ]
 },
 "P:663CD0:0": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -166214,7 +166134,7 @@
 ]
 },
 "R:664750:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -170408,7 +170328,7 @@
 ]
 },
 "P:665650:0": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -176037,7 +175957,7 @@
 ]
 },
 "R:67A090:ecx": {
-"class": "TypeList",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176071,7 +175991,7 @@
 "ents": []
 },
 "R:67A110:ecx": {
-"class": "TypeList",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176141,7 +176061,7 @@
 ]
 },
 "R:67A210:ecx": {
-"class": "TypeList",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176175,7 +176095,7 @@
 "ents": []
 },
 "R:67A290:ecx": {
-"class": "TypeList",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176209,7 +176129,7 @@
 "ents": []
 },
 "R:67A310:ecx": {
-"class": "TypeList",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176451,7 +176371,7 @@
 ]
 },
 "R:67A570:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -176929,7 +176849,7 @@
 ]
 },
 "R:67AA80:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177035,7 +176955,7 @@
 ]
 },
 "R:67AC70:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177101,7 +177021,7 @@
 ]
 },
 "R:67AD80:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177143,7 +177063,7 @@
 ]
 },
 "R:67AE00:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177249,7 +177169,7 @@
 ]
 },
 "R:67AFF0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177315,7 +177235,7 @@
 ]
 },
 "R:67B100:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177357,7 +177277,7 @@
 ]
 },
 "R:67B180:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177463,7 +177383,7 @@
 ]
 },
 "R:67B370:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177529,7 +177449,7 @@
 ]
 },
 "R:67B480:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -177590,9 +177510,7 @@
 1
 ]
 ],
-"ents": [
-"T:67BFA0"
-]
+"ents": []
 },
 "R:67C010:ecx": {
 "class": "VectorClass",
@@ -177955,7 +177873,7 @@
 "ents": []
 },
 "P:689310:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -177965,7 +177883,7 @@
 "ents": []
 },
 "P:6851F0:1": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -177975,7 +177893,7 @@
 "ents": []
 },
 "P:67E730:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -177985,7 +177903,7 @@
 "ents": []
 },
 "R:67F7E0:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -177995,7 +177913,7 @@
 "ents": []
 },
 "R:67F9C0:ecx": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -178063,7 +177981,7 @@
 "ents": []
 },
 "R:680F70:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WOL",
 "obs": [
 [
 0,
@@ -178145,7 +178063,7 @@
 ]
 },
 "R:681060:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -178155,7 +178073,7 @@
 "ents": []
 },
 "R:681070:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -178187,7 +178105,7 @@
 "ents": []
 },
 "R:6810A0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 262,
@@ -178199,7 +178117,7 @@
 ]
 },
 "R:6810D0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 390,
@@ -178223,7 +178141,7 @@
 ]
 },
 "R:681120:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 392,
@@ -178235,7 +178153,7 @@
 ]
 },
 "R:681130:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 396,
@@ -178245,7 +178163,7 @@
 "ents": []
 },
 "R:681140:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 396,
@@ -178563,7 +178481,7 @@
 "ents": []
 },
 "P:682640:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -178573,7 +178491,7 @@
 "ents": []
 },
 "P:682780:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -178607,7 +178525,7 @@
 "ents": []
 },
 "P:682A90:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -178641,7 +178559,7 @@
 "ents": []
 },
 "P:682E10:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -179313,16 +179231,14 @@
 "ents": []
 },
 "M:684C30:p0:0xa4": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 184,
 4
 ]
 ],
-"ents": [
-"M:684C30:p0:0xa4"
-]
+"ents": []
 },
 "P:6851F0:0": {
 "class": "HouseClass",
@@ -179494,16 +179410,14 @@
 "ents": []
 },
 "M:686B20:p0:0x34": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 188,
 4
 ]
 ],
-"ents": [
-"M:686B20:p0:0x34"
-]
+"ents": []
 },
 "P:688380:0": {
 "class": "EnumConnectionsClass",
@@ -180287,7 +180201,7 @@
 ]
 },
 "P:68C050:0": {
-"class": "DSurface",
+"class": "ScrollClass",
 "obs": [
 [
 1780,
@@ -180299,7 +180213,7 @@
 ]
 },
 "R:68C200:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -180333,7 +180247,7 @@
 "ents": []
 },
 "R:68C260:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -180378,9 +180292,7 @@
 1
 ]
 ],
-"ents": [
-"T:68C2B0"
-]
+"ents": []
 },
 "P:68C2B0:0": {
 "class": "EnumConnectionsClass",
@@ -180665,19 +180577,17 @@
 ]
 },
 "M:68CD20:p0:0x34": {
-"class": "OverlayClass",
+"class": "PlayerProfile",
 "obs": [
 [
 188,
 4
 ]
 ],
-"ents": [
-"M:68CD20:p0:0x34"
-]
+"ents": []
 },
 "M:68CD20:this:0xc": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -180749,7 +180659,7 @@
 "ents": []
 },
 "M:68F060:this:0xc": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -180825,7 +180735,7 @@
 ]
 },
 "P:68F9B0:0": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -180851,7 +180761,7 @@
 "ents": []
 },
 "R:68FB10:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -180929,7 +180839,7 @@
 ]
 },
 "M:68FBB0:this:0xc": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -181105,7 +181015,7 @@
 ]
 },
 "R:6907A0:ecx": {
-"class": "ScoreFontClass",
+"class": "ScoreBigFontClass",
 "obs": [
 [
 0,
@@ -181117,14 +181027,14 @@
 ]
 },
 "R:6907E0:ecx": {
-"class": "ScoreFontClass",
+"class": "ScoreBigFontClass",
 "obs": [],
 "ents": [
 "T:6907E0"
 ]
 },
 "R:690850:ecx": {
-"class": "ScoreFontClass",
+"class": "ScoreBigFontClass",
 "obs": [
 [
 12,
@@ -181140,7 +181050,7 @@
 ]
 },
 "R:690910:ecx": {
-"class": "ScoreFontClass",
+"class": "ScoreBigFontClass",
 "obs": [
 [
 0,
@@ -181304,7 +181214,7 @@
 ]
 },
 "M:690D60:this:0x28": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -181346,7 +181256,7 @@
 ]
 },
 "R:690F70:ecx": {
-"class": "ScoreAnimClass",
+"class": "ScorePrintClass",
 "obs": [
 [
 12,
@@ -181362,7 +181272,7 @@
 ]
 },
 "R:690FC0:ecx": {
-"class": "ScoreAnimClass",
+"class": "ScorePrintClass",
 "obs": [
 [
 12,
@@ -181470,7 +181380,7 @@
 ]
 },
 "R:691160:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -181544,7 +181454,7 @@
 ]
 },
 "R:691500:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -181624,7 +181534,7 @@
 ]
 },
 "R:6915A0:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 44,
@@ -182023,7 +181933,7 @@
 ]
 },
 "P:692B60:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -182087,7 +181997,7 @@
 "ents": []
 },
 "R:693840:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -182103,7 +182013,7 @@
 ]
 },
 "R:693880:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [
 [
 21840,
@@ -182390,16 +182300,14 @@
 ]
 },
 "P:696AE0:0": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 152,
 4
 ]
 ],
-"ents": [
-"P:696AE0:0"
-]
+"ents": []
 },
 "R:696C40:ecx": {
 "class": "ConvertClass",
@@ -183364,7 +183272,7 @@
 "ents": []
 },
 "P:699980:2": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 324,
@@ -183999,16 +183907,14 @@
 "ents": []
 },
 "R:69ACC0:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 396,
 4
 ]
 ],
-"ents": [
-"T:69ACC0"
-]
+"ents": []
 },
 "R:69ACD0:ecx": {
 "class": "InfantryTypeClass",
@@ -184089,7 +183995,7 @@
 ]
 },
 "P:69B170:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -184117,7 +184023,7 @@
 ]
 },
 "R:69B540:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -184127,7 +184033,7 @@
 "ents": []
 },
 "P:69B560:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -184147,7 +184053,7 @@
 "ents": []
 },
 "R:69B5B0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -185564,7 +185470,7 @@
 ]
 },
 "P:69D8C0:0": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 0,
@@ -185587,7 +185493,7 @@
 ]
 },
 "R:69D9E0:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 0,
@@ -185796,16 +185702,14 @@
 ]
 },
 "R:69DEA0:ecx": {
-"class": "ShapeButtonClass",
+"class": "ScrollClass",
 "obs": [
 [
 92,
 1
 ]
 ],
-"ents": [
-"T:69DEA0"
-]
+"ents": []
 },
 "R:69DEB0:ecx": {
 "class": "ShapeButtonClass",
@@ -185914,7 +185818,7 @@
 ]
 },
 "R:69DFF0:ecx": {
-"class": "ShapeButtonClass",
+"class": "ConnectionClass",
 "obs": [
 [
 52,
@@ -185934,7 +185838,7 @@
 ]
 },
 "R:69E010:ecx": {
-"class": "ConvertClass",
+"class": "WWMouseClass",
 "obs": [
 [
 30,
@@ -185958,7 +185862,7 @@
 ]
 },
 "R:69E060:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 52,
@@ -186032,7 +185936,7 @@
 ]
 },
 "P:7D5408:1": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -186117,7 +186021,7 @@
 ]
 },
 "M:69E500:this:0x18": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -186127,7 +186031,7 @@
 "ents": []
 },
 "M:69E500:this:0x1c": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -186181,7 +186085,7 @@
 ]
 },
 "M:69E580:p0:0x18": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -186191,7 +186095,7 @@
 "ents": []
 },
 "M:69E580:p0:0x1c": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -186295,7 +186199,7 @@
 ]
 },
 "M:69E930:this:0x18": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -186305,7 +186209,7 @@
 "ents": []
 },
 "M:69E930:this:0x1c": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 24,
@@ -186417,7 +186321,7 @@
 ]
 },
 "P:69EE30:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -186471,7 +186375,7 @@
 ]
 },
 "R:69F1B0:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 36,
@@ -186985,7 +186889,7 @@
 ]
 },
 "P:6A05C0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -187265,7 +187169,7 @@
 ]
 },
 "M:6A05F0:p0:0xe4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -187617,7 +187521,7 @@
 ]
 },
 "P:6A4230:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -187627,7 +187531,7 @@
 "ents": []
 },
 "P:6A4240:0": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 88,
@@ -187637,7 +187541,7 @@
 "ents": []
 },
 "P:6A4250:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -187864,7 +187768,7 @@
 ]
 },
 "P:63F730:1": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -187982,24 +187886,8 @@
 "T:6A5F20"
 ]
 },
-"R:6A60A0:ecx": {
-"class": "SidebarClass",
-"obs": [
-[
-21404,
-4
-],
-[
-21414,
-1
-]
-],
-"ents": [
-"T:6A60A0"
-]
-},
 "R:6A60E0:ecx": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 21404,
@@ -188067,7 +187955,7 @@
 ]
 },
 "R:6A6610:ecx": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 21404,
@@ -188079,7 +187967,7 @@
 ]
 },
 "R:6A6A00:ecx": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -188095,7 +187983,7 @@
 ]
 },
 "R:6A6AF0:ecx": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 21404,
@@ -188107,7 +187995,7 @@
 ]
 },
 "P:6A6AF0:0": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 72,
@@ -188153,7 +188041,7 @@
 ]
 },
 "P:723EA0:3": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 21404,
@@ -188230,7 +188118,7 @@
 ]
 },
 "P:6A7780:0": {
-"class": "RulesClass",
+"class": "TabClass",
 "obs": [
 [
 68,
@@ -188254,7 +188142,7 @@
 ]
 },
 "R:6A7D20:ecx": {
-"class": "SidebarClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -188401,7 +188289,7 @@
 ]
 },
 "R:6A8220:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -188447,7 +188335,7 @@
 ]
 },
 "R:6A8330:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -188457,7 +188345,7 @@
 "ents": []
 },
 "R:6A83E0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 56,
@@ -188467,7 +188355,7 @@
 "ents": []
 },
 "P:6A8420:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 132,
@@ -188479,7 +188367,7 @@
 ]
 },
 "R:6A8710:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -188567,7 +188455,7 @@
 ]
 },
 "P:6A8B30:0": {
-"class": "SelectClass@StripClass@SidebarClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 0,
@@ -188850,7 +188738,7 @@
 ]
 },
 "R:6AACE0:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 44,
@@ -188885,10 +188773,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6AAD00:this:0x2c"
+]
 },
 "P:6AAD00:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -188976,7 +188866,7 @@
 ]
 },
 "R:6ABAC0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -188986,7 +188876,7 @@
 "ents": []
 },
 "P:6ABB60:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 60,
@@ -189445,7 +189335,7 @@
 ]
 },
 "R:6AFD60:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 36,
@@ -189485,7 +189375,7 @@
 ]
 },
 "R:6B0300:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ScrollClass",
 "obs": [
 [
 36,
@@ -189581,7 +189471,7 @@
 ]
 },
 "R:6B0690:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -189591,7 +189481,7 @@
 "ents": []
 },
 "R:6B0750:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -189601,7 +189491,7 @@
 "ents": []
 },
 "R:6B0880:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -190950,7 +190840,7 @@
 "ents": []
 },
 "M:6B2F30:p0:0xe4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -190960,7 +190850,7 @@
 "ents": []
 },
 "R:6B4100:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -191572,7 +191462,7 @@
 "ents": []
 },
 "P:6B59A0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -191582,7 +191472,7 @@
 "ents": []
 },
 "P:6B5C90:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -192172,7 +192062,7 @@
 ]
 },
 "M:6B7DE0:this:0x6c": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -192182,7 +192072,7 @@
 "ents": []
 },
 "M:6B7DE0:this:0x68": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193031,7 +192921,7 @@
 ]
 },
 "M:6B9740:p0:0x308": {
-"class": "IsometricTileTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 776,
@@ -193194,7 +193084,7 @@
 ]
 },
 "M:6BAC40:p0:0x308": {
-"class": "IsometricTileTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 776,
@@ -193354,7 +193244,7 @@
 ]
 },
 "P:6BEF90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193380,7 +193270,7 @@
 ]
 },
 "P:6BF110:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193406,7 +193296,7 @@
 ]
 },
 "P:6BF290:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193432,7 +193322,7 @@
 ]
 },
 "P:6BF410:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193458,7 +193348,7 @@
 ]
 },
 "P:6BF590:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193484,7 +193374,7 @@
 ]
 },
 "P:6BF710:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193510,7 +193400,7 @@
 ]
 },
 "P:6BF890:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193536,7 +193426,7 @@
 ]
 },
 "P:6BFA10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193562,7 +193452,7 @@
 ]
 },
 "P:6BFB90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193588,7 +193478,7 @@
 ]
 },
 "P:6BFD10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193614,7 +193504,7 @@
 ]
 },
 "P:6BFE90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193640,7 +193530,7 @@
 ]
 },
 "P:6C0010:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193666,7 +193556,7 @@
 ]
 },
 "P:6C0190:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193692,7 +193582,7 @@
 ]
 },
 "P:6C0310:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193718,7 +193608,7 @@
 ]
 },
 "P:6C0490:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193744,7 +193634,7 @@
 ]
 },
 "P:6C0610:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193770,7 +193660,7 @@
 ]
 },
 "P:6C0790:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193796,7 +193686,7 @@
 ]
 },
 "P:6C0910:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193822,7 +193712,7 @@
 ]
 },
 "P:6C0A90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193848,7 +193738,7 @@
 ]
 },
 "P:6C0C10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193874,7 +193764,7 @@
 ]
 },
 "P:6C0D90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193900,7 +193790,7 @@
 ]
 },
 "P:6C0F10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193926,7 +193816,7 @@
 ]
 },
 "P:6C1090:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193952,7 +193842,7 @@
 ]
 },
 "P:6C1210:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -193978,7 +193868,7 @@
 ]
 },
 "P:6C1390:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194004,7 +193894,7 @@
 ]
 },
 "P:6C1510:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194030,7 +193920,7 @@
 ]
 },
 "P:6C1690:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194056,7 +193946,7 @@
 ]
 },
 "P:6C1810:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194082,7 +193972,7 @@
 ]
 },
 "P:6C1990:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194108,7 +193998,7 @@
 ]
 },
 "P:6C1B10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194134,7 +194024,7 @@
 ]
 },
 "P:6C1C90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194160,7 +194050,7 @@
 ]
 },
 "P:6C1E10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194186,7 +194076,7 @@
 ]
 },
 "P:6C1F90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194212,7 +194102,7 @@
 ]
 },
 "P:6C2110:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194238,7 +194128,7 @@
 ]
 },
 "P:6C2290:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194264,7 +194154,7 @@
 ]
 },
 "P:6C2410:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194290,7 +194180,7 @@
 ]
 },
 "P:6C2590:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194316,7 +194206,7 @@
 ]
 },
 "P:6C2710:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194342,7 +194232,7 @@
 ]
 },
 "P:6C2890:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194368,7 +194258,7 @@
 ]
 },
 "P:6C2A10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194394,7 +194284,7 @@
 ]
 },
 "P:6C2B90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194420,7 +194310,7 @@
 ]
 },
 "P:6C2D10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194446,7 +194336,7 @@
 ]
 },
 "P:6C2E90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194472,7 +194362,7 @@
 ]
 },
 "P:6C3010:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194498,7 +194388,7 @@
 ]
 },
 "P:6C3190:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194524,7 +194414,7 @@
 ]
 },
 "P:6C3310:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194550,7 +194440,7 @@
 ]
 },
 "P:6C3490:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194576,7 +194466,7 @@
 ]
 },
 "P:6C3610:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194602,7 +194492,7 @@
 ]
 },
 "P:6C3790:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194628,7 +194518,7 @@
 ]
 },
 "P:6C3910:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194654,7 +194544,7 @@
 ]
 },
 "P:6C3A90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194680,7 +194570,7 @@
 ]
 },
 "P:6C3C10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194706,7 +194596,7 @@
 ]
 },
 "P:6C3D90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194732,7 +194622,7 @@
 ]
 },
 "P:6C3F10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194758,7 +194648,7 @@
 ]
 },
 "P:6C4090:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194784,7 +194674,7 @@
 ]
 },
 "P:6C4210:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194810,7 +194700,7 @@
 ]
 },
 "P:6C4390:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194836,7 +194726,7 @@
 ]
 },
 "P:6C4510:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194862,7 +194752,7 @@
 ]
 },
 "P:6C4690:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194888,7 +194778,7 @@
 ]
 },
 "P:6C4810:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194914,7 +194804,7 @@
 ]
 },
 "P:6C4990:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194940,7 +194830,7 @@
 ]
 },
 "P:6C4B10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194966,7 +194856,7 @@
 ]
 },
 "P:6C4C90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -194992,7 +194882,7 @@
 ]
 },
 "P:6C4E10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195018,7 +194908,7 @@
 ]
 },
 "P:6C4F90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195044,7 +194934,7 @@
 ]
 },
 "P:6C5110:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195070,7 +194960,7 @@
 ]
 },
 "P:6C5290:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195096,7 +194986,7 @@
 ]
 },
 "P:6C5410:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195122,7 +195012,7 @@
 ]
 },
 "P:6C5590:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195148,7 +195038,7 @@
 ]
 },
 "P:6C5710:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195174,7 +195064,7 @@
 ]
 },
 "P:6C5890:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195200,7 +195090,7 @@
 ]
 },
 "P:6C5A10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195226,7 +195116,7 @@
 ]
 },
 "P:6C5B90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195252,7 +195142,7 @@
 ]
 },
 "P:6C5D10:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195278,7 +195168,7 @@
 ]
 },
 "P:6C5E90:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195304,7 +195194,7 @@
 ]
 },
 "P:6C6010:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195330,7 +195220,7 @@
 ]
 },
 "P:6C6190:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -195839,7 +195729,7 @@
 "ents": []
 },
 "P:6C89E0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -196133,7 +196023,7 @@
 ]
 },
 "R:6C9930:ecx": {
-"class": "LinkClass",
+"class": "ScrollClass",
 "obs": [
 [
 20,
@@ -196153,7 +196043,7 @@
 "ents": []
 },
 "R:6C9960:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -196261,7 +196151,7 @@
 "ents": []
 },
 "R:6C9C60:ecx": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -196281,7 +196171,7 @@
 "ents": []
 },
 "R:6C9D30:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -196505,7 +196395,7 @@
 ]
 },
 "P:6CA940:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -197072,7 +196962,7 @@
 ]
 },
 "M:6CB560:this:0x2c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -197566,7 +197456,7 @@
 ]
 },
 "R:6CC280:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -197576,7 +197466,7 @@
 "ents": []
 },
 "R:6CC290:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -197586,7 +197476,7 @@
 "ents": []
 },
 "R:6CC2A0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -197927,9 +197817,7 @@
 2
 ]
 ],
-"ents": [
-"M:6CC390:p0:0xe8"
-]
+"ents": []
 },
 "R:6CDE90:ecx": {
 "class": "SpawnManagerClass",
@@ -198701,7 +198589,7 @@
 "ents": []
 },
 "M:6CF350:this:0x8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -199063,7 +198951,7 @@
 ]
 },
 "P:6A5840:2": {
-"class": "HouseClass",
+"class": "MouseClass",
 "obs": [
 [
 21792,
@@ -199088,7 +198976,7 @@
 ]
 },
 "R:6D04F0:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:6D04F0"
@@ -199143,7 +199031,7 @@
 ]
 },
 "P:6D0680:0": {
-"class": "WaypointPathClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -199167,7 +199055,7 @@
 ]
 },
 "R:6D0A20:ecx": {
-"class": "TabClass",
+"class": "MouseClass",
 "obs": [
 [
 21829,
@@ -199179,7 +199067,7 @@
 ]
 },
 "R:6D0EC0:ecx": {
-"class": "TabClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -199195,7 +199083,7 @@
 ]
 },
 "R:6D0F00:ecx": {
-"class": "TabClass",
+"class": "MouseClass",
 "obs": [
 [
 0,
@@ -200587,7 +200475,7 @@
 ]
 },
 "P:6D6AD0:0": {
-"class": "MapClass",
+"class": "SidebarClass",
 "obs": [
 [
 284,
@@ -201744,7 +201632,7 @@
 ]
 },
 "P:6DC660:0": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -202549,7 +202437,7 @@
 ]
 },
 "R:6E0080:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -202582,9 +202470,7 @@
 1
 ]
 ],
-"ents": [
-"T:6E0250"
-]
+"ents": []
 },
 "R:6E0270:ecx": {
 "class": "DropPodLocomotionClass",
@@ -202594,9 +202480,7 @@
 1
 ]
 ],
-"ents": [
-"T:6E0270"
-]
+"ents": []
 },
 "R:6E0290:ecx": {
 "class": "DropPodLocomotionClass",
@@ -202606,9 +202490,7 @@
 1
 ]
 ],
-"ents": [
-"T:6E0290"
-]
+"ents": []
 },
 "R:6E0490:ecx": {
 "class": "HouseClass",
@@ -202623,7 +202505,7 @@
 ]
 },
 "R:6E0790:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202635,7 +202517,7 @@
 ]
 },
 "R:6E07F0:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202647,7 +202529,7 @@
 ]
 },
 "R:6E0850:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202714,12 +202596,10 @@
 1
 ]
 ],
-"ents": [
-"T:6E0EF0"
-]
+"ents": []
 },
 "P:6E0EF0:0": {
-"class": "ObjectTypeClass",
+"class": "HouseClass",
 "obs": [
 [
 499,
@@ -202743,7 +202623,7 @@
 ]
 },
 "R:6E1180:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202767,7 +202647,7 @@
 ]
 },
 "R:6E1440:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202779,7 +202659,7 @@
 ]
 },
 "R:6E14A0:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202791,7 +202671,7 @@
 ]
 },
 "R:6E1530:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202803,7 +202683,7 @@
 ]
 },
 "R:6E15F0:ecx": {
-"class": "TunnelLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 109,
@@ -202815,7 +202695,7 @@
 ]
 },
 "R:6E1780:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202893,7 +202773,7 @@
 ]
 },
 "R:6E1BD0:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202905,7 +202785,7 @@
 ]
 },
 "R:6E1C40:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -202945,7 +202825,7 @@
 ]
 },
 "P:68BCC0:3": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 68,
@@ -202994,7 +202874,7 @@
 ]
 },
 "R:6E2790:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -203004,7 +202884,7 @@
 "ents": []
 },
 "R:6E2970:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -203016,7 +202896,7 @@
 ]
 },
 "R:6E2A50:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -203152,7 +203032,7 @@
 ]
 },
 "R:6E3380:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -203174,7 +203054,7 @@
 ]
 },
 "R:6E35F0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -203336,7 +203216,7 @@
 ]
 },
 "R:6E3F70:ecx": {
-"class": "DialogControl",
+"class": "WWMouseClass",
 "obs": [
 [
 144,
@@ -203847,7 +203727,7 @@
 ]
 },
 "M:6E4F60:p0:0x24": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 164,
@@ -203886,7 +203766,7 @@
 ]
 },
 "R:6E5230:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 52,
@@ -203896,7 +203776,7 @@
 "ents": []
 },
 "R:6E5290:ecx": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 52,
@@ -203930,7 +203810,7 @@
 ]
 },
 "R:6E5300:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 36,
@@ -203942,7 +203822,7 @@
 ]
 },
 "R:6E5320:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 36,
@@ -203954,7 +203834,7 @@
 ]
 },
 "R:6E5340:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 36,
@@ -203966,7 +203846,7 @@
 ]
 },
 "R:6E5380:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -203983,9 +203863,7 @@
 4
 ]
 ],
-"ents": [
-"M:6E5380:this:0x28"
-]
+"ents": []
 },
 "R:6E53A0:ecx": {
 "class": "TagClass",
@@ -204040,7 +203918,7 @@
 ]
 },
 "R:6E5560:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 48,
@@ -204052,7 +203930,7 @@
 ]
 },
 "R:6E55C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -204062,7 +203940,7 @@
 "ents": []
 },
 "P:6E55C0:0": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -204158,7 +204036,7 @@
 "ents": []
 },
 "R:6E57C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -204184,7 +204062,7 @@
 ]
 },
 "R:6E5850:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -205464,7 +205342,7 @@
 ]
 },
 "M:6E8DE0:this:0x70": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -206332,7 +206210,7 @@
 ]
 },
 "P:6EB490:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -206566,7 +206444,7 @@
 ]
 },
 "R:6EC370:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -206621,7 +206499,7 @@
 ]
 },
 "R:6EC3D0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -206781,7 +206659,7 @@
 ]
 },
 "M:6EC5A0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -206791,7 +206669,7 @@
 "ents": []
 },
 "M:6EC5A0:this:0x54": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -206801,7 +206679,7 @@
 "ents": []
 },
 "M:6EC5A0:this:0x70": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -207433,7 +207311,7 @@
 ]
 },
 "R:6EDE80:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 128,
@@ -207943,7 +207821,7 @@
 ]
 },
 "M:6EEEA0:p0:0x21c": {
-"class": "DynamicVector",
+"class": "PlayerProfile",
 "obs": [
 [
 120,
@@ -208111,7 +207989,7 @@
 ]
 },
 "R:6EF5F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -208349,7 +208227,7 @@
 ]
 },
 "R:6F03B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -208359,7 +208237,7 @@
 "ents": []
 },
 "R:6F03F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -208797,7 +208675,7 @@
 ]
 },
 "M:6F1090:this:0xc4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -208951,7 +208829,7 @@
 ]
 },
 "M:6F1550:this:0xc4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -208977,7 +208855,7 @@
 ]
 },
 "M:6F1870:this:0xe4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 152,
@@ -209131,7 +209009,7 @@
 ]
 },
 "M:6F1C80:this:0xc4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209141,7 +209019,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xd0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209151,7 +209029,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209161,7 +209039,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xe4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209215,7 +209093,7 @@
 ]
 },
 "M:6F1E20:p0:0x5d4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -209463,7 +209341,7 @@
 ]
 },
 "M:6F2290:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209525,7 +209403,7 @@
 ]
 },
 "M:6F2440:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -209627,7 +209505,7 @@
 ]
 },
 "M:6F2640:this:0x4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -211968,7 +211846,7 @@
 ]
 },
 "M:6F7CA0:p0:0x2c0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 540,
@@ -212148,7 +212026,7 @@
 ]
 },
 "P:6F8DF0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 44,
@@ -212876,7 +212754,7 @@
 ]
 },
 "P:6FB740:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -213358,7 +213236,7 @@
 ]
 },
 "M:6FCDB0:this:0x294": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 76,
@@ -214982,7 +214860,7 @@
 ]
 },
 "M:706640:this:0x294": {
-"class": "RawFileClass",
+"class": "ScrollClass",
 "obs": [
 [
 80,
@@ -216142,7 +216020,7 @@
 ]
 },
 "M:70ADC0:this:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -216184,7 +216062,7 @@
 ]
 },
 "M:70AF50:this:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -216218,7 +216096,7 @@
 ]
 },
 "M:70B1D0:this:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 52,
@@ -216298,7 +216176,7 @@
 ]
 },
 "M:70BCB0:this:0x2b4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 1652,
@@ -216766,7 +216644,7 @@
 ]
 },
 "M:70CD10:p0:0x21c": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -217249,7 +217127,7 @@
 ]
 },
 "R:70DE20:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 324,
@@ -217958,7 +217836,7 @@
 ]
 },
 "R:70FE40:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 464,
@@ -218014,7 +217892,7 @@
 ]
 },
 "R:70FEC0:ecx": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 464,
@@ -218220,7 +218098,7 @@
 ]
 },
 "R:7107E0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -220187,7 +220065,7 @@
 ]
 },
 "P:711F60:0": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -221455,7 +221333,7 @@
 ]
 },
 "M:712170:this:0x898": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 164,
@@ -221552,7 +221430,7 @@
 ]
 },
 "M:716290:this:0x898": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 164,
@@ -222137,7 +222015,7 @@
 "ents": []
 },
 "R:717A70:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -222157,7 +222035,7 @@
 "ents": []
 },
 "R:717AA0:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -222177,7 +222055,7 @@
 "ents": []
 },
 "R:717AD0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -222321,7 +222199,7 @@
 ]
 },
 "R:717C00:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -222343,7 +222221,7 @@
 "ents": []
 },
 "R:717C70:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -222377,7 +222255,7 @@
 "ents": []
 },
 "R:717CD0:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -222507,7 +222385,7 @@
 ]
 },
 "P:718080:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -222549,7 +222427,7 @@
 ]
 },
 "P:718230:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 24,
@@ -222721,7 +222599,7 @@
 "ents": []
 },
 "P:7192C0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -222909,7 +222787,7 @@
 ]
 },
 "P:719E30:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -222919,7 +222797,7 @@
 "ents": []
 },
 "P:719EE0:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -223319,7 +223197,7 @@
 ]
 },
 "M:71ABC0:this:0x40": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -223533,7 +223411,7 @@
 ]
 },
 "M:71AF20:this:0x44": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -224211,7 +224089,7 @@
 ]
 },
 "M:71C5B0:this:0xc8": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 156,
@@ -224953,7 +224831,7 @@
 ]
 },
 "M:71F800:this:0x28": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -224987,7 +224865,7 @@
 ]
 },
 "M:71F820:this:0x28": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -224997,7 +224875,7 @@
 "ents": []
 },
 "M:71F820:this:0x30": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -225029,7 +224907,7 @@
 "ents": []
 },
 "R:71F950:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 44,
@@ -225041,7 +224919,7 @@
 ]
 },
 "R:71F9C0:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 44,
@@ -225053,7 +224931,7 @@
 ]
 },
 "R:71FA30:ecx": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -225065,7 +224943,7 @@
 ]
 },
 "R:71FA40:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ScrollClass",
 "obs": [
 [
 84,
@@ -225396,7 +225274,7 @@
 ]
 },
 "P:71FFE0:0": {
-"class": "NetworkDialog",
+"class": "WWMouseClass",
 "obs": [
 [
 148,
@@ -225436,7 +225314,7 @@
 ]
 },
 "P:720020:0": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -225694,7 +225572,7 @@
 ]
 },
 "R:720960:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -225958,7 +225836,7 @@
 ]
 },
 "P:721010:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -226040,7 +225918,7 @@
 ]
 },
 "R:721290:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -226290,7 +226168,7 @@
 ]
 },
 "P:7216C0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226369,7 +226247,7 @@
 ]
 },
 "M:721880:this:0xf4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226379,7 +226257,7 @@
 "ents": []
 },
 "M:721880:this:0x110": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226540,7 +226418,7 @@
 ]
 },
 "M:722770:this:0xf4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226626,7 +226504,7 @@
 ]
 },
 "M:722A20:this:0xf4": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226778,7 +226656,7 @@
 ]
 },
 "M:723260:this:0x110": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -226864,7 +226742,7 @@
 ]
 },
 "M:723510:this:0x110": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -227235,7 +227113,7 @@
 ]
 },
 "R:723EB0:ecx": {
-"class": "ShapeButtonClass",
+"class": "MSVQAnim",
 "obs": [
 [
 0,
@@ -227438,7 +227316,7 @@
 ]
 },
 "R:724510:ecx": {
-"class": "ToolTipManager",
+"class": "ScrollClass",
 "obs": [
 [
 552,
@@ -227450,7 +227328,7 @@
 ]
 },
 "R:724520:ecx": {
-"class": "ToolTipManager",
+"class": "ScrollClass",
 "obs": [
 [
 552,
@@ -227462,7 +227340,7 @@
 ]
 },
 "R:724530:ecx": {
-"class": "Voxel",
+"class": "ScrollClass",
 "obs": [
 [
 552,
@@ -227478,7 +227356,7 @@
 ]
 },
 "R:724540:ecx": {
-"class": "Voxel",
+"class": "ScrollClass",
 "obs": [
 [
 552,
@@ -227676,7 +227554,7 @@
 ]
 },
 "R:724C00:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -227928,7 +227806,7 @@
 "ents": []
 },
 "R:724FC0:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -228256,7 +228134,7 @@
 ]
 },
 "R:7266C0:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 64,
@@ -228278,7 +228156,7 @@
 ]
 },
 "R:726780:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -228358,7 +228236,7 @@
 "ents": []
 },
 "R:7268F0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -228368,7 +228246,7 @@
 "ents": []
 },
 "R:726900:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -228378,7 +228256,7 @@
 "ents": []
 },
 "R:726910:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -228388,7 +228266,7 @@
 "ents": []
 },
 "R:726920:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -228554,7 +228432,7 @@
 ]
 },
 "R:726F50:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -228580,7 +228458,7 @@
 ]
 },
 "R:726F80:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -228606,7 +228484,7 @@
 ]
 },
 "R:726FB0:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -228632,7 +228510,7 @@
 ]
 },
 "R:726FE0:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 176,
@@ -229142,7 +229020,7 @@
 "ents": []
 },
 "R:728540:ecx": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 36,
@@ -229250,7 +229128,7 @@
 ]
 },
 "P:728A50:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229308,7 +229186,7 @@
 ]
 },
 "P:7291D0:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229399,7 +229277,7 @@
 ]
 },
 "R:7294E0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -229419,7 +229297,7 @@
 "ents": []
 },
 "P:4C1B50:1": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 12,
@@ -229524,7 +229402,7 @@
 ]
 },
 "P:72A060:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229534,7 +229412,7 @@
 "ents": []
 },
 "P:72A0E0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -229572,7 +229450,7 @@
 ]
 },
 "P:72A1A0:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229582,7 +229460,7 @@
 "ents": []
 },
 "P:72A1C0:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229592,7 +229470,7 @@
 "ents": []
 },
 "P:72A1E0:0": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -229985,7 +229863,7 @@
 "ents": []
 },
 "R:734250:ecx": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 1312,
@@ -230021,7 +229899,7 @@
 ]
 },
 "R:7342D0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -230091,7 +229969,7 @@
 ]
 },
 "R:734390:ecx": {
-"class": "LogicClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 0,
@@ -230677,7 +230555,7 @@
 ]
 },
 "M:736D50:this:0x2b4": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -231456,7 +231334,7 @@
 ]
 },
 "M:7393C0:p0:0x5708": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -232022,7 +231900,7 @@
 ]
 },
 "M:739EC0:this:0x5a4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -232997,7 +232875,7 @@
 ]
 },
 "M:73F0A0:this:0x69c": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 40,
@@ -233148,7 +233026,7 @@
 ]
 },
 "M:740810:this:0x21c": {
-"class": "ObjectTypeClass",
+"class": "HouseClass",
 "obs": [
 [
 499,
@@ -233289,7 +233167,7 @@
 ]
 },
 "P:740DF0:0": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 292,
@@ -233496,7 +233374,7 @@
 ]
 },
 "M:7414E0:this:0x2b4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -233646,7 +233524,7 @@
 ]
 },
 "M:7416A0:p0:0xe8": {
-"class": "OverlayClass",
+"class": "WWMouseClass",
 "obs": [
 [
 228,
@@ -233702,7 +233580,7 @@
 ]
 },
 "M:7416A0:p0:0x30": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -233980,7 +233858,7 @@
 ]
 },
 "M:741970:this:0x5a4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -234010,7 +233888,7 @@
 ]
 },
 "M:741970:p0:0xe4": {
-"class": "OverlayClass",
+"class": "ScrollClass",
 "obs": [
 [
 48,
@@ -234219,7 +234097,7 @@
 ]
 },
 "P:7441B0:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -234229,7 +234107,7 @@
 "ents": []
 },
 "P:744210:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -234570,7 +234448,7 @@
 ]
 },
 "M:7464E0:this:0x274": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 36,
@@ -234608,7 +234486,7 @@
 ]
 },
 "P:746670:0": {
-"class": "TabClass",
+"class": "ColorListClass",
 "obs": [
 [
 0,
@@ -235945,7 +235823,7 @@
 ]
 },
 "M:749F30:p0:0xe0": {
-"class": "MissionClass",
+"class": "ScrollClass",
 "obs": [
 [
 660,
@@ -236031,7 +235909,7 @@
 ]
 },
 "M:74AA30:this:0x108": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -236971,7 +236849,7 @@
 ]
 },
 "M:74CE50:this:0xb0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -237105,7 +236983,7 @@
 "ents": []
 },
 "R:74DC00:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScrollClass",
 "obs": [
 [
 176,
@@ -237304,7 +237182,7 @@
 ]
 },
 "M:74E8A0:this:0xb0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -237324,7 +237202,7 @@
 "ents": []
 },
 "R:74ED60:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -237895,7 +237773,7 @@
 "ents": []
 },
 "P:4073B0:2": {
-"class": "MultiplayerManBattle",
+"class": "WOL",
 "obs": [
 [
 0,
@@ -238225,7 +238103,7 @@
 ]
 },
 "R:7533B0:ecx": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -238898,7 +238776,7 @@
 "ents": []
 },
 "M:758E10:this:0x10": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 1,
@@ -239140,7 +239018,7 @@
 "ents": []
 },
 "R:759830:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 476,
@@ -239189,9 +239067,7 @@
 4
 ]
 ],
-"ents": [
-"T:7598D0"
-]
+"ents": []
 },
 "R:759940:ecx": {
 "class": "MovieClass",
@@ -239315,9 +239191,7 @@
 1
 ]
 ],
-"ents": [
-"T:759E10"
-]
+"ents": []
 },
 "R:759E50:ecx": {
 "class": "ScriptClass",
@@ -239327,9 +239201,7 @@
 1
 ]
 ],
-"ents": [
-"T:759E50"
-]
+"ents": []
 },
 "R:759E60:ecx": {
 "class": "ScriptClass",
@@ -239343,9 +239215,7 @@
 1
 ]
 ],
-"ents": [
-"T:759E60"
-]
+"ents": []
 },
 "P:7C35C0:0": {
 "class": "WaveClass",
@@ -239449,7 +239319,7 @@
 ]
 },
 "P:75A100:0": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -239475,7 +239345,7 @@
 ]
 },
 "P:75A2B0:0": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -239485,7 +239355,7 @@
 "ents": []
 },
 "P:75A350:0": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -239779,7 +239649,7 @@
 ]
 },
 "P:75AB30:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 48,
@@ -239925,7 +239795,7 @@
 ]
 },
 "P:75AE00:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -240229,7 +240099,7 @@
 ]
 },
 "P:75C7F0:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -240273,7 +240143,7 @@
 "ents": []
 },
 "P:75CB20:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 50,
@@ -240303,7 +240173,7 @@
 "ents": []
 },
 "P:75CBC0:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 50,
@@ -241774,7 +241644,7 @@
 ]
 },
 "M:75FA90:this:0x1a8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -241876,7 +241746,7 @@
 ]
 },
 "M:7602E0:this:0x1a8": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -241926,7 +241796,7 @@
 ]
 },
 "R:7609E0:ecx": {
-"class": "ObjectClass",
+"class": "AnimClass",
 "obs": [
 [
 188,
@@ -242363,7 +242233,7 @@
 ]
 },
 "M:762AF0:this:0x1d4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 692,
@@ -243496,7 +243366,7 @@
 ]
 },
 "P:76BFA0:1": {
-"class": "NeuronClass",
+"class": "ConnectionClass",
 "obs": [
 [
 12,
@@ -243513,7 +243383,7 @@
 ]
 },
 "R:765410:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -243998,7 +243868,7 @@
 "ents": []
 },
 "P:7660F0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -244032,7 +243902,7 @@
 ]
 },
 "R:7667F0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 15,
@@ -244570,7 +244440,7 @@
 ]
 },
 "R:767320:ecx": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -244587,7 +244457,7 @@
 ]
 },
 "P:7674E0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -244597,7 +244467,7 @@
 "ents": []
 },
 "M:7674E0:p0:0x4": {
-"class": "DynamicVectorClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 56,
@@ -244646,7 +244516,7 @@
 ]
 },
 "P:767800:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -244656,7 +244526,7 @@
 "ents": []
 },
 "M:767800:p0:0x4": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 18,
@@ -246119,7 +245989,7 @@
 "ents": []
 },
 "R:76AAF0:ecx": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -246463,7 +246333,7 @@
 ]
 },
 "R:76B080:ecx": {
-"class": "DynamicVectorClass",
+"class": "PlayerProfile",
 "obs": [
 [
 68,
@@ -246873,7 +246743,7 @@
 "ents": []
 },
 "R:76BFA0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -246913,7 +246783,7 @@
 "ents": []
 },
 "R:76BFE0:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -247079,7 +246949,7 @@
 ]
 },
 "R:76CBF0:ecx": {
-"class": "AircraftClass",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 76,
@@ -247114,9 +246984,7 @@
 4
 ]
 ],
-"ents": [
-"M:76CBF0:this:0x4c"
-]
+"ents": []
 },
 "P:76F020:2": {
 "class": "AircraftClass",
@@ -247287,12 +247155,10 @@
 4
 ]
 ],
-"ents": [
-"M:76DAD0:this:0x4c"
-]
+"ents": []
 },
 "M:76DAD0:p0:0x4": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -247397,9 +247263,7 @@
 4
 ]
 ],
-"ents": [
-"M:76E430:this:0x4c"
-]
+"ents": []
 },
 "R:76E4F0:ecx": {
 "class": "WinModemClass",
@@ -247440,9 +247304,7 @@
 4
 ]
 ],
-"ents": [
-"M:76E750:this:0x4c"
-]
+"ents": []
 },
 "P:767BB0:3": {
 "class": "AircraftClass",
@@ -247473,9 +247335,7 @@
 4
 ]
 ],
-"ents": [
-"M:76E8B0:this:0x4c"
-]
+"ents": []
 },
 "R:76EA20:ecx": {
 "class": "Selection@WorldDominationTour",
@@ -247522,7 +247382,7 @@
 ]
 },
 "R:76F020:ecx": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -248045,7 +247905,7 @@
 ]
 },
 "R:76FF20:ecx": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 44,
@@ -248055,7 +247915,7 @@
 "ents": []
 },
 "R:76FF30:ecx": {
-"class": "SwizzleManagerClass",
+"class": "ScrollClass",
 "obs": [
 [
 44,
@@ -249172,7 +249032,7 @@
 ]
 },
 "R:772AC0:ecx": {
-"class": "ScriptClass",
+"class": "ScrollClass",
 "obs": [
 [
 172,
@@ -249341,9 +249201,7 @@
 4
 ]
 ],
-"ents": [
-"T:773070"
-]
+"ents": []
 },
 "M:773070:this:0xa0": {
 "class": "BulletTypeClass",
@@ -249397,7 +249255,7 @@
 ]
 },
 "R:7738A0:ecx": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -249861,7 +249719,7 @@
 ]
 },
 "R:776880:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -250071,7 +249929,7 @@
 ]
 },
 "P:7CA67F:3": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -250305,7 +250163,7 @@
 ]
 },
 "P:77F900:0": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -250337,7 +250195,7 @@
 ]
 },
 "P:781380:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -250347,7 +250205,7 @@
 "ents": []
 },
 "P:7813B0:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -250439,7 +250297,7 @@
 "ents": []
 },
 "R:783B80:ecx": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -250471,7 +250329,7 @@
 ]
 },
 "P:785740:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -250503,7 +250361,7 @@
 ]
 },
 "P:7864C0:0": {
-"class": "TabClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -250555,7 +250413,7 @@
 ]
 },
 "P:788180:0": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -250565,7 +250423,7 @@
 "ents": []
 },
 "M:788180:p0:0x4": {
-"class": "GenericNode",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 20,
@@ -250575,7 +250433,7 @@
 "ents": []
 },
 "P:788800:0": {
-"class": "MultiplayerManBattle",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -250732,7 +250590,7 @@
 ]
 },
 "P:78DA30:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -250742,7 +250600,7 @@
 "ents": []
 },
 "P:78DB70:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -250770,7 +250628,7 @@
 ]
 },
 "P:78E030:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -250950,7 +250808,7 @@
 ]
 },
 "P:7970D0:0": {
-"class": "NeuronClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 44,
@@ -251048,7 +250906,7 @@
 ]
 },
 "M:79CBA0:p0:0x8": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -251124,7 +250982,7 @@
 "ents": []
 },
 "P:7A2330:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -251249,7 +251107,7 @@
 ]
 },
 "P:7A5890:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -251337,7 +251195,7 @@
 ]
 },
 "P:7A7B60:0": {
-"class": "GenericNode",
+"class": "PlayerProfile",
 "obs": [
 [
 32,
@@ -252186,16 +252044,14 @@
 ]
 },
 "M:7ADCD0:p0:0x70": {
-"class": "LogicClass",
+"class": "PlayerProfile",
 "obs": [
 [
 112,
 4
 ]
 ],
-"ents": [
-"M:7ADCD0:p0:0x70"
-]
+"ents": []
 },
 "R:7ADF70:ecx": {
 "class": "MSShapeAnim",
@@ -252822,7 +252678,7 @@
 ]
 },
 "R:7AF640:ecx": {
-"class": "BuildingPrerequisiteClass",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 28,
@@ -253299,7 +253155,7 @@
 ]
 },
 "R:7B1B80:ecx": {
-"class": "UDPInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258156,
@@ -253331,7 +253187,7 @@
 ]
 },
 "R:7B1C50:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258156,
@@ -253475,7 +253331,7 @@
 ]
 },
 "P:54F000:0": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 24,
@@ -253502,7 +253358,7 @@
 "ents": []
 },
 "P:7B20E0:4": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 0,
@@ -253559,7 +253415,7 @@
 ]
 },
 "P:7B20E0:3": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 0,
@@ -253612,7 +253468,7 @@
 ]
 },
 "R:7B2630:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258156,
@@ -256684,7 +256540,7 @@
 ]
 },
 "R:7BA090:ecx": {
-"class": "CChatEventSink",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -256711,9 +256567,7 @@
 4
 ]
 ],
-"ents": [
-"T:7BA090"
-]
+"ents": []
 },
 "R:7BA300:ecx": {
 "class": "MouseClass",
@@ -258127,7 +257981,7 @@
 ]
 },
 "M:7BD690:this:0x6ec": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -258347,7 +258201,7 @@
 ]
 },
 "M:7BDF80:this:0x6e4": {
-"class": "RLEBlitter",
+"class": "MultiplayerManBattle",
 "obs": [
 [
 12,
@@ -258357,7 +258211,7 @@
 "ents": []
 },
 "M:7BDF80:this:0x6ec": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -258917,7 +258771,7 @@
 ]
 },
 "M:7C12B0:this:0x730": {
-"class": "DeployCommandClass",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [
 [
 4,
@@ -258927,7 +258781,7 @@
 "ents": []
 },
 "R:7C1730:ecx": {
-"class": "Buffer",
+"class": "TemporalClass",
 "obs": [
 [
 64,
@@ -258953,7 +258807,7 @@
 "ents": []
 },
 "R:7C1A70:ecx": {
-"class": "UnitClass",
+"class": "TemporalClass",
 "obs": [
 [
 64,
@@ -259571,7 +259425,7 @@
 "ents": []
 },
 "P:7C61CF:0": {
-"class": "Node",
+"class": "List",
 "obs": [
 [
 8,
@@ -259641,7 +259495,7 @@
 ]
 },
 "P:7C7371:0": {
-"class": "OverlayClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 0,
@@ -260498,7 +260352,7 @@
 ]
 },
 "M:7CFB13:p0:0x10": {
-"class": "ListClass",
+"class": "DropListClass",
 "obs": [
 [
 68,
@@ -260664,7 +260518,7 @@
 "ents": []
 },
 "P:7D13F8:0": {
-"class": "SliderClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 20,
@@ -261871,7 +261725,7 @@
 ]
 },
 "P:7DCDC0:0": {
-"class": "MultiplayerManBattle",
+"class": "WonlineStringDialogControl",
 "obs": [
 [
 0,
@@ -262084,7 +261938,7 @@
 "ents": []
 },
 "P:7DE200:0": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -262108,7 +261962,7 @@
 ]
 },
 "P:7DE53A:0": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -262132,7 +261986,7 @@
 ]
 },
 "P:7DE87A:0": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -262156,7 +262010,7 @@
 ]
 },
 "P:7DEBBA:0": {
-"class": "ConvertClass",
+"class": "AITriggerTypeClass",
 "obs": [
 [
 0,
@@ -262696,7 +262550,7 @@
 "ents": []
 },
 "R:4F4240:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:4F4240"
@@ -262960,7 +262814,7 @@
 ]
 },
 "R:4C9150:ecx": {
-"class": "ScrollClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "T:4C9150"
@@ -263675,7 +263529,7 @@
 ]
 },
 "R:40D230:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:40D230"
@@ -264295,7 +264149,7 @@
 ]
 },
 "R:5C0E30:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E30"
@@ -264330,7 +264184,7 @@
 ]
 },
 "R:5D8C90:ecx": {
-"class": "MultiplayerTeam",
+"class": "MultiplayerSiegeAttackerTeam",
 "obs": [],
 "ents": [
 "T:5D8C90"
@@ -264939,7 +264793,7 @@
 ]
 },
 "R:40D240:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:40D240"
@@ -265028,7 +264882,7 @@
 ]
 },
 "R:4F3AF0:ecx": {
-"class": "GraphicMenuItem",
+"class": "GraphicMenuShortcutItem",
 "obs": [],
 "ents": [
 "T:4F3AF0"
@@ -265367,7 +265221,7 @@
 ]
 },
 "R:5C0E40:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E40"
@@ -265976,7 +265830,7 @@
 ]
 },
 "R:5656D0:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:5656D0"
@@ -266600,7 +266454,7 @@
 ]
 },
 "R:5C0E50:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E50"
@@ -267572,7 +267426,7 @@
 ]
 },
 "R:4F3AD0:ecx": {
-"class": "GraphicMenuItem",
+"class": "GraphicMenuShortcutItem",
 "obs": [],
 "ents": [
 "T:4F3AD0"
@@ -267950,7 +267804,7 @@
 ]
 },
 "R:5D62C0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D62C0"
@@ -268862,7 +268716,7 @@
 ]
 },
 "R:4F3AE0:ecx": {
-"class": "GraphicMenuItem",
+"class": "GraphicMenuShortcutItem",
 "obs": [],
 "ents": [
 "T:4F3AE0"
@@ -269030,7 +268884,7 @@
 ]
 },
 "R:5D6310:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6310"
@@ -269821,7 +269675,7 @@
 ]
 },
 "R:5D6340:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6340"
@@ -270381,14 +270235,14 @@
 ]
 },
 "R:5D67A0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D67A0"
 ]
 },
 "R:5D6690:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6690"
@@ -270900,7 +270754,7 @@
 ]
 },
 "R:5C0E60:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E60"
@@ -270951,7 +270805,7 @@
 ]
 },
 "R:653010:ecx": {
-"class": "RadarClass",
+"class": "PowerClass",
 "obs": [],
 "ents": [
 "T:653010"
@@ -271195,14 +271049,14 @@
 ]
 },
 "R:5C0E70:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E70"
 ]
 },
 "R:5D7030:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D7030"
@@ -271335,14 +271189,14 @@
 ]
 },
 "R:5D5DB0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D5DB0"
 ]
 },
 "R:5D70F0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D70F0"
@@ -271385,7 +271239,7 @@
 ]
 },
 "R:4F43F0:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:4F43F0"
@@ -271910,7 +271764,7 @@
 ]
 },
 "R:7B1720:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1720"
@@ -272435,7 +272289,7 @@
 ]
 },
 "R:7B1730:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1730"
@@ -272575,7 +272429,7 @@
 ]
 },
 "R:488690:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:488690"
@@ -272596,7 +272450,7 @@
 ]
 },
 "R:5C0E80:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E80"
@@ -272848,7 +272702,7 @@
 ]
 },
 "R:5D6360:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "T:5D6360"
@@ -272918,7 +272772,7 @@
 ]
 },
 "R:4F45B0:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:4F45B0"
@@ -272932,7 +272786,7 @@
 ]
 },
 "R:4AEBA0:ecx": {
-"class": "GadgetClass",
+"class": "TextLabelClass",
 "obs": [],
 "ents": [
 "T:4AEBA0"
@@ -273100,7 +272954,7 @@
 ]
 },
 "R:5D6450:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6450"
@@ -273149,7 +273003,7 @@
 ]
 },
 "R:7B1740:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1740"
@@ -273177,7 +273031,7 @@
 ]
 },
 "R:48E650:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:48E650"
@@ -273226,7 +273080,7 @@
 ]
 },
 "R:5D64C0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D64C0"
@@ -273268,7 +273122,7 @@
 ]
 },
 "R:7B1750:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1750"
@@ -273339,7 +273193,7 @@
 ]
 },
 "R:5C0EB0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0EB0"
@@ -273360,7 +273214,7 @@
 ]
 },
 "R:4E19F0:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E19F0"
@@ -273381,7 +273235,7 @@
 ]
 },
 "R:5C0E90:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0E90"
@@ -273437,7 +273291,7 @@
 ]
 },
 "R:5C0ED0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0ED0"
@@ -273493,7 +273347,7 @@
 ]
 },
 "R:5D6320:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6320"
@@ -273549,7 +273403,7 @@
 ]
 },
 "R:5D6330:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6330"
@@ -273577,7 +273431,7 @@
 ]
 },
 "R:4AEBE0:ecx": {
-"class": "RadarClass",
+"class": "TabClass",
 "obs": [],
 "ents": [
 "T:4AEBE0"
@@ -273598,7 +273452,7 @@
 ]
 },
 "R:5C0EE0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0EE0"
@@ -273612,7 +273466,7 @@
 ]
 },
 "R:56BBE0:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:56BBE0"
@@ -273661,7 +273515,7 @@
 ]
 },
 "R:5D6430:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6430"
@@ -273696,7 +273550,7 @@
 ]
 },
 "R:653F50:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:653F50"
@@ -273717,7 +273571,7 @@
 ]
 },
 "R:4E1510:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E1510"
@@ -273773,7 +273627,7 @@
 ]
 },
 "R:4E1520:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E1520"
@@ -273822,7 +273676,7 @@
 ]
 },
 "R:5C0EF0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0EF0"
@@ -273934,7 +273788,7 @@
 ]
 },
 "R:5C0F00:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F00"
@@ -273962,7 +273816,7 @@
 ]
 },
 "P:4AE6F0:3": {
-"class": "RadarClass",
+"class": "PowerClass",
 "obs": [],
 "ents": [
 "T:6568A0",
@@ -274075,7 +273929,7 @@
 ]
 },
 "R:5D6790:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6790"
@@ -274208,7 +274062,7 @@
 ]
 },
 "R:5D6BE0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6BE0"
@@ -274299,7 +274153,7 @@
 ]
 },
 "R:6D1800:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:6D1800"
@@ -274355,7 +274209,7 @@
 ]
 },
 "R:5D6C70:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6C70"
@@ -274390,7 +274244,7 @@
 ]
 },
 "R:6ABD30:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:6ABD30"
@@ -274446,7 +274300,7 @@
 ]
 },
 "R:5D74A0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D74A0"
@@ -274537,7 +274391,7 @@
 ]
 },
 "R:5D7570:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D7570"
@@ -274614,7 +274468,7 @@
 ]
 },
 "R:653810:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:653810"
@@ -274670,7 +274524,7 @@
 ]
 },
 "R:5C0F10:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F10"
@@ -274691,7 +274545,7 @@
 ]
 },
 "R:653830:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:653830"
@@ -274726,7 +274580,7 @@
 ]
 },
 "R:5C0F20:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F20"
@@ -274754,14 +274608,14 @@
 ]
 },
 "R:4E30C0:ecx": {
-"class": "GaugeClass",
+"class": "TriColorGaugeClass",
 "obs": [],
 "ents": [
 "T:4E30C0"
 ]
 },
 "R:5C0F30:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F30"
@@ -274838,7 +274692,7 @@
 ]
 },
 "R:5C0F40:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F40"
@@ -274936,7 +274790,7 @@
 ]
 },
 "R:5C0F50:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F50"
@@ -274971,7 +274825,7 @@
 ]
 },
 "R:4A9840:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:4A9840"
@@ -274999,7 +274853,7 @@
 ]
 },
 "R:5C0F60:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F60"
@@ -275020,7 +274874,7 @@
 ]
 },
 "R:4A8960:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:4A8960"
@@ -275048,7 +274902,7 @@
 ]
 },
 "R:5C0F70:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F70"
@@ -275069,7 +274923,7 @@
 ]
 },
 "R:40D250:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:40D250"
@@ -275090,7 +274944,7 @@
 ]
 },
 "R:5C0F80:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F80"
@@ -275111,7 +274965,7 @@
 ]
 },
 "R:4AAD20:ecx": {
-"class": "RadarClass",
+"class": "TabClass",
 "obs": [],
 "ents": [
 "T:4AAD20"
@@ -275132,7 +274986,7 @@
 ]
 },
 "R:5C0F90:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0F90"
@@ -275174,7 +275028,7 @@
 ]
 },
 "R:5C0FA0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0FA0"
@@ -275223,7 +275077,7 @@
 ]
 },
 "R:5C0FC0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0FC0"
@@ -275265,7 +275119,7 @@
 ]
 },
 "R:5C0FD0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5C0FD0"
@@ -275342,7 +275196,7 @@
 ]
 },
 "R:5D6890:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:5D6890"
@@ -275356,7 +275210,7 @@
 ]
 },
 "R:6D0270:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:6D0270"
@@ -275405,7 +275259,7 @@
 ]
 },
 "R:653760:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:653760"
@@ -275419,7 +275273,7 @@
 ]
 },
 "R:653F70:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:653F70"
@@ -276756,7 +276610,7 @@
 "ents": []
 },
 "M:402040:this:0xD4": {
-"class": "TypeList",
+"class": "AnimClass",
 "obs": [],
 "ents": [
 "M:402040:this:0xD4"
@@ -277514,7 +277368,7 @@
 "ents": []
 },
 "M:407B60:this:0x14": {
-"class": "ScrollClass",
+"class": "UnitTypeClass",
 "obs": [],
 "ents": [
 "M:407B60:this:0x14"
@@ -277767,7 +277621,7 @@
 "ents": []
 },
 "R:40D270:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:40D270"
@@ -277969,9 +277823,7 @@
 "P:4A1D50:2": {
 "class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:4A1D50:2"
-]
+"ents": []
 },
 "P:4A1CA0:0": {
 "class": "AbstractClass",
@@ -278198,7 +278050,7 @@
 ]
 },
 "M:411310:this:0x14": {
-"class": "ScrollClass",
+"class": "UnitTypeClass",
 "obs": [],
 "ents": [
 "M:411310:this:0x14"
@@ -290578,7 +290430,7 @@
 ]
 },
 "P:48E520:1": {
-"class": "GadgetClass",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:48E520:1"
@@ -290592,7 +290444,7 @@
 ]
 },
 "P:48E520:4": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:48E520:4"
@@ -290606,35 +290458,31 @@
 ]
 },
 "P:4E12F0:0": {
-"class": "GadgetClass",
+"class": "IUnknown",
 "obs": [],
 "ents": [
 "P:4E12F0:0"
 ]
 },
 "P:4E12F0:2": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:4E12F0:2"
-]
+"ents": []
 },
 "P:4E12F0:3": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:4E12F0:3"
-]
+"ents": []
 },
 "P:4E12F0:5": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:4E12F0:5"
 ]
 },
 "P:4E12F0:6": {
-"class": "GadgetClass",
+"class": "AbstractClass",
 "obs": [],
 "ents": [
 "P:4E12F0:6"
@@ -291088,7 +290936,7 @@
 "ents": []
 },
 "P:7CD680:1": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:7CD680:1"
@@ -291506,7 +291354,7 @@
 ]
 },
 "P:48E520:8": {
-"class": "GadgetClass",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:48E520:8"
@@ -291520,7 +291368,7 @@
 ]
 },
 "P:48E520:10": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:48E520:10"
@@ -291761,11 +291609,9 @@
 ]
 },
 "P:724580:0": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:724580:0"
-]
+"ents": []
 },
 "P:5D3A60:0": {
 "class": "AbstractClass",
@@ -292214,16 +292060,12 @@
 "R:4C6B60:ecx": {
 "class": "AbstractClass",
 "obs": [],
-"ents": [
-"T:4C6B60"
-]
+"ents": []
 },
 "M:4AB9B0:this:0x30": {
-"class": "BuildingClass",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"M:4AB9B0:this:0x30"
-]
+"ents": []
 },
 "P:4C6B60:0": {
 "class": "AbstractClass",
@@ -295135,14 +294977,14 @@
 ]
 },
 "R:4E14A0:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E14A0"
 ]
 },
 "R:4E14B0:ecx": {
-"class": "GadgetClass",
+"class": "Dial8Class",
 "obs": [],
 "ents": [
 "T:4E14B0"
@@ -295909,7 +295751,7 @@
 "ents": []
 },
 "P:7B5400:2": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:7B5400:2"
@@ -303366,21 +303208,21 @@
 "ents": []
 },
 "P:69DD30:4": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:69DD30:4"
 ]
 },
 "P:69DD30:5": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:69DD30:5"
 ]
 },
 "P:69DD30:6": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:69DD30:6"
@@ -303401,9 +303243,11 @@
 ]
 },
 "P:6B1B20:4": {
-"class": "AbstractClass",
+"class": "ConvertClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:6B1B20:4"
+]
 },
 "M:557600:this:0x118": {
 "class": "AbstractClass",
@@ -305111,7 +304955,7 @@
 "ents": []
 },
 "R:576BA0:ecx": {
-"class": "WWMouseClass",
+"class": "MouseClass",
 "obs": [],
 "ents": [
 "T:576BA0"
@@ -308823,7 +308667,7 @@
 "ents": []
 },
 "P:5D5B60:1": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:5D5B60:1"
@@ -308837,7 +308681,7 @@
 ]
 },
 "P:5D5B60:4": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:5D5B60:4"
@@ -308851,7 +308695,7 @@
 ]
 },
 "P:5D5B60:6": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:5D5B60:6"
@@ -308953,7 +308797,7 @@
 "ents": []
 },
 "P:49E3B0:3": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:49E3B0:3"
@@ -308965,7 +308809,7 @@
 "ents": []
 },
 "R:5C1980:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "T:5C1980"
@@ -308999,7 +308843,7 @@
 "ents": []
 },
 "P:49E4F0:2": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:49E4F0:2"
@@ -309011,7 +308855,7 @@
 "ents": []
 },
 "P:5D6310:0": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:5D6310:0"
@@ -309127,7 +308971,7 @@
 "ents": []
 },
 "P:5E26C0:0": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:5E26C0:0"
@@ -309176,7 +309020,7 @@
 "ents": []
 },
 "P:49BC80:2": {
-"class": "MultiplayerGameMode",
+"class": "MPCooperative",
 "obs": [],
 "ents": [
 "P:49BC80:2"
@@ -309290,11 +309134,9 @@
 ]
 },
 "P:623840:0": {
-"class": "MultiplayerGameMode",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:623840:0"
-]
+"ents": []
 },
 "P:5D8D10:0": {
 "class": "AbstractClass",
@@ -309377,7 +309219,7 @@
 ]
 },
 "P:5D6310:3": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:5D6310:3"
@@ -317935,20 +317777,6 @@
 "G:B04A10"
 ]
 },
-"G:B04978": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B04978"
-]
-},
-"G:B04910": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B04910"
-]
-},
 "P:4A8730:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -317996,20 +317824,6 @@
 "obs": [],
 "ents": [
 "P:69DE00:0"
-]
-},
-"G:B0B3A0": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B0B3A0"
-]
-},
-"G:B07DF8": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B07DF8"
 ]
 },
 "P:653810:0": {
@@ -318125,13 +317939,6 @@
 "obs": [],
 "ents": []
 },
-"M:6557F0:this:0x1498": {
-"class": "ScrollClass",
-"obs": [],
-"ents": [
-"M:6557F0:this:0x1498"
-]
-},
 "P:656CB0:1": {
 "class": "IUnknown",
 "obs": [],
@@ -318165,20 +317972,6 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
-},
-"M:656AC0:this:0x1260": {
-"class": "CampaignClass",
-"obs": [],
-"ents": [
-"M:656AC0:this:0x1260"
-]
-},
-"M:656AC0:this:0x1228": {
-"class": "CampaignClass",
-"obs": [],
-"ents": [
-"M:656AC0:this:0x1228"
-]
 },
 "P:656BE0:1": {
 "class": "IUnknown",
@@ -325971,25 +325764,11 @@
 "G:B07E58"
 ]
 },
-"P:69DCF0:1": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:69DCF0:1"
-]
-},
 "P:69DDC0:1": {
 "class": "GadgetClass",
 "obs": [],
 "ents": [
 "P:69DDC0:1"
-]
-},
-"G:B0B328": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B0B328"
 ]
 },
 "G:B0B408": {
@@ -326047,20 +325826,6 @@
 "T:6A5090"
 ]
 },
-"P:6A5130:0": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:6A5130:0"
-]
-},
-"P:653010:1": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:653010:1"
-]
-},
 "T:6A5130": {
 "class": "IUnknown",
 "obs": [],
@@ -326092,13 +325857,6 @@
 "obs": [],
 "ents": []
 },
-"P:63F7C0:1": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:63F7C0:1"
-]
-},
 "P:63F7C0:2": {
 "class": "AbstractClass",
 "obs": [],
@@ -326119,27 +325877,6 @@
 "obs": [],
 "ents": []
 },
-"P:63F7E0:0": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:63F7E0:0"
-]
-},
-"T:5004E0": {
-"class": "IUnknown",
-"obs": [],
-"ents": [
-"T:5004E0"
-]
-},
-"P:6A8710:0": {
-"class": "IUnknown",
-"obs": [],
-"ents": [
-"P:6A8710:0"
-]
-},
 "P:6A6C30:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -326154,13 +325891,6 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
-},
-"P:652E50:1": {
-"class": "IUnknown",
-"obs": [],
-"ents": [
-"P:652E50:1"
-]
 },
 "P:4F4450:1": {
 "class": "AbstractClass",
@@ -326325,18 +326055,14 @@
 "ents": []
 },
 "P:6403A0:1": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:6403A0:1"
-]
+"ents": []
 },
 "P:724730:0": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"P:724730:0"
-]
+"ents": []
 },
 "P:640450:1": {
 "class": "AbstractClass",
@@ -327099,7 +326825,7 @@
 "ents": []
 },
 "P:6C6680:0": {
-"class": "IUnknown",
+"class": "ConvertClass",
 "obs": [],
 "ents": [
 "P:6C6680:0"
@@ -327733,20 +327459,6 @@
 "obs": [],
 "ents": []
 },
-"G:B0CCB0": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B0CCB0"
-]
-},
-"G:B0CC40": {
-"class": "ShapeButtonClass",
-"obs": [],
-"ents": [
-"G:B0CC40"
-]
-},
 "R:6D0260:ecx": {
 "class": "ScrollClass",
 "obs": [],
@@ -327769,24 +327481,10 @@
 "obs": [],
 "ents": []
 },
-"T:6D09C0": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"T:6D09C0"
-]
-},
 "R:7310D0:ecx": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
-},
-"P:69DE00:3": {
-"class": "GadgetClass",
-"obs": [],
-"ents": [
-"P:69DE00:3"
-]
 },
 "P:6D1EB0:0": {
 "class": "AbstractClass",
@@ -337519,7 +337217,7 @@
 "ents": []
 },
 "R:77D200:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "CreateGameDialogControl",
 "obs": [],
 "ents": [
 "T:77D200"
@@ -338142,7 +337840,7 @@
 "ents": []
 },
 "R:7864C0:ecx": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:7864C0"
@@ -338994,11 +338692,9 @@
 "ents": []
 },
 "R:798F50:ecx": {
-"class": "MultiplayerGameMode",
+"class": "AbstractClass",
 "obs": [],
-"ents": [
-"T:798F50"
-]
+"ents": []
 },
 "T:624020": {
 "class": "AbstractClass",
@@ -339293,14 +338989,14 @@
 "ents": []
 },
 "G:84D4B4": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D4B4"
 ]
 },
 "G:84D498": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D498"
@@ -339312,7 +339008,7 @@
 "ents": []
 },
 "G:84D478": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D478"
@@ -339324,7 +339020,7 @@
 "ents": []
 },
 "G:84D458": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D458"
@@ -339336,7 +339032,7 @@
 "ents": []
 },
 "G:84D438": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D438"
@@ -339348,7 +339044,7 @@
 "ents": []
 },
 "G:84D430": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D430"
@@ -339360,14 +339056,14 @@
 "ents": []
 },
 "G:84D410": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D410"
 ]
 },
 "G:84D408": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D408"
@@ -339379,14 +339075,14 @@
 "ents": []
 },
 "G:84D3E8": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D3E8"
 ]
 },
 "G:84D3D4": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84D3D4"
@@ -339719,14 +339415,14 @@
 "ents": []
 },
 "G:84A21C": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84A21C"
 ]
 },
 "G:84A224": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "G:84A224"
@@ -339824,7 +339520,7 @@
 "ents": []
 },
 "P:7CD680:4": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "P:7CD680:4"
@@ -343197,21 +342893,21 @@
 ]
 },
 "T:782320": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:782320"
 ]
 },
 "T:782BB0": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:782BB0"
 ]
 },
 "T:781FB0": {
-"class": "MultiplayerGameMode",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": [
 "T:781FB0"
@@ -343378,7 +343074,7 @@
 ]
 },
 "N:751346": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -344046,12 +343742,12 @@
 ]
 },
 "N:4381DC": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:43830C": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -344482,7 +344178,7 @@
 "ents": []
 },
 "N:5C4527": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -344703,7 +344399,7 @@
 ]
 },
 "N:5B7554": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -344926,7 +344622,7 @@
 "ents": []
 },
 "N:599B36": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -344953,7 +344649,7 @@
 "ents": []
 },
 "N:5B9EC6": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -345089,12 +344785,12 @@
 ]
 },
 "N:5E7892": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5ED3A7": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -345189,12 +344885,12 @@
 ]
 },
 "N:5B9B39": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5B9C19": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -345204,7 +344900,7 @@
 "ents": []
 },
 "N:5E8603": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -345518,7 +345214,7 @@
 "ents": []
 },
 "N:6C0D3E": {
-"class": "WinsockInterfaceClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "N:6C0D3E"
@@ -345804,7 +345500,7 @@
 ]
 },
 "N:6C073E": {
-"class": "WinsockInterfaceClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "N:6C073E"
@@ -346066,7 +345762,7 @@
 ]
 },
 "N:6F40AE": {
-"class": "WinsockInterfaceClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "N:6F40AE"
@@ -346080,7 +345776,7 @@
 ]
 },
 "N:6F4185": {
-"class": "WinsockInterfaceClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "N:6F4185"
@@ -346262,12 +345958,12 @@
 "ents": []
 },
 "N:7B2FF9": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:7B358E": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -346885,7 +346581,7 @@
 "ents": []
 },
 "N:52BB97": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -346944,62 +346640,62 @@
 "ents": []
 },
 "N:532166": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5321D2": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:53223F": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5322AC": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:532319": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:532386": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5323F3": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:532460": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5324CD": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:53253A": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:5325A7": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:532614": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -347135,7 +346831,7 @@
 ]
 },
 "N:59442E": {
-"class": "WinsockInterfaceClass",
+"class": "EditClass",
 "obs": [],
 "ents": [
 "N:59442E"
@@ -347156,7 +346852,7 @@
 ]
 },
 "N:5960AF": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -347251,7 +346947,7 @@
 ]
 },
 "N:5E679F": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -347270,7 +346966,7 @@
 ]
 },
 "N:5E7B53": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
@@ -348128,12 +347824,12 @@
 ]
 },
 "N:7DAA43": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 },
 "N:7DAA5E": {
-"class": "Block",
+"class": "MultiplayerBattle",
 "obs": [],
 "ents": []
 }

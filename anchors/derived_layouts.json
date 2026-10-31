@@ -224,9 +224,9 @@
 ]
 },
 "MouseClass": {
-"member_count": 18,
-"extent": 324,
-"clusters": 25,
+"member_count": 23,
+"extent": 344,
+"clusters": 56,
 "members": [
 [
 0,
@@ -289,6 +289,22 @@
 4
 ],
 [
+252,
+4
+],
+[
+256,
+4
+],
+[
+260,
+4
+],
+[
+308,
+4
+],
+[
 312,
 4
 ],
@@ -298,6 +314,10 @@
 ],
 [
 320,
+4
+],
+[
+340,
 4
 ]
 ]
@@ -339,7 +359,7 @@
 "AbstractClass": {
 "member_count": 9,
 "extent": 33,
-"clusters": 5,
+"clusters": 4,
 "members": [
 [
 0,
@@ -376,6 +396,269 @@
 [
 32,
 1
+]
+]
+},
+"CellClass": {
+"member_count": 64,
+"extent": 324,
+"clusters": 12,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+32,
+1
+],
+[
+36,
+2
+],
+[
+36,
+4
+],
+[
+38,
+2
+],
+[
+40,
+4
+],
+[
+44,
+4
+],
+[
+48,
+4
+],
+[
+52,
+4
+],
+[
+56,
+4
+],
+[
+60,
+4
+],
+[
+64,
+4
+],
+[
+68,
+4
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+80,
+4
+],
+[
+84,
+4
+],
+[
+88,
+4
+],
+[
+92,
+4
+],
+[
+96,
+4
+],
+[
+100,
+4
+],
+[
+120,
+4
+],
+[
+220,
+4
+],
+[
+224,
+4
+],
+[
+228,
+4
+],
+[
+232,
+4
+],
+[
+236,
+4
+],
+[
+240,
+4
+],
+[
+244,
+4
+],
+[
+248,
+4
+],
+[
+252,
+4
+],
+[
+256,
+4
+],
+[
+260,
+4
+],
+[
+264,
+2
+],
+[
+266,
+2
+],
+[
+268,
+2
+],
+[
+270,
+2
+],
+[
+272,
+2
+],
+[
+274,
+2
+],
+[
+276,
+2
+],
+[
+278,
+2
+],
+[
+280,
+1
+],
+[
+281,
+1
+],
+[
+282,
+1
+],
+[
+283,
+1
+],
+[
+284,
+1
+],
+[
+285,
+1
+],
+[
+286,
+1
+],
+[
+287,
+1
+],
+[
+288,
+1
+],
+[
+289,
+1
+],
+[
+290,
+1
+],
+[
+292,
+1
+],
+[
+296,
+1
+],
+[
+300,
+4
+],
+[
+304,
+4
+],
+[
+308,
+4
+],
+[
+312,
+1
+],
+[
+316,
+4
+],
+[
+320,
+4
 ]
 ]
 },
@@ -941,9 +1224,9 @@
 ]
 },
 "IsometricTileClass": {
-"member_count": 7,
+"member_count": 11,
 "extent": 176,
-"clusters": 31,
+"clusters": 35,
 "members": [
 [
 0,
@@ -968,6 +1251,22 @@
 [
 129,
 1
+],
+[
+131,
+1
+],
+[
+136,
+4
+],
+[
+144,
+1
+],
+[
+164,
+4
 ],
 [
 172,
@@ -2544,7 +2843,7 @@
 "BlowPipe": {
 "member_count": 4,
 "extent": 32,
-"clusters": 3,
+"clusters": 4,
 "members": [
 [
 0,
@@ -4083,7 +4382,7 @@
 "CarryoverClass": {
 "member_count": 10,
 "extent": 32,
-"clusters": 7,
+"clusters": 11,
 "members": [
 [
 0,
@@ -4123,25 +4422,6 @@
 ],
 [
 28,
-4
-]
-]
-},
-"Pipe": {
-"member_count": 3,
-"extent": 12,
-"clusters": 5,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
 4
 ]
 ]
@@ -4203,268 +4483,17 @@
 ]
 ]
 },
-"CellClass": {
-"member_count": 62,
-"extent": 324,
-"clusters": 11,
+"CheckListClass": {
+"member_count": 5,
+"extent": 373,
+"clusters": 16,
 "members": [
 [
 0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-36,
-2
-],
-[
-36,
-4
-],
-[
-38,
-2
-],
-[
-40,
-4
-],
-[
-44,
 4
 ],
 [
 48,
-4
-],
-[
-52,
-4
-],
-[
-56,
-4
-],
-[
-60,
-4
-],
-[
-64,
-4
-],
-[
-68,
-4
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-80,
-4
-],
-[
-84,
-4
-],
-[
-88,
-4
-],
-[
-92,
-4
-],
-[
-96,
-4
-],
-[
-100,
-4
-],
-[
-120,
-4
-],
-[
-220,
-4
-],
-[
-224,
-4
-],
-[
-228,
-4
-],
-[
-232,
-4
-],
-[
-236,
-4
-],
-[
-240,
-4
-],
-[
-244,
-4
-],
-[
-248,
-4
-],
-[
-252,
-4
-],
-[
-256,
-4
-],
-[
-260,
-4
-],
-[
-264,
-2
-],
-[
-266,
-2
-],
-[
-268,
-2
-],
-[
-270,
-2
-],
-[
-272,
-2
-],
-[
-274,
-2
-],
-[
-276,
-2
-],
-[
-278,
-2
-],
-[
-280,
-1
-],
-[
-281,
-1
-],
-[
-282,
-1
-],
-[
-283,
-1
-],
-[
-284,
-1
-],
-[
-285,
-1
-],
-[
-286,
-1
-],
-[
-287,
-1
-],
-[
-288,
-1
-],
-[
-289,
-1
-],
-[
-290,
-1
-],
-[
-292,
-1
-],
-[
-296,
-1
-],
-[
-300,
-4
-],
-[
-304,
-4
-],
-[
-308,
-4
-],
-[
-312,
-1
-],
-[
-316,
-4
-],
-[
-320,
-4
-]
-]
-},
-"CheckListClass": {
-"member_count": 4,
-"extent": 373,
-"clusters": 12,
-"members": [
-[
-0,
 4
 ],
 [
@@ -4481,48 +4510,17 @@
 ]
 ]
 },
-"ControlClass": {
-"member_count": 7,
-"extent": 44,
-"clusters": 16,
+"StaticButtonClass": {
+"member_count": 12,
+"extent": 56,
+"clusters": 19,
 "members": [
 [
 0,
 4
 ],
 [
-28,
-1
-],
-[
-29,
-1
-],
-[
-32,
-1
-],
-[
-32,
-4
-],
-[
-36,
-4
-],
-[
-40,
-4
-]
-]
-},
-"ListClass": {
-"member_count": 31,
-"extent": 372,
-"clusters": 27,
-"members": [
-[
-0,
+12,
 4
 ],
 [
@@ -4534,7 +4532,27 @@
 4
 ],
 [
-44,
+24,
+4
+],
+[
+28,
+1
+],
+[
+29,
+1
+],
+[
+30,
+1
+],
+[
+32,
+4
+],
+[
+36,
 4
 ],
 [
@@ -4544,113 +4562,13 @@
 [
 52,
 4
-],
-[
-56,
-4
-],
-[
-60,
-4
-],
-[
-64,
-1
-],
-[
-65,
-1
-],
-[
-68,
-4
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-80,
-4
-],
-[
-84,
-1
-],
-[
-88,
-4
-],
-[
-100,
-4
-],
-[
-108,
-4
-],
-[
-112,
-4
-],
-[
-184,
-4
-],
-[
-196,
-4
-],
-[
-200,
-4
-],
-[
-204,
-4
-],
-[
-208,
-4
-],
-[
-280,
-4
-],
-[
-292,
-4
-],
-[
-296,
-4
-],
-[
-300,
-4
-],
-[
-304,
-4
-],
-[
-364,
-4
-],
-[
-368,
-4
 ]
 ]
 },
 "ColorListClass": {
-"member_count": 14,
+"member_count": 18,
 "extent": 404,
-"clusters": 9,
+"clusters": 14,
 "members": [
 [
 0,
@@ -4670,6 +4588,22 @@
 ],
 [
 56,
+4
+],
+[
+68,
+4
+],
+[
+80,
+4
+],
+[
+364,
+4
+],
+[
+368,
 4
 ],
 [
@@ -4926,6 +4860,135 @@
 ],
 [
 216,
+4
+]
+]
+},
+"ControlClass": {
+"member_count": 4,
+"extent": 44,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+32,
+1
+],
+[
+36,
+4
+],
+[
+40,
+4
+]
+]
+},
+"SliderClass": {
+"member_count": 18,
+"extent": 84,
+"clusters": 19,
+"members": [
+[
+0,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+24,
+4
+],
+[
+36,
+4
+],
+[
+40,
+4
+],
+[
+44,
+1
+],
+[
+45,
+1
+],
+[
+46,
+1
+],
+[
+48,
+4
+],
+[
+52,
+4
+],
+[
+60,
+4
+],
+[
+64,
+4
+],
+[
+68,
+1
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+80,
+4
+]
+]
+},
+"ToggleClass": {
+"member_count": 5,
+"extent": 52,
+"clusters": 3,
+"members": [
+[
+0,
+4
+],
+[
+40,
+4
+],
+[
+44,
+1
+],
+[
+45,
+1
+],
+[
+48,
 4
 ]
 ]
@@ -6336,7 +6399,7 @@
 "Dial8Class": {
 "member_count": 42,
 "extent": 192,
-"clusters": 4,
+"clusters": 13,
 "members": [
 [
 0,
@@ -6560,9 +6623,9 @@
 ]
 },
 "DisplayClass": {
-"member_count": 6,
-"extent": 24,
-"clusters": 20,
+"member_count": 22,
+"extent": 324,
+"clusters": 16,
 "members": [
 [
 0,
@@ -6586,6 +6649,81 @@
 ],
 [
 20,
+4
+],
+[
+240,
+4
+],
+[
+244,
+4
+],
+[
+248,
+4
+],
+[
+256,
+4
+],
+[
+260,
+4
+],
+[
+264,
+4
+],
+[
+268,
+4
+],
+[
+272,
+4
+],
+[
+276,
+4
+],
+[
+280,
+4
+],
+[
+292,
+4
+],
+[
+296,
+4
+],
+[
+300,
+4
+],
+[
+304,
+4
+],
+[
+316,
+4
+],
+[
+320,
+4
+]
+]
+},
+"TabClass": {
+"member_count": 1,
+"extent": 4,
+"clusters": 9,
+"members": [
+[
+0,
 4
 ]
 ]
@@ -6705,9 +6843,9 @@
 ]
 },
 "DropListClass": {
-"member_count": 15,
+"member_count": 17,
 "extent": 180,
-"clusters": 22,
+"clusters": 25,
 "members": [
 [
 0,
@@ -6734,11 +6872,19 @@
 4
 ],
 [
+48,
+1
+],
+[
 52,
 4
 ],
 [
 56,
+4
+],
+[
+60,
 4
 ],
 [
@@ -6801,7 +6947,7 @@
 "EditClass": {
 "member_count": 11,
 "extent": 72,
-"clusters": 6,
+"clusters": 5,
 "members": [
 [
 0,
@@ -6816,12 +6962,12 @@
 4
 ],
 [
-44,
+32,
 4
 ],
 [
-48,
-1
+44,
+4
 ],
 [
 48,
@@ -7196,7 +7342,7 @@
 "FootClass": {
 "member_count": 151,
 "extent": 1736,
-"clusters": 41,
+"clusters": 42,
 "members": [
 [
 0,
@@ -8733,7 +8879,7 @@
 "GadgetClass": {
 "member_count": 11,
 "extent": 36,
-"clusters": 23,
+"clusters": 3,
 "members": [
 [
 0,
@@ -8781,49 +8927,21 @@
 ]
 ]
 },
-"StaticButtonClass": {
-"member_count": 8,
-"extent": 56,
-"clusters": 7,
+"RTacticalClass@RadarClass": {
+"member_count": 1,
+"extent": 29,
+"clusters": 3,
 "members": [
 [
-0,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-36,
-4
-],
-[
-48,
-4
-],
-[
-52,
-4
+28,
+1
 ]
 ]
 },
 "GaugeClass": {
 "member_count": 11,
 "extent": 60,
-"clusters": 10,
+"clusters": 4,
 "members": [
 [
 0,
@@ -8871,77 +8989,10 @@
 ]
 ]
 },
-"SliderClass": {
-"member_count": 15,
-"extent": 84,
-"clusters": 16,
-"members": [
-[
-0,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-44,
-1
-],
-[
-46,
-1
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-60,
-4
-],
-[
-64,
-4
-],
-[
-68,
-1
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-80,
-4
-]
-]
-},
 "TriColorGaugeClass": {
 "member_count": 12,
 "extent": 68,
-"clusters": 4,
+"clusters": 9,
 "members": [
 [
 0,
@@ -9067,9 +9118,9 @@
 ]
 },
 "GraphicMenuAnimItem": {
-"member_count": 9,
+"member_count": 8,
 "extent": 40,
-"clusters": 4,
+"clusters": 3,
 "members": [
 [
 0,
@@ -9078,10 +9129,6 @@
 [
 9,
 1
-],
-[
-12,
-4
 ],
 [
 16,
@@ -9167,7 +9214,7 @@
 "GraphicMenuItem": {
 "member_count": 5,
 "extent": 16,
-"clusters": 6,
+"clusters": 3,
 "members": [
 [
 0,
@@ -9192,9 +9239,9 @@
 ]
 },
 "GraphicMenuShortcutItem": {
-"member_count": 6,
+"member_count": 7,
 "extent": 30,
-"clusters": 2,
+"clusters": 6,
 "members": [
 [
 0,
@@ -9203,6 +9250,10 @@
 [
 9,
 1
+],
+[
+12,
+4
 ],
 [
 16,
@@ -9240,7 +9291,7 @@
 "MapClass": {
 "member_count": 24,
 "extent": 344,
-"clusters": 9,
+"clusters": 8,
 "members": [
 [
 0,
@@ -10810,9 +10861,9 @@
 ]
 },
 "IsometricTileTypeClass": {
-"member_count": 28,
+"member_count": 50,
 "extent": 757,
-"clusters": 15,
+"clusters": 16,
 "members": [
 [
 0,
@@ -10831,7 +10882,95 @@
 4
 ],
 [
+156,
+4
+],
+[
+160,
+4
+],
+[
 164,
+4
+],
+[
+172,
+4
+],
+[
+488,
+1
+],
+[
+496,
+4
+],
+[
+500,
+4
+],
+[
+529,
+1
+],
+[
+531,
+1
+],
+[
+556,
+1
+],
+[
+557,
+1
+],
+[
+558,
+1
+],
+[
+559,
+1
+],
+[
+560,
+1
+],
+[
+561,
+1
+],
+[
+562,
+1
+],
+[
+563,
+1
+],
+[
+566,
+1
+],
+[
+567,
+1
+],
+[
+568,
+1
+],
+[
+569,
+1
+],
+[
+570,
+1
+],
+[
+576,
 4
 ],
 [
@@ -11237,6 +11376,137 @@
 ],
 [
 8,
+4
+]
+]
+},
+"ListClass": {
+"member_count": 31,
+"extent": 372,
+"clusters": 18,
+"members": [
+[
+0,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+44,
+4
+],
+[
+48,
+4
+],
+[
+52,
+4
+],
+[
+56,
+4
+],
+[
+60,
+4
+],
+[
+64,
+1
+],
+[
+65,
+1
+],
+[
+68,
+4
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+80,
+4
+],
+[
+84,
+1
+],
+[
+88,
+4
+],
+[
+100,
+4
+],
+[
+108,
+4
+],
+[
+112,
+4
+],
+[
+184,
+4
+],
+[
+196,
+4
+],
+[
+200,
+4
+],
+[
+204,
+4
+],
+[
+208,
+4
+],
+[
+280,
+4
+],
+[
+292,
+4
+],
+[
+296,
+4
+],
+[
+300,
+4
+],
+[
+304,
+4
+],
+[
+364,
+4
+],
+[
+368,
 4
 ]
 ]
@@ -11834,17 +12104,6 @@
 ]
 ]
 },
-"TabClass": {
-"member_count": 1,
-"extent": 4,
-"clusters": 6,
-"members": [
-[
-0,
-4
-]
-]
-},
 "VQMovieHandle": {
 "member_count": 3,
 "extent": 21,
@@ -11893,7 +12152,7 @@
 "MultiplayerBattle": {
 "member_count": 1,
 "extent": 4,
-"clusters": 4,
+"clusters": 47,
 "members": [
 [
 0,
@@ -11902,7 +12161,7 @@
 ]
 },
 "MPCooperative": {
-"member_count": 38,
+"member_count": 37,
 "extent": 833,
 "clusters": 44,
 "members": [
@@ -11912,10 +12171,6 @@
 ],
 [
 4,
-1
-],
-[
-60,
 1
 ],
 [
@@ -12072,13 +12327,37 @@
 ]
 },
 "MultiplayerManBattle": {
-"member_count": 1,
-"extent": 4,
-"clusters": 5,
+"member_count": 7,
+"extent": 64,
+"clusters": 10,
 "members": [
 [
 0,
 4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+24,
+4
+],
+[
+52,
+1
+],
+[
+60,
+1
+],
+[
+63,
+1
 ]
 ]
 },
@@ -12129,7 +12408,7 @@
 "MultiplayerSiegeAttackerTeam": {
 "member_count": 1,
 "extent": 4,
-"clusters": 4,
+"clusters": 5,
 "members": [
 [
 0,
@@ -12149,64 +12428,12 @@
 ]
 },
 "MSAnim": {
-"member_count": 14,
-"extent": 60,
-"clusters": 3,
+"member_count": 1,
+"extent": 4,
+"clusters": 2,
 "members": [
 [
 0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-16,
-4
-],
-[
-24,
-4
-],
-[
-28,
-4
-],
-[
-32,
-4
-],
-[
-36,
-4
-],
-[
-40,
-1
-],
-[
-41,
-1
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-56,
 4
 ]
 ]
@@ -12731,7 +12958,7 @@
 "MultiplayerGameMode": {
 "member_count": 16,
 "extent": 64,
-"clusters": 51,
+"clusters": 3,
 "members": [
 [
 0,
@@ -12813,7 +13040,7 @@
 "MultiplayerTeam": {
 "member_count": 2,
 "extent": 12,
-"clusters": 4,
+"clusters": 3,
 "members": [
 [
 0,
@@ -14081,49 +14308,6 @@
 ]
 ]
 },
-"OverlayClass": {
-"member_count": 9,
-"extent": 176,
-"clusters": 16,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-131,
-1
-],
-[
-136,
-4
-],
-[
-144,
-1
-],
-[
-164,
-4
-],
-[
-172,
-4
-]
-]
-},
 "SmudgeClass": {
 "member_count": 6,
 "extent": 176,
@@ -14156,9 +14340,9 @@
 ]
 },
 "ObjectTypeClass": {
-"member_count": 48,
+"member_count": 26,
 "extent": 660,
-"clusters": 7,
+"clusters": 6,
 "members": [
 [
 0,
@@ -14177,100 +14361,12 @@
 4
 ],
 [
-156,
-4
-],
-[
-160,
-4
-],
-[
 164,
 4
 ],
 [
 168,
 1
-],
-[
-172,
-4
-],
-[
-488,
-1
-],
-[
-496,
-4
-],
-[
-500,
-4
-],
-[
-529,
-1
-],
-[
-531,
-1
-],
-[
-556,
-1
-],
-[
-557,
-1
-],
-[
-558,
-1
-],
-[
-559,
-1
-],
-[
-560,
-1
-],
-[
-561,
-1
-],
-[
-562,
-1
-],
-[
-563,
-1
-],
-[
-566,
-1
-],
-[
-567,
-1
-],
-[
-568,
-1
-],
-[
-569,
-1
-],
-[
-570,
-1
-],
-[
-576,
-4
 ],
 [
 580,
@@ -15893,6 +15989,33 @@
 ]
 ]
 },
+"OverlayClass": {
+"member_count": 5,
+"extent": 176,
+"clusters": 12,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+172,
+4
+]
+]
+},
 "OverlayTypeClass": {
 "member_count": 35,
 "extent": 697,
@@ -16395,10 +16518,29 @@
 ]
 ]
 },
+"Pipe": {
+"member_count": 3,
+"extent": 12,
+"clusters": 3,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+]
+]
+},
 "FilePipe": {
 "member_count": 4,
 "extent": 17,
-"clusters": 5,
+"clusters": 6,
 "members": [
 [
 0,
@@ -16538,7 +16680,7 @@
 "PowerClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 10,
+"clusters": 13,
 "members": [
 [
 0,
@@ -16992,28 +17134,12 @@
 ]
 },
 "RadarClass": {
-"member_count": 5,
-"extent": 264,
-"clusters": 17,
+"member_count": 1,
+"extent": 4,
+"clusters": 11,
 "members": [
 [
 0,
-4
-],
-[
-244,
-4
-],
-[
-252,
-4
-],
-[
-256,
-4
-],
-[
-260,
 4
 ]
 ]
@@ -17128,7 +17254,7 @@
 "RAMFileClass": {
 "member_count": 10,
 "extent": 30,
-"clusters": 19,
+"clusters": 18,
 "members": [
 [
 0,
@@ -17426,9 +17552,9 @@
 ]
 },
 "ScoreFontClass": {
-"member_count": 4,
-"extent": 24,
-"clusters": 8,
+"member_count": 3,
+"extent": 17,
+"clusters": 4,
 "members": [
 [
 0,
@@ -17441,6 +17567,21 @@
 [
 16,
 1
+]
+]
+},
+"ScoreBigFontClass": {
+"member_count": 3,
+"extent": 24,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+12,
+4
 ],
 [
 20,
@@ -17498,7 +17639,7 @@
 "ScorePrintClass": {
 "member_count": 6,
 "extent": 36,
-"clusters": 1,
+"clusters": 3,
 "members": [
 [
 12,
@@ -17529,7 +17670,7 @@
 "ScoreAnimClass": {
 "member_count": 6,
 "extent": 28,
-"clusters": 6,
+"clusters": 4,
 "members": [
 [
 0,
@@ -17630,7 +17771,7 @@
 "ScrollClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 29,
+"clusters": 7,
 "members": [
 [
 0,
@@ -17819,7 +17960,7 @@
 "SidebarClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 11,
+"clusters": 10,
 "members": [
 [
 0,
@@ -21019,29 +21160,6 @@
 ]
 ]
 },
-"ToggleClass": {
-"member_count": 4,
-"extent": 52,
-"clusters": 2,
-"members": [
-[
-0,
-4
-],
-[
-44,
-1
-],
-[
-45,
-1
-],
-[
-48,
-4
-]
-]
-},
 "ToolTipManager": {
 "member_count": 18,
 "extent": 608,
@@ -21332,7 +21450,7 @@
 "TextLabelClass": {
 "member_count": 14,
 "extent": 76,
-"clusters": 4,
+"clusters": 5,
 "members": [
 [
 0,
@@ -23036,7 +23154,7 @@
 "WonlineStringDialogControl": {
 "member_count": 1,
 "extent": 4,
-"clusters": 4,
+"clusters": 3,
 "members": [
 [
 0,
@@ -23091,9 +23209,9 @@
 ]
 },
 "IPXInterfaceClass": {
-"member_count": 5,
-"extent": 52,
-"clusters": 8,
+"member_count": 8,
+"extent": 76,
+"clusters": 18,
 "members": [
 [
 0,
@@ -23112,7 +23230,19 @@
 4
 ],
 [
+40,
+4
+],
+[
 48,
+4
+],
+[
+64,
+4
+],
+[
+72,
 4
 ]
 ]
@@ -23120,7 +23250,7 @@
 "WinsockInterfaceClass": {
 "member_count": 23,
 "extent": 80,
-"clusters": 17,
+"clusters": 8,
 "members": [
 [
 0,
@@ -23219,7 +23349,7 @@
 "UDPInterfaceClass": {
 "member_count": 7,
 "extent": 76,
-"clusters": 28,
+"clusters": 27,
 "members": [
 [
 0,
@@ -23527,12 +23657,6 @@
 "clusters": 3,
 "members": []
 },
-"RTacticalClass@RadarClass": {
-"member_count": 0,
-"extent": 0,
-"clusters": 2,
-"members": []
-},
 "SBGadgetClass@SidebarClass": {
 "member_count": 0,
 "extent": 0,
@@ -23786,6 +23910,12 @@
 "members": []
 },
 "INISection@INIClass": {
+"member_count": 0,
+"extent": 0,
+"clusters": 1,
+"members": []
+},
+"CreateGameDialogControl": {
 "member_count": 0,
 "extent": 0,
 "clusters": 1,
