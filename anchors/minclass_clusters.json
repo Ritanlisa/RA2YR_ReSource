@@ -8349,7 +8349,7 @@
 ]
 },
 "M:41A160:this:0x6c4": {
-"class": "TechnoTypeClass",
+"class": "TechnoClass",
 "obs": [
 [
 1004,
@@ -9823,7 +9823,7 @@
 "ents": []
 },
 "R:41DD10:ecx": {
-"class": "WDTState",
+"class": "WWMouseClass",
 "obs": [
 [
 60,
@@ -15046,7 +15046,7 @@
 ]
 },
 "R:42C290:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 40,
@@ -17794,7 +17794,7 @@
 ]
 },
 "R:431D90:ecx": {
-"class": "AlphaShapeClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 36,
@@ -17830,7 +17830,7 @@
 ]
 },
 "R:431DD0:ecx": {
-"class": "ParasiteClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 38,
@@ -18214,7 +18214,7 @@
 ]
 },
 "R:432690:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -18250,7 +18250,7 @@
 ]
 },
 "R:4326C0:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -20252,7 +20252,7 @@
 ]
 },
 "M:4389B0:this:0x2c": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 56,
@@ -35593,7 +35593,7 @@
 ]
 },
 "M:468BB0:this:0xac": {
-"class": "ParticleSystemTypeClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 662,
@@ -36839,7 +36839,7 @@
 ]
 },
 "P:46DC90:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -38286,7 +38286,7 @@
 ]
 },
 "R:4737F0:ecx": {
-"class": "MSShapeAnim",
+"class": "CarryoverClass",
 "obs": [
 [
 12,
@@ -40671,7 +40671,7 @@
 ]
 },
 "P:47C060:0": {
-"class": "MSVQAnim",
+"class": "SlaveManagerClass",
 "obs": [
 [
 0,
@@ -41639,7 +41639,7 @@
 ]
 },
 "P:5FDCC0:0": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 68,
@@ -41697,7 +41697,7 @@
 ]
 },
 "R:4802A0:ecx": {
-"class": "ListClass",
+"class": "CellClass",
 "obs": [
 [
 56,
@@ -42111,7 +42111,7 @@
 ]
 },
 "R:4818E0:ecx": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 36,
@@ -42131,7 +42131,7 @@
 ]
 },
 "P:4818E0:0": {
-"class": "MSOverlayAnim",
+"class": "ConvertClass",
 "obs": [
 [
 2,
@@ -42824,7 +42824,7 @@
 ]
 },
 "R:484180:ecx": {
-"class": "CellClass",
+"class": "EMPulseClass",
 "obs": [
 [
 36,
@@ -42894,7 +42894,7 @@
 "ents": []
 },
 "R:484680:ecx": {
-"class": "HouseTypeClass",
+"class": "CellClass",
 "obs": [
 [
 260,
@@ -43240,7 +43240,7 @@
 ]
 },
 "P:485390:0": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 2,
@@ -43942,7 +43942,7 @@
 ]
 },
 "R:487720:ecx": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 36,
@@ -43986,7 +43986,7 @@
 ]
 },
 "R:487A10:ecx": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 36,
@@ -52879,7 +52879,7 @@
 ]
 },
 "R:49BCE0:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 56,
@@ -55391,7 +55391,7 @@
 ]
 },
 "R:4A2350:ecx": {
-"class": "CarryoverClass",
+"class": "MixFileClass",
 "obs": [
 [
 0,
@@ -55423,7 +55423,7 @@
 ]
 },
 "R:4A2370:ecx": {
-"class": "CounterClass",
+"class": "MixFileClass",
 "obs": [
 [
 4,
@@ -55447,7 +55447,7 @@
 ]
 },
 "R:4A2600:ecx": {
-"class": "CarryoverClass",
+"class": "MixFileClass",
 "obs": [
 [
 0,
@@ -58894,7 +58894,7 @@
 "ents": []
 },
 "P:4AF970:0": {
-"class": "BufferIOFileClass",
+"class": "FactoryClass",
 "obs": [
 [
 77,
@@ -61648,7 +61648,7 @@
 ]
 },
 "M:4BA5A0:this:0x20": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 4,
@@ -61743,7 +61743,7 @@
 ]
 },
 "M:4BAC60:this:0x20": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 8,
@@ -64708,7 +64708,7 @@
 ]
 },
 "P:4C9FF0:0": {
-"class": "SpawnManagerClass",
+"class": "FactoryClass",
 "obs": [
 [
 36,
@@ -64765,7 +64765,7 @@
 ]
 },
 "R:4C9EA0:ecx": {
-"class": "SpawnManagerClass",
+"class": "FactoryClass",
 "obs": [
 [
 36,
@@ -64817,7 +64817,7 @@
 ]
 },
 "R:4C9FF0:ecx": {
-"class": "SpawnManagerClass",
+"class": "FactoryClass",
 "obs": [
 [
 36,
@@ -64947,7 +64947,7 @@
 ]
 },
 "R:4CA1A0:ecx": {
-"class": "SpawnManagerClass",
+"class": "FactoryClass",
 "obs": [
 [
 36,
@@ -65437,7 +65437,7 @@
 ]
 },
 "R:4CB580:ecx": {
-"class": "SwizzleManagerClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65461,7 +65461,7 @@
 ]
 },
 "R:4CB5E0:ecx": {
-"class": "CarryoverClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65485,7 +65485,7 @@
 ]
 },
 "R:4CB640:ecx": {
-"class": "SwizzleManagerClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65509,7 +65509,7 @@
 ]
 },
 "R:4CB6A0:ecx": {
-"class": "SwizzleManagerClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65533,7 +65533,7 @@
 ]
 },
 "R:4CB700:ecx": {
-"class": "CarryoverClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65557,7 +65557,7 @@
 ]
 },
 "R:4CB760:ecx": {
-"class": "CarryoverClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65581,7 +65581,7 @@
 ]
 },
 "R:4CB7C0:ecx": {
-"class": "CarryoverClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -65605,7 +65605,7 @@
 ]
 },
 "R:4CB830:ecx": {
-"class": "CarryoverClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -67481,7 +67481,7 @@
 ]
 },
 "P:4D24A0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 96,
@@ -67497,7 +67497,7 @@
 ]
 },
 "R:4D2790:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 48,
@@ -67577,7 +67577,7 @@
 ]
 },
 "R:4D28C0:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 96,
@@ -73773,7 +73773,7 @@
 ]
 },
 "R:4E6070:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 104,
@@ -95163,7 +95163,7 @@
 ]
 },
 "R:513D20:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 12,
@@ -101524,7 +101524,7 @@
 ]
 },
 "R:5257C0:ecx": {
-"class": "INISection",
+"class": "INIClass",
 "obs": [
 [
 4,
@@ -104813,7 +104813,7 @@
 "ents": []
 },
 "P:53B780:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -104829,7 +104829,7 @@
 ]
 },
 "P:53BBA0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -106329,7 +106329,7 @@
 ]
 },
 "R:5409F0:ecx": {
-"class": "AirstrikeClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 0,
@@ -106835,7 +106835,7 @@
 ]
 },
 "R:541370:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 4,
@@ -106855,7 +106855,7 @@
 ]
 },
 "R:5413B0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 4,
@@ -106875,7 +106875,7 @@
 ]
 },
 "R:5413F0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 4,
@@ -106919,7 +106919,7 @@
 ]
 },
 "R:541480:ecx": {
-"class": "MSPrintAnim",
+"class": "IPXManagerClass",
 "obs": [
 [
 4,
@@ -110547,7 +110547,7 @@
 ]
 },
 "R:54F450:ecx": {
-"class": "LCWPipe",
+"class": "BufferIOFileClass",
 "obs": [
 [
 36,
@@ -111934,7 +111934,7 @@
 "ents": []
 },
 "P:554D50:0": {
-"class": "CounterClass",
+"class": "VersionClass",
 "obs": [
 [
 0,
@@ -112829,7 +112829,7 @@
 ]
 },
 "R:556A20:ecx": {
-"class": "AlphaShapeClass",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -116981,7 +116981,7 @@
 ]
 },
 "P:56A4C0:0": {
-"class": "ListClass",
+"class": "CellClass",
 "obs": [
 [
 56,
@@ -117025,7 +117025,7 @@
 ]
 },
 "P:56A980:0": {
-"class": "ListClass",
+"class": "CellClass",
 "obs": [
 [
 56,
@@ -117405,7 +117405,7 @@
 ]
 },
 "R:56DA10:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 84,
@@ -117421,7 +117421,7 @@
 ]
 },
 "P:56DA10:4": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "T:56DAE0",
@@ -118865,7 +118865,7 @@
 ]
 },
 "P:57DD50:0": {
-"class": "LightSourceClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -118921,7 +118921,7 @@
 ]
 },
 "P:57E2A0:0": {
-"class": "LightSourceClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -118977,7 +118977,7 @@
 ]
 },
 "P:57E7A0:0": {
-"class": "LightSourceClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -119033,7 +119033,7 @@
 ]
 },
 "P:57ED00:0": {
-"class": "LightSourceClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -119315,7 +119315,7 @@
 ]
 },
 "R:581F90:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 104,
@@ -119622,7 +119622,7 @@
 ]
 },
 "P:584550:0": {
-"class": "CarryoverClass",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -119691,7 +119691,7 @@
 ]
 },
 "R:584E50:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 108,
@@ -119933,7 +119933,7 @@
 ]
 },
 "P:586BF0:0": {
-"class": "PKStrawClass",
+"class": "WarheadTypeClass",
 "obs": [
 [
 0,
@@ -120007,7 +120007,7 @@
 "ents": []
 },
 "P:587410:0": {
-"class": "VersionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -120998,7 +120998,7 @@
 ]
 },
 "R:589680:ecx": {
-"class": "GraphicMenuItem",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -121126,7 +121126,7 @@
 ]
 },
 "P:589740:0": {
-"class": "LCWPipe",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -121796,7 +121796,7 @@
 ]
 },
 "R:58A500:ecx": {
-"class": "LCWPipe",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -122250,7 +122250,7 @@
 ]
 },
 "P:58AE60:0": {
-"class": "LCWPipe",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -123080,7 +123080,7 @@
 "ents": []
 },
 "P:58F2C0:0": {
-"class": "ConvertClass",
+"class": "CellClass",
 "obs": [
 [
 8,
@@ -128906,7 +128906,7 @@
 "ents": []
 },
 "R:5B4400:ecx": {
-"class": "GraphicMenuAnimItem",
+"class": "MixFileClass",
 "obs": [
 [
 18,
@@ -129194,7 +129194,7 @@
 ]
 },
 "R:5B59B0:ecx": {
-"class": "CaptureManagerClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -129549,7 +129549,7 @@
 ]
 },
 "P:7DD0F8:3": {
-"class": "BufferIOFileClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -131538,7 +131538,7 @@
 ]
 },
 "M:5C3F80:this:0x40": {
-"class": "MapSeedClass",
+"class": "MSPrintAnim",
 "obs": [
 [
 64,
@@ -132934,7 +132934,7 @@
 ]
 },
 "P:5C9AE0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -135714,7 +135714,7 @@
 ]
 },
 "R:5D0190:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 88,
@@ -135730,7 +135730,7 @@
 ]
 },
 "R:5D0240:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 88,
@@ -140415,7 +140415,7 @@
 ]
 },
 "P:5DA0B0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 12,
@@ -140431,7 +140431,7 @@
 ]
 },
 "P:5DDBD0:0": {
-"class": "AlphaShapeClass",
+"class": "FoggedObjectClass",
 "obs": [
 [
 0,
@@ -145035,7 +145035,7 @@
 ]
 },
 "R:5FB160:ecx": {
-"class": "MSOverlayAnim",
+"class": "BufferIOFileClass",
 "obs": [
 [
 29,
@@ -145261,7 +145261,7 @@
 "ents": []
 },
 "M:5FC570:p0:0xac": {
-"class": "IsometricTileTypeClass",
+"class": "OverlayTypeClass",
 "obs": [
 [
 660,
@@ -146213,7 +146213,7 @@
 ]
 },
 "P:6071E0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -148449,7 +148449,7 @@
 ]
 },
 "M:625C00:this:0x4": {
-"class": "ScriptClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -148817,7 +148817,7 @@
 ]
 },
 "P:627590:0": {
-"class": "MSShapeAnim",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -151577,7 +151577,7 @@
 "ents": []
 },
 "R:62CE40:ecx": {
-"class": "ConvertClass",
+"class": "BulletClass",
 "obs": [
 [
 172,
@@ -152841,7 +152841,7 @@
 ]
 },
 "P:630310:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -154454,7 +154454,7 @@
 ]
 },
 "P:634CC0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 4,
@@ -157962,7 +157962,7 @@
 ]
 },
 "P:641DB0:0": {
-"class": "OverlayClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -158256,7 +158256,7 @@
 ]
 },
 "R:642C80:ecx": {
-"class": "MapSeedClass",
+"class": "FactoryClass",
 "obs": [
 [
 80,
@@ -158364,7 +158364,7 @@
 ]
 },
 "R:643720:ecx": {
-"class": "Dial8Class",
+"class": "ProgressScreenClass",
 "obs": [
 [
 72,
@@ -160641,7 +160641,7 @@
 ]
 },
 "P:654490:0": {
-"class": "WWMouseClass",
+"class": "EMPulseClass",
 "obs": [
 [
 36,
@@ -165233,7 +165233,7 @@
 ]
 },
 "R:65FE00:ecx": {
-"class": "DiskLaserClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -165260,7 +165260,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:65FE00"
+]
 },
 "R:660050:ecx": {
 "class": "MSFrameAnim",
@@ -166222,7 +166224,7 @@
 "ents": []
 },
 "P:4135D0:2": {
-"class": "IsometricTileClass",
+"class": "DynamicVector",
 "obs": [
 [
 12,
@@ -180898,7 +180900,7 @@
 ]
 },
 "R:68CD20:ecx": {
-"class": "ConnectionClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -186830,7 +186832,7 @@
 "ents": []
 },
 "P:69F080:0": {
-"class": "BufferIOFileClass",
+"class": "FactoryClass",
 "obs": [
 [
 77,
@@ -188765,7 +188767,7 @@
 ]
 },
 "R:6A81B0:ecx": {
-"class": "MapSeedClass",
+"class": "WWMouseClass",
 "obs": [
 [
 61,
@@ -190077,7 +190079,7 @@
 ]
 },
 "R:6B0C80:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 60,
@@ -190101,7 +190103,7 @@
 ]
 },
 "R:6B0CC0:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 60,
@@ -190125,7 +190127,7 @@
 ]
 },
 "R:6B0D10:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 60,
@@ -190149,7 +190151,7 @@
 ]
 },
 "R:6B0D60:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 60,
@@ -197761,7 +197763,7 @@
 ]
 },
 "M:6CBCA0:this:0x28": {
-"class": "BuildingLightClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 176,
@@ -197823,7 +197825,7 @@
 ]
 },
 "M:6CBEE0:this:0x28": {
-"class": "BuildingLightClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 176,
@@ -197883,7 +197885,7 @@
 ]
 },
 "M:6CC080:this:0x28": {
-"class": "BuildingLightClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 176,
@@ -198557,7 +198559,7 @@
 ]
 },
 "M:6CE1A0:this:0x28": {
-"class": "RadioClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 229,
@@ -206654,7 +206656,7 @@
 ]
 },
 "M:6EB380:this:0x24": {
-"class": "Dial8Class",
+"class": "TeamTypeClass",
 "obs": [
 [
 166,
@@ -211876,7 +211878,7 @@
 "ents": []
 },
 "P:6F5EF0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -213576,7 +213578,7 @@
 ]
 },
 "M:6FC0B0:this:0x6c4": {
-"class": "AnimFile",
+"class": "UnitTypeClass",
 "obs": [
 [
 3608,
@@ -213592,7 +213594,7 @@
 ]
 },
 "M:6FC0B0:p0:0xac": {
-"class": "WeaponTypeClass",
+"class": "WarheadTypeClass",
 "obs": [
 [
 346,
@@ -226172,7 +226174,7 @@
 ]
 },
 "R:720A80:ecx": {
-"class": "ThemeClass",
+"class": "MixFileClass",
 "obs": [
 [
 16,
@@ -230341,7 +230343,7 @@
 ]
 },
 "P:7339B0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -233902,7 +233904,7 @@
 ]
 },
 "P:7414E0:0": {
-"class": "TechnoTypeClass",
+"class": "TechnoClass",
 "obs": [
 [
 740,
@@ -239488,7 +239490,7 @@
 "ents": []
 },
 "R:759540:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 4,
@@ -239791,7 +239793,7 @@
 "ents": []
 },
 "R:759FB0:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 4,
@@ -239817,7 +239819,7 @@
 "ents": []
 },
 "R:75A120:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 4,
@@ -245570,7 +245572,7 @@
 ]
 },
 "R:769440:ecx": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 84,
@@ -251591,7 +251593,7 @@
 ]
 },
 "P:7A41C0:0": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 0,
@@ -252592,7 +252594,7 @@
 ]
 },
 "P:7ADCD0:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -257502,7 +257504,7 @@
 ]
 },
 "P:7BAE60:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -257650,7 +257652,7 @@
 ]
 },
 "P:7BB050:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -257690,7 +257692,7 @@
 ]
 },
 "P:7BB350:0": {
-"class": "RadSiteClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 0,
@@ -260096,7 +260098,7 @@
 ]
 },
 "P:7C7371:0": {
-"class": "CounterClass",
+"class": "VersionClass",
 "obs": [
 [
 0,
@@ -291676,7 +291678,7 @@
 "ents": []
 },
 "M:486C50:this:0x4": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "M:486C50:this:0x4"
@@ -308594,7 +308596,7 @@
 ]
 },
 "R:576BA0:ecx": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "T:576BA0"
@@ -316402,7 +316404,7 @@
 ]
 },
 "M:5F19C0:this:0x4": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "M:5F19C0:this:0x4"
@@ -337640,7 +337642,7 @@
 ]
 },
 "M:7192F0:this:0x8": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "M:7192F0:this:0x8"
@@ -340259,7 +340261,7 @@
 ]
 },
 "M:75A100:this:0xAC": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "M:75A100:this:0xAC"
@@ -340271,7 +340273,7 @@
 "ents": []
 },
 "M:75A2B0:this:0xAC": {
-"class": "SpawnManagerClass",
+"class": "FoggedObjectClass",
 "obs": [],
 "ents": [
 "M:75A2B0:this:0xAC"

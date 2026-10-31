@@ -2262,6 +2262,20 @@ def main():
             _mask18 |= (1 << _ci)
         fam["C18"][_eid18] = fam["C18"].get(_eid18, FULL) & _mask18
         if len(_hit18) != 1:
+            # 只在**布局命中数严格领先**时才仲裁；并列时（如 0x405C00：42 个类全 4/4 命中）
+            # 不猜——那属于没有判别力的簇，保持多解。
+            _rank18 = []
+            for _ci in _hit18:
+                _mem18 = U["members"][_ci] or {}
+                _h18 = sum(1 for (_o, _w) in _obs18
+                           if isinstance(_mem18.get(_o), int) and _mem18[_o] >= _w)
+                _sz18 = U["eff_size"][_ci]
+                _gap18 = abs(int(_sz18) - _need18) if _sz18 else float("inf")
+                _rank18.append((- _h18, _gap18, _ci))
+            _rank18.sort()
+            if _rank18[0][0] <= -2 and _rank18[0][0] < _rank18[1][0]:
+                _hit18 = [_rank18[0][2]]
+        if len(_hit18) != 1:
             _c18_amb += 1
             continue
         if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
