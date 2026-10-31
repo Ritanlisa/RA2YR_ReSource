@@ -1134,6 +1134,7 @@ def main():
     else:
         print("[warn] binary facts missing: C4/C5/C6/reg-flow degrade", flush=True)
 
+    print("[entities][dbg] by prefix: %s" % dict(collections.Counter(k.split(":")[0] for k in ents)), flush=True)
     print("[entities] total=%d with_obs=%d obs>=2=%d"
           % (len(ents), sum(1 for r in ents.values() if r["obs"]),
              sum(1 for r in ents.values() if len(r["obs"]) >= 2)), flush=True)
@@ -2505,6 +2506,35 @@ def main():
     for a_eid, b_eid in c5_link:
         un(a_eid, b_eid, "new_ctor")
 
+    # ---- C20：ECX 即 this（同一对象）----
+    # 汇编事实：接收 this 的函数在入口处 ecx 就是 this；该函数内所有以 ecx 为源的
+    # 寄存器实体（R:<fn>:ecx）聚合的正是同一个对象。把它与本函数的 T:<fn> 并簇。
+    # 判定表 anchors/fn_takes_this.json = 入口在读 ECX 前未写过 ECX 的函数集合（纯汇编）。
+    _c20_n = 0
+    try:
+        _takes_this20 = jload("anchors/fn_takes_this.json", {}) or {}
+    except Exception:
+        _takes_this20 = {}
+    for _fn20s, _t20 in _takes_this20.items():
+        if not _t20:
+            continue
+        _a20 = hx(_fn20s[2:]) if str(_fn20s).lower().startswith('0x') else hx(_fn20s)
+        if _a20 is None:
+            continue
+        _r20 = "R:%X:ecx" % _a20
+        _t_eid20 = "T:%X" % _a20
+        if _r20 in ents and _t_eid20 in ents:
+            un(_r20, _t_eid20, "ecx_is_this")
+            _c20_n += 1
+    _dbg_r = sum(1 for k in _takes_this20 if ("R:%s:ecx" % ("%X" % int(str(k), 16))) in ents)
+    _dbg_t = sum(1 for k in _takes_this20 if ("T:%s" % ("%X" % int(str(k), 16))) in ents)
+    _sample_r = [k for k in list(_takes_this20)[:5]]
+    print("[C20][dbg] takes_this=%d  R-in-ents=%d  T-in-ents=%d  sample_keys=%s  r_keys_sample=%s"
+          % (len(_takes_this20), _dbg_r, _dbg_t, _sample_r[:3],
+             [("R:%s:ecx" % ("%X" % int(str(k), 16))) for k in _sample_r[:3]]), flush=True)
+    print("[C20] ecx==this unions: %d (functions taking this=%d)"
+          % (_c20_n, sum(1 for v in _takes_this20.values() if v)), flush=True)
+
     # ---- C17：洁净寄存器 = 函数 this（同一对象的等式）----
     # facts.reg_links = [site, reg, src, clean]；clean=True 表示该寄存器的到达定义
     # 未经跨调用/控制流汇合，即在此点它装的就是 src 那个对象。当 src 正是本函数的
@@ -3560,6 +3590,7 @@ def main():
 
     _old_assign = dict(res.get("assign") or {})
     _new_assign, _changed, _exact_kept = {}, 0, 0
+    _chain_picks = 0
     _no_obs_kept, _no_cover_kept = 0, 0
     _ex_root, _ex_old, _ex_new = None, None, None
     for _ci_cl, (_cl, _m) in enumerate(res["constrained"]):
@@ -3596,7 +3627,18 @@ def main():
                             len(_mem), names[_ci])
 
                 _cands = [i for i in range(n) if (_elig >> i) & 1]
-                _pick = min(_cands, key=_rank)
+                # 链上取最大派生：若候选集构成一条继承链（存在一个元素是其余全部的后代），
+                # 对象的最可能类就是链上最派生者 —— 拓扑事实，与名字/IDA 类型无关。
+                _maxi = None
+                for _ci in _cands:
+                    if all(_ci == _cj or _cj in U["anc"][_ci] for _cj in _cands):
+                        _maxi = _ci
+                        break
+                if _maxi is not None:
+                    _pick = _maxi
+                    _chain_picks += 1
+                else:
+                    _pick = min(_cands, key=_rank)
         if _pick is None:
             continue
         _new_assign[_ci_cl] = _pick
@@ -3605,6 +3647,7 @@ def main():
             if _ex_new is None and _obs:     # top_example 必须是有观测簇
                 _ex_root = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
                 _ex_old, _ex_new = _prev, _pick
+    print("[assign] chain-maximal picks=%d" % _chain_picks, flush=True)
     print("[assign] most-specific: changed=%d exact_kept=%d no_obs_kept=%d "
           "no_cover_kept=%d top_example=%s->%s"
           % (_changed, _exact_kept, _no_obs_kept, _no_cover_kept,
