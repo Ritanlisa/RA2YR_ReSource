@@ -2647,7 +2647,7 @@
 "ents": []
 },
 "P:408610:0": {
-"class": "MSShapeAnim",
+"class": "RawFileClass",
 "obs": [
 [
 0,
@@ -8196,7 +8196,7 @@
 ]
 },
 "P:4197C0:0": {
-"class": "AircraftClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -10390,14 +10390,16 @@
 ]
 },
 "P:41EE90:0": {
-"class": "GaugeClass",
+"class": "HouseClass",
 "obs": [
 [
 64,
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:41EE90:0"
+]
 },
 "R:41F230:ecx": {
 "class": "AITriggerTypeClass",
@@ -20351,7 +20353,7 @@
 "ents": []
 },
 "P:438E70:0": {
-"class": "BuildingClass",
+"class": "TechnoClass",
 "obs": [
 [
 56,
@@ -30610,14 +30612,16 @@
 ]
 },
 "P:457AA0:0": {
-"class": "ScrollClass",
+"class": "DynamicVectorClass",
 "obs": [
 [
 8,
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:457AA0:0"
+]
 },
 "R:457C90:ecx": {
 "class": "BuildingClass",
@@ -37048,7 +37052,7 @@
 ]
 },
 "P:471D40:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -37945,7 +37949,7 @@
 ]
 },
 "P:4733A0:0": {
-"class": "ObjectClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -40958,7 +40962,7 @@
 ]
 },
 "P:47E8A0:0": {
-"class": "ConvertClass",
+"class": "ObjectClass",
 "obs": [
 [
 44,
@@ -42010,7 +42014,7 @@
 ]
 },
 "P:481A00:0": {
-"class": "BuildingClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -56730,7 +56734,7 @@
 ]
 },
 "P:4A71A0:0": {
-"class": "CaptureManagerClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -57622,7 +57626,7 @@
 ]
 },
 "P:4AA2B0:0": {
-"class": "WaveClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -69951,7 +69955,7 @@
 ]
 },
 "P:4DA230:0": {
-"class": "ColorListClass",
+"class": "HouseClass",
 "obs": [
 [
 388,
@@ -88451,7 +88455,7 @@
 ]
 },
 "P:505360:0": {
-"class": "AircraftClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -88466,7 +88470,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:505360:0"
+]
 },
 "R:5054B0:ecx": {
 "class": "HouseClass",
@@ -99797,7 +99803,7 @@
 "M:5228D0:this:0x6c0"
 ]
 },
-"P:4585C0:0": {
+"R:522910:ecx": {
 "class": "FootClass",
 "obs": [
 [
@@ -99822,8 +99828,7 @@
 ]
 ],
 "ents": [
-"T:522910",
-"P:4585C0:0"
+"T:522910"
 ]
 },
 "M:522910:this:0x6c0": {
@@ -100028,7 +100033,7 @@
 "T:522FE0"
 ]
 },
-"P:473500:0": {
+"R:523250:ecx": {
 "class": "InfantryClass",
 "obs": [
 [
@@ -100041,8 +100046,7 @@
 ]
 ],
 "ents": [
-"T:523250",
-"P:473500:0"
+"T:523250"
 ]
 },
 "R:523370:ecx": {
@@ -114235,7 +114239,7 @@
 "ents": []
 },
 "P:559ED0:0": {
-"class": "MSFont",
+"class": "FileEntryClass",
 "obs": [
 [
 20,
@@ -114703,14 +114707,16 @@
 ]
 },
 "P:55B880:0": {
-"class": "ScrollClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:55B880:0"
+]
 },
 "P:55BAA0:0": {
 "class": "ObjectClass",
@@ -138794,7 +138800,7 @@
 "ents": []
 },
 "P:5D70F0:0": {
-"class": "AircraftClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -142264,7 +142270,7 @@
 "ents": []
 },
 "P:5F5B50:0": {
-"class": "AbstractClass",
+"class": "TagClass",
 "obs": [
 [
 44,
@@ -159068,7 +159074,7 @@
 ]
 },
 "P:64DEA0:0": {
-"class": "TechnoClass",
+"class": "EventClass",
 "obs": [
 [
 0,
@@ -170664,7 +170670,7 @@
 ]
 },
 "P:6686C0:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [
 [
 0,
@@ -171848,7 +171854,7 @@
 ]
 },
 "P:66D480:0": {
-"class": "ScrollClass",
+"class": "CCINIClass",
 "obs": [
 [
 0,
@@ -171859,7 +171865,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:66D480:0"
+]
 },
 "R:66D530:ecx": {
 "class": "RulesClass",
@@ -201953,7 +201961,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6DD8B0:0"
+]
 },
 "M:6DD8B0:p0:0x520": {
 "class": "BuildingTypeClass",
@@ -203444,14 +203454,16 @@
 ]
 },
 "P:6E55C0:0": {
-"class": "PriorityQueue",
+"class": "TriggerClass",
 "obs": [
 [
 40,
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6E55C0:0"
+]
 },
 "R:6E5610:ecx": {
 "class": "TagClass",
@@ -204908,7 +204920,7 @@
 ]
 },
 "P:6E9050:0": {
-"class": "IRTTITypeInfo",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -217406,7 +217418,7 @@
 ]
 },
 "P:710470:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -217422,7 +217434,7 @@
 ]
 },
 "P:7104A0:0": {
-"class": "MissionClass",
+"class": "TechnoClass",
 "obs": [
 [
 130,
@@ -237815,7 +237827,7 @@
 ]
 },
 "P:755DB0:0": {
-"class": "GadgetClass",
+"class": "CCFileClass",
 "obs": [
 [
 0,
@@ -277606,14 +277618,14 @@
 ]
 },
 "P:4FF700:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:4FF700:0"
 ]
 },
 "P:4F7870:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
 "ents": [
 "P:4F7870:0"
@@ -277630,14 +277642,14 @@
 "ents": []
 },
 "P:707CB0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:707CB0:0"
 ]
 },
 "P:6EA870:0": {
-"class": "AbstractClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "P:6EA870:0"
@@ -277860,7 +277872,7 @@
 "ents": []
 },
 "P:6EA500:0": {
-"class": "AbstractClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "P:6EA500:0"
@@ -278179,7 +278191,7 @@
 ]
 },
 "P:4F9A90:0": {
-"class": "IUnknown",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:4F9A90:0"
@@ -278240,7 +278252,7 @@
 "ents": []
 },
 "P:65ADF0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:65ADF0:0"
@@ -278285,7 +278297,7 @@
 ]
 },
 "P:5F3DB0:1": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
 "ents": [
 "P:5F3DB0:1"
@@ -278350,7 +278362,7 @@
 "ents": []
 },
 "P:4F9A50:0": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:4F9A50:0"
@@ -278594,7 +278606,7 @@
 ]
 },
 "P:65AD50:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:65AD50:0"
@@ -279140,10 +279152,17 @@
 ]
 },
 "P:41D830:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:41D830:0"
+]
+},
+"P:41DA20:0": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:41DA20:0"
 ]
 },
 "R:750010:ecx": {
@@ -279221,21 +279240,53 @@
 "ents": []
 },
 "P:41E720:0": {
-"class": "TriggerClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:41E720:0"
 ]
 },
-"P:41EAF0:0": {
-"class": "AbstractClass",
+"P:41E720:1": {
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:41E720:1"
+]
+},
+"P:41EAF0:0": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41EAF0:0"
+]
+},
+"P:41EAF0:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41EAF0:1"
+]
+},
+"P:41EE90:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41EE90:1"
+]
 },
 "P:41F230:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:41F230:0"
+]
+},
+"P:41F230:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41F230:1"
+]
 },
 "T:41F0D0": {
 "class": "AITriggerTypeClass",
@@ -279245,9 +279296,18 @@
 ]
 },
 "P:41F0D0:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:41F0D0:0"
+]
+},
+"P:41F0D0:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41F0D0:1"
+]
 },
 "T:41F180": {
 "class": "AITriggerTypeClass",
@@ -279257,14 +279317,32 @@
 ]
 },
 "P:41F180:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:41F180:0"
+]
+},
+"P:41F180:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41F180:1"
+]
 },
 "P:41EC90:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:41EC90:0"
+]
+},
+"P:41EC90:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:41EC90:1"
+]
 },
 "T:41FEE0": {
 "class": "AbstractClass",
@@ -279601,7 +279679,7 @@
 "ents": []
 },
 "P:424B50:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:424B50:0"
@@ -279703,7 +279781,7 @@
 ]
 },
 "P:4A9770:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:4A9770:0"
@@ -280031,9 +280109,11 @@
 "ents": []
 },
 "P:62E430:0": {
-"class": "AbstractClass",
+"class": "ParticleTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:62E430:0"
+]
 },
 "P:62E430:1": {
 "class": "AbstractClass",
@@ -280850,7 +280930,7 @@
 "ents": []
 },
 "P:56BCD0:1": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:56BCD0:1"
@@ -281462,7 +281542,7 @@
 ]
 },
 "P:434CD0:1": {
-"class": "IUnknown",
+"class": "Surface",
 "obs": [],
 "ents": [
 "P:434CD0:1"
@@ -281490,6 +281570,13 @@
 "obs": [],
 "ents": [
 "P:434CD0:6"
+]
+},
+"P:430590:0": {
+"class": "Surface",
+"obs": [],
+"ents": [
+"P:430590:0"
 ]
 },
 "P:6557F0:0": {
@@ -282033,9 +282120,11 @@
 ]
 },
 "P:434B90:1": {
-"class": "AbstractClass",
+"class": "Surface",
 "obs": [],
-"ents": []
+"ents": [
+"P:434B90:1"
+]
 },
 "P:434B90:2": {
 "class": "AbstractClass",
@@ -282463,21 +282552,21 @@
 ]
 },
 "P:438E70:1": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:438E70:1"
 ]
 },
 "P:439080:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:439080:0"
 ]
 },
 "P:4390D0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:4390D0:0"
@@ -282496,7 +282585,9 @@
 "P:439150:0": {
 "class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:439150:0"
+]
 },
 "P:4391C0:0": {
 "class": "AbstractClass",
@@ -282966,7 +283057,7 @@
 "ents": []
 },
 "P:5F6360:0": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
 "ents": [
 "P:5F6360:0"
@@ -283033,7 +283124,7 @@
 "ents": []
 },
 "P:5687F0:1": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:5687F0:1"
@@ -283060,7 +283151,7 @@
 "ents": []
 },
 "P:5683C0:1": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:5683C0:1"
@@ -283378,7 +283469,7 @@
 ]
 },
 "P:708080:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:708080:0"
@@ -283424,7 +283515,7 @@
 "ents": []
 },
 "P:4F93E0:0": {
-"class": "AbstractClass",
+"class": "BuildingClass",
 "obs": [],
 "ents": [
 "P:4F93E0:0"
@@ -283541,7 +283632,7 @@
 ]
 },
 "P:703590:1": {
-"class": "IUnknown",
+"class": "AbstractClass",
 "obs": [],
 "ents": [
 "P:703590:1"
@@ -283628,16 +283719,18 @@
 "ents": []
 },
 "P:588570:1": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:588570:1"
 ]
 },
 "P:588570:2": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:588570:2"
+]
 },
 "T:588750": {
 "class": "MapClass",
@@ -283652,16 +283745,18 @@
 "ents": []
 },
 "P:588750:1": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:588750:1"
 ]
 },
 "P:588750:2": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:588750:2"
+]
 },
 "P:6A6300:1": {
 "class": "AbstractClass",
@@ -283791,7 +283886,7 @@
 ]
 },
 "P:65AD90:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:65AD90:0"
@@ -284215,9 +284310,11 @@
 "ents": []
 },
 "P:4FB6B0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:4FB6B0:0"
+]
 },
 "M:4500F0:this:0x24": {
 "class": "AbstractClass",
@@ -284237,9 +284334,18 @@
 "ents": []
 },
 "P:4C9C70:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:4C9C70:0"
+]
+},
+"P:4C9C70:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:4C9C70:1"
+]
 },
 "P:4C9C70:2": {
 "class": "AbstractClass",
@@ -284495,9 +284601,11 @@
 "ents": []
 },
 "P:50E0E0:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:50E0E0:0"
+]
 },
 "R:454CE0:ecx": {
 "class": "AbstractClass",
@@ -284695,9 +284803,11 @@
 ]
 },
 "P:457AA0:1": {
-"class": "AbstractClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:457AA0:1"
+]
 },
 "M:457AA0:this:0x520": {
 "class": "BuildingTypeClass",
@@ -284707,7 +284817,7 @@
 ]
 },
 "P:457CE0:0": {
-"class": "AbstractClass",
+"class": "InfantryClass",
 "obs": [],
 "ents": [
 "P:457CE0:0"
@@ -284721,15 +284831,24 @@
 ]
 },
 "P:70F6E0:0": {
-"class": "AbstractClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:70F6E0:0"
+]
 },
 "G:81926C": {
 "class": "VoxClass",
 "obs": [],
 "ents": [
 "G:81926C"
+]
+},
+"P:4585C0:0": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:4585C0:0"
 ]
 },
 "M:4585C0:this:0x684": {
@@ -285074,6 +285193,13 @@
 "P:578080:1"
 ]
 },
+"P:464AC0:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:464AC0:1"
+]
+},
 "R:4653C0:ecx": {
 "class": "BuildingTypeClass",
 "obs": [],
@@ -285405,14 +285531,14 @@
 ]
 },
 "P:62A980:0": {
-"class": "AbstractClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "P:62A980:0"
 ]
 },
 "P:71AF20:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:71AF20:0"
@@ -285426,7 +285552,7 @@
 ]
 },
 "P:710000:0": {
-"class": "AbstractClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "P:710000:0"
@@ -285447,14 +285573,14 @@
 ]
 },
 "P:6FD210:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:6FD210:0"
 ]
 },
 "P:6FD210:2": {
-"class": "AbstractClass",
+"class": "WeaponTypeClass",
 "obs": [],
 "ents": [
 "P:6FD210:2"
@@ -286759,14 +286885,14 @@
 "ents": []
 },
 "P:471C90:0": {
-"class": "BuildingClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:471C90:0"
 ]
 },
 "P:471FF0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:471FF0:0"
@@ -286780,7 +286906,7 @@
 ]
 },
 "P:4723B0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:4723B0:0"
@@ -286798,6 +286924,13 @@
 "obs": [],
 "ents": [
 "T:704E40"
+]
+},
+"P:4722F0:0": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:4722F0:0"
 ]
 },
 "R:710550:ecx": {
@@ -286879,10 +287012,17 @@
 ]
 },
 "P:4734B0:0": {
-"class": "AbstractClass",
+"class": "FootClass",
 "obs": [],
 "ents": [
 "P:4734B0:0"
+]
+},
+"P:473500:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:473500:0"
 ]
 },
 "P:502D30:0": {
@@ -286987,7 +287127,7 @@
 ]
 },
 "P:4741F0:0": {
-"class": "IUnknown",
+"class": "FileClass",
 "obs": [],
 "ents": [
 "P:4741F0:0"
@@ -287059,7 +287199,7 @@
 "ents": []
 },
 "P:474430:0": {
-"class": "Block",
+"class": "FileClass",
 "obs": [],
 "ents": [
 "P:474430:0"
@@ -288625,14 +288765,14 @@
 "ents": []
 },
 "P:47C620:1": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [],
 "ents": [
 "P:47C620:1"
 ]
 },
 "P:47C620:2": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:47C620:2"
@@ -289225,7 +289365,7 @@
 "ents": []
 },
 "P:4838E0:0": {
-"class": "AbstractClass",
+"class": "TiberiumClass",
 "obs": [],
 "ents": [
 "P:4838E0:0"
@@ -289388,6 +289528,13 @@
 "M:485080:this:0x520"
 ]
 },
+"P:485250:0": {
+"class": "TagClass",
+"obs": [],
+"ents": [
+"P:485250:0"
+]
+},
 "T:487F40": {
 "class": "AbstractClass",
 "obs": [],
@@ -289462,7 +289609,7 @@
 "ents": []
 },
 "P:74EF10:0": {
-"class": "AbstractClass",
+"class": "CellClass",
 "obs": [],
 "ents": [
 "P:74EF10:0"
@@ -289512,6 +289659,13 @@
 "obs": [],
 "ents": [
 "T:487CE0"
+]
+},
+"P:487D70:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:487D70:0"
 ]
 },
 "P:48E620:0": {
@@ -291287,14 +291441,14 @@
 ]
 },
 "P:4A71A0:1": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:4A71A0:1"
 ]
 },
 "P:4A71A0:2": {
-"class": "AbstractClass",
+"class": "WeaponTypeClass",
 "obs": [],
 "ents": [
 "P:4A71A0:2"
@@ -291332,7 +291486,9 @@
 "P:4A7900:0": {
 "class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:4A7900:0"
+]
 },
 "G:8A0208": {
 "class": "DynamicVector",
@@ -291464,7 +291620,7 @@
 "ents": []
 },
 "P:4A8EB0:0": {
-"class": "AbstractClass",
+"class": "ObjectTypeClass",
 "obs": [],
 "ents": [
 "P:4A8EB0:0"
@@ -291561,9 +291717,11 @@
 ]
 },
 "P:5519B0:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:5519B0:0"
+]
 },
 "P:4A9840:0": {
 "class": "AbstractClass",
@@ -291580,6 +291738,13 @@
 "obs": [],
 "ents": [
 "T:5865F0"
+]
+},
+"P:5865F0:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:5865F0:1"
 ]
 },
 "P:5865F0:2": {
@@ -291683,7 +291848,7 @@
 ]
 },
 "P:692300:3": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:692300:3"
@@ -291757,9 +291922,11 @@
 ]
 },
 "P:502460:0": {
-"class": "AbstractClass",
+"class": "WaypointClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:502460:0"
+]
 },
 "P:502460:1": {
 "class": "AbstractClass",
@@ -292263,9 +292430,11 @@
 ]
 },
 "P:551B90:0": {
-"class": "AbstractClass",
+"class": "IStream",
 "obs": [],
-"ents": []
+"ents": [
+"P:551B90:0"
+]
 },
 "P:551B90:1": {
 "class": "AbstractClass",
@@ -292273,9 +292442,11 @@
 "ents": []
 },
 "P:551B20:0": {
-"class": "AbstractClass",
+"class": "IStream",
 "obs": [],
-"ents": []
+"ents": [
+"P:551B20:0"
+]
 },
 "P:551B20:1": {
 "class": "AbstractClass",
@@ -292526,7 +292697,7 @@
 ]
 },
 "P:5F6CD0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:5F6CD0:0"
@@ -292540,7 +292711,7 @@
 ]
 },
 "P:578AD0:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:578AD0:0"
@@ -293499,11 +293670,25 @@
 "obs": [],
 "ents": []
 },
+"P:4C6860:2": {
+"class": "Mission",
+"obs": [],
+"ents": [
+"P:4C6860:2"
+]
+},
 "R:4C68E0:ecx": {
 "class": "EventClass",
 "obs": [],
 "ents": [
 "T:4C68E0"
+]
+},
+"P:4C68E0:2": {
+"class": "Mission",
+"obs": [],
+"ents": [
+"P:4C68E0:2"
 ]
 },
 "R:4C6970:ecx": {
@@ -293950,6 +294135,13 @@
 "P:50B370:0"
 ]
 },
+"P:4C9E10:0": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:4C9E10:0"
+]
+},
 "P:4C9E60:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -293970,6 +294162,13 @@
 "obs": [],
 "ents": []
 },
+"P:4CA620:0": {
+"class": "TechnoTypeClass",
+"obs": [],
+"ents": [
+"P:4CA620:0"
+]
+},
 "M:4CA620:this:0x40": {
 "class": "TypeList",
 "obs": [],
@@ -293978,12 +294177,14 @@
 ]
 },
 "P:4CA670:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:4CA670:0"
+]
 },
 "P:4CA6B0:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
 "ents": [
 "P:4CA6B0:0"
@@ -294841,6 +295042,20 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"P:4DE630:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4DE630:0"
+]
+},
+"P:4DE670:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4DE670:0"
+]
 },
 "P:4734B0:1": {
 "class": "AbstractClass",
@@ -296584,7 +296799,7 @@
 "ents": []
 },
 "P:5051E0:0": {
-"class": "IUnknown",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "P:5051E0:0"
@@ -296624,6 +296839,13 @@
 "T:4F83C0"
 ]
 },
+"P:4F83C0:0": {
+"class": "TechnoTypeClass",
+"obs": [],
+"ents": [
+"P:4F83C0:0"
+]
+},
 "R:4FC6D0:ecx": {
 "class": "HouseClass",
 "obs": [],
@@ -296637,7 +296859,7 @@
 "ents": []
 },
 "P:6F09C0:0": {
-"class": "TeamClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:6F09C0:0"
@@ -296756,7 +296978,7 @@
 "ents": []
 },
 "P:4F9B70:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:4F9B70:0"
@@ -296770,9 +296992,11 @@
 ]
 },
 "P:501540:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:501540:0"
+]
 },
 "P:501540:2": {
 "class": "AbstractClass",
@@ -296801,9 +297025,11 @@
 ]
 },
 "P:504790:1": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:504790:1"
+]
 },
 "G:8247F8": {
 "class": "StringTable",
@@ -297030,7 +297256,7 @@
 ]
 },
 "P:4FBE40:0": {
-"class": "AbstractClass",
+"class": "UnitClass",
 "obs": [],
 "ents": [
 "P:4FBE40:0"
@@ -297048,13 +297274,20 @@
 "obs": [],
 "ents": []
 },
+"P:4FBF60:1": {
+"class": "UnitClass",
+"obs": [],
+"ents": [
+"P:4FBF60:1"
+]
+},
 "P:56DC20:15": {
 "class": "AbstractClass",
 "obs": [],
 "ents": []
 },
 "P:4FC060:0": {
-"class": "AbstractClass",
+"class": "UnitClass",
 "obs": [],
 "ents": [
 "P:4FC060:0"
@@ -297222,7 +297455,7 @@
 ]
 },
 "P:505360:1": {
-"class": "IUnknown",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "P:505360:1"
@@ -297239,9 +297472,11 @@
 "ents": []
 },
 "P:6EF4D0:0": {
-"class": "AbstractClass",
+"class": "DynamicVectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:6EF4D0:0"
+]
 },
 "M:4FFB20:this:0x4": {
 "class": "AbstractClass",
@@ -297403,7 +297638,7 @@
 "ents": []
 },
 "P:5025F0:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:5025F0:0"
@@ -297415,9 +297650,11 @@
 "ents": []
 },
 "P:6A5F20:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:6A5F20:0"
+]
 },
 "G:824E4C": {
 "class": "VoxClass",
@@ -297437,7 +297674,7 @@
 "ents": []
 },
 "P:502A80:0": {
-"class": "BuildingClass",
+"class": "TechnoClass",
 "obs": [],
 "ents": [
 "P:502A80:0"
@@ -297802,24 +298039,32 @@
 ]
 },
 "P:509E00:0": {
-"class": "AbstractClass",
+"class": "SuperClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:509E00:0"
+]
 },
 "P:50A150:0": {
-"class": "AbstractClass",
+"class": "SuperClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:50A150:0"
+]
 },
 "P:509F60:0": {
-"class": "AbstractClass",
+"class": "SuperClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:509F60:0"
+]
 },
 "P:509CD0:0": {
-"class": "AbstractClass",
+"class": "SuperClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:509CD0:0"
+]
 },
 "M:509B20:this:0x254": {
 "class": "VectorClass",
@@ -297907,9 +298152,11 @@
 ]
 },
 "P:50BD30:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:50BD30:0"
+]
 },
 "P:50BDF0:0": {
 "class": "AbstractClass",
@@ -298025,7 +298272,7 @@
 ]
 },
 "P:50E1B0:0": {
-"class": "AbstractClass",
+"class": "TechnoTypeClass",
 "obs": [],
 "ents": [
 "P:50E1B0:0"
@@ -299955,9 +300202,11 @@
 ]
 },
 "P:6728B0:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:6728B0:0"
+]
 },
 "R:672660:ecx": {
 "class": "RulesClass",
@@ -299967,7 +300216,7 @@
 ]
 },
 "P:672660:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672660:0"
@@ -300023,7 +300272,7 @@
 ]
 },
 "P:66D3A0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66D3A0:0"
@@ -300044,16 +300293,18 @@
 ]
 },
 "P:6691E0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:6691E0:0"
 ]
 },
 "P:671EA0:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:671EA0:0"
+]
 },
 "M:52CD70:this:0x14A8": {
 "class": "CCFileClass",
@@ -300071,7 +300322,7 @@
 ]
 },
 "P:668BF0:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:668BF0:0"
@@ -304969,7 +305220,7 @@
 ]
 },
 "P:586990:0": {
-"class": "AbstractClass",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "P:586990:0"
@@ -307084,6 +307335,13 @@
 "obs": [],
 "ents": []
 },
+"P:597D60:0": {
+"class": "FileEntryClass",
+"obs": [],
+"ents": [
+"P:597D60:0"
+]
+},
 "G:82BC30": {
 "class": "AbstractClass",
 "obs": [],
@@ -308213,7 +308471,7 @@
 "ents": []
 },
 "P:5AE100:0": {
-"class": "IUnknown",
+"class": "ScenarioClass",
 "obs": [],
 "ents": [
 "P:5AE100:0"
@@ -308522,6 +308780,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"P:5B3760:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:5B3760:0"
+]
 },
 "G:82C2B8": {
 "class": "AbstractClass",
@@ -309217,6 +309482,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"P:5BD5C0:0": {
+"class": "CCFileClass",
+"obs": [],
+"ents": [
+"P:5BD5C0:0"
+]
 },
 "G:ABF2A4": {
 "class": "AbstractClass",
@@ -310040,8 +310312,15 @@
 "obs": [],
 "ents": []
 },
+"P:5CA9B0:0": {
+"class": "DynamicVectorClass",
+"obs": [],
+"ents": [
+"P:5CA9B0:0"
+]
+},
 "P:5D7030:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "P:5D7030:0"
@@ -310071,6 +310350,13 @@
 "obs": [],
 "ents": [
 "G:830044"
+]
+},
+"P:5CB440:0": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:5CB440:0"
 ]
 },
 "R:5CB590:ecx": {
@@ -310836,6 +311122,20 @@
 "obs": [],
 "ents": []
 },
+"P:5D6450:1": {
+"class": "DynamicVectorClass",
+"obs": [],
+"ents": [
+"P:5D6450:1"
+]
+},
+"P:5D64C0:1": {
+"class": "DynamicVectorClass",
+"obs": [],
+"ents": [
+"P:5D64C0:1"
+]
+},
 "M:5D6540:this:0x8": {
 "class": "AbstractClass",
 "obs": [],
@@ -310845,6 +311145,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"P:5D6690:0": {
+"class": "DynamicVectorClass",
+"obs": [],
+"ents": [
+"P:5D6690:0"
+]
 },
 "M:5D67B0:this:0x38": {
 "class": "AbstractClass",
@@ -314509,16 +314816,18 @@
 ]
 },
 "P:6BA580:1": {
-"class": "IUnknown",
+"class": "DSurface",
 "obs": [],
 "ents": [
 "P:6BA580:1"
 ]
 },
 "P:6BA580:2": {
-"class": "AbstractClass",
+"class": "BSurface",
 "obs": [],
-"ents": []
+"ents": [
+"P:6BA580:2"
+]
 },
 "P:6BA580:3": {
 "class": "AbstractClass",
@@ -317693,7 +318002,7 @@
 "ents": []
 },
 "P:689D30:0": {
-"class": "AbstractClass",
+"class": "INIClass",
 "obs": [],
 "ents": [
 "P:689D30:0"
@@ -319622,7 +319931,7 @@
 ]
 },
 "P:672440:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672440:0"
@@ -319641,7 +319950,7 @@
 ]
 },
 "P:672360:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672360:0"
@@ -319655,7 +319964,7 @@
 ]
 },
 "P:6723D0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:6723D0:0"
@@ -319669,7 +319978,7 @@
 ]
 },
 "P:672280:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672280:0"
@@ -319683,7 +319992,7 @@
 ]
 },
 "P:672920:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672920:0"
@@ -319697,7 +320006,7 @@
 ]
 },
 "P:672A00:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672A00:0"
@@ -319711,21 +320020,21 @@
 ]
 },
 "P:672A70:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672A70:0"
 ]
 },
 "P:6743D0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:6743D0:0"
 ]
 },
 "P:672AE0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:672AE0:0"
@@ -319739,7 +320048,7 @@
 ]
 },
 "P:673E80:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:673E80:0"
@@ -319753,21 +320062,21 @@
 ]
 },
 "P:674000:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:674000:0"
 ]
 },
 "P:674240:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:674240:0"
 ]
 },
 "P:66D530:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66D530:0"
@@ -319781,7 +320090,7 @@
 ]
 },
 "P:679A10:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:679A10:0"
@@ -319795,47 +320104,49 @@
 ]
 },
 "P:66D270:0": {
-"class": "AbstractClass",
+"class": "CCINIClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:66D270:0"
+]
 },
 "P:66B900:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66B900:0"
 ]
 },
 "P:66BBB0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66BBB0:0"
 ]
 },
 "P:66CF70:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66CF70:0"
 ]
 },
 "P:66D150:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66D150:0"
 ]
 },
 "P:66D1F0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:66D1F0:0"
 ]
 },
 "P:668FB0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:668FB0:0"
@@ -323004,6 +323315,13 @@
 "obs": [],
 "ents": []
 },
+"P:672230:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:672230:0"
+]
+},
 "R:6722F0:ecx": {
 "class": "RulesClass",
 "obs": [],
@@ -323012,7 +323330,7 @@
 ]
 },
 "P:6722F0:0": {
-"class": "CCFileClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "P:6722F0:0"
@@ -323030,11 +323348,25 @@
 "T:6725F0"
 ]
 },
+"P:6725F0:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:6725F0:0"
+]
+},
 "R:6726D0:ecx": {
 "class": "RulesClass",
 "obs": [],
 "ents": [
 "T:6726D0"
+]
+},
+"P:6726D0:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:6726D0:0"
 ]
 },
 "R:672740:ecx": {
@@ -323044,6 +323376,13 @@
 "T:672740"
 ]
 },
+"P:672740:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:672740:0"
+]
+},
 "R:6727D0:ecx": {
 "class": "RulesClass",
 "obs": [],
@@ -323051,11 +323390,25 @@
 "T:6727D0"
 ]
 },
+"P:6727D0:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:6727D0:0"
+]
+},
 "R:672840:ecx": {
 "class": "RulesClass",
 "obs": [],
 "ents": [
 "T:672840"
+]
+},
+"P:672840:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:672840:0"
 ]
 },
 "G:83D0DC": {
@@ -323073,6 +323426,13 @@
 "obs": [],
 "ents": [
 "T:672990"
+]
+},
+"P:672990:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:672990:0"
 ]
 },
 "G:83D0F4": {
@@ -323488,6 +323848,13 @@
 "ents": [
 "T:674500",
 "P:66D270:2"
+]
+},
+"P:674500:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:674500:0"
 ]
 },
 "P:66D270:1": {
@@ -324235,7 +324602,9 @@
 "P:678850:0": {
 "class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:678850:0"
+]
 },
 "M:678850:this:0xB74": {
 "class": "TypeList",
@@ -326245,7 +326614,7 @@
 "ents": []
 },
 "P:692610:1": {
-"class": "IUnknown",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:692610:1"
@@ -328862,14 +329231,25 @@
 "ents": []
 },
 "P:65EAB0:2": {
-"class": "AbstractClass",
+"class": "Mission",
 "obs": [],
-"ents": []
+"ents": [
+"P:65EAB0:2"
+]
 },
 "P:43B5E0:0": {
-"class": "AbstractClass",
+"class": "CellClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:43B5E0:0"
+]
+},
+"P:43B5E0:1": {
+"class": "BulletClass",
+"obs": [],
+"ents": [
+"P:43B5E0:1"
+]
 },
 "M:6CE020:this:0x4": {
 "class": "AbstractClass",
@@ -329781,6 +330161,20 @@
 "obs": [],
 "ents": []
 },
+"P:6DD8B0:1": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:6DD8B0:1"
+]
+},
+"P:6DD8B0:2": {
+"class": "TriggerClass",
+"obs": [],
+"ents": [
+"P:6DD8B0:2"
+]
+},
 "P:6E3410:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -329838,7 +330232,7 @@
 ]
 },
 "P:6E5380:0": {
-"class": "AbstractClass",
+"class": "TriggerClass",
 "obs": [],
 "ents": [
 "P:6E5380:0"
@@ -329990,7 +330384,7 @@
 ]
 },
 "P:6E45E0:0": {
-"class": "AbstractClass",
+"class": "TriggerClass",
 "obs": [],
 "ents": [
 "P:6E45E0:0"
@@ -330324,7 +330718,7 @@
 ]
 },
 "P:7265C0:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:7265C0:0"
@@ -332766,16 +333160,18 @@
 ]
 },
 "P:7087C0:0": {
-"class": "AbstractClass",
+"class": "ObjectClass",
 "obs": [],
 "ents": [
 "P:7087C0:0"
 ]
 },
 "P:7087C0:1": {
-"class": "AbstractClass",
+"class": "WarheadTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:7087C0:1"
+]
 },
 "P:4F9A90:1": {
 "class": "AbstractClass",
@@ -333575,9 +333971,11 @@
 ]
 },
 "P:71AE50:0": {
-"class": "AbstractClass",
+"class": "TechnoClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:71AE50:0"
+]
 },
 "T:71AE50": {
 "class": "TemporalClass",
@@ -334490,6 +334888,13 @@
 "class": "AbstractClass",
 "obs": [],
 "ents": []
+},
+"P:73B140:0": {
+"class": "Surface",
+"obs": [],
+"ents": [
+"P:73B140:0"
+]
 },
 "M:73B140:this:0x16054": {
 "class": "ConvertClass",
@@ -335531,6 +335936,13 @@
 "G:B1D4A0"
 ]
 },
+"P:752DB0:0": {
+"class": "CCINIClass",
+"obs": [],
+"ents": [
+"P:752DB0:0"
+]
+},
 "G:846798": {
 "class": "AbstractClass",
 "obs": [],
@@ -336492,6 +336904,13 @@
 "obs": [],
 "ents": [
 "G:B72608"
+]
+},
+"P:763A50:0": {
+"class": "WaypointClass",
+"obs": [],
+"ents": [
+"P:763A50:0"
 ]
 },
 "M:763BA0:this:0x28": {
@@ -342141,6 +342560,13 @@
 "obs": [],
 "ents": []
 },
+"P:7B8A00:1": {
+"class": "SHPStruct",
+"obs": [],
+"ents": [
+"P:7B8A00:1"
+]
+},
 "P:7B93F0:0": {
 "class": "IUnknown",
 "obs": [],
@@ -342165,11 +342591,25 @@
 "obs": [],
 "ents": []
 },
+"P:7B90C0:0": {
+"class": "DSurface",
+"obs": [],
+"ents": [
+"P:7B90C0:0"
+]
+},
 "P:7B93F0:1": {
 "class": "IUnknown",
 "obs": [],
 "ents": [
 "P:7B93F0:1"
+]
+},
+"P:7B92D0:0": {
+"class": "DSurface",
+"obs": [],
+"ents": [
+"P:7B92D0:0"
 ]
 },
 "P:69E740:4": {
@@ -342215,7 +342655,7 @@
 ]
 },
 "P:437350:0": {
-"class": "DSurface",
+"class": "Surface",
 "obs": [],
 "ents": [
 "P:437350:0"
@@ -342229,7 +342669,7 @@
 ]
 },
 "P:437350:2": {
-"class": "DSurface",
+"class": "Surface",
 "obs": [],
 "ents": [
 "P:437350:2"
@@ -342525,6 +342965,13 @@
 "obs": [],
 "ents": [
 "T:7C04E0"
+]
+},
+"P:7C89D4:0": {
+"class": "GUID",
+"obs": [],
+"ents": [
+"P:7C89D4:0"
 ]
 },
 "P:7C8A8E:0": {
@@ -345240,7 +345687,7 @@
 ]
 },
 "N:76BE98": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:76BE98"
@@ -345318,7 +345765,7 @@
 ]
 },
 "N:457BE4": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:457BE4"
@@ -345365,7 +345812,7 @@
 "ents": []
 },
 "N:435C95": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:435C95"
@@ -345529,7 +345976,7 @@
 "ents": []
 },
 "N:49DEFC": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:49DEFC"
@@ -345563,7 +346010,7 @@
 "ents": []
 },
 "N:486AD9": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:486AD9"
@@ -347063,14 +347510,14 @@
 ]
 },
 "N:6B6D1F": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:6B6D1F"
 ]
 },
 "N:6B7FC8": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:6B7FC8"
@@ -347191,7 +347638,7 @@
 ]
 },
 "N:766889": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:766889"
@@ -347907,7 +348354,7 @@
 "ents": []
 },
 "N:732058": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:732058"
@@ -348527,7 +348974,7 @@
 "ents": []
 },
 "N:48A6BF": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:48A6BF"
@@ -349045,7 +349492,7 @@
 "ents": []
 },
 "N:5C0912": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:5C0912"
@@ -349301,7 +349748,7 @@
 "ents": []
 },
 "N:62EC25": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:62EC25"
@@ -349486,7 +349933,7 @@
 "ents": []
 },
 "N:6CA0EA": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:6CA0EA"
@@ -349530,35 +349977,35 @@
 "ents": []
 },
 "N:731EC0": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:731EC0"
 ]
 },
 "N:731F80": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:731F80"
 ]
 },
 "N:732ACE": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:732ACE"
 ]
 },
 "N:7334D2": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:7334D2"
 ]
 },
 "N:733816": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:733816"
@@ -349863,7 +350310,7 @@
 ]
 },
 "N:7CDA10": {
-"class": "VQMovieHandle",
+"class": "DynamicVectorClass",
 "obs": [],
 "ents": [
 "N:7CDA10"

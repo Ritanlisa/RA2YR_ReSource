@@ -2481,6 +2481,34 @@ def main():
     print("[C24] global-instance exact=%d (ambiguous=%d, globals_with_known_callees=%d)"
           % (_c24_exact, _c24_amb, len(_g_callees)), flush=True)
 
+    # ---------------- C25：YRpp 参数类型 ----------------
+    # YRpp 的函数声明带参数类型（如 `IsInSameZoneAs(AbstractClass* pTarget)`），
+    # 对 `P:<addr>:<i>` 直接定类（外部参照，二进制冲突时丢弃）。
+    _c25_exact = _c25_conflict = 0
+    try:
+        _yrpp25 = (jload("anchors/yrpp_params.json", {}) or {}).get("map") or {}
+    except Exception:
+        _yrpp25 = {}
+    for _k25, _cn25 in _yrpp25.items():
+        _a25s, _i25s = _k25.split(":")
+        _a25 = hx(_a25s)
+        _ci25 = resolve(_cn25)
+        if _a25 is None or _ci25 is None:
+            continue
+        _eid25 = "P:%X:%s" % (_a25, _i25s)
+        if _eid25 not in ents:
+            continue
+        if exact.get(_eid25):
+            if any(_ci != _ci25 for _ci, _src in exact[_eid25]):
+                _c25_conflict += 1
+            continue
+        exact[_eid25].append((_ci25, "C25:yrpp-param"))
+        exact_count["C25"] = exact_count.get("C25", 0) + 1
+        census["C25"] = census.get("C25", 0) + 1
+        _c25_exact += 1
+    print("[C25] YRpp param types exact=%d (conflicts=%d, pool=%d)"
+          % (_c25_exact, _c25_conflict, len(_yrpp25)), flush=True)
+
     # ---------------- C21：单函数自己的访问集合 vs 类布局 ----------------
     # C18 用的是「整簇观测并集」，会把同簇里多个函数的访问混在一起，掩盖单函数的指纹。
     # 这里对**每个函数**单独取它在 this 上的 (offset,width) 集合，要求某个类的布局
