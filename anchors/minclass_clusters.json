@@ -27880,7 +27880,7 @@
 ]
 },
 "R:4509D0:ecx": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -30151,7 +30151,7 @@
 ]
 },
 "R:4566B0:ecx": {
-"class": "BuildingClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 616,
@@ -42453,7 +42453,7 @@
 ]
 },
 "R:483C80:ecx": {
-"class": "CellClass",
+"class": "BuildingClass",
 "obs": [
 [
 76,
@@ -57497,31 +57497,7 @@
 4
 ],
 [
-4672,
-4
-],
-[
-4676,
-4
-],
-[
 4696,
-4
-],
-[
-5264,
-4
-],
-[
-5272,
-4
-],
-[
-5276,
-4
-],
-[
-5280,
 4
 ],
 [
@@ -85798,7 +85774,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F7870"
+]
 },
 "M:4F7870:this:0x34": {
 "class": "OverlayClass",
@@ -86097,7 +86075,7 @@
 ]
 },
 "R:4F93E0:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -86129,7 +86107,7 @@
 ]
 },
 "R:4F9610:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 52,
@@ -86379,7 +86357,7 @@
 ]
 },
 "R:4FA350:ecx": {
-"class": "TechnoClass",
+"class": "Sidebar",
 "obs": [
 [
 21424,
@@ -86634,7 +86612,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FB6B0"
+]
 },
 "R:4FB840:ecx": {
 "class": "GenericNode",
@@ -86684,14 +86664,16 @@
 "ents": []
 },
 "R:4FBD80:ecx": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 22104,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FBD80"
+]
 },
 "R:4FBE40:ecx": {
 "class": "HouseClass",
@@ -87395,7 +87377,7 @@
 "ents": []
 },
 "R:4FEA60:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [
 [
 52,
@@ -87694,7 +87676,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:5005B0"
+]
 },
 "R:500700:ecx": {
 "class": "Sidebar",
@@ -87724,10 +87708,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:500700"
+]
 },
 "R:5007A0:ecx": {
-"class": "AbstractClass",
+"class": "Sidebar",
 "obs": [
 [
 21456,
@@ -87906,7 +87892,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:501540"
+]
 },
 "R:501750:ecx": {
 "class": "HouseClass",
@@ -90049,6 +90037,13 @@
 ],
 "ents": []
 },
+"R:50CAD0:ecx": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"T:50CAD0"
+]
+},
 "P:4E0E80:2": {
 "class": "HouseClass",
 "obs": [
@@ -90248,7 +90243,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50DA50"
+]
 },
 "R:50DA80:ecx": {
 "class": "House",
@@ -110339,7 +110336,7 @@
 ]
 },
 "R:550260:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "TacticalClass",
 "obs": [
 [
 32,
@@ -122859,7 +122856,7 @@
 "ents": []
 },
 "R:5958E0:ecx": {
-"class": "VectorClass",
+"class": "RandomMap",
 "obs": [
 [
 376,
@@ -143393,7 +143390,10 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:5F8110",
+"P:7C9FF0:6"
+]
 },
 "M:5F8110:this:0xb0": {
 "class": "BuildingClass",
@@ -159773,7 +159773,7 @@
 "ents": []
 },
 "R:655250:ecx": {
-"class": "RadarClass",
+"class": "XSurface",
 "obs": [
 [
 260,
@@ -159852,7 +159852,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6557F0"
+]
 },
 "R:655890:ecx": {
 "class": "GraphicMenuItem",
@@ -160020,7 +160022,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:655C50"
+]
 },
 "P:655C50:0": {
 "class": "CellClass",
@@ -160145,6 +160149,58 @@
 ]
 ],
 "ents": []
+},
+"R:6565A0:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+260,
+4
+],
+[
+4636,
+4
+],
+[
+4672,
+4
+],
+[
+4676,
+4
+],
+[
+5264,
+4
+],
+[
+5272,
+4
+]
+],
+"ents": [
+"T:6565A0"
+]
+},
+"R:656750:ecx": {
+"class": "TacticalClass",
+"obs": [
+[
+4696,
+4
+],
+[
+5276,
+4
+],
+[
+5280,
+4
+]
+],
+"ents": [
+"T:656750"
+]
 },
 "P:656750:0": {
 "class": "CaptureManagerClass",
@@ -169630,7 +169686,7 @@
 "ents": []
 },
 "P:477D20:1": {
-"class": "AbstractClass",
+"class": "RulesClass",
 "obs": [
 [
 88,
@@ -171551,7 +171607,7 @@
 ]
 },
 "R:66D1F0:ecx": {
-"class": "HouseClass",
+"class": "RulesClass",
 "obs": [
 [
 6224,
@@ -178024,7 +178080,7 @@
 ]
 },
 "P:65C6D0:2": {
-"class": "IUnknown",
+"class": "ScenarioClass",
 "obs": [
 [
 1568,
@@ -178800,7 +178856,7 @@
 ]
 },
 "R:689310:ecx": {
-"class": "IUnknown",
+"class": "ScenarioClass",
 "obs": [
 [
 13528,
@@ -178832,7 +178888,7 @@
 ]
 },
 "R:689470:ecx": {
-"class": "IUnknown",
+"class": "ScenarioClass",
 "obs": [
 [
 1556,
@@ -178904,7 +178960,7 @@
 "ents": []
 },
 "R:689D30:ecx": {
-"class": "IUnknown",
+"class": "ScenarioClass",
 "obs": [
 [
 4396,
@@ -183120,7 +183176,7 @@
 "ents": []
 },
 "P:69D770:5": {
-"class": "WaveClass",
+"class": "MapFile",
 "obs": [
 [
 0,
@@ -183155,7 +183211,10 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69A3B0",
+"P:69D770:5"
+]
 },
 "P:69A3B0:0": {
 "class": "EnumConnectionsClass",
@@ -198365,6 +198424,13 @@
 "T:6D1610"
 ]
 },
+"R:6D1660:ecx": {
+"class": "TabClass",
+"obs": [],
+"ents": [
+"T:6D1660"
+]
+},
 "R:6D1810:ecx": {
 "class": "CarryoverClass",
 "obs": [
@@ -199996,7 +200062,7 @@
 ]
 },
 "R:6D8B30:ecx": {
-"class": "AbstractClass",
+"class": "TacticalClass",
 "obs": [
 [
 176,
@@ -205044,7 +205110,7 @@
 ]
 },
 "R:6EA870:ecx": {
-"class": "AbstractClass",
+"class": "TeamClass",
 "obs": [],
 "ents": [
 "T:6EA870"
@@ -246965,7 +247031,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:770430"
+]
 },
 "P:7AF2A0:2": {
 "class": "ScrollClass",
@@ -252171,7 +252239,7 @@
 ]
 },
 "R:7B1D10:ecx": {
-"class": "UDPInterfaceClass",
+"class": "AudioQueue",
 "obs": [
 [
 36,
@@ -256523,7 +256591,7 @@
 ]
 },
 "R:7BD170:ecx": {
-"class": "AbstractClass",
+"class": "UnitClass",
 "obs": [
 [
 88,
@@ -256765,7 +256833,7 @@
 "ents": []
 },
 "R:7BD690:ecx": {
-"class": "AbstractClass",
+"class": "BSurface",
 "obs": [
 [
 48,
@@ -256961,7 +257029,7 @@
 "ents": []
 },
 "R:7BDF80:ecx": {
-"class": "AbstractClass",
+"class": "DSurface",
 "obs": [
 [
 68,
@@ -257213,7 +257281,7 @@
 ]
 },
 "R:7BE670:ecx": {
-"class": "AbstractClass",
+"class": "UnitClass",
 "obs": [
 [
 128,
@@ -257317,7 +257385,7 @@
 "ents": []
 },
 "R:7BEA80:ecx": {
-"class": "OverlayClass",
+"class": "RulesClass",
 "obs": [
 [
 80,
@@ -257336,7 +257404,11 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7BEA80",
+"T:7C3960",
+"T:7C3910"
+]
 },
 "M:7BEA80:this:0x1a0": {
 "class": "TypeList",
@@ -257703,7 +257775,7 @@
 "ents": []
 },
 "R:7C1730:ecx": {
-"class": "TemporalClass",
+"class": "Buffer",
 "obs": [
 [
 64,
@@ -257729,7 +257801,7 @@
 "ents": []
 },
 "R:7C1A70:ecx": {
-"class": "TemporalClass",
+"class": "UnitClass",
 "obs": [
 [
 64,
@@ -257969,7 +258041,7 @@
 "ents": []
 },
 "R:7C35C0:ecx": {
-"class": "AbstractClass",
+"class": "RulesClass",
 "obs": [
 [
 20,
@@ -269067,7 +269139,7 @@
 ]
 },
 "R:55ABF0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55ABF0"
@@ -269283,7 +269355,7 @@
 ]
 },
 "R:55ABE0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55ABE0"
@@ -271226,7 +271298,7 @@
 ]
 },
 "R:55ABC0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55ABC0"
@@ -272074,7 +272146,7 @@
 ]
 },
 "R:55AB90:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55AB90"
@@ -272109,7 +272181,7 @@
 ]
 },
 "R:55A8F0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55A8F0"
@@ -272326,7 +272398,7 @@
 ]
 },
 "R:55AB70:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55AB70"
@@ -272375,7 +272447,7 @@
 ]
 },
 "R:55AB80:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55AB80"
@@ -272655,7 +272727,7 @@
 ]
 },
 "R:55AC00:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55AC00"
@@ -273167,7 +273239,7 @@
 ]
 },
 "R:55ACF0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55ACF0"
@@ -273265,7 +273337,7 @@
 ]
 },
 "R:55AD00:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:55AD00"
@@ -273489,7 +273561,7 @@
 ]
 },
 "R:4B4C80:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:4B4C80"
@@ -273783,7 +273855,7 @@
 ]
 },
 "R:4B4C50:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:4B4C50"
@@ -273825,7 +273897,7 @@
 ]
 },
 "R:4B4C90:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:4B4C90"
@@ -273860,7 +273932,7 @@
 ]
 },
 "R:4B4CA0:ecx": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "T:4B4CA0"
@@ -285976,7 +286048,7 @@
 ]
 },
 "M:471D40:this:0x48": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:471D40:this:0x48"
@@ -300557,7 +300629,7 @@
 "ents": []
 },
 "M:541370:this:0x48": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:541370:this:0x48"
@@ -300596,7 +300668,7 @@
 "ents": []
 },
 "M:5413B0:this:0x48": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:5413B0:this:0x48"
@@ -300610,7 +300682,7 @@
 ]
 },
 "M:5413F0:this:0x48": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:5413F0:this:0x48"
@@ -301533,7 +301605,7 @@
 ]
 },
 "M:550260:this:0x30": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:550260:this:0x30"
@@ -305568,7 +305640,7 @@
 "ents": []
 },
 "M:599650:this:0x48": {
-"class": "DriveLocomotionClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "M:599650:this:0x48"
@@ -343060,42 +343132,42 @@
 ]
 },
 "N:49BD3C": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:49BD3C"
 ]
 },
 "N:49BD55": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:49BD55"
 ]
 },
 "N:5C15C6": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C15C6"
 ]
 },
 "N:5C190B": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C190B"
 ]
 },
 "N:5C1AE2": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C1AE2"
 ]
 },
 "N:5C1CEF": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C1CEF"
@@ -343107,21 +343179,21 @@
 "ents": []
 },
 "N:5C3B75": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C3B75"
 ]
 },
 "N:5C3BE4": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C3BE4"
 ]
 },
 "N:5C4129": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C4129"
@@ -344190,7 +344262,7 @@
 ]
 },
 "N:6C403E": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:6C403E"
@@ -344364,7 +344436,7 @@
 "ents": []
 },
 "N:6C4F3E": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:6C4F3E"
@@ -345441,7 +345513,7 @@
 "ents": []
 },
 "N:4F1CDD": {
-"class": "WWMouseClass",
+"class": "FlyLocomotionClass",
 "obs": [],
 "ents": [
 "N:4F1CDD"

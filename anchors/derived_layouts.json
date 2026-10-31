@@ -6628,7 +6628,7 @@
 "DriveLocomotionClass": {
 "member_count": 21,
 "extent": 108,
-"clusters": 49,
+"clusters": 35,
 "members": [
 [
 0,
@@ -7022,7 +7022,7 @@
 "FlyLocomotionClass": {
 "member_count": 17,
 "extent": 93,
-"clusters": 36,
+"clusters": 50,
 "members": [
 [
 0,
@@ -23243,7 +23243,7 @@
 "UDPInterfaceClass": {
 "member_count": 7,
 "extent": 76,
-"clusters": 29,
+"clusters": 28,
 "members": [
 [
 0,

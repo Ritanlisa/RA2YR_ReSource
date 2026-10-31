@@ -2331,6 +2331,37 @@ def main():
     print("[C19] ctor-argument exact=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
           % (_c19_exact, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
 
+    # ---------------- C21：单函数自己的访问集合 vs 类布局 ----------------
+    # C18 用的是「整簇观测并集」，会把同簇里多个函数的访问混在一起，掩盖单函数的指纹。
+    # 这里对**每个函数**单独取它在 this 上的 (offset,width) 集合，要求某个类的布局
+    # 逐个精确覆盖（成员宽度够），且只被**一个**类覆盖 -> 该函数的类即那个类。
+    # 门槛：>=3 个访问且最大偏移 >=0x40（避免只看 +0..+16 的万能小类）。
+    _c21_exact = _c21_amb = _c21_none = 0
+    _lay21 = {}
+    for _i21 in range(n):
+        _mm21 = U["members"][_i21]
+        if _mm21 and len(_mm21) >= 5:
+            _lay21[_i21] = _mm21
+    for _fn21, _obs21 in _sig18.items():
+        if len(_obs21) < 3 or max(_o for (_o, _w) in _obs21) < 0x40:
+            continue
+        _eid21 = "T:%X" % _fn21
+        if _eid21 not in ents or exact.get(_eid21):
+            continue
+        _hits21 = [_ci for _ci, _mm in _lay21.items()
+                   if all(_mm.get(_o, 0) >= _w for (_o, _w) in _obs21)]
+        if len(_hits21) == 1:
+            exact[_eid21].append((_hits21[0], "C21:fn-layout"))
+            exact_count["C21"] = exact_count.get("C21", 0) + 1
+            census["C21"] = census.get("C21", 0) + 1
+            _c21_exact += 1
+        elif _hits21:
+            _c21_amb += 1
+        else:
+            _c21_none += 1
+    print("[C21] per-function layout exact=%d (ambiguous=%d no_match=%d layouts=%d)"
+          % (_c21_exact, _c21_amb, _c21_none, len(_lay21)), flush=True)
+
     # ---------------- 等式（union-find + 证据审计） ----------------
     uf = UF()
     ch_stats = collections.defaultdict(lambda: {"unions": 0, "exact_conflicts": 0,

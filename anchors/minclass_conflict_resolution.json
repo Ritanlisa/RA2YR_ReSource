@@ -253,17 +253,6 @@
   "class_after": null
  },
  {
-  "cluster": "P:7C9FF0:6",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C3",
-   "C11"
-  ],
-  "domain_after": 70,
-  "class_after": null
- },
- {
   "cluster": "R:624140:ecx",
   "dropped_family": "C18",
   "remaining_families": [
@@ -693,27 +682,6 @@
    "C3"
   ],
   "domain_after": 88,
-  "class_after": null
- },
- {
-  "cluster": "R:7BEA80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10",
-   "C11"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:7BEA80:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 829,
   "class_after": null
  },
  {
