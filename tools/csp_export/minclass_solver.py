@@ -1407,16 +1407,39 @@ def main():
             c1_range_cache[key] = m
         return m
 
+    _size_ok_cache = {}
+
+    def c1_size_mask(need):
+        """对象尺寸硬下界：类的 effective_size 必须 >= 已观测到的最大访问末端。
+        手工逆向时这是第一条排除规则（访问到 +0x500 的对象不可能是 40 字节的类），
+        而基线 C1 对稀疏布局类无条件放行，让任意小类都能"覆盖"任意大的偏移。"""
+        m = _size_ok_cache.get(need)
+        if m is None:
+            m = 0
+            for _i in range(n):
+                _sz = U["eff_size"][_i]
+                if not _sz or int(_sz) >= need:
+                    m |= (1 << _i)      # 尺寸未知的类不排除
+            _size_ok_cache[need] = m
+        return m
+
     def c1_mask(obs):
-        """C1：dense 类必须覆盖每个被访问的字节区间；稀疏类只做"未知放行"。"""
+        """C1：dense 类必须覆盖每个被访问的字节区间；稀疏类只做"未知放行"。
+        另加尺寸硬下界：类必须装得下观测到的最大偏移。"""
         key = tuple(sorted(obs))
         m = c1_cache.get(key)
         if m is None:
             m = FULL
+            _need = 0
             for (o, w) in key:
-                m &= c1_ok_mask(o, w if w else 4)
+                _ww = w if w else 4
+                m &= c1_ok_mask(o, _ww)
+                if o + _ww > _need:
+                    _need = o + _ww
                 if not m:
                     break
+            if m and _need:
+                m &= c1_size_mask(_need)
             c1_cache[key] = m
         return m
 

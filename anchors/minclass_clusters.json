@@ -190,7 +190,7 @@
 ]
 },
 "R:401F80:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -200,7 +200,7 @@
 "ents": []
 },
 "R:401F90:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -210,7 +210,7 @@
 "ents": []
 },
 "R:401FB0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -220,7 +220,7 @@
 "ents": []
 },
 "R:401FC0:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 4,
@@ -252,7 +252,7 @@
 ]
 },
 "R:402020:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -262,17 +262,14 @@
 "ents": []
 },
 "P:7C8E17:5": {
-"class": "LightConvertClass",
+"class": "AudioController",
 "obs": [
 [
 464,
 4
 ]
 ],
-"ents": [
-"T:402040",
-"P:7C8E17:5"
-]
+"ents": []
 },
 "P:401000:1": {
 "class": "Dial8Class",
@@ -304,7 +301,7 @@
 ]
 },
 "M:402220:this:0xac": {
-"class": "OverlayClass",
+"class": "PlacementList",
 "obs": [
 [
 232,
@@ -378,7 +375,7 @@
 ]
 },
 "M:402330:this:0x168": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -413,7 +410,7 @@
 ]
 },
 "R:402430:ecx": {
-"class": "ScriptClass",
+"class": "TaskForceClass",
 "obs": [
 [
 164,
@@ -579,7 +576,7 @@
 ]
 },
 "R:4026A0:ecx": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 212,
@@ -729,7 +726,7 @@
 ]
 },
 "R:402F60:ecx": {
-"class": "LogicClass",
+"class": "VeinholeMonsterClass",
 "obs": [
 [
 260,
@@ -807,7 +804,7 @@
 ]
 },
 "R:403490:ecx": {
-"class": "LogicClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 244,
@@ -817,7 +814,7 @@
 "ents": []
 },
 "R:4034A0:ecx": {
-"class": "OverlayClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 240,
@@ -837,7 +834,7 @@
 "ents": []
 },
 "R:403810:ecx": {
-"class": "LogicClass",
+"class": "ParasiteClass",
 "obs": [
 [
 268,
@@ -1394,7 +1391,7 @@
 ]
 },
 "R:405130:ecx": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -1404,7 +1401,7 @@
 "ents": []
 },
 "R:405160:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -1556,7 +1553,7 @@
 ]
 },
 "R:405490:ecx": {
-"class": "OverlayClass",
+"class": "Particle",
 "obs": [
 [
 344,
@@ -1566,7 +1563,7 @@
 "ents": []
 },
 "R:4054A0:ecx": {
-"class": "AbstractTypeClass",
+"class": "MissionClass",
 "obs": [
 [
 176,
@@ -1578,7 +1575,7 @@
 ]
 },
 "M:4054A0:this:0xb0": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 192,
@@ -1728,7 +1725,7 @@
 "ents": []
 },
 "R:4059F0:ecx": {
-"class": "OverlayClass",
+"class": "DropListClass",
 "obs": [
 [
 192,
@@ -1748,7 +1745,7 @@
 "ents": []
 },
 "R:405A00:ecx": {
-"class": "OverlayClass",
+"class": "DropListClass",
 "obs": [
 [
 192,
@@ -1774,7 +1771,7 @@
 ]
 },
 "P:4047B0:0": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 192,
@@ -1784,7 +1781,7 @@
 "ents": []
 },
 "M:405AC0:this:0xc0": {
-"class": "DynamicVectorClass",
+"class": "ScriptClass",
 "obs": [
 [
 36,
@@ -1974,7 +1971,7 @@
 "ents": []
 },
 "R:4065F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -2172,7 +2169,7 @@
 "ents": []
 },
 "M:407480:this:0x4": {
-"class": "Node",
+"class": "INIEntry",
 "obs": [
 [
 8,
@@ -2254,7 +2251,7 @@
 ]
 },
 "R:407A30:ecx": {
-"class": "OverlayClass",
+"class": "DropListClass",
 "obs": [
 [
 192,
@@ -2292,7 +2289,7 @@
 ]
 },
 "R:407A60:ecx": {
-"class": "OverlayClass",
+"class": "DropListClass",
 "obs": [
 [
 192,
@@ -2446,7 +2443,7 @@
 ]
 },
 "R:408070:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -2456,7 +2453,7 @@
 "ents": []
 },
 "R:4080B0:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -2466,7 +2463,7 @@
 "ents": []
 },
 "R:4080C0:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -2588,7 +2585,7 @@
 ]
 },
 "R:408540:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -2692,7 +2689,7 @@
 ]
 },
 "R:408840:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -2864,7 +2861,7 @@
 ]
 },
 "R:408EC0:ecx": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -2874,7 +2871,7 @@
 "ents": []
 },
 "R:408ED0:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -2884,7 +2881,7 @@
 "ents": []
 },
 "R:4090F0:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -2968,7 +2965,7 @@
 "ents": []
 },
 "R:409320:ecx": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 52,
@@ -2984,7 +2981,7 @@
 ]
 },
 "R:409330:ecx": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -3111,7 +3108,7 @@
 ]
 },
 "R:40A2D0:ecx": {
-"class": "OverlayClass",
+"class": "Particle",
 "obs": [
 [
 344,
@@ -3169,7 +3166,7 @@
 ]
 },
 "M:40A340:this:0x168": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -3295,7 +3292,7 @@
 ]
 },
 "M:40A6D0:this:0x158": {
-"class": "DropPodLocomotionClass",
+"class": "IPXConnClass",
 "obs": [
 [
 100,
@@ -5229,7 +5226,7 @@
 ]
 },
 "M:40E340:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -5239,7 +5236,7 @@
 "ents": []
 },
 "M:40E340:p0:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -5261,7 +5258,7 @@
 ]
 },
 "M:40E340:this:0x4": {
-"class": "Node",
+"class": "INIEntry",
 "obs": [
 [
 8,
@@ -5291,7 +5288,7 @@
 ]
 },
 "M:40E390:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -7298,7 +7295,7 @@
 ]
 },
 "M:413F80:this:0x21c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -8169,7 +8166,7 @@
 ]
 },
 "R:4197C0:ecx": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 1728,
@@ -8181,7 +8178,7 @@
 ]
 },
 "P:4197C0:0": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -8519,7 +8516,7 @@
 ]
 },
 "P:41B6A0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -8529,7 +8526,7 @@
 "ents": []
 },
 "M:41B6A0:p0:0x4": {
-"class": "ScriptClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 3580,
@@ -8569,7 +8566,7 @@
 "ents": []
 },
 "P:41B840:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -8709,7 +8706,7 @@
 ]
 },
 "M:41BC30:this:0x6bc": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -9472,7 +9469,7 @@
 ]
 },
 "M:41D540:this:0x50": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -9564,7 +9561,7 @@
 ]
 },
 "R:41D830:ecx": {
-"class": "GenericNode",
+"class": "AlphaShapeClass",
 "obs": [
 [
 60,
@@ -9726,7 +9723,7 @@
 ]
 },
 "M:41DB40:this:0x50": {
-"class": "MissionClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 660,
@@ -10373,7 +10370,7 @@
 ]
 },
 "P:41EE90:0": {
-"class": "DropPodLocomotionClass",
+"class": "GaugeClass",
 "obs": [
 [
 64,
@@ -10459,7 +10456,7 @@
 ]
 },
 "M:41F580:this:0xdc": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -10469,7 +10466,7 @@
 "ents": []
 },
 "M:41F580:this:0xe0": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -10563,7 +10560,7 @@
 ]
 },
 "R:41FD30:ecx": {
-"class": "OverlayClass",
+"class": "IPXGlobalConnClass",
 "obs": [
 [
 216,
@@ -10573,7 +10570,7 @@
 "ents": []
 },
 "R:41FD40:ecx": {
-"class": "OverlayClass",
+"class": "TriggerClass",
 "obs": [
 [
 220,
@@ -10583,7 +10580,7 @@
 "ents": []
 },
 "R:41FD50:ecx": {
-"class": "ScriptClass",
+"class": "TriggerClass",
 "obs": [
 [
 224,
@@ -10693,7 +10690,7 @@
 ]
 },
 "P:420270:0": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 131076,
@@ -10703,7 +10700,7 @@
 "ents": []
 },
 "R:4202F0:ecx": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 0,
@@ -11693,7 +11690,7 @@
 ]
 },
 "P:421EA0:0": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -11740,9 +11737,7 @@
 4
 ]
 ],
-"ents": [
-"P:421EA0:0"
-]
+"ents": []
 },
 "R:422720:ecx": {
 "class": "AnimClass",
@@ -12615,7 +12610,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:424C90"
+]
 },
 "R:424CA0:ecx": {
 "class": "AbstractClass",
@@ -12930,7 +12927,7 @@
 ]
 },
 "M:425410:this:0xcc": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -13196,7 +13193,7 @@
 ]
 },
 "R:4260F0:ecx": {
-"class": "ScriptClass",
+"class": "TagTypeClass",
 "obs": [
 [
 156,
@@ -13439,7 +13436,7 @@
 ]
 },
 "R:426A73:ecx": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -14453,7 +14450,7 @@
 ]
 },
 "M:429830:p0:0xe8": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -14599,28 +14596,24 @@
 ]
 },
 "M:42A460:this:0x10": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 1048576,
 4
 ]
 ],
-"ents": [
-"M:42A460:this:0x10"
-]
+"ents": []
 },
 "M:42A460:this:0xc": {
-"class": "BuildingTypeClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 1572864,
 4
 ]
 ],
-"ents": [
-"M:42A460:this:0xc"
-]
+"ents": []
 },
 "R:42A5B0:ecx": {
 "class": "ConvertClass",
@@ -14659,7 +14652,7 @@
 ]
 },
 "M:42A5B0:this:0xc": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 1572864,
@@ -14669,7 +14662,7 @@
 "ents": []
 },
 "M:42A5B0:this:0x10": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 1048576,
@@ -14679,7 +14672,7 @@
 "ents": []
 },
 "M:42A5B0:this:0x14": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -14689,7 +14682,7 @@
 "ents": []
 },
 "M:42A5B0:this:0x68": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -14795,7 +14788,7 @@
 ]
 },
 "M:42A6D0:this:0x10": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 1048576,
@@ -14805,7 +14798,7 @@
 "ents": []
 },
 "M:42A6D0:this:0x14": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -14815,7 +14808,7 @@
 "ents": []
 },
 "M:42A6D0:this:0x68": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -14869,7 +14862,7 @@
 ]
 },
 "M:42A900:this:0x14": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -14879,7 +14872,7 @@
 "ents": []
 },
 "M:42A900:this:0x68": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -15107,7 +15100,7 @@
 ]
 },
 "M:42C290:p0:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -15158,7 +15151,7 @@
 ]
 },
 "R:42CF80:ecx": {
-"class": "GenericNode",
+"class": "MSBinkAnim",
 "obs": [
 [
 56,
@@ -15188,7 +15181,7 @@
 ]
 },
 "P:42A5B0:3": {
-"class": "LightConvertClass",
+"class": "UnitClass",
 "obs": [
 [
 56,
@@ -15207,10 +15200,7 @@
 4
 ]
 ],
-"ents": [
-"T:42D170",
-"P:42A5B0:3"
-]
+"ents": []
 },
 "R:42D470:ecx": {
 "class": "CellClass",
@@ -16055,7 +16045,7 @@
 ]
 },
 "M:42E780:p0:0xe54": {
-"class": "MissionClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 660,
@@ -16065,7 +16055,7 @@
 "ents": []
 },
 "R:42E800:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -16161,7 +16151,7 @@
 ]
 },
 "P:42EB50:1": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -16271,7 +16261,7 @@
 ]
 },
 "M:42F260:this:0x8": {
-"class": "Node",
+"class": "WOLPersona",
 "obs": [
 [
 8,
@@ -17065,7 +17055,7 @@
 ]
 },
 "R:4305E0:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -17075,7 +17065,7 @@
 "ents": []
 },
 "R:430610:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -17085,7 +17075,7 @@
 "ents": []
 },
 "R:430650:ecx": {
-"class": "ScriptClass",
+"class": "ParasiteClass",
 "obs": [
 [
 272,
@@ -17204,7 +17194,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:430BA0:0"
+]
 },
 "P:430F60:0": {
 "class": "GraphicMenuItem",
@@ -18254,7 +18246,7 @@
 ]
 },
 "P:432750:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -18304,7 +18296,7 @@
 ]
 },
 "R:432C10:ecx": {
-"class": "GenericNode",
+"class": "Field",
 "obs": [
 [
 32,
@@ -18314,7 +18306,7 @@
 "ents": []
 },
 "R:432C30:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -18412,7 +18404,7 @@
 ]
 },
 "M:432E40:this:0x4": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -18575,7 +18567,7 @@
 ]
 },
 "M:433330:this:0x20": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -18745,7 +18737,7 @@
 ]
 },
 "R:433CE0:ecx": {
-"class": "GenericNode",
+"class": "GameResult",
 "obs": [
 [
 64,
@@ -18815,7 +18807,7 @@
 ]
 },
 "R:434100:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -19423,7 +19415,7 @@
 ]
 },
 "M:4361D0:this:0xe0": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -19555,7 +19547,7 @@
 ]
 },
 "M:436BE0:this:0xe4": {
-"class": "OverlayClass",
+"class": "TerrainClass",
 "obs": [
 [
 540,
@@ -19567,7 +19559,7 @@
 ]
 },
 "M:436BE0:p0:0xe4": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -19673,7 +19665,7 @@
 ]
 },
 "M:436F40:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -19997,7 +19989,7 @@
 ]
 },
 "R:4381D0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -20019,7 +20011,7 @@
 ]
 },
 "R:438300:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -20181,7 +20173,7 @@
 ]
 },
 "R:438A00:ecx": {
-"class": "ConnectionClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 48,
@@ -20241,7 +20233,7 @@
 ]
 },
 "M:438A90:this:0x28": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -20251,7 +20243,7 @@
 "ents": []
 },
 "M:438A90:this:0x24": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -20261,7 +20253,7 @@
 "ents": []
 },
 "M:438A90:this:0x2c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -20329,7 +20321,7 @@
 "ents": []
 },
 "P:438BF0:0": {
-"class": "DropPodLocomotionClass",
+"class": "Pathfinding",
 "obs": [
 [
 104,
@@ -22176,7 +22168,7 @@
 ]
 },
 "P:43DA80:0": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 1092,
@@ -22502,7 +22494,7 @@
 ]
 },
 "P:43EF90:0": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 1032,
@@ -22521,9 +22513,7 @@
 1
 ]
 ],
-"ents": [
-"P:43EF90:0"
-]
+"ents": []
 },
 "P:6F4A70:1": {
 "class": "BuildingClass",
@@ -22625,7 +22615,7 @@
 "ents": []
 },
 "M:43F180:this:0x294": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -22869,7 +22859,7 @@
 ]
 },
 "M:43FB20:this:0x294": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -23100,7 +23090,7 @@
 ]
 },
 "P:440580:0": {
-"class": "TechnoClass",
+"class": "AnimClass",
 "obs": [
 [
 0,
@@ -23816,16 +23806,14 @@
 ]
 },
 "M:442D90:this:0x21c": {
-"class": "LayerClass",
+"class": "Network",
 "obs": [
 [
 502,
 1
 ]
 ],
-"ents": [
-"M:442D90:this:0x21c"
-]
+"ents": []
 },
 "R:443410:ecx": {
 "class": "BuildingClass",
@@ -24830,7 +24818,7 @@
 ]
 },
 "M:445F80:p0:0x28": {
-"class": "ScriptClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 200,
@@ -25878,7 +25866,7 @@
 "ents": []
 },
 "M:448260:this:0x294": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -26567,7 +26555,7 @@
 ]
 },
 "M:449C30:this:0x34": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -27144,7 +27132,7 @@
 ]
 },
 "P:44D760:0": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -27984,7 +27972,7 @@
 ]
 },
 "M:4509D0:this:0x584": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -28233,7 +28221,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"T:4521C0"
+]
 },
 "R:452210:ecx": {
 "class": "AircraftClass",
@@ -28486,7 +28476,7 @@
 ]
 },
 "R:452540:ecx": {
-"class": "MissionClass",
+"class": "BulletClass",
 "obs": [
 [
 1312,
@@ -28510,7 +28500,7 @@
 ]
 },
 "R:4525F0:ecx": {
-"class": "OverlayClass",
+"class": "BulletClass",
 "obs": [
 [
 1312,
@@ -29448,7 +29438,7 @@
 ]
 },
 "M:4549B0:this:0x21c": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 676,
@@ -29967,7 +29957,7 @@
 ]
 },
 "M:455F10:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 48,
@@ -30036,7 +30026,7 @@
 ]
 },
 "M:4561F0:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 48,
@@ -30292,7 +30282,7 @@
 ]
 },
 "M:456E00:this:0x294": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -30664,7 +30654,7 @@
 ]
 },
 "M:457CE0:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 52,
@@ -30860,7 +30850,7 @@
 ]
 },
 "M:458750:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 52,
@@ -30947,7 +30937,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:458A80:0"
+]
 },
 "R:458DB0:ecx": {
 "class": "BuildingClass",
@@ -31063,7 +31055,7 @@
 ]
 },
 "M:459470:this:0x2e4": {
-"class": "OverlayClass",
+"class": "TerrainClass",
 "obs": [
 [
 740,
@@ -31203,7 +31195,7 @@
 ]
 },
 "R:4598A0:ecx": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 1312,
@@ -35105,7 +35097,7 @@
 ]
 },
 "M:4666E0:this:0x10c": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -35125,7 +35117,7 @@
 "ents": []
 },
 "M:4666E0:this:0xb0": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -35243,7 +35235,7 @@
 ]
 },
 "P:468090:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -35285,7 +35277,7 @@
 "ents": []
 },
 "R:468430:ecx": {
-"class": "LogicClass",
+"class": "ParasiteClass",
 "obs": [
 [
 268,
@@ -35390,7 +35382,7 @@
 ]
 },
 "M:468670:this:0xb0": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -35468,7 +35460,7 @@
 ]
 },
 "M:468BB0:this:0xb0": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -35513,7 +35505,7 @@
 ]
 },
 "M:468D80:this:0x128": {
-"class": "XSurface",
+"class": "Particle",
 "obs": [
 [
 340,
@@ -35523,7 +35515,7 @@
 "ents": []
 },
 "M:468D80:this:0x10c": {
-"class": "OverlayClass",
+"class": "BulletClass",
 "obs": [
 [
 1312,
@@ -35659,7 +35651,7 @@
 ]
 },
 "P:4690B0:0": {
-"class": "AircraftClass",
+"class": "TechnoClass",
 "obs": [
 [
 0,
@@ -35837,7 +35829,7 @@
 ]
 },
 "M:4690B0:p0:0xe4": {
-"class": "OverlayClass",
+"class": "Dialog",
 "obs": [
 [
 1732,
@@ -35863,7 +35855,7 @@
 ]
 },
 "M:4690B0:p0:0x21c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -35937,7 +35929,7 @@
 ]
 },
 "M:46A310:this:0xb0": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -36001,7 +35993,7 @@
 ]
 },
 "R:46B260:ecx": {
-"class": "OverlayClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 304,
@@ -36013,7 +36005,7 @@
 ]
 },
 "R:46B270:ecx": {
-"class": "OverlayClass",
+"class": "COMClass",
 "obs": [
 [
 304,
@@ -36023,7 +36015,7 @@
 "ents": []
 },
 "R:46B280:ecx": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -36994,7 +36986,7 @@
 ]
 },
 "M:471A50:this:0x48": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -37125,7 +37117,7 @@
 "ents": []
 },
 "M:471D40:p0:0x2c8": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -37135,7 +37127,7 @@
 "ents": []
 },
 "R:471F90:ecx": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 40,
@@ -37215,7 +37207,7 @@
 ]
 },
 "R:4722C0:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -37225,7 +37217,7 @@
 "ents": []
 },
 "R:4722D0:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -37271,7 +37263,7 @@
 ]
 },
 "M:4723B0:this:0x48": {
-"class": "OverlayClass",
+"class": "TerrainClass",
 "obs": [
 [
 540,
@@ -37359,7 +37351,7 @@
 ]
 },
 "M:4726F0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -37369,7 +37361,7 @@
 "ents": []
 },
 "P:4728E0:0": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 40,
@@ -38007,7 +37999,7 @@
 ]
 },
 "M:473460:this:0x4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -38031,7 +38023,7 @@
 "ents": []
 },
 "M:4734B0:this:0x4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -38041,7 +38033,7 @@
 "ents": []
 },
 "R:473500:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -38051,7 +38043,7 @@
 "ents": []
 },
 "M:473500:this:0x4": {
-"class": "GenericNode",
+"class": "ToggleClass",
 "obs": [
 [
 48,
@@ -38587,7 +38579,7 @@
 ]
 },
 "R:476D80:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WaypointPathClass",
 "obs": [
 [
 64,
@@ -38597,7 +38589,7 @@
 "ents": []
 },
 "P:526470:1": {
-"class": "GenericNode",
+"class": "GameResult",
 "obs": [
 [
 64,
@@ -38607,7 +38599,7 @@
 "ents": []
 },
 "R:476EA0:ecx": {
-"class": "GenericNode",
+"class": "GameResult",
 "obs": [
 [
 64,
@@ -39995,7 +39987,7 @@
 ]
 },
 "P:47AE10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -40038,7 +40030,7 @@
 ]
 },
 "P:47B3A0:0": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 0,
@@ -40053,7 +40045,11 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:47B3A0:0",
+"T:485080",
+"P:47B3A0:1"
+]
 },
 "R:47BB60:ecx": {
 "class": "CellClass",
@@ -40540,7 +40536,7 @@
 ]
 },
 "M:47C3D0:this:0xe8": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -40568,7 +40564,7 @@
 ]
 },
 "M:47C4D0:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -40590,7 +40586,7 @@
 ]
 },
 "M:47C520:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -40616,7 +40612,7 @@
 ]
 },
 "M:47C550:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -40626,7 +40622,7 @@
 "ents": []
 },
 "R:47C5A0:ecx": {
-"class": "MissionClass",
+"class": "RadioClass",
 "obs": [
 [
 228,
@@ -40638,7 +40634,7 @@
 ]
 },
 "M:47C5A0:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -40660,7 +40656,7 @@
 ]
 },
 "M:47C620:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -40818,7 +40814,7 @@
 ]
 },
 "P:47DD70:0": {
-"class": "DynamicVector",
+"class": "Voice",
 "obs": [
 [
 360,
@@ -41000,7 +40996,7 @@
 ]
 },
 "M:47EBA0:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -41026,7 +41022,7 @@
 ]
 },
 "M:47EBF0:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -41052,7 +41048,7 @@
 ]
 },
 "M:47EC40:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -41282,7 +41278,7 @@
 ]
 },
 "M:47F6A0:p0:0xe0": {
-"class": "MissionClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 660,
@@ -41570,7 +41566,7 @@
 ]
 },
 "M:480510:this:0xe4": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 48,
@@ -41840,7 +41836,7 @@
 ]
 },
 "M:481670:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -41870,7 +41866,7 @@
 ]
 },
 "M:481670:p0:0x21c": {
-"class": "XSurface",
+"class": "TooltipClass",
 "obs": [
 [
 588,
@@ -41974,7 +41970,7 @@
 ]
 },
 "P:481A00:0": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -42214,7 +42210,7 @@
 ]
 },
 "M:481A00:p0:0x8e8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -42244,7 +42240,7 @@
 "ents": []
 },
 "M:481A00:p0:0x28": {
-"class": "OverlayClass",
+"class": "TacticalMapClass",
 "obs": [
 [
 180,
@@ -42290,7 +42286,7 @@
 ]
 },
 "R:483480:ecx": {
-"class": "MissionClass",
+"class": "RadioClass",
 "obs": [
 [
 228,
@@ -42302,7 +42298,7 @@
 ]
 },
 "M:483480:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -42319,7 +42315,7 @@
 ]
 },
 "R:483610:ecx": {
-"class": "ScriptClass",
+"class": "Coord",
 "obs": [
 [
 320,
@@ -42427,7 +42423,7 @@
 ]
 },
 "P:483C10:0": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -42565,7 +42561,7 @@
 ]
 },
 "P:483E30:0": {
-"class": "ScriptClass",
+"class": "FrameTimer",
 "obs": [
 [
 404,
@@ -42635,7 +42631,7 @@
 ]
 },
 "P:484180:0": {
-"class": "LightConvertClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -42682,9 +42678,7 @@
 4
 ]
 ],
-"ents": [
-"P:484180:0"
-]
+"ents": []
 },
 "R:484680:ecx": {
 "class": "HouseTypeClass",
@@ -42735,7 +42729,7 @@
 ]
 },
 "P:484A80:0": {
-"class": "ScriptClass",
+"class": "FrameTimer",
 "obs": [
 [
 404,
@@ -42825,7 +42819,7 @@
 ]
 },
 "M:484F50:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -42835,7 +42829,7 @@
 "ents": []
 },
 "R:484FF0:ecx": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -42894,7 +42888,7 @@
 ]
 },
 "R:485130:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 40,
@@ -43209,7 +43203,7 @@
 ]
 },
 "R:4863A0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -43283,7 +43277,7 @@
 ]
 },
 "R:4866D0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -43293,7 +43287,7 @@
 "ents": []
 },
 "R:4866F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -43303,7 +43297,7 @@
 "ents": []
 },
 "R:486730:ecx": {
-"class": "ScriptClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 56,
@@ -43467,7 +43461,7 @@
 ]
 },
 "R:486A70:ecx": {
-"class": "DynamicVectorClass",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -43551,7 +43545,7 @@
 ]
 },
 "R:486D90:ecx": {
-"class": "OverlayClass",
+"class": "TriggerClass",
 "obs": [
 [
 220,
@@ -43563,7 +43557,7 @@
 ]
 },
 "P:486D90:0": {
-"class": "OverlayClass",
+"class": "TriggerClass",
 "obs": [
 [
 220,
@@ -43581,7 +43575,7 @@
 ]
 },
 "M:486FF0:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -43763,7 +43757,7 @@
 ]
 },
 "R:4879B0:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -43817,7 +43811,7 @@
 ]
 },
 "R:487C10:ecx": {
-"class": "OverlayClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 284,
@@ -43829,7 +43823,7 @@
 ]
 },
 "M:487C10:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -43895,7 +43889,7 @@
 ]
 },
 "R:487D70:ecx": {
-"class": "MissionClass",
+"class": "RadioClass",
 "obs": [
 [
 224,
@@ -43907,7 +43901,7 @@
 ]
 },
 "M:487D70:this:0xe0": {
-"class": "LogicClass",
+"class": "DynamicVectorClass",
 "obs": [
 [
 20,
@@ -43947,7 +43941,7 @@
 ]
 },
 "M:487E00:this:0xe4": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -44453,7 +44447,7 @@
 ]
 },
 "P:489280:0": {
-"class": "AbstractClass",
+"class": "RulesClass",
 "obs": [
 [
 0,
@@ -44572,9 +44566,7 @@
 4
 ]
 ],
-"ents": [
-"P:489280:0"
-]
+"ents": []
 },
 "M:489280:p0:0xe4": {
 "class": "WaveClass",
@@ -45181,7 +45173,7 @@
 "ents": []
 },
 "R:48B9E0:ecx": {
-"class": "ConnectionClass",
+"class": "CommBufferClass",
 "obs": [
 [
 52,
@@ -45231,7 +45223,7 @@
 "ents": []
 },
 "R:48BA90:ecx": {
-"class": "GenericNode",
+"class": "Field",
 "obs": [
 [
 32,
@@ -45517,7 +45509,7 @@
 ]
 },
 "M:48C320:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -45599,7 +45591,7 @@
 ]
 },
 "M:48C5A0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -47060,7 +47052,7 @@
 ]
 },
 "R:4913F0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47100,7 +47092,7 @@
 "ents": []
 },
 "R:4914C0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47322,7 +47314,7 @@
 ]
 },
 "R:491820:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47422,7 +47414,7 @@
 ]
 },
 "P:491B40:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47550,7 +47542,7 @@
 ]
 },
 "R:4924C0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47652,7 +47644,7 @@
 "ents": []
 },
 "R:492670:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -47868,7 +47860,7 @@
 ]
 },
 "R:492B00:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -48384,7 +48376,7 @@
 ]
 },
 "R:493600:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -49968,7 +49960,7 @@
 ]
 },
 "R:4960A0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -52514,7 +52506,7 @@
 ]
 },
 "R:49B720:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -52680,7 +52672,7 @@
 ]
 },
 "P:49BE40:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -54056,7 +54048,7 @@
 ]
 },
 "R:49FB60:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -54256,7 +54248,7 @@
 ]
 },
 "P:4A0610:0": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -54350,7 +54342,7 @@
 ]
 },
 "P:4A0AF0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -54360,7 +54352,7 @@
 "ents": []
 },
 "P:4A0B10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -54660,7 +54652,7 @@
 ]
 },
 "M:4A0F80:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -54722,7 +54714,7 @@
 ]
 },
 "M:4A10D0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -54796,7 +54788,7 @@
 ]
 },
 "M:4A1200:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -55340,7 +55332,7 @@
 ]
 },
 "P:4A2A20:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -55472,7 +55464,7 @@
 ]
 },
 "P:4A2EA0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55482,7 +55474,7 @@
 "ents": []
 },
 "P:4A2EE0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55492,7 +55484,7 @@
 "ents": []
 },
 "P:4A2F10:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55502,7 +55494,7 @@
 "ents": []
 },
 "P:4A2F40:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55512,7 +55504,7 @@
 "ents": []
 },
 "P:4A2F80:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55522,7 +55514,7 @@
 "ents": []
 },
 "P:4A2FC0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55532,7 +55524,7 @@
 "ents": []
 },
 "P:4A2FF0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -55611,7 +55603,7 @@
 ]
 },
 "R:4A33A0:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -55697,31 +55689,27 @@
 ]
 },
 "R:4A3630:ecx": {
-"class": "LightConvertClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 98304,
 4
 ]
 ],
-"ents": [
-"T:4A3630"
-]
+"ents": []
 },
 "R:4A3640:ecx": {
-"class": "IUnknown",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 98304,
 4
 ]
 ],
-"ents": [
-"T:4A3640"
-]
+"ents": []
 },
 "R:4A3660:ecx": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 98304,
@@ -55731,7 +55719,7 @@
 "ents": []
 },
 "R:4A3840:ecx": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 98304,
@@ -56500,7 +56488,7 @@
 ]
 },
 "R:4A5950:ecx": {
-"class": "OverlayClass",
+"class": "TacticalMapClass",
 "obs": [
 [
 180,
@@ -56682,7 +56670,7 @@
 ]
 },
 "R:4A71A0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -57735,7 +57723,7 @@
 ]
 },
 "M:4AAD30:this:0x11a4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -58061,7 +58049,7 @@
 ]
 },
 "P:4AC700:0": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -58237,7 +58225,7 @@
 ]
 },
 "P:4ACE70:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -58284,9 +58272,7 @@
 1
 ]
 ],
-"ents": [
-"P:4ACE70:0"
-]
+"ents": []
 },
 "P:4ADBA0:0": {
 "class": "CellClass",
@@ -58343,7 +58329,7 @@
 "ents": []
 },
 "P:545000:0": {
-"class": "DropPodLocomotionClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -58799,7 +58785,7 @@
 ]
 },
 "P:4AFC90:0": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 48,
@@ -59173,7 +59159,7 @@
 ]
 },
 "P:4B0EF0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -59485,7 +59471,7 @@
 ]
 },
 "M:4B0F20:p0:0xe4": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -59823,7 +59809,7 @@
 ]
 },
 "P:4B4BE0:0": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -59833,7 +59819,7 @@
 "ents": []
 },
 "P:4B4BF0:0": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -59843,7 +59829,7 @@
 "ents": []
 },
 "P:4B4C00:0": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -59853,7 +59839,7 @@
 "ents": []
 },
 "P:4B4C10:0": {
-"class": "DropPodLocomotionClass",
+"class": "Territory",
 "obs": [
 [
 88,
@@ -59863,7 +59849,7 @@
 "ents": []
 },
 "P:4B4C20:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -60135,7 +60121,7 @@
 ]
 },
 "M:4B54E0:this:0xa8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -60529,7 +60515,7 @@
 ]
 },
 "P:4B6440:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -60673,7 +60659,7 @@
 "ents": []
 },
 "P:4B6C30:0": {
-"class": "BuildingTypeClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 0,
@@ -60843,7 +60829,7 @@
 "ents": []
 },
 "M:4B6C30:p0:0x20": {
-"class": "GenericNode",
+"class": "BinkMovieClass",
 "obs": [
 [
 44,
@@ -60853,7 +60839,7 @@
 "ents": []
 },
 "M:4B6C30:p0:0x24": {
-"class": "GenericNode",
+"class": "BinkMovieClass",
 "obs": [
 [
 44,
@@ -61504,7 +61490,7 @@
 ]
 },
 "M:4BAD70:this:0x20": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -61767,7 +61753,7 @@
 ]
 },
 "P:4BBCA0:0": {
-"class": "MechLocomotionClass",
+"class": "TunnelLocomotionClass",
 "obs": [
 [
 0,
@@ -61810,7 +61796,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4BBCA0:0"
+]
 },
 "R:4BC750:ecx": {
 "class": "DSurface",
@@ -62405,7 +62393,7 @@
 ]
 },
 "R:4C2C10:ecx": {
-"class": "GenericNode",
+"class": "Field",
 "obs": [
 [
 32,
@@ -62415,7 +62403,7 @@
 "ents": []
 },
 "M:4C2C10:this:0x20": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 1756,
@@ -64337,7 +64325,7 @@
 ]
 },
 "R:4C9C50:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "ButtonClass",
 "obs": [
 [
 92,
@@ -64508,7 +64496,7 @@
 ]
 },
 "R:4C9FB0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "Territory",
 "obs": [
 [
 88,
@@ -64558,7 +64546,7 @@
 ]
 },
 "M:4C9FF0:this:0x58": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -64592,7 +64580,7 @@
 ]
 },
 "R:4CA120:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -64722,7 +64710,7 @@
 ]
 },
 "M:4CA430:this:0x58": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -65533,7 +65521,7 @@
 ]
 },
 "P:4CCA20:0": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -65891,7 +65879,7 @@
 "ents": []
 },
 "M:4CD600:p0:0x5a4": {
-"class": "OverlayClass",
+"class": "BulletClass",
 "obs": [
 [
 1312,
@@ -65925,7 +65913,7 @@
 ]
 },
 "M:4CE5A0:this:0xc": {
-"class": "LogicClass",
+"class": "WWMouseClass",
 "obs": [
 [
 108,
@@ -65971,7 +65959,7 @@
 ]
 },
 "M:4CE680:this:0xc": {
-"class": "DropPodLocomotionClass",
+"class": "NetworkDialog",
 "obs": [
 [
 140,
@@ -66141,7 +66129,7 @@
 ]
 },
 "M:4CE840:p0:0x6c4": {
-"class": "ScriptClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 3580,
@@ -66175,7 +66163,7 @@
 ]
 },
 "M:4CF950:this:0xc": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -66197,7 +66185,7 @@
 ]
 },
 "M:4CFA70:this:0xc": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 1732,
@@ -66209,7 +66197,7 @@
 ]
 },
 "P:4CFC10:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -66233,7 +66221,7 @@
 "ents": []
 },
 "P:4CFCF0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -66283,7 +66271,7 @@
 ]
 },
 "P:4CFE20:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -67382,7 +67370,7 @@
 ]
 },
 "M:4D29B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -67444,7 +67432,7 @@
 ]
 },
 "M:4D2B50:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -67518,7 +67506,7 @@
 ]
 },
 "M:4D2CD0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -68309,7 +68297,7 @@
 ]
 },
 "M:4D4280:this:0x5dc": {
-"class": "ScriptClass",
+"class": "Coord",
 "obs": [
 [
 320,
@@ -68756,7 +68744,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4D6AA0:0"
+]
 },
 "M:4D6AA0:this:0x6c4": {
 "class": "AircraftTypeClass",
@@ -68974,7 +68964,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4D7D50:0"
+]
 },
 "R:4D82B0:ecx": {
 "class": "FootClass",
@@ -69466,7 +69458,7 @@
 ]
 },
 "M:4D94B0:this:0x2b0": {
-"class": "DynamicVector",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 684,
@@ -70161,7 +70153,7 @@
 ]
 },
 "R:4DB8A0:ecx": {
-"class": "OverlayClass",
+"class": "Carryall",
 "obs": [
 [
 1652,
@@ -70601,7 +70593,7 @@
 ]
 },
 "R:4DC760:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "LocomotionClass",
 "obs": [
 [
 1492,
@@ -70691,7 +70683,7 @@
 ]
 },
 "P:4DC8C0:0": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 320,
@@ -71416,7 +71408,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4DF510:0"
+]
 },
 "R:4DF510:ecx": {
 "class": "AircraftClass",
@@ -72103,7 +72097,7 @@
 ]
 },
 "M:4E07E0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -72165,7 +72159,7 @@
 ]
 },
 "M:4E0990:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -72343,7 +72337,7 @@
 ]
 },
 "M:4E0CA0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -72901,7 +72895,7 @@
 ]
 },
 "P:4E2500:0": {
-"class": "DropPodLocomotionClass",
+"class": "CStreamClass",
 "obs": [
 [
 72,
@@ -72927,7 +72921,7 @@
 ]
 },
 "P:4E2580:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -73096,7 +73090,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4E2690:0"
+]
 },
 "R:4E2830:ecx": {
 "class": "GaugeClass",
@@ -73191,7 +73187,7 @@
 ]
 },
 "P:4E2A50:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -73221,7 +73217,7 @@
 ]
 },
 "P:4E2AF0:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -73251,7 +73247,7 @@
 ]
 },
 "P:4E2B20:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -83124,7 +83120,7 @@
 "ents": []
 },
 "P:4F1CA0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -83158,7 +83154,7 @@
 ]
 },
 "R:4F2640:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -84173,7 +84169,7 @@
 ]
 },
 "R:4F54A0:ecx": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 0,
@@ -85148,9 +85144,7 @@
 4
 ]
 ],
-"ents": [
-"T:4F54A0"
-]
+"ents": []
 },
 "M:4F54A0:this:0x34": {
 "class": "MissionClass",
@@ -85276,7 +85270,7 @@
 "ents": []
 },
 "P:4F6E60:0": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -85779,7 +85773,7 @@
 ]
 },
 "M:4F7870:this:0x34": {
-"class": "OverlayClass",
+"class": "TriggerTypeClass",
 "obs": [
 [
 184,
@@ -85986,7 +85980,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:4F8440:this:0x34"
+]
 },
 "P:4F8440:0": {
 "class": "HouseClass",
@@ -86049,7 +86045,7 @@
 "ents": []
 },
 "M:4F8440:p0:0x8e8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -86219,10 +86215,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4F9A10"
+]
 },
 "R:4F9A50:ecx": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -86233,9 +86231,7 @@
 4
 ]
 ],
-"ents": [
-"T:4F9A50"
-]
+"ents": []
 },
 "R:4F9A90:ecx": {
 "class": "AbstractClass",
@@ -86252,7 +86248,7 @@
 ]
 },
 "P:501540:1": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -86297,7 +86293,7 @@
 ]
 },
 "M:4F9B70:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 192,
@@ -86309,7 +86305,7 @@
 ]
 },
 "R:4F9F90:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -86468,7 +86464,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4FAD20"
+]
 },
 "R:4FAE50:ecx": {
 "class": "AbstractClass",
@@ -86617,7 +86615,7 @@
 ]
 },
 "R:4FB840:ecx": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -86627,7 +86625,7 @@
 "ents": []
 },
 "R:4FB920:ecx": {
-"class": "ConnectionClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -86708,7 +86706,7 @@
 ]
 },
 "M:4FBF60:this:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -86734,7 +86732,7 @@
 ]
 },
 "M:4FC060:this:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -86904,7 +86902,7 @@
 ]
 },
 "R:4FCE00:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 52,
@@ -86928,7 +86926,7 @@
 ]
 },
 "M:4FCE00:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 192,
@@ -87153,7 +87151,7 @@
 ]
 },
 "R:4FDD10:ecx": {
-"class": "BuildingTypeClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 36,
@@ -87256,10 +87254,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:4FDD10:0"
+]
 },
 "R:4FE3E0:ecx": {
-"class": "AbstractClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 96,
@@ -87322,9 +87322,7 @@
 4
 ]
 ],
-"ents": [
-"T:4FE3E0"
-]
+"ents": []
 },
 "P:4FE3E0:0": {
 "class": "RulesClass",
@@ -87473,7 +87471,7 @@
 ]
 },
 "M:4FF550:p0:0x520": {
-"class": "SmudgeTypeClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 1032,
@@ -87755,7 +87753,7 @@
 "ents": []
 },
 "R:500B40:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 48,
@@ -87774,9 +87772,7 @@
 4
 ]
 ],
-"ents": [
-"T:500B40"
-]
+"ents": []
 },
 "M:500B40:this:0x34": {
 "class": "Dial8Class",
@@ -87819,7 +87815,7 @@
 ]
 },
 "R:501210:ecx": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 52,
@@ -87945,7 +87941,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:501AC0"
+]
 },
 "P:501AC0:0": {
 "class": "CellClass",
@@ -87960,7 +87958,7 @@
 ]
 },
 "R:5025F0:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 52,
@@ -88250,7 +88248,7 @@
 ]
 },
 "M:502D60:this:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -88274,7 +88272,7 @@
 "ents": []
 },
 "R:504860:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 22048,
@@ -88285,9 +88283,7 @@
 4
 ]
 ],
-"ents": [
-"T:504860"
-]
+"ents": []
 },
 "R:505180:ecx": {
 "class": "HouseClass",
@@ -88355,7 +88351,7 @@
 ]
 },
 "P:505360:0": {
-"class": "LightConvertClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -88370,9 +88366,7 @@
 4
 ]
 ],
-"ents": [
-"P:505360:0"
-]
+"ents": []
 },
 "R:5054B0:ecx": {
 "class": "HouseClass",
@@ -88665,7 +88659,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:506EF0:0"
+]
 },
 "R:507B80:ecx": {
 "class": "HouseClass",
@@ -88684,7 +88680,7 @@
 ]
 },
 "M:507B80:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 188,
@@ -88712,7 +88708,7 @@
 ]
 },
 "M:507D70:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 188,
@@ -88740,7 +88736,7 @@
 ]
 },
 "M:507F60:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 188,
@@ -89031,7 +89027,7 @@
 "ents": []
 },
 "R:5092F0:ecx": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 21732,
@@ -89041,7 +89037,7 @@
 "ents": []
 },
 "M:5092F0:p0:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -89396,7 +89392,7 @@
 ]
 },
 "R:50A490:ecx": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 22280,
@@ -89424,7 +89420,7 @@
 "ents": []
 },
 "R:50A5C0:ecx": {
-"class": "HouseClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 48,
@@ -89491,12 +89487,10 @@
 4
 ]
 ],
-"ents": [
-"T:50A5C0"
-]
+"ents": []
 },
 "M:50A5C0:this:0x5708": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -89867,7 +89861,7 @@
 ]
 },
 "R:50BD30:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -89877,7 +89871,7 @@
 "ents": []
 },
 "R:50BDF0:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -89887,7 +89881,7 @@
 "ents": []
 },
 "R:50BF60:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 324,
@@ -89942,7 +89936,7 @@
 ]
 },
 "R:50C160:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -89968,7 +89962,7 @@
 ]
 },
 "P:50C210:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -89994,7 +89988,7 @@
 ]
 },
 "M:50C340:this:0x34": {
-"class": "OverlayClass",
+"class": "MissionClass",
 "obs": [
 [
 188,
@@ -90086,7 +90080,7 @@
 ]
 },
 "R:50D250:ecx": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 22280,
@@ -90144,7 +90138,7 @@
 ]
 },
 "R:50D9C0:ecx": {
-"class": "DynamicVector",
+"class": "AudioSample",
 "obs": [
 [
 356,
@@ -90154,7 +90148,7 @@
 "ents": []
 },
 "R:50D9D0:ecx": {
-"class": "DynamicVector",
+"class": "Voice",
 "obs": [
 [
 360,
@@ -90164,7 +90158,7 @@
 "ents": []
 },
 "R:50D9E0:ecx": {
-"class": "DynamicVector",
+"class": "AudioSample",
 "obs": [
 [
 356,
@@ -90174,7 +90168,7 @@
 "ents": []
 },
 "R:50D9F0:ecx": {
-"class": "DynamicVector",
+"class": "Voice",
 "obs": [
 [
 360,
@@ -90294,7 +90288,7 @@
 ]
 },
 "P:50DB00:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -90309,9 +90303,7 @@
 4
 ]
 ],
-"ents": [
-"P:50DB00:0"
-]
+"ents": []
 },
 "R:50DEF0:ecx": {
 "class": "HouseClass",
@@ -90346,7 +90338,7 @@
 ]
 },
 "R:50DF30:ecx": {
-"class": "IUnknown",
+"class": "HouseClass",
 "obs": [
 [
 21648,
@@ -90361,9 +90353,7 @@
 2
 ]
 ],
-"ents": [
-"T:50DF30"
-]
+"ents": []
 },
 "M:50DF30:this:0x5490": {
 "class": "TActionClass",
@@ -90448,14 +90438,16 @@
 ]
 },
 "R:50E1B0:ecx": {
-"class": "MissionClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 728,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:50E1B0"
+]
 },
 "R:50E1C0:ecx": {
 "class": "TechnoClass",
@@ -91430,7 +91422,7 @@
 ]
 },
 "M:50EE80:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -91492,7 +91484,7 @@
 ]
 },
 "M:50F000:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -91566,7 +91558,7 @@
 ]
 },
 "M:50F170:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -91606,7 +91598,7 @@
 ]
 },
 "M:50F1B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -91668,7 +91660,7 @@
 ]
 },
 "M:50F330:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -91742,7 +91734,7 @@
 ]
 },
 "M:50F4A0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -92192,7 +92184,7 @@
 ]
 },
 "M:50FC00:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -92254,7 +92246,7 @@
 ]
 },
 "M:50FDB0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -92356,7 +92348,7 @@
 ]
 },
 "M:50FFB0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -94814,7 +94806,7 @@
 "ents": []
 },
 "P:5142A0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -95245,7 +95237,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:514F70:0"
+]
 },
 "R:515ED0:ecx": {
 "class": "ConvertClass",
@@ -95368,7 +95362,7 @@
 "ents": []
 },
 "P:516370:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -95563,7 +95557,7 @@
 ]
 },
 "M:516BF0:p0:0x8": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -95573,7 +95567,7 @@
 "ents": []
 },
 "P:516C70:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -96158,7 +96152,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:518F90:0"
+]
 },
 "R:518F90:ecx": {
 "class": "InfantryClass",
@@ -96317,7 +96313,7 @@
 ]
 },
 "P:519630:0": {
-"class": "CellClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -96560,9 +96556,7 @@
 4
 ]
 ],
-"ents": [
-"P:519630:0"
-]
+"ents": []
 },
 "M:519630:this:0x5a4": {
 "class": "AircraftClass",
@@ -96659,7 +96653,7 @@
 ]
 },
 "M:519630:p0:0xe8c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -96995,7 +96989,7 @@
 ]
 },
 "M:51BAB0:this:0x5d4": {
-"class": "EBolt",
+"class": "OverlayClass",
 "obs": [
 [
 130,
@@ -97133,7 +97127,7 @@
 ]
 },
 "M:51BF90:this:0x69c": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -97240,7 +97234,7 @@
 ]
 },
 "P:51C8B0:0": {
-"class": "ConnectionClass",
+"class": "MultiplayerGameMode",
 "obs": [
 [
 20,
@@ -97483,7 +97477,7 @@
 ]
 },
 "P:51DBD0:0": {
-"class": "OverlayClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 0,
@@ -97974,7 +97968,7 @@
 ]
 },
 "M:51E140:this:0x5a4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -98111,7 +98105,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:51E3B0:0"
+]
 },
 "R:51F190:ecx": {
 "class": "InfantryClass",
@@ -98499,7 +98495,7 @@
 ]
 },
 "M:520260:this:0x5d4": {
-"class": "EBolt",
+"class": "TeamClass",
 "obs": [
 [
 130,
@@ -98942,7 +98938,7 @@
 ]
 },
 "P:521760:0": {
-"class": "DynamicVector",
+"class": "AircraftClass",
 "obs": [
 [
 488,
@@ -99338,7 +99334,7 @@
 ]
 },
 "R:5221D0:ecx": {
-"class": "RadioClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -99354,14 +99350,16 @@
 ]
 },
 "P:5221D0:0": {
-"class": "ScriptClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 320,
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:5221D0:0"
+]
 },
 "R:522340:ecx": {
 "class": "InfantryClass",
@@ -99424,7 +99422,7 @@
 ]
 },
 "R:5224E0:ecx": {
-"class": "MissionClass",
+"class": "FootClass",
 "obs": [
 [
 1728,
@@ -99448,7 +99446,7 @@
 ]
 },
 "R:5224F0:ecx": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 1728,
@@ -99460,7 +99458,7 @@
 ]
 },
 "M:5224F0:this:0x6c0": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 1732,
@@ -99472,7 +99470,7 @@
 ]
 },
 "R:522510:ecx": {
-"class": "MissionClass",
+"class": "FootClass",
 "obs": [
 [
 1732,
@@ -99484,7 +99482,7 @@
 ]
 },
 "R:522540:ecx": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 1728,
@@ -99807,7 +99805,7 @@
 ]
 },
 "R:522CB0:ecx": {
-"class": "OverlayClass",
+"class": "Dialog",
 "obs": [
 [
 1732,
@@ -100359,17 +100357,14 @@
 ]
 },
 "P:528A10:5": {
-"class": "IUnknown",
+"class": "AnimSequence",
 "obs": [
 [
 3644,
 4
 ]
 ],
-"ents": [
-"T:523D00",
-"P:528A10:5"
-]
+"ents": []
 },
 "R:5240A0:ecx": {
 "class": "InfantryTypeClass",
@@ -101148,7 +101143,7 @@
 "ents": []
 },
 "M:5257C0:this:0x3c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -101222,7 +101217,7 @@
 ]
 },
 "M:525A60:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -101232,7 +101227,7 @@
 "ents": []
 },
 "M:525A60:p0:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -101256,7 +101251,7 @@
 "ents": []
 },
 "M:525A60:p0:0x24": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -101348,7 +101343,7 @@
 ]
 },
 "R:526950:ecx": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -101390,7 +101385,7 @@
 ]
 },
 "M:526B10:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101482,7 +101477,7 @@
 "ents": []
 },
 "M:5276D0:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101508,7 +101503,7 @@
 ]
 },
 "M:527920:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101556,7 +101551,7 @@
 ]
 },
 "M:527CC0:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101596,7 +101591,7 @@
 "ents": []
 },
 "M:528220:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101620,7 +101615,7 @@
 "ents": []
 },
 "M:5283D0:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101630,7 +101625,7 @@
 "ents": []
 },
 "P:528660:0": {
-"class": "Block",
+"class": "EnumConnectionPointsClass",
 "obs": [
 [
 0,
@@ -101665,12 +101660,10 @@
 4
 ]
 ],
-"ents": [
-"P:528660:0"
-]
+"ents": []
 },
 "M:528660:p0:0x14": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -101694,7 +101687,7 @@
 "ents": []
 },
 "M:528A10:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101720,7 +101713,7 @@
 ]
 },
 "M:528C00:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101746,7 +101739,7 @@
 ]
 },
 "M:528F00:p0:0x8": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -101772,7 +101765,7 @@
 ]
 },
 "M:529160:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101796,7 +101789,7 @@
 "ents": []
 },
 "M:529350:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101820,7 +101813,7 @@
 "ents": []
 },
 "M:5295F0:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -101926,7 +101919,7 @@
 ]
 },
 "R:52A4D0:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 44,
@@ -101964,7 +101957,7 @@
 "ents": []
 },
 "M:52A760:this:0x8": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -102010,7 +102003,7 @@
 ]
 },
 "M:52AAF0:this:0x14": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -102020,7 +102013,7 @@
 "ents": []
 },
 "M:52AAF0:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -102120,7 +102113,7 @@
 "ents": []
 },
 "M:52AB80:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -102130,7 +102123,7 @@
 "ents": []
 },
 "M:52AB80:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -102188,7 +102181,7 @@
 ]
 },
 "M:52AD50:this:0x14": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -102198,7 +102191,7 @@
 "ents": []
 },
 "M:52AD50:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -102208,7 +102201,7 @@
 "ents": []
 },
 "M:52AD50:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -102238,7 +102231,7 @@
 ]
 },
 "M:52AE20:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -104289,7 +104282,7 @@
 "ents": []
 },
 "P:539AE0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -104342,7 +104335,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:53A300:0"
+]
 },
 "R:53B780:ecx": {
 "class": "MultiplayerManBattle",
@@ -105399,7 +105394,7 @@
 ]
 },
 "M:53FCB0:this:0x4": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 40,
@@ -105415,7 +105410,7 @@
 ]
 },
 "P:53FCB0:0": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -105437,7 +105432,7 @@
 ]
 },
 "M:53FF10:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -105459,7 +105454,7 @@
 ]
 },
 "M:53FFA0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -105541,7 +105536,7 @@
 ]
 },
 "M:540030:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -105573,7 +105568,7 @@
 ]
 },
 "M:5400D0:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -105595,7 +105590,7 @@
 ]
 },
 "M:540110:this:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -105625,7 +105620,7 @@
 ]
 },
 "M:540110:p0:0xd0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -105635,7 +105630,7 @@
 "ents": []
 },
 "R:5402B0:ecx": {
-"class": "OverlayClass",
+"class": "DropListClass",
 "obs": [
 [
 196,
@@ -105929,7 +105924,7 @@
 ]
 },
 "R:540C50:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106177,7 +106172,7 @@
 ]
 },
 "R:540DC0:ecx": {
-"class": "DeployCommandClass",
+"class": "CD",
 "obs": [
 [
 4,
@@ -106187,7 +106182,7 @@
 "ents": []
 },
 "R:540E70:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106217,7 +106212,7 @@
 ]
 },
 "R:540F00:ecx": {
-"class": "ConnectionClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 4,
@@ -106269,7 +106264,7 @@
 ]
 },
 "R:540FC0:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -106279,7 +106274,7 @@
 "ents": []
 },
 "R:541000:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -106477,7 +106472,7 @@
 ]
 },
 "M:5414C0:this:0x50": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106560,7 +106555,7 @@
 ]
 },
 "M:541820:this:0x48": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -106570,7 +106565,7 @@
 "ents": []
 },
 "M:541820:this:0x4c": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -106616,7 +106611,7 @@
 ]
 },
 "R:542280:ecx": {
-"class": "ConnectionClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 0,
@@ -106632,7 +106627,7 @@
 ]
 },
 "R:5422C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 168,
@@ -106662,7 +106657,7 @@
 ]
 },
 "M:5422D0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106692,7 +106687,7 @@
 ]
 },
 "M:5422F0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106722,7 +106717,7 @@
 ]
 },
 "M:542310:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106752,7 +106747,7 @@
 ]
 },
 "M:542330:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106836,7 +106831,7 @@
 ]
 },
 "M:542450:this:0x50": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106846,7 +106841,7 @@
 "ents": []
 },
 "R:5424C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -106866,7 +106861,7 @@
 "ents": []
 },
 "R:542500:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "SliderClass",
 "obs": [
 [
 80,
@@ -106984,7 +106979,7 @@
 ]
 },
 "M:542EC0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -106994,7 +106989,7 @@
 "ents": []
 },
 "M:542EC0:this:0x4c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -107004,7 +106999,7 @@
 "ents": []
 },
 "M:542EC0:this:0x50": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -107014,7 +107009,7 @@
 "ents": []
 },
 "R:542F30:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -107024,7 +107019,7 @@
 "ents": []
 },
 "R:542FC0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -107046,7 +107041,7 @@
 ]
 },
 "M:542FE0:this:0x48": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -107056,7 +107051,7 @@
 "ents": []
 },
 "P:542FE0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -107066,7 +107061,7 @@
 "ents": []
 },
 "R:543050:ecx": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -107076,7 +107071,7 @@
 "ents": []
 },
 "R:543080:ecx": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -107086,17 +107081,19 @@
 "ents": []
 },
 "M:543080:this:0x48": {
-"class": "ScriptClass",
+"class": "RadBeam",
 "obs": [
 [
 200,
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:543080:this:0x48"
+]
 },
 "R:543090:ecx": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -107106,17 +107103,19 @@
 "ents": []
 },
 "M:543090:this:0x48": {
-"class": "ScriptClass",
+"class": "RadBeam",
 "obs": [
 [
 200,
 1
 ]
 ],
-"ents": []
+"ents": [
+"M:543090:this:0x48"
+]
 },
 "R:5430C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -107760,7 +107759,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:545150:0"
+]
 },
 "P:546DA0:0": {
 "class": "AnimTypeClass",
@@ -107865,14 +107866,16 @@
 ]
 },
 "R:547230:ecx": {
-"class": "MissionClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 660,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:547230"
+]
 },
 "R:547CF0:ecx": {
 "class": "IsometricTileTypeClass",
@@ -107938,7 +107941,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:547CF0:0"
+]
 },
 "R:549830:ecx": {
 "class": "AI",
@@ -108077,7 +108082,7 @@
 ]
 },
 "M:549B70:this:0x2bc": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -108147,7 +108152,7 @@
 ]
 },
 "M:549E90:this:0xa4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -108775,7 +108780,7 @@
 "ents": []
 },
 "P:54AE50:0": {
-"class": "DynamicVectorClass",
+"class": "ComStreamClass",
 "obs": [
 [
 72,
@@ -108835,7 +108840,7 @@
 "ents": []
 },
 "P:54B6E0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -108889,7 +108894,7 @@
 ]
 },
 "M:54B980:this:0xc": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -109021,7 +109026,7 @@
 ]
 },
 "M:54BD30:this:0xc": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 116,
@@ -109247,7 +109252,7 @@
 "ents": []
 },
 "P:54D0D0:0": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -109329,7 +109334,7 @@
 ]
 },
 "P:54D0F0:0": {
-"class": "WaveClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -109377,7 +109382,7 @@
 "ents": []
 },
 "R:54D6D0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -109956,7 +109961,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:54EE60"
+]
 },
 "R:54F000:ecx": {
 "class": "AnimTypeClass",
@@ -111345,7 +111352,7 @@
 ]
 },
 "R:554A80:ecx": {
-"class": "DynamicVectorClass",
+"class": "ComStreamClass",
 "obs": [
 [
 72,
@@ -111407,7 +111414,7 @@
 ]
 },
 "P:554AF0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -112282,7 +112289,7 @@
 ]
 },
 "M:556730:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -112292,7 +112299,7 @@
 "ents": []
 },
 "M:556730:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -112334,7 +112341,7 @@
 ]
 },
 "R:556B30:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -112354,7 +112361,7 @@
 "ents": []
 },
 "R:556B50:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -113205,7 +113212,7 @@
 ]
 },
 "P:557B70:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -113489,7 +113496,7 @@
 ]
 },
 "P:557F40:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -114511,7 +114518,7 @@
 "ents": []
 },
 "P:55AD10:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -115024,7 +115031,7 @@
 "ents": []
 },
 "R:55F6C0:ecx": {
-"class": "GenericNode",
+"class": "Straw",
 "obs": [
 [
 16,
@@ -115292,7 +115299,7 @@
 ]
 },
 "R:5654E0:ecx": {
-"class": "LogicClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 244,
@@ -115322,7 +115329,7 @@
 ]
 },
 "R:565610:ecx": {
-"class": "LogicClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 244,
@@ -115388,7 +115395,7 @@
 ]
 },
 "R:5657A0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -115398,7 +115405,7 @@
 "ents": []
 },
 "R:5657E0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -115998,7 +116005,7 @@
 ]
 },
 "M:5673A0:p0:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -116105,7 +116112,7 @@
 ]
 },
 "P:5683C0:0": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -116497,7 +116504,7 @@
 ]
 },
 "R:56B5A0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -116507,7 +116514,7 @@
 "ents": []
 },
 "R:56B780:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -116517,7 +116524,7 @@
 "ents": []
 },
 "R:56B8A0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -116527,7 +116534,7 @@
 "ents": []
 },
 "R:56B9A0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -116537,7 +116544,7 @@
 "ents": []
 },
 "R:56BAC0:ecx": {
-"class": "LogicClass",
+"class": "CellCoord",
 "obs": [
 [
 316,
@@ -116587,7 +116594,7 @@
 ]
 },
 "M:56C510:this:0x14": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -116661,7 +116668,7 @@
 ]
 },
 "R:56D230:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -117151,7 +117158,7 @@
 ]
 },
 "P:575EE0:0": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 0,
@@ -117731,7 +117738,7 @@
 ]
 },
 "R:578640:ecx": {
-"class": "LogicClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 244,
@@ -117997,7 +118004,7 @@
 ]
 },
 "P:57B990:0": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -118131,7 +118138,7 @@
 ]
 },
 "P:57CBE0:0": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -118625,7 +118632,7 @@
 ]
 },
 "R:581090:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -119354,7 +119361,7 @@
 ]
 },
 "R:587180:ecx": {
-"class": "OverlayClass",
+"class": "AudioFile",
 "obs": [
 [
 212,
@@ -119491,7 +119498,7 @@
 "ents": []
 },
 "M:5880A0:p0:0x21c": {
-"class": "DynamicVector",
+"class": "BulletTypeClass",
 "obs": [
 [
 506,
@@ -119501,7 +119508,7 @@
 "ents": []
 },
 "R:588960:ecx": {
-"class": "OverlayClass",
+"class": "COMClass",
 "obs": [
 [
 328,
@@ -122139,7 +122146,7 @@
 "ents": []
 },
 "R:58D120:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -122469,7 +122476,7 @@
 ]
 },
 "P:590FD0:1": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -122625,7 +122632,7 @@
 ]
 },
 "P:42FCB0:5": {
-"class": "DynamicVectorClass",
+"class": "BuildingDebris",
 "obs": [
 [
 32,
@@ -123635,7 +123642,7 @@
 "ents": []
 },
 "R:59A6C0:ecx": {
-"class": "ScriptClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 60,
@@ -123678,30 +123685,39 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:59AD10",
+"P:5ADA40:5"
+]
 },
 "P:42B1F0:0": {
-"class": "IsometricTileTypeClass",
+"class": "TerrainTypeClass",
 "obs": [
 [
 776,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:59AFA0",
+"P:42B1F0:0"
+]
 },
 "P:42B1F0:1": {
-"class": "IsometricTileTypeClass",
+"class": "TerrainTypeClass",
 "obs": [
 [
 776,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:59B200",
+"P:42B1F0:1"
+]
 },
 "P:59B740:0": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -123798,7 +123814,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:59BBC0:0"
+]
 },
 "R:59BBC0:ecx": {
 "class": "AbstractClass",
@@ -123806,7 +123824,7 @@
 "ents": []
 },
 "M:59BBC0:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -124243,7 +124261,7 @@
 ]
 },
 "P:5A23A0:0": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 60,
@@ -124401,7 +124419,7 @@
 "ents": []
 },
 "P:5A6510:0": {
-"class": "OverlayClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -124455,7 +124473,7 @@
 "ents": []
 },
 "M:5A6510:p0:0x520": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -124567,7 +124585,7 @@
 ]
 },
 "P:5A82E0:0": {
-"class": "OverlayClass",
+"class": "BulletClass",
 "obs": [
 [
 0,
@@ -126827,7 +126845,7 @@
 ]
 },
 "P:5AFF70:0": {
-"class": "GenericNode",
+"class": "BinkMovieClass",
 "obs": [
 [
 44,
@@ -126951,7 +126969,7 @@
 ]
 },
 "P:5B0170:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -127740,7 +127758,7 @@
 ]
 },
 "P:5B35E0:0": {
-"class": "ScriptClass",
+"class": "GameClass",
 "obs": [
 [
 512,
@@ -128074,7 +128092,7 @@
 ]
 },
 "M:5B3F50:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -128084,7 +128102,7 @@
 "ents": []
 },
 "M:5B3F50:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -128251,7 +128269,7 @@
 ]
 },
 "M:5B4630:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -128261,7 +128279,7 @@
 "ents": []
 },
 "M:5B4630:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -129112,7 +129130,7 @@
 ]
 },
 "R:5BCB90:ecx": {
-"class": "LightConvertClass",
+"class": "SessionClass",
 "obs": [
 [
 10008,
@@ -129147,9 +129165,7 @@
 1
 ]
 ],
-"ents": [
-"T:5BCB90"
-]
+"ents": []
 },
 "P:5BCB90:0": {
 "class": "AI",
@@ -129210,7 +129226,7 @@
 "ents": []
 },
 "R:5BCC90:ecx": {
-"class": "AbstractClass",
+"class": "Tactical",
 "obs": [
 [
 10036,
@@ -129232,7 +129248,7 @@
 "ents": []
 },
 "R:5BCE10:ecx": {
-"class": "LightConvertClass",
+"class": "SessionClass",
 "obs": [
 [
 10020,
@@ -129251,12 +129267,10 @@
 4
 ]
 ],
-"ents": [
-"T:5BCE10"
-]
+"ents": []
 },
 "R:5BD0D0:ecx": {
-"class": "LightConvertClass",
+"class": "SessionClass",
 "obs": [
 [
 10000,
@@ -129287,12 +129301,10 @@
 1
 ]
 ],
-"ents": [
-"T:5BD0D0"
-]
+"ents": []
 },
 "R:5BD2E0:ecx": {
-"class": "LightConvertClass",
+"class": "SessionClass",
 "obs": [
 [
 10000,
@@ -129307,9 +129319,7 @@
 4
 ]
 ],
-"ents": [
-"T:5BD2E0"
-]
+"ents": []
 },
 "R:5BD3D0:ecx": {
 "class": "SessionClass",
@@ -129381,7 +129391,7 @@
 ]
 },
 "R:5BD5C0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -129710,7 +129720,7 @@
 ]
 },
 "P:5BFAA0:0": {
-"class": "DropPodLocomotionClass",
+"class": "OverlayClass",
 "obs": [
 [
 116,
@@ -129854,7 +129864,7 @@
 ]
 },
 "M:5C0380:this:0x10": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -130009,7 +130019,7 @@
 ]
 },
 "P:5C0640:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -130621,7 +130631,7 @@
 ]
 },
 "P:5C2A60:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -130711,7 +130721,7 @@
 ]
 },
 "R:5C3EC0:ecx": {
-"class": "GenericNode",
+"class": "CampaignCoop",
 "obs": [
 [
 64,
@@ -133077,7 +133087,7 @@
 "ents": []
 },
 "R:5CC690:ecx": {
-"class": "GenericNode",
+"class": "CampaignCoop",
 "obs": [
 [
 64,
@@ -133087,7 +133097,7 @@
 "ents": []
 },
 "R:5CC6A0:ecx": {
-"class": "ConnectionClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 40,
@@ -133718,7 +133728,7 @@
 ]
 },
 "M:5CD570:this:0x34": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -133922,7 +133932,7 @@
 ]
 },
 "M:5CE0C0:this:0x34": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -133974,7 +133984,7 @@
 ]
 },
 "P:7B7180:4": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -134008,7 +134018,7 @@
 ]
 },
 "M:5CE3A0:this:0x34": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -135317,7 +135327,7 @@
 ]
 },
 "M:5D07F0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -135379,7 +135389,7 @@
 ]
 },
 "M:5D0950:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -135453,7 +135463,7 @@
 ]
 },
 "M:5D0AA0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -136633,7 +136643,7 @@
 ]
 },
 "R:5D25D0:ecx": {
-"class": "ConnectionClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 56,
@@ -136649,7 +136659,7 @@
 ]
 },
 "R:5D2650:ecx": {
-"class": "ConnectionClass",
+"class": "CommBufferClass",
 "obs": [
 [
 52,
@@ -137501,7 +137511,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5D3A60"
+]
 },
 "R:5D3BA0:ecx": {
 "class": "SelectClass@StripClass@SidebarClass",
@@ -137578,7 +137590,7 @@
 ]
 },
 "R:5D4400:ecx": {
-"class": "OverlayClass",
+"class": "PriQueue",
 "obs": [
 [
 692,
@@ -137679,10 +137691,12 @@
 2
 ]
 ],
-"ents": []
+"ents": [
+"T:5D49A0"
+]
 },
 "M:5D49A0:this:0x24": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 12,
@@ -137729,10 +137743,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:5D4AD0"
+]
 },
 "M:5D4AD0:this:0x24": {
-"class": "DynamicVectorClass",
+"class": "LightSourceClass",
 "obs": [
 [
 56,
@@ -138024,7 +138040,7 @@
 ]
 },
 "M:5D53B0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -138086,7 +138102,7 @@
 ]
 },
 "M:5D5530:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -138160,7 +138176,7 @@
 ]
 },
 "M:5D56A0:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -138557,7 +138573,7 @@
 ]
 },
 "R:5D67B0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -139371,7 +139387,7 @@
 ]
 },
 "P:7B7140:1": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -139443,7 +139459,7 @@
 ]
 },
 "R:5D9060:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -140410,7 +140426,7 @@
 ]
 },
 "P:48BF10:0": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -140750,7 +140766,7 @@
 ]
 },
 "R:5F19C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -140770,7 +140786,7 @@
 "ents": []
 },
 "R:5F19E0:ecx": {
-"class": "DynamicVectorClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 52,
@@ -140836,7 +140852,7 @@
 ]
 },
 "R:5F1BF0:ecx": {
-"class": "GenericNode",
+"class": "TextGroup",
 "obs": [
 [
 60,
@@ -140846,7 +140862,7 @@
 "ents": []
 },
 "R:5F1C30:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 56,
@@ -140894,7 +140910,7 @@
 ]
 },
 "R:5F1EA0:ecx": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -140926,7 +140942,7 @@
 ]
 },
 "M:5F1EE0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -140948,7 +140964,7 @@
 ]
 },
 "M:5F1F00:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -140958,7 +140974,7 @@
 "ents": []
 },
 "R:5F1F20:ecx": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -140990,7 +141006,7 @@
 ]
 },
 "M:5F1F70:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -141086,7 +141102,7 @@
 "ents": []
 },
 "R:5F3170:ecx": {
-"class": "GenericNode",
+"class": "CampaignCoop",
 "obs": [
 [
 64,
@@ -141164,7 +141180,7 @@
 ]
 },
 "M:5F35D0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -141186,7 +141202,7 @@
 ]
 },
 "M:5F35F0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -141208,7 +141224,7 @@
 ]
 },
 "M:5F3610:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -141230,7 +141246,7 @@
 ]
 },
 "M:5F3630:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -141508,7 +141524,7 @@
 ]
 },
 "R:5F3E70:ecx": {
-"class": "OverlayClass",
+"class": "ParticleClass",
 "obs": [
 [
 0,
@@ -141888,7 +141904,7 @@
 ]
 },
 "M:5F5230:this:0x34": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -141898,7 +141914,7 @@
 "ents": []
 },
 "M:5F5230:this:0x30": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -141990,7 +142006,7 @@
 ]
 },
 "M:5F5850:this:0x520": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 3672,
@@ -142259,7 +142275,7 @@
 ]
 },
 "P:5F60A0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -142269,7 +142285,7 @@
 "ents": []
 },
 "P:5F6120:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -142373,7 +142389,7 @@
 ]
 },
 "M:5F6250:this:0x30": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -142383,7 +142399,7 @@
 "ents": []
 },
 "M:5F6250:this:0x34": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -143480,7 +143496,7 @@
 ]
 },
 "P:5F9070:0": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -143898,7 +143914,7 @@
 "ents": []
 },
 "R:5FA470:ecx": {
-"class": "DynamicVectorClass",
+"class": "AudioOptionsClass",
 "obs": [
 [
 68,
@@ -143908,7 +143924,7 @@
 "ents": []
 },
 "R:5FA590:ecx": {
-"class": "GenericNode",
+"class": "TextGroup",
 "obs": [
 [
 60,
@@ -144208,7 +144224,7 @@
 "ents": []
 },
 "R:5FBF70:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -144234,7 +144250,7 @@
 ]
 },
 "R:5FC000:ecx": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -144992,7 +145008,7 @@
 ]
 },
 "P:5FF850:0": {
-"class": "DropPodLocomotionClass",
+"class": "LoadProgressMgr",
 "obs": [
 [
 96,
@@ -145562,7 +145578,7 @@
 "ents": []
 },
 "M:60D540:p0:0x8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -145634,7 +145650,7 @@
 "ents": []
 },
 "M:610570:p0:0x8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -145782,7 +145798,7 @@
 "ents": []
 },
 "M:610CA0:p0:0xc": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -145941,7 +145957,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:6153E0:0"
+]
 },
 "P:6163A0:0": {
 "class": "WaveClass",
@@ -146094,7 +146112,7 @@
 "ents": []
 },
 "M:617250:p0:0xc": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -146114,7 +146132,7 @@
 "ents": []
 },
 "P:618D40:0": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -146234,7 +146252,7 @@
 "ents": []
 },
 "M:618D40:p0:0xc": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -146244,7 +146262,7 @@
 "ents": []
 },
 "M:618D40:p0:0x8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -146368,7 +146386,7 @@
 ]
 },
 "P:6208F0:0": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -146414,7 +146432,7 @@
 ]
 },
 "P:6217E0:0": {
-"class": "TemporalClass",
+"class": "FoggedObjectClass",
 "obs": [
 [
 96,
@@ -146520,7 +146538,7 @@
 ]
 },
 "R:6234B0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 52,
@@ -146542,7 +146560,7 @@
 ]
 },
 "R:6235B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -146594,7 +146612,7 @@
 "ents": []
 },
 "R:623730:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 40,
@@ -146982,7 +147000,7 @@
 ]
 },
 "M:6249A0:this:0x8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -147072,7 +147090,7 @@
 ]
 },
 "P:624CA0:0": {
-"class": "RAMFileClass",
+"class": "WaveClass",
 "obs": [
 [
 0,
@@ -147095,9 +147113,7 @@
 4
 ]
 ],
-"ents": [
-"P:624CA0:0"
-]
+"ents": []
 },
 "R:624FC0:ecx": {
 "class": "MSShapeAnim",
@@ -147458,7 +147474,7 @@
 "ents": []
 },
 "M:625AB0:this:0x4": {
-"class": "GenericNode",
+"class": "CarryoverClass",
 "obs": [
 [
 12,
@@ -147552,7 +147568,7 @@
 "ents": []
 },
 "M:625DB0:this:0x4": {
-"class": "GenericNode",
+"class": "CarryoverClass",
 "obs": [
 [
 12,
@@ -147572,7 +147588,7 @@
 "ents": []
 },
 "M:625F60:this:0x4": {
-"class": "GenericNode",
+"class": "CarryoverClass",
 "obs": [
 [
 12,
@@ -147592,7 +147608,7 @@
 "ents": []
 },
 "M:625FB0:this:0x4": {
-"class": "GenericNode",
+"class": "CarryoverClass",
 "obs": [
 [
 12,
@@ -147616,7 +147632,7 @@
 "ents": []
 },
 "R:626250:ecx": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -147626,7 +147642,7 @@
 "ents": []
 },
 "R:626290:ecx": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -147652,7 +147668,7 @@
 ]
 },
 "R:6262F0:ecx": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -147678,7 +147694,7 @@
 ]
 },
 "R:626370:ecx": {
-"class": "OverlayClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 256,
@@ -147842,7 +147858,7 @@
 ]
 },
 "R:6274F0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -147940,7 +147956,7 @@
 "ents": []
 },
 "M:627590:p0:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -147950,7 +147966,7 @@
 "ents": []
 },
 "P:627590:4": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -147960,7 +147976,7 @@
 "ents": []
 },
 "R:627A10:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -148715,7 +148731,7 @@
 ]
 },
 "P:6288F0:0": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -148841,7 +148857,7 @@
 ]
 },
 "P:628BB0:0": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -148895,7 +148911,7 @@
 ]
 },
 "P:4F4C70:1": {
-"class": "LogicClass",
+"class": "HexCoord",
 "obs": [
 [
 256,
@@ -149173,7 +149189,7 @@
 ]
 },
 "M:6294D0:this:0x44": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -149384,14 +149400,16 @@
 ]
 },
 "M:6297F0:this:0x24": {
-"class": "OverlayClass",
+"class": "TerrainClass",
 "obs": [
 [
 540,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6297F0:this:0x24"
+]
 },
 "M:6297F0:this:0x44": {
 "class": "TiberiumClass",
@@ -149430,7 +149448,7 @@
 ]
 },
 "M:629FD0:this:0x28": {
-"class": "LogicClass",
+"class": "WWMouseClass",
 "obs": [
 [
 108,
@@ -149627,7 +149645,7 @@
 ]
 },
 "R:62A8E0:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -150364,7 +150382,7 @@
 ]
 },
 "M:62BD50:this:0x124": {
-"class": "LogicClass",
+"class": "ParticleSystemClass",
 "obs": [
 [
 252,
@@ -150616,7 +150634,7 @@
 ]
 },
 "M:62CB10:this:0x124": {
-"class": "ScriptClass",
+"class": "TriggerClass",
 "obs": [
 [
 224,
@@ -150894,7 +150912,7 @@
 "ents": []
 },
 "P:62D810:0": {
-"class": "OverlayClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 304,
@@ -151384,7 +151402,7 @@
 ]
 },
 "P:62E840:0": {
-"class": "LogicClass",
+"class": "VeinholeMonsterClass",
 "obs": [
 [
 248,
@@ -151789,7 +151807,7 @@
 ]
 },
 "M:630100:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -151799,7 +151817,7 @@
 "ents": []
 },
 "M:630100:this:0xe4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -152168,7 +152186,7 @@
 "ents": []
 },
 "M:631CC0:this:0x4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152344,7 +152362,7 @@
 ]
 },
 "R:631F10:ecx": {
-"class": "ConnectionClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 48,
@@ -152384,7 +152402,7 @@
 ]
 },
 "P:5C6370:1": {
-"class": "ScriptClass",
+"class": "GameClass",
 "obs": [
 [
 512,
@@ -152458,7 +152476,7 @@
 ]
 },
 "P:632D10:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152468,7 +152486,7 @@
 "ents": []
 },
 "M:632D10:this:0x18": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152542,7 +152560,7 @@
 ]
 },
 "M:632DC0:this:0x38": {
-"class": "ScriptClass",
+"class": "GameClass",
 "obs": [
 [
 512,
@@ -152656,7 +152674,7 @@
 ]
 },
 "M:6330C0:this:0x18": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152710,7 +152728,7 @@
 ]
 },
 "M:633130:this:0x38": {
-"class": "ScriptClass",
+"class": "GameClass",
 "obs": [
 [
 512,
@@ -152744,7 +152762,7 @@
 ]
 },
 "R:6339B0:ecx": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 540,
@@ -152756,7 +152774,7 @@
 ]
 },
 "M:6339B0:this:0x21c": {
-"class": "TypeList",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -152798,7 +152816,7 @@
 "ents": []
 },
 "R:633A50:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -152808,7 +152826,7 @@
 "ents": []
 },
 "R:633A60:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152818,7 +152836,7 @@
 "ents": []
 },
 "R:633A70:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -152838,7 +152856,7 @@
 "ents": []
 },
 "R:633A90:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -152848,7 +152866,7 @@
 "ents": []
 },
 "R:633AA0:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -152858,7 +152876,7 @@
 "ents": []
 },
 "R:633AB0:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -152888,7 +152906,7 @@
 ]
 },
 "R:633B00:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -152898,7 +152916,7 @@
 "ents": []
 },
 "R:633B10:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "BridgeClass",
 "obs": [
 [
 116,
@@ -152908,7 +152926,7 @@
 "ents": []
 },
 "R:633B20:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -152918,7 +152936,7 @@
 "ents": []
 },
 "R:633B30:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -152928,7 +152946,7 @@
 "ents": []
 },
 "R:633B40:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -152938,7 +152956,7 @@
 "ents": []
 },
 "R:633B70:ecx": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -152948,7 +152966,7 @@
 "ents": []
 },
 "R:633B80:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "BridgeClass",
 "obs": [
 [
 116,
@@ -153017,7 +153035,7 @@
 ]
 },
 "R:633E50:ecx": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -153027,7 +153045,7 @@
 "ents": []
 },
 "R:633E60:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -153151,7 +153169,7 @@
 ]
 },
 "R:6342E0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -153193,7 +153211,7 @@
 ]
 },
 "R:6343B0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -153225,7 +153243,7 @@
 "ents": []
 },
 "R:634470:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -153273,7 +153291,7 @@
 ]
 },
 "R:634700:ecx": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -153299,7 +153317,7 @@
 ]
 },
 "R:6347A0:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -153329,7 +153347,7 @@
 ]
 },
 "R:634810:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -153339,7 +153357,7 @@
 "ents": []
 },
 "R:634880:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -153349,7 +153367,7 @@
 "ents": []
 },
 "R:634950:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScriptQueue",
 "obs": [
 [
 28,
@@ -153359,7 +153377,7 @@
 "ents": []
 },
 "R:634960:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScriptQueue",
 "obs": [
 [
 28,
@@ -153497,7 +153515,7 @@
 ]
 },
 "P:705D20:3": {
-"class": "DropPodLocomotionClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -153611,7 +153629,7 @@
 ]
 },
 "P:6351E0:0": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -153815,7 +153833,7 @@
 ]
 },
 "R:635DF0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -153825,7 +153843,7 @@
 "ents": []
 },
 "R:635E90:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -154045,7 +154063,7 @@
 ]
 },
 "R:636520:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScriptQueue",
 "obs": [
 [
 28,
@@ -154055,7 +154073,7 @@
 "ents": []
 },
 "R:636530:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScriptQueue",
 "obs": [
 [
 28,
@@ -154065,7 +154083,7 @@
 "ents": []
 },
 "R:636540:ecx": {
-"class": "DynamicVectorClass",
+"class": "ScriptQueue",
 "obs": [
 [
 28,
@@ -154238,7 +154256,7 @@
 ]
 },
 "P:636B50:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -154286,7 +154304,7 @@
 "ents": []
 },
 "R:636DC0:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -154386,7 +154404,7 @@
 "ents": []
 },
 "R:637020:ecx": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 152,
@@ -154454,7 +154472,7 @@
 ]
 },
 "R:637D00:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -154558,7 +154576,7 @@
 ]
 },
 "P:639800:0": {
-"class": "WaveClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -154592,7 +154610,7 @@
 "ents": []
 },
 "P:639A50:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -154688,7 +154706,7 @@
 "ents": []
 },
 "R:63B050:ecx": {
-"class": "GenericNode",
+"class": "MixFileClass",
 "obs": [
 [
 18,
@@ -154886,7 +154904,7 @@
 "ents": []
 },
 "P:635830:1": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -154896,7 +154914,7 @@
 "ents": []
 },
 "R:63CF10:ecx": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -154906,7 +154924,7 @@
 "ents": []
 },
 "M:63CF10:this:0x21c": {
-"class": "TypeList",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -154916,7 +154934,7 @@
 "ents": []
 },
 "R:63CFC0:ecx": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -154926,7 +154944,7 @@
 "ents": []
 },
 "M:63CFC0:this:0x21c": {
-"class": "TypeList",
+"class": "NeuronClass",
 "obs": [
 [
 48,
@@ -154936,7 +154954,7 @@
 "ents": []
 },
 "R:63D2D0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -154946,7 +154964,7 @@
 "ents": []
 },
 "R:63D540:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -156700,7 +156718,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:63FDC0"
+]
 },
 "R:63FE30:ecx": {
 "class": "BuildingTypeClass",
@@ -156710,7 +156730,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:63FE30"
+]
 },
 "R:63FEA0:ecx": {
 "class": "PowerClass",
@@ -157188,7 +157210,7 @@
 ]
 },
 "R:642AD0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "INIClass",
 "obs": [
 [
 96,
@@ -157198,7 +157220,7 @@
 "ents": []
 },
 "R:642B10:ecx": {
-"class": "ScriptClass",
+"class": "AudioFrame",
 "obs": [
 [
 128,
@@ -157208,7 +157230,7 @@
 "ents": []
 },
 "R:642B20:ecx": {
-"class": "ScriptClass",
+"class": "AudioFrame",
 "obs": [
 [
 128,
@@ -157218,7 +157240,7 @@
 "ents": []
 },
 "R:642B30:ecx": {
-"class": "ScriptClass",
+"class": "AudioFrame",
 "obs": [
 [
 128,
@@ -157320,7 +157342,7 @@
 ]
 },
 "R:642DF0:ecx": {
-"class": "DynamicVector",
+"class": "CCFileClass",
 "obs": [
 [
 120,
@@ -157330,7 +157352,7 @@
 "ents": []
 },
 "R:6433D0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -157427,7 +157449,7 @@
 ]
 },
 "R:643E60:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "IPXConnClass",
 "obs": [
 [
 100,
@@ -157437,7 +157459,7 @@
 "ents": []
 },
 "R:643E70:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "IPXConnClass",
 "obs": [
 [
 100,
@@ -157459,7 +157481,7 @@
 ]
 },
 "R:643E90:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -158609,7 +158631,7 @@
 ]
 },
 "P:647260:0": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -158619,7 +158641,7 @@
 "ents": []
 },
 "M:647260:p0:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -158969,7 +158991,7 @@
 ]
 },
 "M:650A90:p0:0x34": {
-"class": "OverlayClass",
+"class": "TacticalMapClass",
 "obs": [
 [
 180,
@@ -159713,7 +159735,7 @@
 ]
 },
 "R:655050:ecx": {
-"class": "XSurface",
+"class": "RadarClass",
 "obs": [
 [
 260,
@@ -160582,7 +160604,7 @@
 ]
 },
 "P:657DA0:0": {
-"class": "ConnectionClass",
+"class": "StaticButtonClass",
 "obs": [
 [
 0,
@@ -161199,7 +161221,7 @@
 "ents": []
 },
 "R:6594E0:ecx": {
-"class": "RawFileClass",
+"class": "FileClass",
 "obs": [
 [
 60,
@@ -161243,7 +161265,7 @@
 ]
 },
 "R:659530:ecx": {
-"class": "RawFileClass",
+"class": "FileClass",
 "obs": [
 [
 80,
@@ -161409,7 +161431,7 @@
 ]
 },
 "M:659650:this:0x4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -162121,7 +162143,7 @@
 ]
 },
 "P:65A970:0": {
-"class": "ConvertClass",
+"class": "VocClass",
 "obs": [
 [
 632,
@@ -162192,7 +162214,7 @@
 ]
 },
 "P:65AB80:0": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -162238,7 +162260,7 @@
 ]
 },
 "R:65AD30:ecx": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -162556,7 +162578,7 @@
 ]
 },
 "R:65B4B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -162814,7 +162836,7 @@
 ]
 },
 "R:65B8F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "CStreamClass",
 "obs": [
 [
 72,
@@ -163902,7 +163924,7 @@
 ]
 },
 "R:65D480:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -163928,7 +163950,7 @@
 ]
 },
 "P:65D510:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -163938,7 +163960,7 @@
 "ents": []
 },
 "P:65D5C0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -164012,7 +164034,7 @@
 ]
 },
 "M:65DD30:this:0xe0": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -164266,7 +164288,7 @@
 "ents": []
 },
 "P:5AE860:0": {
-"class": "GenericNode",
+"class": "Straw",
 "obs": [
 [
 16,
@@ -164689,7 +164711,7 @@
 ]
 },
 "R:661770:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -164699,7 +164721,7 @@
 "ents": []
 },
 "R:661850:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -164709,7 +164731,7 @@
 "ents": []
 },
 "R:661960:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -164719,7 +164741,7 @@
 "ents": []
 },
 "R:661A60:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -164866,7 +164888,7 @@
 ]
 },
 "P:661F90:0": {
-"class": "GenericNode",
+"class": "TextGroup",
 "obs": [
 [
 60,
@@ -165150,7 +165172,7 @@
 ]
 },
 "M:663030:this:0xc": {
-"class": "OverlayClass",
+"class": "Dialog",
 "obs": [
 [
 1732,
@@ -165184,7 +165206,7 @@
 ]
 },
 "M:6632E0:p0:0x8": {
-"class": "OverlayClass",
+"class": "Dialog",
 "obs": [
 [
 1732,
@@ -165194,7 +165216,7 @@
 "ents": []
 },
 "P:663410:0": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 0,
@@ -165367,7 +165389,7 @@
 ]
 },
 "P:663CD0:0": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -165470,7 +165492,7 @@
 ]
 },
 "R:664750:ecx": {
-"class": "GenericNode",
+"class": "NetworkManager",
 "obs": [
 [
 24,
@@ -165712,7 +165734,7 @@
 ]
 },
 "R:665650:ecx": {
-"class": "AbstractClass",
+"class": "Tactical",
 "obs": [
 [
 0,
@@ -170495,7 +170517,7 @@
 ]
 },
 "R:6691E0:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -173144,7 +173166,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:672230"
+]
 },
 "R:672AE0:ecx": {
 "class": "HouseClass",
@@ -173707,7 +173731,7 @@
 ]
 },
 "R:675210:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 92,
@@ -174507,7 +174531,7 @@
 ]
 },
 "R:678850:ecx": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 16,
@@ -175863,7 +175887,7 @@
 ]
 },
 "R:67A730:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -175925,7 +175949,7 @@
 ]
 },
 "R:67A7C0:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -177253,7 +177277,7 @@
 "ents": []
 },
 "P:67E730:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -177421,7 +177445,7 @@
 "ents": []
 },
 "R:681060:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -177431,7 +177455,7 @@
 "ents": []
 },
 "R:681070:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -177463,7 +177487,7 @@
 "ents": []
 },
 "R:6810A0:ecx": {
-"class": "OverlayClass",
+"class": "TubeClass",
 "obs": [
 [
 262,
@@ -177473,7 +177497,7 @@
 "ents": []
 },
 "R:6810D0:ecx": {
-"class": "OverlayClass",
+"class": "TubeClass",
 "obs": [
 [
 390,
@@ -177495,17 +177519,19 @@
 ]
 },
 "R:681120:ecx": {
-"class": "OverlayClass",
+"class": "ColorListClass",
 "obs": [
 [
 392,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:681120"
+]
 },
 "R:681130:ecx": {
-"class": "ScriptClass",
+"class": "ColorListClass",
 "obs": [
 [
 396,
@@ -177515,7 +177541,7 @@
 "ents": []
 },
 "R:681140:ecx": {
-"class": "ScriptClass",
+"class": "ColorListClass",
 "obs": [
 [
 396,
@@ -177734,7 +177760,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6812D0"
+]
 },
 "P:6812E0:0": {
 "class": "CounterClass",
@@ -177967,7 +177995,7 @@
 "ents": []
 },
 "P:65C6D0:3": {
-"class": "AbstractClass",
+"class": "Tactical",
 "obs": [
 [
 4,
@@ -178101,7 +178129,7 @@
 ]
 },
 "R:683610:ecx": {
-"class": "GadgetClass",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 524,
@@ -178528,7 +178556,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:683AB0:0"
+]
 },
 "P:684C30:0": {
 "class": "HouseClass",
@@ -178569,7 +178599,7 @@
 "ents": []
 },
 "M:684C30:p0:0x24": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -178579,7 +178609,7 @@
 "ents": []
 },
 "M:684C30:p0:0xa4": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 184,
@@ -178632,7 +178662,7 @@
 "ents": []
 },
 "R:686700:ecx": {
-"class": "IUnknown",
+"class": "RadarClass",
 "obs": [
 [
 4959,
@@ -178683,7 +178713,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:686890:0"
+]
 },
 "M:686890:p0:0x34": {
 "class": "HouseTypeClass",
@@ -178756,7 +178788,7 @@
 "ents": []
 },
 "M:686B20:p0:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 188,
@@ -178780,7 +178812,7 @@
 "ents": []
 },
 "P:6886B0:0": {
-"class": "BuildingTypeClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 0,
@@ -178916,7 +178948,7 @@
 ]
 },
 "R:689670:ecx": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 13482,
@@ -178938,7 +178970,7 @@
 "ents": []
 },
 "R:689910:ecx": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 13482,
@@ -178992,7 +179024,7 @@
 ]
 },
 "R:689E90:ecx": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 524,
@@ -179140,7 +179172,7 @@
 ]
 },
 "R:68AD70:ecx": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 524,
@@ -179288,7 +179320,7 @@
 ]
 },
 "P:4A1DB0:2": {
-"class": "IUnknown",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 1548,
@@ -179916,10 +179948,12 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:68CD20:0"
+]
 },
 "M:68CD20:p0:0x34": {
-"class": "OverlayClass",
+"class": "Dial8Class",
 "obs": [
 [
 188,
@@ -179929,7 +179963,7 @@
 "ents": []
 },
 "M:68CD20:this:0xc": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -180001,7 +180035,7 @@
 "ents": []
 },
 "M:68F060:this:0xc": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -180039,7 +180073,7 @@
 ]
 },
 "P:68F8A0:0": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -180105,7 +180139,7 @@
 ]
 },
 "R:68FB10:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -180183,7 +180217,7 @@
 ]
 },
 "M:68FBB0:this:0xc": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -180323,7 +180357,7 @@
 "ents": []
 },
 "R:690530:ecx": {
-"class": "ConnectionClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 56,
@@ -180558,7 +180592,7 @@
 ]
 },
 "M:690D60:this:0x28": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -180844,7 +180878,7 @@
 ]
 },
 "M:691540:this:0x24": {
-"class": "LightSourceClass",
+"class": "TagTypeClass",
 "obs": [
 [
 160,
@@ -180889,7 +180923,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6915A0"
+]
 },
 "R:6915B0:ecx": {
 "class": "ScriptClass",
@@ -180908,7 +180944,7 @@
 ]
 },
 "M:6915B0:this:0x24": {
-"class": "LightSourceClass",
+"class": "TagTypeClass",
 "obs": [
 [
 160,
@@ -180936,7 +180972,7 @@
 ]
 },
 "M:6915D0:this:0x24": {
-"class": "LightSourceClass",
+"class": "TagTypeClass",
 "obs": [
 [
 160,
@@ -181181,7 +181217,7 @@
 ]
 },
 "P:692300:0": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 0,
@@ -181208,9 +181244,7 @@
 1
 ]
 ],
-"ents": [
-"P:692300:0"
-]
+"ents": []
 },
 "P:692610:0": {
 "class": "BuildingClass",
@@ -181281,7 +181315,7 @@
 ]
 },
 "P:692B60:0": {
-"class": "DropPodLocomotionClass",
+"class": "CStreamClass",
 "obs": [
 [
 76,
@@ -181291,16 +181325,14 @@
 "ents": []
 },
 "R:692F30:ecx": {
-"class": "MouseClass",
+"class": "Tactical",
 "obs": [
 [
 21850,
 1
 ]
 ],
-"ents": [
-"T:692F30"
-]
+"ents": []
 },
 "R:693060:ecx": {
 "class": "MouseClass",
@@ -181648,7 +181680,7 @@
 ]
 },
 "P:696AE0:0": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 152,
@@ -182620,7 +182652,7 @@
 "ents": []
 },
 "P:699980:2": {
-"class": "OverlayClass",
+"class": "BulkData",
 "obs": [
 [
 324,
@@ -182688,7 +182720,7 @@
 ]
 },
 "P:6722F0:2": {
-"class": "RAMFileClass",
+"class": "SessionClass",
 "obs": [
 [
 4,
@@ -182851,10 +182883,7 @@
 4
 ]
 ],
-"ents": [
-"T:6980C0",
-"P:6722F0:2"
-]
+"ents": []
 },
 "P:6980C0:0": {
 "class": "AI",
@@ -183249,14 +183278,16 @@
 "ents": []
 },
 "R:69ACC0:ecx": {
-"class": "ScriptClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 396,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69ACC0"
+]
 },
 "R:69ACD0:ecx": {
 "class": "InfantryTypeClass",
@@ -183296,7 +183327,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69AE10"
+]
 },
 "R:69AE90:ecx": {
 "class": "SessionClass",
@@ -183329,7 +183362,7 @@
 ]
 },
 "P:69B170:0": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -183355,7 +183388,7 @@
 "ents": []
 },
 "R:69B540:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -183385,7 +183418,7 @@
 "ents": []
 },
 "R:69B5B0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -183543,7 +183576,7 @@
 "ents": []
 },
 "P:5C5A30:3": {
-"class": "BuildingTypeClass",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [
 [
 10304,
@@ -185126,7 +185159,7 @@
 "ents": []
 },
 "R:69DFC0:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 52,
@@ -185190,7 +185223,7 @@
 ]
 },
 "R:69E060:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -185356,7 +185389,7 @@
 "ents": []
 },
 "M:69E500:this:0x1c": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -185420,7 +185453,7 @@
 "ents": []
 },
 "M:69E580:p0:0x1c": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -185532,7 +185565,7 @@
 "ents": []
 },
 "M:69E930:this:0x1c": {
-"class": "GenericNode",
+"class": "OwnerDrawControl",
 "obs": [
 [
 24,
@@ -185542,7 +185575,7 @@
 "ents": []
 },
 "R:69E9F0:ecx": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -185838,7 +185871,7 @@
 ]
 },
 "P:69F3A0:0": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 48,
@@ -186212,7 +186245,7 @@
 ]
 },
 "P:6A05C0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -186492,7 +186525,7 @@
 ]
 },
 "M:6A05F0:p0:0xe4": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -186820,7 +186853,7 @@
 ]
 },
 "P:6A4210:0": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -186830,7 +186863,7 @@
 "ents": []
 },
 "P:6A4220:0": {
-"class": "DropPodLocomotionClass",
+"class": "Progress",
 "obs": [
 [
 97,
@@ -186840,7 +186873,7 @@
 "ents": []
 },
 "P:6A4230:0": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -186850,7 +186883,7 @@
 "ents": []
 },
 "P:6A4240:0": {
-"class": "DropPodLocomotionClass",
+"class": "Territory",
 "obs": [
 [
 88,
@@ -186860,7 +186893,7 @@
 "ents": []
 },
 "P:6A4250:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -187290,7 +187323,7 @@
 ]
 },
 "R:6A6610:ecx": {
-"class": "SidebarClass",
+"class": "Tactical",
 "obs": [
 [
 21404,
@@ -187316,17 +187349,19 @@
 ]
 },
 "R:6A6AF0:ecx": {
-"class": "SidebarClass",
+"class": "Tactical",
 "obs": [
 [
 21404,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6A6AF0"
+]
 },
 "P:6A6AF0:0": {
-"class": "DynamicVectorClass",
+"class": "MovieContext",
 "obs": [
 [
 72,
@@ -187356,7 +187391,7 @@
 ]
 },
 "R:6A70E0:ecx": {
-"class": "SidebarClass",
+"class": "HouseClass",
 "obs": [
 [
 21413,
@@ -187372,7 +187407,7 @@
 ]
 },
 "P:723EA0:3": {
-"class": "SidebarClass",
+"class": "Tactical",
 "obs": [
 [
 21404,
@@ -187446,7 +187481,7 @@
 ]
 },
 "P:6A7780:0": {
-"class": "IUnknown",
+"class": "RadarClass",
 "obs": [
 [
 68,
@@ -187617,7 +187652,7 @@
 ]
 },
 "R:6A8220:ecx": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -187663,7 +187698,7 @@
 ]
 },
 "R:6A8330:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -187673,7 +187708,7 @@
 "ents": []
 },
 "R:6A83E0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 56,
@@ -187781,7 +187816,7 @@
 ]
 },
 "P:6A8B30:0": {
-"class": "RadarClass",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 0,
@@ -187909,7 +187944,7 @@
 ]
 },
 "R:6A93F0:ecx": {
-"class": "ConnectionClass",
+"class": "WalkLocomotionClass",
 "obs": [
 [
 28,
@@ -188092,7 +188127,7 @@
 ]
 },
 "M:6AAD00:this:0x2c": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -188102,7 +188137,7 @@
 "ents": []
 },
 "P:6AAD00:0": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -188190,7 +188225,7 @@
 ]
 },
 "R:6ABAC0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -188200,7 +188235,7 @@
 "ents": []
 },
 "P:6ABB60:0": {
-"class": "GenericNode",
+"class": "AlphaShapeClass",
 "obs": [
 [
 60,
@@ -188711,7 +188746,7 @@
 ]
 },
 "R:6B0490:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -188747,7 +188782,7 @@
 ]
 },
 "P:6B04C0:0": {
-"class": "WaveClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -188795,7 +188830,7 @@
 ]
 },
 "R:6B0690:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -188805,7 +188840,7 @@
 "ents": []
 },
 "R:6B0750:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -188815,7 +188850,7 @@
 "ents": []
 },
 "R:6B0880:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -188845,7 +188880,7 @@
 ]
 },
 "R:6B0A90:ecx": {
-"class": "ConnectionClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 48,
@@ -189010,7 +189045,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6B0DB0:this:0x24"
+]
 },
 "R:6B1020:ecx": {
 "class": "AirstrikeClass",
@@ -189061,7 +189098,7 @@
 ]
 },
 "P:6B1300:0": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -190154,7 +190191,7 @@
 "ents": []
 },
 "M:6B2F30:p0:0xe4": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -190164,7 +190201,7 @@
 "ents": []
 },
 "R:6B4100:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -190776,7 +190813,7 @@
 "ents": []
 },
 "P:6B59A0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -190786,7 +190823,7 @@
 "ents": []
 },
 "P:6B5C90:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -191274,7 +191311,7 @@
 ]
 },
 "R:6B7D30:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -191290,7 +191327,7 @@
 ]
 },
 "R:6B7D50:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -191306,7 +191343,7 @@
 ]
 },
 "R:6B7D80:ecx": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -191374,7 +191411,7 @@
 ]
 },
 "M:6B7DE0:this:0x6c": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -191384,7 +191421,7 @@
 "ents": []
 },
 "M:6B7DE0:this:0x68": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -191418,7 +191455,7 @@
 ]
 },
 "P:6B80B0:0": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 60,
@@ -192141,7 +192178,7 @@
 ]
 },
 "P:6B9530:0": {
-"class": "IsometricTileTypeClass",
+"class": "AnimTypeClass",
 "obs": [
 [
 0,
@@ -192233,7 +192270,7 @@
 ]
 },
 "M:6B9740:p0:0x308": {
-"class": "IsometricTileTypeClass",
+"class": "TerrainTypeClass",
 "obs": [
 [
 776,
@@ -192378,7 +192415,7 @@
 ]
 },
 "P:6BAC40:0": {
-"class": "IsometricTileTypeClass",
+"class": "AnimTypeClass",
 "obs": [
 [
 0,
@@ -192394,7 +192431,7 @@
 ]
 },
 "M:6BAC40:p0:0x308": {
-"class": "IsometricTileTypeClass",
+"class": "TerrainTypeClass",
 "obs": [
 [
 776,
@@ -192552,7 +192589,7 @@
 ]
 },
 "P:6BEF90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192578,7 +192615,7 @@
 ]
 },
 "P:6BF110:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192604,7 +192641,7 @@
 ]
 },
 "P:6BF290:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192630,7 +192667,7 @@
 ]
 },
 "P:6BF410:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192656,7 +192693,7 @@
 ]
 },
 "P:6BF590:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192682,7 +192719,7 @@
 ]
 },
 "P:6BF710:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192708,7 +192745,7 @@
 ]
 },
 "P:6BF890:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192734,7 +192771,7 @@
 ]
 },
 "P:6BFA10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192760,7 +192797,7 @@
 ]
 },
 "P:6BFB90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192786,7 +192823,7 @@
 ]
 },
 "P:6BFD10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192812,7 +192849,7 @@
 ]
 },
 "P:6BFE90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192838,7 +192875,7 @@
 ]
 },
 "P:6C0010:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192864,7 +192901,7 @@
 ]
 },
 "P:6C0190:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192890,7 +192927,7 @@
 ]
 },
 "P:6C0310:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192916,7 +192953,7 @@
 ]
 },
 "P:6C0490:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192942,7 +192979,7 @@
 ]
 },
 "P:6C0610:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192968,7 +193005,7 @@
 ]
 },
 "P:6C0790:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -192994,7 +193031,7 @@
 ]
 },
 "P:6C0910:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193020,7 +193057,7 @@
 ]
 },
 "P:6C0A90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193046,7 +193083,7 @@
 ]
 },
 "P:6C0C10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193072,7 +193109,7 @@
 ]
 },
 "P:6C0D90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193098,7 +193135,7 @@
 ]
 },
 "P:6C0F10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193124,7 +193161,7 @@
 ]
 },
 "P:6C1090:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193150,7 +193187,7 @@
 ]
 },
 "P:6C1210:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193176,7 +193213,7 @@
 ]
 },
 "P:6C1390:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193202,7 +193239,7 @@
 ]
 },
 "P:6C1510:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193228,7 +193265,7 @@
 ]
 },
 "P:6C1690:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193254,7 +193291,7 @@
 ]
 },
 "P:6C1810:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193280,7 +193317,7 @@
 ]
 },
 "P:6C1990:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193306,7 +193343,7 @@
 ]
 },
 "P:6C1B10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193332,7 +193369,7 @@
 ]
 },
 "P:6C1C90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193358,7 +193395,7 @@
 ]
 },
 "P:6C1E10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193384,7 +193421,7 @@
 ]
 },
 "P:6C1F90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193410,7 +193447,7 @@
 ]
 },
 "P:6C2110:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193436,7 +193473,7 @@
 ]
 },
 "P:6C2290:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193462,7 +193499,7 @@
 ]
 },
 "P:6C2410:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193488,7 +193525,7 @@
 ]
 },
 "P:6C2590:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193514,7 +193551,7 @@
 ]
 },
 "P:6C2710:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193540,7 +193577,7 @@
 ]
 },
 "P:6C2890:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193566,7 +193603,7 @@
 ]
 },
 "P:6C2A10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193592,7 +193629,7 @@
 ]
 },
 "P:6C2B90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193618,7 +193655,7 @@
 ]
 },
 "P:6C2D10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193644,7 +193681,7 @@
 ]
 },
 "P:6C2E90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193670,7 +193707,7 @@
 ]
 },
 "P:6C3010:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193696,7 +193733,7 @@
 ]
 },
 "P:6C3190:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193722,7 +193759,7 @@
 ]
 },
 "P:6C3310:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193748,7 +193785,7 @@
 ]
 },
 "P:6C3490:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193774,7 +193811,7 @@
 ]
 },
 "P:6C3610:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193800,7 +193837,7 @@
 ]
 },
 "P:6C3790:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193826,7 +193863,7 @@
 ]
 },
 "P:6C3910:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193852,7 +193889,7 @@
 ]
 },
 "P:6C3A90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193878,7 +193915,7 @@
 ]
 },
 "P:6C3C10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193904,7 +193941,7 @@
 ]
 },
 "P:6C3D90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193930,7 +193967,7 @@
 ]
 },
 "P:6C3F10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193956,7 +193993,7 @@
 ]
 },
 "P:6C4090:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -193982,7 +194019,7 @@
 ]
 },
 "P:6C4210:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194008,7 +194045,7 @@
 ]
 },
 "P:6C4390:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194034,7 +194071,7 @@
 ]
 },
 "P:6C4510:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194060,7 +194097,7 @@
 ]
 },
 "P:6C4690:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194086,7 +194123,7 @@
 ]
 },
 "P:6C4810:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194112,7 +194149,7 @@
 ]
 },
 "P:6C4990:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194138,7 +194175,7 @@
 ]
 },
 "P:6C4B10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194164,7 +194201,7 @@
 ]
 },
 "P:6C4C90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194190,7 +194227,7 @@
 ]
 },
 "P:6C4E10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194216,7 +194253,7 @@
 ]
 },
 "P:6C4F90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194242,7 +194279,7 @@
 ]
 },
 "P:6C5110:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194268,7 +194305,7 @@
 ]
 },
 "P:6C5290:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194294,7 +194331,7 @@
 ]
 },
 "P:6C5410:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194320,7 +194357,7 @@
 ]
 },
 "P:6C5590:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194346,7 +194383,7 @@
 ]
 },
 "P:6C5710:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194372,7 +194409,7 @@
 ]
 },
 "P:6C5890:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194398,7 +194435,7 @@
 ]
 },
 "P:6C5A10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194424,7 +194461,7 @@
 ]
 },
 "P:6C5B90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194450,7 +194487,7 @@
 ]
 },
 "P:6C5D10:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194476,7 +194513,7 @@
 ]
 },
 "P:6C5E90:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194502,7 +194539,7 @@
 ]
 },
 "P:6C6010:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -194528,7 +194565,7 @@
 ]
 },
 "P:6C6190:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -195349,7 +195386,7 @@
 "ents": []
 },
 "R:6C9960:ecx": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -195477,7 +195514,7 @@
 "ents": []
 },
 "R:6C9D30:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -195487,7 +195524,7 @@
 "ents": []
 },
 "R:6C9D40:ecx": {
-"class": "MovieHandle",
+"class": "CommandClass",
 "obs": [
 [
 16,
@@ -195695,7 +195732,7 @@
 ]
 },
 "P:6CA940:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -196262,7 +196299,7 @@
 ]
 },
 "M:6CB560:this:0x2c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -196476,7 +196513,7 @@
 ]
 },
 "M:6CB920:this:0x2c": {
-"class": "DynamicVector",
+"class": "BulletTypeClass",
 "obs": [
 [
 506,
@@ -196734,7 +196771,7 @@
 ]
 },
 "M:6CC260:this:0x28": {
-"class": "DynamicVectorClass",
+"class": "TriggerClass",
 "obs": [
 [
 176,
@@ -196746,7 +196783,7 @@
 ]
 },
 "R:6CC280:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -196756,7 +196793,7 @@
 "ents": []
 },
 "R:6CC290:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -196766,7 +196803,7 @@
 "ents": []
 },
 "R:6CC2A0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -196852,7 +196889,7 @@
 "ents": []
 },
 "P:6CC390:0": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -197873,7 +197910,7 @@
 "ents": []
 },
 "M:6CF350:this:0x8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -198235,17 +198272,14 @@
 ]
 },
 "P:6A5840:2": {
-"class": "MouseClass",
+"class": "HouseClass",
 "obs": [
 [
 21792,
 4
 ]
 ],
-"ents": [
-"T:6D02B0",
-"P:6A5840:2"
-]
+"ents": []
 },
 "R:6D04D0:ecx": {
 "class": "TabClass",
@@ -200904,7 +200938,7 @@
 ]
 },
 "P:6DC660:0": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -201707,7 +201741,7 @@
 "ents": []
 },
 "R:6E0080:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -201733,7 +201767,7 @@
 ]
 },
 "R:6E0250:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -201743,7 +201777,7 @@
 "ents": []
 },
 "R:6E0270:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -201753,7 +201787,7 @@
 "ents": []
 },
 "R:6E0290:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -201853,7 +201887,7 @@
 ]
 },
 "R:6E0EF0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "DialogControl",
 "obs": [
 [
 144,
@@ -202117,7 +202151,7 @@
 ]
 },
 "R:6E2790:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -202137,7 +202171,7 @@
 "ents": []
 },
 "R:6E2A50:ecx": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -202273,7 +202307,7 @@
 ]
 },
 "R:6E3380:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -202295,7 +202329,7 @@
 ]
 },
 "R:6E35F0:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -202966,7 +203000,7 @@
 ]
 },
 "M:6E4F60:p0:0x24": {
-"class": "ScriptClass",
+"class": "TaskForceClass",
 "obs": [
 [
 164,
@@ -203005,7 +203039,7 @@
 ]
 },
 "R:6E5230:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -203015,7 +203049,7 @@
 "ents": []
 },
 "R:6E5290:ecx": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -203085,7 +203119,7 @@
 ]
 },
 "R:6E5380:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -203095,7 +203129,7 @@
 "ents": []
 },
 "M:6E5380:this:0x28": {
-"class": "DynamicVectorClass",
+"class": "ScriptClass",
 "obs": [
 [
 40,
@@ -203133,7 +203167,7 @@
 ]
 },
 "M:6E53A0:this:0x24": {
-"class": "LightSourceClass",
+"class": "TagTypeClass",
 "obs": [
 [
 156,
@@ -203145,7 +203179,7 @@
 ]
 },
 "M:6E53A0:this:0x28": {
-"class": "DynamicVectorClass",
+"class": "TriggerClass",
 "obs": [
 [
 40,
@@ -203157,17 +203191,19 @@
 ]
 },
 "R:6E5560:ecx": {
-"class": "ScriptClass",
+"class": "NeuronClass",
 "obs": [
 [
 48,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:6E5560"
+]
 },
 "R:6E55C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -203177,7 +203213,7 @@
 "ents": []
 },
 "P:6E55C0:0": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -203273,7 +203309,7 @@
 "ents": []
 },
 "R:6E57C0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -203299,7 +203335,7 @@
 ]
 },
 "R:6E5850:ecx": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -203397,7 +203433,7 @@
 ]
 },
 "M:6E5E50:this:0xa0": {
-"class": "DynamicVectorClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 168,
@@ -203483,7 +203519,7 @@
 ]
 },
 "R:6E6250:ecx": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -203505,7 +203541,7 @@
 ]
 },
 "R:6E6280:ecx": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -203527,7 +203563,7 @@
 ]
 },
 "R:6E62B0:ecx": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -204161,7 +204197,7 @@
 ]
 },
 "R:6E8160:ecx": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -204203,7 +204239,7 @@
 ]
 },
 "R:6E85B0:ecx": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -204251,7 +204287,7 @@
 ]
 },
 "R:6E8780:ecx": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -204577,7 +204613,7 @@
 ]
 },
 "M:6E8DE0:this:0x70": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -204726,7 +204762,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:6E9140:this:0x54"
+]
 },
 "M:6E9140:this:0x24": {
 "class": "TiberiumClass",
@@ -204749,7 +204787,7 @@
 ]
 },
 "P:6E9140:0": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -205431,7 +205469,7 @@
 "ents": []
 },
 "P:6EB490:0": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -205625,7 +205663,7 @@
 "ents": []
 },
 "R:6EC130:ecx": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 40,
@@ -205657,7 +205695,7 @@
 ]
 },
 "R:6EC370:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -205712,7 +205750,7 @@
 ]
 },
 "R:6EC3D0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -205870,7 +205908,7 @@
 ]
 },
 "M:6EC5A0:this:0x38": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -205880,7 +205918,7 @@
 "ents": []
 },
 "M:6EC5A0:this:0x54": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -205890,7 +205928,7 @@
 "ents": []
 },
 "M:6EC5A0:this:0x70": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -205938,7 +205976,7 @@
 "ents": []
 },
 "P:6EC7D0:0": {
-"class": "AbstractTypeClass",
+"class": "TubeClass",
 "obs": [
 [
 428,
@@ -206299,7 +206337,7 @@
 ]
 },
 "P:6ED7E0:0": {
-"class": "AbstractClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 0,
@@ -206506,7 +206544,7 @@
 "ents": []
 },
 "R:6EDE80:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "AudioFrame",
 "obs": [
 [
 128,
@@ -207006,7 +207044,7 @@
 ]
 },
 "M:6EEEA0:p0:0x21c": {
-"class": "DynamicVector",
+"class": "CCFileClass",
 "obs": [
 [
 120,
@@ -207168,7 +207206,7 @@
 "ents": []
 },
 "R:6EF5F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -207402,7 +207440,7 @@
 ]
 },
 "R:6F03B0:ecx": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -207412,7 +207450,7 @@
 "ents": []
 },
 "R:6F03F0:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -207850,7 +207888,7 @@
 ]
 },
 "M:6F1090:this:0xc4": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -208004,7 +208042,7 @@
 ]
 },
 "M:6F1550:this:0xc4": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -208184,7 +208222,7 @@
 ]
 },
 "M:6F1C80:this:0xc4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208194,7 +208232,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xd0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208204,7 +208242,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xe0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208214,7 +208252,7 @@
 "ents": []
 },
 "M:6F1C80:this:0xe4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208268,7 +208306,7 @@
 ]
 },
 "M:6F1E20:p0:0x5d4": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -208322,7 +208360,7 @@
 ]
 },
 "M:6F1FA0:this:0xe4": {
-"class": "ScriptClass",
+"class": "TagTypeClass",
 "obs": [
 [
 156,
@@ -208516,7 +208554,7 @@
 ]
 },
 "M:6F2290:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208578,7 +208616,7 @@
 ]
 },
 "M:6F2440:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -208680,7 +208718,7 @@
 ]
 },
 "M:6F2640:this:0x4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -209845,7 +209883,7 @@
 ]
 },
 "M:6F3330:p0:0xa0": {
-"class": "DynamicVector",
+"class": "Building",
 "obs": [
 [
 676,
@@ -210383,7 +210421,7 @@
 ]
 },
 "M:6F4EB0:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 48,
@@ -210897,7 +210935,7 @@
 ]
 },
 "P:6F7CA0:0": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -211013,7 +211051,7 @@
 ]
 },
 "M:6F7CA0:p0:0x2c0": {
-"class": "OverlayClass",
+"class": "Voxel",
 "obs": [
 [
 540,
@@ -211183,7 +211221,7 @@
 ]
 },
 "P:6F8DF0:0": {
-"class": "OverlayClass",
+"class": "ObjectClass",
 "obs": [
 [
 44,
@@ -211231,7 +211269,7 @@
 ]
 },
 "M:6F9DB0:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 48,
@@ -211711,7 +211749,7 @@
 ]
 },
 "M:6F9E50:p0:0x21c": {
-"class": "DynamicVector",
+"class": "HouseClass",
 "obs": [
 [
 22392,
@@ -211901,7 +211939,7 @@
 ]
 },
 "P:6FB740:0": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -211999,7 +212037,7 @@
 ]
 },
 "M:6FBFA0:this:0x21c": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 52,
@@ -212383,7 +212421,7 @@
 ]
 },
 "M:6FCDB0:this:0x294": {
-"class": "DynamicVectorClass",
+"class": "EditClass",
 "obs": [
 [
 76,
@@ -212435,7 +212473,7 @@
 "ents": []
 },
 "R:6FD210:ecx": {
-"class": "RadioClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -212550,7 +212588,7 @@
 ]
 },
 "R:6FDB80:ecx": {
-"class": "RadioClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -213420,7 +213458,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:701900:0"
+]
 },
 "R:702D40:ecx": {
 "class": "BuildingClass",
@@ -213455,7 +213495,7 @@
 ]
 },
 "M:702D40:this:0x21c": {
-"class": "LayerClass",
+"class": "HouseClass",
 "obs": [
 [
 21556,
@@ -213470,9 +213510,7 @@
 4
 ]
 ],
-"ents": [
-"M:702D40:this:0x21c"
-]
+"ents": []
 },
 "M:702D40:this:0x520": {
 "class": "BuildingTypeClass",
@@ -213543,7 +213581,7 @@
 ]
 },
 "M:703230:this:0x21c": {
-"class": "LayerClass",
+"class": "HouseClass",
 "obs": [
 [
 21556,
@@ -213558,9 +213596,7 @@
 4
 ]
 ],
-"ents": [
-"M:703230:this:0x21c"
-]
+"ents": []
 },
 "M:703230:this:0x520": {
 "class": "BuildingTypeClass",
@@ -214005,7 +214041,7 @@
 ]
 },
 "M:706640:this:0x294": {
-"class": "RawFileClass",
+"class": "GameOptionsClass",
 "obs": [
 [
 80,
@@ -215161,7 +215197,7 @@
 ]
 },
 "M:70ADC0:this:0x21c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -215203,7 +215239,7 @@
 ]
 },
 "M:70AF50:this:0x21c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -215237,7 +215273,7 @@
 ]
 },
 "M:70B1D0:this:0x21c": {
-"class": "GenericNode",
+"class": "LinkedList",
 "obs": [
 [
 52,
@@ -215317,7 +215353,7 @@
 ]
 },
 "M:70BCB0:this:0x2b4": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 1652,
@@ -215785,7 +215821,7 @@
 ]
 },
 "M:70CD10:p0:0x21c": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -216142,7 +216178,7 @@
 ]
 },
 "R:70DCE0:ecx": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 292,
@@ -216266,7 +216302,7 @@
 ]
 },
 "R:70DE20:ecx": {
-"class": "OverlayClass",
+"class": "BulkData",
 "obs": [
 [
 324,
@@ -216657,7 +216693,7 @@
 ]
 },
 "P:70F000:0": {
-"class": "DeployCommandClass",
+"class": "Tooltip",
 "obs": [
 [
 12,
@@ -216971,7 +217007,7 @@
 ]
 },
 "R:70FE40:ecx": {
-"class": "OverlayClass",
+"class": "AudioController",
 "obs": [
 [
 464,
@@ -217231,7 +217267,7 @@
 ]
 },
 "R:7107E0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -218806,7 +218842,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:710AF0"
+]
 },
 "P:710AF0:0": {
 "class": "SwizzleManagerClass",
@@ -219196,7 +219234,7 @@
 ]
 },
 "P:711F60:0": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -219266,7 +219304,7 @@
 ]
 },
 "M:712130:this:0x898": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -220464,7 +220502,7 @@
 ]
 },
 "M:712170:this:0x898": {
-"class": "ScriptClass",
+"class": "TaskForceClass",
 "obs": [
 [
 164,
@@ -220561,7 +220599,7 @@
 ]
 },
 "M:716290:this:0x898": {
-"class": "ScriptClass",
+"class": "TaskForceClass",
 "obs": [
 [
 164,
@@ -221528,7 +221566,7 @@
 ]
 },
 "P:718080:0": {
-"class": "GenericNode",
+"class": "ScoreClass",
 "obs": [
 [
 48,
@@ -221668,7 +221706,7 @@
 ]
 },
 "P:7187A0:0": {
-"class": "RadioClass",
+"class": "TechnoClass",
 "obs": [
 [
 160,
@@ -221740,7 +221778,7 @@
 "ents": []
 },
 "P:7192C0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -221936,7 +221974,7 @@
 "ents": []
 },
 "P:719EE0:0": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -221966,7 +222004,7 @@
 ]
 },
 "R:71A130:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "RocketLocomotionClass",
 "obs": [
 [
 72,
@@ -222208,7 +222246,7 @@
 ]
 },
 "M:71A760:p0:0x21c": {
-"class": "DynamicVector",
+"class": "WaveClass",
 "obs": [
 [
 508,
@@ -222318,7 +222356,7 @@
 ]
 },
 "M:71ABC0:this:0x44": {
-"class": "ConnectionClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 64,
@@ -222334,7 +222372,7 @@
 ]
 },
 "M:71ABC0:this:0x40": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -222548,7 +222586,7 @@
 ]
 },
 "M:71AF20:this:0x44": {
-"class": "GenericNode",
+"class": "CampaignCoop",
 "obs": [
 [
 64,
@@ -223915,7 +223953,7 @@
 ]
 },
 "R:71F390:ecx": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 44,
@@ -223968,7 +224006,7 @@
 ]
 },
 "M:71F800:this:0x28": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -224002,7 +224040,7 @@
 ]
 },
 "M:71F820:this:0x28": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -224012,7 +224050,7 @@
 "ents": []
 },
 "M:71F820:this:0x30": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -224080,7 +224118,7 @@
 ]
 },
 "R:71FA40:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "TabCameoListClass",
 "obs": [
 [
 84,
@@ -225051,7 +225089,7 @@
 ]
 },
 "R:721290:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -225301,7 +225339,7 @@
 ]
 },
 "P:7216C0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225380,7 +225418,7 @@
 ]
 },
 "M:721880:this:0xf4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225390,7 +225428,7 @@
 "ents": []
 },
 "M:721880:this:0x110": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225551,7 +225589,7 @@
 ]
 },
 "M:722770:this:0xf4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225637,7 +225675,7 @@
 ]
 },
 "M:722A20:this:0xf4": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225789,7 +225827,7 @@
 ]
 },
 "M:723260:this:0x110": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -225875,7 +225913,7 @@
 ]
 },
 "M:723510:this:0x110": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -226673,7 +226711,7 @@
 ]
 },
 "R:724C00:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -226915,7 +226953,7 @@
 ]
 },
 "R:724FA0:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -226925,7 +226963,7 @@
 "ents": []
 },
 "R:724FC0:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -227253,7 +227291,7 @@
 ]
 },
 "R:7266C0:ecx": {
-"class": "GenericNode",
+"class": "CampaignCoop",
 "obs": [
 [
 64,
@@ -227275,7 +227313,7 @@
 ]
 },
 "R:726780:ecx": {
-"class": "GenericNode",
+"class": "ScoreClass",
 "obs": [
 [
 48,
@@ -227355,7 +227393,7 @@
 "ents": []
 },
 "R:7268F0:ecx": {
-"class": "DynamicVectorClass",
+"class": "AudioOptionsClass",
 "obs": [
 [
 68,
@@ -227365,7 +227403,7 @@
 "ents": []
 },
 "R:726900:ecx": {
-"class": "DynamicVectorClass",
+"class": "AudioOptionsClass",
 "obs": [
 [
 68,
@@ -227375,7 +227413,7 @@
 "ents": []
 },
 "R:726910:ecx": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -227385,7 +227423,7 @@
 "ents": []
 },
 "R:726920:ecx": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -227551,7 +227589,7 @@
 ]
 },
 "R:726F50:ecx": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -227577,7 +227615,7 @@
 ]
 },
 "R:726F80:ecx": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -227603,7 +227641,7 @@
 ]
 },
 "R:726FB0:ecx": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -227629,7 +227667,7 @@
 ]
 },
 "R:726FE0:ecx": {
-"class": "DynamicVectorClass",
+"class": "VeinholeClass",
 "obs": [
 [
 176,
@@ -227655,7 +227693,7 @@
 ]
 },
 "R:727010:ecx": {
-"class": "LightSourceClass",
+"class": "MissionClass",
 "obs": [
 [
 172,
@@ -227687,7 +227725,7 @@
 ]
 },
 "R:727050:ecx": {
-"class": "LightSourceClass",
+"class": "MissionClass",
 "obs": [
 [
 172,
@@ -228110,7 +228148,9 @@
 2
 ]
 ],
-"ents": []
+"ents": [
+"P:727FD0:0"
+]
 },
 "P:7281A0:0": {
 "class": "CarryoverClass",
@@ -228243,7 +228283,7 @@
 ]
 },
 "P:728A50:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228301,7 +228341,7 @@
 ]
 },
 "P:7291D0:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228336,7 +228376,7 @@
 ]
 },
 "R:729370:ecx": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 12,
@@ -228364,7 +228404,7 @@
 ]
 },
 "R:729480:ecx": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 12,
@@ -228392,7 +228432,7 @@
 ]
 },
 "R:7294E0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -228402,7 +228442,7 @@
 "ents": []
 },
 "M:7294E0:this:0xc": {
-"class": "ScriptClass",
+"class": "TagTypeClass",
 "obs": [
 [
 156,
@@ -228437,7 +228477,7 @@
 ]
 },
 "R:729AA0:ecx": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 4,
@@ -228517,7 +228557,7 @@
 ]
 },
 "P:72A060:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228527,7 +228567,7 @@
 "ents": []
 },
 "P:72A0E0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -228537,7 +228577,7 @@
 "ents": []
 },
 "P:72A150:0": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -228565,7 +228605,7 @@
 ]
 },
 "P:72A1A0:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228575,7 +228615,7 @@
 "ents": []
 },
 "P:72A1C0:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228585,7 +228625,7 @@
 "ents": []
 },
 "P:72A1E0:0": {
-"class": "GenericNode",
+"class": "AudioNode",
 "obs": [
 [
 20,
@@ -228789,7 +228829,7 @@
 "ents": []
 },
 "R:732580:ecx": {
-"class": "RadioClass",
+"class": "AircraftClass",
 "obs": [
 [
 144,
@@ -228976,14 +229016,16 @@
 "ents": []
 },
 "R:734250:ecx": {
-"class": "OverlayClass",
+"class": "BulletClass",
 "obs": [
 [
 1312,
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:734250"
+]
 },
 "M:734250:this:0x520": {
 "class": "BuildingTypeClass",
@@ -229496,7 +229538,7 @@
 "ents": []
 },
 "R:736990:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -229592,7 +229634,7 @@
 ]
 },
 "M:736C10:this:0x5d4": {
-"class": "EBolt",
+"class": "TeamClass",
 "obs": [
 [
 130,
@@ -229668,7 +229710,7 @@
 ]
 },
 "M:736D50:this:0x2b4": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -230445,7 +230487,7 @@
 ]
 },
 "M:7393C0:p0:0x5708": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -230465,7 +230507,7 @@
 "ents": []
 },
 "R:739AC0:ecx": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -230537,7 +230579,7 @@
 ]
 },
 "R:739CD0:ecx": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -230777,7 +230819,7 @@
 ]
 },
 "P:739EC0:0": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 0,
@@ -230971,7 +231013,7 @@
 "ents": []
 },
 "M:739EC0:this:0x2c0": {
-"class": "MissionClass",
+"class": "MessageListClass",
 "obs": [
 [
 700,
@@ -231005,7 +231047,7 @@
 ]
 },
 "M:739EC0:this:0x5a4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -231058,16 +231100,14 @@
 ]
 },
 "M:73B140:this:0x21c": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [
 [
 90196,
 4
 ]
 ],
-"ents": [
-"M:73B140:this:0x21c"
-]
+"ents": []
 },
 "R:73B470:ecx": {
 "class": "UnitClass",
@@ -231196,7 +231236,7 @@
 "ents": []
 },
 "P:73B470:0": {
-"class": "AbstractClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -231279,7 +231319,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:73B470:0"
+]
 },
 "R:73C5F0:ecx": {
 "class": "UnitClass",
@@ -231969,10 +232011,12 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:73F0A0:0"
+]
 },
 "M:73F0A0:this:0x69c": {
-"class": "DynamicVectorClass",
+"class": "PriorityQueue",
 "obs": [
 [
 40,
@@ -232262,7 +232306,7 @@
 ]
 },
 "P:740DF0:0": {
-"class": "OverlayClass",
+"class": "ParasiteClass",
 "obs": [
 [
 292,
@@ -232467,7 +232511,7 @@
 ]
 },
 "M:7414E0:this:0x2b4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -232617,7 +232661,7 @@
 ]
 },
 "M:7416A0:p0:0xe8": {
-"class": "OverlayClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 228,
@@ -232627,7 +232671,7 @@
 "ents": []
 },
 "M:7416A0:p0:0xe4": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 48,
@@ -232667,7 +232711,7 @@
 "ents": []
 },
 "M:7416A0:p0:0x30": {
-"class": "GenericNode",
+"class": "IdleOrderEntry",
 "obs": [
 [
 48,
@@ -232945,7 +232989,7 @@
 ]
 },
 "M:741970:this:0x5a4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -232975,7 +233019,7 @@
 ]
 },
 "M:741970:p0:0xe4": {
-"class": "OverlayClass",
+"class": "CellClass",
 "obs": [
 [
 48,
@@ -233180,7 +233224,7 @@
 ]
 },
 "P:7441B0:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -233190,7 +233234,7 @@
 "ents": []
 },
 "P:744210:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -233262,7 +233306,7 @@
 "ents": []
 },
 "P:744600:0": {
-"class": "XSurface",
+"class": "FootClass",
 "obs": [
 [
 1756,
@@ -233417,16 +233461,14 @@
 ]
 },
 "M:746100:this:0x64": {
-"class": "LightSourceClass",
+"class": "Debug",
 "obs": [
 [
 160,
 4
 ]
 ],
-"ents": [
-"M:746100:this:0x64"
-]
+"ents": []
 },
 "R:7463A0:ecx": {
 "class": "UnitClass",
@@ -233529,7 +233571,7 @@
 ]
 },
 "M:7464E0:this:0x274": {
-"class": "GenericNode",
+"class": "StringList",
 "obs": [
 [
 36,
@@ -233870,7 +233912,7 @@
 ]
 },
 "R:746D00:ecx": {
-"class": "MissionClass",
+"class": "AircraftClass",
 "obs": [
 [
 1732,
@@ -233894,7 +233936,7 @@
 ]
 },
 "R:746D80:ecx": {
-"class": "MissionClass",
+"class": "FootClass",
 "obs": [
 [
 1760,
@@ -233962,7 +234004,7 @@
 ]
 },
 "R:746EA0:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -234245,7 +234287,7 @@
 ]
 },
 "P:747620:0": {
-"class": "AircraftTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 3672,
@@ -234892,7 +234934,7 @@
 "ents": []
 },
 "M:749F30:p0:0xe0": {
-"class": "MissionClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 660,
@@ -234976,7 +235018,7 @@
 ]
 },
 "M:74AA30:this:0x108": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -235914,7 +235956,7 @@
 ]
 },
 "M:74CE50:this:0xb0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -236046,7 +236088,7 @@
 "ents": []
 },
 "R:74DC00:ecx": {
-"class": "DynamicVectorClass",
+"class": "VeinholeClass",
 "obs": [
 [
 176,
@@ -236245,7 +236287,7 @@
 ]
 },
 "M:74E8A0:this:0xb0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -236738,7 +236780,7 @@
 ]
 },
 "R:74FD50:ecx": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 60,
@@ -236754,7 +236796,7 @@
 ]
 },
 "R:74FD60:ecx": {
-"class": "ConnectionClass",
+"class": "WDTState",
 "obs": [
 [
 60,
@@ -237553,7 +237595,7 @@
 ]
 },
 "R:7564A0:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -237727,7 +237769,7 @@
 ]
 },
 "R:7589F0:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -237829,7 +237871,7 @@
 ]
 },
 "R:758E10:ecx": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -238067,7 +238109,7 @@
 "ents": []
 },
 "P:7C2590:2": {
-"class": "ScriptClass",
+"class": "MovieClass",
 "obs": [
 [
 1300,
@@ -238089,7 +238131,7 @@
 ]
 },
 "R:759850:ecx": {
-"class": "ScriptClass",
+"class": "GameClass",
 "obs": [
 [
 512,
@@ -238113,7 +238155,7 @@
 "ents": []
 },
 "R:7598D0:ecx": {
-"class": "ScriptClass",
+"class": "MovieClass",
 "obs": [
 [
 512,
@@ -238229,7 +238271,7 @@
 "ents": []
 },
 "R:759E10:ecx": {
-"class": "ScriptClass",
+"class": "MovieClass",
 "obs": [
 [
 512,
@@ -238247,7 +238289,7 @@
 "ents": []
 },
 "R:759E50:ecx": {
-"class": "ScriptClass",
+"class": "MovieClass",
 "obs": [
 [
 1360,
@@ -238257,7 +238299,7 @@
 "ents": []
 },
 "R:759E60:ecx": {
-"class": "ScriptClass",
+"class": "MovieClass",
 "obs": [
 [
 512,
@@ -238362,7 +238404,7 @@
 ]
 },
 "P:75A100:0": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -238388,7 +238430,7 @@
 ]
 },
 "P:75A2B0:0": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -238398,7 +238440,7 @@
 "ents": []
 },
 "P:75A350:0": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -238690,7 +238732,7 @@
 ]
 },
 "P:75AB30:0": {
-"class": "GenericNode",
+"class": "ScoreClass",
 "obs": [
 [
 48,
@@ -238836,7 +238878,7 @@
 ]
 },
 "P:75AE00:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -239959,7 +240001,7 @@
 ]
 },
 "P:75E440:0": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -240681,7 +240723,7 @@
 ]
 },
 "M:75FA90:this:0x1a8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -240783,7 +240825,7 @@
 ]
 },
 "M:7602E0:this:0x1a8": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -241270,7 +241312,7 @@
 ]
 },
 "M:762AF0:this:0x1d4": {
-"class": "OverlayClass",
+"class": "PriQueue",
 "obs": [
 [
 692,
@@ -241608,7 +241650,7 @@
 ]
 },
 "R:763A50:ecx": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 44,
@@ -241676,7 +241718,7 @@
 ]
 },
 "P:763D90:0": {
-"class": "ConnectionClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 44,
@@ -242418,7 +242460,7 @@
 ]
 },
 "R:765410:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -242903,7 +242945,7 @@
 "ents": []
 },
 "P:7660F0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -243488,7 +243530,7 @@
 ]
 },
 "P:7674E0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -243498,7 +243540,7 @@
 "ents": []
 },
 "M:7674E0:p0:0x4": {
-"class": "DynamicVectorClass",
+"class": "Value",
 "obs": [
 [
 56,
@@ -243547,7 +243589,7 @@
 ]
 },
 "P:767800:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -245364,7 +245406,7 @@
 ]
 },
 "R:76B080:ecx": {
-"class": "DynamicVectorClass",
+"class": "SuperWeaponClass",
 "obs": [
 [
 68,
@@ -245374,7 +245416,7 @@
 "ents": []
 },
 "R:76B090:ecx": {
-"class": "TypeList",
+"class": "DynamicVector",
 "obs": [
 [
 72,
@@ -245774,7 +245816,7 @@
 "ents": []
 },
 "R:76BFA0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -245814,7 +245856,7 @@
 "ents": []
 },
 "R:76BFE0:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -245955,7 +245997,7 @@
 ]
 },
 "P:770550:3": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 1076,
@@ -245980,7 +246022,7 @@
 ]
 },
 "R:76CBF0:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 76,
@@ -246008,7 +246050,7 @@
 ]
 },
 "M:76CBF0:this:0x4c": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -246151,7 +246193,7 @@
 ]
 },
 "M:76DAD0:this:0x468": {
-"class": "TypeList",
+"class": "AnimClass",
 "obs": [
 [
 44,
@@ -246179,7 +246221,7 @@
 ]
 },
 "M:76DAD0:this:0x4c": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -246189,7 +246231,7 @@
 "ents": []
 },
 "M:76DAD0:p0:0x4": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -246199,7 +246241,7 @@
 "ents": []
 },
 "R:76DED0:ecx": {
-"class": "Anim@Voices@WorldDominationTour",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 1116,
@@ -246211,7 +246253,7 @@
 ]
 },
 "R:76DF50:ecx": {
-"class": "Anim@Voices@WorldDominationTour",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 1116,
@@ -246287,7 +246329,7 @@
 ]
 },
 "M:76E430:this:0x4c": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -246328,7 +246370,7 @@
 ]
 },
 "M:76E750:this:0x4c": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -246356,7 +246398,7 @@
 "ents": []
 },
 "M:76E8B0:this:0x4c": {
-"class": "ScriptClass",
+"class": "LightSourceClass",
 "obs": [
 [
 68,
@@ -246398,7 +246440,7 @@
 ]
 },
 "R:76EEB0:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [
 [
 1116,
@@ -246410,7 +246452,7 @@
 ]
 },
 "R:76F020:ecx": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -246921,7 +246963,7 @@
 "ents": []
 },
 "R:76FEB0:ecx": {
-"class": "DynamicVectorClass",
+"class": "DynamicVector",
 "obs": [
 [
 40,
@@ -246933,7 +246975,7 @@
 ]
 },
 "R:76FF20:ecx": {
-"class": "GenericNode",
+"class": "Property",
 "obs": [
 [
 44,
@@ -246943,7 +246985,7 @@
 "ents": []
 },
 "R:76FF30:ecx": {
-"class": "SwizzleManagerClass",
+"class": "DropPodLocomotionClass",
 "obs": [
 [
 44,
@@ -247107,7 +247149,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7712C0"
+]
 },
 "P:7712C0:0": {
 "class": "TypeList",
@@ -248028,7 +248072,7 @@
 ]
 },
 "R:772A90:ecx": {
-"class": "ScriptClass",
+"class": "Debug",
 "obs": [
 [
 160,
@@ -248054,7 +248098,7 @@
 ]
 },
 "R:772AC0:ecx": {
-"class": "ScriptClass",
+"class": "IsometricTileClass",
 "obs": [
 [
 172,
@@ -248216,7 +248260,7 @@
 ]
 },
 "R:773070:ecx": {
-"class": "ScriptClass",
+"class": "TagTypeClass",
 "obs": [
 [
 160,
@@ -248256,7 +248300,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:773590"
+]
 },
 "R:773600:ecx": {
 "class": "TechnoTypeClass",
@@ -248275,7 +248321,7 @@
 ]
 },
 "R:7738A0:ecx": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -248739,7 +248785,7 @@
 ]
 },
 "R:776880:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -248949,7 +248995,7 @@
 ]
 },
 "P:7CA67F:3": {
-"class": "Node",
+"class": "WOLPersona",
 "obs": [
 [
 8,
@@ -249215,7 +249261,7 @@
 ]
 },
 "P:781380:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -249225,7 +249271,7 @@
 "ents": []
 },
 "P:7813B0:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -249317,7 +249363,7 @@
 "ents": []
 },
 "R:783B80:ecx": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -249433,7 +249479,7 @@
 ]
 },
 "P:788180:0": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -249443,7 +249489,7 @@
 "ents": []
 },
 "M:788180:p0:0x4": {
-"class": "GenericNode",
+"class": "FrameSnapshot",
 "obs": [
 [
 20,
@@ -249719,7 +249765,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"P:78F7F0:0"
+]
 },
 "P:791B10:0": {
 "class": "LightSourceClass",
@@ -249922,7 +249970,7 @@
 ]
 },
 "M:79CBA0:p0:0x8": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -249998,7 +250046,7 @@
 "ents": []
 },
 "P:7A2330:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -250111,7 +250159,7 @@
 ]
 },
 "P:7A5690:0": {
-"class": "DynamicVectorClass",
+"class": "IPXManagerClass",
 "obs": [
 [
 168,
@@ -250121,7 +250169,7 @@
 "ents": []
 },
 "P:7A5890:0": {
-"class": "OverlayClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -250209,7 +250257,7 @@
 ]
 },
 "P:7A7B60:0": {
-"class": "GenericNode",
+"class": "Field",
 "obs": [
 [
 32,
@@ -250243,7 +250291,7 @@
 ]
 },
 "M:7A9970:p0:0x110": {
-"class": "LogicClass",
+"class": "BuildingPlacement",
 "obs": [
 [
 272,
@@ -250327,7 +250375,7 @@
 ]
 },
 "M:7AC500:p0:0x10": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -251058,7 +251106,7 @@
 ]
 },
 "M:7ADCD0:p0:0x70": {
-"class": "LogicClass",
+"class": "Subzone",
 "obs": [
 [
 112,
@@ -251442,7 +251490,7 @@
 ]
 },
 "M:7AE950:p0:0x110": {
-"class": "LogicClass",
+"class": "BuildingPlacement",
 "obs": [
 [
 272,
@@ -251845,7 +251893,7 @@
 ]
 },
 "R:7B0F50:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258152,
@@ -252199,7 +252247,7 @@
 ]
 },
 "R:7B1C50:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258156,
@@ -252319,7 +252367,7 @@
 ]
 },
 "R:7B20E0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "AudioQueue",
 "obs": [
 [
 258144,
@@ -252478,7 +252526,7 @@
 ]
 },
 "R:7B2630:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [
 [
 258156,
@@ -256625,7 +256673,7 @@
 "ents": []
 },
 "R:7BD270:ecx": {
-"class": "LightConvertClass",
+"class": "AudioStream",
 "obs": [
 [
 88,
@@ -256636,12 +256684,10 @@
 4
 ]
 ],
-"ents": [
-"T:7BD270"
-]
+"ents": []
 },
 "R:7BD290:ecx": {
-"class": "LightConvertClass",
+"class": "AudioStream",
 "obs": [
 [
 88,
@@ -256652,12 +256698,10 @@
 4
 ]
 ],
-"ents": [
-"T:7BD290"
-]
+"ents": []
 },
 "R:7BD2B0:ecx": {
-"class": "LightConvertClass",
+"class": "AudioStream",
 "obs": [
 [
 88,
@@ -256668,12 +256712,10 @@
 4
 ]
 ],
-"ents": [
-"T:7BD2B0"
-]
+"ents": []
 },
 "R:7BD2D0:ecx": {
-"class": "LightConvertClass",
+"class": "AudioStream",
 "obs": [
 [
 132,
@@ -256716,9 +256758,7 @@
 4
 ]
 ],
-"ents": [
-"T:7BD2D0"
-]
+"ents": []
 },
 "P:7BD470:0": {
 "class": "RulesClass",
@@ -256981,7 +257021,7 @@
 ]
 },
 "M:7BD690:this:0x6ec": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -257019,7 +257059,7 @@
 ]
 },
 "M:7BD690:this:0x6e4": {
-"class": "MovieHandle",
+"class": "SyncDelay",
 "obs": [
 [
 16,
@@ -257201,7 +257241,7 @@
 ]
 },
 "M:7BDF80:this:0x6e4": {
-"class": "RLEBlitter",
+"class": "AudioPool",
 "obs": [
 [
 12,
@@ -257211,7 +257251,7 @@
 "ents": []
 },
 "M:7BDF80:this:0x6ec": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -257269,16 +257309,14 @@
 ]
 },
 "R:7BE660:ecx": {
-"class": "LightConvertClass",
+"class": "FootClass",
 "obs": [
 [
 1744,
 4
 ]
 ],
-"ents": [
-"T:7BE660"
-]
+"ents": []
 },
 "R:7BE670:ecx": {
 "class": "UnitClass",
@@ -257451,7 +257489,7 @@
 ]
 },
 "R:7BEFE0:ecx": {
-"class": "IUnknown",
+"class": "WinModemClass",
 "obs": [
 [
 340,
@@ -257527,7 +257565,7 @@
 ]
 },
 "R:7BF0B0:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 72,
@@ -257554,7 +257592,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:7BF0B0"
+]
 },
 "M:7BF0B0:this:0x6dc": {
 "class": "MSOverlayAnim",
@@ -257611,7 +257651,7 @@
 "ents": []
 },
 "R:7BF190:ecx": {
-"class": "AircraftClass",
+"class": "FootClass",
 "obs": [
 [
 72,
@@ -257765,7 +257805,7 @@
 ]
 },
 "M:7C12B0:this:0x730": {
-"class": "DeployCommandClass",
+"class": "ArmorType",
 "obs": [
 [
 4,
@@ -258031,7 +258071,7 @@
 ]
 },
 "R:7C35B0:ecx": {
-"class": "XSurface",
+"class": "File",
 "obs": [
 [
 1812,
@@ -258157,7 +258197,7 @@
 ]
 },
 "R:7C3670:ecx": {
-"class": "AircraftClass",
+"class": "UnitClass",
 "obs": [
 [
 1800,
@@ -258185,7 +258225,7 @@
 "ents": []
 },
 "R:7C3750:ecx": {
-"class": "LightConvertClass",
+"class": "TechnoClass",
 "obs": [
 [
 72,
@@ -258212,9 +258252,7 @@
 4
 ]
 ],
-"ents": [
-"T:7C3750"
-]
+"ents": []
 },
 "M:7C3750:this:0x6dc": {
 "class": "CarryoverClass",
@@ -258405,7 +258443,7 @@
 "ents": []
 },
 "P:7C61CF:0": {
-"class": "Node",
+"class": "CComObject_CChatEventSink___ATL",
 "obs": [
 [
 8,
@@ -259104,7 +259142,7 @@
 ]
 },
 "M:7CCFFC:p0:0x98": {
-"class": "ScriptClass",
+"class": "NetworkDialog",
 "obs": [
 [
 156,
@@ -259877,7 +259915,7 @@
 "ents": []
 },
 "P:7D52B8:0": {
-"class": "ConnectionClass",
+"class": "CommBufferClass",
 "obs": [
 [
 0,
@@ -262789,7 +262827,7 @@
 ]
 },
 "R:410490:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": []
 },
@@ -263102,7 +263140,7 @@
 ]
 },
 "R:5AE590:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:5AE590"
@@ -263856,12 +263894,12 @@
 ]
 },
 "R:410470:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": []
 },
 "R:4104A0:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": []
 },
@@ -264202,7 +264240,7 @@
 ]
 },
 "R:5D26F0:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:5D26F0"
@@ -266275,7 +266313,7 @@
 ]
 },
 "R:7A41C0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A41C0"
@@ -266400,7 +266438,7 @@
 ]
 },
 "R:410440:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "T:410440"
@@ -267430,7 +267468,7 @@
 ]
 },
 "R:7A4C10:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A4C10"
@@ -267697,7 +267735,7 @@
 ]
 },
 "R:4104C0:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "T:4104C0"
@@ -268285,7 +268323,7 @@
 ]
 },
 "R:7A5240:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A5240"
@@ -269062,7 +269100,7 @@
 ]
 },
 "R:7A5290:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A5290"
@@ -269146,7 +269184,7 @@
 ]
 },
 "R:410520:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "T:410520"
@@ -269258,7 +269296,7 @@
 ]
 },
 "R:7A55F0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A55F0"
@@ -269385,7 +269423,7 @@
 ]
 },
 "R:410530:ecx": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "T:410530"
@@ -269917,7 +269955,7 @@
 ]
 },
 "R:7AA870:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AA870"
@@ -270065,7 +270103,7 @@
 ]
 },
 "R:7A5690:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A5690"
@@ -270192,7 +270230,7 @@
 ]
 },
 "R:7A5890:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A5890"
@@ -270717,14 +270755,14 @@
 ]
 },
 "R:7A70E0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A70E0"
 ]
 },
 "R:7B1720:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1720"
@@ -271242,14 +271280,14 @@
 ]
 },
 "R:7AB330:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB330"
 ]
 },
 "R:7B1730:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1730"
@@ -271340,7 +271378,7 @@
 ]
 },
 "R:7AAFB0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AAFB0"
@@ -271459,7 +271497,7 @@
 ]
 },
 "R:7AB170:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB170"
@@ -271571,7 +271609,7 @@
 ]
 },
 "R:7A7110:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A7110"
@@ -271718,7 +271756,7 @@
 ]
 },
 "R:7A8DA0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A8DA0"
@@ -271830,7 +271868,7 @@
 ]
 },
 "R:7A8FC0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A8FC0"
@@ -271956,14 +271994,14 @@
 ]
 },
 "R:7AA6A0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AA6A0"
 ]
 },
 "R:7B1740:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1740"
@@ -272075,14 +272113,14 @@
 ]
 },
 "R:7AA6D0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AA6D0"
 ]
 },
 "R:7B1750:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "IPXInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1750"
@@ -272139,7 +272177,7 @@
 ]
 },
 "R:7A5220:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A5220"
@@ -272160,7 +272198,7 @@
 ]
 },
 "R:7A8260:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A8260"
@@ -272202,7 +272240,7 @@
 ]
 },
 "R:7A7EA0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A7EA0"
@@ -272265,7 +272303,7 @@
 ]
 },
 "R:7A7B60:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A7B60"
@@ -272314,7 +272352,7 @@
 ]
 },
 "R:7AB670:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB670"
@@ -272370,7 +272408,7 @@
 ]
 },
 "R:7AB340:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB340"
@@ -272419,7 +272457,7 @@
 ]
 },
 "R:7A9970:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A9970"
@@ -272503,7 +272541,7 @@
 ]
 },
 "R:7A9800:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A9800"
@@ -272559,7 +272597,7 @@
 ]
 },
 "R:7A9200:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A9200"
@@ -272692,7 +272730,7 @@
 ]
 },
 "R:7AB350:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB350"
@@ -272819,7 +272857,7 @@
 ]
 },
 "R:7AB440:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB440"
@@ -272938,7 +272976,7 @@
 ]
 },
 "R:7AB3C0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB3C0"
@@ -273106,7 +273144,7 @@
 ]
 },
 "R:7A4EC0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A4EC0"
@@ -273197,7 +273235,7 @@
 ]
 },
 "R:7AB8E0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB8E0"
@@ -273302,7 +273340,7 @@
 ]
 },
 "R:7ABD40:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7ABD40"
@@ -273421,7 +273459,7 @@
 ]
 },
 "R:7ABAF0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7ABAF0"
@@ -273442,7 +273480,7 @@
 ]
 },
 "R:4263C0:ecx": {
-"class": "FootClass",
+"class": "AnimClass",
 "obs": [],
 "ents": [
 "T:4263C0"
@@ -273498,7 +273536,7 @@
 ]
 },
 "R:7ABFA0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7ABFA0"
@@ -273547,7 +273585,7 @@
 ]
 },
 "R:7AC220:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC220"
@@ -273596,7 +273634,7 @@
 ]
 },
 "R:7AC4A0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC4A0"
@@ -273687,7 +273725,7 @@
 ]
 },
 "R:7AC4B0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC4B0"
@@ -273778,7 +273816,7 @@
 ]
 },
 "R:7A8ED0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A8ED0"
@@ -273827,7 +273865,7 @@
 ]
 },
 "R:7A9110:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A9110"
@@ -273876,7 +273914,7 @@
 ]
 },
 "R:7AB0A0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB0A0"
@@ -273918,7 +273956,7 @@
 ]
 },
 "R:7AB260:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AB260"
@@ -273960,7 +273998,7 @@
 ]
 },
 "R:7A9550:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7A9550"
@@ -274009,7 +274047,7 @@
 ]
 },
 "R:7AC4C0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC4C0"
@@ -274058,7 +274096,7 @@
 ]
 },
 "R:7AC4D0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC4D0"
@@ -274093,7 +274131,7 @@
 ]
 },
 "R:7AC4E0:ecx": {
-"class": "CChatEventSink",
+"class": "?$CComObject@VCChatEventSink@@@ATL",
 "obs": [],
 "ents": [
 "T:7AC4E0"
@@ -305415,7 +305453,7 @@
 "ents": []
 },
 "M:5981F0:this:0x2E0": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "M:5981F0:this:0x2E0"
@@ -306591,7 +306629,7 @@
 ]
 },
 "P:5CF840:0": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:5CF840:0"
@@ -308762,7 +308800,7 @@
 ]
 },
 "P:5D1FD0:0": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:5D1FD0:0"
@@ -311610,7 +311648,7 @@
 "ents": []
 },
 "M:5FA510:this:0x710": {
-"class": "SHPStruct",
+"class": "SHPReference",
 "obs": [],
 "ents": [
 "M:5FA510:this:0x710"
@@ -311627,7 +311665,7 @@
 "ents": []
 },
 "M:5FA590:this:0x710": {
-"class": "SHPStruct",
+"class": "SHPReference",
 "obs": [],
 "ents": [
 "M:5FA590:this:0x710"
@@ -321348,7 +321386,7 @@
 "ents": []
 },
 "M:674730:this:0xEF8": {
-"class": "SHPStruct",
+"class": "SHPReference",
 "obs": [],
 "ents": [
 "M:674730:this:0xEF8"
@@ -323863,7 +323901,7 @@
 ]
 },
 "M:68ED80:this:0x2E0": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "M:68ED80:this:0x2E0"
@@ -334332,7 +334370,7 @@
 ]
 },
 "P:7692F0:0": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:7692F0:0"
@@ -334533,7 +334571,7 @@
 ]
 },
 "P:76C970:1": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:76C970:1"
@@ -334545,14 +334583,14 @@
 "ents": []
 },
 "R:76CA60:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:76CA60"
 ]
 },
 "P:76CA60:0": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:76CA60:0"
@@ -334574,7 +334612,7 @@
 "ents": []
 },
 "P:76CBF0:0": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "P:76CBF0:0"
@@ -337681,7 +337719,7 @@
 "ents": []
 },
 "R:7AD330:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:7AD330"
@@ -338617,7 +338655,7 @@
 "ents": []
 },
 "R:7AD2F0:ecx": {
-"class": "MSEngine",
+"class": "Selection@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:7AD2F0"
@@ -341148,7 +341186,7 @@
 "ents": []
 },
 "M:4D98C0:this:0x21c": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "M:4D98C0:this:0x21c"
@@ -341573,7 +341611,7 @@
 ]
 },
 "M:700C40:this:0x21c": {
-"class": "BuildingTypeClass",
+"class": "HouseClass",
 "obs": [],
 "ents": [
 "M:700C40:this:0x21c"
@@ -342040,7 +342078,7 @@
 ]
 },
 "N:5CC7D9": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:5CC7D9"
@@ -342190,7 +342228,7 @@
 ]
 },
 "N:6C99FA": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:6C99FA"
@@ -343774,14 +343812,14 @@
 "ents": []
 },
 "N:76EA93": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:76EA93"
 ]
 },
 "N:76EB80": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:76EB80"
@@ -344276,7 +344314,7 @@
 ]
 },
 "N:6BFB3E": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:6BFB3E"
@@ -344356,7 +344394,7 @@
 ]
 },
 "N:6C4DBE": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:6C4DBE"
@@ -344861,7 +344899,7 @@
 "ents": []
 },
 "N:549F09": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:549F09"
@@ -345948,7 +345986,7 @@
 ]
 },
 "N:5C0864": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:5C0864"
@@ -346539,14 +346577,14 @@
 ]
 },
 "N:76C5CE": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:76C5CE"
 ]
 },
 "N:76C62E": {
-"class": "CChatEventSink",
+"class": "MechLocomotionClass",
 "obs": [],
 "ents": [
 "N:76C62E"
