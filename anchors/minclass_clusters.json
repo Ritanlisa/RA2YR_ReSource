@@ -3939,7 +3939,7 @@
 "T:40BCB0"
 ]
 },
-"R:40BD00:ecx": {
+"N:7331CF": {
 "class": "VectorClass",
 "obs": [
 [
@@ -3964,7 +3964,8 @@
 ]
 ],
 "ents": [
-"T:40BD00"
+"T:40BD00",
+"N:7331CF"
 ]
 },
 "R:40BE50:ecx": {
@@ -6299,7 +6300,7 @@
 "T:40FEC0"
 ]
 },
-"R:410170:ecx": {
+"N:438EAF": {
 "class": "AbstractClass",
 "obs": [
 [
@@ -6340,7 +6341,9 @@
 ]
 ],
 "ents": [
-"T:410170"
+"T:410170",
+"N:438EAF",
+"N:43A82E"
 ]
 },
 "R:4101C0:ecx": {
@@ -6489,7 +6492,7 @@
 "T:4105A0"
 ]
 },
-"R:410800:ecx": {
+"N:691C67": {
 "class": "AbstractTypeClass",
 "obs": [
 [
@@ -6522,7 +6525,8 @@
 ]
 ],
 "ents": [
-"T:410800"
+"T:410800",
+"N:691C67"
 ]
 },
 "R:410960:ecx": {
@@ -11423,7 +11427,7 @@
 "P:421B60:0"
 ]
 },
-"R:421EA0:ecx": {
+"N:41662E": {
 "class": "AnimClass",
 "obs": [
 [
@@ -11608,7 +11612,12 @@
 ]
 ],
 "ents": [
-"T:421EA0"
+"T:421EA0",
+"N:41662E",
+"N:4869CF",
+"N:4CEB6C",
+"N:4CEC23",
+"N:4B5D32"
 ]
 },
 "M:421EA0:this:0xc8": {
@@ -16941,7 +16950,7 @@
 "T:42FC40"
 ]
 },
-"R:42FCB0:ecx": {
+"N:58D259": {
 "class": "VectorClass",
 "obs": [
 [
@@ -16966,7 +16975,12 @@
 ]
 ],
 "ents": [
-"T:42FCB0"
+"T:42FCB0",
+"N:594FCC",
+"N:5A0509",
+"N:58D259",
+"N:58D41C",
+"N:58E768"
 ]
 },
 "P:6D2140:4": {
@@ -38966,7 +38980,7 @@
 "T:477B60"
 ]
 },
-"R:477BE0:ecx": {
+"N:733E85": {
 "class": "VectorClass",
 "obs": [
 [
@@ -38991,7 +39005,8 @@
 ]
 ],
 "ents": [
-"T:477BE0"
+"T:477BE0",
+"N:733E85"
 ]
 },
 "R:477C30:ecx": {
@@ -44027,7 +44042,7 @@
 "T:488030"
 ]
 },
-"R:488080:ecx": {
+"N:483A4A": {
 "class": "VectorClass",
 "obs": [
 [
@@ -44052,7 +44067,8 @@
 ]
 ],
 "ents": [
-"T:488080"
+"T:488080",
+"N:483A4A"
 ]
 },
 "R:4880F0:ecx": {
@@ -61358,11 +61374,14 @@
 "T:4BA340"
 ]
 },
-"R:4BA5A0:ecx": {
+"N:641E27": {
 "class": "DSurface",
 "obs": [],
 "ents": [
-"T:4BA5A0"
+"T:4BA5A0",
+"N:654762",
+"N:68CEBD",
+"N:641E27"
 ]
 },
 "M:4BA5A0:this:0x20": {
@@ -102807,7 +102826,7 @@
 "T:535A70"
 ]
 },
-"R:535AA0:ecx": {
+"N:52CDF3": {
 "class": "INIClass",
 "obs": [
 [
@@ -102852,7 +102871,10 @@
 ]
 ],
 "ents": [
-"T:535AA0"
+"T:535AA0",
+"N:59820C",
+"N:52CDF3",
+"N:52CF48"
 ]
 },
 "R:535B30:ecx": {
@@ -105179,7 +105201,7 @@
 "T:53F200"
 ]
 },
-"P:48BE60:0": {
+"N:540E84": {
 "class": "IPXConnClass",
 "obs": [
 [
@@ -105199,7 +105221,8 @@
 "T:53F430",
 "P:48BE60:0",
 "P:48BE60:3",
-"P:48BE60:9"
+"P:48BE60:9",
+"N:540E84"
 ]
 },
 "R:53F5D0:ecx": {
@@ -184810,7 +184833,7 @@
 "T:69DCF0"
 ]
 },
-"R:69DD30:ecx": {
+"N:6B1B6D": {
 "class": "ShapeButtonClass",
 "obs": [
 [
@@ -184867,7 +184890,8 @@
 ]
 ],
 "ents": [
-"T:69DD30"
+"T:69DD30",
+"N:6B1B6D"
 ]
 },
 "R:69DDC0:ecx": {
@@ -195741,7 +195765,7 @@
 "T:6CAB50"
 ]
 },
-"R:6CABA0:ecx": {
+"N:6C9FD8": {
 "class": "VectorClass",
 "obs": [
 [
@@ -195766,7 +195790,8 @@
 ]
 ],
 "ents": [
-"T:6CABA0"
+"T:6CABA0",
+"N:6C9FD8"
 ]
 },
 "R:6CAEC0:ecx": {
@@ -226206,7 +226231,7 @@
 "T:723EC0"
 ]
 },
-"R:724000:ecx": {
+"N:777792": {
 "class": "ToolTipManager",
 "obs": [
 [
@@ -226255,7 +226280,8 @@
 ]
 ],
 "ents": [
-"T:724000"
+"T:724000",
+"N:777792"
 ]
 },
 "R:7240B0:ecx": {
@@ -229021,7 +229047,7 @@
 "T:734390"
 ]
 },
-"R:7343E0:ecx": {
+"N:732D18": {
 "class": "VectorClass",
 "obs": [
 [
@@ -229046,7 +229072,8 @@
 ]
 ],
 "ents": [
-"T:7343E0"
+"T:7343E0",
+"N:732D18"
 ]
 },
 "R:7346A0:ecx": {
@@ -249949,7 +249976,7 @@
 ],
 "ents": []
 },
-"R:7A2FC0:ecx": {
+"N:7854D8": {
 "class": "CNetUtilEventSink",
 "obs": [
 [
@@ -249962,10 +249989,11 @@
 ]
 ],
 "ents": [
-"T:7A2FC0"
+"T:7A2FC0",
+"N:7854D8"
 ]
 },
-"R:7A41A0:ecx": {
+"N:7853FA": {
 "class": "CChatEventSink",
 "obs": [
 [
@@ -249978,7 +250006,8 @@
 ]
 ],
 "ents": [
-"T:7A41A0"
+"T:7A41A0",
+"N:7853FA"
 ]
 },
 "P:7A41C0:0": {
@@ -341879,20 +341908,6 @@
 "obs": [],
 "ents": []
 },
-"N:438EAF": {
-"class": "DynamicVector",
-"obs": [],
-"ents": [
-"N:438EAF"
-]
-},
-"N:43A82E": {
-"class": "StaticButtonClass",
-"obs": [],
-"ents": [
-"N:43A82E"
-]
-},
 "N:45E80B": {
 "class": "IUnknown",
 "obs": [],
@@ -341931,11 +341946,6 @@
 },
 "N:76F479": {
 "class": "CommandClass",
-"obs": [],
-"ents": []
-},
-"N:41662E": {
-"class": "IUnknown",
 "obs": [],
 "ents": []
 },
@@ -342208,11 +342218,6 @@
 "N:466058"
 ]
 },
-"N:4869CF": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
 "N:6395D1": {
 "class": "IUnknown",
 "obs": [],
@@ -342223,13 +342228,6 @@
 "obs": [],
 "ents": [
 "N:435C95"
-]
-},
-"N:594FCC": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:594FCC"
 ]
 },
 "N:45EB60": {
@@ -342423,13 +342421,6 @@
 "obs": [],
 "ents": []
 },
-"N:483A4A": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:483A4A"
-]
-},
 "N:486AD9": {
 "class": "VQMovieHandle",
 "obs": [],
@@ -342598,32 +342589,7 @@
 "obs": [],
 "ents": []
 },
-"N:4CEB6C": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:4CEC23": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:4B5D32": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
 "N:4B5DAE": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:4B5EDA": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:4B5FD1": {
 "class": "IUnknown",
 "obs": [],
 "ents": []
@@ -342701,11 +342667,6 @@
 ]
 },
 "N:68C4B2": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:441AC9": {
 "class": "IUnknown",
 "obs": [],
 "ents": []
@@ -343207,13 +343168,6 @@
 "obs": [],
 "ents": []
 },
-"N:5A0509": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:5A0509"
-]
-},
 "N:5D3D2D": {
 "class": "LightSourceClass",
 "obs": [],
@@ -343227,16 +343181,6 @@
 "ents": [
 "N:641278"
 ]
-},
-"N:520BF4": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:520C51": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
 },
 "N:6E8D78": {
 "class": "StaticButtonClass",
@@ -343643,45 +343587,10 @@
 "obs": [],
 "ents": []
 },
-"N:654762": {
-"class": "EnumConnectionsClass",
-"obs": [],
-"ents": [
-"N:654762"
-]
-},
 "N:6559BA": {
 "class": "ScrollClass",
 "obs": [],
 "ents": []
-},
-"N:58D259": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:58D259"
-]
-},
-"N:58D41C": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:58D41C"
-]
-},
-"N:58E768": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:58E768"
-]
-},
-"N:59820C": {
-"class": "CCINIClass",
-"obs": [],
-"ents": [
-"N:59820C"
-]
 },
 "N:599B36": {
 "class": "Block",
@@ -343699,13 +343608,6 @@
 "class": "CommandClass",
 "obs": [],
 "ents": []
-},
-"N:5A070A": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:5A070A"
-]
 },
 "N:5A0924": {
 "class": "CommandClass",
@@ -343773,13 +343675,6 @@
 "obs": [],
 "ents": [
 "N:68CE88"
-]
-},
-"N:68CEBD": {
-"class": "EnumConnectionsClass",
-"obs": [],
-"ents": [
-"N:68CEBD"
 ]
 },
 "N:68D0C2": {
@@ -343875,13 +343770,6 @@
 "obs": [],
 "ents": [
 "N:540DE1"
-]
-},
-"N:540E84": {
-"class": "FactoryClass",
-"obs": [],
-"ents": [
-"N:540E84"
 ]
 },
 "N:552CD6": {
@@ -344001,13 +343889,6 @@
 "class": "CommandClass",
 "obs": [],
 "ents": []
-},
-"N:6B1B6D": {
-"class": "TemporalClass",
-"obs": [],
-"ents": [
-"N:6B1B6D"
-]
 },
 "N:49E77A": {
 "class": "IUnknown",
@@ -344144,13 +344025,6 @@
 "obs": [],
 "ents": []
 },
-"N:641E27": {
-"class": "EnumConnectionsClass",
-"obs": [],
-"ents": [
-"N:641E27"
-]
-},
 "N:62453E": {
 "class": "WaveClass",
 "obs": [],
@@ -344202,11 +344076,6 @@
 "ents": []
 },
 "N:6E2333": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:6E2478": {
 "class": "IUnknown",
 "obs": [],
 "ents": []
@@ -344741,13 +344610,6 @@
 "N:6D7AAF"
 ]
 },
-"N:732D18": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:732D18"
-]
-},
 "N:6E636B": {
 "class": "TagTypeClass",
 "obs": [],
@@ -344783,22 +344645,12 @@
 "N:6ECFBA"
 ]
 },
-"N:6EF666": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
 "N:6F0A52": {
 "class": "NetworkDialog",
 "obs": [],
 "ents": [
 "N:6F0A52"
 ]
-},
-"N:691C67": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
 },
 "N:6E864B": {
 "class": "MissionClass",
@@ -344833,11 +344685,6 @@
 "ents": []
 },
 "N:423F91": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:4387AD": {
 "class": "IUnknown",
 "obs": [],
 "ents": []
@@ -345002,13 +344849,6 @@
 "class": "CommandClass",
 "obs": [],
 "ents": []
-},
-"N:5A0189": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:5A0189"
-]
 },
 "N:58D675": {
 "class": "CommandClass",
@@ -345249,11 +345089,6 @@
 "ents": []
 },
 "N:74A0ED": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:74A155": {
 "class": "IUnknown",
 "obs": [],
 "ents": []
@@ -345740,20 +345575,6 @@
 "obs": [],
 "ents": [
 "N:52BF97"
-]
-},
-"N:52CDF3": {
-"class": "CCINIClass",
-"obs": [],
-"ents": [
-"N:52CDF3"
-]
-},
-"N:52CF48": {
-"class": "CCINIClass",
-"obs": [],
-"ents": [
-"N:52CF48"
 ]
 },
 "N:53003D": {
@@ -346405,16 +346226,6 @@
 "N:65FB2A"
 ]
 },
-"N:66238F": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
-"N:662517": {
-"class": "IUnknown",
-"obs": [],
-"ents": []
-},
 "N:6627EA": {
 "class": "IUnknown",
 "obs": [],
@@ -346533,13 +346344,6 @@
 "obs": [],
 "ents": []
 },
-"N:6C9FD8": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:6C9FD8"
-]
-},
 "N:6CA0EA": {
 "class": "VQMovieHandle",
 "obs": [],
@@ -346605,13 +346409,6 @@
 "N:732ACE"
 ]
 },
-"N:7331CF": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:7331CF"
-]
-},
 "N:7334D2": {
 "class": "VQMovieHandle",
 "obs": [],
@@ -346624,13 +346421,6 @@
 "obs": [],
 "ents": [
 "N:733816"
-]
-},
-"N:733E85": {
-"class": "VQMovieHandle",
-"obs": [],
-"ents": [
-"N:733E85"
 ]
 },
 "N:7340C7": {
@@ -346710,13 +346500,6 @@
 "class": "IUnknown",
 "obs": [],
 "ents": []
-},
-"N:777792": {
-"class": "SuperWeapon",
-"obs": [],
-"ents": [
-"N:777792"
-]
 },
 "N:778989": {
 "class": "RAMFileClass",
@@ -346814,20 +346597,6 @@
 "obs": [],
 "ents": [
 "N:783D69"
-]
-},
-"N:7853FA": {
-"class": "Anim@Voices@WorldDominationTour",
-"obs": [],
-"ents": [
-"N:7853FA"
-]
-},
-"N:7854D8": {
-"class": "Anim@Voices@WorldDominationTour",
-"obs": [],
-"ents": [
-"N:7854D8"
 ]
 },
 "N:7855A8": {

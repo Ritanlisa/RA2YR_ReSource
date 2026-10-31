@@ -1782,12 +1782,19 @@ def main():
                 if ca - site > 0x200:
                     break
                 if reg == dest:
-                    # 只有"直接 ctor 的类尺寸 == 分配尺寸"时才是 most-derived（否则是基类 ctor）
+                    # `new` 之后紧跟、且返回值寄存器一致的那个 ctor，就是被构造的类。
+                    # 不再要求 ctor 类尺寸 == 分配尺寸：尺寸表本身失真（CCFileClass 声明 84
+                    # 却写 +100），这条等式会挡掉绝大多数真实分配点（实测只连上 6/842）。
                     t_eid = "T:%X" % tgt
-                    for ci, _s in exact.get(t_eid, ()):
-                        if known_size(ci) == size:
-                            c5_link.append((eid, t_eid))
+                    _c5_ctor_hits = [ci for ci, _s in exact.get(t_eid, ())]
+                    if _c5_ctor_hits and not any(
+                            _ci != _c5_ctor_hits[0] for _ci, _s in exact.get(eid, ())):
+                        for ci in _c5_ctor_hits:
+                            exact[eid].append((ci, "C5:alloc-ctor"))
+                            exact_count["C5"] = exact_count.get("C5", 0) + 1
+                            census["C5"] += 1
                             size_obs[ci][size] += 1
+                        c5_link.append((eid, t_eid))
                     break
     print("[C5] alloc size exact=%d fallback=%d" % (_c5_exact, _c5_fallback), flush=True)
     print("[C5] alloc_sites=%d size_validated_links=%d classes_with_size_evidence=%d"
