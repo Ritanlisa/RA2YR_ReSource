@@ -220,7 +220,7 @@
 "ents": []
 },
 "R:401FC0:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 4,
@@ -2702,7 +2702,7 @@
 "ents": []
 },
 "M:408840:this:0x4": {
-"class": "ConnectionClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 16,
@@ -2784,7 +2784,7 @@
 ]
 },
 "M:408970:this:0x4": {
-"class": "ConnectionClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 16,
@@ -2938,7 +2938,7 @@
 ]
 },
 "M:409100:this:0x28": {
-"class": "ConnectionClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 24,
@@ -2968,7 +2968,7 @@
 "ents": []
 },
 "R:409320:ecx": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 52,
@@ -8296,7 +8296,7 @@
 ]
 },
 "M:41A160:this:0x6c4": {
-"class": "TechnoClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 1004,
@@ -9650,7 +9650,7 @@
 "ents": []
 },
 "R:41DA20:ecx": {
-"class": "FoggedObjectClass",
+"class": "SlaveManagerClass",
 "obs": [
 [
 48,
@@ -13939,7 +13939,7 @@
 ]
 },
 "P:427530:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -14941,7 +14941,7 @@
 ]
 },
 "P:42B420:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -14985,7 +14985,7 @@
 ]
 },
 "P:42BE20:0": {
-"class": "CellClass",
+"class": "ConvertClass",
 "obs": [
 [
 283,
@@ -20181,7 +20181,7 @@
 ]
 },
 "R:438A00:ecx": {
-"class": "StaticButtonClass",
+"class": "ConnectionClass",
 "obs": [
 [
 48,
@@ -20355,7 +20355,7 @@
 ]
 },
 "R:438E70:ecx": {
-"class": "MSShapeAnim",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -20492,7 +20492,7 @@
 ]
 },
 "R:439260:ecx": {
-"class": "MSShapeAnim",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -27817,7 +27817,7 @@
 ]
 },
 "M:4500F0:this:0x524": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 56,
@@ -29448,7 +29448,7 @@
 ]
 },
 "M:4549B0:this:0x21c": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 676,
@@ -34929,7 +34929,7 @@
 ]
 },
 "P:4666E0:0": {
-"class": "BuildingTypeClass",
+"class": "InfantryClass",
 "obs": [
 [
 0,
@@ -36676,7 +36676,7 @@
 ]
 },
 "P:46DC90:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -36692,7 +36692,7 @@
 ]
 },
 "P:46DFD0:0": {
-"class": "SessionClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 0,
@@ -37135,7 +37135,7 @@
 "ents": []
 },
 "R:471F90:ecx": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -37369,7 +37369,7 @@
 "ents": []
 },
 "P:4728E0:0": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -37933,7 +37933,7 @@
 ]
 },
 "M:4733A0:p0:0x30": {
-"class": "ConnectionClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 20,
@@ -39394,7 +39394,7 @@
 ]
 },
 "P:478220:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -39438,7 +39438,7 @@
 ]
 },
 "M:4782E0:this:0x4": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 1,
@@ -39504,7 +39504,7 @@
 ]
 },
 "M:478470:this:0x4": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 1,
@@ -39582,7 +39582,7 @@
 ]
 },
 "M:4785F0:this:0x4": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 1,
@@ -39792,7 +39792,7 @@
 "ents": []
 },
 "P:4788E0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -40818,7 +40818,7 @@
 ]
 },
 "P:47DD70:0": {
-"class": "OverlayClass",
+"class": "DynamicVector",
 "obs": [
 [
 360,
@@ -41461,7 +41461,7 @@
 ]
 },
 "R:480180:ecx": {
-"class": "TiberiumClass",
+"class": "ConvertClass",
 "obs": [
 [
 268,
@@ -42894,7 +42894,7 @@
 ]
 },
 "R:485130:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -43879,7 +43879,7 @@
 ]
 },
 "R:487D50:ecx": {
-"class": "CellClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 283,
@@ -45181,7 +45181,7 @@
 "ents": []
 },
 "R:48B9E0:ecx": {
-"class": "CommBufferClass",
+"class": "ConnectionClass",
 "obs": [
 [
 52,
@@ -45447,7 +45447,7 @@
 ]
 },
 "M:48BF40:this:0x20": {
-"class": "BuildingClass",
+"class": "ConvertClass",
 "obs": [
 [
 2,
@@ -52514,7 +52514,7 @@
 ]
 },
 "R:49B720:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -55364,7 +55364,7 @@
 "ents": []
 },
 "P:4A2B60:0": {
-"class": "MSOverlayAnim",
+"class": "ConvertClass",
 "obs": [
 [
 8,
@@ -55741,7 +55741,7 @@
 "ents": []
 },
 "R:4A3890:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -56546,7 +56546,7 @@
 "ents": []
 },
 "P:4A65C0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -56568,7 +56568,7 @@
 "ents": []
 },
 "P:4A66D0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -58823,7 +58823,7 @@
 ]
 },
 "P:4AFC90:0": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 48,
@@ -59181,7 +59181,7 @@
 "ents": []
 },
 "M:4B0DF0:this:0xc": {
-"class": "RadioClass",
+"class": "Dial8Class",
 "obs": [
 [
 129,
@@ -60853,7 +60853,7 @@
 ]
 },
 "M:4B6C30:p0:0x58": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -61413,7 +61413,7 @@
 ]
 },
 "P:4BA5A0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -64371,7 +64371,7 @@
 "ents": []
 },
 "R:4C9C60:ecx": {
-"class": "FactoryClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 93,
@@ -64626,7 +64626,7 @@
 "ents": []
 },
 "R:4CA130:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 36,
@@ -64658,7 +64658,7 @@
 ]
 },
 "R:4CA170:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 104,
@@ -66175,7 +66175,7 @@
 "ents": []
 },
 "R:4CF950:ecx": {
-"class": "WinModemClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 12,
@@ -67174,7 +67174,7 @@
 "ents": []
 },
 "P:4D24A0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 96,
@@ -67190,7 +67190,7 @@
 ]
 },
 "R:4D2790:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 48,
@@ -67270,7 +67270,7 @@
 ]
 },
 "R:4D28C0:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 96,
@@ -69490,7 +69490,7 @@
 ]
 },
 "M:4D94B0:this:0x2b0": {
-"class": "IsometricTileTypeClass",
+"class": "DynamicVector",
 "obs": [
 [
 684,
@@ -70543,7 +70543,7 @@
 ]
 },
 "M:4DC060:p0:0x174": {
-"class": "WinsockInterfaceClass",
+"class": "ConvertClass",
 "obs": [
 [
 3,
@@ -73444,7 +73444,7 @@
 "ents": []
 },
 "R:4E6070:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 104,
@@ -86647,7 +86647,7 @@
 "ents": []
 },
 "R:4FB920:ecx": {
-"class": "StaticButtonClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -86684,7 +86684,7 @@
 "ents": []
 },
 "R:4FBD80:ecx": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 22104,
@@ -86906,7 +86906,7 @@
 "ents": []
 },
 "R:4FCDC0:ecx": {
-"class": "HouseClass",
+"class": "WaveClass",
 "obs": [
 [
 503,
@@ -87809,7 +87809,7 @@
 ]
 },
 "P:500B40:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -89043,7 +89043,7 @@
 "ents": []
 },
 "R:5092F0:ecx": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 21732,
@@ -89408,7 +89408,7 @@
 ]
 },
 "R:50A490:ecx": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 22280,
@@ -90091,7 +90091,7 @@
 ]
 },
 "R:50D250:ecx": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 22280,
@@ -90149,7 +90149,7 @@
 ]
 },
 "R:50D9C0:ecx": {
-"class": "XSurface",
+"class": "DynamicVector",
 "obs": [
 [
 356,
@@ -90159,7 +90159,7 @@
 "ents": []
 },
 "R:50D9D0:ecx": {
-"class": "OverlayClass",
+"class": "DynamicVector",
 "obs": [
 [
 360,
@@ -90169,7 +90169,7 @@
 "ents": []
 },
 "R:50D9E0:ecx": {
-"class": "XSurface",
+"class": "DynamicVector",
 "obs": [
 [
 356,
@@ -90179,7 +90179,7 @@
 "ents": []
 },
 "R:50D9F0:ecx": {
-"class": "OverlayClass",
+"class": "DynamicVector",
 "obs": [
 [
 360,
@@ -96998,7 +96998,7 @@
 ]
 },
 "M:51BAB0:this:0x5d4": {
-"class": "OverlayClass",
+"class": "EBolt",
 "obs": [
 [
 130,
@@ -97243,7 +97243,7 @@
 ]
 },
 "P:51C8B0:0": {
-"class": "MultiplayerGameMode",
+"class": "ConnectionClass",
 "obs": [
 [
 20,
@@ -98502,7 +98502,7 @@
 ]
 },
 "M:520260:this:0x5d4": {
-"class": "TeamClass",
+"class": "EBolt",
 "obs": [
 [
 130,
@@ -98945,7 +98945,7 @@
 ]
 },
 "P:521760:0": {
-"class": "AircraftClass",
+"class": "DynamicVector",
 "obs": [
 [
 488,
@@ -101173,7 +101173,7 @@
 ]
 },
 "R:525A10:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 4,
@@ -101929,7 +101929,7 @@
 ]
 },
 "R:52A4D0:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 44,
@@ -104358,7 +104358,7 @@
 "ents": []
 },
 "P:53B780:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -104374,7 +104374,7 @@
 ]
 },
 "P:53BBA0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -105348,7 +105348,7 @@
 ]
 },
 "M:53FBD0:this:0x20": {
-"class": "BuildingClass",
+"class": "ConvertClass",
 "obs": [
 [
 2,
@@ -105402,7 +105402,7 @@
 ]
 },
 "M:53FCB0:this:0x4": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -106220,7 +106220,7 @@
 ]
 },
 "R:540F00:ecx": {
-"class": "MSOverlayAnim",
+"class": "ConnectionClass",
 "obs": [
 [
 4,
@@ -106352,7 +106352,7 @@
 ]
 },
 "R:541370:ecx": {
-"class": "IPXManagerClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 4,
@@ -106372,7 +106372,7 @@
 ]
 },
 "R:5413B0:ecx": {
-"class": "IPXManagerClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 4,
@@ -106392,7 +106392,7 @@
 ]
 },
 "R:5413F0:ecx": {
-"class": "IPXManagerClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 4,
@@ -106436,7 +106436,7 @@
 ]
 },
 "R:541480:ecx": {
-"class": "IPXManagerClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 4,
@@ -106619,7 +106619,7 @@
 ]
 },
 "R:542280:ecx": {
-"class": "MSOverlayAnim",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -109492,7 +109492,7 @@
 ]
 },
 "R:54E360:ecx": {
-"class": "DSurface",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -111420,7 +111420,7 @@
 "ents": []
 },
 "P:554D50:0": {
-"class": "OverlayClass",
+"class": "TemporalClass",
 "obs": [
 [
 0,
@@ -116372,7 +116372,7 @@
 ]
 },
 "P:56A4C0:0": {
-"class": "CellClass",
+"class": "ListClass",
 "obs": [
 [
 56,
@@ -116416,7 +116416,7 @@
 ]
 },
 "P:56A980:0": {
-"class": "CellClass",
+"class": "ListClass",
 "obs": [
 [
 56,
@@ -116794,7 +116794,7 @@
 ]
 },
 "R:56DA10:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 84,
@@ -116902,7 +116902,7 @@
 ]
 },
 "P:56F690:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -117000,7 +117000,7 @@
 ]
 },
 "P:572230:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -117030,7 +117030,7 @@
 ]
 },
 "P:572B80:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -117044,7 +117044,7 @@
 "ents": []
 },
 "P:572C90:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -117154,7 +117154,7 @@
 ]
 },
 "P:575EE0:0": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -117808,7 +117808,7 @@
 ]
 },
 "P:578880:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -117912,7 +117912,7 @@
 ]
 },
 "P:57B210:0": {
-"class": "RocketLocomotionClass",
+"class": "CellClass",
 "obs": [
 [
 64,
@@ -118564,7 +118564,7 @@
 ]
 },
 "R:580B20:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -118582,7 +118582,7 @@
 "ents": []
 },
 "R:580B70:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -119064,7 +119064,7 @@
 ]
 },
 "P:5851B0:0": {
-"class": "MSShapeAnim",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -119494,7 +119494,7 @@
 "ents": []
 },
 "M:5880A0:p0:0x21c": {
-"class": "BulletTypeClass",
+"class": "DynamicVector",
 "obs": [
 [
 506,
@@ -119594,7 +119594,7 @@
 ]
 },
 "R:588C40:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -121992,7 +121992,7 @@
 ]
 },
 "R:58C2A0:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -122046,7 +122046,7 @@
 "ents": []
 },
 "P:58C6F0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -122128,7 +122128,7 @@
 ]
 },
 "R:58D0A0:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -122358,7 +122358,7 @@
 ]
 },
 "P:58EBC0:0": {
-"class": "WDTState",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -123684,7 +123684,7 @@
 "ents": []
 },
 "P:42B1F0:0": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 776,
@@ -123694,7 +123694,7 @@
 "ents": []
 },
 "P:42B1F0:1": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 776,
@@ -123714,7 +123714,7 @@
 "ents": []
 },
 "P:59B940:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -123728,7 +123728,7 @@
 "ents": []
 },
 "P:59BAB0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124184,7 +124184,7 @@
 "ents": []
 },
 "P:5A1190:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124246,7 +124246,7 @@
 ]
 },
 "P:5A23A0:0": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -124390,7 +124390,7 @@
 ]
 },
 "P:5A5AE0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124468,7 +124468,7 @@
 "ents": []
 },
 "R:5A6BA0:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124666,7 +124666,7 @@
 "ents": []
 },
 "R:5A9940:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124848,7 +124848,7 @@
 "ents": []
 },
 "R:5AC230:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124902,7 +124902,7 @@
 ]
 },
 "R:5AC370:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -124916,7 +124916,7 @@
 "ents": []
 },
 "P:5AC370:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -127797,7 +127797,7 @@
 ]
 },
 "R:5B3700:ecx": {
-"class": "CarryoverClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -127849,7 +127849,7 @@
 ]
 },
 "R:5B3760:ecx": {
-"class": "CarryoverClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -128424,7 +128424,7 @@
 "ents": []
 },
 "R:5B59B0:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128796,7 +128796,7 @@
 ]
 },
 "R:5B9680:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128812,7 +128812,7 @@
 ]
 },
 "R:5B96B0:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128828,7 +128828,7 @@
 ]
 },
 "R:5B96E0:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128844,7 +128844,7 @@
 ]
 },
 "R:5B9710:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128860,7 +128860,7 @@
 ]
 },
 "R:5B9750:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -128876,7 +128876,7 @@
 ]
 },
 "R:5B9A60:ecx": {
-"class": "CellClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -130741,7 +130741,7 @@
 ]
 },
 "M:5C3F80:this:0x40": {
-"class": "MapSeedClass",
+"class": "ConvertClass",
 "obs": [
 [
 64,
@@ -132128,7 +132128,7 @@
 ]
 },
 "P:5C9AE0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -132525,7 +132525,7 @@
 ]
 },
 "M:5CB880:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -132597,7 +132597,7 @@
 ]
 },
 "M:5CBB80:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -132639,7 +132639,7 @@
 ]
 },
 "M:5CBCB0:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -132789,7 +132789,7 @@
 ]
 },
 "M:5CBDA0:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -132877,7 +132877,7 @@
 ]
 },
 "M:5CC110:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -132974,7 +132974,7 @@
 ]
 },
 "M:5CC330:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -133066,7 +133066,7 @@
 ]
 },
 "M:5CC550:this:0x1c": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -133090,7 +133090,7 @@
 "ents": []
 },
 "R:5CC6A0:ecx": {
-"class": "MSOverlayAnim",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -134874,7 +134874,7 @@
 ]
 },
 "R:5D0190:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 88,
@@ -134890,7 +134890,7 @@
 ]
 },
 "R:5D0240:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 88,
@@ -136636,7 +136636,7 @@
 ]
 },
 "R:5D25D0:ecx": {
-"class": "MSOverlayAnim",
+"class": "ConnectionClass",
 "obs": [
 [
 56,
@@ -136652,7 +136652,7 @@
 ]
 },
 "R:5D2650:ecx": {
-"class": "CommBufferClass",
+"class": "ConnectionClass",
 "obs": [
 [
 52,
@@ -137242,7 +137242,7 @@
 ]
 },
 "M:5D2E90:this:0x14": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -137528,7 +137528,7 @@
 "ents": []
 },
 "R:5D4210:ecx": {
-"class": "GraphicMenuAnimItem",
+"class": "ConvertClass",
 "obs": [
 [
 25,
@@ -137544,7 +137544,7 @@
 ]
 },
 "P:7781A0:0": {
-"class": "MixFileClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -137685,7 +137685,7 @@
 "ents": []
 },
 "M:5D49A0:this:0x24": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 12,
@@ -140693,7 +140693,7 @@
 ]
 },
 "M:5F16E0:this:0x38": {
-"class": "ConnectionClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 28,
@@ -140849,7 +140849,7 @@
 "ents": []
 },
 "R:5F1C30:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 56,
@@ -141857,7 +141857,7 @@
 ]
 },
 "M:5F4EC0:this:0xa8": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -143490,7 +143490,7 @@
 "ents": []
 },
 "M:5F9070:this:0xa4": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -143604,7 +143604,7 @@
 ]
 },
 "P:5F92D0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -145310,7 +145310,7 @@
 "ents": []
 },
 "P:6071E0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -145338,7 +145338,7 @@
 ]
 },
 "P:60B000:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -145384,7 +145384,7 @@
 ]
 },
 "P:60B350:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -146594,7 +146594,7 @@
 "ents": []
 },
 "R:623730:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -147488,7 +147488,7 @@
 "ents": []
 },
 "P:7C8974:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -147506,7 +147506,7 @@
 "ents": []
 },
 "R:625C00:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -147602,7 +147602,7 @@
 "ents": []
 },
 "R:626020:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -147746,7 +147746,7 @@
 "ents": []
 },
 "P:626AB0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -150106,7 +150106,7 @@
 "ents": []
 },
 "P:62B5E0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -151901,7 +151901,7 @@
 ]
 },
 "P:630310:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -152344,7 +152344,7 @@
 ]
 },
 "R:631F10:ecx": {
-"class": "StaticButtonClass",
+"class": "ConnectionClass",
 "obs": [
 [
 48,
@@ -152468,16 +152468,14 @@
 "ents": []
 },
 "M:632D10:this:0x18": {
-"class": "MixHeaderData",
+"class": "Node",
 "obs": [
 [
 8,
 4
 ]
 ],
-"ents": [
-"M:632D10:this:0x18"
-]
+"ents": []
 },
 "R:632D60:ecx": {
 "class": "PKPipe",
@@ -153483,7 +153481,7 @@
 ]
 },
 "P:634CC0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 4,
@@ -157322,7 +157320,7 @@
 ]
 },
 "R:642DF0:ecx": {
-"class": "CCFileClass",
+"class": "DynamicVector",
 "obs": [
 [
 120,
@@ -157631,7 +157629,7 @@
 ]
 },
 "P:6440A0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -158725,7 +158723,7 @@
 "ents": []
 },
 "P:64BDD0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -160528,7 +160526,7 @@
 ]
 },
 "P:657DA0:0": {
-"class": "StaticButtonClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -161083,7 +161081,7 @@
 ]
 },
 "P:659470:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -162067,7 +162065,7 @@
 ]
 },
 "P:65A970:0": {
-"class": "VocClass",
+"class": "ConvertClass",
 "obs": [
 [
 632,
@@ -163980,7 +163978,7 @@
 ]
 },
 "P:65E010:0": {
-"class": "ConnectionClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 0,
@@ -164089,7 +164087,7 @@
 ]
 },
 "R:65FE00:ecx": {
-"class": "EditClass",
+"class": "WWMouseClass",
 "obs": [
 [
 0,
@@ -165140,7 +165138,7 @@
 "ents": []
 },
 "P:663410:0": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -169610,7 +169608,7 @@
 ]
 },
 "P:665650:0": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -171573,7 +171571,7 @@
 ]
 },
 "P:66D480:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -175305,7 +175303,7 @@
 ]
 },
 "R:67A190:ecx": {
-"class": "CarryoverClass",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -179665,7 +179663,7 @@
 ]
 },
 "P:68C710:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -180139,7 +180137,7 @@
 "ents": []
 },
 "P:68FBB0:0": {
-"class": "MSShapeAnim",
+"class": "WinModemClass",
 "obs": [
 [
 0,
@@ -180269,7 +180267,7 @@
 "ents": []
 },
 "R:690530:ecx": {
-"class": "MSOverlayAnim",
+"class": "ConnectionClass",
 "obs": [
 [
 56,
@@ -181237,7 +181235,7 @@
 "ents": []
 },
 "R:692F30:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [
 [
 21850,
@@ -181249,7 +181247,7 @@
 ]
 },
 "R:693060:ecx": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [
 [
 21850,
@@ -181327,7 +181325,7 @@
 ]
 },
 "P:4AEAD0:0": {
-"class": "ScrollClass",
+"class": "MouseClass",
 "obs": [
 [
 21850,
@@ -182586,7 +182584,7 @@
 "ents": []
 },
 "R:697F10:ecx": {
-"class": "CarryoverClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -182879,7 +182877,7 @@
 "ents": []
 },
 "P:5275C0:7": {
-"class": "CarryoverClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -185069,7 +185067,7 @@
 "ents": []
 },
 "R:69DFC0:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 52,
@@ -185109,7 +185107,7 @@
 ]
 },
 "R:69E010:ecx": {
-"class": "WWMouseClass",
+"class": "ConvertClass",
 "obs": [
 [
 30,
@@ -185419,7 +185417,7 @@
 "ents": []
 },
 "P:69E860:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -185781,7 +185779,7 @@
 ]
 },
 "P:69F3A0:0": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 48,
@@ -186139,7 +186137,7 @@
 "ents": []
 },
 "M:6A04C0:this:0xc": {
-"class": "RadioClass",
+"class": "Dial8Class",
 "obs": [
 [
 129,
@@ -187852,7 +187850,7 @@
 ]
 },
 "R:6A93F0:ecx": {
-"class": "WalkLocomotionClass",
+"class": "ConnectionClass",
 "obs": [
 [
 28,
@@ -188042,9 +188040,7 @@
 4
 ]
 ],
-"ents": [
-"M:6AAD00:this:0x2c"
-]
+"ents": []
 },
 "P:6AAD00:0": {
 "class": "GenericNode",
@@ -188656,7 +188652,7 @@
 ]
 },
 "R:6B0490:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -188790,7 +188786,7 @@
 ]
 },
 "R:6B0A90:ecx": {
-"class": "DiskLaserClass",
+"class": "ConnectionClass",
 "obs": [
 [
 48,
@@ -189006,7 +189002,7 @@
 ]
 },
 "P:6B1300:0": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -189486,7 +189482,7 @@
 ]
 },
 "R:6B1A70:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -191159,7 +191155,7 @@
 "ents": []
 },
 "R:6B7B90:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 104,
@@ -191219,7 +191215,7 @@
 ]
 },
 "R:6B7D30:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -191235,7 +191231,7 @@
 ]
 },
 "R:6B7D50:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -191251,7 +191247,7 @@
 ]
 },
 "R:6B7D80:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -191363,7 +191359,7 @@
 ]
 },
 "P:6B80B0:0": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -192086,7 +192082,7 @@
 ]
 },
 "P:6B9530:0": {
-"class": "AnimTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 0,
@@ -192178,7 +192174,7 @@
 ]
 },
 "M:6B9740:p0:0x308": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 776,
@@ -192323,7 +192319,7 @@
 ]
 },
 "P:6BAC40:0": {
-"class": "AnimTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 0,
@@ -192339,7 +192335,7 @@
 ]
 },
 "M:6BAC40:p0:0x308": {
-"class": "TerrainTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 776,
@@ -196031,7 +196027,7 @@
 ]
 },
 "R:6CB3A0:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 104,
@@ -196247,7 +196243,7 @@
 "ents": []
 },
 "R:6CB7B0:ecx": {
-"class": "SuperClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 109,
@@ -196421,7 +196417,7 @@
 ]
 },
 "M:6CB920:this:0x2c": {
-"class": "BulletTypeClass",
+"class": "DynamicVector",
 "obs": [
 [
 506,
@@ -196543,7 +196539,7 @@
 ]
 },
 "M:6CBEE0:this:0x28": {
-"class": "WeaponTypeClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 176,
@@ -196753,7 +196749,7 @@
 ]
 },
 "M:6CC2B0:this:0x28": {
-"class": "WeaponTypeClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 229,
@@ -196787,7 +196783,7 @@
 ]
 },
 "M:6CC360:this:0x28": {
-"class": "WeaponTypeClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 229,
@@ -197049,7 +197045,7 @@
 "ents": []
 },
 "R:6CDE90:ecx": {
-"class": "SuperClass",
+"class": "SpawnManagerClass",
 "obs": [
 [
 40,
@@ -197277,7 +197273,7 @@
 ]
 },
 "M:6CE1A0:this:0x28": {
-"class": "WeaponTypeClass",
+"class": "RadioClass",
 "obs": [
 [
 229,
@@ -197311,7 +197307,7 @@
 "ents": []
 },
 "R:6CE270:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -200541,7 +200537,7 @@
 ]
 },
 "M:6DAD60:p0:0x174": {
-"class": "WinsockInterfaceClass",
+"class": "ConvertClass",
 "obs": [
 [
 3,
@@ -201801,7 +201797,7 @@
 "ents": []
 },
 "P:6E0EF0:0": {
-"class": "HouseClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 499,
@@ -205563,7 +205559,7 @@
 "ents": []
 },
 "R:6EC130:ecx": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 40,
@@ -206944,7 +206940,7 @@
 ]
 },
 "M:6EEEA0:p0:0x21c": {
-"class": "CCFileClass",
+"class": "DynamicVector",
 "obs": [
 [
 120,
@@ -208216,7 +208212,7 @@
 "ents": []
 },
 "R:6F1E20:ecx": {
-"class": "TeamTypeClass",
+"class": "Dial8Class",
 "obs": [
 [
 169,
@@ -209783,7 +209779,7 @@
 ]
 },
 "M:6F3330:p0:0xa0": {
-"class": "Building",
+"class": "DynamicVector",
 "obs": [
 [
 676,
@@ -211649,7 +211645,7 @@
 ]
 },
 "M:6F9E50:p0:0x21c": {
-"class": "HouseClass",
+"class": "DynamicVector",
 "obs": [
 [
 22392,
@@ -212688,7 +212684,7 @@
 ]
 },
 "M:6FDD50:p0:0xac": {
-"class": "SmudgeTypeClass",
+"class": "CampaignClass",
 "obs": [
 [
 345,
@@ -221508,7 +221504,7 @@
 ]
 },
 "P:718230:0": {
-"class": "ConnectionClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 24,
@@ -221606,7 +221602,7 @@
 ]
 },
 "P:7187A0:0": {
-"class": "AircraftClass",
+"class": "RadioClass",
 "obs": [
 [
 160,
@@ -221884,7 +221880,7 @@
 "ents": []
 },
 "P:719F30:0": {
-"class": "ConnectionClass",
+"class": "ConvertClass",
 "obs": [
 [
 29,
@@ -222146,7 +222142,7 @@
 ]
 },
 "M:71A760:p0:0x21c": {
-"class": "WaveClass",
+"class": "DynamicVector",
 "obs": [
 [
 508,
@@ -222256,7 +222252,7 @@
 ]
 },
 "M:71ABC0:this:0x44": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 64,
@@ -222788,7 +222784,7 @@
 ]
 },
 "M:71B920:this:0xc8": {
-"class": "BulletTypeClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 563,
@@ -223853,7 +223849,7 @@
 ]
 },
 "R:71F390:ecx": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 44,
@@ -224643,7 +224639,7 @@
 ]
 },
 "R:720960:ecx": {
-"class": "MSShapeAnim",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -224727,7 +224723,7 @@
 ]
 },
 "R:7209D0:ecx": {
-"class": "MSShapeAnim",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -224779,7 +224775,7 @@
 ]
 },
 "R:720B20:ecx": {
-"class": "MSShapeAnim",
+"class": "ConvertClass",
 "obs": [
 [
 4,
@@ -224803,7 +224799,7 @@
 ]
 },
 "R:720BB0:ecx": {
-"class": "MSShapeAnim",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -224863,7 +224859,7 @@
 ]
 },
 "R:720EA0:ecx": {
-"class": "MSShapeAnim",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -224891,7 +224887,7 @@
 ]
 },
 "R:720FD0:ecx": {
-"class": "ConnectionClass",
+"class": "ConvertClass",
 "obs": [
 [
 17,
@@ -227981,7 +227977,7 @@
 "ents": []
 },
 "R:727D60:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -228274,7 +228270,7 @@
 ]
 },
 "R:729370:ecx": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 12,
@@ -228302,7 +228298,7 @@
 ]
 },
 "R:729480:ecx": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 12,
@@ -228375,7 +228371,7 @@
 ]
 },
 "R:729AA0:ecx": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 4,
@@ -228475,7 +228471,7 @@
 "ents": []
 },
 "P:72A150:0": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -228697,7 +228693,7 @@
 "ents": []
 },
 "P:72EC70:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -228876,7 +228872,7 @@
 ]
 },
 "P:7339B0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -229530,7 +229526,7 @@
 ]
 },
 "M:736C10:this:0x5d4": {
-"class": "TeamClass",
+"class": "EBolt",
 "obs": [
 [
 130,
@@ -231662,7 +231658,7 @@
 ]
 },
 "M:73E5E0:this:0x21c": {
-"class": "SmudgeTypeClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 578,
@@ -234260,7 +234256,7 @@
 ]
 },
 "P:7483B0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -234274,7 +234270,7 @@
 "ents": []
 },
 "P:748750:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -235831,7 +235827,7 @@
 ]
 },
 "R:74CD60:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -235900,7 +235896,7 @@
 ]
 },
 "R:74D670:ecx": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -236676,7 +236672,7 @@
 ]
 },
 "R:74FD50:ecx": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -236692,7 +236688,7 @@
 ]
 },
 "R:74FD60:ecx": {
-"class": "WDTState",
+"class": "ConnectionClass",
 "obs": [
 [
 60,
@@ -237777,7 +237773,7 @@
 "ents": []
 },
 "M:758E10:this:0x10": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 1,
@@ -237979,7 +237975,7 @@
 ]
 },
 "R:759540:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 4,
@@ -238284,7 +238280,7 @@
 "ents": []
 },
 "R:759FB0:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 4,
@@ -238310,7 +238306,7 @@
 "ents": []
 },
 "R:75A120:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 4,
@@ -238784,7 +238780,7 @@
 "ents": []
 },
 "R:75AEC0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -239432,7 +239428,7 @@
 ]
 },
 "P:75CEC0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -241546,7 +241542,7 @@
 ]
 },
 "R:763A50:ecx": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 44,
@@ -241614,7 +241610,7 @@
 ]
 },
 "P:763D90:0": {
-"class": "AlphaShapeClass",
+"class": "ConnectionClass",
 "obs": [
 [
 44,
@@ -244029,7 +244025,7 @@
 ]
 },
 "R:769440:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 84,
@@ -246881,7 +246877,7 @@
 "ents": []
 },
 "R:76FF30:ecx": {
-"class": "DropPodLocomotionClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 44,
@@ -249592,7 +249588,7 @@
 "ents": []
 },
 "P:78F7F0:0": {
-"class": "HouseClass",
+"class": "BuildingTypeClass",
 "obs": [
 [
 0,
@@ -250978,7 +250974,7 @@
 ]
 },
 "P:7ADCD0:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -251781,7 +251777,7 @@
 ]
 },
 "R:7B0F50:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 258152,
@@ -251851,7 +251847,7 @@
 ]
 },
 "P:7B13D0:0": {
-"class": "GraphicMenuAnimItem",
+"class": "ConvertClass",
 "obs": [
 [
 16,
@@ -252135,7 +252131,7 @@
 ]
 },
 "R:7B1C50:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 258156,
@@ -252255,7 +252251,7 @@
 ]
 },
 "R:7B20E0:ecx": {
-"class": "AudioQueue",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 258144,
@@ -252414,7 +252410,7 @@
 ]
 },
 "R:7B2630:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 258156,
@@ -253594,7 +253590,7 @@
 "ents": []
 },
 "R:7B4780:ecx": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -254863,7 +254859,7 @@
 ]
 },
 "M:7B8C60:this:0x4": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 2,
@@ -256026,7 +256022,7 @@
 ]
 },
 "P:7BB350:0": {
-"class": "SpawnManagerClass",
+"class": "RadSiteClass",
 "obs": [
 [
 0,
@@ -258199,7 +258195,7 @@
 ]
 },
 "P:7C39C0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -258249,7 +258245,7 @@
 "ents": []
 },
 "P:7C4730:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -258267,7 +258263,7 @@
 "ents": []
 },
 "P:7C4B80:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -258281,7 +258277,7 @@
 "ents": []
 },
 "P:7C4F90:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -258295,7 +258291,7 @@
 "ents": []
 },
 "P:7C53A0:0": {
-"class": "AbstractTypeClass",
+"class": "LightSourceClass",
 "obs": [
 [
 0,
@@ -259366,7 +259362,7 @@
 "ents": []
 },
 "P:7D0844:0": {
-"class": "OverlayClass",
+"class": "AirstrikeClass",
 "obs": [
 [
 0,
@@ -259809,7 +259805,7 @@
 "ents": []
 },
 "P:7D52B8:0": {
-"class": "CommBufferClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -260497,7 +260493,7 @@
 ]
 },
 "P:7DBED6:0": {
-"class": "OverlayClass",
+"class": "TemporalClass",
 "obs": [
 [
 0,
@@ -260838,7 +260834,7 @@
 "ents": []
 },
 "P:7DE200:0": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -260860,7 +260856,7 @@
 "ents": []
 },
 "P:7DE53A:0": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -260882,7 +260878,7 @@
 "ents": []
 },
 "P:7DE87A:0": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -260904,7 +260900,7 @@
 "ents": []
 },
 "P:7DEBBA:0": {
-"class": "WarheadTypeClass",
+"class": "ConvertClass",
 "obs": [
 [
 0,
@@ -270656,7 +270652,7 @@
 ]
 },
 "R:7B1720:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1720"
@@ -271181,7 +271177,7 @@
 ]
 },
 "R:7B1730:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1730"
@@ -271895,7 +271891,7 @@
 ]
 },
 "R:7B1740:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1740"
@@ -272014,7 +272010,7 @@
 ]
 },
 "R:7B1750:ecx": {
-"class": "IPXInterfaceClass",
+"class": "WinsockInterfaceClass",
 "obs": [],
 "ents": [
 "T:7B1750"
@@ -333950,11 +333946,6 @@
 "obs": [],
 "ents": []
 },
-"M:766AA0:this:0x4": {
-"class": "AbstractClass",
-"obs": [],
-"ents": []
-},
 "P:7B8170:0": {
 "class": "AbstractClass",
 "obs": [],
@@ -341637,13 +341628,6 @@
 "obs": [],
 "ents": [
 "M:7667A0:this:0x8"
-]
-},
-"M:766AA0:this:0x14": {
-"class": "ScrollClass",
-"obs": [],
-"ents": [
-"M:766AA0:this:0x14"
 ]
 },
 "T:7B8170": {

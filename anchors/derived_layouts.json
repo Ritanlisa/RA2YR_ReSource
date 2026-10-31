@@ -226,7 +226,7 @@
 "MouseClass": {
 "member_count": 18,
 "extent": 324,
-"clusters": 24,
+"clusters": 26,
 "members": [
 [
 0,
@@ -17685,7 +17685,7 @@
 "ScrollClass": {
 "member_count": 1,
 "extent": 4,
-"clusters": 31,
+"clusters": 29,
 "members": [
 [
 0,
@@ -23117,7 +23117,7 @@
 "IPXInterfaceClass": {
 "member_count": 5,
 "extent": 52,
-"clusters": 14,
+"clusters": 8,
 "members": [
 [
 0,
@@ -23144,7 +23144,7 @@
 "WinsockInterfaceClass": {
 "member_count": 23,
 "extent": 80,
-"clusters": 11,
+"clusters": 17,
 "members": [
 [
 0,

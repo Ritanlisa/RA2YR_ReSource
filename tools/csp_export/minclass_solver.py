@@ -2580,6 +2580,44 @@ def main():
         clusters.append({"root": root, "ents": members, "obs": obs,
                          "exact": exs})
     print("[clusters] %d (entities %d)" % (len(clusters), len(ents)), flush=True)
+
+    # ---- 布局补全：用「已二进制定类」簇的观测补全该类的成员表 ----
+    # 身份来自 C4/C15（装表/槽位），簇内观测来自同一对象 -> 这些偏移就是该类的真实成员。
+    # 实测：986 条观测的大簇，最好的类也只覆盖 302 条 —— 声明布局缺了约 70% 的真实成员，
+    # C1/C18 的判别力因此被系统性削弱。
+    _lay_add = 0
+    _lay_cls = set()
+    for _cl in clusters:
+        _exs = _cl.get("exact") or {}
+        if len(_exs) != 1:
+            continue
+        _ci = next(iter(_exs))
+        _lay_cls.add(_ci)
+        for (_o, _w) in (_cl.get("obs") or ()):
+            if _o not in U["members"][_ci]:
+                U["members"][_ci][_o] = _w
+                _lay_add += 1
+    if _lay_add:
+        for _i in range(n):
+            if not U["has_layout"][_i]:
+                continue
+            _iv = []
+            for _off, _w2 in U["members"][_i].items():
+                _ww = _w2 if isinstance(_w2, int) and _w2 > 0 else 4
+                _iv.append((_off, _off + _ww))
+            _iv.sort()
+            _mg = []
+            for _a, _b in _iv:
+                if _mg and _a <= _mg[-1][1]:
+                    if _b > _mg[-1][1]:
+                        _mg[-1] = (_mg[-1][0], _b)
+                else:
+                    _mg.append((_a, _b))
+            intervals[_i] = _mg
+        c1_cache.clear()
+        c1_range_cache.clear()
+    print("[layouts] cluster-obs completion: %d members added across %d classes"
+          % (_lay_add, len(_lay_cls)), flush=True)
     ALL_EXACT_CLASSES = {ci for cl in clusters for ci in cl["exact"]}
 
     # ---------------- 求解 ----------------

@@ -239,7 +239,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 885,
+  "domain_after": 886,
   "class_after": null
  },
  {
@@ -683,38 +683,6 @@
    "C3"
   ],
   "domain_after": 26,
-  "class_after": null
- },
- {
-  "cluster": "R:7B1C50:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C9",
-   "C15"
-  ],
-  "domain_after": 1,
-  "class_after": "IPXInterfaceClass"
- },
- {
-  "cluster": "R:7B2630:ecx",
-  "dropped_family": "C15",
-  "remaining_families": [
-   "C1",
-   "C9",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:7B2630:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C9"
-  ],
-  "domain_after": 2,
   "class_after": null
  },
  {

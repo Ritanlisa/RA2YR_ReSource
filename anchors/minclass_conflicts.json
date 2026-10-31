@@ -56,8 +56,8 @@
   "K": 543,
   "K_upper": 543,
   "lower_bound": 543,
-  "constrained_clusters": 26012,
-  "free_clusters": 17337,
+  "constrained_clusters": 26010,
+  "free_clusters": 17339,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1400,
@@ -244,7 +244,7 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
-   "entities_touched": 5961,
+   "entities_touched": 6148,
    "clusters_constrained": 15183,
    "clusters_pinned": 7679,
    "clusters_free": 28163,
@@ -266,16 +266,16 @@
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
-   "entities_touched": 16083,
-   "clusters_constrained": 25644,
-   "clusters_pinned": 8781,
+   "entities_touched": 16085,
+   "clusters_constrained": 25645,
+   "clusters_pinned": 8780,
    "clusters_free": 17684,
    "pinned_classes": 534,
    "forced_classes": 534,
-   "conflicts": 21,
+   "conflicts": 20,
    "c1_gaps": 0,
    "K": 538,
-   "K_upper": 559,
+   "K_upper": 558,
    "K_total": 538,
    "K_greedy": 538,
    "delta_forced": 2,
@@ -288,16 +288,16 @@
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 391,
-   "entities_touched": 3684,
-   "clusters_constrained": 25986,
-   "clusters_pinned": 9005,
-   "clusters_free": 17332,
+   "entities_touched": 3680,
+   "clusters_constrained": 25985,
+   "clusters_pinned": 9002,
+   "clusters_free": 17334,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 31,
+   "conflicts": 30,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 574,
+   "K_upper": 573,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 5,
@@ -311,15 +311,15 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 25986,
-   "clusters_pinned": 9009,
-   "clusters_free": 17332,
+   "clusters_constrained": 25985,
+   "clusters_pinned": 9005,
+   "clusters_free": 17334,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 31,
+   "conflicts": 30,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 574,
+   "K_upper": 573,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 0,
@@ -334,14 +334,14 @@
    "evidence": 1332,
    "entities_touched": 6675,
    "clusters_constrained": 25945,
-   "clusters_pinned": 9018,
-   "clusters_free": 17332,
+   "clusters_pinned": 9015,
+   "clusters_free": 17334,
    "pinned_classes": 539,
    "forced_classes": 539,
-   "conflicts": 72,
+   "conflicts": 70,
    "c1_gaps": 0,
    "K": 543,
-   "K_upper": 615,
+   "K_upper": 613,
    "K_total": 543,
    "K_greedy": 543,
    "delta_forced": 0,
@@ -354,9 +354,9 @@
  "conflicts": [],
  "diagnostics": {
   "no_layout_match": {
-   "count": 32,
+   "count": 26,
    "by_cause": {
-    "suspicious_large_offset": 32
+    "suspicious_large_offset": 26
    },
    "samples": [
     {
@@ -568,71 +568,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "G:87F7E8",
-     "entities": [
-      "T:4A8BF0",
-      "T:4AA440",
-      "T:4ACAC0",
-      "T:5673A0",
-      "T:5683C0",
-      "T:5687F0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       244,
-       4
-      ],
-      [
-       248,
-       4
-      ],
-      [
-       260,
-       4
-      ],
-      [
-       316,
-       4
-      ],
-      [
-       320,
-       4
-      ],
-      [
-       4440,
-       1
-      ],
-      [
-       4468,
-       2
-      ],
-      [
-       4470,
-       2
-      ],
-      [
-       4472,
-       2
-      ],
-      [
-       4472,
-       4
-      ],
-      [
-       4474,
-       2
-      ]
-     ],
-     "exact": [
-      "MouseClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:4F54A0:ecx",
      "entities": [
       "T:4F54A0"
@@ -688,66 +623,6 @@
       ]
      ],
      "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:4F8440:ecx",
-     "entities": [
-      "T:4F8440"
-     ],
-     "obs": [
-      [
-       36,
-       4
-      ],
-      [
-       52,
-       4
-      ],
-      [
-       60,
-       4
-      ],
-      [
-       72,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       120,
-       4
-      ],
-      [
-       388,
-       4
-      ],
-      [
-       484,
-       4
-      ],
-      [
-       492,
-       1
-      ],
-      [
-       493,
-       1
-      ],
-      [
-       501,
-       1
-      ],
-      [
-       508,
-       1
-      ]
-     ],
-     "exact": [
-      "HouseClass"
-     ],
      "cause": "suspicious_large_offset"
     },
     {
@@ -1170,66 +1045,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "R:5BDF70:ecx",
-     "entities": [
-      "T:5BDF70"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       20,
-       4
-      ],
-      [
-       76,
-       4
-      ],
-      [
-       80,
-       4
-      ],
-      [
-       104,
-       4
-      ],
-      [
-       108,
-       4
-      ],
-      [
-       112,
-       4
-      ],
-      [
-       212,
-       4
-      ],
-      [
-       220,
-       4
-      ],
-      [
-       228,
-       4
-      ],
-      [
-       244,
-       4
-      ],
-      [
-       248,
-       4
-      ]
-     ],
-     "exact": [
-      "MouseClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:665650:ecx",
      "entities": [
       "T:665650"
@@ -1388,168 +1203,20 @@
      ],
      "exact": [],
      "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:7B19C0:ecx",
-     "entities": [
-      "T:7B19C0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       1
-      ],
-      [
-       21,
-       1
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       28,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ]
-     ],
-     "exact": [
-      "WinsockInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:7B1DE0:0",
-     "entities": [
-      "P:7B1DE0:0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       258152,
-       1
-      ],
-      [
-       258156,
-       4
-      ]
-     ],
-     "exact": [
-      "WinsockInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:7B2DB0:ecx",
-     "entities": [
-      "T:7B2DB0"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       258812,
-       2
-      ],
-      [
-       258864,
-       4
-      ],
-      [
-       258868,
-       4
-      ],
-      [
-       258872,
-       4
-      ],
-      [
-       258876,
-       4
-      ],
-      [
-       258880,
-       4
-      ],
-      [
-       258884,
-       1
-      ],
-      [
-       258885,
-       1
-      ],
-      [
-       258888,
-       4
-      ],
-      [
-       258892,
-       4
-      ],
-      [
-       259408,
-       4
-      ]
-     ],
-     "exact": [
-      "UDPInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
     }
    ]
   },
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7277,
-   "matched_strict": 6211,
-   "no_match": 1066,
+   "matched_strict": 6260,
+   "no_match": 1017,
    "by_cause": {
-    "width_mismatch_only": 816,
-    "suspicious_large_offset": 173,
-    "param_unknown_class": 56,
-    "no_class_has_all_offsets_sparse_layout": 11,
-    "member_chain_unknown_class": 10
+    "width_mismatch_only": 832,
+    "suspicious_large_offset": 123,
+    "param_unknown_class": 49,
+    "no_class_has_all_offsets_sparse_layout": 4,
+    "member_chain_unknown_class": 9
    },
    "samples": [
     {
