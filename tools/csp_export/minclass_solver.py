@@ -764,6 +764,7 @@ def main():
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
+    ap.add_argument("--explain-class", default=None, help="with --explain: report why a class is in/out")
     ap.add_argument("--no-name-pins", action="store_true",
                     help="disable name/proto-this derived class pins")
     ap.add_argument("--prune-dead", action="store_true",
@@ -3736,25 +3737,19 @@ def main():
                         _mw = _mem.get(o)
                         if isinstance(_mw, int) and _mw >= w:
                             _hits += 1
-                    _rate = (_hits / float(len(_obs_l))) if _obs_l else 0.0
                     _need = max(o + w for (o, w) in _obs_l) if _obs_l else 0
                     _sz = U["eff_size"][_ci]
-                    _gap = abs(int(_sz) - _need) if _sz else float("inf")
-                    return (-_rate, _gap, -_hits, len(_mem), names[_ci])
+                    # 尺寸贴近度优先：能装下且最接近需求的类 = 定义该方法的层级
+                    _gap = (int(_sz) - _need) if _sz else float("inf")
+                    if _gap < 0:
+                        _gap = float("inf")
+                    return (_gap, -_hits, len(_mem), names[_ci])
 
                 _cands = [i for i in range(n) if (_elig >> i) & 1]
-                # 链上取最大派生：若候选集构成一条继承链（存在一个元素是其余全部的后代），
-                # 对象的最可能类就是链上最派生者 —— 拓扑事实，与名字/IDA 类型无关。
-                _maxi = None
-                for _ci in _cands:
-                    if all(_ci == _cj or _cj in U["anc"][_ci] for _cj in _cands):
-                        _maxi = _ci
-                        break
-                if _maxi is not None:
-                    _pick = _maxi
-                    _chain_picks += 1
-                else:
-                    _pick = min(_cands, key=_rank)
+                # 取「能解释全部访问的最小类」= 最基类（定义该类方法的那一层）。
+                # 抽样反例 R:404700（Techno 链、需 484B）：链上最派生的 UnitClass 是错的，
+                # 正确是 TechnoClass —— 只访问基类字段的函数定义在基类上。
+                _pick = min(_cands, key=_rank)
         if _pick is None:
             continue
         _new_assign[_ci_cl] = _pick
@@ -4136,6 +4131,21 @@ def main():
                 if _fm is not None and _fm != FULL:
                     print("    %s allows %d: %s" % (_f, _fm.bit_count(),
                           [names[i] for i in range(len(names)) if (_fm >> i) & 1][:12]))
+            if getattr(args, "explain_class", None):
+                _ci_w = resolve(str(args.explain_class))
+                if _ci_w is None:
+                    print("  [class] %s : NOT IN UNIVERSE" % args.explain_class)
+                else:
+                    print("  [class] %s idx=%d eff_size=%s has_layout=%s members=%d"
+                          % (args.explain_class, _ci_w, U["eff_size"][_ci_w],
+                             U["has_layout"][_ci_w], len(U["members"][_ci_w])))
+                    print("  [class] in domain: %s" % bool((_m >> _ci_w) & 1))
+                    for _f in FAMILIES:
+                        _fm = fam[_f].get(_root)
+                        if _fm is None:
+                            print("    %-4s (no mask)" % _f)
+                        else:
+                            print("    %-4s %s" % (_f, "ALLOW" if (_fm >> _ci_w) & 1 else "DENY"))
     if getattr(args, "dump_domains", False):
         dpath = os.path.join(ROOT, "anchors/minclass_domains.json")
         with io.open(dpath, "w", encoding="utf-8") as fh:

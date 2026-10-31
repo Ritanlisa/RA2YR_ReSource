@@ -586,7 +586,7 @@
 "ents": []
 },
 "R:4026B0:ecx": {
-"class": "BuildingClass",
+"class": "RadioClass",
 "obs": [
 [
 212,
@@ -630,7 +630,7 @@
 ]
 },
 "R:402720:ecx": {
-"class": "TechnoTypeClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 164,
@@ -804,7 +804,7 @@
 ]
 },
 "R:403490:ecx": {
-"class": "ParticleSystemClass",
+"class": "TeamTypeClass",
 "obs": [
 [
 244,
@@ -814,7 +814,7 @@
 "ents": []
 },
 "R:4034A0:ecx": {
-"class": "ParticleSystemClass",
+"class": "TeamTypeClass",
 "obs": [
 [
 240,
@@ -1085,7 +1085,7 @@
 ]
 },
 "R:403A80:ecx": {
-"class": "UnitClass",
+"class": "WaypointClass",
 "obs": [
 [
 24,
@@ -1241,7 +1241,7 @@
 ]
 },
 "R:4047B0:ecx": {
-"class": "RandomMap",
+"class": "WaypointClass",
 "obs": [
 [
 24,
@@ -1771,7 +1771,7 @@
 ]
 },
 "P:4047B0:0": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 192,
@@ -1923,7 +1923,7 @@
 "ents": []
 },
 "R:406130:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -2393,7 +2393,7 @@
 ]
 },
 "R:407F80:ecx": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 136,
@@ -2633,7 +2633,7 @@
 "ents": []
 },
 "P:408610:0": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -2833,7 +2833,7 @@
 ]
 },
 "R:408D50:ecx": {
-"class": "ControlClass",
+"class": "LinkClass",
 "obs": [
 [
 20,
@@ -5210,7 +5210,7 @@
 ]
 },
 "P:40E340:0": {
-"class": "IsometricTileTypeClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 4,
@@ -6402,7 +6402,7 @@
 "ents": []
 },
 "P:410230:0": {
-"class": "SuperClass",
+"class": "AbstractClass",
 "obs": [
 [
 12,
@@ -7755,7 +7755,7 @@
 ]
 },
 "M:415A50:this:0x21c": {
-"class": "RandomMap",
+"class": "WaypointClass",
 "obs": [
 [
 480,
@@ -9647,7 +9647,7 @@
 "ents": []
 },
 "R:41DA20:ecx": {
-"class": "SlaveManagerClass",
+"class": "FoggedObjectClass",
 "obs": [
 [
 48,
@@ -11690,7 +11690,7 @@
 ]
 },
 "P:421EA0:0": {
-"class": "HouseClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -11956,7 +11956,7 @@
 ]
 },
 "M:4228E0:this:0xcc": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 132,
@@ -12557,7 +12557,7 @@
 ]
 },
 "M:423AC0:this:0x180": {
-"class": "HouseClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 492,
@@ -12593,7 +12593,7 @@
 ]
 },
 "M:424B50:this:0xcc": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 132,
@@ -12603,7 +12603,7 @@
 "ents": []
 },
 "R:424C90:ecx": {
-"class": "WarheadTypeClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 380,
@@ -13049,7 +13049,7 @@
 ]
 },
 "R:425670:ecx": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -13137,7 +13137,7 @@
 ]
 },
 "P:425D10:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -13470,7 +13470,7 @@
 ]
 },
 "R:426E80:ecx": {
-"class": "AnimFile",
+"class": "ConvertClass",
 "obs": [
 [
 146,
@@ -13486,7 +13486,7 @@
 ]
 },
 "R:426ED0:ecx": {
-"class": "AnimFile",
+"class": "ConvertClass",
 "obs": [
 [
 146,
@@ -13502,7 +13502,7 @@
 ]
 },
 "R:426FD0:ecx": {
-"class": "AnimFile",
+"class": "ConvertClass",
 "obs": [
 [
 146,
@@ -13518,7 +13518,7 @@
 ]
 },
 "P:4270D0:0": {
-"class": "DynamicVector",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -14934,7 +14934,7 @@
 ]
 },
 "P:42B420:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -14962,7 +14962,7 @@
 "ents": []
 },
 "P:42BCA0:0": {
-"class": "AbstractTypeClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -15181,7 +15181,7 @@
 ]
 },
 "P:42A5B0:3": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 56,
@@ -15219,7 +15219,7 @@
 ]
 },
 "P:42D490:0": {
-"class": "CellClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 278,
@@ -15247,7 +15247,7 @@
 ]
 },
 "P:42D510:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -15351,7 +15351,7 @@
 ]
 },
 "R:42D5F0:ecx": {
-"class": "DynamicVector",
+"class": "VectorClass_ushort",
 "obs": [
 [
 4,
@@ -15523,7 +15523,7 @@
 ]
 },
 "R:42D8B0:ecx": {
-"class": "DynamicVector",
+"class": "VectorClass_ushort",
 "obs": [
 [
 4,
@@ -15947,7 +15947,7 @@
 "ents": []
 },
 "R:42E6D0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -16081,7 +16081,7 @@
 ]
 },
 "M:42E820:this:0x8": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -16447,7 +16447,7 @@
 ]
 },
 "M:42F490:this:0x4": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -16509,7 +16509,7 @@
 ]
 },
 "M:42F5E0:this:0x4": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -16553,7 +16553,7 @@
 "ents": []
 },
 "M:42F620:this:0x4": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -16651,7 +16651,7 @@
 ]
 },
 "M:42F7F0:this:0x4": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -16725,7 +16725,7 @@
 ]
 },
 "M:42F930:this:0x4": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -16811,7 +16811,7 @@
 ]
 },
 "M:42FAE0:this:0x4": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -17187,7 +17187,7 @@
 ]
 },
 "P:430BA0:0": {
-"class": "HouseClass",
+"class": "WaveClass",
 "obs": [
 [
 501,
@@ -17701,7 +17701,7 @@
 ]
 },
 "R:431BC0:ecx": {
-"class": "CCFileClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 48,
@@ -17713,7 +17713,7 @@
 ]
 },
 "R:431D90:ecx": {
-"class": "BufferIOFileClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 36,
@@ -18133,7 +18133,7 @@
 ]
 },
 "R:432690:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -18169,7 +18169,7 @@
 ]
 },
 "R:4326C0:ecx": {
-"class": "WinsockInterfaceClass",
+"class": "ConnectionClass",
 "obs": [
 [
 0,
@@ -19188,7 +19188,7 @@
 ]
 },
 "P:434CD0:0": {
-"class": "SlaveManagerClass",
+"class": "DiskLaserClass",
 "obs": [
 [
 0,
@@ -20347,7 +20347,7 @@
 ]
 },
 "R:438E70:ecx": {
-"class": "WinModemClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -20484,7 +20484,7 @@
 ]
 },
 "R:439260:ecx": {
-"class": "WinModemClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -20584,7 +20584,7 @@
 ]
 },
 "P:4399A0:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -22180,7 +22180,7 @@
 ]
 },
 "M:43DA80:this:0x580": {
-"class": "AnimClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 413,
@@ -22577,7 +22577,7 @@
 ]
 },
 "P:43F180:0": {
-"class": "WaveClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 104,
@@ -23852,7 +23852,7 @@
 ]
 },
 "P:443410:0": {
-"class": "AircraftTypeClass",
+"class": "Palette",
 "obs": [
 [
 0,
@@ -24292,7 +24292,7 @@
 ]
 },
 "P:445880:0": {
-"class": "RulesClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -24838,7 +24838,7 @@
 "ents": []
 },
 "M:445F80:p0:0x6c4": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1460,
@@ -24892,7 +24892,7 @@
 ]
 },
 "P:446FF0:0": {
-"class": "RulesClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 1792,
@@ -25280,7 +25280,7 @@
 ]
 },
 "R:448070:ecx": {
-"class": "TechnoClass",
+"class": "ObjectClass",
 "obs": [
 [
 1312,
@@ -25724,7 +25724,7 @@
 ]
 },
 "P:448260:0": {
-"class": "InfantryClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -26565,7 +26565,7 @@
 "ents": []
 },
 "M:449C30:p0:0x21c": {
-"class": "VoxelAnimTypeClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 756,
@@ -26997,7 +26997,7 @@
 ]
 },
 "P:44C980:0": {
-"class": "UnitClass",
+"class": "Palette",
 "obs": [
 [
 132,
@@ -28158,7 +28158,7 @@
 ]
 },
 "P:451E40:0": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 32,
@@ -28186,7 +28186,7 @@
 ]
 },
 "R:452170:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -29279,7 +29279,7 @@
 ]
 },
 "P:4544A0:0": {
-"class": "FontClass",
+"class": "CampaignClass",
 "obs": [
 [
 808,
@@ -30862,7 +30862,7 @@
 ]
 },
 "R:458810:ecx": {
-"class": "TechnoClass",
+"class": "ObjectClass",
 "obs": [
 [
 1312,
@@ -30906,7 +30906,7 @@
 ]
 },
 "P:458A80:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -31089,7 +31089,7 @@
 ]
 },
 "R:459840:ecx": {
-"class": "UnitTypeClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 1312,
@@ -35107,7 +35107,7 @@
 "ents": []
 },
 "M:4666E0:p0:0x520": {
-"class": "BuildingTypeClass",
+"class": "EventClass",
 "obs": [
 [
 5823,
@@ -35117,7 +35117,7 @@
 "ents": []
 },
 "M:4666E0:this:0xb0": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -35382,7 +35382,7 @@
 ]
 },
 "M:468670:this:0xb0": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -35460,7 +35460,7 @@
 ]
 },
 "M:468BB0:this:0xb0": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -35929,7 +35929,7 @@
 ]
 },
 "M:46A310:this:0xb0": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -36005,7 +36005,7 @@
 ]
 },
 "R:46B270:ecx": {
-"class": "COMClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 304,
@@ -37020,7 +37020,7 @@
 ]
 },
 "P:471D40:0": {
-"class": "BuildingClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -37097,7 +37097,7 @@
 "ents": []
 },
 "M:471D40:p0:0x6c4": {
-"class": "UnitTypeClass",
+"class": "TacticalMap",
 "obs": [
 [
 3603,
@@ -37263,7 +37263,7 @@
 ]
 },
 "M:4723B0:this:0x48": {
-"class": "TerrainClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 540,
@@ -37295,7 +37295,7 @@
 ]
 },
 "M:472640:this:0x48": {
-"class": "IsometricTileClass",
+"class": "AudioFrame",
 "obs": [
 [
 131,
@@ -37971,7 +37971,7 @@
 ]
 },
 "R:473450:ecx": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 4,
@@ -37983,7 +37983,7 @@
 ]
 },
 "R:473460:ecx": {
-"class": "UnitTypeClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 0,
@@ -38563,7 +38563,7 @@
 ]
 },
 "P:476B20:0": {
-"class": "ParticleTypeClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 0,
@@ -39386,7 +39386,7 @@
 ]
 },
 "P:478220:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -39430,7 +39430,7 @@
 ]
 },
 "M:4782E0:this:0x4": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 1,
@@ -39496,7 +39496,7 @@
 ]
 },
 "M:478470:this:0x4": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 1,
@@ -39574,7 +39574,7 @@
 ]
 },
 "M:4785F0:this:0x4": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 1,
@@ -39712,7 +39712,7 @@
 ]
 },
 "R:4787E0:ecx": {
-"class": "ScriptClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -39762,7 +39762,7 @@
 ]
 },
 "R:4788E0:ecx": {
-"class": "ScriptClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -39784,7 +39784,7 @@
 "ents": []
 },
 "P:4788E0:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -40464,7 +40464,7 @@
 ]
 },
 "P:47C060:0": {
-"class": "TubeClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -41242,7 +41242,7 @@
 ]
 },
 "P:47F6A0:0": {
-"class": "OverlayTypeClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 0,
@@ -41747,7 +41747,7 @@
 "ents": []
 },
 "R:481130:ecx": {
-"class": "SidebarClass",
+"class": "DisplayClass",
 "obs": [
 [
 296,
@@ -42713,7 +42713,7 @@
 ]
 },
 "R:4848B0:ecx": {
-"class": "EMPulseClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 36,
@@ -42864,7 +42864,7 @@
 ]
 },
 "R:485060:ecx": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 56,
@@ -42940,7 +42940,7 @@
 ]
 },
 "P:485240:0": {
-"class": "CellClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -43073,7 +43073,7 @@
 ]
 },
 "P:485460:0": {
-"class": "BulletClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 2,
@@ -43135,7 +43135,7 @@
 ]
 },
 "P:485AF0:0": {
-"class": "BulletClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 0,
@@ -43641,7 +43641,7 @@
 ]
 },
 "P:487190:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -43873,7 +43873,7 @@
 ]
 },
 "R:487D50:ecx": {
-"class": "CellClass",
+"class": "HouseTypeClass",
 "obs": [
 [
 283,
@@ -44110,7 +44110,7 @@
 ]
 },
 "M:4880F0:p0:0x174": {
-"class": "MultiplayerGameMode",
+"class": "CarryoverClass",
 "obs": [
 [
 4,
@@ -44569,7 +44569,7 @@
 "ents": []
 },
 "M:489280:p0:0xe4": {
-"class": "WaveClass",
+"class": "WarheadTypeClass",
 "obs": [
 [
 20,
@@ -45439,7 +45439,7 @@
 ]
 },
 "M:48BF40:this:0x20": {
-"class": "ConvertClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -46120,7 +46120,7 @@
 ]
 },
 "P:48E740:0": {
-"class": "ControlClass",
+"class": "LinkClass",
 "obs": [
 [
 8,
@@ -46908,7 +46908,7 @@
 ]
 },
 "R:490B90:ecx": {
-"class": "UnitClass",
+"class": "MissionClass",
 "obs": [
 [
 8,
@@ -52846,7 +52846,7 @@
 ]
 },
 "P:49C5A0:0": {
-"class": "DynamicVector",
+"class": "CounterClass",
 "obs": [
 [
 0,
@@ -55138,7 +55138,7 @@
 ]
 },
 "R:4A2350:ecx": {
-"class": "WWMouseClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -55168,7 +55168,7 @@
 "ents": []
 },
 "R:4A2370:ecx": {
-"class": "WWMouseClass",
+"class": "CounterClass",
 "obs": [
 [
 4,
@@ -55190,7 +55190,7 @@
 "ents": []
 },
 "R:4A2600:ecx": {
-"class": "WWMouseClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -55342,7 +55342,7 @@
 "ents": []
 },
 "P:4A2AB0:0": {
-"class": "CounterClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -55356,7 +55356,7 @@
 "ents": []
 },
 "P:4A2B60:0": {
-"class": "ConvertClass",
+"class": "MSOverlayAnim",
 "obs": [
 [
 8,
@@ -55392,7 +55392,7 @@
 ]
 },
 "P:4A2CD0:0": {
-"class": "MixFileClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -55424,7 +55424,7 @@
 ]
 },
 "P:4A2E00:0": {
-"class": "CStreamClass",
+"class": "CounterClass",
 "obs": [
 [
 8,
@@ -55444,7 +55444,7 @@
 ]
 },
 "P:4A2E50:0": {
-"class": "CStreamClass",
+"class": "CounterClass",
 "obs": [
 [
 8,
@@ -56049,7 +56049,7 @@
 ]
 },
 "R:4A50F0:ecx": {
-"class": "RawFileClass",
+"class": "CarryoverClass",
 "obs": [
 [
 8,
@@ -56225,7 +56225,7 @@
 ]
 },
 "R:4A52D0:ecx": {
-"class": "RawFileClass",
+"class": "MSFrameAnim",
 "obs": [
 [
 24,
@@ -56239,7 +56239,7 @@
 "ents": []
 },
 "R:4A52E0:ecx": {
-"class": "RawFileClass",
+"class": "MSFrameAnim",
 "obs": [
 [
 24,
@@ -56534,7 +56534,7 @@
 "ents": []
 },
 "P:4A65C0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -56556,7 +56556,7 @@
 "ents": []
 },
 "P:4A66D0:0": {
-"class": "LightSourceClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -57603,7 +57603,7 @@
 "ents": []
 },
 "M:4A95A0:this:0x117c": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -57613,7 +57613,7 @@
 "ents": []
 },
 "M:4A9650:this:0x118c": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -57879,7 +57879,7 @@
 ]
 },
 "P:4AB9B0:0": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 72,
@@ -58389,7 +58389,7 @@
 "ents": []
 },
 "P:4AE750:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -58625,7 +58625,7 @@
 "ents": []
 },
 "P:4AF970:0": {
-"class": "FactoryClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 77,
@@ -58967,7 +58967,7 @@
 "ents": []
 },
 "P:4B0500:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -60061,7 +60061,7 @@
 "ents": []
 },
 "P:4B5210:0": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 132,
@@ -60839,7 +60839,7 @@
 ]
 },
 "M:4B6C30:p0:0x58": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -61777,7 +61777,7 @@
 ]
 },
 "P:4BBCA0:0": {
-"class": "TunnelLocomotionClass",
+"class": "DriveLocomotionClass",
 "obs": [
 [
 0,
@@ -63393,7 +63393,7 @@
 "ents": []
 },
 "R:4C58C0:ecx": {
-"class": "EMPulseClass",
+"class": "MSVQAnim",
 "obs": [
 [
 36,
@@ -63807,7 +63807,7 @@
 "ents": []
 },
 "P:4C6CB0:0": {
-"class": "UnitClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -64570,7 +64570,7 @@
 ]
 },
 "M:4C9FF0:this:0x58": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -65148,7 +65148,7 @@
 ]
 },
 "R:4CB580:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65170,7 +65170,7 @@
 "ents": []
 },
 "R:4CB5E0:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65192,7 +65192,7 @@
 "ents": []
 },
 "R:4CB640:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65214,7 +65214,7 @@
 "ents": []
 },
 "R:4CB6A0:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65236,7 +65236,7 @@
 "ents": []
 },
 "R:4CB700:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65258,7 +65258,7 @@
 "ents": []
 },
 "R:4CB760:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65280,7 +65280,7 @@
 "ents": []
 },
 "R:4CB7C0:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65302,7 +65302,7 @@
 "ents": []
 },
 "R:4CB830:ecx": {
-"class": "IsometricTileClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 4,
@@ -65336,7 +65336,7 @@
 ]
 },
 "R:4CB8B0:ecx": {
-"class": "IsometricTileClass",
+"class": "CarryoverClass",
 "obs": [
 [
 4,
@@ -65354,7 +65354,7 @@
 "ents": []
 },
 "R:4CB920:ecx": {
-"class": "IsometricTileClass",
+"class": "CarryoverClass",
 "obs": [
 [
 4,
@@ -65382,7 +65382,7 @@
 "ents": []
 },
 "P:4CAE30:1": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -65453,7 +65453,7 @@
 ]
 },
 "R:4CC770:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -65771,7 +65771,7 @@
 ]
 },
 "M:4CD600:this:0xc": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 108,
@@ -68137,7 +68137,7 @@
 ]
 },
 "P:4D3920:0": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -69262,7 +69262,7 @@
 "ents": []
 },
 "M:4D85D0:p0:0x520": {
-"class": "BuildingTypeClass",
+"class": "EventClass",
 "obs": [
 [
 5823,
@@ -70535,7 +70535,7 @@
 ]
 },
 "M:4DC060:p0:0x174": {
-"class": "ConvertClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 3,
@@ -70735,7 +70735,7 @@
 ]
 },
 "R:4DCFE0:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70763,7 +70763,7 @@
 ]
 },
 "R:4DD890:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70775,7 +70775,7 @@
 ]
 },
 "R:4DD9F0:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70791,7 +70791,7 @@
 ]
 },
 "P:4DD890:0": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -70914,7 +70914,7 @@
 ]
 },
 "P:4DE1D0:0": {
-"class": "AnimClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -71401,7 +71401,7 @@
 ]
 },
 "P:4DF510:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -71627,7 +71627,7 @@
 ]
 },
 "R:4E00B0:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1380,
@@ -72483,7 +72483,7 @@
 ]
 },
 "R:4E1340:ecx": {
-"class": "GadgetClass",
+"class": "LCWPipe",
 "obs": [
 [
 0,
@@ -72917,7 +72917,7 @@
 ]
 },
 "P:4E2500:0": {
-"class": "CStreamClass",
+"class": "LightSourceClass",
 "obs": [
 [
 72,
@@ -85791,7 +85791,7 @@
 ]
 },
 "M:4F7870:this:0x34": {
-"class": "TriggerTypeClass",
+"class": "RadBeam",
 "obs": [
 [
 184,
@@ -86003,7 +86003,7 @@
 ]
 },
 "P:4F8440:0": {
-"class": "HouseClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -86311,7 +86311,7 @@
 ]
 },
 "M:4F9B70:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 192,
@@ -86944,7 +86944,7 @@
 ]
 },
 "M:4FCE00:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 192,
@@ -87343,7 +87343,7 @@
 "ents": []
 },
 "P:4FE3E0:0": {
-"class": "RulesClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -87489,7 +87489,7 @@
 ]
 },
 "M:4FF550:p0:0x520": {
-"class": "ObjectTypeClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1032,
@@ -87809,7 +87809,7 @@
 ]
 },
 "P:500B40:0": {
-"class": "LightSourceClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -87964,7 +87964,7 @@
 ]
 },
 "P:501AC0:0": {
-"class": "CellClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -88698,7 +88698,7 @@
 ]
 },
 "M:507B80:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 188,
@@ -88726,7 +88726,7 @@
 ]
 },
 "M:507D70:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 188,
@@ -88754,7 +88754,7 @@
 ]
 },
 "M:507F60:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 188,
@@ -88923,7 +88923,7 @@
 ]
 },
 "R:5090F0:ecx": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 524,
@@ -88933,7 +88933,7 @@
 "ents": []
 },
 "R:509130:ecx": {
-"class": "BulletTypeClass",
+"class": "WaveClass",
 "obs": [
 [
 507,
@@ -89027,7 +89027,7 @@
 ]
 },
 "P:5092F0:0": {
-"class": "RulesClass",
+"class": "AircraftClass",
 "obs": [
 [
 52,
@@ -89424,7 +89424,7 @@
 "ents": []
 },
 "M:50A490:this:0x5708": {
-"class": "WinsockInterfaceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 4,
@@ -90001,7 +90001,7 @@
 ]
 },
 "M:50C340:this:0x34": {
-"class": "MissionClass",
+"class": "RadBeam",
 "obs": [
 [
 188,
@@ -90069,7 +90069,7 @@
 ]
 },
 "P:50CBF0:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 72,
@@ -90081,7 +90081,7 @@
 ]
 },
 "P:50D170:0": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -90265,7 +90265,7 @@
 "ents": []
 },
 "R:50DAA0:ecx": {
-"class": "RandomMap",
+"class": "WaypointClass",
 "obs": [
 [
 480,
@@ -90339,7 +90339,7 @@
 ]
 },
 "P:50DEF0:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -90463,7 +90463,7 @@
 ]
 },
 "R:50E1C0:ecx": {
-"class": "TechnoClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 492,
@@ -90479,7 +90479,7 @@
 ]
 },
 "R:50E280:ecx": {
-"class": "TechnoClass",
+"class": "ObjectTypeClass",
 "obs": [
 [
 492,
@@ -94791,7 +94791,7 @@
 ]
 },
 "M:513D20:this:0xc": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 116,
@@ -94805,7 +94805,7 @@
 "ents": []
 },
 "P:513F40:0": {
-"class": "UnitClass",
+"class": "CampaignClass",
 "obs": [
 [
 132,
@@ -94829,7 +94829,7 @@
 "ents": []
 },
 "P:514310:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -95315,7 +95315,7 @@
 ]
 },
 "M:515ED0:this:0xc": {
-"class": "WalkLocomotion",
+"class": "SequenceStruct",
 "obs": [
 [
 1504,
@@ -95365,7 +95365,7 @@
 ]
 },
 "M:516320:p0:0x8": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1504,
@@ -95724,7 +95724,7 @@
 ]
 },
 "P:517310:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 0,
@@ -96044,7 +96044,7 @@
 ]
 },
 "P:517FA0:0": {
-"class": "AircraftClass",
+"class": "ColorScheme",
 "obs": [
 [
 240,
@@ -96572,7 +96572,7 @@
 "ents": []
 },
 "M:519630:this:0x5a4": {
-"class": "AircraftClass",
+"class": "Palette",
 "obs": [
 [
 20,
@@ -97002,7 +97002,7 @@
 ]
 },
 "M:51BAB0:this:0x5d4": {
-"class": "IsometricTileClass",
+"class": "AudioFrame",
 "obs": [
 [
 130,
@@ -98079,7 +98079,7 @@
 ]
 },
 "P:51E3B0:0": {
-"class": "InfantryClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 0,
@@ -98600,7 +98600,7 @@
 ]
 },
 "R:5206B0:ecx": {
-"class": "InfantryClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -98914,7 +98914,7 @@
 ]
 },
 "P:521320:0": {
-"class": "InfantryClass",
+"class": "FootClass",
 "obs": [
 [
 1368,
@@ -98951,7 +98951,7 @@
 ]
 },
 "P:521760:0": {
-"class": "AircraftClass",
+"class": "WaypointClass",
 "obs": [
 [
 488,
@@ -99137,7 +99137,7 @@
 ]
 },
 "P:521C60:0": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1368,
@@ -99363,7 +99363,7 @@
 ]
 },
 "P:5221D0:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 320,
@@ -99752,7 +99752,7 @@
 ]
 },
 "R:522A60:ecx": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 528,
@@ -99959,7 +99959,7 @@
 "ents": []
 },
 "P:523370:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -99981,7 +99981,7 @@
 "ents": []
 },
 "P:5233A0:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -101740,7 +101740,7 @@
 "ents": []
 },
 "P:528F00:0": {
-"class": "Tactical",
+"class": "AbstractClass",
 "obs": [
 [
 4,
@@ -105065,7 +105065,7 @@
 ]
 },
 "R:53EDA0:ecx": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -105121,7 +105121,7 @@
 ]
 },
 "R:53EE70:ecx": {
-"class": "BuildingClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -105155,7 +105155,7 @@
 "ents": []
 },
 "R:53EF60:ecx": {
-"class": "BuildingClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -105357,7 +105357,7 @@
 ]
 },
 "M:53FBD0:this:0x20": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 2,
@@ -106361,7 +106361,7 @@
 ]
 },
 "R:541370:ecx": {
-"class": "AirstrikeClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -106381,7 +106381,7 @@
 ]
 },
 "R:5413B0:ecx": {
-"class": "AirstrikeClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -106401,7 +106401,7 @@
 ]
 },
 "R:5413F0:ecx": {
-"class": "AirstrikeClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 4,
@@ -106445,7 +106445,7 @@
 ]
 },
 "R:541480:ecx": {
-"class": "AirstrikeClass",
+"class": "MSPrintAnim",
 "obs": [
 [
 4,
@@ -106822,7 +106822,7 @@
 ]
 },
 "R:542430:ecx": {
-"class": "ModemHost",
+"class": "Field",
 "obs": [
 [
 34,
@@ -107859,7 +107859,7 @@
 ]
 },
 "R:5471B0:ecx": {
-"class": "ObjectClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -108775,7 +108775,7 @@
 ]
 },
 "P:54AD30:0": {
-"class": "UnitTypeClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 3460,
@@ -108831,7 +108831,7 @@
 ]
 },
 "P:54B4D0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -108911,7 +108911,7 @@
 ]
 },
 "M:54B980:this:0xc": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -108941,7 +108941,7 @@
 ]
 },
 "M:54BA30:this:0xc": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 8,
@@ -109227,7 +109227,7 @@
 ]
 },
 "M:54CA90:this:0xc": {
-"class": "FootClass",
+"class": "AircraftClass",
 "obs": [
 [
 140,
@@ -109511,7 +109511,7 @@
 ]
 },
 "R:54E360:ecx": {
-"class": "ConvertClass",
+"class": "LCWPipe",
 "obs": [
 [
 0,
@@ -109951,7 +109951,7 @@
 ]
 },
 "R:54EE60:ecx": {
-"class": "AnimTypeClass",
+"class": "CampaignClass",
 "obs": [
 [
 0,
@@ -110071,7 +110071,7 @@
 ]
 },
 "R:54F450:ecx": {
-"class": "BufferIOFileClass",
+"class": "LCWPipe",
 "obs": [
 [
 36,
@@ -110386,7 +110386,7 @@
 "ents": []
 },
 "P:5509F0:0": {
-"class": "SlaveManagerClass",
+"class": "CommBufferClass",
 "obs": [
 [
 0,
@@ -111063,7 +111063,7 @@
 ]
 },
 "P:552D60:0": {
-"class": "HouseClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -111441,7 +111441,7 @@
 "ents": []
 },
 "P:554D50:0": {
-"class": "TemporalClass",
+"class": "CounterClass",
 "obs": [
 [
 0,
@@ -112326,7 +112326,7 @@
 "ents": []
 },
 "R:556A20:ecx": {
-"class": "FoggedObjectClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -112764,7 +112764,7 @@
 ]
 },
 "P:557230:0": {
-"class": "ColorListClass",
+"class": "ListClass",
 "obs": [
 [
 28,
@@ -115316,7 +115316,7 @@
 ]
 },
 "R:5654E0:ecx": {
-"class": "ParticleSystemClass",
+"class": "TeamTypeClass",
 "obs": [
 [
 244,
@@ -115346,7 +115346,7 @@
 ]
 },
 "R:565610:ecx": {
-"class": "ParticleSystemClass",
+"class": "TeamTypeClass",
 "obs": [
 [
 244,
@@ -115609,7 +115609,7 @@
 ]
 },
 "P:565C10:0": {
-"class": "BuildingClass",
+"class": "ColorScheme",
 "obs": [
 [
 0,
@@ -115964,7 +115964,7 @@
 ]
 },
 "P:567230:0": {
-"class": "WarheadTypeClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 44,
@@ -116642,7 +116642,7 @@
 "ents": []
 },
 "M:56C510:this:0x68": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -116736,7 +116736,7 @@
 ]
 },
 "R:56D430:ecx": {
-"class": "MouseClass",
+"class": "DisplayClass",
 "obs": [
 [
 244,
@@ -116944,7 +116944,7 @@
 ]
 },
 "P:56F690:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -117042,7 +117042,7 @@
 ]
 },
 "P:572230:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -117072,7 +117072,7 @@
 ]
 },
 "P:572B80:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -117086,7 +117086,7 @@
 "ents": []
 },
 "P:572C90:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -117116,7 +117116,7 @@
 ]
 },
 "P:574000:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 56,
@@ -117128,7 +117128,7 @@
 ]
 },
 "P:574C20:0": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 56,
@@ -117364,7 +117364,7 @@
 ]
 },
 "P:577BB0:0": {
-"class": "AircraftClass",
+"class": "WaypointClass",
 "obs": [
 [
 48,
@@ -117542,7 +117542,7 @@
 ]
 },
 "P:577F30:0": {
-"class": "AircraftClass",
+"class": "WaypointClass",
 "obs": [
 [
 36,
@@ -117776,7 +117776,7 @@
 ]
 },
 "R:578640:ecx": {
-"class": "ParticleSystemClass",
+"class": "TeamTypeClass",
 "obs": [
 [
 244,
@@ -117850,7 +117850,7 @@
 ]
 },
 "P:578880:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -117954,7 +117954,7 @@
 ]
 },
 "P:57B210:0": {
-"class": "CellClass",
+"class": "RocketLocomotionClass",
 "obs": [
 [
 64,
@@ -118606,7 +118606,7 @@
 ]
 },
 "R:580B20:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -118624,7 +118624,7 @@
 "ents": []
 },
 "R:580B70:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -118658,7 +118658,7 @@
 ]
 },
 "P:580BC0:0": {
-"class": "BuildingClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -118840,7 +118840,7 @@
 ]
 },
 "P:5833F0:0": {
-"class": "CellClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -119106,7 +119106,7 @@
 ]
 },
 "P:5851B0:0": {
-"class": "WinModemClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -119142,7 +119142,7 @@
 ]
 },
 "R:5851B0:ecx": {
-"class": "MissionClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 112,
@@ -119526,7 +119526,7 @@
 ]
 },
 "M:5880A0:p0:0x520": {
-"class": "MapClass",
+"class": "EventClass",
 "obs": [
 [
 5824,
@@ -119536,7 +119536,7 @@
 "ents": []
 },
 "M:5880A0:p0:0x21c": {
-"class": "BulletTypeClass",
+"class": "WaveClass",
 "obs": [
 [
 506,
@@ -119546,7 +119546,7 @@
 "ents": []
 },
 "R:588960:ecx": {
-"class": "COMClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 328,
@@ -119636,7 +119636,7 @@
 ]
 },
 "R:588C40:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -120222,7 +120222,7 @@
 "ents": []
 },
 "M:589300:this:0x4": {
-"class": "IsometricTileClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -120292,7 +120292,7 @@
 ]
 },
 "M:5894D0:this:0x4": {
-"class": "IsometricTileClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -120384,7 +120384,7 @@
 "ents": []
 },
 "R:589680:ecx": {
-"class": "IsometricTileClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -120430,7 +120430,7 @@
 ]
 },
 "M:5896A0:this:0x4": {
-"class": "IsometricTileClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -120506,7 +120506,7 @@
 ]
 },
 "P:589740:0": {
-"class": "DynamicVector",
+"class": "LCWPipe",
 "obs": [
 [
 0,
@@ -121176,7 +121176,7 @@
 ]
 },
 "R:58A500:ecx": {
-"class": "DynamicVector",
+"class": "LCWPipe",
 "obs": [
 [
 0,
@@ -121628,7 +121628,7 @@
 ]
 },
 "P:58AE60:0": {
-"class": "DynamicVector",
+"class": "LCWPipe",
 "obs": [
 [
 0,
@@ -122034,7 +122034,7 @@
 ]
 },
 "R:58C2A0:ecx": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -122088,7 +122088,7 @@
 "ents": []
 },
 "P:58C6F0:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -122170,7 +122170,7 @@
 ]
 },
 "R:58D0A0:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -122266,7 +122266,7 @@
 ]
 },
 "R:58D620:ecx": {
-"class": "UnitTypeClass",
+"class": "LinkClass",
 "obs": [
 [
 26,
@@ -122400,7 +122400,7 @@
 ]
 },
 "P:58EBC0:0": {
-"class": "WinModemClass",
+"class": "WDTState",
 "obs": [
 [
 0,
@@ -122650,7 +122650,7 @@
 "ents": []
 },
 "P:594420:0": {
-"class": "CellClass",
+"class": "MSPrintAnim",
 "obs": [
 [
 36,
@@ -122722,7 +122722,7 @@
 "ents": []
 },
 "R:594F40:ecx": {
-"class": "WWMouseClass",
+"class": "TabClass",
 "obs": [
 [
 32,
@@ -123581,7 +123581,7 @@
 ]
 },
 "P:5981F0:0": {
-"class": "AircraftClass",
+"class": "CampaignClass",
 "obs": [
 [
 56,
@@ -123765,7 +123765,7 @@
 "ents": []
 },
 "P:59B940:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -123779,7 +123779,7 @@
 "ents": []
 },
 "P:59BAB0:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -123793,7 +123793,7 @@
 "ents": []
 },
 "P:59BBC0:0": {
-"class": "AircraftClass",
+"class": "CampaignClass",
 "obs": [
 [
 0,
@@ -123872,7 +123872,7 @@
 "ents": []
 },
 "M:59BBC0:p0:0x4": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -124227,7 +124227,7 @@
 ]
 },
 "M:5A08D0:p0:0x4": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -124237,7 +124237,7 @@
 "ents": []
 },
 "P:5A1190:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -124251,7 +124251,7 @@
 "ents": []
 },
 "R:5A1FB0:ecx": {
-"class": "WWMouseClass",
+"class": "TabClass",
 "obs": [
 [
 80,
@@ -124443,7 +124443,7 @@
 ]
 },
 "P:5A5AE0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -124457,7 +124457,7 @@
 "ents": []
 },
 "P:5A6510:0": {
-"class": "ParticleClass",
+"class": "CellClass",
 "obs": [
 [
 0,
@@ -124521,7 +124521,7 @@
 "ents": []
 },
 "R:5A6BA0:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -124651,7 +124651,7 @@
 ]
 },
 "P:5A89D0:0": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -124693,7 +124693,7 @@
 "ents": []
 },
 "R:5A95B0:ecx": {
-"class": "MouseClass",
+"class": "TabClass",
 "obs": [
 [
 60,
@@ -124719,7 +124719,7 @@
 "ents": []
 },
 "R:5A9940:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -124901,7 +124901,7 @@
 "ents": []
 },
 "R:5AC230:ecx": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -124955,7 +124955,7 @@
 ]
 },
 "R:5AC370:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -124969,7 +124969,7 @@
 "ents": []
 },
 "P:5AC370:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -127202,7 +127202,7 @@
 "ents": []
 },
 "P:5B01C0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -127850,7 +127850,7 @@
 ]
 },
 "R:5B3700:ecx": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -127902,7 +127902,7 @@
 ]
 },
 "R:5B3760:ecx": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -127990,7 +127990,7 @@
 ]
 },
 "R:5B3A00:ecx": {
-"class": "TechnoClass",
+"class": "MissionClass",
 "obs": [
 [
 172,
@@ -128193,7 +128193,7 @@
 "ents": []
 },
 "R:5B4400:ecx": {
-"class": "MixFileClass",
+"class": "GraphicMenuAnimItem",
 "obs": [
 [
 18,
@@ -128477,7 +128477,7 @@
 "ents": []
 },
 "R:5B59B0:ecx": {
-"class": "AirstrikeClass",
+"class": "CaptureManagerClass",
 "obs": [
 [
 0,
@@ -128955,7 +128955,7 @@
 "ents": []
 },
 "P:5B9C90:0": {
-"class": "GraphicMenuShortcutItem",
+"class": "TypeList",
 "obs": [
 [
 0,
@@ -129122,7 +129122,7 @@
 ]
 },
 "M:5BB6E0:this:0x4": {
-"class": "FoggedObjectClass",
+"class": "ScriptClass",
 "obs": [
 [
 1,
@@ -129758,7 +129758,7 @@
 ]
 },
 "P:5BFAA0:0": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 116,
@@ -129852,7 +129852,7 @@
 ]
 },
 "M:5C02F0:this:0x10": {
-"class": "MovieContext",
+"class": "SuperWeaponClass",
 "obs": [
 [
 69,
@@ -130083,7 +130083,7 @@
 ]
 },
 "M:5C09B0:this:0x10": {
-"class": "SlaveManagerClass",
+"class": "CaptureManagerClass",
 "obs": [
 [
 69,
@@ -130786,7 +130786,7 @@
 ]
 },
 "M:5C3F80:this:0x40": {
-"class": "ConvertClass",
+"class": "MapSeedClass",
 "obs": [
 [
 64,
@@ -132570,7 +132570,7 @@
 ]
 },
 "M:5CB880:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -132642,7 +132642,7 @@
 ]
 },
 "M:5CBB80:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -132684,7 +132684,7 @@
 ]
 },
 "M:5CBCB0:this:0x1c": {
-"class": "LightSourceClass",
+"class": "EnumConnectionsClass",
 "obs": [
 [
 2,
@@ -132834,7 +132834,7 @@
 ]
 },
 "M:5CBDA0:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -132922,7 +132922,7 @@
 ]
 },
 "M:5CC110:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -133019,7 +133019,7 @@
 ]
 },
 "M:5CC330:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -133111,7 +133111,7 @@
 ]
 },
 "M:5CC550:this:0x1c": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -137287,7 +137287,7 @@
 ]
 },
 "M:5D2E90:this:0x14": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -137466,7 +137466,7 @@
 "ents": []
 },
 "R:5D3A60:ecx": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -137575,7 +137575,7 @@
 "ents": []
 },
 "R:5D4210:ecx": {
-"class": "ConvertClass",
+"class": "GraphicMenuAnimItem",
 "obs": [
 [
 25,
@@ -137591,7 +137591,7 @@
 ]
 },
 "P:7781A0:0": {
-"class": "ConvertClass",
+"class": "MixFileClass",
 "obs": [
 [
 0,
@@ -137638,7 +137638,7 @@
 "ents": []
 },
 "R:5D4430:ecx": {
-"class": "RawFileClass",
+"class": "MSFont",
 "obs": [
 [
 0,
@@ -137698,7 +137698,7 @@
 ]
 },
 "R:5D49A0:ecx": {
-"class": "UnitClass",
+"class": "BulletTypeClass",
 "obs": [
 [
 0,
@@ -137762,7 +137762,7 @@
 ]
 },
 "R:5D4AD0:ecx": {
-"class": "AircraftClass",
+"class": "IsometricTileTypeClass",
 "obs": [
 [
 0,
@@ -138514,7 +138514,7 @@
 ]
 },
 "R:5D6350:ecx": {
-"class": "MPCooperative",
+"class": "MultiplayerGameMode",
 "obs": [
 [
 52,
@@ -138633,7 +138633,7 @@
 "ents": []
 },
 "P:5D70F0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -139646,7 +139646,7 @@
 ]
 },
 "P:5DDBD0:0": {
-"class": "FoggedObjectClass",
+"class": "AlphaShapeClass",
 "obs": [
 [
 0,
@@ -139688,7 +139688,7 @@
 "ents": []
 },
 "P:5E00B0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -141524,7 +141524,7 @@
 ]
 },
 "R:5F3DB0:ecx": {
-"class": "FootClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -141548,7 +141548,7 @@
 ]
 },
 "R:5F3E50:ecx": {
-"class": "InfantryClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -141788,7 +141788,7 @@
 ]
 },
 "M:5F4870:this:0x520": {
-"class": "MapClass",
+"class": "EventClass",
 "obs": [
 [
 5824,
@@ -141906,7 +141906,7 @@
 ]
 },
 "M:5F4EC0:this:0xa8": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -142081,7 +142081,7 @@
 ]
 },
 "R:5F5B50:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 52,
@@ -142151,7 +142151,7 @@
 ]
 },
 "R:5F5CD0:ecx": {
-"class": "BuildingClass",
+"class": "RadioClass",
 "obs": [
 [
 0,
@@ -142167,7 +142167,7 @@
 ]
 },
 "R:5F5D20:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -142471,7 +142471,7 @@
 ]
 },
 "R:5F6560:ecx": {
-"class": "UnitClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -143460,7 +143460,7 @@
 ]
 },
 "R:5F8CE0:ecx": {
-"class": "BuildingTypeClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -143542,7 +143542,7 @@
 "ents": []
 },
 "M:5F9070:this:0xa4": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -143656,7 +143656,7 @@
 ]
 },
 "P:5F92D0:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -143670,7 +143670,7 @@
 "ents": []
 },
 "R:5F9710:ecx": {
-"class": "FoggedObjectClass",
+"class": "WOL",
 "obs": [
 [
 1,
@@ -144348,7 +144348,7 @@
 ]
 },
 "P:5FC570:0": {
-"class": "BuildingClass",
+"class": "ColorScheme",
 "obs": [
 [
 0,
@@ -145390,7 +145390,7 @@
 ]
 },
 "P:60B000:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -145436,7 +145436,7 @@
 ]
 },
 "P:60B350:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -145740,7 +145740,7 @@
 ]
 },
 "P:610CA0:0": {
-"class": "InfantryTypeClass",
+"class": "WaypointClass",
 "obs": [
 [
 0,
@@ -145844,7 +145844,7 @@
 "ents": []
 },
 "P:612B70:0": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -146022,7 +146022,7 @@
 ]
 },
 "P:616980:0": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -146168,7 +146168,7 @@
 "ents": []
 },
 "P:618D40:0": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -146366,7 +146366,7 @@
 ]
 },
 "P:61D950:0": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 0,
@@ -147540,7 +147540,7 @@
 "ents": []
 },
 "P:7C8974:0": {
-"class": "LightSourceClass",
+"class": "EnumConnectionsClass",
 "obs": [
 [
 0,
@@ -147558,7 +147558,7 @@
 "ents": []
 },
 "R:625C00:ecx": {
-"class": "LightSourceClass",
+"class": "CarryoverClass",
 "obs": [
 [
 2,
@@ -147572,7 +147572,7 @@
 "ents": []
 },
 "M:625C00:this:0x4": {
-"class": "IsometricTileClass",
+"class": "ScriptClass",
 "obs": [
 [
 4,
@@ -147654,7 +147654,7 @@
 "ents": []
 },
 "R:626020:ecx": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -147730,7 +147730,7 @@
 ]
 },
 "R:626370:ecx": {
-"class": "HouseTypeClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 256,
@@ -147798,7 +147798,7 @@
 "ents": []
 },
 "P:626AB0:0": {
-"class": "LightSourceClass",
+"class": "CounterClass",
 "obs": [
 [
 0,
@@ -149436,7 +149436,7 @@
 ]
 },
 "M:6297F0:this:0x24": {
-"class": "TerrainClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 540,
@@ -149506,7 +149506,7 @@
 ]
 },
 "P:62A260:0": {
-"class": "UnitClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -149779,7 +149779,7 @@
 ]
 },
 "M:62AC30:this:0x24": {
-"class": "AircraftClass",
+"class": "TriggerTypeClass",
 "obs": [
 [
 140,
@@ -150150,7 +150150,7 @@
 ]
 },
 "M:62B5E0:p0:0x2bc": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -150160,7 +150160,7 @@
 "ents": []
 },
 "P:62B5E0:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -151438,7 +151438,7 @@
 ]
 },
 "P:62E840:0": {
-"class": "XSurface",
+"class": "ParticleSystemClass",
 "obs": [
 [
 248,
@@ -152152,7 +152152,7 @@
 "ents": []
 },
 "P:631C10:0": {
-"class": "DynamicVector",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -153259,7 +153259,7 @@
 "ents": []
 },
 "R:6343C0:ecx": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 4,
@@ -154452,7 +154452,7 @@
 "ents": []
 },
 "R:637030:ecx": {
-"class": "IsometricTileClass",
+"class": "NetworkDialog",
 "obs": [
 [
 153,
@@ -154520,7 +154520,7 @@
 "ents": []
 },
 "R:637E00:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -154560,7 +154560,7 @@
 ]
 },
 "P:638120:0": {
-"class": "RulesClass",
+"class": "UnitClass",
 "obs": [
 [
 24,
@@ -154614,7 +154614,7 @@
 ]
 },
 "P:639800:0": {
-"class": "BulletClass",
+"class": "WaypointClass",
 "obs": [
 [
 0,
@@ -154744,7 +154744,7 @@
 "ents": []
 },
 "R:63B050:ecx": {
-"class": "MixFileClass",
+"class": "SyncDelay",
 "obs": [
 [
 18,
@@ -154818,7 +154818,7 @@
 ]
 },
 "P:63BE60:0": {
-"class": "UnitTypeClass",
+"class": "FileEntryClass",
 "obs": [
 [
 1200,
@@ -154952,7 +154952,7 @@
 "ents": []
 },
 "R:63CF10:ecx": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -154974,7 +154974,7 @@
 ]
 },
 "R:63CFC0:ecx": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -156713,7 +156713,7 @@
 ]
 },
 "P:63F960:0": {
-"class": "RadarClass",
+"class": "DisplayClass",
 "obs": [
 [
 0,
@@ -158787,7 +158787,7 @@
 "ents": []
 },
 "P:64BDD0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -159541,7 +159541,7 @@
 "ents": []
 },
 "P:653850:0": {
-"class": "RadarClass",
+"class": "DisplayClass",
 "obs": [
 [
 8,
@@ -159676,7 +159676,7 @@
 ]
 },
 "P:654490:0": {
-"class": "EMPulseClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 36,
@@ -161171,7 +161171,7 @@
 ]
 },
 "P:659470:0": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -162282,7 +162282,7 @@
 "ents": []
 },
 "R:65AD40:ecx": {
-"class": "TechnoClass",
+"class": "RadioClass",
 "obs": [
 [
 228,
@@ -162848,7 +162848,7 @@
 ]
 },
 "R:65B8F0:ecx": {
-"class": "CStreamClass",
+"class": "LightSourceClass",
 "obs": [
 [
 72,
@@ -163518,7 +163518,7 @@
 "ents": []
 },
 "P:65C7E0:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -163568,7 +163568,7 @@
 "ents": []
 },
 "R:65CA00:ecx": {
-"class": "BufferIOFileClass",
+"class": "RawFileClass",
 "obs": [
 [
 0,
@@ -163852,7 +163852,7 @@
 ]
 },
 "R:65D2B0:ecx": {
-"class": "BufferIOFileClass",
+"class": "RawFileClass",
 "obs": [
 [
 12,
@@ -164177,7 +164177,7 @@
 ]
 },
 "R:65FE00:ecx": {
-"class": "WWMouseClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -164993,7 +164993,7 @@
 ]
 },
 "P:6622C0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -169698,7 +169698,7 @@
 ]
 },
 "P:665650:0": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -170477,7 +170477,7 @@
 ]
 },
 "P:6686C0:0": {
-"class": "Tactical",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -171661,7 +171661,7 @@
 ]
 },
 "P:66D480:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -175395,7 +175395,7 @@
 ]
 },
 "R:67A190:ecx": {
-"class": "WinModemClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -176887,7 +176887,7 @@
 ]
 },
 "R:67BFA0:ecx": {
-"class": "ScriptClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -177509,7 +177509,7 @@
 "ents": []
 },
 "R:6810D0:ecx": {
-"class": "TubeClass",
+"class": "ConvertClass",
 "obs": [
 [
 390,
@@ -178573,7 +178573,7 @@
 ]
 },
 "P:684C30:0": {
-"class": "HouseClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -179561,7 +179561,7 @@
 ]
 },
 "P:68BCC0:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -179663,7 +179663,7 @@
 ]
 },
 "R:68C2B0:ecx": {
-"class": "ScriptClass",
+"class": "SwizzleManagerClass",
 "obs": [
 [
 0,
@@ -179763,7 +179763,7 @@
 ]
 },
 "P:68C710:0": {
-"class": "LightSourceClass",
+"class": "EnumConnectionsClass",
 "obs": [
 [
 0,
@@ -180239,7 +180239,7 @@
 "ents": []
 },
 "P:68FBB0:0": {
-"class": "WinModemClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -180912,7 +180912,7 @@
 "ents": []
 },
 "R:691590:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 44,
@@ -182680,7 +182680,7 @@
 "ents": []
 },
 "R:697F10:ecx": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -182970,7 +182970,7 @@
 "ents": []
 },
 "P:5275C0:7": {
-"class": "ConvertClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -183298,7 +183298,7 @@
 ]
 },
 "R:69ACD0:ecx": {
-"class": "InfantryTypeClass",
+"class": "BombClass",
 "obs": [
 [
 86,
@@ -183308,7 +183308,7 @@
 "ents": []
 },
 "R:69AD80:ecx": {
-"class": "MapFile",
+"class": "VectorClass_ptr_ConvertClass",
 "obs": [
 [
 379,
@@ -183328,7 +183328,7 @@
 "ents": []
 },
 "R:69AE10:ecx": {
-"class": "WaveClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 436,
@@ -185303,7 +185303,7 @@
 ]
 },
 "P:7D5408:1": {
-"class": "IsometricTileClass",
+"class": "MapSeed",
 "obs": [
 [
 0,
@@ -185405,7 +185405,7 @@
 "ents": []
 },
 "R:69E580:ecx": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -185515,7 +185515,7 @@
 "ents": []
 },
 "P:69E860:0": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -185693,7 +185693,7 @@
 "ents": []
 },
 "P:69F080:0": {
-"class": "FactoryClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 77,
@@ -187706,7 +187706,7 @@
 "ents": []
 },
 "P:6A8420:0": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 132,
@@ -187955,7 +187955,7 @@
 ]
 },
 "P:6A9540:0": {
-"class": "BuildingClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 0,
@@ -188604,7 +188604,7 @@
 ]
 },
 "M:6AF580:this:0x24": {
-"class": "FootClass",
+"class": "AircraftClass",
 "obs": [
 [
 728,
@@ -189008,7 +189008,7 @@
 ]
 },
 "R:6B0DB0:ecx": {
-"class": "BuildingClass",
+"class": "AircraftClass",
 "obs": [
 [
 36,
@@ -189028,7 +189028,7 @@
 ]
 },
 "M:6B0DB0:this:0x24": {
-"class": "AircraftClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 536,
@@ -189568,7 +189568,7 @@
 ]
 },
 "R:6B1A70:ecx": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -190115,7 +190115,7 @@
 ]
 },
 "P:6B2F30:0": {
-"class": "FootClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 0,
@@ -190527,7 +190527,7 @@
 ]
 },
 "P:6B4A50:0": {
-"class": "SmudgeTypeClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 0,
@@ -191215,7 +191215,7 @@
 ]
 },
 "P:6B7230:0": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -191989,7 +191989,7 @@
 ]
 },
 "R:6B8AE0:ecx": {
-"class": "Tactical",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -195062,7 +195062,7 @@
 "ents": []
 },
 "P:6C89E0:0": {
-"class": "IsometricTileClass",
+"class": "FoggedObjectClass",
 "obs": [
 [
 0,
@@ -195158,7 +195158,7 @@
 "ents": []
 },
 "R:6C9740:ecx": {
-"class": "BuildingTypeClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 0,
@@ -195524,7 +195524,7 @@
 "ents": []
 },
 "R:6C9EC0:ecx": {
-"class": "HouseClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -195538,7 +195538,7 @@
 "ents": []
 },
 "R:6C9F10:ecx": {
-"class": "HouseClass",
+"class": "UnitClass",
 "obs": [
 [
 0,
@@ -196319,7 +196319,7 @@
 ]
 },
 "M:6CB560:this:0x68": {
-"class": "RandomMap",
+"class": "FrameTimer",
 "obs": [
 [
 405,
@@ -196329,7 +196329,7 @@
 "ents": []
 },
 "R:6CB7B0:ecx": {
-"class": "SpawnManagerClass",
+"class": "WWMouseClass",
 "obs": [
 [
 109,
@@ -196413,7 +196413,7 @@
 ]
 },
 "M:6CB830:this:0x68": {
-"class": "RandomMap",
+"class": "FrameTimer",
 "obs": [
 [
 405,
@@ -196503,7 +196503,7 @@
 ]
 },
 "M:6CB920:this:0x2c": {
-"class": "BulletTypeClass",
+"class": "WaveClass",
 "obs": [
 [
 506,
@@ -196513,7 +196513,7 @@
 "ents": []
 },
 "M:6CB920:this:0x68": {
-"class": "RandomMap",
+"class": "FrameTimer",
 "obs": [
 [
 405,
@@ -196583,7 +196583,7 @@
 ]
 },
 "M:6CBCA0:this:0x68": {
-"class": "AnimClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 413,
@@ -196803,7 +196803,7 @@
 "ents": []
 },
 "M:6CC2A0:this:0x28": {
-"class": "SuperWeaponTypeClass",
+"class": "BuildingLightClass",
 "obs": [
 [
 230,
@@ -197121,7 +197121,7 @@
 "ents": []
 },
 "M:6CC390:p0:0xe8": {
-"class": "GUID",
+"class": "AI",
 "obs": [
 [
 2,
@@ -197131,7 +197131,7 @@
 "ents": []
 },
 "R:6CDE90:ecx": {
-"class": "SpawnManagerClass",
+"class": "FlyLocomotionClass",
 "obs": [
 [
 40,
@@ -197259,7 +197259,7 @@
 ]
 },
 "M:6CE020:this:0x68": {
-"class": "AnimClass",
+"class": "WarheadTypeClass",
 "obs": [
 [
 4,
@@ -198973,7 +198973,7 @@
 "ents": []
 },
 "P:6D2B60:0": {
-"class": "FootClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -199370,7 +199370,7 @@
 ]
 },
 "R:6D4E20:ecx": {
-"class": "Tactical",
+"class": "AbstractClass",
 "obs": [
 [
 164,
@@ -199428,7 +199428,7 @@
 "ents": []
 },
 "M:6D5030:p0:0x520": {
-"class": "BuildingTypeClass",
+"class": "EventClass",
 "obs": [
 [
 5822,
@@ -199464,7 +199464,7 @@
 ]
 },
 "P:6D5730:0": {
-"class": "Tactical",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -199778,7 +199778,7 @@
 ]
 },
 "P:6D6AD0:0": {
-"class": "SidebarClass",
+"class": "DisplayClass",
 "obs": [
 [
 284,
@@ -199841,7 +199841,7 @@
 ]
 },
 "P:6D71E0:0": {
-"class": "Tactical",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -200628,7 +200628,7 @@
 ]
 },
 "M:6DAD60:p0:0x174": {
-"class": "ConvertClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 3,
@@ -201842,7 +201842,7 @@
 ]
 },
 "R:6E0B60:ecx": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 144,
@@ -201888,7 +201888,7 @@
 "ents": []
 },
 "P:6E0EF0:0": {
-"class": "HouseClass",
+"class": "WaveClass",
 "obs": [
 [
 499,
@@ -202012,7 +202012,7 @@
 ]
 },
 "R:6E1980:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202024,7 +202024,7 @@
 ]
 },
 "R:6E1A40:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202068,7 +202068,7 @@
 "ents": []
 },
 "R:6E1CC0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202096,7 +202096,7 @@
 ]
 },
 "P:68BCC0:3": {
-"class": "IsometricTileClass",
+"class": "AbstractTypeClass",
 "obs": [
 [
 68,
@@ -202172,7 +202172,7 @@
 "ents": []
 },
 "R:6E2AF0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 80,
@@ -202308,7 +202308,7 @@
 "ents": []
 },
 "R:6E3410:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202344,7 +202344,7 @@
 "ents": []
 },
 "R:6E36E0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202356,7 +202356,7 @@
 ]
 },
 "R:6E38F0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202648,7 +202648,7 @@
 ]
 },
 "R:6E43E0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202660,7 +202660,7 @@
 ]
 },
 "R:6E4460:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -202672,7 +202672,7 @@
 ]
 },
 "R:6E44E0:ecx": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 68,
@@ -203868,7 +203868,7 @@
 "ents": []
 },
 "P:6E6AB0:0": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -203908,7 +203908,7 @@
 "ents": []
 },
 "R:6E6E20:ecx": {
-"class": "BuildingClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -204658,7 +204658,7 @@
 ]
 },
 "P:6E9050:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -205146,7 +205146,7 @@
 ]
 },
 "M:6EA870:this:0x24": {
-"class": "AircraftClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 228,
@@ -205158,7 +205158,7 @@
 ]
 },
 "M:6EA870:this:0x54": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 176,
@@ -205272,7 +205272,7 @@
 ]
 },
 "M:6EAE60:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -205334,7 +205334,7 @@
 ]
 },
 "M:6EAEE0:p0:0x24": {
-"class": "TeamTypeClass",
+"class": "TaskForceClass",
 "obs": [
 [
 167,
@@ -205372,7 +205372,7 @@
 ]
 },
 "M:6EB380:this:0x24": {
-"class": "TeamTypeClass",
+"class": "Dial8Class",
 "obs": [
 [
 166,
@@ -205388,7 +205388,7 @@
 ]
 },
 "M:6EB380:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -205618,7 +205618,7 @@
 "ents": []
 },
 "M:6EBAD0:this:0x24": {
-"class": "TeamTypeClass",
+"class": "SideClass",
 "obs": [
 [
 173,
@@ -205644,7 +205644,7 @@
 ]
 },
 "M:6EBF50:this:0x24": {
-"class": "TeamTypeClass",
+"class": "TaskForceClass",
 "obs": [
 [
 167,
@@ -205670,7 +205670,7 @@
 ]
 },
 "R:6EC300:ecx": {
-"class": "TeamClass",
+"class": "ConvertClass",
 "obs": [
 [
 40,
@@ -206232,7 +206232,7 @@
 ]
 },
 "M:6ED200:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 276,
@@ -206497,7 +206497,7 @@
 ]
 },
 "P:6EDCA0:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -206525,7 +206525,7 @@
 ]
 },
 "M:6EDDC0:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -206561,7 +206561,7 @@
 ]
 },
 "M:6EDF10:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -206643,7 +206643,7 @@
 ]
 },
 "M:6EDFD0:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 108,
@@ -206685,7 +206685,7 @@
 ]
 },
 "M:6EE050:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -206923,7 +206923,7 @@
 ]
 },
 "P:6EE800:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -207147,7 +207147,7 @@
 ]
 },
 "M:6EF470:this:0x24": {
-"class": "AircraftClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 228,
@@ -207187,7 +207187,7 @@
 ]
 },
 "M:6EF4D0:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -207207,7 +207207,7 @@
 "ents": []
 },
 "M:6EF5F0:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 240,
@@ -207221,7 +207221,7 @@
 "ents": []
 },
 "P:6EF610:0": {
-"class": "BuildingClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 4,
@@ -207245,7 +207245,7 @@
 ]
 },
 "M:6EF610:this:0x54": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1496,
@@ -210464,7 +210464,7 @@
 ]
 },
 "P:6F5090:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 72,
@@ -211042,7 +211042,7 @@
 ]
 },
 "M:6F7CA0:p0:0x2c0": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 540,
@@ -211212,7 +211212,7 @@
 ]
 },
 "P:6F8DF0:0": {
-"class": "ParticleClass",
+"class": "AircraftClass",
 "obs": [
 [
 44,
@@ -212272,7 +212272,7 @@
 ]
 },
 "M:6FC0B0:this:0x6c4": {
-"class": "UnitTypeClass",
+"class": "AnimFile",
 "obs": [
 [
 3608,
@@ -212288,7 +212288,7 @@
 ]
 },
 "M:6FC0B0:p0:0xac": {
-"class": "WarheadTypeClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 346,
@@ -212438,7 +212438,7 @@
 ]
 },
 "P:6FCFA0:0": {
-"class": "AircraftTypeClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -212532,7 +212532,7 @@
 ]
 },
 "P:6FD800:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -212567,7 +212567,7 @@
 ]
 },
 "P:6FDA00:0": {
-"class": "BuildingClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -212779,7 +212779,7 @@
 ]
 },
 "M:6FDD50:p0:0xac": {
-"class": "CampaignClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 345,
@@ -213016,7 +213016,7 @@
 ]
 },
 "M:700600:p0:0x408": {
-"class": "AircraftTypeClass",
+"class": "AircraftClass",
 "obs": [
 [
 1516,
@@ -214078,7 +214078,7 @@
 ]
 },
 "P:5AF980:4": {
-"class": "BuildingClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -214584,7 +214584,7 @@
 ]
 },
 "M:7087C0:this:0x6c4": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1028,
@@ -215756,7 +215756,7 @@
 ]
 },
 "R:70CD10:ecx": {
-"class": "FootClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -215822,7 +215822,7 @@
 "ents": []
 },
 "P:74FF90:1": {
-"class": "FootClass",
+"class": "MissionClass",
 "obs": [
 [
 0,
@@ -216091,7 +216091,7 @@
 ]
 },
 "P:70D990:0": {
-"class": "RulesClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -216125,7 +216125,7 @@
 "ents": []
 },
 "R:70DC50:ecx": {
-"class": "UnitClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -216137,7 +216137,7 @@
 ]
 },
 "R:70DC60:ecx": {
-"class": "UnitClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -216181,7 +216181,7 @@
 ]
 },
 "R:70DCF0:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 292,
@@ -216245,7 +216245,7 @@
 ]
 },
 "R:70DDC0:ecx": {
-"class": "BuildingClass",
+"class": "ObjectClass",
 "obs": [
 [
 320,
@@ -216257,7 +216257,7 @@
 ]
 },
 "R:70DDD0:ecx": {
-"class": "TechnoClass",
+"class": "ObjectClass",
 "obs": [
 [
 320,
@@ -216269,7 +216269,7 @@
 ]
 },
 "R:70DDF0:ecx": {
-"class": "BuildingClass",
+"class": "ObjectClass",
 "obs": [
 [
 324,
@@ -216303,7 +216303,7 @@
 "ents": []
 },
 "R:70DE40:ecx": {
-"class": "BuildingClass",
+"class": "ObjectClass",
 "obs": [
 [
 324,
@@ -216854,7 +216854,7 @@
 "ents": []
 },
 "M:70F820:this:0x2c0": {
-"class": "AircraftClass",
+"class": "CampaignClass",
 "obs": [
 [
 700,
@@ -217040,7 +217040,7 @@
 ]
 },
 "R:70FEB0:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 460,
@@ -220503,7 +220503,7 @@
 "ents": []
 },
 "P:712170:0": {
-"class": "BulletTypeClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 0,
@@ -221975,7 +221975,7 @@
 "ents": []
 },
 "P:719F30:0": {
-"class": "ConvertClass",
+"class": "ConnectionPointClass",
 "obs": [
 [
 29,
@@ -224581,7 +224581,7 @@
 ]
 },
 "R:720440:ecx": {
-"class": "UnitClass",
+"class": "SmudgeTypeClass",
 "obs": [
 [
 0,
@@ -224734,7 +224734,7 @@
 ]
 },
 "R:720960:ecx": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -224818,7 +224818,7 @@
 ]
 },
 "R:7209D0:ecx": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 4,
@@ -224870,7 +224870,7 @@
 ]
 },
 "R:720B20:ecx": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 4,
@@ -224894,7 +224894,7 @@
 ]
 },
 "R:720BB0:ecx": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -224954,7 +224954,7 @@
 ]
 },
 "R:720EA0:ecx": {
-"class": "ConvertClass",
+"class": "MSShapeAnim",
 "obs": [
 [
 0,
@@ -224982,7 +224982,7 @@
 ]
 },
 "R:720FD0:ecx": {
-"class": "ConvertClass",
+"class": "GraphicMenuImageItem",
 "obs": [
 [
 17,
@@ -226478,7 +226478,7 @@
 ]
 },
 "R:724510:ecx": {
-"class": "ToolTipManager",
+"class": "WaypointClass",
 "obs": [
 [
 552,
@@ -226488,7 +226488,7 @@
 "ents": []
 },
 "R:724520:ecx": {
-"class": "ToolTipManager",
+"class": "WaypointClass",
 "obs": [
 [
 552,
@@ -226498,7 +226498,7 @@
 "ents": []
 },
 "R:724530:ecx": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 552,
@@ -226512,7 +226512,7 @@
 "ents": []
 },
 "R:724540:ecx": {
-"class": "Voxel",
+"class": "WaypointClass",
 "obs": [
 [
 552,
@@ -226526,7 +226526,7 @@
 "ents": []
 },
 "R:724550:ecx": {
-"class": "ToolTipManager",
+"class": "WaypointClass",
 "obs": [
 [
 560,
@@ -226536,7 +226536,7 @@
 "ents": []
 },
 "R:724560:ecx": {
-"class": "ToolTipManager",
+"class": "WaypointClass",
 "obs": [
 [
 560,
@@ -228072,7 +228072,7 @@
 "ents": []
 },
 "R:727D60:ecx": {
-"class": "LightSourceClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -228132,7 +228132,7 @@
 ]
 },
 "P:727FD0:0": {
-"class": "CellClass",
+"class": "WeaponTypeClass",
 "obs": [
 [
 278,
@@ -228790,7 +228790,7 @@
 "ents": []
 },
 "P:72EC70:0": {
-"class": "LightSourceClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -230032,7 +230032,7 @@
 ]
 },
 "P:737C90:0": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 32,
@@ -230382,7 +230382,7 @@
 ]
 },
 "P:7393C0:0": {
-"class": "UnitClass",
+"class": "AircraftClass",
 "obs": [
 [
 4,
@@ -231189,7 +231189,7 @@
 ]
 },
 "M:73B470:p0:0x6b8": {
-"class": "BuildingTypeClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 180,
@@ -231423,7 +231423,7 @@
 ]
 },
 "P:73C5F0:0": {
-"class": "UnitTypeClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -231753,7 +231753,7 @@
 ]
 },
 "M:73E5E0:this:0x21c": {
-"class": "HouseClass",
+"class": "WaypointClass",
 "obs": [
 [
 578,
@@ -231763,7 +231763,7 @@
 "ents": []
 },
 "P:73E5E0:0": {
-"class": "FootClass",
+"class": "SequenceStruct",
 "obs": [
 [
 72,
@@ -231881,7 +231881,7 @@
 ]
 },
 "P:73F0A0:0": {
-"class": "FootClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -233383,7 +233383,7 @@
 ]
 },
 "R:7447B0:ecx": {
-"class": "UnitClass",
+"class": "FootClass",
 "obs": [
 [
 0,
@@ -233399,7 +233399,7 @@
 ]
 },
 "R:746000:ecx": {
-"class": "UnitClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -233777,7 +233777,7 @@
 "ents": []
 },
 "P:7468C0:0": {
-"class": "HouseClass",
+"class": "ScenarioClass",
 "obs": [
 [
 0,
@@ -234351,7 +234351,7 @@
 ]
 },
 "P:7483B0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -234365,7 +234365,7 @@
 "ents": []
 },
 "P:748750:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -234429,7 +234429,7 @@
 ]
 },
 "R:749060:ecx": {
-"class": "BuildingTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -234445,7 +234445,7 @@
 ]
 },
 "R:7490D0:ecx": {
-"class": "BuildingTypeClass",
+"class": "TechnoTypeClass",
 "obs": [
 [
 0,
@@ -234549,7 +234549,7 @@
 ]
 },
 "P:7493B0:0": {
-"class": "HouseClass",
+"class": "AbstractClass",
 "obs": [
 [
 0,
@@ -234867,7 +234867,7 @@
 ]
 },
 "P:749F30:0": {
-"class": "WaveClass",
+"class": "ScriptTypeClass",
 "obs": [
 [
 0,
@@ -235922,7 +235922,7 @@
 ]
 },
 "R:74CD60:ecx": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -235991,7 +235991,7 @@
 ]
 },
 "R:74D670:ecx": {
-"class": "LightSourceClass",
+"class": "ScriptClass",
 "obs": [
 [
 0,
@@ -236755,7 +236755,7 @@
 ]
 },
 "R:74FC80:ecx": {
-"class": "CCFileClass",
+"class": "BufferIOFileClass",
 "obs": [
 [
 57,
@@ -236819,7 +236819,7 @@
 "ents": []
 },
 "R:750080:ecx": {
-"class": "AnimClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -236831,7 +236831,7 @@
 ]
 },
 "R:750090:ecx": {
-"class": "AnimClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -236843,7 +236843,7 @@
 ]
 },
 "R:7500B0:ecx": {
-"class": "AnimClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -237868,7 +237868,7 @@
 "ents": []
 },
 "M:758E10:this:0x10": {
-"class": "AITriggerTypeClass",
+"class": "LCWStraw",
 "obs": [
 [
 1,
@@ -238216,7 +238216,7 @@
 "ents": []
 },
 "R:759C30:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -238317,7 +238317,7 @@
 ]
 },
 "R:759EA0:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 1292,
@@ -238327,7 +238327,7 @@
 "ents": []
 },
 "R:759EB0:ecx": {
-"class": "FootClass",
+"class": "SequenceStruct",
 "obs": [
 [
 512,
@@ -238875,7 +238875,7 @@
 "ents": []
 },
 "R:75AEC0:ecx": {
-"class": "ConvertClass",
+"class": "WinsockInterfaceClass",
 "obs": [
 [
 0,
@@ -239021,7 +239021,7 @@
 "ents": []
 },
 "P:75AEC0:0": {
-"class": "HouseClass",
+"class": "TacticalClass",
 "obs": [
 [
 0,
@@ -239179,7 +239179,7 @@
 "ents": []
 },
 "P:75C8E0:0": {
-"class": "GadgetClass",
+"class": "EnumConnectionsClass",
 "obs": [
 [
 29,
@@ -239213,7 +239213,7 @@
 "ents": []
 },
 "P:75CB20:0": {
-"class": "IsometricTileClass",
+"class": "IdleOrderEntry",
 "obs": [
 [
 50,
@@ -239241,7 +239241,7 @@
 "ents": []
 },
 "P:75CBC0:0": {
-"class": "IsometricTileClass",
+"class": "IdleOrderEntry",
 "obs": [
 [
 50,
@@ -240246,7 +240246,7 @@
 ]
 },
 "P:75E950:0": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 8,
@@ -240862,7 +240862,7 @@
 ]
 },
 "R:7609E0:ecx": {
-"class": "AnimClass",
+"class": "ObjectClass",
 "obs": [
 [
 188,
@@ -242954,7 +242954,7 @@
 ]
 },
 "R:7667E0:ecx": {
-"class": "MSFont",
+"class": "AudioPool",
 "obs": [
 [
 14,
@@ -242964,7 +242964,7 @@
 "ents": []
 },
 "R:7667F0:ecx": {
-"class": "IsometricTileClass",
+"class": "AudioPool",
 "obs": [
 [
 15,
@@ -245853,7 +245853,7 @@
 "ents": []
 },
 "M:76BFE0:this:0xc": {
-"class": "ScriptClass",
+"class": "LCWPipe",
 "obs": [
 [
 36,
@@ -246192,7 +246192,7 @@
 ]
 },
 "P:76DAD0:0": {
-"class": "TechnoClass",
+"class": "MissionClass",
 "obs": [
 [
 4,
@@ -246367,7 +246367,7 @@
 "ents": []
 },
 "P:767BB0:3": {
-"class": "AircraftClass",
+"class": "FileEntryClass",
 "obs": [
 [
 76,
@@ -247105,7 +247105,7 @@
 "ents": []
 },
 "R:7712C0:ecx": {
-"class": "AircraftTypeClass",
+"class": "AircraftClass",
 "obs": [
 [
 0,
@@ -249216,7 +249216,7 @@
 ]
 },
 "P:77F900:0": {
-"class": "TabClass",
+"class": "DropPodLocomotionClass",
 "obs": [
 [
 0,
@@ -249496,7 +249496,7 @@
 "ents": []
 },
 "P:788B00:0": {
-"class": "FoggedObjectClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -250110,7 +250110,7 @@
 ]
 },
 "P:7A41C0:0": {
-"class": "DynamicVector",
+"class": "TypeList",
 "obs": [
 [
 0,
@@ -251950,7 +251950,7 @@
 ]
 },
 "P:7B13D0:0": {
-"class": "ConvertClass",
+"class": "GraphicMenuAnimItem",
 "obs": [
 [
 16,
@@ -254389,7 +254389,7 @@
 ]
 },
 "R:7B6D90:ecx": {
-"class": "ControlClass",
+"class": "LinkClass",
 "obs": [
 [
 0,
@@ -254465,7 +254465,7 @@
 "ents": []
 },
 "R:7B7100:ecx": {
-"class": "WWMouseClass",
+"class": "ScrollClass",
 "obs": [
 [
 0,
@@ -254477,7 +254477,7 @@
 ]
 },
 "R:7B7110:ecx": {
-"class": "ControlClass",
+"class": "LinkClass",
 "obs": [
 [
 0,
@@ -254962,7 +254962,7 @@
 ]
 },
 "M:7B8C60:this:0x4": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 2,
@@ -256748,7 +256748,7 @@
 "ents": []
 },
 "P:7BD470:0": {
-"class": "RulesClass",
+"class": "UnitClass",
 "obs": [
 [
 56,
@@ -256818,7 +256818,7 @@
 "ents": []
 },
 "P:7BD5C0:0": {
-"class": "RulesClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 152,
@@ -257296,7 +257296,7 @@
 ]
 },
 "R:7BE660:ecx": {
-"class": "FootClass",
+"class": "AircraftClass",
 "obs": [
 [
 1744,
@@ -257692,7 +257692,7 @@
 ]
 },
 "P:7BF3A0:0": {
-"class": "RulesClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 1780,
@@ -258184,7 +258184,7 @@
 ]
 },
 "R:7C3670:ecx": {
-"class": "UnitClass",
+"class": "AircraftTypeClass",
 "obs": [
 [
 1800,
@@ -258212,7 +258212,7 @@
 "ents": []
 },
 "R:7C3750:ecx": {
-"class": "TechnoClass",
+"class": "BuildingClass",
 "obs": [
 [
 72,
@@ -258292,7 +258292,7 @@
 ]
 },
 "P:7C39C0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -258342,7 +258342,7 @@
 "ents": []
 },
 "P:7C4730:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -258360,7 +258360,7 @@
 "ents": []
 },
 "P:7C4B80:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -258374,7 +258374,7 @@
 "ents": []
 },
 "P:7C4F90:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -258388,7 +258388,7 @@
 "ents": []
 },
 "P:7C53A0:0": {
-"class": "LightSourceClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -258500,7 +258500,7 @@
 ]
 },
 "P:7C7371:0": {
-"class": "IsometricTileClass",
+"class": "CounterClass",
 "obs": [
 [
 0,
@@ -258574,7 +258574,7 @@
 "ents": []
 },
 "P:7C8B48:0": {
-"class": "AbstractClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -258716,7 +258716,7 @@
 ]
 },
 "P:7CA45F:0": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -258885,7 +258885,7 @@
 "ents": []
 },
 "P:7CAAE4:0": {
-"class": "HouseClass",
+"class": "IRTTITypeInfo",
 "obs": [
 [
 0,
@@ -258919,7 +258919,7 @@
 "ents": []
 },
 "P:7CB1CB:0": {
-"class": "AbstractClass",
+"class": "CarryoverClass",
 "obs": [
 [
 13,
@@ -259459,7 +259459,7 @@
 "ents": []
 },
 "P:7D0844:0": {
-"class": "AirstrikeClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -259549,7 +259549,7 @@
 "ents": []
 },
 "P:7D170D:0": {
-"class": "FoggedObjectClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -259968,7 +259968,7 @@
 "ents": []
 },
 "P:7D5C12:0": {
-"class": "DynamicVector",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -260590,7 +260590,7 @@
 ]
 },
 "P:7DBED6:0": {
-"class": "TemporalClass",
+"class": "CarryoverClass",
 "obs": [
 [
 0,
@@ -260829,7 +260829,7 @@
 "ents": []
 },
 "P:7DD505:0": {
-"class": "DynamicVector",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -260931,7 +260931,7 @@
 "ents": []
 },
 "P:7DE200:0": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -260953,7 +260953,7 @@
 "ents": []
 },
 "P:7DE53A:0": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -260975,7 +260975,7 @@
 "ents": []
 },
 "P:7DE87A:0": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,
@@ -260997,7 +260997,7 @@
 "ents": []
 },
 "P:7DEBBA:0": {
-"class": "AITriggerTypeClass",
+"class": "GraphicMenuItem",
 "obs": [
 [
 0,

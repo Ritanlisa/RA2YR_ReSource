@@ -12954,7 +12954,7 @@
 "MultiplayerGameMode": {
 "member_count": 16,
 "extent": 64,
-"clusters": 3,
+"clusters": 4,
 "members": [
 [
 0,
@@ -17391,7 +17391,7 @@
 "RawFileClass": {
 "member_count": 10,
 "extent": 33,
-"clusters": 12,
+"clusters": 13,
 "members": [
 [
 0,
