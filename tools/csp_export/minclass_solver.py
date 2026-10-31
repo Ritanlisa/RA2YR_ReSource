@@ -763,6 +763,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
+    ap.add_argument("--audit-yrpp", action="store_true",
+                    help="check whether each YRpp function->class mapping is still in its cluster's domain")
     ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
     ap.add_argument("--explain-class", default=None, help="with --explain: report why a class is in/out")
     ap.add_argument("--no-name-pins", action="store_true",
@@ -2093,8 +2095,12 @@ def main():
     c15_no_minimal = c15_pool_exact = 0
     for _fa, _om in sorted(c15_owner.items()):
         _lst = [i for i in range(n) if (_om >> i) & 1]
+        # "谁最先声明这个实现" = 集合中**最基**的类：没有任何其他成员是它的祖先。
+        # 原式 `c in ancestors(d)`（c 是 d 的祖先）方向反了，会选出最派生（叶）类 ——
+        # 抽样 YRpp 对照实证：0x401940 被 4 个文件类共享，YRpp=RawFileClass（基），
+        # 旧式给出 CCFileClass（叶）。COMDAT 折叠的函数属于最先定义它的那个基类。
         _minimal = [c for c in _lst
-                    if not any(c in _c15_ancestors(d) for d in _lst if d != c)]
+                    if not any(d in _c15_ancestors(c) for d in _lst if d != c)]
         if not _minimal:
             c15_no_minimal += 1        # 祖先链成环等脏数据：无可判定 owner，跳过
             continue
@@ -4248,6 +4254,40 @@ def main():
         "family_table": table_out,
         "chosen_classes": class_counts,
     }
+    if getattr(args, "audit_yrpp", False):
+        # 用 YRpp（独立参照）审计约束：对每个 YRpp 函数->类映射，检查该类是否仍在
+        # 该函数所在簇的域内。若被排除，说明某条约束把**真解**排掉了 —— 约束错误。
+        _yr = (jload("anchors/yrpp_fn_class.json", {}) or {}).get("map") or {}
+        _root_of = {_eid: uf.find(_eid) for _eid in ents}
+        _mask_of = {}
+        for _cl, _m in res.get("constrained") or ():
+            _r = (_cl.get("root") if isinstance(_cl, dict) else str(_cl))
+            _mask_of[_r] = _m
+        _ok = _out = _nocl = 0
+        _excluded = []
+        for _as, _cn in _yr.items():
+            _a = hx(_as)
+            _ci = resolve(_cn)
+            if _a is None or _ci is None:
+                continue
+            _eid = "T:%X" % _a
+            _r = _root_of.get(_eid)
+            if _r is None:
+                _nocl += 1
+                continue
+            _m = _mask_of.get(_r)
+            if _m is None:
+                _nocl += 1
+                continue
+            if (_m >> _ci) & 1:
+                _ok += 1
+            else:
+                _out += 1
+                if len(_excluded) < 25:
+                    _excluded.append((_r, _cn, _m.bit_count()))
+        print("[audit] YRpp in-domain=%d  EXCLUDED=%d  no-cluster=%d" % (_ok, _out, _nocl))
+        for _r, _cn, _d in _excluded:
+            print("   EXCLUDED %-22s YRpp=%s  domain=%d" % (_r, _cn, _d))
     if getattr(args, "explain", None):
         _want = str(args.explain).upper()
         for _cl, _m in res.get("constrained") or ():
@@ -4257,6 +4297,7 @@ def main():
             _cands = [names[i] for i in range(len(names)) if (_m >> i) & 1]
             print("[explain] %s" % _root)
             print("  domain=%d" % len(_cands))
+            print("  members=%s" % ((_cl.get("ents") or [])[:12],))
             print("  obs=%s" % sorted(_cl.get("obs") or ())[:20])
             print("  candidates=%s" % _cands[:40])
             for _f in FAMILIES:
