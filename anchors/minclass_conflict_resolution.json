@@ -3525,15 +3525,6 @@
   "class_after": null
  },
  {
-  "cluster": "P:721140:0",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 220,
-  "class_after": null
- },
- {
   "cluster": "R:723790:ecx",
   "dropped_family": "C18",
   "remaining_families": [
@@ -3581,7 +3572,7 @@
    "C1",
    "C11"
   ],
-  "domain_after": 17,
+  "domain_after": 16,
   "class_after": null
  },
  {

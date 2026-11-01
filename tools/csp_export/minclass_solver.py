@@ -1387,25 +1387,6 @@ def main():
     except Exception as _e9:
         print("[layouts] gap-fill skipped: %s" % _e9, flush=True)
     print("[layouts] gap-fill from external identity: %d members" % _gap_added, flush=True)
-    if getattr(args, "audit_layout", None):
-        _want = str(args.audit_layout)
-        _ci_w = resolve(_want)
-        if _ci_w is None:
-            print("[audit-layout] %s not in universe" % _want, flush=True)
-        else:
-            _mm = U["members"][_ci_w]
-            _obs = set()
-            for _eid_w, _lst_w in exact.items():
-                if not _eid_w.startswith("T:"):
-                    continue
-                _cs_w = {_c for _c, _s in _lst_w}
-                if _cs_w == {_ci_w}:
-                    _obs |= (ents.get(_eid_w) or {}).get("obs") or set()
-            _miss = [(o, w) for (o, w) in _obs if not (isinstance(_mm.get(o), int) and _mm[o] >= w)]
-            print("[audit-layout] %s members=%d obs=%d missing=%d (%s)"
-                  % (_want, len(_mm), len(_obs), len(_miss),
-                     [hex(o) for o, _w in sorted(_miss)[:8]]), flush=True)
-
     # ---------------- C1：成员偏移 ----------------
     # C1 密度门：布局只覆盖 >=70% dword 的类视为"完整"，缺失偏移可判负；
     # 稀疏布局（观测得到的成员表）缺失偏移不算反证 —— 实测证明多数布局是稀疏的：
@@ -1792,11 +1773,34 @@ def main():
         aa = hx(a)
         if ci is not None and aa is not None:
             src[aa]["committed"].add(ci)
+    # structural_truth 的 vtable_install 有误报：把**栈上局部对象**的装表也记成了 this 装表。
+    # 实证 0x4770E0：`mov [esp+var_A0], offset ??_7?$TypeList@H@@6B@` 是构造局部 TypeList<int>，
+    # YRpp 正确地把该函数归到 INISection。交叉验证：只采信同时出现在 facts.this_installs
+    # （带目标偏移，off=0 才是 this）或 ctor_types 里的条目 —— 实测 1,398 条中 1,365 条互证，
+    # 33 条仅存于 structural_truth，其中 14 条完全无佐证，予以剔除。
+    _inst_fn = set()
+    if facts:
+        for _fn5, _site5, _off5, _sym5 in facts["this_installs"]:
+            if _off5 == 0:
+                _inst_fn.add(_fn5)
+    _ct_fn5 = set()
+    for _a5, _c5 in (jload("anchors/ctor_types.json", {}) or {}).items():
+        _aa5 = hx(_a5)
+        if _aa5 is not None:
+            _ct_fn5.add(_aa5)
+    _st_unverified = 0
     for a, cname in ((jload("anchors/structural_truth.json", {}) or {}).get("vtable_install") or {}).items():
         ci = resolve(cname)
         aa = hx(a)
-        if ci is not None and aa is not None:
-            src[aa]["committed"].add(ci)
+        if ci is None or aa is None:
+            continue
+        if aa not in _inst_fn and aa not in _ct_fn5:
+            _st_unverified += 1
+            continue
+        src[aa]["committed"].add(ci)
+    if _st_unverified:
+        print("[C4] structural_truth entries dropped (no this_install / ctor corroboration): %d"
+              % _st_unverified, flush=True)
     if facts:
         for fn, site, off, sym in facts["this_installs"]:
             if off != 0:
@@ -4386,6 +4390,27 @@ def main():
         "family_table": table_out,
         "chosen_classes": class_counts,
     }
+    if getattr(args, "audit_layout", None):
+        _want = str(args.audit_layout)
+        _ci_w = resolve(_want)
+        if _ci_w is None:
+            print("[audit-layout] %s not in universe" % _want, flush=True)
+        else:
+            _mm = U["members"][_ci_w]
+            _obs = set()
+            _nfn = 0
+            for _eid_w, _lst_w in exact.items():
+                if not _eid_w.startswith("T:"):
+                    continue
+                _cs_w = {_c for _c, _s in _lst_w}
+                if _cs_w == {_ci_w}:
+                    _nfn += 1
+                    _obs |= (ents.get(_eid_w) or {}).get("obs") or set()
+            _miss = [(o, w) for (o, w) in _obs if not (isinstance(_mm.get(o), int) and _mm[o] >= w)]
+            print("[audit-layout] %s members=%d identified_fns=%d obs=%d missing=%d %s"
+                  % (_want, len(_mm), _nfn, len(_obs), len(_miss),
+                     [hex(o) for o, _w in sorted(_miss)[:10]]), flush=True)
+
     if getattr(args, "audit_yrpp", False):
         # 用 YRpp（独立参照）审计约束：对每个 YRpp 函数->类映射，检查该类是否仍在
         # 该函数所在簇的域内。若被排除，说明某条约束把**真解**排掉了 —— 约束错误。
@@ -4409,6 +4434,12 @@ def main():
             _eid = "T:%X" % _a
             _r = _root_of.get(_eid)
             if _r is None:
+                _nocl += 1
+                continue
+            # 审计口径：只比较**函数自身**的簇（T: 根）。若该函数被并进了参数/寄存器等
+            # 簇，簇的类代表的是那个对象，与"函数所属类"无关 —— 拿它们比是无效比较
+            # （实证：P:48E570:2 被判矛盾，实为参数类 vs 函数类）。
+            if not str(_r).startswith("T:"):
                 _nocl += 1
                 continue
             _m = _mask_of.get(_r)

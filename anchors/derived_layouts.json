@@ -99,7 +99,7 @@
 "VectorClass": {
 "member_count": 21,
 "extent": 180,
-"clusters": 489,
+"clusters": 483,
 "members": [
 [
 0,
@@ -8689,7 +8689,7 @@
 "VectorCursor": {
 "member_count": 3,
 "extent": 12,
-"clusters": 11,
+"clusters": 10,
 "members": [
 [
 0,
@@ -9597,7 +9597,7 @@
 "TypeList": {
 "member_count": 7,
 "extent": 24,
-"clusters": 14,
+"clusters": 12,
 "members": [
 [
 0,
@@ -11794,7 +11794,7 @@
 "DynamicVector": {
 "member_count": 18,
 "extent": 92,
-"clusters": 10,
+"clusters": 8,
 "members": [
 [
 0,
