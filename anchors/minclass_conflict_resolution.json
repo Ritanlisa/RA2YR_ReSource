@@ -1,3480 +1,1030 @@
 [
  {
-  "cluster": "R:402040:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 230,
-  "class_after": null
- },
- {
-  "cluster": "R:4047B0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
+  "cluster": "M:41D860:this:0x54",
+  "status": "inconsistent",
+  "families": [
    "C1",
    "C11"
   ],
-  "domain_after": 223,
-  "class_after": null
- },
- {
-  "cluster": "R:404BB0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 221,
-  "class_after": null
- },
- {
-  "cluster": "R:40B140:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40B700:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40B960:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40BEB0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40C290:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40C880:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40CCA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40CCD0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 3,
-  "class_after": null
- },
- {
-  "cluster": "R:40D5A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40E850:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40EF20:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40F640:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:40FC10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:41DE40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4203D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:421860:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 146,
+   "C11": 1
+  }
  },
  {
   "cluster": "M:42A460:this:0x10",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 97,
-  "class_after": null
- },
- {
-  "cluster": "M:42A460:this:0xc",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 97,
-  "class_after": null
- },
- {
-  "cluster": "R:42D600:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:42F490:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:42F620:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4373B0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 227,
-  "class_after": null
- },
- {
-  "cluster": "M:442D90:this:0x21c",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 235,
-  "class_after": null
- },
- {
-  "cluster": "P:455F10:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 254,
-  "class_after": null
- },
- {
-  "cluster": "R:458330:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 72,
-  "class_after": null
- },
- {
-  "cluster": "R:45A180:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:45A3E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:45A640:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:45A760:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:46B660:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:472B40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:472DA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:477FC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4782E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:48AD70:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:49AE80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:49EA30:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:49EB50:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4A0F80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4A1240:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4A3630:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 101,
-  "class_after": null
- },
- {
-  "cluster": "R:4A4B30:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4A7D80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4B0AD0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 192,
-  "class_after": null
- },
- {
-  "cluster": "R:4B9CA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4B9F00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4BB0D0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 206,
-  "class_after": null
- },
- {
-  "cluster": "P:4BBCA0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 225,
-  "class_after": null
- },
- {
-  "cluster": "P:4BFD30:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 213,
-  "class_after": null
- },
- {
-  "cluster": "R:4C2CA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4C4A00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4C5BC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4CA8F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4CD2A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 183,
-  "class_after": null
- },
- {
-  "cluster": "R:4CD600:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 181,
-  "class_after": null
- },
- {
-  "cluster": "R:4CE840:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 190,
-  "class_after": null
- },
- {
-  "cluster": "R:4D1890:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 386,
-  "class_after": null
- },
- {
-  "cluster": "R:4D29B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E0320:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E0580:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E07E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E9200:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E9460:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E96C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E9920:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E9B80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4E9DE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EA040:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EA2A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EA420:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EA680:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EA8E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EAB40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EADA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EB000:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EB260:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EB4C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EB720:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EB980:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EBBE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EBE40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EC0A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EC300:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EC560:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EC7C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ECA20:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ECC80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ECEE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ED140:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ED3A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ED600:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4ED860:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EDAC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EDD20:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EDF80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EE1E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EE440:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EE6A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EE900:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EEB60:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EEDC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EF020:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4EF280:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:4F28E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4F54A0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 348,
-  "class_after": null
- },
- {
-  "cluster": "R:4FA350:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C3",
    "C11"
   ],
-  "domain_after": 34,
-  "class_after": null
+  "family_sizes": {
+   "C1": 97,
+   "C11": 99
+  }
+ },
+ {
+  "cluster": "M:42A5B0:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 97,
+   "C11": 99
+  }
+ },
+ {
+  "cluster": "M:42A6D0:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 97,
+   "C11": 99
+  }
+ },
+ {
+  "cluster": "R:42ED60:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 553,
+   "C10": 1
+  }
+ },
+ {
+  "cluster": "M:43BCF0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:43FB20:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:440580:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:4415F0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 108,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:442230:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 108,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:442C40:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 217,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:443C60:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:445880:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 109,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:445F80:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:448260:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:4494C0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 237,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:449C30:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:44D5D0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 228,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:44D880:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:44EBF0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 109,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:451330:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 239,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "M:4555D0:this:0x21c",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 104,
+   "C11": 4
+  }
+ },
+ {
+  "cluster": "R:457DE0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10",
+   "C11",
+   "C3"
+  ],
+  "family_sizes": {
+   "C1": 170,
+   "C3": 896,
+   "C10": 3,
+   "C11": 896
+  }
  },
  {
   "cluster": "R:4FDD10:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C3",
-   "C11"
-  ],
-  "domain_after": 31,
-  "class_after": null
- },
- {
-  "cluster": "R:5007A0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 109,
-  "class_after": null
- },
- {
-  "cluster": "R:500B40:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 103,
-  "class_after": null
- },
- {
-  "cluster": "R:504860:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 104,
-  "class_after": null
- },
- {
-  "cluster": "P:509140:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
+   "C10",
+   "C11",
    "C3"
   ],
-  "domain_after": 202,
-  "class_after": null
+  "family_sizes": {
+   "C1": 104,
+   "C3": 948,
+   "C10": 3,
+   "C11": 947
+  }
  },
  {
-  "cluster": "R:50DEF0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 108,
-  "class_after": null
- },
- {
-  "cluster": "R:50DF30:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 108,
-  "class_after": null
- },
- {
-  "cluster": "R:50E000:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 108,
-  "class_after": null
- },
- {
-  "cluster": "R:50E910:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:4FEEE0:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 104,
+   "C10": 7
+  }
  },
  {
-  "cluster": "R:50EC20:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:4FF210:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 104,
+   "C10": 7
+  }
  },
  {
-  "cluster": "R:50EE80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:506EF0:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 102,
+   "C10": 7
+  }
  },
  {
-  "cluster": "R:50F1B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:50C340:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:50F4E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:50F740:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:50F9A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:50FC00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:511850:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 308,
-  "class_after": null
- },
- {
-  "cluster": "R:512C40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:513010:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5133E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 104,
+   "C10": 7
+  }
  },
  {
   "cluster": "P:519630:0",
-  "dropped_family": "C7",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 118,
-  "class_after": null
- },
- {
-  "cluster": "R:5250D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:528660:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C7",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:528660:0",
-  "dropped_family": "C7",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 7,
-  "class_after": null
- },
- {
-  "cluster": "R:52AAF0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C6",
-   "C10",
-   "C11"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:52AAF0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C6",
-   "C11"
-  ],
-  "domain_after": 8,
-  "class_after": null
- },
- {
-  "cluster": "R:52AB80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C6",
-   "C10",
-   "C11"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:52AB80:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C6",
-   "C11"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:538520:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:53C520:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:53DAA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:54A250:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:54A4B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:54CA90:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 165,
-  "class_after": null
- },
- {
-  "cluster": "R:54D0F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 174,
-  "class_after": null
- },
- {
-  "cluster": "R:54E8F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:551330:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5552C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:555520:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:556F10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:558240:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:55A1B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:42DD60:5",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 187,
-  "class_after": null
- },
- {
-  "cluster": "P:5840C0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 263,
-  "class_after": null
- },
- {
-  "cluster": "R:589300:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5896F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:589CA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:589EB0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:58A110:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:58A260:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:58D1C0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 407,
-  "class_after": null
- },
- {
-  "cluster": "P:58D620:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 262,
-  "class_after": null
- },
- {
-  "cluster": "P:590FD0:1",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 994,
-  "class_after": null
- },
- {
-  "cluster": "R:5AC6A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5ACA60:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5ACCC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5AD0F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4C9480:2",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 228,
-  "class_after": null
- },
- {
-  "cluster": "R:5BCC40:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 111,
-  "class_after": null
- },
- {
-  "cluster": "R:5BCC90:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 111,
-  "class_after": null
- },
- {
-  "cluster": "R:5C0AD0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5C5130:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5C5390:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5C55F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5CF5F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 315,
-  "class_after": null
- },
- {
-  "cluster": "R:5D07F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D0AE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D0D40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D0FA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D1200:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D1460:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D27E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D2A40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:5D4510:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 372,
-  "class_after": null
- },
- {
-  "cluster": "R:5D5150:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D53B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D82F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D8550:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5D9410:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 412,
-  "class_after": null
- },
- {
-  "cluster": "P:5E7BF0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 163,
-  "class_after": null
- },
- {
-  "cluster": "P:5ED5A0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 210,
-  "class_after": null
- },
- {
-  "cluster": "R:5EEC10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:5F6060:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 171,
-  "class_after": null
- },
- {
-  "cluster": "R:5F9B60:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:5F9B60:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 672,
-  "class_after": null
- },
- {
-  "cluster": "R:5F9B80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:600020:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:61C690:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 215,
-  "class_after": null
- },
- {
-  "cluster": "R:624140:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:627E10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6281F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6288A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:62B0D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "M:62C6E0:this:0xac",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 211,
-  "class_after": null
- },
- {
-  "cluster": "R:62CB10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 189,
-  "class_after": null
- },
- {
-  "cluster": "M:62CE40:this:0xac",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 202,
-  "class_after": null
- },
- {
-  "cluster": "M:62D2A0:this:0xac",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 208,
-  "class_after": null
- },
- {
-  "cluster": "R:62D3F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 137,
-  "class_after": null
- },
- {
-  "cluster": "R:62D510:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 137,
-  "class_after": null
- },
- {
-  "cluster": "R:62F230:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 149,
-  "class_after": null
- },
- {
-  "cluster": "R:62F9A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 148,
-  "class_after": null
- },
- {
-  "cluster": "R:632740:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 237,
-  "class_after": null
- },
- {
-  "cluster": "R:632870:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 237,
-  "class_after": null
- },
- {
-  "cluster": "R:63C690:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 225,
-  "class_after": null
- },
- {
-  "cluster": "R:63DD40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:63E050:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:63E310:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:63E650:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:63E950:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:63F810:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 124,
-  "class_after": null
- },
- {
-  "cluster": "P:641DB0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 216,
-  "class_after": null
- },
- {
-  "cluster": "P:642C80:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 215,
-  "class_after": null
- },
- {
-  "cluster": "P:6475F0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 320,
-  "class_after": null
- },
- {
-  "cluster": "P:656EC0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 215,
-  "class_after": null
- },
- {
-  "cluster": "R:658910:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:65A240:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:65BF50:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:65D670:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 4,
-  "class_after": null
- },
- {
-  "cluster": "R:65FE00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:65FE00:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 430,
-  "class_after": null
- },
- {
-  "cluster": "P:660730:2",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:660730:2",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 986,
-  "class_after": null
- },
- {
-  "cluster": "R:660CE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4135D0:2",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 210,
-  "class_after": null
- },
- {
-  "cluster": "R:664810:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:67AAF0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:67AE70:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:67B1F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:683610:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "R:686700:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 125,
-  "class_after": null
- },
- {
-  "cluster": "P:688ED0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 208,
-  "class_after": null
- },
- {
-  "cluster": "R:689670:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "R:689910:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "R:689E90:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "R:68AD70:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "P:4A1DB0:2",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 110,
-  "class_after": null
- },
- {
-  "cluster": "R:68CD20:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 248,
-  "class_after": null
- },
- {
-  "cluster": "R:692F30:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 107,
-  "class_after": null
- },
- {
-  "cluster": "R:69C970:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:69CD40:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:69CFA0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:69D200:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "M:69E500:this:0x18",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 537,
-  "class_after": null
- },
- {
-  "cluster": "M:69E930:this:0x18",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 537,
-  "class_after": null
- },
- {
-  "cluster": "R:6A01A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 192,
-  "class_after": null
- },
- {
-  "cluster": "R:6A60E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 109,
-  "class_after": null
- },
- {
-  "cluster": "R:6AF6C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 212,
-  "class_after": null
- },
- {
-  "cluster": "R:6AFD60:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 181,
-  "class_after": null
- },
- {
-  "cluster": "R:6B0DB0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 176,
-  "class_after": null
- },
- {
-  "cluster": "R:6B1470:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6B16D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6B4440:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6B8220:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6B84E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6C61D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:6C89E0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 620,
-  "class_after": null
- },
- {
-  "cluster": "R:6C8B10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 603,
-  "class_after": null
- },
- {
-  "cluster": "P:6C9F10:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:6C9F10:0",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 557,
-  "class_after": null
- },
- {
-  "cluster": "R:6CA820:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6CF560:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6D0EC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 41,
-  "class_after": null
- },
- {
-  "cluster": "R:6D0F00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 107,
-  "class_after": null
- },
- {
-  "cluster": "R:6D1610:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 41,
-  "class_after": null
- },
- {
-  "cluster": "P:6D7F20:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 164,
-  "class_after": null
- },
- {
-  "cluster": "R:6DA380:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 147,
-  "class_after": null
- },
- {
-  "cluster": "R:6DC5E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6DC9D0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6E4850:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6E6540:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:691590:3",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 230,
-  "class_after": null
- },
- {
-  "cluster": "M:6EA870:this:0x54",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 170,
-  "class_after": null
- },
- {
-  "cluster": "P:6ED7E0:0",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 118,
-  "class_after": null
- },
- {
-  "cluster": "P:6EAEE0:3",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 189,
-  "class_after": null
- },
- {
-  "cluster": "P:6EE800:0",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 88,
-  "class_after": null
- },
- {
-  "cluster": "M:6EF5F0:this:0x54",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 175,
-  "class_after": null
- },
- {
-  "cluster": "M:6EF610:this:0x54",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 175,
-  "class_after": null
- },
- {
-  "cluster": "M:6F03F0:this:0x54",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 175,
-  "class_after": null
- },
- {
-  "cluster": "R:6F2290:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:6FDB80:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:6FDB80:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 144,
-  "class_after": null
- },
- {
-  "cluster": "R:704000:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 175,
-  "class_after": null
- },
- {
-  "cluster": "R:704240:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 175,
-  "class_after": null
- },
- {
-  "cluster": "R:717880:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 150,
-  "class_after": null
- },
- {
-  "cluster": "R:718B70:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 252,
-  "class_after": null
- },
- {
-  "cluster": "R:71AB60:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 250,
-  "class_after": null
- },
- {
-  "cluster": "R:71B2A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "M:71E940:this:0x34",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 223,
-  "class_after": null
- },
- {
-  "cluster": "R:71FC00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:723790:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:724C90:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:725C70:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 316,
-  "class_after": null
- },
- {
-  "cluster": "P:4C1B50:1",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 264,
-  "class_after": null
- },
- {
-  "cluster": "P:7416A0:0",
-  "dropped_family": "C7",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 116,
-  "class_after": null
- },
- {
-  "cluster": "M:746100:this:0x64",
-  "dropped_family": "C11",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 327,
-  "class_after": null
- },
- {
-  "cluster": "P:746670:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 222,
-  "class_after": null
- },
- {
-  "cluster": "R:749150:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 150,
-  "class_after": null
- },
- {
-  "cluster": "P:74C5B0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "status": "inconsistent",
+  "families": [
    "C1",
    "C7"
   ],
-  "domain_after": 15,
-  "class_after": null
+  "family_sizes": {
+   "C1": 119,
+   "C7": 1
+  }
  },
  {
-  "cluster": "R:74F3C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "P:528660:0",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10",
+   "C7"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 505,
+   "C7": 1,
+   "C10": 222
+  }
  },
  {
-  "cluster": "R:751930:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:5BCB90:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 111,
+   "C10": 4
+  }
  },
  {
-  "cluster": "R:7536B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:5BCE10:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 111,
+   "C10": 4
+  }
  },
  {
-  "cluster": "R:759260:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 174,
-  "class_after": null
- },
- {
-  "cluster": "R:759830:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 229,
-  "class_after": null
- },
- {
-  "cluster": "R:75A490:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:5BD0D0:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 111,
+   "C10": 4
+  }
  },
  {
-  "cluster": "P:75ADA0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:5BD2E0:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 111,
+   "C10": 4
+  }
+ },
+ {
+  "cluster": "P:5D9410:0",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 358,
+   "C10": 1
+  }
+ },
+ {
+  "cluster": "R:632740:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 237,
+   "C10": 6
+  }
+ },
+ {
+  "cluster": "R:632870:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 237,
+   "C10": 6
+  }
+ },
+ {
+  "cluster": "R:63F810:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 124,
+   "C10": 4
+  }
+ },
+ {
+  "cluster": "R:643720:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10",
+   "C11",
    "C3"
   ],
-  "domain_after": 231,
-  "class_after": null
+  "family_sizes": {
+   "C1": 339,
+   "C3": 979,
+   "C10": 1,
+   "C11": 979
+  }
  },
  {
-  "cluster": "R:75C240:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:693440:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 107,
+   "C10": 12
+  }
+ },
+ {
+  "cluster": "R:6A60E0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 109,
+   "C10": 12
+  }
+ },
+ {
+  "cluster": "R:6D0EC0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10",
    "C3"
   ],
-  "domain_after": 265,
-  "class_after": null
+  "family_sizes": {
+   "C1": 107,
+   "C3": 1039,
+   "C10": 11
+  }
  },
  {
-  "cluster": "R:7640B0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:6D0F00:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C10"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 107,
+   "C10": 12
+  }
  },
  {
-  "cluster": "R:764460:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "R:6D1610:ecx",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:7657F0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:766BC0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:7681E0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
+   "C10",
    "C3"
   ],
-  "domain_after": 207,
-  "class_after": null
+  "family_sizes": {
+   "C1": 107,
+   "C3": 1039,
+   "C10": 11
+  }
  },
  {
-  "cluster": "R:769DE0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "M:6E9050:this:0x54",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C11"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
  },
  {
-  "cluster": "R:76A130:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "M:6EA080:this:0x54",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C11"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
  },
  {
-  "cluster": "R:76B870:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
+  "cluster": "M:6EA0D0:this:0x54",
+  "status": "inconsistent",
+  "families": [
    "C1",
-   "C15"
+   "C11"
   ],
-  "domain_after": 2,
-  "class_after": null
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
  },
  {
-  "cluster": "P:76F020:2",
-  "dropped_family": "C10",
-  "remaining_families": [
+  "cluster": "M:6EA870:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EB380:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EB490:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EB870:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EBAD0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EC370:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EC3D0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EC7D0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EC9A0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ECA70:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ECCE0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ED090:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ED200:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ED4D0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 168,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6ED7E0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EDCA0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 173,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EDDC0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EDF10:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EDFD0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EE050:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EE310:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EE5C0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EF110:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EF4D0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EF5F0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EF610:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EF700:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EFA10:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EFC70:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6EFE60:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6F0130:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 171,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:6F03F0:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 175,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "M:739EC0:this:0x5d4",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 338,
+   "C11": 1
+  }
+ },
+ {
+  "cluster": "P:7416A0:0",
+  "status": "inconsistent",
+  "families": [
    "C1",
    "C3",
-   "C11"
+   "C7"
   ],
-  "domain_after": 117,
-  "class_after": null
+  "family_sizes": {
+   "C1": 238,
+   "C3": 911,
+   "C7": 1
+  }
  },
  {
-  "cluster": "P:769440:1",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 187,
-  "class_after": null
- },
- {
-  "cluster": "R:76DAD0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 187,
-  "class_after": null
- },
- {
-  "cluster": "R:76E180:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 187,
-  "class_after": null
- },
- {
-  "cluster": "R:770270:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 188,
-  "class_after": null
- },
- {
-  "cluster": "R:7747C0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 305,
-  "class_after": null
- },
- {
-  "cluster": "P:77F900:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 290,
-  "class_after": null
- },
- {
-  "cluster": "P:785740:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 203,
-  "class_after": null
- },
- {
-  "cluster": "P:786270:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 205,
-  "class_after": null
- },
- {
-  "cluster": "P:7864C0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 236,
-  "class_after": null
- },
- {
-  "cluster": "P:787770:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 542,
-  "class_after": null
- },
- {
-  "cluster": "P:789B60:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 232,
-  "class_after": null
- },
- {
-  "cluster": "P:78AC10:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 216,
-  "class_after": null
- },
- {
-  "cluster": "P:796B90:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 606,
-  "class_after": null
- },
- {
-  "cluster": "P:799080:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 202,
-  "class_after": null
- },
- {
-  "cluster": "P:799EA0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 203,
-  "class_after": null
- },
- {
-  "cluster": "P:79CBA0:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 542,
-  "class_after": null
- },
- {
-  "cluster": "P:79E520:0",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 620,
-  "class_after": null
- },
- {
-  "cluster": "R:7AD090:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:7B28A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:7B4320:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C15"
-  ],
-  "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:7BA090:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 323,
-  "class_after": null
- },
- {
-  "cluster": "R:7BD270:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 155,
-  "class_after": null
- },
- {
-  "cluster": "R:7BD290:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 155,
-  "class_after": null
- },
- {
-  "cluster": "R:7BD2B0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 155,
-  "class_after": null
- },
- {
-  "cluster": "R:7BD2D0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 153,
-  "class_after": null
- },
- {
-  "cluster": "R:7BE660:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 166,
-  "class_after": null
- },
- {
-  "cluster": "R:7C3750:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
+  "cluster": "M:746100:this:0x6bc",
+  "status": "inconsistent",
+  "families": [
    "C1",
    "C11"
   ],
-  "domain_after": 154,
-  "class_after": null
+  "family_sizes": {
+   "C1": 149,
+   "C11": 1
+  }
  },
  {
-  "cluster": "P:6E0D00:0",
-  "dropped_family": "C10",
-  "remaining_families": [],
-  "domain_after": 1400,
-  "class_after": null
+  "cluster": "M:746100:this:0x64",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11"
+  ],
+  "family_sizes": {
+   "C1": 329,
+   "C11": 1
+  }
  },
  {
-  "cluster": "P:7CD662:0",
-  "dropped_family": "C10",
-  "remaining_families": [],
-  "domain_after": 1400,
-  "class_after": null
+  "cluster": "P:7AE950:0",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 279,
+   "C10": 6
+  }
  }
 ]

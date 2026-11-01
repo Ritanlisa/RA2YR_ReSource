@@ -29,11 +29,11 @@
    "global_unproven": 133,
    "self_pin_incompatible": 35
   },
-  "K_min": 577,
-  "K_upper": 577,
-  "lower_bound": 577,
-  "constrained_clusters": 24288,
-  "free_clusters": 26696,
+  "K_min": 573,
+  "K_upper": 573,
+  "lower_bound": 573,
+  "constrained_clusters": 24104,
+  "free_clusters": 26880,
   "conflicts": 0,
   "c1_gaps": 0,
   "entities": 52265,
@@ -45,20 +45,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 15520,
-   "clusters_pinned": 8396,
-   "clusters_free": 35464,
-   "pinned_classes": 520,
-   "forced_classes": 520,
+   "clusters_constrained": 15311,
+   "clusters_pinned": 7953,
+   "clusters_free": 35673,
+   "pinned_classes": 517,
+   "forced_classes": 517,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 520,
-   "K_upper": 520,
-   "K_total": 520,
-   "K_greedy": 520,
-   "delta_forced": 520,
-   "delta_K": 520,
-   "lower_bound": 520,
+   "K": 517,
+   "K_upper": 517,
+   "K_total": 517,
+   "K_greedy": 517,
+   "delta_forced": 517,
+   "delta_K": 517,
+   "lower_bound": 517,
    "merges": 0,
    "bad_cover": 0
   },
@@ -67,20 +67,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 15520,
-   "clusters_pinned": 8396,
-   "clusters_free": 35464,
-   "pinned_classes": 520,
-   "forced_classes": 520,
+   "clusters_constrained": 15311,
+   "clusters_pinned": 7953,
+   "clusters_free": 35673,
+   "pinned_classes": 517,
+   "forced_classes": 517,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 520,
-   "K_upper": 520,
-   "K_total": 520,
-   "K_greedy": 520,
+   "K": 517,
+   "K_upper": 517,
+   "K_total": 517,
+   "K_greedy": 517,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 520,
+   "lower_bound": 517,
    "merges": 0,
    "bad_cover": 0
   },
@@ -89,20 +89,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 16080,
-   "clusters_pinned": 8396,
-   "clusters_free": 34904,
-   "pinned_classes": 520,
-   "forced_classes": 520,
+   "clusters_constrained": 15911,
+   "clusters_pinned": 7953,
+   "clusters_free": 35073,
+   "pinned_classes": 517,
+   "forced_classes": 517,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 521,
-   "K_upper": 521,
-   "K_total": 521,
-   "K_greedy": 521,
+   "K": 518,
+   "K_upper": 518,
+   "K_total": 518,
+   "K_greedy": 518,
    "delta_forced": 0,
    "delta_K": 1,
-   "lower_bound": 521,
+   "lower_bound": 518,
    "merges": 0,
    "bad_cover": 0
   },
@@ -111,20 +111,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 16128,
-   "clusters_pinned": 9662,
-   "clusters_free": 34856,
-   "pinned_classes": 538,
-   "forced_classes": 538,
+   "clusters_constrained": 15959,
+   "clusters_pinned": 9219,
+   "clusters_free": 35025,
+   "pinned_classes": 535,
+   "forced_classes": 535,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 539,
-   "K_upper": 539,
-   "K_total": 539,
-   "K_greedy": 539,
+   "K": 536,
+   "K_upper": 536,
+   "K_total": 536,
+   "K_greedy": 536,
    "delta_forced": 18,
    "delta_K": 18,
-   "lower_bound": 539,
+   "lower_bound": 536,
    "merges": 0,
    "bad_cover": 0
   },
@@ -133,20 +133,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 16919,
-   "clusters_pinned": 9803,
-   "clusters_free": 34065,
-   "pinned_classes": 551,
-   "forced_classes": 551,
+   "clusters_constrained": 16750,
+   "clusters_pinned": 9360,
+   "clusters_free": 34234,
+   "pinned_classes": 548,
+   "forced_classes": 548,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 554,
-   "K_upper": 554,
-   "K_total": 554,
-   "K_greedy": 554,
+   "K": 551,
+   "K_upper": 551,
+   "K_total": 551,
+   "K_greedy": 551,
    "delta_forced": 13,
    "delta_K": 15,
-   "lower_bound": 554,
+   "lower_bound": 551,
    "merges": 0,
    "bad_cover": 0
   },
@@ -155,20 +155,20 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 16919,
-   "clusters_pinned": 9803,
-   "clusters_free": 34065,
-   "pinned_classes": 551,
-   "forced_classes": 551,
+   "clusters_constrained": 16750,
+   "clusters_pinned": 9360,
+   "clusters_free": 34234,
+   "pinned_classes": 548,
+   "forced_classes": 548,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 554,
-   "K_upper": 554,
-   "K_total": 554,
-   "K_greedy": 554,
+   "K": 551,
+   "K_upper": 551,
+   "K_total": 551,
+   "K_greedy": 551,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 554,
+   "lower_bound": 551,
    "merges": 0,
    "bad_cover": 0
   },
@@ -177,20 +177,20 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 16985,
-   "clusters_pinned": 9860,
-   "clusters_free": 33996,
-   "pinned_classes": 557,
-   "forced_classes": 557,
+   "clusters_constrained": 16816,
+   "clusters_pinned": 9417,
+   "clusters_free": 34165,
+   "pinned_classes": 554,
+   "forced_classes": 554,
    "conflicts": 3,
    "c1_gaps": 0,
-   "K": 560,
-   "K_upper": 563,
-   "K_total": 560,
-   "K_greedy": 560,
+   "K": 557,
+   "K_upper": 560,
+   "K_total": 557,
+   "K_greedy": 557,
    "delta_forced": 6,
    "delta_K": 6,
-   "lower_bound": 560,
+   "lower_bound": 557,
    "merges": 0,
    "bad_cover": 0
   },
@@ -199,20 +199,20 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 17130,
-   "clusters_pinned": 10014,
-   "clusters_free": 33851,
-   "pinned_classes": 566,
-   "forced_classes": 566,
+   "clusters_constrained": 16961,
+   "clusters_pinned": 9571,
+   "clusters_free": 34020,
+   "pinned_classes": 563,
+   "forced_classes": 563,
    "conflicts": 3,
    "c1_gaps": 0,
-   "K": 569,
-   "K_upper": 572,
-   "K_total": 569,
-   "K_greedy": 569,
+   "K": 566,
+   "K_upper": 569,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 9,
    "delta_K": 9,
-   "lower_bound": 569,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   },
@@ -220,43 +220,43 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
-   "entities_touched": 5923,
-   "clusters_constrained": 17134,
-   "clusters_pinned": 10014,
-   "clusters_free": 33847,
-   "pinned_classes": 566,
-   "forced_classes": 566,
+   "entities_touched": 6358,
+   "clusters_constrained": 16965,
+   "clusters_pinned": 9571,
+   "clusters_free": 34016,
+   "pinned_classes": 563,
+   "forced_classes": 563,
    "conflicts": 3,
    "c1_gaps": 0,
-   "K": 569,
-   "K_upper": 572,
-   "K_total": 569,
-   "K_greedy": 569,
+   "K": 566,
+   "K_upper": 569,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 569,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 0,
-   "entities_touched": 12332,
-   "clusters_constrained": 23819,
-   "clusters_pinned": 10566,
-   "clusters_free": 27109,
-   "pinned_classes": 571,
-   "forced_classes": 571,
-   "conflicts": 56,
+   "evidence": 12174,
+   "entities_touched": 12174,
+   "clusters_constrained": 23482,
+   "clusters_pinned": 9744,
+   "clusters_free": 27477,
+   "pinned_classes": 567,
+   "forced_classes": 567,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 574,
-   "K_upper": 630,
-   "K_total": 574,
-   "K_greedy": 574,
-   "delta_forced": 5,
-   "delta_K": 5,
-   "lower_bound": 574,
+   "K": 570,
+   "K_upper": 595,
+   "K_total": 570,
+   "K_greedy": 570,
+   "delta_forced": 4,
+   "delta_K": 4,
+   "lower_bound": 570,
    "merges": 0,
    "bad_cover": 0
   },
@@ -264,21 +264,21 @@
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 443,
-   "entities_touched": 3634,
-   "clusters_constrained": 24220,
-   "clusters_pinned": 10890,
-   "clusters_free": 26694,
-   "pinned_classes": 574,
-   "forced_classes": 574,
-   "conflicts": 70,
+   "entities_touched": 3647,
+   "clusters_constrained": 24104,
+   "clusters_pinned": 10284,
+   "clusters_free": 26796,
+   "pinned_classes": 570,
+   "forced_classes": 570,
+   "conflicts": 84,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 647,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 573,
+   "K_upper": 657,
+   "K_total": 573,
+   "K_greedy": 573,
    "delta_forced": 3,
    "delta_K": 3,
-   "lower_bound": 577,
+   "lower_bound": 573,
    "merges": 0,
    "bad_cover": 0
   },
@@ -287,20 +287,20 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 24220,
-   "clusters_pinned": 10890,
-   "clusters_free": 26694,
-   "pinned_classes": 574,
-   "forced_classes": 574,
-   "conflicts": 70,
+   "clusters_constrained": 24104,
+   "clusters_pinned": 10284,
+   "clusters_free": 26796,
+   "pinned_classes": 570,
+   "forced_classes": 570,
+   "conflicts": 84,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 647,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 573,
+   "K_upper": 657,
+   "K_total": 573,
+   "K_greedy": 573,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 573,
    "merges": 0,
    "bad_cover": 0
   },
@@ -308,21 +308,21 @@
    "family": "C18",
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
-   "entities_touched": 6607,
-   "clusters_constrained": 23945,
-   "clusters_pinned": 11041,
-   "clusters_free": 26694,
-   "pinned_classes": 574,
-   "forced_classes": 574,
-   "conflicts": 345,
+   "entities_touched": 0,
+   "clusters_constrained": 24104,
+   "clusters_pinned": 10284,
+   "clusters_free": 26796,
+   "pinned_classes": 570,
+   "forced_classes": 570,
+   "conflicts": 84,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 922,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 573,
+   "K_upper": 657,
+   "K_total": 573,
+   "K_greedy": 573,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 573,
    "merges": 0,
    "bad_cover": 0
   },
@@ -331,81 +331,66 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 23945,
-   "clusters_pinned": 11041,
-   "clusters_free": 26694,
-   "pinned_classes": 574,
-   "forced_classes": 574,
-   "conflicts": 345,
+   "clusters_constrained": 24104,
+   "clusters_pinned": 10284,
+   "clusters_free": 26796,
+   "pinned_classes": 570,
+   "forced_classes": 570,
+   "conflicts": 84,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 922,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 573,
+   "K_upper": 657,
+   "K_total": 573,
+   "K_greedy": 573,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 573,
    "merges": 0,
    "bad_cover": 0
   }
  ],
  "chosen_classes": [
   {
-   "class": "IUnknown",
-   "clusters": 5532,
-   "entities": 5635,
+   "class": "TechnoClass",
+   "clusters": 7147,
+   "entities": 7305,
    "families": {
-    "C10": 5041,
-    "C11": 280,
-    "C3": 384,
-    "C7": 3,
-    "C5": 189
+    "C10": 6219,
+    "C11": 1043,
+    "C3": 527,
+    "C9": 201,
+    "EXACT": 276,
+    "C6": 3,
+    "C7": 7
    }
   },
   {
    "class": "VectorClass",
-   "clusters": 1594,
-   "entities": 1618,
+   "clusters": 1582,
+   "entities": 1603,
    "families": {
-    "C9": 1196,
-    "C11": 158,
-    "EXACT": 1418,
-    "C10": 651,
-    "C18": 1076,
+    "C9": 1198,
+    "C11": 160,
+    "EXACT": 1417,
+    "C10": 632,
     "C6": 488,
-    "C3": 273,
+    "C3": 277,
     "C5": 19
    }
   },
   {
    "class": "DynamicVector",
-   "clusters": 1382,
-   "entities": 1408,
+   "clusters": 1254,
+   "entities": 1274,
    "families": {
-    "C11": 68,
-    "C18": 943,
-    "C9": 929,
+    "C9": 1122,
     "C15": 388,
-    "EXACT": 874,
+    "EXACT": 848,
     "C3": 177,
-    "C10": 165,
+    "C11": 61,
+    "C10": 51,
     "C6": 8,
     "C5": 2
-   }
-  },
-  {
-   "class": "CarryoverClass",
-   "clusters": 966,
-   "entities": 1008,
-   "families": {
-    "C3": 37,
-    "C18": 338,
-    "C10": 590,
-    "C11": 213,
-    "C6": 6,
-    "EXACT": 2,
-    "C9": 1,
-    "C5": 30
    }
   },
   {
@@ -419,342 +404,344 @@
    }
   },
   {
-   "class": "TechnoClass",
-   "clusters": 593,
-   "entities": 617,
-   "families": {
-    "C18": 121,
-    "EXACT": 298,
-    "C9": 192,
-    "C10": 229,
-    "C3": 161,
-    "C11": 344,
-    "C6": 3,
-    "C7": 4
-   }
-  },
-  {
-   "class": "UDPInterfaceClass",
-   "clusters": 523,
-   "entities": 533,
-   "families": {
-    "C10": 511,
-    "C3": 8,
-    "C18": 12,
-    "C9": 21,
-    "EXACT": 23,
-    "C6": 3,
-    "C11": 2
-   }
-  },
-  {
-   "class": "ConvertClass",
-   "clusters": 453,
-   "entities": 465,
-   "families": {
-    "C18": 265,
-    "C11": 73,
-    "C10": 285,
-    "C6": 8,
-    "EXACT": 11,
-    "C9": 1,
-    "C5": 14
-   }
-  },
-  {
    "class": "AI",
-   "clusters": 447,
-   "entities": 461,
+   "clusters": 525,
+   "entities": 540,
    "families": {
     "C3": 87,
-    "C10": 25,
+    "C10": 27,
     "C11": 3
    }
   },
   {
-   "class": "CounterClass",
+   "class": "IUnknown",
    "clusters": 329,
-   "entities": 346,
+   "entities": 331,
    "families": {
-    "C11": 66,
-    "C18": 316,
-    "C10": 76,
-    "C9": 6,
-    "C15": 5,
-    "C3": 20,
-    "C6": 2,
-    "EXACT": 14
+    "C10": 141,
+    "C11": 8,
+    "C3": 8,
+    "C5": 189
    }
   },
   {
    "class": "HouseClass",
-   "clusters": 323,
-   "entities": 336,
+   "clusters": 307,
+   "entities": 322,
    "families": {
-    "C11": 101,
-    "EXACT": 209,
-    "C18": 54,
+    "EXACT": 158,
+    "C11": 77,
+    "C3": 12,
+    "C10": 136,
     "C6": 2,
-    "C10": 131,
-    "C3": 13,
     "C9": 13,
     "C7": 4
    }
   },
   {
-   "class": "TypeList",
-   "clusters": 289,
-   "entities": 303,
-   "families": {
-    "C10": 84,
-    "C18": 186,
-    "C11": 86,
-    "C3": 103,
-    "C9": 56,
-    "C15": 52,
-    "C6": 50,
-    "EXACT": 37,
-    "C5": 14
-   }
-  },
-  {
-   "class": "BuildingTypeClass",
-   "clusters": 279,
-   "entities": 295,
-   "families": {
-    "C18": 54,
-    "C11": 178,
-    "C10": 63,
-    "EXACT": 114,
-    "C6": 4,
-    "C9": 23,
-    "C3": 4,
-    "C5": 3
-   }
-  },
-  {
-   "class": "GraphicMenuItem",
-   "clusters": 272,
-   "entities": 291,
-   "families": {
-    "C18": 267,
-    "C10": 57,
-    "C11": 36,
-    "C3": 5,
-    "C6": 3,
-    "EXACT": 8,
-    "C9": 6
-   }
-  },
-  {
    "class": "CCFileClass",
-   "clusters": 263,
-   "entities": 284,
+   "clusters": 268,
+   "entities": 292,
    "families": {
     "C3": 7,
     "C9": 14,
     "EXACT": 170,
     "C6": 5,
     "C10": 98,
-    "C11": 9,
-    "C18": 11,
+    "C11": 8,
     "C5": 3
    }
   },
   {
-   "class": "FootClass",
-   "clusters": 250,
-   "entities": 266,
+   "class": "BuildingTypeClass",
+   "clusters": 260,
+   "entities": 275,
    "families": {
-    "C3": 89,
-    "C18": 123,
-    "C10": 114,
-    "C11": 108,
-    "C9": 116,
-    "EXACT": 157,
+    "C11": 172,
+    "C10": 48,
     "C6": 3,
-    "C7": 1
-   }
-  },
-  {
-   "class": "ArmorType",
-   "clusters": 231,
-   "entities": 232,
-   "families": {
-    "C11": 2,
-    "C3": 1
-   }
-  },
-  {
-   "class": "BuildingClass",
-   "clusters": 191,
-   "entities": 202,
-   "families": {
-    "C10": 121,
-    "C18": 107,
-    "EXACT": 170,
-    "C3": 94,
-    "C11": 131,
-    "C9": 112,
-    "C7": 1
-   }
-  },
-  {
-   "class": "ObjectClass",
-   "clusters": 177,
-   "entities": 182,
-   "families": {
-    "C9": 97,
-    "EXACT": 148,
-    "C18": 40,
-    "C3": 33,
-    "C10": 59,
-    "C11": 24,
-    "C6": 3
+    "EXACT": 38,
+    "C9": 23,
+    "C3": 2,
+    "C5": 3
    }
   },
   {
    "class": "AircraftClass",
-   "clusters": 156,
-   "entities": 162,
+   "clusters": 259,
+   "entities": 270,
    "families": {
-    "C10": 53,
+    "C10": 111,
     "EXACT": 64,
     "C9": 61,
-    "C11": 64,
+    "C11": 126,
     "C6": 1,
-    "C18": 45,
-    "C3": 40,
+    "C3": 59,
     "C5": 2
    }
   },
   {
    "class": "ScrollClass",
-   "clusters": 151,
-   "entities": 159,
+   "clusters": 255,
+   "entities": 273,
    "families": {
-    "C10": 76,
-    "C18": 18,
-    "C3": 4,
-    "C11": 9,
-    "C6": 1,
+    "C10": 187,
+    "C11": 10,
+    "C3": 19,
+    "C6": 2,
     "EXACT": 9,
     "C9": 7,
     "C5": 67
    }
   },
   {
-   "class": "UnitClass",
-   "clusters": 119,
-   "entities": 125,
+   "class": "ArmorType",
+   "clusters": 224,
+   "entities": 225,
    "families": {
-    "C3": 48,
-    "C10": 73,
-    "C11": 66,
-    "C18": 66,
-    "EXACT": 100,
+    "C3": 1
+   }
+  },
+  {
+   "class": "FootClass",
+   "clusters": 189,
+   "entities": 205,
+   "families": {
+    "C9": 119,
+    "EXACT": 148,
+    "C3": 81,
+    "C10": 112,
+    "C11": 55,
+    "C6": 3,
+    "C7": 1
+   }
+  },
+  {
+   "class": "BuildingClass",
+   "clusters": 186,
+   "entities": 197,
+   "families": {
+    "C11": 120,
+    "C10": 116,
+    "EXACT": 159,
+    "C3": 90,
+    "C9": 114,
+    "C7": 1
+   }
+  },
+  {
+   "class": "TypeList",
+   "clusters": 167,
+   "entities": 179,
+   "families": {
+    "C9": 56,
+    "C15": 52,
+    "C3": 67,
+    "C11": 84,
+    "C10": 20,
+    "C6": 12,
+    "EXACT": 18,
+    "C5": 14
+   }
+  },
+  {
+   "class": "ObjectClass",
+   "clusters": 159,
+   "entities": 163,
+   "families": {
+    "C9": 107,
+    "EXACT": 138,
+    "C3": 36,
+    "C10": 58,
+    "C11": 14,
+    "C6": 3
+   }
+  },
+  {
+   "class": "WOL",
+   "clusters": 124,
+   "entities": 134,
+   "families": {
+    "C10": 127,
+    "C3": 14,
+    "C11": 2
+   }
+  },
+  {
+   "class": "Block",
+   "clusters": 121,
+   "entities": 122,
+   "families": {
+    "C7": 42,
+    "C10": 58,
+    "C5": 32
+   }
+  },
+  {
+   "class": "AngerStruct",
+   "clusters": 120,
+   "entities": 130,
+   "families": {
+    "C3": 5
+   }
+  },
+  {
+   "class": "AudioFileClass",
+   "clusters": 118,
+   "entities": 128,
+   "families": {
+    "C3": 2
+   }
+  },
+  {
+   "class": "UnitClass",
+   "clusters": 118,
+   "entities": 124,
+   "families": {
+    "C3": 46,
+    "C10": 76,
+    "C11": 61,
+    "EXACT": 98,
     "C6": 2,
     "C9": 67
    }
   },
   {
-   "class": "CellClass",
-   "clusters": 116,
-   "entities": 121,
+   "class": "UnitTypeClass",
+   "clusters": 114,
+   "entities": 115,
    "families": {
-    "C10": 93,
-    "C18": 56,
-    "EXACT": 76,
-    "C6": 2,
-    "C11": 26,
-    "C3": 9,
-    "C9": 8
+    "C11": 86,
+    "C10": 26,
+    "C3": 1,
+    "C6": 1,
+    "EXACT": 18,
+    "C9": 16,
+    "C5": 2
    }
   },
   {
-   "class": "CreditsScreen",
-   "clusters": 109,
-   "entities": 110,
+   "class": "BlitTransXlatAlpha_ushort",
+   "clusters": 104,
+   "entities": 112,
    "families": {
-    "C5": 45
+    "C10": 2,
+    "C9": 5,
+    "EXACT": 5,
+    "C6": 1,
+    "C3": 1
    }
   },
   {
-   "class": "DiskLaserClass",
-   "clusters": 108,
-   "entities": 119,
+   "class": "WeaponTypeClass",
+   "clusters": 102,
+   "entities": 105,
    "families": {
-    "C11": 12,
-    "C18": 21,
-    "C3": 2,
-    "C10": 63,
-    "EXACT": 11,
+    "C10": 52,
+    "C3": 6,
+    "C11": 6,
+    "C6": 3,
+    "EXACT": 16,
     "C9": 8,
+    "C5": 3
+   }
+  },
+  {
+   "class": "AnimTypeClass",
+   "clusters": 102,
+   "entities": 102,
+   "families": {
+    "C11": 64,
     "C6": 2,
+    "C10": 29,
+    "EXACT": 20,
+    "C3": 7,
+    "C9": 15,
+    "C5": 3
+   }
+  },
+  {
+   "class": "MultiplayerGameMode",
+   "clusters": 101,
+   "entities": 102,
+   "families": {
+    "C10": 31,
+    "C6": 4,
+    "C11": 7,
+    "EXACT": 55,
+    "C9": 52,
+    "C3": 1,
     "C5": 21
    }
   },
   {
-   "class": "Dial8Class",
+   "class": "CellClass",
    "clusters": 100,
-   "entities": 101,
+   "entities": 104,
    "families": {
-    "C10": 53,
-    "C11": 37,
-    "C18": 81,
     "C3": 9,
-    "C6": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C11": 12,
+    "C10": 70,
+    "EXACT": 76,
+    "C6": 2,
+    "C9": 9
    }
   },
   {
-   "class": "AbstractClass",
-   "clusters": 94,
-   "entities": 98,
-   "families": {
-    "C10": 37,
-    "C11": 33,
-    "C6": 4,
-    "C18": 9,
-    "EXACT": 78,
-    "C5": 2,
-    "C9": 19,
-    "C3": 5,
-    "C15": 1
-   }
-  },
-  {
-   "class": "CComObject_CChatEventSink___ATL",
-   "clusters": 94,
+   "class": "DSurface",
+   "clusters": 96,
    "entities": 100,
    "families": {
-    "C10": 4
+    "C10": 78,
+    "C3": 13,
+    "EXACT": 37,
+    "C5": 3,
+    "C9": 21,
+    "C11": 10,
+    "C6": 3
    }
   },
   {
-   "class": "Block",
+   "class": "AircraftTypeClass",
    "clusters": 94,
    "entities": 95,
    "families": {
-    "C7": 42,
-    "C10": 31,
-    "C5": 32
+    "C11": 37,
+    "C6": 2,
+    "C10": 12,
+    "EXACT": 17,
+    "C9": 15,
+    "C3": 7,
+    "C5": 2
    }
   },
   {
-   "class": "LinkClass",
+   "class": "AbstractTypeClass",
    "clusters": 93,
-   "entities": 94,
+   "entities": 98,
    "families": {
-    "C10": 63,
-    "C3": 6,
-    "C6": 1,
-    "C11": 3,
-    "C18": 6,
-    "EXACT": 16,
-    "C9": 10,
-    "C5": 22
+    "C11": 19,
+    "C10": 58,
+    "C6": 4,
+    "EXACT": 6,
+    "C5": 1,
+    "C9": 4,
+    "C15": 2,
+    "C3": 2
+   }
+  },
+  {
+   "class": "InfantryTypeClass",
+   "clusters": 88,
+   "entities": 88,
+   "families": {
+    "C11": 61,
+    "C6": 4,
+    "C10": 8,
+    "EXACT": 21,
+    "C3": 3,
+    "C9": 16,
+    "C5": 2
    }
   },
   {
@@ -763,257 +750,226 @@
    "entities": 92,
    "families": {
     "C6": 3,
-    "C18": 3,
     "EXACT": 76,
+    "C9": 1,
     "C10": 1,
-    "C11": 1,
+    "C11": 2,
     "C5": 12
    }
   },
   {
-   "class": "AnimTypeClass",
-   "clusters": 87,
-   "entities": 88,
+   "class": "INIClass",
+   "clusters": 86,
+   "entities": 90,
    "families": {
-    "C11": 41,
-    "C18": 33,
-    "C6": 2,
-    "C10": 28,
-    "EXACT": 21,
-    "C3": 6,
-    "C9": 14,
-    "C5": 3
-   }
-  },
-  {
-   "class": "MultiplayerGameMode",
-   "clusters": 85,
-   "entities": 86,
-   "families": {
-    "C3": 3,
-    "C10": 34,
-    "C11": 7,
-    "C18": 11,
-    "C6": 4,
-    "EXACT": 56,
-    "C9": 52
-   }
-  },
-  {
-   "class": "InfantryTypeClass",
-   "clusters": 85,
-   "entities": 85,
-   "families": {
-    "C11": 50,
-    "C18": 18,
-    "EXACT": 54,
-    "C6": 4,
-    "C10": 8,
-    "C3": 3,
-    "C9": 16,
-    "C5": 2
-   }
-  },
-  {
-   "class": "EnumConnectionsClass",
-   "clusters": 83,
-   "entities": 89,
-   "families": {
-    "C10": 66,
-    "C18": 62,
-    "C3": 2,
-    "C11": 12,
-    "C6": 4,
-    "EXACT": 10,
-    "C9": 7
-   }
-  },
-  {
-   "class": "LCWPipe",
-   "clusters": 83,
-   "entities": 85,
-   "families": {
-    "C10": 21,
-    "C18": 21,
-    "C11": 7,
+    "C11": 8,
     "C6": 3,
-    "EXACT": 13,
-    "C9": 3,
-    "C3": 4,
-    "C5": 49
+    "EXACT": 76,
+    "C10": 4,
+    "C5": 3,
+    "C9": 1,
+    "C7": 1
    }
   },
   {
-   "class": "BufferIOFileClass",
-   "clusters": 83,
-   "entities": 85,
+   "class": "OverlayClass",
+   "clusters": 82,
+   "entities": 84,
    "families": {
-    "C3": 10,
-    "C6": 4,
-    "C10": 17,
-    "C18": 25,
-    "EXACT": 66,
+    "C10": 30,
+    "C11": 23,
+    "C3": 18,
+    "C6": 3,
+    "EXACT": 14,
     "C9": 11,
-    "C11": 2,
-    "C5": 2
+    "C5": 12
    }
   },
   {
    "class": "InfantryClass",
-   "clusters": 81,
-   "entities": 87,
+   "clusters": 80,
+   "entities": 86,
    "families": {
-    "C11": 42,
-    "EXACT": 77,
-    "C10": 45,
-    "C9": 70,
+    "C11": 41,
+    "C10": 46,
+    "EXACT": 76,
+    "C9": 73,
     "C6": 1,
-    "C18": 45,
     "C3": 33,
     "C7": 1
    }
   },
   {
-   "class": "AircraftTypeClass",
-   "clusters": 80,
-   "entities": 81,
-   "families": {
-    "C11": 25,
-    "C18": 7,
-    "EXACT": 35,
-    "C6": 2,
-    "C10": 8,
-    "C9": 14,
-    "C3": 7,
-    "C5": 2
-   }
-  },
-  {
-   "class": "UnitTypeClass",
-   "clusters": 80,
-   "entities": 80,
-   "families": {
-    "C11": 59,
-    "C10": 7,
-    "C18": 12,
-    "EXACT": 57,
-    "C6": 1,
-    "C9": 16,
-    "C5": 2
-   }
-  },
-  {
-   "class": "MSShapeAnim",
+   "class": "CarryoverClass",
    "clusters": 78,
-   "entities": 80,
+   "entities": 79,
    "families": {
-    "C18": 78,
-    "C11": 19,
-    "C10": 53,
-    "C3": 6,
-    "C6": 6,
-    "EXACT": 5,
-    "C9": 4
+    "C10": 51,
+    "C11": 28,
+    "C6": 3,
+    "EXACT": 2,
+    "C3": 9,
+    "C9": 1
    }
   },
   {
-   "class": "INIClass",
+   "class": "MapClass",
    "clusters": 78,
-   "entities": 82,
+   "entities": 84,
    "families": {
-    "C6": 2,
-    "C11": 4,
-    "C18": 2,
-    "EXACT": 76,
-    "C5": 3,
-    "C9": 1,
-    "C10": 3,
-    "C7": 1
+    "C10": 72,
+    "EXACT": 69,
+    "C3": 11,
+    "C11": 12,
+    "C6": 3,
+    "C9": 12
    }
   },
   {
-   "class": "WinsockInterfaceClass",
-   "clusters": 73,
-   "entities": 74,
+   "class": "CChatEventSink",
+   "clusters": 78,
+   "entities": 79,
    "families": {
-    "C3": 12,
-    "C18": 44,
-    "C10": 34,
-    "C11": 16,
-    "C6": 7,
-    "C9": 23,
-    "EXACT": 25,
-    "C5": 5
+    "C10": 18,
+    "C6": 2,
+    "C11": 6,
+    "C3": 4,
+    "EXACT": 47,
+    "C5": 11,
+    "C9": 46,
+    "C15": 1
    }
+  },
+  {
+   "class": "CSFClass",
+   "clusters": 75,
+   "entities": 77,
+   "families": {
+    "C3": 1
+   }
+  },
+  {
+   "class": "CComObject_CChatEventSink___ATL",
+   "clusters": 74,
+   "entities": 76,
+   "families": {}
   },
   {
    "class": "ScriptClass",
-   "clusters": 72,
-   "entities": 75,
+   "clusters": 73,
+   "entities": 74,
    "families": {
-    "C18": 23,
-    "C11": 40,
-    "C10": 20,
-    "C3": 7,
-    "C7": 2,
-    "C6": 2,
+    "C11": 31,
+    "C10": 30,
+    "C3": 4,
+    "C7": 1,
+    "C6": 5,
     "EXACT": 13,
     "C9": 7,
     "C5": 8
    }
   },
   {
-   "class": "MapClass",
-   "clusters": 71,
-   "entities": 77,
+   "class": "LZOStraw",
+   "clusters": 72,
+   "entities": 72,
    "families": {
-    "EXACT": 69,
-    "C3": 11,
-    "C18": 32,
-    "C11": 7,
     "C6": 3,
-    "C10": 21,
-    "C9": 6
+    "C11": 13,
+    "EXACT": 14,
+    "C9": 2,
+    "C10": 1,
+    "C5": 49
    }
   },
   {
-   "class": "WWMouseClass",
-   "clusters": 69,
+   "class": "BufferIOFileClass",
+   "clusters": 70,
    "entities": 71,
    "families": {
-    "C10": 39,
-    "C18": 43,
-    "C11": 17,
-    "C3": 9,
-    "C9": 18,
-    "EXACT": 18,
-    "C5": 12
+    "C3": 8,
+    "C6": 4,
+    "C10": 11,
+    "EXACT": 66,
+    "C9": 11,
+    "C5": 2
    }
   },
   {
-   "class": "BuildingLightClass",
-   "clusters": 64,
-   "entities": 64,
+   "class": "RawFileClass",
+   "clusters": 68,
+   "entities": 70,
    "families": {
-    "C10": 34,
-    "C3": 8,
-    "C11": 28,
-    "EXACT": 16,
+    "C9": 17,
+    "EXACT": 50,
+    "C3": 12,
+    "C10": 21,
+    "C6": 3
+   }
+  },
+  {
+   "class": "DisplayClass",
+   "clusters": 68,
+   "entities": 73,
+   "families": {
+    "C6": 2,
+    "C10": 68,
+    "EXACT": 35,
+    "C3": 13,
+    "C9": 24,
+    "C11": 7
+   }
+  },
+  {
+   "class": "SmudgeTypeClass",
+   "clusters": 67,
+   "entities": 68,
+   "families": {
+    "C11": 26,
+    "C10": 24,
+    "C3": 2,
+    "C6": 2,
+    "EXACT": 14,
+    "C9": 12,
+    "C5": 2
+   }
+  },
+  {
+   "class": "MissionClass",
+   "clusters": 63,
+   "entities": 63,
+   "families": {
+    "C11": 5,
+    "C6": 3,
+    "C10": 15,
+    "EXACT": 41,
+    "C9": 39,
+    "C3": 3,
+    "C5": 4
+   }
+  },
+  {
+   "class": "WaveClass",
+   "clusters": 63,
+   "entities": 67,
+   "families": {
+    "C11": 16,
+    "C10": 35,
+    "C3": 14,
+    "C6": 4,
+    "EXACT": 20,
     "C9": 13,
-    "C18": 36,
-    "C6": 1,
     "C5": 2
    }
   },
   {
    "class": "RulesClass",
-   "clusters": 64,
-   "entities": 67,
+   "clusters": 63,
+   "entities": 66,
    "families": {
     "C3": 6,
-    "C10": 42,
-    "EXACT": 46,
-    "C11": 1
+    "C10": 41,
+    "EXACT": 46
    }
   },
   {
@@ -1023,160 +979,155 @@
    "families": {
     "C6": 24,
     "C9": 14,
-    "C10": 24,
-    "EXACT": 61
-   }
-  },
-  {
-   "class": "TechnoTypeClass",
-   "clusters": 62,
-   "entities": 64,
-   "families": {
-    "C11": 14,
-    "C18": 33,
-    "C10": 25,
-    "EXACT": 35,
-    "C3": 5,
-    "C6": 2,
-    "C9": 18
-   }
-  },
-  {
-   "class": "RawFileClass",
-   "clusters": 59,
-   "entities": 62,
-   "families": {
-    "C9": 17,
-    "EXACT": 50,
-    "C18": 14,
-    "C3": 12,
-    "C10": 12,
-    "C11": 2,
-    "C6": 3
-   }
-  },
-  {
-   "class": "MissionClass",
-   "clusters": 59,
-   "entities": 59,
-   "families": {
-    "C11": 10,
-    "C18": 21,
-    "C3": 2,
-    "C10": 11,
-    "C6": 2,
-    "EXACT": 41,
-    "C9": 38,
-    "C5": 4
-   }
-  },
-  {
-   "class": "WaveClass",
-   "clusters": 59,
-   "entities": 62,
-   "families": {
-    "C3": 15,
-    "C18": 21,
-    "C10": 27,
-    "C11": 15,
-    "C7": 1,
-    "C6": 4,
-    "EXACT": 20,
-    "C9": 13,
-    "C5": 2
-   }
-  },
-  {
-   "class": "SequenceStruct",
-   "clusters": 59,
-   "entities": 61,
-   "families": {
-    "C3": 15,
-    "C18": 1,
-    "C10": 5,
-    "C11": 8,
-    "C5": 1
-   }
-  },
-  {
-   "class": "ScenarioClass",
-   "clusters": 59,
-   "entities": 62,
-   "families": {
-    "C3": 26,
-    "C7": 1,
-    "C10": 18,
-    "EXACT": 20,
+    "C10": 26,
+    "EXACT": 61,
     "C11": 1
    }
   },
   {
-   "class": "CCINIClass",
-   "clusters": 59,
+   "class": "EnumConnectionsClass",
+   "clusters": 62,
+   "entities": 63,
+   "families": {
+    "C10": 43,
+    "C3": 8,
+    "C11": 7,
+    "C6": 7,
+    "EXACT": 10,
+    "C9": 7
+   }
+  },
+  {
+   "class": "LightSourceClass",
+   "clusters": 62,
    "entities": 62,
    "families": {
+    "C3": 4,
+    "C11": 20,
+    "C10": 29,
+    "C6": 4,
+    "EXACT": 12,
+    "C9": 7,
+    "C5": 9
+   }
+  },
+  {
+   "class": "CCINIClass",
+   "clusters": 61,
+   "entities": 64,
+   "families": {
+    "C11": 3,
     "EXACT": 52,
     "C10": 21,
-    "C11": 2,
-    "C18": 3,
     "C9": 1,
     "C5": 7
    }
   },
   {
-   "class": "SelectClass@StripClass@SidebarClass",
-   "clusters": 57,
-   "entities": 60,
+   "class": "FactoryClass",
+   "clusters": 60,
+   "entities": 61,
    "families": {
-    "C11": 5,
-    "C10": 54,
+    "C10": 40,
+    "C11": 13,
+    "C6": 2,
+    "EXACT": 24,
+    "C9": 9,
     "C3": 3,
-    "EXACT": 4,
-    "C18": 2,
-    "C9": 1
+    "C5": 2
    }
   },
   {
-   "class": "SpawnManagerClass",
-   "clusters": 57,
-   "entities": 58,
+   "class": "BuildingLightClass",
+   "clusters": 59,
+   "entities": 59,
    "families": {
     "C10": 29,
-    "C11": 18,
-    "C18": 47,
-    "C3": 4,
-    "C6": 3,
-    "EXACT": 22,
-    "C9": 7
+    "C11": 21,
+    "C3": 8,
+    "EXACT": 16,
+    "C9": 14,
+    "C6": 1,
+    "C5": 2
    }
   },
   {
-   "class": "MSFadeAnim",
-   "clusters": 56,
-   "entities": 60,
+   "class": "ParticleSystemClass",
+   "clusters": 59,
+   "entities": 62,
    "families": {
-    "C10": 53,
-    "C18": 8,
-    "C11": 6,
+    "C10": 23,
+    "C11": 16,
+    "C3": 8,
     "C6": 2,
-    "C9": 3,
-    "EXACT": 3,
+    "EXACT": 20,
+    "C5": 13,
+    "C9": 14
+   }
+  },
+  {
+   "class": "ScenarioClass",
+   "clusters": 56,
+   "entities": 58,
+   "families": {
+    "C3": 27,
+    "C10": 15,
+    "EXACT": 20,
+    "C11": 1
+   }
+  },
+  {
+   "class": "TagTypeClass",
+   "clusters": 55,
+   "entities": 56,
+   "families": {
+    "C11": 20,
+    "C10": 20,
+    "C3": 3,
+    "C6": 3,
+    "EXACT": 21,
+    "C9": 11,
     "C5": 4
    }
   },
   {
-   "class": "CChatEventSink",
-   "clusters": 56,
-   "entities": 57,
+   "class": "AbstractClass",
+   "clusters": 55,
+   "entities": 59,
    "families": {
-    "C6": 1,
-    "C10": 1,
-    "C18": 1,
+    "C6": 4,
+    "C10": 25,
     "EXACT": 47,
-    "C5": 11,
-    "C9": 45,
+    "C5": 2,
+    "C9": 19,
+    "C3": 5,
+    "C11": 1
+   }
+  },
+  {
+   "class": "DynamicVectorClass",
+   "clusters": 55,
+   "entities": 56,
+   "families": {
+    "C11": 6,
+    "C6": 35,
+    "C10": 21,
+    "EXACT": 9,
+    "C3": 5
+   }
+  },
+  {
+   "class": "DriveLocomotionClass",
+   "clusters": 55,
+   "entities": 55,
+   "families": {
+    "C11": 8,
+    "C10": 10,
+    "C6": 2,
+    "EXACT": 26,
     "C3": 2,
-    "C11": 4
+    "C9": 23,
+    "C5": 10
    }
   },
   {
@@ -1185,46 +1136,31 @@
    "entities": 55,
    "families": {
     "C6": 3,
-    "C18": 3,
-    "EXACT": 36,
+    "EXACT": 34,
     "C9": 2,
     "C10": 2,
-    "C11": 2,
+    "C11": 4,
     "C5": 18
    }
   },
   {
-   "class": "ParticleSystemClass",
+   "class": "AnimClass",
    "clusters": 53,
-   "entities": 56,
+   "entities": 71,
    "families": {
-    "C11": 20,
-    "C10": 19,
-    "C3": 8,
-    "C18": 19,
-    "C6": 2,
-    "EXACT": 22,
-    "C5": 13,
-    "C9": 14
-   }
-  },
-  {
-   "class": "LocomotionClass",
-   "clusters": 51,
-   "entities": 52,
-   "families": {
-    "C6": 2,
-    "C18": 2,
-    "EXACT": 48,
-    "C10": 2,
-    "C9": 46,
-    "C11": 6
+    "C3": 19,
+    "C6": 3,
+    "C10": 24,
+    "C11": 35,
+    "EXACT": 50,
+    "C5": 16,
+    "C9": 24
    }
   },
   {
    "class": "CommandClass",
-   "clusters": 51,
-   "entities": 51,
+   "clusters": 53,
+   "entities": 53,
    "families": {
     "C6": 47,
     "C9": 51,
@@ -1233,55 +1169,100 @@
    }
   },
   {
-   "class": "IPXManagerClass",
-   "clusters": 48,
-   "entities": 51,
+   "class": "LinkClass",
+   "clusters": 52,
+   "entities": 55,
    "families": {
-    "C10": 13,
-    "C11": 20,
-    "C18": 34,
+    "C10": 27,
     "C3": 7,
     "C6": 1,
-    "EXACT": 28,
-    "C9": 25
+    "C11": 2,
+    "EXACT": 12,
+    "C9": 10,
+    "C5": 22
+   }
+  },
+  {
+   "class": "LocomotionClass",
+   "clusters": 51,
+   "entities": 52,
+   "families": {
+    "C11": 6,
+    "C6": 2,
+    "EXACT": 48,
+    "C10": 1,
+    "C9": 46
+   }
+  },
+  {
+   "class": "VectorCursor",
+   "clusters": 51,
+   "entities": 57,
+   "families": {
+    "C9": 32,
+    "C10": 31,
+    "C11": 8,
+    "EXACT": 38,
+    "C6": 10
    }
   },
   {
    "class": "Player",
-   "clusters": 47,
-   "entities": 47,
+   "clusters": 50,
+   "entities": 50,
    "families": {
     "C5": 1
    }
   },
   {
-   "class": "EnumConnectionPointsClass",
-   "clusters": 47,
-   "entities": 47,
+   "class": "CampaignClass",
+   "clusters": 50,
+   "entities": 52,
    "families": {
-    "C10": 37,
-    "C18": 27,
-    "C3": 9,
-    "C6": 3,
+    "C11": 30,
+    "C6": 2,
+    "C10": 13,
+    "EXACT": 12,
+    "C9": 9,
+    "C3": 2,
+    "C15": 1
+   }
+  },
+  {
+   "class": "WalkLocomotionClass",
+   "clusters": 49,
+   "entities": 49,
+   "families": {
+    "C10": 25,
+    "C6": 2,
+    "EXACT": 17,
+    "C9": 15,
+    "C11": 4,
+    "C5": 9
+   }
+  },
+  {
+   "class": "SequenceStruct",
+   "clusters": 48,
+   "entities": 51,
+   "families": {
+    "C3": 16,
     "C11": 5,
-    "EXACT": 10,
-    "C9": 7,
+    "C10": 4,
     "C5": 1
    }
   },
   {
-   "class": "OverlayClass",
+   "class": "ConvertClass",
    "clusters": 47,
    "entities": 48,
    "families": {
-    "C3": 13,
-    "C18": 15,
-    "C11": 11,
-    "C6": 2,
+    "C11": 3,
+    "C6": 3,
     "C10": 6,
-    "EXACT": 14,
-    "C9": 11,
-    "C5": 12
+    "EXACT": 11,
+    "C9": 1,
+    "C5": 14
    }
   },
   {
@@ -1290,143 +1271,31 @@
    "entities": 50,
    "families": {
     "C6": 1,
-    "C10": 26,
-    "C18": 13,
+    "C10": 25,
     "EXACT": 43,
-    "C9": 36,
+    "C9": 41,
     "C11": 17,
     "C3": 3
    }
   },
   {
-   "class": "FoggedObjectClass",
-   "clusters": 46,
-   "entities": 48,
-   "families": {
-    "C10": 36,
-    "C18": 21,
-    "C6": 5,
-    "EXACT": 14,
-    "C9": 8,
-    "C11": 19,
-    "C3": 3,
-    "C5": 5
-   }
-  },
-  {
-   "class": "HouseTypeClass",
+   "class": "CreditsScreen",
    "clusters": 45,
    "entities": 45,
    "families": {
-    "C10": 18,
-    "C18": 17,
-    "C11": 8,
-    "C6": 4,
-    "EXACT": 20,
-    "C9": 14,
-    "C3": 2,
-    "C5": 3
+    "C5": 45
    }
   },
   {
-   "class": "BulletTypeClass",
-   "clusters": 45,
-   "entities": 45,
-   "families": {
-    "C11": 19,
-    "C18": 14,
-    "C6": 2,
-    "C10": 4,
-    "EXACT": 17,
-    "C9": 11,
-    "C3": 1,
-    "C5": 2
-   }
-  },
-  {
-   "class": "DisplayClass",
-   "clusters": 45,
-   "entities": 50,
-   "families": {
-    "C10": 23,
-    "C6": 2,
-    "C18": 15,
-    "EXACT": 35,
-    "C3": 11,
-    "C9": 24,
-    "C11": 6
-   }
-  },
-  {
-   "class": "SwizzleManagerClass",
+   "class": "BombClass",
    "clusters": 44,
-   "entities": 46,
-   "families": {
-    "C11": 5,
-    "C18": 24,
-    "C10": 32,
-    "C3": 5,
-    "C6": 1,
-    "EXACT": 12,
-    "C9": 10,
-    "C5": 1
-   }
-  },
-  {
-   "class": "RadSiteClass",
-   "clusters": 44,
-   "entities": 48,
-   "families": {
-    "C10": 29,
-    "C11": 5,
-    "C18": 20,
-    "C6": 2,
-    "EXACT": 22,
-    "C3": 3,
-    "C9": 8,
-    "C5": 8
-   }
-  },
-  {
-   "class": "AnimClass",
-   "clusters": 44,
-   "entities": 62,
-   "families": {
-    "C3": 12,
-    "C6": 3,
-    "C10": 23,
-    "C11": 25,
-    "EXACT": 52,
-    "C5": 16,
-    "C18": 6,
-    "C9": 21
-   }
-  },
-  {
-   "class": "ConnectionClass",
-   "clusters": 44,
-   "entities": 46,
+   "entities": 44,
    "families": {
     "C10": 34,
-    "C18": 38,
-    "C11": 19,
-    "C3": 3,
-    "C6": 3,
-    "EXACT": 11,
-    "C9": 9
-   }
-  },
-  {
-   "class": "RadarClass",
-   "clusters": 44,
-   "entities": 51,
-   "families": {
-    "C18": 30,
-    "C6": 3,
-    "C10": 26,
-    "EXACT": 27,
-    "C11": 12,
-    "C9": 18,
+    "C6": 2,
+    "C11": 13,
+    "EXACT": 13,
+    "C9": 7,
     "C3": 5
    }
   },
@@ -1435,126 +1304,105 @@
    "clusters": 44,
    "entities": 44,
    "families": {
-    "C18": 2,
     "EXACT": 44,
     "C10": 3
    }
   },
   {
-   "class": "TeamTypeClass",
-   "clusters": 43,
-   "entities": 43,
-   "families": {
-    "C11": 17,
-    "C18": 20,
-    "C10": 15,
-    "EXACT": 22,
-    "C6": 2,
-    "C9": 10,
-    "C5": 4
-   }
-  },
-  {
-   "class": "SmudgeTypeClass",
-   "clusters": 43,
+   "class": "Anim@Voices@WorldDominationTour",
+   "clusters": 44,
    "entities": 44,
    "families": {
-    "C10": 17,
-    "C11": 7,
-    "C18": 10,
-    "C3": 3,
-    "C6": 2,
-    "EXACT": 15,
-    "C9": 12,
-    "C5": 2
+    "C6": 3,
+    "C10": 5,
+    "C11": 5,
+    "EXACT": 11,
+    "C9": 9,
+    "C5": 30
    }
   },
   {
-   "class": "DriveLocomotionClass",
+   "class": "HouseTypeClass",
    "clusters": 43,
    "entities": 43,
    "families": {
-    "C10": 6,
-    "C11": 10,
-    "C18": 9,
-    "C6": 2,
-    "EXACT": 26,
-    "C3": 3,
-    "C9": 23,
-    "C5": 10
-   }
-  },
-  {
-   "class": "WeaponTypeClass",
-   "clusters": 40,
-   "entities": 41,
-   "families": {
-    "C18": 22,
-    "C10": 12,
-    "C11": 7,
-    "C3": 4,
-    "C6": 3,
-    "EXACT": 16,
-    "C9": 8,
+    "C10": 15,
+    "C11": 9,
+    "C6": 4,
+    "EXACT": 19,
+    "C9": 14,
     "C5": 3
    }
   },
   {
-   "class": "CampaignClass",
-   "clusters": 40,
+   "class": "ScriptTypeClass",
+   "clusters": 43,
+   "entities": 43,
+   "families": {
+    "C11": 18,
+    "C10": 13,
+    "C3": 2,
+    "C6": 2,
+    "EXACT": 14,
+    "C9": 11
+   }
+  },
+  {
+   "class": "BulletTypeClass",
+   "clusters": 42,
    "entities": 42,
    "families": {
     "C6": 2,
-    "C10": 12,
-    "C18": 6,
-    "EXACT": 18,
-    "C9": 8,
-    "C11": 24,
-    "C3": 2,
-    "C15": 1
-   }
-  },
-  {
-   "class": "AlphaShapeClass",
-   "clusters": 39,
-   "entities": 39,
-   "families": {
-    "C10": 12,
-    "C18": 32,
-    "C6": 4,
-    "EXACT": 10,
-    "C9": 8,
-    "C11": 3,
-    "C3": 1
-   }
-  },
-  {
-   "class": "TemporalClass",
-   "clusters": 39,
-   "entities": 39,
-   "families": {
-    "C10": 18,
-    "C18": 22,
-    "C6": 5,
+    "C10": 4,
+    "EXACT": 16,
+    "C9": 12,
+    "C3": 1,
     "C11": 11,
-    "EXACT": 22,
-    "C3": 2,
+    "C5": 2
+   }
+  },
+  {
+   "class": "NeuronClass",
+   "clusters": 40,
+   "entities": 41,
+   "families": {
+    "C11": 30,
+    "C10": 6,
+    "C6": 2,
+    "EXACT": 8,
     "C9": 7
    }
   },
   {
-   "class": "LightSourceClass",
+   "class": "TechnoTypeClass",
+   "clusters": 39,
+   "entities": 42,
+   "families": {
+    "C10": 21,
+    "EXACT": 35,
+    "C3": 6,
+    "C11": 5,
+    "C6": 2,
+    "C9": 19
+   }
+  },
+  {
+   "class": "RadBeam",
+   "clusters": 39,
+   "entities": 41,
+   "families": {
+    "C10": 23,
+    "C3": 8,
+    "C11": 24,
+    "EXACT": 1
+   }
+  },
+  {
+   "class": "SaveLoad",
    "clusters": 39,
    "entities": 39,
    "families": {
-    "C11": 16,
-    "C18": 6,
-    "C10": 10,
-    "C6": 3,
-    "EXACT": 14,
-    "C9": 7,
-    "C3": 1,
-    "C5": 9
+    "C10": 4
    }
   },
   {
@@ -1569,104 +1417,63 @@
    }
   },
   {
-   "class": "DSurface",
+   "class": "FlyLocomotionClass",
    "clusters": 39,
-   "entities": 42,
+   "entities": 40,
+   "families": {
+    "C6": 4,
+    "C10": 4,
+    "EXACT": 22,
+    "C9": 17,
+    "C11": 10,
+    "C3": 2,
+    "C5": 12
+   }
+  },
+  {
+   "class": "XSurface",
+   "clusters": 38,
+   "entities": 40,
    "families": {
     "C11": 7,
-    "EXACT": 37,
-    "C5": 3,
-    "C10": 12,
-    "C18": 7,
-    "C9": 15,
+    "C9": 28,
+    "EXACT": 29,
+    "C10": 21,
     "C3": 12
    }
   },
   {
-   "class": "VectorCursor",
+   "class": "TerrainClass",
    "clusters": 38,
-   "entities": 41,
+   "entities": 39,
    "families": {
-    "C10": 18,
-    "C11": 8,
-    "C18": 10,
-    "EXACT": 38,
-    "C6": 10,
-    "C9": 24
+    "C11": 14,
+    "C10": 16,
+    "C3": 8,
+    "C6": 3,
+    "EXACT": 26,
+    "C9": 23
+   }
+  },
+  {
+   "class": "SwizzleManagerClass",
+   "clusters": 37,
+   "entities": 39,
+   "families": {
+    "C10": 27,
+    "C11": 1,
+    "C6": 1,
+    "EXACT": 12,
+    "C3": 1,
+    "C9": 10,
+    "C5": 1
    }
   },
   {
    "class": "AudioPool",
-   "clusters": 37,
-   "entities": 38,
-   "families": {
-    "C11": 1
-   }
-  },
-  {
-   "class": "WOL",
-   "clusters": 37,
-   "entities": 40,
-   "families": {
-    "C10": 38,
-    "C3": 6,
-    "C11": 1
-   }
-  },
-  {
-   "class": "IsometricTileTypeClass",
-   "clusters": 37,
-   "entities": 38,
-   "families": {
-    "C11": 6,
-    "C18": 21,
-    "C3": 4,
-    "C6": 2,
-    "C10": 13,
-    "EXACT": 16,
-    "C9": 14
-   }
-  },
-  {
-   "class": "TagTypeClass",
-   "clusters": 37,
-   "entities": 38,
-   "families": {
-    "C10": 14,
-    "C18": 6,
-    "C11": 9,
-    "EXACT": 23,
-    "C6": 2,
-    "C9": 11,
-    "C3": 1,
-    "C5": 4
-   }
-  },
-  {
-   "class": "DynamicVectorClass",
-   "clusters": 37,
+   "clusters": 36,
    "entities": 37,
-   "families": {
-    "C10": 1,
-    "EXACT": 17,
-    "C11": 9,
-    "C3": 8,
-    "C5": 19
-   }
-  },
-  {
-   "class": "ListClass",
-   "clusters": 37,
-   "entities": 39,
-   "families": {
-    "C10": 22,
-    "C18": 31,
-    "C9": 26,
-    "EXACT": 31,
-    "C6": 4,
-    "C11": 17,
-    "C3": 11
-   }
+   "families": {}
   },
   {
    "class": "SuperClass",
@@ -1674,54 +1481,109 @@
    "entities": 37,
    "families": {
     "C6": 3,
-    "C10": 26,
-    "C18": 21,
-    "EXACT": 36,
-    "C11": 19,
-    "C9": 6,
+    "C10": 17,
+    "EXACT": 35,
+    "C11": 4,
+    "C9": 8,
     "C3": 2
    }
   },
   {
-   "class": "TerrainClass",
+   "class": "SpawnManagerClass",
    "clusters": 35,
    "entities": 36,
    "families": {
-    "C11": 13,
-    "C3": 8,
-    "C10": 15,
-    "C18": 15,
+    "C11": 14,
+    "C10": 23,
     "C6": 3,
-    "EXACT": 26,
-    "C9": 23
-   }
-  },
-  {
-   "class": "TriggerClass",
-   "clusters": 34,
-   "entities": 34,
-   "families": {
+    "EXACT": 18,
     "C3": 1,
-    "C18": 13,
-    "C11": 17,
-    "EXACT": 27,
-    "C6": 2,
-    "C10": 12,
     "C9": 7
    }
   },
   {
-   "class": "WalkLocomotionClass",
+   "class": "IsometricTileTypeClass",
+   "clusters": 35,
+   "entities": 36,
+   "families": {
+    "C3": 3,
+    "C6": 2,
+    "C10": 12,
+    "EXACT": 16,
+    "C9": 14,
+    "C11": 1
+   }
+  },
+  {
+   "class": "WWMouseClass",
+   "clusters": 35,
+   "entities": 37,
+   "families": {
+    "C10": 15,
+    "C9": 18,
+    "EXACT": 18,
+    "C3": 6,
+    "C11": 4
+   }
+  },
+  {
+   "class": "DynamicStringArray",
+   "clusters": 35,
+   "entities": 38,
+   "families": {
+    "C10": 3,
+    "C3": 3
+   }
+  },
+  {
+   "class": "BulletClass",
+   "clusters": 35,
+   "entities": 36,
+   "families": {
+    "C11": 11,
+    "C10": 15,
+    "C6": 2,
+    "EXACT": 28,
+    "C3": 8,
+    "C9": 18
+   }
+  },
+  {
+   "class": "GadgetClass",
+   "clusters": 35,
+   "entities": 37,
+   "families": {
+    "C9": 27,
+    "EXACT": 32,
+    "C10": 19,
+    "C6": 4,
+    "C3": 5
+   }
+  },
+  {
+   "class": "TriggerTypeClass",
+   "clusters": 35,
+   "entities": 36,
+   "families": {
+    "C11": 17,
+    "C6": 2,
+    "C10": 9,
+    "EXACT": 22,
+    "C9": 11,
+    "C3": 1
+   }
+  },
+  {
+   "class": "TeamTypeClass",
    "clusters": 34,
    "entities": 34,
    "families": {
-    "C10": 9,
-    "C18": 3,
+    "C11": 7,
     "C6": 2,
-    "EXACT": 17,
-    "C9": 15,
-    "C11": 4,
-    "C5": 9
+    "C10": 11,
+    "EXACT": 21,
+    "C9": 11,
+    "C5": 4
    }
   },
   {
@@ -1736,72 +1598,69 @@
    }
   },
   {
-   "class": "VeinholeMonsterClass",
+   "class": "IPXManagerClass",
    "clusters": 34,
    "entities": 37,
    "families": {
-    "C18": 17,
-    "C6": 3,
-    "C10": 18,
+    "C6": 1,
+    "EXACT": 28,
+    "C3": 6,
+    "C9": 25,
+    "C10": 5,
+    "C11": 16
+   }
+  },
+  {
+   "class": "RadarClass",
+   "clusters": 34,
+   "entities": 42,
+   "families": {
+    "C6": 4,
+    "C10": 39,
     "EXACT": 27,
-    "C5": 1,
-    "C11": 8,
-    "C9": 9,
-    "C3": 3
+    "C11": 7,
+    "C9": 18,
+    "C3": 4
    }
   },
   {
-   "class": "TriggerTypeClass",
-   "clusters": 34,
-   "entities": 35,
+   "class": "RadSiteClass",
+   "clusters": 33,
+   "entities": 34,
    "families": {
-    "C11": 22,
-    "EXACT": 26,
-    "C18": 10,
+    "C10": 16,
     "C6": 2,
-    "C10": 14,
-    "C9": 11,
-    "C3": 1
-   }
-  },
-  {
-   "class": "Selection@WorldDominationTour",
-   "clusters": 34,
-   "entities": 37,
-   "families": {
-    "C6": 2,
-    "C10": 36,
-    "C11": 4,
-    "C18": 6,
-    "EXACT": 7,
+    "EXACT": 22,
     "C3": 2,
-    "C9": 1
+    "C9": 8,
+    "C11": 3,
+    "C5": 8
    }
   },
   {
-   "class": "NeuronClass",
+   "class": "TriggerClass",
    "clusters": 33,
    "entities": 33,
    "families": {
+    "C3": 1,
+    "C10": 13,
+    "C11": 8,
+    "EXACT": 22,
     "C6": 2,
-    "C10": 5,
-    "C18": 9,
-    "EXACT": 8,
-    "C9": 7,
-    "C11": 21
+    "C9": 8
    }
   },
   {
-   "class": "GadgetClass",
+   "class": "SidebarClass",
    "clusters": 33,
-   "entities": 35,
+   "entities": 40,
    "families": {
-    "C9": 22,
-    "EXACT": 32,
-    "C10": 11,
-    "C18": 12,
-    "C6": 4,
-    "C3": 5
+    "C3": 6,
+    "C10": 32,
+    "C11": 3,
+    "C6": 1,
+    "EXACT": 24,
+    "C9": 13
    }
   },
   {
@@ -1815,161 +1674,181 @@
    }
   },
   {
-   "class": "WDTState",
+   "class": "ParasiteClass",
    "clusters": 32,
-   "entities": 34,
+   "entities": 32,
    "families": {
-    "C18": 30,
+    "C10": 24,
     "C6": 4,
-    "C10": 10,
+    "EXACT": 18,
+    "C9": 7,
     "C11": 8,
-    "EXACT": 4,
-    "C9": 1
+    "C3": 5
    }
   },
   {
    "class": "CDFileClass",
-   "clusters": 31,
-   "entities": 33,
+   "clusters": 32,
+   "entities": 34,
    "families": {
     "C9": 4,
     "EXACT": 31,
-    "C18": 5,
     "C3": 1,
     "C10": 1
    }
   },
   {
-   "class": "ConnectionPointClass",
-   "clusters": 31,
-   "entities": 32,
+   "class": "EnumConnectionPointsClass",
+   "clusters": 32,
+   "entities": 33,
    "families": {
-    "C10": 11,
+    "C10": 8,
+    "C6": 3,
     "C11": 5,
-    "C18": 23,
-    "C6": 2,
     "EXACT": 10,
-    "C9": 8
+    "C3": 2,
+    "C9": 7,
+    "C5": 1
    }
   },
   {
-   "class": "WaypointClass",
-   "clusters": 31,
-   "entities": 31,
+   "class": "ListClass",
+   "clusters": 32,
+   "entities": 34,
    "families": {
-    "C10": 2,
-    "C11": 1,
-    "C3": 1,
-    "C18": 1,
-    "EXACT": 2
+    "C9": 27,
+    "EXACT": 31,
+    "C6": 4,
+    "C10": 20,
+    "C11": 17,
+    "C3": 11
    }
   },
   {
-   "class": "GraphicMenuImageItem",
+   "class": "DiskLaserClass",
    "clusters": 31,
    "entities": 33,
    "families": {
-    "C11": 16,
-    "C18": 26,
-    "C3": 1,
-    "C10": 15,
-    "C6": 2,
-    "EXACT": 6,
-    "C9": 5
+    "C10": 9,
+    "C3": 2,
+    "C11": 2,
+    "EXACT": 11,
+    "C9": 8,
+    "C6": 2
    }
   },
   {
-   "class": "FactoryClass",
+   "class": "WinsockInterfaceClass",
    "clusters": 31,
    "entities": 32,
    "families": {
-    "C10": 19,
-    "C11": 8,
-    "C18": 17,
-    "C6": 2,
+    "C9": 23,
     "EXACT": 25,
-    "C9": 9,
-    "C3": 2,
-    "C5": 2
-   }
-  },
-  {
-   "class": "CaptureManagerClass",
-   "clusters": 31,
-   "entities": 31,
-   "families": {
     "C6": 3,
-    "C10": 20,
-    "C18": 17,
-    "EXACT": 23,
-    "C11": 11,
-    "C3": 2,
-    "C9": 7
-   }
-  },
-  {
-   "class": "NetworkDialog",
-   "clusters": 31,
-   "entities": 31,
-   "families": {
-    "C3": 6,
-    "C18": 6,
-    "C5": 4
-   }
-  },
-  {
-   "class": "TEventClass",
-   "clusters": 31,
-   "entities": 31,
-   "families": {
-    "C6": 2,
-    "C10": 8,
-    "C18": 13,
-    "EXACT": 20,
-    "C11": 13,
-    "C9": 9,
+    "C3": 3,
+    "C10": 7,
+    "C11": 1,
     "C5": 5
    }
   },
   {
-   "class": "XSurface",
+   "class": "PairVector",
    "clusters": 30,
-   "entities": 32,
+   "entities": 30,
    "families": {
-    "C11": 6,
-    "C9": 28,
-    "EXACT": 29,
+    "C3": 29,
     "C10": 10,
-    "C18": 1,
-    "C3": 12
+    "C11": 1
    }
   },
   {
-   "class": "FlyLocomotionClass",
+   "class": "UDPInterfaceClass",
+   "clusters": 30,
+   "entities": 33,
+   "families": {
+    "C3": 7,
+    "C10": 17,
+    "C9": 21,
+    "EXACT": 23,
+    "C6": 3,
+    "C11": 1
+   }
+  },
+  {
+   "class": "ParticleSystemTypeClass",
+   "clusters": 30,
+   "entities": 30,
+   "families": {
+    "C11": 17,
+    "C3": 1,
+    "C10": 5,
+    "C6": 2,
+    "EXACT": 12,
+    "C9": 10
+   }
+  },
+  {
+   "class": "VQMovieHandle",
    "clusters": 30,
    "entities": 31,
    "families": {
-    "C18": 9,
-    "C10": 4,
-    "C6": 4,
-    "EXACT": 22,
-    "C9": 17,
-    "C11": 10,
-    "C3": 2
+    "C9": 11,
+    "EXACT": 11,
+    "C11": 5,
+    "C10": 3,
+    "C6": 1,
+    "C5": 19
    }
   },
   {
-   "class": "BulletClass",
+   "class": "TagClass",
+   "clusters": 30,
+   "entities": 31,
+   "families": {
+    "C11": 6,
+    "EXACT": 25,
+    "C10": 14,
+    "C6": 2,
+    "C9": 8
+   }
+  },
+  {
+   "class": "TemporalClass",
+   "clusters": 29,
+   "entities": 29,
+   "families": {
+    "C11": 10,
+    "C6": 3,
+    "C10": 9,
+    "EXACT": 16,
+    "C3": 2,
+    "C9": 7,
+    "C5": 5
+   }
+  },
+  {
+   "class": "RadioClass",
+   "clusters": 29,
+   "entities": 31,
+   "families": {
+    "C11": 6,
+    "C10": 18,
+    "C6": 3,
+    "EXACT": 19,
+    "C9": 11,
+    "C3": 4
+   }
+  },
+  {
+   "class": "TEventClass",
    "clusters": 29,
    "entities": 30,
    "families": {
+    "C10": 10,
     "C6": 2,
-    "C10": 11,
-    "C11": 8,
-    "C18": 11,
-    "EXACT": 28,
-    "C3": 7,
-    "C9": 18
+    "EXACT": 16,
+    "C11": 13,
+    "C9": 9
    }
   },
   {
@@ -1979,52 +1858,57 @@
    "families": {
     "C6": 2,
     "C10": 7,
-    "EXACT": 22,
-    "C11": 8,
-    "C18": 6,
-    "C3": 1,
-    "C9": 6
+    "EXACT": 16,
+    "C9": 9,
+    "C11": 9,
+    "C3": 1
    }
   },
   {
-   "class": "TagClass",
+   "class": "SuperWeaponClass",
    "clusters": 29,
-   "entities": 30,
-   "families": {
-    "EXACT": 28,
-    "C6": 2,
-    "C10": 11,
-    "C11": 6,
-    "C9": 6,
-    "C18": 3
-   }
-  },
-  {
-   "class": "ShapeButtonClass",
-   "clusters": 28,
    "entities": 29,
    "families": {
-    "C11": 2,
-    "C18": 12,
-    "EXACT": 27,
-    "C10": 9,
-    "C6": 3,
-    "C5": 1,
-    "C9": 3
+    "C3": 2
    }
   },
   {
-   "class": "AirstrikeClass",
+   "class": "CStreamClass",
    "clusters": 28,
    "entities": 28,
    "families": {
-    "C6": 4,
-    "C10": 9,
-    "C18": 15,
+    "C10": 12,
+    "C6": 3,
     "EXACT": 17,
-    "C11": 9,
-    "C9": 8,
-    "C3": 1
+    "C3": 1,
+    "C11": 5,
+    "C9": 15
+   }
+  },
+  {
+   "class": "ObjectTypeClass",
+   "clusters": 28,
+   "entities": 29,
+   "families": {
+    "C10": 17,
+    "C11": 6,
+    "C9": 16,
+    "EXACT": 22,
+    "C6": 3,
+    "C3": 3
+   }
+  },
+  {
+   "class": "WaypointPathClass",
+   "clusters": 28,
+   "entities": 28,
+   "families": {
+    "C10": 16,
+    "C3": 4,
+    "C6": 5,
+    "C11": 3,
+    "EXACT": 12,
+    "C9": 7
    }
   },
   {
@@ -2032,124 +1916,102 @@
    "clusters": 28,
    "entities": 28,
    "families": {
-    "C11": 6,
-    "C18": 9,
     "EXACT": 28,
     "C10": 12
    }
   },
   {
-   "class": "BombClass",
-   "clusters": 27,
-   "entities": 27,
-   "families": {
-    "C10": 18,
-    "C18": 15,
-    "C6": 2,
-    "C11": 11,
-    "EXACT": 17,
-    "C9": 7
-   }
-  },
-  {
-   "class": "IdleOrderEntry",
+   "class": "WaypointClass",
    "clusters": 27,
    "entities": 27,
    "families": {
     "C3": 1,
-    "C18": 1
+    "C11": 1,
+    "EXACT": 2
    }
   },
   {
-   "class": "ScriptTypeClass",
-   "clusters": 27,
-   "entities": 27,
-   "families": {
-    "C10": 8,
-    "C3": 2,
-    "C18": 3,
-    "C6": 2,
-    "EXACT": 14,
-    "C9": 10,
-    "C11": 2
-   }
-  },
-  {
-   "class": "MSVQAnim",
-   "clusters": 27,
-   "entities": 27,
-   "families": {
-    "C10": 10,
-    "C18": 25,
-    "C3": 2,
-    "C11": 7,
-    "C6": 3,
-    "EXACT": 8,
-    "C9": 5
-   }
-  },
-  {
-   "class": "ParticleSystemTypeClass",
-   "clusters": 27,
-   "entities": 27,
-   "families": {
-    "C11": 15,
-    "C18": 12,
-    "EXACT": 15,
-    "C6": 2,
-    "C10": 4,
-    "C9": 9
-   }
-  },
-  {
-   "class": "MSOverlayAnim",
+   "class": "IStream",
    "clusters": 27,
    "entities": 28,
    "families": {
-    "C10": 11,
-    "C18": 23,
+    "C10": 25,
     "C3": 1,
-    "C9": 5,
-    "C11": 5,
-    "EXACT": 5,
-    "C6": 1
+    "C11": 2,
+    "EXACT": 2
    }
   },
   {
-   "class": "ObjectTypeClass",
-   "clusters": 26,
+   "class": "BigInt",
+   "clusters": 27,
+   "entities": 27,
+   "families": {}
+  },
+  {
+   "class": "SyncDelay",
+   "clusters": 27,
    "entities": 27,
    "families": {
-    "C9": 16,
-    "EXACT": 22,
-    "C18": 5,
-    "C6": 3,
-    "C10": 13,
-    "C3": 3,
-    "C11": 4
+    "C10": 1
    }
   },
   {
    "class": "TabClass",
-   "clusters": 26,
-   "entities": 31,
+   "clusters": 27,
+   "entities": 35,
    "families": {
-    "C10": 23,
-    "C3": 5,
+    "C3": 7,
+    "C10": 27,
     "C11": 3,
-    "C18": 4,
     "EXACT": 11,
     "C9": 9
    }
   },
   {
-   "class": "SessionClass",
-   "clusters": 26,
-   "entities": 28,
+   "class": "VeinholeMonsterClass",
+   "clusters": 27,
+   "entities": 30,
    "families": {
-    "C10": 5,
-    "EXACT": 7,
-    "C3": 1,
+    "C6": 3,
+    "C10": 18,
+    "EXACT": 27,
+    "C5": 1,
+    "C11": 4,
+    "C9": 9,
+    "C3": 2
+   }
+  },
+  {
+   "class": "OverlayTypeClass",
+   "clusters": 26,
+   "entities": 26,
+   "families": {
+    "C11": 7,
+    "C6": 2,
+    "C10": 6,
+    "EXACT": 16,
+    "C9": 15,
+    "C5": 3
+   }
+  },
+  {
+   "class": "ActionQueue",
+   "clusters": 26,
+   "entities": 31,
+   "families": {
+    "C3": 4
+   }
+  },
+  {
+   "class": "ShapeButtonClass",
+   "clusters": 26,
+   "entities": 27,
+   "families": {
+    "C10": 23,
+    "EXACT": 27,
+    "C6": 3,
+    "C5": 1,
+    "C9": 3,
     "C11": 1
    }
   },
@@ -2160,7 +2022,6 @@
    "families": {
     "C6": 2,
     "C10": 2,
-    "C18": 2,
     "EXACT": 26,
     "C9": 23,
     "C11": 7,
@@ -2170,85 +2031,98 @@
   {
    "class": "DropListClass",
    "clusters": 25,
-   "entities": 30,
+   "entities": 29,
    "families": {
-    "C11": 15,
-    "C18": 4,
     "C6": 2,
-    "C10": 14,
+    "C10": 13,
     "EXACT": 17,
     "C9": 16,
+    "C11": 12,
     "C3": 3
    }
   },
   {
-   "class": "CStreamClass",
+   "class": "SessionClass",
    "clusters": 25,
-   "entities": 25,
+   "entities": 27,
    "families": {
-    "C10": 9,
-    "C18": 7,
-    "C6": 4,
-    "EXACT": 17,
-    "C3": 1,
     "C11": 4,
-    "C9": 15
+    "C10": 15,
+    "EXACT": 7,
+    "C3": 1
    }
   },
   {
-   "class": "SidebarClass",
+   "class": "TeamClass",
    "clusters": 25,
-   "entities": 32,
+   "entities": 28,
    "families": {
-    "C10": 16,
-    "C6": 1,
-    "C18": 11,
-    "EXACT": 24,
-    "C3": 5,
-    "C9": 13,
-    "C11": 2
-   }
-  },
-  {
-   "class": "TiberiumClass",
-   "clusters": 25,
-   "entities": 26,
-   "families": {
+    "C11": 13,
+    "C10": 14,
     "C6": 2,
-    "C10": 13,
-    "C18": 12,
-    "EXACT": 16,
-    "C11": 11,
-    "C9": 11,
-    "C5": 3
+    "EXACT": 18,
+    "C3": 4,
+    "C9": 8
    }
   },
   {
    "class": "TerrainTypeClass",
-   "clusters": 24,
-   "entities": 25,
+   "clusters": 25,
+   "entities": 26,
    "families": {
-    "C18": 6,
     "C3": 2,
-    "C10": 11,
-    "C11": 1,
+    "C10": 12,
     "C6": 2,
     "EXACT": 15,
     "C9": 13
    }
   },
   {
-   "class": "TeamClass",
+   "class": "AlphaShapeClass",
    "clusters": 24,
-   "entities": 27,
+   "entities": 24,
+   "families": {
+    "C6": 6,
+    "C10": 14,
+    "EXACT": 10,
+    "C9": 8,
+    "C11": 5,
+    "C3": 2
+   }
+  },
+  {
+   "class": "CaptureManagerClass",
+   "clusters": 24,
+   "entities": 24,
+   "families": {
+    "C6": 3,
+    "C10": 14,
+    "EXACT": 22,
+    "C3": 1,
+    "C11": 5,
+    "C9": 7
+   }
+  },
+  {
+   "class": "ToggleClass",
+   "clusters": 24,
+   "entities": 24,
    "families": {
     "C11": 14,
-    "EXACT": 21,
-    "C6": 2,
-    "C10": 10,
-    "C18": 8,
+    "C10": 8,
+    "C6": 1,
+    "EXACT": 6,
+    "C3": 1,
+    "C9": 2
+   }
+  },
+  {
+   "class": "NetworkDialog",
+   "clusters": 24,
+   "entities": 24,
+   "families": {
     "C3": 4,
-    "C9": 6
+    "C5": 4
    }
   },
   {
@@ -2257,69 +2131,57 @@
    "entities": 25,
    "families": {
     "C6": 3,
-    "C10": 2,
-    "C18": 5,
+    "C10": 5,
     "EXACT": 24,
     "C3": 4,
-    "C11": 10,
+    "C11": 12,
     "C9": 17
    }
   },
   {
-   "class": "ToolTipManager",
-   "clusters": 24,
-   "entities": 25,
-   "families": {
-    "C6": 2,
-    "C10": 5,
-    "C18": 10,
-    "EXACT": 24,
-    "C5": 1,
-    "C3": 5,
-    "C11": 2,
-    "C9": 4
-   }
-  },
-  {
-   "class": "RadioClass",
-   "clusters": 23,
-   "entities": 25,
-   "families": {
-    "C18": 18,
-    "C6": 3,
-    "C10": 17,
-    "EXACT": 19,
-    "C9": 11,
-    "C3": 4,
-    "C11": 4
-   }
-  },
-  {
-   "class": "WarheadTypeClass",
-   "clusters": 23,
-   "entities": 24,
-   "families": {
-    "C10": 9,
-    "C18": 8,
-    "C3": 3,
-    "C11": 7,
-    "C6": 3,
-    "EXACT": 14,
-    "C9": 9
-   }
-  },
-  {
-   "class": "ParticleTypeClass",
+   "class": "SideClass",
    "clusters": 23,
    "entities": 23,
    "families": {
-    "C11": 6,
-    "C18": 8,
+    "C10": 8,
+    "C3": 1,
+    "C11": 2,
     "C6": 2,
-    "C10": 4,
-    "EXACT": 13,
-    "C9": 11,
-    "C5": 4
+    "EXACT": 8,
+    "C9": 7
+   }
+  },
+  {
+   "class": "IPXGlobalConnClass",
+   "clusters": 23,
+   "entities": 26,
+   "families": {
+    "C10": 11,
+    "C6": 2,
+    "EXACT": 16,
+    "C9": 15,
+    "C11": 9,
+    "C3": 1
+   }
+  },
+  {
+   "class": "TunnelLocomotionClass",
+   "clusters": 23,
+   "entities": 23,
+   "families": {
+    "C10": 5,
+    "C6": 1,
+    "EXACT": 17,
+    "C9": 16,
+    "C11": 5
+   }
+  },
+  {
+   "class": "ScreenEffect",
+   "clusters": 23,
+   "entities": 23,
+   "families": {
+    "C3": 1
    }
   },
   {
@@ -2329,7 +2191,6 @@
    "families": {
     "C6": 2,
     "C10": 3,
-    "C18": 8,
     "EXACT": 19,
     "C3": 6,
     "C9": 17,
@@ -2337,58 +2198,51 @@
    }
   },
   {
-   "class": "IPXGlobalConnClass",
-   "clusters": 22,
-   "entities": 25,
-   "families": {
-    "C18": 6,
-    "C10": 10,
-    "C6": 2,
-    "EXACT": 16,
-    "C9": 15,
-    "C11": 9,
-    "C3": 1
-   }
-  },
-  {
-   "class": "MapSeedClass",
-   "clusters": 22,
+   "class": "ToolTipManager",
+   "clusters": 23,
    "entities": 24,
    "families": {
-    "C10": 10,
-    "C18": 14,
-    "C11": 6,
-    "C6": 1,
-    "EXACT": 11,
-    "C9": 9
+    "C6": 2,
+    "C10": 5,
+    "EXACT": 24,
+    "C5": 1,
+    "C3": 5,
+    "C11": 2,
+    "C9": 6
    }
   },
   {
-   "class": "OverlayTypeClass",
+   "class": "ParticleTypeClass",
    "clusters": 22,
    "entities": 22,
    "families": {
-    "C11": 3,
-    "EXACT": 19,
-    "C18": 6,
-    "C6": 2,
     "C10": 6,
-    "C9": 14,
+    "C6": 2,
+    "EXACT": 13,
+    "C9": 11,
+    "C11": 2,
+    "C5": 4
+   }
+  },
+  {
+   "class": "TiberiumClass",
+   "clusters": 22,
+   "entities": 23,
+   "families": {
+    "C10": 9,
+    "C6": 2,
+    "EXACT": 16,
+    "C11": 3,
+    "C9": 11,
     "C5": 3
    }
   },
   {
-   "class": "ParasiteClass",
+   "class": "FileFind",
    "clusters": 21,
-   "entities": 21,
+   "entities": 24,
    "families": {
-    "C10": 11,
-    "C6": 4,
-    "C18": 9,
-    "EXACT": 18,
-    "C9": 7,
-    "C11": 4,
-    "C3": 5
+    "C3": 1
    }
   },
   {
@@ -2397,10 +2251,22 @@
    "entities": 21,
    "families": {
     "C6": 5,
+    "C9": 4,
     "C10": 4,
     "C11": 4,
-    "C18": 4,
     "EXACT": 21
+   }
+  },
+  {
+   "class": "AirstrikeClass",
+   "clusters": 21,
+   "entities": 21,
+   "families": {
+    "C6": 3,
+    "C10": 6,
+    "EXACT": 14,
+    "C9": 8,
+    "C11": 6
    }
   },
   {
@@ -2410,19 +2276,24 @@
    "families": {
     "C6": 2,
     "C10": 11,
-    "C18": 11,
     "EXACT": 21,
-    "C9": 8,
-    "C11": 4,
+    "C9": 9,
+    "C11": 3,
     "C3": 1
    }
   },
   {
-   "class": "DialogControl",
+   "class": "CounterClass",
    "clusters": 21,
-   "entities": 21,
+   "entities": 22,
    "families": {
-    "C5": 2
+    "C10": 13,
+    "C9": 6,
+    "C15": 5,
+    "C3": 1,
+    "C6": 2,
+    "EXACT": 14,
+    "C11": 1
    }
   },
   {
@@ -2437,70 +2308,105 @@
    }
   },
   {
-   "class": "MSFrameAnim",
+   "class": "Pipe",
    "clusters": 21,
-   "entities": 21,
+   "entities": 22,
    "families": {
-    "C18": 13,
-    "C10": 10,
-    "C11": 4,
-    "C6": 3,
-    "EXACT": 6,
-    "C9": 4,
-    "C3": 1
+    "C9": 5,
+    "EXACT": 20,
+    "C6": 1,
+    "C10": 21,
+    "C11": 2
    }
   },
   {
-   "class": "PowerClass",
-   "clusters": 20,
-   "entities": 24,
+   "class": "TacticalClass",
+   "clusters": 21,
+   "entities": 23,
    "families": {
-    "C10": 16,
-    "C18": 14,
-    "C6": 1,
+    "C3": 3,
+    "C10": 21,
     "C11": 2,
+    "EXACT": 17
+   }
+  },
+  {
+   "class": "CDTimerClass",
+   "clusters": 20,
+   "entities": 21,
+   "families": {
+    "C11": 15,
+    "C10": 6,
+    "C3": 4
+   }
+  },
+  {
+   "class": "TaskForceClass",
+   "clusters": 20,
+   "entities": 20,
+   "families": {
+    "C10": 8,
+    "C6": 2,
     "EXACT": 10,
     "C9": 9
    }
   },
   {
-   "class": "SideClass",
-   "clusters": 20,
-   "entities": 20,
-   "families": {
-    "C3": 1,
-    "C18": 5,
-    "C10": 4,
-    "C11": 2,
-    "C6": 2,
-    "EXACT": 8,
-    "C9": 7
-   }
-  },
-  {
-   "class": "Pipe",
-   "clusters": 20,
-   "entities": 20,
-   "families": {
-    "C9": 5,
-    "EXACT": 20,
-    "C6": 1,
-    "C10": 19,
-    "C11": 2,
-    "C18": 1
-   }
-  },
-  {
-   "class": "VoxelAnimTypeClass",
+   "class": "LCWPipe",
    "clusters": 20,
    "entities": 20,
    "families": {
     "C11": 6,
-    "C18": 9,
+    "C6": 3,
+    "C10": 16,
+    "EXACT": 13,
+    "C9": 3
+   }
+  },
+  {
+   "class": "DropPodLocomotionClass",
+   "clusters": 20,
+   "entities": 20,
+   "families": {
+    "C10": 6,
+    "C11": 9,
     "C6": 2,
-    "C10": 3,
-    "EXACT": 12,
-    "C9": 11
+    "EXACT": 9,
+    "C3": 1,
+    "C9": 6
+   }
+  },
+  {
+   "class": "DialogControl",
+   "clusters": 20,
+   "entities": 20,
+   "families": {
+    "C5": 2
+   }
+  },
+  {
+   "class": "WarheadTypeClass",
+   "clusters": 20,
+   "entities": 21,
+   "families": {
+    "C3": 3,
+    "C11": 7,
+    "C6": 3,
+    "C10": 7,
+    "EXACT": 13,
+    "C9": 9
+   }
+  },
+  {
+   "class": "FoggedObjectClass",
+   "clusters": 20,
+   "entities": 21,
+   "families": {
+    "C6": 5,
+    "C10": 9,
+    "EXACT": 14,
+    "C9": 8,
+    "C5": 5
    }
   },
   {
@@ -2509,97 +2415,152 @@
    "entities": 21,
    "families": {
     "C6": 3,
-    "C10": 11,
-    "C18": 4,
+    "C10": 12,
     "EXACT": 20,
     "C11": 2,
+    "C9": 9,
+    "C3": 1
+   }
+  },
+  {
+   "class": "WebBrowser",
+   "clusters": 20,
+   "entities": 21,
+   "families": {
+    "C6": 1,
+    "C9": 18,
+    "C10": 1,
+    "EXACT": 19
+   }
+  },
+  {
+   "class": "IdleOrderEntry",
+   "clusters": 19,
+   "entities": 20,
+   "families": {
+    "C3": 1,
+    "C11": 1
+   }
+  },
+  {
+   "class": "IRTTITypeInfo",
+   "clusters": 19,
+   "entities": 20,
+   "families": {
+    "C3": 5,
+    "C10": 17,
+    "C11": 1
+   }
+  },
+  {
+   "class": "SlaveManagerClass",
+   "clusters": 19,
+   "entities": 20,
+   "families": {
+    "C6": 3,
+    "C10": 11,
+    "C11": 6,
+    "EXACT": 11,
     "C9": 8,
     "C3": 1
    }
   },
   {
-   "class": "Straw",
-   "clusters": 20,
+   "class": "HashMap",
+   "clusters": 19,
+   "entities": 19,
+   "families": {
+    "EXACT": 2
+   }
+  },
+  {
+   "class": "FilePipe",
+   "clusters": 19,
    "entities": 20,
    "families": {
-    "C10": 4,
+    "C11": 8,
     "C6": 1,
-    "C11": 3,
-    "C18": 1,
-    "EXACT": 17,
+    "C10": 5,
+    "EXACT": 6,
+    "C3": 1,
     "C9": 3
    }
   },
   {
    "class": "NullModemClass",
-   "clusters": 20,
-   "entities": 20,
+   "clusters": 19,
+   "entities": 19,
    "families": {
     "C6": 2,
-    "C18": 4,
     "EXACT": 17,
-    "C9": 13,
+    "C9": 16,
+    "C10": 3,
     "C11": 11,
-    "C3": 1,
+    "C3": 1
+   }
+  },
+  {
+   "class": "Straw",
+   "clusters": 19,
+   "entities": 19,
+   "families": {
+    "C6": 1,
+    "C11": 2,
+    "EXACT": 17,
+    "C9": 3,
     "C10": 4
    }
   },
   {
    "class": "AudioNode",
-   "clusters": 19,
+   "clusters": 18,
+   "entities": 18,
+   "families": {
+    "C10": 1
+   }
+  },
+  {
+   "class": "BufferIO",
+   "clusters": 18,
+   "entities": 18,
+   "families": {
+    "C10": 11,
+    "C3": 1
+   }
+  },
+  {
+   "class": "PriorityQueue",
+   "clusters": 18,
+   "entities": 19,
+   "families": {
+    "C3": 1,
+    "C7": 1,
+    "C10": 1
+   }
+  },
+  {
+   "class": "GameSetup",
+   "clusters": 18,
    "entities": 19,
    "families": {}
   },
   {
-   "class": "SyncDelay",
-   "clusters": 19,
-   "entities": 19,
-   "families": {
-    "C10": 1,
-    "C11": 1
-   }
-  },
-  {
-   "class": "WebBrowser",
-   "clusters": 19,
-   "entities": 20,
-   "families": {
-    "C6": 1,
-    "C10": 1,
-    "C18": 1,
-    "EXACT": 19,
-    "C9": 17
-   }
-  },
-  {
-   "class": "AbstractTypeClass",
+   "class": "MSAnim",
    "clusters": 18,
    "entities": 19,
    "families": {
-    "C6": 4,
-    "C10": 11,
-    "C18": 5,
-    "EXACT": 7,
-    "C5": 1,
-    "C9": 3,
-    "C15": 2,
     "C3": 1,
-    "C11": 1
+    "C6": 2,
+    "EXACT": 7,
+    "C9": 6,
+    "C10": 1
    }
   },
   {
-   "class": "EditClass",
+   "class": "MovieContext",
    "clusters": 18,
-   "entities": 20,
-   "families": {
-    "C11": 4,
-    "C9": 9,
-    "EXACT": 11,
-    "C3": 7,
-    "C6": 2,
-    "C10": 13,
-    "C18": 13
-   }
+   "entities": 18,
+   "families": {}
   },
   {
    "class": "GScreenClass",
@@ -2607,35 +2568,30 @@
    "entities": 18,
    "families": {
     "C3": 3,
-    "C9": 15,
+    "C9": 17,
     "EXACT": 18,
-    "C10": 2,
-    "C18": 2
+    "C10": 7
    }
   },
   {
-   "class": "TacticalClass",
+   "class": "SHPStruct",
    "clusters": 18,
-   "entities": 20,
+   "entities": 19,
    "families": {
-    "C3": 2,
-    "C10": 18,
-    "C11": 2,
-    "C18": 5,
-    "EXACT": 17
+    "C10": 9,
+    "EXACT": 9,
+    "C11": 8,
+    "C3": 1
    }
   },
   {
-   "class": "TunnelLocomotionClass",
-   "clusters": 18,
+   "class": "Matrix3x4",
+   "clusters": 17,
    "entities": 18,
    "families": {
-    "C6": 1,
-    "C10": 1,
-    "C18": 1,
-    "EXACT": 17,
-    "C9": 16,
-    "C11": 5
+    "C3": 3,
+    "C10": 4,
+    "C11": 3
    }
   },
   {
@@ -2643,37 +2599,9 @@
    "clusters": 17,
    "entities": 17,
    "families": {
-    "C10": 6,
-    "C11": 7,
-    "C18": 7,
-    "EXACT": 14
-   }
-  },
-  {
-   "class": "TaskForceClass",
-   "clusters": 17,
-   "entities": 17,
-   "families": {
-    "C11": 1,
-    "C6": 2,
+    "EXACT": 13,
     "C10": 5,
-    "C18": 5,
-    "EXACT": 10,
-    "C9": 8
-   }
-  },
-  {
-   "class": "GraphicMenuAnimItem",
-   "clusters": 17,
-   "entities": 18,
-   "families": {
-    "C18": 17,
-    "C11": 1,
-    "C10": 5,
-    "C3": 2,
-    "C6": 2,
-    "EXACT": 3,
-    "C9": 2
+    "C11": 3
    }
   },
   {
@@ -2681,20 +2609,49 @@
    "clusters": 17,
    "entities": 43,
    "families": {
-    "C9": 11,
+    "C9": 12,
     "EXACT": 14,
     "C6": 4,
-    "C10": 4,
-    "C18": 15,
-    "C11": 3,
-    "C3": 4
+    "C10": 40,
+    "C3": 4,
+    "C11": 2
    }
   },
   {
-   "class": "MovieContext",
+   "class": "MessageListClass",
+   "clusters": 17,
+   "entities": 18,
+   "families": {
+    "EXACT": 13,
+    "C10": 3,
+    "C3": 2,
+    "C11": 2
+   }
+  },
+  {
+   "class": "VoxelAnimTypeClass",
    "clusters": 17,
    "entities": 17,
-   "families": {}
+   "families": {
+    "C11": 2,
+    "C6": 2,
+    "C10": 3,
+    "EXACT": 12,
+    "C9": 11
+   }
+  },
+  {
+   "class": "Tactical",
+   "clusters": 17,
+   "entities": 20,
+   "families": {
+    "EXACT": 13,
+    "C10": 11,
+    "C3": 1,
+    "C6": 4,
+    "C11": 2,
+    "C9": 9
+   }
   },
   {
    "class": "Game",
@@ -2702,68 +2659,91 @@
    "entities": 18,
    "families": {
     "EXACT": 16,
+    "C10": 6,
     "C3": 4,
-    "C10": 5,
     "C11": 3
    }
   },
   {
-   "class": "StringList",
+   "class": "WinModemClass",
+   "clusters": 17,
+   "entities": 20,
+   "families": {
+    "C6": 2,
+    "C10": 15,
+    "EXACT": 11,
+    "C9": 10
+   }
+  },
+  {
+   "class": "Surface",
+   "clusters": 16,
+   "entities": 16,
+   "families": {
+    "C9": 9,
+    "EXACT": 15,
+    "C10": 3,
+    "C11": 1
+   }
+  },
+  {
+   "class": "LinkedList",
+   "clusters": 16,
+   "entities": 17,
+   "families": {
+    "C3": 1
+   }
+  },
+  {
+   "class": "Coord",
+   "clusters": 16,
+   "entities": 16,
+   "families": {
+    "C3": 1,
+    "C10": 5,
+    "C11": 7
+   }
+  },
+  {
+   "class": "GaugeClass",
+   "clusters": 16,
+   "entities": 16,
+   "families": {
+    "C3": 4,
+    "C6": 2,
+    "C10": 7,
+    "EXACT": 13,
+    "C9": 11,
+    "C11": 2
+   }
+  },
+  {
+   "class": "Value",
    "clusters": 16,
    "entities": 16,
    "families": {}
   },
   {
-   "class": "Tactical",
+   "class": "EBolt",
    "clusters": 16,
-   "entities": 19,
+   "entities": 17,
    "families": {
-    "C11": 3,
-    "C18": 4,
-    "EXACT": 13,
-    "C10": 8,
-    "C3": 1,
-    "C6": 4,
-    "C9": 7
+    "C10": 7,
+    "EXACT": 5,
+    "C11": 11,
+    "C3": 3
    }
   },
   {
-   "class": "BaseClass",
+   "class": "VersionClass",
    "clusters": 16,
    "entities": 17,
    "families": {
     "C6": 2,
-    "C10": 7,
-    "C18": 12,
-    "EXACT": 6,
-    "C11": 5,
-    "C9": 3
-   }
-  },
-  {
-   "class": "RocketLocomotionClass",
-   "clusters": 16,
-   "entities": 16,
-   "families": {
-    "C3": 3,
-    "C18": 8,
-    "C10": 5,
-    "C11": 3,
-    "C6": 3,
-    "EXACT": 11,
-    "C9": 7
-   }
-  },
-  {
-   "class": "MessageListClass",
-   "clusters": 16,
-   "entities": 17,
-   "families": {
-    "EXACT": 13,
-    "C10": 7,
-    "C11": 4,
-    "C18": 4,
-    "C3": 2
+    "C9": 1,
+    "C10": 2,
+    "EXACT": 12,
+    "C5": 4
    }
   },
   {
@@ -2772,10 +2752,9 @@
    "entities": 17,
    "families": {
     "C6": 1,
-    "C18": 2,
     "EXACT": 12,
-    "C15": 4,
-    "C9": 3
+    "C9": 4,
+    "C15": 4
    }
   },
   {
@@ -2785,24 +2764,10 @@
    "families": {
     "C6": 3,
     "C10": 7,
-    "C11": 4,
-    "C18": 7,
+    "C11": 5,
     "EXACT": 16,
     "C3": 2,
-    "C9": 9
-   }
-  },
-  {
-   "class": "Anim@Voices@WorldDominationTour",
-   "clusters": 16,
-   "entities": 16,
-   "families": {
-    "C6": 3,
-    "C10": 7,
-    "C11": 5,
-    "C18": 3,
-    "EXACT": 11,
-    "C9": 9
+    "C9": 13
    }
   },
   {
@@ -2818,30 +2783,25 @@
    }
   },
   {
-   "class": "Surface",
+   "class": "BSurface",
    "clusters": 15,
    "entities": 15,
    "families": {
-    "C18": 1,
-    "EXACT": 15,
-    "C9": 8,
-    "C10": 3,
-    "C11": 1
+    "C3": 2,
+    "C9": 3,
+    "EXACT": 10,
+    "C10": 11
    }
   },
   {
-   "class": "LinkedList",
+   "class": "ApplicationClass",
    "clusters": 15,
    "entities": 17,
    "families": {
-    "C3": 2
+    "C10": 5,
+    "C9": 11,
+    "EXACT": 12
    }
-  },
-  {
-   "class": "Value",
-   "clusters": 15,
-   "entities": 15,
-   "families": {}
   },
   {
    "class": "SliderClass",
@@ -2853,8 +2813,16 @@
     "EXACT": 14,
     "C3": 5,
     "C6": 2,
-    "C11": 3,
-    "C18": 12
+    "C11": 3
+   }
+  },
+  {
+   "class": "Explosion",
+   "clusters": 15,
+   "entities": 15,
+   "families": {
+    "C3": 8,
+    "C10": 2
    }
   },
   {
@@ -2864,7 +2832,6 @@
    "families": {
     "C6": 3,
     "C11": 5,
-    "C18": 5,
     "EXACT": 15,
     "C10": 8,
     "C9": 3
@@ -2877,42 +2844,80 @@
    "families": {
     "C6": 3,
     "C10": 2,
-    "C18": 3,
     "EXACT": 15,
     "C9": 12,
     "C11": 4
    }
   },
   {
-   "class": "IRTTITypeInfo",
-   "clusters": 14,
-   "entities": 14,
+   "class": "RocketLocomotionClass",
+   "clusters": 15,
+   "entities": 15,
    "families": {
-    "C3": 5,
-    "C10": 13
+    "C10": 5,
+    "C6": 3,
+    "EXACT": 11,
+    "C3": 3,
+    "C9": 7,
+    "C11": 2
    }
   },
   {
-   "class": "DropPodLocomotionClass",
+   "class": "EditClass",
+   "clusters": 14,
+   "entities": 16,
+   "families": {
+    "C10": 12,
+    "C6": 3,
+    "C9": 9,
+    "EXACT": 11,
+    "C3": 6,
+    "C11": 3
+   }
+  },
+  {
+   "class": "StringList",
    "clusters": 14,
    "entities": 14,
+   "families": {}
+  },
+  {
+   "class": "TubeClass",
+   "clusters": 14,
+   "entities": 14,
+   "families": {
+    "C11": 1,
+    "C10": 6,
+    "C6": 2,
+    "EXACT": 8,
+    "C9": 7,
+    "C7": 1,
+    "C5": 2
+   }
+  },
+  {
+   "class": "ColorListClass",
+   "clusters": 14,
+   "entities": 14,
+   "families": {
+    "C6": 3,
+    "C10": 8,
+    "EXACT": 9,
+    "C11": 3,
+    "C9": 7
+   }
+  },
+  {
+   "class": "LogicClass",
+   "clusters": 14,
+   "entities": 16,
    "families": {
     "C3": 4,
-    "C11": 4,
-    "C18": 5,
-    "C6": 2,
-    "C10": 3,
-    "EXACT": 9,
-    "C9": 6
-   }
-  },
-  {
-   "class": "SuperWeaponClass",
-   "clusters": 14,
-   "entities": 14,
-   "families": {
-    "C3": 1,
-    "C18": 1
+    "C10": 6,
+    "EXACT": 5,
+    "C11": 3,
+    "C9": 2,
+    "C5": 1
    }
   },
   {
@@ -2922,36 +2927,20 @@
    "families": {
     "C6": 2,
     "C10": 3,
-    "C18": 2,
     "EXACT": 14,
     "C9": 12,
     "C11": 7
    }
   },
   {
-   "class": "LZOStraw",
+   "class": "MSEngine",
    "clusters": 14,
-   "entities": 14,
+   "entities": 15,
    "families": {
-    "C6": 3,
-    "C11": 4,
-    "C18": 4,
-    "EXACT": 14,
-    "C9": 2,
-    "C10": 1
-   }
-  },
-  {
-   "class": "PKStrawClass",
-   "clusters": 14,
-   "entities": 14,
-   "families": {
-    "C10": 6,
-    "C18": 11,
-    "C3": 2,
-    "C6": 1,
-    "EXACT": 6,
-    "C11": 2,
+    "C10": 13,
+    "C6": 2,
+    "EXACT": 9,
+    "C11": 1,
     "C9": 3
    }
   },
@@ -2961,11 +2950,10 @@
    "entities": 14,
    "families": {
     "C10": 4,
-    "C11": 3,
     "EXACT": 14,
     "C6": 2,
-    "C18": 4,
-    "C9": 9
+    "C9": 12,
+    "C11": 2
    }
   },
   {
@@ -2975,9 +2963,28 @@
    "families": {
     "C6": 2,
     "C10": 5,
-    "C18": 4,
     "EXACT": 14,
-    "C9": 7
+    "C9": 10
+   }
+  },
+  {
+   "class": "GameOptionsClass",
+   "clusters": 13,
+   "entities": 13,
+   "families": {
+    "EXACT": 1
+   }
+  },
+  {
+   "class": "LayerClass",
+   "clusters": 13,
+   "entities": 13,
+   "families": {
+    "C9": 4,
+    "EXACT": 8,
+    "C11": 2,
+    "C3": 2,
+    "C5": 2
    }
   },
   {
@@ -2987,97 +2994,47 @@
    "families": {
     "C9": 8,
     "C15": 2,
-    "C18": 8,
     "C3": 1,
     "EXACT": 10,
     "C6": 3,
-    "C10": 7,
+    "C10": 7
+   }
+  },
+  {
+   "class": "BaseClass",
+   "clusters": 13,
+   "entities": 13,
+   "families": {
+    "C6": 2,
+    "C10": 4,
+    "EXACT": 6,
+    "C9": 3,
     "C11": 1
    }
   },
   {
-   "class": "PriorityQueue",
-   "clusters": 13,
-   "entities": 13,
-   "families": {
-    "C7": 1,
-    "C10": 1
-   }
-  },
-  {
-   "class": "MSAnim",
-   "clusters": 13,
-   "entities": 14,
-   "families": {
-    "C6": 2,
-    "EXACT": 7,
-    "C9": 6,
-    "C18": 1,
-    "C10": 1
-   }
-  },
-  {
-   "class": "ColorListClass",
+   "class": "ConnectionClass",
    "clusters": 13,
    "entities": 13,
    "families": {
     "C6": 3,
-    "C10": 6,
-    "C18": 9,
-    "EXACT": 9,
-    "C11": 3,
-    "C9": 7
+    "C10": 5,
+    "EXACT": 11,
+    "C9": 9,
+    "C11": 5,
+    "C3": 1
    }
   },
   {
-   "class": "BuildingPrerequisiteClass",
+   "class": "FileStraw",
    "clusters": 13,
-   "entities": 13,
+   "entities": 15,
    "families": {
-    "C11": 2
-   }
-  },
-  {
-   "class": "IsometricTileClass",
-   "clusters": 13,
-   "entities": 13,
-   "families": {
-    "C3": 6,
-    "C18": 6,
-    "C9": 11,
-    "C10": 3,
-    "C11": 1,
-    "EXACT": 12,
-    "C6": 2
-   }
-  },
-  {
-   "class": "GaugeClass",
-   "clusters": 13,
-   "entities": 13,
-   "families": {
-    "C3": 4,
-    "C6": 2,
-    "C10": 6,
-    "C18": 8,
-    "EXACT": 13,
-    "C9": 11,
-    "C11": 2
-   }
-  },
-  {
-   "class": "StaticButtonClass",
-   "clusters": 13,
-   "entities": 13,
-   "families": {
-    "C18": 8,
-    "C6": 2,
-    "C10": 4,
-    "C11": 2,
-    "EXACT": 6,
-    "C3": 2,
-    "C9": 5,
-    "C5": 5
+    "C11": 4,
+    "C9": 2,
+    "C10": 10,
+    "EXACT": 8,
+    "C6": 1
    }
   },
   {
@@ -3085,25 +3042,37 @@
    "clusters": 13,
    "entities": 13,
    "families": {
-    "C18": 12,
     "EXACT": 12,
     "C10": 4,
-    "C11": 3,
     "C5": 1
    }
   },
   {
-   "class": "ToggleClass",
+   "class": "TabCameoListClass",
    "clusters": 12,
    "entities": 12,
    "families": {
-    "C11": 2,
-    "C10": 7,
-    "C18": 8,
-    "C3": 4,
-    "C6": 1,
-    "EXACT": 6,
-    "C9": 2
+    "C10": 1
+   }
+  },
+  {
+   "class": "BlitTransLucent25Alpha_ushort",
+   "clusters": 12,
+   "entities": 12,
+   "families": {
+    "C9": 5,
+    "EXACT": 5,
+    "C6": 2,
+    "C10": 1,
+    "C11": 1
+   }
+  },
+  {
+   "class": "Tooltip",
+   "clusters": 12,
+   "entities": 13,
+   "families": {
+    "C3": 2
    }
   },
   {
@@ -3111,33 +3080,57 @@
    "clusters": 12,
    "entities": 12,
    "families": {
-    "C10": 5,
-    "C18": 3,
-    "EXACT": 6
-   }
-  },
-  {
-   "class": "EBolt",
-   "clusters": 12,
-   "entities": 13,
-   "families": {
-    "C10": 3,
-    "C18": 7,
     "EXACT": 6,
-    "C11": 4,
-    "C3": 3
+    "C10": 4
    }
   },
   {
-   "class": "VersionClass",
+   "class": "ControlClass",
    "clusters": 12,
    "entities": 13,
    "families": {
     "C6": 2,
-    "C9": 1,
-    "C10": 2,
+    "C10": 10,
+    "EXACT": 7,
+    "C9": 5,
+    "C3": 3,
+    "C11": 1
+   }
+  },
+  {
+   "class": "FacingClass",
+   "clusters": 12,
+   "entities": 12,
+   "families": {
+    "EXACT": 4,
+    "C10": 1,
+    "C3": 2
+   }
+  },
+  {
+   "class": "IPXConnClass",
+   "clusters": 12,
+   "entities": 15,
+   "families": {
+    "C3": 1,
+    "C6": 2,
+    "C10": 5,
+    "EXACT": 6,
+    "C5": 1,
+    "C9": 4
+   }
+  },
+  {
+   "class": "IsometricTileClass",
+   "clusters": 12,
+   "entities": 12,
+   "families": {
+    "C3": 5,
+    "C9": 11,
+    "C10": 3,
+    "C11": 1,
     "EXACT": 12,
-    "C18": 7
+    "C6": 2
    }
   },
   {
@@ -3152,91 +3145,33 @@
    }
   },
   {
-   "class": "SHPStruct",
-   "clusters": 12,
-   "entities": 13,
-   "families": {
-    "C10": 8,
-    "C18": 4,
-    "EXACT": 9,
-    "C11": 5
-   }
-  },
-  {
-   "class": "WaypointPathClass",
-   "clusters": 12,
-   "entities": 12,
-   "families": {
-    "C6": 3,
-    "C10": 6,
-    "C18": 7,
-    "EXACT": 12,
-    "C11": 3,
-    "C9": 7
-   }
-  },
-  {
-   "class": "ApplicationClass",
-   "clusters": 12,
-   "entities": 13,
-   "families": {
-    "C9": 11,
-    "EXACT": 12,
-    "C10": 2
-   }
-  },
-  {
-   "class": "MSPrintAnim",
+   "class": "WOLGameList",
    "clusters": 11,
    "entities": 11,
    "families": {
-    "C11": 4,
-    "C18": 9,
     "C3": 1,
-    "C9": 5,
-    "EXACT": 5,
-    "C6": 1,
+    "C11": 1
+   }
+  },
+  {
+   "class": "BrainClass",
+   "clusters": 11,
+   "entities": 11,
+   "families": {
+    "C6": 2,
+    "C11": 3,
+    "EXACT": 2,
+    "C9": 1,
     "C10": 1
    }
   },
   {
-   "class": "ControlClass",
-   "clusters": 11,
-   "entities": 12,
-   "families": {
-    "C10": 9,
-    "C11": 2,
-    "C6": 2,
-    "C18": 3,
-    "EXACT": 7,
-    "C9": 4,
-    "C3": 1
-   }
-  },
-  {
-   "class": "BSurface",
+   "class": "Palette",
    "clusters": 11,
    "entities": 11,
    "families": {
-    "C3": 2,
-    "C18": 2,
-    "EXACT": 10,
-    "C9": 1,
-    "C10": 7
-   }
-  },
-  {
-   "class": "AnimFile",
-   "clusters": 11,
-   "entities": 11,
-   "families": {
-    "C6": 2,
-    "C11": 6,
-    "C18": 5,
-    "C9": 6,
-    "EXACT": 8,
     "C3": 1,
-    "C10": 2
+    "C7": 1
    }
   },
   {
@@ -3246,17 +3181,68 @@
    "families": {}
   },
   {
+   "class": "MSVQAnim",
+   "clusters": 11,
+   "entities": 11,
+   "families": {
+    "C6": 3,
+    "C10": 3,
+    "C11": 4,
+    "EXACT": 8,
+    "C3": 1,
+    "C9": 5
+   }
+  },
+  {
    "class": "CheckListClass",
    "clusters": 11,
    "entities": 11,
    "families": {
     "C6": 2,
     "C10": 6,
-    "C18": 2,
     "EXACT": 11,
     "C3": 4,
     "C9": 10
    }
+  },
+  {
+   "class": "BuildingPrerequisiteClass",
+   "clusters": 11,
+   "entities": 11,
+   "families": {
+    "C10": 1
+   }
+  },
+  {
+   "class": "ConnectionPointClass",
+   "clusters": 11,
+   "entities": 11,
+   "families": {
+    "C6": 3,
+    "C10": 2,
+    "EXACT": 10,
+    "C11": 1,
+    "C9": 8
+   }
+  },
+  {
+   "class": "Dial8Class",
+   "clusters": 11,
+   "entities": 11,
+   "families": {
+    "C6": 1,
+    "C10": 3,
+    "EXACT": 4,
+    "C3": 2,
+    "C9": 3,
+    "C11": 2
+   }
+  },
+  {
+   "class": "VoxelPalette",
+   "clusters": 11,
+   "entities": 11,
+   "families": {}
   },
   {
    "class": "LCWStraw",
@@ -3265,32 +3251,21 @@
    "families": {
     "C6": 3,
     "C10": 7,
-    "C18": 4,
     "EXACT": 10,
     "C11": 3,
     "C9": 2
    }
   },
   {
-   "class": "IStream",
+   "class": "MapSeedClass",
    "clusters": 11,
-   "entities": 11,
+   "entities": 13,
    "families": {
-    "C10": 9,
-    "EXACT": 2
-   }
-  },
-  {
-   "class": "VQMovieHandle",
-   "clusters": 11,
-   "entities": 12,
-   "families": {
-    "C9": 10,
-    "EXACT": 11,
-    "C11": 5,
-    "C10": 3,
     "C6": 1,
-    "C18": 1
+    "C10": 5,
+    "EXACT": 11,
+    "C9": 9,
+    "C11": 2
    }
   },
   {
@@ -3298,12 +3273,11 @@
    "clusters": 11,
    "entities": 11,
    "families": {
-    "C9": 10,
+    "C9": 11,
     "C11": 5,
     "EXACT": 11,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -3317,42 +3291,17 @@
    }
   },
   {
-   "class": "SlaveManagerClass",
-   "clusters": 11,
-   "entities": 12,
-   "families": {
-    "C6": 3,
-    "C10": 7,
-    "C11": 3,
-    "C18": 5,
-    "EXACT": 11,
-    "C9": 8
-   }
-  },
-  {
-   "class": "TubeClass",
+   "class": "StaticButtonClass",
    "clusters": 11,
    "entities": 11,
    "families": {
     "C6": 2,
-    "C10": 3,
-    "C18": 4,
-    "EXACT": 8,
-    "C9": 6,
-    "C7": 1,
-    "C5": 2
-   }
-  },
-  {
-   "class": "WinModemClass",
-   "clusters": 11,
-   "entities": 11,
-   "families": {
-    "C6": 2,
-    "C10": 6,
-    "C18": 4,
-    "EXACT": 11,
-    "C9": 7
+    "C10": 4,
+    "C11": 2,
+    "EXACT": 6,
+    "C3": 2,
+    "C9": 5,
+    "C5": 5
    }
   },
   {
@@ -3364,68 +3313,92 @@
     "C9": 5,
     "C11": 1,
     "EXACT": 6,
-    "C18": 1,
     "C6": 1,
     "C5": 2
    }
   },
   {
-   "class": "IPXConnClass",
+   "class": "BlitTransXlatAlphaZRead_ushort",
    "clusters": 10,
-   "entities": 13,
+   "entities": 10,
    "families": {
-    "C3": 1,
-    "C18": 2,
+    "C9": 5,
+    "EXACT": 5,
     "C6": 2,
-    "C10": 5,
-    "EXACT": 6,
-    "C5": 1,
-    "C9": 4
+    "C10": 1,
+    "C3": 1
    }
   },
   {
-   "class": "LayerClass",
-   "clusters": 10,
-   "entities": 10,
-   "families": {
-    "C9": 3,
-    "EXACT": 8,
-    "C18": 2,
-    "C3": 2,
-    "C10": 2,
-    "C5": 2
-   }
-  },
-  {
-   "class": "Node",
-   "clusters": 10,
-   "entities": 10,
-   "families": {
-    "C10": 10
-   }
-  },
-  {
-   "class": "RadBeam",
+   "class": "SHPReference",
    "clusters": 10,
    "entities": 10,
    "families": {
     "C11": 9,
-    "C10": 4,
+    "C10": 1,
     "EXACT": 1
    }
   },
   {
-   "class": "LogicClass",
+   "class": "BuildingDebris",
    "clusters": 10,
    "entities": 11,
+   "families": {}
+  },
+  {
+   "class": "NetworkAddress",
+   "clusters": 10,
+   "entities": 10,
+   "families": {}
+  },
+  {
+   "class": "BlowPipe",
+   "clusters": 10,
+   "entities": 10,
    "families": {
-    "C3": 2,
-    "C18": 1,
-    "EXACT": 5,
+    "C9": 3,
+    "C10": 3,
+    "EXACT": 3,
+    "C6": 1,
+    "C11": 2
+   }
+  },
+  {
+   "class": "Struct",
+   "clusters": 10,
+   "entities": 12,
+   "families": {
+    "C10": 1,
+    "C11": 1
+   }
+  },
+  {
+   "class": "Rect",
+   "clusters": 10,
+   "entities": 10,
+   "families": {
+    "C3": 7,
+    "C11": 3
+   }
+  },
+  {
+   "class": "MovementClass",
+   "clusters": 10,
+   "entities": 10,
+   "families": {
     "C11": 3,
+    "C3": 3
+   }
+  },
+  {
+   "class": "UnholyAlliance",
+   "clusters": 10,
+   "entities": 10,
+   "families": {
+    "C6": 3,
     "C10": 2,
-    "C9": 2,
-    "C5": 1
+    "EXACT": 7,
+    "C9": 5
    }
   },
   {
@@ -3440,16 +3413,15 @@
    }
   },
   {
-   "class": "MSEngine",
+   "class": "PowerClass",
    "clusters": 10,
-   "entities": 11,
+   "entities": 13,
    "families": {
-    "C6": 2,
-    "C18": 2,
-    "EXACT": 9,
-    "C11": 1,
-    "C10": 3,
-    "C9": 3
+    "C6": 1,
+    "C10": 8,
+    "C11": 2,
+    "EXACT": 10,
+    "C9": 9
    }
   },
   {
@@ -3459,7 +3431,6 @@
    "families": {
     "C6": 2,
     "C10": 3,
-    "C18": 3,
     "EXACT": 14,
     "C5": 4,
     "C3": 1,
@@ -3474,33 +3445,64 @@
    "families": {}
   },
   {
-   "class": "TabCameoListClass",
+   "class": "AnimFile",
    "clusters": 9,
    "entities": 9,
    "families": {
-    "C11": 1
+    "C6": 2,
+    "C11": 5,
+    "C9": 7,
+    "EXACT": 8,
+    "C3": 1,
+    "C10": 2
    }
   },
   {
-   "class": "INILinkNode",
+   "class": "MSBinkAnim",
    "clusters": 9,
    "entities": 9,
    "families": {
-    "C10": 9,
-    "C11": 5
+    "C9": 6,
+    "EXACT": 6,
+    "C3": 1,
+    "C11": 1,
+    "C6": 1,
+    "C10": 1
    }
   },
   {
    "class": "FrameSnapshot",
    "clusters": 9,
+   "entities": 10,
+   "families": {}
+  },
+  {
+   "class": "SkirmishDialog",
+   "clusters": 9,
    "entities": 9,
    "families": {}
   },
   {
-   "class": "Tooltip",
+   "class": "AudioMixer",
    "clusters": 9,
    "entities": 9,
-   "families": {}
+   "families": {
+    "C3": 1,
+    "C10": 8,
+    "EXACT": 8
+   }
+  },
+  {
+   "class": "WDTState",
+   "clusters": 9,
+   "entities": 11,
+   "families": {
+    "C11": 3,
+    "C6": 3,
+    "C10": 6,
+    "EXACT": 4,
+    "C9": 1
+   }
   },
   {
    "class": "EMPulseClass",
@@ -3509,11 +3511,15 @@
    "families": {
     "C6": 2,
     "C10": 3,
-    "C18": 4,
     "EXACT": 8,
-    "C11": 1,
     "C9": 7
    }
+  },
+  {
+   "class": "EventBuffer",
+   "clusters": 9,
+   "entities": 10,
+   "families": {}
   },
   {
    "class": "InitializerBase@MultiplayerGameMode",
@@ -3527,22 +3533,12 @@
    }
   },
   {
-   "class": "VocClass",
-   "clusters": 9,
-   "entities": 9,
-   "families": {
-    "C11": 1,
-    "EXACT": 7
-   }
-  },
-  {
    "class": "TeleportLocomotionClass",
    "clusters": 9,
    "entities": 9,
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 2,
     "EXACT": 9,
     "C3": 1,
     "C11": 4,
@@ -3556,84 +3552,59 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 9,
     "C9": 8
    }
   },
   {
-   "class": "MSFont",
-   "clusters": 8,
-   "entities": 9,
-   "families": {
-    "C11": 4,
-    "C18": 5,
-    "C6": 2,
-    "C10": 3,
-    "EXACT": 7,
-    "C9": 5
-   }
-  },
-  {
-   "class": "OwnerDrawControl",
-   "clusters": 8,
-   "entities": 8,
-   "families": {}
-  },
-  {
-   "class": "MSBinkAnim",
+   "class": "MSBitPrintAnim",
    "clusters": 8,
    "entities": 8,
    "families": {
     "C9": 5,
-    "EXACT": 6,
-    "C3": 1,
-    "C11": 1,
+    "EXACT": 5,
+    "C11": 3,
     "C6": 1,
     "C10": 1,
-    "C18": 1
+    "C3": 1
    }
   },
   {
-   "class": "LightConvertClass",
-   "clusters": 8,
-   "entities": 10,
-   "families": {
-    "C11": 3,
-    "C18": 4,
-    "C6": 3,
-    "C10": 6,
-    "EXACT": 6,
-    "C9": 2
-   }
-  },
-  {
-   "class": "FrameTimer",
+   "class": "BuildingPlacement",
    "clusters": 8,
    "entities": 8,
    "families": {}
   },
   {
-   "class": "CommBufferClass",
+   "class": "MSOverlayAnim",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "C9": 5,
+    "C11": 2,
+    "EXACT": 5,
+    "C6": 1,
+    "C10": 1
+   }
+  },
+  {
+   "class": "CampaignScore",
    "clusters": 8,
    "entities": 9,
    "families": {
-    "C6": 2,
-    "C10": 3,
-    "C18": 7,
-    "EXACT": 3,
-    "C11": 1,
-    "C9": 1
+    "C6": 3,
+    "C10": 2,
+    "EXACT": 4,
+    "C9": 1,
+    "C3": 1,
+    "C11": 1
    }
   },
   {
    "class": "Subzone",
    "clusters": 8,
-   "entities": 9,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
+   "entities": 8,
+   "families": {}
   },
   {
    "class": "FileClass",
@@ -3642,35 +3613,61 @@
    "families": {
     "C3": 1,
     "EXACT": 6,
-    "C10": 3,
     "C6": 1,
-    "C9": 3
+    "C9": 3,
+    "C10": 1
    }
   },
   {
-   "class": "?$ValueGameOption@E@WorldDominationTour",
+   "class": "GraphicMenuItem",
    "clusters": 8,
    "entities": 9,
    "families": {
-    "C10": 7,
-    "C9": 4,
-    "EXACT": 3,
-    "C11": 2,
-    "C15": 1
+    "C6": 3,
+    "EXACT": 8,
+    "C10": 2,
+    "C9": 6
    }
   },
   {
-   "class": "FilePipe",
+   "class": "TileData",
    "clusters": 8,
    "entities": 9,
    "families": {
-    "C11": 2,
+    "C10": 1,
+    "EXACT": 1
+   }
+  },
+  {
+   "class": "LoadProgressMgr",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "C10": 1,
+    "C9": 1,
+    "EXACT": 1,
+    "C5": 4
+   }
+  },
+  {
+   "class": "PKStrawClass",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "C3": 2,
     "C6": 1,
-    "C10": 5,
-    "C18": 3,
     "EXACT": 6,
-    "C3": 1,
-    "C9": 1
+    "C9": 4,
+    "C11": 2,
+    "C10": 2
+   }
+  },
+  {
+   "class": "VocClass",
+   "clusters": 8,
+   "entities": 8,
+   "families": {
+    "EXACT": 7
    }
   },
   {
@@ -3679,9 +3676,8 @@
    "entities": 8,
    "families": {
     "C6": 4,
-    "C18": 6,
     "EXACT": 8,
-    "C9": 2,
+    "C9": 7,
     "C3": 1,
     "C10": 3
    }
@@ -3693,23 +3689,10 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 9,
     "C5": 1,
     "C9": 7,
     "C11": 2
-   }
-  },
-  {
-   "class": "FileStraw",
-   "clusters": 8,
-   "entities": 10,
-   "families": {
-    "C10": 9,
-    "C18": 2,
-    "EXACT": 8,
-    "C6": 1,
-    "C9": 1
    }
   },
   {
@@ -3731,23 +3714,15 @@
    }
   },
   {
-   "class": "AudioMixer",
-   "clusters": 8,
-   "entities": 8,
-   "families": {
-    "EXACT": 8
-   }
-  },
-  {
-   "class": "GameOptionsClass",
+   "class": "COMClass",
    "clusters": 7,
    "entities": 7,
    "families": {
-    "EXACT": 1
+    "C3": 3
    }
   },
   {
-   "class": "Debug",
+   "class": "Lobby",
    "clusters": 7,
    "entities": 7,
    "families": {
@@ -3755,12 +3730,23 @@
    }
   },
   {
+   "class": "RandomStraw",
+   "clusters": 7,
+   "entities": 8,
+   "families": {
+    "C11": 1,
+    "C6": 2,
+    "C10": 7,
+    "C9": 2,
+    "EXACT": 3
+   }
+  },
+  {
    "class": "DynamicVectorClass_uint",
    "clusters": 7,
    "entities": 7,
    "families": {
-    "C9": 4,
-    "C18": 6,
+    "C9": 6,
     "EXACT": 5,
     "C15": 2,
     "C3": 1,
@@ -3774,89 +3760,22 @@
    "families": {
     "C6": 2,
     "C10": 6,
-    "C18": 6,
     "EXACT": 7,
-    "C11": 3,
-    "C9": 1
-   }
-  },
-  {
-   "class": "FileEntryClass",
-   "clusters": 7,
-   "entities": 8,
-   "families": {
-    "C3": 2,
-    "C18": 1,
-    "EXACT": 2,
-    "C10": 3,
+    "C9": 1,
     "C11": 1
    }
   },
   {
-   "class": "Palette",
+   "class": "FlagSystem",
    "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C10": 1,
-    "C7": 1
-   }
+   "entities": 9,
+   "families": {}
   },
   {
    "class": "HexCoord",
    "clusters": 7,
    "entities": 7,
    "families": {}
-  },
-  {
-   "class": "MSBitPrintAnim",
-   "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C18": 4,
-    "C9": 5,
-    "EXACT": 5,
-    "C11": 3,
-    "C6": 1,
-    "C10": 1,
-    "C3": 1
-   }
-  },
-  {
-   "class": "CreateTeamCommand",
-   "clusters": 7,
-   "entities": 8,
-   "families": {
-    "C6": 1,
-    "C10": 1,
-    "C18": 1,
-    "EXACT": 6,
-    "C9": 5,
-    "C11": 1
-   }
-  },
-  {
-   "class": "LoadProgressMgr",
-   "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C9": 1,
-    "EXACT": 1,
-    "C5": 4
-   }
-  },
-  {
-   "class": "CellCoord",
-   "clusters": 7,
-   "entities": 7,
-   "families": {}
-  },
-  {
-   "class": "GameClass",
-   "clusters": 7,
-   "entities": 8,
-   "families": {
-    "C10": 2
-   }
   },
   {
    "class": "FreeForAll",
@@ -3870,41 +3789,29 @@
    }
   },
   {
-   "class": "UnholyAlliance",
+   "class": "MSFont",
    "clusters": 7,
-   "entities": 7,
+   "entities": 8,
    "families": {
-    "C6": 3,
-    "C10": 2,
+    "C6": 2,
+    "C10": 3,
     "EXACT": 7,
-    "C9": 5
+    "C9": 5,
+    "C11": 3
    }
   },
   {
-   "class": "MixHeaderData",
+   "class": "GameState",
    "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C11": 7
-   }
-  },
-  {
-   "class": "ScoreAnimClass",
-   "clusters": 7,
-   "entities": 7,
-   "families": {
-    "C6": 4,
-    "C10": 5,
-    "C18": 2,
-    "EXACT": 6,
-    "C9": 5
-   }
+   "entities": 8,
+   "families": {}
   },
   {
    "class": "BulkData",
    "clusters": 7,
    "entities": 9,
    "families": {
+    "C10": 3,
     "C5": 5
    }
   },
@@ -3915,11 +3822,22 @@
    "families": {
     "C6": 1,
     "C10": 4,
-    "C18": 5,
     "EXACT": 7,
     "C3": 2,
     "C9": 6,
     "C11": 1
+   }
+  },
+  {
+   "class": "Selection@WorldDominationTour",
+   "clusters": 7,
+   "entities": 8,
+   "families": {
+    "C6": 2,
+    "C10": 8,
+    "C11": 2,
+    "EXACT": 7,
+    "C9": 1
    }
   },
   {
@@ -3928,11 +3846,16 @@
    "entities": 7,
    "families": {
     "C10": 6,
-    "C11": 5,
-    "C18": 6,
     "EXACT": 7,
-    "C3": 1
+    "C3": 1,
+    "C11": 1
    }
+  },
+  {
+   "class": "OwnerDrawControl",
+   "clusters": 6,
+   "entities": 6,
+   "families": {}
   },
   {
    "class": "AircraftTrackerClass",
@@ -3943,12 +3866,12 @@
    }
   },
   {
-   "class": "Dialog",
+   "class": "FileEntryClass",
    "clusters": 6,
    "entities": 6,
    "families": {
-    "C10": 1,
-    "EXACT": 1
+    "C3": 2,
+    "EXACT": 2
    }
   },
   {
@@ -3963,25 +3886,26 @@
    }
   },
   {
-   "class": "BlitTransXlatAlphaZRead_ushort",
+   "class": "BlitTransLucent25AlphaZReadWrite_ushort",
    "clusters": 6,
    "entities": 6,
    "families": {
-    "C18": 4,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 2,
     "C6": 1,
-    "C10": 1,
-    "C3": 1
+    "C10": 1
    }
   },
   {
-   "class": "VXLFrame",
+   "class": "MixFileClass",
    "clusters": 6,
-   "entities": 6,
+   "entities": 7,
    "families": {
-    "C3": 6,
-    "C18": 6
+    "C11": 3,
+    "C6": 3,
+    "C10": 4,
+    "EXACT": 2,
+    "C9": 1
    }
   },
   {
@@ -3991,13 +3915,36 @@
    "families": {}
   },
   {
+   "class": "GraphicMenuImageItem",
+   "clusters": 6,
+   "entities": 7,
+   "families": {
+    "C6": 2,
+    "C10": 4,
+    "C11": 3,
+    "EXACT": 6,
+    "C9": 5
+   }
+  },
+  {
+   "class": "CreateTeamCommand",
+   "clusters": 6,
+   "entities": 7,
+   "families": {
+    "C6": 1,
+    "C10": 1,
+    "EXACT": 6,
+    "C9": 5,
+    "C11": 1
+   }
+  },
+  {
    "class": "SelectTeamCommand",
    "clusters": 6,
    "entities": 7,
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5,
     "C11": 1
@@ -4010,7 +3957,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5,
     "C11": 1
@@ -4023,7 +3969,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5,
     "C11": 1
@@ -4036,7 +3981,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4086,6 +4030,24 @@
    }
   },
   {
+   "class": "LightConvertClass",
+   "clusters": 6,
+   "entities": 8,
+   "families": {
+    "C6": 3,
+    "C10": 6,
+    "EXACT": 5,
+    "C9": 2,
+    "C11": 2
+   }
+  },
+  {
+   "class": "GameClass",
+   "clusters": 6,
+   "entities": 8,
+   "families": {}
+  },
+  {
    "class": "MSPCXAnim",
    "clusters": 6,
    "entities": 6,
@@ -4093,10 +4055,43 @@
     "C3": 2,
     "C9": 5,
     "C11": 3,
-    "C18": 4,
     "EXACT": 6,
     "C6": 1,
     "C10": 1
+   }
+  },
+  {
+   "class": "TextGroup",
+   "clusters": 6,
+   "entities": 6,
+   "families": {}
+  },
+  {
+   "class": "ColorSchemeClass",
+   "clusters": 6,
+   "entities": 6,
+   "families": {
+    "C3": 2
+   }
+  },
+  {
+   "class": "LoadScreen",
+   "clusters": 6,
+   "entities": 6,
+   "families": {
+    "EXACT": 2,
+    "C10": 1
+   }
+  },
+  {
+   "class": "ScoreAnimClass",
+   "clusters": 6,
+   "entities": 6,
+   "families": {
+    "C6": 4,
+    "C10": 4,
+    "EXACT": 6,
+    "C9": 5
    }
   },
   {
@@ -4106,7 +4101,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4118,7 +4112,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4130,7 +4123,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4142,7 +4134,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4154,7 +4145,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4166,7 +4156,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4178,7 +4167,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4190,7 +4178,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4202,7 +4189,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4214,7 +4200,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4226,7 +4211,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4238,7 +4222,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4250,7 +4233,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4262,7 +4244,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4274,7 +4255,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4286,7 +4266,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4298,7 +4277,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4310,7 +4288,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4322,7 +4299,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4334,7 +4310,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4346,7 +4321,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4358,7 +4332,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4370,7 +4343,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4382,7 +4354,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4394,7 +4365,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4406,7 +4376,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4418,7 +4387,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4430,7 +4398,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4442,7 +4409,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4454,7 +4420,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4466,7 +4431,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4478,7 +4442,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4490,7 +4453,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4502,7 +4464,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4514,7 +4475,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4526,7 +4486,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4538,7 +4497,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4550,7 +4508,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4562,7 +4519,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4574,7 +4530,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4586,7 +4541,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4598,7 +4552,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4610,7 +4563,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4622,7 +4574,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4634,7 +4585,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4646,7 +4596,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4658,7 +4607,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4670,7 +4618,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4682,7 +4629,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4694,7 +4640,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4706,7 +4651,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4718,7 +4662,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4730,7 +4673,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4742,7 +4684,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4754,7 +4695,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4766,7 +4706,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4778,7 +4717,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4790,7 +4728,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4802,7 +4739,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4814,7 +4750,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4826,7 +4761,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4838,7 +4772,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4850,7 +4783,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4862,7 +4794,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4874,7 +4805,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4886,7 +4816,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4898,7 +4827,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4910,7 +4838,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4922,7 +4849,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4934,7 +4860,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4946,7 +4871,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4958,7 +4882,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4970,7 +4893,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4982,7 +4904,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -4994,7 +4915,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -5006,7 +4926,6 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
@@ -5018,18 +4937,30 @@
    "families": {
     "C6": 1,
     "C10": 1,
-    "C18": 1,
     "EXACT": 6,
     "C9": 5
    }
   },
   {
-   "class": "AudioStream",
+   "class": "Array",
    "clusters": 6,
    "entities": 6,
    "families": {
-    "C10": 5,
+    "C10": 2,
+    "C3": 1,
     "EXACT": 1
+   }
+  },
+  {
+   "class": "MSFrameAnim",
+   "clusters": 6,
+   "entities": 6,
+   "families": {
+    "C6": 3,
+    "C10": 2,
+    "C11": 1,
+    "EXACT": 6,
+    "C9": 4
    }
   },
   {
@@ -5038,7 +4969,6 @@
    "entities": 8,
    "families": {
     "C6": 4,
-    "C18": 4,
     "EXACT": 6,
     "C10": 4,
     "C9": 2
@@ -5081,7 +5011,24 @@
    }
   },
   {
-   "class": "Field",
+   "class": "WorldDominationTour",
+   "clusters": 6,
+   "entities": 6,
+   "families": {
+    "C10": 6
+   }
+  },
+  {
+   "class": "ShpImage",
+   "clusters": 5,
+   "entities": 5,
+   "families": {
+    "C3": 4,
+    "C10": 1
+   }
+  },
+  {
+   "class": "CellSystem",
    "clusters": 5,
    "entities": 5,
    "families": {}
@@ -5093,12 +5040,37 @@
    "families": {}
   },
   {
-   "class": "Coord",
+   "class": "GameResult",
+   "clusters": 5,
+   "entities": 5,
+   "families": {}
+  },
+  {
+   "class": "Pathfinding",
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C11": 1,
+    "C3": 2
+   }
+  },
+  {
+   "class": "Dialog",
+   "clusters": 5,
+   "entities": 5,
+   "families": {
     "EXACT": 1
+   }
+  },
+  {
+   "class": "CommBufferClass",
+   "clusters": 5,
+   "entities": 6,
+   "families": {
+    "C6": 2,
+    "C10": 3,
+    "EXACT": 3,
+    "C11": 1,
+    "C9": 1
    }
   },
   {
@@ -5106,21 +5078,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
-    "C6": 1,
-    "C10": 1
-   }
-  },
-  {
-   "class": "BlitTransXlatAlpha_ushort",
-   "clusters": 5,
-   "entities": 5,
-   "families": {
-    "C18": 2,
-    "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5130,9 +5089,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5142,9 +5100,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5154,21 +5111,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
-    "C6": 1,
-    "C10": 1
-   }
-  },
-  {
-   "class": "BlitTransLucent25Alpha_ushort",
-   "clusters": 5,
-   "entities": 5,
-   "families": {
-    "C18": 2,
-    "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5178,9 +5122,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5190,9 +5133,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5202,9 +5144,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5214,9 +5155,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5226,9 +5166,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5238,9 +5177,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5250,9 +5188,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5262,9 +5199,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5274,9 +5210,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5286,9 +5221,8 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
@@ -5298,23 +5232,29 @@
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
+    "C9": 5,
     "EXACT": 5,
-    "C9": 3,
     "C6": 1,
     "C10": 1
    }
   },
   {
-   "class": "BlitTransLucent25AlphaZReadWrite_ushort",
+   "class": "RLEBlitTransLucent25Alpha_ushort",
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C18": 2,
-    "EXACT": 5,
     "C9": 3,
+    "EXACT": 3,
     "C6": 1,
     "C10": 1
+   }
+  },
+  {
+   "class": "FontClass",
+   "clusters": 5,
+   "entities": 5,
+   "families": {
+    "C5": 2
    }
   },
   {
@@ -5325,22 +5265,23 @@
     "C3": 2,
     "C6": 1,
     "C10": 4,
-    "C18": 4,
     "EXACT": 5,
     "C9": 4,
     "C11": 1
    }
   },
   {
-   "class": "ProgressScreenClass",
+   "class": "Building",
+   "clusters": 5,
+   "entities": 5,
+   "families": {}
+  },
+  {
+   "class": "INILinkNode",
    "clusters": 5,
    "entities": 5,
    "families": {
-    "C10": 1,
-    "C18": 2,
-    "C6": 1,
-    "EXACT": 4,
-    "C9": 1
+    "C11": 5
    }
   },
   {
@@ -5356,10 +5297,28 @@
    }
   },
   {
-   "class": "CampaignCoop",
+   "class": "MSShapeAnim",
    "clusters": 5,
    "entities": 5,
-   "families": {}
+   "families": {
+    "C6": 2,
+    "C10": 3,
+    "EXACT": 5,
+    "C9": 4,
+    "C11": 3
+   }
+  },
+  {
+   "class": "MSPrintAnim",
+   "clusters": 5,
+   "entities": 5,
+   "families": {
+    "C9": 5,
+    "C11": 3,
+    "EXACT": 5,
+    "C6": 1,
+    "C10": 1
+   }
   },
   {
    "class": "MultiplayerTeam",
@@ -5369,11 +5328,16 @@
     "C6": 3,
     "C10": 2,
     "C11": 2,
-    "C18": 1,
     "EXACT": 5,
     "C3": 1,
     "C9": 3
    }
+  },
+  {
+   "class": "AudioOptionsClass",
+   "clusters": 5,
+   "entities": 5,
+   "families": {}
   },
   {
    "class": "ScriptQueue",
@@ -5382,32 +5346,14 @@
    "families": {}
   },
   {
-   "class": "CDTimerClass",
+   "class": "SelectClass@StripClass@SidebarClass",
    "clusters": 5,
-   "entities": 5,
+   "entities": 7,
    "families": {
-    "C3": 3,
-    "C18": 3,
-    "C11": 2
-   }
-  },
-  {
-   "class": "Array",
-   "clusters": 5,
-   "entities": 5,
-   "families": {
-    "C10": 4,
     "C3": 1,
-    "EXACT": 1
-   }
-  },
-  {
-   "class": "WDTGame",
-   "clusters": 5,
-   "entities": 6,
-   "families": {
-    "C10": 3,
-    "C5": 3
+    "C10": 2,
+    "EXACT": 4,
+    "C9": 1
    }
   },
   {
@@ -5417,7 +5363,6 @@
    "families": {
     "C6": 3,
     "C10": 4,
-    "C18": 3,
     "EXACT": 5,
     "C9": 1
    }
@@ -5720,7 +5665,60 @@
    }
   },
   {
-   "class": "GameResult",
+   "class": "INIEntry",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C11": 4,
+    "C3": 1
+   }
+  },
+  {
+   "class": "Debug",
+   "clusters": 4,
+   "entities": 4,
+   "families": {}
+  },
+  {
+   "class": "SHAPipe",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C11": 3,
+    "C9": 2,
+    "C10": 2,
+    "EXACT": 2
+   }
+  },
+  {
+   "class": "BlowPipe_23",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C3": 2
+   }
+  },
+  {
+   "class": "Base64Pipe",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C9": 3,
+    "C10": 4,
+    "EXACT": 3
+   }
+  },
+  {
+   "class": "Node",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C11": 3,
+    "C10": 1
+   }
+  },
+  {
+   "class": "Field",
    "clusters": 4,
    "entities": 4,
    "families": {}
@@ -5737,29 +5735,15 @@
    }
   },
   {
-   "class": "BlowPipe",
+   "class": "BlowStraw",
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C10": 3,
-    "C18": 3,
-    "EXACT": 3,
-    "C6": 1,
-    "C11": 1
-   }
-  },
-  {
-   "class": "CampaignScore",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C6": 3,
+    "C9": 2,
     "C10": 2,
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 1,
-    "C3": 1,
-    "C11": 1
+    "EXACT": 2,
+    "C6": 1,
+    "C11": 2
    }
   },
   {
@@ -5774,13 +5758,32 @@
    }
   },
   {
+   "class": "AnimTypeList",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C3": 2
+   }
+  },
+  {
+   "class": "TacticalMapClass",
+   "clusters": 4,
+   "entities": 4,
+   "families": {}
+  },
+  {
+   "class": "PacketQueue",
+   "clusters": 4,
+   "entities": 4,
+   "families": {}
+  },
+  {
    "class": "?$BlitTransZRemapXlat@E",
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5797,9 +5800,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5807,9 +5809,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5826,9 +5827,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5845,9 +5845,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5855,9 +5854,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5865,9 +5863,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5875,9 +5872,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5885,9 +5881,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5895,9 +5890,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5932,9 +5926,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5942,9 +5935,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5952,9 +5944,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5989,9 +5980,8 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
@@ -5999,60 +5989,24 @@
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C18": 1,
-    "EXACT": 4,
-    "C9": 3
+    "C9": 4,
+    "EXACT": 4
    }
   },
   {
-   "class": "FacingClass",
+   "class": "ListBox",
    "clusters": 4,
-   "entities": 4,
+   "entities": 5,
    "families": {
-    "C18": 4,
-    "EXACT": 4,
-    "C10": 1
+    "C3": 1
    }
   },
   {
-   "class": "Sidebar",
+   "class": "ComStreamClass",
    "clusters": 4,
    "entities": 4,
    "families": {
-    "C3": 1,
-    "C10": 2,
-    "C11": 1
-   }
-  },
-  {
-   "class": "?$CComObject@VCChatEventSink@@@ATL",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C3": 1,
-    "C10": 1,
-    "C11": 1,
-    "C9": 3,
-    "EXACT": 3
-   }
-  },
-  {
-   "class": "Building",
-   "clusters": 4,
-   "entities": 4,
-   "families": {}
-  },
-  {
-   "class": "MixFileClass",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C6": 3,
-    "C10": 3,
-    "C18": 4,
-    "EXACT": 2,
-    "C11": 3,
-    "C9": 1
+    "C3": 1
    }
   },
   {
@@ -6084,29 +6038,63 @@
    "families": {
     "C6": 2,
     "C10": 2,
-    "C18": 3,
     "EXACT": 4,
-    "C11": 1,
-    "C9": 1
+    "C9": 3,
+    "C11": 1
    }
   },
   {
-   "class": "AudioOptionsClass",
+   "class": "VoxelPaletteClass",
+   "clusters": 4,
+   "entities": 5,
+   "families": {}
+  },
+  {
+   "class": "ReferenceCounted",
    "clusters": 4,
    "entities": 4,
-   "families": {}
+   "families": {
+    "C6": 2,
+    "C10": 2,
+    "EXACT": 2,
+    "C9": 2,
+    "C15": 1
+   }
   },
   {
    "class": "PKPipe",
    "clusters": 4,
    "entities": 4,
    "families": {
+    "C9": 4,
     "C11": 2,
-    "C18": 2,
     "EXACT": 4,
-    "C9": 3,
     "C10": 2
    }
+  },
+  {
+   "class": "Object",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C5": 3
+   }
+  },
+  {
+   "class": "ProgressScreenClass",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C6": 1,
+    "EXACT": 4,
+    "C9": 1
+   }
+  },
+  {
+   "class": "ScoreScreen",
+   "clusters": 4,
+   "entities": 4,
+   "families": {}
   },
   {
    "class": "TextLabelClass",
@@ -6115,11 +6103,22 @@
    "families": {
     "C6": 1,
     "C10": 2,
-    "C18": 2,
     "EXACT": 4,
     "C3": 1,
     "C9": 3,
     "C11": 1
+   }
+  },
+  {
+   "class": "?$ValueGameOption@E@WorldDominationTour",
+   "clusters": 4,
+   "entities": 5,
+   "families": {
+    "C9": 4,
+    "C10": 3,
+    "EXACT": 3,
+    "C11": 2,
+    "C15": 1
    }
   },
   {
@@ -6162,7 +6161,6 @@
    "families": {
     "C6": 3,
     "C10": 5,
-    "C18": 3,
     "EXACT": 4,
     "C9": 1
    }
@@ -6173,8 +6171,7 @@
    "entities": 4,
    "families": {
     "C3": 1,
-    "C11": 4,
-    "EXACT": 1
+    "C11": 4
    }
   },
   {
@@ -6186,21 +6183,55 @@
    }
   },
   {
-   "class": "Base64Pipe",
+   "class": "AudioSample",
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C10": 3,
-    "C18": 2,
-    "EXACT": 3,
-    "C9": 1
+    "C10": 1
    }
   },
   {
-   "class": "WOLPersona",
+   "class": "Particle",
    "clusters": 3,
-   "entities": 4,
+   "entities": 3,
    "families": {}
+  },
+  {
+   "class": "StringBuffer",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "Base64Straw",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C9": 2,
+    "C10": 3,
+    "EXACT": 2
+   }
+  },
+  {
+   "class": "BuildingQueue",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "AudioOcclusion",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "CoordBounds",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C3": 1,
+    "C10": 1
+   }
   },
   {
    "class": "CD",
@@ -6212,21 +6243,36 @@
    }
   },
   {
-   "class": "TacticalMapClass",
+   "class": "FrameTimer",
    "clusters": 3,
    "entities": 3,
    "families": {}
+  },
+  {
+   "class": "Crate",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "LoadSaveDialog",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C3": 1,
+    "C10": 1,
+    "C11": 1
+   }
   },
   {
    "class": "RLEBlitTransXlatAlpha_ushort",
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6234,9 +6280,8 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C18": 2,
+    "C9": 3,
     "EXACT": 3,
-    "C9": 1,
     "C6": 1,
     "C10": 1
    }
@@ -6246,9 +6291,8 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C18": 2,
+    "C9": 3,
     "EXACT": 3,
-    "C9": 1,
     "C6": 1,
     "C10": 1
    }
@@ -6258,21 +6302,8 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C18": 2,
+    "C9": 3,
     "EXACT": 3,
-    "C9": 1,
-    "C6": 1,
-    "C10": 1
-   }
-  },
-  {
-   "class": "RLEBlitTransLucent25Alpha_ushort",
-   "clusters": 3,
-   "entities": 3,
-   "families": {
-    "C18": 2,
-    "EXACT": 3,
-    "C9": 1,
     "C6": 1,
     "C10": 1
    }
@@ -6282,11 +6313,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6294,9 +6324,8 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C18": 2,
+    "C9": 3,
     "EXACT": 3,
-    "C9": 1,
     "C6": 1,
     "C10": 1
    }
@@ -6306,11 +6335,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6318,11 +6346,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6330,11 +6357,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6342,11 +6368,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6354,11 +6379,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6366,11 +6390,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6378,9 +6401,8 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C18": 2,
+    "C9": 3,
     "EXACT": 3,
-    "C9": 1,
     "C6": 1,
     "C10": 1
    }
@@ -6390,11 +6412,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6402,11 +6423,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6414,11 +6434,10 @@
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C9": 2,
+    "C9": 3,
     "EXACT": 3,
     "C6": 1,
-    "C10": 1,
-    "C18": 1
+    "C10": 1
    }
   },
   {
@@ -6427,17 +6446,42 @@
    "entities": 3,
    "families": {
     "C6": 1,
+    "C9": 3,
     "C10": 1,
-    "C18": 1,
-    "EXACT": 3,
-    "C9": 2
+    "EXACT": 3
    }
+  },
+  {
+   "class": "AircraftTypeVector",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C3": 2,
+    "C10": 2
+   }
+  },
+  {
+   "class": "Territory",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
   },
   {
    "class": "BinkMovieClass",
    "clusters": 3,
    "entities": 3,
    "families": {}
+  },
+  {
+   "class": "GraphicMenuAnimItem",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C6": 2,
+    "C10": 2,
+    "EXACT": 3,
+    "C9": 2
+   }
   },
   {
    "class": "GraphicMenuShortcutItem",
@@ -6447,37 +6491,39 @@
     "C6": 2,
     "C10": 2,
     "EXACT": 3,
-    "C9": 2,
-    "C18": 1
+    "C9": 2
    }
   },
   {
-   "class": "TileData",
+   "class": "Sidebar",
    "clusters": 3,
-   "entities": 4,
-   "families": {
-    "C10": 1,
-    "C18": 2,
-    "EXACT": 1,
-    "C3": 1
-   }
+   "entities": 3,
+   "families": {}
   },
   {
-   "class": "ComStreamClass",
+   "class": "House",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "BitmapClass",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "Connection",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "Type",
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C3": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "MovementClass",
-   "clusters": 3,
-   "entities": 3,
-   "families": {
-    "C3": 3,
-    "C18": 3
+    "C7": 1
    }
   },
   {
@@ -6486,9 +6532,20 @@
    "entities": 3,
    "families": {
     "C10": 2,
-    "C18": 1,
     "EXACT": 2
    }
+  },
+  {
+   "class": "Count",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "CampaignCoop",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
   },
   {
    "class": "MultiplayerManBattle",
@@ -6524,24 +6581,15 @@
    }
   },
   {
-   "class": "NetworkAddress",
+   "class": "MSFadeAnim",
    "clusters": 3,
    "entities": 3,
-   "families": {}
-  },
-  {
-   "class": "TextGroup",
-   "clusters": 3,
-   "entities": 3,
-   "families": {}
-  },
-  {
-   "class": "COMClass",
-   "clusters": 3,
-   "entities": 4,
    "families": {
-    "C3": 4,
-    "C18": 4
+    "C9": 3,
+    "C11": 2,
+    "EXACT": 3,
+    "C6": 1,
+    "C10": 1
    }
   },
   {
@@ -6556,37 +6604,18 @@
    }
   },
   {
-   "class": "FontClass",
+   "class": "GameOptions",
    "clusters": 3,
    "entities": 3,
    "families": {
-    "C5": 2
+    "C10": 1
    }
   },
   {
-   "class": "ReferenceCounted",
-   "clusters": 3,
-   "entities": 3,
-   "families": {
-    "C6": 2,
-    "C10": 2,
-    "EXACT": 2,
-    "C15": 1,
-    "C18": 1,
-    "C9": 1
-   }
-  },
-  {
-   "class": "RandomStraw",
+   "class": "Theme",
    "clusters": 3,
    "entities": 4,
-   "families": {
-    "C9": 1,
-    "EXACT": 3,
-    "C6": 1,
-    "C10": 2,
-    "C18": 1
-   }
+   "families": {}
   },
   {
    "class": "AudioQueue",
@@ -6597,19 +6626,20 @@
    }
   },
   {
+   "class": "LoadingScreen",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
    "class": "HashTable",
    "clusters": 3,
    "entities": 3,
    "families": {
-    "EXACT": 2,
-    "C10": 1
+    "C11": 1,
+    "C10": 1,
+    "EXACT": 2
    }
-  },
-  {
-   "class": "ScoreScreen",
-   "clusters": 3,
-   "entities": 3,
-   "families": {}
   },
   {
    "class": "ScoreClass",
@@ -6618,12 +6648,27 @@
    "families": {}
   },
   {
+   "class": "VoxelSection",
+   "clusters": 3,
+   "entities": 3,
+   "families": {}
+  },
+  {
+   "class": "VoxelRenderer",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C11": 3,
+    "C3": 2,
+    "C10": 2
+   }
+  },
+  {
    "class": "type_info",
    "clusters": 3,
    "entities": 4,
    "families": {
     "C10": 3,
-    "C18": 1,
     "EXACT": 2,
     "C9": 1,
     "C7": 1
@@ -6635,7 +6680,7 @@
    "entities": 3,
    "families": {
     "C9": 2,
-    "C10": 2,
+    "C10": 3,
     "EXACT": 3
    }
   },
@@ -6655,7 +6700,7 @@
    "entities": 3,
    "families": {
     "C9": 2,
-    "C10": 1,
+    "C10": 2,
     "EXACT": 3
    }
   },
@@ -6665,12 +6710,21 @@
    "entities": 3,
    "families": {
     "C9": 2,
-    "C10": 1,
+    "C10": 2,
     "EXACT": 3
    }
   },
   {
    "class": "?$CComObject@VCNetUtilEventSink@@@ATL",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C9": 3,
+    "EXACT": 3
+   }
+  },
+  {
+   "class": "?$CComObject@VCChatEventSink@@@ATL",
    "clusters": 3,
    "entities": 3,
    "families": {
@@ -6708,14 +6762,6 @@
    }
   },
   {
-   "class": "Object",
-   "clusters": 3,
-   "entities": 3,
-   "families": {
-    "C5": 3
-   }
-  },
-  {
    "class": "ArrayClass",
    "clusters": 3,
    "entities": 3,
@@ -6724,26 +6770,24 @@
    }
   },
   {
-   "class": "AudioFile",
+   "class": "WDTGame",
+   "clusters": 3,
+   "entities": 3,
+   "families": {
+    "C5": 3
+   }
+  },
+  {
+   "class": "Conflict",
    "clusters": 2,
    "entities": 2,
    "families": {}
   },
   {
-   "class": "Particle",
+   "class": "NetworkBuffer",
    "clusters": 2,
    "entities": 2,
-   "families": {
-    "C11": 1
-   }
-  },
-  {
-   "class": "INIEntry",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C11": 2
-   }
+   "families": {}
   },
   {
    "class": "VtableStub",
@@ -6752,52 +6796,19 @@
    "families": {}
   },
   {
-   "class": "CellSystem",
+   "class": "Camera",
    "clusters": 2,
    "entities": 2,
    "families": {}
   },
   {
-   "class": "Base64Straw",
+   "class": "SaveLoadDialog",
    "clusters": 2,
    "entities": 2,
    "families": {
+    "C3": 2,
     "C10": 2,
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
-   }
-  },
-  {
-   "class": "Network",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C11": 1
-   }
-  },
-  {
-   "class": "BlowStraw",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C9": 1,
-    "C10": 2,
-    "EXACT": 2,
-    "C6": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "BrainClass",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C6": 2,
-    "C11": 2,
-    "C18": 2,
-    "EXACT": 2,
-    "C10": 1
+    "C11": 2
    }
   },
   {
@@ -6813,13 +6824,20 @@
    "families": {}
   },
   {
+   "class": "StringVector",
+   "clusters": 2,
+   "entities": 2,
+   "families": {
+    "C3": 1
+   }
+  },
+  {
    "class": "?$RLEBlitTransZRemapXlat@E",
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -6836,9 +6854,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -6909,9 +6926,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -6928,9 +6944,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -6938,9 +6953,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -6948,9 +6962,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -7080,30 +7093,44 @@
    }
   },
   {
-   "class": "CacheStraw",
+   "class": "CountdownTimer",
    "clusters": 2,
-   "entities": 2,
+   "entities": 3,
    "families": {
-    "C10": 2,
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1,
     "C11": 1
    }
   },
   {
-   "class": "Territory",
+   "class": "CacheStraw",
+   "clusters": 2,
+   "entities": 2,
+   "families": {
+    "C9": 2,
+    "C10": 2,
+    "EXACT": 2,
+    "C11": 1
+   }
+  },
+  {
+   "class": "RateScaler",
    "clusters": 2,
    "entities": 2,
    "families": {}
   },
   {
-   "class": "DropPod",
+   "class": "Menu",
    "clusters": 2,
-   "entities": 3,
+   "entities": 2,
+   "families": {}
+  },
+  {
+   "class": "GameSettings",
+   "clusters": 2,
+   "entities": 2,
    "families": {
-    "C3": 2,
-    "C18": 2
+    "C3": 1,
+    "C10": 1,
+    "EXACT": 1
    }
   },
   {
@@ -7118,7 +7145,7 @@
    }
   },
   {
-   "class": "House",
+   "class": "SHA1",
    "clusters": 2,
    "entities": 2,
    "families": {}
@@ -7132,19 +7159,28 @@
     "C9": 1,
     "C10": 2,
     "C11": 1,
-    "C18": 2,
     "EXACT": 2
    }
   },
   {
-   "class": "SHPReference",
+   "class": "ReinforcementClass",
+   "clusters": 2,
+   "entities": 2,
+   "families": {}
+  },
+  {
+   "class": "CellLand",
+   "clusters": 2,
+   "entities": 2,
+   "families": {}
+  },
+  {
+   "class": "ComPtr",
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C11": 1,
-    "C10": 1,
-    "C18": 1,
-    "EXACT": 1
+    "C3": 1,
+    "C11": 1
    }
   },
   {
@@ -7159,13 +7195,10 @@
    }
   },
   {
-   "class": "Struct",
+   "class": "SettingsClass",
    "clusters": 2,
-   "entities": 3,
-   "families": {
-    "C3": 2,
-    "C18": 2
-   }
+   "entities": 2,
+   "families": {}
   },
   {
    "class": "MapFile",
@@ -7183,32 +7216,21 @@
    "families": {}
   },
   {
-   "class": "LoadScreen",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C11": 2,
-    "C18": 2,
-    "EXACT": 2,
-    "C10": 1
-   }
-  },
-  {
-   "class": "SkirmishDialog",
+   "class": "ModemGame",
    "clusters": 2,
    "entities": 2,
    "families": {}
   },
   {
-   "class": "GameOptions",
+   "class": "SymbolTable",
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C10": 1
+    "C3": 1
    }
   },
   {
-   "class": "PlayerClass",
+   "class": "NetworkManager",
    "clusters": 2,
    "entities": 2,
    "families": {
@@ -7220,9 +7242,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
-    "EXACT": 2,
-    "C9": 1
+    "C9": 2,
+    "EXACT": 2
    }
   },
   {
@@ -7232,7 +7253,6 @@
    "families": {
     "C6": 1,
     "C10": 3,
-    "C18": 1,
     "EXACT": 2,
     "C9": 1
    }
@@ -7247,28 +7267,9 @@
    }
   },
   {
-   "class": "Rect",
+   "class": "WOLPersona",
    "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C11": 1,
-    "C3": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "DynamicStringArray",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C3": 2,
-    "C18": 2
-   }
-  },
-  {
-   "class": "BuildingPlacement",
-   "clusters": 2,
-   "entities": 2,
+   "entities": 3,
    "families": {}
   },
   {
@@ -7276,9 +7277,8 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
+    "C9": 2,
     "EXACT": 2,
-    "C9": 1,
     "C10": 1,
     "C11": 1
    }
@@ -7288,11 +7288,19 @@
    "clusters": 2,
    "entities": 2,
    "families": {
-    "C18": 1,
+    "C9": 2,
     "EXACT": 2,
-    "C9": 1,
     "C10": 1,
     "C11": 1
+   }
+  },
+  {
+   "class": "AudioStream",
+   "clusters": 2,
+   "entities": 2,
+   "families": {
+    "C10": 1,
+    "EXACT": 1
    }
   },
   {
@@ -7315,17 +7323,6 @@
     "C10": 3,
     "EXACT": 2,
     "C9": 1
-   }
-  },
-  {
-   "class": "SHAPipe",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C9": 2,
-    "C10": 2,
-    "EXACT": 2,
-    "C11": 1
    }
   },
   {
@@ -7367,28 +7364,11 @@
    }
   },
   {
-   "class": "WorldDominationTour",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C10": 2
-   }
-  },
-  {
-   "class": "HashMap",
-   "clusters": 2,
-   "entities": 2,
-   "families": {
-    "C10": 2,
-    "EXACT": 2
-   }
-  },
-  {
    "class": "Mixer",
    "clusters": 2,
    "entities": 2,
    "families": {
-    "EXACT": 2
+    "C11": 2
    }
   },
   {
@@ -7400,7 +7380,21 @@
    }
   },
   {
-   "class": "PlacementList",
+   "class": "FontRenderer",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "AudioBuffer",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C10": 1
+   }
+  },
+  {
+   "class": "TileSystem",
    "clusters": 1,
    "entities": 1,
    "families": {}
@@ -7417,18 +7411,10 @@
    }
   },
   {
-   "class": "Pathfinding",
+   "class": "Network",
    "clusters": 1,
    "entities": 1,
    "families": {}
-  },
-  {
-   "class": "Warhead",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C10": 1
-   }
   },
   {
    "class": "TacticalMap",
@@ -7437,22 +7423,36 @@
    "families": {}
   },
   {
+   "class": "Text",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C3": 1
+   }
+  },
+  {
+   "class": "ShroudClass",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C3": 1,
+    "C10": 1
+   }
+  },
+  {
    "class": "ButtonClass",
    "clusters": 1,
    "entities": 1,
    "families": {}
   },
   {
-   "class": "AudioFileClass",
+   "class": "Carryall",
    "clusters": 1,
    "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
+   "families": {}
   },
   {
-   "class": "Carryall",
+   "class": "Delegate",
    "clusters": 1,
    "entities": 1,
    "families": {}
@@ -7464,18 +7464,12 @@
    "families": {}
   },
   {
-   "class": "INoticeSource",
+   "class": "MixHeaderData",
    "clusters": 1,
    "entities": 1,
    "families": {
-    "C10": 1
+    "C11": 1
    }
-  },
-  {
-   "class": "AudioSample",
-   "clusters": 1,
-   "entities": 1,
-   "families": {}
   },
   {
    "class": "ConnManClass",
@@ -7489,7 +7483,55 @@
    }
   },
   {
+   "class": "NetworkSession",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "ModemGuest",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "Terrain",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "Int4",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C11": 1
+   }
+  },
+  {
+   "class": "ObjectVector",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C3": 1
+   }
+  },
+  {
+   "class": "CrateClass",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
    "class": "MapResourceClass",
+   "clusters": 1,
+   "entities": 2,
+   "families": {
+    "C10": 2
+   }
+  },
+  {
+   "class": "AITriggerTypeClass_40",
    "clusters": 1,
    "entities": 2,
    "families": {}
@@ -7500,8 +7542,21 @@
    "entities": 2,
    "families": {
     "C3": 1,
-    "C18": 1
+    "C10": 2,
+    "C11": 1
    }
+  },
+  {
+   "class": "NetworkGameSetup",
+   "clusters": 1,
+   "entities": 2,
+   "families": {}
+  },
+  {
+   "class": "VectorClass_cptr_MultiMission",
+   "clusters": 1,
+   "entities": 2,
+   "families": {}
   },
   {
    "class": "MovieHandle",
@@ -7513,13 +7568,10 @@
    }
   },
   {
-   "class": "BlowPipe_23",
+   "class": "MoveFeedback",
    "clusters": 1,
    "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
+   "families": {}
   },
   {
    "class": "NetworkLobby",
@@ -7528,52 +7580,35 @@
    "families": {}
   },
   {
-   "class": "ActionQueue",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C10": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "GameSettings",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C10": 1,
-    "C18": 1,
-    "EXACT": 1
-   }
-  },
-  {
-   "class": "WOLGameList",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "CSFClass",
-   "clusters": 1,
-   "entities": 2,
-   "families": {
-    "C10": 2,
-    "C18": 1
-   }
-  },
-  {
-   "class": "NetworkManager",
+   "class": "FileExtension",
    "clusters": 1,
    "entities": 1,
    "families": {}
   },
   {
-   "class": "GameState",
+   "class": "Skirmish",
    "clusters": 1,
    "entities": 2,
+   "families": {}
+  },
+  {
+   "class": "ProjectileTrail",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "ShpFrameInfo",
+   "clusters": 1,
+   "entities": 1,
+   "families": {
+    "C11": 1
+   }
+  },
+  {
+   "class": "Screen",
+   "clusters": 1,
+   "entities": 1,
    "families": {}
   },
   {
@@ -7582,7 +7617,6 @@
    "entities": 1,
    "families": {
     "C9": 1,
-    "C18": 1,
     "EXACT": 1
    }
   },
@@ -7593,7 +7627,6 @@
    "families": {
     "C9": 1,
     "C11": 1,
-    "C18": 1,
     "EXACT": 1
    }
   },
@@ -7604,37 +7637,31 @@
    "families": {}
   },
   {
-   "class": "PairVector",
-   "clusters": 1,
-   "entities": 2,
-   "families": {
-    "C10": 2,
-    "C18": 1
-   }
-  },
-  {
-   "class": "VeinholeClass",
+   "class": "FileTreeNode",
    "clusters": 1,
    "entities": 1,
    "families": {}
   },
   {
-   "class": "Crate",
+   "class": "PlayerClass",
    "clusters": 1,
    "entities": 1,
    "families": {}
   },
   {
-   "class": "ScreenEffect",
+   "class": "TClassFactory_CampaignClass",
    "clusters": 1,
    "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
+   "families": {}
   },
   {
-   "class": "PriQueue",
+   "class": "ThemeManager",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
+   "class": "Map",
    "clusters": 1,
    "entities": 1,
    "families": {}
@@ -7648,7 +7675,6 @@
     "C9": 1,
     "C10": 1,
     "C11": 1,
-    "C18": 1,
     "EXACT": 1
    }
   },
@@ -7675,6 +7701,12 @@
     "C11": 1,
     "EXACT": 1
    }
+  },
+  {
+   "class": "WDTSurface",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
   },
   {
    "class": "CampaignProperties@WorldDominationTour",
@@ -7713,6 +7745,12 @@
    }
   },
   {
+   "class": "Territory_WorldDominationTour_8",
+   "clusters": 1,
+   "entities": 1,
+   "families": {}
+  },
+  {
    "class": "PlayerProfile",
    "clusters": 1,
    "entities": 1,
@@ -7729,17 +7767,7 @@
    "clusters": 1,
    "entities": 1,
    "families": {
-    "C3": 1,
-    "C18": 1
-   }
-  },
-  {
-   "class": "AngerStruct",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
+    "C3": 1
    }
   },
   {
@@ -7749,16 +7777,13 @@
    "families": {}
   },
   {
-   "class": "Matrix3x4",
+   "class": "File",
    "clusters": 1,
    "entities": 1,
-   "families": {
-    "C3": 1,
-    "C18": 1
-   }
+   "families": {}
   },
   {
-   "class": "File",
+   "class": "DynamicVectorClass_PAD",
    "clusters": 1,
    "entities": 1,
    "families": {}
@@ -7807,19 +7832,10 @@
    }
   },
   {
-   "class": "Type",
-   "clusters": 1,
-   "entities": 1,
-   "families": {
-    "C7": 1
-   }
-  },
-  {
    "class": "DynamicClass",
    "clusters": 1,
    "entities": 1,
    "families": {
-    "C10": 1,
     "EXACT": 1
    }
   },
@@ -7848,7 +7864,7 @@
    }
   },
   {
-   "class": "RateScaler",
+   "class": "Flag",
    "clusters": 1,
    "entities": 1,
    "families": {

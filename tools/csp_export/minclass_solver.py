@@ -1475,10 +1475,19 @@ def main():
         if m is None:
             # --strict-c1：稀疏布局不再放行，所有类都必须真正覆盖被访问的字节区间。
             # 这是检验 K 是否被「万能空类」支配的开关（Math 覆盖 968 簇就是该漏洞）。
-            m = 0 if "--strict-c1" in sys.argv else sparse_mask
-            for ci in dense_list:
-                if covers(ci, o, w):
-                    m |= (1 << ci)
+            # 默认（可靠口径）：C1 只用「装得下」这条**必要条件**（c1_size_mask）。
+            # 「缺成员即排除」依赖「布局完备」假设，而实测 class_layouts 缺 45% 观测偏移，
+            # 假设不成立。对照实验（2026-10-30）：该判据只贡献 4 个唯一解（10,288 vs 10,284），
+            # 却制造约 380 个矛盾簇 —— 收益 0.04%、代价是错误排除真解。
+            # 布局因此按值域处理：成员是"已知的"，缺的是"未知"，不是"不存在"。
+            # --c1-covers 恢复旧口径；--strict-c1 再叠加「稀疏布局不放行」。
+            if "--c1-covers" in sys.argv or "--strict-c1" in sys.argv:
+                m = 0 if "--strict-c1" in sys.argv else sparse_mask
+                for ci in dense_list:
+                    if covers(ci, o, w):
+                        m |= (1 << ci)
+            else:
+                m = FULL
             c1_range_cache[key] = m
         return m
 
@@ -2270,10 +2279,10 @@ def main():
         if _tic is None:
             _c11b_unres += 1
             continue
-        if exact.get(_eidc) and any(_ci != _tic for _ci, _s in exact[_eidc]):
-            continue
-        exact[_eidc].append((_tic, "C11b:member-type"))
-        exact_count["C11"] += 1
+        # FIX: 成员声明 T* 可以持有 T 的派生类，所以约束是 subobj ⊑ T（后代域），
+        # 不是 subobj == T。原实现钉 exact 会**禁止**所有派生类，是硬错误。
+        _m11b = allowed_of(_tic)
+        fam["C11"][_eidc] = fam["C11"].get(_eidc, FULL) & _m11b
         census["C11"] += 1
         _c11b_exact += 1
     print("[C11b] member-type exact=%d (containers=%d unresolved_type=%d no_container=%d)"
@@ -2427,6 +2436,16 @@ def main():
             break
     print("[C18c] cascade exact per round=%s (classes in signature table=%d)"
           % (_c18c_rounds, len(_cls_big18)), flush=True)
+
+    # FIX：C18/C18b/C18c 是**启发式**（"该类签名恰好覆盖观测集"依赖"所有类的签名都已知"
+    # 这个完备性假设，不成立）。原实现只在写 exact 时设了开关，fam["C18"] 掩码
+    # 仍无条件生效 —— 实测制造 310/386 个矛盾簇并改变值域。可靠模式下必须清空。
+    if not getattr(args, "allow_heuristics", False):
+        if fam.get("C18"):
+            print("[C18] heuristic masks discarded in sound mode: %d entities"
+                  % len(fam["C18"]), flush=True)
+        fam["C18"] = {}
+        census["C18"] = 0
 
     # ---------------- C19：构造调用给出源实体的类 ----------------
     # 汇编事实：`lea ecx,[ebp-18]; call Foo::Foo` / `mov ecx,ebx; call Foo::Foo`
@@ -3030,6 +3049,9 @@ def main():
 
     # ---------------- 求解 ----------------
     _c1_exempt = set()    # 冲突消解台账：C1 证据被驳倒的簇 root（簇局部豁免）
+    # 证据自相矛盾的簇：**不仲裁、不丢弃任何族**，答案记为「不知道」。
+    # 用户裁定：冲突必须当 bug 追查，禁止按 provenance 强弱丢弃证据后采信结果。
+    _unknown_roots = set()
 
     def cluster_domains(enabled, apply_c1=True):
         """返回 [(cluster, domain, exact_ci, exact_src, flags)]。
@@ -3045,6 +3067,8 @@ def main():
             m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
             if cl.get("root") in _c1_exempt:
                 m_c1 = FULL     # 冲突消解：该簇的 C1 证据已被驳倒（见消解台账）
+            if cl.get("root") in _unknown_roots:
+                m_c1 = FULL     # 证据矛盾：不主张任何类
             _dbgr = os.environ.get("MC_DBG_ROOT")
             if _dbgr and str(cl.get("root")) == _dbgr:
                 _cw = resolve("Sidebar")
@@ -3061,6 +3085,9 @@ def main():
             masks = {"C1": m_c1}
             for f in enabled:
                 if f == "C1":
+                    continue
+                if cl.get("root") in _unknown_roots:
+                    masks[f] = FULL
                     continue
                 mf = FULL
                 hit = False
@@ -3430,7 +3457,7 @@ def main():
                 _tn = _rs11(_nm11((_m11 or {}).get("type")))
                 _ci11 = resolve(_cn); _ti11 = resolve(_tn) if _tn else None
                 if _ci11 is not None and _ti11 is not None:
-                    _member_pairs[(_ci11, int(_off11))] = _ti11
+                    _member_pairs.setdefault((_ci11, int(_off11)), set()).add(_ti11)
                     _n_layout_pairs11 += 1
         _n_after_layouts11 = len(_member_pairs)
         # 键解析容错：+0x / +0X 前缀、大小写十六进制、模板名（.* 贪婪已覆盖 @/$）
@@ -3443,7 +3470,7 @@ def main():
             _tn = _rs11(_nm11((_v11 or {}).get("type")))
             _ti11 = resolve(_tn) if _tn else None
             if _ci11 is not None and _ti11 is not None:
-                _member_pairs.setdefault((_ci11, int(_mm11.group(2), 16)), _ti11)
+                _member_pairs.setdefault((_ci11, int(_mm11.group(2), 16)), set()).add(_ti11)
         _n_mt_pairs11 = len(_member_pairs) - _n_after_layouts11
     except Exception:
         _member_pairs = {}
@@ -3518,8 +3545,9 @@ def main():
         for _src_cls in (_cls_cd, _cls_c1):
             if _src_cls is None:
                 continue
-            if (_cc11b, _off11b) not in _member_pairs:
-                _member_pairs[(_cc11b, _off11b)] = _src_cls
+            _dom_s = _member_pairs.setdefault((_cc11b, _off11b), set())
+            if _src_cls not in _dom_s:
+                _dom_s.add(_src_cls)
                 _n_binary_pairs11 += 1
     print("[C11] member-type sources: layouts=%d member_types=%d binary_derived=%d total=%d"
           % (_n_layout_pairs11, _n_mt_pairs11, _n_binary_pairs11, len(_member_pairs)),
@@ -3581,11 +3609,12 @@ def main():
                 while _x:
                     _b = _x & -_x; _x ^= _b
                     _ci = _b.bit_length() - 1
-                    _t = _member_pairs.get((_ci, _off))
-                    if _t is None:
+                    _ts = _member_pairs.get((_ci, _off))
+                    if not _ts:
                         continue
                     _has_ev = True
-                    _allowed_m |= _desc_mask11(_t)
+                    for _t in _ts:
+                        _allowed_m |= _desc_mask11(_t)
                 if _has_ev:
                     _nm = _dm & _allowed_m
                     if _nm != _dm and _nm != 0:
@@ -3596,10 +3625,10 @@ def main():
                 while _x:
                     _b = _x & -_x; _x ^= _b
                     _ci = _b.bit_length() - 1
-                    _t = _member_pairs.get((_ci, _off))
-                    if _t is None:
+                    _ts = _member_pairs.get((_ci, _off))
+                    if not _ts:
                         _allowed_c |= _b        # 无证据的类不排除（稀疏布局）
-                    elif (_desc_mask11(_t) & _dm):
+                    elif any((_desc_mask11(_t) & _dm) for _t in _ts):
                         _allowed_c |= _b
                 _nc = _dc & _allowed_c
                 if _nc != _dc and _nc != 0:
@@ -3898,6 +3927,7 @@ def main():
                     _c10_p2_added += 1
         print("[C10] phase2 edges=%d added_constraints=%d skipped_empty=%d"
               % (len(_call_edges_p2), _c10_p2_added, _p2_skipped), flush=True)
+        census["C10"] = len(fam["C10"])
         print("[C10] total entities constrained=%d" % len(fam["C10"]), flush=True)
 
         # C1 证据剔除（X159 地址级）后若出现孤立冲突：该簇的观测不足以支持任何类，
@@ -3989,34 +4019,15 @@ def main():
             _inter = FULL
             for _f in all_fams:
                 _inter &= _fmasks[_f]
-            while not _inter:
-                # 贡献族 = 掩码非 FULL 者；按 provenance 丢最弱（排名越后越弱）
-                _contrib = [_f for _f in all_fams if _fmasks[_f] != FULL]
-                if not _contrib:
-                    break               # 全 FULL 交域不可能为空——防御
-                _weak = max(_contrib,
-                            key=lambda f: (_PROV_RANK.index(f) if f in _PROV_RANK
-                                           else len(_PROV_RANK)))
-                if _weak == "C1":
-                    # C1 掩码由簇 obs 直接推导（c1_mask），不经 fam["C1"]——
-                    # 簇局部豁免是「丢弃该簇 C1 证据」的唯一正确实现
-                    _c1_exempt.add(_cl.get("root"))
-                else:
-                    for _eid in _cl["ents"]:        # 仅本簇实体 → 簇局部生效
-                        if _eid in fam[_weak]:
-                            fam[_weak][_eid] = FULL
-                _fmasks[_weak] = FULL
-                _inter = FULL
-                for _f in all_fams:
-                    _inter &= _fmasks[_f]
+            if not _inter:
+                # 不仲裁：记录矛盾族集合，该簇答案记为未知（从 constrained 移出）。
+                _unknown_roots.add(_cl.get("root"))
                 _res_ledger.append({
                     "cluster": _cl.get("root"),
-                    "dropped_family": _weak,
-                    "remaining_families": [_f for _f in all_fams
-                                           if _fmasks[_f] != FULL],
-                    "domain_after": _inter.bit_count(),
-                    "class_after": (names[_inter.bit_length() - 1]
-                                    if _inter and _inter.bit_count() == 1 else None),
+                    "status": "inconsistent",
+                    "families": sorted(_f for _f in all_fams if _fmasks[_f] != FULL),
+                    "family_sizes": {f: _fmasks[f].bit_count()
+                                     for f in all_fams if _fmasks[f] != FULL},
                 })
                 _n_drops += 1
         print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
