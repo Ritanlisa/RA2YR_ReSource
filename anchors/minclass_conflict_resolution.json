@@ -243,7 +243,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 64,
+  "domain_after": 227,
   "class_after": null
  },
  {
@@ -262,7 +262,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 116,
+  "domain_after": 254,
   "class_after": null
  },
  {
@@ -272,7 +272,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 6,
+  "domain_after": 72,
   "class_after": null
  },
  {
@@ -461,7 +461,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 19,
+  "domain_after": 192,
   "class_after": null
  },
  {
@@ -491,7 +491,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 53,
+  "domain_after": 206,
   "class_after": null
  },
  {
@@ -501,7 +501,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 53,
+  "domain_after": 225,
   "class_after": null
  },
  {
@@ -511,7 +511,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 213,
   "class_after": null
  },
  {
@@ -561,7 +561,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 6,
+  "domain_after": 183,
   "class_after": null
  },
  {
@@ -571,7 +571,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 5,
+  "domain_after": 181,
   "class_after": null
  },
  {
@@ -581,7 +581,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 4,
+  "domain_after": 190,
   "class_after": null
  },
  {
@@ -591,7 +591,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 66,
+  "domain_after": 386,
   "class_after": null
  },
  {
@@ -602,15 +602,6 @@
    "C15"
   ],
   "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:4D85D0:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 5,
   "class_after": null
  },
  {
@@ -1080,7 +1071,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 176,
+  "domain_after": 348,
   "class_after": null
  },
  {
@@ -1091,7 +1082,18 @@
    "C3",
    "C11"
   ],
-  "domain_after": 2,
+  "domain_after": 34,
+  "class_after": null
+ },
+ {
+  "cluster": "R:4FDD10:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C3",
+   "C11"
+  ],
+  "domain_after": 31,
   "class_after": null
  },
  {
@@ -1129,7 +1131,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 202,
   "class_after": null
  },
  {
@@ -1246,7 +1248,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 158,
+  "domain_after": 308,
   "class_after": null
  },
  {
@@ -1538,7 +1540,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 6,
+  "domain_after": 165,
   "class_after": null
  },
  {
@@ -1548,7 +1550,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 174,
   "class_after": null
  },
  {
@@ -1628,7 +1630,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 187,
   "class_after": null
  },
  {
@@ -1638,7 +1640,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 135,
+  "domain_after": 263,
   "class_after": null
  },
  {
@@ -1708,7 +1710,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 200,
+  "domain_after": 407,
   "class_after": null
  },
  {
@@ -1718,7 +1720,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 134,
+  "domain_after": 262,
   "class_after": null
  },
  {
@@ -1777,7 +1779,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 4,
+  "domain_after": 228,
   "class_after": null
  },
  {
@@ -1845,7 +1847,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 132,
+  "domain_after": 315,
   "class_after": null
  },
  {
@@ -1935,7 +1937,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 186,
+  "domain_after": 372,
   "class_after": null
  },
  {
@@ -1985,7 +1987,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 76,
+  "domain_after": 412,
   "class_after": null
  },
  {
@@ -1995,7 +1997,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 51,
+  "domain_after": 163,
   "class_after": null
  },
  {
@@ -2005,7 +2007,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 52,
+  "domain_after": 210,
   "class_after": null
  },
  {
@@ -2025,7 +2027,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 171,
   "class_after": null
  },
  {
@@ -2074,7 +2076,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 57,
+  "domain_after": 215,
   "class_after": null
  },
  {
@@ -2143,7 +2145,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 64,
+  "domain_after": 189,
   "class_after": null
  },
  {
@@ -2171,7 +2173,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 13,
+  "domain_after": 137,
   "class_after": null
  },
  {
@@ -2181,7 +2183,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 13,
+  "domain_after": 137,
   "class_after": null
  },
  {
@@ -2191,7 +2193,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 14,
+  "domain_after": 149,
   "class_after": null
  },
  {
@@ -2201,7 +2203,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 13,
+  "domain_after": 148,
   "class_after": null
  },
  {
@@ -2211,7 +2213,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 75,
+  "domain_after": 225,
   "class_after": null
  },
  {
@@ -2280,7 +2282,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 57,
+  "domain_after": 216,
   "class_after": null
  },
  {
@@ -2290,7 +2292,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 57,
+  "domain_after": 215,
   "class_after": null
  },
  {
@@ -2300,7 +2302,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 104,
+  "domain_after": 320,
   "class_after": null
  },
  {
@@ -2310,7 +2312,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 57,
+  "domain_after": 215,
   "class_after": null
  },
  {
@@ -2408,7 +2410,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 210,
   "class_after": null
  },
  {
@@ -2476,7 +2478,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 70,
+  "domain_after": 208,
   "class_after": null
  },
  {
@@ -2531,7 +2533,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 54,
+  "domain_after": 248,
   "class_after": null
  },
  {
@@ -2608,7 +2610,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 19,
+  "domain_after": 192,
   "class_after": null
  },
  {
@@ -2627,7 +2629,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 212,
   "class_after": null
  },
  {
@@ -2637,7 +2639,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 9,
+  "domain_after": 181,
   "class_after": null
  },
  {
@@ -2647,7 +2649,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 4,
+  "domain_after": 176,
   "class_after": null
  },
  {
@@ -2717,7 +2719,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 102,
+  "domain_after": 620,
   "class_after": null
  },
  {
@@ -2727,7 +2729,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 85,
+  "domain_after": 603,
   "class_after": null
  },
  {
@@ -2738,15 +2740,6 @@
    "C15"
   ],
   "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "P:6CC390:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 10,
   "class_after": null
  },
  {
@@ -2766,7 +2759,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 10,
+  "domain_after": 41,
   "class_after": null
  },
  {
@@ -2785,7 +2778,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 10,
+  "domain_after": 41,
   "class_after": null
  },
  {
@@ -2795,7 +2788,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 36,
+  "domain_after": 164,
   "class_after": null
  },
  {
@@ -2848,22 +2841,13 @@
   "class_after": null
  },
  {
-  "cluster": "P:6E9140:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 6,
-  "class_after": null
- },
- {
   "cluster": "P:691590:3",
   "dropped_family": "C18",
   "remaining_families": [
    "C1",
    "C3"
   ],
-  "domain_after": 72,
+  "domain_after": 230,
   "class_after": null
  },
  {
@@ -2891,7 +2875,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 6,
+  "domain_after": 189,
   "class_after": null
  },
  {
@@ -2901,7 +2885,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 25,
+  "domain_after": 88,
   "class_after": null
  },
  {
@@ -2942,34 +2926,6 @@
   "class_after": null
  },
  {
-  "cluster": "P:6F7CA0:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 6,
-  "class_after": null
- },
- {
-  "cluster": "P:6F9E50:0",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C3"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "P:6F9E50:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 4,
-  "class_after": null
- },
- {
   "cluster": "R:6FDB80:ecx",
   "dropped_family": "C18",
   "remaining_families": [
@@ -2987,16 +2943,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 41,
-  "class_after": null
- },
- {
-  "cluster": "P:6FDD50:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 6,
+  "domain_after": 144,
   "class_after": null
  },
  {
@@ -3006,7 +2953,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 175,
   "class_after": null
  },
  {
@@ -3016,7 +2963,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 175,
   "class_after": null
  },
  {
@@ -3035,7 +2982,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 252,
   "class_after": null
  },
  {
@@ -3045,7 +2992,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 6,
+  "domain_after": 250,
   "class_after": null
  },
  {
@@ -3104,7 +3051,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 162,
+  "domain_after": 316,
   "class_after": null
  },
  {
@@ -3114,16 +3061,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
-  "class_after": null
- },
- {
-  "cluster": "P:739EC0:0",
-  "dropped_family": "C1",
-  "remaining_families": [
-   "C3"
-  ],
-  "domain_after": 6,
+  "domain_after": 264,
   "class_after": null
  },
  {
@@ -3133,7 +3071,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 11,
+  "domain_after": 116,
   "class_after": null
  },
  {
@@ -3152,7 +3090,16 @@
    "C1",
    "C3"
   ],
-  "domain_after": 26,
+  "domain_after": 222,
+  "class_after": null
+ },
+ {
+  "cluster": "R:749150:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 150,
   "class_after": null
  },
  {
@@ -3230,7 +3177,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 4,
+  "domain_after": 231,
   "class_after": null
  },
  {
@@ -3240,7 +3187,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 265,
   "class_after": null
  },
  {
@@ -3290,7 +3237,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 207,
   "class_after": null
  },
  {
@@ -3339,7 +3286,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 129,
+  "domain_after": 305,
   "class_after": null
  },
  {
@@ -3349,7 +3296,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 42,
+  "domain_after": 290,
   "class_after": null
  },
  {
@@ -3359,7 +3306,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 203,
   "class_after": null
  },
  {
@@ -3369,7 +3316,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 51,
+  "domain_after": 205,
   "class_after": null
  },
  {
@@ -3379,7 +3326,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 25,
+  "domain_after": 236,
   "class_after": null
  },
  {
@@ -3389,7 +3336,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 542,
   "class_after": null
  },
  {
@@ -3399,7 +3346,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 81,
+  "domain_after": 232,
   "class_after": null
  },
  {
@@ -3409,7 +3356,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 81,
+  "domain_after": 216,
   "class_after": null
  },
  {
@@ -3419,7 +3366,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 27,
+  "domain_after": 606,
   "class_after": null
  },
  {
@@ -3429,7 +3376,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 202,
   "class_after": null
  },
  {
@@ -3439,7 +3386,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 49,
+  "domain_after": 203,
   "class_after": null
  },
  {
@@ -3449,7 +3396,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 21,
+  "domain_after": 542,
   "class_after": null
  },
  {
@@ -3459,7 +3406,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 102,
+  "domain_after": 620,
   "class_after": null
  },
  {
@@ -3499,7 +3446,7 @@
    "C1",
    "C3"
   ],
-  "domain_after": 83,
+  "domain_after": 323,
   "class_after": null
  },
  {

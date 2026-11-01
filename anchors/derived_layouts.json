@@ -5315,7 +5315,7 @@
 "CampaignClass": {
 "member_count": 7,
 "extent": 672,
-"clusters": 9,
+"clusters": 10,
 "members": [
 [
 0,
@@ -9354,7 +9354,7 @@
 "HouseTypeClass": {
 "member_count": 60,
 "extent": 425,
-"clusters": 18,
+"clusters": 17,
 "members": [
 [
 0,

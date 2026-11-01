@@ -1710,9 +1710,11 @@ def main():
     unknown_slot = FULL & ~c3_known["any"]
 
     def c3_mask(slot):
-        # 虚调用要求接收者**必须是多态类**（有 vtable）——无 vtable 信息的类不能当接收者。
-        # 基线把 unknown_slot 无条件并进来，等于给每个接收者域白加全部无布局类。
-        return slot_mask.get(slot, 0)
+        # 虚调用要求接收者有 vtable，但**没有 vtable 数据 ≠ 没有 vtable**：
+        # vtable_slot_authority 只覆盖 954 类，Sidebar / TacticalClass 等都没有记录。
+        # 早先去掉 unknown_slot 使这些类被错误排除（实证 R:4FA350:ecx：
+        # IDA 证明对象访问 this+0x53B0、Sidebar 21,468B 7/7 命中，却被 C3 排除）。
+        return slot_mask.get(slot, 0) | unknown_slot
 
     c3_garbage_slots = collections.Counter()
     for e in raw:
@@ -2997,7 +2999,18 @@ def main():
             m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
             if cl.get("root") in _c1_exempt:
                 m_c1 = FULL     # 冲突消解：该簇的 C1 证据已被驳倒（见消解台账）
+            _dbgr = os.environ.get("MC_DBG_ROOT")
+            if _dbgr and str(cl.get("root")) == _dbgr:
+                _cw = resolve("Sidebar")
+                print("[dbg] %s BEFORE _pfm: c1 allows Sidebar=%s size=%d obs=%d"
+                      % (_dbgr, bool(_cw is not None and ((m_c1 >> _cw) & 1)), m_c1.bit_count(),
+                         len(cl["obs"])), flush=True)
             m_c1 = _pfm(m_c1)   # proven universe：幻影类从 C1 掩码剔除
+            if _dbgr and str(cl.get("root")) == _dbgr:
+                _cw = resolve("Sidebar")
+                print("[dbg] %s AFTER _pfm: c1 allows Sidebar=%s size=%d exempt=%s"
+                      % (_dbgr, bool(_cw is not None and ((m_c1 >> _cw) & 1)), m_c1.bit_count(),
+                         str(cl.get("root")) in _c1_exempt), flush=True)
             m = m_c1
             masks = {"C1": m_c1}
             for f in enabled:
@@ -3049,6 +3062,11 @@ def main():
                 flags["exact_conflict"] = sorted(names[ci] for ci in exs)
                 out.append((cl, domain or FULL, None, srcs, flags))
                 continue
+            if _dbgr and str(cl.get("root")) == _dbgr:
+                _cw = resolve("Sidebar")
+                print("[dbg] %s FINAL: m=%d allowsSidebar=%s exs=%d flags=%s masks=%s"
+                      % (_dbgr, m.bit_count(), bool(_cw is not None and ((m >> _cw) & 1)),
+                         len(exs), sorted(flags), {k: v.bit_count() for k, v in masks.items()}), flush=True)
             if m:
                 out.append((cl, m, None, [], flags))
                 continue
@@ -4518,7 +4536,13 @@ def main():
             print("  obs=%s" % sorted(_cl.get("obs") or ())[:20])
             print("  candidates=%s" % _cands[:40])
             for _f in FAMILIES:
-                _fm = fam[_f].get(_root)
+                # 族掩码按**实体**存储（cluster_domains 亦是逐实体求交），
+                # 早先按簇根查会一直显示 (no mask) —— 诊断键名错误。
+                _fm = None
+                for _eX in (_cl.get("ents") or []):
+                    _mx = fam[_f].get(_eX)
+                    if _mx is not None:
+                        _fm = _mx if _fm is None else (_fm & _mx)
                 if _fm is not None and _fm != FULL:
                     print("    %s allows %d: %s" % (_f, _fm.bit_count(),
                           [names[i] for i in range(len(names)) if (_fm >> i) & 1][:12]))
