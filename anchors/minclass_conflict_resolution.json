@@ -1301,70 +1301,12 @@
   "class_after": null
  },
  {
-  "cluster": "R:525A10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:525A10:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 986,
-  "class_after": null
- },
- {
-  "cluster": "R:526420:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:526420:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 986,
-  "class_after": null
- },
- {
-  "cluster": "R:526B10:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10",
-   "C11"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:526B10:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 27,
-  "class_after": null
- },
- {
   "cluster": "P:528660:0",
   "dropped_family": "C18",
   "remaining_families": [
    "C1",
-   "C7"
+   "C7",
+   "C10"
   ],
   "domain_after": 0,
   "class_after": null
@@ -1373,30 +1315,10 @@
   "cluster": "P:528660:0",
   "dropped_family": "C7",
   "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 465,
-  "class_after": null
- },
- {
-  "cluster": "R:528C00:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
    "C1",
-   "C10",
-   "C11"
+   "C10"
   ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:528C00:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1",
-   "C11"
-  ],
-  "domain_after": 27,
+  "domain_after": 7,
   "class_after": null
  },
  {
@@ -1443,44 +1365,6 @@
    "C11"
   ],
   "domain_after": 2,
-  "class_after": null
- },
- {
-  "cluster": "R:52B0A0:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:52B0A0:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 672,
-  "class_after": null
- },
- {
-  "cluster": "R:535B30:ecx",
-  "dropped_family": "C18",
-  "remaining_families": [
-   "C1",
-   "C10"
-  ],
-  "domain_after": 0,
-  "class_after": null
- },
- {
-  "cluster": "R:535B30:ecx",
-  "dropped_family": "C10",
-  "remaining_families": [
-   "C1"
-  ],
-  "domain_after": 407,
   "class_after": null
  },
  {
@@ -2207,6 +2091,24 @@
   "class_after": null
  },
  {
+  "cluster": "R:632740:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 237,
+  "class_after": null
+ },
+ {
+  "cluster": "R:632870:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 237,
+  "class_after": null
+ },
+ {
   "cluster": "R:63C690:ecx",
   "dropped_family": "C18",
   "remaining_families": [
@@ -2730,6 +2632,25 @@
    "C3"
   ],
   "domain_after": 603,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6C9F10:0",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C10"
+  ],
+  "domain_after": 0,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6C9F10:0",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 557,
   "class_after": null
  },
  {
@@ -3271,6 +3192,44 @@
   "class_after": null
  },
  {
+  "cluster": "P:76F020:2",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C3",
+   "C11"
+  ],
+  "domain_after": 117,
+  "class_after": null
+ },
+ {
+  "cluster": "P:769440:1",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 187,
+  "class_after": null
+ },
+ {
+  "cluster": "R:76DAD0:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 187,
+  "class_after": null
+ },
+ {
+  "cluster": "R:76E180:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 187,
+  "class_after": null
+ },
+ {
   "cluster": "R:770270:ecx",
   "dropped_family": "C10",
   "remaining_families": [
@@ -3502,6 +3461,20 @@
    "C11"
   ],
   "domain_after": 154,
+  "class_after": null
+ },
+ {
+  "cluster": "P:6E0D00:0",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
+  "class_after": null
+ },
+ {
+  "cluster": "P:7CD662:0",
+  "dropped_family": "C10",
+  "remaining_families": [],
+  "domain_after": 1400,
   "class_after": null
  }
 ]

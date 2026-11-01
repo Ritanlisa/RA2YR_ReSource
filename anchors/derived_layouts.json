@@ -13131,7 +13131,7 @@
 "SimpleDialogControl@OwnerDraw": {
 "member_count": 3,
 "extent": 9,
-"clusters": 1,
+"clusters": 5,
 "members": [
 [
 0,
@@ -13144,45 +13144,6 @@
 [
 8,
 1
-]
-]
-},
-"FactionSelectDialogControl@WorldDominationTour": {
-"member_count": 8,
-"extent": 32,
-"clusters": 7,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-1
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-28,
-4
 ]
 ]
 },
@@ -22444,6 +22405,37 @@
 ],
 [
 4,
+4
+]
+]
+},
+"FactionSelectDialogControl@WorldDominationTour": {
+"member_count": 6,
+"extent": 32,
+"clusters": 3,
+"members": [
+[
+0,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+24,
+4
+],
+[
+28,
 4
 ]
 ]

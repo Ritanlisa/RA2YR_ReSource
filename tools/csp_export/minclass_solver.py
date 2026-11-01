@@ -990,7 +990,9 @@ def main():
     ents = collections.defaultdict(lambda: {"obs": set(), "raw": set()})
 
     def touch(eid, raw_id):
-        if eid is None or eid.startswith(("R:", "S:", "V:")):
+        # S:（栈槽/局部变量）升级为一等变量：局部对象指针的类是可求解的。
+        # R:/V: 仍是连接点（寄存器值是中间量，vtable_slot 跨类共枢纽语义无效）。
+        if eid is None or eid.startswith(("R:", "V:")):
             return None
         ents[eid]["raw"].add(raw_id)
         return eid
