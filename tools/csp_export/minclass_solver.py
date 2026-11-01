@@ -2629,7 +2629,11 @@ def main():
         root_self_cls[uf.find(_eid)].add(_ci)
 
 
+    _watch = set(x for x in (os.environ.get("MC_WATCH") or "").split(",") if x)
+
     def un(a, b, channel):
+        if _watch and (str(a) in _watch or str(b) in _watch):
+            print("[union] %-22s %-22s via %s" % (a, b, channel), flush=True)
         if a is None or b is None:
             return False
         ra, rb = uf.find(a), uf.find(b)
@@ -2751,9 +2755,25 @@ def main():
     for _eid, _ci in self_pin_cls.items():
         root_self_cls[uf.find(_eid)].add(_ci)
     multi_joins = sum(1 for s in target_froms.values() if len(s) > 1)
+    # 按**边数**统计每个目标的实参边（不是"可解析来源数"）：参数是个槽位，
+    # 只要有多个调用点写入，它就不是单一对象 —— 即使其它来源解析不出来。
+    # 实证 bug：P:401000:0 有 3 个调用点（edi/esi/edi），仅 1 个可解析，
+    # 于是 reg_def 把参数与 T:4023F0 合并，导致整簇观测错乱、C10 与 C1 假冲突。
+    _edge_cnt = collections.Counter()
+    for _e5 in raw:
+        if _e5.get("type") != "CALL_ARG":
+            continue
+        _t5 = _e5.get("to")
+        if isinstance(_t5, str) and (":this" in _t5 or "::param" in _t5):
+            _edge_cnt[_t5] += 1
+    _edge_cnt_by_ent = collections.Counter()
+    for _t5s, _c5 in _edge_cnt.items():
+        _ee5 = ent_id(_t5s)
+        if _ee5 is not None:
+            _edge_cnt_by_ent[_ee5] = max(_edge_cnt_by_ent[_ee5], _c5)
     for channel, fe, te, kind, clean, site in cands:
         detail = {"channel": channel, "from": fe, "to": te, "site": "0x%X" % site}
-        if len(target_froms[te]) > 1:
+        if len(target_froms[te]) > 1 or _edge_cnt_by_ent.get(te, 0) > 1:
             reject("multi_caller_join", detail)   # 多态汇合点：非同一对象
             continue
         if channel == "reg_def":

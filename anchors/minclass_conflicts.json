@@ -22,12 +22,12 @@
   "evidence_note": "default=spec（非循环口径）；spec+proto 为循环备选口径",
   "merge_policy": "proven-same-object (X152)",
   "rejected_merges": {
-   "unproven_kind": 5948,
-   "multi_caller_join": 18977,
-   "member_chain_unproven": 267,
-   "reg_flow_tainted": 891,
-   "global_unproven": 1407,
-   "self_pin_incompatible": 626
+   "unproven_kind": 5831,
+   "multi_caller_join": 23278,
+   "reg_flow_tainted": 318,
+   "member_chain_unproven": 125,
+   "global_unproven": 133,
+   "self_pin_incompatible": 35
   },
   "ruleGJ": {
    "reg_drops": 0,
@@ -57,8 +57,8 @@
   "K": 575,
   "K_upper": 575,
   "lower_bound": 575,
-  "constrained_clusters": 26144,
-  "free_clusters": 17224,
+  "constrained_clusters": 26369,
+  "free_clusters": 17251,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1400,
@@ -70,9 +70,9 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 14792,
+   "clusters_constrained": 14823,
    "clusters_pinned": 7698,
-   "clusters_free": 28576,
+   "clusters_free": 28797,
    "pinned_classes": 515,
    "forced_classes": 515,
    "conflicts": 0,
@@ -92,9 +92,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 14792,
+   "clusters_constrained": 14823,
    "clusters_pinned": 7698,
-   "clusters_free": 28576,
+   "clusters_free": 28797,
    "pinned_classes": 515,
    "forced_classes": 515,
    "conflicts": 0,
@@ -114,15 +114,15 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 15345,
+   "clusters_constrained": 15376,
    "clusters_pinned": 7708,
-   "clusters_free": 28017,
+   "clusters_free": 28237,
    "pinned_classes": 515,
    "forced_classes": 515,
-   "conflicts": 6,
+   "conflicts": 7,
    "c1_gaps": 0,
    "K": 515,
-   "K_upper": 521,
+   "K_upper": 522,
    "K_total": 515,
    "K_greedy": 515,
    "delta_forced": 0,
@@ -136,15 +136,15 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 15393,
+   "clusters_constrained": 15424,
    "clusters_pinned": 8973,
-   "clusters_free": 27969,
+   "clusters_free": 28189,
    "pinned_classes": 538,
    "forced_classes": 538,
-   "conflicts": 6,
+   "conflicts": 7,
    "c1_gaps": 0,
    "K": 538,
-   "K_upper": 544,
+   "K_upper": 545,
    "K_total": 538,
    "K_greedy": 538,
    "delta_forced": 23,
@@ -158,15 +158,15 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 16184,
+   "clusters_constrained": 16215,
    "clusters_pinned": 9114,
-   "clusters_free": 27178,
+   "clusters_free": 27398,
    "pinned_classes": 551,
    "forced_classes": 551,
-   "conflicts": 6,
+   "conflicts": 7,
    "c1_gaps": 0,
    "K": 553,
-   "K_upper": 559,
+   "K_upper": 560,
    "K_total": 553,
    "K_greedy": 553,
    "delta_forced": 13,
@@ -180,15 +180,15 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 16184,
+   "clusters_constrained": 16215,
    "clusters_pinned": 9114,
-   "clusters_free": 27178,
+   "clusters_free": 27398,
    "pinned_classes": 551,
    "forced_classes": 551,
-   "conflicts": 6,
+   "conflicts": 7,
    "c1_gaps": 0,
    "K": 553,
-   "K_upper": 559,
+   "K_upper": 560,
    "K_total": 553,
    "K_greedy": 553,
    "delta_forced": 0,
@@ -202,15 +202,15 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 16250,
+   "clusters_constrained": 16281,
    "clusters_pinned": 9171,
-   "clusters_free": 27109,
+   "clusters_free": 27329,
    "pinned_classes": 557,
    "forced_classes": 557,
-   "conflicts": 9,
+   "conflicts": 10,
    "c1_gaps": 0,
    "K": 559,
-   "K_upper": 568,
+   "K_upper": 569,
    "K_total": 559,
    "K_greedy": 559,
    "delta_forced": 6,
@@ -224,15 +224,15 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 16386,
-   "clusters_pinned": 9323,
-   "clusters_free": 26973,
+   "clusters_constrained": 16426,
+   "clusters_pinned": 9325,
+   "clusters_free": 27184,
    "pinned_classes": 566,
    "forced_classes": 566,
-   "conflicts": 9,
+   "conflicts": 10,
    "c1_gaps": 0,
    "K": 568,
-   "K_upper": 577,
+   "K_upper": 578,
    "K_total": 568,
    "K_greedy": 568,
    "delta_forced": 9,
@@ -246,15 +246,15 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6384,
    "entities_touched": 5923,
-   "clusters_constrained": 16390,
-   "clusters_pinned": 9323,
-   "clusters_free": 26969,
+   "clusters_constrained": 16430,
+   "clusters_pinned": 9325,
+   "clusters_free": 27180,
    "pinned_classes": 566,
    "forced_classes": 566,
-   "conflicts": 9,
+   "conflicts": 10,
    "c1_gaps": 0,
    "K": 568,
-   "K_upper": 577,
+   "K_upper": 578,
    "K_total": 568,
    "K_greedy": 568,
    "delta_forced": 0,
@@ -268,15 +268,15 @@
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
    "evidence": 0,
    "entities_touched": 15943,
-   "clusters_constrained": 25729,
-   "clusters_pinned": 10603,
-   "clusters_free": 17544,
+   "clusters_constrained": 25972,
+   "clusters_pinned": 10651,
+   "clusters_free": 17575,
    "pinned_classes": 570,
    "forced_classes": 570,
-   "conflicts": 95,
+   "conflicts": 73,
    "c1_gaps": 0,
    "K": 572,
-   "K_upper": 667,
+   "K_upper": 645,
    "K_total": 572,
    "K_greedy": 572,
    "delta_forced": 4,
@@ -290,15 +290,15 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 443,
    "entities_touched": 3597,
-   "clusters_constrained": 26043,
-   "clusters_pinned": 10919,
-   "clusters_free": 17216,
+   "clusters_constrained": 26286,
+   "clusters_pinned": 10967,
+   "clusters_free": 17247,
    "pinned_classes": 573,
    "forced_classes": 573,
-   "conflicts": 109,
+   "conflicts": 87,
    "c1_gaps": 0,
    "K": 575,
-   "K_upper": 684,
+   "K_upper": 662,
    "K_total": 575,
    "K_greedy": 575,
    "delta_forced": 3,
@@ -312,15 +312,15 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 26043,
-   "clusters_pinned": 10919,
-   "clusters_free": 17216,
+   "clusters_constrained": 26286,
+   "clusters_pinned": 10967,
+   "clusters_free": 17247,
    "pinned_classes": 573,
    "forced_classes": 573,
-   "conflicts": 109,
+   "conflicts": 87,
    "c1_gaps": 0,
    "K": 575,
-   "K_upper": 684,
+   "K_upper": 662,
    "K_total": 575,
    "K_greedy": 575,
    "delta_forced": 0,
@@ -334,15 +334,15 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 6607,
-   "clusters_constrained": 25768,
-   "clusters_pinned": 11039,
-   "clusters_free": 17216,
+   "clusters_constrained": 26011,
+   "clusters_pinned": 11093,
+   "clusters_free": 17247,
    "pinned_classes": 573,
    "forced_classes": 573,
-   "conflicts": 384,
+   "conflicts": 362,
    "c1_gaps": 0,
    "K": 575,
-   "K_upper": 959,
+   "K_upper": 937,
    "K_total": 575,
    "K_greedy": 575,
    "delta_forced": 0,
@@ -356,15 +356,15 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 25768,
-   "clusters_pinned": 11039,
-   "clusters_free": 17216,
+   "clusters_constrained": 26011,
+   "clusters_pinned": 11093,
+   "clusters_free": 17247,
    "pinned_classes": 573,
    "forced_classes": 573,
-   "conflicts": 384,
+   "conflicts": 362,
    "c1_gaps": 0,
    "K": 575,
-   "K_upper": 959,
+   "K_upper": 937,
    "K_total": 575,
    "K_greedy": 575,
    "delta_forced": 0,
@@ -703,10 +703,10 @@
    "matched_strict": 6290,
    "no_match": 987,
    "by_cause": {
-    "width_mismatch_only": 850,
-    "suspicious_large_offset": 74,
+    "width_mismatch_only": 848,
+    "suspicious_large_offset": 75,
     "no_class_has_all_offsets_sparse_layout": 3,
-    "param_unknown_class": 52,
+    "param_unknown_class": 53,
     "member_chain_unknown_class": 8
    },
    "samples": [
@@ -8078,12 +8078,42 @@
   "c7_variance_violation_count": 1631,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 95,
-    "exact_conflicts": 611,
+    "unions": 47,
+    "exact_conflicts": 5,
     "examples": [
      {
-      "a": "G:87F5F0",
-      "b": "T:40BD00",
+      "a": "G:87F7E8",
+      "b": "T:5880A0",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "MapClass"
+      ]
+     },
+     {
+      "a": "G:87F7E8",
+      "b": "T:6A5F20",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "SidebarClass"
+      ]
+     },
+     {
+      "a": "G:87F7E8",
+      "b": "T:4AA2B0",
+      "a_classes": [
+       "MouseClass"
+      ],
+      "b_classes": [
+       "MapClass"
+      ]
+     },
+     {
+      "a": "G:ABC604",
+      "b": "T:54EBF0",
       "a_classes": [
        "DynamicVector"
       ],
@@ -8093,52 +8123,12 @@
      },
      {
       "a": "G:87F7E8",
-      "b": "T:578080",
+      "b": "T:6AC430",
       "a_classes": [
        "MouseClass"
       ],
       "b_classes": [
-       "MapClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:578080",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "MapClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:5865E0",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "MapClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:5865E0",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "MapClass"
-      ]
-     },
-     {
-      "a": "G:87F7E8",
-      "b": "T:578080",
-      "a_classes": [
-       "MouseClass"
-      ],
-      "b_classes": [
-       "MapClass"
+       "SidebarClass"
       ]
      }
     ]
@@ -8154,8 +8144,8 @@
     "examples": []
    },
    "reg_def": {
-    "unions": 547,
-    "exact_conflicts": 6,
+    "unions": 343,
+    "exact_conflicts": 4,
     "examples": [
      {
       "a": "T:41B920",
@@ -8188,26 +8178,6 @@
       ]
      },
      {
-      "a": "T:53FA90",
-      "b": "T:53F430",
-      "a_classes": [
-       "IPXGlobalConnClass"
-      ],
-      "b_classes": [
-       "IPXConnClass"
-      ]
-     },
-     {
-      "a": "T:555DA0",
-      "b": "T:48E740",
-      "a_classes": [
-       "LightConvertClass"
-      ],
-      "b_classes": [
-       "ConvertClass"
-      ]
-     },
-     {
       "a": "T:6B1B20",
       "b": "T:4E2500",
       "a_classes": [
@@ -8230,12 +8200,12 @@
   },
   "rejected_merges": {
    "counts": {
-    "unproven_kind": 5948,
-    "multi_caller_join": 18977,
-    "member_chain_unproven": 267,
-    "reg_flow_tainted": 891,
-    "global_unproven": 1407,
-    "self_pin_incompatible": 626
+    "unproven_kind": 5831,
+    "multi_caller_join": 23278,
+    "reg_flow_tainted": 318,
+    "member_chain_unproven": 125,
+    "global_unproven": 133,
+    "self_pin_incompatible": 35
    },
    "examples": {
     "unproven_kind": [
@@ -8310,17 +8280,49 @@
      {
       "channel": "callarg_direct",
       "from": "V:0",
-      "to": "T:4103E0",
+      "to": "T:4790E0",
       "site": "0x0"
      }
     ],
-    "member_chain_unproven": [
+    "reg_flow_tainted": [
      {
-      "channel": "callarg_direct",
-      "from": "M:402220:this:0x90",
-      "to": "T:401170",
-      "site": "0x402263"
+      "channel": "reg_def",
+      "from": "T:402550",
+      "to": "T:4028B0",
+      "site": "0x402595"
      },
+     {
+      "channel": "reg_def",
+      "from": "T:4048B0",
+      "to": "T:404BB0",
+      "site": "0x404AFB"
+     },
+     {
+      "channel": "reg_def",
+      "from": "T:415960",
+      "to": "T:415C60",
+      "site": "0x4159FB"
+     },
+     {
+      "channel": "reg_def",
+      "from": "T:41CEF0",
+      "to": "P:41C8B0:0",
+      "site": "0x41CF5A"
+     },
+     {
+      "channel": "reg_def",
+      "from": "T:41E720",
+      "to": "T:41EAF0",
+      "site": "0x41E913"
+     },
+     {
+      "channel": "reg_def",
+      "from": "T:423AC0",
+      "to": "T:425670",
+      "site": "0x423B17"
+     }
+    ],
+    "member_chain_unproven": [
      {
       "channel": "callarg_direct",
       "from": "M:4041D0:this:0x40",
@@ -8342,73 +8344,23 @@
      {
       "channel": "callarg_direct",
       "from": "M:407860:this:0x14",
-      "to": "T:4084E0",
-      "site": "0x4078FF"
+      "to": "T:4087F0",
+      "site": "0x407976"
      },
      {
       "channel": "callarg_direct",
-      "from": "M:407860:this:0x14",
-      "to": "T:4087F0",
-      "site": "0x407976"
-     }
-    ],
-    "reg_flow_tainted": [
-     {
-      "channel": "reg_def",
-      "from": "T:402550",
-      "to": "T:4028B0",
-      "site": "0x402595"
+      "from": "M:40AA70:this:0xA4",
+      "to": "T:40ACD0",
+      "site": "0x40AC53"
      },
      {
-      "channel": "reg_def",
-      "from": "T:402720",
-      "to": "T:402220",
-      "site": "0x40274F"
-     },
-     {
-      "channel": "reg_def",
-      "from": "T:4048B0",
-      "to": "T:404BB0",
-      "site": "0x404AFB"
-     },
-     {
-      "channel": "reg_def",
-      "from": "T:4055C0",
-      "to": "T:4047B0",
-      "site": "0x4058E5"
-     },
-     {
-      "channel": "reg_def",
-      "from": "T:4055C0",
-      "to": "T:4054A0",
-      "site": "0x4058FC"
-     },
-     {
-      "channel": "reg_def",
-      "from": "T:4055C0",
-      "to": "T:404140",
-      "site": "0x40590D"
+      "channel": "callarg_direct",
+      "from": "M:423AC0:this:0x180",
+      "to": "T:43B4C0",
+      "site": "0x423B52"
      }
     ],
     "global_unproven": [
-     {
-      "channel": "callarg_direct",
-      "from": "G:87E1B8",
-      "to": "T:401080",
-      "site": "0x40458F"
-     },
-     {
-      "channel": "callarg_direct",
-      "from": "G:886980",
-      "to": "P:5B3C20:1",
-      "site": "0x406CAB"
-     },
-     {
-      "channel": "callarg_direct",
-      "from": "G:886980",
-      "to": "P:5B3C20:1",
-      "site": "0x406CCF"
-     },
      {
       "channel": "callarg_direct",
       "from": "G:87E89C",
@@ -8423,16 +8375,34 @@
      },
      {
       "channel": "callarg_direct",
-      "from": "G:88732C",
-      "to": "T:5D5890",
-      "site": "0x40EB95"
+      "from": "G:887460",
+      "to": "T:6C89B0",
+      "site": "0x40F27A"
+     },
+     {
+      "channel": "callarg_direct",
+      "from": "G:887598",
+      "to": "T:776EB0",
+      "site": "0x40FF15"
+     },
+     {
+      "channel": "callarg_direct",
+      "from": "G:818644",
+      "to": "P:477050:1",
+      "site": "0x427DF2"
+     },
+     {
+      "channel": "callarg_direct",
+      "from": "G:818B98",
+      "to": "P:433880:0",
+      "site": "0x434AEE"
      }
     ],
     "self_pin_incompatible": [
      {
       "channel": "callarg_direct",
       "from": "G:87F7E8",
-      "to": "T:5785F0",
+      "to": "T:5840C0",
       "cls": [
        "MouseClass",
        "ObjectClass"
@@ -8441,45 +8411,45 @@
      {
       "channel": "callarg_direct",
       "from": "G:87F7E8",
-      "to": "T:565730",
+      "to": "T:4AA290",
       "cls": [
-       "Coord",
+       "BuildingClass",
        "MouseClass"
       ]
      },
      {
       "channel": "callarg_direct",
       "from": "G:87F7E8",
-      "to": "T:565730",
-      "cls": [
-       "Coord",
-       "MouseClass"
-      ]
-     },
-     {
-      "channel": "callarg_direct",
-      "from": "G:87F7E8",
-      "to": "T:5785F0",
+      "to": "T:6A60E0",
       "cls": [
        "MouseClass",
-       "ObjectClass"
+       "SuperWeapon"
       ]
      },
      {
       "channel": "callarg_direct",
       "from": "G:87F7E8",
-      "to": "T:565730",
+      "to": "T:56C020",
       "cls": [
-       "Coord",
+       "CellClass",
        "MouseClass"
       ]
      },
      {
       "channel": "callarg_direct",
       "from": "G:87F7E8",
-      "to": "T:565730",
+      "to": "T:56B5A0",
       "cls": [
-       "Coord",
+       "CellClass",
+       "MouseClass"
+      ]
+     },
+     {
+      "channel": "callarg_direct",
+      "from": "G:87F7E8",
+      "to": "T:56B780",
+      "cls": [
+       "CellClass",
        "MouseClass"
       ]
      }
