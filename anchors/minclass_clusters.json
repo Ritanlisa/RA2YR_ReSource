@@ -7281,7 +7281,7 @@
 ]
 },
 "P:413800:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -14412,7 +14412,7 @@
 ]
 },
 "P:429210:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -19872,7 +19872,7 @@
 ]
 },
 "P:4373B0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -27383,7 +27383,7 @@
 ]
 },
 "P:44D880:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -40988,7 +40988,7 @@
 ]
 },
 "M:47DD70:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -41000,7 +41000,7 @@
 ]
 },
 "M:47DD70:this:0xe8": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -41106,7 +41106,7 @@
 ]
 },
 "M:47E8A0:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -41296,7 +41296,7 @@
 ]
 },
 "M:47EC90:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -41440,7 +41440,7 @@
 ]
 },
 "P:47F6A0:0": {
-"class": "DisplayClass",
+"class": "RadarClass",
 "obs": [
 [
 0,
@@ -42613,7 +42613,7 @@
 ]
 },
 "M:4838E0:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -43080,7 +43080,7 @@
 ]
 },
 "M:485080:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 48,
@@ -53524,7 +53524,7 @@
 "ents": []
 },
 "R:49E8E0:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "rc_ptr",
 "obs": [
 [
 0,
@@ -58473,18 +58473,6 @@
 4
 ],
 [
-4648,
-4
-],
-[
-4652,
-4
-],
-[
-4660,
-4
-],
-[
 4668,
 4
 ],
@@ -58513,6 +58501,14 @@
 4
 ],
 [
+5276,
+4
+],
+[
+5280,
+4
+],
+[
 5292,
 4
 ],
@@ -58534,6 +58530,14 @@
 ],
 [
 5338,
+1
+],
+[
+21404,
+4
+],
+[
+21414,
 1
 ],
 [
@@ -58937,7 +58941,7 @@
 ]
 },
 "P:4AF720:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -59429,7 +59433,7 @@
 ]
 },
 "R:4B0AD0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -60874,7 +60878,7 @@
 "ents": []
 },
 "P:4B6470:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -60884,7 +60888,7 @@
 "ents": []
 },
 "P:4B6610:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -61986,7 +61990,7 @@
 ]
 },
 "P:4BB0D0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -62337,7 +62341,7 @@
 ]
 },
 "P:4BFD30:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -64134,7 +64138,7 @@
 "ents": []
 },
 "P:4C6340:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -68510,7 +68514,7 @@
 ]
 },
 "P:4D3920:0": {
-"class": "DisplayClass",
+"class": "RadarClass",
 "obs": [
 [
 0,
@@ -84338,7 +84342,7 @@
 ]
 },
 "P:4F4240:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -86766,7 +86770,7 @@
 ]
 },
 "R:4FA350:ecx": {
-"class": "Sidebar",
+"class": "SelectClass@StripClass@SidebarClass",
 "obs": [
 [
 21424,
@@ -88093,9 +88097,7 @@
 1
 ]
 ],
-"ents": [
-"T:5005B0"
-]
+"ents": []
 },
 "R:500700:ecx": {
 "class": "Sidebar",
@@ -88125,9 +88127,7 @@
 1
 ]
 ],
-"ents": [
-"T:500700"
-]
+"ents": []
 },
 "R:5007A0:ecx": {
 "class": "Sidebar",
@@ -88157,9 +88157,7 @@
 1
 ]
 ],
-"ents": [
-"T:5007A0"
-]
+"ents": []
 },
 "P:500910:0": {
 "class": "AI",
@@ -89414,7 +89412,7 @@
 ]
 },
 "P:509140:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -95453,7 +95451,7 @@
 ]
 },
 "P:514C80:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -102827,7 +102825,7 @@
 ]
 },
 "R:52AF50:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "rc_ptr",
 "obs": [
 [
 0,
@@ -104770,7 +104768,7 @@
 ]
 },
 "R:539890:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -109704,7 +109702,7 @@
 "ents": []
 },
 "P:54C550:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -109800,7 +109798,7 @@
 "ents": []
 },
 "R:54D0F0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -109998,7 +109996,7 @@
 "ents": []
 },
 "P:54DC60:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -119546,7 +119544,7 @@
 ]
 },
 "P:42DD60:5": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 108,
@@ -127636,7 +127634,7 @@
 ]
 },
 "P:5B0060:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -140772,7 +140770,7 @@
 "ents": []
 },
 "P:5ED5A0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -143103,7 +143101,7 @@
 ]
 },
 "R:5F6060:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -158289,7 +158287,7 @@
 ]
 },
 "P:642C80:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -160658,9 +160656,11 @@
 ]
 },
 "R:654650:ecx": {
-"class": "TechnoClass",
+"class": "RadarClass",
 "obs": [],
-"ents": []
+"ents": [
+"T:654650"
+]
 },
 "R:6547C0:ecx": {
 "class": "RadarClass",
@@ -160800,6 +160800,30 @@
 ],
 "ents": [
 "P:6550C0:0"
+]
+},
+"R:6551C0:ecx": {
+"class": "RadarClass",
+"obs": [
+[
+4648,
+4
+],
+[
+4652,
+4
+],
+[
+4660,
+4
+],
+[
+5337,
+1
+]
+],
+"ents": [
+"T:6551C0"
 ]
 },
 "R:655250:ecx": {
@@ -160977,7 +161001,7 @@
 ]
 },
 "R:655C50:ecx": {
-"class": "TacticalClass",
+"class": "RadarClass",
 "obs": [
 [
 4636,
@@ -161127,26 +161151,6 @@
 ]
 ],
 "ents": []
-},
-"R:656750:ecx": {
-"class": "TacticalClass",
-"obs": [
-[
-4696,
-4
-],
-[
-5276,
-4
-],
-[
-5280,
-4
-]
-],
-"ents": [
-"T:656750"
-]
 },
 "P:656750:0": {
 "class": "WWMouseClass",
@@ -165203,7 +165207,7 @@
 ]
 },
 "R:6607D0:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -165531,7 +165535,7 @@
 ]
 },
 "P:6614F0:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -165541,7 +165545,7 @@
 "ents": []
 },
 "P:661510:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -166059,7 +166063,7 @@
 "ents": []
 },
 "P:4135D0:2": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -174639,7 +174643,7 @@
 ]
 },
 "R:675210:ecx": {
-"class": "HouseClass",
+"class": "RulesClass",
 "obs": [
 [
 92,
@@ -178170,7 +178174,7 @@
 ]
 },
 "P:689310:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -178200,7 +178204,7 @@
 "ents": []
 },
 "R:67F7E0:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -184361,7 +184365,7 @@
 "ents": []
 },
 "P:69B560:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -184502,7 +184506,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:69B7E0"
+]
 },
 "R:69BAB0:ecx": {
 "class": "SessionClass",
@@ -186655,7 +186661,7 @@
 ]
 },
 "P:69EE30:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -187147,7 +187153,7 @@
 ]
 },
 "R:6A01A0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -188238,7 +188244,7 @@
 ]
 },
 "R:6A60E0:ecx": {
-"class": "SidebarClass",
+"class": "HouseClass",
 "obs": [
 [
 21404,
@@ -188253,9 +188259,7 @@
 1
 ]
 ],
-"ents": [
-"T:6A60E0"
-]
+"ents": []
 },
 "P:6A6140:0": {
 "class": "GraphicMenuItem",
@@ -188487,26 +188491,6 @@
 ],
 "ents": [
 "P:6A7780:0"
-]
-},
-"R:6A7D20:ecx": {
-"class": "SidebarClass",
-"obs": [
-[
-0,
-4
-],
-[
-21404,
-4
-],
-[
-21414,
-1
-]
-],
-"ents": [
-"T:6A7D20"
 ]
 },
 "R:6A7D70:ecx": {
@@ -189657,7 +189641,7 @@
 ]
 },
 "R:6AF6C0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 36,
@@ -199478,7 +199462,7 @@
 "ents": []
 },
 "R:6D1610:ecx": {
-"class": "TabClass",
+"class": "HouseClass",
 "obs": [
 [
 0,
@@ -199495,13 +199479,6 @@
 ],
 "ents": [
 "T:6D1610"
-]
-},
-"R:6D1660:ecx": {
-"class": "TabClass",
-"obs": [],
-"ents": [
-"T:6D1660"
 ]
 },
 "R:6D1810:ecx": {
@@ -206048,7 +206025,7 @@
 ]
 },
 "P:691590:3": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 40,
@@ -209184,7 +209161,7 @@
 ]
 },
 "M:6F1870:this:0xe4": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 152,
@@ -214913,7 +214890,7 @@
 ]
 },
 "R:704000:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -214929,7 +214906,7 @@
 ]
 },
 "R:704240:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -222868,7 +222845,7 @@
 "ents": []
 },
 "R:718B70:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -223114,7 +223091,7 @@
 ]
 },
 "P:719E30:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -226151,7 +226128,7 @@
 ]
 },
 "P:721010:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -229632,7 +229609,7 @@
 "ents": []
 },
 "P:4C1B50:1": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -230043,7 +230020,7 @@
 ]
 },
 "R:7325C0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -237312,7 +237289,7 @@
 ]
 },
 "M:74DC00:this:0xb0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 8,
@@ -238428,7 +238405,7 @@
 ]
 },
 "R:7533B0:ecx": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -240364,7 +240341,7 @@
 ]
 },
 "R:75C240:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 12,
@@ -240408,7 +240385,7 @@
 ]
 },
 "P:75C7F0:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -245193,7 +245170,7 @@
 ]
 },
 "R:7681E0:ecx": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 8,
@@ -250678,7 +250655,7 @@
 ]
 },
 "P:785740:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250694,7 +250671,7 @@
 ]
 },
 "P:786270:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250746,7 +250723,7 @@
 ]
 },
 "P:787770:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250817,7 +250794,7 @@
 "ents": []
 },
 "P:789B60:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250869,7 +250846,7 @@
 "ents": []
 },
 "P:78A6B0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250881,7 +250858,7 @@
 ]
 },
 "P:78A8F0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -250935,7 +250912,7 @@
 ]
 },
 "P:78DA30:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -250973,7 +250950,7 @@
 ]
 },
 "P:78E030:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -251173,7 +251150,7 @@
 ]
 },
 "P:799080:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -251189,7 +251166,7 @@
 ]
 },
 "P:799EA0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -251239,7 +251216,7 @@
 "ents": []
 },
 "P:79CBA0:0": {
-"class": "IsometricTileClass",
+"class": "OverlayClass",
 "obs": [
 [
 0,
@@ -262197,7 +262174,7 @@
 ]
 },
 "P:7DCDC0:0": {
-"class": "WonlineStringDialogControl",
+"class": "MovieHandle",
 "obs": [
 [
 0,
@@ -314710,7 +314687,7 @@
 ]
 },
 "T:5E9E70": {
-"class": "DisplayClass",
+"class": "RadarClass",
 "obs": [],
 "ents": [
 "T:5E9E70"

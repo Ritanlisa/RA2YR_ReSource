@@ -767,6 +767,7 @@ def main():
     ap.add_argument("--no-c26-locality", action="store_true", help="disable C26 link-order locality")
     ap.add_argument("--allow-heuristics", action="store_true",
                     help="allow heuristic families (C18/C18b/C18c/C26) to produce exact identities (off by default: they are not necessary conditions)")
+    ap.add_argument("--audit-layout", default=None, help="report a class layout coverage against its identified functions")
     ap.add_argument("--audit-yrpp", action="store_true",
                     help="check whether each YRpp function->class mapping is still in its cluster's domain")
     ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
@@ -1365,6 +1366,45 @@ def main():
                 _bin_added += 1
     print("[layouts] binary-identity member completion: %d classes, %d members added"
           % (_bin_classes, _bin_added), flush=True)
+
+    # ---- 布局缺口补全（外部身份 + 二进制观测）----
+    # 审计结论：164 个可比类的观测里 45% 的偏移在声明成员表中缺失
+    # （RulesClass 819/1161、ConvertClass 96/98）。缺成员会让 C1 **错误排除真解**。
+    # 补全依据：类的身份来自 YRpp/装表（外部/二进制），成员来自其已确认函数在 this 上的
+    # 实际访问偏移；属于祖先成员的偏移不补（那由继承展开负责）。
+    _gap_added = 0
+    try:
+        _gapfill = (jload("anchors/layout_gap_fill.json", {}) or {}).get("fill") or {}
+        for _cn9, _d9 in _gapfill.items():
+            _ci9 = resolve(_cn9)
+            if _ci9 is None:
+                continue
+            for _o9s, _w9 in _d9.items():
+                _o9 = int(_o9s, 16)
+                if _o9 not in U["members"][_ci9]:
+                    U["members"][_ci9][_o9] = int(_w9)
+                    _gap_added += 1
+    except Exception as _e9:
+        print("[layouts] gap-fill skipped: %s" % _e9, flush=True)
+    print("[layouts] gap-fill from external identity: %d members" % _gap_added, flush=True)
+    if getattr(args, "audit_layout", None):
+        _want = str(args.audit_layout)
+        _ci_w = resolve(_want)
+        if _ci_w is None:
+            print("[audit-layout] %s not in universe" % _want, flush=True)
+        else:
+            _mm = U["members"][_ci_w]
+            _obs = set()
+            for _eid_w, _lst_w in exact.items():
+                if not _eid_w.startswith("T:"):
+                    continue
+                _cs_w = {_c for _c, _s in _lst_w}
+                if _cs_w == {_ci_w}:
+                    _obs |= (ents.get(_eid_w) or {}).get("obs") or set()
+            _miss = [(o, w) for (o, w) in _obs if not (isinstance(_mm.get(o), int) and _mm[o] >= w)]
+            print("[audit-layout] %s members=%d obs=%d missing=%d (%s)"
+                  % (_want, len(_mm), len(_obs), len(_miss),
+                     [hex(o) for o, _w in sorted(_miss)[:8]]), flush=True)
 
     # ---------------- C1：成员偏移 ----------------
     # C1 密度门：布局只覆盖 >=70% dword 的类视为"完整"，缺失偏移可判负；

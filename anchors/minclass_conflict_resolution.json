@@ -303,7 +303,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 123,
+  "domain_after": 122,
   "class_after": null
  },
  {
@@ -421,7 +421,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 394,
+  "domain_after": 393,
   "class_after": null
  },
  {
@@ -1280,6 +1280,26 @@
   "class_after": null
  },
  {
+  "cluster": "R:4FA350:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1",
+   "C3",
+   "C11"
+  ],
+  "domain_after": 2,
+  "class_after": null
+ },
+ {
+  "cluster": "R:5007A0:ecx",
+  "dropped_family": "C10",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 109,
+  "class_after": null
+ },
+ {
   "cluster": "R:500B40:ecx",
   "dropped_family": "C10",
   "remaining_families": [
@@ -1470,7 +1490,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 119,
+  "domain_after": 118,
   "class_after": null
  },
  {
@@ -2442,7 +2462,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 212,
+  "domain_after": 211,
   "class_after": null
  },
  {
@@ -2796,7 +2816,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 126,
+  "domain_after": 125,
   "class_after": null
  },
  {
@@ -2957,6 +2977,15 @@
    "C3"
   ],
   "domain_after": 19,
+  "class_after": null
+ },
+ {
+  "cluster": "R:6A60E0:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1"
+  ],
+  "domain_after": 109,
   "class_after": null
  },
  {
@@ -3147,6 +3176,16 @@
   "class_after": null
  },
  {
+  "cluster": "R:6D1610:ecx",
+  "dropped_family": "C18",
+  "remaining_families": [
+   "C1",
+   "C3"
+  ],
+  "domain_after": 10,
+  "class_after": null
+ },
+ {
   "cluster": "P:6D6AD0:0",
   "dropped_family": "C10",
   "remaining_families": [
@@ -3279,7 +3318,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 171,
+  "domain_after": 170,
   "class_after": null
  },
  {
@@ -3288,7 +3327,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 119,
+  "domain_after": 118,
   "class_after": null
  },
  {
@@ -3639,7 +3678,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 175,
+  "domain_after": 174,
   "class_after": null
  },
  {
@@ -3776,7 +3815,7 @@
   "remaining_families": [
    "C1"
   ],
-  "domain_after": 189,
+  "domain_after": 188,
   "class_after": null
  },
  {
