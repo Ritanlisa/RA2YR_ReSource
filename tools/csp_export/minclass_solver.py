@@ -3776,6 +3776,21 @@ def main():
                     break
             return _steps, _skipped
 
+        # 前置限定：参数实体若有多个调用点，其类 = 各实参类的公共祖先 ——
+        # 任一实参类错就使交集为空，故此类实体只作排序提示，不作硬约束。
+        # 实证：68 条 C10 矛盾里 19 条是多来源参数。
+        _src5 = collections.Counter()
+        for _e5b in raw:
+            if _e5b.get("type") != "CALL_ARG":
+                continue
+            _t5b = _e5b.get("to")
+            if isinstance(_t5b, str) and "::param" in _t5b:
+                _ee5b = ent_id(_t5b)
+                if _ee5b is not None:
+                    _src5[_ee5b] += 1
+        _multi5 = {k for k, v in _src5.items() if v > 1}
+        print("[C10] multi-call-site params (constraint not applied): %d" % len(_multi5), flush=True)
+
         # ---- Phase 1：基线边（HEAD 语义逐字复刻，空域守卫不变）----
         _dom1 = _c10_base_dom(_call_edges_p1)
         _p1_steps, _p1_skipped = _c10_propagate(_call_edges_p1, _dom1, _skip_empty=False)
@@ -3784,6 +3799,8 @@ def main():
         for _eid, _m in _dom1.items():
             if _eid not in ents:
                 continue      # R:/S:/G: 连接点只作传播中介，不写族表、不进簇、不计数
+            if _eid in _multi5:
+                continue      # 多调用点参数：不作硬约束
             if _m == 0:
                 # 传播把域清空 = 该实体的调用边互相矛盾（假边/错误锚），
                 # 不写入 C10（保留其它族证据），并计数。
@@ -3806,6 +3823,8 @@ def main():
         for _eid, _m in _dom2.items():
             if _eid not in ents:
                 continue
+            if _eid in _multi5:
+                continue          # 多调用点参数：不作硬约束（与 phase 1 同一前置限定）
             if _m == 0:
                 continue          # Phase-1 已清空的实体保持不受约束，Phase 2 不复活
             if _m != FULL:
