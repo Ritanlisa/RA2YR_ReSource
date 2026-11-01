@@ -1,0 +1,33 @@
+{
+ "meta": {
+  "source": "slot mutual-exclusion: slot observed used as an object of class K while declared primitive",
+  "rule": "a slot holds exactly one thing; pointer usage refutes a primitive declaration"
+ },
+ "fixes": [
+  {
+   "class": "BuildingClass",
+   "offset": 1696,
+   "observed_type": "AudioController"
+  },
+  {
+   "class": "BuildingClass",
+   "offset": 1700,
+   "observed_type": "VocClass"
+  },
+  {
+   "class": "BuildingClass",
+   "offset": 1816,
+   "observed_type": "VocClass"
+  },
+  {
+   "class": "DropListClass",
+   "offset": 80,
+   "observed_type": "ShapeButtonClass"
+  },
+  {
+   "class": "TActionClass",
+   "offset": 44,
+   "observed_type": "TActionClass"
+  }
+ ]
+}

@@ -701,10 +701,10 @@
   "prototype_rule_c1": {
    "description": "prototype v2 rule: layout exists AND every offset exists AND width strictly equal (entity level, obs>=2)",
    "entities_ge2": 7277,
-   "matched_strict": 6290,
-   "no_match": 987,
+   "matched_strict": 6289,
+   "no_match": 988,
    "by_cause": {
-    "width_mismatch_only": 848,
+    "width_mismatch_only": 849,
     "suspicious_large_offset": 75,
     "no_class_has_all_offsets_sparse_layout": 3,
     "param_unknown_class": 53,

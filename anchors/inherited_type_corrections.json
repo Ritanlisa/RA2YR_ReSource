@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "source": "derived classes cannot change the type at an inherited offset; a 1-byte parent declaration at that offset is a placeholder",
+  "classes": 4,
+  "offsets": 10
+ },
+ "fix": {
+  "LocomotionClass": {
+   "0x50": {
+    "type": "double",
+    "size": 8,
+    "evidence_from": "ShipLocomotionClass"
+   },
+   "0x54": {
+    "type": "float",
+    "size": 4,
+    "evidence_from": "RocketLocomotionClass"
+   },
+   "0x60": {
+    "type": "double",
+    "size": 8,
+    "evidence_from": "HoverLocomotionClass"
+   },
+   "0x70": {
+    "type": "int",
+    "size": 4,
+    "evidence_from": "JumpjetLocomotionClass"
+   }
+  },
+  "MultiplayerGameMode": {
+   "0x4": {
+    "type": "int32_t",
+    "size": 4,
+    "evidence_from": "MultiplayerSiege"
+   },
+   "0x8": {
+    "type": "int32_t",
+    "size": 4,
+    "evidence_from": "MultiplayerSiege"
+   },
+   "0xC": {
+    "type": "int32_t",
+    "size": 4,
+    "evidence_from": "MultiplayerSiege"
+   },
+   "0x10": {
+    "type": "int32_t",
+    "size": 4,
+    "evidence_from": "MultiplayerSiege"
+   }
+  },
+  "AbstractTypeClass": {
+   "0x3C": {
+    "type": "void*",
+    "size": 4,
+    "evidence_from": "ObjectTypeClass"
+   }
+  },
+  "ObjectTypeClass": {
+   "0xC": {
+    "type": "int",
+    "size": 4,
+    "evidence_from": "TerrainTypeClass"
+   }
+  }
+ }
+}

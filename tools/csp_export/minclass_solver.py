@@ -1375,6 +1375,25 @@ def main():
     print("[layouts] binary-identity member completion: %d classes, %d members added"
           % (_bin_classes, _bin_added), flush=True)
 
+    # ---- 继承偏移的类型修正（派生类不能改变继承类型，父类 1 字节声明是占位符）----
+    # 实证：LocomotionClass+0x50 声明 unsigned char，而 ShipLocomotionClass 同偏移是 double。
+    _inh_fix = 0
+    try:
+        _cor = (jload("anchors/inherited_type_corrections.json", {}) or {}).get("fix") or {}
+        for _cn_i, _d_i in _cor.items():
+            _ci_i = resolve(_cn_i)
+            if _ci_i is None:
+                continue
+            for _o_is, _v_i in _d_i.items():
+                _o_i = int(_o_is, 16)
+                _w_i = int((_v_i or {}).get("size") or 4)
+                if U["members"][_ci_i].get(_o_i) != _w_i:
+                    U["members"][_ci_i][_o_i] = _w_i
+                    _inh_fix += 1
+    except Exception as _e_i:
+        print("[layouts] inherited type corrections skipped: %s" % _e_i, flush=True)
+    print("[layouts] inherited type corrections applied: %d" % _inh_fix, flush=True)
+
     # ---- 布局缺口补全（外部身份 + 二进制观测）----
     # 审计结论：164 个可比类的观测里 45% 的偏移在声明成员表中缺失
     # （RulesClass 819/1161、ConvertClass 96/98）。缺成员会让 C1 **错误排除真解**。
