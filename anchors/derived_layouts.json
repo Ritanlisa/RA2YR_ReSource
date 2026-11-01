@@ -213,7 +213,7 @@
 "MouseClass": {
 "member_count": 17,
 "extent": 324,
-"clusters": 13,
+"clusters": 12,
 "members": [
 [
 0,
@@ -10791,7 +10791,7 @@
 "IPXManagerClass": {
 "member_count": 28,
 "extent": 172,
-"clusters": 27,
+"clusters": 26,
 "members": [
 [
 0,
@@ -12122,12 +12122,32 @@
 ]
 },
 "TabClass": {
-"member_count": 1,
-"extent": 4,
+"member_count": 6,
+"extent": 220,
 "clusters": 11,
 "members": [
 [
 0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+24,
+4
+],
+[
+216,
 4
 ]
 ]
@@ -22819,12 +22839,16 @@
 ]
 },
 "UDPInterfaceClass": {
-"member_count": 7,
+"member_count": 8,
 "extent": 76,
 "clusters": 23,
 "members": [
 [
 0,
+4
+],
+[
+4,
 4
 ],
 [

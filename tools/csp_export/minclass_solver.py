@@ -765,6 +765,8 @@ def main():
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--no-c26-locality", action="store_true", help="disable C26 link-order locality")
+    ap.add_argument("--allow-heuristics", action="store_true",
+                    help="allow heuristic families (C18/C18b/C18c/C26) to produce exact identities (off by default: they are not necessary conditions)")
     ap.add_argument("--audit-yrpp", action="store_true",
                     help="check whether each YRpp function->class mapping is still in its cluster's domain")
     ap.add_argument("--explain", default=None, help="dump the domain of one cluster (root id)")
@@ -2280,6 +2282,8 @@ def main():
             continue
         if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
             continue
+        if not getattr(args, "allow_heuristics", False):
+            continue        # --sound-only：签名匹配不产生 exact（仅作排序提示）
         exact[_eid18].append((_hit18[0], "C18:binary-signature"))
         exact_count["C18"] = exact_count.get("C18", 0) + 1
         census["C18"] = census.get("C18", 0) + 1
@@ -2307,7 +2311,7 @@ def main():
         if len(_hit18b) < 2:
             continue
         _hit18b.sort(key=lambda x: x[1])
-        if _hit18b[0][1] < _hit18b[1][1]:
+        if _hit18b[0][1] < _hit18b[1][1] and not not getattr(args, "allow_heuristics", False):
             exact[_eid18b].append((_hit18b[0][0], "C18b:minimal-signature"))
             exact_count["C18"] = exact_count.get("C18", 0) + 1
             census["C18"] = census.get("C18", 0) + 1
@@ -2340,7 +2344,7 @@ def main():
             if len(_obs18c) < 3 or max(_o for (_o, _w) in _obs18c) < 0x40:
                 continue
             _hit18c = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18c)]
-            if len(_hit18c) == 1:
+            if len(_hit18c) == 1 and not not getattr(args, "allow_heuristics", False):
                 exact[_eid18c].append((_hit18c[0], "C18c:cascade"))
                 exact_count["C18"] = exact_count.get("C18", 0) + 1
                 census["C18"] = census.get("C18", 0) + 1
@@ -2820,7 +2824,7 @@ def main():
     print("[clusters] %d (entities %d)" % (len(clusters), len(ents)), flush=True)
 
     # ---- C26（可选，默认关闭）：链接序局部性，硬约束形态 ----
-    if not getattr(args, "no_c26_locality", False):
+    if (not getattr(args, "no_c26_locality", False)) and (not not getattr(args, "allow_heuristics", False)):
         _pts26 = {}
         for _eid26, _lst26 in exact.items():
             if not _eid26.startswith("T:"):
