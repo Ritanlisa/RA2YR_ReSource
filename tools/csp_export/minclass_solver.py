@@ -730,6 +730,10 @@ def ent_id(raw, fn=None):
     if not isinstance(raw, str):
         return None
     s = raw.strip()
+    # 函数返回值：`0x004010A0.return`（地址后无冒号，必须在通用地址解析之前处理）
+    if s.endswith(".return"):
+        _ar = hx(s[:-len(".return")])
+        return ("RET:%X" % _ar) if _ar is not None else None
     if s in REGS:
         return ("R:%X:%s" % (fn, s)) if fn is not None else None
     if s.startswith("stack_+"):
@@ -750,6 +754,8 @@ def ent_id(raw, fn=None):
             if "::param" in s:
                 which = "p" + s.split("::param", 1)[1].split(".")[0]
             return "M:%X:%s:%s" % (a, which, off)
+        if s.endswith(".return"):
+            return "RET:%X" % a        # 函数返回值也是一等变量（返回值类型未知时可求解）
         if s.endswith(":this"):
             return "T:%X" % a
         if "::param" in s:
@@ -2815,6 +2821,25 @@ def main():
 
     for a_eid, b_eid in c5_link:
         un(a_eid, b_eid, "new_ctor")
+
+    # ---- 返回值 = this（等式，二进制事实）----
+    # `mov eax, <this 别名>; ret` 的函数，其返回值就是 this（setter/链式调用常见）。
+    # 提取自 IDA：1,927 个函数满足。让 RET:<fn> 与 T:<fn> 并簇。
+    _ret_unions = 0
+    try:
+        _rt = (jload("anchors/fn_returns_this.json", {}) or {}).get("map") or {}
+    except Exception:
+        _rt = {}
+    for _as_r in _rt:
+        _ar = hx(_as_r)
+        if _ar is None:
+            continue
+        _re = "RET:%X" % _ar
+        _te = "T:%X" % _ar
+        if _re in ents and _te in ents:
+            un(_re, _te, "return_this")
+            _ret_unions += 1
+    print("[RET] return==this unions: %d" % _ret_unions, flush=True)
 
     # ---- C20：ECX 即 this（同一对象）----
     # 汇编事实：接收 this 的函数在入口处 ecx 就是 this；该函数内所有以 ecx 为源的

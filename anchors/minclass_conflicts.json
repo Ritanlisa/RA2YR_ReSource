@@ -58,11 +58,11 @@
   "K_upper": 577,
   "lower_bound": 577,
   "constrained_clusters": 24288,
-  "free_clusters": 24383,
+  "free_clusters": 26696,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1400,
-  "entities": 49709
+  "entities": 52265
  },
  "family_table": [
   {
@@ -72,7 +72,7 @@
    "entities_touched": 11345,
    "clusters_constrained": 15520,
    "clusters_pinned": 8396,
-   "clusters_free": 33151,
+   "clusters_free": 35464,
    "pinned_classes": 520,
    "forced_classes": 520,
    "conflicts": 0,
@@ -94,7 +94,7 @@
    "entities_touched": 0,
    "clusters_constrained": 15520,
    "clusters_pinned": 8396,
-   "clusters_free": 33151,
+   "clusters_free": 35464,
    "pinned_classes": 520,
    "forced_classes": 520,
    "conflicts": 0,
@@ -116,7 +116,7 @@
    "entities_touched": 2252,
    "clusters_constrained": 16080,
    "clusters_pinned": 8396,
-   "clusters_free": 32591,
+   "clusters_free": 34904,
    "pinned_classes": 520,
    "forced_classes": 520,
    "conflicts": 0,
@@ -138,7 +138,7 @@
    "entities_touched": 1285,
    "clusters_constrained": 16128,
    "clusters_pinned": 9662,
-   "clusters_free": 32543,
+   "clusters_free": 34856,
    "pinned_classes": 538,
    "forced_classes": 538,
    "conflicts": 0,
@@ -160,7 +160,7 @@
    "entities_touched": 839,
    "clusters_constrained": 16919,
    "clusters_pinned": 9803,
-   "clusters_free": 31752,
+   "clusters_free": 34065,
    "pinned_classes": 551,
    "forced_classes": 551,
    "conflicts": 0,
@@ -182,7 +182,7 @@
    "entities_touched": 1377,
    "clusters_constrained": 16919,
    "clusters_pinned": 9803,
-   "clusters_free": 31752,
+   "clusters_free": 34065,
    "pinned_classes": 551,
    "forced_classes": 551,
    "conflicts": 0,
@@ -204,7 +204,7 @@
    "entities_touched": 79,
    "clusters_constrained": 16985,
    "clusters_pinned": 9860,
-   "clusters_free": 31683,
+   "clusters_free": 33996,
    "pinned_classes": 557,
    "forced_classes": 557,
    "conflicts": 3,
@@ -226,7 +226,7 @@
    "entities_touched": 158,
    "clusters_constrained": 17130,
    "clusters_pinned": 10014,
-   "clusters_free": 31538,
+   "clusters_free": 33851,
    "pinned_classes": 566,
    "forced_classes": 566,
    "conflicts": 3,
@@ -248,7 +248,7 @@
    "entities_touched": 5923,
    "clusters_constrained": 17134,
    "clusters_pinned": 10014,
-   "clusters_free": 31534,
+   "clusters_free": 33847,
    "pinned_classes": 566,
    "forced_classes": 566,
    "conflicts": 3,
@@ -270,7 +270,7 @@
    "entities_touched": 12332,
    "clusters_constrained": 23819,
    "clusters_pinned": 10566,
-   "clusters_free": 24796,
+   "clusters_free": 27109,
    "pinned_classes": 571,
    "forced_classes": 571,
    "conflicts": 56,
@@ -292,7 +292,7 @@
    "entities_touched": 3634,
    "clusters_constrained": 24220,
    "clusters_pinned": 10890,
-   "clusters_free": 24381,
+   "clusters_free": 26694,
    "pinned_classes": 574,
    "forced_classes": 574,
    "conflicts": 70,
@@ -314,7 +314,7 @@
    "entities_touched": 5723,
    "clusters_constrained": 24220,
    "clusters_pinned": 10890,
-   "clusters_free": 24381,
+   "clusters_free": 26694,
    "pinned_classes": 574,
    "forced_classes": 574,
    "conflicts": 70,
@@ -336,7 +336,7 @@
    "entities_touched": 6607,
    "clusters_constrained": 23945,
    "clusters_pinned": 11041,
-   "clusters_free": 24381,
+   "clusters_free": 26694,
    "pinned_classes": 574,
    "forced_classes": 574,
    "conflicts": 345,
@@ -358,7 +358,7 @@
    "entities_touched": 0,
    "clusters_constrained": 23945,
    "clusters_pinned": 11041,
-   "clusters_free": 24381,
+   "clusters_free": 26694,
    "pinned_classes": 574,
    "forced_classes": 574,
    "conflicts": 345,
@@ -491,7 +491,8 @@
     {
      "cluster": "R:4A3630:ecx",
      "entities": [
-      "T:4A3630"
+      "T:4A3630",
+      "RET:4A3630"
      ],
      "obs": [
       [
@@ -8198,6 +8199,11 @@
       ]
      }
     ]
+   },
+   "return_this": {
+    "unions": 243,
+    "exact_conflicts": 0,
+    "examples": []
    }
   },
   "merge_census": {
