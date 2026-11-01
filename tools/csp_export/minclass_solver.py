@@ -4531,6 +4531,22 @@ def main():
                           % (args.explain_class, _ci_w, U["eff_size"][_ci_w],
                              U["has_layout"][_ci_w], len(U["members"][_ci_w])))
                     print("  [class] in domain: %s" % bool((_m >> _ci_w) & 1))
+                    try:
+                        _obs_w = _cl.get("obs") or set()
+                        _cm = c1_mask(_obs_w) if _obs_w else FULL
+                        print("  [class] c1_mask allows: %s  (sparse=%s dense=%s)"
+                              % (bool((_cm >> _ci_w) & 1),
+                                 bool((sparse_mask >> _ci_w) & 1),
+                                 bool((dense_mask >> _ci_w) & 1)))
+                        _need_w = max(_o + _w2 for (_o, _w2) in _obs_w)
+                        print("  [class] size_mask(0x%X) allows: %s (eff_size=%s)"
+                              % (_need_w, bool((c1_size_mask(_need_w) >> _ci_w) & 1),
+                                 U["eff_size"][_ci_w]))
+                        for (_o, _w2) in sorted(_obs_w)[:12]:
+                            print("     off=0x%-8X w=%d ok_mask=%s"
+                                  % (_o, _w2, bool((c1_ok_mask(_o, _w2 if _w2 else 4) >> _ci_w) & 1)))
+                    except Exception as _e:
+                        print("  [class] c1 debug failed: %s" % _e)
                     for _f in FAMILIES:
                         _fm = fam[_f].get(_root)
                         if _fm is None:
