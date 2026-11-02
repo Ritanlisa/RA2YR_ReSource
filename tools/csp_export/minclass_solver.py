@@ -2715,6 +2715,15 @@ def main():
     # 被调方钉定表（C4/C15 单点）+ 全边索引（from 形态 -> 被调方列表）
     # 用于"使用边需要派生类"的降级判定（析构侧归因：ctor 池调用是销毁期基类 dtor，
     # 使用边的方法钉定在真后代上）
+    _dtor_set19 = set()
+    try:
+        for _a19d in (jload("anchors/dtor_slots01.json", {}) or {}).get("addrs") or []:
+            _v19d = hx(_a19d)
+            if _v19d is not None:
+                _dtor_set19.add(_v19d)
+    except Exception:
+        _dtor_set19 = set()
+    print("[C19] dtor set (vtable slots 0/1): %d" % len(_dtor_set19), flush=True)
     _pin_by_fn19 = {}
     for _e19k, _lst19k in exact.items():
         if not _e19k.startswith("T:"):
@@ -2771,23 +2780,11 @@ def main():
         # ctor 池调用是销毁期的基类 dtor —— exact 基类与使用边的派生类钉定矛盾
         # （第四十五轮普查：数十例 BufferIO→CCFile 同款）。判据：使用边中被调方
         # 的 C4/C15 钉定是该 ctor 类的**真后代** ⇒ 用后代域掩码（恒健全）。
-        _need19 = False
-        _cals19 = set()
-        for (_c, _a, _t19) in _cls19:
-            _cal19 = hx(str(_t19).split(":")[0])
-            if _cal19 is not None:
-                _cals19.add(_cal19)
-        for _r19i in (ents.get(_src19) or {}).get("raw") or ():
-            _cals19 |= _callees_by_from19.get(_r19i) or set()
-        for _cal19 in _cals19:
-            _p19 = _pin_by_fn19.get("T:%X" % _cal19)
-            if (_p19 is not None and _p19 != _c19
-                    and _p19 in U["desc"][_c19]):   # 真后代（desc 含自身，须排除）
-                _need19 = True
-                break
-        if _need19 and os.environ.get("MC_C19_DEMOTE") == "1":
-            # 实测净 -182（173 个降级里多数本无矛盾，A/B 已证单使用 exact 整体干净）
-            # —— 默认关闭，保留机制与开关供后续精化触发条件。
+        # 析构侧归因降级（精化版）：该源唯一可见的 ctor 池调用落在 vtable 槽 0/1
+        # （= 析构函数对，二进制可判）⇒ 这是销毁期基类 dtor 作用于完整派生对象，
+        # 钉 exact 基类会禁止所有派生类 —— 降为后代域。真构造（非槽 0/1）保持 exact。
+        _is_dtor_call = any(_a19x in _dtor_set19 for (_c19x, _a19x, _t19x) in _cls19)
+        if _is_dtor_call:
             fam["C19"][_src19] = fam["C19"].get(_src19, FULL) & allowed_of(_c19)
             _c19_demoted += 1
         else:
