@@ -67,7 +67,8 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C15", "C18", "C26"]
+FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
+            "C15", "C18", "C19", "C26"]
 FAMILY_DESC = {
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -83,6 +84,7 @@ FAMILY_DESC = {
     "C18": "binary offset-signature match (class member offsets observed in its own functions)",
     "C26": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
     "C15": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
+    "C19": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -2655,6 +2657,7 @@ def main():
     # 防误判：源若正是本函数自己的 this（T:fn），那是派生类构造里"传自身给基类 ctor"，
     # 对象真实类是派生类，不能记成基类 —— 跳过。
     _c19_exact = _c19_skip_self = _c19_noent = 0
+    _c19_by_src = {}
     _ctor_exact19 = {}
     for _eid19, _lst19 in exact.items():
         if not _eid19.startswith("T:"):
@@ -2695,12 +2698,30 @@ def main():
             continue
         if any(_ci == _c19 for _ci, _src in exact.get(_src19, ())):
             continue
-        exact[_src19].append((_c19, "C19:ctor-arg"))
-        exact_count["C19"] = exact_count.get("C19", 0) + 1
-        census["C19"] = census.get("C19", 0) + 1
-        _c19_exact += 1
-    print("[C19] ctor-argument exact=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
-          % (_c19_exact, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
+        _c19_by_src.setdefault(_src19, []).append(_c19)
+    # 两段式应用：栈槽复用时同一源会收到多个不同 ctor 类（实证 S:545150:+0x33c
+    # 先被 CCFile 链的基类 dtor 触到、后段被容器族 ctor 复用）——每次构造都是真
+    # 的，域 = 各 ctor 后代域的**并集**；单一 ctor 且无后代时 exact 等价可靠。
+    _c19_union = 0
+    _c19_skip_reused = 0
+    for _src19, _cls19 in _c19_by_src.items():
+        _u19 = set(_cls19)
+        if len(_u19) > 1:
+            # 栈槽复用（同一槽 ≥2 个不同 ctor 类）：一个实体两个生命周期，
+            # 任何单一域都不成立 —— 完全不给 C19 约束（并集掩码实测仍会在
+            # C10 不动点里制造矛盾、恶化级联中和）。
+            _c19_skip_reused += 1
+            continue
+        _c19 = _cls19[0]
+        if not U["desc"][_c19]:
+            exact[_src19].append((_c19, "C19:ctor-arg"))
+            exact_count["C19"] = exact_count.get("C19", 0) + 1
+            _c19_exact += 1
+        else:
+            fam["C19"][_src19] = fam["C19"].get(_src19, FULL) & allowed_of(_c19)
+            _c19_exact += 1
+    print("[C19] ctor-argument exact=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
+          % (_c19_exact, _c19_skip_reused, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
 
     # ---------------- C22：YRpp 外部参照（函数地址 -> 类）----------------
     # 用户批准的外部参照：YRpp 头文件里每个虚函数都写明 `JMP_THIS(0xADDR)` 与所属类，
@@ -4233,6 +4254,20 @@ def main():
         print("[C10] multi-call-site params (constraint not applied): %d" % len(_multi5), flush=True)
 
         # ---- Phase 1：基线边（HEAD 语义逐字复刻，空域守卫不变）----
+        _tr = os.environ.get("MC_TRACE_ENT")
+        if _tr:
+            for _nm_tr in ("BufferIOFileClass", "CCFileClass", "AbstractClass", "ObjectClass"):
+                _ci_tr = resolve(_nm_tr)
+                if _ci_tr is not None:
+                    print("[trace] desc(%s) = %d" % (_nm_tr, len(U["desc"][_ci_tr])), flush=True)
+            _ex_tr = exact.get(_tr)
+            print("[trace] exact[%s] = %s" % (_tr, [(names[c], src) for c, src in _ex_tr] if _ex_tr else None),
+                  flush=True)
+            for _ftr in FAMILIES:
+                _mtr = fam[_ftr].get(_tr)
+                if _mtr is not None:
+                    print("[trace] fam[%s][%s] = %d bits" % (_ftr, _tr, _mtr.bit_count()), flush=True)
+
         # ---- 真不动点传播（2026-11-02 重设计，取代 p1/p2 分相）----
         # 旧相位设计的 skip_empty 使收敛结果依赖边处理顺序：加边改变被跳过的更新
         # 集合，个别实体以更宽域收场（加边不单调；实测 this 边净 -11 唯一解）。
@@ -4258,6 +4293,7 @@ def main():
         _empty_pfx = collections.Counter()
         _neutralized_total = 0
         _ent_neutralized = 0
+        _root_diag = [] if os.environ.get("MC_ROOT_DIAG") else None
         for _outer in range(14):
             _steps_f, _sk_f = _c10_propagate(_edges_fix, _dom_fix, _skip_empty=False)
             _empt_all = {e for e, m in _dom_fix.items() if m == 0}
@@ -4277,6 +4313,7 @@ def main():
                     _adj_now[_b2].append((_a2, "in"))
                 for _e0 in _empt_all:
                     _eb0 = _base_now.get(_e0, FULL)
+                    _wit0 = None
                     for (_nb0, _d0) in _adj_now.get(_e0, ()):
                         _ob0 = _base_now.get(_nb0, FULL)
                         if _d0 == "out":
@@ -4285,6 +4322,14 @@ def main():
                             _hit0 = (_eb0 & _anc_union(_ob0)) == 0 or (_ob0 & _desc_union(_eb0)) == 0
                         if _hit0:
                             _dead_roots.add(_e0)
+                            if _root_diag is not None and len(_root_diag) < 2000:
+                                _root_diag.append({
+                                    "eid": _e0, "dir": _d0, "nb": _nb0,
+                                    "pin": [names[c] for c, _sc in (exact.get(_e0) or ())],
+                                    "nb_pin": [names[c] for c, _sc in (exact.get(_nb0) or ())],
+                                    "base": [names[i] for i in range(len(names)) if (_eb0 >> i) & 1][:10],
+                                    "nb_base": [names[i] for i in range(len(names)) if (_ob0 >> i) & 1][:10],
+                                })
                             break
             _dead = _dead_j | _dead_roots
             if not _dead:
@@ -4328,6 +4373,9 @@ def main():
                       indent=1)
             print("[C10] contradicted entities ledger: anchors/c10_contradicted_entities.json",
                   flush=True)
+        if _root_diag:
+            json.dump(_root_diag, open(os.path.join(ROOT, ".omo/rt1/roots.json"), "w"), indent=1)
+            print("[C10] root witnesses dumped: %d" % len(_root_diag), flush=True)
         if _empty_ids and os.environ.get("MC_CA_ANALYZE"):
             # 根因分类：用基线域（未经传播）判断矛盾是本地证据互斥还是级联污染
             _base_fix = _c10_base_dom(_edges_fix)

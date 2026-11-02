@@ -19034,7 +19034,7 @@
 ]
 },
 "R:624140:ecx": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "FactionSelectDialogControl@WorldDominationTour",
 "obs": [
 [
 4,
@@ -29502,7 +29502,7 @@
 ]
 },
 "R:6241C0:ecx": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "FactionSelectDialogControl@WorldDominationTour",
 "obs": [
 [
 8,
@@ -40711,7 +40711,7 @@
 ]
 },
 "R:6241D0:ecx": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "FactionSelectDialogControl@WorldDominationTour",
 "obs": [
 [
 4,
@@ -51430,7 +51430,7 @@
 ]
 },
 "R:6241E0:ecx": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "FactionSelectDialogControl@WorldDominationTour",
 "obs": [],
 "ents": [
 "T:6241E0"
@@ -106634,22 +106634,6 @@
 "T:4267F0"
 ]
 },
-"R:5283D0:ecx": {
-"class": "INIClass",
-"obs": [
-[
-4,
-4
-],
-[
-8,
-4
-]
-],
-"ents": [
-"T:5283D0"
-]
-},
 "R:529880:ecx": {
 "class": "INISection",
 "obs": [
@@ -107788,13 +107772,6 @@
 ],
 "ents": [
 "T:6C9AE0"
-]
-},
-"R:6C99D0:ecx": {
-"class": "BufferIOFileClass",
-"obs": [],
-"ents": [
-"T:6C99D0"
 ]
 },
 "R:432E40:ecx": {
@@ -113089,7 +113066,7 @@
 ]
 },
 "T:4AF2A0": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "T:4AF2A0"
@@ -113293,55 +113270,11 @@
 "T:65D2B0"
 ]
 },
-"R:525A60:ecx": {
-"class": "INIClass",
-"obs": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-44,
-4
-],
-[
-60,
-4
-]
-],
-"ents": [
-"T:525A60"
-]
-},
 "R:526FB0:ecx": {
 "class": "INISection",
 "obs": [],
 "ents": [
 "T:526FB0"
-]
-},
-"R:526470:ecx": {
-"class": "INIClass",
-"obs": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-20,
-4
-]
-],
-"ents": [
-"T:526470"
 ]
 },
 "R:526E80:ecx": {
@@ -133317,7 +133250,7 @@
 ],
 "ents": []
 },
-"R:5D2E00:ecx": {
+"P:5D2E90:1": {
 "class": "MSFont",
 "obs": [
 [
@@ -133338,7 +133271,9 @@
 ]
 ],
 "ents": [
-"T:5D2E00"
+"T:5D2E00",
+"P:5D2E90:1",
+"S:5D2E90:+0x8"
 ]
 },
 "R:5D1B30:ecx": {
@@ -151890,7 +151825,7 @@
 ]
 },
 "R:77A870:ecx": {
-"class": "rc_ptr_base",
+"class": "Theme",
 "obs": [
 [
 8,
@@ -151901,12 +151836,10 @@
 4
 ]
 ],
-"ents": [
-"T:77A870"
-]
+"ents": []
 },
 "R:77A890:ecx": {
-"class": "rc_ptr_base",
+"class": "IdleOrderEntry",
 "obs": [
 [
 8,
@@ -151917,12 +151850,10 @@
 4
 ]
 ],
-"ents": [
-"T:77A890"
-]
+"ents": []
 },
 "R:77A8B0:ecx": {
-"class": "rc_ptr_base",
+"class": "SymbolTable",
 "obs": [
 [
 8,
@@ -151933,9 +151864,7 @@
 4
 ]
 ],
-"ents": [
-"T:77A8B0"
-]
+"ents": []
 },
 "T:72E9F0": {
 "class": "BSurface",
@@ -154529,6 +154458,11 @@
 4
 ]
 ],
+"ents": []
+},
+"R:70C690:ecx": {
+"class": "VectorClass",
+"obs": [],
 "ents": []
 },
 "R:75E950:ecx": {
@@ -159153,11 +159087,9 @@
 ]
 },
 "T:789500": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"T:789500"
-]
+"ents": []
 },
 "N:777792": {
 "class": "ToolTipManager",
@@ -159378,11 +159310,9 @@
 ]
 },
 "T:77DC90": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"T:77DC90"
-]
+"ents": []
 },
 "R:5DA0B0:ecx": {
 "class": "ActionQueue",
@@ -159466,6 +159396,26 @@
 "ents": [
 "T:7ADC60"
 ]
+},
+"R:76B090:ecx": {
+"class": "TabClass",
+"obs": [
+[
+72,
+1
+]
+],
+"ents": []
+},
+"R:7B0220:ecx": {
+"class": "ScriptClass",
+"obs": [
+[
+4,
+4
+]
+],
+"ents": []
 },
 "R:7ADCD0:ecx": {
 "class": "HashMap",
@@ -159595,6 +159545,76 @@
 "R:561180:ecx": {
 "class": "VectorClass",
 "obs": [],
+"ents": []
+},
+"R:597430:ecx": {
+"class": "Skirmish",
+"obs": [
+[
+56,
+4
+],
+[
+60,
+4
+],
+[
+64,
+4
+],
+[
+68,
+4
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+80,
+4
+],
+[
+84,
+4
+],
+[
+88,
+4
+],
+[
+92,
+4
+],
+[
+96,
+4
+],
+[
+100,
+4
+],
+[
+104,
+4
+],
+[
+108,
+4
+],
+[
+112,
+4
+],
+[
+116,
+4
+]
+],
 "ents": []
 },
 "P:7C899E:4": {
@@ -161134,13 +161154,6 @@
 "T:535A60"
 ]
 },
-"R:7510D0:ecx": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"T:7510D0"
-]
-},
 "R:538B30:ecx": {
 "class": "VectorClass",
 "obs": [
@@ -161536,7 +161549,7 @@
 ]
 },
 "R:589100:ecx": {
-"class": "VectorClass",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -162110,18 +162123,6 @@
 "ents": [
 "T:5FE020",
 "RET:5FE020"
-]
-},
-"R:474320:ecx": {
-"class": "INIClass",
-"obs": [
-[
-64,
-1
-]
-],
-"ents": [
-"T:474320"
 ]
 },
 "R:6525A0:ecx": {
@@ -162746,7 +162747,7 @@
 ]
 },
 "R:6F25E0:ecx": {
-"class": "VectorClass",
+"class": "DynamicVectorClass",
 "obs": [
 [
 0,
@@ -163317,6 +163318,16 @@
 "T:76ABA0"
 ]
 },
+"R:7B02A0:ecx": {
+"class": "IStream",
+"obs": [
+[
+4,
+4
+]
+],
+"ents": []
+},
 "P:624110:1": {
 "class": "FactionSelectDialogControl@WorldDominationTour",
 "obs": [
@@ -163513,7 +163524,7 @@
 ]
 },
 "M:403A80:this:0xA0": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:403A80:this:0xA0"
@@ -163754,7 +163765,7 @@
 ]
 },
 "M:4151E0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:4151E0:this:0x24"
@@ -164021,7 +164032,7 @@
 ]
 },
 "M:42F070:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:42F070:this:0x24"
@@ -164300,7 +164311,7 @@
 "ents": []
 },
 "M:440580:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:440580:this:0x24"
@@ -165680,7 +165691,7 @@
 "ents": []
 },
 "M:4A7340:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [
 [
 540,
@@ -165721,7 +165732,7 @@
 ]
 },
 "M:4A7340:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:4A7340:this:0xAC"
@@ -166161,7 +166172,7 @@
 "ents": []
 },
 "M:4DA2C0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:4DA2C0:this:0x24"
@@ -166947,11 +166958,9 @@
 ]
 },
 "M:52CD70:this:0x14A8": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"M:52CD70:this:0x14A8"
-]
+"ents": []
 },
 "M:5353D0:this:0x4": {
 "class": "FootClass",
@@ -167248,7 +167257,7 @@
 "ents": []
 },
 "M:543330:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:543330:this:0xAC"
@@ -167356,7 +167365,7 @@
 ]
 },
 "M:552390:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:552390:this:0x18"
@@ -167382,7 +167391,7 @@
 ]
 },
 "M:5525F0:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5525F0:this:0x18"
@@ -167485,7 +167494,7 @@
 ]
 },
 "M:55C6D0:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:55C6D0:this:0x18"
@@ -167518,7 +167527,7 @@
 ]
 },
 "M:55C990:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:55C990:this:0x18"
@@ -167703,7 +167712,7 @@
 ]
 },
 "M:597430:this:0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:597430:this:0x18"
@@ -168308,7 +168317,7 @@
 "ents": []
 },
 "M:5CE7D0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:5CE7D0:this:0x24"
@@ -168331,14 +168340,14 @@
 ]
 },
 "M:5CE8C0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:5CE8C0:this:0x24"
 ]
 },
 "M:5CEA40:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:5CEA40:this:0x24"
@@ -168684,21 +168693,21 @@
 ]
 },
 "M:5FA510:this:0x710": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FA510:this:0x710"
 ]
 },
 "M:5FA590:this:0x710": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FA590:this:0x710"
 ]
 },
 "M:5FD970:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FD970:this:0xAC"
@@ -168910,7 +168919,7 @@
 "ents": []
 },
 "M:629FD0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:629FD0:this:0x24"
@@ -168927,7 +168936,7 @@
 "ents": []
 },
 "M:62A260:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [
 [
 108,
@@ -169741,7 +169750,7 @@
 "ents": []
 },
 "M:674730:this:0xEF8": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:674730:this:0xEF8"
@@ -170084,7 +170093,7 @@
 "ents": []
 },
 "M:69E580:this:0x8": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:69E580:this:0x8"
@@ -170411,7 +170420,7 @@
 ]
 },
 "M:6B7230:this:0x24": {
-"class": "INIClass",
+"class": "Game",
 "obs": [
 [
 20,
@@ -171650,14 +171659,14 @@
 "ents": []
 },
 "M:718260:this:0xA0": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:718260:this:0xA0"
 ]
 },
 "M:7187A0:this:0xA0": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:7187A0:this:0xA0"
@@ -171679,7 +171688,7 @@
 "ents": []
 },
 "M:71A760:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [
 [
 130,
@@ -172169,7 +172178,7 @@
 ]
 },
 "M:746100:this:0xA0": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:746100:this:0xA0"
@@ -172676,7 +172685,7 @@
 "ents": []
 },
 "M:76E430:this:0x440": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76E430:this:0x440"
@@ -172698,14 +172707,14 @@
 "ents": []
 },
 "M:76FB90:this:0x4": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76FB90:this:0x4"
 ]
 },
 "M:76FC50:this:0x4": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76FC50:this:0x4"
@@ -173888,7 +173897,7 @@
 "ents": []
 },
 "M:7667A0:this:0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:7667A0:this:0x8"
@@ -173930,7 +173939,7 @@
 ]
 },
 "M:767880:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:767880:this:0x18"
@@ -173944,7 +173953,7 @@
 ]
 },
 "M:767C10:this:0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:767C10:this:0x8"
@@ -173977,7 +173986,7 @@
 "ents": []
 },
 "M:76C030:this:0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76C030:this:0x8"
@@ -173991,7 +174000,7 @@
 ]
 },
 "M:76C290:this:0x458": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76C290:this:0x458"
@@ -174051,7 +174060,7 @@
 "ents": []
 },
 "M:76F6C0:this:0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:76F6C0:this:0x8"
@@ -174724,13 +174733,6 @@
 ],
 "ents": [
 "T:472140"
-]
-},
-"R:474540:ecx": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"T:474540"
 ]
 },
 "R:474C20:ecx": {
@@ -177846,14 +177848,14 @@
 "ents": []
 },
 "T:7BC1F0": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "T:7BC1F0"
 ]
 },
 "T:7BC250": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "T:7BC250"
@@ -178853,7 +178855,7 @@
 ]
 },
 "M:5240A0:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:5240A0:this:0x24"
@@ -179437,7 +179439,7 @@
 ]
 },
 "M:644F50:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:644F50:this:0x24"
@@ -181745,7 +181747,7 @@
 ]
 },
 "M:6C6740:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:6C6740:this:0x24"
@@ -182210,7 +182212,7 @@
 ]
 },
 "M:712170:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:712170:this:0x24"
@@ -182489,7 +182491,7 @@
 ]
 },
 "M:75D3A0:this:0x24": {
-"class": "INIClass",
+"class": "Game",
 "obs": [],
 "ents": [
 "M:75D3A0:this:0x24"
@@ -182558,7 +182560,7 @@
 ]
 },
 "M:7681E0:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:7681E0:this:0xAC"
@@ -182709,7 +182711,7 @@
 ]
 },
 "M:772080:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "M:772080:this:0x24"
@@ -201572,7 +201574,7 @@
 "ents": []
 },
 "P:59A8F0:0": {
-"class": "VectorClass",
+"class": "AudioFileClass",
 "obs": [
 [
 0,
@@ -201591,10 +201593,7 @@
 4
 ]
 ],
-"ents": [
-"P:59A8F0:0",
-"S:59A8F0:+0x4"
-]
+"ents": []
 },
 "P:5A0160:0": {
 "class": "PairVector",
@@ -204785,7 +204784,7 @@
 ]
 },
 "M:62D830:this:0xac": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [
 [
 777,
@@ -209924,7 +209923,7 @@
 ]
 },
 "M:6E9140:this:0x24": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [
 [
 171,
@@ -223168,7 +223167,7 @@
 "ents": []
 },
 "S:420F40:+0x70": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "S:420F40:+0x70"
@@ -223732,11 +223731,9 @@
 ]
 },
 "S:44C980:+0x28": {
-"class": "AnimClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:44C980:+0x28"
-]
+"ents": []
 },
 "M:44E8F0:this:0x684": {
 "class": "DynamicVector",
@@ -224310,10 +224307,7 @@
 "P:475D70:1": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"P:475D70:1",
-"S:475D70:+0x8"
-]
+"ents": []
 },
 "P:475F30:0": {
 "class": "VectorClass",
@@ -224323,10 +224317,7 @@
 "P:476020:1": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"P:476020:1",
-"S:476020:+0x8"
-]
+"ents": []
 },
 "P:476240:0": {
 "class": "VectorClass",
@@ -224336,10 +224327,7 @@
 "P:4764F0:2": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"P:4764F0:2",
-"S:4764F0:+0xc"
-]
+"ents": []
 },
 "P:4766F0:0": {
 "class": "VectorClass",
@@ -224349,10 +224337,7 @@
 "P:4767C0:3": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"P:4767C0:3",
-"S:4767C0:+0x10"
-]
+"ents": []
 },
 "P:476A20:3": {
 "class": "VectorClass",
@@ -224399,18 +224384,10 @@
 ]
 },
 "S:47EFE0:+0xfffffffffffffffc": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "S:47EFE0:+0xfffffffffffffffc"
-]
-},
-"P:69E740:0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:69E740:0",
-"S:69E740:+0x4"
 ]
 },
 "G:81CEB8": {
@@ -224837,7 +224814,7 @@
 "ents": []
 },
 "S:4AED70:+0x74": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "S:4AED70:+0x74"
@@ -225557,14 +225534,6 @@
 "ents": [
 "T:4F2830",
 "P:4F21A0:0"
-]
-},
-"P:4F2F10:4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:4F2F10:4",
-"S:4F2F10:+0x14"
 ]
 },
 "P:4F3EE0:0": {
@@ -228308,9 +228277,7 @@
 "S:58D620:+0x8c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:58D620:+0x8c"
-]
+"ents": []
 },
 "M:58EBC0:this:0x28": {
 "class": "VectorClass",
@@ -228389,18 +228356,14 @@
 ]
 },
 "S:5981F0:+0x54": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5981F0:+0x54"
-]
+"ents": []
 },
 "S:5A6510:+0x6c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5A6510:+0x6c"
-]
+"ents": []
 },
 "T:5A6510": {
 "class": "FootClass",
@@ -228429,11 +228392,9 @@
 ]
 },
 "S:5B3C20:+0x1ec": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B3C20:+0x1ec"
-]
+"ents": []
 },
 "P:633050:1": {
 "class": "Straw",
@@ -228609,25 +228570,15 @@
 "ents": []
 },
 "S:5BFAA0:+0x44": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BFAA0:+0x44"
-]
+"ents": []
 },
 "R:5C09A0:ecx": {
 "class": "Game",
 "obs": [],
 "ents": [
 "T:5C09A0"
-]
-},
-"P:5D5B60:3": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:5D5B60:3",
-"S:5D5B60:+0x10"
 ]
 },
 "M:5C1640:this:0x324": {
@@ -228817,22 +228768,6 @@
 "P:5CB440:0"
 ]
 },
-"P:5CCA20:3": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:5CCA20:3",
-"S:5CCA20:+0x10"
-]
-},
-"P:5CCC30:3": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:5CCC30:3",
-"S:5CCC30:+0x10"
-]
-},
 "M:5CF5F0:this:0x44": {
 "class": "FootClass",
 "obs": [],
@@ -228859,14 +228794,6 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"P:5D2E90:1": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"P:5D2E90:1",
-"S:5D2E90:+0x8"
-]
 },
 "R:5D3A40:ecx": {
 "class": "MessageListClass",
@@ -228948,11 +228875,9 @@
 "ents": []
 },
 "S:5D7590:+0x74": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D7590:+0x74"
-]
+"ents": []
 },
 "M:5D7F20:this:0x8": {
 "class": "DynamicVector",
@@ -229014,12 +228939,9 @@
 "ents": []
 },
 "P:679D90:3": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:679D90:3",
-"S:679D90:+0x10"
-]
+"ents": []
 },
 "G:8314AC": {
 "class": "StringTable",
@@ -230450,11 +230372,9 @@
 ]
 },
 "S:663030:+0x44": {
-"class": "AnimClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:663030:+0x44"
-]
+"ents": []
 },
 "P:664D20:0": {
 "class": "RulesClass",
@@ -231814,11 +231734,9 @@
 "ents": []
 },
 "S:6C6F50:+0x24": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6C6F50:+0x24"
-]
+"ents": []
 },
 "T:6C6F50": {
 "class": "Game",
@@ -232391,11 +232309,9 @@
 ]
 },
 "S:71B920:+0x78": {
-"class": "AnimClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:71B920:+0x78"
-]
+"ents": []
 },
 "G:A8E318": {
 "class": "DynamicVector",
@@ -232888,7 +232804,7 @@
 ]
 },
 "S:73B140:+0x70": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "S:73B140:+0x70"
@@ -232999,11 +232915,9 @@
 "ents": []
 },
 "S:749F30:+0x2c": {
-"class": "OverlayClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:749F30:+0x2c"
-]
+"ents": []
 },
 "M:74AA30:this:0x4": {
 "class": "FootClass",
@@ -233145,25 +233059,19 @@
 ]
 },
 "S:7660F0:+0xc": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7660F0:+0xc"
-]
+"ents": []
 },
 "S:7665D0:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7665D0:+0x28"
-]
+"ents": []
 },
 "S:7665D0:+0x20": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7665D0:+0x20"
-]
+"ents": []
 },
 "P:767ED0:0": {
 "class": "BSurface",
@@ -233184,11 +233092,9 @@
 "ents": []
 },
 "S:7681E0:+0x40": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7681E0:+0x40"
-]
+"ents": []
 },
 "S:769550:+0x2c": {
 "class": "VectorClass",
@@ -233205,11 +233111,9 @@
 ]
 },
 "S:76B180:+0x24": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76B180:+0x24"
-]
+"ents": []
 },
 "G:848D60": {
 "class": "StringTable",
@@ -233254,19 +233158,14 @@
 ]
 },
 "S:76D180:+0x20": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D180:+0x20"
-]
+"ents": []
 },
 "P:76D4D0:2": {
-"class": "VectorCursor",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:76D4D0:2",
-"S:76D4D0:+0xc"
-]
+"ents": []
 },
 "G:8490C0": {
 "class": "StringTable",
@@ -233304,12 +233203,9 @@
 ]
 },
 "P:76E430:0": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:76E430:0",
-"S:76E430:+0x4"
-]
+"ents": []
 },
 "G:8490F0": {
 "class": "StringTable",
@@ -233388,12 +233284,9 @@
 "ents": []
 },
 "P:773D40:1": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:773D40:1",
-"S:773D40:+0x8"
-]
+"ents": []
 },
 "G:B7778C": {
 "class": "WebBrowser",
@@ -233799,11 +233692,9 @@
 ]
 },
 "S:7864C0:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7864C0:+0x28"
-]
+"ents": []
 },
 "P:7ACBE0:1": {
 "class": "VectorClass",
@@ -234019,11 +233910,9 @@
 ]
 },
 "G:84BA1C": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"G:84BA1C"
-]
+"ents": []
 },
 "G:84BAE0": {
 "class": "StringTable",
@@ -234281,12 +234170,9 @@
 "ents": []
 },
 "P:52F3F0:1": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"P:52F3F0:1",
-"S:52F3F0:+0x8"
-]
+"ents": []
 },
 "G:84B15C": {
 "class": "StringTable",
@@ -234462,12 +234348,9 @@
 "ents": []
 },
 "P:7A2FE0:0": {
-"class": "rc_ptr_base",
+"class": "FootClass",
 "obs": [],
-"ents": [
-"P:7A2FE0:0",
-"S:7A2FE0:+0x4"
-]
+"ents": []
 },
 "G:84A9F4": {
 "class": "StringTable",
@@ -234820,7 +234703,7 @@
 ]
 },
 "S:7B93F0:+0x80": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "S:7B93F0:+0x80"
@@ -234991,40 +234874,17 @@
 ]
 },
 "S:4011C0:+0x20": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4011C0:+0x20"
-]
+"ents": []
 },
 "S:401C00:+0x1c": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
 },
-"S:406B10:+0x2c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:406B10:+0x2c"
-]
-},
-"S:428C30:+0x4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:428C30:+0x4"
-]
-},
-"S:428C30:+0x70": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:428C30:+0x70"
-]
-},
 "S:42CCD0:+0x24": {
-"class": "VectorClass_ushort",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "S:42CCD0:+0x24"
@@ -235055,28 +234915,22 @@
 "ents": []
 },
 "S:4309D0:+0x28": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4309D0:+0x28"
-]
+"ents": []
 },
 "S:4309D0:+0x4": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4309D0:+0x4"
-]
+"ents": []
 },
 "S:432750:+0x54": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:432750:+0x54"
-]
+"ents": []
 },
 "S:4371D0:+0x2c": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "S:4371D0:+0x2c"
@@ -235142,55 +234996,6 @@
 "S:4571E0:+0x21c"
 ]
 },
-"S:45F040:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:45F040:+0x8"
-]
-},
-"S:45F040:+0x74": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:45F040:+0x74"
-]
-},
-"S:45FA90:+0x7c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:45FA90:+0x7c"
-]
-},
-"S:45FA90:+0x10": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:45FA90:+0x10"
-]
-},
-"S:45FA90:+0xe8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:45FA90:+0xe8"
-]
-},
-"S:465960:+0x78": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:465960:+0x78"
-]
-},
-"S:465960:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:465960:+0xc"
-]
-},
 "S:4666E0:+0x148": {
 "class": "FootClass",
 "obs": [],
@@ -235211,75 +235016,40 @@
 "obs": [],
 "ents": []
 },
-"S:473E50:+0x10": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:473E50:+0x10"
-]
-},
-"S:473F00:+0x14": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:473F00:+0x14"
-]
-},
 "S:4741F0:+0x28": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4741F0:+0x28"
-]
+"ents": []
 },
 "S:474320:+0x14": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:474320:+0x14"
-]
+"ents": []
 },
 "S:474430:+0x24": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:474430:+0x24"
-]
+"ents": []
 },
 "S:474430:+0x14": {
-"class": "FilePipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:474430:+0x14"
-]
+"ents": []
 },
 "S:474540:+0x10": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:474540:+0x10"
-]
+"ents": []
 },
 "S:476D80:+0x18": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:476D80:+0x18"
-]
+"ents": []
 },
 "S:476E20:+0x8": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:476E20:+0x8"
-]
-},
-"S:4791F0:+0x50": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4791F0:+0x50"
-]
+"ents": []
 },
 "S:480630:+0x94": {
 "class": "FootClass",
@@ -235363,31 +235133,20 @@
 "S:489280:+0x40"
 ]
 },
-"S:49BE40:+0xd4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:49BE40:+0xd4"
-]
-},
 "S:49BE40:+0x20": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "S:49BE40:+0x68": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49BE40:+0x68"
-]
+"ents": []
 },
 "S:49BE40:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49BE40:+0x10"
-]
+"ents": []
 },
 "S:49C0D0:+0x1c": {
 "class": "VectorClass",
@@ -235395,25 +235154,14 @@
 "ents": []
 },
 "S:49C0D0:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49C0D0:+0x10"
-]
+"ents": []
 },
 "S:49C0D0:+0xcc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49C0D0:+0xcc"
-]
-},
-"S:49C5A0:+0x13c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:49C5A0:+0x13c"
-]
+"ents": []
 },
 "S:49C5A0:+0x24": {
 "class": "VectorClass",
@@ -235421,25 +235169,14 @@
 "ents": []
 },
 "S:49C5A0:+0xd0": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49C5A0:+0xd0"
-]
+"ents": []
 },
 "S:49C5A0:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49C5A0:+0x14"
-]
-},
-"S:49D120:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:49D120:+0xc"
-]
+"ents": []
 },
 "S:49D120:+0x84": {
 "class": "VectorClass",
@@ -235447,32 +235184,19 @@
 "ents": []
 },
 "S:49D120:+0x78": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49D120:+0x78"
-]
+"ents": []
 },
 "S:49D120:+0x7c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49D120:+0x7c"
-]
+"ents": []
 },
 "S:49D120:+0x10": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49D120:+0x10"
-]
-},
-"S:49D390:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:49D390:+0xc"
-]
+"ents": []
 },
 "S:49D390:+0x88": {
 "class": "VectorClass",
@@ -235480,53 +235204,24 @@
 "ents": []
 },
 "S:49D390:+0x78": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49D390:+0x78"
-]
-},
-"S:49DB00:+0x50": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:49DB00:+0x50"
-]
+"ents": []
 },
 "S:49DB00:+0x58": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:49DB00:+0x58"
-]
-},
-"S:4A38D0:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4A38D0:+0xc"
-]
-},
-"S:4A3970:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4A3970:+0xc"
-]
+"ents": []
 },
 "S:4A3E40:+0x34": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4A3E40:+0x34"
-]
+"ents": []
 },
 "S:4A3E40:+0x2c": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4A3E40:+0x2c"
-]
+"ents": []
 },
 "S:4A3E40:+0x38": {
 "class": "DSurface",
@@ -235550,9 +235245,7 @@
 "S:4AA440:+0x4c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4AA440:+0x4c"
-]
+"ents": []
 },
 "S:4ACE70:+0x10": {
 "class": "BSurface",
@@ -235562,18 +235255,14 @@
 ]
 },
 "S:4ACE70:+0x40": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4ACE70:+0x40"
-]
+"ents": []
 },
 "S:4AD7E0:+0x30": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4AD7E0:+0x30"
-]
+"ents": []
 },
 "S:4AED70:+0x38": {
 "class": "FootClass",
@@ -235626,26 +235315,10 @@
 "S:4B5210:+0x114"
 ]
 },
-"S:4B6C30:+0x2a8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4B6C30:+0x2a8"
-]
-},
-"S:4B6C30:+0x314": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4B6C30:+0x314"
-]
-},
 "S:4B6C30:+0x74": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4B6C30:+0x74"
-]
+"ents": []
 },
 "S:4B6C30:+0xb0": {
 "class": "VectorClass",
@@ -235664,9 +235337,7 @@
 "S:4B6C30:+0xd4": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4B6C30:+0xd4"
-]
+"ents": []
 },
 "S:4BB0D0:+0x40": {
 "class": "VectorClass",
@@ -235744,18 +235415,9 @@
 "ents": []
 },
 "S:4C3E30:+0xa0": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4C3E30:+0xa0"
-]
-},
-"S:4C9160:+0x4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4C9160:+0x4"
-]
+"ents": []
 },
 "S:4CFB00:+0x54": {
 "class": "FootClass",
@@ -235796,11 +235458,9 @@
 ]
 },
 "S:4F11B0:+0x64": {
-"class": "LoadOptionsClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F11B0:+0x64"
-]
+"ents": []
 },
 "S:4F11B0:+0x2c": {
 "class": "LoadOptionsClass",
@@ -235817,53 +235477,34 @@
 ]
 },
 "S:4F11B0:+0x9c": {
-"class": "LoadOptionsClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F11B0:+0x9c"
-]
+"ents": []
 },
 "S:4F1720:+0x14": {
-"class": "LoadOptionsClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F1720:+0x14"
-]
+"ents": []
 },
 "S:4F1B80:+0x4c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F1B80:+0x4c"
-]
+"ents": []
 },
 "S:4F1B80:+0x48": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F1B80:+0x48"
-]
+"ents": []
 },
 "S:4F1B80:+0x8": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F1B80:+0x8"
-]
+"ents": []
 },
 "S:4F1CA0:+0x0": {
-"class": "MSEngine",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F1CA0:+0x0"
-]
-},
-"S:4F1CA0:+0x54": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4F1CA0:+0x54"
-]
+"ents": []
 },
 "S:4F21A0:+0xc": {
 "class": "VectorCursor",
@@ -235901,25 +235542,14 @@
 ]
 },
 "S:4F2F10:+0x84": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F2F10:+0x84"
-]
+"ents": []
 },
 "S:4F2F10:+0x80": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4F2F10:+0x80"
-]
-},
-"S:4F37A0:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:4F37A0:+0xc"
-]
+"ents": []
 },
 "S:4F54A0:+0x5514": {
 "class": "CounterClass",
@@ -236034,9 +235664,7 @@
 "S:4FE3E0:+0x2c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:4FE3E0:+0x2c"
-]
+"ents": []
 },
 "S:4FEEE0:+0x28": {
 "class": "VectorClass",
@@ -236067,12 +235695,10 @@
 "S:5054B0:+0x18": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5054B0:+0x18"
-]
+"ents": []
 },
 "S:5054B0:+0x30": {
-"class": "VectorClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "S:5054B0:+0x30"
@@ -236081,16 +235707,12 @@
 "S:5060B0:+0x44": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5060B0:+0x44"
-]
+"ents": []
 },
 "S:506EF0:+0x74": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:506EF0:+0x74"
-]
+"ents": []
 },
 "S:506EF0:+0x8c": {
 "class": "VectorClass",
@@ -236114,9 +235736,7 @@
 "S:506EF0:+0x48": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:506EF0:+0x48"
-]
+"ents": []
 },
 "S:5082C0:+0x54": {
 "class": "VectorClass",
@@ -236173,9 +235793,7 @@
 "S:525430:+0xc": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:525430:+0xc"
-]
+"ents": []
 },
 "S:525A10:+0xc": {
 "class": "FileStraw",
@@ -236185,18 +235803,16 @@
 ]
 },
 "S:525A60:+0x48": {
-"class": "INIClass",
+"class": "CCINIClass",
 "obs": [],
 "ents": [
 "S:525A60:+0x48"
 ]
 },
 "S:525A60:+0x3c": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:525A60:+0x3c"
-]
+"ents": []
 },
 "S:525A60:+0x64": {
 "class": "FootClass",
@@ -236209,11 +235825,9 @@
 "ents": []
 },
 "S:526420:+0x8": {
-"class": "FilePipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:526420:+0x8"
-]
+"ents": []
 },
 "S:526A30:+0x10": {
 "class": "FootClass",
@@ -236236,32 +235850,24 @@
 "ents": []
 },
 "S:526E80:+0x2c": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:526E80:+0x2c"
-]
+"ents": []
 },
 "S:526E80:+0x10": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:526E80:+0x10"
-]
+"ents": []
 },
 "S:526FB0:+0x1c": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:526FB0:+0x1c"
-]
+"ents": []
 },
 "S:526FB0:+0x38": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:526FB0:+0x38"
-]
+"ents": []
 },
 "S:5272B0:+0x34": {
 "class": "FootClass",
@@ -236359,136 +235965,75 @@
 "ents": []
 },
 "S:52BA60:+0x678": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x678"
-]
+"ents": []
 },
 "S:52BA60:+0x30c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x30c"
-]
+"ents": []
 },
 "S:52BA60:+0x2a0": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x2a0"
-]
+"ents": []
 },
 "S:52BA60:+0x58": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x58"
-]
-},
-"S:52BA60:+0x54": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:52BA60:+0x54"
-]
+"ents": []
 },
 "S:52BA60:+0x130": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x130"
-]
+"ents": []
 },
 "S:52BA60:+0x12c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x12c"
-]
+"ents": []
 },
 "S:52BA60:+0xc4": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0xc4"
-]
-},
-"S:52BA60:+0xc0": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:52BA60:+0xc0"
-]
+"ents": []
 },
 "S:52BA60:+0x184": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x184"
-]
+"ents": []
 },
 "S:52BA60:+0x188": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x188"
-]
+"ents": []
 },
 "S:52BA60:+0x238": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x238"
-]
+"ents": []
 },
 "S:52BA60:+0x1dc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x1dc"
-]
+"ents": []
 },
 "S:52BA60:+0x1e0": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x1e0"
-]
+"ents": []
 },
 "S:52BA60:+0x234": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52BA60:+0x234"
-]
-},
-"S:52CB90:+0x18": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:52CB90:+0x18"
-]
-},
-"S:52CB90:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:52CB90:+0x14"
-]
+"ents": []
 },
 "S:52CD70:+0x18": {
 "class": "VectorClass",
 "obs": [],
 "ents": [
 "S:52CD70:+0x18"
-]
-},
-"S:52CD70:+0x2c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:52CD70:+0x2c"
 ]
 },
 "S:52CD70:+0x14": {
@@ -236498,171 +236043,60 @@
 "S:52CD70:+0x14"
 ]
 },
-"S:52CD70:+0x98": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:52CD70:+0x98"
-]
-},
 "S:52CD70:+0x104": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52CD70:+0x104"
-]
+"ents": []
 },
 "S:52CD70:+0x30": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52CD70:+0x30"
-]
-},
-"S:52CD70:+0x170": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:52CD70:+0x170"
-]
+"ents": []
 },
 "S:52D9A0:+0x2c": {
-"class": "LoadOptionsClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:52D9A0:+0x2c"
-]
+"ents": []
 },
 "S:5301A0:+0x14": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5301A0:+0x14"
-]
-},
-"S:530460:+0x10": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:530460:+0x10"
-]
+"ents": []
 },
 "S:5312A0:+0x4c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5312A0:+0x4c"
-]
+"ents": []
 },
 "S:5312A0:+0x3c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5312A0:+0x3c"
-]
-},
-"S:531680:+0x4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:531680:+0x4"
-]
-},
-"S:531680:+0x70": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:531680:+0x70"
-]
+"ents": []
 },
 "S:533D20:+0x8": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:533D20:+0x8"
-]
-},
-"S:533D20:+0x64": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:533D20:+0x64"
-]
+"ents": []
 },
 "S:533D20:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:533D20:+0xc"
-]
+"ents": []
 },
 "S:533D20:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:533D20:+0x10"
-]
+"ents": []
 },
 "S:533D20:+0x68": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:533D20:+0x68"
-]
-},
-"S:534FA0:+0x54": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:534FA0:+0x54"
-]
-},
-"S:534FA0:+0xc0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:534FA0:+0xc0"
-]
-},
-"S:537BC0:+0xb8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:537BC0:+0xb8"
-]
-},
-"S:537BC0:+0x4c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:537BC0:+0x4c"
-]
-},
-"S:538C40:+0x0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:538C40:+0x0"
-]
-},
-"S:538CC0:+0x0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:538CC0:+0x0"
-]
+"ents": []
 },
 "S:538E70:+0x18": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"S:538F20:+0x18": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:538F20:+0x18"
-]
 },
 "S:53AC80:+0x10": {
 "class": "ColorScheme",
@@ -236693,60 +236127,29 @@
 ]
 },
 "S:545150:+0x48": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:545150:+0x48"
-]
+"ents": []
 },
 "S:545150:+0x54": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:545150:+0x54"
-]
+"ents": []
 },
 "S:545150:+0x340": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:545150:+0x340"
-]
+"ents": []
 },
 "S:545150:+0x33c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:545150:+0x33c"
-]
-},
-"S:545150:+0x214": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x214"
-]
-},
-"S:545150:+0x3a8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x3a8"
-]
-},
-"S:545150:+0x500": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x500"
-]
+"ents": []
 },
 "S:545150:+0x38": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:545150:+0x38"
-]
+"ents": []
 },
 "S:545150:+0x44": {
 "class": "INISection",
@@ -236755,47 +236158,15 @@
 "S:545150:+0x44"
 ]
 },
-"S:545150:+0x56c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x56c"
-]
-},
-"S:545150:+0x5d8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x5d8"
-]
-},
-"S:545150:+0x494": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x494"
-]
-},
-"S:545150:+0x644": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:545150:+0x644"
-]
-},
 "S:547020:+0x8": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:547020:+0x8"
-]
+"ents": []
 },
 "S:547020:+0xc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:547020:+0xc"
-]
+"ents": []
 },
 "S:552D60:+0x3c": {
 "class": "FootClass",
@@ -236812,50 +236183,25 @@
 "obs": [],
 "ents": []
 },
-"S:552D60:+0xfc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:552D60:+0xfc"
-]
-},
 "S:552D60:+0x1c": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "S:552D60:+0xa4": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:552D60:+0xa4"
-]
+"ents": []
 },
 "S:5541C0:+0x10": {
 "class": "FootClass",
 "obs": [],
 "ents": []
 },
-"S:558DD0:+0x38": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:558DD0:+0x38"
-]
-},
 "S:558DD0:+0xa4": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:558DD0:+0xa4"
-]
-},
-"S:5595F0:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5595F0:+0x8"
-]
+"ents": []
 },
 "S:559ED0:+0x10": {
 "class": "VectorClass",
@@ -236875,32 +236221,19 @@
 ]
 },
 "S:55CC20:+0x6c": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:55CC20:+0x6c"
-]
-},
-"S:55CC20:+0x84": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:55CC20:+0x84"
-]
+"ents": []
 },
 "S:55CC20:+0x60": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:55CC20:+0x60"
-]
+"ents": []
 },
 "S:560480:+0x70": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:560480:+0x70"
-]
+"ents": []
 },
 "S:567230:+0x14": {
 "class": "FootClass",
@@ -236910,177 +236243,127 @@
 "S:568E40:+0x60": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:568E40:+0x60"
-]
+"ents": []
 },
 "S:569760:+0x60": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:569760:+0x60"
-]
+"ents": []
 },
 "S:56AE40:+0x10": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56AE40:+0x10"
-]
+"ents": []
 },
 "S:56AE40:+0xc": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56AE40:+0xc"
-]
+"ents": []
 },
 "S:56AF40:+0x18": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56AF40:+0x18"
-]
+"ents": []
 },
 "S:56AF40:+0x14": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56AF40:+0x14"
-]
+"ents": []
 },
 "S:56B250:+0x18": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B250:+0x18"
-]
+"ents": []
 },
 "S:56B250:+0x14": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B250:+0x14"
-]
+"ents": []
 },
 "S:56B3F0:+0x18": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B3F0:+0x18"
-]
+"ents": []
 },
 "S:56B3F0:+0x14": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B3F0:+0x14"
-]
+"ents": []
 },
 "S:56B5A0:+0x10": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B5A0:+0x10"
-]
+"ents": []
 },
 "S:56B5A0:+0x0": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B5A0:+0x0"
-]
+"ents": []
 },
 "S:56B780:+0x1c": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B780:+0x1c"
-]
+"ents": []
 },
 "S:56B780:+0xc": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B780:+0xc"
-]
+"ents": []
 },
 "S:56B9A0:+0x1c": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B9A0:+0x1c"
-]
+"ents": []
 },
 "S:56B9A0:+0xc": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56B9A0:+0xc"
-]
+"ents": []
 },
 "S:56BAC0:+0x1c": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56BAC0:+0x1c"
-]
+"ents": []
 },
 "S:56BAC0:+0xc": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:56BAC0:+0xc"
-]
+"ents": []
 },
 "S:570050:+0x4c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:570050:+0x4c"
-]
+"ents": []
 },
 "S:571490:+0x4c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:571490:+0x4c"
-]
+"ents": []
 },
 "S:573540:+0x48": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:573540:+0x48"
-]
+"ents": []
 },
 "S:574000:+0x34": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:574000:+0x34"
-]
+"ents": []
 },
 "S:574C20:+0x34": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:574C20:+0x34"
-]
+"ents": []
 },
 "S:576BA0:+0x50": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:576BA0:+0x50"
-]
+"ents": []
 },
 "S:576BA0:+0x4c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:576BA0:+0x4c"
-]
+"ents": []
 },
 "S:57F6A0:+0xc4": {
 "class": "FootClass",
@@ -237139,12 +236422,10 @@
 "S:583AD0:+0x14": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:583AD0:+0x14"
-]
+"ents": []
 },
 "S:5840C0:+0x38": {
-"class": "VectorClass_ushort",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "S:5840C0:+0x38"
@@ -237158,7 +236439,7 @@
 ]
 },
 "S:584550:+0x3c": {
-"class": "VectorClass_ushort",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
 "S:584550:+0x3c"
@@ -237181,30 +236462,22 @@
 "S:585930:+0x40": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:585930:+0x40"
-]
+"ents": []
 },
 "S:585930:+0x28": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:585930:+0x28"
-]
+"ents": []
 },
 "S:58C800:+0x40": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:58C800:+0x40"
-]
+"ents": []
 },
 "S:58D620:+0x9c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:58D620:+0x9c"
-]
+"ents": []
 },
 "S:58D620:+0x80": {
 "class": "VectorClass",
@@ -237216,23 +236489,17 @@
 "S:58D620:+0x18": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:58D620:+0x18"
-]
+"ents": []
 },
 "S:58E9B0:+0x1c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:58E9B0:+0x1c"
-]
+"ents": []
 },
 "S:594420:+0x28": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:594420:+0x28"
-]
+"ents": []
 },
 "S:594B50:+0x50": {
 "class": "VectorClass",
@@ -237249,11 +236516,9 @@
 ]
 },
 "S:595BC0:+0x10": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:595BC0:+0x10"
-]
+"ents": []
 },
 "S:595CE0:+0x1c": {
 "class": "VectorClass",
@@ -237263,158 +236528,104 @@
 ]
 },
 "S:595FB0:+0x10": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:595FB0:+0x10"
-]
+"ents": []
 },
 "S:595FB0:+0x18": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:595FB0:+0x18"
-]
+"ents": []
 },
 "S:595FB0:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:595FB0:+0x1c"
-]
-},
-"S:595FB0:+0x44": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:595FB0:+0x44"
-]
+"ents": []
 },
 "S:595FB0:+0x20": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:595FB0:+0x20"
-]
+"ents": []
 },
 "S:597430:+0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597430:+0x8"
-]
+"ents": []
 },
 "S:597430:+0x14": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597430:+0x14"
-]
+"ents": []
 },
 "S:597430:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597430:+0x18"
-]
+"ents": []
 },
 "S:597760:+0x5c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597760:+0x5c"
-]
+"ents": []
 },
 "S:597760:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597760:+0x14"
-]
+"ents": []
 },
 "S:597760:+0x50": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597760:+0x50"
-]
+"ents": []
 },
 "S:597A30:+0x54": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597A30:+0x54"
-]
+"ents": []
 },
 "S:597A30:+0x18": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597A30:+0x18"
-]
+"ents": []
 },
 "S:597A30:+0x4c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597A30:+0x4c"
-]
-},
-"S:597D60:+0x4c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:597D60:+0x4c"
-]
+"ents": []
 },
 "S:597D60:+0x20": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597D60:+0x20"
-]
+"ents": []
 },
 "S:597D60:+0x28": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597D60:+0x28"
-]
+"ents": []
 },
 "S:597D60:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597D60:+0x10"
-]
+"ents": []
 },
 "S:597D60:+0x50": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:597D60:+0x50"
-]
+"ents": []
 },
 "S:5981F0:+0x14": {
-"class": "TypeList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5981F0:+0x14"
-]
+"ents": []
 },
 "S:599650:+0x58": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:599650:+0x58"
-]
+"ents": []
 },
 "S:59A8F0:+0x58": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:59A8F0:+0x58"
-]
+"ents": []
 },
 "S:59AD10:+0x4c": {
 "class": "VectorClass",
@@ -237445,72 +236656,32 @@
 "S:5A82E0:+0x28": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5A82E0:+0x28"
-]
+"ents": []
 },
 "S:5ADD10:+0xc": {
-"class": "MSEngine",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5ADD10:+0xc"
-]
-},
-"S:5ADD10:+0x5c": {
-"class": "DynamicVector",
-"obs": [],
-"ents": [
-"S:5ADD10:+0x5c"
-]
+"ents": []
 },
 "S:5ADE20:+0x14": {
-"class": "MSEngine",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5ADE20:+0x14"
-]
-},
-"S:5ADE20:+0x60": {
-"class": "DynamicVector",
-"obs": [],
-"ents": [
-"S:5ADE20:+0x60"
-]
+"ents": []
 },
 "S:5ADE20:+0x10": {
-"class": "MSEngine",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5ADE20:+0x10"
-]
-},
-"S:5B3C20:+0xa4": {
-"class": "PKStraw",
-"obs": [],
-"ents": [
-"S:5B3C20:+0xa4"
-]
+"ents": []
 },
 "S:5B3C20:+0x38": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B3C20:+0x38"
-]
-},
-"S:5B3C20:+0x3c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5B3C20:+0x3c"
-]
+"ents": []
 },
 "S:5B3C20:+0xbc": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B3C20:+0xbc"
-]
+"ents": []
 },
 "S:5B3C20:+0x14": {
 "class": "FileStraw",
@@ -237524,13 +236695,6 @@
 "obs": [],
 "ents": []
 },
-"S:5B40B0:+0x20": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5B40B0:+0x20"
-]
-},
 "S:5B4270:+0xc": {
 "class": "FootClass",
 "obs": [],
@@ -237542,81 +236706,54 @@
 "ents": []
 },
 "S:5B7360:+0x48": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B7360:+0x48"
-]
+"ents": []
 },
 "S:5B7360:+0x70": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B7360:+0x70"
-]
+"ents": []
 },
 "S:5B7360:+0x74": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B7360:+0x74"
-]
+"ents": []
 },
 "S:5B7360:+0x1c": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B7360:+0x1c"
-]
-},
-"S:5B82F0:+0x18": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5B82F0:+0x18"
-]
+"ents": []
 },
 "S:5B9C90:+0x10": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5B9C90:+0x10"
-]
+"ents": []
 },
 "S:5BA660:+0x104": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BA660:+0x104"
-]
+"ents": []
 },
 "S:5BB290:+0x74": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BB290:+0x74"
-]
+"ents": []
 },
 "S:5BB290:+0x70": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BB290:+0x70"
-]
+"ents": []
 },
 "S:5BB290:+0x54": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BB290:+0x54"
-]
+"ents": []
 },
 "S:5BB290:+0x2c": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BB290:+0x2c"
-]
+"ents": []
 },
 "S:5BD5C0:+0x5c": {
 "class": "VectorClass",
@@ -237629,11 +236766,9 @@
 "ents": []
 },
 "S:5BFAA0:+0x54": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5BFAA0:+0x54"
-]
+"ents": []
 },
 "S:5BFAA0:+0x24": {
 "class": "FootClass",
@@ -237641,53 +236776,34 @@
 "ents": []
 },
 "S:5C0640:+0x14": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C0640:+0x14"
-]
-},
-"S:5C1300:+0x44": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5C1300:+0x44"
-]
+"ents": []
 },
 "S:5C1300:+0x18": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C1300:+0x18"
-]
+"ents": []
 },
 "S:5C1300:+0x20": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C1300:+0x20"
-]
+"ents": []
 },
 "S:5C1300:+0x4": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C1300:+0x4"
-]
+"ents": []
 },
 "S:5C1300:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C1300:+0xc"
-]
+"ents": []
 },
 "S:5C1300:+0x4c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5C1300:+0x4c"
-]
+"ents": []
 },
 "S:5C3B10:+0x1c": {
 "class": "VectorClass",
@@ -237715,13 +236831,6 @@
 "obs": [],
 "ents": []
 },
-"S:5CB590:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5CB590:+0x8"
-]
-},
 "S:5CBB80:+0x1c": {
 "class": "FootClass",
 "obs": [],
@@ -237747,54 +236856,30 @@
 "obs": [],
 "ents": []
 },
-"S:5CE4A0:+0x28": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5CE4A0:+0x28"
-]
-},
-"S:5CE640:+0x28": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5CE640:+0x28"
-]
-},
 "S:5CEEF0:+0x64": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5CEEF0:+0x64"
-]
+"ents": []
 },
 "S:5CEEF0:+0x34": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5CEEF0:+0x34"
-]
+"ents": []
 },
 "S:5CEEF0:+0x28": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5CEEF0:+0x28"
-]
+"ents": []
 },
 "S:5CEEF0:+0x68": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5CEEF0:+0x68"
-]
+"ents": []
 },
 "S:5D2E90:+0xc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D2E90:+0xc"
-]
+"ents": []
 },
 "S:5D3FC0:+0x2c": {
 "class": "FootClass",
@@ -237802,18 +236887,14 @@
 "ents": []
 },
 "S:5D67B0:+0x10": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D67B0:+0x10"
-]
+"ents": []
 },
 "S:5D67B0:+0xc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D67B0:+0xc"
-]
+"ents": []
 },
 "S:5D70F0:+0x34": {
 "class": "VectorClass",
@@ -237829,68 +236910,40 @@
 "S:5D70F0:+0x1c"
 ]
 },
-"S:5D7590:+0xb0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5D7590:+0xb0"
-]
-},
 "S:5D7590:+0x7c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D7590:+0x7c"
-]
+"ents": []
 },
 "S:5D8FD0:+0x8": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D8FD0:+0x8"
-]
+"ents": []
 },
 "S:5D9360:+0x4": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5D9360:+0x4"
-]
+"ents": []
 },
 "S:5E3010:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E3010:+0x18"
-]
+"ents": []
 },
 "S:5E3010:+0x24": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E3010:+0x24"
-]
+"ents": []
 },
 "S:5E3010:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E3010:+0x28"
-]
+"ents": []
 },
 "S:5E3010:+0x30": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E3010:+0x30"
-]
-},
-"S:5E3D10:+0xfc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5E3D10:+0xfc"
-]
+"ents": []
 },
 "S:5E3D10:+0x84": {
 "class": "GenericNode",
@@ -237900,39 +236953,29 @@
 ]
 },
 "S:5E3D10:+0x68": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E3D10:+0x68"
-]
+"ents": []
 },
 "S:5E6520:+0x20": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E6520:+0x20"
-]
+"ents": []
 },
 "S:5E6520:+0x28": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E6520:+0x28"
-]
+"ents": []
 },
 "S:5E6520:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E6520:+0xc"
-]
+"ents": []
 },
 "S:5E6520:+0x4c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E6520:+0x4c"
-]
+"ents": []
 },
 "S:5E6920:+0x14": {
 "class": "VectorClass",
@@ -237949,60 +236992,29 @@
 ]
 },
 "S:5E74E0:+0x1c": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E74E0:+0x1c"
-]
-},
-"S:5E74E0:+0x40": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5E74E0:+0x40"
-]
+"ents": []
 },
 "S:5E7920:+0x28": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7920:+0x28"
-]
+"ents": []
 },
 "S:5E7920:+0x54": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7920:+0x54"
-]
+"ents": []
 },
 "S:5E7920:+0x58": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7920:+0x58"
-]
+"ents": []
 },
 "S:5E7920:+0x8": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7920:+0x8"
-]
-},
-"S:5E7BF0:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5E7BF0:+0x14"
-]
-},
-"S:5E7BF0:+0x18": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5E7BF0:+0x18"
-]
+"ents": []
 },
 "S:5E7EB0:+0x24": {
 "class": "PreviewClass",
@@ -238012,109 +237024,29 @@
 ]
 },
 "S:5E7EB0:+0x98": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7EB0:+0x98"
-]
+"ents": []
 },
 "S:5E7EB0:+0x90": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7EB0:+0x90"
-]
+"ents": []
 },
 "S:5E7EB0:+0x78": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7EB0:+0x78"
-]
+"ents": []
 },
 "S:5E7EB0:+0x44": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5E7EB0:+0x44"
-]
+"ents": []
 },
 "S:5F76B0:+0x0": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5F76B0:+0x0"
-]
-},
-"S:5F7A90:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F7A90:+0x14"
-]
-},
-"S:5F7A90:+0x80": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F7A90:+0x80"
-]
-},
-"S:5F7DB0:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F7DB0:+0x14"
-]
-},
-"S:5F7DB0:+0x80": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F7DB0:+0x80"
-]
-},
-"S:5F8110:+0x1f0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8110:+0x1f0"
-]
-},
-"S:5F8110:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8110:+0x14"
-]
-},
-"S:5F8110:+0x80": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8110:+0x80"
-]
-},
-"S:5F8CE0:+0xe8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8CE0:+0xe8"
-]
-},
-"S:5F8CE0:+0x10": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8CE0:+0x10"
-]
-},
-"S:5F8CE0:+0x7c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5F8CE0:+0x7c"
-]
+"ents": []
 },
 "S:5F9E80:+0x1c": {
 "class": "FootClass",
@@ -238126,117 +237058,72 @@
 "obs": [],
 "ents": []
 },
-"S:5FAD10:+0x4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5FAD10:+0x4"
-]
-},
 "S:5FB320:+0x28": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FB320:+0x28"
-]
+"ents": []
 },
 "S:5FB320:+0x20": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FB320:+0x20"
-]
+"ents": []
 },
 "S:5FB320:+0x88": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FB320:+0x88"
-]
-},
-"S:5FB320:+0x1c": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"S:5FB320:+0x1c"
-]
+"ents": []
 },
 "S:5FD2E0:+0x40": {
-"class": "DSurface",
+"class": "XSurface",
 "obs": [],
 "ents": [
 "S:5FD2E0:+0x40"
 ]
 },
 "S:5FD2E0:+0x64": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD2E0:+0x64"
-]
+"ents": []
 },
 "S:5FD2E0:+0x5c": {
-"class": "LCWStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD2E0:+0x5c"
-]
+"ents": []
 },
 "S:5FD2E0:+0x20": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD2E0:+0x20"
-]
+"ents": []
 },
 "S:5FD6A0:+0x7c": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x7c"
-]
+"ents": []
 },
 "S:5FD6A0:+0x74": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x74"
-]
+"ents": []
 },
 "S:5FD6A0:+0x54": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x54"
-]
+"ents": []
 },
 "S:5FD6A0:+0x4c": {
-"class": "LCWPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x4c"
-]
+"ents": []
 },
 "S:5FD6A0:+0x30": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x30"
-]
+"ents": []
 },
 "S:5FD6A0:+0x14": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:5FD6A0:+0x14"
-]
-},
-"S:5FEDE0:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:5FEDE0:+0x8"
-]
+"ents": []
 },
 "S:6071E0:+0x17c": {
 "class": "VectorClass",
@@ -238378,74 +237265,44 @@
 ]
 },
 "S:6418B0:+0x4c": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6418B0:+0x4c"
-]
+"ents": []
 },
 "S:6418B0:+0x48": {
-"class": "LZOPipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6418B0:+0x48"
-]
+"ents": []
 },
 "S:6418B0:+0x2c": {
-"class": "Pipe",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6418B0:+0x2c"
-]
+"ents": []
 },
 "S:641B00:+0x48": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641B00:+0x48"
-]
+"ents": []
 },
 "S:641B00:+0x44": {
-"class": "LZOStraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641B00:+0x44"
-]
+"ents": []
 },
 "S:641B00:+0x28": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641B00:+0x28"
-]
-},
-"S:641DB0:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:641DB0:+0x8"
-]
+"ents": []
 },
 "S:641DB0:+0xc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641DB0:+0xc"
-]
-},
-"S:641EE0:+0x34": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:641EE0:+0x34"
-]
+"ents": []
 },
 "S:641EE0:+0xa0": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641EE0:+0xa0"
-]
+"ents": []
 },
 "S:641EE0:+0xac": {
 "class": "INISection",
@@ -238454,47 +237311,25 @@
 "S:641EE0:+0xac"
 ]
 },
-"S:641EE0:+0x38": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:641EE0:+0x38"
-]
-},
 "S:641EE0:+0xa4": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641EE0:+0xa4"
-]
-},
-"S:641EE0:+0x100": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"S:641EE0:+0x100"
-]
+"ents": []
 },
 "S:641EE0:+0x18": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641EE0:+0x18"
-]
+"ents": []
 },
 "S:641EE0:+0xf8": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:641EE0:+0xf8"
-]
+"ents": []
 },
 "S:642130:+0x68": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:642130:+0x68"
-]
+"ents": []
 },
 "S:642130:+0x6c": {
 "class": "DSurface",
@@ -238511,18 +237346,14 @@
 ]
 },
 "S:642130:+0x74": {
-"class": "DSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:642130:+0x74"
-]
+"ents": []
 },
 "S:64CDA0:+0x84": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:64CDA0:+0x84"
-]
+"ents": []
 },
 "S:64CDA0:+0x68": {
 "class": "VectorClass",
@@ -238548,26 +237379,15 @@
 "S:65D510:+0x18"
 ]
 },
-"S:65F520:+0x68": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:65F520:+0x68"
-]
-},
 "S:65F520:+0x1c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:65F520:+0x1c"
-]
+"ents": []
 },
 "S:65F520:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:65F520:+0x10"
-]
+"ents": []
 },
 "S:660050:+0x90": {
 "class": "FootClass",
@@ -238631,110 +237451,65 @@
 "S:6640E0:+0x40"
 ]
 },
-"S:6686C0:+0x74": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:6686C0:+0x74"
-]
-},
 "S:6686C0:+0x2c": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6686C0:+0x2c"
-]
+"ents": []
 },
 "S:6686C0:+0x38": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6686C0:+0x38"
-]
+"ents": []
 },
 "S:6686C0:+0x1c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6686C0:+0x1c"
-]
+"ents": []
 },
 "S:6686C0:+0x20": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6686C0:+0x20"
-]
+"ents": []
 },
 "S:66D530:+0x18": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:66D530:+0x18"
-]
+"ents": []
 },
 "S:672AE0:+0x30": {
-"class": "TypeList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:672AE0:+0x30"
-]
+"ents": []
 },
 "S:679CC0:+0x10": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:679CC0:+0x10"
-]
-},
-"S:679CC0:+0x5c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:679CC0:+0x5c"
-]
+"ents": []
 },
 "S:679CC0:+0x4": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:679CC0:+0x4"
-]
+"ents": []
 },
 "S:679D90:+0x1c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:679D90:+0x1c"
-]
-},
-"S:679D90:+0x68": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:679D90:+0x68"
-]
+"ents": []
 },
 "S:679EE0:+0x8": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:679EE0:+0x8"
-]
+"ents": []
 },
 "S:679EE0:+0x0": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:679EE0:+0x0"
-]
+"ents": []
 },
 "S:67B550:+0xc": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:67B550:+0xc"
-]
+"ents": []
 },
 "S:67B720:+0xc": {
 "class": "VectorClass",
@@ -238775,81 +237550,44 @@
 "ents": []
 },
 "S:683AB0:+0x28": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:683AB0:+0x28"
-]
-},
-"S:683AB0:+0x74": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:683AB0:+0x74"
-]
+"ents": []
 },
 "S:683AB0:+0x1c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:683AB0:+0x1c"
-]
+"ents": []
 },
 "S:686730:+0x1c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686730:+0x1c"
-]
-},
-"S:686730:+0x68": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:686730:+0x68"
-]
+"ents": []
 },
 "S:686730:+0x18": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686730:+0x18"
-]
+"ents": []
 },
 "S:686730:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686730:+0x10"
-]
+"ents": []
 },
 "S:686730:+0x70": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686730:+0x70"
-]
+"ents": []
 },
 "S:686B20:+0x34": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686B20:+0x34"
-]
-},
-"S:686B20:+0x84": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:686B20:+0x84"
-]
+"ents": []
 },
 "S:686B20:+0x1c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:686B20:+0x1c"
-]
+"ents": []
 },
 "S:686B20:+0x114": {
 "class": "HouseClass",
@@ -238866,39 +237604,24 @@
 ]
 },
 "S:687CE0:+0x20": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:687CE0:+0x20"
-]
-},
-"S:687CE0:+0x6c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:687CE0:+0x6c"
-]
+"ents": []
 },
 "S:687CE0:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:687CE0:+0x14"
-]
+"ents": []
 },
 "S:687CE0:+0xd8": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:687CE0:+0xd8"
-]
+"ents": []
 },
 "S:688380:+0x2c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:688380:+0x2c"
-]
+"ents": []
 },
 "S:6886B0:+0x28": {
 "class": "VectorClass",
@@ -238931,9 +237654,7 @@
 "S:68C050:+0xc": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:68C050:+0xc"
-]
+"ents": []
 },
 "S:68C3B0:+0x14": {
 "class": "VectorClass",
@@ -238941,81 +237662,39 @@
 "ents": []
 },
 "S:68CD20:+0x60": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:68CD20:+0x60"
-]
+"ents": []
 },
 "S:68CD20:+0x64": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:68CD20:+0x64"
-]
-},
-"S:690640:+0x0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:690640:+0x0"
-]
-},
-"S:690A10:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:690A10:+0x8"
-]
-},
-"S:690AE0:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:690AE0:+0x8"
-]
+"ents": []
 },
 "S:6941A0:+0x6c": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6941A0:+0x6c"
-]
+"ents": []
 },
 "S:694760:+0x4c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:694760:+0x4c"
-]
+"ents": []
 },
 "S:694760:+0x44": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:694760:+0x44"
-]
-},
-"S:6951F0:+0x60": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:6951F0:+0x60"
-]
+"ents": []
 },
 "S:6951F0:+0x2c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6951F0:+0x2c"
-]
+"ents": []
 },
 "S:6951F0:+0x20": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6951F0:+0x20"
-]
+"ents": []
 },
 "S:6970A0:+0xa28": {
 "class": "MessageListClass",
@@ -239025,65 +237704,44 @@
 ]
 },
 "S:6970A0:+0x2354": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6970A0:+0x2354"
-]
+"ents": []
 },
 "S:6980C0:+0x20": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6980C0:+0x20"
-]
+"ents": []
 },
 "S:6980C0:+0x18": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6980C0:+0x18"
-]
+"ents": []
 },
 "S:6990A0:+0x18": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6990A0:+0x18"
-]
+"ents": []
 },
 "S:699450:+0x4": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:699450:+0x4"
-]
+"ents": []
 },
 "S:6994F0:+0x24": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0x24"
-]
+"ents": []
 },
 "S:6994F0:+0x20": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0x20"
-]
+"ents": []
 },
 "S:6994F0:+0xd8": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"S:6994F0:+0xcc": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"S:6994F0:+0xcc"
-]
 },
 "S:6994F0:+0x134": {
 "class": "VectorClass",
@@ -239091,102 +237749,54 @@
 "ents": []
 },
 "S:6994F0:+0x11c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0x11c"
-]
+"ents": []
 },
 "S:6994F0:+0xc4": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0xc4"
-]
+"ents": []
 },
 "S:6994F0:+0x8c": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0x8c"
-]
+"ents": []
 },
 "S:6994F0:+0xa8": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6994F0:+0xa8"
-]
+"ents": []
 },
 "S:699980:+0x2c": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:699980:+0x2c"
-]
-},
-"S:699980:+0x6c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:699980:+0x6c"
-]
+"ents": []
 },
 "S:699980:+0x24": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:699980:+0x24"
-]
+"ents": []
 },
 "S:69A3B0:+0x24": {
-"class": "Straw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69A3B0:+0x24"
-]
-},
-"S:69A3B0:+0x50": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:69A3B0:+0x50"
-]
-},
-"S:69A3B0:+0x54": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:69A3B0:+0x54"
-]
+"ents": []
 },
 "S:69A3B0:+0xc8": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69A3B0:+0xc8"
-]
-},
-"S:69A3B0:+0xc4": {
-"class": "INIClass",
-"obs": [],
-"ents": [
-"S:69A3B0:+0xc4"
-]
+"ents": []
 },
 "S:69A3B0:+0xbc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69A3B0:+0xbc"
-]
+"ents": []
 },
 "S:69AC30:+0xc": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69AC30:+0xc"
-]
+"ents": []
 },
 "S:69B170:+0x34": {
 "class": "VectorClass",
@@ -239205,9 +237815,7 @@
 "S:69BD60:+0x50": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69BD60:+0x50"
-]
+"ents": []
 },
 "S:69BD60:+0x4c": {
 "class": "VectorClass",
@@ -239216,33 +237824,15 @@
 "S:69BD60:+0x4c"
 ]
 },
-"S:69E090:+0x4": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:69E090:+0x4"
-]
-},
-"S:69E430:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:69E430:+0x8"
-]
-},
 "S:69E580:+0xc": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69E580:+0xc"
-]
+"ents": []
 },
 "S:69E580:+0x14": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:69E580:+0x14"
-]
+"ents": []
 },
 "S:69F0C0:+0x44": {
 "class": "FootClass",
@@ -239315,47 +237905,25 @@
 "S:6B2F30:+0x70"
 ]
 },
-"S:6B5490:+0xc": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:6B5490:+0xc"
-]
-},
 "S:6B59A0:+0x3c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6B59A0:+0x3c"
-]
+"ents": []
 },
 "S:6B59A0:+0x24": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6B59A0:+0x24"
-]
+"ents": []
 },
 "S:6B5C90:+0x3c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6B5C90:+0x3c"
-]
+"ents": []
 },
 "S:6B5C90:+0x24": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6B5C90:+0x24"
-]
-},
-"S:6B9D00:+0x48": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:6B9D00:+0x48"
-]
+"ents": []
 },
 "S:6BB9A0:+0xfffffffefffff428": {
 "class": "RAMFileClass",
@@ -239365,18 +237933,9 @@
 ]
 },
 "S:6BB9A0:+0xfffffffefffff448": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6BB9A0:+0xfffffffefffff448"
-]
-},
-"S:6C9B40:+0x20": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:6C9B40:+0x20"
-]
+"ents": []
 },
 "S:6C9B40:+0x8c": {
 "class": "VectorClass",
@@ -239440,9 +237999,7 @@
 "S:6EE800:+0x38": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:6EE800:+0x38"
-]
+"ents": []
 },
 "S:6F0AB0:+0x2c": {
 "class": "VectorClass",
@@ -239502,9 +238059,7 @@
 "S:709550:+0x1c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:709550:+0x1c"
-]
+"ents": []
 },
 "S:70AA60:+0x30": {
 "class": "FootClass",
@@ -239528,31 +238083,10 @@
 "obs": [],
 "ents": []
 },
-"S:71DCA0:+0x10": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:71DCA0:+0x10"
-]
-},
-"S:7207F0:+0x38": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:7207F0:+0x38"
-]
-},
 "S:729B40:+0xec": {
 "class": "FootClass",
 "obs": [],
 "ents": []
-},
-"S:72ADE0:+0x14": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:72ADE0:+0x14"
-]
 },
 "G:844BAC": {
 "class": "ConvertClass",
@@ -239576,18 +238110,9 @@
 ]
 },
 "S:7346A0:+0x20": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7346A0:+0x20"
-]
-},
-"S:734990:+0x28": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:734990:+0x28"
-]
+"ents": []
 },
 "S:7353C0:+0x24": {
 "class": "VectorClass",
@@ -239606,13 +238131,6 @@
 "obs": [],
 "ents": []
 },
-"S:74B050:+0x1c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:74B050:+0x1c"
-]
-},
 "S:74C9F0:+0x18": {
 "class": "VectorClass",
 "obs": [],
@@ -239626,51 +238144,37 @@
 "S:74E1C0:+0x2c": {
 "class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74E1C0:+0x2c"
-]
+"ents": []
 },
 "S:74F760:+0x14": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74F760:+0x14"
-]
+"ents": []
 },
 "S:74F760:+0x38": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74F760:+0x38"
-]
+"ents": []
 },
 "S:74F960:+0x10": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74F960:+0x10"
-]
+"ents": []
 },
 "S:74FA20:+0x10": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74FA20:+0x10"
-]
+"ents": []
 },
 "S:74FAE0:+0x10": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74FAE0:+0x10"
-]
+"ents": []
 },
 "S:74FC80:+0x10": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:74FC80:+0x10"
-]
+"ents": []
 },
 "S:753C80:+0x54": {
 "class": "FootClass",
@@ -239698,331 +238202,211 @@
 "ents": []
 },
 "S:759260:+0x0": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:759260:+0x0"
-]
+"ents": []
 },
 "S:7610F0:+0x48": {
 "class": "FootClass",
 "obs": [],
 "ents": []
 },
-"S:764A20:+0x4c": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:764A20:+0x4c"
-]
-},
 "S:764A20:+0x1c": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764A20:+0x1c"
-]
+"ents": []
 },
 "S:764A20:+0x28": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764A20:+0x28"
-]
+"ents": []
 },
 "S:764A20:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764A20:+0xc"
-]
+"ents": []
 },
 "S:764B90:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x1c"
-]
+"ents": []
 },
 "S:764B90:+0x14": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x14"
-]
+"ents": []
 },
 "S:764B90:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x28"
-]
+"ents": []
 },
 "S:764B90:+0x2c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x2c"
-]
-},
-"S:764B90:+0x74": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:764B90:+0x74"
-]
+"ents": []
 },
 "S:764B90:+0x40": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x40"
-]
+"ents": []
 },
 "S:764B90:+0x34": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:764B90:+0x34"
-]
+"ents": []
 },
 "S:765000:+0x28": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0x28"
-]
+"ents": []
 },
 "S:765000:+0x34": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0x34"
-]
+"ents": []
 },
 "S:765000:+0x5c": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0x5c"
-]
+"ents": []
 },
 "S:765000:+0x58": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0x58"
-]
+"ents": []
 },
 "S:765000:+0x18": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0x18"
-]
+"ents": []
 },
 "S:765000:+0xc0": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0xc0"
-]
+"ents": []
 },
 "S:765000:+0xb4": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765000:+0xb4"
-]
+"ents": []
 },
 "S:7651D0:+0x20": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0x20"
-]
+"ents": []
 },
 "S:7651D0:+0x30": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0x30"
-]
+"ents": []
 },
 "S:7651D0:+0x58": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0x58"
-]
+"ents": []
 },
 "S:7651D0:+0x54": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0x54"
-]
+"ents": []
 },
 "S:7651D0:+0xac": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0xac"
-]
+"ents": []
 },
 "S:7651D0:+0xb0": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0xb0"
-]
+"ents": []
 },
 "S:7651D0:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7651D0:+0x14"
-]
+"ents": []
 },
 "S:765410:+0x1c": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0x1c"
-]
+"ents": []
 },
 "S:765410:+0x28": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0x28"
-]
+"ents": []
 },
 "S:765410:+0x50": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0x50"
-]
+"ents": []
 },
 "S:765410:+0x4c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0x4c"
-]
+"ents": []
 },
 "S:765410:+0xa4": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0xa4"
-]
+"ents": []
 },
 "S:765410:+0xa8": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0xa8"
-]
+"ents": []
 },
 "S:765410:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765410:+0xc"
-]
+"ents": []
 },
 "S:765580:+0x0": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:765580:+0x0"
-]
-},
-"S:7660F0:+0x18": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:7660F0:+0x18"
-]
+"ents": []
 },
 "S:7660F0:+0x14": {
-"class": "rc_ptr_base",
+"class": "rc_ptr",
 "obs": [],
 "ents": [
 "S:7660F0:+0x14"
 ]
 },
 "S:7660F0:+0x8": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7660F0:+0x8"
-]
-},
-"S:7660F0:+0x10": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"S:7660F0:+0x10"
-]
+"ents": []
 },
 "S:7660F0:+0x20": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7660F0:+0x20"
-]
-},
-"S:7681E0:+0x68": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:7681E0:+0x68"
-]
+"ents": []
 },
 "S:7681E0:+0x34": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7681E0:+0x34"
-]
-},
-"S:768F50:+0x2c": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:768F50:+0x2c"
-]
+"ents": []
 },
 "S:769550:+0xb8": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:769550:+0xb8"
-]
+"ents": []
 },
 "S:769550:+0x84": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:769550:+0x84"
-]
+"ents": []
 },
 "S:769550:+0x78": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:769550:+0x78"
-]
+"ents": []
 },
 "S:769550:+0x110": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:769550:+0x110"
-]
+"ents": []
 },
 "S:769550:+0x18": {
 "class": "VectorClass",
@@ -240032,109 +238416,64 @@
 ]
 },
 "S:76B180:+0x10": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76B180:+0x10"
-]
-},
-"S:76C290:+0x68": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:76C290:+0x68"
-]
+"ents": []
 },
 "S:76C290:+0x38": {
-"class": "GenericList",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76C290:+0x38"
-]
+"ents": []
 },
 "S:76C290:+0x28": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76C290:+0x28"
-]
+"ents": []
 },
 "S:76C6E0:+0x20": {
-"class": "VectorCursor",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76C6E0:+0x20"
-]
+"ents": []
 },
 "S:76CDA0:+0x2c": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76CDA0:+0x2c"
-]
+"ents": []
 },
 "S:76CDA0:+0x30": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76CDA0:+0x30"
-]
+"ents": []
 },
 "S:76CDA0:+0x24": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76CDA0:+0x24"
-]
+"ents": []
 },
 "S:76CDA0:+0x38": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76CDA0:+0x38"
-]
+"ents": []
 },
 "S:76D180:+0x18": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D180:+0x18"
-]
+"ents": []
 },
 "S:76D180:+0xc": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D180:+0xc"
-]
+"ents": []
 },
 "S:76D180:+0x10": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D180:+0x10"
-]
-},
-"S:76D3A0:+0x14": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:76D3A0:+0x14"
-]
+"ents": []
 },
 "S:76D3A0:+0xc": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D3A0:+0xc"
-]
-},
-"S:76D470:+0x8": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:76D470:+0x8"
-]
+"ents": []
 },
 "S:76D4D0:+0x60": {
 "class": "VectorClass",
@@ -240151,25 +238490,9 @@
 ]
 },
 "S:76D4D0:+0x20": {
-"class": "VectorCursor",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76D4D0:+0x20"
-]
-},
-"S:76D4D0:+0x74": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:76D4D0:+0x74"
-]
-},
-"S:76D4D0:+0xe0": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:76D4D0:+0xe0"
-]
+"ents": []
 },
 "S:76D4D0:+0x38": {
 "class": "VectorCursor",
@@ -240200,109 +238523,74 @@
 ]
 },
 "S:76E090:+0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E090:+0x8"
-]
+"ents": []
 },
 "S:76E090:+0xc": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E090:+0xc"
-]
+"ents": []
 },
 "S:76E2F0:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E2F0:+0x18"
-]
+"ents": []
 },
 "S:76E4F0:+0x38": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E4F0:+0x38"
-]
+"ents": []
 },
 "S:76E750:+0x14": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E750:+0x14"
-]
+"ents": []
 },
 "S:76E8B0:+0x10": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E8B0:+0x10"
-]
+"ents": []
 },
 "S:76E8B0:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76E8B0:+0x18"
-]
+"ents": []
 },
 "S:76ECD0:+0x8": {
-"class": "Selection@WorldDominationTour",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76ECD0:+0x8"
-]
+"ents": []
 },
 "S:76ECD0:+0xc": {
-"class": "Selection@WorldDominationTour",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76ECD0:+0xc"
-]
+"ents": []
 },
 "S:76ED10:+0x1c": {
-"class": "Selection@WorldDominationTour",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76ED10:+0x1c"
-]
+"ents": []
 },
 "S:76ED10:+0x10": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76ED10:+0x10"
-]
+"ents": []
 },
 "S:76ED10:+0x18": {
-"class": "Selection@WorldDominationTour",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76ED10:+0x18"
-]
-},
-"S:76ED10:+0x8": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:76ED10:+0x8"
-]
+"ents": []
 },
 "S:76FB90:+0x10": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76FB90:+0x10"
-]
+"ents": []
 },
 "S:76FC50:+0x10": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76FC50:+0x10"
-]
+"ents": []
 },
 "S:76FF40:+0x10": {
 "class": "VectorCursor",
@@ -240312,11 +238600,9 @@
 ]
 },
 "S:76FF40:+0xc": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:76FF40:+0xc"
-]
+"ents": []
 },
 "S:773070:+0xc": {
 "class": "FootClass",
@@ -240324,340 +238610,189 @@
 "ents": []
 },
 "S:778210:+0x48": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778210:+0x48"
-]
+"ents": []
 },
 "S:778210:+0x44": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778210:+0x44"
-]
+"ents": []
 },
 "S:778710:+0x68": {
-"class": "CDFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778710:+0x68"
-]
+"ents": []
 },
 "S:778710:+0x6c": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778710:+0x6c"
-]
+"ents": []
 },
 "S:778710:+0x38": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778710:+0x38"
-]
+"ents": []
 },
 "S:778710:+0x44": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778710:+0x44"
-]
+"ents": []
 },
 "S:778710:+0x2c": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778710:+0x2c"
-]
-},
-"S:778A20:+0x84": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:778A20:+0x84"
-]
+"ents": []
 },
 "S:778A20:+0x28": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778A20:+0x28"
-]
+"ents": []
 },
 "S:778A20:+0x24": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778A20:+0x24"
-]
+"ents": []
 },
 "S:778A20:+0x88": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:778A20:+0x88"
-]
+"ents": []
 },
 "S:779730:+0x44": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779730:+0x44"
-]
+"ents": []
 },
 "S:779730:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779730:+0x10"
-]
-},
-"S:779830:+0x48": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779830:+0x48"
-]
+"ents": []
 },
 "S:779830:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779830:+0xc"
-]
+"ents": []
 },
 "S:779940:+0x44": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779940:+0x44"
-]
+"ents": []
 },
 "S:779940:+0x10": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779940:+0x10"
-]
-},
-"S:779A40:+0x48": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779A40:+0x48"
-]
+"ents": []
 },
 "S:779A40:+0xc": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779A40:+0xc"
-]
-},
-"S:779B50:+0x54": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779B50:+0x54"
-]
+"ents": []
 },
 "S:779B50:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779B50:+0x14"
-]
-},
-"S:779C90:+0x50": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779C90:+0x50"
-]
+"ents": []
 },
 "S:779C90:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779C90:+0x14"
-]
-},
-"S:779DD0:+0x54": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779DD0:+0x54"
-]
+"ents": []
 },
 "S:779DD0:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779DD0:+0x14"
-]
-},
-"S:779F10:+0x50": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:779F10:+0x50"
-]
+"ents": []
 },
 "S:779F10:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:779F10:+0x14"
-]
-},
-"S:77A080:+0x5c": {
-"class": "CDFileClass",
-"obs": [],
-"ents": [
-"S:77A080:+0x5c"
-]
+"ents": []
 },
 "S:77A080:+0x14": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:77A080:+0x14"
-]
+"ents": []
 },
 "S:780110:+0x14": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:780110:+0x14"
-]
+"ents": []
 },
 "S:7864C0:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7864C0:+0x1c"
-]
-},
-"S:7864C0:+0x24": {
-"class": "SimpleDialogControl@OwnerDraw",
-"obs": [],
-"ents": [
-"S:7864C0:+0x24"
-]
+"ents": []
 },
 "S:786EF0:+0x4": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:786EF0:+0x4"
-]
+"ents": []
 },
 "S:787010:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:787010:+0x18"
-]
-},
-"S:787010:+0x14": {
-"class": "SimpleDialogControl@OwnerDraw",
-"obs": [],
-"ents": [
-"S:787010:+0x14"
-]
+"ents": []
 },
 "S:787010:+0x2c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:787010:+0x2c"
-]
+"ents": []
 },
 "S:787010:+0x40": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:787010:+0x40"
-]
+"ents": []
 },
 "S:787010:+0x3c": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:787010:+0x3c"
-]
+"ents": []
 },
 "S:788180:+0x38": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788180:+0x38"
-]
+"ents": []
 },
 "S:788180:+0x44": {
-"class": "GenericNode",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788180:+0x44"
-]
+"ents": []
 },
 "S:788180:+0x10c": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788180:+0x10c"
-]
+"ents": []
 },
 "S:788180:+0x108": {
-"class": "BufferIOFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788180:+0x108"
-]
+"ents": []
 },
 "S:788180:+0x28": {
-"class": "INIClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788180:+0x28"
-]
+"ents": []
 },
 "S:788B00:+0x19c": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:788B00:+0x19c"
-]
+"ents": []
 },
 "S:7896A0:+0x38": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7896A0:+0x38"
-]
+"ents": []
 },
 "S:7896A0:+0x34": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7896A0:+0x34"
-]
+"ents": []
 },
 "S:7896A0:+0x48": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7896A0:+0x48"
-]
-},
-"S:789960:+0x14": {
-"class": "SimpleDialogControl@OwnerDraw",
-"obs": [],
-"ents": [
-"S:789960:+0x14"
-]
+"ents": []
 },
 "S:789B60:+0x20": {
 "class": "WonlineStringDialogControl",
@@ -240666,26 +238801,15 @@
 "S:789B60:+0x20"
 ]
 },
-"S:789B60:+0x24": {
-"class": "SimpleWonlineDialogControl",
-"obs": [],
-"ents": [
-"S:789B60:+0x24"
-]
-},
 "S:789B60:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:789B60:+0x1c"
-]
+"ents": []
 },
 "S:789B60:+0x40": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:789B60:+0x40"
-]
+"ents": []
 },
 "S:795650:+0x14": {
 "class": "VectorClass",
@@ -240705,214 +238829,144 @@
 "ents": []
 },
 "S:796B30:+0x0": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:796B30:+0x0"
-]
+"ents": []
 },
 "S:798360:+0xc": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:798360:+0xc"
-]
+"ents": []
 },
 "S:7983E0:+0x1c": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7983E0:+0x1c"
-]
+"ents": []
 },
 "S:7988C0:+0x20": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7988C0:+0x20"
-]
+"ents": []
 },
 "S:798DE0:+0x10": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:798DE0:+0x10"
-]
+"ents": []
 },
 "S:798DE0:+0x1c": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:798DE0:+0x1c"
-]
+"ents": []
 },
 "S:798F50:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:798F50:+0x1c"
-]
+"ents": []
 },
 "S:798F50:+0x14": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:798F50:+0x14"
-]
+"ents": []
 },
 "S:799080:+0x38": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:799080:+0x38"
-]
+"ents": []
 },
 "S:799080:+0x3c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:799080:+0x3c"
-]
+"ents": []
 },
 "S:799080:+0x44": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:799080:+0x44"
-]
+"ents": []
 },
 "S:799080:+0x40": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:799080:+0x40"
-]
+"ents": []
 },
 "S:799D30:+0xc": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:799D30:+0xc"
-]
+"ents": []
 },
 "S:79E520:+0x14": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:79E520:+0x14"
-]
-},
-"S:79F140:+0x14": {
-"class": "SimpleDialogControl@OwnerDraw",
-"obs": [],
-"ents": [
-"S:79F140:+0x14"
-]
+"ents": []
 },
 "S:79F140:+0x18": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:79F140:+0x18"
-]
+"ents": []
 },
 "S:7A0690:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A0690:+0x28"
-]
+"ents": []
 },
 "S:7A0690:+0x20": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A0690:+0x20"
-]
+"ents": []
 },
 "S:7A0690:+0x24": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A0690:+0x24"
-]
+"ents": []
 },
 "S:7A2970:+0x0": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A2970:+0x0"
-]
+"ents": []
 },
 "S:7A2970:+0x4": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A2970:+0x4"
-]
+"ents": []
 },
 "S:7A2FE0:+0x0": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A2FE0:+0x0"
-]
+"ents": []
 },
 "S:7A3100:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A3100:+0x28"
-]
+"ents": []
 },
 "S:7A3D90:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A3D90:+0x18"
-]
-},
-"S:7A4C10:+0x1c": {
-"class": "SimpleDialogControl@OwnerDraw",
-"obs": [],
-"ents": [
-"S:7A4C10:+0x1c"
-]
+"ents": []
 },
 "S:7A4C10:+0x18": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A4C10:+0x18"
-]
+"ents": []
 },
 "S:7A7110:+0x20": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A7110:+0x20"
-]
+"ents": []
 },
 "S:7A7110:+0x1c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A7110:+0x1c"
-]
+"ents": []
 },
 "S:7A7110:+0x2c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A7110:+0x2c"
-]
+"ents": []
 },
 "S:7A7EA0:+0x20": {
-"class": "RawFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7A7EA0:+0x20"
-]
+"ents": []
 },
 "S:7A8260:+0x68": {
 "class": "FootClass",
@@ -240920,74 +238974,44 @@
 "ents": []
 },
 "S:7AB8E0:+0x20": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AB8E0:+0x20"
-]
+"ents": []
 },
 "S:7AB8E0:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AB8E0:+0x18"
-]
+"ents": []
 },
 "S:7AB8E0:+0x3c": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AB8E0:+0x3c"
-]
+"ents": []
 },
 "S:7AF970:+0x8": {
-"class": "SimpleDialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AF970:+0x8"
-]
-},
-"S:7AF970:+0x28": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:7AF970:+0x28"
-]
+"ents": []
 },
 "S:7AF970:+0x30": {
-"class": "CCFileClass",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AF970:+0x30"
-]
+"ents": []
 },
 "S:7AF970:+0xc": {
-"class": "DialogControl@OwnerDraw",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AF970:+0xc"
-]
+"ents": []
 },
 "S:7AFB90:+0x18": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AFB90:+0x18"
-]
-},
-"S:7AFB90:+0x30": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:7AFB90:+0x30"
-]
+"ents": []
 },
 "S:7AFB90:+0x9c": {
-"class": "FactionSelectDialogControl@WorldDominationTour",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AFB90:+0x9c"
-]
+"ents": []
 },
 "S:7AFB90:+0xcc": {
 "class": "Game",
@@ -240997,67 +239021,34 @@
 ]
 },
 "S:7AFB90:+0x28": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7AFB90:+0x28"
-]
-},
-"S:7B0220:+0xc": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:7B0220:+0xc"
-]
+"ents": []
 },
 "S:7B0220:+0x4": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7B0220:+0x4"
-]
+"ents": []
 },
 "S:7B0220:+0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7B0220:+0x8"
-]
-},
-"S:7B02A0:+0xc": {
-"class": "rc_ptr",
-"obs": [],
-"ents": [
-"S:7B02A0:+0xc"
-]
+"ents": []
 },
 "S:7B02A0:+0x4": {
-"class": "rc_ptr",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7B02A0:+0x4"
-]
+"ents": []
 },
 "S:7B02A0:+0x8": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7B02A0:+0x8"
-]
+"ents": []
 },
 "S:7B0390:+0xc": {
-"class": "rc_ptr_base",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"S:7B0390:+0xc"
-]
-},
-"S:7B0490:+0x8": {
-"class": "CCFileClass",
-"obs": [],
-"ents": [
-"S:7B0490:+0x8"
-]
+"ents": []
 },
 "S:7BA610:+0x4c": {
 "class": "FootClass",
@@ -241230,14 +239221,14 @@
 ]
 },
 "N:534F15": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534F15"
 ]
 },
 "N:534F55": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534F55"
@@ -241251,7 +239242,7 @@
 ]
 },
 "N:751346": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -241561,28 +239552,28 @@
 ]
 },
 "N:7AB94F": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7AB94F"
 ]
 },
 "N:7ABC8A": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7ABC8A"
 ]
 },
 "N:7ABEC8": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7ABEC8"
 ]
 },
 "N:7AC151": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7AC151"
@@ -241680,14 +239671,14 @@
 ]
 },
 "N:7ACBEA": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7ACBEA"
 ]
 },
 "N:4A0778": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0778"
@@ -241749,21 +239740,21 @@
 ]
 },
 "N:4C425F": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4C425F"
 ]
 },
 "N:4BA7EA": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA7EA"
 ]
 },
 "N:4BA8DF": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA8DF"
@@ -241820,7 +239811,7 @@
 ]
 },
 "N:4339E4": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4339E4"
@@ -241919,12 +239910,12 @@
 ]
 },
 "N:4381DC": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:43830C": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -241936,7 +239927,7 @@
 ]
 },
 "N:5E854E": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5E854E"
@@ -242012,7 +240003,7 @@
 ]
 },
 "N:5288EA": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5288EA"
@@ -242155,70 +240146,70 @@
 "ents": []
 },
 "N:4793A0": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4793A0"
 ]
 },
 "N:4793FD": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4793FD"
 ]
 },
 "N:479448": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:479448"
 ]
 },
 "N:47949D": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:47949D"
 ]
 },
 "N:4794D3": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4794D3"
 ]
 },
 "N:479573": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:479573"
 ]
 },
 "N:47959E": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:47959E"
 ]
 },
 "N:47963E": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:47963E"
 ]
 },
 "N:4796A7": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4796A7"
 ]
 },
 "N:5D6695": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5D6695"
@@ -242355,7 +240346,7 @@
 "ents": []
 },
 "N:5C4527": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -242382,7 +240373,7 @@
 ]
 },
 "N:641278": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:641278"
@@ -242403,105 +240394,105 @@
 ]
 },
 "N:5304B2": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5304B2"
 ]
 },
 "N:530511": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530511"
 ]
 },
 "N:530551": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530551"
 ]
 },
 "N:530591": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530591"
 ]
 },
 "N:5305CD": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5305CD"
 ]
 },
 "N:530633": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530633"
 ]
 },
 "N:5306BC": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5306BC"
 ]
 },
 "N:530745": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530745"
 ]
 },
 "N:530801": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530801"
 ]
 },
 "N:530856": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530856"
 ]
 },
 "N:530940": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530940"
 ]
 },
 "N:530995": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530995"
 ]
 },
 "N:535143": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:535143"
 ]
 },
 "N:5351E1": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5351E1"
 ]
 },
 "N:5352B9": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5352B9"
@@ -242515,49 +240506,49 @@
 ]
 },
 "N:5301FF": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5301FF"
 ]
 },
 "N:530292": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530292"
 ]
 },
 "N:5302BA": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5302BA"
 ]
 },
 "N:53030E": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:53030E"
 ]
 },
 "N:530350": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:530350"
 ]
 },
 "N:5303BC": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5303BC"
 ]
 },
 "N:5303E8": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5303E8"
@@ -242576,12 +240567,12 @@
 ]
 },
 "N:5B7554": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:642629": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:642629"
@@ -242593,21 +240584,21 @@
 "ents": []
 },
 "N:5CA9B4": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5CA9B4"
 ]
 },
 "N:5CAA0E": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5CAA0E"
 ]
 },
 "N:5CAA64": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5CAA64"
@@ -242673,7 +240664,7 @@
 "ents": []
 },
 "N:5F1725": {
-"class": "BufferIOFileClass",
+"class": "VoxClass",
 "obs": [],
 "ents": [
 "N:5F1725"
@@ -242799,7 +240790,7 @@
 "ents": []
 },
 "N:599B36": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -242826,7 +240817,7 @@
 "ents": []
 },
 "N:5B9EC6": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -242884,28 +240875,28 @@
 ]
 },
 "N:68D0C2": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:68D0C2"
 ]
 },
 "N:68D131": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:68D131"
 ]
 },
 "N:68D1A0": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:68D1A0"
 ]
 },
 "N:68D20F": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:68D20F"
@@ -242962,12 +240953,12 @@
 ]
 },
 "N:5E7892": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5ED3A7": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -242979,14 +240970,14 @@
 ]
 },
 "N:552CD6": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:552CD6"
 ]
 },
 "N:552D07": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:552D07"
@@ -243022,7 +241013,7 @@
 "ents": []
 },
 "N:699CD0": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:699CD0"
@@ -243062,12 +241053,12 @@
 ]
 },
 "N:5B9B39": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5B9C19": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -243077,7 +241068,7 @@
 "ents": []
 },
 "N:5E8603": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -243263,7 +241254,7 @@
 ]
 },
 "N:7676F8": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:7676F8"
@@ -244135,12 +242126,12 @@
 "ents": []
 },
 "N:7B2FF9": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:7B358E": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -244283,7 +242274,7 @@
 ]
 },
 "N:502506": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:502506"
@@ -244499,7 +242490,7 @@
 "ents": []
 },
 "N:407BB3": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:407BB3"
@@ -244613,14 +242604,14 @@
 ]
 },
 "N:4A01A8": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A01A8"
 ]
 },
 "N:4A0B38": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0B38"
@@ -244684,7 +242675,7 @@
 ]
 },
 "N:4F2EB6": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4F2EB6"
@@ -244736,7 +242727,7 @@
 "ents": []
 },
 "N:4F3C0C": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:4F3C0C"
@@ -244758,7 +242749,7 @@
 "ents": []
 },
 "N:52BB97": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -244784,14 +242775,14 @@
 ]
 },
 "N:53003D": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:53003D"
 ]
 },
 "N:5300F9": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:5300F9"
@@ -244817,158 +242808,158 @@
 "ents": []
 },
 "N:532166": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5321D2": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:53223F": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5322AC": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:532319": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:532386": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5323F3": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:532460": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5324CD": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:53253A": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5325A7": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:532614": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5340EC": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5340EC"
 ]
 },
 "N:534152": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:534152"
 ]
 },
 "N:5341C8": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5341C8"
 ]
 },
 "N:53427A": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53427A"
 ]
 },
 "N:5342AA": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342AA"
 ]
 },
 "N:5342EB": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342EB"
 ]
 },
 "N:53436E": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53436E"
 ]
 },
 "N:5343DB": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5343DB"
 ]
 },
 "N:534AA8": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534AA8"
 ]
 },
 "N:534AE8": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534AE8"
 ]
 },
 "N:534B24": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534B24"
 ]
 },
 "N:534B7C": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534B7C"
 ]
 },
 "N:534BB8": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:534BB8"
 ]
 },
 "N:53B488": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53B488"
@@ -245029,7 +243020,7 @@
 ]
 },
 "N:5960AF": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -245084,7 +243075,7 @@
 "ents": []
 },
 "N:5B4210": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5B4210"
@@ -245117,33 +243108,33 @@
 ]
 },
 "N:5D25E7": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5D25E7"
 ]
 },
 "N:5E679F": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:5E5FD2": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5E5FD2"
 ]
 },
 "N:5E60F3": {
-"class": "GenericNode",
+"class": "INISection",
 "obs": [],
 "ents": [
 "N:5E60F3"
 ]
 },
 "N:5E7B53": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
@@ -245668,7 +243659,7 @@
 "ents": []
 },
 "N:7530BF": {
-"class": "BufferIOFileClass",
+"class": "VoxClass",
 "obs": [],
 "ents": [
 "N:7530BF"
@@ -245823,21 +243814,21 @@
 "ents": []
 },
 "N:7AFCAB": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:7AFCAB"
 ]
 },
 "N:7AFD18": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:7AFD18"
 ]
 },
 "N:7AFD85": {
-"class": "LZOPipe",
+"class": "BlitTransLucent25Alpha_ushort",
 "obs": [],
 "ents": [
 "N:7AFD85"
@@ -245961,7 +243952,7 @@
 ]
 },
 "N:7D52DD": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:7D52DD"
@@ -246001,12 +243992,12 @@
 ]
 },
 "N:7DAA43": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 },
 "N:7DAA5E": {
-"class": "rc_ptr",
+"class": "SHPStruct",
 "obs": [],
 "ents": []
 }
