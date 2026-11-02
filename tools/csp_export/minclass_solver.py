@@ -1138,6 +1138,25 @@ def main():
                 _ret_touch += 1
     except Exception:
         pass
+    # 槽参数组实体预创建（override 链闭包 + 签名结构一致性，用户裁决机制）
+    _gs_touch = _gsP_touch = 0
+    try:
+        _spg0 = jload("anchors/slot_param_groups.json", {}) or {}
+        for _gk, _gv in (_spg0.get("groups") or {}).items():
+            _ge0 = "GS:" + _gk
+            if _ge0 not in ents:
+                touch(_ge0, "slotgroup:" + _gk)
+                _gs_touch += 1
+            for _oa0 in _gv.get("occ") or []:
+                _oa0i = hx(_oa0)
+                if _oa0i is None:
+                    continue
+                _pe0 = "P:%X:%d" % (_oa0i, int(_gk.split(":")[1]))
+                if _pe0 not in ents:
+                    touch(_pe0, "0x%08X::param%d" % (_oa0i, int(_gk.split(":")[1])))
+                    _gsP_touch += 1
+    except Exception:
+        pass
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -4387,6 +4406,72 @@ def main():
     print("[C10] edges dropped (callee entity not in ents): %d" % _c10_drop_callee, flush=True)
     print("[C16] param edges=%d (this-target edges=%d)"
           % (_c16_param_edges, len(_call_edges) - _c16_param_edges), flush=True)
+
+    # ---- 槽参数组边注入（用户机制：同槽 paramK = 继承族内同一逻辑变量）----
+    #  (1) 占用者等值：GS:N:K <-> P:FN:K 双向（签名结构一致 ⇒ paramK 域一致）
+    #  (2) 值边：origin 实体 -> GS（虚拟站点实参流入组参数）
+    try:
+        _spg = jload("anchors/slot_param_groups.json", {}) or {}
+        _n_gs_eq = _n_gs_val = 0
+        for _gk, _gv in (_spg.get("groups") or {}).items():
+            _ge = "GS:" + _gk
+            _k = int(_gk.split(":")[1])
+            for _oa in _gv.get("occ") or []:
+                _oa_i = hx(_oa)
+                if _oa_i is None:
+                    continue
+                _pe = "P:%X:%d" % (_oa_i, _k)
+                _call_edges.append((_pe, _ge))
+                _call_edges_p2.append((_pe, _ge))
+                _call_edges.append((_ge, _pe))
+                _call_edges_p2.append((_ge, _pe))
+                _n_gs_eq += 2
+        for _r in (_spg.get("val_edges") or []):
+            _a_r = hx(_r.get("addr"))
+            _gs_to = _r.get("gs")
+            if _a_r is None or _gs_to is None:
+                continue
+            _kind = _r.get("kind")
+            _fn_r = fn_at(_a_r)
+            if _kind == "this":
+                if _fn_r is None:
+                    continue
+                _fr_e = "T:%X" % _fn_r
+            elif _kind == "member":
+                if _fn_r is None:
+                    continue
+                _fr_e = "0x%08X:this.member(0x%X)" % (_fn_r, int(_r.get("off") or 0))
+                _me = ent_id(_fr_e)
+                if _me and _me not in ents:
+                    touch(_me, _fr_e)
+            elif _kind == "global":
+                _ga = hx(_r.get("sym") or "")
+                if _ga is None:
+                    continue
+                _fr_e = "G:%X" % _ga
+            elif _kind == "ret":
+                _cl = hx(_r.get("callee") or "")
+                if _cl is None:
+                    continue
+                _fr_e = "RET:%X" % _cl
+                if _fr_e not in ents:
+                    touch(_fr_e, "0x%08X.return" % _cl)
+            elif _kind == "stack":
+                if _fn_r is None:
+                    continue
+                _fr_e = "stack_+0x%X" % int(_r.get("off") or 0)
+            else:
+                continue
+            _fe = ent_id(_fr_e, _fn_r) if not _fr_e.startswith(("T:", "G:", "RET:")) else _fr_e
+            if _fe is None:
+                continue
+            _call_edges.append((_fe, _gs_to))
+            _call_edges_p2.append((_fe, _gs_to))
+            _n_gs_val += 1
+        print("[GS] slot-group occupant equality edges=%d value edges=%d"
+              % (_n_gs_eq, _n_gs_val), flush=True)
+    except Exception as _e_gs:
+        print("[GS] injection skipped: %r" % _e_gs, flush=True)
 
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
