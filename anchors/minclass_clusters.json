@@ -229057,7 +229057,7 @@
 ]
 },
 "R:765740:ecx": {
-"class": "rc_ptr",
+"class": "?$rc_ptr@VHistory@WorldDominationTour@@",
 "obs": [
 [
 0,
@@ -229081,7 +229081,7 @@
 ]
 },
 "R:7657C0:ecx": {
-"class": "rc_ptr",
+"class": "?$rc_ptr@VState@WorldDominationTour@@",
 "obs": [
 [
 0,
@@ -229675,7 +229675,7 @@
 "ents": []
 },
 "R:76F500:ecx": {
-"class": "rc_ptr",
+"class": "?$rc_ptr@VState@WorldDominationTour@@",
 "obs": [
 [
 0,

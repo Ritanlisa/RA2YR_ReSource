@@ -7,7 +7,7 @@
    "C10"
   ],
   "family_sizes": {
-   "C1": 1026,
+   "C1": 1028,
    "C10": 0
   },
   "ents": [
@@ -30,10 +30,10 @@
     "Mouse",
     "PKStraw",
     "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
     "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
-    "BounceClass",
-    "CComObjectRootBase@ATL",
-    "CDownloadEventSink"
+    "BounceClass"
    ],
    "C10": []
   },
@@ -48,7 +48,7 @@
    "C3"
   ],
   "family_sizes": {
-   "C1": 181,
+   "C1": 183,
    "C3": 945,
    "C10": 2
   },
@@ -79,6 +79,8 @@
   "family_domains": {
    "C1": [
     "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
     "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
     "BounceClass",
     "CComObjectRootBase@ATL",
@@ -87,9 +89,7 @@
     "IChatEvent@WOL",
     "IClassFactory",
     "IDownloadEvent@WOL",
-    "INetUtilEvent@WOL",
-    "IPersist",
-    "ISequentialStream"
+    "INetUtilEvent@WOL"
    ],
    "C3": [
     "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",

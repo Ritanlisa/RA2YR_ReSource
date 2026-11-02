@@ -5,9 +5,10 @@
   "counts": {
    "verified_alive": 455,
    "restored_from_dead": 26,
-   "added_new": 9,
+   "added_new": 11,
    "unverified_alive": 945
-  }
+  },
+  "note_template": "template instantiations verified by .?AV byte-containment (vtable symbols ??_7?$rc_ptr@... found installing in ctors)"
  },
  "restore_from_dead": [
   "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
@@ -46,7 +47,9 @@
   "LoadOptionsClass",
   "Mouse",
   "PKStraw",
-  "SelectTeamCommandClass"
+  "SelectTeamCommandClass",
+  "?$rc_ptr@VHistory@WorldDominationTour@@",
+  "?$rc_ptr@VState@WorldDominationTour@@"
  ],
  "verified_alive": [
   "?$BlitPlainXlatZRead@G",

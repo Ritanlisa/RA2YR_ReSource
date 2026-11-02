@@ -1176,7 +1176,7 @@ def main():
             _ci = resolve(_cls)
             if _ci is not None:
                 identified.add(_ci)
-    for _a, _cn in (jload("anchors/ctor_types.json", {}) or {}).items():
+    for _a, _cn in (dict(jload("anchors/ctor_types.json", {}) or {}, **(jload("anchors/ctor_types_ext.json", {}) or {})) or {}).items():
         _ci = resolve(_cn)
         if _ci is not None:
             identified.add(_ci)
@@ -1425,7 +1425,7 @@ def main():
     # 把它们并入成员表，C1 才有判别力（此前只有残缺的声明成员表，847/1,282
     # 个类被当成"稀疏=放行"，C1 一条都没钉住）。
     _id_funcs = collections.defaultdict(set)
-    for _a, _cn in (jload("anchors/ctor_types.json", {}) or {}).items():
+    for _a, _cn in (dict(jload("anchors/ctor_types.json", {}) or {}, **(jload("anchors/ctor_types_ext.json", {}) or {})) or {}).items():
         _ci = resolve(_cn); _fa = hx(_a)
         if _ci is not None and _fa is not None:
             _id_funcs[_ci].add(_fa)
@@ -1927,7 +1927,7 @@ def main():
 
     # ---------------- C4：ctor/dtor 装表 EXACT ----------------
     src = collections.defaultdict(lambda: {"export": set(), "committed": set()})
-    for a, cname in (jload("anchors/ctor_types.json", {}) or {}).items():
+    for a, cname in (dict(jload("anchors/ctor_types.json", {}) or {}, **(jload("anchors/ctor_types_ext.json", {}) or {})) or {}).items():
         ci = resolve(cname)
         aa = hx(a)
         if ci is not None and aa is not None:
@@ -1943,7 +1943,7 @@ def main():
             if _off5 == 0:
                 _inst_fn.add(_fn5)
     _ct_fn5 = set()
-    for _a5, _c5 in (jload("anchors/ctor_types.json", {}) or {}).items():
+    for _a5, _c5 in (dict(jload("anchors/ctor_types.json", {}) or {}, **(jload("anchors/ctor_types_ext.json", {}) or {})) or {}).items():
         _aa5 = hx(_a5)
         if _aa5 is not None:
             _ct_fn5.add(_aa5)
@@ -4915,7 +4915,7 @@ def main():
               for (c, _m) in (res.get("constrained") or [])]
     # 只从「二进制锚支持」的簇派生（否则宽类会把无证据簇的观测吸进自己的布局）
     _bin_ctor = collections.defaultdict(set)
-    for _a, _c in (jload("anchors/ctor_types.json", {}) or {}).items():
+    for _a, _c in (dict(jload("anchors/ctor_types.json", {}) or {}, **(jload("anchors/ctor_types_ext.json", {}) or {})) or {}).items():
         try:
             _bin_ctor[int(_a, 16)].add(str(_c).replace("??_7", "").rstrip("@").split("::")[-1])
         except ValueError:
