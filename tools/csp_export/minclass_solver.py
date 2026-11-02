@@ -1124,6 +1124,20 @@ def main():
         if _ce and _ce not in ents:
             touch(_ce, _to)
             _callee_touch += 1
+    _ret_touch = 0
+    try:
+        for _r0 in (jload("anchors/callarg_origins.json", {}) or {}).get("edges") or []:
+            if (_r0 or {}).get("kind") != "ret":
+                continue
+            _cl0 = hx(_r0.get("callee"))
+            if _cl0 is None:
+                continue
+            _re0 = "RET:%X" % _cl0
+            if _re0 not in ents:
+                touch(_re0, "0x%08X.return" % _cl0)
+                _ret_touch += 1
+    except Exception:
+        pass
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -4185,6 +4199,13 @@ def main():
     _c10_drop_callee = 0
     _regext_by = {}
     _m_extra = []
+    try:
+        for _r in (jload("anchors/callarg_origins.json", {}) or {}).get("edges") or []:
+            _a_r = hx(_r.get("addr"))
+            if _a_r is not None:
+                _regext_by[(_a_r, _r.get("reg"))] = _r
+    except Exception:
+        pass
     _t_extra = []
     try:
         for _r in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
@@ -4220,6 +4241,12 @@ def main():
             _fn_rx = fn_at(_ea_rx)
             _m_extra.append(("0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0)),
                              _to, _ea_rx))
+        elif _rx is not None and _rx.get("kind") == "ret":
+            _cl_rx = hx(_rx.get("callee"))
+            if _cl_rx is not None:
+                _fr = "0x%08X.return" % _cl_rx
+        elif _rx is not None and _rx.get("kind") == "stack":
+            _fr = "stack_+0x%X" % int(_rx.get("off") or 0)
         elif _rx is not None and _rx.get("kind") == "this":
             # 数据流证明的 this 直传（额外 T:caller->callee 边，非破坏性）。
             # 曾因旧相位的边序依赖净 -11 而关闭；真不动点重设计后实测 +1/+2，
@@ -4254,6 +4281,12 @@ def main():
             _call_edges_p1.append((_cc_leg, _ce))
             continue
         # ---- 新分类（X520 CHANGE B）：寄存器/栈槽/全局源全部纳入为连接点 ----
+        if _fr.endswith(".return"):
+            _rr5 = ent_id(_fr)
+            if _rr5 and _rr5 != _ce:
+                _call_edges.append((_rr5, _ce))
+                _call_edges_p2.append((_rr5, _ce))
+            continue
         if ".member(" in _fr:
             # 成员链节点：C11 约束的是 M 实体↔容器，而 M→被调方的子类型关系
             # （class(callee) ⊑ 成员类型）此前被整类跳过 —— 2026-11-02 反例研究：
@@ -5301,6 +5334,26 @@ def main():
                             print("    %-4s (no mask)" % _f)
                         else:
                             print("    %-4s %s" % (_f, "ALLOW" if (_fm >> _ci_w) & 1 else "DENY"))
+    if getattr(args, "dump_domains", False) and os.environ.get("MC_PREFIX_CENSUS"):
+        _all_roots = {str(_c8.get("root")): _c8 for _c8 in clusters}
+        _con_roots = {str(_c9.get("root")) for (_c9, _m9) in (res.get("constrained") or [])}
+        _dsz = res.get("dom_sizes") or {}
+        _hist = collections.defaultdict(lambda: collections.Counter())
+        _tot = collections.Counter()
+        for _rk in _all_roots:
+            _pf = _rk.split(":")[0]
+            _sz = _dsz.get(_rk, 1435)
+            _b = (1 if _sz == 1 else 2 if _sz == 2 else 3 if _sz <= 5 else
+                  6 if _sz <= 20 else 21 if _sz <= 100 else 101 if _sz <= 1434 else 1435)
+            _hist[_pf][_b] += 1
+            _tot[_pf] += 1
+        _buckets = [1, 2, 3, 6, 21, 101, 1435]
+        _lbl = {1: "1", 2: "2", 3: "3-5", 6: "6-20", 21: "21-100", 101: "101-1434", 1435: "free(1435)"}
+        print("[prefix-census] rows=prefix cols=domain-size")
+        print("%-6s %8s" % ("前缀", "总计") + "".join("%10s" % _lbl[b] for b in _buckets))
+        for _pf in sorted(_hist, key=lambda x: -_tot[x]):
+            print("%-6s %8d" % (_pf, _tot[_pf]) + "".join("%10d" % _hist[_pf].get(b, 0) for b in _buckets))
+        print("[prefix-census] 合计簇 %d / 宇宙 %d" % (sum(_tot.values()), n))
     if getattr(args, "dump_domains", False) and os.environ.get("MC_MULTI_CENSUS"):
         # 强制多类普查（非唯一簇的边邻居 exact 钉定两两无祖先关系）
         _excl = {}

@@ -1,44 +1,5 @@
 [
  {
-  "cluster": "R:487D50:ecx",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C10"
-  ],
-  "family_sizes": {
-   "C1": 285,
-   "C10": 1
-  },
-  "ents": [
-   "T:487D50"
-  ],
-  "obs": [
-   "283:1",
-   "320:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CreateTeamCommandClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
-    "BounceClass",
-    "CComObjectRootBase@ATL",
-    "CDownloadEventSink",
-    "DiskSwap",
-    "IChatEvent@WOL",
-    "IClassFactory"
-   ],
-   "C10": [
-    "TrajectoryHelper"
-   ]
-  },
-  "exact": {}
- },
- {
   "cluster": "P:51BF90:0",
   "status": "inconsistent",
   "families": [
@@ -107,66 +68,6 @@
    "C10": [
     "?$TClassFactory@VCellClass@@",
     "CellClass"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4CC100:+0x18",
-  "status": "inconsistent",
-  "families": [
-   "C10"
-  ],
-  "family_sizes": {
-   "C10": 1
-  },
-  "ents": [
-   "S:4CC100:+0x18"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C10": [
-    "TrajectoryHelper"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4CC360:+0x3c",
-  "status": "inconsistent",
-  "families": [
-   "C10"
-  ],
-  "family_sizes": {
-   "C10": 1
-  },
-  "ents": [
-   "S:4CC360:+0x3c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C10": [
-    "TrajectoryHelper"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "S:4CC360:+0x1c",
-  "status": "inconsistent",
-  "families": [
-   "C10"
-  ],
-  "family_sizes": {
-   "C10": 1
-  },
-  "ents": [
-   "S:4CC360:+0x1c"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C10": [
-    "TrajectoryHelper"
    ]
   },
   "exact": {}

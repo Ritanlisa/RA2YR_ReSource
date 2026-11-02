@@ -54733,11 +54733,6 @@
 "T:40FD70"
 ]
 },
-"R:410230:ecx": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "R:7BB020:ecx": {
 "class": "XSurface",
 "obs": [
@@ -102427,16 +102422,6 @@
 "T:4739F0"
 ]
 },
-"T:7C8B48": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
-"T:7C8E25": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "R:65CA80:ecx": {
 "class": "RawFileClass",
 "obs": [
@@ -104424,6 +104409,11 @@
 "T:481180"
 ]
 },
+"R:41C2E0:ecx": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "T:586360": {
 "class": "MapClass",
 "obs": [],
@@ -105748,6 +105738,20 @@
 "T:41FEE0"
 ]
 },
+"R:509610:ecx": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"T:509610"
+]
+},
+"R:5095D0:ecx": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"T:5095D0"
+]
+},
 "R:49FAE0:ecx": {
 "class": "BlitTransXlatAlpha_ushort",
 "obs": [
@@ -106306,11 +106310,6 @@
 "RET:4399A0"
 ]
 },
-"T:750D40": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "R:425670:ecx": {
 "class": "WaveClass",
 "obs": [
@@ -106660,22 +106659,6 @@
 ],
 "ents": [
 "T:5F3B50"
-]
-},
-"R:4810A0:ecx": {
-"class": "LogicClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-]
-],
-"ents": [
-"T:4810A0"
 ]
 },
 "R:4267F0:ecx": {
@@ -107727,20 +107710,6 @@
 "T:4F9A50"
 ]
 },
-"R:430250:ecx": {
-"class": "BuildingPlacement",
-"obs": [
-[
-12,
-1
-],
-[
-272,
-4
-]
-],
-"ents": []
-},
 "R:5D3BA0:ecx": {
 "class": "MessageListClass",
 "obs": [],
@@ -108233,11 +108202,6 @@
 },
 "T:437A10": {
 "class": "FootClass",
-"obs": [],
-"ents": []
-},
-"T:7BBE20": {
-"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -112890,18 +112854,6 @@
 "T:439080"
 ]
 },
-"R:452820:ecx": {
-"class": "AircraftClass",
-"obs": [
-[
-1644,
-4
-]
-],
-"ents": [
-"T:452820"
-]
-},
 "R:71AF20:ecx": {
 "class": "TemporalClass",
 "obs": [
@@ -112933,9 +112885,7 @@
 "R:710000:ecx": {
 "class": "FootClass",
 "obs": [],
-"ents": [
-"T:710000"
-]
+"ents": []
 },
 "R:41D830:ecx": {
 "class": "AirstrikeClass",
@@ -113164,6 +113114,11 @@
 },
 "T:753C80": {
 "class": "FootClass",
+"obs": [],
+"ents": []
+},
+"T:7540F0": {
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -114243,20 +114198,6 @@
 "T:6D8700"
 ]
 },
-"T:47EFE0": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"T:47EFE0"
-]
-},
-"T:47F250": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"T:47F250"
-]
-},
 "R:7235A0:ecx": {
 "class": "TiberiumClass",
 "obs": [
@@ -114569,13 +114510,6 @@
 "obs": [],
 "ents": [
 "T:485590"
-]
-},
-"T:4A5A50": {
-"class": "UnitTypeClass",
-"obs": [],
-"ents": [
-"T:4A5A50"
 ]
 },
 "R:557230:ecx": {
@@ -115053,6 +114987,11 @@
 "RET:4E12F0"
 ]
 },
+"R:626200:ecx": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "R:48EBF0:ecx": {
 "class": "ConvertClass",
 "obs": [
@@ -115443,6 +115382,370 @@
 ],
 "ents": [
 "T:48EBF0"
+]
+},
+"R:490490:ecx": {
+"class": "ConvertClass",
+"obs": [
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+24,
+4
+],
+[
+28,
+4
+],
+[
+32,
+4
+],
+[
+36,
+4
+],
+[
+40,
+4
+],
+[
+44,
+4
+],
+[
+48,
+4
+],
+[
+52,
+4
+],
+[
+56,
+4
+],
+[
+60,
+4
+],
+[
+64,
+4
+],
+[
+68,
+4
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+80,
+4
+],
+[
+84,
+4
+],
+[
+88,
+4
+],
+[
+92,
+4
+],
+[
+96,
+4
+],
+[
+100,
+4
+],
+[
+104,
+4
+],
+[
+108,
+4
+],
+[
+112,
+4
+],
+[
+116,
+4
+],
+[
+120,
+4
+],
+[
+124,
+4
+],
+[
+128,
+4
+],
+[
+132,
+4
+],
+[
+136,
+4
+],
+[
+140,
+4
+],
+[
+144,
+4
+],
+[
+148,
+4
+],
+[
+152,
+4
+],
+[
+156,
+4
+],
+[
+160,
+4
+],
+[
+164,
+4
+],
+[
+168,
+4
+],
+[
+172,
+4
+],
+[
+176,
+4
+],
+[
+180,
+4
+],
+[
+184,
+4
+],
+[
+188,
+4
+],
+[
+192,
+4
+],
+[
+196,
+4
+],
+[
+200,
+4
+],
+[
+204,
+4
+],
+[
+208,
+4
+],
+[
+212,
+4
+],
+[
+216,
+4
+],
+[
+220,
+4
+],
+[
+224,
+4
+],
+[
+228,
+4
+],
+[
+232,
+4
+],
+[
+236,
+4
+],
+[
+240,
+4
+],
+[
+244,
+4
+],
+[
+248,
+4
+],
+[
+252,
+4
+],
+[
+256,
+4
+],
+[
+260,
+4
+],
+[
+264,
+4
+],
+[
+268,
+4
+],
+[
+272,
+4
+],
+[
+276,
+4
+],
+[
+280,
+4
+],
+[
+284,
+4
+],
+[
+288,
+4
+],
+[
+292,
+4
+],
+[
+296,
+4
+],
+[
+300,
+4
+],
+[
+304,
+4
+],
+[
+308,
+4
+],
+[
+312,
+4
+],
+[
+316,
+4
+],
+[
+320,
+4
+],
+[
+324,
+4
+],
+[
+328,
+4
+],
+[
+332,
+4
+],
+[
+336,
+4
+],
+[
+340,
+4
+],
+[
+344,
+4
+],
+[
+348,
+4
+],
+[
+352,
+4
+],
+[
+356,
+4
+],
+[
+360,
+4
+]
+],
+"ents": [
+"T:490490"
 ]
 },
 "R:473A80:ecx": {
@@ -116495,7 +116798,7 @@
 "ents": []
 },
 "R:4B0F20:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 12,
@@ -116558,9 +116861,7 @@
 4
 ]
 ],
-"ents": [
-"T:4B0F20"
-]
+"ents": []
 },
 "R:4B2630:ecx": {
 "class": "AircraftClass",
@@ -116638,26 +116939,6 @@
 "T:4B2630"
 ]
 },
-"R:4B4780:ecx": {
-"class": "MissionClass",
-"obs": [
-[
-64,
-4
-],
-[
-68,
-4
-],
-[
-88,
-4
-]
-],
-"ents": [
-"T:4B4780"
-]
-},
 "R:481A00:ecx": {
 "class": "CellClass",
 "obs": [
@@ -116695,7 +116976,7 @@
 ]
 },
 "R:4B0AD0:ecx": {
-"class": "MissionClass",
+"class": "VXLFrame",
 "obs": [
 [
 12,
@@ -116714,9 +116995,7 @@
 1
 ]
 ],
-"ents": [
-"T:4B0AD0"
-]
+"ents": []
 },
 "R:5F6CD0:ecx": {
 "class": "ObjectClass",
@@ -116888,11 +117167,6 @@
 "ents": [
 "T:4A60D0"
 ]
-},
-"T:7CA422": {
-"class": "FootClass",
-"obs": [],
-"ents": []
 },
 "R:4B5210:ecx": {
 "class": "LinkClass",
@@ -117700,11 +117974,6 @@
 4
 ]
 ],
-"ents": []
-},
-"R:4C1F20:ecx": {
-"class": "FootClass",
-"obs": [],
 "ents": []
 },
 "R:4E1390:ecx": {
@@ -120650,36 +120919,6 @@
 "T:48DCD0"
 ]
 },
-"R:5007A0:ecx": {
-"class": "Sidebar",
-"obs": [
-[
-21456,
-1
-],
-[
-21457,
-1
-],
-[
-21458,
-1
-],
-[
-21459,
-1
-],
-[
-21460,
-1
-],
-[
-21464,
-1
-]
-],
-"ents": []
-},
 "R:6ABC60:ecx": {
 "class": "SidebarClass",
 "obs": [],
@@ -122277,30 +122516,6 @@
 "T:4F54A0"
 ]
 },
-"R:500B40:ecx": {
-"class": "HouseClass",
-"obs": [
-[
-48,
-4
-],
-[
-388,
-4
-],
-[
-22388,
-4
-],
-[
-22424,
-4
-]
-],
-"ents": [
-"T:500B40"
-]
-},
 "P:501540:1": {
 "class": "HouseClass",
 "obs": [
@@ -123355,7 +123570,7 @@
 ]
 },
 "R:512FA0:ecx": {
-"class": "VectorClass_ushort",
+"class": "AircraftTypeVector",
 "obs": [
 [
 0,
@@ -123374,9 +123589,7 @@
 1
 ]
 ],
-"ents": [
-"T:512FA0"
-]
+"ents": []
 },
 "R:41CEF0:ecx": {
 "class": "AircraftTypeClass",
@@ -123386,7 +123599,7 @@
 ]
 },
 "R:513370:ecx": {
-"class": "VectorClass_ushort",
+"class": "AircraftTypeVector",
 "obs": [
 [
 0,
@@ -123405,9 +123618,7 @@
 1
 ]
 ],
-"ents": [
-"T:513370"
-]
+"ents": []
 },
 "R:511650:ecx": {
 "class": "HouseTypeClass",
@@ -124747,11 +124958,6 @@
 "ents": [
 "T:52ACE0"
 ]
-},
-"T:52B750": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "T:7CA530": {
 "class": "VectorClass",
@@ -130605,20 +130811,6 @@
 "T:7BD130"
 ]
 },
-"R:53D580:ecx": {
-"class": "BigInt",
-"obs": [
-[
-8,
-4
-],
-[
-12,
-4
-]
-],
-"ents": []
-},
 "T:409030": {
 "class": "VectorClass",
 "obs": [],
@@ -132935,6 +133127,11 @@
 "T:58BF70"
 ]
 },
+"T:5904B0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "R:502D30:ecx": {
 "class": "HouseClass",
 "obs": [],
@@ -133143,7 +133340,7 @@
 ]
 },
 "R:5AC430:ecx": {
-"class": "DynamicVectorClass",
+"class": "PairVector",
 "obs": [
 [
 0,
@@ -133170,9 +133367,7 @@
 4
 ]
 ],
-"ents": [
-"T:5AC430"
-]
+"ents": []
 },
 "R:642C80:ecx": {
 "class": "LoadScreen",
@@ -133406,6 +133601,11 @@
 "T:71BB90"
 ]
 },
+"T:5A89D0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "R:5A82E0:ecx": {
 "class": "Value",
 "obs": [
@@ -133414,6 +133614,11 @@
 4
 ]
 ],
+"ents": []
+},
+"T:5A8720": {
+"class": "FootClass",
+"obs": [],
 "ents": []
 },
 "T:5A7D00": {
@@ -133638,22 +133843,6 @@
 "ents": [
 "T:5B01C0",
 "P:4C9480:2"
-]
-},
-"R:5B17B0:ecx": {
-"class": "MissionClass",
-"obs": [
-[
-12,
-4
-],
-[
-36,
-4
-]
-],
-"ents": [
-"T:5B17B0"
 ]
 },
 "R:5B4590:ecx": {
@@ -134224,86 +134413,6 @@
 "T:5C5A80"
 ]
 },
-"R:49B720:ecx": {
-"class": "VectorClass",
-"obs": [
-[
-60,
-4
-],
-[
-64,
-4
-]
-],
-"ents": [
-"T:49B720"
-]
-},
-"R:49CAF0:ecx": {
-"class": "VectorClass",
-"obs": [
-[
-56,
-4
-],
-[
-60,
-4
-],
-[
-64,
-4
-],
-[
-68,
-4
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-80,
-4
-],
-[
-84,
-4
-],
-[
-88,
-4
-],
-[
-92,
-4
-],
-[
-96,
-4
-],
-[
-100,
-4
-],
-[
-104,
-4
-],
-[
-108,
-1
-]
-],
-"ents": [
-"T:49CAF0"
-]
-},
 "R:5D5D20:ecx": {
 "class": "MultiplayerGameMode",
 "obs": [
@@ -134330,134 +134439,6 @@
 ],
 "ents": [
 "T:5D5D20"
-]
-},
-"R:49D070:ecx": {
-"class": "VectorClass",
-"obs": [
-[
-56,
-4
-],
-[
-60,
-4
-],
-[
-64,
-4
-],
-[
-108,
-1
-]
-],
-"ents": [
-"T:49D070"
-]
-},
-"R:49B760:ecx": {
-"class": "LogicClass",
-"obs": [
-[
-0,
-1
-]
-],
-"ents": [
-"T:49B760"
-]
-},
-"R:49C0D0:ecx": {
-"class": "VectorClass",
-"obs": [
-[
-0,
-1
-],
-[
-1,
-1
-],
-[
-20,
-4
-],
-[
-24,
-4
-],
-[
-28,
-1
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-56,
-4
-],
-[
-60,
-4
-],
-[
-64,
-4
-],
-[
-68,
-4
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-80,
-4
-],
-[
-84,
-4
-],
-[
-88,
-4
-],
-[
-92,
-4
-],
-[
-96,
-4
-],
-[
-100,
-4
-],
-[
-104,
-4
-],
-[
-108,
-1
-]
-],
-"ents": [
-"T:49C0D0"
 ]
 },
 "T:5E26C0": {
@@ -134784,6 +134765,13 @@
 "T:540F00"
 ]
 },
+"R:623840:ecx": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"T:623840"
+]
+},
 "R:5D6620:ecx": {
 "class": "MultiplayerGameMode",
 "obs": [
@@ -134806,13 +134794,6 @@
 ],
 "ents": [
 "T:5D6620"
-]
-},
-"T:72EAD0": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"T:72EAD0"
 ]
 },
 "R:5C9470:ecx": {
@@ -135221,6 +135202,13 @@
 "class": "FootClass",
 "obs": [],
 "ents": []
+},
+"T:5E29A0": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"T:5E29A0"
+]
 },
 "R:5E7160:ecx": {
 "class": "FootClass",
@@ -136074,20 +136062,6 @@
 "T:6247D0"
 ]
 },
-"R:624810:ecx": {
-"class": "CDTimerClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-]
-],
-"ents": []
-},
 "T:6205D0": {
 "class": "FootClass",
 "obs": [],
@@ -136104,18 +136078,9 @@
 "ents": []
 },
 "T:72F540": {
-"class": "BSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"T:72F540"
-]
-},
-"T:72E450": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"T:72E450"
-]
+"ents": []
 },
 "T:7C8974": {
 "class": "VectorClass",
@@ -137649,7 +137614,7 @@
 "ents": []
 },
 "R:63B550:ecx": {
-"class": "RadBeam",
+"class": "AudioMixer",
 "obs": [
 [
 0,
@@ -137664,9 +137629,7 @@
 1
 ]
 ],
-"ents": [
-"T:63B550"
-]
+"ents": []
 },
 "R:63CAE0:ecx": {
 "class": "FactoryClass",
@@ -137721,7 +137684,7 @@
 "ents": []
 },
 "R:63BE60:ecx": {
-"class": "AircraftClass",
+"class": "AudioMixer",
 "obs": [
 [
 0,
@@ -137736,12 +137699,10 @@
 1
 ]
 ],
-"ents": [
-"T:63BE60"
-]
+"ents": []
 },
 "R:63BE10:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 0,
@@ -137760,9 +137721,7 @@
 4
 ]
 ],
-"ents": [
-"T:63BE10"
-]
+"ents": []
 },
 "R:63D400:ecx": {
 "class": "FootClass",
@@ -138424,11 +138383,12 @@
 "T:644BE0"
 ]
 },
-"T:6460C0": {
+"RET:6460C0": {
 "class": "VectorClass",
 "obs": [],
 "ents": [
-"T:6460C0"
+"T:6460C0",
+"RET:6460C0"
 ]
 },
 "R:4C6860:ecx": {
@@ -138457,11 +138417,6 @@
 "ents": []
 },
 "T:64A0C0": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
-"T:64AD10": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
@@ -138502,13 +138457,6 @@
 "obs": [],
 "ents": [
 "T:5E2BA0"
-]
-},
-"T:5F0180": {
-"class": "SessionClass",
-"obs": [],
-"ents": [
-"T:5F0180"
 ]
 },
 "T:6516F0": {
@@ -141983,13 +141931,6 @@
 ],
 "ents": []
 },
-"T:67B8F0": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"T:67B8F0"
-]
-},
 "R:67A210:ecx": {
 "class": "StringVector",
 "obs": [
@@ -142058,13 +141999,6 @@
 ],
 "ents": []
 },
-"T:67B720": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"T:67B720"
-]
-},
 "R:67A8A0:ecx": {
 "class": "SyncDelay",
 "obs": [
@@ -142109,11 +142043,6 @@
 ],
 "ents": []
 },
-"T:67BDD0": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "R:67A310:ecx": {
 "class": "StringVector",
 "obs": [
@@ -142154,7 +142083,7 @@
 "ents": []
 },
 "R:67A570:ecx": {
-"class": "DynamicVectorClass",
+"class": "PairVector",
 "obs": [
 [
 0,
@@ -142181,12 +142110,10 @@
 4
 ]
 ],
-"ents": [
-"T:67A570"
-]
+"ents": []
 },
 "R:67A110:ecx": {
-"class": "TypeList",
+"class": "StringVector",
 "obs": [
 [
 0,
@@ -142217,9 +142144,7 @@
 4
 ]
 ],
-"ents": [
-"T:67A110"
-]
+"ents": []
 },
 "R:6CFCC0:ecx": {
 "class": "ShapeButtonClass",
@@ -144787,7 +144712,7 @@
 ]
 },
 "R:6A05F0:ecx": {
-"class": "AircraftClass",
+"class": "SequenceStruct",
 "obs": [
 [
 12,
@@ -144850,9 +144775,7 @@
 4
 ]
 ],
-"ents": [
-"T:6A05F0"
-]
+"ents": []
 },
 "R:6A1C80:ecx": {
 "class": "AircraftClass",
@@ -144930,28 +144853,8 @@
 "T:6A1C80"
 ]
 },
-"R:6A3DB0:ecx": {
-"class": "MissionClass",
-"obs": [
-[
-64,
-4
-],
-[
-68,
-4
-],
-[
-88,
-4
-]
-],
-"ents": [
-"T:6A3DB0"
-]
-},
 "R:6A01A0:ecx": {
-"class": "MissionClass",
+"class": "VXLFrame",
 "obs": [
 [
 12,
@@ -144970,9 +144873,7 @@
 1
 ]
 ],
-"ents": [
-"T:6A01A0"
-]
+"ents": []
 },
 "R:69DDC0:ecx": {
 "class": "ShapeButtonClass",
@@ -152299,13 +152200,6 @@
 "T:77A8B0"
 ]
 },
-"T:72E9F0": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"T:72E9F0"
-]
-},
 "R:6C9D40:ecx": {
 "class": "SyncDelay",
 "obs": [
@@ -152648,23 +152542,6 @@
 ]
 ],
 "ents": []
-},
-"P:6D8700:3": {
-"class": "CellClass",
-"obs": [
-[
-288,
-1
-],
-[
-289,
-1
-]
-],
-"ents": [
-"T:4801F0",
-"P:6D8700:3"
-]
 },
 "R:411330:ecx": {
 "class": "EnumConnectionsClass",
@@ -155551,34 +155428,6 @@
 "T:477640"
 ]
 },
-"R:7179D0:ecx": {
-"class": "TagTypeClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-16,
-2
-]
-],
-"ents": [
-"T:7179D0"
-]
-},
 "R:529CA0:ecx": {
 "class": "INISection",
 "obs": [
@@ -156978,11 +156827,9 @@
 ]
 },
 "T:72E2D0": {
-"class": "XSurface",
+"class": "VectorClass",
 "obs": [],
-"ents": [
-"T:72E2D0"
-]
+"ents": []
 },
 "T:732C30": {
 "class": "FootClass",
@@ -157657,11 +157504,6 @@
 "T:406270"
 ]
 },
-"T:750AC0": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "R:406170:ecx": {
 "class": "AudioController",
 "obs": [
@@ -157872,7 +157714,7 @@
 "ents": []
 },
 "R:75AEC0:ecx": {
-"class": "WalkLocomotionClass",
+"class": "BlitTransLucent25AlphaZReadWrite_ushort",
 "obs": [
 [
 0,
@@ -158778,11 +158620,6 @@
 "T:76A7E0"
 ]
 },
-"R:7AF2A0:ecx": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "R:5CC250:ecx": {
 "class": "MSOverlayAnim",
 "obs": [
@@ -159242,18 +159079,6 @@
 ],
 "ents": [
 "T:769440"
-]
-},
-"R:76F080:ecx": {
-"class": "LogicClass",
-"obs": [
-[
-4,
-4
-]
-],
-"ents": [
-"T:76F080"
 ]
 },
 "R:7693F0:ecx": {
@@ -159801,13 +159626,6 @@
 ],
 "ents": [
 "T:7AC9D0"
-]
-},
-"T:77DC90": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"T:77DC90"
 ]
 },
 "R:5DA0B0:ecx": {
@@ -160756,13 +160574,6 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"T:4039C0": {
-"class": "AbstractClass",
-"obs": [],
-"ents": [
-"T:4039C0"
-]
 },
 "R:75E3B0:ecx": {
 "class": "WarheadTypeClass",
@@ -162025,28 +161836,6 @@
 "T:5AD740"
 ]
 },
-"R:5AD930:ecx": {
-"class": "CounterClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-16,
-4
-]
-],
-"ents": []
-},
 "R:5AD9F0:ecx": {
 "class": "VectorClass",
 "obs": [
@@ -162537,28 +162326,6 @@
 "T:5FE020",
 "RET:5FE020"
 ]
-},
-"R:6525A0:ecx": {
-"class": "CounterClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-16,
-4
-]
-],
-"ents": []
 },
 "P:69D8C0:2": {
 "class": "OverlayClass",
@@ -163837,6 +163604,23 @@
 "ents": [
 "T:7DCDC0"
 ]
+},
+"RET:7C8EC0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"RET:4FBD80": {
+"class": "?$TClassFactory@VBuildingTypeClass@@",
+"obs": [],
+"ents": [
+"RET:4FBD80"
+]
+},
+"RET:408560": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
 },
 "M:4019E0:this:0x4": {
 "class": "VectorClass",
@@ -165851,7 +165635,7 @@
 ]
 },
 "M:4880F0:this:0x10": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -166067,7 +165851,7 @@
 ]
 },
 "M:4A57B0:this:0x10": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -166636,19 +166420,19 @@
 ]
 },
 "M:4E2690:this:0x14": {
-"class": "UnitTypeClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:4E2690:this:0x14"
 ]
 },
 "M:4E29A0:this:0x10": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
 "M:4E2B50:this:0x14": {
-"class": "UnitTypeClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:4E2B50:this:0x14"
@@ -167795,7 +167579,7 @@
 ]
 },
 "M:557920:this:0x14": {
-"class": "UnitTypeClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:557920:this:0x14"
@@ -169769,11 +169553,6 @@
 "obs": [],
 "ents": []
 },
-"M:648710:this:0x33": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "M:64A0C0:this:0x30": {
 "class": "FootClass",
 "obs": [],
@@ -170765,7 +170544,7 @@
 "ents": []
 },
 "M:6B20F0:this:0x10": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -171341,7 +171120,7 @@
 ]
 },
 "M:6EA0D0:this:0x34": {
-"class": "VectorClass",
+"class": "FootClass",
 "obs": [],
 "ents": []
 },
@@ -172833,13 +172612,6 @@
 "M:7609E0:this:0xBC"
 ]
 },
-"M:761030:this:0x1F4": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"M:761030:this:0x1F4"
-]
-},
 "M:761640:this:0x4": {
 "class": "VectorClass",
 "obs": [],
@@ -172917,7 +172689,7 @@
 "ents": []
 },
 "M:7681E0:this:0x10": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -174819,20 +174591,6 @@
 ],
 "ents": []
 },
-"T:435340": {
-"class": "BitText",
-"obs": [],
-"ents": [
-"T:435340"
-]
-},
-"T:4353F0": {
-"class": "BitText",
-"obs": [],
-"ents": [
-"T:4353F0"
-]
-},
 "T:4379A0": {
 "class": "FootClass",
 "obs": [],
@@ -175428,24 +175186,6 @@
 "T:4A53B0"
 ]
 },
-"R:4B0DF0:ecx": {
-"class": "DriveLocomotionClass",
-"obs": [
-[
-12,
-4
-],
-[
-64,
-4
-],
-[
-99,
-1
-]
-],
-"ents": []
-},
 "P:4C2FC0:0": {
 "class": "DropListClass",
 "obs": [
@@ -175491,34 +175231,19 @@
 ],
 "ents": []
 },
-"R:4C2790:ecx": {
-"class": "EBolt",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-28,
-4
-],
-[
-40,
-4
-],
-[
-44,
-1
-]
-],
+"T:4C38E0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"T:4C3AD0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"T:4C3B60": {
+"class": "VectorClass",
+"obs": [],
 "ents": []
 },
 "R:4C6CB0:ecx": {
@@ -175921,22 +175646,6 @@
 "P:7258D0:4"
 ]
 },
-"R:4FAD20:ecx": {
-"class": "HouseClass",
-"obs": [
-[
-48,
-4
-],
-[
-22408,
-4
-]
-],
-"ents": [
-"T:4FAD20"
-]
-},
 "P:49FAE0:4": {
 "class": "HouseClass",
 "obs": [
@@ -176065,22 +175774,6 @@
 ],
 "ents": [
 "T:509C10"
-]
-},
-"R:50A350:ecx": {
-"class": "HouseClass",
-"obs": [
-[
-596,
-4
-],
-[
-22016,
-4
-]
-],
-"ents": [
-"T:50A350"
 ]
 },
 "R:5116A0:ecx": {
@@ -176880,24 +176573,6 @@
 [
 68,
 4
-]
-],
-"ents": []
-},
-"R:6A04C0:ecx": {
-"class": "DriveLocomotionClass",
-"obs": [
-[
-12,
-4
-],
-[
-64,
-4
-],
-[
-99,
-1
 ]
 ],
 "ents": []
@@ -181172,13 +180847,6 @@
 "M:672AE0:this:0x8E4"
 ]
 },
-"M:672AE0:this:0x900": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"M:672AE0:this:0x900"
-]
-},
 "M:672AE0:this:0x91C": {
 "class": "VectorClass",
 "obs": [],
@@ -182728,11 +182396,6 @@
 "ents": [
 "M:712170:this:0x29C"
 ]
-},
-"M:712170:this:0x2AE": {
-"class": "FootClass",
-"obs": [],
-"ents": []
 },
 "M:712170:this:0x1F8": {
 "class": "AnimTypeClass",
@@ -186362,6 +186025,22 @@
 "M:41D540:this:0x5c"
 ]
 },
+"P:41D540:0": {
+"class": "AircraftClass",
+"obs": [
+[
+20,
+1
+],
+[
+660,
+4
+]
+],
+"ents": [
+"P:41D540:0"
+]
+},
 "M:41D860:this:0x54": {
 "class": "AnimTypeClass",
 "obs": [
@@ -187537,6 +187216,30 @@
 ],
 "ents": [
 "M:436F40:this:0xe4"
+]
+},
+"P:4371D0:0": {
+"class": "Node",
+"obs": [
+[
+0,
+4
+]
+],
+"ents": [
+"P:4371D0:0"
+]
+},
+"P:437290:0": {
+"class": "Node",
+"obs": [
+[
+0,
+4
+]
+],
+"ents": [
+"P:437290:0"
 ]
 },
 "P:4373B0:0": {
@@ -190004,14 +189707,16 @@
 "ents": []
 },
 "M:449C30:this:0x34": {
-"class": "ScriptClass",
+"class": "TagClass",
 "obs": [
 [
 44,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:449C30:this:0x34"
+]
 },
 "M:44ACF0:this:0x520": {
 "class": "BuildingTypeClass",
@@ -195945,6 +195650,16 @@
 "obs": [
 [
 764,
+4
+]
+],
+"ents": []
+},
+"R:4D02B0:ecx": {
+"class": "SwizzleManagerClass",
+"obs": [
+[
+36,
 4
 ]
 ],
@@ -207115,16 +206830,6 @@
 ],
 "ents": []
 },
-"R:636980:ecx": {
-"class": "EnumConnectionsClass",
-"obs": [
-[
-20,
-4
-]
-],
-"ents": []
-},
 "R:63E1D0:ecx": {
 "class": "DynamicVectorClass",
 "obs": [
@@ -217941,6 +217646,18 @@
 "T:71AB10"
 ]
 },
+"P:71AB60:0": {
+"class": "AircraftClass",
+"obs": [
+[
+1156,
+4
+]
+],
+"ents": [
+"P:71AB60:0"
+]
+},
 "M:71ABC0:this:0x44": {
 "class": "WaypointPathClass",
 "obs": [
@@ -218969,6 +218686,11 @@
 ],
 "ents": []
 },
+"R:7298F0:ecx": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "R:729AA0:ecx": {
 "class": "WOLGameList",
 "obs": [
@@ -219674,14 +219396,16 @@
 "ents": []
 },
 "M:7393C0:this:0x34": {
-"class": "ScriptClass",
+"class": "TagClass",
 "obs": [
 [
 44,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:7393C0:this:0x34"
+]
 },
 "R:739AC0:ecx": {
 "class": "UnitClass",
@@ -223048,6 +222772,16 @@
 "M:773070:this:0xa0"
 ]
 },
+"R:77A4D0:ecx": {
+"class": "WOLPersona",
+"obs": [
+[
+8,
+1
+]
+],
+"ents": []
+},
 "P:77E900:0": {
 "class": "Rect",
 "obs": [
@@ -224351,12 +224085,19 @@
 "T:7DCE3B"
 ]
 },
-"S:4011C0:+0x4": {
-"class": "VectorClass",
+"P:431B80:0": {
+"class": "RawFileClass",
+"obs": [],
+"ents": [
+"P:431B80:0"
+]
+},
+"P:407470:2": {
+"class": "FootClass",
 "obs": [],
 "ents": []
 },
-"P:407470:2": {
+"P:407470:3": {
 "class": "FootClass",
 "obs": [],
 "ents": []
@@ -224523,6 +224264,21 @@
 "obs": [],
 "ents": []
 },
+"P:407420:1": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"P:407440:1": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:7C92D0:3": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "P:403870:2": {
 "class": "AbstractClass",
 "obs": [],
@@ -224622,11 +224378,6 @@
 ]
 },
 "S:412B40:+0x14": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
-"S:413D20:+0x18": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
@@ -224798,6 +224549,13 @@
 "P:41D830:0"
 ]
 },
+"P:41D860:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:41D860:0"
+]
+},
 "P:41DA20:0": {
 "class": "ObjectClass",
 "obs": [],
@@ -224961,11 +224719,6 @@
 "S:420F40:+0x70"
 ]
 },
-"P:421EA0:2": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "P:424B50:0": {
 "class": "ObjectClass",
 "obs": [],
@@ -224993,6 +224746,11 @@
 "ents": [
 "G:A83E00"
 ]
+},
+"P:5F4B10:2": {
+"class": "FootClass",
+"obs": [],
+"ents": []
 },
 "G:886FA0": {
 "class": "CellStruct",
@@ -225057,6 +224815,20 @@
 "P:429A90:5"
 ]
 },
+"P:42A460:3": {
+"class": "AbstractClass",
+"obs": [],
+"ents": [
+"P:42A460:3"
+]
+},
+"P:42AA90:1": {
+"class": "AbstractClass",
+"obs": [],
+"ents": [
+"P:42AA90:1"
+]
+},
 "P:42DC50:3": {
 "class": "AbstractClass",
 "obs": [],
@@ -225107,13 +224879,6 @@
 "P:430590:0"
 ]
 },
-"S:430650:+0x84": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"S:430650:+0x84"
-]
-},
 "G:818AC4": {
 "class": "StringTable",
 "obs": [],
@@ -225144,6 +224909,11 @@
 },
 "P:4331F0:1": {
 "class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"P:433330:2": {
+"class": "FootClass",
 "obs": [],
 "ents": []
 },
@@ -225259,18 +225029,18 @@
 "obs": [],
 "ents": []
 },
-"S:43B4C0:+0x14": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"S:43B4C0:+0x14"
-]
-},
 "G:B0F5B8": {
 "class": "DynamicVector",
 "obs": [],
 "ents": [
 "G:B0F5B8"
+]
+},
+"P:406060:4": {
+"class": "AudioController",
+"obs": [],
+"ents": [
+"P:406060:4"
 ]
 },
 "G:8B41E0": {
@@ -225559,6 +225329,13 @@
 "obs": [],
 "ents": []
 },
+"S:453E20:+0x0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": [
+"S:453E20:+0x0"
+]
+},
 "P:70C250:1": {
 "class": "FootClass",
 "obs": [],
@@ -225579,6 +225356,13 @@
 "obs": [],
 "ents": [
 "T:455B90"
+]
+},
+"P:465570:0": {
+"class": "?$TClassFactory@VBuildingTypeClass@@",
+"obs": [],
+"ents": [
+"P:465570:0"
 ]
 },
 "M:4561F0:this:0x5720": {
@@ -225937,6 +225721,13 @@
 "P:4723B0:0"
 ]
 },
+"P:471F90:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:471F90:0"
+]
+},
 "P:4722F0:0": {
 "class": "TechnoClass",
 "obs": [],
@@ -226171,6 +225962,20 @@
 "P:47C620:2"
 ]
 },
+"P:47E8A0:1": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:47E8A0:1"
+]
+},
+"P:47EA90:1": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:47EA90:1"
+]
+},
 "S:47EFE0:+0xfffffffffffffffc": {
 "class": "SHPReference",
 "obs": [],
@@ -226205,6 +226010,11 @@
 "ents": [
 "P:4838E0:0"
 ]
+},
+"S:4839F0:+0x0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
 },
 "P:483E30:3": {
 "class": "ScenarioClass",
@@ -226302,6 +226112,11 @@
 "G:887888"
 ]
 },
+"P:48B410:4": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "P:48B1F0:0": {
 "class": "CommBufferClass",
 "obs": [],
@@ -226372,6 +226187,11 @@
 "obs": [],
 "ents": []
 },
+"S:48E740:+0x2c": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "G:89ECF8": {
 "class": "DynamicVector",
 "obs": [],
@@ -226408,7 +226228,22 @@
 "obs": [],
 "ents": []
 },
+"P:55BB90:4": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:4A3270:0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "T:4A3A10": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:433ED0:3": {
 "class": "FootClass",
 "obs": [],
 "ents": []
@@ -226549,6 +226384,13 @@
 "obs": [],
 "ents": [
 "G:82012C"
+]
+},
+"P:4AE750:1": {
+"class": "MapClass",
+"obs": [],
+"ents": [
+"P:4AE750:1"
 ]
 },
 "S:4ACC50:+0x14": {
@@ -226735,6 +226577,13 @@
 "obs": [],
 "ents": []
 },
+"P:7BB050:2": {
+"class": "DSurface",
+"obs": [],
+"ents": [
+"P:7BB050:2"
+]
+},
 "G:8A0E88": {
 "class": "DynamicVector",
 "obs": [],
@@ -226884,6 +226733,11 @@
 "P:4C9E10:0"
 ]
 },
+"S:4CA270:+0x0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "P:4CA620:0": {
 "class": "TechnoTypeClass",
 "obs": [],
@@ -226948,6 +226802,16 @@
 "G:822620"
 ]
 },
+"S:4DB3C0:+0x0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:6FFEC0:3": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "P:4DE630:0": {
 "class": "FootClass",
 "obs": [],
@@ -226960,6 +226824,13 @@
 "obs": [],
 "ents": [
 "P:4DE670:0"
+]
+},
+"P:4734B0:3": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4734B0:3"
 ]
 },
 "R:4E14A0:ecx": {
@@ -227282,6 +227153,13 @@
 "obs": [],
 "ents": [
 "G:8240D8"
+]
+},
+"P:4F3AB0:0": {
+"class": "VectorCursor",
+"obs": [],
+"ents": [
+"P:4F3AB0:0"
 ]
 },
 "P:4F26E0:0": {
@@ -227733,6 +227611,13 @@
 "obs": [],
 "ents": []
 },
+"P:6F1E20:1": {
+"class": "HouseClass",
+"obs": [],
+"ents": [
+"P:6F1E20:1"
+]
+},
 "M:5098F0:this:0x254": {
 "class": "VectorClass",
 "obs": [],
@@ -227883,11 +227768,6 @@
 "M:512290:this:0x184"
 ]
 },
-"S:517A50:+0x18": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "G:A83DE8": {
 "class": "DynamicVector",
 "obs": [],
@@ -227943,6 +227823,11 @@
 "S:521B00:+0x8"
 ]
 },
+"S:521EB0:+0x0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "R:5228B0:ecx": {
 "class": "InfantryClass",
 "obs": [],
@@ -227962,6 +227847,13 @@
 "obs": [],
 "ents": [
 "G:8255B0"
+]
+},
+"P:522D50:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:522D50:0"
 ]
 },
 "G:A8E348": {
@@ -228018,11 +227910,6 @@
 "obs": [],
 "ents": []
 },
-"S:528F00:+0x5038": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "P:5297E0:0": {
 "class": "VectorClass",
 "obs": [],
@@ -228048,6 +227935,13 @@
 "obs": [],
 "ents": [
 "T:52AE00"
+]
+},
+"P:52AB80:0": {
+"class": "INIClass",
+"obs": [],
+"ents": [
+"P:52AB80:0"
 ]
 },
 "R:52BA60:ecx": {
@@ -229181,13 +229075,6 @@
 "G:AA1078"
 ]
 },
-"S:547230:+0x40": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"S:547230:+0x40"
-]
-},
 "M:549B70:this:0x4": {
 "class": "FootClass",
 "obs": [],
@@ -229233,13 +229120,6 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"S:552D60:+0x5c": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"S:552D60:+0x5c"
-]
 },
 "G:829AAC": {
 "class": "StringTable",
@@ -229929,6 +229809,13 @@
 "P:58ADB0:2"
 ]
 },
+"P:58ADB0:6": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"P:58ADB0:6"
+]
+},
 "M:565B00:this:0x138": {
 "class": "VectorClass",
 "obs": [],
@@ -229958,6 +229845,11 @@
 ]
 },
 "S:57A320:+0x10": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"P:58C2A0:0": {
 "class": "VectorClass",
 "obs": [],
 "ents": []
@@ -230023,11 +229915,6 @@
 "ents": [
 "G:82BA08"
 ]
-},
-"S:594B50:+0x24": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "G:82BA2C": {
 "class": "StringTable",
@@ -230103,6 +229990,11 @@
 ]
 },
 "T:5A6510": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:5A8720:0": {
 "class": "FootClass",
 "obs": [],
 "ents": []
@@ -230334,20 +230226,6 @@
 "obs": [],
 "ents": []
 },
-"S:5C1CC0:+0x40": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"S:5C1CC0:+0x40"
-]
-},
-"S:5C1CC0:+0x3c": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"S:5C1CC0:+0x3c"
-]
-},
 "P:5C2040:2": {
 "class": "VectorClass",
 "obs": [],
@@ -230412,6 +230290,20 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
+},
+"P:5C1640:0": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"P:5C1640:0"
+]
+},
+"P:5D6620:0": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"P:5D6620:0"
+]
 },
 "G:82FD30": {
 "class": "StringTable",
@@ -230547,6 +230439,13 @@
 "class": "FootClass",
 "obs": [],
 "ents": []
+},
+"P:5D4B20:0": {
+"class": "MessageListClass",
+"obs": [],
+"ents": [
+"P:5D4B20:0"
+]
 },
 "G:ABFC90": {
 "class": "DynamicVector",
@@ -230800,6 +230699,13 @@
 "obs": [],
 "ents": [
 "G:83168C"
+]
+},
+"S:5E2820:+0x18": {
+"class": "ShapeButtonClass",
+"obs": [],
+"ents": [
+"S:5E2820:+0x18"
 ]
 },
 "G:8317C4": {
@@ -231397,17 +231303,19 @@
 "T:626C60"
 ]
 },
+"P:627590:3": {
+"class": "ColorScheme",
+"obs": [],
+"ents": [
+"P:627590:3"
+]
+},
 "G:AC4910": {
 "class": "DynamicVector",
 "obs": [],
 "ents": [
 "G:AC4910"
 ]
-},
-"S:62B5E0:+0x38": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "G:A83DC8": {
 "class": "DynamicVector",
@@ -231471,7 +231379,7 @@
 ]
 },
 "R:633EA0:ecx": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -231481,7 +231389,7 @@
 "ents": []
 },
 "R:633F20:ecx": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -231511,6 +231419,11 @@
 "ents": [
 "M:635120:this:0x20"
 ]
+},
+"P:635350:0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
 },
 "M:635830:this:0x4": {
 "class": "VectorClass",
@@ -231692,6 +231605,11 @@
 "obs": [],
 "ents": []
 },
+"P:63D810:6": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "R:63F7B0:ecx": {
 "class": "PowerClass",
 "obs": [],
@@ -231712,6 +231630,11 @@
 "ents": [
 "M:63F960:this:0x24"
 ]
+},
+"P:63FEA0:1": {
+"class": "FootClass",
+"obs": [],
+"ents": []
 },
 "G:836DA8": {
 "class": "StringTable",
@@ -231772,6 +231695,11 @@
 "ents": [
 "S:644F50:+0x14"
 ]
+},
+"P:5F9950:6": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
 },
 "R:6475F0:ecx": {
 "class": "VectorClass",
@@ -231902,13 +231830,6 @@
 "G:837A30"
 ]
 },
-"S:64C380:+0x10": {
-"class": "SessionClass",
-"obs": [],
-"ents": [
-"S:64C380:+0x10"
-]
-},
 "G:837DF8": {
 "class": "StringTable",
 "obs": [],
@@ -231934,11 +231855,6 @@
 "ents": [
 "S:64CDA0:+0x28"
 ]
-},
-"S:64CDA0:+0x54": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "R:64DAB0:ecx": {
 "class": "Game",
@@ -232036,6 +231952,20 @@
 "obs": [],
 "ents": [
 "G:B04A60"
+]
+},
+"P:65AAC0:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:65AAC0:0"
+]
+},
+"P:65AAC0:1": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:65AAC0:1"
 ]
 },
 "M:65AB10:this:0x4": {
@@ -232278,6 +232208,16 @@
 "obs": [],
 "ents": []
 },
+"P:67B8F0:2": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"P:67BDD0:2": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "P:672230:0": {
 "class": "CCINIClass",
 "obs": [],
@@ -232397,6 +232337,16 @@
 "ents": [
 "G:ABF390"
 ]
+},
+"P:67A7D0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
+"P:67A8E0:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
 },
 "P:678850:0": {
 "class": "AbstractClass",
@@ -232852,6 +232802,13 @@
 "G:8872B0"
 ]
 },
+"P:6915A0:0": {
+"class": "AbstractClass",
+"obs": [],
+"ents": [
+"P:6915A0:0"
+]
+},
 "G:8B41C8": {
 "class": "DynamicVector",
 "obs": [],
@@ -233270,6 +233227,13 @@
 "S:6AAD00:+0x24"
 ]
 },
+"P:6403A0:1": {
+"class": "MapClass",
+"obs": [],
+"ents": [
+"P:6403A0:1"
+]
+},
 "G:83FC2C": {
 "class": "StringTable",
 "obs": [],
@@ -233596,13 +233560,6 @@
 "G:B0CE78"
 ]
 },
-"S:6D3660:+0x0": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"S:6D3660:+0x0"
-]
-},
 "G:842A50": {
 "class": "StringTable",
 "obs": [],
@@ -233744,6 +233701,11 @@
 "G:842DCC"
 ]
 },
+"P:6E8160:3": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "S:6EBAD0:+0x24": {
 "class": "ScriptClass",
 "obs": [],
@@ -233826,6 +233788,13 @@
 "obs": [],
 "ents": [
 "P:7087C0:1"
+]
+},
+"P:65AAC0:4": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:65AAC0:4"
 ]
 },
 "M:7077C0:this:0x458": {
@@ -234616,11 +234585,6 @@
 "S:7480B0:+0x8"
 ]
 },
-"P:7493B0:2": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "S:749F30:+0x2c": {
 "class": "OverlayClass",
 "obs": [],
@@ -234640,11 +234604,6 @@
 "P:74B8D0:1",
 "S:74B8D0:+0x8"
 ]
-},
-"S:74C5B0:+0x0": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "R:74D760:ecx": {
 "class": "VeinholeMonsterClass",
@@ -234724,6 +234683,13 @@
 "M:75F4C0:this:0x1F0"
 ]
 },
+"P:7609E0:1": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:7609E0:1"
+]
+},
 "M:763200:this:0x1F0": {
 "class": "DynamicVector",
 "obs": [],
@@ -234776,14 +234742,6 @@
 "obs": [],
 "ents": [
 "S:7665D0:+0x20"
-]
-},
-"P:767ED0:0": {
-"class": "BSurface",
-"obs": [],
-"ents": [
-"P:767ED0:0",
-"S:767ED0:+0x4"
 ]
 },
 "P:7681E0:0": {
@@ -235631,13 +235589,6 @@
 "G:84BA04"
 ]
 },
-"G:84BA1C": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"G:84BA1C"
-]
-},
 "G:84BAE0": {
 "class": "StringTable",
 "obs": [],
@@ -236074,6 +236025,11 @@
 "obs": [],
 "ents": []
 },
+"P:624130:0": {
+"class": "VectorClass",
+"obs": [],
+"ents": []
+},
 "P:7A2FE0:0": {
 "class": "rc_ptr_base",
 "obs": [],
@@ -236473,6 +236429,13 @@
 "obs": [],
 "ents": []
 },
+"P:7C34B0:2": {
+"class": "AnimTypeClass",
+"obs": [],
+"ents": [
+"P:7C34B0:2"
+]
+},
 "P:7C89D4:0": {
 "class": "GUID",
 "obs": [],
@@ -236718,13 +236681,6 @@
 "obs": [],
 "ents": [
 "S:448260:+0x48"
-]
-},
-"S:452940:+0x20": {
-"class": "CellClass",
-"obs": [],
-"ents": [
-"S:452940:+0x20"
 ]
 },
 "S:4571E0:+0x21c": {
@@ -237022,11 +236978,6 @@
 "S:4A4900:+0x1c"
 ]
 },
-"S:4A57B0:+0x1c": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "S:4AA440:+0x4c": {
 "class": "VectorClass",
 "obs": [],
@@ -237133,11 +237084,6 @@
 "ents": [
 "S:4B6C30:+0xd4"
 ]
-},
-"S:4BB0D0:+0x40": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "S:4BB620:+0x48": {
 "class": "FootClass",
@@ -237248,11 +237194,6 @@
 "ents": [
 "S:4DF510:+0x30"
 ]
-},
-"S:4E29A0:+0xc": {
-"class": "FootClass",
-"obs": [],
-"ents": []
 },
 "S:4F11B0:+0x6c": {
 "class": "LoadOptionsClass",
@@ -237613,13 +237554,6 @@
 "obs": [],
 "ents": [
 "S:51B350:+0x78"
-]
-},
-"S:51FEF0:+0x3c": {
-"class": "VectorClass",
-"obs": [],
-"ents": [
-"S:51FEF0:+0x3c"
 ]
 },
 "S:525430:+0xc": {
@@ -238901,6 +238835,11 @@
 "S:5ADE20:+0x24"
 ]
 },
+"S:5B20F0:+0x88": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
 "S:5B3C20:+0x2c": {
 "class": "CD",
 "obs": [],
@@ -239224,6 +239163,13 @@
 "class": "FootClass",
 "obs": [],
 "ents": []
+},
+"S:5D6540:+0x10": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"S:5D6540:+0x10"
+]
 },
 "S:5D67B0:+0x10": {
 "class": "CCFileClass",
@@ -240268,20 +240214,6 @@
 "S:686B20:+0x1c"
 ]
 },
-"S:686B20:+0x114": {
-"class": "HouseClass",
-"obs": [],
-"ents": [
-"S:686B20:+0x114"
-]
-},
-"S:686B20:+0x134": {
-"class": "HouseClass",
-"obs": [],
-"ents": [
-"S:686B20:+0x134"
-]
-},
 "S:687CE0:+0x20": {
 "class": "GenericList",
 "obs": [],
@@ -240329,13 +240261,6 @@
 "obs": [],
 "ents": [
 "S:6886B0:+0x58"
-]
-},
-"S:689E90:+0x3c": {
-"class": "HouseClass",
-"obs": [],
-"ents": [
-"S:689E90:+0x3c"
 ]
 },
 "S:68C050:+0xc": {
@@ -240692,11 +240617,6 @@
 "S:6ACEE0:+0x40"
 ]
 },
-"S:6B2070:+0x4": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "S:6B2F30:+0x70": {
 "class": "VectorClass",
 "obs": [],
@@ -240775,11 +240695,6 @@
 "obs": [],
 "ents": []
 },
-"S:6D3470:+0x24": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "S:6D97D0:+0x18": {
 "class": "FootClass",
 "obs": [],
@@ -240838,11 +240753,6 @@
 "S:6F4EB0:+0x24"
 ]
 },
-"S:6F9E50:+0x1c": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
 "S:6FF960:+0x78": {
 "class": "FootClass",
 "obs": [],
@@ -240893,11 +240803,6 @@
 "S:712170:+0x44"
 ]
 },
-"S:71BB90:+0x20": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
-},
 "S:71CC50:+0x24": {
 "class": "FootClass",
 "obs": [],
@@ -240935,11 +240840,6 @@
 "ents": [
 "S:7346A0:+0x20"
 ]
-},
-"S:7353C0:+0x24": {
-"class": "VectorClass",
-"obs": [],
-"ents": []
 },
 "S:7359F0:+0x60": {
 "class": "VectorClass",
@@ -241740,13 +241640,6 @@
 "S:7864C0:+0x1c"
 ]
 },
-"S:786EF0:+0x4": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"S:786EF0:+0x4"
-]
-},
 "S:787010:+0x18": {
 "class": "rc_ptr_base",
 "obs": [],
@@ -241808,13 +241701,6 @@
 "obs": [],
 "ents": [
 "S:788180:+0x28"
-]
-},
-"S:788B00:+0x19c": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"S:788B00:+0x19c"
 ]
 },
 "S:7896A0:+0x38": {
@@ -241881,20 +241767,6 @@
 "obs": [],
 "ents": [
 "S:796B30:+0x0"
-]
-},
-"S:798360:+0xc": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"S:798360:+0xc"
-]
-},
-"S:7983E0:+0x1c": {
-"class": "rc_ptr_base",
-"obs": [],
-"ents": [
-"S:7983E0:+0x1c"
 ]
 },
 "S:7988C0:+0x20": {
