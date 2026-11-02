@@ -2658,6 +2658,13 @@ def main():
     # 对象真实类是派生类，不能记成基类 —— 跳过。
     _c19_exact = _c19_skip_self = _c19_noent = 0
     _c19_by_src = {}
+    _ssa_split = {}
+    try:
+        _ssa_split = {k: v for k, v in (jload("anchors/stack_lifetime_split.json", {})
+                                        or {}).items() if not k.startswith("_")}
+    except Exception:
+        _ssa_split = {}
+    _ssa_use = {}
     _ctor_exact19 = {}
     for _eid19, _lst19 in exact.items():
         if not _eid19.startswith("T:"):
@@ -2698,26 +2705,71 @@ def main():
             continue
         if any(_ci == _c19 for _ci, _src in exact.get(_src19, ())):
             continue
-        _c19_by_src.setdefault(_src19, []).append(_c19)
+        _c19_by_src.setdefault(_src19, []).append((_c19, _a19, _to19))
     # 两段式应用：栈槽复用时同一源会收到多个不同 ctor 类（实证 S:545150:+0x33c
     # 先被 CCFile 链的基类 dtor 触到、后段被容器族 ctor 复用）——每次构造都是真
     # 的，域 = 各 ctor 后代域的**并集**；单一 ctor 且无后代时 exact 等价可靠。
     _c19_union = 0
     _c19_skip_reused = 0
+    _ssa_work = {}
     for _src19, _cls19 in _c19_by_src.items():
-        _u19 = set(_cls19)
+        _u19 = {_c for (_c, _a, _t) in _cls19}
         if len(_u19) > 1:
-            # 栈槽复用（同一槽 ≥2 个不同 ctor 类）：一个实体两个生命周期，
-            # 任何单一域都不成立 —— 完全不给 C19 约束（并集掩码实测仍会在
-            # C10 不动点里制造矛盾、恶化级联中和）。
+            # 栈槽复用：一个实体 ≥2 个生命周期 —— SSA 分裂（IDA 支配分析，
+            # anchors/stack_lifetime_split.json）。每个 ctor 站点 = 一个生命
+            # 周期实体 "S:fn:+off@C0xADDR"，使用边按最近支配 ctor 归期。
             _c19_skip_reused += 1
+            if _src19.startswith("S:"):
+                _ssa_work[_src19] = [(a, names[c], t) for (c, a, t) in _cls19]
+                _sp = _ssa_split.get(_src19)
+                if _sp:
+                    _seen_life = {}
+                    for (_c, _a, _t) in _cls19:
+                        if _a in _seen_life:
+                            continue
+                        _seen_life[_a] = _c
+                        _life = "%s@C0x%X" % (_src19, _a)
+                        if _life not in ents:
+                            touch(_life, "stack_+%s@C0x%X" % (_src19.split(":", 2)[2], _a))
+                        exact[_life].append((_c, "C19:ssa"))
+                        exact_count["C19"] = exact_count.get("C19", 0) + 1
+                    for _us, _uc in (_sp.get("uses") or {}).items():
+                        try:
+                            _ua_s = int(_us, 16)
+                        except (TypeError, ValueError):
+                            continue
+                        _ca = _uc[1] if isinstance(_uc, (list, tuple)) and len(_uc) > 1 else None
+                        if _ca is not None and _ca in _seen_life:
+                            _ssa_use[_ua_s] = (_src19, _ca)
             continue
-        _c19 = _cls19[0]
-        # 单一 ctor 类：exact（A/B 判别实验）。若矛盾根显著上升 = 内联析构链
-        # 也在污染单使用槽，届时回退为后代域掩码。
+        _c19 = next(iter(_u19))
         exact[_src19].append((_c19, "C19:ctor-arg"))
         exact_count["C19"] = exact_count.get("C19", 0) + 1
         _c19_exact += 1
+    if _ssa_work:
+        # 附加：该槽在 raw 里的全部使用边 site（分裂时归生命周期用）
+        _ssa_out = {}
+        for _sk, _ctors in _ssa_work.items():
+            _p = _sk.split(":")
+            if len(_p) < 3: continue
+            _fn_s = _p[1]
+            try: _fn_v = int(_fn_s, 16)
+            except ValueError: continue
+            _off_s = _p[2].lstrip("+")
+            try: _off_v = int(_off_s, 16) if _off_s.lower().startswith("0x") else int(_off_s)
+            except ValueError: continue
+            _frm = "stack_+0x%X" % _off_v
+            _uses = []
+            for _e19b in raw:
+                if _e19b.get("type") != "CALL_ARG": continue
+                if str(_e19b.get("from") or "") != _frm: continue
+                try: _a19b = int(str(_e19b.get("addr")), 16)
+                except (TypeError, ValueError): continue
+                if fn_at(_a19b) != _fn_v: continue
+                _uses.append([_a19b, str(_e19b.get("to"))])
+            _ssa_out[_sk] = {"ctors": _ctors, "uses": _uses}
+        json.dump(_ssa_out, open(os.path.join(ROOT, ".omo/ssa2/workload.json"), "w"), indent=1)
+        print("[SSA] reused-slot workload dumped: %d slots" % len(_ssa_out), flush=True)
     print("[C19] ctor-argument exact=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
           % (_c19_exact, _c19_skip_reused, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
 
@@ -4041,6 +4093,8 @@ def main():
             _ea_rx = int(str(_e.get("addr")), 16)
         except (TypeError, ValueError):
             _ea_rx = None
+        if _fr.startswith("stack_+") and _ea_rx is not None and _ea_rx in _ssa_use:
+            _fr = "%s@C0x%X" % (_fr, _ssa_use[_ea_rx][1])
         _rx = _regext_by.get((_ea_rx, _fr)) if _ea_rx is not None else None
         if _rx is not None and _rx.get("kind") == "member":
             _fn_rx = fn_at(_ea_rx)
