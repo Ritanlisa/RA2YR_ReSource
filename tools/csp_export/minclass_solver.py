@@ -4257,15 +4257,46 @@ def main():
         _empty_ids = []
         _empty_pfx = collections.Counter()
         _neutralized_total = 0
-        for _outer in range(10):
+        _ent_neutralized = 0
+        for _outer in range(14):
             _steps_f, _sk_f = _c10_propagate(_edges_fix, _dom_fix, _skip_empty=False)
-            _dead_j = {e for e, m in _dom_fix.items() if m == 0 and e not in ents}
-            if not _dead_j:
+            _empt_all = {e for e, m in _dom_fix.items() if m == 0}
+            if not _empt_all:
                 break
+            # 摘除顺序：(1) 空域连接点（聚合假设被驳倒）；(2) 若无，只摘
+            # 「本地互斥根」——基线域与某邻居基线域直接冲突的实体。级联受害者
+            # 不摘（只摘根后重传播即恢复）。实测：全量摘除会连受害者一起毁掉
+            # （edges 35K→7K，唯一解反降）；642 个根才是真源头。
+            _dead_j = {e for e in _empt_all if e not in ents}
+            _dead_roots = set()
+            if not _dead_j:
+                _base_now = _c10_base_dom(_edges_fix)
+                _adj_now = collections.defaultdict(list)
+                for (_a2, _b2) in _edges_fix:
+                    _adj_now[_a2].append((_b2, "out"))
+                    _adj_now[_b2].append((_a2, "in"))
+                for _e0 in _empt_all:
+                    _eb0 = _base_now.get(_e0, FULL)
+                    for (_nb0, _d0) in _adj_now.get(_e0, ()):
+                        _ob0 = _base_now.get(_nb0, FULL)
+                        if _d0 == "out":
+                            _hit0 = (_ob0 & _anc_union(_eb0)) == 0 or (_eb0 & _desc_union(_ob0)) == 0
+                        else:
+                            _hit0 = (_eb0 & _anc_union(_ob0)) == 0 or (_ob0 & _desc_union(_eb0)) == 0
+                        if _hit0:
+                            _dead_roots.add(_e0)
+                            break
+            _dead = _dead_j | _dead_roots
+            if not _dead:
+                break    # 剩余空域 = 多跳交互，非两两可判；提交层兜底
+            for _de in _dead:
+                if _de in ents:
+                    _empty_ids.append(_de)
+                    _empty_pfx[str(_de).split(":")[0]] += 1
             _edges_fix = [(a, b) for (a, b) in _edges_fix
-                          if a not in _dead_j and b not in _dead_j]
+                          if a not in _dead and b not in _dead]
             _dom_fix = _c10_base_dom(_edges_fix)
-            _neutralized_total += len(_dead_j)
+            _neutralized_total += len(_dead)
         _c10_fx_constrained = _c10_fx_empty = 0
         for _eid, _m in _dom_fix.items():
             if _eid not in ents:
@@ -4273,10 +4304,7 @@ def main():
             if _eid in _multi5:
                 continue          # 多调用点参数：不作硬约束
             if _m == 0:
-                # 传播到不动点后域空 = 该实体的调用边集自相矛盾。处置：**不写 0 掩码**
-                # （0 会连坐吞掉簇内 C4/C15 等其它族的真钉定），该实体的 C10 证据
-                # 判为不可靠（保持 FULL），逐个落账待查。注意：不动点本身与边序无关，
-                # 这条提交规则是确定性的后置规则，不再有旧相位 skip_empty 的顺序依赖。
+                # 防御分支：中和循环结束后不应出现（空域实体已在循环中摘除）。
                 _c10_fx_empty += 1
                 _empty_pfx[str(_eid).split(":")[0]] += 1
                 _empty_ids.append(_eid)
@@ -4284,8 +4312,9 @@ def main():
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
                 _c10_fx_constrained += 1
-        print("[C10] fixpoint: edges=%d constrained=%d entity_empties=%d junctions_neutralized=%d"
-              % (len(_edges_fix), _c10_fx_constrained, _c10_fx_empty,
+        print("[C10] fixpoint: edges=%d constrained=%d roots_neutralized=%d(ent) "
+              "cascades_saved=%d"
+              % (len(_edges_fix), _c10_fx_constrained, len(_empty_ids),
                  _neutralized_total), flush=True)
         if _empty_pfx:
             print("[C10] entity_empties by prefix: %s" % dict(_empty_pfx), flush=True)
@@ -4299,6 +4328,40 @@ def main():
                       indent=1)
             print("[C10] contradicted entities ledger: anchors/c10_contradicted_entities.json",
                   flush=True)
+        if _empty_ids and os.environ.get("MC_CA_ANALYZE"):
+            # 根因分类：用基线域（未经传播）判断矛盾是本地证据互斥还是级联污染
+            _base_fix = _c10_base_dom(_edges_fix)
+            _adj = collections.defaultdict(list)
+            for (_a2, _b2) in _edges_fix:
+                _adj[_a2].append((_b2, "out"))
+                _adj[_b2].append((_a2, "in"))
+            _ca_out = []
+            _ca_kind = collections.Counter()
+            for _eid in _empty_ids:
+                _eb = _base_fix.get(_eid, FULL)
+                _local = []
+                for (_nb, _dirn) in _adj.get(_eid, ()):
+                    _ob = _base_fix.get(_nb, FULL)
+                    if _dirn == "out":
+                        _t1 = _ob & _anc_union(_eb)
+                        _t2 = _eb & _desc_union(_ob)
+                    else:
+                        _t1 = _eb & _anc_union(_ob)
+                        _t2 = _ob & _desc_union(_eb)
+                    if _t1 == 0 or _t2 == 0:
+                        _local.append([_nb, _dirn,
+                                       [names[i] for i in range(len(names)) if (_eb >> i) & 1][:8],
+                                       [names[i] for i in range(len(names)) if (_ob >> i) & 1][:8]])
+                _pin = [names[c] for c, _src in (exact.get(_eid) or ())]
+                if _local:
+                    _ca_kind["local_conflict"] += 1
+                    if len(_ca_out) < 300:
+                        _ca_out.append({"eid": _eid, "pin": _pin, "witnesses": _local[:6]})
+                else:
+                    _ca_kind["cascade_only"] += 1
+            json.dump({"kinds": dict(_ca_kind), "samples": _ca_out},
+                      open(os.path.join(ROOT, ".omo/fx2/ca_analysis.json"), "w"), indent=1)
+            print("[C10] root-cause kinds: %s" % dict(_ca_kind), flush=True)
         census["C10"] = len(fam["C10"])
         print("[C10] total entities constrained=%d" % len(fam["C10"]), flush=True)
 
