@@ -4493,6 +4493,15 @@ def main():
             print("[C10] R:-junction edges dropped (unsound aggregation): %d -> %d"
                   % (_n_before, len(_call_edges)), flush=True)
         _edges_fix = list(_call_edges)
+        try:
+            _fg_dir = ROOT + "/.omo/yr1"
+            import os as _os_fx2
+            _os_fx2.makedirs(_fg_dir, exist_ok=True)
+            with io.open(_fg_dir + "/flowgraph.json", "w") as _fh_fx:
+                json.dump({"edges": [[str(a), str(b)] for (a, b) in _edges_fix],
+                           "meta": {"n_edges": len(_edges_fix)}}, _fh_fx)
+        except Exception as _e_fx:
+            print("[flowgraph-dump] FAILED: %r" % _e_fx, flush=True)
         _dom_fix = _c10_base_dom(_edges_fix)
         _empty_ids = []
         _empty_pfx = collections.Counter()
