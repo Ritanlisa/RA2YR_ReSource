@@ -57,12 +57,12 @@
   "K": 573,
   "K_upper": 573,
   "lower_bound": 573,
-  "constrained_clusters": 16831,
-  "free_clusters": 157870,
+  "constrained_clusters": 19683,
+  "free_clusters": 155054,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1437,
-  "entities": 176020
+  "entities": 177719
  },
  "family_table": [
   {
@@ -72,7 +72,7 @@
    "entities_touched": 11345,
    "clusters_constrained": 8304,
    "clusters_pinned": 8304,
-   "clusters_free": 166397,
+   "clusters_free": 166433,
    "pinned_classes": 518,
    "forced_classes": 518,
    "conflicts": 0,
@@ -94,7 +94,7 @@
    "entities_touched": 0,
    "clusters_constrained": 8304,
    "clusters_pinned": 8304,
-   "clusters_free": 166397,
+   "clusters_free": 166433,
    "pinned_classes": 518,
    "forced_classes": 518,
    "conflicts": 0,
@@ -116,7 +116,7 @@
    "entities_touched": 2649,
    "clusters_constrained": 9787,
    "clusters_pinned": 8306,
-   "clusters_free": 164914,
+   "clusters_free": 164950,
    "pinned_classes": 518,
    "forced_classes": 518,
    "conflicts": 0,
@@ -138,7 +138,7 @@
    "entities_touched": 1285,
    "clusters_constrained": 11029,
    "clusters_pinned": 9571,
-   "clusters_free": 163672,
+   "clusters_free": 163708,
    "pinned_classes": 539,
    "forced_classes": 539,
    "conflicts": 0,
@@ -160,7 +160,7 @@
    "entities_touched": 839,
    "clusters_constrained": 11820,
    "clusters_pinned": 9712,
-   "clusters_free": 162881,
+   "clusters_free": 162917,
    "pinned_classes": 552,
    "forced_classes": 552,
    "conflicts": 0,
@@ -182,7 +182,7 @@
    "entities_touched": 1377,
    "clusters_constrained": 11893,
    "clusters_pinned": 9712,
-   "clusters_free": 162808,
+   "clusters_free": 162844,
    "pinned_classes": 552,
    "forced_classes": 552,
    "conflicts": 0,
@@ -204,7 +204,7 @@
    "entities_touched": 79,
    "clusters_constrained": 11965,
    "clusters_pinned": 9712,
-   "clusters_free": 162736,
+   "clusters_free": 162772,
    "pinned_classes": 552,
    "forced_classes": 552,
    "conflicts": 0,
@@ -226,7 +226,7 @@
    "entities_touched": 158,
    "clusters_constrained": 12114,
    "clusters_pinned": 9866,
-   "clusters_free": 162587,
+   "clusters_free": 162623,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 0,
@@ -248,7 +248,7 @@
    "entities_touched": 6385,
    "clusters_constrained": 12558,
    "clusters_pinned": 9866,
-   "clusters_free": 162143,
+   "clusters_free": 162179,
    "pinned_classes": 561,
    "forced_classes": 561,
    "conflicts": 0,
@@ -266,11 +266,11 @@
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 3112,
-   "entities_touched": 3112,
-   "clusters_constrained": 14159,
-   "clusters_pinned": 10032,
-   "clusters_free": 160541,
+   "evidence": 8012,
+   "entities_touched": 8012,
+   "clusters_constrained": 17014,
+   "clusters_pinned": 10492,
+   "clusters_free": 157722,
    "pinned_classes": 562,
    "forced_classes": 562,
    "conflicts": 1,
@@ -290,9 +290,9 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 646,
    "entities_touched": 5207,
-   "clusters_constrained": 16831,
-   "clusters_pinned": 10170,
-   "clusters_free": 157869,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
    "pinned_classes": 570,
    "forced_classes": 570,
    "conflicts": 1,
@@ -312,9 +312,9 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5724,
    "entities_touched": 5724,
-   "clusters_constrained": 16831,
-   "clusters_pinned": 10170,
-   "clusters_free": 157869,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
    "pinned_classes": 570,
    "forced_classes": 570,
    "conflicts": 1,
@@ -334,9 +334,9 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 16831,
-   "clusters_pinned": 10170,
-   "clusters_free": 157869,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
    "pinned_classes": 570,
    "forced_classes": 570,
    "conflicts": 1,
@@ -356,9 +356,9 @@
    "desc": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 16831,
-   "clusters_pinned": 10170,
-   "clusters_free": 157869,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
    "pinned_classes": 570,
    "forced_classes": 570,
    "conflicts": 1,
@@ -378,9 +378,9 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 16831,
-   "clusters_pinned": 10170,
-   "clusters_free": 157869,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
    "pinned_classes": 570,
    "forced_classes": 570,
    "conflicts": 1,
@@ -497,7 +497,8 @@
     {
      "cluster": "R:665650:ecx",
      "entities": [
-      "T:665650"
+      "T:665650",
+      "RET:665650"
      ],
      "obs": [
       [
@@ -555,22 +556,9 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "P:420270:0",
-     "entities": [
-      "P:420270:0"
-     ],
-     "obs": [
-      [
-       131076,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "R:4202F0:ecx",
      "entities": [
+      "RET:4202F0",
       "T:4202F0"
      ],
      "obs": [
@@ -582,6 +570,20 @@
        131072,
        4
       ],
+      [
+       131076,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "P:420270:0",
+     "entities": [
+      "P:420270:0"
+     ],
+     "obs": [
       [
        131076,
        4
@@ -8518,7 +8520,7 @@
     ]
    },
    "return_this": {
-    "unions": 244,
+    "unions": 1907,
     "exact_conflicts": 0,
     "examples": []
    }

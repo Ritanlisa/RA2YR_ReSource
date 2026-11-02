@@ -1175,6 +1175,16 @@ def main():
                     _vb_touch += 1
     except Exception:
         pass
+    # ret 身份实体预创建（RET:FN —— T:FN 大多已存在）
+    _ri_touch = 0
+    try:
+        for _pr in (jload("anchors/ret_identity.json", {}) or {}).get("eq") or []:
+            for _eid0 in _pr:
+                if isinstance(_eid0, str) and _eid0.startswith("RET:") and _eid0 not in ents:
+                    touch(_eid0, _eid0)
+                    _ri_touch += 1
+    except Exception:
+        pass
     # 值流链实体预创建（EAX:FN:SITE）
     _fc_touch = 0
     try:
@@ -4531,6 +4541,21 @@ def main():
     except Exception as _e_vb:
         print("[VB] injection skipped: %r" % _e_vb, flush=True)
 
+    # ---- ret 身份等值（构造函数返回类实例 / 转发器 / getter）----
+    try:
+        _ri = jload("anchors/ret_identity.json", {}) or {}
+        _n_ri = 0
+        for _a1, _b1 in (_ri.get("eq") or []):
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_ri += 2
+        print("[RI] ret-identity eq edges=%d" % _n_ri, flush=True)
+    except Exception as _e_ri:
+        print("[RI] injection skipped: %r" % _e_ri, flush=True)
     # ---- 普适值流链（参数/返回三元组的可映射子集）----
     try:
         import os as _os_fc
