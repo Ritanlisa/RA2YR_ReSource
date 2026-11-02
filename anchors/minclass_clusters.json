@@ -104620,16 +104620,14 @@
 ]
 },
 "R:40DD70:ecx": {
-"class": "IRTTITypeInfo",
+"class": "AI",
 "obs": [
 [
 0,
 4
 ]
 ],
-"ents": [
-"T:40DD70"
-]
+"ents": []
 },
 "R:4834A0:ecx": {
 "class": "CellClass",
@@ -108194,11 +108192,9 @@
 ]
 },
 "T:4373B0": {
-"class": "XSurface",
+"class": "FootClass",
 "obs": [],
-"ents": [
-"T:4373B0"
-]
+"ents": []
 },
 "T:437A10": {
 "class": "FootClass",
@@ -112553,13 +112549,6 @@
 ],
 "ents": []
 },
-"R:46B0C0:ecx": {
-"class": "ObjectClass",
-"obs": [],
-"ents": [
-"T:46B0C0"
-]
-},
 "T:5880A0": {
 "class": "MapClass",
 "obs": [],
@@ -113136,13 +113125,6 @@
 ],
 "ents": [
 "T:490B90"
-]
-},
-"T:4AF2A0": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"T:4AF2A0"
 ]
 },
 "R:46C840:ecx": {
@@ -135204,7 +135186,7 @@
 "ents": []
 },
 "T:5E29A0": {
-"class": "ShapeButtonClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "T:5E29A0"
@@ -136086,6 +136068,26 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
+},
+"R:4CB920:ecx": {
+"class": "WinsockInterfaceClass",
+"obs": [
+[
+4,
+2
+],
+[
+6,
+2
+],
+[
+8,
+4
+]
+],
+"ents": [
+"T:4CB920"
+]
 },
 "R:68C8D0:ecx": {
 "class": "ColorScheme",
@@ -153790,18 +153792,6 @@
 "T:691540"
 ]
 },
-"R:5224E0:ecx": {
-"class": "ObjectClass",
-"obs": [
-[
-1728,
-4
-]
-],
-"ents": [
-"T:5224E0"
-]
-},
 "R:504860:ecx": {
 "class": "HouseClass",
 "obs": [
@@ -154608,13 +154598,6 @@
 "T:6FB080"
 ]
 },
-"R:637840:ecx": {
-"class": "TechnoClass",
-"obs": [],
-"ents": [
-"T:637840"
-]
-},
 "R:6B7D30:ecx": {
 "class": "SpawnManagerClass",
 "obs": [
@@ -154949,47 +154932,11 @@
 "T:6B7D80"
 ]
 },
-"R:5224F0:ecx": {
-"class": "ObjectClass",
-"obs": [
-[
-1728,
-4
-]
-],
-"ents": [
-"T:5224F0"
-]
-},
-"R:522510:ecx": {
-"class": "ObjectClass",
-"obs": [
-[
-1732,
-4
-]
-],
-"ents": [
-"T:522510"
-]
-},
 "T:465D30": {
 "class": "?$TClassFactory@VBuildingTypeClass@@",
 "obs": [],
 "ents": [
 "T:465D30"
-]
-},
-"R:746D00:ecx": {
-"class": "ObjectClass",
-"obs": [
-[
-1732,
-4
-]
-],
-"ents": [
-"T:746D00"
 ]
 },
 "T:451EE0": {
@@ -158850,6 +158797,26 @@
 "T:76B7B0"
 ]
 },
+"R:625AF0:ecx": {
+"class": "WinsockInterfaceClass",
+"obs": [
+[
+0,
+2
+],
+[
+2,
+2
+],
+[
+4,
+4
+]
+],
+"ents": [
+"T:625AF0"
+]
+},
 "R:76B180:ecx": {
 "class": "DiskLaserClass",
 "obs": [
@@ -160129,11 +160096,9 @@
 "ents": []
 },
 "T:437350": {
-"class": "XSurface",
+"class": "FootClass",
 "obs": [],
-"ents": [
-"T:437350"
-]
+"ents": []
 },
 "R:7BDF80:ecx": {
 "class": "DSurface",
@@ -163617,6 +163582,13 @@
 "RET:4FBD80"
 ]
 },
+"RET:7C8974": {
+"class": "WinsockInterfaceClass",
+"obs": [],
+"ents": [
+"RET:7C8974"
+]
+},
 "RET:408560": {
 "class": "VectorClass",
 "obs": [],
@@ -163696,6 +163668,27 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
+},
+"GS:3:0:0x4B4F20": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:3:0:0x4B4F20"
+]
+},
+"P:4B4F20:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4B4F20:0"
+]
+},
+"P:557E10:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557E10:0"
+]
 },
 "GS:3:0:0x7B23B0": {
 "class": "WinsockInterfaceClass",
@@ -164129,6 +164122,79 @@
 "P:55B880:0"
 ]
 },
+"GS:10:0:0x53F650": {
+"class": "IPXGlobalConnClass",
+"obs": [],
+"ents": [
+"GS:10:0:0x53F650"
+]
+},
+"P:53F650:0": {
+"class": "IPXGlobalConnClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+]
+],
+"ents": [
+"P:53F650:0"
+]
+},
+"P:5403F0:0": {
+"class": "IPXGlobalConnClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+]
+],
+"ents": [
+"P:5403F0:0"
+]
+},
+"GS:10:4:0x53F650": {
+"class": "IPXGlobalConnClass",
+"obs": [],
+"ents": [
+"GS:10:4:0x53F650"
+]
+},
+"P:53F650:4": {
+"class": "IPXGlobalConnClass",
+"obs": [],
+"ents": [
+"P:53F650:4",
+"S:53F650:+0x14"
+]
+},
+"P:5403F0:4": {
+"class": "IPXGlobalConnClass",
+"obs": [],
+"ents": [
+"P:5403F0:4"
+]
+},
 "GS:10:0:0x7A5890": {
 "class": "FootClass",
 "obs": [],
@@ -164193,7 +164259,7 @@
 "ents": []
 },
 "GS:12:0:0x4F4410": {
-"class": "ShapeButtonClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "GS:12:0:0x4F4410"
@@ -164393,8 +164459,22 @@
 ],
 "ents": []
 },
+"GS:33:0:0x48E600": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:33:0:0x48E600"
+]
+},
+"P:48E600:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:48E600:0"
+]
+},
 "GS:35:0:0x4E25A0": {
-"class": "GadgetClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "GS:35:0:0x4E25A0"
@@ -164413,10 +164493,52 @@
 ]
 },
 "P:6B1E50:0": {
-"class": "GadgetClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "P:6B1E50:0"
+]
+},
+"GS:35:0:0x6C67F0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:35:0:0x6C67F0"
+]
+},
+"P:6C67F0:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:6C67F0:0"
+]
+},
+"GS:37:0:0x4C32E0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:37:0:0x4C32E0"
+]
+},
+"P:4C32E0:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4C32E0:0"
+]
+},
+"GS:37:0:0x720140": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:37:0:0x720140"
+]
+},
+"P:720140:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:720140:0"
 ]
 },
 "GS:37:0:0x7AC220": {
@@ -164434,8 +164556,37 @@
 ],
 "ents": []
 },
+"GS:38:0:0x4C3420": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:38:0:0x4C3420"
+]
+},
+"P:4C3420:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4C3420:0"
+]
+},
+"GS:40:0:0x427B50": {
+"class": "AnimTypeClass",
+"obs": [],
+"ents": [
+"GS:40:0:0x427B50"
+]
+},
+"P:427B50:0": {
+"class": "AnimTypeClass",
+"obs": [],
+"ents": [
+"P:427B50:0",
+"S:427B50:+0x4"
+]
+},
 "GS:40:0:0x488360": {
-"class": "GadgetClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "GS:40:0:0x488360"
@@ -164451,6 +164602,20 @@
 ],
 "ents": [
 "P:488360:0"
+]
+},
+"GS:41:0:0x4E2650": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:41:0:0x4E2650"
+]
+},
+"P:4E2650:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4E2650:0"
 ]
 },
 "GS:42:0:0x464AC0": {
@@ -164493,6 +164658,27 @@
 "obs": [],
 "ents": [
 "P:716150:1"
+]
+},
+"GS:49:2:0x5C2DE0": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"GS:49:2:0x5C2DE0"
+]
+},
+"P:5C2DE0:2": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"P:5C2DE0:2"
+]
+},
+"P:5D6890:2": {
+"class": "MultiplayerGameMode",
+"obs": [],
+"ents": [
+"P:5D6890:2"
 ]
 },
 "GS:50:0:0x5CAAC0": {
@@ -164589,6 +164775,20 @@
 ]
 ],
 "ents": []
+},
+"GS:314:0:0x4DE7B0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"GS:314:0:0x4DE7B0"
+]
+},
+"P:4DE7B0:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4DE7B0:0"
+]
 },
 "GS:319:0:0x4D55F0": {
 "class": "FootClass",
@@ -164920,6 +165120,958 @@
 "obs": [],
 "ents": [
 "P:73B140:0"
+]
+},
+"P:70AF50:4": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:70AF50:4"
+]
+},
+"P:6F3330:0": {
+"class": "ScenarioClass",
+"obs": [
+[
+0,
+4
+],
+[
+44,
+4
+],
+[
+80,
+4
+],
+[
+84,
+4
+],
+[
+132,
+4
+],
+[
+140,
+1
+],
+[
+156,
+4
+],
+[
+160,
+4
+],
+[
+172,
+4
+],
+[
+236,
+4
+],
+[
+322,
+1
+],
+[
+336,
+1
+],
+[
+347,
+1
+],
+[
+444,
+4
+],
+[
+1016,
+4
+],
+[
+1024,
+4
+],
+[
+1312,
+4
+],
+[
+1516,
+1
+],
+[
+1517,
+1
+],
+[
+1519,
+1
+],
+[
+1540,
+4
+],
+[
+3278,
+1
+],
+[
+3285,
+1
+],
+[
+3408,
+4
+]
+],
+"ents": []
+},
+"P:442230:0": {
+"class": "RulesClass",
+"obs": [
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+4
+],
+[
+2,
+2
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+44,
+4
+],
+[
+48,
+4
+],
+[
+60,
+4
+],
+[
+128,
+4
+],
+[
+132,
+4
+],
+[
+160,
+4
+],
+[
+563,
+1
+],
+[
+676,
+1
+],
+[
+848,
+4
+],
+[
+940,
+4
+],
+[
+968,
+4
+],
+[
+1016,
+4
+],
+[
+1280,
+4
+],
+[
+1336,
+4
+],
+[
+1812,
+4
+],
+[
+2936,
+4
+],
+[
+4008,
+4
+],
+[
+5814,
+1
+]
+],
+"ents": []
+},
+"R:457620:ecx": {
+"class": "BuildingClass",
+"obs": [
+[
+1312,
+4
+]
+],
+"ents": [
+"T:457620"
+]
+},
+"P:6FDD50:0": {
+"class": "ScenarioClass",
+"obs": [
+[
+0,
+2
+],
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+13,
+1
+],
+[
+16,
+4
+],
+[
+20,
+1
+],
+[
+20,
+4
+],
+[
+28,
+4
+],
+[
+33,
+1
+],
+[
+44,
+4
+],
+[
+60,
+4
+],
+[
+72,
+4
+],
+[
+112,
+4
+],
+[
+132,
+4
+],
+[
+140,
+1
+],
+[
+160,
+4
+],
+[
+168,
+4
+],
+[
+172,
+4
+],
+[
+176,
+4
+],
+[
+180,
+1
+],
+[
+192,
+4
+],
+[
+204,
+4
+],
+[
+212,
+4
+],
+[
+248,
+4
+],
+[
+256,
+4
+],
+[
+260,
+4
+],
+[
+272,
+4
+],
+[
+280,
+4
+],
+[
+284,
+4
+],
+[
+292,
+4
+],
+[
+297,
+1
+],
+[
+298,
+1
+],
+[
+301,
+1
+],
+[
+303,
+1
+],
+[
+304,
+1
+],
+[
+306,
+1
+],
+[
+309,
+1
+],
+[
+311,
+1
+],
+[
+329,
+1
+],
+[
+333,
+1
+],
+[
+337,
+1
+],
+[
+340,
+1
+],
+[
+341,
+1
+],
+[
+348,
+1
+],
+[
+360,
+4
+],
+[
+496,
+4
+],
+[
+566,
+1
+],
+[
+668,
+1
+],
+[
+732,
+4
+],
+[
+768,
+4
+],
+[
+776,
+4
+],
+[
+792,
+4
+],
+[
+912,
+4
+],
+[
+968,
+4
+],
+[
+1012,
+4
+],
+[
+1020,
+4
+],
+[
+1024,
+4
+],
+[
+1032,
+4
+],
+[
+1492,
+4
+],
+[
+1688,
+4
+],
+[
+1692,
+4
+],
+[
+1700,
+4
+],
+[
+1712,
+1
+],
+[
+3216,
+1
+],
+[
+3234,
+1
+],
+[
+3285,
+1
+],
+[
+3388,
+1
+],
+[
+3389,
+1
+],
+[
+3476,
+1
+],
+[
+5940,
+4
+]
+],
+"ents": []
+},
+"P:447E90:0": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:447E90:0"
+]
+},
+"P:6F3270:4": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:6F3270:4"
+]
+},
+"P:556640:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:556640:0"
+]
+},
+"P:556640:1": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:556640:1"
+]
+},
+"P:4D3810:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4D3810:0"
+]
+},
+"P:4DE760:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:4DE760:0"
+]
+},
+"P:6F78D0:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:6F78D0:0"
+]
+},
+"P:709820:0": {
+"class": "FootClass",
+"obs": [],
+"ents": [
+"P:709820:0"
+]
+},
+"P:4E2650:2": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4E2650:2"
+]
+},
+"P:51F800:0": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:51F800:2": {
+"class": "FootClass",
+"obs": [],
+"ents": []
+},
+"P:540050:2": {
+"class": "IPXGlobalConnClass",
+"obs": [],
+"ents": [
+"P:540050:2",
+"S:540050:+0xc"
+]
+},
+"P:557D20:1": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557D20:1"
+]
+},
+"P:557D20:2": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557D20:2"
+]
+},
+"P:557D20:3": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557D20:3"
+]
+},
+"P:557D20:4": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557D20:4"
+]
+},
+"P:5D6690:0": {
+"class": "DynamicVectorClass",
+"obs": [],
+"ents": [
+"P:5D6690:0"
+]
+},
+"P:4104F0:1": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:4104F0:1"
+]
+},
+"P:4104F0:3": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:4104F0:3"
+]
+},
+"P:426430:0": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:426430:0"
+]
+},
+"P:426430:1": {
+"class": "ObjectClass",
+"obs": [],
+"ents": [
+"P:426430:1"
+]
+},
+"P:6FC0B0:0": {
+"class": "AircraftClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+20,
+1
+],
+[
+56,
+4
+],
+[
+129,
+1
+],
+[
+140,
+1
+],
+[
+160,
+4
+],
+[
+172,
+4
+],
+[
+305,
+1
+],
+[
+323,
+1
+],
+[
+343,
+1
+],
+[
+345,
+1
+],
+[
+366,
+1
+],
+[
+464,
+4
+],
+[
+540,
+4
+],
+[
+636,
+1
+],
+[
+740,
+4
+],
+[
+896,
+4
+],
+[
+973,
+1
+],
+[
+1048,
+1
+],
+[
+1652,
+4
+],
+[
+1688,
+4
+]
+],
+"ents": []
+},
+"P:5F6A70:1": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:5F6A70:1"
+]
+},
+"P:70D1D0:0": {
+"class": "TechnoClass",
+"obs": [],
+"ents": [
+"P:70D1D0:0"
+]
+},
+"P:724BB0:0": {
+"class": "ToolTipManager",
+"obs": [],
+"ents": [
+"P:724BB0:0"
+]
+},
+"P:4E19F0:2": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4E19F0:2"
+]
+},
+"P:741970:0": {
+"class": "RulesClass",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+],
+[
+16,
+4
+],
+[
+20,
+4
+],
+[
+28,
+4
+],
+[
+44,
+4
+],
+[
+72,
+4
+],
+[
+76,
+4
+],
+[
+188,
+4
+],
+[
+228,
+4
+],
+[
+284,
+1
+],
+[
+320,
+4
+],
+[
+388,
+4
+],
+[
+444,
+4
+],
+[
+448,
+4
+],
+[
+452,
+4
+],
+[
+456,
+4
+],
+[
+488,
+4
+],
+[
+496,
+4
+],
+[
+628,
+4
+],
+[
+632,
+4
+],
+[
+1312,
+4
+],
+[
+5801,
+1
+],
+[
+5803,
+1
+]
+],
+"ents": []
+},
+"T:740EE0": {
+"class": "UnitClass",
+"obs": [],
+"ents": [
+"T:740EE0"
+]
+},
+"R:740E50:ecx": {
+"class": "UnitClass",
+"obs": [],
+"ents": [
+"T:740E50"
+]
+},
+"P:7B25E0:0": {
+"class": "WinsockInterfaceClass",
+"obs": [],
+"ents": [
+"P:7B25E0:0"
+]
+},
+"P:7B3720:0": {
+"class": "WinsockInterfaceClass",
+"obs": [
+[
+0,
+2
+],
+[
+8,
+4
+],
+[
+56,
+4
+],
+[
+84,
+4
+]
+],
+"ents": [
+"P:7B3720:0"
+]
+},
+"P:7B3720:2": {
+"class": "WinsockInterfaceClass",
+"obs": [],
+"ents": [
+"P:7B3720:2"
+]
+},
+"P:7BAEB0:1": {
+"class": "XSurface",
+"obs": [],
+"ents": [
+"P:7BAEB0:1"
 ]
 },
 "M:4019E0:this:0x4": {
@@ -167197,7 +168349,7 @@
 ]
 },
 "M:4A7340:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:4A7340:this:0xAC"
@@ -168721,7 +169873,7 @@
 "ents": []
 },
 "M:543330:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:543330:this:0xAC"
@@ -168829,7 +169981,7 @@
 ]
 },
 "M:552390:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:552390:this:0x18"
@@ -168855,7 +170007,7 @@
 ]
 },
 "M:5525F0:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5525F0:this:0x18"
@@ -168958,7 +170110,7 @@
 ]
 },
 "M:55C6D0:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:55C6D0:this:0x18"
@@ -168991,7 +170143,7 @@
 ]
 },
 "M:55C990:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:55C990:this:0x18"
@@ -170145,21 +171297,21 @@
 ]
 },
 "M:5FA510:this:0x710": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FA510:this:0x710"
 ]
 },
 "M:5FA590:this:0x710": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FA590:this:0x710"
 ]
 },
 "M:5FD970:this:0xAC": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:5FD970:this:0xAC"
@@ -170564,7 +171716,7 @@
 "ents": []
 },
 "M:62F9A0:this:0xE0": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": [
 "M:62F9A0:this:0xE0"
@@ -171203,7 +172355,7 @@
 "ents": []
 },
 "M:674730:this:0xEF8": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:674730:this:0xEF8"
@@ -172319,7 +173471,7 @@
 ]
 },
 "M:6E6F20:this:0x4": {
-"class": "FootClass",
+"class": "VectorClass",
 "obs": [],
 "ents": []
 },
@@ -175370,7 +176522,7 @@
 ]
 },
 "M:767880:this:0x18": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "M:767880:this:0x18"
@@ -179182,18 +180334,14 @@
 "ents": []
 },
 "T:7BC1F0": {
-"class": "DSurface",
+"class": "FootClass",
 "obs": [],
-"ents": [
-"T:7BC1F0"
-]
+"ents": []
 },
 "T:7BC250": {
-"class": "DSurface",
+"class": "FootClass",
 "obs": [],
-"ents": [
-"T:7BC250"
-]
+"ents": []
 },
 "R:7BEA80:ecx": {
 "class": "RulesClass",
@@ -183894,7 +185042,7 @@
 ]
 },
 "M:7681E0:this:0xAC": {
-"class": "SHPReference",
+"class": "ProgressTimer",
 "obs": [],
 "ents": [
 "M:7681E0:this:0xAC"
@@ -189458,108 +190606,6 @@
 "M:442230:this:0x21c"
 ]
 },
-"P:442230:0": {
-"class": "RulesClass",
-"obs": [
-[
-0,
-1
-],
-[
-0,
-2
-],
-[
-0,
-4
-],
-[
-2,
-2
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-44,
-4
-],
-[
-48,
-4
-],
-[
-60,
-4
-],
-[
-128,
-4
-],
-[
-132,
-4
-],
-[
-160,
-4
-],
-[
-563,
-1
-],
-[
-676,
-1
-],
-[
-848,
-4
-],
-[
-940,
-4
-],
-[
-968,
-4
-],
-[
-1016,
-4
-],
-[
-1280,
-4
-],
-[
-1336,
-4
-],
-[
-1812,
-4
-],
-[
-2936,
-4
-],
-[
-4008,
-4
-],
-[
-5814,
-1
-]
-],
-"ents": []
-},
 "M:442C40:this:0x21c": {
 "class": "ParticleTypeClass",
 "obs": [
@@ -192399,18 +193445,6 @@
 ]
 ],
 "ents": []
-},
-"R:457620:ecx": {
-"class": "BuildingClass",
-"obs": [
-[
-1312,
-4
-]
-],
-"ents": [
-"T:457620"
-]
 },
 "M:457630:this:0x520": {
 "class": "BuildingTypeClass",
@@ -195761,7 +196795,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:4B53E0"
+]
 },
 "P:4B6470:0": {
 "class": "AI",
@@ -207209,7 +208245,7 @@
 ]
 },
 "M:62D830:this:0xac": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [
 [
 777,
@@ -214574,108 +215610,6 @@
 "P:65A750:1"
 ]
 },
-"P:6F3330:0": {
-"class": "ScenarioClass",
-"obs": [
-[
-0,
-4
-],
-[
-44,
-4
-],
-[
-80,
-4
-],
-[
-84,
-4
-],
-[
-132,
-4
-],
-[
-140,
-1
-],
-[
-156,
-4
-],
-[
-160,
-4
-],
-[
-172,
-4
-],
-[
-236,
-4
-],
-[
-322,
-1
-],
-[
-336,
-1
-],
-[
-347,
-1
-],
-[
-444,
-4
-],
-[
-1016,
-4
-],
-[
-1024,
-4
-],
-[
-1312,
-4
-],
-[
-1516,
-1
-],
-[
-1517,
-1
-],
-[
-1519,
-1
-],
-[
-1540,
-4
-],
-[
-3278,
-1
-],
-[
-3285,
-1
-],
-[
-3408,
-4
-]
-],
-"ents": []
-},
 "M:6F3F40:this:0x274": {
 "class": "TemporalClass",
 "obs": [
@@ -215437,104 +216371,6 @@
 "M:6FC0B0:this:0x274"
 ]
 },
-"P:6FC0B0:0": {
-"class": "AircraftClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-20,
-1
-],
-[
-56,
-4
-],
-[
-129,
-1
-],
-[
-140,
-1
-],
-[
-160,
-4
-],
-[
-172,
-4
-],
-[
-305,
-1
-],
-[
-323,
-1
-],
-[
-343,
-1
-],
-[
-345,
-1
-],
-[
-366,
-1
-],
-[
-464,
-4
-],
-[
-540,
-4
-],
-[
-636,
-1
-],
-[
-740,
-4
-],
-[
-896,
-4
-],
-[
-973,
-1
-],
-[
-1048,
-1
-],
-[
-1652,
-4
-],
-[
-1688,
-4
-]
-],
-"ents": []
-},
 "M:6FC0B0:this:0x21c": {
 "class": "SmudgeTypeClass",
 "obs": [
@@ -215590,296 +216426,6 @@
 "ents": [
 "M:6FCDB0:this:0x294"
 ]
-},
-"P:6FDD50:0": {
-"class": "ScenarioClass",
-"obs": [
-[
-0,
-2
-],
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-13,
-1
-],
-[
-16,
-4
-],
-[
-20,
-1
-],
-[
-20,
-4
-],
-[
-28,
-4
-],
-[
-33,
-1
-],
-[
-44,
-4
-],
-[
-60,
-4
-],
-[
-72,
-4
-],
-[
-112,
-4
-],
-[
-132,
-4
-],
-[
-140,
-1
-],
-[
-160,
-4
-],
-[
-168,
-4
-],
-[
-172,
-4
-],
-[
-176,
-4
-],
-[
-180,
-1
-],
-[
-192,
-4
-],
-[
-204,
-4
-],
-[
-212,
-4
-],
-[
-248,
-4
-],
-[
-256,
-4
-],
-[
-260,
-4
-],
-[
-272,
-4
-],
-[
-280,
-4
-],
-[
-284,
-4
-],
-[
-292,
-4
-],
-[
-297,
-1
-],
-[
-298,
-1
-],
-[
-301,
-1
-],
-[
-303,
-1
-],
-[
-304,
-1
-],
-[
-306,
-1
-],
-[
-309,
-1
-],
-[
-311,
-1
-],
-[
-329,
-1
-],
-[
-333,
-1
-],
-[
-337,
-1
-],
-[
-340,
-1
-],
-[
-341,
-1
-],
-[
-348,
-1
-],
-[
-360,
-4
-],
-[
-496,
-4
-],
-[
-566,
-1
-],
-[
-668,
-1
-],
-[
-732,
-4
-],
-[
-768,
-4
-],
-[
-776,
-4
-],
-[
-792,
-4
-],
-[
-912,
-4
-],
-[
-968,
-4
-],
-[
-1012,
-4
-],
-[
-1020,
-4
-],
-[
-1024,
-4
-],
-[
-1032,
-4
-],
-[
-1492,
-4
-],
-[
-1688,
-4
-],
-[
-1692,
-4
-],
-[
-1700,
-4
-],
-[
-1712,
-1
-],
-[
-3216,
-1
-],
-[
-3234,
-1
-],
-[
-3285,
-1
-],
-[
-3388,
-1
-],
-[
-3389,
-1
-],
-[
-3476,
-1
-],
-[
-5940,
-4
-]
-],
-"ents": []
 },
 "M:6FDD50:this:0x2b4": {
 "class": "CellClass",
@@ -221309,116 +221855,6 @@
 "M:741970:this:0x6c4"
 ]
 },
-"P:741970:0": {
-"class": "RulesClass",
-"obs": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-20,
-4
-],
-[
-28,
-4
-],
-[
-44,
-4
-],
-[
-72,
-4
-],
-[
-76,
-4
-],
-[
-188,
-4
-],
-[
-228,
-4
-],
-[
-284,
-1
-],
-[
-320,
-4
-],
-[
-388,
-4
-],
-[
-444,
-4
-],
-[
-448,
-4
-],
-[
-452,
-4
-],
-[
-456,
-4
-],
-[
-488,
-4
-],
-[
-496,
-4
-],
-[
-628,
-4
-],
-[
-632,
-4
-],
-[
-1312,
-4
-],
-[
-5801,
-1
-],
-[
-5803,
-1
-]
-],
-"ents": []
-},
 "M:741970:this:0x5a4": {
 "class": "ScriptClass",
 "obs": [
@@ -225276,7 +225712,7 @@
 "ents": []
 },
 "S:420F40:+0x70": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "S:420F40:+0x70"
@@ -225309,11 +225745,6 @@
 "ents": [
 "G:A83E00"
 ]
-},
-"P:5F4B10:2": {
-"class": "FootClass",
-"obs": [],
-"ents": []
 },
 "G:886FA0": {
 "class": "CellStruct",
@@ -225401,13 +225832,6 @@
 "obs": [],
 "ents": [
 "P:56BCD0:1"
-]
-},
-"P:42C900:2": {
-"class": "FootClass",
-"obs": [],
-"ents": [
-"P:42C900:2"
 ]
 },
 "P:42ED60:1": {
@@ -226520,7 +226944,7 @@
 ]
 },
 "S:47EFE0:+0xfffffffffffffffc": {
-"class": "SHPReference",
+"class": "SHPStruct",
 "obs": [],
 "ents": [
 "S:47EFE0:+0xfffffffffffffffc"
@@ -226986,13 +227410,6 @@
 "obs": [],
 "ents": []
 },
-"S:4AED70:+0x74": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:4AED70:+0x74"
-]
-},
 "P:5F6CD0:0": {
 "class": "TechnoClass",
 "obs": [],
@@ -227119,13 +227536,6 @@
 "class": "FootClass",
 "obs": [],
 "ents": []
-},
-"P:7BB050:2": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"P:7BB050:2"
-]
 },
 "G:8A0E88": {
 "class": "DynamicVector",
@@ -227346,11 +227756,6 @@
 ]
 },
 "S:4DB3C0:+0x0": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
-"P:6FFEC0:3": {
 "class": "FootClass",
 "obs": [],
 "ents": []
@@ -230991,15 +231396,10 @@
 ]
 },
 "M:5D6620:this:0x8": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
-"P:5D6690:0": {
-"class": "DynamicVectorClass",
+"class": "DynamicVector",
 "obs": [],
 "ents": [
-"P:5D6690:0"
+"M:5D6620:this:0x8"
 ]
 },
 "M:5D6D80:this:0x55A0": {
@@ -231210,7 +231610,7 @@
 ]
 },
 "S:5E2820:+0x18": {
-"class": "ShapeButtonClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "S:5E2820:+0x18"
@@ -234977,18 +235377,6 @@
 "obs": [],
 "ents": []
 },
-"S:739EC0:+0x5a4": {
-"class": "FootClass",
-"obs": [],
-"ents": []
-},
-"S:73B140:+0x70": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:73B140:+0x70"
-]
-},
 "S:73B470:+0x2d0": {
 "class": "SpawnManagerClass",
 "obs": [],
@@ -235000,13 +235388,6 @@
 "class": "VectorClass",
 "obs": [],
 "ents": []
-},
-"R:740E50:ecx": {
-"class": "UnitClass",
-"obs": [],
-"ents": [
-"T:740E50"
-]
 },
 "M:744470:this:0x4": {
 "class": "FootClass",
@@ -236869,13 +237250,6 @@
 "P:7B92D0:0"
 ]
 },
-"S:7B93F0:+0x80": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:7B93F0:+0x80"
-]
-},
 "P:7BAB90:2": {
 "class": "FootClass",
 "obs": [],
@@ -237109,13 +237483,6 @@
 "obs": [],
 "ents": [
 "S:432750:+0x54"
-]
-},
-"S:4371D0:+0x2c": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:4371D0:+0x2c"
 ]
 },
 "S:439B00:+0x110": {
@@ -237445,13 +237812,6 @@
 "S:4A3E40:+0x2c"
 ]
 },
-"S:4A3E40:+0x38": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:4A3E40:+0x38"
-]
-},
 "S:4A4900:+0x1c": {
 "class": "VectorClass",
 "obs": [],
@@ -237532,7 +237892,7 @@
 ]
 },
 "S:4B5210:+0x114": {
-"class": "ShapeButtonClass",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "S:4B5210:+0x114"
@@ -240310,20 +240670,6 @@
 "obs": [],
 "ents": [
 "S:642130:+0x68"
-]
-},
-"S:642130:+0x6c": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:642130:+0x6c"
-]
-},
-"S:642130:+0x60": {
-"class": "DSurface",
-"obs": [],
-"ents": [
-"S:642130:+0x60"
 ]
 },
 "S:642130:+0x74": {
@@ -243163,7 +243509,7 @@
 ]
 },
 "N:4A0778": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0778"
@@ -243225,21 +243571,21 @@
 ]
 },
 "N:4C425F": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4C425F"
 ]
 },
 "N:4BA7EA": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA7EA"
 ]
 },
 "N:4BA8DF": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4BA8DF"
@@ -243296,7 +243642,7 @@
 ]
 },
 "N:4339E4": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4339E4"
@@ -243858,7 +244204,7 @@
 ]
 },
 "N:641278": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:641278"
@@ -244057,7 +244403,7 @@
 "ents": []
 },
 "N:642629": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:642629"
@@ -245759,7 +246105,7 @@
 ]
 },
 "N:502506": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:502506"
@@ -245975,7 +246321,7 @@
 "ents": []
 },
 "N:407BB3": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:407BB3"
@@ -246089,14 +246435,14 @@
 ]
 },
 "N:4A01A8": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A01A8"
 ]
 },
 "N:4A0B38": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:4A0B38"
@@ -246353,56 +246699,56 @@
 "ents": []
 },
 "N:5340EC": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5340EC"
 ]
 },
 "N:534152": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:534152"
 ]
 },
 "N:5341C8": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5341C8"
 ]
 },
 "N:53427A": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53427A"
 ]
 },
 "N:5342AA": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342AA"
 ]
 },
 "N:5342EB": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5342EB"
 ]
 },
 "N:53436E": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53436E"
 ]
 },
 "N:5343DB": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5343DB"
@@ -246444,7 +246790,7 @@
 ]
 },
 "N:53B488": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:53B488"
@@ -246560,7 +246906,7 @@
 "ents": []
 },
 "N:5B4210": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:5B4210"
@@ -247437,7 +247783,7 @@
 ]
 },
 "N:7D52DD": {
-"class": "SHPReference",
+"class": "LinkClass",
 "obs": [],
 "ents": [
 "N:7D52DD"

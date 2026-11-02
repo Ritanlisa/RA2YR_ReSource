@@ -1157,6 +1157,35 @@ def main():
                     _gsP_touch += 1
     except Exception:
         pass
+    # 接收者锚定绑定实体预创建（T:callee / P:callee:K）
+    _vb_touch = 0
+    try:
+        for _b0 in (jload("anchors/vt_receiver_bindings.json", {}) or {}).get("binds") or []:
+            _cl0 = hx(_b0.get("callee"))
+            if _cl0 is None:
+                continue
+            _te0 = "T:%X" % _cl0
+            if _te0 not in ents:
+                touch(_te0, "0x%08X:this" % _cl0)
+                _vb_touch += 1
+            for _a0 in _b0.get("args") or []:
+                _pe0 = "P:%X:%d" % (_cl0, int(_a0.get("k") or 0))
+                if _pe0 not in ents:
+                    touch(_pe0, "0x%08X::param%d" % (_cl0, int(_a0.get("k") or 0)))
+                    _vb_touch += 1
+    except Exception:
+        pass
+    # 值流链实体预创建（EAX:FN:SITE）
+    _fc_touch = 0
+    try:
+        _fch = jload("anchors/flow_chains.json", {}) or {}
+        for _pair in (_fch.get("flow") or []) + (_fch.get("eq") or []):
+            for _eid0 in _pair:
+                if isinstance(_eid0, str) and _eid0.startswith("EAX:") and _eid0 not in ents:
+                    touch(_eid0, _eid0)
+                    _fc_touch += 1
+    except Exception:
+        pass
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -4472,6 +4501,64 @@ def main():
               % (_n_gs_eq, _n_gs_val), flush=True)
     except Exception as _e_gs:
         print("[GS] injection skipped: %r" % _e_gs, flush=True)
+
+    # ---- 接收者锚定绑定边（用户机制：接收者变量已锚 ⇒ 槽号查表 ⇒ 被调方唯一）----
+    try:
+        _vb = jload("anchors/vt_receiver_bindings.json", {}) or {}
+        import os as _os_vb
+        _VB_THIS = (_os_vb.environ.get("VB_THIS", "0") == "1")
+        _n_vb_this = _n_vb_arg = 0
+        for _b in _vb.get("binds") or []:
+            _cl = hx(_b.get("callee"))
+            _re = _b.get("recv")
+            if _cl is None or not isinstance(_re, str):
+                continue
+            _te = "T:%X" % _cl
+            if _VB_THIS:
+                _call_edges.append((_re, _te))
+                _call_edges_p2.append((_re, _te))
+                _n_vb_this += 1
+            for _a in _b.get("args") or []:
+                _ae = _a.get("ent")
+                if not isinstance(_ae, str):
+                    continue
+                _pe = "P:%X:%d" % (_cl, int(_a.get("k") or 0))
+                _call_edges.append((_ae, _pe))
+                _call_edges_p2.append((_ae, _pe))
+                _n_vb_arg += 1
+        print("[VB] receiver-anchored binds: this-edges=%d arg-edges=%d"
+              % (_n_vb_this, _n_vb_arg), flush=True)
+    except Exception as _e_vb:
+        print("[VB] injection skipped: %r" % _e_vb, flush=True)
+
+    # ---- 普适值流链（参数/返回三元组的可映射子集）----
+    try:
+        import os as _os_fc
+        _FC_ON = (_os_fc.environ.get("FLOW_CHAINS", "1") == "1")
+        if _FC_ON:
+            _fch = jload("anchors/flow_chains.json", {}) or {}
+            _n_flow = _n_eq = 0
+            for _a1, _b1 in (_fch.get("flow") or []):
+                if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                    continue
+                if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                    continue
+                _call_edges.append((_a1, _b1))
+                _call_edges_p2.append((_a1, _b1))
+                _n_flow += 1
+            for _a1, _b1 in (_fch.get("eq") or []):
+                if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                    continue
+                if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                    continue
+                _call_edges.append((_a1, _b1))
+                _call_edges_p2.append((_a1, _b1))
+                _call_edges.append((_b1, _a1))
+                _call_edges_p2.append((_b1, _a1))
+                _n_eq += 1
+            print("[FC] flow edges=%d eq edges=%d" % (_n_flow, _n_eq), flush=True)
+    except Exception as _e_fc:
+        print("[FC] injection skipped: %r" % _e_fc, flush=True)
 
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
