@@ -1173,9 +1173,31 @@ def main():
                 _m_ext_touch += 1
     except Exception:
         pass
+    # 虚调用接收者（IDA 数据流解析的空 receiver CALL_VTABLE）：member 接收者实体预创建
+    _vt_recv_by = {}
+    _n_vt_m = 0
+    try:
+        for _r0 in (jload("anchors/vtcall_receivers.json", {}) or {}).get("edges") or []:
+            if (_r0 or {}).get("skip"):
+                continue
+            _a0 = hx(_r0.get("addr"))
+            if _a0 is None:
+                continue
+            _f0 = fn_at(_a0)
+            if _f0 is None or _f0 == 0:
+                continue
+            _vt_recv_by[_a0] = (_r0, _f0)
+            if (_r0 or {}).get("kind") == "member":
+                _frm0 = "0x%08X:this.member(0x%X)" % (_f0, int(_r0.get("off") or 0))
+                _me0 = ent_id(_frm0, _f0)
+                if _me0 and _me0 not in ents:
+                    touch(_me0, _frm0)
+                    _n_vt_m += 1
+    except Exception as _e0:
+        print("[C3-vt] receiver anchor skipped: %s" % _e0, flush=True)
     print("[C10-pre] callee entities created: %d, member-chain entities created: %d "
-          "(+%d dataflow M, +%d dataflow T)"
-          % (_callee_touch, _m_touch, _m_ext_touch, _t_ext_touch), flush=True)
+          "(+%d dataflow M, +%d dataflow T, +%d vtcall M)"
+          % (_callee_touch, _m_touch, _m_ext_touch, _t_ext_touch, _n_vt_m), flush=True)
 
     # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
     # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
@@ -1926,6 +1948,22 @@ def main():
         # IDA 证明对象访问 this+0x53B0、Sidebar 21,468B 7/7 命中，却被 C3 排除）。
         return slot_mask.get(slot, 0) | unknown_slot
 
+    # 次级 vptr 偏移 → 类掩码（C30：接收者类必须在 col_offset K 处有次级 vtable）
+    _sec_off_mask = {}
+    try:
+        _ev30 = (jload("anchors/vtable_extent_evidence.json", {}) or {}).get("per_class") or {}
+        for _cn30, _rc30 in _ev30.items():
+            if not isinstance(_rc30, dict):
+                continue
+            for _s30 in (_rc30.get("secondary") or []):
+                _co30 = (_s30 or {}).get("col_offset")
+                if isinstance(_co30, int) and _co30 > 0:
+                    _ci30 = resolve(_cn30)
+                    if _ci30 is not None:
+                        _sec_off_mask[_co30] = _sec_off_mask.get(_co30, 0) | (1 << _ci30)
+    except Exception:
+        _sec_off_mask = {}
+    _n_vt_c3 = _n_vt_c30 = 0
     c3_garbage_slots = collections.Counter()
     for e in raw:
         if e.get("type") != "CALL_VTABLE":
@@ -1944,11 +1982,32 @@ def main():
             continue
         if site in reloc_recv:
             recv = reloc_recv[site]
+        if not recv and site in _vt_recv_by:
+            # IDA 数据流解析的空接收者：this/member(N) + vptr 偏移 K
+            _r30, _f30 = _vt_recv_by[site]
+            _k30 = int(_r30.get("vptr_off") or 0)
+            if (_r30.get("kind") or "") == "this":
+                _tgt30 = "T:%X" % _f30
+            else:
+                _tgt30 = ent_id("0x%08X:this.member(0x%X)" % (_f30, int(_r30.get("off") or 0)), _f30)
+            if _tgt30 and _tgt30 in ents:
+                if _k30 == 0:
+                    fam["C3"][_tgt30] = fam["C3"].get(_tgt30, FULL) & c3_mask(slot)
+                    _n_vt_c3 += 1
+                else:
+                    _m30 = _sec_off_mask.get(_k30, 0)
+                    if _m30:
+                        fam["C3"][_tgt30] = fam["C3"].get(_tgt30, FULL) & _m30
+                        _n_vt_c30 += 1
+            continue
         target = ent_id(recv, fn_at(site)) if recv else None
         if target is None or target not in ents:
             continue
         fam["C3"][target] = fam["C3"].get(target, FULL) & c3_mask(slot)
         census["C3"] += 1
+    if _n_vt_c3 or _n_vt_c30:
+        print("[C3-vt] dataflow receivers: primary(C3)=%d secondary-offset=%d"
+              % (_n_vt_c3, _n_vt_c30), flush=True)
     if c3_garbage_slots:
         print("[C3] garbage slots dropped: %s"
               % dict(c3_garbage_slots), flush=True)
@@ -3667,8 +3726,8 @@ def main():
             "dom_sizes": {(cl.get("root") if isinstance(cl, dict) else str(cl)): m.bit_count()
                           for (cl, m) in constrained},
             "dom_names": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
-                          [names[i] for i in range(n) if (m >> i) & 1][:64]
-                          for (cl, m) in constrained if 0 < m.bit_count() <= 64},
+                          [names[i] for i in range(n) if (m >> i) & 1][:1600]
+                          for (cl, m) in constrained if 0 < m.bit_count() <= 1600},
             "dom_ents": {(cl.get("root") if isinstance(cl, dict) else str(cl)):
                          list(cl.get("ents") or [])[:6]
                          for (cl, m) in constrained if 0 < m.bit_count() <= 64},
@@ -4526,6 +4585,7 @@ def main():
         census["C10"] = len(fam["C10"])
         print("[C10] total entities constrained=%d" % len(fam["C10"]), flush=True)
 
+
         # C1 证据剔除（X159 地址级）后若出现孤立冲突：该簇的观测不足以支持任何类，
         # 按"证据不足"处理——把它从约束集合中移出（记入 free），而不是留作冲突。
         _obs_dropped = set()
@@ -5241,6 +5301,51 @@ def main():
                             print("    %-4s (no mask)" % _f)
                         else:
                             print("    %-4s %s" % (_f, "ALLOW" if (_fm >> _ci_w) & 1 else "DENY"))
+    if getattr(args, "dump_domains", False) and os.environ.get("MC_MULTI_CENSUS"):
+        # 强制多类普查（非唯一簇的边邻居 exact 钉定两两无祖先关系）
+        _excl = {}
+        for _e1x, _l1x in exact.items():
+            _cs1 = {_c for _c, _s1 in _l1x if str(_s1).startswith(("C4", "C15"))}
+            if len(_cs1) == 1:
+                _excl[_e1x] = next(iter(_cs1))
+        _nb = collections.defaultdict(set)
+        for (_a3, _b3) in _edges_fix:
+            if _a3 in _excl: _nb[_b3].add(names[_excl[_a3]])
+            if _b3 in _excl: _nb[_a3].add(names[_excl[_b3]])
+        _root_mc = {str(_c9.get("root")): _c9 for _c9 in clusters}
+        _forced = _fam = _none = 0
+        _out_mc = {}
+        def _ancq(a, b):
+            ia, ib = resolve(a), resolve(b)
+            if ia is None or ib is None: return False
+            return ia in U["anc"][ib]
+        for (_clm, _mm) in (res.get("constrained") or []):
+            _rxm = str(_clm.get("root")) if isinstance(_clm, dict) else str(_clm)
+            if (res.get("dom_sizes") or {}).get(_rxm) == 1:
+                continue
+            _clE = _root_mc.get(_rxm) or {}
+            _cal = set()
+            for _e4 in (_clE.get("ents") or ()):
+                _cal |= _nb.get(_e4, set())
+            if len(_cal) < 2:
+                _none += 1
+                continue
+            unrel = False
+            cl5 = sorted(_cal)
+            for i in range(len(cl5)):
+                for j in range(i + 1, len(cl5)):
+                    if not _ancq(cl5[i], cl5[j]) and not _ancq(cl5[j], cl5[i]):
+                        unrel = True
+                        break
+                if unrel: break
+            if unrel:
+                _forced += 1
+                if len(_out_mc) < 400: _out_mc[_rxm] = sorted(_cal)[:8]
+            else:
+                _fam += 1
+        print("[multi-census] non-unique: forced-multiclass=%d same-family=%d no-pinned-neighbors=%d"
+              % (_forced, _fam, _none), flush=True)
+        json.dump(_out_mc, open(os.path.join(ROOT, ".omo/yr1/forced.json"), "w"), indent=1)
     if getattr(args, "dump_domains", False):
         dpath = os.path.join(ROOT, "anchors/minclass_domains.json")
         with io.open(dpath, "w", encoding="utf-8") as fh:

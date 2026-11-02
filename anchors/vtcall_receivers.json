@@ -1,0 +1,9474 @@
+{
+ "meta": {
+  "source": "IDA cross-block dataflow on empty-receiver CALL_VTABLE sites: receiver form (this/member(N)) + vtable-load offset K; K=0 = primary vtable (standard C3 slot evidence); K in known secondary col_offsets = MI interface call",
+  "resolved": 1347,
+  "with_slot": 1347
+ },
+ "edges": [
+  {
+   "addr": "0x402f26",
+   "kind": "member",
+   "off": 24,
+   "slot": 8,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x403427",
+   "kind": "member",
+   "off": 24,
+   "slot": 8,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x40863e",
+   "kind": "this",
+   "off": 0,
+   "slot": 10,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40864d",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40867a",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x408691",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4086bf",
+   "kind": "this",
+   "off": 0,
+   "slot": 10,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40871e",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40872f",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4098f5",
+   "kind": "member",
+   "off": 100,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x409925",
+   "kind": "member",
+   "off": 100,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40993a",
+   "kind": "member",
+   "off": 100,
+   "slot": 20,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40995b",
+   "kind": "member",
+   "off": 100,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x40996d",
+   "kind": "member",
+   "off": 100,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x409998",
+   "kind": "member",
+   "off": 100,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4099fe",
+   "kind": "member",
+   "off": 100,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x412a11",
+   "kind": "member",
+   "off": 9600,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x413688",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4137cb",
+   "kind": "member",
+   "off": 9600,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41383b",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 9600,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x41402d",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414383",
+   "kind": "member",
+   "off": 1732,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414506",
+   "kind": "member",
+   "off": 1652,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414597",
+   "kind": "this",
+   "off": 0,
+   "slot": 272,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4145a8",
+   "kind": "this",
+   "off": 0,
+   "slot": 51,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4145fd",
+   "kind": "member",
+   "off": 1652,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41465f",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4146ee",
+   "kind": "member",
+   "off": 1652,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414717",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414739",
+   "kind": "this",
+   "off": 0,
+   "slot": 48,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4147d5",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4147f3",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414823",
+   "kind": "member",
+   "off": 1652,
+   "slot": 10,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4148ab",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4148f9",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414969",
+   "kind": "member",
+   "off": 1652,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x414cbb",
+   "kind": "member",
+   "off": 1652,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4152f7",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x415447",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41549d",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41577f",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4158c1",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x415ace",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x415f56",
+   "kind": "member",
+   "off": 1652,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x416757",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4167b4",
+   "kind": "member",
+   "off": 1652,
+   "slot": 17,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4168a7",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4169ab",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4169ea",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x416d26",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x416ede",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x416f89",
+   "kind": "member",
+   "off": 1652,
+   "slot": 17,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x417040",
+   "kind": "member",
+   "off": 1652,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x417133",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418081",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418149",
+   "kind": "member",
+   "off": 1728,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41816b",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41832e",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4183a0",
+   "kind": "member",
+   "off": 1728,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4183aa",
+   "kind": "member",
+   "off": 1728,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4183e8",
+   "kind": "member",
+   "off": 1728,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418420",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41844d",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418468",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4184c5",
+   "kind": "member",
+   "off": 1728,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4184ff",
+   "kind": "member",
+   "off": 1728,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41852b",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418567",
+   "kind": "member",
+   "off": 1728,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4186d1",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4187d4",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418820",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4188e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41892f",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4189f2",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418a3e",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418b01",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418b3a",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x418c8f",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4191cb",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419224",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4192a3",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4193e6",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419cd1",
+   "kind": "member",
+   "off": 1444,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419d49",
+   "kind": "member",
+   "off": 1444,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419e41",
+   "kind": "member",
+   "off": 1652,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419ec7",
+   "kind": "member",
+   "off": 1652,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419f26",
+   "kind": "member",
+   "off": 1652,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419f47",
+   "kind": "member",
+   "off": 1444,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x419f59",
+   "kind": "member",
+   "off": 1444,
+   "slot": 42,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41a104",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41ad50",
+   "kind": "member",
+   "off": 1652,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41ad83",
+   "kind": "member",
+   "off": 1652,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41ade0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41c25d",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41da6c",
+   "kind": "member",
+   "off": 80,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41dbd8",
+   "kind": "member",
+   "off": 80,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41dc26",
+   "kind": "member",
+   "off": 80,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41eb1a",
+   "kind": "member",
+   "off": 216,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41eb25",
+   "kind": "member",
+   "off": 216,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41ed03",
+   "kind": "member",
+   "off": 216,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41ed0e",
+   "kind": "member",
+   "off": 216,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41eeba",
+   "kind": "member",
+   "off": 216,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x41eec5",
+   "kind": "member",
+   "off": 216,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x422955",
+   "kind": "member",
+   "off": 204,
+   "slot": 95,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x42367e",
+   "kind": "this",
+   "off": 0,
+   "slot": 116,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x423857",
+   "kind": "this",
+   "off": 0,
+   "slot": 116,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x423976",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4239bb",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x423aa8",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x423bfd",
+   "kind": "this",
+   "off": 0,
+   "slot": 60,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x42430a",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x424623",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x424640",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x424963",
+   "kind": "this",
+   "off": 0,
+   "slot": 61,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x424bb0",
+   "kind": "member",
+   "off": 204,
+   "slot": 95,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x424c70",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x42590a",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x426b2a",
+   "kind": "member",
+   "off": 3596,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x426b36",
+   "kind": "member",
+   "off": 3596,
+   "slot": 31,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x426b40",
+   "kind": "member",
+   "off": 3596,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x426f87",
+   "kind": "member",
+   "off": 132,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4330c3",
+   "kind": "member",
+   "off": 12,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4330d6",
+   "kind": "member",
+   "off": 12,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4330e1",
+   "kind": "member",
+   "off": 12,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43311c",
+   "kind": "member",
+   "off": 12,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x433129",
+   "kind": "member",
+   "off": 12,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x433134",
+   "kind": "member",
+   "off": 12,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43315f",
+   "kind": "member",
+   "off": 12,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4334b1",
+   "kind": "member",
+   "off": 12,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4334c4",
+   "kind": "member",
+   "off": 12,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4334cf",
+   "kind": "member",
+   "off": 12,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43350a",
+   "kind": "member",
+   "off": 12,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x433517",
+   "kind": "member",
+   "off": 12,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x433522",
+   "kind": "member",
+   "off": 12,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43354d",
+   "kind": "member",
+   "off": 12,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x435c36",
+   "kind": "member",
+   "off": 228,
+   "slot": 212,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x436256",
+   "kind": "member",
+   "off": 224,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x437396",
+   "kind": "this",
+   "off": 0,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4379ec",
+   "kind": "this",
+   "off": 0,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x437fc9",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x437ff1",
+   "kind": "member",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x438026",
+   "kind": "member",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x438056",
+   "kind": "member",
+   "off": 0,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4390a9",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x439373",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43a951",
+   "kind": "member",
+   "off": 4,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43c03d",
+   "kind": "member",
+   "off": 1644,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43c048",
+   "kind": "member",
+   "off": 1644,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43c069",
+   "kind": "member",
+   "off": 1668,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43da96",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43daa7",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43dcd3",
+   "kind": "this",
+   "off": 0,
+   "slot": 88,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43dd9b",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43ddf6",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43dede",
+   "kind": "this",
+   "off": 0,
+   "slot": 116,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x43eba6",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x440468",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4405a5",
+   "kind": "this",
+   "off": 0,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x441d10",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x442738",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44371e",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4439c5",
+   "kind": "this",
+   "off": 0,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x443ac8",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x443b0f",
+   "kind": "this",
+   "off": 0,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4461aa",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446223",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4464a3",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44651c",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446585",
+   "kind": "this",
+   "off": 0,
+   "slot": 255,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446685",
+   "kind": "this",
+   "off": 0,
+   "slot": 255,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446736",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4467a1",
+   "kind": "this",
+   "off": 0,
+   "slot": 317,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4467c3",
+   "kind": "this",
+   "off": 0,
+   "slot": 319,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446829",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446a03",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446a8e",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446aa3",
+   "kind": "this",
+   "off": 0,
+   "slot": 261,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446b20",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446f77",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x446faa",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x448d83",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x449c41",
+   "kind": "this",
+   "off": 0,
+   "slot": 103,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x449cbb",
+   "kind": "this",
+   "off": 0,
+   "slot": 242,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x449e74",
+   "kind": "this",
+   "off": 0,
+   "slot": 175,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x449fe7",
+   "kind": "this",
+   "off": 0,
+   "slot": 53,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a1a3",
+   "kind": "this",
+   "off": 0,
+   "slot": 175,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a1bc",
+   "kind": "this",
+   "off": 0,
+   "slot": 55,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a1d2",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a1f9",
+   "kind": "this",
+   "off": 0,
+   "slot": 56,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a215",
+   "kind": "this",
+   "off": 0,
+   "slot": 175,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a22c",
+   "kind": "this",
+   "off": 0,
+   "slot": 53,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a28c",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a2d8",
+   "kind": "this",
+   "off": 0,
+   "slot": 260,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a2f5",
+   "kind": "this",
+   "off": 0,
+   "slot": 160,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a32c",
+   "kind": "this",
+   "off": 0,
+   "slot": 180,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a342",
+   "kind": "this",
+   "off": 0,
+   "slot": 66,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a377",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a4b2",
+   "kind": "this",
+   "off": 0,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a5ab",
+   "kind": "this",
+   "off": 0,
+   "slot": 66,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a5ba",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a5e8",
+   "kind": "this",
+   "off": 0,
+   "slot": 195,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a607",
+   "kind": "this",
+   "off": 0,
+   "slot": 195,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a693",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a7c1",
+   "kind": "this",
+   "off": 0,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a8c9",
+   "kind": "this",
+   "off": 0,
+   "slot": 83,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a958",
+   "kind": "this",
+   "off": 0,
+   "slot": 242,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a9df",
+   "kind": "this",
+   "off": 0,
+   "slot": 219,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44a9ea",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44aa2a",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44aa52",
+   "kind": "this",
+   "off": 0,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ab44",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ab68",
+   "kind": "this",
+   "off": 0,
+   "slot": 160,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ac7f",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ad6c",
+   "kind": "member",
+   "off": 692,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ae84",
+   "kind": "member",
+   "off": 692,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b7e6",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b91e",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b952",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b9bf",
+   "kind": "this",
+   "off": 0,
+   "slot": 64,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b9cd",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44b9f8",
+   "kind": "this",
+   "off": 0,
+   "slot": 64,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bb54",
+   "kind": "this",
+   "off": 0,
+   "slot": 64,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bb62",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bd58",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bd7a",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bda4",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bedc",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44bfaf",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c195",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c1d1",
+   "kind": "this",
+   "off": 0,
+   "slot": 310,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c297",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c2ea",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c3e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c407",
+   "kind": "this",
+   "off": 0,
+   "slot": 309,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c4ab",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c6ea",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c873",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c8ac",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c8df",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c8f2",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44c95d",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44cd04",
+   "kind": "this",
+   "off": 0,
+   "slot": 243,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44cd66",
+   "kind": "this",
+   "off": 0,
+   "slot": 314,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ce9c",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44cf9d",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44d510",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44d73c",
+   "kind": "member",
+   "off": 1312,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44d88c",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44d92d",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44dbc5",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44dcf4",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e25a",
+   "kind": "this",
+   "off": 0,
+   "slot": 289,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e2cd",
+   "kind": "this",
+   "off": 0,
+   "slot": 262,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e2eb",
+   "kind": "this",
+   "off": 0,
+   "slot": 212,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e2fa",
+   "kind": "this",
+   "off": 0,
+   "slot": 261,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e326",
+   "kind": "this",
+   "off": 0,
+   "slot": 261,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e333",
+   "kind": "this",
+   "off": 0,
+   "slot": 262,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e35f",
+   "kind": "this",
+   "off": 0,
+   "slot": 261,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44e379",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x44ea8f",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 1644,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x452882",
+   "kind": "member",
+   "off": 1644,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x452a8b",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4530b2",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x457221",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x457597",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x457790",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4578e0",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x457e59",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x458104",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4581bc",
+   "kind": "member",
+   "off": 1668,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4581c6",
+   "kind": "member",
+   "off": 1668,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x45864e",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x458722",
+   "kind": "member",
+   "off": 1668,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x458f8d",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4593bb",
+   "kind": "member",
+   "off": 740,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x45944a",
+   "kind": "member",
+   "off": 740,
+   "slot": 337,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4596da",
+   "kind": "member",
+   "off": 740,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x45976f",
+   "kind": "member",
+   "off": 740,
+   "slot": 337,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4597c7",
+   "kind": "member",
+   "off": 740,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4597fa",
+   "kind": "member",
+   "off": 740,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x459807",
+   "kind": "member",
+   "off": 740,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x459c4a",
+   "kind": "member",
+   "off": 536,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x45a169",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x45a179",
+   "kind": "member",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x46677b",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x466bc2",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x466c27",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x466dfb",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x466e18",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x466e99",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467355",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467866",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4678e5",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467b62",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467b9e",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467be6",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467bf5",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467c06",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467e4d",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467e70",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467e81",
+   "kind": "this",
+   "off": 0,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467e99",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x467fb4",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x468966",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x46a42e",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x46b32e",
+   "kind": "member",
+   "off": 268,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x471b04",
+   "kind": "member",
+   "off": 72,
+   "slot": 91,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x471cb2",
+   "kind": "member",
+   "off": 72,
+   "slot": 15,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x471db8",
+   "kind": "this",
+   "off": 0,
+   "slot": 245,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x471ee1",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x473af7",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x473c33",
+   "kind": "this",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x473d61",
+   "kind": "this",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x488885",
+   "kind": "member",
+   "off": 372,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a08e0",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a08eb",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 28,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4a0de2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x4a28d5",
+   "kind": "member",
+   "off": 8,
+   "slot": 8,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a28f1",
+   "kind": "member",
+   "off": 8,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a307a",
+   "kind": "member",
+   "off": 8,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a30b8",
+   "kind": "member",
+   "off": 8,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a3176",
+   "kind": "member",
+   "off": 8,
+   "slot": 8,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a3192",
+   "kind": "member",
+   "off": 8,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a31c9",
+   "kind": "member",
+   "off": 8,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a337d",
+   "kind": "member",
+   "off": 116,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a3391",
+   "kind": "member",
+   "off": 112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a3427",
+   "kind": "member",
+   "off": 112,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a345b",
+   "kind": "member",
+   "off": 112,
+   "slot": 25,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a3af4",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a9f01",
+   "kind": "this",
+   "off": 0,
+   "slot": 38,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4a9fbd",
+   "kind": "this",
+   "off": 0,
+   "slot": 38,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4aa171",
+   "kind": "this",
+   "off": 0,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4aa229",
+   "kind": "this",
+   "off": 0,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ab3a9",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ab4e1",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ab774",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4abb41",
+   "kind": "member",
+   "off": 4516,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4abbc7",
+   "kind": "member",
+   "off": 4516,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4abd04",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4abe80",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ac0b6",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ac91d",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ac9dc",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4acef8",
+   "kind": "this",
+   "off": 0,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4acf0d",
+   "kind": "this",
+   "off": 0,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ad007",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b264d",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x4b4120",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b4d21",
+   "kind": "member",
+   "off": 104,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b4d59",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b4d69",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b4ec4",
+   "kind": "member",
+   "off": 176,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b4ecf",
+   "kind": "member",
+   "off": 80,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b5056",
+   "kind": "member",
+   "off": 176,
+   "slot": 46,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b506b",
+   "kind": "member",
+   "off": 176,
+   "slot": 40,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b5144",
+   "kind": "member",
+   "off": 176,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b53b7",
+   "kind": "member",
+   "off": 176,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b53c2",
+   "kind": "member",
+   "off": 80,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b54bf",
+   "kind": "member",
+   "off": 176,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b54ca",
+   "kind": "member",
+   "off": 80,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b5557",
+   "kind": "member",
+   "off": 176,
+   "slot": 40,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b6711",
+   "kind": "member",
+   "off": 44,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4b98c6",
+   "kind": "this",
+   "off": 0,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ba6d6",
+   "kind": "member",
+   "off": 28,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ba703",
+   "kind": "member",
+   "off": 28,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bacba",
+   "kind": "member",
+   "off": 28,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bada9",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4badb9",
+   "kind": "member",
+   "off": 28,
+   "slot": 27,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4badca",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bae46",
+   "kind": "member",
+   "off": 28,
+   "slot": 25,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4baef4",
+   "kind": "member",
+   "off": 28,
+   "slot": 25,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4baf28",
+   "kind": "member",
+   "off": 28,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4baf60",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4baf70",
+   "kind": "member",
+   "off": 28,
+   "slot": 27,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4baf7d",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bafc3",
+   "kind": "member",
+   "off": 28,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bafea",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb025",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb035",
+   "kind": "member",
+   "off": 28,
+   "slot": 27,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb042",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb191",
+   "kind": "this",
+   "off": 0,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb264",
+   "kind": "this",
+   "off": 0,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb273",
+   "kind": "this",
+   "off": 0,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb675",
+   "kind": "member",
+   "off": 28,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb6a0",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb6b0",
+   "kind": "member",
+   "off": 28,
+   "slot": 27,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bb6c1",
+   "kind": "member",
+   "off": 28,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf766",
+   "kind": "this",
+   "off": 0,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf803",
+   "kind": "this",
+   "off": 0,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf81e",
+   "kind": "this",
+   "off": 0,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf947",
+   "kind": "this",
+   "off": 0,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf96f",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bf97b",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bfa8e",
+   "kind": "this",
+   "off": 0,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4bfaae",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c0e3f",
+   "kind": "this",
+   "off": 0,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c0e55",
+   "kind": "this",
+   "off": 0,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c0f27",
+   "kind": "this",
+   "off": 0,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c0fde",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c0fec",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c1069",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c124d",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c125b",
+   "kind": "this",
+   "off": 0,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c1ae6",
+   "kind": "member",
+   "off": 28,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c1b1b",
+   "kind": "member",
+   "off": 28,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4c3271",
+   "kind": "this",
+   "off": 0,
+   "slot": 38,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cc501",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cd2b2",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cd3b6",
+   "kind": "member",
+   "off": 12,
+   "slot": 340,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cd3ed",
+   "kind": "member",
+   "off": 12,
+   "slot": 115,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cd4d8",
+   "kind": "member",
+   "off": 12,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cd8c3",
+   "kind": "member",
+   "off": 12,
+   "slot": 91,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cda0b",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cda72",
+   "kind": "member",
+   "off": 4,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cdbcd",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ce4b9",
+   "kind": "member",
+   "off": 4,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cfab4",
+   "kind": "member",
+   "off": 12,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4cfad6",
+   "kind": "member",
+   "off": 12,
+   "slot": 289,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d0192",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d0439",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d113e",
+   "kind": "member",
+   "off": 92,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d12cb",
+   "kind": "member",
+   "off": 92,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d14fc",
+   "kind": "member",
+   "off": 92,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d3690",
+   "kind": "member",
+   "off": 1652,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d422a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d4314",
+   "kind": "this",
+   "off": 0,
+   "slot": 241,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d45c5",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d4686",
+   "kind": "this",
+   "off": 0,
+   "slot": 241,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d49a3",
+   "kind": "this",
+   "off": 0,
+   "slot": 241,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d4e3e",
+   "kind": "this",
+   "off": 0,
+   "slot": 241,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d5392",
+   "kind": "this",
+   "off": 0,
+   "slot": 231,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d5562",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d55e0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d6f06",
+   "kind": "this",
+   "off": 0,
+   "slot": 231,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d71a9",
+   "kind": "member",
+   "off": 1652,
+   "slot": 20,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d71d8",
+   "kind": "member",
+   "off": 1652,
+   "slot": 25,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d71fc",
+   "kind": "member",
+   "off": 1652,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d721e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d7a9f",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d7e7d",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d7ea4",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d80ff",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d8138",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d8171",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d8198",
+   "kind": "this",
+   "off": 0,
+   "slot": 222,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d890e",
+   "kind": "this",
+   "off": 0,
+   "slot": 89,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d9677",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4d96b9",
+   "kind": "member",
+   "off": 1652,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da0c5",
+   "kind": "member",
+   "off": 1452,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da144",
+   "kind": "member",
+   "off": 1452,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da493",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da50a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da629",
+   "kind": "this",
+   "off": 0,
+   "slot": 91,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da692",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da706",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da877",
+   "kind": "member",
+   "off": 1652,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da8bb",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4da96d",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4daa24",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dae59",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4daf5e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4daff0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db0fb",
+   "kind": "member",
+   "off": 1652,
+   "slot": 8,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db13e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db324",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db347",
+   "kind": "member",
+   "off": 1652,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db800",
+   "kind": "member",
+   "off": 1652,
+   "slot": 29,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4db8b4",
+   "kind": "member",
+   "off": 1652,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dbab8",
+   "kind": "this",
+   "off": 0,
+   "slot": 179,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dbe68",
+   "kind": "member",
+   "off": 1652,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dbefb",
+   "kind": "this",
+   "off": 0,
+   "slot": 315,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dbf81",
+   "kind": "this",
+   "off": 0,
+   "slot": 314,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dbfb7",
+   "kind": "this",
+   "off": 0,
+   "slot": 314,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dcfbc",
+   "kind": "this",
+   "off": 0,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4dd086",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ddb52",
+   "kind": "this",
+   "off": 0,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ddc2e",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4ddd29",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4de17b",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4de29b",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4de43d",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4def71",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df207",
+   "kind": "member",
+   "off": 1480,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df402",
+   "kind": "this",
+   "off": 0,
+   "slot": 231,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df491",
+   "kind": "this",
+   "off": 0,
+   "slot": 231,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df661",
+   "kind": "this",
+   "off": 0,
+   "slot": 54,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df674",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df8ef",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df92d",
+   "kind": "member",
+   "off": 1652,
+   "slot": 28,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4df95c",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4e02c9",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4e2964",
+   "kind": "this",
+   "off": 0,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f3cdb",
+   "kind": "member",
+   "off": 16,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f43d9",
+   "kind": "this",
+   "off": 0,
+   "slot": 10,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f60bc",
+   "kind": "member",
+   "off": 22020,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f6167",
+   "kind": "member",
+   "off": 22044,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f6269",
+   "kind": "member",
+   "off": 596,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f71f2",
+   "kind": "member",
+   "off": 22496,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f723f",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 364,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4f8561",
+   "kind": "member",
+   "off": 22496,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f8dbf",
+   "kind": "member",
+   "off": 21468,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4f8dcd",
+   "kind": "member",
+   "off": 21468,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fd7bd",
+   "kind": "member",
+   "off": 36,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fd904",
+   "kind": "member",
+   "off": 36,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fdad8",
+   "kind": "member",
+   "off": 36,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fdb94",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 36
+  },
+  {
+   "addr": "0x4fdc86",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 36
+  },
+  {
+   "addr": "0x4fdcb8",
+   "kind": "member",
+   "off": 36,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fe1bd",
+   "kind": "member",
+   "off": 22276,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fe452",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 22276,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4fe4c4",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 22276,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4fe589",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 22276,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4fe5cf",
+   "kind": "member",
+   "off": 22276,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x4fe8a6",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 22276,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x4fe8e6",
+   "kind": "member",
+   "off": 22276,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x50a47a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 596,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x50aa74",
+   "kind": "member",
+   "off": 22276,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x50afe7",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x50d695",
+   "kind": "member",
+   "off": 364,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x515c9c",
+   "kind": "member",
+   "off": 12,
+   "slot": 125,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x515f99",
+   "kind": "member",
+   "off": 4,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5162be",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5168c3",
+   "kind": "member",
+   "off": 4,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x517e4e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5180d1",
+   "kind": "member",
+   "off": 284,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5188d3",
+   "kind": "this",
+   "off": 0,
+   "slot": 61,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x518a3e",
+   "kind": "this",
+   "off": 0,
+   "slot": 60,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x518d9d",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x518ddf",
+   "kind": "this",
+   "off": 0,
+   "slot": 272,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x518df0",
+   "kind": "this",
+   "off": 0,
+   "slot": 51,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x518fb4",
+   "kind": "this",
+   "off": 0,
+   "slot": 112,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51908c",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5196fa",
+   "kind": "member",
+   "off": 1444,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519700",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5199b8",
+   "kind": "member",
+   "off": 1444,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5199cd",
+   "kind": "member",
+   "off": 1444,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519a19",
+   "kind": "member",
+   "off": 1444,
+   "slot": 55,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519a2c",
+   "kind": "member",
+   "off": 1444,
+   "slot": 245,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519a48",
+   "kind": "member",
+   "off": 1444,
+   "slot": 184,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519a9b",
+   "kind": "member",
+   "off": 1652,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519ede",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519f1f",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x519fdc",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51a061",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51a8eb",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51aa4c",
+   "kind": "this",
+   "off": 0,
+   "slot": 15,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51aab0",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ab65",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51abd1",
+   "kind": "this",
+   "off": 0,
+   "slot": 320,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ac1f",
+   "kind": "this",
+   "off": 0,
+   "slot": 342,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ac2a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51acdc",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51acee",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ad09",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ad50",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51b9f4",
+   "kind": "member",
+   "off": 1652,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ba6f",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51bbc0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c0e6",
+   "kind": "this",
+   "off": 0,
+   "slot": 108,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c163",
+   "kind": "this",
+   "off": 0,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c1e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 171,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c1f8",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c2e6",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c2fa",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c30a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c31a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c33a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c34a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c35a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c421",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c532",
+   "kind": "this",
+   "off": 0,
+   "slot": 171,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51c558",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51d16b",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51d455",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51d4a5",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51d5a8",
+   "kind": "this",
+   "off": 0,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51d6e0",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51dee1",
+   "kind": "this",
+   "off": 0,
+   "slot": 61,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51df30",
+   "kind": "member",
+   "off": 1652,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x51ea67",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5201b5",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520236",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52034d",
+   "kind": "member",
+   "off": 1444,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520369",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52039c",
+   "kind": "member",
+   "off": 1444,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520417",
+   "kind": "member",
+   "off": 1444,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520423",
+   "kind": "member",
+   "off": 1444,
+   "slot": 55,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520451",
+   "kind": "member",
+   "off": 1444,
+   "slot": 245,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520486",
+   "kind": "member",
+   "off": 1444,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520503",
+   "kind": "member",
+   "off": 1652,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52054e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520566",
+   "kind": "member",
+   "off": 1444,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5205e3",
+   "kind": "member",
+   "off": 1652,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52062e",
+   "kind": "member",
+   "off": 1652,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520660",
+   "kind": "member",
+   "off": 1444,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5206ca",
+   "kind": "this",
+   "off": 0,
+   "slot": 185,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5206f3",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520716",
+   "kind": "this",
+   "off": 0,
+   "slot": 279,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520745",
+   "kind": "member",
+   "off": 692,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520772",
+   "kind": "this",
+   "off": 0,
+   "slot": 242,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520784",
+   "kind": "this",
+   "off": 0,
+   "slot": 242,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520d38",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520dbf",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520f4a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520f72",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x520fa9",
+   "kind": "this",
+   "off": 0,
+   "slot": 337,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521010",
+   "kind": "this",
+   "off": 0,
+   "slot": 113,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521019",
+   "kind": "this",
+   "off": 0,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521045",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521086",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5210bf",
+   "kind": "this",
+   "off": 0,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5210e9",
+   "kind": "this",
+   "off": 0,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52112a",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52113e",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521161",
+   "kind": "member",
+   "off": 1652,
+   "slot": 42,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5212d4",
+   "kind": "this",
+   "off": 0,
+   "slot": 342,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5212f0",
+   "kind": "this",
+   "off": 0,
+   "slot": 342,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521307",
+   "kind": "this",
+   "off": 0,
+   "slot": 342,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5216fb",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x521bb0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5223c3",
+   "kind": "this",
+   "off": 0,
+   "slot": 234,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x522461",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52249c",
+   "kind": "member",
+   "off": 1652,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x522a3f",
+   "kind": "this",
+   "off": 0,
+   "slot": 93,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x523059",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x52308b",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5230c7",
+   "kind": "member",
+   "off": 1652,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x523391",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5233c1",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5399ef",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x539a1d",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x539a46",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x539a73",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x539a99",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x539ac3",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54113b",
+   "kind": "member",
+   "off": 72,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x541222",
+   "kind": "member",
+   "off": 72,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x541331",
+   "kind": "member",
+   "off": 72,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5413e1",
+   "kind": "member",
+   "off": 72,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x541448",
+   "kind": "member",
+   "off": 76,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x541530",
+   "kind": "member",
+   "off": 80,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x541d2c",
+   "kind": "member",
+   "off": 76,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54bb2c",
+   "kind": "member",
+   "off": 12,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54bdad",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54bde2",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54c14f",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54c283",
+   "kind": "member",
+   "off": 12,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54c342",
+   "kind": "member",
+   "off": 12,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54c5f3",
+   "kind": "member",
+   "off": 12,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54c742",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54cf7e",
+   "kind": "member",
+   "off": 12,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54cf92",
+   "kind": "member",
+   "off": 12,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54d04c",
+   "kind": "member",
+   "off": 12,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54d05f",
+   "kind": "member",
+   "off": 12,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54d637",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54dfc4",
+   "kind": "member",
+   "off": 148,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54e4b1",
+   "kind": "member",
+   "off": 12,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54e6b8",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x54e6c3",
+   "kind": "member",
+   "off": 12,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x54e71b",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x54e725",
+   "kind": "member",
+   "off": 12,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557548",
+   "kind": "member",
+   "off": 88,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557553",
+   "kind": "member",
+   "off": 184,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x55755f",
+   "kind": "member",
+   "off": 280,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5576d5",
+   "kind": "member",
+   "off": 52,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x55781f",
+   "kind": "this",
+   "off": 0,
+   "slot": 42,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557a4c",
+   "kind": "member",
+   "off": 280,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557a9c",
+   "kind": "member",
+   "off": 280,
+   "slot": 36,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557b5e",
+   "kind": "this",
+   "off": 0,
+   "slot": 48,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c46",
+   "kind": "member",
+   "off": 88,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c4f",
+   "kind": "member",
+   "off": 184,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c57",
+   "kind": "member",
+   "off": 280,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c5e",
+   "kind": "member",
+   "off": 88,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c66",
+   "kind": "member",
+   "off": 184,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c6d",
+   "kind": "member",
+   "off": 280,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c78",
+   "kind": "member",
+   "off": 280,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c86",
+   "kind": "member",
+   "off": 280,
+   "slot": 42,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x557c97",
+   "kind": "member",
+   "off": 280,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x55984f",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x559943",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x565832",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x56d82e",
+   "kind": "member",
+   "off": 80,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x56d9c2",
+   "kind": "member",
+   "off": 80,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5779ab",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4444,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x5871a2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 212,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x589942",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x589ba0",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0443",
+   "kind": "member",
+   "off": 12,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b046c",
+   "kind": "member",
+   "off": 12,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0477",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0552",
+   "kind": "member",
+   "off": 12,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b057a",
+   "kind": "member",
+   "off": 12,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0585",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b086e",
+   "kind": "member",
+   "off": 4,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0b49",
+   "kind": "member",
+   "off": 4,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0d34",
+   "kind": "member",
+   "off": 12,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b0ee6",
+   "kind": "member",
+   "off": 12,
+   "slot": 125,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5b152a",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x5bdf85",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 4444,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x5bdf94",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 212,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x5bdfd2",
+   "kind": "this",
+   "off": 0,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5be080",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 312,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x5be12d",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5be135",
+   "kind": "this",
+   "off": 0,
+   "slot": 24,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5be3d2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 80,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x5be440",
+   "kind": "member",
+   "off": 80,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5be562",
+   "kind": "member",
+   "off": 4444,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5be5f5",
+   "kind": "member",
+   "off": 212,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c159d",
+   "kind": "member",
+   "off": 804,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c15a6",
+   "kind": "member",
+   "off": 804,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c160f",
+   "kind": "member",
+   "off": 804,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c18ed",
+   "kind": "member",
+   "off": 804,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c1951",
+   "kind": "member",
+   "off": 804,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c1d62",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c1f50",
+   "kind": "this",
+   "off": 0,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5c3c2a",
+   "kind": "member",
+   "off": 804,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cb7cd",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cd03b",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cd26c",
+   "kind": "member",
+   "off": 40,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cd647",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cdd99",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5ce01b",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5ce0a2",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5ce36f",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5ce476",
+   "kind": "member",
+   "off": 52,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cea65",
+   "kind": "member",
+   "off": 36,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cee4c",
+   "kind": "member",
+   "off": 44,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cf038",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cf676",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 44
+  },
+  {
+   "addr": "0x5cfdf7",
+   "kind": "member",
+   "off": 60,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5cff4b",
+   "kind": "member",
+   "off": 36,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1b11",
+   "kind": "member",
+   "off": 24,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1b18",
+   "kind": "member",
+   "off": 48,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1c51",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1c74",
+   "kind": "member",
+   "off": 24,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1cc9",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1d27",
+   "kind": "member",
+   "off": 24,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1d38",
+   "kind": "member",
+   "off": 24,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1da7",
+   "kind": "member",
+   "off": 24,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d1e19",
+   "kind": "member",
+   "off": 24,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d262a",
+   "kind": "member",
+   "off": 48,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d3a8c",
+   "kind": "member",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d3cf7",
+   "kind": "member",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5d4263",
+   "kind": "member",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f41da",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f4208",
+   "kind": "this",
+   "off": 0,
+   "slot": 61,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f4b5d",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f55d9",
+   "kind": "this",
+   "off": 0,
+   "slot": 342,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f9214",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f9221",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f922e",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x5f923b",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x620c66",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x620c7f",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x620eb5",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x620eeb",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x627511",
+   "kind": "this",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x627938",
+   "kind": "this",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x627a38",
+   "kind": "this",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x628a2d",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x628cdb",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62a364",
+   "kind": "member",
+   "off": 36,
+   "slot": 54,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62a5db",
+   "kind": "member",
+   "off": 36,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62a5ed",
+   "kind": "member",
+   "off": 36,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62a610",
+   "kind": "member",
+   "off": 36,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62a70b",
+   "kind": "member",
+   "off": 36,
+   "slot": 54,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62aa2c",
+   "kind": "member",
+   "off": 36,
+   "slot": 54,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62c184",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62c320",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x62c341",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62c668",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62ca6c",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62cbfe",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62dd8d",
+   "kind": "member",
+   "off": 188,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x62e55d",
+   "kind": "member",
+   "off": 188,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x634024",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6364b1",
+   "kind": "member",
+   "off": 4,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x636636",
+   "kind": "member",
+   "off": 4,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x639b1b",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b571",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b627",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b6e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b92c",
+   "kind": "this",
+   "off": 0,
+   "slot": 299,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b93b",
+   "kind": "this",
+   "off": 0,
+   "slot": 300,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63b94f",
+   "kind": "this",
+   "off": 0,
+   "slot": 267,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63bac4",
+   "kind": "this",
+   "off": 0,
+   "slot": 301,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63badf",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63bc53",
+   "kind": "this",
+   "off": 0,
+   "slot": 302,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63bcb7",
+   "kind": "this",
+   "off": 0,
+   "slot": 301,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63be81",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63bf68",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c08b",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c23a",
+   "kind": "this",
+   "off": 0,
+   "slot": 299,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c249",
+   "kind": "this",
+   "off": 0,
+   "slot": 300,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c25d",
+   "kind": "this",
+   "off": 0,
+   "slot": 267,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c3d5",
+   "kind": "this",
+   "off": 0,
+   "slot": 301,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c3ec",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c4a2",
+   "kind": "this",
+   "off": 0,
+   "slot": 302,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x63c502",
+   "kind": "this",
+   "off": 0,
+   "slot": 301,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x642153",
+   "kind": "member",
+   "off": 0,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x642163",
+   "kind": "member",
+   "off": 0,
+   "slot": 31,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x642707",
+   "kind": "member",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x64b289",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x64b383",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x64b44b",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x652e39",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 4700,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x654783",
+   "kind": "member",
+   "off": 4640,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65478e",
+   "kind": "member",
+   "off": 4640,
+   "slot": 31,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6549f0",
+   "kind": "member",
+   "off": 4640,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x655226",
+   "kind": "member",
+   "off": 4644,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65607c",
+   "kind": "member",
+   "off": 4636,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x656169",
+   "kind": "member",
+   "off": 4636,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x656175",
+   "kind": "member",
+   "off": 4636,
+   "slot": 31,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x656376",
+   "kind": "member",
+   "off": 4700,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65694d",
+   "kind": "member",
+   "off": 4700,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6569fb",
+   "kind": "member",
+   "off": 4644,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x657534",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 4700,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x657d21",
+   "kind": "member",
+   "off": 4636,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65ca32",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65cccb",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65cd8f",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65ce3f",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65ce8d",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65ced9",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65cfa3",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65cfec",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d048",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d0c1",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d10b",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d1e0",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d303",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d3d2",
+   "kind": "this",
+   "off": 0,
+   "slot": 16,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x65d5e4",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x66b560",
+   "kind": "member",
+   "off": 1608,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x675283",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 4668,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x675423",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 4924,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x67546e",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 1084,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x6755c3",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 2332,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x6755ff",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 2444,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x678e2a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 88,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x67936a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 2332,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x67946a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 2444,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x67982a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 316,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x67d342",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d3cb",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d46b",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d4d7",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d550",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d5c9",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d642",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d6bb",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d734",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d7ad",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d826",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d89f",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d918",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67d991",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67da0a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67da83",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dafc",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67db75",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dbee",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dc67",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dce0",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dd59",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67ddd2",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67de3b",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67dea4",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67e13f",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67e168",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67e19a",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67e1c2",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67f83f",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67f8b0",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67f900",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67fdd9",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x67fde9",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x683059",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x683069",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x683a5b",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 13552,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x683a6a",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 13580,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x688f9e",
+   "kind": "this",
+   "off": 0,
+   "slot": 54,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68a38c",
+   "kind": "member",
+   "off": 13524,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68a4de",
+   "kind": "member",
+   "off": 13552,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68a695",
+   "kind": "member",
+   "off": 13552,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68a707",
+   "kind": "member",
+   "off": 13580,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68d0bd",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 52,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x68d418",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 28,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x68ea09",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 52,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x68f3d0",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f443",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f53e",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f5b5",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f821",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f95e",
+   "kind": "member",
+   "off": 28,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f981",
+   "kind": "member",
+   "off": 28,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68f99f",
+   "kind": "member",
+   "off": 28,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x68fb6e",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x690e81",
+   "kind": "member",
+   "off": 40,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x692e3a",
+   "kind": "this",
+   "off": 0,
+   "slot": 41,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6934f3",
+   "kind": "this",
+   "off": 0,
+   "slot": 49,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x697811",
+   "kind": "member",
+   "off": 10540,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x698114",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 10516,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x698150",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 10492,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x6986e6",
+   "kind": "member",
+   "off": 10516,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6989f4",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 10492,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x69a458",
+   "kind": "member",
+   "off": 392,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x69a5e7",
+   "kind": "member",
+   "off": 392,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x69a730",
+   "kind": "member",
+   "off": 420,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x69aacc",
+   "kind": "member",
+   "off": 392,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x69aaf4",
+   "kind": "member",
+   "off": 392,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x69abce",
+   "kind": "member",
+   "off": 420,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6a1c9d",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x6a374c",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6a42d1",
+   "kind": "member",
+   "off": 104,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6a7d67",
+   "kind": "this",
+   "off": 0,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6af252",
+   "kind": "member",
+   "off": 40,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6af2b2",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6af4f2",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6af668",
+   "kind": "member",
+   "off": 40,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6af849",
+   "kind": "member",
+   "off": 36,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afa75",
+   "kind": "member",
+   "off": 36,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afb7e",
+   "kind": "member",
+   "off": 36,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afd89",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afdcc",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afe16",
+   "kind": "member",
+   "off": 36,
+   "slot": 206,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afe97",
+   "kind": "member",
+   "off": 36,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afecb",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6aff4e",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6affaa",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6afffe",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0087",
+   "kind": "member",
+   "off": 36,
+   "slot": 206,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b00d7",
+   "kind": "member",
+   "off": 36,
+   "slot": 206,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0328",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0360",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0513",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b06bc",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0791",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b08a8",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0de0",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0e09",
+   "kind": "member",
+   "off": 36,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b0ebd",
+   "kind": "member",
+   "off": 36,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b109e",
+   "kind": "member",
+   "off": 36,
+   "slot": 206,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b6d4d",
+   "kind": "member",
+   "off": 40,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b6dda",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b7070",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b7492",
+   "kind": "member",
+   "off": 36,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6b78e4",
+   "kind": "member",
+   "off": 40,
+   "slot": 35,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6bedbd",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6c61c9",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6c9d60",
+   "kind": "member",
+   "off": 16,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6ca02a",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6ce279",
+   "kind": "member",
+   "off": 0,
+   "slot": 1,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6cf3f8",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 28,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x6d8c77",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6d8d8a",
+   "kind": "this",
+   "off": 0,
+   "slot": 67,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6d8d9b",
+   "kind": "this",
+   "off": 0,
+   "slot": 68,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6dc765",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6dc94a",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6eafb0",
+   "kind": "member",
+   "off": 84,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6eb0b3",
+   "kind": "member",
+   "off": 84,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6eceaa",
+   "kind": "member",
+   "off": 60,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6ee470",
+   "kind": "member",
+   "off": 84,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6ee53b",
+   "kind": "member",
+   "off": 84,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f3422",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f3b9b",
+   "kind": "member",
+   "off": 1652,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f3bc0",
+   "kind": "this",
+   "off": 0,
+   "slot": 170,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f3db7",
+   "kind": "member",
+   "off": 1652,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f3ddc",
+   "kind": "this",
+   "off": 0,
+   "slot": 170,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f51d0",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f51fb",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5260",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5271",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5297",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f52c6",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5359",
+   "kind": "this",
+   "off": 0,
+   "slot": 50,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f536c",
+   "kind": "this",
+   "off": 0,
+   "slot": 26,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5382",
+   "kind": "this",
+   "off": 0,
+   "slot": 277,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f539c",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f53b5",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f53cd",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5439",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f5455",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f682c",
+   "kind": "this",
+   "off": 0,
+   "slot": 276,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f6d27",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f7796",
+   "kind": "this",
+   "off": 0,
+   "slot": 234,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f7955",
+   "kind": "this",
+   "off": 0,
+   "slot": 234,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f798d",
+   "kind": "this",
+   "off": 0,
+   "slot": 234,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f7e7e",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f8c97",
+   "kind": "this",
+   "off": 0,
+   "slot": 185,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f8d7a",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9302",
+   "kind": "member",
+   "off": 1112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9349",
+   "kind": "member",
+   "off": 1088,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f94ea",
+   "kind": "member",
+   "off": 1112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9531",
+   "kind": "member",
+   "off": 1088,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9697",
+   "kind": "member",
+   "off": 1112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f96de",
+   "kind": "member",
+   "off": 1088,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f987c",
+   "kind": "member",
+   "off": 1112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f98c3",
+   "kind": "member",
+   "off": 1088,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9a30",
+   "kind": "member",
+   "off": 1112,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6f9a77",
+   "kind": "member",
+   "off": 1088,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6fa4b6",
+   "kind": "this",
+   "off": 0,
+   "slot": 239,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6fa6d6",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6fd5ae",
+   "kind": "this",
+   "off": 0,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6fda9e",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6fdf44",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x6ff72f",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7008e8",
+   "kind": "this",
+   "off": 0,
+   "slot": 185,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70187b",
+   "kind": "this",
+   "off": 0,
+   "slot": 290,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x704379",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70665b",
+   "kind": "this",
+   "off": 0,
+   "slot": 26,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706694",
+   "kind": "this",
+   "off": 0,
+   "slot": 117,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7066a3",
+   "kind": "this",
+   "off": 0,
+   "slot": 118,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7066b2",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7066cd",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7066da",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70671a",
+   "kind": "this",
+   "off": 0,
+   "slot": 49,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706729",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706741",
+   "kind": "this",
+   "off": 0,
+   "slot": 271,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706780",
+   "kind": "this",
+   "off": 0,
+   "slot": 281,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70678d",
+   "kind": "this",
+   "off": 0,
+   "slot": 88,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7067a0",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7067b7",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706800",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706ada",
+   "kind": "this",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x706f02",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707006",
+   "kind": "this",
+   "off": 0,
+   "slot": 117,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707015",
+   "kind": "this",
+   "off": 0,
+   "slot": 118,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707028",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707035",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707086",
+   "kind": "this",
+   "off": 0,
+   "slot": 49,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707096",
+   "kind": "this",
+   "off": 0,
+   "slot": 271,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707175",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707194",
+   "kind": "this",
+   "off": 0,
+   "slot": 121,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7071aa",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x7071fa",
+   "kind": "this",
+   "off": 0,
+   "slot": 188,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707206",
+   "kind": "this",
+   "off": 0,
+   "slot": 187,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70723f",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7073e6",
+   "kind": "this",
+   "off": 0,
+   "slot": 188,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x707fe5",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x708de8",
+   "kind": "this",
+   "off": 0,
+   "slot": 213,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x708e64",
+   "kind": "this",
+   "off": 0,
+   "slot": 213,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x708e9a",
+   "kind": "this",
+   "off": 0,
+   "slot": 213,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709048",
+   "kind": "this",
+   "off": 0,
+   "slot": 213,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709088",
+   "kind": "this",
+   "off": 0,
+   "slot": 213,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7093b0",
+   "kind": "this",
+   "off": 0,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7094b5",
+   "kind": "this",
+   "off": 0,
+   "slot": 231,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709ac0",
+   "kind": "this",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709ad5",
+   "kind": "this",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709ae9",
+   "kind": "this",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709afe",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709b33",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709b5b",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709b73",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709c48",
+   "kind": "this",
+   "off": 0,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709d22",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709d45",
+   "kind": "this",
+   "off": 0,
+   "slot": 34,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709d5d",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709daa",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709dbb",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x709f5b",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a088",
+   "kind": "this",
+   "off": 0,
+   "slot": 174,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a097",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a0af",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a1e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a24d",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a27d",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a34a",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a362",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a504",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a511",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a51e",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a55b",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a57d",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a58a",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a5c7",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a5e9",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a602",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a6c5",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70a721",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70aa02",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70bd4c",
+   "kind": "member",
+   "off": 692,
+   "slot": 334,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70d5a0",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70d898",
+   "kind": "member",
+   "off": 1280,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70d951",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70da42",
+   "kind": "this",
+   "off": 0,
+   "slot": 201,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70e12f",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70ef15",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70f239",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70fc15",
+   "kind": "member",
+   "off": 1652,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70fd0b",
+   "kind": "member",
+   "off": 1652,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x70fdeb",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71580f",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x718096",
+   "kind": "member",
+   "off": 4,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x718a4f",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x718e8b",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x718ff1",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71911d",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71a13d",
+   "kind": "member",
+   "off": 72,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71a870",
+   "kind": "member",
+   "off": 36,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71a99a",
+   "kind": "member",
+   "off": 40,
+   "slot": 258,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71ab41",
+   "kind": "member",
+   "off": 36,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71afdf",
+   "kind": "member",
+   "off": 40,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71b0b2",
+   "kind": "member",
+   "off": 40,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x71c4de",
+   "kind": "this",
+   "off": 0,
+   "slot": 66,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7206d1",
+   "kind": "member",
+   "off": 20,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x721821",
+   "kind": "member",
+   "off": 196,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x724641",
+   "kind": "member",
+   "off": 564,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7247c5",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x72486e",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 564,
+   "skip": "unknown vptr offset (not a known secondary col_offset; likely a callback table)"
+  },
+  {
+   "addr": "0x729626",
+   "kind": "member",
+   "off": 12,
+   "slot": 107,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x72e3fb",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x72e420",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x735531",
+   "kind": "member",
+   "off": 1652,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x735b58",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x736a5f",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x736cd8",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x736e3a",
+   "kind": "this",
+   "off": 0,
+   "slot": 240,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x736ea2",
+   "kind": "member",
+   "off": 692,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x736fe1",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x737275",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x737738",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7377f5",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x737a3a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x737d87",
+   "kind": "member",
+   "off": 740,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x738f78",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739360",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7393cc",
+   "kind": "this",
+   "off": 0,
+   "slot": 197,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739405",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739428",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73944a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73945a",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739558",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739565",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73957a",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7395a7",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7395b4",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73960a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73963f",
+   "kind": "member",
+   "off": 1652,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739649",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739670",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739692",
+   "kind": "member",
+   "off": 1652,
+   "slot": 39,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739726",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7399e8",
+   "kind": "this",
+   "off": 0,
+   "slot": 232,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739a13",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739a46",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739a5e",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739aa1",
+   "kind": "this",
+   "off": 0,
+   "slot": 73,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739ed3",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739f46",
+   "kind": "this",
+   "off": 0,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739f63",
+   "kind": "this",
+   "off": 0,
+   "slot": 111,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739f77",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x739fc1",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a008",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a03d",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a075",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a0aa",
+   "kind": "this",
+   "off": 0,
+   "slot": 175,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a1c8",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a227",
+   "kind": "this",
+   "off": 0,
+   "slot": 62,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a258",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a27b",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a2d7",
+   "kind": "this",
+   "off": 0,
+   "slot": 53,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a2ee",
+   "kind": "this",
+   "off": 0,
+   "slot": 71,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a324",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a334",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73a369",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73b4a3",
+   "kind": "this",
+   "off": 0,
+   "slot": 272,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73b4b4",
+   "kind": "this",
+   "off": 0,
+   "slot": 51,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73b77a",
+   "kind": "this",
+   "off": 0,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73b843",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73b85f",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73bf88",
+   "kind": "this",
+   "off": 0,
+   "slot": 281,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73bf9c",
+   "kind": "this",
+   "off": 0,
+   "slot": 88,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c380",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c420",
+   "kind": "this",
+   "off": 0,
+   "slot": 21,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c45e",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c47f",
+   "kind": "this",
+   "off": 0,
+   "slot": 114,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c5ff",
+   "kind": "this",
+   "off": 0,
+   "slot": 27,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c621",
+   "kind": "this",
+   "off": 0,
+   "slot": 49,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c696",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c87a",
+   "kind": "member",
+   "off": 1652,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73c9e5",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ca0c",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73cab0",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73cd08",
+   "kind": "this",
+   "off": 0,
+   "slot": 323,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73cd86",
+   "kind": "this",
+   "off": 0,
+   "slot": 281,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73d114",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73d148",
+   "kind": "this",
+   "off": 0,
+   "slot": 43,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73d729",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73d7d1",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73d86c",
+   "kind": "member",
+   "off": 1652,
+   "slot": 19,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ddbd",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73df1c",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e108",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e22c",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e65a",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e6bc",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e700",
+   "kind": "this",
+   "off": 0,
+   "slot": 173,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e741",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73e9b3",
+   "kind": "this",
+   "off": 0,
+   "slot": 173,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73eb49",
+   "kind": "this",
+   "off": 0,
+   "slot": 330,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73eb7e",
+   "kind": "this",
+   "off": 0,
+   "slot": 330,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ebae",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ec41",
+   "kind": "this",
+   "off": 0,
+   "slot": 330,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ec76",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73edb5",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ede0",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ee59",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ee7f",
+   "kind": "this",
+   "off": 0,
+   "slot": 288,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ee93",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73eec6",
+   "kind": "this",
+   "off": 0,
+   "slot": 330,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73eed9",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73eeea",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x73ef71",
+   "kind": "this",
+   "off": 0,
+   "slot": 122,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7409d6",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7411c0",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7415bd",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7419e3",
+   "kind": "member",
+   "off": 1444,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741a57",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741a6d",
+   "kind": "this",
+   "off": 0,
+   "slot": 124,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741b22",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741b40",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741b97",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741ba4",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741bc7",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741be5",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741c54",
+   "kind": "this",
+   "off": 0,
+   "slot": 97,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741d60",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741db8",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741dda",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741dec",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741e5c",
+   "kind": "this",
+   "off": 0,
+   "slot": 158,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741e6e",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x741e80",
+   "kind": "this",
+   "off": 0,
+   "slot": 157,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7431f1",
+   "kind": "this",
+   "off": 0,
+   "slot": 254,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x743a5c",
+   "kind": "this",
+   "off": 0,
+   "slot": 163,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7440dd",
+   "kind": "this",
+   "off": 0,
+   "slot": 110,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7442df",
+   "kind": "member",
+   "off": 1652,
+   "slot": 32,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x744a1b",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x744ad7",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x744ba4",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x744bf1",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x744dab",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7450ce",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7451e5",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x745896",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7459ad",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x745d6b",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x745eb2",
+   "kind": "member",
+   "off": 1416,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7463c9",
+   "kind": "member",
+   "off": 1736,
+   "slot": 245,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7468f4",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74693d",
+   "kind": "member",
+   "off": 1652,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x746a96",
+   "kind": "this",
+   "off": 0,
+   "slot": 295,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74a949",
+   "kind": "this",
+   "off": 0,
+   "slot": 109,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74bc30",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74bce1",
+   "kind": "member",
+   "off": 12,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74bdf9",
+   "kind": "this",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x74be84",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 12
+  },
+  {
+   "addr": "0x74eba2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74ebcc",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74ede9",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74ee21",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x74ee73",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x751644",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7516e5",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7533e3",
+   "kind": "this",
+   "off": 0,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75957a",
+   "kind": "member",
+   "off": 4,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7595a6",
+   "kind": "member",
+   "off": 4,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75960b",
+   "kind": "member",
+   "off": 4,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x759648",
+   "kind": "member",
+   "off": 4,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75a173",
+   "kind": "this",
+   "off": 0,
+   "slot": 8,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75a189",
+   "kind": "member",
+   "off": 4,
+   "slot": 10,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b13a",
+   "kind": "member",
+   "off": 12,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b163",
+   "kind": "member",
+   "off": 12,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b16e",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b257",
+   "kind": "member",
+   "off": 12,
+   "slot": 200,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b27f",
+   "kind": "member",
+   "off": 12,
+   "slot": 47,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b28a",
+   "kind": "member",
+   "off": 12,
+   "slot": 33,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b2d2",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75b57d",
+   "kind": "member",
+   "off": 4,
+   "slot": 18,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75b801",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75bb49",
+   "kind": "member",
+   "off": 12,
+   "slot": 125,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75bb7c",
+   "kind": "this",
+   "off": 0,
+   "slot": 18,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75bc97",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75c035",
+   "kind": "this",
+   "off": 0,
+   "slot": 19,
+   "vptr_off": 4
+  },
+  {
+   "addr": "0x75c484",
+   "kind": "member",
+   "off": 12,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75cc01",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75d0de",
+   "kind": "member",
+   "off": 396,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75d0e5",
+   "kind": "member",
+   "off": 424,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75dbf3",
+   "kind": "member",
+   "off": 396,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75dd39",
+   "kind": "member",
+   "off": 424,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x75e46c",
+   "kind": "member",
+   "off": 260,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x76125e",
+   "kind": "member",
+   "off": 496,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7614af",
+   "kind": "member",
+   "off": 496,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x762ca9",
+   "kind": "member",
+   "off": 468,
+   "slot": 44,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x762cb9",
+   "kind": "member",
+   "off": 172,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x763a1e",
+   "kind": "member",
+   "off": 40,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x764d3b",
+   "kind": "member",
+   "off": 24,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x768e4a",
+   "kind": "member",
+   "off": 44,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x769285",
+   "kind": "member",
+   "off": 188,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x76afd2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 44
+  },
+  {
+   "addr": "0x76b66c",
+   "kind": "member",
+   "off": 44,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7708c2",
+   "kind": "this",
+   "off": 0,
+   "slot": 3,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7715d9",
+   "kind": "member",
+   "off": 960,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7740d1",
+   "kind": "member",
+   "off": 8,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7740da",
+   "kind": "member",
+   "off": 8,
+   "slot": 4,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7740e7",
+   "kind": "member",
+   "off": 8,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7752e6",
+   "kind": "this",
+   "off": 0,
+   "slot": 5,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7ac679",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7ac689",
+   "kind": "member",
+   "off": 0,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0749",
+   "kind": "this",
+   "off": 0,
+   "slot": 6,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0757",
+   "kind": "this",
+   "off": 0,
+   "slot": 7,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b076e",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0915",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b09d9",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b09e8",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0a15",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0a24",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0a62",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0a71",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0a9f",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0add",
+   "kind": "this",
+   "off": 0,
+   "slot": 12,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b0aed",
+   "kind": "this",
+   "off": 0,
+   "slot": 13,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b141d",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b1550",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b15b0",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b1665",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b2444",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b248a",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b2516",
+   "kind": "this",
+   "off": 0,
+   "slot": 21,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b254d",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b2593",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b25b9",
+   "kind": "this",
+   "off": 0,
+   "slot": 14,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b35be",
+   "kind": "member",
+   "off": 259408,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b37dd",
+   "kind": "member",
+   "off": 56,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b3823",
+   "kind": "member",
+   "off": 32,
+   "slot": 2,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b3b99",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b3da4",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b3efe",
+   "kind": "this",
+   "off": 0,
+   "slot": 9,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7b3fb9",
+   "kind": "this",
+   "off": 0,
+   "slot": 22,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7ba112",
+   "kind": "this",
+   "off": 0,
+   "slot": 17,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7ba6d5",
+   "kind": "this",
+   "off": 0,
+   "slot": 23,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7bae2a",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7bae3d",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7bae50",
+   "kind": "this",
+   "off": 0,
+   "slot": 11,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7bc02a",
+   "kind": "this",
+   "off": 0,
+   "slot": 30,
+   "vptr_off": 0
+  },
+  {
+   "addr": "0x7dce4e",
+   "kind": "member",
+   "off": 8,
+   "slot": 2,
+   "vptr_off": 0
+  }
+ ]
+}
