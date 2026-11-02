@@ -155,6 +155,33 @@ def build_universe(use_evidence=True, prune_dead=False):
     malias = jload("anchors/mangled_alias.json", {})
     r2c = {k: v["canon"] for k, v in (align.get("rtti_to_canon") or {}).items()}
 
+    # ---- 二进制验证类宇宙（用户指令 2026-11-02）----
+    # 验证法：gamemd.exe 文件字节包含 ".?AV<名>@@"（RTTI type descriptor 是编译器
+    # 生成的 ASCII，与我们/IDA 后来的任何命名无关）。三类处置：
+    #   (a) dead 表里但二进制存在 -> 恢复（当初被"无函数证据"启发式误杀）；
+    #   (b) class_db 完全缺失 -> 新增（RTTI 证明存在，只是从未进宇宙）；
+    #   (c) 排序：新增/恢复 最前，二进制验证过的活类次之，未验证的往后靠
+    #       （无名类可能只是没有命名而不是没有解出 —— 候选枚举/贪心平局时优先真类）。
+    _bin_uni = jload("anchors/universe_binary_classes.json", {})
+    _restored = _added = 0
+    if _bin_uni:
+        _full_db = jload("anchors/class_db.json")["classes"]
+        for _nm in (_bin_uni.get("restore_from_dead") or []):
+            if _nm not in db and _nm in _full_db:
+                db[_nm] = _full_db[_nm]
+                _restored += 1
+        for _nm in (_bin_uni.get("add_new") or []):
+            if _nm not in db:
+                db[_nm] = _full_db.get(_nm) or {}
+                _added += 1
+        _ver = [c for c in (_bin_uni.get("verified_alive") or []) if c in db]
+        _front = [c for c in ((_bin_uni.get("add_new") or []) + (_bin_uni.get("restore_from_dead") or []))
+                  if c in db]
+        _rest = [c for c in db if c not in set(_front) | set(_ver)]
+        db = {c: db[c] for c in (_front + _ver + _rest)}
+        print("[universe] binary-verified: restored=%d added=%d verified_first=%d unverifiable_last=%d"
+              % (_restored, _added, len(_ver), len(_rest)), flush=True)
+
     names = list(db.keys())
     idx = {nm: i for i, nm in enumerate(names)}
     n = len(names)
@@ -2298,6 +2325,21 @@ def main():
     # 类型来源：class_layouts 成员 type + member_types.json 的 Class+0xNN 记录。
     _c11b_exact = _c11b_containers = _c11b_unres = _c11b_nocont = 0
     _decl11b = {}
+    # 次级装表 = 精确成员类型：ctor 在 this+N 装 X 的表 => 该偏移的子对象运行时类
+    # 就是 X（新构造，不可能是指定类型的派生）。优先于声明类型（声明只是上界）。
+    _inst_pairs11 = {}
+    try:
+        for _e0 in (jload("anchors/install_derived_edges.json", {}) or {}).get("edges") or []:
+            if (_e0 or {}).get("kind") != "member":
+                continue
+            _ci0 = resolve(_e0.get("cls"))
+            _xi0 = resolve(_e0.get("sub"))
+            _off0 = _e0.get("off")
+            if _ci0 is not None and _xi0 is not None and isinstance(_off0, int):
+                _inst_pairs11.setdefault((_ci0, _off0), _xi0)
+    except Exception:
+        _inst_pairs11 = {}
+    _c11b0_n = 0
     try:
         _lay11b = jload("tools/class_layouts.json", {}) or {}
         _mt11b = jload("anchors/member_types.json", {}) or {}
@@ -2350,6 +2392,15 @@ def main():
                 _oc = int(_pc[3])
             except ValueError:
                 continue
+        _xi0 = _inst_pairs11.get((_cic, _oc))
+        if _xi0 is not None:
+            if not (exact.get(_eidc) and any(_ci != _xi0 for _ci, _s in exact[_eidc])):
+                exact[_eidc].append((_xi0, "C11b0:install"))
+                exact_count["C11"] += 1
+                census["C11"] += 1
+                _c11b_exact += 1
+                _c11b0_n += 1
+            continue
         _tic = _decl11b.get((_cic, _oc))
         if _tic is None:
             _c11b_unres += 1
@@ -2360,7 +2411,9 @@ def main():
         fam["C11"][_eidc] = fam["C11"].get(_eidc, FULL) & _m11b
         census["C11"] += 1
         _c11b_exact += 1
-    print("[C11b] member-type exact=%d (containers=%d unresolved_type=%d no_container=%d)"
+    print("[C11b] install-exact=%d declared-mask total=%d (containers=%d unresolved_type=%d no_container=%d)"
+          % (_c11b0_n, _c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
+    print("[C11b] (legacy line) exact=%d (containers=%d unresolved_type=%d no_container=%d)"
           % (_c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
 
     # ---------------- C18：二进制偏移签名匹配 ----------------
@@ -3559,6 +3612,31 @@ def main():
         _n_mt_pairs11 = len(_member_pairs) - _n_after_layouts11
     except Exception:
         _member_pairs = {}
+
+    # ---- B0：次级装表派生成员类型（install_derived_edges.json）----
+    # 构造函数在 this+N 装 X 的 vtable = 该偏移处新构造了一个 X 子对象，
+    # 其运行时类就是 X（精确，不是静态上界）。继承边（3 条，已与 RTTI 互证）
+    # 不进成员表；成员边进 _member_pairs 值域。
+    _n_b0 = 0
+    try:
+        _ied = (jload("anchors/install_derived_edges.json", {}) or {}).get("edges") or []
+        for _e0 in _ied:
+            if (_e0 or {}).get("kind") != "member":
+                continue
+            _ci0 = resolve(_e0.get("cls"))
+            _xi0 = resolve(_e0.get("sub"))
+            if _ci0 is None or _xi0 is None or _ci0 == _xi0:
+                continue
+            _off0 = _e0.get("off")
+            if not isinstance(_off0, int):
+                continue
+            _s0 = _member_pairs.setdefault((_ci0, _off0), set())
+            if _xi0 not in _s0:
+                _s0.add(_xi0)
+                _n_b0 += 1
+    except Exception as _e0:
+        print("[C11] install-derived member types skipped: %s" % _e0, flush=True)
+    print("[C11] install-derived member types added: %d" % _n_b0, flush=True)
 
     # ---- B：二进制派生成员类型 ----
     # 人肉鉴定依据「+0xNN 处存的是 X 类」。声明侧（layouts/member_types）之外，

@@ -1,0 +1,786 @@
+{
+ "meta": {
+  "source": "this_installs off>0: ctor installs a subobject vtable at this+N",
+  "semantics": "a freshly constructed subobject's runtime class IS the table's owner (exact, not an upper bound)",
+  "cross_validation": "3 edges match RTTI base arrays (inheritance+MI offsets); 70 are by-value container members"
+ },
+ "edges": [
+  {
+   "cls": "?$DynamicVectorClass@PAVMapStage@@",
+   "sub": "?$DynamicVectorClass@PAVMSSfxEntry@@@@",
+   "off": 68,
+   "kind": "member",
+   "site": "0x5CEE2F"
+  },
+  {
+   "cls": "?$VectorClass@PAVMapStage@@",
+   "sub": "?$VectorClass@PAVMSAnimEntry@@@@",
+   "off": 44,
+   "kind": "member",
+   "site": "0x5CEE93"
+  },
+  {
+   "cls": "?$VectorClass@PAVMapStage@@",
+   "sub": "?$VectorClass@PAVMSSfxEntry@@@@",
+   "off": 68,
+   "kind": "member",
+   "site": "0x5CEE70"
+  },
+  {
+   "cls": "?$VectorClass@PAVPlanningMemberClass@@",
+   "sub": "?$VectorClass@PAVPlanningBranchClass@@@@",
+   "off": 32,
+   "kind": "member",
+   "site": "0x63DA6C"
+  },
+  {
+   "cls": "BuildingClass",
+   "sub": "?$DynamicVectorClass@PAVInfantryClass@@@@",
+   "off": 1644,
+   "kind": "member",
+   "site": "0x43B6DB"
+  },
+  {
+   "cls": "BuildingClass",
+   "sub": "?$DynamicVectorClass@PAVInfantryClass@@@@",
+   "off": 1668,
+   "kind": "member",
+   "site": "0x43B709"
+  },
+  {
+   "cls": "BuildingTypeClass",
+   "sub": "?$VectorClass@V?$TPoint3D@H@@@@",
+   "off": 6020,
+   "kind": "member",
+   "site": "0x45E54E"
+  },
+  {
+   "cls": "BuildingTypeClass",
+   "sub": "?$VectorClass@V?$TPoint3D@H@@@@",
+   "off": 6020,
+   "kind": "member",
+   "site": "0x45E70D"
+  },
+  {
+   "cls": "Campaign@WorldDominationTour",
+   "sub": "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@",
+   "off": 24,
+   "kind": "member",
+   "site": "0x765614"
+  },
+  {
+   "cls": "CaptureManagerClass",
+   "sub": "?$DynamicVectorClass@PAUControlNode@@@@",
+   "off": 36,
+   "kind": "member",
+   "site": "0x4717EF"
+  },
+  {
+   "cls": "CaptureManagerClass",
+   "sub": "?$DynamicVectorClass@PAUControlNode@@@@",
+   "off": 36,
+   "kind": "member",
+   "site": "0x4718AB"
+  },
+  {
+   "cls": "CaptureManagerClass",
+   "sub": "?$VectorClass@PAUControlNode@@@@",
+   "off": 36,
+   "kind": "member",
+   "site": "0x472A2B"
+  },
+  {
+   "cls": "ColorListClass",
+   "sub": "?$DynamicVectorClass@H@@",
+   "off": 372,
+   "kind": "member",
+   "site": "0x4887B1"
+  },
+  {
+   "cls": "ConnectionPointClass",
+   "sub": "?$DynamicVectorClass@UtagCONNECTDATA@@@@",
+   "off": 28,
+   "kind": "member",
+   "site": "0x4A08A9"
+  },
+  {
+   "cls": "FactoryClass",
+   "sub": "?$DynamicVectorClass@PBVTechnoTypeClass@@@@",
+   "off": 64,
+   "kind": "member",
+   "site": "0x4C98E6"
+  },
+  {
+   "cls": "FactoryClass",
+   "sub": "?$VectorClass@PBVTechnoTypeClass@@@@",
+   "off": 64,
+   "kind": "member",
+   "site": "0x4CA83B"
+  },
+  {
+   "cls": "FoggedObjectClass",
+   "sub": "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@@@",
+   "off": 92,
+   "kind": "member",
+   "site": "0x4D08F5"
+  },
+  {
+   "cls": "GScreenClass",
+   "sub": "?$VectorClass@PAVCellClass@@@@",
+   "off": 312,
+   "kind": "member",
+   "site": "0x56520B"
+  },
+  {
+   "cls": "GScreenClass",
+   "sub": "?$DynamicVectorClass@VCell@@@@",
+   "off": 4444,
+   "kind": "member",
+   "site": "0x565246"
+  },
+  {
+   "cls": "GraphicMenuShortcutItem",
+   "sub": "?$VectorClass@I@@",
+   "off": 16,
+   "kind": "member",
+   "site": "0x4F3F6E"
+  },
+  {
+   "cls": "HouseClass",
+   "sub": "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@@@",
+   "off": 364,
+   "kind": "member",
+   "site": "0x4F75D2"
+  },
+  {
+   "cls": "HouseClass",
+   "sub": "?$VectorClass@PAVSuperClass@@@@",
+   "off": 596,
+   "kind": "member",
+   "site": "0x4F759B"
+  },
+  {
+   "cls": "HouseClass",
+   "sub": "?$VectorClass@UAngerStruct@@@@",
+   "off": 22020,
+   "kind": "member",
+   "site": "0x4F7472"
+  },
+  {
+   "cls": "HouseClass",
+   "sub": "?$VectorClass@UScoutStruct@@@@",
+   "off": 22044,
+   "kind": "member",
+   "site": "0x4F743B"
+  },
+  {
+   "cls": "HouseClass",
+   "sub": "BaseClass",
+   "off": 22272,
+   "kind": "member",
+   "site": "0x4F73CA"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$TypeList@PBVInfantryTypeClass@@@@",
+   "off": 332,
+   "kind": "member",
+   "site": "0x51165D"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVInfantryTypeClass@@@@",
+   "off": 332,
+   "kind": "member",
+   "site": "0x511786"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVInfantryTypeClass@@@@",
+   "off": 332,
+   "kind": "member",
+   "site": "0x512846"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$TypeList@PBVUnitTypeClass@@@@",
+   "off": 360,
+   "kind": "member",
+   "site": "0x511667"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVUnitTypeClass@@@@",
+   "off": 360,
+   "kind": "member",
+   "site": "0x51174F"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVUnitTypeClass@@@@",
+   "off": 360,
+   "kind": "member",
+   "site": "0x51280F"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$TypeList@PBVAircraftTypeClass@@@@",
+   "off": 388,
+   "kind": "member",
+   "site": "0x511671"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVAircraftTypeClass@@@@",
+   "off": 388,
+   "kind": "member",
+   "site": "0x51171A"
+  },
+  {
+   "cls": "HouseTypeClass",
+   "sub": "?$VectorClass@PBVAircraftTypeClass@@@@",
+   "off": 388,
+   "kind": "member",
+   "site": "0x5127D8"
+  },
+  {
+   "cls": "INIClass",
+   "sub": "GenericList",
+   "off": 12,
+   "kind": "member",
+   "site": "0x52571E"
+  },
+  {
+   "cls": "INISection@INIClass",
+   "sub": "GenericList",
+   "off": 16,
+   "kind": "member",
+   "site": "0x52AC1A"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 3664,
+   "kind": "member",
+   "site": "0x523ACB"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 3664,
+   "kind": "member",
+   "site": "0x524E6B"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 3692,
+   "kind": "member",
+   "site": "0x523A94"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 3692,
+   "kind": "member",
+   "site": "0x524E34"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$TypeList@H@@",
+   "off": 3720,
+   "kind": "member",
+   "site": "0x52399E"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 3720,
+   "kind": "member",
+   "site": "0x523A5F"
+  },
+  {
+   "cls": "InfantryTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 3720,
+   "kind": "member",
+   "site": "0x524DFF"
+  },
+  {
+   "cls": "IsometricTileTypeClass",
+   "sub": "?$VectorClass@PAG@@",
+   "off": 676,
+   "kind": "member",
+   "site": "0x544B9C"
+  },
+  {
+   "cls": "ListClass",
+   "sub": "?$VectorClass@PBG@@",
+   "off": 52,
+   "kind": "member",
+   "site": "0x557673"
+  },
+  {
+   "cls": "ListClass",
+   "sub": "?$VectorClass@PBG@@",
+   "off": 52,
+   "kind": "member",
+   "site": "0x5580D3"
+  },
+  {
+   "cls": "Map@WorldDominationTour",
+   "sub": "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@",
+   "off": 44,
+   "kind": "member",
+   "site": "0x76819F"
+  },
+  {
+   "cls": "Map@WorldDominationTour",
+   "sub": "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@@@",
+   "off": 188,
+   "kind": "member",
+   "site": "0x76816B"
+  },
+  {
+   "cls": "MapClass",
+   "sub": "?$VectorClass@UZoneConnectionClass@@@@",
+   "off": 80,
+   "kind": "member",
+   "site": "0x565442"
+  },
+  {
+   "cls": "MapClass",
+   "sub": "?$VectorClass@PAVCellClass@@@@",
+   "off": 312,
+   "kind": "member",
+   "site": "0x5653A1"
+  },
+  {
+   "cls": "MapClass",
+   "sub": "?$VectorClass@PAVCellClass@@@@",
+   "off": 312,
+   "kind": "member",
+   "site": "0x56511D"
+  },
+  {
+   "cls": "MapClass",
+   "sub": "?$DynamicVectorClass@VCell@@@@",
+   "off": 4444,
+   "kind": "member",
+   "site": "0x565157"
+  },
+  {
+   "cls": "MultiplayerGameMode",
+   "sub": "?$DynamicVectorClass@PAVMultiplayerTeam@@@@",
+   "off": 8,
+   "kind": "member",
+   "site": "0x5D5B80"
+  },
+  {
+   "cls": "ParticleTypeClass",
+   "sub": "?$VectorClass@VRGBClass@@@@",
+   "off": 696,
+   "kind": "member",
+   "site": "0x645A0E"
+  },
+  {
+   "cls": "RadarClass",
+   "sub": "?$VectorClass@VCell@@@@",
+   "off": 4644,
+   "kind": "member",
+   "site": "0x652C92"
+  },
+  {
+   "cls": "RadarClass",
+   "sub": "?$VectorClass@VCell@@@@",
+   "off": 4644,
+   "kind": "member",
+   "site": "0x658832"
+  },
+  {
+   "cls": "RadarClass",
+   "sub": "?$VectorClass@VPoint2D@@@@",
+   "off": 4700,
+   "kind": "member",
+   "site": "0x652C5B"
+  },
+  {
+   "cls": "RadarClass",
+   "sub": "?$VectorClass@VPoint2D@@@@",
+   "off": 4700,
+   "kind": "member",
+   "site": "0x6587FB"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "MissionClass",
+   "off": 4,
+   "kind": "inheritance",
+   "site": "0x65AF18"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "MissionClass",
+   "off": 8,
+   "kind": "inheritance",
+   "site": "0x65AF1F"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "MissionClass",
+   "off": 12,
+   "kind": "inheritance",
+   "site": "0x65AF26"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "?$VectorClass@PAVTechnoClass@@@@",
+   "off": 224,
+   "kind": "member",
+   "site": "0x65A7ED"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "?$VectorClass@PAVTechnoClass@@@@",
+   "off": 224,
+   "kind": "member",
+   "site": "0x65A77C"
+  },
+  {
+   "cls": "RadioClass",
+   "sub": "?$VectorClass@PAVTechnoClass@@@@",
+   "off": 224,
+   "kind": "member",
+   "site": "0x65AED4"
+  },
+  {
+   "cls": "ReferenceCounted",
+   "sub": "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@@@",
+   "off": 188,
+   "kind": "member",
+   "site": "0x76808F"
+  },
+  {
+   "cls": "SideClass",
+   "sub": "?$TypeList@H@@",
+   "off": 152,
+   "kind": "member",
+   "site": "0x6A458C"
+  },
+  {
+   "cls": "SideClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 152,
+   "kind": "member",
+   "site": "0x6A49A5"
+  },
+  {
+   "cls": "SlaveManagerClass",
+   "sub": "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@@@",
+   "off": 56,
+   "kind": "member",
+   "site": "0x6AF37E"
+  },
+  {
+   "cls": "SwizzleManagerClass",
+   "sub": "?$VectorClass@VSwizzlePointerClass@@@@",
+   "off": 4,
+   "kind": "member",
+   "site": "0x6CF209"
+  },
+  {
+   "cls": "SwizzleManagerClass",
+   "sub": "?$VectorClass@VSwizzlePointerClass@@@@",
+   "off": 28,
+   "kind": "member",
+   "site": "0x6CF1E6"
+  },
+  {
+   "cls": "TabClass",
+   "sub": "INoticeSink",
+   "off": 21784,
+   "kind": "member",
+   "site": "0x5BE9BD"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "MissionClass",
+   "off": 4,
+   "kind": "inheritance",
+   "site": "0x6F477B"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "RadioClass",
+   "off": 4,
+   "kind": "inheritance",
+   "site": "0x6F4727"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "MissionClass",
+   "off": 8,
+   "kind": "inheritance",
+   "site": "0x6F4782"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "RadioClass",
+   "off": 8,
+   "kind": "inheritance",
+   "site": "0x6F472E"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "MissionClass",
+   "off": 12,
+   "kind": "inheritance",
+   "site": "0x6F4789"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "RadioClass",
+   "off": 12,
+   "kind": "inheritance",
+   "site": "0x6F4735"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "?$VectorClass@PAVTechnoClass@@@@",
+   "off": 224,
+   "kind": "member",
+   "site": "0x6F4742"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 1088,
+   "kind": "member",
+   "site": "0x6F46E5"
+  },
+  {
+   "cls": "TechnoClass",
+   "sub": "?$VectorClass@PAVAbstractClass@@@@",
+   "off": 1112,
+   "kind": "member",
+   "site": "0x6F46AE"
+  },
+  {
+   "cls": "TechnoTypeClass",
+   "sub": "?$VectorClass@PBVVoxelAnimTypeClass@@@@",
+   "off": 788,
+   "kind": "member",
+   "site": "0x711E38"
+  },
+  {
+   "cls": "TechnoTypeClass",
+   "sub": "?$VectorClass@PBVBuildingTypeClass@@@@",
+   "off": 1000,
+   "kind": "member",
+   "site": "0x711DCD"
+  },
+  {
+   "cls": "TiberiumClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 196,
+   "kind": "member",
+   "site": "0x721A09"
+  },
+  {
+   "cls": "UDPInterfaceClass",
+   "sub": "?$VectorClass@PAE@@",
+   "off": 258872,
+   "kind": "member",
+   "site": "0x7B4266"
+  },
+  {
+   "cls": "UDPInterfaceClass",
+   "sub": "?$VectorClass@PAE@@",
+   "off": 258872,
+   "kind": "member",
+   "site": "0x7B2F46"
+  },
+  {
+   "cls": "UDPInterfaceClass",
+   "sub": "?$VectorClass@PAE@@",
+   "off": 259408,
+   "kind": "member",
+   "site": "0x7B422F"
+  },
+  {
+   "cls": "UDPInterfaceClass",
+   "sub": "?$VectorClass@PAE@@",
+   "off": 259408,
+   "kind": "member",
+   "site": "0x7B2F0F"
+  },
+  {
+   "cls": "WDTState",
+   "sub": "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@@@",
+   "off": 44,
+   "kind": "member",
+   "site": "0x76ACAB"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 260,
+   "kind": "member",
+   "site": "0x75D35F"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 260,
+   "kind": "member",
+   "site": "0x75E63F"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@PBVVoxelAnimTypeClass@@@@",
+   "off": 396,
+   "kind": "member",
+   "site": "0x75D328"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@PBVVoxelAnimTypeClass@@@@",
+   "off": 396,
+   "kind": "member",
+   "site": "0x75E608"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 424,
+   "kind": "member",
+   "site": "0x75D2F3"
+  },
+  {
+   "cls": "WarheadTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 424,
+   "kind": "member",
+   "site": "0x75E5D1"
+  },
+  {
+   "cls": "WaveClass",
+   "sub": "?$DynamicVectorClass@PAVCellClass@@@@",
+   "off": 496,
+   "kind": "member",
+   "site": "0x75EC90"
+  },
+  {
+   "cls": "WaveClass",
+   "sub": "?$DynamicVectorClass@PAVCellClass@@@@",
+   "off": 496,
+   "kind": "member",
+   "site": "0x75EA25"
+  },
+  {
+   "cls": "WaveClass",
+   "sub": "?$VectorClass@PAVCellClass@@@@",
+   "off": 496,
+   "kind": "member",
+   "site": "0x75EC74"
+  },
+  {
+   "cls": "WaveClass",
+   "sub": "?$VectorClass@PAVCellClass@@@@",
+   "off": 496,
+   "kind": "member",
+   "site": "0x75E9FE"
+  },
+  {
+   "cls": "WaypointPathClass",
+   "sub": "?$DynamicVectorClass@VWaypointClass@@@@",
+   "off": 40,
+   "kind": "member",
+   "site": "0x76374E"
+  },
+  {
+   "cls": "WaypointPathClass",
+   "sub": "?$DynamicVectorClass@VWaypointClass@@@@",
+   "off": 40,
+   "kind": "member",
+   "site": "0x763832"
+  },
+  {
+   "cls": "WaypointPathClass",
+   "sub": "?$VectorClass@VWaypointClass@@@@",
+   "off": 40,
+   "kind": "member",
+   "site": "0x763E92"
+  },
+  {
+   "cls": "WeaponTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 188,
+   "kind": "member",
+   "site": "0x772042"
+  },
+  {
+   "cls": "WeaponTypeClass",
+   "sub": "?$VectorClass@H@@",
+   "off": 216,
+   "kind": "member",
+   "site": "0x77200B"
+  },
+  {
+   "cls": "WeaponTypeClass",
+   "sub": "?$TypeList@PBVAnimTypeClass@@@@",
+   "off": 244,
+   "kind": "member",
+   "site": "0x771F1E"
+  },
+  {
+   "cls": "WeaponTypeClass",
+   "sub": "?$VectorClass@PBVAnimTypeClass@@@@",
+   "off": 244,
+   "kind": "member",
+   "site": "0x771FD4"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 8,
+   "kind": "member",
+   "site": "0x7B1B2B"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 8,
+   "kind": "member",
+   "site": "0x7B27FB"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 32,
+   "kind": "member",
+   "site": "0x7B1B06"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 32,
+   "kind": "member",
+   "site": "0x7B27D6"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 56,
+   "kind": "member",
+   "site": "0x7B1AE1"
+  },
+  {
+   "cls": "WinsockInterfaceClass",
+   "sub": "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@@@",
+   "off": 56,
+   "kind": "member",
+   "site": "0x7B27B1"
+  }
+ ]
+}

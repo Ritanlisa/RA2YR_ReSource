@@ -53,14 +53,14 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 564,
-  "K_upper": 564,
-  "lower_bound": 564,
-  "constrained_clusters": 21902,
-  "free_clusters": 29048,
+  "K": 566,
+  "K_upper": 566,
+  "lower_bound": 566,
+  "constrained_clusters": 21913,
+  "free_clusters": 29037,
   "conflicts": 0,
   "c1_gaps": 0,
-  "universe": 1400,
+  "universe": 1435,
   "entities": 52265
  },
  "family_table": [
@@ -69,20 +69,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 7953,
-   "clusters_pinned": 7953,
-   "clusters_free": 42997,
-   "pinned_classes": 517,
-   "forced_classes": 517,
+   "clusters_constrained": 7983,
+   "clusters_pinned": 7983,
+   "clusters_free": 42967,
+   "pinned_classes": 518,
+   "forced_classes": 518,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 517,
-   "K_upper": 517,
-   "K_total": 517,
-   "K_greedy": 517,
-   "delta_forced": 517,
-   "delta_K": 517,
-   "lower_bound": 517,
+   "K": 518,
+   "K_upper": 518,
+   "K_total": 518,
+   "K_greedy": 518,
+   "delta_forced": 518,
+   "delta_K": 518,
+   "lower_bound": 518,
    "merges": 0,
    "bad_cover": 0
   },
@@ -91,20 +91,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 7953,
-   "clusters_pinned": 7953,
-   "clusters_free": 42997,
-   "pinned_classes": 517,
-   "forced_classes": 517,
+   "clusters_constrained": 7983,
+   "clusters_pinned": 7983,
+   "clusters_free": 42967,
+   "pinned_classes": 518,
+   "forced_classes": 518,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 517,
-   "K_upper": 517,
-   "K_total": 517,
-   "K_greedy": 517,
+   "K": 518,
+   "K_upper": 518,
+   "K_total": 518,
+   "K_greedy": 518,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 517,
+   "lower_bound": 518,
    "merges": 0,
    "bad_cover": 0
   },
@@ -113,20 +113,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2252,
-   "clusters_constrained": 9136,
-   "clusters_pinned": 7953,
-   "clusters_free": 41814,
-   "pinned_classes": 517,
-   "forced_classes": 517,
+   "clusters_constrained": 9141,
+   "clusters_pinned": 7983,
+   "clusters_free": 41809,
+   "pinned_classes": 518,
+   "forced_classes": 518,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 517,
-   "K_upper": 517,
-   "K_total": 517,
-   "K_greedy": 517,
+   "K": 518,
+   "K_upper": 518,
+   "K_total": 518,
+   "K_greedy": 518,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 517,
+   "lower_bound": 518,
    "merges": 0,
    "bad_cover": 0
   },
@@ -135,20 +135,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 10380,
-   "clusters_pinned": 9219,
-   "clusters_free": 40570,
-   "pinned_classes": 535,
-   "forced_classes": 535,
+   "clusters_constrained": 10385,
+   "clusters_pinned": 9249,
+   "clusters_free": 40565,
+   "pinned_classes": 537,
+   "forced_classes": 537,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 535,
-   "K_upper": 535,
-   "K_total": 535,
-   "K_greedy": 535,
-   "delta_forced": 18,
-   "delta_K": 18,
-   "lower_bound": 535,
+   "K": 537,
+   "K_upper": 537,
+   "K_total": 537,
+   "K_greedy": 537,
+   "delta_forced": 19,
+   "delta_K": 19,
+   "lower_bound": 537,
    "merges": 0,
    "bad_cover": 0
   },
@@ -157,20 +157,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 11171,
-   "clusters_pinned": 9360,
-   "clusters_free": 39779,
-   "pinned_classes": 548,
-   "forced_classes": 548,
+   "clusters_constrained": 11176,
+   "clusters_pinned": 9390,
+   "clusters_free": 39774,
+   "pinned_classes": 550,
+   "forced_classes": 550,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 550,
-   "K_upper": 550,
-   "K_total": 550,
-   "K_greedy": 550,
+   "K": 552,
+   "K_upper": 552,
+   "K_total": 552,
+   "K_greedy": 552,
    "delta_forced": 13,
    "delta_K": 15,
-   "lower_bound": 550,
+   "lower_bound": 552,
    "merges": 0,
    "bad_cover": 0
   },
@@ -179,20 +179,20 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 11245,
-   "clusters_pinned": 9360,
-   "clusters_free": 39705,
-   "pinned_classes": 548,
-   "forced_classes": 548,
+   "clusters_constrained": 11250,
+   "clusters_pinned": 9390,
+   "clusters_free": 39700,
+   "pinned_classes": 550,
+   "forced_classes": 550,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 550,
-   "K_upper": 550,
-   "K_total": 550,
-   "K_greedy": 550,
+   "K": 552,
+   "K_upper": 552,
+   "K_total": 552,
+   "K_greedy": 552,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 550,
+   "lower_bound": 552,
    "merges": 0,
    "bad_cover": 0
   },
@@ -201,20 +201,20 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 11317,
-   "clusters_pinned": 9360,
-   "clusters_free": 39633,
-   "pinned_classes": 548,
-   "forced_classes": 548,
+   "clusters_constrained": 11322,
+   "clusters_pinned": 9390,
+   "clusters_free": 39628,
+   "pinned_classes": 550,
+   "forced_classes": 550,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 550,
-   "K_upper": 550,
-   "K_total": 550,
-   "K_greedy": 550,
+   "K": 552,
+   "K_upper": 552,
+   "K_total": 552,
+   "K_greedy": 552,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 550,
+   "lower_bound": 552,
    "merges": 0,
    "bad_cover": 0
   },
@@ -223,53 +223,9 @@
    "desc": "global object identity",
    "evidence": 158,
    "entities_touched": 158,
-   "clusters_constrained": 11466,
-   "clusters_pinned": 9514,
-   "clusters_free": 39484,
-   "pinned_classes": 557,
-   "forced_classes": 557,
-   "conflicts": 0,
-   "c1_gaps": 0,
-   "K": 559,
-   "K_upper": 559,
-   "K_total": 559,
-   "K_greedy": 559,
-   "delta_forced": 9,
-   "delta_K": 9,
-   "lower_bound": 559,
-   "merges": 0,
-   "bad_cover": 0
-  },
-  {
-   "family": "C9",
-   "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
-   "evidence": 6384,
-   "entities_touched": 6384,
-   "clusters_constrained": 11910,
-   "clusters_pinned": 9514,
-   "clusters_free": 39040,
-   "pinned_classes": 557,
-   "forced_classes": 557,
-   "conflicts": 0,
-   "c1_gaps": 0,
-   "K": 559,
-   "K_upper": 559,
-   "K_total": 559,
-   "K_greedy": 559,
-   "delta_forced": 0,
-   "delta_K": 0,
-   "lower_bound": 559,
-   "merges": 0,
-   "bad_cover": 0
-  },
-  {
-   "family": "C10",
-   "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 12285,
-   "entities_touched": 12285,
-   "clusters_constrained": 19775,
-   "clusters_pinned": 9524,
-   "clusters_free": 31175,
+   "clusters_constrained": 11471,
+   "clusters_pinned": 9544,
+   "clusters_free": 39479,
    "pinned_classes": 559,
    "forced_classes": 559,
    "conflicts": 0,
@@ -278,31 +234,75 @@
    "K_upper": 561,
    "K_total": 561,
    "K_greedy": 561,
+   "delta_forced": 9,
+   "delta_K": 9,
+   "lower_bound": 561,
+   "merges": 0,
+   "bad_cover": 0
+  },
+  {
+   "family": "C9",
+   "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
+   "evidence": 6384,
+   "entities_touched": 6384,
+   "clusters_constrained": 11915,
+   "clusters_pinned": 9544,
+   "clusters_free": 39035,
+   "pinned_classes": 559,
+   "forced_classes": 559,
+   "conflicts": 0,
+   "c1_gaps": 0,
+   "K": 561,
+   "K_upper": 561,
+   "K_total": 561,
+   "K_greedy": 561,
+   "delta_forced": 0,
+   "delta_K": 0,
+   "lower_bound": 561,
+   "merges": 0,
+   "bad_cover": 0
+  },
+  {
+   "family": "C10",
+   "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
+   "evidence": 12291,
+   "entities_touched": 12291,
+   "clusters_constrained": 19782,
+   "clusters_pinned": 9553,
+   "clusters_free": 31168,
+   "pinned_classes": 561,
+   "forced_classes": 561,
+   "conflicts": 0,
+   "c1_gaps": 0,
+   "K": 563,
+   "K_upper": 563,
+   "K_total": 563,
+   "K_greedy": 563,
    "delta_forced": 2,
    "delta_K": 2,
-   "lower_bound": 561,
+   "lower_bound": 563,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
-   "evidence": 443,
-   "entities_touched": 4214,
-   "clusters_constrained": 21902,
-   "clusters_pinned": 9602,
-   "clusters_free": 29048,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "evidence": 460,
+   "entities_touched": 4222,
+   "clusters_constrained": 21913,
+   "clusters_pinned": 9619,
+   "clusters_free": 29037,
+   "pinned_classes": 564,
+   "forced_classes": 564,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 566,
+   "K_upper": 566,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 3,
    "delta_K": 3,
-   "lower_bound": 564,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   },
@@ -311,20 +311,20 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 21902,
-   "clusters_pinned": 9602,
-   "clusters_free": 29048,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "clusters_constrained": 21913,
+   "clusters_pinned": 9619,
+   "clusters_free": 29037,
+   "pinned_classes": 564,
+   "forced_classes": 564,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 566,
+   "K_upper": 566,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 564,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   },
@@ -333,20 +333,20 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 21902,
-   "clusters_pinned": 9602,
-   "clusters_free": 29048,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "clusters_constrained": 21913,
+   "clusters_pinned": 9619,
+   "clusters_free": 29037,
+   "pinned_classes": 564,
+   "forced_classes": 564,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 566,
+   "K_upper": 566,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 564,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   },
@@ -355,20 +355,20 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 21902,
-   "clusters_pinned": 9602,
-   "clusters_free": 29048,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "clusters_constrained": 21913,
+   "clusters_pinned": 9619,
+   "clusters_free": 29037,
+   "pinned_classes": 564,
+   "forced_classes": 564,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 566,
+   "K_upper": 566,
+   "K_total": 566,
+   "K_greedy": 566,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 564,
+   "lower_bound": 566,
    "merges": 0,
    "bad_cover": 0
   }
@@ -1462,408 +1462,408 @@
    {
     "func": "0x0049A200",
     "export": [
-     "BlitPlainXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitPlainXlatAlpha_ushort"
     ],
     "committed": [
-     "BlitPlainXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitPlainXlatAlpha_ushort"
     ]
    },
    {
     "func": "0x0049A240",
     "export": [
-     "BlitTransXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlpha_ushort"
     ],
     "committed": [
-     "BlitTransXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlpha_ushort"
     ]
    },
    {
     "func": "0x0049A280",
     "export": [
-     "BlitTransZRemapXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlpha_ushort"
     ],
     "committed": [
-     "BlitTransZRemapXlatAlpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlpha_ushort"
     ]
    },
    {
     "func": "0x0049A2C0",
     "export": [
-     "BlitTransLucent75Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75Alpha_ushort"
     ],
     "committed": [
-     "BlitTransLucent75Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75Alpha_ushort"
     ]
    },
    {
     "func": "0x0049A300",
     "export": [
-     "BlitTransLucent50Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50Alpha_ushort"
     ],
     "committed": [
-     "BlitTransLucent50Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50Alpha_ushort"
     ]
    },
    {
     "func": "0x0049A340",
     "export": [
-     "BlitTransLucent25Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25Alpha_ushort"
     ],
     "committed": [
-     "BlitTransLucent25Alpha_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25Alpha_ushort"
     ]
    },
    {
     "func": "0x0049A420",
     "export": [
-     "BlitTransXlatAlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlphaZRead_ushort"
     ],
     "committed": [
-     "BlitTransXlatAlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049A460",
     "export": [
-     "BlitTransZRemapXlatAlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlphaZRead_ushort"
     ],
     "committed": [
-     "BlitTransZRemapXlatAlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049A4A0",
     "export": [
-     "BlitTransLucent75AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZRead_ushort"
     ],
     "committed": [
-     "BlitTransLucent75AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049A4E0",
     "export": [
-     "BlitTransLucent50AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZRead_ushort"
     ],
     "committed": [
-     "BlitTransLucent50AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049A520",
     "export": [
-     "BlitTransLucent25AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZRead_ushort"
     ],
     "committed": [
-     "BlitTransLucent25AlphaZRead_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049A560",
     "export": [
-     "BlitTransLucent75AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "BlitTransLucent75AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049A5A0",
     "export": [
-     "BlitTransLucent50AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "BlitTransLucent50AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049A5E0",
     "export": [
-     "BlitTransLucent25AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "BlitTransLucent25AlphaZReadWarp_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049A620",
     "export": [
-     "BlitTransXlatAlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlphaZReadWrite_ushort"
     ],
     "committed": [
-     "BlitTransXlatAlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransXlatAlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049A660",
     "export": [
-     "BlitTransZRemapXlatAlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlphaZReadWrite_ushort"
     ],
     "committed": [
-     "BlitTransZRemapXlatAlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransZRemapXlatAlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049A6A0",
     "export": [
-     "BlitTransLucent75AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "BlitTransLucent75AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent75AlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049A6E0",
     "export": [
-     "BlitTransLucent50AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "BlitTransLucent50AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent50AlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049A720",
     "export": [
-     "BlitTransLucent25AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "BlitTransLucent25AlphaZReadWrite_ushort",
-     "Blitter"
+     "Blitter",
+     "BlitTransLucent25AlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049AA00",
     "export": [
-     "RLEBlitTransXlatAlpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlpha_ushort"
     ],
     "committed": [
-     "RLEBlitTransXlatAlpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlpha_ushort"
     ]
    },
    {
     "func": "0x0049AA40",
     "export": [
-     "RLEBlitTransZRemapXlatAlpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlpha_ushort"
     ],
     "committed": [
-     "RLEBlitTransZRemapXlatAlpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlpha_ushort"
     ]
    },
    {
     "func": "0x0049AA80",
     "export": [
-     "RLEBlitTransLucent75Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75Alpha_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent75Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75Alpha_ushort"
     ]
    },
    {
     "func": "0x0049AAC0",
     "export": [
-     "RLEBlitTransLucent50Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50Alpha_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent50Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50Alpha_ushort"
     ]
    },
    {
     "func": "0x0049AB00",
     "export": [
-     "RLEBlitTransLucent25Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25Alpha_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent25Alpha_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25Alpha_ushort"
     ]
    },
    {
     "func": "0x0049AB40",
     "export": [
-     "RLEBlitTransXlatAlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlphaZRead_ushort"
     ],
     "committed": [
-     "RLEBlitTransXlatAlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049AB80",
     "export": [
-     "RLEBlitTransZRemapXlatAlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlphaZRead_ushort"
     ],
     "committed": [
-     "RLEBlitTransZRemapXlatAlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049ABC0",
     "export": [
-     "RLEBlitTransLucent75AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZRead_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent75AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049AC00",
     "export": [
-     "RLEBlitTransLucent50AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZRead_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent50AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049AC40",
     "export": [
-     "RLEBlitTransLucent25AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZRead_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent25AlphaZRead_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZRead_ushort"
     ]
    },
    {
     "func": "0x0049AC80",
     "export": [
-     "RLEBlitTransLucent75AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent75AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049ACC0",
     "export": [
-     "RLEBlitTransLucent50AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent50AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049AD00",
     "export": [
-     "RLEBlitTransLucent25AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZReadWarp_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent25AlphaZReadWarp_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZReadWarp_ushort"
     ]
    },
    {
     "func": "0x0049AD40",
     "export": [
-     "RLEBlitTransXlatAlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlphaZReadWrite_ushort"
     ],
     "committed": [
-     "RLEBlitTransXlatAlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransXlatAlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049AD80",
     "export": [
-     "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort"
     ],
     "committed": [
-     "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049ADC0",
     "export": [
-     "RLEBlitTransLucent75AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent75AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent75AlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049AE00",
     "export": [
-     "RLEBlitTransLucent50AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent50AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent50AlphaZReadWrite_ushort"
     ]
    },
    {
     "func": "0x0049AE40",
     "export": [
-     "RLEBlitTransLucent25AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZReadWrite_ushort"
     ],
     "committed": [
-     "RLEBlitTransLucent25AlphaZReadWrite_ushort",
-     "RLEBlitter"
+     "RLEBlitter",
+     "RLEBlitTransLucent25AlphaZReadWrite_ushort"
     ]
    },
    {
@@ -2704,17 +2704,18 @@
    {
     "func": "0x007B8730",
     "export": [
-     "MouseClass",
+     "Mouse",
      "WWMouseClass"
     ],
     "committed": [
+     "Mouse",
      "MouseClass"
     ]
    },
    {
     "func": "0x007B88D0",
     "export": [
-     "MouseClass",
+     "Mouse",
      "WWMouseClass"
     ],
     "committed": [
