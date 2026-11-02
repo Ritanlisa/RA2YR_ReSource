@@ -1,0 +1,1757 @@
+{
+ "meta": {
+  "source": "IDA backward walkback of bare-register this-edges (same basic block, conservative: stop at jumps; caller-saved regs stop at calls)",
+  "yield": "924/16302 resolved; member=14 this=226 global=49 stack=635(offset not captured)",
+  "note": "the reaching-def gap is structural: loads occur far from call sites / cross blocks"
+ },
+ "edges": [
+  {
+   "addr": "0x4010e0",
+   "reg": "esi",
+   "callee": "0x4071c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4019c0",
+   "reg": "esi",
+   "callee": "0x431b80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4028db",
+   "reg": "edi",
+   "callee": "0x407450",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4033d1",
+   "reg": "esi",
+   "callee": "0x407450",
+   "kind": "this"
+  },
+  {
+   "addr": "0x404390",
+   "reg": "edi",
+   "callee": "0x4072c0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x405acd",
+   "reg": "esi",
+   "callee": "0x4047b0",
+   "kind": "member",
+   "off": 192
+  },
+  {
+   "addr": "0x412883",
+   "reg": "esi",
+   "callee": "0x40bd00",
+   "kind": "global"
+  },
+  {
+   "addr": "0x4165ec",
+   "reg": "esi",
+   "callee": "0x4d7330",
+   "kind": "this"
+  },
+  {
+   "addr": "0x41a9f6",
+   "reg": "esi",
+   "callee": "0x6fc0b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x41b126",
+   "reg": "ebp",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x41cc3b",
+   "reg": "esi",
+   "callee": "0x712170",
+   "kind": "this"
+  },
+  {
+   "addr": "0x427d1b",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x431f66",
+   "reg": "esi",
+   "callee": "0x431f70",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4326e9",
+   "reg": "esi",
+   "callee": "0x432750",
+   "kind": "this"
+  },
+  {
+   "addr": "0x43705f",
+   "reg": "esi",
+   "callee": "0x5f4ec0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x44f84a",
+   "reg": "esi",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x459481",
+   "reg": "esi",
+   "callee": "0x451e40",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4595d4",
+   "reg": "edi",
+   "callee": "0x451e40",
+   "kind": "this"
+  },
+  {
+   "addr": "0x45faf3",
+   "reg": "eax",
+   "callee": "0x7c9ff0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x46befb",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x46cceb",
+   "reg": "ebx",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x46d4d6",
+   "reg": "eax",
+   "callee": "0x5e8760",
+   "kind": "this"
+  },
+  {
+   "addr": "0x473a1f",
+   "reg": "esi",
+   "callee": "0x47ae10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x473a6b",
+   "reg": "esi",
+   "callee": "0x47ae10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47422b",
+   "reg": "esi",
+   "callee": "0x525a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47433a",
+   "reg": "esi",
+   "callee": "0x525a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4747f6",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x474a03",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x475013",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x475083",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4754e5",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47596f",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x476ff5",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x477085",
+   "reg": "esi",
+   "callee": "0x528a10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47a591",
+   "reg": "edx",
+   "callee": "0x47a3f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47a9e9",
+   "reg": "esi",
+   "callee": "0x47ae10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47aa1e",
+   "reg": "esi",
+   "callee": "0x47ae10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x47f54b",
+   "reg": "esi",
+   "callee": "0x480110",
+   "kind": "this"
+  },
+  {
+   "addr": "0x480a9c",
+   "reg": "esi",
+   "callee": "0x47fb90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x48509e",
+   "reg": "edi",
+   "callee": "0x47b3a0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4855c5",
+   "reg": "ebp",
+   "callee": "0x47fb90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x486e90",
+   "reg": "esi",
+   "callee": "0x47fb90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4882ad",
+   "reg": "esi",
+   "callee": "0x557230",
+   "kind": "this"
+  },
+  {
+   "addr": "0x48878d",
+   "reg": "esi",
+   "callee": "0x557230",
+   "kind": "this"
+  },
+  {
+   "addr": "0x48e543",
+   "reg": "esi",
+   "callee": "0x4e12f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x49db23",
+   "reg": "ebp",
+   "callee": "0x4741f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4a204b",
+   "reg": "esi",
+   "callee": "0x631d10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4a53d5",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4a57c6",
+   "reg": "esi",
+   "callee": "0x48e620",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4acae3",
+   "reg": "esi",
+   "callee": "0x568300",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4acbcb",
+   "reg": "esi",
+   "callee": "0x578290",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4ae6fe",
+   "reg": "esi",
+   "callee": "0x551b90",
+   "kind": "global"
+  },
+  {
+   "addr": "0x4ae72e",
+   "reg": "esi",
+   "callee": "0x551b20",
+   "kind": "global"
+  },
+  {
+   "addr": "0x4aec3d",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4aecad",
+   "reg": "esi",
+   "callee": "0x631c80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4b4e3f",
+   "reg": "esi",
+   "callee": "0x4c2fc0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4b4f35",
+   "reg": "esi",
+   "callee": "0x5566a0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4b4f55",
+   "reg": "esi",
+   "callee": "0x556700",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4b4f75",
+   "reg": "esi",
+   "callee": "0x5566d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4b560e",
+   "reg": "esi",
+   "callee": "0x4c30b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4bb60f",
+   "reg": "esi",
+   "callee": "0x4bb620",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4c2fe5",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4d5685",
+   "reg": "esi",
+   "callee": "0x6fcd40",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4d717f",
+   "reg": "esi",
+   "callee": "0x6f6ca0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4d8f61",
+   "reg": "esi",
+   "callee": "0x7013a0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4dddf9",
+   "reg": "edi",
+   "callee": "0x700600",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4e148a",
+   "reg": "esi",
+   "callee": "0x556730",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4e2524",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4e2a74",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4e3ba9",
+   "reg": "ebp",
+   "callee": "0x5e9b20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4e7cfe",
+   "reg": "esi",
+   "callee": "0x5b3700",
+   "kind": "global"
+  },
+  {
+   "addr": "0x4f1cc6",
+   "reg": "esi",
+   "callee": "0x526810",
+   "kind": "this"
+  },
+  {
+   "addr": "0x4f4c57",
+   "reg": "eax",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5018e7",
+   "reg": "esi",
+   "callee": "0x501a20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x51186e",
+   "reg": "ebx",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x51cbb1",
+   "reg": "esi",
+   "callee": "0x4d82b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x51df77",
+   "reg": "esi",
+   "callee": "0x6fdd50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x51fb16",
+   "reg": "ebp",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5240c4",
+   "reg": "esi",
+   "callee": "0x712170",
+   "kind": "this"
+  },
+  {
+   "addr": "0x52790e",
+   "reg": "esi",
+   "callee": "0x5276d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5281a7",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5285ec",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x528a03",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x529814",
+   "reg": "esi",
+   "callee": "0x528660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x52a63a",
+   "reg": "esi",
+   "callee": "0x526e80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x52abef",
+   "reg": "eax",
+   "callee": "0x7c8b3d",
+   "kind": "member",
+   "off": 64
+  },
+  {
+   "addr": "0x52ae7d",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x52ffb0",
+   "reg": "esi",
+   "callee": "0x778210",
+   "kind": "this"
+  },
+  {
+   "addr": "0x535a90",
+   "reg": "esi",
+   "callee": "0x431b80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x53e748",
+   "reg": "esi",
+   "callee": "0x53e770",
+   "kind": "this"
+  },
+  {
+   "addr": "0x53f458",
+   "reg": "esi",
+   "callee": "0x48be60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x53faba",
+   "reg": "esi",
+   "callee": "0x53f430",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55208e",
+   "reg": "esi",
+   "callee": "0x631c80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5523be",
+   "reg": "esi",
+   "callee": "0x631c80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55247e",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55261e",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x555dbe",
+   "reg": "esi",
+   "callee": "0x48e740",
+   "kind": "this"
+  },
+  {
+   "addr": "0x557258",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55c33e",
+   "reg": "esi",
+   "callee": "0x631c80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55c6fe",
+   "reg": "esi",
+   "callee": "0x631c80",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55c7ae",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x55c9be",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x565a2b",
+   "reg": "edi",
+   "callee": "0x4f42d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x567e1f",
+   "reg": "ebx",
+   "callee": "0x6d20e0",
+   "kind": "member",
+   "off": 8
+  },
+  {
+   "addr": "0x567e40",
+   "reg": "ebx",
+   "callee": "0x6d20e0",
+   "kind": "member",
+   "off": 8
+  },
+  {
+   "addr": "0x5684bb",
+   "reg": "eax",
+   "callee": "0x47e8a0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5688eb",
+   "reg": "eax",
+   "callee": "0x47ea90",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5716c7",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x571bf3",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x571d41",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x576dad",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5772d9",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x577430",
+   "reg": "eax",
+   "callee": "0x47dd70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x57813d",
+   "reg": "edi",
+   "callee": "0x578290",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5783b9",
+   "reg": "edi",
+   "callee": "0x578460",
+   "kind": "this"
+  },
+  {
+   "addr": "0x579640",
+   "reg": "edi",
+   "callee": "0x579b70",
+   "kind": "this"
+  },
+  {
+   "addr": "0x57a45d",
+   "reg": "edi",
+   "callee": "0x57b210",
+   "kind": "this"
+  },
+  {
+   "addr": "0x57a46a",
+   "reg": "edi",
+   "callee": "0x57b210",
+   "kind": "this"
+  },
+  {
+   "addr": "0x58137b",
+   "reg": "eax",
+   "callee": "0x47d2b0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5814d4",
+   "reg": "eax",
+   "callee": "0x70d4a0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x581a7a",
+   "reg": "eax",
+   "callee": "0x47d2b0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x581be6",
+   "reg": "eax",
+   "callee": "0x70d4a0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x581f6a",
+   "reg": "ebx",
+   "callee": "0x581f90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x582dda",
+   "reg": "esi",
+   "callee": "0x486750",
+   "kind": "global"
+  },
+  {
+   "addr": "0x584eb3",
+   "reg": "edi",
+   "callee": "0x486750",
+   "kind": "global"
+  },
+  {
+   "addr": "0x585207",
+   "reg": "edi",
+   "callee": "0x486750",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5855df",
+   "reg": "esi",
+   "callee": "0x578290",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5866f7",
+   "reg": "esi",
+   "callee": "0x578290",
+   "kind": "this"
+  },
+  {
+   "addr": "0x586816",
+   "reg": "esi",
+   "callee": "0x47c550",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5873cf",
+   "reg": "eax",
+   "callee": "0x487720",
+   "kind": "global"
+  },
+  {
+   "addr": "0x58886e",
+   "reg": "eax",
+   "callee": "0x47c620",
+   "kind": "global"
+  },
+  {
+   "addr": "0x588afe",
+   "reg": "ebp",
+   "callee": "0x578290",
+   "kind": "this"
+  },
+  {
+   "addr": "0x590994",
+   "reg": "ebp",
+   "callee": "0x590fd0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5970c4",
+   "reg": "ebx",
+   "callee": "0x734e60",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5a3600",
+   "reg": "esi",
+   "callee": "0x5a2f50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5ae5b8",
+   "reg": "esi",
+   "callee": "0x5d1b30",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5b40ee",
+   "reg": "eax",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5b42a0",
+   "reg": "eax",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5b4470",
+   "reg": "eax",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5b6e08",
+   "reg": "eax",
+   "callee": "0x7ca489",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5ba9d8",
+   "reg": "eax",
+   "callee": "0x7ca489",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5bdf9e",
+   "reg": "ebp",
+   "callee": "0x6ac5d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c0df3",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c1494",
+   "reg": "edi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c5d03",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c5de6",
+   "reg": "esi",
+   "callee": "0x5d6620",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c6173",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c9403",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5c949a",
+   "reg": "esi",
+   "callee": "0x5d8c50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5ca653",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5cae3a",
+   "reg": "esi",
+   "callee": "0x5d8c50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5caeda",
+   "reg": "esi",
+   "callee": "0x5d8c50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5cb3c3",
+   "reg": "esi",
+   "callee": "0x5d5b60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5d2451",
+   "reg": "edi",
+   "callee": "0x5d1e70",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5dabb5",
+   "reg": "eax",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5daf7a",
+   "reg": "eax",
+   "callee": "0x5e8dc0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5dbed5",
+   "reg": "ebx",
+   "callee": "0x735120",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5e2630",
+   "reg": "ebx",
+   "callee": "0x7b54b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5e2680",
+   "reg": "ebx",
+   "callee": "0x7b71b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5e39d7",
+   "reg": "edi",
+   "callee": "0x735120",
+   "kind": "global"
+  },
+  {
+   "addr": "0x5e657a",
+   "reg": "eax",
+   "callee": "0x4739f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5e9e17",
+   "reg": "ebx",
+   "callee": "0x4e6030",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5ef124",
+   "reg": "esi",
+   "callee": "0x48be60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5ef2a7",
+   "reg": "esi",
+   "callee": "0x48bee0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5f92eb",
+   "reg": "ebx",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5fd6c2",
+   "reg": "ebp",
+   "callee": "0x5257c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x5fe78b",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x622731",
+   "reg": "esi",
+   "callee": "0x608070",
+   "kind": "this"
+  },
+  {
+   "addr": "0x626106",
+   "reg": "esi",
+   "callee": "0x6612c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x627678",
+   "reg": "ebx",
+   "callee": "0x7dcfc4",
+   "kind": "this"
+  },
+  {
+   "addr": "0x62d9c8",
+   "reg": "esi",
+   "callee": "0x7258d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x62e099",
+   "reg": "edi",
+   "callee": "0x5f4d30",
+   "kind": "this"
+  },
+  {
+   "addr": "0x632015",
+   "reg": "esi",
+   "callee": "0x5c6960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x632a85",
+   "reg": "esi",
+   "callee": "0x5c8e40",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6356b4",
+   "reg": "esi",
+   "callee": "0x6343c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x639769",
+   "reg": "ebp",
+   "callee": "0x705d20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x63981f",
+   "reg": "ebx",
+   "callee": "0x705d20",
+   "kind": "member",
+   "off": 0
+  },
+  {
+   "addr": "0x63983a",
+   "reg": "ebx",
+   "callee": "0x705d20",
+   "kind": "member",
+   "off": 0
+  },
+  {
+   "addr": "0x63fdd7",
+   "reg": "esi",
+   "callee": "0x63f960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x63fe47",
+   "reg": "esi",
+   "callee": "0x63f960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6442eb",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x644f6d",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x64bed5",
+   "reg": "edx",
+   "callee": "0x7c8e17",
+   "kind": "this"
+  },
+  {
+   "addr": "0x652c19",
+   "reg": "edi",
+   "callee": "0x655a90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x652d4c",
+   "reg": "esi",
+   "callee": "0x4a8850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6587b9",
+   "reg": "edi",
+   "callee": "0x655a90",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6596cc",
+   "reg": "eax",
+   "callee": "0x4cac40",
+   "kind": "member",
+   "off": 100
+  },
+  {
+   "addr": "0x659781",
+   "reg": "eax",
+   "callee": "0x4cac40",
+   "kind": "member",
+   "off": 100
+  },
+  {
+   "addr": "0x659a14",
+   "reg": "eax",
+   "callee": "0x4cac40",
+   "kind": "member",
+   "off": 100
+  },
+  {
+   "addr": "0x659e85",
+   "reg": "eax",
+   "callee": "0x4cac40",
+   "kind": "member",
+   "off": 100
+  },
+  {
+   "addr": "0x659f96",
+   "reg": "eax",
+   "callee": "0x4cac40",
+   "kind": "member",
+   "off": 100
+  },
+  {
+   "addr": "0x65b32a",
+   "reg": "esi",
+   "callee": "0x7258d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x65b54a",
+   "reg": "esi",
+   "callee": "0x65bb50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x661c8e",
+   "reg": "esi",
+   "callee": "0x6c9850",
+   "kind": "this"
+  },
+  {
+   "addr": "0x679c9e",
+   "reg": "edi",
+   "callee": "0x5b3760",
+   "kind": "global"
+  },
+  {
+   "addr": "0x689eab",
+   "reg": "esi",
+   "callee": "0x6b8ca0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x690189",
+   "reg": "edi",
+   "callee": "0x690360",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6918bb",
+   "reg": "esi",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6922f4",
+   "reg": "esi",
+   "callee": "0x6d0680",
+   "kind": "this"
+  },
+  {
+   "addr": "0x69d972",
+   "reg": "esi",
+   "callee": "0x69d8c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x69dd49",
+   "reg": "esi",
+   "callee": "0x723e60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x69e9cb",
+   "reg": "esi",
+   "callee": "0x631d10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6a4cee",
+   "reg": "esi",
+   "callee": "0x69dcf0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a4ddb",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a531c",
+   "reg": "edi",
+   "callee": "0x6a5090",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6a5326",
+   "reg": "edi",
+   "callee": "0x6a5130",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6a5968",
+   "reg": "esi",
+   "callee": "0x69de00",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a5ea8",
+   "reg": "esi",
+   "callee": "0x69de70",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a6ea1",
+   "reg": "esi",
+   "callee": "0x69deb0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a7a8c",
+   "reg": "edi",
+   "callee": "0x69e010",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6a7e2d",
+   "reg": "edi",
+   "callee": "0x5565f0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6abd42",
+   "reg": "esi",
+   "callee": "0x6a5130",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6abe88",
+   "reg": "esi",
+   "callee": "0x4e1a20",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6abe8f",
+   "reg": "esi",
+   "callee": "0x4e1960",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6b1b44",
+   "reg": "esi",
+   "callee": "0x4e2500",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6b4c96",
+   "reg": "ebp",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6b56eb",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6b94f0",
+   "reg": "ebx",
+   "callee": "0x7b54b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6c6560",
+   "reg": "esi",
+   "callee": "0x4e12f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6cea3b",
+   "reg": "ebp",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6cfbae",
+   "reg": "esi",
+   "callee": "0x69dcf0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6d0fe1",
+   "reg": "esi",
+   "callee": "0x69de00",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6d3d50",
+   "reg": "ebp",
+   "callee": "0x6d9b50",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6d5fa8",
+   "reg": "esi",
+   "callee": "0x6d8640",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6d601f",
+   "reg": "esi",
+   "callee": "0x6d8640",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6d6e20",
+   "reg": "edx",
+   "callee": "0x421b60",
+   "kind": "global"
+  },
+  {
+   "addr": "0x6dabec",
+   "reg": "eax",
+   "callee": "0x6dc4c0",
+   "kind": "member",
+   "off": 180
+  },
+  {
+   "addr": "0x6e843b",
+   "reg": "esi",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6edb68",
+   "reg": "esi",
+   "callee": "0x6ebad0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x6f10ab",
+   "reg": "esi",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7013c1",
+   "reg": "esi",
+   "callee": "0x5b3650",
+   "kind": "this"
+  },
+  {
+   "addr": "0x70e370",
+   "reg": "esi",
+   "callee": "0x70e4b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x71218d",
+   "reg": "ebp",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x71b12f",
+   "reg": "edi",
+   "callee": "0x4521c0",
+   "kind": "member",
+   "off": 40
+  },
+  {
+   "addr": "0x71ca87",
+   "reg": "edi",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x71debb",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x71ff41",
+   "reg": "esi",
+   "callee": "0x723e60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x721a6b",
+   "reg": "esi",
+   "callee": "0x410a60",
+   "kind": "this"
+  },
+  {
+   "addr": "0x723e82",
+   "reg": "esi",
+   "callee": "0x48e520",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7283db",
+   "reg": "esi",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x72a458",
+   "reg": "esi",
+   "callee": "0x4e12f0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x72e848",
+   "reg": "edi",
+   "callee": "0x72e730",
+   "kind": "this"
+  },
+  {
+   "addr": "0x72ea04",
+   "reg": "edi",
+   "callee": "0x72e450",
+   "kind": "this"
+  },
+  {
+   "addr": "0x72eae4",
+   "reg": "edi",
+   "callee": "0x72e450",
+   "kind": "this"
+  },
+  {
+   "addr": "0x734713",
+   "reg": "eax",
+   "callee": "0x7caf30",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7432b3",
+   "reg": "esi",
+   "callee": "0x526960",
+   "kind": "this"
+  },
+  {
+   "addr": "0x746d6a",
+   "reg": "esi",
+   "callee": "0x710460",
+   "kind": "this"
+  },
+  {
+   "addr": "0x74763f",
+   "reg": "edi",
+   "callee": "0x712170",
+   "kind": "this"
+  },
+  {
+   "addr": "0x74b06e",
+   "reg": "esi",
+   "callee": "0x5f92d0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x74d5fc",
+   "reg": "esi",
+   "callee": "0x5f5390",
+   "kind": "this"
+  },
+  {
+   "addr": "0x751114",
+   "reg": "edi",
+   "callee": "0x526810",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7522ac",
+   "reg": "esi",
+   "callee": "0x4072c0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x752420",
+   "reg": "edi",
+   "callee": "0x4073c0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x7526b7",
+   "reg": "esi",
+   "callee": "0x4073c0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x75287f",
+   "reg": "edi",
+   "callee": "0x4073c0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x754b59",
+   "reg": "esi",
+   "callee": "0x645c30",
+   "kind": "global"
+  },
+  {
+   "addr": "0x754b89",
+   "reg": "esi",
+   "callee": "0x645c30",
+   "kind": "global"
+  },
+  {
+   "addr": "0x75590b",
+   "reg": "esi",
+   "callee": "0x5ae860",
+   "kind": "global"
+  },
+  {
+   "addr": "0x755cf5",
+   "reg": "esi",
+   "callee": "0x755db0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7667b9",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x766b9d",
+   "reg": "esi",
+   "callee": "0x767300",
+   "kind": "this"
+  },
+  {
+   "addr": "0x766f88",
+   "reg": "esi",
+   "callee": "0x65d480",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76789b",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x767c29",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76b7a5",
+   "reg": "esi",
+   "callee": "0x65d480",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76c059",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76c5a7",
+   "reg": "ebp",
+   "callee": "0x7681e0",
+   "kind": "member",
+   "off": 1116
+  },
+  {
+   "addr": "0x76cdc4",
+   "reg": "esi",
+   "callee": "0x76ea20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76e30c",
+   "reg": "esi",
+   "callee": "0x76ea20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76e770",
+   "reg": "esi",
+   "callee": "0x76ea20",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76f048",
+   "reg": "esi",
+   "callee": "0x65d480",
+   "kind": "this"
+  },
+  {
+   "addr": "0x76f6d9",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x77003b",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x770d96",
+   "reg": "ebx",
+   "callee": "0x7b5f10",
+   "kind": "this"
+  },
+  {
+   "addr": "0x770e9d",
+   "reg": "esi",
+   "callee": "0x7710b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x779242",
+   "reg": "esi",
+   "callee": "0x7b7140",
+   "kind": "this"
+  },
+  {
+   "addr": "0x77b053",
+   "reg": "esi",
+   "callee": "0x65d660",
+   "kind": "this"
+  },
+  {
+   "addr": "0x77dbc9",
+   "reg": "eax",
+   "callee": "0x7b4620",
+   "kind": "this"
+  },
+  {
+   "addr": "0x78f22b",
+   "reg": "esi",
+   "callee": "0x7350c0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x797c4e",
+   "reg": "esi",
+   "callee": "0x7b4620",
+   "kind": "global"
+  },
+  {
+   "addr": "0x79c53b",
+   "reg": "esi",
+   "callee": "0x7b54b0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7a2367",
+   "reg": "eax",
+   "callee": "0x7c9cc2",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7ac5e9",
+   "reg": "esi",
+   "callee": "0x624130",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7ac649",
+   "reg": "esi",
+   "callee": "0x624130",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7b8331",
+   "reg": "eax",
+   "callee": "0x4335e0",
+   "kind": "global"
+  },
+  {
+   "addr": "0x7b8430",
+   "reg": "eax",
+   "callee": "0x433770",
+   "kind": "global"
+  },
+  {
+   "addr": "0x7ba604",
+   "reg": "esi",
+   "callee": "0x7ba610",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7badaf",
+   "reg": "esi",
+   "callee": "0x7badc0",
+   "kind": "this"
+  },
+  {
+   "addr": "0x7bb03d",
+   "reg": "esi",
+   "callee": "0x7bb050",
+   "kind": "this"
+  }
+ ]
+}

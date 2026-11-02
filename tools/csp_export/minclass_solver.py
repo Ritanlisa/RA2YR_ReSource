@@ -1122,7 +1122,23 @@ def main():
         if _ce and _ce not in ents:
             touch(_ce, _to)
             _callee_touch += 1
-    print("[C10-pre] callee entities created: %d" % _callee_touch, flush=True)
+    _m_touch = 0
+    for _e in raw:
+        if _e.get("type") != "CALL_ARG":
+            continue
+        _fr = _e.get("from")
+        if not (isinstance(_fr, str) and ".member(" in _fr):
+            continue
+        try:
+            _ea_t = int(str(_e.get("addr")), 16)
+        except (TypeError, ValueError):
+            _ea_t = None
+        _me = ent_id(_fr, fn_at(_ea_t) if _ea_t is not None else None)
+        if _me and _me not in ents:
+            touch(_me, _fr)
+            _m_touch += 1
+    print("[C10-pre] callee entities created: %d, member-chain entities created: %d"
+          % (_callee_touch, _m_touch), flush=True)
 
     # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
     # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
@@ -3941,6 +3957,14 @@ def main():
     _c16_param_edges = 0      # C16：目标为被调方参数的 this 传递边（只进 Phase 2）
     _c10_nodes = set()                # G:/S: 连接点实体（可不在 ents；不并簇）
     _c10_drop_callee = 0
+    _regext_by = {}
+    try:
+        for _r in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
+            _a_r = hx(_r.get("addr"))
+            if _a_r is not None:
+                _regext_by[(_a_r, _r.get("reg"))] = _r
+    except Exception:
+        _regext_by = {}
     _call_edges = []
     _call_edges_p1 = []               # Phase 1：洁净寄存器边
     _call_edges_p2 = []               # Phase 2：dirty/global/stack 边（只增不减）
@@ -3953,6 +3977,24 @@ def main():
         _is_param_target = "::param" in _to
         if not (_to.endswith(":this") or _is_param_target):
             continue
+        # 裸寄存器边的 IDA 反向走查改写（anchors/member_callargs_ext.json）：
+        # esi=[this+off] -> member 链形态；esi=this别名 -> this 直传；offset -> 全局
+        try:
+            _ea_rx = int(str(_e.get("addr")), 16)
+        except (TypeError, ValueError):
+            _ea_rx = None
+        _rx = _regext_by.get((_ea_rx, _fr)) if _ea_rx is not None else None
+        if _rx is not None:
+            _k_rx = _rx.get("kind")
+            if _k_rx == "member":
+                _fn_rx = fn_at(_ea_rx)
+                _fr = "0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0))
+            elif _k_rx == "this":
+                _fr = "0x%08X:this" % fn_at(_ea_rx)
+            elif _k_rx == "global":
+                _ga_rx = global_addr(str(_rx.get("sym") or ""))
+                if _ga_rx is not None:
+                    _fr = "offset 0x%08X" % _ga_rx
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
             _c10_drop_callee += 1
@@ -3983,7 +4025,18 @@ def main():
             continue
         # ---- 新分类（X520 CHANGE B）：寄存器/栈槽/全局源全部纳入为连接点 ----
         if ".member(" in _fr:
-            continue                  # C11 已覆盖成员链，重复约束无增益
+            # 成员链节点：C11 约束的是 M 实体↔容器，而 M→被调方的子类型关系
+            # （class(callee) ⊑ 成员类型）此前被整类跳过 —— 2026-11-02 反例研究：
+            # {TClassFactory<X>,X} 族 435 簇正是靠这条被丢掉的约束才能切开。
+            try:
+                _ea_m = int(str(_e.get("addr")), 16)
+            except (TypeError, ValueError):
+                _ea_m = None
+            _cc_m = ent_id(_fr, fn_at(_ea_m) if _ea_m is not None else None)
+            if _cc_m and _cc_m in ents and _cc_m != _ce:
+                _call_edges.append((_cc_m, _ce))
+                _call_edges_p2.append((_cc_m, _ce))
+            continue
         _cc, _kind = None, None
         if _fr.endswith(":this"):
             _cc, _kind = ent_id(_fr), "clean"
