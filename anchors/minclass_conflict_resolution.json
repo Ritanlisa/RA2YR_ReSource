@@ -1,1 +1,154 @@
-[]
+[
+ {
+  "cluster": "P:590FD0:1",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 1026,
+   "C10": 0
+  },
+  "ents": [
+   "T:590970",
+   "T:590FD0",
+   "P:590FD0:1",
+   "P:590FD0:6",
+   "S:590FD0:+0x1c"
+  ],
+  "obs": [
+   "8:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink"
+   ],
+   "C10": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:51BF90:0",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10",
+   "C3"
+  ],
+  "family_sizes": {
+   "C1": 181,
+   "C3": 945,
+   "C10": 2
+  },
+  "ents": [
+   "P:51BF90:0",
+   "S:51BF90:+0x4"
+  ],
+  "obs": [
+   "0:4",
+   "48:4",
+   "68:4",
+   "88:4",
+   "156:4",
+   "283:1",
+   "296:1",
+   "296:4",
+   "320:4",
+   "540:4",
+   "672:4",
+   "680:1",
+   "682:1",
+   "1312:4",
+   "1444:4",
+   "1560:4",
+   "1652:4",
+   "1718:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL",
+    "IPersist",
+    "ISequentialStream"
+   ],
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "C10": [
+    "?$TClassFactory@VCellClass@@",
+    "CellClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC100:+0x18",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC100:+0x18"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:5F9720:3",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 0
+  },
+  "ents": [
+   "P:5F9720:3",
+   "S:5F9720:+0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": []
+  },
+  "exact": {}
+ }
+]

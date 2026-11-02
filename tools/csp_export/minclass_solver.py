@@ -1105,6 +1105,25 @@ def main():
         ents[eid]["raw"].add(raw_id)
         return eid
 
+    # ---- 被调方实体预创建（类方法签名 = 第 6 项值域的缺口）----
+    # C10/C4/C15 都要求实体已存在于 ents；被调函数若自身无成员访问观测，
+    # 其 T: 实体从不创建 —— 实测 31,567 条 :this 边因此丢弃，T: 受约束簇仅 713
+    # （全库 ~10,773 个函数接收 this）。零观测实体是合法变量：只携带真实证据。
+    _callee_touch = 0
+    for _e in raw:
+        if _e.get("type") != "CALL_ARG":
+            continue
+        _to = _e.get("to")
+        if not (isinstance(_to, str) and _to.endswith(":this")):
+            continue
+        if _to.startswith("vtable_slot_"):
+            continue
+        _ce = ent_id(_to)
+        if _ce and _ce not in ents:
+            touch(_ce, _to)
+            _callee_touch += 1
+    print("[C10-pre] callee entities created: %d" % _callee_touch, flush=True)
+
     # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
     # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
     #                     槽位超出该类 primary vtable 实测范围）→ 跳过其
@@ -1964,8 +1983,11 @@ def main():
             exact[eid].append((ci, "C4"))
             exact_count["C4"] += 1
             census["C4"] += 1
-    print("[C4] exact this=%d source_disagreements=%d" % (exact_count["C4"], len(c4_disagree)),
-          flush=True)
+    _c4_noent = sum(1 for aa, rec in src.items()
+                    if (len(rec["export"]) == 1 or (len(rec["export"]) == 0 and len(rec["committed"]) == 1))
+                    and ("T:%X" % aa) not in ents)
+    print("[C4] exact this=%d source_disagreements=%d pinned_no_entity=%d"
+          % (exact_count["C4"], len(c4_disagree), _c4_noent), flush=True)
 
     # ---------------- C5：operator new 长度 EXACT ----------------
     c5_link = []
@@ -3883,6 +3905,7 @@ def main():
     _c10_n_clean = _c10_n_dirty = _c10_n_global = _c10_n_stack = 0
     _c16_param_edges = 0      # C16：目标为被调方参数的 this 传递边（只进 Phase 2）
     _c10_nodes = set()                # G:/S: 连接点实体（可不在 ents；不并簇）
+    _c10_drop_callee = 0
     _call_edges = []
     _call_edges_p1 = []               # Phase 1：洁净寄存器边
     _call_edges_p2 = []               # Phase 2：dirty/global/stack 边（只增不减）
@@ -3897,6 +3920,7 @@ def main():
             continue
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
+            _c10_drop_callee += 1
             continue
         if _is_param_target:
             _c16_param_edges += 1
@@ -3983,6 +4007,7 @@ def main():
           % (_c10_n_clean, _c10_n_dirty, _c10_n_global, _c10_n_stack,
              len(_call_edges), len(_call_edges_p1), len(_call_edges_p2)), flush=True)
 
+    print("[C10] edges dropped (callee entity not in ents): %d" % _c10_drop_callee, flush=True)
     print("[C16] param edges=%d (this-target edges=%d)"
           % (_c16_param_edges, len(_call_edges) - _c16_param_edges), flush=True)
 
@@ -3998,6 +4023,15 @@ def main():
                     _fm = fam[_f].get(_eid)
                     if _fm is not None:
                         _m &= _fm
+                # FIX: exact 钉定（C4 装表 / C15 槽位归属 / C11b0 装表成员）必须作为传播种子。
+                # 原实现只看 fam 掩码：6,500+ 个已钉定函数以 FULL 域参与传播，
+                # _anc_union(FULL)=FULL，被调方一个都收窄不了（T: 受约束簇停在 713）。
+                _ex = exact.get(_eid)
+                if _ex:
+                    _m_ex = 0
+                    for _ci_x, _s_x in _ex:
+                        _m_ex |= (1 << _ci_x)
+                    _m &= _m_ex
                 _d[_eid] = _m
             return _d
 
@@ -4182,7 +4216,9 @@ def main():
             _inter = FULL
             for _f in all_fams:
                 _inter &= _fmasks[_f]
-            if not _inter:
+            # _pfm 感知：族掩码交非空但经 proven-universe 过滤后为空（C10 钉到幽灵类）
+            # 时，solve 视角同样是空域 —— 必须同样标记未知，否则永远不可消解。
+            if not _inter or not _pfm(_inter):
                 # 不仲裁：记录矛盾族集合，该簇答案记为未知（从 constrained 移出）。
                 _unknown_roots.add(_cl.get("root"))
                 _res_ledger.append({

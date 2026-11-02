@@ -53,11 +53,11 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 566,
-  "K_upper": 566,
-  "lower_bound": 566,
-  "constrained_clusters": 21913,
-  "free_clusters": 29037,
+  "K": 569,
+  "K_upper": 569,
+  "lower_bound": 569,
+  "constrained_clusters": 21909,
+  "free_clusters": 29041,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1435,
@@ -265,23 +265,23 @@
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 12291,
-   "entities_touched": 12291,
-   "clusters_constrained": 19782,
-   "clusters_pinned": 9553,
-   "clusters_free": 31168,
-   "pinned_classes": 561,
-   "forced_classes": 561,
-   "conflicts": 0,
+   "evidence": 11444,
+   "entities_touched": 11444,
+   "clusters_constrained": 19698,
+   "clusters_pinned": 10042,
+   "clusters_free": 31248,
+   "pinned_classes": 562,
+   "forced_classes": 562,
+   "conflicts": 4,
    "c1_gaps": 0,
-   "K": 563,
-   "K_upper": 563,
-   "K_total": 563,
-   "K_greedy": 563,
-   "delta_forced": 2,
-   "delta_K": 2,
-   "lower_bound": 563,
-   "merges": 0,
+   "K": 564,
+   "K_upper": 568,
+   "K_total": 564,
+   "K_greedy": 565,
+   "delta_forced": 3,
+   "delta_K": 3,
+   "lower_bound": 564,
+   "merges": 1,
    "bad_cover": 0
   },
   {
@@ -289,20 +289,20 @@
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 460,
    "entities_touched": 4222,
-   "clusters_constrained": 21913,
-   "clusters_pinned": 9619,
+   "clusters_constrained": 21909,
+   "clusters_pinned": 10110,
    "clusters_free": 29037,
-   "pinned_classes": 564,
-   "forced_classes": 564,
-   "conflicts": 0,
+   "pinned_classes": 567,
+   "forced_classes": 567,
+   "conflicts": 4,
    "c1_gaps": 0,
-   "K": 566,
-   "K_upper": 566,
-   "K_total": 566,
-   "K_greedy": 566,
-   "delta_forced": 3,
-   "delta_K": 3,
-   "lower_bound": 566,
+   "K": 569,
+   "K_upper": 573,
+   "K_total": 569,
+   "K_greedy": 569,
+   "delta_forced": 5,
+   "delta_K": 5,
+   "lower_bound": 569,
    "merges": 0,
    "bad_cover": 0
   },
@@ -311,20 +311,20 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5723,
    "entities_touched": 5723,
-   "clusters_constrained": 21913,
-   "clusters_pinned": 9619,
+   "clusters_constrained": 21909,
+   "clusters_pinned": 10110,
    "clusters_free": 29037,
-   "pinned_classes": 564,
-   "forced_classes": 564,
-   "conflicts": 0,
+   "pinned_classes": 567,
+   "forced_classes": 567,
+   "conflicts": 4,
    "c1_gaps": 0,
-   "K": 566,
-   "K_upper": 566,
-   "K_total": 566,
-   "K_greedy": 566,
+   "K": 569,
+   "K_upper": 573,
+   "K_total": 569,
+   "K_greedy": 569,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 566,
+   "lower_bound": 569,
    "merges": 0,
    "bad_cover": 0
   },
@@ -333,20 +333,20 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 21913,
-   "clusters_pinned": 9619,
+   "clusters_constrained": 21909,
+   "clusters_pinned": 10110,
    "clusters_free": 29037,
-   "pinned_classes": 564,
-   "forced_classes": 564,
-   "conflicts": 0,
+   "pinned_classes": 567,
+   "forced_classes": 567,
+   "conflicts": 4,
    "c1_gaps": 0,
-   "K": 566,
-   "K_upper": 566,
-   "K_total": 566,
-   "K_greedy": 566,
+   "K": 569,
+   "K_upper": 573,
+   "K_total": 569,
+   "K_greedy": 569,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 566,
+   "lower_bound": 569,
    "merges": 0,
    "bad_cover": 0
   },
@@ -355,20 +355,20 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 21913,
-   "clusters_pinned": 9619,
+   "clusters_constrained": 21909,
+   "clusters_pinned": 10110,
    "clusters_free": 29037,
-   "pinned_classes": 564,
-   "forced_classes": 564,
-   "conflicts": 0,
+   "pinned_classes": 567,
+   "forced_classes": 567,
+   "conflicts": 4,
    "c1_gaps": 0,
-   "K": 566,
-   "K_upper": 566,
-   "K_total": 566,
-   "K_greedy": 566,
+   "K": 569,
+   "K_upper": 573,
+   "K_total": 569,
+   "K_greedy": 569,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 566,
+   "lower_bound": 569,
    "merges": 0,
    "bad_cover": 0
   }
@@ -381,6 +381,156 @@
     "suspicious_large_offset": 14
    },
    "samples": [
+    {
+     "cluster": "P:7B1DE0:0",
+     "entities": [
+      "T:7B3430",
+      "P:7B1DE0:0"
+     ],
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       258152,
+       1
+      ],
+      [
+       258156,
+       4
+      ],
+      [
+       258864,
+       4
+      ]
+     ],
+     "exact": [
+      "UDPInterfaceClass"
+     ],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "R:4A3840:ecx",
+     "entities": [
+      "T:4A3840"
+     ],
+     "obs": [
+      [
+       98304,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "R:4A3630:ecx",
+     "entities": [
+      "T:4A3630",
+      "RET:4A3630"
+     ],
+     "obs": [
+      [
+       98304,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "R:4A3640:ecx",
+     "entities": [
+      "T:4A3640"
+     ],
+     "obs": [
+      [
+       98304,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "R:4A3660:ecx",
+     "entities": [
+      "T:4A3660"
+     ],
+     "obs": [
+      [
+       98304,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
+     "cluster": "R:665650:ecx",
+     "entities": [
+      "T:665650"
+     ],
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       16,
+       4
+      ],
+      [
+       20,
+       4
+      ],
+      [
+       24,
+       4
+      ],
+      [
+       32,
+       4
+      ],
+      [
+       36,
+       4
+      ],
+      [
+       40,
+       4
+      ],
+      [
+       44,
+       4
+      ],
+      [
+       48,
+       4
+      ]
+     ],
+     "exact": [
+      "RulesClass"
+     ],
+     "cause": "suspicious_large_offset"
+    },
     {
      "cluster": "P:420270:0",
      "entities": [
@@ -488,123 +638,6 @@
      "cause": "suspicious_large_offset"
     },
     {
-     "cluster": "R:4A3630:ecx",
-     "entities": [
-      "T:4A3630",
-      "RET:4A3630"
-     ],
-     "obs": [
-      [
-       98304,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:4A3640:ecx",
-     "entities": [
-      "T:4A3640"
-     ],
-     "obs": [
-      [
-       98304,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:4A3660:ecx",
-     "entities": [
-      "T:4A3660"
-     ],
-     "obs": [
-      [
-       98304,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:4A3840:ecx",
-     "entities": [
-      "T:4A3840"
-     ],
-     "obs": [
-      [
-       98304,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "R:665650:ecx",
-     "entities": [
-      "T:665650"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       4
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       32,
-       4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       40,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       48,
-       4
-      ]
-     ],
-     "exact": [
-      "RulesClass"
-     ],
-     "cause": "suspicious_large_offset"
-    },
-    {
      "cluster": "P:6CC390:0",
      "entities": [
       "P:6CC390:0"
@@ -661,39 +694,6 @@
      ],
      "exact": [],
      "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:7B1DE0:0",
-     "entities": [
-      "P:7B1DE0:0",
-      "T:7B3430"
-     ],
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       258152,
-       1
-      ],
-      [
-       258156,
-       4
-      ],
-      [
-       258864,
-       4
-      ]
-     ],
-     "exact": [
-      "UDPInterfaceClass"
-     ],
-     "cause": "suspicious_large_offset"
     }
    ]
   },
@@ -711,44 +711,64 @@
    },
    "samples": [
     {
-     "entity": "P:4011C0:0",
+     "entity": "T:502D60",
      "obs": [
       [
-       0,
-       1
-      ],
-      [
-       0,
+       52,
        4
       ],
       [
-       20,
+       388,
        4
       ],
       [
-       28,
+       392,
+       4
+      ],
+      [
+       396,
+       4
+      ],
+      [
+       400,
+       4
+      ],
+      [
+       404,
+       4
+      ],
+      [
+       408,
+       4
+      ],
+      [
+       412,
+       4
+      ],
+      [
+       416,
+       4
+      ],
+      [
+       420,
        4
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:4024A0",
+     "entity": "T:5C46E0",
      "obs": [
       [
-       12,
+       4,
+       1
+      ],
+      [
+       84,
        4
       ],
       [
-       144,
-       4
-      ],
-      [
-       148,
-       4
-      ],
-      [
-       152,
+       112,
        4
       ],
       [
@@ -761,10 +781,6 @@
       ],
       [
        164,
-       1
-      ],
-      [
-       164,
        4
       ],
       [
@@ -772,88 +788,50 @@
        4
       ],
       [
-       176,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:402600",
-     "obs": [
-      [
-       164,
+       172,
        1
       ],
       [
-       164,
-       4
-      ],
-      [
-       212,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:402650",
-     "obs": [
-      [
-       164,
+       173,
        1
       ],
       [
-       164,
-       4
-      ],
-      [
-       212,
-       4
+       174,
+       1
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "M:402F60:this:0xf8",
+     "entity": "T:5CB880",
      "obs": [
       [
-       144,
+       4,
        4
       ],
       [
-       148,
+       8,
        4
       ],
       [
-       152,
-       4
-      ],
-      [
-       156,
-       4
-      ],
-      [
-       164,
+       12,
        1
       ],
       [
-       212,
+       16,
        4
       ],
       [
-       360,
+       20,
        4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:404700",
-     "obs": [
+      ],
       [
        24,
-       1
+       4
+      ],
+      [
+       28,
+       4
       ],
       [
        36,
@@ -864,62 +842,34 @@
        4
       ],
       [
-       168,
-       4
-      ],
-      [
-       172,
-       4
-      ],
-      [
-       480,
+       48,
        4
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:4047B0",
+     "entity": "T:5CBDA0",
      "obs": [
       [
-       24,
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
        1
       ],
       [
-       36,
+       16,
        4
       ],
       [
-       172,
+       20,
        4
-      ],
-      [
-       480,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:404DD0",
-     "obs": [
-      [
-       24,
-       1
-      ],
-      [
-       312,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:4052F0",
-     "obs": [
-      [
-       24,
-       1
       ],
       [
        24,
@@ -930,29 +880,29 @@
        4
       ],
       [
-       168,
+       36,
        4
       ],
       [
-       176,
+       40,
        4
       ],
       [
-       312,
-       4
-      ],
-      [
-       632,
+       48,
        4
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:4055C0",
+     "entity": "T:5CE7D0",
      "obs": [
       [
-       24,
+       0,
+       4
+      ],
+      [
+       12,
        1
       ],
       [
@@ -964,25 +914,105 @@
        4
       ],
       [
-       320,
+       36,
        4
       ],
       [
-       324,
+       40,
+       1
+      ],
+      [
+       41,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:4F3720",
+     "obs": [
+      [
+       8,
+       1
+      ],
+      [
+       16,
        4
       ],
       [
-       344,
+       36,
+       4
+      ],
+      [
+       40,
+       4
+      ],
+      [
+       44,
        4
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "M:4055C0:this:0x24",
+     "entity": "T:70D990",
      "obs": [
       [
-       12,
+       0,
+       4
+      ],
+      [
+       20,
+       1
+      ],
+      [
+       129,
+       1
+      ],
+      [
+       372,
+       4
+      ],
+      [
+       380,
+       4
+      ],
+      [
+       520,
+       4
+      ],
+      [
+       524,
+       4
+      ],
+      [
+       540,
+       4
+      ],
+      [
+       1051,
+       1
+      ],
+      [
+       1059,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:7B9A60",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
        4
       ],
       [
@@ -990,406 +1020,660 @@
        1
       ],
       [
-       16,
+       20,
        4
       ],
+      [
+       24,
+       4
+      ],
+      [
+       36,
+       4
+      ],
+      [
+       44,
+       4
+      ],
+      [
+       48,
+       4
+      ],
+      [
+       60,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:4A88C0",
+     "obs": [
+      [
+       4476,
+       4
+      ],
+      [
+       4516,
+       4
+      ],
+      [
+       4520,
+       4
+      ],
+      [
+       4524,
+       4
+      ],
+      [
+       4528,
+       1
+      ],
+      [
+       4529,
+       1
+      ],
+      [
+       4530,
+       1
+      ],
+      [
+       4536,
+       4
+      ],
+      [
+       4559,
+       1
+      ],
+      [
+       4560,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:63F730",
+     "obs": [
+      [
+       5404,
+       4
+      ],
+      [
+       5420,
+       4
+      ],
+      [
+       5424,
+       4
+      ],
+      [
+       5428,
+       4
+      ],
+      [
+       5432,
+       1
+      ],
+      [
+       5436,
+       4
+      ],
+      [
+       5440,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:652DE0",
+     "obs": [
+      [
+       4700,
+       4
+      ],
+      [
+       5292,
+       4
+      ],
+      [
+       5296,
+       4
+      ],
+      [
+       5308,
+       1
+      ],
+      [
+       5309,
+       1
+      ],
+      [
+       5336,
+       1
+      ],
+      [
+       5337,
+       1
+      ],
+      [
+       5372,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:5C1A10",
+     "obs": [
       [
        64,
        4
       ],
       [
-       76,
+       828,
        4
       ],
       [
-       88,
-       4
-      ],
-      [
-       92,
-       4
-      ],
-      [
-       96,
-       4
-      ],
-      [
-       100,
-       4
-      ],
-      [
-       104,
-       4
+       832,
+       1
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "T:4071C0",
+     "entity": "T:4F8440",
      "obs": [
-      [
-       0,
-       1
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "M:407A30:this:0xc0",
-     "obs": [
-      [
-       12,
-       1
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       32,
-       4
-      ],
       [
        36,
        4
       ],
       [
-       128,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "M:407A60:this:0xc0",
-     "obs": [
-      [
-       12,
-       1
-      ],
-      [
-       12,
+       52,
        4
       ],
       [
-       32,
+       60,
        4
-      ],
-      [
-       36,
-       4
-      ],
-      [
-       128,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "P:408610:0",
-     "obs": [
-      [
-       0,
-       2
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       2,
-       2
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       2
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       14,
-       2
-      ],
-      [
-       16,
-       2
-      ],
-      [
-       24,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:40A090",
-     "obs": [
-      [
-       76,
-       4
-      ],
-      [
-       80,
-       2
-      ],
-      [
-       84,
-       2
-      ],
-      [
-       244,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:410170",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       16,
-       4
-      ],
-      [
-       20,
-       1
-      ],
-      [
-       24,
-       4
-      ],
-      [
-       28,
-       4
-      ],
-      [
-       32,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:410800",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       12,
-       4
-      ],
-      [
-       61,
-       1
-      ],
-      [
-       96,
-       4
-      ],
-      [
-       100,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:414310",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       248,
-       4
-      ],
-      [
-       268,
-       4
-      ],
-      [
-       280,
-       4
-      ],
-      [
-       980,
-       1
-      ],
-      [
-       1732,
-       4
-      ],
-      [
-       1737,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "M:414BB0:this:0x2b4",
-     "obs": [
-      [
-       20,
-       1
-      ],
-      [
-       544,
-       4
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "T:415C60",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       764,
-       1
-      ],
-      [
-       764,
-       4
-      ],
-      [
-       1492,
-       4
-      ],
-      [
-       1747,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "M:4190B0:this:0x6c4",
-     "obs": [
-      [
-       968,
-       4
-      ],
-      [
-       972,
-       4
-      ],
-      [
-       1504,
-       4
-      ],
-      [
-       1668,
-       4
-      ],
-      [
-       3580,
-       1
-      ],
-      [
-       3597,
-       1
-      ]
-     ],
-     "cause": "width_mismatch_only"
-    },
-    {
-     "entity": "P:4197C0:0",
-     "obs": [
-      [
-       0,
-       4
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       20,
-       1
       ],
       [
        72,
        4
       ],
       [
-       300,
+       108,
+       4
+      ],
+      [
+       120,
+       4
+      ],
+      [
+       388,
+       4
+      ],
+      [
+       484,
+       4
+      ],
+      [
+       492,
        1
       ],
       [
-       1444,
+       493,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:63FEA0",
+     "obs": [
+      [
+       5388,
+       1
+      ],
+      [
+       5392,
+       4
+      ],
+      [
+       5396,
+       4
+      ],
+      [
+       5400,
+       4
+      ],
+      [
+       5404,
+       4
+      ],
+      [
+       5408,
+       4
+      ],
+      [
+       5412,
+       4
+      ],
+      [
+       5416,
+       4
+      ],
+      [
+       5420,
+       4
+      ],
+      [
+       5424,
        4
       ]
      ],
      "cause": "width_mismatch_only"
     },
     {
-     "entity": "P:41D540:0",
+     "entity": "T:65C420",
      "obs": [
       [
+       0,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       16,
+       4
+      ],
+      [
        20,
+       4
+      ],
+      [
+       24,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:6A7780",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       4528,
        1
       ],
       [
-       660,
+       4529,
+       1
+      ],
+      [
+       21396,
        4
+      ],
+      [
+       21400,
+       4
+      ],
+      [
+       21404,
+       4
+      ],
+      [
+       21413,
+       1
+      ],
+      [
+       21414,
+       1
+      ],
+      [
+       21415,
+       1
+      ],
+      [
+       21780,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:7077C0",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       172,
+       4
+      ],
+      [
+       188,
+       4
+      ],
+      [
+       284,
+       4
+      ],
+      [
+       300,
+       4
+      ],
+      [
+       304,
+       4
+      ],
+      [
+       384,
+       4
+      ],
+      [
+       388,
+       4
+      ],
+      [
+       392,
+       4
+      ],
+      [
+       460,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:53FBD0",
+     "obs": [
+      [
+       4,
+       4
+      ],
+      [
+       32,
+       4
+      ],
+      [
+       36,
+       2
+      ],
+      [
+       184,
+       2
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:65C4B0",
+     "obs": [
+      [
+       0,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       12,
+       4
+      ],
+      [
+       16,
+       4
+      ],
+      [
+       20,
+       4
+      ],
+      [
+       24,
+       1
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:4289D0",
+     "obs": [
+      [
+       664,
+       4
+      ],
+      [
+       680,
+       4
+      ],
+      [
+       684,
+       4
+      ],
+      [
+       688,
+       4
+      ],
+      [
+       692,
+       4
+      ],
+      [
+       696,
+       4
+      ],
+      [
+       700,
+       4
+      ],
+      [
+       704,
+       4
+      ],
+      [
+       720,
+       4
+      ],
+      [
+       724,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:436F40",
+     "obs": [
+      [
+       176,
+       4
+      ],
+      [
+       180,
+       4
+      ],
+      [
+       184,
+       4
+      ],
+      [
+       188,
+       4
+      ],
+      [
+       192,
+       4
+      ],
+      [
+       196,
+       4
+      ],
+      [
+       200,
+       4
+      ],
+      [
+       204,
+       4
+      ],
+      [
+       208,
+       4
+      ],
+      [
+       212,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:454260",
+     "obs": [
+      [
+       1320,
+       4
+      ],
+      [
+       1328,
+       4
+      ],
+      [
+       1332,
+       4
+      ],
+      [
+       1336,
+       4
+      ],
+      [
+       1340,
+       4
+      ],
+      [
+       1344,
+       4
+      ],
+      [
+       1348,
+       4
+      ],
+      [
+       1352,
+       4
+      ],
+      [
+       1360,
+       4
+      ],
+      [
+       1368,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:464B30",
+     "obs": [
+      [
+       3624,
+       4
+      ],
+      [
+       3628,
+       4
+      ],
+      [
+       3632,
+       4
+      ],
+      [
+       3636,
+       4
+      ],
+      [
+       3640,
+       4
+      ],
+      [
+       3644,
+       4
+      ],
+      [
+       3648,
+       4
+      ],
+      [
+       3764,
+       4
+      ],
+      [
+       3768,
+       4
+      ],
+      [
+       3808,
+       4
+      ]
+     ],
+     "cause": "width_mismatch_only"
+    },
+    {
+     "entity": "T:5F6250",
+     "obs": [
+      [
+       48,
+       4
+      ],
+      [
+       52,
+       4
+      ],
+      [
+       108,
+       4
+      ],
+      [
+       116,
+       1
+      ],
+      [
+       128,
+       1
+      ],
+      [
+       129,
+       1
+      ],
+      [
+       131,
+       1
+      ],
+      [
+       132,
+       1
+      ],
+      [
+       140,
+       1
+      ],
+      [
+       141,
+       1
       ]
      ],
      "cause": "width_mismatch_only"
