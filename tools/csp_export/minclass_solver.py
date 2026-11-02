@@ -4500,6 +4500,8 @@ def main():
             with io.open(_fg_dir + "/flowgraph.json", "w") as _fh_fx:
                 json.dump({"edges": [[str(a), str(b)] for (a, b) in _edges_fix],
                            "meta": {"n_edges": len(_edges_fix)}}, _fh_fx)
+            with io.open(_fg_dir + "/ent_universe.json", "w") as _fh_eu:
+                json.dump({"ents": sorted(str(_k) for _k in ents.keys())}, _fh_eu)
         except Exception as _e_fx:
             print("[flowgraph-dump] FAILED: %r" % _e_fx, flush=True)
         _dom_fix = _c10_base_dom(_edges_fix)
