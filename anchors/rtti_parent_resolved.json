@@ -1,0 +1,1568 @@
+{
+ "meta": {
+  "source": "anchors/rtti_base_arrays.json (??_R2 base class arrays, 954 polymorphic classes)",
+  "rule": "RTTI gives inheritance ONLY for polymorphic classes; non-polymorphic classes have no RTTI at all",
+  "note": "parent[0] is the class itself in RTTI layout; parent is entry[1]"
+ },
+ "parents": {
+  "CDFileClass": {
+   "parent": "BufferIOFileClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CCFileClass": {
+   "parent": "CDFileClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DynamicVectorClass": {
+   "parent": "VectorClass",
+   "key_method": "template-base",
+   "val_method": "template-base"
+  },
+  "LogicClass": {
+   "parent": "LayerClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MouseClass": {
+   "parent": "ScrollClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "List": {
+   "parent": "GenericList",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "CCINIClass": {
+   "parent": "INIClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AbstractClass": {
+   "parent": "IPersistStream",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AbstractTypeClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BSurface": {
+   "parent": "XSurface",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "XSurface": {
+   "parent": "Surface",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AircraftClass": {
+   "parent": "FootClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AircraftTypeClass": {
+   "parent": "TechnoTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AirstrikeClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AITriggerTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AlphaShapeClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AnimClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "AnimTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BufferIOFileClass": {
+   "parent": "RawFileClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BuildingLightClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BombClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "NeuronClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BuildingClass": {
+   "parent": "TechnoClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BuildingTypeClass": {
+   "parent": "TechnoTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BulletClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BulletTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CampaignClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CaptureManagerClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CarryoverClass": {
+   "parent": "LinkClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FileStraw": {
+   "parent": "Straw",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FilePipe": {
+   "parent": "Pipe",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TypeList": {
+   "parent": "DynamicVectorClass",
+   "key_method": "template-base",
+   "val_method": "template-base"
+  },
+  "CellClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CheckListClass": {
+   "parent": "ListClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ColorListClass": {
+   "parent": "ListClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ControlClass": {
+   "parent": "GadgetClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RLEBlitTransXlatAlpha": {
+   "parent": "RLEBlitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "RLEBlitTransXlat": {
+   "parent": "RLEBlitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitPlainXlat": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransLucent25": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransXlat": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransDarken": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransLucent75": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "RLEBlitTransXlatZRead": {
+   "parent": "RLEBlitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransXlatZRead": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransLucent50": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransXlatZReadWrite": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitTransXlatAlpha": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "EnumConnectionsClass": {
+   "parent": "IEnumConnections",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ConnectionPointClass": {
+   "parent": "IConnectionPoint",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "EnumConnectionPointsClass": {
+   "parent": "IEnumConnectionPoints",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CStreamClass": {
+   "parent": "IStream",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "Dial8Class": {
+   "parent": "ControlClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DiskLaserClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LayerClass": {
+   "parent": "DynamicVectorClass",
+   "key_method": "exact",
+   "val_method": "template-base"
+  },
+  "DisplayClass": {
+   "parent": "MapClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DriveLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DropListClass": {
+   "parent": "EditClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "EditClass": {
+   "parent": "ControlClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ShapeButtonClass": {
+   "parent": "ToggleClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ToggleClass": {
+   "parent": "ControlClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DropPodLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DSurface": {
+   "parent": "XSurface",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "EMPulseClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FactoryClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FlyLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FoggedObjectClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "FootClass": {
+   "parent": "TechnoClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GadgetClass": {
+   "parent": "LinkClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GaugeClass": {
+   "parent": "ControlClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GraphicMenuAnimItem": {
+   "parent": "GraphicMenuItem",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GraphicMenuImageItem": {
+   "parent": "GraphicMenuItem",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GraphicMenuShortcutItem": {
+   "parent": "GraphicMenuItem",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "HouseClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "HouseTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "HoverLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LocomotionClass": {
+   "parent": "IPersistStream",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "InfantryClass": {
+   "parent": "FootClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "InfantryTypeClass": {
+   "parent": "TechnoTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "Node": {
+   "parent": "GenericNode",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "ToggleRepairCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DeployCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "StopCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ScatterCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ToggleSellCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "GuardCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TauntCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ScreenCaptureCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "PageUserCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CursorPositionCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "DeleteCommandClass": {
+   "parent": "CommandClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "IPXConnClass": {
+   "parent": "ConnectionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "IPXGlobalConnClass": {
+   "parent": "IPXConnClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "IsometricTileClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "IsometricTileTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "JumpjetLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LCWPipe": {
+   "parent": "Pipe",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LCWStraw": {
+   "parent": "Straw",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LoadProgressMgr": {
+   "parent": "INoticeSink",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LightSourceClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ListClass": {
+   "parent": "ControlClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SliderClass": {
+   "parent": "GaugeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LZOPipe": {
+   "parent": "Pipe",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "LZOStraw": {
+   "parent": "Straw",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MechLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MissionClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MixFileClass": {
+   "parent": "Node",
+   "key_method": "exact",
+   "val_method": "template-base"
+  },
+  "BlowStraw": {
+   "parent": "Straw",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TabClass": {
+   "parent": "SidebarClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "VQMovieHandle": {
+   "parent": "MovieHandle",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BinkMovieHandle": {
+   "parent": "MovieHandle",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MultiplayerBattleTeam": {
+   "parent": "MultiplayerTeam",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MPCooperative": {
+   "parent": "MultiplayerGameMode",
+   "key_method": "template-arg",
+   "val_method": "exact"
+  },
+  "MultiplayerManBattle": {
+   "parent": "MultiplayerGameMode",
+   "key_method": "template-arg",
+   "val_method": "exact"
+  },
+  "Megawealth": {
+   "parent": "MultiplayerGameMode",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MultiplayerObserverTeam": {
+   "parent": "MultiplayerTeam",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MultiplayerSiege": {
+   "parent": "MultiplayerGameMode",
+   "key_method": "template-arg",
+   "val_method": "exact"
+  },
+  "MultiplayerSiegeDefenderTeam": {
+   "parent": "MultiplayerTeam",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MultiplayerSiegeAttackerTeam": {
+   "parent": "MultiplayerTeam",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "UnholyAlliance": {
+   "parent": "MultiplayerGameMode",
+   "key_method": "template-arg",
+   "val_method": "exact"
+  },
+  "MSShapeAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MSBinkAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MSVQAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MSBitPrintAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MSPrintAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "MSPCXAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ObjectClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ObjectTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "OverlayClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "OverlayTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ParasiteClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ParticleClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ParticleSystemClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BlowPipe": {
+   "parent": "Pipe",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ParticleSystemTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ParticleTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RadarClass": {
+   "parent": "DisplayClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RadioClass": {
+   "parent": "MissionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RadSiteClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RAMFileClass": {
+   "parent": "FileClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RawFileClass": {
+   "parent": "FileClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RandomStraw": {
+   "parent": "Straw",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "RocketLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ScriptClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ScriptTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ScrollClass": {
+   "parent": "TabClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "ShipLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SideClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SlaveManagerClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SmudgeClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SmudgeTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SpawnManagerClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "StaticButtonClass": {
+   "parent": "GadgetClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SuperClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SuperWeaponTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "SwizzleManagerClass": {
+   "parent": "ISwizzle",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "Tactical": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TActionClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TagClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TagTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TaskForceClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TeamClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TeamTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TechnoClass": {
+   "parent": "RadioClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TechnoTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TeleportLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TemporalClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TerrainClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TerrainTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TEventClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TiberiumClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TriggerClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TriggerTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TubeClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "TunnelLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "UnitClass": {
+   "parent": "FootClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "UnitTypeClass": {
+   "parent": "TechnoTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "VoxelAnimClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "VoxelAnimTypeClass": {
+   "parent": "ObjectTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "VeinholeMonsterClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "WalkLocomotionClass": {
+   "parent": "LocomotionClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "WarheadTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "WaveClass": {
+   "parent": "ObjectClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "WaypointPathClass": {
+   "parent": "AbstractClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "Campaign_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "Conflict_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "GameOption_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "MapSizeGameOption_WorldDominationTour": {
+   "parent": "WorldDominationTour",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "History_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "MSFrameAnim": {
+   "parent": "MSAnim",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "Map_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "WDTState": {
+   "parent": "ReferenceCounted",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CampaignProperties_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "State_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "Territory_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "key_method": "alias",
+   "val_method": "exact"
+  },
+  "WeaponTypeClass": {
+   "parent": "AbstractTypeClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "CCToolTip": {
+   "parent": "ToolTipManager",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "PlayerProfile": {
+   "parent": "ReferenceCounted",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "IPXInterfaceClass": {
+   "parent": "WinsockInterfaceClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "UDPInterfaceClass": {
+   "parent": "WinsockInterfaceClass",
+   "key_method": "exact",
+   "val_method": "exact"
+  },
+  "BlitTrans": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  },
+  "BlitPlain": {
+   "parent": "Blitter",
+   "key_method": "template-base",
+   "val_method": "exact"
+  }
+ },
+ "unresolved_keys": [
+  "Animate",
+  "ApplicationClass",
+  "BitFont",
+  "BitText",
+  "CampaignScoreClass",
+  "CampaignEndScoreClass",
+  "SHAPipe",
+  "?$RLEBlitTransXlatAlphaZReadWrite@G",
+  "?$BlitTranslucent50ZeroAlpha@G",
+  "?$BlitTransLucent75ZReadWrite@G",
+  "?$BlitTransLucent75AlphaZReadWarp@G",
+  "?$BlitTransLucent50AlphaZReadWrite@G",
+  "?$BlitTransZRemapXlatAlpha@G",
+  "?$BlitTransRemapDest@E",
+  "?$RLEBlitTransLucent50ZReadWarp@G",
+  "?$BlitTransZRemapXlat@G",
+  "?$BlitTransLucent25ZReadWrite@G",
+  "?$BlitTransDarkenZRead@G",
+  "?$RLEBlitTransLucent50AlphaZRead@G",
+  "?$BlitTransZRemapXlatAlphaZRead@G",
+  "?$BlitTransLucent25AlphaZRead@G",
+  "?$BlitTransZRemapXlat@E",
+  "?$RLEBlitTransLucent75Alpha@G",
+  "?$RLEBlitTransLucent25ZReadWarp@G",
+  "?$RLEBlitTransZRemapXlatAlpha@G",
+  "?$BlitPlainXlatZRead@G",
+  "?$RLEBlitTransLucent50Alpha@G",
+  "?$BlitTransZRemapXlatZRead@G",
+  "?$RLEBlitTransLucent75ZRead@G",
+  "?$RLEBlitTransLucent75AlphaZReadWrite@G",
+  "?$RLEBlitTransLucent75ZReadWrite@G",
+  "?$RLEBlitTransLucent75AlphaZRead@G",
+  "?$BlitTransLucent50AlphaZReadWarp@G",
+  "?$RLEBlitTransLucent50@G",
+  "?$RLEBlitTransXlatZReadWrite@E",
+  "?$BlitTransLucent50ZRead@G",
+  "?$RLEBlitTransZRemapXlat@G",
+  "?$RLEBlitTransDarkenZRead@G",
+  "?$BlitTransRemapXlat@E",
+  "?$RLEBlitTransLucent50AlphaZReadWarp@G",
+  "?$BlitTransXlatWriteAlpha@G",
+  "?$BlitTransLucent75ZRead@G",
+  "?$BlitTransLucent50Alpha@G",
+  "?$BlitTransLucent50ZReadWarp@G",
+  "?$RLEBlitTransRemapDestZReadWrite@E",
+  "?$RLEBlitTransZRemapXlatZReadWrite@E",
+  "?$BlitPlainXlatZReadWrite@G",
+  "?$RLEBlitTransDarken@G",
+  "?$RLEBlitTransLucent25@G",
+  "?$RLEBlitTransLucent25AlphaZRead@G",
+  "?$RLEBlitTransZRemapXlatZRead@E",
+  "?$RLEBlitTransZRemapXlatZReadWrite@G",
+  "?$BlitTransLucent75ZReadWarp@G",
+  "?$RLEBlitTransLucent25AlphaZReadWrite@G",
+  "?$RLEBlitTransXlatZReadWrite@G",
+  "?$BlitTransLucent25ZRead@G",
+  "?$RLEBlitTransLucent50AlphaZReadWrite@G",
+  "?$RLEBlitTransZRemapXlat@E",
+  "?$RLEBlitTransLucent25Alpha@G",
+  "?$RLEBlitTransLucent50ZRead@G",
+  "?$RLEBlitTransLucent50ZReadWrite@G",
+  "?$BlitTransLucent25Alpha@G",
+  "?$RLEBlitTransXlatAlphaZRead@G",
+  "?$BlitTransLucent25ZReadWarp@G",
+  "?$BlitTransXlatMultWriteAlpha@G",
+  "?$BlitTransZRemapXlatAlphaZReadWrite@G",
+  "?$RLEBlitTransLucent25ZRead@G",
+  "?$RLEBlitTransLucent25ZReadWrite@G",
+  "?$BlitTransLucent25AlphaZReadWarp@G",
+  "?$RLEBlitTransLucent25AlphaZReadWarp@G",
+  "?$RLEBlitTransLucent75ZReadWarp@G",
+  "?$BlitTranslucent50NonzeroAlpha@G",
+  "?$BlitTransDarkenZReadWrite@G",
+  "?$RLEBlitTransLucent75AlphaZReadWarp@G",
+  "?$RLEBlitTransRemapXlatZReadWrite@E",
+  "?$RLEBlitTransRemapDestZRead@E",
+  "?$RLEBlitTransDarkenZReadWrite@G",
+  "?$BlitTransLucent75AlphaZReadWrite@G",
+  "?$BlitTransLucent50ZReadWrite@G",
+  "?$RLEBlitTransLucent75@G",
+  "?$BlitTransXlatAlphaZReadWrite@G",
+  "?$RLEBlitTransZRemapXlatAlphaZReadWrite@G",
+  "?$RLEBlitTransZRemapXlatAlphaZRead@G",
+  "?$BlitTranslucentWriteAlpha@G",
+  "?$RLEBlitTransRemapXlatZRead@E",
+  "?$BlitTransLucent50AlphaZRead@G",
+  "?$BlitPlainXlatAlpha@G",
+  "?$RLEBlitTransRemapXlat@E",
+  "?$BlitTransZRemapXlatZReadWrite@G",
+  "?$RLEBlitTransZRemapXlatZRead@G",
+  "?$BlitTransXlatAlphaZRead@G",
+  "?$RLEBlitTransRemapDest@E",
+  "?$BlitTransLucent25AlphaZReadWrite@G",
+  "?$BlitTransLucent75AlphaZRead@G",
+  "?$BlitTransLucent75Alpha@G",
+  "TacticalClass@DisplayClass",
+  "BufferStraw",
+  "BufferPipe",
+  "TriColorGaugeClass",
+  "TiberianSunClassFactory",
+  "VersionClass",
+  "GraphicMenu",
+  "GScreenClass",
+  "CacheStraw",
+  "INIEntry@INIClass",
+  "INISection@INIClass",
+  "Base64Straw",
+  "Base64Pipe",
+  "SidebarUpCommandClass",
+  "CombatantSelectCommandClass",
+  "CenterREventCommandClass",
+  "AllToCheerCommandClass",
+  "AllianceCommandClass",
+  "BeaconPlacementCommandClass",
+  "SetUnitTabCommandClass",
+  "PlanningModeCommandClass",
+  "SetView2CommandClass",
+  "CenterBaseCommandClass",
+  "OptionsCommandClass",
+  "SetInfantryTabCommandClass",
+  "PrevObjectCommandClass",
+  "SetView1CommandClass",
+  "CenterViewCommandClass",
+  "SetDefenseTabCommandClass",
+  "VeterancyNavCommandClass",
+  "View4CommandClass",
+  "FollowCommandClass",
+  "SetStructureTabCommandClass",
+  "HealthNavCommandClass",
+  "View3CommandClass",
+  "SetView4CommandClass",
+  "CreateTeamCommandClass",
+  "TypeSelectCommandClass",
+  "View2CommandClass",
+  "SetView3CommandClass",
+  "View1CommandClass",
+  "NextObjectCommandClass",
+  "MultiplayerSyncCommandClass",
+  "SidebarDownCommandClass",
+  "MultiplayerDebugCommandClass",
+  "SelectTeamCommandClass",
+  "AddTeamCommandClass",
+  "CenterTeamCommandClass",
+  "ConnManClass",
+  "LightConvertClass",
+  "LoadOptionsClass",
+  "MapSelect",
+  "MultiplayerBattle",
+  "FreeForAll",
+  "MSFadeAnim",
+  "InitializerBase@MultiplayerGameMode",
+  "NullModemConnClass",
+  "DialogControl@OwnerDraw",
+  "SimpleDialogControl@OwnerDraw",
+  "PixelFXClass",
+  "PKPipe",
+  "PKStraw",
+  "PowerClass",
+  "ProgressScreenClass",
+  "RTacticalClass@RadarClass",
+  "rc_ptr_base",
+  "ScorePrintClass",
+  "ScoreTimeClass",
+  "ScoreFullFontClass",
+  "ScoreBigFontClass",
+  "SBGadgetClass@SidebarClass",
+  "SelectClass@StripClass@SidebarClass",
+  "TextButtonClass",
+  "TextLabelClass",
+  "FlagGameOption@WorldDominationTour",
+  "WDTTerritory",
+  "Selection@WorldDominationTour",
+  "Anim@Voices@WorldDominationTour",
+  "SimpleWonlineDialogControl",
+  "?$CComObject@VCNetUtilEventSink@@@ATL",
+  "CNetUtilEventSink",
+  "CreateGameDialogControl",
+  "?$CComObject@VCDownloadEventSink@@@ATL",
+  "FactionSelectDialogControl@WorldDominationTour",
+  "Mouse",
+  "type_info",
+  "__non_rtti_object",
+  "bad_typeid",
+  "bad_cast",
+  "exception"
+ ],
+ "no_parent": [
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "GenericNode",
+  "GenericList",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "INoticeSink",
+  "INoticeSource",
+  "Surface",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "AnimFile",
+  "DynamicVectorClass",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "BaseClass",
+  "VectorClass",
+  "VectorClass",
+  "BrainClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "CD",
+  "VectorClass",
+  "TypeList",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "CommBufferClass",
+  "ConnectionClass",
+  "VectorClass",
+  "ConvertClass",
+  "Blitter",
+  "RLEBlitter",
+  "DynamicVectorClass",
+  "VectorClass",
+  "VectorClass",
+  "CounterClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "Straw",
+  "Pipe",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "LinkClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "INIClass",
+  "VectorCursor",
+  "VectorClass",
+  "GraphicMenuItem",
+  "VectorCursor",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "CommandClass",
+  "rc_ptr",
+  "VectorClass",
+  "VectorClass",
+  "IPXManagerClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "VectorClass",
+  "MapClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "MapSeedClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "MovieHandle",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "MSAnim",
+  "MSOverlayAnim",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "MSEngine",
+  "VectorClass",
+  "VectorClass",
+  "MSFont",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "MultiplayerGameMode",
+  "VectorClass",
+  "MultiplayerGameMode",
+  "MultiplayerGameMode",
+  "MultiplayerTeam",
+  "VectorClass",
+  "NullModemClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "FileClass",
+  "ReferenceCounted",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "ScoreAnimClass",
+  "ScoreFontClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "SidebarClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "CStreamClass",
+  "WaveClass",
+  "TerrainTypeClass",
+  "TerrainClass",
+  "SuperWeaponTypeClass",
+  "SuperClass",
+  "Tactical",
+  "CellClass",
+  "EMPulseClass",
+  "LightSourceClass",
+  "SideClass",
+  "TiberiumClass",
+  "TubeClass",
+  "CampaignClass",
+  "BuildingLightClass",
+  "WaypointPathClass",
+  "TemporalClass",
+  "AirstrikeClass",
+  "SpawnManagerClass",
+  "SlaveManagerClass",
+  "CaptureManagerClass",
+  "DiskLaserClass",
+  "ParasiteClass",
+  "BombClass",
+  "RadSiteClass",
+  "TEventClass",
+  "VoxelAnimTypeClass",
+  "VoxelAnimClass",
+  "TActionClass",
+  "TriggerClass",
+  "TriggerTypeClass",
+  "ScriptClass",
+  "ScriptTypeClass",
+  "TagClass",
+  "TagTypeClass",
+  "TeamClass",
+  "TeamTypeClass",
+  "TaskForceClass",
+  "UnitTypeClass",
+  "BuildingTypeClass",
+  "AircraftTypeClass",
+  "InfantryTypeClass",
+  "BulletTypeClass",
+  "IsometricTileTypeClass",
+  "OverlayTypeClass",
+  "SmudgeTypeClass",
+  "UnitClass",
+  "BuildingClass",
+  "AircraftClass",
+  "InfantryClass",
+  "AnimClass",
+  "AnimTypeClass",
+  "HouseTypeClass",
+  "HouseClass",
+  "DriveLocomotionClass",
+  "JumpjetLocomotionClass",
+  "HoverLocomotionClass",
+  "RocketLocomotionClass",
+  "TunnelLocomotionClass",
+  "WalkLocomotionClass",
+  "DropPodLocomotionClass",
+  "FlyLocomotionClass",
+  "TeleportLocomotionClass",
+  "MechLocomotionClass",
+  "ShipLocomotionClass",
+  "BulletClass",
+  "FactoryClass",
+  "WarheadTypeClass",
+  "WeaponTypeClass",
+  "ParticleClass",
+  "ParticleTypeClass",
+  "ParticleSystemClass",
+  "ParticleSystemTypeClass",
+  "AITriggerTypeClass",
+  "NeuronClass",
+  "FoggedObjectClass",
+  "AlphaShapeClass",
+  "rc_ptr",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "ToolTipManager",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "VectorClass",
+  "rc_ptr",
+  "rc_ptr",
+  "rc_ptr",
+  "rc_ptr",
+  "VectorClass",
+  "rc_ptr",
+  "VectorCursor",
+  "VectorClass",
+  "rc_ptr",
+  "rc_ptr",
+  "rc_ptr",
+  "VectorCursor",
+  "rc_ptr",
+  "WorldDominationTour",
+  "rc_ptr",
+  "rc_ptr",
+  "VectorClass",
+  "VectorClass",
+  "rc_ptr",
+  "VectorCursor",
+  "VectorClass",
+  "VectorClass",
+  "VectorCursor",
+  "VectorCursor",
+  "VectorCursor",
+  "WebBrowser",
+  "WinModemClass",
+  "CChatEventSink",
+  "CChatEventSink",
+  "WonlineStringDialogControl",
+  "VectorClass",
+  "WinsockInterfaceClass",
+  "VectorClass",
+  "DynamicVectorClass",
+  "VectorClass",
+  "WWMouseClass",
+  "_com_error"
+ ]
+}
