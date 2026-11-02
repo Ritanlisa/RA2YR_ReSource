@@ -1,41 +1,40 @@
 [
  {
-  "cluster": "P:590FD0:1",
+  "cluster": "R:487D50:ecx",
   "status": "inconsistent",
   "families": [
    "C1",
    "C10"
   ],
   "family_sizes": {
-   "C1": 1028,
-   "C10": 0
+   "C1": 285,
+   "C10": 1
   },
   "ents": [
-   "T:590970",
-   "T:590FD0",
-   "P:590FD0:1",
-   "P:590FD0:6",
-   "S:590FD0:+0x1c"
+   "T:487D50"
   ],
   "obs": [
-   "8:4"
+   "283:1",
+   "320:4"
   ],
   "family_domains": {
    "C1": [
-    "AddTeamCommandClass",
-    "BitText",
-    "CampaignScoreClass",
     "CreateTeamCommandClass",
-    "LoadOptionsClass",
     "Mouse",
     "PKStraw",
-    "SelectTeamCommandClass",
     "?$rc_ptr@VHistory@WorldDominationTour@@",
     "?$rc_ptr@VState@WorldDominationTour@@",
     "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
-    "BounceClass"
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
    ],
-   "C10": []
+   "C10": [
+    "TrajectoryHelper"
+   ]
   },
   "exact": {}
  },
@@ -133,78 +132,42 @@
   "exact": {}
  },
  {
-  "cluster": "P:7CB7BA:2",
+  "cluster": "S:4CC360:+0x3c",
   "status": "inconsistent",
   "families": [
    "C10"
   ],
   "family_sizes": {
-   "C10": 0
+   "C10": 1
   },
   "ents": [
-   "P:7CB7BA:2",
-   "S:7CB7BA:+0x10"
+   "S:4CC360:+0x3c"
   ],
   "obs": [],
   "family_domains": {
-   "C10": []
+   "C10": [
+    "TrajectoryHelper"
+   ]
   },
   "exact": {}
  },
  {
-  "cluster": "P:5F9720:3",
+  "cluster": "S:4CC360:+0x1c",
   "status": "inconsistent",
   "families": [
    "C10"
   ],
   "family_sizes": {
-   "C10": 0
+   "C10": 1
   },
   "ents": [
-   "P:5F9720:3",
-   "S:5F9720:+0x10"
+   "S:4CC360:+0x1c"
   ],
   "obs": [],
   "family_domains": {
-   "C10": []
-  },
-  "exact": {}
- },
- {
-  "cluster": "P:7CD662:0",
-  "status": "inconsistent",
-  "families": [
-   "C10"
-  ],
-  "family_sizes": {
-   "C10": 0
-  },
-  "ents": [
-   "P:7CD662:0",
-   "S:7CD662:+0x4"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C10": []
-  },
-  "exact": {}
- },
- {
-  "cluster": "P:7DC378:0",
-  "status": "inconsistent",
-  "families": [
-   "C10"
-  ],
-  "family_sizes": {
-   "C10": 0
-  },
-  "ents": [
-   "P:7DC378:0",
-   "S:7DC378:+0x8"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C10": []
+   "C10": [
+    "TrajectoryHelper"
+   ]
   },
   "exact": {}
  }

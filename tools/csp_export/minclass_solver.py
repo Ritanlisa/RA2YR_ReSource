@@ -4027,11 +4027,10 @@ def main():
             _fn_rx = fn_at(_ea_rx)
             _m_extra.append(("0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0)),
                              _to, _ea_rx))
-        elif (_rx is not None and _rx.get("kind") == "this"
-              and os.environ.get("MC_DF_THIS") == "1"):
-            # 数据流证明的 this 直传。默认关闭：实测净 -11 唯一解 —— Phase-2 的
-            # skip_empty 使收敛结果依赖边序（加边改变被跳过的更新集合，个别实体
-            # 以更宽域收场），加边不单调。需先把 phase-2 改成真不动点后再启用。
+        elif _rx is not None and _rx.get("kind") == "this":
+            # 数据流证明的 this 直传（额外 T:caller->callee 边，非破坏性）。
+            # 曾因旧相位的边序依赖净 -11 而关闭；真不动点重设计后实测 +1/+2，
+            # 单调性恢复，默认启用。
             _t_extra.append((fn_at(_ea_rx), _to))
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
@@ -4234,48 +4233,72 @@ def main():
         print("[C10] multi-call-site params (constraint not applied): %d" % len(_multi5), flush=True)
 
         # ---- Phase 1：基线边（HEAD 语义逐字复刻，空域守卫不变）----
-        _dom1 = _c10_base_dom(_call_edges_p1)
-        _p1_steps, _p1_skipped = _c10_propagate(_call_edges_p1, _dom1, _skip_empty=False)
-        _c10_p1_constrained = _c10_p1_emptied = 0
-        _p1_committed = {}
-        for _eid, _m in _dom1.items():
+        # ---- 真不动点传播（2026-11-02 重设计，取代 p1/p2 分相）----
+        # 旧相位设计的 skip_empty 使收敛结果依赖边处理顺序：加边改变被跳过的更新
+        # 集合，个别实体以更宽域收场（加边不单调；实测 this 边净 -11 唯一解）。
+        # 新语义：
+        #   (1) 单一混沌迭代到最小不动点 —— 传播函数单调，最小不动点唯一，与边序无关；
+        #   (2) 外层「连接点中和」：R:/S:/G: 聚合节点域空 = 聚合假设被驳倒（同一
+        #       寄存器在函数内多处持不同值），确定性批量摘除其全部边、重置域、
+        #       从头重传播，迭代至无空域连接点；
+        #   (3) 实体端（ents 内）域空 = 真矛盾 → 写 0 掩码，簇级消解标记未知。
+        # R:fn:reg 聚合连接点 = 非必要条件（寄存器在函数内复用持有不同值，
+        # 聚合即假设同值；严格不动点实测暴露 12,104 实体矛盾 / 18,363 空连接点，
+        # 旧 skip_empty 一直在掩盖）。按「判据必须 100% 正确」纪律：默认丢弃
+        # 全部 R: 介导边；--allow-heuristics 时保留（启发式层）。
+        if not getattr(args, "allow_heuristics", False):
+            _n_before = len(_call_edges)
+            _call_edges = [(a, b) for (a, b) in _call_edges
+                           if not str(a).startswith("R:") and not str(b).startswith("R:")]
+            print("[C10] R:-junction edges dropped (unsound aggregation): %d -> %d"
+                  % (_n_before, len(_call_edges)), flush=True)
+        _edges_fix = list(_call_edges)
+        _dom_fix = _c10_base_dom(_edges_fix)
+        _empty_ids = []
+        _empty_pfx = collections.Counter()
+        _neutralized_total = 0
+        for _outer in range(10):
+            _steps_f, _sk_f = _c10_propagate(_edges_fix, _dom_fix, _skip_empty=False)
+            _dead_j = {e for e, m in _dom_fix.items() if m == 0 and e not in ents}
+            if not _dead_j:
+                break
+            _edges_fix = [(a, b) for (a, b) in _edges_fix
+                          if a not in _dead_j and b not in _dead_j]
+            _dom_fix = _c10_base_dom(_edges_fix)
+            _neutralized_total += len(_dead_j)
+        _c10_fx_constrained = _c10_fx_empty = 0
+        for _eid, _m in _dom_fix.items():
             if _eid not in ents:
-                continue      # R:/S:/G: 连接点只作传播中介，不写族表、不进簇、不计数
+                continue          # 连接点只作传播中介
             if _eid in _multi5:
-                continue      # 多调用点参数：不作硬约束
+                continue          # 多调用点参数：不作硬约束
             if _m == 0:
-                # 传播把域清空 = 该实体的调用边互相矛盾（假边/错误锚），
-                # 不写入 C10（保留其它族证据），并计数。
-                _c10_p1_emptied += 1
+                # 传播到不动点后域空 = 该实体的调用边集自相矛盾。处置：**不写 0 掩码**
+                # （0 会连坐吞掉簇内 C4/C15 等其它族的真钉定），该实体的 C10 证据
+                # 判为不可靠（保持 FULL），逐个落账待查。注意：不动点本身与边序无关，
+                # 这条提交规则是确定性的后置规则，不再有旧相位 skip_empty 的顺序依赖。
+                _c10_fx_empty += 1
+                _empty_pfx[str(_eid).split(":")[0]] += 1
+                _empty_ids.append(_eid)
                 continue
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
-                _p1_committed[_eid] = _m
-                _c10_p1_constrained += 1
-        print("[C10] phase1 edges=%d constrained=%d emptied=%d"
-              % (len(_call_edges_p1), _c10_p1_constrained, _c10_p1_emptied), flush=True)
-
-        # ---- Phase 2：新增边 dirty/global/stack/连接点（从 Phase-1 域出发，只增不减）----
-        _dom2 = dict(_dom1)
-        for _eid, _m in _c10_base_dom(_call_edges_p2).items():
-            if _eid not in _dom2:
-                _dom2[_eid] = _m
-        _p2_steps, _p2_skipped = _c10_propagate(_call_edges_p2, _dom2, _skip_empty=True)
-        _c10_p2_added = 0
-        for _eid, _m in _dom2.items():
-            if _eid not in ents:
-                continue
-            if _eid in _multi5:
-                continue          # 多调用点参数：不作硬约束（与 phase 1 同一前置限定）
-            if _m == 0:
-                continue          # Phase-1 已清空的实体保持不受约束，Phase 2 不复活
-            if _m != FULL:
-                _had = _eid in _p1_committed and _p1_committed[_eid] == _m
-                fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
-                if not _had:
-                    _c10_p2_added += 1
-        print("[C10] phase2 edges=%d added_constraints=%d skipped_empty=%d"
-              % (len(_call_edges_p2), _c10_p2_added, _p2_skipped), flush=True)
+                _c10_fx_constrained += 1
+        print("[C10] fixpoint: edges=%d constrained=%d entity_empties=%d junctions_neutralized=%d"
+              % (len(_edges_fix), _c10_fx_constrained, _c10_fx_empty,
+                 _neutralized_total), flush=True)
+        if _empty_pfx:
+            print("[C10] entity_empties by prefix: %s" % dict(_empty_pfx), flush=True)
+        if _empty_ids:
+            json.dump({"meta": {"semantics": "contradicted call-edge sets at the strict fixpoint; "
+                                          "C10 evidence deemed unreliable for these entities (mask stays FULL); "
+                                          "investigation backlog"},
+                       "by_prefix": dict(_empty_pfx),
+                       "entities": sorted(_empty_ids)},
+                      open(os.path.join(ROOT, "anchors/c10_contradicted_entities.json"), "w"),
+                      indent=1)
+            print("[C10] contradicted entities ledger: anchors/c10_contradicted_entities.json",
+                  flush=True)
         census["C10"] = len(fam["C10"])
         print("[C10] total entities constrained=%d" % len(fam["C10"]), flush=True)
 
