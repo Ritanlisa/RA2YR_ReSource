@@ -1,0 +1,5288 @@
+{
+ "meta": {
+  "rule": "parent is a VARIABLE; domain = size-monotone + member-consistent candidates; evidence tiers: rtti(exact, polymorphic only) > ctor-chain(positive) > layouts; no evidence => domain stays a set (unknown), never 'no ancestor'",
+  "total_classes": 1282
+ },
+ "domain_size_hist": {
+  "rtti": 141,
+  "ctor-chain-ambiguous": 1
+ },
+ "determined": {
+  "CStreamClass": {
+   "parent": "IStream",
+   "by": "rtti",
+   "domain": 1049
+  },
+  "EnumConnectionPointsClass": {
+   "parent": "IEnumConnectionPoints",
+   "by": "rtti",
+   "domain": 993
+  },
+  "EnumConnectionsClass": {
+   "parent": "IEnumConnections",
+   "by": "rtti",
+   "domain": 918
+  },
+  "GraphicMenuAnimItem": {
+   "parent": "GraphicMenuItem",
+   "by": "rtti",
+   "domain": 918
+  },
+  "GraphicMenuImageItem": {
+   "parent": "GraphicMenuItem",
+   "by": "rtti",
+   "domain": 887
+  },
+  "GraphicMenuShortcutItem": {
+   "parent": "GraphicMenuItem",
+   "by": "rtti",
+   "domain": 498
+  },
+  "PlayerProfile": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "RandomStraw": {
+   "parent": "Straw",
+   "by": "rtti",
+   "domain": 572
+  },
+  "TypeList": {
+   "parent": "DynamicVectorClass",
+   "by": "rtti",
+   "domain": 942
+  },
+  "AbstractClass": {
+   "parent": "IPersistStream",
+   "by": "rtti",
+   "domain": 972
+  },
+  "ObjectClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1078
+  },
+  "OverlayClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1092
+  },
+  "ParticleSystemClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1089
+  },
+  "RadSiteClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1077
+  },
+  "SmudgeClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1092
+  },
+  "TerrainClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1086
+  },
+  "TiberiumClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1093
+  },
+  "TubeClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1095
+  },
+  "WaveClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1121
+  },
+  "HouseClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1186
+  },
+  "HouseTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1088
+  },
+  "SideClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1062
+  },
+  "LocomotionClass": {
+   "parent": "IPersistStream",
+   "by": "rtti",
+   "domain": 816
+  },
+  "FilePipe": {
+   "parent": "Pipe",
+   "by": "rtti",
+   "domain": 746
+  },
+  "FileStraw": {
+   "parent": "Straw",
+   "by": "rtti",
+   "domain": 498
+  },
+  "MapSizeGameOption_WorldDominationTour": {
+   "parent": "WorldDominationTour",
+   "by": "rtti",
+   "domain": 572
+  },
+  "Map_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "AlphaShapeClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 978
+  },
+  "BlowPipe": {
+   "parent": "Pipe",
+   "by": "rtti",
+   "domain": 887
+  },
+  "BlowStraw": {
+   "parent": "Straw",
+   "by": "rtti",
+   "domain": 572
+  },
+  "Conflict_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "ConnectionPointClass": {
+   "parent": "IConnectionPoint",
+   "by": "rtti",
+   "domain": 972
+  },
+  "Dial8Class": {
+   "parent": "ControlClass",
+   "by": "rtti",
+   "domain": 746
+  },
+  "DiskLaserClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 993
+  },
+  "GaugeClass": {
+   "parent": "ControlClass",
+   "by": "rtti",
+   "domain": 959
+  },
+  "History_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "LCWStraw": {
+   "parent": "Straw",
+   "by": "rtti",
+   "domain": 498
+  },
+  "LZOStraw": {
+   "parent": "Straw",
+   "by": "rtti",
+   "domain": 498
+  },
+  "MSBinkAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 887
+  },
+  "MSBitPrintAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 918
+  },
+  "MSPCXAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 942
+  },
+  "MSPrintAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 918
+  },
+  "MSVQAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 959
+  },
+  "ShapeButtonClass": {
+   "parent": "ToggleClass",
+   "by": "rtti",
+   "domain": 572
+  },
+  "State_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "SwizzleManagerClass": {
+   "parent": "ISwizzle",
+   "by": "rtti",
+   "domain": 978
+  },
+  "Territory_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "WDTState": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 498
+  },
+  "AbstractTypeClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1061
+  },
+  "IPXConnClass": {
+   "parent": "ConnectionClass",
+   "by": "rtti",
+   "domain": 536
+  },
+  "IPXGlobalConnClass": {
+   "parent": "IPXConnClass",
+   "by": "rtti",
+   "domain": 1022
+  },
+  "MultiplayerBattleTeam": {
+   "parent": "MultiplayerTeam",
+   "by": "rtti",
+   "domain": 572
+  },
+  "MultiplayerObserverTeam": {
+   "parent": "MultiplayerTeam",
+   "by": "rtti",
+   "domain": 498
+  },
+  "MultiplayerSiegeDefenderTeam": {
+   "parent": "MultiplayerTeam",
+   "by": "rtti",
+   "domain": 498
+  },
+  "AirstrikeClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1046
+  },
+  "BombClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1055
+  },
+  "CaptureManagerClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1030
+  },
+  "MissionClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1085
+  },
+  "RadioClass": {
+   "parent": "MissionClass",
+   "by": "rtti",
+   "domain": 1087
+  },
+  "TechnoClass": {
+   "parent": "RadioClass",
+   "by": "rtti",
+   "domain": 1119
+  },
+  "SlaveManagerClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1065
+  },
+  "SpawnManagerClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1077
+  },
+  "TemporalClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1028
+  },
+  "BlitPlain": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTrans": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitPlainXlat": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransXlat": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransLucent25": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransLucent50": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransLucent75": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransDarken": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransXlatAlpha": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransXlatZRead": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "BlitTransXlatZReadWrite": {
+   "parent": "Blitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "RLEBlitTransXlat": {
+   "parent": "RLEBlitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "RLEBlitTransXlatZRead": {
+   "parent": "RLEBlitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "RLEBlitTransXlatAlpha": {
+   "parent": "RLEBlitter",
+   "by": "rtti",
+   "domain": 498
+  },
+  "LightSourceClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1034
+  },
+  "BinkMovieHandle": {
+   "parent": "MovieHandle",
+   "by": "rtti",
+   "domain": 978
+  },
+  "VQMovieHandle": {
+   "parent": "MovieHandle",
+   "by": "rtti",
+   "domain": 889
+  },
+  "ColorListClass": {
+   "parent": "ListClass",
+   "by": "rtti",
+   "domain": 1120
+  },
+  "BSurface": {
+   "parent": "XSurface",
+   "by": "rtti",
+   "domain": 1083
+  },
+  "ObjectTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 826
+  },
+  "AircraftClass": {
+   "parent": "FootClass",
+   "by": "rtti",
+   "domain": 1121
+  },
+  "BuildingLightClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1088
+  },
+  "InfantryClass": {
+   "parent": "FootClass",
+   "by": "rtti",
+   "domain": 1162
+  },
+  "UnitClass": {
+   "parent": "FootClass",
+   "by": "rtti",
+   "domain": 1174
+  },
+  "RawFileClass": {
+   "parent": "FileClass",
+   "by": "rtti",
+   "domain": 891
+  },
+  "BufferIOFileClass": {
+   "parent": "RawFileClass",
+   "by": "rtti",
+   "domain": 969
+  },
+  "CDFileClass": {
+   "parent": "BufferIOFileClass",
+   "by": "rtti",
+   "domain": 1037
+  },
+  "CCFileClass": {
+   "parent": "CDFileClass",
+   "by": "rtti",
+   "domain": 1049
+  },
+  "CellClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1110
+  },
+  "FactoryClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1055
+  },
+  "GameOption_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 498
+  },
+  "LoadProgressMgr": {
+   "parent": "INoticeSink",
+   "by": "rtti",
+   "domain": 572
+  },
+  "CCINIClass": {
+   "parent": "INIClass",
+   "by": "rtti",
+   "domain": 1041
+  },
+  "LayerClass": {
+   "parent": "DynamicVectorClass",
+   "by": "rtti",
+   "domain": 486
+  },
+  "Node": {
+   "parent": "GenericNode",
+   "by": "rtti",
+   "domain": 498
+  },
+  "MixFileClass": {
+   "parent": "Node",
+   "by": "rtti",
+   "domain": 545
+  },
+  "WaypointPathClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1034
+  },
+  "ScriptClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1004
+  },
+  "ScriptTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1049
+  },
+  "TActionClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1168
+  },
+  "TagClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1015
+  },
+  "TeamClass": {
+   "parent": null,
+   "by": "ctor-chain-ambiguous",
+   "cands": [
+    "TagClass",
+    "ScriptClass"
+   ],
+   "domain": 784
+  },
+  "TEventClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1064
+  },
+  "TriggerClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1013
+  },
+  "TriggerTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1065
+  },
+  "WeaponTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1081
+  },
+  "StopCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "GuardCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "DeployCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "ToggleSellCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "ToggleRepairCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "ScatterCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 363
+  },
+  "TauntCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 572
+  },
+  "PageUserCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 572
+  },
+  "DeleteCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 572
+  },
+  "ScreenCaptureCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 498
+  },
+  "CursorPositionCommandClass": {
+   "parent": "CommandClass",
+   "by": "rtti",
+   "domain": 498
+  },
+  "GadgetClass": {
+   "parent": "LinkClass",
+   "by": "rtti",
+   "domain": 894
+  },
+  "CampaignProperties_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "Campaign_WorldDominationTour": {
+   "parent": "ReferenceCounted",
+   "by": "rtti",
+   "domain": 363
+  },
+  "CheckListClass": {
+   "parent": "ListClass",
+   "by": "rtti",
+   "domain": 1049
+  },
+  "DropListClass": {
+   "parent": "EditClass",
+   "by": "rtti",
+   "domain": 1049
+  },
+  "List": {
+   "parent": "GenericList",
+   "by": "rtti",
+   "domain": 363
+  },
+  "ListClass": {
+   "parent": "ControlClass",
+   "by": "rtti",
+   "domain": 959
+  },
+  "SliderClass": {
+   "parent": "GaugeClass",
+   "by": "rtti",
+   "domain": 1014
+  },
+  "AnimClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1205
+  },
+  "BulletClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1157
+  },
+  "DSurface": {
+   "parent": "XSurface",
+   "by": "rtti",
+   "domain": 1155
+  },
+  "MPCooperative": {
+   "parent": "MultiplayerGameMode",
+   "by": "rtti",
+   "domain": 1192
+  },
+  "MSFrameAnim": {
+   "parent": "MSAnim",
+   "by": "rtti",
+   "domain": 942
+  },
+  "MouseClass": {
+   "parent": "ScrollClass",
+   "by": "rtti",
+   "domain": 1193
+  },
+  "ParticleClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1175
+  },
+  "RAMFileClass": {
+   "parent": "FileClass",
+   "by": "rtti",
+   "domain": 945
+  },
+  "RadarClass": {
+   "parent": "DisplayClass",
+   "by": "rtti",
+   "domain": 1197
+  },
+  "SuperClass": {
+   "parent": "AbstractClass",
+   "by": "rtti",
+   "domain": 1189
+  },
+  "TaskForceClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1089
+  },
+  "VoxelAnimClass": {
+   "parent": "ObjectClass",
+   "by": "rtti",
+   "domain": 1181
+  },
+  "WarheadTypeClass": {
+   "parent": "AbstractTypeClass",
+   "by": "rtti",
+   "domain": 1124
+  },
+  "DynamicVectorClass": {
+   "parent": "VectorClass",
+   "by": "rtti",
+   "domain": 918
+  }
+ },
+ "unknown": [
+  {
+   "class": "GameConfig",
+   "domain": 1099
+  },
+  {
+   "class": "Checksummer",
+   "domain": 746
+  },
+  {
+   "class": "GameMode",
+   "domain": 0
+  },
+  {
+   "class": "WTFMode",
+   "domain": 0
+  },
+  {
+   "class": "ScreenSaver",
+   "domain": 0
+  },
+  {
+   "class": "GUID",
+   "domain": 489
+  },
+  {
+   "class": "HashTable",
+   "domain": 1049
+  },
+  {
+   "class": "Entry",
+   "domain": 1106
+  },
+  {
+   "class": "Hash",
+   "domain": 572
+  },
+  {
+   "class": "SHA1",
+   "domain": 918
+  },
+  {
+   "class": "CRC32",
+   "domain": 498
+  },
+  {
+   "class": "CONNECTDATA",
+   "domain": 498
+  },
+  {
+   "class": "INoticeSink",
+   "domain": 363
+  },
+  {
+   "class": "INoticeSource",
+   "domain": 363
+  },
+  {
+   "class": "ISwizzle",
+   "domain": 363
+  },
+  {
+   "class": "IApplication",
+   "domain": 363
+  },
+  {
+   "class": "IHouse",
+   "domain": 363
+  },
+  {
+   "class": "IPublicHouse",
+   "domain": 363
+  },
+  {
+   "class": "IEnumConnections",
+   "domain": 363
+  },
+  {
+   "class": "IConnectionPoint",
+   "domain": 363
+  },
+  {
+   "class": "IConnectionPointContainer",
+   "domain": 363
+  },
+  {
+   "class": "IEnumConnectionPoints",
+   "domain": 363
+  },
+  {
+   "class": "IGameMap",
+   "domain": 363
+  },
+  {
+   "class": "ILinkStream",
+   "domain": 363
+  },
+  {
+   "class": "IFlyControl",
+   "domain": 363
+  },
+  {
+   "class": "ILocomotion",
+   "domain": 363
+  },
+  {
+   "class": "IPiggyback",
+   "domain": 363
+  },
+  {
+   "class": "FileEntryClass",
+   "domain": 1154
+  },
+  {
+   "class": "LoadOptions",
+   "domain": 983
+  },
+  {
+   "class": "LogLevel",
+   "domain": 0
+  },
+  {
+   "class": "Vector2D",
+   "domain": 0
+  },
+  {
+   "class": "Vector3D",
+   "domain": 0
+  },
+  {
+   "class": "GameAllocator",
+   "domain": 0
+  },
+  {
+   "class": "Memory",
+   "domain": 0
+  },
+  {
+   "class": "GameDeleter",
+   "domain": 0
+  },
+  {
+   "class": "PlayerConfig",
+   "domain": 1050
+  },
+  {
+   "class": "HouseConfig",
+   "domain": 1004
+  },
+  {
+   "class": "SpawnConfig",
+   "domain": 1155
+  },
+  {
+   "class": "StreamClass",
+   "domain": 887
+  },
+  {
+   "class": "Stream",
+   "domain": 497
+  },
+  {
+   "class": "AsyncIO",
+   "domain": 0
+  },
+  {
+   "class": "IStream",
+   "domain": 498
+  },
+  {
+   "class": "BulkData",
+   "domain": 0
+  },
+  {
+   "class": "Block",
+   "domain": 363
+  },
+  {
+   "class": "Byte",
+   "domain": 363
+  },
+  {
+   "class": "TextBuffer",
+   "domain": 0
+  },
+  {
+   "class": "Buffer",
+   "domain": 395
+  },
+  {
+   "class": "BufferClass",
+   "domain": 363
+  },
+  {
+   "class": "BufferIO",
+   "domain": 572
+  },
+  {
+   "class": "StreamObj",
+   "domain": 363
+  },
+  {
+   "class": "StreamWrapper",
+   "domain": 918
+  },
+  {
+   "class": "Text",
+   "domain": 363
+  },
+  {
+   "class": "TextGroup",
+   "domain": 363
+  },
+  {
+   "class": "TargetClass",
+   "domain": 0
+  },
+  {
+   "class": "MoveFeedback",
+   "domain": 1022
+  },
+  {
+   "class": "LoadGame",
+   "domain": 1004
+  },
+  {
+   "class": "Delegate",
+   "domain": 730
+  },
+  {
+   "class": "Struct",
+   "domain": 908
+  },
+  {
+   "class": "Count",
+   "domain": 363
+  },
+  {
+   "class": "Rect",
+   "domain": 746
+  },
+  {
+   "class": "COM",
+   "domain": 363
+  },
+  {
+   "class": "RefCount",
+   "domain": 498
+  },
+  {
+   "class": "Helper",
+   "domain": 363
+  },
+  {
+   "class": "Compare",
+   "domain": 363
+  },
+  {
+   "class": "Value",
+   "domain": 363
+  },
+  {
+   "class": "Return",
+   "domain": 363
+  },
+  {
+   "class": "EventQueue",
+   "domain": 0
+  },
+  {
+   "class": "Event_Dispatch",
+   "domain": 363
+  },
+  {
+   "class": "Selection",
+   "domain": 386
+  },
+  {
+   "class": "Player",
+   "domain": 0
+  },
+  {
+   "class": "FrameTimer",
+   "domain": 498
+  },
+  {
+   "class": "Time",
+   "domain": 363
+  },
+  {
+   "class": "Float",
+   "domain": 363
+  },
+  {
+   "class": "Config",
+   "domain": 363
+  },
+  {
+   "class": "Settings",
+   "domain": 363
+  },
+  {
+   "class": "Init",
+   "domain": 363
+  },
+  {
+   "class": "Process",
+   "domain": 363
+  },
+  {
+   "class": "Main",
+   "domain": 363
+  },
+  {
+   "class": "Stub",
+   "domain": 363
+  },
+  {
+   "class": "Type",
+   "domain": 363
+  },
+  {
+   "class": "unknown",
+   "domain": 746
+  },
+  {
+   "class": "WinMain",
+   "domain": 0
+  },
+  {
+   "class": "AllocCallback",
+   "domain": 363
+  },
+  {
+   "class": "COMClass",
+   "domain": 1049
+  },
+  {
+   "class": "COMClassFactory",
+   "domain": 498
+  },
+  {
+   "class": "COMClassFactory_10",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_3",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_4",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_5",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_6",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_7",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_8",
+   "domain": 363
+  },
+  {
+   "class": "COMClassFactory_9",
+   "domain": 363
+  },
+  {
+   "class": "COMObject",
+   "domain": 1049
+  },
+  {
+   "class": "ComPtr",
+   "domain": 972
+  },
+  {
+   "class": "CountdownTimer",
+   "domain": 363
+  },
+  {
+   "class": "CountryCombo",
+   "domain": 363
+  },
+  {
+   "class": "EventBuffer",
+   "domain": 363
+  },
+  {
+   "class": "Flag",
+   "domain": 572
+  },
+  {
+   "class": "FlagSystem",
+   "domain": 363
+  },
+  {
+   "class": "Float4",
+   "domain": 498
+  },
+  {
+   "class": "FloatArray",
+   "domain": 363
+  },
+  {
+   "class": "GraphicMenuItem",
+   "domain": 498
+  },
+  {
+   "class": "GraphicMenuItem_Destru",
+   "domain": 498
+  },
+  {
+   "class": "HashMap",
+   "domain": 746
+  },
+  {
+   "class": "HashTableSection",
+   "domain": 363
+  },
+  {
+   "class": "HashTree",
+   "domain": 363
+  },
+  {
+   "class": "HashVector_UInt",
+   "domain": 363
+  },
+  {
+   "class": "PairVector",
+   "domain": 363
+  },
+  {
+   "class": "PlayerClass",
+   "domain": 1004
+  },
+  {
+   "class": "PlayerSlot",
+   "domain": 498
+  },
+  {
+   "class": "PlayerType",
+   "domain": 363
+  },
+  {
+   "class": "PtrVector",
+   "domain": 363
+  },
+  {
+   "class": "Queue",
+   "domain": 0
+  },
+  {
+   "class": "Random",
+   "domain": 746
+  },
+  {
+   "class": "Rect_Point",
+   "domain": 363
+  },
+  {
+   "class": "ReferenceCounted",
+   "domain": 363
+  },
+  {
+   "class": "SettingsClass",
+   "domain": 363
+  },
+  {
+   "class": "StringBuffer",
+   "domain": 363
+  },
+  {
+   "class": "StringList",
+   "domain": 363
+  },
+  {
+   "class": "StringTable",
+   "domain": 498
+  },
+  {
+   "class": "StringVector",
+   "domain": 942
+  },
+  {
+   "class": "StructTable",
+   "domain": 363
+  },
+  {
+   "class": "Timeout",
+   "domain": 363
+  },
+  {
+   "class": "TimerPool",
+   "domain": 363
+  },
+  {
+   "class": "Tree",
+   "domain": 363
+  },
+  {
+   "class": "TypeClass",
+   "domain": 363
+  },
+  {
+   "class": "Vector2",
+   "domain": 498
+  },
+  {
+   "class": "Vector3",
+   "domain": 572
+  },
+  {
+   "class": "Vector4",
+   "domain": 498
+  },
+  {
+   "class": "Vector8",
+   "domain": 363
+  },
+  {
+   "class": "VectorClassUInt",
+   "domain": 363
+  },
+  {
+   "class": "VectorCursor",
+   "domain": 942
+  },
+  {
+   "class": "VectorCursor_uint_DynamicVectorClass_uint",
+   "domain": 572
+  },
+  {
+   "class": "Quaternion",
+   "domain": 746
+  },
+  {
+   "class": "BulletData",
+   "domain": 978
+  },
+  {
+   "class": "EBolt",
+   "domain": 997
+  },
+  {
+   "class": "TintStruct",
+   "domain": 572
+  },
+  {
+   "class": "VxlElement",
+   "domain": 0
+  },
+  {
+   "class": "VxlFile",
+   "domain": 498
+  },
+  {
+   "class": "HvaMatrix",
+   "domain": 1027
+  },
+  {
+   "class": "HvaFile",
+   "domain": 746
+  },
+  {
+   "class": "BaseNodeClass",
+   "domain": 510
+  },
+  {
+   "class": "BaseClass",
+   "domain": 1039
+  },
+  {
+   "class": "StartingTechnoStruct",
+   "domain": 498
+  },
+  {
+   "class": "AngerStruct",
+   "domain": 498
+  },
+  {
+   "class": "ScoutStruct",
+   "domain": 386
+  },
+  {
+   "class": "BuildChoiceClass",
+   "domain": 0
+  },
+  {
+   "class": "DropshipStruct",
+   "domain": 740
+  },
+  {
+   "class": "CounterClass",
+   "domain": 498
+  },
+  {
+   "class": "ScoreStruct",
+   "domain": 1179
+  },
+  {
+   "class": "VocClassHeader",
+   "domain": 572
+  },
+  {
+   "class": "VolumeStruct",
+   "domain": 959
+  },
+  {
+   "class": "VocClass",
+   "domain": 1115
+  },
+  {
+   "class": "VoxClass",
+   "domain": 1049
+  },
+  {
+   "class": "AudioEventHandle",
+   "domain": 752
+  },
+  {
+   "class": "AudioMixer",
+   "domain": 918
+  },
+  {
+   "class": "AudioSettings",
+   "domain": 1031
+  },
+  {
+   "class": "Voice",
+   "domain": 0
+  },
+  {
+   "class": "Mixer",
+   "domain": 363
+  },
+  {
+   "class": "ThemeClass",
+   "domain": 1132
+  },
+  {
+   "class": "Theme",
+   "domain": 0
+  },
+  {
+   "class": "ThemeManager",
+   "domain": 0
+  },
+  {
+   "class": "Audio3D",
+   "domain": 363
+  },
+  {
+   "class": "AudioBuffer",
+   "domain": 363
+  },
+  {
+   "class": "AudioChannel",
+   "domain": 572
+  },
+  {
+   "class": "AudioCodec",
+   "domain": 363
+  },
+  {
+   "class": "AudioConfig",
+   "domain": 363
+  },
+  {
+   "class": "AudioEvent",
+   "domain": 363
+  },
+  {
+   "class": "AudioFile",
+   "domain": 498
+  },
+  {
+   "class": "AudioFileClass",
+   "domain": 363
+  },
+  {
+   "class": "AudioFrame",
+   "domain": 498
+  },
+  {
+   "class": "AudioIndex",
+   "domain": 363
+  },
+  {
+   "class": "AudioList",
+   "domain": 363
+  },
+  {
+   "class": "AudioNode",
+   "domain": 363
+  },
+  {
+   "class": "AudioOcclusion",
+   "domain": 363
+  },
+  {
+   "class": "AudioOptionsClass",
+   "domain": 363
+  },
+  {
+   "class": "AudioPool",
+   "domain": 363
+  },
+  {
+   "class": "AudioSample",
+   "domain": 887
+  },
+  {
+   "class": "AudioSource",
+   "domain": 363
+  },
+  {
+   "class": "AudioThread",
+   "domain": 363
+  },
+  {
+   "class": "AudioTimer",
+   "domain": 363
+  },
+  {
+   "class": "CDTimerClass",
+   "domain": 572
+  },
+  {
+   "class": "RateTimer",
+   "domain": 746
+  },
+  {
+   "class": "FacingClass",
+   "domain": 918
+  },
+  {
+   "class": "DriveLocomotionClass",
+   "domain": 1066
+  },
+  {
+   "class": "HoverLocomotionClass",
+   "domain": 1071
+  },
+  {
+   "class": "WalkLocomotionClass",
+   "domain": 1016
+  },
+  {
+   "class": "FlyLocomotionClass",
+   "domain": 779
+  },
+  {
+   "class": "RocketLocomotionClass",
+   "domain": 790
+  },
+  {
+   "class": "State",
+   "domain": 909
+  },
+  {
+   "class": "JumpjetLocomotionClass",
+   "domain": 787
+  },
+  {
+   "class": "ShipLocomotionClass",
+   "domain": 1066
+  },
+  {
+   "class": "TeleportLocomotionClass",
+   "domain": 783
+  },
+  {
+   "class": "TunnelLocomotionClass",
+   "domain": 799
+  },
+  {
+   "class": "MechLocomotionClass",
+   "domain": 775
+  },
+  {
+   "class": "DropPodLocomotionClass",
+   "domain": 962
+  },
+  {
+   "class": "Warhead",
+   "domain": 0
+  },
+  {
+   "class": "DamageArea",
+   "domain": 363
+  },
+  {
+   "class": "UnholyAlliance",
+   "domain": 432
+  },
+  {
+   "class": "Weapon",
+   "domain": 363
+  },
+  {
+   "class": "Turret",
+   "domain": 1182
+  },
+  {
+   "class": "DropPod",
+   "domain": 363
+  },
+  {
+   "class": "Carryall",
+   "domain": 1167
+  },
+  {
+   "class": "Locomotor",
+   "domain": 363
+  },
+  {
+   "class": "Explosion",
+   "domain": 363
+  },
+  {
+   "class": "BINK",
+   "domain": 363
+  },
+  {
+   "class": "CSF",
+   "domain": 363
+  },
+  {
+   "class": "AI",
+   "domain": 363
+  },
+  {
+   "class": "Isometric",
+   "domain": 0
+  },
+  {
+   "class": "Shroud",
+   "domain": 0
+  },
+  {
+   "class": "GUIDUtil",
+   "domain": 363
+  },
+  {
+   "class": "CoordUtil",
+   "domain": 572
+  },
+  {
+   "class": "TriggerActionQueue",
+   "domain": 0
+  },
+  {
+   "class": "AnimSystem",
+   "domain": 0
+  },
+  {
+   "class": "BuildingLoadQueue",
+   "domain": 746
+  },
+  {
+   "class": "Matrix3x4",
+   "domain": 1004
+  },
+  {
+   "class": "InputManager_ProcessEvents",
+   "domain": 887
+  },
+  {
+   "class": "AITriggerTypeClass",
+   "domain": 382
+  },
+  {
+   "class": "AnimFile",
+   "domain": 942
+  },
+  {
+   "class": "AnimSequence",
+   "domain": 363
+  },
+  {
+   "class": "AnimTypeList",
+   "domain": 363
+  },
+  {
+   "class": "AnimTypeVector",
+   "domain": 363
+  },
+  {
+   "class": "CSFClass",
+   "domain": 572
+  },
+  {
+   "class": "CaptureManager",
+   "domain": 0
+  },
+  {
+   "class": "ChronoScreen",
+   "domain": 363
+  },
+  {
+   "class": "CoopCampaignVector",
+   "domain": 959
+  },
+  {
+   "class": "Coord2D",
+   "domain": 498
+  },
+  {
+   "class": "Coord3D",
+   "domain": 572
+  },
+  {
+   "class": "CoordBounds",
+   "domain": 363
+  },
+  {
+   "class": "CoordList",
+   "domain": 363
+  },
+  {
+   "class": "CoordinateTables",
+   "domain": 363
+  },
+  {
+   "class": "DamageAnimClass",
+   "domain": 363
+  },
+  {
+   "class": "EMPulseClass",
+   "domain": 959
+  },
+  {
+   "class": "ExplosionClass",
+   "domain": 363
+  },
+  {
+   "class": "FileExtension",
+   "domain": 746
+  },
+  {
+   "class": "FileFind",
+   "domain": 746
+  },
+  {
+   "class": "FileStraw_Destru",
+   "domain": 498
+  },
+  {
+   "class": "FileTree",
+   "domain": 363
+  },
+  {
+   "class": "FileTreeNode",
+   "domain": 363
+  },
+  {
+   "class": "InfantryTypeVector",
+   "domain": 959
+  },
+  {
+   "class": "IsoCoord",
+   "domain": 498
+  },
+  {
+   "class": "IsoTile",
+   "domain": 746
+  },
+  {
+   "class": "IsometricTileClass",
+   "domain": 363
+  },
+  {
+   "class": "IsometricTileTypeClass",
+   "domain": 475
+  },
+  {
+   "class": "Lightning",
+   "domain": 363
+  },
+  {
+   "class": "MapCoords",
+   "domain": 363
+  },
+  {
+   "class": "MapData",
+   "domain": 363
+  },
+  {
+   "class": "MapFile",
+   "domain": 942
+  },
+  {
+   "class": "MapPreview",
+   "domain": 498
+  },
+  {
+   "class": "MapResourceClass",
+   "domain": 363
+  },
+  {
+   "class": "MapSeed",
+   "domain": 972
+  },
+  {
+   "class": "MapSeedClass",
+   "domain": 1004
+  },
+  {
+   "class": "Matrix",
+   "domain": 498
+  },
+  {
+   "class": "Matrix2D",
+   "domain": 363
+  },
+  {
+   "class": "Matrix3x3",
+   "domain": 887
+  },
+  {
+   "class": "PlacementList",
+   "domain": 498
+  },
+  {
+   "class": "PlanningNodeClass",
+   "domain": 498
+  },
+  {
+   "class": "RadarHashVector",
+   "domain": 1014
+  },
+  {
+   "class": "ScoreAnimClass",
+   "domain": 959
+  },
+  {
+   "class": "ScoreBoard",
+   "domain": 363
+  },
+  {
+   "class": "ScoreClass",
+   "domain": 363
+  },
+  {
+   "class": "ScoreFontClass",
+   "domain": 746
+  },
+  {
+   "class": "ScoreScreen",
+   "domain": 1050
+  },
+  {
+   "class": "ScoreScreenClass",
+   "domain": 363
+  },
+  {
+   "class": "ScoreText",
+   "domain": 498
+  },
+  {
+   "class": "ShroudClass",
+   "domain": 498
+  },
+  {
+   "class": "SpawnControlVector",
+   "domain": 363
+  },
+  {
+   "class": "SuperClassVector",
+   "domain": 363
+  },
+  {
+   "class": "SuperWeaponClass",
+   "domain": 887
+  },
+  {
+   "class": "TClassFactory_AnimClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BulletClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_CampaignClass",
+   "domain": 959
+  },
+  {
+   "class": "TClassFactory_CellClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_EMPulseClass",
+   "domain": 746
+  },
+  {
+   "class": "TeamTypeVector",
+   "domain": 363
+  },
+  {
+   "class": "AbstractClassVector",
+   "domain": 959
+  },
+  {
+   "class": "ActionQueue",
+   "domain": 363
+  },
+  {
+   "class": "Actions",
+   "domain": 363
+  },
+  {
+   "class": "AircraftTrackerClass",
+   "domain": 363
+  },
+  {
+   "class": "AircraftTypeVector",
+   "domain": 363
+  },
+  {
+   "class": "AngerVector",
+   "domain": 363
+  },
+  {
+   "class": "AppState",
+   "domain": 363
+  },
+  {
+   "class": "ArcTan",
+   "domain": 363
+  },
+  {
+   "class": "ArmorType",
+   "domain": 498
+  },
+  {
+   "class": "ArtConfig",
+   "domain": 918
+  },
+  {
+   "class": "AssetClass",
+   "domain": 363
+  },
+  {
+   "class": "BTree",
+   "domain": 363
+  },
+  {
+   "class": "BaseNodeClass_Vector",
+   "domain": 887
+  },
+  {
+   "class": "BigInt",
+   "domain": 746
+  },
+  {
+   "class": "BinkMovieClass",
+   "domain": 887
+  },
+  {
+   "class": "BoolVector",
+   "domain": 363
+  },
+  {
+   "class": "BridgeClass",
+   "domain": 363
+  },
+  {
+   "class": "BuildLocation",
+   "domain": 363
+  },
+  {
+   "class": "BuildLocationVector",
+   "domain": 363
+  },
+  {
+   "class": "C07EFB9C",
+   "domain": 363
+  },
+  {
+   "class": "C07F0188",
+   "domain": 363
+  },
+  {
+   "class": "C07F5C70",
+   "domain": 887
+  },
+  {
+   "class": "CCToolTip",
+   "domain": 918
+  },
+  {
+   "class": "CChatEventSink",
+   "domain": 1014
+  },
+  {
+   "class": "CDROM",
+   "domain": 498
+  },
+  {
+   "class": "CarryoverClass",
+   "domain": 363
+  },
+  {
+   "class": "CellClassVector",
+   "domain": 363
+  },
+  {
+   "class": "CellCoord",
+   "domain": 363
+  },
+  {
+   "class": "CellLand",
+   "domain": 363
+  },
+  {
+   "class": "CellSystem",
+   "domain": 363
+  },
+  {
+   "class": "Char",
+   "domain": 363
+  },
+  {
+   "class": "Chat",
+   "domain": 498
+  },
+  {
+   "class": "ChatDialog",
+   "domain": 363
+  },
+  {
+   "class": "ChatEvent",
+   "domain": 363
+  },
+  {
+   "class": "ClassFactory_CStream",
+   "domain": 363
+  },
+  {
+   "class": "ClassFactory_Wave",
+   "domain": 363
+  },
+  {
+   "class": "Cliff",
+   "domain": 363
+  },
+  {
+   "class": "ComStreamClass",
+   "domain": 1027
+  },
+  {
+   "class": "Compression",
+   "domain": 363
+  },
+  {
+   "class": "Conditions",
+   "domain": 498
+  },
+  {
+   "class": "ConnectionPointVector",
+   "domain": 363
+  },
+  {
+   "class": "CrateClass",
+   "domain": 572
+  },
+  {
+   "class": "CreatureClass",
+   "domain": 363
+  },
+  {
+   "class": "Crypto",
+   "domain": 363
+  },
+  {
+   "class": "DListNode",
+   "domain": 498
+  },
+  {
+   "class": "DiskSpace",
+   "domain": 363
+  },
+  {
+   "class": "DistributionVector_BuildingType",
+   "domain": 363
+  },
+  {
+   "class": "DynamicArray",
+   "domain": 887
+  },
+  {
+   "class": "DynamicClass",
+   "domain": 363
+  },
+  {
+   "class": "DynamicStringArray",
+   "domain": 363
+  },
+  {
+   "class": "DynamicVectorArray",
+   "domain": 363
+  },
+  {
+   "class": "ErrorCode",
+   "domain": 363
+  },
+  {
+   "class": "Exception",
+   "domain": 363
+  },
+  {
+   "class": "ExceptionHandler",
+   "domain": 363
+  },
+  {
+   "class": "Field",
+   "domain": 363
+  },
+  {
+   "class": "FractalNoise",
+   "domain": 363
+  },
+  {
+   "class": "Function",
+   "domain": 942
+  },
+  {
+   "class": "GDlg",
+   "domain": 363
+  },
+  {
+   "class": "GenericVector",
+   "domain": 572
+  },
+  {
+   "class": "GetCurrentProcessId",
+   "domain": 363
+  },
+  {
+   "class": "GetCurrentThread",
+   "domain": 363
+  },
+  {
+   "class": "GetCurrentThreadId",
+   "domain": 363
+  },
+  {
+   "class": "GlobalArray",
+   "domain": 363
+  },
+  {
+   "class": "GlobalInit",
+   "domain": 498
+  },
+  {
+   "class": "GroupLabel",
+   "domain": 363
+  },
+  {
+   "class": "HVAAnimation",
+   "domain": 498
+  },
+  {
+   "class": "Heap",
+   "domain": 363
+  },
+  {
+   "class": "HexCoord",
+   "domain": 363
+  },
+  {
+   "class": "IDXContainer",
+   "domain": 363
+  },
+  {
+   "class": "INISectionList",
+   "domain": 363
+  },
+  {
+   "class": "ImageList",
+   "domain": 918
+  },
+  {
+   "class": "Int4",
+   "domain": 498
+  },
+  {
+   "class": "Int64",
+   "domain": 363
+  },
+  {
+   "class": "IntDynamicVector",
+   "domain": 498
+  },
+  {
+   "class": "IntVector",
+   "domain": 498
+  },
+  {
+   "class": "IsRandMap",
+   "domain": 498
+  },
+  {
+   "class": "KeyValuePair",
+   "domain": 363
+  },
+  {
+   "class": "KeywordClass",
+   "domain": 363
+  },
+  {
+   "class": "KeywordType",
+   "domain": 363
+  },
+  {
+   "class": "LCW",
+   "domain": 572
+  },
+  {
+   "class": "LCWPipe",
+   "domain": 498
+  },
+  {
+   "class": "LCWPipe_Destru",
+   "domain": 498
+  },
+  {
+   "class": "LCWStraw_Destru",
+   "domain": 363
+  },
+  {
+   "class": "LZOPipe",
+   "domain": 498
+  },
+  {
+   "class": "LZOPipe_Destru",
+   "domain": 498
+  },
+  {
+   "class": "LZOStraw_Destru",
+   "domain": 363
+  },
+  {
+   "class": "Lobby",
+   "domain": 972
+  },
+  {
+   "class": "MIXClass",
+   "domain": 363
+  },
+  {
+   "class": "MPCombatTeam",
+   "domain": 746
+  },
+  {
+   "class": "MPScore",
+   "domain": 363
+  },
+  {
+   "class": "MSAnim",
+   "domain": 572
+  },
+  {
+   "class": "MSChoiceClass",
+   "domain": 498
+  },
+  {
+   "class": "MSEngine_Destru",
+   "domain": 431
+  },
+  {
+   "class": "MSFont",
+   "domain": 918
+  },
+  {
+   "class": "MSOverlayAnim",
+   "domain": 942
+  },
+  {
+   "class": "MSSfxClass",
+   "domain": 363
+  },
+  {
+   "class": "MSShapeAnim",
+   "domain": 498
+  },
+  {
+   "class": "Megawealth",
+   "domain": 498
+  },
+  {
+   "class": "Miles",
+   "domain": 363
+  },
+  {
+   "class": "MiniMap",
+   "domain": 498
+  },
+  {
+   "class": "MovieClass",
+   "domain": 918
+  },
+  {
+   "class": "MovieContext",
+   "domain": 363
+  },
+  {
+   "class": "MultiMissionVector",
+   "domain": 363
+  },
+  {
+   "class": "Multiplay",
+   "domain": 363
+  },
+  {
+   "class": "NetMessage",
+   "domain": 498
+  },
+  {
+   "class": "NeuronClass",
+   "domain": 918
+  },
+  {
+   "class": "NullGuard",
+   "domain": 363
+  },
+  {
+   "class": "ObjectManager",
+   "domain": 498
+  },
+  {
+   "class": "ObjectPlacement",
+   "domain": 498
+  },
+  {
+   "class": "ObjectPtr",
+   "domain": 363
+  },
+  {
+   "class": "ObjectVector",
+   "domain": 918
+  },
+  {
+   "class": "ObserverClass",
+   "domain": 363
+  },
+  {
+   "class": "OleUninitialize",
+   "domain": 363
+  },
+  {
+   "class": "OptionQueue",
+   "domain": 363
+  },
+  {
+   "class": "OreManagerClass",
+   "domain": 363
+  },
+  {
+   "class": "OwnerDrawControl",
+   "domain": 363
+  },
+  {
+   "class": "PKStrawClass",
+   "domain": 572
+  },
+  {
+   "class": "PacketQueue",
+   "domain": 498
+  },
+  {
+   "class": "Performance",
+   "domain": 498
+  },
+  {
+   "class": "PhoneEditor",
+   "domain": 363
+  },
+  {
+   "class": "PingPongBuffer",
+   "domain": 363
+  },
+  {
+   "class": "Pipe",
+   "domain": 746
+  },
+  {
+   "class": "PlanManager",
+   "domain": 363
+  },
+  {
+   "class": "PowerBar",
+   "domain": 498
+  },
+  {
+   "class": "PreviewClass",
+   "domain": 498
+  },
+  {
+   "class": "PriQueue",
+   "domain": 363
+  },
+  {
+   "class": "PrintTimerOnTactical",
+   "domain": 363
+  },
+  {
+   "class": "PriorityQueue",
+   "domain": 498
+  },
+  {
+   "class": "ProductionClass",
+   "domain": 363
+  },
+  {
+   "class": "ProductionQueue",
+   "domain": 363
+  },
+  {
+   "class": "ProjectileTrail",
+   "domain": 363
+  },
+  {
+   "class": "Property",
+   "domain": 498
+  },
+  {
+   "class": "PushCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "RateScaler",
+   "domain": 363
+  },
+  {
+   "class": "ReinforcementClass",
+   "domain": 363
+  },
+  {
+   "class": "ResultNode",
+   "domain": 498
+  },
+  {
+   "class": "SHPClass",
+   "domain": 363
+  },
+  {
+   "class": "SafeDelete",
+   "domain": 498
+  },
+  {
+   "class": "Scalar",
+   "domain": 363
+  },
+  {
+   "class": "ScalarDtor",
+   "domain": 363
+  },
+  {
+   "class": "ScoutVector",
+   "domain": 363
+  },
+  {
+   "class": "ScriptActionQueue",
+   "domain": 363
+  },
+  {
+   "class": "ScriptActionVector",
+   "domain": 363
+  },
+  {
+   "class": "ScriptQueue",
+   "domain": 363
+  },
+  {
+   "class": "SerialPort",
+   "domain": 363
+  },
+  {
+   "class": "ShapeButton",
+   "domain": 498
+  },
+  {
+   "class": "ShapeButtonClass_Destru",
+   "domain": 363
+  },
+  {
+   "class": "Sides",
+   "domain": 363
+  },
+  {
+   "class": "SimpleDialogControl",
+   "domain": 363
+  },
+  {
+   "class": "SlaveControlVector",
+   "domain": 363
+  },
+  {
+   "class": "SmudgeTypeList",
+   "domain": 363
+  },
+  {
+   "class": "SmudgeTypeVector",
+   "domain": 918
+  },
+  {
+   "class": "SortedArray",
+   "domain": 972
+  },
+  {
+   "class": "SortedStateVector",
+   "domain": 363
+  },
+  {
+   "class": "SortedVector",
+   "domain": 363
+  },
+  {
+   "class": "SquadClass",
+   "domain": 498
+  },
+  {
+   "class": "StartCombo",
+   "domain": 363
+  },
+  {
+   "class": "StartingTechnoVector",
+   "domain": 363
+  },
+  {
+   "class": "StaticButtonClass",
+   "domain": 918
+  },
+  {
+   "class": "StaticString",
+   "domain": 363
+  },
+  {
+   "class": "Straw",
+   "domain": 498
+  },
+  {
+   "class": "Subzone",
+   "domain": 572
+  },
+  {
+   "class": "SubzoneConnectionVector",
+   "domain": 572
+  },
+  {
+   "class": "SubzoneHashVector",
+   "domain": 363
+  },
+  {
+   "class": "SubzoneTrackingVector",
+   "domain": 363
+  },
+  {
+   "class": "SwizzleManager",
+   "domain": 498
+  },
+  {
+   "class": "SymbolTable",
+   "domain": 498
+  },
+  {
+   "class": "TAction",
+   "domain": 363
+  },
+  {
+   "class": "TClassFactory_AITriggerTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_AircraftClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_AircraftTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_AirstrikeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_AlphaShapeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_AnimTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BombClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BuildingClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BuildingLightClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BuildingTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_BulletTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_CaptureManagerClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_DiskLaserClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_DriveLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_FactoryClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_FlyLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_FoggedObjectClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_HouseClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_HouseTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_HoverLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_InfantryClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_InfantryTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_LightSourceClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_NeuronClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_OverlayTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ParasiteClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ParticleClass",
+   "domain": 572
+  },
+  {
+   "class": "TClassFactory_ParticleSystemClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ParticleTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_RadSiteClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_RocketLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ScriptClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ScriptTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_ShipLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_SideClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_SlaveManagerClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_SmudgeTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_SpawnManagerClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TActionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TEventClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TagClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TagTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TaskForceClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TeamClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TeamTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TemporalClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TiberiumClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TriggerClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TriggerTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_UnitClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_UnitTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_VoxelAnimClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_WalkLocomotionClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_WarheadTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_WaypointPathClass",
+   "domain": 746
+  },
+  {
+   "class": "TClassFactory_WeaponTypeClass",
+   "domain": 746
+  },
+  {
+   "class": "TagClassVector",
+   "domain": 363
+  },
+  {
+   "class": "Targeting",
+   "domain": 363
+  },
+  {
+   "class": "TaskManager",
+   "domain": 363
+  },
+  {
+   "class": "TechnoTypeVector",
+   "domain": 498
+  },
+  {
+   "class": "TeknoClass",
+   "domain": 363
+  },
+  {
+   "class": "TerrainTypeVector",
+   "domain": 363
+  },
+  {
+   "class": "TheatreClass",
+   "domain": 363
+  },
+  {
+   "class": "TileData",
+   "domain": 363
+  },
+  {
+   "class": "TileNode",
+   "domain": 363
+  },
+  {
+   "class": "TileSystem",
+   "domain": 746
+  },
+  {
+   "class": "TileVector",
+   "domain": 363
+  },
+  {
+   "class": "ToggleClass",
+   "domain": 498
+  },
+  {
+   "class": "ToggleRepairModeCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "Triple",
+   "domain": 363
+  },
+  {
+   "class": "UnitTypeList",
+   "domain": 363
+  },
+  {
+   "class": "UnitTypeVector",
+   "domain": 942
+  },
+  {
+   "class": "VQAClass",
+   "domain": 363
+  },
+  {
+   "class": "VeinholeClass",
+   "domain": 498
+  },
+  {
+   "class": "VeinholeMonsterClass",
+   "domain": 993
+  },
+  {
+   "class": "VersionInfo",
+   "domain": 363
+  },
+  {
+   "class": "Viewport",
+   "domain": 498
+  },
+  {
+   "class": "VtableStub",
+   "domain": 972
+  },
+  {
+   "class": "WDTClass",
+   "domain": 498
+  },
+  {
+   "class": "WDTGame",
+   "domain": 746
+  },
+  {
+   "class": "WDTObject",
+   "domain": 498
+  },
+  {
+   "class": "WDTSurface",
+   "domain": 498
+  },
+  {
+   "class": "WString",
+   "domain": 498
+  },
+  {
+   "class": "WaypointPath",
+   "domain": 363
+  },
+  {
+   "class": "WideChar",
+   "domain": 363
+  },
+  {
+   "class": "WinAPI",
+   "domain": 363
+  },
+  {
+   "class": "WinModemClass",
+   "domain": 1130
+  },
+  {
+   "class": "WonlineStringDialogControl",
+   "domain": 363
+  },
+  {
+   "class": "WordVector",
+   "domain": 363
+  },
+  {
+   "class": "World",
+   "domain": 363
+  },
+  {
+   "class": "WorldDomination",
+   "domain": 363
+  },
+  {
+   "class": "WorldDominationTour",
+   "domain": 363
+  },
+  {
+   "class": "ZBuffer",
+   "domain": 363
+  },
+  {
+   "class": "ZoneConnectionVector",
+   "domain": 363
+  },
+  {
+   "class": "MovementAI",
+   "domain": 942
+  },
+  {
+   "class": "Movement",
+   "domain": 363
+  },
+  {
+   "class": "MovementClass",
+   "domain": 498
+  },
+  {
+   "class": "Pathfinding",
+   "domain": 942
+  },
+  {
+   "class": "PathfindingClass",
+   "domain": 363
+  },
+  {
+   "class": "DifficultyStruct",
+   "domain": 1036
+  },
+  {
+   "class": "RocketStruct",
+   "domain": 1002
+  },
+  {
+   "class": "RulesClass",
+   "domain": 1148
+  },
+  {
+   "class": "SuperWeaponTypeClass",
+   "domain": 931
+  },
+  {
+   "class": "LightningStorm",
+   "domain": 0
+  },
+  {
+   "class": "PsyDom",
+   "domain": 0
+  },
+  {
+   "class": "ChronoScreenEffect",
+   "domain": 0
+  },
+  {
+   "class": "NukeFlash",
+   "domain": 0
+  },
+  {
+   "class": "ConnectionClass",
+   "domain": 518
+  },
+  {
+   "class": "IPXManagerClass",
+   "domain": 471
+  },
+  {
+   "class": "ModemConnectionClass",
+   "domain": 1057
+  },
+  {
+   "class": "NullModemClass",
+   "domain": 1094
+  },
+  {
+   "class": "MPGameModeClass",
+   "domain": 416
+  },
+  {
+   "class": "MPBattleClass",
+   "domain": 993
+  },
+  {
+   "class": "MPFreeForAllClass",
+   "domain": 993
+  },
+  {
+   "class": "MPUnholyAllianceClass",
+   "domain": 993
+  },
+  {
+   "class": "MPSiegeClass",
+   "domain": 993
+  },
+  {
+   "class": "MPMegawealthClass",
+   "domain": 993
+  },
+  {
+   "class": "MPManBattleClass",
+   "domain": 993
+  },
+  {
+   "class": "MultiplayerSiege",
+   "domain": 887
+  },
+  {
+   "class": "Multiplayer",
+   "domain": 0
+  },
+  {
+   "class": "WOL",
+   "domain": 363
+  },
+  {
+   "class": "NetworkAddress",
+   "domain": 386
+  },
+  {
+   "class": "Socket",
+   "domain": 572
+  },
+  {
+   "class": "MultiplayerManBattle",
+   "domain": 363
+  },
+  {
+   "class": "Modem",
+   "domain": 746
+  },
+  {
+   "class": "ModemGame",
+   "domain": 887
+  },
+  {
+   "class": "ModemGuest",
+   "domain": 746
+  },
+  {
+   "class": "ModemHost",
+   "domain": 572
+  },
+  {
+   "class": "MultiplayerConfig",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerLobby",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerModeVector",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerModeVector2",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerSiegeAttackerTeam",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerTeam",
+   "domain": 498
+  },
+  {
+   "class": "MultiplayerTeamVector",
+   "domain": 363
+  },
+  {
+   "class": "MultiplayerTeam_Destru",
+   "domain": 363
+  },
+  {
+   "class": "NetworkBuffer",
+   "domain": 746
+  },
+  {
+   "class": "NetworkDialog",
+   "domain": 572
+  },
+  {
+   "class": "NetworkEventClass",
+   "domain": 363
+  },
+  {
+   "class": "NetworkEventQueueClass",
+   "domain": 363
+  },
+  {
+   "class": "NetworkGameSetup",
+   "domain": 959
+  },
+  {
+   "class": "NetworkID",
+   "domain": 498
+  },
+  {
+   "class": "NetworkManager",
+   "domain": 498
+  },
+  {
+   "class": "NetworkOptions",
+   "domain": 498
+  },
+  {
+   "class": "NetworkScore",
+   "domain": 363
+  },
+  {
+   "class": "NetworkSession",
+   "domain": 498
+  },
+  {
+   "class": "NetworkSettings",
+   "domain": 363
+  },
+  {
+   "class": "NetworkShare",
+   "domain": 363
+  },
+  {
+   "class": "UDPInterfaceClass_Destru",
+   "domain": 404
+  },
+  {
+   "class": "WOLGameClass",
+   "domain": 363
+  },
+  {
+   "class": "WOLGameList",
+   "domain": 887
+  },
+  {
+   "class": "WOLLogin",
+   "domain": 363
+  },
+  {
+   "class": "WOLOption",
+   "domain": 363
+  },
+  {
+   "class": "WOLPersona",
+   "domain": 363
+  },
+  {
+   "class": "WOLobby",
+   "domain": 942
+  },
+  {
+   "class": "PlayerData",
+   "domain": 572
+  },
+  {
+   "class": "NodeNameType",
+   "domain": 1081
+  },
+  {
+   "class": "GameTypePreferencesStruct",
+   "domain": 936
+  },
+  {
+   "class": "GameModeOptionsClass",
+   "domain": 638
+  },
+  {
+   "class": "SessionClass",
+   "domain": 1199
+  },
+  {
+   "class": "WinsockInterfaceClass",
+   "domain": 391
+  },
+  {
+   "class": "IPXInterfaceClass",
+   "domain": 371
+  },
+  {
+   "class": "UDPInterfaceClass",
+   "domain": 404
+  },
+  {
+   "class": "IPersistStream",
+   "domain": 363
+  },
+  {
+   "class": "IRTTITypeInfo",
+   "domain": 363
+  },
+  {
+   "class": "YRComPtr",
+   "domain": 363
+  },
+  {
+   "class": "FootClass",
+   "domain": 1119
+  },
+  {
+   "class": "ParasiteClass",
+   "domain": 667
+  },
+  {
+   "class": "RadBeam",
+   "domain": 1096
+  },
+  {
+   "class": "SlaveControl",
+   "domain": 887
+  },
+  {
+   "class": "SpawnControl",
+   "domain": 889
+  },
+  {
+   "class": "BlitterCore",
+   "domain": 363
+  },
+  {
+   "class": "Blitter",
+   "domain": 498
+  },
+  {
+   "class": "RLEBlitterCore",
+   "domain": 498
+  },
+  {
+   "class": "RLEBlitter",
+   "domain": 498
+  },
+  {
+   "class": "BlitTransRemap",
+   "domain": 498
+  },
+  {
+   "class": "BlitTransWarp",
+   "domain": 498
+  },
+  {
+   "class": "RLEBlitTrans",
+   "domain": 498
+  },
+  {
+   "class": "ColorScheme",
+   "domain": 1145
+  },
+  {
+   "class": "LTRBStruct",
+   "domain": 746
+  },
+  {
+   "class": "Crate",
+   "domain": 746
+  },
+  {
+   "class": "FoggedObjectClass",
+   "domain": 370
+  },
+  {
+   "class": "PendingCellClass",
+   "domain": 887
+  },
+  {
+   "class": "MovieHandle",
+   "domain": 363
+  },
+  {
+   "class": "MoviePlayer",
+   "domain": 363
+  },
+  {
+   "class": "RGBColor",
+   "domain": 3
+  },
+  {
+   "class": "HSVClass",
+   "domain": 572
+  },
+  {
+   "class": "TacticalMap",
+   "domain": 815
+  },
+  {
+   "class": "DDraw",
+   "domain": 0
+  },
+  {
+   "class": "Palette",
+   "domain": 1152
+  },
+  {
+   "class": "Color",
+   "domain": 363
+  },
+  {
+   "class": "Screen",
+   "domain": 0
+  },
+  {
+   "class": "Camera",
+   "domain": 959
+  },
+  {
+   "class": "Render",
+   "domain": 363
+  },
+  {
+   "class": "FogOfWar",
+   "domain": 0
+  },
+  {
+   "class": "Frame",
+   "domain": 0
+  },
+  {
+   "class": "Draw",
+   "domain": 363
+  },
+  {
+   "class": "ScrollClass",
+   "domain": 746
+  },
+  {
+   "class": "Bounds",
+   "domain": 363
+  },
+  {
+   "class": "Transform",
+   "domain": 363
+  },
+  {
+   "class": "VoxelPaletteClass",
+   "domain": 0
+  },
+  {
+   "class": "Animation",
+   "domain": 0
+  },
+  {
+   "class": "BuildingAnim",
+   "domain": 363
+  },
+  {
+   "class": "BlitPlainXlatAlpha_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent25AlphaZReadWarp_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent25AlphaZReadWrite_ushort",
+   "domain": 1022
+  },
+  {
+   "class": "BlitTransLucent25AlphaZRead_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent25Alpha_ushort",
+   "domain": 978
+  },
+  {
+   "class": "BlitTransLucent50AlphaZReadWarp_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent50AlphaZReadWrite_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent50AlphaZRead_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent50Alpha_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent75AlphaZReadWarp_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent75AlphaZReadWrite_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent75AlphaZRead_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransLucent75Alpha_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransXlatAlphaZReadWrite_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransXlatAlphaZRead_ushort",
+   "domain": 1049
+  },
+  {
+   "class": "BlitTransZRemapXlatAlphaZReadWrite_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransZRemapXlatAlphaZRead_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitTransZRemapXlatAlpha_ushort",
+   "domain": 887
+  },
+  {
+   "class": "BlitterList",
+   "domain": 363
+  },
+  {
+   "class": "BuildingDebris",
+   "domain": 363
+  },
+  {
+   "class": "BuildingLightQueue",
+   "domain": 363
+  },
+  {
+   "class": "BuildingPlacement",
+   "domain": 1015
+  },
+  {
+   "class": "BuildingPlacementClass",
+   "domain": 363
+  },
+  {
+   "class": "BuildingPrerequisiteClass",
+   "domain": 363
+  },
+  {
+   "class": "BuildingQueue",
+   "domain": 572
+  },
+  {
+   "class": "ColorSchemeClass",
+   "domain": 363
+  },
+  {
+   "class": "FoggedObject_DrawVector",
+   "domain": 918
+  },
+  {
+   "class": "FrameSnapshot",
+   "domain": 498
+  },
+  {
+   "class": "PaletteClass",
+   "domain": 363
+  },
+  {
+   "class": "PaletteManager",
+   "domain": 363
+  },
+  {
+   "class": "RLEBlitTransLucent25AlphaZReadWarp_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent25AlphaZReadWrite_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent25AlphaZRead_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent25Alpha_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent50AlphaZReadWarp_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent50AlphaZReadWrite_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent50AlphaZRead_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent50Alpha_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent75AlphaZReadWarp_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent75AlphaZReadWrite_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent75AlphaZRead_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransLucent75Alpha_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransXlatAlphaZReadWrite_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransXlatAlphaZRead_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransXlatAlpha_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransZRemapXlatAlphaZRead_ushort",
+   "domain": 572
+  },
+  {
+   "class": "RLEBlitTransZRemapXlatAlpha_ushort",
+   "domain": 1004
+  },
+  {
+   "class": "ScreenEffect",
+   "domain": 1014
+  },
+  {
+   "class": "Scrollbar",
+   "domain": 363
+  },
+  {
+   "class": "ScrollingText",
+   "domain": 363
+  },
+  {
+   "class": "TacticalMapClass",
+   "domain": 498
+  },
+  {
+   "class": "VoxClass_Vector",
+   "domain": 887
+  },
+  {
+   "class": "VoxelAnimTypeVector",
+   "domain": 363
+  },
+  {
+   "class": "VoxelModel",
+   "domain": 572
+  },
+  {
+   "class": "VoxelPalette",
+   "domain": 498
+  },
+  {
+   "class": "VoxelRenderer",
+   "domain": 942
+  },
+  {
+   "class": "VoxelSection",
+   "domain": 363
+  },
+  {
+   "class": "VoxelTypeClass",
+   "domain": 363
+  },
+  {
+   "class": "Voxel_Section",
+   "domain": 498
+  },
+  {
+   "class": "BlitRowFuncs",
+   "domain": 0
+  },
+  {
+   "class": "ShpHeader",
+   "domain": 336
+  },
+  {
+   "class": "ShpFrameInfo",
+   "domain": 390
+  },
+  {
+   "class": "ShpImage",
+   "domain": 959
+  },
+  {
+   "class": "SHPStruct",
+   "domain": 363
+  },
+  {
+   "class": "SHPFrame",
+   "domain": 340
+  },
+  {
+   "class": "SHPFile",
+   "domain": 942
+  },
+  {
+   "class": "SHPReference",
+   "domain": 728
+  },
+  {
+   "class": "Surface",
+   "domain": 1117
+  },
+  {
+   "class": "XSurface",
+   "domain": 746
+  },
+  {
+   "class": "VoxLib",
+   "domain": 1074
+  },
+  {
+   "class": "MotLib",
+   "domain": 751
+  },
+  {
+   "class": "VoxelStruct",
+   "domain": 363
+  },
+  {
+   "class": "SomeVoxelCache",
+   "domain": 714
+  },
+  {
+   "class": "VoxelAnimTypeClass",
+   "domain": 1096
+  },
+  {
+   "class": "VXLHeader",
+   "domain": 942
+  },
+  {
+   "class": "VXLSection",
+   "domain": 504
+  },
+  {
+   "class": "VXLFrame",
+   "domain": 1071
+  },
+  {
+   "class": "HVAHeader",
+   "domain": 918
+  },
+  {
+   "class": "HVASectionMatrix",
+   "domain": 1004
+  },
+  {
+   "class": "VoxelBody",
+   "domain": 918
+  },
+  {
+   "class": "VoxelAnim",
+   "domain": 572
+  },
+  {
+   "class": "VoxelSectionInfo",
+   "domain": 1118
+  },
+  {
+   "class": "StageClass",
+   "domain": 363
+  },
+  {
+   "class": "FlasherClass",
+   "domain": 363
+  },
+  {
+   "class": "BuildingClass",
+   "domain": 1123
+  },
+  {
+   "class": "SuperWeapon",
+   "domain": 0
+  },
+  {
+   "class": "IdleOrderEntry",
+   "domain": 1014
+  },
+  {
+   "class": "IdleOrderArray",
+   "domain": 363
+  },
+  {
+   "class": "FileClass",
+   "domain": 363
+  },
+  {
+   "class": "MemoryBuffer",
+   "domain": 504
+  },
+  {
+   "class": "CDDriveManagerClass",
+   "domain": 1071
+  },
+  {
+   "class": "CD",
+   "domain": 363
+  },
+  {
+   "class": "CellData",
+   "domain": 498
+  },
+  {
+   "class": "BytePaletteEntry",
+   "domain": 3
+  },
+  {
+   "class": "BytePalette",
+   "domain": 1140
+  },
+  {
+   "class": "FileSystem",
+   "domain": 0
+  },
+  {
+   "class": "Skirmish",
+   "domain": 0
+  },
+  {
+   "class": "GameSettings",
+   "domain": 0
+  },
+  {
+   "class": "SkirmishSetup",
+   "domain": 498
+  },
+  {
+   "class": "SyncDelay",
+   "domain": 0
+  },
+  {
+   "class": "GameLoop",
+   "domain": 0
+  },
+  {
+   "class": "CopyProtection",
+   "domain": 0
+  },
+  {
+   "class": "GameInit",
+   "domain": 363
+  },
+  {
+   "class": "GameLobby",
+   "domain": 363
+  },
+  {
+   "class": "GameOptions",
+   "domain": 746
+  },
+  {
+   "class": "GameOptionsClass",
+   "domain": 498
+  },
+  {
+   "class": "GameResult",
+   "domain": 363
+  },
+  {
+   "class": "GameScreen",
+   "domain": 363
+  },
+  {
+   "class": "GameSetup",
+   "domain": 942
+  },
+  {
+   "class": "GameState",
+   "domain": 363
+  },
+  {
+   "class": "LoadSaveDialog",
+   "domain": 363
+  },
+  {
+   "class": "LoadScreen",
+   "domain": 918
+  },
+  {
+   "class": "LoadingScreen",
+   "domain": 1027
+  },
+  {
+   "class": "MultiplayerGameMode",
+   "domain": 942
+  },
+  {
+   "class": "SaveLoad",
+   "domain": 363
+  },
+  {
+   "class": "SaveLoadDialog",
+   "domain": 572
+  },
+  {
+   "class": "SkirmishDialog",
+   "domain": 572
+  },
+  {
+   "class": "SkirmishMapGen",
+   "domain": 498
+  },
+  {
+   "class": "SkirmishVector",
+   "domain": 363
+  },
+  {
+   "class": "SyncDelayClass",
+   "domain": 363
+  },
+  {
+   "class": "INIEntry",
+   "domain": 572
+  },
+  {
+   "class": "INISection",
+   "domain": 572
+  },
+  {
+   "class": "INILinkNode",
+   "domain": 572
+  },
+  {
+   "class": "GenericList",
+   "domain": 363
+  },
+  {
+   "class": "INIClass",
+   "domain": 1018
+  },
+  {
+   "class": "INIHashTable",
+   "domain": 1151
+  },
+  {
+   "class": "ZoneConnectionClass",
+   "domain": 510
+  },
+  {
+   "class": "SubzoneConnectionStruct",
+   "domain": 386
+  },
+  {
+   "class": "SubzoneTrackingStruct",
+   "domain": 926
+  },
+  {
+   "class": "TrajectoryHelper",
+   "domain": 0
+  },
+  {
+   "class": "LogicClass",
+   "domain": 572
+  },
+  {
+   "class": "BlowfishEngine",
+   "domain": 1190
+  },
+  {
+   "class": "GenericNode",
+   "domain": 498
+  },
+  {
+   "class": "LinkedList",
+   "domain": 572
+  },
+  {
+   "class": "MixHeaderData",
+   "domain": 572
+  },
+  {
+   "class": "GenericMixFiles",
+   "domain": 1082
+  },
+  {
+   "class": "Variable",
+   "domain": 979
+  },
+  {
+   "class": "ScenarioFlags",
+   "domain": 0
+  },
+  {
+   "class": "Randomizer",
+   "domain": 960
+  },
+  {
+   "class": "ScenarioClass",
+   "domain": 1207
+  },
+  {
+   "class": "TacticalClass",
+   "domain": 357
+  },
+  {
+   "class": "WaypointClass",
+   "domain": 1131
+  },
+  {
+   "class": "HashName",
+   "domain": 498
+  },
+  {
+   "class": "CampaignClass",
+   "domain": 677
+  },
+  {
+   "class": "ScriptActionNode",
+   "domain": 498
+  },
+  {
+   "class": "TagTypeClass",
+   "domain": 993
+  },
+  {
+   "class": "TeamTypeClass",
+   "domain": 1016
+  },
+  {
+   "class": "TechnoTypeClass",
+   "domain": 1120
+  },
+  {
+   "class": "AircraftTypeClass",
+   "domain": 1113
+  },
+  {
+   "class": "RandomStruct",
+   "domain": 498
+  },
+  {
+   "class": "AnimTypeClass",
+   "domain": 1099
+  },
+  {
+   "class": "BuildingAnimStruct",
+   "domain": 1029
+  },
+  {
+   "class": "BuildingAnimFrameStruct",
+   "domain": 572
+  },
+  {
+   "class": "BuildingTypeClass",
+   "domain": 1124
+  },
+  {
+   "class": "BulletTypeClass",
+   "domain": 1093
+  },
+  {
+   "class": "SubSequenceStruct",
+   "domain": 972
+  },
+  {
+   "class": "SequenceStruct",
+   "domain": 1160
+  },
+  {
+   "class": "WeaponStruct",
+   "domain": 921
+  },
+  {
+   "class": "InfantryTypeClass",
+   "domain": 1115
+  },
+  {
+   "class": "OverlayTypeClass",
+   "domain": 889
+  },
+  {
+   "class": "SmudgeTypeClass",
+   "domain": 1093
+  },
+  {
+   "class": "AbilitiesStruct",
+   "domain": 335
+  },
+  {
+   "class": "TerrainTypeClass",
+   "domain": 1045
+  },
+  {
+   "class": "UnitTypeClass",
+   "domain": 1114
+  },
+  {
+   "class": "WarheadFlags",
+   "domain": 3
+  },
+  {
+   "class": "CommandClass",
+   "domain": 363
+  },
+  {
+   "class": "MoveCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "AttackCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "SelectCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "WaypointCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "SellCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "RepairCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "EnterCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "TogglePowerCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "AreaGuardCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "C4CommandClass",
+   "domain": 363
+  },
+  {
+   "class": "ChronoCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "NukeCommandClass",
+   "domain": 363
+  },
+  {
+   "class": "SelectTeamCommand",
+   "domain": 572
+  },
+  {
+   "class": "AddTeamCommand",
+   "domain": 572
+  },
+  {
+   "class": "CenterTeamCommand",
+   "domain": 498
+  },
+  {
+   "class": "Commands",
+   "domain": 363
+  },
+  {
+   "class": "CursorAnim",
+   "domain": 363
+  },
+  {
+   "class": "DeleteAndZero",
+   "domain": 572
+  },
+  {
+   "class": "ScreenCapture",
+   "domain": 363
+  },
+  {
+   "class": "GadgetEvent",
+   "domain": 363
+  },
+  {
+   "class": "ShpButtonClass",
+   "domain": 960
+  },
+  {
+   "class": "MenuResult",
+   "domain": 0
+  },
+  {
+   "class": "MessageListClass",
+   "domain": 1006
+  },
+  {
+   "class": "MouseHotSpotX",
+   "domain": 0
+  },
+  {
+   "class": "MouseHotSpotY",
+   "domain": 0
+  },
+  {
+   "class": "MouseCursor",
+   "domain": 942
+  },
+  {
+   "class": "CameoDataStruct",
+   "domain": 536
+  },
+  {
+   "class": "TabDataStruct",
+   "domain": 431
+  },
+  {
+   "class": "TabDataClass",
+   "domain": 510
+  },
+  {
+   "class": "ToolTipManager",
+   "domain": 954
+  },
+  {
+   "class": "Control",
+   "domain": 363
+  },
+  {
+   "class": "Font",
+   "domain": 572
+  },
+  {
+   "class": "BitTextClass",
+   "domain": 746
+  },
+  {
+   "class": "Window",
+   "domain": 363
+  },
+  {
+   "class": "MainMenu",
+   "domain": 0
+  },
+  {
+   "class": "Menu",
+   "domain": 0
+  },
+  {
+   "class": "CreditsScreen",
+   "domain": 0
+  },
+  {
+   "class": "Credits",
+   "domain": 0
+  },
+  {
+   "class": "CampaignScreen",
+   "domain": 0
+  },
+  {
+   "class": "Diplomacy",
+   "domain": 498
+  },
+  {
+   "class": "Progress",
+   "domain": 978
+  },
+  {
+   "class": "KeyboardConfig",
+   "domain": 0
+  },
+  {
+   "class": "HotkeyOptions",
+   "domain": 0
+  },
+  {
+   "class": "LinkClass",
+   "domain": 746
+  },
+  {
+   "class": "Input",
+   "domain": 363
+  },
+  {
+   "class": "BitArray",
+   "domain": 363
+  },
+  {
+   "class": "Bitmap",
+   "domain": 363
+  },
+  {
+   "class": "BitmapClass",
+   "domain": 363
+  },
+  {
+   "class": "ButtonClass",
+   "domain": 363
+  },
+  {
+   "class": "ButtonOwnerDraw",
+   "domain": 363
+  },
+  {
+   "class": "CampaignCoop",
+   "domain": 363
+  },
+  {
+   "class": "CampaignMenu",
+   "domain": 363
+  },
+  {
+   "class": "CampaignScore",
+   "domain": 972
+  },
+  {
+   "class": "CampaignSelect",
+   "domain": 498
+  },
+  {
+   "class": "CheckSum",
+   "domain": 363
+  },
+  {
+   "class": "Checkbox",
+   "domain": 363
+  },
+  {
+   "class": "Checksum",
+   "domain": 363
+  },
+  {
+   "class": "ComboBoxDropDown",
+   "domain": 363
+  },
+  {
+   "class": "ComboBoxOwnerDraw",
+   "domain": 942
+  },
+  {
+   "class": "ControlClass",
+   "domain": 746
+  },
+  {
+   "class": "CreditsPower",
+   "domain": 498
+  },
+  {
+   "class": "DialogControl",
+   "domain": 746
+  },
+  {
+   "class": "DialogQueue",
+   "domain": 498
+  },
+  {
+   "class": "EditClass",
+   "domain": 363
+  },
+  {
+   "class": "EditControl",
+   "domain": 498
+  },
+  {
+   "class": "FontClass",
+   "domain": 918
+  },
+  {
+   "class": "FontRenderer",
+   "domain": 498
+  },
+  {
+   "class": "GadgetGrid",
+   "domain": 498
+  },
+  {
+   "class": "InputManager",
+   "domain": 887
+  },
+  {
+   "class": "Keyboard",
+   "domain": 363
+  },
+  {
+   "class": "ListBox",
+   "domain": 959
+  },
+  {
+   "class": "ListNode",
+   "domain": 363
+  },
+  {
+   "class": "ProgressAnim",
+   "domain": 363
+  },
+  {
+   "class": "Slider",
+   "domain": 363
+  },
+  {
+   "class": "TabCameoListClass",
+   "domain": 363
+  },
+  {
+   "class": "TabControl",
+   "domain": 498
+  },
+  {
+   "class": "ToolTipClass",
+   "domain": 1022
+  },
+  {
+   "class": "Tooltip",
+   "domain": 363
+  },
+  {
+   "class": "TooltipClass",
+   "domain": 363
+  },
+  {
+   "class": "WDTError",
+   "domain": 1106
+  },
+  {
+   "class": "rc_ptr",
+   "domain": 0
+  },
+  {
+   "class": "Map",
+   "domain": 946
+  },
+  {
+   "class": "Territory",
+   "domain": 1058
+  },
+  {
+   "class": "Conflict",
+   "domain": 918
+  },
+  {
+   "class": "AITriggerTypeClass_40",
+   "domain": 887
+  },
+  {
+   "class": "Array",
+   "domain": 1177
+  },
+  {
+   "class": "Audio",
+   "domain": 1171
+  },
+  {
+   "class": "AudioQueue",
+   "domain": 497
+  },
+  {
+   "class": "AudioStream",
+   "domain": 947
+  },
+  {
+   "class": "BinkMovie",
+   "domain": 882
+  },
+  {
+   "class": "BlitTransXlatAlpha_ushort",
+   "domain": 572
+  },
+  {
+   "class": "BlowPipe_23",
+   "domain": 887
+  },
+  {
+   "class": "BlowPipe_31",
+   "domain": 887
+  },
+  {
+   "class": "BlowStraw_29",
+   "domain": 1121
+  },
+  {
+   "class": "BrainClass",
+   "domain": 918
+  },
+  {
+   "class": "Building",
+   "domain": 1136
+  },
+  {
+   "class": "CComObject_CChatEventSink___ATL",
+   "domain": 572
+  },
+  {
+   "class": "CStreamClass_16",
+   "domain": 746
+  },
+  {
+   "class": "CampaignProperties_WorldDominationTour_22",
+   "domain": 746
+  },
+  {
+   "class": "Campaign_WorldDominationTour_16",
+   "domain": 746
+  },
+  {
+   "class": "Cell",
+   "domain": 1060
+  },
+  {
+   "class": "CommBufferClass",
+   "domain": 1022
+  },
+  {
+   "class": "Conflict_WorldDominationTour_12",
+   "domain": 887
+  },
+  {
+   "class": "Connection",
+   "domain": 1037
+  },
+  {
+   "class": "ConnectionPointClass_9",
+   "domain": 746
+  },
+  {
+   "class": "ConvertClass",
+   "domain": 1119
+  },
+  {
+   "class": "Coord",
+   "domain": 1112
+  },
+  {
+   "class": "CreateTeamCommand",
+   "domain": 1126
+  },
+  {
+   "class": "Debug",
+   "domain": 1088
+  },
+  {
+   "class": "DeleteCommandClass_28",
+   "domain": 887
+  },
+  {
+   "class": "Dial8Class_48",
+   "domain": 887
+  },
+  {
+   "class": "Dialog",
+   "domain": 1165
+  },
+  {
+   "class": "DisplayClass",
+   "domain": 1191
+  },
+  {
+   "class": "DynamicVector",
+   "domain": 993
+  },
+  {
+   "class": "DynamicVectorClass_AnimType",
+   "domain": 632
+  },
+  {
+   "class": "DynamicVectorClass_PAD",
+   "domain": 714
+  },
+  {
+   "class": "DynamicVectorClass_PAD_16",
+   "domain": 632
+  },
+  {
+   "class": "DynamicVectorClass_SubzoneConn",
+   "domain": 714
+  },
+  {
+   "class": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode",
+   "domain": 714
+  },
+  {
+   "class": "DynamicVectorClass_ptr_NodeNameType",
+   "domain": 714
+  },
+  {
+   "class": "DynamicVectorClass_uint",
+   "domain": 778
+  },
+  {
+   "class": "EventClass",
+   "domain": 1198
+  },
+  {
+   "class": "FactoryClass_33",
+   "domain": 746
+  },
+  {
+   "class": "File",
+   "domain": 667
+  },
+  {
+   "class": "FilePipe_30",
+   "domain": 887
+  },
+  {
+   "class": "FilePipe_38",
+   "domain": 746
+  },
+  {
+   "class": "FoggedObject",
+   "domain": 498
+  },
+  {
+   "class": "FoggedObjectClass_42",
+   "domain": 887
+  },
+  {
+   "class": "Game",
+   "domain": 1169
+  },
+  {
+   "class": "GameClass",
+   "domain": 1128
+  },
+  {
+   "class": "House",
+   "domain": 818
+  },
+  {
+   "class": "HouseClass_24",
+   "domain": 746
+  },
+  {
+   "class": "HouseTypeClass_28",
+   "domain": 887
+  },
+  {
+   "class": "HouseTypeClass_36",
+   "domain": 887
+  },
+  {
+   "class": "JumpjetLocomotion",
+   "domain": 1202
+  },
+  {
+   "class": "JumpjetLocomotionClass_26",
+   "domain": 887
+  },
+  {
+   "class": "MSEngine",
+   "domain": 431
+  },
+  {
+   "class": "MSFont_18",
+   "domain": 887
+  },
+  {
+   "class": "MSPCXAnim_26",
+   "domain": 887
+  },
+  {
+   "class": "MSPCXAnim_42",
+   "domain": 887
+  },
+  {
+   "class": "MapClass",
+   "domain": 1199
+  },
+  {
+   "class": "MapSeedClass_18",
+   "domain": 887
+  },
+  {
+   "class": "Map_WorldDominationTour_20",
+   "domain": 746
+  },
+  {
+   "class": "Map_WorldDominationTour_28",
+   "domain": 746
+  },
+  {
+   "class": "Map_WorldDominationTour_43",
+   "domain": 746
+  },
+  {
+   "class": "Mission",
+   "domain": 1200
+  },
+  {
+   "class": "Movie",
+   "domain": 1133
+  },
+  {
+   "class": "Network",
+   "domain": 1127
+  },
+  {
+   "class": "NetworkLobby",
+   "domain": 1162
+  },
+  {
+   "class": "NeuronClass_25",
+   "domain": 746
+  },
+  {
+   "class": "Object",
+   "domain": 1134
+  },
+  {
+   "class": "Particle",
+   "domain": 1116
+  },
+  {
+   "class": "ParticleSystemClass_16",
+   "domain": 746
+  },
+  {
+   "class": "ParticleSystemClass_32",
+   "domain": 887
+  },
+  {
+   "class": "ParticleSystemClass_32_",
+   "domain": 887
+  },
+  {
+   "class": "ParticleSystemTypeClass",
+   "domain": 1143
+  },
+  {
+   "class": "ParticleTypeClass",
+   "domain": 1146
+  },
+  {
+   "class": "Power",
+   "domain": 746
+  },
+  {
+   "class": "ProgressTimer",
+   "domain": 918
+  },
+  {
+   "class": "Radar",
+   "domain": 704
+  },
+  {
+   "class": "RandomMap",
+   "domain": 1129
+  },
+  {
+   "class": "RocketLocomotionClass_17",
+   "domain": 887
+  },
+  {
+   "class": "Scenario",
+   "domain": 1206
+  },
+  {
+   "class": "ScriptAction",
+   "domain": 1094
+  },
+  {
+   "class": "Sidebar",
+   "domain": 1155
+  },
+  {
+   "class": "SidebarClass",
+   "domain": 1196
+  },
+  {
+   "class": "SlaveManagerClass_25",
+   "domain": 887
+  },
+  {
+   "class": "SpawnManagerClass_25",
+   "domain": 887
+  },
+  {
+   "class": "SwizzleManagerClass_19",
+   "domain": 887
+  },
+  {
+   "class": "TabClass",
+   "domain": 1058
+  },
+  {
+   "class": "Tactical",
+   "domain": 884
+  },
+  {
+   "class": "Tactical_42",
+   "domain": 887
+  },
+  {
+   "class": "TeamTypeClass_28",
+   "domain": 887
+  },
+  {
+   "class": "Terrain",
+   "domain": 1113
+  },
+  {
+   "class": "Territory_WorldDominationTour_8",
+   "domain": 959
+  },
+  {
+   "class": "TextRenderer",
+   "domain": 1054
+  },
+  {
+   "class": "TimerClass",
+   "domain": 992
+  },
+  {
+   "class": "Trigger",
+   "domain": 768
+  },
+  {
+   "class": "TypeList_Infantry",
+   "domain": 714
+  },
+  {
+   "class": "TypeList_Particle",
+   "domain": 632
+  },
+  {
+   "class": "TypeList_TechnoType",
+   "domain": 632
+  },
+  {
+   "class": "TypeList_VoxelAnim",
+   "domain": 714
+  },
+  {
+   "class": "TypeList_cptr_ParticleSystemTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "TypeList_cptr_TerrainTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "Vector",
+   "domain": 887
+  },
+  {
+   "class": "VectorClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_Building",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_BuildingType",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_Cell",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_E",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_K",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_N",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_PAE",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_PAG",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_PBG",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_Point2D",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_TPoint3D_int",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_Techno",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_UAcceleratorTracker",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_UAngerStruct",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_UDirtyAreaStruct",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_UHashObject_uint_SubzoneConn",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_UHashObject_uint_uint",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_UScoutStruct",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_USubzoneTrackingStruct",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_UUndoInfoStruct",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_UtagCONNECTDATA",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_W4PassabilityType",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_Wstring",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass__N",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_cptr_CommandClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_cptr_MultiMission",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_AITriggerTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_AbstractTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_AircraftClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_AircraftTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_AirstrikeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_AlphaShapeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_AnimClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_AnimTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_BombClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+   "domain": 862
+  },
+  {
+   "class": "VectorClass_ptr_BuildingLightClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_BuildingTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_BulletClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_BulletTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_CCINIClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_CampaignClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_CaptureManagerClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_ColorScheme",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ConvertClass",
+   "domain": 725
+  },
+  {
+   "class": "VectorClass_ptr_CrossDissolveEffect",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_DamageGroup",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_EBolt",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_EMPulseClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_EgoClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_FactoryClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_FoggedObjectClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_GlobalPacketType",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_HouseClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_HouseTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_InfantryTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_IonBlastClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_IsometricTileClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_IsometricTileTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_LaserDrawClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_LightConvertClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_LightSourceClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_LineTrail",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MSSfx",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_MSSfxEntry",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MSTextEntry",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MapRegionClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_MapSelection",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MixFileClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MovieHandle",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_MultiMission",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_MultiplayerTeam",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ObjectTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_OverlayClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_OverlayTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ParasiteClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_ParticleSystemClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ParticleSystemTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ParticleTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_PendingCellClass_LightSourceClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_PhoneEntryClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_PlanningBranchClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_PlanningMemberClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_PlanningTokenClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_RadBeam",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_RadSiteClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_RadarEventClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_Reestablish",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_ScriptClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_ScriptTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SideClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_SlaveManagerClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SmudgeTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SpawnManagerClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SpotLightClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SubTitle",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SuperClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_SuperWeaponTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_TEventClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TagTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TaskForceClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_TeamClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TeamTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_TemporalClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TerrainTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_ThemeControl",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TiberiumClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_TriggerClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_TriggerTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_TubeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_UnitClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_UnitTypeClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_VocClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_VoxClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_VoxelAnimClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_VoxelAnimTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_WarheadTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_WaveClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ptr_WaypointPathClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_WeaponTypeClass",
+   "domain": 714
+  },
+  {
+   "class": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_rc_ptr_WDTTerritory",
+   "domain": 632
+  },
+  {
+   "class": "VectorClass_ushort",
+   "domain": 714
+  },
+  {
+   "class": "Voxel",
+   "domain": 1137
+  },
+  {
+   "class": "WDTState_4",
+   "domain": 887
+  },
+  {
+   "class": "WWMouseClass",
+   "domain": 1071
+  },
+  {
+   "class": "WalkLocomotion",
+   "domain": 1202
+  },
+  {
+   "class": "WebBrowser",
+   "domain": 887
+  },
+  {
+   "class": "WonlineStringDialogControl_12",
+   "domain": 887
+  },
+  {
+   "class": "_com_error",
+   "domain": 363
+  },
+  {
+   "class": "AudioController",
+   "domain": 887
+  }
+ ]
+}

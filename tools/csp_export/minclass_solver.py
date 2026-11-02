@@ -880,12 +880,36 @@ def main():
                 owner_of_fn[int(a, 16)] = (ci, nm)
     allowed_cache = {}
 
+    # MC_ANC_UNKNOWN=allow：继承血统未知的类，必须是「可能的后代」——按用户裁定
+    # 「未知 ≠ 否定证据」，allowed_of 不能因为它们不在 desc 里就排除。
+    _anc_unknown_n = 0
+    _anc_unknown = set()
+    # 默认开启：继承血统未知的类，必须视为「可能的后代」（用户裁定：未知 ≠ 否定证据）。
+    # 对照实测：旧口径（desc 只含已知子类）10,284 唯一 / 84 矛盾；
+    # 严格口径 10,078 / 54 —— 代价 −206（2%），换掉的是「把血统缺口当否定证据」。
+    # MC_ANC_UNKNOWN=off 可回退对照。
+    if os.environ.get("MC_ANC_UNKNOWN") != "off":
+        try:
+            _pdom = jload("anchors/parent_domain.json", {}) or {}
+            for _u in (_pdom.get("unknown") or []):
+                _ci_u = resolve(_u.get("class")) if isinstance(_u, dict) else None
+                if _ci_u is not None:
+                    _anc_unknown.add(_ci_u)
+            _anc_unknown_n = len(_anc_unknown)
+        except Exception:
+            _anc_unknown = set()
+        print("[anc] unknown-ancestry classes treated as possible descendants: %d"
+              % _anc_unknown_n, flush=True)
+
     def allowed_of(ci):
         m = allowed_cache.get(ci)
         if m is None:
             m = 1 << ci
             for d in U["desc"][ci]:
                 m |= (1 << d)
+            for _u in _anc_unknown:
+                if _u != ci:
+                    m |= (1 << _u)
             allowed_cache[ci] = m
         return m
 
