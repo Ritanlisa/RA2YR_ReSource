@@ -1137,8 +1137,26 @@ def main():
         if _me and _me not in ents:
             touch(_me, _fr)
             _m_touch += 1
-    print("[C10-pre] callee entities created: %d, member-chain entities created: %d"
-          % (_callee_touch, _m_touch), flush=True)
+    # 数据流解析出的 member 边的 M 实体（合成形态不在 raw 中，须在此预创建，
+    # 否则簇构建后新建实体不进簇、约束无处落地）
+    _m_ext_touch = 0
+    try:
+        for _r0 in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
+            if (_r0 or {}).get("kind") != "member":
+                continue
+            _a0 = hx(_r0.get("addr"))
+            if _a0 is None:
+                continue
+            _f0 = fn_at(_a0)
+            _frm0 = "0x%08X:this.member(0x%X)" % (_f0, int(_r0.get("off") or 0))
+            _me0 = ent_id(_frm0, _f0)
+            if _me0 and _me0 not in ents:
+                touch(_me0, _frm0)
+                _m_ext_touch += 1
+    except Exception:
+        pass
+    print("[C10-pre] callee entities created: %d, member-chain entities created: %d (+%d dataflow)"
+          % (_callee_touch, _m_touch, _m_ext_touch), flush=True)
 
     # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
     # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
@@ -3958,6 +3976,7 @@ def main():
     _c10_nodes = set()                # G:/S: 连接点实体（可不在 ents；不并簇）
     _c10_drop_callee = 0
     _regext_by = {}
+    _m_extra = []
     try:
         for _r in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
             _a_r = hx(_r.get("addr"))
@@ -3977,24 +3996,19 @@ def main():
         _is_param_target = "::param" in _to
         if not (_to.endswith(":this") or _is_param_target):
             continue
-        # 裸寄存器边的 IDA 反向走查改写（anchors/member_callargs_ext.json）：
-        # esi=[this+off] -> member 链形态；esi=this别名 -> this 直传；offset -> 全局
+        # 裸寄存器边的跨块数据流解析（anchors/member_callargs_ext.json）。
+        # 非破坏性：原边原样保留（R: 连接点的跨站点传播不动），member 解析结果
+        # 作为**额外** Phase-2 边叠加 —— only-increase 语义下约束严格变强。
+        # （实测教训：破坏性改写会拆掉 R: 连接点，2026-11-02 两个变体各损失 39-51 唯一解。）
         try:
             _ea_rx = int(str(_e.get("addr")), 16)
         except (TypeError, ValueError):
             _ea_rx = None
         _rx = _regext_by.get((_ea_rx, _fr)) if _ea_rx is not None else None
-        if _rx is not None:
-            _k_rx = _rx.get("kind")
-            if _k_rx == "member":
-                _fn_rx = fn_at(_ea_rx)
-                _fr = "0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0))
-            elif _k_rx == "this":
-                _fr = "0x%08X:this" % fn_at(_ea_rx)
-            elif _k_rx == "global":
-                _ga_rx = global_addr(str(_rx.get("sym") or ""))
-                if _ga_rx is not None:
-                    _fr = "offset 0x%08X" % _ga_rx
+        if _rx is not None and _rx.get("kind") == "member":
+            _fn_rx = fn_at(_ea_rx)
+            _m_extra.append(("0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0)),
+                             _to, _ea_rx))
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
             _c10_drop_callee += 1
@@ -4095,6 +4109,21 @@ def main():
           % (_c10_n_clean, _c10_n_dirty, _c10_n_global, _c10_n_stack,
              len(_call_edges), len(_call_edges_p1), len(_call_edges_p2)), flush=True)
 
+    # 额外 member 边（数据流解析产物）：M 实体 -> 被调方，只进 Phase 2
+    _n_mx = 0
+    for _mf, _mt, _ma in _m_extra:
+        try:
+            _mce = ent_id(_mt)
+        except Exception:
+            continue
+        if not (_mce and _mce in ents):
+            continue
+        _mme = ent_id(_mf, fn_at(_ma) if _ma is not None else None)
+        if _mme and _mme in ents and _mme != _mce:
+            _call_edges.append((_mme, _mce))
+            _call_edges_p2.append((_mme, _mce))
+            _n_mx += 1
+    print("[C10] dataflow member edges added to phase2: %d" % _n_mx, flush=True)
     print("[C10] edges dropped (callee entity not in ents): %d" % _c10_drop_callee, flush=True)
     print("[C16] param edges=%d (this-target edges=%d)"
           % (_c16_param_edges, len(_call_edges) - _c16_param_edges), flush=True)
