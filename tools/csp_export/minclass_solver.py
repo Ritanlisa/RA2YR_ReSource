@@ -2711,6 +2711,30 @@ def main():
     # 的，域 = 各 ctor 后代域的**并集**；单一 ctor 且无后代时 exact 等价可靠。
     _c19_union = 0
     _c19_skip_reused = 0
+    _c19_demoted = 0
+    # 被调方钉定表（C4/C15 单点）+ 全边索引（from 形态 -> 被调方列表）
+    # 用于"使用边需要派生类"的降级判定（析构侧归因：ctor 池调用是销毁期基类 dtor，
+    # 使用边的方法钉定在真后代上）
+    _pin_by_fn19 = {}
+    for _e19k, _lst19k in exact.items():
+        if not _e19k.startswith("T:"):
+            continue
+        _cs19k = {_c for _c, _s2 in _lst19k if str(_s2).startswith(("C4", "C15"))}
+        if len(_cs19k) == 1:
+            _pin_by_fn19[_e19k] = next(iter(_cs19k))
+    _callees_by_from19 = collections.defaultdict(set)
+    for _e19i in raw:
+        if _e19i.get("type") != "CALL_ARG":
+            continue
+        _f19i = _e19i.get("from")
+        _t19i = _e19i.get("to")
+        if not (isinstance(_f19i, str) and isinstance(_t19i, str)):
+            continue
+        if not _t19i.endswith(":this") or _t19i.startswith("vtable_slot_"):
+            continue
+        _ca19i = hx(_t19i.split(":")[0])
+        if _ca19i is not None:
+            _callees_by_from19[_f19i].add(_ca19i)
     _ssa_work = {}
     for _src19, _cls19 in _c19_by_src.items():
         _u19 = {_c for (_c, _a, _t) in _cls19}
@@ -2743,9 +2767,33 @@ def main():
                             _ssa_use[_ua_s] = (_src19, _ca)
             continue
         _c19 = next(iter(_u19))
-        exact[_src19].append((_c19, "C19:ctor-arg"))
-        exact_count["C19"] = exact_count.get("C19", 0) + 1
-        _c19_exact += 1
+        # 析构侧归因降级：构造若走 Construct 助手（不在 ctor 池），槽上唯一可见的
+        # ctor 池调用是销毁期的基类 dtor —— exact 基类与使用边的派生类钉定矛盾
+        # （第四十五轮普查：数十例 BufferIO→CCFile 同款）。判据：使用边中被调方
+        # 的 C4/C15 钉定是该 ctor 类的**真后代** ⇒ 用后代域掩码（恒健全）。
+        _need19 = False
+        _cals19 = set()
+        for (_c, _a, _t19) in _cls19:
+            _cal19 = hx(str(_t19).split(":")[0])
+            if _cal19 is not None:
+                _cals19.add(_cal19)
+        for _r19i in (ents.get(_src19) or {}).get("raw") or ():
+            _cals19 |= _callees_by_from19.get(_r19i) or set()
+        for _cal19 in _cals19:
+            _p19 = _pin_by_fn19.get("T:%X" % _cal19)
+            if (_p19 is not None and _p19 != _c19
+                    and _p19 in U["desc"][_c19]):   # 真后代（desc 含自身，须排除）
+                _need19 = True
+                break
+        if _need19 and os.environ.get("MC_C19_DEMOTE") == "1":
+            # 实测净 -182（173 个降级里多数本无矛盾，A/B 已证单使用 exact 整体干净）
+            # —— 默认关闭，保留机制与开关供后续精化触发条件。
+            fam["C19"][_src19] = fam["C19"].get(_src19, FULL) & allowed_of(_c19)
+            _c19_demoted += 1
+        else:
+            exact[_src19].append((_c19, "C19:ctor-arg"))
+            exact_count["C19"] = exact_count.get("C19", 0) + 1
+            _c19_exact += 1
     if _ssa_work:
         # 附加：该槽在 raw 里的全部使用边 site（分裂时归生命周期用）
         _ssa_out = {}
@@ -2770,8 +2818,9 @@ def main():
             _ssa_out[_sk] = {"ctors": _ctors, "uses": _uses}
         json.dump(_ssa_out, open(os.path.join(ROOT, ".omo/ssa2/workload.json"), "w"), indent=1)
         print("[SSA] reused-slot workload dumped: %d slots" % len(_ssa_out), flush=True)
-    print("[C19] ctor-argument exact=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
-          % (_c19_exact, _c19_skip_reused, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
+    print("[C19] ctor-argument exact=%d desc-demoted=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
+          % (_c19_exact, _c19_demoted, _c19_skip_reused, _c19_skip_self, _c19_noent,
+             len(_ctor_exact19)), flush=True)
 
     # ---------------- C22：YRpp 外部参照（函数地址 -> 类）----------------
     # 用户批准的外部参照：YRpp 头文件里每个虚函数都写明 `JMP_THIS(0xADDR)` 与所属类，
