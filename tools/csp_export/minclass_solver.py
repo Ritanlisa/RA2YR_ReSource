@@ -2713,13 +2713,11 @@ def main():
             _c19_skip_reused += 1
             continue
         _c19 = _cls19[0]
-        if not U["desc"][_c19]:
-            exact[_src19].append((_c19, "C19:ctor-arg"))
-            exact_count["C19"] = exact_count.get("C19", 0) + 1
-            _c19_exact += 1
-        else:
-            fam["C19"][_src19] = fam["C19"].get(_src19, FULL) & allowed_of(_c19)
-            _c19_exact += 1
+        # 单一 ctor 类：exact（A/B 判别实验）。若矛盾根显著上升 = 内联析构链
+        # 也在污染单使用槽，届时回退为后代域掩码。
+        exact[_src19].append((_c19, "C19:ctor-arg"))
+        exact_count["C19"] = exact_count.get("C19", 0) + 1
+        _c19_exact += 1
     print("[C19] ctor-argument exact=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
           % (_c19_exact, _c19_skip_reused, _c19_skip_self, _c19_noent, len(_ctor_exact19)), flush=True)
 
