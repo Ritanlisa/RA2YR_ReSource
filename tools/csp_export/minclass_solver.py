@@ -281,6 +281,53 @@ def build_universe(use_evidence=True, prune_dead=False):
         eff_size[i] = ext if cur is None else max(cur, ext)
 
     rtti_base = jload("anchors/rtti_base_arrays.json", {})
+
+    # RTTI 基类名深度解析：??_R2 的基类条目大量是修饰名（??_R1A@?0A@A@?$VectorClass@...），
+    # 简单 resolve() 只覆盖 54.4%；深度解析（剥 RTTI 前缀 / ?$模板名 / 模板实参）到 67.5%，
+    # 实测 +217 条基类链接（含多继承次基类）。仍不可解析者 = 不在本宇宙的类
+    # （PowerClass / GScreenClass / IUnknown / IPersist ...），如实保留为未知。
+    _alias_map = {}
+    try:
+        for _ak, _av in (jload("anchors/mangled_alias.json", {}) or {}).items():
+            if isinstance(_av, str):
+                _alias_map[_ak] = _av
+            elif isinstance(_av, dict) and _av.get("canon"):
+                _alias_map[_ak] = _av["canon"]
+    except Exception:
+        _alias_map = {}
+
+    def _deep_resolve(_nm, _d=0):
+        if _nm is None or _d > 3:
+            return None
+        _s = str(_nm)
+        _r = resolve(_s)
+        if _r is not None:
+            return _r
+        if _alias_map.get(_s):
+            _r = resolve(_alias_map[_s])
+            if _r is not None:
+                return _r
+        _m = re.match(r"^\?\$([A-Za-z_]\w*)@", _s)
+        if _m:
+            _r = resolve(_m.group(1))
+            if _r is not None:
+                return _r
+            for _a in _s.split("@")[1:]:
+                _mm = re.match(r"^(?:PAV|PBV|PA|PB|V|U|H|D|F|G|J|N|C)?([A-Z]\w+)$", _a)
+                if _mm:
+                    _r = resolve(_mm.group(1))
+                    if _r is not None:
+                        return _r
+            return None
+        _m = re.match(r"^([A-Z]\w+?)@@", _s)
+        if _m:
+            return resolve(_m.group(1))
+        _m = re.match(r"^\?\?_R1A@[^@]*@[^@]*@(.*)$", _s)
+        if _m:
+            return _deep_resolve(_m.group(1), _d + 1)
+        return None
+
+    _deep_links = 0
     anc = [set([i]) for i in range(n)]
     for i, c in enumerate(names):
         for a in db[c].get("full_ancestors") or []:
@@ -290,6 +337,10 @@ def build_universe(use_evidence=True, prune_dead=False):
         for rn in (db[c].get("rtti_names") or []) + [c]:
             for a in rtti_base.get(rn) or []:
                 j = resolve(a)
+                if j is None:
+                    j = _deep_resolve(a)
+                    if j is not None and j not in anc[i]:
+                        _deep_links += 1
                 if j is not None:
                     anc[i].add(j)
         for r in [c] + list(db[c].get("rtti_names") or []) + \
@@ -3088,7 +3139,17 @@ def main():
         """
         out = []
         for cl in clusters:
-            m_c1 = c1_mask(cl["obs"]) if (cl["obs"] and apply_c1) else FULL
+            # C1 的排除只有当基址寄存器**确定是对象本身**时才成立。
+            # T: = 函数 this，一定是对象 -> 成员访问，必要条件成立。
+            # M:/P:/S:/R:/G:/N: 的基址是"从某处读出的指针值"，可能指向数组/缓冲区，
+            # 此时 [ptr+off] 是数组下标而非成员访问 -> 不能作否定证据。
+            # 实测（2026-10-30）：54 个矛盾簇中 53 个根是 M:、1 个是 R:，0 个是 T:；
+            # 例 0x42A466 `mov edx,[eax+100000h]`（eax=this->member(0x10)，1MB 偏移，
+            # 是堆分配器的计数器，不是成员）。
+            _root_pfx = str(cl.get("root") or "")[:2]
+            _c1_applies = (_root_pfx == "T:")
+            m_c1 = (c1_mask(cl["obs"]) if (cl["obs"] and apply_c1 and _c1_applies)
+                    else FULL)
             if cl.get("root") in _c1_exempt:
                 m_c1 = FULL     # 冲突消解：该簇的 C1 证据已被驳倒（见消解台账）
             if cl.get("root") in _unknown_roots:
@@ -4052,6 +4113,15 @@ def main():
                     "families": sorted(_f for _f in all_fams if _fmasks[_f] != FULL),
                     "family_sizes": {f: _fmasks[f].bit_count()
                                      for f in all_fams if _fmasks[f] != FULL},
+                    # 详细取证：实体、观测、各族允许的类名（最多 12 个）、exact 钉定
+                    "ents": list(_cl.get("ents") or ())[:12],
+                    "obs": ["%d:%d" % (o, w if w else 0)
+                            for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                    "family_domains": {f: [names[i] for i in range(len(names))
+                                           if (_fmasks[f] >> i) & 1][:12]
+                                       for f in all_fams if _fmasks[f] != FULL},
+                    "exact": {k: [names[c] for c, _s in v]
+                              for k, v in (_cl.get("exact") or {}).items()},
                 })
                 _n_drops += 1
         print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
