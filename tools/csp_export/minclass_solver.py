@@ -1137,6 +1137,22 @@ def main():
         if _me and _me not in ents:
             touch(_me, _fr)
             _m_touch += 1
+    # 数据流证明的 this 直传：调用方 T: 实体预创建
+    _t_ext_touch = 0
+    try:
+        for _r0 in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
+            if (_r0 or {}).get("kind") != "this":
+                continue
+            _a0 = hx(_r0.get("addr"))
+            if _a0 is None:
+                continue
+            _f0 = fn_at(_a0)
+            _me0 = "T:%X" % _f0
+            if _me0 not in ents:
+                touch(_me0, "0x%08X:this" % _f0)
+                _t_ext_touch += 1
+    except Exception:
+        pass
     # 数据流解析出的 member 边的 M 实体（合成形态不在 raw 中，须在此预创建，
     # 否则簇构建后新建实体不进簇、约束无处落地）
     _m_ext_touch = 0
@@ -1155,8 +1171,9 @@ def main():
                 _m_ext_touch += 1
     except Exception:
         pass
-    print("[C10-pre] callee entities created: %d, member-chain entities created: %d (+%d dataflow)"
-          % (_callee_touch, _m_touch, _m_ext_touch), flush=True)
+    print("[C10-pre] callee entities created: %d, member-chain entities created: %d "
+          "(+%d dataflow M, +%d dataflow T)"
+          % (_callee_touch, _m_touch, _m_ext_touch, _t_ext_touch), flush=True)
 
     # ---- 证据修正（anchors/minclass_evidence_corrections.json，二进制取证）----
     # false_this_protos : 原型 this 类被二进制证伪的函数（this 接收者虚调用
@@ -3977,6 +3994,7 @@ def main():
     _c10_drop_callee = 0
     _regext_by = {}
     _m_extra = []
+    _t_extra = []
     try:
         for _r in (jload("anchors/member_callargs_ext.json", {}) or {}).get("edges") or []:
             _a_r = hx(_r.get("addr"))
@@ -4009,6 +4027,12 @@ def main():
             _fn_rx = fn_at(_ea_rx)
             _m_extra.append(("0x%08X:this.member(0x%X)" % (_fn_rx, int(_rx.get("off") or 0)),
                              _to, _ea_rx))
+        elif (_rx is not None and _rx.get("kind") == "this"
+              and os.environ.get("MC_DF_THIS") == "1"):
+            # 数据流证明的 this 直传。默认关闭：实测净 -11 唯一解 —— Phase-2 的
+            # skip_empty 使收敛结果依赖边序（加边改变被跳过的更新集合，个别实体
+            # 以更宽域收场），加边不单调。需先把 phase-2 改成真不动点后再启用。
+            _t_extra.append((fn_at(_ea_rx), _to))
         _ce = ent_id(_to)
         if not (_ce and _ce in ents):
             _c10_drop_callee += 1
@@ -4123,6 +4147,17 @@ def main():
             _call_edges.append((_mme, _mce))
             _call_edges_p2.append((_mme, _mce))
             _n_mx += 1
+    _n_tx = 0
+    for _tf, _tt in _t_extra:
+        _tce = ent_id(_tt)
+        if not (_tce and _tce in ents):
+            continue
+        _tme = "T:%X" % _tf
+        if _tme in ents and _tme != _tce:
+            _call_edges.append((_tme, _tce))
+            _call_edges_p2.append((_tme, _tce))
+            _n_tx += 1
+    print("[C10] dataflow this-edges added to phase2: %d" % _n_tx, flush=True)
     print("[C10] dataflow member edges added to phase2: %d" % _n_mx, flush=True)
     print("[C10] edges dropped (callee entity not in ents): %d" % _c10_drop_callee, flush=True)
     print("[C16] param edges=%d (this-target edges=%d)"
