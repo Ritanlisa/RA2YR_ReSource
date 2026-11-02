@@ -3770,6 +3770,41 @@ def main():
             _m_links.append((_eid11, _cont, _off11))
     print("[C11] member-chain links (M -> container): %d" % len(_m_links), flush=True)
 
+    # ---- B1：调用点派生成员类型（被调方身份 = C4/C15 装表/槽位，独立二进制证据）----
+    # M 实体（this->member(NN)）作为 this 传给被调方 F；F 的类被钉为 X
+    # ⇒ 该偏移子对象 ⊑ X（X 的方法只能作用于 X 或其派生）。证据只依赖被调方
+    # 自身的装表/槽位归属，与 M 自身的解无关——无循环。
+    _n_b1 = 0
+    if _m_links:
+        _callees_by_from1 = collections.defaultdict(list)
+        for _e1 in raw:
+            if _e1.get("type") != "CALL_ARG":
+                continue
+            _f1, _t1 = _e1.get("from"), _e1.get("to")
+            if not (isinstance(_f1, str) and isinstance(_t1, str)):
+                continue
+            if not _t1.endswith(":this") or _t1.startswith("vtable_slot_"):
+                continue
+            if ".member(" not in _f1:
+                continue
+            _ca1 = hx(_t1.split(":")[0])
+            if _ca1 is not None:
+                _callees_by_from1[_f1].append(_ca1)
+        for _mk1, _ck1, _o1 in _m_links:
+            _cc1 = _fn_exact_c.get(_ck1)
+            if _cc1 is None:
+                continue
+            for _r1 in (ents.get(_mk1) or {}).get("raw") or ():
+                for _ca1 in _callees_by_from1.get(_r1) or ():
+                    _cx1 = _fn_exact_c.get("T:%X" % _ca1)
+                    if _cx1 is None or _cx1 == _cc1:
+                        continue
+                    _s1 = _member_pairs.setdefault((_cc1, _o1), set())
+                    if _cx1 not in _s1:
+                        _s1.add(_cx1)
+                        _n_b1 += 1
+    print("[C11] call-derived member types added: %d" % _n_b1, flush=True)
+
     if _m_links:
         _dom11 = {}
         for _e11 in set([x[0] for x in _m_links] + [x[1] for x in _m_links]):

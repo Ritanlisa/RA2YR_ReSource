@@ -133,6 +133,25 @@
   "exact": {}
  },
  {
+  "cluster": "P:7CB7BA:2",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 0
+  },
+  "ents": [
+   "P:7CB7BA:2",
+   "S:7CB7BA:+0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:5F9720:3",
   "status": "inconsistent",
   "families": [
@@ -144,6 +163,44 @@
   "ents": [
    "P:5F9720:3",
    "S:5F9720:+0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7CD662:0",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 0
+  },
+  "ents": [
+   "P:7CD662:0",
+   "S:7CD662:+0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7DC378:0",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 0
+  },
+  "ents": [
+   "P:7DC378:0",
+   "S:7DC378:+0x8"
   ],
   "obs": [],
   "family_domains": {
