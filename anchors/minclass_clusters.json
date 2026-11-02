@@ -155054,7 +155054,9 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:717C70"
+]
 },
 "R:644890:ecx": {
 "class": "ParticleSystemTypeClass",
@@ -169652,7 +169654,23 @@
 "M:66D530:this:0x10": {
 "class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:66D530:this:0x10"
+]
+},
+"M:66D530:this:0x3A0": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:66D530:this:0x3A0"
+]
+},
+"M:66D530:this:0x3D8": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"M:66D530:this:0x3D8"
+]
 },
 "M:672440:this:0x10": {
 "class": "VectorClass",
@@ -239148,6 +239166,13 @@
 "obs": [],
 "ents": [
 "S:70AA60:+0x3c"
+]
+},
+"S:712170:+0x44": {
+"class": "VectorClass",
+"obs": [],
+"ents": [
+"S:712170:+0x44"
 ]
 },
 "S:71BB90:+0x20": {

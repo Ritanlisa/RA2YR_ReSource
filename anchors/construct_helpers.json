@@ -1,0 +1,59 @@
+{
+ "meta": {
+  "source": "cross-block dataflow: functions (outside the ctor pool) whose entry-this chains into ctor-pool members = construction wrappers (Construct helpers)",
+  "count": 17
+ },
+ "helpers": {
+  "5BE9E0": [
+   "RadarClass"
+  ],
+  "766B90": [
+   "GameOption@WorldDominationTour"
+  ],
+  "52AE70": [
+   "Straw"
+  ],
+  "4AEC30": [
+   "Straw"
+  ],
+  "4AECA0": [
+   "Pipe"
+  ],
+  "632FF0": [
+   "Pipe"
+  ],
+  "633370": [
+   "Straw"
+  ],
+  "49E510": [
+   "INIClass"
+  ],
+  "71A130": [
+   "LocomotionClass"
+  ],
+  "557230": [
+   "ControlClass"
+  ],
+  "5C1470": [
+   "MultiplayerGameMode"
+  ],
+  "5AE5A0": [
+   "MSEngine"
+  ],
+  "6AC7F0": [
+   "RadarClass"
+  ],
+  "6938F0": [
+   "RadarClass"
+  ],
+  "4770E0": [
+   "?$VectorClass@H"
+  ],
+  "4E7D30": [
+   "Straw"
+  ],
+  "7D2F22": [
+   "exception"
+  ]
+ }
+}

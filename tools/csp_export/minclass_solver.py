@@ -2672,6 +2672,21 @@ def main():
         _s19 = {_ci for _ci, _src in _lst19 if str(_src).startswith("C4")}
         if len(_s19) == 1:
             _ctor_exact19[_eid19] = next(iter(_s19))
+    # Construct 助手（数据流识别：入口 this 链入 ctor 池成员）并入构造池
+    _n_ch = 0
+    try:
+        for _ha, _hcs in ((jload("anchors/construct_helpers.json", {}) or {}).get("helpers") or {}).items():
+            _hf = hx(_ha)
+            if _hf is None or not _hcs or "T:%X" % _hf in _ctor_exact19:
+                continue
+            _hrs = {resolve(c) for c in _hcs}
+            _hrs.discard(None)
+            if len(_hrs) == 1:
+                _ctor_exact19["T:%X" % _hf] = next(iter(_hrs))
+                _n_ch += 1
+    except Exception:
+        pass
+    print("[C19] construct helpers merged into pool: %d" % _n_ch, flush=True)
     for _e19 in raw:
         if _e19.get("type") != "CALL_ARG":
             continue
