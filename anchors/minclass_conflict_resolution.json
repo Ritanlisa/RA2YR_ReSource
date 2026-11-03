@@ -107,5 +107,97 @@
    ]
   },
   "exact": {}
+ },
+ {
+  "cluster": "M:4F5190:this:0x28",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F5190:this:0x28"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F5190:this:0x2C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F5190:this:0x2C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x28",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x28"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x2C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x2C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
  }
 ]

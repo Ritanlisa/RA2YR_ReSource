@@ -68,8 +68,9 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS"]
+            "C15", "C18", "C19", "C26", "CS", "MT"]
 FAMILY_DESC = {
+    "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2299,6 +2300,31 @@ def main():
                 fam["C6"][eid] = fam["C6"].get(eid, FULL) & m
                 census["C6"] += 1
     print("[C6] evidence=%d entities=%d" % (census["C6"], len(fam["C6"])), flush=True)
+
+    # ---------------- MT：??_7 成员安装 → 按值成员类型（严格，C4 推广到 off≠0）----------------
+    try:
+        _name_ix2 = {}
+        for _i2 in range(n):
+            _name_ix2.setdefault(str(names[_i2]).lower(), _i2)
+        for _rec in (jload("anchors/member_type_installs.json", {}) or {}).get("evidence") or []:
+            _e = _rec.get("ent")
+            _clss = _rec.get("classes") or []
+            if not isinstance(_e, str):
+                continue
+            m2 = 0
+            for _c2 in _clss:
+                _ix = _name_ix2.get(str(_c2).lower())
+                if _ix is not None:
+                    m2 |= (1 << _ix)
+            if not m2:
+                continue
+            if _e not in ents:
+                touch(_e, _e)
+            fam["MT"][_e] = fam["MT"].get(_e, FULL) & m2
+            census["MT"] += 1
+        print("[MT] install-typed members: evidence=%d entities=%d" % (census["MT"], len(fam["MT"])), flush=True)
+    except Exception as _e_mt:
+        print("[MT] skipped: %r" % _e_mt, flush=True)
 
     # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
     # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向
