@@ -68,12 +68,13 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
     "IR": "all-const returns => int-family (HEURISTIC tier)",
     "MRH": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
+    "CP": "all-constant call args => int-family param (HEURISTIC tier)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2428,6 +2429,35 @@ def main():
             print("[MRH] relaxed member types: %d" % _n_mrh, flush=True)
         except Exception as _e_mrh:
             print("[MRH] skipped: %r" % _e_mrh, flush=True)
+
+    # ---------------- CP：全常量实参 ⇒ int 族参数（启发式层）----------------
+    if getattr(args, "allow_heuristics", False):
+        try:
+            _cpm = 0
+            for _tn2 in ("int", "unsigned int", "bool", "char", "unsigned char"):
+                _ix6 = _name_ix2.get(_tn2)
+                if _ix6 is not None:
+                    _cpm |= (1 << _ix6)
+            _n_cp = 0
+            for _rec in (jload("anchors/const_param_types.json", {}) or {}).get("evidence") or []:
+                _e6 = _rec.get("ent")
+                if not isinstance(_e6, str):
+                    continue
+                m6 = 0
+                for _t6 in (_rec.get("types") or []):
+                    _ix7 = _name_ix2.get(str(_t6).lower())
+                    if _ix7 is not None:
+                        m6 |= (1 << _ix7)
+                if not m6:
+                    continue
+                if _e6 not in ents:
+                    touch(_e6, _e6)
+                fam["CP"][_e6] = fam["CP"].get(_e6, FULL) & m6
+                _n_cp += 1
+            census["CP"] = _n_cp
+            print("[CP] const-arg params: %d" % _n_cp, flush=True)
+        except Exception as _e_cp:
+            print("[CP] skipped: %r" % _e_cp, flush=True)
 
     # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
     # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向

@@ -1,0 +1,10671 @@
+{
+ "meta": {
+  "description": "Heuristic-layer anchors: callee params whose every observed call-site argument is an immediate constant -> int-family type set. Immediates were dropped by the IDA extractor (\"立即数只占槽位，不产边\" in ida_extract.py::_scan_call_args); this file reconstructs them by Capstone-disassembling the exact IDA-input binary (sha256-verified) with the extractor's exact backward-scan semantics: stop at call/ret/retn/j*, cap 32 insns, window bounded by function start, scan-order push i == param{i} (no CC offset, mirroring _assign_push_params and the existing P:fn:k entity space).",
+  "generated_at": "2026-11-03T23:31:17",
+  "inputs": {
+   "binary": {
+    "path": "C:\\Program Files (x86)\\Mental Omega\\gamemd.exe",
+    "sha256": "7cd005d263fde203d9c84548200a057a8df61d724da3c6bd1e521eeb61cd0747",
+    "identity": "IDA-input binary per full_export v3 provenance"
+   },
+   "function_table": "decompile-results/full_export/src block headers (addr+size)",
+   "raw_constraints": {
+    "path": "tools/type_infer/constraints/raw_constraints.json",
+    "sha256": "cd5ec0f6ca06cc294daa1ed71a4b3b3c75296b454d87da4e848f19218dfdc2db",
+    "call_arg_edges": 141509
+   },
+   "type_universe": {
+    "path": "anchors/type_universe.json",
+    "sha256": "c85dc1fc5d8d9d2fd316564da7880936aa043d23a50817ca08574d5fafdc6fa6"
+   }
+  },
+  "all_const_criterion": ">=1 plain-numeric immediate observation AND 0 non-immediate push observations (register/memory/address-valued immediate) AND 0 existing CALL_ARG edges for (callee,paramK) — existing edges are non-immediate by construction and also cover sites our scan cannot see (incl. vtable-resolved call sites); address-valued immediates (push offset global / function address) count as POINTER evidence and disqualify",
+  "type_rules": {
+   "values_subset_{0,1}": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "wide_value_domain": [
+    "int",
+    "unsigned int"
+   ]
+  },
+  "entity_format": "P:<UPPERCASE_HEX_NO_PAD>:<paramK> (matches minclass_solver P:%X:%s)",
+  "caveats": [
+   "heuristic layer — \"param only ever passed constants\" is int-family evidence, not a proof; const 0/1 may also be pointer NULL / flag bits",
+   "address-valued immediates (values inside any image section VA range) are treated as pointer arguments and disqualify — they encode push offset global/string/function-address, which the IDA-side extractor resolves to symbol sources rather than dropping",
+   "paramK numbering mirrors the extractor convention (nearest push = param0, no fastcall ecx/edx offset) for consistency with existing P:fn:k entities",
+   "tail jmp-to-function sites are included as observations (real call sites the original extractor does not scan)",
+   "call sites with callee not at a known function start are skipped (mid-function / thunk-into-middle targets)"
+  ],
+  "stats": {
+   "functions_scanned": 19088,
+   "sites_indirect_skipped": 26532,
+   "sites_target_not_funcstart": 14313,
+   "tail_jmp_sites_observed": 325,
+   "desync_functions": 1,
+   "slots_observed": 9542,
+   "direct_edge_reproduction": "71230/71230 (100.00%)",
+   "mixed_or_reg_evidence_excluded_slots": 1074,
+   "all_const_params": 703,
+   "by_kind": {
+    "const_wide": 347,
+    "const01": 356
+   },
+   "distinct_functions": 527
+  }
+ },
+ "evidence": [
+  {
+   "ent": "P:4019E0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4019E0",
+   "sites": 1,
+   "values": [
+    200
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4019E0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4019E0",
+   "sites": 1,
+   "values": [
+    8192
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4068F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4068F0",
+   "sites": 87,
+   "values": [
+    3,
+    4,
+    8,
+    12,
+    16,
+    24,
+    52
+   ],
+   "n_values": 7
+  },
+  {
+   "ent": "P:408D50:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "408D50",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:408EE0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "408EE0",
+   "sites": 5,
+   "values": [
+    8,
+    12,
+    20,
+    28,
+    40
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:40A7C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "40A7C0",
+   "sites": 2,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:40AFD0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "40AFD0",
+   "sites": 11,
+   "values": [
+    4,
+    8,
+    24,
+    52
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:40B070:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "40B070",
+   "sites": 2,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:410ED0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "410ED0",
+   "sites": 1,
+   "values": [
+    127
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4112D0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4112D0",
+   "sites": 2,
+   "values": [
+    127
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:418E20:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "418E20",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4197C0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4197C0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:41A160:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "41A160",
+   "sites": 3,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:41C250:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "41C250",
+   "sites": 13,
+   "values": [
+    7
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:41C490:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "41C490",
+   "sites": 1,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:421EA0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "421EA0",
+   "sites": 124,
+   "values": [
+    1536,
+    5632,
+    9728
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:42BE20:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "42BE20",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:42C900:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "42C900",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:42C900:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "42C900",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:42DCA0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "42DCA0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:42DF90:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "42DF90",
+   "sites": 2,
+   "values": [
+    70
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:42E410:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "42E410",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:42E410:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "42E410",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:430650:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "430650",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4331F0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4331F0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:433C90:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "433C90",
+   "sites": 7,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:433F50:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "433F50",
+   "sites": 2,
+   "values": [
+    0,
+    111
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:433F50:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "433F50",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:437090:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "437090",
+   "sites": 5,
+   "values": [
+    0,
+    5,
+    4294967295
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:437350:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "437350",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:437350:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "437350",
+   "sites": 7,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:437350:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "437350",
+   "sites": 7,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:437350:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "437350",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4373B0:9",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4373B0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:437A10:8",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "437A10",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:437F30:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "437F30",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4381D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4381D0",
+   "sites": 1,
+   "values": [
+    56
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:438300:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "438300",
+   "sites": 1,
+   "values": [
+    56
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:438A00:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "438A00",
+   "sites": 1,
+   "values": [
+    3584
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:438A00:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "438A00",
+   "sites": 1,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4397E0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4397E0",
+   "sites": 1,
+   "values": [
+    1610612736
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4397E0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4397E0",
+   "sites": 1,
+   "values": [
+    1073112678
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4399A0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4399A0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:43EF90:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "43EF90",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:43EF90:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "43EF90",
+   "sites": 3,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:443860:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "443860",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:447780:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "447780",
+   "sites": 13,
+   "values": [
+    0,
+    1,
+    2,
+    4,
+    5
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:452BB0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "452BB0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:452BB0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "452BB0",
+   "sites": 2,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4533A0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4533A0",
+   "sites": 10,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:453BF0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "453BF0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:454DB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "454DB0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:455F10:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "455F10",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:456980:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "456980",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:456980:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "456980",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:45A130:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "45A130",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:45DD20:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "45DD20",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:46CB60:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "46CB60",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:473960:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "473960",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:473AE0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "473AE0",
+   "sites": 11,
+   "values": [
+    4,
+    8,
+    111,
+    1044,
+    65536
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:475980:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "475980",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:47A6F0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47A6F0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:47A6F0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47A6F0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:47AF10:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "47AF10",
+   "sites": 21,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:47C4D0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "47C4D0",
+   "sites": 6,
+   "values": [
+    6,
+    36
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:47E040:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47E040",
+   "sites": 9,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:47E470:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47E470",
+   "sites": 7,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:47EBA0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47EBA0",
+   "sites": 7,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:47EBF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "47EBF0",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:480350:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "480350",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:480630:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "480630",
+   "sites": 6,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:481670:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "481670",
+   "sites": 14,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:481670:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "481670",
+   "sites": 14,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:483780:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "483780",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:483E30:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "483E30",
+   "sites": 11,
+   "values": [
+    65536
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:483E30:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "483E30",
+   "sites": 11,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:483E30:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "483E30",
+   "sites": 11,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:483E30:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "483E30",
+   "sites": 11,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:485250:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "485250",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:487190:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "487190",
+   "sites": 3,
+   "values": [
+    1,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:487EE0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "487EE0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:489280:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "489280",
+   "sites": 27,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48A4F0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48A4F0",
+   "sites": 7,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48A4F0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48A4F0",
+   "sites": 7,
+   "values": [
+    9728
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48A620:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48A620",
+   "sites": 8,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48B410:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48B410",
+   "sites": 2,
+   "values": [
+    0,
+    12
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48B570:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48B570",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48B750:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48B750",
+   "sites": 4,
+   "values": [
+    0,
+    12
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48B890:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48B890",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48B890:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48B890",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48B890:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48B890",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48B890:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "48B890",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48BE60:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48BE60",
+   "sites": 2,
+   "values": [
+    2,
+    60
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48BE60:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48BE60",
+   "sites": 2,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48BE60:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48BE60",
+   "sites": 2,
+   "values": [
+    60,
+    1200
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:48DFD0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48DFD0",
+   "sites": 1,
+   "values": [
+    128
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48E030:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48E030",
+   "sites": 1,
+   "values": [
+    128
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48E090:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48E090",
+   "sites": 1,
+   "values": [
+    128
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:48E520:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "48E520",
+   "sites": 7,
+   "values": [
+    1,
+    5,
+    7,
+    25,
+    261
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:49ECD0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49ECD0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49ECD0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49ECD0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F090:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49F090",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F090:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49F090",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F420:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49F420",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F420:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "49F420",
+   "sites": 3,
+   "values": [
+    1536
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F420:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49F420",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:49F420:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "49F420",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A2370:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A2370",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A2600:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A2600",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A35F0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A35F0",
+   "sites": 18,
+   "values": [
+    0,
+    1,
+    2
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:4A35F0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A35F0",
+   "sites": 18,
+   "values": [
+    0,
+    1065353216
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4A35F0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A35F0",
+   "sites": 18,
+   "values": [
+    0,
+    1065353216
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4A4900:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A4900",
+   "sites": 2,
+   "values": [
+    1024
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A4900:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A4900",
+   "sites": 2,
+   "values": [
+    768
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A4E30:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A4E30",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A4E30:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A4E30",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A59E0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A59E0",
+   "sites": 7,
+   "values": [
+    66,
+    73,
+    322,
+    329,
+    578
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:4A59E0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A59E0",
+   "sites": 7,
+   "values": [
+    2,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4A59E0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A59E0",
+   "sites": 7,
+   "values": [
+    1,
+    2,
+    4294967294
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:4A6010:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A6010",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A6010:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A6010",
+   "sites": 1,
+   "values": [
+    265
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A6010:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A6010",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A60E0:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A60E0",
+   "sites": 8,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A60E0:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A60E0",
+   "sites": 8,
+   "values": [
+    22,
+    322,
+    578
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:4A61C0:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A61C0",
+   "sites": 8,
+   "values": [
+    6,
+    25,
+    66
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:4A66D0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A66D0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A66D0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A66D0",
+   "sites": 1,
+   "values": [
+    73
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A66D0:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4A66D0",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A66D0:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A66D0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4A95A0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A95A0",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4A9650:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A9650",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4A9840:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4A9840",
+   "sites": 7,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4AA440:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4AA440",
+   "sites": 8,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AA440:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AA440",
+   "sites": 8,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AAE90:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AAE90",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AB9B0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AB9B0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AC700:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AC700",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AC700:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AC700",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AC820:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4AC820",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4AC960:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4AC960",
+   "sites": 7,
+   "values": [
+    0,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4ACA10:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4ACA10",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4ADFF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4ADFF0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4ADFF0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4ADFF0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4AF2A0:8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4AF2A0",
+   "sites": 5,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C2FC0:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C2FC0",
+   "sites": 1,
+   "values": [
+    18
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C2FC0:8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C2FC0",
+   "sites": 1,
+   "values": [
+    7
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C6650:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6650",
+   "sites": 1,
+   "values": [
+    23
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C6720:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6720",
+   "sites": 7,
+   "values": [
+    3,
+    13,
+    35,
+    36,
+    40
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:4C6780:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6780",
+   "sites": 2,
+   "values": [
+    42
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C6970:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6970",
+   "sites": 8,
+   "values": [
+    14,
+    15,
+    16,
+    46
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:4C6AE0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6AE0",
+   "sites": 1,
+   "values": [
+    11
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4C6B60:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4C6B60",
+   "sites": 2,
+   "values": [
+    18
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4CBBA0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4CBBA0",
+   "sites": 1,
+   "values": [
+    2000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4CBBA0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4CBBA0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4CBC40:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4CBC40",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4CBC40:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4CBC40",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4CEFB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4CEFB0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4D0400:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4D0400",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4D5690:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4D5690",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4DBED0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4DBED0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4DE1D0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4DE1D0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4E1130:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4E1130",
+   "sites": 1,
+   "values": [
+    2147483647
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4E2830:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4E2830",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4E34A0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4E34A0",
+   "sites": 3,
+   "values": [
+    2,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4E6030:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4E6030",
+   "sites": 9,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4F3A90:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4F3A90",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4FA350:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4FA350",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4FC060:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4FC060",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:4FC9E0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4FC9E0",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4FCBD0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4FCBD0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4FCE80:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "4FCE80",
+   "sites": 5,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:4FD060:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "4FD060",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5007A0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5007A0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:502A80:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "502A80",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:505FD0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "505FD0",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:509140:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "509140",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:50DF30:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "50DF30",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:510460:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "510460",
+   "sites": 1,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:510E10:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "510E10",
+   "sites": 1,
+   "values": [
+    128
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:512DC0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "512DC0",
+   "sites": 8,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:512DC0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "512DC0",
+   "sites": 8,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:513190:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "513190",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:513190:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "513190",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:513560:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "513560",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:513560:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "513560",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:518D80:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "518D80",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:518D80:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "518D80",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:524EC0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "524EC0",
+   "sites": 3,
+   "values": [
+    25,
+    32
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:528A10:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "528A10",
+   "sites": 531,
+   "values": [
+    2,
+    4,
+    16,
+    20,
+    24,
+    25,
+    31,
+    32,
+    40,
+    49,
+    60,
+    63,
+    64,
+    80,
+    100,
+    128
+   ],
+   "n_values": 22
+  },
+  {
+   "ent": "P:528F00:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "528F00",
+   "sites": 3,
+   "values": [
+    45,
+    128,
+    200
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:529160:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "529160",
+   "sites": 2,
+   "values": [
+    64,
+    128
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:52A670:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "52A670",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:535C00:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "535C00",
+   "sites": 5,
+   "values": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:535FC0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "535FC0",
+   "sites": 10,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "n_values": 10
+  },
+  {
+   "ent": "P:5360B0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5360B0",
+   "sites": 10,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "n_values": 10
+  },
+  {
+   "ent": "P:5361A0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5361A0",
+   "sites": 10,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "n_values": 10
+  },
+  {
+   "ent": "P:536290:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "536290",
+   "sites": 8,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "n_values": 8
+  },
+  {
+   "ent": "P:53F430:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "53F430",
+   "sites": 2,
+   "values": [
+    0,
+    12
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:53FA90:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "53FA90",
+   "sites": 2,
+   "values": [
+    4662,
+    52719
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5408F0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    455
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5408F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    558
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5408F0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    160
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5408F0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5408F0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    34835
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5408F0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5408F0",
+   "sites": 1,
+   "values": [
+    43524
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:540D10:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "540D10",
+   "sites": 6,
+   "values": [
+    600,
+    1200
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:540D80:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "540D80",
+   "sites": 2,
+   "values": [
+    5
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:540D80:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "540D80",
+   "sites": 2,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:540D80:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "540D80",
+   "sites": 2,
+   "values": [
+    120
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5410F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5410F0",
+   "sites": 62,
+   "values": [
+    47,
+    51,
+    56,
+    61,
+    91,
+    455
+   ],
+   "n_values": 6
+  },
+  {
+   "ent": "P:541410:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "541410",
+   "sites": 4,
+   "values": [
+    338
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:541410:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "541410",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5424C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5424C0",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5424C0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5424C0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5430C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5430C0",
+   "sites": 1,
+   "values": [
+    300
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5447C0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5447C0",
+   "sites": 3,
+   "values": [
+    0,
+    4294967231
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5447C0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5447C0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5447C0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5447C0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:544C20:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "544C20",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:547CF0:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "547CF0",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:547CF0:9",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "547CF0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:547CF0:10",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "547CF0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:547CF0:11",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "547CF0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:547CF0:12",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "547CF0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:54EBF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "54EBF0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:54EBF0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "54EBF0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:54F2F0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "54F2F0",
+   "sites": 2,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:54F2F0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "54F2F0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:54FE60:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "54FE60",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:551C60:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "551C60",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:551FF0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "551FF0",
+   "sites": 4,
+   "values": [
+    8192
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5520A0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5520A0",
+   "sites": 6,
+   "values": [
+    1,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5523E0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5523E0",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5523E0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5523E0",
+   "sites": 4,
+   "values": [
+    8192
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:552490:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "552490",
+   "sites": 10,
+   "values": [
+    1,
+    2,
+    4,
+    6
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:5541C0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5541C0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5541C0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5541C0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:554280:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "554280",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:554A60:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "554A60",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:554AA0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "554AA0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:557830:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "557830",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:55BAA0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "55BAA0",
+   "sites": 5,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:55C0E0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "55C0E0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:55C2B0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "55C2B0",
+   "sites": 5,
+   "values": [
+    8192
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:55C720:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "55C720",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:55C720:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "55C720",
+   "sites": 5,
+   "values": [
+    8192
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5673A0:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5673A0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5673A0:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5673A0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5673A0:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5673A0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:56DA10:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "56DA10",
+   "sites": 14,
+   "values": [
+    1,
+    2,
+    3
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:56E7C0:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "56E7C0",
+   "sites": 4,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:56E990:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "56E990",
+   "sites": 33,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:56EB80:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "56EB80",
+   "sites": 55,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:577920:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "577920",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:577BB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "577BB0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:578390:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "578390",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:578540:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "578540",
+   "sites": 15,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:578640:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "578640",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:578E60:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "578E60",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:57B210:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "57B210",
+   "sites": 13,
+   "values": [
+    0,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:583820:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "583820",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5862C0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5862C0",
+   "sites": 2,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:586AC0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "586AC0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:589100:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "589100",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:589100:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "589100",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:58AFF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "58AFF0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:58AFF0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "58AFF0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:58B070:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "58B070",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:58B070:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "58B070",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:598960:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "598960",
+   "sites": 5,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:59BBC0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "59BBC0",
+   "sites": 3,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:59BBC0:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "59BBC0",
+   "sites": 3,
+   "values": [
+    1070596096,
+    1072168960
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:59BBC0:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "59BBC0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A0160:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A0160",
+   "sites": 5,
+   "values": [
+    1,
+    2,
+    6
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:5A0410:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5A0410",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5A0410:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A0410",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5A0410:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A0410",
+   "sites": 1,
+   "values": [
+    4294967294
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5A08D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A08D0",
+   "sites": 2,
+   "values": [
+    994352038,
+    1008981770
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A08D0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5A08D0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A6D80:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A6D80",
+   "sites": 2,
+   "values": [
+    2,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A7070:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A7070",
+   "sites": 2,
+   "values": [
+    2,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A7D00:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5A7D00",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A7D00:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5A7D00",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5A8F00:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5A8F00",
+   "sites": 2,
+   "values": [
+    1,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5AC290:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5AC290",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5AC340:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5AC340",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5AD9F0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5AD9F0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5AD9F0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5AD9F0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5AE6F0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5AE6F0",
+   "sites": 32,
+   "values": [
+    0,
+    1061752406,
+    1070141014,
+    1075235521,
+    1078529622,
+    1081823724,
+    1083624129,
+    1085271179
+   ],
+   "n_values": 8
+  },
+  {
+   "ent": "P:5AE890:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5AE890",
+   "sites": 3,
+   "values": [
+    0,
+    1077936128
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5B2930:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5B2930",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5B4610:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5B4610",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BB560:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BB560",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BCC40:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BCC40",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BCC40:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5BCC40",
+   "sites": 2,
+   "values": [
+    0,
+    23
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5BD490:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5BD490",
+   "sites": 13,
+   "values": [
+    1,
+    25
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5BDB90:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5BDB90",
+   "sites": 2,
+   "values": [
+    76,
+    77
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5BDB90:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BDB90",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BE970:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5BE970",
+   "sites": 1,
+   "values": [
+    60
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BE990:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5BE990",
+   "sites": 1,
+   "values": [
+    60
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BEA30:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BEA30",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BEA30:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BEA30",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BF260:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BF260",
+   "sites": 9,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BF260:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BF260",
+   "sites": 9,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5BF260:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5BF260",
+   "sites": 9,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C0640:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5C0640",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C21D0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5C21D0",
+   "sites": 5,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5C62B0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C62B0",
+   "sites": 3,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6370:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C6370",
+   "sites": 2,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6940:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C6940",
+   "sites": 15,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6A30:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5C6A30",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6AA0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5C6AA0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6AA0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C6AA0",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6B60:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5C6B60",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6B60:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C6B60",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C6D90:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C6D90",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C7740:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C7740",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C7990:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C7990",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5C8E40:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5C8E40",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CBD20:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5CBD20",
+   "sites": 1,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CBD20:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5CBD20",
+   "sites": 1,
+   "values": [
+    512
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CC250:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CC250",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CC250:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CC250",
+   "sites": 3,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CC250:8",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CC250",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CC760:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CC760",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5CCC30:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CCC30",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CD330:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CD330",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5CD3C0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CD3C0",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5CE640:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5CE640",
+   "sites": 6,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D1DF0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D1DF0",
+   "sites": 6,
+   "values": [
+    300000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D2410:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D2410",
+   "sites": 6,
+   "values": [
+    1,
+    5
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    6
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    98
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    14
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    20
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3A60:9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D3A60",
+   "sites": 3,
+   "values": [
+    0,
+    98
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D3BA0:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D3BA0",
+   "sites": 12,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D4210:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D4210",
+   "sites": 3,
+   "values": [
+    16454
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D4400:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D4400",
+   "sites": 2,
+   "values": [
+    162,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D4400:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D4400",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D4400:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D4400",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D4B20:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D4B20",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5D86D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D86D0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D86D0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D86D0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D90E0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5D90E0",
+   "sites": 9,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5D9220:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5D9220",
+   "sites": 6,
+   "values": [
+    0,
+    30
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5E98F0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5E98F0",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5EBEC0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5EBEC0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5EC9F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5EC9F0",
+   "sites": 9,
+   "values": [
+    0,
+    1,
+    2
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:5EE6F0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5EE6F0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:5F15C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F15C0",
+   "sites": 1,
+   "values": [
+    16
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F15C0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F15C0",
+   "sites": 1,
+   "values": [
+    16
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F15C0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F15C0",
+   "sites": 1,
+   "values": [
+    236
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F15C0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F15C0",
+   "sites": 1,
+   "values": [
+    4660
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F16E0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F16E0",
+   "sites": 7,
+   "values": [
+    8
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F1BF0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F1BF0",
+   "sites": 31,
+   "values": [
+    111,
+    220,
+    250
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:5F1F00:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5F1F00",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F5F00:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5F5F00",
+   "sites": 16,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F65A0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F65A0",
+   "sites": 1,
+   "values": [
+    1610612736
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F65A0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5F65A0",
+   "sites": 1,
+   "values": [
+    1073112678
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F65A0:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5F65A0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5F65A0:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "5F65A0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5FE020:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5FE020",
+   "sites": 1,
+   "values": [
+    640
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:5FE020:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "5FE020",
+   "sites": 1,
+   "values": [
+    400
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:60D380:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "60D380",
+   "sites": 6,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6149B0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6149B0",
+   "sites": 2,
+   "values": [
+    2048,
+    5120
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6205D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6205D0",
+   "sites": 2,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6208F0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6208F0",
+   "sites": 11,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:620F60:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "620F60",
+   "sites": 1,
+   "values": [
+    36
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:621040:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "621040",
+   "sites": 11,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6211D0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6211D0",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6211D0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6211D0",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6219D0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6219D0",
+   "sites": 1,
+   "values": [
+    8
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6219D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6219D0",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:621B80:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "621B80",
+   "sites": 16,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:623880:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "623880",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:623880:8",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "623880",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:624480:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "624480",
+   "sites": 8,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:625560:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "625560",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:628070:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "628070",
+   "sites": 4,
+   "values": [
+    31
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:62E4C0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "62E4C0",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:633050:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "633050",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6342D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6342D0",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6342E0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6342E0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63D070:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "63D070",
+   "sites": 3,
+   "values": [
+    80,
+    100
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:63D810:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63D810",
+   "sites": 9,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:63D9C0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63D9C0",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63DEC0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63DEC0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63DEC0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63DEC0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63E1D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63E1D0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63E1D0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63E1D0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63EFB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63EFB0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63EFB0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63EFB0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:63F2E0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "63F2E0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:642130:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "642130",
+   "sites": 2,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:642A60:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "642A60",
+   "sites": 5,
+   "values": [
+    1079574528
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:642C80:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "642C80",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:642EF0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "642EF0",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:645C50:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "645C50",
+   "sites": 9,
+   "values": [
+    1065353216
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:645D00:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "645D00",
+   "sites": 6,
+   "values": [
+    0,
+    1,
+    2
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:64B240:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "64B240",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:64B4D0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "64B4D0",
+   "sites": 5,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:652560:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "652560",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6557F0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6557F0",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:656E90:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "656E90",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6594F0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6594F0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6594F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6594F0",
+   "sites": 1,
+   "values": [
+    1078198272
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:659510:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "659510",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:659510:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "659510",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:659540:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "659540",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:659550:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "659550",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65D5C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "65D5C0",
+   "sites": 3,
+   "values": [
+    512
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65E660:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "65E660",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65E660:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "65E660",
+   "sites": 4,
+   "values": [
+    26
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65E660:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "65E660",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65EAB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "65EAB0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65EAB0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "65EAB0",
+   "sites": 1,
+   "values": [
+    30
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:65EAB0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "65EAB0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:661C10:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "661C10",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:664390:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "664390",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:664610:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "664610",
+   "sites": 4,
+   "values": [
+    10,
+    2000,
+    15000
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:679F40:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "679F40",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67AC70:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67AC70",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67AC70:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67AC70",
+   "sites": 6,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67AFF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67AFF0",
+   "sites": 10,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67AFF0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67AFF0",
+   "sites": 10,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67B370:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67B370",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67B370:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67B370",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:67CEF0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "67CEF0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:681060:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "681060",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:682150:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682150",
+   "sites": 2,
+   "values": [
+    4,
+    18
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:682240:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682240",
+   "sites": 2,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6822F0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6822F0",
+   "sites": 2,
+   "values": [
+    4,
+    18
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6823D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6823D0",
+   "sites": 2,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6824B0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6824B0",
+   "sites": 1,
+   "values": [
+    102
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:682570:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682570",
+   "sites": 5,
+   "values": [
+    9,
+    16,
+    100,
+    101,
+    102
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:682640:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682640",
+   "sites": 3,
+   "values": [
+    4,
+    8,
+    18
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:682780:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682780",
+   "sites": 2,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:682880:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682880",
+   "sites": 3,
+   "values": [
+    4,
+    8,
+    18
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:6829A0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6829A0",
+   "sites": 2,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:682A90:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682A90",
+   "sites": 5,
+   "values": [
+    9,
+    16,
+    100,
+    101,
+    102
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:682B80:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682B80",
+   "sites": 5,
+   "values": [
+    9,
+    16,
+    100,
+    101,
+    102
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:682D30:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682D30",
+   "sites": 3,
+   "values": [
+    10,
+    12,
+    13
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:682E10:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682E10",
+   "sites": 3,
+   "values": [
+    10,
+    12,
+    13
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:682F00:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "682F00",
+   "sites": 3,
+   "values": [
+    10,
+    12,
+    13
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:683000:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "683000",
+   "sites": 4,
+   "values": [
+    16
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:688ED0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "688ED0",
+   "sites": 2,
+   "values": [
+    1,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:68C030:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68C030",
+   "sites": 1,
+   "values": [
+    7
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C200:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "68C200",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C200:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "68C200",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C710:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "68C710",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:68C860:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68C860",
+   "sites": 1,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C860:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68C860",
+   "sites": 1,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C860:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68C860",
+   "sites": 1,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68C9C0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68C9C0",
+   "sites": 2,
+   "values": [
+    1,
+    53
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:68EC20:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "68EC20",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:68F060:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "68F060",
+   "sites": 2,
+   "values": [
+    283
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:690160:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "690160",
+   "sites": 23,
+   "values": [
+    1,
+    4,
+    20
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:6969C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6969C0",
+   "sites": 3,
+   "values": [
+    1623,
+    1625
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6969C0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6969C0",
+   "sites": 3,
+   "values": [
+    3,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:696F20:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "696F20",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:697F10:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "697F10",
+   "sites": 3,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:697F10:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "697F10",
+   "sites": 3,
+   "values": [
+    2,
+    6
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:69A310:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "69A310",
+   "sites": 9,
+   "values": [
+    16454
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69B720:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "69B720",
+   "sites": 1,
+   "values": [
+    4294967294
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69B720:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "69B720",
+   "sites": 1,
+   "values": [
+    4294967294
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69D770:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "69D770",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69D770:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "69D770",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69DFC0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "69DFC0",
+   "sites": 1,
+   "values": [
+    10
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:69E930:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "69E930",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6A60E0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6A60E0",
+   "sites": 1,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6A6300:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6A6300",
+   "sites": 10,
+   "values": [
+    3,
+    7,
+    16,
+    31,
+    40
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:6A6A00:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6A6A00",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6A6A00:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6A6A00",
+   "sites": 2,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6AC480:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6AC480",
+   "sites": 1,
+   "values": [
+    60
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B1B20:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6B1B20",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B1B20:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6B1B20",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B1B20:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6B1B20",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B4A50:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6B4A50",
+   "sites": 5,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B59A0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6B59A0",
+   "sites": 2,
+   "values": [
+    100
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B5C90:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6B5C90",
+   "sites": 2,
+   "values": [
+    100
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B9740:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6B9740",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6B9D00:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6B9D00",
+   "sites": 192,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6B9D00:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6B9D00",
+   "sites": 192,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6BA690:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6BA690",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6BA690:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6BA690",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6BEDB0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6BEDB0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6BEDB0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6BEDB0",
+   "sites": 2,
+   "values": [
+    7
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6C6680:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6C6680",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6C89B0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6C89B0",
+   "sites": 1,
+   "values": [
+    4000000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CA940:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6CA940",
+   "sites": 1,
+   "values": [
+    1024
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CABA0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6CABA0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CABA0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6CABA0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CB820:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6CB820",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CE240:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6CE240",
+   "sites": 6,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CF8F0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6CF8F0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6CF8F0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6CF8F0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6D3D10:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6D3D10",
+   "sites": 3,
+   "values": [
+    0,
+    1,
+    2
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:6D5030:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6D5030",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6D8700:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6D8700",
+   "sites": 19,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6D8DB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6D8DB0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6D97D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6D97D0",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6D9920:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6D9920",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6DA9D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6DA9D0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6DAD60:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6DAD60",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:6E53A0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6E53A0",
+   "sites": 72,
+   "values": [
+    1,
+    4,
+    6,
+    7,
+    8,
+    13,
+    14,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    31,
+    33
+   ],
+   "n_values": 36
+  },
+  {
+   "ent": "P:6E6E20:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6E6E20",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6E8A90:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6E8A90",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6EA870:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6EA870",
+   "sites": 31,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6EEEA0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6EEEA0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6F26E0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "6F26E0",
+   "sites": 1,
+   "values": [
+    3
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:6FD620:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "6FD620",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7014A0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7014A0",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:703590:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "703590",
+   "sites": 5,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:707280:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "707280",
+   "sites": 1,
+   "values": [
+    8193
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:70D0D0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "70D0D0",
+   "sites": 33,
+   "values": [
+    0,
+    3,
+    8,
+    10,
+    12,
+    13,
+    14,
+    16,
+    17
+   ],
+   "n_values": 9
+  },
+  {
+   "ent": "P:723EC0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "723EC0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:724520:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "724520",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:72AA10:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "72AA10",
+   "sites": 3,
+   "values": [
+    4294967288,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:72E820:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "72E820",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:734E60:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "734E60",
+   "sites": 1115,
+   "values": [
+    5,
+    6,
+    22,
+    51,
+    60,
+    65,
+    70,
+    107,
+    108,
+    127,
+    129,
+    131,
+    132,
+    134,
+    135,
+    137
+   ],
+   "n_values": 925
+  },
+  {
+   "ent": "P:7350C0:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7350C0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7350C0:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7350C0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7350C0:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7350C0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:750060:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "750060",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:750080:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "750080",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:750090:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "750090",
+   "sites": 10,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7500B0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7500B0",
+   "sites": 4,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7514D0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7514D0",
+   "sites": 1,
+   "values": [
+    1065353216
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753C70:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753C70",
+   "sites": 5,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753C80:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753C80",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753D00:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753D00",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753D00:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "753D00",
+   "sites": 1,
+   "values": [
+    1077936128
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753F90:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753F90",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753F90:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753F90",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753F90:5",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753F90",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:753F90:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "753F90",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7540F0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7540F0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:754BE0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "754BE0",
+   "sites": 2,
+   "values": [
+    0,
+    2048
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:754BE0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "754BE0",
+   "sites": 1,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:759260:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "759260",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:759260:6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "759260",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:759EB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "759EB0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:75E950:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "75E950",
+   "sites": 2,
+   "values": [
+    0,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:763610:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "763610",
+   "sites": 2,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:765C90:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "765C90",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:765C90:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "765C90",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7693A0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7693A0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7693F0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7693F0",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:76F020:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "76F020",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:76FEB0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "76FEB0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7710B0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7710B0",
+   "sites": 6,
+   "values": [
+    0,
+    1,
+    2
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:7712C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7712C0",
+   "sites": 4,
+   "values": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:7712C0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7712C0",
+   "sites": 3,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7712C0:4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7712C0",
+   "sites": 3,
+   "values": [
+    0,
+    30
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7714B0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7714B0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7714B0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7714B0",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7714B0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7714B0",
+   "sites": 2,
+   "values": [
+    0,
+    30
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7754C0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7754C0",
+   "sites": 1,
+   "values": [
+    6
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7759E0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7759E0",
+   "sites": 8,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7759E0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7759E0",
+   "sites": 8,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7759E0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7759E0",
+   "sites": 8,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:775BC0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "775BC0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:77A700:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "77A700",
+   "sites": 5,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:77A870:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "77A870",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:77A890:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "77A890",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:77A8B0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "77A8B0",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:77A9F0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "77A9F0",
+   "sites": 6,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:789500:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "789500",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7AD2F0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7AD2F0",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7AD310:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7AD310",
+   "sites": 6,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7AD350:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7AD350",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7AED20:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7AED20",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B0F50:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B0F50",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B5410:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7B5410",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B5D70:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B5D70",
+   "sites": 4,
+   "values": [
+    4,
+    5,
+    6,
+    9
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:7B5E30:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B5E30",
+   "sites": 2,
+   "values": [
+    39
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B6320:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B6320",
+   "sites": 6,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7B6E20:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B6E20",
+   "sites": 1,
+   "values": [
+    40
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B7100:6",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7B7100",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B7100:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7B7100",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B71D0:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7B71D0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B7660:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B7660",
+   "sites": 2,
+   "values": [
+    10,
+    12
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7B7980:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B7980",
+   "sites": 1,
+   "values": [
+    41
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B7E40:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7B7E40",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7B93F0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7B93F0",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7BBB90:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7BBB90",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7BCB50:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7BCB50",
+   "sites": 1,
+   "values": [
+    65535
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7BCF50:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7BCF50",
+   "sites": 2,
+   "values": [
+    65535
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7BE5D0:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7BE5D0",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7BE5D0:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7BE5D0",
+   "sites": 1,
+   "values": [
+    2012
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C0530:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C0530",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C0740:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C0740",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C30D0:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C30D0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C3430:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C3430",
+   "sites": 2,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C8986:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8986",
+   "sites": 6,
+   "values": [
+    1000
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C898C:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C898C",
+   "sites": 3,
+   "values": [
+    1000,
+    65535
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C898C:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C898C",
+   "sites": 3,
+   "values": [
+    4103,
+    16391,
+    16397
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:7C8998:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8998",
+   "sites": 5,
+   "values": [
+    14,
+    16
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C899E:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C899E",
+   "sites": 5,
+   "values": [
+    2,
+    6
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C899E:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C899E",
+   "sites": 5,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89A4:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C89A4",
+   "sites": 8,
+   "values": [
+    1000,
+    65535
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C89A4:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C89A4",
+   "sites": 8,
+   "values": [
+    32,
+    128,
+    4097,
+    4098,
+    4103,
+    16384,
+    16385
+   ],
+   "n_values": 7
+  },
+  {
+   "ent": "P:7C89AA:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C89AA",
+   "sites": 2,
+   "values": [
+    640
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89AA:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C89AA",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89B0:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C89B0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89B0:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C89B0",
+   "sites": 2,
+   "values": [
+    14,
+    16
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C89BC:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C89BC",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89C8:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C89C8",
+   "sites": 1,
+   "values": [
+    257
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89D4:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C89D4",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C89D4:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C89D4",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C8A28:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8A28",
+   "sites": 1,
+   "values": [
+    21
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C8A28:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8A28",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C8A34:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8A34",
+   "sites": 3,
+   "values": [
+    8,
+    128,
+    2048
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:7C8B48:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8B48",
+   "sites": 62,
+   "values": [
+    4,
+    8,
+    12,
+    36,
+    40
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:7C8E25:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8E25",
+   "sites": 2,
+   "values": [
+    36,
+    40
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C8EC0:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C8EC0",
+   "sites": 15,
+   "values": [
+    2,
+    4,
+    10,
+    1000,
+    16384
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:7C8EF4:16",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C8EF4",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C9842:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C9842",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C9DBD:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C9DBD",
+   "sites": 1,
+   "values": [
+    16
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C9DD4:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C9DD4",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7C9FD9:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7C9FD9",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7C9FD9:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7C9FD9",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CA3C5:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CA3C5",
+   "sites": 3,
+   "values": [
+    32,
+    95
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CA814:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CA814",
+   "sites": 1,
+   "values": [
+    64
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CB9B8:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CB9B8",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CB9B8:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CB9B8",
+   "sites": 4,
+   "values": [
+    0,
+    10
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CB9CF:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CB9CF",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CBB76:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CBB76",
+   "sites": 7,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CBB76:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CBB76",
+   "sites": 7,
+   "values": [
+    10
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CBCAF:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CBCAF",
+   "sites": 4,
+   "values": [
+    10
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CBE1C:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CBE1C",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CBE1C:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CBE1C",
+   "sites": 4,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CBF49:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CBF49",
+   "sites": 2,
+   "values": [
+    768,
+    65536
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CBF49:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CBF49",
+   "sites": 2,
+   "values": [
+    768,
+    196608
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CC1B2:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CC1B2",
+   "sites": 2,
+   "values": [
+    1,
+    257
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CC2AC:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CC2AC",
+   "sites": 6,
+   "values": [
+    32,
+    260,
+    512
+   ],
+   "n_values": 3
+  },
+  {
+   "ent": "P:7CC309:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CC309",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CC4A4:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CC4A4",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CCA19:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CCA19",
+   "sites": 4,
+   "values": [
+    16,
+    64
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CCA34:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CCA34",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CCF44:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CCF44",
+   "sites": 1,
+   "values": [
+    100
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CCF44:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CCF44",
+   "sites": 1,
+   "values": [
+    100
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CCF44:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CCF44",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7CD917:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CD917",
+   "sites": 10,
+   "values": [
+    2,
+    8,
+    9,
+    16,
+    17,
+    24,
+    26,
+    27
+   ],
+   "n_values": 8
+  },
+  {
+   "ent": "P:7CD93C:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CD93C",
+   "sites": 2,
+   "values": [
+    16,
+    28
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CE049:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CE049",
+   "sites": 4,
+   "values": [
+    2,
+    3
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CEA1B:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7CEA1B",
+   "sites": 3,
+   "values": [
+    32,
+    48
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CEC87:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CEC87",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CED9E:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CED9E",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7CF6B1:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7CF6B1",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D0D55:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D0D55",
+   "sites": 2,
+   "values": [
+    1,
+    2
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7D140B:8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D140B",
+   "sites": 1,
+   "values": [
+    4294967295
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D292B:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D292B",
+   "sites": 3,
+   "values": [
+    32,
+    48
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7D2995:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D2995",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D3374:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D3374",
+   "sites": 6,
+   "values": [
+    4,
+    48,
+    116,
+    172
+   ],
+   "n_values": 4
+  },
+  {
+   "ent": "P:7D3482:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D3482",
+   "sites": 1,
+   "values": [
+    4294967293
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D3920:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D3920",
+   "sites": 16,
+   "values": [
+    1,
+    2,
+    4,
+    8,
+    32,
+    128,
+    259,
+    263,
+    279,
+    343
+   ],
+   "n_values": 10
+  },
+  {
+   "ent": "P:7D39F6:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D39F6",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D46B9:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D46B9",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D5178:7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D5178",
+   "sites": 2,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D5433:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D5433",
+   "sites": 1,
+   "values": [
+    32768
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D5719:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D5719",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D571F:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D571F",
+   "sites": 1,
+   "values": [
+    46
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D6EA7:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D6EA7",
+   "sites": 2,
+   "values": [
+    22,
+    64
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7D77D6:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D77D6",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D9729:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D9729",
+   "sites": 3,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D9729:7",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D9729",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D9D7F:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D9D7F",
+   "sites": 1,
+   "values": [
+    2
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D9DDC:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7D9DDC",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7D9EB0:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7D9EB0",
+   "sites": 4,
+   "values": [
+    3,
+    4
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DA0F1:0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DA0F1",
+   "sites": 2,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DA2B6:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DA2B6",
+   "sites": 4,
+   "values": [
+    1,
+    4294967295
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DA725:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DA725",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DAE6E:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DAE6E",
+   "sites": 10,
+   "values": [
+    0,
+    16,
+    259,
+    263,
+    279,
+    343
+   ],
+   "n_values": 6
+  },
+  {
+   "ent": "P:7DAE6E:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DAE6E",
+   "sites": 10,
+   "values": [
+    1,
+    2,
+    3,
+    4,
+    8
+   ],
+   "n_values": 5
+  },
+  {
+   "ent": "P:7DAE9F:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DAE9F",
+   "sites": 1,
+   "values": [
+    73744
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB066:5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB066",
+   "sites": 1,
+   "values": [
+    32
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB207:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB207",
+   "sites": 1,
+   "values": [
+    17
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB207:1",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DB207",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB49A:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB49A",
+   "sites": 1,
+   "values": [
+    37
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB4EE:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB4EE",
+   "sites": 2,
+   "values": [
+    25,
+    38
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DB54E:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB54E",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB54E:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB54E",
+   "sites": 1,
+   "values": [
+    37
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DB5E6:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB5E6",
+   "sites": 2,
+   "values": [
+    17,
+    18
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DB5E6:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DB5E6",
+   "sites": 2,
+   "values": [
+    25,
+    38
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DC378:1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DC378",
+   "sites": 1,
+   "values": [
+    61
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DC4C9:3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DC4C9",
+   "sites": 1,
+   "values": [
+    4
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DC4C9:4",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DC4C9",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DCDC0:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DCDC0",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DCE7A:2",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DCE7A",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DCE7A:3",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "const01",
+   "callee": "7DCE7A",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DDC4C:0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DDC4C",
+   "sites": 3,
+   "values": [
+    32,
+    48
+   ],
+   "n_values": 2
+  },
+  {
+   "ent": "P:7DEEFA:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DEEFA",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DEFD7:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DEFD7",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF0B4:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF0B4",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF191:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF191",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF280:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF280",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF3C2:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF3C2",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF500:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF500",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  },
+  {
+   "ent": "P:7DF640:2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "const_wide",
+   "callee": "7DF640",
+   "sites": 1,
+   "values": [
+    256
+   ],
+   "n_values": 1
+  }
+ ]
+}

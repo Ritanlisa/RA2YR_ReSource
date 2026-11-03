@@ -1,0 +1,4527 @@
+{
+ "AddTeamCommand": {
+  "vtable": "0x007EBE8C",
+  "rtti": true,
+  "mangled": ".?AVAddTeamCommandClass@@",
+  "col": "0x00804508",
+  "slot_count": 9,
+  "slots": {
+   "0": {
+    "addr": "0x00536180",
+    "name": "CreateTeamCommand::performAction_23",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x005360D0",
+    "name": "AddTeamCommand::AddRef",
+    "proto": "char * __thiscall()"
+   },
+   "2": {
+    "addr": "0x005360F0",
+    "name": "AddTeamCommand::Release",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "3": {
+    "addr": "0x00536120",
+    "name": "AddTeamCommand::ddtor",
+    "proto": "wchar_t * __unknown()"
+   },
+   "4": {
+    "addr": "0x00536140",
+    "name": "AddTeamCommand::Read",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "5": {
+    "addr": "0x00535BD0",
+    "name": "CreateTeamCommand::Stub",
+    "proto": "char __stdcall(int p0)"
+   },
+   "6": {
+    "addr": "0x00535BE0",
+    "name": "Map::IsCellFlag",
+    "proto": "unsigned int __stdcall(int p0)"
+   },
+   "7": {
+    "addr": "0x00535BF0",
+    "name": "CreateTeamCommand::Do",
+    "proto": "char __stdcall(int p0)"
+   },
+   "8": {
+    "addr": "0x00536170",
+    "name": "AddTeamCommand::Do",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "AddTeamCommandClass"
+  ]
+ },
+ "BitTextClass": {
+  "vtable": "0x007E3A80",
+  "rtti": true,
+  "mangled": ".?AVBitText@@",
+  "col": "0x007FBF88",
+  "slot_count": 1,
+  "slots": {
+   "0": {
+    "addr": "0x00435560",
+    "name": "BitText::ScalarDtor",
+    "proto": "_DWORD * __thiscall(char p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "BitText"
+  ]
+ },
+ "BlitPlain": {
+  "vtable": "0x007F7BC4",
+  "rtti": true,
+  "mangled": ".?AV?$BlitPlain@G@@",
+  "col": "0x0080ED98",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x007BC660",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_149",
+    "proto": "int __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x007BC7F0",
+    "name": "sub_7BC7F0",
+    "proto": "int __stdcall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x007BC840",
+    "name": "sub_7BC840",
+    "proto": "int __stdcall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x007BC820",
+    "name": "sub_7BC820",
+    "proto": "void * __stdcall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x007BC870",
+    "name": "sub_7BC870",
+    "proto": "void * __stdcall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007F7BDC",
+    "slot_count": 5
+   }
+  ],
+  "alias_of": [
+   "?$BlitPlain@G",
+   "?$BlitPlain@E"
+  ]
+ },
+ "BlitPlainXlat": {
+  "vtable": "0x007E5A38",
+  "rtti": true,
+  "mangled": ".?AV?$BlitPlainXlat@G@@",
+  "col": "0x007FDB18",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499F20",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_24",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004924C0",
+    "name": "sub_4924C0",
+    "proto": "void __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x00492530",
+    "name": "sub_492530",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00492500",
+    "name": "sub_492500",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x00492560",
+    "name": "sub_492560",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E5B70",
+    "slot_count": 5
+   }
+  ],
+  "alias_of": [
+   "?$BlitPlainXlat@G",
+   "?$BlitPlainXlat@E"
+  ]
+ },
+ "BlitPlainXlatAlpha_ushort": {
+  "vtable": "0x007E57F8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitPlainXlatAlpha@G@@",
+  "col": "0x007FF1E8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A200",
+    "name": "BlitPlainXlatAlpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00493CC0",
+    "name": "BlitPlainXlatAlpha_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00493D90",
+    "name": "BlitPlainXlatAlpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00493D60",
+    "name": "BlitPlainXlatAlpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00493DC0",
+    "name": "BlitPlainXlatAlpha_ushort::Blit",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitPlainXlatAlpha@G"
+  ]
+ },
+ "BlitTrans": {
+  "vtable": "0x007F7BF4",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTrans@G@@",
+  "col": "0x0080ECF8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x007BC6A0",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_151",
+    "proto": "int __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x007BC890",
+    "name": "sub_7BC890",
+    "proto": "__int16 __stdcall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x007BC8F0",
+    "name": "sub_7BC8F0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x007BC8C0",
+    "name": "sub_7BC8C0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x007BC920",
+    "name": "sub_7BC920",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007F7C0C",
+    "slot_count": 5
+   }
+  ],
+  "alias_of": [
+   "?$BlitTrans@G",
+   "?$BlitTrans@E"
+  ]
+ },
+ "BlitTransDarken": {
+  "vtable": "0x007E59F0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransDarken@G@@",
+  "col": "0x007FE018",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499F60",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_26",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00492670",
+    "name": "sub_492670",
+    "proto": "char __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x004926E0",
+    "name": "sub_4926E0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x004926B0",
+    "name": "sub_4926B0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x00492710",
+    "name": "sub_492710",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransDarken@G"
+  ]
+ },
+ "BlitTransLucent25": {
+  "vtable": "0x007E59A8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent25@G@@",
+  "col": "0x007FDD48",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499FC0",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_29",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00492920",
+    "name": "sub_492920",
+    "proto": "char __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x004929B0",
+    "name": "sub_4929B0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00492980",
+    "name": "sub_492980",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x004929E0",
+    "name": "sub_4929E0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent25@G"
+  ]
+ },
+ "BlitTransLucent25AlphaZReadWarp_ushort": {
+  "vtable": "0x007E5648",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent25AlphaZReadWarp@G@@",
+  "col": "0x007FEA68",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A5E0",
+    "name": "BlitTransLucent25AlphaZReadWarp_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495730",
+    "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495870",
+    "name": "BlitTransLucent25AlphaZReadWarp_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495840",
+    "name": "BlitTransLucent25AlphaZReadWarp_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x004958A0",
+    "name": "BlitTransLucent25AlphaZReadWarp_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent25AlphaZReadWarp@G"
+  ]
+ },
+ "BlitTransLucent25AlphaZReadWrite_ushort": {
+  "vtable": "0x007E55D0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent25AlphaZReadWrite@G@@",
+  "col": "0x007FF3E0",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A720",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495F00",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00496040",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00496010",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00496070",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent25AlphaZReadWrite@G"
+  ]
+ },
+ "BlitTransLucent25AlphaZRead_ushort": {
+  "vtable": "0x007E5690",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent25AlphaZRead@G@@",
+  "col": "0x007FD8E8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A520",
+    "name": "BlitTransLucent25AlphaZRead_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495250",
+    "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495390",
+    "name": "BlitTransLucent25AlphaZRead_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495360",
+    "name": "BlitTransLucent25AlphaZRead_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x004953C0",
+    "name": "BlitTransLucent25AlphaZRead_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent25AlphaZRead@G"
+  ]
+ },
+ "BlitTransLucent25Alpha_ushort": {
+  "vtable": "0x007E5780",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent25Alpha@G@@",
+  "col": "0x007FE7E8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A340",
+    "name": "BlitTransLucent25Alpha_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00494330",
+    "name": "BlitTransLucent25Alpha_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00494430",
+    "name": "BlitTransLucent25Alpha_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00494400",
+    "name": "BlitTransLucent25Alpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00494460",
+    "name": "BlitTransLucent25Alpha_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent25Alpha@G"
+  ]
+ },
+ "BlitTransLucent50": {
+  "vtable": "0x007E59C0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent50@G@@",
+  "col": "0x007FE838",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499FA0",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_28",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00492830",
+    "name": "sub_492830",
+    "proto": "unsigned int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x004928C0",
+    "name": "sub_4928C0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00492890",
+    "name": "sub_492890",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x004928F0",
+    "name": "sub_4928F0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent50@G"
+  ]
+ },
+ "BlitTransLucent50AlphaZReadWarp_ushort": {
+  "vtable": "0x007E5660",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent50AlphaZReadWarp@G@@",
+  "col": "0x007FDCF8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A5A0",
+    "name": "BlitTransLucent50AlphaZReadWarp_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495590",
+    "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x004956D0",
+    "name": "BlitTransLucent50AlphaZReadWarp_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x004956A0",
+    "name": "BlitTransLucent50AlphaZReadWarp_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495700",
+    "name": "BlitTransLucent50AlphaZReadWarp_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent50AlphaZReadWarp@G"
+  ]
+ },
+ "BlitTransLucent50AlphaZReadWrite_ushort": {
+  "vtable": "0x007E55E8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent50AlphaZReadWrite@G@@",
+  "col": "0x007FD5C8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A6E0",
+    "name": "BlitTransLucent50AlphaZReadWrite_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495D60",
+    "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495EA0",
+    "name": "BlitTransLucent50AlphaZReadWrite_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495E70",
+    "name": "BlitTransLucent50AlphaZReadWrite_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495ED0",
+    "name": "BlitTransLucent50AlphaZReadWrite_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent50AlphaZReadWrite@G"
+  ]
+ },
+ "BlitTransLucent50AlphaZRead_ushort": {
+  "vtable": "0x007E56A8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent50AlphaZRead@G@@",
+  "col": "0x007FF198",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A4E0",
+    "name": "BlitTransLucent50AlphaZRead_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004950C0",
+    "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x004951F0",
+    "name": "BlitTransLucent50AlphaZRead_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x004951C0",
+    "name": "BlitTransLucent50AlphaZRead_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495220",
+    "name": "BlitTransLucent50AlphaZRead_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent50AlphaZRead@G"
+  ]
+ },
+ "BlitTransLucent50Alpha_ushort": {
+  "vtable": "0x007E5798",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent50Alpha@G@@",
+  "col": "0x007FE1A8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A300",
+    "name": "BlitTransLucent50Alpha_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004941E0",
+    "name": "BlitTransLucent50Alpha_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x004942D0",
+    "name": "BlitTransLucent50Alpha_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x004942A0",
+    "name": "BlitTransLucent50Alpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00494300",
+    "name": "BlitTransLucent50Alpha_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent50Alpha@G"
+  ]
+ },
+ "BlitTransLucent75": {
+  "vtable": "0x007E59D8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent75@G@@",
+  "col": "0x007FE068",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499F80",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_27",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00492740",
+    "name": "sub_492740",
+    "proto": "char __fastcall()"
+   },
+   "2": {
+    "addr": "0x004927D0",
+    "name": "sub_4927D0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x004927A0",
+    "name": "sub_4927A0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x00492800",
+    "name": "sub_492800",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent75@G"
+  ]
+ },
+ "BlitTransLucent75AlphaZReadWarp_ushort": {
+  "vtable": "0x007E5678",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent75AlphaZReadWarp@G@@",
+  "col": "0x007FD578",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A560",
+    "name": "BlitTransLucent75AlphaZReadWarp_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004953F0",
+    "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495530",
+    "name": "BlitTransLucent75AlphaZReadWarp_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495500",
+    "name": "BlitTransLucent75AlphaZReadWarp_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495560",
+    "name": "BlitTransLucent75AlphaZReadWarp_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent75AlphaZReadWarp@G"
+  ]
+ },
+ "BlitTransLucent75AlphaZReadWrite_ushort": {
+  "vtable": "0x007E5600",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent75AlphaZReadWrite@G@@",
+  "col": "0x007FEDD8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A6A0",
+    "name": "BlitTransLucent75AlphaZReadWrite_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495BC0",
+    "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495D00",
+    "name": "BlitTransLucent75AlphaZReadWrite_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495CD0",
+    "name": "BlitTransLucent75AlphaZReadWrite_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495D30",
+    "name": "BlitTransLucent75AlphaZReadWrite_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent75AlphaZReadWrite@G"
+  ]
+ },
+ "BlitTransLucent75AlphaZRead_ushort": {
+  "vtable": "0x007E56C0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent75AlphaZRead@G@@",
+  "col": "0x007FF430",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A4A0",
+    "name": "BlitTransLucent75AlphaZRead_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00494F20",
+    "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495060",
+    "name": "BlitTransLucent75AlphaZRead_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495030",
+    "name": "BlitTransLucent75AlphaZRead_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495090",
+    "name": "BlitTransLucent75AlphaZRead_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent75AlphaZRead@G"
+  ]
+ },
+ "BlitTransLucent75Alpha_ushort": {
+  "vtable": "0x007E57B0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransLucent75Alpha@G@@",
+  "col": "0x007FF498",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A2C0",
+    "name": "BlitTransLucent75Alpha_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00494080",
+    "name": "BlitTransLucent75Alpha_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00494180",
+    "name": "BlitTransLucent75Alpha_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00494150",
+    "name": "BlitTransLucent75Alpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x004941B0",
+    "name": "BlitTransLucent75Alpha_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransLucent75Alpha@G"
+  ]
+ },
+ "BlitTransXlat": {
+  "vtable": "0x007E5A20",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlat@G@@",
+  "col": "0x007FDFC8",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x00499CA0",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_4",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004912B0",
+    "name": "sub_4912B0",
+    "proto": "char __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x00491330",
+    "name": "sub_491330",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00491300",
+    "name": "sub_491300",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x00491360",
+    "name": "sub_491360",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E5B58",
+    "slot_count": 5
+   }
+  ],
+  "alias_of": [
+   "?$BlitTransXlat@G",
+   "?$BlitTransXlat@E"
+  ]
+ },
+ "BlitTransXlatAlphaZReadWrite_ushort": {
+  "vtable": "0x007E5630",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlatAlphaZReadWrite@G@@",
+  "col": "0x007FEF18",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A620",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004958D0",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
+    "proto": "_DWORD * __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x004959F0",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x004959C0",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495A20",
+    "name": "BlitTransXlatAlphaZReadWrite_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransXlatAlphaZReadWrite@G"
+  ]
+ },
+ "BlitTransXlatAlphaZRead_ushort": {
+  "vtable": "0x007E56F0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlatAlphaZRead@G@@",
+  "col": "0x007FF328",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A420",
+    "name": "BlitTransXlatAlphaZRead_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00494B60",
+    "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00494C40",
+    "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7, int16_t p8)"
+   },
+   "3": {
+    "addr": "0x00494D20",
+    "name": "BlitTransXlatAlphaZRead_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00494D50",
+    "name": "BlitTransXlatAlphaZRead_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransXlatAlphaZRead@G"
+  ]
+ },
+ "BlitTransXlatAlpha_ushort": {
+  "vtable": "0x007E57E0",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlatAlpha@G@@",
+  "col": "0x007FEC98",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A240",
+    "name": "BlitTransXlatAlpha_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00493DF0",
+    "name": "BlitTransXlatAlpha_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00493ED0",
+    "name": "BlitTransXlatAlpha_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00493EA0",
+    "name": "BlitTransXlatAlpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00493F00",
+    "name": "BlitTransXlatAlpha_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransXlatAlpha@G"
+  ]
+ },
+ "BlitTransXlatZRead": {
+  "vtable": "0x007E5978",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlatZRead@G@@",
+  "col": "0x007FE338",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A000",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_31",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00492B00",
+    "name": "sub_492B00",
+    "proto": "unsigned __int16 * __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x00492BA0",
+    "name": "sub_492BA0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00492B70",
+    "name": "sub_492B70",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x00492BD0",
+    "name": "sub_492BD0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransXlatZRead@G"
+  ]
+ },
+ "BlitTransXlatZReadWrite": {
+  "vtable": "0x007E5888",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransXlatZReadWrite@G@@",
+  "col": "0x007FEB58",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A140",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_41",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00493600",
+    "name": "sub_493600",
+    "proto": "_WORD * __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "2": {
+    "addr": "0x004936B0",
+    "name": "sub_4936B0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "3": {
+    "addr": "0x00493680",
+    "name": "sub_493680",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   },
+   "4": {
+    "addr": "0x004936E0",
+    "name": "sub_4936E0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransXlatZReadWrite@G"
+  ]
+ },
+ "BlitTransZRemapXlatAlphaZReadWrite_ushort": {
+  "vtable": "0x007E5618",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransZRemapXlatAlphaZReadWrite@G@@",
+  "col": "0x007FE978",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A660",
+    "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00495A50",
+    "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00495B60",
+    "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00495B30",
+    "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00495B90",
+    "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransZRemapXlatAlphaZReadWrite@G"
+  ]
+ },
+ "BlitTransZRemapXlatAlphaZRead_ushort": {
+  "vtable": "0x007E56D8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransZRemapXlatAlphaZRead@G@@",
+  "col": "0x007FD898",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A460",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00494D90",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+    "proto": "_DWORD * __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, uint16_t* p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00494EC0",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00494E90",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00494EF0",
+    "name": "BlitTransZRemapXlatAlphaZRead_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransZRemapXlatAlphaZRead@G"
+  ]
+ },
+ "BlitTransZRemapXlatAlpha_ushort": {
+  "vtable": "0x007E57C8",
+  "rtti": true,
+  "mangled": ".?AV?$BlitTransZRemapXlatAlpha@G@@",
+  "col": "0x007FD618",
+  "slot_count": 5,
+  "slots": {
+   "0": {
+    "addr": "0x0049A280",
+    "name": "BlitTransZRemapXlatAlpha_ushort::Blit",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00493F30",
+    "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, int p6, int p7)"
+   },
+   "2": {
+    "addr": "0x00494020",
+    "name": "BlitTransZRemapXlatAlpha_ushort::BlitRect",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)"
+   },
+   "3": {
+    "addr": "0x00493FF0",
+    "name": "BlitTransZRemapXlatAlpha_ushort::ddtor",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6)"
+   },
+   "4": {
+    "addr": "0x00494050",
+    "name": "BlitTransZRemapXlatAlpha_ushort::GetSize",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$BlitTransZRemapXlatAlpha@G"
+  ]
+ },
+ "CampaignScore": {
+  "vtable": "0x007E4AAC",
+  "rtti": true,
+  "mangled": ".?AVCampaignScoreClass@@",
+  "col": "0x007FC968",
+  "slot_count": 2,
+  "slots": {
+   "0": {
+    "addr": "0x00471500",
+    "name": "CampaignScore::Constructor_CampaignScoreClass",
+    "proto": "std::locale::facet * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x0046FC00",
+    "name": "CampaignScore::ProcessScreen",
+    "proto": "void __stdcall(int p0, void* p1, int p2, uint8_t* p3, int p4, int16_t p5, int p6, int p7, int p8, char p9, int p10, int* p11)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "CampaignScoreClass"
+  ]
+ },
+ "CenterTeamCommand": {
+  "vtable": "0x007EBEB4",
+  "rtti": true,
+  "mangled": ".?AVCenterTeamCommandClass@@",
+  "col": "0x00804558",
+  "slot_count": 9,
+  "slots": {
+   "0": {
+    "addr": "0x00536270",
+    "name": "CreateTeamCommand::performAction_24",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x005361C0",
+    "name": "CenterTeamCommand::AddRef",
+    "proto": "char * __thiscall()"
+   },
+   "2": {
+    "addr": "0x005361E0",
+    "name": "CenterTeamCommand::Release",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "3": {
+    "addr": "0x00536210",
+    "name": "CSF::GetTeamString",
+    "proto": "wchar_t * __unknown()"
+   },
+   "4": {
+    "addr": "0x00536230",
+    "name": "CenterTeamCommand::Read",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "5": {
+    "addr": "0x00535BD0",
+    "name": "CreateTeamCommand::Stub",
+    "proto": "char __stdcall(int p0)"
+   },
+   "6": {
+    "addr": "0x00535BE0",
+    "name": "Map::IsCellFlag",
+    "proto": "unsigned int __stdcall(int p0)"
+   },
+   "7": {
+    "addr": "0x00535BF0",
+    "name": "CreateTeamCommand::Do",
+    "proto": "char __stdcall(int p0)"
+   },
+   "8": {
+    "addr": "0x00536260",
+    "name": "CenterTeamCommand::Do",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "CenterTeamCommandClass"
+  ]
+ },
+ "CreateTeamCommand": {
+  "vtable": "0x007EB84C",
+  "rtti": true,
+  "mangled": ".?AVCreateTeamCommandClass@@",
+  "col": "0x008040B0",
+  "slot_count": 9,
+  "slots": {
+   "0": {
+    "addr": "0x00535CD0",
+    "name": "CreateTeamCommand::performAction_0",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00535C20",
+    "name": "CreateTeamCommand::AddRef",
+    "proto": "char * __thiscall()"
+   },
+   "2": {
+    "addr": "0x00535C40",
+    "name": "CreateTeamCommand::Release",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "3": {
+    "addr": "0x00535C70",
+    "name": "CreateTeamCommand::ddtor",
+    "proto": "wchar_t * __unknown()"
+   },
+   "4": {
+    "addr": "0x00535C90",
+    "name": "CreateTeamCommand::Read",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "5": {
+    "addr": "0x00535BD0",
+    "name": "CreateTeamCommand::Stub",
+    "proto": "char __stdcall(int p0)"
+   },
+   "6": {
+    "addr": "0x00535BE0",
+    "name": "Map::IsCellFlag",
+    "proto": "unsigned int __stdcall(int p0)"
+   },
+   "7": {
+    "addr": "0x00535BF0",
+    "name": "CreateTeamCommand::Do",
+    "proto": "char __stdcall(int p0)"
+   },
+   "8": {
+    "addr": "0x00535CC0",
+    "name": "CreateTeamCommand::Undo",
+    "proto": "void __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "CreateTeamCommandClass"
+  ]
+ },
+ "DynamicVector": {
+  "vtable": "0x007E17AC",
+  "rtti": true,
+  "mangled": ".?AV?$DynamicVectorClass@PAVTechnoClass@@@@",
+  "col": "0x007FA640",
+  "slot_count": 7,
+  "slots": {
+   "0": {
+    "addr": "0x0040BCB0",
+    "name": "MoveFeedback::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x0040B960",
+    "name": "MoveFeedback::AddRef",
+    "proto": "char __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x0040BAE0",
+    "name": "EventClass::checkCondition",
+    "proto": "char __thiscall(int p0, int* p1)"
+   },
+   "3": {
+    "addr": "0x0040B6A0",
+    "name": "EventClass::initEvent",
+    "proto": "void __thiscall()"
+   },
+   "4": {
+    "addr": "0x0040BB90",
+    "name": "MoveFeedback::Draw",
+    "proto": "int __thiscall(int* p0)"
+   },
+   "5": {
+    "addr": "0x0040B6D0",
+    "name": "MoveFeedback::Update",
+    "proto": "unsigned int __thiscall(int p0)"
+   },
+   "6": {
+    "addr": "0x0040B6F0",
+    "name": "MoveFeedback::Show",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E17CC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E182C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E186C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E18BC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1A44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1B24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1E2C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1E84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1ED4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E293C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E2AD0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E3238",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E3844",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E3890",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E38B0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E43C8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4444",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4488",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E44F4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4678",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4AD4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4BA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4E78",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4F64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5170",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5318",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5BC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5BE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5CC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5D48",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5E0C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5EDC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E854C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E856C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E858C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E868C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E86DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E873C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8934",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8BA0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8C28",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E91EC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E928C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9B64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9BA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9BE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9C24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9C64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9CA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9CE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9D24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9D64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9DA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9DE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9E24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9E64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9EA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9EE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9F24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9F64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9FA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9FE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA024",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA064",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA0A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA0E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA124",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA164",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA1A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA1E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA224",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA264",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA2A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA2E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA324",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA364",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA3A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA3E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA424",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA464",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA4A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA4E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA524",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA5A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA604",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA7B4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA904",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA924",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA944",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAA28",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAA7C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAAC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAAE8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAC88",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EACA8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EACC8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EB714",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EB82C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EBFCC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EC05C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECBDC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECCEC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECE7C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECEDC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECF7C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECFBC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED0CC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED1DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED30C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED4A0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED4C0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED520",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED540",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED580",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED5A0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED858",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED94C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED99C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED9BC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EDA6C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE0B4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE350",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE370",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE3F0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEA54",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEA74",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEA94",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEB14",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEB34",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEB54",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEBE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEC04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEC8C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EECCC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EED20",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEE34",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEF70",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF26C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF6BC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF750",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF770",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF790",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF824",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFE04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFE44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFE84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFEC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFEE4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F022C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F042C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0484",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F07A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0AAC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0C2C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0DCC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0DEC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0E0C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F11B4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F11D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F11F4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F12B4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F315C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F322C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F327C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F35E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F36B4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F3728",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F3F6C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4134",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F429C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F42DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F43D0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4558",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4860",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F5114",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F550C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F568C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F56BC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F57C8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F663C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F68AC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6904",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6984",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6E04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6ED4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6F4C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6FD4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7144",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7164",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7260",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F78C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7A1C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7AEC",
+    "slot_count": 7
+   }
+  ],
+  "alias_of": [
+   "?$DynamicVectorClass@PAVTechnoClass@@",
+   "?$DynamicVectorClass@PAVBombClass@@",
+   "?$DynamicVectorClass@PBVCommandClass@@",
+   "?$DynamicVectorClass@PAVLightConvertClass@@",
+   "?$DynamicVectorClass@PAVIsometricTileClass@@",
+   "?$DynamicVectorClass@PAVMixFileClass@@",
+   "?$DynamicVectorClass@PAVScriptClass@@",
+   "?$DynamicVectorClass@PAVVoxelAnimClass@@",
+   "?$DynamicVectorClass@PAVWarheadTypeClass@@",
+   "?$DynamicVectorClass@PAVWeaponTypeClass@@",
+   "?$DynamicVectorClass@PAVAirstrikeClass@@",
+   "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@",
+   "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+   "?$DynamicVectorClass@G",
+   "?$DynamicVectorClass@VCell@@",
+   "?$DynamicVectorClass@VBaseNodeClass@@",
+   "?$DynamicVectorClass@PAVInfantryClass@@",
+   "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+   "?$DynamicVectorClass@PAVReestablish@@",
+   "?$DynamicVectorClass@PAVFoggedObjectClass@@",
+   "?$DynamicVectorClass@PAVBulletClass@@",
+   "?$DynamicVectorClass@PAVCaptureManagerClass@@",
+   "?$DynamicVectorClass@PAUControlNode@@",
+   "?$DynamicVectorClass@H",
+   "?$DynamicVectorClass@PAVObjectClass@@",
+   "?$DynamicVectorClass@PAUDamageGroup@@",
+   "?$DynamicVectorClass@PAVConvertClass@@",
+   "?$DynamicVectorClass@PAD",
+   "?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "?$DynamicVectorClass@UtagCONNECTDATA@@",
+   "?$DynamicVectorClass@PAUIConnectionPoint@@",
+   "?$DynamicVectorClass@PAU_DDSURFACEDESC@@",
+   "?$DynamicVectorClass@PAVDiskLaserClass@@",
+   "?$DynamicVectorClass@PAUCrossDissolveEffect@@",
+   "?$DynamicVectorClass@PAUButtonFadeEffect@@",
+   "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+   "?$DynamicVectorClass@PAVEBolt@@",
+   "?$DynamicVectorClass@PAVEgoClass@@",
+   "?$DynamicVectorClass@PAVEMPulseClass@@",
+   "?$DynamicVectorClass@PBVTechnoTypeClass@@",
+   "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@",
+   "?$DynamicVectorClass@PAVFootClass@@",
+   "?$DynamicVectorClass@PAVAbstractClass@@",
+   "?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+   "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+   "?$DynamicVectorClass@PAVTriggerTypeClass@@",
+   "?$DynamicVectorClass@PAVTriggerClass@@",
+   "?$DynamicVectorClass@PAVBuildingLightClass@@",
+   "?$DynamicVectorClass@PAVParticleSystemClass@@",
+   "?$DynamicVectorClass@PAVTubeClass@@",
+   "?$DynamicVectorClass@PAVWaveClass@@",
+   "?$DynamicVectorClass@PAVOverlayClass@@",
+   "?$DynamicVectorClass@PAVParticleClass@@",
+   "?$DynamicVectorClass@PAVSmudgeClass@@",
+   "?$DynamicVectorClass@PAVTerrainClass@@",
+   "?$DynamicVectorClass@PAVBuildingClass@@",
+   "?$DynamicVectorClass@PAVAircraftClass@@",
+   "?$DynamicVectorClass@PAVUnitClass@@",
+   "?$DynamicVectorClass@PAVHouseClass@@",
+   "?$DynamicVectorClass@PAVAnimClass@@",
+   "?$DynamicVectorClass@PAVTeamClass@@",
+   "?$DynamicVectorClass@PAVFactoryClass@@",
+   "?$DynamicVectorClass@PAVCampaignClass@@",
+   "?$DynamicVectorClass@PAVSideClass@@",
+   "?$DynamicVectorClass@PAVHouseTypeClass@@",
+   "?$DynamicVectorClass@PAVTaskForceClass@@",
+   "?$DynamicVectorClass@PAVTeamTypeClass@@",
+   "?$DynamicVectorClass@PAVScriptTypeClass@@",
+   "?$DynamicVectorClass@PAVOverlayTypeClass@@",
+   "?$DynamicVectorClass@PAVSmudgeTypeClass@@",
+   "?$DynamicVectorClass@PAVTerrainTypeClass@@",
+   "?$DynamicVectorClass@PAVBuildingTypeClass@@",
+   "?$DynamicVectorClass@PAVAircraftTypeClass@@",
+   "?$DynamicVectorClass@PAVUnitTypeClass@@",
+   "?$DynamicVectorClass@PAVAnimTypeClass@@",
+   "?$DynamicVectorClass@PAVInfantryTypeClass@@",
+   "?$DynamicVectorClass@PAVBulletTypeClass@@",
+   "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@",
+   "?$DynamicVectorClass@PAVIsometricTileTypeClass@@",
+   "?$DynamicVectorClass@PAVParticleTypeClass@@",
+   "?$DynamicVectorClass@PAVParticleSystemTypeClass@@",
+   "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@",
+   "?$DynamicVectorClass@PAVSuperClass@@",
+   "?$DynamicVectorClass@PAVAbstractTypeClass@@",
+   "?$DynamicVectorClass@PAVTagClass@@",
+   "?$DynamicVectorClass@PAVGraphicMenuItem@@",
+   "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@",
+   "?$DynamicVectorClass@UScoutStruct@@",
+   "?$DynamicVectorClass@UAngerStruct@@",
+   "?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+   "?$DynamicVectorClass@_N",
+   "?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+   "?$DynamicVectorClass@PBVTeamTypeClass@@",
+   "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+   "?$DynamicVectorClass@PBVUnitTypeClass@@",
+   "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+   "?$DynamicVectorClass@PBVAnimTypeClass@@",
+   "?$DynamicVectorClass@PAVCCINIClass@@",
+   "?$DynamicVectorClass@PBVAnimClass@@",
+   "?$DynamicVectorClass@PAVIonBlastClass@@",
+   "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+   "?$DynamicVectorClass@PAG",
+   "?$DynamicVectorClass@PAUKamikazeControl@@",
+   "?$DynamicVectorClass@PAVLaserDrawClass@@",
+   "?$DynamicVectorClass@PAVLightSourceClass@@",
+   "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@",
+   "?$DynamicVectorClass@PAVLineTrail@@",
+   "?$DynamicVectorClass@PBG",
+   "?$DynamicVectorClass@PAVFileEntryClass@@",
+   "?$DynamicVectorClass@USubzoneTrackingStruct@@",
+   "?$DynamicVectorClass@UZoneConnectionClass@@",
+   "?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+   "?$DynamicVectorClass@U?$HashObject@II@@",
+   "?$DynamicVectorClass@W4PassabilityType@@",
+   "?$DynamicVectorClass@USubzoneConnectionStruct@@",
+   "?$DynamicVectorClass@PAVMapRegionClass@@",
+   "?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@",
+   "?$DynamicVectorClass@V?$TRect@H@@",
+   "?$DynamicVectorClass@PAVCellClass@@",
+   "?$DynamicVectorClass@N",
+   "?$DynamicVectorClass@PBD",
+   "?$DynamicVectorClass@PAVCoopCampaignClass@@",
+   "?$DynamicVectorClass@PAUNodeNameType@@",
+   "?$DynamicVectorClass@PAUMPlayerScoreType@@",
+   "?$DynamicVectorClass@PAVMSSfxEntry@@",
+   "?$DynamicVectorClass@PAVMSAnimEntry@@",
+   "?$DynamicVectorClass@PAVMapStage@@",
+   "?$DynamicVectorClass@PAVMapSelection@@",
+   "?$DynamicVectorClass@PAVMSTextEntry@@",
+   "?$DynamicVectorClass@VPoint2D@@",
+   "?$DynamicVectorClass@PAVMSSfx@@",
+   "?$DynamicVectorClass@PAVMSAnim@@",
+   "?$DynamicVectorClass@PAUHWND__@@",
+   "?$DynamicVectorClass@UAcceleratorTracker@@",
+   "?$DynamicVectorClass@PAVMultiplayerGameMode@@",
+   "?$DynamicVectorClass@PAVMultiplayerTeam@@",
+   "?$DynamicVectorClass@PBVMultiMission@@",
+   "?$DynamicVectorClass@PAVObjectTypeClass@@",
+   "?$DynamicVectorClass@PAVSpotLightClass@@",
+   "?$DynamicVectorClass@VHSVClass@@",
+   "?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+   "?$DynamicVectorClass@PAVColorScheme@@",
+   "?$DynamicVectorClass@PAVParasiteClass@@",
+   "?$DynamicVectorClass@PAVEventClass@@",
+   "?$DynamicVectorClass@PAVPlanningNodeClass@@",
+   "?$DynamicVectorClass@PAVPlanningTokenClass@@",
+   "?$DynamicVectorClass@PAVPlanningBranchClass@@",
+   "?$DynamicVectorClass@PAVPlanningMemberClass@@",
+   "?$DynamicVectorClass@VRGBClass@@",
+   "?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+   "?$DynamicVectorClass@PAVRadBeam@@",
+   "?$DynamicVectorClass@PAVRadSiteClass@@",
+   "?$DynamicVectorClass@PAVRadarEventClass@@",
+   "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+   "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+   "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+   "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+   "?$DynamicVectorClass@PAVPhoneEntryClass@@",
+   "?$DynamicVectorClass@PAUGlobalPacketType@@",
+   "?$DynamicVectorClass@PAVMultiMission@@",
+   "?$DynamicVectorClass@VWstring@@",
+   "?$DynamicVectorClass@PAVSlaveManagerClass@@",
+   "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
+   "?$DynamicVectorClass@UUndoInfoStruct@@",
+   "?$DynamicVectorClass@PAVSpawnManagerClass@@",
+   "?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@",
+   "?$DynamicVectorClass@K",
+   "?$DynamicVectorClass@PAVSubTitle@@",
+   "?$DynamicVectorClass@VSwizzlePointerClass@@",
+   "?$DynamicVectorClass@UDirtyAreaStruct@@",
+   "?$DynamicVectorClass@PAVShadowControlClass@@",
+   "?$DynamicVectorClass@PAVTActionClass@@",
+   "?$DynamicVectorClass@PAVTagTypeClass@@",
+   "?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+   "?$DynamicVectorClass@PAVTemporalClass@@",
+   "?$DynamicVectorClass@PAVTEventClass@@",
+   "?$DynamicVectorClass@PAUThemeControl@@",
+   "?$DynamicVectorClass@PAVTiberiumClass@@",
+   "?$DynamicVectorClass@PBVToolTip@@",
+   "?$DynamicVectorClass@PAVVeinholeMonsterClass@@",
+   "?$DynamicVectorClass@PAVVocClass@@",
+   "?$DynamicVectorClass@PAVVoxClass@@",
+   "?$DynamicVectorClass@PAVMovieHandle@@",
+   "?$DynamicVectorClass@PAVWaypointPathClass@@",
+   "?$DynamicVectorClass@VWaypointClass@@",
+   "?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+   "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+   "?$DynamicVectorClass@PAUtConnInfoStruct@@",
+   "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "?$DynamicVectorClass@PAE"
+  ]
+ },
+ "DynamicVectorClass_uint": {
+  "vtable": "0x007E37CC",
+  "rtti": true,
+  "mangled": ".?AV?$DynamicVectorClass@I@@",
+  "col": "0x007FBC80",
+  "slot_count": 7,
+  "slots": {
+   "0": {
+    "addr": "0x0042DB60",
+    "name": "DynamicVectorClass_uint::Add",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x0042D600",
+    "name": "DynamicVectorClass_uint::AddRef",
+    "proto": "char __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x0042D780",
+    "name": "DynamicVectorClass_uint::Remove",
+    "proto": "char __thiscall(int p0, int* p1)"
+   },
+   "3": {
+    "addr": "0x0042D540",
+    "name": "DynamicVectorClass_uint::ddtor",
+    "proto": "void __thiscall()"
+   },
+   "4": {
+    "addr": "0x0042D880",
+    "name": "DynamicVectorClass_uint::GetSize",
+    "proto": "int __thiscall(int* p0)"
+   },
+   "5": {
+    "addr": "0x0042D570",
+    "name": "SortedArray::GetIndex",
+    "proto": "unsigned int __thiscall(int p0)"
+   },
+   "6": {
+    "addr": "0x0042D590",
+    "name": "DynamicVectorClass_uint::Clear",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$DynamicVectorClass@I"
+  ]
+ },
+ "List": {
+  "vtable": "0x007E1AFC",
+  "rtti": true,
+  "mangled": ".?AV?$List@PAUINISection@INIClass@@@@",
+  "col": "0x007FAC20",
+  "slot_count": 1,
+  "slots": {
+   "0": {
+    "addr": "0x0040E4C0",
+    "name": "sub_40E4C0",
+    "proto": "_DWORD * __thiscall(int p0)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007EB744",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007EDF38",
+    "slot_count": 1
+   }
+  ],
+  "alias_of": [
+   "?$List@PAUINISection@INIClass@@",
+   "?$List@PAUINIEntry@INIClass@@",
+   "?$List@PAVMixFileClass@@"
+  ]
+ },
+ "LoadOptions": {
+  "vtable": "0x007ED2E4",
+  "rtti": true,
+  "mangled": ".?AVLoadOptionsClass@@",
+  "col": "0x008053B8",
+  "slot_count": 9,
+  "slots": {
+   "0": {
+    "addr": "0x0055A0D0",
+    "name": "LoadOptions::QueryInterface",
+    "proto": "char * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00559D60",
+    "name": "LoadOptions::AddRef",
+    "proto": "char __stdcall()"
+   },
+   "2": {
+    "addr": "0x00559E40",
+    "name": "LoadOptions::Release",
+    "proto": "char __stdcall()"
+   },
+   "3": {
+    "addr": "0x00559EB0",
+    "name": "LoadOptions::ddtor",
+    "proto": "bool __stdcall()"
+   },
+   "4": {
+    "addr": "0x00559ED0",
+    "name": "LoadOptions::Read",
+    "proto": "char __stdcall(int* p0, int p1)"
+   },
+   "5": {
+    "addr": "0x0055A050",
+    "name": "LoadOptions::Write",
+    "proto": "wchar_t * __unknown()"
+   },
+   "6": {
+    "addr": "0x0055A070",
+    "name": "LoadOptions::Seek",
+    "proto": "wchar_t * __unknown()"
+   },
+   "7": {
+    "addr": "0x0055A090",
+    "name": "LoadOptions::Open",
+    "proto": "wchar_t * __unknown()"
+   },
+   "8": {
+    "addr": "0x0055A0B0",
+    "name": "LoadOptions::Close",
+    "proto": "wchar_t * __unknown()"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "LoadOptionsClass"
+  ]
+ },
+ "Node": {
+  "vtable": "0x007EB74C",
+  "rtti": true,
+  "mangled": ".?AV?$Node@PAUINISection@INIClass@@@@",
+  "col": "0x008036A0",
+  "slot_count": 1,
+  "slots": {
+   "0": {
+    "addr": "0x0052AE20",
+    "name": "Delegate::Constructor_GenericNode",
+    "proto": "_DWORD * __thiscall(char p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$Node@PAUINISection@INIClass@@"
+  ]
+ },
+ "PKStrawClass": {
+  "vtable": "0x007EFDE0",
+  "rtti": true,
+  "mangled": ".?AVPKStraw@@",
+  "col": "0x00807DD8",
+  "slot_count": 4,
+  "slots": {
+   "0": {
+    "addr": "0x00633370",
+    "name": "GameClass::applyGameSettings",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x006330C0",
+    "name": "PKStrawClass::RelayBlowfishKey",
+    "proto": "void __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x00633130",
+    "name": "GameClass::ReadEncryptedStream",
+    "proto": "int __thiscall(char* p0, int p1)"
+   },
+   "3": {
+    "addr": "0x00633360",
+    "name": "GameClass::parseGameOptions",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "PKStraw"
+  ]
+ },
+ "RLEBlitTransLucent25AlphaZReadWarp_ushort": {
+  "vtable": "0x007E53B0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent25AlphaZReadWarp@G@@",
+  "col": "0x007FEAB8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AD00",
+    "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00498ED0",
+    "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x004990A0",
+    "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent25AlphaZReadWarp@G"
+  ]
+ },
+ "RLEBlitTransLucent25AlphaZReadWrite_ushort": {
+  "vtable": "0x007E5360",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent25AlphaZReadWrite@G@@",
+  "col": "0x007FE568",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AE40",
+    "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00499A90",
+    "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00499C60",
+    "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent25AlphaZReadWrite@G"
+  ]
+ },
+ "RLEBlitTransLucent25AlphaZRead_ushort": {
+  "vtable": "0x007E53E0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent25AlphaZRead@G@@",
+  "col": "0x007FE428",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AC40",
+    "name": "RLEBlitTransLucent25AlphaZRead_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004988C0",
+    "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498A80",
+    "name": "RLEBlitTransLucent25AlphaZRead_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent25AlphaZRead@G"
+  ]
+ },
+ "RLEBlitTransLucent25Alpha_ushort": {
+  "vtable": "0x007E5430",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent25Alpha@G@@",
+  "col": "0x007FE6F8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AB00",
+    "name": "RLEBlitTransLucent25Alpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00497E60",
+    "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, uint16_t* p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x00497F90",
+    "name": "RLEBlitTransLucent25Alpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent25Alpha@G"
+  ]
+ },
+ "RLEBlitTransLucent50AlphaZReadWarp_ushort": {
+  "vtable": "0x007E53C0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent50AlphaZReadWarp@G@@",
+  "col": "0x007FDF78",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049ACC0",
+    "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00498CD0",
+    "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498E90",
+    "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent50AlphaZReadWarp@G"
+  ]
+ },
+ "RLEBlitTransLucent50AlphaZReadWrite_ushort": {
+  "vtable": "0x007E5370",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent50AlphaZReadWrite@G@@",
+  "col": "0x007FE658",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AE00",
+    "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00499860",
+    "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00499A50",
+    "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent50AlphaZReadWrite@G"
+  ]
+ },
+ "RLEBlitTransLucent50AlphaZRead_ushort": {
+  "vtable": "0x007E53F0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent50AlphaZRead@G@@",
+  "col": "0x007FD848",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AC00",
+    "name": "RLEBlitTransLucent50AlphaZRead_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004986D0",
+    "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(uint16_t* p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498880",
+    "name": "RLEBlitTransLucent50AlphaZRead_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent50AlphaZRead@G"
+  ]
+ },
+ "RLEBlitTransLucent50Alpha_ushort": {
+  "vtable": "0x007E5440",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent50Alpha@G@@",
+  "col": "0x007FDAC8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AAC0",
+    "name": "RLEBlitTransLucent50Alpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00497CF0",
+    "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, uint16_t* p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x00497E20",
+    "name": "RLEBlitTransLucent50Alpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent50Alpha@G"
+  ]
+ },
+ "RLEBlitTransLucent75AlphaZReadWarp_ushort": {
+  "vtable": "0x007E53D0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent75AlphaZReadWarp@G@@",
+  "col": "0x007FEC48",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AC80",
+    "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00498AC0",
+    "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498C90",
+    "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent75AlphaZReadWarp@G"
+  ]
+ },
+ "RLEBlitTransLucent75AlphaZReadWrite_ushort": {
+  "vtable": "0x007E5380",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent75AlphaZReadWrite@G@@",
+  "col": "0x007FDC08",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049ADC0",
+    "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00499650",
+    "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00499820",
+    "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent75AlphaZReadWrite@G"
+  ]
+ },
+ "RLEBlitTransLucent75AlphaZRead_ushort": {
+  "vtable": "0x007E5400",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent75AlphaZRead@G@@",
+  "col": "0x007FDCA8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049ABC0",
+    "name": "RLEBlitTransLucent75AlphaZRead_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004984D0",
+    "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498690",
+    "name": "RLEBlitTransLucent75AlphaZRead_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent75AlphaZRead@G"
+  ]
+ },
+ "RLEBlitTransLucent75Alpha_ushort": {
+  "vtable": "0x007E5450",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransLucent75Alpha@G@@",
+  "col": "0x007FD988",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AA80",
+    "name": "RLEBlitTransLucent75Alpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00497B80",
+    "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, uint16_t* p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x00497CB0",
+    "name": "RLEBlitTransLucent75Alpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransLucent75Alpha@G"
+  ]
+ },
+ "RLEBlitTransXlat": {
+  "vtable": "0x007E55C0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransXlat@G@@",
+  "col": "0x007FEF68",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049A760",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter",
+    "proto": "std::locale::facet * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004960A0",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Xlat",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x00496130",
+    "name": "BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E5B00",
+    "slot_count": 3
+   }
+  ],
+  "alias_of": [
+   "?$RLEBlitTransXlat@G",
+   "?$RLEBlitTransXlat@E"
+  ]
+ },
+ "RLEBlitTransXlatAlphaZReadWrite_ushort": {
+  "vtable": "0x007E53A0",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransXlatAlphaZReadWrite@G@@",
+  "col": "0x007FD438",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AD40",
+    "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004990E0",
+    "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00499280",
+    "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9, int16_t p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransXlatAlphaZReadWrite@G"
+  ]
+ },
+ "RLEBlitTransXlatAlphaZRead_ushort": {
+  "vtable": "0x007E5420",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransXlatAlphaZRead@G@@",
+  "col": "0x007FE888",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AB40",
+    "name": "RLEBlitTransXlatAlphaZRead_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00497FD0",
+    "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498150",
+    "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9, int16_t p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransXlatAlphaZRead@G"
+  ]
+ },
+ "RLEBlitTransXlatAlpha_ushort": {
+  "vtable": "0x007E5470",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransXlatAlpha@G@@",
+  "col": "0x007FD4D8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AA00",
+    "name": "RLEBlitTransXlatAlpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004978C0",
+    "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, uint16_t* p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x004979D0",
+    "name": "RLEBlitTransXlatAlpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransXlatAlpha@G"
+  ]
+ },
+ "RLEBlitTransXlatZRead": {
+  "vtable": "0x007E5560",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransXlatZRead@G@@",
+  "col": "0x007FEE78",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049A820",
+    "name": "??_Gfacet_locale_std__UAEPAXI_Z_58",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004965B0",
+    "name": "sub_4965B0",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   },
+   "2": {
+    "addr": "0x00496690",
+    "name": "sub_496690",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E5AC0",
+    "slot_count": 3
+   }
+  ],
+  "alias_of": [
+   "?$RLEBlitTransXlatZRead@G",
+   "?$RLEBlitTransXlatZRead@E"
+  ]
+ },
+ "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort": {
+  "vtable": "0x007E5390",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransZRemapXlatAlphaZReadWrite@G@@",
+  "col": "0x007FF008",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AD80",
+    "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00499430",
+    "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, uint16_t* p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00499610",
+    "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransZRemapXlatAlphaZReadWrite@G"
+  ]
+ },
+ "RLEBlitTransZRemapXlatAlphaZRead_ushort": {
+  "vtable": "0x007E5410",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransZRemapXlatAlphaZRead@G@@",
+  "col": "0x007FF0A8",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AB80",
+    "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004982E0",
+    "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+    "proto": "int __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, unsigned int p5, uint16_t* p6, int p7, int p8, char* p9)"
+   },
+   "2": {
+    "addr": "0x00498490",
+    "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransZRemapXlatAlphaZRead@G"
+  ]
+ },
+ "RLEBlitTransZRemapXlatAlpha_ushort": {
+  "vtable": "0x007E5460",
+  "rtti": true,
+  "mangled": ".?AV?$RLEBlitTransZRemapXlatAlpha@G@@",
+  "col": "0x007FDA28",
+  "slot_count": 3,
+  "slots": {
+   "0": {
+    "addr": "0x0049AA40",
+    "name": "RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00497A10",
+    "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+    "proto": "unsigned __int16 * __thiscall(int p0, uint8_t* p1, int p2, int p3, int p4, int p5, uint16_t* p6, int p7, int p8, int p9)"
+   },
+   "2": {
+    "addr": "0x00497B40",
+    "name": "RLEBlitTransZRemapXlatAlpha_ushort::Release",
+    "proto": "int __thiscall(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$RLEBlitTransZRemapXlatAlpha@G"
+  ]
+ },
+ "SelectTeamCommand": {
+  "vtable": "0x007EBE64",
+  "rtti": true,
+  "mangled": ".?AVSelectTeamCommandClass@@",
+  "col": "0x008044B8",
+  "slot_count": 9,
+  "slots": {
+   "0": {
+    "addr": "0x00536090",
+    "name": "CreateTeamCommand::performAction_22",
+    "proto": "void * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00535FE0",
+    "name": "SelectTeamCommand::AddRef",
+    "proto": "char * __thiscall()"
+   },
+   "2": {
+    "addr": "0x00536000",
+    "name": "SelectTeamCommand::Release",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "3": {
+    "addr": "0x00536030",
+    "name": "SelectTeamCommand::ddtor",
+    "proto": "wchar_t * __unknown()"
+   },
+   "4": {
+    "addr": "0x00536050",
+    "name": "SelectTeamCommand::Read",
+    "proto": "wchar_t * __thiscall()"
+   },
+   "5": {
+    "addr": "0x00535BD0",
+    "name": "CreateTeamCommand::Stub",
+    "proto": "char __stdcall(int p0)"
+   },
+   "6": {
+    "addr": "0x00535BE0",
+    "name": "Map::IsCellFlag",
+    "proto": "unsigned int __stdcall(int p0)"
+   },
+   "7": {
+    "addr": "0x00535BF0",
+    "name": "CreateTeamCommand::Do",
+    "proto": "char __stdcall(int p0)"
+   },
+   "8": {
+    "addr": "0x00536080",
+    "name": "SelectTeamCommand::Do",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "SelectTeamCommandClass"
+  ]
+ },
+ "TypeList": {
+  "vtable": "0x007E4DD8",
+  "rtti": true,
+  "mangled": ".?AV?$TypeList@H@@",
+  "col": "0x007FCE30",
+  "slot_count": 7,
+  "slots": {
+   "0": {
+    "addr": "0x00477990",
+    "name": "_TypeList_H::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x00477C30",
+    "name": "BufferClass::CompareEqual",
+    "proto": "char __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x00477E10",
+    "name": "_DynamicVectorClass_H::Resize",
+    "proto": "char __thiscall(int p0, int* p1)"
+   },
+   "3": {
+    "addr": "0x00477840",
+    "name": "_DynamicVectorClass_H::ddtor",
+    "proto": "void __thiscall()"
+   },
+   "4": {
+    "addr": "0x00477F10",
+    "name": "_DynamicVectorClass_H::GetSize",
+    "proto": "int __thiscall(int* p0)"
+   },
+   "5": {
+    "addr": "0x00477870",
+    "name": "_DynamicVectorClass_H::GetCapacity",
+    "proto": "unsigned int __thiscall(int p0)"
+   },
+   "6": {
+    "addr": "0x00477890",
+    "name": "_VectorClass_H::GetAt_Copy",
+    "proto": "int __thiscall(int p0)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E4E18",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4E58",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA9C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EABC8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EABE8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAC08",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EB6D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED90C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0CFC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0D1C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0D3C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F12D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4F9C",
+    "slot_count": 7
+   }
+  ],
+  "alias_of": [
+   "?$TypeList@H",
+   "?$TypeList@PAVTechnoTypeClass@@",
+   "?$TypeList@VRGBClass@@",
+   "?$TypeList@PBVTeamTypeClass@@",
+   "?$TypeList@PBVAircraftTypeClass@@",
+   "?$TypeList@PBVUnitTypeClass@@",
+   "?$TypeList@PBVInfantryTypeClass@@",
+   "?$TypeList@PBVAnimTypeClass@@",
+   "?$TypeList@PBVBuildingTypeClass@@",
+   "?$TypeList@PBVTerrainTypeClass@@",
+   "?$TypeList@PBVSmudgeTypeClass@@",
+   "?$TypeList@PBVVoxelAnimTypeClass@@",
+   "?$TypeList@W4DiskID@@",
+   "?$TypeList@PBVParticleSystemTypeClass@@"
+  ]
+ },
+ "VectorClass": {
+  "vtable": "0x007E177C",
+  "rtti": true,
+  "mangled": ".?AV?$VectorClass@USubzoneConnectionStruct@@@@",
+  "col": "0x007FA5D8",
+  "slot_count": 7,
+  "slots": {
+   "0": {
+    "addr": "0x0040B300",
+    "name": "VectorClass::QueryInterface",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x0040B140",
+    "name": "_VectorClass_USubzoneConnectionStruct::AddRef",
+    "proto": "char __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x0040B180",
+    "name": "VectorClass::Release",
+    "proto": "char __thiscall(int p0, char* p1)"
+   },
+   "3": {
+    "addr": "0x0040B270",
+    "name": "VectorClass::Cleanup5",
+    "proto": "void __thiscall()"
+   },
+   "4": {
+    "addr": "0x0040B2A0",
+    "name": "VectorClass::GetSize",
+    "proto": "int __thiscall(int* p0)"
+   },
+   "5": {
+    "addr": "0x0040B2E0",
+    "name": "VectorClass::GetCapacity",
+    "proto": "unsigned int __thiscall(int p0)"
+   },
+   "6": {
+    "addr": "0x0040B120",
+    "name": "_VectorClass_USubzoneConnectionStruct::Clear",
+    "proto": "int __thiscall(int p0, int p1)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007E17EC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E180C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E184C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E188C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E18DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E192C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1A64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1B44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1E4C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1EA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E1EF4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E295C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E2AF0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E3258",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E37EC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E38D0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E38F0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E3E54",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E43E8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4424",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4468",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4514",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4638",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4698",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4AF4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4BC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4DB8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4DF8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E4E38",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5144",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5338",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5C04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5C24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5C84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5D08",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5DEC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E5EFC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8500",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8520",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E86AC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E86FC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E875C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8954",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8BC0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E8C48",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E920C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9264",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9B84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9BC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9C04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9C44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9C84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9CC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9D04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9D44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9D84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9DC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9E04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9E44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9E84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9EC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9F04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9F44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9F84",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007E9FC4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA004",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA044",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA084",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA0C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA104",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA144",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA184",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA1C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA204",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA244",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA284",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA2C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA304",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA344",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA384",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA3C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA404",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA444",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA484",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA4C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA504",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA544",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA584",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA5C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA624",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA7D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA964",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA984",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA9A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EA9E4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAA08",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAA5C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAAA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAC28",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAC48",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EAC68",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EB6F4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EB80C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EBFEC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EC07C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECBFC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECD0C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECE9C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECEFC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECF9C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ECFDC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED0EC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED1FC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED32C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED480",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED4E0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED500",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED560",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED5C0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED5E0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED878",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED92C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007ED970",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EDA4C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE0D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE390",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE3B0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EE3D0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEAB4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEAD4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEAF4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEB74",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEB94",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEBB4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEC24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEC44",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EECAC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EECEC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EED40",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEE54",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EEF50",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF28C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF6DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF7B0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF7D0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF7F0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EF844",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFE24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFE64",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFEA4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFF04",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007EFF24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F044C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F04A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F07C4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0ACC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0C4C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0D5C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0D7C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F0D9C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F1214",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F1234",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F1254",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F1274",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F1294",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F317C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F324C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F329C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F3604",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F36D4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F3748",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F3F8C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4154",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F42BC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F42FC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F43F0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4578",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F4840",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F5134",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F552C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F56DC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F57E8",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F65F4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F665C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F68CC",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6924",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F69A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6E24",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6EF4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6F7C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F6FF4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7184",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F71A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F71E0",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7230",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F78A4",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7A3C",
+    "slot_count": 7
+   },
+   {
+    "vtable": "0x007F7B0C",
+    "slot_count": 7
+   }
+  ],
+  "alias_of": [
+   "?$VectorClass@USubzoneConnectionStruct@@",
+   "?$VectorClass@PAVBombClass@@",
+   "?$VectorClass@PAVTechnoClass@@",
+   "?$VectorClass@PBVCommandClass@@",
+   "?$VectorClass@PAVLightConvertClass@@",
+   "?$VectorClass@PAVIsometricTileClass@@",
+   "?$VectorClass@PAVObjectClass@@",
+   "?$VectorClass@PAVMixFileClass@@",
+   "?$VectorClass@PAVScriptClass@@",
+   "?$VectorClass@PAVVoxelAnimClass@@",
+   "?$VectorClass@PAVWarheadTypeClass@@",
+   "?$VectorClass@PAVWeaponTypeClass@@",
+   "?$VectorClass@PAVAirstrikeClass@@",
+   "?$VectorClass@PAVAlphaLightingRemapClass@@",
+   "?$VectorClass@PAVAlphaShapeClass@@",
+   "?$VectorClass@I",
+   "?$VectorClass@VCell@@",
+   "?$VectorClass@VBaseNodeClass@@",
+   "?$VectorClass@PAVNeuronClass@@",
+   "?$VectorClass@PAVInfantryClass@@",
+   "?$VectorClass@PBVParticleSystemTypeClass@@",
+   "?$VectorClass@PAVReestablish@@",
+   "?$VectorClass@PAVFoggedObjectClass@@",
+   "?$VectorClass@V?$TPoint3D@H@@",
+   "?$VectorClass@PAVBulletClass@@",
+   "?$VectorClass@PAVCaptureManagerClass@@",
+   "?$VectorClass@PAUControlNode@@",
+   "?$VectorClass@H",
+   "?$VectorClass@PAVTechnoTypeClass@@",
+   "?$VectorClass@VRGBClass@@",
+   "?$VectorClass@PAUDamageGroup@@",
+   "?$VectorClass@PAVConvertClass@@",
+   "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+   "?$VectorClass@PAD",
+   "?$VectorClass@UtagCONNECTDATA@@",
+   "?$VectorClass@PAUIConnectionPoint@@",
+   "?$VectorClass@PAU_DDSURFACEDESC@@",
+   "?$VectorClass@PAVDiskLaserClass@@",
+   "?$VectorClass@PAUButtonFadeEffect@@",
+   "?$VectorClass@PAUCrossDissolveEffect@@",
+   "?$VectorClass@PAVEBolt@@",
+   "?$VectorClass@PAVEgoClass@@",
+   "?$VectorClass@PAVEMPulseClass@@",
+   "?$VectorClass@PBVTechnoTypeClass@@",
+   "?$VectorClass@UDrawRecord@FoggedObjectClass@@",
+   "?$VectorClass@PAVFootClass@@",
+   "?$VectorClass@PAVAbstractClass@@",
+   "?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+   "?$VectorClass@PAVAITriggerTypeClass@@",
+   "?$VectorClass@PAVTriggerTypeClass@@",
+   "?$VectorClass@PAVTriggerClass@@",
+   "?$VectorClass@PAVBuildingLightClass@@",
+   "?$VectorClass@PAVParticleSystemClass@@",
+   "?$VectorClass@PAVTubeClass@@",
+   "?$VectorClass@PAVWaveClass@@",
+   "?$VectorClass@PAVOverlayClass@@",
+   "?$VectorClass@PAVParticleClass@@",
+   "?$VectorClass@PAVSmudgeClass@@",
+   "?$VectorClass@PAVTerrainClass@@",
+   "?$VectorClass@PAVBuildingClass@@",
+   "?$VectorClass@PAVAircraftClass@@",
+   "?$VectorClass@PAVUnitClass@@",
+   "?$VectorClass@PAVHouseClass@@",
+   "?$VectorClass@PAVAnimClass@@",
+   "?$VectorClass@PAVTeamClass@@",
+   "?$VectorClass@PAVFactoryClass@@",
+   "?$VectorClass@PAVCampaignClass@@",
+   "?$VectorClass@PAVSideClass@@",
+   "?$VectorClass@PAVHouseTypeClass@@",
+   "?$VectorClass@PAVTaskForceClass@@",
+   "?$VectorClass@PAVTeamTypeClass@@",
+   "?$VectorClass@PAVScriptTypeClass@@",
+   "?$VectorClass@PAVOverlayTypeClass@@",
+   "?$VectorClass@PAVSmudgeTypeClass@@",
+   "?$VectorClass@PAVTerrainTypeClass@@",
+   "?$VectorClass@PAVBuildingTypeClass@@",
+   "?$VectorClass@PAVAircraftTypeClass@@",
+   "?$VectorClass@PAVUnitTypeClass@@",
+   "?$VectorClass@PAVAnimTypeClass@@",
+   "?$VectorClass@PAVInfantryTypeClass@@",
+   "?$VectorClass@PAVBulletTypeClass@@",
+   "?$VectorClass@PAVVoxelAnimTypeClass@@",
+   "?$VectorClass@PAVIsometricTileTypeClass@@",
+   "?$VectorClass@PAVParticleTypeClass@@",
+   "?$VectorClass@PAVParticleSystemTypeClass@@",
+   "?$VectorClass@PAVSuperWeaponTypeClass@@",
+   "?$VectorClass@PAVSuperClass@@",
+   "?$VectorClass@PAVAbstractTypeClass@@",
+   "?$VectorClass@PAUThemeControl@@",
+   "?$VectorClass@PAVTagClass@@",
+   "?$VectorClass@PAVGraphicMenuItem@@",
+   "?$VectorClass@PAUBuildChoiceClass@HouseClass@@",
+   "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@",
+   "?$VectorClass@UAngerStruct@@",
+   "?$VectorClass@UScoutStruct@@",
+   "?$VectorClass@PBVTeamTypeClass@@",
+   "?$VectorClass@PBVBuildingTypeClass@@",
+   "?$VectorClass@_N",
+   "?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+   "?$VectorClass@PBVInfantryTypeClass@@",
+   "?$VectorClass@PBVUnitTypeClass@@",
+   "?$VectorClass@PBVAircraftTypeClass@@",
+   "?$VectorClass@PBVAnimTypeClass@@",
+   "?$VectorClass@PAVCCINIClass@@",
+   "?$VectorClass@PBVAnimClass@@",
+   "?$VectorClass@PAVIonBlastClass@@",
+   "?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+   "?$VectorClass@PAG",
+   "?$VectorClass@PAUKamikazeControl@@",
+   "?$VectorClass@PAVLaserDrawClass@@",
+   "?$VectorClass@PAVLightSourceClass@@",
+   "?$VectorClass@PAVPendingCellClass@LightSourceClass@@",
+   "?$VectorClass@PAVLineTrail@@",
+   "?$VectorClass@PBG",
+   "?$VectorClass@PAVFileEntryClass@@",
+   "?$VectorClass@PAVCellClass@@",
+   "?$VectorClass@UZoneConnectionClass@@",
+   "?$VectorClass@USubzoneTrackingStruct@@",
+   "?$VectorClass@W4PassabilityType@@",
+   "?$VectorClass@U?$HashObject@II@@",
+   "?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+   "?$VectorClass@PAVMapRegionClass@@",
+   "?$VectorClass@PAU_WIN32_FIND_DATAA@@",
+   "?$VectorClass@V?$TRect@H@@",
+   "?$VectorClass@N",
+   "?$VectorClass@PBD",
+   "?$VectorClass@PAUNodeNameType@@",
+   "?$VectorClass@PAVCoopCampaignClass@@",
+   "?$VectorClass@PAUMPlayerScoreType@@",
+   "?$VectorClass@PAVMapStage@@",
+   "?$VectorClass@PAVMSAnimEntry@@",
+   "?$VectorClass@PAVMSSfxEntry@@",
+   "?$VectorClass@VPoint2D@@",
+   "?$VectorClass@PAVMSTextEntry@@",
+   "?$VectorClass@PAVMapSelection@@",
+   "?$VectorClass@PAVMSAnim@@",
+   "?$VectorClass@PAVMSSfx@@",
+   "?$VectorClass@PAUHWND__@@",
+   "?$VectorClass@UAcceleratorTracker@@",
+   "?$VectorClass@PAVMultiplayerGameMode@@",
+   "?$VectorClass@PAVMultiplayerTeam@@",
+   "?$VectorClass@PBVMultiMission@@",
+   "?$VectorClass@PAVObjectTypeClass@@",
+   "?$VectorClass@PAVSpotLightClass@@",
+   "?$VectorClass@PAVColorScheme@@",
+   "?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+   "?$VectorClass@VHSVClass@@",
+   "?$VectorClass@PAVParasiteClass@@",
+   "?$VectorClass@PAVEventClass@@",
+   "?$VectorClass@PAVPlanningNodeClass@@",
+   "?$VectorClass@PAVPlanningTokenClass@@",
+   "?$VectorClass@PAVPlanningMemberClass@@",
+   "?$VectorClass@PAVPlanningBranchClass@@",
+   "?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+   "?$VectorClass@PAVRadBeam@@",
+   "?$VectorClass@PAVRadSiteClass@@",
+   "?$VectorClass@PAVRadarEventClass@@",
+   "?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+   "?$VectorClass@PBVVoxelAnimTypeClass@@",
+   "?$VectorClass@PBVSmudgeTypeClass@@",
+   "?$VectorClass@PBVTerrainTypeClass@@",
+   "?$VectorClass@PAVMultiMission@@",
+   "?$VectorClass@PAUGlobalPacketType@@",
+   "?$VectorClass@PAVPhoneEntryClass@@",
+   "?$VectorClass@W4DiskID@@",
+   "?$VectorClass@VWstring@@",
+   "?$VectorClass@PAVSlaveManagerClass@@",
+   "?$VectorClass@PAUSlaveControl@SlaveManagerClass@@",
+   "?$VectorClass@UUndoInfoStruct@@",
+   "?$VectorClass@PAVSpawnManagerClass@@",
+   "?$VectorClass@PAUSpawnControl@SpawnManagerClass@@",
+   "?$VectorClass@K",
+   "?$VectorClass@PAVSubTitle@@",
+   "?$VectorClass@VSwizzlePointerClass@@",
+   "?$VectorClass@UDirtyAreaStruct@@",
+   "?$VectorClass@PAVShadowControlClass@@",
+   "?$VectorClass@PAVTActionClass@@",
+   "?$VectorClass@PAVTagTypeClass@@",
+   "?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+   "?$VectorClass@PAVTemporalClass@@",
+   "?$VectorClass@PAVTEventClass@@",
+   "?$VectorClass@PAVTiberiumClass@@",
+   "?$VectorClass@PBVToolTip@@",
+   "?$VectorClass@E",
+   "?$VectorClass@PAVVeinholeMonsterClass@@",
+   "?$VectorClass@PAVVocClass@@",
+   "?$VectorClass@PAVVoxClass@@",
+   "?$VectorClass@PAVMovieHandle@@",
+   "?$VectorClass@PAVWaypointPathClass@@",
+   "?$VectorClass@VWaypointClass@@",
+   "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+   "?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+   "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+   "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+   "?$VectorClass@VCentroid@WorldDominationTour@@",
+   "?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+   "?$VectorClass@PAUtConnInfoStruct@@",
+   "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+   "?$VectorClass@PAE"
+  ]
+ },
+ "VectorClass_ushort": {
+  "vtable": "0x007E3824",
+  "rtti": true,
+  "mangled": ".?AV?$VectorClass@G@@",
+  "col": "0x007FBCE0",
+  "slot_count": 7,
+  "slots": {
+   "0": {
+    "addr": "0x0042DBB0",
+    "name": "VectorClass_ushort::Add",
+    "proto": "_DWORD * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x0042D8B0",
+    "name": "VectorClass_ushort::AddRef",
+    "proto": "char __thiscall(int p0)"
+   },
+   "2": {
+    "addr": "0x0042D8F0",
+    "name": "VectorClass_ushort::Remove",
+    "proto": "char __thiscall(int p0, uint16_t* p1)"
+   },
+   "3": {
+    "addr": "0x0042D9A0",
+    "name": "VectorClass_ushort::ddtor",
+    "proto": "void __thiscall()"
+   },
+   "4": {
+    "addr": "0x0042D9D0",
+    "name": "VectorClass_ushort::GetSize",
+    "proto": "int __thiscall(uint16_t* p0)"
+   },
+   "5": {
+    "addr": "0x0042DA10",
+    "name": "VectorClass_ushort::Get",
+    "proto": "unsigned int __thiscall(int p0)"
+   },
+   "6": {
+    "addr": "0x0042D5F0",
+    "name": "VectorClass_ushort::Clear",
+    "proto": "__int16 __thiscall(int p0)"
+   }
+  },
+  "secondary": [],
+  "alias_of": [
+   "?$VectorClass@G"
+  ]
+ },
+ "VectorCursor": {
+  "vtable": "0x007EA644",
+  "rtti": true,
+  "mangled": ".?AV?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@@@",
+  "col": "0x00802608",
+  "slot_count": 4,
+  "slots": {
+   "0": {
+    "addr": "0x004F28C0",
+    "name": "HouseClass::vt_placeholder_07",
+    "proto": "std::locale::facet * __thiscall(char p0)"
+   },
+   "1": {
+    "addr": "0x004F28B0",
+    "name": "Map::CanScroll",
+    "proto": "BOOL __thiscall()"
+   },
+   "2": {
+    "addr": "0x004F2B40",
+    "name": "HouseClass::vt_placeholder_09",
+    "proto": "_DWORD * __thiscall()"
+   },
+   "3": {
+    "addr": "0x004F2B50",
+    "name": "HouseClass::vt_placeholder_10",
+    "proto": "_DWORD * __thiscall()"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007EA6C8",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F6F9C",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F702C",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F71CC",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F72C4",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F72D8",
+    "slot_count": 4
+   },
+   {
+    "vtable": "0x007F72EC",
+    "slot_count": 4
+   }
+  ],
+  "alias_of": [
+   "?$VectorCursor@PAVGraphicMenuItem@@V?$DynamicVectorClass@PAVGraphicMenuItem@@@@",
+   "?$VectorCursor@IV?$DynamicVectorClass@I@@",
+   "?$VectorCursor@V?$rc_ptr@VConflict@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@@@",
+   "?$VectorCursor@V?$rc_ptr@VGameOption@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@@@",
+   "?$VectorCursor@V?$TRect@H@@V?$VectorClass@V?$TRect@H@@@@",
+   "?$VectorCursor@PAVMSSfxEntry@@V?$DynamicVectorClass@PAVMSSfxEntry@@@@",
+   "?$VectorCursor@V?$rc_ptr@VTerritory@WorldDominationTour@@@@V?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@@@",
+   "?$VectorCursor@PAVMSAnim@@V?$DynamicVectorClass@PAVMSAnim@@@@"
+  ]
+ },
+ "rc_ptr": {
+  "vtable": "0x007EBFA4",
+  "rtti": true,
+  "mangled": ".?AV?$rc_ptr@VWDTTerritory@@@@",
+  "col": "0x00804750",
+  "slot_count": 1,
+  "slots": {
+   "0": {
+    "addr": "0x00538A20",
+    "name": "CreateTeamCommand::performAction_243",
+    "proto": "char * __thiscall(char p0)"
+   }
+  },
+  "secondary": [
+   {
+    "vtable": "0x007F3F44",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F6F24",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F6F2C",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F6F34",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F6F6C",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F6F74",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F7014",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F701C",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F7024",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F7040",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F70EC",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F712C",
+    "slot_count": 1
+   },
+   {
+    "vtable": "0x007F71C4",
+    "slot_count": 1
+   }
+  ],
+  "alias_of": [
+   "?$rc_ptr@VWDTTerritory@@",
+   "?$rc_ptr@VPlayerProfile@@",
+   "?$rc_ptr@VCampaign@WorldDominationTour@@",
+   "?$rc_ptr@VState@WorldDominationTour@@",
+   "?$rc_ptr@VConflict@WorldDominationTour@@",
+   "?$rc_ptr@VCampaignProperties@WorldDominationTour@@",
+   "?$rc_ptr@VHistory@WorldDominationTour@@",
+   "?$rc_ptr@VFlagGameOption@WorldDominationTour@@",
+   "?$rc_ptr@V?$ValueGameOption@E@WorldDominationTour@@",
+   "?$rc_ptr@VGameOption@WorldDominationTour@@",
+   "?$rc_ptr@VMapSizeGameOption@WorldDominationTour@@",
+   "?$rc_ptr@VWDTState@@",
+   "?$rc_ptr@VMap@WorldDominationTour@@",
+   "?$rc_ptr@VTerritory@WorldDominationTour@@"
+  ]
+ }
+}
