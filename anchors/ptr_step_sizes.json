@@ -2094,6 +2094,2376 @@
 "ent": "S:7DE07C:+0xC",
 "size": 32,
 "addr": "0x7DE0A3"
+},
+{
+"ent": "G:87DE38",
+"size": 12,
+"addr": "0x404395"
+},
+{
+"ent": "G:87DE38",
+"size": 120,
+"addr": "0x404E51"
+},
+{
+"ent": "G:816018",
+"size": 8,
+"addr": "0x4067F8"
+},
+{
+"ent": "G:8160C0",
+"size": 8,
+"addr": "0x406848"
+},
+{
+"ent": "G:816048",
+"size": 8,
+"addr": "0x406898"
+},
+{
+"ent": "T:407520",
+"size": 8,
+"addr": "0x407529"
+},
+{
+"ent": "M:408A70:this:0x4C",
+"size": 64,
+"addr": "0x408AFA"
+},
+{
+"ent": "M:408C30:this:0x4C",
+"size": 64,
+"addr": "0x408CFF"
+},
+{
+"ent": "M:40AA70:this:0xB4",
+"size": 8,
+"addr": "0x40AB26"
+},
+{
+"ent": "M:40B140:this:0x4",
+"size": 8,
+"addr": "0x40B167"
+},
+{
+"ent": "M:40B2A0:this:0x4",
+"size": 8,
+"addr": "0x40B2C5"
+},
+{
+"ent": "G:816EE4",
+"size": 8,
+"addr": "0x40DCBB"
+},
+{
+"ent": "G:816EE0",
+"size": 8,
+"addr": "0x40DCFC"
+},
+{
+"ent": "G:889E0C",
+"size": 24,
+"addr": "0x412980"
+},
+{
+"ent": "M:4136C0:this:0x8",
+"size": 24,
+"addr": "0x41377B"
+},
+{
+"ent": "T:413800",
+"size": 24,
+"addr": "0x413821"
+},
+{
+"ent": "M:413850:this:0x4",
+"size": 24,
+"addr": "0x41389F"
+},
+{
+"ent": "P:4144B0:431",
+"size": 176,
+"addr": "0x414896"
+},
+{
+"ent": "S:4197C0:var_70",
+"size": 16,
+"addr": "0x419A5C"
+},
+{
+"ent": "S:4197C0:var_6c",
+"size": 256,
+"addr": "0x419A79"
+},
+{
+"ent": "M:42A6D0:this:0x74",
+"size": 24,
+"addr": "0x42A739"
+},
+{
+"ent": "M:42A900:this:0xBC",
+"size": 24,
+"addr": "0x42AA12"
+},
+{
+"ent": "S:42C290:var_38",
+"size": 16,
+"addr": "0x42C71B"
+},
+{
+"ent": "S:42C290:var_34",
+"size": 8,
+"addr": "0x42C72E"
+},
+{
+"ent": "M:42C900:this:0x74",
+"size": 24,
+"addr": "0x42C921"
+},
+{
+"ent": "M:42CCD0:this:0x7C",
+"size": 24,
+"addr": "0x42CE84"
+},
+{
+"ent": "M:42D170:this:0x74",
+"size": 24,
+"addr": "0x42D191"
+},
+{
+"ent": "M:42E820:this:0x8",
+"size": 16,
+"addr": "0x42E966"
+},
+{
+"ent": "M:42F490:this:0x4",
+"size": 16,
+"addr": "0x42F4D3"
+},
+{
+"ent": "M:42F5E0:this:0x4",
+"size": 16,
+"addr": "0x42F60E"
+},
+{
+"ent": "M:42FAE0:this:0x4",
+"size": 16,
+"addr": "0x42FB1D"
+},
+{
+"ent": "S:430250:var_150",
+"size": 8,
+"addr": "0x4303F5"
+},
+{
+"ent": "S:430250:var_144",
+"size": 32,
+"addr": "0x430407"
+},
+{
+"ent": "S:430250:var_14c",
+"size": 8,
+"addr": "0x430421"
+},
+{
+"ent": "T:430F70",
+"size": 12,
+"addr": "0x431012"
+},
+{
+"ent": "T:431090",
+"size": 12,
+"addr": "0x431132"
+},
+{
+"ent": "T:431170",
+"size": 12,
+"addr": "0x4311AB"
+},
+{
+"ent": "T:4311C0",
+"size": 12,
+"addr": "0x431213"
+},
+{
+"ent": "T:431450",
+"size": 12,
+"addr": "0x4314A9"
+},
+{
+"ent": "T:431800",
+"size": 12,
+"addr": "0x431896"
+},
+{
+"ent": "S:432AB0:var_24",
+"size": 16,
+"addr": "0x432BAF"
+},
+{
+"ent": "S:435BE0:var_b0",
+"size": 80,
+"addr": "0x435DB7"
+},
+{
+"ent": "T:438210",
+"size": 24,
+"addr": "0x4382C9"
+},
+{
+"ent": "P:44B780:133",
+"size": 36,
+"addr": "0x44BFD3"
+},
+{
+"ent": "G:818CC8",
+"size": 8,
+"addr": "0x456DDF"
+},
+{
+"ent": "P:4571E0:133",
+"size": 36,
+"addr": "0x457428"
+},
+{
+"ent": "G:81928C",
+"size": 8,
+"addr": "0x45DD2B"
+},
+{
+"ent": "G:819288",
+"size": 8,
+"addr": "0x45DD6C"
+},
+{
+"ent": "M:45DD90:this:0xF5C",
+"size": 68,
+"addr": "0x45E3EB"
+},
+{
+"ent": "M:45DD90:this:0x1588",
+"size": 8,
+"addr": "0x45E46E"
+},
+{
+"ent": "M:45DD90:this:0x15D8",
+"size": 8,
+"addr": "0x45E490"
+},
+{
+"ent": "M:45DD90:this:0x1664",
+"size": 8,
+"addr": "0x45E4C0"
+},
+{
+"ent": "S:45E970:var_204",
+"size": 16,
+"addr": "0x45EB75"
+},
+{
+"ent": "M:465E10:this:0x4",
+"size": 12,
+"addr": "0x465E53"
+},
+{
+"ent": "M:465F80:this:0x4",
+"size": 12,
+"addr": "0x465FBF"
+},
+{
+"ent": "G:A8D1FC",
+"size": 112,
+"addr": "0x46FCC0"
+},
+{
+"ent": "G:81B7C8",
+"size": 8,
+"addr": "0x4739B1"
+},
+{
+"ent": "G:81B958",
+"size": 8,
+"addr": "0x4748E2"
+},
+{
+"ent": "G:81B9B0",
+"size": 8,
+"addr": "0x47497F"
+},
+{
+"ent": "G:81B9D8",
+"size": 8,
+"addr": "0x474DE2"
+},
+{
+"ent": "S:478E30:var_1c",
+"size": 8,
+"addr": "0x478F30"
+},
+{
+"ent": "G:81CCE8",
+"size": 8,
+"addr": "0x481551"
+},
+{
+"ent": "S:486C50:var_1c",
+"size": 52,
+"addr": "0x486CAB"
+},
+{
+"ent": "M:48B410:this:0x24",
+"size": 36,
+"addr": "0x48B448"
+},
+{
+"ent": "P:48B750:11",
+"size": 24,
+"addr": "0x48B77F"
+},
+{
+"ent": "S:49D680:var_1ac",
+"size": 260,
+"addr": "0x49D74B"
+},
+{
+"ent": "S:49D680:var_1ac",
+"size": 780,
+"addr": "0x49D7A2"
+},
+{
+"ent": "S:49DB00:var_134",
+"size": 780,
+"addr": "0x49E339"
+},
+{
+"ent": "S:49E400:var_c",
+"size": 76,
+"addr": "0x49E4A2"
+},
+{
+"ent": "M:4A0F80:this:0x4",
+"size": 8,
+"addr": "0x4A0FB9"
+},
+{
+"ent": "M:4A10D0:this:0x4",
+"size": 8,
+"addr": "0x4A1105"
+},
+{
+"ent": "M:4A1200:this:0x4",
+"size": 8,
+"addr": "0x4A1225"
+},
+{
+"ent": "T:4A3660",
+"size": 96,
+"addr": "0x4A3822"
+},
+{
+"ent": "M:4A57B0:this:0x38",
+"size": 8,
+"addr": "0x4A583E"
+},
+{
+"ent": "G:8A0368",
+"size": 24,
+"addr": "0x4A8667"
+},
+{
+"ent": "G:8A0360",
+"size": 24,
+"addr": "0x4A8915"
+},
+{
+"ent": "G:8A0370",
+"size": 24,
+"addr": "0x4A9821"
+},
+{
+"ent": "S:4B6C30:var_644",
+"size": 8,
+"addr": "0x4B8761"
+},
+{
+"ent": "P:4BA770:6",
+"size": 72,
+"addr": "0x4BA9B2"
+},
+{
+"ent": "S:4C1F20:var_3e8",
+"size": 12,
+"addr": "0x4C237C"
+},
+{
+"ent": "S:4C3E30:var_f8",
+"size": 16,
+"addr": "0x4C3F5D"
+},
+{
+"ent": "S:4C3E30:var_fc",
+"size": 8,
+"addr": "0x4C3F7F"
+},
+{
+"ent": "M:4D29B0:this:0x4",
+"size": 16,
+"addr": "0x4D29E9"
+},
+{
+"ent": "M:4D2B50:this:0x4",
+"size": 16,
+"addr": "0x4D2B85"
+},
+{
+"ent": "M:4D2CD0:this:0x4",
+"size": 16,
+"addr": "0x4D2CF5"
+},
+{
+"ent": "S:4D74E0:var_f0",
+"size": 36,
+"addr": "0x4D7B47"
+},
+{
+"ent": "S:4DE1D0:var_28",
+"size": 36,
+"addr": "0x4DE4AA"
+},
+{
+"ent": "M:4E07E0:this:0x4",
+"size": 8,
+"addr": "0x4E0819"
+},
+{
+"ent": "M:4E0990:this:0x4",
+"size": 8,
+"addr": "0x4E09C5"
+},
+{
+"ent": "M:4E0CA0:this:0x4",
+"size": 8,
+"addr": "0x4E0CC5"
+},
+{
+"ent": "G:8B4040",
+"size": 12,
+"addr": "0x4E44CB"
+},
+{
+"ent": "G:8B3F38",
+"size": 12,
+"addr": "0x4E4FB5"
+},
+{
+"ent": "G:8B3FC0",
+"size": 12,
+"addr": "0x4E5C37"
+},
+{
+"ent": "G:A8E3A8",
+"size": 32,
+"addr": "0x4E7D03"
+},
+{
+"ent": "G:824328",
+"size": 8,
+"addr": "0x4F3E39"
+},
+{
+"ent": "M:4F5190:this:0x5670",
+"size": 44,
+"addr": "0x4F540E"
+},
+{
+"ent": "M:4F54A0:this:0x5670",
+"size": 44,
+"addr": "0x4F5C18"
+},
+{
+"ent": "M:4F7140:this:0x56F4",
+"size": 44,
+"addr": "0x4F7428"
+},
+{
+"ent": "M:4F9B70:this:0x5608",
+"size": 8,
+"addr": "0x4F9BD7"
+},
+{
+"ent": "M:4FD150:this:0x54A0",
+"size": 12,
+"addr": "0x4FD185"
+},
+{
+"ent": "M:4FD500:this:0x5608",
+"size": 8,
+"addr": "0x4FD75A"
+},
+{
+"ent": "P:4FD9A0:11",
+"size": 152,
+"addr": "0x4FDA0C"
+},
+{
+"ent": "S:4FDD10:var_20",
+"size": 16,
+"addr": "0x4FDF74"
+},
+{
+"ent": "P:4FEA60:11",
+"size": 152,
+"addr": "0x4FEA85"
+},
+{
+"ent": "M:504790:this:0x5608",
+"size": 8,
+"addr": "0x50482A"
+},
+{
+"ent": "P:5051E0:11",
+"size": 152,
+"addr": "0x5051EC"
+},
+{
+"ent": "P:506EF0:5568",
+"size": 16,
+"addr": "0x507AF3"
+},
+{
+"ent": "M:5093C0:this:0x5608",
+"size": 8,
+"addr": "0x5093E0"
+},
+{
+"ent": "S:509610:var_8",
+"size": 8,
+"addr": "0x5096D2"
+},
+{
+"ent": "M:50A490:this:0x5708",
+"size": 16,
+"addr": "0x50A50B"
+},
+{
+"ent": "P:50A5C0:5568",
+"size": 16,
+"addr": "0x50A9C6"
+},
+{
+"ent": "P:50A5C0:5568",
+"size": 20,
+"addr": "0x50AC2A"
+},
+{
+"ent": "P:50A5C0:11",
+"size": 36,
+"addr": "0x50AE0B"
+},
+{
+"ent": "M:50EE80:this:0x4",
+"size": 8,
+"addr": "0x50EEB9"
+},
+{
+"ent": "M:50F000:this:0x4",
+"size": 8,
+"addr": "0x50F035"
+},
+{
+"ent": "M:50F170:this:0x4",
+"size": 8,
+"addr": "0x50F195"
+},
+{
+"ent": "M:50F1B0:this:0x4",
+"size": 8,
+"addr": "0x50F1EB"
+},
+{
+"ent": "M:50F330:this:0x4",
+"size": 8,
+"addr": "0x50F365"
+},
+{
+"ent": "M:50F4A0:this:0x4",
+"size": 8,
+"addr": "0x50F4C5"
+},
+{
+"ent": "M:50FC00:this:0x4",
+"size": 8,
+"addr": "0x50FC39"
+},
+{
+"ent": "M:50FDB0:this:0x4",
+"size": 8,
+"addr": "0x50FDE5"
+},
+{
+"ent": "M:50FFB0:this:0x4",
+"size": 8,
+"addr": "0x50FFD5"
+},
+{
+"ent": "G:A8D228",
+"size": 112,
+"addr": "0x52CAB8"
+},
+{
+"ent": "G:825C2C",
+"size": 16,
+"addr": "0x531E98"
+},
+{
+"ent": "S:538D40:var_1c",
+"size": 256,
+"addr": "0x538E48"
+},
+{
+"ent": "S:547CF0:var_c",
+"size": 120,
+"addr": "0x547EFF"
+},
+{
+"ent": "S:552D60:var_1250.m_colors",
+"size": 72,
+"addr": "0x553370"
+},
+{
+"ent": "M:556A20:this:0x1C",
+"size": 16,
+"addr": "0x556A4F"
+},
+{
+"ent": "M:565090:this:0x8C",
+"size": 24,
+"addr": "0x5650DD"
+},
+{
+"ent": "M:565090:this:0x164",
+"size": 16,
+"addr": "0x565139"
+},
+{
+"ent": "M:565190:this:0x8C",
+"size": 24,
+"addr": "0x5651E5"
+},
+{
+"ent": "M:565190:this:0x164",
+"size": 16,
+"addr": "0x565227"
+},
+{
+"ent": "M:5652C0:this:0xD4",
+"size": 24,
+"addr": "0x565413"
+},
+{
+"ent": "M:5659F0:this:0x158",
+"size": 16,
+"addr": "0x565A72"
+},
+{
+"ent": "M:567110:this:0xA0",
+"size": 24,
+"addr": "0x5671C7"
+},
+{
+"ent": "M:567110:this:0xBC",
+"size": 24,
+"addr": "0x567213"
+},
+{
+"ent": "S:568E40:var_34",
+"size": 128,
+"addr": "0x5696E7"
+},
+{
+"ent": "S:569760:var_34",
+"size": 128,
+"addr": "0x56A00D"
+},
+{
+"ent": "M:56BBE0:this:0x158",
+"size": 16,
+"addr": "0x56BC45"
+},
+{
+"ent": "M:56BD40:this:0x164",
+"size": 16,
+"addr": "0x56BD6A"
+},
+{
+"ent": "M:56BEC0:this:0x164",
+"size": 16,
+"addr": "0x56BF95"
+},
+{
+"ent": "M:56C020:this:0x164",
+"size": 16,
+"addr": "0x56C067"
+},
+{
+"ent": "S:56C510:var_38",
+"size": 16,
+"addr": "0x56C7D4"
+},
+{
+"ent": "G:82A594",
+"size": 32,
+"addr": "0x56CAE8"
+},
+{
+"ent": "M:56DA10:this:0x54",
+"size": 16,
+"addr": "0x56DAAE"
+},
+{
+"ent": "S:57BCF0:var_a0",
+"size": 36,
+"addr": "0x57BFF8"
+},
+{
+"ent": "S:57BCF0:var_a4",
+"size": 36,
+"addr": "0x57C009"
+},
+{
+"ent": "S:57C2B0:var_a0",
+"size": 36,
+"addr": "0x57C5B8"
+},
+{
+"ent": "S:57C2B0:var_a4",
+"size": 36,
+"addr": "0x57C5C9"
+},
+{
+"ent": "S:57CF60:var_a0",
+"size": 36,
+"addr": "0x57D26E"
+},
+{
+"ent": "S:57CF60:var_a4",
+"size": 36,
+"addr": "0x57D27F"
+},
+{
+"ent": "S:57D530:var_98",
+"size": 36,
+"addr": "0x57D839"
+},
+{
+"ent": "S:57D530:var_a0",
+"size": 36,
+"addr": "0x57D84A"
+},
+{
+"ent": "T:581090",
+"size": 24,
+"addr": "0x581118"
+},
+{
+"ent": "M:581F50:this:0xBC",
+"size": 24,
+"addr": "0x581F70"
+},
+{
+"ent": "S:581F90:var_64",
+"size": 24,
+"addr": "0x581FF1"
+},
+{
+"ent": "S:581F90:var_5c",
+"size": 12,
+"addr": "0x582467"
+},
+{
+"ent": "G:ABDE48",
+"size": 8,
+"addr": "0x584142"
+},
+{
+"ent": "S:5840C0:var_34",
+"size": 8,
+"addr": "0x584440"
+},
+{
+"ent": "S:584550:var_80",
+"size": 24,
+"addr": "0x584605"
+},
+{
+"ent": "S:584550:var_8c",
+"size": 36,
+"addr": "0x584A80"
+},
+{
+"ent": "S:584550:var_84",
+"size": 16,
+"addr": "0x584B47"
+},
+{
+"ent": "S:584550:var_8c",
+"size": 12,
+"addr": "0x584C5E"
+},
+{
+"ent": "M:5851B0:this:0x90",
+"size": 24,
+"addr": "0x585577"
+},
+{
+"ent": "S:586BF0:var_1c",
+"size": 16,
+"addr": "0x586E32"
+},
+{
+"ent": "M:5892D0:this:0x4",
+"size": 8,
+"addr": "0x5892E8"
+},
+{
+"ent": "M:589300:this:0x4",
+"size": 16,
+"addr": "0x58934C"
+},
+{
+"ent": "M:5894D0:this:0x4",
+"size": 16,
+"addr": "0x589519"
+},
+{
+"ent": "M:5896A0:this:0x4",
+"size": 16,
+"addr": "0x5896DA"
+},
+{
+"ent": "M:5896F0:this:0x4",
+"size": 36,
+"addr": "0x589729"
+},
+{
+"ent": "M:5899E0:this:0x4",
+"size": 36,
+"addr": "0x589A1B"
+},
+{
+"ent": "M:589C10:this:0x4",
+"size": 36,
+"addr": "0x589C3B"
+},
+{
+"ent": "M:58A110:this:0x4",
+"size": 8,
+"addr": "0x58A137"
+},
+{
+"ent": "M:58A230:this:0x4",
+"size": 8,
+"addr": "0x58A248"
+},
+{
+"ent": "M:58A260:this:0x4",
+"size": 12,
+"addr": "0x58A287"
+},
+{
+"ent": "M:58A3A0:this:0x4",
+"size": 12,
+"addr": "0x58A3B8"
+},
+{
+"ent": "M:58A7E0:this:0x4",
+"size": 8,
+"addr": "0x58A805"
+},
+{
+"ent": "M:58AA20:this:0x4",
+"size": 12,
+"addr": "0x58AA45"
+},
+{
+"ent": "S:58D620:var_6c",
+"size": 8,
+"addr": "0x58DAC9"
+},
+{
+"ent": "G:ABE328",
+"size": 8,
+"addr": "0x596470"
+},
+{
+"ent": "S:59B200:var_a0",
+"size": 80,
+"addr": "0x59B672"
+},
+{
+"ent": "S:59B200:var_9c",
+"size": 16,
+"addr": "0x59B6B5"
+},
+{
+"ent": "S:59BBC0:var_50",
+"size": 8,
+"addr": "0x59C241"
+},
+{
+"ent": "S:5A0700:var_c",
+"size": 80,
+"addr": "0x5A08A2"
+},
+{
+"ent": "S:5A08D0:var_30",
+"size": 8,
+"addr": "0x5A0F7E"
+},
+{
+"ent": "S:5A2F50:var_6c",
+"size": 80,
+"addr": "0x5A3377"
+},
+{
+"ent": "S:5A35F0:var_34",
+"size": 80,
+"addr": "0x5A36AF"
+},
+{
+"ent": "S:5A45E0:var_40",
+"size": 8,
+"addr": "0x5A49F6"
+},
+{
+"ent": "S:5A78D0:var_90",
+"size": 16,
+"addr": "0x5A7A5C"
+},
+{
+"ent": "G:ABE378",
+"size": 12,
+"addr": "0x5A80D2"
+},
+{
+"ent": "G:ABE834",
+"size": 12,
+"addr": "0x5A80EF"
+},
+{
+"ent": "G:ABE890",
+"size": 12,
+"addr": "0x5AC19F"
+},
+{
+"ent": "M:5ACCC0:this:0x4",
+"size": 16,
+"addr": "0x5ACD0D"
+},
+{
+"ent": "M:5ACE50:this:0x4",
+"size": 16,
+"addr": "0x5ACE99"
+},
+{
+"ent": "M:5ACFC0:this:0x4",
+"size": 16,
+"addr": "0x5ACFF9"
+},
+{
+"ent": "M:5AD220:this:0x4",
+"size": 8,
+"addr": "0x5AD24C"
+},
+{
+"ent": "M:5AD350:this:0x4",
+"size": 8,
+"addr": "0x5AD36E"
+},
+{
+"ent": "M:5BC460:this:0x7D0",
+"size": 100,
+"addr": "0x5BC48B"
+},
+{
+"ent": "M:5BCB90:this:0x7D0",
+"size": 100,
+"addr": "0x5BCBE5"
+},
+{
+"ent": "M:5BCC90:this:0x7D0",
+"size": 100,
+"addr": "0x5BCCAE"
+},
+{
+"ent": "S:5BCE10:var_c",
+"size": 100,
+"addr": "0x5BCECE"
+},
+{
+"ent": "S:5BD0D0:var_10",
+"size": 100,
+"addr": "0x5BD1C1"
+},
+{
+"ent": "M:5BDF70:this:0x8C",
+"size": 24,
+"addr": "0x5BE021"
+},
+{
+"ent": "M:5BDF70:this:0x15A8",
+"size": 52,
+"addr": "0x5BE0DE"
+},
+{
+"ent": "T:5BECC0",
+"size": 256,
+"addr": "0x5BECE9"
+},
+{
+"ent": "M:5C1470:this:0xC4",
+"size": 12,
+"addr": "0x5C14C7"
+},
+{
+"ent": "M:5C1470:this:0x1A4",
+"size": 24,
+"addr": "0x5C14F1"
+},
+{
+"ent": "M:5C1470:this:0x264",
+"size": 24,
+"addr": "0x5C151B"
+},
+{
+"ent": "M:5C1640:this:0x324",
+"size": 24,
+"addr": "0x5C1716"
+},
+{
+"ent": "M:5C1640:this:0x264",
+"size": 24,
+"addr": "0x5C174B"
+},
+{
+"ent": "T:5C2710",
+"size": 24,
+"addr": "0x5C2791"
+},
+{
+"ent": "T:5C2A60",
+"size": 24,
+"addr": "0x5C2AE8"
+},
+{
+"ent": "S:5C9B10:var_188",
+"size": 20,
+"addr": "0x5CA03D"
+},
+{
+"ent": "M:5D07F0:this:0x4",
+"size": 8,
+"addr": "0x5D0829"
+},
+{
+"ent": "M:5D0950:this:0x4",
+"size": 8,
+"addr": "0x5D0985"
+},
+{
+"ent": "M:5D0AA0:this:0x4",
+"size": 8,
+"addr": "0x5D0AC5"
+},
+{
+"ent": "S:5D2260:var_24",
+"size": 16,
+"addr": "0x5D2314"
+},
+{
+"ent": "G:ABFBE8",
+"size": 8,
+"addr": "0x5D2E57"
+},
+{
+"ent": "M:5D3BA0:this:0x2C4",
+"size": 8,
+"addr": "0x5D3C51"
+},
+{
+"ent": "M:5D3BA0:this:0x2C8",
+"size": 324,
+"addr": "0x5D3D1A"
+},
+{
+"ent": "M:5D4210:this:0x2C8",
+"size": 324,
+"addr": "0x5D4286"
+},
+{
+"ent": "M:5D4430:this:0x2C8",
+"size": 324,
+"addr": "0x5D44A0"
+},
+{
+"ent": "M:5D53B0:this:0x4",
+"size": 8,
+"addr": "0x5D53E9"
+},
+{
+"ent": "M:5D5530:this:0x4",
+"size": 8,
+"addr": "0x5D5565"
+},
+{
+"ent": "M:5D56A0:this:0x4",
+"size": 8,
+"addr": "0x5D56C5"
+},
+{
+"ent": "S:5D9410:var_14c",
+"size": 32,
+"addr": "0x5D9530"
+},
+{
+"ent": "S:5D9410:var_148",
+"size": 128,
+"addr": "0x5D9533"
+},
+{
+"ent": "M:5F7090:this:0xC8",
+"size": 8,
+"addr": "0x5F7107"
+},
+{
+"ent": "M:5F7090:this:0x158",
+"size": 8,
+"addr": "0x5F711D"
+},
+{
+"ent": "M:5F7320:this:0xC8",
+"size": 8,
+"addr": "0x5F7345"
+},
+{
+"ent": "M:5F7320:this:0x158",
+"size": 8,
+"addr": "0x5F735B"
+},
+{
+"ent": "M:5F7400:this:0x1E8",
+"size": 8,
+"addr": "0x5F7552"
+},
+{
+"ent": "M:5F7400:this:0x158",
+"size": 8,
+"addr": "0x5F756A"
+},
+{
+"ent": "M:5F8080:this:0xCC",
+"size": 8,
+"addr": "0x5F8103"
+},
+{
+"ent": "G:832CA0",
+"size": 12,
+"addr": "0x5FBFAD"
+},
+{
+"ent": "G:832C30",
+"size": 12,
+"addr": "0x5FBFE3"
+},
+{
+"ent": "S:5FF850:var_58",
+"size": 256,
+"addr": "0x5FFC47"
+},
+{
+"ent": "S:618D40:var_2d04",
+"size": 20,
+"addr": "0x619A02"
+},
+{
+"ent": "S:618D40:var_2d28",
+"size": 20,
+"addr": "0x61A03A"
+},
+{
+"ent": "G:B72D28",
+"size": 8,
+"addr": "0x622759"
+},
+{
+"ent": "S:6255F0:var_20",
+"size": 24,
+"addr": "0x625740"
+},
+{
+"ent": "S:626DA0:var_18",
+"size": 24,
+"addr": "0x626EA1"
+},
+{
+"ent": "S:626DA0:var_18",
+"size": 260,
+"addr": "0x626F1D"
+},
+{
+"ent": "S:6272A0:var_14",
+"size": 24,
+"addr": "0x62738F"
+},
+{
+"ent": "S:627A10:+4",
+"size": 256,
+"addr": "0x627B02"
+},
+{
+"ent": "S:627B20:var_118",
+"size": 24,
+"addr": "0x627B8D"
+},
+{
+"ent": "S:6288F0:var_8",
+"size": 260,
+"addr": "0x6289D9"
+},
+{
+"ent": "S:628BB0:var_8",
+"size": 260,
+"addr": "0x628C91"
+},
+{
+"ent": "S:631760:var_3f8",
+"size": 12,
+"addr": "0x631969"
+},
+{
+"ent": "P:6319C0:0",
+"size": 112,
+"addr": "0x6319E3"
+},
+{
+"ent": "P:631B20:0",
+"size": 112,
+"addr": "0x631B41"
+},
+{
+"ent": "S:635680:var_28",
+"size": 8,
+"addr": "0x635732"
+},
+{
+"ent": "S:635680:var_24",
+"size": 8,
+"addr": "0x635735"
+},
+{
+"ent": "S:638F90:var_10",
+"size": 8,
+"addr": "0x639008"
+},
+{
+"ent": "S:6392D0:var_20",
+"size": 8,
+"addr": "0x639359"
+},
+{
+"ent": "S:6393A0:var_20",
+"size": 8,
+"addr": "0x639429"
+},
+{
+"ent": "S:63AB60:var_10",
+"size": 8,
+"addr": "0x63AC03"
+},
+{
+"ent": "S:63F2E0:var_4",
+"size": 8,
+"addr": "0x63F473"
+},
+{
+"ent": "M:642A60:this:0x8",
+"size": 8,
+"addr": "0x642A8E"
+},
+{
+"ent": "M:6433D0:this:0x8",
+"size": 8,
+"addr": "0x6433E8"
+},
+{
+"ent": "M:643C50:this:0x8",
+"size": 8,
+"addr": "0x643C73"
+},
+{
+"ent": "G:AFA280",
+"size": 24,
+"addr": "0x646D41"
+},
+{
+"ent": "G:AFA360",
+"size": 24,
+"addr": "0x646DE1"
+},
+{
+"ent": "G:AFA35C",
+"size": 24,
+"addr": "0x64783F"
+},
+{
+"ent": "G:AFA358",
+"size": 24,
+"addr": "0x647B20"
+},
+{
+"ent": "G:AFA368",
+"size": 24,
+"addr": "0x647CB2"
+},
+{
+"ent": "G:AFA278",
+"size": 24,
+"addr": "0x648C32"
+},
+{
+"ent": "P:64DEA0:11",
+"size": 36,
+"addr": "0x64E302"
+},
+{
+"ent": "S:650A90:var_18",
+"size": 772,
+"addr": "0x65148B"
+},
+{
+"ent": "S:6516F0:var_3a4",
+"size": 92,
+"addr": "0x651B5E"
+},
+{
+"ent": "S:6516F0:var_3a4",
+"size": 40,
+"addr": "0x651EBC"
+},
+{
+"ent": "M:652960:this:0x1278",
+"size": 24,
+"addr": "0x652A6A"
+},
+{
+"ent": "M:652C00:this:0x1488",
+"size": 24,
+"addr": "0x652C2E"
+},
+{
+"ent": "M:6563B0:this:0x1278",
+"size": 24,
+"addr": "0x656563"
+},
+{
+"ent": "M:6587A0:this:0x1488",
+"size": 24,
+"addr": "0x6587CE"
+},
+{
+"ent": "M:658910:this:0x4",
+"size": 16,
+"addr": "0x658953"
+},
+{
+"ent": "M:658AA0:this:0x4",
+"size": 16,
+"addr": "0x658ADF"
+},
+{
+"ent": "M:658C20:this:0x4",
+"size": 16,
+"addr": "0x658C4F"
+},
+{
+"ent": "M:65DD30:this:0xE0",
+"size": 8,
+"addr": "0x65DD97"
+},
+{
+"ent": "M:6616B0:this:0x14",
+"size": 8,
+"addr": "0x6616DB"
+},
+{
+"ent": "G:89EC28",
+"size": 8,
+"addr": "0x673FCD"
+},
+{
+"ent": "G:89EA44",
+"size": 36,
+"addr": "0x67421E"
+},
+{
+"ent": "G:83D658",
+"size": 8,
+"addr": "0x681C6D"
+},
+{
+"ent": "M:6832C0:this:0x1CB0",
+"size": 41,
+"addr": "0x6834FC"
+},
+{
+"ent": "M:6832C0:this:0x24B2",
+"size": 41,
+"addr": "0x683529"
+},
+{
+"ent": "M:6896C0:this:0x1C88",
+"size": 41,
+"addr": "0x689700"
+},
+{
+"ent": "M:689790:this:0x1C88",
+"size": 41,
+"addr": "0x6897D7"
+},
+{
+"ent": "M:689820:this:0x1C88",
+"size": 41,
+"addr": "0x689862"
+},
+{
+"ent": "M:689960:this:0x248A",
+"size": 41,
+"addr": "0x6899A0"
+},
+{
+"ent": "M:689A30:this:0x248A",
+"size": 41,
+"addr": "0x689A77"
+},
+{
+"ent": "M:689AC0:this:0x248A",
+"size": 41,
+"addr": "0x689B02"
+},
+{
+"ent": "M:689B20:this:0x248A",
+"size": 41,
+"addr": "0x689B3C"
+},
+{
+"ent": "T:689C60",
+"size": 41,
+"addr": "0x689CD5"
+},
+{
+"ent": "M:689D30:this:0x1140",
+"size": 8,
+"addr": "0x689D70"
+},
+{
+"ent": "M:689E90:this:0x1140",
+"size": 8,
+"addr": "0x689FB9"
+},
+{
+"ent": "M:68AD70:this:0x248A",
+"size": 41,
+"addr": "0x68B53A"
+},
+{
+"ent": "S:68CD20:+0",
+"size": 480,
+"addr": "0x68D599"
+},
+{
+"ent": "S:68CD20:+4",
+"size": 60,
+"addr": "0x68D761"
+},
+{
+"ent": "S:68CD20:+0",
+"size": 328,
+"addr": "0x68DFB4"
+},
+{
+"ent": "S:68CD20:+0",
+"size": 84,
+"addr": "0x68E3EF"
+},
+{
+"ent": "S:68CD20:+0",
+"size": 16,
+"addr": "0x68E7FF"
+},
+{
+"ent": "S:68CD20:var_6a0",
+"size": 32,
+"addr": "0x68E802"
+},
+{
+"ent": "S:68CD20:var_68c",
+"size": 116,
+"addr": "0x68E805"
+},
+{
+"ent": "G:B05594",
+"size": 8,
+"addr": "0x69062F"
+},
+{
+"ent": "M:6917F0:this:0xA4",
+"size": 8,
+"addr": "0x69186D"
+},
+{
+"ent": "M:691E30:this:0xA8",
+"size": 8,
+"addr": "0x691EB2"
+},
+{
+"ent": "S:694760:var_700",
+"size": 100,
+"addr": "0x694F5A"
+},
+{
+"ent": "P:696200:32",
+"size": 16,
+"addr": "0x69640E"
+},
+{
+"ent": "M:6970A0:this:0x1AC",
+"size": 12,
+"addr": "0x69710A"
+},
+{
+"ent": "M:6970A0:this:0x228",
+"size": 12,
+"addr": "0x697164"
+},
+{
+"ent": "M:6970A0:this:0x2A4",
+"size": 12,
+"addr": "0x6971BE"
+},
+{
+"ent": "M:6970A0:this:0x2994",
+"size": 12,
+"addr": "0x6973CD"
+},
+{
+"ent": "M:6970A0:this:0x2F8C",
+"size": 12,
+"addr": "0x6973EB"
+},
+{
+"ent": "T:698F90",
+"size": 12,
+"addr": "0x699088"
+},
+{
+"ent": "S:69BD60:var_54",
+"size": 36,
+"addr": "0x69C14A"
+},
+{
+"ent": "M:69BD60:this:0x2994",
+"size": 12,
+"addr": "0x69C40A"
+},
+{
+"ent": "G:B07C48",
+"size": 96,
+"addr": "0x6A4CF3"
+},
+{
+"ent": "G:B07DC8",
+"size": 96,
+"addr": "0x6A4D30"
+},
+{
+"ent": "G:B07E80",
+"size": 56,
+"addr": "0x6A4DEC"
+},
+{
+"ent": "G:B0B300",
+"size": 56,
+"addr": "0x6A4E30"
+},
+{
+"ent": "M:6A4F20:this:0x1278",
+"size": 24,
+"addr": "0x6A4F60"
+},
+{
+"ent": "G:B07C9C",
+"size": 96,
+"addr": "0x6A7042"
+},
+{
+"ent": "M:6A80A0:this:0x70",
+"size": 52,
+"addr": "0x6A8133"
+},
+{
+"ent": "M:6A80A0:this:0x5C",
+"size": 52,
+"addr": "0x6A814C"
+},
+{
+"ent": "M:6A8710:this:0x58",
+"size": 52,
+"addr": "0x6A874F"
+},
+{
+"ent": "M:6A87F0:this:0x58",
+"size": 52,
+"addr": "0x6A8818"
+},
+{
+"ent": "M:6A8B30:this:0x58",
+"size": 52,
+"addr": "0x6A8D84"
+},
+{
+"ent": "M:6A8B30:this:0x68",
+"size": 52,
+"addr": "0x6A8F52"
+},
+{
+"ent": "T:6A8B30",
+"size": 52,
+"addr": "0x6A901F"
+},
+{
+"ent": "S:6AA600:var_138",
+"size": 52,
+"addr": "0x6AA706"
+},
+{
+"ent": "M:6AA600:this:0x58",
+"size": 52,
+"addr": "0x6AAC2B"
+},
+{
+"ent": "M:6ABA60:this:0x58",
+"size": 52,
+"addr": "0x6ABA81"
+},
+{
+"ent": "T:6ABB60",
+"size": 52,
+"addr": "0x6ABBFE"
+},
+{
+"ent": "G:B07E90",
+"size": 56,
+"addr": "0x6AC0A0"
+},
+{
+"ent": "S:6AE6E0:var_10",
+"size": 12,
+"addr": "0x6AEAAE"
+},
+{
+"ent": "M:6B4440:this:0x4",
+"size": 12,
+"addr": "0x6B4483"
+},
+{
+"ent": "M:6B45D0:this:0x4",
+"size": 12,
+"addr": "0x6B460F"
+},
+{
+"ent": "M:6B4760:this:0x4",
+"size": 12,
+"addr": "0x6B478F"
+},
+{
+"ent": "G:8421A8",
+"size": 8,
+"addr": "0x6CA3E9"
+},
+{
+"ent": "G:8421D8",
+"size": 8,
+"addr": "0x6CA6FC"
+},
+{
+"ent": "M:6CF350:this:0x8",
+"size": 8,
+"addr": "0x6CF3B6"
+},
+{
+"ent": "M:6CF350:this:0x20",
+"size": 8,
+"addr": "0x6CF3C3"
+},
+{
+"ent": "M:6CF560:this:0x4",
+"size": 8,
+"addr": "0x6CF587"
+},
+{
+"ent": "M:6CF6C0:this:0x4",
+"size": 8,
+"addr": "0x6CF6E5"
+},
+{
+"ent": "M:6CF820:this:0x4",
+"size": 8,
+"addr": "0x6CF838"
+},
+{
+"ent": "G:B0C1C0",
+"size": 96,
+"addr": "0x6CFBB3"
+},
+{
+"ent": "G:B0CB20",
+"size": 96,
+"addr": "0x6CFBF0"
+},
+{
+"ent": "S:6D2790:var_58",
+"size": 20,
+"addr": "0x6D29B3"
+},
+{
+"ent": "G:8A0364",
+"size": 24,
+"addr": "0x6D97A8"
+},
+{
+"ent": "G:B0CEC8",
+"size": 12,
+"addr": "0x6DA131"
+},
+{
+"ent": "G:B0CECC",
+"size": 12,
+"addr": "0x6DA49C"
+},
+{
+"ent": "M:6DB210:this:0xB4",
+"size": 60,
+"addr": "0x6DB45C"
+},
+{
+"ent": "M:6DC5E0:this:0x4",
+"size": 20,
+"addr": "0x6DC639"
+},
+{
+"ent": "M:6DC7B0:this:0x4",
+"size": 20,
+"addr": "0x6DC803"
+},
+{
+"ent": "M:6DC970:this:0x4",
+"size": 20,
+"addr": "0x6DC9B3"
+},
+{
+"ent": "S:6E4150:+0",
+"size": 36,
+"addr": "0x6E417D"
+},
+{
+"ent": "M:6E7E80:this:0xA4",
+"size": 8,
+"addr": "0x6E7F34"
+},
+{
+"ent": "M:6E8000:this:0xA4",
+"size": 8,
+"addr": "0x6E80E4"
+},
+{
+"ent": "M:6E8510:this:0xA4",
+"size": 8,
+"addr": "0x6E8577"
+},
+{
+"ent": "M:6E85B0:this:0xA8",
+"size": 8,
+"addr": "0x6E85DA"
+},
+{
+"ent": "M:6E8780:this:0xA8",
+"size": 8,
+"addr": "0x6E87B8"
+},
+{
+"ent": "M:6F2290:this:0x4",
+"size": 8,
+"addr": "0x6F22C9"
+},
+{
+"ent": "M:6F2440:this:0x4",
+"size": 8,
+"addr": "0x6F2475"
+},
+{
+"ent": "M:6F2640:this:0x4",
+"size": 8,
+"addr": "0x6F2665"
+},
+{
+"ent": "M:70EE30:this:0x1DC",
+"size": 64,
+"addr": "0x70EE94"
+},
+{
+"ent": "M:710AF0:this:0x8A8",
+"size": 28,
+"addr": "0x711702"
+},
+{
+"ent": "M:710AF0:this:0xAA4",
+"size": 28,
+"addr": "0x71172D"
+},
+{
+"ent": "M:710AF0:this:0x85C",
+"size": 12,
+"addr": "0x71174B"
+},
+{
+"ent": "M:712170:this:0xA94",
+"size": 28,
+"addr": "0x712992"
+},
+{
+"ent": "M:712170:this:0x89C",
+"size": 28,
+"addr": "0x715D83"
+},
+{
+"ent": "M:712170:this:0x85C",
+"size": 12,
+"addr": "0x715FFB"
+},
+{
+"ent": "S:718260:var_18",
+"size": 36,
+"addr": "0x7185B2"
+},
+{
+"ent": "S:718B70:var_38",
+"size": 36,
+"addr": "0x718FDA"
+},
+{
+"ent": "S:71C1B0:var_4",
+"size": 16,
+"addr": "0x71C2A9"
+},
+{
+"ent": "S:71C360:var_4",
+"size": 16,
+"addr": "0x71C438"
+},
+{
+"ent": "S:71E940:+0",
+"size": 36,
+"addr": "0x71E98D"
+},
+{
+"ent": "G:845678",
+"size": 16,
+"addr": "0x734910"
+},
+{
+"ent": "P:739EC0:359",
+"size": 36,
+"addr": "0x73A873"
+},
+{
+"ent": "G:846150",
+"size": 8,
+"addr": "0x74FD32"
+},
+{
+"ent": "G:B1D450",
+"size": 12,
+"addr": "0x7522B1"
+},
+{
+"ent": "G:B1D474",
+"size": 12,
+"addr": "0x7526D0"
+},
+{
+"ent": "G:B2D980",
+"size": 136,
+"addr": "0x753B2B"
+},
+{
+"ent": "G:B3FF84",
+"size": 72,
+"addr": "0x753B5B"
+},
+{
+"ent": "G:B3FF78",
+"size": 72,
+"addr": "0x754362"
+},
+{
+"ent": "G:B2D958",
+"size": 136,
+"addr": "0x754381"
+},
+{
+"ent": "G:B44348",
+"size": 16,
+"addr": "0x754B5E"
+},
+{
+"ent": "G:B43188",
+"size": 16,
+"addr": "0x754B8E"
+},
+{
+"ent": "G:B450B8",
+"size": 48,
+"addr": "0x755910"
+},
+{
+"ent": "S:756BB0:var_6c",
+"size": 164,
+"addr": "0x756DB5"
+},
+{
+"ent": "S:758B70:var_10",
+"size": 64,
+"addr": "0x758CED"
+},
+{
+"ent": "M:75D3A0:this:0xA0",
+"size": 8,
+"addr": "0x75DE52"
+},
+{
+"ent": "M:75DEC0:this:0xA0",
+"size": 8,
+"addr": "0x75E047"
+},
+{
+"ent": "S:75FA90:var_24",
+"size": 8,
+"addr": "0x75FE33"
+},
+{
+"ent": "S:7602E0:var_24",
+"size": 8,
+"addr": "0x760683"
+},
+{
+"ent": "S:7609E0:var_38",
+"size": 8,
+"addr": "0x760EFD"
+},
+{
+"ent": "M:7640B0:this:0x4",
+"size": 12,
+"addr": "0x7640F3"
+},
+{
+"ent": "M:764260:this:0x4",
+"size": 12,
+"addr": "0x76429F"
+},
+{
+"ent": "M:764420:this:0x4",
+"size": 12,
+"addr": "0x76444F"
+},
+{
+"ent": "M:7657F0:this:0x4",
+"size": 8,
+"addr": "0x76581F"
+},
+{
+"ent": "M:765990:this:0x4",
+"size": 8,
+"addr": "0x7659B9"
+},
+{
+"ent": "M:765B10:this:0x4",
+"size": 8,
+"addr": "0x765B2C"
+},
+{
+"ent": "M:766BC0:this:0x4",
+"size": 8,
+"addr": "0x766BEF"
+},
+{
+"ent": "M:766D60:this:0x4",
+"size": 8,
+"addr": "0x766D89"
+},
+{
+"ent": "M:766F40:this:0x4",
+"size": 8,
+"addr": "0x766F5C"
+},
+{
+"ent": "M:769DE0:this:0x4",
+"size": 8,
+"addr": "0x769E0F"
+},
+{
+"ent": "M:769F80:this:0x4",
+"size": 8,
+"addr": "0x769FA9"
+},
+{
+"ent": "M:76A100:this:0x4",
+"size": 8,
+"addr": "0x76A11C"
+},
+{
+"ent": "M:76A390:this:0x4",
+"size": 12,
+"addr": "0x76A3D3"
+},
+{
+"ent": "M:76A520:this:0x4",
+"size": 12,
+"addr": "0x76A55F"
+},
+{
+"ent": "M:76B870:this:0x4",
+"size": 8,
+"addr": "0x76B89F"
+},
+{
+"ent": "M:76BA10:this:0x4",
+"size": 8,
+"addr": "0x76BA39"
+},
+{
+"ent": "M:76BB90:this:0x4",
+"size": 8,
+"addr": "0x76BBAC"
+},
+{
+"ent": "S:76DAD0:+4",
+"size": 12,
+"addr": "0x76DE3E"
+},
+{
+"ent": "M:770270:this:0x37C",
+"size": 24,
+"addr": "0x7702DE"
+},
+{
+"ent": "M:770430:this:0x3AC",
+"size": 24,
+"addr": "0x7704E2"
+},
+{
+"ent": "S:775DB0:var_94",
+"size": 144,
+"addr": "0x775E5F"
+},
+{
+"ent": "S:77E900:var_80.__pad_0",
+"size": 108,
+"addr": "0x77EB0F"
+},
+{
+"ent": "S:7806C0:var_2e4",
+"size": 268,
+"addr": "0x780996"
+},
+{
+"ent": "T:7813E0",
+"size": 8,
+"addr": "0x781443"
+},
+{
+"ent": "S:781480:var_290.nextobject",
+"size": 8,
+"addr": "0x781BD0"
+},
+{
+"ent": "S:781D20:var_84",
+"size": 108,
+"addr": "0x781E1D"
+},
+{
+"ent": "S:783270:var_f4",
+"size": 108,
+"addr": "0x7833C0"
+},
+{
+"ent": "S:783270:var_f4",
+"size": 12,
+"addr": "0x7834D3"
+},
+{
+"ent": "S:783800:var_84",
+"size": 108,
+"addr": "0x783900"
+},
+{
+"ent": "S:787010:var_24",
+"size": 24,
+"addr": "0x78721C"
+},
+{
+"ent": "S:788180:var_28c",
+"size": 268,
+"addr": "0x7885E7"
+},
+{
+"ent": "S:7896A0:var_c",
+"size": 12,
+"addr": "0x78977D"
+},
+{
+"ent": "S:78F7F0:var_23c",
+"size": 36,
+"addr": "0x790A1D"
+},
+{
+"ent": "S:78F7F0:var_23c",
+"size": 108,
+"addr": "0x790BC8"
+},
+{
+"ent": "S:793A70:var_104",
+"size": 108,
+"addr": "0x793B0C"
+},
+{
+"ent": "G:A8E1C4",
+"size": 12,
+"addr": "0x793CAD"
+},
+{
+"ent": "G:A8E060",
+"size": 36,
+"addr": "0x793E68"
+},
+{
+"ent": "S:793D20:var_738",
+"size": 108,
+"addr": "0x794113"
+},
+{
+"ent": "S:7947B0:var_40",
+"size": 8,
+"addr": "0x794B25"
+},
+{
+"ent": "S:794BA0:var_c",
+"size": 108,
+"addr": "0x79545B"
+},
+{
+"ent": "S:7A5890:var_28c.vfptr1",
+"size": 268,
+"addr": "0x7A59E1"
+},
+{
+"ent": "S:7A7B60:var_84",
+"size": 36,
+"addr": "0x7A7BDA"
+},
+{
+"ent": "S:7A8260:var_c0",
+"size": 108,
+"addr": "0x7A86DE"
+},
+{
+"ent": "S:7AA870:var_330.cchateventsink_field_0x14",
+"size": 268,
+"addr": "0x7AAAE0"
+},
+{
+"ent": "G:7F7698",
+"size": 12,
+"addr": "0x7AC7C6"
+},
+{
+"ent": "G:7F7650",
+"size": 12,
+"addr": "0x7AC936"
+},
+{
+"ent": "G:7F7638",
+"size": 12,
+"addr": "0x7AD756"
+},
+{
+"ent": "M:7B19C0:this:0x66",
+"size": 672,
+"addr": "0x7B1A69"
+},
+{
+"ent": "M:7BDF80:this:0x768",
+"size": 24,
+"addr": "0x7BE189"
+},
+{
+"ent": "S:7BDF80:var_c",
+"size": 12,
+"addr": "0x7BE2D6"
+},
+{
+"ent": "S:7BDF80:var_10",
+"size": 16,
+"addr": "0x7BE2D9"
+},
+{
+"ent": "S:7BDF80:var_8",
+"size": 12,
+"addr": "0x7BE3CB"
+},
+{
+"ent": "S:7BE830:var_10",
+"size": 12,
+"addr": "0x7BE8AB"
+},
+{
+"ent": "P:7BF740:459",
+"size": 16,
+"addr": "0x7C0149"
+},
+{
+"ent": "P:7BF740:463",
+"size": 16,
+"addr": "0x7C016F"
+},
+{
+"ent": "M:7C12B0:this:0x730",
+"size": 24,
+"addr": "0x7C15F7"
+},
+{
+"ent": "S:7C12B0:var_34",
+"size": 16,
+"addr": "0x7C1708"
+},
+{
+"ent": "S:7C12B0:var_3c",
+"size": 12,
+"addr": "0x7C170B"
+},
+{
+"ent": "S:7C1730:var_20",
+"size": 16,
+"addr": "0x7C19C4"
+},
+{
+"ent": "P:7C6620:-4",
+"size": 12,
+"addr": "0x7C66C2"
+},
+{
+"ent": "P:7C9842:1",
+"size": 32,
+"addr": "0x7C9865"
+},
+{
+"ent": "P:7CADB9:-10",
+"size": 8,
+"addr": "0x7CAE55"
+},
+{
+"ent": "S:7CAFEC:eC",
+"size": 32,
+"addr": "0x7CAFF0"
+},
+{
+"ent": "P:7CB063:1",
+"size": 32,
+"addr": "0x7CB088"
+},
+{
+"ent": "G:87BF50",
+"size": 32,
+"addr": "0x7CB3A0"
+},
+{
+"ent": "G:87BF60",
+"size": 32,
+"addr": "0x7CB3D7"
+},
+{
+"ent": "G:87C48C",
+"size": 12,
+"addr": "0x7CDC12"
+},
+{
+"ent": "G:87C490",
+"size": 12,
+"addr": "0x7CDED4"
+},
+{
+"ent": "G:87C7B0",
+"size": 8,
+"addr": "0x7D1632"
+},
+{
+"ent": "RET:7C9430",
+"size": 36,
+"addr": "0x7D3234"
+},
+{
+"ent": "G:87C958",
+"size": 48,
+"addr": "0x7D34C3"
+},
+{
+"ent": "RET:7D4B92",
+"size": 12,
+"addr": "0x7D48E7"
+},
+{
+"ent": "G:87CBA8",
+"size": 8,
+"addr": "0x7D5F48"
+},
+{
+"ent": "S:7D93A1:+0",
+"size": 36,
+"addr": "0x7D9423"
+},
+{
+"ent": "G:87D628",
+"size": 8,
+"addr": "0x7DBC14"
+},
+{
+"ent": "G:87D720",
+"size": 96,
+"addr": "0x7DC104"
+},
+{
+"ent": "G:87D880",
+"size": 96,
+"addr": "0x7DC11B"
+},
+{
+"ent": "P:7DC7CB:-C",
+"size": 16,
+"addr": "0x7DC9F9"
+},
+{
+"ent": "P:7DE07C:1",
+"size": 32,
+"addr": "0x7DE0A3"
 }
 ]
 }

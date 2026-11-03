@@ -1,6 +1,45 @@
 [
  {
-  "cluster": "M:4666E0:this:0x14C",
+  "cluster": "R:487D50:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10"
+  ],
+  "family_sizes": {
+   "C1": 285,
+   "C10": 1
+  },
+  "ents": [
+   "T:487D50"
+  ],
+  "obs": [
+   "283:1",
+   "320:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4DB260:this:0x55C",
   "status": "inconsistent",
   "families": [
    "C11"
@@ -9,7 +48,7 @@
    "C11": 0
   },
   "ents": [
-   "M:4666E0:this:0x14C"
+   "M:4DB260:this:0x55C"
   ],
   "obs": [],
   "family_domains": {
@@ -28,6 +67,84 @@
   },
   "ents": [
    "M:468670:this:0x14C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC100:var_4",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC100:var_4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC100:var_c",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC100:var_c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC360:var_1c",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC360:var_1c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4666E0:this:0x14C",
+  "status": "inconsistent",
+  "families": [
+   "C11"
+  ],
+  "family_sizes": {
+   "C11": 0
+  },
+  "ents": [
+   "M:4666E0:this:0x14C"
   ],
   "obs": [],
   "family_domains": {
@@ -104,6 +221,86 @@
    "C10": [
     "?$TClassFactory@VCellClass@@",
     "CellClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC100:+0x18",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC100:+0x18"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC360:+0x3c",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC360:+0x3c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4CC360:+0x1c",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "S:4CC360:+0x1c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:487D50:1",
+  "status": "inconsistent",
+  "families": [
+   "C10"
+  ],
+  "family_sizes": {
+   "C10": 1
+  },
+  "ents": [
+   "P:487D50:1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C10": [
+    "TrajectoryHelper"
    ]
   },
   "exact": {}

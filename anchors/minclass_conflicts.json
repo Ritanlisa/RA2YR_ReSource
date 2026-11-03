@@ -59,12 +59,12 @@
   "K": 663,
   "K_upper": 663,
   "lower_bound": 663,
-  "constrained_clusters": 23202,
-  "free_clusters": 155435,
+  "constrained_clusters": 25134,
+  "free_clusters": 159764,
   "conflicts": 0,
   "c1_gaps": 0,
   "universe": 1524,
-  "entities": 181624
+  "entities": 187885
  },
  "family_table": [
   {
@@ -72,9 +72,9 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 8422,
-   "clusters_pinned": 8422,
-   "clusters_free": 170215,
+   "clusters_constrained": 8425,
+   "clusters_pinned": 8425,
+   "clusters_free": 176473,
    "pinned_classes": 602,
    "forced_classes": 602,
    "conflicts": 0,
@@ -94,9 +94,9 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 8422,
-   "clusters_pinned": 8422,
-   "clusters_free": 170215,
+   "clusters_constrained": 8425,
+   "clusters_pinned": 8425,
+   "clusters_free": 176473,
    "pinned_classes": 602,
    "forced_classes": 602,
    "conflicts": 0,
@@ -116,9 +116,9 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2649,
-   "clusters_constrained": 9905,
-   "clusters_pinned": 8424,
-   "clusters_free": 168732,
+   "clusters_constrained": 9908,
+   "clusters_pinned": 8427,
+   "clusters_free": 174990,
    "pinned_classes": 602,
    "forced_classes": 602,
    "conflicts": 0,
@@ -138,9 +138,9 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 11146,
-   "clusters_pinned": 9688,
-   "clusters_free": 167491,
+   "clusters_constrained": 11149,
+   "clusters_pinned": 9691,
+   "clusters_free": 173749,
    "pinned_classes": 626,
    "forced_classes": 626,
    "conflicts": 0,
@@ -160,9 +160,9 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 11937,
-   "clusters_pinned": 9829,
-   "clusters_free": 166700,
+   "clusters_constrained": 11940,
+   "clusters_pinned": 9832,
+   "clusters_free": 172958,
    "pinned_classes": 639,
    "forced_classes": 639,
    "conflicts": 0,
@@ -182,9 +182,9 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 12010,
-   "clusters_pinned": 9829,
-   "clusters_free": 166627,
+   "clusters_constrained": 12013,
+   "clusters_pinned": 9832,
+   "clusters_free": 172885,
    "pinned_classes": 639,
    "forced_classes": 639,
    "conflicts": 0,
@@ -204,9 +204,9 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 12082,
-   "clusters_pinned": 9829,
-   "clusters_free": 166555,
+   "clusters_constrained": 12085,
+   "clusters_pinned": 9832,
+   "clusters_free": 172813,
    "pinned_classes": 639,
    "forced_classes": 639,
    "conflicts": 0,
@@ -226,9 +226,9 @@
    "desc": "global object identity",
    "evidence": 147,
    "entities_touched": 147,
-   "clusters_constrained": 12220,
-   "clusters_pinned": 9972,
-   "clusters_free": 166417,
+   "clusters_constrained": 12223,
+   "clusters_pinned": 9975,
+   "clusters_free": 172675,
    "pinned_classes": 648,
    "forced_classes": 648,
    "conflicts": 0,
@@ -248,9 +248,9 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6385,
    "entities_touched": 6373,
-   "clusters_constrained": 12653,
-   "clusters_pinned": 9972,
-   "clusters_free": 165984,
+   "clusters_constrained": 12656,
+   "clusters_pinned": 9975,
+   "clusters_free": 172242,
    "pinned_classes": 648,
    "forced_classes": 648,
    "conflicts": 0,
@@ -268,17 +268,17 @@
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 9955,
-   "entities_touched": 9955,
-   "clusters_constrained": 19261,
-   "clusters_pinned": 10523,
-   "clusters_free": 159375,
+   "evidence": 11867,
+   "entities_touched": 11867,
+   "clusters_constrained": 21084,
+   "clusters_pinned": 10619,
+   "clusters_free": 163805,
    "pinned_classes": 654,
    "forced_classes": 654,
-   "conflicts": 1,
+   "conflicts": 9,
    "c1_gaps": 0,
    "K": 657,
-   "K_upper": 658,
+   "K_upper": 666,
    "K_total": 657,
    "K_greedy": 657,
    "delta_forced": 6,
@@ -290,17 +290,17 @@
   {
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
-   "evidence": 1030,
-   "entities_touched": 8699,
-   "clusters_constrained": 23191,
-   "clusters_pinned": 11424,
-   "clusters_free": 155421,
+   "evidence": 1053,
+   "entities_touched": 9440,
+   "clusters_constrained": 25123,
+   "clusters_pinned": 11523,
+   "clusters_free": 159741,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 5,
@@ -314,15 +314,15 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5724,
    "entities_touched": 5724,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -336,15 +336,15 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -358,15 +358,15 @@
    "desc": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -380,15 +380,15 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -402,15 +402,15 @@
    "desc": "pointer-step size == class sizeof (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -424,15 +424,15 @@
    "desc": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
    "evidence": 912,
    "entities_touched": 912,
-   "clusters_constrained": 23202,
-   "clusters_pinned": 11430,
-   "clusters_free": 155410,
+   "clusters_constrained": 25134,
+   "clusters_pinned": 11529,
+   "clusters_free": 159730,
    "pinned_classes": 659,
    "forced_classes": 659,
-   "conflicts": 25,
+   "conflicts": 34,
    "c1_gaps": 0,
    "K": 663,
-   "K_upper": 688,
+   "K_upper": 697,
    "K_total": 663,
    "K_greedy": 663,
    "delta_forced": 0,
@@ -602,6 +602,64 @@
      "cause": "suspicious_large_offset"
     },
     {
+     "cluster": "P:6CC390:0",
+     "entities": [
+      "P:6CC390:0"
+     ],
+     "obs": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       4,
+       4
+      ],
+      [
+       8,
+       4
+      ],
+      [
+       44,
+       4
+      ],
+      [
+       72,
+       4
+      ],
+      [
+       132,
+       4
+      ],
+      [
+       152,
+       4
+      ],
+      [
+       160,
+       4
+      ],
+      [
+       164,
+       4
+      ],
+      [
+       168,
+       4
+      ]
+     ],
+     "exact": [],
+     "cause": "suspicious_large_offset"
+    },
+    {
      "cluster": "R:4202F0:ecx",
      "entities": [
       "RET:4202F0",
@@ -702,64 +760,6 @@
      "obs": [
       [
        1048576,
-       4
-      ]
-     ],
-     "exact": [],
-     "cause": "suspicious_large_offset"
-    },
-    {
-     "cluster": "P:6CC390:0",
-     "entities": [
-      "P:6CC390:0"
-     ],
-     "obs": [
-      [
-       0,
-       2
-      ],
-      [
-       0,
-       4
-      ],
-      [
-       2,
-       2
-      ],
-      [
-       4,
-       4
-      ],
-      [
-       8,
-       4
-      ],
-      [
-       44,
-       4
-      ],
-      [
-       72,
-       4
-      ],
-      [
-       132,
-       4
-      ],
-      [
-       152,
-       4
-      ],
-      [
-       160,
-       4
-      ],
-      [
-       164,
-       4
-      ],
-      [
-       168,
        4
       ]
      ],

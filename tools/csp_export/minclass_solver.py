@@ -1177,6 +1177,16 @@ def main():
                     _vb_touch += 1
     except Exception:
         pass
+    # 赋值物化等值实体预创建（S/M/P/T/RET/G）
+    _fs_touch = 0
+    try:
+        for _pr in (jload("anchors/flow_stores.json", {}) or {}).get("eq") or []:
+            for _eid0 in _pr:
+                if isinstance(_eid0, str) and _eid0 not in ents:
+                    touch(_eid0, _eid0)
+                    _fs_touch += 1
+    except Exception:
+        pass
     # 成员写等值实体预创建（M 目标 + 值侧 S/M/RET/G/T 可能缺）
     _mw_touch = 0
     try:
@@ -4614,6 +4624,21 @@ def main():
     except Exception as _e_vb:
         print("[VB] injection skipped: %r" % _e_vb, flush=True)
 
+    # ---- 赋值物化等值（ffl4：每个槽存/成员存都是物理等值边）----
+    try:
+        _fs = jload("anchors/flow_stores.json", {}) or {}
+        _n_fs = 0
+        for _a1, _b1 in (_fs.get("eq") or []):
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_fs += 2
+        print("[FS] flow-store eq edges=%d" % _n_fs, flush=True)
+    except Exception as _e_fs:
+        print("[FS] injection skipped: %r" % _e_fs, flush=True)
     # ---- 成员写等值（全 CFG 数据流：mov [this+off], val → 值实体 ≡ M:fn:this:off）----
     try:
         _mw = jload("anchors/member_writes.json", {}) or {}
