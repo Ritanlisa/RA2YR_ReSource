@@ -16,7 +16,8 @@
    "C15",
    "C18",
    "C19",
-   "C26"
+   "C26",
+   "CS"
   ],
   "reg_flow": true,
   "evidence_mode": "spec",
@@ -376,6 +377,28 @@
   {
    "family": "C26",
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
+   "evidence": 0,
+   "entities_touched": 0,
+   "clusters_constrained": 19683,
+   "clusters_pinned": 10630,
+   "clusters_free": 155053,
+   "pinned_classes": 570,
+   "forced_classes": 570,
+   "conflicts": 1,
+   "c1_gaps": 0,
+   "K": 573,
+   "K_upper": 574,
+   "K_total": 573,
+   "K_greedy": 573,
+   "delta_forced": 0,
+   "delta_K": 0,
+   "lower_bound": 573,
+   "merges": 0,
+   "bad_cover": 0
+  },
+  {
+   "family": "CS",
+   "desc": "pointer-step size == class sizeof (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
    "clusters_constrained": 19683,

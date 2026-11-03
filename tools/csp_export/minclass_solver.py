@@ -68,8 +68,9 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26"]
+            "C15", "C18", "C19", "C26", "CS"]
 FAMILY_DESC = {
+    "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
     "C3": "vtable slot membership",
@@ -2288,6 +2289,42 @@ def main():
                 fam["C6"][eid] = fam["C6"].get(eid, FULL) & m
                 census["C6"] += 1
     print("[C6] evidence=%d entities=%d" % (census["C6"], len(fam["C6"])), flush=True)
+
+    # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
+    # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向
+    # 该尺寸元素数组。非 100%（可能是缓冲步进/成员跳跃）——仅启发式层。
+    if getattr(args, "allow_heuristics", False):
+        try:
+            _cls_size = {}
+            for _c, _v in (jload("tools/class_layouts.json", {}) or {}).items():
+                _s = (_v or {}).get("size") if isinstance(_v, dict) else None
+                if _s:
+                    _cls_size[_c] = int(_s)
+            _name_ix = {names[i]: i for i in range(n)}
+            _cs_cache = {}
+            def _cs_mask(sz):
+                m = _cs_cache.get(sz)
+                if m is None:
+                    m = 0
+                    for _c, _s2 in _cls_size.items():
+                        if _s2 == sz and _c in _name_ix:
+                            m |= (1 << _name_ix[_c])
+                    _cs_cache[sz] = m
+                return m
+            for _rec in (jload("anchors/ptr_step_sizes.json", {}) or {}).get("steps") or []:
+                _e = _rec.get("ent")
+                _sz = _rec.get("size")
+                if not (isinstance(_e, str) and _sz):
+                    continue
+                if _e not in ents:
+                    touch(_e, _e)
+                m = _cs_mask(int(_sz))
+                if m and m != FULL:
+                    fam["CS"][_e] = fam["CS"].get(_e, FULL) & m
+                    census["CS"] += 1
+            print("[CS] heuristic size evidence=%d entities=%d" % (census["CS"], len(fam["CS"])), flush=True)
+        except Exception as _e_cs:
+            print("[CS] skipped: %r" % _e_cs, flush=True)
 
     # X155: 二进制装表（C4/C6）反驳 C2 的名字型 pin。
     # 实测最后 16 个冲突全是这种：实体在函数里装了 vtable（C4 EXACT），而 C2 的
