@@ -68,11 +68,12 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
     "IR": "all-const returns => int-family (HEURISTIC tier)",
+    "MRH": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2403,6 +2404,30 @@ def main():
             print("[IR] int-return fns: %d" % _n_ir, flush=True)
         except Exception as _e_ir:
             print("[IR] skipped: %r" % _e_ir, flush=True)
+
+    # ---------------- MRH：放宽成员类型（启发式层）----------------
+    if getattr(args, "allow_heuristics", False):
+        try:
+            _n_mrh = 0
+            for _rec in (jload("anchors/member_by_receiver_heur.json", {}) or {}).get("evidence") or []:
+                _e5 = _rec.get("ent")
+                if not isinstance(_e5, str):
+                    continue
+                m5 = 0
+                for _c5 in (_rec.get("classes") or []):
+                    _ix5 = _name_ix2.get(str(_c5).lower())
+                    if _ix5 is not None:
+                        m5 |= (1 << _ix5)
+                if not m5:
+                    continue
+                if _e5 not in ents:
+                    touch(_e5, _e5)
+                fam["MRH"][_e5] = fam["MRH"].get(_e5, FULL) & m5
+                _n_mrh += 1
+            census["MRH"] = _n_mrh
+            print("[MRH] relaxed member types: %d" % _n_mrh, flush=True)
+        except Exception as _e_mrh:
+            print("[MRH] skipped: %r" % _e_mrh, flush=True)
 
     # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
     # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向
