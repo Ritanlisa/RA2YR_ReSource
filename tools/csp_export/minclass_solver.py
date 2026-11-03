@@ -4441,6 +4441,17 @@ def main():
                 _fr = "0x%08X.return" % _cl_rx
         elif _rx is not None and _rx.get("kind") == "stack":
             _fr = "stack_+0x%X" % int(_rx.get("off") or 0)
+        elif _rx is not None and _rx.get("kind") == "def":
+            # ffl5 def 直通：origin 就是完整实体 id（S:fn:var_NAME / P:fn:k 等），
+            # 无法用 stack_+X 形式表达——直接建边后跳过常规分类。
+            _de = _rx.get("ent")
+            _ce0 = ent_id(_to)
+            if isinstance(_de, str) and _ce0 and _ce0 in ents:
+                if _de not in ents:
+                    touch(_de, _de)
+                _call_edges.append((_de, _ce0))
+                _call_edges_p2.append((_de, _ce0))
+                continue
         elif _rx is not None and _rx.get("kind") == "this":
             # 数据流证明的 this 直传（额外 T:caller->callee 边，非破坏性）。
             # 曾因旧相位的边序依赖净 -11 而关闭；真不动点重设计后实测 +1/+2，
