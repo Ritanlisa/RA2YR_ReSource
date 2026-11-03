@@ -39,6 +39,29 @@
   "exact": {}
  },
  {
+  "cluster": "M:46BEE0:this:0x2D8",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:46BEE0:this:0x2D8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MR": [
+    "WeaponTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:4DB260:this:0x55C",
   "status": "inconsistent",
   "families": [
@@ -49,24 +72,6 @@
   },
   "ents": [
    "M:4DB260:this:0x55C"
-  ],
-  "obs": [],
-  "family_domains": {
-   "C11": []
-  },
-  "exact": {}
- },
- {
-  "cluster": "M:468670:this:0x14C",
-  "status": "inconsistent",
-  "families": [
-   "C11"
-  ],
-  "family_sizes": {
-   "C11": 0
-  },
-  "ents": [
-   "M:468670:this:0x14C"
   ],
   "obs": [],
   "family_domains": {
@@ -135,20 +140,291 @@
   "exact": {}
  },
  {
-  "cluster": "M:4666E0:this:0x14C",
+  "cluster": "M:6AF1A0:this:0x28",
   "status": "inconsistent",
   "families": [
-   "C11"
+   "C11",
+   "C3",
+   "MR"
   ],
   "family_sizes": {
-   "C11": 0
+   "C3": 1002,
+   "C11": 1032,
+   "MR": 1
   },
   "ents": [
-   "M:4666E0:this:0x14C"
+   "M:6AF1A0:this:0x28"
   ],
   "obs": [],
   "family_domains": {
-   "C11": []
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6B6C90:this:0x28",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "C3",
+   "MR"
+  ],
+  "family_sizes": {
+   "C3": 1002,
+   "C11": 1032,
+   "MR": 1
+  },
+  "ents": [
+   "M:6B6C90:this:0x28"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:435BE0:this:0xE4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "C3",
+   "MR"
+  ],
+  "family_sizes": {
+   "C3": 930,
+   "C11": 1063,
+   "MR": 1
+  },
+  "ents": [
+   "M:435BE0:this:0xE4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "ObjectClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6FC0B0:this:0x2D0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:6FC0B0:this:0x2D0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MR": [
+    "CaptureManagerClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6FCD40:this:0x2D0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:6FCD40:this:0x2D0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MR": [
+    "CaptureManagerClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6FDD50:this:0x2D0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:6FDD50:this:0x2D0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MR": [
+    "CaptureManagerClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:700C40:this:0x2D0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:700C40:this:0x2D0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MR": [
+    "CaptureManagerClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F54A0:this:0x5604",
+  "status": "inconsistent",
+  "families": [
+   "C3",
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "C3": 1482,
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:4F54A0:this:0x5604"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C3": [
+    "AddTeamCommandClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "MT": [
+    "?$DynamicVectorClass@UAngerStruct@@"
+   ],
+   "MR": [
+    "AngerStruct"
+   ]
   },
   "exact": {}
  },
@@ -221,6 +497,47 @@
    "C10": [
     "?$TClassFactory@VCellClass@@",
     "CellClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:7077C0:this:0x2a8",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C11",
+   "MR"
+  ],
+  "family_sizes": {
+   "C1": 236,
+   "C11": 0,
+   "MR": 1
+  },
+  "ents": [
+   "M:7077C0:this:0x2a8"
+  ],
+  "obs": [
+   "680:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C11": [],
+   "MR": [
+    "AirstrikeClass"
    ]
   },
   "exact": {}
@@ -487,20 +804,38 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0xB0"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
    ]
   },
   "exact": {}
@@ -510,20 +845,38 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0x98"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
    ]
   },
   "exact": {}
@@ -533,20 +886,38 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0x80"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
    ]
   },
   "exact": {}
@@ -556,20 +927,38 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0x68"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
    ]
   },
   "exact": {}
@@ -579,20 +968,38 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0x50"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
    ]
   },
   "exact": {}
@@ -602,20 +1009,338 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "MR",
    "MT"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MT": 1
+   "C11": 1031,
+   "MT": 1,
+   "MR": 1
   },
   "ents": [
    "M:4F7140:this:0x38"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MT": [
     "?$VectorClass@PAVTagClass@@"
+   ],
+   "MR": [
+    "BuildingClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:665650:this:0x6CC",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:665650:this:0x6CC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$TypeList@H"
+   ],
+   "MR": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0xA88",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0xA88"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0xA6C",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0xA6C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0xA34",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0xA34"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x9E0",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x9E0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "DynamicVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x8C8",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x8C8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "SHPStruct"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x8AC",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x8AC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "WarheadTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x880",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x880"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "MR": [
+    "WarheadTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x834",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x834"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ],
+   "MR": [
+    "InfantryTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x818",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x818"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ],
+   "MR": [
+    "SmudgeTypeVector"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x7FC",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x7FC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ],
+   "MR": [
+    "AnimTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:667A30:this:0x6CC",
+  "status": "inconsistent",
+  "families": [
+   "MR",
+   "MT"
+  ],
+  "family_sizes": {
+   "MT": 1,
+   "MR": 1
+  },
+  "ents": [
+   "M:667A30:this:0x6CC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MT": [
+    "?$VectorClass@H"
+   ],
+   "MR": [
+    "DynamicVector"
    ]
   },
   "exact": {}

@@ -68,9 +68,10 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
+    "MR": "member type via receiver domain x member_types (strict, two-pass)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2335,6 +2336,29 @@ def main():
         print("[MT] install-typed members: evidence=%d entities=%d" % (census["MT"], len(fam["MT"])), flush=True)
     except Exception as _e_mt:
         print("[MT] skipped: %r" % _e_mt, flush=True)
+
+    # ---------------- MR：成员类型经接收者域（dom(M) = member_type(dom(T:fn), off)）----------------
+    try:
+        _name_ix3 = _name_ix2
+        for _rec in (jload("anchors/member_by_receiver.json", {}) or {}).get("evidence") or []:
+            _e = _rec.get("ent")
+            _clss = _rec.get("classes") or []
+            if not isinstance(_e, str):
+                continue
+            m3 = 0
+            for _c3 in _clss:
+                _ix3 = _name_ix3.get(str(_c3).lower())
+                if _ix3 is not None:
+                    m3 |= (1 << _ix3)
+            if not m3:
+                continue
+            if _e not in ents:
+                touch(_e, _e)
+            fam["MR"][_e] = fam["MR"].get(_e, FULL) & m3
+            census["MR"] += 1
+        print("[MR] receiver-typed members: evidence=%d entities=%d" % (census["MR"], len(fam["MR"])), flush=True)
+    except Exception as _e_mr:
+        print("[MR] skipped: %r" % _e_mr, flush=True)
 
     # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
     # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向

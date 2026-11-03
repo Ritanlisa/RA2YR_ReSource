@@ -1,0 +1,8225 @@
+{
+"meta": {
+"evidence": 1138,
+"direct": 1084
+},
+"evidence": [
+{
+"ent": "M:402600:this:0xA4",
+"classes": [
+"IUnknown",
+"SHPStruct"
+],
+"n_recv": 54
+},
+{
+"ent": "M:402600:this:0xD4",
+"classes": [
+"AnimClass",
+"IUnknown"
+],
+"n_recv": 54
+},
+{
+"ent": "M:402650:this:0xA4",
+"classes": [
+"IUnknown",
+"SHPStruct"
+],
+"n_recv": 54
+},
+{
+"ent": "M:402650:this:0xD4",
+"classes": [
+"AnimClass",
+"IUnknown"
+],
+"n_recv": 54
+},
+{
+"ent": "M:4026F0:this:0xD4",
+"classes": [
+"AnimClass",
+"IUnknown"
+],
+"n_recv": 63
+},
+{
+"ent": "M:403870:this:0xC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 13
+},
+{
+"ent": "M:406870:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:407160:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:408500:this:0x8",
+"classes": [
+"LinkClass",
+"SHPStruct"
+],
+"n_recv": 273
+},
+{
+"ent": "M:408B10:this:0x10",
+"classes": [
+"AbstractClass",
+"ObjectClass"
+],
+"n_recv": 50
+},
+{
+"ent": "M:408B40:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:4091C0:this:0x10",
+"classes": [
+"AbstractClass",
+"AbstractTypeClass",
+"LightConvertClass",
+"ObjectClass",
+"SHPStruct"
+],
+"n_recv": 159
+},
+{
+"ent": "M:409880:this:0x38",
+"classes": [
+"BombClass"
+],
+"n_recv": 35
+},
+{
+"ent": "M:409880:this:0xC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 35
+},
+{
+"ent": "M:409C40:this:0x70",
+"classes": [
+"Int4"
+],
+"n_recv": 38
+},
+{
+"ent": "M:409C40:this:0x7C",
+"classes": [
+"VectorClass"
+],
+"n_recv": 38
+},
+{
+"ent": "M:409C40:this:0x88",
+"classes": [
+"AnimClass"
+],
+"n_recv": 38
+},
+{
+"ent": "M:409C40:this:0x8C",
+"classes": [
+"VectorClass"
+],
+"n_recv": 38
+},
+{
+"ent": "M:409C40:this:0x9C",
+"classes": [
+"Coord",
+"CoordStruct"
+],
+"n_recv": 38
+},
+{
+"ent": "M:40B180:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40B740:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40BEF0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40C2D0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40C8C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40CD10:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40D5E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40E390:this:0x4",
+"classes": [
+"GenericNode"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40E890:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40EF60:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40F680:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:40FC50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:413D20:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:413F80:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:413F80:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:414310:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:414310:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4144B0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4144B0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:414BB0:this:0x2b4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:414BB0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:414BB0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4151E0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4151E0:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4151E0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:415EE0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4165C0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4166C0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4166C0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:417CC0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:417FE0:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:417FE0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4190B0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4190B0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:419C80:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:419C80:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41A5C0:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41A5C0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41A940:this:0x6C4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41AA80:this:0x500",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41AA80:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41ADC0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41ADF0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41C1D0:this:0x6c4",
+"classes": [
+"AircraftTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41D380:this:0x4C",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41D540:this:0x4c",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:41DE80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:420410:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4218A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:422CA0:this:0xAC",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:422CA0:this:0xD4",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:423AC0:this:0xB4",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:427B50:this:0xa4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:427D00:this:0x2E0",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:427D00:this:0x2E8",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:42E6F0:this:0x38",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:42F1E0:this:0x38",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:42F9C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:42FC40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:435BE0:this:0xE4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:435BE0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4361D0:this:0xE4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4361D0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:436BE0:p0:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:436BE0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:436E80:this:0xE4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 7
+},
+{
+"ent": "M:436F40:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:437A10:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 857
+},
+{
+"ent": "M:43AB70:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43ADC0:this:0x4",
+"classes": [
+"AbstractClass",
+"GenericNode"
+],
+"n_recv": 8
+},
+{
+"ent": "M:43ADF0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:43ADF0:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:43B740:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43BCF0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43BCF0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43C2D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43D030:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43D030:this:0x524",
+"classes": [
+"FactoryClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43D290:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43DA80:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43E7B0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43E900:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43E940:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43ED40:this:0x11E0",
+"classes": [
+"Tactical"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43ED40:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43EF90:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43F180:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43F180:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43FB20:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:43FB20:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:440580:p0:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:440580:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:440580:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:440580:this:0x614",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4415F0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4415F0:this:0x33C",
+"classes": [
+"Float4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4415F0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:441F60:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442230:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442230:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442C40:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442C40:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442D90:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:442D90:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443410:this:0x38",
+"classes": [
+"BombClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443410:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4436F0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443860:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443B90:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443C60:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443C60:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:443C60:this:0x524",
+"classes": [
+"FactoryClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4456D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445880:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445880:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:p0:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:this:0x33C",
+"classes": [
+"Float4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:445F80:this:0xEA0",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:446FF0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447110:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447210:p0:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447210:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447210:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447540:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447780:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447AC0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447B20:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447E90:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:447F10:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:448160:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:448160:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:448260:this:0x21C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:448260:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:448260:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449410:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449440:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4494C0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4494C0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4496B0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449A50:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449C30:p0:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449C30:p0:0x6c0",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449C30:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449C30:this:0x33C",
+"classes": [
+"Float4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:449C30:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44ACF0:p0:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44ACF0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44ACF0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44B780:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44C980:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D5D0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D5D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D700:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D700:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D7D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D880:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D880:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44D880:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44E440:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44E7B0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44E880:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44E8F0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44EB10:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44EBF0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44EBF0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44EFB0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44F5C0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44F640:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:44FEC0:this:0x600",
+"classes": [
+"BuildingLightClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:450630:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:450630:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4509D0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4509D0:this:0x33C",
+"classes": [
+"Float4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4509D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:451330:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:451330:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4513D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452260:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452260:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452360:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452360:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452410:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452480:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452540:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4525F0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:452630:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4527D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4533A0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:453840:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:453A70:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:454260:this:0x540",
+"classes": [
+"InfantryClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:454260:this:0x548",
+"classes": [
+"AnimClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4555D0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4555D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4556D0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4556D0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455820:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455820:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455980:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455980:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455A80:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455A80:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455C20:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455D50:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:455DA0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4566B0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:456750:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457020:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457630:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457690:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457A10:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457AA0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457CE0:this:0x21c",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:457CE0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:458810:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:458DD0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:458E00:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459870:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459880:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459890:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459900:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459C00:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459C20:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459C20:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:459ED0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45A130:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:45A130:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:45A1C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45A420:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45A7A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45AB50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45AD80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45AE50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45FA90:this:0xB8",
+"classes": [
+"VoxelStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45FA90:this:0xC0",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:45FA90:this:0xC4",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4666E0:this:0x14C",
+"classes": [
+"CellStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:468670:this:0x130",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:468670:this:0x14C",
+"classes": [
+"CellStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4690B0:this:0x130",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46B310:this:0x130",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46B6A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46BEE0:this:0x2B0",
+"classes": [
+"WeaponTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46BEE0:this:0x2B4",
+"classes": [
+"WeaponTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46BEE0:this:0x2D8",
+"classes": [
+"WeaponTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:46DFD0:this:0x28",
+"classes": [
+"AbstractClass",
+"CoordStruct",
+"Game",
+"HashTable",
+"HouseClass",
+"IUnknown",
+"ObjectClass",
+"ProgressTimer",
+"ScriptClass",
+"TActionClass",
+"TriggerClass",
+"Waypoint"
+],
+"n_recv": 915
+},
+{
+"ent": "M:46DFD0:this:0x30",
+"classes": [
+"ILocomotion",
+"IUnknown",
+"ObjectClass",
+"State",
+"TeamTypeClass",
+"TechnoClass",
+"TechnoTypeClass"
+],
+"n_recv": 915
+},
+{
+"ent": "M:46DFD0:this:0x40",
+"classes": [
+"Coord",
+"CoordStruct",
+"IUnknown"
+],
+"n_recv": 915
+},
+{
+"ent": "M:46DFD0:this:0x50",
+"classes": [
+"BuildingClass",
+"CampaignClass",
+"DynamicVector",
+"MultiplayerGameMode",
+"State",
+"TriggerTypeClass",
+"VectorClass"
+],
+"n_recv": 915
+},
+{
+"ent": "M:46DFD0:this:0x60",
+"classes": [
+"TechnoTypeClass",
+"TintStruct"
+],
+"n_recv": 915
+},
+{
+"ent": "M:472160:this:0x34",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4728E0:this:0x34",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:472DE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4734B0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:4734B0:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:478000:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:478790:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47BB60:this:0x34",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C3D0:this:0xe8",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C4D0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C520:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C550:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C5A0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47C620:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47D2B0:this:0xEC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47DD70:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47DD70:this:0xe8",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47E8A0:this:0xE4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47E8A0:this:0xE8",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47E8A0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47EBA0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47EBF0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47EC40:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:47F6A0:p0:0xe0",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:480510:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:481670:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:481A00:this:0x34",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:483480:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4838E0:this:0xe4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:483C10:this:0x10",
+"classes": [
+"LightConvertClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:483E30:this:0x34",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:484050:this:0x34",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 2
+},
+{
+"ent": "M:485390:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:486920:this:0xE4",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:487D70:this:0xE0",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:487D70:this:0xe0",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:487F40:this:0xC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 12
+},
+{
+"ent": "M:488080:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:48ADB0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:48B070:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:48B0E0:this:0x10",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:48B0E0:this:0xC",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:48BE60:this:0x30",
+"classes": [
+"CampaignScore"
+],
+"n_recv": 1
+},
+{
+"ent": "M:490400:this:0x178",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:491210:this:0x178",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:49AEC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:49BC80:this:0x44",
+"classes": [
+"Coord"
+],
+"n_recv": 40
+},
+{
+"ent": "M:49BCA0:this:0x40",
+"classes": [
+"Coord"
+],
+"n_recv": 40
+},
+{
+"ent": "M:49CCF0:this:0x40",
+"classes": [
+"Coord"
+],
+"n_recv": 40
+},
+{
+"ent": "M:49CCF0:this:0x44",
+"classes": [
+"Coord"
+],
+"n_recv": 40
+},
+{
+"ent": "M:4A0FE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4A1280:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4A2600:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 51
+},
+{
+"ent": "M:4A2600:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 51
+},
+{
+"ent": "M:4A3A10:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 915
+},
+{
+"ent": "M:4A4B70:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4A4E30:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4A7DC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4AC380:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4B4D00:this:0x68",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4B66F0:this:0x2C",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4B9CE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4B9F40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4BA2F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4BA340:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4BA5A0:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4BC750:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4BF750:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C0E30:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C2BD0:this:0x20",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C2C10:this:0x20",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C2CE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C4A40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C5C00:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4C9FF0:this:0x6c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4CA430:this:0x6c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D0440:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D3590:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D4200:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D4280:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D4280:this:0x2b4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D4280:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D4DC0:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D55C0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D5690:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D5690:this:0x2b4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D6AA0:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D6AA0:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D7170:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D74E0:this:0x38",
+"classes": [
+"BombClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D7D50:this:0xBB4",
+"classes": [
+"Coord"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D82B0:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D85D0:this:0x2b4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D9290:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D94B0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D98C0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4D9960:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DA4E0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DA530:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DAF10:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DAFC0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DB1A0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DB260:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DB690:this:0x5BC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DB7E0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DBDF0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DBED0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DDF90:this:0x218",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DE7B0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DE940:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DEE80:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DF3A0:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DF7F0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DFA70:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DFB70:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DFCB0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4DFF40:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4E05C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4E0840:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4E9960:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4E9BC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EA080:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EA2E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EA460:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EA6C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EA920:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EAB80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EADE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EB040:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EB2A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EB500:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EB760:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EB9C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EBC20:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EBE80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EC0E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EC340:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EC5A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EC800:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ECA60:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ECCC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ECF20:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ED180:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ED3E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ED640:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4ED8A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EDB00:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EDD60:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EDFC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EE220:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EE480:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EE6E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EE940:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EEBA0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EEE00:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EF060:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4EF2C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F1AA0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:4F2920:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F2C00:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x38",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x50",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x5604",
+"classes": [
+"AngerStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x68",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x80",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0x98",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F5190:this:0xB0",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x38",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x50",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x5604",
+"classes": [
+"AngerStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x68",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x80",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0x98",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F54A0:this:0xB0",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x38",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x50",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x5604",
+"classes": [
+"AngerStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x68",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x80",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0x98",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4F7140:this:0xB0",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0x38",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0x50",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0x68",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0x80",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0x98",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:4FB9B0:this:0xB0",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:503040:this:0x50",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:503040:this:0x68",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:503040:this:0x80",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:503040:this:0x98",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:503040:this:0xB0",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509140:this:0x53ac",
+"classes": [
+"FactoryClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5098F0:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509B20:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509C10:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509CD0:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509E00:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:509F60:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:50A150:this:0x254",
+"classes": [
+"SuperClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:50F520:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:50F780:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:50F9E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:50FC60:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5105F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:510920:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:510970:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5113F0:this:0x14C",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:511650:this:0x14C",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5116A0:this:0x14C",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:511850:this:0x14C",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:512760:this:0x14C",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:512DC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 2
+},
+{
+"ent": "M:517A50:this:0x6C0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517CC0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517CC0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517D90:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517D90:this:0x2dc",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517D90:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517FA0:this:0x11C",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517FA0:this:0x2dc",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:517FA0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:519630:p0:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:519630:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:519630:this:0x2c0",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:519630:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:519630:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51AA40:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51AA40:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51B1F0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51BAB0:this:0x2dc",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51BAB0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51BF90:p0:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51BF90:this:0x2dc",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51BF90:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51C8B0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51CBA0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51CBA0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51CDB0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51D0D0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51D0D0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51D6F0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51DF10:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51DF60:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51DFF0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51E140:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51E140:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51E3B0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F2C0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F3E0:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F3E0:this:0x2b4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F3E0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F540:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F540:this:0x2B4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F540:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F660:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F6E0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F800:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:51F800:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5216D0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5218E0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521B60:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521C10:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521C40:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521D80:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521DD0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:521EB0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522340:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522340:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5224D0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522600:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522640:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5226C0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522780:this:0x21C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522780:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522780:this:0x51C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522780:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5228D0:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522E70:this:0x6c0",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:522FE0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5276D0:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5276D0:this:0x8",
+"classes": [
+"INISection"
+],
+"n_recv": 1
+},
+{
+"ent": "M:528A10:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:528A10:this:0x8",
+"classes": [
+"INISection"
+],
+"n_recv": 1
+},
+{
+"ent": "M:528F00:p0:0x8",
+"classes": [
+"INISection"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5295F0:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5295F0:this:0x8",
+"classes": [
+"INISection"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5297E0:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:529880:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:529CA0:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52A760:this:0x4",
+"classes": [
+"INIEntry"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52A760:this:0x8",
+"classes": [
+"INISection"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52AAF0:this:0x10",
+"classes": [
+"AbstractTypeClass",
+"INIClass"
+],
+"n_recv": 7
+},
+{
+"ent": "M:52AAF0:this:0x4",
+"classes": [
+"GenericNode"
+],
+"n_recv": 7
+},
+{
+"ent": "M:52AD50:this:0x10",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52AE20:this:0x4",
+"classes": [
+"GenericNode"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52AF00:this:0x10",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:52AF00:this:0xC",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5353D0:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 902
+},
+{
+"ent": "M:538560:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:538B30:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:53C560:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:53DAE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:53ECE0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:547CF0:this:0x2BC",
+"classes": [
+"CaptureManagerClass",
+"FacingStruct"
+],
+"n_recv": 4
+},
+{
+"ent": "M:549A00:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:54A4F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:54DFA0:this:0x94",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:54E930:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:54EBF0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:551370:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:554760:this:0x2C",
+"classes": [
+"TintStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:554AA0:this:0x2C",
+"classes": [
+"TintStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:555300:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:555560:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:555DA0:this:0x18C",
+"classes": [
+"MapClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5565A0:this:0x4",
+"classes": [
+"LinkClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5565A0:this:0x8",
+"classes": [
+"LinkClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5566A0:this:0x8",
+"classes": [
+"LinkClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:556730:this:0x4",
+"classes": [
+"LinkClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:556730:this:0x8",
+"classes": [
+"LinkClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:556F50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:55A1F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:55BB40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:55BC00:this:0x1",
+"classes": [
+"MultiplayerGameMode"
+],
+"n_recv": 15
+},
+{
+"ent": "M:565090:this:0x50",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:565190:this:0x50",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5652C0:this:0x50",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:56C510:this:0x68",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5840C0:this:0x70",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:589100:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:589EF0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58A6E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58A8F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58AC70:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58AE60:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58AFF0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:58B070:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5958E0:this:0x17C",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5A6510:p0:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 840
+},
+{
+"ent": "M:5A89D0:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"Player",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 996
+},
+{
+"ent": "M:5A9920:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A9920:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A9960:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A9960:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A9980:this:0x10",
+"classes": [
+"AbstractClass",
+"ObjectClass"
+],
+"n_recv": 50
+},
+{
+"ent": "M:5A99F0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A99F0:this:0x10",
+"classes": [
+"AbstractClass",
+"ObjectClass"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5A99F0:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5AC6E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5ACAA0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5ACD30:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5AD130:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5AD740:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5AD9F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5ADA40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5ADAB0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5B01C0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:5B4590:this:0x4",
+"classes": [
+"GenericNode"
+],
+"n_recv": 3
+},
+{
+"ent": "M:5BFF60:this:0x10",
+"classes": [
+"AbstractClass",
+"AbstractTypeClass",
+"LightConvertClass",
+"ObjectClass",
+"SHPStruct"
+],
+"n_recv": 161
+},
+{
+"ent": "M:5C0B10:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C42D0:this:0x50",
+"classes": [
+"MultiplayerGameMode"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C5170:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C5630:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C59E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C5A80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5C65B0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5C6FE0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:5CF5F0:this:0x44",
+"classes": [
+"BuildingClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D0FE0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D2820:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D2A80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D5190:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D5410:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D5B60:this:0x30",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D8330:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D8590:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D8950:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D89A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5D89F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5EEC50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5EF0B0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F3E70:this:0x88",
+"classes": [
+"AnimClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F5230:this:0x30",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F5230:this:0x34",
+"classes": [
+"TagClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F5B50:this:0x34",
+"classes": [
+"TagClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F6250:this:0x30",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F6250:this:0x34",
+"classes": [
+"TagClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5F6790:this:0x8",
+"classes": [
+"AudioMixer",
+"ComPtr",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct"
+],
+"n_recv": 187
+},
+{
+"ent": "M:5F6810:this:0x8",
+"classes": [
+"INIEntry",
+"INILinkNode"
+],
+"n_recv": 171
+},
+{
+"ent": "M:5F9BC0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5FC380:this:0xAC",
+"classes": [
+"OverlayTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5FC570:p0:0xac",
+"classes": [
+"OverlayTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5FC570:this:0xac",
+"classes": [
+"OverlayTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5FD970:this:0xAC",
+"classes": [
+"OverlayTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:5FD970:this:0xac",
+"classes": [
+"OverlayTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:600060:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6071E0:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 873
+},
+{
+"ent": "M:610CA0:p0:0xc",
+"classes": [
+"AbstractClass",
+"CampaignClass",
+"CoordStruct",
+"FootClass",
+"Rect",
+"ShpFrameInfo"
+],
+"n_recv": 873
+},
+{
+"ent": "M:6153E0:this:0x58",
+"classes": [
+"AbstractClass",
+"CampaignClass"
+],
+"n_recv": 855
+},
+{
+"ent": "M:617250:p0:0x64",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1096
+},
+{
+"ent": "M:617250:p0:0xc",
+"classes": [
+"AbstractClass",
+"CCFileClass",
+"CampaignClass",
+"CoordStruct",
+"FootClass",
+"Rect",
+"ShpFrameInfo"
+],
+"n_recv": 1096
+},
+{
+"ent": "M:617250:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 1096
+},
+{
+"ent": "M:617250:this:0xC8",
+"classes": [
+"AnimTypeClass",
+"ILocomotion"
+],
+"n_recv": 1096
+},
+{
+"ent": "M:618D40:p0:0x204",
+"classes": [
+"GameSetup",
+"SkirmishMapGen"
+],
+"n_recv": 854
+},
+{
+"ent": "M:618D40:p0:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 854
+},
+{
+"ent": "M:618D40:p0:0xc",
+"classes": [
+"AbstractClass",
+"CampaignClass",
+"CoordStruct",
+"FootClass",
+"Rect",
+"ShpFrameInfo"
+],
+"n_recv": 854
+},
+{
+"ent": "M:618D40:p0:0xe8",
+"classes": [
+"Audio",
+"TechnoClass"
+],
+"n_recv": 854
+},
+{
+"ent": "M:618D40:p0:0xec",
+"classes": [
+"ProgressTimer"
+],
+"n_recv": 854
+},
+{
+"ent": "M:618D40:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 854
+},
+{
+"ent": "M:627E50:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6282E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6288F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:628DF0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:628ED0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62B110:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62BD50:this:0x2E0",
+"classes": [
+"HouseClass"
+],
+"n_recv": 21
+},
+{
+"ent": "M:62BD50:this:0xac",
+"classes": [
+"IUnknown",
+"OverlayTypeClass",
+"ParticleSystemTypeClass",
+"SmudgeTypeClass"
+],
+"n_recv": 21
+},
+{
+"ent": "M:62DC50:this:0xAC",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62DC50:this:0xFC",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62DC50:this:0xac",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62E280:this:0xCC",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62E280:this:0xac",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62E380:this:0xac",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:62FD60:this:0xac",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:630090:this:0xCC",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:632A70:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:632D10:this:0x1C",
+"classes": [
+"PKPipe"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6339B0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:636120:this:0x14",
+"classes": [
+"BlowStraw",
+"SHPReference",
+"Straw"
+],
+"n_recv": 37
+},
+{
+"ent": "M:636120:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 37
+},
+{
+"ent": "M:6395B0:this:0x4",
+"classes": [
+"AbstractClass",
+"CampaignClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"LinkClass",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 1363
+},
+{
+"ent": "M:639800:this:0x0",
+"classes": [
+"CoordStruct",
+"HouseClass",
+"ObjectClass",
+"ShpHeader",
+"StreamClass",
+"SubSequenceStruct",
+"TechnoTypeClass",
+"UnitClass",
+"VocClassHeader",
+"WaypointPathClass",
+"WinModemClass"
+],
+"n_recv": 785
+},
+{
+"ent": "M:639800:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 785
+},
+{
+"ent": "M:639800:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 785
+},
+{
+"ent": "M:63AB60:this:0x4",
+"classes": [
+"AbstractClass",
+"GenericNode",
+"INILinkNode",
+"LinkClass",
+"VocClassHeader"
+],
+"n_recv": 232
+},
+{
+"ent": "M:63DD80:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:63E350:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:63E690:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:63E990:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:63EFB0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:63F960:this:0x24",
+"classes": [
+"CellStruct",
+"CoordStruct",
+"Game",
+"IUnknown",
+"LightSourceClass",
+"LinkedList",
+"RateTimer",
+"TagTypeClass",
+"TechnoClass",
+"TriggerTypeClass"
+],
+"n_recv": 1364
+},
+{
+"ent": "M:644F50:this:0x2CC",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:645C30:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6460C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 5
+},
+{
+"ent": "M:64A0C0:this:0x30",
+"classes": [
+"CampaignScore",
+"ILocomotion",
+"IUnknown",
+"ObjectClass",
+"State",
+"TeamTypeClass",
+"TechnoClass",
+"TechnoTypeClass"
+],
+"n_recv": 1089
+},
+{
+"ent": "M:64CDA0:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 786
+},
+{
+"ent": "M:64CDA0:this:0x8",
+"classes": [
+"AbstractClass",
+"AudioMixer",
+"CampaignClass",
+"ComPtr",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"INISection",
+"LinkClass",
+"SHPStruct",
+"Territory"
+],
+"n_recv": 786
+},
+{
+"ent": "M:64DAB0:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:64DAB0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:650A90:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:652540:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:652960:this:0x1224",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:652C00:this:0x1224",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6551C0:this:0x1224",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6568A0:this:0x1224",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:656AC0:this:0x1228",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:656AC0:this:0x1260",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6587A0:this:0x1224",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:658970:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65A280:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65B580:this:0x24",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65B580:this:0x64",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65B800:this:0x24",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65BE90:this:0x24",
+"classes": [
+"LightSourceClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65BF90:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65D0D0:this:0xC",
+"classes": [
+"CCFileClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:65D2B0:this:0xC",
+"classes": [
+"CCFileClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:660D20:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664850:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x6CC",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0xAA4",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:664D20:this:0xAC0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x6CC",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0xAA4",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:665650:this:0xAC0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x6CC",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:667A30:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6691E0:this:0x6CC",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:66BBB0:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:66BBB0:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:66BBB0:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:66D530:this:0x10",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:66D530:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672440:this:0x10",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0xAA4",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:672AE0:this:0xAC0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x6CC",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x854",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xA38",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xAA4",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:675210:this:0xAC0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x7FC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x818",
+"classes": [
+"SmudgeTypeVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x834",
+"classes": [
+"InfantryTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x880",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x8AC",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x8C8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0x9E0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0xA34",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0xA6C",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0xA88",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0xAA4",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:678850:this:0xAC0",
+"classes": [
+"DynamicVector"
+],
+"n_recv": 1
+},
+{
+"ent": "M:67B230:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:67C430:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:683560:this:0x34D4",
+"classes": [
+"TechnoTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:689470:this:0x34D4",
+"classes": [
+"TechnoTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:68C710:this:0x304",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:68C9C0:this:0x304",
+"classes": [
+"AbstractTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:68ED80:this:0x24",
+"classes": [
+"CellStruct",
+"CoordStruct",
+"Game",
+"IUnknown",
+"LightSourceClass",
+"LinkedList",
+"RateTimer",
+"TagTypeClass",
+"TechnoClass",
+"TriggerTypeClass"
+],
+"n_recv": 1364
+},
+{
+"ent": "M:68ED80:this:0x2E0",
+"classes": [
+"AbstractTypeClass",
+"HouseClass"
+],
+"n_recv": 1364
+},
+{
+"ent": "M:6915D0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:69C750:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:69D770:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:69D870:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:69E430:this:0x8",
+"classes": [
+"SHPStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6A5310:this:0x30",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6AF1A0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6AF1A0:this:0x28",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6AF1A0:this:0x2C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6AF650:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6AF6C0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6AF6C0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6AFD60:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6B0300:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6B0300:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6B04C0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6B04C0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 4
+},
+{
+"ent": "M:6B0690:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:6B0690:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:6B0880:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:6B0880:this:0x520",
+"classes": [
+"BuildingTypeClass"
+],
+"n_recv": 10
+},
+{
+"ent": "M:6B0DB0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 35
+},
+{
+"ent": "M:6B14B0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B1710:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B1AB0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B2F30:p0:0xe4",
+"classes": [
+"FlashData",
+"ObjectClass"
+],
+"n_recv": 786
+},
+{
+"ent": "M:6B44A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B4A50:this:0xAC",
+"classes": [
+"SmudgeTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B4BE0:this:0xAC",
+"classes": [
+"SmudgeTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B6C90:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B6C90:this:0x28",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B6C90:this:0x2C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B7100:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B7230:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B7230:this:0x28",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B7DE0:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B7DE0:this:0x28",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B8260:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B8520:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6B8880:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6C6210:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6CA310:this:0x804",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1327
+},
+{
+"ent": "M:6CAA10:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6CABA0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D2280:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D2420:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D6070:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D61C0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:6D6590:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D8B30:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6D9B50:this:0xB4",
+"classes": [
+"Cell"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DC660:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DCA10:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DD2C0:this:0x28",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DD300:this:0x30",
+"classes": [
+"TeamTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DD300:this:0x44",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DD300:this:0x4c",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6DD300:this:0x50",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E3E50:this:0x28",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E3E50:this:0x30",
+"classes": [
+"TeamTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E3E50:this:0x4c",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E3E50:this:0x50",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E4890:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E4DE0:this:0x24",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E4F60:p0:0x24",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E4F60:this:0x24",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E4F60:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E5380:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E53A0:this:0x24",
+"classes": [
+"TagTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E53A0:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E55C0:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E5610:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E56E0:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E57C0:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E57F0:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E5820:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6E6580:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6EA610:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 8
+},
+{
+"ent": "M:6F22F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F27F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F2B40:this:0x21C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F3F40:this:0x21C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F3F40:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F3F40:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F3F40:this:0x51C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F47A0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F4960:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F4EB0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F5090:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F7CA0:p0:0x2c0",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F7CA0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F8DF0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9DB0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9E50:p0:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9E50:this:0x108",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9E50:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9E50:this:0x38",
+"classes": [
+"BombClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6F9E50:this:0x70",
+"classes": [
+"Int4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FB740:this:0x22C",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FBC90:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FBDC0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FBFA0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FC0B0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FC0B0:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FC0B0:this:0x2BC",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FC0B0:this:0x2D0",
+"classes": [
+"CaptureManagerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FCD40:this:0x2D0",
+"classes": [
+"CaptureManagerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FCDB0:this:0x304",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FDD50:this:0x2D0",
+"classes": [
+"CaptureManagerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FFEC0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:6FFEC0:this:0x38",
+"classes": [
+"BombClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:700C40:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:700C40:this:0x2D0",
+"classes": [
+"CaptureManagerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:700D50:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7014A0:this:0x21C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7014A0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:702D40:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:702D40:this:0x2D4",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:703230:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:705D70:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7077C0:this:0x184",
+"classes": [
+"TimerStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7077C0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7077C0:this:0x2a8",
+"classes": [
+"AirstrikeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:707D20:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:707DD0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7087C0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:709A40:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:709A90:this:0x33C",
+"classes": [
+"Float4"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70AA60:this:0x21C",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70ADC0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70AF50:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70B1D0:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70B570:this:0x328",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70B570:this:0x32C",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70C5D0:this:0x274",
+"classes": [
+"TemporalClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70CD10:p0:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70CD10:this:0x21c",
+"classes": [
+"HouseClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70F820:this:0x2BC",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:70F820:this:0x2c0",
+"classes": [
+"FootClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:710700:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:710700:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7162F0:this:0x318",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7162F0:this:0x3EC",
+"classes": [
+"CampaignClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:717C70:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 13
+},
+{
+"ent": "M:71A130:this:0x48",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 23
+},
+{
+"ent": "M:71B2E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:71C730:this:0xB4",
+"classes": [
+"TerrainTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:71FC40:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:71FF20:this:0x38",
+"classes": [
+"CampaignScore"
+],
+"n_recv": 1
+},
+{
+"ent": "M:720020:this:0x38",
+"classes": [
+"CampaignScore"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7237D0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:724CD0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:725FA0:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726250:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726290:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7263A0:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7263D0:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726400:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7264C0:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7265C0:this:0x24",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726690:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726790:this:0x28",
+"classes": [
+"TriggerClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726E00:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726E00:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726F50:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726F80:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726FB0:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:726FE0:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727010:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727050:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727090:this:0xa8",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727090:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727090:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7271E0:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7271E0:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7276A0:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7276A0:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727B30:this:0xa8",
+"classes": [
+"TriggerTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727B30:this:0xac",
+"classes": [
+"TEventClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:727B30:this:0xb0",
+"classes": [
+"TActionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:72E2D0:this:0x4",
+"classes": [
+"AbstractClass",
+"CellStruct",
+"Coord",
+"HashTable",
+"INIEntry",
+"INILinkNode",
+"LinkClass",
+"MPGameModeClass",
+"Territory",
+"VocClassHeader"
+],
+"n_recv": 1240
+},
+{
+"ent": "M:7343E0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7353C0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7353C0:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7353C0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736990:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736990:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736C10:this:0x5d4",
+"classes": [
+"EBolt"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736CA0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736CA0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736D50:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736DF0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:736DF0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737180:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737180:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737430:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737430:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737430:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737BA0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:737C90:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:738680:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:738680:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:738970:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:738D30:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7393C0:this:0x34",
+"classes": [
+"TagClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7393C0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7393C0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739AC0:this:0x130",
+"classes": [
+"AnimClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739AC0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739CD0:this:0x130",
+"classes": [
+"AnimClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739CD0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739EC0:this:0x30",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739EC0:this:0x5d4",
+"classes": [
+"EBolt"
+],
+"n_recv": 1
+},
+{
+"ent": "M:739EC0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73B140:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73B470:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73C5F0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73C5F0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73CEC0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73CEC0:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73CEC0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73D450:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73D630:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73D630:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73E5E0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73EFC0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:73F0A0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7404B0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740810:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740810:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740A90:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740B10:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740B60:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740F80:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740FD0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:740FD0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:741340:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7414A0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7414E0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7416A0:p0:0x30",
+"classes": [
+"ObjectClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7416A0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:741970:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:743190:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7438F0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:743A50:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:744270:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:744640:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:744640:this:0x6c8",
+"classes": [
+"UnitClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:744720:this:0x34",
+"classes": [
+"TagClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7463A0:this:0x6C8",
+"classes": [
+"UnitClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7463A0:this:0x6c8",
+"classes": [
+"UnitClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746400:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746810:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7468C0:this:0x2c8",
+"classes": [
+"TimerStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7468C0:this:0x674",
+"classes": [
+"ILocomotion"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7468C0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746B20:this:0x6C4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746B20:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746CD0:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:746E30:this:0x6c4",
+"classes": [
+"UnitTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7493B0:this:0x114",
+"classes": [
+"Mixer"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7498D0:this:0x114",
+"classes": [
+"Mixer"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7499F0:this:0x114",
+"classes": [
+"Mixer"
+],
+"n_recv": 1
+},
+{
+"ent": "M:749B70:this:0x9C",
+"classes": [
+"Coord"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2D4",
+"classes": [
+"VoxelAnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2E4",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2E8",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2EC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2F8",
+"classes": [
+"WarheadTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74B050:this:0x2FC",
+"classes": [
+"ParticleSystemTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74C030:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:74F400:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:751970:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7536F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:753D00:this:0x4",
+"classes": [
+"AbstractClass",
+"CampaignClass"
+],
+"n_recv": 227
+},
+{
+"ent": "M:7542F0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:75A4D0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:75D3A0:this:0x24",
+"classes": [
+"IUnknown"
+],
+"n_recv": 1
+},
+{
+"ent": "M:75EBE0:this:0x1d8",
+"classes": [
+"FacingStruct"
+],
+"n_recv": 1
+},
+{
+"ent": "M:75FA90:this:0xCC",
+"classes": [
+"Tactical"
+],
+"n_recv": 6
+},
+{
+"ent": "M:7602E0:this:0xCC",
+"classes": [
+"Tactical"
+],
+"n_recv": 6
+},
+{
+"ent": "M:7609E0:this:0xCC",
+"classes": [
+"Tactical"
+],
+"n_recv": 6
+},
+{
+"ent": "M:763700:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:763700:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7644A0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:766C10:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:769330:this:0x24",
+"classes": [
+"TechnoClass"
+],
+"n_recv": 50
+},
+{
+"ent": "M:769490:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:76A3F0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76B8C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76C290:this:0x494",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76C6E0:this:0x470",
+"classes": [
+"SessionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76C6E0:this:0x474",
+"classes": [
+"SessionClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76C6E0:this:0x494",
+"classes": [
+"VectorClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:76F1C0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:772EB0:this:0xCC",
+"classes": [
+"AnimTypeClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7ACA00:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7ACA00:this:0x4",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7AD0D0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7AD790:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7AECD0:this:0x8",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 1
+},
+{
+"ent": "M:7B54D0:this:0x0",
+"classes": [
+"VocClassHeader"
+],
+"n_recv": 55
+},
+{
+"ent": "M:7B8C60:this:0x24",
+"classes": [
+"CellStruct",
+"TechnoClass"
+],
+"n_recv": 14
+},
+{
+"ent": "M:7B8C60:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 14
+},
+{
+"ent": "M:7B8E80:this:0x4",
+"classes": [
+"AbstractClass"
+],
+"n_recv": 14
+},
+{
+"ent": "M:7C34B0:this:0x140",
+"classes": [
+"ParticleSystemClass"
+],
+"n_recv": 12
+}
+]
+}
