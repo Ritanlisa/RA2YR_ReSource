@@ -57,14 +57,14 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 669,
-  "K_upper": 669,
-  "lower_bound": 669,
-  "constrained_clusters": 30360,
-  "free_clusters": 156776,
+  "K": 720,
+  "K_upper": 720,
+  "lower_bound": 720,
+  "constrained_clusters": 41109,
+  "free_clusters": 146028,
   "conflicts": 0,
   "c1_gaps": 0,
-  "universe": 1524,
+  "universe": 2063,
   "entities": 190132
  },
  "family_table": [
@@ -73,20 +73,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 8425,
-   "clusters_pinned": 8425,
-   "clusters_free": 178711,
-   "pinned_classes": 602,
-   "forced_classes": 602,
+   "clusters_constrained": 17854,
+   "clusters_pinned": 7788,
+   "clusters_free": 169283,
+   "pinned_classes": 606,
+   "forced_classes": 606,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 602,
-   "K_upper": 602,
-   "K_total": 602,
-   "K_greedy": 602,
-   "delta_forced": 602,
-   "delta_K": 602,
-   "lower_bound": 602,
+   "K": 606,
+   "K_upper": 606,
+   "K_total": 606,
+   "K_greedy": 606,
+   "delta_forced": 606,
+   "delta_K": 606,
+   "lower_bound": 606,
    "merges": 0,
    "bad_cover": 0
   },
@@ -95,20 +95,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 8425,
-   "clusters_pinned": 8425,
-   "clusters_free": 178711,
-   "pinned_classes": 602,
-   "forced_classes": 602,
+   "clusters_constrained": 17854,
+   "clusters_pinned": 7788,
+   "clusters_free": 169283,
+   "pinned_classes": 606,
+   "forced_classes": 606,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 602,
-   "K_upper": 602,
-   "K_total": 602,
-   "K_greedy": 602,
+   "K": 606,
+   "K_upper": 606,
+   "K_total": 606,
+   "K_greedy": 606,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 602,
+   "lower_bound": 606,
    "merges": 0,
    "bad_cover": 0
   },
@@ -117,20 +117,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2649,
-   "clusters_constrained": 9908,
-   "clusters_pinned": 8427,
-   "clusters_free": 177228,
-   "pinned_classes": 602,
-   "forced_classes": 602,
+   "clusters_constrained": 18873,
+   "clusters_pinned": 7790,
+   "clusters_free": 168264,
+   "pinned_classes": 606,
+   "forced_classes": 606,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 602,
-   "K_upper": 602,
-   "K_total": 602,
-   "K_greedy": 602,
+   "K": 606,
+   "K_upper": 606,
+   "K_total": 606,
+   "K_greedy": 606,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 602,
+   "lower_bound": 606,
    "merges": 0,
    "bad_cover": 0
   },
@@ -139,20 +139,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 11149,
-   "clusters_pinned": 9691,
-   "clusters_free": 175987,
-   "pinned_classes": 626,
-   "forced_classes": 626,
+   "clusters_constrained": 18906,
+   "clusters_pinned": 9054,
+   "clusters_free": 168231,
+   "pinned_classes": 630,
+   "forced_classes": 630,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 626,
-   "K_upper": 626,
-   "K_total": 626,
-   "K_greedy": 626,
+   "K": 630,
+   "K_upper": 630,
+   "K_total": 630,
+   "K_greedy": 630,
    "delta_forced": 24,
    "delta_K": 24,
-   "lower_bound": 626,
+   "lower_bound": 630,
    "merges": 0,
    "bad_cover": 0
   },
@@ -161,20 +161,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 11940,
-   "clusters_pinned": 9832,
-   "clusters_free": 175196,
-   "pinned_classes": 639,
-   "forced_classes": 639,
+   "clusters_constrained": 19697,
+   "clusters_pinned": 9195,
+   "clusters_free": 167440,
+   "pinned_classes": 643,
+   "forced_classes": 643,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 641,
-   "K_upper": 641,
-   "K_total": 641,
-   "K_greedy": 641,
+   "K": 645,
+   "K_upper": 645,
+   "K_total": 645,
+   "K_greedy": 645,
    "delta_forced": 13,
    "delta_K": 15,
-   "lower_bound": 641,
+   "lower_bound": 645,
    "merges": 0,
    "bad_cover": 0
   },
@@ -183,64 +183,64 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 12013,
-   "clusters_pinned": 9832,
-   "clusters_free": 175123,
-   "pinned_classes": 639,
-   "forced_classes": 639,
+   "clusters_constrained": 19699,
+   "clusters_pinned": 9195,
+   "clusters_free": 167438,
+   "pinned_classes": 643,
+   "forced_classes": 643,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 641,
-   "K_upper": 641,
-   "K_total": 641,
-   "K_greedy": 641,
+   "K": 645,
+   "K_upper": 645,
+   "K_total": 645,
+   "K_greedy": 645,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 641,
+   "lower_bound": 645,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C7",
    "desc": "param/return variance",
-   "evidence": 79,
-   "entities_touched": 79,
-   "clusters_constrained": 12085,
-   "clusters_pinned": 9832,
-   "clusters_free": 175051,
-   "pinned_classes": 639,
-   "forced_classes": 639,
+   "evidence": 1513,
+   "entities_touched": 1513,
+   "clusters_constrained": 21179,
+   "clusters_pinned": 9195,
+   "clusters_free": 165958,
+   "pinned_classes": 643,
+   "forced_classes": 643,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 641,
-   "K_upper": 641,
-   "K_total": 641,
-   "K_greedy": 641,
+   "K": 645,
+   "K_upper": 645,
+   "K_total": 645,
+   "K_greedy": 645,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 641,
+   "lower_bound": 645,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C8",
    "desc": "global object identity",
-   "evidence": 148,
-   "entities_touched": 148,
-   "clusters_constrained": 12224,
-   "clusters_pinned": 9976,
-   "clusters_free": 174912,
-   "pinned_classes": 648,
-   "forced_classes": 648,
+   "evidence": 798,
+   "entities_touched": 798,
+   "clusters_constrained": 21968,
+   "clusters_pinned": 9989,
+   "clusters_free": 165169,
+   "pinned_classes": 653,
+   "forced_classes": 653,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 650,
-   "K_upper": 650,
-   "K_total": 650,
-   "K_greedy": 650,
-   "delta_forced": 9,
-   "delta_K": 9,
-   "lower_bound": 650,
+   "K": 655,
+   "K_upper": 655,
+   "K_total": 655,
+   "K_greedy": 655,
+   "delta_forced": 10,
+   "delta_K": 10,
+   "lower_bound": 655,
    "merges": 0,
    "bad_cover": 0
   },
@@ -249,64 +249,64 @@
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6385,
    "entities_touched": 6373,
-   "clusters_constrained": 12657,
-   "clusters_pinned": 9976,
-   "clusters_free": 174479,
-   "pinned_classes": 648,
-   "forced_classes": 648,
+   "clusters_constrained": 21968,
+   "clusters_pinned": 9989,
+   "clusters_free": 165169,
+   "pinned_classes": 653,
+   "forced_classes": 653,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 650,
-   "K_upper": 650,
-   "K_total": 650,
-   "K_greedy": 650,
+   "K": 655,
+   "K_upper": 655,
+   "K_total": 655,
+   "K_greedy": 655,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 650,
+   "lower_bound": 655,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 17107,
-   "entities_touched": 17107,
-   "clusters_constrained": 26276,
-   "clusters_pinned": 11592,
-   "clusters_free": 160851,
-   "pinned_classes": 658,
-   "forced_classes": 658,
-   "conflicts": 9,
+   "evidence": 20226,
+   "entities_touched": 20226,
+   "clusters_constrained": 37952,
+   "clusters_pinned": 14393,
+   "clusters_free": 149173,
+   "pinned_classes": 686,
+   "forced_classes": 686,
+   "conflicts": 12,
    "c1_gaps": 0,
-   "K": 660,
-   "K_upper": 669,
-   "K_total": 660,
-   "K_greedy": 660,
-   "delta_forced": 10,
-   "delta_K": 10,
-   "lower_bound": 660,
+   "K": 688,
+   "K_upper": 700,
+   "K_total": 688,
+   "K_greedy": 688,
+   "delta_forced": 33,
+   "delta_K": 33,
+   "lower_bound": 688,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
-   "evidence": 1088,
-   "entities_touched": 10123,
-   "clusters_constrained": 30332,
-   "clusters_pinned": 13163,
-   "clusters_free": 156772,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "evidence": 3610,
+   "entities_touched": 10733,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16732,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
-   "delta_forced": 8,
-   "delta_K": 8,
-   "lower_bound": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
+   "delta_forced": 32,
+   "delta_K": 32,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -315,20 +315,20 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5724,
    "entities_touched": 5724,
-   "clusters_constrained": 30343,
-   "clusters_pinned": 13169,
-   "clusters_free": 156761,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16738,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 668,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -337,20 +337,20 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 30343,
-   "clusters_pinned": 13169,
-   "clusters_free": 156761,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16738,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 668,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -359,20 +359,20 @@
    "desc": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 30343,
-   "clusters_pinned": 13169,
-   "clusters_free": 156761,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16738,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 668,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -381,20 +381,20 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 30343,
-   "clusters_pinned": 13169,
-   "clusters_free": 156761,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16738,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 668,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -403,20 +403,20 @@
    "desc": "pointer-step size == class sizeof (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 30343,
-   "clusters_pinned": 13169,
-   "clusters_free": 156761,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 32,
+   "clusters_constrained": 41620,
+   "clusters_pinned": 16738,
+   "clusters_free": 144576,
+   "pinned_classes": 718,
+   "forced_classes": 718,
+   "conflicts": 941,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 700,
-   "K_total": 668,
-   "K_greedy": 668,
+   "K": 720,
+   "K_upper": 1661,
+   "K_total": 720,
+   "K_greedy": 720,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 668,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   },
@@ -425,42 +425,42 @@
    "desc": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
    "evidence": 912,
    "entities_touched": 912,
-   "clusters_constrained": 30349,
-   "clusters_pinned": 13182,
-   "clusters_free": 156749,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 38,
+   "clusters_constrained": 41410,
+   "clusters_pinned": 17116,
+   "clusters_free": 144420,
+   "pinned_classes": 719,
+   "forced_classes": 719,
+   "conflicts": 1307,
    "c1_gaps": 0,
-   "K": 668,
-   "K_upper": 706,
-   "K_total": 668,
-   "K_greedy": 668,
-   "delta_forced": 0,
-   "delta_K": 0,
-   "lower_bound": 668,
+   "K": 721,
+   "K_upper": 2028,
+   "K_total": 721,
+   "K_greedy": 721,
+   "delta_forced": 1,
+   "delta_K": 1,
+   "lower_bound": 721,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "MR",
    "desc": "member type via receiver domain x member_types (strict, two-pass)",
-   "evidence": 1132,
-   "entities_touched": 1132,
-   "clusters_constrained": 30360,
-   "clusters_pinned": 13190,
-   "clusters_free": 156722,
-   "pinned_classes": 666,
-   "forced_classes": 666,
-   "conflicts": 54,
+   "evidence": 5303,
+   "entities_touched": 5303,
+   "clusters_constrained": 41108,
+   "clusters_pinned": 16817,
+   "clusters_free": 144341,
+   "pinned_classes": 718,
+   "forced_classes": 721,
+   "conflicts": 1688,
    "c1_gaps": 0,
-   "K": 669,
-   "K_upper": 723,
-   "K_total": 669,
-   "K_greedy": 669,
-   "delta_forced": 0,
-   "delta_K": 1,
-   "lower_bound": 669,
+   "K": 720,
+   "K_upper": 2408,
+   "K_total": 720,
+   "K_greedy": 720,
+   "delta_forced": 2,
+   "delta_K": -1,
+   "lower_bound": 720,
    "merges": 0,
    "bad_cover": 0
   }
@@ -4979,6 +4979,139 @@
   ],
   "c7_variance_violations": [
    {
+    "call": "0x004010E0",
+    "callee": "0x004010C0",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401111",
+    "callee": "0x004010C0",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0040113B",
+    "callee": "0x004010C0",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0040115F",
+    "callee": "0x004010C0",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401262",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040126C",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004012DB",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00401300",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040131D",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004014F0",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004014F0",
+    "callee": "0x004011C0",
+    "arg_i": 1,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00401518",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00401528",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00401532",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00401567",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "BufferIOFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040138B",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "CCFileClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040138B",
+    "callee": "0x004011C0",
+    "arg_i": 1,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004013BA",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004014CC",
+    "callee": "0x004011C0",
+    "arg_i": 0,
+    "arg_class": "BufferIOFileClass",
+    "param_class": "char"
+   },
+   {
     "call": "0x00401B0F",
     "callee": "0x00401B00",
     "arg_i": 0,
@@ -5049,6 +5182,377 @@
     "param_class": "ObjectClass"
    },
    {
+    "call": "0x00401C7B",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401C3F",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401C50",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401C68",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401C9A",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CA4",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CCC",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CB1",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CB8",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioNode",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CDA",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CEF",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401CFC",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioStream",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D17",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "DListNode",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D26",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioStream",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D30",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Struct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401E70",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioStream",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D64",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401E1E",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "DListNode",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D76",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401D8E",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DA6",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DB0",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DD8",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DBD",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DC4",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioNode",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DE6",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401DFF",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401E86",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401E90",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401EB8",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "Queue",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401E9D",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "LinkedList",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401EA4",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "AudioNode",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00401EC6",
+    "callee": "0x00401C00",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00403A96",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403AB2",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403AB2",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403ABE",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403ACD",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403AE4",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403AE4",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403AF0",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403AFF",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403B16",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B16",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403B22",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B43",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B43",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403B4F",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B66",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B66",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403B72",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403B72",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403B7E",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
     "call": "0x00403B86",
     "callee": "0x00403A80",
     "arg_i": 0,
@@ -5056,10 +5560,52 @@
     "param_class": "TechnoClass"
    },
    {
+    "call": "0x00403C61",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403C61",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403CA0",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403CA0",
+    "callee": "0x00403A80",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00403CAC",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
     "call": "0x00403CB7",
     "callee": "0x00403A80",
     "arg_i": 0,
     "arg_class": "AudioQueue",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x00403CD0",
+    "callee": "0x00403A80",
+    "arg_i": 0,
+    "arg_class": "char",
     "param_class": "TechnoClass"
    },
    {
@@ -5154,6 +5700,111 @@
     "param_class": "ObjectClass"
    },
    {
+    "call": "0x004063C7",
+    "callee": "0x004063B0",
+    "arg_i": 0,
+    "arg_class": "AudioQueue",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004063E9",
+    "callee": "0x004063B0",
+    "arg_i": 0,
+    "arg_class": "AudioQueue",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040641A",
+    "callee": "0x004063B0",
+    "arg_i": 0,
+    "arg_class": "DListNode",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00406458",
+    "callee": "0x004063B0",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00406689",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "AudioQueue",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0040669D",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004066AB",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "AudioQueue",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004066C0",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "AudioPool",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00406715",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0040671C",
+    "callee": "0x00406670",
+    "arg_i": 0,
+    "arg_class": "AudioMixer",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004067E9",
+    "callee": "0x004067D0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00406839",
+    "callee": "0x00406820",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00406889",
+    "callee": "0x00406870",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00406889",
+    "callee": "0x00406870",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004068B0",
+    "callee": "0x00406870",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
     "call": "0x004077EA",
     "callee": "0x00407780",
     "arg_i": 0,
@@ -5175,10 +5826,353 @@
     "param_class": "Voice"
    },
    {
+    "call": "0x00407CF5",
+    "callee": "0x00407B60",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00407DF0",
+    "callee": "0x00407B60",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00408F26",
+    "callee": "0x00408EE0",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00408F43",
+    "callee": "0x00408EE0",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004092A0",
+    "callee": "0x004091C0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00409B0E",
+    "callee": "0x00409880",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AudioBuffer"
+   },
+   {
+    "call": "0x00409B15",
+    "callee": "0x00409880",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AudioBuffer"
+   },
+   {
+    "call": "0x00409F16",
+    "callee": "0x00409DE0",
+    "arg_i": 1,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0040B318",
+    "callee": "0x0040B300",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "Block"
+   },
+   {
+    "call": "0x0041021A",
+    "callee": "0x00410210",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AbstractClass"
+   },
+   {
+    "call": "0x00410809",
+    "callee": "0x00410800",
+    "arg_i": 0,
+    "arg_class": "AbstractClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004108EB",
+    "callee": "0x00410800",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00410A49",
+    "callee": "0x00410A40",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00410BA1",
+    "callee": "0x00410B90",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00410BE9",
+    "callee": "0x00410BE0",
+    "arg_i": 0,
+    "arg_class": "AbstractClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00410BF4",
+    "callee": "0x00410BE0",
+    "arg_i": 0,
+    "arg_class": "Checksum",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00410BFF",
+    "callee": "0x00410BE0",
+    "arg_i": 0,
+    "arg_class": "Checksum",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00410C0A",
+    "callee": "0x00410BE0",
+    "arg_i": 0,
+    "arg_class": "Checksum",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041215F",
+    "callee": "0x00412000",
+    "arg_i": 1,
+    "arg_class": "void",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004121CC",
+    "callee": "0x00412000",
+    "arg_i": 2,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004142B8",
+    "callee": "0x00414290",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "AbstractClass"
+   },
+   {
+    "call": "0x00415B3E",
+    "callee": "0x00415B10",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00415B87",
+    "callee": "0x00415B10",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00415C19",
+    "callee": "0x00415B10",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00415C3F",
+    "callee": "0x00415B10",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00415C2E",
+    "callee": "0x00415B10",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417C94",
+    "callee": "0x00417C80",
+    "arg_i": 3,
+    "arg_class": "__int16",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00417CD3",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "FootClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417D56",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "Object",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417D33",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "Object",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417D16",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "House",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417D89",
+    "callee": "0x00417CC0",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417DC8",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417DE9",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417E4E",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "Array",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417E68",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417DFC",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "House",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417ECC",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417ECC",
+    "callee": "0x00417CC0",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417ED3",
+    "callee": "0x00417CC0",
+    "arg_i": 0,
+    "arg_class": "Cell",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00417F89",
+    "callee": "0x00417F80",
+    "arg_i": 0,
+    "arg_class": "House",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00417FAA",
+    "callee": "0x00417F80",
+    "arg_i": 0,
+    "arg_class": "FootClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00417FBC",
+    "callee": "0x00417F80",
+    "arg_i": 0,
+    "arg_class": "AircraftClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00419B18",
+    "callee": "0x00419B00",
+    "arg_i": 0,
+    "arg_class": "LayerClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00419B54",
+    "callee": "0x00419B00",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00419B5B",
+    "callee": "0x00419B00",
+    "arg_i": 0,
+    "arg_class": "Object",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00419BCC",
+    "callee": "0x00419B00",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00419C2D",
+    "callee": "0x00419B00",
+    "arg_i": 0,
+    "arg_class": "Cell",
+    "param_class": "__int16"
+   },
+   {
     "call": "0x0041AA29",
     "callee": "0x0041A9E0",
     "arg_i": 0,
     "arg_class": "ProgressTimer",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x0041AA3D",
+    "callee": "0x0041A9E0",
+    "arg_i": 0,
+    "arg_class": "char",
     "param_class": "TechnoClass"
    },
    {
@@ -5187,6 +6181,13 @@
     "arg_i": 0,
     "arg_class": "ObjectClass",
     "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x0041B43E",
+    "callee": "0x0041B430",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AircraftClass"
    },
    {
     "call": "0x0041B44F",
@@ -5210,6 +6211,13 @@
     "param_class": "AircraftClass"
    },
    {
+    "call": "0x0041B534",
+    "callee": "0x0041B430",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AircraftClass"
+   },
+   {
     "call": "0x0041B5CF",
     "callee": "0x0041B5C0",
     "arg_i": 0,
@@ -5217,10 +6225,59 @@
     "param_class": "AircraftClass"
    },
    {
+    "call": "0x0041B619",
+    "callee": "0x0041B610",
+    "arg_i": 0,
+    "arg_class": "FootClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041B627",
+    "callee": "0x0041B610",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041B635",
+    "callee": "0x0041B610",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041B643",
+    "callee": "0x0041B610",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041B652",
+    "callee": "0x0041B610",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041B66E",
+    "callee": "0x0041B660",
+    "arg_i": 0,
+    "arg_class": "FootClass",
+    "param_class": "int"
+   },
+   {
     "call": "0x0041B6D3",
     "callee": "0x0041B6A0",
     "arg_i": 0,
     "arg_class": "Array",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x0041B6DE",
+    "callee": "0x0041B6A0",
+    "arg_i": 0,
+    "arg_class": "char",
     "param_class": "TechnoClass"
    },
    {
@@ -5266,6 +6323,90 @@
     "param_class": "TechnoClass"
    },
    {
+    "call": "0x0041B802",
+    "callee": "0x0041B7F0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "TechnoClass"
+   },
+   {
+    "call": "0x0041C5B0",
+    "callee": "0x0041C590",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041C645",
+    "callee": "0x0041C640",
+    "arg_i": 1,
+    "arg_class": "AbstractClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0041C678",
+    "callee": "0x0041C670",
+    "arg_i": 1,
+    "arg_class": "AbstractClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0041C91A",
+    "callee": "0x0041C8B0",
+    "arg_i": 0,
+    "arg_class": "AbstractClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0041CBBA",
+    "callee": "0x0041CB70",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "AircraftTypeClass"
+   },
+   {
+    "call": "0x0041CDC7",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041CDD5",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041CDE3",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041CDF1",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041CDFF",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041CE0D",
+    "callee": "0x0041CDB0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
     "call": "0x0041CE2B",
     "callee": "0x0041CE20",
     "arg_i": 0,
@@ -5273,11 +6414,193 @@
     "param_class": "AircraftTypeClass"
    },
    {
+    "call": "0x0041CE72",
+    "callee": "0x0041CE20",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AircraftTypeClass"
+   },
+   {
+    "call": "0x0041CE79",
+    "callee": "0x0041CE20",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AircraftTypeClass"
+   },
+   {
+    "call": "0x0041CF5A",
+    "callee": "0x0041CEF0",
+    "arg_i": 0,
+    "arg_class": "AircraftTypeClass",
+    "param_class": "char"
+   },
+   {
     "call": "0x0041D712",
     "callee": "0x0041D6F0",
     "arg_i": 0,
     "arg_class": "AbstractClass",
     "param_class": "AirstrikeClass"
+   },
+   {
+    "call": "0x0041D78F",
+    "callee": "0x0041D780",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AirstrikeClass"
+   },
+   {
+    "call": "0x0041D907",
+    "callee": "0x0041D860",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041D926",
+    "callee": "0x0041D860",
+    "arg_i": 0,
+    "arg_class": "HouseClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E359",
+    "callee": "0x0041E350",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0041E41C",
+    "callee": "0x0041E350",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0041E5CF",
+    "callee": "0x0041E5C0",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AITriggerTypeClass"
+   },
+   {
+    "call": "0x0041E5E9",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "AbstractTypeClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E5F7",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E605",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E613",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E621",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E62F",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E64F",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E65D",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E672",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E687",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E69C",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6AA",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6B8",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6C6",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6D4",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6E2",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0041E6F0",
+    "callee": "0x0041E5E0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
    },
    {
     "call": "0x0041E913",
@@ -5291,6 +6614,34 @@
     "callee": "0x0041E720",
     "arg_i": 0,
     "arg_class": "AITriggerTypeClass",
+    "param_class": "TriggerClass"
+   },
+   {
+    "call": "0x0041E932",
+    "callee": "0x0041E720",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "TriggerClass"
+   },
+   {
+    "call": "0x0041E93F",
+    "callee": "0x0041E720",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "TriggerClass"
+   },
+   {
+    "call": "0x0041E96C",
+    "callee": "0x0041E720",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "TriggerClass"
+   },
+   {
+    "call": "0x0041E979",
+    "callee": "0x0041E720",
+    "arg_i": 0,
+    "arg_class": "int",
     "param_class": "TriggerClass"
    },
    {
@@ -5329,11 +6680,844 @@
     "param_class": "TriggerClass"
    },
    {
+    "call": "0x0041F38C",
+    "callee": "0x0041F2E0",
+    "arg_i": 0,
+    "arg_class": "AnimTypeClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0041F451",
+    "callee": "0x0041F2E0",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0041F4A1",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x0041F4B8",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x0041F4E0",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x0041F4F5",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x0041F532",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x0041F55E",
+    "callee": "0x0041F490",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "INIClass"
+   },
+   {
+    "call": "0x004202A7",
+    "callee": "0x00420270",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "Block"
+   },
+   {
+    "call": "0x004202E5",
+    "callee": "0x00420270",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "Block"
+   },
+   {
     "call": "0x00420E02",
     "callee": "0x00420DE0",
     "arg_i": 0,
     "arg_class": "AbstractClass",
     "param_class": "AlphaShapeClass"
+   },
+   {
+    "call": "0x00420E4F",
+    "callee": "0x00420E40",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AlphaShapeClass"
+   },
+   {
+    "call": "0x004210B1",
+    "callee": "0x00420F40",
+    "arg_i": 0,
+    "arg_class": "MixFileClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004211B4",
+    "callee": "0x00420F40",
+    "arg_i": 0,
+    "arg_class": "MixFileClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00421EAE",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00421F86",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Int4",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00421F96",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Int4",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042203D",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AbstractClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422048",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AudioController",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422053",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AudioController",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042208B",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004221F5",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422281",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042226C",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "IUnknown",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042230B",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042231F",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004223C4",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422433",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422447",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x0042245D",
+    "callee": "0x00421EA0",
+    "arg_i": 1,
+    "arg_class": "CoordStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042248D",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004224D4",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004224E0",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004224F4",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422508",
+    "callee": "0x00421EA0",
+    "arg_i": 1,
+    "arg_class": "CoordStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042252A",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422552",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422564",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422579",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422648",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004222E0",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422689",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "MapClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004226BA",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "MapClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422702",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "TechnoClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004220C8",
+    "callee": "0x00421EA0",
+    "arg_i": 1,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004220CE",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "BuildingClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x004220D9",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "Mixer",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422109",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422109",
+    "callee": "0x00421EA0",
+    "arg_i": 1,
+    "arg_class": "CoordStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042211A",
+    "callee": "0x00421EA0",
+    "arg_i": 2,
+    "arg_class": "AudioSource",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422121",
+    "callee": "0x00421EA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "void"
+   },
+   {
+    "call": "0x00422BF6",
+    "callee": "0x00422BE0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422C40",
+    "callee": "0x00422BE0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422D14",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422E2D",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422EBD",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "ColorStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422ECC",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "ColorStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422EFA",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422F1F",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422F47",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422F5C",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422F7F",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422F97",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422FA7",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "StructTable",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422FA7",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "ColorStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422FBA",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "StructTable",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422FBA",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "ColorStruct",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422CCB",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00422CCB",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423030",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042310A",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423166",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423172",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "Coord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042320A",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042324B",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042324B",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423307",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423348",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423348",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004233A6",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042340B",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423414",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "Coord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042341B",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "Cell",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004235DC",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042361A",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042361A",
+    "callee": "0x00422CA0",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423621",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "CellClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042364F",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "MixFileClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042367E",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042376A",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004237D7",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423857",
+    "callee": "0x00422CA0",
+    "arg_i": 0,
+    "arg_class": "AnimClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00423904",
+    "callee": "0x004238D0",
+    "arg_i": 0,
+    "arg_class": "void",
+    "param_class": "AnimClass"
+   },
+   {
+    "call": "0x004253FA",
+    "callee": "0x004253B0",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "AnimClass"
+   },
+   {
+    "call": "0x00425419",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425435",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425443",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425451",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042545F",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042546D",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042547B",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425490",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042549E",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254AC",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254BC",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254CA",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254D8",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254E6",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004254F4",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425502",
+    "callee": "0x00425410",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425DCB",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425DF2",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "Cell",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425E0A",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "Cell",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425DAA",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "LayerClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425F3B",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "BuildingClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425F78",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "BuildingClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00425FD3",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "BuildingClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042602D",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "Random",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00426081",
+    "callee": "0x00425D10",
+    "arg_i": 0,
+    "arg_class": "BuildingClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00426101",
+    "callee": "0x004260F0",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
    },
    {
     "call": "0x00426309",
@@ -5350,6 +7534,34 @@
     "param_class": "AnimClass"
    },
    {
+    "call": "0x0042753A",
+    "callee": "0x00427530",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042774B",
+    "callee": "0x00427530",
+    "arg_i": 0,
+    "arg_class": "AbstractClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004277B0",
+    "callee": "0x00427530",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00427803",
+    "callee": "0x00427530",
+    "arg_i": 0,
+    "arg_class": "DynamicVector",
+    "param_class": "char"
+   },
+   {
     "call": "0x00428814",
     "callee": "0x00428800",
     "arg_i": 0,
@@ -5364,11 +7576,788 @@
     "param_class": "AnimTypeClass"
    },
    {
+    "call": "0x0042884E",
+    "callee": "0x00428800",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AnimTypeClass"
+   },
+   {
+    "call": "0x00428855",
+    "callee": "0x00428800",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AnimTypeClass"
+   },
+   {
+    "call": "0x00428910",
+    "callee": "0x00428800",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AnimTypeClass"
+   },
+   {
+    "call": "0x0042891E",
+    "callee": "0x00428800",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "AnimTypeClass"
+   },
+   {
     "call": "0x0042897F",
     "callee": "0x00428970",
     "arg_i": 0,
     "arg_class": "AbstractClass",
     "param_class": "AnimTypeClass"
+   },
+   {
+    "call": "0x004289D9",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "AbstractTypeClass",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004289E7",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004289F5",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A03",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A11",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A1F",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A2D",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A3B",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A49",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A57",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A65",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A73",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A81",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428A96",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428AA4",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428AB2",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428AC0",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428ACE",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428ADC",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428AEA",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428AF8",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B06",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B14",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B22",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B30",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B3E",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B4C",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B5A",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Checksummer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428B68",
+    "callee": "0x004289D0",
+    "arg_i": 0,
+    "arg_class": "Power",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00428BEA",
+    "callee": "0x00428B80",
+    "arg_i": 0,
+    "arg_class": "AnimTypeClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x00428FD7",
+    "callee": "0x00428F70",
+    "arg_i": 0,
+    "arg_class": "AnimTypeClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x004297B2",
+    "callee": "0x00429780",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x004298CF",
+    "callee": "0x00429830",
+    "arg_i": 0,
+    "arg_class": "ProgressTimer",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042992B",
+    "callee": "0x00429830",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "int"
+   },
+   {
+    "call": "0x00429C9E",
+    "callee": "0x00429A90",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x00429F8A",
+    "callee": "0x00429A90",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042A030",
+    "callee": "0x00429A90",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042A406",
+    "callee": "0x00429A90",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042A41E",
+    "callee": "0x00429A90",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042B0F8",
+    "callee": "0x0042B080",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042B7CB",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B4B0",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B58A",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B745",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B784",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B62E",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042B6E0",
+    "callee": "0x0042B420",
+    "arg_i": 1,
+    "arg_class": "__int16",
+    "param_class": "int"
+   },
+   {
+    "call": "0x0042BEC3",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042BF55",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042BF67",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042BF85",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "__int16",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042BFB6",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042C058",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042C06B",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042C089",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "__int16",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042C0BA",
+    "callee": "0x0042BE20",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042C2BA",
+    "callee": "0x0042C290",
+    "arg_i": 0,
+    "arg_class": "LocomotionClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C334",
+    "callee": "0x0042C290",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C356",
+    "callee": "0x0042C290",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C4C0",
+    "callee": "0x0042C290",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C5E7",
+    "callee": "0x0042C290",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C90D",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "CellClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C938",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C94B",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C967",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C985",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "MapClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C99D",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C9B7",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C9D7",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "MapClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C9F6",
+    "callee": "0x0042C900",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042C9F6",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "Cell",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042CA19",
+    "callee": "0x0042C900",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CA19",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "Cell",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042CA33",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CA80",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CA80",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "int",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042CA47",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CAC6",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CAE4",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "char",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CAFA",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "LayerClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CB0F",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "LayerClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CB58",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CB58",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "__int16",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042CC02",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "__int16",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042CC80",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "CellClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CCB3",
+    "callee": "0x0042C900",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042CCB3",
+    "callee": "0x0042C900",
+    "arg_i": 2,
+    "arg_class": "__int16",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042D17D",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "CellClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D1A1",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D1B2",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "CellCoord",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D1C9",
+    "callee": "0x0042D170",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D1E4",
+    "callee": "0x0042D170",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D289",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D29E",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "ObjectClass",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D2D1",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D2D1",
+    "callee": "0x0042D170",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D39E",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D3D8",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D30C",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D30C",
+    "callee": "0x0042D170",
+    "arg_i": 1,
+    "arg_class": "int",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042D222",
+    "callee": "0x0042D170",
+    "arg_i": 0,
+    "arg_class": "Pathfinding",
+    "param_class": "__int16"
+   },
+   {
+    "call": "0x0042DF25",
+    "callee": "0x0042DDB0",
+    "arg_i": 0,
+    "arg_class": "Pipe",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042DE91",
+    "callee": "0x0042DDB0",
+    "arg_i": 0,
+    "arg_class": "Pipe",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042DED4",
+    "callee": "0x0042DDB0",
+    "arg_i": 0,
+    "arg_class": "Pipe",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042E046",
+    "callee": "0x0042DF90",
+    "arg_i": 0,
+    "arg_class": "Straw",
+    "param_class": "char"
+   },
+   {
+    "call": "0x0042EDF2",
+    "callee": "0x0042ED60",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "Block"
+   },
+   {
+    "call": "0x0042EDE5",
+    "callee": "0x0042ED60",
+    "arg_i": 1,
+    "arg_class": "char",
+    "param_class": "Block"
    },
    {
     "call": "0x0042EE5E",
@@ -5392,3094 +8381,105 @@
     "param_class": "BaseClass"
    },
    {
-    "call": "0x00438B62",
-    "callee": "0x00438B40",
+    "call": "0x0042F021",
+    "callee": "0x0042EE30",
     "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "BombClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x00438B85",
-    "callee": "0x00438B40",
+    "call": "0x0042EFA2",
+    "callee": "0x0042EE30",
     "arg_i": 0,
-    "arg_class": "AudioController",
-    "param_class": "BombClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x0043A55F",
-    "callee": "0x0043A540",
+    "call": "0x0042EF02",
+    "callee": "0x0042EE30",
     "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "NeuronClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x00451622",
-    "callee": "0x00451400",
+    "call": "0x0042F132",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "RulesClass",
-    "param_class": "BuildingClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x004518D3",
-    "callee": "0x00451890",
+    "call": "0x0042F151",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "AnimTypeClass",
-    "param_class": "BuildingClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x00451970",
-    "callee": "0x00451890",
+    "call": "0x0042F10F",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "BuildingClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x00451AEE",
-    "callee": "0x00451890",
+    "call": "0x0042F0F0",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "BuildingClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x0046C6AB",
-    "callee": "0x0046C6A0",
+    "call": "0x0042F0C6",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "ObjectTypeClass",
-    "param_class": "BulletTypeClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x0046C6BF",
-    "callee": "0x0046C6A0",
+    "call": "0x0042F0A2",
+    "callee": "0x0042F070",
     "arg_i": 0,
-    "arg_class": "ObjectTypeClass",
-    "param_class": "BulletTypeClass"
+    "arg_class": "int",
+    "param_class": "BaseClass"
    },
    {
-    "call": "0x0046C73F",
-    "callee": "0x0046C730",
+    "call": "0x0042F18F",
+    "callee": "0x0042F180",
     "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "BulletTypeClass"
+    "arg_class": "Checksummer",
+    "param_class": "int"
    },
    {
-    "call": "0x0047274B",
-    "callee": "0x00472720",
+    "call": "0x0042F1A9",
+    "callee": "0x0042F180",
     "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "CaptureManagerClass"
+    "arg_class": "Checksummer",
+    "param_class": "int"
    },
    {
-    "call": "0x0047595D",
-    "callee": "0x00475950",
+    "call": "0x0042F1B9",
+    "callee": "0x0042F180",
     "arg_i": 0,
-    "arg_class": "ScenarioClass",
-    "param_class": "Block"
+    "arg_class": "Checksummer",
+    "param_class": "int"
    },
    {
-    "call": "0x004762D2",
-    "callee": "0x00476240",
+    "call": "0x0042F1C9",
+    "callee": "0x0042F180",
     "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "Block"
+    "arg_class": "Checksummer",
+    "param_class": "int"
    },
    {
-    "call": "0x0047738F",
-    "callee": "0x004770E0",
+    "call": "0x004314E1",
+    "callee": "0x00431450",
     "arg_i": 0,
-    "arg_class": "BuildingTypeClass",
-    "param_class": "DynamicVectorClass"
-   },
-   {
-    "call": "0x0047710A",
-    "callee": "0x004770E0",
-    "arg_i": 0,
-    "arg_class": "INIClass",
-    "param_class": "DynamicVectorClass"
-   },
-   {
-    "call": "0x0047906E",
-    "callee": "0x00479050",
-    "arg_i": 0,
-    "arg_class": "TabClass",
-    "param_class": "CCToolTip"
-   },
-   {
-    "call": "0x00479058",
-    "callee": "0x00479050",
-    "arg_i": 0,
-    "arg_class": "MouseClass",
-    "param_class": "CCToolTip"
-   },
-   {
-    "call": "0x004A0654",
-    "callee": "0x004A0630",
-    "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "ConnectionPointClass"
-   },
-   {
-    "call": "0x004A2AD2",
-    "callee": "0x004A2AB0",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "CStreamClass"
-   },
-   {
-    "call": "0x004A2D8D",
-    "callee": "0x004A2CD0",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "CStreamClass"
-   },
-   {
-    "call": "0x004A2DB1",
-    "callee": "0x004A2CD0",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "CStreamClass"
-   },
-   {
-    "call": "0x004A7BB2",
-    "callee": "0x004A7B90",
-    "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "DiskLaserClass"
-   },
-   {
-    "call": "0x004A89EE",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "Stream",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A89F4",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "Stream",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8A3A",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "BSurface",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8A8B",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "StreamObj",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8A91",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "StreamObj",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8AD7",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "BSurface",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8B75",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "HashTable",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8BB8",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "MessageListClass",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004A8BC9",
-    "callee": "0x004A8960",
-    "arg_i": 0,
-    "arg_class": "TacticalClass",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004AE6FE",
-    "callee": "0x004AE6F0",
-    "arg_i": 0,
-    "arg_class": "LayerClass",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004AE72E",
-    "callee": "0x004AE720",
-    "arg_i": 0,
-    "arg_class": "LayerClass",
-    "param_class": "DisplayClass"
-   },
-   {
-    "call": "0x004AF645",
-    "callee": "0x004AF610",
-    "arg_i": 0,
-    "arg_class": "StreamClass",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004AF6CD",
-    "callee": "0x004AF610",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004AF6B7",
-    "callee": "0x004AF610",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004AF732",
-    "callee": "0x004AF720",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004AF812",
-    "callee": "0x004AF800",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004AF8D4",
-    "callee": "0x004AF800",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004AF83D",
-    "callee": "0x004AF800",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004AF868",
-    "callee": "0x004AF800",
-    "arg_i": 0,
-    "arg_class": "Function",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004AFDD2",
-    "callee": "0x004AFD40",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B02D7",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B02E4",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Transform",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B02ED",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B03C9",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Transform",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B03B0",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004AFFF2",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004AFFFE",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B0197",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B01A4",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Transform",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B01AD",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B020D",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Timeout",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B025B",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B0274",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Transform",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B03ED",
-    "callee": "0x004AFF60",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B04A6",
-    "callee": "0x004B0410",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0A44",
-    "callee": "0x004B0500",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0A39",
-    "callee": "0x004B0500",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B06C3",
-    "callee": "0x004B0500",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0756",
-    "callee": "0x004B0500",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0823",
-    "callee": "0x004B0500",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0D14",
-    "callee": "0x004B0C40",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B0D1B",
-    "callee": "0x004B0C40",
-    "arg_i": 0,
-    "arg_class": "CrateClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B4885",
-    "callee": "0x004B4880",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B49E1",
-    "callee": "0x004B4920",
-    "arg_i": 0,
-    "arg_class": "JumpjetLocomotion",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B4CB5",
-    "callee": "0x004B4CB0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B4CC5",
-    "callee": "0x004B4CC0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DriveLocomotionClass"
-   },
-   {
-    "call": "0x004B5EED",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimTypeClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5F0F",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5F41",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5F48",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "Object",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5F91",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6028",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5F57",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "Object",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5DD8",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5E16",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5E47",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B5D92",
-    "callee": "0x004B5B70",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6102",
-    "callee": "0x004B6040",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B61D1",
-    "callee": "0x004B6040",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B62D1",
-    "callee": "0x004B62C0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B62FA",
-    "callee": "0x004B62C0",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6325",
-    "callee": "0x004B62C0",
-    "arg_i": 0,
-    "arg_class": "Function",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6392",
-    "callee": "0x004B62C0",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6482",
-    "callee": "0x004B6470",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B6515",
-    "callee": "0x004B64E0",
-    "arg_i": 0,
-    "arg_class": "StreamClass",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B659D",
-    "callee": "0x004B64E0",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B6587",
-    "callee": "0x004B64E0",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004B66A5",
-    "callee": "0x004B66A0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B66B5",
-    "callee": "0x004B66B0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "DropPodLocomotionClass"
-   },
-   {
-    "call": "0x004B9AB3",
-    "callee": "0x004B9890",
-    "arg_i": 1,
-    "arg_class": "Rect",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x004BBDD3",
-    "callee": "0x004BBCA0",
-    "arg_i": 0,
-    "arg_class": "Vector",
-    "param_class": "DSurface"
-   },
-   {
-    "call": "0x004BBDE0",
-    "callee": "0x004BBCA0",
-    "arg_i": 0,
-    "arg_class": "Vector",
-    "param_class": "DSurface"
-   },
-   {
-    "call": "0x004C1A9F",
-    "callee": "0x004C1A90",
-    "arg_i": 0,
-    "arg_class": "XSurface",
-    "param_class": "DSurface"
-   },
-   {
-    "call": "0x004C4F29",
-    "callee": "0x004C4EF0",
-    "arg_i": 0,
-    "arg_class": "Factory",
-    "param_class": "Buffer"
-   },
-   {
-    "call": "0x004C4F4C",
-    "callee": "0x004C4EF0",
-    "arg_i": 0,
-    "arg_class": "BuildingTypeClass",
-    "param_class": "Buffer"
-   },
-   {
-    "call": "0x004C4F6F",
-    "callee": "0x004C4EF0",
-    "arg_i": 0,
-    "arg_class": "TypeClass",
-    "param_class": "Buffer"
-   },
-   {
-    "call": "0x004C5A4F",
-    "callee": "0x004C5A30",
-    "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "EMPulseClass"
-   },
-   {
-    "call": "0x004CA299",
-    "callee": "0x004CA270",
-    "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "FactoryClass"
-   },
-   {
-    "call": "0x004CA2B2",
-    "callee": "0x004CA270",
-    "arg_i": 0,
-    "arg_class": "TechnoTypeVector",
-    "param_class": "FactoryClass"
-   },
-   {
-    "call": "0x004CCA2D",
-    "callee": "0x004CCA20",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004CCBB8",
-    "callee": "0x004CCB40",
-    "arg_i": 0,
-    "arg_class": "JumpjetLocomotionClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCBBF",
-    "callee": "0x004CCB40",
-    "arg_i": 0,
-    "arg_class": "DamageArea",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCC5A",
-    "callee": "0x004CCB40",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCC61",
-    "callee": "0x004CCB40",
-    "arg_i": 0,
-    "arg_class": "JumpjetLocomotionClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCD7E",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCDDB",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCE82",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCED4",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCF29",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "ComPtr",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCF45",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "JumpjetLocomotionClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCF7F",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CCF72",
-    "callee": "0x004CCC80",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD06B",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "JumpjetLocomotionClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD042",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "LayerClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD0EA",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD10F",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD117",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD16F",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "Type",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD1D7",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD208",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CD22F",
-    "callee": "0x004CCFD0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CF619",
-    "callee": "0x004CF610",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004CF638",
-    "callee": "0x004CF610",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004CF65F",
-    "callee": "0x004CF610",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "JumpjetLocomotionClass"
-   },
-   {
-    "call": "0x004CF876",
-    "callee": "0x004CF830",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CF860",
-    "callee": "0x004CF830",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFB31",
-    "callee": "0x004CFB00",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFB7D",
-    "callee": "0x004CFB00",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFBD5",
-    "callee": "0x004CFB00",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFD43",
-    "callee": "0x004CFD20",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFD5B",
-    "callee": "0x004CFD20",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFD7B",
-    "callee": "0x004CFD20",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFD95",
-    "callee": "0x004CFD90",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFEA2",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "ObjectVector",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFEC3",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "ObjectVector",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFEEF",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFF32",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004D0069",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "ObjectVector",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004D00AB",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "ObjectVector",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004CFFF1",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004D0109",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004D00E2",
-    "callee": "0x004CFE80",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FlyLocomotionClass"
-   },
-   {
-    "call": "0x004D253B",
-    "callee": "0x004D2510",
-    "arg_i": 0,
-    "arg_class": "AbstractClass",
-    "param_class": "FoggedObjectClass"
-   },
-   {
-    "call": "0x004D2547",
-    "callee": "0x004D2510",
-    "arg_i": 0,
-    "arg_class": "FoggedObject",
-    "param_class": "FoggedObjectClass"
-   },
-   {
-    "call": "0x004D4BF1",
-    "callee": "0x004D4B20",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4BF8",
-    "callee": "0x004D4B20",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4C24",
-    "callee": "0x004D4B20",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4C73",
-    "callee": "0x004D4B20",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4C97",
-    "callee": "0x004D4B20",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4D63",
-    "callee": "0x004D4CB0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4D6A",
-    "callee": "0x004D4CB0",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4D88",
-    "callee": "0x004D4CB0",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4DAC",
-    "callee": "0x004D4CB0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4DFF",
-    "callee": "0x004D4DC0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4E82",
-    "callee": "0x004D4DC0",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D4EA6",
-    "callee": "0x004D4DC0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D551B",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D5547",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "FactoryClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D555A",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D54F4",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D5584",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D55A9",
-    "callee": "0x004D5350",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6B08",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6B74",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6B88",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "DynamicVectorClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6B29",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6BBF",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6CCB",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "MapClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6CE1",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Type",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6D0D",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6D15",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6BE0",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6BF3",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6BC6",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6D5B",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6D73",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6DB1",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6DB9",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6DE0",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6EAA",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6FBF",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D6FC6",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D7027",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "MissionClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D7059",
-    "callee": "0x004D6AA0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004D9CB5",
-    "callee": "0x004D9C60",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "ObjectClass"
-   },
-   {
-    "call": "0x004DA539",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA5E6",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA667",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Type",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA77B",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "MapClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA74E",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "MapClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA6BB",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DA801",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DAB2B",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Mixer",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DAA91",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "AudioController",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DAACB",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DACCC",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Mixer",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DAD01",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Mixer",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DAD1F",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DADB7",
-    "callee": "0x004DA530",
-    "arg_i": 0,
-    "arg_class": "Mixer",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DB6C7",
-    "callee": "0x004DB690",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "ObjectClass"
-   },
-   {
-    "call": "0x004DB717",
-    "callee": "0x004DB690",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "ObjectClass"
-   },
-   {
-    "call": "0x004DB73D",
-    "callee": "0x004DB690",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "ObjectClass"
-   },
-   {
-    "call": "0x004DB6ED",
-    "callee": "0x004DB690",
-    "arg_i": 0,
-    "arg_class": "IStream",
-    "param_class": "ObjectClass"
-   },
-   {
-    "call": "0x004DFCFA",
-    "callee": "0x004DFCB0",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DFD89",
-    "callee": "0x004DFCB0",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DFE66",
-    "callee": "0x004DFE00",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004DFE54",
-    "callee": "0x004DFE00",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "FootClass"
-   },
-   {
-    "call": "0x004F6C2F",
-    "callee": "0x004F6BC0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F6CC4",
-    "callee": "0x004F6BC0",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F86B1",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F86C0",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8888",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8908",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F889A",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8861",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F895E",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8965",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "Object",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8A78",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "TeamTypeVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8B2B",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8BA0",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "VoxClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8D14",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "VoxClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8D5C",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "MessageListClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8CB4",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8CD4",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8CF5",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8EE4",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8EF7",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8F0A",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8F2D",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVectorClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8F3A",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVectorClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8F47",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVectorClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8F6E",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "DynamicVector",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F8FB6",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F9017",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F910B",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "SuperWeaponTypeClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F9156",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "SuperWeaponTypeClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F92F6",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "SuperWeapon",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004F92FD",
-    "callee": "0x004F8440",
-    "arg_i": 0,
-    "arg_class": "SuperWeapon",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA175",
-    "callee": "0x004F9F90",
-    "arg_i": 0,
-    "arg_class": "MessageListClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA181",
-    "callee": "0x004F9F90",
-    "arg_i": 0,
-    "arg_class": "GScreenClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA1D5",
-    "callee": "0x004F9F90",
-    "arg_i": 0,
-    "arg_class": "VoxClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA41C",
-    "callee": "0x004FA350",
-    "arg_i": 0,
-    "arg_class": "Sidebar",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA4F5",
-    "callee": "0x004FA350",
-    "arg_i": 0,
-    "arg_class": "TeamTypeClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x004FA6AA",
-    "callee": "0x004FA350",
-    "arg_i": 0,
-    "arg_class": "Sidebar",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x0050147B",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x005014AA",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x005014E1",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00501509",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x005014ED",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x005014F9",
-    "callee": "0x00501400",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x0050251F",
-    "callee": "0x005024F0",
-    "arg_i": 0,
-    "arg_class": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00502CFF",
-    "callee": "0x00502A80",
-    "arg_i": 0,
-    "arg_class": "RefCount",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x00502BE3",
-    "callee": "0x00502A80",
-    "arg_i": 0,
-    "arg_class": "RefCount",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x00502B0B",
-    "callee": "0x00502A80",
-    "arg_i": 0,
-    "arg_class": "RefCount",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x00502B52",
-    "callee": "0x00502A80",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x00502C7A",
-    "callee": "0x00502A80",
-    "arg_i": 0,
-    "arg_class": "RefCount",
-    "param_class": "BuildingClass"
-   },
-   {
-    "call": "0x005031FD",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503209",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503215",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503221",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x0050322D",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503239",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503245",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503251",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x0050325D",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503269",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503275",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x00503281",
-    "callee": "0x00503040",
-    "arg_i": 0,
-    "arg_class": "CounterClass",
-    "param_class": "HouseClass"
-   },
-   {
-    "call": "0x005122F7",
-    "callee": "0x00512290",
-    "arg_i": 0,
-    "arg_class": "InfantryTypeVector",
-    "param_class": "HouseTypeClass"
-   },
-   {
-    "call": "0x00512337",
-    "callee": "0x00512290",
-    "arg_i": 0,
-    "arg_class": "InfantryTypeVector",
-    "param_class": "HouseTypeClass"
-   },
-   {
-    "call": "0x00512357",
-    "callee": "0x00512290",
-    "arg_i": 0,
-    "arg_class": "UnitTypeVector",
-    "param_class": "HouseTypeClass"
-   },
-   {
-    "call": "0x00512392",
-    "callee": "0x00512290",
-    "arg_i": 0,
-    "arg_class": "DynamicVectorClass",
-    "param_class": "HouseTypeClass"
-   },
-   {
-    "call": "0x00513CC0",
-    "callee": "0x00513CB0",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00513CDF",
-    "callee": "0x00513CB0",
-    "arg_i": 0,
-    "arg_class": "FrameSnapshot",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x005140AF",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x005140B8",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x0051423B",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x00514245",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "Transform",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x0051408D",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "LocomotionClass",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x00513FBB",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x00513FE4",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "Matrix3x4",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x00513FF0",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x00514048",
-    "callee": "0x00513F40",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "TechnoClass"
-   },
-   {
-    "call": "0x005142EB",
-    "callee": "0x005142A0",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514344",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x005143A1",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Int64",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514442",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514459",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "CellStruct",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x0051448C",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514499",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x005143EE",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514535",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514589",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Team",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514636",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x005147FE",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514A16",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514901",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514910",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514AC3",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "AnimClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514ACB",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "BuildingLightClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514AF3",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "ProgressTimer",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514B7F",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514B86",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514BB2",
-    "callee": "0x00514310",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514E1B",
-    "callee": "0x00514D90",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514F4E",
-    "callee": "0x00514D90",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514F5B",
-    "callee": "0x00514D90",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514E89",
-    "callee": "0x00514D90",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00514E92",
-    "callee": "0x00514D90",
-    "arg_i": 0,
-    "arg_class": "MovementAI",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516C25",
-    "callee": "0x00516BF0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516C3C",
-    "callee": "0x00516BF0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516C5F",
-    "callee": "0x00516BF0",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516C76",
-    "callee": "0x00516C70",
-    "arg_i": 0,
-    "arg_class": "IUnknown",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516CB9",
-    "callee": "0x00516CA0",
-    "arg_i": 0,
-    "arg_class": "Team",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516CCF",
-    "callee": "0x00516CA0",
-    "arg_i": 0,
-    "arg_class": "Team",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516CAB",
-    "callee": "0x00516CA0",
-    "arg_i": 0,
-    "arg_class": "Team",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516D14",
-    "callee": "0x00516CA0",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516D1B",
-    "callee": "0x00516CA0",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516E93",
-    "callee": "0x00516E10",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516FE8",
-    "callee": "0x00516FC0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x00516FFF",
-    "callee": "0x00516FC0",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x005170DB",
-    "callee": "0x005170B0",
-    "arg_i": 0,
-    "arg_class": "FrameSnapshot",
-    "param_class": "HoverLocomotionClass"
-   },
-   {
-    "call": "0x0051965F",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A9FC",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519725",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051972D",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005196E5",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005196FA",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519700",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005196D4",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005196C8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519679",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519753",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051978B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005197D2",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005197E5",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519794",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005197AF",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051983A",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051984D",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Random",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051980C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051986E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051987B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "HouseClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519894",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005198B8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005198E0",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005198E7",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051990D",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051992F",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519916",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A02E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519740",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005199CD",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x005199DE",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A0E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A19",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A2C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A48",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A64",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519A55",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519B07",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519AE9",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519B1B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519B53",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519BA8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519BC9",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "VoxClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519B96",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "House",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519C22",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519C53",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519C64",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519C95",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "CellCoord",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519CEA",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519CF6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Terrain",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519D06",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519D12",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Terrain",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519D3C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519B70",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519FF0",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519FA6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519D88",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519DB8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519DD8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519E10",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519E4B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519E9F",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519F44",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519F6C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "ObjectClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519F5D",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519F7E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519F9A",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A025",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519EF2",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519D4E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Object",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A00B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519FC1",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519FD6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "BuildingClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x00519FDC",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A08C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A0B1",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A0CE",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A0B8",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051994C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051995B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051996A",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A0EF",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A111",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A119",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "PlacementList",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A128",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A130",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A13B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A143",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A159",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A161",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "PlacementList",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A177",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A1B6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Coord",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A1E0",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "PlacementList",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A1ED",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A1F6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A205",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "PlacementList",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A26A",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TeamClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A283",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A2B6",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A2BE",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A2DA",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "CaptureManagerClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A2F9",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A31A",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A322",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A366",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A391",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "FootClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A28B",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "Cell",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A29E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A3BA",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A3FF",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A414",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A41C",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "TechnoClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A438",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "CaptureManagerClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A441",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A45E",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "LogicClass",
-    "param_class": "CellClass"
-   },
-   {
-    "call": "0x0051A478",
-    "callee": "0x00519630",
-    "arg_i": 0,
-    "arg_class": "InfantryClass",
-    "param_class": "CellClass"
+    "arg_class": "void",
+    "param_class": "wchar_t"
    }
   ],
-  "c7_variance_violation_count": 1624,
+  "c7_variance_violation_count": 10440,
   "equality_channels": {
    "callarg_direct": {
     "unions": 80,

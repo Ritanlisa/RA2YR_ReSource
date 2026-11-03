@@ -188,6 +188,20 @@ def build_universe(use_evidence=True, prune_dead=False):
               % (_restored, _added, len(_ver), len(_rest)), flush=True)
 
     names = list(db.keys())
+    # ---- 类型宇宙扩展（用户裁决：类+指针+数组+基元共同张成解空间）----
+    _n_cls_only = len(names)
+    try:
+        _type_extra = [t for t in (jload("anchors/type_universe.json", {}) or {}).get("types") or []
+                       if t not in db]
+        for _t in _type_extra:
+            db[_t] = {}
+        if _type_extra:
+            names = names + _type_extra
+            print("[universe] +type vocabulary: %d (primitives/arrays/pointers join the space)"
+                  % len(_type_extra), flush=True)
+    except Exception:
+        pass
+    _CLASSMASK = (1 << _n_cls_only) - 1
     idx = {nm: i for i, nm in enumerate(names)}
     n = len(names)
 
@@ -467,6 +481,7 @@ def build_universe(use_evidence=True, prune_dead=False):
 
     return {
         "db": db, "names": names, "idx": idx, "resolve": resolve, "n": n,
+        "classmask": _CLASSMASK,
         "members": members, "has_layout": has_layout, "size": size,
         "eff_size": eff_size, "n_evidence": n_ev,
         "anc": anc, "desc": desc, "vtables": vtables, "slot_count": slot_count,
@@ -898,6 +913,7 @@ def main():
     U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
     FULL = (1 << n) - 1
+    _CLASSMASK = U.get("classmask") or FULL
     print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "
           "evidence_classes=%d desc_edges=%d"
           % (n, U["n_layout"], U["n_auth"], sum(1 for s in U["size"] if s is not None),
@@ -1576,6 +1592,8 @@ def main():
         _proven_mask = 0
         for _i in proven_keep:
             _proven_mask |= (1 << _i)
+        # 类型词汇成员永生：基元/数组/指针类型不是幻影类（无布局无证明是正常的）
+        _proven_mask |= ((1 << n) - 1) ^ _CLASSMASK
     _n_phantom = n - (_proven_mask.bit_count() if proven_keep is not None else n)
     print("[universe] proven=%d dropped_phantom=%d (no_layout_no_proof)"
           % (n - _n_phantom, _n_phantom), flush=True)
@@ -3679,6 +3697,17 @@ def main():
                         hit = True
                 masks[f] = _pfm(mf) if hit else FULL   # proven universe：逐族剔除
                 m &= masks[f]
+            # 类型种类纪律：接收者簇（T:/R:/GS:）必须是类域——基元/数组/指针类型
+            # 经等值链流入接收者时按类掩码滤除（this 不可能是 int）。
+            # 基元-only 的族证据 = 实参误分类噪声 → 弃用该族证据（置 FULL），不清空。
+            if _root_pfx in ("T:", "R:", "GS"):
+                for _f2 in masks:
+                    if masks[_f2] & _CLASSMASK:
+                        masks[_f2] &= _CLASSMASK
+                    else:
+                        masks[_f2] = FULL
+                if m & _CLASSMASK:
+                    m &= _CLASSMASK
             exs = {}
             for ci, ss in cl["exact"].items():
                 kept = []
