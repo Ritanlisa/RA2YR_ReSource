@@ -109,6 +109,91 @@
   "exact": {}
  },
  {
+  "cluster": "M:62E070:this:0xBC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "C3",
+   "MT"
+  ],
+  "family_sizes": {
+   "C3": 1399,
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:62E070:this:0xBC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C3": [
+    "AddTeamCommandClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "SelectTeamCommandClass",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$DynamicVectorClass@PAUControlNode@@"
+   ],
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVParticleClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D3590:this:0x5AC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4D3590:this:0x5AC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVAbstractClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D3590:this:0x588",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4D3590:this:0x588"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVAbstractClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:4F5190:this:0x28",
   "status": "inconsistent",
   "families": [
@@ -196,6 +281,351 @@
    "C11": [],
    "MT": [
     "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0xB0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0xB0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x98",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x98"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x80",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x80"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x68",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x68"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x50",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x50"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVBuildingClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F7140:this:0x38",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:4F7140:this:0x38"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@PAVTagClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x4D8",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x4D8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x4BC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x4BC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x4A0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x4A0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x484",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x484"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x468",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x468"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x44C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x44C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x430",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x430"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x414",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x414"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:711AE0:this:0x330",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "MT"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "MT": 1
+  },
+  "ents": [
+   "M:711AE0:this:0x330"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "MT": [
+    "?$VectorClass@H"
    ]
   },
   "exact": {}

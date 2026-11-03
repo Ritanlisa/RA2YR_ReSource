@@ -56,15 +56,15 @@
     "dropped": "BuildingLoadQueue"
    }
   ],
-  "K": 577,
-  "K_upper": 577,
-  "lower_bound": 577,
-  "constrained_clusters": 22733,
-  "free_clusters": 155577,
+  "K": 663,
+  "K_upper": 663,
+  "lower_bound": 663,
+  "constrained_clusters": 23109,
+  "free_clusters": 155515,
   "conflicts": 0,
   "c1_gaps": 0,
-  "universe": 1437,
-  "entities": 181293
+  "universe": 1524,
+  "entities": 181608
  },
  "family_table": [
   {
@@ -72,20 +72,20 @@
    "desc": "member access (offset, obs_w<=member_w)",
    "evidence": 75406,
    "entities_touched": 11345,
-   "clusters_constrained": 8308,
-   "clusters_pinned": 8308,
-   "clusters_free": 170002,
-   "pinned_classes": 519,
-   "forced_classes": 519,
+   "clusters_constrained": 8422,
+   "clusters_pinned": 8422,
+   "clusters_free": 170202,
+   "pinned_classes": 602,
+   "forced_classes": 602,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 519,
-   "K_upper": 519,
-   "K_total": 519,
-   "K_greedy": 519,
-   "delta_forced": 519,
-   "delta_K": 519,
-   "lower_bound": 519,
+   "K": 602,
+   "K_upper": 602,
+   "K_total": 602,
+   "K_greedy": 602,
+   "delta_forced": 602,
+   "delta_K": 602,
+   "lower_bound": 602,
    "merges": 0,
    "bad_cover": 0
   },
@@ -94,20 +94,20 @@
    "desc": "this passing (arg class ⊑ callee this-class)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 8308,
-   "clusters_pinned": 8308,
-   "clusters_free": 170002,
-   "pinned_classes": 519,
-   "forced_classes": 519,
+   "clusters_constrained": 8422,
+   "clusters_pinned": 8422,
+   "clusters_free": 170202,
+   "pinned_classes": 602,
+   "forced_classes": 602,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 519,
-   "K_upper": 519,
-   "K_total": 519,
-   "K_greedy": 519,
+   "K": 602,
+   "K_upper": 602,
+   "K_total": 602,
+   "K_greedy": 602,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 519,
+   "lower_bound": 602,
    "merges": 0,
    "bad_cover": 0
   },
@@ -116,20 +116,20 @@
    "desc": "vtable slot membership",
    "evidence": 14110,
    "entities_touched": 2649,
-   "clusters_constrained": 9791,
-   "clusters_pinned": 8310,
-   "clusters_free": 168519,
-   "pinned_classes": 519,
-   "forced_classes": 519,
+   "clusters_constrained": 9905,
+   "clusters_pinned": 8424,
+   "clusters_free": 168719,
+   "pinned_classes": 602,
+   "forced_classes": 602,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 519,
-   "K_upper": 519,
-   "K_total": 519,
-   "K_greedy": 519,
+   "K": 602,
+   "K_upper": 602,
+   "K_total": 602,
+   "K_greedy": 602,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 519,
+   "lower_bound": 602,
    "merges": 0,
    "bad_cover": 0
   },
@@ -138,20 +138,20 @@
    "desc": "ctor/dtor vtable install @this+0 (EXACT)",
    "evidence": 1285,
    "entities_touched": 1285,
-   "clusters_constrained": 11033,
-   "clusters_pinned": 9575,
-   "clusters_free": 167277,
-   "pinned_classes": 540,
-   "forced_classes": 540,
+   "clusters_constrained": 11146,
+   "clusters_pinned": 9688,
+   "clusters_free": 167478,
+   "pinned_classes": 626,
+   "forced_classes": 626,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 540,
-   "K_upper": 540,
-   "K_total": 540,
-   "K_greedy": 540,
-   "delta_forced": 21,
-   "delta_K": 21,
-   "lower_bound": 540,
+   "K": 626,
+   "K_upper": 626,
+   "K_total": 626,
+   "K_greedy": 626,
+   "delta_forced": 24,
+   "delta_K": 24,
+   "lower_bound": 626,
    "merges": 0,
    "bad_cover": 0
   },
@@ -160,20 +160,20 @@
    "desc": "operator new size (EXACT)",
    "evidence": 890,
    "entities_touched": 839,
-   "clusters_constrained": 11824,
-   "clusters_pinned": 9716,
-   "clusters_free": 166486,
-   "pinned_classes": 553,
-   "forced_classes": 553,
+   "clusters_constrained": 11937,
+   "clusters_pinned": 9829,
+   "clusters_free": 166687,
+   "pinned_classes": 639,
+   "forced_classes": 639,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 555,
-   "K_upper": 555,
-   "K_total": 555,
-   "K_greedy": 555,
+   "K": 641,
+   "K_upper": 641,
+   "K_total": 641,
+   "K_greedy": 641,
    "delta_forced": 13,
    "delta_K": 15,
-   "lower_bound": 555,
+   "lower_bound": 641,
    "merges": 0,
    "bad_cover": 0
   },
@@ -182,20 +182,20 @@
    "desc": "vtable identity slot count (EXACT)",
    "evidence": 1377,
    "entities_touched": 1377,
-   "clusters_constrained": 11897,
-   "clusters_pinned": 9716,
-   "clusters_free": 166413,
-   "pinned_classes": 553,
-   "forced_classes": 553,
+   "clusters_constrained": 12010,
+   "clusters_pinned": 9829,
+   "clusters_free": 166614,
+   "pinned_classes": 639,
+   "forced_classes": 639,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 555,
-   "K_upper": 555,
-   "K_total": 555,
-   "K_greedy": 555,
+   "K": 641,
+   "K_upper": 641,
+   "K_total": 641,
+   "K_greedy": 641,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 555,
+   "lower_bound": 641,
    "merges": 0,
    "bad_cover": 0
   },
@@ -204,42 +204,42 @@
    "desc": "param/return variance",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 11969,
-   "clusters_pinned": 9716,
-   "clusters_free": 166341,
-   "pinned_classes": 553,
-   "forced_classes": 553,
+   "clusters_constrained": 12082,
+   "clusters_pinned": 9829,
+   "clusters_free": 166542,
+   "pinned_classes": 639,
+   "forced_classes": 639,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 555,
-   "K_upper": 555,
-   "K_total": 555,
-   "K_greedy": 555,
+   "K": 641,
+   "K_upper": 641,
+   "K_total": 641,
+   "K_greedy": 641,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 555,
+   "lower_bound": 641,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C8",
    "desc": "global object identity",
-   "evidence": 158,
-   "entities_touched": 158,
-   "clusters_constrained": 12118,
-   "clusters_pinned": 9870,
-   "clusters_free": 166192,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "evidence": 147,
+   "entities_touched": 147,
+   "clusters_constrained": 12220,
+   "clusters_pinned": 9972,
+   "clusters_free": 166404,
+   "pinned_classes": 648,
+   "forced_classes": 648,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 650,
+   "K_upper": 650,
+   "K_total": 650,
+   "K_greedy": 650,
    "delta_forced": 9,
    "delta_K": 9,
-   "lower_bound": 564,
+   "lower_bound": 650,
    "merges": 0,
    "bad_cover": 0
   },
@@ -247,65 +247,65 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6385,
-   "entities_touched": 6385,
-   "clusters_constrained": 12562,
-   "clusters_pinned": 9870,
-   "clusters_free": 165748,
-   "pinned_classes": 562,
-   "forced_classes": 562,
+   "entities_touched": 6373,
+   "clusters_constrained": 12653,
+   "clusters_pinned": 9972,
+   "clusters_free": 165971,
+   "pinned_classes": 648,
+   "forced_classes": 648,
    "conflicts": 0,
    "c1_gaps": 0,
-   "K": 564,
-   "K_upper": 564,
-   "K_total": 564,
-   "K_greedy": 564,
+   "K": 650,
+   "K_upper": 650,
+   "K_total": 650,
+   "K_greedy": 650,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 564,
+   "lower_bound": 650,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 9936,
-   "entities_touched": 9936,
-   "clusters_constrained": 19031,
-   "clusters_pinned": 10524,
-   "clusters_free": 159278,
-   "pinned_classes": 568,
-   "forced_classes": 568,
+   "evidence": 9850,
+   "entities_touched": 9850,
+   "clusters_constrained": 19154,
+   "clusters_pinned": 10522,
+   "clusters_free": 159469,
+   "pinned_classes": 654,
+   "forced_classes": 654,
    "conflicts": 1,
    "c1_gaps": 0,
-   "K": 571,
-   "K_upper": 572,
-   "K_total": 571,
-   "K_greedy": 571,
+   "K": 657,
+   "K_upper": 658,
+   "K_total": 657,
+   "K_greedy": 657,
    "delta_forced": 6,
    "delta_K": 7,
-   "lower_bound": 571,
+   "lower_bound": 657,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
-   "evidence": 984,
-   "entities_touched": 8356,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "evidence": 1031,
+   "entities_touched": 8709,
+   "clusters_constrained": 23098,
+   "clusters_pinned": 11424,
+   "clusters_free": 155501,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 5,
    "delta_K": 6,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
@@ -314,20 +314,20 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5724,
    "entities_touched": 5724,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
@@ -336,20 +336,20 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
@@ -358,20 +358,20 @@
    "desc": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
@@ -380,20 +380,20 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
@@ -402,42 +402,42 @@
    "desc": "pointer-step size == class sizeof (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   },
   {
    "family": "MT",
    "desc": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
-   "evidence": 589,
-   "entities_touched": 589,
-   "clusters_constrained": 22733,
-   "clusters_pinned": 11262,
-   "clusters_free": 155570,
-   "pinned_classes": 573,
-   "forced_classes": 573,
-   "conflicts": 7,
+   "evidence": 912,
+   "entities_touched": 912,
+   "clusters_constrained": 23109,
+   "clusters_pinned": 11430,
+   "clusters_free": 155490,
+   "pinned_classes": 659,
+   "forced_classes": 659,
+   "conflicts": 25,
    "c1_gaps": 0,
-   "K": 577,
-   "K_upper": 584,
-   "K_total": 577,
-   "K_greedy": 577,
+   "K": 663,
+   "K_upper": 688,
+   "K_total": 663,
+   "K_greedy": 663,
    "delta_forced": 0,
    "delta_K": 0,
-   "lower_bound": 577,
+   "lower_bound": 663,
    "merges": 0,
    "bad_cover": 0
   }
@@ -1777,40 +1777,44 @@
    {
     "func": "0x0042F670",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$DynamicVectorClass@VCell@@",
+     "?$VectorClass@VCell@@"
     ],
     "committed": [
+     "?$VectorClass@VCell@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x004777B0",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@H",
+     "?$VectorClass@H"
     ],
     "committed": [
+     "?$VectorClass@H",
      "VectorClass"
     ]
    },
    {
     "func": "0x004779E0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$DynamicVectorClass@H",
+     "?$VectorClass@H"
     ],
     "committed": [
+     "?$VectorClass@H",
      "VectorClass"
     ]
    },
    {
     "func": "0x00477DB0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$DynamicVectorClass@H",
+     "?$VectorClass@H"
     ],
     "committed": [
+     "?$VectorClass@H",
      "VectorClass"
     ]
    },
@@ -2224,10 +2228,11 @@
    {
     "func": "0x0049ECD0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PAV?$DynamicVectorClass@PAD@@",
      "VectorClass"
     ]
    },
@@ -2274,80 +2279,88 @@
    {
     "func": "0x00512DC0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVInfantryTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVInfantryTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00513190",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVUnitTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVUnitTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00513560",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVAircraftTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVAircraftTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00513740",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@PBVUnitTypeClass@@",
+     "?$VectorClass@PBVUnitTypeClass@@"
     ],
     "committed": [
+     "?$VectorClass@PBVUnitTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x005137D0",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@PBVAircraftTypeClass@@",
+     "?$VectorClass@PBVAircraftTypeClass@@"
     ],
     "committed": [
+     "?$VectorClass@PBVAircraftTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00513860",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVInfantryTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVInfantryTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00525250",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVAnimTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVAnimTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x005255F0",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@PBVAnimTypeClass@@",
+     "?$VectorClass@PBVAnimTypeClass@@"
     ],
     "committed": [
+     "?$VectorClass@PBVAnimTypeClass@@",
      "VectorClass"
     ]
    },
@@ -2419,20 +2432,22 @@
    {
     "func": "0x005AC900",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVBuildingTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVBuildingTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x005AD660",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@PBVBuildingTypeClass@@",
+     "?$VectorClass@PBVBuildingTypeClass@@"
     ],
     "committed": [
+     "?$VectorClass@PBVBuildingTypeClass@@",
      "VectorClass"
     ]
    },
@@ -2701,20 +2716,22 @@
    {
     "func": "0x0063E1D0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PAVPlanningBranchClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PAVPlanningBranchClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x00645A70",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@VRGBClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@VRGBClass@@",
      "VectorClass"
     ]
    },
@@ -2796,20 +2813,22 @@
    {
     "func": "0x0067AC70",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVVoxelAnimTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVVoxelAnimTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x0067AFF0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVSmudgeTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVSmudgeTypeClass@@",
      "VectorClass"
     ]
    },
@@ -2826,20 +2845,22 @@
    {
     "func": "0x0067C1F0",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$TypeList@PBVVoxelAnimTypeClass@@",
+     "?$VectorClass@PBVVoxelAnimTypeClass@@"
     ],
     "committed": [
+     "?$VectorClass@PBVVoxelAnimTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x0067C280",
     "export": [
-     "TypeList",
-     "VectorClass"
+     "?$VectorClass@PBVSmudgeTypeClass@@",
+     "TypeList"
     ],
     "committed": [
+     "?$VectorClass@PBVSmudgeTypeClass@@",
      "VectorClass"
     ]
    },
@@ -2887,10 +2908,11 @@
    {
     "func": "0x006AC8D0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@VPoint2D@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@VPoint2D@@",
      "VectorClass"
     ]
    },
@@ -2939,7 +2961,7 @@
    {
     "func": "0x00717D20",
     "export": [
-     "TypeList",
+     "?$TypeList@PBVParticleSystemTypeClass@@",
      "VectorClass"
     ],
     "committed": [
@@ -2949,10 +2971,11 @@
    {
     "func": "0x007342D0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PAVTechnoClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PAVTechnoClass@@",
      "VectorClass"
     ]
    },
@@ -2969,20 +2992,22 @@
    {
     "func": "0x0075E6B0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$VectorClass@PBVVoxelAnimTypeClass@@",
+     "DynamicVector"
     ],
     "committed": [
+     "?$VectorClass@PBVVoxelAnimTypeClass@@",
      "VectorClass"
     ]
    },
    {
     "func": "0x007632D0",
     "export": [
-     "DynamicVector",
-     "VectorClass"
+     "?$DynamicVectorClass@PAVCellClass@@",
+     "?$VectorClass@PAVCellClass@@"
     ],
     "committed": [
+     "?$VectorClass@PAVCellClass@@",
      "VectorClass"
     ]
    },
@@ -3101,8 +3126,8 @@
    {
     "func": "0x0049E8E0",
     "export": [
-     "GenericList",
-     "List"
+     "?$List@PAUINISection@INIClass@@",
+     "GenericList"
     ],
     "committed": [
      "GenericList"
@@ -3151,12 +3176,6 @@
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7E17EC"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E180C"
    },
    {
     "class": "DynamicVector",
@@ -3333,12 +3352,6 @@
     "vtable": "0x7E3584"
    },
    {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E37EC"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -3348,19 +3361,7 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7E3890"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7E38B0"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E38D0"
    },
    {
     "class": "VectorClass",
@@ -3379,12 +3380,6 @@
     "class_db": 328,
     "authority": 322,
     "vtable": "0x7E3EBC"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E43C8"
    },
    {
     "class": "VectorClass",
@@ -3435,12 +3430,6 @@
     "vtable": "0x7E4570"
    },
    {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E4638"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -3465,30 +3454,6 @@
     "vtable": "0x7E4AF4"
    },
    {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E4BA4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E4BC4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E4DB8"
-   },
-   {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7E4DD8"
-   },
-   {
     "class": "VectorClass",
     "class_db": 1386,
     "authority": 7,
@@ -3501,22 +3466,10 @@
     "vtable": "0x7E4E18"
    },
    {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E4E38"
-   },
-   {
     "class": "TypeList",
     "class_db": 98,
     "authority": 7,
     "vtable": "0x7E4E58"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E4E78"
    },
    {
     "class": "CellClass",
@@ -3558,25 +3511,7 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7E5BC4"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7E5BE4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E5C04"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E5C24"
    },
    {
     "class": "VectorClass",
@@ -3585,22 +3520,10 @@
     "vtable": "0x7E5C84"
    },
    {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E5CC4"
-   },
-   {
     "class": "VectorClass",
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7E5D08"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E5D48"
    },
    {
     "class": "CStreamClass",
@@ -3708,30 +3631,6 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7E8934"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E8954"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E8BA0"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E8BC0"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7E8C28"
    },
    {
@@ -3739,18 +3638,6 @@
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7E8C48"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7E91EC"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E920C"
    },
    {
     "class": "VectorClass",
@@ -3867,12 +3754,6 @@
     "vtable": "0x7E9D64"
    },
    {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E9D84"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -3901,12 +3782,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7E9E24"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7E9E44"
    },
    {
     "class": "DynamicVector",
@@ -4227,12 +4102,6 @@
     "vtable": "0x7EA4E4"
    },
    {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EA504"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -4255,12 +4124,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7EA5A4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EA5C4"
    },
    {
     "class": "DynamicVector",
@@ -4308,37 +4171,7 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7EA904"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7EA924"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7EA944"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EA964"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EA984"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EA9A4"
    },
    {
     "class": "TypeList",
@@ -4351,12 +4184,6 @@
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7EA9E4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EAA08"
    },
    {
     "class": "DynamicVector",
@@ -4395,42 +4222,6 @@
     "vtable": "0x7EAAE8"
    },
    {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7EABC8"
-   },
-   {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7EABE8"
-   },
-   {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7EAC08"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EAC28"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EAC48"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EAC68"
-   },
-   {
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
@@ -4447,18 +4238,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7EACC8"
-   },
-   {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7EB6D4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EB6F4"
    },
    {
     "class": "DynamicVector",
@@ -4521,24 +4300,6 @@
     "vtable": "0x7ECC48"
    },
    {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7ECCEC"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7ECD0C"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7ECE7C"
-   },
-   {
     "class": "VectorClass",
     "class_db": 1386,
     "authority": 7,
@@ -4596,18 +4357,6 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7ED1DC"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7ED1FC"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7ED30C"
    },
    {
@@ -4615,12 +4364,6 @@
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7ED32C"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7ED480"
    },
    {
     "class": "DynamicVector",
@@ -4633,12 +4376,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7ED4C0"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7ED4E0"
    },
    {
     "class": "VectorClass",
@@ -4701,12 +4438,6 @@
     "vtable": "0x7ED878"
    },
    {
-    "class": "TypeList",
-    "class_db": 98,
-    "authority": 7,
-    "vtable": "0x7ED90C"
-   },
-   {
     "class": "VectorClass",
     "class_db": 1386,
     "authority": 7,
@@ -4729,12 +4460,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7ED99C"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7ED9BC"
    },
    {
     "class": "VectorClass",
@@ -4773,18 +4498,6 @@
     "vtable": "0x7EE350"
    },
    {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
-    "vtable": "0x7EE370"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EE390"
-   },
-   {
     "class": "VectorClass",
     "class_db": 1386,
     "authority": 7,
@@ -4806,12 +4519,6 @@
     "class": "DynamicVector",
     "class_db": 1288,
     "authority": 7,
-    "vtable": "0x7EEA54"
-   },
-   {
-    "class": "DynamicVector",
-    "class_db": 1288,
-    "authority": 7,
     "vtable": "0x7EEA74"
    },
    {
@@ -4825,18 +4532,6 @@
     "class_db": 1386,
     "authority": 7,
     "vtable": "0x7EEAB4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EEAD4"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EEAF4"
    },
    {
     "class": "DynamicVector",
@@ -4855,24 +4550,6 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7EEB54"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EEB74"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EEB94"
-   },
-   {
-    "class": "VectorClass",
-    "class_db": 1386,
-    "authority": 7,
-    "vtable": "0x7EEBB4"
    },
    {
     "class": "DynamicVector",
@@ -4927,6 +4604,354 @@
     "class_db": 1288,
     "authority": 7,
     "vtable": "0x7EED20"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EED40"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EEE54"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EEF50"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EEF70"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF26C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF28C"
+   },
+   {
+    "class": "OverlayClass",
+    "class_db": 128,
+    "authority": 122,
+    "vtable": "0x7EF3D4"
+   },
+   {
+    "class": "OverlayTypeClass",
+    "class_db": 47,
+    "authority": 41,
+    "vtable": "0x7EF600"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF6BC"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF6DC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF750"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF770"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF790"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF7B0"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF7D0"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF7F0"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EF824"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EF844"
+   },
+   {
+    "class": "ParasiteClass",
+    "class_db": 30,
+    "authority": 24,
+    "vtable": "0x7EF890"
+   },
+   {
+    "class": "ParticleClass",
+    "class_db": 129,
+    "authority": 123,
+    "vtable": "0x7EF954"
+   },
+   {
+    "class": "ParticleSystemClass",
+    "class_db": 128,
+    "authority": 122,
+    "vtable": "0x7EFB9C"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EFE04"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EFE24"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EFE64"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EFE84"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EFEA4"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EFEC4"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7EFEE4"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7EFF04"
+   },
+   {
+    "class": "ParticleSystemTypeClass",
+    "class_db": 46,
+    "authority": 40,
+    "vtable": "0x7F00A8"
+   },
+   {
+    "class": "ParticleTypeClass",
+    "class_db": 46,
+    "authority": 40,
+    "vtable": "0x7F0188"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F022C"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F042C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F044C"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0484"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F04A4"
+   },
+   {
+    "class": "RadioClass",
+    "class_db": 167,
+    "authority": 161,
+    "vtable": "0x7F0508"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F07A4"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F07C4"
+   },
+   {
+    "class": "RadSiteClass",
+    "class_db": 30,
+    "authority": 24,
+    "vtable": "0x7F0810"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0AAC"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F0ACC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0C2C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F0C4C"
+   },
+   {
+    "class": "TypeList",
+    "class_db": 98,
+    "authority": 7,
+    "vtable": "0x7F0D1C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F0D9C"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0DCC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0DEC"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F0E0C"
+   },
+   {
+    "class": "ScriptClass",
+    "class_db": 30,
+    "authority": 24,
+    "vtable": "0x7F0F78"
+   },
+   {
+    "class": "ScriptTypeClass",
+    "class_db": 33,
+    "authority": 27,
+    "vtable": "0x7F1008"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F11B4"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F1274"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F12B4"
+   },
+   {
+    "class": "TypeList",
+    "class_db": 98,
+    "authority": 7,
+    "vtable": "0x7F12D4"
+   },
+   {
+    "class": "DynamicVector",
+    "class_db": 1288,
+    "authority": 7,
+    "vtable": "0x7F315C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F317C"
+   },
+   {
+    "class": "VectorClass",
+    "class_db": 1386,
+    "authority": 7,
+    "vtable": "0x7F324C"
    }
   ],
   "c7_variance_violations": [
@@ -8434,8 +8459,8 @@
   "c7_variance_violation_count": 1624,
   "equality_channels": {
    "callarg_direct": {
-    "unions": 79,
-    "exact_conflicts": 6,
+    "unions": 80,
+    "exact_conflicts": 5,
     "examples": [
      {
       "a": "G:87F7E8",
@@ -8465,16 +8490,6 @@
       ],
       "b_classes": [
        "MapClass"
-      ]
-     },
-     {
-      "a": "G:ABC604",
-      "b": "T:54EBF0",
-      "a_classes": [
-       "DynamicVector"
-      ],
-      "b_classes": [
-       "VectorClass"
       ]
      },
      {
