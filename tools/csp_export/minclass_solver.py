@@ -68,10 +68,11 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
+    "IR": "all-const returns => int-family (HEURISTIC tier)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2377,6 +2378,31 @@ def main():
         print("[MR] receiver-typed members: evidence=%d entities=%d" % (census["MR"], len(fam["MR"])), flush=True)
     except Exception as _e_mr:
         print("[MR] skipped: %r" % _e_mr, flush=True)
+
+    # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
+    if getattr(args, "allow_heuristics", False):
+        try:
+            _irf = (jload("anchors/int_returns.json", {}) or {}).get("fns") or []
+            _irm = 0
+            for _tn in ("int", "unsigned int", "bool", "char", "unsigned char"):
+                _ix4 = _name_ix2.get(_tn)
+                if _ix4 is not None:
+                    _irm |= (1 << _ix4)
+            _n_ir = 0
+            for _fs in _irf:
+                _fa = hx(_fs)
+                if _fa is None:
+                    continue
+                _e4 = "RET:%X" % _fa
+                if _irm and (_e4 in ents or True):
+                    if _e4 not in ents:
+                        touch(_e4, _e4)
+                    fam["IR"][_e4] = fam["IR"].get(_e4, FULL) & _irm
+                    _n_ir += 1
+            census["IR"] = _n_ir
+            print("[IR] int-return fns: %d" % _n_ir, flush=True)
+        except Exception as _e_ir:
+            print("[IR] skipped: %r" % _e_ir, flush=True)
 
     # ---------------- CS（启发式层）：指针步进尺寸 → 类长度 ----------------
     # add/sub reg, imm（imm=类 sizeof）或 lea [base+idx*SCALE] ⇒ 指针指向
