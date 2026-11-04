@@ -8,6 +8,13 @@ This project reconstructs the RA2/YR game engine `gamemd.exe` — a 7.6MB 32-bit
 
 Current output: executable `gamemd.exe`, built with CMake + C++20. The long-term goal is a fully independent, drop-in replacement engine with progressive modernization.
 
+**Active workstream — type recovery via min-class-count CSP** (see `docs/roadmap_minclass_arc.md`):
+a one-shot constraint solver where the solution space is spanned by classes + pointers + arrays +
+primitives together. 25+ evidence families (vtable installs, execution-flow def-use chains,
+instruction semantics like `movzx`/FPU accesses, string literals, receiver-anchored virtual-call
+binding). Current state: **20,800 strict-tier unique solutions** (100% sound judgments, up from
+10,169 at arc start), 25,579 heuristic-tier; zero unresolved conflicts, deterministic.
+
 ## Architecture Overview
 
 ```
