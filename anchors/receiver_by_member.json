@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "generator": ".omo/agents/md/gen_receiver_by_member.py",
+  "source": "MD: member-type installs (??_7 vtable, anchors/member_type_installs.json) discriminate receiver candidates (minclass_clusters/minclass_assignments)",
+  "sound_sources": [
+   "member_type_installs (MT)",
+   "tools/class_layouts.json offsets",
+   "anchors/member_types.json ANCHORED-only"
+  ],
+  "circular_ban": "MR/MRH-derived member types NOT used",
+  "compat_rule": "norm(X)==norm(T) any-match over installed classes; norm strips spaces and '*', templates literal; no-record => keep candidate",
+  "slot_priority": "class_layouts.type first, then member_types ANCHORED",
+  "mt_ents_total": 912,
+  "mt_ents_unique": 912,
+  "mt_fns": 275,
+  "receivers_discriminated": 1,
+  "receivers_narrowed": 1,
+  "receivers_unchanged": 0,
+  "receivers_fully_excluded_not_output": 0,
+  "receivers_pinned_skipped": 260,
+  "evidence": 1
+ },
+ "evidence": [
+  {
+   "ent": "T:52AB80",
+   "classes": [
+    "INISection@INIClass"
+   ]
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
 "meta": {
-"evidence": 7703,
-"direct": 7644,
+"evidence": 7708,
+"direct": 7650,
 "source": "full-type: classes+primitives+arrays+pointers span the space",
 "regen": "strict: minclass_clusters+minclass_assignments; ANCHORED-only, all-candidates-present else skip"
 },
@@ -19133,14 +19133,6 @@
 ]
 },
 {
-"ent": "M:547CF0:this:0x2BC",
-"classes": [
-"CaptureManagerClass",
-"FacingStruct *",
-"int"
-]
-},
-{
 "ent": "M:549A00:this:0x0",
 "classes": [
 "VocClassHeader"
@@ -25291,6 +25283,42 @@
 ]
 },
 {
+"ent": "M:624930:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6249A0:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6249A0:this:0x8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:624BE0:this:0x8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:624BE0:this:0xC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:625780:this:0xC",
+"classes": [
+"unsigned int"
+]
+},
+{
 "ent": "M:626690:this:0x0",
 "classes": [
 "char[784]"
@@ -27790,6 +27818,12 @@
 "ent": "M:65C5A0:this:0x8",
 "classes": [
 "void *"
+]
+},
+{
+"ent": "M:65C890:this:0x4",
+"classes": [
+"int"
 ]
 },
 {
@@ -44402,12 +44436,6 @@
 "ent": "M:75F9F0:this:0xC0",
 "classes": [
 "int"
-]
-},
-{
-"ent": "M:761030:this:0x1F4",
-"classes": [
-"unsigned int"
 ]
 },
 {

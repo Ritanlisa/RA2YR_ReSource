@@ -4,11 +4,11 @@
   "source": "anchors/callarg_origins.json (ffl5 def-direct; ent used directly)",
   "cluster_source": "anchors/minclass_clusters.json (ents incl. root) + anchors/minclass_assignments.json candidates",
   "recv_sites": 5217,
-  "binds": 4035,
-  "args_total": 614,
+  "binds": 4045,
+  "args_total": 625,
   "skipped": {
-   "recv_unconstrained": 654,
-   "cand_not_in_authority": 504,
+   "recv_unconstrained": 645,
+   "cand_not_in_authority": 503,
    "multi_addr": 24
   }
  },
@@ -5651,6 +5651,193 @@
    "callee": "0x44D5D0",
    "recv": "T:440580",
    "recv_kind": "this",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441210",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441267",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x4412BE",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x44131F",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441376",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x4413D6",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x44142D",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441484",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x4414DB",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441532",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
+   "n_cands": 1,
+   "args": [
+    {
+     "k": 0,
+     "ent": "M:440580:this:0x21C",
+     "kind": "member",
+     "off": 540,
+     "sym": ""
+    }
+   ]
+  },
+  {
+   "site": "0x441581",
+   "slot": 2,
+   "callee": "0x40BAE0",
+   "recv": "M:440580:this:0x21C",
+   "recv_kind": "member",
    "n_cands": 1,
    "args": [
     {
@@ -39960,15 +40147,6 @@
    "slot": 62,
    "callee": "0x5F65F0",
    "recv": "T:760F50",
-   "recv_kind": "this",
-   "n_cands": 1,
-   "args": []
-  },
-  {
-   "site": "0x761081",
-   "slot": 62,
-   "callee": "0x5F65F0",
-   "recv": "T:761030",
    "recv_kind": "this",
    "n_cands": 1,
    "args": []

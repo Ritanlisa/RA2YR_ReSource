@@ -68,13 +68,14 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
     "IR": "all-const returns => int-family (HEURISTIC tier)",
     "MRH": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
     "CP": "all-constant call args => int-family param (HEURISTIC tier)",
+    "MD": "member binary-fact types discriminate receiver candidates (strict, MT-sourced)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2380,6 +2381,29 @@ def main():
         print("[MR] receiver-typed members: evidence=%d entities=%d" % (census["MR"], len(fam["MR"])), flush=True)
     except Exception as _e_mr:
         print("[MR] skipped: %r" % _e_mr, flush=True)
+
+    # ---------------- MD：成员二进制事实类型反钉接收者（严格）----------------
+    try:
+        _n_md = 0
+        for _rec in (jload("anchors/receiver_by_member.json", {}) or {}).get("evidence") or []:
+            _e7 = _rec.get("ent")
+            if not isinstance(_e7, str):
+                continue
+            m7 = 0
+            for _c7 in (_rec.get("classes") or []):
+                _ix8 = _name_ix2.get(str(_c7).lower())
+                if _ix8 is not None:
+                    m7 |= (1 << _ix8)
+            if not m7:
+                continue
+            if _e7 not in ents:
+                touch(_e7, _e7)
+            fam["MD"][_e7] = fam["MD"].get(_e7, FULL) & m7
+            _n_md += 1
+        census["MD"] = _n_md
+        print("[MD] member-discriminated receivers: %d" % _n_md, flush=True)
+    except Exception as _e_md:
+        print("[MD] skipped: %r" % _e_md, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
