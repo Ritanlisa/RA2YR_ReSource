@@ -2032,6 +2032,32 @@
   "exact": {}
  },
  {
+  "cluster": "M:55BC00:this:0x1",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:55BC00:this:0x1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "MultiplayerGameMode"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:595680:this:0xC",
   "status": "inconsistent",
   "families": [
@@ -4317,11 +4343,13 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "IG",
    "MR"
   ],
   "family_sizes": {
    "C11": 0,
-   "MR": 1
+   "MR": 1,
+   "IG": 2
   },
   "ents": [
    "M:4D85D0:this:0x524"
@@ -4330,6 +4358,10 @@
   "family_domains": {
    "C11": [],
    "MR": [
+    "unsigned short"
+   ],
+   "IG": [
+    "short",
     "unsigned short"
    ]
   },
@@ -19797,12 +19829,14 @@
   "families": [
    "C1",
    "C11",
+   "IG",
    "MR"
   ],
   "family_sizes": {
    "C1": 1803,
-   "C11": 0,
-   "MR": 1
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
   },
   "ents": [
    "M:42F5E0:this:0x4"
@@ -19826,9 +19860,26 @@
     "?$rc_ptr@VState@WorldDominationTour@@",
     "?$DynamicVectorClass@H"
    ],
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MR": [
     "unsigned int *"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -19839,12 +19890,14 @@
   "families": [
    "C1",
    "C11",
+   "IG",
    "MR"
   ],
   "family_sizes": {
    "C1": 1803,
-   "C11": 0,
-   "MR": 1
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
   },
   "ents": [
    "M:42FAE0:this:0x4"
@@ -19868,9 +19921,26 @@
     "?$rc_ptr@VState@WorldDominationTour@@",
     "?$DynamicVectorClass@H"
    ],
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MR": [
     "void *"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -21637,12 +21707,14 @@
   "families": [
    "C1",
    "C11",
+   "IG",
    "MR"
   ],
   "family_sizes": {
    "C1": 1803,
-   "C11": 0,
-   "MR": 1
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
   },
   "ents": [
    "M:5896A0:this:0x4"
@@ -21667,9 +21739,26 @@
     "?$rc_ptr@VState@WorldDominationTour@@",
     "?$DynamicVectorClass@H"
    ],
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MR": [
     "unsigned int *"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -55773,6 +55862,33 @@
   "exact": {}
  },
  {
+  "cluster": "M:410B90:this:0x3D",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 2,
+   "IG": 2
+  },
+  "ents": [
+   "M:410B90:this:0x3D"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "char[32]",
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:413D20:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -61016,20 +61132,39 @@
   "status": "inconsistent",
   "families": [
    "C11",
+   "IG",
    "MR"
   ],
   "family_sizes": {
-   "C11": 0,
-   "MR": 1
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
   },
   "ents": [
    "M:4D3590:this:0x564"
   ],
   "obs": [],
   "family_domains": {
-   "C11": [],
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
    "MR": [
     "void *"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -66900,6 +67035,32 @@
   "exact": {}
  },
  {
+  "cluster": "M:4F54A0:this:0x1602A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:4F54A0:this:0x1602A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:4F7140:this:0x12C",
   "status": "inconsistent",
   "families": [
@@ -67148,6 +67309,84 @@
    "C11": [],
    "MR": [
     "void *"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4FBE40:this:0x53E0",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:4FBE40:this:0x53E0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "char[80]"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4FC0B0:this:0x53E0",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:4FC0B0:this:0x53E0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "char[80]"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:501210:this:0x16009",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:501210:this:0x16009"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
    ]
   },
   "exact": {}
@@ -69386,6 +69625,90 @@
   "exact": {}
  },
  {
+  "cluster": "M:5520A0:this:0x1C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:5520A0:this:0x1C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5522D0:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:5522D0:this:0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:555200:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -69933,6 +70256,48 @@
    "C11": [],
    "MR": [
     "void *"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:55C350:this:0x1C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:55C350:this:0x1C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -73013,6 +73378,48 @@
   "exact": {}
  },
  {
+  "cluster": "M:5F92D0:this:0x213",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:5F92D0:this:0x213"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "char[25]"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:5F9B00:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -74733,6 +75140,48 @@
    ],
    "IV": [
     "double"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6442D0:this:0x308",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:6442D0:this:0x308"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "char[2]"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -80681,6 +81130,48 @@
   "exact": {}
  },
  {
+  "cluster": "M:71DEA0:this:0x29C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "C11": 1031,
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:71DEA0:this:0x29C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "MR": [
+    "char[3]"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:71FBA0:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -82040,6 +82531,136 @@
    "C11": [],
    "MR": [
     "void *"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74F760:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:74F760:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74F960:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:74F960:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74FA20:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:74FA20:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74FAE0:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:74FAE0:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74FC80:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2
+  },
+  "ents": [
+   "M:74FC80:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "IG": [
+    "Char",
+    "unsigned char"
    ]
   },
   "exact": {}
@@ -83923,6 +84544,2766 @@
    ],
    "IV": [
     "short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:410170:this:0x14",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:410170:this:0x14"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431A30:this:0x1C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431A30:this:0x1C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431A30:this:0x1E",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431A30:this:0x1E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431A30:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431A30:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431A30:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431A30:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431B20:this:0x1C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431B20:this:0x1C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431B20:this:0x1E",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431B20:this:0x1E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431B20:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431B20:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431B20:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431B20:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:431B80:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:431B80:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:432610:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:432610:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:43F180:this:0x700",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:43F180:this:0x700"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:448260:this:0x700",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:448260:this:0x700"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:454260:this:0x700",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:454260:this:0x700"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:456E00:this:0x700",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:456E00:this:0x700"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:466380:this:0x14C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:466380:this:0x14C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:466380:this:0x158",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:466380:this:0x158"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:466560:this:0x158",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:466560:this:0x158"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:46BBC0:this:0x294",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:46BBC0:this:0x294"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:473AB0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:473AB0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47AE10:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47AE10:this:0x54"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47AF10:this:0x54",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47AF10:this:0x54"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BB60:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BB60:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BB60:this:0x26",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BB60:this:0x26"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x108",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x108"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x10A",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x10A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x10C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x10C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x10E",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x10E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x110",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x110"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x112",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x112"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x114",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x114"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:47BBF0:this:0x116",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:47BBF0:this:0x116"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:48BE60:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:48BE60:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:48BF40:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:48BF40:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:48C040:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:48C040:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:494080:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:494080:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4941E0:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4941E0:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:494330:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:494330:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:494F20:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:494F20:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4950C0:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4950C0:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495250:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495250:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4953F0:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4953F0:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495590:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495590:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495730:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495730:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495BC0:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495BC0:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495D60:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495D60:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:495F00:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:495F00:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:497CF0:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:497CF0:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:499650:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:499650:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:499860:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:499860:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:499A90:this:0xC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:499A90:this:0xC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4A2820:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4A2820:this:0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4C9B20:this:0x28",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4C9B20:this:0x28"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4CC9A0:this:0x18",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4CC9A0:this:0x18"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x14",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x14"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x524",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x524"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x526",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x526"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x528",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x528"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x52A",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x52A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x558",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x558"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x55A",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x55A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x55C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x55C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x55E",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x55E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x560",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x560"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x562",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x562"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D31E0:this:0x564",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D31E0:this:0x564"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4D85D0:this:0x526",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4D85D0:this:0x526"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F8440:this:0x53E0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4F8440:this:0x53E0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:4F8440:this:0x53E2",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:4F8440:this:0x53E2"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5113F0:this:0x98",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5113F0:this:0x98"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:536350:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:536350:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:53F430:this:0x5C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:53F430:this:0x5C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:53FBD0:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:53FBD0:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:53FBD0:this:0x2C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:53FBD0:this:0x2C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:53FCB0:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:53FCB0:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5408F0:this:0x20",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5408F0:this:0x20"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5408F0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5408F0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5414C0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5414C0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5415F0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5415F0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5422D0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5422D0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5422F0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5422F0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:542310:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:542310:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:542330:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:542330:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:542350:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:542350:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5423C0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5423C0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:55C5E0:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:55C5E0:this:0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:565190:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:565190:this:0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:589BD0:this:0x18",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:589BD0:this:0x18"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5B3C20:this:0x10",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5B3C20:this:0x10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5C1640:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5C1640:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5C46E0:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5C46E0:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5D5B60:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5D5B60:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5F15C0:this:0x4C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5F15C0:this:0x4C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5F3900:this:0x14",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5F3900:this:0x14"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:5F3B80:this:0x98",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:5F3B80:this:0x98"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:65B1E0:this:0x40",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:65B1E0:this:0x40"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:65B1E0:this:0x42",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:65B1E0:this:0x42"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:65CA80:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:65CA80:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6D1C20:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:6D1C20:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6F2B40:this:0x3C8",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:6F2B40:this:0x3C8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6F2B40:this:0x3CA",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:6F2B40:this:0x3CA"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:6FDD50:this:0x3C8",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:6FDD50:this:0x3C8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:728630:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:728630:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:728630:this:0x28",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:728630:this:0x28"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:728630:this:0x2A",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:728630:this:0x2A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:73B470:this:0x3CA",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:73B470:this:0x3CA"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74AD80:this:0x294",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:74AD80:this:0x294"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74AD80:this:0x2D0",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:74AD80:this:0x2D0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74AD80:this:0x300",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:74AD80:this:0x300"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74F730:this:0x8",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:74F730:this:0x8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:74F730:this:0xA",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:74F730:this:0xA"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:75CEC0:this:0x158",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:75CEC0:this:0x158"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:76ABE0:this:0x38",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:76ABE0:this:0x38"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "Char",
+    "unsigned char"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:76C6E0:this:0x4AC",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:76C6E0:this:0x4AC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:7B13D0:this:0x3F30C",
+  "status": "inconsistent",
+  "families": [
+   "C11",
+   "IG"
+  ],
+  "family_sizes": {
+   "C11": 0,
+   "IG": 2
+  },
+  "ents": [
+   "M:7B13D0:this:0x3F30C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C11": [],
+   "IG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}

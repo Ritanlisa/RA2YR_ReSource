@@ -68,7 +68,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -82,6 +82,7 @@ FAMILY_DESC = {
     "IV": "insn-semantic value types, full base-entity resolution (strict)",
     "MS": "string-literal returns => char* RET (strict)",
     "MH": "jump-table enum usage => int family (heuristic)",
+    "IG": "bare partial-register access granularity (byte/word member width, strict)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2473,6 +2474,11 @@ def main():
         print("[FS] format-string args: %d" % census["FS"], flush=True)
     except Exception as _e_fs:
         print("[FS] skipped: %r" % _e_fs, flush=True)
+    try:
+        census["IG"] = _load_type_family("anchors/insn_granularity_types.json", "IG")
+        print("[IG] granularity types: %d" % census["IG"], flush=True)
+    except Exception as _e_ig:
+        print("[IG] skipped: %r" % _e_ig, flush=True)
     try:
         census["IV"] = _load_type_family("anchors/insn_value_types.json", "IV")
         print("[IV] insn value types: %d" % census["IV"], flush=True)
