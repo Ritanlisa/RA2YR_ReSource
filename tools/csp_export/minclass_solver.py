@@ -68,7 +68,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -79,6 +79,9 @@ FAMILY_DESC = {
     "SP": "string-literal args => char* param (strict, binary-verified strings)",
     "IT": "insn-semantic member types: movzx/movsx widths+sign, FPU float/double (strict)",
     "FS": "format-string arg positions (heuristic)",
+    "IV": "insn-semantic value types, full base-entity resolution (strict)",
+    "MS": "string-literal returns => char* RET (strict)",
+    "MH": "jump-table enum usage => int family (heuristic)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2415,6 +2418,25 @@ def main():
             return "char*"
         return t.replace(" *", "*").replace("* ", "*")
 
+    def _load_type_family_dict(evid_list, famname):
+        n = 0
+        for _rec in (evid_list or []):
+            _e9 = _rec.get("ent")
+            if not isinstance(_e9, str):
+                continue
+            m9 = 0
+            for _t9 in (_rec.get("types") or []):
+                _ixa = _name_ix2.get(_norm_ty(_t9).lower())
+                if _ixa is not None:
+                    m9 |= (1 << _ixa)
+            if not m9:
+                continue
+            if _e9 not in ents:
+                touch(_e9, _e9)
+            fam[famname][_e9] = fam[famname].get(_e9, FULL) & m9
+            n += 1
+        return n
+
     def _load_type_family(fname, famname, gate_heuristic=False):
         if gate_heuristic and not getattr(args, "allow_heuristics", False):
             return 0
@@ -2451,6 +2473,22 @@ def main():
         print("[FS] format-string args: %d" % census["FS"], flush=True)
     except Exception as _e_fs:
         print("[FS] skipped: %r" % _e_fs, flush=True)
+    try:
+        census["IV"] = _load_type_family("anchors/insn_value_types.json", "IV")
+        print("[IV] insn value types: %d" % census["IV"], flush=True)
+    except Exception as _e_iv:
+        print("[IV] skipped: %r" % _e_iv, flush=True)
+    try:
+        _msd = jload("anchors/insn_misc_types.json", {}) or {}
+        census["MS"] = _load_type_family_dict(_msd.get("strict_evidence"), "MS")
+        print("[MS] string-literal returns: %d" % census["MS"], flush=True)
+        if getattr(args, "allow_heuristics", False):
+            census["MH"] = _load_type_family_dict(_msd.get("heur_evidence"), "MH")
+            print("[MH] jump-table enums: %d" % census["MH"], flush=True)
+        else:
+            census["MH"] = 0
+    except Exception as _e_ms:
+        print("[MS] skipped: %r" % _e_ms, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):

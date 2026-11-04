@@ -1,0 +1,802 @@
+{
+ "meta": {
+  "generated": "2026-11-04T17:04:10",
+  "generator": "tools/csp_export/gen_insn_misc_types.py",
+  "inputs": {
+   "snapshot": "decompile-results/full_export (index.json dedup, prefer _addr_*.cpp)",
+   "binary": "D:\\RA2MD\\gamemd.exe",
+   "string_symbols": "anchors/string_literals.json",
+   "pe_mapping": ".omo/agents/vtext/peparse.py",
+   "snapshot_files_parsed": 1446,
+   "snapshot_blocks": 19088,
+   "index_addrs": 19089
+  },
+  "strict_evidence_class": {
+   "pattern": "mov eax, offset <str> ; (<=2 insns not touching eax) ; retn",
+   "verification": "binary byte check at offset target: >=2 printable (0x20-0x7E) + NUL",
+   "entity": "RET:%X (fn addr, uppercase, no 0x)",
+   "types": [
+    "char *"
+   ],
+   "note": "at least one verified string-ret => {char *}; multiple string rets stronger, single entity per function",
+   "type_spelling_note": "char * chosen: dominant spelling in anchors evidence corpus (ida_call_args 14132, cast_edges 1036, ida_lvars 4054); both 'char*' and 'char *' exist in type_universe.json",
+   "stats": {
+    "mov_eax_offset": 650,
+    "mov_offset_ret": 169,
+    "sym_unresolved": 81,
+    "verified": 88,
+    "functions": 53
+   },
+   "unresolved_symbols_top": [
+    [
+     "unk_A8F654",
+     10
+    ],
+    [
+     "unk_ABDC50",
+     7
+    ],
+    [
+     "unk_A8F5B4",
+     5
+    ],
+    [
+     "byte_B72654",
+     3
+    ],
+    [
+     "g_INI_Key_De",
+     2
+    ],
+    [
+     "unk_AA047C",
+     2
+    ],
+    [
+     "stru_B052C0",
+     2
+    ],
+    [
+     "g_Str_none",
+     2
+    ],
+    [
+     "g_INI_DefaultBuffer",
+     2
+    ],
+    [
+     "g_TypeClass_DefaultString",
+     2
+    ],
+    [
+     "aNoName",
+     1
+    ],
+    [
+     "dword_89C8E8",
+     1
+    ],
+    [
+     "dword_817130",
+     1
+    ],
+    [
+     "dword_889F20",
+     1
+    ],
+    [
+     "dword_89A160",
+     1
+    ],
+    [
+     "dword_89DDF4",
+     1
+    ],
+    [
+     "off_8278C0",
+     1
+    ],
+    [
+     "off_8278F0",
+     1
+    ],
+    [
+     "aGameSyncLoggin",
+     1
+    ],
+    [
+     "off_827970",
+     1
+    ]
+   ]
+  },
+  "heur_evidence_class": {
+   "pattern": "cmp reg,N ; ja/jbe ; jmp ds:jpt_XXXX[reg*4] (<=4 insn window)",
+   "meaning": "reg holds small-range enum index (0..N) => int family; concrete enum name NOT derivable from jump table",
+   "def_backtrack": "one level from cmp: mov reg,[base+off] (base!=ebp/esp) -> M:%X:this:0x%X ; mov reg,[ebp+-X]/[esp+-X] -> S:%X:+0x%X ; register passthrough / adjustments / call results / global table lookups -> discarded",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "stats": {
+    "jmp_jpt": 318,
+    "cmp_ja_ok": 127,
+    "no_cmp_in_window": 191,
+    "entities": 36,
+    "m_entities": 36,
+    "s_entities": 0
+   },
+   "discards": {
+    "def_other": 64,
+    "def_not_found": 3,
+    "def_reg_passthrough": 15,
+    "def_is_call_result": 3,
+    "def_frame_ptr_clobbered": 2,
+    "def_scaled_or_global": 3
+   }
+  }
+ },
+ "strict_evidence": [
+  {
+   "ent": "RET:473960",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x47396D@0x817474; binary-verified \"<none>\")"
+  },
+  {
+   "ent": "RET:48DFD0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x48DFDD@0x817474; binary-verified \"<none>\")"
+  },
+  {
+   "ent": "RET:48E030",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x48E03D@0x817474; binary-verified \"<none>\")"
+  },
+  {
+   "ent": "RET:48E090",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x48E09D@0x817474; binary-verified \"<none>\")"
+  },
+  {
+   "ent": "RET:4E62B0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x4E62C7@0x822CE8; binary-verified \"Unknown\")"
+  },
+  {
+   "ent": "RET:535D20",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x535D20@0x826FC8; binary-verified \"StructureTab\")"
+  },
+  {
+   "ent": "RET:535DE0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x535DE0@0x827014; binary-verified \"DefenseTab\")"
+  },
+  {
+   "ent": "RET:535EA0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x535EA0@0x827048; binary-verified \"InfantryTab\")"
+  },
+  {
+   "ent": "RET:535F30",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x535F30@0x827080; binary-verified \"UnitTab\")"
+  },
+  {
+   "ent": "RET:5365A0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5365A0@0x827234; binary-verified \"NextObject\")"
+  },
+  {
+   "ent": "RET:5366A0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5366A0@0x827278; binary-verified \"PlanningMode\")"
+  },
+  {
+   "ent": "RET:536770",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536770@0x8272C0; binary-verified \"CombatantSelect\")"
+  },
+  {
+   "ent": "RET:536810",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536810@0x827304; binary-verified \"TypeSelect\")"
+  },
+  {
+   "ent": "RET:5368D0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5368D0@0x827334; binary-verified \"HealthNav\")"
+  },
+  {
+   "ent": "RET:536970",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536970@0x827374; binary-verified \"VeterancyNav\")"
+  },
+  {
+   "ent": "RET:536A10",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536A10@0x8273B0; binary-verified \"PreviousObject\")"
+  },
+  {
+   "ent": "RET:536B10",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536B10@0x8273E8; binary-verified \"StopObject\")"
+  },
+  {
+   "ent": "RET:536B90",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536B90@0x82741C; binary-verified \"AllToCheer\")"
+  },
+  {
+   "ent": "RET:536C10",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536C10@0x82744C; binary-verified \"DeployObject\")"
+  },
+  {
+   "ent": "RET:536C90",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536C90@0x827488; binary-verified \"GuardObject\")"
+  },
+  {
+   "ent": "RET:536D10",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536D10@0x8274B0; binary-verified \"ScatterObject\")"
+  },
+  {
+   "ent": "RET:536D90",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536D90@0x8274E0; binary-verified \"CenterView\")"
+  },
+  {
+   "ent": "RET:536E30",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536E30@0x827514; binary-verified \"CenterBase\")"
+  },
+  {
+   "ent": "RET:536EB0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536EB0@0x827548; binary-verified \"ToggleAlliance\")"
+  },
+  {
+   "ent": "RET:536F30",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536F30@0x82757C; binary-verified \"ToggleRepair\")"
+  },
+  {
+   "ent": "RET:536FB0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x536FB0@0x8275B4; binary-verified \"ToggleSell\")"
+  },
+  {
+   "ent": "RET:537030",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537030@0x81BD08; binary-verified \"PlaceBeacon\")"
+  },
+  {
+   "ent": "RET:5370C0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5370C0@0x827610; binary-verified \"CenterOnRadarEvent\")"
+  },
+  {
+   "ent": "RET:537140",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537140@0x82764C; binary-verified \"SidebarUp\")"
+  },
+  {
+   "ent": "RET:5371D0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5371D0@0x82767C; binary-verified \"SidebarDown\")"
+  },
+  {
+   "ent": "RET:537260",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537260@0x8254DC; binary-verified \"Options\")"
+  },
+  {
+   "ent": "RET:5372E0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5372E0@0x8276D4; binary-verified \"View1\")"
+  },
+  {
+   "ent": "RET:5373D0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5373D0@0x827708; binary-verified \"View2\")"
+  },
+  {
+   "ent": "RET:5374C0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5374C0@0x82773C; binary-verified \"View3\")"
+  },
+  {
+   "ent": "RET:5375B0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5375B0@0x827770; binary-verified \"View4\")"
+  },
+  {
+   "ent": "RET:5376A0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5376A0@0x8277A4; binary-verified \"SetView1\")"
+  },
+  {
+   "ent": "RET:537760",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537760@0x8277DC; binary-verified \"SetView2\")"
+  },
+  {
+   "ent": "RET:537820",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537820@0x827814; binary-verified \"SetView3\")"
+  },
+  {
+   "ent": "RET:5378E0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5378E0@0x82784C; binary-verified \"SetView4\")"
+  },
+  {
+   "ent": "RET:5379A0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5379A0@0x818BB4; binary-verified \"Follow\")"
+  },
+  {
+   "ent": "RET:537A50",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537A50@0x8278A0; binary-verified \"MultiplayerDebug\")"
+  },
+  {
+   "ent": "RET:537AB0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537AB0@0x827938; binary-verified \"ExtraSyncChecking\")"
+  },
+  {
+   "ent": "RET:537B50",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537B50@0x827A18; binary-verified \"ScreenCapture\")"
+  },
+  {
+   "ent": "RET:537DE0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537DE0@0x827A7C; binary-verified \"PageUser\")"
+  },
+  {
+   "ent": "RET:537E80",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537E80@0x827ADC; binary-verified \"CursorCheat\")"
+  },
+  {
+   "ent": "RET:537F20",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x537F20@0x827B3C; binary-verified \"Delete\")"
+  },
+  {
+   "ent": "RET:5B3950",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x5B395D@0x817474; binary-verified \"<none>\")"
+  },
+  {
+   "ent": "RET:6040B0",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x35 (0x604136@0x835784,0x604146@0x83576C,0x604156@0x835754; binary-verified \"STT:MainButtonSinglePlayer\" (+34 more))"
+  },
+  {
+   "ent": "RET:65C550",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x65C550@0x83963C; binary-verified \"UNKNOWN\")"
+  },
+  {
+   "ent": "RET:720940",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x720954@0x844770; binary-verified \"No theme\")"
+  },
+  {
+   "ent": "RET:751590",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x2 (0x7515AF@0x846574,0x7515B5@0x817474; binary-verified \"Invalid Voc\" (+1 more))"
+  },
+  {
+   "ent": "RET:7C3740",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x7C3740@0x84E7C4; binary-verified \"VQA playback 5.0 (Oct 30 2001 17\")"
+  },
+  {
+   "ent": "RET:7D2F57",
+   "types": [
+    "char *"
+   ],
+   "via": "mov eax,offset <str>; ret x1 (0x7D2F5E@0x7F9914; binary-verified \"Unknown exception\")"
+  }
+ ],
+ "heur_evidence": [
+  {
+   "ent": "M:4055C0:this:0x1C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x4055C0 (jpt_0x4055E4 idx=eax cmp=4 def=\"mov eax, [esi+1Ch]\")"
+  },
+  {
+   "ent": "M:409DE0:this:0x74",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x409DE0 (jpt_0x409E3E idx=eax cmp=3 def=\"mov eax, [ebx+74h]\")"
+  },
+  {
+   "ent": "M:4151E0:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x4151E0 (jpt_0x4151F4 idx=eax cmp=4 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:4166C0:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x4166C0 (jpt_0x4166F4 idx=eax cmp=4 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:416D50:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x416D50 (jpt_0x416D64 idx=eax cmp=3 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:41E5E0:this:0x98",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x41E5E0 (jpt_0x41E63F idx=eax cmp=7 def=\"mov eax, [esi+98h]\")"
+  },
+  {
+   "ent": "M:41EAF0:this:0xE8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x41EAF0 (jpt_0x41EBAB idx=ecx cmp=5 def=\"mov ecx, [ebx+0E8h]\")"
+  },
+  {
+   "ent": "M:41EC90:this:0xE8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x41EC90 (jpt_0x41ED8F idx=ecx cmp=5 def=\"mov ecx, [edi+0E8h]\")"
+  },
+  {
+   "ent": "M:41EE90:this:0xE8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x41EE90 (jpt_0x41EF4B idx=ecx cmp=5 def=\"mov ecx, [ebx+0E8h]\")"
+  },
+  {
+   "ent": "M:41F230:this:0xE8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x41F230 (jpt_0x41F253 idx=ecx cmp=5 def=\"mov ecx, [esi+0E8h]\")"
+  },
+  {
+   "ent": "M:44C980:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x2 in fn 0x44C980 (jpt_0x44C9B5 idx=eax cmp=4 def=\"mov eax, [esi+0BCh]\"; jpt_0x44CD3B idx=eax cmp=3 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:44E440:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x44E440 (jpt_0x44E466 idx=ecx cmp=4 def=\"mov ecx, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:458E50:this:0x718",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x458E50 (jpt_0x458EA8 idx=eax cmp=5 def=\"mov eax, [esi+718h]\")"
+  },
+  {
+   "ent": "M:488980:this:0x18C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x488980 (jpt_0x488A3D idx=eax cmp=4 def=\"mov eax, [esi+18Ch]\")"
+  },
+  {
+   "ent": "M:4D4280:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x4D4280 (jpt_0x4D42BD idx=eax cmp=3 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:509700:this:0x1E4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x509700 (jpt_0x509748 idx=eax cmp=3 def=\"mov eax, [esi+1E4h]\")"
+  },
+  {
+   "ent": "M:5098F0:this:0xB4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x5098F0 (jpt_0x509961 idx=ecx cmp=11 def=\"mov ecx, [ecx+0B4h]\")"
+  },
+  {
+   "ent": "M:50DAC0:this:0x577C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x50DAC0 (jpt_0x50DACB idx=eax cmp=3 def=\"mov eax, [ecx+577Ch]\")"
+  },
+  {
+   "ent": "M:54AEC0:this:0x4C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x54AEC0 (jpt_0x54B03C idx=eax cmp=6 def=\"mov eax, [esi+4Ch]\")"
+  },
+  {
+   "ent": "M:5A23A0:this:0x3C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x5A23A0 (jpt_0x5A23C7 idx=eax cmp=4 def=\"mov eax, [esi+3Ch]\")"
+  },
+  {
+   "ent": "M:5B3060:this:0xAC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x5B3060 (jpt_0x5B30C1 idx=eax cmp=31 def=\"mov eax, [edi+0ACh]\")"
+  },
+  {
+   "ent": "M:6297F0:this:0x48",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6297F0 (jpt_0x6298BC idx=eax cmp=4 def=\"mov eax, [esi+48h]\")"
+  },
+  {
+   "ent": "M:62CE40:this:0x314",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x62CE40 (jpt_0x62CE54 idx=eax cmp=4 def=\"mov eax, [eax+314h]\")"
+  },
+  {
+   "ent": "M:62FD60:this:0x2B4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x62FD60 (jpt_0x62FD74 idx=eax cmp=4 def=\"mov eax, [eax+2B4h]\")"
+  },
+  {
+   "ent": "M:6A9540:this:0x0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6A9540 (jpt_0x6A989C idx=eax cmp=3 def=\"mov eax, [edi]\")"
+  },
+  {
+   "ent": "M:6AFD60:this:0x5C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6AFD60 (jpt_0x6AFD73 idx=eax cmp=6 def=\"mov eax, [esi+5Ch]\")"
+  },
+  {
+   "ent": "M:6B7230:this:0x4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6B7230 (jpt_0x6B729B idx=ecx cmp=7 def=\"mov ecx, [eax+4]\")"
+  },
+  {
+   "ent": "M:6CBCA0:this:0xB4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6CBCA0 (jpt_0x6CBDE6 idx=eax cmp=11 def=\"mov eax, [eax+0B4h]\")"
+  },
+  {
+   "ent": "M:6CC080:this:0xB4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6CC080 (jpt_0x6CC0FC idx=eax cmp=11 def=\"mov eax, [eax+0B4h]\")"
+  },
+  {
+   "ent": "M:6E9140:this:0x0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6E9140 (jpt_0x6E945B idx=eax cmp=64 def=\"mov eax, [ecx]\")"
+  },
+  {
+   "ent": "M:6F3820:this:0x600",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x6F3820 (jpt_0x6F38A3 idx=eax cmp=7 def=\"mov eax, [eax+600h]\")"
+  },
+  {
+   "ent": "M:70E5A0:this:0x1A4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x70E5A0 (jpt_0x70E5C6 idx=eax cmp=9 def=\"mov eax, [esi+1A4h]\")"
+  },
+  {
+   "ent": "M:70E920:this:0x1C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x70E920 (jpt_0x70E97D idx=eax cmp=9 def=\"mov eax, [esi+1C0h]\")"
+  },
+  {
+   "ent": "M:73D630:this:0xBC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x73D630 (jpt_0x73D707 idx=eax cmp=4 def=\"mov eax, [esi+0BCh]\")"
+  },
+  {
+   "ent": "M:75F9F0:this:0xB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x75F9F0 (jpt_0x75FA34 idx=eax cmp=3 def=\"mov eax, [esi+0B0h]\")"
+  },
+  {
+   "ent": "M:760F50:this:0xB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "switch index enum-use x1 in fn 0x760F50 (jpt_0x760F65 idx=eax cmp=3 def=\"mov eax, [esi+0B0h]\")"
+  }
+ ]
+}
