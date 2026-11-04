@@ -68,7 +68,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -76,6 +76,9 @@ FAMILY_DESC = {
     "MRH": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
     "CP": "all-constant call args => int-family param (HEURISTIC tier)",
     "MD": "member binary-fact types discriminate receiver candidates (strict, MT-sourced)",
+    "SP": "string-literal args => char* param (strict, binary-verified strings)",
+    "IT": "insn-semantic member types: movzx/movsx widths+sign, FPU float/double (strict)",
+    "FS": "format-string arg positions (heuristic)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2404,6 +2407,50 @@ def main():
         print("[MD] member-discriminated receivers: %d" % _n_md, flush=True)
     except Exception as _e_md:
         print("[MD] skipped: %r" % _e_md, flush=True)
+
+    # ---------------- 通用类型证据族加载器（SP/IT/FS）----------------
+    def _norm_ty(t):
+        t = str(t).strip()
+        if t == "const char *" or t == "const char*":
+            return "char*"
+        return t.replace(" *", "*").replace("* ", "*")
+
+    def _load_type_family(fname, famname, gate_heuristic=False):
+        if gate_heuristic and not getattr(args, "allow_heuristics", False):
+            return 0
+        n = 0
+        for _rec in (jload(fname, {}) or {}).get("evidence") or []:
+            _e8 = _rec.get("ent")
+            if not isinstance(_e8, str):
+                continue
+            m8 = 0
+            for _t8 in (_rec.get("types") or []):
+                _ix9 = _name_ix2.get(_norm_ty(_t8).lower())
+                if _ix9 is not None:
+                    m8 |= (1 << _ix9)
+            if not m8:
+                continue
+            if _e8 not in ents:
+                touch(_e8, _e8)
+            fam[famname][_e8] = fam[famname].get(_e8, FULL) & m8
+            n += 1
+        return n
+
+    try:
+        census["SP"] = _load_type_family("anchors/string_param_types.json", "SP")
+        print("[SP] string-literal params: %d" % census["SP"], flush=True)
+    except Exception as _e_sp:
+        print("[SP] skipped: %r" % _e_sp, flush=True)
+    try:
+        census["IT"] = _load_type_family("anchors/insn_member_types.json", "IT")
+        print("[IT] insn-semantic member types: %d" % census["IT"], flush=True)
+    except Exception as _e_it:
+        print("[IT] skipped: %r" % _e_it, flush=True)
+    try:
+        census["FS"] = _load_type_family("anchors/format_param_types.json", "FS", gate_heuristic=True)
+        print("[FS] format-string args: %d" % census["FS"], flush=True)
+    except Exception as _e_fs:
+        print("[FS] skipped: %r" % _e_fs, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):

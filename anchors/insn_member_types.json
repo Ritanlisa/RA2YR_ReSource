@@ -1,0 +1,4775 @@
+{
+ "meta": {
+  "generated": "2026-11-04 13:13:58",
+  "generator": ".omo/ffl7 (ffl4 engine copy, als alias-set this-determination, same mechanism as ffl4/5 MW events)",
+  "method": {
+   "IZ": "movzx/movsx reg, byte/word ptr [this+off] -> u8/i8/u16/i16 (width+signedness from mnemonic + size prefix)",
+   "IF": "fld/fst/fstp/fadd/fmul/fsub/fsubr/fdiv/fdivr/fcom/fcomp/fcompp dword/qword ptr [this+off] -> f32/f64 (memory operand rendered at operand index 1 in this IDA; op0 fallback)",
+   "base": "this = engine als alias set (fn_takes_this entry {ecx} + propagation); offset>0 only; MZPATCH on: movzx/movsx dest discarded from als (ffl4 hole fix, pilot delta=0)",
+   "entity": "M:%X:this:0x%X (fn=owning function, MW-isomorphic)"
+  },
+  "spelling_source": "anchors/type_universe.json (closed vocabulary)",
+  "counts": {
+   "events_total": 1432,
+   "events_by_kind": {
+    "IF": 1170,
+    "IZ": 262
+   },
+   "entities_unique": 790,
+   "entities_contradictory": 0,
+   "entities_evidence": 790,
+   "events_dropped_by_contradiction": 0,
+   "failed_chunks": []
+  },
+  "contradiction_combos": {},
+  "type_histogram": {
+   "float": 341,
+   "double": 295,
+   "short": 80,
+   "char": 72,
+   "unsigned char": 2
+  }
+ },
+ "evidence": [
+  {
+   "ent": "M:4151E0:this:0x2E8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4166C0:this:0x686",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:41B610:this:0x6D3",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:41C2E0:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C350:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C3C0:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C3C0:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C3F0:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C3F0:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C430:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41C460:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41F580:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41F580:this:0xC0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41F580:this:0xC8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FD60:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FD60:this:0xC0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FD60:this:0xC8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FE20:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FE20:this:0xC0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:41FE20:this:0xC8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:423AC0:this:0x188",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:427D00:this:0x2A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:427D00:this:0x310",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:427D00:this:0x318",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:427D00:this:0x328",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:429A90:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:42A460:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:42B1C0:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:42E1C0:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4361D0:this:0x790",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4361D0:this:0x798",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4361D0:this:0x7A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4361D0:this:0xB0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4361D0:this:0xD0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4397E0:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4397E0:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4397E0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4399A0:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4399A0:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4399A0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:439A10:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:439B00:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:439B00:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:43A0D0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43A0D0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43A100:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43A100:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43A130:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43A130:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43DA80:this:0x3EC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43DA80:this:0x40C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:43F180:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:448260:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:44E440:this:0x703",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:44FEC0:this:0x702",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4509D0:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:451400:this:0x702",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:451690:this:0x702",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:451890:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:451F60:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:452000:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:452670:this:0x702",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4526F0:this:0x702",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4566B0:this:0x1707",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:456E00:this:0x6ED",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4666E0:this:0x120",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4666E0:this:0xE8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4666E0:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4666E0:this:0xF8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468000:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468090:this:0xE8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468090:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468670:this:0xE8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468670:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:468670:this:0xF8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:46B960:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:46B960:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:46BEE0:this:0x2C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4737F0:this:0x14",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4737F0:this:0x16",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47B3A0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47BDB0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47D2B0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47DD70:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47DD70:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47DD70:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47E8A0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47E8A0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47EA90:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47EA90:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47EC90:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47EC90:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47EC90:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47F510:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x10A",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x10C",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x10E",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47F6A0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FB90:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FB90:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FDE0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FDE0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FF80:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:47FF80:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:47FF80:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:480110:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:480180:this:0x10C",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:480180:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4802A0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:480350:this:0x10C",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:480350:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:481A00:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:481A00:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4834A0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:484680:this:0x10A",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:484680:this:0x10E",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:484680:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4848B0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4848B0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4852D0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4852D0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4852D0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:486840:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:486840:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:487720:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:487720:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:487CB0:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:487CE0:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:487D00:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:487D50:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4AFED0:this:0x328",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4AFED0:this:0x32C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4B0F20:this:0x50",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4B2630:this:0x50",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4C54E0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4C54E0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4C58C0:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4C58C0:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4C6CB0:this:0x2",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4C6CB0:this:0x7",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4C9300:this:0x14",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4D7170:this:0x530",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4D85D0:this:0x686",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4DB1A0:this:0x578",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4DB1A0:this:0x580",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4DBAD0:this:0x558",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4DBAD0:this:0x55A",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:4DC760:this:0x530",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4DE580:this:0x686",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:4DEBB0:this:0x330",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4DEBB0:this:0x334",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x188",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x190",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x198",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x1A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x1A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x1B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:4F6EC0:this:0x1B8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:505F80:this:0x5750",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:505F80:this:0x5752",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:505FD0:this:0x5750",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:505FD0:this:0x5752",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:506EF0:this:0x1609C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:506EF0:this:0x160A0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:506EF0:this:0x160A4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:508150:this:0x1609C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:508150:this:0x160A0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:508150:this:0x160A4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:50BEB0:this:0x5390",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:50BEB0:this:0x5394",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:50BEB0:this:0x5398",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:50BEB0:this:0x539C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:50BEB0:this:0x53A0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x100",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x104",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x108",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x10C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x110",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x114",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x118",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x11C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x120",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x124",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x128",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x12C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x130",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x134",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x138",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x13C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x140",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x144",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0x148",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xC8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xD0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xD8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xE0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xE8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xF0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:511850:this:0xF8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:513D20:this:0x60",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:515ED0:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:515ED0:this:0x50",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:515ED0:this:0x58",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:51B350:this:0x684",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:51B350:this:0x685",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:51BF90:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:51C8B0:this:0x578",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:520AE0:this:0x578",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54BA30:this:0x78",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54BFF0:this:0x78",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54CA90:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x30",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x34",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x70",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x78",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54D0F0:this:0x88",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:54D820:this:0x70",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:550260:this:0x54",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:550260:this:0x58",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5509F0:this:0x54",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5509F0:this:0x58",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5584F0:this:0x6",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:56D430:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:56DC20:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:570AE0:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:576200:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:580B20:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:580B70:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:583820:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:586E50:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:58C2A0:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:58C800:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:58D070:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:594420:this:0x24",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:594420:this:0x26",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5980C0:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:59E740:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5A6BA0:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5AC230:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE750:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE890:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE8F0:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE980:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE980:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE980:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE980:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE980:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9B0:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AE9E0:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEA10:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEAD0:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEAD0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEAF0:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEAF0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEAF0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEB20:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEB20:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEB20:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEC40:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AED50:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEE50:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AEF60:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF000:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF080:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF080:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF080:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF080:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF080:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF120:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF120:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF120:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF120:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF120:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF1A0:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF1A0:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF1A0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF1A0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF1A0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x24",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF4D0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF550:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF550:this:0x2C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF550:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF980:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5AF980:this:0x20",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5B2A30:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:5B2A30:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:5B3760:this:0x10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:5B3760:this:0x18",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:5BDAB0:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5BDAB0:this:0x4",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:5FA4A0:this:0x40",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FA510:this:0x38",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FA590:this:0x3C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FA620:this:0x38",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FA620:this:0x3C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FA620:this:0x40",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FAD10:this:0x38",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FAD10:this:0x3C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FAD10:this:0x40",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FB160:this:0x38",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FB160:this:0x3C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:5FB160:this:0x40",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:624530:this:0x28",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6249A0:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:624CA0:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:625090:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:62B5E0:this:0x110",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62B5E0:this:0x118",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62B5E0:this:0x11C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62B5E0:this:0x120",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62B5E0:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x10C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x110",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x114",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x118",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x11C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0x120",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:62C3A0:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C540:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C6E0:this:0x10C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C6E0:this:0x110",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C6E0:this:0x114",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62C6E0:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:62CB10:this:0x10C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62CB10:this:0x110",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62CB10:this:0x114",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62CB10:this:0x12C",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:62CB10:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62CEC0:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:62D2A0:this:0xCC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62D2A0:this:0xD0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62D3F0:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62D510:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62D5E0:this:0xE4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62D830:this:0x12E",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:62DC50:this:0xE8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:62ED40:this:0xE8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:637E00:this:0x2",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:63D540:this:0xC",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:642A60:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:642C80:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:6433D0:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6433D0:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:643720:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:643720:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:643AE0:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:643AE0:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:643AE0:this:0x8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:643C50:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:643C50:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:643E90:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:643E90:this:0x61",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2A0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2AC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2B0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2D0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2D8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2E0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2F0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6442D0:this:0x2F8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x2B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x2FC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x300",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x309",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x30A",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:644F50:this:0x30B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:645CD0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645CD0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645CD0:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D20:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D20:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D20:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D60:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D60:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:645D60:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:64A630:this:0x1D",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:64A630:this:0x2",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:64BDD0:this:0x2",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:6550C0:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6557F0:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:655C50:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6565A0:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:656750:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:656EC0:this:0x1488",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:659650:this:0x18",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659650:this:0x40",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659650:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659650:this:0x80",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6599C0:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659A30:this:0x18",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659A30:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659AC0:this:0x40",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659AC0:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659AC0:this:0x80",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659AC0:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659E30:this:0x18",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659E30:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659EE0:this:0x18",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659EE0:this:0x40",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659EE0:this:0x48",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659EE0:this:0x68",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659EE0:this:0x80",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659FF0:this:0x40",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659FF0:this:0x80",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:659FF0:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:65B9C0:this:0x40",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65B9C0:this:0x42",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65BB50:this:0x40",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65BB50:this:0x42",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65BD00:this:0x40",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65BD00:this:0x42",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:65FB80:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:65FE00:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:65FE00:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:65FE00:this:0x18",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:65FE00:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:65FE00:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:660050:this:0x1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:660050:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:660730:this:0xC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6620F0:this:0x54",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:663030:this:0x54",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x14C0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x14C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1640",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1648",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1650",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1658",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1668",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1670",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1680",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x16A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1700",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1708",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1710",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x1770",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x18B4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x18B8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6691E0:this:0x5B8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66B900:this:0x1678",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0x1098",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0x1428",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0x1750",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF40",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF44",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF4C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF50",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF58",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66BBB0:this:0xF64",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66CF70:this:0x1818",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66CF70:this:0x1820",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66CF70:this:0x1828",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D150:this:0x1840",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D150:this:0x1848",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D1F0:this:0x1858",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1040",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1048",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1050",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1058",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1060",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1068",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1070",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1078",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1080",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1088",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1090",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x13E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1410",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1418",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1420",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x14D8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x14E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x14F0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1508",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1518",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1528",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1638",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x16B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x16D0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x16E0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x16E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x16F0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1738",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x1748",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x17F8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x17FC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x28",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4B8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4BC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4C0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4C8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4EC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4F0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4F4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x4FC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x520",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x524",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x528",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x530",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x550",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x558",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x560",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x570",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x574",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x578",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x57C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x588",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x590",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x598",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5C0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5D0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5D8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5E0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5F0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x5F8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x630",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x638",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x640",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x664",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x668",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x670",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x678",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x680",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x688",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x690",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x698",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x758",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x760",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x768",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x770",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x778",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x78",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x780",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x790",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x798",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x7A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x80",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0x84",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xC0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xC8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xD0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xD68",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xD70",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xEC0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:66D530:this:0xF3C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10B8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10D8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x10F8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1108",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1118",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1128",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1150",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1510",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0x1760",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0xAF8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0xB00",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0xB08",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:672AE0:this:0xB10",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6743D0:this:0x418",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6743D0:this:0x428",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6743D0:this:0x430",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:689E90:this:0x1C78",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:69F5E0:this:0x328",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:69F5E0:this:0x32C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6A05F0:this:0x50",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6A1C80:this:0x50",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6B1A70:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:6B9530:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6B9740:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6B9740:this:0x28",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6BA230:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6BAC40:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6CEA20:this:0xF8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6D2540:this:0xD8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6D2540:this:0xDC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6DD8B0:this:0x1670",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6DD8B0:this:0x90",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6FDB80:this:0x158",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6FDB80:this:0x160",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6FDD50:this:0x160",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:6FDD50:this:0x3E8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:6FDD50:this:0x408",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:701900:this:0x158",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:706ED0:this:0x24C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:707480:this:0x24C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70ADC0:this:0x420",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:70AF50:this:0x420",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:70B280:this:0x330",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B280:this:0x334",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B570:this:0x18B8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B570:this:0x328",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B570:this:0x32C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B570:this:0x330",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70B570:this:0x334",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70BE50:this:0x24C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70ECE0:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70ED10:this:0x10",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:70ED10:this:0x14",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2C0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2D0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2D8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2E0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2E8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x2F0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x300",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x308",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x360",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x368",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x370",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x378",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x380",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x388",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x3A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x3A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x3B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x3C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x608",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0x6B4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xCD2",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xCD3",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xD1C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xD78",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xD7C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xD84",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:712170:this:0xD88",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:71DEA0:this:0x2A4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:721A50:this:0xA0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:721A50:this:0xB0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:722440:this:0xA0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:722F00:this:0xB0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7359F0:this:0x684",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:7359F0:this:0x685",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:73C5F0:this:0x3EC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:73C5F0:this:0x40C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:73CEC0:this:0x6B4",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:73F0A0:this:0x11B",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:7416A0:this:0x334",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:747620:this:0xE5C",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:747620:this:0xE5D",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:749F30:this:0xB8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:749F30:this:0xC8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:749F30:this:0xCC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:749F30:this:0xD0",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:749F30:this:0xDC",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2A0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2A8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2B0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2B8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2C0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74B050:this:0x2C8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:74CE50:this:0xF8",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74CE50:this:0xFA",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74D490:this:0xF8",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74D490:this:0xFA",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74D670:this:0x2",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74D670:this:0xF8",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74D670:this:0xFA",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74E6B0:this:0xF8",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:74E6B0:this:0xFA",
+   "types": [
+    "short"
+   ]
+  },
+  {
+   "ent": "M:752DB0:this:0x28",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:758670:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:758670:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:7586F0:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:7586F0:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:758880:this:0x4",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:758880:this:0x8",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75AEC0:this:0x1760",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:75AEC0:this:0x578",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x124",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x128",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x12C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x138",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x13C",
+   "types": [
+    "float"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0x98",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0xC0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0xD0",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:75D3A0:this:0xF8",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7610F0:this:0x138",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:762AF0:this:0x138",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:762AF0:this:0x140",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:763690:this:0x1",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:772080:this:0x14E",
+   "types": [
+    "char"
+   ]
+  },
+  {
+   "ent": "M:7ACBE0:this:0x28",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7ADCD0:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7AE1F0:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7AE950:this:0x20",
+   "types": [
+    "double"
+   ]
+  },
+  {
+   "ent": "M:7C2410:this:0x3E",
+   "types": [
+    "unsigned char"
+   ]
+  },
+  {
+   "ent": "M:7C2410:this:0x3F",
+   "types": [
+    "unsigned char"
+   ]
+  }
+ ]
+}

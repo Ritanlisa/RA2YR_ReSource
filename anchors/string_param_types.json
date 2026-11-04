@@ -1,0 +1,909 @@
+{
+ "meta": {
+  "source": "string-literal argument evidence (push offset <str> / mov reg,offset <str>+push reg)",
+  "binary": "D:\\RA2MD\\gamemd.exe",
+  "snapshot": "decompile-results/full_export/src/*.cpp",
+  "generated": "2026-11-04T14:30:17",
+  "tool": ".omo/x_strparam/scan.py",
+  "param_index_semantics": "k=0 is first stack param; thiscall this excluded (consistent with minclass_solver C7: params[1:] enumerated from 0)",
+  "cc_filter": "only stdcall/cdecl/thiscall callees mapped; fastcall/unknown skipped",
+  "string_verification": "binary bytes: >=2 printable ASCII (0x20-0x7E) followed by NUL",
+  "gap_tolerance": 2,
+  "reg_trace_window": 3,
+  "stats": {
+   "call_total": 71756,
+   "call_resolved": 50702,
+   "call_mapped_cc": 45829,
+   "gap_instruction": 69331,
+   "gap_overflow_stop": 12103,
+   "site_with_pushes": 28781,
+   "site_with_gap": 21685,
+   "push_seen": 46140,
+   "reg_trace_attempt": 33280,
+   "push_reg_reg_clobbered": 20960,
+   "push_plain": 7803,
+   "push_reg_no_offset_source": 11631,
+   "call_indirect": 20158,
+   "cc_skip_fastcall": 4818,
+   "verify_fail_unmapped": 158,
+   "push_off_nonstr": 2605,
+   "call_no_push": 17048,
+   "push_reg_jcc_backward_or_opaque": 324,
+   "push_str": 2448,
+   "verify_fail_nonprintable": 814,
+   "infer_reject_cleanup": 1534,
+   "infer_mapped": 997,
+   "call_unresolved": 896,
+   "infer_reject_ecx": 196,
+   "push_reg_too_many_labels": 298,
+   "cc_skip_usercall": 42,
+   "dbg_extref_detail": 0,
+   "dbg_extref": 24,
+   "push_reg_label_external_ref": 24,
+   "reg_trace_hit": 37,
+   "verify_fail_short": 75,
+   "push_off_unresolved": 41,
+   "cc_skip_userpurge": 13,
+   "push_reg_source_all_conditional": 2,
+   "push_reg_off_nonstr": 4,
+   "param_all_other": 5935
+  },
+  "mixed_discarded": 76
+ },
+ "evidence": [
+  {
+   "ent": "P:00410A40:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00433880:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00474810:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004748A0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:00474A90:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 4,
+   "calls_str": 5
+  },
+  {
+   "ent": "P:00474B20:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00474DA0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00474EE0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00475260:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004752E0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004753F0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004754B0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:00475540:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 5,
+   "calls_str": 5
+  },
+  {
+   "ent": "P:00475610:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 4,
+   "calls_str": 4
+  },
+  {
+   "ent": "P:004756F0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004757D0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 10,
+   "calls_str": 10
+  },
+  {
+   "ent": "P:00475870:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00475870:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004758C0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004758F0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004758F0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00475950:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00475980:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004759D0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004759F0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:00475F30:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00476340:2",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00476420:2",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004766F0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00476EB0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00476FC0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:00477050:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00477590:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:0047A9D0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 13,
+   "calls_str": 13
+  },
+  {
+   "ent": "P:0047AF10:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 19,
+   "calls_str": 19
+  },
+  {
+   "ent": "P:004CB5E0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:004CB700:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:004CB760:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 14,
+   "calls_str": 14
+  },
+  {
+   "ent": "P:004CB7C0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00524EC0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:00527C10:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 5,
+   "calls_str": 5
+  },
+  {
+   "ent": "P:00527CC0:2",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00528E00:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 4,
+   "calls_str": 4
+  },
+  {
+   "ent": "P:00528F00:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 4,
+   "calls_str": 4
+  },
+  {
+   "ent": "P:00529160:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:005297E0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00529CA0:2",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00597730:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:00625DB0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00642C20:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:0066D270:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 6,
+   "calls_str": 6
+  },
+  {
+   "ent": "P:006811C0:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:00697F10:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:00698F90:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:0069A980:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 3,
+   "calls_str": 3
+  },
+  {
+   "ent": "P:007B4DA0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 11,
+   "calls_str": 11
+  },
+  {
+   "ent": "P:007C8EF4:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 74,
+   "calls_str": 74
+  },
+  {
+   "ent": "P:007CA530:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:007CA971:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 4,
+   "calls_str": 4
+  },
+  {
+   "ent": "P:007CAACB:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  },
+  {
+   "ent": "P:007CBC11:0",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:007D6CF0:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 2,
+   "calls_str": 2
+  },
+  {
+   "ent": "P:007DAE9F:1",
+   "types": [
+    "char*",
+    "char *",
+    "const char *"
+   ],
+   "sites": 1,
+   "calls_str": 1
+  }
+ ],
+ "debug": {
+  "mixed_samples": [
+   {
+    "ent": "P:004068E0:0",
+    "str": 12,
+    "other": 787,
+    "sites": 797
+   },
+   {
+    "ent": "P:004068E0:1",
+    "str": 66,
+    "other": 324,
+    "sites": 390
+   },
+   {
+    "ent": "P:004739F0:0",
+    "str": 40,
+    "other": 85,
+    "sites": 125
+   },
+   {
+    "ent": "P:00473FC0:0",
+    "str": 2,
+    "other": 9,
+    "sites": 11
+   },
+   {
+    "ent": "P:00474B50:2",
+    "str": 8,
+    "other": 1,
+    "sites": 9
+   },
+   {
+    "ent": "P:00475540:0",
+    "str": 1,
+    "other": 4,
+    "sites": 5
+   },
+   {
+    "ent": "P:00475610:0",
+    "str": 1,
+    "other": 3,
+    "sites": 4
+   },
+   {
+    "ent": "P:004757D0:0",
+    "str": 9,
+    "other": 1,
+    "sites": 10
+   },
+   {
+    "ent": "P:004A4AC0:0",
+    "str": 8,
+    "other": 2,
+    "sites": 10
+   },
+   {
+    "ent": "P:005257C0:0",
+    "str": 14,
+    "other": 52,
+    "sites": 66
+   },
+   {
+    "ent": "P:005257C0:1",
+    "str": 1,
+    "other": 64,
+    "sites": 65
+   },
+   {
+    "ent": "P:00526810:0",
+    "str": 3,
+    "other": 44,
+    "sites": 47
+   }
+  ],
+  "string_samples": [
+   {
+    "file": "AbstractClass.cpp",
+    "call": 4610476,
+    "callee": 8167408,
+    "k": 4,
+    "op": "offset Ext",
+    "str_addr": 8487756
+   },
+   {
+    "file": "AbstractTypeClass.cpp",
+    "call": 4261963,
+    "callee": 8163060,
+    "k": 1,
+    "op": "offset Format",
+    "str_addr": 8484904
+   },
+   {
+    "file": "AbstractTypeClass.cpp",
+    "call": 4262560,
+    "callee": 5409296,
+    "k": 1,
+    "op": "offset g_INI_Key_Name",
+    "str_addr": 8484948
+   },
+   {
+    "file": "AbstractTypeClass.cpp",
+    "call": 4262651,
+    "callee": 5409296,
+    "k": 1,
+    "op": "offset g_INI_Key_UIName",
+    "str_addr": 8484940
+   },
+   {
+    "file": "AbstractTypeClass.cpp",
+    "call": 4262834,
+    "callee": 5408352,
+    "k": 1,
+    "op": "offset g_INI_Key_Name",
+    "str_addr": 8484948
+   },
+   {
+    "file": "AbstractTypeClass.cpp",
+    "call": 4262858,
+    "callee": 5408352,
+    "k": 1,
+    "op": "offset g_INI_Key_UIName",
+    "str_addr": 8484940
+   },
+   {
+    "file": "AddTeamCommand.cpp",
+    "call": 5464286,
+    "callee": 8163060,
+    "k": 1,
+    "op": "offset aTeamaddselectD",
+    "str_addr": 8548660
+   },
+   {
+    "file": "AircraftTypeClass.cpp",
+    "call": 4312156,
+    "callee": 5412336,
+    "k": 1,
+    "op": "offset aLandable",
+    "str_addr": 8486988
+   },
+   {
+    "file": "AircraftTypeClass.cpp",
+    "call": 4312182,
+    "callee": 5412336,
+    "k": 1,
+    "op": "offset aAirportbound",
+    "str_addr": 8486972
+   },
+   {
+    "file": "AircraftTypeClass.cpp",
+    "call": 4312208,
+    "callee": 5412336,
+    "k": 1,
+    "op": "offset aFighter",
+    "str_addr": 8486964
+   },
+   {
+    "file": "AircraftTypeClass.cpp",
+    "call": 4312234,
+    "callee": 5412336,
+    "k": 1,
+    "op": "offset aCarryall",
+    "str_addr": 8486952
+   },
+   {
+    "file": "AircraftTypeClass.cpp",
+    "call": 4312269,
+    "callee": 5412336,
+    "k": 1,
+    "op": "offset aRotors",
+    "str_addr": 8486944
+   }
+  ],
+  "extref_dbg": [
+   [
+    "eax",
+    1348,
+    "loc_751321",
+    "0x751321",
+    1,
+    0
+   ],
+   [
+    "eax",
+    278,
+    "loc_734960",
+    "0x734960",
+    1,
+    0
+   ],
+   [
+    "eax",
+    216,
+    "loc_4BA7AE",
+    "0x4ba7ae",
+    1,
+    0
+   ],
+   [
+    "eax",
+    109,
+    "loc_5B4AFA",
+    "0x5b4afa",
+    1,
+    0
+   ],
+   [
+    "eax",
+    1255,
+    "loc_7516A4",
+    "0x7516a4",
+    1,
+    0
+   ],
+   [
+    "esi",
+    232,
+    "loc_48DBEC",
+    "0x48dbec",
+    1,
+    0
+   ]
+  ]
+ }
+}

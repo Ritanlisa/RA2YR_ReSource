@@ -1,0 +1,586 @@
+{
+ "meta": {
+  "tool": "tools/type_infer/gen_format_params.py",
+  "binary": "gamemd.exe",
+  "snapshot": "decompile-results/full_export/src",
+  "layer": "heuristic — format-string/vararg correspondence follows the cdecl right-to-left push convention, arity locked against the caller `add esp` cleanup",
+  "format_functions": {
+   "5BD1F0": {
+    "name": "Debug::Printf",
+    "fmt_pos": 1,
+    "wide": false,
+    "literal_fmt_sites": 2,
+    "sample_sites": [
+     "0x64E2C4",
+     "0x64775A"
+    ]
+   },
+   "7CA7D8": {
+    "name": "_fprintf",
+    "fmt_pos": 1,
+    "wide": false,
+    "literal_fmt_sites": 84,
+    "sample_sites": [
+     "0x698CFD",
+     "0x698D36",
+     "0x698D4D",
+     "0x698D78",
+     "0x698DE3"
+    ]
+   },
+   "7C8EF4": {
+    "name": "_sprintf",
+    "fmt_pos": 1,
+    "wide": false,
+    "literal_fmt_sites": 219,
+    "sample_sites": [
+     "0x41084B",
+     "0x5360DE",
+     "0x523FCA",
+     "0x44FEE1",
+     "0x450001"
+    ]
+   },
+   "7CA564": {
+    "name": "_swprintf",
+    "fmt_pos": 1,
+    "wide": true,
+    "literal_fmt_sites": 80,
+    "sample_sites": [
+     "0x7A5938",
+     "0x7A5959",
+     "0x7A5270",
+     "0x7A930E",
+     "0x7A9625"
+    ]
+   },
+   "7C85EA": {
+    "name": "wsprintfA",
+    "fmt_pos": 1,
+    "wide": false,
+    "literal_fmt_sites": 14,
+    "sample_sites": [
+     "0x4AD8C7",
+     "0x5BB722",
+     "0x683D80",
+     "0x68BDDE",
+     "0x71F438"
+    ]
+   }
+  },
+  "excluded": {
+   "PrintFontLayout": "name coincides with /printf/i, not a formatter",
+   "TextRenderer::Printf": "variadic game helper whose fmt position is not param1 (sites show CSF lookup as fmt source); no reliable param mapping"
+  },
+  "va_attempted_zero_evidence": {
+   "7CB7BA": "_vsprintf: 1 site (0x5BD214, Debug::Printf body) — fmt carried in a register from its own param",
+   "7CA858": "_vswprintf: 5 sites (0x5E272A/0x5E27BA/0x4A60FC/0x4A61E1/0x5BD267) — all va wrappers pass fmt through a register",
+   "7DD4F4": "_cwprintf: 1 site (0x4C85B5) — fmt label resolves to a narrow non-% string (wide/narrow mismatch), verify failed",
+   "note": "va_list variants were in scope for the param1 judgment; zero sites carry a binary-verified literal fmt, so no P evidence is emitted for them (strict rule: literal must be verified from PE bytes)"
+  },
+  "conventions": {
+   "entities": "P:%X:idx (param idx, this excluded, fastcall base+2) / G:%X (global or string literal) / S:%X:+0xN (engine stack_+esp key from Hex-Rays decl \"[esp+Xh] [ebp-Yh]\")",
+   "charp_pair": "P-entity char* judgments carry both \"char *\" and \"const char *\" spellings",
+   "address_form": "address-taking sources (push offset / mov reg,offset / lea) yield the entity but no numeric type judgment; %s via push-offset is judged only when the target is binary-verified string content",
+   "va_list": "_vsprintf/_vswprintf param1 judged like non-va forms (fmt is the first param after the buffer)",
+   "arity": "add esp below the call must equal fmt_pos+1+nconv+nstar; absent/fused cleanup requires exact collected-push match; otherwise dropped"
+  },
+  "stats": {
+   "sites_total": 565,
+   "fmt_literal_ok": 399,
+   "uint_no_entity": 50,
+   "int_no_entity": 426,
+   "drop_fmt_not_literal": 81,
+   "s_skipped_no_direct": 142,
+   "drop_fmt_unresolved": 30,
+   "drop_arity_unknown": 33,
+   "s_direct_unverified": 1,
+   "judge_charp": 3,
+   "drop_fmt_verify_fail": 21,
+   "judge_int": 33,
+   "judge_uint": 4,
+   "double_no_entity": 1,
+   "drop_arity_mismatch": 1
+  }
+ },
+ "evidence": [
+  {
+   "ent": "G:81F324",
+   "types": [
+    "char *"
+   ],
+   "via": "fmt-%s@0x49DF85",
+   "count": 1,
+   "sites": [
+    "0x49DF85"
+   ]
+  },
+  {
+   "ent": "G:832908",
+   "types": [
+    "char *"
+   ],
+   "via": "fmt-%s@0x5F301A",
+   "count": 1,
+   "sites": [
+    "0x5F301A"
+   ]
+  },
+  {
+   "ent": "G:84E865",
+   "types": [
+    "char *"
+   ],
+   "via": "fmt-%s@0x531BCF",
+   "count": 1,
+   "sites": [
+    "0x531BCF"
+   ]
+  },
+  {
+   "ent": "P:46DA20:4",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x46DA38",
+   "count": 1,
+   "sites": [
+    "0x46DA38"
+   ]
+  },
+  {
+   "ent": "P:470C40:4",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x470C58",
+   "count": 1,
+   "sites": [
+    "0x470C58"
+   ]
+  },
+  {
+   "ent": "P:477510:2",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x477555",
+   "count": 1,
+   "sites": [
+    "0x477555"
+   ]
+  },
+  {
+   "ent": "P:477510:3",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x477555",
+   "count": 1,
+   "sites": [
+    "0x477555"
+   ]
+  },
+  {
+   "ent": "P:477510:4",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x477555",
+   "count": 1,
+   "sites": [
+    "0x477555"
+   ]
+  },
+  {
+   "ent": "P:4791F0:0",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x479691",
+   "count": 1,
+   "sites": [
+    "0x479691"
+   ]
+  },
+  {
+   "ent": "P:4791F0:1",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x4795E4",
+   "count": 1,
+   "sites": [
+    "0x4795E4"
+   ]
+  },
+  {
+   "ent": "P:49D680:12",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:15",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:16",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:17",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:18",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:19",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:20",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:21",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:22",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:23",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:49D680:24",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x49D70C",
+   "count": 1,
+   "sites": [
+    "0x49D70C"
+   ]
+  },
+  {
+   "ent": "P:4A83D0:0",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x4A83E5",
+   "count": 1,
+   "sites": [
+    "0x4A83E5"
+   ]
+  },
+  {
+   "ent": "P:5275C0:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "fmt-%X@0x52760D",
+   "count": 1,
+   "sites": [
+    "0x52760D"
+   ]
+  },
+  {
+   "ent": "P:527640:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "fmt-%X@0x5276AE",
+   "count": 1,
+   "sites": [
+    "0x5276AE"
+   ]
+  },
+  {
+   "ent": "P:528170:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "fmt-%X@0x528188",
+   "count": 1,
+   "sites": [
+    "0x528188"
+   ]
+  },
+  {
+   "ent": "P:5281C0:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "fmt-%X@0x5281F9",
+   "count": 1,
+   "sites": [
+    "0x5281F9"
+   ]
+  },
+  {
+   "ent": "P:587C50:7",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x587EBC",
+   "count": 4,
+   "sites": [
+    "0x587EBC",
+    "0x587F3E",
+    "0x587FAE",
+    "0x588026"
+   ]
+  },
+  {
+   "ent": "P:596E50:27",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x597206",
+   "count": 1,
+   "sites": [
+    "0x597206"
+   ]
+  },
+  {
+   "ent": "P:5BB6E0:0",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x5BB722",
+   "count": 1,
+   "sites": [
+    "0x5BB722"
+   ]
+  },
+  {
+   "ent": "P:5BD1F0:1",
+   "types": [
+    "char *",
+    "const char *"
+   ],
+   "via": "fmt-param1@0x64E2C4",
+   "count": 2,
+   "sites": [
+    "0x64E2C4",
+    "0x64775A"
+   ]
+  },
+  {
+   "ent": "P:5C9850:4",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x5C9868",
+   "count": 1,
+   "sites": [
+    "0x5C9868"
+   ]
+  },
+  {
+   "ent": "P:5F7A90:1",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x5F7ADE",
+   "count": 1,
+   "sites": [
+    "0x5F7ADE"
+   ]
+  },
+  {
+   "ent": "P:5F7DB0:1",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x5F7DFE",
+   "count": 1,
+   "sites": [
+    "0x5F7DFE"
+   ]
+  },
+  {
+   "ent": "P:64DEA0:10",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x64E30D",
+   "count": 1,
+   "sites": [
+    "0x64E30D"
+   ]
+  },
+  {
+   "ent": "P:68F060:1",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x68F3A9",
+   "count": 3,
+   "sites": [
+    "0x68F3A9",
+    "0x68F517",
+    "0x68F589"
+   ]
+  },
+  {
+   "ent": "P:6C8FA0:4",
+   "types": [
+    "int"
+   ],
+   "via": "fmt-%d@0x6C8FB8",
+   "count": 1,
+   "sites": [
+    "0x6C8FB8"
+   ]
+  },
+  {
+   "ent": "P:7C85EA:1",
+   "types": [
+    "char *",
+    "const char *"
+   ],
+   "via": "fmt-param1@0x4AD8C7",
+   "count": 14,
+   "sites": [
+    "0x4AD8C7",
+    "0x5BB722",
+    "0x683D80",
+    "0x68BDDE",
+    "0x71F438",
+    "0x71F462",
+    "0x6E6181",
+    "0x6E61B4"
+   ]
+  },
+  {
+   "ent": "P:7C8EF4:1",
+   "types": [
+    "char *",
+    "const char *"
+   ],
+   "via": "fmt-param1@0x41084B",
+   "count": 219,
+   "sites": [
+    "0x41084B",
+    "0x5360DE",
+    "0x523FCA",
+    "0x44FEE1",
+    "0x450001",
+    "0x42EC53",
+    "0x616DC5",
+    "0x616E5B"
+   ]
+  },
+  {
+   "ent": "P:7CA564:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "fmt-param1@0x7A5938",
+   "count": 80,
+   "sites": [
+    "0x7A5938",
+    "0x7A5959",
+    "0x7A5270",
+    "0x7A930E",
+    "0x7A9625",
+    "0x4710D8",
+    "0x471134",
+    "0x471193"
+   ]
+  },
+  {
+   "ent": "P:7CA7D8:1",
+   "types": [
+    "char *",
+    "const char *"
+   ],
+   "via": "fmt-param1@0x698CFD",
+   "count": 84,
+   "sites": [
+    "0x698CFD",
+    "0x698D36",
+    "0x698D4D",
+    "0x698D78",
+    "0x698DE3",
+    "0x698E0E",
+    "0x698E34",
+    "0x698E46"
+   ]
+  }
+ ]
+}
