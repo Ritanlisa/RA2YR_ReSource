@@ -68,7 +68,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -83,6 +83,10 @@ FAMILY_DESC = {
     "MS": "string-literal returns => char* RET (strict)",
     "MH": "jump-table enum usage => int family (heuristic)",
     "IG": "bare partial-register access granularity (byte/word member width, strict)",
+    "OT": "vtable slot occupancy => this in class family (strict, binary fact)",
+    "SG": "stack-slot insn granularity (byte/word/float, strict)",
+    "RU": "return-value consumer usage int-only (heuristic)",
+    "AS": "allocation sizes => class-size mask (heuristic, CS-family semantics)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2474,6 +2478,76 @@ def main():
         print("[FS] format-string args: %d" % census["FS"], flush=True)
     except Exception as _e_fs:
         print("[FS] skipped: %r" % _e_fs, flush=True)
+    try:
+        _n_ot = 0
+        for _rec in (jload("anchors/occupant_this_types.json", {}) or {}).get("evidence") or []:
+            _eot = _rec.get("ent")
+            if not isinstance(_eot, str):
+                continue
+            m_ot = 0
+            for _cot in (_rec.get("classes") or _rec.get("types") or []):
+                _ixot = resolve(_cot)
+                if _ixot is not None:
+                    m_ot |= (1 << _ixot)
+            if not m_ot:
+                continue
+            if _eot not in ents:
+                touch(_eot, _eot)
+            fam["OT"][_eot] = fam["OT"].get(_eot, FULL) & m_ot
+            _n_ot += 1
+        census["OT"] = _n_ot
+        print("[OT] occupant this types: %d" % _n_ot, flush=True)
+    except Exception as _e_ot:
+        print("[OT] skipped: %r" % _e_ot, flush=True)
+    try:
+        census["SG"] = _load_type_family("anchors/slot_granularity_types.json", "SG")
+        print("[SG] slot granularity types: %d" % census["SG"], flush=True)
+    except Exception as _e_sg:
+        print("[SG] skipped: %r" % _e_sg, flush=True)
+    if getattr(args, "allow_heuristics", False):
+        try:
+            census["RU"] = 0  # negative result: int-force conflicts eat pins; needs conflict-aware gating
+            print("[RU] ret usage types: %d" % census["RU"], flush=True)
+        except Exception as _e_ru:
+            print("[RU] skipped: %r" % _e_ru, flush=True)
+        try:  # negative result: size-mask noise eats pins
+            _asz = {}
+            _n_as = 0
+            for _rec in []:
+                pass
+            census['AS'] = _n_as
+            print('[AS] disabled (negative result)', flush=True)
+            raise SystemExit(0) if False else None
+            for _i2, _nm2 in enumerate(names):
+                _sz2 = U["size"][_i2] if _i2 < len(U["size"]) else None
+                if isinstance(_sz2, int) and _sz2 > 0:
+                    _asz.setdefault(_sz2, 0)
+                    _asz[_sz2] |= (1 << _i2)
+            _n_as = 0
+            for _rec in (jload("anchors/alloc_size_types.json", {}) or {}).get("evidence") or []:
+                _ea2 = _rec.get("ent")
+                _sizes = _rec.get("sizes") or []
+                if not isinstance(_ea2, str) or not _sizes:
+                    continue
+                m2 = 0
+                for _tot in _sizes:
+                    _tot = int(_tot)
+                    _mk = _asz.get(_tot)
+                    if _mk:
+                        m2 |= _mk
+                if not m2:
+                    continue
+                if _ea2 not in ents:
+                    touch(_ea2, _ea2)
+                fam["AS"][_ea2] = fam["AS"].get(_ea2, FULL) & m2
+                _n_as += 1
+            census["AS"] = _n_as
+            print("[AS] alloc size types: %d" % _n_as, flush=True)
+        except Exception as _e_as:
+            print("[AS] skipped: %r" % _e_as, flush=True)
+    else:
+        census["RU"] = 0
+        census["AS"] = 0
     try:
         census["IG"] = _load_type_family("anchors/insn_granularity_types.json", "IG")
         print("[IG] granularity types: %d" % census["IG"], flush=True)

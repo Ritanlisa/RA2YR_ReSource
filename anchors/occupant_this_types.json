@@ -1,0 +1,4852 @@
+{
+ "meta": {
+  "generated": "2026-11-05T00:21:38",
+  "semantics": "fn occupies main vtable slot of C => T:fn domain subset of (C union descendants(C)); union over sharing classes; secondary tables excluded; descendants strictly from rtti_base_arrays (no invented edges)",
+  "sources": {
+   "vtable_slot_authority.json": {
+    "classes": 954
+   },
+   "vtable_slot_authority_ext.json": {
+    "classes": 66,
+    "note": "ext keys used as class names verbatim (alias_of not chased; aliases have no descendants in rtti_base_arrays)"
+   },
+   "rtti_base_arrays.json": {
+    "classes": 954,
+    "raw_descriptor_parse_fail": 0
+   },
+   "minclass_assignments.json": {
+    "clusters": 51827,
+    "t_ents": 8414
+   }
+  },
+  "universe": {
+   "class_db_classes": 1597,
+   "authority_keys": 1020,
+   "total": 2096
+  },
+  "counts": {
+   "distinct_occupant_fns": 6499,
+   "slot_instances_main_tables": 13503,
+   "null_slots_skipped": 0,
+   "pinned_excluded_cluster_candidates_eq_1": 5954,
+   "has_cluster_candidates_gt_1": 449,
+   "no_cluster_target": 96,
+   "nocluster_pinnable_domain_eq_1": 49,
+   "nocluster_narrow_2_8": 44,
+   "nocluster_wide_gt_8": 3,
+   "multi_verbatim_intersect_eq_1": 101,
+   "multi_templatefamily_intersect_eq_1": 282,
+   "multi_intersect_gt_1": 66,
+   "multi_intersect_empty_even_normalized": 0,
+   "evidence_entries": 545
+  },
+  "naming_note": "domain classes spelled verbatim per RTTI/authority keys (template instantiations as ?$Name@args@@); solver clusters may use template-family names (e.g. VectorClass) -- wiring end must apply family resolution before intersecting; all verbatim-empty intersections observed are template-family spelling only, zero true semantic conflicts"
+ },
+ "evidence": [
+  {
+   "ent": "T:4913F0",
+   "classes": [
+    "?$BlitPlainXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491430",
+   "classes": [
+    "?$BlitPlainXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491460",
+   "classes": [
+    "?$BlitPlainXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491490",
+   "classes": [
+    "?$BlitPlainXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4914C0",
+   "classes": [
+    "?$BlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491500",
+   "classes": [
+    "?$BlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491530",
+   "classes": [
+    "?$BlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491560",
+   "classes": [
+    "?$BlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491820",
+   "classes": [
+    "?$RLEBlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4918A0",
+   "classes": [
+    "?$RLEBlitTransXlat@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491B40",
+   "classes": [
+    "?$RLEBlitTransXlatZRead@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:491C10",
+   "classes": [
+    "?$RLEBlitTransXlatZRead@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B4D90",
+   "classes": [
+    "DriveLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B4DA0",
+   "classes": [
+    "DriveLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B4DB0",
+   "classes": [
+    "DriveLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B6740",
+   "classes": [
+    "DropPodLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B6750",
+   "classes": [
+    "DropPodLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:4B6760",
+   "classes": [
+    "DropPodLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5247C0",
+   "classes": [
+    "InfantryTypeClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:54DFF0",
+   "classes": [
+    "JumpjetLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:54E000",
+   "classes": [
+    "JumpjetLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:54E010",
+   "classes": [
+    "JumpjetLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5C5D30",
+   "classes": [
+    "FreeForAll"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5CA7F0",
+   "classes": [
+    "MultiplayerSiege"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D8170",
+   "classes": [
+    "?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D81B0",
+   "classes": [
+    "?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D81F0",
+   "classes": [
+    "?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D8230",
+   "classes": [
+    "?$Initializer@VUnholyAlliance@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D8270",
+   "classes": [
+    "?$Initializer@VFreeForAll@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:5D82B0",
+   "classes": [
+    "?$Initializer@VMPCooperative@@@MultiplayerGameMode"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:6A4300",
+   "classes": [
+    "ShipLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:6A4310",
+   "classes": [
+    "ShipLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:6A4320",
+   "classes": [
+    "ShipLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:71A160",
+   "classes": [
+    "TeleportLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:71A170",
+   "classes": [
+    "TeleportLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:71A180",
+   "classes": [
+    "TeleportLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7447A0",
+   "classes": [
+    "UnitClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7473D0",
+   "classes": [
+    "UnitTypeClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:75CC30",
+   "classes": [
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:75CC40",
+   "classes": [
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:75CC50",
+   "classes": [
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC610",
+   "classes": [
+    "?$BlitTrans@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC6C0",
+   "classes": [
+    "?$BlitTrans@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC6F0",
+   "classes": [
+    "?$BlitTrans@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC720",
+   "classes": [
+    "?$BlitTrans@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC750",
+   "classes": [
+    "?$BlitPlain@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC780",
+   "classes": [
+    "?$BlitPlain@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC7A0",
+   "classes": [
+    "?$BlitPlain@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:7BC7D0",
+   "classes": [
+    "?$BlitPlain@E"
+   ],
+   "n_classes": 1
+  },
+  {
+   "ent": "T:40B690",
+   "classes": [
+    "?$DynamicVectorClass@PAVBombClass@@",
+    "?$VectorClass@PAVBombClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40B700",
+   "classes": [
+    "?$DynamicVectorClass@PAVBombClass@@",
+    "?$VectorClass@PAVBombClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40BEA0",
+   "classes": [
+    "?$DynamicVectorClass@PBVCommandClass@@",
+    "?$VectorClass@PBVCommandClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40BEB0",
+   "classes": [
+    "?$DynamicVectorClass@PBVCommandClass@@",
+    "?$VectorClass@PBVCommandClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40C280",
+   "classes": [
+    "?$DynamicVectorClass@PAVLightConvertClass@@",
+    "?$VectorClass@PAVLightConvertClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40C290",
+   "classes": [
+    "?$DynamicVectorClass@PAVLightConvertClass@@",
+    "?$VectorClass@PAVLightConvertClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40C870",
+   "classes": [
+    "?$DynamicVectorClass@PAVIsometricTileClass@@",
+    "?$VectorClass@PAVIsometricTileClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40C880",
+   "classes": [
+    "?$DynamicVectorClass@PAVIsometricTileClass@@",
+    "?$VectorClass@PAVIsometricTileClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40D590",
+   "classes": [
+    "?$DynamicVectorClass@PAVMixFileClass@@",
+    "?$VectorClass@PAVMixFileClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40D5A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMixFileClass@@",
+    "?$VectorClass@PAVMixFileClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40E840",
+   "classes": [
+    "?$DynamicVectorClass@PAVScriptClass@@",
+    "?$VectorClass@PAVScriptClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40E850",
+   "classes": [
+    "?$DynamicVectorClass@PAVScriptClass@@",
+    "?$VectorClass@PAVScriptClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40EF10",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxelAnimClass@@",
+    "?$VectorClass@PAVVoxelAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40EF20",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxelAnimClass@@",
+    "?$VectorClass@PAVVoxelAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40F630",
+   "classes": [
+    "?$DynamicVectorClass@PAVWarheadTypeClass@@",
+    "?$VectorClass@PAVWarheadTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40F640",
+   "classes": [
+    "?$DynamicVectorClass@PAVWarheadTypeClass@@",
+    "?$VectorClass@PAVWarheadTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40FC00",
+   "classes": [
+    "?$DynamicVectorClass@PAVWeaponTypeClass@@",
+    "?$VectorClass@PAVWeaponTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40FC10",
+   "classes": [
+    "?$DynamicVectorClass@PAVWeaponTypeClass@@",
+    "?$VectorClass@PAVWeaponTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:41DE30",
+   "classes": [
+    "?$DynamicVectorClass@PAVAirstrikeClass@@",
+    "?$VectorClass@PAVAirstrikeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:41DE40",
+   "classes": [
+    "?$DynamicVectorClass@PAVAirstrikeClass@@",
+    "?$VectorClass@PAVAirstrikeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4203C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@",
+    "?$VectorClass@PAVAlphaLightingRemapClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4203D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@",
+    "?$VectorClass@PAVAlphaLightingRemapClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:421850",
+   "classes": [
+    "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+    "?$VectorClass@PAVAlphaShapeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:421860",
+   "classes": [
+    "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+    "?$VectorClass@PAVAlphaShapeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:42F3F0",
+   "classes": [
+    "?$DynamicVectorClass@VBaseNodeClass@@",
+    "?$VectorClass@VBaseNodeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:42F470",
+   "classes": [
+    "?$DynamicVectorClass@VCell@@",
+    "?$VectorClass@VCell@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:42F490",
+   "classes": [
+    "?$DynamicVectorClass@VBaseNodeClass@@",
+    "?$VectorClass@VBaseNodeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:42F620",
+   "classes": [
+    "?$DynamicVectorClass@VCell@@",
+    "?$VectorClass@VCell@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:459F90",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:459FC0",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A040",
+   "classes": [
+    "?$DynamicVectorClass@PAVInfantryClass@@",
+    "?$VectorClass@PAVInfantryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A0C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVFoggedObjectClass@@",
+    "?$VectorClass@PAVFoggedObjectClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A120",
+   "classes": [
+    "?$DynamicVectorClass@PAVReestablish@@",
+    "?$VectorClass@PAVReestablish@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A300",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A3B0",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A3E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVInfantryClass@@",
+    "?$VectorClass@PAVInfantryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A640",
+   "classes": [
+    "?$DynamicVectorClass@PAVFoggedObjectClass@@",
+    "?$VectorClass@PAVFoggedObjectClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:45A760",
+   "classes": [
+    "?$DynamicVectorClass@PAVReestablish@@",
+    "?$VectorClass@PAVReestablish@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:46B630",
+   "classes": [
+    "?$DynamicVectorClass@PAVBulletClass@@",
+    "?$VectorClass@PAVBulletClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:46B660",
+   "classes": [
+    "?$DynamicVectorClass@PAVBulletClass@@",
+    "?$VectorClass@PAVBulletClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:472AD0",
+   "classes": [
+    "?$DynamicVectorClass@PAUControlNode@@",
+    "?$VectorClass@PAUControlNode@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:472B30",
+   "classes": [
+    "?$DynamicVectorClass@PAVCaptureManagerClass@@",
+    "?$VectorClass@PAVCaptureManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:472B40",
+   "classes": [
+    "?$DynamicVectorClass@PAUControlNode@@",
+    "?$VectorClass@PAUControlNode@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:472DA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVCaptureManagerClass@@",
+    "?$VectorClass@PAVCaptureManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4778A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4778D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:477900",
+   "classes": [
+    "?$DynamicVectorClass@VRGBClass@@",
+    "?$TypeList@VRGBClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:477930",
+   "classes": [
+    "?$DynamicVectorClass@VRGBClass@@",
+    "?$TypeList@VRGBClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:478140",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4781F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4784F0",
+   "classes": [
+    "?$DynamicVectorClass@VRGBClass@@",
+    "?$TypeList@VRGBClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:48AD60",
+   "classes": [
+    "?$DynamicVectorClass@PAUDamageGroup@@",
+    "?$VectorClass@PAUDamageGroup@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:48AD70",
+   "classes": [
+    "?$DynamicVectorClass@PAUDamageGroup@@",
+    "?$VectorClass@PAUDamageGroup@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4912B0",
+   "classes": [
+    "?$BlitTransXlat@G",
+    "BlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:491300",
+   "classes": [
+    "?$BlitTransXlat@G",
+    "BlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:491330",
+   "classes": [
+    "?$BlitTransXlat@G",
+    "BlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:491360",
+   "classes": [
+    "?$BlitTransXlat@G",
+    "BlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4913E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVConvertClass@@",
+    "?$VectorClass@PAVConvertClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4924C0",
+   "classes": [
+    "?$BlitPlainXlat@G",
+    "BlitPlainXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492500",
+   "classes": [
+    "?$BlitPlainXlat@G",
+    "BlitPlainXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492530",
+   "classes": [
+    "?$BlitPlainXlat@G",
+    "BlitPlainXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492560",
+   "classes": [
+    "?$BlitPlainXlat@G",
+    "BlitPlainXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492670",
+   "classes": [
+    "?$BlitTransDarken@G",
+    "BlitTransDarken"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4926B0",
+   "classes": [
+    "?$BlitTransDarken@G",
+    "BlitTransDarken"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4926E0",
+   "classes": [
+    "?$BlitTransDarken@G",
+    "BlitTransDarken"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492710",
+   "classes": [
+    "?$BlitTransDarken@G",
+    "BlitTransDarken"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492740",
+   "classes": [
+    "?$BlitTransLucent75@G",
+    "BlitTransLucent75"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4927A0",
+   "classes": [
+    "?$BlitTransLucent75@G",
+    "BlitTransLucent75"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4927D0",
+   "classes": [
+    "?$BlitTransLucent75@G",
+    "BlitTransLucent75"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492800",
+   "classes": [
+    "?$BlitTransLucent75@G",
+    "BlitTransLucent75"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492830",
+   "classes": [
+    "?$BlitTransLucent50@G",
+    "BlitTransLucent50"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492890",
+   "classes": [
+    "?$BlitTransLucent50@G",
+    "BlitTransLucent50"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4928C0",
+   "classes": [
+    "?$BlitTransLucent50@G",
+    "BlitTransLucent50"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4928F0",
+   "classes": [
+    "?$BlitTransLucent50@G",
+    "BlitTransLucent50"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492920",
+   "classes": [
+    "?$BlitTransLucent25@G",
+    "BlitTransLucent25"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492980",
+   "classes": [
+    "?$BlitTransLucent25@G",
+    "BlitTransLucent25"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4929B0",
+   "classes": [
+    "?$BlitTransLucent25@G",
+    "BlitTransLucent25"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4929E0",
+   "classes": [
+    "?$BlitTransLucent25@G",
+    "BlitTransLucent25"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492B00",
+   "classes": [
+    "?$BlitTransXlatZRead@G",
+    "BlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492B70",
+   "classes": [
+    "?$BlitTransXlatZRead@G",
+    "BlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492BA0",
+   "classes": [
+    "?$BlitTransXlatZRead@G",
+    "BlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:492BD0",
+   "classes": [
+    "?$BlitTransXlatZRead@G",
+    "BlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:493600",
+   "classes": [
+    "?$BlitTransXlatZReadWrite@G",
+    "BlitTransXlatZReadWrite"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:493680",
+   "classes": [
+    "?$BlitTransXlatZReadWrite@G",
+    "BlitTransXlatZReadWrite"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4936B0",
+   "classes": [
+    "?$BlitTransXlatZReadWrite@G",
+    "BlitTransXlatZReadWrite"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4936E0",
+   "classes": [
+    "?$BlitTransXlatZReadWrite@G",
+    "BlitTransXlatZReadWrite"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4960A0",
+   "classes": [
+    "?$RLEBlitTransXlat@G",
+    "RLEBlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:496130",
+   "classes": [
+    "?$RLEBlitTransXlat@G",
+    "RLEBlitTransXlat"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4965B0",
+   "classes": [
+    "?$RLEBlitTransXlatZRead@G",
+    "RLEBlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:496690",
+   "classes": [
+    "?$RLEBlitTransXlatZRead@G",
+    "RLEBlitTransXlatZRead"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:49AE80",
+   "classes": [
+    "?$DynamicVectorClass@PAVConvertClass@@",
+    "?$VectorClass@PAVConvertClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:49E9A0",
+   "classes": [
+    "?$DynamicVectorClass@PAD",
+    "?$VectorClass@PAD"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:49EA00",
+   "classes": [
+    "?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@",
+    "?$VectorClass@PAV?$DynamicVectorClass@PAD@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:49EA30",
+   "classes": [
+    "?$DynamicVectorClass@PAD",
+    "?$VectorClass@PAD"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:49EB50",
+   "classes": [
+    "?$DynamicVectorClass@PAV?$DynamicVectorClass@PAD@@",
+    "?$VectorClass@PAV?$DynamicVectorClass@PAD@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A0F00",
+   "classes": [
+    "?$DynamicVectorClass@UtagCONNECTDATA@@",
+    "?$VectorClass@UtagCONNECTDATA@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A0F70",
+   "classes": [
+    "?$DynamicVectorClass@PAUIConnectionPoint@@",
+    "?$VectorClass@PAUIConnectionPoint@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A0F80",
+   "classes": [
+    "?$DynamicVectorClass@UtagCONNECTDATA@@",
+    "?$VectorClass@UtagCONNECTDATA@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A1240",
+   "classes": [
+    "?$DynamicVectorClass@PAUIConnectionPoint@@",
+    "?$VectorClass@PAUIConnectionPoint@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A4B20",
+   "classes": [
+    "?$DynamicVectorClass@PAU_DDSURFACEDESC@@",
+    "?$VectorClass@PAU_DDSURFACEDESC@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A4B30",
+   "classes": [
+    "?$DynamicVectorClass@PAU_DDSURFACEDESC@@",
+    "?$VectorClass@PAU_DDSURFACEDESC@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A7D70",
+   "classes": [
+    "?$DynamicVectorClass@PAVDiskLaserClass@@",
+    "?$VectorClass@PAVDiskLaserClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4A7D80",
+   "classes": [
+    "?$DynamicVectorClass@PAVDiskLaserClass@@",
+    "?$VectorClass@PAVDiskLaserClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4B9C30",
+   "classes": [
+    "?$DynamicVectorClass@PAUButtonFadeEffect@@",
+    "?$VectorClass@PAUButtonFadeEffect@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4B9C90",
+   "classes": [
+    "?$DynamicVectorClass@PAUCrossDissolveEffect@@",
+    "?$VectorClass@PAUCrossDissolveEffect@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4B9CA0",
+   "classes": [
+    "?$DynamicVectorClass@PAUButtonFadeEffect@@",
+    "?$VectorClass@PAUButtonFadeEffect@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4B9F00",
+   "classes": [
+    "?$DynamicVectorClass@PAUCrossDissolveEffect@@",
+    "?$VectorClass@PAUCrossDissolveEffect@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C2C90",
+   "classes": [
+    "?$DynamicVectorClass@PAVEBolt@@",
+    "?$VectorClass@PAVEBolt@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C2CA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVEBolt@@",
+    "?$VectorClass@PAVEBolt@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C49F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVEgoClass@@",
+    "?$VectorClass@PAVEgoClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C4A00",
+   "classes": [
+    "?$DynamicVectorClass@PAVEgoClass@@",
+    "?$VectorClass@PAVEgoClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C5BB0",
+   "classes": [
+    "?$DynamicVectorClass@PAVEMPulseClass@@",
+    "?$VectorClass@PAVEMPulseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4C5BC0",
+   "classes": [
+    "?$DynamicVectorClass@PAVEMPulseClass@@",
+    "?$VectorClass@PAVEMPulseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4CA8E0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTechnoTypeClass@@",
+    "?$VectorClass@PBVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4CA8F0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTechnoTypeClass@@",
+    "?$VectorClass@PBVTechnoTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4D2980",
+   "classes": [
+    "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@",
+    "?$VectorClass@UDrawRecord@FoggedObjectClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4D29B0",
+   "classes": [
+    "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@",
+    "?$VectorClass@UDrawRecord@FoggedObjectClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E01E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAbstractClass@@",
+    "?$VectorClass@PAVAbstractClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E0240",
+   "classes": [
+    "?$DynamicVectorClass@PAVFootClass@@",
+    "?$VectorClass@PAVFootClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E0250",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E0320",
+   "classes": [
+    "?$DynamicVectorClass@PAVAbstractClass@@",
+    "?$VectorClass@PAVAbstractClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E0580",
+   "classes": [
+    "?$DynamicVectorClass@PAVFootClass@@",
+    "?$VectorClass@PAVFootClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E07E0",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVCellClass@@@?$DiscreteDistributionClass@VCellClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E82E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTagClass@@",
+    "?$VectorClass@PAVTagClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8340",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingClass@@",
+    "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E83A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSuperClass@@",
+    "?$VectorClass@PAVSuperClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8400",
+   "classes": [
+    "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+    "?$VectorClass@PAVAITriggerTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8460",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingLightClass@@",
+    "?$VectorClass@PAVBuildingLightClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E84C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleClass@@",
+    "?$VectorClass@PAVParticleClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8520",
+   "classes": [
+    "?$DynamicVectorClass@PAVTeamClass@@",
+    "?$VectorClass@PAVTeamClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8530",
+   "classes": [
+    "?$DynamicVectorClass@PAUThemeControl@@",
+    "?$VectorClass@PAUThemeControl@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8590",
+   "classes": [
+    "?$DynamicVectorClass@PAVTriggerClass@@",
+    "?$VectorClass@PAVTriggerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E85F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTriggerTypeClass@@",
+    "?$VectorClass@PAVTriggerTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8650",
+   "classes": [
+    "?$DynamicVectorClass@PAVTubeClass@@",
+    "?$VectorClass@PAVTubeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E86B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleSystemClass@@",
+    "?$VectorClass@PAVParticleSystemClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8710",
+   "classes": [
+    "?$DynamicVectorClass@PAVWaveClass@@",
+    "?$VectorClass@PAVWaveClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8770",
+   "classes": [
+    "?$DynamicVectorClass@PAVOverlayClass@@",
+    "?$VectorClass@PAVOverlayClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E87D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSmudgeClass@@",
+    "?$VectorClass@PAVSmudgeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8830",
+   "classes": [
+    "?$DynamicVectorClass@PAVTerrainClass@@",
+    "?$VectorClass@PAVTerrainClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8890",
+   "classes": [
+    "?$DynamicVectorClass@PAVAircraftClass@@",
+    "?$VectorClass@PAVAircraftClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E88F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVUnitClass@@",
+    "?$VectorClass@PAVUnitClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8950",
+   "classes": [
+    "?$DynamicVectorClass@PAVHouseClass@@",
+    "?$VectorClass@PAVHouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E89B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAnimClass@@",
+    "?$VectorClass@PAVAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8A10",
+   "classes": [
+    "?$DynamicVectorClass@PAVFactoryClass@@",
+    "?$VectorClass@PAVFactoryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8A70",
+   "classes": [
+    "?$DynamicVectorClass@PAVCampaignClass@@",
+    "?$VectorClass@PAVCampaignClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8AD0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSideClass@@",
+    "?$VectorClass@PAVSideClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8B30",
+   "classes": [
+    "?$DynamicVectorClass@PAVHouseTypeClass@@",
+    "?$VectorClass@PAVHouseTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8B90",
+   "classes": [
+    "?$DynamicVectorClass@PAVTaskForceClass@@",
+    "?$VectorClass@PAVTaskForceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8BF0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTeamTypeClass@@",
+    "?$VectorClass@PAVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8C50",
+   "classes": [
+    "?$DynamicVectorClass@PAVScriptTypeClass@@",
+    "?$VectorClass@PAVScriptTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8CB0",
+   "classes": [
+    "?$DynamicVectorClass@PAVOverlayTypeClass@@",
+    "?$VectorClass@PAVOverlayTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8D10",
+   "classes": [
+    "?$DynamicVectorClass@PAVSmudgeTypeClass@@",
+    "?$VectorClass@PAVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8D70",
+   "classes": [
+    "?$DynamicVectorClass@PAVTerrainTypeClass@@",
+    "?$VectorClass@PAVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8DD0",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingTypeClass@@",
+    "?$VectorClass@PAVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8E30",
+   "classes": [
+    "?$DynamicVectorClass@PAVAircraftTypeClass@@",
+    "?$VectorClass@PAVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8E90",
+   "classes": [
+    "?$DynamicVectorClass@PAVUnitTypeClass@@",
+    "?$VectorClass@PAVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8EF0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAnimTypeClass@@",
+    "?$VectorClass@PAVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8F50",
+   "classes": [
+    "?$DynamicVectorClass@PAVInfantryTypeClass@@",
+    "?$VectorClass@PAVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E8FB0",
+   "classes": [
+    "?$DynamicVectorClass@PAVBulletTypeClass@@",
+    "?$VectorClass@PAVBulletTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9010",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@",
+    "?$VectorClass@PAVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9070",
+   "classes": [
+    "?$DynamicVectorClass@PAVIsometricTileTypeClass@@",
+    "?$VectorClass@PAVIsometricTileTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E90D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleTypeClass@@",
+    "?$VectorClass@PAVParticleTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9130",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleSystemTypeClass@@",
+    "?$VectorClass@PAVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9190",
+   "classes": [
+    "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@",
+    "?$VectorClass@PAVSuperWeaponTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E91F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAbstractTypeClass@@",
+    "?$VectorClass@PAVAbstractTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9200",
+   "classes": [
+    "?$DynamicVectorClass@PAVTagClass@@",
+    "?$VectorClass@PAVTagClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9460",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingClass@@",
+    "?$VectorClass@PAVBuildingClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E96C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSuperClass@@",
+    "?$VectorClass@PAVSuperClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9920",
+   "classes": [
+    "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+    "?$VectorClass@PAVAITriggerTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9B80",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingLightClass@@",
+    "?$VectorClass@PAVBuildingLightClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4E9DE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleClass@@",
+    "?$VectorClass@PAVParticleClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EA040",
+   "classes": [
+    "?$DynamicVectorClass@PAVTeamClass@@",
+    "?$VectorClass@PAVTeamClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EA2A0",
+   "classes": [
+    "?$DynamicVectorClass@PAUThemeControl@@",
+    "?$VectorClass@PAUThemeControl@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EA420",
+   "classes": [
+    "?$DynamicVectorClass@PAVTriggerClass@@",
+    "?$VectorClass@PAVTriggerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EA680",
+   "classes": [
+    "?$DynamicVectorClass@PAVTriggerTypeClass@@",
+    "?$VectorClass@PAVTriggerTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EA8E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTubeClass@@",
+    "?$VectorClass@PAVTubeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EAB40",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleSystemClass@@",
+    "?$VectorClass@PAVParticleSystemClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EADA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVWaveClass@@",
+    "?$VectorClass@PAVWaveClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EB000",
+   "classes": [
+    "?$DynamicVectorClass@PAVOverlayClass@@",
+    "?$VectorClass@PAVOverlayClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EB260",
+   "classes": [
+    "?$DynamicVectorClass@PAVSmudgeClass@@",
+    "?$VectorClass@PAVSmudgeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EB4C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTerrainClass@@",
+    "?$VectorClass@PAVTerrainClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EB720",
+   "classes": [
+    "?$DynamicVectorClass@PAVAircraftClass@@",
+    "?$VectorClass@PAVAircraftClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EB980",
+   "classes": [
+    "?$DynamicVectorClass@PAVUnitClass@@",
+    "?$VectorClass@PAVUnitClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EBBE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVHouseClass@@",
+    "?$VectorClass@PAVHouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EBE40",
+   "classes": [
+    "?$DynamicVectorClass@PAVAnimClass@@",
+    "?$VectorClass@PAVAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EC0A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVFactoryClass@@",
+    "?$VectorClass@PAVFactoryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EC300",
+   "classes": [
+    "?$DynamicVectorClass@PAVCampaignClass@@",
+    "?$VectorClass@PAVCampaignClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EC560",
+   "classes": [
+    "?$DynamicVectorClass@PAVSideClass@@",
+    "?$VectorClass@PAVSideClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EC7C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVHouseTypeClass@@",
+    "?$VectorClass@PAVHouseTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ECA20",
+   "classes": [
+    "?$DynamicVectorClass@PAVTaskForceClass@@",
+    "?$VectorClass@PAVTaskForceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ECC80",
+   "classes": [
+    "?$DynamicVectorClass@PAVTeamTypeClass@@",
+    "?$VectorClass@PAVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ECEE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVScriptTypeClass@@",
+    "?$VectorClass@PAVScriptTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ED140",
+   "classes": [
+    "?$DynamicVectorClass@PAVOverlayTypeClass@@",
+    "?$VectorClass@PAVOverlayTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ED3A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSmudgeTypeClass@@",
+    "?$VectorClass@PAVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ED600",
+   "classes": [
+    "?$DynamicVectorClass@PAVTerrainTypeClass@@",
+    "?$VectorClass@PAVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4ED860",
+   "classes": [
+    "?$DynamicVectorClass@PAVBuildingTypeClass@@",
+    "?$VectorClass@PAVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EDAC0",
+   "classes": [
+    "?$DynamicVectorClass@PAVAircraftTypeClass@@",
+    "?$VectorClass@PAVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EDD20",
+   "classes": [
+    "?$DynamicVectorClass@PAVUnitTypeClass@@",
+    "?$VectorClass@PAVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EDF80",
+   "classes": [
+    "?$DynamicVectorClass@PAVAnimTypeClass@@",
+    "?$VectorClass@PAVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EE1E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVInfantryTypeClass@@",
+    "?$VectorClass@PAVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EE440",
+   "classes": [
+    "?$DynamicVectorClass@PAVBulletTypeClass@@",
+    "?$VectorClass@PAVBulletTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EE6A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@",
+    "?$VectorClass@PAVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EE900",
+   "classes": [
+    "?$DynamicVectorClass@PAVIsometricTileTypeClass@@",
+    "?$VectorClass@PAVIsometricTileTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EEB60",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleTypeClass@@",
+    "?$VectorClass@PAVParticleTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EEDC0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParticleSystemTypeClass@@",
+    "?$VectorClass@PAVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EF020",
+   "classes": [
+    "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@",
+    "?$VectorClass@PAVSuperWeaponTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4EF280",
+   "classes": [
+    "?$DynamicVectorClass@PAVAbstractTypeClass@@",
+    "?$VectorClass@PAVAbstractTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4F28A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVGraphicMenuItem@@",
+    "?$VectorClass@PAVGraphicMenuItem@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:4F28E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVGraphicMenuItem@@",
+    "?$VectorClass@PAVGraphicMenuItem@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E4A0",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E4D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E550",
+   "classes": [
+    "?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@",
+    "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E5B0",
+   "classes": [
+    "?$DynamicVectorClass@UAngerStruct@@",
+    "?$VectorClass@UAngerStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E620",
+   "classes": [
+    "?$DynamicVectorClass@UScoutStruct@@",
+    "?$VectorClass@UScoutStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E690",
+   "classes": [
+    "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@",
+    "?$VectorClass@PAUBuildChoiceClass@HouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E6A0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E6D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E750",
+   "classes": [
+    "?$DynamicVectorClass@_N",
+    "?$VectorClass@_N"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50E7C0",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50EA90",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50EB40",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50EC20",
+   "classes": [
+    "?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@",
+    "?$VectorClass@PAUStartingTechnoStruct@HouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50EE80",
+   "classes": [
+    "?$DynamicVectorClass@UAngerStruct@@",
+    "?$VectorClass@UAngerStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50F1B0",
+   "classes": [
+    "?$DynamicVectorClass@UScoutStruct@@",
+    "?$VectorClass@UScoutStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50F4E0",
+   "classes": [
+    "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@",
+    "?$VectorClass@PAUBuildChoiceClass@HouseClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50F8C0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50F970",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50F9A0",
+   "classes": [
+    "?$DynamicVectorClass@_N",
+    "?$VectorClass@_N"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:50FC00",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVBuildingTypeClass@@@?$DiscreteDistributionClass@VBuildingTypeClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5128A0",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5128D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:512900",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:512930",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:512990",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5129C0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:512E70",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:512F70",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:513240",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:513340",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:513610",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:513710",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:524ED0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:524F00",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:525300",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:525400",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:538510",
+   "classes": [
+    "?$DynamicVectorClass@PAVCCINIClass@@",
+    "?$VectorClass@PAVCCINIClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:538520",
+   "classes": [
+    "?$DynamicVectorClass@PAVCCINIClass@@",
+    "?$VectorClass@PAVCCINIClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:53C510",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimClass@@",
+    "?$VectorClass@PBVAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:53C520",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimClass@@",
+    "?$VectorClass@PBVAnimClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:53DA90",
+   "classes": [
+    "?$DynamicVectorClass@PAVIonBlastClass@@",
+    "?$VectorClass@PAVIonBlastClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:53DAA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVIonBlastClass@@",
+    "?$VectorClass@PAVIonBlastClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54A1E0",
+   "classes": [
+    "?$DynamicVectorClass@PAG",
+    "?$VectorClass@PAG"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54A240",
+   "classes": [
+    "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+    "?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54A250",
+   "classes": [
+    "?$DynamicVectorClass@PAG",
+    "?$VectorClass@PAG"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54A4B0",
+   "classes": [
+    "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@",
+    "?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54E8E0",
+   "classes": [
+    "?$DynamicVectorClass@PAUKamikazeControl@@",
+    "?$VectorClass@PAUKamikazeControl@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:54E8F0",
+   "classes": [
+    "?$DynamicVectorClass@PAUKamikazeControl@@",
+    "?$VectorClass@PAUKamikazeControl@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:551320",
+   "classes": [
+    "?$DynamicVectorClass@PAVLaserDrawClass@@",
+    "?$VectorClass@PAVLaserDrawClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:551330",
+   "classes": [
+    "?$DynamicVectorClass@PAVLaserDrawClass@@",
+    "?$VectorClass@PAVLaserDrawClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:555250",
+   "classes": [
+    "?$DynamicVectorClass@PAVLightSourceClass@@",
+    "?$VectorClass@PAVLightSourceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5552B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@",
+    "?$VectorClass@PAVPendingCellClass@LightSourceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5552C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVLightSourceClass@@",
+    "?$VectorClass@PAVLightSourceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:555520",
+   "classes": [
+    "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@",
+    "?$VectorClass@PAVPendingCellClass@LightSourceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:556F00",
+   "classes": [
+    "?$DynamicVectorClass@PAVLineTrail@@",
+    "?$VectorClass@PAVLineTrail@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:556F10",
+   "classes": [
+    "?$DynamicVectorClass@PAVLineTrail@@",
+    "?$VectorClass@PAVLineTrail@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:558230",
+   "classes": [
+    "?$DynamicVectorClass@PBG",
+    "?$VectorClass@PBG"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:558240",
+   "classes": [
+    "?$DynamicVectorClass@PBG",
+    "?$VectorClass@PBG"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:55A1A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVFileEntryClass@@",
+    "?$VectorClass@PAVFileEntryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:55A1B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVFileEntryClass@@",
+    "?$VectorClass@PAVFileEntryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:588D30",
+   "classes": [
+    "?$DynamicVectorClass@UZoneConnectionClass@@",
+    "?$VectorClass@UZoneConnectionClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:588E10",
+   "classes": [
+    "?$DynamicVectorClass@USubzoneTrackingStruct@@",
+    "?$VectorClass@USubzoneTrackingStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:588EF0",
+   "classes": [
+    "?$DynamicVectorClass@PAVCellClass@@",
+    "?$VectorClass@PAVCellClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:588F50",
+   "classes": [
+    "?$DynamicVectorClass@W4PassabilityType@@",
+    "?$VectorClass@W4PassabilityType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:588FB0",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@II@@",
+    "?$VectorClass@U?$HashObject@II@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:589030",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+    "?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5896F0",
+   "classes": [
+    "?$DynamicVectorClass@USubzoneTrackingStruct@@",
+    "?$VectorClass@USubzoneTrackingStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:589CA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVCellClass@@",
+    "?$VectorClass@PAVCellClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:589EB0",
+   "classes": [
+    "?$DynamicVectorClass@W4PassabilityType@@",
+    "?$VectorClass@W4PassabilityType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:58A110",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@II@@",
+    "?$VectorClass@U?$HashObject@II@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:58A260",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@",
+    "?$VectorClass@U?$HashObject@IUSubzoneConnectionStruct@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AC3F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapRegionClass@@",
+    "?$VectorClass@PAVMapRegionClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AC510",
+   "classes": [
+    "?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@",
+    "?$VectorClass@PAU_WIN32_FIND_DATAA@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AC570",
+   "classes": [
+    "?$DynamicVectorClass@V?$TRect@H@@",
+    "?$VectorClass@V?$TRect@H@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AC640",
+   "classes": [
+    "?$DynamicVectorClass@N",
+    "?$VectorClass@N"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AC6A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapRegionClass@@",
+    "?$VectorClass@PAVMapRegionClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5ACA60",
+   "classes": [
+    "?$DynamicVectorClass@PAU_WIN32_FIND_DATAA@@",
+    "?$VectorClass@PAU_WIN32_FIND_DATAA@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5ACCC0",
+   "classes": [
+    "?$DynamicVectorClass@V?$TRect@H@@",
+    "?$VectorClass@V?$TRect@H@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5AD0F0",
+   "classes": [
+    "?$DynamicVectorClass@N",
+    "?$VectorClass@N"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C0AC0",
+   "classes": [
+    "?$DynamicVectorClass@PBD",
+    "?$VectorClass@PBD"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C0AD0",
+   "classes": [
+    "?$DynamicVectorClass@PBD",
+    "?$VectorClass@PBD"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C5060",
+   "classes": [
+    "?$DynamicVectorClass@PAUMPlayerScoreType@@",
+    "?$VectorClass@PAUMPlayerScoreType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C50C0",
+   "classes": [
+    "?$DynamicVectorClass@PAUNodeNameType@@",
+    "?$VectorClass@PAUNodeNameType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C5120",
+   "classes": [
+    "?$DynamicVectorClass@PAVCoopCampaignClass@@",
+    "?$VectorClass@PAVCoopCampaignClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C5130",
+   "classes": [
+    "?$DynamicVectorClass@PAUMPlayerScoreType@@",
+    "?$VectorClass@PAUMPlayerScoreType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C5390",
+   "classes": [
+    "?$DynamicVectorClass@PAUNodeNameType@@",
+    "?$VectorClass@PAUNodeNameType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5C55F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVCoopCampaignClass@@",
+    "?$VectorClass@PAVCoopCampaignClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D05F0",
+   "classes": [
+    "?$DynamicVectorClass@VPoint2D@@",
+    "?$VectorClass@VPoint2D@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0660",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSTextEntry@@",
+    "?$VectorClass@PAVMSTextEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D06C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapSelection@@",
+    "?$VectorClass@PAVMapSelection@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0720",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapStage@@",
+    "?$VectorClass@PAVMapStage@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0780",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSAnimEntry@@",
+    "?$VectorClass@PAVMSAnimEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D07E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSSfxEntry@@",
+    "?$VectorClass@PAVMSSfxEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D07F0",
+   "classes": [
+    "?$DynamicVectorClass@VPoint2D@@",
+    "?$VectorClass@VPoint2D@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0AE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSTextEntry@@",
+    "?$VectorClass@PAVMSTextEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0D40",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapSelection@@",
+    "?$VectorClass@PAVMapSelection@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D0FA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMapStage@@",
+    "?$VectorClass@PAVMapStage@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D1200",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSAnimEntry@@",
+    "?$VectorClass@PAVMSAnimEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D1460",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSSfxEntry@@",
+    "?$VectorClass@PAVMSSfxEntry@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D2770",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSAnim@@",
+    "?$VectorClass@PAVMSAnim@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D27D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSSfx@@",
+    "?$VectorClass@PAVMSSfx@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D27E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSAnim@@",
+    "?$VectorClass@PAVMSAnim@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D2A40",
+   "classes": [
+    "?$DynamicVectorClass@PAVMSSfx@@",
+    "?$VectorClass@PAVMSSfx@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D50D0",
+   "classes": [
+    "?$DynamicVectorClass@PAUHWND__@@",
+    "?$VectorClass@PAUHWND__@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D5130",
+   "classes": [
+    "?$DynamicVectorClass@UAcceleratorTracker@@",
+    "?$VectorClass@UAcceleratorTracker@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D5150",
+   "classes": [
+    "?$DynamicVectorClass@PAUHWND__@@",
+    "?$VectorClass@PAUHWND__@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D53B0",
+   "classes": [
+    "?$DynamicVectorClass@UAcceleratorTracker@@",
+    "?$VectorClass@UAcceleratorTracker@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D8100",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiplayerTeam@@",
+    "?$VectorClass@PAVMultiplayerTeam@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D8160",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiplayerGameMode@@",
+    "?$VectorClass@PAVMultiplayerGameMode@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D82F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiplayerTeam@@",
+    "?$VectorClass@PAVMultiplayerTeam@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5D8550",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiplayerGameMode@@",
+    "?$VectorClass@PAVMultiplayerGameMode@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5EEC00",
+   "classes": [
+    "?$DynamicVectorClass@PBVMultiMission@@",
+    "?$VectorClass@PBVMultiMission@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5EEC10",
+   "classes": [
+    "?$DynamicVectorClass@PBVMultiMission@@",
+    "?$VectorClass@PBVMultiMission@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5F9B50",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectTypeClass@@",
+    "?$VectorClass@PAVObjectTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:5F9B80",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectTypeClass@@",
+    "?$VectorClass@PAVObjectTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:600010",
+   "classes": [
+    "?$DynamicVectorClass@PAVSpotLightClass@@",
+    "?$VectorClass@PAVSpotLightClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:600020",
+   "classes": [
+    "?$DynamicVectorClass@PAVSpotLightClass@@",
+    "?$VectorClass@PAVSpotLightClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6241E0",
+   "classes": [
+    "FactionSelectDialogControl@WorldDominationTour",
+    "SimpleDialogControl@OwnerDraw"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:627D70",
+   "classes": [
+    "?$DynamicVectorClass@PAVColorScheme@@",
+    "?$VectorClass@PAVColorScheme@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:627DE0",
+   "classes": [
+    "?$DynamicVectorClass@VHSVClass@@",
+    "?$VectorClass@VHSVClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:627E10",
+   "classes": [
+    "?$DynamicVectorClass@PAVColorScheme@@",
+    "?$VectorClass@PAVColorScheme@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6281F0",
+   "classes": [
+    "?$DynamicVectorClass@VHSVClass@@",
+    "?$VectorClass@VHSVClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:628860",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+    "?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6288A0",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@",
+    "?$VectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:62B0C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParasiteClass@@",
+    "?$VectorClass@PAVParasiteClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:62B0D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVParasiteClass@@",
+    "?$VectorClass@PAVParasiteClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DBB0",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningMemberClass@@",
+    "?$VectorClass@PAVPlanningMemberClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DC10",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningBranchClass@@",
+    "?$VectorClass@PAVPlanningBranchClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DC70",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningNodeClass@@",
+    "?$VectorClass@PAVPlanningNodeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DCD0",
+   "classes": [
+    "?$DynamicVectorClass@PAVEventClass@@",
+    "?$VectorClass@PAVEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DD30",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningTokenClass@@",
+    "?$VectorClass@PAVPlanningTokenClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63DD40",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningMemberClass@@",
+    "?$VectorClass@PAVPlanningMemberClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63E050",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningBranchClass@@",
+    "?$VectorClass@PAVPlanningBranchClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63E310",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningNodeClass@@",
+    "?$VectorClass@PAVPlanningNodeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63E650",
+   "classes": [
+    "?$DynamicVectorClass@PAVEventClass@@",
+    "?$VectorClass@PAVEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:63E950",
+   "classes": [
+    "?$DynamicVectorClass@PAVPlanningTokenClass@@",
+    "?$VectorClass@PAVPlanningTokenClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6588E0",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+    "?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:658910",
+   "classes": [
+    "?$DynamicVectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@",
+    "?$VectorClass@U?$HashObject@URadarTrackingStruct@@PAVTechnoClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:65A230",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadBeam@@",
+    "?$VectorClass@PAVRadBeam@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:65A240",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadBeam@@",
+    "?$VectorClass@PAVRadBeam@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:65BF40",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadSiteClass@@",
+    "?$VectorClass@PAVRadSiteClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:65BF50",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadSiteClass@@",
+    "?$VectorClass@PAVRadSiteClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:660CD0",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadarEventClass@@",
+    "?$VectorClass@PAVRadarEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:660CE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVRadarEventClass@@",
+    "?$VectorClass@PAVRadarEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:664800",
+   "classes": [
+    "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+    "?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:664810",
+   "classes": [
+    "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@",
+    "?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A410",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A440",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A680",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A6B0",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A930",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67A960",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67ACD0",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67ADD0",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67B050",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67B150",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67B3D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:67B4D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69C580",
+   "classes": [
+    "?$DynamicVectorClass@VWstring@@",
+    "?$VectorClass@VWstring@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69C5F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiMission@@",
+    "?$VectorClass@PAVMultiMission@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69C650",
+   "classes": [
+    "?$DynamicVectorClass@PAUGlobalPacketType@@",
+    "?$VectorClass@PAUGlobalPacketType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69C6B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVPhoneEntryClass@@",
+    "?$VectorClass@PAVPhoneEntryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69C970",
+   "classes": [
+    "?$DynamicVectorClass@VWstring@@",
+    "?$VectorClass@VWstring@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69CD40",
+   "classes": [
+    "?$DynamicVectorClass@PAVMultiMission@@",
+    "?$VectorClass@PAVMultiMission@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69CFA0",
+   "classes": [
+    "?$DynamicVectorClass@PAUGlobalPacketType@@",
+    "?$VectorClass@PAUGlobalPacketType@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:69D200",
+   "classes": [
+    "?$DynamicVectorClass@PAVPhoneEntryClass@@",
+    "?$VectorClass@PAVPhoneEntryClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B1400",
+   "classes": [
+    "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
+    "?$VectorClass@PAUSlaveControl@SlaveManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B1460",
+   "classes": [
+    "?$DynamicVectorClass@PAVSlaveManagerClass@@",
+    "?$VectorClass@PAVSlaveManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B1470",
+   "classes": [
+    "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@",
+    "?$VectorClass@PAUSlaveControl@SlaveManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B16D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSlaveManagerClass@@",
+    "?$VectorClass@PAVSlaveManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B4410",
+   "classes": [
+    "?$DynamicVectorClass@UUndoInfoStruct@@",
+    "?$VectorClass@UUndoInfoStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B4440",
+   "classes": [
+    "?$DynamicVectorClass@UUndoInfoStruct@@",
+    "?$VectorClass@UUndoInfoStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B81B0",
+   "classes": [
+    "?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@",
+    "?$VectorClass@PAUSpawnControl@SpawnManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B8210",
+   "classes": [
+    "?$DynamicVectorClass@PAVSpawnManagerClass@@",
+    "?$VectorClass@PAVSpawnManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B8220",
+   "classes": [
+    "?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@",
+    "?$VectorClass@PAUSpawnControl@SpawnManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6B84E0",
+   "classes": [
+    "?$DynamicVectorClass@PAVSpawnManagerClass@@",
+    "?$VectorClass@PAVSpawnManagerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6BEDA0",
+   "classes": [
+    "?$DynamicVectorClass@K",
+    "?$VectorClass@K"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6C61D0",
+   "classes": [
+    "?$DynamicVectorClass@K",
+    "?$VectorClass@K"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6CA810",
+   "classes": [
+    "?$DynamicVectorClass@PAVSubTitle@@",
+    "?$VectorClass@PAVSubTitle@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6CA820",
+   "classes": [
+    "?$DynamicVectorClass@PAVSubTitle@@",
+    "?$VectorClass@PAVSubTitle@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6CF540",
+   "classes": [
+    "?$DynamicVectorClass@VSwizzlePointerClass@@",
+    "?$VectorClass@VSwizzlePointerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6CF560",
+   "classes": [
+    "?$DynamicVectorClass@VSwizzlePointerClass@@",
+    "?$VectorClass@VSwizzlePointerClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6DC5D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVShadowControlClass@@",
+    "?$VectorClass@PAVShadowControlClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6DC5E0",
+   "classes": [
+    "?$DynamicVectorClass@UDirtyAreaStruct@@",
+    "?$VectorClass@UDirtyAreaStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6DC9D0",
+   "classes": [
+    "?$DynamicVectorClass@PAVShadowControlClass@@",
+    "?$VectorClass@PAVShadowControlClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6E4840",
+   "classes": [
+    "?$DynamicVectorClass@PAVTActionClass@@",
+    "?$VectorClass@PAVTActionClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6E4850",
+   "classes": [
+    "?$DynamicVectorClass@PAVTActionClass@@",
+    "?$VectorClass@PAVTActionClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6E6530",
+   "classes": [
+    "?$DynamicVectorClass@PAVTagTypeClass@@",
+    "?$VectorClass@PAVTagTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6E6540",
+   "classes": [
+    "?$DynamicVectorClass@PAVTagTypeClass@@",
+    "?$VectorClass@PAVTagTypeClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6F2210",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:6F2290",
+   "classes": [
+    "?$DynamicVectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@",
+    "?$VectorClass@V?$DistributionObject@PAVAITriggerTypeClass@@@?$DiscreteDistributionClass@VAITriggerTypeClass@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:71B290",
+   "classes": [
+    "?$DynamicVectorClass@PAVTemporalClass@@",
+    "?$VectorClass@PAVTemporalClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:71B2A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTemporalClass@@",
+    "?$VectorClass@PAVTemporalClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:71FBF0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTEventClass@@",
+    "?$VectorClass@PAVTEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:71FC00",
+   "classes": [
+    "?$DynamicVectorClass@PAVTEventClass@@",
+    "?$VectorClass@PAVTEventClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:723780",
+   "classes": [
+    "?$DynamicVectorClass@PAVTiberiumClass@@",
+    "?$VectorClass@PAVTiberiumClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:723790",
+   "classes": [
+    "?$DynamicVectorClass@PAVTiberiumClass@@",
+    "?$VectorClass@PAVTiberiumClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:724C80",
+   "classes": [
+    "?$DynamicVectorClass@PBVToolTip@@",
+    "?$VectorClass@PBVToolTip@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:724C90",
+   "classes": [
+    "?$DynamicVectorClass@PBVToolTip@@",
+    "?$VectorClass@PBVToolTip@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:74F3B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVVeinholeMonsterClass@@",
+    "?$VectorClass@PAVVeinholeMonsterClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:74F3C0",
+   "classes": [
+    "?$DynamicVectorClass@PAVVeinholeMonsterClass@@",
+    "?$VectorClass@PAVVeinholeMonsterClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:751920",
+   "classes": [
+    "?$DynamicVectorClass@PAVVocClass@@",
+    "?$VectorClass@PAVVocClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:751930",
+   "classes": [
+    "?$DynamicVectorClass@PAVVocClass@@",
+    "?$VectorClass@PAVVocClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7536A0",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxClass@@",
+    "?$VectorClass@PAVVoxClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7536B0",
+   "classes": [
+    "?$DynamicVectorClass@PAVVoxClass@@",
+    "?$VectorClass@PAVVoxClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:75A480",
+   "classes": [
+    "?$DynamicVectorClass@PAVMovieHandle@@",
+    "?$VectorClass@PAVMovieHandle@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:75A490",
+   "classes": [
+    "?$DynamicVectorClass@PAVMovieHandle@@",
+    "?$VectorClass@PAVMovieHandle@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:763F60",
+   "classes": [
+    "?$DynamicVectorClass@VWaypointClass@@",
+    "?$VectorClass@VWaypointClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:763FE0",
+   "classes": [
+    "?$DynamicVectorClass@PAVWaypointPathClass@@",
+    "?$VectorClass@PAVWaypointPathClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7640B0",
+   "classes": [
+    "?$DynamicVectorClass@VWaypointClass@@",
+    "?$VectorClass@VWaypointClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:764460",
+   "classes": [
+    "?$DynamicVectorClass@PAVWaypointPathClass@@",
+    "?$VectorClass@PAVWaypointPathClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7656D0",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7657F0",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:766850",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:766BC0",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:769CA0",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:769D20",
+   "classes": [
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:769DE0",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@",
+    "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:76A130",
+   "classes": [
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:76B760",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+    "?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:76B870",
+   "classes": [
+    "?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@",
+    "?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7AC9C0",
+   "classes": [
+    "?$DynamicVectorClass@PAUtConnInfoStruct@@",
+    "?$VectorClass@PAUtConnInfoStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7AD090",
+   "classes": [
+    "?$DynamicVectorClass@PAUtConnInfoStruct@@",
+    "?$VectorClass@PAUtConnInfoStruct@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7B2890",
+   "classes": [
+    "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+    "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7B28A0",
+   "classes": [
+    "?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@",
+    "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7B4310",
+   "classes": [
+    "?$DynamicVectorClass@PAE",
+    "?$VectorClass@PAE"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7B4320",
+   "classes": [
+    "?$DynamicVectorClass@PAE",
+    "?$VectorClass@PAE"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC7F0",
+   "classes": [
+    "?$BlitPlain@G",
+    "BlitPlain"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC820",
+   "classes": [
+    "?$BlitPlain@G",
+    "BlitPlain"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC840",
+   "classes": [
+    "?$BlitPlain@G",
+    "BlitPlain"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC870",
+   "classes": [
+    "?$BlitPlain@G",
+    "BlitPlain"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC890",
+   "classes": [
+    "?$BlitTrans@G",
+    "BlitTrans"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC8C0",
+   "classes": [
+    "?$BlitTrans@G",
+    "BlitTrans"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC8F0",
+   "classes": [
+    "?$BlitTrans@G",
+    "BlitTrans"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:7BC920",
+   "classes": [
+    "?$BlitTrans@G",
+    "BlitTrans"
+   ],
+   "n_classes": 2
+  },
+  {
+   "ent": "T:40B120",
+   "classes": [
+    "?$DynamicVectorClass@USubzoneConnectionStruct@@",
+    "?$VectorClass@USubzoneConnectionStruct@@",
+    "VectorClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40B140",
+   "classes": [
+    "?$DynamicVectorClass@USubzoneConnectionStruct@@",
+    "?$VectorClass@USubzoneConnectionStruct@@",
+    "VectorClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40B6F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoClass@@",
+    "?$VectorClass@PAVTechnoClass@@",
+    "DynamicVector"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40B960",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoClass@@",
+    "?$VectorClass@PAVTechnoClass@@",
+    "DynamicVector"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40CC70",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40CCA0",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40CE50",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40CF00",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:42D5F0",
+   "classes": [
+    "?$DynamicVectorClass@G",
+    "?$VectorClass@G",
+    "VectorClass_ushort"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:42D8B0",
+   "classes": [
+    "?$DynamicVectorClass@G",
+    "?$VectorClass@G",
+    "VectorClass_ushort"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:459FE0",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@",
+    "?$VectorClass@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:45A180",
+   "classes": [
+    "?$DynamicVectorClass@PBVParticleSystemTypeClass@@",
+    "?$TypeList@PBVParticleSystemTypeClass@@",
+    "?$VectorClass@PBVParticleSystemTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477840",
+   "classes": [
+    "?$DynamicVectorClass@H",
+    "?$TypeList@H",
+    "TypeList"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477870",
+   "classes": [
+    "?$DynamicVectorClass@H",
+    "?$TypeList@H",
+    "TypeList"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:4778F0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@",
+    "?$VectorClass@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477960",
+   "classes": [
+    "?$DynamicVectorClass@VRGBClass@@",
+    "?$TypeList@VRGBClass@@",
+    "?$VectorClass@VRGBClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477E10",
+   "classes": [
+    "?$DynamicVectorClass@H",
+    "?$TypeList@H",
+    "TypeList"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477F10",
+   "classes": [
+    "?$DynamicVectorClass@H",
+    "?$TypeList@H",
+    "TypeList"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:477FC0",
+   "classes": [
+    "?$DynamicVectorClass@PAVTechnoTypeClass@@",
+    "?$TypeList@PAVTechnoTypeClass@@",
+    "?$VectorClass@PAVTechnoTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:4782E0",
+   "classes": [
+    "?$DynamicVectorClass@VRGBClass@@",
+    "?$TypeList@VRGBClass@@",
+    "?$VectorClass@VRGBClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:50E4F0",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@",
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:50E6F0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@",
+    "?$VectorClass@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:50E910",
+   "classes": [
+    "?$DynamicVectorClass@PBVBuildingTypeClass@@",
+    "?$TypeList@PBVBuildingTypeClass@@",
+    "?$VectorClass@PBVBuildingTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:50F740",
+   "classes": [
+    "?$DynamicVectorClass@PBVTeamTypeClass@@",
+    "?$TypeList@PBVTeamTypeClass@@",
+    "?$VectorClass@PBVTeamTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:5128F0",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@",
+    "?$VectorClass@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:512950",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@",
+    "?$VectorClass@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:5129E0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@",
+    "?$VectorClass@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:512C40",
+   "classes": [
+    "?$DynamicVectorClass@PBVInfantryTypeClass@@",
+    "?$TypeList@PBVInfantryTypeClass@@",
+    "?$VectorClass@PBVInfantryTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:513010",
+   "classes": [
+    "?$DynamicVectorClass@PBVUnitTypeClass@@",
+    "?$TypeList@PBVUnitTypeClass@@",
+    "?$VectorClass@PBVUnitTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:5133E0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAircraftTypeClass@@",
+    "?$TypeList@PBVAircraftTypeClass@@",
+    "?$VectorClass@PBVAircraftTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:524FB0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@",
+    "?$VectorClass@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:5250D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVAnimTypeClass@@",
+    "?$TypeList@PBVAnimTypeClass@@",
+    "?$VectorClass@PBVAnimTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67A460",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@",
+    "?$VectorClass@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67A6D0",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@",
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67A980",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@",
+    "?$VectorClass@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67AAF0",
+   "classes": [
+    "?$DynamicVectorClass@PBVVoxelAnimTypeClass@@",
+    "?$TypeList@PBVVoxelAnimTypeClass@@",
+    "?$VectorClass@PBVVoxelAnimTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67AE70",
+   "classes": [
+    "?$DynamicVectorClass@PBVSmudgeTypeClass@@",
+    "?$TypeList@PBVSmudgeTypeClass@@",
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:67B1F0",
+   "classes": [
+    "?$DynamicVectorClass@PBVTerrainTypeClass@@",
+    "?$TypeList@PBVTerrainTypeClass@@",
+    "?$VectorClass@PBVTerrainTypeClass@@"
+   ],
+   "n_classes": 3
+  },
+  {
+   "ent": "T:40CCC0",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "?$VectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 4
+  },
+  {
+   "ent": "T:40CCD0",
+   "classes": [
+    "?$DynamicVectorClass@PAVObjectClass@@",
+    "?$VectorClass@PAVObjectClass@@",
+    "LayerClass",
+    "LogicClass"
+   ],
+   "n_classes": 4
+  },
+  {
+   "ent": "T:624140",
+   "classes": [
+    "CreateGameDialogControl",
+    "FactionSelectDialogControl@WorldDominationTour",
+    "SimpleDialogControl@OwnerDraw",
+    "SimpleWonlineDialogControl",
+    "WonlineStringDialogControl"
+   ],
+   "n_classes": 5
+  },
+  {
+   "ent": "T:6241C0",
+   "classes": [
+    "CreateGameDialogControl",
+    "FactionSelectDialogControl@WorldDominationTour",
+    "SimpleDialogControl@OwnerDraw",
+    "SimpleWonlineDialogControl",
+    "WonlineStringDialogControl"
+   ],
+   "n_classes": 5
+  },
+  {
+   "ent": "T:6241D0",
+   "classes": [
+    "CreateGameDialogControl",
+    "FactionSelectDialogControl@WorldDominationTour",
+    "SimpleDialogControl@OwnerDraw",
+    "SimpleWonlineDialogControl",
+    "WonlineStringDialogControl"
+   ],
+   "n_classes": 5
+  },
+  {
+   "ent": "T:4D0510",
+   "classes": [
+    "DriveLocomotionClass",
+    "DropPodLocomotionClass",
+    "FlyLocomotionClass",
+    "HoverLocomotionClass",
+    "JumpjetLocomotionClass",
+    "LocomotionClass",
+    "MechLocomotionClass",
+    "RocketLocomotionClass",
+    "ShipLocomotionClass",
+    "TeleportLocomotionClass",
+    "TunnelLocomotionClass",
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 12
+  },
+  {
+   "ent": "T:4D0520",
+   "classes": [
+    "DriveLocomotionClass",
+    "DropPodLocomotionClass",
+    "FlyLocomotionClass",
+    "HoverLocomotionClass",
+    "JumpjetLocomotionClass",
+    "LocomotionClass",
+    "MechLocomotionClass",
+    "RocketLocomotionClass",
+    "ShipLocomotionClass",
+    "TeleportLocomotionClass",
+    "TunnelLocomotionClass",
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 12
+  },
+  {
+   "ent": "T:4D0530",
+   "classes": [
+    "DriveLocomotionClass",
+    "DropPodLocomotionClass",
+    "FlyLocomotionClass",
+    "HoverLocomotionClass",
+    "JumpjetLocomotionClass",
+    "LocomotionClass",
+    "MechLocomotionClass",
+    "RocketLocomotionClass",
+    "ShipLocomotionClass",
+    "TeleportLocomotionClass",
+    "TunnelLocomotionClass",
+    "WalkLocomotionClass"
+   ],
+   "n_classes": 12
+  },
+  {
+   "ent": "T:65D670",
+   "classes": [
+    "?$ValueGameOption@E@WorldDominationTour",
+    "Campaign@WorldDominationTour",
+    "CampaignProperties@WorldDominationTour",
+    "Conflict@WorldDominationTour",
+    "FlagGameOption@WorldDominationTour",
+    "GameOption@WorldDominationTour",
+    "History@WorldDominationTour",
+    "Map@WorldDominationTour",
+    "MapSizeGameOption@WorldDominationTour",
+    "PlayerProfile",
+    "ReferenceCounted",
+    "State@WorldDominationTour",
+    "Territory@WorldDominationTour",
+    "WDTState",
+    "WDTTerritory"
+   ],
+   "n_classes": 15
+  },
+  {
+   "ent": "T:65D690",
+   "classes": [
+    "?$ValueGameOption@E@WorldDominationTour",
+    "Campaign@WorldDominationTour",
+    "CampaignProperties@WorldDominationTour",
+    "Conflict@WorldDominationTour",
+    "FlagGameOption@WorldDominationTour",
+    "GameOption@WorldDominationTour",
+    "History@WorldDominationTour",
+    "Map@WorldDominationTour",
+    "MapSizeGameOption@WorldDominationTour",
+    "PlayerProfile",
+    "ReferenceCounted",
+    "State@WorldDominationTour",
+    "Territory@WorldDominationTour",
+    "WDTState",
+    "WDTTerritory"
+   ],
+   "n_classes": 15
+  },
+  {
+   "ent": "T:410A60",
+   "classes": [
+    "AITriggerTypeClass",
+    "AbstractTypeClass",
+    "AircraftTypeClass",
+    "AnimTypeClass",
+    "BuildingTypeClass",
+    "BulletTypeClass",
+    "CampaignClass",
+    "HouseTypeClass",
+    "InfantryTypeClass",
+    "IsometricTileTypeClass",
+    "ObjectTypeClass",
+    "OverlayTypeClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass",
+    "ScriptTypeClass",
+    "SideClass",
+    "SmudgeTypeClass",
+    "SuperWeaponTypeClass",
+    "TagTypeClass",
+    "TaskForceClass",
+    "TeamTypeClass",
+    "TechnoTypeClass",
+    "TerrainTypeClass",
+    "TiberiumClass",
+    "TriggerTypeClass",
+    "UnitTypeClass",
+    "VoxelAnimTypeClass",
+    "WarheadTypeClass",
+    "WeaponTypeClass"
+   ],
+   "n_classes": 29
+  },
+  {
+   "ent": "T:410B90",
+   "classes": [
+    "AITriggerTypeClass",
+    "AbstractTypeClass",
+    "AircraftTypeClass",
+    "AnimTypeClass",
+    "BuildingTypeClass",
+    "BulletTypeClass",
+    "CampaignClass",
+    "HouseTypeClass",
+    "InfantryTypeClass",
+    "IsometricTileTypeClass",
+    "ObjectTypeClass",
+    "OverlayTypeClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass",
+    "ScriptTypeClass",
+    "SideClass",
+    "SmudgeTypeClass",
+    "SuperWeaponTypeClass",
+    "TagTypeClass",
+    "TaskForceClass",
+    "TeamTypeClass",
+    "TechnoTypeClass",
+    "TerrainTypeClass",
+    "TiberiumClass",
+    "TriggerTypeClass",
+    "UnitTypeClass",
+    "VoxelAnimTypeClass",
+    "WarheadTypeClass",
+    "WeaponTypeClass"
+   ],
+   "n_classes": 29
+  },
+  {
+   "ent": "T:410C20",
+   "classes": [
+    "AITriggerTypeClass",
+    "AbstractTypeClass",
+    "AircraftTypeClass",
+    "AnimTypeClass",
+    "BuildingTypeClass",
+    "BulletTypeClass",
+    "CampaignClass",
+    "HouseTypeClass",
+    "InfantryTypeClass",
+    "IsometricTileTypeClass",
+    "ObjectTypeClass",
+    "OverlayTypeClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass",
+    "ScriptTypeClass",
+    "SideClass",
+    "SmudgeTypeClass",
+    "SuperWeaponTypeClass",
+    "TagTypeClass",
+    "TaskForceClass",
+    "TeamTypeClass",
+    "TechnoTypeClass",
+    "TerrainTypeClass",
+    "TiberiumClass",
+    "TriggerTypeClass",
+    "UnitTypeClass",
+    "VoxelAnimTypeClass",
+    "WarheadTypeClass",
+    "WeaponTypeClass"
+   ],
+   "n_classes": 29
+  },
+  {
+   "ent": "T:4C9150",
+   "classes": [
+    "?$BlitPlain@E",
+    "?$BlitPlain@G",
+    "?$BlitPlainXlat@E",
+    "?$BlitPlainXlat@G",
+    "?$BlitPlainXlatAlpha@G",
+    "?$BlitPlainXlatZRead@G",
+    "?$BlitPlainXlatZReadWrite@G",
+    "?$BlitTrans@E",
+    "?$BlitTrans@G",
+    "?$BlitTransDarken@G",
+    "?$BlitTransDarkenZRead@G",
+    "?$BlitTransDarkenZReadWrite@G",
+    "?$BlitTransLucent25@G",
+    "?$BlitTransLucent25Alpha@G",
+    "?$BlitTransLucent25AlphaZRead@G",
+    "?$BlitTransLucent25AlphaZReadWarp@G",
+    "?$BlitTransLucent25AlphaZReadWrite@G",
+    "?$BlitTransLucent25ZRead@G",
+    "?$BlitTransLucent25ZReadWarp@G",
+    "?$BlitTransLucent25ZReadWrite@G",
+    "?$BlitTransLucent50@G",
+    "?$BlitTransLucent50Alpha@G",
+    "?$BlitTransLucent50AlphaZRead@G",
+    "?$BlitTransLucent50AlphaZReadWarp@G",
+    "?$BlitTransLucent50AlphaZReadWrite@G",
+    "?$BlitTransLucent50ZRead@G",
+    "?$BlitTransLucent50ZReadWarp@G",
+    "?$BlitTransLucent50ZReadWrite@G",
+    "?$BlitTransLucent75@G",
+    "?$BlitTransLucent75Alpha@G",
+    "?$BlitTransLucent75AlphaZRead@G",
+    "?$BlitTransLucent75AlphaZReadWarp@G",
+    "?$BlitTransLucent75AlphaZReadWrite@G",
+    "?$BlitTransLucent75ZRead@G",
+    "?$BlitTransLucent75ZReadWarp@G",
+    "?$BlitTransLucent75ZReadWrite@G",
+    "?$BlitTransRemapDest@E",
+    "?$BlitTransRemapXlat@E",
+    "?$BlitTransXlat@E",
+    "?$BlitTransXlat@G",
+    "?$BlitTransXlatAlpha@G",
+    "?$BlitTransXlatAlphaZRead@G",
+    "?$BlitTransXlatAlphaZReadWrite@G",
+    "?$BlitTransXlatMultWriteAlpha@G",
+    "?$BlitTransXlatWriteAlpha@G",
+    "?$BlitTransXlatZRead@G",
+    "?$BlitTransXlatZReadWrite@G",
+    "?$BlitTransZRemapXlat@E",
+    "?$BlitTransZRemapXlat@G",
+    "?$BlitTransZRemapXlatAlpha@G",
+    "?$BlitTransZRemapXlatAlphaZRead@G",
+    "?$BlitTransZRemapXlatAlphaZReadWrite@G",
+    "?$BlitTransZRemapXlatZRead@G",
+    "?$BlitTransZRemapXlatZReadWrite@G",
+    "?$BlitTranslucent50NonzeroAlpha@G",
+    "?$BlitTranslucent50ZeroAlpha@G",
+    "?$BlitTranslucentWriteAlpha@G",
+    "?$CComObject@VCChatEventSink@@@ATL",
+    "?$CComObject@VCNetUtilEventSink@@@ATL",
+    "?$RLEBlitTransDarken@G",
+    "?$RLEBlitTransDarkenZRead@G",
+    "?$RLEBlitTransDarkenZReadWrite@G",
+    "?$RLEBlitTransLucent25@G",
+    "?$RLEBlitTransLucent25Alpha@G",
+    "?$RLEBlitTransLucent25AlphaZRead@G",
+    "?$RLEBlitTransLucent25AlphaZReadWarp@G",
+    "?$RLEBlitTransLucent25AlphaZReadWrite@G",
+    "?$RLEBlitTransLucent25ZRead@G",
+    "?$RLEBlitTransLucent25ZReadWarp@G",
+    "?$RLEBlitTransLucent25ZReadWrite@G",
+    "?$RLEBlitTransLucent50@G",
+    "?$RLEBlitTransLucent50Alpha@G",
+    "?$RLEBlitTransLucent50AlphaZRead@G",
+    "?$RLEBlitTransLucent50AlphaZReadWarp@G",
+    "?$RLEBlitTransLucent50AlphaZReadWrite@G",
+    "?$RLEBlitTransLucent50ZRead@G",
+    "?$RLEBlitTransLucent50ZReadWarp@G",
+    "?$RLEBlitTransLucent50ZReadWrite@G",
+    "?$RLEBlitTransLucent75@G",
+    "?$RLEBlitTransLucent75Alpha@G",
+    "?$RLEBlitTransLucent75AlphaZRead@G",
+    "?$RLEBlitTransLucent75AlphaZReadWarp@G",
+    "?$RLEBlitTransLucent75AlphaZReadWrite@G",
+    "?$RLEBlitTransLucent75ZRead@G",
+    "?$RLEBlitTransLucent75ZReadWarp@G",
+    "?$RLEBlitTransLucent75ZReadWrite@G",
+    "?$RLEBlitTransRemapDest@E",
+    "?$RLEBlitTransRemapDestZRead@E",
+    "?$RLEBlitTransRemapDestZReadWrite@E",
+    "?$RLEBlitTransRemapXlat@E",
+    "?$RLEBlitTransRemapXlatZRead@E",
+    "?$RLEBlitTransRemapXlatZReadWrite@E",
+    "?$RLEBlitTransXlat@E",
+    "?$RLEBlitTransXlat@G",
+    "?$RLEBlitTransXlatAlpha@G",
+    "?$RLEBlitTransXlatAlphaZRead@G",
+    "?$RLEBlitTransXlatAlphaZReadWrite@G",
+    "?$RLEBlitTransXlatZRead@E",
+    "?$RLEBlitTransXlatZRead@G",
+    "?$RLEBlitTransXlatZReadWrite@E",
+    "?$RLEBlitTransXlatZReadWrite@G",
+    "?$RLEBlitTransZRemapXlat@E",
+    "?$RLEBlitTransZRemapXlat@G",
+    "?$RLEBlitTransZRemapXlatAlpha@G",
+    "?$RLEBlitTransZRemapXlatAlphaZRead@G",
+    "?$RLEBlitTransZRemapXlatAlphaZReadWrite@G",
+    "?$RLEBlitTransZRemapXlatZRead@E",
+    "?$RLEBlitTransZRemapXlatZRead@G",
+    "?$RLEBlitTransZRemapXlatZReadWrite@E",
+    "?$RLEBlitTransZRemapXlatZReadWrite@G",
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AddTeamCommandClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AllToCheerCommandClass",
+    "AllianceCommandClass",
+    "AlphaShapeClass",
+    "Anim@Voices@WorldDominationTour",
+    "AnimClass",
+    "AnimFile",
+    "AnimTypeClass",
+    "Animate",
+    "BSurface",
+    "BeaconPlacementCommandClass",
+    "BinkMovieHandle",
+    "Blitter",
+    "BombClass",
+    "BufferIOFileClass",
+    "BuildingClass",
+    "BuildingLightClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "BulletTypeClass",
+    "CCFileClass",
+    "CChatEventSink",
+    "CDFileClass",
+    "CNetUtilEventSink",
+    "CampaignClass",
+    "CaptureManagerClass",
+    "CellClass",
+    "CenterBaseCommandClass",
+    "CenterREventCommandClass",
+    "CenterTeamCommandClass",
+    "CenterViewCommandClass",
+    "CombatantSelectCommandClass",
+    "CommandClass",
+    "ConnManClass",
+    "ConnectionClass",
+    "CreateTeamCommandClass",
+    "CursorPositionCommandClass",
+    "DSurface",
+    "DeleteCommandClass",
+    "DeployCommandClass",
+    "DialogControl@OwnerDraw",
+    "DiskLaserClass",
+    "DisplayClass",
+    "DriveLocomotionClass",
+    "DropPodLocomotionClass",
+    "EMPulseClass",
+    "FactoryClass",
+    "FileClass",
+    "FlyLocomotionClass",
+    "FoggedObjectClass",
+    "FollowCommandClass",
+    "FootClass",
+    "GScreenClass",
+    "GameOption@WorldDominationTour",
+    "GuardCommandClass",
+    "HealthNavCommandClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "HoverLocomotionClass",
+    "INoticeSink",
+    "INoticeSource",
+    "IPXConnClass",
+    "IPXGlobalConnClass",
+    "IPXManagerClass",
+    "InfantryClass",
+    "InfantryTypeClass",
+    "InitializerBase@MultiplayerGameMode",
+    "IsometricTileClass",
+    "IsometricTileTypeClass",
+    "JumpjetLocomotionClass",
+    "LightSourceClass",
+    "LoadProgressMgr",
+    "LocomotionClass",
+    "MSAnim",
+    "MSBinkAnim",
+    "MSBitPrintAnim",
+    "MSFadeAnim",
+    "MSFrameAnim",
+    "MSOverlayAnim",
+    "MSPCXAnim",
+    "MSPrintAnim",
+    "MSShapeAnim",
+    "MSVQAnim",
+    "MapClass",
+    "MechLocomotionClass",
+    "MissionClass",
+    "Mouse",
+    "MouseClass",
+    "MovieHandle",
+    "MultiplayerDebugCommandClass",
+    "MultiplayerSyncCommandClass",
+    "NeuronClass",
+    "NextObjectCommandClass",
+    "NullModemClass",
+    "NullModemConnClass",
+    "ObjectClass",
+    "ObjectTypeClass",
+    "OptionsCommandClass",
+    "OverlayClass",
+    "OverlayTypeClass",
+    "PageUserCommandClass",
+    "ParasiteClass",
+    "ParticleClass",
+    "ParticleSystemClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass",
+    "PlanningModeCommandClass",
+    "PowerClass",
+    "PrevObjectCommandClass",
+    "RAMFileClass",
+    "RLEBlitter",
+    "RTacticalClass@RadarClass",
+    "RadSiteClass",
+    "RadarClass",
+    "RadioClass",
+    "RawFileClass",
+    "RocketLocomotionClass",
+    "SBGadgetClass@SidebarClass",
+    "ScatterCommandClass",
+    "ScoreAnimClass",
+    "ScorePrintClass",
+    "ScoreTimeClass",
+    "ScreenCaptureCommandClass",
+    "ScriptClass",
+    "ScriptTypeClass",
+    "ScrollClass",
+    "SelectClass@StripClass@SidebarClass",
+    "SelectTeamCommandClass",
+    "SetDefenseTabCommandClass",
+    "SetInfantryTabCommandClass",
+    "SetStructureTabCommandClass",
+    "SetUnitTabCommandClass",
+    "SetView1CommandClass",
+    "SetView2CommandClass",
+    "SetView3CommandClass",
+    "SetView4CommandClass",
+    "ShipLocomotionClass",
+    "SideClass",
+    "SidebarClass",
+    "SidebarDownCommandClass",
+    "SidebarUpCommandClass",
+    "SlaveManagerClass",
+    "SmudgeClass",
+    "SmudgeTypeClass",
+    "SpawnManagerClass",
+    "StopCommandClass",
+    "SuperClass",
+    "SuperWeaponTypeClass",
+    "Surface",
+    "TActionClass",
+    "TEventClass",
+    "TabClass",
+    "Tactical",
+    "TacticalClass@DisplayClass",
+    "TagClass",
+    "TagTypeClass",
+    "TaskForceClass",
+    "TauntCommandClass",
+    "TeamClass",
+    "TeamTypeClass",
+    "TechnoClass",
+    "TechnoTypeClass",
+    "TeleportLocomotionClass",
+    "TemporalClass",
+    "TerrainClass",
+    "TerrainTypeClass",
+    "TiberiumClass",
+    "ToggleRepairCommandClass",
+    "ToggleSellCommandClass",
+    "TriggerClass",
+    "TriggerTypeClass",
+    "TubeClass",
+    "TunnelLocomotionClass",
+    "TypeSelectCommandClass",
+    "UnitClass",
+    "UnitTypeClass",
+    "VQMovieHandle",
+    "VeinholeMonsterClass",
+    "VeterancyNavCommandClass",
+    "View1CommandClass",
+    "View2CommandClass",
+    "View3CommandClass",
+    "View4CommandClass",
+    "VoxelAnimClass",
+    "VoxelAnimTypeClass",
+    "WWMouseClass",
+    "WalkLocomotionClass",
+    "WarheadTypeClass",
+    "WaveClass",
+    "WaypointPathClass",
+    "WeaponTypeClass",
+    "XSurface"
+   ],
+   "n_classes": 308
+  }
+ ]
+}

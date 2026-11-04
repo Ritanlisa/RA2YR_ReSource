@@ -381,6 +381,32 @@
   "exact": {}
  },
  {
+  "cluster": "S:422CA0:var_fc",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:422CA0:var_fc"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "int"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:42F180:this:0x14",
   "status": "inconsistent",
   "families": [
@@ -4247,6 +4273,58 @@
   "exact": {}
  },
  {
+  "cluster": "S:4666E0:var_198",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4666E0:var_198"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:552D60:var_1258",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:552D60:var_1258"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:48BE60:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -4265,6 +4343,32 @@
    "C11": [],
    "MR": [
     "int"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:43DA80:var_114",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:43DA80:var_114"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -4334,6 +4438,32 @@
    "C11": [],
    "MR": [
     "int"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4D85D0:var_30",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4D85D0:var_30"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -4690,6 +4820,32 @@
   "exact": {}
  },
  {
+  "cluster": "S:6D5030:var_2c",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:6D5030:var_2c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "S:4CC100:var_4",
   "status": "inconsistent",
   "families": [
@@ -4745,6 +4901,32 @@
   "family_domains": {
    "C10": [
     "TrajectoryHelper"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:635830:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:635830:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
@@ -84544,6 +84726,786 @@
    ],
    "IV": [
     "short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:430250:var_158",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:430250:var_158"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:434CD0:var_10",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:434CD0:var_10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:434CD0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:434CD0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:456980:var_68",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:456980:var_68"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:46DFD0:var_3f8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:46DFD0:var_3f8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:470D30:var_14c",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:470D30:var_14c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:47BDB0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:47BDB0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4A6010:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4A6010:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4A61C0:var_40c",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4A61C0:var_40c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4A6500:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4A6500:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4A65C0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4A65C0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4A66D0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4A66D0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:4DC340:var_90",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:4DC340:var_90"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:53F0E0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:53F0E0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:5509F0:var_128",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:5509F0:var_128"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:5C9B10:var_180",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:5C9B10:var_180"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:62CEC0:var_24",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:62CEC0:var_24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:635C10:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:635C10:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:63CF10:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:63CF10:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:63CFC0:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:63CFC0:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:63D070:var_8",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:63D070:var_8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:641140:var_7c",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:641140:var_7c"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:643400:var_48",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:643400:var_48"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:6A9540:var_470",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:6A9540:var_470"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:6AAD00:var_94",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:6AAD00:var_94"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:6AC480:var_20",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:6AC480:var_20"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:704E40:var_90",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:704E40:var_90"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:705270:eCC",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:705270:eCC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:70F1D0:var_c4",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:70F1D0:var_c4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:72A4A0:var_18",
+  "status": "inconsistent",
+  "families": [
+   "IV",
+   "SG"
+  ],
+  "family_sizes": {
+   "IV": 1,
+   "SG": 2
+  },
+  "ents": [
+   "S:72A4A0:var_18"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IV": [
+    "unsigned char"
+   ],
+   "SG": [
+    "short",
+    "unsigned short"
    ]
   },
   "exact": {}
