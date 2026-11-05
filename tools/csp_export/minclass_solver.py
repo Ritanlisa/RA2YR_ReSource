@@ -3191,6 +3191,13 @@ def main():
           % (_c11b0_n, _c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
     print("[C11b] (legacy line) exact=%d (containers=%d unresolved_type=%d no_container=%d)"
           % (_c11b_exact, _c11b_containers, _c11b_unres, _c11b_nocont), flush=True)
+    # RETIRED 2026-11-05（用户裁决）：C11 值域在纯类宇宙下计算（无基元/数组/指针），
+    # 对实际类型为非类的成员做假断言（void* 成员 → 类后代断言恒假 → 台账空域冲突）。
+    # MR+MT+IG+IV 已用完备类型宇宙重新覆盖同一语义。清空证据 = 零参与。
+    _c11_n_before_retire = len(fam.get("C11") or {})
+    fam["C11"] = {}
+    print("[C11b] RETIRED: %d evidence cleared (value-domain incomplete under class-only universe)"
+          % _c11_n_before_retire, flush=True)
 
     # ---------------- C18：二进制偏移签名匹配 ----------------
     # 只用汇编事实：一个类自己那些已确认函数在 this 上访问的 (offset,width) 集合，
