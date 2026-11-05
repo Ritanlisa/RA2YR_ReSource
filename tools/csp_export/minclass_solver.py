@@ -58,9 +58,11 @@ import argparse
 import bisect
 import collections
 import glob
+import hashlib
 import io
 import json
 import os
+import shutil
 import sys
 import re
 import time
@@ -880,6 +882,152 @@ def ent_id(raw, fn=None):
 # ==========================================================================
 # 4. 主流程
 # ==========================================================================
+# ---- 结果缓存（checkpoint）------------------------------------------------
+# 输入不变时跳过全量求解，直接把上次 dump 产物复制回 anchors/。
+#   键 = SHA256(输入锚点清单+快速指纹 + 求解器源码哈希 + 全部参数)
+#   位 = .omo/solve_cache/{strict|heur}/<key[:16]>/
+#   环境变量 MINCLASS_NO_CACHE=1 强制跳过缓存（读写都不做）。
+CACHE_ROOT = os.path.join(ROOT, ".omo", "solve_cache")
+
+# anchors/ 下的求解器 dump 产物——是输出不是输入，不进缓存键
+_CACHE_OUTPUT_BASENAMES = {
+    "minclass_result.json",
+    "minclass_domains.json",
+    "minclass_clusters.json",
+    "minclass_assignments.json",
+    "minclass_conflicts.json",
+    "minclass_conflict_resolution.json",
+    "c10_contradicted_entities.json",
+    "derived_layouts.json",
+}
+
+# 缓存里保存/恢复的全部输出产物（存在才复制）
+_CACHE_ARTIFACTS = [
+    "minclass_result.json",
+    "minclass_domains.json",
+    "minclass_clusters.json",
+    "minclass_assignments.json",
+    "minclass_conflicts.json",
+    "minclass_conflict_resolution.json",
+    "c10_contradicted_entities.json",
+    "derived_layouts.json",
+]
+
+
+def _file_fingerprint(path):
+    """快速指纹：size + mtime + 前 64 字节内容哈希。
+
+    速度优先——anchors/ 下有 400MB 级文件（minclass_assignments 等产物
+    已被排除在键外，但 class_db 也有 16MB），全文件哈希代价比指纹高几个
+    数量级；size+mtime+首 64 字节足以区分内容变化。
+    """
+    st = os.stat(path)
+    h = hashlib.sha256()
+    with io.open(path, "rb") as fh:
+        head = fh.read(64)
+    h.update(("%d|%d|" % (st.st_size, int(st.st_mtime))).encode("ascii"))
+    h.update(head)
+    return h.hexdigest()
+
+
+def _cache_input_parts(args):
+    """构成缓存键的输入清单：anchors/*.json（排除输出产物）+ 非 anchors 输入。"""
+    parts = []
+    for p in sorted(glob.glob(os.path.join(ROOT, "anchors", "*.json"))):
+        base = os.path.basename(p)
+        if base in _CACHE_OUTPUT_BASENAMES:
+            continue          # 输出产物不是输入
+        parts.append("anchors/" + base + ":" + _file_fingerprint(p))
+    for rp in ("tools/class_layouts.json",
+               "tools/type_infer/constraints/raw_constraints.json"):
+        p = os.path.join(ROOT, rp)
+        if os.path.exists(p):
+            parts.append(rp + ":" + _file_fingerprint(p))
+    if not args.no_extra_callargs:
+        p = (args.extra_callargs if os.path.isabs(args.extra_callargs)
+             else os.path.join(ROOT, args.extra_callargs))
+        if os.path.exists(p):
+            parts.append(args.extra_callargs + ":" + _file_fingerprint(p))
+    return parts
+
+
+def _compute_cache_key(args):
+    src_path = os.path.abspath(__file__)
+    with io.open(src_path, "rb") as fh:
+        src_hash = hashlib.sha256(fh.read()).hexdigest()
+    blob = json.dumps({
+        "v": 1,
+        "solver_sha256": src_hash,
+        "args": {k: v for k, v in sorted(vars(args).items())},
+        "inputs": _cache_input_parts(args),
+    }, sort_keys=True)
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+
+def _cache_key_dir(args, key):
+    sub = "heur" if args.allow_heuristics else "strict"
+    return os.path.join(CACHE_ROOT, sub, key[:16])
+
+
+def _cache_write(args, key):
+    """求解成功后调用：复制全部 dump 产物 + key.json 到缓存目录。"""
+    keydir = _cache_key_dir(args, key)
+    os.makedirs(keydir, exist_ok=True)
+    copied = []
+    for name in _CACHE_ARTIFACTS:
+        src = os.path.join(ROOT, "anchors", name)
+        if os.path.exists(src):
+            shutil.copyfile(src, os.path.join(keydir, name))
+            copied.append(name)
+    with io.open(os.path.join(keydir, "key.json"), "w", encoding="utf-8") as fh:
+        json.dump({"key": key, "args": vars(args), "artifacts": copied,
+                   "written_at": time.time()}, fh, indent=1, ensure_ascii=False)
+    # 只保留最近 2 个键目录（assignments 单文件可达 400MB，防膨胀）
+    try:
+        croot = os.path.dirname(keydir)
+        entries = []
+        for d in os.listdir(croot):
+            kp = os.path.join(croot, d, "key.json")
+            if os.path.exists(kp):
+                entries.append((os.path.getmtime(kp), d))
+        entries.sort(reverse=True)
+        for _mt, d in entries[2:]:
+            shutil.rmtree(os.path.join(croot, d), ignore_errors=True)
+    except OSError:
+        pass
+    print("[cache] WRITE %s (%d artifacts)" % (keydir, len(copied)), flush=True)
+
+
+def _cache_restore(args, key, t_start):
+    """命中：复制缓存产物回 anchors/，打印并返回 True（调用方直接 return）。"""
+    keydir = _cache_key_dir(args, key)
+    rpath = os.path.join(keydir, "minclass_result.json")
+    if not os.path.exists(rpath):
+        return False
+    kmeta = jload(os.path.join(keydir, "key.json"), {}) or {}
+    age = time.time() - (kmeta.get("written_at") or time.time())
+    for name in _CACHE_ARTIFACTS:
+        src = os.path.join(keydir, name)
+        if os.path.exists(src):
+            shutil.copyfile(src, os.path.join(ROOT, "anchors", name))
+            print("[cache] restored anchors/%s" % name, flush=True)
+    print("[cache] HIT (age %.0fs) -- full solve skipped" % age, flush=True)
+    # 复现全量跑的收尾输出（family 表 + [time]）
+    cached = jload(rpath, {}) or {}
+    fam_rows = cached.get("family_table") or []
+    if fam_rows:
+        print("\n| family | evidence | entities | constrained | forced_cls | K | K_upper | dForced | LB | conflicts | C1 gaps |")
+        print("|---|---|---|---|---|---|---|---|---|---|---|")
+        for row in fam_rows:
+            print("| %s | %d | %d | %d | %d | %d | %d | %+d | %d | %d | %d |"
+                  % (row["family"], row["evidence"], row["entities_touched"],
+                     row["clusters_constrained"], row["forced_classes"], row["K"],
+                     row["K_upper"], row["delta_forced"], row["lower_bound"],
+                     row["conflicts"], row["c1_gaps"]))
+    print("[time] %.1fs" % (time.time() - t_start), flush=True)
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-facts", action="store_true")
@@ -944,6 +1092,16 @@ def main():
                    and U["size"][i] is not None and U["eff_size"][i] > U["size"][i])
     print("[evidence] extent>declared: %d classes (effective_size = max(declared, observed_extent))"
           % eff_bump, flush=True)
+
+    # ---------------- 结果缓存（checkpoint）：输入不变则跳过全量求解 ----------------
+    _cache_on = os.environ.get("MINCLASS_NO_CACHE") != "1"
+    if not _cache_on:
+        print("[cache] disabled (MINCLASS_NO_CACHE=1)", flush=True)
+    else:
+        _ck = _compute_cache_key(args)
+        if _cache_restore(args, _ck, t_start):
+            return                      # 命中：产物已复制回 anchors/，直接退出
+        print("[cache] MISS -- full solve", flush=True)
 
     raw = jload("tools/type_infer/constraints/raw_constraints.json")["constraints"]
 
@@ -2480,7 +2638,7 @@ def main():
     except Exception as _e_fs:
         print("[FS] skipped: %r" % _e_fs, flush=True)
     try:
-        _pud = jload("anchors/param_usage_types.json", {}) or {}
+        _pud = jload("anchors/param_usage_types_v2.json", {}) or {}
         _n_pug = 0
         for _rec in (_pud.get("gran_evidence") or []):
             _epu = _rec.get("ent")
@@ -4977,7 +5135,7 @@ def main():
 
     # ---- PU 参数消费边（体内：参数作 this 传递 / 存进成员，严格）----
     try:
-        _pue = jload("anchors/param_usage_types.json", {}) or {}
+        _pue = jload("anchors/param_usage_types_v2.json", {}) or {}
         _n_pue = 0
         for _a3, _b3 in (_pue.get("edges") or []):
             if not (isinstance(_a3, str) and isinstance(_b3, str)):
@@ -6224,6 +6382,10 @@ def main():
         json.dump(result, fh, ensure_ascii=False, indent=1)
     print("[out] %s (%.1f KB)" % (rpath, os.path.getsize(rpath) / 1024.0), flush=True)
     print("[time] %.1fs" % (time.time() - t_start), flush=True)
+
+    # 求解成功 → 写结果缓存（在 [time] 之后，拷贝 400MB 产物不计入求解耗时）
+    if _cache_on:
+        _cache_write(args, _ck)
 
     print("\n| family | evidence | entities | constrained | forced_cls | K | K_upper | dForced | LB | conflicts | C1 gaps |")
     print("|---|---|---|---|---|---|---|---|---|---|---|")

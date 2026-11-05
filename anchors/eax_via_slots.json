@@ -1,0 +1,143 @@
+{
+ "evidence": [
+  {
+   "ent": "EAX:457DE0:457E30",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:457DE0:var_24",
+   "via_slots": [
+    "S:457DE0:var_24"
+   ]
+  },
+  {
+   "ent": "EAX:457DE0:457E43",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:457DE0:var_20",
+   "via_slots": [
+    "S:457DE0:var_20"
+   ]
+  },
+  {
+   "ent": "EAX:528F00:528FE4",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:528F00:var_5010",
+   "via_slots": [
+    "S:528F00:var_5010"
+   ]
+  },
+  {
+   "ent": "EAX:45EC90:45EC9D",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "fwd:RET:45EC90"
+  },
+  {
+   "ent": "EAX:45ECA0:45ECC6",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "fwd:RET:45ECA0"
+  },
+  {
+   "ent": "EAX:45ECA0:45ECDA",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "fwd:RET:45ECA0"
+  },
+  {
+   "ent": "RET:45EC90",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:457DE0:var_24",
+   "via_slots": [
+    "S:457DE0:var_24"
+   ]
+  },
+  {
+   "ent": "RET:45ECA0",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:457DE0:var_20",
+   "via_slots": [
+    "S:457DE0:var_20"
+   ]
+  },
+  {
+   "ent": "RET:4A1DE0",
+   "types": [
+    "short",
+    "unsigned short"
+   ],
+   "via_slot": "S:528F00:var_5010",
+   "via_slots": [
+    "S:528F00:var_5010"
+   ]
+  }
+ ],
+ "meta": {
+  "counts": {
+   "bad_form_hist": {
+    "fpu_write": 81,
+    "imm": 222,
+    "other_write": 44,
+    "reg_unbound": 257,
+    "rmw": 14,
+    "subreg": 1061
+   },
+   "chain_dead": 6,
+   "chain_dead_hist": {
+    "form": 6
+   },
+   "eax_conflicts": 0,
+   "eax_not_in_universe": 0,
+   "eax_site_unattributed": 0,
+   "eax_typed_direct": 3,
+   "eax_typed_forwarder": 3,
+   "evidence_rows": 9,
+   "ffl5_rescues": 0,
+   "fn_not_in_snapshot": 0,
+   "fn_truncated": 1093,
+   "ret_candidate_entities": 3,
+   "ret_conflicts": 0,
+   "ret_typed": 3,
+   "ru_agree": 0,
+   "ru_conflict": 1,
+   "ru_overlap": 1,
+   "sg_iv_conflict_dropped": 37,
+   "slot_bad_form": 1384,
+   "slot_multi_source_discarded": 0,
+   "slot_multi_source_incl_mixed": 14,
+   "slot_no_writes": 108,
+   "typed_slots_total": 2594
+  },
+  "determinism": "sha256 double-run byte-identical",
+  "inputs": [
+   "anchors/flow_chains.json",
+   "anchors/slot_granularity_types.json",
+   "anchors/insn_value_types.json",
+   "anchors/ret_usage_types_gated.json",
+   ".omo/ffl5/full.json",
+   "decompile-results/full_export/src/"
+  ],
+  "schema": "eax-via-slots/v2",
+  "semantics": "two-hop EAX->S-slot->consumer type propagation: call G@cs in F defines EAX:F:cs==RET:G (flow_chains); a CFG-join engine (snapshot-rebuilt, callee-saved aliasing, per-binding call-site) binds slot stores mov [esp|ebp+..+var_N],reg to that call; the slot carries instruction-semantic types (SG/IV S-entities). If EVERY textual write to the slot key in F is a carrier store bound to the SAME single callee G (unique write source; S->S unique-writer chains resolved to a RET root), then each binding's EAX:F:cs <= types(slot) and RET:G <= intersection of types over all its unique-writer slots. ffl4/ffl5 surviving RET->S edges are unioned in as a cross-engine fallback for unbound reg stores.",
+  "soundness": "unique-writer verified by full textual census of writes to the slot key (imm/subreg/rmw/fpu/xchg/pop/unbound writes discard \u2014 subreg stores are unsound to propagate: short x=f() and (short)f_int() compile alike); multi-callee / mixed-source / cyclic chains discard; RET aggregation requires non-empty intersection; types spelled verbatim from source anchors; EAX entities restricted to the flow_chains universe."
+ }
+}
