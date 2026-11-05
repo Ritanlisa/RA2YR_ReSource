@@ -66,6 +66,7 @@ import shutil
 import sys
 import re
 import time
+import zlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -914,19 +915,34 @@ _CACHE_ARTIFACTS = [
 ]
 
 
-def _file_fingerprint(path):
-    """快速指纹：size + mtime + 前 64 字节内容哈希。
+# ---- 增量求解检查点（用户裁决架构 2026-11-05）--------------------------
+# .omo/solve_checkpoint.json：{每实体域掩码(编码后), post-neutralization 边集, 受约束簇域,
+# K_min 解(chosen/assign), 输入锚点指纹, vars(args), universe 指纹}。增量模式以此为热启动
+# 起点；任何不一致（域变宽/边删除/新空域/步数超限/单遍不动点验证失败）一律回退全量路径
+# （fail-closed：增量结果必须与全量逐字节一致，否则不采用）。
+# 掩码编码：0→"0"；bit_count<=48→"i:idx,idx,..."；否则 "x:%x"。缺省条目=FULL。
+CKPT_PATH = os.path.join(ROOT, ".omo", "solve_checkpoint.json")
+_CKPT_STATE = {"data": None, "loaded": False}      # 惰性加载缓存（每进程一次）
+_MEMO_MISS = object()                               # 簇族掩码 memo 哨兵
 
-    速度优先——anchors/ 下有 400MB 级文件（minclass_assignments 等产物
-    已被排除在键外，但 class_db 也有 16MB），全文件哈希代价比指纹高几个
-    数量级；size+mtime+首 64 字节足以区分内容变化。
+_CACHE_BIG_FILE = 10 * 1024 * 1024   # 10MB：之上只做 (size, mtime) 快速指纹
+
+
+def _file_fingerprint(path):
+    """输入指纹：>10MB 用 (size, mtime)；≤10MB 用全内容 SHA256。
+
+    小文件内容哈希免疫 mtime 精度/touch 类扰动（防假 HIT）；anchors/ 下有
+    大文件（class_db 16MB、raw_constraints 更大），全文件哈希代价比指纹高
+    几个数量级——大文件 (size, mtime) 足以区分内容变化。
     """
     st = os.stat(path)
     h = hashlib.sha256()
-    with io.open(path, "rb") as fh:
-        head = fh.read(64)
-    h.update(("%d|%d|" % (st.st_size, int(st.st_mtime))).encode("ascii"))
-    h.update(head)
+    if st.st_size > _CACHE_BIG_FILE:
+        h.update(("big:%d|%d" % (st.st_size, int(st.st_mtime))).encode("ascii"))
+    else:
+        with io.open(path, "rb") as fh:
+            h.update(fh.read())
+        h.update(("|small:%d" % st.st_size).encode("ascii"))
     return h.hexdigest()
 
 
@@ -951,7 +967,7 @@ def _cache_input_parts(args):
     return parts
 
 
-def _compute_cache_key(args):
+def _compute_cache_key(args, input_parts=None):
     src_path = os.path.abspath(__file__)
     with io.open(src_path, "rb") as fh:
         src_hash = hashlib.sha256(fh.read()).hexdigest()
@@ -959,7 +975,7 @@ def _compute_cache_key(args):
         "v": 1,
         "solver_sha256": src_hash,
         "args": {k: v for k, v in sorted(vars(args).items())},
-        "inputs": _cache_input_parts(args),
+        "inputs": _cache_input_parts(args) if input_parts is None else input_parts,
     }, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
@@ -970,41 +986,69 @@ def _cache_key_dir(args, key):
 
 
 def _cache_write(args, key):
-    """求解成功后调用：复制全部 dump 产物 + key.json 到缓存目录。"""
+    """求解成功后调用：复制全部 dump 产物 + key.json 到缓存目录。
+
+    任何 OSError 都不允许向上抛——缓存写入失败绝不能毁掉一次 30+ 分钟
+    求解的收尾输出（只打印告警，产物仍在 anchors/）。瞬态文件系统错误
+    （实测 2026-11-05 全量跑 makedirs 阶段裸 FileNotFoundError，事后手动
+    重现 0.4s 成功）重试一次再放弃。
+    """
     keydir = _cache_key_dir(args, key)
-    os.makedirs(keydir, exist_ok=True)
-    copied = []
-    for name in _CACHE_ARTIFACTS:
-        src = os.path.join(ROOT, "anchors", name)
-        if os.path.exists(src):
-            shutil.copyfile(src, os.path.join(keydir, name))
-            copied.append(name)
-    with io.open(os.path.join(keydir, "key.json"), "w", encoding="utf-8") as fh:
-        json.dump({"key": key, "args": vars(args), "artifacts": copied,
-                   "written_at": time.time()}, fh, indent=1, ensure_ascii=False)
-    # 只保留最近 2 个键目录（assignments 单文件可达 400MB，防膨胀）
-    try:
-        croot = os.path.dirname(keydir)
-        entries = []
-        for d in os.listdir(croot):
-            kp = os.path.join(croot, d, "key.json")
-            if os.path.exists(kp):
-                entries.append((os.path.getmtime(kp), d))
-        entries.sort(reverse=True)
-        for _mt, d in entries[2:]:
-            shutil.rmtree(os.path.join(croot, d), ignore_errors=True)
-    except OSError:
-        pass
-    print("[cache] WRITE %s (%d artifacts)" % (keydir, len(copied)), flush=True)
+    for _attempt in range(2):
+        try:
+            os.makedirs(keydir, exist_ok=True)
+            copied = []
+            for name in _CACHE_ARTIFACTS:
+                src = os.path.join(ROOT, "anchors", name)
+                if os.path.exists(src):
+                    shutil.copyfile(src, os.path.join(keydir, name))
+                    copied.append(name)
+            with io.open(os.path.join(keydir, "key.json"), "w", encoding="utf-8") as fh:
+                json.dump({"key": key, "args": vars(args), "artifacts": copied,
+                           "written_at": time.time()}, fh, indent=1, ensure_ascii=False)
+            # 只保留最近 2 个键目录（assignments 单文件可达 400MB，防膨胀）
+            try:
+                croot = os.path.dirname(keydir)
+                entries = []
+                for d in os.listdir(croot):
+                    kp = os.path.join(croot, d, "key.json")
+                    if os.path.exists(kp):
+                        entries.append((os.path.getmtime(kp), d))
+                entries.sort(reverse=True)
+                for _mt, d in entries[2:]:
+                    shutil.rmtree(os.path.join(croot, d), ignore_errors=True)
+            except OSError:
+                pass
+            print("[cache] WRITE %s (%d artifacts)" % (keydir, len(copied)), flush=True)
+            return
+        except OSError as e:
+            if _attempt == 0:
+                print("[cache] write attempt failed (%r) -- retrying once" % (e,), flush=True)
+                time.sleep(1.0)
+                continue
+            print("[cache] WRITE FAILED (cache skipped, solve results intact): %r" % (e,),
+                  flush=True)
 
 
 def _cache_restore(args, key, t_start):
-    """命中：复制缓存产物回 anchors/，打印并返回 True（调用方直接 return）。"""
+    """命中：复制缓存产物回 anchors/，打印并返回 True（调用方直接 return）。
+
+    fail-closed：key.json 缺失（上次写入中断）或其中登记的任一产物缺失
+    都视为未命中——绝不把残缺缓存当完整解复制回 anchors/。
+    """
     keydir = _cache_key_dir(args, key)
     rpath = os.path.join(keydir, "minclass_result.json")
     if not os.path.exists(rpath):
         return False
     kmeta = jload(os.path.join(keydir, "key.json"), {}) or {}
+    expected = kmeta.get("artifacts") or []
+    if not expected:
+        print("[cache] corrupt entry (no key.json manifest) -- MISS", flush=True)
+        return False
+    missing = [nm for nm in expected if not os.path.exists(os.path.join(keydir, nm))]
+    if missing:
+        print("[cache] corrupt entry (missing %s) -- MISS" % ",".join(missing), flush=True)
+        return False
     age = time.time() - (kmeta.get("written_at") or time.time())
     for name in _CACHE_ARTIFACTS:
         src = os.path.join(keydir, name)
@@ -1026,6 +1070,59 @@ def _cache_restore(args, key, t_start):
                      row["conflicts"], row["c1_gaps"]))
     print("[time] %.1fs" % (time.time() - t_start), flush=True)
     return True
+
+
+def _mask_enc(m):
+    """检查点掩码编码：稀疏(<=48位)存索引列表，稠密存 hex。"""
+    if m == 0:
+        return "0"
+    if m.bit_count() <= 48:
+        return "i:" + ",".join(str(i) for i in range(m.bit_length()) if (m >> i) & 1)
+    return "x:" + format(m, "x")
+
+
+def _mask_dec(s):
+    """解码 _mask_enc；非法输入返回 None（调用方据此回退全量）。"""
+    if not isinstance(s, str) or not s:
+        return None
+    try:
+        if s == "0":
+            return 0
+        if s.startswith("i:"):
+            m = 0
+            for tok in s[2:].split(","):
+                if tok:
+                    m |= (1 << int(tok))
+            return m
+        if s.startswith("x:"):
+            return int(s[2:], 16)
+        return int(s, 16)
+    except ValueError:
+        return None
+
+
+def _ckpt_load():
+    if not _CKPT_STATE["loaded"]:
+        _CKPT_STATE["loaded"] = True
+        try:
+            with open(CKPT_PATH, "rb") as fh:
+                _CKPT_STATE["data"] = json.loads(
+                    zlib.decompress(fh.read()).decode("utf-8"))
+        except Exception:
+            _CKPT_STATE["data"] = None
+    return _CKPT_STATE["data"]
+
+
+def _ckpt_write(payload):
+    try:
+        _d = os.path.dirname(CKPT_PATH)
+        if _d and not os.path.isdir(_d):
+            os.makedirs(_d, exist_ok=True)
+        with open(CKPT_PATH, "wb") as fh:
+            fh.write(zlib.compress(json.dumps(payload, ensure_ascii=False).encode("utf-8")))
+        print("[incr] checkpoint written: %s (%.1f KB)" % (CKPT_PATH, os.path.getsize(CKPT_PATH) / 1024.0), flush=True)
+    except OSError as e:
+        print("[incr] checkpoint write FAILED (solve results intact): %r" % (e,), flush=True)
 
 
 def main():
@@ -1071,11 +1168,15 @@ def main():
                          "spec+proto=叠加 proto-this 通道——与 C2 FUNC_PARAM 掩码同源"
                          "（函数原型已类型化的 this 声明），用 proto 派生类验证 proto 布局"
                          "属循环论证，仅作备选口径报告。")
-    args = ap.parse_args()
+    # parse_known_args：让 --incremental / --no-incremental 作为纯调度旗标经 sys.argv 探测，
+    # 不进 vars(args)（缓存键含 vars(args)，argparse 注册会作废全部既有结果缓存）。
+    args, _sched_flags = ap.parse_known_args()
 
     t_start = time.time()
     U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
     names, idx, resolve, n = U["names"], U["idx"], U["resolve"], U["n"]
+    _names_sha = hashlib.sha256("\n".join(names).encode("utf-8")).hexdigest()   # 检查点宇宙指纹
+    _solver_sha = hashlib.sha256(io.open(os.path.abspath(__file__), "rb").read()).hexdigest()  # 检查点源码指纹
     FULL = (1 << n) - 1
     _CLASSMASK = U.get("classmask") or FULL
     print("[universe] classes=%d with_layout=%d authority_joined=%d sizes=%d slot_count=%d "
@@ -1095,13 +1196,21 @@ def main():
 
     # ---------------- 结果缓存（checkpoint）：输入不变则跳过全量求解 ----------------
     _cache_on = os.environ.get("MINCLASS_NO_CACHE") != "1"
+    _input_parts = None
     if not _cache_on:
         print("[cache] disabled (MINCLASS_NO_CACHE=1)", flush=True)
     else:
-        _ck = _compute_cache_key(args)
+        _input_parts = _cache_input_parts(args)
+        _ck = _compute_cache_key(args, _input_parts)
         if _cache_restore(args, _ck, t_start):
             return                      # 命中：产物已复制回 anchors/，直接退出
         print("[cache] MISS -- full solve", flush=True)
+    # ---- 增量模式门控（用户裁决：--no-incremental / MINCLASS_NO_CACHE=1 强制全量） ----
+    _incr_on = (("--incremental" in sys.argv) or os.environ.get("MINCLASS_INCREMENTAL") == "1") \
+        and ("--no-incremental" not in sys.argv) and _cache_on
+    if _incr_on:
+        print("[incr] incremental mode ON (checkpoint=%s)"
+              % ("present" if os.path.exists(CKPT_PATH) else "absent"), flush=True)
 
     raw = jload("tools/type_infer/constraints/raw_constraints.json")["constraints"]
 
@@ -4094,6 +4203,11 @@ def main():
     # 用户裁定：冲突必须当 bug 追查，禁止按 provenance 强弱丢弃证据后采信结果。
     _unknown_roots = set()
 
+    # 增量调度层：per-(root, family) 簇族掩码 memo（pre-_pfm；_pfm/_unknown_roots 活状态现算）。
+    # fam/ents/exact/clusters 自 family 循环起冻结 → memo 在全部 solve() 调用间精确透明。
+    _incr_cell = {"on": _incr_on}
+    _CLFAM_CACHE = {}
+
     def cluster_domains(enabled, apply_c1=True):
         """返回 [(cluster, domain, exact_ci, exact_src, flags)]。
 
@@ -4140,13 +4254,28 @@ def main():
                 if cl.get("root") in _unknown_roots:
                     masks[f] = FULL
                     continue
-                mf = FULL
-                hit = False
-                for eid in cl["ents"]:
-                    fm = fam[f].get(eid)
-                    if fm is not None:
-                        mf &= fm
-                        hit = True
+                if _incr_cell["on"]:
+                    _mc_key = (cl.get("root"), f)
+                    _mc_val = _CLFAM_CACHE.get(_mc_key, _MEMO_MISS)
+                    if _mc_val is _MEMO_MISS:
+                        mf = FULL
+                        hit = False
+                        for eid in cl["ents"]:
+                            fm = fam[f].get(eid)
+                            if fm is not None:
+                                mf &= fm
+                                hit = True
+                        _CLFAM_CACHE[_mc_key] = (hit, mf)
+                    else:
+                        hit, mf = _mc_val
+                else:
+                    mf = FULL
+                    hit = False
+                    for eid in cl["ents"]:
+                        fm = fam[f].get(eid)
+                        if fm is not None:
+                            mf &= fm
+                            hit = True
                 masks[f] = _pfm(mf) if hit else FULL   # proven universe：逐族剔除
                 m &= masks[f]
             # 类型种类纪律：接收者簇（T:/R:/GS:）必须是类域——基元/数组/指针类型
@@ -5232,6 +5361,11 @@ def main():
     except Exception as _e_fc:
         print("[FC] injection skipped: %r" % _e_fc, flush=True)
 
+    _incr_fp_ok = False
+    _INCR_BASE_NOW = None
+    _edges_fix = []
+    _edges_pre_incr = []
+    _dom_fix = {}
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
         def _c10_base_dom(_edges):
@@ -5348,13 +5482,157 @@ def main():
                 json.dump({"ents": sorted(str(_k) for _k in ents.keys())}, _fh_eu)
         except Exception as _e_fx:
             print("[flowgraph-dump] FAILED: %r" % _e_fx, flush=True)
-        _dom_fix = _c10_base_dom(_edges_fix)
+
+        # ---- 增量 C10 不动点：checkpoint 热启动 + 工作列表传播（用户裁决架构） ----
+        # 单调性：传播算子只收窄 → 混沌迭代收敛到唯一最大不动点（与边序无关）→ 从检查点
+        # 不动点出发（D0 = ckpt_fix ∩ base_now，要求 base 只收窄、边只增）迭代所得 == 全量解。
+        # 回退全量的硬条件（fail-closed）：检查点结构不符 / 边删除 / 域变宽 / 新空域（走
+        # 中和器）/ 步数超限（对齐原 12 轮上限）/ 单遍不动点验证失败。
+        def _incr_fixpoint_wl():
+            _t0w = time.time()
+            _ckp = _ckpt_load()
+            if not isinstance(_ckp, dict) or _ckp.get("version") not in (1, 2):
+                print("[incr] checkpoint unusable -> full", flush=True)
+                return None
+            _uvw = _ckp.get("universe") or {}
+            if _uvw.get("n") != n or _uvw.get("names_sha") != _names_sha:
+                print("[incr] universe changed -> full", flush=True)
+                return None
+            if _ckp.get("args") != {k: v for k, v in vars(args).items()}:
+                print("[incr] solver args changed -> full", flush=True)
+                return None
+            _ckc = _ckp.get("c10") or {}
+            _old_edges = set((a, b) for a, b in (_ckc.get("edges") or []))
+            _new_edges = set(_edges_fix)
+            _removed_e = _old_edges - _new_edges
+            if _removed_e:
+                print("[incr] %d edges removed (widening) -> full" % len(_removed_e), flush=True)
+                return None
+            _added_e = _new_edges - _old_edges
+            _old_base = {e: _mask_dec(v) for e, v in (_ckc.get("base") or {}).items()}
+            _old_fix = {e: _mask_dec(v) for e, v in (_ckc.get("fix") or {}).items()}
+            if any(v is None for v in _old_base.values()) or any(v is None for v in _old_fix.values()):
+                print("[incr] checkpoint mask decode failed -> full", flush=True)
+                return None
+            # ---- 确定性重放捷径（checkpoint v2）：输入指纹逐文件相同 + 求解器源码相同 ----
+            # → 全量路径将做出与检查点运行完全相同的演化（同边集/同基线/同中和决策；求解器
+            # 确定性已由双跑字节一致实证）→ 直接复用 post-neutralization 边集与不动点域，
+            # 零传播。任何指纹差异都走下方通用增量路径/回退（fail-closed）。中和器历史使
+            # 通用工作列表必然重引燃已中和的矛盾边（fresh ⊇ post），此捷径是无变更场景的
+            # 唯一快速路径。
+            if (_ckp.get("version") == 2
+                    and _ckp.get("solver_sha256") == _solver_sha
+                    and _ckp.get("inputs") == _input_parts):
+                _post_lst = [(a, b) for (a, b) in (_ckc.get("edges") or [])]
+                _dom_re = {}
+                for _e in set(_old_base) | set(_old_fix):
+                    _dom_re[_e] = _old_fix.get(_e, _old_base.get(_e, FULL))
+                _zre = [e for e, m in _dom_re.items() if m == 0]
+                if _zre:
+                    print("[incr] shortcut: checkpoint carries empty domains -> full", flush=True)
+                    return None
+                for (_c, _e2) in _post_lst:
+                    _mc = _dom_re.get(_c, FULL)
+                    _me = _dom_re.get(_e2, FULL)
+                    if (_me & _anc_union(_mc)) != _me or (_mc & _desc_union(_me)) != _mc:
+                        print("[incr] shortcut fixpoint self-check failed -> full", flush=True)
+                        return None
+                print("[incr] deterministic replay shortcut: inputs+src unchanged -> "
+                      "reuse checkpoint fixpoint (dom=%d entities, post_edges=%d, 0 steps)"
+                      % (len(_dom_re), len(_post_lst)), flush=True)
+                return {"dom": _dom_re, "edges": _post_lst, "base": None}
+            _base_now = _c10_base_dom(_edges_fix)
+            _dom = {}
+            _seeds = set()
+            _widened = 0
+            for _e, _mb in _base_now.items():
+                _ob = _old_base.get(_e, FULL)
+                if _mb == _ob:
+                    _dom[_e] = _old_fix.get(_e, _ob)
+                    continue
+                if _mb & ~_ob:
+                    _widened += 1          # 证据被删除（域扩宽）——不可增量修复
+                    continue
+                _seeds.add(_e)
+                _dom[_e] = _old_fix.get(_e, _ob) & _mb
+            if _widened:
+                print("[incr] %d entities widened (evidence removed) -> full" % _widened, flush=True)
+                return None
+            for (_ea, _eb) in _added_e:
+                _seeds.add(_ea)
+                _seeds.add(_eb)
+            # 工作列表（AC-3 风格）：只从种子出发沿边传播；每条边施加与全量 _c10_propagate
+            # 完全一致的成对约束（含清零更新——空域交给回退判定/中和器）。
+            _adjw = collections.defaultdict(list)
+            for (_ca, _cb) in _edges_fix:
+                _adjw[_ca].append((_cb, True))
+                _adjw[_cb].append((_ca, False))
+            _wl = collections.deque(sorted(_seeds))
+            _inwl = set(_wl)
+            _steps = 0
+            _capw = 12 * len(_edges_fix) + 1000
+            while _wl:
+                _x = _wl.popleft()
+                _inwl.discard(_x)
+                for (_y, _x_is_caller) in _adjw.get(_x, ()):
+                    _c, _e2 = (_x, _y) if _x_is_caller else (_y, _x)
+                    _mc = _dom.get(_c, FULL)
+                    _me = _dom.get(_e2, FULL)
+                    _ne = _me & _anc_union(_mc)
+                    if _ne != _me:
+                        _dom[_e2] = _ne
+                        _me = _ne
+                        _steps += 1
+                        if _steps > _capw:
+                            print("[incr] worklist step cap exceeded -> full", flush=True)
+                            return None
+                        if _e2 not in _inwl:
+                            _wl.append(_e2)
+                            _inwl.add(_e2)
+                    _nc = _mc & _desc_union(_me)
+                    if _nc != _mc:
+                        _dom[_c] = _nc
+                        _steps += 1
+                        if _steps > _capw:
+                            print("[incr] worklist step cap exceeded -> full", flush=True)
+                            return None
+                        if _c not in _inwl:
+                            _wl.append(_c)
+                            _inwl.add(_c)
+            _empty_w = [e for e, m in _dom.items() if m == 0]
+            if _empty_w:
+                print("[incr] %d empty domains (new contradictions) -> neutralizer (full)"
+                      % len(_empty_w), flush=True)
+                return None
+            # 不动点验证（fail-closed）：单次全边扫描，任何仍可收窄即回退。
+            for (_c, _e2) in _edges_fix:
+                _mc = _dom.get(_c, FULL)
+                _me = _dom.get(_e2, FULL)
+                if (_me & _anc_union(_mc)) != _me or (_mc & _desc_union(_me)) != _mc:
+                    print("[incr] fixpoint verification failed -> full", flush=True)
+                    return None
+            print("[incr] C10 worklist: seeds=%d steps=%d added_edges=%d entities=%d %.1fs"
+                  % (len(_seeds), _steps, len(_added_e), len(_dom), time.time() - _t0w), flush=True)
+            return {"dom": _dom, "base": _base_now}
+
+        _edges_pre_incr = list(_edges_fix)      # 检查点 removed_edges = fresh - final
+        if _incr_on:
+            _r_incr = _incr_fixpoint_wl()
+            if _r_incr is not None:
+                _dom_fix = _r_incr["dom"]
+                if _r_incr.get("edges") is not None:
+                    _edges_fix = list(_r_incr["edges"])   # 捷径：确定性重放检查点 post 边集
+                if _r_incr.get("base") is not None:
+                    _INCR_BASE_NOW = _r_incr["base"]
+                _incr_fp_ok = True
+        if not _incr_fp_ok:
+            _dom_fix = _c10_base_dom(_edges_fix)
         _empty_ids = []
         _empty_pfx = collections.Counter()
         _neutralized_total = 0
         _ent_neutralized = 0
         _root_diag = [] if os.environ.get("MC_ROOT_DIAG") else None
-        for _outer in range(14):
+        for _outer in range(0 if _incr_fp_ok else 14):   # 增量成功时跳过中和器（已验证无空域）
             _steps_f, _sk_f = _c10_propagate(_edges_fix, _dom_fix, _skip_empty=False)
             _empt_all = {e for e, m in _dom_fix.items() if m == 0}
             if not _empt_all:
@@ -5485,6 +5763,60 @@ def main():
         print("[C1] entities with dropped observations: %d" % len(_obs_dropped), flush=True)
         print("[C9] evidence=%d entities=%d (slot-owner functions: %d)"
               % (census["C9"], len(fam["C9"]), len(c9_owner)), flush=True)
+
+    # ---------------- 增量验证模式（自动）+ warm-start greedy（信息性 incremental-K） ----------------
+    # 验证模式（用户规格 3）：全量重跑一次 cluster_domains 求交（memo 关闭），与增量调度层
+    # （memo 开启）的结果逐簇比对；不一致打印差异并永久关闭 memo（后续 solve 全量语义）。
+    if _incr_cell["on"]:
+        _t_ver = time.time()
+        _got_doms = cluster_domains(list(FAMILIES))
+        _incr_cell["on"] = False
+        _ref_doms = cluster_domains(list(FAMILIES))
+        _rmap_r = {str(_d[0].get("root") if isinstance(_d[0], dict) else _d[0]): _d
+                   for _d in _ref_doms}
+        _rmap_g = {str(_d[0].get("root") if isinstance(_d[0], dict) else _d[0]): _d
+                   for _d in _got_doms}
+        _mism = []
+        for _rk, _rd in _rmap_r.items():
+            _gd = _rmap_g.get(_rk)
+            if _gd is None or _gd[1] != _rd[1]:
+                _mism.append((_rk, _rd[1].bit_count(),
+                              None if _gd is None else _gd[1].bit_count()))
+        if _mism:
+            print("[incr] VERIFY MISMATCH %d/%d clusters -> memo disabled, full semantics"
+                  % (len(_mism), len(_rmap_r)), flush=True)
+            for _rx, _ra, _rb in _mism[:8]:
+                print("   e.g. %s full_bits=%s incr_bits=%s" % (_rx, _ra, _rb), flush=True)
+        else:
+            _incr_cell["on"] = True
+            print("[incr] cluster-domain verify OK: %d clusters %.1fs"
+                  % (len(_rmap_r), time.time() - _t_ver), flush=True)
+        # warm-start greedy（用户规格 e）：检查点解为起点，只对未覆盖簇重跑——近似解，
+        # 报告为 incremental-K；最终落盘 K 一律来自标准管线（保证与全量逐字节一致）。
+        if _incr_fp_ok and not _mism:
+            try:
+                _ckp_w = _ckpt_load() or {}
+                _ck_assign_w = _ckp_w.get("assign") or {}
+                _constr_w = [(_d[0], _d[1]) for _d in _ref_doms
+                             if not any(_k in _d[4] for _k in HARD_FLAGS) and _d[1] != FULL]
+                _pre_w = {}
+                _seed_cls_w = set()
+                for _iw, (_clw, _mw) in enumerate(_constr_w):
+                    _cnw = _ck_assign_w.get(str(_clw.get("root")))
+                    _ciw = resolve(_cnw) if isinstance(_cnw, str) else None
+                    if _ciw is not None and (_mw >> _ciw) & 1:
+                        _pre_w[_iw] = _ciw
+                        _seed_cls_w.add(_ciw)
+                _sub_w = [(_constr_w[_j][0], _constr_w[_j][1])
+                          for _j in range(len(_constr_w)) if _j not in _pre_w]
+                _chw, _cvw, _unw, _asw = greedy(_sub_w)
+                print("[incr] warm-greedy incremental-K=%d (ckpt-seeded %d clusters / %d "
+                      "classes, greedy +%d on %d uncovered) -- informational; final K from "
+                      "standard pipeline"
+                      % (len(_seed_cls_w | set(_chw)), len(_pre_w), len(_seed_cls_w),
+                         len(_chw), len(_sub_w)), flush=True)
+            except Exception as _e_w:
+                print("[incr] warm-greedy skipped: %r" % (_e_w,), flush=True)
 
     family_table = []
     enabled = []
@@ -6393,6 +6725,46 @@ def main():
     # 求解成功 → 写结果缓存（在 [time] 之后，拷贝 400MB 产物不计入求解耗时）
     if _cache_on:
         _cache_write(args, _ck)
+        # ---- 检查点写入（增量热启动状态；失败不阻断——同 _cache_write 哲学） ----
+        try:
+            _base_final = _INCR_BASE_NOW if (_incr_fp_ok and _INCR_BASE_NOW is not None) \
+                else _c10_base_dom(_edges_fix)
+            _cl_doms_ck = {}
+            for (_clz, _mz) in (res.get("constrained") or []):
+                if _mz and _mz != FULL:
+                    _cl_doms_ck[str(_clz.get("root") if isinstance(_clz, dict) else _clz)] = \
+                        _mask_enc(_mz)
+            _roots_aw = [(_clz.get("root") if isinstance(_clz, dict) else str(_clz))
+                         for (_clz, _mz) in constrain]
+            _assign_ck = {}
+            for _ia, _cia in (_new_assign or {}).items():
+                if 0 <= _ia < len(_roots_aw) and isinstance(_cia, int) and 0 <= _cia < n:
+                    _assign_ck[str(_roots_aw[_ia])] = names[_cia]
+            _ckpt_write({
+                "version": 2,
+                "created_ts": time.time(),
+                "solver_sha256": _solver_sha,
+                "args": {k: v for k, v in vars(args).items()},
+                "inputs": _input_parts if _input_parts is not None else _cache_input_parts(args),
+                "universe": {"n": n, "names_sha": _names_sha},
+                "c10": {
+                    "n_edges": len(_edges_fix),
+                    "edges": [[str(a), str(b)] for (a, b) in _edges_fix],
+                    "removed_edges": [[str(a), str(b)] for (a, b)
+                                      in (set(_edges_pre_incr) - set(_edges_fix))],
+                    "base": {str(e): _mask_enc(m)
+                             for e, m in _base_final.items() if m != FULL},
+                    "fix": {str(e): _mask_enc(m) for e, m in _dom_fix.items()
+                            if m != _base_final.get(e, FULL)},
+                },
+                "cluster_domains": _cl_doms_ck,
+                "k_min": K,
+                "chosen": [names[c] for c in (res.get("chosen") or [])
+                           if isinstance(c, int) and 0 <= c < n],
+                "assign": _assign_ck,
+            })
+        except Exception as _e_ck:
+            print("[incr] checkpoint write FAILED (solve results intact): %r" % (_e_ck,), flush=True)
 
     print("\n| family | evidence | entities | constrained | forced_cls | K | K_upper | dForced | LB | conflicts | C1 gaps |")
     print("|---|---|---|---|---|---|---|---|---|---|---|")
