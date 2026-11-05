@@ -4,11 +4,11 @@
   "source": "anchors/callarg_origins.json (ffl5 def-direct; ent used directly)",
   "cluster_source": "anchors/minclass_clusters.json (ents incl. root) + anchors/minclass_assignments.json candidates",
   "recv_sites": 5217,
-  "binds": 4045,
-  "args_total": 625,
+  "binds": 4042,
+  "args_total": 623,
   "skipped": {
-   "recv_unconstrained": 645,
-   "cand_not_in_authority": 503,
+   "recv_unconstrained": 637,
+   "cand_not_in_authority": 514,
    "multi_addr": 24
   }
  },
@@ -12148,49 +12148,6 @@
    "recv_kind": "this",
    "n_cands": 1,
    "args": []
-  },
-  {
-   "site": "0x4B53B7",
-   "slot": 33,
-   "callee": "0x48E600",
-   "recv": "M:4B5210:this:0xB0",
-   "recv_kind": "member",
-   "n_cands": 3,
-   "args": []
-  },
-  {
-   "site": "0x4B53C2",
-   "slot": 33,
-   "callee": "0x48E600",
-   "recv": "M:4B5210:this:0x50",
-   "recv_kind": "member",
-   "n_cands": 1,
-   "args": [
-    {
-     "k": 0,
-     "ent": "T:4B5210",
-     "kind": "this",
-     "off": 0,
-     "sym": ""
-    }
-   ]
-  },
-  {
-   "site": "0x4B54BF",
-   "slot": 33,
-   "callee": "0x48E600",
-   "recv": "M:4B53E0:this:0xB0",
-   "recv_kind": "member",
-   "n_cands": 3,
-   "args": [
-    {
-     "k": 0,
-     "ent": "T:4B53E0",
-     "kind": "this",
-     "off": 0,
-     "sym": ""
-    }
-   ]
   },
   {
    "site": "0x4B5570",
@@ -24488,7 +24445,7 @@
    "callee": "0x5F5F40",
    "recv": "T:62BD50",
    "recv_kind": "this",
-   "n_cands": 20,
+   "n_cands": 15,
    "args": []
   },
   {

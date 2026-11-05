@@ -38,9 +38,21 @@
    "multi_templatefamily_intersect_eq_1": 282,
    "multi_intersect_gt_1": 66,
    "multi_intersect_empty_even_normalized": 0,
-   "evidence_entries": 545
+   "evidence_entries": 539
   },
-  "naming_note": "domain classes spelled verbatim per RTTI/authority keys (template instantiations as ?$Name@args@@); solver clusters may use template-family names (e.g. VectorClass) -- wiring end must apply family resolution before intersecting; all verbatim-empty intersections observed are template-family spelling only, zero true semantic conflicts"
+  "naming_note": "domain classes spelled verbatim per RTTI/authority keys (template instantiations as ?$Name@args@@); solver clusters may use template-family names (e.g. VectorClass) -- wiring end must apply family resolution before intersecting; all verbatim-empty intersections observed are template-family spelling only, zero true semantic conflicts",
+  "otaudit_correction": {
+   "date": "2026-11-05",
+   "removed": {
+    "T:5D8170": "?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode",
+    "T:5D81B0": "?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode",
+    "T:5D81F0": "?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode",
+    "T:5D8230": "?$Initializer@VUnholyAlliance@@@MultiplayerGameMode",
+    "T:5D8270": "?$Initializer@VFreeForAll@@@MultiplayerGameMode",
+    "T:5D82B0": "?$Initializer@VMPCooperative@@@MultiplayerGameMode"
+   },
+   "reason": "slot-1 occupants of MultiplayerGameMode::Initializer<T> vtables are __stdcall static mode-factory callbacks (operator new + tail-call mode ctor, incoming ECX never read) - not virtual methods with this=Initializer<T>; see .omo/agents/otaudit/report.md"
+  }
  },
  "evidence": [
   {
@@ -208,48 +220,6 @@
    "ent": "T:5CA7F0",
    "classes": [
     "MultiplayerSiege"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D8170",
-   "classes": [
-    "?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D81B0",
-   "classes": [
-    "?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D81F0",
-   "classes": [
-    "?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D8230",
-   "classes": [
-    "?$Initializer@VUnholyAlliance@@@MultiplayerGameMode"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D8270",
-   "classes": [
-    "?$Initializer@VFreeForAll@@@MultiplayerGameMode"
-   ],
-   "n_classes": 1
-  },
-  {
-   "ent": "T:5D82B0",
-   "classes": [
-    "?$Initializer@VMPCooperative@@@MultiplayerGameMode"
    ],
    "n_classes": 1
   },

@@ -1,0 +1,6394 @@
+{
+ "meta": {
+  "schema": "ret-usage-types/v1",
+  "created_utc": "2026-11-04T16:39:57Z",
+  "semantics": "consumer-side EAX usage heuristic: linear straight-line block after each call site in full_export disasm snapshot; block truncated at label/jump/ret/second-call. ARITH first-class uses (add/sub/adc/sbb/imul/and/or/xor/shl/shr/cmp/test/cdq on the carrier; partial-reg reads of carrier like test al,al included; self-zero xor r,r / sub r,r excluded) => int signal. PTR uses ([carrier...] deref, lea reg,[carrier..] address-through-carrier, mov ecx,carrier+call thiscall form, push carrier+call ALWAYS counted ptr -- conservative) => ptr signal. mov [slot],carrier STORE neutral. alias propagation mov reg,eax one level (ebx/edx/esi/edi; ecx is this-channel, esp/ebp excluded). per-insn ptr dominates int.",
+  "threshold": "EAX ent: int_sig>=2 and ptr_sig==0 -> {int,unsigned int}; RET:callee: ptr_sig==0 at all sites and total int_sig>=2",
+  "counts": {
+   "files": 1445,
+   "functions": 19088,
+   "dup_functions_skipped": 0,
+   "call_sites_total": 71756,
+   "call_sites_direct_resolved": 51294,
+   "eax_entities_total": 71756,
+   "eax_typed": 140,
+   "eax_ptr_only_discard": 8275,
+   "eax_mixed_discard": 88,
+   "eax_insufficient_int1": 16422,
+   "eax_zero_signal": 46831,
+   "ret_entities_total": 5751,
+   "ret_typed": 695,
+   "ret_ptr_only_discard": 372,
+   "ret_mixed_discard": 135,
+   "eax_typed_in_flow_chains": 137,
+   "eax_universe_in_flow_chains": 59234,
+   "ret_typed_agree_int_returns_v2": 149,
+   "chain_end_histogram": {
+    "jz": 12112,
+    "call": 24524,
+    "label": 13309,
+    "jl": 1984,
+    "ja": 238,
+    "retn": 7041,
+    "jmp": 2969,
+    "jnz": 6410,
+    "jle": 1335,
+    "eof": 202,
+    "jge": 866,
+    "jns": 85,
+    "jnb": 79,
+    "jg": 238,
+    "jbe": 155,
+    "jb": 73,
+    "js": 136
+   }
+  },
+  "gating": {
+   "generated_utc": "2026-11-05T00:07:17Z",
+   "rule": "conflict-aware prefilter: EAX/RET/G/S entity removed iff its minclass cluster has non-empty candidates (any family constrained it) OR it reaches an M:/T:/P: class-pointer entity within 2 hops of flow_stores eq edges; M:/P: alloc entities exempt per spec; originals untouched",
+   "inputs": [
+    "anchors/minclass_clusters.json",
+    "anchors/minclass_assignments.json",
+    "anchors/flow_stores.json"
+   ],
+   "original": 835,
+   "removed_competing": 133,
+   "kept": 702,
+   "by_kind": {
+    "EAX": {
+     "orig": 140,
+     "removed": 1
+    },
+    "RET": {
+     "orig": 695,
+     "removed": 132
+    }
+   },
+   "by_reason": {
+    "cluster-candidates": 10,
+    "cluster-candidates+flow-2hop-classptr": 55,
+    "flow-2hop-classptr": 68
+   }
+  }
+ },
+ "evidence": [
+  {
+   "ent": "EAX:410DC0:410DEB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4197C0:419914",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:420E40:420E4F",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:424CE0:424DDF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:42C900:42CA80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:443C60:443E50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:454DB0:455096",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:458E00:458E28",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:458E00:458E3D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:46A310:46A3AF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:485AF0:485CBB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4A2370:4A2393",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4A2600:4A2684",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4B2630:4B27E6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4B96A0:4B9702",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4B96A0:4B971D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BB830:4BB9E6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BBCA0:4BBE0B",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BBCA0:4BBEEF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BC750:4BC9CB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BC750:4BCA64",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BDF00:4BE141",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BDF00:4BE225",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BEAC0:4BEC45",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BEAC0:4BECE1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BFD30:4BFEDD",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4BFD30:4BFFBB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CACB0:4CACBA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CAD00:4CAD0A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CADE0:4CADEE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CAE30:4CAE96",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CB150:4CB15A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CB1A0:4CB1AA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4CB3D0:4CB428",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4D4280:4D4290",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4E0D30:4E126E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4E11F0:4E126E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:4F9790:4F98A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5163B0:51646B",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:59D510:59D8CD",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5A08D0:5A0C74",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5A35F0:5A366E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5F76B0:5F76CE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5F76B0:5F771C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5F76B0:5F776A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:5F76B0:5F77B8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6213A0:6213FE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6217E0:621853",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6219D0:6219FC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:621B80:621BB2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:623880:623AD9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:623880:623B52",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:623880:623B9E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:623880:623BEB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62B5E0:62B987",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62B5E0:62B9A9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62BD50:62BD93",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62BD50:62BDB5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62BD50:62BDCE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62BD50:62BDF1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62C540:62C55E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62C540:62C580",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62C540:62C59A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62C540:62C5B1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62E4C0:62E590",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62E840:62E8AA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:62E840:62EA5D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:631D40:631D8F",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:63F850:63F8C3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6418B0:6419D1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:642130:642153",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:642130:642163",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:642130:642213",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:642130:6423D6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:652110:652168",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:655C50:655E93",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:656AC0:656BC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:659AC0:659B23",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:659AC0:659BB9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:659AC0:659C0D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:659EE0:659F3A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:659FF0:65A036",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:659FF0:65A0CE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:659FF0:65A122",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:67F7E0:67F9AB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:67F9C0:67FD04",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:68F9B0:68FA24",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:693652",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:693668",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:6936ED",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:693703",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:69376D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:693440:693781",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6A1C80:6A1E36",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6AF6C0:6AF817",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6AF6C0:6AF939",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6AF6C0:6AFA43",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6AF6C0:6AFB52",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6B04C0:6B0539",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6B0690:6B06E2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6B0750:6B07BA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6B0880:6B08D1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6B9740:6B9917",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6BA3E0:6BA438",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6BA3E0:6BA448",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6BA580:6BA608",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6BA690:6BA90A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6E2C40:6E2CEB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6E2C40:6E2DB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6EFA10:6EFBC2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:6F5190:6F52DF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:70CD10:70D08F",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:71C730:71C761",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:722440:7224B9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:722AF0:722B67",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:722F00:722F75",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7235A0:723604",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:728E30:728EB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:728E30:72905F",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:728E30:7290C7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7493B0:7497A5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:74CE50:74CF69",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:74CE50:74D2DA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:74D7C0:74D822",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:74DC00:74DC2E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:750AC0:750BCA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:750AC0:750BE8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:754510:754668",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 3
+  },
+  {
+   "ent": "EAX:764B90:764E9D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:785740:7857F7",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:79AF10:79B295",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:79D720:79DA54",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7A3D90:7A3E55",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7A5890:7A58FF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7A9970:7A9CFE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7AB670:7AB6ED",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7B6630:7B6651",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7B8250:7B826F",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "EAX:7BCA50:7BCA7B",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "eax-block",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4010A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:4016F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:402720",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:402C70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:403530",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4035F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:405190",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4054A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:405BE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:406130",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:406650",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4068E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 52
+  },
+  {
+   "ent": "RET:4073C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 51
+  },
+  {
+   "ent": "RET:4073E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 21
+  },
+  {
+   "ent": "RET:407470",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 28
+  },
+  {
+   "ent": "RET:407480",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:407860",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:407B60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:408070",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:4080D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:408520",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:408540",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:408610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4087F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:409030",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:410320",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 41
+  },
+  {
+   "ent": "RET:410380",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 43
+  },
+  {
+   "ent": "RET:4103E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:410A60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:410B90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4135A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4137A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:419B00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:41C250",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:41C3C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:41FEE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4260F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:428B80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:42C290",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:42D170",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:42E780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:42E820",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:42EB50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:431170",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:431B80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 16
+  },
+  {
+   "ent": "RET:432C50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:433F50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4346C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:44E7B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:452670",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4566B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:457630",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:457690",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:457CE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:459F60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:45AEA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:45AF20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:45E7B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:45ECA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 31
+  },
+  {
+   "ent": "RET:4653C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:4722C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:473460",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:473B10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:473C50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 57
+  },
+  {
+   "ent": "RET:473D10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:4741F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:4757D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:47A3F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:47A6F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:47AF70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:47B0C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:47C4D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:47C550",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:47C5A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:47EBA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:47EC40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:480A80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:481A00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:484AB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 16
+  },
+  {
+   "ent": "RET:484AE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:485010",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:485020",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:485060",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 20
+  },
+  {
+   "ent": "RET:485460",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:486D90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:486FF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:4870B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4870D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 17
+  },
+  {
+   "ent": "RET:4870F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:487950",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:487D50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:487DF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:48A8D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:48A9D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:48B750",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:48D080",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:48DF30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:48E620",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:49D120",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:49F7A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:49FAE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 25
+  },
+  {
+   "ent": "RET:4A17C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4A3020",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4A33A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4A3890",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 20
+  },
+  {
+   "ent": "RET:4A3B40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4A4900",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4A5110",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:4A5130",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:4A51B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:4A51D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:4A80D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:4AAB30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4AEB10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4B4D70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:4BAFE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4BB000",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4C9480",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 15
+  },
+  {
+   "ent": "RET:4C9C70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4CA130",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:4CAC40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 28
+  },
+  {
+   "ent": "RET:4CC100",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4D03D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4D0490",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4D3920",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:4D7170",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4D7330",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4D97A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4DA2A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4DB260",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4DB3C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4DCE80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4DD9F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:4DE710",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:4E1470",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:4E1550",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4E24A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4E3560",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:4E3830",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4E4230",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:4E4EC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4E59A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4F4CA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:4F4D80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:4F7870",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:4FFB20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5004E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:505360",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:5095D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:509610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:50B370",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:50B6F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 151
+  },
+  {
+   "ent": "RET:50B730",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 95
+  },
+  {
+   "ent": "RET:50E1B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:50E470",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 17
+  },
+  {
+   "ent": "RET:510F60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 17
+  },
+  {
+   "ent": "RET:521320",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:522510",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:523440",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:524CB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:525A10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:526810",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 39
+  },
+  {
+   "ent": "RET:526960",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 52
+  },
+  {
+   "ent": "RET:526A30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:526B10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:526FB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:5278F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5283D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 20
+  },
+  {
+   "ent": "RET:528A10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 188
+  },
+  {
+   "ent": "RET:528C00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 22
+  },
+  {
+   "ent": "RET:52B170",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 17
+  },
+  {
+   "ent": "RET:52B390",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 27
+  },
+  {
+   "ent": "RET:52B600",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:52B6D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:52D9A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:52FEC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:538610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:53A100",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:53A110",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:53A130",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:53B400",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:53BAD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:53BAE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:53E720",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:53E730",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:53E770",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:53EC70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:53EE00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:53EF30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:540A80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:541260",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:541370",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:5413B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:541480",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:541680",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:541820",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:542310",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5424C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:544CE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:544E70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5471F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:54F450",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:54F5C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 38
+  },
+  {
+   "ent": "RET:54F6B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5520A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:55A930",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:55A9B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:55AA60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:55AAC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:55AF60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:55C350",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:55CFD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:55D360",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:560BF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5657E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:56BCD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:56CB90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:56D100",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 19
+  },
+  {
+   "ent": "RET:56D430",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 12
+  },
+  {
+   "ent": "RET:56DA10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:56DAE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:56DB70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:56E7C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:570AE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:574600",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5746C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:576200",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5785F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:578710",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:579B70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:57B210",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:57BAA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:57CCF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:580B20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:580B70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:584030",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5862C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:586360",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 33
+  },
+  {
+   "ent": "RET:5865E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 21
+  },
+  {
+   "ent": "RET:586780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:587180",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:58C800",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:594010",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:595BC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5980C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 14
+  },
+  {
+   "ent": "RET:59BAB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:59BBC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5A00C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5A1350",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5A1E50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5A45E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5A7250",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 22
+  },
+  {
+   "ent": "RET:5A7D00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5A8F00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5AC230",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 40
+  },
+  {
+   "ent": "RET:5AC370",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5B1E40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5B2990",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5B36E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5B43E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5B43F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5B4430",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:5BFAA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5C0640",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5C1980",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5C69E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5C71E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5CAF70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5CEEF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5D3490",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:5D5890",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:5D5ED0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5D5F30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:5D6310",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5D63E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5D6620",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5DB680",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5DFE00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5E2BE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5E2CD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:5E68A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5E7BF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:5E8760",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:5E93F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:5E9440",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:5EA8E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5F16E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5F19E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5F1C30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:5F1EA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 19
+  },
+  {
+   "ent": "RET:5F1FA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:5F3450",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5F3E50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:5F4D30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5F4EC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:5F5390",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:5F5850",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:5F5C60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 53
+  },
+  {
+   "ent": "RET:5F5CD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:5F5DD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5F5E80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:5F6440",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5F6CD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:5F92D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:5F9720",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:5F9950",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:5FB2E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:601360",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:602490",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:602AE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:608CD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:609730",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:60C540",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6211D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:622B50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 59
+  },
+  {
+   "ent": "RET:623120",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 27
+  },
+  {
+   "ent": "RET:623230",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:6241C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6241F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:626690",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:629720",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:62AB40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:630310",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:631D10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 17
+  },
+  {
+   "ent": "RET:631D30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:634290",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 15
+  },
+  {
+   "ent": "RET:634550",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:637AA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:639DA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:63A230",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:63AC70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:63BE10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:63DB20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:63F850",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6433D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:643AE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:643E60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:643E90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:64C380",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:656E50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:65AD50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:65ADC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:65AE30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 36
+  },
+  {
+   "ent": "RET:65C780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 83
+  },
+  {
+   "ent": "RET:65FA70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:661530",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:663D60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:664610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:67FDD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:680F70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:681840",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:682240",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6822F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6823D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:682570",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:682780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:682880",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6829A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:682A90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:682B80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:682D30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:682F00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:688ED0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:68BD80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:6915D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:692300",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:693B70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:694760",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6951F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:69AC30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:69ADF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:69AE70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:69BBE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 22
+  },
+  {
+   "ent": "RET:6A46D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6ABAC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6B2520",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6B25C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6B3A80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6B5910",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6B5F80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6B7D80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6C8C40",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 210
+  },
+  {
+   "ent": "RET:6C9650",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:6CC390",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6D2120",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6D8640",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:6D8700",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 16
+  },
+  {
+   "ent": "RET:6E5320",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6E5380",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:6E57C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6E5E70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:6E61F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:6E6220",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6E7C20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6E8780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6EA610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:6EC300",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:6EEBD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6EF9E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:6F3970",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 16
+  },
+  {
+   "ent": "RET:6F4A70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:6FC0B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:6FDD50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:703B10",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:703E70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7091D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:70BF50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:70D8F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:70DC60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:70E240",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:70FEB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:70FEC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7105E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:712170",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7162F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:716DC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:717880",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:720FD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:721140",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:724AD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:726F50",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:726F80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7271E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:732580",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:732770",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:732C30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:732D00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7393C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:746D90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:746DB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:746EA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7490A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:74B960",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:74CD60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:74D670",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:74FFF0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:750030",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:750AC0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:752680",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7529E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:75A810",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 16
+  },
+  {
+   "ent": "RET:75F230",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:764FA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:766060",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:769330",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:76B090",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:76BFA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:76F600",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:76F670",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:770CE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7717F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:772A90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:7741C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:774B30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7757E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7759B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:7759E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:775B20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 19
+  },
+  {
+   "ent": "RET:776D80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 7
+  },
+  {
+   "ent": "RET:778030",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:77D4C0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 10
+  },
+  {
+   "ent": "RET:77D940",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 34
+  },
+  {
+   "ent": "RET:77D970",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 32
+  },
+  {
+   "ent": "RET:77E300",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:77EF90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:77F120",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 13
+  },
+  {
+   "ent": "RET:77F320",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:786390",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:787010",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:789B60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:78A6B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7931A0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 8
+  },
+  {
+   "ent": "RET:797640",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:79C520",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 11
+  },
+  {
+   "ent": "RET:7ACE30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7B0DD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7B1DE0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7B46F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:7B5340",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7B8C60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:7BAE60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 9
+  },
+  {
+   "ent": "RET:7BBE20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:7BC040",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7BC2B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 28
+  },
+  {
+   "ent": "RET:7BD2D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7BEA80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7BF470",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:7C0530",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C2D00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C30D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C3750",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C8980",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7C898C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C8992",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C8998",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:7C89A4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:7C89AA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C89B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C89BC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C89CE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C89D4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C8A34",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C8AD3",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7C8B3D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7C8D20",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 422
+  },
+  {
+   "ent": "RET:7C990E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7C998C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7C99B4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7C99E1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7C9A31",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 14
+  },
+  {
+   "ent": "RET:7C9A8D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CA3C5",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7CA4B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 29
+  },
+  {
+   "ent": "RET:7CA610",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 21
+  },
+  {
+   "ent": "RET:7CAAE4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7CAEF1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7CAFF4",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CB063",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CB1CB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CB1F9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CB4CC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 21
+  },
+  {
+   "ent": "RET:7CB911",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CBC11",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CC682",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 25
+  },
+  {
+   "ent": "RET:7CD615",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7CD680",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 24
+  },
+  {
+   "ent": "RET:7CD7CE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CDA90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 15
+  },
+  {
+   "ent": "RET:7CDD5A",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CDF2E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CF51C",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7CF7BD",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D06E8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D07DF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7D0D55",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D0F45",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D107D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D10C2",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7D161B",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D2DA6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D2FC8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D3374",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 6
+  },
+  {
+   "ent": "RET:7D45DF",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D461E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D4B92",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D4FAB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D73DA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D73F9",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D7754",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7D8DC8",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D93A1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7D9729",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7DA0F1",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7DA2B6",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7DAF28",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 59
+  },
+  {
+   "ent": "RET:7DB066",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 4
+  },
+  {
+   "ent": "RET:7DB93E",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7DBC57",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7DC5DC",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 3
+  },
+  {
+   "ent": "RET:7DC7CB",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7DD434",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  },
+  {
+   "ent": "RET:7DDE80",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 5
+  },
+  {
+   "ent": "RET:7DE17D",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "via": "ret-all-sites",
+   "int_sig": 2
+  }
+ ]
+}

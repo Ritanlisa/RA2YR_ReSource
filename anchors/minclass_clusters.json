@@ -106463,7 +106463,9 @@
 "T:4A1D50": {
 "class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"T:4A1D50"
+]
 },
 "R:4A1CA0:ecx": {
 "class": "Tooltip",
@@ -111187,7 +111189,7 @@
 ]
 },
 "R:4A1D30:ecx": {
-"class": "Char",
+"class": "AbstractClass",
 "obs": [],
 "ents": []
 },
@@ -123144,7 +123146,7 @@
 ]
 },
 "R:527CC0:ecx": {
-"class": "CSFClass",
+"class": "INISection",
 "obs": [
 [
 4,
@@ -123155,12 +123157,16 @@
 4
 ]
 ],
-"ents": []
+"ents": [
+"T:527CC0"
+]
 },
 "R:475870:ecx": {
-"class": "Char",
+"class": "INISection",
 "obs": [],
-"ents": []
+"ents": [
+"T:475870"
+]
 },
 "R:69AE90:ecx": {
 "class": "Game",
@@ -166012,6 +166018,11 @@
 "obs": [],
 "ents": []
 },
+"P:510F60:2": {
+"class": "Char",
+"obs": [],
+"ents": []
+},
 "R:69A3B0:ecx": {
 "class": "MapFile",
 "obs": [
@@ -198702,7 +198713,12 @@
 "ents": []
 },
 "GS:1:0:0x6330C0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:6330C0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199667,9 +199683,18 @@
 "ents": []
 },
 "GS:2:0:0x40B880": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40B880"
+]
+},
+"P:40B880:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40B880:0"
+]
 },
 "GS:2:1:0x40B880": {
 "class": "Char",
@@ -199687,7 +199712,12 @@
 "ents": []
 },
 "GS:2:0:0x40B9A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:40B9A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199697,9 +199727,18 @@
 "ents": []
 },
 "GS:2:0:0x40C030": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40C030"
+]
+},
+"P:40C030:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40C030:0"
+]
 },
 "GS:2:1:0x40C030": {
 "class": "Char",
@@ -199717,9 +199756,18 @@
 "ents": []
 },
 "GS:2:0:0x40C410": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40C410"
+]
+},
+"P:40C410:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40C410:0"
+]
 },
 "GS:2:1:0x40C410": {
 "class": "Char",
@@ -199737,9 +199785,18 @@
 "ents": []
 },
 "GS:2:0:0x40CA00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40CA00"
+]
+},
+"P:40CA00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40CA00:0"
+]
 },
 "GS:2:1:0x40CA00": {
 "class": "Char",
@@ -199757,9 +199814,18 @@
 "ents": []
 },
 "GS:2:0:0x40CE50": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40CE50"
+]
+},
+"P:40CE50:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40CE50:0"
+]
 },
 "GS:2:1:0x40CE50": {
 "class": "Char",
@@ -199777,9 +199843,18 @@
 "ents": []
 },
 "GS:2:0:0x40D720": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40D720"
+]
+},
+"P:40D720:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40D720:0"
+]
 },
 "GS:2:1:0x40D720": {
 "class": "Char",
@@ -199797,9 +199872,18 @@
 "ents": []
 },
 "GS:2:0:0x40E9D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40E9D0"
+]
+},
+"P:40E9D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40E9D0:0"
+]
 },
 "GS:2:1:0x40E9D0": {
 "class": "Char",
@@ -199817,9 +199901,18 @@
 "ents": []
 },
 "GS:2:0:0x40F0A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40F0A0"
+]
+},
+"P:40F0A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40F0A0:0"
+]
 },
 "GS:2:1:0x40F0A0": {
 "class": "Char",
@@ -199837,9 +199930,18 @@
 "ents": []
 },
 "GS:2:0:0x40F7C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40F7C0"
+]
+},
+"P:40F7C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40F7C0:0"
+]
 },
 "GS:2:1:0x40F7C0": {
 "class": "Char",
@@ -199857,9 +199959,18 @@
 "ents": []
 },
 "GS:2:0:0x40FD90": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x40FD90"
+]
+},
+"P:40FD90:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:40FD90:0"
+]
 },
 "GS:2:1:0x40FD90": {
 "class": "Char",
@@ -199877,9 +199988,18 @@
 "ents": []
 },
 "GS:2:0:0x41DFC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x41DFC0"
+]
+},
+"P:41DFC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:41DFC0:0"
+]
 },
 "GS:2:1:0x41DFC0": {
 "class": "Char",
@@ -199897,9 +200017,18 @@
 "ents": []
 },
 "GS:2:0:0x420550": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x420550"
+]
+},
+"P:420550:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:420550:0"
+]
 },
 "GS:2:1:0x420550": {
 "class": "Char",
@@ -199917,9 +200046,18 @@
 "ents": []
 },
 "GS:2:0:0x4219E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4219E0"
+]
+},
+"P:4219E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4219E0:0"
+]
 },
 "GS:2:1:0x4219E0": {
 "class": "Char",
@@ -199937,7 +200075,12 @@
 "ents": []
 },
 "GS:2:0:0x42D780": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:42D780:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199947,7 +200090,12 @@
 "ents": []
 },
 "GS:2:0:0x42D640": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:42D640:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199957,7 +200105,12 @@
 "ents": []
 },
 "GS:2:0:0x42D8F0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:42D8F0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199967,9 +200120,18 @@
 "ents": []
 },
 "GS:2:0:0x42DA30": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x42DA30"
+]
+},
+"P:42DA30:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:42DA30:0"
+]
 },
 "GS:2:1:0x42DA30": {
 "class": "Char",
@@ -199977,17 +200139,22 @@
 "ents": []
 },
 "GS:2:0:0x42F180": {
-"class": "Char",
+"class": "AbstractClass",
 "obs": [],
 "ents": []
 },
 "P:42F180:0": {
-"class": "Char",
+"class": "int",
 "obs": [],
 "ents": []
 },
 "GS:2:0:0x42F860": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:42F860:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -199997,9 +200164,18 @@
 "ents": []
 },
 "GS:2:0:0x42F4F0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x42F4F0"
+]
+},
+"P:42F4F0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:42F4F0:0"
+]
 },
 "GS:2:1:0x42F4F0": {
 "class": "Char",
@@ -200012,7 +200188,12 @@
 "ents": []
 },
 "GS:2:0:0x42F6F0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:42F6F0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200086,9 +200267,18 @@
 "ents": []
 },
 "GS:2:0:0x45A300": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x45A300"
+]
+},
+"P:45A300:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:45A300:0"
+]
 },
 "GS:2:1:0x45A300": {
 "class": "Char",
@@ -200106,9 +200296,18 @@
 "ents": []
 },
 "GS:2:0:0x45A8E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x45A8E0"
+]
+},
+"P:45A8E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:45A8E0:0"
+]
 },
 "GS:2:1:0x45A8E0": {
 "class": "Char",
@@ -200116,9 +200315,18 @@
 "ents": []
 },
 "GS:2:0:0x45A680": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x45A680"
+]
+},
+"P:45A680:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:45A680:0"
+]
 },
 "GS:2:1:0x45A680": {
 "class": "Char",
@@ -200136,7 +200344,12 @@
 "ents": []
 },
 "GS:2:0:0x465E70": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:465E70:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200151,9 +200364,18 @@
 "ents": []
 },
 "GS:2:0:0x46B7E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x46B7E0"
+]
+},
+"P:46B7E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:46B7E0:0"
+]
 },
 "GS:2:1:0x46B7E0": {
 "class": "Char",
@@ -200171,9 +200393,18 @@
 "ents": []
 },
 "GS:2:0:0x472F20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x472F20"
+]
+},
+"P:472F20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:472F20:0"
+]
 },
 "GS:2:1:0x472F20": {
 "class": "Char",
@@ -200191,7 +200422,12 @@
 "ents": []
 },
 "GS:2:0:0x472CC0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:472CC0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200201,7 +200437,12 @@
 "ents": []
 },
 "GS:2:0:0x472B80": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:472B80:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200271,9 +200512,18 @@
 "ents": []
 },
 "GS:2:0:0x477C70": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x477C70"
+]
+},
+"P:477C70:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:477C70:0"
+]
 },
 "GS:2:1:0x477C70": {
 "class": "Char",
@@ -200301,9 +200551,18 @@
 "ents": []
 },
 "GS:2:0:0x478140": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x478140"
+]
+},
+"P:478140:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:478140:0"
+]
 },
 "GS:2:1:0x478140": {
 "class": "Char",
@@ -200311,7 +200570,12 @@
 "ents": []
 },
 "GS:2:0:0x478340": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:478340:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200326,9 +200590,18 @@
 "ents": []
 },
 "GS:2:0:0x4784F0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4784F0"
+]
+},
+"P:4784F0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4784F0:0"
+]
 },
 "GS:2:1:0x4784F0": {
 "class": "Char",
@@ -200351,9 +200624,18 @@
 "ents": []
 },
 "GS:2:0:0x48AEF0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x48AEF0"
+]
+},
+"P:48AEF0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:48AEF0:0"
+]
 },
 "GS:2:1:0x48AEF0": {
 "class": "Char",
@@ -200391,9 +200673,18 @@
 "ents": []
 },
 "GS:2:0:0x49B000": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x49B000"
+]
+},
+"P:49B000:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:49B000:0"
+]
 },
 "GS:2:1:0x49B000": {
 "class": "Char",
@@ -200411,7 +200702,12 @@
 "ents": []
 },
 "GS:2:0:0x49EA70": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:49EA70:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200421,9 +200717,18 @@
 "ents": []
 },
 "GS:2:0:0x49ED30": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x49ED30"
+]
+},
+"P:49ED30:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:49ED30:0"
+]
 },
 "GS:2:1:0x49ED30": {
 "class": "Char",
@@ -200431,7 +200736,12 @@
 "ents": []
 },
 "GS:2:0:0x49EB90": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:49EB90:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200441,7 +200751,12 @@
 "ents": []
 },
 "GS:2:0:0x49EE60": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:49EE60:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200461,7 +200776,12 @@
 "ents": []
 },
 "GS:2:0:0x4A1140": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4A1140:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200481,7 +200801,12 @@
 "ents": []
 },
 "GS:2:0:0x4A13C0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4A13C0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200501,9 +200826,18 @@
 "ents": []
 },
 "GS:2:0:0x4A4CB0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4A4CB0"
+]
+},
+"P:4A4CB0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4A4CB0:0"
+]
 },
 "GS:2:1:0x4A4CB0": {
 "class": "Char",
@@ -200511,9 +200845,18 @@
 "ents": []
 },
 "GS:2:0:0x4A7F00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4A7F00"
+]
+},
+"P:4A7F00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4A7F00:0"
+]
 },
 "GS:2:1:0x4A7F00": {
 "class": "Char",
@@ -200551,9 +200894,18 @@
 "ents": []
 },
 "GS:2:0:0x4BA080": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4BA080"
+]
+},
+"P:4BA080:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4BA080:0"
+]
 },
 "GS:2:1:0x4BA080": {
 "class": "Char",
@@ -200561,9 +200913,18 @@
 "ents": []
 },
 "GS:2:0:0x4B9E20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4B9E20"
+]
+},
+"P:4B9E20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4B9E20:0"
+]
 },
 "GS:2:1:0x4B9E20": {
 "class": "Char",
@@ -200571,9 +200932,18 @@
 "ents": []
 },
 "GS:2:0:0x4C2E20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4C2E20"
+]
+},
+"P:4C2E20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4C2E20:0"
+]
 },
 "GS:2:1:0x4C2E20": {
 "class": "Char",
@@ -200591,9 +200961,18 @@
 "ents": []
 },
 "GS:2:0:0x4C4B80": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4C4B80"
+]
+},
+"P:4C4B80:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4C4B80:0"
+]
 },
 "GS:2:1:0x4C4B80": {
 "class": "Char",
@@ -200611,9 +200990,18 @@
 "ents": []
 },
 "GS:2:0:0x4C5D40": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4C5D40"
+]
+},
+"P:4C5D40:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4C5D40:0"
+]
 },
 "GS:2:1:0x4C5D40": {
 "class": "Char",
@@ -200631,7 +201019,12 @@
 "ents": []
 },
 "GS:2:0:0x4CAA70": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4CAA70:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200641,7 +201034,12 @@
 "ents": []
 },
 "GS:2:0:0x4CA930": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4CA930:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200666,7 +201064,12 @@
 "ents": []
 },
 "GS:2:0:0x4D2A10": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4D2A10:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200681,9 +201084,18 @@
 "ents": []
 },
 "GS:2:0:0x4E0700": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E0700"
+]
+},
+"P:4E0700:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E0700:0"
+]
 },
 "GS:2:1:0x4E0700": {
 "class": "Char",
@@ -200701,7 +201113,12 @@
 "ents": []
 },
 "GS:2:0:0x4E04A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4E04A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200736,9 +201153,18 @@
 "ents": []
 },
 "GS:2:0:0x4E0B10": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E0B10"
+]
+},
+"P:4E0B10:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E0B10:0"
+]
 },
 "GS:2:1:0x4E0B10": {
 "class": "Char",
@@ -200751,9 +201177,18 @@
 "ents": []
 },
 "GS:2:0:0x4E9AA0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E9AA0"
+]
+},
+"P:4E9AA0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E9AA0:0"
+]
 },
 "GS:2:1:0x4E9AA0": {
 "class": "Char",
@@ -200771,9 +201206,18 @@
 "ents": []
 },
 "GS:2:0:0x4EA800": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EA800"
+]
+},
+"P:4EA800:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EA800:0"
+]
 },
 "GS:2:1:0x4EA800": {
 "class": "Char",
@@ -200791,9 +201235,18 @@
 "ents": []
 },
 "GS:2:0:0x4EA5A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EA5A0"
+]
+},
+"P:4EA5A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EA5A0:0"
+]
 },
 "GS:2:1:0x4EA5A0": {
 "class": "Char",
@@ -200811,9 +201264,18 @@
 "ents": []
 },
 "GS:2:0:0x4E9D00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E9D00"
+]
+},
+"P:4E9D00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E9D00:0"
+]
 },
 "GS:2:1:0x4E9D00": {
 "class": "Char",
@@ -200831,9 +201293,18 @@
 "ents": []
 },
 "GS:2:0:0x4EACC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EACC0"
+]
+},
+"P:4EACC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EACC0:0"
+]
 },
 "GS:2:1:0x4EACC0": {
 "class": "Char",
@@ -200851,9 +201322,18 @@
 "ents": []
 },
 "GS:2:0:0x4EAA60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EAA60"
+]
+},
+"P:4EAA60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EAA60:0"
+]
 },
 "GS:2:1:0x4EAA60": {
 "class": "Char",
@@ -200871,9 +201351,18 @@
 "ents": []
 },
 "GS:2:0:0x4EAF20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EAF20"
+]
+},
+"P:4EAF20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EAF20:0"
+]
 },
 "GS:2:1:0x4EAF20": {
 "class": "Char",
@@ -200891,9 +201380,18 @@
 "ents": []
 },
 "GS:2:0:0x4EB180": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EB180"
+]
+},
+"P:4EB180:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EB180:0"
+]
 },
 "GS:2:1:0x4EB180": {
 "class": "Char",
@@ -200911,9 +201409,18 @@
 "ents": []
 },
 "GS:2:0:0x4E9F60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E9F60"
+]
+},
+"P:4E9F60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E9F60:0"
+]
 },
 "GS:2:1:0x4E9F60": {
 "class": "Char",
@@ -200921,7 +201428,12 @@
 "ents": []
 },
 "GS:2:0:0x4E9E20": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4E9E20:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200931,9 +201443,18 @@
 "ents": []
 },
 "GS:2:0:0x4EB3E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EB3E0"
+]
+},
+"P:4EB3E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EB3E0:0"
+]
 },
 "GS:2:1:0x4EB3E0": {
 "class": "Char",
@@ -200951,9 +201472,18 @@
 "ents": []
 },
 "GS:2:0:0x4EB640": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EB640"
+]
+},
+"P:4EB640:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EB640:0"
+]
 },
 "GS:2:1:0x4EB640": {
 "class": "Char",
@@ -200971,9 +201501,18 @@
 "ents": []
 },
 "GS:2:0:0x4E95E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E95E0"
+]
+},
+"P:4E95E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E95E0:0"
+]
 },
 "GS:2:1:0x4E95E0": {
 "class": "Char",
@@ -200981,7 +201520,12 @@
 "ents": []
 },
 "GS:2:0:0x4E94A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4E94A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -200991,9 +201535,18 @@
 "ents": []
 },
 "GS:2:0:0x4EB8A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EB8A0"
+]
+},
+"P:4EB8A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EB8A0:0"
+]
 },
 "GS:2:1:0x4EB8A0": {
 "class": "Char",
@@ -201011,9 +201564,18 @@
 "ents": []
 },
 "GS:2:0:0x4EBB00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EBB00"
+]
+},
+"P:4EBB00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EBB00:0"
+]
 },
 "GS:2:1:0x4EBB00": {
 "class": "Char",
@@ -201031,9 +201593,18 @@
 "ents": []
 },
 "GS:2:0:0x4EBD60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EBD60"
+]
+},
+"P:4EBD60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EBD60:0"
+]
 },
 "GS:2:1:0x4EBD60": {
 "class": "Char",
@@ -201051,9 +201622,18 @@
 "ents": []
 },
 "GS:2:0:0x4EBFC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EBFC0"
+]
+},
+"P:4EBFC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EBFC0:0"
+]
 },
 "GS:2:1:0x4EBFC0": {
 "class": "Char",
@@ -201071,9 +201651,18 @@
 "ents": []
 },
 "GS:2:0:0x4EA1C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EA1C0"
+]
+},
+"P:4EA1C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EA1C0:0"
+]
 },
 "GS:2:1:0x4EA1C0": {
 "class": "Char",
@@ -201091,9 +201680,18 @@
 "ents": []
 },
 "GS:2:0:0x4EC220": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EC220"
+]
+},
+"P:4EC220:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EC220:0"
+]
 },
 "GS:2:1:0x4EC220": {
 "class": "Char",
@@ -201111,9 +201709,18 @@
 "ents": []
 },
 "GS:2:0:0x4EC480": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EC480"
+]
+},
+"P:4EC480:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EC480:0"
+]
 },
 "GS:2:1:0x4EC480": {
 "class": "Char",
@@ -201131,9 +201738,18 @@
 "ents": []
 },
 "GS:2:0:0x4EC6E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EC6E0"
+]
+},
+"P:4EC6E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EC6E0:0"
+]
 },
 "GS:2:1:0x4EC6E0": {
 "class": "Char",
@@ -201151,9 +201767,18 @@
 "ents": []
 },
 "GS:2:0:0x4EC940": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EC940"
+]
+},
+"P:4EC940:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EC940:0"
+]
 },
 "GS:2:1:0x4EC940": {
 "class": "Char",
@@ -201171,9 +201796,18 @@
 "ents": []
 },
 "GS:2:0:0x4ECBA0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ECBA0"
+]
+},
+"P:4ECBA0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ECBA0:0"
+]
 },
 "GS:2:1:0x4ECBA0": {
 "class": "Char",
@@ -201191,9 +201825,18 @@
 "ents": []
 },
 "GS:2:0:0x4ECE00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ECE00"
+]
+},
+"P:4ECE00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ECE00:0"
+]
 },
 "GS:2:1:0x4ECE00": {
 "class": "Char",
@@ -201211,9 +201854,18 @@
 "ents": []
 },
 "GS:2:0:0x4ED060": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ED060"
+]
+},
+"P:4ED060:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ED060:0"
+]
 },
 "GS:2:1:0x4ED060": {
 "class": "Char",
@@ -201231,9 +201883,18 @@
 "ents": []
 },
 "GS:2:0:0x4ED2C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ED2C0"
+]
+},
+"P:4ED2C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ED2C0:0"
+]
 },
 "GS:2:1:0x4ED2C0": {
 "class": "Char",
@@ -201251,9 +201912,18 @@
 "ents": []
 },
 "GS:2:0:0x4ED520": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ED520"
+]
+},
+"P:4ED520:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ED520:0"
+]
 },
 "GS:2:1:0x4ED520": {
 "class": "Char",
@@ -201271,9 +201941,18 @@
 "ents": []
 },
 "GS:2:0:0x4ED780": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ED780"
+]
+},
+"P:4ED780:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ED780:0"
+]
 },
 "GS:2:1:0x4ED780": {
 "class": "Char",
@@ -201291,9 +201970,18 @@
 "ents": []
 },
 "GS:2:0:0x4ED9E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4ED9E0"
+]
+},
+"P:4ED9E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4ED9E0:0"
+]
 },
 "GS:2:1:0x4ED9E0": {
 "class": "Char",
@@ -201311,9 +201999,18 @@
 "ents": []
 },
 "GS:2:0:0x4EDC40": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EDC40"
+]
+},
+"P:4EDC40:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EDC40:0"
+]
 },
 "GS:2:1:0x4EDC40": {
 "class": "Char",
@@ -201331,9 +202028,18 @@
 "ents": []
 },
 "GS:2:0:0x4EDEA0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EDEA0"
+]
+},
+"P:4EDEA0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EDEA0:0"
+]
 },
 "GS:2:1:0x4EDEA0": {
 "class": "Char",
@@ -201351,9 +202057,18 @@
 "ents": []
 },
 "GS:2:0:0x4EE100": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EE100"
+]
+},
+"P:4EE100:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EE100:0"
+]
 },
 "GS:2:1:0x4EE100": {
 "class": "Char",
@@ -201371,9 +202086,18 @@
 "ents": []
 },
 "GS:2:0:0x4EE360": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EE360"
+]
+},
+"P:4EE360:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EE360:0"
+]
 },
 "GS:2:1:0x4EE360": {
 "class": "Char",
@@ -201391,9 +202115,18 @@
 "ents": []
 },
 "GS:2:0:0x4EE5C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EE5C0"
+]
+},
+"P:4EE5C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EE5C0:0"
+]
 },
 "GS:2:1:0x4EE5C0": {
 "class": "Char",
@@ -201411,9 +202144,18 @@
 "ents": []
 },
 "GS:2:0:0x4EE820": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EE820"
+]
+},
+"P:4EE820:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EE820:0"
+]
 },
 "GS:2:1:0x4EE820": {
 "class": "Char",
@@ -201431,9 +202173,18 @@
 "ents": []
 },
 "GS:2:0:0x4EEA80": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EEA80"
+]
+},
+"P:4EEA80:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EEA80:0"
+]
 },
 "GS:2:1:0x4EEA80": {
 "class": "Char",
@@ -201451,9 +202202,18 @@
 "ents": []
 },
 "GS:2:0:0x4EECE0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EECE0"
+]
+},
+"P:4EECE0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EECE0:0"
+]
 },
 "GS:2:1:0x4EECE0": {
 "class": "Char",
@@ -201471,9 +202231,18 @@
 "ents": []
 },
 "GS:2:0:0x4EEF40": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EEF40"
+]
+},
+"P:4EEF40:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EEF40:0"
+]
 },
 "GS:2:1:0x4EEF40": {
 "class": "Char",
@@ -201491,9 +202260,18 @@
 "ents": []
 },
 "GS:2:0:0x4EF1A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EF1A0"
+]
+},
+"P:4EF1A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EF1A0:0"
+]
 },
 "GS:2:1:0x4EF1A0": {
 "class": "Char",
@@ -201511,9 +202289,18 @@
 "ents": []
 },
 "GS:2:0:0x4E9840": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E9840"
+]
+},
+"P:4E9840:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E9840:0"
+]
 },
 "GS:2:1:0x4E9840": {
 "class": "Char",
@@ -201521,7 +202308,12 @@
 "ents": []
 },
 "GS:2:0:0x4E9700": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4E9700:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201531,9 +202323,18 @@
 "ents": []
 },
 "GS:2:0:0x4EF400": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4EF400"
+]
+},
+"P:4EF400:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4EF400:0"
+]
 },
 "GS:2:1:0x4EF400": {
 "class": "Char",
@@ -201561,9 +202362,18 @@
 "ents": []
 },
 "GS:2:0:0x4E9380": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4E9380"
+]
+},
+"P:4E9380:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4E9380:0"
+]
 },
 "GS:2:1:0x4E9380": {
 "class": "Char",
@@ -201571,7 +202381,12 @@
 "ents": []
 },
 "GS:2:0:0x4E9240": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:4E9240:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201581,9 +202396,18 @@
 "ents": []
 },
 "GS:2:0:0x4F2A60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x4F2A60"
+]
+},
+"P:4F2A60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4F2A60:0"
+]
 },
 "GS:2:1:0x4F2A60": {
 "class": "Char",
@@ -201601,9 +202425,18 @@
 "ents": []
 },
 "GS:2:0:0x50F660": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x50F660"
+]
+},
+"P:50F660:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:50F660:0"
+]
 },
 "GS:2:1:0x50F660": {
 "class": "Char",
@@ -201621,7 +202454,12 @@
 "ents": []
 },
 "GS:2:0:0x50F3A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50F3A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201636,7 +202474,12 @@
 "ents": []
 },
 "GS:2:0:0x50F070": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50F070:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201646,9 +202489,18 @@
 "ents": []
 },
 "GS:2:0:0x50EDA0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x50EDA0"
+]
+},
+"P:50EDA0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:50EDA0:0"
+]
 },
 "GS:2:1:0x50EDA0": {
 "class": "Char",
@@ -201656,7 +202508,12 @@
 "ents": []
 },
 "GS:2:0:0x50EC60": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50EC60:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201666,7 +202523,12 @@
 "ents": []
 },
 "GS:2:0:0x50EEE0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50EEE0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201676,7 +202538,12 @@
 "ents": []
 },
 "GS:2:0:0x50F210": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50F210:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201691,9 +202558,18 @@
 "ents": []
 },
 "GS:2:0:0x50F8C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x50F8C0"
+]
+},
+"P:50F8C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:50F8C0:0"
+]
 },
 "GS:2:1:0x50F8C0": {
 "class": "Char",
@@ -201711,7 +202587,12 @@
 "ents": []
 },
 "GS:2:0:0x50E950": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:50E950:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201721,9 +202602,18 @@
 "ents": []
 },
 "GS:2:0:0x50EA90": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x50EA90"
+]
+},
+"P:50EA90:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:50EA90:0"
+]
 },
 "GS:2:1:0x50EA90": {
 "class": "Char",
@@ -201776,9 +202666,18 @@
 "ents": []
 },
 "GS:2:0:0x50FE20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x50FE20"
+]
+},
+"P:50FE20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:50FE20:0"
+]
 },
 "GS:2:1:0x50FE20": {
 "class": "Char",
@@ -201791,9 +202690,18 @@
 "ents": []
 },
 "GS:2:0:0x513610": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x513610"
+]
+},
+"P:513610:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:513610:0"
+]
 },
 "GS:2:1:0x513610": {
 "class": "Char",
@@ -201801,9 +202709,18 @@
 "ents": []
 },
 "GS:2:0:0x513240": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x513240"
+]
+},
+"P:513240:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:513240:0"
+]
 },
 "GS:2:1:0x513240": {
 "class": "Char",
@@ -201811,9 +202728,18 @@
 "ents": []
 },
 "GS:2:0:0x512E70": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x512E70"
+]
+},
+"P:512E70:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:512E70:0"
+]
 },
 "GS:2:1:0x512E70": {
 "class": "Char",
@@ -201821,7 +202747,12 @@
 "ents": []
 },
 "GS:2:0:0x512C80": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:512C80:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201831,7 +202762,12 @@
 "ents": []
 },
 "GS:2:0:0x513050": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:513050:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201841,7 +202777,12 @@
 "ents": []
 },
 "GS:2:0:0x513420": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:513420:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201851,9 +202792,18 @@
 "ents": []
 },
 "GS:2:0:0x525300": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x525300"
+]
+},
+"P:525300:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:525300:0"
+]
 },
 "GS:2:1:0x525300": {
 "class": "Char",
@@ -201861,7 +202811,12 @@
 "ents": []
 },
 "GS:2:0:0x525110": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:525110:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201881,9 +202836,18 @@
 "ents": []
 },
 "GS:2:0:0x5386A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5386A0"
+]
+},
+"P:5386A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5386A0:0"
+]
 },
 "GS:2:1:0x5386A0": {
 "class": "Char",
@@ -201891,9 +202855,18 @@
 "ents": []
 },
 "GS:2:0:0x53C6A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x53C6A0"
+]
+},
+"P:53C6A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:53C6A0:0"
+]
 },
 "GS:2:1:0x53C6A0": {
 "class": "Char",
@@ -201911,9 +202884,18 @@
 "ents": []
 },
 "GS:2:0:0x53DC20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x53DC20"
+]
+},
+"P:53DC20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:53DC20:0"
+]
 },
 "GS:2:1:0x53DC20": {
 "class": "Char",
@@ -201931,9 +202913,18 @@
 "ents": []
 },
 "GS:2:0:0x54A630": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x54A630"
+]
+},
+"P:54A630:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:54A630:0"
+]
 },
 "GS:2:1:0x54A630": {
 "class": "Char",
@@ -201951,7 +202942,12 @@
 "ents": []
 },
 "GS:2:0:0x54A3D0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:54A3D0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201961,7 +202957,12 @@
 "ents": []
 },
 "GS:2:0:0x54A290": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:54A290:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201971,7 +202972,12 @@
 "ents": []
 },
 "GS:2:0:0x54EA70": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:54EA70:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -201991,9 +202997,18 @@
 "ents": []
 },
 "GS:2:0:0x5514B0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5514B0"
+]
+},
+"P:5514B0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5514B0:0"
+]
 },
 "GS:2:1:0x5514B0": {
 "class": "Char",
@@ -202011,9 +203026,18 @@
 "ents": []
 },
 "GS:2:0:0x555440": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x555440"
+]
+},
+"P:555440:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:555440:0"
+]
 },
 "GS:2:1:0x555440": {
 "class": "Char",
@@ -202031,9 +203055,18 @@
 "ents": []
 },
 "GS:2:0:0x5556A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5556A0"
+]
+},
+"P:5556A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5556A0:0"
+]
 },
 "GS:2:1:0x5556A0": {
 "class": "Char",
@@ -202051,9 +203084,18 @@
 "ents": []
 },
 "GS:2:0:0x557090": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x557090"
+]
+},
+"P:557090:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:557090:0"
+]
 },
 "GS:2:1:0x557090": {
 "class": "Char",
@@ -202071,7 +203113,12 @@
 "ents": []
 },
 "GS:2:0:0x5583C0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5583C0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202081,7 +203128,12 @@
 "ents": []
 },
 "GS:2:0:0x558280": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:558280:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202091,9 +203143,18 @@
 "ents": []
 },
 "GS:2:0:0x55A330": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x55A330"
+]
+},
+"P:55A330:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:55A330:0"
+]
 },
 "GS:2:1:0x55A330": {
 "class": "Char",
@@ -202111,7 +203172,12 @@
 "ents": []
 },
 "GS:2:0:0x589CE0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:589CE0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202121,19 +203187,73 @@
 "ents": []
 },
 "GS:2:0:0x589A60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x589A60"
+]
+},
+"P:589A60:0": {
+"class": "unsigned int",
+"obs": [
+[
+24,
+2
+],
+[
+28,
+4
+],
+[
+32,
+4
+]
+],
+"ents": [
+"P:589A60:0"
+]
 },
 "GS:2:1:0x589A60": {
-"class": "Char",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x589A60"
+]
 },
 "GS:2:0:0x589550": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x589550"
+]
+},
+"P:589550:0": {
+"class": "unsigned int",
+"obs": [
+[
+0,
+4
+],
+[
+4,
+1
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+4
+]
+],
+"ents": [
+"P:589550:0"
+]
 },
 "GS:2:1:0x589550": {
 "class": "Char",
@@ -202141,7 +203261,12 @@
 "ents": []
 },
 "GS:2:0:0x589370": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:589370:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202161,19 +203286,32 @@
 "ents": []
 },
 "GS:2:1:0x589740": {
-"class": "Char",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:1:0x589740"
+]
 },
 "P:589740:1": {
-"class": "Char",
+"class": "VectorClass",
 "obs": [],
-"ents": []
+"ents": [
+"P:589740:1"
+]
 },
 "GS:2:0:0x58A2A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x58A2A0"
+]
+},
+"P:58A2A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:58A2A0:0"
+]
 },
 "GS:2:1:0x58A2A0": {
 "class": "Char",
@@ -202186,9 +203324,18 @@
 "ents": []
 },
 "GS:2:0:0x58A150": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x58A150"
+]
+},
+"P:58A150:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:58A150:0"
+]
 },
 "GS:2:1:0x58A150": {
 "class": "Char",
@@ -202206,9 +203353,18 @@
 "ents": []
 },
 "GS:2:0:0x58A030": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x58A030"
+]
+},
+"P:58A030:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:58A030:0"
+]
 },
 "GS:2:1:0x58A030": {
 "class": "Char",
@@ -202216,9 +203372,18 @@
 "ents": []
 },
 "GS:2:0:0x589190": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x589190"
+]
+},
+"P:589190:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:589190:0"
+]
 },
 "GS:2:1:0x589190": {
 "class": "Char",
@@ -202256,9 +203421,18 @@
 "ents": []
 },
 "GS:2:0:0x5AC820": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5AC820"
+]
+},
+"P:5AC820:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5AC820:0"
+]
 },
 "GS:2:1:0x5AC820": {
 "class": "Char",
@@ -202286,9 +203460,18 @@
 "ents": []
 },
 "GS:2:0:0x5ACBE0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5ACBE0"
+]
+},
+"P:5ACBE0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5ACBE0:0"
+]
 },
 "GS:2:1:0x5ACBE0": {
 "class": "Char",
@@ -202311,9 +203494,18 @@
 "ents": []
 },
 "GS:2:0:0x5ACED0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5ACED0"
+]
+},
+"P:5ACED0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5ACED0:0"
+]
 },
 "GS:2:1:0x5ACED0": {
 "class": "Char",
@@ -202326,7 +203518,12 @@
 "ents": []
 },
 "GS:2:0:0x5AD010": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5AD010:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202346,9 +203543,18 @@
 "ents": []
 },
 "GS:2:0:0x5AD290": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5AD290"
+]
+},
+"P:5AD290:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5AD290:0"
+]
 },
 "GS:2:1:0x5AD290": {
 "class": "Char",
@@ -202356,9 +203562,18 @@
 "ents": []
 },
 "GS:2:0:0x5C0C50": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5C0C50"
+]
+},
+"P:5C0C50:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5C0C50:0"
+]
 },
 "GS:2:1:0x5C0C50": {
 "class": "Char",
@@ -202381,9 +203596,18 @@
 "ents": []
 },
 "GS:2:0:0x5C5770": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5C5770"
+]
+},
+"P:5C5770:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5C5770:0"
+]
 },
 "GS:2:1:0x5C5770": {
 "class": "Char",
@@ -202391,7 +203615,12 @@
 "ents": []
 },
 "GS:2:0:0x5C5510": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5C5510:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202401,7 +203630,12 @@
 "ents": []
 },
 "GS:2:0:0x5C53D0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5C53D0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202431,9 +203665,18 @@
 "ents": []
 },
 "GS:2:0:0x5C52B0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5C52B0"
+]
+},
+"P:5C52B0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5C52B0:0"
+]
 },
 "GS:2:1:0x5C52B0": {
 "class": "Char",
@@ -202441,7 +203684,12 @@
 "ents": []
 },
 "GS:2:0:0x5D15E0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D15E0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202451,9 +203699,18 @@
 "ents": []
 },
 "GS:2:0:0x5D1380": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D1380"
+]
+},
+"P:5D1380:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D1380:0"
+]
 },
 "GS:2:1:0x5D1380": {
 "class": "Char",
@@ -202461,9 +203718,18 @@
 "ents": []
 },
 "GS:2:0:0x5D1120": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D1120"
+]
+},
+"P:5D1120:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D1120:0"
+]
 },
 "GS:2:1:0x5D1120": {
 "class": "Char",
@@ -202481,7 +203747,12 @@
 "ents": []
 },
 "GS:2:0:0x5D1240": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D1240:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202491,7 +203762,12 @@
 "ents": []
 },
 "GS:2:0:0x5D14A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D14A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202501,9 +203777,18 @@
 "ents": []
 },
 "GS:2:0:0x5D0EC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D0EC0"
+]
+},
+"P:5D0EC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D0EC0:0"
+]
 },
 "GS:2:1:0x5D0EC0": {
 "class": "Char",
@@ -202511,9 +203796,18 @@
 "ents": []
 },
 "GS:2:0:0x5D0C60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D0C60"
+]
+},
+"P:5D0C60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D0C60:0"
+]
 },
 "GS:2:1:0x5D0C60": {
 "class": "Char",
@@ -202521,9 +203815,18 @@
 "ents": []
 },
 "GS:2:0:0x5D09C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D09C0"
+]
+},
+"P:5D09C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D09C0:0"
+]
 },
 "GS:2:1:0x5D09C0": {
 "class": "Char",
@@ -202531,7 +203834,12 @@
 "ents": []
 },
 "GS:2:0:0x5D0850": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D0850:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202541,7 +203849,12 @@
 "ents": []
 },
 "GS:2:0:0x5D0B20": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D0B20:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202551,7 +203864,12 @@
 "ents": []
 },
 "GS:2:0:0x5D0D80": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D0D80:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202561,9 +203879,18 @@
 "ents": []
 },
 "GS:2:0:0x5D2BC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D2BC0"
+]
+},
+"P:5D2BC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D2BC0:0"
+]
 },
 "GS:2:1:0x5D2BC0": {
 "class": "Char",
@@ -202571,9 +203898,18 @@
 "ents": []
 },
 "GS:2:0:0x5D2960": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D2960"
+]
+},
+"P:5D2960:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D2960:0"
+]
 },
 "GS:2:1:0x5D2960": {
 "class": "Char",
@@ -202611,9 +203947,18 @@
 "ents": []
 },
 "GS:2:0:0x5D52D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D52D0"
+]
+},
+"P:5D52D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D52D0:0"
+]
 },
 "GS:2:1:0x5D52D0": {
 "class": "Char",
@@ -202631,9 +203976,18 @@
 "ents": []
 },
 "GS:2:0:0x5D55A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D55A0"
+]
+},
+"P:5D55A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D55A0:0"
+]
 },
 "GS:2:1:0x5D55A0": {
 "class": "Char",
@@ -202651,9 +204005,18 @@
 "ents": []
 },
 "GS:2:0:0x5D8730": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5D8730"
+]
+},
+"P:5D8730:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5D8730:0"
+]
 },
 "GS:2:1:0x5D8730": {
 "class": "Char",
@@ -202671,7 +204034,12 @@
 "ents": []
 },
 "GS:2:0:0x5D8470": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:5D8470:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202701,9 +204069,18 @@
 "ents": []
 },
 "GS:2:0:0x5EED90": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5EED90"
+]
+},
+"P:5EED90:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5EED90:0"
+]
 },
 "GS:2:1:0x5EED90": {
 "class": "Char",
@@ -202711,9 +204088,18 @@
 "ents": []
 },
 "GS:2:0:0x5F9D00": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x5F9D00"
+]
+},
+"P:5F9D00:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:5F9D00:0"
+]
 },
 "GS:2:1:0x5F9D00": {
 "class": "Char",
@@ -202731,9 +204117,18 @@
 "ents": []
 },
 "GS:2:0:0x6001A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6001A0"
+]
+},
+"P:6001A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6001A0:0"
+]
 },
 "GS:2:1:0x6001A0": {
 "class": "Char",
@@ -202751,9 +204146,18 @@
 "ents": []
 },
 "GS:2:0:0x6284A0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6284A0"
+]
+},
+"P:6284A0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6284A0:0"
+]
 },
 "GS:2:1:0x6284A0": {
 "class": "Char",
@@ -202766,9 +204170,23 @@
 "ents": []
 },
 "GS:2:0:0x628BB0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x628BB0"
+]
+},
+"P:628BB0:0": {
+"class": "unsigned int",
+"obs": [
+[
+256,
+4
+]
+],
+"ents": [
+"P:628BB0:0"
+]
 },
 "GS:2:1:0x628BB0": {
 "class": "Char",
@@ -202784,9 +204202,18 @@
 ]
 },
 "GS:2:0:0x627F90": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x627F90"
+]
+},
+"P:627F90:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:627F90:0"
+]
 },
 "GS:2:1:0x627F90": {
 "class": "Char",
@@ -202829,9 +204256,18 @@
 "ents": []
 },
 "GS:2:0:0x62B250": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x62B250"
+]
+},
+"P:62B250:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:62B250:0"
+]
 },
 "GS:2:1:0x62B250": {
 "class": "Char",
@@ -202849,9 +204285,18 @@
 "ents": []
 },
 "GS:2:0:0x63E7D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x63E7D0"
+]
+},
+"P:63E7D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:63E7D0:0"
+]
 },
 "GS:2:1:0x63E7D0": {
 "class": "Char",
@@ -202869,7 +204314,12 @@
 "ents": []
 },
 "GS:2:0:0x63E490": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:63E490:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202889,9 +204339,18 @@
 "ents": []
 },
 "GS:2:0:0x63EAD0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x63EAD0"
+]
+},
+"P:63EAD0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:63EAD0:0"
+]
 },
 "GS:2:1:0x63EAD0": {
 "class": "Char",
@@ -202909,9 +204368,18 @@
 "ents": []
 },
 "GS:2:0:0x63E230": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x63E230"
+]
+},
+"P:63E230:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:63E230:0"
+]
 },
 "GS:2:1:0x63E230": {
 "class": "Char",
@@ -202919,9 +204387,18 @@
 "ents": []
 },
 "GS:2:0:0x63DF20": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x63DF20"
+]
+},
+"P:63DF20:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:63DF20:0"
+]
 },
 "GS:2:1:0x63DF20": {
 "class": "Char",
@@ -202939,7 +204416,12 @@
 "ents": []
 },
 "GS:2:0:0x63E090": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:63E090:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -202949,9 +204431,18 @@
 "ents": []
 },
 "GS:2:0:0x658B10": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x658B10"
+]
+},
+"P:658B10:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:658B10:0"
+]
 },
 "GS:2:1:0x658B10": {
 "class": "Char",
@@ -202979,9 +204470,18 @@
 "ents": []
 },
 "GS:2:0:0x65A3C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x65A3C0"
+]
+},
+"P:65A3C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:65A3C0:0"
+]
 },
 "GS:2:1:0x65A3C0": {
 "class": "Char",
@@ -202999,9 +204499,18 @@
 "ents": []
 },
 "GS:2:0:0x65C0D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x65C0D0"
+]
+},
+"P:65C0D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:65C0D0:0"
+]
 },
 "GS:2:1:0x65C0D0": {
 "class": "Char",
@@ -203019,9 +204528,18 @@
 "ents": []
 },
 "GS:2:0:0x660E60": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x660E60"
+]
+},
+"P:660E60:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:660E60:0"
+]
 },
 "GS:2:1:0x660E60": {
 "class": "Char",
@@ -203039,9 +204557,18 @@
 "ents": []
 },
 "GS:2:0:0x664990": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x664990"
+]
+},
+"P:664990:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:664990:0"
+]
 },
 "GS:2:1:0x664990": {
 "class": "Char",
@@ -203059,9 +204586,18 @@
 "ents": []
 },
 "GS:2:0:0x67B3D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x67B3D0"
+]
+},
+"P:67B3D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:67B3D0:0"
+]
 },
 "GS:2:1:0x67B3D0": {
 "class": "Char",
@@ -203069,9 +204605,18 @@
 "ents": []
 },
 "GS:2:0:0x67B050": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x67B050"
+]
+},
+"P:67B050:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:67B050:0"
+]
 },
 "GS:2:1:0x67B050": {
 "class": "Char",
@@ -203079,9 +204624,18 @@
 "ents": []
 },
 "GS:2:0:0x67ACD0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x67ACD0"
+]
+},
+"P:67ACD0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:67ACD0:0"
+]
 },
 "GS:2:1:0x67ACD0": {
 "class": "Char",
@@ -203089,7 +204643,12 @@
 "ents": []
 },
 "GS:2:0:0x67AB30": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:67AB30:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203099,7 +204658,12 @@
 "ents": []
 },
 "GS:2:0:0x67AEB0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:67AEB0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203129,9 +204693,18 @@
 "ents": []
 },
 "GS:2:0:0x69D380": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x69D380"
+]
+},
+"P:69D380:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:69D380:0"
+]
 },
 "GS:2:1:0x69D380": {
 "class": "Char",
@@ -203139,7 +204712,12 @@
 "ents": []
 },
 "GS:2:0:0x69D120": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69D120:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203149,7 +204727,12 @@
 "ents": []
 },
 "GS:2:0:0x69CEC0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69CEC0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203159,7 +204742,12 @@
 "ents": []
 },
 "GS:2:0:0x69CD80": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69CD80:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203169,7 +204757,12 @@
 "ents": []
 },
 "GS:2:0:0x69CFE0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69CFE0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203179,7 +204772,12 @@
 "ents": []
 },
 "GS:2:0:0x69D240": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69D240:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203199,7 +204797,12 @@
 "ents": []
 },
 "GS:2:0:0x69C9C0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:69C9C0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203209,9 +204812,18 @@
 "ents": []
 },
 "GS:2:0:0x69CBC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x69CBC0"
+]
+},
+"P:69CBC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:69CBC0:0"
+]
 },
 "GS:2:1:0x69CBC0": {
 "class": "Char",
@@ -203229,9 +204841,18 @@
 "ents": []
 },
 "GS:2:0:0x6B1850": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6B1850"
+]
+},
+"P:6B1850:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6B1850:0"
+]
 },
 "GS:2:1:0x6B1850": {
 "class": "Char",
@@ -203249,7 +204870,12 @@
 "ents": []
 },
 "GS:2:0:0x6B15F0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:6B15F0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203269,9 +204895,18 @@
 "ents": []
 },
 "GS:2:0:0x6B4650": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6B4650"
+]
+},
+"P:6B4650:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6B4650:0"
+]
 },
 "GS:2:1:0x6B4650": {
 "class": "Char",
@@ -203289,9 +204924,18 @@
 "ents": []
 },
 "GS:2:0:0x6B8660": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6B8660"
+]
+},
+"P:6B8660:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6B8660:0"
+]
 },
 "GS:2:1:0x6B8660": {
 "class": "Char",
@@ -203309,9 +204953,18 @@
 "ents": []
 },
 "GS:2:0:0x6B8400": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6B8400"
+]
+},
+"P:6B8400:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6B8400:0"
+]
 },
 "GS:2:1:0x6B8400": {
 "class": "Char",
@@ -203329,9 +204982,18 @@
 "ents": []
 },
 "GS:2:0:0x6C6350": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6C6350"
+]
+},
+"P:6C6350:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6C6350:0"
+]
 },
 "GS:2:1:0x6C6350": {
 "class": "Char",
@@ -203349,9 +205011,18 @@
 "ents": []
 },
 "GS:2:0:0x6CA860": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6CA860"
+]
+},
+"P:6CA860:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6CA860:0"
+]
 },
 "GS:2:1:0x6CA860": {
 "class": "Char",
@@ -203369,9 +205040,18 @@
 "ents": []
 },
 "GS:2:0:0x6CF720": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6CF720"
+]
+},
+"P:6CF720:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6CF720:0"
+]
 },
 "GS:2:1:0x6CF720": {
 "class": "Char",
@@ -203379,7 +205059,12 @@
 "ents": []
 },
 "GS:2:0:0x6CF5A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:6CF5A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203389,12 +205074,22 @@
 "ents": []
 },
 "GS:2:0:0x6DC850": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6DC850"
+]
+},
+"P:6DC850:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6DC850:0",
+"S:6DC850:+0x4"
+]
 },
 "GS:2:1:0x6DC850": {
-"class": "Char",
+"class": "AbstractClass",
 "obs": [],
 "ents": []
 },
@@ -203414,9 +205109,18 @@
 "ents": []
 },
 "GS:2:0:0x6DCB50": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6DCB50"
+]
+},
+"P:6DCB50:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6DCB50:0"
+]
 },
 "GS:2:1:0x6DCB50": {
 "class": "Char",
@@ -203434,9 +205138,18 @@
 "ents": []
 },
 "GS:2:0:0x6E49D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6E49D0"
+]
+},
+"P:6E49D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6E49D0:0"
+]
 },
 "GS:2:1:0x6E49D0": {
 "class": "Char",
@@ -203454,9 +205167,18 @@
 "ents": []
 },
 "GS:2:0:0x6E66C0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6E66C0"
+]
+},
+"P:6E66C0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6E66C0:0"
+]
 },
 "GS:2:1:0x6E66C0": {
 "class": "Char",
@@ -203489,9 +205211,18 @@
 "ents": []
 },
 "GS:2:0:0x6F24B0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x6F24B0"
+]
+},
+"P:6F24B0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6F24B0:0"
+]
 },
 "GS:2:1:0x6F24B0": {
 "class": "Char",
@@ -203504,9 +205235,18 @@
 "ents": []
 },
 "GS:2:0:0x71B420": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x71B420"
+]
+},
+"P:71B420:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:71B420:0"
+]
 },
 "GS:2:1:0x71B420": {
 "class": "Char",
@@ -203524,9 +205264,18 @@
 "ents": []
 },
 "GS:2:0:0x71FD80": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x71FD80"
+]
+},
+"P:71FD80:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:71FD80:0"
+]
 },
 "GS:2:1:0x71FD80": {
 "class": "Char",
@@ -203544,7 +205293,12 @@
 "ents": []
 },
 "GS:2:0:0x721300": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:721300:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203554,9 +205308,18 @@
 "ents": []
 },
 "GS:2:0:0x723910": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x723910"
+]
+},
+"P:723910:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:723910:0"
+]
 },
 "GS:2:1:0x723910": {
 "class": "Char",
@@ -203579,9 +205342,18 @@
 "ents": []
 },
 "GS:2:0:0x724E10": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x724E10"
+]
+},
+"P:724E10:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:724E10:0"
+]
 },
 "GS:2:1:0x724E10": {
 "class": "Char",
@@ -203614,9 +205386,18 @@
 "ents": []
 },
 "GS:2:0:0x74F540": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x74F540"
+]
+},
+"P:74F540:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:74F540:0"
+]
 },
 "GS:2:1:0x74F540": {
 "class": "Char",
@@ -203634,9 +205415,18 @@
 "ents": []
 },
 "GS:2:0:0x751AB0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x751AB0"
+]
+},
+"P:751AB0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:751AB0:0"
+]
 },
 "GS:2:1:0x751AB0": {
 "class": "Char",
@@ -203654,9 +205444,18 @@
 "ents": []
 },
 "GS:2:0:0x753830": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x753830"
+]
+},
+"P:753830:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:753830:0"
+]
 },
 "GS:2:1:0x753830": {
 "class": "Char",
@@ -203674,9 +205473,18 @@
 "ents": []
 },
 "GS:2:0:0x75A610": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x75A610"
+]
+},
+"P:75A610:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:75A610:0"
+]
 },
 "GS:2:1:0x75A610": {
 "class": "Char",
@@ -203694,9 +205502,18 @@
 "ents": []
 },
 "GS:2:0:0x7645E0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x7645E0"
+]
+},
+"P:7645E0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:7645E0:0"
+]
 },
 "GS:2:1:0x7645E0": {
 "class": "Char",
@@ -203714,7 +205531,12 @@
 "ents": []
 },
 "GS:2:0:0x7642E0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:7642E0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203729,7 +205551,12 @@
 "ents": []
 },
 "GS:2:0:0x764110": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:764110:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203744,9 +205571,18 @@
 "ents": []
 },
 "GS:2:0:0x7659F0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x7659F0"
+]
+},
+"P:7659F0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:7659F0:0"
+]
 },
 "GS:2:1:0x7659F0": {
 "class": "Char",
@@ -203754,7 +205590,12 @@
 "ents": []
 },
 "GS:2:0:0x765840": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:765840:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203764,9 +205605,18 @@
 "ents": []
 },
 "GS:2:0:0x766DC0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x766DC0"
+]
+},
+"P:766DC0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:766DC0:0"
+]
 },
 "GS:2:1:0x766DC0": {
 "class": "Char",
@@ -203784,7 +205634,12 @@
 "ents": []
 },
 "GS:2:0:0x76A2B0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:76A2B0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203794,9 +205649,18 @@
 "ents": []
 },
 "GS:2:0:0x769FE0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x769FE0"
+]
+},
+"P:769FE0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:769FE0:0"
+]
 },
 "GS:2:1:0x769FE0": {
 "class": "Char",
@@ -203804,7 +205668,12 @@
 "ents": []
 },
 "GS:2:0:0x769E30": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:769E30:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203814,7 +205683,12 @@
 "ents": []
 },
 "GS:2:0:0x76A170": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:76A170:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203849,7 +205723,12 @@
 "ents": []
 },
 "GS:2:0:0x76BA70": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:76BA70:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203874,9 +205753,18 @@
 "ents": []
 },
 "GS:2:0:0x7AD210": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:2:0:0x7AD210"
+]
+},
+"P:7AD210:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:7AD210:0"
+]
 },
 "GS:2:1:0x7AD210": {
 "class": "Char",
@@ -203933,7 +205821,12 @@
 "ents": []
 },
 "GS:2:0:0x7B2A20": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:7B2A20:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203943,7 +205836,12 @@
 "ents": []
 },
 "GS:2:0:0x7B28E0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:7B28E0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203953,7 +205851,12 @@
 "ents": []
 },
 "GS:2:0:0x7B44A0": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:7B44A0:0": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -203978,13 +205881,39 @@
 "ents": []
 },
 "GS:3:0:0x4B4F20": {
-"class": "Char",
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"GS:3:0:0x4B4F20"
+]
+},
+"P:4B4F20:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:4B4F20:0"
+]
+},
+"P:557E10:0": {
+"class": "LinkClass",
+"obs": [],
+"ents": [
+"P:557E10:0"
+]
+},
+"GS:3:0:0x631CC0": {
+"class": "AbstractClass",
 "obs": [],
 "ents": []
 },
-"GS:3:0:0x631CC0": {
-"class": "Char",
-"obs": [],
+"P:632D10:0": {
+"class": "SHPReference",
+"obs": [
+[
+8,
+4
+]
+],
 "ents": []
 },
 "GS:3:0:0x48C040": {
@@ -212679,9 +214608,11 @@
 "ents": []
 },
 "GS:14:0:0x4F42F0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:14:0:0x4F42F0"
+]
 },
 "GS:14:0:0x4A3110": {
 "class": "Char",
@@ -212875,7 +214806,12 @@
 "ents": []
 },
 "GS:18:2:0x540D80": {
-"class": "Char",
+"class": "AbstractClass",
+"obs": [],
+"ents": []
+},
+"P:540D80:2": {
+"class": "unsigned int",
 "obs": [],
 "ents": []
 },
@@ -213048,6 +214984,11 @@
 "ents": []
 },
 "GS:23:3:0x7A7B60": {
+"class": "Char",
+"obs": [],
+"ents": []
+},
+"P:7A7B60:3": {
 "class": "Char",
 "obs": [],
 "ents": []
@@ -213459,12 +215400,14 @@
 "ents": []
 },
 "GS:32:0:0x4ACE70": {
-"class": "Char",
+"class": "INISection",
 "obs": [],
-"ents": []
+"ents": [
+"GS:32:0:0x4ACE70"
+]
 },
 "P:4ACE70:0": {
-"class": "ScenarioClass",
+"class": "INISection",
 "obs": [
 [
 0,
@@ -213511,7 +215454,9 @@
 1
 ]
 ],
-"ents": []
+"ents": [
+"P:4ACE70:0"
+]
 },
 "GS:32:0:0x4E13F0": {
 "class": "Char",
@@ -213554,18 +215499,9 @@
 "ents": []
 },
 "GS:33:0:0x48E600": {
-"class": "MapClass",
+"class": "Char",
 "obs": [],
-"ents": [
-"GS:33:0:0x48E600"
-]
-},
-"P:48E600:0": {
-"class": "MapClass",
-"obs": [],
-"ents": [
-"P:48E600:0"
-]
+"ents": []
 },
 "GS:33:0:0x6C6680": {
 "class": "Char",
@@ -213648,9 +215584,30 @@
 "ents": []
 },
 "GS:34:0:0x4E2580": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:34:0:0x4E2580"
+]
+},
+"P:4E2580:0": {
+"class": "unsigned int",
+"obs": [
+[
+72,
+4
+]
+],
+"ents": [
+"P:4E2580:0"
+]
+},
+"P:6B1D40:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6B1D40:0"
+]
 },
 "GS:34:0:0x720020": {
 "class": "Char",
@@ -214137,9 +216094,23 @@
 "ents": []
 },
 "GS:42:0:0x4E2AF0": {
-"class": "Char",
+"class": "CDTimerClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:42:0:0x4E2AF0"
+]
+},
+"P:4E2AF0:0": {
+"class": "unsigned int",
+"obs": [
+[
+72,
+4
+]
+],
+"ents": [
+"P:4E2AF0:0"
+]
 },
 "GS:42:0:0x6B1DC0": {
 "class": "Char",
@@ -214192,9 +216163,23 @@
 "ents": []
 },
 "GS:43:0:0x4E2B20": {
-"class": "Char",
+"class": "DynamicVector",
 "obs": [],
-"ents": []
+"ents": [
+"GS:43:0:0x4E2B20"
+]
+},
+"P:4E2B20:0": {
+"class": "DynamicVector",
+"obs": [
+[
+72,
+4
+]
+],
+"ents": [
+"P:4E2B20:0"
+]
 },
 "GS:43:0:0x6B2000": {
 "class": "Char",
@@ -214332,9 +216317,30 @@
 "ents": []
 },
 "GS:46:0:0x4886D0": {
-"class": "Char",
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"GS:46:0:0x4886D0"
+]
+},
+"P:4886D0:0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:4886D0:0"
+]
+},
+"P:557F40:0": {
+"class": "unsigned int",
+"obs": [
+[
+72,
+4
+]
+],
+"ents": [
+"P:557F40:0"
+]
 },
 "GS:46:0:0x7AC4D0": {
 "class": "Char",
@@ -214397,9 +216403,11 @@
 "ents": []
 },
 "GS:48:3:0x4AB9B0": {
-"class": "Char",
+"class": "SuperWeaponTypeClass",
 "obs": [],
-"ents": []
+"ents": [
+"GS:48:3:0x4AB9B0"
+]
 },
 "GS:48:4:0x4AB9B0": {
 "class": "Char",
@@ -217205,13 +219213,6 @@
 "M:40BAE0:this:0x10"
 ]
 },
-"RET:40BAE0": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"RET:40BAE0"
-]
-},
 "M:40C030:this:0x8": {
 "class": "unsigned int",
 "obs": [],
@@ -219310,19 +221311,25 @@
 ]
 },
 "M:45A560:this:0x8": {
-"class": "unsigned int",
+"class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:45A560:this:0x8"
+]
 },
 "M:45A560:this:0x10": {
-"class": "unsigned int",
+"class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"M:45A560:this:0x10"
+]
 },
 "RET:45A560": {
-"class": "unsigned int",
+"class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"RET:45A560"
+]
 },
 "M:45A680:this:0x8": {
 "class": "unsigned int",
@@ -238042,20 +240049,6 @@
 "obs": [],
 "ents": []
 },
-"P:4AB9B0:1129": {
-"class": "unsigned char[4]",
-"obs": [],
-"ents": [
-"P:4AB9B0:1129"
-]
-},
-"P:4AB9B0:1124": {
-"class": "unsigned char[4]",
-"obs": [],
-"ents": [
-"P:4AB9B0:1124"
-]
-},
 "P:4B0F20:11": {
 "class": "double",
 "obs": [],
@@ -238978,6 +240971,20 @@
 "obs": [],
 "ents": []
 },
+"P:589A60:2": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:589A60:2"
+]
+},
+"RET:589A60": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"RET:589A60"
+]
+},
 "M:58A500:this:0x8": {
 "class": "unsigned int",
 "obs": [],
@@ -239160,6 +241167,20 @@
 ]
 ],
 "ents": []
+},
+"P:628BB0:2": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:628BB0:2"
+]
+},
+"RET:628BB0": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"RET:628BB0"
+]
 },
 "P:63CAE0:10": {
 "class": "Char",
@@ -239828,6 +241849,20 @@
 "class": "Char",
 "obs": [],
 "ents": []
+},
+"P:6DC850:2": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"P:6DC850:2"
+]
+},
+"RET:6DC850": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"RET:6DC850"
+]
 },
 "P:6F7CA0:0": {
 "class": "ScenarioClass",
@@ -263749,13 +265784,6 @@
 "obs": [],
 "ents": []
 },
-"S:40BAE0:+0x0": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"S:40BAE0:+0x0"
-]
-},
 "S:40BD00:+0x0": {
 "class": "unsigned int",
 "obs": [],
@@ -264468,9 +266496,11 @@
 ]
 },
 "S:45A560:+0x0": {
-"class": "unsigned int",
+"class": "AbstractClass",
 "obs": [],
-"ents": []
+"ents": [
+"S:45A560:+0x0"
+]
 },
 "S:45A680:+0x0": {
 "class": "unsigned int",
@@ -265161,13 +267191,6 @@
 "obs": [],
 "ents": [
 "M:4AB9B0:this:0x1194"
-]
-},
-"S:4AB9B0:+0x11AC": {
-"class": "char[4]",
-"obs": [],
-"ents": [
-"S:4AB9B0:+0x11AC"
 ]
 },
 "M:4AB9B0:this:0x1198": {
@@ -267513,13 +269536,6 @@
 "obs": [],
 "ents": [
 "S:557380:+0x50"
-]
-},
-"S:557570:+0x0": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"S:557570:+0x0"
 ]
 },
 "M:557570:this:0x68": {
@@ -269988,13 +272004,6 @@
 "obs": [],
 "ents": [
 "M:69DD30:this:0x58"
-]
-},
-"S:69DE00:+0x0": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"S:69DE00:+0x0"
 ]
 },
 "M:69DE00:this:0x14": {
@@ -338293,7 +340302,7 @@
 "ents": []
 },
 "M:67C6E0:this:0x30": {
-"class": "unsigned int",
+"class": "int",
 "obs": [],
 "ents": []
 },
@@ -394257,6 +396266,11 @@
 "G:89E060"
 ]
 },
+"P:541260:2": {
+"class": "Char",
+"obs": [],
+"ents": []
+},
 "G:A8B238": {
 "class": "SessionClass",
 "obs": [],
@@ -401173,6 +403187,11 @@
 "obs": [],
 "ents": []
 },
+"P:541170:3": {
+"class": "Char",
+"obs": [],
+"ents": []
+},
 "P:48BA80:0": {
 "class": "unsigned int",
 "obs": [],
@@ -401331,6 +403350,13 @@
 "class": "Char",
 "obs": [],
 "ents": []
+},
+"S:552D60:+0x5c": {
+"class": "BSurface",
+"obs": [],
+"ents": [
+"S:552D60:+0x5c"
+]
 },
 "G:829AAC": {
 "class": "wchar_t",
@@ -415111,6 +417137,11 @@
 "obs": [],
 "ents": []
 },
+"S:49C5A0:+0x1c": {
+"class": "Char",
+"obs": [],
+"ents": []
+},
 "S:49C5A0:+0xd0": {
 "class": "BufferIOFileClass",
 "obs": [],
@@ -418785,7 +420816,7 @@
 ]
 },
 "S:67C6E0:+0x8": {
-"class": "unsigned int",
+"class": "AbstractClass",
 "obs": [],
 "ents": []
 },
@@ -440671,6 +442702,146 @@
 "M:7C2410:this:0x3F"
 ]
 },
+"PP:48C040:0:0x2": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:48C040:0:0x2"
+]
+},
+"PP:48C040:0:0x3": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:48C040:0:0x3"
+]
+},
+"PP:4A2B60:0:0x11": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:4A2B60:0:0x11"
+]
+},
+"PP:4AB9B0:1:0x2": {
+"class": "short",
+"obs": [],
+"ents": [
+"PP:4AB9B0:1:0x2"
+]
+},
+"PP:50F330:0:0x4": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:50F330:0:0x4"
+]
+},
+"PP:50F4A0:0:0x4": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:50F4A0:0:0x4"
+]
+},
+"PP:53F650:0:0x3": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:53F650:0:0x3"
+]
+},
+"PP:53FCB0:0:0x2": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:53FCB0:0:0x2"
+]
+},
+"PP:5403F0:0:0x3": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:5403F0:0:0x3"
+]
+},
+"PP:5899E0:0:0x18": {
+"class": "unsigned short",
+"obs": [],
+"ents": [
+"PP:5899E0:0:0x18"
+]
+},
+"PP:589C10:0:0x18": {
+"class": "unsigned short",
+"obs": [],
+"ents": [
+"PP:589C10:0:0x18"
+]
+},
+"PP:5D3330:1:0x2": {
+"class": "unsigned short",
+"obs": [],
+"ents": [
+"PP:5D3330:1:0x2"
+]
+},
+"PP:69DE00:0:0x2": {
+"class": "short",
+"obs": [],
+"ents": [
+"PP:69DE00:0:0x2"
+]
+},
+"PP:69DE00:0:0x4": {
+"class": "short",
+"obs": [],
+"ents": [
+"PP:69DE00:0:0x4"
+]
+},
+"PP:6DC7B0:0:0x10": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:6DC7B0:0:0x10"
+]
+},
+"PP:6DC970:0:0x10": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:6DC970:0:0x10"
+]
+},
+"PP:716150:0:0x2": {
+"class": "unsigned short",
+"obs": [],
+"ents": [
+"PP:716150:0:0x2"
+]
+},
+"PP:7B3920:0:0x1": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:7B3920:0:0x1"
+]
+},
+"PP:7B3920:0:0x2": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:7B3920:0:0x2"
+]
+},
+"PP:7B3920:0:0x3": {
+"class": "unsigned char",
+"obs": [],
+"ents": [
+"PP:7B3920:0:0x3"
+]
+},
 "T:4B4D90": {
 "class": "DriveLocomotionClass",
 "obs": [],
@@ -440753,48 +442924,6 @@
 "obs": [],
 "ents": [
 "T:5CA7F0"
-]
-},
-"T:5D8170": {
-"class": "?$Initializer@VMultiplayerBattle@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D8170"
-]
-},
-"T:5D81B0": {
-"class": "?$Initializer@VMultiplayerManBattle@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D81B0"
-]
-},
-"T:5D81F0": {
-"class": "?$Initializer@VMultiplayerSiege@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D81F0"
-]
-},
-"T:5D8230": {
-"class": "?$Initializer@VUnholyAlliance@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D8230"
-]
-},
-"T:5D8270": {
-"class": "?$Initializer@VFreeForAll@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D8270"
-]
-},
-"T:5D82B0": {
-"class": "?$Initializer@VMPCooperative@@@MultiplayerGameMode",
-"obs": [],
-"ents": [
-"T:5D82B0"
 ]
 },
 "T:6A4300": {

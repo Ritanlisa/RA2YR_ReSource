@@ -68,7 +68,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -87,6 +87,7 @@ FAMILY_DESC = {
     "SG": "stack-slot insn granularity (byte/word/float, strict)",
     "RU": "return-value consumer usage int-only (heuristic)",
     "AS": "allocation sizes => class-size mask (heuristic, CS-family semantics)",
+    "PU": "param in-body consumption: as-this edges + pointee granularity (strict)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2479,6 +2480,28 @@ def main():
     except Exception as _e_fs:
         print("[FS] skipped: %r" % _e_fs, flush=True)
     try:
+        _pud = jload("anchors/param_usage_types.json", {}) or {}
+        _n_pug = 0
+        for _rec in (_pud.get("gran_evidence") or []):
+            _epu = _rec.get("ent")
+            if not isinstance(_epu, str):
+                continue
+            m_pu = 0
+            for _tpu in (_rec.get("types") or []):
+                _ixpu = _name_ix2.get(_norm_ty(_tpu).lower())
+                if _ixpu is not None:
+                    m_pu |= (1 << _ixpu)
+            if not m_pu:
+                continue
+            if _epu not in ents:
+                touch(_epu, _epu)
+            fam["PU"][_epu] = fam["PU"].get(_epu, FULL) & m_pu
+            _n_pug += 1
+        census["PU"] = _n_pug
+        print("[PU] param granularity: %d" % _n_pug, flush=True)
+    except Exception as _e_pu:
+        print("[PU] gran skipped: %r" % _e_pu, flush=True)
+    try:
         _n_ot = 0
         for _rec in (jload("anchors/occupant_this_types.json", {}) or {}).get("evidence") or []:
             _eot = _rec.get("ent")
@@ -2506,17 +2529,11 @@ def main():
         print("[SG] skipped: %r" % _e_sg, flush=True)
     if getattr(args, "allow_heuristics", False):
         try:
-            census["RU"] = 0  # negative result: int-force conflicts eat pins; needs conflict-aware gating
+            census["RU"] = _load_type_family("anchors/ret_usage_types_gated.json", "RU")
             print("[RU] ret usage types: %d" % census["RU"], flush=True)
         except Exception as _e_ru:
             print("[RU] skipped: %r" % _e_ru, flush=True)
-        try:  # negative result: size-mask noise eats pins
-            _asz = {}
-            _n_as = 0
-            for _rec in []:
-                pass
-            census['AS'] = _n_as
-            print('[AS] disabled (negative result)', flush=True)
+        try:
             raise SystemExit(0) if False else None
             for _i2, _nm2 in enumerate(names):
                 _sz2 = U["size"][_i2] if _i2 < len(U["size"]) else None
@@ -2524,7 +2541,7 @@ def main():
                     _asz.setdefault(_sz2, 0)
                     _asz[_sz2] |= (1 << _i2)
             _n_as = 0
-            for _rec in (jload("anchors/alloc_size_types.json", {}) or {}).get("evidence") or []:
+            for _rec in (jload("anchors/alloc_size_types_gated.json", {}) or {}).get("evidence") or []:
                 _ea2 = _rec.get("ent")
                 _sizes = _rec.get("sizes") or []
                 if not isinstance(_ea2, str) or not _sizes:
@@ -4957,6 +4974,24 @@ def main():
               % (_n_vb_this, _n_vb_arg), flush=True)
     except Exception as _e_vb:
         print("[VB] injection skipped: %r" % _e_vb, flush=True)
+
+    # ---- PU 参数消费边（体内：参数作 this 传递 / 存进成员，严格）----
+    try:
+        _pue = jload("anchors/param_usage_types.json", {}) or {}
+        _n_pue = 0
+        for _a3, _b3 in (_pue.get("edges") or []):
+            if not (isinstance(_a3, str) and isinstance(_b3, str)):
+                continue
+            if _a3 not in ents:
+                touch(_a3, _a3)
+            if _b3 not in ents:
+                touch(_b3, _b3)
+            _call_edges.append((_a3, _b3))
+            _call_edges_p2.append((_a3, _b3))
+            _n_pue += 1
+        print("[PU] param-consumption edges: %d" % _n_pue, flush=True)
+    except Exception as _e_pue:
+        print("[PU] edges skipped: %r" % _e_pue, flush=True)
 
     # ---- 赋值物化等值（ffl4：每个槽存/成员存都是物理等值边）----
     try:
