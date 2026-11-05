@@ -1028,6 +1028,20 @@ def _cache_write(args, key):
                 continue
             print("[cache] WRITE FAILED (cache skipped, solve results intact): %r" % (e,),
                   flush=True)
+            # 取证增强（2026-11-06 两轮全量均失败于首语句且无部分目录遗留，事后重现成功）
+            try:
+                _pr = os.path.join(CACHE_ROOT, "strict", ".__probe__")
+                with io.open(_pr, "w") as _fh_p:
+                    _fh_p.write("x")
+                os.remove(_pr)
+                _probe_ok = True
+            except Exception as _e_p:
+                _probe_ok = repr(_e_p)
+            print("[cache] diag: keydir.isdir=%s strict.isdir=%s root.isdir=%s "
+                  "probe_write=%r e.filename=%r"
+                  % (os.path.isdir(keydir), os.path.isdir(os.path.dirname(keydir)),
+                     os.path.isdir(CACHE_ROOT), _probe_ok, getattr(e, "filename", None)),
+                  flush=True)
 
 
 def _cache_restore(args, key, t_start):

@@ -1,0 +1,3919 @@
+{
+ "evidence": [
+  {
+   "ent": "RET:401940",
+   "types": [
+    "bool"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "bool": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:401940:this:0x18"
+   ]
+  },
+  {
+   "ent": "RET:4048B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4048B0:this:0xA8"
+   ]
+  },
+  {
+   "ent": "RET:4055C0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4055C0:this:0x158",
+    "M-eq:M:4055C0:this:0x1C"
+   ]
+  },
+  {
+   "ent": "RET:405B50",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4055C0:this:0xB0"
+   ]
+  },
+  {
+   "ent": "RET:406170",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:406170:this:0x8"
+   ]
+  },
+  {
+   "ent": "RET:406310",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:406310:this:0x24"
+   ]
+  },
+  {
+   "ent": "RET:407FB0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:407FB0:this:0x80"
+   ]
+  },
+  {
+   "ent": "RET:408930",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:408930:this:0x28"
+   ]
+  },
+  {
+   "ent": "RET:409100",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:409100:this:0x2C"
+   ]
+  },
+  {
+   "ent": "RET:40D280",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:40D280:this:0x5564"
+   ]
+  },
+  {
+   "ent": "RET:410320",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:420E40:420E4F"
+   ]
+  },
+  {
+   "ent": "RET:411540",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:411540:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:411550",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:411550:this:0x8"
+   ]
+  },
+  {
+   "ent": "RET:4115F0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4115F0:this:0x14"
+   ]
+  },
+  {
+   "ent": "RET:411630",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:411630:this:0x10"
+   ]
+  },
+  {
+   "ent": "RET:41C200",
+   "types": [
+    "AircraftTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "AircraftTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:41C200:this:0x6C4"
+   ]
+  },
+  {
+   "ent": "RET:41C380",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 3,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 3,
+    "unsigned int": 3
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:46A310:46A3AF",
+    "EAX:EAX:4B2630:4B27E6",
+    "EAX:EAX:6A1C80:6A1E36"
+   ]
+  },
+  {
+   "ent": "RET:41CFA0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:41CFA0:this:0xA4"
+   ]
+  },
+  {
+   "ent": "RET:41CFD0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:41CFD0:this:0xDF8"
+   ]
+  },
+  {
+   "ent": "RET:41FD60",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:41FD60:this:0x104"
+   ]
+  },
+  {
+   "ent": "RET:422BC0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:422BC0:this:0x104"
+   ]
+  },
+  {
+   "ent": "RET:426990",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:426990:this:0x8C"
+   ]
+  },
+  {
+   "ent": "RET:426A50",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:426A50:this:0xCC"
+   ]
+  },
+  {
+   "ent": "RET:426A90",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:426A90:this:0xE0C"
+   ]
+  },
+  {
+   "ent": "RET:427D00",
+   "types": [
+    "AbstractTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "AbstractTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:427D00:this:0x2E8"
+   ]
+  },
+  {
+   "ent": "RET:428C10",
+   "types": [
+    "AnimTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "AnimTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:428C10:this:0x2C8"
+   ]
+  },
+  {
+   "ent": "RET:428E60",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:428E60:this:0x294"
+   ]
+  },
+  {
+   "ent": "RET:42A5B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:42A5B0:this:0x28"
+   ]
+  },
+  {
+   "ent": "RET:42EA30",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:42EA30:this:0x8"
+   ]
+  },
+  {
+   "ent": "RET:42F180",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:42F180:this:0x14"
+   ]
+  },
+  {
+   "ent": "RET:4324B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4324B0:this:0x4C"
+   ]
+  },
+  {
+   "ent": "RET:4325A0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4325A0:this:0x48"
+   ]
+  },
+  {
+   "ent": "RET:433ED0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 2,
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:4B96A0:4B9702",
+    "EAX:EAX:4B96A0:4B971D"
+   ]
+  },
+  {
+   "ent": "RET:438BF0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:438BF0:this:0x10"
+   ]
+  },
+  {
+   "ent": "RET:43D290",
+   "types": [
+    "BuildingTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "BuildingTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:43D290:this:0x520"
+   ]
+  },
+  {
+   "ent": "RET:4581F0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4581F0:this:0x694"
+   ]
+  },
+  {
+   "ent": "RET:459EE0",
+   "types": [
+    "BuildingTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "BuildingTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:459EE0:this:0x520"
+   ]
+  },
+  {
+   "ent": "RET:45EC90",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:458E00:458E28"
+   ]
+  },
+  {
+   "ent": "RET:45ECA0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 9,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 9,
+    "unsigned int": 9
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:458E00:458E3D",
+    "EAX:EAX:6AF6C0:6AF817",
+    "EAX:EAX:6AF6C0:6AF939",
+    "EAX:EAX:6AF6C0:6AFA43",
+    "EAX:EAX:6AF6C0:6AFB52",
+    "EAX:EAX:6B04C0:6B0539",
+    "EAX:EAX:6B0690:6B06E2",
+    "EAX:EAX:6B0750:6B07BA",
+    "EAX:EAX:6B0880:6B08D1"
+   ]
+  },
+  {
+   "ent": "RET:45F040",
+   "types": [
+    "SHPStruct"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "SHPStruct": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:45F040:this:0xA4"
+   ]
+  },
+  {
+   "ent": "RET:465960",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:465960:this:0xE00"
+   ]
+  },
+  {
+   "ent": "RET:465DB0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:465DB0:this:0xDF8"
+   ]
+  },
+  {
+   "ent": "RET:468B90",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:468B90:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:46B5B0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:46B5B0:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:471A50",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:471A50:this:0x4C"
+   ]
+  },
+  {
+   "ent": "RET:4722D0",
+   "types": [
+    "HouseClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "HouseClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4722D0:this:0x34"
+   ]
+  },
+  {
+   "ent": "RET:473430",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:473430:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:473C00",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:473C00:this:0x5C"
+   ]
+  },
+  {
+   "ent": "RET:4838E0",
+   "types": [
+    "unsigned char"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned char": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4838E0:this:0x38"
+   ]
+  },
+  {
+   "ent": "RET:4863D0",
+   "types": [
+    "unsigned char"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned char": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4863D0:this:0x38"
+   ]
+  },
+  {
+   "ent": "RET:4867E0",
+   "types": [
+    "unsigned char"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned char": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4867E0:this:0x38"
+   ]
+  },
+  {
+   "ent": "RET:4886B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4886B0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:48E610",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:48E610:this:0x24"
+   ]
+  },
+  {
+   "ent": "RET:490B90",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 46,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 46
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:490B90:this:0x10",
+    "M-eq:M:490B90:this:0x14",
+    "M-eq:M:490B90:this:0x18",
+    "M-eq:M:490B90:this:0x1C",
+    "M-eq:M:490B90:this:0x20",
+    "M-eq:M:490B90:this:0x28",
+    "M-eq:M:490B90:this:0x2C",
+    "M-eq:M:490B90:this:0x30",
+    "M-eq:M:490B90:this:0x34",
+    "M-eq:M:490B90:this:0x38",
+    "M-eq:M:490B90:this:0x3C",
+    "M-eq:M:490B90:this:0x40",
+    "M-eq:M:490B90:this:0x44",
+    "M-eq:M:490B90:this:0x48",
+    "M-eq:M:490B90:this:0x50",
+    "M-eq:M:490B90:this:0x54",
+    "M-eq:M:490B90:this:0x58",
+    "M-eq:M:490B90:this:0x5C",
+    "M-eq:M:490B90:this:0x60",
+    "M-eq:M:490B90:this:0x64",
+    "M-eq:M:490B90:this:0x68",
+    "M-eq:M:490B90:this:0x6C",
+    "M-eq:M:490B90:this:0x70",
+    "M-eq:M:490B90:this:0x74",
+    "M-eq:M:490B90:this:0x78",
+    "M-eq:M:490B90:this:0x7C",
+    "M-eq:M:490B90:this:0x8",
+    "M-eq:M:490B90:this:0x80",
+    "M-eq:M:490B90:this:0x84",
+    "M-eq:M:490B90:this:0x88",
+    "M-eq:M:490B90:this:0x8C",
+    "M-eq:M:490B90:this:0x90",
+    "M-eq:M:490B90:this:0x98",
+    "M-eq:M:490B90:this:0x9C",
+    "M-eq:M:490B90:this:0xA0",
+    "M-eq:M:490B90:this:0xA4",
+    "M-eq:M:490B90:this:0xA8",
+    "M-eq:M:490B90:this:0xAC",
+    "M-eq:M:490B90:this:0xB0",
+    "M-eq:M:490B90:this:0xB4",
+    "M-eq:M:490B90:this:0xBC",
+    "M-eq:M:490B90:this:0xC",
+    "M-eq:M:490B90:this:0xC0",
+    "M-eq:M:490B90:this:0xC4",
+    "M-eq:M:490B90:this:0xC8",
+    "M-eq:M:490B90:this:0xCC"
+   ]
+  },
+  {
+   "ent": "RET:490E50",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 39,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 39
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:490E50:this:0x100",
+    "M-eq:M:490E50:this:0x104",
+    "M-eq:M:490E50:this:0x108",
+    "M-eq:M:490E50:this:0x10C",
+    "M-eq:M:490E50:this:0x110",
+    "M-eq:M:490E50:this:0x114",
+    "M-eq:M:490E50:this:0x118",
+    "M-eq:M:490E50:this:0x11C",
+    "M-eq:M:490E50:this:0x120",
+    "M-eq:M:490E50:this:0x124",
+    "M-eq:M:490E50:this:0x128",
+    "M-eq:M:490E50:this:0x12C",
+    "M-eq:M:490E50:this:0x130",
+    "M-eq:M:490E50:this:0x134",
+    "M-eq:M:490E50:this:0x138",
+    "M-eq:M:490E50:this:0x13C",
+    "M-eq:M:490E50:this:0x140",
+    "M-eq:M:490E50:this:0x144",
+    "M-eq:M:490E50:this:0x148",
+    "M-eq:M:490E50:this:0x14C",
+    "M-eq:M:490E50:this:0x150",
+    "M-eq:M:490E50:this:0x154",
+    "M-eq:M:490E50:this:0x158",
+    "M-eq:M:490E50:this:0x15C",
+    "M-eq:M:490E50:this:0x160",
+    "M-eq:M:490E50:this:0x164",
+    "M-eq:M:490E50:this:0x168",
+    "M-eq:M:490E50:this:0xD0",
+    "M-eq:M:490E50:this:0xD4",
+    "M-eq:M:490E50:this:0xD8",
+    "M-eq:M:490E50:this:0xDC",
+    "M-eq:M:490E50:this:0xE0",
+    "M-eq:M:490E50:this:0xE4",
+    "M-eq:M:490E50:this:0xE8",
+    "M-eq:M:490E50:this:0xEC",
+    "M-eq:M:490E50:this:0xF0",
+    "M-eq:M:490E50:this:0xF4",
+    "M-eq:M:490E50:this:0xF8",
+    "M-eq:M:490E50:this:0xFC"
+   ]
+  },
+  {
+   "ent": "RET:4941E0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4941E0:this:0x8"
+   ]
+  },
+  {
+   "ent": "RET:4A3890",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 4,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 4,
+    "unsigned int": 4
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:5F76B0:5F76CE",
+    "EAX:EAX:5F76B0:5F771C",
+    "EAX:EAX:5F76B0:5F776A",
+    "EAX:EAX:5F76B0:5F77B8"
+   ]
+  },
+  {
+   "ent": "RET:4A7340",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4A7340:this:0x30",
+    "M-eq:M:4A7340:this:0x38"
+   ]
+  },
+  {
+   "ent": "RET:4B4D70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 3,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 3,
+    "unsigned int": 3
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:728E30:728EB0",
+    "EAX:EAX:728E30:72905F",
+    "EAX:EAX:728E30:7290C7"
+   ]
+  },
+  {
+   "ent": "RET:4B55A0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4B55A0:this:0x34"
+   ]
+  },
+  {
+   "ent": "RET:4BAD60",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4BAD60:this:0x10"
+   ]
+  },
+  {
+   "ent": "RET:4BAD80",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4BAD80:this:0x14"
+   ]
+  },
+  {
+   "ent": "RET:4C2C10",
+   "types": [
+    "TechnoClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "TechnoClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4C2C10:this:0x20"
+   ]
+  },
+  {
+   "ent": "RET:4D5070",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4D5070:this:0x2F4"
+   ]
+  },
+  {
+   "ent": "RET:4D9960",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4D9960:this:0x598"
+   ]
+  },
+  {
+   "ent": "RET:4DF1E0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4DF1E0:this:0x5C4"
+   ]
+  },
+  {
+   "ent": "RET:4E30A0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4E30A0:this:0x34"
+   ]
+  },
+  {
+   "ent": "RET:4F6EC0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4F6EC0:this:0x184"
+   ]
+  },
+  {
+   "ent": "RET:4F9790",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4F9790:this:0x2DC"
+   ]
+  },
+  {
+   "ent": "RET:4FCE30",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4FCE30:this:0x53A4"
+   ]
+  },
+  {
+   "ent": "RET:500510",
+   "types": [
+    "FactoryClass"
+   ],
+   "n_voters": 6,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "FactoryClass": 6
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:500510:this:0x53AC",
+    "M-eq:M:500510:this:0x53B0",
+    "M-eq:M:500510:this:0x53B4",
+    "M-eq:M:500510:this:0x53B8",
+    "M-eq:M:500510:this:0x53BC",
+    "M-eq:M:500510:this:0x53CC"
+   ]
+  },
+  {
+   "ent": "RET:50BD30",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:50BD30:this:0x34"
+   ]
+  },
+  {
+   "ent": "RET:50D440",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:50D440:this:0x17C"
+   ]
+  },
+  {
+   "ent": "RET:50E370",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:50E370:this:0x30"
+   ]
+  },
+  {
+   "ent": "RET:50E730",
+   "types": [
+    "unsigned int *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:50E730:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:50FB00",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:50FB00:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:512730",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:512730:this:0xB4"
+   ]
+  },
+  {
+   "ent": "RET:51E140",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:51E140:this:0x5A4"
+   ]
+  },
+  {
+   "ent": "RET:51FAF0",
+   "types": [
+    "InfantryTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "InfantryTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:51FAF0:this:0x6C0"
+   ]
+  },
+  {
+   "ent": "RET:5218E0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5218E0:this:0x6A8"
+   ]
+  },
+  {
+   "ent": "RET:521B20",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:521B20:this:0x6C4"
+   ]
+  },
+  {
+   "ent": "RET:521C40",
+   "types": [
+    "InfantryTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "InfantryTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:521C40:this:0x6C0"
+   ]
+  },
+  {
+   "ent": "RET:522640",
+   "types": [
+    "InfantryTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "InfantryTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:522640:this:0x6C0"
+   ]
+  },
+  {
+   "ent": "RET:5226C0",
+   "types": [
+    "HouseClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "HouseClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5226C0:this:0x21C"
+   ]
+  },
+  {
+   "ent": "RET:522780",
+   "types": [
+    "InfantryTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "InfantryTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:522780:this:0x6C0"
+   ]
+  },
+  {
+   "ent": "RET:524D60",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:524D60:this:0xDF8"
+   ]
+  },
+  {
+   "ent": "RET:5278F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:764B90:764E9D"
+   ]
+  },
+  {
+   "ent": "RET:5409F0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5409F0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:540D10",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:540D10:this:0x48"
+   ]
+  },
+  {
+   "ent": "RET:540D60",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:540D60:this:0x48"
+   ]
+  },
+  {
+   "ent": "RET:540D80",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:540D80:this:0x50"
+   ]
+  },
+  {
+   "ent": "RET:540F90",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:540F90:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:5422D0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5422D0:this:0x28"
+   ]
+  },
+  {
+   "ent": "RET:543AF0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:543AF0:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:544CB0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:544CB0:this:0xA4"
+   ]
+  },
+  {
+   "ent": "RET:549DD0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:549DD0:this:0x2C8"
+   ]
+  },
+  {
+   "ent": "RET:54A160",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:54A160:this:0x294"
+   ]
+  },
+  {
+   "ent": "RET:54BA30",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:54BA30:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:54C550",
+   "types": [
+    "int",
+    "unsigned char",
+    "unsigned int",
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned char": 1,
+    "unsigned int": 1,
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:54C550:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:54D0F0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:54D0F0:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:54F720",
+   "types": [
+    "double"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "double": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:54F720:this:0x318"
+   ]
+  },
+  {
+   "ent": "RET:556620",
+   "types": [
+    "LinkClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "LinkClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:556620:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:556630",
+   "types": [
+    "LinkClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "LinkClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:556630:this:0x8"
+   ]
+  },
+  {
+   "ent": "RET:557570",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:557570:this:0x70"
+   ]
+  },
+  {
+   "ent": "RET:5576A0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5576A0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:557AC0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:557AC0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:557B00",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:557B00:this:0x16C"
+   ]
+  },
+  {
+   "ent": "RET:557FB0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:557FB0:this:0x16C"
+   ]
+  },
+  {
+   "ent": "RET:558010",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:558010:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:558120",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:558120:this:0x4C"
+   ]
+  },
+  {
+   "ent": "RET:56A080",
+   "types": [
+    "float",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "float": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:56A080:this:0x128"
+   ]
+  },
+  {
+   "ent": "RET:582D30",
+   "types": [
+    "TintStruct",
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "TintStruct": 1,
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:582D30:this:0x60"
+   ]
+  },
+  {
+   "ent": "RET:588990",
+   "types": [
+    "float",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "float": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:588990:this:0x148"
+   ]
+  },
+  {
+   "ent": "RET:5975E0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5975E0:this:0x74"
+   ]
+  },
+  {
+   "ent": "RET:5AC640",
+   "types": [
+    "unsigned int *",
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int *": 1,
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5AC640:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:5B3650",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5B3650:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:5D1E70",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5D1E70:this:0x28"
+   ]
+  },
+  {
+   "ent": "RET:5D3A60",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5D3A60:this:0x2C0"
+   ]
+  },
+  {
+   "ent": "RET:5D4210",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5D4210:this:0x24"
+   ]
+  },
+  {
+   "ent": "RET:5F1950",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5F1950:this:0x3C"
+   ]
+  },
+  {
+   "ent": "RET:5F5F30",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5F5F30:this:0xA4"
+   ]
+  },
+  {
+   "ent": "RET:5FB2E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:6F5190:6F52DF"
+   ]
+  },
+  {
+   "ent": "RET:5FDDE0",
+   "types": [
+    "OverlayTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "OverlayTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5FDDE0:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:5FEF20",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5FEF20:this:0x294"
+   ]
+  },
+  {
+   "ent": "RET:6211D0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 4,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 4,
+    "unsigned int": 4
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:623880:623AD9",
+    "EAX:EAX:623880:623B52",
+    "EAX:EAX:623880:623B9E",
+    "EAX:EAX:623880:623BEB"
+   ]
+  },
+  {
+   "ent": "RET:62C3A0",
+   "types": [
+    "TechnoClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "TechnoClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:62C3A0:this:0xB4"
+   ]
+  },
+  {
+   "ent": "RET:62D990",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:62D990:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:62ED40",
+   "types": [
+    "ParticleSystemTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "ParticleSystemTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:62ED40:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:630220",
+   "types": [
+    "ParticleSystemTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "ParticleSystemTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:630220:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:6339B0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6339B0:this:0x30"
+   ]
+  },
+  {
+   "ent": "RET:6351E0",
+   "types": [
+    "unsigned int",
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1,
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6351E0:this:0xA8"
+   ]
+  },
+  {
+   "ent": "RET:642B20",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:642B20:this:0x80"
+   ]
+  },
+  {
+   "ent": "RET:6458B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6458B0:this:0x2E4"
+   ]
+  },
+  {
+   "ent": "RET:656CB0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:656CB0:this:0x14AC",
+    "M-eq:M:656CB0:this:0x14B0"
+   ]
+  },
+  {
+   "ent": "RET:65AAC0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65AAC0:this:0xE8"
+   ]
+  },
+  {
+   "ent": "RET:65AB10",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65AB10:this:0xE8"
+   ]
+  },
+  {
+   "ent": "RET:65ACE0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65ACE0:this:0xE8"
+   ]
+  },
+  {
+   "ent": "RET:65B4B0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65B4B0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:65B9C0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65B9C0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:65BB50",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65BB50:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:65BD00",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65BD00:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:65C420",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65C420:this:0x14"
+   ]
+  },
+  {
+   "ent": "RET:65C4A0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65C4A0:this:0x10"
+   ]
+  },
+  {
+   "ent": "RET:65C780",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 25,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 25,
+    "unsigned int": 25
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:424CE0:424DDF",
+    "EAX:EAX:485AF0:485CBB",
+    "EAX:EAX:62BD50:62BD93",
+    "EAX:EAX:62BD50:62BDB5",
+    "EAX:EAX:62BD50:62BDCE",
+    "EAX:EAX:62BD50:62BDF1",
+    "EAX:EAX:62C540:62C55E",
+    "EAX:EAX:62C540:62C580",
+    "EAX:EAX:62C540:62C59A",
+    "EAX:EAX:62C540:62C5B1",
+    "EAX:EAX:62E4C0:62E590",
+    "EAX:EAX:62E840:62E8AA",
+    "EAX:EAX:62E840:62EA5D",
+    "EAX:EAX:6E2C40:6E2CEB",
+    "EAX:EAX:6E2C40:6E2DB0",
+    "EAX:EAX:71C730:71C761",
+    "EAX:EAX:722440:7224B9",
+    "EAX:EAX:722AF0:722B67",
+    "EAX:EAX:722F00:722F75",
+    "EAX:EAX:7235A0:723604",
+    "EAX:EAX:7493B0:7497A5",
+    "EAX:EAX:74CE50:74CF69",
+    "EAX:EAX:74CE50:74D2DA",
+    "EAX:EAX:74D7C0:74D822",
+    "EAX:EAX:74DC00:74DC2E"
+   ]
+  },
+  {
+   "ent": "RET:65C7E0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:443C60:443E50"
+   ]
+  },
+  {
+   "ent": "RET:65CBF0",
+   "types": [
+    "bool"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "bool": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65CBF0:this:0x18"
+   ]
+  },
+  {
+   "ent": "RET:65CF00",
+   "types": [
+    "CCFileClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "CCFileClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65CF00:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:65D0D0",
+   "types": [
+    "CCFileClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "CCFileClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:65D0D0:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:679EC0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5B49B0:this:0x54",
+    "M-eq:M:5B77E0:this:0x58"
+   ]
+  },
+  {
+   "ent": "RET:679ED0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5B49B0:this:0x58",
+    "M-eq:M:5B77E0:this:0x5C"
+   ]
+  },
+  {
+   "ent": "RET:690360",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:690360:this:0x2C"
+   ]
+  },
+  {
+   "ent": "RET:6B4F20",
+   "types": [
+    "SmudgeTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "SmudgeTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6B4F20:this:0xAC"
+   ]
+  },
+  {
+   "ent": "RET:6B6150",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6B6150:this:0x294"
+   ]
+  },
+  {
+   "ent": "RET:6CE0B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6CE0B0:this:0x30"
+   ]
+  },
+  {
+   "ent": "RET:6CEA10",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6CEA10:this:0x98"
+   ]
+  },
+  {
+   "ent": "RET:6CEF80",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6CEF80:this:0xBC"
+   ]
+  },
+  {
+   "ent": "RET:6D2420",
+   "types": [
+    "unsigned char"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned char": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6D2420:this:0xD64"
+   ]
+  },
+  {
+   "ent": "RET:6D2B60",
+   "types": [
+    "bool",
+    "int",
+    "unsigned int",
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "bool": 1,
+    "int": 1,
+    "unsigned int": 1,
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6D2B60:this:0xE0"
+   ]
+  },
+  {
+   "ent": "RET:6D9EF0",
+   "types": [
+    "unsigned char"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned char": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6D9EF0:this:0xDB0"
+   ]
+  },
+  {
+   "ent": "RET:6E4650",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6E4650:this:0x24"
+   ]
+  },
+  {
+   "ent": "RET:6E64B0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6E64B0:this:0x98"
+   ]
+  },
+  {
+   "ent": "RET:6E9140",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6E9140:this:0x2C"
+   ]
+  },
+  {
+   "ent": "RET:6EC3D0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6EC3D0:this:0x54"
+   ]
+  },
+  {
+   "ent": "RET:6EDFB0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6EDFB0:this:0x2C"
+   ]
+  },
+  {
+   "ent": "RET:6F1FA0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6F1FA0:this:0xE4"
+   ]
+  },
+  {
+   "ent": "RET:6F20C0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6F20C0:this:0x98"
+   ]
+  },
+  {
+   "ent": "RET:6F9DC0",
+   "types": [
+    "HouseClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "HouseClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6F9DC0:this:0x21C"
+   ]
+  },
+  {
+   "ent": "RET:6F9E50",
+   "types": [
+    "HouseClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "HouseClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:6F9E50:this:0x21C"
+   ]
+  },
+  {
+   "ent": "RET:70D670",
+   "types": [
+    "float"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "float": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70D670:this:0x2FC"
+   ]
+  },
+  {
+   "ent": "RET:70DD20",
+   "types": [
+    "bool",
+    "float",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "bool": 1,
+    "float": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70DD20:this:0x138"
+   ]
+  },
+  {
+   "ent": "RET:70E5A0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70E5A0:this:0x198"
+   ]
+  },
+  {
+   "ent": "RET:70ED10",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70ED10:this:0x18"
+   ]
+  },
+  {
+   "ent": "RET:70F1D0",
+   "types": [
+    "float",
+    "unsigned char",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "float": 1,
+    "unsigned char": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70F1D0:this:0x12C"
+   ]
+  },
+  {
+   "ent": "RET:70F820",
+   "types": [
+    "HouseClass"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "HouseClass": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:70F820:this:0x21C",
+    "M-eq:M:70F820:this:0x2E0"
+   ]
+  },
+  {
+   "ent": "RET:711EB0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:711EB0:this:0x610"
+   ]
+  },
+  {
+   "ent": "RET:716290",
+   "types": [
+    "int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:716290:this:0x5E0",
+    "M-eq:M:716290:this:0x684"
+   ]
+  },
+  {
+   "ent": "RET:71ABC0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:71ABC0:this:0x40",
+    "M-eq:M:71ABC0:this:0x44"
+   ]
+  },
+  {
+   "ent": "RET:71D150",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:71D150:this:0xC8"
+   ]
+  },
+  {
+   "ent": "RET:71E350",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:71E350:this:0x294"
+   ]
+  },
+  {
+   "ent": "RET:71FA70",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:71FA70:this:0x24"
+   ]
+  },
+  {
+   "ent": "RET:722140",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:722140:this:0xE0"
+   ]
+  },
+  {
+   "ent": "RET:724510",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:724510:this:0x228"
+   ]
+  },
+  {
+   "ent": "RET:724530",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:724530:this:0x228"
+   ]
+  },
+  {
+   "ent": "RET:724550",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:724550:this:0x230"
+   ]
+  },
+  {
+   "ent": "RET:724570",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:724570:this:0x244"
+   ]
+  },
+  {
+   "ent": "RET:727CC0",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:727CC0:this:0x98"
+   ]
+  },
+  {
+   "ent": "RET:736DF0",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:736DF0:this:0x148"
+   ]
+  },
+  {
+   "ent": "RET:741490",
+   "types": [
+    "UnitTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "UnitTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:741490:this:0x6C4"
+   ]
+  },
+  {
+   "ent": "RET:7414A0",
+   "types": [
+    "UnitTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "UnitTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7414A0:this:0x6C4"
+   ]
+  },
+  {
+   "ent": "RET:7414E0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7414E0:this:0x2B4"
+   ]
+  },
+  {
+   "ent": "RET:748180",
+   "types": [
+    "AircraftTypeClass"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "AircraftTypeClass": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:748180:this:0xDF8"
+   ]
+  },
+  {
+   "ent": "RET:74AB30",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:74AB30:this:0x104"
+   ]
+  },
+  {
+   "ent": "RET:74C150",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:74C150:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:74F760",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:74F760:this:0x4"
+   ]
+  },
+  {
+   "ent": "RET:74FD60",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:74FD60:this:0x40"
+   ]
+  },
+  {
+   "ent": "RET:761640",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:761640:this:0x14C"
+   ]
+  },
+  {
+   "ent": "RET:762070",
+   "types": [
+    "void *"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "void *": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:762070:this:0x14C"
+   ]
+  },
+  {
+   "ent": "RET:772080",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:772080:this:0xA0"
+   ]
+  },
+  {
+   "ent": "RET:775940",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:7A3D90:7A3E55"
+   ]
+  },
+  {
+   "ent": "RET:77A870",
+   "types": [
+    "TintStruct",
+    "int",
+    "unsigned char",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "TintStruct": 1,
+    "int": 1,
+    "unsigned char": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:77A870:this:0x2C"
+   ]
+  },
+  {
+   "ent": "RET:7ACE60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7ACE60:this:0x30"
+   ]
+  },
+  {
+   "ent": "RET:7ACF70",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7ACF70:this:0x30"
+   ]
+  },
+  {
+   "ent": "RET:7B2F90",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B2F90:this:0x3F348"
+   ]
+  },
+  {
+   "ent": "RET:7B3310",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B3310:this:0x3F320"
+   ]
+  },
+  {
+   "ent": "RET:7B3720",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B3720:this:0x3F348"
+   ]
+  },
+  {
+   "ent": "RET:7B3A20",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B3A20:this:0x3F330"
+   ]
+  },
+  {
+   "ent": "RET:7B4140",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B4140:this:0x3F560"
+   ]
+  },
+  {
+   "ent": "RET:7B71B0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:79D720:79DA54"
+   ]
+  },
+  {
+   "ent": "RET:7B89F0",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B89F0:this:0xC"
+   ]
+  },
+  {
+   "ent": "RET:7BA340",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7BA340:this:0x1C"
+   ]
+  },
+  {
+   "ent": "RET:7BA350",
+   "types": [
+    "int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7BA350:this:0x20"
+   ]
+  },
+  {
+   "ent": "RET:7BAE60",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 2,
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:642130:642213",
+    "EAX:EAX:642130:6423D6"
+   ]
+  },
+  {
+   "ent": "RET:7C3960",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7C3960:this:0x148"
+   ]
+  },
+  {
+   "ent": "RET:7C3990",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7C3990:this:0x148"
+   ]
+  },
+  {
+   "ent": "RET:7C5F00",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 46,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 46,
+    "unsigned int": 46
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:4197C0:419914",
+    "EAX:EAX:4BBCA0:4BBE0B",
+    "EAX:EAX:4BBCA0:4BBEEF",
+    "EAX:EAX:4BC750:4BC9CB",
+    "EAX:EAX:4BC750:4BCA64",
+    "EAX:EAX:4BDF00:4BE141",
+    "EAX:EAX:4BDF00:4BE225",
+    "EAX:EAX:4BEAC0:4BEC45",
+    "EAX:EAX:4BEAC0:4BECE1",
+    "EAX:EAX:4BFD30:4BFEDD",
+    "EAX:EAX:4BFD30:4BFFBB",
+    "EAX:EAX:4CACB0:4CACBA",
+    "EAX:EAX:4CAD00:4CAD0A",
+    "EAX:EAX:4CADE0:4CADEE",
+    "EAX:EAX:4CAE30:4CAE96",
+    "EAX:EAX:4CB150:4CB15A",
+    "EAX:EAX:4CB1A0:4CB1AA",
+    "EAX:EAX:4CB3D0:4CB428",
+    "EAX:EAX:4E11F0:4E126E",
+    "EAX:EAX:4F9790:4F98A0",
+    "EAX:EAX:5163B0:51646B",
+    "EAX:EAX:59D510:59D8CD",
+    "EAX:EAX:5A08D0:5A0C74",
+    "EAX:EAX:5A35F0:5A366E",
+    "EAX:EAX:62B5E0:62B987",
+    "EAX:EAX:62B5E0:62B9A9",
+    "EAX:EAX:63F850:63F8C3",
+    "EAX:EAX:652110:652168",
+    "EAX:EAX:659AC0:659B23",
+    "EAX:EAX:659AC0:659BB9",
+    "EAX:EAX:659AC0:659C0D",
+    "EAX:EAX:659EE0:659F3A",
+    "EAX:EAX:659FF0:65A036",
+    "EAX:EAX:659FF0:65A0CE",
+    "EAX:EAX:659FF0:65A122",
+    "EAX:EAX:693440:693652",
+    "EAX:EAX:693440:693668",
+    "EAX:EAX:693440:6936ED",
+    "EAX:EAX:693440:693703",
+    "EAX:EAX:693440:69376D",
+    "EAX:EAX:693440:693781",
+    "EAX:EAX:6EFA10:6EFBC2",
+    "EAX:EAX:70CD10:70D08F",
+    "EAX:EAX:750AC0:750BCA",
+    "EAX:EAX:750AC0:750BE8",
+    "EAX:EAX:754510:754668"
+   ]
+  },
+  {
+   "ent": "RET:7C899E",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 3,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 3
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:7B10C0:this:0x3F06C",
+    "M-eq:M:7B30B0:this:0x3F06C",
+    "M-eq:M:7B3450:this:0x3F070"
+   ]
+  },
+  {
+   "ent": "RET:7C9430",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:409C40:this:0x7C",
+    "M-eq:M:409C40:this:0x90"
+   ]
+  },
+  {
+   "ent": "RET:7C9B72",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 5,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 5,
+    "unsigned int": 5
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:785740:7857F7",
+    "EAX:EAX:79AF10:79B295",
+    "EAX:EAX:7A5890:7A58FF",
+    "EAX:EAX:7A9970:7A9CFE",
+    "EAX:EAX:7AB670:7AB6ED"
+   ]
+  },
+  {
+   "ent": "RET:7C9BFD",
+   "types": [
+    "int32_t"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int32_t": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:71F4E0:this:0x2C",
+    "M-eq:M:71F4E0:this:0x34"
+   ]
+  },
+  {
+   "ent": "RET:7CA405",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 5,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 5
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:4C2FC0:this:0x3C",
+    "M-eq:M:4C30E0:this:0x3C",
+    "M-eq:M:4C3570:this:0x3C",
+    "M-eq:M:5D4210:this:0x2B0",
+    "M-eq:M:5D4210:this:0x2B4"
+   ]
+  },
+  {
+   "ent": "RET:7CB4AA",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:631D40:631D8F"
+   ]
+  },
+  {
+   "ent": "RET:7CB9B8",
+   "types": [
+    "unsigned int"
+   ],
+   "n_voters": 2,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "unsigned int": 2
+   },
+   "minority": {},
+   "via": [
+    "M-eq:M:5FA620:this:0x4C",
+    "M-eq:M:5FA620:this:0x50"
+   ]
+  },
+  {
+   "ent": "RET:7CD7CE",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "EAX:EAX:7B8250:7B826F"
+   ]
+  },
+  {
+   "ent": "RET:7D39F6",
+   "types": [
+    "bool",
+    "int",
+    "unsigned int"
+   ],
+   "n_voters": 1,
+   "n_abstain": 0,
+   "unanimous": true,
+   "support": {
+    "bool": 1,
+    "int": 1,
+    "unsigned int": 1
+   },
+   "minority": {},
+   "via": [
+    "P-eq:P:7D39F6:1"
+   ]
+  }
+ ],
+ "meta": {
+  "schema": "ret-propagated-types/v2",
+  "tier": "heuristic (方向性参考; v1 anchors/ret_propagated_types.json 为严格层)",
+  "relaxation": "v1 requires the intersection of ALL typed destination type-sets to be non-empty; v2 groups evidence by destination: each destination votes with the intersection of its own source sets (internally-contradictory destinations abstain), the winner set W = {t : support(t) >= 2/3 of voters} is asserted iff W non-empty AND no non-supporting destination crosses a hard family boundary (int-family vs float-family vs pointer/class/array) against W — same-family spelling-level minorities are tolerated; single voter => its set verbatim (v2 is a strict superset of v1).",
+  "soundness": "heuristic layer: majority vote is directional evidence, not a binary necessity — a 2/3 majority can outvote a genuine minority consumer; the three v1 guards are retained and applied to W (returns-this identity vs int-only winner; partial-register return gate requires W to intersect the bool/char family; array-only winner discarded); S-eq channel stays dropped (unsound by construction, see v1); types spelled verbatim from source anchors; deterministic double-run sha256-identical.",
+  "inputs": [
+   "anchors/flow_stores.json",
+   "anchors/flow_chains.json",
+   "anchors/callarg_origins.json",
+   "anchors/member_by_receiver.json",
+   "anchors/insn_member_types.json",
+   "anchors/const_param_types.json",
+   "anchors/string_param_types.json",
+   "anchors/param_usage_types_v2.json",
+   "anchors/ret_usage_types_gated.json",
+   "anchors/ret_identity.json",
+   "decompile-results/full_export/ (partial-ret gate)"
+  ],
+  "counts": {
+   "candidates_with_typed_bounds": 482,
+   "asserted_v2": 224,
+   "abstain_skip_all_dests_contradictory": 4,
+   "rejected_by_reason": {
+    "partial_ret_gate": 235,
+    "array_only": 8,
+    "cross_family_minority": 1,
+    "no_majority": 8,
+    "t_identity_conflict": 2
+   },
+   "unanimous_rows": 224,
+   "majority_rows": 0,
+   "abstain_dests_total": 0,
+   "combo_hist": {
+    "M-eq": 204,
+    "EAX": 19,
+    "P-eq": 1
+   }
+  },
+  "vs_v1": {
+   "new_rows_vs_v1": 0,
+   "lost_rows_vs_v1": 0,
+   "verdict": "the >=2/3-majority relaxation recovers ZERO rows: all 13 v1-inconsistent discards decompose into 4 single-destination internally-contradictory candidates (abstain) + 8 sub-2/3 splits (50/50 or 1-of-N disjoint) + 1 cross-family minority (2x{unsigned int} vs {char[28]} at RET:43EF90) — genuine multi-value-domain returns / dirty-upper-bit artifacts, not majority-recoverable noise. The binding constraints are structural: 6,577/7,059 (93.2%) RET entities have zero typed destinations, and the partial-register-return gate accounts for 235/258 (91%) of candidate discards."
+  },
+  "determinism": "sha256 double-run byte-identical"
+ }
+}
