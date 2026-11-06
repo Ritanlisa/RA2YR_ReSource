@@ -72,7 +72,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
-            "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP"]
+            "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -117,6 +117,9 @@ FAMILY_DESC = {
     "CC": "COM callback GUID-compare QI receivers -> IUnknown-descendant domain (strict, compiler-signature L5; evidence array of com_callback_types.json; guid_compares/callback_registrations are generator-side informational channels, no emitable spelling)",
     "CR": "CRT call-pattern arg/return types: str family / memcpy src / wsprintfA dst / fopen path+mode / u64 reg+stack pairs -> char*/char[N]/unsigned long long (strict, compiler-signature L6)",
     "FP": "FPU constant linkage: fild/fistp int-load/store + fldz/fld1/.rdata FP-constant producer on x87 stack-top when member FPU mem-op touches [base+off] -> float/double member family (strict, compiler-signature L7)",
+    "RA": "caller-site EAX arithmetic/cmp consumption -> int/char* value family (strict, post-call window w/ copy extension)",
+    "RD": "consumer-side EAX virtual-dispatch vptr-chain / member-read offset -> class candidate set (strict)",
+    "GX": "virtual-dispatch site push-arg direct-to-GS: const01/granular types + bind-origin eq edges (strict)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -1560,6 +1563,26 @@ def main():
                     _fc_touch += 1
     except Exception:
         pass
+    # EAX 流等值 + GS 站点实参等值实体预创建（EAX:FN:SITE / GS:slot:k:root）。
+    # 与 flow_chains 预创建同模式（仅 EAX:/GS: 前缀，幂等 not-in-ents 守卫）；
+    # T:/P:/RET:/G:/M:/S: 对侧实体遵循 FS/FC 惯例不预创建（作传播连接点即可）。
+    _efeq_touch = 0
+    try:
+        for _r0 in (jload("anchors/eax_flow_equations.json", {}) or {}).get("edges") or []:
+            _eid0 = (_r0 or {}).get("eax")
+            if isinstance(_eid0, str) and _eid0.startswith("EAX:") and _eid0 not in ents:
+                touch(_eid0, _eid0)
+                _efeq_touch += 1
+        for _pair0 in (jload("anchors/gs_site_args.json", {}) or {}).get("edges") or []:
+            for _eid0 in (_pair0 or []):
+                if not isinstance(_eid0, str):
+                    continue
+                if _eid0.startswith(("EAX:", "GS:")) and _eid0 not in ents:
+                    touch(_eid0, _eid0)
+                    _efeq_touch += 1
+    except Exception:
+        pass
+    print("[C10-pre] eax/gs eq entity precreate: %d" % _efeq_touch, flush=True)
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -2836,6 +2859,40 @@ def main():
         print("[SG] slot granularity types: %d" % census["SG"], flush=True)
     except Exception as _e_sg:
         print("[SG] skipped: %r" % _e_sg, flush=True)
+    # ---- EAX/GS 黑块（用户点名主攻坚）：RA/RD/GX 三族 ----
+    try:
+        census["RA"] = _load_type_family("anchors/eax_arith_types.json", "RA")
+        print("[RA] eax arithmetic-consumption types: %d" % census["RA"], flush=True)
+    except Exception as _e_ra:
+        print("[RA] skipped: %r" % _e_ra, flush=True)
+    try:
+        # RD：类候选集（消费侧 vptr 链/成员读偏移证据）——resolve() 走
+        # 别名/模板归一（OT 先例）；未解析 token（E4Recv_* 等 173 名）按位丢弃
+        _n_rd = 0
+        for _rec in (jload("anchors/eax_dispatch_types.json", {}) or {}).get("evidence") or []:
+            _erd = _rec.get("ent")
+            if not isinstance(_erd, str):
+                continue
+            m_rd = 0
+            for _crd in (_rec.get("types") or []):
+                _ixrd = resolve(_crd)
+                if _ixrd is not None:
+                    m_rd |= (1 << _ixrd)
+            if not m_rd:
+                continue
+            if _erd not in ents:
+                touch(_erd, _erd)
+            fam["RD"][_erd] = fam["RD"].get(_erd, FULL) & m_rd
+            _n_rd += 1
+        census["RD"] = _n_rd
+        print("[RD] eax dispatch class-candidates: %d" % _n_rd, flush=True)
+    except Exception as _e_rd:
+        print("[RD] skipped: %r" % _e_rd, flush=True)
+    try:
+        census["GX"] = _load_type_family("anchors/gs_site_args.json", "GX")
+        print("[GX] gs site-arg types: %d" % census["GX"], flush=True)
+    except Exception as _e_gx:
+        print("[GX] skipped: %r" % _e_gx, flush=True)
     if getattr(args, "allow_heuristics", False):
         try:
             census["RU"] = _load_type_family("anchors/ret_usage_types_gated.json", "RU")
@@ -5522,6 +5579,44 @@ def main():
             print("[FC] flow edges=%d eq edges=%d" % (_n_flow, _n_eq), flush=True)
     except Exception as _e_fc:
         print("[FC] injection skipped: %r" % _e_fc, flush=True)
+    # ---- EAX 流等值（eax_flow_equations：EAX:FN:SITE == T:/P:/RET:，严格后调用窗口）----
+    # 语义与 FC eq 相同（值传递 => 同一对象/值），走同一双向通道；
+    # 不经 un()（union-find EXACT 硬合并），冲突以空域形式交由中和器裁决。
+    try:
+        _efe = jload("anchors/eax_flow_equations.json", {}) or {}
+        _n_efe = 0
+        for _r1 in (_efe.get("edges") or []):
+            _a1 = (_r1 or {}).get("eax")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_efe += 2
+        print("[EF] eax-flow eq edges=%d" % _n_efe, flush=True)
+    except Exception as _e_efe:
+        print("[EF] injection skipped: %r" % _e_efe, flush=True)
+    # ---- GS 站点实参等值（gs_site_args：GS:slot:k:root == 绑定来源实体，直达式）----
+    try:
+        _gsa = jload("anchors/gs_site_args.json", {}) or {}
+        _n_gxe = 0
+        for _a1, _b1 in (_gsa.get("edges") or []):
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_gxe += 2
+        print("[GX] gs-site-arg eq edges=%d" % _n_gxe, flush=True)
+    except Exception as _e_gxe:
+        print("[GX] edges skipped: %r" % _e_gxe, flush=True)
 
     _incr_fp_ok = False
     _INCR_BASE_NOW = None

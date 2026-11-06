@@ -2008,7 +2008,7 @@
   ],
   "family_sizes": {
    "C7": 1031,
-   "C10": 0
+   "C10": 1
   },
   "ents": [
    "P:6DC850:1",
@@ -2030,7 +2030,9 @@
     "IPiggyback",
     "IPublicHouse"
    ],
-   "C10": []
+   "C10": [
+    "unsigned int"
+   ]
   },
   "exact": {}
  },
@@ -2865,6 +2867,1746 @@
   "exact": {}
  },
  {
+  "cluster": "EAX:4228E0:4229A1",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:4228E0:4229A1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:425530:425572",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:425530:425572"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:42ACF0:42AF88",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:42ACF0:42AF88"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:453D60:453D9D",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 50
+  },
+  "ents": [
+   "EAX:453D60:453D9D"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DSurface",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:453DC0:453DFD",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 50
+  },
+  "ents": [
+   "EAX:453DC0:453DFD"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DSurface",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:455F10:455FE6",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 71
+  },
+  "ents": [
+   "EAX:455F10:455FE6"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BuildingClass",
+    "BuildingLightClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "BulletTypeClass",
+    "CellClass",
+    "ConvertClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4561F0:4562D2",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 71
+  },
+  "ents": [
+   "EAX:4561F0:4562D2"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BuildingClass",
+    "BuildingLightClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "BulletTypeClass",
+    "CellClass",
+    "ConvertClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4561F0:45653C",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 71
+  },
+  "ents": [
+   "EAX:4561F0:45653C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BuildingClass",
+    "BuildingLightClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "BulletTypeClass",
+    "CellClass",
+    "ConvertClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4ACAC0:4ACB63",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:4ACAC0:4ACB63"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4D2370:4D2420",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:4D2370:4D2420"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4D2370:4D245E",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:4D2370:4D245E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:56A080:56A446",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 32
+  },
+  "ents": [
+   "EAX:56A080:56A446"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "CellClass",
+    "DSurface",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "MapClass",
+    "MouseClass",
+    "ObjectClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:594870:594AAD",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:594870:594AAD"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:599650:599AE1",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:599650:599AE1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:5F60A0:5F60DB",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 43
+  },
+  "ents": [
+   "EAX:5F60A0:5F60DB"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass",
+    "MapClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:5F60A0:5F60FA",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 50
+  },
+  "ents": [
+   "EAX:5F60A0:5F60FA"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DSurface",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:5F6120:5F615B",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 43
+  },
+  "ents": [
+   "EAX:5F6120:5F615B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass",
+    "MapClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:5F6120:5F617A",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 50
+  },
+  "ents": [
+   "EAX:5F6120:5F617A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DSurface",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:5FC570:5FC75D",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 3
+  },
+  "ents": [
+   "EAX:5FC570:5FC75D"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "CellClass",
+    "Crate",
+    "Terrain"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:635C10:635C44",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 89
+  },
+  "ents": [
+   "EAX:635C10:635C44"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AnimClass",
+    "AnimFile",
+    "AnimTypeClass",
+    "BSurface",
+    "BuildingClass",
+    "BuildingLightClass",
+    "BuildingTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:64CDA0:64D235",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:64CDA0:64D235"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:68BDC0:68BE60",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 53
+  },
+  "ents": [
+   "EAX:68BDC0:68BE60"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6E4F60:6E509B",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 28
+  },
+  "ents": [
+   "EAX:6E4F60:6E509B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "IsometricTileTypeClass",
+    "ObjectClass",
+    "ObjectTypeClass",
+    "ParticleClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB170:6FB338",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 41
+  },
+  "ents": [
+   "EAX:6FB170:6FB338"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB170:6FB355",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 37
+  },
+  "ents": [
+   "EAX:6FB170:6FB355"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB170:6FB389",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 130
+  },
+  "ents": [
+   "EAX:6FB170:6FB389"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB170:6FB3A8",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 130
+  },
+  "ents": [
+   "EAX:6FB170:6FB3A8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB170:6FB403",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 120
+  },
+  "ents": [
+   "EAX:6FB170:6FB403"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB470:6FB5EB",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 37
+  },
+  "ents": [
+   "EAX:6FB470:6FB5EB"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB470:6FB634",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 41
+  },
+  "ents": [
+   "EAX:6FB470:6FB634"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryClass",
+    "ListClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB470:6FB66A",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 130
+  },
+  "ents": [
+   "EAX:6FB470:6FB66A"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB470:6FB689",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 130
+  },
+  "ents": [
+   "EAX:6FB470:6FB689"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FB470:6FB6E0",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 120
+  },
+  "ents": [
+   "EAX:6FB470:6FB6E0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:71C930:71C9E2",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 50
+  },
+  "ents": [
+   "EAX:71C930:71C9E2"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "BulletClass",
+    "CellClass",
+    "ConvertClass",
+    "DSurface",
+    "DisplayClass",
+    "FootClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "IUnknown",
+    "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4415F0:441739",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 33
+  },
+  "ents": [
+   "EAX:4415F0:441739"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "CellClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "InfantryTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:4DA530:4DAA74",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 58
+  },
+  "ents": [
+   "EAX:4DA530:4DAA74"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "CampaignClass",
+    "CaptureManagerClass",
+    "CellClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:519630:519794",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 6
+  },
+  "ents": [
+   "EAX:519630:519794"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "TechnoTypeClass",
+    "UnitTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:519630:51980C",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 33
+  },
+  "ents": [
+   "EAX:519630:51980C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "CellClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "InfantryTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6F3F40:6F427B",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 7
+  },
+  "ents": [
+   "EAX:6F3F40:6F427B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftTypeClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "TechnoTypeClass",
+    "UnitClass",
+    "UnitTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6F3F40:6F42B1",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 5
+  },
+  "ents": [
+   "EAX:6F3F40:6F42B1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftTypeClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "TechnoTypeClass",
+    "UnitTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6FFBE0:6FFD46",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 9
+  },
+  "ents": [
+   "EAX:6FFBE0:6FFD46"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "ParasiteClass",
+    "TechnoClass",
+    "TechnoTypeClass",
+    "UnitTypeClass",
+    "RulesClass",
+    "Stream"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:708EB0:708EC1",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 15
+  },
+  "ents": [
+   "EAX:708EB0:708EC1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "DSurface",
+    "FootClass",
+    "InfantryClass",
+    "TechnoClass",
+    "TechnoTypeClass",
+    "UnitClass",
+    "ComPtr",
+    "Conflict",
+    "RulesClass",
+    "ScoreText"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:708EB0:708F0B",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 34
+  },
+  "ents": [
+   "EAX:708EB0:708F0B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "CampaignClass",
+    "FootClass",
+    "INIClass",
+    "InfantryClass",
+    "InfantryTypeClass",
+    "MSBitPrintAnim"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:708EB0:708F62",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 12
+  },
+  "ents": [
+   "EAX:708EB0:708F62"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "IUnknown",
+    "InfantryClass",
+    "InfantryTypeClass",
+    "TechnoClass",
+    "UnitClass",
+    "UnitTypeClass",
+    "RulesClass",
+    "WTFMode",
+    "WinMain"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:708FC0:708FC5",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 23
+  },
+  "ents": [
+   "EAX:708FC0:708FC5"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "BuildingTypeClass",
+    "CampaignClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryTypeClass",
+    "ObjectClass",
+    "ReferenceCounted",
+    "Selection@WorldDominationTour",
+    "TechnoClass",
+    "TechnoTypeClass",
+    "UnitTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:7090A0:70914E",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 12
+  },
+  "ents": [
+   "EAX:7090A0:70914E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "MSBitPrintAnim",
+    "ObjectClass",
+    "ReferenceCounted",
+    "Selection@WorldDominationTour",
+    "UnitTypeClass",
+    "WDTState",
+    "RulesClass",
+    "ScoreClass",
+    "Trigger",
+    "WDTGame"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:739EC0:739FC1",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 6
+  },
+  "ents": [
+   "EAX:739EC0:739FC1"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "TechnoTypeClass",
+    "UnitTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:739EC0:73A03D",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 33
+  },
+  "ents": [
+   "EAX:739EC0:73A03D"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AbstractClass",
+    "AircraftClass",
+    "AnimClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "BulletClass",
+    "CellClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "InfantryTypeClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:435BE0:this:0xE4",
   "status": "inconsistent",
   "families": [
@@ -3141,6 +4883,68 @@
    "IG": [
     "short",
     "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:528660:0",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C10",
+   "C7"
+  ],
+  "family_sizes": {
+   "C1": 1086,
+   "C7": 1030,
+   "C10": 1
+  },
+  "ents": [
+   "P:528660:0",
+   "S:528660:+0x4"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "20:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$DynamicVectorClass@PAUControlNode@@"
+   ],
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "C10": [
+    "int"
    ]
   },
   "exact": {}
@@ -117539,6 +119343,43 @@
    "SG": [
     "short",
     "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:6E4B00:6E509B",
+  "status": "inconsistent",
+  "families": [
+   "RA",
+   "RD"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "RD": 28
+  },
+  "ents": [
+   "EAX:6E4B00:6E509B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "IsometricTileTypeClass",
+    "ObjectClass",
+    "ObjectTypeClass",
+    "ParticleClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass"
    ]
   },
   "exact": {}

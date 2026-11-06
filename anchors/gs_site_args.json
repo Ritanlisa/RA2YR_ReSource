@@ -1,0 +1,1181 @@
+{
+ "meta": {
+  "schema": "gs-site-args/v1",
+  "semantics": "Virtual-dispatch site argument evidence, direct-to-GS (bypasses the occupant equivalence chain). At each `push argK; ...; mov ecx, recv; call [vtreg+off]` site (full_export disasm snapshot), up to nstk(slot-family stack-arg count from slot_param_groups) pushes are collected by a backward scan (stops at call/ret/j*/label/esp-adjust); push nearest the call is k=0 (k = stack-arg index, this excluded, identical to GS k convention). Each push operand is def-traced (<=10 insns, <=2 reg copy hops; call defines caller-saved: eax=>EAX entity, edx/ecx=>unclassified): gs-str: push offset <string> (string_literals-verified) => char* family; gs-const: push <numeric imm> (image-VA-range values excluded as address evidence) => int family; gs-pdirect: mov reg,[ebp+arg_N]/[ebp+X] (function input param, k=N/4 or (X-8)/4, fn-arity guarded) => equivalence GS == P:FN:origK; gs-eax: push <eax or copy thereof defined by a preceding call> (RETX-A window discipline) => equivalence GS == EAX:FN:producer_call_site; gs-slot: mov reg,[ebp+var_X] => GS == S:FN:var_X; gs-bind-origin: reuse of vt_receiver_bindings args (ffl5 def-direct register origins T:/M:/S:/P:/RET:) at binds-attached sites (deduped against slot_param_groups.val_edges sites/pairs). Site->group attachment (both sound): (a) binds callee in group occ with matching slot (receiver-anchored binding, unique group per slot by construction); (b) mono slot: exactly one root among param groups of that slot (slot_anchor_v2 mono-only discipline; mono here = unique root among k-groups). Multi-site AND-merge per GS entity: CP purity = every scanned observation is a numeric immediate AND no occupant (occ member) has any CALL_ARG edge at (fn,k) in raw_constraints+supplementary (an edge without a classifiable G:<straddr> origin counts as non-immediate — conservative); SP purity = every observation is a string offset AND occupant CALL_ARG origins (when classifiable via callarg_origins) are all strings. Mixed evidence discarded. Equivalence edges are per-site independent (union).",
+  "entity_format": {
+   "gs": "GS:slot:k:root  (root 0x-prefixed upper hex; k=stack-arg index, this excluded)",
+   "p": "P:FN:K           (upper hex no 0x)",
+   "eax": "EAX:FN:site    (site = producer call insn addr, RETX-A convention)",
+   "s": "S:FN:var_XX      (lower hex var name)"
+  },
+  "inputs": [
+   "decompile-results/full_export/src/*.cpp (IDA disasm snapshot)",
+   "anchors/slot_param_groups.json (groups + val_edges dedup baseline)",
+   "anchors/vt_receiver_bindings.json (site->slot+callee+args reuse)",
+   "anchors/param_usage_types_v2.json (edge dedup baseline)",
+   "anchors/string_literals.json (string verification)",
+   "tools/type_infer/constraints/raw_constraints.json + anchors/supplementary_call_args.json (occupant CALL_ARG purity check)",
+   "anchors/callarg_origins.json (occupant-origin str refinement)",
+   "D:\\RA2MD\\gamemd.exe (image VA range for address-valued immediates)"
+  ],
+  "type_rules": {
+   "const01": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "const_wide": [
+    "int",
+    "unsigned int"
+   ],
+   "str": [
+    "char*",
+    "char *",
+    "const char *"
+   ]
+  },
+  "counts": {
+   "files": 1445,
+   "functions": 19088,
+   "vcall_sites": 14545,
+   "vcall_off_not_mult4": 0,
+   "attach_binds_occ": 185,
+   "attach_mono": 90,
+   "attach_binds_fail_mono_fallback": 0,
+   "attach_fail": {
+    "no_binds_nonmono": 11260,
+    "binds_callee_no_group": 3010
+   },
+   "site_no_pushes": 27,
+   "site_with_pushes": 248,
+   "observations": {
+    "imm": 147,
+    "str": 0,
+    "other": 215
+   },
+   "edges_total": 72,
+   "edges_per_via": {
+    "gs-bind-origin": 62,
+    "gs-eax": 5,
+    "gs-pdirect": 3,
+    "gs-slot": 2
+   },
+   "edges_per_via_unique_gs": {
+    "gs-bind-origin": 41,
+    "gs-eax": 4,
+    "gs-pdirect": 3,
+    "gs-slot": 2
+   },
+   "edge_dropped_pu_dup": 0,
+   "edge_dropped_val_dup": 0,
+   "evidence_total": 20,
+   "evidence_by_kind": {
+    "gs-const-wide": 3,
+    "gs-const01": 17
+   },
+   "evidence_discarded": {
+    "killed_occupant_callarg": 87,
+    "mixed_discard": 10
+   },
+   "gs_entities_covered": 68,
+   "gs_entities_with_edges": 48,
+   "gs_entities_with_type_evidence": 20
+  }
+ },
+ "evidence": [
+  {
+   "ent": "GS:2:1:0x40B180",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x40B180",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x40CE50",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x40CE50",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x45A560",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x45A560",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x477E10",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x477E10",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x4D2BC0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x4D2BC0",
+   "sites": 3,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x4E0360",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x4E0360",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x558280",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x558280",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x765840",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x765840",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x7B22E0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x7B22E0",
+   "sites": 2,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x7B28E0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x7B28E0",
+   "sites": 4,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:2:1:0x7B4360",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 2,
+   "k": 1,
+   "root": "0x7B4360",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:330:1:0x41BBD0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 330,
+   "k": 1,
+   "root": "0x41BBD0",
+   "sites": 5,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:330:2:0x41BBD0",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 330,
+   "k": 2,
+   "root": "0x41BBD0",
+   "sites": 5,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:342:0:0x51D6F0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "gs-const-wide",
+   "slot": 342,
+   "k": 0,
+   "root": "0x51D6F0",
+   "sites": 19,
+   "values": [
+    0,
+    2,
+    7,
+    9,
+    10,
+    27,
+    28,
+    31,
+    32,
+    33,
+    38
+   ],
+   "n_values": 11,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:41:0:0x557FB0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "gs-const-wide",
+   "slot": 41,
+   "k": 0,
+   "root": "0x557FB0",
+   "sites": 2,
+   "values": [
+    1,
+    4294967295
+   ],
+   "n_values": 2,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:43:0:0x6B2000",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 43,
+   "k": 0,
+   "root": "0x6B2000",
+   "sites": 2,
+   "values": [
+    0,
+    1
+   ],
+   "n_values": 2,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:44:0:0x6B2040",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 44,
+   "k": 0,
+   "root": "0x6B2040",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:49:0:0x557A70",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 49,
+   "k": 0,
+   "root": "0x557A70",
+   "sites": 1,
+   "values": [
+    0
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:4:0:0x774900",
+   "types": [
+    "int",
+    "bool",
+    "unsigned int"
+   ],
+   "kind": "gs-const01",
+   "slot": 4,
+   "k": 0,
+   "root": "0x774900",
+   "sites": 1,
+   "values": [
+    1
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  },
+  {
+   "ent": "GS:5:2:0x774CD0",
+   "types": [
+    "int",
+    "unsigned int"
+   ],
+   "kind": "gs-const-wide",
+   "slot": 5,
+   "k": 2,
+   "root": "0x774CD0",
+   "sites": 1,
+   "values": [
+    80
+   ],
+   "n_values": 1,
+   "occupant_callarg": false
+  }
+ ],
+ "edges": [
+  [
+   "GS:10:1:0x4A9700",
+   "T:4F4320"
+  ],
+  [
+   "GS:10:4:0x53F650",
+   "T:540050"
+  ],
+  [
+   "GS:12:0:0x4F4410",
+   "G:B07C48"
+  ],
+  [
+   "GS:13:0:0x4F4450",
+   "G:B07C48"
+  ],
+  [
+   "GS:28:0:0x565C10",
+   "T:4ACE70"
+  ],
+  [
+   "GS:28:0:0x565C10",
+   "T:5BDF70"
+  ],
+  [
+   "GS:2:0:0x40B180",
+   "M:6551C0:this:0x122C"
+  ],
+  [
+   "GS:2:0:0x40BAE0",
+   "T:438E70"
+  ],
+  [
+   "GS:2:0:0x40BAE0",
+   "T:663B40"
+  ],
+  [
+   "GS:2:0:0x45A560",
+   "M:43BCF0:this:0x68C"
+  ],
+  [
+   "GS:2:0:0x45A560",
+   "P:43BCF0:0"
+  ],
+  [
+   "GS:2:0:0x45A560",
+   "P:43BCF0:0"
+  ],
+  [
+   "GS:2:0:0x477E10",
+   "M:488850:this:0x17C"
+  ],
+  [
+   "GS:2:0:0x478DB0",
+   "M:7240B0:this:0x18"
+  ],
+  [
+   "GS:2:0:0x478DB0",
+   "M:7241A0:this:0x18"
+  ],
+  [
+   "GS:2:0:0x478DB0",
+   "M:724200:this:0x18"
+  ],
+  [
+   "GS:2:0:0x478DB0",
+   "M:724730:this:0x18"
+  ],
+  [
+   "GS:2:0:0x4D2BC0",
+   "M:4D0EF0:this:0x5C"
+  ],
+  [
+   "GS:2:0:0x4D2BC0",
+   "M:4D1370:this:0x5C"
+  ],
+  [
+   "GS:2:0:0x4E0360",
+   "M:6F8DF0:this:0x460"
+  ],
+  [
+   "GS:2:0:0x558280",
+   "M:5576A0:this:0x3C"
+  ],
+  [
+   "GS:2:0:0x7B22E0",
+   "T:7B13D0"
+  ],
+  [
+   "GS:2:0:0x7B22E0",
+   "T:7B2FF0"
+  ],
+  [
+   "GS:2:0:0x7B28E0",
+   "M:7B23B0:this:0x28"
+  ],
+  [
+   "GS:2:0:0x7B28E0",
+   "M:7B23B0:this:0x40"
+  ],
+  [
+   "GS:2:0:0x7B28E0",
+   "P:7B24E0:14"
+  ],
+  [
+   "GS:2:0:0x7B28E0",
+   "P:7B24E0:8"
+  ],
+  [
+   "GS:2:0:0x7B4360",
+   "M:7B3450:this:0x3F550"
+  ],
+  [
+   "GS:30:0:0x411510",
+   "T:4AED70"
+  ],
+  [
+   "GS:30:0:0x411510",
+   "T:4BB080"
+  ],
+  [
+   "GS:30:0:0x411510",
+   "T:4BC750"
+  ],
+  [
+   "GS:30:0:0x411510",
+   "T:4BDF00"
+  ],
+  [
+   "GS:30:0:0x411510",
+   "T:7BB050"
+  ],
+  [
+   "GS:30:0:0x4E1970",
+   "P:4E2830:0"
+  ],
+  [
+   "GS:314:0:0x4DE7B0",
+   "T:4D7170"
+  ],
+  [
+   "GS:315:0:0x4DE940",
+   "M:4D85D0:this:0x55C"
+  ],
+  [
+   "GS:324:1:0x4DAF10",
+   "S:4144B0:var_94"
+  ],
+  [
+   "GS:324:2:0x4DAF10",
+   "S:4144B0:var_c4"
+  ],
+  [
+   "GS:324:4:0x4DAF10",
+   "P:4144B0:1"
+  ],
+  [
+   "GS:324:6:0x4DAF10",
+   "EAX:4144B0:4149AA"
+  ],
+  [
+   "GS:324:6:0x4DAF10",
+   "EAX:73B470:73B8AA"
+  ],
+  [
+   "GS:330:0:0x41BBD0",
+   "M:41A5C0:this:0x6C4"
+  ],
+  [
+   "GS:330:0:0x41BBD0",
+   "M:41AA80:this:0x6C4"
+  ],
+  [
+   "GS:341:0:0x73B470",
+   "S:73CEC0:var_34"
+  ],
+  [
+   "GS:341:1:0x73B470",
+   "T:73CEC0"
+  ],
+  [
+   "GS:342:0:0x73C5F0",
+   "S:73CEC0:var_34"
+  ],
+  [
+   "GS:342:1:0x73C5F0",
+   "T:73CEC0"
+  ],
+  [
+   "GS:35:0:0x4E25A0",
+   "EAX:4E2830:4E295B"
+  ],
+  [
+   "GS:35:0:0x6C67F0",
+   "T:6C6640"
+  ],
+  [
+   "GS:37:0:0x4C32E0",
+   "T:4C3110"
+  ],
+  [
+   "GS:37:0:0x720140",
+   "T:71FFE0"
+  ],
+  [
+   "GS:38:0:0x4A9DD0",
+   "T:4A9DD0"
+  ],
+  [
+   "GS:38:0:0x4C3420",
+   "T:4C3190"
+  ],
+  [
+   "GS:38:1:0x4A9DD0",
+   "T:4A9DD0"
+  ],
+  [
+   "GS:39:0:0x4AA050",
+   "T:4AA050"
+  ],
+  [
+   "GS:39:1:0x4AA050",
+   "T:4AA050"
+  ],
+  [
+   "GS:40:0:0x427B50",
+   "T:428C30"
+  ],
+  [
+   "GS:40:0:0x4E25D0",
+   "M:4E2830:this:0x38"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "M:4E2830:this:0x34"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "M:4E29A0:this:0x30"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "M:4E2B50:this:0x34"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "M:4E2B50:this:0x40"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "T:4E2690"
+  ],
+  [
+   "GS:41:0:0x4E2650",
+   "T:4E2B50"
+  ],
+  [
+   "GS:42:0:0x4886C0",
+   "EAX:557800:557819"
+  ],
+  [
+   "GS:42:1:0x464AC0",
+   "M:449440:this:0x520"
+  ],
+  [
+   "GS:48:0:0x557B70",
+   "M:557F40:this:0x16C"
+  ],
+  [
+   "GS:48:0:0x557B70",
+   "EAX:557B10:557B55"
+  ],
+  [
+   "GS:49:2:0x5C2DE0",
+   "T:5CA800"
+  ],
+  [
+   "GS:4:0:0x4E0440",
+   "M:7077C0:this:0x458"
+  ],
+  [
+   "GS:5:3:0x774CD0",
+   "T:775110"
+  ],
+  [
+   "GS:6:0:0x4F42B0",
+   "T:4ACE70"
+  ]
+ ],
+ "edge_detail": [
+  {
+   "gs": "GS:10:1:0x4A9700",
+   "eq": "T:4F4320",
+   "via": "gs-bind-origin",
+   "site": "0x4f43d9"
+  },
+  {
+   "gs": "GS:10:4:0x53F650",
+   "eq": "T:540050",
+   "via": "gs-bind-origin",
+   "site": "0x5400c7"
+  },
+  {
+   "gs": "GS:12:0:0x4F4410",
+   "eq": "G:B07C48",
+   "via": "gs-bind-origin",
+   "site": "0x6a7e3b"
+  },
+  {
+   "gs": "GS:13:0:0x4F4450",
+   "eq": "G:B07C48",
+   "via": "gs-bind-origin",
+   "site": "0x6a7ff6"
+  },
+  {
+   "gs": "GS:28:0:0x565C10",
+   "eq": "T:4ACE70",
+   "via": "gs-bind-origin",
+   "site": "0x4acf0d"
+  },
+  {
+   "gs": "GS:28:0:0x565C10",
+   "eq": "T:5BDF70",
+   "via": "gs-bind-origin",
+   "site": "0x5be150"
+  },
+  {
+   "gs": "GS:2:0:0x40B180",
+   "eq": "M:6551C0:this:0x122C",
+   "via": "gs-bind-origin",
+   "site": "0x655226"
+  },
+  {
+   "gs": "GS:2:0:0x40BAE0",
+   "eq": "T:438E70",
+   "via": "gs-bind-origin",
+   "site": "0x438fb4"
+  },
+  {
+   "gs": "GS:2:0:0x40BAE0",
+   "eq": "T:663B40",
+   "via": "gs-bind-origin",
+   "site": "0x663c93"
+  },
+  {
+   "gs": "GS:2:0:0x45A560",
+   "eq": "M:43BCF0:this:0x68C",
+   "via": "gs-bind-origin",
+   "site": "0x43c069"
+  },
+  {
+   "gs": "GS:2:0:0x45A560",
+   "eq": "P:43BCF0:0",
+   "via": "gs-bind-origin",
+   "site": "0x43c048"
+  },
+  {
+   "gs": "GS:2:0:0x45A560",
+   "eq": "P:43BCF0:0",
+   "via": "gs-pdirect",
+   "site": "0x43c048"
+  },
+  {
+   "gs": "GS:2:0:0x477E10",
+   "eq": "M:488850:this:0x17C",
+   "via": "gs-bind-origin",
+   "site": "0x488885"
+  },
+  {
+   "gs": "GS:2:0:0x478DB0",
+   "eq": "M:7240B0:this:0x18",
+   "via": "gs-bind-origin",
+   "site": "0x7240db"
+  },
+  {
+   "gs": "GS:2:0:0x478DB0",
+   "eq": "M:7241A0:this:0x18",
+   "via": "gs-bind-origin",
+   "site": "0x7241d1"
+  },
+  {
+   "gs": "GS:2:0:0x478DB0",
+   "eq": "M:724200:this:0x18",
+   "via": "gs-bind-origin",
+   "site": "0x724294"
+  },
+  {
+   "gs": "GS:2:0:0x478DB0",
+   "eq": "M:724730:this:0x18",
+   "via": "gs-bind-origin",
+   "site": "0x7247c5"
+  },
+  {
+   "gs": "GS:2:0:0x4D2BC0",
+   "eq": "M:4D0EF0:this:0x5C",
+   "via": "gs-bind-origin",
+   "site": "0x4d12cb"
+  },
+  {
+   "gs": "GS:2:0:0x4D2BC0",
+   "eq": "M:4D1370:this:0x5C",
+   "via": "gs-bind-origin",
+   "site": "0x4d14fc"
+  },
+  {
+   "gs": "GS:2:0:0x4E0360",
+   "eq": "M:6F8DF0:this:0x460",
+   "via": "gs-bind-origin",
+   "site": "0x6f9302"
+  },
+  {
+   "gs": "GS:2:0:0x558280",
+   "eq": "M:5576A0:this:0x3C",
+   "via": "gs-bind-origin",
+   "site": "0x5576d5"
+  },
+  {
+   "gs": "GS:2:0:0x7B22E0",
+   "eq": "T:7B13D0",
+   "via": "gs-bind-origin",
+   "site": "0x7b16fe"
+  },
+  {
+   "gs": "GS:2:0:0x7B22E0",
+   "eq": "T:7B2FF0",
+   "via": "gs-bind-origin",
+   "site": "0x7b3083"
+  },
+  {
+   "gs": "GS:2:0:0x7B28E0",
+   "eq": "M:7B23B0:this:0x28",
+   "via": "gs-bind-origin",
+   "site": "0x7b248a"
+  },
+  {
+   "gs": "GS:2:0:0x7B28E0",
+   "eq": "M:7B23B0:this:0x40",
+   "via": "gs-bind-origin",
+   "site": "0x7b2444"
+  },
+  {
+   "gs": "GS:2:0:0x7B28E0",
+   "eq": "P:7B24E0:14",
+   "via": "gs-bind-origin",
+   "site": "0x7b254d"
+  },
+  {
+   "gs": "GS:2:0:0x7B28E0",
+   "eq": "P:7B24E0:8",
+   "via": "gs-bind-origin",
+   "site": "0x7b2593"
+  },
+  {
+   "gs": "GS:2:0:0x7B4360",
+   "eq": "M:7B3450:this:0x3F550",
+   "via": "gs-bind-origin",
+   "site": "0x7b35be"
+  },
+  {
+   "gs": "GS:30:0:0x411510",
+   "eq": "T:4AED70",
+   "via": "gs-bind-origin",
+   "site": "0x4aedbc"
+  },
+  {
+   "gs": "GS:30:0:0x411510",
+   "eq": "T:4BB080",
+   "via": "gs-bind-origin",
+   "site": "0x4bb0b9"
+  },
+  {
+   "gs": "GS:30:0:0x411510",
+   "eq": "T:4BC750",
+   "via": "gs-bind-origin",
+   "site": "0x4bc7ce"
+  },
+  {
+   "gs": "GS:30:0:0x411510",
+   "eq": "T:4BDF00",
+   "via": "gs-bind-origin",
+   "site": "0x4bdf9c"
+  },
+  {
+   "gs": "GS:30:0:0x411510",
+   "eq": "T:7BB050",
+   "via": "gs-bind-origin",
+   "site": "0x7bb07f"
+  },
+  {
+   "gs": "GS:30:0:0x4E1970",
+   "eq": "P:4E2830:0",
+   "via": "gs-pdirect",
+   "site": "0x4e284d"
+  },
+  {
+   "gs": "GS:314:0:0x4DE7B0",
+   "eq": "T:4D7170",
+   "via": "gs-bind-origin",
+   "site": "0x4d7318"
+  },
+  {
+   "gs": "GS:315:0:0x4DE940",
+   "eq": "M:4D85D0:this:0x55C",
+   "via": "gs-bind-origin",
+   "site": "0x4d8611"
+  },
+  {
+   "gs": "GS:324:1:0x4DAF10",
+   "eq": "S:4144B0:var_94",
+   "via": "gs-slot",
+   "site": "0x4149d7"
+  },
+  {
+   "gs": "GS:324:2:0x4DAF10",
+   "eq": "S:4144B0:var_c4",
+   "via": "gs-slot",
+   "site": "0x4149d7"
+  },
+  {
+   "gs": "GS:324:4:0x4DAF10",
+   "eq": "P:4144B0:1",
+   "via": "gs-pdirect",
+   "site": "0x4149d7"
+  },
+  {
+   "gs": "GS:324:6:0x4DAF10",
+   "eq": "EAX:4144B0:4149AA",
+   "via": "gs-eax",
+   "site": "0x4149d7"
+  },
+  {
+   "gs": "GS:324:6:0x4DAF10",
+   "eq": "EAX:73B470:73B8AA",
+   "via": "gs-eax",
+   "site": "0x73b8ce"
+  },
+  {
+   "gs": "GS:330:0:0x41BBD0",
+   "eq": "M:41A5C0:this:0x6C4",
+   "via": "gs-bind-origin",
+   "site": "0x41a7e0"
+  },
+  {
+   "gs": "GS:330:0:0x41BBD0",
+   "eq": "M:41AA80:this:0x6C4",
+   "via": "gs-bind-origin",
+   "site": "0x41ab3c"
+  },
+  {
+   "gs": "GS:341:0:0x73B470",
+   "eq": "S:73CEC0:var_34",
+   "via": "gs-bind-origin",
+   "site": "0x73d359"
+  },
+  {
+   "gs": "GS:341:1:0x73B470",
+   "eq": "T:73CEC0",
+   "via": "gs-bind-origin",
+   "site": "0x73d359"
+  },
+  {
+   "gs": "GS:342:0:0x73C5F0",
+   "eq": "S:73CEC0:var_34",
+   "via": "gs-bind-origin",
+   "site": "0x73d38f"
+  },
+  {
+   "gs": "GS:342:1:0x73C5F0",
+   "eq": "T:73CEC0",
+   "via": "gs-bind-origin",
+   "site": "0x73d38f"
+  },
+  {
+   "gs": "GS:35:0:0x4E25A0",
+   "eq": "EAX:4E2830:4E295B",
+   "via": "gs-eax",
+   "site": "0x4e2964"
+  },
+  {
+   "gs": "GS:35:0:0x6C67F0",
+   "eq": "T:6C6640",
+   "via": "gs-bind-origin",
+   "site": "0x6c6663"
+  },
+  {
+   "gs": "GS:37:0:0x4C32E0",
+   "eq": "T:4C3110",
+   "via": "gs-bind-origin",
+   "site": "0x4c3163"
+  },
+  {
+   "gs": "GS:37:0:0x720140",
+   "eq": "T:71FFE0",
+   "via": "gs-bind-origin",
+   "site": "0x720003"
+  },
+  {
+   "gs": "GS:38:0:0x4A9DD0",
+   "eq": "T:4A9DD0",
+   "via": "gs-bind-origin",
+   "site": "0x4a9f01"
+  },
+  {
+   "gs": "GS:38:0:0x4C3420",
+   "eq": "T:4C3190",
+   "via": "gs-bind-origin",
+   "site": "0x4c3271"
+  },
+  {
+   "gs": "GS:38:1:0x4A9DD0",
+   "eq": "T:4A9DD0",
+   "via": "gs-bind-origin",
+   "site": "0x4a9fbd"
+  },
+  {
+   "gs": "GS:39:0:0x4AA050",
+   "eq": "T:4AA050",
+   "via": "gs-bind-origin",
+   "site": "0x4aa171"
+  },
+  {
+   "gs": "GS:39:1:0x4AA050",
+   "eq": "T:4AA050",
+   "via": "gs-bind-origin",
+   "site": "0x4aa229"
+  },
+  {
+   "gs": "GS:40:0:0x427B50",
+   "eq": "T:428C30",
+   "via": "gs-bind-origin",
+   "site": "0x428d9c"
+  },
+  {
+   "gs": "GS:40:0:0x4E25D0",
+   "eq": "M:4E2830:this:0x38",
+   "via": "gs-bind-origin",
+   "site": "0x4e28f4"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "M:4E2830:this:0x34",
+   "via": "gs-bind-origin",
+   "site": "0x4e288d"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "M:4E29A0:this:0x30",
+   "via": "gs-bind-origin",
+   "site": "0x4e29bf"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "M:4E2B50:this:0x34",
+   "via": "gs-bind-origin",
+   "site": "0x4e2bf1"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "M:4E2B50:this:0x40",
+   "via": "gs-bind-origin",
+   "site": "0x4e2be1"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "T:4E2690",
+   "via": "gs-bind-origin",
+   "site": "0x4e2718"
+  },
+  {
+   "gs": "GS:41:0:0x4E2650",
+   "eq": "T:4E2B50",
+   "via": "gs-bind-origin",
+   "site": "0x4e2bd1"
+  },
+  {
+   "gs": "GS:42:0:0x4886C0",
+   "eq": "EAX:557800:557819",
+   "via": "gs-eax",
+   "site": "0x55781f"
+  },
+  {
+   "gs": "GS:42:1:0x464AC0",
+   "eq": "M:449440:this:0x520",
+   "via": "gs-bind-origin",
+   "site": "0x4494a3"
+  },
+  {
+   "gs": "GS:48:0:0x557B70",
+   "eq": "M:557F40:this:0x16C",
+   "via": "gs-bind-origin",
+   "site": "0x557f6e"
+  },
+  {
+   "gs": "GS:48:0:0x557B70",
+   "eq": "EAX:557B10:557B55",
+   "via": "gs-eax",
+   "site": "0x557b5e"
+  },
+  {
+   "gs": "GS:49:2:0x5C2DE0",
+   "eq": "T:5CA800",
+   "via": "gs-bind-origin",
+   "site": "0x5ca939"
+  },
+  {
+   "gs": "GS:4:0:0x4E0440",
+   "eq": "M:7077C0:this:0x458",
+   "via": "gs-bind-origin",
+   "site": "0x707c3b"
+  },
+  {
+   "gs": "GS:5:3:0x774CD0",
+   "eq": "T:775110",
+   "via": "gs-bind-origin",
+   "site": "0x7752e6"
+  },
+  {
+   "gs": "GS:6:0:0x4F42B0",
+   "eq": "T:4ACE70",
+   "via": "gs-bind-origin",
+   "site": "0x4ad007"
+  }
+ ]
+}
