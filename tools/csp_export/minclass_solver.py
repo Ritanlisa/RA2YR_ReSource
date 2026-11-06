@@ -72,7 +72,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
-            "AL", "LS", "SS", "PP", "CB", "CC", "CR"]
+            "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -116,6 +116,7 @@ FAMILY_DESC = {
     "CB": "COM/compiler-signature: GUID-compare iface + qi-triple receiver -> IUnknown-descendant domain (strict)",
     "CC": "COM callback GUID-compare QI receivers -> IUnknown-descendant domain (strict, compiler-signature L5; evidence array of com_callback_types.json; guid_compares/callback_registrations are generator-side informational channels, no emitable spelling)",
     "CR": "CRT call-pattern arg/return types: str family / memcpy src / wsprintfA dst / fopen path+mode / u64 reg+stack pairs -> char*/char[N]/unsigned long long (strict, compiler-signature L6)",
+    "FP": "FPU constant linkage: fild/fistp int-load/store + fldz/fld1/.rdata FP-constant producer on x87 stack-top when member FPU mem-op touches [base+off] -> float/double member family (strict, compiler-signature L7)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3002,6 +3003,18 @@ def main():
     except Exception as _e_cr:
         census["CR"] = census.get("CR", 0)
         print("[CR] skipped: %r" % _e_cr, flush=True)
+
+    # ---------------- FP：编译器签名 L7（严格）----------------
+    # FP：浮点常量联动（fpu_const_types.json 的 evidence 数组，行格式
+    # {ent, types:["double"|...], via:"FPC@<site>", const:{addr,semantic}}；
+    # 生成器 = .omo/agents/fpu7，producer form = fld .rdata FP 常量在 x87
+    # 栈顶 + member FPU mem-op 触达 [base+off]）。证据族语义不在此处改动。
+    try:
+        census["FP"] = _load_type_family("anchors/fpu_const_types.json", "FP")
+        print("[FP] FPU-constant member types: %d" % census["FP"], flush=True)
+    except Exception as _e_fp:
+        census["FP"] = census.get("FP", 0)
+        print("[FP] skipped: %r" % _e_fp, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):

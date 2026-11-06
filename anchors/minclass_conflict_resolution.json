@@ -2035,6 +2035,31 @@
   "exact": {}
  },
  {
+  "cluster": "M:41FD60:this:0x104",
+  "status": "inconsistent",
+  "families": [
+   "FP",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "FP": 1
+  },
+  "ents": [
+   "M:41FD60:this:0x104"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "FP": [
+    "int"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:41FD60:this:0xC0",
   "status": "inconsistent",
   "families": [
@@ -2370,6 +2395,7 @@
   "cluster": "M:70B570:this:0x328",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -2377,7 +2403,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:70B570:this:0x328"
@@ -2392,6 +2419,9 @@
    ],
    "IV": [
     "Float"
+   ],
+   "FP": [
+    "Float"
    ]
   },
   "exact": {}
@@ -2400,6 +2430,7 @@
   "cluster": "M:70B570:this:0x32C",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -2407,7 +2438,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:70B570:this:0x32C"
@@ -2421,6 +2453,9 @@
     "Float"
    ],
    "IV": [
+    "Float"
+   ],
+   "FP": [
     "Float"
    ]
   },
@@ -2866,6 +2901,31 @@
   "exact": {}
  },
  {
+  "cluster": "M:4361D0:this:0xC0",
+  "status": "inconsistent",
+  "families": [
+   "FP",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "FP": 1
+  },
+  "ents": [
+   "M:4361D0:this:0xC0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "FP": [
+    "int"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:468090:this:0xE8",
   "status": "inconsistent",
   "families": [
@@ -2966,6 +3026,31 @@
    ],
    "LS": [
     "double"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:73B470:this:0x4",
+  "status": "inconsistent",
+  "families": [
+   "FP",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "FP": 1
+  },
+  "ents": [
+   "M:73B470:this:0x4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "void *"
+   ],
+   "FP": [
+    "int"
    ]
   },
   "exact": {}
@@ -6615,6 +6700,7 @@
   "cluster": "M:4151E0:this:0x2E8",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -6622,7 +6708,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:4151E0:this:0x2E8"
@@ -6636,6 +6723,9 @@
     "Float"
    ],
    "IV": [
+    "Float"
+   ],
+   "FP": [
     "Float"
    ]
   },
@@ -13271,6 +13361,7 @@
   "cluster": "M:4361D0:this:0xD0",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -13278,7 +13369,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:4361D0:this:0xD0"
@@ -13292,6 +13384,9 @@
     "double"
    ],
    "IV": [
+    "double"
+   ],
+   "FP": [
     "double"
    ]
   },
@@ -25231,12 +25326,14 @@
   "cluster": "M:468670:this:0xE8",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "MR"
   ],
   "family_sizes": {
    "MR": 1,
-   "IT": 1
+   "IT": 1,
+   "FP": 1
   },
   "ents": [
    "M:468670:this:0xE8"
@@ -25248,6 +25345,9 @@
    ],
    "IT": [
     "double"
+   ],
+   "FP": [
+    "double"
    ]
   },
   "exact": {}
@@ -25256,6 +25356,7 @@
   "cluster": "M:468670:this:0xF0",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -25263,7 +25364,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:468670:this:0xF0"
@@ -25278,6 +25380,9 @@
    ],
    "IV": [
     "double"
+   ],
+   "FP": [
+    "double"
    ]
   },
   "exact": {}
@@ -25286,6 +25391,7 @@
   "cluster": "M:468670:this:0xF8",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -25293,7 +25399,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:468670:this:0xF8"
@@ -25307,6 +25414,9 @@
     "double"
    ],
    "IV": [
+    "double"
+   ],
+   "FP": [
     "double"
    ]
   },
@@ -86503,6 +86613,7 @@
   "cluster": "M:6D2540:this:0xD8",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -86510,7 +86621,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:6D2540:this:0xD8"
@@ -86525,6 +86637,9 @@
    ],
    "IV": [
     "Float"
+   ],
+   "FP": [
+    "Float"
    ]
   },
   "exact": {}
@@ -86533,6 +86648,7 @@
   "cluster": "M:6D2540:this:0xDC",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -86540,7 +86656,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:6D2540:this:0xDC"
@@ -86554,6 +86671,9 @@
     "Float"
    ],
    "IV": [
+    "Float"
+   ],
+   "FP": [
     "Float"
    ]
   },
@@ -111862,6 +111982,7 @@
   "cluster": "M:762AF0:this:0x138",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -111869,7 +111990,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:762AF0:this:0x138"
@@ -111884,6 +112006,9 @@
    ],
    "IV": [
     "double"
+   ],
+   "FP": [
+    "double"
    ]
   },
   "exact": {}
@@ -111892,6 +112017,7 @@
   "cluster": "M:762AF0:this:0x140",
   "status": "inconsistent",
   "families": [
+   "FP",
    "IT",
    "IV",
    "MR"
@@ -111899,7 +112025,8 @@
   "family_sizes": {
    "MR": 1,
    "IT": 1,
-   "IV": 1
+   "IV": 1,
+   "FP": 1
   },
   "ents": [
    "M:762AF0:this:0x140"
@@ -111913,6 +112040,9 @@
     "double"
    ],
    "IV": [
+    "double"
+   ],
+   "FP": [
     "double"
    ]
   },
@@ -117409,6 +117539,32 @@
    "SG": [
     "short",
     "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:54D0F0:this:0x80",
+  "status": "inconsistent",
+  "families": [
+   "FP",
+   "IG"
+  ],
+  "family_sizes": {
+   "IG": 2,
+   "FP": 1
+  },
+  "ents": [
+   "M:54D0F0:this:0x80"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IG": [
+    "Char",
+    "unsigned char"
+   ],
+   "FP": [
+    "int"
    ]
   },
   "exact": {}
