@@ -1,523 +1,11 @@
 {
 "meta": {
-"ents": 912,
-"events": 935
+"ents": 329,
+"removed_self_installs": 583,
+"filter": "conf899 audit fix #1 (per-entry verified MI-column misreads); ledger .omo/agents/fixmr/mt_final.json",
+"source_events": 935
 },
 "evidence": [
-{
-"ent": "M:40D290:this:0x5518",
-"classes": [
-"MouseClass"
-]
-},
-{
-"ent": "M:410170:this:0x8",
-"classes": [
-"AbstractClass",
-"INoticeSink"
-]
-},
-{
-"ent": "M:410170:this:0xC",
-"classes": [
-"AbstractClass",
-"INoticeSource"
-]
-},
-{
-"ent": "M:410170:this:0x4",
-"classes": [
-"AbstractClass"
-]
-},
-{
-"ent": "M:4101C0:this:0x8",
-"classes": [
-"AbstractClass",
-"INoticeSink"
-]
-},
-{
-"ent": "M:4101C0:this:0xC",
-"classes": [
-"AbstractClass",
-"INoticeSource"
-]
-},
-{
-"ent": "M:4101C0:this:0x4",
-"classes": [
-"AbstractClass"
-]
-},
-{
-"ent": "M:4105A0:this:0x4",
-"classes": [
-"AbstractClass"
-]
-},
-{
-"ent": "M:4105A0:this:0x8",
-"classes": [
-"AbstractClass"
-]
-},
-{
-"ent": "M:4105A0:this:0xC",
-"classes": [
-"AbstractClass"
-]
-},
-{
-"ent": "M:410800:this:0x4",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410800:this:0x8",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410800:this:0xC",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410960:this:0x4",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410960:this:0x8",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410960:this:0xC",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:4109C0:this:0x4",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:4109C0:this:0x8",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:4109C0:this:0xC",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410C30:this:0x4",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410C30:this:0x8",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:410C30:this:0xC",
-"classes": [
-"AbstractTypeClass"
-]
-},
-{
-"ent": "M:413D20:this:0x8",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:413D20:this:0xC",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:413D20:this:0x6C0",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:414080:this:0x8",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:414080:this:0xC",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:414080:this:0x6C0",
-"classes": [
-"AircraftClass"
-]
-},
-{
-"ent": "M:41C8B0:this:0x8",
-"classes": [
-"AircraftTypeClass"
-]
-},
-{
-"ent": "M:41C8B0:this:0xC",
-"classes": [
-"AircraftTypeClass"
-]
-},
-{
-"ent": "M:41CFE0:this:0x4",
-"classes": [
-"AircraftTypeClass"
-]
-},
-{
-"ent": "M:41CFE0:this:0x8",
-"classes": [
-"AircraftTypeClass"
-]
-},
-{
-"ent": "M:41CFE0:this:0xC",
-"classes": [
-"AircraftTypeClass"
-]
-},
-{
-"ent": "M:41D300:this:0x4",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41D300:this:0x8",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41D300:this:0xC",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41D380:this:0x4",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41D380:this:0x8",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41D380:this:0xC",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41DD50:this:0x4",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41DD50:this:0x8",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41DD50:this:0xC",
-"classes": [
-"AirstrikeClass"
-]
-},
-{
-"ent": "M:41E350:this:0x4",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:41E350:this:0x8",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:41E350:this:0xC",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:41FFF0:this:0x4",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:41FFF0:this:0x8",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:41FFF0:this:0xC",
-"classes": [
-"AITriggerTypeClass"
-]
-},
-{
-"ent": "M:420960:this:0x4",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:420960:this:0x8",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:420960:this:0xC",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:420AF0:this:0x4",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:420AF0:this:0x8",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:420AF0:this:0xC",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:421730:this:0x4",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:421730:this:0x8",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:421730:this:0xC",
-"classes": [
-"AlphaShapeClass"
-]
-},
-{
-"ent": "M:421EA0:this:0x8",
-"classes": [
-"AnimClass"
-]
-},
-{
-"ent": "M:422720:this:0x4",
-"classes": [
-"AnimClass"
-]
-},
-{
-"ent": "M:422720:this:0x8",
-"classes": [
-"AnimClass"
-]
-},
-{
-"ent": "M:4228E0:this:0x4",
-"classes": [
-"AnimClass"
-]
-},
-{
-"ent": "M:4228E0:this:0x8",
-"classes": [
-"AnimClass"
-]
-},
-{
-"ent": "M:427530:this:0x8",
-"classes": [
-"AnimTypeClass"
-]
-},
-{
-"ent": "M:427530:this:0xC",
-"classes": [
-"AnimTypeClass"
-]
-},
-{
-"ent": "M:428EA0:this:0x4",
-"classes": [
-"AnimTypeClass"
-]
-},
-{
-"ent": "M:428EA0:this:0x8",
-"classes": [
-"AnimTypeClass"
-]
-},
-{
-"ent": "M:428EA0:this:0xC",
-"classes": [
-"AnimTypeClass"
-]
-},
-{
-"ent": "M:435820:this:0x4",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:435820:this:0x8",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:435820:this:0xC",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:4370C0:this:0x4",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:4370C0:this:0x8",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:4370C0:this:0xC",
-"classes": [
-"BuildingLightClass"
-]
-},
-{
-"ent": "M:4385D0:this:0x4",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:4385D0:this:0x8",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:4385D0:this:0xC",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:4393F0:this:0x4",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:4393F0:this:0x8",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:4393F0:this:0xC",
-"classes": [
-"BombClass"
-]
-},
-{
-"ent": "M:43A350:this:0x4",
-"classes": [
-"NeuronClass"
-]
-},
-{
-"ent": "M:43A350:this:0x8",
-"classes": [
-"NeuronClass"
-]
-},
-{
-"ent": "M:43A350:this:0xC",
-"classes": [
-"NeuronClass"
-]
-},
-{
-"ent": "M:43A9C0:this:0x4",
-"classes": [
-"NeuronClass"
-]
-},
-{
-"ent": "M:43A9C0:this:0x8",
-"classes": [
-"NeuronClass"
-]
-},
-{
-"ent": "M:43A9C0:this:0xC",
-"classes": [
-"NeuronClass"
-]
-},
 {
 "ent": "M:43B680:this:0x66C",
 "classes": [
@@ -549,57 +37,9 @@
 ]
 },
 {
-"ent": "M:45DD90:this:0x8",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45DD90:this:0xC",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
 "ent": "M:45E520:this:0x1784",
 "classes": [
 "?$VectorClass@V?$TPoint3D@H@@"
-]
-},
-{
-"ent": "M:45E520:this:0x4",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45E520:this:0x8",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45E520:this:0xC",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45E580:this:0x4",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45E580:this:0x8",
-"classes": [
-"BuildingTypeClass"
-]
-},
-{
-"ent": "M:45E580:this:0xC",
-"classes": [
-"BuildingTypeClass"
 ]
 },
 {
@@ -609,123 +49,9 @@
 ]
 },
 {
-"ent": "M:466380:this:0x8",
-"classes": [
-"BulletClass"
-]
-},
-{
-"ent": "M:466380:this:0xC",
-"classes": [
-"BulletClass"
-]
-},
-{
-"ent": "M:466560:this:0x4",
-"classes": [
-"BulletClass"
-]
-},
-{
-"ent": "M:466560:this:0x8",
-"classes": [
-"BulletClass"
-]
-},
-{
-"ent": "M:466560:this:0xC",
-"classes": [
-"BulletClass"
-]
-},
-{
-"ent": "M:46BBC0:this:0x8",
-"classes": [
-"BulletTypeClass"
-]
-},
-{
-"ent": "M:46BBC0:this:0xC",
-"classes": [
-"BulletTypeClass"
-]
-},
-{
-"ent": "M:46C890:this:0x4",
-"classes": [
-"BulletTypeClass"
-]
-},
-{
-"ent": "M:46C890:this:0x8",
-"classes": [
-"BulletTypeClass"
-]
-},
-{
-"ent": "M:46C890:this:0xC",
-"classes": [
-"BulletTypeClass"
-]
-},
-{
-"ent": "M:46CB60:this:0x4",
-"classes": [
-"CampaignClass"
-]
-},
-{
-"ent": "M:46CB60:this:0x8",
-"classes": [
-"CampaignClass"
-]
-},
-{
-"ent": "M:46CB60:this:0xC",
-"classes": [
-"CampaignClass"
-]
-},
-{
-"ent": "M:46D090:this:0x4",
-"classes": [
-"CampaignClass"
-]
-},
-{
-"ent": "M:46D090:this:0x8",
-"classes": [
-"CampaignClass"
-]
-},
-{
-"ent": "M:46D090:this:0xC",
-"classes": [
-"CampaignClass"
-]
-},
-{
 "ent": "M:4717D0:this:0x24",
 "classes": [
 "?$DynamicVectorClass@PAUControlNode@@"
-]
-},
-{
-"ent": "M:4717D0:this:0x4",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:4717D0:this:0x8",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:4717D0:this:0xC",
-"classes": [
-"CaptureManagerClass"
 ]
 },
 {
@@ -735,75 +61,9 @@
 ]
 },
 {
-"ent": "M:471890:this:0x4",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:471890:this:0x8",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:471890:this:0xC",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:4729C0:this:0x4",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:4729C0:this:0x8",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
-"ent": "M:4729C0:this:0xC",
-"classes": [
-"CaptureManagerClass"
-]
-},
-{
 "ent": "M:4729C0:this:0x24",
 "classes": [
 "?$VectorClass@PAUControlNode@@"
-]
-},
-{
-"ent": "M:47BB60:this:0x4",
-"classes": [
-"CellClass"
-]
-},
-{
-"ent": "M:47BB60:this:0x8",
-"classes": [
-"CellClass"
-]
-},
-{
-"ent": "M:47BB60:this:0xC",
-"classes": [
-"CellClass"
-]
-},
-{
-"ent": "M:47BBF0:this:0x8",
-"classes": [
-"CellClass"
-]
-},
-{
-"ent": "M:47BBF0:this:0xC",
-"classes": [
-"CellClass"
 ]
 },
 {
@@ -820,13 +80,13 @@
 ]
 },
 {
-"ent": "M:49E7C0:this:0x28",
+"ent": "M:49E7C0:this:0x10",
 "classes": [
 "?$VectorClass@PAV?$DynamicVectorClass@PAD@@"
 ]
 },
 {
-"ent": "M:49E7C0:this:0x10",
+"ent": "M:49E7C0:this:0x28",
 "classes": [
 "?$VectorClass@PAV?$DynamicVectorClass@PAD@@"
 ]
@@ -838,165 +98,9 @@
 ]
 },
 {
-"ent": "M:4A2820:this:0x4",
-"classes": [
-"CStreamClass"
-]
-},
-{
-"ent": "M:4A2880:this:0x4",
-"classes": [
-"CStreamClass"
-]
-},
-{
-"ent": "M:4A3110:this:0x4",
-"classes": [
-"CStreamClass"
-]
-},
-{
-"ent": "M:4A7A30:this:0x4",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4A7A30:this:0x8",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4A7A30:this:0xC",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4A7C90:this:0x4",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4A7C90:this:0x8",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4A7C90:this:0xC",
-"classes": [
-"DiskLaserClass"
-]
-},
-{
-"ent": "M:4AF540:this:0x4",
-"classes": [
-"DriveLocomotionClass"
-]
-},
-{
-"ent": "M:4B4D00:this:0x4",
-"classes": [
-"DriveLocomotionClass"
-]
-},
-{
-"ent": "M:4B5AB0:this:0x4",
-"classes": [
-"DropPodLocomotionClass"
-]
-},
-{
-"ent": "M:4B5AB0:this:0x18",
-"classes": [
-"DropPodLocomotionClass"
-]
-},
-{
-"ent": "M:4B66F0:this:0x4",
-"classes": [
-"DropPodLocomotionClass"
-]
-},
-{
-"ent": "M:4B66F0:this:0x18",
-"classes": [
-"DropPodLocomotionClass"
-]
-},
-{
-"ent": "M:4C5370:this:0x4",
-"classes": [
-"EMPulseClass"
-]
-},
-{
-"ent": "M:4C5370:this:0x8",
-"classes": [
-"EMPulseClass"
-]
-},
-{
-"ent": "M:4C5370:this:0xC",
-"classes": [
-"EMPulseClass"
-]
-},
-{
-"ent": "M:4C5AC0:this:0x4",
-"classes": [
-"EMPulseClass"
-]
-},
-{
-"ent": "M:4C5AC0:this:0x8",
-"classes": [
-"EMPulseClass"
-]
-},
-{
-"ent": "M:4C5AC0:this:0xC",
-"classes": [
-"EMPulseClass"
-]
-},
-{
 "ent": "M:4C98B0:this:0x40",
 "classes": [
 "?$DynamicVectorClass@PBVTechnoTypeClass@@"
-]
-},
-{
-"ent": "M:4C98B0:this:0x8",
-"classes": [
-"FactoryClass"
-]
-},
-{
-"ent": "M:4C98B0:this:0xC",
-"classes": [
-"FactoryClass"
-]
-},
-{
-"ent": "M:4CA770:this:0x4",
-"classes": [
-"FactoryClass"
-]
-},
-{
-"ent": "M:4CA770:this:0x8",
-"classes": [
-"FactoryClass"
-]
-},
-{
-"ent": "M:4CA770:this:0xC",
-"classes": [
-"FactoryClass"
 ]
 },
 {
@@ -1006,153 +110,15 @@
 ]
 },
 {
-"ent": "M:4CC9A0:this:0x4",
-"classes": [
-"FlyLocomotionClass"
-]
-},
-{
-"ent": "M:4D03A0:this:0x4",
-"classes": [
-"FlyLocomotionClass"
-]
-},
-{
 "ent": "M:4D08B0:this:0x5C",
 "classes": [
 "?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@"
 ]
 },
 {
-"ent": "M:4D08B0:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D08B0:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D08B0:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0980:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0980:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0980:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0C40:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0C40:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0C40:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0EF0:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0EF0:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D0EF0:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1370:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1370:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1370:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1650:this:0x4",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1650:this:0x8",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
-"ent": "M:4D1650:this:0xC",
-"classes": [
-"FoggedObjectClass"
-]
-},
-{
 "ent": "M:4D1650:this:0x5C",
 "classes": [
 "?$VectorClass@UDrawRecord@FoggedObjectClass@@"
-]
-},
-{
-"ent": "M:4D31E0:this:0x4",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D31E0:this:0x8",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D31E0:this:0xC",
-"classes": [
-"FootClass"
 ]
 },
 {
@@ -1168,49 +134,13 @@
 ]
 },
 {
-"ent": "M:4D3540:this:0x4",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3540:this:0x8",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3540:this:0xC",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3590:this:0x4",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3590:this:0x8",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3590:this:0xC",
-"classes": [
-"FootClass"
-]
-},
-{
-"ent": "M:4D3590:this:0x5AC",
+"ent": "M:4D3590:this:0x588",
 "classes": [
 "?$VectorClass@PAVAbstractClass@@"
 ]
 },
 {
-"ent": "M:4D3590:this:0x588",
+"ent": "M:4D3590:this:0x5AC",
 "classes": [
 "?$VectorClass@PAVAbstractClass@@"
 ]
@@ -1228,42 +158,6 @@
 ]
 },
 {
-"ent": "M:4F5190:this:0x4",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F5190:this:0x8",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F5190:this:0xC",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F5190:this:0x24",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F5190:this:0x28",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F5190:this:0x2C",
-"classes": [
-"HouseClass"
-]
-},
-{
 "ent": "M:4F54A0:this:0x5604",
 "classes": [
 "?$DynamicVectorClass@UAngerStruct@@"
@@ -1276,109 +170,7 @@
 ]
 },
 {
-"ent": "M:4F54A0:this:0x4",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F54A0:this:0x8",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F54A0:this:0xC",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F54A0:this:0x24",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F54A0:this:0x28",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F54A0:this:0x2C",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x4",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x8",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0xC",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x24",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x28",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x2C",
-"classes": [
-"HouseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x5700",
-"classes": [
-"BaseClass"
-]
-},
-{
-"ent": "M:4F7140:this:0x561C",
-"classes": [
-"?$VectorClass@UScoutStruct@@"
-]
-},
-{
-"ent": "M:4F7140:this:0x5604",
-"classes": [
-"?$VectorClass@UAngerStruct@@"
-]
-},
-{
-"ent": "M:4F7140:this:0x254",
-"classes": [
-"?$VectorClass@PAVSuperClass@@"
-]
-},
-{
-"ent": "M:4F7140:this:0x16C",
-"classes": [
-"?$VectorClass@PAUStartingTechnoStruct@HouseClass@@"
-]
-},
-{
-"ent": "M:4F7140:this:0x140",
+"ent": "M:4F7140:this:0x110",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
@@ -1390,37 +182,55 @@
 ]
 },
 {
-"ent": "M:4F7140:this:0x110",
+"ent": "M:4F7140:this:0x140",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0xF8",
+"ent": "M:4F7140:this:0x16C",
+"classes": [
+"?$VectorClass@PAUStartingTechnoStruct@HouseClass@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x254",
+"classes": [
+"?$VectorClass@PAVSuperClass@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x38",
+"classes": [
+"?$VectorClass@PAVTagClass@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x50",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0xE0",
+"ent": "M:4F7140:this:0x5604",
 "classes": [
-"?$VectorClass@PAVBuildingClass@@"
+"?$VectorClass@UAngerStruct@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0xC8",
+"ent": "M:4F7140:this:0x561C",
 "classes": [
-"?$VectorClass@PAVBuildingClass@@"
+"?$VectorClass@UScoutStruct@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0xB0",
+"ent": "M:4F7140:this:0x5700",
 "classes": [
-"?$VectorClass@PAVBuildingClass@@"
+"BaseClass"
 ]
 },
 {
-"ent": "M:4F7140:this:0x98",
+"ent": "M:4F7140:this:0x68",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
@@ -1432,33 +242,33 @@
 ]
 },
 {
-"ent": "M:4F7140:this:0x68",
+"ent": "M:4F7140:this:0x98",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0x50",
+"ent": "M:4F7140:this:0xB0",
 "classes": [
 "?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:4F7140:this:0x38",
+"ent": "M:4F7140:this:0xC8",
 "classes": [
-"?$VectorClass@PAVTagClass@@"
+"?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:5113F0:this:0x8",
+"ent": "M:4F7140:this:0xE0",
 "classes": [
-"HouseTypeClass"
+"?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
-"ent": "M:5113F0:this:0xC",
+"ent": "M:4F7140:this:0xF8",
 "classes": [
-"HouseTypeClass"
+"?$VectorClass@PAVBuildingClass@@"
 ]
 },
 {
@@ -1480,45 +290,9 @@
 ]
 },
 {
-"ent": "M:511650:this:0x4",
+"ent": "M:5116A0:this:0x14C",
 "classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:511650:this:0x8",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:511650:this:0xC",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:5116A0:this:0x4",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:5116A0:this:0x8",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:5116A0:this:0xC",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:5116A0:this:0x184",
-"classes": [
-"?$VectorClass@PBVAircraftTypeClass@@"
+"?$VectorClass@PBVInfantryTypeClass@@"
 ]
 },
 {
@@ -1528,39 +302,9 @@
 ]
 },
 {
-"ent": "M:5116A0:this:0x14C",
-"classes": [
-"?$VectorClass@PBVInfantryTypeClass@@"
-]
-},
-{
-"ent": "M:512760:this:0x4",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:512760:this:0x8",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:512760:this:0xC",
-"classes": [
-"HouseTypeClass"
-]
-},
-{
-"ent": "M:512760:this:0x184",
+"ent": "M:5116A0:this:0x184",
 "classes": [
 "?$VectorClass@PBVAircraftTypeClass@@"
-]
-},
-{
-"ent": "M:512760:this:0x168",
-"classes": [
-"?$VectorClass@PBVUnitTypeClass@@"
 ]
 },
 {
@@ -1570,39 +314,15 @@
 ]
 },
 {
-"ent": "M:513C20:this:0x4",
+"ent": "M:512760:this:0x168",
 "classes": [
-"HoverLocomotionClass"
+"?$VectorClass@PBVUnitTypeClass@@"
 ]
 },
 {
-"ent": "M:5172C0:this:0x4",
+"ent": "M:512760:this:0x184",
 "classes": [
-"HoverLocomotionClass"
-]
-},
-{
-"ent": "M:517A50:this:0x8",
-"classes": [
-"InfantryClass"
-]
-},
-{
-"ent": "M:517D90:this:0x8",
-"classes": [
-"InfantryClass"
-]
-},
-{
-"ent": "M:5236A0:this:0x8",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:5236A0:this:0xC",
-"classes": [
-"InfantryTypeClass"
+"?$VectorClass@PBVAircraftTypeClass@@"
 ]
 },
 {
@@ -1624,45 +344,9 @@
 ]
 },
 {
-"ent": "M:523980:this:0x4",
+"ent": "M:5239D0:this:0xE50",
 "classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:523980:this:0x8",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:523980:this:0xC",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:5239D0:this:0x4",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:5239D0:this:0x8",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:5239D0:this:0xC",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:5239D0:this:0xE88",
-"classes": [
-"?$VectorClass@H"
+"?$VectorClass@PBVAnimTypeClass@@"
 ]
 },
 {
@@ -1672,33 +356,15 @@
 ]
 },
 {
-"ent": "M:5239D0:this:0xE50",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:524D70:this:0x4",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:524D70:this:0x8",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:524D70:this:0xC",
-"classes": [
-"InfantryTypeClass"
-]
-},
-{
-"ent": "M:524D70:this:0xE88",
+"ent": "M:5239D0:this:0xE88",
 "classes": [
 "?$VectorClass@H"
+]
+},
+{
+"ent": "M:524D70:this:0xE50",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
 ]
 },
 {
@@ -1708,9 +374,9 @@
 ]
 },
 {
-"ent": "M:524D70:this:0xE50",
+"ent": "M:524D70:this:0xE88",
 "classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
+"?$VectorClass@H"
 ]
 },
 {
@@ -1740,81 +406,9 @@
 ]
 },
 {
-"ent": "M:543780:this:0x4",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
-"ent": "M:543780:this:0x8",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
-"ent": "M:543780:this:0xC",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
-"ent": "M:543B10:this:0x4",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
-"ent": "M:543B10:this:0x8",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
-"ent": "M:543B10:this:0xC",
-"classes": [
-"IsometricTileClass"
-]
-},
-{
 "ent": "M:5447C0:this:0x2A4",
 "classes": [
 "?$DynamicVectorClass@PAG"
-]
-},
-{
-"ent": "M:5447C0:this:0x4",
-"classes": [
-"IsometricTileTypeClass"
-]
-},
-{
-"ent": "M:5447C0:this:0x8",
-"classes": [
-"IsometricTileTypeClass"
-]
-},
-{
-"ent": "M:5447C0:this:0xC",
-"classes": [
-"IsometricTileTypeClass"
-]
-},
-{
-"ent": "M:544A70:this:0x4",
-"classes": [
-"IsometricTileTypeClass"
-]
-},
-{
-"ent": "M:544A70:this:0x8",
-"classes": [
-"IsometricTileTypeClass"
-]
-},
-{
-"ent": "M:544A70:this:0xC",
-"classes": [
-"IsometricTileTypeClass"
 ]
 },
 {
@@ -1824,87 +418,9 @@
 ]
 },
 {
-"ent": "M:54AC40:this:0x4",
-"classes": [
-"JumpjetLocomotionClass"
-]
-},
-{
-"ent": "M:54AC40:this:0x18",
-"classes": [
-"JumpjetLocomotionClass"
-]
-},
-{
-"ent": "M:54DFA0:this:0x4",
-"classes": [
-"JumpjetLocomotionClass"
-]
-},
-{
-"ent": "M:54DFA0:this:0x18",
-"classes": [
-"JumpjetLocomotionClass"
-]
-},
-{
 "ent": "M:54E360:this:0xC",
 "classes": [
 "?$DynamicVectorClass@PAUKamikazeControl@@"
-]
-},
-{
-"ent": "M:554760:this:0x4",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:554760:this:0x8",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:554760:this:0xC",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:554830:this:0x4",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:554830:this:0x8",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:554830:this:0xC",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:555150:this:0x4",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:555150:this:0x8",
-"classes": [
-"LightSourceClass"
-]
-},
-{
-"ent": "M:555150:this:0xC",
-"classes": [
-"LightSourceClass"
 ]
 },
 {
@@ -1926,9 +442,9 @@
 ]
 },
 {
-"ent": "M:55A6C0:this:0x4",
+"ent": "M:565090:this:0x115C",
 "classes": [
-"LocomotionClass"
+"?$DynamicVectorClass@VCell@@"
 ]
 },
 {
@@ -1938,7 +454,7 @@
 ]
 },
 {
-"ent": "M:565090:this:0x115C",
+"ent": "M:565190:this:0x115C",
 "classes": [
 "?$DynamicVectorClass@VCell@@"
 ]
@@ -1947,12 +463,6 @@
 "ent": "M:565190:this:0x138",
 "classes": [
 "?$VectorClass@PAVCellClass@@"
-]
-},
-{
-"ent": "M:565190:this:0x115C",
-"classes": [
-"?$DynamicVectorClass@VCell@@"
 ]
 },
 {
@@ -1968,15 +478,15 @@
 ]
 },
 {
-"ent": "M:5652C0:this:0xD4",
-"classes": [
-"?$VectorClass@VCell@@"
-]
-},
-{
 "ent": "M:5652C0:this:0x50",
 "classes": [
 "?$VectorClass@UZoneConnectionClass@@"
+]
+},
+{
+"ent": "M:5652C0:this:0xD4",
+"classes": [
+"?$VectorClass@VCell@@"
 ]
 },
 {
@@ -1992,43 +502,7 @@
 ]
 },
 {
-"ent": "M:5958E0:this:0x268",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x24C",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x230",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x214",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x1F8",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x1DC",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:5958E0:this:0x1C0",
+"ent": "M:5958E0:this:0x188",
 "classes": [
 "?$VectorClass@H"
 ]
@@ -2040,7 +514,43 @@
 ]
 },
 {
-"ent": "M:5958E0:this:0x188",
+"ent": "M:5958E0:this:0x1C0",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x1DC",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x1F8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x214",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x230",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x24C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:5958E0:this:0x268",
 "classes": [
 "?$VectorClass@H"
 ]
@@ -2049,73 +559,6 @@
 "ent": "M:5AC290:this:0x28",
 "classes": [
 "?$VectorClass@VCell@@"
-]
-},
-{
-"ent": "M:5AFEF0:this:0x4",
-"classes": [
-"MechLocomotionClass"
-]
-},
-{
-"ent": "M:5B1B50:this:0x4",
-"classes": [
-"MechLocomotionClass"
-]
-},
-{
-"ent": "M:5B2DA0:this:0x4",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5B2DA0:this:0x8",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5B2DA0:this:0xC",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5B3A60:this:0x4",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5B3A60:this:0x8",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5B3A60:this:0xC",
-"classes": [
-"MissionClass"
-]
-},
-{
-"ent": "M:5BDA40:this:0x5518",
-"classes": [
-"MouseClass"
-]
-},
-{
-"ent": "M:5BDF70:this:0x5518",
-"classes": [
-"MouseClass"
-]
-},
-{
-"ent": "M:5BE9B0:this:0x5518",
-"classes": [
-"INoticeSink",
-"TabClass"
 ]
 },
 {
@@ -2131,27 +574,15 @@
 ]
 },
 {
-"ent": "M:5CEE60:this:0x44",
-"classes": [
-"?$VectorClass@PAVMSSfxEntry@@"
-]
-},
-{
 "ent": "M:5CEE60:this:0x2C",
 "classes": [
 "?$VectorClass@PAVMSAnimEntry@@"
 ]
 },
 {
-"ent": "M:5D0070:this:0x54",
+"ent": "M:5CEE60:this:0x44",
 "classes": [
-"?$VectorClass@PAVMapSelection@@"
-]
-},
-{
-"ent": "M:5D0070:this:0x3C",
-"classes": [
-"?$VectorClass@PAVMSTextEntry@@"
+"?$VectorClass@PAVMSSfxEntry@@"
 ]
 },
 {
@@ -2161,327 +592,21 @@
 ]
 },
 {
+"ent": "M:5D0070:this:0x3C",
+"classes": [
+"?$VectorClass@PAVMSTextEntry@@"
+]
+},
+{
+"ent": "M:5D0070:this:0x54",
+"classes": [
+"?$VectorClass@PAVMapSelection@@"
+]
+},
+{
 "ent": "M:5D5B60:this:0x8",
 "classes": [
 "?$DynamicVectorClass@PAVMultiplayerTeam@@"
-]
-},
-{
-"ent": "M:5F3900:this:0x4",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3900:this:0x8",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3900:this:0xC",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B50:this:0x4",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B50:this:0x8",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B50:this:0xC",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B80:this:0x4",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B80:this:0x8",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F3B80:this:0xC",
-"classes": [
-"ObjectClass"
-]
-},
-{
-"ent": "M:5F7090:this:0x4",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7090:this:0x8",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7090:this:0xC",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7320:this:0x4",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7320:this:0x8",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7320:this:0xC",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7400:this:0x4",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7400:this:0x8",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5F7400:this:0xC",
-"classes": [
-"ObjectTypeClass"
-]
-},
-{
-"ent": "M:5FC380:this:0x8",
-"classes": [
-"OverlayClass"
-]
-},
-{
-"ent": "M:5FC380:this:0xC",
-"classes": [
-"OverlayClass"
-]
-},
-{
-"ent": "M:5FDF70:this:0x4",
-"classes": [
-"OverlayClass"
-]
-},
-{
-"ent": "M:5FDF70:this:0x8",
-"classes": [
-"OverlayClass"
-]
-},
-{
-"ent": "M:5FDF70:this:0xC",
-"classes": [
-"OverlayClass"
-]
-},
-{
-"ent": "M:5FE250:this:0x8",
-"classes": [
-"OverlayTypeClass"
-]
-},
-{
-"ent": "M:5FE250:this:0xC",
-"classes": [
-"OverlayTypeClass"
-]
-},
-{
-"ent": "M:5FEF30:this:0x4",
-"classes": [
-"OverlayTypeClass"
-]
-},
-{
-"ent": "M:5FEF30:this:0x8",
-"classes": [
-"OverlayTypeClass"
-]
-},
-{
-"ent": "M:5FEF30:this:0xC",
-"classes": [
-"OverlayTypeClass"
-]
-},
-{
-"ent": "M:629210:this:0x4",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:629210:this:0x8",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:629210:this:0xC",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6292B0:this:0x4",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6292B0:this:0x8",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6292B0:this:0xC",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6293E0:this:0x4",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6293E0:this:0x8",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:6293E0:this:0xC",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:62AF70:this:0x4",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:62AF70:this:0x8",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:62AF70:this:0xC",
-"classes": [
-"ParasiteClass"
-]
-},
-{
-"ent": "M:62B5E0:this:0x8",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62B5E0:this:0xC",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62BB20:this:0x4",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62BB20:this:0x8",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62BB20:this:0xC",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62D9A0:this:0x4",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62D9A0:this:0x8",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62D9A0:this:0xC",
-"classes": [
-"ParticleClass"
-]
-},
-{
-"ent": "M:62DC50:this:0x8",
-"classes": [
-"ParticleSystemClass"
-]
-},
-{
-"ent": "M:62DF20:this:0x4",
-"classes": [
-"ParticleSystemClass"
-]
-},
-{
-"ent": "M:62DF20:this:0x8",
-"classes": [
-"ParticleSystemClass"
-]
-},
-{
-"ent": "M:62E070:this:0x4",
-"classes": [
-"ParticleSystemClass"
-]
-},
-{
-"ent": "M:62E070:this:0x8",
-"classes": [
-"ParticleSystemClass"
 ]
 },
 {
@@ -2509,81 +634,9 @@
 ]
 },
 {
-"ent": "M:6440A0:this:0x8",
-"classes": [
-"ParticleSystemTypeClass"
-]
-},
-{
-"ent": "M:6440A0:this:0xC",
-"classes": [
-"ParticleSystemTypeClass"
-]
-},
-{
-"ent": "M:644960:this:0x4",
-"classes": [
-"ParticleSystemTypeClass"
-]
-},
-{
-"ent": "M:644960:this:0x8",
-"classes": [
-"ParticleSystemTypeClass"
-]
-},
-{
-"ent": "M:644960:this:0xC",
-"classes": [
-"ParticleSystemTypeClass"
-]
-},
-{
-"ent": "M:644BE0:this:0x4",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
-"ent": "M:644BE0:this:0x8",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
-"ent": "M:644BE0:this:0xC",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
-"ent": "M:645950:this:0x4",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
-"ent": "M:645950:this:0x8",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
-"ent": "M:645950:this:0xC",
-"classes": [
-"ParticleTypeClass"
-]
-},
-{
 "ent": "M:645950:this:0x2B8",
 "classes": [
 "?$VectorClass@VRGBClass@@"
-]
-},
-{
-"ent": "M:652C00:this:0x125C",
-"classes": [
-"?$VectorClass@VPoint2D@@"
 ]
 },
 {
@@ -2593,7 +646,7 @@
 ]
 },
 {
-"ent": "M:6587A0:this:0x125C",
+"ent": "M:652C00:this:0x125C",
 "classes": [
 "?$VectorClass@VPoint2D@@"
 ]
@@ -2605,27 +658,15 @@
 ]
 },
 {
+"ent": "M:6587A0:this:0x125C",
+"classes": [
+"?$VectorClass@VPoint2D@@"
+]
+},
+{
 "ent": "M:65A750:this:0xE0",
 "classes": [
 "?$VectorClass@PAVTechnoClass@@"
-]
-},
-{
-"ent": "M:65A750:this:0x4",
-"classes": [
-"RadioClass"
-]
-},
-{
-"ent": "M:65A750:this:0x8",
-"classes": [
-"RadioClass"
-]
-},
-{
-"ent": "M:65A750:this:0xC",
-"classes": [
-"RadioClass"
 ]
 },
 {
@@ -2635,96 +676,153 @@
 ]
 },
 {
-"ent": "M:65A7E0:this:0x4",
-"classes": [
-"RadioClass"
-]
-},
-{
-"ent": "M:65A7E0:this:0x8",
-"classes": [
-"RadioClass"
-]
-},
-{
-"ent": "M:65A7E0:this:0xC",
-"classes": [
-"RadioClass"
-]
-},
-{
-"ent": "M:65AEB0:this:0x4",
-"classes": [
-"MissionClass",
-"RadioClass"
-]
-},
-{
-"ent": "M:65AEB0:this:0x8",
-"classes": [
-"MissionClass",
-"RadioClass"
-]
-},
-{
-"ent": "M:65AEB0:this:0xC",
-"classes": [
-"MissionClass",
-"RadioClass"
-]
-},
-{
 "ent": "M:65AEB0:this:0xE0",
 "classes": [
 "?$VectorClass@PAVTechnoClass@@"
 ]
 },
 {
-"ent": "M:65B1E0:this:0x4",
+"ent": "M:665650:this:0x1158",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:65B1E0:this:0x8",
+"ent": "M:665650:this:0x1174",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:65B1E0:this:0xC",
+"ent": "M:665650:this:0x1194",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:65B2F0:this:0x4",
+"ent": "M:665650:this:0x11B0",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:65B2F0:this:0x8",
+"ent": "M:665650:this:0x11CC",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:65B2F0:this:0xC",
+"ent": "M:665650:this:0x11E8",
 "classes": [
-"RadSiteClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:661EC0:this:0x4",
+"ent": "M:665650:this:0x1204",
 "classes": [
-"RocketLocomotionClass"
+"?$TypeList@H"
 ]
 },
 {
-"ent": "M:6635C0:this:0x4",
+"ent": "M:665650:this:0x1220",
 "classes": [
-"RocketLocomotionClass"
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x123C",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1258",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1274",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1290",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x12AC",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x12C8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x12E4",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1304",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1320",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x133C",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1358",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1374",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x1390",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x13AC",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x13C8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x13F0",
+"classes": [
+"?$TypeList@H"
 ]
 },
 {
@@ -3022,403 +1120,7 @@
 ]
 },
 {
-"ent": "M:665650:this:0x1158",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1174",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1194",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x11B0",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x11CC",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x11E8",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1204",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1220",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x123C",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1258",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1274",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1290",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x12AC",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x12C8",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x12E4",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1304",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1320",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x133C",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1358",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1374",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x1390",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x13AC",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x13C8",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:665650:this:0x13F0",
-"classes": [
-"?$TypeList@H"
-]
-},
-{
-"ent": "M:667A30:this:0xA88",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0xA6C",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0xA50",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0xA34",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0xA18",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x9FC",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x9E0",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x9C4",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x9A8",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x98C",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x970",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x954",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x938",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x91C",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x900",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x8E4",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x8C8",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x8AC",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x880",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x850",
-"classes": [
-"?$VectorClass@PBVBuildingTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x834",
-"classes": [
-"?$VectorClass@PBVSmudgeTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x818",
-"classes": [
-"?$VectorClass@PBVSmudgeTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x7FC",
-"classes": [
-"?$VectorClass@PBVSmudgeTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x7E0",
-"classes": [
-"?$VectorClass@PBVSmudgeTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x7C4",
-"classes": [
-"?$VectorClass@PBVSmudgeTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x734",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x6CC",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x648",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x600",
-"classes": [
-"?$VectorClass@PBVVoxelAnimTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x474",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x458",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x43C",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x3E4",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x3C8",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x3AC",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x390",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x374",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x358",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:667A30:this:0x2D8",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x2BC",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x2A0",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x158",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:667A30:this:0x13C",
+"ent": "M:667A30:this:0x104",
 "classes": [
 "?$VectorClass@PBVAnimTypeClass@@"
 ]
@@ -3430,9 +1132,87 @@
 ]
 },
 {
-"ent": "M:667A30:this:0x104",
+"ent": "M:667A30:this:0x13C",
 "classes": [
 "?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x158",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x2A0",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x2BC",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x2D8",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x358",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x374",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x390",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x3AC",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x3C8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x3E4",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x43C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x458",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x474",
+"classes": [
+"?$VectorClass@H"
 ]
 },
 {
@@ -3442,93 +1222,177 @@
 ]
 },
 {
-"ent": "M:6913C0:this:0x4",
+"ent": "M:667A30:this:0x600",
 "classes": [
-"ScriptClass"
+"?$VectorClass@PBVVoxelAnimTypeClass@@"
 ]
 },
 {
-"ent": "M:6913C0:this:0x8",
+"ent": "M:667A30:this:0x648",
 "classes": [
-"ScriptClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:6913C0:this:0xC",
+"ent": "M:667A30:this:0x6CC",
 "classes": [
-"ScriptClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:6916B0:this:0x4",
+"ent": "M:667A30:this:0x734",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:6916B0:this:0x8",
+"ent": "M:667A30:this:0x7C4",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@PBVSmudgeTypeClass@@"
 ]
 },
 {
-"ent": "M:6916B0:this:0xC",
+"ent": "M:667A30:this:0x7E0",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@PBVSmudgeTypeClass@@"
 ]
 },
 {
-"ent": "M:691EE0:this:0x4",
+"ent": "M:667A30:this:0x7FC",
 "classes": [
-"ScriptClass"
+"?$VectorClass@PBVSmudgeTypeClass@@"
 ]
 },
 {
-"ent": "M:691EE0:this:0x8",
+"ent": "M:667A30:this:0x818",
 "classes": [
-"ScriptClass"
+"?$VectorClass@PBVSmudgeTypeClass@@"
 ]
 },
 {
-"ent": "M:691EE0:this:0xC",
+"ent": "M:667A30:this:0x834",
 "classes": [
-"ScriptClass"
+"?$VectorClass@PBVSmudgeTypeClass@@"
 ]
 },
 {
-"ent": "M:691FA0:this:0x4",
+"ent": "M:667A30:this:0x850",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
-"ent": "M:691FA0:this:0x8",
+"ent": "M:667A30:this:0x880",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
-"ent": "M:691FA0:this:0xC",
+"ent": "M:667A30:this:0x8AC",
 "classes": [
-"ScriptTypeClass"
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
-"ent": "M:692290:this:0x5518",
+"ent": "M:667A30:this:0x8C8",
 "classes": [
-"ScrollClass"
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
-"ent": "M:6970A0:this:0x690",
+"ent": "M:667A30:this:0x8E4",
 "classes": [
-"?$DynamicVectorClass@PAVMultiMission@@"
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
-"ent": "M:6970A0:this:0x8F0",
+"ent": "M:667A30:this:0x900",
 "classes": [
-"?$DynamicVectorClass@PAUGlobalPacketType@@"
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x91C",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x938",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x954",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x970",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x98C",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x9A8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x9C4",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x9E0",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x9FC",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xA18",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xA34",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xA50",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xA6C",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xA88",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
 ]
 },
 {
@@ -3562,25 +1426,19 @@
 ]
 },
 {
-"ent": "M:697840:this:0x292C",
+"ent": "M:6970A0:this:0x690",
 "classes": [
-"?$VectorClass@PBG"
+"?$DynamicVectorClass@PAVMultiMission@@"
 ]
 },
 {
-"ent": "M:697840:this:0x2914",
+"ent": "M:6970A0:this:0x8F0",
 "classes": [
-"?$VectorClass@PAD"
+"?$DynamicVectorClass@PAUGlobalPacketType@@"
 ]
 },
 {
-"ent": "M:697840:this:0x28FC",
-"classes": [
-"?$VectorClass@PAVPhoneEntryClass@@"
-]
-},
-{
-"ent": "M:697840:this:0x283C",
+"ent": "M:697840:this:0x280C",
 "classes": [
 "?$VectorClass@PAUNodeNameType@@"
 ]
@@ -3592,15 +1450,27 @@
 ]
 },
 {
-"ent": "M:697840:this:0x280C",
+"ent": "M:697840:this:0x283C",
 "classes": [
 "?$VectorClass@PAUNodeNameType@@"
 ]
 },
 {
-"ent": "M:697840:this:0x8F0",
+"ent": "M:697840:this:0x28FC",
 "classes": [
-"?$VectorClass@PAUGlobalPacketType@@"
+"?$VectorClass@PAVPhoneEntryClass@@"
+]
+},
+{
+"ent": "M:697840:this:0x2914",
+"classes": [
+"?$VectorClass@PAD"
+]
+},
+{
+"ent": "M:697840:this:0x292C",
+"classes": [
+"?$VectorClass@PBG"
 ]
 },
 {
@@ -3610,15 +1480,9 @@
 ]
 },
 {
-"ent": "M:69EC50:this:0x4",
+"ent": "M:697840:this:0x8F0",
 "classes": [
-"ShipLocomotionClass"
-]
-},
-{
-"ent": "M:6A42B0:this:0x4",
-"classes": [
-"ShipLocomotionClass"
+"?$VectorClass@PAUGlobalPacketType@@"
 ]
 },
 {
@@ -3628,291 +1492,15 @@
 ]
 },
 {
-"ent": "M:6A4550:this:0x8",
-"classes": [
-"SideClass"
-]
-},
-{
-"ent": "M:6A4550:this:0xC",
-"classes": [
-"SideClass"
-]
-},
-{
-"ent": "M:6A4930:this:0x4",
-"classes": [
-"SideClass"
-]
-},
-{
-"ent": "M:6A4930:this:0x8",
-"classes": [
-"SideClass"
-]
-},
-{
-"ent": "M:6A4930:this:0xC",
-"classes": [
-"SideClass"
-]
-},
-{
 "ent": "M:6A4930:this:0x98",
 "classes": [
 "?$VectorClass@H"
 ]
 },
 {
-"ent": "M:6AF1A0:this:0x4",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF1A0:this:0x8",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF1A0:this:0xC",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
 "ent": "M:6AF360:this:0x38",
 "classes": [
 "?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@"
-]
-},
-{
-"ent": "M:6AF360:this:0x4",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF360:this:0x8",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF360:this:0xC",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF4A0:this:0x4",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF4A0:this:0x8",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6AF4A0:this:0xC",
-"classes": [
-"SlaveManagerClass"
-]
-},
-{
-"ent": "M:6B4A50:this:0x8",
-"classes": [
-"SmudgeClass"
-]
-},
-{
-"ent": "M:6B4A50:this:0xC",
-"classes": [
-"SmudgeClass"
-]
-},
-{
-"ent": "M:6B4FA0:this:0x4",
-"classes": [
-"SmudgeClass"
-]
-},
-{
-"ent": "M:6B4FA0:this:0x8",
-"classes": [
-"SmudgeClass"
-]
-},
-{
-"ent": "M:6B4FA0:this:0xC",
-"classes": [
-"SmudgeClass"
-]
-},
-{
-"ent": "M:6B5260:this:0x8",
-"classes": [
-"SmudgeTypeClass"
-]
-},
-{
-"ent": "M:6B5260:this:0xC",
-"classes": [
-"SmudgeTypeClass"
-]
-},
-{
-"ent": "M:6B6160:this:0x4",
-"classes": [
-"SmudgeTypeClass"
-]
-},
-{
-"ent": "M:6B6160:this:0x8",
-"classes": [
-"SmudgeTypeClass"
-]
-},
-{
-"ent": "M:6B6160:this:0xC",
-"classes": [
-"SmudgeTypeClass"
-]
-},
-{
-"ent": "M:6B6C90:this:0x4",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B6C90:this:0x8",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B6C90:this:0xC",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B6EA0:this:0x4",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B6EA0:this:0x8",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B6EA0:this:0xC",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B7010:this:0x4",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B7010:this:0x8",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6B7010:this:0xC",
-"classes": [
-"SpawnManagerClass"
-]
-},
-{
-"ent": "M:6CAEC0:this:0x4",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CAEC0:this:0x8",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CAEC0:this:0xC",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CAF90:this:0x8",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CAF90:this:0xC",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CB120:this:0x4",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CB120:this:0x8",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CB120:this:0xC",
-"classes": [
-"SuperClass"
-]
-},
-{
-"ent": "M:6CE5B0:this:0x8",
-"classes": [
-"SuperWeaponTypeClass"
-]
-},
-{
-"ent": "M:6CE5B0:this:0xC",
-"classes": [
-"SuperWeaponTypeClass"
-]
-},
-{
-"ent": "M:6CEFE0:this:0x4",
-"classes": [
-"SuperWeaponTypeClass"
-]
-},
-{
-"ent": "M:6CEFE0:this:0x8",
-"classes": [
-"SuperWeaponTypeClass"
-]
-},
-{
-"ent": "M:6CEFE0:this:0xC",
-"classes": [
-"SuperWeaponTypeClass"
 ]
 },
 {
@@ -3925,299 +1513,6 @@
 "ent": "M:6CF1D0:this:0x4",
 "classes": [
 "?$VectorClass@VSwizzlePointerClass@@"
-]
-},
-{
-"ent": "M:6D1C20:this:0x4",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6D1C20:this:0x8",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6D1C20:this:0xC",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6D1E30:this:0x4",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6D1E30:this:0x8",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6D1E30:this:0xC",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6DC470:this:0x4",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6DC470:this:0x8",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6DC470:this:0xC",
-"classes": [
-"Tactical"
-]
-},
-{
-"ent": "M:6DD000:this:0x4",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6DD000:this:0x8",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6DD000:this:0xC",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6E4660:this:0x4",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6E4660:this:0x8",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6E4660:this:0xC",
-"classes": [
-"TActionClass"
-]
-},
-{
-"ent": "M:6E4DE0:this:0x4",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E4DE0:this:0x8",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E4DE0:this:0xC",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E4F60:this:0x4",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E4F60:this:0x8",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E4F60:this:0xC",
-"classes": [
-"TagClass"
-]
-},
-{
-"ent": "M:6E5B60:this:0x4",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E5B60:this:0x8",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E5B60:this:0xC",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E5CA0:this:0x4",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E5CA0:this:0x8",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E5CA0:this:0xC",
-"classes": [
-"TagTypeClass"
-]
-},
-{
-"ent": "M:6E7E80:this:0x4",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E7E80:this:0x8",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E7E80:this:0xC",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E8000:this:0x8",
-"classes": [
-"AbstractClass",
-"INoticeSink",
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E8000:this:0xC",
-"classes": [
-"AbstractClass",
-"INoticeSource",
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E8000:this:0x4",
-"classes": [
-"AbstractClass",
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E87F0:this:0x4",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E87F0:this:0x8",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E87F0:this:0xC",
-"classes": [
-"TaskForceClass"
-]
-},
-{
-"ent": "M:6E8A90:this:0x4",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6E8A90:this:0x8",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6E8A90:this:0xC",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6E8DE0:this:0x4",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6E8DE0:this:0x8",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6E8DE0:this:0xC",
-"classes": [
-"TeamClass"
-]
-},
-{
-"ent": "M:6F06E0:this:0x4",
-"classes": [
-"TeamTypeClass"
-]
-},
-{
-"ent": "M:6F06E0:this:0x8",
-"classes": [
-"TeamTypeClass"
-]
-},
-{
-"ent": "M:6F06E0:this:0xC",
-"classes": [
-"TeamTypeClass"
-]
-},
-{
-"ent": "M:6F20D0:this:0x4",
-"classes": [
-"TeamTypeClass"
-]
-},
-{
-"ent": "M:6F20D0:this:0x8",
-"classes": [
-"TeamTypeClass"
-]
-},
-{
-"ent": "M:6F20D0:this:0xC",
-"classes": [
-"TeamTypeClass"
 ]
 },
 {
@@ -4239,62 +1534,15 @@
 ]
 },
 {
-"ent": "M:6F2B40:this:0x4",
-"classes": [
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F2B40:this:0x8",
-"classes": [
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F4300:this:0x4",
-"classes": [
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F4300:this:0x8",
-"classes": [
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F4500:this:0x4",
-"classes": [
-"MissionClass",
-"RadioClass",
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F4500:this:0x8",
-"classes": [
-"MissionClass",
-"RadioClass",
-"TechnoClass"
-]
-},
-{
-"ent": "M:6F4500:this:0x458",
-"classes": [
-"?$VectorClass@PAVAbstractClass@@"
-]
-},
-{
 "ent": "M:6F4500:this:0x440",
 "classes": [
 "?$VectorClass@H"
 ]
 },
 {
-"ent": "M:6F4500:this:0xC",
+"ent": "M:6F4500:this:0x458",
 "classes": [
-"MissionClass",
-"RadioClass"
+"?$VectorClass@PAVAbstractClass@@"
 ]
 },
 {
@@ -4412,103 +1660,13 @@
 ]
 },
 {
-"ent": "M:710AF0:this:0x4",
+"ent": "M:711AE0:this:0x314",
 "classes": [
-"TechnoTypeClass"
+"?$VectorClass@PBVVoxelAnimTypeClass@@"
 ]
 },
 {
-"ent": "M:710AF0:this:0x8",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:710AF0:this:0xC",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711840:this:0x4",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711840:this:0x8",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711840:this:0xC",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711AE0:this:0x4",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711AE0:this:0x8",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711AE0:this:0xC",
-"classes": [
-"TechnoTypeClass"
-]
-},
-{
-"ent": "M:711AE0:this:0x4D8",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x4BC",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x4A0",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x484",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x468",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x44C",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x430",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:711AE0:this:0x414",
+"ent": "M:711AE0:this:0x330",
 "classes": [
 "?$VectorClass@H"
 ]
@@ -4520,183 +1678,51 @@
 ]
 },
 {
-"ent": "M:711AE0:this:0x330",
+"ent": "M:711AE0:this:0x414",
 "classes": [
 "?$VectorClass@H"
 ]
 },
 {
-"ent": "M:711AE0:this:0x314",
+"ent": "M:711AE0:this:0x430",
 "classes": [
-"?$VectorClass@PBVVoxelAnimTypeClass@@"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:718000:this:0x4",
+"ent": "M:711AE0:this:0x44C",
 "classes": [
-"TeleportLocomotionClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:718000:this:0x18",
+"ent": "M:711AE0:this:0x468",
 "classes": [
-"TeleportLocomotionClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:71A450:this:0x4",
+"ent": "M:711AE0:this:0x484",
 "classes": [
-"TemporalClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:71A450:this:0x8",
+"ent": "M:711AE0:this:0x4A0",
 "classes": [
-"TemporalClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:71A450:this:0xC",
+"ent": "M:711AE0:this:0x4BC",
 "classes": [
-"TemporalClass"
+"?$VectorClass@H"
 ]
 },
 {
-"ent": "M:71A4E0:this:0x4",
+"ent": "M:711AE0:this:0x4D8",
 "classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71A4E0:this:0x8",
-"classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71A4E0:this:0xC",
-"classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71B1B0:this:0x4",
-"classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71B1B0:this:0x8",
-"classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71B1B0:this:0xC",
-"classes": [
-"TemporalClass"
-]
-},
-{
-"ent": "M:71B7B0:this:0x8",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71B7B0:this:0xC",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71BB90:this:0x8",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71BB90:this:0xC",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71BDF0:this:0x8",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71BDF0:this:0xC",
-"classes": [
-"TerrainClass"
-]
-},
-{
-"ent": "M:71DA80:this:0x8",
-"classes": [
-"TerrainTypeClass"
-]
-},
-{
-"ent": "M:71DA80:this:0xC",
-"classes": [
-"TerrainTypeClass"
-]
-},
-{
-"ent": "M:71E360:this:0x4",
-"classes": [
-"TerrainTypeClass"
-]
-},
-{
-"ent": "M:71E360:this:0x8",
-"classes": [
-"TerrainTypeClass"
-]
-},
-{
-"ent": "M:71E360:this:0xC",
-"classes": [
-"TerrainTypeClass"
-]
-},
-{
-"ent": "M:71E6A0:this:0x4",
-"classes": [
-"TEventClass"
-]
-},
-{
-"ent": "M:71E6A0:this:0x8",
-"classes": [
-"TEventClass"
-]
-},
-{
-"ent": "M:71E6A0:this:0xC",
-"classes": [
-"TEventClass"
-]
-},
-{
-"ent": "M:71FA80:this:0x4",
-"classes": [
-"TEventClass"
-]
-},
-{
-"ent": "M:71FA80:this:0x8",
-"classes": [
-"TEventClass"
-]
-},
-{
-"ent": "M:71FA80:this:0xC",
-"classes": [
-"TEventClass"
+"?$VectorClass@H"
 ]
 },
 {
@@ -4706,381 +1732,9 @@
 ]
 },
 {
-"ent": "M:7216C0:this:0x4",
-"classes": [
-"TiberiumClass"
-]
-},
-{
-"ent": "M:7216C0:this:0x8",
-"classes": [
-"TiberiumClass"
-]
-},
-{
-"ent": "M:7216C0:this:0xC",
-"classes": [
-"TiberiumClass"
-]
-},
-{
-"ent": "M:721880:this:0x4",
-"classes": [
-"TiberiumClass"
-]
-},
-{
-"ent": "M:721880:this:0x8",
-"classes": [
-"TiberiumClass"
-]
-},
-{
-"ent": "M:721880:this:0xC",
-"classes": [
-"TiberiumClass"
-]
-},
-{
 "ent": "M:721880:this:0xC4",
 "classes": [
 "?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:725FA0:this:0x4",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:725FA0:this:0x8",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:725FA0:this:0xC",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:726950:this:0x4",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:726950:this:0x8",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:726950:this:0xC",
-"classes": [
-"TriggerClass"
-]
-},
-{
-"ent": "M:726C80:this:0x4",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:726C80:this:0x8",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:726C80:this:0xC",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:726E00:this:0x4",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:726E00:this:0x8",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:726E00:this:0xC",
-"classes": [
-"TriggerTypeClass"
-]
-},
-{
-"ent": "M:727FD0:this:0x8",
-"classes": [
-"TubeClass"
-]
-},
-{
-"ent": "M:727FD0:this:0xC",
-"classes": [
-"TubeClass"
-]
-},
-{
-"ent": "M:728710:this:0x4",
-"classes": [
-"TubeClass"
-]
-},
-{
-"ent": "M:728710:this:0x8",
-"classes": [
-"TubeClass"
-]
-},
-{
-"ent": "M:728710:this:0xC",
-"classes": [
-"TubeClass"
-]
-},
-{
-"ent": "M:728A00:this:0x4",
-"classes": [
-"TunnelLocomotionClass"
-]
-},
-{
-"ent": "M:7353C0:this:0x8",
-"classes": [
-"UnitClass"
-]
-},
-{
-"ent": "M:735780:this:0x8",
-"classes": [
-"UnitClass"
-]
-},
-{
-"ent": "M:7470D0:this:0x8",
-"classes": [
-"UnitTypeClass"
-]
-},
-{
-"ent": "M:7470D0:this:0xC",
-"classes": [
-"UnitTypeClass"
-]
-},
-{
-"ent": "M:748190:this:0x4",
-"classes": [
-"UnitTypeClass"
-]
-},
-{
-"ent": "M:748190:this:0x8",
-"classes": [
-"UnitTypeClass"
-]
-},
-{
-"ent": "M:748190:this:0xC",
-"classes": [
-"UnitTypeClass"
-]
-},
-{
-"ent": "M:7493B0:this:0x8",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7493B0:this:0xC",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7498D0:this:0x8",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7498D0:this:0xC",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7499F0:this:0x4",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7499F0:this:0x8",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:7499F0:this:0xC",
-"classes": [
-"VoxelAnimClass"
-]
-},
-{
-"ent": "M:74AD80:this:0x8",
-"classes": [
-"VoxelAnimTypeClass"
-]
-},
-{
-"ent": "M:74AD80:this:0xC",
-"classes": [
-"VoxelAnimTypeClass"
-]
-},
-{
-"ent": "M:74BA30:this:0x4",
-"classes": [
-"VoxelAnimTypeClass"
-]
-},
-{
-"ent": "M:74BA30:this:0x8",
-"classes": [
-"VoxelAnimTypeClass"
-]
-},
-{
-"ent": "M:74BA30:this:0xC",
-"classes": [
-"VoxelAnimTypeClass"
-]
-},
-{
-"ent": "M:74C420:this:0x4",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C420:this:0x8",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C420:this:0xC",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C5B0:this:0x8",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C5B0:this:0xC",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C9F0:this:0x4",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C9F0:this:0x8",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:74C9F0:this:0xC",
-"classes": [
-"VeinholeMonsterClass"
-]
-},
-{
-"ent": "M:75AA90:this:0x4",
-"classes": [
-"WalkLocomotionClass"
-]
-},
-{
-"ent": "M:75AA90:this:0x18",
-"classes": [
-"WalkLocomotionClass"
-]
-},
-{
-"ent": "M:75CBE0:this:0x4",
-"classes": [
-"WalkLocomotionClass"
-]
-},
-{
-"ent": "M:75CBE0:this:0x18",
-"classes": [
-"WalkLocomotionClass"
-]
-},
-{
-"ent": "M:75CEC0:this:0x8",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75CEC0:this:0xC",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75D230:this:0x4",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75D230:this:0x8",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75D230:this:0xC",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75D230:this:0x1A8",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:75D230:this:0x18C",
-"classes": [
-"?$VectorClass@PBVVoxelAnimTypeClass@@"
 ]
 },
 {
@@ -5090,27 +1744,21 @@
 ]
 },
 {
-"ent": "M:75E510:this:0x4",
+"ent": "M:75D230:this:0x18C",
 "classes": [
-"WarheadTypeClass"
+"?$VectorClass@PBVVoxelAnimTypeClass@@"
 ]
 },
 {
-"ent": "M:75E510:this:0x8",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75E510:this:0xC",
-"classes": [
-"WarheadTypeClass"
-]
-},
-{
-"ent": "M:75E510:this:0x1A8",
+"ent": "M:75D230:this:0x1A8",
 "classes": [
 "?$VectorClass@H"
+]
+},
+{
+"ent": "M:75E510:this:0x104",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
 ]
 },
 {
@@ -5120,9 +1768,9 @@
 ]
 },
 {
-"ent": "M:75E510:this:0x104",
+"ent": "M:75E510:this:0x1A8",
 "classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
+"?$VectorClass@H"
 ]
 },
 {
@@ -5133,52 +1781,10 @@
 ]
 },
 {
-"ent": "M:75E950:this:0x8",
-"classes": [
-"WaveClass"
-]
-},
-{
 "ent": "M:75EBE0:this:0x1F0",
 "classes": [
 "?$DynamicVectorClass@PAVCellClass@@",
 "?$VectorClass@PAVCellClass@@"
-]
-},
-{
-"ent": "M:75EBE0:this:0x4",
-"classes": [
-"WaveClass"
-]
-},
-{
-"ent": "M:75EBE0:this:0x8",
-"classes": [
-"WaveClass"
-]
-},
-{
-"ent": "M:75ED30:this:0x4",
-"classes": [
-"WaveClass"
-]
-},
-{
-"ent": "M:75ED30:this:0x8",
-"classes": [
-"WaveClass"
-]
-},
-{
-"ent": "M:763200:this:0x4",
-"classes": [
-"WaveClass"
-]
-},
-{
-"ent": "M:763200:this:0x8",
-"classes": [
-"WaveClass"
 ]
 },
 {
@@ -5188,63 +1794,9 @@
 ]
 },
 {
-"ent": "M:763730:this:0x4",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763730:this:0x8",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763730:this:0xC",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
 "ent": "M:763810:this:0x28",
 "classes": [
 "?$DynamicVectorClass@VWaypointClass@@"
-]
-},
-{
-"ent": "M:763810:this:0x4",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763810:this:0x8",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763810:this:0xC",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763E20:this:0x4",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763E20:this:0x8",
-"classes": [
-"WaypointPathClass"
-]
-},
-{
-"ent": "M:763E20:this:0xC",
-"classes": [
-"WaypointPathClass"
 ]
 },
 {
@@ -5266,15 +1818,15 @@
 ]
 },
 {
-"ent": "M:7680C0:this:0xBC",
-"classes": [
-"?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
-]
-},
-{
 "ent": "M:7680C0:this:0x2C",
 "classes": [
 "?$VectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@"
+]
+},
+{
+"ent": "M:7680C0:this:0xBC",
+"classes": [
+"?$VectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
 ]
 },
 {
@@ -5287,18 +1839,6 @@
 "ent": "M:770430:this:0x3C0",
 "classes": [
 "?$VectorClass@VWstring@@"
-]
-},
-{
-"ent": "M:771C70:this:0x8",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771C70:this:0xC",
-"classes": [
-"WeaponTypeClass"
 ]
 },
 {
@@ -5320,45 +1860,9 @@
 ]
 },
 {
-"ent": "M:771F00:this:0x4",
+"ent": "M:771F50:this:0xBC",
 "classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F00:this:0x8",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F00:this:0xC",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F50:this:0x4",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F50:this:0x8",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F50:this:0xC",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:771F50:this:0xF4",
-"classes": [
-"?$VectorClass@PBVAnimTypeClass@@"
+"?$VectorClass@H"
 ]
 },
 {
@@ -5368,39 +1872,9 @@
 ]
 },
 {
-"ent": "M:771F50:this:0xBC",
-"classes": [
-"?$VectorClass@H"
-]
-},
-{
-"ent": "M:7730F0:this:0x4",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:7730F0:this:0x8",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:7730F0:this:0xC",
-"classes": [
-"WeaponTypeClass"
-]
-},
-{
-"ent": "M:7730F0:this:0xF4",
+"ent": "M:771F50:this:0xF4",
 "classes": [
 "?$VectorClass@PBVAnimTypeClass@@"
-]
-},
-{
-"ent": "M:7730F0:this:0xD8",
-"classes": [
-"?$VectorClass@H"
 ]
 },
 {
@@ -5410,9 +1884,15 @@
 ]
 },
 {
-"ent": "M:7B19C0:this:0x8",
+"ent": "M:7730F0:this:0xD8",
 "classes": [
-"?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:7730F0:this:0xF4",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
 ]
 },
 {
@@ -5428,13 +1908,19 @@
 ]
 },
 {
-"ent": "M:7B1AB0:this:0x38",
+"ent": "M:7B19C0:this:0x8",
+"classes": [
+"?$DynamicVectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
+]
+},
+{
+"ent": "M:7B1AB0:this:0x20",
 "classes": [
 "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
 ]
 },
 {
-"ent": "M:7B1AB0:this:0x20",
+"ent": "M:7B1AB0:this:0x38",
 "classes": [
 "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
 ]
@@ -5446,13 +1932,13 @@
 ]
 },
 {
-"ent": "M:7B2780:this:0x38",
+"ent": "M:7B2780:this:0x20",
 "classes": [
 "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
 ]
 },
 {
-"ent": "M:7B2780:this:0x20",
+"ent": "M:7B2780:this:0x38",
 "classes": [
 "?$VectorClass@PAUWinsockBufferType@WinsockInterfaceClass@@"
 ]
@@ -5476,25 +1962,25 @@
 ]
 },
 {
-"ent": "M:7B2E50:this:0x3F550",
-"classes": [
-"?$VectorClass@PAE"
-]
-},
-{
 "ent": "M:7B2E50:this:0x3F338",
 "classes": [
 "?$VectorClass@PAE"
 ]
 },
 {
-"ent": "M:7B4170:this:0x3F550",
+"ent": "M:7B2E50:this:0x3F550",
 "classes": [
 "?$VectorClass@PAE"
 ]
 },
 {
 "ent": "M:7B4170:this:0x3F338",
+"classes": [
+"?$VectorClass@PAE"
+]
+},
+{
+"ent": "M:7B4170:this:0x3F550",
 "classes": [
 "?$VectorClass@PAE"
 ]

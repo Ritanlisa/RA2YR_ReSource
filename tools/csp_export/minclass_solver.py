@@ -71,7 +71,8 @@ import zlib
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
-            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU"]
+            "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
+            "AL", "LS", "SS", "PP", "CB"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -107,6 +108,12 @@ FAMILY_DESC = {
     "C26": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
     "C15": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
     "C19": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
+    # ---- 编译器签名第四层（anchors/align_scale_types.json，全部严格）----
+    "AL": "and-mask pointer alignment -> pointee type family (strict, compiler-signature L4)",
+    "LS": "lea SIB-scale arithmetically-pinned stride -> element type family (strict, compiler-signature L4)",
+    "SS": "struct member-layout signature strict-superset match -> this receiver domain (strict, compiler-signature L4)",
+    "PP": "all-constant push tuple tail: string-literal offsets -> char* param (strict, compiler-signature L4)",
+    "CB": "COM/compiler-signature: GUID-compare iface + qi-triple receiver -> IUnknown-descendant domain (strict)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -996,7 +1003,20 @@ def _cache_write(args, key):
     keydir = _cache_key_dir(args, key)
     for _attempt in range(2):
         try:
-            os.makedirs(keydir, exist_ok=True)
+            if not os.path.isdir(keydir):
+                try:
+                    os.makedirs(keydir, exist_ok=True)
+                except OSError:
+                    # 长跑进程末段 stat/mkdir 层曾自相矛盾（isdir=False 而文件写探针成功、
+                    # makedirs 报幽灵 filename='T:'）——目录存在性不可信时用文件写探针仲裁：
+                    # 能写入即目录真实存在且可写，继续。
+                    try:
+                        _cy = os.path.join(keydir, ".__canary__")
+                        with io.open(_cy, "w") as _f_c:
+                            _f_c.write("x")
+                        os.remove(_cy)
+                    except OSError:
+                        raise
             copied = []
             for name in _CACHE_ARTIFACTS:
                 src = os.path.join(ROOT, "anchors", name)
@@ -1038,9 +1058,10 @@ def _cache_write(args, key):
             except Exception as _e_p:
                 _probe_ok = repr(_e_p)
             print("[cache] diag: keydir.isdir=%s strict.isdir=%s root.isdir=%s "
-                  "probe_write=%r e.filename=%r"
+                  "probe_write=%r e.filename=%r keydir=%r cwd=%r CACHE_ROOT=%r"
                   % (os.path.isdir(keydir), os.path.isdir(os.path.dirname(keydir)),
-                     os.path.isdir(CACHE_ROOT), _probe_ok, getattr(e, "filename", None)),
+                     os.path.isdir(CACHE_ROOT), _probe_ok, getattr(e, "filename", None),
+                     keydir, os.getcwd(), CACHE_ROOT),
                   flush=True)
 
 
@@ -1219,6 +1240,10 @@ def main():
         if _cache_restore(args, _ck, t_start):
             return                      # 命中：产物已复制回 anchors/，直接退出
         print("[cache] MISS -- full solve", flush=True)
+        try:
+            os.makedirs(_cache_key_dir(args, _ck), exist_ok=True)   # 预创建（见 _cache_write 注释）
+        except OSError:
+            pass
     # ---- 增量模式门控（用户裁决：--no-incremental / MINCLASS_NO_CACHE=1 强制全量） ----
     _incr_on = (("--incremental" in sys.argv) or os.environ.get("MINCLASS_INCREMENTAL") == "1") \
         and ("--no-incremental" not in sys.argv) and _cache_on
@@ -2867,6 +2892,93 @@ def main():
             census["MH"] = 0
     except Exception as _e_ms:
         print("[MS] skipped: %r" % _e_ms, flush=True)
+
+    # ---------------- 编译器签名第四层：AL/LS/SS/PP（严格，align_scale_types）----------------
+    # anchors/align_scale_types.json：对齐掩码 / lea 缩放 / 结构布局签名 / 全常量 push 元组。
+    # 用户裁决（2026-11-06）：全部严格层（编译器签名=二进制事实）。
+    try:
+        _asd = jload("anchors/align_scale_types.json", {}) or {}
+        # AL：and reg,{..FE/FC/F8} 对齐掩码——types 只挂在通过前向成员使用门的指针上
+        #（实体属性未成的记录 ent=null，加载器自然滤除）。
+        census["AL"] = _load_type_family_dict(_asd.get("align_evidence"), "AL")
+        print("[AL] ptr-alignment pointee types: %d" % census["AL"], flush=True)
+        # LS：lea SIB 缩放——types 仅挂在算术钉定的 effective_stride 上（scale-only 无 types）。
+        census["LS"] = _load_type_family_dict(_asd.get("lea_scale_evidence"), "LS")
+        print("[LS] lea-scale stride types: %d" % census["LS"], flush=True)
+        # SS：单基址寄存器 >=3 个不同 [reg+off] 偏移 = 结构布局签名；对 class_layouts
+        # 严格超集匹配。this_alias=true 时基址 = 本函数 this → 约束 T:FN 接收者域。
+        # match_truncated=true 的记录类列表被截断（非健全掩码）→ 跳过。
+        _n_ss = 0
+        for _rec_ss in (_asd.get("struct_sig_evidence") or []):
+            if not _rec_ss.get("this_alias") or _rec_ss.get("match_truncated"):
+                continue
+            _fn_ss = _rec_ss.get("fn")
+            if not isinstance(_fn_ss, str) or not _fn_ss:
+                continue
+            m_ss = 0
+            for _c_ss in (_rec_ss.get("match_classes") or []):
+                _ix_ss = _name_ix2.get(str(_c_ss).lower())
+                if _ix_ss is not None:
+                    m_ss |= (1 << _ix_ss)
+            if not m_ss or m_ss == FULL:
+                continue
+            _fa_ss = hx(_fn_ss)
+            if _fa_ss is None:
+                continue
+            _e_ss = "T:%X" % _fa_ss
+            if _e_ss not in ents:
+                touch(_e_ss, "0x%s:this" % _fn_ss)
+            fam["SS"][_e_ss] = fam["SS"].get(_e_ss, FULL) & m_ss
+            _n_ss += 1
+        census["SS"] = _n_ss
+        print("[SS] struct-layout signature receivers: %d" % census["SS"], flush=True)
+        # PP：call 前连续全常量 push 元组。右到左压栈 ⇒ 元组尾部紧贴 call，
+        # args[-1-j] = 形参 j（与元数无关；fastcall/usercall 寄存器传参破坏该锚定 → 跳过）。
+        # 只发 off_str（字符串字面量地址 → char*，SP 同款健全语义）；
+        # imm/off_data 宽度证据过弱且 double hi/lo 双 push 会错位索引——不发。
+        _n_pp = _pp_skip_cc = 0
+        for _rec_pp in (_asd.get("push_pattern_evidence") or []):
+            _ca_pp = hx(_rec_pp.get("callee_addr"))
+            if _ca_pp is None:
+                continue                       # 间接调用无被调方身份
+            _proto_pp = protos.get("0x%08X" % _ca_pp) or protos.get("0x%x" % _ca_pp)
+            _cc_pp = (parse_proto((_proto_pp or {}).get("proto")) or [None, "", None])[1] \
+                if _proto_pp else ""
+            if "fastcall" in _cc_pp or "userpurge" in _cc_pp or "usercall" in _cc_pp:
+                _pp_skip_cc += 1
+                continue
+            _args_pp = _rec_pp.get("args") or []
+            for _j_pp in range(len(_args_pp)):
+                if _args_pp[len(_args_pp) - 1 - _j_pp].get("kind") != "off_str":
+                    continue
+                _e_pp = "P:%X:%d" % (_ca_pp, _j_pp)
+                if _e_pp not in ents:
+                    touch(_e_pp, "0x%08X::param%d" % (_ca_pp, _j_pp))
+                _m_pp = _name_ix2.get("char*")
+                if _m_pp is None:
+                    continue
+                fam["PP"][_e_pp] = fam["PP"].get(_e_pp, FULL) & (1 << _m_pp)
+                _n_pp += 1
+        census["PP"] = _n_pp
+        print("[PP] const-push tuple string params: %d (cc-skip=%d)"
+              % (census["PP"], _pp_skip_cc), flush=True)
+    except Exception as _e_as4:
+        census["AL"] = census.get("AL", 0)
+        census["LS"] = census.get("LS", 0)
+        census["SS"] = census.get("SS", 0)
+        census["PP"] = census.get("PP", 0)
+        print("[AL/LS/SS/PP] skipped: %r" % _e_as4, flush=True)
+
+    # ---------------- CB：COM/回调编译器签名（严格，com_callback_types）----------------
+    # GUID 比较（mov offset IID + repe cmpsd）钉接口身份 → 接收者域 = 该 IID 接口的
+    # IUnknown 后代族；qi 三联（同 vptr 槽 +0/+4/+8 依序调用）= COM 对象判定。
+    # callback_registration 只做记录（类型宇宙无函数指针拼写，生成器侧不发类型）。
+    try:
+        census["CB"] = _load_type_family("anchors/com_callback_types.json", "CB")
+        print("[CB] COM/callback receivers: %d" % census["CB"], flush=True)
+    except Exception as _e_cb:
+        census["CB"] = census.get("CB", 0)
+        print("[CB] skipped: %r" % _e_cb, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
@@ -5555,6 +5667,15 @@ def main():
                       "reuse checkpoint fixpoint (dom=%d entities, post_edges=%d, 0 steps)"
                       % (len(_dom_re), len(_post_lst)), flush=True)
                 return {"dom": _dom_re, "edges": _post_lst, "base": None}
+            # ---- 中和历史注定回退（快速拒绝，省去徒劳传播与基线计算）----
+            # ckpt 中和器曾删边（removed_edges 非空）且捷径未触发（输入或源码有变化）：
+            # 新鲜边集 ⊇ 旧全边集 ⊇ 旧矛盾边；无变宽情形（变宽另有回退，跳过本检查也不影响
+            # 终态——一切路径都通向全量）下单调性保证空域只增不减 → 工作列表必然重引燃旧
+            # 矛盾出空域。直接回退。
+            if _ckc.get("removed_edges"):
+                print("[incr] neutralization history (%d removed edges) dooms worklist -> full"
+                      % len(_ckc.get("removed_edges")), flush=True)
+                return None
             _base_now = _c10_base_dom(_edges_fix)
             _dom = {}
             _seeds = set()
