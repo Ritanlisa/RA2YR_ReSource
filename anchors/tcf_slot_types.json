@@ -1,0 +1,7707 @@
+{
+ "meta": {
+  "generated": "2026-11-06",
+  "generator": ".omo/agents/tcf/gen_tcf_slot_types.py",
+  "sources": [
+   "anchors/slot_param_groups.json",
+   "anchors/vtable_slot_authority.json",
+   "anchors/mangled_alias.json",
+   "src/raw_decomp/fn_6B.c",
+   "src/raw_decomp/fn_6C.c",
+   "src/e4/TClassFactory_e4.cpp",
+   "src/e4/CreateTClassFactory_e4.cpp",
+   "D:/RA2MD/gamemd.exe (retn-imm arity probe, read-only)"
+  ],
+  "scope": "GS groups whose occupants are vtable slots of ?$TClassFactory@V*@@ template instances (77 instances x 5 slots; slots 1 AddRef / 2 Release have no stack params -> no groups)",
+  "ent_id_format": "GS:{slot}:{k}:{root} == \"GS:\" + slot_param_groups.json group key; k indexes IDA-proto stack params excluding this (X134 convention)",
+  "canon_name": "TClassFactory_{T}; mangled_alias.json variant TClassFactory_V{T}__; til/proto variant _TClassFactory_V{T}; e4 carriers use TClassFactory_{T}",
+  "calling_convention_model": "slots dispatched as COM __stdcall with receiver self on stack; IDA misdecorated as __thiscall keeping self as first named stack param -> group k0 == COM receiver self for every slot",
+  "slot_semantics(binary-verified)": {
+   "0": "QueryInterface(self, REFIID riid, void** ppv) retn 0xC - E_POINTER 0x80004003 / E_NOINTERFACE 0x80004002, memcmp IID_IUnknown + 0x7F7CA0, self->AddRef via slot1 [0x6BF8D0, 0x6BFA50]; groups: k0=self k1=riid; ppv unnamed -> no group",
+   "1": "AddRef(self) retn 4 - InterlockedIncrement(self+4) [0x6C4D40]; no params",
+   "2": "Release(self) retn 4 - InterlockedDecrement(self+4), delete when 0 [0x6C0260]; no params",
+   "3": "CreateInstance(self, IUnknown* pUnkOuter, REFIID riid, void** ppv) retn 0x10 - CLASS_E_NOAGGREGATION 0x80040110, operator new(sizeof(T)) + T ctor + T::QueryInterface, slot-8 deleting-dtor on failure [0x6C0290, 0x6C4D90, 0x6C0410]; groups: k0=self k1=pUnkOuter k2=riid; ppv named only in BuildingLightClass proto -> GS 3:3 outlier",
+   "4": "LockServer(self, BOOL fLock) retn 8 - self+4 refcount +/-1 [0x6C0310, 0x6C4E10, 0x6C0490]; groups: k0=self; fLock unnamed -> no group"
+  },
+  "deviation_from_task_brief": [
+   "Task brief placed IUnknown trio at slots 0-2 with CreateInstance/LockServer elsewhere. Binary: slot0=QueryInterface, slot1=AddRef, slot2=Release, slot3=CreateInstance (authority name \"ddtor\" is a misnomer), slot4=LockServer (authority name \"GetSize\" is a misnomer).",
+   "Task brief assumed thiscall with (This, riid, ppv) param order so k0=riid. Arity proof (retn 0xC/0x10/8) + bodies show stdcall COM receivers: k0=self(factory object), shifting riid/pUnkOuter/riid to k1/k1/k2 and leaving ppv/fLock ungrouped family-wide.",
+   "Template-T propagation therefore lands primarily on k0 self (77x3 = receiver class TClassFactory_{T}*), and on created-T only via the single BuildingLight GS 3:3 ppv outlier; created-T out-params of the other 76 instances have no GS group to type."
+  ],
+  "type_spellings": {
+   "self": "void * (COM contract) / TClassFactory_{T}* (class-space, vtable ownership)",
+   "riid": "void *  (REFIID=const GUID*; type_universe.json has _GUID by-value only, no _GUID* spelling)",
+   "pUnkOuter": "void * (IUnknown*)",
+   "ppvObject": "void * * / {T}** class-space (only GS 3:3 BuildingLight)",
+   "fLock": "int (no group exists; recorded here for downstream consumers only)",
+   "class-space note": "TClassFactory_{T}* and {T}** spellings are NOT in type_universe.json closed vocabulary (universe = member_types ANCHORED primitives+arrays); solver spans classes separately per its own meta"
+  },
+  "in_universe_check": {
+   "void *": true,
+   "void * *": true
+  },
+  "layering": "self params carry two entries (tcf-*-COM-contract void* + tcf-template-T TClassFactory_{T}*); prefer tcf-template-T where class-space types are admissible. GS 3:3 ppv carries void * * + {T}**.",
+  "coverage_gaps": "No GS groups exist for: slot0 ppvObject, slot4 fLock, slot1/slot2 params (none). Created-T ({T}) propagation is unrepresentable for 76/77 instances at group level; only BuildingLightClass names the ppv param.",
+  "counts": {
+   "tcf_instances": 77,
+   "gs_groups_covered": 463,
+   "gs_groups_typed": 463,
+   "evidence_entries": 695,
+   "by_via": {
+    "tcf-iunknown": 154,
+    "tcf-template-T": 232,
+    "tcf-com-create": 309
+   },
+   "t_propagations_self_receiver": 231,
+   "t_propagations_created_outparam": 1,
+   "distinct_T_factory_classes": 77
+  }
+ },
+ "evidence": [
+  {
+   "ent": "GS:0:0:0x6C5BD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5BD0",
+   "types": [
+    "TClassFactory_AITriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5BD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5C90",
+   "types": [
+    "TClassFactory_AITriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5D10",
+   "types": [
+    "TClassFactory_AITriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AITriggerTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3650",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3650",
+   "types": [
+    "TClassFactory_AircraftClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3650",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AircraftClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3710",
+   "types": [
+    "TClassFactory_AircraftClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3790",
+   "types": [
+    "TClassFactory_AircraftClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2A50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2A50",
+   "types": [
+    "TClassFactory_AircraftTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2A50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2B10",
+   "types": [
+    "TClassFactory_AircraftTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2B90",
+   "types": [
+    "TClassFactory_AircraftTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AircraftTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C07D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C07D0",
+   "types": [
+    "TClassFactory_AirstrikeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C07D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0890",
+   "types": [
+    "TClassFactory_AirstrikeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0910",
+   "types": [
+    "TClassFactory_AirstrikeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AirstrikeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C6050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C6050",
+   "types": [
+    "TClassFactory_AlphaShapeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C6050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C6110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C6110",
+   "types": [
+    "TClassFactory_AlphaShapeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C6110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C6110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C6190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C6190",
+   "types": [
+    "TClassFactory_AlphaShapeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AlphaShapeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3950",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3950",
+   "types": [
+    "TClassFactory_AnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3950",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AnimClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3A10",
+   "types": [
+    "TClassFactory_AnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3A90",
+   "types": [
+    "TClassFactory_AnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3AD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3AD0",
+   "types": [
+    "TClassFactory_AnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3AD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3B90",
+   "types": [
+    "TClassFactory_AnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3C10",
+   "types": [
+    "TClassFactory_AnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_AnimTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C10D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C10D0",
+   "types": [
+    "TClassFactory_BombClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C10D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BombClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1190",
+   "types": [
+    "TClassFactory_BombClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BombClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BombClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1210",
+   "types": [
+    "TClassFactory_BombClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BombClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C34D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C34D0",
+   "types": [
+    "TClassFactory_BuildingClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C34D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3590",
+   "types": [
+    "TClassFactory_BuildingClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3610",
+   "types": [
+    "TClassFactory_BuildingClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0350",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0350",
+   "types": [
+    "TClassFactory_BuildingLightClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0350",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0410",
+   "types": [
+    "TClassFactory_BuildingLightClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:3:3:0x6C0410",
+   "types": [
+    "void * *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "ppvObject",
+   "method": "CreateInstance",
+   "note": "out-param; only instance whose IDA proto names the 4th stack arg"
+  },
+  {
+   "ent": "GS:3:3:0x6C0410",
+   "types": [
+    "BuildingLightClass**"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "ppvObject",
+   "method": "CreateInstance",
+   "note": "out slot receives T::QueryInterface result on freshly constructed T (operator new sizeof(T) + T ctor); param holds pointer-to-T*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0490",
+   "types": [
+    "TClassFactory_BuildingLightClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingLightClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C28D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C28D0",
+   "types": [
+    "TClassFactory_BuildingTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C28D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2990",
+   "types": [
+    "TClassFactory_BuildingTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2A10",
+   "types": [
+    "TClassFactory_BuildingTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BuildingTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4FD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4FD0",
+   "types": [
+    "TClassFactory_BulletClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4FD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BulletClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5090",
+   "types": [
+    "TClassFactory_BulletClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5110",
+   "types": [
+    "TClassFactory_BulletClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2D50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2D50",
+   "types": [
+    "TClassFactory_BulletTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2D50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2E10",
+   "types": [
+    "TClassFactory_BulletTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2E90",
+   "types": [
+    "TClassFactory_BulletTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_BulletTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BEE50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BEE50",
+   "types": [
+    "TClassFactory_CStreamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BEE50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CStreamClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BEF10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BEF10",
+   "types": [
+    "TClassFactory_CStreamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BEF10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CStreamClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BEF10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CStreamClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BEF90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BEF90",
+   "types": [
+    "TClassFactory_CStreamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CStreamClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C01D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C01D0",
+   "types": [
+    "TClassFactory_CampaignClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C01D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CampaignClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0290",
+   "types": [
+    "TClassFactory_CampaignClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CampaignClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CampaignClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0310",
+   "types": [
+    "TClassFactory_CampaignClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CampaignClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0C50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0C50",
+   "types": [
+    "TClassFactory_CaptureManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0C50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0D10",
+   "types": [
+    "TClassFactory_CaptureManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0D90",
+   "types": [
+    "TClassFactory_CaptureManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CaptureManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF8D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF8D0",
+   "types": [
+    "TClassFactory_CellClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF8D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_CellClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF990",
+   "types": [
+    "TClassFactory_CellClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CellClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CellClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BFA10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BFA10",
+   "types": [
+    "TClassFactory_CellClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_CellClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0DD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0DD0",
+   "types": [
+    "TClassFactory_DiskLaserClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0DD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0E90",
+   "types": [
+    "TClassFactory_DiskLaserClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0F10",
+   "types": [
+    "TClassFactory_DiskLaserClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DiskLaserClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3F50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3F50",
+   "types": [
+    "TClassFactory_DriveLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3F50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4010",
+   "types": [
+    "TClassFactory_DriveLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4090",
+   "types": [
+    "TClassFactory_DriveLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DriveLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4850",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4850",
+   "types": [
+    "TClassFactory_DropPodLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4850",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4910",
+   "types": [
+    "TClassFactory_DropPodLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4990",
+   "types": [
+    "TClassFactory_DropPodLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_DropPodLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BFA50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BFA50",
+   "types": [
+    "TClassFactory_EMPulseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BFA50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BFB10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BFB10",
+   "types": [
+    "TClassFactory_EMPulseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BFB10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BFB10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BFB90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BFB90",
+   "types": [
+    "TClassFactory_EMPulseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_EMPulseClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5150",
+   "types": [
+    "TClassFactory_FactoryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FactoryClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5210",
+   "types": [
+    "TClassFactory_FactoryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FactoryClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FactoryClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5290",
+   "types": [
+    "TClassFactory_FactoryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FactoryClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C49D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C49D0",
+   "types": [
+    "TClassFactory_FlyLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C49D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4A90",
+   "types": [
+    "TClassFactory_FlyLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4B10",
+   "types": [
+    "TClassFactory_FlyLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FlyLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5ED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5ED0",
+   "types": [
+    "TClassFactory_FoggedObjectClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5ED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5F90",
+   "types": [
+    "TClassFactory_FoggedObjectClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C6010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C6010",
+   "types": [
+    "TClassFactory_FoggedObjectClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_FoggedObjectClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3DD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3DD0",
+   "types": [
+    "TClassFactory_HouseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3DD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HouseClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3E90",
+   "types": [
+    "TClassFactory_HouseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3F10",
+   "types": [
+    "TClassFactory_HouseClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3C50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3C50",
+   "types": [
+    "TClassFactory_HouseTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3C50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3D10",
+   "types": [
+    "TClassFactory_HouseTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3D90",
+   "types": [
+    "TClassFactory_HouseTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HouseTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4250",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4250",
+   "types": [
+    "TClassFactory_HoverLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4250",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4310",
+   "types": [
+    "TClassFactory_HoverLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4390",
+   "types": [
+    "TClassFactory_HoverLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_HoverLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C37D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C37D0",
+   "types": [
+    "TClassFactory_InfantryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C37D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_InfantryClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3890",
+   "types": [
+    "TClassFactory_InfantryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3910",
+   "types": [
+    "TClassFactory_InfantryClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2BD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2BD0",
+   "types": [
+    "TClassFactory_InfantryTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2BD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2C90",
+   "types": [
+    "TClassFactory_InfantryTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2D10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2D10",
+   "types": [
+    "TClassFactory_InfantryTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_InfantryTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2ED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2ED0",
+   "types": [
+    "TClassFactory_IsometricTileTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2ED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2F90",
+   "types": [
+    "TClassFactory_IsometricTileTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3010",
+   "types": [
+    "TClassFactory_IsometricTileTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_IsometricTileTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C40D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C40D0",
+   "types": [
+    "TClassFactory_JumpjetLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C40D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4190",
+   "types": [
+    "TClassFactory_JumpjetLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4210",
+   "types": [
+    "TClassFactory_JumpjetLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_JumpjetLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BFBD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BFBD0",
+   "types": [
+    "TClassFactory_LightSourceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BFBD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BFC90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BFC90",
+   "types": [
+    "TClassFactory_LightSourceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BFC90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BFC90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BFD10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BFD10",
+   "types": [
+    "TClassFactory_LightSourceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_LightSourceClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4CD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4CD0",
+   "types": [
+    "TClassFactory_MechLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4CD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4D90",
+   "types": [
+    "TClassFactory_MechLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4E10",
+   "types": [
+    "TClassFactory_MechLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_MechLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5D50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5D50",
+   "types": [
+    "TClassFactory_NeuronClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5D50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_NeuronClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5E10",
+   "types": [
+    "TClassFactory_NeuronClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_NeuronClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_NeuronClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5E90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5E90",
+   "types": [
+    "TClassFactory_NeuronClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_NeuronClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3050",
+   "types": [
+    "TClassFactory_OverlayTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3110",
+   "types": [
+    "TClassFactory_OverlayTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3190",
+   "types": [
+    "TClassFactory_OverlayTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_OverlayTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0F50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0F50",
+   "types": [
+    "TClassFactory_ParasiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0F50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1010",
+   "types": [
+    "TClassFactory_ParasiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1090",
+   "types": [
+    "TClassFactory_ParasiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParasiteClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C55D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C55D0",
+   "types": [
+    "TClassFactory_ParticleClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C55D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5690",
+   "types": [
+    "TClassFactory_ParticleClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5710",
+   "types": [
+    "TClassFactory_ParticleClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C58D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C58D0",
+   "types": [
+    "TClassFactory_ParticleSystemClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C58D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5990",
+   "types": [
+    "TClassFactory_ParticleSystemClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5A10",
+   "types": [
+    "TClassFactory_ParticleSystemClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5A50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5A50",
+   "types": [
+    "TClassFactory_ParticleSystemTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5A50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5B10",
+   "types": [
+    "TClassFactory_ParticleSystemTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5B90",
+   "types": [
+    "TClassFactory_ParticleSystemTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleSystemTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5750",
+   "types": [
+    "TClassFactory_ParticleTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5810",
+   "types": [
+    "TClassFactory_ParticleTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5890",
+   "types": [
+    "TClassFactory_ParticleTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ParticleTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1250",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1250",
+   "types": [
+    "TClassFactory_RadSiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1250",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1310",
+   "types": [
+    "TClassFactory_RadSiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1390",
+   "types": [
+    "TClassFactory_RadSiteClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RadSiteClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C43D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C43D0",
+   "types": [
+    "TClassFactory_RocketLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C43D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4490",
+   "types": [
+    "TClassFactory_RocketLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4510",
+   "types": [
+    "TClassFactory_RocketLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_RocketLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1CD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1CD0",
+   "types": [
+    "TClassFactory_ScriptClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1CD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ScriptClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1D90",
+   "types": [
+    "TClassFactory_ScriptClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1D90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1E10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1E10",
+   "types": [
+    "TClassFactory_ScriptClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1E50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1E50",
+   "types": [
+    "TClassFactory_ScriptTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1E50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1F10",
+   "types": [
+    "TClassFactory_ScriptTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1F90",
+   "types": [
+    "TClassFactory_ScriptTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ScriptTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4E50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4E50",
+   "types": [
+    "TClassFactory_ShipLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4E50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4F10",
+   "types": [
+    "TClassFactory_ShipLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4F10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4F90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4F90",
+   "types": [
+    "TClassFactory_ShipLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_ShipLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BFD50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BFD50",
+   "types": [
+    "TClassFactory_SideClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BFD50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SideClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BFE10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BFE10",
+   "types": [
+    "TClassFactory_SideClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BFE10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SideClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BFE10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SideClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BFE90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BFE90",
+   "types": [
+    "TClassFactory_SideClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SideClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0AD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0AD0",
+   "types": [
+    "TClassFactory_SlaveManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0AD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0B90",
+   "types": [
+    "TClassFactory_SlaveManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0B90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0C10",
+   "types": [
+    "TClassFactory_SlaveManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SlaveManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C31D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C31D0",
+   "types": [
+    "TClassFactory_SmudgeTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C31D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3290",
+   "types": [
+    "TClassFactory_SmudgeTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3310",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3310",
+   "types": [
+    "TClassFactory_SmudgeTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SmudgeTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0950",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0950",
+   "types": [
+    "TClassFactory_SpawnManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0950",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0A10",
+   "types": [
+    "TClassFactory_SpawnManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0A10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0A90",
+   "types": [
+    "TClassFactory_SpawnManagerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SpawnManagerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF5D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF5D0",
+   "types": [
+    "TClassFactory_SuperClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF5D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SuperClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF690",
+   "types": [
+    "TClassFactory_SuperClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF710",
+   "types": [
+    "TClassFactory_SuperClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF450",
+   "types": [
+    "TClassFactory_SuperWeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF510",
+   "types": [
+    "TClassFactory_SuperWeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF590",
+   "types": [
+    "TClassFactory_SuperWeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_SuperWeaponTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1850",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1850",
+   "types": [
+    "TClassFactory_TActionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1850",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TActionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1910",
+   "types": [
+    "TClassFactory_TActionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TActionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1910",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TActionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1990",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1990",
+   "types": [
+    "TClassFactory_TActionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TActionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C13D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C13D0",
+   "types": [
+    "TClassFactory_TEventClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C13D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TEventClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1490",
+   "types": [
+    "TClassFactory_TEventClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TEventClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TEventClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1510",
+   "types": [
+    "TClassFactory_TEventClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TEventClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF750",
+   "types": [
+    "TClassFactory_Tactical*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_Tactical",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF810",
+   "types": [
+    "TClassFactory_Tactical*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_Tactical",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_Tactical",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF890",
+   "types": [
+    "TClassFactory_Tactical*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_Tactical",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1FD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1FD0",
+   "types": [
+    "TClassFactory_TagClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1FD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TagClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2090",
+   "types": [
+    "TClassFactory_TagClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2110",
+   "types": [
+    "TClassFactory_TagClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2150",
+   "types": [
+    "TClassFactory_TagTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2210",
+   "types": [
+    "TClassFactory_TagTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2290",
+   "types": [
+    "TClassFactory_TagTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TagTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C25D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C25D0",
+   "types": [
+    "TClassFactory_TaskForceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C25D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2690",
+   "types": [
+    "TClassFactory_TaskForceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2710",
+   "types": [
+    "TClassFactory_TaskForceClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TaskForceClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C22D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C22D0",
+   "types": [
+    "TClassFactory_TeamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C22D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeamClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2390",
+   "types": [
+    "TClassFactory_TeamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2410",
+   "types": [
+    "TClassFactory_TeamClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2450",
+   "types": [
+    "TClassFactory_TeamTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2510",
+   "types": [
+    "TClassFactory_TeamTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2590",
+   "types": [
+    "TClassFactory_TeamTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeamTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4B50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4B50",
+   "types": [
+    "TClassFactory_TeleportLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4B50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4C10",
+   "types": [
+    "TClassFactory_TeleportLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4C90",
+   "types": [
+    "TClassFactory_TeleportLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TeleportLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0650",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0650",
+   "types": [
+    "TClassFactory_TemporalClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0650",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TemporalClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0710",
+   "types": [
+    "TClassFactory_TemporalClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TemporalClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0710",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TemporalClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0790",
+   "types": [
+    "TClassFactory_TemporalClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TemporalClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF2D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF2D0",
+   "types": [
+    "TClassFactory_TerrainClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF2D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TerrainClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF390",
+   "types": [
+    "TClassFactory_TerrainClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF410",
+   "types": [
+    "TClassFactory_TerrainClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BF150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BF150",
+   "types": [
+    "TClassFactory_TerrainTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BF150",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF210",
+   "types": [
+    "TClassFactory_TerrainTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF210",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF290",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF290",
+   "types": [
+    "TClassFactory_TerrainTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TerrainTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BFED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BFED0",
+   "types": [
+    "TClassFactory_TiberiumClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BFED0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BFF90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BFF90",
+   "types": [
+    "TClassFactory_TiberiumClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BFF90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BFF90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0010",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0010",
+   "types": [
+    "TClassFactory_TiberiumClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TiberiumClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C19D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C19D0",
+   "types": [
+    "TClassFactory_TriggerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C19D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TriggerClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1A90",
+   "types": [
+    "TClassFactory_TriggerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1A90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1B10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1B10",
+   "types": [
+    "TClassFactory_TriggerClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1B50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1B50",
+   "types": [
+    "TClassFactory_TriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1B50",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1C10",
+   "types": [
+    "TClassFactory_TriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1C10",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1C90",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1C90",
+   "types": [
+    "TClassFactory_TriggerTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TriggerTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C0050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C0050",
+   "types": [
+    "TClassFactory_TubeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C0050",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TubeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0110",
+   "types": [
+    "TClassFactory_TubeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TubeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TubeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0190",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0190",
+   "types": [
+    "TClassFactory_TubeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TubeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C4550",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C4550",
+   "types": [
+    "TClassFactory_TunnelLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C4550",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4610",
+   "types": [
+    "TClassFactory_TunnelLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4690",
+   "types": [
+    "TClassFactory_TunnelLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_TunnelLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C3350",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C3350",
+   "types": [
+    "TClassFactory_UnitClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C3350",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_UnitClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C3410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C3410",
+   "types": [
+    "TClassFactory_UnitClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C3410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C3410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C3490",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C3490",
+   "types": [
+    "TClassFactory_UnitClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C2750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C2750",
+   "types": [
+    "TClassFactory_UnitTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C2750",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C2810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C2810",
+   "types": [
+    "TClassFactory_UnitTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C2810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C2810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C2890",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C2890",
+   "types": [
+    "TClassFactory_UnitTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_UnitTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C16D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C16D0",
+   "types": [
+    "TClassFactory_VoxelAnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C16D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1790",
+   "types": [
+    "TClassFactory_VoxelAnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1810",
+   "types": [
+    "TClassFactory_VoxelAnimClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C1550",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C1550",
+   "types": [
+    "TClassFactory_VoxelAnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C1550",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C1610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C1610",
+   "types": [
+    "TClassFactory_VoxelAnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C1610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C1610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C1690",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C1690",
+   "types": [
+    "TClassFactory_VoxelAnimTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_VoxelAnimTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C46D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C46D0",
+   "types": [
+    "TClassFactory_WalkLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C46D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C4790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C4790",
+   "types": [
+    "TClassFactory_WalkLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C4790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C4790",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C4810",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C4810",
+   "types": [
+    "TClassFactory_WalkLocomotionClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WalkLocomotionClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C52D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C52D0",
+   "types": [
+    "TClassFactory_WarheadTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C52D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5390",
+   "types": [
+    "TClassFactory_WarheadTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5390",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5410",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5410",
+   "types": [
+    "TClassFactory_WarheadTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WarheadTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6BEFD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6BEFD0",
+   "types": [
+    "TClassFactory_WaveClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6BEFD0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WaveClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6BF090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6BF090",
+   "types": [
+    "TClassFactory_WaveClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6BF090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaveClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6BF090",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaveClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6BF110",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6BF110",
+   "types": [
+    "TClassFactory_WaveClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaveClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C04D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C04D0",
+   "types": [
+    "TClassFactory_WaypointPathClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C04D0",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C0590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C0590",
+   "types": [
+    "TClassFactory_WaypointPathClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C0590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C0590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C0610",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C0610",
+   "types": [
+    "TClassFactory_WaypointPathClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WaypointPathClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:0:0x6C5450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:0:0:0x6C5450",
+   "types": [
+    "TClassFactory_WeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "QueryInterface",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:0:1:0x6C5450",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-iunknown",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "riid",
+   "method": "QueryInterface",
+   "note": "REFIID=const GUID*; type_universe has _GUID by-value only"
+  },
+  {
+   "ent": "GS:3:0:0x6C5510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "COM receiver == factory object owning this vtable"
+  },
+  {
+   "ent": "GS:3:0:0x6C5510",
+   "types": [
+    "TClassFactory_WeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "CreateInstance",
+   "note": "instance-name keying: vtable owner class"
+  },
+  {
+   "ent": "GS:3:1:0x6C5510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "pUnkOuter",
+   "method": "CreateInstance",
+   "note": "IUnknown* outer; CLASS_E_NOAGGREGATION when non-null"
+  },
+  {
+   "ent": "GS:3:2:0x6C5510",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "riid",
+   "method": "CreateInstance",
+   "note": "REFIID=const GUID*"
+  },
+  {
+   "ent": "GS:4:0:0x6C5590",
+   "types": [
+    "void *"
+   ],
+   "via": "tcf-com-create",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "COM receiver; this+4 refcount mutated +/-1 by fLock"
+  },
+  {
+   "ent": "GS:4:0:0x6C5590",
+   "types": [
+    "TClassFactory_WeaponTypeClass*"
+   ],
+   "via": "tcf-template-T",
+   "class": "TClassFactory_WeaponTypeClass",
+   "param": "self",
+   "method": "LockServer",
+   "note": "instance-name keying: vtable owner class"
+  }
+ ]
+}

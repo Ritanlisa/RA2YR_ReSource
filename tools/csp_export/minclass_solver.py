@@ -72,7 +72,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
-            "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX"]
+            "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
+            "TC", "GI", "AV"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -120,6 +121,9 @@ FAMILY_DESC = {
     "RA": "caller-site EAX arithmetic/cmp consumption -> int/char* value family (strict, post-call window w/ copy extension)",
     "RD": "consumer-side EAX virtual-dispatch vptr-chain / member-read offset -> class candidate set (strict)",
     "GX": "virtual-dispatch site push-arg direct-to-GS: const01/granular types + bind-origin eq edges (strict)",
+    "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
+    "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
+    "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3073,6 +3077,91 @@ def main():
         census["FP"] = census.get("FP", 0)
         print("[FP] skipped: %r" % _e_fp, flush=True)
 
+    # ---------------- TC/GI/AV：编译器签名 L8（严格）----------------
+    # TC：TClassFactory 模板族槽位类型（tcf_slot_types.json 的 evidence 数组，行格式
+    # {ent:"GS:{slot}:{k}:{root}", types:["void *"/"TClassFactory_X*"], via:"tcf-iunknown/
+    # tcf-com-create/tcf-template-T", class:...}——与 GX 同实体空间）。注意 `class` 字段
+    # 是方法所属工厂的元数据（riid 参数同样携带），权威 typing 在 `types`；其中
+    # tcf-template-T 通道的 `TClassFactory_X*` 指针拼写无宇宙原子（宇宙无类指针词表）
+    # → 按 token 丢弃（RD 族 173 名同款处置，计数在打印中可见差值）。
+    try:
+        census["TC"] = _load_type_family("anchors/tcf_slot_types.json", "TC")
+        print("[TC] TClassFactory slot types: %d (of 695 evidence recs; "
+              "tcf-template-T pointer spellings dropped: no universe atom)" % census["TC"], flush=True)
+    except Exception as _e_tc:
+        census["TC"] = census.get("TC", 0)
+        print("[TC] skipped: %r" % _e_tc, flush=True)
+    # GI：.data 全局初始化器扫描（global_init_types.json 的 evidence 数组，行格式
+    # {ent:"G:<UPPER_HEX_NO_0X>", addr, types, via:"gdata-rt-install|gdata-crt-ctor|
+    # gdata-strlit", ...}）。ent 拼写与 C8/CR 的 G: 实体一致——实测 3,329/3,329 全部
+    # `G:<hex>` 规范形，无需归一。与 C8 的 AND 合并无害（exact-pin 主导）；
+    # 重叠计数在 C8 段后报告（[GI] C8 overlap 行）。
+    try:
+        census["GI"] = _load_type_family("anchors/global_init_types.json", "GI")
+        print("[GI] global-init types: %d" % census["GI"], flush=True)
+    except Exception as _e_gi:
+        census["GI"] = census.get("GI", 0)
+        print("[GI] skipped: %r" % _e_gi, flush=True)
+    # AV：分配尺寸 v2（alloc_size_types.json = .omo/agents/allocsize/alloc_sites_v2.json
+    # 站点台账的 ent 聚合件，837 evidence，报告语义「接线端现算」：
+    #   sem=total → pointee sizeof==size 或 sizeof 整除 size（new T[n] 的 n 未知）；
+    #   sem=elem  → sizeof==size（D/E 纯倍率形态乘数即元素 sizeof）。
+    # 每 ent 候选 = 其全部 (size,sem) 观测候选之并（AS 族既有 per-ent OR 语义）。
+    # 空/全满掩码跳过（FULL 无信息量，SS 族先例）。既有 AS 族（wave-5 负结果，
+    # --allow-heuristics 门控 + exact-only 旧语义）不动——AV 是同一二进制事实的
+    # v2 全量重表达，语义遵循生成器 report.md，不改证据族语义。
+    try:
+        _asz_v2 = {}
+        for _i_av, _nm_av in enumerate(names):
+            _sz_av = U["size"][_i_av] if _i_av < len(U["size"]) else None
+            if isinstance(_sz_av, int) and _sz_av > 0:
+                _asz_v2.setdefault(_sz_av, 0)
+                _asz_v2[_sz_av] |= (1 << _i_av)
+        _combos_v2 = {}                 # (size,sem) -> cached candidate mask
+        _combos_seen_v2 = set()
+        _combos_hit_v2 = set()
+        _n_av = 0
+        for _rec_av in (jload("anchors/alloc_size_types.json", {}) or {}).get("evidence") or []:
+            _eav = _rec_av.get("ent")
+            if not isinstance(_eav, str):
+                continue
+            _sizes_av = _rec_av.get("sizes") or []
+            _sems_av = _rec_av.get("sems") or []
+            _m_av = 0
+            for _k_av, _szk_av in enumerate(_sizes_av):
+                try:
+                    _szk_av = int(_szk_av)
+                except (TypeError, ValueError):
+                    continue
+                if _szk_av <= 0:
+                    continue
+                _sem_av = _sems_av[_k_av] if _k_av < len(_sems_av) else "total"
+                _ck_av = (_szk_av, str(_sem_av))
+                _combos_seen_v2.add(_ck_av)
+                if _ck_av not in _combos_v2:
+                    _m_c = _asz_v2.get(_szk_av, 0)
+                    if _sem_av == "total":   # 数组整除语义：n 未知，sizeof | size
+                        for _s_c in _asz_v2:
+                            if _s_c > 0 and _szk_av % _s_c == 0:
+                                _m_c |= _asz_v2[_s_c]
+                    _combos_v2[_ck_av] = _m_c
+                _m_av |= _combos_v2[_ck_av]
+                if _combos_v2[_ck_av]:
+                    _combos_hit_v2.add(_ck_av)
+            if not _m_av or _m_av == FULL:
+                continue
+            if _eav not in ents:
+                touch(_eav, _eav)
+            fam["AV"][_eav] = fam["AV"].get(_eav, FULL) & _m_av
+            _n_av += 1
+        census["AV"] = _n_av
+        print("[AS] alloc v2 sizes (family AV): evidence=%d entities=%d "
+              "combos(ent-agg)=%d with-candidates=%d"
+              % (_n_av, len(fam["AV"]), len(_combos_seen_v2), len(_combos_hit_v2)), flush=True)
+    except Exception as _e_av:
+        census["AV"] = census.get("AV", 0)
+        print("[AS] alloc v2 skipped: %r" % _e_av, flush=True)
+
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
         try:
@@ -3346,6 +3435,13 @@ def main():
     print("[C8] evidence=%d entities=%d (global vtable installs=%d)"
           % (census["C8"], len(c8_entities), len((facts or {}).get("global_installs", []))),
           flush=True)
+    # GI∩C8 重叠计数（任务要求：AND 合并无害但计数要准）
+    if census.get("GI"):
+        _gi_all = set(fam["GI"].keys())
+        _gi_c8_ov = _gi_all & c8_entities
+        print("[GI] C8 overlap: %d of %d GI entities also C8-pinned "
+              "(AND-merge harmless; C8 exact-pin dominates)" % (len(_gi_c8_ov), len(_gi_all)),
+              flush=True)
 
     # ---------------- C15：静态 vtable 归属（唯一最小 owner → EXACT）----------------
     # 纯二进制证据（anchors/vtable_slot_authority.json，.rdata 实测，不用函数名）：
