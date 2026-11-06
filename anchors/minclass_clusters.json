@@ -104912,11 +104912,9 @@
 "ents": []
 },
 "T:7C8EC0": {
-"class": "AbstractClass",
+"class": "BuildingClass",
 "obs": [],
-"ents": [
-"T:7C8EC0"
-]
+"ents": []
 },
 "R:403820:ecx": {
 "class": "BombClass",
@@ -105005,7 +105003,7 @@
 "ents": []
 },
 "R:403870:ecx": {
-"class": "CampaignClass",
+"class": "CoordBounds",
 "obs": [
 [
 0,
@@ -105032,9 +105030,7 @@
 4
 ]
 ],
-"ents": [
-"T:403870"
-]
+"ents": []
 },
 "R:402EF0:ecx": {
 "class": "Camera",
@@ -105574,7 +105570,7 @@
 ]
 },
 "R:4038A0:ecx": {
-"class": "AbstractTypeClass",
+"class": "BigInt",
 "obs": [
 [
 8,
@@ -105585,12 +105581,10 @@
 4
 ]
 ],
-"ents": [
-"T:4038A0"
-]
+"ents": []
 },
 "R:4038C0:ecx": {
-"class": "CampaignClass",
+"class": "CoordBounds",
 "obs": [
 [
 32,
@@ -105601,9 +105595,7 @@
 4
 ]
 ],
-"ents": [
-"T:4038C0"
-]
+"ents": []
 },
 "T:408F80": {
 "class": "BuildingClass",
@@ -169805,11 +169797,9 @@
 "ents": []
 },
 "R:53E4F0:ecx": {
-"class": "char*",
+"class": "BuildingClass",
 "obs": [],
-"ents": [
-"T:53E4F0"
-]
+"ents": []
 },
 "T:734FE0": {
 "class": "unsigned int",
@@ -169819,11 +169809,9 @@
 ]
 },
 "R:53E550:ecx": {
-"class": "char*",
+"class": "BuildingClass",
 "obs": [],
-"ents": [
-"T:53E550"
-]
+"ents": []
 },
 "T:5BC180": {
 "class": "unsigned short",
@@ -187913,9 +187901,11 @@
 "ents": []
 },
 "T:7A16B0": {
-"class": "BuildingClass",
+"class": "char*",
 "obs": [],
-"ents": []
+"ents": [
+"T:7A16B0"
+]
 },
 "R:77D4C0:ecx": {
 "class": "BuildingClass",
@@ -220104,6 +220094,16 @@
 "RET:753C70"
 ]
 },
+"G:B72654": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"RET:763610": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:B77F58": {
 "class": "rc_ptr",
 "obs": [],
@@ -222049,10 +222049,19 @@
 "M:42DDB0:this:0x14"
 ]
 },
-"M:42DDB0:this:0x18": {
-"class": "BuildingClass",
+"S:42DDB0:var_c": {
+"class": "unsigned int",
 "obs": [],
-"ents": []
+"ents": [
+"S:42DDB0:var_c"
+]
+},
+"M:42DDB0:this:0x18": {
+"class": "unsigned int",
+"obs": [],
+"ents": [
+"M:42DDB0:this:0x18"
+]
 },
 "M:42DF90:this:0x14": {
 "class": "unsigned int",
@@ -268129,11 +268138,6 @@
 "S:4016F0:+0x14"
 ]
 },
-"S:403870:+0x0": {
-"class": "BuildingClass",
-"obs": [],
-"ents": []
-},
 "M:403870:this:0x4": {
 "class": "BuildingClass",
 "obs": [],
@@ -307641,6 +307645,21 @@
 "EAX:6DD300:6DD454"
 ]
 },
+"EAX:6DD300:6DD4B6": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6DD300:6DD4FE": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6DD300:6DD535": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "EAX:6DD8B0:6DE115": {
 "class": "BuildingClass",
 "obs": [],
@@ -308346,6 +308365,26 @@
 "ents": [
 "EAX:6F1090:6F1408"
 ]
+},
+"EAX:6F1090:6F1420": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1090:6F1453": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1550:6F17EF": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1550:6F1808": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "EAX:6F1BB0:6F1BCF": {
 "class": "AbstractClass",
@@ -313946,6 +313985,16 @@
 },
 "EAX:75F650:75F69F": {
 "class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"EAX:763610:763621": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:763610:763643": {
+"class": "char[12]",
 "obs": [],
 "ents": []
 },
@@ -331795,6 +331844,21 @@
 "EAX:6DD300:6DD459"
 ]
 },
+"EAX:6DD300:6DD4C1": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6DD300:6DD509": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6DD300:6DD540": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "EAX:6DD8B0:6DE11A": {
 "class": "BuildingClass",
 "obs": [],
@@ -332050,6 +332114,26 @@
 "ents": [
 "EAX:6F1090:6F141A"
 ]
+},
+"EAX:6F1090:6F1425": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1090:6F1458": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1550:6F17F4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"EAX:6F1550:6F180D": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "EAX:6F3330:6F3595": {
 "class": "char[12]",
@@ -338188,7 +338272,7 @@
 "ents": []
 },
 "M:402C70:this:0x110": {
-"class": "AnimTypeClass",
+"class": "unsigned int",
 "obs": [],
 "ents": [
 "M:402C70:this:0x110"
@@ -342337,13 +342421,6 @@
 "M:552060:this:0x18"
 ]
 },
-"M:5520A0:this:0x14": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"M:5520A0:this:0x14"
-]
-},
 "M:5520A0:this:0x10": {
 "class": "unsigned int",
 "obs": [],
@@ -342476,13 +342553,6 @@
 "obs": [],
 "ents": [
 "M:55C310:this:0x18"
-]
-},
-"M:55C350:this:0x14": {
-"class": "unsigned int",
-"obs": [],
-"ents": [
-"M:55C350:this:0x14"
 ]
 },
 "M:55C350:this:0x10": {
@@ -382207,34 +382277,40 @@
 "ents": []
 },
 "M:625DB0:this:0x4": {
-"class": "CarryoverClass",
+"class": "char*",
 "obs": [
 [
 12,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:625DB0:this:0x4"
+]
 },
 "M:625F60:this:0x4": {
-"class": "CarryoverClass",
+"class": "char*",
 "obs": [
 [
 12,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:625F60:this:0x4"
+]
 },
 "M:625FB0:this:0x4": {
-"class": "CarryoverClass",
+"class": "char*",
 "obs": [
 [
 12,
 4
 ]
 ],
-"ents": []
+"ents": [
+"M:625FB0:this:0x4"
+]
 },
 "R:626290:ecx": {
 "class": "HexCoord",
@@ -400436,6 +400512,18 @@
 "T:7D2F57"
 ]
 },
+"P:7D7374:0": {
+"class": "char*",
+"obs": [
+[
+0,
+1
+]
+],
+"ents": [
+"P:7D7374:0"
+]
+},
 "P:7D7954:0": {
 "class": "Float",
 "obs": [
@@ -400447,6 +400535,19 @@
 "ents": [
 "P:7D7954:0",
 "S:7D7954:+0x8"
+]
+},
+"P:7DA9CD:0": {
+"class": "char*",
+"obs": [
+[
+0,
+1
+]
+],
+"ents": [
+"P:7DA9CD:0",
+"S:7DA9CD:+0x8"
 ]
 },
 "P:7DC7CB:0": {
@@ -400861,11 +400962,6 @@
 "obs": [],
 "ents": []
 },
-"G:87E790": {
-"class": "BuildingClass",
-"obs": [],
-"ents": []
-},
 "R:4080A0:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -400897,13 +400993,6 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
-},
-"P:403870:2": {
-"class": "AbstractClass",
-"obs": [],
-"ents": [
-"P:403870:2"
-]
 },
 "R:40A850:ecx": {
 "class": "BuildingClass",
@@ -401852,6 +401941,11 @@
 "ents": [
 "G:8B4150"
 ]
+},
+"G:81834C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "P:477050:2": {
 "class": "void *",
@@ -403996,6 +404090,11 @@
 "P:7CA610:1"
 ]
 },
+"G:81C8F8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "R:47ADA0:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -404381,11 +404480,9 @@
 ]
 },
 "G:81D97C": {
-"class": "char*",
+"class": "char[12]",
 "obs": [],
-"ents": [
-"G:81D97C"
-]
+"ents": []
 },
 "P:7CA845:1": {
 "class": "char*",
@@ -404396,11 +404493,9 @@
 ]
 },
 "G:81D988": {
-"class": "char*",
+"class": "char[12]",
 "obs": [],
-"ents": [
-"G:81D988"
-]
+"ents": []
 },
 "P:626200:0": {
 "class": "BuildingClass",
@@ -405011,6 +405106,16 @@
 "obs": [],
 "ents": []
 },
+"G:81F17C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:81F16C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "P:49CC50:0": {
 "class": "BuildingClass",
 "obs": [],
@@ -405071,6 +405176,13 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:49E400:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:49E400:1"
+]
 },
 "P:49ECD0:0": {
 "class": "BuildingClass",
@@ -407057,11 +407169,6 @@
 "obs": [],
 "ents": []
 },
-"P:7B5F10:2": {
-"class": "BuildingClass",
-"obs": [],
-"ents": []
-},
 "P:7B4690:0": {
 "class": "BuildingClass",
 "obs": [],
@@ -407453,6 +407560,16 @@
 "obs": [],
 "ents": []
 },
+"G:824D4C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:824E28": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "G:824DD0": {
 "class": "BuildingClass",
 "obs": [],
@@ -407802,6 +407919,11 @@
 "G:A83C98"
 ]
 },
+"G:817334": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "P:512170:0": {
 "class": "BuildingClass",
 "obs": [],
@@ -408066,6 +408188,11 @@
 },
 "P:52B2B0:0": {
 "class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:822050": {
+"class": "char[12]",
 "obs": [],
 "ents": []
 },
@@ -408599,6 +408726,66 @@
 "ents": [
 "P:6B8AE0:0"
 ]
+},
+"G:8265A8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:82659C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826590": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:82657C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826574": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826564": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:82655C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826550": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826544": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826538": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:82652C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:826520": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:8264F0": {
 "class": "wchar_t",
@@ -410677,24 +410864,15 @@
 "obs": [],
 "ents": []
 },
-"G:AA0398": {
-"class": "BuildingClass",
+"G:828138": {
+"class": "char[12]",
 "obs": [],
 "ents": []
 },
-"G:828138": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:828138"
-]
-},
 "G:82813C": {
-"class": "char*",
+"class": "char[12]",
 "obs": [],
-"ents": [
-"G:82813C"
-]
+"ents": []
 },
 "R:53EC70:ecx": {
 "class": "BuildingClass",
@@ -411914,6 +412092,11 @@
 "G:82A2F4"
 ]
 },
+"G:82A2E8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "G:82A57C": {
 "class": "wchar_t",
 "obs": [],
@@ -412189,20 +412372,6 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
-},
-"G:82AF00": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:82AF00"
-]
-},
-"G:82AF10": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:82AF10"
-]
 },
 "R:58B820:ecx": {
 "class": "BuildingClass",
@@ -412889,6 +413058,13 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:7CB673:0": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CB673:0"
+]
 },
 "P:69E430:0": {
 "class": "BuildingClass",
@@ -414184,20 +414360,6 @@
 "obs": [],
 "ents": []
 },
-"G:831398": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:831398"
-]
-},
-"G:8313A4": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:8313A4"
-]
-},
 "R:5DC350:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -414429,6 +414591,16 @@
 "ents": [
 "G:831A30"
 ]
+},
+"G:831A88": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:831A80": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:831AF0": {
 "class": "wchar_t",
@@ -414803,12 +414975,42 @@
 "G:832858"
 ]
 },
+"G:8327D8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:8327BC": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:8327B4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:8327AC": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:8327A4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:8329D4": {
 "class": "wchar_t",
 "obs": [],
 "ents": [
 "G:8329D4"
 ]
+},
+"G:832970": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:832958": {
 "class": "wchar_t",
@@ -414817,12 +415019,22 @@
 "G:832958"
 ]
 },
+"G:832934": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:832914": {
 "class": "wchar_t",
 "obs": [],
 "ents": [
 "G:832914"
 ]
+},
+"G:81FD14": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:A8E360": {
 "class": "DynamicVector",
@@ -414864,6 +415076,51 @@
 "ents": [
 "P:750920:0"
 ]
+},
+"G:833240": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8331EC": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8331C8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8331A8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:833188": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:833128": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83308C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83307C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:833070": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
 },
 "T:5FB320": {
 "class": "BuildingClass",
@@ -417709,6 +417966,11 @@
 "obs": [],
 "ents": []
 },
+"G:83AD2C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "P:67B8F0:2": {
 "class": "BuildingClass",
 "obs": [],
@@ -417969,6 +418231,31 @@
 "ents": []
 },
 "P:67A310:0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83D000": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83CFA8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83CF94": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83CF84": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83CF78": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -418586,6 +418873,11 @@
 "obs": [],
 "ents": []
 },
+"G:83DC5C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "P:68AD70:0": {
 "class": "BuildingClass",
 "obs": [],
@@ -418668,12 +418960,82 @@
 "obs": [],
 "ents": []
 },
+"G:83E144": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E138": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0FC": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0F0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0E0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0D4": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0C8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0BC": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E0A4": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "G:83E078": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
 },
 "G:83E060": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E048": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E034": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E020": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83E004": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83DFF8": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -418931,6 +419293,11 @@
 "G:83EBBC"
 ]
 },
+"G:83ECE0": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:83ECC4": {
 "class": "wchar_t",
 "obs": [],
@@ -418939,6 +419306,41 @@
 ]
 },
 "R:696F30:ecx": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83EFB8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83EFA8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F170": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F13C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F130": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F120": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F110": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -418955,6 +419357,16 @@
 },
 "P:698F90:1": {
 "class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:83F488": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:83F440": {
+"class": "char[12]",
 "obs": [],
 "ents": []
 },
@@ -419615,6 +420027,56 @@
 "obs": [],
 "ents": []
 },
+"G:84025C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:840248": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84023C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84022C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84021C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84020C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:840204": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8401F8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8401EC": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8401E0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "T:6B8F00": {
 "class": "BuildingClass",
 "obs": [],
@@ -419687,13 +420149,6 @@
 "G:840C38"
 ]
 },
-"G:840C2C": {
-"class": "char*",
-"obs": [],
-"ents": [
-"G:840C2C"
-]
-},
 "G:840C1C": {
 "class": "wchar_t",
 "obs": [],
@@ -419709,6 +420164,11 @@
 ]
 },
 "T:6BB9A0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:840BE8": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -419826,6 +420286,14 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:7CC2AC:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CC2AC:1",
+"S:7CC2AC:+0xc"
+]
 },
 "P:7CC409:1": {
 "class": "BuildingClass",
@@ -420313,6 +420781,16 @@
 "ents": []
 },
 "P:6F2230:1": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:8173E8": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:81A7EC": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -422927,6 +423405,11 @@
 "G:B7778C"
 ]
 },
+"G:849B60": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "R:775940:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -423071,6 +423554,16 @@
 "obs": [],
 "ents": []
 },
+"G:84A120": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84A12C": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "P:77A4A0:0": {
 "class": "BuildingClass",
 "obs": [],
@@ -423206,6 +423699,16 @@
 "G:84A484"
 ]
 },
+"G:84A4D0": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84A4C4": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
 "R:77E110:ecx": {
 "class": "BuildingClass",
 "obs": [],
@@ -423328,6 +423831,11 @@
 },
 "R:7806C0:ecx": {
 "class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"G:84A214": {
+"class": "char[12]",
 "obs": [],
 "ents": []
 },
@@ -423455,6 +423963,11 @@
 "ents": [
 "G:84A930"
 ]
+},
+"G:B76B44": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:84B380": {
 "class": "wchar_t",
@@ -424360,12 +424873,27 @@
 "obs": [],
 "ents": []
 },
+"G:84D4B4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:84D498": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:84D484": {
 "class": "wchar_t",
 "obs": [],
 "ents": [
 "G:84D484"
 ]
+},
+"G:84D478": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:84D464": {
 "class": "wchar_t",
@@ -424374,12 +424902,22 @@
 "G:84D464"
 ]
 },
+"G:84D458": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:84D440": {
 "class": "wchar_t",
 "obs": [],
 "ents": [
 "G:84D440"
 ]
+},
+"G:84D438": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:84D060": {
 "class": "wchar_t",
@@ -424388,6 +424926,11 @@
 "G:84D060"
 ]
 },
+"G:84D430": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:84D418": {
 "class": "wchar_t",
 "obs": [],
@@ -424395,12 +424938,32 @@
 "G:84D418"
 ]
 },
+"G:84D410": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:84D408": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
 "G:84D3F0": {
 "class": "wchar_t",
 "obs": [],
 "ents": [
 "G:84D3F0"
 ]
+},
+"G:84D3E8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:84D3D4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:84D3B4": {
 "class": "wchar_t",
@@ -424695,6 +425258,16 @@
 "ents": [
 "G:84B034"
 ]
+},
+"G:84A21C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:84A224": {
+"class": "char[12]",
+"obs": [],
+"ents": []
 },
 "G:84B0D0": {
 "class": "wchar_t",
@@ -425211,10 +425784,90 @@
 "obs": [],
 "ents": []
 },
+"P:7CBC32:0": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CBC32:0"
+]
+},
+"S:7CBC11:+0xc": {
+"class": "char*",
+"obs": [],
+"ents": [
+"S:7CBC11:+0xc"
+]
+},
+"P:7CC309:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CC309:1",
+"S:7CC309:+0xc"
+]
+},
 "R:7CD80F:ecx": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:7CDD5A:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CDD5A:1",
+"S:7CDD5A:+0xc"
+]
+},
+"S:7CDB14:+0xc": {
+"class": "char*",
+"obs": [],
+"ents": [
+"S:7CDB14:+0xc"
+]
+},
+"P:7CDF2E:0": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CDF2E:0"
+]
+},
+"P:7CDF2E:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CDF2E:1",
+"S:7CDF2E:+0xc"
+]
+},
+"P:7CE049:0": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CE049:0"
+]
+},
+"P:7CE049:4": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CE049:4"
+]
+},
+"S:7CE13A:+0x10": {
+"class": "char*",
+"obs": [],
+"ents": [
+"S:7CE13A:+0x10"
+]
+},
+"P:7D7DC0:3": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7D7DC0:3"
+]
 },
 "R:7CFE1C:ecx": {
 "class": "BuildingClass",
@@ -425258,10 +425911,24 @@
 "obs": [],
 "ents": []
 },
+"S:7D461E:+0x10": {
+"class": "char*",
+"obs": [],
+"ents": [
+"S:7D461E:+0x10"
+]
+},
 "P:7D478B:3": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:7D478B:0": {
+"class": "unsigned long long",
+"obs": [],
+"ents": [
+"P:7D478B:0"
+]
 },
 "R:7D6624:ecx": {
 "class": "BuildingClass",
@@ -425282,6 +425949,14 @@
 "class": "BuildingClass",
 "obs": [],
 "ents": []
+},
+"P:7DC378:0": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7DC378:0",
+"S:7DC378:+0x8"
+]
 },
 "P:7DCD9C:0": {
 "class": "unsigned int",
@@ -425808,6 +426483,16 @@
 ]
 },
 "S:4A3C30:+0x324": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"S:4A3C30:+0x320": {
+"class": "BuildingClass",
+"obs": [],
+"ents": []
+},
+"S:4A3C30:+0x620": {
 "class": "BuildingClass",
 "obs": [],
 "ents": []
@@ -450979,13 +451664,6 @@
 "obs": [],
 "ents": [
 "M:55C7C0:this:0x1C"
-]
-},
-"M:55C7C0:this:0x24": {
-"class": "unsigned short",
-"obs": [],
-"ents": [
-"M:55C7C0:this:0x24"
 ]
 },
 "M:55C7C0:this:0x26": {
@@ -511123,6 +511801,126 @@
 "obs": [],
 "ents": [
 "T:409DE0"
+]
+},
+"G:7F9C3C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:7F9C5C": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:7FA2D4": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:7FA2D8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:825C2C": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:825C2C"
+]
+},
+"G:8264FC": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:87C374": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:87C3F8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:87C48C": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:87C48C"
+]
+},
+"G:87C490": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:87C490"
+]
+},
+"G:87C4C8": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:87C4C8"
+]
+},
+"G:87E780": {
+"class": "unsigned long long",
+"obs": [],
+"ents": [
+"G:87E780"
+]
+},
+"G:A8F7B8": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:AA0388": {
+"class": "unsigned long long",
+"obs": [],
+"ents": [
+"G:AA0388"
+]
+},
+"G:B78208": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:B78218": {
+"class": "char[12]",
+"obs": [],
+"ents": []
+},
+"G:B78228": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:B78228"
+]
+},
+"G:B783A4": {
+"class": "char*",
+"obs": [],
+"ents": [
+"G:B783A4"
+]
+},
+"M:403870:this:0x0": {
+"class": "unsigned long long",
+"obs": [],
+"ents": [
+"M:403870:this:0x0"
+]
+},
+"P:7CDB14:1": {
+"class": "char*",
+"obs": [],
+"ents": [
+"P:7CDB14:1"
 ]
 },
 "S:406B10:+0x2c@C0x406C51": {

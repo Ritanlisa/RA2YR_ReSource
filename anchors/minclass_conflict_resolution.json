@@ -2896,6 +2896,56 @@
   "exact": {}
  },
  {
+  "cluster": "M:5520A0:this:0x14",
+  "status": "inconsistent",
+  "families": [
+   "CR",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "CR": 1
+  },
+  "ents": [
+   "M:5520A0:this:0x14"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "CR": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:55C350:this:0x14",
+  "status": "inconsistent",
+  "families": [
+   "CR",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "CR": 1
+  },
+  "ents": [
+   "M:55C350:this:0x14"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned int"
+   ],
+   "CR": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:7235A0:this:0x118",
   "status": "inconsistent",
   "families": [
@@ -3395,6 +3445,42 @@
   "exact": {}
  },
  {
+  "cluster": "P:7B5F10:2",
+  "status": "inconsistent",
+  "families": [
+   "C7",
+   "CR"
+  ],
+  "family_sizes": {
+   "C7": 1031,
+   "CR": 1
+  },
+  "ents": [
+   "P:7B5F10:2"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "CR": [
+    "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "P:7493B0:2",
   "status": "inconsistent",
   "families": [
@@ -3418,11 +3504,13 @@
   "status": "inconsistent",
   "families": [
    "C7",
+   "CR",
    "PP"
   ],
   "family_sizes": {
    "C7": 1031,
-   "PP": 1
+   "PP": 1,
+   "CR": 1
   },
   "ents": [
    "P:7B57A0:1"
@@ -3444,6 +3532,9 @@
     "IPublicHouse"
    ],
    "PP": [
+    "char*"
+   ],
+   "CR": [
     "char*"
    ]
   },
@@ -59980,6 +60071,37 @@
    "IG": [
     "short",
     "unsigned short"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "M:55C7C0:this:0x24",
+  "status": "inconsistent",
+  "families": [
+   "CR",
+   "IG",
+   "MR"
+  ],
+  "family_sizes": {
+   "MR": 1,
+   "IG": 2,
+   "CR": 1
+  },
+  "ents": [
+   "M:55C7C0:this:0x24"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MR": [
+    "unsigned short"
+   ],
+   "IG": [
+    "short",
+    "unsigned short"
+   ],
+   "CR": [
+    "char[4]"
    ]
   },
   "exact": {}

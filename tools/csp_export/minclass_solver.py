@@ -72,7 +72,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
-            "AL", "LS", "SS", "PP", "CB"]
+            "AL", "LS", "SS", "PP", "CB", "CC", "CR"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -114,6 +114,8 @@ FAMILY_DESC = {
     "SS": "struct member-layout signature strict-superset match -> this receiver domain (strict, compiler-signature L4)",
     "PP": "all-constant push tuple tail: string-literal offsets -> char* param (strict, compiler-signature L4)",
     "CB": "COM/compiler-signature: GUID-compare iface + qi-triple receiver -> IUnknown-descendant domain (strict)",
+    "CC": "COM callback GUID-compare QI receivers -> IUnknown-descendant domain (strict, compiler-signature L5; evidence array of com_callback_types.json; guid_compares/callback_registrations are generator-side informational channels, no emitable spelling)",
+    "CR": "CRT call-pattern arg/return types: str family / memcpy src / wsprintfA dst / fopen path+mode / u64 reg+stack pairs -> char*/char[N]/unsigned long long (strict, compiler-signature L6)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -2979,6 +2981,27 @@ def main():
     except Exception as _e_cb:
         census["CB"] = census.get("CB", 0)
         print("[CB] skipped: %r" % _e_cb, flush=True)
+
+    # ---------------- CC/CR：编译器签名 L5/L6（严格）----------------
+    # CC：COM callback GUID 比较（com_callback_types.json 的 evidence 数组，行格式
+    # {ent:"T:<fn>", types:[...], via:"guid-compare..."}，与 CB 同源同 mask —— CB 为
+    # L4 接线，CC 为 L5 任务规格的族位，AND 合并恒中性）。顶层 guid_compares(215 行，
+    # 字段 site/fn/guid_sym/compared/compared_ent，行内无 types 且 riid 无可发拼写)
+    # 与 callback_registrations 均为生成器侧记录通道，不进类型发射。
+    # CR：CRT 调用模式（crt_pattern_types.json 的 evidence 数组，行格式
+    # {ent, types, via, crt_fn, sites, sample}；ent 前缀 G:/P:/M:/T:）。
+    try:
+        census["CC"] = _load_type_family("anchors/com_callback_types.json", "CC")
+        print("[CC] COM callback GUID-compare receivers: %d" % census["CC"], flush=True)
+    except Exception as _e_cc:
+        census["CC"] = census.get("CC", 0)
+        print("[CC] skipped: %r" % _e_cc, flush=True)
+    try:
+        census["CR"] = _load_type_family("anchors/crt_pattern_types.json", "CR")
+        print("[CR] CRT pattern arg types: %d" % census["CR"], flush=True)
+    except Exception as _e_cr:
+        census["CR"] = census.get("CR", 0)
+        print("[CR] skipped: %r" % _e_cr, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
