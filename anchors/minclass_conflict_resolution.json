@@ -91,17 +91,159 @@
   "exact": {}
  },
  {
+  "cluster": "R:42A6D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 902,
+   "SS": 1,
+   "C2X": 3
+  },
+  "ents": [
+   "T:42A6D0",
+   "RET:42A6D0"
+  ],
+  "obs": [
+   "0:1",
+   "1:1",
+   "2:1",
+   "3:1",
+   "4:4",
+   "8:1",
+   "12:4",
+   "16:4",
+   "20:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "44:4",
+   "56:1",
+   "60:4",
+   "100:4",
+   "104:4",
+   "108:4",
+   "112:2",
+   "114:2"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "Tactical"
+   ],
+   "C2X": [
+    "TubeClass",
+    "WaveClass",
+    "VocClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:65CA00:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C3",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1113,
+   "C3": 1610,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:65CA00"
+  ],
+  "obs": [
+   "0:4",
+   "20:4",
+   "24:4",
+   "32:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C3": [
+    "Mouse",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "R:6F4500:ecx",
   "status": "inconsistent",
   "families": [
    "C1",
+   "C2X",
    "C6",
+   "MW",
    "SS"
   ],
   "family_sizes": {
    "C1": 727,
    "C6": 606,
-   "SS": 0
+   "SS": 0,
+   "C2X": 3,
+   "MW": 0
   },
   "ents": [
    "T:6F4500"
@@ -161,7 +303,13 @@
     "?$rc_ptr@VState@WorldDominationTour@@",
     "?$DynamicVectorClass@H"
    ],
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass"
+   ],
+   "MW": []
   },
   "exact": {}
  },
@@ -228,17 +376,636 @@
   "exact": {}
  },
  {
+  "cluster": "R:45F160:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 660,
+   "SS": 1,
+   "C2X": 2
+  },
+  "ents": [
+   "T:45F160"
+  ],
+  "obs": [
+   "0:4",
+   "5364:4",
+   "5992:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL",
+    "IPersist"
+   ],
+   "SS": [
+    "TacticalClass"
+   ],
+   "C2X": [
+    "BuildingTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:4779E0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:4779E0",
+   "RET:4779E0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:4777B0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:4777B0",
+   "RET:4777B0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:6616B0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1342,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:6616B0",
+   "RET:6616B0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CC760:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1003,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CC760",
+   "RET:5CC760"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "52:4",
+   "56:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CE4A0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1002,
+   "C6": 606,
+   "SS": 1,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CE4A0",
+   "RET:5CE4A0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:1",
+   "41:1",
+   "48:4",
+   "52:4",
+   "56:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "TeamTypeClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CE640:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1032,
+   "C6": 606,
+   "SS": 1,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CE640",
+   "RET:5CE640"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:1",
+   "41:1",
+   "48:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "TeamTypeClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:4F6540:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 809,
+   "SS": 4,
+   "C2X": 1
+  },
+  "ents": [
+   "T:4F6540"
+  ],
+  "obs": [
+   "52:4",
+   "96:4",
+   "344:4",
+   "348:4",
+   "352:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL"
+   ],
+   "SS": [
+    "HouseTypeClass",
+    "SuperWeaponTypeClass",
+    "WaveClass",
+    "RulesClass"
+   ],
+   "C2X": [
+    "House"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:42F670:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:42F670",
+   "RET:42F670"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:522910:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C3",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 714,
+   "C3": 1469,
+   "SS": 3,
+   "C2X": 3
+  },
+  "ents": [
+   "T:522910"
+  ],
+  "obs": [
+   "0:4",
+   "540:4",
+   "1680:1",
+   "1681:1",
+   "1728:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "SS": [
+    "AircraftClass",
+    "FootClass",
+    "TeamClass"
+   ],
+   "C2X": [
+    "AircraftTypeClass",
+    "BuildingClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "R:5200B0:ecx",
   "status": "inconsistent",
   "families": [
    "C1",
+   "C2X",
    "C3",
    "SS"
   ],
   "family_sizes": {
    "C1": 709,
    "C3": 1465,
-   "SS": 0
+   "SS": 0,
+   "C2X": 4
   },
   "ents": [
    "T:5200B0"
@@ -284,7 +1051,13 @@
     "IConnectionPointContainer",
     "IDownloadEvent@WOL"
    ],
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "BuildingClass",
+    "InfantryClass",
+    "UnitClass",
+    "RulesClass"
+   ]
   },
   "exact": {}
  },
@@ -293,13 +1066,15 @@
   "status": "inconsistent",
   "families": [
    "C1",
+   "C2X",
    "C3",
    "SS"
   ],
   "family_sizes": {
    "C1": 709,
    "C3": 1465,
-   "SS": 0
+   "SS": 0,
+   "C2X": 4
   },
   "ents": [
    "T:520AE0"
@@ -347,7 +1122,376 @@
     "IConnectionPointContainer",
     "IDownloadEvent@WOL"
    ],
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "BuildingClass",
+    "InfantryClass",
+    "UnitClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:477DB0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:477DB0",
+   "RET:477DB0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:7B8730:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 881,
+   "C6": 606,
+   "SS": 17,
+   "C2X": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:7B8730",
+   "RET:7B8730"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:1",
+   "20:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "48:4",
+   "52:4",
+   "56:4",
+   "60:4",
+   "64:4",
+   "68:4",
+   "72:4",
+   "88:4",
+   "92:4",
+   "108:4",
+   "112:4",
+   "128:4",
+   "144:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "AnimTypeClass",
+    "CellClass",
+    "FoggedObjectClass",
+    "HouseClass",
+    "HouseTypeClass",
+    "InfantryTypeClass",
+    "LocomotionClass",
+    "MPCooperative",
+    "ParticleTypeClass",
+    "SidebarClass",
+    "SpawnManagerClass",
+    "TeamTypeClass"
+   ],
+   "C2X": [
+    "OverlayClass",
+    "SmudgeClass",
+    "TubeClass",
+    "WaveClass",
+    "VocClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:595680:1",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 752,
+   "SS": 3,
+   "C2X": 2,
+   "MW": 7
+  },
+  "ents": [
+   "T:595740",
+   "RET:595740",
+   "P:595680:1"
+  ],
+  "obs": [
+   "376:4",
+   "380:4",
+   "384:4",
+   "388:4",
+   "700:4",
+   "704:4",
+   "764:4",
+   "768:1",
+   "772:4",
+   "780:4",
+   "784:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "SS": [
+    "WaveClass",
+    "RulesClass",
+    "Stream"
+   ],
+   "C2X": [
+    "InfantryClass",
+    "UnitClass"
+   ],
+   "MW": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "ParticleClass",
+    "TechnoClass",
+    "UnitClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:599650:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C3",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 755,
+   "C3": 1688,
+   "SS": 2,
+   "C2X": 6,
+   "MW": 7
+  },
+  "ents": [
+   "T:599650"
+  ],
+  "obs": [
+   "56:4",
+   "60:4",
+   "72:4",
+   "80:4",
+   "384:4",
+   "388:4",
+   "424:4",
+   "452:4",
+   "780:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C3": [
+    "AddTeamCommandClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "SelectTeamCommandClass",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass"
+   ],
+   "SS": [
+    "WaveClass",
+    "RulesClass"
+   ],
+   "C2X": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass"
+   ],
+   "MW": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "ParticleClass",
+    "TechnoClass",
+    "UnitClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7DD0F8:3",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 950,
+   "SS": 2,
+   "C2X": 3
+  },
+  "ents": [
+   "T:5B9550",
+   "P:7DD0F8:3"
+  ],
+  "obs": [
+   "0:4",
+   "9:1",
+   "76:4",
+   "80:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "UnitTypeClass",
+    "Network"
+   ],
+   "C2X": [
+    "ColorListClass",
+    "TaskForceClass",
+    "VocClass"
+   ]
   },
   "exact": {}
  },
@@ -649,6 +1793,92 @@
   "exact": {}
  },
  {
+  "cluster": "RET:525430",
+  "status": "inconsistent",
+  "families": [
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "SS": 4,
+   "MW": 1
+  },
+  "ents": [
+   "T:525430",
+   "RET:525430"
+  ],
+  "obs": [],
+  "family_domains": {
+   "SS": [
+    "CampaignClass",
+    "ObjectTypeClass",
+    "TacticalClass",
+    "Trigger"
+   ],
+   "MW": [
+    "?$TypeList@H"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "RET:67B8F0",
+  "status": "inconsistent",
+  "families": [
+   "MW"
+  ],
+  "family_sizes": {
+   "MW": 0
+  },
+  "ents": [
+   "T:67B8F0",
+   "RET:67B8F0"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "RET:67B720",
+  "status": "inconsistent",
+  "families": [
+   "MW"
+  ],
+  "family_sizes": {
+   "MW": 0
+  },
+  "ents": [
+   "T:67B720",
+   "RET:67B720"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "RET:67B550",
+  "status": "inconsistent",
+  "families": [
+   "MW"
+  ],
+  "family_sizes": {
+   "MW": 0
+  },
+  "ents": [
+   "T:67B550",
+   "RET:67B550"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "R:5B3760:ecx",
   "status": "inconsistent",
   "families": [
@@ -699,11 +1929,13 @@
   "status": "inconsistent",
   "families": [
    "C1",
+   "C2X",
    "SS"
   ],
   "family_sizes": {
    "C1": 651,
-   "SS": 0
+   "SS": 0,
+   "C2X": 1
   },
   "ents": [
    "T:68B940",
@@ -750,7 +1982,284 @@
     "INetUtilEvent@WOL",
     "IPersist"
    ],
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "ScenarioClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:690A10:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:690A10",
+   "RET:690A10"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:1",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:690AE0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:690AE0",
+   "RET:690AE0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:1",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:6D9CE0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 693,
+   "SS": 2,
+   "C2X": 3
+  },
+  "ents": [
+   "T:6D9CE0"
+  ],
+  "obs": [
+   "176:4",
+   "180:4",
+   "3504:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "SS": [
+    "Tactical",
+    "TacticalMap"
+   ],
+   "C2X": [
+    "AircraftTypeClass",
+    "TechnoTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:720480:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 773,
+   "SS": 1,
+   "C2X": 7
+  },
+  "ents": [
+   "T:720480"
+  ],
+  "obs": [
+   "640:4",
+   "648:1",
+   "649:1",
+   "652:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "SS": [
+    "ThemeClass"
+   ],
+   "C2X": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass",
+    "VoxelAnimClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:75A120:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C3"
+  ],
+  "family_sizes": {
+   "C1": 904,
+   "C3": 91,
+   "C2X": 4
+  },
+  "ents": [
+   "T:75A120"
+  ],
+  "obs": [
+   "4:4",
+   "112:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C3": [
+    "AITriggerTypeClass",
+    "AbstractClass",
+    "AbstractTypeClass",
+    "AircraftClass",
+    "AircraftTypeClass",
+    "AirstrikeClass",
+    "AlphaShapeClass",
+    "AnimClass",
+    "AnimTypeClass",
+    "BombClass",
+    "BuildingClass",
+    "BuildingLightClass"
+   ],
+   "C2X": [
+    "BSurface",
+    "AsyncIO",
+    "CreateTeamCommand",
+    "VocClass"
+   ]
   },
   "exact": {}
  },
@@ -759,11 +2268,15 @@
   "status": "inconsistent",
   "families": [
    "C1",
+   "C2X",
+   "MW",
    "SS"
   ],
   "family_sizes": {
    "C1": 783,
-   "SS": 0
+   "SS": 0,
+   "C2X": 3,
+   "MW": 7
   },
   "ents": [
    "T:75F140"
@@ -807,7 +2320,666 @@
     "IDownloadEvent@WOL",
     "INetUtilEvent@WOL"
    ],
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass"
+   ],
+   "MW": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass",
+    "Voxel"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:764B90:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 972,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:764B90",
+   "RET:764B90"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "48:4",
+   "52:4",
+   "56:4",
+   "60:4",
+   "64:4",
+   "68:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:766A10:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1342,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:766A10",
+   "RET:766A10"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:767820:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1342,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:767820",
+   "RET:767820"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:768000:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 852,
+   "C6": 606,
+   "SS": 2,
+   "C2X": 7,
+   "MW": 0
+  },
+  "ents": [
+   "T:768000",
+   "RET:768000"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4",
+   "20:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "68:4",
+   "72:4",
+   "100:4",
+   "104:1",
+   "108:4",
+   "112:4",
+   "116:1",
+   "120:4",
+   "188:4",
+   "192:4",
+   "196:4",
+   "200:1",
+   "201:1",
+   "204:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "HouseClass",
+    "WaveClass"
+   ],
+   "C2X": [
+    "BuildingLightClass",
+    "MissionClass",
+    "ParticleSystemClass",
+    "RadioClass",
+    "TerrainClass",
+    "TiberiumClass",
+    "WaveClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CC250:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 966,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CC250",
+   "RET:5CC250"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:4",
+   "52:1",
+   "56:4",
+   "64:4",
+   "68:4",
+   "72:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:76BF00:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1803,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:76BF00",
+   "RET:76BF00"
+  ],
+  "obs": [
+   "0:4",
+   "4:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CD330:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1033,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CD330",
+   "RET:5CD330"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "32:4",
+   "48:1",
+   "49:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5CBD20:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 972,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CBD20",
+   "RET:5CBD20"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:4",
+   "52:1",
+   "56:4",
+   "64:4",
+   "68:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:76F970:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1046,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:76F970",
+   "RET:76F970"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "20:4",
+   "28:4",
+   "36:4",
+   "40:4",
+   "44:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:779690:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1003,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:779690",
+   "RET:779690"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:1",
+   "16:4",
+   "20:1",
+   "24:4",
+   "28:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:4",
+   "52:4",
+   "56:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
   },
   "exact": {}
  },
@@ -815,17 +2987,26 @@
   "cluster": "T:7BE830",
   "status": "inconsistent",
   "families": [
+   "C2X",
    "SS"
   ],
   "family_sizes": {
-   "SS": 0
+   "SS": 0,
+   "C2X": 5
   },
   "ents": [
    "T:7BE830"
   ],
   "obs": [],
   "family_domains": {
-   "SS": []
+   "SS": [],
+   "C2X": [
+    "AircraftTypeClass",
+    "BuildingTypeClass",
+    "InfantryTypeClass",
+    "UnitTypeClass",
+    "RulesClass"
+   ]
   },
   "exact": {}
  },
@@ -844,6 +3025,700 @@
   "obs": [],
   "family_domains": {
    "SS": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:513860:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 1
+  },
+  "ents": [
+   "T:513860",
+   "RET:513860"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": [
+    "?$VectorClass@PBVInfantryTypeClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:513740:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:513740",
+   "RET:513740"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5137D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:5137D0",
+   "RET:5137D0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5255F0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:5255F0",
+   "RET:5255F0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5AD660:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:5AD660",
+   "RET:5AD660"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:67C280:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 1
+  },
+  "ents": [
+   "T:67C280",
+   "RET:67C280"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": [
+    "?$VectorClass@PBVSmudgeTypeClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:67C1F0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 0
+  },
+  "ents": [
+   "T:67C1F0",
+   "RET:67C1F0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "RET:67BB10",
+  "status": "inconsistent",
+  "families": [
+   "MW"
+  ],
+  "family_sizes": {
+   "MW": 0
+  },
+  "ents": [
+   "T:67BB10",
+   "RET:67BB10"
+  ],
+  "obs": [],
+  "family_domains": {
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:65C2A0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1136,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:65C2A0"
+  ],
+  "obs": [
+   "0:4",
+   "8:4",
+   "28:1",
+   "29:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:717D20:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 1
+  },
+  "ents": [
+   "T:717D20",
+   "RET:717D20"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": [
+    "?$TypeList@PBVParticleSystemTypeClass@@"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:75E6B0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "SS": 5,
+   "MW": 1
+  },
+  "ents": [
+   "T:75E6B0",
+   "RET:75E6B0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "CampaignClass",
+    "DynamicVectorClass_uint",
+    "TacticalClass",
+    "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+    "VectorClass_ptr_ConvertClass"
+   ],
+   "MW": [
+    "?$VectorClass@PBVVoxelAnimTypeClass@@"
+   ]
   },
   "exact": {}
  },
@@ -1713,6 +4588,68 @@
   "exact": {}
  },
  {
+  "cluster": "R:4B53E0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 956,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:4B53E0",
+   "RET:4B53E0"
+  ],
+  "obs": [
+   "0:4",
+   "44:4",
+   "48:4",
+   "52:4",
+   "56:4",
+   "60:4",
+   "64:4",
+   "68:4",
+   "72:1",
+   "76:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "S:4CC100:var_4",
   "status": "inconsistent",
   "families": [
@@ -1753,6 +4690,75 @@
   "exact": {}
  },
  {
+  "cluster": "R:5CD570:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 956,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5CD570",
+   "RET:5CD570"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "16:4",
+   "20:4",
+   "24:4",
+   "32:4",
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:1",
+   "52:4",
+   "64:4",
+   "72:1",
+   "73:1",
+   "76:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "S:635830:var_8",
   "status": "inconsistent",
   "families": [
@@ -1775,6 +4781,131 @@
     "short",
     "unsigned short"
    ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:6AC840:1",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 665,
+   "C6": 606,
+   "SS": 1,
+   "C2X": 1,
+   "MW": 0
+  },
+  "ents": [
+   "T:6A4F20",
+   "RET:6A4F20",
+   "P:6AC840:1"
+  ],
+  "obs": [
+   "0:4",
+   "5408:4",
+   "5416:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL",
+    "IPersist"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "RadarClass"
+   ],
+   "C2X": [
+    "SidebarClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:7632D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1195,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:7632D0",
+   "RET:7632D0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:1",
+   "13:1",
+   "16:4",
+   "20:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
   },
   "exact": {}
  },
@@ -5630,6 +8761,172 @@
   "exact": {}
  },
  {
+  "cluster": "R:403A80:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 788,
+   "SS": 5,
+   "C2X": 2
+  },
+  "ents": [
+   "T:403A80"
+  ],
+  "obs": [
+   "24:4",
+   "236:4",
+   "472:4",
+   "476:4",
+   "480:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL"
+   ],
+   "SS": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "TechnoClass",
+    "RulesClass"
+   ],
+   "C2X": [
+    "InfantryClass",
+    "UnitClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:4266D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 688,
+   "C6": 606,
+   "C2X": 2,
+   "MW": 0
+  },
+  "ents": [
+   "T:4266D0"
+  ],
+  "obs": [
+   "0:4",
+   "132:4",
+   "136:1",
+   "137:1",
+   "3596:4",
+   "3600:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "C2X": [
+    "Animate",
+    "RulesClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:428DE0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 742,
+   "SS": 1,
+   "C2X": 6
+  },
+  "ents": [
+   "T:428DE0"
+  ],
+  "obs": [
+   "164:4",
+   "168:1",
+   "862:1",
+   "863:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "SS": [
+    "AnimTypeClass"
+   ],
+   "C2X": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "InfantryClass",
+    "TechnoClass",
+    "UnitClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:42F5E0:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -5774,6 +9071,120 @@
   "exact": {}
  },
  {
+  "cluster": "R:458750:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "C3",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 727,
+   "C3": 1469,
+   "SS": 1,
+   "C2X": 8
+  },
+  "ents": [
+   "T:458750"
+  ],
+  "obs": [
+   "0:4",
+   "540:4",
+   "1312:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "Mouse",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL"
+   ],
+   "C3": [
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "FlasherClass",
+    "IApplication",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IDownloadEvent@WOL"
+   ],
+   "SS": [
+    "AircraftClass"
+   ],
+   "C2X": [
+    "AircraftTypeClass",
+    "BuildingClass",
+    "BuildingTypeClass",
+    "InfantryClass",
+    "InfantryTypeClass",
+    "TechnoTypeClass",
+    "UnitTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:45F1D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 660,
+   "SS": 1,
+   "C2X": 2
+  },
+  "ents": [
+   "T:45F1D0"
+  ],
+  "obs": [
+   "0:4",
+   "5364:4",
+   "5992:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory",
+    "IDownloadEvent@WOL",
+    "INetUtilEvent@WOL",
+    "IPersist"
+   ],
+   "SS": [
+    "TacticalClass"
+   ],
+   "C2X": [
+    "BuildingTypeClass",
+    "RulesClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:4726F0:this:0x48",
   "status": "inconsistent",
   "families": [
@@ -5885,6 +9296,246 @@
   "exact": {}
  },
  {
+  "cluster": "R:513D20:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 913,
+   "SS": 10,
+   "C2X": 4
+  },
+  "ents": [
+   "T:513D20"
+  ],
+  "obs": [
+   "12:4",
+   "96:4",
+   "100:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "CellClass",
+    "FoggedObjectClass",
+    "LocomotionClass",
+    "MPCooperative",
+    "ParticleTypeClass",
+    "WaveClass",
+    "WinModemClass",
+    "Radar",
+    "RulesClass",
+    "VocClass"
+   ],
+   "C2X": [
+    "HoverLocomotionClass",
+    "JumpjetLocomotionClass",
+    "TunnelLocomotionClass",
+    "RandomMap"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:52AAF0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 1159,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:52AAF0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4",
+   "20:4",
+   "24:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CampaignScoreClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:52AB80:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MD",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 983,
+   "C6": 606,
+   "MD": 1,
+   "MW": 0
+  },
+  "ents": [
+   "T:52AB80"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "16:4",
+   "24:4",
+   "44:4",
+   "48:4",
+   "52:4",
+   "56:1",
+   "60:4",
+   "64:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MD": [
+    "INISection@INIClass"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5409F0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 950,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:5409F0"
+  ],
+  "obs": [
+   "0:4",
+   "5:1",
+   "68:4",
+   "72:4",
+   "76:4",
+   "80:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:56C510:this:0x14",
   "status": "inconsistent",
   "families": [
@@ -5970,6 +9621,69 @@
     "short",
     "unsigned short"
    ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:5B3F50:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 1097,
+   "C6": 606,
+   "SS": 1,
+   "MW": 0
+  },
+  "ents": [
+   "T:5B3F50"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "18:1",
+   "32:4",
+   "36:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$DynamicVectorClass@PAUControlNode@@"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "SS": [
+    "JumpjetLocomotionClass"
+   ],
+   "MW": []
   },
   "exact": {}
  },
@@ -6086,6 +9800,122 @@
   "exact": {}
  },
  {
+  "cluster": "R:6599C0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 913,
+   "SS": 13,
+   "C2X": 2
+  },
+  "ents": [
+   "T:6599C0"
+  ],
+  "obs": [
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:4",
+   "52:4",
+   "56:4",
+   "96:4",
+   "100:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "FoggedObjectClass",
+    "HouseClass",
+    "LocomotionClass",
+    "ParticleTypeClass",
+    "SidebarClass",
+    "SlaveManagerClass",
+    "SpawnManagerClass",
+    "TEventClass",
+    "TeamTypeClass",
+    "TiberiumClass",
+    "WaveClass",
+    "WinModemClass"
+   ],
+   "C2X": [
+    "AsyncIO",
+    "RandomMap"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:659E30:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 882,
+   "SS": 4,
+   "C2X": 1
+  },
+  "ents": [
+   "T:659E30"
+  ],
+  "obs": [
+   "36:4",
+   "40:4",
+   "44:4",
+   "48:4",
+   "52:4",
+   "56:4",
+   "96:4",
+   "100:4",
+   "140:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "HouseClass",
+    "LocomotionClass",
+    "TiberiumClass",
+    "WaveClass"
+   ],
+   "C2X": [
+    "AsyncIO"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:71F820:this:0x28",
   "status": "inconsistent",
   "families": [
@@ -6135,6 +9965,53 @@
    ],
    "MR": [
     "int32_t"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:759540:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C2X",
+   "SS"
+  ],
+  "family_sizes": {
+   "C1": 904,
+   "SS": 1,
+   "C2X": 4
+  },
+  "ents": [
+   "T:759540"
+  ],
+  "obs": [
+   "4:4",
+   "112:1"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "SS": [
+    "Stream"
+   ],
+   "C2X": [
+    "BSurface",
+    "AsyncIO",
+    "CreateTeamCommand",
+    "VocClass"
    ]
   },
   "exact": {}
@@ -6191,6 +10068,61 @@
    "PP": [
     "char*"
    ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "R:7B88D0:ecx",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C6",
+   "MW"
+  ],
+  "family_sizes": {
+   "C1": 908,
+   "C6": 606,
+   "MW": 0
+  },
+  "ents": [
+   "T:7B88D0"
+  ],
+  "obs": [
+   "0:4",
+   "68:4",
+   "88:4",
+   "108:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL",
+    "BounceClass",
+    "CComObjectRootBase@ATL",
+    "CDownloadEventSink",
+    "DiskSwap",
+    "IChatEvent@WOL",
+    "IClassFactory"
+   ],
+   "C6": [
+    "AddTeamCommandClass",
+    "BitText",
+    "CampaignScoreClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "SelectTeamCommandClass",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H"
+   ],
+   "MW": []
   },
   "exact": {}
  },

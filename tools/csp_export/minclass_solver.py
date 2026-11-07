@@ -73,7 +73,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
-            "TC", "GI", "AV", "SA", "SW", "EP", "VR"]
+            "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -128,6 +128,9 @@ FAMILY_DESC = {
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
     "EP": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
     "VR": "vdispatch receiver-origin: snapshot-disasm site-level resolution of `call [r2+N]` receiver value to its origin entity (T:FN this / M:FN:this:0xOFF member / P:FN:k param / EAX:FN:callsite ret / G:addr global; label-bounded <=8-instr reaching-def, tier=strict 2424 / entry-alias last-def, tier=fullspan 1558); consumed as C3 slot-mask (vptr_off==0) / C30 secondary-offset mask (vptr_off>0) landing on the origin entity -- same consumption form as the _vt_recv_by branch, replacing nothing (additive; sites in dropped_edges skipped, corrections ecosystem keeps precedence; fullspan tier gated behind --allow-heuristics per vrorg report 'consumption advice'; evidence array = 13 vr-nested chains, layer-1 M-entity class candidates -> AND-mask via _load_type_family_dict; anchors/vr_origin_edges.json, .omo/agents/vrorg/report.md)",
+    "C2X": "compound this-offset fingerprints: function FN's traced-this accesses {(off,width,dir)} AND-matched against flat class layouts (>=3 distinct offsets, 1..8 candidates emitted) -> T-entity class-candidate mask (strict; evidence anchors/c18v2_compound_sigs.json, .omo/agents c18v2 v2)",
+    "MW": "write-direction evidence for T: entities: (A) vfptr installs -- off==0 primary = ctor semantics, types=[C] single (parity with ctor_types/C4 EXACT, NO descendant widening; generator emits expanded [C]+desc only for off==col>0 own-column rows and MI col-match rows, verified at wiring); (B) pure-write this-offset fingerprints AND-matched vs layouts (strict; evidence anchors/mw_write_fingerprints.json)",
+    "P5": "occupant param forms 5-8: PU6 lea-slot-addr-forwarded-to-call -> pointer-vocabulary mask from type_universe '*' tokens (HEURISTIC tier per pu5 report limitation #2: param-slot-as-scratch contamination mode; PU7/PU8 generator-side structural empty sets emit 0 rows; evidence anchors/pu5_forms.json; PU5 global-store eq edges of the same file wired separately via the EF-style bidirectional channel)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -1591,6 +1594,19 @@ def main():
     except Exception:
         pass
     print("[C10-pre] eax/gs eq entity precreate: %d" % _efeq_touch, flush=True)
+    # DT 直调 thiscall 接收者边的 EAX 对侧实体预创建（EF/GS 同模式，幂等
+    # not-in-ents 守卫；T:/M:/G: 对侧遵循 FS/FC 惯例不预创建——作传播连接点
+    # 即可，其域由传播通道经 ents 内邻居收窄）。
+    _dt_touch = 0
+    try:
+        for _r0 in (jload("anchors/dt_thiscall_edges.json", {}) or {}).get("edges") or []:
+            _eid0 = (_r0 or {}).get("eq")
+            if isinstance(_eid0, str) and _eid0.startswith("EAX:") and _eid0 not in ents:
+                touch(_eid0, _eid0)
+                _dt_touch += 1
+    except Exception:
+        pass
+    print("[C10-pre] dt eq EAX entity precreate: %d" % _dt_touch, flush=True)
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -3309,6 +3325,67 @@ def main():
     except Exception as _e_ep:
         census["EP"] = census.get("EP", 0)
         print("[EP] skipped: %r" % _e_ep, flush=True)
+    # C2X：复合偏移签名（c18v2_compound_sigs.json evidence 数组，476 recs）。
+    # 函数 traced-this 访问 {(off,width,dir)} AND 匹配扁平布局（每个指纹元组都
+    # 须被成员区间覆盖），仅发射 ≥3 不同偏移且 1..8 候选的行；types 即候选类表，
+    # 直接 AND 掩码（dense-exact1 剔除是生成器侧 writes 通道的对称取舍，本族
+    # 候选表原样消费，不重复裁决）。
+    try:
+        census["C2X"] = _load_type_family("anchors/c18v2_compound_sigs.json", "C2X")
+        print("[C2X] compound offset-sig receivers: %d" % census["C2X"], flush=True)
+    except Exception as _e_c2x:
+        census["C2X"] = census.get("C2X", 0)
+        print("[C2X] skipped: %r" % _e_c2x, flush=True)
+    # MW：写方向指纹 + vfptr 安装（mw_write_fingerprints.json evidence 数组，
+    # 1,975 recs，T 实体）。via 通道按生成器 meta 语义**原样**消费（加载端不
+    # 展开、不裁剪，掩码 = types 原文）：
+    #   mw-vfptr-0（off==0&col==0 主装表，1,437 条实测全部 |types|==1）＝ ctor
+    #     语义、与 ctor_types 通道 parity——C4 EXACT 同款「this==该类」，派生
+    #     不展开（求解器对 C4 同样不展开；接线审计 2026-11-07 确认生成器在需要
+    #     派生域的通道已自行展开，见下行）；
+    #   mw-vfptr-0xN / mw-vfptr-mi-*（off==col>0 本列族装表 / MI 内嵌）＝ 生成
+    #     端已展开 types=[C]+desc(C) / strict-desc 列匹配（实证 T:4D31E0 via=
+    #     mw-vfptr-0x8 → FootClass+Aircraft+Infantry+Unit）；
+    #   mw-writes-kN（纯写指纹 AND 布局）＝ 候选类表原样（dense-exact1 生成端
+    #     已剔除）。
+    try:
+        _mwvc = collections.Counter()
+        for _r_mw in (jload("anchors/mw_write_fingerprints.json", {}) or {}).get("evidence") or []:
+            _v_mw = str((_r_mw or {}).get("via") or "")
+            _mwvc["vfptr" if _v_mw.startswith("mw-vfptr") else
+                  ("writes" if _v_mw.startswith("mw-writes") else "other")] += 1
+        census["MW"] = _load_type_family("anchors/mw_write_fingerprints.json", "MW")
+        print("[MW] write-fingerprint types: %d (vfptr=%d writes=%d)"
+              % (census["MW"], _mwvc.get("vfptr", 0), _mwvc.get("writes", 0)), flush=True)
+    except Exception as _e_mw:
+        census["MW"] = census.get("MW", 0)
+        print("[MW] types skipped: %r" % _e_mw, flush=True)
+    # P5：占用者参数第五-八形态（pu5_forms.json evidence 数组，108 recs，全部
+    # PU6 lea-取址转发形态）。PU6 = 弱指针族证据（param 槽地址被取用并转发到
+    # 调用；生成器 meta 注明含 param-slot-as-scratch 场景，pu5 报告限制 #2 建议
+    # 归 heuristic tier）→ gate --allow-heuristics。记录无 per-record types，
+    # 掩码 = type_universe 指针词汇（'*' token 全集，加载时动态求取，跟随宇宙
+    # 演化）。PU7/PU8 生成器结构性空集（0 行）。同文件 PU5 全局存储等值边另走
+    # EF 通道（[PU5] eq 行）。
+    try:
+        if getattr(args, "allow_heuristics", False):
+            _pu5d = jload("anchors/pu5_forms.json", {}) or {}
+            _ptr_vocab = [str(_t5) for _t5 in
+                          (jload("anchors/type_universe.json", {}) or {}).get("types") or []
+                          if "*" in str(_t5)]
+            _p5_rows = [{"ent": _r5.get("ent"), "types": _ptr_vocab}
+                        for _r5 in (_pu5d.get("evidence") or [])
+                        if isinstance((_r5 or {}).get("ent"), str)]
+            census["P5"] = _load_type_family_dict(_p5_rows, "P5")
+            print("[P5] pu6 pointer-family params (heuristic): %d (vocab=%d)"
+                  % (census["P5"], len(_ptr_vocab)), flush=True)
+        else:
+            census["P5"] = 0
+            print("[P5] pu6 pointer-family params: 0 (heuristic tier gated; --allow-heuristics to enable)",
+                  flush=True)
+    except Exception as _e_p5:
+        census["P5"] = census.get("P5", 0)
+        print("[P5] skipped: %r" % _e_p5, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
@@ -5970,6 +6047,67 @@ def main():
         print("[PF] param-forward eq edges=%d" % _n_pfe, flush=True)
     except Exception as _e_pfe:
         print("[PF] eq edges skipped: %r" % _e_pfe, flush=True)
+    # ---- DT 直调 thiscall 接收者等值（dt_thiscall_edges：T:FN2 == M:/G:/EAX:，EF 同款通道）----
+    # 语义：直接调用点被调方 this（ecx）的寄存器到达定义 = 来源实体，两者是
+    # 同一值 ⇒ 双向等值边（EF/SW/PF 同款：不经 un() 硬合并，R:/V: 过滤，冲突
+    # 以空域形式交中和器裁决）。三 via（7,048 边 ×2 = 14,096 有向）：
+    #   dt-eax     mov ecx,eax（nearest eax def = call）  => T:FN2 == EAX:FN1:SITE
+    #   dt-member  mov ecx,[base+off]（base->FN1 this）   => T:FN2 == M:FN1:this:0xOFF
+    #              （lea 形 = 内嵌成员对象，vrorg interior 约定）
+    #   dt-global  mov ecx,offset G / ds:G / 命名全局     => T:FN2 == G:ADDR
+    # 生成器侧 guards：label/jmp/ret/call 屏障 + <=8 指令回扫 + <=3 copy hops +
+    # entry-ecx 透传；[ebp+X]/[ebp+arg_N] 栈源跳过（PF 先行覆盖）；dup_vs_pf=0。
+    # EAX 对侧实体已预创建（[C10-pre] dt 行）。
+    try:
+        _dte = jload("anchors/dt_thiscall_edges.json", {}) or {}
+        _n_dte = 0
+        _dt_via = collections.Counter()
+        for _r1 in (_dte.get("edges") or []):
+            _a1 = (_r1 or {}).get("t")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_dte += 2
+            _dt_via[(_r1 or {}).get("via") or "?"] += 1
+        print("[DT] direct-thiscall eq edges=%d (via=%s)"
+              % (_n_dte, dict(_dt_via)), flush=True)
+    except Exception as _e_dte:
+        print("[DT] eq edges skipped: %r" % _e_dte, flush=True)
+    # ---- PU5 全局存储等值（pu5_forms：P:FN:K == G:ADDR，EF 同款通道）----
+    # 语义：mov <global>, <reg32 whose def=param k>——参数值直存全局本体
+    # （g_X.field_NN 成员存储 / g_X[idx] 索引存储不等值全局本体，生成端已
+    # 排除）。14 目标 G 均不在 ents（pu5 报告实测）——按报告建议预创建双端
+    # 原子（PU as-this 通道 touch 先例），P 侧被其它通道钉死后可经边钉死 G。
+    try:
+        _pu5e = jload("anchors/pu5_forms.json", {}) or {}
+        _n_pu5e = 0
+        _pu5_touch = 0
+        for _r1 in (_pu5e.get("edges") or []):
+            _a1 = (_r1 or {}).get("a")
+            _b1 = (_r1 or {}).get("b")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            for _ep5 in (_a1, _b1):
+                if _ep5 not in ents:
+                    touch(_ep5, _ep5)
+                    _pu5_touch += 1
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_pu5e += 2
+        print("[PU5] global-store eq edges=%d (endpoints touched=%d)"
+              % (_n_pu5e, _pu5_touch), flush=True)
+    except Exception as _e_pu5e:
+        print("[PU5] eq edges skipped: %r" % _e_pu5e, flush=True)
     # ---- GS 站点实参等值（gs_site_args：GS:slot:k:root == 绑定来源实体，直达式）----
     try:
         _gsa = jload("anchors/gs_site_args.json", {}) or {}

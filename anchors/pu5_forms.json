@@ -1,0 +1,1546 @@
+{
+ "meta": {
+  "generated": "2026-11-07 22:26",
+  "generator": ".omo/agents/pu5 (scan.py + aggregate.py, offline snapshot scan; no IDA, no solver touched)",
+  "snapshot": "decompile-results/full_export_v2_20260909 (index.json + src/*.cpp disasm + globals.hpp)",
+  "pool": {
+   "slot_records": 13204,
+   "distinct_occupant_addrs": 6499,
+   "fns_scanned": 6486,
+   "fns_with_params": 4445,
+   "missing_snapshot_addrs": [
+    "00417300",
+    "004176F0",
+    "0041B890",
+    "0041BBD0",
+    "00426A70",
+    "0045FE50",
+    "005046F0",
+    "00504080",
+    "00504730",
+    "00544D30",
+    "005C3710",
+    "007360C0",
+    "0073FD50"
+   ]
+  },
+  "semantics": {
+   "PU5": "mov <global-name>, <reg32 whose def=param k>  =>  equality edge P:FN:K == G:<ADDR> (param value stored into a global base object; direct stores only -- g_X.field_NN member stores and g_X[idx] indexed stores do NOT equate to the global base and are excluded; diag counters in scan_raw.json)",
+   "PU6": "lea reg, [param slot] (extra offset == 0, pure address-of) and reg pushed/moved-to-ecx then called within <=6 instructions (same basic-block window)  =>  weak pointer-family evidence (type_universe pointer vocabulary = 26 tokens); NOTE mechanical form: some sites are param-slot-as-scratch out-params (slot overwritten before lea) -- tier decision belongs to the solver wiring",
+   "PU7": "per (fn,k): the set of cmp/test immediates against the param (register def or direct slot) equals exactly {0,1,...,N} consecutive with N>=2  =>  enum/int family evidence (constants observed in the CALLEE body, complementing caller-side CP); single-const {1} dtor-flag tests are filtered out",
+   "PU8": "shl/shr/sar/sal/rol/ror/rcl/rcr <x>, cl with def[ecx] == param k (32-bit slot load def; any sub-register rewrite kills the def)  =>  int family evidence"
+  },
+  "k_convention": "P:FN:K: FN = uppercase hex no 0x prefix; K = decimal stack-param index (thiscall this in ecx is NOT counted; [ebp+8]/arg_0 = K 0); stdarg protos read param count from signals/authority",
+  "engine_conservatism": [
+   "register def tracking is intra-basic-block: defs cleared at label lines (join points) and after unconditional jmp; calls kill eax/ecx/edx",
+   "defs established only by 32-bit direct loads (mov reg32, [param slot]); any value-transforming insn or sub-register write kills the def (verified: mov cx,di before shr dx,cl correctly rejects)",
+   "esp depth tracked linearly (push/pop/sub/add/retn-reset); named arg_N and authority-proto param names take precedence over numeric esp resolution",
+   "PU5 global names resolved via globals.hpp (snapshot) + signals globals + IDA auto-name embedded addresses; unresolved names: 0"
+  ],
+  "counts": {
+   "raw_events": 442,
+   "raw_per_form": {
+    "PU7": 282,
+    "PU6": 146,
+    "PU5": 14
+   },
+   "pu7_groups_total": 259,
+   "pu7_rejected": {
+    "no_zero": 259
+   },
+   "pu7_const_set_histogram": {
+    "[1]": 233,
+    "[2]": 3,
+    "[8]": 3,
+    "[2000]": 3,
+    "[1, 3]": 2,
+    "[3]": 2,
+    "[5]": 1,
+    "[1000]": 1,
+    "[100]": 1,
+    "[500, 900]": 1,
+    "[4]": 1,
+    "[32]": 1,
+    "[7, 8, 10, 12, 13, 14, 15, 20, 33, 34, 37, 38, 39, 69, 70]": 1,
+    "[999]": 1,
+    "[728]": 1,
+    "[17]": 1,
+    "[1500]": 1,
+    "[80]": 1,
+    "[4526]": 1
+   },
+   "pu7_relaxed_candidates_not_emitted": [
+    {
+     "ent": "P:4AB9B0:3",
+     "variant": "R2-enumish-3plus-small",
+     "consts": [
+      7,
+      8,
+      10,
+      12,
+      13,
+      14,
+      15,
+      20,
+      33,
+      34,
+      37,
+      38,
+      39,
+      69,
+      70
+     ]
+    }
+   ],
+   "evidence_rows": 108,
+   "evidence_per_form": {
+    "PU6": 108
+   },
+   "evidence_distinct_ents": 108,
+   "pu6_site_pure": 138,
+   "pu6_site_scratch": 8,
+   "edges": 14,
+   "edge_distinct_P": 14,
+   "edge_distinct_G": 14
+  },
+  "diag": {
+   "pu5_member_or_index_store_site": 1
+  }
+ },
+ "evidence": [
+  {
+   "ent": "P:417CC0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x417ECB"
+   ]
+  },
+  {
+   "ent": "P:41D6F0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x41D70F"
+   ]
+  },
+  {
+   "ent": "P:420DE0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x420DFF"
+   ]
+  },
+  {
+   "ent": "P:42EE30:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 3,
+   "n_pure": 3,
+   "n_scratch": 0,
+   "sites": [
+    "0x42EEA0",
+    "0x42EF48",
+    "0x42EFCF"
+   ]
+  },
+  {
+   "ent": "P:42F070:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 3,
+   "n_pure": 3,
+   "n_scratch": 0,
+   "sites": [
+    "0x42F09C",
+    "0x42F0EA",
+    "0x42F12C"
+   ]
+  },
+  {
+   "ent": "P:438B40:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x438B5F"
+   ]
+  },
+  {
+   "ent": "P:43A540:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x43A55C"
+   ]
+  },
+  {
+   "ent": "P:4684E0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x46858E"
+   ]
+  },
+  {
+   "ent": "P:4684E0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x468624"
+   ]
+  },
+  {
+   "ent": "P:472720:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x47279F"
+   ]
+  },
+  {
+   "ent": "P:472720:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x47274A",
+    "0x4727EF"
+   ]
+  },
+  {
+   "ent": "P:4728E0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x47290F"
+   ]
+  },
+  {
+   "ent": "P:4888B0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4888BD"
+   ]
+  },
+  {
+   "ent": "P:4A7B90:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4A7BAF"
+   ]
+  },
+  {
+   "ent": "P:4B0500:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x4B0644",
+    "0x4B068A"
+   ]
+  },
+  {
+   "ent": "P:4B0EF0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4B0F00"
+   ]
+  },
+  {
+   "ent": "P:4B6040:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4B618C"
+   ]
+  },
+  {
+   "ent": "P:4C5A30:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4C5A4C"
+   ]
+  },
+  {
+   "ent": "P:4CA270:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4CA2EC"
+   ]
+  },
+  {
+   "ent": "P:4CA270:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 3,
+   "n_pure": 3,
+   "n_scratch": 0,
+   "sites": [
+    "0x4CA298",
+    "0x4CA2A2",
+    "0x4CA313"
+   ]
+  },
+  {
+   "ent": "P:4CA3C0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4CA3E8"
+   ]
+  },
+  {
+   "ent": "P:4CFC10:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4CFC20"
+   ]
+  },
+  {
+   "ent": "P:4D24A0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D24C9"
+   ]
+  },
+  {
+   "ent": "P:4D2510:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D258E"
+   ]
+  },
+  {
+   "ent": "P:4D2510:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D253A"
+   ]
+  },
+  {
+   "ent": "P:4D7170:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D723B"
+   ]
+  },
+  {
+   "ent": "P:4D8FB0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D9173"
+   ]
+  },
+  {
+   "ent": "P:4D9C60:4",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4D9CAB"
+   ]
+  },
+  {
+   "ent": "P:4DF510:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4DF763"
+   ]
+  },
+  {
+   "ent": "P:4FB9B0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x4FB9F1"
+   ]
+  },
+  {
+   "ent": "P:4FB9B0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x4FBA44"
+   ]
+  },
+  {
+   "ent": "P:4FB9B0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 10,
+   "n_pure": 9,
+   "n_scratch": 1,
+   "sites": [
+    "0x4FBA6B",
+    "0x4FBAAD",
+    "0x4FBAD2",
+    "0x4FBB14",
+    "0x4FBB39",
+    "0x4FBB7B",
+    "0x4FBBA0",
+    "0x4FBBC7",
+    "0x4FBC09",
+    "0x4FBC28"
+   ]
+  },
+  {
+   "ent": "P:512480:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5124AF"
+   ]
+  },
+  {
+   "ent": "P:512480:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x5124ED",
+    "0x51252B"
+   ]
+  },
+  {
+   "ent": "P:514D90:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x514F0C"
+   ]
+  },
+  {
+   "ent": "P:516370:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x516380"
+   ]
+  },
+  {
+   "ent": "P:518F90:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x519439"
+   ]
+  },
+  {
+   "ent": "P:51BF90:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x51C0E1"
+   ]
+  },
+  {
+   "ent": "P:51BF90:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x51C270"
+   ]
+  },
+  {
+   "ent": "P:51D0D0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x51D416"
+   ]
+  },
+  {
+   "ent": "P:51D6F0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x51D7AD"
+   ]
+  },
+  {
+   "ent": "P:524B60:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x524BD0",
+    "0x524C0E"
+   ]
+  },
+  {
+   "ent": "P:54AD30:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x54AE1E",
+    "0x54AE32"
+   ]
+  },
+  {
+   "ent": "P:54B6E0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x54B6F0"
+   ]
+  },
+  {
+   "ent": "P:5550C0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5550DC"
+   ]
+  },
+  {
+   "ent": "P:557800:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x557818"
+   ]
+  },
+  {
+   "ent": "P:55C350:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x55C4DD"
+   ]
+  },
+  {
+   "ent": "P:55C350:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x55C42F",
+    "0x55C550"
+   ]
+  },
+  {
+   "ent": "P:5B0170:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5B0180"
+   ]
+  },
+  {
+   "ent": "P:5C44E0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5C4586"
+   ]
+  },
+  {
+   "ent": "P:5CA800:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5CA936"
+   ]
+  },
+  {
+   "ent": "P:5CC330:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x5CC486"
+   ]
+  },
+  {
+   "ent": "P:5CC8A0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x5CC906"
+   ]
+  },
+  {
+   "ent": "P:5D3250:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5D3280"
+   ]
+  },
+  {
+   "ent": "P:5D6C70:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x5D6D24"
+   ]
+  },
+  {
+   "ent": "P:6295B0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6295D3"
+   ]
+  },
+  {
+   "ent": "P:62FE90:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x62FEB6"
+   ]
+  },
+  {
+   "ent": "P:62FF20:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x62FFC5"
+   ]
+  },
+  {
+   "ent": "P:630090:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6300BB"
+   ]
+  },
+  {
+   "ent": "P:645660:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6456D9"
+   ]
+  },
+  {
+   "ent": "P:6457A0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6457CC"
+   ]
+  },
+  {
+   "ent": "P:6568A0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x6568CA",
+    "0x656989"
+   ]
+  },
+  {
+   "ent": "P:656AC0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x656AE7",
+    "0x656B37"
+   ]
+  },
+  {
+   "ent": "P:65AC40:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x65AC6B"
+   ]
+  },
+  {
+   "ent": "P:65B3D0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x65B3EF"
+   ]
+  },
+  {
+   "ent": "P:690910:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x690944"
+   ]
+  },
+  {
+   "ent": "P:691630:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x69164C"
+   ]
+  },
+  {
+   "ent": "P:69FC10:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x69FCE7",
+    "0x69FD31"
+   ]
+  },
+  {
+   "ent": "P:6A05C0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6A05D0"
+   ]
+  },
+  {
+   "ent": "P:6A4780:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6A483E"
+   ]
+  },
+  {
+   "ent": "P:6A48A0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6A48CB"
+   ]
+  },
+  {
+   "ent": "P:6B1170:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6B119A"
+   ]
+  },
+  {
+   "ent": "P:6B1300:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6B1328"
+   ]
+  },
+  {
+   "ent": "P:6B4BE0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 1,
+   "n_scratch": 1,
+   "sites": [
+    "0x6B4C30",
+    "0x6B4C44"
+   ]
+  },
+  {
+   "ent": "P:6B7F10:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6B7F3A"
+   ]
+  },
+  {
+   "ent": "P:6B80B0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6B80D8"
+   ]
+  },
+  {
+   "ent": "P:6E3DB0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6E3DCC"
+   ]
+  },
+  {
+   "ent": "P:6E5730:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x6E574C"
+   ]
+  },
+  {
+   "ent": "P:6EC450:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x6EC470",
+    "0x6EC47F"
+   ]
+  },
+  {
+   "ent": "P:716DC0:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 8,
+   "n_pure": 8,
+   "n_scratch": 0,
+   "sites": [
+    "0x716E2D",
+    "0x716E6B",
+    "0x716EA9",
+    "0x716EE7",
+    "0x716F25",
+    "0x716F63",
+    "0x716FA1",
+    "0x716FDF"
+   ]
+  },
+  {
+   "ent": "P:7192C0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x7192D0"
+   ]
+  },
+  {
+   "ent": "P:71A660:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x71A67F"
+   ]
+  },
+  {
+   "ent": "P:71B920:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x71BACA"
+   ]
+  },
+  {
+   "ent": "P:71F8C0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x71F8DC"
+   ]
+  },
+  {
+   "ent": "P:7220D0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x7220FB"
+   ]
+  },
+  {
+   "ent": "P:726860:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x72687C"
+   ]
+  },
+  {
+   "ent": "P:728AF0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x728B75"
+   ]
+  },
+  {
+   "ent": "P:72A0E0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x72A0F0"
+   ]
+  },
+  {
+   "ent": "P:737BA0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x737BC6"
+   ]
+  },
+  {
+   "ent": "P:73CEC0:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x73CF23"
+   ]
+  },
+  {
+   "ent": "P:743A50:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 0,
+   "n_scratch": 1,
+   "sites": [
+    "0x743C9A"
+   ]
+  },
+  {
+   "ent": "P:75AE00:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x75AE10"
+   ]
+  },
+  {
+   "ent": "P:75E2C0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x75E2EF"
+   ]
+  },
+  {
+   "ent": "P:75E2C0:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x75E32D",
+    "0x75E36B"
+   ]
+  },
+  {
+   "ent": "P:75E440:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x75E469"
+   ]
+  },
+  {
+   "ent": "P:75F650:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x75F70D"
+   ]
+  },
+  {
+   "ent": "P:75F7D0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x75F7F7"
+   ]
+  },
+  {
+   "ent": "P:763C70:0",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x763CCB"
+   ]
+  },
+  {
+   "ent": "P:763C70:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x763C9A"
+   ]
+  },
+  {
+   "ent": "P:763D90:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x763DB9"
+   ]
+  },
+  {
+   "ent": "P:767740:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x76778E"
+   ]
+  },
+  {
+   "ent": "P:772EB0:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x772EDF"
+   ]
+  },
+  {
+   "ent": "P:772EB0:3",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x772F1D",
+    "0x772F5B"
+   ]
+  },
+  {
+   "ent": "P:7A3B30:5",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x7A3B6C"
+   ]
+  },
+  {
+   "ent": "P:7A5290:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x7A5455"
+   ]
+  },
+  {
+   "ent": "P:7AC220:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 3,
+   "n_pure": 3,
+   "n_scratch": 0,
+   "sites": [
+    "0x7AC289",
+    "0x7AC2A2",
+    "0x7AC326"
+   ]
+  },
+  {
+   "ent": "P:7AC220:2",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 1,
+   "n_pure": 1,
+   "n_scratch": 0,
+   "sites": [
+    "0x7AC26E"
+   ]
+  },
+  {
+   "ent": "P:7B13D0:1",
+   "form": "PU6",
+   "family": "ptr",
+   "raw": "lea-slot-addr-forwarded-to-call",
+   "n_sites": 2,
+   "n_pure": 2,
+   "n_scratch": 0,
+   "sites": [
+    "0x7B1489",
+    "0x7B16CD"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "a": "P:46FC00:4",
+   "b": "G:89E054",
+   "sites": [
+    "0x46FC2E"
+   ]
+  },
+  {
+   "a": "P:46FC00:6",
+   "b": "G:89E050",
+   "sites": [
+    "0x46FC48"
+   ]
+  },
+  {
+   "a": "P:471420:4",
+   "b": "G:89E020",
+   "sites": [
+    "0x471430"
+   ]
+  },
+  {
+   "a": "P:471420:6",
+   "b": "G:89DFD4",
+   "sites": [
+    "0x47149A"
+   ]
+  },
+  {
+   "a": "P:471420:7",
+   "b": "G:89E008",
+   "sites": [
+    "0x471495"
+   ]
+  },
+  {
+   "a": "P:471420:8",
+   "b": "G:89DFC0",
+   "sites": [
+    "0x471489"
+   ]
+  },
+  {
+   "a": "P:7A3D90:1",
+   "b": "G:B77DF0",
+   "sites": [
+    "0x7A3DBA"
+   ]
+  },
+  {
+   "a": "P:7A4070:1",
+   "b": "G:B77DF4",
+   "sites": [
+    "0x7A4083"
+   ]
+  },
+  {
+   "a": "P:7A4070:2",
+   "b": "G:B77E60",
+   "sites": [
+    "0x7A4092"
+   ]
+  },
+  {
+   "a": "P:7A4070:3",
+   "b": "G:B77E64",
+   "sites": [
+    "0x7A4097"
+   ]
+  },
+  {
+   "a": "P:7A4EC0:2",
+   "b": "G:B77DE4",
+   "sites": [
+    "0x7A4EEE"
+   ]
+  },
+  {
+   "a": "P:7A5290:1",
+   "b": "G:B77DF8",
+   "sites": [
+    "0x7A5299"
+   ]
+  },
+  {
+   "a": "P:7A7B60:4",
+   "b": "G:B779D4",
+   "sites": [
+    "0x7A7D14"
+   ]
+  },
+  {
+   "a": "P:7AA6D0:1",
+   "b": "G:B77DE8",
+   "sites": [
+    "0x7AA6F4"
+   ]
+  }
+ ]
+}

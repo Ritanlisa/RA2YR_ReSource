@@ -141,9 +141,9 @@
 ]
 },
 "?$VectorClass@PAVTechnoClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 9,
+"member_count": 7,
+"extent": 24,
+"clusters": 10,
 "members": [
 [
 0,
@@ -164,6 +164,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -2531,9 +2539,9 @@
 ]
 },
 "?$VectorClass@VRGBClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 11,
+"member_count": 7,
+"extent": 24,
+"clusters": 12,
 "members": [
 [
 0,
@@ -2554,6 +2562,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -2795,9 +2811,9 @@
 ]
 },
 "?$VectorClass@PAV?$DynamicVectorClass@PAD@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 9,
+"member_count": 7,
+"extent": 24,
+"clusters": 10,
 "members": [
 [
 0,
@@ -2818,6 +2834,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -4635,9 +4659,9 @@
 ]
 },
 "?$VectorClass@PBVBuildingTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 11,
+"member_count": 7,
+"extent": 24,
+"clusters": 12,
 "members": [
 [
 0,
@@ -4658,6 +4682,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -4909,9 +4941,9 @@
 ]
 },
 "?$VectorClass@PBVAircraftTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 11,
+"member_count": 7,
+"extent": 24,
+"clusters": 12,
 "members": [
 [
 0,
@@ -4932,13 +4964,21 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
 "?$VectorClass@PBVUnitTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 11,
+"member_count": 7,
+"extent": 24,
+"clusters": 12,
 "members": [
 [
 0,
@@ -4959,6 +4999,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -4998,9 +5046,9 @@
 ]
 },
 "?$VectorClass@PBVAnimTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 10,
+"member_count": 7,
+"extent": 24,
+"clusters": 11,
 "members": [
 [
 0,
@@ -5021,6 +5069,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -7499,9 +7555,9 @@
 ]
 },
 "?$VectorClass@PAVPlanningBranchClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 8,
+"member_count": 7,
+"extent": 24,
+"clusters": 9,
 "members": [
 [
 0,
@@ -7522,6 +7578,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -7671,9 +7735,9 @@
 ]
 },
 "?$VectorClass@PBVSmudgeTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 10,
+"member_count": 7,
+"extent": 24,
+"clusters": 11,
 "members": [
 [
 0,
@@ -7694,13 +7758,21 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
 "?$VectorClass@PBVVoxelAnimTypeClass@@": {
-"member_count": 5,
-"extent": 14,
-"clusters": 10,
+"member_count": 7,
+"extent": 24,
+"clusters": 11,
 "members": [
 [
 0,
@@ -7721,6 +7793,14 @@
 [
 13,
 1
+],
+[
+16,
+4
+],
+[
+20,
+4
 ]
 ]
 },
@@ -23951,7 +24031,7 @@
 "RadarClass": {
 "member_count": 5,
 "extent": 264,
-"clusters": 21,
+"clusters": 20,
 "members": [
 [
 0,
@@ -25558,59 +25638,10 @@
 ]
 },
 "INISection@INIClass": {
-"member_count": 12,
-"extent": 68,
-"clusters": 2,
-"members": [
-[
-0,
-4
-],
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-4
-],
-[
-16,
-4
-],
-[
-24,
-4
-],
-[
-44,
-4
-],
-[
-48,
-4
-],
-[
-52,
-4
-],
-[
-56,
-1
-],
-[
-60,
-4
-],
-[
-64,
-4
-]
-]
+"member_count": 0,
+"extent": 0,
+"clusters": 1,
+"members": []
 },
 "LoadProgressMgr": {
 "member_count": 1,
