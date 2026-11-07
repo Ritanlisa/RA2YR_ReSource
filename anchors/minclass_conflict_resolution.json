@@ -156,6 +156,7 @@
    "C15",
    "C3",
    "OT",
+   "SA",
    "SS"
   ],
   "family_sizes": {
@@ -163,7 +164,8 @@
    "C3": 1943,
    "C15": 2,
    "OT": 3,
-   "SS": 4
+   "SS": 4,
+   "SA": 190
   },
   "ents": [
    "T:477E10"
@@ -219,6 +221,20 @@
     "ObjectTypeClass",
     "TacticalClass",
     "Trigger"
+   ],
+   "SA": [
+    "AddTeamCommandClass",
+    "CenterTeamCommandClass",
+    "CreateTeamCommandClass",
+    "Mouse",
+    "SelectTeamCommandClass",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$DynamicVectorClass@PAUControlNode@@",
+    "?$DynamicVectorClass@PAUGlobalPacketType@@"
    ]
   },
   "exact": {}
@@ -6704,68 +6720,6 @@
     "IEnumConnectionPoints",
     "IEnumConnections",
     "IFlyControl"
-   ]
-  },
-  "exact": {}
- },
- {
-  "cluster": "P:528660:0",
-  "status": "inconsistent",
-  "families": [
-   "C1",
-   "C10",
-   "C7"
-  ],
-  "family_sizes": {
-   "C1": 1086,
-   "C7": 1030,
-   "C10": 1
-  },
-  "ents": [
-   "P:528660:0",
-   "S:528660:+0x4"
-  ],
-  "obs": [
-   "0:4",
-   "4:4",
-   "20:4",
-   "24:4",
-   "28:4",
-   "32:4",
-   "36:4",
-   "40:4"
-  ],
-  "family_domains": {
-   "C1": [
-    "CreateTeamCommandClass",
-    "LoadOptionsClass",
-    "Mouse",
-    "PKStraw",
-    "?$rc_ptr@VHistory@WorldDominationTour@@",
-    "?$rc_ptr@VState@WorldDominationTour@@",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
-    "?$DynamicVectorClass@PAUControlNode@@"
-   ],
-   "C7": [
-    "FlasherClass",
-    "IApplication",
-    "IConnectionPoint",
-    "IConnectionPointContainer",
-    "IEnumConnectionPoints",
-    "IEnumConnections",
-    "IFlyControl",
-    "IGameMap",
-    "IHouse",
-    "ILinkStream",
-    "IPiggyback",
-    "IPublicHouse"
-   ],
-   "C10": [
-    "int"
    ]
   },
   "exact": {}

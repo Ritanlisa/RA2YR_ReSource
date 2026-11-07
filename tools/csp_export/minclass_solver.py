@@ -73,7 +73,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
-            "TC", "GI", "AV"]
+            "TC", "GI", "AV", "SA", "SW"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -124,6 +124,8 @@ FAMILY_DESC = {
     "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
     "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
+    "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (strict; evidence anchors/sparity_types.json, 1293 recs; template/mis-spelled tokens with no universe atom dropped per-token, TC precedent)",
+    "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3161,6 +3163,30 @@ def main():
     except Exception as _e_av:
         census["AV"] = census.get("AV", 0)
         print("[AS] alloc v2 skipped: %r" % _e_av, flush=True)
+    # SA：SP-arity 判别器（sparity_types.json evidence 数组，1,293 recs；ent = 本求解器
+    # ent_id 形态 T:/P:/M:/S:/G:/RET:，R:/V: 生成器侧已剔除）。types = 站点实参数 ×
+    # 权威槽原型（vtable_slot_authority[+_ext]）交叉排除后的 AND-mask 候选类集：
+    #   tier A（bind-ret16）= 唯一绑定被调的 ret imm16/4 精确数（二进制真值）；
+    #   tier B（window-sim-agree）= push-window(v3) 与 esp-delta 模拟(v4) 双通道一致
+    # （gold-set 19/19）。无 universe atom 的 token（?$DynamicVectorClass@* 模板族、
+    # Mouse 等异名）按位丢弃（TC 先例），不影响行级有效性。
+    try:
+        census["SA"] = _load_type_family("anchors/sparity_types.json", "SA")
+        print("[SA] sparity arity-masks: %d" % census["SA"], flush=True)
+    except Exception as _e_sa:
+        census["SA"] = census.get("SA", 0)
+        print("[SA] skipped: %r" % _e_sa, flush=True)
+    # SW：槽生命周期窗口类型（slot_window_edges.json 的 evidence 数组，179 recs，
+    # via=slotwin-vdispatch：虚分派站点观察到的槽位占用者类候选 AND-mask）。
+    # 同文件的 edges（1,829 条等值边）在 EF 同款双向通道单独接线（见 [SW] eq 行）。
+    # ent 拼写 S:fn:var_NN[.subsel][@W0xADDR]——SG 族 var_NN 先例兼容；窗口后缀/
+    # 点选后缀实体作传播连接点，由本族掩码 + 等值边共同收窄。
+    try:
+        census["SW"] = _load_type_family("anchors/slot_window_edges.json", "SW")
+        print("[SW] slot-window types: %d" % census["SW"], flush=True)
+    except Exception as _e_sw:
+        census["SW"] = census.get("SW", 0)
+        print("[SW] types skipped: %r" % _e_sw, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
@@ -5696,6 +5722,31 @@ def main():
         print("[EF] eax-flow eq edges=%d" % _n_efe, flush=True)
     except Exception as _e_efe:
         print("[EF] injection skipped: %r" % _e_efe, flush=True)
+    # ---- SW 槽生命周期窗口等值（slot_window_edges：S:slot == EAX:/T:/P:/RET:，EF 同款通道）----
+    # 语义与 EF eq 相同（栈槽与流入值是同一对象/值），走同一双向通道；
+    # 不经 un()（union-find EXACT 硬合并），冲突以空域形式交由中和器裁决。
+    # 生成器侧已对账：dup_vs_eax_flow_equations=0（与 EF 无重复边）、
+    # eax_not_in_universe=0（EAX: 对侧实体全部在解空间）。S: 侧含 plain
+    # （var_NN，SG 族先例）/ 窗口后缀（@W0xADDR）/ 点选后缀（.width/.vfptr）
+    # 三种拼写，均作传播连接点。
+    try:
+        _swe = jload("anchors/slot_window_edges.json", {}) or {}
+        _n_swe = 0
+        for _r1 in (_swe.get("edges") or []):
+            _a1 = (_r1 or {}).get("s")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_swe += 2
+        print("[SW] slot-window eq edges=%d" % _n_swe, flush=True)
+    except Exception as _e_swe:
+        print("[SW] eq edges skipped: %r" % _e_swe, flush=True)
     # ---- GS 站点实参等值（gs_site_args：GS:slot:k:root == 绑定来源实体，直达式）----
     try:
         _gsa = jload("anchors/gs_site_args.json", {}) or {}
