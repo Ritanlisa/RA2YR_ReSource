@@ -7631,7 +7631,7 @@
 "ReferenceCounted": {
 "member_count": 2,
 "extent": 8,
-"clusters": 3,
+"clusters": 4,
 "members": [
 [
 0,
@@ -9455,7 +9455,7 @@
 "?$ValueGameOption@E@WorldDominationTour": {
 "member_count": 2,
 "extent": 20,
-"clusters": 4,
+"clusters": 3,
 "members": [
 [
 12,

@@ -73,7 +73,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
-            "TC", "GI", "AV", "SA", "SW"]
+            "TC", "GI", "AV", "SA", "SW", "EP"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -126,6 +126,7 @@ FAMILY_DESC = {
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
     "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (strict; evidence anchors/sparity_types.json, 1293 recs; template/mis-spelled tokens with no universe atom dropped per-token, TC precedent)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
+    "EP": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3187,6 +3188,18 @@ def main():
     except Exception as _e_sw:
         census["SW"] = census.get("SW", 0)
         print("[SW] types skipped: %r" % _e_sw, flush=True)
+    # EP：EAX 指针算术消费（eax_ptr_types.json evidence 数组，405 recs；
+    # ptrstep/idxscale/derefstore/derefstore-vt 四规则，RETX 窗口跨标签/jcc、
+    # 内嵌 call 保留 callee-saved 拷贝——RD 直线窗口收不到的装表/深偏移写形态）。
+    # ent 拼写 EAX:XXXXXX:XXXXXX（RA/RD 同族先例）；types 含类型词汇拼写
+    # （char/wchar_t/return 等）与类名，无 universe atom 的 token 按位丢弃。
+    # 生成器侧对账：∩RA=7 ∩RD=21，derefstore-vt 107 实体 100% 净增。
+    try:
+        census["EP"] = _load_type_family("anchors/eax_ptr_types.json", "EP")
+        print("[EP] eax ptr-consumption types: %d" % census["EP"], flush=True)
+    except Exception as _e_ep:
+        census["EP"] = census.get("EP", 0)
+        print("[EP] skipped: %r" % _e_ep, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):
@@ -5747,6 +5760,31 @@ def main():
         print("[SW] slot-window eq edges=%d" % _n_swe, flush=True)
     except Exception as _e_swe:
         print("[SW] eq edges skipped: %r" % _e_swe, flush=True)
+    # ---- PF 参数转发等值（param_forward_edges：P:FN2:K == P:FN1:J / T:FN2 == P:FN1:J）----
+    # 语义与 EF/SW eq 相同（直接调用点实参纯转发 => 同一值），走同一双向通道；
+    # 不经 un()（硬合并），冲突以空域形式交由中和器裁决。生成器侧已证明：
+    # 转发链只穿越良性 staging（push/mov r,[slot]/mov r,r2 ≤2 层）、任何运算
+    # 断链、lea 取址不等值、ebp-repoint 守卫；367 条 T 边与 PU1 重复（标 dup，
+    # _call_edges 通道幂等无妨）。via=pforward-fc（fastcall ECX/EDX 扩展 56 条）
+    # 保留接线——寄存器实参同为纯转发值。
+    try:
+        _pfe = jload("anchors/param_forward_edges.json", {}) or {}
+        _n_pfe = 0
+        for _r1 in (_pfe.get("edges") or []):
+            _a1 = (_r1 or {}).get("p")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_pfe += 2
+        print("[PF] param-forward eq edges=%d" % _n_pfe, flush=True)
+    except Exception as _e_pfe:
+        print("[PF] eq edges skipped: %r" % _e_pfe, flush=True)
     # ---- GS 站点实参等值（gs_site_args：GS:slot:k:root == 绑定来源实体，直达式）----
     try:
         _gsa = jload("anchors/gs_site_args.json", {}) or {}

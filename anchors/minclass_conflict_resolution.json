@@ -4763,6 +4763,41 @@
   "exact": {}
  },
  {
+  "cluster": "EAX:458A80:458B30",
+  "status": "inconsistent",
+  "families": [
+   "EP",
+   "RA"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "EP": 10
+  },
+  "ents": [
+   "EAX:458A80:458B30"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "EP": [
+    "AnimClass",
+    "BulletClass",
+    "CellClass",
+    "ParticleSystemClass",
+    "TechnoClass",
+    "WaveClass",
+    "CrateClass",
+    "House",
+    "TacticalClass",
+    "__int16"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "EAX:4ACAC0:4ACB63",
   "status": "inconsistent",
   "families": [
@@ -4870,6 +4905,24 @@
     "IUnknown",
     "InfantryClass"
    ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:552A40:552A4E",
+  "status": "inconsistent",
+  "families": [
+   "EP"
+  ],
+  "family_sizes": {
+   "EP": 0
+  },
+  "ents": [
+   "EAX:552A40:552A4E"
+  ],
+  "obs": [],
+  "family_domains": {
+   "EP": []
   },
   "exact": {}
  },
@@ -5275,12 +5328,14 @@
   "cluster": "EAX:6E4F60:6E509B",
   "status": "inconsistent",
   "families": [
+   "EP",
    "RA",
    "RD"
   ],
   "family_sizes": {
    "RA": 2,
-   "RD": 28
+   "RD": 28,
+   "EP": 28
   },
   "ents": [
    "EAX:6E4F60:6E509B"
@@ -5292,6 +5347,20 @@
     "unsigned int"
    ],
    "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "IsometricTileTypeClass",
+    "ObjectClass",
+    "ObjectTypeClass",
+    "ParticleClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass"
+   ],
+   "EP": [
     "AircraftClass",
     "BuildingClass",
     "FootClass",
@@ -5711,6 +5780,104 @@
     "HouseTypeClass",
     "IUnknown",
     "InfantryClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:720590:72063C",
+  "status": "inconsistent",
+  "families": [
+   "EP"
+  ],
+  "family_sizes": {
+   "EP": 0
+  },
+  "ents": [
+   "EAX:720590:72063C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "EP": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:773450:77345D",
+  "status": "inconsistent",
+  "families": [
+   "EP"
+  ],
+  "family_sizes": {
+   "EP": 0
+  },
+  "ents": [
+   "EAX:773450:77345D"
+  ],
+  "obs": [],
+  "family_domains": {
+   "EP": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:773E90:773F5C",
+  "status": "inconsistent",
+  "families": [
+   "EP"
+  ],
+  "family_sizes": {
+   "EP": 0
+  },
+  "ents": [
+   "EAX:773E90:773F5C"
+  ],
+  "obs": [],
+  "family_domains": {
+   "EP": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:7775C0:777792",
+  "status": "inconsistent",
+  "families": [
+   "EP"
+  ],
+  "family_sizes": {
+   "EP": 0
+  },
+  "ents": [
+   "EAX:7775C0:777792"
+  ],
+  "obs": [],
+  "family_domains": {
+   "EP": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "EAX:7D4A10:7D4A7B",
+  "status": "inconsistent",
+  "families": [
+   "EP",
+   "RA"
+  ],
+  "family_sizes": {
+   "RA": 2,
+   "EP": 1
+  },
+  "ents": [
+   "EAX:7D4A10:7D4A7B"
+  ],
+  "obs": [],
+  "family_domains": {
+   "RA": [
+    "int",
+    "unsigned int"
+   ],
+   "EP": [
+    "uint64_t*"
    ]
   },
   "exact": {}
@@ -131245,12 +131412,14 @@
   "cluster": "EAX:6E4B00:6E509B",
   "status": "inconsistent",
   "families": [
+   "EP",
    "RA",
    "RD"
   ],
   "family_sizes": {
    "RA": 2,
-   "RD": 28
+   "RD": 28,
+   "EP": 28
   },
   "ents": [
    "EAX:6E4B00:6E509B"
@@ -131262,6 +131431,20 @@
     "unsigned int"
    ],
    "RD": [
+    "AircraftClass",
+    "BuildingClass",
+    "FootClass",
+    "HouseClass",
+    "IUnknown",
+    "InfantryClass",
+    "IsometricTileTypeClass",
+    "ObjectClass",
+    "ObjectTypeClass",
+    "ParticleClass",
+    "ParticleSystemTypeClass",
+    "ParticleTypeClass"
+   ],
+   "EP": [
     "AircraftClass",
     "BuildingClass",
     "FootClass",
