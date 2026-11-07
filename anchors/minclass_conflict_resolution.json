@@ -156,7 +156,6 @@
    "C15",
    "C3",
    "OT",
-   "SA",
    "SS"
   ],
   "family_sizes": {
@@ -164,8 +163,7 @@
    "C3": 1943,
    "C15": 2,
    "OT": 3,
-   "SS": 4,
-   "SA": 190
+   "SS": 4
   },
   "ents": [
    "T:477E10"
@@ -221,20 +219,6 @@
     "ObjectTypeClass",
     "TacticalClass",
     "Trigger"
-   ],
-   "SA": [
-    "AddTeamCommandClass",
-    "CenterTeamCommandClass",
-    "CreateTeamCommandClass",
-    "Mouse",
-    "SelectTeamCommandClass",
-    "?$DynamicVectorClass@H",
-    "?$DynamicVectorClass@PAD",
-    "?$DynamicVectorClass@PAE",
-    "?$DynamicVectorClass@PAG",
-    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
-    "?$DynamicVectorClass@PAUControlNode@@",
-    "?$DynamicVectorClass@PAUGlobalPacketType@@"
    ]
   },
   "exact": {}

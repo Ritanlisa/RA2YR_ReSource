@@ -124,7 +124,7 @@ FAMILY_DESC = {
     "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
     "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
-    "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (strict; evidence anchors/sparity_types.json, 1293 recs; template/mis-spelled tokens with no universe atom dropped per-token, TC precedent)",
+    "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (HEURISTIC TIER since 2026-11-07: evidence itself 10/10 binary-verified correct, but in strict mode it structurally contradicts SS garbage-retention (unknown-ancestry wide-layout classes struct-match template-family methods) which flips C9's established drop policy into losing 194 owner evidences (-1042 forced unique); demoted with exemption rules per .omo/agents/safix/report.md)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
     "EP": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
 }
@@ -3171,9 +3171,28 @@ def main():
     #   tier B（window-sim-agree）= push-window(v3) 与 esp-delta 模拟(v4) 双通道一致
     # （gold-set 19/19）。无 universe atom 的 token（?$DynamicVectorClass@* 模板族、
     # Mouse 等异名）按位丢弃（TC 先例），不影响行级有效性。
+    #
+    # 【2026-11-07 降级至启发式层（SA 诊断，.omo/agents/safix/report.md）】
+    # SA 证据本身 10/10 抽样二进制验证全对（push 计数==K；owner 槽 ret16/4==K），
+    # 194 个 C9 交空对全部是【结构性三方冲突】：C9∩SA 恒非空（SA 从不与槽主
+    # 证据直接矛盾），交空由 SS（结构签名族）先把 C9∩C3 收窄到宽布局类
+    # （CampaignClass/RulesClass/FoggedObjectClass 等 unknown-ancestry 大类，
+    # 对模板族方法的结构签名近似匹配一切）造成——SA 再正确排除这些类 →
+    # 全族 AND=0 → C9 预滤器按其既定机制丢弃 C9 → 空域连锁中和 → 净 -1,042
+    # forced unique。豁免规则：strict 层不接线（gate_heuristic），--allow-heuristics
+    # 才生效；重新升回 strict 的前置条件 = C9 预滤器的责任归属细化（当
+    # C9∩SA≠∅ 时被驳倒的是 SS 侧而非 C9，不应无条件丢弃 C9）——属 C9 机制
+    # 变更，需用户单独裁决。已知生成器侧 wart 一并记录：T:7B8A00 的 0x7B8AF0
+    # 站点 receiver 误绑（实为 this->member@0x24 的 vcall，5 实参；tier-A 绑定
+    # K=0 碰巧不改该行结论），见 report.md「已知边界」。
     try:
-        census["SA"] = _load_type_family("anchors/sparity_types.json", "SA")
-        print("[SA] sparity arity-masks: %d" % census["SA"], flush=True)
+        census["SA"] = _load_type_family("anchors/sparity_types.json", "SA",
+                                         gate_heuristic=True)
+        print("[SA] sparity arity-masks: %d%s"
+              % (census["SA"],
+                 "" if getattr(args, "allow_heuristics", False)
+                 else " (0 in strict: SA demoted to heuristic tier 2026-11-07, see .omo/agents/safix/report.md)"),
+              flush=True)
     except Exception as _e_sa:
         census["SA"] = census.get("SA", 0)
         print("[SA] skipped: %r" % _e_sa, flush=True)
@@ -4965,18 +4984,53 @@ def main():
 
         # C9 若与其他所有族（C2..C8）的交集为空，说明它与既有证据直接冲突，
         # 此时丢弃 C9（保留其他族）。这是 C9 的最后一道自洽门。
+        # 诊断仪表（被动，不改结果）：MINCLASS_DUMP_C9_CONFLICTS=<path> 时
+        # 落盘每个交空实体的 C9/参与族掩码名表，供冲突归因（SA 诊断 2026-11-07）。
+        _c9dbg_path = os.environ.get("MINCLASS_DUMP_C9_CONFLICTS")
+        _c9dbg = [] if _c9dbg_path else None
+        def _mask_names(_m):
+            return [names[_i] for _i in range(n) if (_m >> _i) & 1]
         c9_dropped2 = 0
         for _eid in list(fam["C9"].keys()):
             _mm = fam["C9"][_eid]
+            _c9_own_names = None
+            _parts9 = {}
             for _f9 in FAMILIES:
                 if _f9 in ("C1", "C9"):
                     continue
                 _o9 = fam[_f9].get(_eid)
                 if _o9 is not None:
                     _mm &= _o9
+                    _parts9[_f9] = _o9
             if _mm == 0:
+                if _c9dbg is not None:
+                    try:
+                        _fn9 = int(_eid[2:], 16) if _eid.startswith("T:") else None
+                    except ValueError:
+                        _fn9 = None
+                    _c9_own_names = (_mask_names(c9_owner.get(_fn9, 0))
+                                     if _fn9 is not None else [])
+                    _c9dbg.append({
+                        "ent": _eid,
+                        "c9_expanded": _mask_names(fam["C9"][_eid]),
+                        "c9_owners": _c9_own_names,
+                        "families": {str(_k): _mask_names(_v)
+                                     for _k, _v in _parts9.items()},
+                    })
                 del fam["C9"][_eid]
                 c9_dropped2 += 1
+        if _c9dbg is not None:
+            try:
+                _c9dir = os.path.dirname(_c9dbg_path)
+                if _c9dir:
+                    os.makedirs(_c9dir, exist_ok=True)
+                with io.open(_c9dbg_path, "w", encoding="utf-8") as _fh9:
+                    json.dump({"dropped": c9_dropped2, "conflicts": _c9dbg},
+                              _fh9, ensure_ascii=False)
+                print("[C9] conflict dump written: %s (%d recs)"
+                      % (_c9dbg_path, len(_c9dbg)), flush=True)
+            except Exception as _e_dbg:
+                print("[C9] conflict dump FAILED: %r" % _e_dbg, flush=True)
         print("[C9] dropped (empty intersection with other families): %d" % c9_dropped2, flush=True)
 
     # ---------------- C11：成员链三向类型约束 ----------------
