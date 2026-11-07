@@ -73,7 +73,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
-            "TC", "GI", "AV", "SA", "SW", "EP"]
+            "TC", "GI", "AV", "SA", "SW", "EP", "VR"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -127,6 +127,7 @@ FAMILY_DESC = {
     "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (HEURISTIC TIER since 2026-11-07: evidence itself 10/10 binary-verified correct, but in strict mode it structurally contradicts SS garbage-retention (unknown-ancestry wide-layout classes struct-match template-family methods) which flips C9's established drop policy into losing 194 owner evidences (-1042 forced unique); demoted with exemption rules per .omo/agents/safix/report.md)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
     "EP": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
+    "VR": "vdispatch receiver-origin: snapshot-disasm site-level resolution of `call [r2+N]` receiver value to its origin entity (T:FN this / M:FN:this:0xOFF member / P:FN:k param / EAX:FN:callsite ret / G:addr global; label-bounded <=8-instr reaching-def, tier=strict 2424 / entry-alias last-def, tier=fullspan 1558); consumed as C3 slot-mask (vptr_off==0) / C30 secondary-offset mask (vptr_off>0) landing on the origin entity -- same consumption form as the _vt_recv_by branch, replacing nothing (additive; sites in dropped_edges skipped, corrections ecosystem keeps precedence; fullspan tier gated behind --allow-heuristics per vrorg report 'consumption advice'; evidence array = 13 vr-nested chains, layer-1 M-entity class candidates -> AND-mask via _load_type_family_dict; anchors/vr_origin_edges.json, .omo/agents/vrorg/report.md)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -2479,7 +2480,72 @@ def main():
     if c3_garbage_slots:
         print("[C3] garbage slots dropped: %s"
               % dict(c3_garbage_slots), flush=True)
-    print("[C3] evidence=%d entities=%d" % (census["C3"], len(fam["C3"])), flush=True)
+    print("[C3] evidence=%d entities=%d" % (census["C3"], len(fam["C3"]),), flush=True)
+
+    # ---- VR 接收者 origin C3/C30 落地（vr_origin_edges.json 的 edges 数组）----
+    # 语义（meta「Consumption」+ vrorg report 消费建议 #1）：站点级接收者解析——
+    # `call [r2+N]` 的接收者值 = origin 实体 E（T:/M:/P:/EAX:/G:，值槽实体，
+    # 每次调用单值，跨站点 AND 合并类型可靠）。消费形式与 _vt_recv_by 分支
+    # 同构：vptr_off==0 → c3_mask(slot)（主表槽位掩码）；vptr_off>0 →
+    # _sec_off_mask（次级 vptr 偏移掩码）。落地是**加性**的：主 C3 循环对同一
+    # 站点的既有落地（raw receiver → R: 聚合体 / fn:this）不撤销、不重定向。
+    # 通道形态说明（相对 PF/SW 的偏离，设计层）：VR 边是 (site → recv) 单实体
+    # 记录，不存在两个实体端点——站点/槽位伪节点不在解空间（实测 clusters 0 个
+    # vtable_slot/W 实体），R:<fn>:<reg> 聚合体被 C10 通道按健全性过滤（多站点
+    # AND 合并不健全，生成器侧零输出）⇒ 无健全双端点可进 _call_edges 等值通道，
+    # 约束价值经 fam["C3"] 掩码落地流动（掩码与簇域计算天然相交，效果等同）。
+    # 门控：站点在 dropped_edges（corrections 生态已裁决丢弃，含 VR corr=dropped
+    # 683 条 + 后补 54 条）→ 跳过；tier=fullspan（入口别名线性末次 def）→ 仅
+    # --allow-heuristics 层（vrorg report 分层消费建议）；tier=strict 常开。
+    # corr=relocated 340 条保留：与 reloc_recv 语义一致（member 边偏移 225/225
+    # 精确复现，拼写异形同实体；10 例深查冲突全部为旧管线遗物、VR 正确），
+    # 且 corrections 的 reloc 落地因实体拼写差（十进制 vs 0x 十六进制）实际
+    # 未生效——VR 落地恰好补上该缺口。实体预创建 touch 随行。
+    _vr_c3 = _vr_c30 = _vr_skip_drop = _vr_skip_tier = _vr_touch = _vr_skip_sec = 0
+    try:
+        _vrj = jload("anchors/vr_origin_edges.json", {}) or {}
+        _vr_heur = bool(getattr(args, "allow_heuristics", False))
+        for _r1v in (_vrj.get("edges") or []):
+            _e1v = (_r1v or {}).get("recv")
+            if not (isinstance(_e1v, str) and _e1v):
+                continue
+            if _e1v.startswith(("R:", "V:")):
+                continue
+            _a1v = hx((_r1v or {}).get("site"))
+            if _a1v is None:
+                continue
+            if _a1v in dropped_edges:
+                _vr_skip_drop += 1
+                continue
+            if (_r1v or {}).get("tier") != "strict" and not _vr_heur:
+                _vr_skip_tier += 1
+                continue
+            try:
+                _slot1v = int((_r1v or {}).get("slot"))
+                _k1v = int((_r1v or {}).get("vptr_off") or 0)
+            except (TypeError, ValueError):
+                continue
+            if not (0 <= _slot1v <= 400):
+                continue
+            if _e1v not in ents:
+                touch(_e1v, _e1v)
+                _vr_touch += 1
+            if _k1v == 0:
+                fam["C3"][_e1v] = fam["C3"].get(_e1v, FULL) & c3_mask(_slot1v)
+                _vr_c3 += 1
+            else:
+                _m1v = _sec_off_mask.get(_k1v, 0)
+                if _m1v:
+                    fam["C3"][_e1v] = fam["C3"].get(_e1v, FULL) & _m1v
+                    _vr_c30 += 1
+                else:
+                    _vr_skip_sec += 1
+        print("[VR] receiver-origin C3=%d C30=%d (skip: dropped=%d tier=%d "
+              "no-sec-mask=%d, new-ents=%d)"
+              % (_vr_c3, _vr_c30, _vr_skip_drop, _vr_skip_tier, _vr_skip_sec,
+                 _vr_touch), flush=True)
+    except Exception as _e_vr:
+        print("[VR] receiver-origin landing skipped: %r" % _e_vr, flush=True)
     # ---- 规则 S2：C3 二进制证据驳回 C2 pin ----
     # 实体的 C2 族域与 C3 域（虚表槽位实测）交为空 -> 钉住族中每个类都缺
     # 某个被调槽位，即该类不可能是接收者类；C2 pin（til/proto 推导）被
@@ -3207,6 +3273,32 @@ def main():
     except Exception as _e_sw:
         census["SW"] = census.get("SW", 0)
         print("[SW] types skipped: %r" % _e_sw, flush=True)
+    # VR：嵌套接收者链层 1 类型（vr_origin_edges.json 的 evidence 数组，13 recs，
+    # vr-nested：this->off1->off2 两级链）。实体词汇内可承载的是**层 1** 成员类
+    # 候选——type_candidates[].mid 的 "M:FN:this:OFF=CLASS" 直取（层 2 嵌套对象
+    # 无实体拼写，不发明；proto-this 条件形 "Cls+off=X" 跳过）。同记录多候选
+    # OR 合并（记录内析取，记录间 AND）。与 MR 族同类证据（member_types 溯源），
+    # 经 _load_type_family_dict 消费；无候选的 7 条记录自然按位丢弃。
+    try:
+        _vrev = jload("anchors/vr_origin_edges.json", {}) or {}
+        _vr_ad = {}
+        for _r9v in (_vrev.get("evidence") or []):
+            _cands9v = {}
+            for _c9v in (_r9v or {}).get("type_candidates") or []:
+                _mid9v = (_c9v or {}).get("mid") or ""
+                _pp9v = _mid9v.split("=", 1)
+                if len(_pp9v) != 2 or not _pp9v[0].startswith("M:"):
+                    continue
+                _cands9v.setdefault(_pp9v[0], set()).add(_pp9v[1].strip())
+            for _ent9v, _cls9v in _cands9v.items():
+                _rec9v = _vr_ad.setdefault(_ent9v, {"ent": _ent9v, "types": []})
+                _rec9v["types"].extend(sorted(_cls9v))
+        census["VR"] = _load_type_family_dict(list(_vr_ad.values()), "VR")
+        print("[VR] nested layer-1 types: %d (recs=%d)"
+              % (census["VR"], len(_vr_ad)), flush=True)
+    except Exception as _e_vrev:
+        census["VR"] = census.get("VR", 0)
+        print("[VR] nested types skipped: %r" % _e_vrev, flush=True)
     # EP：EAX 指针算术消费（eax_ptr_types.json evidence 数组，405 recs；
     # ptrstep/idxscale/derefstore/derefstore-vt 四规则，RETX 窗口跨标签/jcc、
     # 内嵌 call 保留 callee-saved 拷贝——RD 直线窗口收不到的装表/深偏移写形态）。
