@@ -69,8 +69,8 @@
   "K_min": 785,
   "K_upper": 785,
   "lower_bound": 785,
-  "constrained_clusters": 79630,
-  "free_clusters": 123143,
+  "constrained_clusters": 79527,
+  "free_clusters": 123246,
   "conflicts": 0,
   "c1_gaps": 0,
   "entities": 207531,
@@ -257,7 +257,7 @@
    "family": "C9",
    "desc": "vtable slot ownership (F is a slot target of C => F.this is C or a descendant)",
    "evidence": 6411,
-   "entities_touched": 6319,
+   "entities_touched": 6338,
    "clusters_constrained": 22511,
    "clusters_pinned": 10034,
    "clusters_free": 180262,
@@ -278,11 +278,11 @@
   {
    "family": "C10",
    "desc": "call-graph subtype propagation (caller.this passed as callee.this => callee class is an ancestor)",
-   "evidence": 44510,
-   "entities_touched": 44510,
-   "clusters_constrained": 61740,
-   "clusters_pinned": 18015,
-   "clusters_free": 141027,
+   "evidence": 44370,
+   "entities_touched": 44370,
+   "clusters_constrained": 61635,
+   "clusters_pinned": 18022,
+   "clusters_free": 141132,
    "pinned_classes": 713,
    "forced_classes": 713,
    "conflicts": 6,
@@ -301,10 +301,10 @@
    "family": "C11",
    "desc": "member-chain typing (this->member@NN: subobject class is a descendant of the member static type)",
    "evidence": 10085,
-   "entities_touched": 19904,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26221,
-   "clusters_free": 129987,
+   "entities_touched": 19926,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26264,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -324,9 +324,9 @@
    "desc": "static vtable ownership (unique minimal owner => EXACT; ambiguous => narrowing mask)",
    "evidence": 5750,
    "entities_touched": 5750,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -346,9 +346,9 @@
    "desc": "binary offset-signature match (class member offsets observed in its own functions)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -368,9 +368,9 @@
    "desc": "constructor-argument typing (source object is ctor-class OR descendant: inlined ctor chains call the base-most ctor first)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -390,9 +390,9 @@
    "desc": "link-order locality (MSVC emits one class methods contiguously; applies to T: entities only)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -412,9 +412,9 @@
    "desc": "pointer-step size == class sizeof (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -434,9 +434,9 @@
    "desc": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
    "evidence": 329,
    "entities_touched": 329,
-   "clusters_constrained": 72780,
-   "clusters_pinned": 26225,
-   "clusters_free": 129987,
+   "clusters_constrained": 72678,
+   "clusters_pinned": 26268,
+   "clusters_free": 130089,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 6,
@@ -456,9 +456,9 @@
    "desc": "member type via receiver domain x member_types (strict, two-pass)",
    "evidence": 12718,
    "entities_touched": 12718,
-   "clusters_constrained": 77514,
-   "clusters_pinned": 30945,
-   "clusters_free": 125246,
+   "clusters_constrained": 77412,
+   "clusters_pinned": 30988,
+   "clusters_free": 125348,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -478,9 +478,9 @@
    "desc": "all-const returns => int-family (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 77514,
-   "clusters_pinned": 30945,
-   "clusters_free": 125246,
+   "clusters_constrained": 77412,
+   "clusters_pinned": 30988,
+   "clusters_free": 125348,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -500,9 +500,9 @@
    "desc": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 77514,
-   "clusters_pinned": 30945,
-   "clusters_free": 125246,
+   "clusters_constrained": 77412,
+   "clusters_pinned": 30988,
+   "clusters_free": 125348,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -522,9 +522,9 @@
    "desc": "all-constant call args => int-family param (HEURISTIC tier)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 77514,
-   "clusters_pinned": 30945,
-   "clusters_free": 125246,
+   "clusters_constrained": 77412,
+   "clusters_pinned": 30988,
+   "clusters_free": 125348,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -544,9 +544,9 @@
    "desc": "member binary-fact types discriminate receiver candidates (strict, MT-sourced)",
    "evidence": 1,
    "entities_touched": 1,
-   "clusters_constrained": 77514,
-   "clusters_pinned": 30945,
-   "clusters_free": 125246,
+   "clusters_constrained": 77412,
+   "clusters_pinned": 30988,
+   "clusters_free": 125348,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -566,9 +566,9 @@
    "desc": "string-literal args => char* param (strict, binary-verified strings)",
    "evidence": 63,
    "entities_touched": 63,
-   "clusters_constrained": 77577,
-   "clusters_pinned": 31008,
-   "clusters_free": 125183,
+   "clusters_constrained": 77475,
+   "clusters_pinned": 31051,
+   "clusters_free": 125285,
    "pinned_classes": 757,
    "forced_classes": 757,
    "conflicts": 13,
@@ -588,9 +588,9 @@
    "desc": "insn-semantic member types: movzx/movsx widths+sign, FPU float/double (strict)",
    "evidence": 790,
    "entities_touched": 790,
-   "clusters_constrained": 77311,
-   "clusters_pinned": 30744,
-   "clusters_free": 125179,
+   "clusters_constrained": 77209,
+   "clusters_pinned": 30787,
+   "clusters_free": 125281,
    "pinned_classes": 756,
    "forced_classes": 756,
    "conflicts": 283,
@@ -610,9 +610,9 @@
    "desc": "format-string arg positions (heuristic)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 77311,
-   "clusters_pinned": 30744,
-   "clusters_free": 125179,
+   "clusters_constrained": 77209,
+   "clusters_pinned": 30787,
+   "clusters_free": 125281,
    "pinned_classes": 756,
    "forced_classes": 756,
    "conflicts": 283,
@@ -632,9 +632,9 @@
    "desc": "insn-semantic value types, full base-entity resolution (strict)",
    "evidence": 1222,
    "entities_touched": 1222,
-   "clusters_constrained": 77516,
-   "clusters_pinned": 30955,
-   "clusters_free": 124928,
+   "clusters_constrained": 77414,
+   "clusters_pinned": 30998,
+   "clusters_free": 125030,
    "pinned_classes": 756,
    "forced_classes": 756,
    "conflicts": 329,
@@ -654,9 +654,9 @@
    "desc": "string-literal returns => char* RET (strict)",
    "evidence": 53,
    "entities_touched": 53,
-   "clusters_constrained": 77520,
-   "clusters_pinned": 30959,
-   "clusters_free": 124924,
+   "clusters_constrained": 77418,
+   "clusters_pinned": 31002,
+   "clusters_free": 125026,
    "pinned_classes": 756,
    "forced_classes": 756,
    "conflicts": 329,
@@ -676,9 +676,9 @@
    "desc": "jump-table enum usage => int family (heuristic)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 77520,
-   "clusters_pinned": 30959,
-   "clusters_free": 124924,
+   "clusters_constrained": 77418,
+   "clusters_pinned": 31002,
+   "clusters_free": 125026,
    "pinned_classes": 756,
    "forced_classes": 756,
    "conflicts": 329,
@@ -698,9 +698,9 @@
    "desc": "bare partial-register access granularity (byte/word member width, strict)",
    "evidence": 8119,
    "entities_touched": 8119,
-   "clusters_constrained": 73722,
-   "clusters_pinned": 26965,
-   "clusters_free": 124711,
+   "clusters_constrained": 73620,
+   "clusters_pinned": 27008,
+   "clusters_free": 124813,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4340,
@@ -720,9 +720,9 @@
    "desc": "vtable slot occupancy => this in class family (strict, binary fact)",
    "evidence": 475,
    "entities_touched": 475,
-   "clusters_constrained": 73722,
-   "clusters_pinned": 26965,
-   "clusters_free": 124711,
+   "clusters_constrained": 73620,
+   "clusters_pinned": 27008,
+   "clusters_free": 124813,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4340,
@@ -742,9 +742,9 @@
    "desc": "stack-slot insn granularity (byte/word/float, strict)",
    "evidence": 2533,
    "entities_touched": 2533,
-   "clusters_constrained": 75563,
-   "clusters_pinned": 27118,
-   "clusters_free": 122833,
+   "clusters_constrained": 75460,
+   "clusters_pinned": 27161,
+   "clusters_free": 122936,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4377,
@@ -764,9 +764,9 @@
    "desc": "return-value consumer usage int-only (heuristic)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 75563,
-   "clusters_pinned": 27118,
-   "clusters_free": 122833,
+   "clusters_constrained": 75460,
+   "clusters_pinned": 27161,
+   "clusters_free": 122936,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4377,
@@ -786,9 +786,9 @@
    "desc": "allocation sizes => class-size mask (heuristic, CS-family semantics)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 75563,
-   "clusters_pinned": 27118,
-   "clusters_free": 122833,
+   "clusters_constrained": 75460,
+   "clusters_pinned": 27161,
+   "clusters_free": 122936,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4377,
@@ -808,9 +808,9 @@
    "desc": "param in-body consumption: as-this edges + pointee granularity (strict)",
    "evidence": 710,
    "entities_touched": 710,
-   "clusters_constrained": 76257,
-   "clusters_pinned": 27826,
-   "clusters_free": 122139,
+   "clusters_constrained": 76154,
+   "clusters_pinned": 27869,
+   "clusters_free": 122242,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4377,
@@ -830,9 +830,9 @@
    "desc": "and-mask pointer alignment -> pointee type family (strict, compiler-signature L4)",
    "evidence": 0,
    "entities_touched": 0,
-   "clusters_constrained": 76257,
-   "clusters_pinned": 27826,
-   "clusters_free": 122139,
+   "clusters_constrained": 76154,
+   "clusters_pinned": 27869,
+   "clusters_free": 122242,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4377,
@@ -852,9 +852,9 @@
    "desc": "lea SIB-scale arithmetically-pinned stride -> element type family (strict, compiler-signature L4)",
    "evidence": 130,
    "entities_touched": 92,
-   "clusters_constrained": 76276,
-   "clusters_pinned": 27834,
-   "clusters_free": 122117,
+   "clusters_constrained": 76173,
+   "clusters_pinned": 27877,
+   "clusters_free": 122220,
    "pinned_classes": 750,
    "forced_classes": 750,
    "conflicts": 4380,
@@ -873,16 +873,16 @@
    "family": "SS",
    "desc": "struct member-layout signature strict-superset match -> this receiver domain (strict, compiler-signature L4)",
    "evidence": 1996,
-   "entities_touched": 1089,
-   "clusters_constrained": 76247,
-   "clusters_pinned": 27835,
-   "clusters_free": 122114,
+   "entities_touched": 876,
+   "clusters_constrained": 76160,
+   "clusters_pinned": 27878,
+   "clusters_free": 122217,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4412,
+   "conflicts": 4396,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5164,
+   "K_upper": 5148,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -896,15 +896,15 @@
    "desc": "all-constant push tuple tail: string-literal offsets -> char* param (strict, compiler-signature L4)",
    "evidence": 286,
    "entities_touched": 25,
-   "clusters_constrained": 76262,
-   "clusters_pinned": 27855,
-   "clusters_free": 122094,
+   "clusters_constrained": 76175,
+   "clusters_pinned": 27898,
+   "clusters_free": 122197,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4417,
+   "conflicts": 4401,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5169,
+   "K_upper": 5153,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -918,15 +918,15 @@
    "desc": "COM/compiler-signature: GUID-compare iface + qi-triple receiver -> IUnknown-descendant domain (strict)",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 76262,
-   "clusters_pinned": 27855,
-   "clusters_free": 122094,
+   "clusters_constrained": 76175,
+   "clusters_pinned": 27898,
+   "clusters_free": 122197,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4417,
+   "conflicts": 4401,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5169,
+   "K_upper": 5153,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -940,15 +940,15 @@
    "desc": "COM callback GUID-compare QI receivers -> IUnknown-descendant domain (strict, compiler-signature L5; evidence array of com_callback_types.json; guid_compares/callback_registrations are generator-side informational channels, no emitable spelling)",
    "evidence": 79,
    "entities_touched": 79,
-   "clusters_constrained": 76262,
-   "clusters_pinned": 27855,
-   "clusters_free": 122094,
+   "clusters_constrained": 76175,
+   "clusters_pinned": 27898,
+   "clusters_free": 122197,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4417,
+   "conflicts": 4401,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5169,
+   "K_upper": 5153,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -962,15 +962,15 @@
    "desc": "CRT call-pattern arg/return types: str family / memcpy src / wsprintfA dst / fopen path+mode / u64 reg+stack pairs -> char*/char[N]/unsigned long long (strict, compiler-signature L6)",
    "evidence": 99,
    "entities_touched": 90,
-   "clusters_constrained": 76320,
-   "clusters_pinned": 27870,
-   "clusters_free": 122032,
+   "clusters_constrained": 76233,
+   "clusters_pinned": 27913,
+   "clusters_free": 122135,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4421,
+   "conflicts": 4405,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5173,
+   "K_upper": 5157,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -984,15 +984,15 @@
    "desc": "FPU constant linkage: fild/fistp int-load/store + fldz/fld1/.rdata FP-constant producer on x87 stack-top when member FPU mem-op touches [base+off] -> float/double member family (strict, compiler-signature L7)",
    "evidence": 246,
    "entities_touched": 246,
-   "clusters_constrained": 76378,
-   "clusters_pinned": 27929,
-   "clusters_free": 121970,
+   "clusters_constrained": 76291,
+   "clusters_pinned": 27972,
+   "clusters_free": 122073,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4425,
+   "conflicts": 4409,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5177,
+   "K_upper": 5161,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -1006,15 +1006,15 @@
    "desc": "caller-site EAX arithmetic/cmp consumption -> int/char* value family (strict, post-call window w/ copy extension)",
    "evidence": 3963,
    "entities_touched": 3927,
-   "clusters_constrained": 77196,
-   "clusters_pinned": 27933,
-   "clusters_free": 121152,
+   "clusters_constrained": 77109,
+   "clusters_pinned": 27976,
+   "clusters_free": 121255,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4425,
+   "conflicts": 4409,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5177,
+   "K_upper": 5161,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -1028,15 +1028,15 @@
    "desc": "consumer-side EAX virtual-dispatch vptr-chain / member-read offset -> class candidate set (strict)",
    "evidence": 1229,
    "entities_touched": 1227,
-   "clusters_constrained": 77152,
-   "clusters_pinned": 27933,
-   "clusters_free": 121147,
+   "clusters_constrained": 77065,
+   "clusters_pinned": 27976,
+   "clusters_free": 121250,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4474,
+   "conflicts": 4458,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5226,
+   "K_upper": 5210,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -1050,15 +1050,15 @@
    "desc": "virtual-dispatch site push-arg direct-to-GS: const01/granular types + bind-origin eq edges (strict)",
    "evidence": 20,
    "entities_touched": 20,
-   "clusters_constrained": 77152,
-   "clusters_pinned": 27933,
-   "clusters_free": 121147,
+   "clusters_constrained": 77065,
+   "clusters_pinned": 27976,
+   "clusters_free": 121250,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4474,
+   "conflicts": 4458,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5226,
+   "K_upper": 5210,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -1072,15 +1072,15 @@
    "desc": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
    "evidence": 462,
    "entities_touched": 462,
-   "clusters_constrained": 77152,
-   "clusters_pinned": 28010,
-   "clusters_free": 121147,
+   "clusters_constrained": 77065,
+   "clusters_pinned": 28053,
+   "clusters_free": 121250,
    "pinned_classes": 750,
    "forced_classes": 750,
-   "conflicts": 4474,
+   "conflicts": 4458,
    "c1_gaps": 0,
    "K": 752,
-   "K_upper": 5226,
+   "K_upper": 5210,
    "K_total": 752,
    "K_greedy": 752,
    "delta_forced": 0,
@@ -1094,15 +1094,15 @@
    "desc": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
    "evidence": 3329,
    "entities_touched": 3329,
-   "clusters_constrained": 79682,
-   "clusters_pinned": 30540,
-   "clusters_free": 118617,
+   "clusters_constrained": 79595,
+   "clusters_pinned": 30583,
+   "clusters_free": 118720,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4474,
+   "conflicts": 4458,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5259,
+   "K_upper": 5243,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 33,
@@ -1116,15 +1116,15 @@
    "desc": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
    "evidence": 793,
    "entities_touched": 793,
-   "clusters_constrained": 79460,
-   "clusters_pinned": 30212,
-   "clusters_free": 118507,
+   "clusters_constrained": 79373,
+   "clusters_pinned": 30255,
+   "clusters_free": 118610,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4806,
+   "conflicts": 4790,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5591,
+   "K_upper": 5575,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 0,
@@ -1135,18 +1135,18 @@
   },
   {
    "family": "SA",
-   "desc": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (HEURISTIC TIER since 2026-11-07: evidence itself 10/10 binary-verified correct, but in strict mode it structurally contradicts SS garbage-retention (unknown-ancestry wide-layout classes struct-match template-family methods) which flips C9's established drop policy into losing 194 owner evidences (-1042 forced unique); demoted with exemption rules per .omo/agents/safix/report.md)",
-   "evidence": 0,
-   "entities_touched": 0,
-   "clusters_constrained": 79460,
-   "clusters_pinned": 30212,
-   "clusters_free": 118507,
+   "desc": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (STRICT tier, restored 2026-11-07 same day as demotion: evidence 10/10 binary-verified; the original -1042 negative gain was the old C9 prefilter unconditionally dropping slot-owner evidence in SS-manufactured structural 3-way conflicts -- now resolved by the C9 blame refinement: empty-AND with C9 pairwise-compatible with every family blames the weakest-evidence side SS instead of C9; .omo/agents/safix/report.md)",
+   "evidence": 1293,
+   "entities_touched": 917,
+   "clusters_constrained": 79373,
+   "clusters_pinned": 30255,
+   "clusters_free": 118610,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4806,
+   "conflicts": 4790,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5591,
+   "K_upper": 5575,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 0,
@@ -1160,15 +1160,15 @@
    "desc": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
    "evidence": 179,
    "entities_touched": 143,
-   "clusters_constrained": 79587,
-   "clusters_pinned": 30212,
-   "clusters_free": 118380,
+   "clusters_constrained": 79500,
+   "clusters_pinned": 30255,
+   "clusters_free": 118483,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4806,
+   "conflicts": 4790,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5591,
+   "K_upper": 5575,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 0,
@@ -1182,15 +1182,15 @@
    "desc": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
    "evidence": 364,
    "entities_touched": 264,
-   "clusters_constrained": 79599,
-   "clusters_pinned": 30213,
-   "clusters_free": 118361,
+   "clusters_constrained": 79512,
+   "clusters_pinned": 30256,
+   "clusters_free": 118464,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4813,
+   "conflicts": 4797,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5598,
+   "K_upper": 5582,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 0,
@@ -1204,15 +1204,15 @@
    "desc": "vdispatch receiver-origin: snapshot-disasm site-level resolution of `call [r2+N]` receiver value to its origin entity (T:FN this / M:FN:this:0xOFF member / P:FN:k param / EAX:FN:callsite ret / G:addr global; label-bounded <=8-instr reaching-def, tier=strict 2424 / entry-alias last-def, tier=fullspan 1558); consumed as C3 slot-mask (vptr_off==0) / C30 secondary-offset mask (vptr_off>0) landing on the origin entity -- same consumption form as the _vt_recv_by branch, replacing nothing (additive; sites in dropped_edges skipped, corrections ecosystem keeps precedence; fullspan tier gated behind --allow-heuristics per vrorg report 'consumption advice'; evidence array = 13 vr-nested chains, layer-1 M-entity class candidates -> AND-mask via _load_type_family_dict; anchors/vr_origin_edges.json, .omo/agents/vrorg/report.md)",
    "evidence": 6,
    "entities_touched": 6,
-   "clusters_constrained": 79599,
-   "clusters_pinned": 30213,
-   "clusters_free": 118361,
+   "clusters_constrained": 79512,
+   "clusters_pinned": 30256,
+   "clusters_free": 118464,
    "pinned_classes": 783,
    "forced_classes": 783,
-   "conflicts": 4813,
+   "conflicts": 4797,
    "c1_gaps": 0,
    "K": 785,
-   "K_upper": 5598,
+   "K_upper": 5582,
    "K_total": 785,
    "K_greedy": 785,
    "delta_forced": 0,
@@ -1225,12 +1225,12 @@
  "chosen_classes": [
   {
    "class": "unsigned int",
-   "clusters": 31888,
-   "entities": 31934,
+   "clusters": 32090,
+   "entities": 32137,
    "families": {
-    "C10": 28616,
-    "C11": 3793,
-    "C3": 618,
+    "C10": 28824,
+    "C11": 3856,
+    "C3": 609,
     "GX": 20,
     "MR": 1996,
     "RA": 3861,
@@ -1239,16 +1239,17 @@
   },
   {
    "class": "BuildingClass",
-   "clusters": 10145,
-   "entities": 10277,
+   "clusters": 10054,
+   "entities": 10185,
    "families": {
     "C9": 111,
     "EXACT": 159,
-    "C11": 436,
-    "C10": 3983,
+    "C11": 443,
+    "C10": 3882,
     "SS": 60,
-    "C3": 484,
-    "C7": 1283,
+    "SA": 63,
+    "C3": 497,
+    "C7": 1285,
     "SW": 135,
     "VR": 2,
     "EP": 121,
@@ -1258,12 +1259,12 @@
   },
   {
    "class": "unsigned char",
-   "clusters": 5395,
-   "entities": 5395,
+   "clusters": 5383,
+   "entities": 5383,
    "families": {
-    "C11": 3656,
+    "C11": 3652,
     "IV": 171,
-    "C10": 266,
+    "C10": 255,
     "C3": 25,
     "MR": 1225,
     "IG": 3621,
@@ -1274,10 +1275,10 @@
   },
   {
    "class": "unsigned short",
-   "clusters": 2350,
-   "entities": 2352,
+   "clusters": 2347,
+   "entities": 2349,
    "families": {
-    "C10": 955,
+    "C10": 950,
     "C11": 356,
     "C3": 4,
     "LS": 7,
@@ -1290,11 +1291,11 @@
   },
   {
    "class": "int",
-   "clusters": 2180,
-   "entities": 2185,
+   "clusters": 2018,
+   "entities": 2023,
    "families": {
-    "C10": 1063,
-    "C11": 1377,
+    "C10": 902,
+    "C11": 1349,
     "IV": 23,
     "MR": 1117,
     "FP": 158,
@@ -1317,36 +1318,38 @@
   },
   {
    "class": "VectorClass",
-   "clusters": 1308,
-   "entities": 1651,
+   "clusters": 1311,
+   "entities": 1654,
    "families": {
     "C6": 339,
     "C9": 904,
     "C10": 747,
-    "C11": 1072,
+    "C11": 1075,
     "EXACT": 1007,
-    "C3": 161,
+    "C3": 162,
+    "SA": 152,
     "C15": 1,
     "C5": 10,
     "SS": 4,
     "MR": 6,
-    "AV": 59,
+    "AV": 61,
     "VR": 1
    }
   },
   {
    "class": "AbstractClass",
-   "clusters": 1283,
-   "entities": 1289,
+   "clusters": 1273,
+   "entities": 1279,
    "families": {
     "C9": 20,
     "EXACT": 47,
-    "C10": 1177,
+    "C10": 1166,
     "C15": 1,
     "OT": 1,
     "C6": 4,
     "C11": 269,
     "C3": 13,
+    "SA": 3,
     "C5": 2,
     "MR": 255,
     "AV": 5,
@@ -1356,23 +1359,23 @@
   },
   {
    "class": "DynamicVector",
-   "clusters": 1148,
-   "entities": 1186,
+   "clusters": 1146,
+   "entities": 1184,
    "families": {
-    "C9": 895,
+    "C9": 896,
     "C10": 96,
     "C11": 622,
     "EXACT": 724,
-    "C15": 273,
-    "OT": 273,
+    "C15": 274,
+    "OT": 274,
     "C3": 160,
-    "SS": 157,
+    "SA": 154,
+    "SS": 12,
     "C6": 7,
     "EP": 12,
     "RD": 1,
     "MR": 59,
-    "C5": 2,
-    "AV": 3
+    "C5": 2
    }
   },
   {
@@ -1388,17 +1391,17 @@
   },
   {
    "class": "Float",
-   "clusters": 845,
-   "entities": 849,
+   "clusters": 884,
+   "entities": 888,
    "families": {
-    "C11": 524,
+    "C11": 561,
     "C10": 200,
     "LS": 29,
     "C3": 8,
     "SG": 44,
     "IT": 258,
     "IV": 299,
-    "AV": 209,
+    "AV": 248,
     "MR": 35,
     "C7": 2,
     "C5": 32,
@@ -1433,6 +1436,7 @@
     "MR": 116,
     "RD": 189,
     "VR": 1,
+    "SA": 2,
     "C7": 2,
     "GI": 1,
     "C5": 3
@@ -1440,10 +1444,10 @@
   },
   {
    "class": "char[12]",
-   "clusters": 622,
-   "entities": 622,
+   "clusters": 623,
+   "entities": 623,
    "families": {
-    "C10": 327,
+    "C10": 329,
     "CR": 58,
     "C11": 43,
     "MR": 40,
@@ -1469,8 +1473,8 @@
   },
   {
    "class": "AI",
-   "clusters": 411,
-   "entities": 455,
+   "clusters": 412,
+   "entities": 456,
    "families": {
     "C3": 145,
     "C11": 20,
@@ -1511,22 +1515,6 @@
    }
   },
   {
-   "class": "CarryoverClass",
-   "clusters": 329,
-   "entities": 333,
-   "families": {
-    "C9": 1,
-    "C10": 234,
-    "EXACT": 2,
-    "C11": 164,
-    "C6": 2,
-    "AV": 99,
-    "SS": 1,
-    "C5": 30,
-    "SW": 3
-   }
-  },
-  {
    "class": "CellClass",
    "clusters": 311,
    "entities": 321,
@@ -1537,6 +1525,7 @@
     "C10": 253,
     "C11": 62,
     "SS": 10,
+    "SA": 2,
     "C6": 2,
     "RD": 35,
     "EP": 14
@@ -1544,15 +1533,16 @@
   },
   {
    "class": "TechnoClass",
-   "clusters": 306,
-   "entities": 330,
+   "clusters": 304,
+   "entities": 328,
    "families": {
-    "C3": 130,
+    "C3": 129,
     "C9": 196,
-    "C11": 129,
-    "SS": 40,
+    "C11": 128,
+    "SS": 39,
+    "SA": 96,
     "EXACT": 276,
-    "C10": 66,
+    "C10": 63,
     "MR": 21,
     "C6": 2,
     "C7": 4
@@ -1569,7 +1559,8 @@
     "EXACT": 244,
     "C10": 56,
     "C3": 7,
-    "SS": 2,
+    "SA": 6,
+    "SS": 1,
     "C5": 2
    }
   },
@@ -1586,6 +1577,22 @@
     "IT": 51,
     "IV": 73,
     "PU": 121
+   }
+  },
+  {
+   "class": "CarryoverClass",
+   "clusters": 295,
+   "entities": 299,
+   "families": {
+    "C9": 1,
+    "C10": 236,
+    "EXACT": 2,
+    "C11": 128,
+    "C6": 2,
+    "AV": 63,
+    "SS": 1,
+    "C5": 30,
+    "SW": 3
    }
   },
   {
@@ -1623,6 +1630,7 @@
     "C11": 17,
     "EXACT": 208,
     "C3": 8,
+    "SA": 8,
     "C10": 32,
     "MR": 4,
     "C5": 3
@@ -1653,6 +1661,25 @@
    }
   },
   {
+   "class": "ObjectClass",
+   "clusters": 195,
+   "entities": 205,
+   "families": {
+    "C9": 107,
+    "EXACT": 138,
+    "C10": 43,
+    "C11": 74,
+    "SS": 8,
+    "C3": 31,
+    "SA": 17,
+    "C6": 3,
+    "MR": 39,
+    "SW": 2,
+    "EP": 3,
+    "C7": 3
+   }
+  },
+  {
    "class": "char[11]",
    "clusters": 192,
    "entities": 192,
@@ -1662,34 +1689,17 @@
    }
   },
   {
-   "class": "ObjectClass",
-   "clusters": 191,
+   "class": "FootClass",
+   "clusters": 181,
    "entities": 201,
    "families": {
-    "C9": 107,
-    "EXACT": 138,
-    "C10": 39,
-    "C11": 72,
-    "SS": 8,
-    "C3": 31,
-    "C6": 3,
-    "MR": 39,
-    "SW": 2,
-    "EP": 3,
-    "C7": 3
-   }
-  },
-  {
-   "class": "FootClass",
-   "clusters": 182,
-   "entities": 202,
-   "families": {
-    "C3": 83,
-    "C9": 116,
+    "C3": 82,
+    "C9": 118,
+    "SA": 52,
     "EXACT": 148,
-    "C11": 82,
-    "C10": 61,
-    "SS": 23,
+    "C11": 83,
+    "C10": 57,
+    "SS": 21,
     "C6": 3,
     "C7": 5,
     "MR": 7,
@@ -1749,14 +1759,15 @@
   },
   {
    "class": "AircraftClass",
-   "clusters": 150,
-   "entities": 164,
+   "clusters": 148,
+   "entities": 162,
    "families": {
     "C9": 61,
     "EXACT": 64,
     "C3": 56,
-    "C11": 86,
-    "C10": 37,
+    "C11": 85,
+    "SA": 15,
+    "C10": 35,
     "SS": 24,
     "C6": 1,
     "C5": 2
@@ -1801,7 +1812,8 @@
     "EXACT": 69,
     "C10": 78,
     "C3": 12,
-    "C11": 36,
+    "SA": 7,
+    "C11": 35,
     "SS": 9,
     "C6": 3,
     "C7": 2,
@@ -1810,17 +1822,17 @@
   },
   {
    "class": "LZOPipe",
-   "clusters": 128,
-   "entities": 130,
+   "clusters": 129,
+   "entities": 131,
    "families": {
     "C6": 3,
     "C9": 3,
-    "C11": 24,
+    "C11": 25,
     "EXACT": 15,
     "SS": 1,
     "C10": 40,
     "C7": 8,
-    "AV": 32,
+    "AV": 33,
     "C5": 49
    }
   },
@@ -1873,14 +1885,15 @@
   },
   {
    "class": "UnitClass",
-   "clusters": 114,
-   "entities": 122,
+   "clusters": 110,
+   "entities": 118,
    "families": {
     "C9": 64,
     "C11": 70,
     "EXACT": 100,
     "C3": 52,
-    "C10": 28,
+    "SA": 27,
+    "C10": 22,
     "SS": 27,
     "LS": 1,
     "C6": 2,
@@ -1909,13 +1922,14 @@
    "families": {
     "C6": 8,
     "C9": 5,
-    "C11": 86,
+    "C11": 83,
     "EXACT": 44,
     "C5": 1,
     "C10": 4,
     "AV": 2,
     "MR": 23,
     "C3": 14,
+    "SA": 3,
     "C7": 1,
     "MT": 41
    }
@@ -1948,26 +1962,13 @@
    }
   },
   {
-   "class": "XSurface",
-   "clusters": 94,
-   "entities": 96,
-   "families": {
-    "C3": 21,
-    "C9": 28,
-    "C10": 80,
-    "EXACT": 29,
-    "C11": 10,
-    "RD": 1
-   }
-  },
-  {
    "class": "WaveClass",
-   "clusters": 93,
-   "entities": 101,
+   "clusters": 92,
+   "entities": 100,
    "families": {
     "C9": 13,
     "EXACT": 20,
-    "C10": 28,
+    "C10": 27,
     "C11": 60,
     "C6": 5,
     "C3": 22,
@@ -2013,23 +2014,6 @@
    }
   },
   {
-   "class": "MultiplayerGameMode",
-   "clusters": 84,
-   "entities": 88,
-   "families": {
-    "C6": 4,
-    "C9": 52,
-    "C10": 11,
-    "C11": 12,
-    "EXACT": 55,
-    "SS": 1,
-    "C3": 2,
-    "MR": 1,
-    "C7": 1,
-    "C5": 21
-   }
-  },
-  {
    "class": "INIClass",
    "clusters": 84,
    "entities": 90,
@@ -2041,6 +2025,24 @@
     "C9": 1,
     "C10": 5,
     "MR": 1
+   }
+  },
+  {
+   "class": "MultiplayerGameMode",
+   "clusters": 83,
+   "entities": 87,
+   "families": {
+    "C6": 4,
+    "C9": 52,
+    "C11": 12,
+    "EXACT": 55,
+    "C10": 6,
+    "SS": 1,
+    "C3": 2,
+    "SA": 1,
+    "MR": 1,
+    "C7": 1,
+    "C5": 21
    }
   },
   {
@@ -2070,6 +2072,20 @@
    }
   },
   {
+   "class": "XSurface",
+   "clusters": 80,
+   "entities": 82,
+   "families": {
+    "C3": 15,
+    "C9": 28,
+    "C10": 63,
+    "SA": 9,
+    "EXACT": 29,
+    "C11": 9,
+    "RD": 1
+   }
+  },
+  {
    "class": "InfantryClass",
    "clusters": 80,
    "entities": 88,
@@ -2077,9 +2093,10 @@
     "C9": 72,
     "EXACT": 76,
     "C11": 57,
-    "C10": 25,
-    "SS": 11,
+    "C10": 24,
+    "SS": 10,
     "C3": 34,
+    "SA": 27,
     "C6": 1,
     "MR": 2
    }
@@ -2107,6 +2124,7 @@
     "C11": 24,
     "SS": 19,
     "C3": 2,
+    "SA": 1,
     "C5": 4
    }
   },
@@ -2159,13 +2177,14 @@
    "entities": 74,
    "families": {
     "C9": 10,
-    "C10": 38,
+    "C10": 40,
     "EXACT": 12,
-    "C11": 23,
+    "C11": 21,
     "C3": 6,
+    "SA": 5,
     "C6": 1,
     "MR": 8,
-    "AV": 5,
+    "AV": 3,
     "C5": 22
    }
   },
@@ -2194,6 +2213,7 @@
     "C10": 11,
     "MR": 22,
     "C3": 9,
+    "SA": 1,
     "C5": 2
    }
   },
@@ -2221,23 +2241,6 @@
    }
   },
   {
-   "class": "AnimTypeClass",
-   "clusters": 62,
-   "entities": 66,
-   "families": {
-    "C9": 13,
-    "EXACT": 20,
-    "C6": 2,
-    "C11": 38,
-    "SS": 7,
-    "C3": 4,
-    "C10": 11,
-    "MR": 13,
-    "GI": 3,
-    "C5": 3
-   }
-  },
-  {
    "class": "WeaponTypeClass",
    "clusters": 62,
    "entities": 67,
@@ -2250,6 +2253,24 @@
     "C3": 8,
     "C6": 3,
     "MR": 6,
+    "C5": 3
+   }
+  },
+  {
+   "class": "AnimTypeClass",
+   "clusters": 61,
+   "entities": 65,
+   "families": {
+    "C9": 13,
+    "EXACT": 20,
+    "C6": 2,
+    "C11": 37,
+    "SS": 7,
+    "C3": 4,
+    "SA": 3,
+    "C10": 11,
+    "MR": 13,
+    "GI": 3,
     "C5": 3
    }
   },
@@ -2354,20 +2375,6 @@
    }
   },
   {
-   "class": "ArmorType",
-   "clusters": 57,
-   "entities": 57,
-   "families": {
-    "C15": 2,
-    "OT": 2,
-    "SS": 2,
-    "C11": 15,
-    "C3": 2,
-    "C10": 5,
-    "C7": 1
-   }
-  },
-  {
    "class": "SHPStruct",
    "clusters": 56,
    "entities": 58,
@@ -2377,6 +2384,17 @@
     "C10": 29,
     "MR": 13,
     "AV": 1
+   }
+  },
+  {
+   "class": "ArmorType",
+   "clusters": 55,
+   "entities": 55,
+   "families": {
+    "C11": 15,
+    "C3": 2,
+    "C10": 5,
+    "C7": 1
    }
   },
   {
@@ -2390,37 +2408,6 @@
    }
   },
   {
-   "class": "ToggleClass",
-   "clusters": 54,
-   "entities": 56,
-   "families": {
-    "C9": 2,
-    "C10": 37,
-    "EXACT": 6,
-    "C3": 1,
-    "C11": 30,
-    "C6": 1,
-    "SS": 1,
-    "AV": 15
-   }
-  },
-  {
-   "class": "WinsockInterfaceClass",
-   "clusters": 54,
-   "entities": 58,
-   "families": {
-    "C3": 6,
-    "C6": 3,
-    "SS": 5,
-    "EXACT": 26,
-    "C9": 22,
-    "C11": 8,
-    "C10": 24,
-    "C7": 3,
-    "C5": 5
-   }
-  },
-  {
    "class": "DynamicVectorClass_uint",
    "clusters": 54,
    "entities": 67,
@@ -2429,8 +2416,9 @@
     "C15": 2,
     "C3": 33,
     "C11": 48,
-    "SS": 46,
+    "SA": 2,
     "EXACT": 5,
+    "SS": 45,
     "C6": 14,
     "C10": 12
    }
@@ -2446,6 +2434,7 @@
     "C11": 22,
     "SS": 5,
     "C3": 6,
+    "SA": 2,
     "C6": 2,
     "C5": 13,
     "MR": 6
@@ -2468,6 +2457,22 @@
    }
   },
   {
+   "class": "ToggleClass",
+   "clusters": 53,
+   "entities": 55,
+   "families": {
+    "C9": 2,
+    "C10": 37,
+    "EXACT": 6,
+    "C3": 1,
+    "C11": 29,
+    "SA": 1,
+    "C6": 1,
+    "SS": 1,
+    "AV": 14
+   }
+  },
+  {
    "class": "RawFileClass",
    "clusters": 53,
    "entities": 57,
@@ -2477,6 +2482,7 @@
     "C9": 17,
     "C10": 7,
     "C11": 11,
+    "SA": 13,
     "EXACT": 50
    }
   },
@@ -2491,6 +2497,7 @@
     "C6": 2,
     "SS": 10,
     "C3": 3,
+    "SA": 1,
     "C10": 25,
     "IV": 1,
     "MR": 9,
@@ -2507,6 +2514,23 @@
     "C10": 69,
     "EXACT": 38,
     "C11": 10
+   }
+  },
+  {
+   "class": "WinsockInterfaceClass",
+   "clusters": 51,
+   "entities": 55,
+   "families": {
+    "C3": 6,
+    "C6": 3,
+    "SS": 5,
+    "SA": 4,
+    "EXACT": 26,
+    "C9": 22,
+    "C11": 8,
+    "C10": 18,
+    "C7": 1,
+    "C5": 5
    }
   },
   {
@@ -2528,10 +2552,11 @@
    "families": {
     "C9": 24,
     "EXACT": 50,
-    "C10": 15,
+    "C10": 14,
     "C3": 9,
     "C11": 33,
-    "SS": 10,
+    "SS": 8,
+    "SA": 8,
     "C6": 3,
     "C5": 16,
     "MR": 7
@@ -2543,10 +2568,11 @@
    "entities": 52,
    "families": {
     "C9": 41,
-    "C10": 23,
+    "C10": 22,
     "EXACT": 43,
     "C11": 20,
     "C3": 5,
+    "SA": 5,
     "C6": 1,
     "SS": 2
    }
@@ -2580,6 +2606,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 2,
     "SS": 1,
     "C5": 7,
     "MR": 4,
@@ -2601,22 +2628,6 @@
    }
   },
   {
-   "class": "DSurface",
-   "clusters": 46,
-   "entities": 52,
-   "families": {
-    "C9": 21,
-    "C10": 14,
-    "EXACT": 44,
-    "C3": 21,
-    "C11": 16,
-    "SS": 4,
-    "C5": 3,
-    "SW": 1,
-    "C7": 2
-   }
-  },
-  {
    "class": "TechnoTypeClass",
    "clusters": 46,
    "entities": 51,
@@ -2627,8 +2638,26 @@
     "C10": 18,
     "C3": 9,
     "SS": 9,
+    "SA": 4,
     "C6": 2,
     "MR": 2
+   }
+  },
+  {
+   "class": "?$TypeList@PBVAnimTypeClass@@",
+   "clusters": 46,
+   "entities": 47,
+   "families": {
+    "C3": 7,
+    "C9": 4,
+    "C11": 41,
+    "C15": 4,
+    "OT": 4,
+    "C6": 1,
+    "EXACT": 6,
+    "C10": 9,
+    "MR": 5,
+    "MT": 12
    }
   },
   {
@@ -2643,6 +2672,7 @@
     "C11": 21,
     "SS": 5,
     "C3": 6,
+    "SA": 1,
     "MR": 1,
     "C5": 2
    }
@@ -2659,7 +2689,8 @@
     "C11": 27,
     "C6": 3,
     "C3": 9,
-    "MR": 8
+    "MR": 8,
+    "SA": 1
    }
   },
   {
@@ -2689,20 +2720,20 @@
    }
   },
   {
-   "class": "?$TypeList@PBVAnimTypeClass@@",
+   "class": "DSurface",
    "clusters": 45,
-   "entities": 46,
+   "entities": 51,
    "families": {
-    "C9": 3,
-    "C11": 40,
-    "C15": 3,
-    "OT": 3,
-    "C6": 1,
-    "EXACT": 6,
-    "C10": 9,
-    "MR": 5,
-    "C3": 6,
-    "MT": 12
+    "C9": 21,
+    "C10": 12,
+    "EXACT": 44,
+    "C3": 21,
+    "SA": 7,
+    "C11": 16,
+    "SS": 4,
+    "C5": 3,
+    "SW": 1,
+    "C7": 2
    }
   },
   {
@@ -2732,7 +2763,7 @@
     "EXACT": 19,
     "C3": 7,
     "C11": 11,
-    "SS": 3,
+    "SA": 6,
     "C6": 1,
     "C7": 1,
     "C5": 12
@@ -2797,17 +2828,6 @@
    }
   },
   {
-   "class": "SaveLoad",
-   "clusters": 40,
-   "entities": 40,
-   "families": {
-    "C15": 1,
-    "SS": 1,
-    "C11": 5,
-    "C10": 3
-   }
-  },
-  {
    "class": "DisplayClass",
    "clusters": 40,
    "entities": 48,
@@ -2816,6 +2836,7 @@
     "C10": 11,
     "EXACT": 35,
     "C3": 16,
+    "SA": 9,
     "C11": 8,
     "SS": 4,
     "C6": 2
@@ -2856,6 +2877,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 1,
     "MT": 20
    }
   },
@@ -2883,18 +2905,45 @@
    }
   },
   {
+   "class": "SaveLoad",
+   "clusters": 39,
+   "entities": 39,
+   "families": {
+    "C11": 5,
+    "C10": 3
+   }
+  },
+  {
+   "class": "?$VectorClass@PAVBuildingClass@@",
+   "clusters": 38,
+   "entities": 41,
+   "families": {
+    "C6": 3,
+    "C9": 8,
+    "C11": 35,
+    "EXACT": 8,
+    "C10": 6,
+    "C15": 2,
+    "OT": 2,
+    "C3": 8,
+    "SA": 2,
+    "MT": 11
+   }
+  },
+  {
    "class": "?$VectorClass@PBVAnimTypeClass@@",
    "clusters": 38,
    "entities": 42,
    "families": {
     "C6": 4,
     "C9": 9,
-    "C11": 27,
+    "C11": 26,
     "EXACT": 27,
     "C10": 3,
     "C15": 2,
     "OT": 2,
     "C3": 4,
+    "SA": 2,
     "MR": 19,
     "MT": 16
    }
@@ -2909,7 +2958,8 @@
     "EXACT": 28,
     "C3": 6,
     "C11": 29,
-    "SS": 16,
+    "SA": 5,
+    "SS": 15,
     "C6": 1
    }
   },
@@ -2944,22 +2994,6 @@
    }
   },
   {
-   "class": "?$VectorClass@PAVBuildingClass@@",
-   "clusters": 37,
-   "entities": 40,
-   "families": {
-    "C6": 3,
-    "C9": 8,
-    "C11": 34,
-    "EXACT": 8,
-    "C10": 6,
-    "C15": 2,
-    "OT": 2,
-    "C3": 7,
-    "MT": 11
-   }
-  },
-  {
    "class": "HouseTypeClass",
    "clusters": 37,
    "entities": 41,
@@ -2982,10 +3016,11 @@
    "families": {
     "C9": 18,
     "EXACT": 28,
-    "C10": 6,
+    "C10": 7,
     "SS": 5,
     "C3": 12,
-    "C11": 17,
+    "C11": 16,
+    "SA": 3,
     "C6": 2
    }
   },
@@ -3013,7 +3048,8 @@
     "C10": 3,
     "EXACT": 35,
     "C11": 3,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -3052,22 +3088,6 @@
    }
   },
   {
-   "class": "CounterClass",
-   "clusters": 35,
-   "entities": 36,
-   "families": {
-    "C9": 6,
-    "C15": 19,
-    "C3": 16,
-    "OT": 14,
-    "SS": 14,
-    "C11": 5,
-    "EXACT": 14,
-    "C6": 2,
-    "C10": 15
-   }
-  },
-  {
    "class": "char[3]",
    "clusters": 35,
    "entities": 35,
@@ -3099,6 +3119,21 @@
     "C11": 9,
     "C3": 1,
     "C7": 1
+   }
+  },
+  {
+   "class": "SequenceStruct",
+   "clusters": 34,
+   "entities": 34,
+   "families": {
+    "C3": 22,
+    "C11": 12,
+    "C6": 1,
+    "SS": 2,
+    "C10": 1,
+    "C7": 1,
+    "C5": 1,
+    "MR": 2
    }
   },
   {
@@ -3161,20 +3196,6 @@
    }
   },
   {
-   "class": "RadarClass",
-   "clusters": 33,
-   "entities": 45,
-   "families": {
-    "C6": 4,
-    "C9": 18,
-    "C11": 18,
-    "EXACT": 27,
-    "SS": 8,
-    "C10": 15,
-    "C3": 4
-   }
-  },
-  {
    "class": "INISection",
    "clusters": 33,
    "entities": 34,
@@ -3182,21 +3203,6 @@
     "EXACT": 28,
     "C11": 13,
     "MR": 5
-   }
-  },
-  {
-   "class": "SequenceStruct",
-   "clusters": 33,
-   "entities": 33,
-   "families": {
-    "C3": 21,
-    "C11": 11,
-    "C6": 1,
-    "SS": 2,
-    "C10": 1,
-    "C7": 1,
-    "C5": 1,
-    "MR": 2
    }
   },
   {
@@ -3216,11 +3222,12 @@
    "families": {
     "C3": 13,
     "C6": 4,
-    "SS": 18,
+    "SS": 13,
+    "SA": 11,
     "EXACT": 31,
-    "C11": 25,
-    "C9": 18,
-    "C10": 4,
+    "C11": 24,
+    "C9": 19,
+    "C10": 8,
     "MR": 1
    }
   },
@@ -3237,6 +3244,20 @@
     "C6": 3,
     "C3": 2,
     "C5": 1
+   }
+  },
+  {
+   "class": "RadarClass",
+   "clusters": 32,
+   "entities": 44,
+   "families": {
+    "C6": 4,
+    "C9": 18,
+    "C11": 18,
+    "EXACT": 27,
+    "SS": 8,
+    "C10": 12,
+    "C3": 4
    }
   },
   {
@@ -3289,7 +3310,7 @@
     "C11": 23,
     "C6": 3,
     "SS": 4,
-    "C10": 4,
+    "C10": 2,
     "MR": 12,
     "C3": 1
    }
@@ -3332,6 +3353,7 @@
     "EXACT": 22,
     "C10": 11,
     "SS": 4,
+    "SA": 1,
     "C6": 3,
     "MR": 2
    }
@@ -3347,6 +3369,7 @@
     "C11": 20,
     "C3": 8,
     "SS": 6,
+    "SA": 2,
     "C6": 3
    }
   },
@@ -3371,6 +3394,7 @@
     "C11": 17,
     "C6": 3,
     "C3": 1,
+    "SA": 1,
     "C10": 3,
     "SS": 4,
     "MR": 4
@@ -3403,6 +3427,7 @@
     "C3": 4,
     "C11": 17,
     "SS": 10,
+    "SA": 1,
     "C6": 2
    }
   },
@@ -3480,6 +3505,7 @@
     "C3": 5,
     "C10": 21,
     "C11": 8,
+    "SA": 3,
     "C6": 1
    }
   },
@@ -3518,6 +3544,7 @@
     "EXACT": 18,
     "C10": 12,
     "C3": 4,
+    "SA": 2,
     "C11": 2
    }
   },
@@ -3544,7 +3571,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 5,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 7,
     "C10": 18,
     "EP": 9,
@@ -3621,6 +3648,7 @@
     "C11": 7,
     "EXACT": 19,
     "C3": 6,
+    "SA": 3,
     "SS": 2,
     "C5": 4
    }
@@ -3632,12 +3660,13 @@
    "families": {
     "C6": 2,
     "C9": 8,
-    "C11": 14,
+    "C11": 10,
     "EXACT": 19,
     "C10": 3,
     "C15": 2,
     "OT": 2,
     "C3": 5,
+    "SA": 5,
     "MR": 13,
     "MT": 9
    }
@@ -3659,7 +3688,7 @@
    "families": {
     "C9": 8,
     "EXACT": 14,
-    "C10": 11,
+    "C10": 7,
     "C11": 10,
     "C6": 5,
     "SS": 8,
@@ -3710,10 +3739,11 @@
    "families": {
     "C6": 3,
     "C9": 9,
-    "C11": 3,
+    "C11": 2,
     "EXACT": 20,
     "C3": 1,
     "SS": 1,
+    "SA": 1,
     "C5": 5
    }
   },
@@ -3730,6 +3760,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 5
    }
   },
@@ -3792,7 +3823,7 @@
    "entities": 31,
    "families": {
     "C11": 15,
-    "C10": 9,
+    "C10": 8,
     "C3": 6
    }
   },
@@ -3816,6 +3847,7 @@
     "C10": 7,
     "EXACT": 24,
     "C3": 6,
+    "SA": 6,
     "C11": 12,
     "C6": 2,
     "SS": 3,
@@ -3829,10 +3861,11 @@
    "families": {
     "C6": 3,
     "C9": 20,
-    "C11": 13,
+    "C11": 12,
     "EXACT": 23,
     "C3": 7,
-    "C10": 12,
+    "SA": 6,
+    "C10": 8,
     "IV": 1
    }
   },
@@ -3844,7 +3877,7 @@
     "C3": 2,
     "C9": 4,
     "C11": 5,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "C10": 18,
     "EP": 9,
@@ -3901,11 +3934,12 @@
    "families": {
     "C6": 2,
     "C9": 15,
-    "C10": 7,
-    "C11": 15,
+    "C10": 8,
+    "C11": 14,
     "EXACT": 17,
-    "SS": 4,
-    "C3": 4
+    "SS": 3,
+    "C3": 4,
+    "SA": 3
    }
   },
   {
@@ -3971,6 +4005,7 @@
     "C11": 12,
     "EXACT": 16,
     "C10": 7,
+    "SA": 2,
     "SS": 1,
     "C3": 1
    }
@@ -3986,7 +4021,25 @@
     "C11": 6,
     "EXACT": 11,
     "C3": 2,
+    "SA": 1,
     "SS": 3
+   }
+  },
+  {
+   "class": "CounterClass",
+   "clusters": 22,
+   "entities": 23,
+   "families": {
+    "C9": 6,
+    "C15": 6,
+    "C3": 3,
+    "C11": 5,
+    "SA": 2,
+    "OT": 1,
+    "SS": 1,
+    "EXACT": 14,
+    "C6": 2,
+    "C10": 15
    }
   },
   {
@@ -4000,6 +4053,7 @@
     "C11": 14,
     "SS": 9,
     "C3": 4,
+    "SA": 2,
     "C6": 2
    }
   },
@@ -4066,21 +4120,10 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "C5": 1,
     "MT": 4,
     "MR": 3
-   }
-  },
-  {
-   "class": "Surface",
-   "clusters": 21,
-   "entities": 24,
-   "families": {
-    "C9": 9,
-    "C11": 5,
-    "EXACT": 15,
-    "C10": 9,
-    "SS": 2
    }
   },
   {
@@ -4096,11 +4139,38 @@
    }
   },
   {
+   "class": "TypeList",
+   "clusters": 21,
+   "entities": 22,
+   "families": {
+    "C3": 5,
+    "C9": 20,
+    "C11": 17,
+    "C15": 16,
+    "OT": 15,
+    "SA": 1,
+    "EXACT": 5,
+    "C6": 1
+   }
+  },
+  {
    "class": "BigInt",
    "clusters": 21,
    "entities": 30,
    "families": {
     "C11": 2
+   }
+  },
+  {
+   "class": "Surface",
+   "clusters": 20,
+   "entities": 23,
+   "families": {
+    "C9": 9,
+    "C11": 5,
+    "EXACT": 15,
+    "C10": 8,
+    "SS": 2
    }
   },
   {
@@ -4115,7 +4185,8 @@
     "C10": 12,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -4139,12 +4210,13 @@
    "families": {
     "C6": 4,
     "C9": 9,
-    "C11": 15,
+    "C11": 13,
     "EXACT": 16,
     "C10": 2,
     "C15": 2,
     "OT": 2,
     "C3": 4,
+    "SA": 3,
     "MR": 8,
     "MT": 5
    }
@@ -4173,6 +4245,7 @@
     "C11": 8,
     "SS": 3,
     "C3": 2,
+    "SA": 1,
     "C10": 2,
     "MR": 1
    }
@@ -4187,6 +4260,7 @@
     "C10": 18,
     "C3": 3,
     "C11": 4,
+    "SA": 2,
     "C7": 2
    }
   },
@@ -4289,7 +4363,8 @@
     "EXACT": 10,
     "C11": 9,
     "C10": 7,
-    "C6": 3
+    "C6": 3,
+    "SA": 1
    }
   },
   {
@@ -4304,33 +4379,6 @@
     "C6": 2,
     "C10": 1,
     "C3": 1
-   }
-  },
-  {
-   "class": "EditClass",
-   "clusters": 18,
-   "entities": 23,
-   "families": {
-    "C9": 9,
-    "C10": 12,
-    "EXACT": 11,
-    "C11": 11,
-    "C3": 7,
-    "C6": 3,
-    "C7": 2,
-    "AV": 2
-   }
-  },
-  {
-   "class": "GraphicMenuItem",
-   "clusters": 18,
-   "entities": 20,
-   "families": {
-    "C6": 3,
-    "C9": 6,
-    "C10": 14,
-    "C11": 3,
-    "EXACT": 8
    }
   },
   {
@@ -4420,7 +4468,8 @@
     "EXACT": 10,
     "C15": 2,
     "OT": 2,
-    "C3": 2
+    "C3": 2,
+    "SA": 1
    }
   },
   {
@@ -4430,12 +4479,13 @@
    "families": {
     "C6": 3,
     "C9": 8,
-    "C11": 13,
+    "C11": 11,
     "EXACT": 12,
     "C10": 2,
     "C15": 2,
     "OT": 2,
     "C3": 3,
+    "SA": 3,
     "MR": 4,
     "MT": 4
    }
@@ -4453,6 +4503,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 1,
     "AV": 1,
     "MT": 4
    }
@@ -4464,12 +4515,13 @@
    "families": {
     "C6": 4,
     "C9": 8,
-    "C11": 14,
+    "C11": 13,
     "EXACT": 12,
     "C10": 5,
     "C15": 2,
     "OT": 2,
     "C3": 3,
+    "SA": 2,
     "MR": 4,
     "MT": 3
    }
@@ -4537,6 +4589,26 @@
    }
   },
   {
+   "class": "?$VectorClass@VRGBClass@@",
+   "clusters": 16,
+   "entities": 23,
+   "families": {
+    "C6": 5,
+    "C9": 9,
+    "C10": 7,
+    "C11": 13,
+    "EXACT": 12,
+    "C15": 2,
+    "OT": 2,
+    "C3": 2,
+    "SA": 1,
+    "SS": 1,
+    "MR": 2,
+    "C7": 1,
+    "MT": 1
+   }
+  },
+  {
    "class": "EnumConnectionPointsClass",
    "clusters": 16,
    "entities": 18,
@@ -4546,7 +4618,41 @@
     "C11": 7,
     "C6": 3,
     "C10": 5,
-    "C3": 3
+    "C3": 3,
+    "SA": 1
+   }
+  },
+  {
+   "class": "LayerClass",
+   "clusters": 16,
+   "entities": 17,
+   "families": {
+    "C9": 5,
+    "C10": 5,
+    "EXACT": 8,
+    "C3": 3,
+    "C11": 9,
+    "C15": 1,
+    "OT": 1,
+    "SA": 2,
+    "SS": 5,
+    "C5": 2
+   }
+  },
+  {
+   "class": "EditClass",
+   "clusters": 16,
+   "entities": 21,
+   "families": {
+    "C9": 9,
+    "C10": 9,
+    "EXACT": 11,
+    "C11": 11,
+    "C3": 7,
+    "SA": 6,
+    "C6": 3,
+    "C7": 1,
+    "AV": 2
    }
   },
   {
@@ -4555,12 +4661,25 @@
    "entities": 19,
    "families": {
     "C9": 11,
-    "C10": 4,
+    "C10": 3,
     "EXACT": 13,
     "C3": 4,
-    "C11": 9,
-    "SS": 4,
+    "C11": 8,
+    "SA": 4,
+    "SS": 3,
     "C6": 2
+   }
+  },
+  {
+   "class": "GraphicMenuItem",
+   "clusters": 16,
+   "entities": 18,
+   "families": {
+    "C6": 3,
+    "C9": 6,
+    "C10": 12,
+    "C11": 3,
+    "EXACT": 8
    }
   },
   {
@@ -4589,18 +4708,19 @@
    }
   },
   {
-   "class": "TypeList",
+   "class": "?$TypeList@PBVInfantryTypeClass@@",
    "clusters": 16,
    "entities": 17,
    "families": {
     "C3": 1,
-    "C9": 15,
+    "C9": 4,
     "C11": 12,
-    "SS": 1,
-    "EXACT": 5,
-    "C15": 11,
-    "OT": 11,
-    "C6": 1
+    "C15": 4,
+    "OT": 4,
+    "C6": 1,
+    "EXACT": 6,
+    "MR": 5,
+    "MT": 9
    }
   },
   {
@@ -4639,6 +4759,7 @@
     "C3": 2,
     "C9": 3,
     "C11": 6,
+    "SA": 1,
     "EXACT": 11,
     "C10": 6,
     "SS": 1
@@ -4661,45 +4782,13 @@
    "families": {
     "C6": 4,
     "C9": 6,
-    "C11": 9,
+    "C11": 8,
     "EXACT": 10,
     "C3": 2,
+    "SA": 2,
     "C10": 7,
     "MR": 2,
     "MT": 1
-   }
-  },
-  {
-   "class": "?$VectorClass@VRGBClass@@",
-   "clusters": 15,
-   "entities": 22,
-   "families": {
-    "C6": 5,
-    "C9": 8,
-    "C10": 7,
-    "C11": 12,
-    "EXACT": 12,
-    "C15": 1,
-    "OT": 1,
-    "C3": 2,
-    "SS": 1,
-    "MR": 2,
-    "C7": 1,
-    "MT": 1
-   }
-  },
-  {
-   "class": "LayerClass",
-   "clusters": 15,
-   "entities": 16,
-   "families": {
-    "C9": 4,
-    "C10": 5,
-    "EXACT": 8,
-    "C3": 2,
-    "C11": 8,
-    "SS": 5,
-    "C5": 2
    }
   },
   {
@@ -4709,11 +4798,12 @@
    "families": {
     "C6": 2,
     "C9": 6,
-    "C11": 10,
+    "C11": 9,
     "EXACT": 12,
     "C15": 2,
     "OT": 2,
     "C3": 3,
+    "SA": 2,
     "MR": 6,
     "MT": 4
    }
@@ -4740,28 +4830,30 @@
    "families": {
     "C6": 2,
     "C9": 6,
-    "C11": 7,
+    "C11": 6,
     "EXACT": 13,
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 2,
     "MR": 7,
     "MT": 6
    }
   },
   {
-   "class": "?$TypeList@PBVInfantryTypeClass@@",
+   "class": "?$TypeList@PBVUnitTypeClass@@",
    "clusters": 15,
    "entities": 16,
    "families": {
-    "C9": 3,
+    "C3": 2,
+    "C9": 4,
     "C11": 11,
-    "C15": 3,
-    "OT": 3,
+    "C15": 4,
+    "OT": 4,
     "C6": 1,
-    "EXACT": 6,
-    "MR": 5,
-    "MT": 9
+    "EXACT": 7,
+    "MR": 6,
+    "MT": 6
    }
   },
   {
@@ -4841,6 +4933,18 @@
    }
   },
   {
+   "class": "Struct",
+   "clusters": 15,
+   "entities": 16,
+   "families": {
+    "C10": 4,
+    "C11": 5,
+    "SS": 2,
+    "C3": 1,
+    "C7": 1
+   }
+  },
+  {
    "class": "SkirmishDialog",
    "clusters": 15,
    "entities": 16,
@@ -4884,6 +4988,7 @@
     "C9": 9,
     "C11": 8,
     "EXACT": 11,
+    "SA": 3,
     "C3": 1,
     "C10": 4
    }
@@ -4900,6 +5005,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "C10": 5,
     "MT": 2,
     "MR": 2
@@ -4911,11 +5017,12 @@
    "entities": 20,
    "families": {
     "C9": 11,
-    "C10": 4,
+    "C10": 3,
     "EXACT": 14,
     "C3": 5,
+    "SA": 5,
     "C11": 10,
-    "SS": 5,
+    "SS": 3,
     "C6": 2
    }
   },
@@ -4945,6 +5052,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 1,
     "MR": 4,
     "MT": 3
    }
@@ -4972,6 +5080,7 @@
     "C9": 9,
     "C10": 7,
     "EXACT": 11,
+    "SA": 1,
     "OT": 1
    }
   },
@@ -5011,9 +5120,10 @@
     "C9": 4,
     "C10": 11,
     "EXACT": 6,
-    "C11": 4,
+    "C11": 3,
     "C3": 2,
     "IV": 1,
+    "SA": 1,
     "C6": 1,
     "C5": 2
    }
@@ -5028,38 +5138,9 @@
     "OT": 2,
     "C3": 4,
     "C11": 11,
-    "SS": 1,
+    "SA": 3,
     "EXACT": 10,
     "MT": 4
-   }
-  },
-  {
-   "class": "?$TypeList@PBVUnitTypeClass@@",
-   "clusters": 14,
-   "entities": 15,
-   "families": {
-    "C9": 3,
-    "C11": 10,
-    "C15": 3,
-    "OT": 3,
-    "C6": 1,
-    "EXACT": 7,
-    "MR": 6,
-    "C3": 1,
-    "MT": 6
-   }
-  },
-  {
-   "class": "SlaveManagerClass",
-   "clusters": 14,
-   "entities": 18,
-   "families": {
-    "C9": 8,
-    "EXACT": 11,
-    "C11": 7,
-    "C10": 7,
-    "SS": 3,
-    "C6": 3
    }
   },
   {
@@ -5073,6 +5154,7 @@
     "EXACT": 13,
     "C10": 9,
     "C3": 10,
+    "SA": 1,
     "SS": 7,
     "GI": 1
    }
@@ -5134,17 +5216,6 @@
    }
   },
   {
-   "class": "Struct",
-   "clusters": 14,
-   "entities": 15,
-   "families": {
-    "C10": 3,
-    "C11": 5,
-    "SS": 2,
-    "C3": 1
-   }
-  },
-  {
    "class": "ScreenEffect",
    "clusters": 14,
    "entities": 14,
@@ -5195,6 +5266,19 @@
    }
   },
   {
+   "class": "SlaveManagerClass",
+   "clusters": 13,
+   "entities": 17,
+   "families": {
+    "C9": 8,
+    "EXACT": 11,
+    "C11": 7,
+    "C10": 5,
+    "SS": 3,
+    "C6": 3
+   }
+  },
+  {
    "class": "PreviewClass",
    "clusters": 13,
    "entities": 14,
@@ -5213,10 +5297,11 @@
     "C6": 1,
     "EXACT": 5,
     "C3": 4,
-    "C11": 4,
+    "C11": 3,
     "C10": 4,
     "EP": 2,
     "MR": 4,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -5296,6 +5381,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -5341,7 +5427,8 @@
     "C10": 2,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -5356,7 +5443,8 @@
     "C10": 2,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -5371,6 +5459,7 @@
     "C10": 2,
     "C15": 2,
     "C3": 1,
+    "SA": 1,
     "SS": 1,
     "OT": 1,
     "MR": 3,
@@ -5400,7 +5489,8 @@
     "C10": 5,
     "C11": 6,
     "EXACT": 6,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -5416,7 +5506,24 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
+   }
+  },
+  {
+   "class": "?$TypeList@PBVAircraftTypeClass@@",
+   "clusters": 12,
+   "entities": 13,
+   "families": {
+    "C3": 2,
+    "C9": 4,
+    "C11": 8,
+    "C15": 4,
+    "OT": 4,
+    "C6": 1,
+    "EXACT": 7,
+    "MR": 6,
+    "MT": 4
    }
   },
   {
@@ -5554,7 +5661,8 @@
     "C9": 10,
     "EXACT": 11,
     "C3": 4,
-    "C11": 2
+    "C11": 2,
+    "SA": 3
    }
   },
   {
@@ -5583,6 +5691,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 2
    }
   },
@@ -5598,7 +5707,8 @@
     "C10": 6,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -5614,6 +5724,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 1,
     "MR": 2,
     "MT": 1
    }
@@ -5631,6 +5742,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MR": 2,
     "MT": 1
    }
@@ -5646,7 +5758,8 @@
     "C11": 9,
     "EXACT": 8,
     "C3": 1,
-    "SS": 4
+    "SA": 1,
+    "SS": 3
    }
   },
   {
@@ -5659,22 +5772,6 @@
     "C10": 2,
     "EXACT": 11,
     "C11": 5
-   }
-  },
-  {
-   "class": "?$TypeList@PBVAircraftTypeClass@@",
-   "clusters": 11,
-   "entities": 12,
-   "families": {
-    "C9": 3,
-    "C11": 7,
-    "C15": 3,
-    "OT": 3,
-    "C6": 1,
-    "EXACT": 7,
-    "MR": 6,
-    "C3": 1,
-    "MT": 4
    }
   },
   {
@@ -5803,6 +5900,7 @@
     "C11": 7,
     "EXACT": 10,
     "C3": 1,
+    "SA": 1,
     "MT": 3,
     "MR": 3
    }
@@ -5816,7 +5914,8 @@
     "EXACT": 10,
     "C6": 2,
     "C11": 2,
-    "SS": 1
+    "SS": 1,
+    "SA": 1
    }
   },
   {
@@ -5832,6 +5931,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 2,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -5848,6 +5948,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -5877,6 +5978,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -5893,6 +5995,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 2
    }
   },
@@ -5906,7 +6009,8 @@
     "C10": 10,
     "C11": 8,
     "EXACT": 8,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -5941,6 +6045,22 @@
    }
   },
   {
+   "class": "?$TypeList@PBVParticleSystemTypeClass@@",
+   "clusters": 10,
+   "entities": 11,
+   "families": {
+    "C9": 6,
+    "C15": 6,
+    "OT": 6,
+    "C3": 1,
+    "C11": 6,
+    "C6": 1,
+    "C10": 3,
+    "EXACT": 1,
+    "MT": 2
+   }
+  },
+  {
    "class": "?$BlitTransRemapXlat@E",
    "clusters": 10,
    "entities": 10,
@@ -5961,8 +6081,8 @@
     "C15": 2,
     "OT": 2,
     "C3": 4,
-    "C11": 6,
-    "SS": 1,
+    "C11": 3,
+    "SA": 4,
     "EXACT": 8,
     "MR": 4,
     "MT": 1
@@ -5975,8 +6095,8 @@
    "families": {
     "C3": 3,
     "C9": 4,
-    "C11": 8,
-    "SS": 1,
+    "C11": 6,
+    "SA": 3,
     "EXACT": 10,
     "MR": 6,
     "MT": 2
@@ -6005,6 +6125,7 @@
     "C10": 8,
     "C11": 4,
     "C3": 1,
+    "SA": 1,
     "C6": 1
    }
   },
@@ -6016,6 +6137,7 @@
     "C9": 2,
     "EXACT": 5,
     "C3": 2,
+    "SA": 1,
     "C10": 2,
     "C11": 5
    }
@@ -6150,7 +6272,8 @@
     "C10": 4,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -6177,7 +6300,8 @@
     "C10": 2,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -6219,6 +6343,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1,
     "MR": 1
    }
@@ -6236,6 +6361,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6252,6 +6378,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6280,6 +6407,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6296,6 +6424,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6308,6 +6437,7 @@
     "C10": 5,
     "EXACT": 7,
     "C3": 2,
+    "SA": 1,
     "C11": 4,
     "SS": 2,
     "C6": 1
@@ -6325,7 +6455,8 @@
     "C10": 4,
     "C15": 2,
     "OT": 2,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -6341,6 +6472,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6356,21 +6488,6 @@
    }
   },
   {
-   "class": "?$TypeList@PBVParticleSystemTypeClass@@",
-   "clusters": 9,
-   "entities": 10,
-   "families": {
-    "C9": 5,
-    "C15": 5,
-    "OT": 5,
-    "C11": 5,
-    "C6": 1,
-    "C10": 3,
-    "EXACT": 1,
-    "MT": 2
-   }
-  },
-  {
    "class": "?$DynamicVectorClass@PAUIConnectionPoint@@",
    "clusters": 9,
    "entities": 9,
@@ -6380,7 +6497,7 @@
     "OT": 2,
     "C3": 2,
     "C11": 6,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -6395,7 +6512,7 @@
     "OT": 2,
     "C3": 1,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "C10": 2,
     "EP": 1,
@@ -6411,8 +6528,8 @@
     "C15": 2,
     "OT": 2,
     "C3": 3,
-    "C11": 5,
-    "SS": 1,
+    "C11": 3,
+    "SA": 3,
     "EXACT": 7,
     "MR": 3,
     "MT": 1
@@ -6432,6 +6549,21 @@
     "MR": 2,
     "C3": 1,
     "MT": 1
+   }
+  },
+  {
+   "class": "?$TypeList@PBVBuildingTypeClass@@",
+   "clusters": 9,
+   "entities": 10,
+   "families": {
+    "C3": 2,
+    "C9": 4,
+    "C11": 6,
+    "C15": 4,
+    "OT": 4,
+    "C6": 1,
+    "EXACT": 3,
+    "MT": 2
    }
   },
   {
@@ -6617,6 +6749,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
+    "SA": 1,
     "MT": 1
    }
   },
@@ -6672,32 +6805,48 @@
    }
   },
   {
+   "class": "?$TypeList@PBVTerrainTypeClass@@",
+   "clusters": 8,
+   "entities": 9,
+   "families": {
+    "C9": 6,
+    "C15": 6,
+    "OT": 6,
+    "C3": 1,
+    "C11": 5,
+    "C6": 1,
+    "EXACT": 1,
+    "MT": 1
+   }
+  },
+  {
    "class": "?$DynamicVectorClass@PAVCellClass@@",
    "clusters": 8,
    "entities": 8,
    "families": {
     "C3": 3,
     "C9": 4,
-    "C11": 5,
-    "SS": 1,
+    "C11": 4,
+    "SA": 2,
     "EXACT": 8,
     "MR": 4,
     "MT": 2
    }
   },
   {
-   "class": "?$TypeList@PBVBuildingTypeClass@@",
+   "class": "?$TypeList@PBVVoxelAnimTypeClass@@",
    "clusters": 8,
-   "entities": 9,
+   "entities": 10,
    "families": {
-    "C9": 3,
-    "C11": 5,
-    "C15": 3,
-    "OT": 3,
-    "C6": 1,
-    "EXACT": 3,
     "C3": 1,
-    "MT": 2
+    "C9": 4,
+    "C11": 5,
+    "C15": 4,
+    "OT": 4,
+    "C6": 2,
+    "EXACT": 2,
+    "C10": 3,
+    "MT": 1
    }
   },
   {
@@ -6813,7 +6962,8 @@
     "C10": 2,
     "EXACT": 6,
     "C11": 1,
-    "C3": 1
+    "C3": 1,
+    "SA": 1
    }
   },
   {
@@ -7853,7 +8003,7 @@
     "C15": 2,
     "OT": 2,
     "C3": 1,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 5,
     "MT": 1,
     "MR": 1
@@ -7869,7 +8019,7 @@
     "OT": 2,
     "C3": 1,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -8120,22 +8270,8 @@
     "OT": 2,
     "C3": 1,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
-    "MT": 1
-   }
-  },
-  {
-   "class": "?$TypeList@PBVTerrainTypeClass@@",
-   "clusters": 7,
-   "entities": 8,
-   "families": {
-    "C9": 5,
-    "C15": 5,
-    "OT": 5,
-    "C11": 4,
-    "C6": 1,
-    "EXACT": 1,
     "MT": 1
    }
   },
@@ -8147,7 +8283,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 7,
     "MT": 3,
     "MR": 3
@@ -8161,7 +8297,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 6,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 3
    }
@@ -8174,7 +8310,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 6,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 3
    }
@@ -8187,25 +8323,10 @@
     "C3": 1,
     "C9": 4,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 7,
     "MT": 3,
     "MR": 3
-   }
-  },
-  {
-   "class": "?$TypeList@PBVVoxelAnimTypeClass@@",
-   "clusters": 7,
-   "entities": 9,
-   "families": {
-    "C9": 3,
-    "C11": 4,
-    "C15": 3,
-    "OT": 3,
-    "C6": 2,
-    "EXACT": 2,
-    "C10": 3,
-    "MT": 1
    }
   },
   {
@@ -8379,7 +8500,8 @@
     "C10": 2,
     "C11": 5,
     "EXACT": 6,
-    "C3": 2
+    "C3": 2,
+    "SA": 1
    }
   },
   {
@@ -8416,7 +8538,8 @@
     "C10": 2,
     "C11": 5,
     "EXACT": 6,
-    "C3": 2
+    "C3": 2,
+    "SA": 2
    }
   },
   {
@@ -8502,7 +8625,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 6,
     "MT": 2,
     "MR": 2
@@ -8516,7 +8639,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 5,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -8952,9 +9075,10 @@
     "C10": 2,
     "EXACT": 5,
     "C3": 2,
-    "C11": 4,
-    "SS": 2,
-    "C6": 1
+    "C11": 3,
+    "SA": 2,
+    "C6": 1,
+    "SS": 1
    }
   },
   {
@@ -8966,18 +9090,6 @@
     "CB": 2,
     "CC": 2,
     "EXACT": 5
-   }
-  },
-  {
-   "class": "GraphicMenuShortcutItem",
-   "clusters": 5,
-   "entities": 6,
-   "families": {
-    "C6": 2,
-    "C9": 2,
-    "C11": 3,
-    "EXACT": 3,
-    "C10": 3
    }
   },
   {
@@ -9270,7 +9382,7 @@
     "C3": 2,
     "C9": 4,
     "C11": 5,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -9283,7 +9395,7 @@
     "C3": 2,
     "C9": 4,
     "C11": 5,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -9296,7 +9408,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -9309,7 +9421,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 5,
     "MT": 1,
     "MR": 1
@@ -9323,7 +9435,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -9336,7 +9448,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 4,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4,
     "MT": 1
    }
@@ -9349,14 +9461,6 @@
     "C11": 5,
     "EXACT": 5,
     "C3": 1
-   }
-  },
-  {
-   "class": "IRTTITypeInfo",
-   "clusters": 5,
-   "entities": 5,
-   "families": {
-    "C10": 5
    }
   },
   {
@@ -9593,11 +9697,11 @@
    "entities": 6,
    "families": {
     "C9": 3,
-    "C10": 2,
+    "C10": 3,
     "EXACT": 4,
     "C3": 1,
     "C11": 2,
-    "SS": 1,
+    "SA": 1,
     "C6": 1
    }
   },
@@ -9944,7 +10048,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4
    }
   },
@@ -9956,7 +10060,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4
    }
   },
@@ -9968,7 +10072,7 @@
     "C3": 1,
     "C9": 4,
     "C11": 3,
-    "SS": 1,
+    "SA": 1,
     "EXACT": 4
    }
   },
@@ -10027,6 +10131,23 @@
    "families": {
     "C3": 2,
     "C10": 1
+   }
+  },
+  {
+   "class": "ScriptAction",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C3": 4,
+    "C11": 4
+   }
+  },
+  {
+   "class": "IRTTITypeInfo",
+   "clusters": 4,
+   "entities": 4,
+   "families": {
+    "C10": 4
    }
   },
   {
@@ -10130,15 +10251,6 @@
    "families": {
     "C11": 2,
     "C3": 2
-   }
-  },
-  {
-   "class": "Dialog",
-   "clusters": 4,
-   "entities": 4,
-   "families": {
-    "C11": 1,
-    "EXACT": 1
    }
   },
   {
@@ -10398,6 +10510,17 @@
    }
   },
   {
+   "class": "GraphicMenuShortcutItem",
+   "clusters": 3,
+   "entities": 4,
+   "families": {
+    "C6": 2,
+    "C9": 2,
+    "C11": 3,
+    "EXACT": 3
+   }
+  },
+  {
    "class": "Base64Straw",
    "clusters": 3,
    "entities": 4,
@@ -10533,15 +10656,6 @@
    "families": {
     "C3": 1,
     "C11": 1
-   }
-  },
-  {
-   "class": "ScriptAction",
-   "clusters": 3,
-   "entities": 3,
-   "families": {
-    "C3": 3,
-    "C11": 3
    }
   },
   {
@@ -11335,6 +11449,14 @@
    "families": {
     "C10": 1,
     "C11": 1
+   }
+  },
+  {
+   "class": "Dialog",
+   "clusters": 2,
+   "entities": 2,
+   "families": {
+    "EXACT": 1
    }
   },
   {

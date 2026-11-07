@@ -2533,7 +2533,7 @@
 "?$VectorClass@VRGBClass@@": {
 "member_count": 5,
 "extent": 14,
-"clusters": 10,
+"clusters": 11,
 "members": [
 [
 0,
@@ -3157,9 +3157,9 @@
 ]
 },
 "LayerClass": {
-"member_count": 4,
-"extent": 14,
-"clusters": 4,
+"member_count": 6,
+"extent": 20,
+"clusters": 5,
 "members": [
 [
 0,
@@ -3174,8 +3174,16 @@
 4
 ],
 [
+12,
+1
+],
+[
 13,
 1
+],
+[
+16,
+4
 ]
 ]
 },
@@ -10438,10 +10446,14 @@
 ]
 },
 "?$TypeList@PBVParticleSystemTypeClass@@": {
-"member_count": 5,
+"member_count": 6,
 "extent": 20,
-"clusters": 5,
+"clusters": 6,
 "members": [
+[
+0,
+4
+],
 [
 4,
 4
@@ -12351,10 +12363,14 @@
 ]
 },
 "?$TypeList@PBVTerrainTypeClass@@": {
-"member_count": 5,
+"member_count": 6,
 "extent": 20,
-"clusters": 5,
+"clusters": 6,
 "members": [
+[
+0,
+4
+],
 [
 4,
 4
@@ -14464,6 +14480,161 @@
 ]
 ]
 },
+"?$TypeList@PBVBuildingTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVAircraftTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVUnitTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVInfantryTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVAnimTypeClass@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
 "IsometricTileTypeClass": {
 "member_count": 28,
 "extent": 757,
@@ -14708,6 +14879,37 @@
 ]
 },
 "?$DynamicVectorClass@PAVMSSfxEntry@@": {
+"member_count": 6,
+"extent": 20,
+"clusters": 4,
+"members": [
+[
+0,
+4
+],
+[
+4,
+4
+],
+[
+8,
+4
+],
+[
+12,
+1
+],
+[
+13,
+1
+],
+[
+16,
+4
+]
+]
+},
+"?$TypeList@PBVVoxelAnimTypeClass@@": {
 "member_count": 6,
 "extent": 20,
 "clusters": 4,
@@ -18129,114 +18331,6 @@
 ]
 ]
 },
-"?$TypeList@PBVBuildingTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$TypeList@PBVAircraftTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$TypeList@PBVUnitTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
-"?$TypeList@PBVInfantryTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
-]
-]
-},
 "HoverLocomotionClass": {
 "member_count": 14,
 "extent": 117,
@@ -18855,33 +18949,6 @@
 [
 3787,
 1
-]
-]
-},
-"?$TypeList@PBVAnimTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
-4
 ]
 ]
 },
@@ -20006,33 +20073,6 @@
 ],
 [
 112,
-4
-]
-]
-},
-"?$TypeList@PBVVoxelAnimTypeClass@@": {
-"member_count": 5,
-"extent": 20,
-"clusters": 3,
-"members": [
-[
-4,
-4
-],
-[
-8,
-4
-],
-[
-12,
-1
-],
-[
-13,
-1
-],
-[
-16,
 4
 ]
 ]

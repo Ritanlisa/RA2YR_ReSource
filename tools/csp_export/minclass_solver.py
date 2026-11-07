@@ -124,7 +124,7 @@ FAMILY_DESC = {
     "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
     "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
-    "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (HEURISTIC TIER since 2026-11-07: evidence itself 10/10 binary-verified correct, but in strict mode it structurally contradicts SS garbage-retention (unknown-ancestry wide-layout classes struct-match template-family methods) which flips C9's established drop policy into losing 194 owner evidences (-1042 forced unique); demoted with exemption rules per .omo/agents/safix/report.md)",
+    "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (STRICT tier, restored 2026-11-07 same day as demotion: evidence 10/10 binary-verified; the original -1042 negative gain was the old C9 prefilter unconditionally dropping slot-owner evidence in SS-manufactured structural 3-way conflicts -- now resolved by the C9 blame refinement: empty-AND with C9 pairwise-compatible with every family blames the weakest-evidence side SS instead of C9; .omo/agents/safix/report.md)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
     "EP": "caller-side EAX pointer/array consumption in RETX window (crosses labels/jcc, inner calls keep callee-saved copies): ptrstep stride-N / idxscale [eax+idx*N] / derefstore member-write candidates / derefstore-vt vtable-install -> pointer or class family AND-mask (strict; evidence anchors/eax_ptr_types.json; RA/RD sibling family, 280/305 entities net-new per eaxptr report)",
     "VR": "vdispatch receiver-origin: snapshot-disasm site-level resolution of `call [r2+N]` receiver value to its origin entity (T:FN this / M:FN:this:0xOFF member / P:FN:k param / EAX:FN:callsite ret / G:addr global; label-bounded <=8-instr reaching-def, tier=strict 2424 / entry-alias last-def, tier=fullspan 1558); consumed as C3 slot-mask (vptr_off==0) / C30 secondary-offset mask (vptr_off>0) landing on the origin entity -- same consumption form as the _vt_recv_by branch, replacing nothing (additive; sites in dropped_edges skipped, corrections ecosystem keeps precedence; fullspan tier gated behind --allow-heuristics per vrorg report 'consumption advice'; evidence array = 13 vr-nested chains, layer-1 M-entity class candidates -> AND-mask via _load_type_family_dict; anchors/vr_origin_edges.json, .omo/agents/vrorg/report.md)",
@@ -3237,28 +3237,26 @@ def main():
     #   tier B（window-sim-agree）= push-window(v3) 与 esp-delta 模拟(v4) 双通道一致
     # （gold-set 19/19）。无 universe atom 的 token（?$DynamicVectorClass@* 模板族、
     # Mouse 等异名）按位丢弃（TC 先例），不影响行级有效性。
-    #
-    # 【2026-11-07 降级至启发式层（SA 诊断，.omo/agents/safix/report.md）】
-    # SA 证据本身 10/10 抽样二进制验证全对（push 计数==K；owner 槽 ret16/4==K），
-    # 194 个 C9 交空对全部是【结构性三方冲突】：C9∩SA 恒非空（SA 从不与槽主
-    # 证据直接矛盾），交空由 SS（结构签名族）先把 C9∩C3 收窄到宽布局类
+    # 【2026-11-07 降级 → 同日重升 strict（safix 诊断闭环 + 用户裁决）】
+    # SA 证据本身 10/10 抽样二进制验证全对（push 计数==K；owner 槽 ret16/4==K）。
+    # 首次接线时 194 个 C9 交空全部是【结构性三方冲突】：C9∩SA 恒非空（SA 从不
+    # 与槽主证据直接矛盾），交空由 SS（结构签名族）先把 C9∩C3 收窄到宽布局类
     # （CampaignClass/RulesClass/FoggedObjectClass 等 unknown-ancestry 大类，
     # 对模板族方法的结构签名近似匹配一切）造成——SA 再正确排除这些类 →
-    # 全族 AND=0 → C9 预滤器按其既定机制丢弃 C9 → 空域连锁中和 → 净 -1,042
-    # forced unique。豁免规则：strict 层不接线（gate_heuristic），--allow-heuristics
-    # 才生效；重新升回 strict 的前置条件 = C9 预滤器的责任归属细化（当
-    # C9∩SA≠∅ 时被驳倒的是 SS 侧而非 C9，不应无条件丢弃 C9）——属 C9 机制
-    # 变更，需用户单独裁决。已知生成器侧 wart 一并记录：T:7B8A00 的 0x7B8AF0
-    # 站点 receiver 误绑（实为 this->member@0x24 的 vcall，5 实参；tier-A 绑定
-    # K=0 碰巧不改该行结论），见 report.md「已知边界」。
+    # 全族 AND=0 → 旧 C9 预滤器无条件丢弃正确的槽主证据 → 空域连锁中和 →
+    # 净 -1,042 forced unique，故先降级启发式层（零证据删除）。
+    # 重升条件已满足：C9 预滤器归咎精细化落地（见 C9 节「归咎精细化」注释）——
+    # 交空时先做逐族归咎检查，C9 与所有参与族两两相容 ⇒ 交空由组合制造 ⇒
+    # 丢弃最弱证据侧（SS 优先）而非 C9。SA 恢复 strict（gate_heuristic=False）。
+    # 已知生成器侧 wart 仍开放：T:7B8A00 的 0x7B8AF0 站点 receiver 误绑
+    # （实为 this->member@0x24 的 vcall，5 实参；tier-A 绑定 K=0 碰巧不改该行
+    # 结论），见 safix report「已知边界」。
     try:
         census["SA"] = _load_type_family("anchors/sparity_types.json", "SA",
-                                         gate_heuristic=True)
-        print("[SA] sparity arity-masks: %d%s"
-              % (census["SA"],
-                 "" if getattr(args, "allow_heuristics", False)
-                 else " (0 in strict: SA demoted to heuristic tier 2026-11-07, see .omo/agents/safix/report.md)"),
-              flush=True)
+                                         gate_heuristic=False)
+        print("[SA] sparity arity-masks: %d (strict tier restored 2026-11-07: "
+              "C9 blame refinement landed, see .omo/agents/safix/report.md)"
+              % census["SA"], flush=True)
     except Exception as _e_sa:
         census["SA"] = census.get("SA", 0)
         print("[SA] skipped: %r" % _e_sa, flush=True)
@@ -5078,11 +5076,28 @@ def main():
         # 此时丢弃 C9（保留其他族）。这是 C9 的最后一道自洽门。
         # 诊断仪表（被动，不改结果）：MINCLASS_DUMP_C9_CONFLICTS=<path> 时
         # 落盘每个交空实体的 C9/参与族掩码名表，供冲突归因（SA 诊断 2026-11-07）。
+        #
+        # ---- 归咎精细化（2026-11-07 safix 诊断 + 用户裁决，只改交空时的丢弃选择）----
+        # 旧机制：交空 ⇒ 无条件丢 C9。safix 全量归因：SA 触发的 194 个交空全部是
+        # 【结构性三方冲突】——C9∩SA 恒非空（SA 从不与槽主证据直接矛盾），交空由
+        # SS（结构签名族，严格超集匹配）先把 C9∩C3 收窄到宽布局 unknown-ancestry
+        # 类（CampaignClass/RulesClass/FoggedObjectClass 等「能匹配一切」的垃圾类），
+        # SA 的 arity 二进制真值再正确排除这些类 ⇒ 全族 AND=0。归咎应指向真正的
+        # 驳倒方（weakest-evidence 原则）：
+        #   (1) 逐族两两检查：某单一族 F 使 C9∩F=∅ ⇒ C9 被直接驳倒 ⇒ 旧路径（丢 C9）；
+        #   (2) C9 与所有参与族两两相容（交空由组合制造）⇒ 在「移除即恢复非空」的
+        #       驳倒方候选中取最弱证据族担责（序 SS < SW < EP < SA；硬二进制族
+        #       C1/C3/C4/C5/C6/C8/C15 永不担责）⇒ 丢弃该实体在该族的贡献，保留 C9。
+        #       驳倒方不唯一（样本 T:7B8A00 的 R={SA,SS}，移除任一均非空）——按
+        #       safix 二进制验证 SS 是垃圾保留源，固定最弱序优先，不做任意选择；
+        #   (3) 无可担责目标（候选空 / 仅豁免族）⇒ 旧路径。
         _c9dbg_path = os.environ.get("MINCLASS_DUMP_C9_CONFLICTS")
         _c9dbg = [] if _c9dbg_path else None
         def _mask_names(_m):
             return [names[_i] for _i in range(n) if (_m >> _i) & 1]
         c9_dropped2 = 0
+        _c9_blame_order = ("SS", "SW", "EP", "SA")
+        _c9_blame_drops = collections.Counter()
         for _eid in list(fam["C9"].keys()):
             _mm = fam["C9"][_eid]
             _c9_own_names = None
@@ -5095,6 +5110,19 @@ def main():
                     _mm &= _o9
                     _parts9[_f9] = _o9
             if _mm == 0:
+                _c9m = fam["C9"][_eid]
+                _blame9 = None
+                if _parts9 and all((_c9m & _o9b) for _o9b in _parts9.values()):
+                    for _fc9 in _c9_blame_order:
+                        if _fc9 not in _parts9:
+                            continue
+                        _rest9 = _c9m
+                        for _fo9, _oo9 in _parts9.items():
+                            if _fo9 != _fc9:
+                                _rest9 &= _oo9
+                        if _rest9:
+                            _blame9 = _fc9
+                            break
                 if _c9dbg is not None:
                     try:
                         _fn9 = int(_eid[2:], 16) if _eid.startswith("T:") else None
@@ -5108,16 +5136,27 @@ def main():
                         "c9_owners": _c9_own_names,
                         "families": {str(_k): _mask_names(_v)
                                      for _k, _v in _parts9.items()},
+                        "blame": _blame9,
                     })
-                del fam["C9"][_eid]
-                c9_dropped2 += 1
+                if _blame9 is not None:
+                    del fam[_blame9][_eid]
+                    _c9_blame_drops[_blame9] += 1
+                else:
+                    del fam["C9"][_eid]
+                    c9_dropped2 += 1
+        if _c9_blame_drops:
+            print("[C9] blame-refined (empty-AND manufactured by soft-family "
+                  "combination; weakest-evidence side dropped, C9 kept): %s"
+                  % dict(_c9_blame_drops), flush=True)
         if _c9dbg is not None:
             try:
                 _c9dir = os.path.dirname(_c9dbg_path)
                 if _c9dir:
                     os.makedirs(_c9dir, exist_ok=True)
                 with io.open(_c9dbg_path, "w", encoding="utf-8") as _fh9:
-                    json.dump({"dropped": c9_dropped2, "conflicts": _c9dbg},
+                    json.dump({"dropped": c9_dropped2,
+                               "blame_drops": dict(_c9_blame_drops),
+                               "conflicts": _c9dbg},
                               _fh9, ensure_ascii=False)
                 print("[C9] conflict dump written: %s (%d recs)"
                       % (_c9dbg_path, len(_c9dbg)), flush=True)
