@@ -74,7 +74,8 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
-            "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X"]
+            "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X",
+            "G3", "VR2", "CPI"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -140,6 +141,9 @@ FAMILY_DESC = {
     "G2": "GS site-args v2: full-library virtual-dispatch site push-argument ORIGIN types (gs-const-wide / gs-const01 / gs-str / gs-cons* rules, occupant_callarg guard) for GS:slot:k:root entities -- supersedes the narrow GX v1 pool with the whole-library site census (strict; evidence array of anchors/gs_site_args_v2.json, 10 recs; the 26 eq edges of the same file wired separately via the EF-style bidirectional channel, see the [G2] eq line)",
     "R1": "RA1 official source class evidence: strict-name bridge our Class::Method (or legacy Class_Method[_ADDR]) <-> RA1 class alias (case/underscore/'Class'-suffix tolerance) with unique owner (HEURISTIC tier per ra1 phase-1 pooled strata accuracy 0.859, hierarchy 91-94%; wide-domain filter: only T:FN with domain>8 emitted, 2 recs both in-domain; gate --allow-heuristics; evidence anchors/ra1_types.json; source CnC_Red_Alert EA official)",
     "V2K": "vera20k external oracle: 'Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR' mined from vera20k crossref example contexts (FUN_/sub_/nullsub/j_ excluded), STRICT attribution (pattern address == vera entry addr or our function start) + top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe (HEURISTIC tier per v20k pool accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types.json, 16 recs)",
+    "G3": "GS site-args v3: v2 machinery with the attach gate RELAXED (every `call [vtreg+off]` site in the full_export snapshot, slot=off/4) -- push-argument ORIGIN type evidence (gs-const01 1,256 / gs-const-wide 226 / gs-str 1, occupant_callarg guard) for GS:slot:k:root entities, same spelling as G2 (root 0x-prefixed upper hex; strict; evidence array of anchors/gs_site_args_v3.json, 1,483 recs, zero overlap with the 10-rec v2 pool; all-primitive types int/unsigned int/bool/char* with 'const char *'/'char *' normalized by _norm_ty; the file carries 0 edges, no eq channel wired)",
+    "VR2": "VDRET virtual-dispatch return materialization: post-vcall EAX evidence (vdret-arith arithmetic-consumption int-family 164 / vdret-mread-0xOFF member-read class candidates via member_types lookup, ~70 recs) for EAX:FN:site entities (upper hex no 0x, EF/RA spelling; strict tier; evidence array of anchors/vdret_eax_edges.json, 234 recs; class tokens without a universe atom dropped per-token, MT/RD precedent); the 8,221 eq edges of the same file (EAX:FN:site == RET:FN via vdret-slot, RET spelling aligned with the RI family keys) wired separately via the EF-style bidirectional channel, see the [VR2] eq line",
+    "CPI": "constructor-param init semantics over structural_truth vtable_install fns (1,398 scanned): cpi-const member-init constant typing (M:FN:this:0xOFF entities, 2,196 recs, types may carry [bool,int] dual values / [bool,char,unsigned char] etc.), cpi-m8/cpi-m16 width-typed inits (12 recs) -- strict binary facts; evidence array of anchors/ctor_param_inits.json, 2,208 recs; the 224 eq edges of the same file (cpi-minit P:FN:K == M:FN:this:0xOFF / cpi-base P:FN1:K == P:FN2:J base-ctor arg forwarding / cpi-gstore M == G:) wired separately via the EF-style bidirectional channel, see the [CPI] eq line",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -1616,6 +1620,29 @@ def main():
     except Exception:
         pass
     print("[C10-pre] dt eq EAX entity precreate: %d" % _dt_touch, flush=True)
+    # VDRET/CPI eq 边端点实体预创建（EF/RI/PU5 同模式，幂等 not-in-ents 守卫）。
+    # VDRET：EAX:FN:site own 侧（EF 先例）+ RET:FN 对侧（RI 先例——vdret 槽位
+    #   被方大多不在 RI 1,941 名单内，实测新 EAX 1,043 / 新 RET 407）。
+    # CPI：P:/M:/G: 双端 touch（PU5 先例——P:FN:K 220 个新参数原子 / M: 仅
+    #   8 新（MW/FS 预创建已覆盖 187）/ G: 1 新）。
+    _vrcp_touch = [0, 0]
+    try:
+        for _r0 in (jload("anchors/vdret_eax_edges.json", {}) or {}).get("edges") or []:
+            for _eid0 in ((_r0 or {}).get("eax"), (_r0 or {}).get("eq")):
+                if (isinstance(_eid0, str)
+                        and _eid0.startswith(("EAX:", "RET:")) and _eid0 not in ents):
+                    touch(_eid0, _eid0)
+                    _vrcp_touch[0] += 1
+        for _r0 in (jload("anchors/ctor_param_inits.json", {}) or {}).get("edges") or []:
+            for _eid0 in ((_r0 or {}).get("p"), (_r0 or {}).get("eq")):
+                if (isinstance(_eid0, str)
+                        and _eid0.startswith(("P:", "M:", "G:")) and _eid0 not in ents):
+                    touch(_eid0, _eid0)
+                    _vrcp_touch[1] += 1
+    except Exception:
+        pass
+    print("[C10-pre] vdret/cpi eq entity precreate: %d/%d"
+          % (_vrcp_touch[0], _vrcp_touch[1]), flush=True)
     _m_touch = 0
     for _e in raw:
         if _e.get("type") != "CALL_ARG":
@@ -3294,6 +3321,42 @@ def main():
     except Exception as _e_pf2x:
         census["PF2X"] = census.get("PF2X", 0)
         print("[PF2X] skipped: %r" % _e_pf2x, flush=True)
+    # G3：GS 站点实参 v3（gs_site_args_v3.json，1,483 evidence + 0 edges）——
+    # v2 机制 attach 门放宽版：全库虚分派站点（snapshot 内每个 call [vtreg+off]，
+    # slot=off/4）push 实参 origin 类型（gs-const01 1,256 / gs-const-wide 226 /
+    # gs-str 1，occupant_callarg 守卫），实体 GS:slot:k:0xROOT 与 v2 同拼写、
+    # 与 v2 十条池零重叠。类型全基元（int/unsigned int/bool/char*——
+    # 'const char *'/'char *' 经 _norm_ty 归一 char*）。文件 edges=0，无边通道。
+    try:
+        census["G3"] = _load_type_family("anchors/gs_site_args_v3.json", "G3")
+        print("[G3] gs-site-arg v3 types: %d" % census["G3"], flush=True)
+    except Exception as _e_g3:
+        census["G3"] = census.get("G3", 0)
+        print("[G3] skipped: %r" % _e_g3, flush=True)
+    # VR2：VDRET 虚分派返回（vdret_eax_edges.json，234 evidence + 8,221 edges）。
+    # evidence = 虚调用后 EAX 物化类型：vdret-arith（算术消费 => int 族，164）
+    # + vdret-mread-0xOFF（EAX 作基址的成员读 => member_types 类候选，~70），
+    # 实体 EAX:FN:site（大写 hex 无 0x，EF/RA 同拼写）。类名 token 走
+    # _name_ix2 直查（无 alias resolve）；无 universe 原子者按位丢弃（MT/RD
+    # 先例）。8,221 条 eq 边另走 EF 同款双向通道（见 [VR2] eq 行）。
+    try:
+        census["VR2"] = _load_type_family("anchors/vdret_eax_edges.json", "VR2")
+        print("[VR2] vdret eax types: %d" % census["VR2"], flush=True)
+    except Exception as _e_vr2:
+        census["VR2"] = census.get("VR2", 0)
+        print("[VR2] skipped: %r" % _e_vr2, flush=True)
+    # CPI：构造参数初始化（ctor_param_inits.json，2,208 evidence + 224 edges）。
+    # evidence = ctor 形参初始化语义的 M:FN:this:0xOFF 成员常量定型：
+    # cpi-const（2,196，types 可含 [bool,int] 双值 / [bool,char,unsigned char]
+    # 三值等 AND 掩码）+ cpi-m8/cpi-m16（宽度定型 12）。类型全基元（bool/int/
+    # char/unsigned char/short/unsigned short/signed short/__int16，全部在
+    # type_universe 词汇表）。224 条 eq 边另走 EF 同款双向通道（见 [CPI] eq 行）。
+    try:
+        census["CPI"] = _load_type_family("anchors/ctor_param_inits.json", "CPI")
+        print("[CPI] ctor-param-init types: %d" % census["CPI"], flush=True)
+    except Exception as _e_cpi:
+        census["CPI"] = census.get("CPI", 0)
+        print("[CPI] skipped: %r" % _e_cpi, flush=True)
     # AV：分配尺寸 v2（alloc_size_types.json = .omo/agents/allocsize/alloc_sites_v2.json
     # 站点台账的 ent 聚合件，837 evidence，报告语义「接线端现算」：
     #   sem=total → pointee sizeof==size 或 sizeof 整除 size（new T[n] 的 n 未知）；
@@ -6341,6 +6404,64 @@ def main():
               % (_n_pfp, dict(_pfp_via)), flush=True)
     except Exception as _e_pfp:
         print("[PFP] eq edges skipped: %r" % _e_pfp, flush=True)
+    # ---- VDRET 虚分派返回等值（vdret_eax_edges：EAX:FN:site == RET:FN，EF 同款通道）----
+    # 语义：虚调用槽位被调方集合对 EAX 站点的等值绑定（via=vdret-slot，全
+    # 8,221 条同 via）——同一 slot 的全部可能被调方共享返回值槽实体
+    # RET:<callee>（拼写与 RI 族的 RET 键逐字对齐，大写 hex 无 0x），EAX 侧
+    # 与 EF/RA 同拼写。值传递 => 同一值，双向等值边（EF/SW/PF 同款：不经
+    # un() 硬合并，R:/V: 过滤，冲突以空域形式交中和器裁决）。量级
+    # 8,221 x 2 = 16,442 有向边；端点预创建见 [C10-pre] vdret/cpi 行
+    # （EAX own 侧 EF 先例 + RET 对侧 RI 先例——槽位被调方大多不在 RI
+    # 1,941 名单内）。
+    try:
+        _vre = jload("anchors/vdret_eax_edges.json", {}) or {}
+        _n_vre = 0
+        _vr_via = collections.Counter()
+        for _r1 in (_vre.get("edges") or []):
+            _a1 = (_r1 or {}).get("eax")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_vre += 2
+            _vr_via[(_r1 or {}).get("via") or "?"] += 1
+        print("[VR2] vdret eq edges=%d (via=%s)" % (_n_vre, dict(_vr_via)), flush=True)
+    except Exception as _e_vre:
+        print("[VR2] eq edges skipped: %r" % _e_vre, flush=True)
+    # ---- CPI 构造参数初始化等值（ctor_param_inits：P:FN:K == M:/P:/G:，EF 同款通道）----
+    # 语义：ctor 形参值与初始化目标是同一值 ⇒ 双向等值边（EF/SW/PF 同款：
+    # 不经 un() 硬合并，R:/V: 过滤，冲突以空域形式交中和器裁决）。三 via：
+    #   cpi-minit  mov [this+off],<reg(def=param k)>（194）=> P:FN:K == M:FN:this:0xOFF
+    #   cpi-base   基类 ctor 直调实参纯转发（29）=> P:FN1:K == P:FN2:J
+    #   cpi-gstore 参数直存全局本体（1）=> M: == G:
+    # 生成器侧已对 pu2/pf 系去重（dup_vs_pu2 155 / dup_existing 177 不在本
+    # 文件，通道幂等无妨）。端点预创建见 [C10-pre] vdret/cpi 行（PU5 双端
+    # touch 先例——P: 220 个新参数原子 / M: 8 新（MW/FS 已覆盖 187）/ G: 1）。
+    try:
+        _cpe = jload("anchors/ctor_param_inits.json", {}) or {}
+        _n_cpe = 0
+        _cp_via = collections.Counter()
+        for _r1 in (_cpe.get("edges") or []):
+            _a1 = (_r1 or {}).get("p")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_cpe += 2
+            _cp_via[(_r1 or {}).get("via") or "?"] += 1
+        print("[CPI] ctor-param-init eq edges=%d (via=%s)" % (_n_cpe, dict(_cp_via)), flush=True)
+    except Exception as _e_cpe:
+        print("[CPI] eq edges skipped: %r" % _e_cpe, flush=True)
 
     _incr_fp_ok = False
     _INCR_BASE_NOW = None
