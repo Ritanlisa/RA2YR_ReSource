@@ -75,7 +75,7 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
             "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X",
-            "G3", "VR2", "CPI"]
+            "G3", "VR2", "CPI", "IMP"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -144,6 +144,7 @@ FAMILY_DESC = {
     "G3": "GS site-args v3: v2 machinery with the attach gate RELAXED (every `call [vtreg+off]` site in the full_export snapshot, slot=off/4) -- push-argument ORIGIN type evidence (gs-const01 1,256 / gs-const-wide 226 / gs-str 1, occupant_callarg guard) for GS:slot:k:root entities, same spelling as G2 (root 0x-prefixed upper hex; strict; evidence array of anchors/gs_site_args_v3.json, 1,483 recs, zero overlap with the 10-rec v2 pool; all-primitive types int/unsigned int/bool/char* with 'const char *'/'char *' normalized by _norm_ty; the file carries 0 edges, no eq channel wired)",
     "VR2": "VDRET virtual-dispatch return materialization: post-vcall EAX evidence (vdret-arith arithmetic-consumption int-family 164 / vdret-mread-0xOFF member-read class candidates via member_types lookup, ~70 recs) for EAX:FN:site entities (upper hex no 0x, EF/RA spelling; strict tier; evidence array of anchors/vdret_eax_edges.json, 234 recs; class tokens without a universe atom dropped per-token, MT/RD precedent); the 8,221 eq edges of the same file (EAX:FN:site == RET:FN via vdret-slot, RET spelling aligned with the RI family keys) wired separately via the EF-style bidirectional channel, see the [VR2] eq line",
     "CPI": "constructor-param init semantics over structural_truth vtable_install fns (1,398 scanned): cpi-const member-init constant typing (M:FN:this:0xOFF entities, 2,196 recs, types may carry [bool,int] dual values / [bool,char,unsigned char] etc.), cpi-m8/cpi-m16 width-typed inits (12 recs) -- strict binary facts; evidence array of anchors/ctor_param_inits.json, 2,208 recs; the 224 eq edges of the same file (cpi-minit P:FN:K == M:FN:this:0xOFF / cpi-base P:FN1:K == P:FN2:J base-ctor arg forwarding / cpi-gstore M == G:) wired separately via the EF-style bidirectional channel, see the [CPI] eq line",
+    "IMP": "import return types: Win32/BINK SDK-contract return semantics of PROVEN import-call sites (form A `call ds:__imp_X` direct / form C `call reg` linear-basic-block back-scan <=6 caller-saved / <=24 callee-saved steps with IDA-annotation cross-check, disagreement dropped) -> EAX:FN:SITE ret entities typed (HANDLE/int/unsigned int/ptr words; RETX-style <=12-insn consumption window classifies first informative use: cdq=>{int}, ptr-deref=>{void*,char*,wchar_t*}, arith=>integer words, cmp/test null-check uninformative; void/uncertain APIs and universe-missing type words skipped) (strict, 100% deterministic contract, no guessing; evidence array of anchors/imp_ret_types.json, 3,170 recs via=imp-XXX; ent format matches RU/RA -- hex uppercase, no 0x)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3556,6 +3557,20 @@ def main():
     except Exception as _e_p5:
         census["P5"] = census.get("P5", 0)
         print("[P5] skipped: %r" % _e_p5, flush=True)
+
+    # ---------------- IMP：导入函数返回值定型（Win32/BINK SDK 契约，严格层）----------------
+    # imp_ret_types.json：call ds:__imp_X 直接形态 + call reg 线性基本块回扫证明
+    # 形态（IDA 注解交叉核对，不一致即丢弃整站点）；SDK 契约确定的返回语义
+    # （HANDLE/int/unsigned int/void*/char*/wchar_t*）定型 EAX:FN:SITE 实体。
+    # 消费窗（RETX 式 <=12 指令）分类首次有效使用：cdq=>int / 指针解引用=>ptr
+    # 族 / 算术=>integer words；cmp/test 通用 null 检查不计。void/不确定 API
+    # 与宇宙缺失词跳过。100% 确定性契约，无猜测——严格层，不挂 heuristic 门。
+    try:
+        census["IMP"] = _load_type_family("anchors/imp_ret_types.json", "IMP")
+        print("[IMP] import-function return types: %d" % census["IMP"], flush=True)
+    except Exception as _e_imp:
+        census["IMP"] = census.get("IMP", 0)
+        print("[IMP] skipped: %r" % _e_imp, flush=True)
 
     # ---------------- IR：全 const 返回 ⇒ int 族（启发式层）----------------
     if getattr(args, "allow_heuristics", False):

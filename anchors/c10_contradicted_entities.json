@@ -3,14 +3,14 @@
   "semantics": "contradicted call-edge sets at the strict fixpoint; C10 evidence deemed unreliable for these entities (mask stays FULL); investigation backlog"
  },
  "by_prefix": {
-  "G": 3513,
-  "M": 4070,
   "T": 3526,
+  "M": 4070,
   "P": 2117,
+  "GS": 245,
+  "G": 3513,
   "S": 4563,
   "EAX": 19036,
-  "RET": 1224,
-  "GS": 245
+  "RET": 1224
  },
  "entities": [
   "EAX:4010C0:4010D9",
