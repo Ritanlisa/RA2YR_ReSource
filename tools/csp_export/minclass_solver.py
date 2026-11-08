@@ -77,8 +77,8 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X",
             "G3", "VR2", "CPI", "IMP"]
 FAMILY_DESC = {
-    "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
-    "MR": "member type via receiver domain x member_types (strict, two-pass)",
+    "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
+    "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
     "IR": "all-const returns => int-family (HEURISTIC tier)",
     "MRH": "relaxed member typing: union of KNOWN slot types (HEURISTIC tier)",
     "CP": "all-constant call args => int-family param (HEURISTIC tier)",
@@ -94,7 +94,7 @@ FAMILY_DESC = {
     "SG": "stack-slot insn granularity (byte/word/float, strict)",
     "RU": "return-value consumer usage int-only (heuristic)",
     "AS": "allocation sizes => class-size mask (heuristic, CS-family semantics)",
-    "PU": "param in-body consumption: as-this edges + pointee granularity (strict)",
+    "PU": "param in-body consumption: as-this edges + pointee granularity (strict; +pu3_usage.json net-new edges/gran; pu6 vcall slot-occupancy lands via C3)",
     "CS": "pointer-step size == class sizeof (HEURISTIC tier)",
     "C1": "member access (offset, obs_w<=member_w)",
     "C2": "this passing (arg class ⊑ callee this-class)",
@@ -2599,6 +2599,41 @@ def main():
                  _vr_touch), flush=True)
     except Exception as _e_vr:
         print("[VR] receiver-origin landing skipped: %r" % _e_vr, flush=True)
+    # ---- PU3 pu6：参数虚调用槽位占用 → C3 落地（pu3_usage.json pu6_events）----
+    # 语义（PU v2 meta PU6，ffl12 同引擎）：P:fn:k 经 mov R2,[R1]; call [R2+N]
+    # 虚派发 ⇒ domain(P:fn:k) ⊆ slot N 的占用类族（OT 语义应用到参数）。
+    # 消费形式与 VR/_vt_recv_by 分支同构：vptr_off==0 → c3_mask(slot) 主表
+    # 槽位掩码（三值：满足 ∪ 未知）；多槽观测 = 同实体多次 AND 合并（C3 主环
+    # 同址多落地先例）。落地在 rule S2 之前（C3 二进制证据参与驳回 C2 pin）。
+    # 加性落地，不改主 C3 环既有证据；census["C3"] 计入。
+    try:
+        _pu3j = jload("anchors/pu3_usage.json", {}) or {}
+        _n_pu6 = _n_pu6_touch = 0
+        for _r6 in (_pu3j.get("pu6_events") or []):
+            _e6 = (_r6 or {}).get("ent")
+            if not isinstance(_e6, str):
+                continue
+            _m6 = FULL
+            for _s6 in ((_r6 or {}).get("slots") or []):
+                try:
+                    _slot6 = int(_s6)
+                except (TypeError, ValueError):
+                    continue
+                if not (0 <= _slot6 <= 400):
+                    continue
+                _m6 &= c3_mask(_slot6)
+            if _m6 == FULL:
+                continue
+            if _e6 not in ents:
+                touch(_e6, _e6)
+                _n_pu6_touch += 1
+            fam["C3"][_e6] = fam["C3"].get(_e6, FULL) & _m6
+            census["C3"] += 1
+            _n_pu6 += 1
+        print("[PU3] pu6 vcall slot-occupancy params -> C3: %d (new-ents=%d)"
+              % (_n_pu6, _n_pu6_touch), flush=True)
+    except Exception as _e_pu6:
+        print("[PU3] pu6 landing skipped: %r" % _e_pu6, flush=True)
     # ---- 规则 S2：C3 二进制证据驳回 C2 pin ----
     # 实体的 C2 族域与 C3 域（虚表槽位实测）交为空 -> 钉住族中每个类都缺
     # 某个被调槽位，即该类不可能是接收者类；C2 pin（til/proto 推导）被
@@ -2829,6 +2864,33 @@ def main():
     except Exception as _e_mt:
         print("[MT] skipped: %r" % _e_mt, flush=True)
 
+    # ---------------- MT2：装表成员类型净增（mt2_installs.json，并入 MT 同通道）----------------
+    # 语义与 MT (member_type_installs.json) 同族：engine-gated this-based installs
+    # (mptr this+off derived-pointer 通道)，net-new vs member_type_installs(329)
+    # ∪ fixmr mt_final(583)；记录形态同 ent+classes，按 _name_ix2 类掩码
+    # AND 合入 fam["MT"]，census["MT"] 计入。不改证据族语义（同通道加性）。
+    try:
+        _n_mt2 = 0
+        for _rec in (jload("anchors/mt2_installs.json", {}) or {}).get("evidence") or []:
+            _e2b = _rec.get("ent")
+            if not isinstance(_e2b, str):
+                continue
+            m2b = 0
+            for _c2b in (_rec.get("classes") or []):
+                _ix2b = _name_ix2.get(str(_c2b).lower())
+                if _ix2b is not None:
+                    m2b |= (1 << _ix2b)
+            if not m2b:
+                continue
+            if _e2b not in ents:
+                touch(_e2b, _e2b)
+            fam["MT"][_e2b] = fam["MT"].get(_e2b, FULL) & m2b
+            census["MT"] += 1
+            _n_mt2 += 1
+        print("[MT2] installs net-new merged into MT: %d" % _n_mt2, flush=True)
+    except Exception as _e_mt2:
+        print("[MT2] skipped: %r" % _e_mt2, flush=True)
+
     # ---------------- MR：成员类型经接收者域（dom(M) = member_type(dom(T:fn), off)）----------------
     try:
         _name_ix3 = _name_ix2
@@ -2851,6 +2913,34 @@ def main():
         print("[MR] receiver-typed members: evidence=%d entities=%d" % (census["MR"], len(fam["MR"])), flush=True)
     except Exception as _e_mr:
         print("[MR] skipped: %r" % _e_mr, flush=True)
+
+    # ---------------- MR9：两遍法净增（mr9_member_by_receiver.json，并入 MR 同通道）----------------
+    # 语义与 MR7 (member_by_receiver.json) 完全一致：strict 两遍法 regen
+    # (minclass_clusters + minclass_assignments, ANCHORED-only) 的 net-new 子集
+    # (meta: old 12,723 / new_full 14,530 / lost 21 → 1,828 净增)。记录形态同
+    # ent+classes（含基元/模板全型词汇），按 _name_ix3 类掩码 AND 合入
+    # fam["MR"]，census["MR"] 计入。不改证据族语义（同通道加性）。
+    try:
+        _n_mr9 = 0
+        for _rec in (jload("anchors/mr9_member_by_receiver.json", {}) or {}).get("evidence") or []:
+            _e9b = _rec.get("ent")
+            if not isinstance(_e9b, str):
+                continue
+            m9b = 0
+            for _c9b in (_rec.get("classes") or []):
+                _ix9b = _name_ix3.get(str(_c9b).lower())
+                if _ix9b is not None:
+                    m9b |= (1 << _ix9b)
+            if not m9b:
+                continue
+            if _e9b not in ents:
+                touch(_e9b, _e9b)
+            fam["MR"][_e9b] = fam["MR"].get(_e9b, FULL) & m9b
+            census["MR"] += 1
+            _n_mr9 += 1
+        print("[MR9] two-pass net-new merged into MR: %d" % _n_mr9, flush=True)
+    except Exception as _e_mr9:
+        print("[MR9] skipped: %r" % _e_mr9, flush=True)
 
     # ---------------- MD：成员二进制事实类型反钉接收者（严格）----------------
     try:
@@ -2959,6 +3049,32 @@ def main():
         print("[PU] param granularity: %d" % _n_pug, flush=True)
     except Exception as _e_pu:
         print("[PU] gran skipped: %r" % _e_pu, flush=True)
+    # ---- PU3 gran 净增（pu3_usage.json gran_evidence，并入 PU 同通道）----
+    # ffl12 同引擎（semantics identical to param_usage_types_v2 PU2）delta 扫描
+    # 的 net-new（baseline 710 → +9）：PP:fn:k:off 基元粒度标签，types 经
+    # _norm_ty+_name_ix2 掩码 AND 合入 fam["PU"]，census["PU"] 计入。
+    try:
+        _pu3g = jload("anchors/pu3_usage.json", {}) or {}
+        _n_pu3g = 0
+        for _rec in (_pu3g.get("gran_evidence") or []):
+            _ep3 = _rec.get("ent")
+            if not isinstance(_ep3, str):
+                continue
+            m_p3 = 0
+            for _tp3 in (_rec.get("types") or []):
+                _ixp3 = _name_ix2.get(_norm_ty(_tp3).lower())
+                if _ixp3 is not None:
+                    m_p3 |= (1 << _ixp3)
+            if not m_p3:
+                continue
+            if _ep3 not in ents:
+                touch(_ep3, _ep3)
+            fam["PU"][_ep3] = fam["PU"].get(_ep3, FULL) & m_p3
+            census["PU"] += 1
+            _n_pu3g += 1
+        print("[PU3] gran net-new merged into PU: %d" % _n_pu3g, flush=True)
+    except Exception as _e_pu3g:
+        print("[PU3] gran skipped: %r" % _e_pu3g, flush=True)
     try:
         _n_ot = 0
         for _rec in (jload("anchors/occupant_this_types.json", {}) or {}).get("evidence") or []:
@@ -6087,6 +6203,27 @@ def main():
         print("[PU] param-consumption edges: %d" % _n_pue, flush=True)
     except Exception as _e_pue:
         print("[PU] edges skipped: %r" % _e_pue, flush=True)
+    # ---- PU3 edges 净增（pu3_usage.json edges，并入 PU 同有向边通道）----
+    # ffl12 同引擎 delta 扫描的 net-new（baseline 2,231 → +7）：格式同 v2
+    # [P:fn:k, T:callee | M:fn:this:off]，单向值域传播（PU1/PU3 语义，
+    # strict），端点 touch 预创建 + _call_edges/_call_edges_p2 单向追加，
+    # 与 v2 通道幂等叠加。
+    try:
+        _pu3e = jload("anchors/pu3_usage.json", {}) or {}
+        _n_pu3e = 0
+        for _a4, _b4 in (_pu3e.get("edges") or []):
+            if not (isinstance(_a4, str) and isinstance(_b4, str)):
+                continue
+            if _a4 not in ents:
+                touch(_a4, _a4)
+            if _b4 not in ents:
+                touch(_b4, _b4)
+            _call_edges.append((_a4, _b4))
+            _call_edges_p2.append((_a4, _b4))
+            _n_pu3e += 1
+        print("[PU3] param-consumption edges: %d" % _n_pu3e, flush=True)
+    except Exception as _e_pu3e:
+        print("[PU3] edges skipped: %r" % _e_pu3e, flush=True)
 
     # ---- 赋值物化等值（ffl4：每个槽存/成员存都是物理等值边）----
     try:

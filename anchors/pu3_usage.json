@@ -1,0 +1,330 @@
+{
+"meta": {
+"generated": "2026-11-09 03:07:55",
+"generator": ".omo/agents/refresh2 (ffl12 engine verbatim copy; PS gate = ffl11 param_pairs \u222a CURRENT minclass_clusters P entities; scan set = delta fns)",
+"net_new": {
+"edges": 7,
+"pu1_edges": 3,
+"pu3_edges": 4,
+"gran_evidence": 9,
+"pu6_events": 14
+},
+"baseline": {
+"edges": 2231,
+"gran_evidence": 710,
+"pu6_events": 456
+},
+"events_rescanned": 3586,
+"semantics": "identical to param_usage_types_v2 PU1/PU2/PU3/PU6; edges format [P:fn:k, T:callee | M:fn:this:off]; gran = PP:fn:k:off primitive labels; pu6 = virtual-call slot occupancy of params"
+},
+"edges": [
+[
+"P:4AB9B0:1128",
+"M:4AB9B0:this:0x1194"
+],
+[
+"P:5206B0:171",
+"T:5F5C60"
+],
+[
+"P:58A500:2",
+"M:58A500:this:0x10"
+],
+[
+"P:58ABD0:2",
+"M:58ABD0:this:0x10"
+],
+[
+"P:624CA0:1",
+"M:624CA0:this:0xC"
+],
+[
+"P:75AEC0:1",
+"T:5F5F00"
+],
+[
+"P:75AEC0:1",
+"T:65AE30"
+]
+],
+"gran_evidence": [
+{
+"ent": "PP:75AEC0:1:0x3D5",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75B0E2",
+"n_sites": 2
+},
+{
+"ent": "PP:75AEC0:1:0x418",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75B051",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x68A",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75B085",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x6B7",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75B8AC",
+"n_sites": 2
+},
+{
+"ent": "PP:75AEC0:1:0x74",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75C1FE",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x81",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75BE53",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x8C",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75B658",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x8D",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75BE61",
+"n_sites": 1
+},
+{
+"ent": "PP:75AEC0:1:0x90",
+"types": [
+"unsigned char"
+],
+"raw": "u8",
+"via": "PU2@0x75BC2E",
+"n_sites": 2
+}
+],
+"pu6_events": [
+{
+"ent": "P:4AB9B0:1128",
+"slots": [
+11,
+16,
+36
+],
+"n_sites": 4,
+"site0": "0x4ABA07",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:51BF90:132",
+"slots": [
+11
+],
+"n_sites": 1,
+"site0": "0x51C438",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:5206B0:171",
+"slots": [
+11,
+18
+],
+"n_sites": 2,
+"site0": "0x520745",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:5A6510:326",
+"slots": [
+36
+],
+"n_sites": 1,
+"site0": "0x5A675B",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:5A82E0:326",
+"slots": [
+36
+],
+"n_sites": 1,
+"site0": "0x5A8567",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:656150:1157",
+"slots": [
+9,
+31
+],
+"n_sites": 2,
+"site0": "0x6561CD",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:68CD20:0",
+"slots": [
+0,
+2
+],
+"n_sites": 7,
+"site0": "0x68D61F",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:68CD20:1",
+"slots": [
+0,
+2
+],
+"n_sites": 14,
+"site0": "0x68D663",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": true,
+"new_entity": true
+},
+{
+"ent": "P:6F0130:11",
+"slots": [
+18
+],
+"n_sites": 1,
+"site0": "0x6F0271",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "P:75AEC0:1",
+"slots": [
+18,
+19,
+33,
+47,
+61,
+73,
+99,
+109,
+110,
+115,
+125,
+179,
+200,
+223,
+242,
+288,
+317,
+318,
+334,
+337,
+338
+],
+"n_sites": 51,
+"site0": "0x75AFDB",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "S:4DA530:+0",
+"slots": [
+2
+],
+"n_sites": 1,
+"site0": "0x4DAEB9",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "S:50D440:+0",
+"slots": [
+11,
+35
+],
+"n_sites": 3,
+"site0": "0x50D472",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "S:6B04C0:+0",
+"slots": [
+54
+],
+"n_sites": 1,
+"site0": "0x6B0647",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+},
+{
+"ent": "S:6C9F10:+0",
+"slots": [
+2
+],
+"n_sites": 1,
+"site0": "0x6CA02A",
+"gs_groups": [],
+"gs_connected": false,
+"in_assignments": false,
+"new_entity": true
+}
+]
+}

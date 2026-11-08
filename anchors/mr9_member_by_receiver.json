@@ -1,0 +1,11705 @@
+{
+"meta": {
+"evidence": 1828,
+"direct": 1443,
+"semantics": "net-new only vs anchors/member_by_receiver.json (MR7 12,723); strict pass identical to mr2refresh regen over CURRENT minclass_clusters+minclass_assignments (2026-11-09 solver run)",
+"source": "full-type: classes+primitives+arrays+pointers span the space",
+"regen": "strict: minclass_clusters+minclass_assignments; ANCHORED-only, all-candidates-present else skip",
+"baseline": {
+"old_evidence": 12723,
+"new_full_evidence": 14530,
+"lost_in_new_run": 21
+}
+},
+"evidence": [
+{
+"ent": "M:4016F0:this:0x10C",
+"classes": [
+"float",
+"int",
+"unsigned int",
+"unsigned short"
+]
+},
+{
+"ent": "M:4016F0:this:0x110",
+"classes": [
+"float",
+"int",
+"unsigned int",
+"unsigned short"
+]
+},
+{
+"ent": "M:4016F0:this:0x118",
+"classes": [
+"char[1]",
+"float",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4016F0:this:0x11C",
+"classes": [
+"char[12]",
+"char[4]",
+"float",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:4019A0:this:0x64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:402220:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:402220:this:0x90",
+"classes": [
+"char[1]",
+"float"
+]
+},
+{
+"ent": "M:402220:this:0xAC",
+"classes": [
+"UnitTypeClass",
+"int"
+]
+},
+{
+"ent": "M:402220:this:0xD8",
+"classes": [
+"double",
+"int"
+]
+},
+{
+"ent": "M:402220:this:0xac",
+"classes": [
+"UnitTypeClass",
+"int"
+]
+},
+{
+"ent": "M:402330:this:0x168",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:402330:this:0xD4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4023F0:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4023F0:this:0xA4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4024A0:this:0xA4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4039C0:this:0x0",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4039C0:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4039C0:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4039C0:this:0x4",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:4039C0:this:0x48",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:4039C0:this:0x50",
+"classes": [
+"int",
+"int[5]",
+"unsigned char"
+]
+},
+{
+"ent": "M:404700:this:0x1C",
+"classes": [
+"char[4]",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:404700:this:0x1E0",
+"classes": [
+"int[3]"
+]
+},
+{
+"ent": "M:404700:this:0x24",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:404700:this:0xA8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:4047B0:this:0x24",
+"classes": [
+"int",
+"int[6]",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:404BB0:this:0x24",
+"classes": [
+"char[2]",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:404BB0:this:0x268",
+"classes": [
+"bool",
+"char[1]",
+"int"
+]
+},
+{
+"ent": "M:4052F0:this:0x28",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4052F0:this:0xB0",
+"classes": [
+"BuildingTypeClass",
+"void *"
+]
+},
+{
+"ent": "M:4052F0:this:0xb0",
+"classes": [
+"BuildingTypeClass",
+"void *"
+]
+},
+{
+"ent": "M:4053E0:this:0x144",
+"classes": [
+"bool",
+"float",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:4055C0:this:0x154",
+"classes": [
+"UnitTypeClass",
+"bool",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:4055C0:this:0x158",
+"classes": [
+"double",
+"int",
+"int[2]",
+"unsigned int"
+]
+},
+{
+"ent": "M:4055C0:this:0x18",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4055C0:this:0x1C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4055C0:this:0x20",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4055C0:this:0x24",
+"classes": [
+"int",
+"int[6]",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:4055C0:this:0xB0",
+"classes": [
+"BuildingTypeClass",
+"char[1]",
+"char[4]",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:4055C0:this:0xb0",
+"classes": [
+"BuildingTypeClass",
+"char[1]",
+"char[4]",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:4062C0:this:0x108",
+"classes": [
+"double",
+"float",
+"int",
+"unsigned int",
+"unsigned short"
+]
+},
+{
+"ent": "M:4062C0:this:0xb8",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:4079C0:this:0x38",
+"classes": [
+"ParticleTypeClass",
+"int",
+"int[5]",
+"unsigned int"
+]
+},
+{
+"ent": "M:407FB0:this:0x14",
+"classes": [
+"UnitTypeClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:407FB0:this:0x80",
+"classes": [
+"AnimTypeClass",
+"bool",
+"char[1]",
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:407FB0:this:0xC",
+"classes": [
+"FootClass",
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:409880:this:0x2C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409880:this:0x38",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409880:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:409880:this:0x64",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409880:this:0x68",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:409880:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:409880:this:0xD8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409C40:this:0x70",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409C40:this:0x7C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409C40:this:0x88",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:409C40:this:0x8C",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:409C40:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:409C40:this:0x9C",
+"classes": [
+"int[3]"
+]
+},
+{
+"ent": "M:409C40:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:409DE0:this:0x74",
+"classes": [
+"char[1]",
+"float"
+]
+},
+{
+"ent": "M:409DE0:this:0x78",
+"classes": [
+"float",
+"int"
+]
+},
+{
+"ent": "M:409DE0:this:0x80",
+"classes": [
+"char[1]",
+"float"
+]
+},
+{
+"ent": "M:409DE0:this:0x84",
+"classes": [
+"char[1]",
+"float"
+]
+},
+{
+"ent": "M:409DE0:this:0x94",
+"classes": [
+"float",
+"int"
+]
+},
+{
+"ent": "M:409DE0:this:0x98",
+"classes": [
+"char[1]",
+"float"
+]
+},
+{
+"ent": "M:409DE0:this:0xAC",
+"classes": [
+"UnitTypeClass",
+"int"
+]
+},
+{
+"ent": "M:40AA70:this:0x90",
+"classes": [
+"char[1]",
+"float",
+"int"
+]
+},
+{
+"ent": "M:40AA70:this:0xB4",
+"classes": [
+"int",
+"int[2]",
+"void *"
+]
+},
+{
+"ent": "M:40B300:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40BBC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40BC10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40C110:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40C160:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40C4F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40C540:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40CAE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40CB30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40CC20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40CF30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40D800:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40D850:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40EAB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40EB00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40F180:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40F1D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40F8A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40F8F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40FE70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:40FEC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:413D20:this:0x6C8",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6C9",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6CA",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6CC",
+"classes": [
+"AircraftTypeClass"
+]
+},
+{
+"ent": "M:413D20:this:0x6D0",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6D1",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6D2",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:413D20:this:0x6D3",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:414080:this:0x90",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:415C60:this:0x114",
+"classes": [
+"char[8]",
+"int[2]"
+]
+},
+{
+"ent": "M:415C60:this:0x2FC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:415C60:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:416D50:this:0x5A4",
+"classes": [
+"WeaponTypeClass",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:416D50:this:0x674",
+"classes": [
+"ILocomotion",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:41C8B0:this:0x718",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:41C8B0:this:0xE04",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:41DC80:this:0x3C",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:41DC80:this:0x3D",
+"classes": [
+"bool",
+"char[32]",
+"unsigned char"
+]
+},
+{
+"ent": "M:41E0A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:41E0F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:41FE20:this:0x104",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:420630:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:420680:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:420960:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:420960:this:0x38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:420960:this:0x3C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:421AC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:421EA0:this:0x19C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:421EA0:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:421EA0:this:0xC4",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:421EA0:this:0xFC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:422720:this:0x195",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:422720:this:0x19C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:422720:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:422720:this:0xC4",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:422720:this:0xFC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:425410:this:0xCC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4255B0:this:0xCC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:425670:this:0x8",
+"classes": [
+"char[1]",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:425670:this:0xc8",
+"classes": [
+"char[12]",
+"char[2]",
+"int",
+"int[3]",
+"unsigned char"
+]
+},
+{
+"ent": "M:4267F0:this:0xE0C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4267F0:this:0xE10",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:427530:this:0x22F",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:427530:this:0x232",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:427530:this:0x233",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:427530:this:0x234",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:427530:this:0x2B0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:427530:this:0x35C",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:427530:this:0x364",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:427530:this:0x374",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:429A90:p0:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:429A90:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:429A90:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:429A90:this:0x40",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:429A90:this:0x70",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:429A90:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:42A900:this:0x10",
+"classes": [
+"char[1]",
+"int"
+]
+},
+{
+"ent": "M:42A900:this:0x14",
+"classes": [
+"char[4]",
+"int"
+]
+},
+{
+"ent": "M:42A900:this:0x18",
+"classes": [
+"char[32]",
+"int"
+]
+},
+{
+"ent": "M:42A900:this:0x1C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:42A900:this:0x64",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:42A900:this:0x68",
+"classes": [
+"char[1]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:42A900:this:0xC",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:42E6F0:this:0x18",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:42E6F0:this:0x4C",
+"classes": [
+"HouseClass"
+]
+},
+{
+"ent": "M:42EA30:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:42F1E0:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:42F1E0:this:0x18",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:42F1E0:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:42F1E0:this:0x4C",
+"classes": [
+"HouseClass"
+]
+},
+{
+"ent": "M:42F260:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:42F970:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:42FB50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:42FC40:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:42FC40:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:431A30:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:431B20:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:432690:this:0x2D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4326C0:this:0x2D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4326C0:this:0xC",
+"classes": [
+"char[6]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:432750:this:0x20",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:432750:this:0x4",
+"classes": [
+"char",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:432E40:this:0x2C",
+"classes": [
+"char",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:432E40:this:0x2D",
+"classes": [
+"char",
+"char[4]",
+"unsigned char"
+]
+},
+{
+"ent": "M:432E40:this:0x4",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:433880:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:433880:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4349F0:this:0x40",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4349F0:this:0x41",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4361D0:this:0xB8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4361D0:this:0xBC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:43A350:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:43A350:this:0x28",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:43A350:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:43AA90:this:0x8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:43ACB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:43EE50:this:0x388",
+"classes": [
+"char[24]"
+]
+},
+{
+"ent": "M:43EE50:this:0x580",
+"classes": [
+"char[8]",
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:445E50:this:0x2B4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:44ACF0:this:0x18",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:44EBF0:this:0x524",
+"classes": [
+"FactoryClass"
+]
+},
+{
+"ent": "M:452000:this:0x55C",
+"classes": [
+"uint32_t"
+]
+},
+{
+"ent": "M:452000:this:0x700",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:452670:this:0x520",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4545D0:this:0x55C",
+"classes": [
+"int",
+"int16_t",
+"uint32_t"
+]
+},
+{
+"ent": "M:4549B0:this:0x21C",
+"classes": [
+"DynamicVector"
+]
+},
+{
+"ent": "M:4549B0:this:0x21c",
+"classes": [
+"DynamicVector"
+]
+},
+{
+"ent": "M:4549B0:this:0x268",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4549B0:this:0x269",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4549B0:this:0x520",
+"classes": [
+"BuildingTypeClass"
+]
+},
+{
+"ent": "M:4549B0:this:0x662",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4549B0:this:0x6EB",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:4549B0:this:0x6EC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4575B0:this:0x21c",
+"classes": [
+"DynamicVector"
+]
+},
+{
+"ent": "M:4575B0:this:0x5994",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4575B0:this:0x702",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:457DE0:this:0x520",
+"classes": [
+"BuildingTypeClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:45A9C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AA10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AA60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AAB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AB00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AC90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45ACE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AD30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:45AD80:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:45AE50:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:45DD90:this:0x154A",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x154F",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x156C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0x1577",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x157A",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x1584",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x16B5",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x16F8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0x1704",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x1707",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:45DD90:this:0x1710",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0x1766",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:45DD90:this:0x1780",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0x178C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0x1790",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:45DD90:this:0xD35",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:45DD90:this:0xD36",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:45DD90:this:0xE30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0xEB4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0xEDC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:45DD90:this:0xEF4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:45DD90:this:0xEF8",
+"classes": [
+"SHPStruct"
+]
+},
+{
+"ent": "M:45E520:this:0x1790",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:465570:this:0x1538",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:466560:this:0x154",
+"classes": [
+"ParticleSystemClass"
+]
+},
+{
+"ent": "M:466560:this:0xAC",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:466560:this:0xB0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:468BB0:this:0x10C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:468BB0:this:0x140",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:468BB0:this:0x14C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:468BB0:this:0x9C",
+"classes": [
+"int[3]"
+]
+},
+{
+"ent": "M:468BB0:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:468BB0:this:0xac",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:468BB0:this:0xb0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:46B8C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:46BBC0:this:0x22F",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:46BBC0:this:0x232",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:46BBC0:this:0x233",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:46BBC0:this:0x234",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:46BBC0:this:0x29A",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:46BBC0:this:0x2A1",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:46BBC0:this:0x2A5",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:46BBC0:this:0x2AC",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:46CB60:this:0x9C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4717D0:this:0x30",
+"classes": [
+"TechnoClass"
+]
+},
+{
+"ent": "M:4717D0:this:0x38",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4717D0:this:0x4C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:471890:this:0x38",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:471890:this:0x3C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:471890:this:0x4C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4729C0:this:0x2C",
+"classes": [
+"HouseClass"
+]
+},
+{
+"ent": "M:4730A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4730F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4739F0:this:0x64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4739F0:this:0x68",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:473A30:this:0x64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:473A30:this:0x68",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:473A80:this:0x64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:473A80:this:0x68",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:477A70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:477F40:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:477F40:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:478680:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:478790:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:47BB60:this:0x28",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:47BBF0:this:0x118",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:47BBF0:this:0x130",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:47EC90:this:0x11B",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:47EC90:this:0x11C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:47EC90:this:0x12C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:47EC90:this:0x24",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:47EC90:this:0xe4",
+"classes": [
+"ObjectClass"
+]
+},
+{
+"ent": "M:480110:this:0x11B",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:480110:this:0x11E",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:480110:this:0x140",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:484050:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:488030:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:488080:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:488280:this:0x174",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:488760:this:0x188",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:488760:this:0x18C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:48AFD0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:48B020:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:48B070:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:48B0E0:this:0x30",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:48B0E0:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48B0E0:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:48BEE0:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48C650:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48E520:this:0x28",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:48E620:this:0x28",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:48E740:this:0x178",
+"classes": [
+"CampaignClass"
+]
+},
+{
+"ent": "M:48EBF0:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x10C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x110",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x114",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x118",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x11C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x120",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x18",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x1C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x20",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:48EBF0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:48EBF0:this:0xD0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xD4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xD8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xDC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xE0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xE4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xE8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xEC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xF0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xF4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xF8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:48EBF0:this:0xFC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:490490:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:49B0E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:49B130:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:49B610:this:0x1C",
+"classes": [
+"char[4]",
+"int"
+]
+},
+{
+"ent": "M:49B610:this:0x6C",
+"classes": [
+"char[4]",
+"int"
+]
+},
+{
+"ent": "M:49BC80:this:0x0",
+"classes": [
+"char[12]",
+"char[2]",
+"int",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49BC80:this:0x44",
+"classes": [
+"int",
+"int32_t",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49BC80:this:0x6C",
+"classes": [
+"char[4]",
+"int",
+"int[8]",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49BCA0:this:0x0",
+"classes": [
+"char[12]",
+"char[2]",
+"char[3]",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:49BCA0:this:0x40",
+"classes": [
+"char[12]",
+"char[4]",
+"double",
+"int",
+"int32_t",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49BCA0:this:0x6C",
+"classes": [
+"char[1]",
+"char[4]",
+"float",
+"int",
+"int[8]",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49CAF0:this:0x3C",
+"classes": [
+"char[1]",
+"char[20]",
+"char[4]",
+"int",
+"int[5]",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49CAF0:this:0x44",
+"classes": [
+"int",
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:49D070:this:0x6C",
+"classes": [
+"char[1]",
+"char[4]",
+"float",
+"int",
+"int[8]",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:49DA60:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:49DA60:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:49DA60:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:49DA60:this:0x8",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:49DA60:this:0xC",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:49F9B0:this:0xC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:49FBE0:this:0xC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4A02B0:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4A0380:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4A0870:this:0x28",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4A0870:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4A0C20:this:0x18",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4A0CE0:this:0x18",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4A0E10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A0E60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A14A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A14F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A2600:this:0x0",
+"classes": [
+"char[2]"
+]
+},
+{
+"ent": "M:4A2600:this:0x24",
+"classes": [
+"int[6]"
+]
+},
+{
+"ent": "M:4A2600:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:4A2600:this:0x8",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4A2600:this:0x9",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:4A2600:this:0xA",
+"classes": [
+"unsigned short"
+]
+},
+{
+"ent": "M:4A2820:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4A2820:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4A4D90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A4DE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A4E30:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4A50F0:this:0x18",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:4A50F0:this:0x19",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:4A5290:this:0x10",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:4A5290:this:0x14",
+"classes": [
+"bool",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:4A5290:this:0x18",
+"classes": [
+"bool",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:4A5290:this:0x19",
+"classes": [
+"bool",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:4A8030:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4A8080:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4AEC60:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4AEC60:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4AF540:this:0x65",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4B4E10:this:0x48",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4B56E0:this:0x1C",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:4B56E0:this:0x1D",
+"classes": [
+"char[3]",
+"unsigned char"
+]
+},
+{
+"ent": "M:4BA160:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4BA250:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4BA2A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4BA340:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4C2F00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C2F50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C2FC0:this:0x44",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4C4C60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C4CB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C5E20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C5E70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4C98B0:this:0x3C",
+"classes": [
+"TechnoClass"
+]
+},
+{
+"ent": "M:4C98B0:this:0x54",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:4CA670:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4CA770:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4CB580:this:0x4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4CB580:this:0x6",
+"classes": [
+"int16_t"
+]
+},
+{
+"ent": "M:4CB8B0:this:0x4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4CB8B0:this:0x6",
+"classes": [
+"int16_t"
+]
+},
+{
+"ent": "M:4CD600:this:0x18",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4CD600:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4CD600:this:0x58",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4CD600:this:0x5C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4CD600:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4CD600:this:0x98",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4CD600:this:0xC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4CD600:this:0xc",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4D0440:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4D08B0:this:0x70",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0980:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0980:this:0x70",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0980:this:0x74",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4D0C40:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0C40:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0C40:this:0x70",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0C40:this:0x74",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x2C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x6C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x70",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D1370:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D1370:this:0x70",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D1370:this:0x74",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4D31E0:this:0x59C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D31E0:this:0x5C0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4D31E0:this:0x64C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4D31E0:this:0x684",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4D31E0:this:0x6B6",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4D3540:this:0x674",
+"classes": [
+"ILocomotion"
+]
+},
+{
+"ent": "M:4D8560:this:0x5A0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4DA030:this:0x5AC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4DA030:this:0x6B1",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4DBAD0:this:0x568",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:4DBAD0:this:0x56C",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:4DBAD0:this:0x570",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:4DBAD0:this:0x678",
+"classes": [
+"char[12]"
+]
+},
+{
+"ent": "M:4DBAD0:this:0x67C",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4DC340:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4DC340:this:0x9C",
+"classes": [
+"AnimTypeClass",
+"int"
+]
+},
+{
+"ent": "M:4DC8C0:this:0x430",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4DC8C0:this:0x524",
+"classes": [
+"short",
+"unsigned short"
+]
+},
+{
+"ent": "M:4DC8C0:this:0x528",
+"classes": [
+"short",
+"unsigned short"
+]
+},
+{
+"ent": "M:4DC8C0:this:0x686",
+"classes": [
+"char",
+"unsigned char"
+]
+},
+{
+"ent": "M:4DE1D0:this:0x6c0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4E0080:this:0x68F",
+"classes": [
+"bool",
+"char",
+"unsigned char"
+]
+},
+{
+"ent": "M:4E0080:this:0x690",
+"classes": [
+"bool",
+"char",
+"unsigned char"
+]
+},
+{
+"ent": "M:4E0080:this:0x691",
+"classes": [
+"bool",
+"char",
+"unsigned char"
+]
+},
+{
+"ent": "M:4E0CE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4E0D80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4E0E20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4E2500:this:0x2C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4E2500:this:0x2D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4E2500:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4E2500:this:0x38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4E25D0:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4E2650:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4E2A50:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4E2A50:this:0x2D",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4EF6C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF710:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF760:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF7B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF8A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF8F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF940:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF990:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EF9E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFA30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFA80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFAD0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFB20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFB70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFBC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFC10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFC60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFCB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFD00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFD50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFDA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFDF0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFE40:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFE90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFEE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFF30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFF80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4EFFD0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0020:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0070:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F00C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0110:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0160:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F01B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0200:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0250:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F02A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F02F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0340:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0390:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F03E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0430:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0480:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F04D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0520:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0570:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F05C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0610:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0660:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F06B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0700:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0750:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F07A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F07F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0840:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0890:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F08E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0930:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0980:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F09D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0A20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0A70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0AC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0B10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0B60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0BB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0C00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0C50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0CA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0CF0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0D40:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0D90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0DE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0E30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F0E80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F2B60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F2BB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:4F2C00:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4F30E0:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4F3A50:this:0x9",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4F3F60:this:0x18",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4F5190:this:0x16070",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4F5190:this:0x4C",
+"classes": [
+"BuildingClass"
+]
+},
+{
+"ent": "M:4F5190:this:0x64",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4F9610:this:0x30C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4F9610:this:0x54E8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4F9970:this:0x310",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4FA350:this:0x1EC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D0",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D1",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D2",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D3",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x53D8",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:4FA350:this:0x58",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4FAF00:this:0x1EC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:4FAF00:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:4FAF00:this:0x5494",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:4FAF00:this:0xEC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:4FD150:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:4FD150:this:0x78",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5025F0:this:0x30C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5025F0:this:0x54E8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:505180:this:0x1EC",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:505180:this:0x1ED",
+"classes": [
+"char",
+"char[3]"
+]
+},
+{
+"ent": "M:50A490:this:0x5708",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:50C340:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:50C340:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:50C340:this:0x5700",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:50DEF0:this:0x5494",
+"classes": [
+"unsigned int",
+"unsigned short",
+"void *"
+]
+},
+{
+"ent": "M:50DF30:this:0x5490",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:50E7E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:50E8C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:510270:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:510310:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:510360:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5103B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:510400:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5104A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5105F0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:510920:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:510970:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:510970:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:510970:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5113F0:this:0x17C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5113F0:this:0x198",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5113F0:this:0x1A4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5113F0:this:0x1A7",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:515ED0:this:0x18",
+"classes": [
+"SHPStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:515ED0:this:0x1C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:515ED0:this:0x20",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:515ED0:this:0x24",
+"classes": [
+"LightSourceClass",
+"char[12]",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:515ED0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:515ED0:this:0x48",
+"classes": [
+"RandomStruct",
+"int",
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:515ED0:this:0x50",
+"classes": [
+"char[1]",
+"char[20]",
+"int",
+"int[5]",
+"unsigned int"
+]
+},
+{
+"ent": "M:515ED0:this:0x70",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:515ED0:this:0xc",
+"classes": [
+"FootClass",
+"char[1]",
+"void *"
+]
+},
+{
+"ent": "M:517A50:this:0x6E8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:517D90:this:0x6E8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:518D80:this:0x674",
+"classes": [
+"ILocomotion",
+"int"
+]
+},
+{
+"ent": "M:518D80:this:0x6c0",
+"classes": [
+"InfantryTypeClass",
+"UnitTypeClass",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:518D80:this:0x8C",
+"classes": [
+"bool",
+"char[1]"
+]
+},
+{
+"ent": "M:51B350:this:0x568",
+"classes": [
+"char[12]"
+]
+},
+{
+"ent": "M:51B350:this:0x674",
+"classes": [
+"ILocomotion"
+]
+},
+{
+"ent": "M:51B350:this:0x684",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:51B350:this:0x685",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:51B350:this:0x6c0",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:520260:this:0x3D5",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:520260:this:0x5d4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:520260:this:0x9C",
+"classes": [
+"char[12]",
+"int[3]"
+]
+},
+{
+"ent": "M:5202F0:this:0x1585",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5202F0:this:0x34",
+"classes": [
+"TagClass",
+"void *"
+]
+},
+{
+"ent": "M:5202F0:this:0x5A4",
+"classes": [
+"CellStruct",
+"int"
+]
+},
+{
+"ent": "M:5202F0:this:0x5a4",
+"classes": [
+"CellStruct",
+"int"
+]
+},
+{
+"ent": "M:5202F0:this:0x674",
+"classes": [
+"ILocomotion",
+"int"
+]
+},
+{
+"ent": "M:5202F0:this:0x6c0",
+"classes": [
+"InfantryTypeClass",
+"UnitTypeClass",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:5202F0:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:5206B0:this:0x2B4",
+"classes": [
+"AbstractClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:5206B0:this:0x2b4",
+"classes": [
+"AbstractClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:5206B0:this:0x674",
+"classes": [
+"ILocomotion",
+"int"
+]
+},
+{
+"ent": "M:5206B0:this:0x6c0",
+"classes": [
+"InfantryTypeClass",
+"UnitTypeClass",
+"int"
+]
+},
+{
+"ent": "M:520F40:this:0x3D5",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:520F40:this:0x418",
+"classes": [
+"bool",
+"int"
+]
+},
+{
+"ent": "M:520F40:this:0x674",
+"classes": [
+"ILocomotion",
+"int"
+]
+},
+{
+"ent": "M:520F40:this:0x6DC",
+"classes": [
+"bool",
+"int"
+]
+},
+{
+"ent": "M:520F40:this:0x6c0",
+"classes": [
+"InfantryTypeClass",
+"int"
+]
+},
+{
+"ent": "M:522A60:this:0x6b8",
+"classes": [
+"bool",
+"int"
+]
+},
+{
+"ent": "M:5236A0:this:0x22D",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5236A0:this:0x718",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5236A0:this:0xD38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5236A0:this:0xD97",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5236A0:this:0xDFC",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:5236A0:this:0xE00",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:5236A0:this:0xE64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5236A0:this:0xE80",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5236A0:this:0xEB8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5236A0:this:0xEBD",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:5236A0:this:0xEC9",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:535A70:this:0x64",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:538A90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:538AE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:538B30:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:53C780:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:53C7D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:53DD00:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:53DD50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:53F430:this:0x60",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:53FA90:this:0xC8",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:53FA90:this:0xCC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5408F0:this:0x58",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:5408F0:this:0x60",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:541370:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:541370:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:541370:this:0x5",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5413B0:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5413B0:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5413B0:this:0x5",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5413F0:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5413F0:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5413F0:this:0x5",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:541410:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:541410:this:0x4C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:541410:this:0x5",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:541410:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:541480:this:0x4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:541480:this:0x5",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:543780:this:0x81",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:543B10:this:0x80",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:543B10:this:0xAC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:544A70:this:0x2BC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:544C20:this:0x2F4",
+"classes": [
+"WeaponStruct",
+"bool",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:547020:this:0xA8",
+"classes": [
+"char[4]",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:547CF0:this:0x2BC",
+"classes": [
+"CaptureManagerClass",
+"FacingStruct *",
+"int"
+]
+},
+{
+"ent": "M:549E50:this:0x2F4",
+"classes": [
+"WeaponStruct",
+"bool",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:549E90:this:0x2A4",
+"classes": [
+"IUnknown",
+"bool",
+"char[1]",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:54A7B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:54A800:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:54B980:this:0x2C",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:54B980:this:0x4",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:54B980:this:0x80",
+"classes": [
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54B980:this:0xC",
+"classes": [
+"FootClass",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54B980:this:0xc",
+"classes": [
+"FootClass",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54BD30:this:0x2C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:54BD30:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:54BD30:this:0x80",
+"classes": [
+"bool",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54BD30:this:0xC",
+"classes": [
+"FootClass",
+"char[1]",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:54BD30:this:0xc",
+"classes": [
+"FootClass",
+"char[1]",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:54BFF0:this:0x1C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:54BFF0:this:0x20",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:54BFF0:this:0x2C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:54BFF0:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:54BFF0:this:0x44",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:54BFF0:this:0x78",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:54BFF0:this:0x80",
+"classes": [
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54BFF0:this:0xC",
+"classes": [
+"FootClass",
+"char[1]"
+]
+},
+{
+"ent": "M:54BFF0:this:0xc",
+"classes": [
+"FootClass",
+"char[1]"
+]
+},
+{
+"ent": "M:54D0F0:this:0x20",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x24",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x28",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x38",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x3C",
+"classes": [
+"int",
+"int[5]"
+]
+},
+{
+"ent": "M:54D0F0:this:0x70",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:54D0F0:this:0x74",
+"classes": [
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:54D0F0:this:0x78",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x80",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x88",
+"classes": [
+"char[8]",
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x8C",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:54D0F0:this:0x98",
+"classes": [
+"char[1]",
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0xC",
+"classes": [
+"char[1]",
+"int"
+]
+},
+{
+"ent": "M:54D0F0:this:0xc",
+"classes": [
+"char[1]",
+"int"
+]
+},
+{
+"ent": "M:54E360:this:0x19",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:54E360:this:0x4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:54E360:this:0xC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:54EB50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:54EBA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:54EBF0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:54F050:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:550080:this:0x10",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:550080:this:0x50",
+"classes": [
+"bool",
+"char[1]",
+"int[5]",
+"unsigned char"
+]
+},
+{
+"ent": "M:550080:this:0x51",
+"classes": [
+"bool",
+"unsigned char"
+]
+},
+{
+"ent": "M:550080:this:0xC",
+"classes": [
+"FootClass",
+"char[1]",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x21",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5509F0:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x42",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5509F0:this:0x43",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5509F0:this:0x4C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x52",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5509F0:this:0x54",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5509F0:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:551590:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5515E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:551FF0:this:0x14",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:551FF0:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:554370:this:0x44",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:554370:this:0x48",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:554370:this:0x4C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:554370:this:0x51",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:554370:this:0x52",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:554760:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:554760:this:0x38",
+"classes": [
+"char[12]"
+]
+},
+{
+"ent": "M:554760:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:554760:this:0x48",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:555780:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5557D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:555820:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:555870:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:555DA0:this:0x194",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:555DA0:this:0x1B0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:557170:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5571C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:557230:this:0x40",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:557230:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:557230:this:0x54",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:557380:this:0x40",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:55A410:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:55A460:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:55A6F0:this:0xC",
+"classes": [
+"FootClass"
+]
+},
+{
+"ent": "M:55BB40:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:55BC00:this:0x1",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:55BC00:this:0x2",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:55BC00:this:0x3",
+"classes": [
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:565090:this:0x148",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:565090:this:0xE8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:565190:this:0x1168",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:565190:this:0xE8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:565520:this:0x100",
+"classes": [
+"char[12]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:567110:this:0x68",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:567110:this:0x70",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:567110:this:0xF8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:568BB0:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:568BB0:this:0xF4",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:56A080:this:0x124",
+"classes": [
+"float",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:56A080:this:0x128",
+"classes": [
+"float",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:56D6E0:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:56D6E0:this:0x28",
+"classes": [
+"TActionClass",
+"double",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:56D6E0:this:0x50",
+"classes": [
+"TriggerTypeClass",
+"int",
+"int[5]"
+]
+},
+{
+"ent": "M:56D6E0:this:0xF4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578100:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578100:this:0xF4",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:578290:this:0x10C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578290:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578290:this:0x114",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578290:this:0xF4",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:578350:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:578350:this:0xF4",
+"classes": [
+"int",
+"int[7]",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:584550:this:0x70",
+"classes": [
+"char[16]"
+]
+},
+{
+"ent": "M:5855A0:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5855A0:this:0xF4",
+"classes": [
+"int",
+"int[7]",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:586AC0:this:0xF4",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:586AC0:this:0xFC",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:586E50:this:0x11C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:587C50:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:587C50:this:0xF4",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:588990:this:0x148",
+"classes": [
+"bool",
+"float",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:589030:this:0x4",
+"classes": [
+"unsigned int *",
+"void *"
+]
+},
+{
+"ent": "M:5890B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:589BD0:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:589BD0:this:0xC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:58A5B0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:58A5B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:58AA90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:58AAE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:58AB30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:58AB80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:58AC70:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:58AE60:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:58AFF0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:58AFF0:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:58B070:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:595680:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:595680:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:595680:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:595680:this:0x50",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:597430:this:0x18",
+"classes": [
+"char[1]",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5981F0:this:0x10",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:5981F0:this:0x1C0",
+"classes": [
+"TechnoClass",
+"unsigned int"
+]
+},
+{
+"ent": "M:5981F0:this:0x1DC",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5981F0:this:0x1F8",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:5981F0:this:0x214",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5981F0:this:0x230",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5981F0:this:0x24C",
+"classes": [
+"float",
+"void *"
+]
+},
+{
+"ent": "M:5981F0:this:0x268",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5981F0:this:0x284",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5981F0:this:0x2A0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5981F0:this:0x2BC",
+"classes": [
+"CaptureManagerClass",
+"FacingStruct *"
+]
+},
+{
+"ent": "M:5981F0:this:0x2C0",
+"classes": [
+"TechnoClass",
+"char[4]"
+]
+},
+{
+"ent": "M:5981F0:this:0x2C4",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5981F0:this:0x2E0",
+"classes": [
+"HouseClass",
+"unsigned int"
+]
+},
+{
+"ent": "M:5AD390:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD430:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD480:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD4D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD520:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD5C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD610:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5AD740:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5AD9F0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5ADA40:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5ADA40:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5ADAB0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5AE530:this:0x8",
+"classes": [
+"char[1]",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:5AE530:this:0xc8",
+"classes": [
+"char[12]",
+"char[2]",
+"double",
+"int",
+"int[3]",
+"unsigned int"
+]
+},
+{
+"ent": "M:5AFEF0:this:0x30",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:5B3C20:this:0x20",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5B49B0:this:0x20",
+"classes": [
+"double",
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:5B49B0:this:0x54",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5B49B0:this:0x8",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5B77E0:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5B77E0:this:0x22",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5B77E0:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5B77E0:this:0x5C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5B77E0:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:5BDF70:this:0x138",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5BDF70:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5BDF70:this:0x68",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5C0D30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C0D80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C1470:this:0x338",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5C1470:this:0x340",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5C1470:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5C1470:this:0x48",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5C1470:this:0x49",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5C1470:this:0x6C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5C4FC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C5850:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C5940:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C5990:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5C59E0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5C5A80:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5C7310:this:0x0",
+"classes": [
+"VocClassHeader"
+]
+},
+{
+"ent": "M:5CB6D0:this:0x18",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CB6D0:this:0x28",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CB6D0:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CB6D0:this:0x3C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5CB6D0:this:0xC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CECB0:this:0x28",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CED70:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CEDD0:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5CEDD0:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CEDD0:this:0x50",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5CEDD0:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5CEDD0:this:0xC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:5D0070:this:0x24",
+"classes": [
+"RateTimer",
+"char[16]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5D0070:this:0x3C",
+"classes": [
+"IUnknown",
+"char[4]",
+"int[5]"
+]
+},
+{
+"ent": "M:5D0070:this:0x40",
+"classes": [
+"CoordStruct",
+"char[12]",
+"unsigned int"
+]
+},
+{
+"ent": "M:5D0070:this:0x61",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5D0070:this:0x8",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:5D18A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D18F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D1AA0:this:0x14",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:5D1AA0:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5D2CA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D2CF0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D2D40:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D2D90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D4390:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5D56E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D5730:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D5780:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D57D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D5B60:this:0x14",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5D5B60:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5D86D0:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5D86D0:this:0x14",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5D86D0:this:0xC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5D86D0:this:0xD",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5D8810:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D8860:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D88B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D8900:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5D8950:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5D89A0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5D89F0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5EEEC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5EEF10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5EEF60:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:5EF010:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:5EF0B0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:5F15C0:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5F15C0:this:0x5C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:5F16E0:this:0x10",
+"classes": [
+"UnitTypeClass",
+"char[1]",
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:5F16E0:this:0x34",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F16E0:this:0x38",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F16E0:this:0x44",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F16E0:this:0x4C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F16E0:this:0x8",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:5F3900:this:0x6C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F3900:this:0x70",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F3900:this:0x78",
+"classes": [
+"Int4"
+]
+},
+{
+"ent": "M:5F3B80:this:0x30",
+"classes": [
+"ObjectClass"
+]
+},
+{
+"ent": "M:5F3B80:this:0x90",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:5F3B80:this:0xA8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:5F3DB0:this:0x4",
+"classes": [
+"unsigned short"
+]
+},
+{
+"ent": "M:5F5CD0:this:0x6C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F5D20:this:0x6C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F5D90:this:0x6C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F5DD0:this:0x6C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5F6060:this:0x74",
+"classes": [
+"bool",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:5F8CE0:this:0x1F8",
+"classes": [
+"AnimTypeClass",
+"char[8]",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F8CE0:this:0xB8",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F8CE0:this:0xBC",
+"classes": [
+"IUnknown",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F8CE0:this:0xC0",
+"classes": [
+"CellStruct",
+"double",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F8CE0:this:0xC4",
+"classes": [
+"char[4]",
+"unsigned int"
+]
+},
+{
+"ent": "M:5F9DE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5F9E30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:5FDF70:this:0xAC",
+"classes": [
+"OverlayTypeClass"
+]
+},
+{
+"ent": "M:5FE250:this:0x22F",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5FE250:this:0x232",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:5FE250:this:0x2A0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:5FE250:this:0x2A4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:600280:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6002D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6107E0:this:0x14",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:624530:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:624BE0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:624FC0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6252F0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:625780:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:625830:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6258E0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6285F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:628640:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:628740:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:628740:this:0xC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:628760:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6287B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:628DF0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:628E80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:628ED0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:628ED0:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:62A980:this:0x44",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62B330:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:62B380:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:62C540:this:0x128",
+"classes": [
+"char[2]",
+"void *"
+]
+},
+{
+"ent": "M:62C540:this:0x12E",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:62C540:this:0x3B7",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62C540:this:0x4",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:62C540:this:0xE4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:62C540:this:0xac",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:62CB10:this:0x10C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62CB10:this:0x110",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62CB10:this:0x114",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62CB10:this:0x124",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62CB10:this:0x128",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:62CB10:this:0x12C",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:62CB10:this:0x12E",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:62CB10:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:62CB10:this:0xE4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62CB10:this:0xac",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62D9A0:this:0xAC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62DC50:this:0xC8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62DC50:this:0xD0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62DC50:this:0xF4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62DF20:this:0xC8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62DF20:this:0xD0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62E280:this:0x2A4",
+"classes": [
+"IUnknown"
+]
+},
+{
+"ent": "M:62E4C0:this:0xBC",
+"classes": [
+"char[4]",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:62E4C0:this:0xac",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:62E840:this:0xB0",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:62E840:this:0xB4",
+"classes": [
+"double"
+]
+},
+{
+"ent": "M:62E840:this:0xC0",
+"classes": [
+"double"
+]
+},
+{
+"ent": "M:62E840:this:0xF9",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62E840:this:0xac",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:62ED40:this:0x4",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:62ED40:this:0x90",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:62ED40:this:0xAC",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:62ED40:this:0xB0",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:62ED40:this:0xB4",
+"classes": [
+"int[2]",
+"unsigned char"
+]
+},
+{
+"ent": "M:62ED40:this:0xB8",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:62ED40:this:0xCC",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:62ED40:this:0xE0",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:62ED40:this:0xE4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:62ED40:this:0xE8",
+"classes": [
+"char[28]",
+"int"
+]
+},
+{
+"ent": "M:62ED40:this:0xac",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:62ED40:this:0xe0",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:62F230:this:0x3B7",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:62F230:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:62F230:this:0xD4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F230:this:0xD8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F230:this:0xDC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F230:this:0xF8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F230:this:0xac",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F9A0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:62F9A0:this:0xD4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F9A0:this:0xD8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F9A0:this:0xDC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:62F9A0:this:0xE0",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:62F9A0:this:0xF8",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:6340B0:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:635F20:this:0x0",
+"classes": [
+"char[12]",
+"void*"
+]
+},
+{
+"ent": "M:635F20:this:0x1C",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:635F20:this:0x4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:635F20:this:0x98",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:635F80:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:636120:this:0x14",
+"classes": [
+"UnitTypeClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:636120:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:636310:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:636310:this:0x8",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:636590:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:636B50:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:63EC50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63ECA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63ED90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EDE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EE30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EE80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EED0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EF20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:63EFB0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6406F0:this:0x0",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:641B00:this:0x0",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:642A60:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:642A60:this:0x4C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:642A60:this:0x61",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:642A60:this:0x64",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:643AE0:this:0x48",
+"classes": [
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:643AE0:this:0x61",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:643AE0:this:0x68",
+"classes": [
+"char[1]",
+"unsigned int"
+]
+},
+{
+"ent": "M:643AE0:this:0x6C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:643AE0:this:0x70",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:643AE0:this:0x8",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6440A0:this:0x234",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:6440A0:this:0x29C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6440A0:this:0x2A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:644BE0:this:0x2A0",
+"classes": [
+"IUnknown"
+]
+},
+{
+"ent": "M:644BE0:this:0x2A4",
+"classes": [
+"IUnknown"
+]
+},
+{
+"ent": "M:644BE0:this:0x2AC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:644BE0:this:0x2CC",
+"classes": [
+"VectorClass"
+]
+},
+{
+"ent": "M:644BE0:this:0x30B",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:645950:this:0x2C0",
+"classes": [
+"char[5]"
+]
+},
+{
+"ent": "M:652960:this:0x1238",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:652960:this:0x1258",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:652960:this:0x1270",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:652960:this:0x148C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:652DE0:this:0x125C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6547C0:this:0x1220",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6547C0:this:0x1240",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6547C0:this:0x1244",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6547C0:this:0x1488",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:655250:this:0x1224",
+"classes": [
+"VectorClass",
+"unsigned int"
+]
+},
+{
+"ent": "M:655250:this:0x1234",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:655250:this:0x1240",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655250:this:0x1244",
+"classes": [
+"char[8]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655250:this:0x1498",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655A90:this:0x121C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655A90:this:0x123C",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655A90:this:0x1258",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655A90:this:0x1274",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:655C50:this:0x121C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:655C50:this:0x1220",
+"classes": [
+"char[20]",
+"unsigned int"
+]
+},
+{
+"ent": "M:655C50:this:0x1488",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:655C50:this:0x1490",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:655C50:this:0x149C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656150:this:0x121C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x11E4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x11EC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x120C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x121C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x124C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x1488",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x1490",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x149C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14A0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14A4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14D9",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:656EC0:this:0x14DA",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:656EC0:this:0x14DC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14E0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14E4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14E8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14EC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14F0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14F4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:656EC0:this:0x14F8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:658D10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:659A30:this:0x18",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:659A30:this:0x2",
+"classes": [
+"unsigned short"
+]
+},
+{
+"ent": "M:659A30:this:0x3C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:659A30:this:0x68",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:659A30:this:0x7C",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:659CA0:this:0x7C",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:659CA0:this:0x8",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:659CA0:this:0x9",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:659CA0:this:0x9C",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:659CA0:this:0xA8",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:659CA0:this:0xC0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:659CA0:this:0xC1",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:659CA0:this:0xC2",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:659EE0:this:0x18",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:659EE0:this:0x3C",
+"classes": [
+"char[20]",
+"char[4]",
+"int[5]",
+"unsigned char"
+]
+},
+{
+"ent": "M:659EE0:this:0x40",
+"classes": [
+"double",
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:659EE0:this:0x48",
+"classes": [
+"double",
+"int32_t",
+"unsigned int"
+]
+},
+{
+"ent": "M:659EE0:this:0x64",
+"classes": [
+"char[49]",
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:659EE0:this:0x68",
+"classes": [
+"char[1]",
+"float",
+"unsigned int"
+]
+},
+{
+"ent": "M:659EE0:this:0x80",
+"classes": [
+"bool",
+"char[1]",
+"float",
+"unsigned char"
+]
+},
+{
+"ent": "M:65A4A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:65A4F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:65A750:this:0xE8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65A750:this:0xEC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65A750:this:0xED",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:65AEB0:this:0xE8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65B2F0:this:0x24",
+"classes": [
+"LightSourceClass"
+]
+},
+{
+"ent": "M:65B530:this:0x4C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:65B530:this:0x6C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:65B530:this:0x70",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:65B580:this:0x4C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:65C1B0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:65C200:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:65C250:this:0x18",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65C5A0:this:0x1C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65D430:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65D460:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65D4D0:this:0x4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65FB80:this:0x0",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:65FB80:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65FB80:this:0x3C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65FB80:this:0x3D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65FB80:this:0xC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:65FE00:this:0x10",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:65FE00:this:0x18",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65FE00:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:65FE00:this:0x3C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65FE00:this:0x3D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:65FE00:this:0xC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:660F80:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:661EC0:this:0x50",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6638E0:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6638E0:this:0xC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:664A70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:664AC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:67A600:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:67A600:this:0xC",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:67AA30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:67C150:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:67C1A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:67C430:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:680FF0:this:0x190",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:680FF0:this:0x294",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:680FF0:this:0x2D4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:680FF0:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x112C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x1134",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x1138",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x1140",
+"classes": [
+"char[64]"
+]
+},
+{
+"ent": "M:689E90:this:0x11E4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x1434",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x143C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:689E90:this:0x1440",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x1448",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x144C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x1C78",
+"classes": [
+"int[2]"
+]
+},
+{
+"ent": "M:689E90:this:0x1C7C",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:689E90:this:0x1C84",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x20C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x210",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x34A4",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34A5",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34A6",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34A7",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34A8",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34AC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34AD",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34AE",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34AF",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34B0",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34B1",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34B2",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34B3",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34B4",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34BC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:689E90:this:0x34D4",
+"classes": [
+"TechnoTypeClass"
+]
+},
+{
+"ent": "M:689E90:this:0x34F0",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x34FD",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:689E90:this:0x350C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:689E90:this:0x3519",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:689E90:this:0x35A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x35AC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:689E90:this:0x35B0",
+"classes": [
+"char[31]"
+]
+},
+{
+"ent": "M:689E90:this:0x35EE",
+"classes": [
+"char[31]"
+]
+},
+{
+"ent": "M:689E90:this:0x360D",
+"classes": [
+"char[31]"
+]
+},
+{
+"ent": "M:690F30:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6913C0:this:0x28",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6916B0:this:0x9C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6916B0:this:0xA0",
+"classes": [
+"INIClass"
+]
+},
+{
+"ent": "M:692290:this:0x5559",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:695BC0:this:0x90",
+"classes": [
+"char",
+"char[1]",
+"float",
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2354",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x280C",
+"classes": [
+"char[24]"
+]
+},
+{
+"ent": "M:697840:this:0x2810",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2819",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2824",
+"classes": [
+"char[24]"
+]
+},
+{
+"ent": "M:697840:this:0x2828",
+"classes": [
+"DynamicVectorClass<NodeNameType*>"
+]
+},
+{
+"ent": "M:697840:this:0x2831",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x283C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:697840:this:0x2840",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2849",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:697840:this:0x28FC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2900",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2909",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:697840:this:0x2914",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2918",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2921",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:697840:this:0x292C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2930",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x2939",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:697840:this:0x690",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x694",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x69D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:697840:this:0x8F0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x8F4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:697840:this:0x8FD",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:698CB0:this:0x148",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x15C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x174",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x17C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:698CB0:this:0x24",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x28",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:698CB0:this:0x29",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:698CB0:this:0x300",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x314",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x318",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x35",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:698CB0:this:0x38",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x3C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x40",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:698CB0:this:0x680",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6990A0:this:0x148",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6990A0:this:0x17C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6990A0:this:0x184",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6990A0:this:0x188",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6990A0:this:0x2884",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6990A0:this:0x2888",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6990A0:this:0x288C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6990A0:this:0x289C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6990A0:this:0x308",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6990A0:this:0x30C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:699450:this:0x1ED8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:699450:this:0x1ED9",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:699450:this:0x1FC0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:699450:this:0x1FC1",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:69A1F0:this:0x28FC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:69A1F0:this:0x2914",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:69A1F0:this:0x690",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:69B760:this:0x174",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:69B760:this:0x178",
+"classes": [
+"char[1]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:69B760:this:0x184",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:69B760:this:0x188",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:69C6C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:69D460:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:69D770:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:69D870:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:69EC50:this:0x65",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6A4550:this:0xA4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6A4550:this:0xAC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6A4930:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6A4E60:this:0x53A6",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6A6A00:this:0x1544",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6A8B30:this:0x14",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6A8B30:this:0x1C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:6A8B30:this:0x24",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:6A8B30:this:0x30",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:6A8B30:this:0x3D",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6A8B30:this:0x3E",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6A8B30:this:0x3F",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6A8B30:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6AF1A0:this:0x4C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:6AF1A0:this:0x58",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6AF360:this:0x44",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6AF360:this:0x4C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:6AF580:this:0x24",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:6B1930:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B1980:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B19D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B1A20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B1AB0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6B1B20:this:0x2C",
+"classes": [
+"unsigned short"
+]
+},
+{
+"ent": "M:6B1B20:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B1B20:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1B20:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1D00:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1D00:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1D40:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B1D40:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1D40:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1DC0:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B1DC0:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1DC0:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1E50:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B1E50:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1E50:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1EE0:this:0x30",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B1EE0:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B1EE0:this:0x48",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B25C0:this:0x24",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6B25C0:this:0x26",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6B25C0:this:0xe4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B4410:this:0x4",
+"classes": [
+"unsigned int *",
+"void *"
+]
+},
+{
+"ent": "M:6B47A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B47F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B4FA0:this:0xAC",
+"classes": [
+"SmudgeTypeClass"
+]
+},
+{
+"ent": "M:6B5260:this:0x230",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:6B5260:this:0x231",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:6B5260:this:0x235",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6B5260:this:0x298",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B5260:this:0x29C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B5260:this:0x2A0",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6B5260:this:0x2A1",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6B6C90:this:0x4C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:6B6C90:this:0x58",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6B6EA0:this:0x4C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:6B7DE0:this:0x6C",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6B8740:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B8790:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B87E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B8830:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6B8880:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6B9530:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6BAEF0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6BAFA0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:6C6480:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6C64D0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6C6540:this:0x30",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6C9F10:this:0x0",
+"classes": [
+"char[12]",
+"int",
+"unsigned short"
+]
+},
+{
+"ent": "M:6CA9C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6CAB50:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6CABA0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6CAEC0:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6CAEC0:this:0x60",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CAF90:this:0x60",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CF350:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CF350:this:0x1C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CF350:this:0x20",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CF350:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6CF350:this:0x8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6D1C20:this:0xD7C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6D1E30:this:0xDAC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6D5F60:this:0xD64",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6D5F60:this:0xD68",
+"classes": [
+"char[1]",
+"char[4]"
+]
+},
+{
+"ent": "M:6D5F60:this:0xD74",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6D5F60:this:0xD78",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6D6D10:this:0x8",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6D6D10:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D6D10:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7560:this:0x8",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6D7560:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7560:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7840:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7840:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7C00:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D7C00:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D8260:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D8260:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D8DB0:this:0x4",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6D8DB0:this:0x8",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6D8DB0:this:0xB0",
+"classes": [
+"VoxelStruct",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6D8DB0:this:0xB4",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6DCC30:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6DCCD0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6DCD20:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6E1530:this:0x4",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:6E4660:this:0x6D",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6E4AB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6E5CA0:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6E67A0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6E67F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6E7E80:this:0x9C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6E7E80:this:0xA0",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6E8000:this:0x14",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:6E8000:this:0x20",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:6EA080:this:0x28",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6EA080:this:0x54",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6EA080:this:0x77",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6EA080:this:0x78",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:6EA080:this:0x7B",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6EA080:this:0x7F",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6EA080:this:0x80",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6EDB50:this:0x38",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:6EDB50:this:0x54",
+"classes": [
+"float",
+"int"
+]
+},
+{
+"ent": "M:6EF9E0:this:0x81",
+"classes": [
+"bool",
+"char",
+"char[1]",
+"unsigned char"
+]
+},
+{
+"ent": "M:6EF9E0:this:0x90",
+"classes": [
+"bool",
+"char",
+"char[1]"
+]
+},
+{
+"ent": "M:6F06E0:this:0xA0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F06E0:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F06E0:this:0xEC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F2680:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6F2720:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:6F27F0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:6F27F0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6F27F0:this:0xD",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:6F2B40:this:0x1A4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F2B40:this:0x3D8",
+"classes": [
+"int[8]"
+]
+},
+{
+"ent": "M:6F2B40:this:0x421",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6F2B40:this:0x422",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6F2B40:this:0x44C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6F2B40:this:0x454",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F2B40:this:0x46C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F2B40:this:0x47C",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:6F4300:this:0x23C",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:6F4300:this:0x3D8",
+"classes": [
+"int[8]"
+]
+},
+{
+"ent": "M:6F4300:this:0x3DC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6F4300:this:0x3E0",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:6F4300:this:0x3E4",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:6F4300:this:0x3F8",
+"classes": [
+"int[8]"
+]
+},
+{
+"ent": "M:6F4300:this:0x3FC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F4300:this:0x454",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6F4300:this:0x46C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:6FD570:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:705CA0:this:0x2B4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:708C30:this:0x114",
+"classes": [
+"int[2]"
+]
+},
+{
+"ent": "M:708C30:this:0x2FC",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:709550:this:0x468",
+"classes": [
+"int[7]"
+]
+},
+{
+"ent": "M:709550:this:0x470",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:70DC70:this:0x138",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:70FD70:this:0x1CC",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCA4",
+"classes": [
+"char[16]"
+]
+},
+{
+"ent": "M:711840:this:0xCA8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCAC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCB0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCB8",
+"classes": [
+"char[16]"
+]
+},
+{
+"ent": "M:711840:this:0xCBC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCC0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711840:this:0xCC4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:711EE0:this:0x610",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:717B70:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:71A450:this:0x34",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:71B500:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:71B550:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:71B7B0:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:71BB90:this:0xC4",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:71BDF0:this:0xC4",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:71DA80:this:0x2A8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:71DA80:this:0x2AC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:71DA80:this:0x9C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:71FE60:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:71FEB0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:720960:this:0x10",
+"classes": [
+"char[1]",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:720960:this:0x11",
+"classes": [
+"unsigned char",
+"unsigned int",
+"unsigned short"
+]
+},
+{
+"ent": "M:720960:this:0x14",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7213E0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:7216C0:this:0xD8",
+"classes": [
+"OverlayTypeClass"
+]
+},
+{
+"ent": "M:722770:this:0xF4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:722770:this:0xF8",
+"classes": [
+"RadSiteClass",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:722770:this:0xFC",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:722770:this:0xf4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7228B0:this:0xFC",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:7228B0:this:0xf4",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:722AF0:this:0xFC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:722F00:this:0x110",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:722F00:this:0x118",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:722F00:this:0xB0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:723260:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:723260:this:0x114",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:723260:this:0x118",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7233A0:this:0x110",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7233A0:this:0x118",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7239F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:723A40:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:724000:this:0x228",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:724000:this:0x230",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:724000:this:0x248",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:724EF0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:724F40:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:726910:this:0x2C",
+"classes": [
+"HouseClass"
+]
+},
+{
+"ent": "M:727FD0:this:0x1C0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7343E0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:735780:this:0x90",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7359F0:this:0x678",
+"classes": [
+"char[12]"
+]
+},
+{
+"ent": "M:73CEC0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:7470D0:this:0x718",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7470D0:this:0xD2E",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7470D0:this:0xD38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7470D0:this:0xE14",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:7470D0:this:0xE24",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7470D0:this:0xE3C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7470D0:this:0xE5C",
+"classes": [
+"char"
+]
+},
+{
+"ent": "M:749100:this:0x800",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:749150:this:0x800",
+"classes": [
+"int",
+"void *"
+]
+},
+{
+"ent": "M:7493B0:this:0x2C0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7499F0:this:0x104",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7499F0:this:0x108",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:74AD80:this:0x29C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:74BDC0:this:0xC",
+"classes": [
+"char[1]",
+"int",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:74BFA0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:74C420:this:0xB0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C420:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C420:this:0xC0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C5B0:this:0xB0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C5B0:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C5B0:this:0xE0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C5B0:this:0xE4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74C5B0:this:0xE8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74D7C0:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74E1C0:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74E6B0:this:0xB4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:74F650:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:751B90:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:751BE0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:753910:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:753960:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:758E10:this:0x10",
+"classes": [
+"char[1]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7597A0:this:0x200",
+"classes": [
+"char[8]"
+]
+},
+{
+"ent": "M:7597A0:this:0x514",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7597A0:this:0x71",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:759940:this:0x200",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:759940:this:0x510",
+"classes": [
+"RadBeam",
+"int[7]"
+]
+},
+{
+"ent": "M:759940:this:0x514",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:759940:this:0x528",
+"classes": [
+"char[12]",
+"unsigned int"
+]
+},
+{
+"ent": "M:759940:this:0x550",
+"classes": [
+"char[12]",
+"int"
+]
+},
+{
+"ent": "M:759BC0:this:0x200",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:759BC0:this:0x504",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:759E10:this:0x200",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:759E10:this:0x514",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:759E10:this:0x550",
+"classes": [
+"char[12]",
+"int"
+]
+},
+{
+"ent": "M:75A6F0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:75A740:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:75E950:this:0x12C",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:75E950:this:0x130",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:75E950:this:0x1F8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:75E950:this:0x1FC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:75E950:this:0x204",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:75EBE0:this:0x12C",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:75EBE0:this:0x130",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:75EBE0:this:0x1F8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:75EBE0:this:0x1FC",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:75EBE0:this:0x204",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:75ED30:this:0x1F4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:75F4C0:this:0x1F0",
+"classes": [
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:75FA90:this:0x1A8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:75FA90:this:0x1a8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:75FA90:this:0xBC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:75FA90:this:0xCC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:75FA90:this:0xD0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7602E0:this:0x1A8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:7602E0:this:0x1a8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:7602E0:this:0xBC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7602E0:this:0xCC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7602E0:this:0xD0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7609E0:this:0xBC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7609E0:this:0xCC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7609E0:this:0xD0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0x108",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7610F0:this:0x120",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0x12C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7610F0:this:0x138",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0x140",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0x144",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0x1F0",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7610F0:this:0xB4",
+"classes": [
+"char[4]",
+"void *"
+]
+},
+{
+"ent": "M:7610F0:this:0xB8",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:7610F0:this:0xBC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7610F0:this:0xC0",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:7610F0:this:0xC4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7610F0:this:0xC8",
+"classes": [
+"char[12]",
+"int[3]"
+]
+},
+{
+"ent": "M:762AF0:this:0xDC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xE0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xE4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xE8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xEC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xF0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xF4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:762AF0:this:0xF8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:763200:this:0x1F4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:763730:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:763730:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:763810:this:0x34",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:763810:this:0x3C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7646C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:764710:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:765680:this:0x4",
+"classes": [
+"unsigned int *"
+]
+},
+{
+"ent": "M:766800:this:0x4",
+"classes": [
+"unsigned int *"
+]
+},
+{
+"ent": "M:766D30:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:766FC0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:766FC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:767080:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:767080:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:7681E0:this:0x10",
+"classes": [
+"int",
+"unsigned char"
+]
+},
+{
+"ent": "M:7681E0:this:0x14",
+"classes": [
+"char[4]",
+"int"
+]
+},
+{
+"ent": "M:7681E0:this:0x1C",
+"classes": [
+"char[1]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7681E0:this:0x4",
+"classes": [
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7681E0:this:0x44",
+"classes": [
+"ObjectClass",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7681E0:this:0x6C",
+"classes": [
+"AnimTypeClass",
+"int",
+"int[8]",
+"unsigned char"
+]
+},
+{
+"ent": "M:7681E0:this:0x7C",
+"classes": [
+"double",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7681E0:this:0x8C",
+"classes": [
+"VectorClass",
+"char[1]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7681E0:this:0x9C",
+"classes": [
+"char[12]",
+"int[3]",
+"unsigned int"
+]
+},
+{
+"ent": "M:7681E0:this:0xAC",
+"classes": [
+"char[4]",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7691E0:this:0xBC",
+"classes": [
+"char[4]",
+"int",
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:769C50:this:0x4",
+"classes": [
+"unsigned int *"
+]
+},
+{
+"ent": "M:769D30:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76A770:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:76ABE0:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76AC90:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76AC90:this:0x38",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76AC90:this:0x40",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76AFC0:this:0x2C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76B9E0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76BBC0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76BBC0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:76BC10:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76BC10:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:76C290:this:0x478",
+"classes": [
+"ReferenceCounted"
+]
+},
+{
+"ent": "M:76C970:this:0x434",
+"classes": [
+"CampaignClass",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:76CDA0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76CDA0:this:0x448",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76CDA0:this:0x44C",
+"classes": [
+"int[7]"
+]
+},
+{
+"ent": "M:76CDA0:this:0x458",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76CDA0:this:0x494",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76D4D0:this:0x458",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x46C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x470",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x474",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x478",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76D4D0:this:0x494",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76DAD0:p0:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76DAD0:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76DAD0:this:0x468",
+"classes": [
+"int[7]"
+]
+},
+{
+"ent": "M:76DAD0:this:0x478",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76DAD0:this:0x4C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76DAD0:this:0x4c",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76E750:this:0x4",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:76E750:this:0x4c",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76E750:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:76F1C0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7712C0:this:0x0",
+"classes": [
+"char[2]",
+"int",
+"unsigned char",
+"unsigned short",
+"void *"
+]
+},
+{
+"ent": "M:7712C0:this:0x4",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7714B0:this:0x0",
+"classes": [
+"char[2]",
+"int",
+"unsigned char",
+"unsigned short",
+"void *"
+]
+},
+{
+"ent": "M:7714B0:this:0x3C0",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:7714B0:this:0x4",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:771620:this:0x3B8",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:771620:this:0x3C4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:771C70:this:0x108",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:771C70:this:0x133",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:771C70:this:0x137",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:771C70:this:0x141",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:771C70:this:0x143",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:771C70:this:0x14E",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:771C70:this:0x9C",
+"classes": [
+"BulletTypeClass"
+]
+},
+{
+"ent": "M:771C70:this:0xD0",
+"classes": [
+"ParticleSystemTypeClass"
+]
+},
+{
+"ent": "M:771C70:this:0xEC",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:774120:this:0x24",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:774670:this:0x1C",
+"classes": [
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:774670:this:0x20",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:774670:this:0x50",
+"classes": [
+"char[1]",
+"char[20]",
+"int[5]",
+"unsigned char"
+]
+},
+{
+"ent": "M:774670:this:0x51",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7747C0:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7747C0:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7747C0:this:0x50",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7747C0:this:0x51",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:774980:this:0x1C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:774980:this:0x20",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:774980:this:0x50",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:776EB0:this:0x4",
+"classes": [
+"char[1]",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:776EB0:this:0x8",
+"classes": [
+"char[1]",
+"unsigned char",
+"void *"
+]
+},
+{
+"ent": "M:776EB0:this:0x8B",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:776EB0:this:0x8C",
+"classes": [
+"bool",
+"char[1]"
+]
+},
+{
+"ent": "M:776EB0:this:0x8D",
+"classes": [
+"bool",
+"char[1]"
+]
+},
+{
+"ent": "M:776EB0:this:0xC",
+"classes": [
+"char[1]",
+"void *"
+]
+},
+{
+"ent": "M:7A41A0:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7ACBE0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7ACE60:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7ACF70:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AD370:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:7AD3C0:this:0x8",
+"classes": [
+"AbstractClass"
+]
+},
+{
+"ent": "M:7ADF70:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE020:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE0E0:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE460:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE510:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE830:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AE950:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AEC00:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7AECD0:this:0xC",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7AEF50:this:0x0",
+"classes": [
+"int32_t"
+]
+},
+{
+"ent": "M:7B19C0:this:0x1C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:7B19C0:this:0x34",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:7B19C0:this:0x4",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:7B19C0:this:0x4C",
+"classes": [
+"char[258052]"
+]
+},
+{
+"ent": "M:7B2DB0:this:0x3F344",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7B2DB0:this:0x3F34C",
+"classes": [
+"char[516]"
+]
+},
+{
+"ent": "M:7B2DB0:this:0x3F55C",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7B2DB0:this:0x3F564",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7B8C60:this:0x24",
+"classes": [
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7B8C60:this:0x4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7B8C60:this:0x44",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7B8C60:this:0x58",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7B8C60:this:0x6C",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:7B8C60:this:0x8",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7B9040:this:0x50",
+"classes": [
+"char[1]",
+"char[20]",
+"int",
+"int[5]"
+]
+},
+{
+"ent": "M:7B9E30:this:0x14",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7B9E30:this:0x18",
+"classes": [
+"char[1]",
+"char[4]",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7B9E30:this:0x24",
+"classes": [
+"char[2]",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7B9E30:this:0x2C",
+"classes": [
+"OverlayTypeClass",
+"int",
+"int32_t",
+"unsigned char",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7B9E30:this:0x30",
+"classes": [
+"TeamTypeClass",
+"int",
+"int32_t",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7BA090:this:0x18",
+"classes": [
+"CoordStruct",
+"bool",
+"char[12]",
+"char[4]",
+"char[56]",
+"int",
+"int[3]",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7BA420:this:0xC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BA450:this:0xC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BA590:this:0xC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7BD2D0:this:0x790",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7BD2D0:this:0x84",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7BE4A0:this:0x108",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BE4A0:this:0x150",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7BE4A0:this:0x160",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7BE4A0:this:0x80",
+"classes": [
+"char[1]"
+]
+},
+{
+"ent": "M:7BE4A0:this:0xF0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BE4A0:this:0xFC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BE940:this:0x1A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BE940:this:0x6C4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BE940:this:0x6C8",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEA40:this:0x1A0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEA40:this:0x1A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEA40:this:0x1a0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEA40:this:0x6DC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEE20:this:0x128",
+"classes": [
+"float",
+"int",
+"void *"
+]
+},
+{
+"ent": "M:7BEE20:this:0x12C",
+"classes": [
+"AnimClass",
+"char[1]",
+"char[4]",
+"float",
+"unsigned int"
+]
+},
+{
+"ent": "M:7BEE20:this:0x138",
+"classes": [
+"float",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7BEE20:this:0x140",
+"classes": [
+"float",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7BEE20:this:0x144",
+"classes": [
+"float",
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7BEE20:this:0x150",
+"classes": [
+"FootClass",
+"int",
+"unsigned int",
+"void *"
+]
+},
+{
+"ent": "M:7BEFE0:this:0x10",
+"classes": [
+"UnitTypeClass"
+]
+},
+{
+"ent": "M:7BEFE0:this:0x1A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BEFE0:this:0x1a0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF0B0:this:0x1A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF0B0:this:0x6dc",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF140:this:0x1A0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF140:this:0x1A4",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF140:this:0x1a0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF140:this:0x6DC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7BF190:this:0x1A4",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7BF470:this:0x40",
+"classes": [
+"IUnknown",
+"char[29]",
+"char[4]",
+"unsigned int"
+]
+},
+{
+"ent": "M:7BF470:this:0x714",
+"classes": [
+"bool",
+"char[168]",
+"unsigned int"
+]
+},
+{
+"ent": "M:7C1E10:this:0x164",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C1E10:this:0x168",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C1E10:this:0x74C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:7C1F30:this:0x164",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C1F30:this:0x168",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C1F30:this:0x178",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C1F30:this:0x74C",
+"classes": [
+"char[4]"
+]
+},
+{
+"ent": "M:7C2180:this:0x7A8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2180:this:0x84",
+"classes": [
+"unsigned char",
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2410:this:0x3E",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C2410:this:0x3F",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C2410:this:0x78C",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2410:this:0x7A8",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2410:this:0x84",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2C60:this:0x160",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C2D00:this:0x150",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C2D00:this:0x1A4",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C2D00:this:0x28",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C2D00:this:0x2C",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C2D00:this:0x7BC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C2D00:this:0x84",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C30D0:this:0x108",
+"classes": [
+"int",
+"unsigned int"
+]
+},
+{
+"ent": "M:7C30D0:this:0x1A0",
+"classes": [
+"TimerStruct",
+"int"
+]
+},
+{
+"ent": "M:7C3270:this:0x108",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C3270:this:0x150",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C3270:this:0x1A8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:7C3270:this:0x1AC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C3270:this:0x1B0",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C3270:this:0x1B4",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C3270:this:0x1BC",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7C3270:this:0x8",
+"classes": [
+"void *"
+]
+},
+{
+"ent": "M:7C3270:this:0xF0",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C3270:this:0xFC",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C34B0:this:0x12C",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:7C34B0:this:0x138",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:7C34B0:this:0x140",
+"classes": [
+"float"
+]
+},
+{
+"ent": "M:7C3690:this:0xEC",
+"classes": [
+"unsigned short"
+]
+},
+{
+"ent": "M:7C3710:this:0x108",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C3710:this:0xF2",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C3710:this:0xF3",
+"classes": [
+"unsigned char"
+]
+},
+{
+"ent": "M:7C3750:this:0x6dc",
+"classes": [
+"int"
+]
+},
+{
+"ent": "M:7C3860:this:0x714",
+"classes": [
+"bool"
+]
+},
+{
+"ent": "M:7C3990:this:0x148",
+"classes": [
+"unsigned int"
+]
+},
+{
+"ent": "M:7D2E9B:this:0x8",
+"classes": [
+"unsigned int"
+]
+}
+]
+}

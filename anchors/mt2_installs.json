@@ -1,0 +1,1497 @@
+{
+"meta": {
+"ents": 246,
+"direct": 243,
+"semantics": "net-new vs anchors/member_type_installs.json(329) \u222a fixmr mt_final misreads(583); engine-gated this-based installs (als direct + mptr this+off derived-pointer channel); filters: off!=0, primary-only symbols, ctor_types, receiver-primary(S1 strict), ancestor-of-receiver, receiver-must-be-known",
+"source_events": 1211,
+"channels": {
+"mptr": 246
+},
+"kill_stats": {
+"F_primary": 618,
+"old_912": 320,
+"F_ctor": 1
+}
+},
+"evidence": [
+{
+"ent": "M:43BCF0:this:0x66C",
+"classes": [
+"?$VectorClass@PAVInfantryClass@@"
+]
+},
+{
+"ent": "M:43BCF0:this:0x684",
+"classes": [
+"?$VectorClass@PAVInfantryClass@@"
+]
+},
+{
+"ent": "M:49DA60:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:49E8E0:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:49E8E0:this:0x4",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:4D0980:this:0x5C",
+"classes": [
+"?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@"
+]
+},
+{
+"ent": "M:4D0C40:this:0x5C",
+"classes": [
+"?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@"
+]
+},
+{
+"ent": "M:4D0EF0:this:0x5C",
+"classes": [
+"?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@"
+]
+},
+{
+"ent": "M:4D1370:this:0x5C",
+"classes": [
+"?$DynamicVectorClass@UDrawRecord@FoggedObjectClass@@"
+]
+},
+{
+"ent": "M:4D31E0:this:0x588",
+"classes": [
+"?$DynamicVectorClass@PAVAbstractClass@@"
+]
+},
+{
+"ent": "M:4D31E0:this:0x5AC",
+"classes": [
+"?$DynamicVectorClass@PAVAbstractClass@@"
+]
+},
+{
+"ent": "M:4F21A0:this:0x58",
+"classes": [
+"?$VectorClass@PAVGraphicMenuItem@@"
+]
+},
+{
+"ent": "M:4F3C40:this:0x10",
+"classes": [
+"?$DynamicVectorClass@I"
+]
+},
+{
+"ent": "M:4F5190:this:0x110",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x128",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x140",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x16C",
+"classes": [
+"?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x254",
+"classes": [
+"?$DynamicVectorClass@PAVSuperClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x38",
+"classes": [
+"?$DynamicVectorClass@PAVTagClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x50",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x5604",
+"classes": [
+"?$DynamicVectorClass@UAngerStruct@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x561C",
+"classes": [
+"?$DynamicVectorClass@UScoutStruct@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x68",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x80",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0x98",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0xB0",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0xC8",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0xE0",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F5190:this:0xF8",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x110",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x128",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x140",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x16064",
+"classes": [
+"?$DynamicVectorClass@PAUIConnectionPoint@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x16C",
+"classes": [
+"?$DynamicVectorClass@PAUStartingTechnoStruct@HouseClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x254",
+"classes": [
+"?$DynamicVectorClass@PAVSuperClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x38",
+"classes": [
+"?$DynamicVectorClass@PAVTagClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x50",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x68",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x80",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0x98",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0xB0",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0xC8",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0xE0",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F54A0:this:0xF8",
+"classes": [
+"?$DynamicVectorClass@PAVBuildingClass@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x16064",
+"classes": [
+"?$VectorClass@PAUIConnectionPoint@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x5704",
+"classes": [
+"?$VectorClass@VBaseNodeClass@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x5720",
+"classes": [
+"?$VectorClass@VCell@@"
+]
+},
+{
+"ent": "M:4F7140:this:0x5738",
+"classes": [
+"?$VectorClass@VCell@@"
+]
+},
+{
+"ent": "M:5113F0:this:0x14C",
+"classes": [
+"?$TypeList@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:5113F0:this:0x168",
+"classes": [
+"?$TypeList@PBVUnitTypeClass@@"
+]
+},
+{
+"ent": "M:5113F0:this:0x184",
+"classes": [
+"?$TypeList@PBVAircraftTypeClass@@"
+]
+},
+{
+"ent": "M:5236A0:this:0xE50",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:5236A0:this:0xE6C",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:5236A0:this:0xE88",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:5256F0:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:5256F0:this:0x1C",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52AB80:this:0x14",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52AB80:this:0x20",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52ACE0:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52ACE0:this:0x4",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52AF50:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:52AF50:this:0x4",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:535AA0:this:0x1C",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:535B30:this:0x10",
+"classes": [
+"GenericNode"
+]
+},
+{
+"ent": "M:557380:this:0x118",
+"classes": [
+"SliderClass"
+]
+},
+{
+"ent": "M:557380:this:0x34",
+"classes": [
+"?$DynamicVectorClass@PBG",
+"?$VectorClass@PBG"
+]
+},
+{
+"ent": "M:557380:this:0x58",
+"classes": [
+"ShapeButtonClass",
+"ToggleClass"
+]
+},
+{
+"ent": "M:557380:this:0xB8",
+"classes": [
+"ShapeButtonClass",
+"ToggleClass"
+]
+},
+{
+"ent": "M:565090:this:0x50",
+"classes": [
+"?$DynamicVectorClass@UZoneConnectionClass@@"
+]
+},
+{
+"ent": "M:565090:this:0xD4",
+"classes": [
+"?$DynamicVectorClass@VCell@@"
+]
+},
+{
+"ent": "M:565190:this:0x50",
+"classes": [
+"?$DynamicVectorClass@UZoneConnectionClass@@"
+]
+},
+{
+"ent": "M:565190:this:0xD4",
+"classes": [
+"?$DynamicVectorClass@VCell@@"
+]
+},
+{
+"ent": "M:5C1640:this:0x324",
+"classes": [
+"?$VectorClass@PAVCoopCampaignClass@@"
+]
+},
+{
+"ent": "M:5CEDD0:this:0x2C",
+"classes": [
+"?$DynamicVectorClass@PAVMSAnimEntry@@"
+]
+},
+{
+"ent": "M:5CF8E0:this:0x24",
+"classes": [
+"?$DynamicVectorClass@VPoint2D@@"
+]
+},
+{
+"ent": "M:5CF8E0:this:0x3C",
+"classes": [
+"?$DynamicVectorClass@PAVMSTextEntry@@"
+]
+},
+{
+"ent": "M:5D1B30:this:0x18",
+"classes": [
+"?$VectorClass@PAVMSAnim@@"
+]
+},
+{
+"ent": "M:5D1B30:this:0x30",
+"classes": [
+"?$VectorClass@PAVMSSfx@@"
+]
+},
+{
+"ent": "M:62DC50:this:0xBC",
+"classes": [
+"?$DynamicVectorClass@PAVParticleClass@@"
+]
+},
+{
+"ent": "M:62DF20:this:0xBC",
+"classes": [
+"?$DynamicVectorClass@PAVParticleClass@@"
+]
+},
+{
+"ent": "M:644BE0:this:0x2B8",
+"classes": [
+"?$TypeList@VRGBClass@@"
+]
+},
+{
+"ent": "M:6568A0:this:0x1224",
+"classes": [
+"?$DynamicVectorClass@VCell@@"
+]
+},
+{
+"ent": "M:6568A0:this:0x125C",
+"classes": [
+"?$DynamicVectorClass@VPoint2D@@"
+]
+},
+{
+"ent": "M:665650:this:0x104",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x120",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x13C",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x158",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x58",
+"classes": [
+"?$TypeList@PBVVoxelAnimTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x7C4",
+"classes": [
+"?$TypeList@PBVSmudgeTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x7E0",
+"classes": [
+"?$TypeList@PBVSmudgeTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x7FC",
+"classes": [
+"?$TypeList@PBVSmudgeTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x818",
+"classes": [
+"?$TypeList@PBVSmudgeTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x834",
+"classes": [
+"?$TypeList@PBVSmudgeTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x850",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x880",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x8AC",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x8C8",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x8E4",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x900",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x91C",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x938",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x954",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x970",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x98C",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x9A8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:665650:this:0x9C4",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x9E0",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0x9FC",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xA18",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xA34",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xA50",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xA6C",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xA88",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xAA4",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xAC0",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:665650:this:0xADC",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0x1158",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1174",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1194",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x11B0",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x11CC",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x11E8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1204",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1220",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x123C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1258",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1274",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1290",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x12AC",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x12C8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x12E4",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1304",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1320",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x133C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1358",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1374",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x1390",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x13AC",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0x13C8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xAA4",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xAC0",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xADC",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xB20",
+"classes": [
+"?$VectorClass@PBVUnitTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xB3C",
+"classes": [
+"?$VectorClass@PBVUnitTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xB58",
+"classes": [
+"?$VectorClass@PBVAircraftTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xB74",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xB90",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xBC0",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xC04",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xC20",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xC3C",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xC58",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xC74",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xC90",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xCAC",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xCC8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xCE4",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xD00",
+"classes": [
+"?$VectorClass@PBVInfantryTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xD1C",
+"classes": [
+"?$VectorClass@PBVUnitTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xD38",
+"classes": [
+"?$VectorClass@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:667A30:this:0xD80",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xD9C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xDB8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xDD4",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xE10",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xE2C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xE4C",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xE68",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xE84",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xEA0",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xEC4",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xEE8",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xF04",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xF20",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:667A30:this:0xFF8",
+"classes": [
+"?$VectorClass@PBVTerrainTypeClass@@"
+]
+},
+{
+"ent": "M:697840:this:0x2354",
+"classes": [
+"CCFileClass"
+]
+},
+{
+"ent": "M:69A3B0:this:0x188",
+"classes": [
+"?$TypeList@W4DiskID@@"
+]
+},
+{
+"ent": "M:69A3B0:this:0x1A4",
+"classes": [
+"?$DynamicVectorClass@VWstring@@"
+]
+},
+{
+"ent": "M:69A980:this:0x188",
+"classes": [
+"?$TypeList@W4DiskID@@"
+]
+},
+{
+"ent": "M:69A980:this:0x1A4",
+"classes": [
+"?$DynamicVectorClass@VWstring@@"
+]
+},
+{
+"ent": "M:6AF1A0:this:0x38",
+"classes": [
+"?$DynamicVectorClass@PAUSlaveControl@SlaveManagerClass@@"
+]
+},
+{
+"ent": "M:6AF4A0:this:0x38",
+"classes": [
+"?$VectorClass@PAUSlaveControl@SlaveManagerClass@@"
+]
+},
+{
+"ent": "M:6B6C90:this:0x38",
+"classes": [
+"?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@"
+]
+},
+{
+"ent": "M:6B6EA0:this:0x38",
+"classes": [
+"?$DynamicVectorClass@PAUSpawnControl@SpawnManagerClass@@"
+]
+},
+{
+"ent": "M:6B7010:this:0x38",
+"classes": [
+"?$VectorClass@PAUSpawnControl@SpawnManagerClass@@"
+]
+},
+{
+"ent": "M:6F4300:this:0x440",
+"classes": [
+"?$DynamicVectorClass@H"
+]
+},
+{
+"ent": "M:6F4300:this:0x458",
+"classes": [
+"?$DynamicVectorClass@PAVAbstractClass@@"
+]
+},
+{
+"ent": "M:6F4300:this:0x470",
+"classes": [
+"?$DynamicVectorClass@PAVAbstractClass@@"
+]
+},
+{
+"ent": "M:6F4500:this:0x470",
+"classes": [
+"?$VectorClass@PAVAbstractClass@@"
+]
+},
+{
+"ent": "M:710AF0:this:0x314",
+"classes": [
+"?$TypeList@PBVVoxelAnimTypeClass@@"
+]
+},
+{
+"ent": "M:710AF0:this:0x330",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x314",
+"classes": [
+"?$TypeList@PBVVoxelAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x330",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x3E8",
+"classes": [
+"?$TypeList@PBVBuildingTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x414",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x430",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x44C",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x468",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x484",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x4A0",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x4BC",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x4D8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x4F4",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x510",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x5C4",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x638",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x654",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:711840:this:0x72C",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x748",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x778",
+"classes": [
+"?$TypeList@PBVParticleSystemTypeClass@@"
+]
+},
+{
+"ent": "M:711840:this:0x794",
+"classes": [
+"?$TypeList@PBVParticleSystemTypeClass@@"
+]
+},
+{
+"ent": "M:711AE0:this:0x4F4",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:711AE0:this:0x510",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:711AE0:this:0x5C4",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711AE0:this:0x638",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:711AE0:this:0x654",
+"classes": [
+"?$VectorClass@H"
+]
+},
+{
+"ent": "M:711AE0:this:0x72C",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711AE0:this:0x748",
+"classes": [
+"?$VectorClass@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:711AE0:this:0x778",
+"classes": [
+"?$VectorClass@PBVParticleSystemTypeClass@@"
+]
+},
+{
+"ent": "M:711AE0:this:0x794",
+"classes": [
+"?$VectorClass@PBVParticleSystemTypeClass@@"
+]
+},
+{
+"ent": "M:7216C0:this:0xC4",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:75CEC0:this:0x104",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+},
+{
+"ent": "M:75CEC0:this:0x18C",
+"classes": [
+"?$TypeList@PBVVoxelAnimTypeClass@@"
+]
+},
+{
+"ent": "M:75CEC0:this:0x1A8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:75ED30:this:0x1F0",
+"classes": [
+"?$VectorClass@PAVCellClass@@"
+]
+},
+{
+"ent": "M:763200:this:0x1F0",
+"classes": [
+"?$VectorClass@PAVCellClass@@"
+]
+},
+{
+"ent": "M:764B90:this:0x18",
+"classes": [
+"?$DynamicVectorClass@V?$rc_ptr@VConflict@WorldDominationTour@@@@"
+]
+},
+{
+"ent": "M:764B90:this:0x8",
+"classes": [
+"?$rc_ptr@VCampaignProperties@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:765600:this:0x10",
+"classes": [
+"?$rc_ptr@VHistory@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:765600:this:0x8",
+"classes": [
+"?$rc_ptr@VCampaignProperties@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:768000:this:0x2C",
+"classes": [
+"?$DynamicVectorClass@V?$rc_ptr@VTerritory@WorldDominationTour@@@@"
+]
+},
+{
+"ent": "M:76ABE0:this:0x2C",
+"classes": [
+"?$DynamicVectorClass@V?$rc_ptr@VWDTTerritory@@@@"
+]
+},
+{
+"ent": "M:76AFC0:this:0x2C",
+"classes": [
+"?$VectorClass@V?$rc_ptr@VWDTTerritory@@@@"
+]
+},
+{
+"ent": "M:76C290:this:0x464",
+"classes": [
+"?$rc_ptr@VTerritory@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C290:this:0x48",
+"classes": [
+"?$rc_ptr@VCampaign@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C290:this:0x494",
+"classes": [
+"?$DynamicVectorClass@PAVMSSfxEntry@@"
+]
+},
+{
+"ent": "M:76C290:this:0x50",
+"classes": [
+"?$rc_ptr@VConflict@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x458",
+"classes": [
+"?$rc_ptr@VMap@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x464",
+"classes": [
+"?$rc_ptr@VTerritory@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x48",
+"classes": [
+"?$rc_ptr@VCampaign@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x488",
+"classes": [
+"?$rc_ptr@VState@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x494",
+"classes": [
+"?$VectorClass@PAVMSSfxEntry@@"
+]
+},
+{
+"ent": "M:76C6E0:this:0x50",
+"classes": [
+"?$rc_ptr@VConflict@WorldDominationTour@@"
+]
+},
+{
+"ent": "M:771C70:this:0xBC",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:771C70:this:0xD8",
+"classes": [
+"?$TypeList@H"
+]
+},
+{
+"ent": "M:771C70:this:0xF4",
+"classes": [
+"?$TypeList@PBVAnimTypeClass@@"
+]
+}
+]
+}
