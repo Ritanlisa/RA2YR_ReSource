@@ -74,7 +74,7 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
-            "SGN", "G2", "R1", "V2K"]
+            "SGN", "G2", "R1", "V2K", "GM"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -124,6 +124,7 @@ FAMILY_DESC = {
     "GX": "virtual-dispatch site push-arg direct-to-GS: const01/granular types + bind-origin eq edges (strict)",
     "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
     "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
+    "GM": "global materialize pool: named-global mirror byte typing over the unmaterialized G-entity pool (GI/CR/singleton/global_types dedup-excluded) -- gmat-strlit .data/.rdata printable+NUL -> char[N] (rdata k>=4, .data k<=3 only with igt size>4), gmat-smallint .data raw nonzero dword in [1,64] -> int, gmat-double aligned legal encoding -> double (strict, binary fact; vocab-external rows gmat-fnptr 1,268 / gmat-vtptr 2 are inert ledger, _load_type_family m8==0 skips by design; evidence anchors/global_materialize.json, 1,544 recs / 274 vocab-valid, ent format G:<HEX> aligned with C8/GI/CR, .omo/agents/gmat)",
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
     "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (STRICT tier, restored 2026-11-07 same day as demotion: evidence 10/10 binary-verified; the original -1042 negative gain was the old C9 prefilter unconditionally dropping slot-owner evidence in SS-manufactured structural 3-way conflicts -- now resolved by the C9 blame refinement: empty-AND with C9 pairwise-compatible with every family blames the weakest-evidence side SS instead of C9; .omo/agents/safix/report.md)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
@@ -3235,6 +3236,20 @@ def main():
     except Exception as _e_gi:
         census["GI"] = census.get("GI", 0)
         print("[GI] skipped: %r" % _e_gi, flush=True)
+    # GM：全局物化池（global_materialize.json，GI 后续轮）。signals.json 有名全局 ∄
+    # minclass_domains G 实体的批量字节定型，ent 格式 G:<UPPER_HEX>（与 C8/GI/CR
+    # 一致，实测 1,544/1,544 规范形）。词表内 274 条（strlit char[N] 149 /
+    # smallint int 88 / double 37）经 _load_type_family 物化+AND 约束；
+    # 词表外（gmat-fnptr 1,268 / gmat-vtptr type_info 2）m8==0 直接 continue
+    # ——既不物化也不约束，仅本锚台账（fnptr 无词表词，vtptr 命中均为
+    # type_info RTTI 描述符）。与 GI/CR/singleton/global_types 实体 0 碰撞
+    # （生成器 s3 断言），重叠时 AND 合并无害（exact-pin 主导）。
+    try:
+        census["GM"] = _load_type_family("anchors/global_materialize.json", "GM")
+        print("[GM] global-materialize types: %d" % census["GM"], flush=True)
+    except Exception as _e_gm:
+        census["GM"] = census.get("GM", 0)
+        print("[GM] skipped: %r" % _e_gm, flush=True)
     # AV：分配尺寸 v2（alloc_size_types.json = .omo/agents/allocsize/alloc_sites_v2.json
     # 站点台账的 ent 聚合件，837 evidence，报告语义「接线端现算」：
     #   sem=total → pointee sizeof==size 或 sizeof 整除 size（new T[n] 的 n 未知）；
@@ -6095,6 +6110,37 @@ def main():
         print("[PF] param-forward eq edges=%d" % _n_pfe, flush=True)
     except Exception as _e_pfe:
         print("[PF] eq edges skipped: %r" % _e_pfe, flush=True)
+    # ---- PF2 参数转发等值 v2（param_forward_edges_v2：P:FN2:K == P:FN1:J 二跳/
+    # fastcall + T:FN2 == M:FN1:this:0xOFF this12 扩展窗，PF 同款 EF 风格通道）----
+    # 净新增 552 对级边（生成器已对 PF v1 + DT 去重：dup_vs_pf 1,786 /
+    # dup_vs_dt 409 不在本文件）。语义与 PF v1 相同——纯转发值 => 同一值，
+    # 双向 _call_edges（不经 un() 硬合并，R:/V: 过滤，冲突以空域交中和器）：
+    #   pfv2-2hop  push reg whose origin = [param-slot] 经 ≤1 中间 copy（158）
+    #   pfv2-fc    fastcall ecx/edx arg0/1 独立回扫定源（137）
+    #   pfv2-this12 直调 receiver ecx 的 [base+off]/lea 成员源，≤12 指令窗
+    #              + ≤1 中间 copy（tier=interm 245 / w12 10 / w8 2）=> T: == M:
+    # 与 DT 的 dt-member 同形（T:FN2 == M:FN1:this:0xOFF），通道幂等无妨。
+    try:
+        _pfe2 = jload("anchors/param_forward_edges_v2.json", {}) or {}
+        _n_pfe2 = 0
+        _pf2_via = collections.Counter()
+        for _r2 in (_pfe2.get("edges") or []):
+            _a2 = (_r2 or {}).get("p")
+            _b2 = (_r2 or {}).get("eq")
+            if not (isinstance(_a2, str) and isinstance(_b2, str)):
+                continue
+            if _a2.startswith(("R:", "V:")) or _b2.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a2, _b2))
+            _call_edges_p2.append((_a2, _b2))
+            _call_edges.append((_b2, _a2))
+            _call_edges_p2.append((_b2, _a2))
+            _n_pfe2 += 2
+            _pf2_via[(_r2 or {}).get("via") or "?"] += 1
+        print("[PF2] param-forward-v2 eq edges=%d (via=%s)"
+              % (_n_pfe2, dict(_pf2_via)), flush=True)
+    except Exception as _e_pfe2:
+        print("[PF2] eq edges skipped: %r" % _e_pfe2, flush=True)
     # ---- DT 直调 thiscall 接收者等值（dt_thiscall_edges：T:FN2 == M:/G:/EAX:，EF 同款通道）----
     # 语义：直接调用点被调方 this（ecx）的寄存器到达定义 = 来源实体，两者是
     # 同一值 ⇒ 双向等值边（EF/SW/PF 同款：不经 un() 硬合并，R:/V: 过滤，冲突
