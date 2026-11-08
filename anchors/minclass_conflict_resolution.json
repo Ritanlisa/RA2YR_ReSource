@@ -4438,6 +4438,64 @@
   "exact": {}
  },
  {
+  "cluster": "P:655C50:0",
+  "status": "inconsistent",
+  "families": [
+   "C1",
+   "C7",
+   "PF2X"
+  ],
+  "family_sizes": {
+   "C1": 1097,
+   "C7": 1031,
+   "PF2X": 1
+  },
+  "ents": [
+   "P:655C50:0"
+  ],
+  "obs": [
+   "0:4",
+   "4:4",
+   "8:4",
+   "12:4",
+   "36:4"
+  ],
+  "family_domains": {
+   "C1": [
+    "CreateTeamCommandClass",
+    "LoadOptionsClass",
+    "Mouse",
+    "PKStraw",
+    "?$rc_ptr@VHistory@WorldDominationTour@@",
+    "?$rc_ptr@VState@WorldDominationTour@@",
+    "?$DynamicVectorClass@H",
+    "?$DynamicVectorClass@PAD",
+    "?$DynamicVectorClass@PAE",
+    "?$DynamicVectorClass@PAG",
+    "?$DynamicVectorClass@PAUAnimationPalette@Map@WorldDominationTour@@",
+    "?$DynamicVectorClass@PAUControlNode@@"
+   ],
+   "C7": [
+    "FlasherClass",
+    "IApplication",
+    "IConnectionPoint",
+    "IConnectionPointContainer",
+    "IEnumConnectionPoints",
+    "IEnumConnections",
+    "IFlyControl",
+    "IGameMap",
+    "IHouse",
+    "ILinkStream",
+    "IPiggyback",
+    "IPublicHouse"
+   ],
+   "PF2X": [
+    "HouseClass"
+   ]
+  },
+  "exact": {}
+ },
+ {
   "cluster": "M:48BE60:this:0x4",
   "status": "inconsistent",
   "families": [
@@ -10400,6 +10458,78 @@
    ],
    "CR": [
     "char*"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "N:49DEFC",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 32,
+   "NI": 1
+  },
+  "ents": [
+   "N:49DEFC"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "BrainClass",
+    "ScoreFontClass",
+    "VQMovieHandle",
+    "AnimTypeList",
+    "AudioNode",
+    "AudioOcclusion",
+    "BuildingLight",
+    "Conflict",
+    "DynamicVectorClass",
+    "FacingClass",
+    "FoggedObject_DrawVector",
+    "GameInit"
+   ],
+   "NI": [
+    "?$DynamicVectorClass@PAD"
+   ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "N:7676F8",
+  "status": "inconsistent",
+  "families": [
+   "C5",
+   "NI"
+  ],
+  "family_sizes": {
+   "C5": 65,
+   "NI": 1
+  },
+  "ents": [
+   "N:7676F8"
+  ],
+  "obs": [],
+  "family_domains": {
+   "C5": [
+    "AddTeamCommandClass",
+    "SelectTeamCommandClass",
+    "DeleteCommandClass",
+    "GenericList",
+    "GenericNode",
+    "MultiplayerBattleTeam",
+    "MultiplayerTeam",
+    "PageUserCommandClass",
+    "TauntCommandClass",
+    "AddTeamCommand",
+    "BlitTransXlatAlpha_ushort",
+    "CComObject_CChatEventSink___ATL"
+   ],
+   "NI": [
+    "MapSizeGameOption@WorldDominationTour"
    ]
   },
   "exact": {}

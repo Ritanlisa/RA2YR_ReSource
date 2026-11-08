@@ -1,0 +1,1135 @@
+{
+ "meta": {
+  "generated_by": ".omo/agents/nin/scan.py -- new-site vfptr0 install typing",
+  "generated": "2026-11-08T19:24:56",
+  "source": "decompile-results/full_export/src/*.cpp snapshot asm + anchors/minclass_binary_facts.json (site/size) + anchors/vtable_slot_authority.json + anchors/rtti_vtable_class.json (primary vtable identity) + tools/class_layouts.json (AV sizes)",
+  "entity_format": "N:<SITE_HEX_UPPER> -- aligned with minclass_solver alloc_sites touch (\"N:%X\" % site); single-address key",
+  "semantics": "R1 call ??2/_malloc -> <=12 ins window, eax + one-level `mov reg,eax` copies (caller-saved die at inner calls), off==0 primary-table install `mov [reg], offset ??_7X@@6B@` => allocated type = X (ctor-install identity). R2 ??_U skipped (0 in binary). R3 stack placement n/a (anchored at new sites). R4 delayed installs (window/ uncond-jmp stop) not collected. R5 exact size==sizeof AND when both sides known; mismatch & k>1-divisible both counted as conflict, no evidence. R6 no-install malloc sites counted only.",
+  "census": {
+   "alloc_sites_total": 2239,
+   "op_new_sites": 2185,
+   "no_install": 2109,
+   "no_install_stopped_jmp": 735,
+   "install_off_gt0": 17,
+   "av_exact": 5,
+   "evidence_rows": 99,
+   "evidence_in_solver_universe": 30,
+   "hit_unique": 10,
+   "av_conflict": 8,
+   "skipped_av_conflict": 12,
+   "av_divisible_mismatch": 4,
+   "malloc_sites": 54,
+   "chan_vtname_no_av_skip": 5,
+   "install_unresolved_sym": 6,
+   "av_noevidence_side": 94,
+   "hit_wide": 20,
+   "evidence_new_entity": 69,
+   "install_none_primary": 13,
+   "chan_vtname_av": 3,
+   "chan_va_invert": 1
+  },
+  "conflicts": [
+   {
+    "site": "0x43A82E",
+    "ent": "N:43A82E",
+    "fn": "0x43A7E0",
+    "size": 56,
+    "classes": [
+     "NeuronClass"
+    ],
+    "cls_sizes": {
+     "NeuronClass": 24
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x43A859"
+    ]
+   },
+   {
+    "site": "0x76F479",
+    "ent": "N:76F479",
+    "fn": "0x76F470",
+    "size": 20,
+    "classes": [
+     "ReferenceCounted"
+    ],
+    "cls_sizes": {
+     "ReferenceCounted": 4
+    },
+    "verdict": "divisible-k>1",
+    "installs": [
+     "0x76F494"
+    ]
+   },
+   {
+    "site": "0x46CE9C",
+    "ent": "N:46CE9C",
+    "fn": "0x46CE10",
+    "size": 928,
+    "classes": [
+     "CampaignClass"
+    ],
+    "cls_sizes": {
+     "CampaignClass": 812
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x46CEC6"
+    ]
+   },
+   {
+    "site": "0x76F506",
+    "ent": "N:76F506",
+    "fn": "0x76F500",
+    "size": 20,
+    "classes": [
+     "ReferenceCounted"
+    ],
+    "cls_sizes": {
+     "ReferenceCounted": 4
+    },
+    "verdict": "divisible-k>1",
+    "installs": [
+     "0x76F521"
+    ]
+   },
+   {
+    "site": "0x552A4E",
+    "ent": "N:552A4E",
+    "fn": "0x552A40",
+    "size": 100,
+    "classes": [
+     "LoadProgressMgr"
+    ],
+    "cls_sizes": {
+     "LoadProgressMgr": 12
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x552A5A"
+    ]
+   },
+   {
+    "site": "0x691A37",
+    "ent": "N:691A37",
+    "fn": "0x691970",
+    "size": 564,
+    "classes": [
+     "ScriptTypeClass"
+    ],
+    "cls_sizes": {
+     "ScriptTypeClass": 448
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x691A61"
+    ]
+   },
+   {
+    "site": "0x691C67",
+    "ent": "N:691C67",
+    "fn": "0x691C00",
+    "size": 564,
+    "classes": [
+     "ScriptTypeClass"
+    ],
+    "cls_sizes": {
+     "ScriptTypeClass": 448
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x691C95"
+    ]
+   },
+   {
+    "site": "0x765F69",
+    "ent": "N:765F69",
+    "fn": "0x765F60",
+    "size": 16,
+    "classes": [
+     "ReferenceCounted"
+    ],
+    "cls_sizes": {
+     "ReferenceCounted": 4
+    },
+    "verdict": "divisible-k>1",
+    "installs": [
+     "0x765F84"
+    ]
+   },
+   {
+    "site": "0x767B09",
+    "ent": "N:767B09",
+    "fn": "0x767B00",
+    "size": 16,
+    "classes": [
+     "ReferenceCounted"
+    ],
+    "cls_sizes": {
+     "ReferenceCounted": 4
+    },
+    "verdict": "divisible-k>1",
+    "installs": [
+     "0x767B24"
+    ]
+   },
+   {
+    "site": "0x5C0885",
+    "ent": "N:5C0885",
+    "fn": "0x5C07D0",
+    "size": 20,
+    "classes": [
+     "BinkMovieHandle"
+    ],
+    "cls_sizes": {
+     "BinkMovieHandle": 52
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x5C0897"
+    ]
+   },
+   {
+    "site": "0x77345D",
+    "ent": "N:77345D",
+    "fn": "0x773450",
+    "size": 1044,
+    "classes": [
+     "WebBrowser"
+    ],
+    "cls_sizes": {
+     "WebBrowser": 20
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x77348E"
+    ]
+   },
+   {
+    "site": "0x777792",
+    "ent": "N:777792",
+    "fn": "0x7775C0",
+    "size": 616,
+    "classes": [
+     "CCToolTip"
+    ],
+    "cls_sizes": {
+     "CCToolTip": 24
+    },
+    "verdict": "conflict",
+    "installs": [
+     "0x7777B2"
+    ]
+   }
+  ],
+  "conflict_count": 12,
+  "n_bucket_totals": {
+   "unique": 160,
+   "wide": 501,
+   "narrow": 149
+  },
+  "n_bucket_newly_pinned_or_narrowed": {
+   "unique": 10,
+   "narrow": 0,
+   "wide": 20
+  },
+  "skipped_symbols": {
+   "XSurface_Vtable": 5,
+   "g_INI_Key_NewEdit": 1
+  },
+  "distinct_entities": 99
+ },
+ "evidence": [
+  {
+   "ent": "N:438EAF",
+   "types": [
+    "BombClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3D10",
+   "site": "0x438EAF"
+  },
+  {
+   "ent": "N:457BE4",
+   "types": [
+    "?$DynamicVectorClass@PAVFoggedObjectClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E44F4",
+   "site": "0x457BE4"
+  },
+  {
+   "ent": "N:483A4A",
+   "types": [
+    "?$DynamicVectorClass@PAVFoggedObjectClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E44F4",
+   "site": "0x483A4A"
+  },
+  {
+   "ent": "N:486AD9",
+   "types": [
+    "?$DynamicVectorClass@PAVFoggedObjectClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E44F4",
+   "site": "0x486AD9"
+  },
+  {
+   "ent": "N:48EC00",
+   "types": [
+    "?$BlitPlainXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B70",
+   "site": "0x48EC00"
+  },
+  {
+   "ent": "N:48EC26",
+   "types": [
+    "?$BlitTransXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B58",
+   "site": "0x48EC26"
+  },
+  {
+   "ent": "N:48EC4A",
+   "types": [
+    "?$BlitTransZRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B40",
+   "site": "0x48EC4A"
+  },
+  {
+   "ent": "N:48EC77",
+   "types": [
+    "?$BlitTransRemapDest@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B28",
+   "site": "0x48EC77"
+  },
+  {
+   "ent": "N:48EC9B",
+   "types": [
+    "?$BlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B10",
+   "site": "0x48EC9B"
+  },
+  {
+   "ent": "N:48ECC8",
+   "types": [
+    "?$BlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B10",
+   "site": "0x48ECC8"
+  },
+  {
+   "ent": "N:48ECF5",
+   "types": [
+    "?$BlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B10",
+   "site": "0x48ECF5"
+  },
+  {
+   "ent": "N:48ED22",
+   "types": [
+    "?$RLEBlitTransXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5B00",
+   "site": "0x48ED22"
+  },
+  {
+   "ent": "N:48ED49",
+   "types": [
+    "?$RLEBlitTransZRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AF0",
+   "site": "0x48ED49"
+  },
+  {
+   "ent": "N:48ED79",
+   "types": [
+    "?$RLEBlitTransRemapDest@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AE0",
+   "site": "0x48ED79"
+  },
+  {
+   "ent": "N:48EDA0",
+   "types": [
+    "?$RLEBlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AD0",
+   "site": "0x48EDA0"
+  },
+  {
+   "ent": "N:48EDD0",
+   "types": [
+    "?$RLEBlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AD0",
+   "site": "0x48EDD0"
+  },
+  {
+   "ent": "N:48EE00",
+   "types": [
+    "?$RLEBlitTransRemapXlat@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AD0",
+   "site": "0x48EE00"
+  },
+  {
+   "ent": "N:48EE30",
+   "types": [
+    "?$RLEBlitTransXlatZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AC0",
+   "site": "0x48EE30"
+  },
+  {
+   "ent": "N:48EE57",
+   "types": [
+    "?$RLEBlitTransZRemapXlatZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AB0",
+   "site": "0x48EE57"
+  },
+  {
+   "ent": "N:48EE87",
+   "types": [
+    "?$RLEBlitTransRemapDestZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5AA0",
+   "site": "0x48EE87"
+  },
+  {
+   "ent": "N:48EEAE",
+   "types": [
+    "?$RLEBlitTransRemapXlatZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A90",
+   "site": "0x48EEAE"
+  },
+  {
+   "ent": "N:48EEDE",
+   "types": [
+    "?$RLEBlitTransRemapXlatZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A90",
+   "site": "0x48EEDE"
+  },
+  {
+   "ent": "N:48EF0E",
+   "types": [
+    "?$RLEBlitTransRemapXlatZRead@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A90",
+   "site": "0x48EF0E"
+  },
+  {
+   "ent": "N:48EF3E",
+   "types": [
+    "?$RLEBlitTransXlatZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A80",
+   "site": "0x48EF3E"
+  },
+  {
+   "ent": "N:48EF65",
+   "types": [
+    "?$RLEBlitTransZRemapXlatZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A70",
+   "site": "0x48EF65"
+  },
+  {
+   "ent": "N:48EF95",
+   "types": [
+    "?$RLEBlitTransRemapDestZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A60",
+   "site": "0x48EF95"
+  },
+  {
+   "ent": "N:48EFBC",
+   "types": [
+    "?$RLEBlitTransRemapXlatZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A50",
+   "site": "0x48EFBC"
+  },
+  {
+   "ent": "N:48EFEC",
+   "types": [
+    "?$RLEBlitTransRemapXlatZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A50",
+   "site": "0x48EFEC"
+  },
+  {
+   "ent": "N:48F01C",
+   "types": [
+    "?$RLEBlitTransRemapXlatZReadWrite@E"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A50",
+   "site": "0x48F01C"
+  },
+  {
+   "ent": "N:48F054",
+   "types": [
+    "?$BlitPlainXlat@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A38",
+   "site": "0x48F054"
+  },
+  {
+   "ent": "N:48F07A",
+   "types": [
+    "?$BlitTransXlat@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A20",
+   "site": "0x48F07A"
+  },
+  {
+   "ent": "N:48F09E",
+   "types": [
+    "?$BlitTransZRemapXlat@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5A08",
+   "site": "0x48F09E"
+  },
+  {
+   "ent": "N:48F0CB",
+   "types": [
+    "?$BlitTransDarken@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E59F0",
+   "site": "0x48F0CB"
+  },
+  {
+   "ent": "N:48F0F1",
+   "types": [
+    "?$BlitTransLucent75@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E59D8",
+   "site": "0x48F0F1"
+  },
+  {
+   "ent": "N:48F120",
+   "types": [
+    "?$BlitTransLucent50@G"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E59C0",
+   "site": "0x48F120"
+  },
+  {
+   "ent": "N:49DEFC",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x49DEFC"
+  },
+  {
+   "ent": "N:52CDF3",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E1AF4",
+   "site": "0x52CDF3"
+  },
+  {
+   "ent": "N:52CF48",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E1AF4",
+   "site": "0x52CF48"
+  },
+  {
+   "ent": "N:532166",
+   "types": [
+    "MultiplayerDebugCommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBE14",
+   "site": "0x532166"
+  },
+  {
+   "ent": "N:5321D2",
+   "types": [
+    "MultiplayerSyncCommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBDEC",
+   "site": "0x5321D2"
+  },
+  {
+   "ent": "N:53223F",
+   "types": [
+    "FollowCommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBDC4",
+   "site": "0x53223F"
+  },
+  {
+   "ent": "N:5322AC",
+   "types": [
+    "View1CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBD9C",
+   "site": "0x5322AC"
+  },
+  {
+   "ent": "N:532319",
+   "types": [
+    "View2CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBD74",
+   "site": "0x532319"
+  },
+  {
+   "ent": "N:532386",
+   "types": [
+    "View3CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBD4C",
+   "site": "0x532386"
+  },
+  {
+   "ent": "N:5323F3",
+   "types": [
+    "View4CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBD24",
+   "site": "0x5323F3"
+  },
+  {
+   "ent": "N:532460",
+   "types": [
+    "SetView1CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBCFC",
+   "site": "0x532460"
+  },
+  {
+   "ent": "N:5324CD",
+   "types": [
+    "SetView2CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBCD4",
+   "site": "0x5324CD"
+  },
+  {
+   "ent": "N:53253A",
+   "types": [
+    "SetView3CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBCAC",
+   "site": "0x53253A"
+  },
+  {
+   "ent": "N:5325A7",
+   "types": [
+    "SetView4CommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBC84",
+   "site": "0x5325A7"
+  },
+  {
+   "ent": "N:532614",
+   "types": [
+    "OptionsCommandClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EBC5C",
+   "site": "0x532614"
+  },
+  {
+   "ent": "N:58D259",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x58D259"
+  },
+  {
+   "ent": "N:58D41C",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x58D41C"
+  },
+  {
+   "ent": "N:58E5DE",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x58E5DE"
+  },
+  {
+   "ent": "N:58E768",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x58E768"
+  },
+  {
+   "ent": "N:58F0CF",
+   "types": [
+    "?$DynamicVectorClass@H"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E4E78",
+   "site": "0x58F0CF"
+  },
+  {
+   "ent": "N:594FCC",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x594FCC"
+  },
+  {
+   "ent": "N:59820C",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E1AF4",
+   "site": "0x59820C"
+  },
+  {
+   "ent": "N:5A0189",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x5A0189"
+  },
+  {
+   "ent": "N:5A0509",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x5A0509"
+  },
+  {
+   "ent": "N:5A070A",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x5A070A"
+  },
+  {
+   "ent": "N:5A5512",
+   "types": [
+    "?$DynamicVectorClass@VCell@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E3890",
+   "site": "0x5A5512"
+  },
+  {
+   "ent": "N:5C0912",
+   "types": [
+    "VQMovieHandle"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EE0F4",
+   "site": "0x5C0912"
+  },
+  {
+   "ent": "N:62640A",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x62640A"
+  },
+  {
+   "ent": "N:6267DA",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x6267DA"
+  },
+  {
+   "ent": "N:62680D",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x62680D"
+  },
+  {
+   "ent": "N:6269CB",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x6269CB"
+  },
+  {
+   "ent": "N:626A01",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x626A01"
+  },
+  {
+   "ent": "N:626AE8",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x626AE8"
+  },
+  {
+   "ent": "N:626B1F",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x626B1F"
+  },
+  {
+   "ent": "N:626C8C",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x626C8C"
+  },
+  {
+   "ent": "N:626CC8",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x626CC8"
+  },
+  {
+   "ent": "N:626DCF",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x626DCF"
+  },
+  {
+   "ent": "N:627054",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x627054"
+  },
+  {
+   "ent": "N:627086",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x627086"
+  },
+  {
+   "ent": "N:627184",
+   "types": [
+    "?$DynamicVectorClass@PAD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E5BC4",
+   "site": "0x627184"
+  },
+  {
+   "ent": "N:6271B8",
+   "types": [
+    "?$DynamicVectorClass@VHSVClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF750",
+   "site": "0x6271B8"
+  },
+  {
+   "ent": "N:627218",
+   "types": [
+    "?$DynamicVectorClass@U?$HashObject@VHashString@@PAVSchemeNode@@@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF770",
+   "site": "0x627218"
+  },
+  {
+   "ent": "N:627720",
+   "types": [
+    "?$VectorClass@PAVColorScheme@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EF7B0",
+   "site": "0x627720"
+  },
+  {
+   "ent": "N:6C9FD8",
+   "types": [
+    "?$DynamicVectorClass@PAVSubTitle@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7F3F6C",
+   "site": "0x6C9FD8"
+  },
+  {
+   "ent": "N:731EC0",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x731EC0"
+  },
+  {
+   "ent": "N:731F80",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x731F80"
+  },
+  {
+   "ent": "N:732058",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x732058"
+  },
+  {
+   "ent": "N:732619",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x732619"
+  },
+  {
+   "ent": "N:7326AE",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x7326AE"
+  },
+  {
+   "ent": "N:7327FB",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x7327FB"
+  },
+  {
+   "ent": "N:73288F",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x73288F"
+  },
+  {
+   "ent": "N:732998",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x732998"
+  },
+  {
+   "ent": "N:7329FC",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x7329FC"
+  },
+  {
+   "ent": "N:732D18",
+   "types": [
+    "?$DynamicVectorClass@PBD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EE0B4",
+   "site": "0x732D18"
+  },
+  {
+   "ent": "N:73300E",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x73300E"
+  },
+  {
+   "ent": "N:7330A5",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x7330A5"
+  },
+  {
+   "ent": "N:7331CF",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x7331CF"
+  },
+  {
+   "ent": "N:733284",
+   "types": [
+    "?$DynamicVectorClass@PAVTechnoClass@@"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E17AC",
+   "site": "0x733284"
+  },
+  {
+   "ent": "N:733CDE",
+   "types": [
+    "?$DynamicVectorClass@PBD"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7EE0B4",
+   "site": "0x733CDE"
+  },
+  {
+   "ent": "N:733E85",
+   "types": [
+    "?$DynamicVectorClass@H"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7E4E78",
+   "site": "0x733E85"
+  },
+  {
+   "ent": "N:7676F8",
+   "types": [
+    "MapSizeGameOption@WorldDominationTour"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7F70B4",
+   "site": "0x7676F8"
+  },
+  {
+   "ent": "N:773F5C",
+   "types": [
+    "WebBrowser"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7F743C",
+   "site": "0x773F5C"
+  },
+  {
+   "ent": "N:7853FA",
+   "types": [
+    "?$CComObject@VCChatEventSink@@@ATL"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7F76B4",
+   "site": "0x7853FA"
+  },
+  {
+   "ent": "N:7854D8",
+   "types": [
+    "?$CComObject@VCNetUtilEventSink@@@ATL"
+   ],
+   "via": "nin-vfptr0",
+   "vt": "0x7f766c",
+   "site": "0x7854D8"
+  }
+ ]
+}

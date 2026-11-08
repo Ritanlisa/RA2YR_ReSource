@@ -74,7 +74,7 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
-            "SGN", "G2", "R1", "V2K", "GM"]
+            "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -125,6 +125,9 @@ FAMILY_DESC = {
     "TC": "TClassFactory template-family vtable slot types: COM triple (QueryInterface/AddRef/Release/CreateInstance) receivers -> void*; template-T `TClassFactory_X*` spellings have no universe atom -> dropped per-token (strict, compiler-signature L8; evidence anchors/tcf_slot_types.json)",
     "GI": "global initializer scan: .data vptr static mirror + CRT __initterm ctor table + string-literal globals -> class / char[N] (strict, binary fact; evidence anchors/global_init_types.json, ent format G:<HEX> aligned with C8/CR)",
     "GM": "global materialize pool: named-global mirror byte typing over the unmaterialized G-entity pool (GI/CR/singleton/global_types dedup-excluded) -- gmat-strlit .data/.rdata printable+NUL -> char[N] (rdata k>=4, .data k<=3 only with igt size>4), gmat-smallint .data raw nonzero dword in [1,64] -> int, gmat-double aligned legal encoding -> double (strict, binary fact; vocab-external rows gmat-fnptr 1,268 / gmat-vtptr 2 are inert ledger, _load_type_family m8==0 skips by design; evidence anchors/global_materialize.json, 1,544 recs / 274 vocab-valid, ent format G:<HEX> aligned with C8/GI/CR, .omo/agents/gmat)",
+    "NI": "new-site vfptr0 install typing: operator-new/malloc site <=12-ins window, eax + one-level mov reg,eax copies, off==0 primary-table install mov [reg], offset ??_7X@@6B@ => allocated type = X (ctor-install identity; AV exact-size agreement enforced generator-side, conflict/divisible-k>1 sites excluded from evidence; strict, binary fact; evidence anchors/ninstall_types.json, 99 recs via=nin-vfptr0, ent format N:%X aligned with alloc_sites touch; template spellings ?$...@.. no universe atom dropped per-token, MT precedent)",
+    "S2": "signedness discriminator v2: width x sign narrowing (movsx/movzx r,r/m16|r/m8, cwd+idiv/div16, cmp16/8+signed-vs-unsigned jcc family, neg8+jl, printf fmt-verb param types incl %s->char*) => single-value type mask, narrowing AND (SGN v1 same-channel semantics -- types=[single], collapses dual-candidate domains; strict; evidence anchors/signedness2_types.json, 59 recs = 43 short + 11 char* + 2 int + 2 unsigned char + 1 unsigned int; v1 same-ent same-type dedup 128 / type conflicts 0 / sgn2 conflict entities 0 generator-side)",
+    "PF2X": "param fingerprints: R2 composite signature (per (fn,k) >=2 distinct (off,width,dir) accesses AND-matched vs flat layouts covering EVERY span, 1..8 candidates emitted) + R3 param->vdispatch deep-slot (N>=0x20) vtable_slot_authority main-table classes -> P:FN:K class-candidate AND-mask (strict; evidence anchors/param_fingerprints.json, 255 recs via=pfp-sig-k*/pfp-vt0x*; K = stack-param index, thiscall this excluded; the 326 eq edges of the same file wired separately via the EF-style bidirectional channel, see the [PFP] line)",
     "AV": "allocation size v2: operator-new arg size at call site, wiring-side candidate computation per allocsize v2 report -- sem=total: pointee sizeof==size OR sizeof divides size (array count unknown); sem=elem: sizeof==size (pure-scale lea/shl multiplier); per-ent mask = union over its (size,sem) observations (strict, binary fact; aggregate anchors/alloc_size_types.json from .omo/agents/allocsize/alloc_sites_v2.json)",
     "SA": "SP-arity: virtual-dispatch site actual-arg count x authoritative slot-proto arity cross-exclusion AND-mask; tier A = uniquely-bound callee ret16 (binary exact), tier B = push-window AND esp-delta simulation double-channel agreement (STRICT tier, restored 2026-11-07 same day as demotion: evidence 10/10 binary-verified; the original -1042 negative gain was the old C9 prefilter unconditionally dropping slot-owner evidence in SS-manufactured structural 3-way conflicts -- now resolved by the C9 blame refinement: empty-AND with C9 pairwise-compatible with every family blames the weakest-evidence side SS instead of C9; .omo/agents/safix/report.md)",
     "SW": "S-slot lifecycle window: vdispatch-observed stack-slot occupant class AND-mask (strict; evidence array of anchors/slot_window_edges.json, 179 recs; eq edges of the same file wired separately via the EF-style bidirectional channel)",
@@ -3250,6 +3253,47 @@ def main():
     except Exception as _e_gm:
         census["GM"] = census.get("GM", 0)
         print("[GM] skipped: %r" % _e_gm, flush=True)
+    # NI：新分配站点 vfptr0 安装定型（ninstall_types.json，99 evidence）。语义 =
+    # R1 call ??2/_malloc 后 ≤12 指令窗内 eax + 单级 `mov reg,eax` 拷贝
+    # （caller-saved 在内层 call 处失效），off==0 主表安装 `mov [reg], offset
+    # ??_7X@@6B@` ⇒ 分配类型 = X（ctor-install 同一身份判定）。R5 AV 精确尺寸
+    # 双侧已知时须 size==sizeof（冲突 8 / 跳过 12 / 整除失配 4 站点生成器侧
+    # 已剔除，不在 evidence）。实体 N:<SITE>（与 alloc_sites touch 的 "N:%X"
+    # 同形）；模板拼写（?$DynamicVectorClass@... 等 19 token）无 universe 原子，
+    # m8==0 整行跳过（56 行），词表内 43 行物化+AND 掩码——MT 族同款逐 token
+    # 丢弃语义。
+    try:
+        census["NI"] = _load_type_family("anchors/ninstall_types.json", "NI")
+        print("[NI] ninstall vfptr0 types: %d" % census["NI"], flush=True)
+    except Exception as _e_ni:
+        census["NI"] = census.get("NI", 0)
+        print("[NI] skipped: %r" % _e_ni, flush=True)
+    # S2：符号×宽度判别器 v2（signedness2_types.json，59 evidence）。与 SGN v1
+    # 同族收窄通道语义（types=[单值] AND 收窄双候选域），新开 S2 保留 census/
+    # 消解台账独立可见。via：sgn2-movsx16 29 / sgn2-m16 14 / sgn2-fmt-%s 11 /
+    # sgn2-fmt-%d 2 / sgn2-movzx8 2 / sgn2-fmt-%X 1；类型拼写对齐
+    # type_universe（short 43 / char* 11 / int 2 / unsigned char 2 /
+    # unsigned int 1）。生成器侧已对 v1 同实体同类型去重（v1_dup_skipped=128、
+    # v1_type_conflict=0、sgn2 冲突实体 0），与 v1 同簇时 AND 合并自然生效。
+    try:
+        census["S2"] = _load_type_family("anchors/signedness2_types.json", "S2")
+        print("[S2] signedness-v2 width x sign types: %d" % census["S2"], flush=True)
+    except Exception as _e_s2:
+        census["S2"] = census.get("S2", 0)
+        print("[S2] skipped: %r" % _e_s2, flush=True)
+    # PF2X：参数指纹（param_fingerprints.json，255 evidence）。R2 复合签名——
+    # 每 (fn,k) ≥2 不同 (off,width,dir) 访问 ⇒ 覆盖全部跨度的扁平布局候选
+    # （1≤|cands|≤8 才发射）与 R3 参数->vdispatch（N≥0x20 深槽）主表权威类
+    # 候选，types 为类候选集（250 行多候选 AND 掩码），C2X/MW 布局指纹同款
+    # 语义。实体 P:FN:K（K=栈参数序，thiscall this 不占位）。Mouse /
+    # Gap2Recv_5202F0 2 token 无 universe 原子，逐 token 丢弃（MT 先例）。
+    # 同文件 326 条 eq 边另走 EF 风格双向通道（见 [PFP] eq 行）。
+    try:
+        census["PF2X"] = _load_type_family("anchors/param_fingerprints.json", "PF2X")
+        print("[PF2X] param-fingerprint types: %d" % census["PF2X"], flush=True)
+    except Exception as _e_pf2x:
+        census["PF2X"] = census.get("PF2X", 0)
+        print("[PF2X] skipped: %r" % _e_pf2x, flush=True)
     # AV：分配尺寸 v2（alloc_size_types.json = .omo/agents/allocsize/alloc_sites_v2.json
     # 站点台账的 ent 聚合件，837 evidence，报告语义「接线端现算」：
     #   sem=total → pointee sizeof==size 或 sizeof 整除 size（new T[n] 的 n 未知）；
@@ -6267,6 +6311,36 @@ def main():
         print("[G2] gs-site-arg-v2 eq edges=%d" % _n_g2e, flush=True)
     except Exception as _e_g2e:
         print("[G2] edges skipped: %r" % _e_g2e, flush=True)
+    # ---- PFP 参数指纹等值（param_fingerprints：P:FN:K == T:FN2|G:ADDR，EF 同款通道）----
+    # 语义：pfp-thischain R4 —— mov ecx,reg(def=P:k)（或 mov ecx,[slot]）且
+    # ecx 无写/无 label join/窗口 ≤16 内直调 takes-this FN2 ⇒ 参数即被调方
+    # this，P:FN:K == T:FN2（DT dt-eax/member 同形，T 对侧经 [C10-pre] callee
+    # 预创建/既有通道在 ents）；pfp-gstore R5 —— mov <global>,reg(def=P:k)
+    # dword 直存 ⇒ P:FN:K == G:ADDR（PU5 全局存储同形，成员/索引/部分宽度
+    # 存储生成器侧已排除）。双向 _call_edges（不经 un() 硬合并，R:/V: 过滤，
+    # 冲突以空域交中和器）。生成器侧已对 PF/PFv2/DT/pu5 无序对去重（dup 计数
+    # 不在本文件，通道幂等无妨）。
+    try:
+        _pfp = jload("anchors/param_fingerprints.json", {}) or {}
+        _n_pfp = 0
+        _pfp_via = collections.Counter()
+        for _r1 in (_pfp.get("edges") or []):
+            _a1 = (_r1 or {}).get("p")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_pfp += 2
+            _pfp_via[(_r1 or {}).get("via") or "?"] += 1
+        print("[PFP] param-fingerprint eq edges=%d (via=%s)"
+              % (_n_pfp, dict(_pfp_via)), flush=True)
+    except Exception as _e_pfp:
+        print("[PFP] eq edges skipped: %r" % _e_pfp, flush=True)
 
     _incr_fp_ok = False
     _INCR_BASE_NOW = None

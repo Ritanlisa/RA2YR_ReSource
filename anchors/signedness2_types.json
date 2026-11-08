@@ -1,0 +1,588 @@
+{
+ "meta": {
+  "generated_by": ".omo/agents/sgn2/scan_sgn2.py",
+  "source_domains": "anchors/minclass_assignments.json (families I32/S16/U8 + fmt-narrowable multi-domains)",
+  "snapshot": "decompile-results/full_export/src/*.cpp",
+  "rules": {
+   "sgn2-fmt-%v": "printf 家族格式串第 K 动词 ⇒ 参数类型 (%d/%i/%hd→int, %u/%x/%X/%hu/%lu/%lx→unsigned int, %ld→int, %f/%g/%e→double, %s→char*, %c→int; %% 跳过; %*d 星号耗槽; 位置参数弃站)",
+   "sgn2-or-jcc": "or/test reg,reg + jl/jg/jle/jge/js/jns ⇒ int (v1 test 补 or)",
+   "sgn2-movsx16": "movsx r, r/m16 ⇒ short（源实体）",
+   "sgn2-movzx16": "movzx r, r/m16 ⇒ unsigned short（源实体）",
+   "sgn2-cwd": "cwd + idiv ⇒ short（ax 源）",
+   "sgn2-div16": "cwd + div ⇒ unsigned short（ax 源）",
+   "sgn2-cmp16s": "cmp ax|word[K≠0] + 符号族 jcc ⇒ short",
+   "sgn2-cmp16u": "cmp ax|word[K≠0] + 无符号族 jcc ⇒ unsigned short",
+   "sgn2-movsx8": "movsx r, r/m8 ⇒ char（universe 词表: char）",
+   "sgn2-movzx8": "movzx r, r/m8 ⇒ unsigned char",
+   "sgn2-cmp8s": "cmp al|byte[K≠0] + 符号族 jcc ⇒ char",
+   "sgn2-cmp8u": "cmp al|byte[K≠0] + 无符号族 jcc ⇒ unsigned char",
+   "sgn2-neg8": "neg al|byte + jl ⇒ char",
+   "sgn2-m16/sgn2-m8": "M 实体（[this+off] 源）窄化补强标签",
+   "dedup": "v1 anchors/signedness_types.json 同实体同类型跳过; 类型冲突 → disjoint 记账",
+   "universe": "类型拼写对齐 anchors/type_universe.json (char/unsigned char/short/unsigned short/int/unsigned int/double/char*)"
+  },
+  "entity_scope": [
+   "EAX:FN:site",
+   "RET:FN",
+   "S:FN:slot",
+   "P:FN:K",
+   "M:FN:this:0xOFF (宽度窄化补强)"
+  ],
+  "counts": {
+   "family_targets": 34158,
+   "fmt_narrowable_extra": 15378,
+   "evidence": 59,
+   "dual_narrowed": 4,
+   "single_confirmed": 55,
+   "v1_dup_skipped": 128,
+   "v1_type_conflict": 0,
+   "sgn2_conflict_entities": 0,
+   "domain_disjoint": 29,
+   "via": {
+    "sgn2-movsx16": 29,
+    "sgn2-m16": 14,
+    "sgn2-fmt-%s": 11,
+    "sgn2-fmt-%X": 1,
+    "sgn2-fmt-%d": 2,
+    "sgn2-movzx8": 2
+   },
+   "by_class": {
+    "S": {
+     "ok": 31,
+     "domain-disjoint": 6,
+     "v1-dup": 1
+    },
+    "EAX": {
+     "v1-dup": 127,
+     "domain-disjoint": 18,
+     "ok": 14
+    },
+    "M": {
+     "ok": 14,
+     "domain-disjoint": 3
+    },
+    "P": {
+     "domain-disjoint": 1
+    },
+    "RET": {
+     "domain-disjoint": 1
+    }
+   },
+   "by_family": {
+    "S16": {
+     "ok": 43,
+     "dual-narrowed": 1,
+     "disjoint": 1
+    },
+    "other": {
+     "disjoint": 2,
+     "ok": 11
+    },
+    "I32": {
+     "disjoint": 21,
+     "ok": 3,
+     "dual-narrowed": 3
+    },
+    "U8": {
+     "disjoint": 5,
+     "ok": 2
+    }
+   },
+   "site_stats": {
+    "fmt:callsites:_sprintf": 195,
+    "fmt:resolved": 333,
+    "fmt:verb-push": 218,
+    "fmt:origin-nested": 50,
+    "fmt:verb-beyond-run": 442,
+    "eax:no-site": 2496,
+    "fmt:cleanup-validated": 70,
+    "fmt:origin-dead": 75,
+    "fmt:origin-jt-label": 29,
+    "fmt:run-short": 49,
+    "fmt:callsites:_swprintf": 154,
+    "fmt:no-content:clobber": 41,
+    "fmt:no-content:no-content": 64,
+    "fmt:origin-const": 15,
+    "fmt:callsites:_fprintf": 105,
+    "fmt:push-imm": 3,
+    "fmt:callsites:__imp_wsprintfA": 36,
+    "fmt:origin-window": 14,
+    "fmt:no-content:jt": 3
+   }
+  }
+ },
+ "evidence": [
+  {
+   "ent": "S:418E20:var_38",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x418F54"
+  },
+  {
+   "ent": "M:42B1C0:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x42B1C0"
+  },
+  {
+   "ent": "S:443C60:var_134",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x443E5F"
+  },
+  {
+   "ent": "S:44F820:var_d8",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x44FBB2"
+  },
+  {
+   "ent": "M:484AB0:this:0x116",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x484AB0"
+  },
+  {
+   "ent": "M:484D60:this:0x116",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x484D60"
+  },
+  {
+   "ent": "M:484F20:this:0x116",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x484F20"
+  },
+  {
+   "ent": "M:486840:this:0x26",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x486849"
+  },
+  {
+   "ent": "EAX:48E0B0:48E1D4",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x48E1E0"
+  },
+  {
+   "ent": "EAX:4C85E0:4C8B06",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x4C8B16"
+  },
+  {
+   "ent": "M:505F80:this:0x5750",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x505F80"
+  },
+  {
+   "ent": "EAX:5355D0:53569D",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x5356AE"
+  },
+  {
+   "ent": "EAX:5595F0:559608",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "sgn2-fmt-%X",
+   "site": "0x559614"
+  },
+  {
+   "ent": "S:5673A0:var_2c",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x56767E"
+  },
+  {
+   "ent": "S:5678E0:var_20",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x567BA6"
+  },
+  {
+   "ent": "M:580B20:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x580B20"
+  },
+  {
+   "ent": "M:580B70:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x580B70"
+  },
+  {
+   "ent": "S:581F90:var_6c",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x58226C"
+  },
+  {
+   "ent": "M:58C2A0:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x58C2A0"
+  },
+  {
+   "ent": "S:58C800:var_44",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x58C8EF"
+  },
+  {
+   "ent": "S:58D620:var_4c",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x58D823"
+  },
+  {
+   "ent": "S:58F2C0:var_1a8",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x58F89F"
+  },
+  {
+   "ent": "S:58F2C0:var_198",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x58F8B9"
+  },
+  {
+   "ent": "S:5902C0:var_c",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5903DC"
+  },
+  {
+   "ent": "S:59AFA0:var_48",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x59B1D4"
+  },
+  {
+   "ent": "S:59B200:var_b4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x59B68C"
+  },
+  {
+   "ent": "S:5A2F50:var_60",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A30D5"
+  },
+  {
+   "ent": "S:5A5B50:var_100",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A5C2E"
+  },
+  {
+   "ent": "S:5A5B50:var_118",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A5ECC"
+  },
+  {
+   "ent": "S:5A7250:var_4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A7341"
+  },
+  {
+   "ent": "S:5A7440:var_8",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A7524"
+  },
+  {
+   "ent": "S:5A7440:var_4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A7529"
+  },
+  {
+   "ent": "S:5A76E0:var_8",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A77C0"
+  },
+  {
+   "ent": "S:5A76E0:var_4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A77C5"
+  },
+  {
+   "ent": "S:5A7B40:var_4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5A7C2D"
+  },
+  {
+   "ent": "M:5AC230:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x5AC233"
+  },
+  {
+   "ent": "S:5B3C20:var_1dc",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x5B3D75"
+  },
+  {
+   "ent": "EAX:5EA3E0:5EA6DB",
+   "types": [
+    "int"
+   ],
+   "via": "sgn2-fmt-%d",
+   "site": "0x5EA6EB"
+  },
+  {
+   "ent": "S:64CDA0:var_60",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x64D2E6"
+  },
+  {
+   "ent": "EAX:64DEA0:64DF4C",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x64DF58"
+  },
+  {
+   "ent": "EAX:64DEA0:64DF65",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x64DF71"
+  },
+  {
+   "ent": "EAX:64DEA0:64DFB8",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x64DFC4"
+  },
+  {
+   "ent": "EAX:64DEA0:64E002",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x64E00E"
+  },
+  {
+   "ent": "EAX:6516F0:651790",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x65179C"
+  },
+  {
+   "ent": "EAX:6516F0:6517A9",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x6517B5"
+  },
+  {
+   "ent": "EAX:6516F0:6517F3",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x6517FF"
+  },
+  {
+   "ent": "EAX:6516F0:65183D",
+   "types": [
+    "char*"
+   ],
+   "via": "sgn2-fmt-%s",
+   "site": "0x651849"
+  },
+  {
+   "ent": "M:65B9C0:this:0x42",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x65B9CD"
+  },
+  {
+   "ent": "M:65BB50:this:0x42",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x65BB8B"
+  },
+  {
+   "ent": "M:65BD00:this:0x42",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x65BD0D"
+  },
+  {
+   "ent": "S:688380:var_30",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x688625"
+  },
+  {
+   "ent": "S:6886B0:var_f4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x688B75"
+  },
+  {
+   "ent": "M:6B1A70:this:0x2",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-m16",
+   "site": "0x6B1A71"
+  },
+  {
+   "ent": "S:6B2F30:var_9c",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x6B3042"
+  },
+  {
+   "ent": "S:6D5030:var_40",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x6D5116"
+  },
+  {
+   "ent": "S:757980:var_38",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "sgn2-movzx8",
+   "site": "0x757A6E"
+  },
+  {
+   "ent": "S:757BF0:var_34",
+   "types": [
+    "unsigned char"
+   ],
+   "via": "sgn2-movzx8",
+   "site": "0x757DB5"
+  },
+  {
+   "ent": "EAX:77E7A0:77E7FA",
+   "types": [
+    "int"
+   ],
+   "via": "sgn2-fmt-%d",
+   "site": "0x77E806"
+  },
+  {
+   "ent": "S:7DBC77:var_4",
+   "types": [
+    "short"
+   ],
+   "via": "sgn2-movsx16",
+   "site": "0x7DBC94"
+  }
+ ]
+}
