@@ -541,7 +541,7 @@ namespace gamemd {
     return 6; /*0x447fa5*/
   if ( hpp->DelayBeforeFiring ) /*0x447fae*/
     return 3; /*0x447fba*/
-  INI = TriggerTypeClass::ReadINI((TechnoClass *)hpp, v4, v10, v11, v12); /*0x447fd9*/
+  INI = TechnoClass::ReadINI((TechnoClass *)hpp, v4, v10, v11, v12); /*0x447fd9*/
   if ( INI ) /*0x447fdd*/
     return INI; /*0x447fdd*/
   if ( !(*((uint8_t (__thiscall **)(BuildingClass *))hpp->ptr_0 + 255))(hpp) ) /*0x447fe3*/
@@ -567,7 +567,7 @@ namespace gamemd {
     return 6; /*0x447fa5*/
   if ( hpp->DelayBeforeFiring ) /*0x447fae*/
     return 3; /*0x447fba*/
-  INI = TriggerTypeClass::ReadINI((TechnoClass *)hpp, v4, v10, v11, v12); /*0x447fd9*/
+  INI = TechnoClass::ReadINI((TechnoClass *)hpp, v4, v10, v11, v12); /*0x447fd9*/
   if ( INI ) /*0x447fdd*/
     return INI; /*0x447fdd*/
   if ( !(*((uint8_t (__thiscall **)(BuildingClass *))hpp->ptr_0 + 255))(hpp) ) /*0x447fe3*/
@@ -20228,7 +20228,7 @@ int TechnoClass::CheckUnitFireConstraints() const
   if ( this->rockerLinkedUnit ) /*0x741014*/
     return 5; /*0x74102a*/
   v8 = a4; /*0x741031*/
-  result = TriggerTypeClass::ReadINI(this, a2, a3, a4, a5); /*0x74103e*/
+  result = TechnoClass::ReadINI(this, a2, a3, a4, a5); /*0x74103e*/
   a5 = result; /*0x741045*/
   if ( !result || result == 2 ) /*0x74104e*/
   {

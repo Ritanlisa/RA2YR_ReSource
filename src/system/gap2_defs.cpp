@@ -2598,7 +2598,7 @@ int (void* a1)->OpenWithCDSearch() {
   const char *v3; // ebp
   char v5[260]; // [esp+10h] [ebp-104h] BYREF
 
-  CCFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47ae21*/
+  BufferIOFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47ae21*/
   if ( this->q054 || !CmdLine_NoCD || (unsigned __int8)((BufferIOFileClass *)this)->IsReady(0) ) /*0x47ae42*/
     return (*(int (**)(CDFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x47aef4*/
   v3 = (const char *)CmdLine_NoCD; /*0x47ae4f*/
@@ -2608,7 +2608,7 @@ int (void* a1)->OpenWithCDSearch() {
     {
       strcpy(v5, *((const char **)v3 + 1)); /*0x47ae78*/
       strcat(v5, a1); /*0x47aea4*/
-      CCFileClass::SetName((BufferIOFileClass *)this, v5); /*0x47aeb4*/
+      BufferIOFileClass::SetName((BufferIOFileClass *)this, v5); /*0x47aeb4*/
       if ( (unsigned __int8)((BufferIOFileClass *)this)->IsReady(0) ) /*0x47aebd*/
         break; /*0x47aebd*/
       v3 = *(const char **)v3; /*0x47aec6*/
@@ -2619,7 +2619,7 @@ int (void* a1)->OpenWithCDSearch() {
   else
   {
 LABEL_7:
-    CCFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47aecd*/
+    BufferIOFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47aecd*/
   }
   return (*(int (**)(CDFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x47aee3*/
 
@@ -2633,7 +2633,7 @@ int (void* a1)->Reopen(int a2) {
     this->StubReturnFalse(2, 0, 0); /*0x47af2a*/
   if ( this->u32_54 || a2 == 2 ) /*0x47af3b*/
   {
-    CCFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47af56*/
+    BufferIOFileClass::SetName((BufferIOFileClass *)this, a1); /*0x47af56*/
     return BufferIOFileClass::Open((CCFileClass *)this, a2); /*0x47af5e*/
   }
   else
@@ -37560,7 +37560,7 @@ void* TacticalClass::updateScroll(int a2, int a3) {
 }
 // 0x73D630
 namespace gamemd { 
-int FactoryClass::CompleteProduction() {
+int UnitClass::Mission_Harvest() {
 
   double v2; // st7
   Cell *v4; // eax

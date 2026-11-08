@@ -21,7 +21,7 @@
 
 // 0x4325C0
 namespace gamemd {  // G42.18 ns repair
-AudioController * * CCFileClass::Close(void * a1, void *a2)
+AudioController * * BufferIOFileClass::Close(void * a1, void *a2)
 {
 
   FileClass v3; // eax

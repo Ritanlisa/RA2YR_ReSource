@@ -41,6 +41,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x431B20
     int Dtor();  // 0x431B80 thiscall (x181c: static-form overload removed; real member)
     bool Read();  // 0x431F30
+    static char Close(void *a1 = 0, void *a2 = 0);  // 0x4325C0 (L4 正名: was CCFileClass::Close; slot 13, BufferIO 层定义 CD 继承)
+    static int SetName(void *aP0, char *a1);  // 0x431E80 (L4 正名: was CCFileClass::SetName; slot 2 唯一覆盖者)
+    int SetName(char *Source);  // 0x431E80 member form
     BOOL Write(int a2, const CHAR *a3);
     int Open(const CHAR *a2);
     int SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod);  // 0x4324B0

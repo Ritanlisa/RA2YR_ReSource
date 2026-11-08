@@ -96,7 +96,7 @@ int TechnoClass_CanFireAtTarget(TechnoClass *aP0, void * a1, void * a2, void * a
 {
 
   int result; // eax
-  result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1), a2, a3, a4, a5));
+  result = (int)(TechnoClass::ReadINI((unsigned int *)(a1), a2, a3, a4, a5));
   if ( !result ) /*0x41a9fd*/
   {
     if ( !aP0->Tactical_6C9 || aP0->passengers[1] )

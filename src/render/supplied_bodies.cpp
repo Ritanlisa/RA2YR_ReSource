@@ -28,6 +28,7 @@
 #include "system/ini_class.hpp"
 #include "system/tactical.hpp"
 #include "type/anim_type.hpp"
+#include "type/warhead_type.hpp"  // L4 正名: WarheadTypeClass::ReadINI (0x75D3A0) 定义载体
 #include "type/unit_type.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -3279,7 +3280,7 @@ void VoxelPalette::Reset()
 
 // 0x75D3A0
 namespace gamemd {
-void Voxel_Section::Draw()
+int WarheadTypeClass::ReadINI(int a2)
 {
 
   unsigned int *WarheadTypeClass_field_0x140; // ebx

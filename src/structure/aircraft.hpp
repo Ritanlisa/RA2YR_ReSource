@@ -78,13 +78,13 @@ public:
     int Mission_Attack() ;
     // wrapper: delegates to AircraftClass::Mission_Attack at 0x417FE0
     int Mission_Return() ;
-    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    // wrapper: delegates to AircraftClass::ProcessLanding at 0x4151E0
     int Mission_Hunt() ;
-    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    // wrapper: delegates to AircraftClass::ProcessLanding at 0x4151E0
     int Mission_Retreat() ;
     int Mission_Enter() ;
     int Mission_Transport();  // 0x419C80
-    int MissionDispatch(void * a2, int a3, void ** a4);  // 0x4190B0 (G42.42l truth arity)
+    int ProcessInputKey(void * a2, int a3, void ** a4);  // 0x4190B0 (G42.42l truth arity; L4 正名: slot 101 canon, was bin MissionDispatch)
 
     // === Phase 3: Flight Paths ===
     int MoveTo(int* a2, int a3);  // 0x414310 (G42.42f truth arity)
@@ -92,7 +92,8 @@ public:
     int CanEnterCell(int16_t* a2, char a3, char a4);  // 0x417F80 (G42.42d truth arity)
 
     // === Phase 3: Landing ===
-    int ProcessLanding(int a2, int a3);  // 0x41BA90 (G42.42d truth arity)
+    int ProcessLanding();  // 0x4151E0 (L4 正名: was UnitClass::Mission_Harvest; slot 143 降落状态机, RA1 Process_Landing)
+    int MissionDispatch(int a2, int a3);  // 0x41BA90 (L4 正名: slot 122 MissionClass::MissionDispatch 全链唯一覆盖)
     int FindLandingCell();  // 0x415B10
     int ValidateLandingCell();  // 0x4196B0
     int ProcessReturnToBase();  // 0x415A50

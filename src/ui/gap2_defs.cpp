@@ -39,6 +39,7 @@ using ra2::game::FootClass;
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "e4/classes/Network_e4.hpp"  // w16g4 C3861 Network:: supply
 #include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
+#include "e4/classes/VectorClass_ptr_LineTrail_e4.hpp"  // L4 正名: DVC<LineTrail*> 模板方法定义载体 (SetCapacity/FindItemIndex/GetItemIndex)
 #include "core/hash_table.hpp"
 #include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -1040,7 +1041,7 @@ void CheckListClass::initList() {
 }
 // 0x556EE0
 namespace gamemd { 
-int CheckListClass::addItem(int a2) {
+int VectorClass_ptr_LineTrail::GetItemIndex(int a2) {
   if ( (this->IsInitialized) ) /*0x556ee0*/
     return (unsigned int)(a2 - *&this->Items) >> 2; /*0x556ef5*/
   else
@@ -1049,7 +1050,7 @@ int CheckListClass::addItem(int a2) {
 }
 // 0x557090
 namespace gamemd { 
-int CheckListClass::removeItem(int a2, void* a3) {
+int VectorClass_ptr_LineTrail::SetCapacity(int a2, void* a3) {
   unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax
@@ -1094,7 +1095,7 @@ int CheckListClass::removeItem(int a2, void* a3) {
 }
 // 0x557140
 namespace gamemd { 
-int CheckListClass::checkItem(void* a1) {
+int VectorClass_ptr_LineTrail::FindItemIndex(void* a1) {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx
@@ -1132,7 +1133,7 @@ void* CheckListClass::toggleItem(int a2) {
 }
 // 0x557570
 namespace gamemd { 
-int CheckListClass::RemoveItem(int a1, int a2) {
+int ListClass::Set_Position(int a1, int a2) {
   int ListClass_field_0x14; // eax
   int v4; // esi
   int v5; // edi
@@ -1411,7 +1412,7 @@ int CheckListClass::ScrollDown(int a1) {
 }
 // 0x557FD0
 namespace gamemd { 
-void CheckListClass::AddItem() {
+void ListClass::Flag_To_Redraw() {
   if ( this->Enabled ) /*0x557fd3*/
   {
     this->AddItem_1(&this->subList1); /*0x557fe0*/

@@ -1253,7 +1253,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
       }
     }
   }
-  result = TriggerTypeClass::ReadINI((TechnoClass *)_EBX, a4, weapon_idx, a4, a5); /*0x51c9a7*/
+  result = TechnoClass::ReadINI((TechnoClass *)_EBX, a4, weapon_idx, a4, a5); /*0x51c9a7*/
   if ( !result ) /*0x51c9b2*/
   {
     __asm /*0x51c9b8*/

@@ -300,7 +300,7 @@ int CanAcceptType(int,int);  // 0x452670
     // wrapper: delegates to AircraftClass::Mission_Enter at 0x4166C0
     int Mission_Capture();
     int Mission_Harvest();
-    // wrapper: delegates to UnitClass::Mission_Harvest at 0x4151E0
+    // wrapper: delegates to AircraftClass::ProcessLanding at 0x4151E0
     int Mission_Deploy();
     bool CheckMissionGuard();  // 0x458DD0
     bool CheckMissionAttack();  // 0x458E00

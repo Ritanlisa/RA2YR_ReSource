@@ -91,7 +91,7 @@ public:
     virtual int CheckMissionStatus() override;  // X137B slot 137 = 0x73E5E0 (bin: ReadINI)
     virtual int COMStub_Ret450_138() override;  // X137B slot 138 = 0x73EFC0 (bin: DeployIntoBuilding)
     virtual int COMStub_Ret450_139() override;  // X137B slot 139 = 0x740A90 (bin: CheckRepairNeeded)
-    virtual int GetMaxSize() override;  // X137B slot 143 = 0x73D630 (bin: CompleteProduction)
+    virtual int GetMaxSize() override;  // X137B slot 143 = 0x73D630 (bin: Mission_Harvest; L4 正名: 真 Mission_Harvest 采集状态机)
     virtual int CheckMissionStatus2() override;  // X137B slot 147 = 0x740EF0 (bin: EnterRepairBuilding)
     virtual int COMStub_Ret450_151() override;  // X137B slot 151 = 0x740B10 (bin: updateTargeting)
     virtual int selectTarget() override;  // X137B slot 167 = 0x744180 (bin: AreBuildingFlagsClear)
@@ -139,8 +139,7 @@ public:
     void DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8);
 
     // === Phase 3: Harvest/Unload ===
-    // 0x4151e0 — merged harvest+unload state machine (case 3 = unload logic)
-    int Mission_Harvest() ;
+    // 0x4151E0 归 AircraftClass::ProcessLanding (L4 正名 ra1audit); 真 UnitClass::Mission_Harvest = 0x73D630 (slot 143, 见上方 GetMaxSize override 声明)
     int ProcessResourceHarvesting();  // 0x73D450
     UnitClass* updateHarvesting();  // 0x4C2C10
     int UnloadPassengers(int placementType);  // 0x6B4BE0

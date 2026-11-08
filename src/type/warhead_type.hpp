@@ -132,7 +132,7 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int SaveLoad_Prefix(int a1, int a2);  // 0x75e0c0
     int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x75e2c0
-    int ReadINI(int a1, int a2, int a3);  // 0x772080
+    int ReadINI(int a2);  // 0x75D3A0 (L4 正名: 原 Voxel_Section::Draw; slot 25 [Warheads] 键族读取器 Verses/IsLocomotor/Bright...)
     // === FUNCS-MOVE (END) ===
 
 

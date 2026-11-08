@@ -17,6 +17,9 @@ struct VectorClass_ptr_LineTrail {
 // --- flat members (END) ---
     int Get(int a2, void *a2_2);  // 0x556F00
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x556F10
+    int SetCapacity(int a2, void *a3);  // 0x557090 (L4 正名: was CheckListClass::removeItem; YRpp slot 2 SetCapacity)
+    int FindItemIndex(void *a2);  // 0x557140 (L4 正名: was CheckListClass::checkItem; YRpp slot 4)
+    int GetItemIndex(int a2);  // 0x556EE0 (L4 正名: was CheckListClass::addItem; YRpp slot 5)
     char  Release(int a2, unsigned int * a3);  // 0x556F50
     void Remove(void *a1_1, void *a1 = 0);  // 0x557000
     int  GetSize(unsigned int * a2);  // 0x557030

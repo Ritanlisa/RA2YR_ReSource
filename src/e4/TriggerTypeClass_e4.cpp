@@ -35,7 +35,7 @@
 
 // 0x6FC0B0
 namespace gamemd {  // G42.18 ns repair
-TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
+TechnoClass * * TechnoClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
 
   TemporalClass *temporalUsing; // eax

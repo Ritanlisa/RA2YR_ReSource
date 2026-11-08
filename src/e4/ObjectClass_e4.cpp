@@ -11516,7 +11516,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
   if ( !(uint8_t)File::IsReady((BufferIOFileClass *)&v11.customSound_controller[2], 0) ) /*0x778760*/
   {
     FileClass::Close((RawFileClass *)&v11.customSound_controller[2]); /*0x77876d*/
-    CCFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778776*/
+    BufferIOFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778776*/
     CCFileClass::Reopen((CDFileClass *)&v11.customSound_controller[2], g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x778786*/
   }
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v11.customSound_controller[2], 0) ) /*0x778790*/
@@ -11533,7 +11533,7 @@ void* ObjectClass::LoadAccountInfoWOL() {
     v11.customSound_controller[1] = 0; /*0x7787f3*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x7787f7*/
     FileStraw::Open((FileStraw *)&v11.nextArrayIndex, (int)&v11.customSound_controller[2], 0); /*0x7787ff*/
-    CCFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778808*/
+    BufferIOFileClass::Close((BufferIOFileClass *)&v11.customSound_controller[2]); /*0x778808*/
     v4 = (uint8_t *)((String *)(String *)&stru_B73590)->GetOrEmpty_Alt(); /*0x778812*/
     if ( INIClass::BinarySearchSection((int)&v11.nextArrayIndex, v4) ) /*0x77881c*/
     {
@@ -11621,7 +11621,7 @@ int ObjectClass::ReadSettingsWOL() {
   if ( !(uint8_t)File::IsReady((BufferIOFileClass *)&v5, 0) ) /*0x779caf*/
   {
     FileClass::Close((RawFileClass *)&v5); /*0x779cbc*/
-    CCFileClass::Close((BufferIOFileClass *)&v5); /*0x779cc5*/
+    BufferIOFileClass::Close((BufferIOFileClass *)&v5); /*0x779cc5*/
     CCFileClass::Reopen((CDFileClass *)&v5, g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x779cd5*/
   }
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7E1B0C) */  /*0x779ce3*/

@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+class AudioController;  // L4: Close 返回形态对齐 CCFileClass_e4.cpp 0x4325C0 体定义
+
 #ifndef GAMEMD_G2_BufferIOFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
 #define GAMEMD_G2_BufferIOFileClass_DEF 1
 struct BufferIOFileClass {
@@ -37,6 +39,8 @@ struct BufferIOFileClass {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int Destruct();  // def-aligned
+    AudioController * * Close(void * a1, void *a2 = 0);  // 0x4325C0 (L4 正名: was CCFileClass::Close; 返回形态对齐 CCFileClass_e4.cpp 体)
+    static int SetName(void *aP0, char *a1);  // 0x431E80 (L4 正名: was CCFileClass::SetName)
     void StubReturnFalse(int a1, int a2, int a3);
      uint8_t * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
 int Dtor();  // 0x431B80 thiscall (x181c: receiver param removed)

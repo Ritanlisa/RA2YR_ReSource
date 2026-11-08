@@ -1131,7 +1131,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v17.spawnStatus, 0) ) /*0x778a4c*/
   {
     FileClass::Close((RawFileClass *)&v17.spawnStatus); /*0x778a5c*/
-    CCFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778a68*/
+    BufferIOFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778a68*/
     CCFileClass::Reopen((CDFileClass *)&v17.spawnStatus, g_Str_File_wolinfoMD_ini, (CHAR *)1); /*0x778a7b*/
   }
   if ( (unsigned __int8)File::IsReady((BufferIOFileClass *)&v17.spawnStatus, 0) )
@@ -1149,7 +1149,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v17.customSound_controller[1] = 0; /*0x778b1c*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x778b20*/
     FileStraw::Open((FileStraw *)&v17.nextArrayIndex, (int)&v17.spawnStatus, 0); /*0x778b28*/
-    CCFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778b34*/
+    BufferIOFileClass::Close((CCFileClass *)&v17.spawnStatus); /*0x778b34*/
     String::AssignFromPtr((String *)&v17.ptr_4, a2); /*0x778b3e*/
     String::ToLower((String *)&v17.ptr_4); /*0x778b47*/
     v5 = (unsigned __int8 *)((String *)(String *)&v17.ptr_4)->GetOrEmpty_Alt(); /*0x778b50*/
@@ -5118,7 +5118,7 @@ char sub_779730()
     v7 = 0; /*0x7797d1*/
     v2[0] = &g_ptr_7EA5F4; /*0x7797d5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7797dd*/
-    CCFileClass::Close(v8); /*0x7797e6*/
+    BufferIOFileClass::Close(v8); /*0x7797e6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779804*/
                        (int)v2,
                        (uint8_t *)&off_84A11C,
@@ -5154,7 +5154,7 @@ int ReadWOLGameOption(INIClass * a1)
   if ( !((File *)(v9))->IsReady(0) ) /*0x77984f*/
   {
     FileClass::Close(v9); /*0x77985c*/
-    CCFileClass::Close(v9); /*0x779865*/
+    BufferIOFileClass::Close(v9); /*0x779865*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779875*/
   }
   v4[0] = &g_ptr_7E1B0C; /*0x779883*/
@@ -5215,7 +5215,7 @@ char sub_779940()
     v7 = 0; /*0x7799e1*/
     v2[0] = &g_ptr_7EA5F4; /*0x7799e5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7799ed*/
-    CCFileClass::Close(v8); /*0x7799f6*/
+    BufferIOFileClass::Close(v8); /*0x7799f6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779a14*/
                        (int)v2,
                        (uint8_t *)&off_84A11C,
@@ -5251,7 +5251,7 @@ int ReadWOLLobbyOption(INIClass * a1)
   if ( !((File *)(v9))->IsReady(0) ) /*0x779a5f*/
   {
     FileClass::Close(v9); /*0x779a6c*/
-    CCFileClass::Close(v9); /*0x779a75*/
+    BufferIOFileClass::Close(v9); /*0x779a75*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779a85*/
   }
   v4[0] = &g_ptr_7E1B0C; /*0x779a93*/

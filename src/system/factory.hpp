@@ -114,7 +114,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ResetProductionTimers();  // 0x6B0C80
     int FindOrCreate();  // 0x6B5910
     void* CompleteItem();  // 0x71ABC0
-    int CompleteProduction();  // 0x73D630
+    // 0x73D630 = UnitClass::Mission_Harvest (L4 正名 ra1audit; 原误归 FactoryClass::CompleteProduction, 声明移除)
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===

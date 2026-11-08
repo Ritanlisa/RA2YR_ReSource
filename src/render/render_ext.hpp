@@ -1638,7 +1638,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Voxel_Section() = default;
 
-    virtual void Draw(); // 0x75D3A0
+    // 0x75D3A0 = WarheadTypeClass::ReadINI (L4 正名 ra1audit; 原 Voxel_Section::Draw 欠账名, 声明移除)
     void* Constructor(); // 0x75E6B0
 
     void* q004;  // 0x4 (X139B: retype; operator-new result stored)

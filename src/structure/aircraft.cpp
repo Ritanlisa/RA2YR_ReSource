@@ -424,7 +424,7 @@ int AircraftClass::Mission_Attack()
         AircraftClass_field_bool_6D5 = false;
         if (airstrike != nullptr && ammo > 0)
         {
-            this->ProcessLanding(4, 0);
+            this->MissionDispatch(4, 0);  /* L4 正名: 0x41BA90 (was ProcessLanding) */
             AircraftClass_field_bool_6D5 = true;
             return 1;
         }
@@ -864,12 +864,12 @@ int AircraftClass::Mission_Retreat()
                 ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)v3); /*0x41a0fc*/
                 v27->Stub(v3, ClosestPlacementCell); /*0x41a104*/
               }
-              v3->ProcessLanding(2, 0); /*0x41a0e3*/
+              v3->MissionDispatch(2, 0);  /* L4 正名: 0x41BA90 */ /*0x41a0e3*/
               return 1; /*0x41a0ec*/
             }
             else
             {
-              v3->ProcessLanding(5, 0); /*0x41a12d*/
+              v3->MissionDispatch(5, 0);  /* L4 正名: 0x41BA90 */ /*0x41a12d*/
               return 1; /*0x41a133*/
             }
           }
@@ -892,7 +892,7 @@ int AircraftClass::Mission_Retreat()
     v7 = *v3; /*0x419cdf*/
     v3->AircraftClass_field_6CC = (int)v6; /*0x419ce5*/
     v7->ThunkTo159x4(v3, 3); /*0x419ceb*/
-    v3->ProcessLanding(2, 1); /*0x419cf9*/
+    v3->MissionDispatch(2, 1);  /* L4 正名: 0x41BA90 */ /*0x419cf9*/
     return 1; /*0x419d01*/
   }
   return result; /*0x419cff*/
@@ -1262,7 +1262,7 @@ int AircraftClass::CheckLandingClearance()
 }
 
 // AircraftClass::Mission_Unload_full -- aircraft full-unload override (no standalone IDA function).
-// NOTE: previous annotation pointed at UnitClass::Mission_Harvest (a different function).
+// NOTE: previous annotation pointed at AircraftClass::ProcessLanding (a different function).
 int AircraftClass::Mission_Unload_full()
 {
     // Full unload with parachute deployment

@@ -754,7 +754,7 @@ cmake --build build_win --config Debug
 反编译类的 READ_INI/ReadINI 函数，查找 `INIClass::GetString(ini, section, "KeyName", ..., this+OFFSET, ...)` 模式：
 
 ```
-WarheadTypeClass @ 0x772080:
+WeaponTypeClass @ 0x772080:  // L4 正名（ra1audit）：读 [Weapons] 键族（InfiniteMindControl 等），原误标 WarheadTypeClass
   *(this + 0xA4) = ReadInt("Damage", *(this+0xA4));
   *(this + 0xCA) = ReadBool("MindControl", *(this+0xCA));
   *(this + 0xD0) = ReadBool("IsLocomotor", *(this+0xD0));

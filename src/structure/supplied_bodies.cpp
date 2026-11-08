@@ -1155,7 +1155,7 @@ ULONG __stdcall AircraftClass::Release() {
 
 // 0x4151E0
 namespace gamemd {
-int UnitClass::Mission_Harvest()
+int AircraftClass::ProcessLanding()
 {
 
   int movementDestination; // ecx

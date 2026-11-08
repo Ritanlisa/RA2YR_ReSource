@@ -487,11 +487,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetFocus(int a1);  // 0x4886D0
     void* QueryInterface(int a1);  // 0x4886E0
     void initList();  // 0x556EB0
-    int addItem(int a1);  // 0x556EE0
-    int removeItem(int a1, void* a2);  // 0x557090
-    int checkItem(void* a1);  // 0x557140
     void* toggleItem(int a1);  // 0x5571C0
-    int RemoveItem(int a1, int a2);  // 0x557570
+    // L4 正名移出 (ra1audit): 0x556EE0/0x557090/0x557140 → VectorClass_ptr_LineTrail (GetItemIndex/SetCapacity/FindItemIndex);
+    // 0x557570/0x557FD0 → ListClass (Set_Position/Flag_To_Redraw)
     int SetItemState(int a1);  // 0x557A20
     int OnKeyUp(int a1);  // 0x557A70
     int GetItemCount();  // 0x557B00
@@ -502,7 +500,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Draw(int a1);  // 0x557EB0
     int OnDblClick();  // 0x557F00
     int ScrollDown(int a1);  // 0x557FB0
-    void AddItem();  // 0x557FD0
     void* drawList(int a1);  // 0x558130
     void scrollList();  // 0x5581E0
     int selectItem(int a1);  // 0x558210
@@ -1009,6 +1006,8 @@ public:
     static int AddItem(void *aP0, int aP1);  // 0x5576A0 G42.35 static-form sync (truth: int thiscall(this,int); ui/supplied sites 0x48833C/0x488333)
     virtual void RemoveItem(); // 0x557730
     static char RemoveItem(void *aP0, signed int aP1);  // 0x557730 G42.35 static-form sync (truth: char thiscall(this,sint); ui/supplied site 0x4883CF)
+    virtual void Flag_To_Redraw(); // 0x557FD0 (L4 正名: was CheckListClass::AddItem; RA1 Flag_To_Redraw 传播子 gadget)
+    virtual int Set_Position(int a1, int a2); // 0x557570 (L4 正名: was CheckListClass::RemoveItem; RA1 Set_Position 摆位 Up/Down/Scroll 三 gadget)
     // +3 more virtual methods
 
     uint8_t ListClass_field_0x04[4];

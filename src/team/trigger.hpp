@@ -244,7 +244,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int ReadINI(int a1, int a2, int a3);  // 0x6fc0b0 (G42.33 批 3: 真值对齐 -- 0x447FD4 3 栈参)
+    // 0x6fc0b0 = TechnoClass::ReadINI (L4 正名 ra1audit; slot 240 目标校验, 原误标 TriggerTypeClass)
+    int ReadINI(int a1, int a2, int a3);  // 0x6fc0b0 (G42.33 批 3: 真值对齐 -- 0x447FD4 3 栈参) [孤儿声明: 真身归 TechnoClass, techno.hpp:240]
     int GetClassIdentifier(int a1, int a2);  // 0x727bb0
     int LoadTypeData(int a1, int a2);  // 0x727bf0
     int Write(int a1, int a2, int a3);  // 0x727c80

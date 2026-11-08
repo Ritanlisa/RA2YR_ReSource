@@ -265,7 +265,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     v24.customSound_controller[4] = 0; /*0x764dfb*/
     /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x764dff*/
     FileStraw::Open((FileStraw *)&v24.occupant, (int)&v24.customSound, 0); /*0x764e07*/
-    CCFileClass::Close((CCFileClass *)&v24.customSound); /*0x764e10*/
+    BufferIOFileClass::Close((CCFileClass *)&v24.customSound); /*0x764e10*/
     ((String *)&v24)->Assign( g_INI_Key_CampaignID); /*0x764e1e*/
     Int = INIClass::ReadInt((bool *)&v24.occupant, &this->M24, (String *)&v24, -1); /*0x764e3b*/
     DeleteAndZero(&v24); /*0x764e3d*/
@@ -339,11 +339,11 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   if ( !((File *)(v14))->IsReady(0) ) /*0x7650a2*/
   {
     (v14)->Close(); /*0x7650af*/
-    CCFileClass::Close(v14); /*0x7650b8*/
+    BufferIOFileClass::Close(v14); /*0x7650b8*/
     (v14)->Reopen(g_Str_File_WDTHist_ini, 1); /*0x7650c8*/
   }
   FileStraw::Open(v8, (int)v14, 0); /*0x7650d7*/
-  CCFileClass::Close(v14); /*0x7650e0*/
+  BufferIOFileClass::Close(v14); /*0x7650e0*/
   v14[0] = (unsigned int)&off_7E1668; /*0x7650e9*/
   ((BufferIOFileClass *)(v14))->Dtor(); /*0x7650f1*/
   char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
@@ -394,11 +394,11 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
   {
     FileClass::Close((RawFileClass *)&v7.ambientSoundController[3]); /*0x765260*/
-    CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
+    BufferIOFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765269*/
     CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765279*/
   }
   FileStraw::Open((FileStraw *)&v7.ptr_8, (int)&v7.ambientSoundController[3], 0); /*0x765288*/
-  CCFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
+  BufferIOFileClass::Close((BufferIOFileClass *)&v7.ambientSoundController[3]); /*0x765291*/
   v7.ambientSoundController[3] = (int)&off_7E1668; /*0x76529a*/
   ((BufferIOFileClass *)&v7.ambientSoundController[3])->Dtor(); /*0x7652a2*/
   ((String *)&v7)->Assign( g_INI_Key_CampaignID); /*0x7652b0*/
@@ -705,7 +705,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v55.visibilityFlags = 0; /*0x7695bc*/
   /* X11: ptr_0 install elided (X67 recv-slot, RHS g_ptr_7EA5F4) */  /*0x7695c3*/
   FileStraw::Open((FileStraw *)&v55.ambientSoundController[1], (int)v55.needsRedraw, 0); /*0x7695ce*/
-  CCFileClass::Close((CCFileClass *)v55.needsRedraw); /*0x7695da*/
+  BufferIOFileClass::Close((CCFileClass *)v55.needsRedraw); /*0x7695da*/
   sub_47AA00((CDFileClass *)&v56, a2); /*0x7695e7*/
   ptr_0 = DecodeFrameSHP((int)&v56, 0, 0, 0); /*0x7695fc*/
   v55.ptr_0 = (int)ptr_0; /*0x769600*/
@@ -1543,7 +1543,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     v15 = 0; /*0x764aa2*/
     *(unsigned int *)&v4.ptr_4 = &g_ptr_7EA5F4; /*0x764aa6*/
     FileStraw::Open((FileStraw *)&v4.ptr_4, (int)&v16, 0); /*0x764aae*/
-    CCFileClass::Close((BufferIOFileClass *)&v16); /*0x764ab7*/
+    BufferIOFileClass::Close((BufferIOFileClass *)&v16); /*0x764ab7*/
     ((String *)&v4)->Assign( g_INI_Key_CampaignID); /*0x764ac5*/
     Int = INIClass::ReadInt((bool *)&v4.ptr_4, (char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
@@ -1583,11 +1583,11 @@ int sub_765580(unsigned int * a1)
   if ( !((File *)(v2))->IsReady(0) ) /*0x7655a2*/
   {
     FileClass::Close(v2); /*0x7655af*/
-    CCFileClass::Close(v2); /*0x7655b8*/
+    BufferIOFileClass::Close(v2); /*0x7655b8*/
     CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1); /*0x7655c8*/
   }
   FileStraw::Open(a1, (int)v2, 0); /*0x7655d8*/
-  CCFileClass::Close(v2); /*0x7655e1*/
+  BufferIOFileClass::Close(v2); /*0x7655e1*/
   v2[0] = (unsigned int)&off_7E1668; /*0x7655ea*/
   return ((BufferIOFileClass *)(v2))->Dtor(); /*0x7655f7*/
 }
