@@ -73,7 +73,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "C15", "C18", "C19", "C26", "CS", "MT", "MR", "IR", "MRH", "CP", "MD", "SP", "IT", "FS", "IV", "MS", "MH", "IG", "OT", "SG", "RU", "AS", "PU",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
-            "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5"]
+            "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
+            "SGN", "G2", "R1", "V2K"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0)",
     "MR": "member type via receiver domain x member_types (strict, two-pass)",
@@ -131,6 +132,10 @@ FAMILY_DESC = {
     "C2X": "compound this-offset fingerprints: function FN's traced-this accesses {(off,width,dir)} AND-matched against flat class layouts (>=3 distinct offsets, 1..8 candidates emitted) -> T-entity class-candidate mask (strict; evidence anchors/c18v2_compound_sigs.json, .omo/agents c18v2 v2)",
     "MW": "write-direction evidence for T: entities: (A) vfptr installs -- off==0 primary = ctor semantics, types=[C] single (parity with ctor_types/C4 EXACT, NO descendant widening; generator emits expanded [C]+desc only for off==col>0 own-column rows and MI col-match rows, verified at wiring); (B) pure-write this-offset fingerprints AND-matched vs layouts (strict; evidence anchors/mw_write_fingerprints.json)",
     "P5": "occupant param forms 5-8: PU6 lea-slot-addr-forwarded-to-call -> pointer-vocabulary mask from type_universe '*' tokens (HEURISTIC tier per pu5 report limitation #2: param-slot-as-scratch contamination mode; PU7/PU8 generator-side structural empty sets emit 0 rows; evidence anchors/pu5_forms.json; PU5 global-store eq edges of the same file wired separately via the EF-style bidirectional channel)",
+    "SGN": "signedness discriminator: strict post-call / in-body insn windows (RETX semantics) prove int vs unsigned int of a value via cdq / idiv / sar vs shr(N>8) / jcc-signed vs jcc-unsigned consumption -- NARROWING evidence: types=[single] collapses [int, unsigned int] dual-candidate domains to one value, AND-merging with RA-family int evidence naturally (named SGN because SG is already taken by stack-slot granularity, SA-for-SP precedent; strict; evidence anchors/signedness_types.json, 1,120 recs = 1,100 dual-narrowed + 20 single-confirmed; .omo/agents/sgn/sgn_discriminator.py)",
+    "G2": "GS site-args v2: full-library virtual-dispatch site push-argument ORIGIN types (gs-const-wide / gs-const01 / gs-str / gs-cons* rules, occupant_callarg guard) for GS:slot:k:root entities -- supersedes the narrow GX v1 pool with the whole-library site census (strict; evidence array of anchors/gs_site_args_v2.json, 10 recs; the 26 eq edges of the same file wired separately via the EF-style bidirectional channel, see the [G2] eq line)",
+    "R1": "RA1 official source class evidence: strict-name bridge our Class::Method (or legacy Class_Method[_ADDR]) <-> RA1 class alias (case/underscore/'Class'-suffix tolerance) with unique owner (HEURISTIC tier per ra1 phase-1 pooled strata accuracy 0.859, hierarchy 91-94%; wide-domain filter: only T:FN with domain>8 emitted, 2 recs both in-domain; gate --allow-heuristics; evidence anchors/ra1_types.json; source CnC_Red_Alert EA official)",
+    "V2K": "vera20k external oracle: 'Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR' mined from vera20k crossref example contexts (FUN_/sub_/nullsub/j_ excluded), STRICT attribution (pattern address == vera entry addr or our function start) + top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe (HEURISTIC tier per v20k pool accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types.json, 16 recs)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -2982,6 +2987,49 @@ def main():
         print("[GX] gs site-arg types: %d" % census["GX"], flush=True)
     except Exception as _e_gx:
         print("[GX] skipped: %r" % _e_gx, flush=True)
+    # SGN：符号判别器（signedness_types.json evidence 数组，1,120 recs）。语义 =
+    # 收窄：cdq/idiv/sar => int、shr(N>8)/jcc-unsigned => unsigned int，把
+    # [int, unsigned int] 双候选域收窄到单值（meta：dual_narrowed=1,100 +
+    # single_confirmed=20）。与 RA 族的 int 证据同簇时 AND 合并自然生效（两者
+    # 都是 AND 掩码，双候选域 ∩ 单值掩码 => 单值）。实体词汇 EAX:FN:site /
+    # RET:FN / S:FN:slot / P:FN:K（RA/RD/SG 族先例）。族名 SGN（SG 已被
+    # stack-slot granularity 占用，SA-for-SP 改名先例）。
+    try:
+        census["SGN"] = _load_type_family("anchors/signedness_types.json", "SGN")
+        print("[SGN] sign-discriminator types: %d" % census["SGN"], flush=True)
+    except Exception as _e_sgn:
+        census["SGN"] = census.get("SGN", 0)
+        print("[SGN] skipped: %r" % _e_sgn, flush=True)
+    # G2：GS 站点实参 v2（gs_site_args_v2.json evidence 数组，10 recs）——全库
+    # 虚分派站点 push 实参 origin 类型（gs-const-wide/gs-const01/gs-str/gs-cons*，
+    # occupant_callarg 守卫），实体 GS:slot:k:root，取代 GX v1 的窄池。同文件
+    # 26 条 eq 边另走 EF 同款双向通道（见 [G2] eq 行）。
+    try:
+        census["G2"] = _load_type_family("anchors/gs_site_args_v2.json", "G2")
+        print("[G2] gs-site-arg v2 types: %d" % census["G2"], flush=True)
+    except Exception as _e_g2:
+        census["G2"] = census.get("G2", 0)
+        print("[G2] types skipped: %r" % _e_g2, flush=True)
+    # R1：RA1 官方源码类证据（ra1_types.json evidence 数组，2 recs）——
+    # strict-name 桥接 our Class::Method <-> RA1 类别名（唯一 owner）。按 ra1
+    # phase-1 pooled 精度 0.859（分层 B+C-clean）归启发式层：gate --allow-heuristics
+    # （FS 先例：gate 关闭时打印 0）。宽域过滤生成器侧已做（domain>8 的 T:FN）。
+    try:
+        census["R1"] = _load_type_family("anchors/ra1_types.json", "R1", gate_heuristic=True)
+        print("[R1] ra1-official class types: %d" % census["R1"], flush=True)
+    except Exception as _e_r1:
+        census["R1"] = census.get("R1", 0)
+        print("[R1] skipped: %r" % _e_r1, flush=True)
+    # V2K：vera20k 外部 oracle（vera20k_types.json evidence 数组，16 recs）——
+    # crossref 例上下文 'Class::Method @ 0xADDR' 挖掘、严格归因 + 最高频限定名，
+    # 类前缀经 class_name_align canon 化。按 v20k 池精度 92.2% 归启发式层：
+    # gate --allow-heuristics（FS 先例）。
+    try:
+        census["V2K"] = _load_type_family("anchors/vera20k_types.json", "V2K", gate_heuristic=True)
+        print("[V2K] vera20k oracle class types: %d" % census["V2K"], flush=True)
+    except Exception as _e_v2k:
+        census["V2K"] = census.get("V2K", 0)
+        print("[V2K] skipped: %r" % _e_v2k, flush=True)
     if getattr(args, "allow_heuristics", False):
         try:
             census["RU"] = _load_type_family("anchors/ret_usage_types_gated.json", "RU")
@@ -6125,6 +6173,54 @@ def main():
         print("[GX] gs-site-arg eq edges=%d" % _n_gxe, flush=True)
     except Exception as _e_gxe:
         print("[GX] edges skipped: %r" % _e_gxe, flush=True)
+    # ---- ES 返回值存储等值（eax_store_edges：EAX:FN:site == M:/G:，EF 同款通道）----
+    # 语义：RETX-E 返回值存储——严格后调用 EAX 窗口（RETX-A 语义：前推到 EAX 被
+    # 改写/块边界/pushad/另一 call/12 指令；mov 拷贝扩展最多 eax+1 个寄存器）内
+    # 的 dword 存储等值：eax-mstore `mov [reg+off],<tracked>`（off!=0、reg 解析
+    # 为 this —— entry-ecx thiscall/fastcall 或 [ebp+8] 非thiscall-this）=>
+    # EAX:FN:callsite == M:FN:this:0xOFF；eax-gstore `mov [global],<tracked>`
+    # （signals.json globals 解析）=> EAX == G:ADDR。窄存储（al/ax）生成器侧已
+    # 排除。存储位置与返回值是同一值 ⇒ 双向等值边（EF/SW/PF 同款：不经 un()
+    # 硬合并，R:/V: 过滤，冲突以空域形式交中和器裁决）。
+    try:
+        _ese = jload("anchors/eax_store_edges.json", {}) or {}
+        _n_ese = 0
+        _es_via = collections.Counter()
+        for _r1 in (_ese.get("edges") or []):
+            _a1 = (_r1 or {}).get("eax")
+            _b1 = (_r1 or {}).get("eq")
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_ese += 2
+            _es_via[(_r1 or {}).get("via") or "?"] += 1
+        print("[ES] eax-store eq edges=%d (via=%s)" % (_n_ese, dict(_es_via)), flush=True)
+    except Exception as _e_ese:
+        print("[ES] eq edges skipped: %r" % _e_ese, flush=True)
+    # ---- GS 站点实参 v2 等值（gs_site_args_v2：GS:slot:k:root == origin 实体，GX 直达式）----
+    # 语义与 GX eq 相同（v2 全库站点 census 的 bind-origin 等值：gs-pdirect /
+    # gs-glob），走同一双向通道；pair 列表格式与 GX v1 一致。
+    try:
+        _g2e = jload("anchors/gs_site_args_v2.json", {}) or {}
+        _n_g2e = 0
+        for _a1, _b1 in (_g2e.get("edges") or []):
+            if not (isinstance(_a1, str) and isinstance(_b1, str)):
+                continue
+            if _a1.startswith(("R:", "V:")) or _b1.startswith(("R:", "V:")):
+                continue
+            _call_edges.append((_a1, _b1))
+            _call_edges_p2.append((_a1, _b1))
+            _call_edges.append((_b1, _a1))
+            _call_edges_p2.append((_b1, _a1))
+            _n_g2e += 2
+        print("[G2] gs-site-arg-v2 eq edges=%d" % _n_g2e, flush=True)
+    except Exception as _e_g2e:
+        print("[G2] edges skipped: %r" % _e_g2e, flush=True)
 
     _incr_fp_ok = False
     _INCR_BASE_NOW = None

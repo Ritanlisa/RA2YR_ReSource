@@ -1,0 +1,334 @@
+{
+ "meta": {
+  "tier": "heuristic",
+  "accuracy": "92.2% (615 pool)",
+  "accuracy_source": ".omo/agents/recon/report.md §2 (50-sample 98.0%; full-pool 615 = 567/615; 305/305 binary referee support)",
+  "generated": "2026-11-07",
+  "source": "anchors/vera20k_crossref.json (vera20k head 9074499f, clone 2026-11-06)",
+  "method": "mine 'Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR' from crossref example contexts (FUN_/sub_/nullsub/j_ excluded); STRICT attribution: pattern address must equal entry vera_addr or our function start; top-frequency qualified name per address; class prefix canonized via class_name_align + canon universe (class_layouts ∪ member_types, +Class fallback)",
+  "gate": "heuristic layer only (gate_heuristic=True families); wide-domain filter: T:FN in minclass_domains.json with domain > 8",
+  "exemptions": [
+   {
+    "rule": "vera-audio-aggregate",
+    "description": "vera class prefix in its own aggregate audio namespace; no RTTI referee; recon §2.4 dominant divergence family",
+    "prefixes": [
+     "AudioEventClass",
+     "AudioSystem",
+     "DSoundBuffer",
+     "DSoundChannel",
+     "IMA_ADPCM",
+     "InterpGroup",
+     "SoundEvent",
+     "SoundEventPool",
+     "SoundSystem",
+     "StreamBuffer",
+     "StreamPlayer",
+     "VocHandle",
+     "VolumeInterp",
+     "WAV"
+    ],
+    "hits": 14
+   },
+   {
+    "rule": "canon-audio-core",
+    "description": "canonized class in {Audio, AudioMixer, AudioStream, AudioController}: audio-subsystem receiver identity is disputed between vera aggregate naming and our Audio family, not adjudicable without referee (e.g. 0x409de0 our=AudioController::LoadThemeBank vs vera=Audio__DecodeCompressedBlock)",
+    "classes": [
+     "Audio",
+     "AudioController",
+     "AudioMixer",
+     "AudioStream"
+    ],
+    "hits": 1
+   }
+  ],
+  "counts": {
+   "vera_named_function_addrs_strict": 1206,
+   "named_with_T_entity": 71,
+   "wide_named_candidates": 38,
+   "emitted_T_fn_class": 16,
+   "canon_normalize_fail_on_wide": 7,
+   "canon_fail_families": {
+    "WallClock": 1,
+    "Math": 4,
+    "CellRect": 1,
+    "ScenarioPause": 1
+   },
+   "exempt_vera_audio": 14,
+   "exempt_canon_audio": 1,
+   "emitted_P_param": 0,
+   "emitted_RET": 0
+  },
+  "notes": [
+   "param/return type info NOT AVAILABLE in vera20k_crossref: only 2 example contexts carry a \"proto\" JSON key and both are format-documentation samples (tools/ghidra_compare.md), no per-function signature data → P:/RET: extraction = 0",
+   "Math prefix (4 wide hits) is a namespace, not a canon class → canonize fail, not emitted",
+   "mining is strict-address (hardened vs recon pilot which attributed all qualified names in context to the entry); 1206 strict-named addrs vs 986 pilot-loose on exact matches",
+   "wiring (not done here): consume evidence only in --allow-heuristics path of minclass_solver, as single OR-vote on T domain"
+  ]
+ },
+ "evidence": [
+  {
+   "ent": "T:401640",
+   "types": [
+    "AudioIndex"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x401640",
+   "vera_name": "AudioIndex__GetFormat",
+   "votes": 3,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1337
+  },
+  {
+   "ent": "T:750D40",
+   "types": [
+    "AnimClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x750d40",
+   "vera_name": "AnimClass::UpdateLoopingSound",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:750E20",
+   "types": [
+    "VocClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x750e20",
+   "vera_name": "VocClass::PlayAtCoord",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:53A100",
+   "types": [
+    "LightningStorm"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x53a100",
+   "vera_name": "LightningStorm::IsActive",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:4CEFB0",
+   "types": [
+    "FlyLocomotionClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x4cefb0",
+   "vera_name": "FlyLocomotionClass::Horizontal_Step",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 786
+  },
+  {
+   "ent": "T:4ADCD0",
+   "types": [
+    "MapClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x4adcd0",
+   "vera_name": "MapClass::ParanoidUnrevealAll",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:4ADEE0",
+   "types": [
+    "MapClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x4adee0",
+   "vera_name": "MapClass::ParanoidRevealAll",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:539EB0",
+   "types": [
+    "LightningStorm"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x539eb0",
+   "vera_name": "LightningStorm::Start",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:7BC040",
+   "types": [
+    "XSurface"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x7bc040",
+   "vera_name": "XSurface::Prep_For_Blit",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 858
+  },
+  {
+   "ent": "T:474620",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x474620",
+   "vera_name": "CCINIClass::ReadRange",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:705860",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x705860",
+   "vera_name": "TechnoClass::DrawAirstrikeFlare",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "md",
+    "meta",
+    "py"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:4064A0",
+   "types": [
+    "VocClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x4064a0",
+   "vera_name": "VocClass::AddSample",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:750AC0",
+   "types": [
+    "VocClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x750ac0",
+   "vera_name": "VocClass::CalcVolumeAndPan",
+   "votes": 5,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:752590",
+   "types": [
+    "VoxClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x752590",
+   "vera_name": "VoxClass::InsertIntoQueue",
+   "votes": 2,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:750F40",
+   "types": [
+    "VocClass"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x750f40",
+   "vera_name": "VocClass::StopAtCoord",
+   "votes": 2,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  },
+  {
+   "ent": "T:53A140",
+   "types": [
+    "LightningStorm"
+   ],
+   "via": "v20k-fn-class",
+   "addr": "0x53a140",
+   "vera_name": "LightningStorm::CreateCloudBolt",
+   "votes": 2,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524
+  }
+ ]
+}

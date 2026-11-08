@@ -1,0 +1,51 @@
+{
+ "meta": {
+  "tier": "heuristic",
+  "accuracy": 0.8587,
+  "accuracy_note": "Phase-1 pooled strata B+C-clean (see .omo/agents/ra1/PHASE1_REPORT.md); stratum D hierarchy 91-94%",
+  "match": "strict-name",
+  "match_rule": "full-path: our Class::Method (or legacy Class_Method[_ADDR]) <-> RA1 class alias (case/underscore/'Class'-suffix tolerance) with normalized-equal method name, unique owner",
+  "source": "CnC_Red_Alert (EA official RA1 source)",
+  "source_tool": ".omo/agents/ra1/parse_ra1.py -> ra1_classes.json (253 classes)",
+  "generated": "2026-11-08",
+  "entities_scanned": 912,
+  "evidence_count": 2,
+  "in_domain_count": 2,
+  "skipped": {
+   "no_name": 2,
+   "no_bridge": 908
+  },
+  "yield_analysis": "Wide-domain (dom>8) T: pool is dominated by YR-era additions (audio/CRT/WOL/LightningStorm/RadSite/NetworkBuffer...), sub_* anonymous names, and systematic RA1->TS/YR renames that fail strict-name bridging by design. Known systematic rename families (evolution breakpoints, NOT bridgeable under strict rule): INIClass Get_* -> Read_* (e.g. Get_Int/ReadInt, Get_Point2D/ReadPoint2D_Overwrite at 0x529880); underscore multiword -> CamelCase compaction with word drift (Reveal_Shroud vs RevealShroudForAllies); DriveClass layer removed (Start_Driver moved); tactical UI merged (RA1 DisplayClass -> YR TacticalClass naming). Surviving-class methods that keep exact RA1 names mostly live in already-narrow solver domains, hence tiny wide-pool yield.",
+  "verification": "Both evidence entries confirmed in RA1 source: TimerClass::Get_Ticks (WWFLAT32/TIMER/TIMER.CPP), ObjectClass::Init (CODE/OBJECT.CPP)"
+ },
+ "evidence": [
+  {
+   "ent": "T:6C8C40",
+   "types": [
+    "TimerClass"
+   ],
+   "via": "ra1-official",
+   "ra1_method": "TimerClass::Get_Ticks",
+   "fn": "0x6c8c40",
+   "our_name": "Timer::GetTicks",
+   "ra1_file": "WIN32LIB\\SRCDEBUG\\TIMER.CPP",
+   "domain": 1524,
+   "in_domain": true,
+   "solver_class": "BuildingClass"
+  },
+  {
+   "ent": "T:646E90",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "ra1-official",
+   "ra1_method": "ObjectClass::Init",
+   "fn": "0x646e90",
+   "our_name": "Object_Init",
+   "ra1_file": "CODE\\OBJECT.CPP",
+   "domain": 1524,
+   "in_domain": true,
+   "solver_class": "BuildingClass"
+  }
+ ]
+}
