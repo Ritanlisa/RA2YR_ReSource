@@ -1,2 +1,6 @@
 /target
 Cargo.lock
+
+pyext/target
+pyext/*.pyd
+pyext/__pycache__

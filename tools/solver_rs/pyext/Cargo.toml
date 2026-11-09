@@ -1,0 +1,19 @@
+[package]
+name = "minclass_rs"
+version = "0.1.0"
+edition = "2021"
+description = "PyO3 extension: Rust kernels for minclass_solver hot path (solve pipeline + C10 fixpoint)"
+build = "build.rs"
+
+[lib]
+name = "minclass_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.27", features = ["extension-module"] }
+rayon = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+debug = false

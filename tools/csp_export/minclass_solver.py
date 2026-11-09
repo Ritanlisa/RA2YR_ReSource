@@ -1348,6 +1348,44 @@ def main():
     args, _sched_flags = ap.parse_known_args()
     _sched = set(_sched_flags) | set(sys.argv[1:])
 
+    # ---------------- Rust 内核旗标 --use-rs（sys.argv 探测，不进缓存键）----------------
+    # 集成轮（2026-11-10）：solve 管线（cluster_domains+greedy+improve+LB）与
+    # C10 不动点下沉到 tools/solver_rs/pyext 的 minclass_rs 扩展；证据构建、
+    # 冲突消解编排、dump 写盘全部保留 Python。语义契约：--use-rs 与纯 Python
+    # 的 dump 产物逐字节一致（MC_RS_VERIFY=1 进程内逐项对拍；端到端对拍另跑）。
+    # 纯 Python 路径原样保留（本旗标纯增量，缺省关闭）。
+    _rs_cell = [None]               # [PySolver]，C10 阶段前构建（见下方 [rs-build]）
+    _rs_mod_cell = [None]           # [minclass_rs module]
+    _RS_VERIFY = False
+    if "--use-rs" in _sched:
+        _rs_reason = None
+        if "--c1-covers" in _sched or "--strict-c1" in _sched:
+            _rs_reason = "--c1-covers/--strict-c1 (C1 covers 语义未下沉)"
+        elif "--incremental" in _sched:
+            _rs_reason = "--incremental（检查点 memo 路径为 Python 专属）"
+        elif os.environ.get("MC_DBG_ROOT"):
+            _rs_reason = "MC_DBG_ROOT 调试路径"
+        elif os.environ.get("MC_ROOT_DIAG") or os.environ.get("MC_CA_ANALYZE"):
+            _rs_reason = "MC_ROOT_DIAG/MC_CA_ANALYZE 诊断路径"
+        if _rs_reason is None:
+            try:
+                sys.path.insert(0, os.path.join(ROOT, "tools", "solver_rs", "pyext"))
+                import minclass_rs as _rs_mod
+                _rs_mod_cell[0] = _rs_mod
+                print("[rs] minclass_rs extension loaded (solve pipeline + C10 fixpoint)",
+                      flush=True)
+            except Exception as _e_rs:
+                print("[rs] extension unavailable (%r) -- pure Python fallback"
+                      % (_e_rs,), flush=True)
+                _rs_reason = "load failed"
+        else:
+            print("[rs] disabled: %s -- pure Python" % _rs_reason, flush=True)
+        if _rs_mod_cell[0] is not None:
+            _RS_VERIFY = bool(os.environ.get("MC_RS_VERIFY"))
+            if _RS_VERIFY:
+                print("[rs] MC_RS_VERIFY=1: 每次 solve 双跑（Python 参照 vs Rust）逐项对拍",
+                      flush=True)
+
     # --restore-dumps[=strict|heur]：从结果缓存最新完整条目恢复 dump 产物，不求解。
     if any(s.startswith("--restore-dumps") for s in _sched):
         _tok = [s for s in _sched if s.startswith("--restore-dumps")][0]
@@ -5478,7 +5516,180 @@ def main():
 
     HARD_FLAGS = ("exact_conflict", "empty_domain")
 
+    # ---------------- --use-rs：solve 管线下沉 Rust（K1） ----------------
+    # 语义 1:1 复刻 _solve_py：cluster_domains(含 C1 尺寸下界/_pfm/接收者钳制/
+    # EXACT 分支/空域回退) + greedy(counts 首现序平局) + improve(2换1) +
+    # lower_bound + solve 统计。flags 内容仅对 conflicted 簇在 Python 侧重建
+    #（成功路径 conflicted 恒空——非空即 FATAL 退出，不落盘）。
+    def _rs_solve(enabled):
+        _nb = (n + 7) // 8
+        _out = _rs_cell[0].solve(
+            list(enabled), _proven_cell[0].to_bytes(_nb, "little"),
+            list(_unknown_roots), args.max_pair_improve, bool(_RS_VERIFY))
+        _masks_b = _out["masks"]
+        _exci_a = _out["exci"]
+        _flags_a = _out["flagbits"]
+        _popc_a = _out["popcounts"]
+        _contra_m = _out["contra"]
+        _F_EC, _F_ED, _F_GAP, _F_WC, _F_XCF = 1, 2, 4, 8, 16
+
+        def _flags_rebuild(ci_cl):
+            """conflicted 簇的 flags/exci/exsrc 重建（镜像 cluster_domains）。
+            仅 n_conflicts 个簇走此路径（成功解恒为 0——非空即 FATAL）。"""
+            cl = clusters[ci_cl]
+            fl = _flags_a[ci_cl]
+            flags = {}
+            if fl & _F_GAP:
+                flags["c1_gap"] = True
+            if fl & _F_ED:
+                flags["empty_domain"] = True
+            exs = {}
+            for ci, ss in cl["exact"].items():
+                kept = [s for s in ss
+                        if not (s.startswith("C4") and "C4" not in enabled)
+                        and not (s.startswith("C8") and "C8" not in enabled)]
+                if kept:
+                    exs[ci] = kept
+            exci, exsrc = None, []
+            if len(exs) == 1:
+                exci = next(iter(exs))
+                exsrc = [(names[exci], s) for s in exs[exci]]
+                if fl & _F_WC:
+                    flags["width_conflict"] = c1_width_conflict(exci, cl["obs"])
+                if fl & _F_XCF:
+                    _ctr = []
+                    for _cf in (_contra_m.get(ci_cl) or []):
+                        _ctr.append("C1(missing-offset)" if _cf == 65535
+                                    else FAMILIES[_cf])
+                    flags["exact_contradicts_family"] = _ctr
+            elif len(exs) > 1:
+                exsrc = [(names[ci], s) for ci, ss in exs.items() for s in ss]
+                flags["exact_conflict"] = sorted(names[ci] for ci in exs)
+            return exci, exsrc, flags
+
+        _constrained = []
+        _dom_sizes = {}
+        _dom_names = {}
+        _dom_ents = {}
+        _cluster_obs = {}
+        for _slot, _ci_cl in enumerate(_out["constrained"]):
+            _cl = clusters[_ci_cl]
+            _m = int.from_bytes(_masks_b[_ci_cl], "little")
+            _constrained.append((_cl, _m))
+            _rk = _cl["root"]
+            _pop = _popc_a[_ci_cl]
+            _dom_sizes[_rk] = _pop
+            if 0 < _pop <= 1600:
+                _dom_names[_rk] = [names[_b] for _b in _out["dom_bits"][_slot]]
+            if 0 < _pop <= 64:
+                _dom_ents[_rk] = list(_cl["ents"])[:6]
+            _cluster_obs[_rk] = sorted(_cl["obs"])
+        _conflicted = []
+        for _ci_cl in _out["conflicted"]:
+            _exci_r, _exsrc_r, _flags_r = _flags_rebuild(_ci_cl)
+            _conflicted.append((clusters[_ci_cl],
+                                int.from_bytes(_masks_b[_ci_cl], "little"),
+                                _exci_r, _exsrc_r, _flags_r))
+        _assign = {_cl: _c for (_cl, _c) in _out["assign_pairs"]}
+        _res = {
+            "conflicted": _conflicted, "constrained": _constrained,
+            "free": _out["free"], "chosen": _out["chosen"], "k": _out["k"],
+            "k_solvable": _out["k"], "k_upper": _out["k"] + len(_conflicted),
+            "k_greedy": _out["k_greedy"], "lower_bound": _out["lower_bound"],
+            "merges": _out["merges"], "assign": _assign,
+            "c1_gaps": _out["c1_gaps"], "exact_conflicts": _out["exact_conflicts"],
+            "n_conflicts": _out["n_conflicts"], "pinned_classes": _out["pinned_classes"],
+            "forced_classes": _out["forced_classes"], "bad_cover": _out["bad_cover"],
+            "flagged": [], "diag_flagged": _out["diag_flagged"],
+            "dom_sizes": _dom_sizes, "dom_names": _dom_names, "dom_ents": _dom_ents,
+            "cluster_obs": _cluster_obs,
+            "assign_map": {str(_cl): _c for (_cl, _c) in _out["assign_pairs"]},
+            "constrained_sample": ["dict" if _constrained else "none",
+                                   (_constrained[0][0] if _constrained else None)],
+        }
+        if _RS_VERIFY:
+            _res["__raw_masks__"] = _masks_b
+            _res["__exci__"] = _exci_a
+            _res["__flagbits__"] = _flags_a
+        return _res
+
+    def _rs_verify_compare(res_py, res_rs, enabled):
+        """MC_RS_VERIFY：Python 参照 vs Rust 逐项对拍（fail-closed，差异即退出 2）。"""
+        _errs = []
+        _doms_py = cluster_domains([x for x in enabled if x != "C1"])
+        _masks_b = res_rs.get("__raw_masks__") or {}
+        _exci_a = res_rs.get("__exci__") or []
+        _flags_a = res_rs.get("__flagbits__") or []
+        _F_EC, _F_ED, _F_GAP, _F_WC, _F_XCF = 1, 2, 4, 8, 16
+        _n_bad = 0
+        for _i, (_cl, _m, _exci, _exsrc, _fl) in enumerate(_doms_py):
+            _rm = int.from_bytes(_masks_b[_i], "little")
+            if _rm != _m:
+                _n_bad += 1
+                if _n_bad <= 5:
+                    _errs.append("cluster %d %s mask py=%d bits rs=%d bits"
+                                 % (_i, _cl.get("root"), _m.bit_count(), _rm.bit_count()))
+            _r_exci = _exci_a[_i]
+            if (_r_exci if _r_exci >= 0 else None) != _exci:
+                _n_bad += 1
+                if _n_bad <= 5:
+                    _errs.append("cluster %d %s exci py=%s rs=%s"
+                                 % (_i, _cl.get("root"), _exci, _r_exci))
+            _py_keys = set(_fl)
+            _rs_keys = set()
+            _fb = _flags_a[_i]
+            if _fb & _F_EC: _rs_keys.add("exact_conflict")
+            if _fb & _F_ED: _rs_keys.add("empty_domain")
+            if _fb & _F_GAP: _rs_keys.add("c1_gap")
+            if _fb & _F_WC: _rs_keys.add("width_conflict")
+            if _fb & _F_XCF: _rs_keys.add("exact_contradicts_family")
+            if _py_keys != _rs_keys:
+                _n_bad += 1
+                if _n_bad <= 5:
+                    _errs.append("cluster %d %s flags py=%s rs=%s"
+                                 % (_i, _cl.get("root"), sorted(_py_keys), sorted(_rs_keys)))
+        for _k_cmp in ("k", "k_greedy", "lower_bound", "merges", "pinned_classes",
+                       "forced_classes", "bad_cover", "c1_gaps", "n_conflicts",
+                       "exact_conflicts", "free", "diag_flagged"):
+            if res_py[_k_cmp] != res_rs[_k_cmp]:
+                _errs.append("%s py=%s rs=%s" % (_k_cmp, res_py[_k_cmp], res_rs[_k_cmp]))
+        if [c for c, _ in res_py["constrained"]] != [c for c, _ in res_rs["constrained"]]:
+            _errs.append("constrained cluster order differs (py=%d rs=%d)"
+                         % (len(res_py["constrained"]), len(res_rs["constrained"])))
+        else:
+            for (_clp, _mp), (_clr, _mr) in zip(res_py["constrained"], res_rs["constrained"]):
+                if _mp != _mr:
+                    _errs.append("constrained %s mask differs" % _clp.get("root"))
+                    break
+        if res_py["chosen"] != res_rs["chosen"]:
+            _errs.append("chosen differs (py=%s rs=%s...)"
+                         % (res_py["chosen"][:8], res_rs["chosen"][:8]))
+        if res_py["assign"] != res_rs["assign"]:
+            _errs.append("assign differs (%d entries)"
+                         % sum(1 for k in res_py["assign"]
+                               if res_py["assign"].get(k) != res_rs["assign"].get(k)))
+        if _errs:
+            print("[rs-verify] DIFF (%d cluster-level + %d structural):"
+                  % (_n_bad, len(_errs)), flush=True)
+            for _e_v in _errs[:24]:
+                print("   %s" % _e_v, flush=True)
+            sys.exit(2)
+        print("[rs-verify] PASS: %d clusters mask/exci/flags 一致; "
+              "constrained=%d chosen=%d assign=%d K=%d"
+              % (len(_doms_py), len(res_rs["constrained"]), len(res_rs["chosen"]),
+                 len(res_rs["assign"]), res_rs["k"]), flush=True)
+
     def solve(enabled):
+        if _rs_cell[0] is not None:
+            _res = _rs_solve(enabled)
+            if _RS_VERIFY:
+                _py = _solve_py(enabled)
+                # verify 需要全簇原始数组——重取一次（all_masks=True 已在 _rs_solve）
+                _rs_verify_compare(_py, _res, enabled)
+            return _res
+        return _solve_py(enabled)
+
+    def _solve_py(enabled):
         doms = cluster_domains([x for x in enabled if x != "C1"])
         conflicted = [d for d in doms if any(k in d[4] for k in HARD_FLAGS)]
         clean = [d for d in doms if not any(k in d[4] for k in HARD_FLAGS)]
@@ -6785,6 +6996,45 @@ def main():
     _edges_fix = []
     _edges_pre_incr = []
     _dom_fix = {}
+
+    # ---------------- [rs-build] --use-rs：构建 Rust 求解器对象 ----------------
+    # 此处 fam 除 C10 外全部冻结（C10 在下方不动点写回后经 add_family_entries
+    # 增量注入——C10 内核自身跳过 C10 族，不受影响）；clusters/exact/ents/
+    # intervals/eff_size 自簇构建后即冻结。
+    if _rs_mod_cell[0] is not None:
+        _t_rs0 = time.time()
+        _nb = (n + 7) // 8
+        _fam_eids, _fam_masks = [], []
+        for _fr in FAMILIES:
+            _ek = list(fam[_fr].keys())
+            _fam_eids.append(_ek)
+            _fam_masks.append([fam[_fr][_e].to_bytes(_nb, "little") for _e in _ek])
+        _rs_cell[0] = _rs_mod_cell[0].PySolver(
+            n_bits=n,
+            classmask=_CLASSMASK.to_bytes(_nb, "little"),
+            families=list(FAMILIES),
+            fam_eids=_fam_eids,
+            fam_masks=_fam_masks,
+            roots=[_cl["root"] for _cl in clusters],
+            cluster_ents=[list(_cl["ents"]) for _cl in clusters],
+            cluster_obs=[[(_o, -1 if _w is None else _w) for (_o, _w) in _cl["obs"]]
+                         for _cl in clusters],
+            cluster_exact=[[(_ci, list(_ss)) for _ci, _ss in _cl["exact"].items()]
+                           for _cl in clusters],
+            eff_size=[-1 if _s is None else int(_s) for _s in U["eff_size"]],
+            intervals=[list(_iv) for _iv in intervals],
+            dense=list(dense),
+            all_exact_classes=sorted(ALL_EXACT_CLASSES),
+            anc=[sorted(U["anc"][_i]) for _i in range(n)],
+            desc=[sorted(U["desc"][_i]) for _i in range(n)],
+            exact_eids=list(exact.keys()),
+            exact_cis=[[_ci for (_ci, _s) in _lst] for _lst in exact.values()],
+            ent_ids=list(ents.keys()),
+        )
+        print("[rs] PySolver built: %d classes %d clusters %d fam-entries %.1fs"
+              % (n, len(clusters), sum(len(_x) for _x in _fam_eids),
+                 time.time() - _t_rs0), flush=True)
+
     if _call_edges:
         # 除 C10 外全部族的合并域（初始证据；C10 跳过避免自污染）
         def _c10_base_dom(_edges):
@@ -7060,7 +7310,25 @@ def main():
         _neutralized_total = 0
         _ent_neutralized = 0
         _root_diag = [] if os.environ.get("MC_ROOT_DIAG") else None
-        for _outer in range(0 if _incr_fp_ok else 14):   # 增量成功时跳过中和器（已验证无空域）
+        # --use-rs：C10 不动点整体下沉（base_dom + 12 轮混沌传播 + 14 轮中和
+        # 器，语义 1:1——dead_j 优先/本地互斥根 witness/边过滤重传播同款）。
+        # Rust 路径完成时以空 range 跳过下方 Python 循环（--skip-family-table
+        # 先例）；增量成功时照旧跳过（dom 来自检查点）。
+        _rs10_done = False
+        if _rs_cell[0] is not None and not _incr_fp_ok:
+            _t_rs10 = time.time()
+            _r10 = _rs_cell[0].c10_fixpoint(_edges_fix)
+            _edges_fix = [(_a10, _b10) for (_a10, _b10) in _r10["edges"]]
+            _dom_fix = {_e10: int.from_bytes(_m10, "little")
+                        for _e10, _m10 in _r10["dom"].items()}
+            _empty_ids = list(_r10["empty_ids"])
+            _neutralized_total = _r10["neutralized_total"]
+            for _de10 in _empty_ids:
+                _empty_pfx[str(_de10).split(":")[0]] += 1
+            _rs10_done = True
+            print("[rs] C10 fixpoint: steps=%d skipped=%d %.1fs"
+                  % (_r10["steps"], _r10["skipped"], time.time() - _t_rs10), flush=True)
+        for _outer in (() if _rs10_done else range(0 if _incr_fp_ok else 14)):   # 增量成功时跳过中和器（已验证无空域）
             _steps_f, _sk_f = _c10_propagate(_edges_fix, _dom_fix, _skip_empty=False)
             _empt_all = {e for e, m in _dom_fix.items() if m == 0}
             if not _empt_all:
@@ -7123,6 +7391,14 @@ def main():
             if _m != FULL:
                 fam["C10"][_eid] = fam["C10"].get(_eid, FULL) & _m
                 _c10_fx_constrained += 1
+        if _rs_cell[0] is not None:
+            # --use-rs：C10 写回完成后把最终 fam["C10"] 掩码增量注入 Rust 求解器
+            #（构建时 C10 族为空——内核 base_dom 本就跳过 C10，两不相扰）。
+            _nb10 = (n + 7) // 8
+            _c10k = list(fam["C10"].keys())
+            _rs_cell[0].add_family_entries(
+                "C10", _c10k,
+                [fam["C10"][_e].to_bytes(_nb10, "little") for _e in _c10k])
         print("[C10] fixpoint: edges=%d constrained=%d roots_neutralized=%d(ent) "
               "cascades_saved=%d"
               % (len(_edges_fix), _c10_fx_constrained, len(_empty_ids),
