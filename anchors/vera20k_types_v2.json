@@ -1,0 +1,2312 @@
+{
+ "meta": {
+  "tier": "heuristic",
+  "accuracy": "92.2% (615 pool)",
+  "accuracy_source": ".omo/agents/recon/report.md §2 (50-sample 98.0%; full-pool 615 = 567/615; 305/305 binary referee support)",
+  "generated": "2026-11-09",
+  "source": "anchors/vera20k_crossref.json (vera20k head 9074499f, clone 2026-11-06)",
+  "method": "round 2 of the V2K family (.omo/agents/vera2/extract_v2.py): same strict mining as v1 ('Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR', FUN_/sub_/nullsub/j_ excluded, pattern address must equal entry vera_addr or our function start, top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe); attribution target widened from T-only to R:<addr>:ecx receiver entities (primary) + T:<addr> wide residual; via='vera-rclass'",
+  "gate": "heuristic layer only (gate_heuristic=True families); wide-domain filter: R:FN:ecx / T:FN in minclass_domains.json with domain > 8; pinned (domain=1) and narrow entities untouched; T entities already emitted in vera20k_types.json (v1 via v20k-fn-class) excluded as covered",
+  "exemptions": [
+   {
+    "rule": "vera-audio-aggregate",
+    "description": "vera class prefix in its own aggregate audio namespace; no RTTI referee; recon §2.4 dominant divergence family",
+    "prefixes": [
+     "AudioEventClass",
+     "AudioSystem",
+     "DSoundBuffer",
+     "DSoundChannel",
+     "IMA_ADPCM",
+     "InterpGroup",
+     "SoundEvent",
+     "SoundEventPool",
+     "SoundSystem",
+     "StreamBuffer",
+     "StreamPlayer",
+     "VocHandle",
+     "VolumeInterp",
+     "WAV"
+    ],
+    "hits": 30
+   },
+   {
+    "rule": "canon-audio-core",
+    "description": "canonized class in {Audio, AudioMixer, AudioStream, AudioController}: audio-subsystem receiver identity is disputed between vera aggregate naming and our Audio family, not adjudicable without referee (e.g. 0x409de0 our=AudioController::LoadThemeBank vs vera=Audio__DecodeCompressedBlock)",
+    "classes": [
+     "Audio",
+     "AudioController",
+     "AudioMixer",
+     "AudioStream"
+    ],
+    "hits": 2
+   }
+  ],
+  "counts": {
+   "vera_named_function_addrs_strict": 1206,
+   "R_named": 811,
+   "R_wide_named_candidates": 179,
+   "R_emitted": 126,
+   "R_canon_normalize_fail": 35,
+   "R_canon_fail_families": {
+    "CoordStruct": 1,
+    "PathfinderClass": 1,
+    "MinHeap": 1,
+    "BombListClass": 1,
+    "CrateSlot": 2,
+    "CreditsClass": 1,
+    "EBoltMgr": 1,
+    "ProximityDetector": 1,
+    "OptionsClass": 7,
+    "SuperWeaponEffects": 1,
+    "IonBlastClass": 2,
+    "SpawnRetreat": 1,
+    "Kamikaze": 1,
+    "LaserDrawClass": 1,
+    "RandomMapSetupDialog": 1,
+    "RandomMapGenerator": 2,
+    "FloatMinHeap": 1,
+    "SpotLightClass": 1,
+    "GameExit": 2,
+    "StripClass": 2,
+    "StorageClass": 1,
+    "VeterancyClass": 1,
+    "VeterancyStruct": 2
+   },
+   "T_named": 71,
+   "T_wide_named_candidates": 21,
+   "T_already_in_v1": 16,
+   "T_emitted_residual": 0,
+   "T_canon_normalize_fail": 7,
+   "T_canon_fail_families": {
+    "Math": 4,
+    "CellRect": 1,
+    "ScenarioPause": 1,
+    "WallClock": 1
+   },
+   "exempt_vera_audio_total": 30,
+   "exempt_canon_audio_total": 2,
+   "emitted_RET": 0,
+   "emitted_P": 0,
+   "emitted_total": 126
+  },
+  "notes": [
+   "param/return type info re-verified NOT AVAILABLE in vera20k_crossref (.omo/agents/vera2/probe_fields.py): address-level keys are metadata only (vera_addr/our_*/tiers/ref_files/examples...); example-level keys are {context,file,line}; the only 2 \"proto\" contexts are format-documentation samples in tools/ghidra_compare.md; remaining \"return\" mentions are prose (e.g. \"returns NULL before any draw\") with no attributable class type → RET:/P: extraction = 0",
+   "R:<addr>:ecx is the primary attack surface (receivers, ~65% of named pool); T entities already covered by v1 excluded; vera \"defining base class\" habit (TechnoClass::X qualifying derived virtuals) is LCA-compatible (recon §2.5), no special handling",
+   "wiring (not done here): consume evidence only in --allow-heuristics path of minclass_solver, as single OR-vote on R/T domain — same as v1 note"
+  ]
+ },
+ "evidence": [
+  {
+   "ent": "R:418E20:ecx",
+   "types": [
+    "AircraftClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x418e20",
+   "vera_name": "AircraftClass::Find_Attack_Cell",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:419B00:ecx",
+   "types": [
+    "AircraftClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x419b00",
+   "vera_name": "AircraftClass::Is_Cell_Free_For_Landing",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 786,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:41A160:ecx",
+   "types": [
+    "AircraftClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x41a160",
+   "vera_name": "AircraftClass::Find_Nearest_Friendly_Airfield",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:41B760:ecx",
+   "types": [
+    "AircraftClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x41b760",
+   "vera_name": "AircraftClass::Landing_Direction",
+   "votes": 2,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:41CAA0:ecx",
+   "types": [
+    "AircraftTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x41caa0",
+   "vera_name": "AircraftTypeClass::FindIndex",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:420E90:ecx",
+   "types": [
+    "AlphaShapeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x420e90",
+   "vera_name": "AlphaShapeClass::PurgeDisabled",
+   "votes": 2,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 990,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:421350:ecx",
+   "types": [
+    "AlphaShapeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x421350",
+   "vera_name": "AlphaShapeClass::DrawAll_NoMask",
+   "votes": 3,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:422B20:ecx",
+   "types": [
+    "AnimTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x422b20",
+   "vera_name": "AnimTypeClass::Find_Index",
+   "votes": 2,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:424CA0:ecx",
+   "types": [
+    "AnimClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x424ca0",
+   "vera_name": "AnimClass::SetOwnerHouse",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:425670:ecx",
+   "types": [
+    "AnimClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x425670",
+   "vera_name": "AnimClass::BounceAI",
+   "votes": 2,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 12,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:427CB0:ecx",
+   "types": [
+    "AnimTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x427cb0",
+   "vera_name": "AnimTypeClass::FindIndex",
+   "votes": 2,
+   "ref_files": 7,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4500F0:ecx",
+   "types": [
+    "BuildingClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4500f0",
+   "vera_name": "BuildingClass::Factory_AI",
+   "votes": 3,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:455F10:ecx",
+   "types": [
+    "BuildingClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x455f10",
+   "vera_name": "BuildingClass::MarkBaseReservation",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4561F0:ecx",
+   "types": [
+    "BuildingClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4561f0",
+   "vera_name": "BuildingClass::ClearBaseReservationAndRepairNeighbors",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 854,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4571E0:ecx",
+   "types": [
+    "BuildingClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4571e0",
+   "vera_name": "BuildingClass::Infiltrate",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 786,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:45E7B0:ecx",
+   "types": [
+    "BuildingTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x45e7b0",
+   "vera_name": "BuildingTypeClass__FindIndexByName",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:474EE0:ecx",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x474ee0",
+   "vera_name": "CCINIClass::ReadAction",
+   "votes": 2,
+   "ref_files": 4,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4757D0:ecx",
+   "types": [
+    "CCINIClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4757d0",
+   "vera_name": "CCINIClass::ReadMovie",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:47C060:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x47c060",
+   "vera_name": "CellClass::GetRadarColor",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1364,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4802A0:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4802a0",
+   "vera_name": "CellClass::DrawTileShadow",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "md",
+    "rs"
+   ],
+   "domain_at_extract": 1363,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:480630:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x480630",
+   "vera_name": "CellClass::PostDestructionWallCleanup",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:481130:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x481130",
+   "vera_name": "CellClass::IsSubCellFree",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1358,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4818E0:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4818e0",
+   "vera_name": "CellClass::SpreadCellGerminate",
+   "votes": 2,
+   "ref_files": 7,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:483620:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x483620",
+   "vera_name": "CellClass::CanGrowTiberium",
+   "votes": 2,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1357,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:483690:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x483690",
+   "vera_name": "CellClass::CanSpreadTiberium",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1357,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:483710:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x483710",
+   "vera_name": "CellClass::GrowTiberium",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1357,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:486900:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x486900",
+   "vera_name": "CellClass::Tile_Is_DestroyableCliff",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 90,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4870B0:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4870b0",
+   "vera_name": "CellClass::IsVisibleToHouse",
+   "votes": 3,
+   "ref_files": 5,
+   "tiers": [
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:487D50:ecx",
+   "types": [
+    "CellClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x487d50",
+   "vera_name": "CellClass::GetEffectiveHeight",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1364,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:49FAE0:ecx",
+   "types": [
+    "CounterClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x49fae0",
+   "vera_name": "CounterClass::GetItemCount",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1323,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4AF970:ecx",
+   "types": [
+    "DriveLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4af970",
+   "vera_name": "DriveLocomotionClass::Is_Ok_To_End",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4C93D0:ecx",
+   "types": [
+    "FacingClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4c93d0",
+   "vera_name": "FacingClass::Current",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1311,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4CA160:ecx",
+   "types": [
+    "FactoryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4ca160",
+   "vera_name": "FactoryClass::Get_Object",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4CA6E0:ecx",
+   "types": [
+    "FactoryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4ca6e0",
+   "vera_name": "FactoryClass::Update_Build_Rate",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4CFA70:ecx",
+   "types": [
+    "FlyLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4cfa70",
+   "vera_name": "FlyLocomotionClass::Begin_Landing",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1354,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4D1890:ecx",
+   "types": [
+    "FoggedObjectClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4d1890",
+   "vera_name": "FoggedObjectClass::DrawAll",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 774,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4D97A0:ecx",
+   "types": [
+    "FootClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4d97a0",
+   "vera_name": "FootClass::Evaluate_Target_Threat",
+   "votes": 2,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 771,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4DCE80:ecx",
+   "types": [
+    "FootClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4dce80",
+   "vera_name": "FootClass::Is_Cell_Harvestable",
+   "votes": 3,
+   "ref_files": 7,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 786,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4F6540:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4f6540",
+   "vera_name": "HouseClass::AI_Can_Make_Money",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4F6990:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4f6990",
+   "vera_name": "HouseClass::Available_Money",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4FDD10:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4fdd10",
+   "vera_name": "HouseClass::AI_Manage_Build_Queue",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 822,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:4FFB20:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x4ffb20",
+   "vera_name": "HouseClass::Which_Zone",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 11,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:500B40:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x500b40",
+   "vera_name": "HouseClass::Read_Scenario_INI",
+   "votes": 3,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:505310:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x505310",
+   "vera_name": "HouseClass::FirstOwnableFromArray",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5060B0:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5060b0",
+   "vera_name": "HouseClass::FindBaseBuildingSite",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:506EF0:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x506ef0",
+   "vera_name": "HouseClass::AI_ChooseNextProduction",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:509610:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x509610",
+   "vera_name": "HouseClass::Has_Factories_For_TeamType",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "md",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50B370:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50b370",
+   "vera_name": "HouseClass::CheckBuildLimit",
+   "votes": 2,
+   "ref_files": 7,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50BDF0:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50bdf0",
+   "vera_name": "HouseClass::GetCostBonus",
+   "votes": 2,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1350,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50BEB0:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50beb0",
+   "vera_name": "HouseClass::GetAccumulatedBonus",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1363,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50C050:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50c050",
+   "vera_name": "HouseClass::GetSpeedBonus",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 10,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50C920:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50c920",
+   "vera_name": "HouseClass::MoveGroundForcesToBase",
+   "votes": 2,
+   "ref_files": 6,
+   "tiers": [
+    "md",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:50DB00:ecx",
+   "types": [
+    "HouseClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x50db00",
+   "vera_name": "HouseClass::DetermineEdge",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 902,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5200B0:ecx",
+   "types": [
+    "InfantryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5200b0",
+   "vera_name": "InfantryClass__Fear_Decay_Handler",
+   "votes": 2,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:520AE0:ecx",
+   "types": [
+    "InfantryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x520ae0",
+   "vera_name": "InfantryClass::DoType_Sequencer",
+   "votes": 3,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:522910:ecx",
+   "types": [
+    "InfantryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x522910",
+   "vera_name": "InfantryClass::AddGarrisonOccupant",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "md",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:522CB0:ecx",
+   "types": [
+    "InfantryClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x522cb0",
+   "vera_name": "InfantryClass::IsInDeathSequence",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:525A60:ecx",
+   "types": [
+    "INIClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x525a60",
+   "vera_name": "INIClass::LoadFromStraw",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:527920:ecx",
+   "types": [
+    "INIClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x527920",
+   "vera_name": "INIClass::ReadCLSID",
+   "votes": 2,
+   "ref_files": 3,
+   "tiers": [
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:527CC0:ecx",
+   "types": [
+    "INIClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x527cc0",
+   "vera_name": "INIClass::ReadRect",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1323,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:52D9A0:ecx",
+   "types": [
+    "Main"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x52d9a0",
+   "vera_name": "Main__PrepareSession",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 870,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:53AE50:ecx",
+   "types": [
+    "PsyDom"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x53ae50",
+   "vera_name": "PsyDom::Start",
+   "votes": 3,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:53AF40:ecx",
+   "types": [
+    "PsyDom"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x53af40",
+   "vera_name": "PsyDom::Process",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:53B080:ecx",
+   "types": [
+    "PsyDom"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x53b080",
+   "vera_name": "PsyDom::MindControlArea",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 776,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:547230:ecx",
+   "types": [
+    "IsometricTileTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x547230",
+   "vera_name": "IsometricTileTypeClass::Draw_Tile_Shadow",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "md"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:54DB00:ecx",
+   "types": [
+    "JumpjetLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x54db00",
+   "vera_name": "JumpjetLocomotionClass::Is_Ok_To_End",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5657A0:ecx",
+   "types": [
+    "MapClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5657a0",
+   "vera_name": "MapClass::Get_CellClass",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5657E0:ecx",
+   "types": [
+    "MapClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5657e0",
+   "vera_name": "MapClass::Is_Cell_Allocated",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:56D100:ecx",
+   "types": [
+    "MapClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x56d100",
+   "vera_name": "MapClass::Can_Reach_Zone",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5F5C60:ecx",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5f5c60",
+   "vera_name": "ObjectClass::GetHealthRatio",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1346,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5F6CB0:ecx",
+   "types": [
+    "ObjectClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5f6cb0",
+   "vera_name": "ObjectClass::Set_Custom_Sound",
+   "votes": 2,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:5FEC70:ecx",
+   "types": [
+    "OverlayTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x5fec70",
+   "vera_name": "OverlayTypeClass__FindOrAllocate",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:62C3A0:ecx",
+   "types": [
+    "ParticleClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x62c3a0",
+   "vera_name": "ParticleClass::AI_Railgun",
+   "votes": 3,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 775,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:644630:ecx",
+   "types": [
+    "ParticleSystemTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x644630",
+   "vera_name": "ParticleSystemTypeClass::FindOrCreate",
+   "votes": 3,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:645430:ecx",
+   "types": [
+    "ParticleTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x645430",
+   "vera_name": "ParticleTypeClass::FindOrAllocate",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:652230:ecx",
+   "types": [
+    "EventClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x652230",
+   "vera_name": "EventClass::Add",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6578F0:ecx",
+   "types": [
+    "RadarClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6578f0",
+   "vera_name": "RadarClass::PlayRadarMovie",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:65C7E0:ecx",
+   "types": [
+    "Random"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x65c7e0",
+   "vera_name": "Random__RandomRanged",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1269,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:663410:ecx",
+   "types": [
+    "RocketLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x663410",
+   "vera_name": "RocketLocomotionClass::Load",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "md",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:683610:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x683610",
+   "vera_name": "ScenarioClass::Set_Defaults",
+   "votes": 2,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1364,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:686890:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x686890",
+   "vera_name": "ScenarioClass::Post_Map_Init",
+   "votes": 3,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:686B20:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x686b20",
+   "vera_name": "ScenarioClass::Full_Init",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 850,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:688380:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x688380",
+   "vera_name": "ScenarioClass::Gather_Start_Positions",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1237,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:68BCB0:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x68bcb0",
+   "vera_name": "ScenarioClass::NextUniqueID",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:68BD00:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x68bd00",
+   "vera_name": "ScenarioClass::GetWaypointLocation",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:68BDC0:ecx",
+   "types": [
+    "ScenarioClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x68bdc0",
+   "vera_name": "ScenarioClass__Read_Waypoints",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1363,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6980C0:ecx",
+   "types": [
+    "SessionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6980c0",
+   "vera_name": "SessionClass__ReadMultiPlayerSettings",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1359,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6B0DB0:ecx",
+   "types": [
+    "SlaveManagerClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6b0db0",
+   "vera_name": "SlaveManagerClass::HandleReturnedSlaves",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 35,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6B1020:ecx",
+   "types": [
+    "SlaveManagerClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6b1020",
+   "vera_name": "SlaveManagerClass::ShouldRecallSlaves",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1358,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6B5F80:ecx",
+   "types": [
+    "SmudgeTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6b5f80",
+   "vera_name": "SmudgeTypeClass::CanPlace",
+   "votes": 2,
+   "ref_files": 7,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 10,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6B6080:ecx",
+   "types": [
+    "SmudgeTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6b6080",
+   "vera_name": "SmudgeTypeClass::Place",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 10,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6CC2A0:ecx",
+   "types": [
+    "SuperClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6cc2a0",
+   "vera_name": "SuperClass::IsPowered",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1364,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6DBE20:ecx",
+   "types": [
+    "Tactical"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6dbe20",
+   "vera_name": "Tactical::DrawUnitActionVisuals",
+   "votes": 2,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 902,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6EA610:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6ea610",
+   "vera_name": "TeamClass::Can_Add",
+   "votes": 2,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6EAA90:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6eaa90",
+   "vera_name": "TeamClass::Recruit",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6EB380:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6eb380",
+   "vera_name": "TeamClass::Took_Damage",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6EC370:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6ec370",
+   "vera_name": "TeamClass::Has_Entered_Map",
+   "votes": 2,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6ED4D0:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6ed4d0",
+   "vera_name": "TeamClass::Script_Deploy",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6F03B0:ecx",
+   "types": [
+    "TeamClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6f03b0",
+   "vera_name": "TeamClass::Get_Stray",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6F0FC0:ecx",
+   "types": [
+    "TeamTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6f0fc0",
+   "vera_name": "TeamTypeClass::FindByIDOrName",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6F8C10:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6f8c10",
+   "vera_name": "TechnoClass::Cell_Threat_Fallback",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 771,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6FD800:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6fd800",
+   "vera_name": "TechnoClass::SpawnRadEruption",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:6FDB80:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x6fdb80",
+   "vera_name": "TechnoClass::EstimateDamage",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 837,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:703B10:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x703b10",
+   "vera_name": "TechnoClass::IsOnBridge_ForFiring",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1171,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:70C690:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x70c690",
+   "vera_name": "TechnoClass::ApplyRailgunLineDamage",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:70E5A0:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x70e5a0",
+   "vera_name": "TechnoClass::UpdateIronTint",
+   "votes": 1,
+   "ref_files": 4,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 786,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:710000:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x710000",
+   "vera_name": "TechnoClass::ImbueLocomotor",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 771,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:717880:ecx",
+   "types": [
+    "TechnoTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x717880",
+   "vera_name": "TechnoTypeClass::HasTurrets",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:718260:ecx",
+   "types": [
+    "TeleportLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x718260",
+   "vera_name": "TeleportLocomotionClass::Update_Position",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:7187A0:ecx",
+   "types": [
+    "TeleportLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x7187a0",
+   "vera_name": "TeleportLocomotionClass::PostWarpValidation",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1244,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:719F30:ecx",
+   "types": [
+    "TeleportLocomotionClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x719f30",
+   "vera_name": "TeleportLocomotionClass::Is_Ok_To_End",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:71CA70:ecx",
+   "types": [
+    "TerrainClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x71ca70",
+   "vera_name": "TerrainClass__Read_Map_Section",
+   "votes": 2,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:720FD0:ecx",
+   "types": [
+    "ThemeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x720fd0",
+   "vera_name": "ThemeClass::Still_Playing",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:721D10:ecx",
+   "types": [
+    "TiberiumClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x721d10",
+   "vera_name": "TiberiumClass::ReadINI_All",
+   "votes": 1,
+   "ref_files": 2,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:722C40:ecx",
+   "types": [
+    "TiberiumClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x722c40",
+   "vera_name": "TiberiumClass::GrowthDriver_AllTypes",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:722D00:ecx",
+   "types": [
+    "TiberiumClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x722d00",
+   "vera_name": "TiberiumClass::InitGrowthQueues_All",
+   "votes": 2,
+   "ref_files": 7,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:7283C0:ecx",
+   "types": [
+    "MapClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x7283c0",
+   "vera_name": "MapClass::ReadTubesINI",
+   "votes": 1,
+   "ref_files": 3,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:730AF0:ecx",
+   "types": [
+    "Selection"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x730af0",
+   "vera_name": "Selection::IssueDeployCommand",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 771,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:750010:ecx",
+   "types": [
+    "TechnoClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x750010",
+   "vera_name": "TechnoClass::IsElite",
+   "votes": 1,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:750440:ecx",
+   "types": [
+    "VocClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x750440",
+   "vera_name": "VocClass::ReadINI",
+   "votes": 3,
+   "ref_files": 8,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:7510D0:ecx",
+   "types": [
+    "VocClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x7510d0",
+   "vera_name": "VocClass::ReadSoundListINI",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:752680:ecx",
+   "types": [
+    "VoxClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x752680",
+   "vera_name": "VoxClass::FindInQueues",
+   "votes": 1,
+   "ref_files": 1,
+   "tiers": [
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:753000:ecx",
+   "types": [
+    "VoxClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x753000",
+   "vera_name": "VoxClass::ReadEVAINI",
+   "votes": 3,
+   "ref_files": 7,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:7534E0:ecx",
+   "types": [
+    "VoxClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x7534e0",
+   "vera_name": "VoxClass::SetSide",
+   "votes": 1,
+   "ref_files": 6,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:75F020:ecx",
+   "types": [
+    "WaveClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x75f020",
+   "vera_name": "WaveClass::Init_Tables",
+   "votes": 1,
+   "ref_files": 5,
+   "tiers": [
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 1524,
+   "entkind": "R"
+  },
+  {
+   "ent": "R:773070:ecx",
+   "types": [
+    "WeaponTypeClass"
+   ],
+   "via": "vera-rclass",
+   "addr": "0x773070",
+   "vera_name": "WeaponTypeClass::GetSpeed",
+   "votes": 2,
+   "ref_files": 8,
+   "tiers": [
+    "md",
+    "meta",
+    "py",
+    "rs"
+   ],
+   "domain_at_extract": 11,
+   "entkind": "R"
+  }
+ ]
+}
