@@ -151,6 +151,9 @@ Testing/
 !tools/vtable_inherit/
 tools/vtable_inherit/*.obj
 
+# DECOMP-1 symbol registry & hpp generator (decompilation system foundation)
+!tools/decomp_sys/
+
 # VC6 era toolchain (Microsoft binary content, do not commit)
 .vc6/
 .vc6-8447/
