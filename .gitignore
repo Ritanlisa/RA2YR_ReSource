@@ -100,6 +100,12 @@ decompile-results/
 !.omo/ida_cache/
 .omo/ida_cache/*
 !.omo/ida_cache/.gitkeep
+# Exception: Rust 求解内核报告（交付物，入库）
+!.omo/agents/
+.omo/agents/*
+!.omo/agents/speed/
+.omo/agents/speed/*
+!.omo/agents/speed/rust_report.md
 
 # 临时分析文件
 tmp_*
@@ -112,6 +118,7 @@ _*.json
 # 逆向工具脚本 (本地开发用) — 生成器脚本必须纳入追踪 (AGENTS.md 16.4)
 tools/*
 !tools/hook_framework/
+!tools/solver_rs/
 !tools/*.py
 !tools/ida_class_layouts.json
 !tools/**/*.py
