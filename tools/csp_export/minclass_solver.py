@@ -75,7 +75,7 @@ FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
             "AL", "LS", "SS", "PP", "CB", "CC", "CR", "FP", "RA", "RD", "GX",
             "TC", "GI", "AV", "SA", "SW", "EP", "VR", "C2X", "MW", "P5",
             "SGN", "G2", "R1", "V2K", "GM", "NI", "S2", "PF2X",
-            "G3", "VR2", "CPI", "IMP", "IM2"]
+             "G3", "VR2", "CPI", "IMP", "IM2", "YVP", "V2B"]
 FAMILY_DESC = {
     "MT": "member type from ??_7 install (by-value member, strict; C4 generalized to off!=0; +mt2_installs.json net-new merge, mptr derived-pointer channel)",
     "MR": "member type via receiver domain x member_types (strict, two-pass; +mr9_member_by_receiver.json net-new merge, same regen semantics)",
@@ -146,6 +146,8 @@ FAMILY_DESC = {
     "CPI": "constructor-param init semantics over structural_truth vtable_install fns (1,398 scanned): cpi-const member-init constant typing (M:FN:this:0xOFF entities, 2,196 recs, types may carry [bool,int] dual values / [bool,char,unsigned char] etc.), cpi-m8/cpi-m16 width-typed inits (12 recs) -- strict binary facts; evidence array of anchors/ctor_param_inits.json, 2,208 recs; the 224 eq edges of the same file (cpi-minit P:FN:K == M:FN:this:0xOFF / cpi-base P:FN1:K == P:FN2:J base-ctor arg forwarding / cpi-gstore M == G:) wired separately via the EF-style bidirectional channel, see the [CPI] eq line",
     "IMP": "import return types: Win32/BINK SDK-contract return semantics of PROVEN import-call sites (form A `call ds:__imp_X` direct / form C `call reg` linear-basic-block back-scan <=6 caller-saved / <=24 callee-saved steps with IDA-annotation cross-check, disagreement dropped) -> EAX:FN:SITE ret entities typed (HANDLE/int/unsigned int/ptr words; RETX-style <=12-insn consumption window classifies first informative use: cdq=>{int}, ptr-deref=>{void*,char*,wchar_t*}, arith=>integer words, cmp/test null-check uninformative; void/uncertain APIs and universe-missing type words skipped) (strict, 100% deterministic contract, no guessing; evidence array of anchors/imp_ret_types.json, 3,170 recs via=imp-XXX; ent format matches RU/RA -- hex uppercase, no 0x)",
     "IM2": "import param types: parameter-side twin of IMP -- Win32/BINK SDK-contract PARAMETER semantics at proven import-call sites (form A `call ds:__imp_X` direct / form B IAT-range label / form C `call reg` linear back-scan with IDA-annotation agreement, machinery reused verbatim from .omo/agents/imp); pushed actual args collected backward (stdcall right-to-left, push nearest the call = param 0; walk stops at label/jump/ret/call, esp writes, `[esp]`-disp-0 rewrites) -> S:ADDR:NAME / P:FN:K / G:HEX / EAX:FN:SITE arg-origin entities typed (char*/wchar_t*/int/unsigned int per SDK signature; strict, 100% deterministic contract, no guessing; evidence array of anchors/imp2_param_types.json, 240 recs via=imp2-API-aK; ent S/G format aligned with C8/GI/CR, P/EAX aligned with RA/RU spelling)",
+    "YVP": "YRpp virtual-function param types: per-class full primary-vtable reconstruction from YRpp headers (225 files, 583 classes parsed / 501 resolved; primary base = first declared base, MSVC single-primary layout; secondary COM-iface virtuals excluded by name set; override matching by (name, arity); slot numbering = vtable_slot_authority primary table) -> GS:slot:k:addr entities (strict tier; 8 emission gates: authority alignment / slot_count==len(seq) / non-dtor / arity-mismatch exclusion / own-addr-mismatch exclusion / vocab mapping / entity-level agreement / P-channel authority-placement agreement killing ICF-folded shared stubs; n=20 layered validation 20/20 incl intfam symbol pairs, full pinned n=411 semantic agreement 96.4% -- dominant divergence = YRpp 'int' vs solver 'unsigned int' spelling; evidence anchors/yrpp_vparams.json, 4,172 recs via=yrpp-param, same YRpp-header source as C22/C25)",
+    "V2B": "vera20k round-2 wide-domain receiver types: same strict mining as V2K ('Class::Method @ 0xADDR' / 'Class__Method @ 0xADDR', FUN_/sub_/nullsub/j_ excluded, pattern addr == vera entry addr or our fn start, top-frequency qualified name per address, class prefix canonized via class_name_align + canon universe) with attribution widened from T-only to R:<addr>:ecx receiver entities (primary) + T:<addr> wide residual, v1-covered T excluded; wide-domain filter R/T domain > 8, pinned (domain=1) and narrow entities untouched (HEURISTIC tier per full-pool 615 accuracy 92.2%; gate --allow-heuristics; evidence anchors/vera20k_types_v2.json, 126 recs via=vera-rclass)",
 }
 
 REGS = {"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"}
@@ -3179,6 +3181,27 @@ def main():
     except Exception as _e_v2k:
         census["V2K"] = census.get("V2K", 0)
         print("[V2K] skipped: %r" % _e_v2k, flush=True)
+    # V2B：vera20k 第二轮宽域（vera20k_types_v2.json evidence 数组，126 recs）——
+    # 同 V2K 挖掘口径，归因面从 T-only 放宽到 R:<addr>:ecx receiver（主）+ T 宽域
+    # 残差（v1 已覆盖的 T 排除）。宽域过滤 domain>8，pinned/narrow 实体不动。
+    # 按全池 615 精度 92.2% 归启发式层：gate --allow-heuristics（V2K/R1 先例）。
+    try:
+        census["V2B"] = _load_type_family("anchors/vera20k_types_v2.json", "V2B", gate_heuristic=True)
+        print("[V2B] vera20k r2 receiver types: %d" % census["V2B"], flush=True)
+    except Exception as _e_v2b:
+        census["V2B"] = census.get("V2B", 0)
+        print("[V2B] skipped: %r" % _e_v2b, flush=True)
+    # YVP：YRpp 虚函数参数类型（yrpp_vparams.json evidence 数组，4,172 recs）——
+    # YRpp 头文件逐类主虚表重建（主基类=首个声明基类；次级 COM 接口虚函数按名集
+    # 排除；(name, arity) 匹配 override；槽号=vtable_slot_authority 主表编号），
+    # 实体 GS:slot:k:addr，via=yrpp-param。八道发射门 + n=20 分层验证 20/20（含
+    # intfam 符号对）。strict 层，与 C22/C25 同源 YRpp 头文件证据（对齐口径）。
+    try:
+        census["YVP"] = _load_type_family("anchors/yrpp_vparams.json", "YVP")
+        print("[YVP] YRpp vparam types: %d" % census["YVP"], flush=True)
+    except Exception as _e_yvp:
+        census["YVP"] = census.get("YVP", 0)
+        print("[YVP] skipped: %r" % _e_yvp, flush=True)
     if getattr(args, "allow_heuristics", False):
         try:
             census["RU"] = _load_type_family("anchors/ret_usage_types_gated.json", "RU")
@@ -7870,6 +7893,16 @@ def main():
         with io.open(dpath, "w", encoding="utf-8") as fh:
             json.dump(res["dom_sizes"], fh, ensure_ascii=False)
         print("[out] %s" % dpath, flush=True)
+        # full domain contents (per-entity candidate lists) for codegen consumers
+        _de = res.get("dom_ents") or {}
+        _dcontents = {}
+        for _root, _entlist in (_de.items() if isinstance(_de, dict) else []):
+            for _e in (_entlist or []):
+                _rk = _root if isinstance(_root, str) else str(_root)
+                _dcontents.setdefault(str(_e), []).append(_rk)
+        with io.open(os.path.join(ROOT, "anchors/minclass_domain_contents.json"), "w", encoding="utf-8") as fh:
+            json.dump(_dcontents, fh, ensure_ascii=False)
+        print("[out] minclass_domain_contents.json (%d entities)" % len(_dcontents), flush=True)
         apath = os.path.join(ROOT, "anchors/minclass_assignments.json")
         _asg = {}
         _ents = res.get("dom_ents") or {}

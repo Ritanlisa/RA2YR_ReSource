@@ -1,0 +1,52 @@
+{
+ "meta": {
+  "note": "S16 rescue, key-spelling aligned",
+  "generated_by": ".omo/agents/s16/scan_s16.py",
+  "population": "minclass_assignments clusters class∈{unsigned short(1658), short(97)} ∪ candidates⊆S16SET(1754)；键拼写=实体自身既有键（普查主形态 var_plain 93.2%，@W 全量形态在救援人口≈0）",
+  "root_cause_note": "SGN2 缺口主因=尺寸推断（movsx r32,m16 无 word 前缀被丢）+ var_N+K 位移尾缀不解析 + 数字后缀键 fanout 失联；拼写普查证伪「实体键拼写错位」为主因（L0 fn 缺失=0）",
+  "rules": {
+   "s16-movsx16": "movsx r32, m16（显式 word ptr 或无前缀按 ISA dst 推断）⇒ short；寄存器源 ax 回走≤12",
+   "s16-movzx16": "同上 movzx ⇒ unsigned short",
+   "s16-cwd": "cwd 后≤8 eax/edx 无重写 idiv ⇒ short（ax 源回走≤12）",
+   "s16-div16": "cwd 后 div ⇒ unsigned short",
+   "s16-cmp16s": "cmp word[slot]|ax, K≠0 + jl/jg/jle/jge/js/jns ⇒ short",
+   "s16-cmp16u": "… + jb/jbe/ja/jae ⇒ unsigned short",
+   "s16-cwde": "cwde 且 ax=mov ax,[slot] ⇒ short（movsx eax,ax 等价补强）",
+   "width-guard": "单元级：证据单元 [disp,disp+2) 与同槽任一非 16 位访问跨度 [d,d+w/8)（读/写；imm 写无前缀=dword；fild/fstp无前缀=dword；lea 中立）相交 → 证据作废；相邻不相交（如 dword 读在 +2）放行",
+   "dedup": "v1 signedness_types.json + v2 signedness2_types.json 同实体同类型跳过 / 异类型冲突记账；同实体双类型信号不发射"
+  },
+  "counts": {
+   "population": 1755,
+   "fns_scanned": 605,
+   "evidence": 1,
+   "dual_narrowed": 1,
+   "single_confirmed": 0,
+   "domain_disjoint": 0,
+   "intra_conflict": 0,
+   "v1v2_dup": 1,
+   "v1v2_conflict": 0,
+   "via": {
+    "s16-movsx16": 1
+   },
+   "sites": {
+    "site:s16-movsx16-reg": 818,
+    "site:movx8-skip": 172,
+    "site:s16-movsx16": 479,
+    "site:s16-cmp16s-reg": 7,
+    "site:s16-cmp16u-reg": 3,
+    "site:s16-movzx16-reg": 7
+   },
+   "width_rejects": 319
+  }
+ },
+ "evidence": [
+  {
+   "ent": "S:6539D0:var_3c",
+   "types": [
+    "short"
+   ],
+   "via": "s16-movsx16",
+   "site": "0x653D1A"
+  }
+ ]
+}
