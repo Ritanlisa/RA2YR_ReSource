@@ -68,6 +68,15 @@ import re
 import time
 import zlib
 
+# ---- 解析加速（2026-11-09 speed 轮）：orjson 可用则用之，缺省回退 stdlib ----
+# 语义等价：orjson.loads 与 json.loads 对 UTF-8 JSON 文档产出的对象树深相等
+# （dict 保序一致 / 大整数一致 / 浮点按同一 RFC 8259 语法解析）。仅替换加载路径，
+# 全部 json.dump 写出保持 stdlib——产物字节流零变化。
+try:
+    import orjson as _orjson
+except ImportError:                                    # pragma: no cover
+    _orjson = None
+
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 FAMILIES = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11",
@@ -161,8 +170,37 @@ def jload(path, default=None):
     p = path if os.path.isabs(path) else os.path.join(ROOT, path)
     if not os.path.exists(p):
         return default
-    with io.open(p, encoding="utf-8") as fh:
-        return json.load(fh)
+    with io.open(p, "rb") as fh:
+        blob = fh.read()
+    _IO_STATS["files"] += 1
+    _IO_STATS["bytes"] += len(blob)
+    if _orjson is not None:
+        return _orjson.loads(blob)
+    return json.loads(blob.decode("utf-8"))
+
+
+# ---- perf 打点（speed 轮路径 3）：阶段耗时观测，零语义影响 ----
+# 每次真实运行自动输出 [perf] 分段表；不改变任何求解行为。
+_IO_STATS = {"files": 0, "bytes": 0}
+_PERF_T0 = time.perf_counter()
+_PERF_MARKS = []          # [(stage, perf_counter)]
+
+
+def perf_mark(stage):
+    _PERF_MARKS.append((stage, time.perf_counter()))
+
+
+def perf_report():
+    """打印 [perf] 分段表（自进程启动起算的累计时刻 → 相邻差分 = 阶段耗时）。"""
+    if not _PERF_MARKS:
+        return
+    print("[perf] io: %d json files, %.1f MB parsed" % (_IO_STATS["files"],
+                                                        _IO_STATS["bytes"] / 1e6), flush=True)
+    prev = _PERF_T0
+    for stage, ts in _PERF_MARKS:
+        print("[perf] %-12s %8.1fs (cum %8.1fs)" % (stage, ts - prev, ts - _PERF_T0),
+              flush=True)
+        prev = ts
 
 
 def hx(v, default=None):
@@ -1141,6 +1179,70 @@ def _cache_restore(args, key, t_start):
     return True
 
 
+# ---- dump 快照恢复（speed 轮路径 2b）------------------------------------------
+# 痛点：heuristic 跑会覆盖 anchors/minclass_*.json；想拿回 strict dump 原要再跑
+# 30-60min 全量。--restore-dumps 直接从 .omo/solve_cache/{strict|heur}/ 最新完整
+# 缓存条目复制产物回 anchors/，不跑任何求解。fail-closed 与 _cache_restore 同款：
+# key.json 缺失 / manifest 登记产物缺失 / minclass_result.json 缺失 → 跳过该条目。
+def _restore_dumps_from_cache(mode="strict"):
+    croot = os.path.join(CACHE_ROOT, mode)
+    if not os.path.isdir(croot):
+        print("[restore-dumps] no cache dir: %s" % croot, flush=True)
+        return False
+    entries = []
+    for d in os.listdir(croot):
+        kp = os.path.join(croot, d, "key.json")
+        if os.path.exists(kp):
+            entries.append((os.path.getmtime(kp), d))
+    if not entries:
+        print("[restore-dumps] no cache entries under %s" % croot, flush=True)
+        return False
+    entries.sort(reverse=True)               # 最新优先
+    for _mt, d in entries:
+        keydir = os.path.join(croot, d)
+        kmeta = jload(os.path.join(keydir, "key.json"), {}) or {}
+        expected = kmeta.get("artifacts") or []
+        if not os.path.exists(os.path.join(keydir, "minclass_result.json")):
+            print("[restore-dumps] skip %s (no minclass_result.json)" % d, flush=True)
+            continue
+        missing = [nm for nm in expected
+                   if not os.path.exists(os.path.join(keydir, nm))]
+        if missing:
+            print("[restore-dumps] skip %s (missing %s)" % (d, ",".join(missing)),
+                  flush=True)
+            continue
+        for name in _CACHE_ARTIFACTS:
+            src = os.path.join(keydir, name)
+            if os.path.exists(src):
+                shutil.copyfile(src, os.path.join(ROOT, "anchors", name))
+        age = time.time() - _mt
+        print("[restore-dumps] OK %s (age %.0fs, %d artifacts) -> anchors/"
+              % (keydir, age, len(expected)), flush=True)
+        return True
+    print("[restore-dumps] FAILED: no intact entry under %s" % croot, flush=True)
+    return False
+
+
+def _snapshot_dumps():
+    """跑前快照 anchors/ 现有 dump 产物到 .omo/dump_snap/<ts>/（存在才复制）。"""
+    snap_dir = os.path.join(ROOT, ".omo", "dump_snap",
+                            time.strftime("%Y%m%d_%H%M%S"))
+    os.makedirs(snap_dir, exist_ok=True)
+    copied = []
+    for name in _CACHE_ARTIFACTS:
+        src = os.path.join(ROOT, "anchors", name)
+        if os.path.exists(src):
+            shutil.copyfile(src, os.path.join(snap_dir, name))
+            copied.append(name)
+    if copied:
+        print("[snapshot-dumps] %d artifacts -> %s" % (len(copied), snap_dir),
+              flush=True)
+    else:
+        print("[snapshot-dumps] nothing to snapshot (no dump artifacts present)",
+              flush=True)
+    return snap_dir
+
+
 def _mask_enc(m):
     """检查点掩码编码：稀疏(<=48位)存索引列表，稠密存 hex。"""
     if m == 0:
@@ -1175,8 +1277,9 @@ def _ckpt_load():
         _CKPT_STATE["loaded"] = True
         try:
             with open(CKPT_PATH, "rb") as fh:
-                _CKPT_STATE["data"] = json.loads(
-                    zlib.decompress(fh.read()).decode("utf-8"))
+                _blob = zlib.decompress(fh.read())
+            _CKPT_STATE["data"] = (_orjson.loads(_blob) if _orjson is not None
+                                   else json.loads(_blob.decode("utf-8")))
         except Exception:
             _CKPT_STATE["data"] = None
     return _CKPT_STATE["data"]
@@ -1239,7 +1342,24 @@ def main():
                          "属循环论证，仅作备选口径报告。")
     # parse_known_args：让 --incremental / --no-incremental 作为纯调度旗标经 sys.argv 探测，
     # 不进 vars(args)（缓存键含 vars(args)，argparse 注册会作废全部既有结果缓存）。
+    # speed 轮同款待遇：--snapshot-dumps / --restore-dumps / --skip-family-table
+    # 亦走 sys.argv 探测（不进缓存键；前二者见 _restore_dumps_from_cache/_snapshot_dumps，
+    # 后者跳过族循环 70 次前缀重解——画像证据：92.5% 耗时在此，O(N²)）。
     args, _sched_flags = ap.parse_known_args()
+    _sched = set(_sched_flags) | set(sys.argv[1:])
+
+    # --restore-dumps[=strict|heur]：从结果缓存最新完整条目恢复 dump 产物，不求解。
+    if any(s.startswith("--restore-dumps") for s in _sched):
+        _tok = [s for s in _sched if s.startswith("--restore-dumps")][0]
+        _mode = _tok.split("=", 1)[1] if "=" in _tok else "strict"
+        if _mode not in ("strict", "heur"):
+            print("[restore-dumps] bad mode %r (use strict|heur)" % _mode, flush=True)
+            return
+        perf_mark("restore_dumps")
+        _ok = _restore_dumps_from_cache(_mode)
+        perf_mark("restore_done")
+        perf_report()
+        return
 
     t_start = time.time()
     U = build_universe(use_evidence=(args.evidence != "none"), prune_dead=getattr(args, "prune_dead", False))
@@ -1258,6 +1378,7 @@ def main():
               % U["desc_mi_probe"], flush=True)
     else:
         print("[universe] desc MI probe ok: %s" % U["desc_mi_probe"], flush=True)
+    perf_mark("universe")          # speed 轮路径 3：阶段打点（零语义影响）
     eff_bump = sum(1 for i in range(n) if U["eff_size"][i] is not None
                    and U["size"][i] is not None and U["eff_size"][i] > U["size"][i])
     print("[evidence] extent>declared: %d classes (effective_size = max(declared, observed_extent))"
@@ -1274,6 +1395,10 @@ def main():
         if _cache_restore(args, _ck, t_start):
             return                      # 命中：产物已复制回 anchors/，直接退出
         print("[cache] MISS -- full solve", flush=True)
+        # --snapshot-dumps：全量跑会覆盖 anchors/ dump 产物——先快照到
+        # .omo/dump_snap/<ts>/（speed 轮路径 2b，sys.argv 探测不进缓存键）。
+        if "--snapshot-dumps" in _sched:
+            _snapshot_dumps()
         try:
             os.makedirs(_cache_key_dir(args, _ck), exist_ok=True)   # 预创建（见 _cache_write 注释）
         except OSError:
@@ -1321,6 +1446,7 @@ def main():
     protos = jload("anchors/ida_function_protos.json", {})
     faddrs = sorted(int(a, 16) for a in protos)
     print("[data] raw edges=%d functions=%d" % (len(raw), len(protos)), flush=True)
+    perf_mark("load_data")        # speed 轮路径 3：raw_constraints(130MB)+protos 加载段
 
     # ---------------- 函数声明类（提前定义：proto 证据通道与 C2 共用） ----------------
     owner_of_fn = {}
@@ -7013,6 +7139,7 @@ def main():
                       indent=1)
             print("[C10] contradicted entities ledger: anchors/c10_contradicted_entities.json",
                   flush=True)
+        perf_mark("c10_fixpoint")  # speed 轮路径 3：实体+边接线+C10 传播段结束
         if _root_diag:
             json.dump(_root_diag, open(os.path.join(ROOT, ".omo/rt1/roots.json"), "w"), indent=1)
             print("[C10] root witnesses dumped: %d" % len(_root_diag), flush=True)
@@ -7124,7 +7251,17 @@ def main():
     enabled = []
     prev_k = None
     prev_pin = None
-    for f in FAMILIES:
+    perf_mark("evidence")         # speed 轮路径 3：实体构建+证据族加载+eq 边+C10 不动点段
+    # --skip-family-table（speed 轮，sys.argv 探测不进缓存键）：跳过族循环的
+    # len(FAMILIES) 次前缀重解（每次 solve(enabled 前缀) 都全量重解——日志画像
+    # heur_run_out3.txt 实证 70 次前缀重解占 6734.6s 中的 6229.2s = 92.5%）。
+    # 选用时 family_table 为空（result 产物中该表为空数组），最终解/冲突消解/
+    # dump 全部照常——单次全族求解即最终解。
+    _skip_family_table = "--skip-family-table" in _sched
+    if _skip_family_table:
+        print("[family-table] SKIPPED (--skip-family-table): %d prefix re-solves "
+              "omitted; result.family_table will be empty" % len(FAMILIES), flush=True)
+    for f in (FAMILIES if not _skip_family_table else ()):
         enabled.append(f)
         t0 = time.time()
         res = solve(enabled)
@@ -7160,6 +7297,7 @@ def main():
                  res["forced_classes"], res["free"], res["k"], res["lower_bound"],
                  res["k_greedy"], res["merges"], res["bad_cover"], res["n_conflicts"],
                  res["c1_gaps"], dt), flush=True)
+    perf_mark("family_loop")      # speed 轮路径 3：族循环（前缀重解）总段
 
     # ---------------- 最终解 ----------------
     all_fams = [f for f in FAMILIES if f not in (args.no_families or "").split(",")]
@@ -7231,6 +7369,7 @@ def main():
         json.dump(_res_ledger, fh, ensure_ascii=False, indent=1)
     print("[conflicts] unresolved=%d resolved=%d ledger=anchors/minclass_conflict_resolution.json"
           % (_unresolved, len(_res_ledger)), flush=True)
+    perf_mark("final_conflicts")  # speed 轮路径 3：最终解+冲突消解段
     if _unresolved:
         print("[conflicts] FATAL: %d conflicts remain after weakest-evidence drop "
               "(solve undefined)" % _unresolved, flush=True)
@@ -7344,6 +7483,7 @@ def main():
              ("%s->%s" % (names[_ex_old] if _ex_old is not None else "?",
                           names[_ex_new] if _ex_new is not None else "?"))
              if _ex_new is not None else "none"), flush=True)
+    perf_mark("assign")           # speed 轮路径 3：指派段
     res["assign"] = _new_assign
     res["assign_map"] = {((_cl.get("root") if isinstance(_cl, dict) else str(_cl))): _c
                          for _cl, _c in _new_assign.items()}
@@ -8032,6 +8172,7 @@ def main():
     with io.open(rpath, "w", encoding="utf-8") as fh:
         json.dump(result, fh, ensure_ascii=False, indent=1)
     print("[out] %s (%.1f KB)" % (rpath, os.path.getsize(rpath) / 1024.0), flush=True)
+    perf_mark("dumps")            # speed 轮路径 3：dump 产物写出段（含 assignments 400MB）
     print("[time] %.1fs" % (time.time() - t_start), flush=True)
 
     # 求解成功 → 写结果缓存（在 [time] 之后，拷贝 400MB 产物不计入求解耗时）
@@ -8077,7 +8218,9 @@ def main():
             })
         except Exception as _e_ck:
             print("[incr] checkpoint write FAILED (solve results intact): %r" % (_e_ck,), flush=True)
+        perf_mark("cache_write")   # speed 轮路径 3：缓存拷贝+检查点段（[time] 之后）
 
+    perf_report()                 # speed 轮路径 3：[perf] 分段总表（进程全生命周期）
     print("\n| family | evidence | entities | constrained | forced_cls | K | K_upper | dForced | LB | conflicts | C1 gaps |")
     print("|---|---|---|---|---|---|---|---|---|---|---|")
     for row in family_table:
