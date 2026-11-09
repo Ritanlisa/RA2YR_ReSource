@@ -15621,6 +15621,42 @@
   "exact": {}
  },
  {
+  "cluster": "P:7D10C2:4",
+  "status": "inconsistent",
+  "families": [
+   "IM2"
+  ],
+  "family_sizes": {
+   "IM2": 0
+  },
+  "ents": [
+   "P:7D10C2:4"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IM2": []
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "P:7DA0F1:2",
+  "status": "inconsistent",
+  "families": [
+   "IM2"
+  ],
+  "family_sizes": {
+   "IM2": 0
+  },
+  "ents": [
+   "P:7DA0F1:2"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IM2": []
+  },
+  "exact": {}
+ },
+ {
   "cluster": "N:49DEFC",
   "status": "inconsistent",
   "families": [
@@ -175166,6 +175202,24 @@
     "LCWStraw",
     "LZOPipe"
    ]
+  },
+  "exact": {}
+ },
+ {
+  "cluster": "S:527920:WideCharStr",
+  "status": "inconsistent",
+  "families": [
+   "IM2"
+  ],
+  "family_sizes": {
+   "IM2": 0
+  },
+  "ents": [
+   "S:527920:WideCharStr"
+  ],
+  "obs": [],
+  "family_domains": {
+   "IM2": []
   },
   "exact": {}
  }

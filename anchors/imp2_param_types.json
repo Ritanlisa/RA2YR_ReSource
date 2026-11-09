@@ -1,0 +1,3090 @@
+{
+ "meta": {
+  "schema": "imp2-param-types/v1",
+  "semantics": "Parameter-side twin of IMP (imp_ret_types): at every proven import call site (form A `call ds:__imp_X`, B IAT-range label, C `call reg` via linear back-scan to `mov reg, ds:__imp_X` with IDA-annotation agreement — machinery reused verbatim from .omo/agents/imp), the pushed actual arguments are collected backward (stdcall right-to-left; push nearest the call = param 0; walk stops at label/jump/ret/call, esp register writes, and `[esp]`-disp-0 writes which rewrite the top-most pushed arg — soundness: fixed-arity stdcall ABI never interleaves spills between arg pushes; [esp+X>=4] accesses sit above all push targets). Each argument whose parameter has a 100%-certain SDK type in imp2_semantics.py (spelling-gated by type_universe.json: char*/wchar_t*/int/unsigned int) is origin-traced (<=10-insn def window per hop, <=3 copy hops, label/jump/ret bounded; call kills caller-saved): string literals -> SP family (skipped); global address/value (push offset G / mov reg,offset G / ds:G) -> G:<ADDR> (skipped when already typed by GI=global_init_types or SP literal addr); imm -> no entity; [ebp+arg_N]/[esp+Xh+arg_N]/[ebp+8+4N] -> P:<FN>:<N>; semantic stack names resolved via the snapshot `// proto:` parameter-name map (cc-aware: thiscall pos-1, fastcall pos-2, stdcall/cdecl pos; userpurge/@< excluded) with ida_lvars arg-rank backup; locals ([ebp-Xh] -> var_<x>, var_N, known local names; lea reg,[slot] address-of = buffer case counts the same) -> S:<FN>:<name>; S names admitted only on strong evidence (var_N form = local by construction, or an ida_lvars is_arg=false record; the proto-absence test is unsound — disasm frame member names and Hex-Rays lvar names are different namespaces, verified _remove@7CD42B frame member lpFileName vs lvar FileName = same incoming-arg slot — so unknown names are skipped, never guessed); NOTE lea-of-ARG-slot does NOT type the param (slot-address reuse as scratch buffer is by-value data: verified 5BD3D0 String=int, 5D3250 szSrc=u8 -> skipped); def reg=call (eax) -> EAX:<FN>:<call-site> (skipped when already in IMP). P emission is arity-guarded against the proto stack-param count. wsprintfA: only a1 (format string) per task rule; MAKEINTRESOURCE-dual slots (FindWindowA a0/a1, CreateWindowExA a1/a2, LoadCursor/Icon a1, DialogBoxParamA a1) and FormatMessageA dual-mode buffer excluded (uncertain); handle params excluded (no universe word). Task seeds not imported by this binary (0 sites by construction): lstrcmpA, GetPrivateProfileIntA, GetDlgItemTextA, CopyMemory/RtlMoveMemory/RtlFillMemory (CRT mem-functions are statically linked, not IAT imports).",
+  "inputs": [
+   "decompile-results/full_export/src/*.cpp",
+   ".omo/agents/imp/imp_table.json (IAT map + import labels)",
+   ".omo/agents/imp2/imp2_semantics.py (SDK param contract table)",
+   "anchors/type_universe.json (spelling gate)",
+   "anchors/string_literals.json (SP dedup + literal skip)",
+   "anchors/global_init_types.json (GI dedup)",
+   "anchors/imp_ret_types.json (IMP EAX dedup)",
+   "anchors/ida_global_types.json + anchors/global_types.json + src/csp_canon/globals.hpp (global name->addr resolution)",
+   "anchors/ida_lvars.json (semantic arg-name rank backup / local-name admission)"
+  ],
+  "determinism": "sorted glob; evidence sorted by (site, api, k); no timestamps",
+  "counts": {
+   "apis_in_table": 90,
+   "task_seed_not_imported": [
+    "lstrcmpA",
+    "GetPrivateProfileIntA",
+    "GetDlgItemTextA",
+    "CopyMemory",
+    "RtlMoveMemory",
+    "RtlFillMemory"
+   ],
+   "semantic_universe_miss": [],
+   "import_sites_of_table_apis": 364,
+   "sites_form_A": 321,
+   "sites_form_B": 0,
+   "sites_form_C": 43,
+   "sites_scanned_with_pushes": 363,
+   "sites_no_pushes": 1,
+   "pushes_examined": 1123,
+   "param_sites": 678,
+   "emitted_rows": 240,
+   "unique_entities": 154,
+   "per_api_sites": {
+    "CLSIDFromString": 1,
+    "CharToOemBuffA": 6,
+    "CompareStringA": 2,
+    "CompareStringW": 2,
+    "CopyFileA": 1,
+    "CreateDirectoryA": 2,
+    "CreateEventA": 2,
+    "CreateFileA": 17,
+    "CreateMutexA": 4,
+    "CreateProcessA": 3,
+    "CreateThread": 4,
+    "DeleteFileA": 4,
+    "DeviceIoControl": 12,
+    "EscapeCommFunction": 5,
+    "FindExecutableA": 2,
+    "FindFirstFileA": 14,
+    "GetClassNameA": 12,
+    "GetComputerNameA": 1,
+    "GetCurrentDirectoryA": 1,
+    "GetDateFormatA": 1,
+    "GetDiskFreeSpaceA": 2,
+    "GetDriveTypeA": 6,
+    "GetFileAttributesA": 1,
+    "GetLocaleInfoA": 6,
+    "GetLocaleInfoW": 5,
+    "GetLogicalDriveStringsA": 1,
+    "GetModuleFileNameA": 6,
+    "GetOverlappedResult": 1,
+    "GetStringTypeA": 4,
+    "GetStringTypeW": 4,
+    "GetTempFileNameA": 1,
+    "GetTimeFormatA": 1,
+    "GetVolumeInformationA": 3,
+    "GetWindowsDirectoryA": 1,
+    "HeapAlloc": 5,
+    "HeapReAlloc": 2,
+    "HeapSize": 1,
+    "LCMapStringA": 5,
+    "LCMapStringW": 6,
+    "MessageBoxA": 11,
+    "MulDiv": 1,
+    "MultiByteToWideChar": 33,
+    "PurgeComm": 3,
+    "ReadFile": 4,
+    "RegCreateKeyExA": 3,
+    "RegDeleteKeyA": 5,
+    "RegDeleteValueA": 1,
+    "RegEnumKeyExA": 4,
+    "RegOpenKeyExA": 18,
+    "RegQueryValueExA": 18,
+    "RegSetValueExA": 2,
+    "SetCurrentDirectoryA": 2,
+    "SetDlgItemTextA": 1,
+    "SetEnvironmentVariableA": 1,
+    "SetFilePointer": 3,
+    "SetHandleCount": 1,
+    "SetThreadPriority": 4,
+    "SetupComm": 1,
+    "TerminateProcess": 2,
+    "TextOutA": 1,
+    "TlsSetValue": 2,
+    "VirtualAlloc": 2,
+    "WaitForMultipleObjects": 2,
+    "WideCharToMultiByte": 21,
+    "WriteConsoleA": 1,
+    "WriteFile": 7,
+    "_BinkOpen@8": 1,
+    "lstrcatA": 11,
+    "lstrcpyA": 4,
+    "lstrlenA": 8,
+    "lstrlenW": 1,
+    "timeBeginPeriod": 3,
+    "timeEndPeriod": 3,
+    "timeKillEvent": 1,
+    "timeSetEvent": 1,
+    "wsprintfA": 20
+   },
+   "per_api_evidence": {
+    "CLSIDFromString": 1,
+    "CharToOemBuffA": 4,
+    "CompareStringA": 3,
+    "CompareStringW": 4,
+    "CreateFileA": 7,
+    "CreateProcessA": 5,
+    "DeleteFileA": 2,
+    "FindExecutableA": 4,
+    "FindFirstFileA": 5,
+    "GetClassNameA": 11,
+    "GetComputerNameA": 1,
+    "GetCurrentDirectoryA": 1,
+    "GetDateFormatA": 1,
+    "GetDriveTypeA": 5,
+    "GetLocaleInfoA": 4,
+    "GetLocaleInfoW": 3,
+    "GetLogicalDriveStringsA": 1,
+    "GetModuleFileNameA": 5,
+    "GetStringTypeA": 4,
+    "GetStringTypeW": 3,
+    "GetTempFileNameA": 2,
+    "GetTimeFormatA": 1,
+    "GetWindowsDirectoryA": 1,
+    "LCMapStringA": 8,
+    "LCMapStringW": 12,
+    "MessageBoxA": 9,
+    "MultiByteToWideChar": 52,
+    "ReadFile": 1,
+    "RegCreateKeyExA": 3,
+    "RegEnumKeyExA": 5,
+    "RegOpenKeyExA": 4,
+    "RegQueryValueExA": 6,
+    "SetCurrentDirectoryA": 2,
+    "SetDlgItemTextA": 1,
+    "SetFilePointer": 3,
+    "WideCharToMultiByte": 27,
+    "WriteFile": 3,
+    "lstrcatA": 19,
+    "lstrcpyA": 4,
+    "lstrlenA": 3
+   },
+   "per_type_rows": {
+    "char*": 152,
+    "int": 34,
+    "unsigned int": 4,
+    "wchar_t*": 50
+   },
+   "per_origin_rows": {
+    "P": 66,
+    "S": 154,
+    "eax": 2,
+    "global": 18
+   },
+   "ent_kind_rows": {
+    "ent_kind_EAX": 2,
+    "ent_kind_G": 18,
+    "ent_kind_P": 66,
+    "ent_kind_S": 154
+   },
+   "skips": {
+    "sp_literal": 69,
+    "const": 169,
+    "origin_unresolved": 174,
+    "imp_eax_dedup": 1,
+    "gi_global_dedup": 16,
+    "sp_global_dedup": 0,
+    "p_arity": 1,
+    "p_lea_argslot": 8,
+    "p_userpurge": 0,
+    "slot_unresolved": 3,
+    "mempush_unresolved": 3,
+    "lea_unresolved": 13,
+    "global_unresolved": 10,
+    "imm_def": 0,
+    "hop_limit": 0,
+    "esp_zero_dropped_push": 0
+   },
+   "origin_trace_internal": {
+    "skip_def_form_add": 3,
+    "skip_def_form_and": 4,
+    "skip_def_form_call": 1,
+    "skip_def_form_dec": 4,
+    "skip_def_form_inc": 2,
+    "skip_def_form_pop": 4,
+    "skip_def_form_setnz": 2,
+    "skip_def_form_shl": 1,
+    "skip_def_form_sub": 1,
+    "skip_def_form_xor": 1
+   }
+  }
+ },
+ "evidence": [
+  {
+   "ent": "S:4294B0:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x4294E2",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:432750:lDistanceToMove",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-SetFilePointer-a1",
+   "site": "0x43283A",
+   "api": "SetFilePointer",
+   "k": 1,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "S:479740:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDriveTypeA-a0",
+   "site": "0x479780",
+   "api": "GetDriveTypeA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479740:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x4797D4",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479900:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDriveTypeA-a0",
+   "site": "0x479925",
+   "api": "GetDriveTypeA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479900:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x47997C",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479BA0:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDriveTypeA-a0",
+   "site": "0x479BCA",
+   "api": "GetDriveTypeA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479BA0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x479C20",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479D60:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDriveTypeA-a0",
+   "site": "0x479D86",
+   "api": "GetDriveTypeA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479D60:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x479DDD",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479EF0:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDriveTypeA-a0",
+   "site": "0x479F16",
+   "api": "GetDriveTypeA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:479EF0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x479F6D",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:47AA50:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindFirstFileA-a0",
+   "site": "0x47AA85",
+   "api": "FindFirstFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:47AF70:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindFirstFileA-a0",
+   "site": "0x47AFCF",
+   "api": "FindFirstFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:47AF70:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindFirstFileA-a0",
+   "site": "0x47B08A",
+   "api": "FindFirstFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "EAX:48CCC0:48CD05",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x48CD13",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "C",
+   "origin": "eax"
+  },
+  {
+   "ent": "EAX:48CCC0:48CD36",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x48CD3E",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "C",
+   "origin": "eax"
+  },
+  {
+   "ent": "S:4A3DD0:Text",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A3E2A",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A3FD0:Text",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A4040",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A3FD0:Text",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A40B4",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A40C0:Text",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A4118",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A4620:Text",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A469E",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A4700:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A4769",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4A83D0:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x4A83FB",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-SetDlgItemTextA-a2",
+   "site": "0x4C841E",
+   "api": "SetDlgItemTextA",
+   "k": 2,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:Filename",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetModuleFileNameA-a1",
+   "site": "0x4C86D1",
+   "api": "GetModuleFileNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrlenA-a0",
+   "site": "0x4C87C9",
+   "api": "lstrlenA",
+   "k": 0,
+   "form": "C",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C8859",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C8859",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C88AC",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C89C9",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C89C9",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C8A08",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C8A08",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C8A4C",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C8A4C",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C8ACA",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C8ACA",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:8A3A08",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x4C8B3F",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:4C85E0:String",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x4C8B3F",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:4F6950:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x4F696B",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5176D0:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegOpenKeyExA-a1",
+   "site": "0x517723",
+   "api": "RegOpenKeyExA",
+   "k": 1,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5176D0:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegCreateKeyExA-a1",
+   "site": "0x51774A",
+   "api": "RegCreateKeyExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:527920:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x527AF9",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:527920:WideCharStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CLSIDFromString-a0",
+   "site": "0x527B0C",
+   "api": "CLSIDFromString",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:527B90:lpsz",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x527BCD",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "S:527B90:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x527BCD",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetWindowsDirectoryA-a0",
+   "site": "0x551662",
+   "api": "GetWindowsDirectoryA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetTempFileNameA-a0",
+   "site": "0x55167C",
+   "api": "GetTempFileNameA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:TempFileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetTempFileNameA-a3",
+   "site": "0x55167C",
+   "api": "GetTempFileNameA",
+   "k": 3,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:TempFileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x5516CC",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:TempFileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindExecutableA-a0",
+   "site": "0x551716",
+   "api": "FindExecutableA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:Result",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindExecutableA-a2",
+   "site": "0x551716",
+   "api": "FindExecutableA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:TempFileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-DeleteFileA-a0",
+   "site": "0x551723",
+   "api": "DeleteFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:Result",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateProcessA-a0",
+   "site": "0x551779",
+   "api": "CreateProcessA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:551630:CommandLine",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateProcessA-a1",
+   "site": "0x551779",
+   "api": "CreateProcessA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindFirstFileA-a0",
+   "site": "0x559888",
+   "api": "FindFirstFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetDateFormatA-a4",
+   "site": "0x559A92",
+   "api": "GetDateFormatA",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x559AB6",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x559AB6",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetTimeFormatA-a4",
+   "site": "0x559B0F",
+   "api": "GetTimeFormatA",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x559B33",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5596A0:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x559B33",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:559C20:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindFirstFileA-a0",
+   "site": "0x559CA5",
+   "api": "FindFirstFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:559EB0:0",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-DeleteFileA-a0",
+   "site": "0x559EB5",
+   "api": "DeleteFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:5BB580:lpValueName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x5BB610",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "S:5BB6E0:Name",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegEnumKeyExA-a2",
+   "site": "0x5BB803",
+   "api": "RegEnumKeyExA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5BB6E0:Class",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegEnumKeyExA-a5",
+   "site": "0x5BB803",
+   "api": "RegEnumKeyExA",
+   "k": 5,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5BB6E0:Name",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegEnumKeyExA-a2",
+   "site": "0x5BB905",
+   "api": "RegEnumKeyExA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5BB6E0:Class",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegEnumKeyExA-a5",
+   "site": "0x5BB905",
+   "api": "RegEnumKeyExA",
+   "k": 5,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5D3330:szSrc",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CharToOemBuffA-a0",
+   "site": "0x5D338D",
+   "api": "CharToOemBuffA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5D3330:szDst",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CharToOemBuffA-a1",
+   "site": "0x5D338D",
+   "api": "CharToOemBuffA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:5DC170:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegOpenKeyExA-a1",
+   "site": "0x5DC226",
+   "api": "RegOpenKeyExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:603AA0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x603BB0",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:60AAB0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x60ADE8",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:60F320:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x60F36C",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:60F9A0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x60F9BC",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6149B0:lParam",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x614A72",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6149B0:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x614A72",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "P:6149B0:0",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a5",
+   "site": "0x614A72",
+   "api": "MultiByteToWideChar",
+   "k": 5,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:614B30:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x614EC6",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6242B0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x6242C8",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:65CDD0:1",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "imp2-WriteFile-a2",
+   "site": "0x65CE22",
+   "api": "WriteFile",
+   "k": 2,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "P:65CF00:0",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-SetFilePointer-a1",
+   "site": "0x65D0A5",
+   "api": "SetFilePointer",
+   "k": 1,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:663DB0:CommandLine",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateProcessA-a1",
+   "site": "0x663FED",
+   "api": "CreateProcessA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:67FD20:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x67FD3F",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:682150:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x682216",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6822F0:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x6823AF",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "P:682640:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x68265F",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:682640:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x68265F",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:682880:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x68289F",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:682880:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x68289F",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6907E0:szDst",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CharToOemBuffA-a1",
+   "site": "0x69080D",
+   "api": "CharToOemBuffA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:690910:szDst",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CharToOemBuffA-a1",
+   "site": "0x690949",
+   "api": "CharToOemBuffA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB2E0:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcpyA-a0",
+   "site": "0x6BB2F2",
+   "api": "lstrcpyA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB2E0:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x6BB30D",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB2E0:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x6BB315",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB2E0:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegCreateKeyExA-a1",
+   "site": "0x6BB336",
+   "api": "RegCreateKeyExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:Filename",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetModuleFileNameA-a1",
+   "site": "0x6BB3AE",
+   "api": "GetModuleFileNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:sz",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x6BB3EA",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x6BB3EA",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcpyA-a0",
+   "site": "0x6BB42B",
+   "api": "lstrcpyA",
+   "k": 0,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x6BB43D",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x6BB43D",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcpyA-a0",
+   "site": "0x6BB449",
+   "api": "lstrcpyA",
+   "k": 0,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegCreateKeyExA-a1",
+   "site": "0x6BB472",
+   "api": "RegCreateKeyExA",
+   "k": 1,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrlenA-a0",
+   "site": "0x6BB513",
+   "api": "lstrlenA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB390:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrlenA-a0",
+   "site": "0x6BB687",
+   "api": "lstrlenA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB760:sz",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x6BB796",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB760:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x6BB796",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB760:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcpyA-a0",
+   "site": "0x6BB7A6",
+   "api": "lstrcpyA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB760:String1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a0",
+   "site": "0x6BB7B6",
+   "api": "lstrcatA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:6BB760:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-lstrcatA-a1",
+   "site": "0x6BB7B6",
+   "api": "lstrcatA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:734FE0:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x73500C",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:734FE0:0",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x73502A",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "C",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:734FE0:Caption",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x73502A",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:734FE0:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a1",
+   "site": "0x735042",
+   "api": "MessageBoxA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:734FE0:Caption",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MessageBoxA-a2",
+   "site": "0x735042",
+   "api": "MessageBoxA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:74FDC0:Filename",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetModuleFileNameA-a1",
+   "site": "0x74FDEF",
+   "api": "GetModuleFileNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:751C30:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetLogicalDriveStringsA-a1",
+   "site": "0x751C47",
+   "api": "GetLogicalDriveStringsA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:773600:ValueName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x7736B9",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "C",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7738A0:ValueName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x773949",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7741C0:lpClass",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegEnumKeyExA-a5",
+   "site": "0x774266",
+   "api": "RegEnumKeyExA",
+   "k": 5,
+   "form": "A",
+   "origin": "S-val"
+  },
+  {
+   "ent": "S:774410:FileName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateFileA-a0",
+   "site": "0x7744B7",
+   "api": "CreateFileA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:774C70:1",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "imp2-WriteFile-a2",
+   "site": "0x774C90",
+   "api": "WriteFile",
+   "k": 2,
+   "form": "A",
+   "origin": "P-val"
+  },
+  {
+   "ent": "S:775BC0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x775BEA",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7768F0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x776903",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7768F0:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x7769BA",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:776B40:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x776B53",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:776B40:ClassName",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetClassNameA-a1",
+   "site": "0x776C36",
+   "api": "GetClassNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7775C0:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x777A38",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:777EA0:Buf",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x777EFB",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:B73318",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x777EFB",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:777F90:Buf",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x777FE6",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:777F90:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x777FE6",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7781B0:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7781F3",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7781B0:WideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7781F3",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:77DC90:File",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindExecutableA-a0",
+   "site": "0x77DD0A",
+   "api": "FindExecutableA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:77DC90:Result",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-FindExecutableA-a2",
+   "site": "0x77DD0A",
+   "api": "FindExecutableA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:77DC90:Result",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateProcessA-a0",
+   "site": "0x77DDAE",
+   "api": "CreateProcessA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:77DC90:CommandLine",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CreateProcessA-a1",
+   "site": "0x77DDAE",
+   "api": "CreateProcessA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:84A940",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x7856C5",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:786270:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegOpenKeyExA-a1",
+   "site": "0x7862D5",
+   "api": "RegOpenKeyExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:84A940",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x786303",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:786390:SubKey",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegOpenKeyExA-a1",
+   "site": "0x786420",
+   "api": "RegOpenKeyExA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "G:84A940",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-RegQueryValueExA-a1",
+   "site": "0x78644D",
+   "api": "RegQueryValueExA",
+   "k": 1,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "S:7970D0:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetComputerNameA-a0",
+   "site": "0x79713A",
+   "api": "GetComputerNameA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7A4C10:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetCurrentDirectoryA-a1",
+   "site": "0x7A4CCF",
+   "api": "GetCurrentDirectoryA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7A4C10:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-SetCurrentDirectoryA-a0",
+   "site": "0x7A4E48",
+   "api": "SetCurrentDirectoryA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7A4C10:Buffer",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-SetCurrentDirectoryA-a0",
+   "site": "0x7A4E6F",
+   "api": "SetCurrentDirectoryA",
+   "k": 0,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "S:7CBCAF:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CBCD6",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7CBCAF:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7CBCD6",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7CBCE1:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CBD08",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7CBCE1:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7CBD08",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7CBD13:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CBD3A",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7CBD13:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7CBD3A",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7CBD45:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CBD6F",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7CBD45:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7CBD6F",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7CBD7A:MultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CBDA4",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7CBD7A:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7CBDA4",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7CC309:1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CC370",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "C",
+   "origin": "P-val"
+  },
+  {
+   "ent": "P:7CC309:1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7CC3F9",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7CC4A4:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7CC535",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7CC4A4:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7CC578",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "C",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7CC4A4:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7CC62E",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D0844:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "imp2-ReadFile-a2",
+   "site": "0x7D08BE",
+   "api": "ReadFile",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D0DBA:2",
+   "types": [
+    "unsigned int"
+   ],
+   "via": "imp2-WriteFile-a2",
+   "site": "0x7D0EE6",
+   "api": "WriteFile",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "G:B78554",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7D1104",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "P:7D10C2:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-LCMapStringA-a2",
+   "site": "0x7D1169",
+   "api": "LCMapStringA",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringA-a3",
+   "site": "0x7D1169",
+   "api": "LCMapStringA",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:4",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-LCMapStringA-a4",
+   "site": "0x7D1169",
+   "api": "LCMapStringA",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:5",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringA-a5",
+   "site": "0x7D1169",
+   "api": "LCMapStringA",
+   "k": 5,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7D11A1",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a3",
+   "site": "0x7D11A1",
+   "api": "MultiByteToWideChar",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7D11F9",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a3",
+   "site": "0x7D11F9",
+   "api": "MultiByteToWideChar",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7D10C2:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7D11F9",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7D10C2:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7D120F",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7D10C2:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7D1242",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:4",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a4",
+   "site": "0x7D1242",
+   "api": "LCMapStringW",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D10C2:5",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringW-a5",
+   "site": "0x7D1242",
+   "api": "LCMapStringW",
+   "k": 5,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7D10C2:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7D12AA",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7D10C2:var_1c",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringW-a3",
+   "site": "0x7D12AA",
+   "api": "LCMapStringW",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "G:B783F8",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetModuleFileNameA-a1",
+   "site": "0x7D5B9C",
+   "api": "GetModuleFileNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "global-off"
+  },
+  {
+   "ent": "S:7D5F31:Filename",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetModuleFileNameA-a1",
+   "site": "0x7D5F9E",
+   "api": "GetModuleFileNameA",
+   "k": 1,
+   "form": "A",
+   "origin": "S-addr"
+  },
+  {
+   "ent": "P:7D7491:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetLocaleInfoA-a2",
+   "site": "0x7D74D2",
+   "api": "GetLocaleInfoA",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D769D:1",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-SetFilePointer-a1",
+   "site": "0x7D76C7",
+   "api": "SetFilePointer",
+   "k": 1,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetStringTypeA-a2",
+   "site": "0x7D97B6",
+   "api": "GetStringTypeA",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:2",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetStringTypeA-a3",
+   "site": "0x7D97B6",
+   "api": "GetStringTypeA",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7D97EE",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:2",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a3",
+   "site": "0x7D97EE",
+   "api": "MultiByteToWideChar",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:1",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7D9844",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9729:2",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a3",
+   "site": "0x7D9844",
+   "api": "MultiByteToWideChar",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7D9729:cchWideChar",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a5",
+   "site": "0x7D9844",
+   "api": "MultiByteToWideChar",
+   "k": 5,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "P:7D9729:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetStringTypeW-a3",
+   "site": "0x7D9856",
+   "api": "GetStringTypeW",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9DDC:0",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7D9E55",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7D9DDC:0",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7D9E95",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:2",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-GetStringTypeW-a2",
+   "site": "0x7DA171",
+   "api": "GetStringTypeW",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetStringTypeW-a3",
+   "site": "0x7DA171",
+   "api": "GetStringTypeW",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7DA1A4",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:2",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-WideCharToMultiByte-a3",
+   "site": "0x7DA1A4",
+   "api": "WideCharToMultiByte",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:1",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7DA20D",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA0F1:2",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-WideCharToMultiByte-a3",
+   "site": "0x7DA20D",
+   "api": "WideCharToMultiByte",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DA0F1:lpMultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x7DA20D",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA0F1:lpMultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetStringTypeA-a2",
+   "site": "0x7DA278",
+   "api": "GetStringTypeA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA0F1:var_28",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetStringTypeA-a3",
+   "site": "0x7DA278",
+   "api": "GetStringTypeA",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "G:B78554",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7DA2F8",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "global-pushoff"
+  },
+  {
+   "ent": "P:7DA2B6:2",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a2",
+   "site": "0x7DA35D",
+   "api": "LCMapStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringW-a3",
+   "site": "0x7DA35D",
+   "api": "LCMapStringW",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:4",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-LCMapStringW-a4",
+   "site": "0x7DA35D",
+   "api": "LCMapStringW",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:5",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringW-a5",
+   "site": "0x7DA35D",
+   "api": "LCMapStringW",
+   "k": 5,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:2",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7DA390",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-WideCharToMultiByte-a3",
+   "site": "0x7DA390",
+   "api": "WideCharToMultiByte",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:2",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a2",
+   "site": "0x7DA3E7",
+   "api": "WideCharToMultiByte",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA2B6:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-WideCharToMultiByte-a3",
+   "site": "0x7DA3E7",
+   "api": "WideCharToMultiByte",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:lpMultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-WideCharToMultiByte-a4",
+   "site": "0x7DA3E7",
+   "api": "WideCharToMultiByte",
+   "k": 4,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:cbMultiByte",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-WideCharToMultiByte-a5",
+   "site": "0x7DA3E7",
+   "api": "WideCharToMultiByte",
+   "k": 5,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:lpMultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-LCMapStringA-a2",
+   "site": "0x7DA403",
+   "api": "LCMapStringA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:cbMultiByte",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringA-a3",
+   "site": "0x7DA403",
+   "api": "LCMapStringA",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:lpMultiByteStr",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-LCMapStringA-a2",
+   "site": "0x7DA459",
+   "api": "LCMapStringA",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA2B6:cbMultiByte",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-LCMapStringA-a3",
+   "site": "0x7DA459",
+   "api": "LCMapStringA",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "G:B78554",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-CompareStringW-a2",
+   "site": "0x7DA763",
+   "api": "CompareStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "global-off"
+  },
+  {
+   "ent": "G:B78554",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-CompareStringW-a4",
+   "site": "0x7DA763",
+   "api": "CompareStringW",
+   "k": 4,
+   "form": "A",
+   "origin": "global-off"
+  },
+  {
+   "ent": "P:7DA725:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CompareStringA-a2",
+   "site": "0x7DA7DE",
+   "api": "CompareStringA",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA725:4",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-CompareStringA-a4",
+   "site": "0x7DA7DE",
+   "api": "CompareStringA",
+   "k": 4,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA725:5",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-CompareStringA-a5",
+   "site": "0x7DA7DE",
+   "api": "CompareStringA",
+   "k": 5,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA725:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7DA8AE",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA725:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7DA90F",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "C",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DA725:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a4",
+   "site": "0x7DA90F",
+   "api": "MultiByteToWideChar",
+   "k": 4,
+   "form": "C",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA725:cchWideChar",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a5",
+   "site": "0x7DA90F",
+   "api": "MultiByteToWideChar",
+   "k": 5,
+   "form": "C",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "P:7DA725:4",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-MultiByteToWideChar-a2",
+   "site": "0x7DA96E",
+   "api": "MultiByteToWideChar",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DA725:5",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-MultiByteToWideChar-a3",
+   "site": "0x7DA96E",
+   "api": "MultiByteToWideChar",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DA725:lpWideCharStr",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-CompareStringW-a2",
+   "site": "0x7DA986",
+   "api": "CompareStringW",
+   "k": 2,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "S:7DA725:cchWideChar",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-CompareStringW-a3",
+   "site": "0x7DA986",
+   "api": "CompareStringW",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "P:7DC4C9:2",
+   "types": [
+    "wchar_t*"
+   ],
+   "via": "imp2-GetLocaleInfoW-a2",
+   "site": "0x7DC539",
+   "api": "GetLocaleInfoW",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DC4C9:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetLocaleInfoW-a3",
+   "site": "0x7DC539",
+   "api": "GetLocaleInfoW",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DC4C9:var_1c",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetLocaleInfoA-a3",
+   "site": "0x7DC59F",
+   "api": "GetLocaleInfoA",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  },
+  {
+   "ent": "P:7DC5DC:2",
+   "types": [
+    "char*"
+   ],
+   "via": "imp2-GetLocaleInfoA-a2",
+   "site": "0x7DC64C",
+   "api": "GetLocaleInfoA",
+   "k": 2,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "P:7DC5DC:3",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetLocaleInfoA-a3",
+   "site": "0x7DC64C",
+   "api": "GetLocaleInfoA",
+   "k": 3,
+   "form": "A",
+   "origin": "P-memdirect"
+  },
+  {
+   "ent": "S:7DC5DC:var_1c",
+   "types": [
+    "int"
+   ],
+   "via": "imp2-GetLocaleInfoW-a3",
+   "site": "0x7DC6B8",
+   "api": "GetLocaleInfoW",
+   "k": 3,
+   "form": "A",
+   "origin": "S-memdirect"
+  }
+ ]
+}
