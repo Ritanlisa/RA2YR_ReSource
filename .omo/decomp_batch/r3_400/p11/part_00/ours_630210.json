@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@ParticleSystemClass@@QAEHXZ",
+ "sym_key": "ParticleSystemClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b818000000c3",
+ "relocs": []
+}

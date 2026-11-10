@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A4920",
+ "name": "SideClass::StubReturn28",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A4920",
+ "bytes_hex": "b81c000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

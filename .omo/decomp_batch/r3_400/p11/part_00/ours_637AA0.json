@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetFlag@unknown@@QAEDXZ",
+ "sym_key": "unknown::GetFlag",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a000000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  }
+ ]
+}

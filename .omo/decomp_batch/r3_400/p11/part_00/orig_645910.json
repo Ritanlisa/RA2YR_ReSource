@@ -1,0 +1,11 @@
+{
+ "addr": "0x645910",
+ "name": "ParticleTypeClass::GetObjectSize",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645910",
+ "bytes_hex": "b818030000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

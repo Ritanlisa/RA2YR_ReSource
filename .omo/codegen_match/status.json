@@ -2141,6 +2141,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x630200": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x630210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x633a90": {
   "attempts": 4,
   "first_diff": null,
@@ -2218,6 +2232,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x637aa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FactoryClass::GetFlag",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x63f7b0": {
   "attempts": 3,
   "first_diff": "+0 jmp 0x652cf0",
@@ -2232,6 +2253,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x644920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x644930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x644940": {
   "attempts": 2,
   "first_diff": null,
@@ -2243,6 +2278,20 @@
   "attempts": 2,
   "first_diff": null,
   "name": "ParticleSystemTypeClass::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x645910": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x645920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2266,6 +2315,20 @@
   "name": "sub_659570",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x65b3a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadSiteClass::StubReturn116",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x65b3c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadSiteClass::StubReturn69",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x65b4b0": {
   "attempts": 4,
@@ -2316,6 +2379,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6635b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RocketLocomotionClass::StubReturn96",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x67a730": {
   "attempts": 1,
   "first_diff": null,
@@ -2337,10 +2407,80 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x691ec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptClass::StubReturn26",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x691ed0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptClass::StubReturn48",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x691f70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x691f80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6a3ea0": {
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_14",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6a42a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ShipLocomotionClass::StubReturn112",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6a4910": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SideClass::StubReturn180",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6a4920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SideClass::StubReturn28",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b1370": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SlaveManagerClass::StubReturn100",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b1380": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SlaveManagerClass::StubReturn72",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b4f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::StubReturn176",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

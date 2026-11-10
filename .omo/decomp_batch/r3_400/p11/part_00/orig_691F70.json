@@ -1,0 +1,11 @@
+{
+ "addr": "0x691F70",
+ "name": "ScriptTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x691F70",
+ "bytes_hex": "b81b000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

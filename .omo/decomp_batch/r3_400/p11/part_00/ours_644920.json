@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@ParticleSystemTypeClass@@QAEHXZ",
+ "sym_key": "ParticleSystemTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b810030000c3",
+ "relocs": []
+}
