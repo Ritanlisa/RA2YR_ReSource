@@ -200,8 +200,18 @@ cmake --build build_linux
 - **TheaterClass 表 0x3E1B78..0x3E1E18（6×0x70B）首试逐字节 100% 复现**：`gen_theater.py`
   真值提取 → 结构体 → era CL /O2 编译。证明 .rdata 静态表复现无原理性障碍，只欠逐表
   布局考古工作量——可流水线化到 vtable/RTTI/其余静态表。
-- 下一步杠杆（按序）：①破译 LINK 槽位置换 ②.rdata 表按 Theater 模式放量 ③CRT 波内容随
-  src/ 函数重建自然收敛（原版 59 项 = 真实 CRT 调用面，桩测试只能拉 28 项）。
+- **✅ W2 静态表放量已完成（2026-11-11）**：Theater 模式复制到全部指针无关表——
+  `tools/data_match/w2/` 六类发射器（struct/guid/mask/float/double/int）**240/240 单元
+  逐字节 100% 全等**（含 397 记录 DirectShow GUID 群 6.4KB、掩码对 2×1.8KB、朝向整数
+  表族 6.2KB×2、`π/180` 17 位十进制字面量位级往返）；**布局序规则实证**（E1-E5：同
+  obj 声明序=发射序 / obj 链接序=跨 obj 序 / 垫片=自然对齐，double 与 struct 数组一律
+  8）；**覆盖游戏静态数据区 35,796/60,868 = 58.8%**（口径=CRT 边界 0x3F9590 前游戏区
+  减 vtable 37,316B）；残余 25,072B 全为指针承载表（随代码重建自然再生）+ CRT 区
+  88,912B（libcmt 自动收敛，/opt:ref 实证 test2 不含）。跳表全部在 .text（MSVC6 特性），
+  与 .rdata 数据表无纠缠。报告 = `.omo/agents/datamatch/report_w2.md`。
+- 下一步杠杆（按序）：①破译 LINK 槽位置换 ②指针承载表随代码重建自然再生+whole-section
+  组装（用 W2 布局规则）③CRT 波内容随 src/ 函数重建自然收敛（原版 59 项 = 真实 CRT
+  调用面，桩测试只能拉 28 项）。
 
 ## ⚠️ 当前活跃方向：CSP 机械重建（2026-09-20 定案，覆盖旧管线）
 
