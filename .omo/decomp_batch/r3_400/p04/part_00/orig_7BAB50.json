@@ -1,0 +1,11 @@
+{
+ "addr": "0x7BAB50",
+ "name": "XSurface::entry_34_",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7BAB50",
+ "bytes_hex": "32c0c21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

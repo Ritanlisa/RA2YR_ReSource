@@ -48,6 +48,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x407010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::GetEnabled",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x407070": {
   "attempts": 1,
   "first_diff": null,
@@ -112,7 +119,7 @@
   "status": "OK"
  },
  "0x40cc00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VectorClass_ptr_IsometricTileClass::GetItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -196,7 +203,7 @@
   "status": "OK"
  },
  "0x41b910": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AircraftClass::MissionStubReturnZero",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -378,7 +385,7 @@
   "status": "OK"
  },
  "0x477740": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -413,10 +420,10 @@
   "status": "NG"
  },
  "0x486670": {
-  "attempts": 6,
-  "first_diff": "+0 mov eax, dword ptr [ecx + 0x38]",
+  "attempts": 7,
+  "first_diff": "+11 jl 0x486687",
   "name": "CellClass::InBounds",
-  "note": "via=mirror MISMATCH/codegen_shape",
+  "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
  },
  "0x486900": {
@@ -714,7 +721,7 @@
   "status": "OK"
  },
  "0x4e1960": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -966,14 +973,14 @@
   "status": "OK"
  },
  "0x556620": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::GetWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x556630": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1197,7 +1204,7 @@
   "status": "OK"
  },
  "0x5d6440": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::MissionStubReturnZero3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1267,7 +1274,7 @@
   "status": "OK"
  },
  "0x5f9710": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ObjectTypeClass::SetRTTI71",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1414,7 +1421,7 @@
   "status": "OK"
  },
  "0x659570": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "sub_659570",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1487,6 +1494,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "RulesClass::readWarheads",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6a3ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::StubReturnZero_14",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1799,7 +1813,7 @@
   "status": "PENDING"
  },
  "0x7b9d80": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1823,6 +1837,55 @@
   "attempts": 1,
   "first_diff": null,
   "name": "WWMouseClass::checkBounds",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bab30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_4C_",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bab40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_50_",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bab50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_34_",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bab60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_38_",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bab70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_3C_",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7bab80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_40_",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7bb340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::entry_1C_",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
