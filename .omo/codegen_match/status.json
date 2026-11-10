@@ -11,56 +11,56 @@
   "first_diff": null,
   "name": "AudioController::UpdatePlayback",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4024a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioSample::ResetState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4035f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x404700": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioStream::SetupPlayback",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4047b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioStream::SelectRandom",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4052f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VocClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x405c00": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioFileClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x405d40": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioController::Stop",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x406310": {
   "attempts": 4,
@@ -123,21 +123,21 @@
   "first_diff": null,
   "name": "Audio::GetEnabled",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x407070": {
   "attempts": 3,
   "first_diff": null,
   "name": "Audio::GetFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4071c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioMixer::PlaySample",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4072c0": {
   "attempts": 3,
@@ -151,7 +151,7 @@
   "first_diff": null,
   "name": "VtableStub::Push_407510",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x408070": {
   "attempts": 2,
@@ -179,14 +179,14 @@
   "first_diff": null,
   "name": "AudioNode::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x408a70": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x408d50": {
   "attempts": 1,
@@ -228,14 +228,14 @@
   "first_diff": null,
   "name": "Audio::GetDirectSound",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x40cc00": {
   "attempts": 6,
   "first_diff": null,
   "name": "VectorClass_ptr_IsometricTileClass::GetItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x40d230": {
   "attempts": 2,
@@ -270,7 +270,7 @@
   "first_diff": null,
   "name": "AbstractClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x410490": {
   "attempts": 4,
@@ -291,7 +291,7 @@
   "first_diff": null,
   "name": "IRTTITypeInfo::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4105f0": {
   "attempts": 3,
@@ -312,7 +312,7 @@
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4114f0": {
   "attempts": 1,
@@ -354,14 +354,14 @@
   "first_diff": null,
   "name": "TechnoClass::CanFireAtTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41b910": {
   "attempts": 6,
   "first_diff": null,
   "name": "AircraftClass::MissionStubReturnZero",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41b9e0": {
   "attempts": 2,
@@ -410,7 +410,7 @@
   "first_diff": null,
   "name": "AircraftClass::CheckDockState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41c170": {
   "attempts": 2,
@@ -438,7 +438,7 @@
   "first_diff": null,
   "name": "TechnoClass::processIdleState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41c650": {
   "attempts": 3,
@@ -508,14 +508,14 @@
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterSuccess",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41fe20": {
   "attempts": 2,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterFailure",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x41ffd0": {
   "attempts": 2,
@@ -536,14 +536,14 @@
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x425260": {
   "attempts": 2,
   "first_diff": null,
   "name": "AnimClass::SetField8",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x425270": {
   "attempts": 2,
@@ -648,84 +648,84 @@
   "first_diff": null,
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42d8f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_ushort::Remove",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42da30": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_ushort::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42dca0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Pathfinding::SiftDown",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42df90": {
   "attempts": 2,
   "first_diff": null,
   "name": "BitmapClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42e820": {
   "attempts": 2,
   "first_diff": null,
   "name": "BridgeClass::GetCellData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42f4f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BaseClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x42f9c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x431800": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4324b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BufferIOFileClass::SeekInternal",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x432ab0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieHandle::RenderFrameClipped",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x433270": {
   "attempts": 2,
   "first_diff": null,
   "name": "BinkMovie::BlitToTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x433330": {
   "attempts": 2,
@@ -739,35 +739,35 @@
   "first_diff": null,
   "name": "BinkMovieClass::AllocateRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4336c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieClass::ReleaseRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x433770": {
   "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieClass::OpenFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x433f50": {
   "attempts": 2,
   "first_diff": null,
   "name": "MessageListClass::CountCharsInWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4371d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4389f0": {
   "attempts": 4,
@@ -781,7 +781,7 @@
   "first_diff": null,
   "name": "TechnoClass::checkRange",
   "note": "via=mirror COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4393d0": {
   "attempts": 2,
@@ -816,70 +816,70 @@
   "first_diff": null,
   "name": "AnimClass::updateAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x448160": {
   "attempts": 2,
   "first_diff": null,
   "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x44d7d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::GetTargetFacing",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x44e3a0": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::CheckOverlapWithOthers",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x44f640": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x451330": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x451f60": {
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::SyncCrateVisuals",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x452360": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x455c20": {
   "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4566b0": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetPowerFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4581f0": {
   "attempts": 2,
@@ -963,7 +963,7 @@
   "first_diff": null,
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4664c0": {
   "attempts": 2,
@@ -977,7 +977,7 @@
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x46b270": {
   "attempts": 2,
@@ -1019,7 +1019,7 @@
   "first_diff": null,
   "name": "VectorClass_ptr_BulletClass::GetItem_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x46c850": {
   "attempts": 2,
@@ -1068,7 +1068,7 @@
   "first_diff": null,
   "name": "CaptureManagerClass::DrawLinks",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4722c0": {
   "attempts": 4,
@@ -1110,161 +1110,161 @@
   "first_diff": null,
   "name": "INIClass::GetCoord",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x474c70": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIEntry::ReadColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x475150": {
   "attempts": 2,
   "first_diff": null,
   "name": "BulletTypeClass::ReadTrajectoryFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x475610": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIClass::SetHouseName",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4756f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x475b70": {
   "attempts": 2,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadTrajectoryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x475c70": {
   "attempts": 2,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadVeteranData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x475f30": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::SaveIntListToINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x476240": {
   "attempts": 2,
   "first_diff": null,
   "name": "ObjectTypeClass::ReadTypeListINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4766f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::SaveTypeNameListToINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x476a20": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIClass::WriteSuperWeaponList",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x477640": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIEntry::ReadAbilities",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x477740": {
   "attempts": 6,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x478340": {
   "attempts": 2,
   "first_diff": null,
   "name": "FilePipe_38::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4784f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ParticleTypeClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4788e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ParticleTypeClass::EnsureCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x47d210": {
   "attempts": 2,
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x47ff80": {
   "attempts": 2,
   "first_diff": null,
   "name": "CellClass::GetScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4802a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::DrawCellTerrainOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x480510": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingPlacement::ValidateType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x484050": {
   "attempts": 2,
   "first_diff": null,
   "name": "Tactical::CreateTacticalLightSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x485010": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::FindByCellHash",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x485080": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x486380": {
   "attempts": 11,
@@ -1278,7 +1278,7 @@
   "first_diff": null,
   "name": "CellLand::IsBuildable",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4865b0": {
   "attempts": 4,
@@ -1313,7 +1313,7 @@
   "first_diff": null,
   "name": "Cell::IsBuildableAdvanced",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4870d0": {
   "attempts": 8,
@@ -1348,7 +1348,7 @@
   "first_diff": null,
   "name": "Rect::Union",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4886a0": {
   "attempts": 4,
@@ -1376,28 +1376,28 @@
   "first_diff": null,
   "name": "Struct::ClearAllMemberFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x48b410": {
   "attempts": 2,
   "first_diff": null,
   "name": "ConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x48b570": {
   "attempts": 2,
   "first_diff": null,
   "name": "PacketQueue::ExtractEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x48b750": {
   "attempts": 2,
   "first_diff": null,
   "name": "ConnectionClass::allocPacketSlot",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x48b890": {
   "attempts": 2,
@@ -1425,7 +1425,7 @@
   "first_diff": null,
   "name": "ConnectionClass::sendAck",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x48d1d0": {
   "attempts": 3,
@@ -1446,336 +1446,336 @@
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x493a60": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x493b90": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x493cc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitPlainXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x493df0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x493f30": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494080": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4941e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494330": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494b60": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494c40": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494d90": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x494f20": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4950c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495250": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4953f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495590": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495730": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4958d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495a50": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495bc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495d60": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x495f00": {
   "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4974b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497610": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497760": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4978c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497a10": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497b80": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497cf0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497e60": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x497fd0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x498150": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4982e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4984d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4986d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4988c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x498ac0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x498cd0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x498ed0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4990e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x499280": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x499430": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x499650": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x499860": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x499a90": {
   "attempts": 2,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x49b660": {
   "attempts": 2,
   "first_diff": null,
   "name": "MPCooperative::processTurn",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x49e400": {
   "attempts": 2,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x49fb60": {
   "attempts": 4,
@@ -1789,56 +1789,56 @@
   "first_diff": null,
   "name": "EnumConnectionsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a0630": {
   "attempts": 2,
   "first_diff": null,
   "name": "ConnectionPointClass::Unadvise",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a0a50": {
   "attempts": 3,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a2600": {
   "attempts": 2,
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a2cd0": {
   "attempts": 2,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a3220": {
   "attempts": 3,
   "first_diff": null,
   "name": "CStreamClass::IStreamQueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a3230": {
   "attempts": 3,
   "first_diff": null,
   "name": "CStreamClass::IStreamAddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a3240": {
   "attempts": 3,
   "first_diff": null,
   "name": "CStreamClass::IStreamRelease",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a3c00": {
   "attempts": 4,
@@ -1852,7 +1852,7 @@
   "first_diff": null,
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a60d0": {
   "attempts": 2,
@@ -1866,21 +1866,21 @@
   "first_diff": null,
   "name": "TextRenderer::Printf",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a61c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
   "attempts": 2,
   "first_diff": null,
   "name": "DiskLaserClass::PointerGotInvalid",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a7c70": {
   "attempts": 2,
@@ -1901,91 +1901,91 @@
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a8d50": {
   "attempts": 2,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a94f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "CoordList::GetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a95a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::SetCellFlagsAlongPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4a9650": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::MarkExitPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ac660": {
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::TogglePower",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ac820": {
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalClass::SetObserverMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ac8c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::TogglePower2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ac960": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4adba0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4af540": {
   "attempts": 1,
   "first_diff": null,
   "name": "LocomotionClass::Initialize",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4afb80": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b0c40": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b4870": {
   "attempts": 1,
@@ -1999,7 +1999,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b4c60": {
   "attempts": 1,
@@ -2027,7 +2027,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetField_0x78",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b4da0": {
   "attempts": 3,
@@ -2041,7 +2041,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetField_0x80",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b55a0": {
   "attempts": 1,
@@ -2055,7 +2055,7 @@
   "first_diff": null,
   "name": "BlitterList::CopyEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b5b30": {
   "attempts": 1,
@@ -2104,7 +2104,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6740",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b6750": {
   "attempts": 3,
@@ -2118,14 +2118,14 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6760",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b6770": {
   "attempts": 3,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6770",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4b6780": {
   "attempts": 3,
@@ -2139,14 +2139,14 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SmallStub_4B6790",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ba5a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4bad60": {
   "attempts": 1,
@@ -2167,35 +2167,35 @@
   "first_diff": null,
   "name": "DSurface::BlitStretch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4bbc90": {
   "attempts": 2,
   "first_diff": null,
   "name": "DDraw::GetStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c3d00": {
   "attempts": 2,
   "first_diff": null,
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c4ef0": {
   "attempts": 3,
   "first_diff": null,
   "name": "TaskForceClass::ParseUnitCountAndType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c58c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c5aa0": {
   "attempts": 2,
@@ -2216,28 +2216,28 @@
   "first_diff": null,
   "name": "FacingClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c93d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c9530": {
   "attempts": 2,
   "first_diff": null,
   "name": "MovementClass::CompareAbsCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c9b20": {
   "attempts": 2,
   "first_diff": null,
   "name": "FactoryClass::UpdateProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4c9c50": {
   "attempts": 1,
@@ -2258,7 +2258,7 @@
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ca120": {
   "attempts": 4,
@@ -2314,14 +2314,14 @@
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4cbba0": {
   "attempts": 3,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4d0390": {
   "attempts": 2,
@@ -2335,7 +2335,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4d0520": {
   "attempts": 3,
@@ -2349,7 +2349,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::Stub2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4d27b0": {
   "attempts": 2,
@@ -2370,42 +2370,42 @@
   "first_diff": null,
   "name": "FoggedObject_DrawVector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4d2bc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4da030": {
   "attempts": 2,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4daf10": {
   "attempts": 2,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4dc810": {
   "attempts": 2,
   "first_diff": null,
   "name": "FootClass::SetBuildingType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4ddb90": {
   "attempts": 2,
   "first_diff": null,
   "name": "FootClass::MoveToWeed",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4de620": {
   "attempts": 6,
@@ -2447,7 +2447,7 @@
   "first_diff": null,
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4e30a0": {
   "attempts": 1,
@@ -2461,21 +2461,21 @@
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4e5310": {
   "attempts": 2,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4e5d60": {
   "attempts": 2,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4e8260": {
   "attempts": 1,
@@ -2489,14 +2489,14 @@
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_09",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4f2b50": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4f3af0": {
   "attempts": 1,
@@ -2517,70 +2517,70 @@
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4f4000": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4f4c20": {
   "attempts": 2,
   "first_diff": null,
   "name": "Byte::Zero",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4fae50": {
   "attempts": 2,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4fc6d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x4fd060": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x501160": {
   "attempts": 2,
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5022f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "WaypointClass::IsCoordinateUsed",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5023b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Waypoint::FindByCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x509610": {
   "attempts": 2,
   "first_diff": null,
   "name": "TriggerClass::ValidateTeamTriggerConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x509b20": {
   "attempts": 2,
@@ -2608,35 +2608,35 @@
   "first_diff": null,
   "name": "BuildingTypeClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50df30": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::GetStartCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50e0e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::LostPoweredCenter",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50e1c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50e280": {
   "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ReactivateTechnos",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50e360": {
   "attempts": 2,
@@ -2664,21 +2664,21 @@
   "first_diff": null,
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x50fb20": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass__N::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510a20": {
   "attempts": 3,
   "first_diff": null,
   "name": "AbstractClass::saveToStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510a30": {
   "attempts": 3,
@@ -2699,7 +2699,7 @@
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510a60": {
   "attempts": 3,
@@ -2720,7 +2720,7 @@
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510a90": {
   "attempts": 3,
@@ -2748,14 +2748,14 @@
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510ad0": {
   "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x510ae0": {
   "attempts": 3,
@@ -2783,7 +2783,7 @@
   "first_diff": null,
   "name": "HouseTypeClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x512710": {
   "attempts": 2,
@@ -2811,7 +2811,7 @@
   "first_diff": null,
   "name": "HouseTypeClass::readBaseDefenses",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5139f0": {
   "attempts": 3,
@@ -2832,7 +2832,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5172b0": {
   "attempts": 2,
@@ -2860,7 +2860,7 @@
   "first_diff": null,
   "name": "InfantryClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x51faf0": {
   "attempts": 2,
@@ -2881,7 +2881,7 @@
   "first_diff": null,
   "name": "InfantryClass::ComputeTransform",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5232f0": {
   "attempts": 2,
@@ -2923,7 +2923,7 @@
   "first_diff": null,
   "name": "INIClass::BinarySearchSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x526950": {
   "attempts": 5,
@@ -2937,42 +2937,42 @@
   "first_diff": null,
   "name": "INIClass::GetKeyCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x526a30": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIClass::FindKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x526cc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIClass::GetStringByIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x52b170": {
   "attempts": 2,
   "first_diff": null,
   "name": "SortedArray::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x52b2b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "INIClass::deleteSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x52b390": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashTable::BinarySearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x535bd0": {
   "attempts": 1,
@@ -2993,42 +2993,42 @@
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x535de0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_7",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x535ea0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_12",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x535f30": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_17",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5365a0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_26",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5366a0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_31",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536730": {
   "attempts": 1,
@@ -3042,14 +3042,14 @@
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_39",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536810": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_45",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536890": {
   "attempts": 1,
@@ -3063,119 +3063,119 @@
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_53",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536970": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_59",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536a10": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_65",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536b10": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_70",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536b80": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_74",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x536b90": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_75",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537130": {
   "attempts": 3,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_128",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537a50": {
   "attempts": 3,
   "first_diff": null,
   "name": "Commands::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537a60": {
   "attempts": 3,
   "first_diff": null,
   "name": "Commands::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537a70": {
   "attempts": 3,
   "first_diff": null,
   "name": "Commands::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537a80": {
   "attempts": 3,
   "first_diff": null,
   "name": "Commands::StubReturn8550640",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537b50": {
   "attempts": 3,
   "first_diff": null,
   "name": "ScreenCaptureCommandClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537de0": {
   "attempts": 3,
   "first_diff": null,
   "name": "PageUserCommandClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537f20": {
   "attempts": 3,
   "first_diff": null,
   "name": "DeleteCommandClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x537f90": {
   "attempts": 3,
   "first_diff": null,
   "name": "DeleteCommandClass::Undo",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5388a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "SortedArray::RemoveByKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x538980": {
   "attempts": 2,
   "first_diff": null,
   "name": "SortedArray::FindPair",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x53a100": {
   "attempts": 3,
@@ -3189,28 +3189,28 @@
   "first_diff": null,
   "name": "GUID::Compare",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x53ef60": {
   "attempts": 2,
   "first_diff": null,
   "name": "Network::processPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x53f0e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Network::FormatAddress",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x53f1f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Multiplayer::Screen",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x53f4e0": {
   "attempts": 6,
@@ -3224,28 +3224,28 @@
   "first_diff": null,
   "name": "IPXGlobalConnClass::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x540340": {
   "attempts": 2,
   "first_diff": null,
   "name": "IPXGlobalConnClass::SendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x540c60": {
   "attempts": 2,
   "first_diff": null,
   "name": "Network::SetConnectionParams",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x540dc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "SessionClass::initLAN",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x540f90": {
   "attempts": 1,
@@ -3259,14 +3259,14 @@
   "first_diff": null,
   "name": "IPXManagerClass::ProcessQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x547230": {
   "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::DrawCellOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x54a140": {
   "attempts": 2,
@@ -3294,42 +3294,42 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x54da50": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x54f050": {
   "attempts": 2,
   "first_diff": null,
   "name": "EventQueue::Read",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x54f2f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "InputManager::EnqueueInputEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x54fe60": {
   "attempts": 2,
   "first_diff": null,
   "name": "TimerClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x552b10": {
   "attempts": 2,
   "first_diff": null,
   "name": "Scenario::ComputeDisplayPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x555130": {
   "attempts": 2,
@@ -3350,21 +3350,21 @@
   "first_diff": null,
   "name": "ObjectClass::GetWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x556630": {
   "attempts": 7,
   "first_diff": null,
   "name": "ObjectClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x556a20": {
   "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::checkLimbo",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x557b00": {
   "attempts": 2,
@@ -3378,7 +3378,7 @@
   "first_diff": null,
   "name": "ListClass::Destru_vt50",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x558120": {
   "attempts": 1,
@@ -3399,7 +3399,7 @@
   "first_diff": null,
   "name": "LocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x55ab70": {
   "attempts": 2,
@@ -3476,7 +3476,7 @@
   "first_diff": null,
   "name": "RadarClass::SetGlobal",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x55cbf0": {
   "attempts": 2,
@@ -3490,84 +3490,84 @@
   "first_diff": null,
   "name": "MapClass::FreeAllCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56bd40": {
   "attempts": 2,
   "first_diff": null,
   "name": "CrateClass::FindPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56d100": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapSeed::CheckTileMatch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56d230": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::GetTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56d460": {
   "attempts": 2,
   "first_diff": null,
   "name": "Cell::SetRadar",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56d5a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "CellClass::DetermineTileConnectivity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x56e7c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::CheckCellsBuildable",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578290": {
   "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::CellIteratorNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578390": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::IsRectInBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578460": {
   "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::IsWithinUsableArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578540": {
   "attempts": 2,
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578710": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x578ac0": {
   "attempts": 2,
@@ -3581,14 +3581,14 @@
   "first_diff": null,
   "name": "LayerClass::AssignCellOwnership",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x586360": {
   "attempts": 2,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5865e0": {
   "attempts": 4,
@@ -3602,49 +3602,49 @@
   "first_diff": null,
   "name": "CellClass::SpiralFindClosest",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x586780": {
   "attempts": 2,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x586ac0": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ClampToCellBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x588ac0": {
   "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::ClearFactoryCellAssignments",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x589370": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass::AllocateCellDataBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x58a2a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_W4PassabilityType::SetCapacity_1",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x58a8f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x58b7d0": {
   "attempts": 2,
@@ -3658,7 +3658,7 @@
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5975e0": {
   "attempts": 2,
@@ -3672,42 +3672,42 @@
   "first_diff": null,
   "name": "RandomMap::GrowTiberium",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5ac960": {
   "attempts": 2,
   "first_diff": null,
   "name": "PriorityQueue::Pop",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5acd30": {
   "attempts": 2,
   "first_diff": null,
   "name": "MSEngine::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5aced0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MSEngine::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5ad870": {
   "attempts": 2,
   "first_diff": null,
   "name": "Heap::SiftDown",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5b1aa0": {
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5b1b40": {
   "attempts": 2,
@@ -3727,7 +3727,7 @@
   "attempts": 17,
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "Math::Abs16Cmp",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
  },
  "0x5b2e10": {
@@ -3882,7 +3882,7 @@
   "first_diff": null,
   "name": "HashTree::MarkEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5bbed0": {
   "attempts": 7,
@@ -3896,7 +3896,7 @@
   "first_diff": null,
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5c02e0": {
   "attempts": 4,
@@ -3952,14 +3952,14 @@
   "first_diff": null,
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5c2de0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MPCooperative::selectTeam",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5c5d30": {
   "attempts": 8,
@@ -3987,42 +3987,42 @@
   "first_diff": null,
   "name": "VtableStub::5CB6C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cbb80": {
   "attempts": 2,
   "first_diff": null,
   "name": "MSOverlayAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cc110": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::DrawConstructionFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cc550": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cc970": {
   "attempts": 3,
   "first_diff": null,
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cd320": {
   "attempts": 1,
@@ -4043,21 +4043,21 @@
   "first_diff": null,
   "name": "MSBitPrintAnim::SetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5cd4d0": {
   "attempts": 3,
   "first_diff": null,
   "name": "MSBitPrintAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5ce8c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5ceab0": {
   "attempts": 1,
@@ -4071,14 +4071,14 @@
   "first_diff": null,
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5d5880": {
   "attempts": 3,
   "first_diff": null,
   "name": "Timer::DisableHighPrecision",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5d5db0": {
   "attempts": 2,
@@ -4106,7 +4106,7 @@
   "first_diff": null,
   "name": "ScenarioClass::MissionStubReturnZero3",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5d67a0": {
   "attempts": 2,
@@ -4120,7 +4120,7 @@
   "first_diff": null,
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5d87e0": {
   "attempts": 5,
@@ -4134,21 +4134,21 @@
   "first_diff": null,
   "name": "Network::CountDisconnectedHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5e84d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "GameConfig::ComputeCRC",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5e9290": {
   "attempts": 2,
   "first_diff": null,
   "name": "NetworkLobby::CheckLobbyConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5ef280": {
   "attempts": 5,
@@ -4190,7 +4190,7 @@
   "first_diff": null,
   "name": "ObjectClass::GetPlacementScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5f5f30": {
   "attempts": 2,
@@ -4204,7 +4204,7 @@
   "first_diff": null,
   "name": "ObjectClass::SetZ",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5f6560": {
   "attempts": 14,
@@ -4218,7 +4218,7 @@
   "first_diff": null,
   "name": "ObjectClass::CheckGroundHeightDiff",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5f7610": {
   "attempts": 2,
@@ -4232,7 +4232,7 @@
   "first_diff": null,
   "name": "ObjectTypeClass::SetRTTI71",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x5fbf70": {
   "attempts": 4,
@@ -4309,14 +4309,14 @@
   "first_diff": null,
   "name": "SymbolTable::Rebuild",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x624130": {
   "attempts": 2,
   "first_diff": null,
   "name": "OwnerDrawControl::InitVtable",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6241c0": {
   "attempts": 6,
@@ -4337,49 +4337,49 @@
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x624fc0": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Grow2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6252f0": {
   "attempts": 3,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SortItems",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x625780": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x625830": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Rebuild2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6258e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x626690": {
   "attempts": 2,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x62af50": {
   "attempts": 2,
@@ -4435,14 +4435,14 @@
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x62e4c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x62fe80": {
   "attempts": 2,
@@ -4540,7 +4540,7 @@
   "first_diff": null,
   "name": "FactoryClass::FinishProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x636540": {
   "attempts": 3,
@@ -4554,7 +4554,7 @@
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x636dc0": {
   "attempts": 4,
@@ -4568,7 +4568,7 @@
   "first_diff": null,
   "name": "TabClass::processTabInput",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x637aa0": {
   "attempts": 2,
@@ -4582,7 +4582,7 @@
   "first_diff": null,
   "name": "ScriptAction::ClassifyAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x63f7b0": {
   "attempts": 5,
@@ -4596,7 +4596,7 @@
   "first_diff": null,
   "name": "PowerClass::getDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x642ad0": {
   "attempts": 3,
@@ -4617,7 +4617,7 @@
   "first_diff": null,
   "name": "WarheadTypeClass::applyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x644920": {
   "attempts": 2,
@@ -4680,28 +4680,28 @@
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x653760": {
   "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x655740": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::RemoveGapCellCoverage",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x656cb0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x656de0": {
   "attempts": 2,
@@ -4715,34 +4715,34 @@
   "first_diff": null,
   "name": "RadarHashVector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x658b10": {
   "attempts": 2,
   "first_diff": null,
   "name": "RadarHashVector::ComputeHashIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x658de0": {
   "attempts": 2,
   "first_diff": null,
   "name": "RadarHashVector::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x659570": {
   "attempts": 5,
   "first_diff": null,
   "name": "sub_659570",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x65a820": {
   "attempts": 2,
   "first_diff": "+1 mov ebx, dword ptr [esp + 0xc]",
   "name": "ObjectClass::ProcessGroupInput",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
  },
  "0x65aeb0": {
@@ -4750,7 +4750,7 @@
   "first_diff": null,
   "name": "RadioClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x65b3a0": {
   "attempts": 2,
@@ -4778,7 +4778,7 @@
   "first_diff": null,
   "name": "RadSiteClass::Tick",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x65c320": {
   "attempts": 2,
@@ -4820,14 +4820,14 @@
   "first_diff": null,
   "name": "Random::Range",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x65d660": {
   "attempts": 2,
   "first_diff": null,
   "name": "ReferenceCounted::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x65d690": {
   "attempts": 2,
@@ -4841,14 +4841,14 @@
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6632e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6635b0": {
   "attempts": 2,
@@ -4862,7 +4862,7 @@
   "first_diff": null,
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x67a730": {
   "attempts": 1,
@@ -4890,7 +4890,7 @@
   "first_diff": null,
   "name": "LoadOptions::GetData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x681120": {
   "attempts": 2,
@@ -4918,14 +4918,14 @@
   "first_diff": null,
   "name": "ScenarioClass::SetCountryFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x68c710": {
   "attempts": 2,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x691ec0": {
   "attempts": 2,
@@ -4967,14 +4967,14 @@
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x69b7e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x69bbe0": {
   "attempts": 2,
@@ -4988,35 +4988,35 @@
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x69deb0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x69ec50": {
   "attempts": 1,
   "first_diff": null,
   "name": "LocomotionClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x69f290": {
   "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a0310": {
   "attempts": 2,
   "first_diff": null,
   "name": "WalkLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a3ea0": {
   "attempts": 2,
@@ -5030,7 +5030,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a42a0": {
   "attempts": 2,
@@ -5058,56 +5058,56 @@
   "first_diff": null,
   "name": "SidebarClass::InitPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a6140": {
   "attempts": 2,
   "first_diff": null,
   "name": "Sidebar::FindProductionType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a6a00": {
   "attempts": 2,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_245",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a80a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TabClass::updateTabProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a8220": {
   "attempts": 2,
   "first_diff": null,
   "name": "SidebarClass::InitCameoGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6a8710": {
   "attempts": 2,
   "first_diff": null,
   "name": "TabCameoListClass::AddCameo_ReplaceItAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6ac5f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b1020": {
   "attempts": 2,
   "first_diff": null,
   "name": "SlaveManagerClass::ShouldWakeUpNow",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b1370": {
   "attempts": 2,
@@ -5128,14 +5128,14 @@
   "first_diff": null,
   "name": "VectorClass_UUndoInfoStruct::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b4650": {
   "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_UUndoInfoStruct::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b4f20": {
   "attempts": 2,
@@ -5163,21 +5163,21 @@
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b5f80": {
   "attempts": 2,
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b6080": {
   "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::CreateUnloadPlacementCraters",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b6130": {
   "attempts": 2,
@@ -5205,14 +5205,14 @@
   "first_diff": null,
   "name": "TaskManager::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b7c60": {
   "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6b8120": {
   "attempts": 2,
@@ -5233,35 +5233,35 @@
   "first_diff": null,
   "name": "HashTable_flat::RebuildEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6c6740": {
   "attempts": 2,
   "first_diff": null,
   "name": "StaticButtonClass::HitTest",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6c9c60": {
   "attempts": 2,
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6cb830": {
   "attempts": 2,
   "first_diff": null,
   "name": "SuperClass::StopPreclickAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6ce0b0": {
   "attempts": 2,
   "first_diff": null,
   "name": "SuperClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6ce200": {
   "attempts": 2,
@@ -5282,7 +5282,7 @@
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6d0260": {
   "attempts": 5,
@@ -5296,63 +5296,63 @@
   "first_diff": null,
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6d5f60": {
   "attempts": 3,
   "first_diff": null,
   "name": "TacticalClass::SetViewportPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6d6070": {
   "attempts": 2,
   "first_diff": null,
   "name": "Tactical::SetTacticalPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6d6410": {
   "attempts": 2,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6d8530": {
   "attempts": 2,
   "first_diff": null,
   "name": "DisplayClass::ScrollTacticalView",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6da080": {
   "attempts": 2,
   "first_diff": null,
   "name": "PlayerClass::HasOccupiedCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6da180": {
   "attempts": 2,
   "first_diff": null,
   "name": "TacticalMap::DrawOccupiedRegion",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6da230": {
   "attempts": 2,
   "first_diff": null,
   "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6da7d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6dc450": {
   "attempts": 2,
@@ -5373,56 +5373,56 @@
   "first_diff": null,
   "name": "VectorClass_UDirtyAreaStruct::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e0110": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::Create",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e0ef0": {
   "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::UpdateTechBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e1530": {
   "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e15f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e1780": {
   "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e2970": {
   "attempts": 3,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e4150": {
   "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e4630": {
   "attempts": 2,
@@ -5485,28 +5485,28 @@
   "first_diff": null,
   "name": "BuildingLoadQueue::GetNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e6f20": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e6ff0": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e7a80": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6e87d0": {
   "attempts": 2,
@@ -5527,14 +5527,14 @@
   "first_diff": null,
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6ef610": {
   "attempts": 2,
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x6f0430": {
   "attempts": 2,
@@ -5583,7 +5583,7 @@
   "first_diff": null,
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x705d20": {
   "attempts": 2,
@@ -5604,7 +5604,7 @@
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7099d0": {
   "attempts": 2,
@@ -5618,7 +5618,7 @@
   "first_diff": null,
   "name": "TechnoClass::RevealAreaConditional",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x70c5b0": {
   "attempts": 2,
@@ -5653,7 +5653,7 @@
   "first_diff": null,
   "name": "TechnoClass::GetAnimationFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x70f040": {
   "attempts": 1,
@@ -5667,7 +5667,7 @@
   "first_diff": null,
   "name": "UnitClass::IsDeactivated",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x717a70": {
   "attempts": 1,
@@ -5695,7 +5695,7 @@
   "first_diff": null,
   "name": "FactoryClass::CompleteItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x71b190": {
   "attempts": 2,
@@ -5716,7 +5716,7 @@
   "first_diff": null,
   "name": "TerrainClass::IsPlacementValid",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x71d150": {
   "attempts": 2,
@@ -5730,7 +5730,7 @@
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x71d2f0": {
   "attempts": 2,
@@ -5800,35 +5800,35 @@
   "first_diff": null,
   "name": "AbstractClass::selectWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x720140": {
   "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x720a80": {
   "attempts": 2,
   "first_diff": null,
   "name": "Movie::SelectNextBuildableType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x722390": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x722e50": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7236e0": {
   "attempts": 2,
@@ -5856,7 +5856,7 @@
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x724aa0": {
   "attempts": 2,
@@ -5877,7 +5877,7 @@
   "first_diff": null,
   "name": "TActionClass::executeAirstrikeAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x726900": {
   "attempts": 4,
@@ -5961,7 +5961,7 @@
   "first_diff": null,
   "name": "VtableStub::72F510",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x732d00": {
   "attempts": 2,
@@ -5975,14 +5975,14 @@
   "first_diff": null,
   "name": "TechnoClass::UpdateUnitAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x736d50": {
   "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::IsC4AnimationActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x740e50": {
   "attempts": 5,
@@ -6003,21 +6003,21 @@
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7464e0": {
   "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::TransferTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x746810": {
   "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x746d80": {
   "attempts": 2,
@@ -6045,7 +6045,7 @@
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x748160": {
   "attempts": 2,
@@ -6136,21 +6136,21 @@
   "first_diff": null,
   "name": "VectorClass_E::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x74d5d0": {
   "attempts": 1,
   "first_diff": null,
   "name": "VeinholeMonsterClass::ProcessExpansion",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x74d670": {
   "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x74f310": {
   "attempts": 2,
@@ -6178,14 +6178,14 @@
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x74fa20": {
   "attempts": 2,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x74fda0": {
   "attempts": 2,
@@ -6206,63 +6206,63 @@
   "first_diff": null,
   "name": "Miles::DriverGet",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x753e00": {
   "attempts": 2,
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x756dd0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x756f80": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x757790": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x757e70": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x758030": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x758ea0": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelRenderer::ProjectVertex",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x759f70": {
   "attempts": 2,
@@ -6283,7 +6283,7 @@
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_1",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x75cbd0": {
   "attempts": 2,
@@ -6311,14 +6311,14 @@
   "first_diff": null,
   "name": "Voxel::BlendShadowColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x75f140": {
   "attempts": 2,
   "first_diff": null,
   "name": "Voxel::loadSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x75f880": {
   "attempts": 2,
@@ -6339,7 +6339,7 @@
   "first_diff": null,
   "name": "Voxel::BlendColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7631f0": {
   "attempts": 3,
@@ -6353,7 +6353,7 @@
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x763e00": {
   "attempts": 3,
@@ -6374,49 +6374,49 @@
   "first_diff": null,
   "name": "Campaign_WorldDominationTour_24::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x765b50": {
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x766fa0": {
   "attempts": 3,
   "first_diff": null,
   "name": "Conflict_WorldDominationTour_26::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x766fb0": {
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76a3f0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Map_WorldDominationTour_43::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76a5a0": {
   "attempts": 3,
   "first_diff": null,
   "name": "Map_WorldDominationTour_38::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76a5b0": {
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76b090": {
   "attempts": 1,
@@ -6430,7 +6430,7 @@
   "first_diff": null,
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f020": {
   "attempts": 1,
@@ -6458,42 +6458,42 @@
   "first_diff": null,
   "name": "Count::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f170": {
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f180": {
   "attempts": 3,
   "first_diff": null,
   "name": "VectorCursor::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f190": {
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f1a0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x76f1b0": {
   "attempts": 3,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7730d0": {
   "attempts": 3,
@@ -6570,7 +6570,7 @@
   "first_diff": null,
   "name": "Dialog::GetCurrent",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x775b20": {
   "attempts": 3,
@@ -6647,63 +6647,63 @@
   "first_diff": null,
   "name": "CChatEventSink::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7adf70": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7ae020": {
   "attempts": 3,
   "first_diff": null,
   "name": "WOLGameList::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7ae0e0": {
   "attempts": 3,
   "first_diff": null,
   "name": "ComStreamClass::readData",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7ae460": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7ae510": {
   "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Grow",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7aec00": {
   "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7aef50": {
   "attempts": 2,
   "first_diff": null,
   "name": "ComStreamClass::flushStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b0f50": {
   "attempts": 2,
   "first_diff": null,
   "name": "NetworkOptions::ApplySettings",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b1750": {
   "attempts": 2,
@@ -6724,7 +6724,7 @@
   "first_diff": null,
   "name": "AudioQueue::ReadBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b2720": {
   "attempts": 2,
@@ -6738,49 +6738,49 @@
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
   "attempts": 2,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b3920": {
   "attempts": 2,
   "first_diff": null,
   "name": "UDPInterfaceClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b4940": {
   "attempts": 2,
   "first_diff": null,
   "name": "String::Reassign",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b4c20": {
   "attempts": 2,
   "first_diff": null,
   "name": "String::Append",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b4cd0": {
   "attempts": 2,
   "first_diff": null,
   "name": "String::Append2",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b5020": {
   "attempts": 2,
   "first_diff": null,
   "name": "String::Erase",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b5b80": {
   "attempts": 2,
@@ -6801,14 +6801,14 @@
   "first_diff": null,
   "name": "WWMouseClass::checkStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7b9d80": {
   "attempts": 5,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7ba330": {
   "attempts": 1,
@@ -6864,7 +6864,7 @@
   "first_diff": null,
   "name": "XSurface::entry_3C_",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7bab80": {
   "attempts": 2,
@@ -6885,14 +6885,14 @@
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7bd2d0": {
   "attempts": 2,
   "first_diff": null,
   "name": "AudioStream::CalcReadPos",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c35c0": {
   "attempts": 2,
@@ -6906,97 +6906,97 @@
   "first_diff": null,
   "name": "AudioCodec::Decode",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c891a": {
   "attempts": 5,
   "first_diff": null,
   "name": "OleUninitialize::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c89f2": {
   "attempts": 5,
   "first_diff": null,
   "name": "ImageList::DragEnter",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c89f8": {
   "attempts": 5,
   "first_diff": null,
   "name": "ImageList::BeginDrag",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c89fe": {
   "attempts": 3,
   "first_diff": null,
   "name": "ImageList::Destroy",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c8a04": {
   "attempts": 3,
   "first_diff": null,
   "name": "ImageList::EndDrag",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c8a0a": {
   "attempts": 3,
   "first_diff": null,
   "name": "ImageList::DragMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7c8a10": {
   "attempts": 3,
   "first_diff": null,
   "name": "ImageList::DragShowNolock",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7d1512": {
   "attempts": 3,
   "first_diff": null,
   "name": "GetCurrentThreadId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7dcee0": {
   "attempts": 3,
   "first_diff": null,
   "name": "GetCurrentThread::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7dcf22": {
   "attempts": 3,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
   "attempts": 2,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
   "attempts": 2,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "status": "COMPILE_FAIL"
  }
 }

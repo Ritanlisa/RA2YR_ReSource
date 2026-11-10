@@ -113,12 +113,28 @@ def norm_addr(a):
 JCC_SIGNED = re.compile(r"^j(?:l|le|g|ge)$")
 JCC_AFTER_CMP = re.compile(r"^j(?:a|ae|b|be)$")
 
+# [esp], [esp + 4], [esp+0xc] -- normalized stack-slot operand (diffasm text)
+ESP_SLOT = re.compile(r"\[esp\s*(?:\+\s*(0x[0-9a-fA-F]+|\d+))?\s*\]")
+
+
+def esp_slot(disasm):
+    """Stack-slot offset of an [esp(+N)] operand in disasm text, else None."""
+    m = ESP_SLOT.search(disasm)
+    if not m:
+        return None
+    return int(m.group(1) or "0", 0)
+
 
 def classify_diff(first):
     """first = (orig_insn_dict|None, ours_insn_dict|None) from dmod.compare.
 
-    Pathology taxonomy (round-2 extension of the original three families):
-      cc_mismatch     receiver/argument register vs stack disagreement
+    Pathology taxonomy (round-2 extension of the original three families;
+    cc_mismatch criteria narrowed per R4 ruling, report_r4.md §1.1):
+      cc_mismatch     param slot offset diff ([esp+4] vs [esp+8] at the same
+                      param position) or retn-N disagreement. NOT a
+                      "first insn reads stack vs reads ECX" form difference.
+      eval_order      evaluation order / first-insn form difference (one side
+                      reads a stack slot, the other reads ECX/a register)
       frame_sched     prologue/epilogue stack-frame scheduling
       ret_norm        bool/char return-width normalization (al vs eax)
       extern_reloc    OBJ reloc symbol key vs absolute orig address
@@ -154,7 +170,14 @@ def classify_diff(first):
     if "esp" in o and "esp" in b and (off0 or "sub esp" in o or "sub esp" in b):
         if om in ("mov", "movzx", "lea") and bm in ("mov", "movzx", "lea"):
             if off0 and ("[esp" in o) and ("[esp" in b):
-                return "cc_mismatch"
+                # R4 ruling: cc_mismatch ONLY when the same parameter
+                # position is read from a DIFFERENT stack slot
+                # ([esp+4] vs [esp+8]). Same slot in a different
+                # register is plain regalloc.
+                so_, sb_ = esp_slot(o), esp_slot(b)
+                if so_ is not None and sb_ is not None and so_ != sb_:
+                    return "cc_mismatch"
+                return "regalloc"
         return "frame_sched"
     # frame introduced by an over-wide return/local: orig bare `mov al,[..]`
     # vs ours `push ecx` (int-result frame around a char return)
@@ -173,7 +196,10 @@ def classify_diff(first):
         if re.fullmatch(r"j(n?e|n?z)", om) and re.fullmatch(r"j(n?e|n?z)", bm):
             return "branch_polarity"
         if ("esp" in o) != ("esp" in b):
-            return "cc_mismatch"
+            # R4 ruling: "first insn reads stack vs reads ECX" is an
+            # evaluation-order / first-insn form difference, NOT a
+            # calling-convention mismatch.
+            return "eval_order"
         if om in ("jmp",) or om.startswith("j"):
             return "branch_order"
         # width differential only meaningful when both sides carry a memory
@@ -528,7 +554,11 @@ def record_ledger(results):
     for addr, r in results.items():
         if not r["verdict"]:
             continue
-        status = {"MATCH": "OK", "MISMATCH": "NG"}.get(r["verdict"], "PENDING")
+        # Ledger semantics alignment (R5): COMPILE_FAIL is a decided
+        # terminal verdict for a run, not "still pending" -- recording it
+        # as PENDING is what inflated the pending pool (511 entries).
+        status = {"MATCH": "OK", "MISMATCH": "NG",
+                  "COMPILE_FAIL": "COMPILE_FAIL"}.get(r["verdict"], "PENDING")
         lmod.record(addr, name=r.get("name") or r.get("emitted") or addr,
                     status=status,
                     first_diff=(r.get("first_diff") or {}).get("orig"),
