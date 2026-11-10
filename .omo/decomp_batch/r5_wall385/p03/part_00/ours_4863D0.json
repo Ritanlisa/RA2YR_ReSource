@@ -1,0 +1,75 @@
+{
+ "symbol": "?IsBuildable@CellLand@@QAE_NXZ",
+ "sym_key": "CellLand::IsBuildable",
+ "size": 442,
+ "link_base": 0,
+ "bytes_hex": "8b1500000000535683faff5774128b41383bc2720b83c2283bc20f82740100008b150000000083faff743a8b41383bc272338d72043bc6732c3bc2740b83c2033bc20f85360100008a891a01000084c90f845e01000080f9040f84550100005f5eb0015bc38b1d0000000083fbff74128b41383bc3720b8d53043bc20f82fc0000008b3d0000000083ffff74128b41383bc7720b8d57043bc20f82d40000008b350000000083feff74128b41383bc6720b8d56043bc20f82ac0000008b150000000083faff74128b41383bc2720b83c2143bc20f82bb0000008b150000000083faff74128b41383bc2720b83c2043bc20f829e0000008b150000000083faff74128b41383bc2720b83c2103bc20f82810000008b150000000083faff740e8b41383bc2720783c2103bc272688b150000000083faff740e8b41383bc2720783c2023bc2724fa10000000083f8ff74658b51383bd0725e83c01c3bd073573bc6744883c6033bc674413bc7742e83c7033bc774273bc3740d83c3033bc374065f5eb0015bc38a891a01000080f901742580f90374205f5eb0015bc380b91a0100000272115f5eb0015bc38a891a01000080f902ebd95f5e32c05bc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_TerrainBuildConfig@@3IA",
+   "sym_key": "g_TerrainBuildConfig"
+  },
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA073C@@3IA",
+   "sym_key": "DataGlobal_AA073C"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABB110@@3IA",
+   "sym_key": "DataGlobal_ABB110"
+  },
+  {
+   "off": 132,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1050@@3IA",
+   "sym_key": "DataGlobal_AA1050"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10A0@@3IA",
+   "sym_key": "DataGlobal_AA10A0"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBEBC@@3IA",
+   "sym_key": "DataGlobal_ABBEBC"
+  },
+  {
+   "off": 219,
+   "type": "DIR32",
+   "sym": "?dword_ABAD24@@3IA",
+   "sym_key": "dword_ABAD24"
+  },
+  {
+   "off": 248,
+   "type": "DIR32",
+   "sym": "?g_Cell_BuildabilityLUT@@3IA",
+   "sym_key": "g_Cell_BuildabilityLUT"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?g_TerrainBridgeIndex@@3IA",
+   "sym_key": "g_TerrainBridgeIndex"
+  },
+  {
+   "off": 302,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC2C8@@3IA",
+   "sym_key": "DataGlobal_ABC2C8"
+  },
+  {
+   "off": 326,
+   "type": "DIR32",
+   "sym": "?dword_AA101C@@3IA",
+   "sym_key": "dword_AA101C"
+  }
+ ]
+}

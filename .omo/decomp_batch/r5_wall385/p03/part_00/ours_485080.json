@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindClosestOccupiableCell@JumpjetLocomotionClass@@QAEHXZ",
+ "sym_key": "JumpjetLocomotionClass::FindClosestOccupiableCell",
+ "size": 151,
+ "link_base": 0,
+ "bytes_hex": "83ec1053568d442408578bf950c744241080000000e8000000008bd8a10000000085c0744a8bb7e400000085f674408b0e56ff512c83f80674128b763085f6742e8b1656ff522c83f80675ee8bb6200500008d4c241051568b06ff507c8b105f895424088b400803c35e5b83c410c36a008d4424106a00508bcfc744241800000000e80000000085c0740383c3555f8bc35e5b83c410c3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  }
+ ]
+}

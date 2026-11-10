@@ -5,7 +5,8 @@
 
 char BuildingPlacement::ValidateType(int p0, int p1)
 {
-        int result = *((unsigned int *)this + 17);
+        int result;
+        result = *((unsigned int *)this + 17);
         if ( result == p0 && result != -1 )
         {
             return (char)((1));
@@ -27,35 +28,35 @@ char BuildingPlacement::ValidateType(int p0, int p1)
                 for ( i = (unsigned int *)*((unsigned int *)this + 57); i; i = (unsigned int *)i[12] )
                 {
                     result = (*(int (__stdcall **)(unsigned int *))(*i + 44))(i);
-                }
-            }
-            if ( result == 6 )
-            {
-                result = i[328];
-            }
-            if ( (int)i[27] > 0
+                    if ( result == 6 )
+                    {
+                        result = i[328];
+                        if ( (int)i[27] > 0
                 && (result == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2156) && (p1 == 2 || p1 == 6)
                  || result == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2160) && (p1 == 0 || p1 == 4)
                  || result == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172)) )
-            {
-                goto LABEL_8;
+                        {
+                            goto LABEL_8;
+                        }
+                    }
+                }
             }
             if ( p0 == 26 )
             {
                 for ( j = (unsigned int *)*((unsigned int *)this + 57); j; j = (unsigned int *)j[12] )
                 {
                     result = (*(int (__stdcall **)(unsigned int *))(*j + 44))(j);
-                }
-            }
-            if ( result == 6 )
-            {
-                result = j[328];
-            }
-            if ( (int)j[27] > 0
+                    if ( result == 6 )
+                    {
+                        result = j[328];
+                        if ( (int)j[27] > 0
                 && (result == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2164) && (p1 == 2 || p1 == 6)
                  || result == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2168) && (p1 == 0 || p1 == 4)) )
-            {
-                goto LABEL_8;
+                        {
+                            goto LABEL_8;
+                        }
+                    }
+                }
             }
         }
         return (char)((0));

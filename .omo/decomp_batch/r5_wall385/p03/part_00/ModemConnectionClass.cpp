@@ -5,7 +5,6 @@
 
 void ModemConnectionClass::queueSendPacket(int * p0, int p1, int p2)
 {
-        int __stdcall ((ConnectionClass *)(ModemConnectionClass this->m000))->queueSendPacket(const void *p0, signed int p1, const void *p2, signed int a5, short a6);
         int PlayerIndex = this->PlayerIndex;
         int v8 = this->PhoneNumber[4];
         if ( v8 == PlayerIndex || p1 > this->LastPacketTime )
@@ -13,8 +12,8 @@ void ModemConnectionClass::queueSendPacket(int * p0, int p1, int p2)
             if ( v8 == PlayerIndex )
             {
                 ((Debug *)(this))->Log();
+                return 0;
             }
-            return 0;
             ((Debug *)(this))->Log();
             return 0;
         }
@@ -67,19 +66,22 @@ void ModemConnectionClass::queueSendPacket(int * p0, int p1, int p2)
 
 void * ModemConnectionClass::allocPacketSlot(const void * p1, signed int p2, const void * p3, signed int p4)
 {
-        int __stdcall ((ConnectionClass *)(ModemConnectionClass this->m000))->allocPacketSlot(const void *p1, signed int p2, const void *p3, signed int p4);
-        int v6 = this->Active;
+        int v6;
+        v6 = this->Active;
         if ( this->PhoneNumber[8] == v6 || p2 > this->LastPacketTime )
         {
             return (void *)(0);
         }
-        signed int v8 = 0;
+        signed int v8;
+        v8 = 0;
         if ( v6 <= 0 )
         {
             goto LABEL_9;
         }
-        int v9 = this->PhoneNumber[7];
-        unsigned char * v10 = (unsigned char *)v9;
+        int v9;
+        v9 = this->PhoneNumber[7];
+        unsigned char * v10;
+        v10 = (unsigned char *)v9;
         while ( (*v10 & 1) != 0 )
         {
             ++v8;
@@ -89,18 +91,21 @@ void * ModemConnectionClass::allocPacketSlot(const void * p1, signed int p2, con
                 goto LABEL_9;
             }
         }
-        signed int v15 = v8;
+        signed int v15;
+        v15 = v8;
         if ( v8 == -1 )
         {
             LABEL_9:
         ((Debug *)(this))->Log();
             return (void *)(0);
         }
-        int v12 = 24 * v8;
+        int v12;
+        v12 = 24 * v8;
         *(unsigned int *)(v9 + v12) |= 1u;
         *(unsigned int *)(v12 + this->PhoneNumber[7]) &= ~2u;
         *(unsigned int *)(this->PhoneNumber[7] + v12) &= ~4u;
-        int v13 = g_PerformanceTickOffset;
+        int v13;
+        v13 = g_PerformanceTickOffset;
         if ( g_LastPerformanceTick != -1 )
         {
             v13 += ((Timer *)(this))->GetTicks() - g_LastPerformanceTick;
@@ -118,7 +123,8 @@ void * ModemConnectionClass::allocPacketSlot(const void * p1, signed int p2, con
             *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = 0;
         }
         *(unsigned int *)(this->PhoneNumber[10] + 4 * this->PhoneNumber[8]) = v15;
-        int v14 = this->PhoneNumber[9] + 1;
+        int v14;
+        v14 = this->PhoneNumber[9] + 1;
         ++this->PhoneNumber[8];
         this->PhoneNumber[9] = v14;
         return (void *)(1);

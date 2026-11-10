@@ -4,8 +4,7 @@
 
 int _BlitPlainXlatAlpha_G::AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, unsigned short * p5, int p6, int p7)
 {
-        int __stdcall ((BlitPlainXlatAlpha_ushort *)(_BlitPlainXlatAlpha_G this->m000))->AddRef(int p0, unsigned char *p1, int p2, int p3, int p4, unsigned short *p5, int p6, int p7);
-        int v10 = (261 * (p6 <= 0 ? 0 : p6)) >> 11;
+        int v10 = (261 * (p4 <= 0 ? 0 : p4)) >> 11;
         if ( v10 > 254 )
         {
             v10 = 254;
@@ -18,20 +17,20 @@ int _BlitPlainXlatAlpha_G::AddRef(int p0, unsigned char * p1, int p2, int p3, in
         if ( p2 > 0 )
         {
             v16 = (unsigned short *)p2;
-            do v17 = *p1;
-            v15 = *p5++;
-            ++p1;
-            p0 += 2;
-            *(unsigned short *)(p0 - 2) = *(unsigned short *)(this->m003[0] + 2 * (v17 | *(unsigned short *)(v11 + 2 * v15)));
-            if ( (unsigned int)p5 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+            do
             {
-                p5 = (unsigned short *)((char *)p5 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
-            }
-            result = (int)v16 - 1;
-            v16 = (unsigned short *)((char *)v16 - 1);
-            while ( v16 )
-            {
-            }
+                v17 = *p1;
+                v15 = *p3++;
+                ++p1;
+                p0 += 2;
+                *(unsigned short *)(p0 - 2) = *(unsigned short *)(this->m004[0] + 2 * (v17 | *(unsigned short *)(v11 + 2 * v15)));
+                if ( (unsigned int)p3 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+                {
+                    p3 = (unsigned short *)((char *)p3 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
+                }
+                result = (int)v16 - 1;
+                v16 = (unsigned short *)((char *)v16 - 1);
+            } while ( v16 );
         }
         return (int)(result);
 }

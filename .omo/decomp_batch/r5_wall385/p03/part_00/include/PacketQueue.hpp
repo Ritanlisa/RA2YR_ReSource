@@ -6,12 +6,13 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class PacketQueue
 {
 public:
-    unsigned char m000;  // 0x000
-    char __pad_001[7];  // 0x001
+    char __pad_000[8];  // 0x000
 
     // DECOMP_SIZECHECK(PacketQueue, PacketQueue, 8);
 

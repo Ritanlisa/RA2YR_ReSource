@@ -5,8 +5,12 @@
 
 int JumpjetLocomotionClass::FindClosestOccupiableCell()
 {
-        int v6 = 128;
-        int inited = ((Isometric *)((int)this))->InitTables(&v6);
+        int v6;
+        v6 = 128;
+        int v7;
+        v7 = 128;
+        int inited;
+        inited = ((Isometric *)((int)this))->InitTables(&v6);
         int v3;
         int * v5;
         unsigned char v8[12];
@@ -15,10 +19,10 @@ int JumpjetLocomotionClass::FindClosestOccupiableCell()
             while ( (*(int (__stdcall **)(int))(*(unsigned int *)v3 + 44))(v3) != 6 )
             {
                 v3 = *(unsigned int *)(v3 + 48);
-            }
-            if ( v3 == 0 )
-            {
-                goto LABEL_5;
+                if ( v3 == 0 )
+                {
+                    goto LABEL_5;
+                }
             }
             v5 = (int *)(*(int (__stdcall **)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8);
             v6 = *v5;

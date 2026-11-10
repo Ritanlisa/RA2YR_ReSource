@@ -21,22 +21,21 @@ int Struct::ClearAllMemberFlags()
         {
             v3 = 0;
             do
-          *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~1u;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~2u;
-            v4 = (unsigned int *)(v3 + *((unsigned int *)this + 9));
-            v3 += 36;
-            ++v2;
-            *v4 &= ~4u;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 32) = 0;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 28) = 0;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 24) = 0;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 20) = 0;
-            *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 12) = 0;
-            *(unsigned short *)(v3 + *((unsigned int *)this + 9) - 4) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 12) + 4 * v2 - 4) = 0;
-            while ( v2 < *((unsigned int *)this + 1) )
             {
-            }
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~1u;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~2u;
+                v4 = (unsigned int *)(v3 + *((unsigned int *)this + 9));
+                v3 += 36;
+                ++v2;
+                *v4 &= ~4u;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 32) = 0;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 28) = 0;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 24) = 0;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 20) = 0;
+                *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 12) = 0;
+                *(unsigned short *)(v3 + *((unsigned int *)this + 9) - 4) = 0;
+                *(unsigned int *)(*((unsigned int *)this + 12) + 4 * v2 - 4) = 0;
+            } while ( v2 < *((unsigned int *)this + 1) );
         }
         int result = *((unsigned int *)this + 2);
         int v6 = 0;
@@ -45,19 +44,18 @@ int Struct::ClearAllMemberFlags()
         {
             result = 0;
             do
-          *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~1u;
-            *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~2u;
-            v7 = (unsigned int *)(result + *((unsigned int *)this + 13));
-            result += 24;
-            ++v6;
-            *v7 &= ~4u;
-            *(unsigned int *)(*((unsigned int *)this + 13) + result - 20) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 13) + result - 16) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 13) + result - 8) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 16) + 4 * v6 - 4) = 0;
-            while ( v6 < *((unsigned int *)this + 2) )
             {
-            }
+                *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~1u;
+                *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~2u;
+                v7 = (unsigned int *)(result + *((unsigned int *)this + 13));
+                result += 24;
+                ++v6;
+                *v7 &= ~4u;
+                *(unsigned int *)(*((unsigned int *)this + 13) + result - 20) = 0;
+                *(unsigned int *)(*((unsigned int *)this + 13) + result - 16) = 0;
+                *(unsigned int *)(*((unsigned int *)this + 13) + result - 8) = 0;
+                *(unsigned int *)(*((unsigned int *)this + 16) + 4 * v6 - 4) = 0;
+            } while ( v6 < *((unsigned int *)this + 2) );
         }
         *((unsigned int *)this + 17) = 0;
         *((unsigned int *)this + 18) = 0;

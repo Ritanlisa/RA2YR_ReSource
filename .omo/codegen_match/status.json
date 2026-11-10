@@ -1232,21 +1232,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x4802a0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+1 push ebp",
   "name": "TacticalClass::DrawCellTerrainOverlay",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x480510": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingPlacement::ValidateType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x484050": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Tactical::CreateTacticalLightSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1260,11 +1260,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x485080": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 0x18",
   "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x486380": {
   "attempts": 14,
@@ -1274,7 +1274,7 @@
   "status": "OK"
  },
  "0x4863d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+6 push esi",
   "name": "CellLand::IsBuildable",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -1309,7 +1309,7 @@
   "status": "NG"
  },
  "0x486ff0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Cell::IsBuildableAdvanced",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1344,7 +1344,7 @@
   "status": "OK"
  },
  "0x487f40": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Rect::Union",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1372,32 +1372,32 @@
   "status": "OK"
  },
  "0x48b2a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+4 push esi",
   "name": "Struct::ClearAllMemberFlags",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x48b410": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x48b570": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+9 je 0x48b711",
   "name": "PacketQueue::ExtractEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x48b750": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+13 je 0x48b7a2",
   "name": "ConnectionClass::allocPacketSlot",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x48b890": {
   "attempts": 2,
@@ -1421,7 +1421,7 @@
   "status": "OK"
  },
  "0x48bf40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ConnectionClass::sendAck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1442,56 +1442,56 @@
   "status": "OK"
  },
  "0x493930": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x493a60": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x493b90": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x493cc0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitPlainXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x493df0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x493f30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x494080": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4941e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",

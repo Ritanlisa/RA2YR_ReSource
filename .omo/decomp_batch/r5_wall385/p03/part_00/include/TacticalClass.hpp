@@ -9,6 +9,8 @@ class CellClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class TacticalClass
 {
@@ -26,7 +28,7 @@ public:
 
     // ---- pilot methods (registry signatures)
     void DrawCellTerrainOverlay(int * p0, int * p1);  // 0x4802A0
-    void DrawCellOverlay(int p0, int p1, int p2, int p3);  // 0x547230
+    void DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8);  // 0x547230
 };
 
 // ---- globals used by this unit (registry names)
@@ -49,6 +51,8 @@ class TacticalClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CellClass
 {

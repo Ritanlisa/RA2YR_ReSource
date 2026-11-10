@@ -1,0 +1,11 @@
+{
+ "addr": "0x485080",
+ "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
+ "size": 168,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x485080",
+ "bytes_hex": "83ec185556578bf9b8800000008bc88944240c8d44240c894c2410508bcfe8fd62ffff8be8a0a0e9a80084c0741d8bb7e400000085f674138b168bceff522c83f80674378b763085f675ed6a008d4424106a00508bcfc744241800000000c744241c00000000e8e572ffff85c0740383c5555f8bc55e5d83c418c385f674cc8b8e200500008d542418528b01ff507c8b085f894c24085e8b5004895424080368088bc55d83c418c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

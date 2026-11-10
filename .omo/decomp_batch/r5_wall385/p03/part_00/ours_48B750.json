@@ -1,0 +1,45 @@
+{
+ "symbol": "?allocPacketSlot@ModemConnectionClass@@QAEPAXPBXH0H@Z",
+ "sym_key": "ModemConnectionClass::allocPacketSlot",
+ "size": 319,
+ "link_base": 0,
+ "bytes_hex": "53558be9578b55088b45383bc2744f8b7c24148b450c3bf87f4433db85d2895c24147e338b45348bc8f6000174384383c1183bda7d1df6010175f383fbff895c241475228bcde8000000005f5d33c05bc21000895c24148bcde8000000005f5d33c05bc210008d1c5b56c1e3038b340383ce018934038b453403c38b1083e2fd89108b4d348d040b8b0c0b83e1fb8908a1000000008b350000000083f8ff740f8bcde8000000002b050000000003f08b55348bcf897413048b45348b742414897c03088b55348bc18b7c130cc1e902f3a58bc883e103f3a48b74241c85f6742d8b44242085c07e253b45107f208b55348bc88b7c13148bd1c1e902f3a58bca83e103f3a48b4d3489440b10eb0b8b5534c7441310000000008b45388b4d408b5424185e8914818b4d388b453c4140894d3889453c5f5db8010000005bc21000",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 90,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_PerformanceTickOffset@@3IA",
+   "sym_key": "g_PerformanceTickOffset"
+  },
+  {
+   "off": 163,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 169,
+   "type": "DIR32",
+   "sym": "?g_LastPerformanceTick@@3IA",
+   "sym_key": "g_LastPerformanceTick"
+  }
+ ]
+}

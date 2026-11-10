@@ -4,7 +4,6 @@
 
 int _BlitTransLucent50ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * p0, unsigned char * p1, int p2, int p3, unsigned short * p4, int p5, int p6, int p7)
 {
-        int __stdcall ((BlitTransXlatAlpha_ushort *)(_BlitTransLucent50ZReadWrite_G this->m000))->Blit_Alpha_ZReadWrite_Lucent50(unsigned short *p0, unsigned char *p1, int p2, int p3, unsigned short *p4, int p5, int p6, int p7);
         int result = p2;
         int v12;
         Stream * v14;
@@ -16,24 +15,25 @@ int _BlitTransLucent50ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent50(unsigned shor
             v14 = g_ZBufferDescriptor;
             v16 = (unsigned short *)p2;
             do
-          if ( v12 < (unsigned short)*p4 && *p1 )
-            v12 = p3;
-            *p0 = (this->m_8 & (*p0 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (unsigned char)*p1) >> 1));
-            *p4 = p3;
-            v14 = g_ZBufferDescriptor;
-            v15 = p4 + 1;
-            ++p1;
-            ++p0;
-            if ( (unsigned int)(p4 + 1) >= v14[1].Stream_field_08 )
             {
-                v15 = (unsigned short *)((char *)v15 - v14[1].Stream_field_0C);
-            }
-            p4 = v15;
-            result = (int)v16 - 1;
-            v16 = (unsigned short *)((char *)v16 - 1);
-            while ( v16 )
-            {
-            }
+                if ( v12 < (unsigned short)*p4 && *p1 )
+                {
+                    v12 = p3;
+                    *p0 = (this->m_8 & (*p0 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (unsigned char)*p1) >> 1));
+                    *p4 = p3;
+                    v14 = g_ZBufferDescriptor;
+                }
+                v15 = p4 + 1;
+                ++p1;
+                ++p0;
+                if ( (unsigned int)(p4 + 1) >= v14[1].Stream_field_08 )
+                {
+                    v15 = (unsigned short *)((char *)v15 - v14[1].Stream_field_0C);
+                }
+                p4 = v15;
+                result = (int)v16 - 1;
+                v16 = (unsigned short *)((char *)v16 - 1);
+            } while ( v16 );
         }
         return (int)(result);
 }

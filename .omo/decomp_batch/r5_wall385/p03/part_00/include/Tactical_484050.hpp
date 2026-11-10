@@ -6,12 +6,13 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Tactical
 {
 public:
-    int vfptr;  // 0x000
-    char __pad_004[32];  // 0x004
+    char __pad_000[36];  // 0x000
     union {  // multi-evidence view @0x024
         unsigned short field24[2];
         unsigned int field24_dword;
@@ -24,7 +25,7 @@ public:
 
     // ---- pilot methods (registry signatures)
     int CreateTacticalLightSurface(int * p0, int * p1, int * p2, int * p3, int p4, int p5);  // 0x484050
-    int CalculateTacticalLighting(int * p0, int * p1, int * p2, int * p3, int * p4, int * p5, __int64 p6);  // 0x484180
+    int CalculateTacticalLighting(void * p0, void * p1, void * p2, void * p3, void * p4, void * p5, __int64 p6);  // 0x484180
 };
 
 // ---- global callee prototypes (R3 non-leaf)

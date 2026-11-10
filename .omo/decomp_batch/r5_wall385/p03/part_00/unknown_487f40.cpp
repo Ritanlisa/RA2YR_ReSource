@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x487F40 (Rect::Union)
 #include "unknown_487f40.hpp"
 
-int __stdcall unknown::Union(LPRECT lprcDst p0, const RECT *lprcSrc1 p1, const RECT *lprcSrc2 p2)
+int __stdcall unknown::Union(LPRECT p0, const RECT *lprcSrc1 p1, const RECT *lprcSrc2 p2)
 {
         struct tagRECT *v4;
         struct tagRECT *v5;
@@ -20,51 +20,52 @@ int __stdcall unknown::Union(LPRECT lprcDst p0, const RECT *lprcSrc1 p1, const R
         LPRECT lprcDsta;
         if ( v3[2] <= 0 || v3[3] <= 0 )
         {
-            *v4 = *lprcDst;
-            return (int)v4;
+            *v4 = *p0;
+            return (int)((int)v4);
         }
         else
         {
-            lprcDsta = (LPRECT)lprcDst->right;
-            if ( (int)lprcDsta <= 0 || (bottom = lprcDst->bottom, bottom <= 0) )
+            lprcDsta = (LPRECT)p0->right;
+            if ( (int)lprcDsta <= 0 || (bottom = p0->bottom, bottom <= 0) )
             {
                 v5->left = *v3;
+                v5->top = v3[1];
+                v5->right = v3[2];
+                v5->bottom = v3[3];
+                return (int)((int)v5);
             }
-            v5->top = v3[1];
-            v5->right = v3[2];
-            v5->bottom = v3[3];
-            return (int)v5;
             else
             {
+                v7 = *v3;
+                left = p0->left;
+                v9 = v3[1];
+                v10 = v3[2];
+                v11 = v3[3];
+                if ( v7 > p0->left )
+                {
+                    v10 += v7 - left;
+                    v7 = p0->left;
+                }
+                top = p0->top;
+                if ( v9 > top )
+                {
+                    v11 += v9 - top;
+                    v9 = top;
+                }
+                if ( v7 + v10 < (int)lprcDsta + left )
+                {
+                    v10 = (int)&lprcDsta->left + left - v7 + 1;
+                }
+                if ( v11 + v9 < top + bottom )
+                {
+                    v11 = top + bottom - v9 + 1;
+                }
+                v15->left = v7;
+                v15->top = v9;
+                v15->right = v10;
+                v15->bottom = v11;
+                return (int)((int)v15);
             }
-            left = lprcDst->left;
-            v9 = v3[1];
-            v10 = v3[2];
-            v11 = v3[3];
-            if ( v7 > lprcDst->left )
-            {
-                v10 += v7 - left;
-            }
-            v7 = lprcDst->left;
-            top = lprcDst->top;
-            if ( v9 > top )
-            {
-                v11 += v9 - top;
-            }
-            v9 = top;
-            if ( v7 + v10 < (int)lprcDsta + left )
-            {
-                v10 = (int)&lprcDsta->left + left - v7 + 1;
-            }
-            if ( v11 + v9 < top + bottom )
-            {
-                v11 = top + bottom - v9 + 1;
-            }
-            v15->left = v7;
-            v15->top = v9;
-            v15->right = v10;
-            v15->bottom = v11;
-            return (int)v15;
         }
 }
 

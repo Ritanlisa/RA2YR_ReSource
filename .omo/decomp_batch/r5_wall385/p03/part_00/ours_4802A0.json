@@ -1,0 +1,57 @@
+{
+ "symbol": "?DrawCellTerrainOverlay@TacticalClass@@QAEXPAH0@Z",
+ "sym_key": "TacticalClass::DrawCellTerrainOverlay",
+ "size": 189,
+ "link_base": 0,
+ "bytes_hex": "5356578bf98b4f3881f9ffff00007512a1480100008b0d0000000033db8b3488eb2a8b15480100008b8718010000c1f8108b348a25ff0000008bd883bef0020000017e08508bcee8000000008a86e102000084c074618b871801000050e8000000008d0440ba3a00000083c4048d0c808b4424142bd18b480c528b5008518b4804528b108b8718010000515250e8000000008d044083c4048d0c808b4424248b50048b002bd18b0d00000000525051538bcee8000000005f5e5bc20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA10B0@@3IA",
+   "sym_key": "DataGlobal_AA10B0"
+  },
+  {
+   "off": 36,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?GetTerrainFlag@CellClass@@QAEDH@Z",
+   "sym_key": "CellClass::GetTerrainFlag"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?SHIBYTE@@YAHZZ",
+   "sym_key": "SHIBYTE"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?SHIBYTE@@YAHZZ",
+   "sym_key": "SHIBYTE"
+  },
+  {
+   "off": 168,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?DrawCellOverlay@TacticalClass@@QAEXHHHHHHHHH@Z",
+   "sym_key": "TacticalClass::DrawCellOverlay"
+  }
+ ]
+}

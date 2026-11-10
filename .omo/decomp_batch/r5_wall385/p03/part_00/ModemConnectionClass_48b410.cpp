@@ -4,7 +4,6 @@
 
 void ModemConnectionClass::queueSendPacket(int * p0, int p1, int p2)
 {
-        int __stdcall ((ConnectionClass *)(ModemConnectionClass this->m000))->queueSendPacket(const void *p0, signed int p1, const void *p2, signed int a5, short a6);
         int PlayerIndex = this->PlayerIndex;
         int v8 = this->PhoneNumber[4];
         if ( v8 == PlayerIndex || p1 > this->LastPacketTime )
@@ -12,8 +11,8 @@ void ModemConnectionClass::queueSendPacket(int * p0, int p1, int p2)
             if ( v8 == PlayerIndex )
             {
                 ((Debug *)(this))->Log();
+                return 0;
             }
-            return 0;
             ((Debug *)(this))->Log();
             return 0;
         }

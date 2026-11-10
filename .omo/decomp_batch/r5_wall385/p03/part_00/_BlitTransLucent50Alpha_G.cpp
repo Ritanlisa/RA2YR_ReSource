@@ -5,8 +5,7 @@
 
 int _BlitTransLucent50Alpha_G::AddRef(unsigned short * p0, unsigned char * p1, int p2, int p3, int p4, unsigned short * p5, int p6, int p7)
 {
-        int __stdcall ((BlitTransLucent50Alpha_ushort *)(_BlitTransLucent50Alpha_G this->m000))->AddRef(unsigned short *p0, unsigned char *p1, int p2, int p3, int p4, unsigned short *p5, int p6, int p7);
-        int v10 = (261 * (p6 <= 0 ? 0 : p6)) >> 11;
+        int v10 = (261 * (p4 <= 0 ? 0 : p4)) >> 11;
         if ( v10 > 254 )
         {
             v10 = 254;
@@ -21,25 +20,25 @@ int _BlitTransLucent50Alpha_G::AddRef(unsigned short * p0, unsigned char * p1, i
         {
             v12 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
             v16 = (unsigned short *)p2;
-            do v14 = *p1 == 0;
-            v17 = *p1++;
-            if ( v14 == 0 )
+            do
             {
-                *p0 = (this->m_C & (*p0 >> 1))
-                + (this->m_C & (*(unsigned short *)(this->m_4 + 2 * (v17 | *(unsigned short *)(result + 2 * *p5))) >> 1));
-            }
-            v12 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
-            v15 = p5 + 1;
-            ++p0;
-            if ( (unsigned int)(p5 + 1) >= *(unsigned int *)(v12 + 28) )
-            {
-                v15 = (unsigned short *)((char *)v15 - *(unsigned int *)(v12 + 32));
-            }
-            p5 = v15;
-            v16 = (unsigned short *)((char *)v16 - 1);
-            while ( v16 )
-            {
-            }
+                v14 = *p1 == 0;
+                v17 = *p1++;
+                if ( v14 == 0 )
+                {
+                    *p0 = (this->m_C & (*p0 >> 1))
+                + (this->m_C & (*(unsigned short *)(this->m_4 + 2 * (v17 | *(unsigned short *)(result + 2 * *p3))) >> 1));
+                    v12 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
+                }
+                v15 = p3 + 1;
+                ++p0;
+                if ( (unsigned int)(p3 + 1) >= *(unsigned int *)(v12 + 28) )
+                {
+                    v15 = (unsigned short *)((char *)v15 - *(unsigned int *)(v12 + 32));
+                }
+                p3 = v15;
+                v16 = (unsigned short *)((char *)v16 - 1);
+            } while ( v16 );
         }
         return (int)(result);
 }

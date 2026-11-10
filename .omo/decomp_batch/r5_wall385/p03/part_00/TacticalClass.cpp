@@ -24,11 +24,6 @@ void TacticalClass::DrawCellTerrainOverlay(int * p0, int * p1)
         }
         if ( *(unsigned char *)(v6 + 737) )
         {
-            ((TacticalClass *)(v6))->DrawCellOverlay(v5, (int)g_DSurface_Hidden_2, *p0, p0[1] - 15 * SHIBYTE(this->visibleCells[13]),
-          *p1,
-          p1[1],
-          p1[2],
-          p1[3],
-          58 - 15 * SHIBYTE(this->visibleCells[13]));
+            ((TacticalClass *)(v6))->DrawCellOverlay(v5, (int)g_DSurface_Hidden_2, *p0, p0[1] - 15 * SHIBYTE(this->visibleCells[13]), *p1, p1[1], p1[2], p1[3], 58 - 15 * SHIBYTE(this->visibleCells[13]));
         }
 }

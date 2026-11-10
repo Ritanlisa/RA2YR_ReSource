@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class unknown
 {
@@ -15,7 +17,7 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    int __stdcall Union(LPRECT lprcDst p0, const RECT *lprcSrc1 p1, const RECT *lprcSrc2 p2);  // 0x487F40
+    int __stdcall Union(LPRECT p0, const RECT *lprcSrc1 p1, const RECT *lprcSrc2 p2);  // 0x487F40
 };
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

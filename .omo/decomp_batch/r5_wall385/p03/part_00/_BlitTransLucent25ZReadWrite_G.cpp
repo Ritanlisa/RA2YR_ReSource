@@ -5,7 +5,6 @@
 
 int _BlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * p0, unsigned char * p1, int p2, int p3, unsigned short * p4, int p5, int p6, int p7)
 {
-        int __stdcall ((BlitTransXlatAlpha_ushort *)(_BlitTransLucent25ZReadWrite_G this->m000))->Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *p0, unsigned char *p1, int p2, int p3, unsigned short *p4, int p5, int p6, int p7);
         int result = p2;
         Stream * v11;
         unsigned short * v13;
@@ -15,23 +14,24 @@ int _BlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned sh
             v11 = g_ZBufferDescriptor;
             v14 = (unsigned short *)p2;
             do
-          if ( p3 < (unsigned short)*p4 && *p1 )
-            *p0 = (this->m_8 & (*p0 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (unsigned char)*p1) >> 2));
-            *p4 = p3;
-            v11 = g_ZBufferDescriptor;
-            ++p0;
-            ++p1;
-            v13 = p4 + 1;
-            if ( (unsigned int)(p4 + 1) >= v11[1].Stream_field_08 )
             {
-                v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C);
-            }
-            p4 = v13;
-            result = (int)v14 - 1;
-            v14 = (unsigned short *)((char *)v14 - 1);
-            while ( v14 )
-            {
-            }
+                if ( p3 < (unsigned short)*p4 && *p1 )
+                {
+                    *p0 = (this->m_8 & (*p0 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (unsigned char)*p1) >> 2));
+                    *p4 = p3;
+                    v11 = g_ZBufferDescriptor;
+                }
+                ++p0;
+                ++p1;
+                v13 = p4 + 1;
+                if ( (unsigned int)(p4 + 1) >= v11[1].Stream_field_08 )
+                {
+                    v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C);
+                }
+                p4 = v13;
+                result = (int)v14 - 1;
+                v14 = (unsigned short *)((char *)v14 - 1);
+            } while ( v14 );
         }
         return (int)(result);
 }

@@ -5,14 +5,6 @@
 
 int PacketQueue::ExtractEntry(void * p0, int * p1, int p2, void * p3, int * p4, unsigned short * p5)
 {
-        int __stdcall PacketQueue::ExtractEntry(
-            PacketQueue this->m000,
-            void *p0,
-            unsigned int *p1,
-            int p2,
-            void *p3,
-            unsigned int *p4,
-            unsigned short *p5);
         if ( !*((unsigned int *)this + 10) )
         {
             return (int)(0);

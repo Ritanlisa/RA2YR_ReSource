@@ -2,9 +2,15 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "MISMATCH": 6,
+   "COMPILE_FAIL": 14
   },
-  "pathologies": {},
+  "pathologies": {
+   "regalloc": 3,
+   "frame_sched": 1,
+   "branch_order": 1,
+   "branch_polarity": 1
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
   "rule_violation_fns": 18,
@@ -14,23 +20,28 @@
   {
    "addr": "0x4802a0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\TacticalClass.cpp(32) : error C2660: 'DrawCellOverlay' : function does not take 9 parameters",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 165B ours 189B",
+   "first_diff": {
+    "orig": "+1 push ebp",
+    "ours": "+1 push esi"
+   },
+   "pathology": "regalloc",
    "name": "TacticalClass::DrawCellTerrainOverlay",
    "emitted": "TacticalClass::DrawCellTerrainOverlay",
    "unit": "TacticalClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "5/8",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 165,
+   "ours_size": 189
   },
   {
    "addr": "0x480510",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\BuildingPlacement.cpp(37) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\BuildingPlacement.cpp(35) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingPlacement::ValidateType",
@@ -45,7 +56,7 @@
    "addr": "0x484050",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Tactical.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Tactical.",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Tactical.cpp(8) : error C2440: 'initializing' : cannot convert from 'int *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall3",
    "first_diff": null,
    "pathology": null,
    "name": "Tactical::CreateTacticalLightSurface",
@@ -53,44 +64,54 @@
    "unit": "Tactical",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "8/12",
+   "sites": "7/11",
    "rule_violations": 3
   },
   {
    "addr": "0x485080",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\JumpjetLocomotionClass.cpp(25) : error C2065: 'v7' : undeclared identifier",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 168B ours 151B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x18",
+    "ours": "+0 sub esp, 0x10"
+   },
+   "pathology": "frame_sched",
    "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
    "emitted": "JumpjetLocomotionClass::FindClosestOccupiableCell",
    "unit": "JumpjetLocomotionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "3/3",
-   "rule_violations": 5
+   "rule_violations": 5,
+   "orig_size": 168,
+   "ours_size": 151
   },
   {
    "addr": "0x4863d0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\CellLand.cpp(109) : error C2181: illegal else without matching if",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 477B ours 442B",
+   "first_diff": {
+    "orig": "+6 push esi",
+    "ours": "+6 push ebx"
+   },
+   "pathology": "regalloc",
    "name": "CellLand::IsBuildable",
    "emitted": "CellLand::IsBuildable",
    "unit": "CellLand",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "9/25",
-   "rule_violations": 26
+   "rule_violations": 30,
+   "orig_size": 477,
+   "ours_size": 442
   },
   {
    "addr": "0x486ff0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Cell.cpp(34) : error C2440: '=' : cannot convert from 'int' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\C",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Cell.cpp(35) : error C2440: '=' : cannot convert from 'int' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\C",
    "first_diff": null,
    "pathology": null,
    "name": "Cell::IsBuildableAdvanced",
@@ -105,7 +126,7 @@
    "addr": "0x487f40",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\unknown.hpp(18) : error C2061: syntax error : identifier 'LPRECT'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\unknown",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\unknown.hpp(20) : error C2061: syntax error : identifier 'LPRECT'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\unknown",
    "first_diff": null,
    "pathology": null,
    "name": "Rect::Union",
@@ -119,23 +140,28 @@
   {
    "addr": "0x48b2a0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Struct.cpp(25) : error C2059: syntax error : '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Struct.cpp(49) : error C2059: sy",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 239B ours 257B",
+   "first_diff": {
+    "orig": "+4 push esi",
+    "ours": "+4 push ebp"
+   },
+   "pathology": "regalloc",
    "name": "Struct::ClearAllMemberFlags",
    "emitted": "Struct::ClearAllMemberFlags",
    "unit": "Struct",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "0/0",
-   "rule_violations": 76
+   "rule_violations": 76,
+   "orig_size": 239,
+   "ours_size": 257
   },
   {
    "addr": "0x48b410",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\ModemConnectionClass.hpp(43) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\Mo",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\ModemConnectionClass_48b410.cpp(14) : error C2562: 'queueSendPacket' : 'void' function returning a value; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
    "first_diff": null,
    "pathology": null,
    "name": "ConnectionClass::queueSendPacket",
@@ -143,38 +169,48 @@
    "unit": "ModemConnectionClass",
    "name_placeholder": false,
    "cls_src": "proto_this",
-   "sites": "4/5",
+   "sites": "2/2",
    "rule_violations": 14
   },
   {
    "addr": "0x48b570",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\PacketQueue.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\Packet",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 424B ours 423B",
+   "first_diff": {
+    "orig": "+9 je 0x48b711",
+    "ours": "+9 jne 0x12"
+   },
+   "pathology": "branch_order",
    "name": "PacketQueue::ExtractEntry",
    "emitted": "PacketQueue::ExtractEntry",
    "unit": "PacketQueue",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "1/1",
-   "rule_violations": 72
+   "sites": "0/0",
+   "rule_violations": 72,
+   "orig_size": 424,
+   "ours_size": 423
   },
   {
    "addr": "0x48b750",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\ModemConnectionClass.hpp(43) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\Mo",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 310B ours 319B",
+   "first_diff": {
+    "orig": "+13 je 0x48b7a2",
+    "ours": "+13 je 0x5e"
+   },
+   "pathology": "branch_polarity",
    "name": "ConnectionClass::allocPacketSlot",
    "emitted": "ModemConnectionClass::allocPacketSlot",
    "unit": "ModemConnectionClass",
    "name_placeholder": false,
    "cls_src": "proto_this",
-   "sites": "7/8",
-   "rule_violations": 10
+   "sites": "5/5",
+   "rule_violations": 10,
+   "orig_size": 310,
+   "ours_size": 319
   },
   {
    "addr": "0x48bf40",
@@ -195,7 +231,7 @@
    "addr": "0x493930",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransLucent75ZReadWrite_G.hpp(25) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_w",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLucent75ZReadWrite_G.cpp(9) : error C2065: 'v11' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
@@ -203,14 +239,14 @@
    "unit": "_BlitTransLucent75ZReadWrite_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/5",
-   "rule_violations": 4
+   "sites": "2/2",
+   "rule_violations": 1
   },
   {
    "addr": "0x493a60",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransLucent50ZReadWrite_G.hpp(25) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_w",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLucent50ZReadWrite_G.cpp(10) : error C2065: 'v14' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
@@ -218,14 +254,14 @@
    "unit": "_BlitTransLucent50ZReadWrite_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/5",
-   "rule_violations": 4
+   "sites": "2/2",
+   "rule_violations": 1
   },
   {
    "addr": "0x493b90",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransLucent25ZReadWrite_G.hpp(25) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_w",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLucent25ZReadWrite_G.cpp(9) : error C2065: 'v11' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
@@ -233,14 +269,14 @@
    "unit": "_BlitTransLucent25ZReadWrite_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/5",
-   "rule_violations": 4
+   "sites": "2/2",
+   "rule_violations": 1
   },
   {
    "addr": "0x493cc0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitPlainXlatAlpha_G.hpp(30) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitPlainXlatAlpha_G.cpp(24) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitPlainXlatAl",
    "first_diff": null,
    "pathology": null,
    "name": "BlitPlainXlatAlpha_ushort::AddRef",
@@ -248,14 +284,14 @@
    "unit": "_BlitPlainXlatAlpha_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/5",
+   "sites": "2/2",
    "rule_violations": 4
   },
   {
    "addr": "0x493df0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransXlatAlpha_G.hpp(30) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransXlatAlpha_G.cpp(26) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransXlatAl",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransXlatAlpha_ushort::AddRef",
@@ -263,14 +299,14 @@
    "unit": "_BlitTransXlatAlpha_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/5",
+   "sites": "2/2",
    "rule_violations": 6
   },
   {
    "addr": "0x493f30",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransZRemapXlatAlpha_G.hpp(26) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\inc",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransZRemapXlatAlpha_G.cpp(30) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTrans",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
@@ -278,14 +314,14 @@
    "unit": "_BlitTransZRemapXlatAlpha_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/5",
-   "rule_violations": 9
+   "sites": "2/2",
+   "rule_violations": 5
   },
   {
    "addr": "0x494080",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransLucent75Alpha_G.hpp(26) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\inclu",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLucent75Alpha_G.cpp(31) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLu",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransLucent75Alpha_ushort::AddRef",
@@ -293,14 +329,14 @@
    "unit": "_BlitTransLucent75Alpha_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
-   "rule_violations": 8
+   "sites": "1/1",
+   "rule_violations": 4
   },
   {
    "addr": "0x4941e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\include\\_BlitTransLucent50Alpha_G.hpp(26) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\inclu",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLucent50Alpha_G.cpp(30) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p03\\part_00\\_BlitTransLu",
    "first_diff": null,
    "pathology": null,
    "name": "BlitTransLucent50Alpha_ushort::AddRef",
@@ -308,8 +344,8 @@
    "unit": "_BlitTransLucent50Alpha_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
-   "rule_violations": 8
+   "sites": "1/1",
+   "rule_violations": 4
   }
  ]
 }

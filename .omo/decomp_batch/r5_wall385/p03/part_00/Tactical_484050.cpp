@@ -4,14 +4,6 @@
 
 int Tactical::CreateTacticalLightSurface(int * p0, int * p1, int * p2, int * p3, int p4, int p5)
 {
-        int __stdcall Tactical::CreateTacticalLightSurface(
-            Tactical this->vfptr,
-            int *p0,
-            unsigned int *p1,
-            unsigned int *p2,
-            int *p3,
-            int p4,
-            int p5);
         unsigned int * v7 = p1;
         int * v8 = p3;
         int * v9 = (int *)p5;
@@ -52,8 +44,8 @@ int Tactical::CreateTacticalLightSurface(int * p0, int * p1, int * p2, int * p3,
             else
             {
                 result = CreateSurfaceClassPrimary(v16, p5, p4);
+                *p0 = result;
             }
-            *p0 = result;
         }
         return (int)(result);
 }

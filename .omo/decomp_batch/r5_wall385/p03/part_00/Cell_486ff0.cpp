@@ -4,7 +4,8 @@
 
 char Cell::IsBuildableAdvanced()
 {
-        int result = ((Type *)(&((char *)stru_87F5F0)[0x58 + (416)]))->CheckAmbiguity((int)this, 1);
+        int result;
+        result = ((Type *)(&((char *)stru_87F5F0)[0x58 + (416)]))->CheckAmbiguity((int)this, 1);
         if ( !(unsigned char)result )
         {
             return (char)((1));

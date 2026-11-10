@@ -30,90 +30,96 @@ bool CellLand::IsBuildable()
                         if ( DataGlobal_ABBEBC != -1 )
                         {
                             result = *((unsigned int *)this + 14);
+                            if ( result >= DataGlobal_ABBEBC && result < DataGlobal_ABBEBC + 20 )
+                            {
+                                return (bool)((1));
+                            }
+                        }
+                        if ( dword_ABAD24 != -1 )
+                        {
+                            result = *((unsigned int *)this + 14);
+                            if ( result >= dword_ABAD24 && result < dword_ABAD24 + 4 )
+                            {
+                                return (bool)((1));
+                            }
+                        }
+                        if ( g_Cell_BuildabilityLUT != -1 )
+                        {
+                            result = *((unsigned int *)this + 14);
+                            if ( result >= g_Cell_BuildabilityLUT && result < g_Cell_BuildabilityLUT + 16 )
+                            {
+                                return (bool)((1));
+                            }
+                        }
+                        if ( g_TerrainBridgeIndex != -1 )
+                        {
+                            result = *((unsigned int *)this + 14);
+                            if ( result >= g_TerrainBridgeIndex && result < g_TerrainBridgeIndex + 16 )
+                            {
+                                return (bool)((1));
+                            }
+                        }
+                        if ( DataGlobal_ABC2C8 != -1 )
+                        {
+                            result = *((unsigned int *)this + 14);
+                            if ( result >= DataGlobal_ABC2C8 && result < DataGlobal_ABC2C8 + 2 )
+                            {
+                                return (bool)((1));
+                            }
+                        }
+                        result = dword_AA101C;
+                        if ( dword_AA101C == -1 )
+                        {
+                            goto LABEL_60;
+                        }
+                        v5 = *((unsigned int *)this + 14);
+                        if ( v5 < dword_AA101C )
+                        {
+                            goto LABEL_60;
+                        }
+                        result = dword_AA101C + 28;
+                        if ( v5 >= dword_AA101C + 28 )
+                        {
+                            goto LABEL_60;
+                        }
+                        if ( result == DataGlobal_AA10A0 || result == DataGlobal_AA10A0 + 3 )
+                        {
+                            v4 = *((unsigned char *)this + 282);
+                            if ( v4 != 2 && v4 != 3 )
+                            {
+                                return (bool)((1));
+                            }
+                            goto LABEL_60;
                         }
                     }
+                    if ( result == DataGlobal_AA1050 || result == DataGlobal_AA1050 + 3 )
+                    {
+                        if ( *((unsigned char *)this + 282) >= 2u )
+                        {
+                            return (bool)((1));
+                        }
+                        goto LABEL_60;
+                    }
                 }
-            }
-            if ( result >= DataGlobal_ABBEBC && result < DataGlobal_ABBEBC + 20 )
-            {
-                return (bool)((1));
-            }
-            if ( dword_ABAD24 != -1 )
-            {
-                result = *((unsigned int *)this + 14);
-            }
-            if ( result >= dword_ABAD24 && result < dword_ABAD24 + 4 )
-            {
-                return (bool)((1));
-            }
-            if ( g_Cell_BuildabilityLUT != -1 )
-            {
-                result = *((unsigned int *)this + 14);
-            }
-            if ( result >= g_Cell_BuildabilityLUT && result < g_Cell_BuildabilityLUT + 16 )
-            {
-                return (bool)((1));
-            }
-            if ( g_TerrainBridgeIndex != -1 )
-            {
-                result = *((unsigned int *)this + 14);
-            }
-            if ( result >= g_TerrainBridgeIndex && result < g_TerrainBridgeIndex + 16 )
-            {
-                return (bool)((1));
-            }
-            if ( DataGlobal_ABC2C8 != -1 )
-            {
-                result = *((unsigned int *)this + 14);
-            }
-            if ( result >= DataGlobal_ABC2C8 && result < DataGlobal_ABC2C8 + 2 )
-            {
-                return (bool)((1));
-            }
-            result = dword_AA101C;
-            if ( dword_AA101C == -1 )
-            {
-                goto LABEL_60;
-            }
-            v5 = *((unsigned int *)this + 14);
-            if ( v5 < dword_AA101C )
-            {
-                goto LABEL_60;
-            }
-            result = dword_AA101C + 28;
-            if ( v5 >= dword_AA101C + 28 )
-            {
-                goto LABEL_60;
-                if ( result == DataGlobal_AA10A0 || result == DataGlobal_AA10A0 + 3 )
+                if ( result == DataGlobal_ABB110 || result == DataGlobal_ABB110 + 3 )
                 {
-                    v4 = *((unsigned char *)this + 282);
+                    v3 = *((unsigned char *)this + 282);
+                    if ( v3 != 1 && v3 != 3 )
+                    {
+                        return (bool)((1));
+                    }
+                    goto LABEL_60;
                 }
             }
-            if ( v4 != 2 && v4 != 3 )
-            {
-                return (bool)((1));
-            }
-            goto LABEL_60;
-            goto LABEL_60;
-            if ( v3 != 1 && v3 != 3 )
-            {
-                return (bool)((1));
-            }
-            goto LABEL_60;
             LABEL_59:
     return (bool)((1));
-        }
-        else
-        {
-        }
-        else
-        {
         }
         if ( result != DataGlobal_AA073C && result != DataGlobal_AA073C + 3 )
         {
             goto LABEL_59;
         }
-        char v2 = *((unsigned char *)this + 282);
+        char v2;
+        v2 = *((unsigned char *)this + 282);
         if ( v2 && v2 != 4 )
         {
             return (bool)((1));
