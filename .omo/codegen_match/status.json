@@ -21,7 +21,7 @@
   "status": "PENDING"
  },
  "0x4035f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -700,7 +700,7 @@
   "status": "PENDING"
  },
  "0x431800": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1106,7 +1106,7 @@
   "status": "OK"
  },
  "0x474b50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::GetCoord",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1169,7 +1169,7 @@
   "status": "PENDING"
  },
  "0x4766f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::SaveTypeNameListToINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1876,7 +1876,7 @@
   "status": "PENDING"
  },
  "0x4a7900": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "DiskLaserClass::PointerGotInvalid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2191,7 +2191,7 @@
   "status": "PENDING"
  },
  "0x4c58c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2856,7 +2856,7 @@
   "status": "NG"
  },
  "0x517cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2947,7 +2947,7 @@
   "status": "PENDING"
  },
  "0x526cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::GetStringByIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3311,7 +3311,7 @@
   "status": "PENDING"
  },
  "0x54f2f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InputManager::EnqueueInputEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3528,7 +3528,7 @@
   "status": "PENDING"
  },
  "0x56e7c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::CheckCellsBuildable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3542,7 +3542,7 @@
   "status": "PENDING"
  },
  "0x578390": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::IsRectInBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3598,7 +3598,7 @@
   "status": "OK"
  },
  "0x5865f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CellClass::SpiralFindClosest",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4067,7 +4067,7 @@
   "status": "OK"
  },
  "0x5d4b20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4970,7 +4970,7 @@
   "status": "PENDING"
  },
  "0x69b7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5208,7 +5208,7 @@
   "status": "PENDING"
  },
  "0x6b7c60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5495,14 +5495,14 @@
   "status": "PENDING"
  },
  "0x6e6ff0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x6e7a80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5796,7 +5796,7 @@
   "status": "OK"
  },
  "0x720070": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::selectWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6720,7 +6720,7 @@
   "status": "NG"
  },
  "0x7b22e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioQueue::ReadBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6783,7 +6783,7 @@
   "status": "PENDING"
  },
  "0x7b5b80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+5 push edi",
   "name": "String::ToLowerCopy",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",

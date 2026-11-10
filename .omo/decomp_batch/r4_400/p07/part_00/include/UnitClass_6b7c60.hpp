@@ -43,6 +43,7 @@ extern unsigned char stru_A8EB00;
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class ObjectClass;
 class UnitClass;
 
 #ifndef DECOMP_PILOT_TASKMANAGER_HPP
