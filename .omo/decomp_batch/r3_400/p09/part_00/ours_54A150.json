@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@IsometricTileTypeClass@@QAEHXZ",
+ "sym_key": "IsometricTileTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b80c030000c3",
+ "relocs": []
+}

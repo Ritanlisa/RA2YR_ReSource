@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsInitialized@MapSeed@@QAEHXZ",
+ "sym_key": "MapSeed::IsInitialized",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABED0C@@3IA",
+   "sym_key": "DataGlobal_ABED0C"
+  }
+ ]
+}

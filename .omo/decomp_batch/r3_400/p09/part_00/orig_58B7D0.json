@@ -1,0 +1,11 @@
+{
+ "addr": "0x58B7D0",
+ "name": "MapSeed::IsInitialized",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58B7D0",
+ "bytes_hex": "a10cedab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
