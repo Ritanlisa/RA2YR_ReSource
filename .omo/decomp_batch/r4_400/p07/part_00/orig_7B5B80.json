@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B5B80",
+ "name": "String::ToLowerCopy",
+ "size": 202,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B5B80",
+ "bytes_hex": "5355568bf15733db8b3e85ff743383c9ff33c0f2aef7d151e87a3201008b3e8bd883c9ff33c083c404f2aef7d12bf98bc18bf78bfbc1e902f3a58bc883e103f3a433f685db742d8bfb83c9ff33c0f2aef7d1493bf1731d8a041e3c417c133c5a7f0f0fbec851e80954010083c40488041e46ebcf8b6c241485dbc7450000000000743e8bfb83c9ff33c0f2aef7d151e8033201008bd08bfb83c9ff33c089550053f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a4e8ff2e010083c4085f8bc55e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

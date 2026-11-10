@@ -1,0 +1,33 @@
+{
+ "symbol": "?ToLowerCopy@String@@QAEPAPADPAPAD@Z",
+ "sym_key": "String::ToLowerCopy",
+ "size": 213,
+ "link_base": 0,
+ "bytes_hex": "5355568bf133db578a0684c0743e25ff00000083c9ff8b3833c0f2aef7d151e8000000008bd833c08a0683c9ff83c4048b3833c0f2aef7d12bf98bd18bf78bfbc1e902f3a58bca83e103f3a433f685db742d8bfb83c9ff33c0f2aef7d1493bf1731d8a041e3c417c133c5a7f0f0fbec050e80000000083c40488041e46ebd38b6c241485dbc7450000000000743e8bfb83c9ff33c0f2aef7d151e8000000008bd08bfb83c9ff33c089550053f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a4e80000000083c4085f8bc55e5d5bc20400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "_tolower",
+   "sym_key": "tolower"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 197,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
