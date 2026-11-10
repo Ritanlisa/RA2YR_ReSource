@@ -5,16 +5,17 @@
 
 bool GUID::Compare(int p0)
 {
-        int result = (int)this;
+        int result;
+        result = (int)this;
         if ( DataGlobal_828140 == 2 )
         {
             if ( *((unsigned int *)this + 1) == *(unsigned int *)(p0 + 4) )
             {
                 result = (result & ~0xFF) | ((*(unsigned short *)this) & 0xFF);
-            }
-            if ( *(unsigned short *)this == *(unsigned short *)p0 )
-            {
-                return (bool)((1));
+                if ( *(unsigned short *)this == *(unsigned short *)p0 )
+                {
+                    return (bool)((1));
+                }
             }
             LABEL_23:
     return (bool)((0));
@@ -31,34 +32,40 @@ bool GUID::Compare(int p0)
             v9 = (unsigned short *)(result + 4);
             v10 = 1;
             do
-          if ( v7 == 0 )
-            break;
-            v10 = *v9++ == *v8++;
-            --v7;
-            while ( v10 )
             {
-                if ( v10 )
+                if ( v7 == 0 )
                 {
-                    result = *(unsigned int *)result;
+                    break;
                 }
-            }
-            if ( result == *(unsigned int *)p0 )
+                v10 = *v9++ == *v8++;
+                --v7;
+            } while ( v10 );
+            if ( v10 )
             {
-                return (bool)((1));
+                result = *(unsigned int *)result;
+                if ( result == *(unsigned int *)p0 )
+                {
+                    return (bool)((1));
+                }
             }
             goto LABEL_23;
         }
-        unsigned short * v3 = (unsigned short *)(p0 + 4);
-        int v4 = 3;
-        unsigned short * v5 = (unsigned short *)(result + 4);
-        bool v6 = 1;
+        unsigned short * v3;
+        v3 = (unsigned short *)(p0 + 4);
+        int v4;
+        v4 = 3;
+        unsigned short * v5;
+        v5 = (unsigned short *)(result + 4);
+        bool v6;
+        v6 = 1;
         do
         {
-        } while ();
-        v6 = *v5++ == *v3++;
-        --v4;
-        while ( v6 )
-        {
-            return (bool)((v6));
-        }
+            if ( v4 == 0 )
+            {
+                break;
+            }
+            v6 = *v5++ == *v3++;
+            --v4;
+        } while ( v6 );
+        return (bool)((v6));
 }

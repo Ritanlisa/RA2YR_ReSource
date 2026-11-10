@@ -9,12 +9,13 @@ class EventClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class InputManager
 {
 public:
-    unsigned char m000;  // 0x000
-    char __pad_001[19];  // 0x001
+    char __pad_000[20];  // 0x000
 
     // DECOMP_SIZECHECK(InputManager, InputManager, 20);
 
@@ -37,6 +38,8 @@ extern int HIDWORD(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class EventClass
 {

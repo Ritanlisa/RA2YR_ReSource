@@ -4,14 +4,6 @@
 
 int IPXGlobalConnClass::Flush(const void * p0, unsigned int p1, int * p2, int p3, short p4, int p5)
 {
-        int __stdcall IPXGlobalConnClass::Flush(
-            IPXGlobalConnClass this->ptr_0,
-            const void *p0,
-            unsigned int p1,
-            unsigned int *p2,
-            int p3,
-            short p4,
-            int p5);
         unsigned int v11[3];
         ((Waypoint *)(v11))->InitInvalid();
         *(unsigned int *)(this->m020 + 8) = 0;

@@ -9,6 +9,8 @@ class IPXConnClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class SessionClass
 {
@@ -34,9 +36,6 @@ public:
     int initLAN(int p0, int * p1, int * p2);  // 0x540DC0
 };
 
-// ---- globals used by this unit (registry names)
-extern unsigned char Source;
-
 // ---- global callee prototypes (R3 non-leaf)
 extern int __2_YAPAXI_Z(...);
 
@@ -49,6 +48,8 @@ extern int __2_YAPAXI_Z(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class IPXConnClass
 {
@@ -58,11 +59,8 @@ public:
     // DECOMP_SIZECHECK(IPXConnClass, IPXConnClass, 44);
 
     // ---- pilot methods (registry signatures)
-    void * constructor(int p0, int p1, int p2, short p3, int * p4, int p5, int * p6, int p7);  // 0x53F430
+    void * constructor(int p0, int p1, int p2, short p3, void * p4, int p5, void * p6, int p7);  // 0x53F430
 };
-
-// ---- globals used by this unit (registry names)
-extern unsigned char Source;
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int __2_YAPAXI_Z(...);

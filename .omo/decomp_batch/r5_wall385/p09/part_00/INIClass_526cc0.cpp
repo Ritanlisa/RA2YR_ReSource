@@ -37,19 +37,19 @@ int INIClass::GetStringByIndex(unsigned char * p0, int p1)
             if ( p1 < *(unsigned int *)(v6 + 48) )
             {
                 v8 = *(unsigned int **)(v6 + 24);
-            }
-            if ( v8 )
-            {
-                while ( v8[1] && v8[2] )
+                if ( v8 )
                 {
-                    if ( v7 == 0 )
+                    while ( v8[1] && v8[2] )
                     {
-                        return (int)(v8[3]);
+                        if ( v7 == 0 )
+                        {
+                            return (int)(v8[3]);
+                        }
+                        v8 = (unsigned int *)v8[1];
+                        --v7;
                     }
                 }
             }
-            v8 = (unsigned int *)v8[1];
-            --v7;
         }
         return (int)(0);
 }

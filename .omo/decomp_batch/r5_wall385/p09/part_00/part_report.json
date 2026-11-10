@@ -2,9 +2,14 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "COMPILE_FAIL": 17,
+   "MISMATCH": 3
   },
-  "pathologies": {},
+  "pathologies": {
+   "extern_reloc": 1,
+   "codegen_shape": 1,
+   "const_fold": 1
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
  },
@@ -36,14 +41,14 @@
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "9/10",
+   "sites": "10/11",
    "rule_violations": 11
   },
   {
    "addr": "0x5388a0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\SortedArray.cpp(15) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\SortedArray.cpp(16) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
    "first_diff": null,
    "pathology": null,
    "name": "SortedArray::RemoveByKey",
@@ -51,23 +56,28 @@
    "unit": "SortedArray",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "9/10",
+   "sites": "10/11",
    "rule_violations": 11
   },
   {
    "addr": "0x53ee70",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\GUID.cpp(36) : error C2061: syntax error : identifier 'v10'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\GUID.cpp(57) : error ",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 177B ours 229B",
+   "first_diff": {
+    "orig": "+0 mov eax, ecx",
+    "ours": "+0 mov eax, dword ptr [0]"
+   },
+   "pathology": "extern_reloc",
    "name": "GUID::Compare",
    "emitted": "GUID::Compare",
    "unit": "GUID",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "5/10",
-   "rule_violations": 8
+   "rule_violations": 8,
+   "orig_size": 177,
+   "ours_size": 229
   },
   {
    "addr": "0x53ef60",
@@ -103,7 +113,7 @@
    "addr": "0x53fbd0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\IPXGlobalConnClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\IPXGlobalConnClass.cpp(32) : error C2664: 'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'int'; D:\\RA2YR_ReSource\\.omo",
    "first_diff": null,
    "pathology": null,
    "name": "IPXGlobalConnClass::Flush",
@@ -111,14 +121,14 @@
    "unit": "IPXGlobalConnClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/16",
+   "sites": "15/15",
    "rule_violations": 10
   },
   {
    "addr": "0x540340",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\IPXGlobalConnClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\IPXGlobalConnClass.cpp(32) : error C2664: 'queueSendPacket' : cannot convert parameter 1 from 'const void *' to 'int'; D:\\RA2YR_ReSource\\.omo",
    "first_diff": null,
    "pathology": null,
    "name": "IPXGlobalConnClass::SendPacket",
@@ -156,7 +166,7 @@
    "unit": "SessionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/17",
+   "sites": "15/16",
    "rule_violations": 10
   },
   {
@@ -171,14 +181,14 @@
    "unit": "IPXManagerClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/8",
+   "sites": "5/8",
    "rule_violations": 11
   },
   {
    "addr": "0x547230",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\TacticalClass.cpp(23) : error C2440: '=' : cannot convert from 'unsigned int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\TacticalClass.cpp(33) : error C2446: '==' : no conversion from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p0",
    "first_diff": null,
    "pathology": null,
    "name": "TacticalClass::DrawCellOverlay",
@@ -186,7 +196,7 @@
    "unit": "TacticalClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "17/22",
+   "sites": "18/23",
    "rule_violations": 0
   },
   {
@@ -222,32 +232,42 @@
   {
    "addr": "0x54f050",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\EventQueue.cpp(10) : error C2059: syntax error : ')'",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 354B ours 334B",
+   "first_diff": {
+    "orig": "+10 inc eax",
+    "ours": "+10 mov ecx, dword ptr [esi + 0x314]"
+   },
+   "pathology": "codegen_shape",
    "name": "EventQueue::Read",
    "emitted": "EventQueue::Read",
    "unit": "EventQueue",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "2/3",
-   "rule_violations": 40
+   "rule_violations": 44,
+   "orig_size": 354,
+   "ours_size": 334
   },
   {
    "addr": "0x54f2f0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\InputManager.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\Input",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 210B ours 218B",
+   "first_diff": {
+    "orig": "+0 mov al, byte ptr [0xa8ed9c]",
+    "ours": "+0 mov al, byte ptr [0x1b8]"
+   },
+   "pathology": "const_fold",
    "name": "InputManager::EnqueueInputEvent",
    "emitted": "InputManager::EnqueueInputEvent",
    "unit": "InputManager",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
-   "rule_violations": 18
+   "sites": "2/3",
+   "rule_violations": 18,
+   "orig_size": 210,
+   "ours_size": 218
   },
   {
    "addr": "0x54fe60",
@@ -268,7 +288,7 @@
    "addr": "0x552b10",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\Scenario.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'class LoadingScreen *'; D:\\RA2YR_ReSource\\.omo\\decomp_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\Scenario.cpp(10) : error C2446: '!=' : no conversion from 'class LoadingScreen *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_w",
    "first_diff": null,
    "pathology": null,
    "name": "Scenario::ComputeDisplayPosition",
@@ -276,14 +296,14 @@
    "unit": "Scenario",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "21/21",
+   "sites": "22/22",
    "rule_violations": 0
   },
   {
    "addr": "0x556a20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\ObjectClass.cpp(8) : error C2440: '=' : cannot convert from 'const int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p09\\part_00\\ObjectClass.cpp(14) : error C2440: 'initializing' : cannot convert from 'class ObjectClass *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
    "first_diff": null,
    "pathology": null,
    "name": "ObjectClass::checkLimbo",
@@ -291,7 +311,7 @@
    "unit": "ObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "12/12",
+   "sites": "13/13",
    "rule_violations": 7
   },
   {

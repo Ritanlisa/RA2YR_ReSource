@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class EventQueue
 {
@@ -13,8 +15,8 @@ public:
 
     // ---- pilot methods (registry signatures)
     short Read();  // 0x54F050
-    bool CheckPosition();  // 0x54F6B0
     short Check();  // 0x54F650
+    bool CheckPosition();  // 0x54F6B0
 };
 
 // ---- global callee prototypes (R3 non-leaf)

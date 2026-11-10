@@ -5,12 +5,6 @@
 
 char InputManager::EnqueueInputEvent(unsigned short p0, short p1, short p2, char p3)
 {
-        char __stdcall InputManager::EnqueueInputEvent(
-            InputManager this->m000,
-            unsigned short p0,
-            short p1,
-            short p2,
-            char p3);
         if ( ((char *)stru_A8EB00)[440] )
         {
             return (char)(1);

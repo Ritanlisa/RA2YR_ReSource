@@ -5,22 +5,23 @@
 
 short EventQueue::Read()
 {
+        int v2;
         do
         {
-        } while ();
-        int v2 = *((unsigned int *)this + 197);
-        while ( v2 == *((unsigned int *)this + 198) || !*((unsigned short *)this + v2 + 138) )
+            if ( (*((unsigned int *)this + 198) + 1) % 256 != *((unsigned int *)this + 197) )
+            {
+                MessageLoop();
+            }
+            v2 = *((unsigned int *)this + 197);
+        } while ( v2 == *((unsigned int *)this + 198) || !*((unsigned short *)this + v2 + 138) );
+        do
         {
             if ( !(unsigned char)((EventQueue *)(this))->CheckPosition() )
             {
                 MessageLoop();
             }
-        }
-        int v3;
-        while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !((EventQueue *)(this))->Check() )
-        {
-            v3 = *((unsigned int *)this + 197);
-        }
+        } while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !((EventQueue *)(this))->Check() );
+        int v3 = *((unsigned int *)this + 197);
         int v4 = *((unsigned int *)this + 198);
         short result = 0;
         if ( v3 != v4 )
@@ -41,30 +42,30 @@ short EventQueue::Read()
             if ( v6 != v4 )
             {
                 v7 = *((unsigned short *)this + v6 + 138);
+                *((unsigned int *)this + 197) = (v6 + 1) % 256;
             }
-            *((unsigned int *)this + 197) = (v6 + 1) % 256;
             v8 = *((unsigned int *)this + 197);
             v9 = 0;
             *(unsigned int *)this = v7;
             if ( v8 != v4 )
             {
                 v9 = *((unsigned short *)this + v8 + 138);
+                *((unsigned int *)this + 197) = (v8 + 1) % 256;
             }
-            *((unsigned int *)this + 197) = (v8 + 1) % 256;
             *((unsigned int *)this + 3) = v7;
             *((unsigned int *)this + 1) = v9;
             *((unsigned int *)this + 4) = v9;
             if ( (unsigned char)result == 10 )
             {
                 v10 = *((unsigned int *)this + 197);
+                v11 = 0;
+                if ( v10 != v4 )
+                {
+                    v11 = *((unsigned short *)this + v10 + 138);
+                    *((unsigned int *)this + 197) = (v10 + 1) % 256;
+                }
+                *((unsigned short *)this + 4) = v11;
             }
-            v11 = 0;
-            if ( v10 != v4 )
-            {
-                v11 = *((unsigned short *)this + v10 + 138);
-            }
-            *((unsigned int *)this + 197) = (v10 + 1) % 256;
-            *((unsigned short *)this + 4) = v11;
         }
         return (short)(result);
 }

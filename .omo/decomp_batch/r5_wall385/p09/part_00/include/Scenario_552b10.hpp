@@ -9,23 +9,25 @@ class LoadingScreen;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Scenario
 {
 public:
     char __pad_000[12];  // 0x000
-    int m00C;  // 0x00C
-    int m010;  // 0x010
-    int m014;  // 0x014
-    int m018;  // 0x018
-    int m01C;  // 0x01C
-    int m020;  // 0x020
+    void * m00C;  // 0x00C
+    void * m010;  // 0x010
+    void * m014;  // 0x014
+    void * m018;  // 0x018
+    void * m01C;  // 0x01C
+    void * m020;  // 0x020
     int m024;  // 0x024
     unsigned char * m028;  // 0x028
-    int m02C;  // 0x02C
-    int m030;  // 0x030
-    int m034;  // 0x034
-    int m038;  // 0x038
+    void * m02C;  // 0x02C
+    void * m030;  // 0x030
+    void * m034;  // 0x034
+    void * m038;  // 0x038
     char __pad_03C[7329];  // 0x03C
 
     // DECOMP_SIZECHECK(Scenario, Scenario, 7389);

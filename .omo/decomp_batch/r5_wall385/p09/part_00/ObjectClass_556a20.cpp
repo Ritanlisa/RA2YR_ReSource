@@ -4,7 +4,7 @@
 
 char * ObjectClass::checkLimbo()
 {
-        this->vtable1 = 0x80;
+        this->vtable1 = (void *)(0x80);
         this->ptr_1 = 0x80;
         this->ptr_2 = 0x80;
         *((unsigned int *)this + 1) = 0;
@@ -12,18 +12,25 @@ char * ObjectClass::checkLimbo()
         *((unsigned int *)this + 3) = 0;
         char * v2 = this + 28;
         int v3 = 32;
+        char * v4;
         do
         {
-        } while ();
-        v2 += 16;
-        --v3;
-        char * v4;
-        *(unsigned int *)v4 = DataGlobal_ABCB50;
-        *((unsigned int *)v4 + 1) = DataGlobal_ABCB54;
-        *((unsigned int *)v4 + 2) = DataGlobal_ABCB58;
-        *((unsigned int *)v2 - 4) = 0;
+            v4 = v2 - 12;
+            v2 += 16;
+            --v3;
+            *(unsigned int *)v4 = DataGlobal_ABCB50;
+            *((unsigned int *)v4 + 1) = DataGlobal_ABCB54;
+            *((unsigned int *)v4 + 2) = DataGlobal_ABCB58;
+            *((unsigned int *)v2 - 4) = 0;
+        } while ( v3 );
         int v5;
-        while ( v3 )
+        if ( DataGlobal_ABCB88 < DataGlobal_ABCB80
+        || (DataGlobal_ABCB85 || DataGlobal_ABCB80 == 0)
+        && DataGlobal_ABCB8C > 0
+        && (*(unsigned char (__stdcall **)(int *, int, unsigned int))(DataGlobal_ABCB78 + 8))(
+             &DataGlobal_ABCB78,
+             DataGlobal_ABCB8C + DataGlobal_ABCB80,
+             0) )
         {
             v5 = DataGlobal_ABCB88++;
             *((unsigned int *)DataGlobal_ABCB7C + v5) = this;

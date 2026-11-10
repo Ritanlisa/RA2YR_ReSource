@@ -5,7 +5,8 @@
 
 char SortedArray::RemoveByKey(int * p0)
 {
-        size_t v3 = this->u32_4;
+        size_t v3;
+        v3 = this->u32_4;
         if ( v3 == 0 )
         {
             return (char)(0);
@@ -16,9 +17,12 @@ char SortedArray::RemoveByKey(int * p0)
             this->u32_10 = 0;
             this->u32_C = 1;
         }
-        int v4 = this->u32_4;
-        unsigned int * v5 = *(unsigned int **)this;
-        int v15 = *p0;
+        int v4;
+        v4 = this->u32_4;
+        unsigned int * v5;
+        v5 = *(unsigned int **)this;
+        int v15;
+        v15 = *p0;
         if ( v4 <= 0 )
         {
             return (char)(0);
@@ -40,7 +44,7 @@ char SortedArray::RemoveByKey(int * p0)
         }
         if ( v6 != v15 )
         {
-            v5 = v7 + 8;
+            v5 = (unsigned int *)(v7 + 8);
             v4 += -1 - v4 / 2;
             goto LABEL_9;
         }
@@ -48,7 +52,8 @@ char SortedArray::RemoveByKey(int * p0)
         {
             return (char)(0);
         }
-        int v9 = (int)&v7[-*(unsigned int *)this] >> 3;
+        int v9;
+        v9 = (int)&v7[-*(unsigned int *)this] >> 3;
         if ( v9 == -1 )
         {
             return (char)(0);
@@ -62,8 +67,10 @@ char SortedArray::RemoveByKey(int * p0)
             v12 = *(unsigned int *)this + 8 * i++;
             *(unsigned int *)(v12 - 8) = v11;
         }
-        unsigned int * v13 = *(unsigned int **)this;
-        int v14 = this->u32_4 - 1;
+        unsigned int * v13;
+        v13 = *(unsigned int **)this;
+        int v14;
+        v14 = this->u32_4 - 1;
         this->u32_4 = v14;
         v13[2 * v14] = 0;
         v13[2 * v14 + 1] = 0;

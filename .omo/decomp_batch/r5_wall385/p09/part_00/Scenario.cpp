@@ -5,7 +5,7 @@
 
 int Scenario::ComputeDisplayPosition()
 {
-        LoadingScreen * v1 = g_DisplayWidth;
+        LoadingScreen * v1 = (LoadingScreen *)(g_DisplayWidth);
         int v2 = 640;
         if ( g_DisplayWidth != (LoadingScreen *)640 )
         {

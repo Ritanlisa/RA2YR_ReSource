@@ -15,12 +15,12 @@ int __stdcall JumpjetLocomotionClass::StubReturnZero_10(int p0, int * p1)
             if ( *(unsigned char *)(v3 + 1709) || *(unsigned char *)(v3 + 1710) )
             {
                 *(unsigned char *)(v3 + 1709) = 0;
-            }
-            *(unsigned char *)(*((unsigned int *)this - 3) + 1710) = 0;
-            v4 = (unsigned int *)*((unsigned int *)this - 3);
-            if ( !*(unsigned char *)(v4[135] + 492) && *(unsigned char *)((*(int (__stdcall **)(unsigned int *))(*v4 + 132))(v4) + 1516) )
-            {
-                (*(void (__stdcall **)(unsigned int, int, unsigned int))(**((unsigned int **)this - 3) + 488))(*((unsigned int *)this - 3), 10, 0);
+                *(unsigned char *)(*((unsigned int *)this - 3) + 1710) = 0;
+                v4 = (unsigned int *)*((unsigned int *)this - 3);
+                if ( !*(unsigned char *)(v4[135] + 492) && *(unsigned char *)((*(int (__stdcall **)(unsigned int *))(*v4 + 132))(v4) + 1516) )
+                {
+                    (*(void (__stdcall **)(unsigned int, int, unsigned int))(**((unsigned int **)this - 3) + 488))(*((unsigned int *)this - 3), 10, 0);
+                }
             }
             *(unsigned int *)(*((unsigned int *)this - 3) + 1064) = 0;
             *(unsigned int *)(*((unsigned int *)this - 3) + 1068) = 0;

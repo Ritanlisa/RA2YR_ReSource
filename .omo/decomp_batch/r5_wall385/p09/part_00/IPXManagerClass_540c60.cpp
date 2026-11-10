@@ -23,15 +23,15 @@ int IPXManagerClass::SetConnectionParams(int p0, int p1, int p2, char p3)
         if ( *((int *)this + 17) > 0 )
         {
             v7 = this + 5;
-            do Socket = v7->Socket;
-            ++v6;
-            v7 = (IPXManagerClass *)((char *)v7 + 4);
-            *(unsigned int *)(Socket + 40) = *((unsigned int *)this + 22);
-            *(unsigned int *)(*(unsigned int *)&v7[-1].Initialized + 44) = *((unsigned int *)this + 23);
-            *(unsigned int *)(*(unsigned int *)&v7[-1].Initialized + 48) = *((unsigned int *)this + 24);
-            while ( v6 < *((unsigned int *)this + 17) )
+            do
             {
-            }
+                Socket = v7->Socket;
+                ++v6;
+                v7 = (IPXManagerClass *)((char *)v7 + 4);
+                *(unsigned int *)(Socket + 40) = *((unsigned int *)this + 22);
+                *(unsigned int *)(*(unsigned int *)&v7[-1].Initialized + 44) = *((unsigned int *)this + 23);
+                *(unsigned int *)(*(unsigned int *)&v7[-1].Initialized + 48) = *((unsigned int *)this + 24);
+            } while ( v6 < *((unsigned int *)this + 17) );
         }
         int result = *((unsigned int *)this + 20);
         if ( result )

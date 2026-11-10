@@ -38,19 +38,19 @@ int INIClass::GetStringByIndex(unsigned char * p0, int p1)
             if ( p1 < *(unsigned int *)(v6 + 48) )
             {
                 v8 = *(unsigned int **)(v6 + 24);
-            }
-            if ( v8 )
-            {
-                while ( v8[1] && v8[2] )
+                if ( v8 )
                 {
-                    if ( v7 == 0 )
+                    while ( v8[1] && v8[2] )
                     {
-                        return (int)(v8[3]);
+                        if ( v7 == 0 )
+                        {
+                            return (int)(v8[3]);
+                        }
+                        v8 = (unsigned int *)v8[1];
+                        --v7;
                     }
                 }
             }
-            v8 = (unsigned int *)v8[1];
-            --v7;
         }
         return (int)(0);
 }
@@ -61,7 +61,8 @@ int INIClass::GetStringByIndex(unsigned char * p0, int p1)
 
 char INIClass::deleteSection(int * p0)
 {
-        size_t v3 = this->headNode;
+        size_t v3;
+        v3 = this->headNode;
         if ( v3 == 0 )
         {
             return (char)(0);
@@ -72,9 +73,12 @@ char INIClass::deleteSection(int * p0)
             this->sectionHead = 0;
             this->q00C = 1;
         }
-        int v4 = this->headNode;
-        unsigned int * v5 = *(unsigned int **)this;
-        int v15 = *p0;
+        int v4;
+        v4 = this->headNode;
+        unsigned int * v5;
+        v5 = *(unsigned int **)this;
+        int v15;
+        v15 = *p0;
         if ( v4 <= 0 )
         {
             return (char)(0);
@@ -96,7 +100,7 @@ char INIClass::deleteSection(int * p0)
         }
         if ( v6 != v15 )
         {
-            v5 = v7 + 8;
+            v5 = (unsigned int *)(v7 + 8);
             v4 += -1 - v4 / 2;
             goto LABEL_9;
         }
@@ -104,7 +108,8 @@ char INIClass::deleteSection(int * p0)
         {
             return (char)(0);
         }
-        int v9 = (int)&v7[-*(unsigned int *)this] >> 3;
+        int v9;
+        v9 = (int)&v7[-*(unsigned int *)this] >> 3;
         if ( v9 == -1 )
         {
             return (char)(0);
@@ -118,8 +123,10 @@ char INIClass::deleteSection(int * p0)
             v12 = *(unsigned int *)this + 8 * i++;
             *(unsigned int *)(v12 - 8) = v11;
         }
-        unsigned int * v13 = *(unsigned int **)this;
-        int v14 = this->headNode - 1;
+        unsigned int * v13;
+        v13 = *(unsigned int **)this;
+        int v14;
+        v14 = this->headNode - 1;
         this->headNode = v14;
         v13[2 * v14] = 0;
         v13[2 * v14 + 1] = 0;

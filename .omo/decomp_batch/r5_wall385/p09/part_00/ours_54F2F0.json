@@ -1,0 +1,33 @@
+{
+ "symbol": "?EnqueueInputEvent@InputManager@@QAEDGFFD@Z",
+ "sym_key": "InputManager::EnqueueInputEvent",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "a0b80100005684c08bf17406b0015ec210008b96140300005355578bbe1803000033db2bfa5357e80000000033c7bd0001000053572be8e80000000083c41003e883fd035f5d5b0f8c870000008b4424083c0174083c0474043c0275778b4c241451508bcee8000000008b8e180300008d410125ff0000807907480d00ffffff403b86140300007413668b54240c6689944e140100008986180300008b8e180300008d410125ff0000807907480d00ffffff403b86140300007413668b5424106689944e14010000898618030000b0015ec2100032c05ec21000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?HIDWORD@@YAHZZ",
+   "sym_key": "HIDWORD"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?HIDWORD@@YAHZZ",
+   "sym_key": "HIDWORD"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?Enqueue@EventClass@@QAEDGD@Z",
+   "sym_key": "EventClass::Enqueue"
+  }
+ ]
+}

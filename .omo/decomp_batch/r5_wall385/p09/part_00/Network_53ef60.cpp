@@ -20,14 +20,15 @@ bool Network::processPacket(int p0)
             v10 = this + 4;
             v11 = 1;
             do
-          if ( v8 == 0 )
-            break;
-            v11 = *v10++ == *v9++;
-            --v8;
-            while ( v11 )
             {
-                return (bool)(v11 == 0 || *(unsigned int *)this != *(unsigned int *)p0);
-            }
+                if ( v8 == 0 )
+                {
+                    break;
+                }
+                v11 = *v10++ == *v9++;
+                --v8;
+            } while ( v11 );
+            return (bool)(v11 == 0 || *(unsigned int *)this != *(unsigned int *)p0);
         }
         unsigned short * v4 = (unsigned short *)(p0 + 4);
         int v5 = 3;
@@ -35,12 +36,13 @@ bool Network::processPacket(int p0)
         bool v7 = 1;
         do
         {
-        } while ();
-        v7 = *v6++ == *v4++;
-        --v5;
-        while ( v7 )
-        {
-            return (bool)(v7 == 0);
-        }
+            if ( v5 == 0 )
+            {
+                break;
+            }
+            v7 = *v6++ == *v4++;
+            --v5;
+        } while ( v7 );
+        return (bool)(v7 == 0);
 }
 

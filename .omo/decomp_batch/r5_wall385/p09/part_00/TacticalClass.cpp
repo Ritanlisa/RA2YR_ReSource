@@ -5,8 +5,10 @@
 
 void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)
 {
-        int v10 = this->u32_294;
-        int v11 = g_TerrainTypeTable2;
+        int v10;
+        v10 = this->u32_294;
+        int v11;
+        v11 = g_TerrainTypeTable2;
         int v12;
         int v13;
         int v14;
@@ -20,32 +22,32 @@ void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int 
         {
             if ( this->u32_2E1 )
             {
-                v16 = DataGlobal_AA102C;
-            }
-            do v17 = v10 - *v16;
-            if ( v17 < 0x28 )
-            {
-                break;
-            }
-            if ( v16 == &dword_AA103C )
-            {
-                return;
-            }
-            ++v16;
-            while ( (int)v16 < (int)&DataGlobal_AA1040 )
-            {
+                v16 = (int *)(DataGlobal_AA102C);
+                do
+                {
+                    v17 = v10 - *v16;
+                    if ( v17 < 0x28 )
+                    {
+                        break;
+                    }
+                    if ( v16 == &dword_AA103C )
+                    {
+                        return;
+                    }
+                    ++v16;
+                } while ( (int)v16 < (int)&DataGlobal_AA1040 );
                 v18 = 4 * v17;
+                if ( p0 == DataGlobal_ABC2D4[v18] )
+                {
+                    v13 = DataGlobal_ABC2D0[v18];
+                    if ( v13 )
+                    {
+                        v14 = DataGlobal_ABC2DC[v18];
+                        v15 = DataGlobal_ABC2D8[v18] + 30;
+                        goto LABEL_17;
+                    }
+                }
             }
-            if ( p0 == DataGlobal_ABC2D4[v18] )
-            {
-                v13 = DataGlobal_ABC2D0[v18];
-            }
-            if ( v13 )
-            {
-                v14 = DataGlobal_ABC2DC[v18];
-            }
-            v15 = DataGlobal_ABC2D8[v18] + 30;
-            goto LABEL_17;
         }
         else
         {
@@ -53,16 +55,14 @@ void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int 
             if ( p0 == DataGlobal_ABC214[v12] )
             {
                 v13 = DataGlobal_ABC210[v12];
-            }
-            if ( v13 )
-            {
-                v14 = DataGlobal_ABC21C[v12];
-            }
-            v15 = DataGlobal_ABC218[v12] + 30;
-            LABEL_17:
+                if ( v13 )
+                {
+                    v14 = DataGlobal_ABC21C[v12];
+                    v15 = DataGlobal_ABC218[v12] + 30;
+                    LABEL_17:
             p2 = DSurface_ViewBounds + v15 + p2 - p4;
-            p3 = g_Map_VisibleRect + v14 + 15 + p3 - p5;
-            DrawToSurfaceSHP(
+                    p3 = g_Map_VisibleRect + v14 + 15 + p3 - p5;
+                    DrawToSurfaceSHP(
               p1,
               *(unsigned int *)DataGlobal_87F69C,
               (int)lpBuffer,
@@ -79,5 +79,7 @@ void TacticalClass::DrawCellOverlay(int p0, int p1, int p2, int p3, int p4, int 
               0,
               0,
               0);
+                }
+            }
         }
 }

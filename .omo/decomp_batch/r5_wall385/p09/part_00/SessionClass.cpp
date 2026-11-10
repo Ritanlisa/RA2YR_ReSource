@@ -17,7 +17,7 @@ int SessionClass::initLAN(int p0, int * p1, int * p2)
         void * v7;
         if ( v6 )
         {
-            v7 = ((IPXConnClass *)(v6))->constructor(this->SessionClass_field_14, this->SessionClass_field_14, this->SessionClass_field_10, this->u32_20, p1, p0, Source, 0);
+            v7 = ((IPXConnClass *)(v6))->constructor(this->SessionClass_field_14, this->SessionClass_field_14, this->SessionClass_field_10, this->u32_20, p1, p0, p0, 0);
         }
         else
         {

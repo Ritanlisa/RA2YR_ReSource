@@ -1,0 +1,33 @@
+{
+ "symbol": "?Read@EventQueue@@QAEFXZ",
+ "sym_key": "EventQueue::Read",
+ "size": 334,
+ "link_base": 0,
+ "bytes_hex": "56578bf18b86180300008b8e140300004025ff0000003bc17405e8000000008b86140300008b8e180300003bc174d56683bc46140100000074ca8bcee80000000084c07505e8000000008b8e140300008b86180300003bc874e08bcee8000000006685c074d48b8e140300008bbe1803000033c03bcf0f84cf000000668b844e140100008d510181e2ff00008079084a81ca00ffffff423c01899614030000740c3c0474083c020f859e00000033c93bd7741f668b8c56140100004281e2ff00008079084a81ca00ffffff428996140300008b96140300005333db81e1ffff00003bd7890e741f668b9c56140100004281e2ff00008079084a81ca00ffffff42899614030000894e0c8bcb81e1ffff00003c0a894e04894e105b752f8b8e1403000033d23bcf741f668b944e140100004181e1ff00008079084981c900ffffff41898e14030000668956085f5ec3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAHZZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?CheckPosition@EventQueue@@QAE_NXZ",
+   "sym_key": "EventQueue::CheckPosition"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAHZZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?Check@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Check"
+  }
+ ]
+}
