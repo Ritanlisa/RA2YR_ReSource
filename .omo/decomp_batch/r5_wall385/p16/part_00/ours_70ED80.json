@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetAnimationFlags@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetAnimationFlags",
+ "size": 187,
+ "link_base": 0,
+ "bytes_hex": "51a1a0010000568bf1578b8eec0100008b96f401000083f9ff740c8bf82bf93bfa731c2bc803d185d274148b8e1c020000e80000000084c07479a1a00100002b86dc01000083c04025ff00000083f8407c6183f8447d0a8b4424085f0c025e59c383f84c7d0a8b4424085f0c045e59c383f8507d0a8b4424085f0c025e59c383f8707c0f83f8747d0a8b4424085f0c025e59c383f87c7d0a8b4424085f0c045e59c33d800000007d0a8b4424085f0c025e59c38b4424085f5e59c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  },
+  {
+   "off": 59,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  }
+ ]
+}

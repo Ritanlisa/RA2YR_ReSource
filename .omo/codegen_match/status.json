@@ -5481,28 +5481,28 @@
   "status": "OK"
  },
  "0x6e6e20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingLoadQueue::GetNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6f20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingLoadQueue::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e7a80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5523,14 +5523,14 @@
   "status": "OK"
  },
  "0x6ea3e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ef610": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5579,7 +5579,7 @@
   "status": "OK"
  },
  "0x7036c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5600,7 +5600,7 @@
   "status": "OK"
  },
  "0x707d20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5614,7 +5614,7 @@
   "status": "OK"
  },
  "0x70b1d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TechnoClass::RevealAreaConditional",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5649,11 +5649,11 @@
   "status": "OK"
  },
  "0x70ed80": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 push ebx",
   "name": "TechnoClass::GetAnimationFlags",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x70f040": {
   "attempts": 1,
@@ -5691,7 +5691,7 @@
   "status": "NG"
  },
  "0x71abc0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "FactoryClass::CompleteItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5712,7 +5712,7 @@
   "status": "OK"
  },
  "0x71c4d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TerrainClass::IsPlacementValid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5726,7 +5726,7 @@
   "status": "OK"
  },
  "0x71d160": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5796,35 +5796,35 @@
   "status": "OK"
  },
  "0x720070": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AbstractClass::selectWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x720140": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x720a80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Movie::SelectNextBuildableType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x722390": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x722e50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5852,7 +5852,7 @@
   "status": "OK"
  },
  "0x7248c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5971,11 +5971,11 @@
   "status": "OK"
  },
  "0x736ca0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "TechnoClass::UpdateUnitAnimation",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x736d50": {
   "attempts": 2,

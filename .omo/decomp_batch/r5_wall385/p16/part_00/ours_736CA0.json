@@ -1,0 +1,27 @@
+{
+ "symbol": "?UpdateUnitAnimation@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::UpdateUnitAnimation",
+ "size": 181,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578b86c40600008a88ae06000084c90f85910000008b867406000085c0750d6803400080e80000000083c4048b8674060000508b08ff511084c074088b8efc010000eb048b4c24088b86040200008b15a001000083f9ff74088bfa2bf93bf873458bf82bfa03f985ff7e088b8efc010000eb048b4c240883f9ff740c8bfa2bf93bf8720b33c0eb0783c9ff2bca03c18996fc0100008b542408408996000200008986040200008bcee8000000005f5e59c3",
+ "relocs": [
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?sub_7DC720@@YAHZZ",
+   "sym_key": "sub_7DC720"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?StepAnimFrame@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::StepAnimFrame"
+  }
+ ]
+}

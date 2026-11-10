@@ -1,0 +1,11 @@
+{
+ "addr": "0x736CA0",
+ "name": "TechnoClass::UpdateUnitAnimation",
+ "size": 169,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x736CA0",
+ "bytes_hex": "83ec0c56578bf98b87c40600008a88ae06000084c90f85810000008b877406000085c0750a6803400080e8515a0a008b8774060000508b08ff511084c0745d8b97fc0100008b87040200008b3584eda80083faff740a8bce2bca3bc87d3e2bc185c07e388b97fc0100008b8f0402000083faff740e8bc62bc23bc17d042bc8eb0233c98b54240c8d410189b7fc0100008997000200008987040200008bcfe8cd42fcff5f5e83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
