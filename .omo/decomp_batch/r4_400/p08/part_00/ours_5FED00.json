@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetRadarColor@OverlayTypeClass@@QAEHHI@Z",
+ "sym_key": "OverlayTypeClass::GetRadarColor",
+ "size": 134,
+ "link_base": 0,
+ "bytes_hex": "568bf1568b06ff909c00000085c075148b461485c0746b8b0850ff919c00000085c0745e8bb69802000083fe7f7c0881fe8a0000007e3781fe930000007c0881fe9e0000007e278b54240c8d4c240c52518bc8e8000000008bc88b4424085e668b116689108a4902884802c208008b4c240c8b442408668b116689108a49028848025ec20800",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?GetPixelData@MixFileClass@@QAEHHI@Z",
+   "sym_key": "MixFileClass::GetPixelData"
+  }
+ ]
+}

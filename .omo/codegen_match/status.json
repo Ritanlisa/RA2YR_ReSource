@@ -34,6 +34,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4052f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VocClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x406310": {
   "attempts": 4,
   "first_diff": null,
@@ -594,6 +601,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x42f9c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BaseNodeClass_Vector::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x431800": {
   "attempts": 1,
   "first_diff": null,
@@ -790,6 +804,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x465e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_TPoint3D_int::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x468430": {
   "attempts": 1,
   "first_diff": null,
@@ -920,6 +941,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "INIClass::GetCoord",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x474c70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIEntry::ReadColor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x475610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::SetHouseName",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1174,6 +1209,13 @@
   "name": "TextRenderer::GetInstance",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4a60e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TextRenderer::Printf",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4a7900": {
   "attempts": 1,
@@ -1777,6 +1819,13 @@
   "note": "decomp_pilot",
   "status": "NG"
  },
+ "0x50b760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingTypeClass::ProcessData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x50df30": {
   "attempts": 1,
   "first_diff": null,
@@ -2113,6 +2162,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x52b2b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::deleteSection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x52b390": {
   "attempts": 2,
   "first_diff": null,
@@ -2309,6 +2365,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x5388a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SortedArray::RemoveByKey",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x538980": {
   "attempts": 2,
   "first_diff": null,
@@ -2336,6 +2399,13 @@
   "name": "Struct::ZeroInitAndSetup_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x53fbd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IPXGlobalConnClass::Flush",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x540340": {
   "attempts": 1,
@@ -3058,6 +3128,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5f6a70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::CheckGroundHeightDiff",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5f7610": {
   "attempts": 2,
   "first_diff": null,
@@ -3099,6 +3176,13 @@
   "name": "Object::StubReturn20",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5fed00": {
+  "attempts": 1,
+  "first_diff": "+0 push ecx",
+  "name": "OverlayTypeClass::GetRadarColor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5fef00": {
   "attempts": 2,
@@ -3372,6 +3456,13 @@
   "name": "FactoryClass::GetFlag",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x638ce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptAction::ClassifyAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x63f7b0": {
   "attempts": 5,
@@ -3737,6 +3828,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6a6140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Sidebar::FindProductionType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6a8710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TabCameoListClass::AddCameo_ReplaceItAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6b1020": {
   "attempts": 1,
   "first_diff": null,
@@ -3778,6 +3883,13 @@
   "name": "UnitClass::StubReturn29",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b55f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmudgeTypeClass::vt_entry_A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6b6080": {
   "attempts": 1,
@@ -3923,6 +4035,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6e15f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -4212,6 +4331,13 @@
   "name": "TemporalClass::StubReturn70",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x71c4d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerrainClass::IsPlacementValid",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x71d150": {
   "attempts": 2,
@@ -4724,6 +4850,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x75f140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::loadSectionData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x75f880": {
   "attempts": 2,
   "first_diff": null,
@@ -4807,6 +4940,13 @@
   "name": "ComStreamClass::closeStream",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x76b0a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "File::LoadWDTDecompress",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x76f020": {
   "attempts": 1,
