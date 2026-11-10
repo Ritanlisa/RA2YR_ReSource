@@ -1245,6 +1245,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x487f40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Rect::Union",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4886a0": {
   "attempts": 4,
   "first_diff": null,
@@ -1385,6 +1392,55 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x494d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x494f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4950c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495250": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4953f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495730": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4958d0": {
   "attempts": 1,
   "first_diff": null,
@@ -1396,6 +1452,62 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495bc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x495f00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4974b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4978c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -2399,6 +2511,13 @@
   "name": "HoverLocomotionClass::StubReturn120",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x517440": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x20",
+  "name": "Color::ConvertToRGB",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x5176a0": {
   "attempts": 2,
@@ -6156,6 +6275,27 @@
   "attempts": 3,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7df9c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::FacePixelBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7dfae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::FacePixelBufferEx",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7dfc00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  }
