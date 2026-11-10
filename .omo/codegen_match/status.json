@@ -5250,14 +5250,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x6cb830": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SuperClass::StopPreclickAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ce0b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SuperClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5278,7 +5278,7 @@
   "status": "OK"
  },
  "0x6cf350": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5292,63 +5292,63 @@
   "status": "OK"
  },
  "0x6d02b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6d5f60": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 8",
   "name": "TacticalClass::SetViewportPosition",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x6d6070": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 sub esp, 8",
   "name": "Tactical::SetTacticalPosition",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6d6410": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6d8530": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "DisplayClass::ScrollTacticalView",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da080": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "PlayerClass::HasOccupiedCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da180": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TacticalMap::DrawOccupiedRegion",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da230": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da7d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5369,56 +5369,56 @@
   "status": "OK"
  },
  "0x6dc660": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_UDirtyAreaStruct::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e0110": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ScenarioClass::Create",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e0ef0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::UpdateTechBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1530": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e15f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1780": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e2970": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e4150": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: COMPILE_FAIL",

@@ -1,0 +1,33 @@
+{
+ "symbol": "?SetTacticalPosition@TacticalClass@@QAEEPAH@Z",
+ "sym_key": "TacticalClass::SetTacticalPosition",
+ "size": 217,
+ "link_base": 0,
+ "bytes_hex": "53558be9568b4c2410578b79048b318d047f8d0480c1e002992bc28bd88d0476d1fb8d0480c1e002992bc2d1f82bc3894424149981e2ff00000003c28bd88b410850c1fb08e8000000008bc88d047f8d0480d1e0992bc28bf88d0476d1ff8d0480d1e0992bc2d1f803c79981e2ff00000003c28bf08b4424189981e2ff00000003c28d542418c1fe08c1f808522bf18944241ce80000000083c40885c0740da08701000084c075048b5c24148bcd899d640d0000899d740d000089b5680d000089b5780d0000e8000000005fc6857d0d0000015e5d5bc20400",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YAHZZ",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?ClampCoordMap@@YAHZZ",
+   "sym_key": "ClampCoordMap"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?CalcViewportCells@TacticalClass@@QAEIXZ",
+   "sym_key": "TacticalClass::CalcViewportCells"
+  }
+ ]
+}
