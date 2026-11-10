@@ -2,6 +2,7 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class CellClass;
 class Coord;
 class CrateClass;
 
@@ -58,6 +59,7 @@ extern int BYTE4(...);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class CellClass;
 class CrateClass;
 
 #ifndef DECOMP_PILOT_COORD_HPP
@@ -92,6 +94,7 @@ extern int BYTE4(...);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class CellClass;
 class Coord;
 
 #ifndef DECOMP_PILOT_CRATECLASS_HPP
@@ -126,6 +129,7 @@ extern int BYTE4(...);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class CellClass;
 class Coord;
 class CrateClass;
 

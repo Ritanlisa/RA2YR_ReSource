@@ -308,7 +308,7 @@
   "status": "NG"
  },
  "0x411330": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -679,7 +679,7 @@
   "status": "PENDING"
  },
  "0x42e820": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BridgeClass::GetCellData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1225,7 +1225,7 @@
   "status": "PENDING"
  },
  "0x47ff80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CellClass::GetScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1379,7 +1379,7 @@
   "status": "PENDING"
  },
  "0x48b410": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1806,7 +1806,7 @@
   "status": "PENDING"
  },
  "0x4a2600": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1869,7 +1869,7 @@
   "status": "PENDING"
  },
  "0x4a61c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1981,7 +1981,7 @@
   "status": "PENDING"
  },
  "0x4b0c40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3304,7 +3304,7 @@
   "status": "PENDING"
  },
  "0x54f050": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "EventQueue::Read",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3493,7 +3493,7 @@
   "status": "PENDING"
  },
  "0x56bd40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CrateClass::FindPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3507,7 +3507,7 @@
   "status": "PENDING"
  },
  "0x56d230": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::GetTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4018,7 +4018,7 @@
   "status": "PENDING"
  },
  "0x5cd0e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4053,7 +4053,7 @@
   "status": "PENDING"
  },
  "0x5ce8c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4921,7 +4921,7 @@
   "status": "PENDING"
  },
  "0x68c710": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5012,7 +5012,7 @@
   "status": "PENDING"
  },
  "0x6a0310": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "WalkLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5313,7 +5313,7 @@
   "status": "PENDING"
  },
  "0x6d6410": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5348,7 +5348,7 @@
   "status": "PENDING"
  },
  "0x6da7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5726,7 +5726,7 @@
   "status": "OK"
  },
  "0x71d160": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5852,7 +5852,7 @@
   "status": "OK"
  },
  "0x7248c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6699,7 +6699,7 @@
   "status": "PENDING"
  },
  "0x7b0f50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "NetworkOptions::ApplySettings",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",

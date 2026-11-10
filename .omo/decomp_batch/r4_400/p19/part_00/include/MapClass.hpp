@@ -34,6 +34,7 @@ extern int GetRegionMap(...);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class MapClass;
 class ObjectClass;
 
 #ifndef DECOMP_PILOT_CELL_HPP
