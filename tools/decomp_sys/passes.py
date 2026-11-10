@@ -39,6 +39,26 @@ TYPE_MAP = {
     "UINT": "unsigned int", "USHORT": "unsigned short",
     "BYTE": "unsigned char", "WORD": "unsigned short",
     "HANDLE": "void *", "LPVOID": "void *", "LPCVOID": "const void *",
+    # R4: remaining SDK spellings the registry globals/protos carry.  A
+    # single unknown alias (`extern LPSTR lpMultiByteStr;`) is C2146 and
+    # poisons the whole unit, so every import-surface alias gets mapped.
+    "LPSTR": "char *", "LPCSTR": "const char *",
+    "LPWSTR": "wchar_t *", "LPCWSTR": "const wchar_t *",
+    "LPBYTE": "unsigned char *", "LPDWORD": "unsigned long *",
+    "PSTR": "char *", "PCSTR": "const char *",
+    "HRESULT": "long", "HMODULE": "void *", "HINSTANCE": "void *",
+    "HWND": "void *", "HDC": "void *", "HGDIOBJ": "void *",
+    "HBRUSH": "void *", "HPEN": "void *", "HFONT": "void *",
+    "HBITMAP": "void *", "HRGN": "void *", "HMENU": "void *",
+    "HICON": "void *", "HCURSOR": "void *", "HKL": "void *",
+    "HMONITOR": "void *", "HIMAGELIST": "void *", "HKEY": "void *",
+    "HPALETTE": "void *", "HGLOBAL": "void *",
+    "LCID": "unsigned long", "COLORREF": "unsigned long",
+    "WPARAM": "unsigned int", "LPARAM": "long", "LRESULT": "long",
+    "ATOM": "unsigned short", "LANGID": "unsigned short",
+    "FARPROC": "int", "PROC": "int", "VOID": "void",
+    "LPLOGFONT": "void *", "LPLOGFONTA": "void *",
+    "LPBITMAPINFO": "void *", "LPDDSURFACEDESC": "void *",
 }
 WIDTH_OF = {
     "unsigned short": 2, "short": 2, "unsigned int": 4, "int": 4,
@@ -358,6 +378,31 @@ def pass_this_ptr_math(ctx):
 
     text = _BARE_THIS_OFF.sub(bare_repl, text)
     text = _THIS_SUB.sub(bare_repl, text)
+
+    # R4: bare `*this` (a dword read at offset 0, emitted by IDA when the
+    # proto types this as `int *this`) -- `*this` in C++ is the OBJECT, so
+    # `(void *)*this` was C2440 (SortedArray::Find family).  Bind offset 0
+    # through the same registry/view path.
+    def star_this(m):
+        rec, src = ctx.reg.member_at(cls, 0, min_span=1)
+        if not rec:
+            name = "m000"
+            ctx.views.add_scalar(cls, 0, "dword", name, "int", 4,
+                                 "registry-gap")
+            src = "registry-gap"
+        else:
+            name = rec.get("name") or "m000"
+            if re.match(r"^(?:.*_field_0x|__pad|q[0-9A-F]{3}|unknown)",
+                        name):
+                name = "m000"
+            ctx.views.add_scalar(cls, 0, "dword", name,
+                                 spell_type(rec.get("type") or "int"), 4, src)
+        ctx.sites.append(Site(
+            "member_read", "*this",
+            "bare *this -> this->%s (offset 0)" % name, True))
+        return "this->" + name
+
+    text = re.sub(r"\*\s*this\b(?!\s*[\+\[])", star_this, text)
     ctx.lines = text.split("\n")
 
 
@@ -1416,6 +1461,155 @@ def _array_type_ok(reg_ty, elem, count):
     if m:
         return False
     return reg_ty == elem
+
+
+# ---------------------------------------------------------------- unknown syms
+#
+# R4: identifiers the registry never covers.  Two families survive every
+# earlier pass and are pure C2065 compile failures:
+#   * unqualified CALL targets (IDA renders CRT/internal callees by their
+#     literal symbol: `_qsort(...)`, `__2_YAPAXI_Z(...)`); declaring them as
+#     `extern int name(...)` compiles AND keeps the reloc key equal to the
+#     signals name the original side compares against.
+#   * IDA-prefixed GLOBALS (`dword_XXXX`, `byte_XXXX`, ...) that are absent
+#     from the registry globals table; declaring with the prefix-implied
+#     type is the honest fallback (keeps the compile alive, records the
+#     registry gap as a site).
+# Names already declared by the pilot hpp (<string.h>/<stdlib.h>), by the
+# function's own params/locals, or that name a registry class are skipped.
+
+_CRT_NAMES = {
+    "qsort", "abs", "labs", "atoi", "atol", "malloc", "free", "calloc",
+    "realloc", "memcpy", "memmove", "memset", "memcmp", "strcpy", "strncpy",
+    "strcat", "strncat", "strcmp", "strncmp", "strlen", "strchr", "strrchr",
+    "strstr", "sprintf", "swprintf", "printf", "fopen", "fclose",
+    "fread", "fwrite", "fseek", "ftell", "rand", "srand", "time", "sqrt",
+    "pow", "sin", "cos", "tan", "atan", "atan2", "floor", "ceil", "fabs",
+    "tolower", "toupper", "isalpha", "isdigit", "isspace", "getenv", "exit",
+    "abort", "qmemcpy",
+}
+
+_CALL_KEYWORDS = {
+    "if", "for", "while", "switch", "return", "sizeof", "do", "else",
+    "case", "defined", "catch", "throw", "new", "delete",
+}
+
+# bare type spellings must never become `extern int int(...);`
+_TYPE_KEYWORDS = {
+    "void", "char", "short", "int", "long", "float", "double",
+    "signed", "unsigned", "bool", "const", "volatile", "struct",
+    "union", "enum", "class", "wchar_t", "size_t", "__int8",
+    "__int16", "__int32", "__int64",
+}
+
+_LOCAL_DECL = re.compile(
+    r"^\s*(?:const\s+)?(?:unsigned\s+|signed\s+)*"
+    r"(?:char|short|int|long|float|double|void|bool|wchar_t|"
+    r"_BYTE|_WORD|_DWORD|_QWORD|size_t|__int64|__int16|__int8|"
+    r"GUID|HWND|HDC|HANDLE|LCID|HKL|HBRUSH|HPEN|HFONT|HMENU|HRGN|"
+    r"HICON|HCURSOR|HINSTANCE|HMODULE|LPSTR|LPCSTR|DWORD|UINT|WORD|BYTE|"
+    r"[A-Z]\w*)\s*\**\s*([A-Za-z_]\w*)\s*(?:\[|=|;)", re.M)
+
+_GLOBAL_PREFIX_TY = {
+    "dword": "unsigned int", "word": "unsigned short",
+    "byte": "unsigned char", "qword": "__int64", "flt": "float",
+    "dbl": "double", "unk": "unsigned char", "stru": "unsigned char",
+    "off": "unsigned int",
+}
+
+_UNKNOWN_GLOBAL = re.compile(
+    r"\b(dword|word|byte|qword|flt|dbl|unk|stru|off)_[0-9A-Fa-f]{5,8}\b")
+
+_UNQUAL_CALL = re.compile(r"(?<![\w:.>])([A-Za-z_]\w*)\s*\(")
+
+
+def _registry_fn_names(reg):
+    """Set of free-function names in the registry (cached on the registry)."""
+    cached = getattr(reg, "_free_fn_names", None)
+    if cached is None:
+        cached = set()
+        for _a, v in reg.functions.items():
+            nm = v.get("name")
+            if nm and "::" not in nm:
+                cached.add(nm)
+        reg._free_fn_names = cached
+    return cached
+
+
+def pass_unknown_symbols(ctx):
+    text = "\n".join(ctx.lines)
+    # IDA's qmemcpy builtin is memcpy (declared via <string.h>)
+    text = re.sub(r"\bqmemcpy\s*\(", "memcpy(", text)
+
+    if not hasattr(ctx, "used_callee_exts"):
+        ctx.used_callee_exts = []
+    if not hasattr(ctx, "used_globals"):
+        ctx.used_globals = {}
+
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+
+    declared = set()
+    for d in ctx.used_callee_exts:
+        dm = re.search(r"\b([A-Za-z_]\w*)\s*\(", d)
+        if dm:
+            declared.add(dm.group(1))
+
+    for m in _UNQUAL_CALL.finditer(text):
+        name = m.group(1)
+        if name in _TYPE_KEYWORDS:
+            continue
+        if name in _CALL_KEYWORDS or name in _CRT_NAMES or name in locals_:
+            continue
+        if name == ctx.sig.get("method"):
+            continue
+        if name in declared or name in ctx.used_globals:
+            continue
+        if name in ctx.reg.classes or (name + "Class") in ctx.reg.classes:
+            continue
+        ctx.used_callee_exts.append("extern int %s(...);" % name)
+        declared.add(name)
+        ctx.sites.append(Site(
+            "callee", name + "(...)",
+            "unqualified callee not in registry -> extern int %s(...) "
+            "(literal IDA symbol spelling keeps the reloc key)" % name, False))
+
+    # bare function-name VALUES (qsort callback family): IDA renders the
+    # address as the bare symbol (`qsort(..., CompareFunc3Int)`) -- declare
+    # it so the argument decays to a function pointer.
+    fn_names = _registry_fn_names(ctx.reg)
+    used_bare = set()
+    for m in re.finditer(r"(?<![\w:.>])([A-Za-z_]\w*)(?!\s*\()", text):
+        name = m.group(1)
+        if name in locals_ or name in declared or name in used_bare:
+            continue
+        if name in ctx.used_globals:
+            continue          # already declared as a global (C2373 family)
+        if name not in fn_names:
+            continue
+        used_bare.add(name)
+        ctx.used_callee_exts.append(
+            "extern int __cdecl %s(const void *, const void *);" % name)
+        declared.add(name)
+        ctx.sites.append(Site(
+            "callee", name,
+            "bare function-name value -> extern int %s() (callback arg)"
+            % name, False))
+
+    # IDA-prefixed globals with no registry record
+    for m in _UNKNOWN_GLOBAL.finditer(text):
+        name = m.group(0)
+        if name in ctx.used_globals:
+            continue
+        ty = _GLOBAL_PREFIX_TY.get(m.group(1), "unsigned int")
+        ctx.used_globals[name] = ty
+        ctx.sites.append(Site(
+            "global", name,
+            "unresolved IDA global -> extern %s %s (registry gap)"
+            % (ty, name), False))
+
+    ctx.lines = text.split("\n")
 
 
 # ---------------------------------------------------------------- pass 4: scope

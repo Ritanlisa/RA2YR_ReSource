@@ -88,6 +88,7 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("#define %s" % guard_of(cls))
     lines.append("")
     lines.append("#include <string.h>   // memset (whole-object zero init)")
+    lines.append("#include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)")
     lines.append("")
     lines.append("class %s" % cls_ident(cls))
     lines.append("{")
@@ -95,10 +96,8 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
 
     cursor = 0
     emitted_names = set()
-    for off in offs:
-        if off < cursor:
-            continue
-        lines.extend(_pad(cursor, off))
+
+    def entries_of(off):
         arr = arrs.get(off)
         roles = scal.get(off, {})
         entries = []          # full declaration strings (sans indent)
@@ -121,15 +120,43 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
                 nm = nm + "_" + role
             entries.append("%s %s;" % (v["type"], nm))
             emitted_names.add(nm)
-        if len(entries) > 1:
-            lines.append("    union {  // multi-evidence view @0x%03X" % off)
+        return entries
+
+    # R4: overlapping views (a dword member at 0xC plus a byte member at
+    # 0xD -- IsAllocated family) must become a union, not a skipped offset:
+    # `if off < cursor: continue` silently dropped the narrow view and the
+    # body referenced a member the hpp never declared (C2039).
+    groups = []
+    for off in offs:
+        span = max(1, _view_span(scal.get(off, {}), arrs.get(off)))
+        if groups and off < groups[-1]["end"]:
+            g = groups[-1]
+            g["offs"].append(off)
+            g["end"] = max(g["end"], off + span)
+        else:
+            groups.append({"base": off, "end": off + span, "offs": [off]})
+    for g in groups:
+        off0 = g["base"]
+        lines.extend(_pad(cursor, off0))
+        entries = []
+        for off in g["offs"]:
+            entries.extend(entries_of(off))
+        if len(g["offs"]) > 1:
+            total = max(1, g["end"] - off0)
+            lines.append("    union {  // overlapping views @0x%03X" % off0)
+            for e in entries:
+                lines.append("        " + e)
+            lines.append("        char __pad_union_%03X[%d];"
+                         % (off0, total))
+            lines.append("    };")
+        elif len(entries) > 1:
+            lines.append("    union {  // multi-evidence view @0x%03X" % off0)
             for e in entries:
                 lines.append("        " + e)
             lines.append("    };")
         elif entries:
-            lines.append("    " + entries[0] + "  // 0x%03X" % off)
-        w = _view_span(roles, arr)
-        cursor = off + w
+            lines.append("    " + entries[0] + "  // 0x%03X" % off0)
+        cursor = g["end"]
 
     # vtable-authority virtuals (dispatch upgrades)
     for slot in sorted(vts):
@@ -147,6 +174,10 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("")
     lines.append("    // ---- pilot methods (registry signatures)")
     for s in sigs:
+        if s.get("free"):
+            # R4 cdecl arbitration: emitted at global scope; the prototype
+            # rides the unit's extern block, not the class body.
+            continue
         cc = {"__fastcall": " __fastcall",
               "__stdcall": " __stdcall"}.get(s.get("cc"), "")
         lines.append("    %s%s %s(%s);  // 0x%s" % (
@@ -195,9 +226,17 @@ def _view_span(roles, arr):
     if arr:
         return 4
     if roles:
-        # pointers are 4 bytes on x86 regardless of a narrowed recorded
-        # width (IG byte evidence describes access granularity, not the
-        # member's storage width)
-        return max(4 if (v.get("type") or "").endswith("*")
-                   else v.get("width", 4) for v in roles.values())
+        # R4: the span that advances the hpp cursor must be the width of the
+        # DECLARATION actually emitted (`T name;`), not the registry record's
+        # byte span.  A pad/unknown record carrying width 13 for an `int`
+        # slot swallowed the members at +4/+8/+0xC (C2039 m004 family).
+        spans = []
+        for v in roles.values():
+            ty = v.get("type") or ""
+            if ty.endswith("*"):
+                spans.append(4)          # x86 pointer
+            else:
+                spans.append(WIDTH_OF.get(ty) or min(int(v.get("width", 4) or 4),
+                                                     4))
+        return max(1, max(spans))
     return 4

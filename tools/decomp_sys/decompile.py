@@ -101,6 +101,85 @@ def _proto_ret(proto):
     return m.group(1).strip() if m else ""
 
 
+# ---------------------------------------------------------------- cc evidence
+#
+# R4: calling-convention arbitration needs the binary, not the registry.
+# The export disasm is IDA's rendering of the real entry; these helpers read
+# it directly (no guessing).
+
+_ECX_FAMILY = re.compile(r"\b(?:ecx|cx|cl|ch)\b")
+
+
+def _insn_text(dl):
+    """'5b2990: mov cx, [ecx]' -> 'mov cx, [ecx]'."""
+    return re.sub(r"^\s*[0-9A-Fa-f]+:\s*", "", dl)
+
+
+def _uses_ecx(disasm_lines, n=20):
+    """True when the entry (first n instructions) reads/writes ECX family."""
+    for dl in disasm_lines[:n]:
+        if _ECX_FAMILY.search(_insn_text(dl)):
+            return True
+    return False
+
+
+def _reads_stack_arg(disasm_lines):
+    """True when the body reads a stack ARGUMENT (not just a local frame)."""
+    for dl in disasm_lines:
+        ins = _insn_text(dl)
+        if re.search(r"\[(?:esp|ebp)\s*\+\s*arg_\w+", ins):
+            return True
+        if "arg_" not in ins and \
+                re.search(r"\[esp\s*\+\s*(?:0x)?0*[4-9A-Fa-f]\b", ins):
+            return True
+    return False
+
+
+def _retn_width(disasm_lines):
+    """(cleanup_bytes|None, is_bare_retn) of the epilogue."""
+    for dl in reversed(disasm_lines[-4:]):
+        ins = _insn_text(dl)
+        m = re.match(r"^retn\s+(?:0x)?([0-9A-Fa-f]+)$", ins)
+        if m:
+            return int(m.group(1), 16), False
+        if re.match(r"^retn$", ins):
+            return 0, True
+    return None, None
+
+
+def _proto_params(proto, keep_this=False):
+    """Parameter list from the export proto, as [(spelled_type, name)].
+
+    keep_this=True keeps a leading `T *this` (needed by the cdecl
+    arbitration: in __cdecl it is a normal first STACK argument).
+    """
+    p = proto or ""
+    for c in ("__thiscall", "__stdcall", "__cdecl", "__fastcall",
+              "__userpurge"):
+        p = p.replace(c, " ")
+    m = re.search(r"\((.*)\)\s*$", p)
+    out = []
+    if not m:
+        return out
+    inner = m.group(1).strip()
+    if not inner or inner == "void":
+        return out
+    for i, part in enumerate(inner.split(",")):
+        part = part.strip()
+        if not part:
+            continue
+        is_this = part.endswith("this") or part == "this"
+        if is_this and not keep_this:
+            continue
+        # strip the IDA parameter name when it IS the declared name
+        # (`ObjectClass *this` -> `ObjectClass *`); unnamed protos are the
+        # norm, so only this one spelling needs it.
+        if is_this:
+            part = re.sub(r"\s*\bthis$", "", part).strip() or part
+        out.append((spell_type(part), "p%d" % i))
+    return out
+
+
 def derive_signature(reg, ex):
     fn = reg.function(ex.addr) or {}
     name = fn.get("name") or ex.name
@@ -122,11 +201,16 @@ def derive_signature(reg, ex):
     # the only ret evidence.  Without this a tail-jmp thunk whose callee
     # ret was never resolved emitted `int Stub(){ Callee(); }` -> C4716
     # must-return (PowerClass::Stub 0x63F7B0 family).
-    if fn.get("ret") in (None, "", "unknown") and \
-            _proto_ret(ex.proto) == "void":
-        ret_notes.append(("ret_proto_void",
-                          "registry ret unknown + proto void -> void"))
-        ret = "void"
+    # R4: extended from the void-only case to the whole proto type -- an
+    # `unknown` ret rendered literally as the type name `unknown` is C2146.
+    if fn.get("ret") in (None, "", "unknown"):
+        pr = _proto_ret(ex.proto)
+        if pr:
+            ret = spell_type(pr)
+            ret_notes.append(("ret_proto",
+                              "registry ret unknown -> proto ret %s" % ret))
+        else:
+            ret = "int"
     # registry spells conventions without the leading underscores
     # ("fastcall"/"stdcall"/"cdecl"); the emitter and every downstream
     # pass key on the C++ spelling with underscores.  Without this
@@ -159,6 +243,37 @@ def derive_signature(reg, ex):
     # for thiscall, N == sum(param widths). Excess signature params produce
     # `ret 4` shapes the original never had.
     dropped = []
+    # ---- R4 cdecl / free-function arbitration ---------------------------
+    # Criterion is the BINARY, not the registry (the registry's thiscall
+    # attribution is binary-consistent: all 9,597 thiscall functions in
+    # full_export read ECX).  A class-attributed function whose entry never
+    # touches the ECX family, whose parameters are all read from the stack,
+    # and whose epilogue is a bare `retn` (no callee cleanup) is a __cdecl
+    # free function: emitting it as a thiscall member adds `ret 4n` cleanup
+    # the original never had (and any this-typed pseudo param shifts the
+    # argument slots).
+    #   NOT this family: Math::Abs16Cmp 0x5B2990 -- it reads ECX
+    #   (`mov cx,[ecx]`) and pops 8 bytes: a genuine thiscall member whose
+    #   remaining diff is evaluation order / register allocation.
+    free_fn = False
+    retn_bytes, retn_bare = _retn_width(ex.disasm_lines)
+    if retn_bare and not _uses_ecx(ex.disasm_lines) and \
+            _reads_stack_arg(ex.disasm_lines):
+        proto_cc = ""
+        for c in ("__cdecl", "__stdcall", "__fastcall", "__thiscall"):
+            if c in (ex.proto or ""):
+                proto_cc = c
+                break
+        pp = _proto_params(ex.proto, keep_this=True)
+        if pp and len(pp) > len(params):
+            params = pp
+        cc = "__cdecl"
+        free_fn = True
+        ret_notes.append(
+            ("cc_cdecl_arbitration",
+             "binary: no ECX use in first 20 insns + stack args + bare "
+             "retn -> __cdecl free function (registry cc was %s, proto %s)"
+             % (cc_raw, proto_cc or "none")))
     if cc == "thiscall":
         retn_bytes = 0
         dis = ex.disasm_lines
@@ -266,6 +381,7 @@ def derive_signature(reg, ex):
                                    and fn.get("cls") != cls),
         "ret": ret,
         "cc": cc,
+        "free": free_fn,
         "params": params,                      # [(era_type, name)]
         "arity_dropped": ["%s %s" % (t, n) for t, n in dropped],
         "sig_notes": ret_notes,
@@ -325,6 +441,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_member_shapes(ctx)
     widen_byref_for_dispatch(ctx)
     passes.pass_callees(ctx)
+    passes.pass_unknown_symbols(ctx)
     passes.pass_scope_shrink(ctx)
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
@@ -346,15 +463,27 @@ def run_function(addr, reg, views, idx):
 
 # ---------------------------------------------------------------- emission
 
+def free_decl(sig):
+    """`extern RET __cdecl Name(args);` for a cdecl-arbitrated free fn."""
+    args = ", ".join("%s %s" % (t, n) for t, n in sig["params_spelled"])
+    return "extern %s __cdecl %s(%s);" % (sig["ret"], sig["method"], args)
+
+
 def emit_cpp(ctx, unit, hpp_name=None):
     from pseudo import render
     sig = ctx.sig
     args = ", ".join("%s %s" % (t, n) for t, n in sig["params"])
     cls_ident = re.sub(r"[^A-Za-z0-9_]", "_", sig["cls"] or "Unnamed")
-    cc_tok = {"__fastcall": " __fastcall",
-              "__stdcall": " __stdcall"}.get(sig.get("cc"), "")
-    head = "%s%s %s::%s(%s)" % (sig["ret"], cc_tok, cls_ident,
-                                sig["method"], args)
+    if sig.get("free"):
+        # R4 cdecl arbitration: the binary has no receiver register, so the
+        # function is emitted at global scope with __cdecl (a thiscall
+        # member would pop its arguments).
+        head = "%s __cdecl %s(%s)" % (sig["ret"], sig["method"], args)
+    else:
+        cc_tok = {"__fastcall": " __fastcall",
+                  "__stdcall": " __stdcall"}.get(sig.get("cc"), "")
+        head = "%s%s %s::%s(%s)" % (sig["ret"], cc_tok, cls_ident,
+                                    sig["method"], args)
     if ctx.stmts is not None:
         body = render(ctx.stmts, indent=1)
     else:
@@ -445,7 +574,9 @@ def main():
         # pilot hpp: all classes touched by this unit
         by_cls = OrderedDict()
         for ctx in ctxs:
-            by_cls.setdefault(ctx.sig["cls"], []).append(ctx.sig)
+            bucket = by_cls.setdefault(ctx.sig["cls"], [])
+            if not ctx.sig.get("free"):
+                bucket.append(ctx.sig)
         for ctx in ctxs:
             for owner, csigs in getattr(ctx, "used_callees", {}).items():
                 bucket = by_cls.setdefault(owner, [])
@@ -459,6 +590,10 @@ def main():
         for ctx in ctxs:
             unit_globals.update(getattr(ctx, "used_globals", {}))
             for d in getattr(ctx, "used_callee_exts", []):
+                if d not in unit_externs:
+                    unit_externs.append(d)
+            if ctx.sig.get("free"):
+                d = free_decl(ctx.sig)
                 if d not in unit_externs:
                     unit_externs.append(d)
         for cls, sigs in by_cls.items():
