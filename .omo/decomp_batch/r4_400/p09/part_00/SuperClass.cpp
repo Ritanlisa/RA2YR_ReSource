@@ -106,7 +106,7 @@ int * SuperClass::Reset()
         *result = *(unsigned int *)&stru_A8EB00.?[416];
         unsigned int v12[4];
         this->m034 = v12[2];
-        this->m038 = SuperClass_field_0x24;
+        this->m038 = (unsigned char *)SuperClass_field_0x24;
         if ( v8 == 0 )
         {
             v9 = *result;

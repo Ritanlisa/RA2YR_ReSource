@@ -2,6 +2,7 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class RadTimeLeft;
 class TacticalClass;
 
 #ifndef DECOMP_PILOT_RADSITECLASS_HPP
@@ -52,6 +53,7 @@ extern int __fastcall RadSiteClass__DecreaseRadiation(int a0);
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class RadSiteClass;
+class RadTimeLeft;
 
 #ifndef DECOMP_PILOT_TACTICALCLASS_HPP
 #define DECOMP_PILOT_TACTICALCLASS_HPP

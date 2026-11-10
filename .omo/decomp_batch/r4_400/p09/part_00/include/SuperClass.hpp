@@ -19,7 +19,7 @@ public:
     char __pad_02C[4];  // 0x02C
     int m030;  // 0x030
     unsigned int m034;  // 0x034
-    unsigned int m038;  // 0x038
+    unsigned char * m038;  // 0x038
     char __pad_03C[44];  // 0x03C
     unsigned int m068;  // 0x068
     unsigned char m06C;  // 0x06C
