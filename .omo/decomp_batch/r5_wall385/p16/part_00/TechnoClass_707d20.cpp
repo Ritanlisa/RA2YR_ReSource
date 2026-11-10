@@ -18,20 +18,21 @@ int TechnoClass::GetCrew()
             if ( sideIndex == 1 )
             {
                 v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
-            }
-            v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964);
-            v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
-            if ( v7 )
-            {
-                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968);
+                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964);
             }
             else
             {
-                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948);
+                v7 = sideIndex == 2;
+                v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
+                if ( v7 )
+                {
+                    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968);
+                }
+                else
+                {
+                    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948);
+                }
             }
-        }
-        else
-        {
         }
         else
         {

@@ -21,19 +21,19 @@ unsigned int Movie::SelectNextBuildableType(int p0)
             while ( 1 )
             {
                 v5 = ((Random *)(&Randomizer_Global))->Range(0, this->u32_24 - 1);
-            }
-            ++v4;
-            v6 = v5;
-            v7 = v4 == 1000;
-            if ( v4 >= 1000 )
-            {
-                break;
-            }
-            if ( v5 != p0 && (unsigned char)((RulesClass *)(this))->IsTypeBuildable(v5) )
-            {
+                ++v4;
+                v6 = v5;
                 v7 = v4 == 1000;
+                if ( v4 >= 1000 )
+                {
+                    break;
+                }
+                if ( v5 != p0 && (unsigned char)((RulesClass *)(this))->IsTypeBuildable(v5) )
+                {
+                    v7 = v4 == 1000;
+                    break;
+                }
             }
-            break;
             if ( v7 )
             {
                 return (unsigned int)(0);
@@ -49,14 +49,14 @@ unsigned int Movie::SelectNextBuildableType(int p0)
                 {
                     v2 = 0;
                 }
-            }
-            if ( !--v9 )
-            {
-                break;
-            }
-            if ( (unsigned char)((RulesClass *)(this))->IsTypeBuildable(v2) )
-            {
-                return (unsigned int)(v2);
+                if ( !--v9 )
+                {
+                    break;
+                }
+                if ( (unsigned char)((RulesClass *)(this))->IsTypeBuildable(v2) )
+                {
+                    return (unsigned int)(v2);
+                }
             }
             return (unsigned int)(0);
         }

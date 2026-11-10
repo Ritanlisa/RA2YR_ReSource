@@ -4,11 +4,15 @@
 
 int TechnoClass::GetAnimationFlags()
 {
+        int v1;
         int v8;
-        int v1 = v8;
-        int v2 = *(unsigned int *)&((char *)stru_A8EB00)[416];
-        int v4 = this->disguiseBlinkTimer[0];
-        int v5 = this->disguiseBlinkTimer[2];
+        v1 = v8;
+        int v2;
+        v2 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+        int v4;
+        v4 = this->disguiseBlinkTimer[0];
+        int v5;
+        v5 = this->disguiseBlinkTimer[2];
         if ( v4 != -1 )
         {
             if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
@@ -48,14 +52,14 @@ int TechnoClass::GetAnimationFlags()
                 {
                     return (int)(v8 | 2);
                 }
-            }
-            if ( v6 < 124 )
-            {
-                return (int)(v8 | 4);
-            }
-            if ( v6 < 128 )
-            {
-                return (int)(v8 | 2);
+                if ( v6 < 124 )
+                {
+                    return (int)(v8 | 4);
+                }
+                if ( v6 < 128 )
+                {
+                    return (int)(v8 | 2);
+                }
             }
         }
         return (int)(v1);

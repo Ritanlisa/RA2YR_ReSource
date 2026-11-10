@@ -18,35 +18,35 @@ int TechnoClass::UpdateUnitAnimation()
             if ( (*(unsigned char (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) )
             {
                 v2 = this->reloadTimer[0];
-            }
-            v3 = this->reloadTimer[2];
-            if ( v2 != -1 )
-            {
-                if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v2 >= v3 )
+                v3 = this->reloadTimer[2];
+                if ( v2 != -1 )
                 {
-                    return (int)(((TechnoClass *)(this))->StepAnimFrame());
+                    if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v2 >= v3 )
+                    {
+                        return (int)(((TechnoClass *)(this))->StepAnimFrame());
+                    }
+                    v3 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v2;
+                }
+                if ( v3 > 0 )
+                {
+                    v4 = this->reloadTimer[0];
+                    v5 = this->reloadTimer[2];
+                    if ( v4 != -1 )
+                    {
+                        if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
+                        {
+                            v5 = 0;
+                        }
+                        else
+                        {
+                            v5 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v4;
+                        }
+                    }
+                    this->reloadTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
+                    this->reloadTimer[1] = v7;
+                    this->reloadTimer[2] = v5 + 1;
                 }
             }
-            v3 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v2;
-            if ( v3 > 0 )
-            {
-                v4 = this->reloadTimer[0];
-            }
-            v5 = this->reloadTimer[2];
-            if ( v4 != -1 )
-            {
-                if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
-                {
-                    v5 = 0;
-                }
-            }
-            else
-            {
-                v5 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v4;
-            }
-            this->reloadTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
-            this->reloadTimer[1] = v7;
-            this->reloadTimer[2] = v5 + 1;
         }
         return (int)(((TechnoClass *)(this))->StepAnimFrame());
 }

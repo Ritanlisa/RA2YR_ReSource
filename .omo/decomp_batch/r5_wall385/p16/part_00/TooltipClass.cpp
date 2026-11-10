@@ -5,12 +5,14 @@
 
 char TooltipClass::GetText(unsigned int p0, void * p1)
 {
-        size_t v4 = *((unsigned int *)this + 148);
+        size_t v4;
+        v4 = *((unsigned int *)this + 148);
         if ( v4 == 0 )
         {
             return (char)(0);
         }
-        unsigned int * v5 = (unsigned int *)*((unsigned int *)this + 151);
+        unsigned int * v5;
+        v5 = (unsigned int *)*((unsigned int *)this + 151);
         int v6;
         int v7;
         unsigned int v8;
@@ -20,9 +22,9 @@ char TooltipClass::GetText(unsigned int p0, void * p1)
             if ( !*((unsigned char *)this + 600) )
             {
                 qsort(*((void **)this + 147), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int);
+                *((unsigned int *)this + 151) = 0;
+                *((unsigned char *)this + 600) = 1;
             }
-            *((unsigned int *)this + 151) = 0;
-            *((unsigned char *)this + 600) = 1;
             v6 = *((unsigned int *)this + 148);
             v7 = *((unsigned int *)this + 147);
             if ( v6 <= 0 )
@@ -32,40 +34,43 @@ char TooltipClass::GetText(unsigned int p0, void * p1)
             while ( 1 )
             {
                 v8 = *(unsigned int *)(v7 + 8 * (v6 / 2));
-            }
-            v9 = v7 + 8 * (v6 / 2);
-            if ( v8 <= p0 )
-            {
-                if ( v8 == p0 )
+                v9 = v7 + 8 * (v6 / 2);
+                if ( v8 <= p0 )
                 {
-                    if ( v9 )
+                    if ( v8 == p0 )
                     {
-                        *((unsigned int *)this + 151) = v9;
+                        if ( v9 )
+                        {
+                            *((unsigned int *)this + 151) = v9;
+                            break;
+                        }
+                        return (char)(0);
                     }
+                    v7 = v9 + 8;
+                    v6 += -1 - v6 / 2;
+                }
+                else
+                {
+                    v6 /= 2;
+                }
+                if ( v6 <= 0 )
+                {
+                    return (char)(0);
                 }
             }
-            break;
-            return (char)(0);
-            v7 = v9 + 8;
-            v6 += -1 - v6 / 2;
-            if ( v6 <= 0 )
-            {
-                return (char)(0);
-            }
-        }
-        else
-        {
         }
         if ( p1 == 0 )
         {
             return (char)(1);
         }
-        size_t v11 = *((unsigned int *)this + 148);
+        size_t v11;
+        v11 = *((unsigned int *)this + 148);
         if ( v11 == 0 )
         {
             goto LABEL_27;
         }
-        unsigned int * v12 = (unsigned int *)*((unsigned int *)this + 151);
+        unsigned int * v12;
+        v12 = (unsigned int *)*((unsigned int *)this + 151);
         const void * v17;
         if ( v12 && *v12 == p0 )
         {
@@ -79,8 +84,10 @@ char TooltipClass::GetText(unsigned int p0, void * p1)
             *((unsigned int *)this + 151) = 0;
             *((unsigned char *)this + 600) = 1;
         }
-        int v13 = *((unsigned int *)this + 148);
-        int v14 = *((unsigned int *)this + 147);
+        int v13;
+        v13 = *((unsigned int *)this + 148);
+        int v14;
+        v14 = *((unsigned int *)this + 147);
         if ( v13 <= 0 )
         {
             goto LABEL_27;

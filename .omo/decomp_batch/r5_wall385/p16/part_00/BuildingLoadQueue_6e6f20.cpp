@@ -8,15 +8,17 @@ void * BuildingLoadQueue::Find()
         {
             return (void *)(0);
         }
-        int vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
+        int vtable1;
+        vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
         if ( !g_BuildingLoadQueue_Array.vfptr1 )
         {
             return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
         }
-        int uniqueId = g_BuildingLoadQueue_Array.uniqueId;
+        int uniqueId;
+        uniqueId = g_BuildingLoadQueue_Array.uniqueId;
         if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
         {
-            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4))->IsTechnoType()));
+            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4)))->IsTechnoType());
         }
         if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
         {
@@ -29,8 +31,10 @@ void * BuildingLoadQueue::Find()
             g_BuildingLoadQueue_Array.uniqueId = 0;
             ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
         }
-        int v4 = this->m000;
-        unsigned int * vtable0 = g_BuildingLoadQueue_Array.vfptr;
+        int v4;
+        v4 = this->m000;
+        unsigned int * vtable0;
+        vtable0 = g_BuildingLoadQueue_Array.vfptr;
         if ( vtable1 <= 0 )
         {
             return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
@@ -58,7 +62,7 @@ void * BuildingLoadQueue::Find()
         if ( uniqueId )
         {
             g_BuildingLoadQueue_Array.uniqueId = (int)&vtable0[2 * (vtable1 / 2)];
-            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4))->IsTechnoType()));
+            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4)))->IsTechnoType());
         }
         return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
 }

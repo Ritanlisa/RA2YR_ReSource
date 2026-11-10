@@ -20,35 +20,35 @@ int TechnoClass::RevealAreaConditional()
                 if ( this->isChronosphereImmune )
                 {
                     result = this->lastSightRange;
+                    this->isChronosphereImmune = 0;
+                    if ( result == 0 )
+                    {
+                        return (int)(result);
+                    }
+                    if ( v6 == 0 )
+                    {
+                        return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
+                    }
+                    v3 = v7;
+                    if ( v7 == 0 )
+                    {
+                        return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
+                    }
+                    return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
                 }
-            }
-            this->isChronosphereImmune = 0;
-            if ( result == 0 )
-            {
-                return (int)(result);
-            }
-            if ( v6 == 0 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
-            }
-            v3 = v7;
-            if ( v7 == 0 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
-            }
-            return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
-            result = (result & ~0xFF) | ((v6) & 0xFF);
-            if ( v6 )
-            {
-                result = this->lastSightRange;
-            }
-            if ( result )
-            {
-                v3 = v7;
-            }
-            if ( v7 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
+                result = (result & ~0xFF) | ((v6) & 0xFF);
+                if ( v6 )
+                {
+                    result = this->lastSightRange;
+                    if ( result )
+                    {
+                        v3 = v7;
+                        if ( v7 )
+                        {
+                            return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
+                        }
+                    }
+                }
             }
         }
         return (int)(result);

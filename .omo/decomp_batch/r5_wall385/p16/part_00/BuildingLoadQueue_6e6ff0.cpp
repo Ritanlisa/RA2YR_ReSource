@@ -8,18 +8,20 @@ int BuildingLoadQueue::FindObject()
         {
             return (int)(0);
         }
-        int vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
+        int vtable1;
+        vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
         if ( !g_BuildingLoadQueue_Array.vfptr1 )
         {
             goto LABEL_13;
         }
-        int uniqueId = g_BuildingLoadQueue_Array.uniqueId;
+        int uniqueId;
+        uniqueId = g_BuildingLoadQueue_Array.uniqueId;
         void * v7;
         if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
         {
             LABEL_17:
         v7 = (void ***)(uniqueId + 4);
-            return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0);
+            return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0));
         }
         if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
         {
@@ -32,8 +34,10 @@ int BuildingLoadQueue::FindObject()
             g_BuildingLoadQueue_Array.uniqueId = 0;
             ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
         }
-        int v4 = this->m000;
-        unsigned int * vtable0 = g_BuildingLoadQueue_Array.vfptr;
+        int v4;
+        v4 = this->m000;
+        unsigned int * vtable0;
+        vtable0 = g_BuildingLoadQueue_Array.vfptr;
         if ( vtable1 <= 0 )
         {
             goto LABEL_13;
@@ -65,6 +69,6 @@ int BuildingLoadQueue::FindObject()
         }
         LABEL_13:
       v7 = (void ***)&DataGlobal_B78828;
-        return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0);
+        return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0));
 }
 

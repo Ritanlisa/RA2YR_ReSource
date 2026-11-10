@@ -16,7 +16,7 @@ int TechnoClass::TransitionEffectState()
         char v10;
         if ( result == 2 || result == 1 )
         {
-            this->cloakState = 3;
+            this->cloakState = (AbstractClass *)(3);
             vtable0 = (int (__stdcall **)(TechnoClass *))this->vfptr;
             this->cloakProgress[0] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1576) - 1;
             v4 = vtable0[33](this);
@@ -31,11 +31,11 @@ int TechnoClass::TransitionEffectState()
             if ( v10 == 0 )
             {
                 location = this->location;
+                v7 = *location;
+                v8 = location[1];
+                v9 = location[2];
+                return (int)((int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1696), &v7, 0));
             }
-            v7 = *location;
-            v8 = location[1];
-            v9 = location[2];
-            return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1696), &v7, 0);
         }
         return (int)(result);
 }
@@ -60,20 +60,21 @@ int TechnoClass::GetCrew()
             if ( sideIndex == 1 )
             {
                 v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
-            }
-            v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964);
-            v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
-            if ( v7 )
-            {
-                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968);
+                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964);
             }
             else
             {
-                v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948);
+                v7 = sideIndex == 2;
+                v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324];
+                if ( v7 )
+                {
+                    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968);
+                }
+                else
+                {
+                    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948);
+                }
             }
-        }
-        else
-        {
         }
         else
         {
@@ -114,35 +115,35 @@ int TechnoClass::RevealAreaConditional()
                 if ( this->isChronosphereImmune )
                 {
                     result = this->lastSightRange;
+                    this->isChronosphereImmune = 0;
+                    if ( result == 0 )
+                    {
+                        return (int)(result);
+                    }
+                    if ( v6 == 0 )
+                    {
+                        return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
+                    }
+                    v3 = v7;
+                    if ( v7 == 0 )
+                    {
+                        return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
+                    }
+                    return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
                 }
-            }
-            this->isChronosphereImmune = 0;
-            if ( result == 0 )
-            {
-                return (int)(result);
-            }
-            if ( v6 == 0 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
-            }
-            v3 = v7;
-            if ( v7 == 0 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, owner, v4, v5, 0, 1, 1));
-            }
-            return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
-            result = (result & ~0xFF) | ((v6) & 0xFF);
-            if ( v6 )
-            {
-                result = this->lastSightRange;
-            }
-            if ( result )
-            {
-                v3 = v7;
-            }
-            if ( v7 )
-            {
-                return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
+                result = (result & ~0xFF) | ((v6) & 0xFF);
+                if ( v6 )
+                {
+                    result = this->lastSightRange;
+                    if ( result )
+                    {
+                        v3 = v7;
+                        if ( v7 )
+                        {
+                            return (int)(((MapClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->RevealArea1(this->lastSightCoords, result, v3, v4, v5, 0, 1, 1));
+                        }
+                    }
+                }
             }
         }
         return (int)(result);
@@ -154,11 +155,15 @@ int TechnoClass::RevealAreaConditional()
 
 int TechnoClass::GetAnimationFlags()
 {
+        int v1;
         int v8;
-        int v1 = v8;
-        int v2 = *(unsigned int *)&((char *)stru_A8EB00)[416];
-        int v4 = this->disguiseBlinkTimer[0];
-        int v5 = this->disguiseBlinkTimer[2];
+        v1 = v8;
+        int v2;
+        v2 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+        int v4;
+        v4 = this->disguiseBlinkTimer[0];
+        int v5;
+        v5 = this->disguiseBlinkTimer[2];
         if ( v4 != -1 )
         {
             if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
@@ -198,14 +203,14 @@ int TechnoClass::GetAnimationFlags()
                 {
                     return (int)(v8 | 2);
                 }
-            }
-            if ( v6 < 124 )
-            {
-                return (int)(v8 | 4);
-            }
-            if ( v6 < 128 )
-            {
-                return (int)(v8 | 2);
+                if ( v6 < 124 )
+                {
+                    return (int)(v8 | 4);
+                }
+                if ( v6 < 128 )
+                {
+                    return (int)(v8 | 2);
+                }
             }
         }
         return (int)(v1);
@@ -231,35 +236,35 @@ int TechnoClass::UpdateUnitAnimation()
             if ( (*(unsigned char (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) )
             {
                 v2 = this->reloadTimer[0];
-            }
-            v3 = this->reloadTimer[2];
-            if ( v2 != -1 )
-            {
-                if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v2 >= v3 )
+                v3 = this->reloadTimer[2];
+                if ( v2 != -1 )
                 {
-                    return (int)(((TechnoClass *)(this))->StepAnimFrame());
+                    if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v2 >= v3 )
+                    {
+                        return (int)(((TechnoClass *)(this))->StepAnimFrame());
+                    }
+                    v3 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v2;
+                }
+                if ( v3 > 0 )
+                {
+                    v4 = this->reloadTimer[0];
+                    v5 = this->reloadTimer[2];
+                    if ( v4 != -1 )
+                    {
+                        if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
+                        {
+                            v5 = 0;
+                        }
+                        else
+                        {
+                            v5 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v4;
+                        }
+                    }
+                    this->reloadTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
+                    this->reloadTimer[1] = v7;
+                    this->reloadTimer[2] = v5 + 1;
                 }
             }
-            v3 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v2;
-            if ( v3 > 0 )
-            {
-                v4 = this->reloadTimer[0];
-            }
-            v5 = this->reloadTimer[2];
-            if ( v4 != -1 )
-            {
-                if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v4 >= v5 )
-                {
-                    v5 = 0;
-                }
-            }
-            else
-            {
-                v5 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v4;
-            }
-            this->reloadTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
-            this->reloadTimer[1] = v7;
-            this->reloadTimer[2] = v5 + 1;
         }
         return (int)(((TechnoClass *)(this))->StepAnimFrame());
 }

@@ -5,10 +5,13 @@
 
 char TeamClass::UpdateReadinessState()
 {
-        char TeamClass_field_7A = this->TeamClass_field_7A;
+        char TeamClass_field_7A;
+        TeamClass_field_7A = this->TeamClass_field_7A;
+        int v2;
         TeamTypeClass * buildingType;
-        int v2 = ((TeamClass *)(*(TeamClass **)&this->buildingType[1].TeamTypeClass_field_70))->SumMemberCounts();
-        int totalObjects = this->totalObjects;
+        v2 = ((TeamClass *)(*(TeamClass **)&this->buildingType[1].TeamTypeClass_field_70))->SumMemberCounts();
+        int totalObjects;
+        totalObjects = this->totalObjects;
         char spawnStatus;
         if ( totalObjects > 0 )
         {
@@ -24,10 +27,14 @@ char TeamClass::UpdateReadinessState()
                 {
                     this->TeamClass_field_7A = totalObjects < v2;
                 }
+                else
+                {
+                    this->TeamClass_field_7A = totalObjects <= v2 / 3;
+                }
             }
             else
             {
-                this->TeamClass_field_7A = totalObjects <= v2 / 3;
+                this->TeamClass_field_7A = this->spawnStatus == 0;
             }
             if ( ((buildingType[1].TeamTypeClass_field_30 >> 8) & 0xFF) )
             {
@@ -35,17 +42,14 @@ char TeamClass::UpdateReadinessState()
                 {
                     this->m076 = 0;
                 }
-            }
-            else
-            {
-                this->m076 = 1;
+                else
+                {
+                    this->m076 = 1;
+                }
             }
             this->TeamClass_field_7E = 0;
             this->needsToDisappear = 0;
             goto LABEL_14;
-        }
-        else
-        {
         }
         spawnStatus = this->spawnStatus;
         this->m076 = 0;
@@ -64,12 +68,7 @@ char TeamClass::UpdateReadinessState()
         {
             for ( i = (char *)&FootClass_Array.unk1Particles[-1].OwnerHouse + 3; (int)i >= 0; --i )
             {
-                if ( (unsigned char)((TeamClass *)(*((TeamClass **)&FootClass_Array.ambientParticles->vfptr + (unsigned int)i))->Update_0(),
-                                  23,
-                                  0,
-                                  g_BuildingLoadQueue_Array.ChargerBarrels[1],
-                                  0,
-                                  0)
+                if ( (unsigned char)((TeamClass *)(*((TeamClass **)&FootClass_Array.ambientParticles->vfptr + (unsigned int)i)))->Update_0(23, 0, g_BuildingLoadQueue_Array.ChargerBarrels[1], 0, 0)
             && !FootClass_Array.unk1Particles )
                 {
                     break;
@@ -101,21 +100,21 @@ void TeamClass::PlayMemberAnimation(int p0, char p1)
         && (unsigned short)v3 < DataGlobal_8B4160
         && (v4 = this->firstUnit, v5 = ((v3 >> 16) & 0xFFFF), v6 = (void *)*((unsigned int *)g_AnimTypeCount + (unsigned short)v3), v4) )
         {
-            do v7 = (void **)__2_YAPAXI_Z(0x1C8u);
-            if ( v7 )
+            do
             {
-                v8 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v11);
-            }
-            v9 = ((AnimClass *)(v7))->ctor(v6, v8, 0, v5, (void *)0x600, 0, 0);
-            if ( v9 )
-            {
-                ((BuildingClass *)(v9))->AimTurret((unsigned char *)v4);
-            }
-            v4 = *(unsigned int *)(v4 + 1496);
-            while ( v4 )
-            {
-                this->stepCompleted = 1;
-            }
+                v7 = (void **)__2_YAPAXI_Z(0x1C8u);
+                if ( v7 )
+                {
+                    v8 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v11);
+                    v9 = ((AnimClass *)(v7))->ctor(v6, v8, 0, v5, (void *)0x600, 0, 0);
+                    if ( v9 )
+                    {
+                        ((BuildingClass *)(v9))->AimTurret((unsigned char *)v4);
+                    }
+                }
+                v4 = *(unsigned int *)(v4 + 1496);
+            } while ( v4 );
+            this->stepCompleted = 1;
         }
         else
         {

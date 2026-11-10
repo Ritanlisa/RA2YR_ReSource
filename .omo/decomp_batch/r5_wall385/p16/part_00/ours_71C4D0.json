@@ -1,0 +1,27 @@
+{
+ "symbol": "?IsPlacementValid@TerrainClass@@QAEHHHHHH@Z",
+ "sym_key": "TerrainClass::IsPlacementValid",
+ "size": 244,
+ "link_base": 0,
+ "bytes_hex": "83ec088b01535556576a0051894c241cff90080100008b4c241c8b5c241c8b7c241c8bf08b6924668b166681faff7f750a663956020f849e0000008b4424148bce8b80c800000080b8b002000000668b46027431668b098bd503cd83c60433cbc744241c0500000081e1ff000000c1fa1033d903d033d381e2ff00000033da895c2410eb2c03d58bcd33d783c60481e2ff000000c744241c01000000c1f91033fa03c833cf81e1ff00000033f9897c24108d542410b9f801000052e8000000008b4c241c6a006a00518bc8e80000000084c07411e94effffff5f5e5d33c05b83c408c214005f5e5db8070000005b83c408c21400",
+ "relocs": [
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 204,
+   "type": "REL32",
+   "sym": "?IsPassable@CellClass@@QAEDHHH@Z",
+   "sym_key": "CellClass::IsPassable"
+  }
+ ]
+}

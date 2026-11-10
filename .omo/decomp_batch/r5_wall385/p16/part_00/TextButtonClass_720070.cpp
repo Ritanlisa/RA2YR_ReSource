@@ -22,25 +22,25 @@ char TextButtonClass::selectWeapon()
             if ( this->vtable1[52] )
             {
                 v3 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * ((BuildingAnim *)(this))->GetType()) + 780);
-            }
-            if ( *(unsigned int *)(v3 + 4) == 1 )
-            {
-                v4 = *(unsigned char*)(*(unsigned int *)(v3 + 372) + 12);
-            }
-            else
-            {
-                v4 = *(unsigned short *)(*(unsigned int *)(v3 + 372) + 24);
-            }
-            v5 = this->Width[0];
-            v11 = v5 - 1;
-            v6 = this->Height[0];
-            v12 = v6 - 1;
-            v13 = this->Visible[0] + v5 + 2;
-            v14 = this->ID[0] + v6 + 2;
-            (*(void (__stdcall **)(AudioStream *, int *, int))(*(unsigned int *)((char *)g_DSurface_Hidden_2)[0x0] + 88))(
+                if ( *(unsigned int *)(v3 + 4) == 1 )
+                {
+                    v4 = *(unsigned char*)(*(unsigned int *)(v3 + 372) + 12);
+                }
+                else
+                {
+                    v4 = *(unsigned short *)(*(unsigned int *)(v3 + 372) + 24);
+                }
+                v5 = this->Width[0];
+                v11 = v5 - 1;
+                v6 = this->Height[0];
+                v12 = v6 - 1;
+                v13 = this->Visible[0] + v5 + 2;
+                v14 = this->ID[0] + v6 + 2;
+                (*(void (__stdcall **)(AudioStream *, int *, int))(*(unsigned int *)((char *)g_DSurface_Hidden_2)[0x0] + 88))(
             g_DSurface_Hidden_2,
             &v11,
             v4);
+            }
             if ( this->vtable1[30] )
             {
                 v7 = 3;

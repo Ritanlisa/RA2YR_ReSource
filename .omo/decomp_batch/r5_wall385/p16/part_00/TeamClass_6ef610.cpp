@@ -16,21 +16,21 @@ void TeamClass::PlayMemberAnimation(int p0, char p1)
         && (unsigned short)v3 < DataGlobal_8B4160
         && (v4 = this->firstUnit, v5 = ((v3 >> 16) & 0xFFFF), v6 = (void *)*((unsigned int *)g_AnimTypeCount + (unsigned short)v3), v4) )
         {
-            do v7 = (void **)__2_YAPAXI_Z(0x1C8u);
-            if ( v7 )
+            do
             {
-                v8 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v11);
-            }
-            v9 = ((AnimClass *)(v7))->ctor(v6, v8, 0, v5, (void *)0x600, 0, 0);
-            if ( v9 )
-            {
-                ((BuildingClass *)(v9))->AimTurret((unsigned char *)v4);
-            }
-            v4 = *(unsigned int *)(v4 + 1496);
-            while ( v4 )
-            {
-                this->stepCompleted = 1;
-            }
+                v7 = (void **)__2_YAPAXI_Z(0x1C8u);
+                if ( v7 )
+                {
+                    v8 = (int *)(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v11);
+                    v9 = ((AnimClass *)(v7))->ctor(v6, v8, 0, v5, (void *)0x600, 0, 0);
+                    if ( v9 )
+                    {
+                        ((BuildingClass *)(v9))->AimTurret((unsigned char *)v4);
+                    }
+                }
+                v4 = *(unsigned int *)(v4 + 1496);
+            } while ( v4 );
+            this->stepCompleted = 1;
         }
         else
         {

@@ -5,29 +5,32 @@
 
 unsigned int * FactoryClass::CompleteItem()
 {
-        unsigned int * result = *(unsigned int **)&this->onHold;
-        int v3 = this->q044[0];
+        unsigned int * result;
+        result = *(unsigned int **)&this->onHold;
+        int v3;
+        v3 = this->q044[0];
         if ( result )
         {
             if ( v3 )
             {
                 *(unsigned int *)(v3 + 64) = result;
+                result = *(unsigned int **)&this->onHold;
+                if ( result )
+                {
+                    result[17] = this->q044[0];
+                    this->production[1] = 0;
+                    this->q044[0] = 0;
+                    this->onHold = 0;
+                    this->object = (TechnoClass *)(0);
+                    this->queuedCapacity = 0;
+                    return (unsigned int *)(result);
+                }
             }
-            result = *(unsigned int **)&this->onHold;
-            if ( result )
+            else
             {
-                result[17] = this->q044[0];
+                result[17] = 0;
             }
-            this->production[1] = 0;
-            this->q044[0] = 0;
-            this->onHold = 0;
-            this->object = 0;
-            this->queuedCapacity = 0;
-            return (unsigned int *)(result);
             goto LABEL_14;
-        }
-        else
-        {
         }
         result = (unsigned int *)this->production[1];
         if ( v3 )
@@ -42,7 +45,7 @@ unsigned int * FactoryClass::CompleteItem()
             this->production[1] = 0;
             this->q044[0] = 0;
             this->onHold = 0;
-            this->object = 0;
+            this->object = (TechnoClass *)(0);
             this->queuedCapacity = 0;
             return (unsigned int *)(result);
         }
@@ -52,7 +55,7 @@ unsigned int * FactoryClass::CompleteItem()
         this->production[1] = 0;
             this->q044[0] = 0;
             this->onHold = 0;
-            this->object = 0;
+            this->object = (TechnoClass *)(0);
             this->queuedCapacity = 0;
             return (unsigned int *)(result);
         }
@@ -70,7 +73,7 @@ unsigned int * FactoryClass::CompleteItem()
         this->production[1] = 0;
         this->q044[0] = 0;
         this->onHold = 0;
-        this->object = 0;
+        this->object = (TechnoClass *)(0);
         this->queuedCapacity = 0;
         return (unsigned int *)(result);
 }

@@ -48,24 +48,29 @@ unsigned int * TerrainClass::Export(int * p0)
             if ( v6 <= 0 || v25 <= 0 )
             {
                 v13 = *v9;
+                v12 = v9[1];
+                v6 = v9[2];
+                v15 = v9[3];
+                if ( v11 <= 0 || v23 <= 0 )
+                {
+                    v12 = v24;
+                    v13 = v5;
+                    v15 = v25;
+                }
             }
-            v12 = v9[1];
-            v6 = v9[2];
-            v15 = v9[3];
-            v13 = v5;
-            v15 = v25;
+            v12 = v24;
             v13 = v5;
             v14 = v25;
             if ( v5 > v10 )
             {
                 v13 = v10;
+                v6 += v5 - v10;
             }
-            v6 += v5 - v10;
             if ( v24 > v21 )
             {
                 v14 = v24 - v21 + v25;
+                v12 = v21;
             }
-            v12 = v21;
             if ( v6 + v13 < v10 + v22 )
             {
                 v6 = v22 - v13 + v10 + 1;
@@ -80,12 +85,6 @@ unsigned int * TerrainClass::Export(int * p0)
             p0[2] = v6;
             p0[3] = v15;
             return (unsigned int *)(p0);
-        }
-        else
-        {
-        }
-        else
-        {
         }
         else
         {

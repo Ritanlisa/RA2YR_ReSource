@@ -21,26 +21,27 @@ int TerrainClass::IsPlacementValid(int p0, int p1, int p2, int p3, int p4)
             if ( *(unsigned char *)(this->u32_C8[0] + 688) )
             {
                 v10 = v7[1];
+                v7 += 2;
+                v18 = (v18 & ~0xFF) | ((v8 + *v9) & 0xFF);
+                v18 = (v18 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v10) & 0xFF);
+                v15 = 5;
+                *(unsigned int *)v17 = v18;
             }
-            v7 += 2;
-            v18 = (v18 & ~0xFF) | ((v8 + *v9) & 0xFF);
-            v18 = (v18 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v10) & 0xFF);
-            v15 = 5;
-            *(unsigned int *)v17 = v18;
-            v13 = v7[1];
-            v7 += 2;
-            v16 = (v16 & ~0xFF) | ((v8 + v12) & 0xFF);
-            v16 = (v16 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v13) & 0xFF);
-            v15 = 1;
-            *(unsigned int *)v17 = v16;
+            else
+            {
+                v12 = *v7;
+                v13 = v7[1];
+                v7 += 2;
+                v16 = (v16 & ~0xFF) | ((v8 + v12) & 0xFF);
+                v16 = (v16 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v13) & 0xFF);
+                v15 = 1;
+                *(unsigned int *)v17 = v16;
+            }
             v11 = (int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v17);
             if ( !(unsigned char)((CellClass *)(v11))->IsPassable(v15, 0, 0) )
             {
                 return (int)(7);
             }
-        }
-        else
-        {
         }
         return (int)(0);
 }

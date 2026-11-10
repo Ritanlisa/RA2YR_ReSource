@@ -5,7 +5,8 @@
 
 void * BuildingLoadQueue::GetNext()
 {
-        char BuildingLoadQueue_field_0x04 = this->m004;
+        char BuildingLoadQueue_field_0x04;
+        BuildingLoadQueue_field_0x04 = this->m004;
         void * vtable1;
         int uniqueId;
         void * v5;
@@ -16,40 +17,40 @@ void * BuildingLoadQueue::GetNext()
             if ( g_BuildingLoadQueue_Array.vfptr1 )
             {
                 uniqueId = g_BuildingLoadQueue_Array.uniqueId;
-            }
-            if ( g_BuildingLoadQueue_Array.uniqueId
+                if ( g_BuildingLoadQueue_Array.uniqueId
             && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
-            {
-                goto LABEL_10;
-            }
-            if ( g_BuildingLoadQueue_Array.vfptr1 )
-            {
-                if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
                 {
-                    qsort(
+                    goto LABEL_10;
+                }
+                if ( g_BuildingLoadQueue_Array.vfptr1 )
+                {
+                    if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
+                    {
+                        qsort(
                 g_BuildingLoadQueue_Array.vfptr,
                 (size_t)g_BuildingLoadQueue_Array.vfptr1,
                 8u,
                 (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-                }
-            }
-            vtable1 = g_BuildingLoadQueue_Array.vfptr1;
-            g_BuildingLoadQueue_Array.uniqueId = 0;
-            ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
-            *(unsigned int *)v8 = this->m000;
-            uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vfptr, (int)vtable1, (int *)v8);
-            if ( uniqueId )
-            {
-                g_BuildingLoadQueue_Array.uniqueId = uniqueId;
-            }
-            LABEL_10:
+                        vtable1 = g_BuildingLoadQueue_Array.vfptr1;
+                        g_BuildingLoadQueue_Array.uniqueId = 0;
+                        ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
+                    }
+                    *(unsigned int *)v8 = this->m000;
+                    uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vfptr, (int)vtable1, (int *)v8);
+                    if ( uniqueId )
+                    {
+                        g_BuildingLoadQueue_Array.uniqueId = uniqueId;
+                        LABEL_10:
               v5 = (void ***)(uniqueId + 4);
-            return __RTDynamicCast(
+                        return __RTDynamicCast(
                        *v5,
                        0,
                        &AbstractClass `RTTI Type Descriptor',
                        &AbstractClass `RTTI Type Descriptor',
                        0);
+                    }
+                }
+            }
             v5 = (void ***)&DataGlobal_B78828;
             return (void *)(__RTDynamicCast(*v5, 0, &AbstractClass `RTTI Type Descriptor', &AbstractClass `RTTI Type Descriptor', 0));
         }
@@ -57,7 +58,8 @@ void * BuildingLoadQueue::GetNext()
         {
             return (void *)(0);
         }
-        int v7 = this->m000;
+        int v7;
+        v7 = this->m000;
         v8[0] = v7 % 1000;
         v8[1] = v7 / 1000;
         return (void *)(((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v8));
@@ -73,15 +75,17 @@ void * BuildingLoadQueue::Find()
         {
             return (void *)(0);
         }
-        int vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
+        int vtable1;
+        vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
         if ( !g_BuildingLoadQueue_Array.vfptr1 )
         {
             return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
         }
-        int uniqueId = g_BuildingLoadQueue_Array.uniqueId;
+        int uniqueId;
+        uniqueId = g_BuildingLoadQueue_Array.uniqueId;
         if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
         {
-            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4))->IsTechnoType()));
+            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4)))->IsTechnoType());
         }
         if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
         {
@@ -94,8 +98,10 @@ void * BuildingLoadQueue::Find()
             g_BuildingLoadQueue_Array.uniqueId = 0;
             ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
         }
-        int v4 = this->m000;
-        unsigned int * vtable0 = g_BuildingLoadQueue_Array.vfptr;
+        int v4;
+        v4 = this->m000;
+        unsigned int * vtable0;
+        vtable0 = g_BuildingLoadQueue_Array.vfptr;
         if ( vtable1 <= 0 )
         {
             return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
@@ -123,7 +129,7 @@ void * BuildingLoadQueue::Find()
         if ( uniqueId )
         {
             g_BuildingLoadQueue_Array.uniqueId = (int)&vtable0[2 * (vtable1 / 2)];
-            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4))->IsTechnoType()));
+            return (void *)(((AbstractClass *)(*(AbstractClass **)(uniqueId + 4)))->IsTechnoType());
         }
         return (void *)(((AbstractClass *)(DataGlobal_B78828))->IsTechnoType());
 }
@@ -138,18 +144,20 @@ int BuildingLoadQueue::FindObject()
         {
             return (int)(0);
         }
-        int vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
+        int vtable1;
+        vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
         if ( !g_BuildingLoadQueue_Array.vfptr1 )
         {
             goto LABEL_13;
         }
-        int uniqueId = g_BuildingLoadQueue_Array.uniqueId;
+        int uniqueId;
+        uniqueId = g_BuildingLoadQueue_Array.uniqueId;
         void * v7;
         if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
         {
             LABEL_17:
         v7 = (void ***)(uniqueId + 4);
-            return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0);
+            return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0));
         }
         if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
         {
@@ -162,8 +170,10 @@ int BuildingLoadQueue::FindObject()
             g_BuildingLoadQueue_Array.uniqueId = 0;
             ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
         }
-        int v4 = this->m000;
-        unsigned int * vtable0 = g_BuildingLoadQueue_Array.vfptr;
+        int v4;
+        v4 = this->m000;
+        unsigned int * vtable0;
+        vtable0 = g_BuildingLoadQueue_Array.vfptr;
         if ( vtable1 <= 0 )
         {
             goto LABEL_13;
@@ -195,7 +205,7 @@ int BuildingLoadQueue::FindObject()
         }
         LABEL_13:
       v7 = (void ***)&DataGlobal_B78828;
-        return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0);
+        return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &ObjectClass `RTTI Type Descriptor', 0));
 }
 
 // GENERATED by tools/decomp_sys/decompile.py -- DO NOT EDIT.
@@ -208,18 +218,20 @@ int BuildingLoadQueue::FindBuilding()
         {
             return (int)(0);
         }
-        int vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
+        int vtable1;
+        vtable1 = (int)g_BuildingLoadQueue_Array.vfptr1;
         if ( !g_BuildingLoadQueue_Array.vfptr1 )
         {
             goto LABEL_13;
         }
-        int uniqueId = g_BuildingLoadQueue_Array.uniqueId;
+        int uniqueId;
+        uniqueId = g_BuildingLoadQueue_Array.uniqueId;
         void * v7;
         if ( g_BuildingLoadQueue_Array.uniqueId && *(unsigned int *)g_BuildingLoadQueue_Array.uniqueId == this->m000 )
         {
             LABEL_17:
         v7 = (void ***)(uniqueId + 4);
-            return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0);
+            return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0));
         }
         if ( !((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) )
         {
@@ -232,8 +244,10 @@ int BuildingLoadQueue::FindBuilding()
             g_BuildingLoadQueue_Array.uniqueId = 0;
             ((g_BuildingLoadQueue_Array.vfptr3) & 0xFF) = 1;
         }
-        int v4 = this->m000;
-        unsigned int * vtable0 = g_BuildingLoadQueue_Array.vfptr;
+        int v4;
+        v4 = this->m000;
+        unsigned int * vtable0;
+        vtable0 = g_BuildingLoadQueue_Array.vfptr;
         if ( vtable1 <= 0 )
         {
             goto LABEL_13;
@@ -265,5 +279,5 @@ int BuildingLoadQueue::FindBuilding()
         }
         LABEL_13:
       v7 = (void ***)&DataGlobal_B78828;
-        return (int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0);
+        return (int)((int)__RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &BuildingClass `RTTI Type Descriptor', 0));
 }

@@ -21,25 +21,25 @@ int BuildingClass::FreeUpgradeQueue()
                 {
                     ++j;
                 }
+                *v3 = 0;
+                v5 = *(void ***)(v2 + 244);
+                if ( v5 )
+                {
+                    __3_YAXPAX_Z(v5[2]);
+                    __3_YAXPAX_Z(v5);
+                }
+                *(unsigned int *)(v2 + 244) = 0;
             }
-            *v3 = 0;
-            v5 = *(void ***)(v2 + 244);
-            if ( v5 )
-            {
-                __3_YAXPAX_Z(v5[2]);
-            }
-            __3_YAXPAX_Z(v5);
-            *(unsigned int *)(v2 + 244) = 0;
             if ( *(unsigned int *)(v2 + 252) )
             {
                 __3_YAXPAX_Z(*(void **)(v2 + 252));
+                *(unsigned int *)(v2 + 252) = 0;
             }
-            *(unsigned int *)(v2 + 252) = 0;
             if ( *(unsigned int *)(v2 + 248) )
             {
                 __3_YAXPAX_Z(*(void **)(v2 + 248));
+                *(unsigned int *)(v2 + 248) = 0;
             }
-            *(unsigned int *)(v2 + 248) = 0;
             *(unsigned int *)(v2 + 240) = 0;
             result = g_CrateProcessState;
         }
@@ -68,25 +68,25 @@ int BuildingClass::FreeUpgradeQueue2()
                 {
                     ++j;
                 }
+                *v3 = 0;
+                v5 = *(void ***)(v2 + 272);
+                if ( v5 )
+                {
+                    __3_YAXPAX_Z(v5[2]);
+                    __3_YAXPAX_Z(v5);
+                }
+                *(unsigned int *)(v2 + 272) = 0;
             }
-            *v3 = 0;
-            v5 = *(void ***)(v2 + 272);
-            if ( v5 )
-            {
-                __3_YAXPAX_Z(v5[2]);
-            }
-            __3_YAXPAX_Z(v5);
-            *(unsigned int *)(v2 + 272) = 0;
             if ( *(unsigned int *)(v2 + 280) )
             {
                 __3_YAXPAX_Z(*(void **)(v2 + 280));
+                *(unsigned int *)(v2 + 280) = 0;
             }
-            *(unsigned int *)(v2 + 280) = 0;
             if ( *(unsigned int *)(v2 + 276) )
             {
                 __3_YAXPAX_Z(*(void **)(v2 + 276));
+                *(unsigned int *)(v2 + 276) = 0;
             }
-            *(unsigned int *)(v2 + 276) = 0;
             *(unsigned int *)(v2 + 268) = 0;
             result = g_CrateProcessState;
         }

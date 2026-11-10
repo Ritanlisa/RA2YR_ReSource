@@ -15,7 +15,7 @@ int TechnoClass::TransitionEffectState()
         char v10;
         if ( result == 2 || result == 1 )
         {
-            this->cloakState = 3;
+            this->cloakState = (AbstractClass *)(3);
             vtable0 = (int (__stdcall **)(TechnoClass *))this->vfptr;
             this->cloakProgress[0] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1576) - 1;
             v4 = vtable0[33](this);
@@ -30,11 +30,11 @@ int TechnoClass::TransitionEffectState()
             if ( v10 == 0 )
             {
                 location = this->location;
+                v7 = *location;
+                v8 = location[1];
+                v9 = location[2];
+                return (int)((int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1696), &v7, 0));
             }
-            v7 = *location;
-            v8 = location[1];
-            v9 = location[2];
-            return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1696), &v7, 0);
         }
         return (int)(result);
 }

@@ -1,0 +1,11 @@
+{
+ "addr": "0x720A80",
+ "name": "Movie::SelectNextBuildableType",
+ "size": 160,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720A80",
+ "bytes_hex": "558b6c24085683fdff578bf17e178b46188b0ca88a818902000084c075078a461084c0740485ed7d6f807e120175425333ff8b4624b9886b880048506a00e81dbdf3ff478bd881ffe80300007d163bdd74e0538bcee86606000084c074d481ffe8030000750233db8bc35b5f5e5dc204008b7e24478b4624453be87c0233ed4f740e558bcee83606000084c0750aebe55f5e33c05dc204005f8bc55e5dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

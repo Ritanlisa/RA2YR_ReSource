@@ -22,26 +22,27 @@ int TerrainClass::IsPlacementValid(int p0, int p1, int p2, int p3, int p4)
             if ( *(unsigned char *)(this->u32_C8[0] + 688) )
             {
                 v10 = v7[1];
+                v7 += 2;
+                v18 = (v18 & ~0xFF) | ((v8 + *v9) & 0xFF);
+                v18 = (v18 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v10) & 0xFF);
+                v15 = 5;
+                *(unsigned int *)v17 = v18;
             }
-            v7 += 2;
-            v18 = (v18 & ~0xFF) | ((v8 + *v9) & 0xFF);
-            v18 = (v18 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v10) & 0xFF);
-            v15 = 5;
-            *(unsigned int *)v17 = v18;
-            v13 = v7[1];
-            v7 += 2;
-            v16 = (v16 & ~0xFF) | ((v8 + v12) & 0xFF);
-            v16 = (v16 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v13) & 0xFF);
-            v15 = 1;
-            *(unsigned int *)v17 = v16;
+            else
+            {
+                v12 = *v7;
+                v13 = v7[1];
+                v7 += 2;
+                v16 = (v16 & ~0xFF) | ((v8 + v12) & 0xFF);
+                v16 = (v16 & ~0xFF) | ((((v8 >> 16) & 0xFFFF) + v13) & 0xFF);
+                v15 = 1;
+                *(unsigned int *)v17 = v16;
+            }
             v11 = (int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v17);
             if ( !(unsigned char)((CellClass *)(v11))->IsPassable(v15, 0, 0) )
             {
                 return (int)(7);
             }
-        }
-        else
-        {
         }
         return (int)(0);
 }
@@ -96,24 +97,29 @@ unsigned int * TerrainClass::Export(int * p0)
             if ( v6 <= 0 || v25 <= 0 )
             {
                 v13 = *v9;
+                v12 = v9[1];
+                v6 = v9[2];
+                v15 = v9[3];
+                if ( v11 <= 0 || v23 <= 0 )
+                {
+                    v12 = v24;
+                    v13 = v5;
+                    v15 = v25;
+                }
             }
-            v12 = v9[1];
-            v6 = v9[2];
-            v15 = v9[3];
-            v13 = v5;
-            v15 = v25;
+            v12 = v24;
             v13 = v5;
             v14 = v25;
             if ( v5 > v10 )
             {
                 v13 = v10;
+                v6 += v5 - v10;
             }
-            v6 += v5 - v10;
             if ( v24 > v21 )
             {
                 v14 = v24 - v21 + v25;
+                v12 = v21;
             }
-            v12 = v21;
             if ( v6 + v13 < v10 + v22 )
             {
                 v6 = v22 - v13 + v10 + 1;
@@ -128,12 +134,6 @@ unsigned int * TerrainClass::Export(int * p0)
             p0[2] = v6;
             p0[3] = v15;
             return (unsigned int *)(p0);
-        }
-        else
-        {
-        }
-        else
-        {
         }
         else
         {

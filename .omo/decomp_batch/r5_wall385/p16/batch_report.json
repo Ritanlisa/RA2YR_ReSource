@@ -2,12 +2,12 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 18,
-   "MISMATCH": 2
+   "COMPILE_FAIL": 16,
+   "MISMATCH": 4
   },
   "pathologies": {
-   "regalloc": 1,
-   "codegen_shape": 1
+   "regalloc": 2,
+   "codegen_shape": 2
   },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
@@ -19,7 +19,7 @@
    "addr": "0x6e6e20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(15) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingLoadQueue::GetNext",
@@ -34,7 +34,7 @@
    "addr": "0x6e6f20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(15) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingLoadQueue::Find",
@@ -49,7 +49,7 @@
    "addr": "0x6e6ff0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(15) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingLoadQueue::FindObject",
@@ -64,7 +64,7 @@
    "addr": "0x6e7a80",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(15) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingLoadQueue.cpp(16) : error C2228: left of '.vfptr1' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingLoadQueue::FindBuilding",
@@ -79,7 +79,7 @@
    "addr": "0x6ea3e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TeamClass.cpp(10) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TeamClass.cpp(12) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
    "first_diff": null,
    "pathology": null,
    "name": "TeamClass::UpdateReadinessState",
@@ -94,7 +94,7 @@
    "addr": "0x6ef610",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TeamClass.cpp(10) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TeamClass.cpp(12) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
    "first_diff": null,
    "pathology": null,
    "name": "TeamClass::PlayMemberAnimation",
@@ -117,7 +117,7 @@
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/5",
+   "sites": "4/6",
    "rule_violations": 1
   },
   {
@@ -174,7 +174,7 @@
    "addr": "0x71abc0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\FactoryClass.cpp(14) : error C2440: '=' : cannot convert from 'unsigned int *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\FactoryClass.cpp(16) : error C2440: '=' : cannot convert from 'unsigned int *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
    "first_diff": null,
    "pathology": null,
    "name": "FactoryClass::CompleteItem",
@@ -182,29 +182,34 @@
    "unit": "FactoryClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "17/18",
+   "sites": "18/19",
    "rule_violations": 7
   },
   {
    "addr": "0x71c4d0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TerrainClass.cpp(43) : error C2181: illegal else without matching if; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TerrainClass",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 217B ours 244B",
+   "first_diff": {
+    "orig": "+3 push ebx",
+    "ours": "+3 mov eax, dword ptr [ecx]"
+   },
+   "pathology": "codegen_shape",
    "name": "TerrainClass::IsPlacementValid",
    "emitted": "TerrainClass::IsPlacementValid",
    "unit": "TerrainClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "5/11",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 217,
+   "ours_size": 244
   },
   {
    "addr": "0x71d160",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TerrainClass.cpp(43) : error C2181: illegal else without matching if; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TerrainClass",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TerrainClass_71d160.cpp(7) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "TerrainClass::Export",
@@ -248,23 +253,28 @@
   {
    "addr": "0x720a80",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\Movie.cpp(30) : error C2043: illegal break; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\Movie.cpp(36) : error C2043: illegal b",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 160B ours 185B",
+   "first_diff": {
+    "orig": "+0 push ebp",
+    "ours": "+0 push ebx"
+   },
+   "pathology": "regalloc",
    "name": "Movie::SelectNextBuildableType",
    "emitted": "Movie::SelectNextBuildableType",
    "unit": "Movie",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "10/10",
-   "rule_violations": 1
+   "rule_violations": 1,
+   "orig_size": 160,
+   "ours_size": 185
   },
   {
    "addr": "0x722390",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(29) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(29",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(28) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(28",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingClass::FreeUpgradeQueue",
@@ -279,7 +289,7 @@
    "addr": "0x722e50",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(29) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(29",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(28) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\BuildingClass.cpp(28",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingClass::FreeUpgradeQueue2",
@@ -294,7 +304,7 @@
    "addr": "0x7248c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TooltipClass.cpp(22) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p16\\part_00\\TooltipClass.cpp(24) : error C2065: '_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
    "first_diff": null,
    "pathology": null,
    "name": "TooltipClass::GetText",
@@ -309,7 +319,7 @@
    "addr": "0x736ca0",
    "batch": "adhoc",
    "verdict": "MISMATCH",
-   "note": "orig 169B ours 181B",
+   "note": "orig 169B ours 160B",
    "first_diff": {
     "orig": "+0 sub esp, 0xc",
     "ours": "+0 push ecx"
@@ -323,7 +333,7 @@
    "sites": "3/4",
    "rule_violations": 8,
    "orig_size": 169,
-   "ours_size": 181
+   "ours_size": 160
   }
  ]
 }

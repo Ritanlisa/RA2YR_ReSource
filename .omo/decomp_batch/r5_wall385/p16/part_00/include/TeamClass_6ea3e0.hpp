@@ -9,6 +9,8 @@ class TeamTypeClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class TeamClass
 {
@@ -41,8 +43,8 @@ public:
 
     // ---- pilot methods (registry signatures)
     char UpdateReadinessState();  // 0x6EA3E0
+    char Update_0(int p0, int p1, int p2, char p3, int p4);  // 0x6E53A0
     int SumMemberCounts();  // 0x6E8160
-    char Update_0();  // 0x6E53A0
 };
 
 // ---- globals used by this unit (registry names)

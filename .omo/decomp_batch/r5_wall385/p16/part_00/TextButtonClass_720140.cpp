@@ -29,21 +29,21 @@ int * TextButtonClass::fireWeapon(int p0)
                 {
                     result = 0;
                 }
-            }
-            result = *(int **)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * (unsigned int)result);
-            if ( result )
-            {
-                v9[0] = (this->Visible[0] >> 1) + this->Width[0] - 1;
-            }
-            v9[1] = this->Height[0] + 1;
-            v5 = v4 | *((unsigned int *)this + 15);
-            ((v5 >> 8) & 0xFF) |= 1u;
-            v8 = v5;
-            v7 = result;
-            v6 = (unsigned int *)(*(int (__stdcall **)(AudioStream *, unsigned char *))(*(unsigned int *)((char *)g_DSurface_Hidden_2)[0x0] + 120))(
+                result = *(int **)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * (unsigned int)result);
+                if ( result )
+                {
+                    v9[0] = (this->Visible[0] >> 1) + this->Width[0] - 1;
+                    v9[1] = this->Height[0] + 1;
+                    v5 = v4 | *((unsigned int *)this + 15);
+                    ((v5 >> 8) & 0xFF) |= 1u;
+                    v8 = v5;
+                    v7 = result;
+                    v6 = (unsigned int *)(*(int (__stdcall **)(AudioStream *, unsigned char *))(*(unsigned int *)((char *)g_DSurface_Hidden_2)[0x0] + 120))(
                              g_DSurface_Hidden_2,
                              v11);
-            return (int *)(globalHelper_0A6010(&v10, p0, (int)g_DSurface_Hidden_2, v6, (int)v9, (int)v7, 0, v8, 1));
+                    return (int *)(globalHelper_0A6010(&v10, p0, (int)g_DSurface_Hidden_2, v6, (int)v9, (int)v7, 0, v8, 1));
+                }
+            }
         }
         return (int *)(result);
 }

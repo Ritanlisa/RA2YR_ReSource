@@ -4,10 +4,13 @@
 
 char TeamClass::UpdateReadinessState()
 {
-        char TeamClass_field_7A = this->TeamClass_field_7A;
+        char TeamClass_field_7A;
+        TeamClass_field_7A = this->TeamClass_field_7A;
+        int v2;
         TeamTypeClass * buildingType;
-        int v2 = ((TeamClass *)(*(TeamClass **)&this->buildingType[1].TeamTypeClass_field_70))->SumMemberCounts();
-        int totalObjects = this->totalObjects;
+        v2 = ((TeamClass *)(*(TeamClass **)&this->buildingType[1].TeamTypeClass_field_70))->SumMemberCounts();
+        int totalObjects;
+        totalObjects = this->totalObjects;
         char spawnStatus;
         if ( totalObjects > 0 )
         {
@@ -23,10 +26,14 @@ char TeamClass::UpdateReadinessState()
                 {
                     this->TeamClass_field_7A = totalObjects < v2;
                 }
+                else
+                {
+                    this->TeamClass_field_7A = totalObjects <= v2 / 3;
+                }
             }
             else
             {
-                this->TeamClass_field_7A = totalObjects <= v2 / 3;
+                this->TeamClass_field_7A = this->spawnStatus == 0;
             }
             if ( ((buildingType[1].TeamTypeClass_field_30 >> 8) & 0xFF) )
             {
@@ -34,17 +41,14 @@ char TeamClass::UpdateReadinessState()
                 {
                     this->m076 = 0;
                 }
-            }
-            else
-            {
-                this->m076 = 1;
+                else
+                {
+                    this->m076 = 1;
+                }
             }
             this->TeamClass_field_7E = 0;
             this->needsToDisappear = 0;
             goto LABEL_14;
-        }
-        else
-        {
         }
         spawnStatus = this->spawnStatus;
         this->m076 = 0;
@@ -63,12 +67,7 @@ char TeamClass::UpdateReadinessState()
         {
             for ( i = (char *)&FootClass_Array.unk1Particles[-1].OwnerHouse + 3; (int)i >= 0; --i )
             {
-                if ( (unsigned char)((TeamClass *)(*((TeamClass **)&FootClass_Array.ambientParticles->vfptr + (unsigned int)i))->Update_0(),
-                                  23,
-                                  0,
-                                  g_BuildingLoadQueue_Array.ChargerBarrels[1],
-                                  0,
-                                  0)
+                if ( (unsigned char)((TeamClass *)(*((TeamClass **)&FootClass_Array.ambientParticles->vfptr + (unsigned int)i)))->Update_0(23, 0, g_BuildingLoadQueue_Array.ChargerBarrels[1], 0, 0)
             && !FootClass_Array.unk1Particles )
                 {
                     break;
