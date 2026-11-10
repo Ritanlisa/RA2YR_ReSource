@@ -1343,12 +1343,61 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x535de0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_7",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x535ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_12",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x535f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_17",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5365a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_26",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5366a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_31",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x536730": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_36",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x536770": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_39",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x536810": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_45",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x536890": {
   "attempts": 1,
@@ -1357,10 +1406,45 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5368d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_53",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x536970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_59",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x536a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_65",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x536b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x536b80": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_74",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x536b90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_75",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1371,12 +1455,68 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x537a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Commands::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537a60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Commands::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537a70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Commands::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Commands::StubReturn8550640",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537b50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScreenCaptureCommandClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537de0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PageUserCommandClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DeleteCommandClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x537f90": {
   "attempts": 1,
   "first_diff": null,
   "name": "DeleteCommandClass::Undo",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x53a100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LightningStorm::IsActive",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x53f4e0": {
   "attempts": 4,
