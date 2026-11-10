@@ -1,0 +1,21 @@
+{
+ "symbol": "?Cleanup@WinsockInterfaceClass@@QAEXXZ",
+ "sym_key": "WinsockInterfaceClass::Cleanup",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "5153568bf133db57395e3074538b7c240c8b46248b00385816740b50e80000000083c404eb038858158b9660f003008b46304a3bc3899660f003007e038d78ff33c03bfb897e3076128b4e24408b1481895481fc8b4e303bc172ee395e3075b18b4648899e60f003003bc3899e54f0030074538b7c240c8b463c8b00385816740b50e80000000083c404eb038858158b9664f003008b46484a3bc3899664f003007e038d78ff33c03bfb897e4876128b4e3c408b1481895481fc8b4e483bc172ee395e4875b1899e64f00300899e58f003005f5e5b59c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 131,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
