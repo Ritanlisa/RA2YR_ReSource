@@ -252,9 +252,9 @@ impl Solver {
         }
     }
 
-    fn size_ok_read(&self, need: i64) -> Domain {
+    pub fn size_ok_read(&self, need: i64) -> Domain {
         // read-only variant used from the parallel section; the table is
-        // pre-warmed for every observed need by solve_pipeline.
+        // pre-warmed for every observed need by solve_pipeline / resolve_round.
         if let Some(&i) = self.size_ok_cache.get(&need) {
             return self.mask_pool[i as usize].clone();
         }

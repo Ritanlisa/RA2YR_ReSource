@@ -4394,46 +4394,88 @@ def main():
                 return False
         return True
 
-    for _eid18 in list(ents.keys()):
-        _obs18 = ents[_eid18].get("obs") or set()
-        if len(_obs18) < 2:
-            continue
-        _c18_tried += 1
-        _need18 = max(_o + _w for (_o, _w) in _obs18)
-        _hit18 = [_ci for _ci, _s in _cls_big18.items()
-                  if _cov18(_s, _obs18)
-                  and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18)]
-        if not _hit18:
-            continue
-        _mask18 = 0
-        for _ci in _hit18:
-            _mask18 |= (1 << _ci)
-        fam["C18"][_eid18] = fam["C18"].get(_eid18, FULL) & _mask18
-        if len(_hit18) != 1:
-            # 只在**布局命中数严格领先**时才仲裁；并列时（如 0x405C00：42 个类全 4/4 命中）
-            # 不猜——那属于没有判别力的簇，保持多解。
-            _rank18 = []
+    # --use-rs wave2：C18 三阶段（main/b/c）扫描下沉 Rust；_sig18/_cls_sig18/
+    # _cls_big18 的构建与逐轮重建保持 Python 共享（两路径同一代码）。
+    _rs18 = _rs_mod_cell[0]
+    _ents18_list = list(ents.keys()) if _rs18 is not None else None
+    if _rs18 is not None:
+        _obs18_list = [[(o, (w if isinstance(w, int) else 0))
+                        for (o, w) in ((ents.get(_e18x) or {}).get("obs") or ())]
+                       for _e18x in _ents18_list]
+        _eff18 = [-1 if _s is None else int(_s) for _s in U["eff_size"]]
+        _mem18t = [[(o, w) for o, w in (U["members"][_ci] or {}).items()
+                    if isinstance(w, int)] for _ci in range(n)]
+        _allow18 = bool(getattr(args, "allow_heuristics", False))
+
+        def _exact18_flat():
+            _fl18 = []
+            for _i18x, _e18x in enumerate(_ents18_list):
+                for _ci18x, _s18x in (exact.get(_e18x) or ()):
+                    _fl18.append((_i18x, _ci18x))
+            return _fl18
+
+        def _apply18(_r18, _tag18):
+            _nb18 = (n + 7) // 8
+            for _i18x, _mb18 in _r18["masks"]:
+                _e18x = _ents18_list[_i18x]
+                fam["C18"][_e18x] = (fam["C18"].get(_e18x, FULL)
+                                     & int.from_bytes(_mb18, "little"))
+            for _i18x, _c18x in _r18["pins"]:
+                exact[_ents18_list[_i18x]].append((_c18x, _tag18))
+                exact_count["C18"] = exact_count.get("C18", 0) + 1
+                census["C18"] = census.get("C18", 0) + 1
+            return len(_r18["pins"])
+
+    if _rs18 is not None:
+        _cls18_ci = list(_cls_big18.keys())
+        _r18m = _rs18.c18_phase(
+            0, n, _cls18_ci, [list(_cls_big18[_c]) for _c in _cls18_ci],
+            _obs18_list, _exact18_flat(), _eff18, _mem18t, _allow18)
+        _c18_tried = _r18m["tried"]
+        _c18_amb = _r18m["amb"]
+        _c18_exact = _apply18(_r18m, "C18:binary-signature")
+    else:
+        _c18_exact = _c18_tried = _c18_amb = 0
+        for _eid18 in list(ents.keys()):
+            _obs18 = ents[_eid18].get("obs") or set()
+            if len(_obs18) < 2:
+                continue
+            _c18_tried += 1
+            _need18 = max(_o + _w for (_o, _w) in _obs18)
+            _hit18 = [_ci for _ci, _s in _cls_big18.items()
+                      if _cov18(_s, _obs18)
+                      and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18)]
+            if not _hit18:
+                continue
+            _mask18 = 0
             for _ci in _hit18:
-                _mem18 = U["members"][_ci] or {}
-                _h18 = sum(1 for (_o, _w) in _obs18
-                           if isinstance(_mem18.get(_o), int) and _mem18[_o] >= _w)
-                _sz18 = U["eff_size"][_ci]
-                _gap18 = abs(int(_sz18) - _need18) if _sz18 else float("inf")
-                _rank18.append((- _h18, _gap18, _ci))
-            _rank18.sort()
-            if _rank18[0][0] <= -2 and _rank18[0][0] < _rank18[1][0]:
-                _hit18 = [_rank18[0][2]]
-        if len(_hit18) != 1:
-            _c18_amb += 1
-            continue
-        if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
-            continue
-        if not getattr(args, "allow_heuristics", False):
-            continue        # --sound-only：签名匹配不产生 exact（仅作排序提示）
-        exact[_eid18].append((_hit18[0], "C18:binary-signature"))
-        exact_count["C18"] = exact_count.get("C18", 0) + 1
-        census["C18"] = census.get("C18", 0) + 1
-        _c18_exact += 1
+                _mask18 |= (1 << _ci)
+            fam["C18"][_eid18] = fam["C18"].get(_eid18, FULL) & _mask18
+            if len(_hit18) != 1:
+                # 只在**布局命中数严格领先**时才仲裁；并列时（如 0x405C00：42 个类全 4/4 命中）
+                # 不猜——那属于没有判别力的簇，保持多解。
+                _rank18 = []
+                for _ci in _hit18:
+                    _mem18 = U["members"][_ci] or {}
+                    _h18 = sum(1 for (_o, _w) in _obs18
+                               if isinstance(_mem18.get(_o), int) and _mem18[_o] >= _w)
+                    _sz18 = U["eff_size"][_ci]
+                    _gap18 = abs(int(_sz18) - _need18) if _sz18 else float("inf")
+                    _rank18.append((- _h18, _gap18, _ci))
+                _rank18.sort()
+                if _rank18[0][0] <= -2 and _rank18[0][0] < _rank18[1][0]:
+                    _hit18 = [_rank18[0][2]]
+            if len(_hit18) != 1:
+                _c18_amb += 1
+                continue
+            if exact.get(_eid18) and any(_ci != _hit18[0] for _ci, _src in exact[_eid18]):
+                continue
+            if not getattr(args, "allow_heuristics", False):
+                continue        # --sound-only：签名匹配不产生 exact（仅作排序提示）
+            exact[_eid18].append((_hit18[0], "C18:binary-signature"))
+            exact_count["C18"] = exact_count.get("C18", 0) + 1
+            census["C18"] = census.get("C18", 0) + 1
+            _c18_exact += 1
     print("[C18] binary-signature exact=%d (tried=%d ambiguous=%d)"
           % (_c18_exact, _c18_tried, _c18_amb), flush=True)
 
@@ -4441,29 +4483,36 @@ def main():
     # 防误判门：观测 >= 3 条且最大偏移 >= 0x40 —— 只看 +0..+16 的簇任何小类都能覆盖，
     # 那是假精度，不许钉。
     _c18b_exact = _c18b_amb = 0
-    for _eid18b in list(ents.keys()):
-        if exact.get(_eid18b):
-            continue
-        _obs18b = ents[_eid18b].get("obs") or set()
-        # 抽样对照 YRpp 实证：门槛 3 条观测时 C18b 的 66/98 条判定与 YRpp 矛盾 —— 太松。
-        if len(_obs18b) < 6:
-            continue
-        if max(_o for (_o, _w) in _obs18b) < 0x40:
-            continue
-        _need18b = max(_o + _w for (_o, _w) in _obs18b)
-        _hit18b = [(_ci, len(_s)) for _ci, _s in _cls_big18.items()
-                   if _cov18(_s, _obs18b)
-                   and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18b)]
-        if len(_hit18b) < 2:
-            continue
-        _hit18b.sort(key=lambda x: x[1])
-        if _hit18b[0][1] < _hit18b[1][1] and not not getattr(args, "allow_heuristics", False):
-            exact[_eid18b].append((_hit18b[0][0], "C18b:minimal-signature"))
-            exact_count["C18"] = exact_count.get("C18", 0) + 1
-            census["C18"] = census.get("C18", 0) + 1
-            _c18b_exact += 1
-        else:
-            _c18b_amb += 1
+    if _rs18 is not None:
+        _r18b = _rs18.c18_phase(
+            1, n, _cls18_ci, [list(_cls_big18[_c]) for _c in _cls18_ci],
+            _obs18_list, _exact18_flat(), _eff18, _mem18t, _allow18)
+        _c18b_exact = _apply18(_r18b, "C18b:minimal-signature")
+        _c18b_amb = _r18b["amb"]
+    else:
+        for _eid18b in list(ents.keys()):
+            if exact.get(_eid18b):
+                continue
+            _obs18b = ents[_eid18b].get("obs") or set()
+            # 抽样对照 YRpp 实证：门槛 3 条观测时 C18b 的 66/98 条判定与 YRpp 矛盾 —— 太松。
+            if len(_obs18b) < 6:
+                continue
+            if max(_o for (_o, _w) in _obs18b) < 0x40:
+                continue
+            _need18b = max(_o + _w for (_o, _w) in _obs18b)
+            _hit18b = [(_ci, len(_s)) for _ci, _s in _cls_big18.items()
+                       if _cov18(_s, _obs18b)
+                       and (not U["eff_size"][_ci] or int(U["eff_size"][_ci]) <= 6 * _need18b)]
+            if len(_hit18b) < 2:
+                continue
+            _hit18b.sort(key=lambda x: x[1])
+            if _hit18b[0][1] < _hit18b[1][1] and not not getattr(args, "allow_heuristics", False):
+                exact[_eid18b].append((_hit18b[0][0], "C18b:minimal-signature"))
+                exact_count["C18"] = exact_count.get("C18", 0) + 1
+                census["C18"] = census.get("C18", 0) + 1
+                _c18b_exact += 1
+            else:
+                _c18b_amb += 1
     print("[C18b] minimal-signature exact=%d (tied=%d)" % (_c18b_exact, _c18b_amb), flush=True)
 
     # C18c：级联——用刚定类的函数扩充签名表，再跑一轮唯一覆盖。
@@ -4483,18 +4532,25 @@ def main():
             _cls_sig18[next(iter(_cset18c))] |= _sig18.get(_f18c, set())
         _cls_big18 = {_ci: _s for _ci, _s in _cls_sig18.items() if len(_s) >= 5}
         _c18c_n = 0
-        for _eid18c in list(ents.keys()):
-            if exact.get(_eid18c):
-                continue
-            _obs18c = ents[_eid18c].get("obs") or set()
-            if len(_obs18c) < 3 or max(_o for (_o, _w) in _obs18c) < 0x40:
-                continue
-            _hit18c = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18c)]
-            if len(_hit18c) == 1 and not not getattr(args, "allow_heuristics", False):
-                exact[_eid18c].append((_hit18c[0], "C18c:cascade"))
-                exact_count["C18"] = exact_count.get("C18", 0) + 1
-                census["C18"] = census.get("C18", 0) + 1
-                _c18c_n += 1
+        if _rs18 is not None:
+            _cls18_ci = list(_cls_big18.keys())
+            _r18c = _rs18.c18_phase(
+                2, n, _cls18_ci, [list(_cls_big18[_c]) for _c in _cls18_ci],
+                _obs18_list, _exact18_flat(), _eff18, _mem18t, _allow18)
+            _c18c_n = _apply18(_r18c, "C18c:cascade")
+        else:
+            for _eid18c in list(ents.keys()):
+                if exact.get(_eid18c):
+                    continue
+                _obs18c = ents[_eid18c].get("obs") or set()
+                if len(_obs18c) < 3 or max(_o for (_o, _w) in _obs18c) < 0x40:
+                    continue
+                _hit18c = [_ci for _ci, _s in _cls_big18.items() if _cov18(_s, _obs18c)]
+                if len(_hit18c) == 1 and not not getattr(args, "allow_heuristics", False):
+                    exact[_eid18c].append((_hit18c[0], "C18c:cascade"))
+                    exact_count["C18"] = exact_count.get("C18", 0) + 1
+                    census["C18"] = census.get("C18", 0) + 1
+                    _c18c_n += 1
         _c18c_rounds.append(_c18c_n)
         if not _c18c_n:
             break
@@ -4670,6 +4726,7 @@ def main():
     if _ssa_work:
         # 附加：该槽在 raw 里的全部使用边 site（分裂时归生命周期用）
         _ssa_out = {}
+        _slots_ssa = []
         for _sk, _ctors in _ssa_work.items():
             _p = _sk.split(":")
             if len(_p) < 3: continue
@@ -4680,15 +4737,36 @@ def main():
             try: _off_v = int(_off_s, 16) if _off_s.lower().startswith("0x") else int(_off_s)
             except ValueError: continue
             _frm = "stack_+0x%X" % _off_v
-            _uses = []
+            _slots_ssa.append((_sk, _ctors, _frm, _fn_v))
+        if _slots_ssa and _rs_mod_cell[0] is not None:
+            # --use-rs wave2：147 槽 × 1.38M raw 全扫下沉 Rust（单遍桶化 + fn_at
+            # 二分），每槽 uses 保持 raw 序（与逐槽全扫逐项相等）。
+            _ca_from, _ca_addr, _ca_to = [], [], []
             for _e19b in raw:
-                if _e19b.get("type") != "CALL_ARG": continue
-                if str(_e19b.get("from") or "") != _frm: continue
-                try: _a19b = int(str(_e19b.get("addr")), 16)
-                except (TypeError, ValueError): continue
-                if fn_at(_a19b) != _fn_v: continue
-                _uses.append([_a19b, str(_e19b.get("to"))])
-            _ssa_out[_sk] = {"ctors": _ctors, "uses": _uses}
+                if _e19b.get("type") != "CALL_ARG":
+                    continue
+                _ca_from.append(str(_e19b.get("from") or ""))
+                try:
+                    _ca_addr.append(int(str(_e19b.get("addr")), 16))
+                except (TypeError, ValueError):
+                    _ca_addr.append(-1)
+                _ca_to.append(str(_e19b.get("to")))
+            _uses_all = _rs_mod_cell[0].ssa_workload(
+                [(_frm, _fn_v) for (_sk, _ct, _frm, _fn_v) in _slots_ssa],
+                _ca_from, _ca_addr, _ca_to, list(faddrs))
+            for (_sk, _ct, _frm, _fn_v), _us in zip(_slots_ssa, _uses_all):
+                _ssa_out[_sk] = {"ctors": _ct, "uses": [[_a, _t] for (_a, _t) in _us]}
+        else:
+            for _sk, _ctors, _frm, _fn_v in _slots_ssa:
+                _uses = []
+                for _e19b in raw:
+                    if _e19b.get("type") != "CALL_ARG": continue
+                    if str(_e19b.get("from") or "") != _frm: continue
+                    try: _a19b = int(str(_e19b.get("addr")), 16)
+                    except (TypeError, ValueError): continue
+                    if fn_at(_a19b) != _fn_v: continue
+                    _uses.append([_a19b, str(_e19b.get("to"))])
+                _ssa_out[_sk] = {"ctors": _ctors, "uses": _uses}
         json.dump(_ssa_out, open(os.path.join(ROOT, ".omo/ssa2/workload.json"), "w"), indent=1)
         print("[SSA] reused-slot workload dumped: %d slots" % len(_ssa_out), flush=True)
     print("[C19] ctor-argument exact=%d desc-demoted=%d reused_slots_skipped=%d (skip_self=%d not_entity=%d ctor_pool=%d)"
@@ -5521,11 +5599,17 @@ def main():
     # EXACT 分支/空域回退) + greedy(counts 首现序平局) + improve(2换1) +
     # lower_bound + solve 统计。flags 内容仅对 conflicted 簇在 Python 侧重建
     #（成功路径 conflicted 恒空——非空即 FATAL 退出，不落盘）。
-    def _rs_solve(enabled):
+    # wave2 拆分：_rs_call（Rust 调用，need_dom_bits 控制候选位 blob）+
+    # _rs_unpack（light=仅 conflicted/统计；full=完整 res；keep_blob=附带
+    # (roots,counts,blob) 供 Rust 写盘器直用——names 不再逐簇物化为 Python 列表）。
+    def _rs_call(enabled, need_dom_bits=False):
         _nb = (n + 7) // 8
-        _out = _rs_cell[0].solve(
+        return _rs_cell[0].solve(
             list(enabled), _proven_cell[0].to_bytes(_nb, "little"),
-            list(_unknown_roots), args.max_pair_improve, bool(_RS_VERIFY))
+            list(_unknown_roots), args.max_pair_improve, bool(_RS_VERIFY),
+            bool(need_dom_bits))
+
+    def _rs_unpack(_out, enabled, light=False, keep_blob=False):
         _masks_b = _out["masks"]
         _exci_a = _out["exci"]
         _flags_a = _out["flagbits"]
@@ -5567,11 +5651,31 @@ def main():
                 flags["exact_conflict"] = sorted(names[ci] for ci in exs)
             return exci, exsrc, flags
 
+        if light:
+            # 探针解：只重建 conflicted（消解轮判空用）+ 计数
+            _conflicted = []
+            for _ci_cl in _out["conflicted"]:
+                _exci_r, _exsrc_r, _flags_r = _flags_rebuild(_ci_cl)
+                _conflicted.append((clusters[_ci_cl],
+                                    int.from_bytes(_masks_b[_ci_cl], "little"),
+                                    _exci_r, _exsrc_r, _flags_r))
+            _res = {
+                "conflicted": _conflicted, "n_conflicts": _out["n_conflicts"],
+                "k": _out["k"], "free": _out["free"],
+                "__light__": True,
+                "__conflicted_idx__": list(_out["conflicted"]),
+                "__conflicted_flagbits__": list(_flags_a[_ci] for _ci in _out["conflicted"]),
+            }
+            return _res
+
         _constrained = []
         _dom_sizes = {}
         _dom_names = {}
         _dom_ents = {}
         _cluster_obs = {}
+        _counts_b = _out["dom_bits_counts"]
+        _blob_b = _out["dom_bits_blob"]
+        _blob_off = 0
         for _slot, _ci_cl in enumerate(_out["constrained"]):
             _cl = clusters[_ci_cl]
             _m = int.from_bytes(_masks_b[_ci_cl], "little")
@@ -5579,11 +5683,15 @@ def main():
             _rk = _cl["root"]
             _pop = _popc_a[_ci_cl]
             _dom_sizes[_rk] = _pop
-            if 0 < _pop <= 1600:
-                _dom_names[_rk] = [names[_b] for _b in _out["dom_bits"][_slot]]
+            _nb2 = 2 * _counts_b[_slot]          # blob 每槽都有（cap 1600）
+            if 0 < _pop <= 1600 and not keep_blob:   # keep_blob: 写盘走 stash，names 免物化
+                _dom_names[_rk] = [
+                    names[int.from_bytes(_blob_b[_k:_k + 2], "little")]
+                    for _k in range(_blob_off, _blob_off + _nb2, 2)]
             if 0 < _pop <= 64:
                 _dom_ents[_rk] = list(_cl["ents"])[:6]
             _cluster_obs[_rk] = sorted(_cl["obs"])
+            _blob_off += _nb2
         _conflicted = []
         for _ci_cl in _out["conflicted"]:
             _exci_r, _exsrc_r, _flags_r = _flags_rebuild(_ci_cl)
@@ -5607,11 +5715,19 @@ def main():
             "constrained_sample": ["dict" if _constrained else "none",
                                    (_constrained[0][0] if _constrained else None)],
         }
+        if keep_blob:
+            # Rust 写盘器直用：constrained 根序 + 每槽候选数 + 打包 LE u16 位表
+            _res["__dom_bits_stash__"] = (
+                [_cl["root"] for (_cl, _m) in _constrained],
+                list(_counts_b), bytes(_blob_b))
         if _RS_VERIFY:
             _res["__raw_masks__"] = _masks_b
             _res["__exci__"] = _exci_a
             _res["__flagbits__"] = _flags_a
         return _res
+
+    def _rs_solve(enabled):
+        return _rs_unpack(_rs_call(enabled, need_dom_bits=True), enabled)
 
     def _rs_verify_compare(res_py, res_rs, enabled):
         """MC_RS_VERIFY：Python 参照 vs Rust 逐项对拍（fail-closed，差异即退出 2）。"""
@@ -6141,45 +6257,63 @@ def main():
                     _m11 &= _fm11
             _dom11[_e11] = _m11
         _c11_steps = 0
-        for _round in range(8):
-            _chg = 0
-            for _mk, _ck, _off in _m_links:
-                _dm = _dom11.get(_mk, FULL)
-                _dc = _dom11.get(_ck, FULL)
-                # 子对象必须是容器该成员静态类型的后代（或同类）
-                _allowed_m = 0
-                _has_ev = False
-                _x = _dc
-                while _x:
-                    _b = _x & -_x; _x ^= _b
-                    _ci = _b.bit_length() - 1
-                    _ts = _member_pairs.get((_ci, _off))
-                    if not _ts:
-                        continue
-                    _has_ev = True
-                    for _t in _ts:
-                        _allowed_m |= _desc_mask11(_t)
-                if _has_ev:
-                    _nm = _dm & _allowed_m
-                    if _nm != _dm and _nm != 0:
-                        _dom11[_mk] = _nm; _dm = _nm; _chg += 1
-                # 反向：容器必须有一个候选类，其该成员类型能与子对象候选相容
-                _allowed_c = 0
-                _x = _dc
-                while _x:
-                    _b = _x & -_x; _x ^= _b
-                    _ci = _b.bit_length() - 1
-                    _ts = _member_pairs.get((_ci, _off))
-                    if not _ts:
-                        _allowed_c |= _b        # 无证据的类不排除（稀疏布局）
-                    elif any((_desc_mask11(_t) & _dm) for _t in _ts):
-                        _allowed_c |= _b
-                _nc = _dc & _allowed_c
-                if _nc != _dc and _nc != 0:
-                    _dom11[_ck] = _nc; _chg += 1
-            _c11_steps += _chg
-            if not _chg:
-                break
+        if _rs_mod_cell[0] is not None:
+            # --use-rs wave2：8 轮混沌收窄下沉 Rust（K3，逐链 mk→ck 同址更新序）
+            _nb11 = (n + 7) // 8
+            _mp_ci, _mp_off, _mp_types = [], [], []
+            for (_ciA, _offA), _tsA in _member_pairs.items():
+                _mp_ci.append(_ciA)
+                _mp_off.append(_offA)
+                _mp_types.append(sorted(_tsA))
+            _r11 = _rs_mod_cell[0].c11_fixpoint2(
+                n, [x[0] for x in _m_links], [x[1] for x in _m_links],
+                [x[2] for x in _m_links],
+                [(k, v.to_bytes(_nb11, "little")) for k, v in _dom11.items()],
+                _mp_ci, _mp_off, _mp_types,
+                [list(U["desc"][_i]) for _i in range(n)])
+            _c11_steps = _r11["steps"]
+            for _k11z, _mb11z in zip(list(_dom11.keys()), _r11["dom"]):
+                _dom11[_k11z] = int.from_bytes(_mb11z, "little")
+        else:
+            for _round in range(8):
+                _chg = 0
+                for _mk, _ck, _off in _m_links:
+                    _dm = _dom11.get(_mk, FULL)
+                    _dc = _dom11.get(_ck, FULL)
+                    # 子对象必须是容器该成员静态类型的后代（或同类）
+                    _allowed_m = 0
+                    _has_ev = False
+                    _x = _dc
+                    while _x:
+                        _b = _x & -_x; _x ^= _b
+                        _ci = _b.bit_length() - 1
+                        _ts = _member_pairs.get((_ci, _off))
+                        if not _ts:
+                            continue
+                        _has_ev = True
+                        for _t in _ts:
+                            _allowed_m |= _desc_mask11(_t)
+                    if _has_ev:
+                        _nm = _dm & _allowed_m
+                        if _nm != _dm and _nm != 0:
+                            _dom11[_mk] = _nm; _dm = _nm; _chg += 1
+                    # 反向：容器必须有一个候选类，其该成员类型能与子对象候选相容
+                    _allowed_c = 0
+                    _x = _dc
+                    while _x:
+                        _b = _x & -_x; _x ^= _b
+                        _ci = _b.bit_length() - 1
+                        _ts = _member_pairs.get((_ci, _off))
+                        if not _ts:
+                            _allowed_c |= _b        # 无证据的类不排除（稀疏布局）
+                        elif any((_desc_mask11(_t) & _dm) for _t in _ts):
+                            _allowed_c |= _b
+                    _nc = _dc & _allowed_c
+                    if _nc != _dc and _nc != 0:
+                        _dom11[_ck] = _nc; _chg += 1
+                _c11_steps += _chg
+                if not _chg:
+                    break
         _c11_empty = 0
         for _e11, _mm in _dom11.items():
             if _mm == 0:
@@ -7303,7 +7437,8 @@ def main():
                 if _r_incr.get("base") is not None:
                     _INCR_BASE_NOW = _r_incr["base"]
                 _incr_fp_ok = True
-        if not _incr_fp_ok:
+        if not _incr_fp_ok and _rs_cell[0] is None:
+            # --use-rs：base_dom 在 Rust fixpoint 内部重算（K2），Python 侧预计算跳过
             _dom_fix = _c10_base_dom(_edges_fix)
         _empty_ids = []
         _empty_pfx = collections.Counter()
@@ -7588,55 +7723,127 @@ def main():
     _PROV_RANK = ("C4", "C9", "C8", "C5", "C6", "C3", "C1", "C11", "C10", "C2", "C7", "C15")
     _res_ledger = []
     _res_rounds = 0
+    _cl_idx_by_id = [None]               # verify 用：clusters 对象 id -> 下标
     while True:
-        res_probe = solve(all_fams)
+        # --use-rs wave2：探针解走 light 路径（只重建 conflicted），最终解由
+        # 循环退出后的 need_dom_bits=True 重解给出（确定性 → 与逐次全解等价）。
+        # MC_RS_VERIFY 保持原 solve()（全解 + 进程内对拍）。
+        if _rs_cell[0] is not None and not _RS_VERIFY:
+            _out_probe = _rs_call(all_fams, need_dom_bits=False)
+            res_probe = _rs_unpack(_out_probe, all_fams, light=True)
+        else:
+            res_probe = solve(all_fams)
         _empt = [d for d in res_probe["conflicted"] if "empty_domain" in d[4]]
         if not _empt or _res_rounds >= 64:
             break                       # 无可消解冲突 / 防御上限
         _res_rounds += 1
         _n_drops = 0
-        for _cl, _m0, _ex, _exs, _fl in _empt:
-            # 与 cluster_domains 同口径的该簇各族掩码（C1 始终参与）
-            _fmasks = {"C1": (c1_mask(_cl["obs"]) if _cl["obs"] else FULL)}
-            for _f in all_fams:
-                if _f == "C1":
-                    continue
-                _mf, _hit = FULL, False
-                for _eid in _cl["ents"]:
-                    _x = fam[_f].get(_eid)
-                    if _x is not None:
-                        _mf &= _x
-                        _hit = True
-                _fmasks[_f] = _mf if _hit else FULL
-            _inter = FULL
-            for _f in all_fams:
-                _inter &= _fmasks[_f]
+        _rs_rr = None
+        _rs_rr_v = None
+        if _rs_cell[0] is not None and res_probe.get("__light__"):
+            # 冲突消解 _fmasks 重算下沉 Rust（K4）：逐空域簇重算各族掩码/总交/
+            # 前 12 候选（台账数据）；丢弃判定与台账 JSON 留 Python。
+            #（verify 路径探针为 solve() 全解——无 __conflicted_idx__，走纯 Python 对照）
+            _rs_rr = _rs_cell[0].resolve_round(
+                list(all_fams),
+                [(ci_cl, (_fb & 2) != 0) for ci_cl, _fb
+                 in zip(res_probe["__conflicted_idx__"],
+                        res_probe["__conflicted_flagbits__"])])["records"]
+        elif _rs_cell[0] is not None and _RS_VERIFY:
+            # verify：纯 Python _fmasks 照算，Rust K4 并行重算逐项对拍
+            if _cl_idx_by_id[0] is None:
+                _cl_idx_by_id[0] = {id(_c): _i for _i, _c in enumerate(clusters)}
+            _rs_rr_v = _rs_cell[0].resolve_round(
+                list(all_fams),
+                [(_cl_idx_by_id[0][id(_c)], "empty_domain" in _f)
+                 for (_c, _m0v, _exv, _exsv, _f) in res_probe["conflicted"]])["records"]
+        for _rri, (_cl, _m0, _ex, _exs, _fl) in enumerate(_empt):
+            if _rs_rr is not None:
+                _rec_rr = _rs_rr[_rri]
+                _inter = int.from_bytes(_rec_rr["inter"], "little")
+                _fams_rr = {all_fams[_p]: _c for _p, _c, _f12 in _rec_rr["fams"]}
+                _doms_rr = {all_fams[_p]: [names[_b] for _b in _f12]
+                            for _p, _c, _f12 in _rec_rr["fams"]}
+            else:
+                # 与 cluster_domains 同口径的该簇各族掩码（C1 始终参与）
+                _fmasks = {"C1": (c1_mask(_cl["obs"]) if _cl["obs"] else FULL)}
+                for _f in all_fams:
+                    if _f == "C1":
+                        continue
+                    _mf, _hit = FULL, False
+                    for _eid in _cl["ents"]:
+                        _x = fam[_f].get(_eid)
+                        if _x is not None:
+                            _mf &= _x
+                            _hit = True
+                    _fmasks[_f] = _mf if _hit else FULL
+                _inter = FULL
+                for _f in all_fams:
+                    _inter &= _fmasks[_f]
+                if _rs_rr_v is not None:
+                    # MC_RS_VERIFY：K4 Rust 重算与本簇纯 Python 口径逐项对拍
+                    _rv = _rs_rr_v[_rri]
+                    _ok_v = (
+                        int.from_bytes(_rv["inter"], "little") == _inter
+                        and {all_fams[_p]: _c for _p, _c, _f12 in _rv["fams"]}
+                        == {f: _fmasks[f].bit_count()
+                            for f in all_fams if _fmasks[f] != FULL}
+                        and {all_fams[_p]: [names[_b] for _b in _f12]
+                             for _p, _c, _f12 in _rv["fams"]}
+                        == {f: [names[i] for i in range(len(names))
+                                if (_fmasks[f] >> i) & 1][:12]
+                            for f in all_fams if _fmasks[f] != FULL})
+                    if not _ok_v:
+                        print("[rs-verify] conflict-resolve DIFF at cluster %s"
+                              % _cl.get("root"), flush=True)
+                        sys.exit(2)
             # _pfm 感知：族掩码交非空但经 proven-universe 过滤后为空（C10 钉到幽灵类）
             # 时，solve 视角同样是空域 —— 必须同样标记未知，否则永远不可消解。
             if not _inter or not _pfm(_inter):
                 # 不仲裁：记录矛盾族集合，该簇答案记为未知（从 constrained 移出）。
                 _unknown_roots.add(_cl.get("root"))
-                _res_ledger.append({
-                    "cluster": _cl.get("root"),
-                    "status": "inconsistent",
-                    "families": sorted(_f for _f in all_fams if _fmasks[_f] != FULL),
-                    "family_sizes": {f: _fmasks[f].bit_count()
-                                     for f in all_fams if _fmasks[f] != FULL},
-                    # 详细取证：实体、观测、各族允许的类名（最多 12 个）、exact 钉定
-                    "ents": list(_cl.get("ents") or ())[:12],
-                    "obs": ["%d:%d" % (o, w if w else 0)
-                            for (o, w) in sorted(_cl.get("obs") or set())[:24]],
-                    "family_domains": {f: [names[i] for i in range(len(names))
-                                           if (_fmasks[f] >> i) & 1][:12]
-                                       for f in all_fams if _fmasks[f] != FULL},
-                    "exact": {k: [names[c] for c, _s in v]
-                              for k, v in (_cl.get("exact") or {}).items()},
-                })
+                if _rs_rr is not None:
+                    _res_ledger.append({
+                        "cluster": _cl.get("root"),
+                        "status": "inconsistent",
+                        "families": sorted(_fams_rr),
+                        "family_sizes": _fams_rr,
+                        # 详细取证：实体、观测、各族允许的类名（最多 12 个）、exact 钉定
+                        "ents": list(_cl.get("ents") or ())[:12],
+                        "obs": ["%d:%d" % (o, w if w else 0)
+                                for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                        "family_domains": _doms_rr,
+                        "exact": {k: [names[c] for c, _s in v]
+                                  for k, v in (_cl.get("exact") or {}).items()},
+                    })
+                else:
+                    _res_ledger.append({
+                        "cluster": _cl.get("root"),
+                        "status": "inconsistent",
+                        "families": sorted(_f for _f in all_fams if _fmasks[_f] != FULL),
+                        "family_sizes": {f: _fmasks[f].bit_count()
+                                         for f in all_fams if _fmasks[f] != FULL},
+                        "ents": list(_cl.get("ents") or ())[:12],
+                        "obs": ["%d:%d" % (o, w if w else 0)
+                                for (o, w) in sorted(_cl.get("obs") or set())[:24]],
+                        "family_domains": {f: [names[i] for i in range(len(names))
+                                               if (_fmasks[f] >> i) & 1][:12]
+                                           for f in all_fams if _fmasks[f] != FULL},
+                        "exact": {k: [names[c] for c, _s in v]
+                                  for k, v in (_cl.get("exact") or {}).items()},
+                    })
                 _n_drops += 1
         print("[conflict-resolve] round=%d empty_clusters=%d drops=%d"
               % (_res_rounds, len(_empt), _n_drops), flush=True)
         if _n_drops == 0:
             break                      # 零丢弃 = 无法再靠"丢最弱族"消解，直接退出
+
+    if _rs_cell[0] is not None and not res_probe.get("__dom_bits_stash__"):
+        # 循环退出：以 need_dom_bits=True 重解一次（确定性，与末次探针全解等价），
+        # full unpack + blob stash（Rust 写盘器直用；verify 路径亦产出 stash
+        # 以便进程内对拍写盘字节）。
+        res_probe = _rs_unpack(_rs_call(all_fams, need_dom_bits=True), all_fams,
+                               keep_blob=True)
 
     res = res_probe          # 循环退出时 res_probe 即最新丢弃后的求解结果，勿重复求解
     _unresolved = res["n_conflicts"]
@@ -7771,7 +7978,11 @@ def main():
         # fam 掩码本身从未被过滤（过滤只在 cluster_domains 求交处），
         # 故关掉即真实还原未剔除口径。
         _proven_cell[0] = FULL
-        _res_was = solve(all_fams)
+        if _rs_cell[0] is not None and not _RS_VERIFY:
+            _res_was = _rs_unpack(_rs_call(all_fams, need_dom_bits=False),
+                                  all_fams, light=True)   # 只取 k
+        else:
+            _res_was = solve(all_fams)
         _proven_cell[0] = _proven_mask
         _k_was = _res_was["k"]
     else:
@@ -8320,31 +8531,98 @@ def main():
             json.dump(_dcontents, fh, ensure_ascii=False)
         print("[out] minclass_domain_contents.json (%d entities)" % len(_dcontents), flush=True)
         apath = os.path.join(ROOT, "anchors/minclass_assignments.json")
-        _asg = {}
-        _ents = res.get("dom_ents") or {}
-        # most-specific 赋值落到该文件（assign_map 键 = str(constrained 下标)）
-        _roots_aw = [(c.get("root") if isinstance(c, dict) else str(c))
-                     for (c, _m) in (res.get("constrained") or [])]
-        _cls_by_root = {}
-        for _kk, _cc in (res.get("assign_map") or {}).items():
-            try:
-                _ii = int(_kk)
-            except (TypeError, ValueError):
-                continue
-            if 0 <= _ii < len(_roots_aw) and _cc is not None and 0 <= _cc < n:
-                _cls_by_root[_roots_aw[_ii]] = names[_cc]
-        for cl, nm in (res.get("dom_names") or {}).items():
-            _asg[cl] = {"candidates": nm,
-                        "ents": _ents.get(cl, []),
-                        "class": _cls_by_root.get(cl),
-                        "confidence": ("forced" if len(nm) == 1 else
-                                       ("narrow" if len(nm) <= 8 else "wide"))}
-        with io.open(apath, "w", encoding="utf-8") as fh:
-            json.dump(_asg, fh, ensure_ascii=False, indent=0)
+        _stash_a = res.get("__dom_bits_stash__")
+        if _rs_mod_cell[0] is not None and _stash_a is not None:
+            # --use-rs wave2：assignments 写盘下沉 Rust（字节等价 stdlib indent=0
+            # 编码器；candidates 直接消费打包位表，names 不物化为 Python 列表）。
+            _roots_aw = [(c.get("root") if isinstance(c, dict) else str(c))
+                         for (c, _m) in (res.get("constrained") or [])]
+            _cls_by_root = {}
+            for _kk, _cc in (res.get("assign_map") or {}).items():
+                try:
+                    _ii = int(_kk)
+                except (TypeError, ValueError):
+                    continue
+                if 0 <= _ii < len(_roots_aw) and _cc is not None and 0 <= _cc < n:
+                    _cls_by_root[_roots_aw[_ii]] = names[_cc]
+            _roots_a, _counts_a, _cls_a, _conf_a = [], [], [], []
+            _blob_a = bytearray()
+            _ent_map_a = res.get("dom_ents") or {}
+            _pops_a = res.get("dom_sizes") or {}
+            _off_a = 0
+            for _slot_a, _rk_a in enumerate(_stash_a[0]):
+                _cnt_a = _stash_a[1][_slot_a]           # blob 计数（cap 1600）
+                _pop_a = _pops_a.get(_rk_a, 0)          # 真域宽（过滤口径同纯路径）
+                _nb_a = 2 * _cnt_a
+                if 0 < _pop_a <= 1600:
+                    _roots_a.append(_rk_a)
+                    _counts_a.append(_cnt_a)
+                    _blob_a += _stash_a[2][_off_a:_off_a + _nb_a]
+                    _cc_a = _cls_by_root.get(_rk_a)
+                    _cls_a.append(_cc_a)
+                    _conf_a.append(0 if _pop_a == 1 else (1 if _pop_a <= 8 else 2))
+                _off_a += _nb_a
+            _rs_mod_cell[0].dump_assignments(
+                apath, _roots_a, _counts_a, bytes(_blob_a), list(names),
+                [_ent_map_a.get(_r, []) for _r in _roots_a],
+                _cls_a, _conf_a)
+            if _RS_VERIFY:
+                # 进程内对拍：stash 位表解码出的候选名 vs stdlib indent=0 字节流
+                _asg_chk = {}
+                _off_v = 0
+                for _slot_v, _rk_v in enumerate(_stash_a[0]):
+                    _cnt_v = _stash_a[1][_slot_v]
+                    _nb_v = 2 * _cnt_v
+                    if 0 < _pops_a.get(_rk_v, 0) <= 1600:
+                        _cands_v = [names[int.from_bytes(
+                                        _stash_a[2][_k:_k + 2], "little")]
+                                    for _k in range(_off_v, _off_v + _nb_v, 2)]
+                        _asg_chk[_rk_v] = {
+                            "candidates": _cands_v,
+                            "ents": _ent_map_a.get(_rk_v, []),
+                            "class": _cls_by_root.get(_rk_v),
+                            "confidence": ("forced" if len(_cands_v) == 1 else
+                                           ("narrow" if len(_cands_v) <= 8 else "wide"))}
+                    _off_v += _nb_v
+                _want_b = json.dumps(_asg_chk, ensure_ascii=False, indent=0).encode("utf-8")
+                if os.name == "nt":       # 纯路径经文本模式写盘 → CRLF；Rust 写盘器同口径
+                    _want_b = _want_b.replace(b"\n", b"\r\n")
+                _got_b = io.open(apath, "rb").read()
+                if _got_b != _want_b:
+                    print("[rs] assignments dump VERIFY FAILED "
+                          "(got %d B, want %d B)" % (len(_got_b), len(_want_b)), flush=True)
+                    sys.exit(2)
+                print("[rs] assignments dump verify OK (%d B)" % len(_got_b), flush=True)
+            _asg_n = len(_roots_a)
+            _asg_forced = sum(1 for c in _conf_a if c == 0)
+            _asg_narrow = sum(1 for c in _conf_a if c == 1)
+        else:
+            _asg = {}
+            _ents = res.get("dom_ents") or {}
+            # most-specific 赋值落到该文件（assign_map 键 = str(constrained 下标)）
+            _roots_aw = [(c.get("root") if isinstance(c, dict) else str(c))
+                         for (c, _m) in (res.get("constrained") or [])]
+            _cls_by_root = {}
+            for _kk, _cc in (res.get("assign_map") or {}).items():
+                try:
+                    _ii = int(_kk)
+                except (TypeError, ValueError):
+                    continue
+                if 0 <= _ii < len(_roots_aw) and _cc is not None and 0 <= _cc < n:
+                    _cls_by_root[_roots_aw[_ii]] = names[_cc]
+            for cl, nm in (res.get("dom_names") or {}).items():
+                _asg[cl] = {"candidates": nm,
+                            "ents": _ents.get(cl, []),
+                            "class": _cls_by_root.get(cl),
+                            "confidence": ("forced" if len(nm) == 1 else
+                                           ("narrow" if len(nm) <= 8 else "wide"))}
+            with io.open(apath, "w", encoding="utf-8") as fh:
+                json.dump(_asg, fh, ensure_ascii=False, indent=0)
+            _asg_n = len(_asg)
+            _asg_forced = sum(1 for v in _asg.values() if v["confidence"] == "forced")
+            _asg_narrow = sum(1 for v in _asg.values() if v["confidence"] == "narrow")
         print("[out] %s (%d assignments, forced=%d narrow=%d)"
-              % (apath, len(_asg),
-                 sum(1 for v in _asg.values() if v["confidence"] == "forced"),
-                 sum(1 for v in _asg.values() if v["confidence"] == "narrow")), flush=True)
+              % (apath, _asg_n, _asg_forced, _asg_narrow), flush=True)
     # ---- 由解直接读出类布局（内容是解的输出，不是输入）----
     _assign = res.get("assign_map") or {}
     _obs = res.get("cluster_obs") or {}
@@ -8435,13 +8713,30 @@ def main():
                          "obs": [[int(o), int(w or 4)] for o, w in (_obs.get(_r) or [])],
                          "ents": list((res.get("dom_ents") or {}).get(_r, []))}
     _cpath = os.path.join(ROOT, "anchors/minclass_clusters.json")
-    with io.open(_cpath, "w", encoding="utf-8") as fh:
-        json.dump(_clusters, fh, ensure_ascii=False, indent=0)
+    if _rs_mod_cell[0] is not None:
+        # --use-rs wave2：clusters 写盘下沉 Rust（字节等价 stdlib indent=0）
+        _rs_mod_cell[0].dump_clusters(
+            _cpath, list(_clusters.keys()),
+            [v["class"] for v in _clusters.values()],
+            [[(p[0], p[1]) for p in v["obs"]] for v in _clusters.values()],
+            [v["ents"] for v in _clusters.values()])
+    else:
+        with io.open(_cpath, "w", encoding="utf-8") as fh:
+            json.dump(_clusters, fh, ensure_ascii=False, indent=0)
     print("[out] %s (%d clusters)" % (_cpath, len(_clusters)), flush=True)
 
     _dpath = os.path.join(ROOT, "anchors/derived_layouts.json")
-    with io.open(_dpath, "w", encoding="utf-8") as fh:
-        json.dump(_dl, fh, ensure_ascii=False, indent=0)
+    if _rs_mod_cell[0] is not None:
+        # --use-rs wave2：derived_layouts 写盘下沉 Rust（字节等价 stdlib indent=0）
+        _rs_mod_cell[0].dump_derived(
+            _dpath, list(_dl.keys()),
+            [v["member_count"] for v in _dl.values()],
+            [v["extent"] for v in _dl.values()],
+            [v["clusters"] for v in _dl.values()],
+            [[(p[0], p[1]) for p in v["members"]] for v in _dl.values()])
+    else:
+        with io.open(_dpath, "w", encoding="utf-8") as fh:
+            json.dump(_dl, fh, ensure_ascii=False, indent=0)
     print("[out] %s (%d classes, members derived from the solution)" % (_dpath, len(_dl)), flush=True)
 
     rpath = os.path.join(ROOT, "anchors/minclass_result.json")

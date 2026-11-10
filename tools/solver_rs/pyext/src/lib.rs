@@ -12,6 +12,9 @@ use std::collections::{HashMap, HashSet};
 
 mod c10;
 mod domain;
+mod evidence;
+mod jsonout;
+mod resolve;
 mod solver;
 
 use domain::Domain;
@@ -198,8 +201,10 @@ impl PySolver {
 
     /// K1: full solve pipeline. `enabled` mirrors solve()'s argument (may
     /// contain "C1"; filtered identically). `proven` is _proven_cell[0] as
-    /// little-endian bytes. Returns a plain dict consumed by the wrapper.
-    #[pyo3(signature = (enabled, proven, unknown_roots, max_pairs, all_masks))]
+    /// little-endian bytes. `need_dom_bits` skips the packed candidate-bits
+    /// blob (probe solves don't need it). Returns a plain dict consumed by
+    /// the wrapper.
+    #[pyo3(signature = (enabled, proven, unknown_roots, max_pairs, all_masks, need_dom_bits))]
     fn solve(
         &mut self,
         py: Python<'_>,
@@ -208,6 +213,7 @@ impl PySolver {
         unknown_roots: Vec<String>,
         max_pairs: usize,
         all_masks: bool,
+        need_dom_bits: bool,
     ) -> PyResult<Py<PyDict>> {
         // resolve enabled families (skip C1, order preserved) + C4/C8 gates
         let mut enabled_fams: Vec<usize> = Vec::new();
@@ -309,14 +315,23 @@ impl PySolver {
         // assign pairs (cluster idx, class idx)
         dict.set_item("assign_pairs", out.assign.clone())?;
 
-        // dom bits per constrained slot (ascending, capped at 1600)
-        let mut bits: Vec<Vec<u16>> = Vec::with_capacity(out.constrained.len());
-        for &i in &out.constrained {
-            let m = &out.outs[i as usize].mask;
-            let b: Vec<u16> = m.iter_bits().take(1600).map(|x| x as u16).collect();
-            bits.push(b);
+        // dom bits per constrained slot (ascending, capped at 1600) — packed
+        // LE u16 blob + per-slot counts (consumed directly by the dump writer;
+        // never materialized as Python ints)
+        let mut bits_counts: Vec<u32> = Vec::with_capacity(out.constrained.len());
+        let mut bits_blob: Vec<u8> = Vec::new();
+        if need_dom_bits {
+            for &i in &out.constrained {
+                let m = &out.outs[i as usize].mask;
+                let b: Vec<u16> = m.iter_bits().take(1600).map(|x| x as u16).collect();
+                bits_counts.push(b.len() as u32);
+                for v in b {
+                    bits_blob.extend_from_slice(&v.to_le_bytes());
+                }
+            }
         }
-        dict.set_item("dom_bits", bits)?;
+        dict.set_item("dom_bits_counts", bits_counts)?;
+        dict.set_item("dom_bits_blob", bits_blob)?;
 
         Ok(dict.into())
     }
@@ -364,6 +379,43 @@ impl PySolver {
         self.sv.intern.len()
     }
 
+    /// K4: conflict-resolution round — per empty-domain conflicted cluster
+    /// (cluster_idx, is_empty_domain in res["conflicted"] order), recompute
+    /// the per-family masks / total intersection / first-12 candidates for
+    /// the resolution ledger. See resolve.rs for the semantics contract.
+    #[pyo3(signature = (all_fams, conflicted))]
+    fn resolve_round(
+        &mut self,
+        py: Python<'_>,
+        all_fams: Vec<String>,
+        conflicted: Vec<(usize, bool)>,
+    ) -> PyResult<Py<PyDict>> {
+        let cluster_idxs: Vec<usize> = conflicted
+            .iter()
+            .filter(|&&(_, ed)| ed)
+            .map(|&(ci, _)| ci)
+            .collect();
+        let af = all_fams.clone();
+        let recs = py.allow_threads(|| {
+            resolve::resolve_round_impl(&mut self.sv, &af, &cluster_idxs)
+        });
+
+        let dict = PyDict::new(py);
+        let list = pyo3::types::PyList::empty(py);
+        for r in recs {
+            let d = PyDict::new(py);
+            let fl = pyo3::types::PyList::empty(py);
+            for (pos, pop, first) in &r.fams {
+                fl.append((*pos, *pop, first.clone()))?;
+            }
+            d.set_item("fams", fl)?;
+            d.set_item("inter", r.inter.to_le_bytes())?;
+            list.append(d)?;
+        }
+        dict.set_item("records", list)?;
+        Ok(dict.into())
+    }
+
     fn n_clusters(&self) -> usize {
         self.sv.clusters.len()
     }
@@ -404,5 +456,11 @@ impl PySolver {
 #[pymodule]
 fn minclass_rs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<PySolver>()?;
+    m.add_function(pyo3::wrap_pyfunction!(evidence::ssa_workload, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(evidence::c18_phase, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(evidence::c11_fixpoint2, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(jsonout::dump_assignments, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(jsonout::dump_clusters, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(jsonout::dump_derived, m)?)?;
     Ok(())
 }
