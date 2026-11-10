@@ -63,18 +63,18 @@
   "status": "OK"
  },
  "0x408ec0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x18]",
   "name": "sub_408EC0",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x408ed0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x14]",
   "name": "sub_408ED0",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4090f0": {
   "attempts": 4,
@@ -84,18 +84,25 @@
   "status": "OK"
  },
  "0x409330": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x30]",
   "name": "sub_409330",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x40cc00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_ptr_IsometricTileClass::GetItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x40d270": {
+  "attempts": 3,
+  "first_diff": "+0 jmp 0x6d03a0",
+  "name": "SidebarClass::initButtons2",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x410490": {
   "attempts": 4,
@@ -147,7 +154,7 @@
   "status": "OK"
  },
  "0x41b910": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "AircraftClass::MissionStubReturnZero",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -237,6 +244,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x439080": {
+  "attempts": 4,
+  "first_diff": null,
+  "name": "TechnoClass::checkRange",
+  "note": "via=mirror COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x459d90": {
   "attempts": 1,
   "first_diff": "+0 mov al, 1",
@@ -265,6 +279,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4722c0": {
+  "attempts": 4,
+  "first_diff": "+5 test edx, edx",
+  "name": "CellClass::HasContent",
+  "note": "via=mirror MATCH",
+  "status": "OK"
+ },
  "0x4722d0": {
   "attempts": 4,
   "first_diff": null,
@@ -280,17 +301,45 @@
   "status": "OK"
  },
  "0x477740": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x486380": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+14 xor al, al",
   "name": "Cell::IsEmpty",
-  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4865b0": {
+  "attempts": 4,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x38]",
+  "name": "CellClass::IsTerrainType",
+  "note": "via=mirror MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x486650": {
+  "attempts": 4,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x38]",
+  "name": "CellClass::InMapDataRange",
+  "note": "via=mirror MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x486670": {
+  "attempts": 6,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x38]",
+  "name": "CellClass::InBounds",
+  "note": "via=mirror MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x486900": {
+  "attempts": 4,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x38]",
+  "name": "CellClass::IsActiveOrNext",
+  "note": "via=mirror MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4870d0": {
@@ -433,8 +482,29 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4cadb0": {
+  "attempts": 4,
+  "first_diff": "+4 fadd dword ptr [0x7e2ac8]",
+  "name": "Math::ArcTan2_Table",
+  "note": "via=mirror MISMATCH/extern_reloc",
+  "status": "NG"
+ },
+ "0x4cade0": {
+  "attempts": 4,
+  "first_diff": "+0 fld qword ptr [esp + 4]",
+  "name": "Math::ArcTan",
+  "note": "via=mirror MISMATCH/extern_reloc",
+  "status": "NG"
+ },
+ "0x4de620": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::IsHeightAboveThreshold_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4e1960": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -490,11 +560,11 @@
   "status": "OK"
  },
  "0x526950": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x2c]",
   "name": "sub_526950",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x535bd0": {
   "attempts": 1,
@@ -524,6 +594,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53f4e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Struct::ZeroInitAndSetup_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x540f90": {
   "attempts": 1,
   "first_diff": null,
@@ -532,14 +609,14 @@
   "status": "OK"
  },
  "0x556620": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ObjectClass::GetWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x556630": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ObjectClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -630,18 +707,32 @@
   "status": "OK"
  },
  "0x5865e0": {
-  "attempts": 2,
-  "first_diff": "+0 xor al, al",
+  "attempts": 3,
+  "first_diff": "+2 ret 4",
   "name": "Game::Stub3",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
+ "0x5b2950": {
+  "attempts": 4,
+  "first_diff": "+0 mov ax, word ptr [ecx]",
+  "name": "Math::Sub16",
+  "note": "via=mirror MISMATCH/width_mismatch",
   "status": "NG"
  },
  "0x5b2990": {
-  "attempts": 10,
+  "attempts": 15,
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "Math::Abs16Cmp",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x5bbed0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "FileFind::Close",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5c02e0": {
   "attempts": 4,
@@ -671,6 +762,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c5d30": {
+  "attempts": 3,
+  "first_diff": "+0 jmp 0x5d62c0",
+  "name": "PlayerClass::AssignPlayerIndex_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5cd320": {
   "attempts": 1,
   "first_diff": null,
@@ -693,10 +791,10 @@
   "status": "OK"
  },
  "0x5d6310": {
-  "attempts": 2,
-  "first_diff": "+0 mov al, 1",
+  "attempts": 3,
+  "first_diff": "+2 ret 4",
   "name": "ScenarioClass::MissionStubReturnZero2",
-  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
  "0x5d6350": {
@@ -707,7 +805,7 @@
   "status": "OK"
  },
  "0x5d6440": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ScenarioClass::MissionStubReturnZero3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -721,7 +819,7 @@
   "status": "OK"
  },
  "0x5d87e0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "ScenarioClass::distributeStartingUnits",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -756,7 +854,7 @@
   "status": "OK"
  },
  "0x5f6560": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": "+0 sub esp, 0xc",
   "name": "Math::DistSq2D",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -770,7 +868,7 @@
   "status": "OK"
  },
  "0x5f9710": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectTypeClass::SetRTTI71",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -784,10 +882,10 @@
   "status": "OK"
  },
  "0x6241c0": {
-  "attempts": 4,
-  "first_diff": "+0 mov al, byte ptr [ecx + 8]",
+  "attempts": 5,
+  "first_diff": "+3 ret ",
   "name": "ObjectClass::Release",
-  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x6241d0": {
@@ -812,11 +910,11 @@
   "status": "OK"
  },
  "0x633b70": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x70]",
   "name": "sub_633B70",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x633b80": {
   "attempts": 3,
@@ -875,11 +973,11 @@
   "status": "OK"
  },
  "0x642ad0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 mov byte ptr [ecx + 0x60], 0",
   "name": "Scenario::SetByte96",
-  "note": "decomp_batch r2: MISMATCH/width_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x644940": {
   "attempts": 2,
@@ -1057,7 +1155,7 @@
   "status": "OK"
  },
  "0x726900": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 mov byte ptr [ecx + 0x44], 0",
   "name": "TActionClass::executeDetonateAction",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
@@ -1127,53 +1225,53 @@
   "status": "OK"
  },
  "0x773b40": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 4",
   "name": "WebBrowser::StubReturnFalse",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773b50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 0xc",
   "name": "WebBrowser::SetSize",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773b60": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 4",
   "name": "WebBrowser::CopyTo",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773b70": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 8",
   "name": "WebBrowser::Commit",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773b80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 8",
   "name": "WebBrowser::Revert",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773b90": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 8",
   "name": "WebBrowser::LockRegion",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x773bb0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+2 ret 0x14",
   "name": "WebBrowser::Stat",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x7754c0": {
   "attempts": 1,
@@ -1246,7 +1344,7 @@
   "status": "OK"
  },
  "0x7b9d80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
