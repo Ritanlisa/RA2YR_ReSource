@@ -10,6 +10,8 @@ class BuildingClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class unknown
 {
@@ -24,7 +26,7 @@ public:
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int BuildingClass__GetType(int a0);
+extern int BuildingClass__GetType(void * a0);
 extern int Team_Load(...);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP
@@ -39,6 +41,8 @@ class BuildingClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Array
 {
@@ -54,7 +58,7 @@ public:
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int BuildingClass__GetType(int a0);
+extern int BuildingClass__GetType(void * a0);
 extern int Team_Load(...);
 
 #endif  // DECOMP_PILOT_ARRAY_HPP

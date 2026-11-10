@@ -31,9 +31,13 @@ int __stdcall RocketLocomotionClass::ComputeFloatExpression_3(int p0, int p1, in
             if ( *(unsigned int *)v6 )
             {
                 this->TrailerTimer[2] = 1;
+                v8 = *(unsigned int *)v6;
             }
-            v8 = *(unsigned int *)v6;
-            v8 = *(unsigned int *)(v6 + 4);
+            else
+            {
+                this->TrailerTimer[2] = 2;
+                v8 = *(unsigned int *)(v6 + 4);
+            }
             this->MovingDestination[2] = *(unsigned int *)&((char *)stru_A8EB00)[416];
             this->MissionTimer[0] = v9;
             this->MissionTimer[1] = v8;
@@ -43,9 +47,6 @@ int __stdcall RocketLocomotionClass::ComputeFloatExpression_3(int p0, int p1, in
             this->MovingDestination[0] = p1;
             this->MovingDestination[1] = p2;
             return (int)(p0);
-        }
-        else
-        {
         }
         return (int)(result);
 }

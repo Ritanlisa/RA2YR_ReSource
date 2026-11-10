@@ -9,6 +9,8 @@ class SHA1;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Random
 {
@@ -30,6 +32,8 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class SHA1
 {
@@ -39,8 +43,8 @@ public:
     // DECOMP_SIZECHECK(SHA1, SHA1, 24);
 
     // ---- pilot methods (registry signatures)
-    int Process(int p0);  // 0x69D960
-    int Compute(char * p0);  // 0x69D9E0
+    int Compute(void * p0);  // 0x69D9E0
+    int Process(int p0, int p1);  // 0x69D960
 };
 
 #endif  // DECOMP_PILOT_SHA1_HPP

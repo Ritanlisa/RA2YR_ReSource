@@ -22,47 +22,49 @@ int Random::Range(int p0, int p1)
             if ( p0 > p1 )
             {
                 v6 = p1;
+                v5 = p0;
             }
-            v5 = p0;
             v7 = v5 - v6;
             v8 = v5 - v6 >= 0;
             v9 = 31;
             if ( v8 )
             {
                 do
-            if ( v9 <= 0 )
-              break;
+                {
+                    if ( v9 <= 0 )
+                    {
+                        break;
+                    }
+                    --v9;
+                } while ( ((1 << v9) & v7) == 0 );
             }
-            --v9;
-            while ( ((1 << v9) & v7) == 0 )
-            {
-                v10 = v7 + 1;
-            }
+            v10 = v7 + 1;
             for ( i = ~(-1 << (v9 + 1)); v10 > v7; v10 = i & v12 )
             {
                 if ( this->m000[0] )
                 {
                     v12 = 0;
                 }
+                else
+                {
+                    *(&this->m00C + this->m004) ^= *(&this->m00C + this->m008);
+                    Random_field_0x04 = this->m004;
+                    v14 = *(&this->m00C + Random_field_0x04++);
+                    v15 = this->m008 + 1;
+                    this->m004 = Random_field_0x04;
+                    this->m008 = v15;
+                    if ( Random_field_0x04 >= 250 )
+                    {
+                        this->m004 = 0;
+                    }
+                    if ( v15 >= 250 )
+                    {
+                        this->m008 = 0;
+                    }
+                    v12 = v14;
+                }
             }
-            Random_field_0x04 = this->m004;
-            v14 = *(&this->m00C + Random_field_0x04++);
-            v15 = this->m008 + 1;
-            this->m004 = Random_field_0x04;
-            this->m008 = v15;
-            if ( Random_field_0x04 >= 250 )
-            {
-                this->m004 = 0;
-            }
-            if ( v15 >= 250 )
-            {
-                this->m008 = 0;
-            }
-            v12 = v14;
             return (int)(v6 + v10);
-        }
-        else
-        {
         }
         return (int)(result);
 }
@@ -75,54 +77,53 @@ int Random::AdvanceRandomBytes(char p0)
 {
         int v10 = 8;
         char * v3;
+        int v4;
+        unsigned int v5;
+        char * v6;
+        size_t v7;
+        bool v8;
+        int result;
+        char Src[20];
+        unsigned int v12[29];
         do
         {
             if ( (p0 & 1) != 0 )
             {
                 v3 = this + (unsigned char)(*((unsigned int *)this + 3) / 8) + 20;
+                *v3 ^= 1 << (*((unsigned int *)this + 3) & 7);
             }
-            *v3 ^= 1 << (*((unsigned int *)this + 3) & 7);
-        } while (v4 = *((unsigned int *)this + 3) + 1);
-        int v4;
-        *((unsigned int *)this + 3) = v4;
-        unsigned int v5;
-        char * v6;
-        size_t v7;
-        char Src[20];
-        unsigned int v12[29];
-        if ( v4 == 2048 )
-        {
-            v5 = 0;
-            ((v12[0]) & 0xFF) = 0;
-            v12[11] = 0;
-            v12[12] = 0;
-            v12[6] = 1732584193;
-            v12[7] = -271733879;
-            v12[8] = -1732584194;
-            v12[9] = 271733878;
-            v12[10] = -1009589776;
-            v6 = this + 20;
-            do
-            ((SHA1 *)(v12))->Process((int)(this + 20), 256);
-            ((SHA1 *)(v12))->Compute(Src);
-            v7 = 256 - v5;
-            if ( 256 - v5 > 0x14 )
+            v4 = *((unsigned int *)this + 3) + 1;
+            *((unsigned int *)this + 3) = v4;
+            if ( v4 == 2048 )
             {
-                v7 = 20;
+                v5 = 0;
+                ((v12[0]) & 0xFF) = 0;
+                v12[11] = 0;
+                v12[12] = 0;
+                v12[6] = 1732584193;
+                v12[7] = -271733879;
+                v12[8] = -1732584194;
+                v12[9] = 271733878;
+                v12[10] = -1009589776;
+                v6 = this + 20;
+                do
+                {
+                    ((SHA1 *)(v12))->Process((int)(this + 20), 256);
+                    ((SHA1 *)(v12))->Compute(Src);
+                    v7 = 256 - v5;
+                    if ( 256 - v5 > 0x14 )
+                    {
+                        v7 = 20;
+                    }
+                    memcpy(v6, Src, v7);
+                    ++v5;
+                    ++v6;
+                } while ( v5 < 0x100 );
             }
-            memcpy(v6, Src, v7);
-            ++v5;
-            ++v6;
-            while ( v5 < 0x100 )
-            {
-            }
-        }
-        int result = v10 - 1;
-        bool v8 = v10 == 1;
-        p0 >>= 1;
-        --v10;
-        while ( v8 == 0 )
-        {
-            return (int)(result);
-        }
+            result = v10 - 1;
+            v8 = v10 == 1;
+            p0 >>= 1;
+            --v10;
+        } while ( v8 == 0 );
+        return (int)(result);
 }

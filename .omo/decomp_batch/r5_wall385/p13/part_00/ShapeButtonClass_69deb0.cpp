@@ -17,17 +17,18 @@ int ShapeButtonClass::Draw(int p0)
                 if ( *((unsigned char *)this + 52) )
                 {
                     v3 = (*((unsigned char *)this + 45) != 0) + 3;
+                    goto LABEL_11;
                 }
+                v4 = *((unsigned char *)this + 45);
+                v3 = 0;
             }
-            goto LABEL_11;
-            v4 = *((unsigned char *)this + 45);
-            v3 = 0;
-            v3 = 0;
+            else
+            {
+                v4 = *((unsigned char *)this + 44);
+                v3 = 0;
+            }
             v3 = (v3 & ~0xFF) | ((v4 != 0) & 0xFF);
             goto LABEL_11;
-        }
-        else
-        {
         }
         v3 = 2;
         AudioStream * v5;
@@ -37,18 +38,23 @@ int ShapeButtonClass::Draw(int p0)
         {
             v5 = g_DSurface_Hidden_2;
         }
+        int * v6;
         int v12[4];
-        int * v6 = (int *)(*(int (__stdcall **)(AudioStream *, int *))(*(unsigned int *)v5->__pad_0 + 120))(v5, v12);
-        int v7 = *((unsigned int *)this + 3);
+        v6 = (int *)(*(int (__stdcall **)(AudioStream *, int *))(*(unsigned int *)v5->__pad_0 + 120))(v5, v12);
+        int v7;
+        v7 = *((unsigned int *)this + 3);
         int v13[4];
         v13[0] = *v6;
         v13[1] = v6[1];
         v13[2] = v6[2];
         v13[3] = v6[3];
-        int v8 = v7 + *((unsigned int *)this + 17);
-        int v9 = *((unsigned int *)this + 4);
+        int v8;
+        v8 = v7 + *((unsigned int *)this + 17);
+        int v9;
+        v9 = *((unsigned int *)this + 4);
         v12[0] = v8;
-        int v10 = *((unsigned char *)this + 85) != 0 ? 0x800 : 0;
+        int v10;
+        v10 = *((unsigned char *)this + 85) != 0 ? 0x800 : 0;
         v12[1] = v9 + *((unsigned int *)this + 18);
         DrawToSurfaceSHP(
         (int)v5,

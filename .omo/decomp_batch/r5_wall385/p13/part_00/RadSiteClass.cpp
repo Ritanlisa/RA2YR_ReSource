@@ -6,9 +6,12 @@
 int RadSiteClass::Tick()
 {
         --this->RadTimeLeft;
-        int v2 = this->RadLevelTimer[0];
-        int v3 = this->RadLevelTimer[2];
-        int v4 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+        int v2;
+        v2 = this->RadLevelTimer[0];
+        int v3;
+        v3 = this->RadLevelTimer[2];
+        int v4;
+        v4 = *(unsigned int *)&((char *)stru_A8EB00)[416];
         if ( v2 == -1 )
         {
             LABEL_4:
@@ -23,7 +26,8 @@ int RadSiteClass::Tick()
         }
         LABEL_5:
       RadSiteClass__DecreaseRadiation(this);
-        int v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160);
+        int v5;
+        v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160);
         this->RadLevelTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
         int v11;
         this->RadLevelTimer[1] = v11;
@@ -32,12 +36,14 @@ int RadSiteClass::Tick()
         int v6;
         LABEL_6:
       v6 = this->RadLightTimer[0];
-        int v7 = this->RadLightTimer[2];
+        int v7;
+        v7 = this->RadLightTimer[2];
         if ( v6 == -1 )
         {
             goto LABEL_9;
         }
-        int v8 = v4 - v6;
+        int v8;
+        v8 = v4 - v6;
         if ( v8 < v7 )
         {
             v7 -= v8;
@@ -46,7 +52,8 @@ int RadSiteClass::Tick()
           goto LABEL_11;
         }
         ((TacticalClass *)((int)this->LightSource))->UpdateScrollTarget(this->LightSource->LightIntensity - this->IntensityDecrement, this->RadTimeLeft * this->Tint[0] / this->RadDuration, this->RadTimeLeft * this->Tint[1] / this->RadDuration, this->RadTimeLeft * this->Tint[2] / this->RadDuration, 0);
-        int v9 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164);
+        int v9;
+        v9 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164);
         this->RadLightTimer[0] = *(unsigned int *)&((char *)stru_A8EB00)[416];
         this->RadLightTimer[1] = v11;
         this->RadLightTimer[2] = v9;

@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class FontClass
 {
@@ -23,7 +25,6 @@ extern unsigned char DataGlobal_83E1AC;
 extern unsigned int DataGlobal_B054D8;
 extern unsigned char DataGlobal_B054DD;
 extern unsigned int DataGlobal_B054E4;
-extern unsigned char Source;
 extern unsigned int g_AnimClass_SaveState;
 extern void * g_DSurface_Primary;
 extern unsigned char stru_B054D0;

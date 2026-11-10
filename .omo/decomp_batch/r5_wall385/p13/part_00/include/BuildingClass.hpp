@@ -9,6 +9,8 @@ class FogOfWar;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingClass
 {
@@ -29,13 +31,15 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class FogOfWar
 {
 public:
 
     // ---- pilot methods (registry signatures)
-    void RevealCell(int * p0);  // 0x6562D0
+    void RevealCell(void * p0);  // 0x6562D0
 };
 
 #endif  // DECOMP_PILOT_FOGOFWAR_HPP

@@ -26,26 +26,26 @@ void BuildingClass::RemoveGapCellCoverage(int p0, int p1, int p2)
             if ( v7 < v8 )
             {
                 v9 = v8 - 1;
-            }
-            v10 = v7;
-            v6[4] = v9;
-            if ( v7 < v9 )
-            {
-                v11 = 16 * v7;
-            }
-            do v12 = v6[1];
-            v13 = (unsigned int *)(v11 + v12 + 16);
-            v14 = (unsigned int *)(v11 + v12);
-            ++v10;
-            v11 += 16;
-            *v14 = *v13;
-            v14[1] = v13[1];
-            v14[2] = v13[2];
-            v14[3] = v13[3];
-            while ( v10 < v6[4] )
-            {
+                v10 = v7;
+                v6[4] = v9;
+                if ( v7 < v9 )
+                {
+                    v11 = 16 * v7;
+                    do
+                    {
+                        v12 = v6[1];
+                        v13 = (unsigned int *)(v11 + v12 + 16);
+                        v14 = (unsigned int *)(v11 + v12);
+                        ++v10;
+                        v11 += 16;
+                        *v14 = *v13;
+                        v14[1] = v13[1];
+                        v14[2] = v13[2];
+                        v14[3] = v13[3];
+                    } while ( v10 < v6[4] );
+                }
                 ((FogOfWar *)(this))->RevealCell(&p1);
+                this->m14D9 = 1;
             }
-            this->m14D9 = 1;
         }
 }

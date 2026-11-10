@@ -4578,11 +4578,11 @@
   "status": "OK"
  },
  "0x638ce0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 0x70",
   "name": "ScriptAction::ClassifyAction",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x63f7b0": {
   "attempts": 5,
@@ -4592,7 +4592,7 @@
   "status": "NG"
  },
  "0x6403a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "PowerClass::getDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4613,7 +4613,7 @@
   "status": "OK"
  },
  "0x644630": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WarheadTypeClass::applyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4676,28 +4676,28 @@
   "status": "OK"
  },
  "0x652cf0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x653760": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x655740": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+4 mov edx, dword ptr [esp + 0x1c]",
   "name": "BuildingClass::RemoveGapCellCoverage",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x656cb0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4711,14 +4711,14 @@
   "status": "OK"
  },
  "0x658970": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadarHashVector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x658b10": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadarHashVector::ComputeHashIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4774,7 +4774,7 @@
   "status": "OK"
  },
  "0x65b800": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadSiteClass::Tick",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4816,11 +4816,11 @@
   "status": "OK"
  },
  "0x65c7e0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+10 push ebx",
   "name": "Random::Range",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x65d660": {
   "attempts": 2,
@@ -4837,14 +4837,14 @@
   "status": "OK"
  },
  "0x661850": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6632e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4858,7 +4858,7 @@
   "status": "OK"
  },
  "0x664440": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4921,7 +4921,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x68c710": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4963,14 +4963,14 @@
   "status": "OK"
  },
  "0x697e70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69b7e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4984,14 +4984,14 @@
   "status": "OK"
  },
  "0x69db30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69deb0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5005,7 +5005,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x69f290": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",

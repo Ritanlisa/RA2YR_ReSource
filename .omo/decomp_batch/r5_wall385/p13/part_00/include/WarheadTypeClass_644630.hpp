@@ -9,6 +9,8 @@ class OverlayTypeClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class WarheadTypeClass
 {
@@ -40,6 +42,8 @@ extern int __cdecl _strcmp(const void *, const void *);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class OverlayTypeClass
 {
@@ -49,7 +53,7 @@ public:
     // DECOMP_SIZECHECK(OverlayTypeClass, OverlayTypeClass, 784);
 
     // ---- pilot methods (registry signatures)
-    unsigned int * Construct(char * p0);  // 0x6440A0
+    unsigned int * Construct(void * p0);  // 0x6440A0
 };
 
 // ---- globals used by this unit (registry names)

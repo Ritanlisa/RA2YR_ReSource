@@ -21,47 +21,49 @@ int Random::Range(int p0, int p1)
             if ( p0 > p1 )
             {
                 v6 = p1;
+                v5 = p0;
             }
-            v5 = p0;
             v7 = v5 - v6;
             v8 = v5 - v6 >= 0;
             v9 = 31;
             if ( v8 )
             {
                 do
-            if ( v9 <= 0 )
-              break;
+                {
+                    if ( v9 <= 0 )
+                    {
+                        break;
+                    }
+                    --v9;
+                } while ( ((1 << v9) & v7) == 0 );
             }
-            --v9;
-            while ( ((1 << v9) & v7) == 0 )
-            {
-                v10 = v7 + 1;
-            }
+            v10 = v7 + 1;
             for ( i = ~(-1 << (v9 + 1)); v10 > v7; v10 = i & v12 )
             {
                 if ( this->m000[0] )
                 {
                     v12 = 0;
                 }
+                else
+                {
+                    *(&this->m00C + this->m004) ^= *(&this->m00C + this->m008);
+                    Random_field_0x04 = this->m004;
+                    v14 = *(&this->m00C + Random_field_0x04++);
+                    v15 = this->m008 + 1;
+                    this->m004 = Random_field_0x04;
+                    this->m008 = v15;
+                    if ( Random_field_0x04 >= 250 )
+                    {
+                        this->m004 = 0;
+                    }
+                    if ( v15 >= 250 )
+                    {
+                        this->m008 = 0;
+                    }
+                    v12 = v14;
+                }
             }
-            Random_field_0x04 = this->m004;
-            v14 = *(&this->m00C + Random_field_0x04++);
-            v15 = this->m008 + 1;
-            this->m004 = Random_field_0x04;
-            this->m008 = v15;
-            if ( Random_field_0x04 >= 250 )
-            {
-                this->m004 = 0;
-            }
-            if ( v15 >= 250 )
-            {
-                this->m008 = 0;
-            }
-            v12 = v14;
             return (int)(v6 + v10);
-        }
-        else
-        {
         }
         return (int)(result);
 }

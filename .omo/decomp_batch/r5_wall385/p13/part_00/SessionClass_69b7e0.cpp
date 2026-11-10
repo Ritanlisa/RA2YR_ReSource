@@ -4,7 +4,8 @@
 
 int SessionClass::AssignColor(int p0, char p1)
 {
-        int result = p0;
+        int result;
+        result = p0;
         int v5;
         int v6;
         int v7;
@@ -21,62 +22,63 @@ int SessionClass::AssignColor(int p0, char p1)
                 while ( 1 )
                 {
                     result = ((Random *)(&g_ScenarioClass_Instance[14].NeedsSaveOrLink))->Range(0, 7);
-                }
-            }
-            if ( result == -2 )
-            {
-                break;
-            }
-            v5 = this->StartSpots[4];
-            v6 = 0;
-            if ( v5 <= 0 )
-            {
-                LABEL_12:
+                    if ( result == -2 )
+                    {
+                        break;
+                    }
+                    v5 = this->StartSpots[4];
+                    v6 = 0;
+                    if ( v5 <= 0 )
+                    {
+                        LABEL_12:
               v10 = 0;
-            }
-            v11 = &this->m050[52];
-            while ( *(unsigned int *)v11 != result )
-            {
-                ++v10;
-            }
-            v11 += 4;
-            if ( v10 >= 8 )
-            {
-                goto LABEL_15;
-            }
-            else
-            {
-                v7 = this->StartSpots[1];
-            }
-            while ( 1 )
-            {
-                v8 = *(unsigned int *)v7;
-            }
-            if ( *(unsigned int *)(*(unsigned int *)v7 + 87) == -2 && *(unsigned int *)(v8 + 83) == -1 )
-            {
-                v9 = -2;
-            }
-            else
-            {
-                v9 = *(unsigned int *)(v8 + 83);
-            }
-            if ( v9 == result )
-            {
-                break;
-            }
-            ++v6;
-            v7 += 4;
-            if ( v6 >= v5 )
-            {
-                goto LABEL_12;
-            }
-            LABEL_15:
+                        v11 = &this->m050[52];
+                        while ( *(unsigned int *)v11 != result )
+                        {
+                            ++v10;
+                            v11 += 4;
+                            if ( v10 >= 8 )
+                            {
+                                goto LABEL_15;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        v7 = this->StartSpots[1];
+                        while ( 1 )
+                        {
+                            v8 = *(unsigned int *)v7;
+                            if ( *(unsigned int *)(*(unsigned int *)v7 + 87) == -2 && *(unsigned int *)(v8 + 83) == -1 )
+                            {
+                                v9 = -2;
+                            }
+                            else
+                            {
+                                v9 = *(unsigned int *)(v8 + 83);
+                            }
+                            if ( v9 == result )
+                            {
+                                break;
+                            }
+                            ++v6;
+                            v7 += 4;
+                            if ( v6 >= v5 )
+                            {
+                                goto LABEL_12;
+                            }
+                        }
+                    }
+                }
+                LABEL_15:
           this->Color = result;
-            this->Color2 = -2;
-            this->Color2 = -2;
-        }
-        else
-        {
+                this->Color2 = -2;
+            }
+            else
+            {
+                this->Color = 0;
+                this->Color2 = -2;
+            }
         }
         else
         {

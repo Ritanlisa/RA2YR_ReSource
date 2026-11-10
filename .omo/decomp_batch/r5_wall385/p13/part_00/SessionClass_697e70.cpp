@@ -15,7 +15,8 @@ char SessionClass::IsValidHouse(int * p0)
         {
             goto LABEL_9;
         }
-        int v3 = this->u32_3074;
+        int v3;
+        v3 = this->u32_3074;
         if ( v3 != -1 )
         {
             return (char)(*((unsigned int *)v2 + 12) == v3);

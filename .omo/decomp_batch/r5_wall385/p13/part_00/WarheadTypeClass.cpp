@@ -9,7 +9,8 @@ int WarheadTypeClass::applyDamage()
         {
             return (int)(-1);
         }
-        int v2 = 0;
+        int v2;
+        v2 = 0;
         OverlayTypeClass * v3;
         unsigned int * v4;
         int v6;
@@ -36,8 +37,8 @@ int WarheadTypeClass::applyDamage()
                         return (int)(-1);
                     }
                 }
+                return (int)(v6);
             }
-            return (int)(v6);
             return (int)(-1);
         }
         while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&((char *)stru_A83D50)[0x14 + (8)] + 4 * v2) + 36)) )

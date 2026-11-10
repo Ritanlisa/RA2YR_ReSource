@@ -1,0 +1,27 @@
+{
+ "symbol": "?ClassifyAction@unknown@@QAIHPAHPAD@Z",
+ "sym_key": "unknown::ClassifyAction",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "8b4c240483ec6c8a01563c098bf20f84d20000003c060f84ca0000003c070f84c20000000fbe41128b510e500fbe410c525056e80000000083c41085c00f85a300000056e80000000083c40485c0750a83c8ff5e83c46cc204008b481485c97f0a83c8ff5e83c46cc204008b50088b00508b748afc8bcee80000000083f8ff750433c0eb068b4e048b04818b700457b91b0000008d7c2408f3a58a4424145f3c0774373c0874333c09742f3c0174043c0b75118a4c241680f90b74123c0b750484c9740a83c8ff5e83c46cc20400b8020000005e83c46cc20400b8010000005e83c46cc2040033c05e83c46cc20400",
+ "relocs": [
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?Team_Load@@YAHZZ",
+   "sym_key": "Team_Load"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?BuildingClass__GetType@@YAHPAX@Z",
+   "sym_key": "BuildingClass__GetType"
+  },
+  {
+   "off": 120,
+   "type": "REL32",
+   "sym": "?FindValue@Array@@QAEHH@Z",
+   "sym_key": "Array::FindValue"
+  }
+ ]
+}

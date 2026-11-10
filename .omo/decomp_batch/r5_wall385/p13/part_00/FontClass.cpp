@@ -9,15 +9,13 @@ char * FontClass::InitMetrics(char * p0, int p1, int p2, int p3, int p4, char p5
         unsigned char * v9 = this + 4;
         do
         {
-        } while ();
-        v9[1] = 0;
-        v9[2] = 0;
-        v9 += 3;
-        --v8;
-        while ( v8 )
-        {
-            *((unsigned int *)this + 193) = _strdup(Source);
-        }
+            *v9 = 0;
+            v9[1] = 0;
+            v9[2] = 0;
+            v9 += 3;
+            --v8;
+        } while ( v8 );
+        *((unsigned int *)this + 193) = _strdup(p0);
         *((unsigned short *)this + 388) = *(unsigned short *)p0;
         this->m30A = *(unsigned char *)(p0 + 2);
         *((unsigned int *)this + 195) = 0;
@@ -53,8 +51,8 @@ char * FontClass::InitMetrics(char * p0, int p1, int p2, int p3, int p4, char p5
                0) )
             {
                 v10 = g_AnimClass_SaveState++;
+                *((unsigned int *)BuildingTypeClass_AnimTable + v10) = this;
             }
-            *((unsigned int *)BuildingTypeClass_AnimTable + v10) = this;
             *(unsigned int *)this = g_AnimClass_SaveState;
         }
         return (char *)(this);

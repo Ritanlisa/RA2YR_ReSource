@@ -9,45 +9,46 @@ unsigned char RadarClass::SetViewMode(int p0, char p1)
         {
             v4 = p0;
         }
-        int result = this->u32_14B0;
+        int result;
+        result = this->u32_14B0;
         if ( result != v4 )
         {
             if ( (result == 3 || result == 4 && v4 != 3) && this->u32_14AC != 5 )
             {
                 this->u32_14B4 = v4;
+                return (unsigned char)(result);
             }
-            return (unsigned char)(result);
             if ( v4 == 0 )
             {
                 ((RadarClass *)((int)this))->Toggle(0, result == 1);
-            }
-            LABEL_23:
+                LABEL_23:
           this->u32_14B0 = v4;
-            return (unsigned char)(result);
+                return (unsigned char)(result);
+            }
             if ( v4 != 1 )
             {
                 if ( v4 != 4 )
                 {
                     result = this->u32_14AC;
+                    if ( result != 1 && result != 5 )
+                    {
+                        ((RadarClass *)((int)this))->Toggle(1, 0);
+                        this->u32_14B0 = v4;
+                        return (unsigned char)(result);
+                    }
+                    goto LABEL_20;
                 }
+                goto LABEL_23;
             }
-            if ( result != 1 && result != 5 )
-            {
-                ((RadarClass *)((int)this))->Toggle(1, 0);
-            }
-            this->u32_14B0 = v4;
-            return (unsigned char)(result);
-            goto LABEL_20;
-            goto LABEL_23;
             result = this->u32_14AC;
             if ( (result == 1 || result == 5) && *((unsigned char *)this + 5336) == 1 )
             {
                 LABEL_20:
           this->u32_14B0 = v4;
+                this->u32_14AC = 4;
+                this->u32_14FC = 25;
+                return (unsigned char)(result);
             }
-            this->u32_14AC = 4;
-            this->u32_14FC = 25;
-            return (unsigned char)(result);
             ((RadarClass *)((int)this))->Toggle(*((unsigned char *)this + 5336), p1);
             this->u32_14B0 = 1;
         }

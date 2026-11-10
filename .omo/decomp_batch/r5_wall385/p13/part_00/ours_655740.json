@@ -1,0 +1,15 @@
+{
+ "symbol": "?RemoveGapCellCoverage@BuildingClass@@QAEXHHH@Z",
+ "sym_key": "BuildingClass::RemoveGapCellCoverage",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "83ec1056578bf9b2058b4c24208b87f07e7e018b308b44242489442410f6ea894c240c2ac881e1ff0000008d542408528d04498d34c68b4424208944240c894424188b0e56ff511083f8ff74548b4e103bc17d4d8d51ff8bc83bc28956107d2ec1e004538bd08b460403c24183c2108b581089188b58148958048b58188958088b581c89580c8b46103bc872d95b8d4424208bcf50e800000000c687d9140000015f5e83c410c20c00",
+ "relocs": [
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?RevealCell@FogOfWar@@QAEXPAX@Z",
+   "sym_key": "FogOfWar::RevealCell"
+  }
+ ]
+}

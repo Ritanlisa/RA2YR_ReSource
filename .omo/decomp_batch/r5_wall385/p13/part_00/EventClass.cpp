@@ -5,7 +5,8 @@
 
 int EventClass::validateEventType()
 {
-        int v1 = DataGlobal_A8E2CC;
+        int v1;
+        v1 = DataGlobal_A8E2CC;
         int v3;
         int v4;
         char * v5;
@@ -19,16 +20,15 @@ int EventClass::validateEventType()
             if ( v3 > 0 )
             {
                 do
-            v5 = *(char **)(this->m004 + 4 * v4);
-            }
-            if ( v5[41] && !v5[39] )
-            {
-                v1 = *v5;
-            }
-            v5[39] = 1;
-            ++v4;
-            while ( v4 < this->Count )
-            {
+                {
+                    v5 = *(char **)(this->m004 + 4 * v4);
+                    if ( v5[41] && !v5[39] )
+                    {
+                        v1 = *v5;
+                        v5[39] = 1;
+                    }
+                    ++v4;
+                } while ( v4 < this->Count );
             }
         }
         else
@@ -38,12 +38,11 @@ int EventClass::validateEventType()
             if ( v6 > 0 )
             {
                 do
-            v8 = *(char **)(this->m004 + 4 * v7);
-            }
-            v8[39] = *v8 == v1;
-            ++v7;
-            while ( v7 < this->Count )
-            {
+                {
+                    v8 = *(char **)(this->m004 + 4 * v7);
+                    v8[39] = *v8 == v1;
+                    ++v7;
+                } while ( v7 < this->Count );
             }
         }
         if ( ((SessionClass *)((int)&g_GameMode_Current))->IsValidHouse(0)
@@ -53,20 +52,22 @@ int EventClass::validateEventType()
         {
             return (int)(v1);
         }
-        Network * v9 = 0;
-        int v10 = 0;
+        Network * v9;
+        v9 = 0;
+        int v10;
+        v10 = 0;
         unsigned int * v11;
         if ( Game_PlayerCount > 0 )
         {
-            v11 = Game_PlayerInfoArray;
+            v11 = (unsigned int *)(Game_PlayerInfoArray);
             while ( *(unsigned int *)(*v11 + 111) != v1 )
             {
                 ++v10;
-            }
-            ++v11;
-            if ( v10 >= Game_PlayerCount )
-            {
-                goto LABEL_23;
+                ++v11;
+                if ( v10 >= Game_PlayerCount )
+                {
+                    goto LABEL_23;
+                }
             }
             v9 = (Network *)(Game_PlayerInfoArray[v10] + 40);
         }
