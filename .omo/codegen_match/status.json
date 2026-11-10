@@ -42,7 +42,7 @@
   "status": "PENDING"
  },
  "0x4052f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VocClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -693,7 +693,7 @@
   "status": "PENDING"
  },
  "0x42f9c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -959,7 +959,7 @@
   "status": "OK"
  },
  "0x465e70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1113,7 +1113,7 @@
   "status": "PENDING"
  },
  "0x474c70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIEntry::ReadColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1127,7 +1127,7 @@
   "status": "PENDING"
  },
  "0x475610": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::SetHouseName",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1862,7 +1862,7 @@
   "status": "OK"
  },
  "0x4a60e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TextRenderer::Printf",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2604,7 +2604,7 @@
   "status": "NG"
  },
  "0x50b760": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingTypeClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2961,7 +2961,7 @@
   "status": "PENDING"
  },
  "0x52b2b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::deleteSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3164,7 +3164,7 @@
   "status": "PENDING"
  },
  "0x5388a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SortedArray::RemoveByKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3220,7 +3220,7 @@
   "status": "OK"
  },
  "0x53fbd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IPXGlobalConnClass::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4214,7 +4214,7 @@
   "status": "NG"
  },
  "0x5f6a70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::CheckGroundHeightDiff",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4263,7 +4263,7 @@
   "status": "OK"
  },
  "0x5fed00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 push ecx",
   "name": "OverlayTypeClass::GetRadarColor",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -4578,7 +4578,7 @@
   "status": "OK"
  },
  "0x638ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScriptAction::ClassifyAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5061,7 +5061,7 @@
   "status": "PENDING"
  },
  "0x6a6140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Sidebar::FindProductionType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5089,7 +5089,7 @@
   "status": "PENDING"
  },
  "0x6a8710": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TabCameoListClass::AddCameo_ReplaceItAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5159,7 +5159,7 @@
   "status": "OK"
  },
  "0x6b55f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5397,7 +5397,7 @@
   "status": "PENDING"
  },
  "0x6e15f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5712,7 +5712,7 @@
   "status": "OK"
  },
  "0x71c4d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainClass::IsPlacementValid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6314,7 +6314,7 @@
   "status": "PENDING"
  },
  "0x75f140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Voxel::loadSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6426,7 +6426,7 @@
   "status": "OK"
  },
  "0x76b0a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: COMPILE_FAIL",
