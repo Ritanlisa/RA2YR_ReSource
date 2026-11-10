@@ -34,6 +34,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4047b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioStream::SelectRandom",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4052f0": {
   "attempts": 1,
   "first_diff": null,
@@ -608,6 +615,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x42df90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BitmapClass::ProcessFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x42f4f0": {
   "attempts": 1,
   "first_diff": null,
@@ -703,6 +717,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AnimClass::updateAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x448160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -993,10 +1014,31 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x475b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WeaponTypeClass::ReadTrajectoryData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x475c70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WeaponTypeClass::ReadVeteranData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x475f30": {
   "attempts": 1,
   "first_diff": null,
   "name": "ScenarioClass::SaveIntListToINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x476240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectTypeClass::ReadTypeListINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1007,10 +1049,38 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x476a20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::WriteSuperWeaponList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x477640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIEntry::ReadAbilities",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x477740": {
   "attempts": 6,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x478340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FilePipe_38::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4784f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleTypeClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1153,6 +1223,13 @@
   "name": "IPXManagerClass::init",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48bf40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ConnectionClass::sendAck",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x48d1d0": {
   "attempts": 3,
@@ -2484,6 +2561,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x542520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IPXManagerClass::ProcessQueue",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x54a140": {
   "attempts": 2,
   "first_diff": null,
@@ -2719,6 +2803,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CellClass::SpiralFindClosest",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x58a2a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_W4PassabilityType::SetCapacity_1",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -3387,6 +3478,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x62d830": {
+  "attempts": 1,
+  "first_diff": "+20 jl 0x62d91f",
+  "name": "ParticleClass::vt_entry_1E8",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x62d970": {
   "attempts": 2,
   "first_diff": null,
@@ -3666,6 +3764,13 @@
   "name": "HouseClass::updateAlliedStatus",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x658970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadarHashVector::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x658de0": {
   "attempts": 2,
@@ -3968,6 +4073,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b44a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_UUndoInfoStruct::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6b4f20": {
   "attempts": 2,
   "first_diff": null,
@@ -3993,6 +4105,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6b5f80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -4122,6 +4241,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x6d8530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DisplayClass::ScrollTacticalView",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6da180": {
   "attempts": 1,
   "first_diff": null,
@@ -4247,6 +4373,13 @@
   "name": "TagTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e6e20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingLoadQueue::GetNext",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6e6f20": {
   "attempts": 1,
@@ -5057,6 +5190,13 @@
   "attempts": 3,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x76a3f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Map_WorldDominationTour_43::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },

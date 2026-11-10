@@ -1,0 +1,39 @@
+{
+ "symbol": "?vt_entry_1E8@ParticleClass@@QAEHXZ",
+ "sym_key": "ParticleClass::vt_entry_1E8",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b86ac0000008b801403000085c00f8cce00000083f8017f0b8b86400100005e83c410c383f80275178d4c240c8d9624010000518b0d0000000052e8000000008d4424048d8ef400000050518b0d00000000e8000000008d5424048d44240c5250e80000000083c40883f802745983f806745483f804742885c0742483f801740583f805751a8b8eac0000000fbe81090300008b8e400100005e03c183c410c383f803740583f80775388b96ac0000008b8e400100005e0fbe82090300008d044003c183c410c38b86ac0000008b96400100005e0fbe88090300008d044a83c410c333c05e83c410c3",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAH0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAH0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?CalcMathFacing8@@YAHZZ",
+   "sym_key": "CalcMathFacing8"
+  }
+ ]
+}
