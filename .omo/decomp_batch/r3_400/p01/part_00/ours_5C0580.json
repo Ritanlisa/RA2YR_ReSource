@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@BinkMovieHandle@@QAE_NXZ",
+ "sym_key": "BinkMovieHandle::AddRef",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "8b4910e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?RenderFrameToSurface@BinkMovie@@QAE_NXZ",
+   "sym_key": "BinkMovie::RenderFrameToSurface"
+  }
+ ]
+}

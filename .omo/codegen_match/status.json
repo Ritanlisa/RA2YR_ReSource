@@ -48,11 +48,32 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x407070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::GetFlag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4072c0": {
   "attempts": 3,
   "first_diff": null,
   "name": "DListNode::Init",
   "note": "smoke B",
+  "status": "OK"
+ },
+ "0x407510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VtableStub::Push_407510",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x408520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioController::GetOffset",
+  "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x408d50": {
@@ -307,6 +328,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x485010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::FindByCellHash",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x486380": {
   "attempts": 10,
   "first_diff": "+14 xor al, al",
@@ -374,6 +402,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "IPXManagerClass::init",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x48d1d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Event_Dispatch::Return0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -615,6 +650,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x536b80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_74",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537130": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_128",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x537f90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DeleteCommandClass::Undo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x53f4e0": {
   "attempts": 4,
   "first_diff": null,
@@ -762,6 +818,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c0580": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BinkMovieHandle::AddRef",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5c05f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BinkMovieHandle::Close",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5c0e50": {
   "attempts": 2,
   "first_diff": null,
@@ -824,6 +894,13 @@
   "name": "MSPCXAnim::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5d5880": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Timer::DisableHighPrecision",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5d6310": {
   "attempts": 4,
@@ -1217,6 +1294,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7268f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::executeAirstrikeAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x726900": {
   "attempts": 4,
   "first_diff": "+0 mov byte ptr [ecx + 0x44], 0",
@@ -1427,6 +1511,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7b9d70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WWMouseClass::checkStatus",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x7b9d80": {
   "attempts": 3,
   "first_diff": null,
@@ -1473,6 +1564,55 @@
   "attempts": 3,
   "first_diff": null,
   "name": "ImageList::BeginDrag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c89fe": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ImageList::Destroy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c8a04": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ImageList::EndDrag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c8a0a": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ImageList::DragMove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c8a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ImageList::DragShowNolock",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7d1512": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetCurrentThreadId::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7dcee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetCurrentThread::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7dcf22": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  }

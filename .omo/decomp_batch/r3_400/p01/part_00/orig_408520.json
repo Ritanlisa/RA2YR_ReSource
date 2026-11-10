@@ -1,0 +1,11 @@
+{
+ "addr": "0x408520",
+ "name": "AudioController::GetOffset",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x408520",
+ "bytes_hex": "83c108e948efffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

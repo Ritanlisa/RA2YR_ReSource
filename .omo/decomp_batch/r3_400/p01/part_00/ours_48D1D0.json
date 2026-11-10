@@ -1,0 +1,15 @@
+{
+ "symbol": "?Return0@Event_Dispatch@@QAEDXZ",
+ "sym_key": "Event_Dispatch::Return0",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e80000000032c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?Dispatch@Event@@QAEDXZ",
+   "sym_key": "Event::Dispatch"
+  }
+ ]
+}

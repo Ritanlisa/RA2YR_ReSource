@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetOffset@AudioController@@QAEHXZ",
+ "sym_key": "AudioController::GetOffset",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "83c108e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?GetNext@Queue@@QAEHXZ",
+   "sym_key": "Queue::GetNext"
+  }
+ ]
+}
