@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn64@WaypointPathClass@@QAEHXZ",
+ "sym_key": "WaypointPathClass::StubReturn64",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b840000000c3",
+ "relocs": []
+}

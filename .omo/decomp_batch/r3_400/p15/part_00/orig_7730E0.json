@@ -1,0 +1,11 @@
+{
+ "addr": "0x7730E0",
+ "name": "WeaponTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7730E0",
+ "bytes_hex": "b831000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

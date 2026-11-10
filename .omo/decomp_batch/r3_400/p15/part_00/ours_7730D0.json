@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@WeaponTypeClass@@QAEHXZ",
+ "sym_key": "WeaponTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b860010000c3",
+ "relocs": []
+}

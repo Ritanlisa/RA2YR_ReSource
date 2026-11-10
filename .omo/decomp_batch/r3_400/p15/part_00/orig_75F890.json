@@ -1,0 +1,11 @@
+{
+ "addr": "0x75F890",
+ "name": "WaveClass::CheckStateFlag",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x75F890",
+ "bytes_hex": "b803000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
