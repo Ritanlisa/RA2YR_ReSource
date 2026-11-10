@@ -45,6 +45,21 @@ def is_placeholder(name):
     return bool(PLACEHOLDER_RE.match(name or ''))
 
 
+# Function-name placeholder patterns (D-fix 2: honest bookkeeping of
+# half-finished naming -- members resolved, function still on a slot name)
+FN_PLACEHOLDER_RE = re.compile(
+    r'^(sub_[0-9A-Fa-f]+|nullsub_?\d*|j_.*|loc_.*|.*[Vv]t\d+.*'
+    r'|(?:Get|Set)Member\d+|.*_field_0x[0-9A-Fa-f]+.*|field_.*'
+    r'|__pad.*|unknown\d*)$')
+
+# ICF-fold / CRT thunk families: multiple classes' identical bodies folded
+# to one address by the linker -- the owning class is fundamentally
+# indeterminate (vtable address cannot discriminate; minclass_naming_defects
+# lineage).  Backfill cls on these is a stamping artifact, not evidence.
+FOLD_SUSPECT_RE = re.compile(
+    r'^(COMStub_.*|Thunk_.*|.*Thunk_.*|vt\d+.*)$')
+
+
 def j(path):
     with open(os.path.join(ROOT, path), encoding="utf-8") as f:
         return json.load(f)
@@ -65,6 +80,20 @@ def load_sources():
     src["align"] = j("anchors/class_name_align.json")             # rtti -> canon
     src["alias"] = j("anchors/mangled_alias.json")                # illegal-name aliases
     src["ledger"] = j("anchors/signed_default_ledger.json")       # signedness policy
+    try:
+        # IG: bare partial-register member-granularity truth (M:FN:this:0xOFF
+        # -> byte/word), 8,119 entries; highest width authority per user
+        # adjudication 2026-11-09 (root-cause fix for dword-placeholder +
+        # LOBYTE/LOWORD bit surgery).  See .omo/decomp_pilot/REPORT.md.
+        src["ig"] = j("anchors/insn_granularity_types.json")
+    except FileNotFoundError:
+        src["ig"] = {}
+    try:
+        # SG: stack-slot granularity (S:FN:var_XX) -- locals typing, kept for
+        # consumers; not merged into class members.
+        src["sg"] = j("anchors/slot_granularity_types.json")
+    except FileNotFoundError:
+        src["sg"] = {}
     try:
         src["gtypes"] = j("anchors/global_types.json")            # addr -> {type,name}
     except FileNotFoundError:
@@ -238,6 +267,26 @@ def merge_members(cls, size, S, stats):
                 break
         width = width or 4
         derived_w = (recs.get("derived") or {}).get("width")
+        # (IG granularity override moved below verbatim; overlap arbitration
+        # runs as a post-pass over the finished per-offset records)
+        # ---- IG granularity override (user adjudication 2026-11-09):
+        # binary partial-register behavior outranks every declared source.
+        # Named width is preserved in gran_named_width for audit; layout
+        # compatibility (packed vs true-narrow) is resolved per-class below.
+        ig = S["_ig_by_class"].get(cls, {}).get(off)
+        gran_named_width = None
+        if ig:
+            if ig["width"] != width:
+                if ig["width"] < width:
+                    stats["gran_width_narrowed"] += 1
+                else:
+                    stats["gran_width_widened"] += 1
+            else:
+                stats["gran_width_confirmed"] += 1
+            if ig["width"] != width:
+                gran_named_width = width
+                width = ig["width"]
+                width_src = "insn_granularity"
         members[off] = {
             "name": name,          # None => padding-only span
             "type": typ,
@@ -247,8 +296,47 @@ def merge_members(cls, size, S, stats):
             "src": "%s|%s/%s" % (name_src or "-", type_src or "-",
                                  width_src or "-"),
         }
+        if gran_named_width is not None:
+            members[off]["gran_named_width"] = gran_named_width
+        if ig:
+            members[off]["gran_types"] = sorted(ig["types"])
+            members[off]["gran_count"] = ig["count"]
         if name_src and type_src and name_src != type_src:
             stats["name_type_src_split"] += 1
+
+    # ---- full-slot overlap arbitration (D-fix 3, 2026-11-10)
+    # Symptom (user-reported): `char lightConvert[3] /* ptr */` -- an aligned
+    # w4 semantic member (CellClass@0x10 LightConvertClass*) gets its span
+    # sliced by a lower-value w4 record claiming a *strictly interior*,
+    # misaligned base (csp_canon gap-fill hypotheses @0x12/@0x13 in this
+    # case; the completed 1,120-class header pipeline confirms 0x10 is a
+    # full pointer and nothing else lives at 0x12/0x13).
+    #
+    # Mechanical rule (narrow by construction): record B is DROPPED when
+    #   * a record A exists with A.width == 4 and A.offset % 4 == 0
+    #   * A.offset < B.offset < A.offset + 4   (strictly interior base)
+    #   * B.width == 4                         (full-slot claim -- packed
+    #     byte/word views are w1/w2 and NEVER fire this rule; they are the
+    #     IG-adjudicated narrow/packed members and stay untouched)
+    # Survivors keep the dropped offsets in `fullslot_conflicts_dropped`
+    # for audit; the count lands in stats["fullslot_overlap_dropped"].
+    drop = []
+    for off_b in sorted(members):
+        mb = members[off_b]
+        if int(mb.get("width") or 4) != 4:
+            continue
+        for off_a in sorted(members):
+            ma = members[off_a]
+            if int(ma.get("width") or 4) != 4 or int(off_a) % 4 != 0:
+                continue
+            if int(off_a) < int(off_b) < int(off_a) + 4:
+                drop.append(off_b)
+                ma.setdefault("fullslot_conflicts_dropped", []).append(
+                    int(off_b))
+                stats["fullslot_overlap_dropped"] += 1
+                break
+    for off_b in drop:
+        del members[off_b]
     return members
 
 
@@ -274,6 +362,44 @@ def build():
     for c in groups:
         groups[c].sort()
     S["_canon_groups"] = groups
+
+    # ---- IG member-granularity index: (canon cls, off) -> {width,types,count}
+    # M:<fn>:this:0x<off> entities joined through signals fn->cls; narrowest
+    # evidence wins within a slot (byte < word).
+    fn_cls = {}
+    for addr, s in S["signals"]["symbols"].items():
+        if isinstance(s, dict) and s.get("cls"):
+            fn_cls[addr.lower().replace("0x", "")] = s["cls"]
+    ig_by_class = {}
+    ig_ents = 0
+    for e in (S["ig"].get("evidence") or []):
+        ent = e.get("ent") or ""
+        if not ent.startswith("M:"):
+            continue
+        parts = ent.split(":")
+        if len(parts) != 4 or parts[2] != "this":
+            continue
+        fn = parts[1].lower()
+        try:
+            off = int(parts[3], 16)
+        except ValueError:
+            continue
+        cls = fn_cls.get(fn)
+        if cls is None:
+            continue
+        t0 = (e.get("types") or [""])[0]
+        w = 1 if "char" in t0 else (2 if "short" in t0 else 4)
+        rec = ig_by_class.setdefault(cls, {}).setdefault(
+            off, {"width": 4, "types": set(), "count": 0, "fns": set()})
+        rec["types"].update(e.get("types") or [])
+        rec["count"] += 1
+        rec["fns"].add(fn)
+        if w < rec["width"]:
+            rec["width"] = w
+        ig_ents += 1
+    S["_ig_by_class"] = ig_by_class
+    stats["ig_entities_joined"] = ig_ents
+    stats["ig_slots"] = sum(len(v) for v in ig_by_class.values())
 
     # ---- member_types raw-class index (avoids O(classes x 60K) scans)
     mt_by_class = {}
@@ -338,6 +464,31 @@ def build():
             stats["member_total"] += len(rec["members"])
             stats["named_members"] += sum(
                 1 for m in rec["members"].values() if m["name"])
+            # ---- IG layout compatibility (packed vs true-narrow member).
+            # For every IG-narrowed slot (gran width < named/4): if the
+            # remaining bytes of the dword slot are covered by ADJACENT
+            # named members => packed pair (declare both, no hole); else
+            # => true narrow member (tail hole stays implicit).  Advisory
+            # fields only -- no evidence is dropped either way.
+            mems = rec["members"]
+            for off_s, m in list(mems.items()):
+                off = int(off_s)
+                if m.get("width_src") != "insn_granularity":
+                    continue
+                w = m["width"]
+                slot_end = off + int(m.get("gran_named_width") or 4)
+                covered = 0
+                for off2_s, m2 in mems.items():
+                    o2 = int(off2_s)
+                    if o2 <= off or o2 >= slot_end:
+                        continue
+                    covered += min(int(o2 + (m2.get("width") or 4)), slot_end) - o2
+                if covered >= slot_end - (off + w):
+                    m["gran_layout"] = "packed"
+                else:
+                    m["gran_layout"] = "narrow"
+                    stats["gran_true_narrow"] += 1
+                stats["gran_layout_resolved"] += 1
         # ---- slots (vtable authority)
         # pick order: exact canon name in vsa > any raw key of this canon >
         # template-family representative (most slots, then lowest vtable)
@@ -416,17 +567,81 @@ def build():
                 rec.setdefault("warnings", []).append(
                     "ancestor %s size %d >= %s size %d" % (anc, a["size"], cname, rec["size"]))
 
-    # ---- functions (signals authority)
+    # ---- functions (signals authority) + fn->cls dual-source alignment
+    # (D-fix 1/2, 2026-11-10: class-prefix/file misalignment +
+    # half-finished naming)
+    #
+    # cls arbitration sources:
+    #   A. backfill.cls  -- G5 fleet ICF-folding correction (highest)
+    #   B. signals cls   -- fleet channel
+    #   C. vsa owner     -- vtable_slot_authority PRIMARY table membership
+    #                       (binary identity); only when EXACTLY ONE class's
+    #                       main table claims the addr (multi-claim ==
+    #                       inherited implementation, no discriminative power)
+    #   D. name prefix   -- 'X::Y' -> X (stale under ICF folding)
+    # final = A || B || C || D; disagreements recorded in cls_conflicts;
+    # the prefix NEVER overrides A/B/C (folded names are stale by
+    # construction -- RawFileClass::GetMember06 case).
+    vsa_owner = {}     # addr_low -> {canon_cls: [slot, ...]}
+    for raw_cls, ent in S["vsa"].items():
+        ccls = canon(raw_cls)
+        for slot_no, srec in (ent.get("slots") or {}).items():
+            a = (srec.get("addr") or "").lower().replace("0x", "")
+            if a:
+                vsa_owner.setdefault(a, {}).setdefault(ccls, []).append(
+                    int(slot_no))
+
     functions = {}
     for addr, s in S["signals"]["symbols"].items():
         if not isinstance(s, dict):
             continue
+        name = s.get("name")
+        a_low = addr.lower().replace("0x", "")
+        prefix_cls = str(name).split("::")[0] if "::" in str(name) else None
+        owner_map = vsa_owner.get(a_low)
+        owner_cls = None
+        if owner_map and len(owner_map) == 1:
+            owner_cls = next(iter(owner_map))
+        bf = s.get("backfill") if isinstance(s.get("backfill"), dict) else {}
+        bf_cls = bf.get("cls")
+        sig_cls = s.get("cls")
+        eff = bf_cls or sig_cls          # fleet-corrected effective cls
+        cls_src = None
+        if eff:
+            cls_src = ("backfill" if bf_cls and bf_cls == eff
+                       else "signals_cls")
+        conflicts = {}
+        if bf_cls and sig_cls and bf_cls != sig_cls:
+            conflicts["backfill_vs_signals_cls"] = [sig_cls, bf_cls]
+        if eff and owner_cls and owner_cls != eff:
+            conflicts["fleet_vs_vsa_owner"] = [eff, owner_cls]
+        if eff and prefix_cls and prefix_cls != eff:
+            conflicts["name_prefix_vs_effective"] = [prefix_cls, eff]
+        if eff is None:
+            if owner_cls:
+                eff, cls_src = owner_cls, "vsa_owner"
+                stats["cls_supplied_by_vsa"] += 1
+            elif prefix_cls:
+                eff, cls_src = prefix_cls, "name_prefix"
+                stats["cls_supplied_by_prefix"] += 1
+        elif prefix_cls and prefix_cls != eff:
+            stats["cls_prefix_misaligned"] += 1
+        method = str(name).split("::")[-1] if name else None
+        fold_suspect = bool((method and (method.startswith("?")
+                                         or FOLD_SUSPECT_RE.match(method)))
+                            or (name and str(name).startswith("?")))
         functions[addr] = {
-            "name": s.get("name"),
+            "name": name,
+            "method": method,
+            "name_placeholder": bool(FN_PLACEHOLDER_RE.match(method or "")),
+            "cls_fold_suspect": fold_suspect,
             "cc": s.get("call_convention"),
             "ret": s.get("return_type"),
             "params": s.get("params") or [],
-            "cls": s.get("cls"),
+            "cls": eff,
+            "cls_src": cls_src,
+            "cls_conflicts": conflicts or None,
+            "vsa_owner_cls": owner_cls,
             "completed": bool(s.get("completed")),
             "translated": bool(s.get("translated")),
             "done": bool(s.get("done")),
