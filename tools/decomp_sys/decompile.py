@@ -431,6 +431,7 @@ def run_function(addr, reg, views, idx):
     ctx = FunctionCtx(ex, sig, reg, views)
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
+    passes.pass_struct_globals(ctx)
     passes.pass_thislike_param(ctx)
     passes.pass_this_ptr_math(ctx)
     passes.pass_intrinsics_abs(ctx)

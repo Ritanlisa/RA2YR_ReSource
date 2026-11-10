@@ -179,6 +179,45 @@ class Registry(object):
                             "member_lookup:%s" % k
         return None, None, None
 
+    def member_offset_inherited(self, cls, ida_name):
+        """R5: member_lookup parks inherited members on DERIVED classes
+        with `inherited_from=<base>`; the base's own table misses them
+        (planningPathIdx/unknownShort524/528 live on AircraftClass with
+        inherited_from=FootClass).  Absolute offsets stand, so a name hit
+        with inherited_from == cls resolves the base-class offset.
+
+        Tier 2 (deep base chain, e.g. BuildingClass body referencing the
+        ObjectClass-level `nextObject`): every derived class of the true
+        owner parks the SAME absolute offset.  Accept only when ALL
+        candidates agree (unambiguous name).
+
+        Returns (offset, record, source) or (None, None, None).
+        """
+        if self._ml is None:
+            self._ml = _j(MEMBER_LOOKUP)
+        keys = set(self.class_keys(cls))
+        agree = {}
+        for grp_cls, grp in self._ml.items():
+            for o_s, mm in grp.items():
+                if mm.get("name") != ida_name or not mm.get("inherited_from"):
+                    continue
+                o = int(o_s)
+                if mm.get("inherited_from") in keys:
+                    # tier 1: parked on a derivative of THIS class
+                    return o, {
+                        "offset": o, "name": ida_name,
+                        "type": mm.get("type"),
+                        "width": mm.get("size") or 4,
+                    }, "member_lookup_inherited:%s" % grp_cls
+                agree.setdefault(o, []).append(grp_cls)
+        if len(agree) == 1:
+            o = next(iter(agree))
+            return o, {
+                "offset": o, "name": ida_name, "type": None,
+                "width": 4,
+            }, "member_lookup_inherited_agree:%dcls" % len(agree[o])
+        return None, None, None
+
     def member_all_offsets(self, cls, name):
         """Every (offset, source) claiming this member name, across
         decomp_registry / member_lookup / class_layouts. Used for disasm-

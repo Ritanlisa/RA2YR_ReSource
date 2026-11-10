@@ -190,21 +190,31 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             continue
         cc = {"__fastcall": " __fastcall",
               "__stdcall": " __stdcall"}.get(s.get("cc"), "")
+        # R5: VC6 rejects `__thiscall` as a declaration keyword (C4234);
+        # callee pseudo-sigs can carry it inside param/ret spellings
+        ret = (s["ret"] or "int").replace("__thiscall", "__stdcall")
+        params = [(t.replace("__thiscall", "__stdcall"), n)
+                  for t, n in s["params_spelled"]]
         lines.append("    %s%s %s(%s);  // 0x%s" % (
-            s["ret"], cc, s["method"], ", ".join(
-                "%s %s" % (t, n) for t, n in s["params_spelled"]),
+            ret, cc, s["method"], ", ".join(
+                "%s %s" % (t, n) for t, n in params),
             s["addr"][2:].upper().lstrip("0").zfill(6)))
     lines.append("};")
     lines.append("")
     if used_globals:
         lines.append("// ---- globals used by this unit (registry names)")
         for name in sorted(used_globals):
-            lines.append("extern %s %s;" % (used_globals[name], name))
+            ty = used_globals[name]
+            if ty.endswith("[]"):
+                # R5 struct globals: byte-arithmetic carrier
+                lines.append("extern %s %s[];" % (ty[:-2], name))
+            else:
+                lines.append("extern %s %s;" % (ty, name))
         lines.append("")
     if extra_externs:
         lines.append("// ---- global callee prototypes (R3 non-leaf)")
         for d in extra_externs:
-            lines.append(d)
+            lines.append(d.replace("__thiscall", "__stdcall"))
         lines.append("")
     lines.append("#endif  // %s" % guard_of(cls))
     lines.append("")

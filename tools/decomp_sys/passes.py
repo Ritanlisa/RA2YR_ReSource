@@ -248,6 +248,146 @@ def pass_globals(ctx):
                     True))
 
 
+# ---------------------------------------------------------------- pass: struct globals
+#
+# R5: the IDA export renders struct-global member access in forms that are
+# NOT C++ and poisoned whole units (C2059 '?', C2228 `.__pad_58`, C2109):
+#
+#   stru_A8EB00.?[948]          unknown member at byte offset 948 (decimal)
+#   stru_87F5F0.__pad_58[416]   pad member 0x58 (hex) indexed (byte elems)
+#   G->__pad_140[4 * p0 + 208]  member access THROUGH a global pointer var
+#
+# -> char-pointer arithmetic; `stru_X` gets `extern char stru_X[];`
+# (same symbol spelling, reloc key unchanged).
+
+_STRU_QMARK_IDX = re.compile(r"\b(stru_[0-9A-Fa-f]{6,})\.\?\[(\d+)\]")
+_STRU_PAD = re.compile(r"\b(stru_[0-9A-Fa-f]{6,})\.__pad_([0-9A-Fa-f]+)")
+_ARROW_PAD = re.compile(r"\b([A-Za-z_]\w*)\->__pad_([0-9A-Fa-f]+)")
+
+
+def _balanced_close(text, start):
+    """text[start] is '[' or '(' -> index of the matching close, or -1."""
+    open_c = text[start]
+    close_c = {"(": ")", "[": "]"}[open_c]
+    depth = 0
+    for i in range(start, len(text)):
+        if text[i] == open_c:
+            depth += 1
+        elif text[i] == close_c:
+            depth -= 1
+            if depth == 0:
+                return i
+    return -1
+
+
+def pass_struct_globals(ctx):
+    text = "\n".join(ctx.lines)
+    if not hasattr(ctx, "used_globals"):
+        ctx.used_globals = {}
+    changed = 0
+
+    def sub_indexed(prefix_pat, base_group, off_group):
+        """Generic: `BASE.__pad_H` (+ optional balanced [idx]) -> char* form."""
+        nonlocal text, changed
+        out = []
+        pos = 0
+        for m in prefix_pat.finditer(text):
+            if m.start() < pos:
+                continue
+            idx_expr = None
+            j = m.end()
+            if j < len(text) and text[j] == "[":
+                k = _balanced_close(text, j)
+                if k > 0:
+                    idx_expr = text[j + 1:k]
+                    after = k + 1
+                else:
+                    continue        # unbalanced: leave
+            else:
+                after = m.end()
+            base = m.group(base_group)
+            off = int(m.group(off_group), 16)
+            if idx_expr is not None and idx_expr.strip():
+                rep = "((char *)%s)[0x%X + (%s)]" % (base, off, idx_expr)
+            else:
+                rep = "((char *)%s)[0x%X]" % (base, off)
+            out.append(text[pos:m.start()])
+            out.append(rep)
+            pos = after
+            changed += 1
+        out.append(text[pos:])
+        text = "".join(out)
+
+    # 1. stru_X.?[N] -- unknown member, direct byte offset
+    def qm(m):
+        nonlocal changed
+        changed += 1
+        ctx.used_globals.setdefault(m.group(1), "char[]")
+        return "((char *)%s)[%s]" % (m.group(1), m.group(2))
+    text = _STRU_QMARK_IDX.sub(qm, text)
+
+    # 2. stru_X.__pad_H[M] -- register the extern for every stru_ pad name
+    #    present (sub_indexed rewrites the text)
+    stru_seen = set()
+    for m in _STRU_PAD.finditer(text):
+        stru_seen.add(m.group(1))
+    sub_indexed(_STRU_PAD, 1, 2)
+    for s in stru_seen:
+        ctx.used_globals.setdefault(s, "char[]")
+
+    # 3. G->__pad_H[idx] -- member through a global POINTER variable
+    #    (base is the global's name after registry rename; `this` and
+    #    locals are excluded -- existing member paths own those)
+    locals_ = set(ctx.sig.get("param_names") or [])
+    for m in _LOCAL_DECL.finditer(text):
+        locals_.add(m.group(1))
+
+    def arrow_ok(base):
+        if base == "this" or base in locals_:
+            return False
+        return True
+
+    out = []
+    pos = 0
+    for m in _ARROW_PAD.finditer(text):
+        if m.start() < pos:
+            continue
+        base = m.group(1)
+        if not arrow_ok(base):
+            continue
+        idx_expr = None
+        j = m.end()
+        if j < len(text) and text[j] == "[":
+            k = _balanced_close(text, j)
+            if k > 0:
+                idx_expr = text[j + 1:k]
+                after = k + 1
+            else:
+                continue
+        else:
+            after = m.end()
+        off = int(m.group(2), 16)
+        if idx_expr is not None and idx_expr.strip():
+            rep = "((char *)%s)[0x%X + (%s)]" % (base, off, idx_expr)
+        else:
+            rep = "((char *)%s)[0x%X]" % (base, off)
+        out.append(text[pos:m.start()])
+        out.append(rep)
+        pos = after
+        changed += 1
+        ctx.sites.append(Site(
+            "global", "%s->__pad_%s" % (base, m.group(2)),
+            "global-ptr pad member -> char* arithmetic (0x%X)" % off, True))
+    out.append(text[pos:])
+    text = "".join(out)
+
+    if changed:
+        ctx.sites.append(Site(
+            "global", "%d sites" % changed,
+            "struct-global member forms -> char* arithmetic", True))
+        ctx.lines = text.split("\n")
+
+
 # ---------------------------------------------------------------- pass: this-ptr math
 #
 # When the export proto types `this` as a PRIMITIVE pointer (`double *this`,
@@ -973,7 +1113,17 @@ def _parse_index_expr(idx):
 
 
 def _member_record_for(ctx, mem_name):
-    return ctx.reg.member_offset_by_ida_name(ctx.sig["cls"], mem_name)
+    r = ctx.reg.member_offset_by_ida_name(ctx.sig["cls"], mem_name)
+    if r is not None and r[0] is not None:
+        return r
+    # R5: cross-class inherited_from fallback (base table misses members
+    # parked on derived classes -- planningPathIdx C2039 family)
+    inh = getattr(ctx.reg, "member_offset_inherited", None)
+    if inh is not None:
+        r2 = inh(ctx.sig["cls"], mem_name)
+        if r2 is not None and r2[0] is not None:
+            return r2
+    return r
 
 
 def _view_name(rec, off, suffix=""):
@@ -1454,6 +1604,56 @@ def pass_member_shapes(ctx):
         return "this->" + reg_name
 
     text = _MEM_DIRECT.sub(erpl, text)
+
+    # R5: through-pointer member views (`v4->nextObject` on a typed local
+    # `BuildingClass *v4`): the pilot hpp of the POINTER'S class must
+    # declare the member too (C2039-through-local family).  Record the
+    # view; the body spelling never changes here.
+    ptr_decls = {}
+    for dm in re.finditer(
+            r"\b([A-Z]\w*)\s*\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
+        ptr_decls[dm.group(2)] = dm.group(1)
+    if ptr_decls:
+        for am in re.finditer(r"\b([A-Za-z_]\w*)\s*->\s*([A-Za-z_]\w*)", text):
+            base, mem = am.group(1), am.group(2)
+            cls2 = ptr_decls.get(base)
+            if not cls2 or base == "this":
+                continue
+            if text[am.end():am.end() + 1] == "(":
+                continue        # method call through pointer: not a data view
+            moff2 = None
+            rec2 = None
+            r2 = ctx.reg.member_offset_by_ida_name(cls2, mem)
+            if r2 is not None and r2[0] is not None:
+                moff2, rec2, src2 = r2
+            else:
+                inh2 = getattr(ctx.reg, "member_offset_inherited", None)
+                if inh2 is not None:
+                    r3 = inh2(cls2, mem)
+                    if r3 is not None and r3[0] is not None:
+                        moff2, rec2, src2 = r3
+            if moff2 is None:
+                continue
+            have2 = ctx.views.scalars.get(cls2, {}).get(moff2, {})
+            if any(v.get("name") == mem for v in have2.values()):
+                continue
+            w2 = int((rec2 or {}).get("width") or 4)
+            ty2 = (rec2 or {}).get("type")
+            sp2 = spell_type(ty2) if ty2 else None
+            if sp2 and sp2.endswith("*") and w2 == 4:
+                pass            # true pointer
+            elif sp2 and WIDTH_OF.get(sp2) == w2:
+                pass
+            else:
+                sp2 = {1: "unsigned char", 2: "short", 4: "int",
+                       8: "__int64"}.get(w2, "int")
+            ctx.views.add_scalar(cls2, moff2,
+                                 _ROLE_OF_W.get(w2, "dword"), mem,
+                                 sp2, w2, src2 or "ptr-local")
+            ctx.sites.append(Site(
+                "member_name", "%s->%s" % (base, mem),
+                "through-pointer view recorded for %s@0x%X (%s)"
+                % (cls2, moff2, src2), True))
     ctx.lines = text.split("\n")
 
 
@@ -1742,22 +1942,41 @@ def pass_scope_shrink(ctx):
                   for v in decls}
 
     # classify each var: first touching flow stmt, def stmts, read count
+    # R5: nested-aware.  The first mention may live INSIDE an if/else body
+    # (`v4 = ...` in both branches) while the first TOP-LEVEL mention comes
+    # after the compound -- the old placement emitted `int v4;` after the
+    # uses (C2065 `v4` undeclared, 24-fn family).  Placement now uses the
+    # earliest enclosing top-level stmt over the FULL nested text.
+    def full_txt_of(st):
+        parts = [txt_of(st)]
+        stack = list(reversed(st.children or []))
+        while stack:
+            c = stack.pop()
+            parts.append(txt_of(c))
+            stack.extend(reversed(c.children or []))
+        return "\n".join(parts)
+
+    flow_full = [(st, full_txt_of(st)) for st in flow]
+    all_full_text = "\n".join(ft for _st, ft in flow_full)
+
     info = {}
     for var in decls:
+        vpat = re.compile(r"\b%s\b" % re.escape(var))
+        vdef = re.compile(r"^%s\s*=[^=]" % re.escape(var))
         first = None
         defs = []
-        for st in flow:
+        for st, ft in flow_full:
             t = txt_of(st)
-            if re.match(r"^%s\s*=[^=]" % re.escape(var), t.strip()):
-                if first is None:
-                    first = st
+            is_tl_def = bool(vdef.match(t.strip()))
+            if first is None and (is_tl_def or vpat.search(t)
+                                  or vpat.search(ft)):
+                first = st       # earliest mention at ANY depth wins
+            if is_tl_def:
                 defs.append(st)
-            elif re.search(r"\b%s\b" % re.escape(var), t):
-                if first is None:
-                    first = st
-        reads = len(re.findall(r"\b%s\b" % re.escape(var), flow_text))
-        for st in defs:
-            reads -= 1
+        reads = len(vpat.findall(all_full_text))
+        for line in all_full_text.split("\n"):
+            if vdef.match(line.strip()):
+                reads -= 1
         info[var] = {"first": first, "defs": defs, "reads": reads}
 
     absorbed = set()      # id(stmt) of defs merged into decls
@@ -1877,40 +2096,50 @@ def pass_macro_residual_sweep(ctx):
     not consume: rewrite to arithmetic fallback (S* variants sign-extend)."""
     text = "\n".join(ctx.lines)
 
-    def repl(m):
-        macro = m.group(1)
-        w, sh, sgn = _RESIDUAL_MACROS[macro]
-        # capture the balanced argument
-        start = m.end()
-        depth = 1
-        end = start
-        for i in range(start, len(text)):
-            if text[i] == "(":
-                depth += 1
-            elif text[i] == ")":
-                depth -= 1
-                if depth == 0:
-                    end = i
-                    break
-        arg = text[start:end]
-        mask = "0xFF" if w == 1 else "0xFFFF"
-        out = "((%s) & %s)" % (arg, mask) if not sh else \
-            "((%s >> %d) & %s)" % (arg, 8 * sh, mask)
-        if sgn:
-            out = "(short)(%s)" % out
-        ctx.sites.append(Site(
-            "intrinsic", "%s(%s)" % (macro, arg[:60]),
-            "RESIDUAL SWEEP: no evidence path consumed it -> arithmetic "
-            "fallback (zero-tolerance)", False))
-        return out
+    def splice_macros(text):
+        # R5: the OLD re.sub replaced only the matched `MACRO(` span and
+        # LEFT THE ARGUMENT TEXT IN PLACE (`LOWORD(x)` -> `((x) & 0xFFFF)x)`)
+        # -- unbalanced parens shredded every later statement parse
+        # (C2143/C2059 batch family).  Consume the FULL `MACRO(arg)` span.
+        out = []
+        pos = 0
+        for m in _RESIDUAL_MACRO_CALL.finditer(text):
+            if m.start() < pos:
+                continue
+            if re.match(r"^[+\-*/|&^%]?=(?!=)", text[m.end():m.end() + 3]):
+                continue        # store forms (handled upstream)
+            macro = m.group(1)
+            w, sh, sgn = _RESIDUAL_MACROS[macro]
+            start = m.end()
+            depth = 1
+            end = -1
+            for i in range(start, len(text)):
+                if text[i] == "(":
+                    depth += 1
+                elif text[i] == ")":
+                    depth -= 1
+                    if depth == 0:
+                        end = i
+                        break
+            if end < 0:
+                continue        # unbalanced: leave untouched
+            arg = text[start:end]
+            mask = "0xFF" if w == 1 else "0xFFFF"
+            rep = "((%s) & %s)" % (arg, mask) if not sh else \
+                "((%s >> %d) & %s)" % (arg, 8 * sh, mask)
+            if sgn:
+                rep = "(short)(%s)" % rep
+            ctx.sites.append(Site(
+                "intrinsic", "%s(%s)" % (macro, arg[:60]),
+                "RESIDUAL SWEEP: no evidence path consumed it -> arithmetic "
+                "fallback (zero-tolerance)", False))
+            out.append(text[pos:m.start()])
+            out.append(rep)
+            pos = end + 1
+        out.append(text[pos:])
+        return "".join(out)
 
-    # skip store forms (tail '='); those were handled or are broken anyway
-    def guarded(m):
-        if re.match(r"^[+\-*/|&^%]?=(?!=)", text[m.end():m.end() + 3]):
-            return m.group(0)
-        return repl(m)
-
-    text = _RESIDUAL_MACRO_CALL.sub(guarded, text)
+    text = splice_macros(text)
     ctx.lines = text.split("\n")
 
 
@@ -1999,8 +2228,80 @@ def pass_era_normalize(ctx):
         text = re.sub(pat, sp, text)
     # whole-object zero init (ctor pattern): `*this = 0;` -> memset
     text = text.replace("*this = 0;", "memset(this, 0, sizeof(*this));")
+    # R5: blanket return cast to the signature's return type -- pointer /
+    # int return-value disagreements between proto spellings were C2440
+    # batch families (`return p0;` int* vs unsigned int* ret).  The cast
+    # is the same conversion the compiler applied implicitly when legal.
+    ret_ty = ctx.sig.get("ret") or "int"
+    if ret_ty != "void":
+        def _ret_wrap(m):
+            expr = m.group(2).strip()
+            if not expr:
+                return m.group(0)
+            if expr.startswith("(%s)" % ret_ty) or \
+                    expr.startswith("( %s )" % ret_ty):
+                return m.group(0)
+            return "%sreturn (%s)(%s);" % (m.group(1), ret_ty, expr)
+        text = re.sub(r"^(\s*)return\s+(.+?);\s*$", _ret_wrap, text,
+                      flags=re.M)
+    # R5: CRT string family rejects unsigned char* args (C2664 strcpy
+    # family).  Wrap every top-level arg in an explicit (char *) cast --
+    # identity on char*, legal coercion on unsigned char* / void*.
+    text = _crt_string_casts(text)
     ctx.lines = text.split("\n")
     ctx.stmts = None   # lines are authoritative post-normalization
+
+
+_CRT_STR_FNS = ("strcpy", "strcat", "strcmp", "strlen", "strncpy",
+                "strncmp", "strchr", "strrchr", "strstr", "strupr",
+                "strlwr", "strdup")
+
+
+def _crt_string_casts(text):
+    """Fixed-arity char* CRT family only (sprintf's variadic tail would be
+    corrupted by blanket casts)."""
+    for fn in _CRT_STR_FNS:
+        pat = re.compile(r"\b%s\s*\(" % fn)
+        out = []
+        pos = 0
+        for m in pat.finditer(text):
+            if m.start() < pos:
+                continue
+            op = m.end() - 1
+            cl = _balanced_close(text, op)
+            if cl < 0:
+                continue
+            inner = text[op + 1:cl]
+            if not inner.strip():
+                continue
+            # split top-level commas
+            args = []
+            depth = 0
+            cur = []
+            for ch in inner:
+                if ch in "([":
+                    depth += 1
+                elif ch in ")]":
+                    depth -= 1
+                if ch == "," and depth == 0:
+                    args.append("".join(cur))
+                    cur = []
+                else:
+                    cur.append(ch)
+            args.append("".join(cur))
+            new_args = []
+            for a in args:
+                a2 = a.strip()
+                if not a2 or a2.startswith("("):
+                    new_args.append(a)
+                    continue
+                new_args.append("(char *)(%s)" % a2)
+            out.append(text[pos:m.start()])
+            out.append("%s(%s)" % (fn, ", ".join(new_args)))
+            pos = cl + 1
+        out.append(text[pos:])
+        text = "".join(out)
+    return text
 
 
 # ---------------------------------------------------------------- pass: callees
