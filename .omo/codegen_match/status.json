@@ -3395,7 +3395,7 @@
   "status": "OK"
  },
  "0x55a9b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LocomotionClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3486,84 +3486,84 @@
   "status": "OK"
  },
  "0x565b00": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MapClass::FreeAllCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56bd40": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "CrateClass::FindPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d100": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+35 mov ecx, 0x87f7e8",
   "name": "MapSeed::CheckTileMatch",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x56d230": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MapClass::GetTileIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d460": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Cell::SetRadar",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56d5a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "CellClass::DetermineTileConnectivity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x56e7c0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "MapClass::CheckCellsBuildable",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x578290": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LayerClass::CellIteratorNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578390": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MapClass::IsRectInBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578460": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LayerClass::IsWithinUsableArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578540": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x578710": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3577,14 +3577,14 @@
   "status": "NG"
  },
  "0x5855a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LayerClass::AssignCellOwnership",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x586360": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3598,35 +3598,35 @@
   "status": "OK"
  },
  "0x5865f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "CellClass::SpiralFindClosest",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x586780": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x586ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ClampToCellBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x588ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LayerClass::ClearFactoryCellAssignments",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x589370": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass::AllocateCellDataBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
