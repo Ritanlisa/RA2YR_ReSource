@@ -1,0 +1,51 @@
+{
+ "symbol": "?GetStartCoords@HouseClass@@QAEPAIPAH@Z",
+ "sym_key": "HouseClass::GetStartCoords",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "8b81945400008b15b403000083ec10663bc27516568bf0c1fe10663b35b60300005e75068b81905400003bc28944240075248b4424148b0d1404000089088b15180400008950048b0d1c04000089480883c410c204008d542400b9f801000052e8000000008b088d5424045250ff51488b4c24148b1089118b50048951048b40088941088bc183c410c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 97,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAF@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}
