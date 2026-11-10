@@ -1,0 +1,11 @@
+{
+ "addr": "0x758EA0",
+ "name": "VoxelRenderer::ProjectVertex",
+ "size": 198,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x758EA0",
+ "bytes_hex": "8a44241083ec0884c05356578bf174048b0eeb05b901000000c744240c0050c347ba01000000bf030000008a44242484c08b06740b3bd07c723b56047e0beb6b3bd07c053b56047e628b461033db03c78a18895c241033dbdb4424108a5801895c241033dbd86c2418db4424108a5802895c2410d86c241cdb442410d86c2420d9c0d8c9d9c2d8cbdec1d9c3d8ccdec1dddbddd8ddd8d854240cdfe0f6c4017408d95c240c8bcaeb02ddd883c7034281ff000300000f8c70ffffff5f5e8ac15b83c408c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
