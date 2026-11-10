@@ -7,7 +7,7 @@ int AudioStream::SetupPlayback()
         char * v1 = (char *)this->m0A8[0];
         int v2 = 0;
         int v3 = 0;
-        this->m1E0 = v1;
+        this->m1E0 = (unsigned char *)v1;
         if ( v1 == 0 || (this->m018[0] & 0x20) != 0 )
         {
             return 0;

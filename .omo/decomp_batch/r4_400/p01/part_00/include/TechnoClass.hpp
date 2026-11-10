@@ -2,7 +2,9 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
+class CellClass;
 class Coord;
 class House;
 class HouseClass;
@@ -57,7 +59,9 @@ extern int TriggerTypeClass__ReadINI(int a0, int a1, int a2, int a3, int a4);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
+class CellClass;
 class Coord;
 class House;
 class ObjectClass;
@@ -91,7 +95,9 @@ extern int TriggerTypeClass__ReadINI(int a0, int a1, int a2, int a3, int a4);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
+class CellClass;
 class Coord;
 class House;
 class ProgressTimer;
@@ -125,7 +131,9 @@ extern int TriggerTypeClass__ReadINI(int a0, int a1, int a2, int a3, int a4);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
+class CellClass;
 class Coord;
 class ObjectClass;
 class ProgressTimer;
@@ -160,7 +168,9 @@ extern int TriggerTypeClass__ReadINI(int a0, int a1, int a2, int a3, int a4);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
+class CellClass;
 class House;
 class ObjectClass;
 class ProgressTimer;
@@ -194,6 +204,8 @@ extern int TriggerTypeClass__ReadINI(int a0, int a1, int a2, int a3, int a4);
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
+class CellClass;
 class Coord;
 class House;
 class ObjectClass;

@@ -2,6 +2,7 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class ProgressTimer;
 
 #ifndef DECOMP_PILOT_BUILDINGCLASS_HPP
@@ -33,6 +34,7 @@ public:
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class AbstractClass;
 class BuildingClass;
 
 #ifndef DECOMP_PILOT_PROGRESSTIMER_HPP

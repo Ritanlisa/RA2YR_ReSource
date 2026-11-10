@@ -156,7 +156,7 @@
    "addr": "0x404700",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\AudioStream.cpp(11) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\A",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\AudioStream.cpp(24) : error C2440: '=' : cannot convert from 'char *' to 'unsigned char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "AudioStream::SetupPlayback",
@@ -164,7 +164,7 @@
    "unit": "AudioStream",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/16",
+   "sites": "17/17",
    "rule_violations": 5
   },
   {
@@ -186,7 +186,7 @@
    "addr": "0x624fc0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\HashTable.cpp(30) : error C2440: '=' : cannot convert from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\HashTable.cp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\HashTable.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p01\\part_00\\Ha",
    "first_diff": null,
    "pathology": null,
    "name": "HashTable_flat::Grow2",
@@ -194,7 +194,7 @@
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "13/15",
+   "sites": "14/16",
    "rule_violations": 5
   },
   {

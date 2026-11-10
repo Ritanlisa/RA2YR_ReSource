@@ -21,7 +21,7 @@ public:
     char __pad_0B0[40];  // 0x0B0
     int m0D8[1];  /* element view */  // 0x0D8
     char __pad_0DC[260];  // 0x0DC
-    unsigned int m1E0;  // 0x1E0
+    unsigned char * m1E0;  // 0x1E0
     char __pad_1E4[1500];  // 0x1E4
 
     // DECOMP_SIZECHECK(AudioStream, AudioStream, 1984);
