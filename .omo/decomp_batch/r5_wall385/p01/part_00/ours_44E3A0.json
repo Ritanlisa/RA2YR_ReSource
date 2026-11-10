@@ -1,0 +1,21 @@
+{
+ "symbol": "?CheckOverlapWithOthers@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::CheckOverlapWithOthers",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "51538bd955568b038d4c240c575153ff90b80100008b138b286a0053ff92080100008b7424108bf8668b07663dff7f75fa6639470275f403c58bcd33c68d54241025ff0000005233f0668b4702c1f91003c1b9f801000033c683c70425ff00000033f089742414e8000000008b80e400000085c0741b3bd8750b33c98a48308bc13bd874f585c0749f5f5e5db0015b59c35f5e5d32c05b59c3",
+ "relocs": [
+  {
+   "off": 83,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAF@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

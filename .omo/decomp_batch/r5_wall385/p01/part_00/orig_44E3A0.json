@@ -1,0 +1,11 @@
+{
+ "addr": "0x44E3A0",
+ "name": "BuildingClass::CheckOverlapWithOthers",
+ "size": 156,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x44E3A0",
+ "bytes_hex": "83ec0c535556578bf98d4c24188b07518bcfff90b80100008b288b176a008bcf896c2418ff9208010000668b5c24168bf0c644241300668b06663dff7f750666394602744b03c58d5424186689442414668b46026603c352668944241a8b4c2418894c241cb9e8f7870083c604e88e7311008b80e400000085c074ba3bf875098b403085c075f5ebadc644241301eba68a4424135f5e5d5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

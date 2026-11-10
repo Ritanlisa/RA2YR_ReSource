@@ -679,49 +679,49 @@
   "status": "COMPILE_FAIL"
  },
  "0x42e820": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BridgeClass::GetCellData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42f4f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BaseClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42f9c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x431800": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4324b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BufferIOFileClass::SeekInternal",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x432ab0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BinkMovieHandle::RenderFrameClipped",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x433270": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BinkMovie::BlitToTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -735,35 +735,35 @@
   "status": "NG"
  },
  "0x4335e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BinkMovieClass::AllocateRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4336c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BinkMovieClass::ReleaseRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x433770": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BinkMovieClass::OpenFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x433f50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MessageListClass::CountCharsInWidth",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4371d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -812,42 +812,42 @@
   "status": "OK"
  },
  "0x448070": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AnimClass::updateAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x448160": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x44d7d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetTargetFacing",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x44e3a0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "BuildingClass::CheckOverlapWithOthers",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x44f640": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x451330": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -861,14 +861,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x452360": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x455c20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
