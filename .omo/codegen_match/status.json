@@ -6,6 +6,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x404700": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioStream::SetupPlayback",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x406310": {
   "attempts": 4,
   "first_diff": null,
@@ -271,6 +278,13 @@
   "name": "BSurface::GetBytesPerPixel",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x41a9e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::CanFireAtTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x41b910": {
   "attempts": 6,
@@ -580,6 +594,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x44d7d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::GetTargetFacing",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x44e3a0": {
   "attempts": 2,
   "first_diff": null,
@@ -811,10 +832,24 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4756f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::loadCountryData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x477740": {
   "attempts": 6,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4788e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleTypeClass::EnsureCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1434,6 +1469,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x5023b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Waypoint::FindByCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x50b6f0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [0xa8b238]",
@@ -1454,6 +1496,13 @@
   "name": "AbstractClass::checkPassability",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x50eb70": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "VectorClass::InsertAt",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x510a20": {
   "attempts": 3,
@@ -1952,6 +2001,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x54da50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::StubReturnZero_10",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x555130": {
   "attempts": 2,
   "first_diff": null,
@@ -1980,6 +2036,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x556a20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::checkLimbo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x557b00": {
   "attempts": 2,
   "first_diff": null,
@@ -2000,6 +2063,13 @@
   "name": "JumpjetLocomotionClass::MissionStub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x55a9b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LocomotionClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x55ab70": {
   "attempts": 2,
@@ -2105,6 +2175,13 @@
   "name": "MapSeed::IsInitialized",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x59c580": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RandomMap::GrowTiberium",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5b1aa0": {
   "attempts": 1,
@@ -2582,6 +2659,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6234b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SymbolTable::Rebuild",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x624130": {
   "attempts": 2,
   "first_diff": null,
@@ -2607,6 +2691,13 @@
   "attempts": 2,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x624fc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::Grow2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -2785,6 +2876,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6403a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PowerClass::getDrain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x642ad0": {
   "attempts": 3,
   "first_diff": "+0 mov byte ptr [ecx + 0x60], 0",
@@ -2798,6 +2896,13 @@
   "name": "LoadingScreen::GetValue",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x644630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WarheadTypeClass::applyDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x644920": {
   "attempts": 2,
@@ -2854,6 +2959,13 @@
   "name": "ParticleTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x652cf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadarClass::Destru_vt05",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x656de0": {
   "attempts": 2,
@@ -3050,6 +3162,13 @@
   "name": "ScriptTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x697e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SessionClass::IsValidHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x69bbe0": {
   "attempts": 2,
@@ -3380,6 +3499,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x70ed80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::GetAnimationFlags",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x70f040": {
   "attempts": 1,
   "first_diff": null,
@@ -3498,6 +3624,13 @@
   "name": "TEventClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x720a80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Movie::SelectNextBuildableType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x7236e0": {
   "attempts": 2,
@@ -3631,6 +3764,13 @@
   "name": "Selection::GetFlag",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x736d50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::IsC4AnimationActive",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x740e50": {
   "attempts": 5,
