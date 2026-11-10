@@ -2079,56 +2079,56 @@
   "status": "OK"
  },
  "0x5b2f30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AircraftClass::CheckMissionStatus2",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450I",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450J",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450K",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450L",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2fa0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450F",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2fb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450M",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2fc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450N",
   "note": "decomp_batch r2: MATCH",
@@ -2149,7 +2149,7 @@
   "status": "OK"
  },
  "0x5c03c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::resetPathState",
   "note": "decomp_batch r2: MATCH",
@@ -2247,7 +2247,7 @@
   "status": "PENDING"
  },
  "0x5d5db0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::MissionStubReturnZero",
   "note": "decomp_batch r2: MATCH",
@@ -2366,28 +2366,28 @@
   "status": "OK"
  },
  "0x5fdf00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Object::StubReturn176",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5fdf50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Object::StubReturn20",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5fef00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "OverlayTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5fef10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "OverlayTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -2429,35 +2429,35 @@
   "status": "OK"
  },
  "0x62af50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParasiteClass::StubReturn88",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x62af60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParasiteClass::StubReturn67",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x62d770": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleClass::CheckStateFlag",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x62d970": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x62d980": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
@@ -2471,7 +2471,7 @@
   "status": "OK"
  },
  "0x62fe80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleSystemClass::StubReturn2",
   "note": "decomp_batch r2: MATCH",
