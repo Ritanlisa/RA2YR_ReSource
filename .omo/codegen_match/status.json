@@ -482,6 +482,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41fd60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass::RegisterSuccess",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x41fe20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass::RegisterFailure",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x41ffd0": {
   "attempts": 2,
   "first_diff": null,
@@ -626,6 +640,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "VectorClass_ushort::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x42dca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Pathfinding::SiftDown",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -815,6 +836,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x455c20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1165,6 +1193,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalClass::DrawCellTerrainOverlay",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x480510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingPlacement::ValidateType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x484050": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::CreateTacticalLightSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1826,6 +1868,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4adba0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::ProcessGame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4af540": {
   "attempts": 1,
   "first_diff": null,
@@ -2085,6 +2134,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4c9b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FactoryClass::UpdateProduction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4c9c50": {
   "attempts": 1,
   "first_diff": null,
@@ -2154,6 +2210,13 @@
   "name": "Math::ArcTan",
   "note": "via=mirror MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x4caf20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::ProcessFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4cbba0": {
   "attempts": 2,
@@ -3135,6 +3198,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x552b10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Scenario::ComputeDisplayPosition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x555130": {
   "attempts": 2,
   "first_diff": null,
@@ -3296,6 +3366,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x56d100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapSeed::CheckTileMatch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x56e7c0": {
   "attempts": 1,
   "first_diff": null,
@@ -3373,6 +3450,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x588ac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LayerClass::ClearFactoryCellAssignments",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x58a2a0": {
   "attempts": 1,
   "first_diff": null,
@@ -3415,6 +3499,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x5ac960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PriorityQueue::Pop",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5acd30": {
   "attempts": 1,
   "first_diff": null,
@@ -3426,6 +3517,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MSEngine::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5ad870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Heap::SiftDown",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -3618,6 +3716,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5bd0d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Debug::ScrollText",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5c02e0": {
   "attempts": 4,
   "first_diff": null,
@@ -3706,6 +3811,13 @@
   "attempts": 2,
   "first_diff": null,
   "name": "VtableStub::5CB6C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5cbb80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSOverlayAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -4514,6 +4626,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x6632e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6635b0": {
   "attempts": 2,
   "first_diff": null,
@@ -4843,6 +4962,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b7100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TaskManager::Update",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6b7c60": {
   "attempts": 1,
   "first_diff": null,
@@ -4966,6 +5092,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalMap::DrawOccupiedRegion",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6da230": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -5855,6 +5988,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x758ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelRenderer::ProjectVertex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
