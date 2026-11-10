@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetInstance@SessionClass@@QAEXXZ",
+ "sym_key": "SessionClass::SetInstance",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "890d00000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B780A0@@3IA",
+   "sym_key": "DataGlobal_B780A0"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasProgressChanged@FactoryClass@@QAEDXZ",
+ "sym_key": "FactoryClass::HasProgressChanged",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8a81b0000000c781b000000000000000c3",
+ "relocs": []
+}

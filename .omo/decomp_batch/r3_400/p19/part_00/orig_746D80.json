@@ -1,0 +1,11 @@
+{
+ "addr": "0x746D80",
+ "name": "FootClass::updateScanRange",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746D80",
+ "bytes_hex": "8a81e0060000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

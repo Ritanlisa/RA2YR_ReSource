@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAuxField@TriggerTypeClass@@QAEHXZ",
+ "sym_key": "TriggerTypeClass::GetAuxField",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8198000000c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x425270",
+ "name": "VtableStub::Method_425270",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x425270",
+ "bytes_hex": "c6819e01000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

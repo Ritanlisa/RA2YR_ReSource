@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetWidth@MovieClass@@QAEHXZ",
+ "sym_key": "MovieClass::GetWidth",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8118050000c3",
+ "relocs": []
+}

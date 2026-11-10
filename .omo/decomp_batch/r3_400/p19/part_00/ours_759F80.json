@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetHeight@MovieClass@@QAEHXZ",
+ "sym_key": "MovieClass::GetHeight",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b811c050000c3",
+ "relocs": []
+}

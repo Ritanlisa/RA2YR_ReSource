@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetOffset@TerrainClass@@QAEIXZ",
+ "sym_key": "TerrainClass::GetOffset",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81c8000000c3",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAuxField@UnitTypeClass@@QAEHXZ",
+ "sym_key": "UnitTypeClass::GetAuxField",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81f80d0000c3",
+ "relocs": []
+}

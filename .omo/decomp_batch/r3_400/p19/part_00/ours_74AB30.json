@@ -1,0 +1,8 @@
+{
+ "symbol": "?LoadFrame@VoxelAnimClass@@QAEHXZ",
+ "sym_key": "VoxelAnimClass::LoadFrame",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8104010000c3",
+ "relocs": []
+}

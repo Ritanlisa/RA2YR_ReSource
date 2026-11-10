@@ -1,0 +1,11 @@
+{
+ "addr": "0x759F80",
+ "name": "MovieClass::GetHeight",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759F80",
+ "bytes_hex": "8b811c050000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

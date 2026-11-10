@@ -1,0 +1,11 @@
+{
+ "addr": "0x71D150",
+ "name": "IRTTITypeInfo::GetOffset",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71D150",
+ "bytes_hex": "8b81c8000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

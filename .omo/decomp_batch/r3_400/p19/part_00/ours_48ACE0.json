@@ -1,0 +1,8 @@
+{
+ "symbol": "?HRESULT_Fail@unknown@@QAGHHH@Z",
+ "sym_key": "unknown::HRESULT_Fail",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b8f1ffffffc20c00",
+ "relocs": []
+}

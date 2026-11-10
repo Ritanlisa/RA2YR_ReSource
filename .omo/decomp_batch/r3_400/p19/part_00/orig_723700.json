@@ -1,0 +1,11 @@
+{
+ "addr": "0x723700",
+ "name": "TiberiumClass::Stub",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x723700",
+ "bytes_hex": "8b8198000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
