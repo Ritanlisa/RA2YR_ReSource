@@ -85,9 +85,9 @@ int DisplayClass::GetCoordDelta(int p0)
                 if ( !((char *)stru_A8EB00)[391] )
                 {
                     v6 = v8;
+                    v7 = v9;
                 }
             }
-            v7 = v9;
             return dword_84291C[2 * (this->u32_D68[0] - v7)
                           + this->u32_D64[0]
                           - v6

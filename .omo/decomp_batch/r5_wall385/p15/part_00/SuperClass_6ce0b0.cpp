@@ -55,17 +55,18 @@ int * SuperClass::Reset()
             if ( *result != -1 )
             {
                 v10 = result[2];
+                v11 = *(unsigned int *)&((char *)stru_A8EB00)[416] - v9;
+                if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v9 >= v10 )
+                {
+                    result[2] = 0;
+                    *result = -1;
+                }
+                else
+                {
+                    *result = -1;
+                    result[2] = v10 - v11;
+                }
             }
-            v11 = *(unsigned int *)&((char *)stru_A8EB00)[416] - v9;
-            if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v9 >= v10 )
-            {
-                result[2] = 0;
-            }
-            *result = -1;
-            result[2] = v10 - v11;
-        }
-        else
-        {
         }
         return (int *)(result);
 }

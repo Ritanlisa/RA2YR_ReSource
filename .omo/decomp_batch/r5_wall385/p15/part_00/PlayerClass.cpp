@@ -45,12 +45,12 @@ int PlayerClass::HasOccupiedCell()
                 if ( *(unsigned char *)(*i + 144) )
                 {
                     v7 = i[1] - *((unsigned int *)this + 44);
+                    v8 = i[2] - *((unsigned int *)this + 45);
+                    if ( v7 >= v3 && v7 < v3 + v11 && v8 >= v4 && v8 < v4 + v12 )
+                    {
+                        break;
+                    }
                 }
-            }
-            v8 = i[2] - *((unsigned int *)this + 45);
-            if ( v7 >= v3 && v7 < v3 + v11 && v8 >= v4 && v8 < v4 + v12 )
-            {
-                break;
             }
             if ( ++v10 >= *((unsigned int *)this + 876) )
             {

@@ -9,6 +9,8 @@ class CellClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Tactical
 {
@@ -46,6 +48,8 @@ extern int ZCoordToScreenY(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CellClass
 {
@@ -55,7 +59,7 @@ public:
     // DECOMP_SIZECHECK(CellClass, CellClass, 328);
 
     // ---- pilot methods (registry signatures)
-    int * GetCoords(int * p0);  // 0x480A30
+    int * GetCoords(void * p0);  // 0x480A30
 };
 
 // ---- globals used by this unit (registry names)

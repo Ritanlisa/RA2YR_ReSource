@@ -35,21 +35,22 @@ int SwizzleManagerClass::ConvertNodes()
                 if ( *v8 == *v5 )
                 {
                     v9 = (unsigned int *)v8[1];
+                    v8 += 2;
+                    --v7;
+                    *v9 = v5[1];
+                    if ( *v8 > *v5 )
+                    {
+                        do
+                        {
+                            v10 = v5[2];
+                            v5 += 2;
+                            --v6;
+                        } while ( *v8 > v10 );
+                    }
                 }
             }
-            v8 += 2;
-            --v7;
-            *v9 = v5[1];
-            v5 += 2;
-            --v6;
-            while ( *v8 > v10 )
-            {
-                (*(void (__stdcall **)(int))(this->__pad_004 + 12))(this + 4);
-            }
+            (*(void (__stdcall **)(int))(this->__pad_004 + 12))(this + 4);
             return (int)((*(int (__stdcall **)(int))(this->u32_1C + 12))(this + 28));
-        }
-        else
-        {
         }
         return (int)(result);
 }

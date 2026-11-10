@@ -23,44 +23,45 @@ int Tactical::AddCellToDrawList(int p0)
             if ( *(wchar_t **)(p0 + 92) != g_CurrentFrame && ((*(unsigned char *)(p0 + 300) & 8) != 0 || *(unsigned char *)(p0 + 312)) )
             {
                 *(unsigned int *)(p0 + 92) = g_CurrentFrame;
-            }
-            Coords = ((CellClass *)(p0))->GetCoords(v14);
-            v5 = *Coords;
-            v6 = Coords[1];
-            v7 = Coords[2];
-            v8 = *(unsigned int *)(p0 + 300);
-            v14[2] = v7;
-            if ( (v8 & 8) != 0 && (v8 & 0x10) != 0 )
-            {
-                v9 = -60 * v6 / 2 + 60 * v5 / 2;
-            }
-            v14[0] = v9;
-            v10 = 30 * v6 / 2 + 30 * v5 / 2;
-            v14[0] = v9;
-            v10 = 30 * v6 / 2 + 30 * v5 / 2;
-            v11 = v10;
-            v12 = ZCoordToScreenY(0);
-            v14[0] = v9 / 256;
-            v13 = v9 / 256 - this->visibleArea;
-            result = v11 / 256 - v12 - this->u32_B4;
-            if ( v13 >= DSurface_ViewBounds - 30
+                Coords = ((CellClass *)(p0))->GetCoords(v14);
+                v5 = *Coords;
+                v6 = Coords[1];
+                v7 = Coords[2];
+                v8 = *(unsigned int *)(p0 + 300);
+                v14[2] = v7;
+                if ( (v8 & 8) != 0 && (v8 & 0x10) != 0 )
+                {
+                    v9 = -60 * v6 / 2 + 60 * v5 / 2;
+                    v14[0] = v9;
+                    v10 = 30 * v6 / 2 + 30 * v5 / 2;
+                }
+                else
+                {
+                    v9 = -60 * v6 / 2 + 60 * v5 / 2;
+                    v14[0] = v9;
+                    v10 = 30 * v6 / 2 + 30 * v5 / 2;
+                }
+                v11 = v10;
+                v12 = ZCoordToScreenY(0);
+                v14[0] = v9 / 256;
+                v13 = v9 / 256 - this->visibleArea;
+                result = v11 / 256 - v12 - this->u32_B4;
+                if ( v13 >= DSurface_ViewBounds - 30
             && result >= -30
             && v13 <= g_Map_VisibleRectOffset + DSurface_ViewBounds + 30
             && result <= g_DSurface_WindowOffset + g_Map_VisibleRect + 15 )
-            {
-                result = this->visibleCellCount;
+                {
+                    result = this->visibleCellCount;
+                    if ( result < 799 )
+                    {
+                        *(this + result + 57) = p0;
+                        result = this->visibleCellCount + 1;
+                        this->visibleCellCount = result;
+                    }
+                    *(unsigned char *)(p0 + 312) = 0;
+                    *((unsigned char *)this + 3453) = 1;
+                }
             }
-            if ( result < 799 )
-            {
-                *(this + result + 57) = p0;
-            }
-            result = this->visibleCellCount + 1;
-            this->visibleCellCount = result;
-            *(unsigned char *)(p0 + 312) = 0;
-            *((unsigned char *)this + 3453) = 1;
-        }
-        else
-        {
         }
         return (int)(result);
 }

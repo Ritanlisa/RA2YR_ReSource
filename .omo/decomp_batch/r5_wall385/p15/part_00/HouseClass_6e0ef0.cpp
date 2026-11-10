@@ -11,15 +11,15 @@ char HouseClass::UpdateTechBuildings(int p0, int p1, int p2, int p3)
             if ( *(int *)(p0 + 96) > 0 )
             {
                 v7 = (v7 & ~0xFF) | ((*(unsigned int *)(**(unsigned int **)(p0 + 84) + 156) / 256) & 0xFF);
+                v7 = (v7 & ~0xFF) | ((*(unsigned int *)(**(unsigned int **)(p0 + 84) + 160) / 256) & 0xFF);
+                ((HouseClass *)(p0))->SetMapSeed((int)v7);
+                *(unsigned int *)(p0 + 22352) = v7;
             }
-            v7 = (v7 & ~0xFF) | ((*(unsigned int *)(**(unsigned int **)(p0 + 84) + 160) / 256) & 0xFF);
-            ((HouseClass *)(p0))->SetMapSeed((int)v7);
-            *(unsigned int *)(p0 + 22352) = v7;
             if ( !*(unsigned int *)(p0 + 22292) )
             {
                 ((HouseClass *)(p0))->SetPrimaryTechBuilding();
+                return (char)(1);
             }
-            return (char)(1);
         }
         else
         {

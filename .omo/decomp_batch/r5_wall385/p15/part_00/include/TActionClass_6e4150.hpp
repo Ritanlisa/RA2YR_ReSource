@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class TActionClass
 {
@@ -23,11 +25,11 @@ public:
 
     // ---- pilot methods (registry signatures)
     char executeGeneticMutatorAction(int p0, int p1, int p2, int p3);  // 0x6E4150
-    unsigned int * executeHarvestAction(int p0);  // 0x6AC5F0
+    unsigned int * executeHarvestAction(int p0, int p1);  // 0x6AC5F0
 };
 
 // ---- globals used by this unit (registry names)
 extern char stru_87F5F0[];
-extern unsigned char stru_A8EB00;
+extern char stru_A8EB00[];
 
 #endif  // DECOMP_PILOT_TACTIONCLASS_HPP

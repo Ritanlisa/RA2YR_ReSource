@@ -62,7 +62,7 @@
    "addr": "0x6d02b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TabClass.cpp(12) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TabClass.cpp(19) : error C2440: '=' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TabCl",
    "first_diff": null,
    "pathology": null,
    "name": "SidebarClass::LoadButtonSHPs",
@@ -70,7 +70,7 @@
    "unit": "TabClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "14/15",
+   "sites": "15/16",
    "rule_violations": 4
   },
   {
@@ -207,7 +207,7 @@
    "addr": "0x6dc660",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\_VectorClass_UDirtyAreaStruct.cpp(23) : error C2039: 'm_C' : is not a member of '_VectorClass_UDirtyAreaStruct'; D:\\RA2YR_ReSource\\.omo\\decom",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\_VectorClass_UDirtyAreaStruct.cpp(101) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_UDirtyAreaStruct::Release",
@@ -215,8 +215,8 @@
    "unit": "_VectorClass_UDirtyAreaStruct",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/13",
-   "rule_violations": 12
+   "sites": "7/11",
+   "rule_violations": 3
   },
   {
    "addr": "0x6e0110",
@@ -267,7 +267,7 @@
    "addr": "0x6e15f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\ObjectClass.cpp(15) : error C2664: 'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\ObjectClass.cpp(16) : error C2664: 'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
    "first_diff": null,
    "pathology": null,
    "name": "ObjectClass::ReadINIEntry",
@@ -275,14 +275,14 @@
    "unit": "ObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "7/9",
+   "sites": "8/10",
    "rule_violations": 2
   },
   {
    "addr": "0x6e1780",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(28) : error C2027: use of undefined type 'Random'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.c",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(26) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(26) ",
    "first_diff": null,
    "pathology": null,
    "name": "TActionClass::PlayAudioAtRandomWP",
@@ -290,14 +290,14 @@
    "unit": "TActionClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "4/5",
+   "sites": "5/6",
    "rule_violations": 0
   },
   {
    "addr": "0x6e2970",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\BuildingLightClass.cpp(10) : error C2228: left of '.vfptr' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\BuildingLightClass.cpp(34) : error C2664: 'LinkedList__Contains' : cannot convert parameter 1 from 'class LinkedList *' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingLightClass::FindAllTargets",
@@ -305,14 +305,14 @@
    "unit": "BuildingLightClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "2/3",
+   "sites": "3/3",
    "rule_violations": 9
   },
   {
    "addr": "0x6e4150",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(28) : error C2027: use of undefined type 'Random'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.c",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(26) : error C2036: 'void *' : unknown size; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p15\\part_00\\TActionClass.cpp(26) ",
    "first_diff": null,
    "pathology": null,
    "name": "TActionClass::executeGeneticMutatorAction",
@@ -320,8 +320,8 @@
    "unit": "TActionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
-   "rule_violations": 1
+   "sites": "3/3",
+   "rule_violations": 0
   }
  ]
 }

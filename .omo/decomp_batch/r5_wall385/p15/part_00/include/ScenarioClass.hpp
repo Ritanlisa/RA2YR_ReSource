@@ -11,6 +11,8 @@ class ParticleSystemClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ScenarioClass
 {
@@ -26,7 +28,7 @@ public:
     // ---- pilot methods (registry signatures)
     char Create(int p0, int p1, int p2, int p3);  // 0x6E0110
     char PrepareTextDisplay(int p0, int p1, int p2, int p3);  // 0x6E1530
-    unsigned int * Get_Waypoint_Location(int * p0, int p1);  // 0x68BCC0
+    unsigned int * Get_Waypoint_Location(void * p0, int p1);  // 0x68BCC0
 };
 
 // ---- globals used by this unit (registry names)
@@ -57,6 +59,8 @@ class ScenarioClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ParticleSystemClass
 {
@@ -66,7 +70,7 @@ public:
     // DECOMP_SIZECHECK(ParticleSystemClass, ParticleSystemClass, 256);
 
     // ---- pilot methods (registry signatures)
-    int Constructor(int p0);  // 0x62DC50
+    int Constructor(int p0, void * p1, int p2, void * p3, void * p4, int p5);  // 0x62DC50
 };
 
 // ---- globals used by this unit (registry names)
@@ -97,6 +101,8 @@ class ScenarioClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ObjectClass
 {

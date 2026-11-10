@@ -9,6 +9,8 @@ class LinkedList;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingLightClass
 {
@@ -21,11 +23,11 @@ public:
 
     // ---- pilot methods (registry signatures)
     char FindAllTargets(int p0, int p1, int p2, int p3);  // 0x6E2970
-    unsigned int * FindTarget();  // 0x436BE0
+    unsigned int * FindTarget(void * p0);  // 0x436BE0
 };
 
 // ---- globals used by this unit (registry names)
-extern unsigned char stru_A8EB00;
+extern char stru_A8EB00[];
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int LinkedList__Contains(int a0, int a1);

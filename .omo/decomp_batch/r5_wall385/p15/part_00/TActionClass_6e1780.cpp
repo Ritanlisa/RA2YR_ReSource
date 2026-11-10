@@ -14,18 +14,15 @@ char TActionClass::PlayAudioAtRandomWP(int p0, int p1, int p2, int p3)
             if ( (unsigned char)((ScenarioClass *)(g_ScenarioClass_Instance))->Is_Waypoint_Valid(v7) )
             {
                 ++v5;
+                *v8++ = *((ScenarioClass *)(g_ScenarioClass_Instance))->Get_Waypoint_Location(&v14, v7);
+                if ( v5 == 400 )
+                {
+                    break;
+                }
             }
-            *v8++ = *((ScenarioClass *)(g_ScenarioClass_Instance))->Get_Waypoint_Location(&v14, v7);
-            if ( v5 == 400 )
-            {
-                break;
-            }
-        } while (++v7);
-        short * v9;
-        while ( v7 < 702 )
-        {
-            v9 = (short *)&v15[Random::Range((Random *)&g_ScenarioClass_Instance[14].NeedsSaveOrLink, 0, v5 - 1)];
-        }
+            ++v7;
+        } while ( v7 < 702 );
+        short * v9 = (short *)&v15[((Random *)(&g_ScenarioClass_Instance[14].NeedsSaveOrLink))->Range(0, v5 - 1)];
         int v10 = (v9[1] << 8) + 128;
         unsigned int v13[3];
         v13[0] = (*v9 << 8) + 128;

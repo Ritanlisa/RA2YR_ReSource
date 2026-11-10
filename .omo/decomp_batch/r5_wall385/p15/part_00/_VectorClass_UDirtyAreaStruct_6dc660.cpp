@@ -19,91 +19,92 @@ char _VectorClass_UDirtyAreaStruct::Release(int p0, char * p1)
         if ( p0 )
         {
             v5 = p1;
-            this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+            this->m_C = 0;
             if ( p1 )
             {
                 if ( p0 - 1 >= 0 )
                 {
                     v9 = p1 + 8;
+                    v10 = p0;
+                    do
+                    {
+                        *((unsigned int *)v9 - 2) = 0;
+                        *((unsigned int *)v9 - 1) = 0;
+                        *(unsigned int *)v9 = 0;
+                        *((unsigned int *)v9 + 1) = 0;
+                        v9[8] = 0;
+                        v9 += 20;
+                        --v10;
+                    } while ( v10 );
                 }
-            }
-            v10 = p0;
-            do
-              *((unsigned int *)v9 - 2) = 0;
-            *((unsigned int *)v9 - 1) = 0;
-            *(unsigned int *)v9 = 0;
-            *((unsigned int *)v9 + 1) = 0;
-            v9[8] = 0;
-            v9 += 20;
-            --v10;
-            while ( v10 )
-            {
                 v16 = p1;
             }
-            if ( v6 )
+            else
             {
-                if ( p0 - 1 >= 0 )
+                v6 = __2_YAPAXI_Z(20 * p0);
+                if ( v6 )
                 {
-                    v7 = v6 + 8;
+                    if ( p0 - 1 >= 0 )
+                    {
+                        v7 = v6 + 8;
+                        v8 = p0;
+                        do
+                        {
+                            *(unsigned int *)(v7 - 8) = 0;
+                            *(unsigned int *)(v7 - 4) = 0;
+                            *(unsigned int *)v7 = 0;
+                            *(unsigned int *)(v7 + 4) = 0;
+                            *(unsigned char *)(v7 + 8) = 0;
+                            v7 += 20;
+                            --v8;
+                        } while ( v8 );
+                    }
+                    v16 = (char *)v6;
+                }
+                else
+                {
+                    v16 = 0;
                 }
             }
-            v8 = p0;
-            do
-                *(unsigned int *)(v7 - 8) = 0;
-            *(unsigned int *)(v7 - 4) = 0;
-            *(unsigned int *)v7 = 0;
-            *(unsigned int *)(v7 + 4) = 0;
-            *(unsigned char *)(v7 + 8) = 0;
-            v7 += 20;
-            --v8;
-            while ( v8 )
-            {
-                v16 = (char *)v6;
-            }
-            this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
+            this->m_C = 1;
             if ( v16 )
             {
-                if ( this->m003[0] )
+                if ( this->m004[0] )
                 {
                     m_8 = this->m_8;
+                    if ( p0 < m_8 )
+                    {
+                        m_8 = p0;
+                    }
+                    if ( m_8 > 0 )
+                    {
+                        v13 = 0;
+                        do
+                        {
+                            v14 = (const void *)(this->m004[0] + v13);
+                            v15 = &v16[v13];
+                            v13 += 20;
+                            --m_8;
+                            memcpy(v15, v14, 0x14u);
+                        } while ( m_8 );
+                        v5 = p1;
+                        v3 = p0;
+                    }
+                    if ( ((this->m_C >> 8) & 0xFF) )
+                    {
+                        __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                        this->m004[0] = 0;
+                    }
                 }
+                this->m_8 = v3;
+                this->m004[0] = v16;
+                ((this->m_C >> 8) & 0xFF) = v5 == 0;
+                return (char)(1);
             }
-            if ( p0 < m_8 )
+            else
             {
-                m_8 = p0;
+                return (char)(0);
             }
-            if ( m_8 > 0 )
-            {
-                v13 = 0;
-            }
-            do v14 = (const void *)(this->m003[0] + v13);
-            v15 = &v16[v13];
-            v13 += 20;
-            --m_8;
-            memcpy(v15, v14, 0x14u);
-            while ( m_8 )
-            {
-                v5 = p1;
-            }
-            v3 = p0;
-            if ( ((this->m_C >> 8) & 0xFF) )
-            {
-                __3_YAXPAX_Z(*(void **)&this->m_1[3]);
-            }
-            this->m003[0] = 0;
-            this->m_8 = v3;
-            this->m003[0] = v16;
-            ((this->m_C >> 8) & 0xFF) = v5 == 0;
-            return (char)(1);
-        }
-        else
-        {
-        }
-        else
-        {
-        }
-        else
-        {
         }
         else
         {

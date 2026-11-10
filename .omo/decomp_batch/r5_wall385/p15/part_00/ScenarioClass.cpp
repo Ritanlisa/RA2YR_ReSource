@@ -17,12 +17,7 @@ char ScenarioClass::Create(int p0, int p1, int p2, int p3)
         int * v6 = (int *)__2_YAPAXI_Z(0x100u);
         if ( v6 )
         {
-            ((ParticleSystemClass *)(v6))->Constructor(*(unsigned int *)(*(unsigned int *)&((char *)stru_A83D50)[0x14 + (8)] + 4 * this->nextScenario[36]),
-          &v9,
-          0,
-          0,
-          &DataGlobal_B0E6A0,
-          0);
+            ((ParticleSystemClass *)(v6))->Constructor(*(unsigned int *)(*(unsigned int *)&((char *)stru_A83D50)[0x14 + (8)] + 4 * this->nextScenario[36]), &v9, 0, 0, &DataGlobal_B0E6A0, 0);
         }
         return (char)(1);
 }

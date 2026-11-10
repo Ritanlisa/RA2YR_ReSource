@@ -39,8 +39,8 @@ AbstractClass * __stdcall unknown::ClimbCheck(int * p0, int * p1)
             if ( v12 == p1 )
             {
                 *p0 = p1;
+                return (AbstractClass *)(p0);
             }
-            return (AbstractClass *)(p0);
         }
         *p0 = v12;
         return (AbstractClass *)(p0);

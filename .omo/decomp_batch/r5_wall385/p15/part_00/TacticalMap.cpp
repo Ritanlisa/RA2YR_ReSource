@@ -24,15 +24,15 @@ int TacticalMap::DrawOccupiedRegion()
             if ( v3 < v2 )
             {
                 v6 = v2;
+                v2 = v3;
+                v3 = v6;
             }
-            v2 = v3;
-            v3 = v6;
             if ( v5 < v4 )
             {
                 v7 = v4;
+                v4 = v5;
+                v5 = v7;
             }
-            v4 = v5;
-            v5 = v7;
             v8 = v3 - v2 + 1;
             if ( *(unsigned int *)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (124)] + 4) == 1 )
             {

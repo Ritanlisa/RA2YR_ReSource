@@ -5,7 +5,8 @@
 
 char ObjectClass::ReadINIEntry(int p0, int p1, int p2, int p3)
 {
-        wchar_t * v5 = (wchar_t *)((char *)&this->health + 1);
+        wchar_t * v5;
+        v5 = (wchar_t *)((char *)&this->health + 1);
         int * p_referenceCount;
         char * v7;
         char Destination[32];
@@ -18,10 +19,10 @@ char ObjectClass::ReadINIEntry(int p0, int p1, int p2, int p3)
             p_referenceCount = &g_ScenarioClass_Instance[127].referenceCount;
             if ( Destination != (char *)&g_ScenarioClass_Instance[127].referenceCount )
             {
-                v7 = Destination;
-            }
-            LABEL_10:
+                v7 = (char *)(Destination);
+                LABEL_10:
           memcpy(p_referenceCount, v7, 0x20u);
+            }
         }
         else
         {
@@ -30,17 +31,18 @@ char ObjectClass::ReadINIEntry(int p0, int p1, int p2, int p3)
             if ( &g_INI_DefaultBuffer )
             {
                 strncpy((char *)(v10), (char *)(&g_INI_DefaultBuffer), (char *)(0x1Fu));
+                v10[31] = 0;
             }
-            v10[31] = 0;
             else
             {
+                v10[0] = 0;
             }
             p_referenceCount = &g_ScenarioClass_Instance[127].referenceCount;
             if ( v10 != (char *)&g_ScenarioClass_Instance[127].referenceCount )
             {
                 v7 = v10;
+                goto LABEL_10;
             }
-            goto LABEL_10;
         }
         ((ObjectClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->PreDraw();
         return (char)(1);

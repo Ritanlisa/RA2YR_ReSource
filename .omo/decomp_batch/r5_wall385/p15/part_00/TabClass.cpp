@@ -9,21 +9,21 @@ int TabClass::LoadButtonSHPs()
         ((SidebarClass *)(v9))->LoadAssets();
         bool v10 = 0;
         int v2 = 0;
-        int * v3 = DataGlobal_B0C148;
+        int * v3 = (int *)(DataGlobal_B0C148);
+        void * v4;
+        bool v5;
+        char Buffer[256];
         do
         {
-        } while ();
-        char Buffer[256];
-        void * v4 = LoadFileSHP(Buffer, &v10);
-        bool v5 = v10;
-        *v3 = (int)v4;
-        DataGlobal_B0CBDC[v2] = v5;
-        ++v3;
-        ++v2;
-        while ( (int)v3 < (int)&DataGlobal_B0C1AC )
-        {
-            DataGlobal_B0CD38 = *(short *)(DataGlobal_B0C148[0] + 2);
-        }
+            sprintf(Buffer, "Button%02d.SHP", v2);
+            v4 = LoadFileSHP(Buffer, &v10);
+            v5 = v10;
+            *v3 = (int)v4;
+            DataGlobal_B0CBDC[v2] = v5;
+            ++v3;
+            ++v2;
+        } while ( (int)v3 < (int)&DataGlobal_B0C1AC );
+        DataGlobal_B0CD38 = *(short *)(DataGlobal_B0C148[0] + 2);
         DataGlobal_B0CB50 = *(short *)(DataGlobal_B0C148[0] + 4);
         int v6 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1212];
         int v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1208];
