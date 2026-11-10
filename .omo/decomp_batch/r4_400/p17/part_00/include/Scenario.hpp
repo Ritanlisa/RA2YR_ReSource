@@ -21,7 +21,7 @@ public:
     int m01C;  // 0x01C
     int m020;  // 0x020
     int m024;  // 0x024
-    int m028;  // 0x028
+    unsigned char * m028;  // 0x028
     int m02C;  // 0x02C
     int m030;  // 0x030
     int m034;  // 0x034

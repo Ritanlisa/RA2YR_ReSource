@@ -52,7 +52,7 @@ int Scenario::ComputeDisplayPosition()
             this->m020 = (void *)v6;
             this->m02C = (void *)v7;
             result = (int)v4 + v6;
-            this->m028 = v4;
+            this->m028 = (unsigned char *)v4;
             this->m018 = (void *)40;
             this->m030 = (void *)result;
             this->m038 = (void *)40;
