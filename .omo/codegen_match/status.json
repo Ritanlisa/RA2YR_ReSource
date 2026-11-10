@@ -566,6 +566,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x42d8f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ushort::Remove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x42da30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ushort::SetCapacity",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x433330": {
   "attempts": 1,
   "first_diff": "+0 sub esp, 0x30",
@@ -1455,6 +1469,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4da030": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::ProcessExitQueue",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4daf10": {
   "attempts": 1,
   "first_diff": null,
@@ -1466,6 +1487,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "FootClass::SetBuildingType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4ddb90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::MoveToWeed",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -2127,6 +2155,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x540340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IPXGlobalConnClass::SendPacket",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x540c60": {
   "attempts": 1,
   "first_diff": null,
@@ -2168,6 +2203,13 @@
   "name": "IsometricTileTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x54b8d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x54da50": {
   "attempts": 1,
@@ -2701,6 +2743,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5d74a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::InitAlliances",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5d87e0": {
   "attempts": 5,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -2890,6 +2939,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x625830": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::Rebuild2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6258e0": {
   "attempts": 1,
   "first_diff": null,
@@ -2938,6 +2994,13 @@
   "name": "ParticleClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x62e380": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass::CreateParticle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x62fe80": {
   "attempts": 2,
@@ -3153,6 +3216,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x653760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::PixelToCellCheck",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x655740": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::RemoveGapCellCoverage",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -3485,6 +3562,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6baef0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::RebuildEx",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6c6740": {
   "attempts": 1,
   "first_diff": null,
@@ -3555,10 +3639,24 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x6e1780": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::PlayAudioAtRandomWP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6e2970": {
   "attempts": 2,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6e4150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -3673,6 +3771,13 @@
   "name": "TechnoClass::GetTarget",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7036c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::TransitionEffectState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x705d20": {
   "attempts": 2,
@@ -3860,6 +3965,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Movie::SelectNextBuildableType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x722390": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::FreeUpgradeQueue",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x722e50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -4051,6 +4170,13 @@
   "name": "C07F5C70::StubReturn1",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7474b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitTypeClass::CreateUnit",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x748160": {
   "attempts": 2,
@@ -4570,6 +4696,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x7aec00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::Shrink",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x7aef50": {
   "attempts": 1,
   "first_diff": null,
@@ -4595,6 +4728,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "UDPInterfaceClass::Reset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7b4c20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "String::Append",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
