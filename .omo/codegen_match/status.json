@@ -1792,14 +1792,14 @@
   "status": "OK"
  },
  "0x54a140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IsometricTileTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x54a150": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IsometricTileTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -1813,14 +1813,14 @@
   "status": "OK"
  },
  "0x555130": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LightSourceClass::StubReturn76",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x555140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LightSourceClass::StubReturn54",
   "note": "decomp_batch r2: MATCH",
@@ -1939,7 +1939,7 @@
   "status": "PENDING"
  },
  "0x55cbf0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VtableStub::Method_55CBF0",
   "note": "decomp_batch r2: MATCH",
@@ -1960,14 +1960,14 @@
   "status": "OK"
  },
  "0x58b7d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapSeed::IsInitialized",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b1b40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MechLocomotionClass::StubReturn52",
   "note": "decomp_batch r2: MATCH",
@@ -1988,91 +1988,91 @@
   "status": "NG"
  },
  "0x5b2e10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450A",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450B",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450C",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::StubReturn450",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x5b2e50",
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
  },
  "0x5b2e70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::CheckState1",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::CheckState2",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2e90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AircraftClass::CheckMissionStatus",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2ed0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450D",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2ee0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450E",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2ef0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IPersistStream::GetMaxSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450G",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5b2f20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MissionClass::Return450H",
   "note": "decomp_batch r2: MATCH",
