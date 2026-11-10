@@ -1,0 +1,11 @@
+{
+ "addr": "0x71FA50",
+ "name": "TEventClass::StubReturn88",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71FA50",
+ "bytes_hex": "b858000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

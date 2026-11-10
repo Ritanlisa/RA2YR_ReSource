@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A200",
+ "name": "TunnelLocomotionClass::StubReturn60",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A200",
+ "bytes_hex": "b83c000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

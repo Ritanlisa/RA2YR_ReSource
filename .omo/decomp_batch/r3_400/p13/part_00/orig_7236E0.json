@@ -1,0 +1,11 @@
+{
+ "addr": "0x7236E0",
+ "name": "TiberiumClass::StubReturn296",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7236E0",
+ "bytes_hex": "b828010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

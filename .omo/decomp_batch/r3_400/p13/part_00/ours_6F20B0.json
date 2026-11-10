@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@TeamTypeClass@@QAEHXZ",
+ "sym_key": "TeamTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8f8000000c3",
+ "relocs": []
+}

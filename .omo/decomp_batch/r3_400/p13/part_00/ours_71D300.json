@@ -1,0 +1,8 @@
+{
+ "symbol": "?MissionStubReturnZero2@TerrainClass@@QAEHXZ",
+ "sym_key": "TerrainClass::MissionStubReturnZero2",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b824000000c3",
+ "relocs": []
+}

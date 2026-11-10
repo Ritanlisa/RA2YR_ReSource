@@ -1,0 +1,11 @@
+{
+ "addr": "0x71D300",
+ "name": "TerrainClass::MissionStubReturnZero2",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71D300",
+ "bytes_hex": "b824000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
