@@ -1,0 +1,3202 @@
+[
+ {
+  "addr": "0x40d270",
+  "name": "SidebarClass::initButtons2",
+  "cls": "SidebarClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4de620",
+  "name": "ObjectClass::IsHeightAboveThreshold_0",
+  "cls": "ObjectClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4e14a0",
+  "name": "ObjectClass::InputThunkA",
+  "cls": "ObjectClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4e14b0",
+  "name": "ObjectClass::InputThunkB",
+  "cls": "ObjectClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5216c0",
+  "name": "TechnoClass::GetThreatValue_0",
+  "cls": "TechnoClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x53f4e0",
+  "name": "Struct::ZeroInitAndSetup_0",
+  "cls": "Struct",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5bbed0",
+  "name": "FileFind::Close",
+  "cls": "FileFind",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5c5d30",
+  "name": "PlayerClass::AssignPlayerIndex_0",
+  "cls": "PlayerClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5ca7d0",
+  "name": "MPBattleClass::vt_entry_18",
+  "cls": "MPBattleClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5ca7f0",
+  "name": "ScenarioClass::ClearFlag_0",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5ef280",
+  "name": "Struct::ZeroInitAndSetup_0_0",
+  "cls": "Struct",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x63f7b0",
+  "name": "PowerClass::Stub",
+  "cls": "PowerClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x6d0260",
+  "name": "BlowStraw_29::Stub",
+  "cls": "BlowStraw_29",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x705d60",
+  "name": "BuildingClass::GetType_Thunk",
+  "cls": "BuildingClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x740e50",
+  "name": "TechnoClass::GetAmmoCount_0",
+  "cls": "TechnoClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7447a0",
+  "name": "InfantryClass::ScanTarget_0",
+  "cls": "InfantryClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x77d710",
+  "name": "GameLoop::Thunk",
+  "cls": "GameLoop",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c891a",
+  "name": "OleUninitialize::0",
+  "cls": "OleUninitialize",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c89f2",
+  "name": "ImageList::DragEnter",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c89f8",
+  "name": "ImageList::BeginDrag",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c89fe",
+  "name": "ImageList::Destroy",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c8a04",
+  "name": "ImageList::EndDrag",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c8a0a",
+  "name": "ImageList::DragMove",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7c8a10",
+  "name": "ImageList::DragShowNolock",
+  "cls": "ImageList",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7d1512",
+  "name": "GetCurrentThreadId::0",
+  "cls": "GetCurrentThreadId",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7dcee0",
+  "name": "GetCurrentThread::0",
+  "cls": "GetCurrentThread",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7dcf22",
+  "name": "GetCurrentProcessId::0",
+  "cls": "GetCurrentProcessId",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x407070",
+  "name": "Audio::GetFlag",
+  "cls": "Audio",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x407510",
+  "name": "VtableStub::Push_407510",
+  "cls": "VtableStub",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x408520",
+  "name": "AudioController::GetOffset",
+  "cls": "AudioController",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x485010",
+  "name": "BuildingClass::FindByCellHash",
+  "cls": "BuildingClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x48d1d0",
+  "name": "Event_Dispatch::Return0",
+  "cls": "Event_Dispatch",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x536b80",
+  "name": "CreateTeamCommand::performAction_74",
+  "cls": "CreateTeamCommand",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x537130",
+  "name": "CreateTeamCommand::performAction_128",
+  "cls": "CreateTeamCommand",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x537f90",
+  "name": "DeleteCommandClass::Undo",
+  "cls": "DeleteCommandClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5c0580",
+  "name": "BinkMovieHandle::AddRef",
+  "cls": "BinkMovieHandle",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5c05f0",
+  "name": "BinkMovieHandle::Close",
+  "cls": "BinkMovieHandle",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7b9d70",
+  "name": "WWMouseClass::checkStatus",
+  "cls": "WWMouseClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x7268f0",
+  "name": "TActionClass::executeAirstrikeAction",
+  "cls": "TActionClass",
+  "size": 9,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5d5880",
+  "name": "Timer::DisableHighPrecision",
+  "cls": "Timer",
+  "size": 9,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4105e0",
+  "name": "IRTTITypeInfo::QueryInterface",
+  "cls": "IRTTITypeInfo",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4105f0",
+  "name": "INoticeSource::Dispatch",
+  "cls": "INoticeSource",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x410600",
+  "name": "XSurface::vt_entry_40",
+  "cls": "XSurface",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x41c640",
+  "name": "TechnoClass::processIdleState",
+  "cls": "TechnoClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x41c650",
+  "name": "TechnoClass::processGuardState",
+  "cls": "TechnoClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x41c660",
+  "name": "TechnoClass::processAttackState",
+  "cls": "TechnoClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x46b990",
+  "name": "VectorClass_ptr_BulletClass::GetItem",
+  "cls": "VectorClass_ptr_BulletClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x46b9a0",
+  "name": "VectorClass_ptr_BulletClass::GetItem_0",
+  "cls": "VectorClass_ptr_BulletClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4a3220",
+  "name": "CStreamClass::IStreamQueryInterface",
+  "cls": "CStreamClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4a3230",
+  "name": "CStreamClass::IStreamAddRef",
+  "cls": "CStreamClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4a3240",
+  "name": "CStreamClass::IStreamRelease",
+  "cls": "CStreamClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b4d90",
+  "name": "JumpjetLocomotionClass::GetField_0x78",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b4da0",
+  "name": "JumpjetLocomotionClass::GetField_0x7C",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b4db0",
+  "name": "JumpjetLocomotionClass::GetField_0x80",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6740",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6740",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6750",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6750",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6760",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6760",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6770",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6770",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6780",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6780",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4b6790",
+  "name": "JumpjetLocomotionClass::SmallStub_4B6790",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4d0510",
+  "name": "JumpjetLocomotionClass::GetInterface",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4d0520",
+  "name": "JumpjetLocomotionClass::GetInterface2",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x4d0530",
+  "name": "JumpjetLocomotionClass::Stub2",
+  "cls": "JumpjetLocomotionClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a20",
+  "name": "AbstractClass::saveToStream",
+  "cls": "AbstractClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a30",
+  "name": "AbstractClass::loadFromStream",
+  "cls": "AbstractClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a40",
+  "name": "AbstractClass::computeSize",
+  "cls": "AbstractClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a50",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a60",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a70",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a80",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510a90",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510aa0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510ab0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510ac0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510ad0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510ae0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x510af0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12",
+  "cls": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5139e0",
+  "name": "HouseTypeClass::readBaseDefenses",
+  "cls": "HouseTypeClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x5139f0",
+  "name": "HouseTypeClass::readAiBuildLists",
+  "cls": "HouseTypeClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x513a00",
+  "name": "HouseTypeClass::readLoadoutData",
+  "cls": "HouseTypeClass",
+  "size": 10,
+  "family": "fresh3",
+  "n_calls": 1
+ },
+ {
+  "addr": "0x556620",
+  "name": "ObjectClass::GetWidth",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x556630",
+  "name": "ObjectClass::GetHeight",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x40cc00",
+  "name": "VectorClass_ptr_IsometricTileClass::GetItem",
+  "cls": "VectorClass_ptr_IsometricTileClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41b910",
+  "name": "AircraftClass::MissionStubReturnZero",
+  "cls": "AircraftClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x477740",
+  "name": "VtableStub::Method_477740",
+  "cls": "VtableStub",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4e1960",
+  "name": "VectorClass_ptr_ConvertClass::MarkDirty",
+  "cls": "VectorClass_ptr_ConvertClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5d6440",
+  "name": "ScenarioClass::MissionStubReturnZero3",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5f9710",
+  "name": "ObjectTypeClass::SetRTTI71",
+  "cls": "ObjectTypeClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7b9d80",
+  "name": "WWMouseClass::checkVisible",
+  "cls": "WWMouseClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x486670",
+  "name": "CellClass::InBounds",
+  "cls": "CellClass",
+  "size": 26,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x659570",
+  "name": "sub_659570",
+  "cls": null,
+  "size": 4,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6a3ea0",
+  "name": "JumpjetLocomotionClass::StubReturnZero_14",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab30",
+  "name": "XSurface::entry_4C_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab40",
+  "name": "XSurface::entry_50_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab50",
+  "name": "XSurface::entry_34_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab60",
+  "name": "XSurface::entry_38_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab70",
+  "name": "XSurface::entry_3C_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bab80",
+  "name": "XSurface::entry_40_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7bb340",
+  "name": "XSurface::entry_1C_",
+  "cls": "XSurface",
+  "size": 5,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x407010",
+  "name": "Audio::GetEnabled",
+  "cls": "Audio",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x40a7a0",
+  "name": "Audio::GetDirectSound",
+  "cls": "Audio",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c170",
+  "name": "AircraftClass::MissionStubReturnZero2",
+  "cls": "AircraftClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c180",
+  "name": "AircraftClass::MissionStubReturnZero3",
+  "cls": "AircraftClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41cfb0",
+  "name": "AircraftTypeClass::GetTypeIdentifier",
+  "cls": "AircraftTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41cfc0",
+  "name": "AircraftTypeClass::GetObjectSize",
+  "cls": "AircraftTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41dd30",
+  "name": "AirstrikeClass::StubReturn96",
+  "cls": "AirstrikeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41dd40",
+  "name": "AirstrikeClass::StubReturn71",
+  "cls": "AirstrikeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41ffd0",
+  "name": "AITriggerTypeClass::GetTypeIdentifier",
+  "cls": "AITriggerTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41ffe0",
+  "name": "AITriggerTypeClass::GetObjectSize",
+  "cls": "AITriggerTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x426530",
+  "name": "AnimClass::MissionStubReturnZero",
+  "cls": "AnimClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x426580",
+  "name": "AbstractClass::getAltitude",
+  "cls": "AbstractClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x428e70",
+  "name": "AnimTypeClass::GetObjectSize",
+  "cls": "AnimTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4393d0",
+  "name": "BombClass::StubReturn92",
+  "cls": "BombClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4393e0",
+  "name": "BombClass::StubReturn68",
+  "cls": "BombClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x43a9a0",
+  "name": "NeuronClass::StubReturn60",
+  "cls": "NeuronClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x43a9b0",
+  "name": "NeuronClass::StubReturn56",
+  "cls": "NeuronClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x459da0",
+  "name": "BuildingClass::MissionStubReturnZero5",
+  "cls": "BuildingClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x459e70",
+  "name": "BuildingClass::Mission_Guard",
+  "cls": "BuildingClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x459ec0",
+  "name": "BuildingClass::Mission_Construction",
+  "cls": "BuildingClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x465d90",
+  "name": "BuildingTypeClass::GetTypeIdentifier",
+  "cls": "BuildingTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x465da0",
+  "name": "BuildingTypeClass::GetObjectSize",
+  "cls": "BuildingTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46b540",
+  "name": "BulletClass::MissionStubReturnZero",
+  "cls": "BulletClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46b550",
+  "name": "BulletClass::MissionStubReturnZero2",
+  "cls": "BulletClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46c850",
+  "name": "BulletTypeClass::GetTypeIdentifier",
+  "cls": "BulletTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46c860",
+  "name": "BulletTypeClass::GetObjectSize",
+  "cls": "BulletTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46d070",
+  "name": "CampaignClass::StubReturn928",
+  "cls": "CampaignClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46d080",
+  "name": "CampaignClass::StubReturn10",
+  "cls": "CampaignClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4729a0",
+  "name": "CaptureManagerClass::GetObjectSize",
+  "cls": "CaptureManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4729b0",
+  "name": "CaptureManagerClass::GetTypeIdentifier",
+  "cls": "CaptureManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x487e60",
+  "name": "CellClass::StubReturn11",
+  "cls": "CellClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x487e70",
+  "name": "CellClass::StubReturn328",
+  "cls": "CellClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4a60d0",
+  "name": "TextRenderer::GetInstance",
+  "cls": "TextRenderer",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4a7c70",
+  "name": "DiskLaserClass::StubReturn64",
+  "cls": "DiskLaserClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4a7c80",
+  "name": "DiskLaserClass::StubReturn73",
+  "cls": "DiskLaserClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4b4cf0",
+  "name": "DriveLocomotionClass::StubReturn112",
+  "cls": "DriveLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4b6670",
+  "name": "JumpjetLocomotionClass::CheckState3",
+  "cls": "JumpjetLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4b6680",
+  "name": "JumpjetLocomotionClass::CheckState4",
+  "cls": "JumpjetLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4b66e0",
+  "name": "DropPodLocomotionClass::StubReturn48",
+  "cls": "DropPodLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4bbc90",
+  "name": "DDraw::GetStatus",
+  "cls": "DDraw",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4c5aa0",
+  "name": "EMPulseClass::StubReturn52",
+  "cls": "EMPulseClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4c5ab0",
+  "name": "EMPulseClass::StubReturn55",
+  "cls": "EMPulseClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4ca750",
+  "name": "FactoryClass::StubReturn12",
+  "cls": "FactoryClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4ca760",
+  "name": "FactoryClass::StubReturn116",
+  "cls": "FactoryClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4d0390",
+  "name": "FlyLocomotionClass::StubReturn96",
+  "cls": "FlyLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4d27b0",
+  "name": "FoggedObjectClass::GetTypeIdentifier",
+  "cls": "FoggedObjectClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4d27c0",
+  "name": "FoggedObjectClass::GetObjectSize",
+  "cls": "FoggedObjectClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4f2b40",
+  "name": "HouseClass::vt_placeholder_09",
+  "cls": "HouseClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4f2b50",
+  "name": "HouseClass::vt_placeholder_10",
+  "cls": "HouseClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4f3ff0",
+  "name": "VectorCursor_uint_DynamicVectorClass_uint::Release",
+  "cls": "VectorCursor_uint_DynamicVectorClass_uint",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4f4000",
+  "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
+  "cls": "VectorCursor_uint_DynamicVectorClass_uint",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4f4c20",
+  "name": "Byte::Zero",
+  "cls": "Byte",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x50e360",
+  "name": "AbstractClass::computeMovementCost",
+  "cls": "AbstractClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x512710",
+  "name": "HouseTypeClass::GetTypeIdentifier",
+  "cls": "HouseTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x512720",
+  "name": "HouseTypeClass::GetObjectSize",
+  "cls": "HouseTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5172b0",
+  "name": "HoverLocomotionClass::StubReturn120",
+  "cls": "HoverLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5232f0",
+  "name": "InfantryClass::StubReturn1776",
+  "cls": "InfantryClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x523340",
+  "name": "InfantryClass::StubReturn15",
+  "cls": "InfantryClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x524d40",
+  "name": "InfantryTypeClass::GetTypeIdentifier",
+  "cls": "InfantryTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x524d50",
+  "name": "InfantryTypeClass::GetObjectSize",
+  "cls": "InfantryTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x535d20",
+  "name": "CreateTeamCommand::performAction_2",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x535de0",
+  "name": "CreateTeamCommand::performAction_7",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x535ea0",
+  "name": "CreateTeamCommand::performAction_12",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x535f30",
+  "name": "CreateTeamCommand::performAction_17",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5365a0",
+  "name": "CreateTeamCommand::performAction_26",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5366a0",
+  "name": "CreateTeamCommand::performAction_31",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536770",
+  "name": "CreateTeamCommand::performAction_39",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536810",
+  "name": "CreateTeamCommand::performAction_45",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5368d0",
+  "name": "CreateTeamCommand::performAction_53",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536970",
+  "name": "CreateTeamCommand::performAction_59",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536a10",
+  "name": "CreateTeamCommand::performAction_65",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536b10",
+  "name": "CreateTeamCommand::performAction_70",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x536b90",
+  "name": "CreateTeamCommand::performAction_75",
+  "cls": "CreateTeamCommand",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537a50",
+  "name": "Commands::AddRef",
+  "cls": "Commands",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537a60",
+  "name": "Commands::ddtor",
+  "cls": "Commands",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537a70",
+  "name": "Commands::Release",
+  "cls": "Commands",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537a80",
+  "name": "Commands::StubReturn8550640",
+  "cls": "Commands",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537b50",
+  "name": "ScreenCaptureCommandClass::AddRef",
+  "cls": "ScreenCaptureCommandClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537de0",
+  "name": "PageUserCommandClass::AddRef",
+  "cls": "PageUserCommandClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x537f20",
+  "name": "DeleteCommandClass::AddRef",
+  "cls": "DeleteCommandClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x53a100",
+  "name": "LightningStorm::IsActive",
+  "cls": "LightningStorm",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x54a140",
+  "name": "IsometricTileTypeClass::GetTypeIdentifier",
+  "cls": "IsometricTileTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x54a150",
+  "name": "IsometricTileTypeClass::GetObjectSize",
+  "cls": "IsometricTileTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x555130",
+  "name": "LightSourceClass::StubReturn76",
+  "cls": "LightSourceClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x555140",
+  "name": "LightSourceClass::StubReturn54",
+  "cls": "LightSourceClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x55cbf0",
+  "name": "VtableStub::Method_55CBF0",
+  "cls": "VtableStub",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x58b7d0",
+  "name": "MapSeed::IsInitialized",
+  "cls": "MapSeed",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b1b40",
+  "name": "MechLocomotionClass::StubReturn52",
+  "cls": "MechLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e10",
+  "name": "MissionClass::Return450A",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e20",
+  "name": "MissionClass::Return450B",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e30",
+  "name": "MissionClass::Return450C",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e40",
+  "name": "TechnoClass::StubReturn450",
+  "cls": "TechnoClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e50",
+  "name": "IPersistStream::StubReturn450",
+  "cls": "IPersistStream",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e70",
+  "name": "TechnoClass::CheckState1",
+  "cls": "TechnoClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e80",
+  "name": "TechnoClass::CheckState2",
+  "cls": "TechnoClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2e90",
+  "name": "AircraftClass::CheckMissionStatus",
+  "cls": "AircraftClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2ed0",
+  "name": "MissionClass::Return450D",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2ee0",
+  "name": "MissionClass::Return450E",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2ef0",
+  "name": "IPersistStream::GetMaxSize",
+  "cls": "IPersistStream",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f10",
+  "name": "MissionClass::Return450G",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f20",
+  "name": "MissionClass::Return450H",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f30",
+  "name": "AircraftClass::CheckMissionStatus2",
+  "cls": "AircraftClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f40",
+  "name": "MissionClass::Return450I",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f50",
+  "name": "MissionClass::Return450J",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f80",
+  "name": "MissionClass::Return450K",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2f90",
+  "name": "MissionClass::Return450L",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2fa0",
+  "name": "MissionClass::Return450F",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2fb0",
+  "name": "MissionClass::Return450M",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5b2fc0",
+  "name": "MissionClass::Return450N",
+  "cls": "MissionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5c03c0",
+  "name": "AbstractClass::resetPathState",
+  "cls": "AbstractClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5d5db0",
+  "name": "ScenarioClass::MissionStubReturnZero",
+  "cls": "ScenarioClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fdf00",
+  "name": "Object::StubReturn176",
+  "cls": "Object",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fdf50",
+  "name": "Object::StubReturn20",
+  "cls": "Object",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fef00",
+  "name": "OverlayTypeClass::GetTypeIdentifier",
+  "cls": "OverlayTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fef10",
+  "name": "OverlayTypeClass::GetObjectSize",
+  "cls": "OverlayTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62af50",
+  "name": "ParasiteClass::StubReturn88",
+  "cls": "ParasiteClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62af60",
+  "name": "ParasiteClass::StubReturn67",
+  "cls": "ParasiteClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62d770",
+  "name": "ParticleClass::CheckStateFlag",
+  "cls": "ParticleClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62d970",
+  "name": "ParticleClass::GetObjectSize",
+  "cls": "ParticleClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62d980",
+  "name": "ParticleClass::GetTypeIdentifier",
+  "cls": "ParticleClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62fe80",
+  "name": "ParticleSystemClass::StubReturn2",
+  "cls": "ParticleSystemClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x630200",
+  "name": "ParticleSystemClass::GetObjectSize",
+  "cls": "ParticleSystemClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x630210",
+  "name": "ParticleSystemClass::GetTypeIdentifier",
+  "cls": "ParticleSystemClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x637aa0",
+  "name": "FactoryClass::GetFlag",
+  "cls": "FactoryClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x644920",
+  "name": "ParticleSystemTypeClass::GetObjectSize",
+  "cls": "ParticleSystemTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x644930",
+  "name": "ParticleSystemTypeClass::GetTypeIdentifier",
+  "cls": "ParticleSystemTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x645910",
+  "name": "ParticleTypeClass::GetObjectSize",
+  "cls": "ParticleTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x645920",
+  "name": "ParticleTypeClass::GetTypeIdentifier",
+  "cls": "ParticleTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x65b3a0",
+  "name": "RadSiteClass::StubReturn116",
+  "cls": "RadSiteClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x65b3c0",
+  "name": "RadSiteClass::StubReturn69",
+  "cls": "RadSiteClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6635b0",
+  "name": "RocketLocomotionClass::StubReturn96",
+  "cls": "RocketLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x691ec0",
+  "name": "ScriptClass::StubReturn26",
+  "cls": "ScriptClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x691ed0",
+  "name": "ScriptClass::StubReturn48",
+  "cls": "ScriptClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x691f70",
+  "name": "ScriptTypeClass::GetTypeIdentifier",
+  "cls": "ScriptTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x691f80",
+  "name": "ScriptTypeClass::GetObjectSize",
+  "cls": "ScriptTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6a42a0",
+  "name": "ShipLocomotionClass::StubReturn112",
+  "cls": "ShipLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6a4910",
+  "name": "SideClass::StubReturn180",
+  "cls": "SideClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6a4920",
+  "name": "SideClass::StubReturn28",
+  "cls": "SideClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b1370",
+  "name": "SlaveManagerClass::StubReturn100",
+  "cls": "SlaveManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b1380",
+  "name": "SlaveManagerClass::StubReturn72",
+  "cls": "SlaveManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b4f30",
+  "name": "UnitClass::StubReturn176",
+  "cls": "UnitClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b4f40",
+  "name": "UnitClass::StubReturn29",
+  "cls": "UnitClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b6130",
+  "name": "SmudgeTypeClass::GetTypeIdentifier",
+  "cls": "SmudgeTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b6140",
+  "name": "SmudgeTypeClass::GetObjectSize",
+  "cls": "SmudgeTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b8120",
+  "name": "SpawnManagerClass::StubReturn116",
+  "cls": "SpawnManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b8130",
+  "name": "SpawnManagerClass::StubReturn65",
+  "cls": "SpawnManagerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6ce200",
+  "name": "SuperClass::StubReturn57",
+  "cls": "SuperClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6ce210",
+  "name": "SuperClass::StubReturn128",
+  "cls": "SuperClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6dc450",
+  "name": "Tactical::StubReturn56",
+  "cls": "Tactical",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6dc460",
+  "name": "Tactical::StubReturn3608",
+  "cls": "Tactical",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e4630",
+  "name": "TActionClass::StubReturn148",
+  "cls": "TActionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e4640",
+  "name": "TActionClass::StubReturn47",
+  "cls": "TActionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e5890",
+  "name": "TagClass::StubReturn56",
+  "cls": "TagClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e58a0",
+  "name": "TagClass::StubReturn44",
+  "cls": "TagClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e6490",
+  "name": "TagTypeClass::GetTypeIdentifier",
+  "cls": "TagTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e64a0",
+  "name": "TagTypeClass::GetObjectSize",
+  "cls": "TagTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e87d0",
+  "name": "TaskForceClass::StubReturn33",
+  "cls": "TaskForceClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e87e0",
+  "name": "TaskForceClass::StubReturn212",
+  "cls": "TaskForceClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f0430",
+  "name": "TeamClass::StubReturn160",
+  "cls": "TeamClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f0440",
+  "name": "TeamClass::StubReturn34",
+  "cls": "TeamClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f20a0",
+  "name": "TeamTypeClass::GetTypeIdentifier",
+  "cls": "TeamTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f20b0",
+  "name": "TeamTypeClass::GetObjectSize",
+  "cls": "TeamTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x70dd90",
+  "name": "TechnoClass::vt_entry_3E8",
+  "cls": "TechnoClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71b190",
+  "name": "TemporalClass::StubReturn80",
+  "cls": "TemporalClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71b1a0",
+  "name": "TemporalClass::StubReturn70",
+  "cls": "TemporalClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71d2f0",
+  "name": "TerrainClass::MissionStubReturnZero",
+  "cls": "TerrainClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71d300",
+  "name": "TerrainClass::MissionStubReturnZero2",
+  "cls": "TerrainClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71e330",
+  "name": "TerrainTypeClass::GetTypeIdentifier",
+  "cls": "TerrainTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71e340",
+  "name": "TerrainTypeClass::GetObjectSize",
+  "cls": "TerrainTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71fa50",
+  "name": "TEventClass::StubReturn88",
+  "cls": "TEventClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71fa60",
+  "name": "TEventClass::StubReturn48",
+  "cls": "TEventClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7236e0",
+  "name": "TiberiumClass::StubReturn296",
+  "cls": "TiberiumClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7236f0",
+  "name": "TiberiumClass::StubReturn46",
+  "cls": "TiberiumClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x726930",
+  "name": "TriggerClass::StubReturn72",
+  "cls": "TriggerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x726940",
+  "name": "TriggerClass::StubReturn38",
+  "cls": "TriggerClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x727ca0",
+  "name": "TriggerTypeClass::GetTypeIdentifier",
+  "cls": "TriggerTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x727cb0",
+  "name": "TriggerTypeClass::GetObjectSize",
+  "cls": "TriggerTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7286b0",
+  "name": "TubeClass::StubReturn452",
+  "cls": "TubeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7286c0",
+  "name": "TubeClass::StubReturn53",
+  "cls": "TubeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x72a200",
+  "name": "TunnelLocomotionClass::StubReturn60",
+  "cls": "TunnelLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x72dae0",
+  "name": "CreatureClass::GetManager",
+  "cls": "CreatureClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x72f510",
+  "name": "VtableStub::72F510",
+  "cls": "VtableStub",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x732d00",
+  "name": "Selection::GetFlag",
+  "cls": "Selection",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x746dd0",
+  "name": "C07F5C70::StubReturn2280",
+  "cls": "C07F5C70",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x746e20",
+  "name": "C07F5C70::StubReturn1",
+  "cls": "C07F5C70",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x748160",
+  "name": "UnitTypeClass::GetObjectSize",
+  "cls": "UnitTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x748170",
+  "name": "UnitTypeClass::GetTypeIdentifier",
+  "cls": "UnitTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74a960",
+  "name": "VoxelAnimClass::StubReturn3",
+  "cls": "VoxelAnimClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74ab10",
+  "name": "VoxelAnimClass::StubReturn328",
+  "cls": "VoxelAnimClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74ab20",
+  "name": "VoxelAnimClass::StubReturn41",
+  "cls": "VoxelAnimClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74b9f0",
+  "name": "VoxelAnimTypeClass::GetTypeIdentifier",
+  "cls": "VoxelAnimTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74ba00",
+  "name": "VoxelAnimTypeClass::GetObjectSize",
+  "cls": "VoxelAnimTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74f310",
+  "name": "VeinholeMonsterClass::StubReturn63",
+  "cls": "VeinholeMonsterClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74f320",
+  "name": "VeinholeMonsterClass::StubReturn264",
+  "cls": "VeinholeMonsterClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74fda0",
+  "name": "NetworkBuffer::GetField2",
+  "cls": "NetworkBuffer",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74fdb0",
+  "name": "NetworkBuffer::GetField3",
+  "cls": "NetworkBuffer",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x753c70",
+  "name": "Miles::DriverGet",
+  "cls": "Miles",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x75cbd0",
+  "name": "WalkLocomotionClass::StubReturn60",
+  "cls": "WalkLocomotionClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x75e4f0",
+  "name": "WarheadTypeClass::GetObjectSize",
+  "cls": "WarheadTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x75e500",
+  "name": "WarheadTypeClass::GetTypeIdentifier",
+  "cls": "WarheadTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x75f880",
+  "name": "WaveClass::GetObjectSize",
+  "cls": "WaveClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x75f890",
+  "name": "WaveClass::CheckStateFlag",
+  "cls": "WaveClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7631f0",
+  "name": "WaveClass::GetTypeIdentifier",
+  "cls": "WaveClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x763e00",
+  "name": "WaypointPathClass::StubReturn64",
+  "cls": "WaypointPathClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x763e10",
+  "name": "WaypointPathClass::StubReturn51",
+  "cls": "WaypointPathClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x765b40",
+  "name": "Campaign_WorldDominationTour_24::Release",
+  "cls": "Campaign_WorldDominationTour_24",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x765b50",
+  "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
+  "cls": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x766fa0",
+  "name": "Conflict_WorldDominationTour_26::Release",
+  "cls": "Conflict_WorldDominationTour_26",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x766fb0",
+  "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
+  "cls": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76a5a0",
+  "name": "Map_WorldDominationTour_38::Release",
+  "cls": "Map_WorldDominationTour_38",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76a5b0",
+  "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
+  "cls": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f160",
+  "name": "Count::Release",
+  "cls": "Count",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f170",
+  "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
+  "cls": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f180",
+  "name": "VectorCursor::Release",
+  "cls": "VectorCursor",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f190",
+  "name": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
+  "cls": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f1a0",
+  "name": "CampaignProperties_WorldDominationTour_22::Release",
+  "cls": "CampaignProperties_WorldDominationTour_22",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x76f1b0",
+  "name": "CampaignProperties_WorldDominationTour_22::ddtor",
+  "cls": "CampaignProperties_WorldDominationTour_22",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7730d0",
+  "name": "WeaponTypeClass::GetObjectSize",
+  "cls": "WeaponTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7730e0",
+  "name": "WeaponTypeClass::GetTypeIdentifier",
+  "cls": "WeaponTypeClass",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x775b10",
+  "name": "Dialog::GetCurrent",
+  "cls": "Dialog",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x775b20",
+  "name": "Dialog::GetCurrentType",
+  "cls": "Dialog",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x777b50",
+  "name": "GameOptions::GetEntry",
+  "cls": "GameOptions",
+  "size": 6,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x406520",
+  "name": "AbstractTypeClass::sub_406520",
+  "cls": "AbstractTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x406530",
+  "name": "AbstractTypeClass::sub_406530",
+  "cls": "AbstractTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x408070",
+  "name": "Audio::IsSoundPlaying",
+  "cls": "Audio",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x408140",
+  "name": "ThemeClass::GetValue",
+  "cls": "ThemeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x40d280",
+  "name": "MouseClass::ProcessInput",
+  "cls": "MouseClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41b9e0",
+  "name": "TechnoClass::updateROFTimer",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c010",
+  "name": "TechnoClass::IsDisguised",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c070",
+  "name": "AircraftClass::CheckDockState",
+  "cls": "AircraftClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c200",
+  "name": "AircraftClass::CheckMissionFail",
+  "cls": "AircraftClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41cfa0",
+  "name": "ObjectClass::GetMember41_2",
+  "cls": "ObjectClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41cfd0",
+  "name": "AircraftTypeClass::GetAuxField",
+  "cls": "AircraftTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x425520",
+  "name": "AbstractClass::updateLayer",
+  "cls": "AbstractClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x427290",
+  "name": "AnimFile::Stub",
+  "cls": "AnimFile",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x428e60",
+  "name": "AnimTypeClass::GetAuxField",
+  "cls": "AnimTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4581f0",
+  "name": "BuildingClass::MissionStubReturnZero6",
+  "cls": "BuildingClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x459ee0",
+  "name": "BuildingClass::GetTypePtr",
+  "cls": "BuildingClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x465d70",
+  "name": "BuildingClass::processPowerState",
+  "cls": "BuildingClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x465db0",
+  "name": "BuildingTypeClass::GetAuxField",
+  "cls": "BuildingTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46b270",
+  "name": "TechnoClass::updateHealthBar",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x46b5b0",
+  "name": "BulletClass::CheckMissionAbort",
+  "cls": "BulletClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4bad70",
+  "name": "DSurface::GetPitch",
+  "cls": "DSurface",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4df1d0",
+  "name": "TechnoClass::vt_entry_4B0",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4df1e0",
+  "name": "TechnoClass::vt_entry_4B4",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x512730",
+  "name": "HouseTypeClass::loadBuildLimits",
+  "cls": "HouseTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5176a0",
+  "name": "InfantryClass::SetField6",
+  "cls": "InfantryClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x51faf0",
+  "name": "InfantryClass::GetTypePtr",
+  "cls": "InfantryClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x524d60",
+  "name": "InfantryTypeClass::GetAuxField",
+  "cls": "InfantryTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x53f1f0",
+  "name": "Multiplayer::Screen",
+  "cls": "Multiplayer",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x54a160",
+  "name": "IsometricTileTypeClass::GetAuxField",
+  "cls": "IsometricTileTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x557b00",
+  "name": "CheckListClass::GetItemCount",
+  "cls": "CheckListClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x55af40",
+  "name": "RadarClass::SetGlobal",
+  "cls": "RadarClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x578ac0",
+  "name": "MapClass::IncrementRedrawCounter",
+  "cls": "MapClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5cb6c0",
+  "name": "VtableStub::5CB6C0",
+  "cls": "VtableStub",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5f5f30",
+  "name": "ObjectClass::GetMember41",
+  "cls": "ObjectClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fdde0",
+  "name": "Object::ProcessEvent",
+  "cls": "Object",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x5fef20",
+  "name": "OverlayTypeClass::GetAuxField",
+  "cls": "OverlayTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x600670",
+  "name": "ComboBoxOwnerDraw::GetWidthHeight",
+  "cls": "ComboBoxOwnerDraw",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x624130",
+  "name": "OwnerDrawControl::InitVtable",
+  "cls": "OwnerDrawControl",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x62d990",
+  "name": "ParticleClass::Stub",
+  "cls": "ParticleClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x630220",
+  "name": "ParticleSystemClass::Stub",
+  "cls": "ParticleSystemClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x637060",
+  "name": "TabClass::processTabInput",
+  "cls": "TabClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x642b20",
+  "name": "LoadingScreen::GetValue",
+  "cls": "LoadingScreen",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x656de0",
+  "name": "HouseClass::updateAlliedStatus",
+  "cls": "HouseClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x65d660",
+  "name": "ReferenceCounted::Constructor",
+  "cls": "ReferenceCounted",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x681100",
+  "name": "LoadOptions::GetData",
+  "cls": "LoadOptions",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x681120",
+  "name": "LoadOptions::GetFlag98",
+  "cls": "LoadOptions",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x681140",
+  "name": "LoadOptions::GetFlag99",
+  "cls": "LoadOptions",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6812d0",
+  "name": "LoadOptions::GetFlag252",
+  "cls": "LoadOptions",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x691f90",
+  "name": "ScriptTypeClass::GetAuxField",
+  "cls": "ScriptTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x69bbe0",
+  "name": "SessionClass::GetGameSpeed",
+  "cls": "SessionClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b4f20",
+  "name": "UnitClass::CheckStatus",
+  "cls": "UnitClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6b6150",
+  "name": "SmudgeTypeClass::GetAuxField",
+  "cls": "SmudgeTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6e64b0",
+  "name": "TagTypeClass::GetAuxField",
+  "cls": "TagTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f20c0",
+  "name": "TeamTypeClass::GetAuxField",
+  "cls": "TeamTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x6f9dc0",
+  "name": "TechnoClass::GetTarget",
+  "cls": "TechnoClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x705d20",
+  "name": "BuildingClass::GetPlanningToken",
+  "cls": "BuildingClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x70c5b0",
+  "name": "ObjectClass::GetShroudByte",
+  "cls": "ObjectClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x70c5c0",
+  "name": "ObjectClass::GetFogByte",
+  "cls": "ObjectClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x70ddc0",
+  "name": "BuildingClass::checkPlacement",
+  "cls": "BuildingClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x70fbd0",
+  "name": "UnitClass::IsDeactivated",
+  "cls": "UnitClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71d150",
+  "name": "IRTTITypeInfo::GetOffset",
+  "cls": "IRTTITypeInfo",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x71e350",
+  "name": "TerrainTypeClass::GetAuxField",
+  "cls": "TerrainTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x723700",
+  "name": "TiberiumClass::Stub",
+  "cls": "TiberiumClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x727cc0",
+  "name": "TriggerTypeClass::GetAuxField",
+  "cls": "TriggerTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x746d80",
+  "name": "FootClass::updateScanRange",
+  "cls": "FootClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x748180",
+  "name": "UnitTypeClass::GetAuxField",
+  "cls": "UnitTypeClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x74ab30",
+  "name": "VoxelAnimClass::LoadFrame",
+  "cls": "VoxelAnimClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x759f70",
+  "name": "MovieClass::GetWidth",
+  "cls": "MovieClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x759f80",
+  "name": "MovieClass::GetHeight",
+  "cls": "MovieClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x7b2720",
+  "name": "SessionClass::SetInstance",
+  "cls": "SessionClass",
+  "size": 7,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x408600",
+  "name": "AudioNode::Release",
+  "cls": "AudioNode",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x40d230",
+  "name": "InputManager_ProcessEvents::AddRef",
+  "cls": "InputManager_ProcessEvents",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x40d240",
+  "name": "InputManager_ProcessEvents::Release",
+  "cls": "InputManager_ProcessEvents",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x41c030",
+  "name": "TacticalClass::CheckAction",
+  "cls": "TacticalClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x425260",
+  "name": "AnimClass::SetField8",
+  "cls": "AnimClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x425270",
+  "name": "VtableStub::Method_425270",
+  "cls": "VtableStub",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x487e50",
+  "name": "AbstractClass::compareType",
+  "cls": "AbstractClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x48ace0",
+  "name": "Return::HRESULT_Fail",
+  "cls": "Return",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ },
+ {
+  "addr": "0x4c9c60",
+  "name": "FactoryClass::HasProgressChanged",
+  "cls": "FactoryClass",
+  "size": 8,
+  "family": "fresh3",
+  "n_calls": 0
+ }
+]

@@ -1,0 +1,74 @@
+{
+ "summary": {
+  "total": 3,
+  "verdicts": {
+   "MISMATCH": 2,
+   "MATCH": 1
+  },
+  "pathologies": {
+   "cc_mismatch": 1,
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 33.3,
+  "match_rate_of_total_pct": 33.3
+ },
+ "results": [
+  {
+   "addr": "0x5b2990",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 56B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 mov ax, word ptr [ecx]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "Math::Abs16Cmp",
+   "emitted": "Math::Abs16Cmp",
+   "unit": "Math",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 0,
+   "orig_size": 42,
+   "ours_size": 56
+  },
+  {
+   "addr": "0x486380",
+   "batch": "adhoc",
+   "verdict": "MATCH",
+   "note": "20B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Cell::IsEmpty",
+   "emitted": "Cell::IsEmpty",
+   "unit": "Cell",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 20
+  },
+  {
+   "addr": "0x5f6560",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 51B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 mov eax, dword ptr [ecx]"
+   },
+   "pathology": "codegen_shape",
+   "name": "Math::DistSq2D",
+   "emitted": "Math::DistSq2D",
+   "unit": "Math",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 62,
+   "ours_size": 51
+  }
+ ]
+}

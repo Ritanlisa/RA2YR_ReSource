@@ -784,7 +784,7 @@
   "status": "PENDING"
  },
  "0x486380": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+14 xor al, al",
   "name": "Cell::IsEmpty",
   "note": "decomp_batch r2: MATCH",
@@ -1981,7 +1981,7 @@
   "status": "NG"
  },
  "0x5b2990": {
-  "attempts": 16,
+  "attempts": 17,
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "Math::Abs16Cmp",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
@@ -2331,7 +2331,7 @@
   "status": "OK"
  },
  "0x5f6560": {
-  "attempts": 13,
+  "attempts": 14,
   "first_diff": "+0 sub esp, 0xc",
   "name": "Math::DistSq2D",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",

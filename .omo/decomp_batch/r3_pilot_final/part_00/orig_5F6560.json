@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6560",
+ "name": "Math::DistSq2D",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6560",
+ "bytes_hex": "83ec0c8b018d5424005652ff50488bd08b7424148b028b4a048b52088954240c8b162bc28bd08b46042bc85e8bc18bca0fafc00fafca03c183c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

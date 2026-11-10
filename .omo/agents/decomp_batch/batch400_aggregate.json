@@ -1,0 +1,248 @@
+{
+ "total": 400,
+ "verdicts": {
+  "MATCH": 265,
+  "MISMATCH": 30,
+  "COMPILE_FAIL": 104,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "frame_sched": 18,
+  "signedness": 1,
+  "const_fold": 4,
+  "ret_norm": 1,
+  "width_mismatch": 1
+ },
+ "selector_noise": 6,
+ "clean_total": 394,
+ "clean_verdicts": {
+  "MATCH": 265,
+  "MISMATCH": 30,
+  "COMPILE_FAIL": 98,
+  "DUP_SKIP": 1
+ },
+ "per_part": {
+  "p00": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 15,
+    "MISMATCH": 2,
+    "COMPILE_FAIL": 3
+   },
+   "pathologies": {
+    "codegen_shape": 2
+   },
+   "match_rate_of_decided_pct": 88.2,
+   "match_rate_of_total_pct": 75.0
+  },
+  "p01": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 16,
+    "MATCH": 4
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 20.0
+  },
+  "p02": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 12,
+    "MISMATCH": 8
+   },
+   "pathologies": {
+    "codegen_shape": 2,
+    "frame_sched": 6
+   },
+   "match_rate_of_decided_pct": 0.0,
+   "match_rate_of_total_pct": 0.0
+  },
+  "p03": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 8,
+    "MISMATCH": 12
+   },
+   "pathologies": {
+    "frame_sched": 12
+   },
+   "match_rate_of_decided_pct": 0.0,
+   "match_rate_of_total_pct": 0.0
+  },
+  "p04": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 12,
+    "MISMATCH": 1,
+    "MATCH": 7
+   },
+   "pathologies": {
+    "signedness": 1
+   },
+   "match_rate_of_decided_pct": 87.5,
+   "match_rate_of_total_pct": 35.0
+  },
+  "p05": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 1,
+    "MATCH": 19
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 95.0
+  },
+  "p06": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 19,
+    "COMPILE_FAIL": 1
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 95.0
+  },
+  "p07": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 14,
+    "COMPILE_FAIL": 6
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 70.0
+  },
+  "p08": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 19,
+    "MATCH": 1
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 5.0
+  },
+  "p09": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 19,
+    "DUP_SKIP": 1
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 95.0
+  },
+  "p10": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 20
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 100.0
+  },
+  "p11": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 20
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 100.0
+  },
+  "p12": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 20
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 100.0
+  },
+  "p13": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 20
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 100.0
+  },
+  "p14": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 2,
+    "MATCH": 18
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 90.0
+  },
+  "p15": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 7,
+    "COMPILE_FAIL": 13
+   },
+   "pathologies": {},
+   "match_rate_of_decided_pct": 100.0,
+   "match_rate_of_total_pct": 35.0
+  },
+  "p16": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 17,
+    "MISMATCH": 2,
+    "COMPILE_FAIL": 1
+   },
+   "pathologies": {
+    "const_fold": 2
+   },
+   "match_rate_of_decided_pct": 89.5,
+   "match_rate_of_total_pct": 85.0
+  },
+  "p17": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 14,
+    "MISMATCH": 2,
+    "COMPILE_FAIL": 4
+   },
+   "pathologies": {
+    "ret_norm": 1,
+    "width_mismatch": 1
+   },
+   "match_rate_of_decided_pct": 87.5,
+   "match_rate_of_total_pct": 70.0
+  },
+  "p18": {
+   "total": 20,
+   "verdicts": {
+    "MATCH": 16,
+    "COMPILE_FAIL": 3,
+    "MISMATCH": 1
+   },
+   "pathologies": {
+    "const_fold": 1
+   },
+   "match_rate_of_decided_pct": 94.1,
+   "match_rate_of_total_pct": 80.0
+  },
+  "p19": {
+   "total": 20,
+   "verdicts": {
+    "COMPILE_FAIL": 3,
+    "MATCH": 15,
+    "MISMATCH": 2
+   },
+   "pathologies": {
+    "codegen_shape": 1,
+    "const_fold": 1
+   },
+   "match_rate_of_decided_pct": 88.2,
+   "match_rate_of_total_pct": 75.0
+  }
+ }
+}

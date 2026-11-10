@@ -1,0 +1,8 @@
+{
+ "symbol": "?DistSq2D@Math@@QAEHPAH@Z",
+ "sym_key": "Math::DistSq2D",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b0183ec0c8d5424005652ff50488b7424148b108b48048b46042bc88bc28b165e2bc28bd10fafc00fafd103c283c40cc20400",
+ "relocs": []
+}

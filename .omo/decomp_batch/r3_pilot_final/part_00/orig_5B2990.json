@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2990",
+ "name": "Math::Abs16Cmp",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2990",
+ "bytes_hex": "8b442404668b098b54240856662b080fbf02998bf00fbfc133f22bf29933c22bc23bf05e0f9dc0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

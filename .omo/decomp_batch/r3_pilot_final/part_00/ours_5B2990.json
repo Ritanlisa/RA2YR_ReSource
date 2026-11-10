@@ -1,0 +1,8 @@
+{
+ "symbol": "?Abs16Cmp@Math@@QAE_NPAGPAF@Z",
+ "sym_key": "Math::Abs16Cmp",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "668b018b4c24045657662b018b4c24100fbf318bce0fbfd0c1f91f8bf98bc233fec1f81f2bf98bc833ca2bc833c03bf95f0f9dc05ec20800",
+ "relocs": []
+}
