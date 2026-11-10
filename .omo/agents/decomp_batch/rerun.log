@@ -1,0 +1,1813 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x40d270 SidebarClass::initButtons2 -> SidebarClass
+[conv] 0x4de620 ObjectClass::IsHeightAboveThreshold_0 -> ObjectClass
+[conv] 0x4e14a0 GadgetClass::InputThunkA -> GadgetClass
+[conv] 0x4e14b0 GadgetClass::InputThunkB -> GadgetClass
+[conv] 0x5216c0 TechnoClass::GetThreatValue_0 -> TechnoClass
+[conv] 0x53f4e0 IPXConnClass::ZeroInitAndSetup_0 -> IPXConnClass
+[conv] 0x5bbed0 FileFind::Close -> FileFind
+[conv] 0x5c5d30 FreeForAll::AssignPlayerIndex_0 -> FreeForAll
+[conv] 0x5ca7d0 MultiplayerSiege::vt_entry_18 -> MultiplayerSiege
+[conv] 0x5ca7f0 MultiplayerSiege::ClearFlag_0 -> MultiplayerSiege
+[conv] 0x5ef280 NullModemConnClass::ZeroInitAndSetup_0_0 -> NullModemConnClass
+[conv] 0x63f7b0 PowerClass::Stub -> PowerClass
+[conv] 0x6d0260 TabClass::Stub -> TabClass
+[conv] 0x705d60 BuildingClass::GetType_Thunk -> BuildingClass
+[conv] 0x740e50 TechnoClass::GetAmmoCount_0 -> TechnoClass
+[conv] 0x7447a0 InfantryClass::ScanTarget_0 -> InfantryClass
+[conv] 0x77d710 GameLoop::Thunk -> GameLoop
+[conv] 0x7c891a OleUninitialize::0 -> OleUninitialize
+[conv] 0x7c89f2 unknown::DragEnter -> unknown
+[conv] 0x7c89f8 unknown::BeginDrag -> unknown
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SidebarClass             rc=0
+[era] ObjectClass              rc=0
+[era] GadgetClass              rc=0
+[era] TechnoClass              rc=0
+[era] IPXConnClass             rc=0
+[era] FileFind                 rc=0
+[era] FreeForAll               rc=0
+[era] MultiplayerSiege         rc=0
+[era] NullModemConnClass       rc=0
+[era] PowerClass               rc=0
+[era] TabClass                 rc=0
+[era] BuildingClass            rc=0
+[era] InfantryClass            rc=0
+[era] GameLoop                 rc=0
+[era] OleUninitialize          rc=2
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x40d270   MATCH            SidebarClass::initButtons2
+[diff] 0x4de620   MATCH            ObjectClass::IsHeightAboveThreshold_0
+[diff] 0x4e14a0   MATCH            GadgetClass::InputThunkA
+[diff] 0x4e14b0   MATCH            GadgetClass::InputThunkB
+[diff] 0x5216c0   MATCH            TechnoClass::GetThreatValue_0
+[diff] 0x740e50   MATCH            TechnoClass::GetAmmoCount_0
+[diff] 0x53f4e0   MATCH            IPXConnClass::ZeroInitAndSetup_0
+[diff] 0x5bbed0   MATCH            FileFind::Close
+[diff] 0x5c5d30   MATCH            FreeForAll::AssignPlayerIndex_0
+[diff] 0x5ca7d0   MATCH            MultiplayerSiege::vt_entry_18
+[diff] 0x5ca7f0   MATCH            MultiplayerSiege::ClearFlag_0
+[diff] 0x5ef280   MATCH            NullModemConnClass::ZeroInitAndSetup_0_0
+[diff] 0x63f7b0   MISMATCH         PowerClass::Stub
+[diff] 0x6d0260   MATCH            TabClass::Stub
+[diff] 0x705d60   MATCH            BuildingClass::GetType_Thunk
+[diff] 0x7447a0   MISMATCH         InfantryClass::ScanTarget_0
+[diff] 0x77d710   MATCH            GameLoop::Thunk
+[ledger] 0x40d270 SidebarClass::initButtons2 -> OK (attempt 8)
+[ledger] 0x4de620 ObjectClass::IsHeightAboveThreshold_0 -> OK (attempt 6)
+[ledger] 0x4e14a0 ObjectClass::InputThunkA -> OK (attempt 5)
+[ledger] 0x4e14b0 ObjectClass::InputThunkB -> OK (attempt 5)
+[ledger] 0x5216c0 TechnoClass::GetThreatValue_0 -> OK (attempt 5)
+[ledger] 0x53f4e0 Struct::ZeroInitAndSetup_0 -> OK (attempt 6)
+[ledger] 0x5bbed0 FileFind::Close -> OK (attempt 7)
+[ledger] 0x5c5d30 PlayerClass::AssignPlayerIndex_0 -> OK (attempt 8)
+[ledger] 0x5ca7d0 MPBattleClass::vt_entry_18 -> OK (attempt 5)
+[ledger] 0x5ca7f0 ScenarioClass::ClearFlag_0 -> OK (attempt 5)
+[ledger] 0x5ef280 Struct::ZeroInitAndSetup_0_0 -> OK (attempt 5)
+[ledger] 0x63f7b0 PowerClass::Stub -> NG (attempt 5)
+[ledger] 0x6d0260 BlowStraw_29::Stub -> OK (attempt 5)
+[ledger] 0x705d60 BuildingClass::GetType_Thunk -> OK (attempt 5)
+[ledger] 0x740e50 TechnoClass::GetAmmoCount_0 -> OK (attempt 5)
+[ledger] 0x7447a0 InfantryClass::ScanTarget_0 -> NG (attempt 5)
+[ledger] 0x77d710 GameLoop::Thunk -> OK (attempt 5)
+[ledger] 0x7c891a OleUninitialize::0 -> PENDING (attempt 5)
+[ledger] 0x7c89f2 ImageList::DragEnter -> PENDING (attempt 5)
+[ledger] 0x7c89f8 ImageList::BeginDrag -> PENDING (attempt 5)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 15,
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 88.2,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p00\batch_report.json
+PART 0: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p00
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c89fe unknown::Destroy -> unknown
+[conv] 0x7c8a04 ImageList::EndDrag -> ImageList
+[conv] 0x7c8a0a unknown::DragMove -> unknown
+[conv] 0x7c8a10 unknown::DragShowNolock -> unknown
+[conv] 0x7d1512 GetCurrentThreadId::0 -> GetCurrentThreadId
+[conv] 0x7dcee0 GetCurrentThread::0 -> GetCurrentThread
+[conv] 0x7dcf22 GetCurrentProcessId::0 -> GetCurrentProcessId
+[conv] 0x407070 Audio::GetFlag -> Audio
+[conv] 0x407510 VtableStub::Push_407510 -> VtableStub
+[conv] 0x408520 AudioController::GetOffset -> AudioController
+[conv] 0x485010 BuildingClass::FindByCellHash -> BuildingClass
+[conv] 0x48d1d0 Event_Dispatch::Return0 -> Event_Dispatch
+[conv] 0x536b80 StopCommandClass::performAction_74 -> StopCommandClass
+[conv] 0x537130 CenterREventCommandClass::performAction_128 -> CenterREventCommandClass
+[conv] 0x537f90 DeleteCommandClass::Undo -> DeleteCommandClass
+[conv] 0x5c0580 BinkMovieHandle::AddRef -> BinkMovieHandle
+[conv] 0x5c05f0 BinkMovieHandle::Close -> BinkMovieHandle
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+[conv] 0x7268f0 TActionClass::executeAirstrikeAction -> TActionClass
+[conv] 0x5d5880 Timer::DisableHighPrecision -> Timer
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] ImageList                rc=2
+[era] GetCurrentThreadId       rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+[era] Audio                    rc=2
+[era] VtableStub               rc=2
+[era] AudioController          rc=0
+[era] BuildingClass            rc=2
+[era] Event_Dispatch           rc=0
+[era] StopCommandClass         rc=2
+[era] CenterREventCommandClass rc=2
+[era] DeleteCommandClass       rc=2
+[era] BinkMovieHandle          rc=0
+[era] WWMouseClass             rc=2
+[era] TActionClass             rc=2
+[era] Timer                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x408520   MATCH            AudioController::GetOffset
+[diff] 0x48d1d0   MATCH            Event_Dispatch::Return0
+[diff] 0x5c0580   MATCH            BinkMovieHandle::AddRef
+[diff] 0x5c05f0   MATCH            BinkMovieHandle::Close
+[ledger] 0x7c89fe ImageList::Destroy -> PENDING (attempt 2)
+[ledger] 0x7c8a04 ImageList::EndDrag -> PENDING (attempt 2)
+[ledger] 0x7c8a0a ImageList::DragMove -> PENDING (attempt 2)
+[ledger] 0x7c8a10 ImageList::DragShowNolock -> PENDING (attempt 2)
+[ledger] 0x7d1512 GetCurrentThreadId::0 -> PENDING (attempt 2)
+[ledger] 0x7dcee0 GetCurrentThread::0 -> PENDING (attempt 2)
+[ledger] 0x7dcf22 GetCurrentProcessId::0 -> PENDING (attempt 2)
+[ledger] 0x407070 Audio::GetFlag -> PENDING (attempt 2)
+[ledger] 0x407510 VtableStub::Push_407510 -> PENDING (attempt 2)
+[ledger] 0x408520 AudioController::GetOffset -> OK (attempt 2)
+[ledger] 0x485010 BuildingClass::FindByCellHash -> PENDING (attempt 2)
+[ledger] 0x48d1d0 Event_Dispatch::Return0 -> OK (attempt 2)
+[ledger] 0x536b80 CreateTeamCommand::performAction_74 -> PENDING (attempt 2)
+[ledger] 0x537130 CreateTeamCommand::performAction_128 -> PENDING (attempt 2)
+[ledger] 0x537f90 DeleteCommandClass::Undo -> PENDING (attempt 2)
+[ledger] 0x5c0580 BinkMovieHandle::AddRef -> OK (attempt 2)
+[ledger] 0x5c05f0 BinkMovieHandle::Close -> OK (attempt 2)
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> PENDING (attempt 2)
+[ledger] 0x7268f0 TActionClass::executeAirstrikeAction -> PENDING (attempt 2)
+[ledger] 0x5d5880 Timer::DisableHighPrecision -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MATCH": 4
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p01\batch_report.json
+PART 1: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p01
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x4105e0 AbstractClass::QueryInterface -> AbstractClass
+[conv] 0x4105f0 AbstractClass::Dispatch -> AbstractClass
+[conv] 0x410600 AbstractClass::vt_entry_40 -> AbstractClass
+[conv] 0x41c640 TechnoClass::processIdleState -> TechnoClass
+[conv] 0x41c650 TechnoClass::processGuardState -> TechnoClass
+[conv] 0x41c660 TechnoClass::processAttackState -> TechnoClass
+[conv] 0x46b990 unknown::GetItem -> unknown
+[conv] 0x46b9a0 unknown::GetItem_0 -> unknown
+[conv] 0x4a3220 CStreamClass::IStreamQueryInterface -> CStreamClass
+[conv] 0x4a3230 CStreamClass::IStreamAddRef -> CStreamClass
+[conv] 0x4a3240 CStreamClass::IStreamRelease -> CStreamClass
+[conv] 0x4b4d90 unknown::GetField_0x78 -> unknown
+[conv] 0x4b4da0 unknown::GetField_0x7C -> unknown
+[conv] 0x4b4db0 unknown::GetField_0x80 -> unknown
+[conv] 0x4b6740 unknown::SmallStub_4B6740 -> unknown
+[conv] 0x4b6750 unknown::SmallStub_4B6750 -> unknown
+[conv] 0x4b6760 unknown::SmallStub_4B6760 -> unknown
+[conv] 0x4b6770 unknown::SmallStub_4B6770 -> unknown
+[conv] 0x4b6780 unknown::SmallStub_4B6780 -> unknown
+[conv] 0x4b6790 unknown::SmallStub_4B6790 -> unknown
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=2
+[era] TechnoClass              rc=2
+[era] unknown                  rc=2
+[era] CStreamClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x4105f0   MISMATCH         AbstractClass::Dispatch
+[diff] 0x410600   MISMATCH         AbstractClass::vt_entry_40
+[diff] 0x41c650   MISMATCH         TechnoClass::processGuardState
+[diff] 0x41c660   MISMATCH         TechnoClass::processAttackState
+[ledger] 0x4105e0 IRTTITypeInfo::QueryInterface -> PENDING (attempt 2)
+[ledger] 0x4105f0 INoticeSource::Dispatch -> NG (attempt 2)
+[ledger] 0x410600 XSurface::vt_entry_40 -> NG (attempt 2)
+[ledger] 0x41c640 TechnoClass::processIdleState -> PENDING (attempt 2)
+[ledger] 0x41c650 TechnoClass::processGuardState -> NG (attempt 2)
+[ledger] 0x41c660 TechnoClass::processAttackState -> NG (attempt 2)
+[ledger] 0x46b990 VectorClass_ptr_BulletClass::GetItem -> PENDING (attempt 2)
+[ledger] 0x46b9a0 VectorClass_ptr_BulletClass::GetItem_0 -> PENDING (attempt 2)
+[ledger] 0x4a3220 CStreamClass::IStreamQueryInterface -> PENDING (attempt 2)
+[ledger] 0x4a3230 CStreamClass::IStreamAddRef -> PENDING (attempt 2)
+[ledger] 0x4a3240 CStreamClass::IStreamRelease -> PENDING (attempt 2)
+[ledger] 0x4b4d90 JumpjetLocomotionClass::GetField_0x78 -> PENDING (attempt 2)
+[ledger] 0x4b4da0 JumpjetLocomotionClass::GetField_0x7C -> PENDING (attempt 2)
+[ledger] 0x4b4db0 JumpjetLocomotionClass::GetField_0x80 -> PENDING (attempt 2)
+[ledger] 0x4b6740 JumpjetLocomotionClass::SmallStub_4B6740 -> PENDING (attempt 2)
+[ledger] 0x4b6750 JumpjetLocomotionClass::SmallStub_4B6750 -> PENDING (attempt 2)
+[ledger] 0x4b6760 JumpjetLocomotionClass::SmallStub_4B6760 -> PENDING (attempt 2)
+[ledger] 0x4b6770 JumpjetLocomotionClass::SmallStub_4B6770 -> PENDING (attempt 2)
+[ledger] 0x4b6780 JumpjetLocomotionClass::SmallStub_4B6780 -> PENDING (attempt 2)
+[ledger] 0x4b6790 JumpjetLocomotionClass::SmallStub_4B6790 -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p02\batch_report.json
+PART 2: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p02
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d0510 unknown::GetInterface -> unknown
+[conv] 0x4d0520 unknown::GetInterface2 -> unknown
+[conv] 0x4d0530 unknown::Stub2 -> unknown
+[conv] 0x510a20 unknown::saveToStream -> unknown
+[conv] 0x510a30 unknown::loadFromStream -> unknown
+[conv] 0x510a40 unknown::computeSize -> unknown
+[conv] 0x510a50 unknown::GetItem_2 -> unknown
+[conv] 0x510a60 unknown::GetItem_3 -> unknown
+[conv] 0x510a70 unknown::GetItem_4 -> unknown
+[conv] 0x510a80 unknown::GetItem_5 -> unknown
+[conv] 0x510a90 unknown::GetItem_6 -> unknown
+[conv] 0x510aa0 unknown::GetItem_7 -> unknown
+[conv] 0x510ab0 unknown::GetItem_8 -> unknown
+[conv] 0x510ac0 unknown::GetItem_9 -> unknown
+[conv] 0x510ad0 unknown::GetItem_10 -> unknown
+[conv] 0x510ae0 unknown::GetItem_11 -> unknown
+[conv] 0x510af0 unknown::GetItem_12 -> unknown
+[conv] 0x5139e0 unknown::readBaseDefenses -> unknown
+[conv] 0x5139f0 unknown::readAiBuildLists -> unknown
+[conv] 0x513a00 unknown::readLoadoutData -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x510a30   MISMATCH         unknown::loadFromStream
+[diff] 0x510a40   MISMATCH         unknown::computeSize
+[diff] 0x510a60   MISMATCH         unknown::GetItem_3
+[diff] 0x510a70   MISMATCH         unknown::GetItem_4
+[diff] 0x510a90   MISMATCH         unknown::GetItem_6
+[diff] 0x510aa0   MISMATCH         unknown::GetItem_7
+[diff] 0x510ab0   MISMATCH         unknown::GetItem_8
+[diff] 0x510ae0   MISMATCH         unknown::GetItem_11
+[diff] 0x510af0   MISMATCH         unknown::GetItem_12
+[diff] 0x5139f0   MISMATCH         unknown::readAiBuildLists
+[diff] 0x513a00   MISMATCH         unknown::readLoadoutData
+[ledger] 0x4d0510 JumpjetLocomotionClass::GetInterface -> PENDING (attempt 2)
+[ledger] 0x4d0520 JumpjetLocomotionClass::GetInterface2 -> PENDING (attempt 2)
+[ledger] 0x4d0530 JumpjetLocomotionClass::Stub2 -> PENDING (attempt 2)
+[ledger] 0x510a20 AbstractClass::saveToStream -> PENDING (attempt 2)
+[ledger] 0x510a30 AbstractClass::loadFromStream -> NG (attempt 2)
+[ledger] 0x510a40 AbstractClass::computeSize -> NG (attempt 2)
+[ledger] 0x510a50 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2 -> PENDING (attempt 2)
+[ledger] 0x510a60 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3 -> NG (attempt 2)
+[ledger] 0x510a70 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4 -> NG (attempt 2)
+[ledger] 0x510a80 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5 -> PENDING (attempt 2)
+[ledger] 0x510a90 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6 -> NG (attempt 2)
+[ledger] 0x510aa0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7 -> NG (attempt 2)
+[ledger] 0x510ab0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8 -> NG (attempt 2)
+[ledger] 0x510ac0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9 -> PENDING (attempt 2)
+[ledger] 0x510ad0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10 -> PENDING (attempt 2)
+[ledger] 0x510ae0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11 -> NG (attempt 2)
+[ledger] 0x510af0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12 -> NG (attempt 2)
+[ledger] 0x5139e0 HouseTypeClass::readBaseDefenses -> PENDING (attempt 2)
+[ledger] 0x5139f0 HouseTypeClass::readAiBuildLists -> NG (attempt 2)
+[ledger] 0x513a00 HouseTypeClass::readLoadoutData -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 11
+ },
+ "pathologies": {
+  "frame_sched": 11
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p03\batch_report.json
+PART 3: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p03
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x556620 LinkClass::GetWidth -> LinkClass
+[conv] 0x556630 LinkClass::GetHeight -> LinkClass
+[conv] 0x40cc00 LogicClass::GetItem -> LogicClass
+[conv] 0x41b910 AircraftClass::MissionStubReturnZero -> AircraftClass
+[conv] 0x477740 Pipe::Method_477740 -> Pipe
+[conv] 0x4e1960 GadgetClass::MarkDirty -> GadgetClass
+[conv] 0x5d6440 MultiplayerGameMode::MissionStubReturnZero3 -> MultiplayerGameMode
+[conv] 0x5f9710 ObjectTypeClass::SetRTTI71 -> ObjectTypeClass
+[conv] 0x7b9d80 WWMouseClass::checkVisible -> WWMouseClass
+[conv] 0x486670 CellClass::InBounds -> CellClass
+[conv] 0x659570 ObjectClass::sub_659570 -> ObjectClass
+[conv] 0x6a3ea0 ShipLocomotionClass::StubReturnZero_14 -> ShipLocomotionClass
+[conv] 0x7bab30 XSurface::entry_4C_ -> XSurface
+[conv] 0x7bab40 XSurface::entry_50_ -> XSurface
+[conv] 0x7bab50 XSurface::entry_34_ -> XSurface
+[conv] 0x7bab60 XSurface::entry_38_ -> XSurface
+[conv] 0x7bab70 XSurface::entry_3C_ -> XSurface
+[conv] 0x7bab80 XSurface::entry_40_ -> XSurface
+[conv] 0x7bb340 XSurface::entry_1C_ -> XSurface
+[conv] 0x407010 unknown::GetEnabled -> unknown
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LinkClass                rc=2
+[era] LogicClass               rc=2
+[era] AircraftClass            rc=2
+[era] Pipe                     rc=2
+[era] GadgetClass              rc=2
+[era] MultiplayerGameMode      rc=2
+[era] ObjectTypeClass          rc=2
+[era] WWMouseClass             rc=2
+[era] CellClass                rc=0
+[era] ObjectClass              rc=2
+[era] ShipLocomotionClass      rc=0
+[era] XSurface                 rc=2
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x486670   MISMATCH         CellClass::InBounds
+[diff] 0x6a3ea0   MATCH            ShipLocomotionClass::StubReturnZero_14
+[diff] 0x7bab30   MATCH            XSurface::entry_4C_
+[diff] 0x7bab40   MATCH            XSurface::entry_50_
+[diff] 0x7bab50   MATCH            XSurface::entry_34_
+[diff] 0x7bab60   MATCH            XSurface::entry_38_
+[diff] 0x7bab80   MATCH            XSurface::entry_40_
+[diff] 0x7bb340   MATCH            XSurface::entry_1C_
+[ledger] 0x556620 ObjectClass::GetWidth -> PENDING (attempt 7)
+[ledger] 0x556630 ObjectClass::GetHeight -> PENDING (attempt 7)
+[ledger] 0x40cc00 VectorClass_ptr_IsometricTileClass::GetItem -> PENDING (attempt 6)
+[ledger] 0x41b910 AircraftClass::MissionStubReturnZero -> PENDING (attempt 6)
+[ledger] 0x477740 VtableStub::Method_477740 -> PENDING (attempt 6)
+[ledger] 0x4e1960 VectorClass_ptr_ConvertClass::MarkDirty -> PENDING (attempt 6)
+[ledger] 0x5d6440 ScenarioClass::MissionStubReturnZero3 -> PENDING (attempt 5)
+[ledger] 0x5f9710 ObjectTypeClass::SetRTTI71 -> PENDING (attempt 5)
+[ledger] 0x7b9d80 WWMouseClass::checkVisible -> PENDING (attempt 5)
+[ledger] 0x486670 CellClass::InBounds -> NG (attempt 8)
+[ledger] 0x659570 sub_659570 -> PENDING (attempt 5)
+[ledger] 0x6a3ea0 JumpjetLocomotionClass::StubReturnZero_14 -> OK (attempt 2)
+[ledger] 0x7bab30 XSurface::entry_4C_ -> OK (attempt 2)
+[ledger] 0x7bab40 XSurface::entry_50_ -> OK (attempt 2)
+[ledger] 0x7bab50 XSurface::entry_34_ -> OK (attempt 2)
+[ledger] 0x7bab60 XSurface::entry_38_ -> OK (attempt 2)
+[ledger] 0x7bab70 XSurface::entry_3C_ -> PENDING (attempt 2)
+[ledger] 0x7bab80 XSurface::entry_40_ -> OK (attempt 2)
+[ledger] 0x7bb340 XSurface::entry_1C_ -> OK (attempt 2)
+[ledger] 0x407010 Audio::GetEnabled -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 1,
+  "MATCH": 7
+ },
+ "pathologies": {
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 87.5,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p04\batch_report.json
+PART 4: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p04
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x40a7a0 unknown::GetDirectSound -> unknown
+[conv] 0x41c170 AircraftClass::MissionStubReturnZero2 -> AircraftClass
+[conv] 0x41c180 AircraftClass::MissionStubReturnZero3 -> AircraftClass
+[conv] 0x41cfb0 AircraftTypeClass::GetTypeIdentifier -> AircraftTypeClass
+[conv] 0x41cfc0 AircraftTypeClass::GetObjectSize -> AircraftTypeClass
+[conv] 0x41dd30 AirstrikeClass::StubReturn96 -> AirstrikeClass
+[conv] 0x41dd40 AirstrikeClass::StubReturn71 -> AirstrikeClass
+[conv] 0x41ffd0 AITriggerTypeClass::GetTypeIdentifier -> AITriggerTypeClass
+[conv] 0x41ffe0 AITriggerTypeClass::GetObjectSize -> AITriggerTypeClass
+[conv] 0x426530 AnimClass::MissionStubReturnZero -> AnimClass
+[conv] 0x426580 AbstractClass::getAltitude -> AbstractClass
+[conv] 0x428e70 AnimTypeClass::GetObjectSize -> AnimTypeClass
+[conv] 0x4393d0 BombClass::StubReturn92 -> BombClass
+[conv] 0x4393e0 BombClass::StubReturn68 -> BombClass
+[conv] 0x43a9a0 NeuronClass::StubReturn60 -> NeuronClass
+[conv] 0x43a9b0 NeuronClass::StubReturn56 -> NeuronClass
+[conv] 0x459da0 TechnoClass::MissionStubReturnZero5 -> TechnoClass
+[conv] 0x459e70 BuildingClass::Mission_Guard -> BuildingClass
+[conv] 0x459ec0 BuildingClass::Mission_Construction -> BuildingClass
+[conv] 0x465d90 BuildingTypeClass::GetTypeIdentifier -> BuildingTypeClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] AircraftClass            rc=0
+[era] AircraftTypeClass        rc=0
+[era] AirstrikeClass           rc=0
+[era] AITriggerTypeClass       rc=0
+[era] AnimClass                rc=0
+[era] AbstractClass            rc=0
+[era] AnimTypeClass            rc=0
+[era] BombClass                rc=0
+[era] NeuronClass              rc=0
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=0
+[era] BuildingTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x41c170   MATCH            AircraftClass::MissionStubReturnZero2
+[diff] 0x41c180   MATCH            AircraftClass::MissionStubReturnZero3
+[diff] 0x41cfb0   MATCH            AircraftTypeClass::GetTypeIdentifier
+[diff] 0x41cfc0   MATCH            AircraftTypeClass::GetObjectSize
+[diff] 0x41dd30   MATCH            AirstrikeClass::StubReturn96
+[diff] 0x41dd40   MATCH            AirstrikeClass::StubReturn71
+[diff] 0x41ffd0   MATCH            AITriggerTypeClass::GetTypeIdentifier
+[diff] 0x41ffe0   MATCH            AITriggerTypeClass::GetObjectSize
+[diff] 0x426530   MATCH            AnimClass::MissionStubReturnZero
+[diff] 0x426580   MATCH            AbstractClass::getAltitude
+[diff] 0x428e70   MATCH            AnimTypeClass::GetObjectSize
+[diff] 0x4393d0   MATCH            BombClass::StubReturn92
+[diff] 0x4393e0   MATCH            BombClass::StubReturn68
+[diff] 0x43a9a0   MATCH            NeuronClass::StubReturn60
+[diff] 0x43a9b0   MATCH            NeuronClass::StubReturn56
+[diff] 0x459da0   MATCH            TechnoClass::MissionStubReturnZero5
+[diff] 0x459e70   MATCH            BuildingClass::Mission_Guard
+[diff] 0x459ec0   MATCH            BuildingClass::Mission_Construction
+[diff] 0x465d90   MATCH            BuildingTypeClass::GetTypeIdentifier
+[ledger] 0x40a7a0 Audio::GetDirectSound -> PENDING (attempt 2)
+[ledger] 0x41c170 AircraftClass::MissionStubReturnZero2 -> OK (attempt 2)
+[ledger] 0x41c180 AircraftClass::MissionStubReturnZero3 -> OK (attempt 2)
+[ledger] 0x41cfb0 AircraftTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x41cfc0 AircraftTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x41dd30 AirstrikeClass::StubReturn96 -> OK (attempt 2)
+[ledger] 0x41dd40 AirstrikeClass::StubReturn71 -> OK (attempt 2)
+[ledger] 0x41ffd0 AITriggerTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x41ffe0 AITriggerTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x426530 AnimClass::MissionStubReturnZero -> OK (attempt 2)
+[ledger] 0x426580 AbstractClass::getAltitude -> OK (attempt 2)
+[ledger] 0x428e70 AnimTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x4393d0 BombClass::StubReturn92 -> OK (attempt 2)
+[ledger] 0x4393e0 BombClass::StubReturn68 -> OK (attempt 2)
+[ledger] 0x43a9a0 NeuronClass::StubReturn60 -> OK (attempt 2)
+[ledger] 0x43a9b0 NeuronClass::StubReturn56 -> OK (attempt 2)
+[ledger] 0x459da0 BuildingClass::MissionStubReturnZero5 -> OK (attempt 2)
+[ledger] 0x459e70 BuildingClass::Mission_Guard -> OK (attempt 2)
+[ledger] 0x459ec0 BuildingClass::Mission_Construction -> OK (attempt 2)
+[ledger] 0x465d90 BuildingTypeClass::GetTypeIdentifier -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MATCH": 19
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p05\batch_report.json
+PART 5: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p05
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x465da0 BuildingTypeClass::GetObjectSize -> BuildingTypeClass
+[conv] 0x46b540 BulletClass::MissionStubReturnZero -> BulletClass
+[conv] 0x46b550 BulletClass::MissionStubReturnZero2 -> BulletClass
+[conv] 0x46c850 BulletTypeClass::GetTypeIdentifier -> BulletTypeClass
+[conv] 0x46c860 BulletTypeClass::GetObjectSize -> BulletTypeClass
+[conv] 0x46d070 CampaignClass::StubReturn928 -> CampaignClass
+[conv] 0x46d080 CampaignClass::StubReturn10 -> CampaignClass
+[conv] 0x4729a0 CaptureManagerClass::GetObjectSize -> CaptureManagerClass
+[conv] 0x4729b0 CaptureManagerClass::GetTypeIdentifier -> CaptureManagerClass
+[conv] 0x487e60 CellClass::StubReturn11 -> CellClass
+[conv] 0x487e70 CellClass::StubReturn328 -> CellClass
+[conv] 0x4a60d0 unknown::GetInstance -> unknown
+[conv] 0x4a7c70 DiskLaserClass::StubReturn64 -> DiskLaserClass
+[conv] 0x4a7c80 DiskLaserClass::StubReturn73 -> DiskLaserClass
+[conv] 0x4b4cf0 DriveLocomotionClass::StubReturn112 -> DriveLocomotionClass
+[conv] 0x4b6670 LocomotionClass::CheckState3 -> LocomotionClass
+[conv] 0x4b6680 LocomotionClass::CheckState4 -> LocomotionClass
+[conv] 0x4b66e0 DropPodLocomotionClass::StubReturn48 -> DropPodLocomotionClass
+[conv] 0x4bbc90 DDraw::GetStatus -> DDraw
+[conv] 0x4c5aa0 EMPulseClass::StubReturn52 -> EMPulseClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingTypeClass        rc=0
+[era] BulletClass              rc=0
+[era] BulletTypeClass          rc=0
+[era] CampaignClass            rc=0
+[era] CaptureManagerClass      rc=0
+[era] CellClass                rc=0
+[era] unknown                  rc=0
+[era] DiskLaserClass           rc=0
+[era] DriveLocomotionClass     rc=0
+[era] LocomotionClass          rc=0
+[era] DropPodLocomotionClass   rc=0
+[era] DDraw                    rc=2
+[era] EMPulseClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x465da0   MATCH            BuildingTypeClass::GetObjectSize
+[diff] 0x46b540   MATCH            BulletClass::MissionStubReturnZero
+[diff] 0x46b550   MATCH            BulletClass::MissionStubReturnZero2
+[diff] 0x46c850   MATCH            BulletTypeClass::GetTypeIdentifier
+[diff] 0x46c860   MATCH            BulletTypeClass::GetObjectSize
+[diff] 0x46d070   MATCH            CampaignClass::StubReturn928
+[diff] 0x46d080   MATCH            CampaignClass::StubReturn10
+[diff] 0x4729a0   MATCH            CaptureManagerClass::GetObjectSize
+[diff] 0x4729b0   MATCH            CaptureManagerClass::GetTypeIdentifier
+[diff] 0x487e60   MATCH            CellClass::StubReturn11
+[diff] 0x487e70   MATCH            CellClass::StubReturn328
+[diff] 0x4a60d0   MATCH            unknown::GetInstance
+[diff] 0x4a7c70   MATCH            DiskLaserClass::StubReturn64
+[diff] 0x4a7c80   MATCH            DiskLaserClass::StubReturn73
+[diff] 0x4b4cf0   MATCH            DriveLocomotionClass::StubReturn112
+[diff] 0x4b6670   MATCH            LocomotionClass::CheckState3
+[diff] 0x4b6680   MATCH            LocomotionClass::CheckState4
+[diff] 0x4b66e0   MATCH            DropPodLocomotionClass::StubReturn48
+[diff] 0x4c5aa0   MATCH            EMPulseClass::StubReturn52
+[ledger] 0x465da0 BuildingTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x46b540 BulletClass::MissionStubReturnZero -> OK (attempt 2)
+[ledger] 0x46b550 BulletClass::MissionStubReturnZero2 -> OK (attempt 2)
+[ledger] 0x46c850 BulletTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x46c860 BulletTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x46d070 CampaignClass::StubReturn928 -> OK (attempt 2)
+[ledger] 0x46d080 CampaignClass::StubReturn10 -> OK (attempt 2)
+[ledger] 0x4729a0 CaptureManagerClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x4729b0 CaptureManagerClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x487e60 CellClass::StubReturn11 -> OK (attempt 2)
+[ledger] 0x487e70 CellClass::StubReturn328 -> OK (attempt 2)
+[ledger] 0x4a60d0 TextRenderer::GetInstance -> OK (attempt 2)
+[ledger] 0x4a7c70 DiskLaserClass::StubReturn64 -> OK (attempt 2)
+[ledger] 0x4a7c80 DiskLaserClass::StubReturn73 -> OK (attempt 2)
+[ledger] 0x4b4cf0 DriveLocomotionClass::StubReturn112 -> OK (attempt 2)
+[ledger] 0x4b6670 JumpjetLocomotionClass::CheckState3 -> OK (attempt 2)
+[ledger] 0x4b6680 JumpjetLocomotionClass::CheckState4 -> OK (attempt 2)
+[ledger] 0x4b66e0 DropPodLocomotionClass::StubReturn48 -> OK (attempt 2)
+[ledger] 0x4bbc90 DDraw::GetStatus -> PENDING (attempt 2)
+[ledger] 0x4c5aa0 EMPulseClass::StubReturn52 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p06\batch_report.json
+PART 6: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p06
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c5ab0 EMPulseClass::StubReturn55 -> EMPulseClass
+[conv] 0x4ca750 FactoryClass::StubReturn12 -> FactoryClass
+[conv] 0x4ca760 FactoryClass::StubReturn116 -> FactoryClass
+[conv] 0x4d0390 FlyLocomotionClass::StubReturn96 -> FlyLocomotionClass
+[conv] 0x4d27b0 FoggedObjectClass::GetTypeIdentifier -> FoggedObjectClass
+[conv] 0x4d27c0 FoggedObjectClass::GetObjectSize -> FoggedObjectClass
+[conv] 0x4f2b40 VectorCursor::vt_placeholder_09 -> VectorCursor
+[conv] 0x4f2b50 VectorCursor::vt_placeholder_10 -> VectorCursor
+[conv] 0x4f3ff0 _VectorCursor_IV_DynamicVectorClass_I::Release -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4000 _VectorCursor_IV_DynamicVectorClass_I::ddtor -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x4f4c20 Byte::Zero -> Byte
+[conv] 0x50e360 AbstractClass::computeMovementCost -> AbstractClass
+[conv] 0x512710 HouseTypeClass::GetTypeIdentifier -> HouseTypeClass
+[conv] 0x512720 HouseTypeClass::GetObjectSize -> HouseTypeClass
+[conv] 0x5172b0 HoverLocomotionClass::StubReturn120 -> HoverLocomotionClass
+[conv] 0x5232f0 InfantryClass::StubReturn1776 -> InfantryClass
+[conv] 0x523340 InfantryClass::StubReturn15 -> InfantryClass
+[conv] 0x524d40 InfantryTypeClass::GetTypeIdentifier -> InfantryTypeClass
+[conv] 0x524d50 InfantryTypeClass::GetObjectSize -> InfantryTypeClass
+[conv] 0x535d20 SetStructureTabCommandClass::performAction_2 -> SetStructureTabCommandClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EMPulseClass             rc=0
+[era] FactoryClass             rc=0
+[era] FlyLocomotionClass       rc=0
+[era] FoggedObjectClass        rc=0
+[era] VectorCursor             rc=2
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=2
+[era] Byte                     rc=2
+[era] AbstractClass            rc=0
+[era] HouseTypeClass           rc=0
+[era] HoverLocomotionClass     rc=0
+[era] InfantryClass            rc=0
+[era] InfantryTypeClass        rc=0
+[era] SetStructureTabCommandClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4c5ab0   MATCH            EMPulseClass::StubReturn55
+[diff] 0x4ca750   MATCH            FactoryClass::StubReturn12
+[diff] 0x4ca760   MATCH            FactoryClass::StubReturn116
+[diff] 0x4d0390   MATCH            FlyLocomotionClass::StubReturn96
+[diff] 0x4d27b0   MATCH            FoggedObjectClass::GetTypeIdentifier
+[diff] 0x4d27c0   MATCH            FoggedObjectClass::GetObjectSize
+[diff] 0x50e360   MATCH            AbstractClass::computeMovementCost
+[diff] 0x512710   MATCH            HouseTypeClass::GetTypeIdentifier
+[diff] 0x512720   MATCH            HouseTypeClass::GetObjectSize
+[diff] 0x5172b0   MATCH            HoverLocomotionClass::StubReturn120
+[diff] 0x5232f0   MATCH            InfantryClass::StubReturn1776
+[diff] 0x523340   MATCH            InfantryClass::StubReturn15
+[diff] 0x524d40   MATCH            InfantryTypeClass::GetTypeIdentifier
+[diff] 0x524d50   MATCH            InfantryTypeClass::GetObjectSize
+[ledger] 0x4c5ab0 EMPulseClass::StubReturn55 -> OK (attempt 2)
+[ledger] 0x4ca750 FactoryClass::StubReturn12 -> OK (attempt 2)
+[ledger] 0x4ca760 FactoryClass::StubReturn116 -> OK (attempt 2)
+[ledger] 0x4d0390 FlyLocomotionClass::StubReturn96 -> OK (attempt 2)
+[ledger] 0x4d27b0 FoggedObjectClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x4d27c0 FoggedObjectClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x4f2b40 HouseClass::vt_placeholder_09 -> PENDING (attempt 2)
+[ledger] 0x4f2b50 HouseClass::vt_placeholder_10 -> PENDING (attempt 2)
+[ledger] 0x4f3ff0 VectorCursor_uint_DynamicVectorClass_uint::Release -> PENDING (attempt 2)
+[ledger] 0x4f4000 VectorCursor_uint_DynamicVectorClass_uint::ddtor -> PENDING (attempt 2)
+[ledger] 0x4f4c20 Byte::Zero -> PENDING (attempt 2)
+[ledger] 0x50e360 AbstractClass::computeMovementCost -> OK (attempt 2)
+[ledger] 0x512710 HouseTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x512720 HouseTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x5172b0 HoverLocomotionClass::StubReturn120 -> OK (attempt 2)
+[ledger] 0x5232f0 InfantryClass::StubReturn1776 -> OK (attempt 2)
+[ledger] 0x523340 InfantryClass::StubReturn15 -> OK (attempt 2)
+[ledger] 0x524d40 InfantryTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x524d50 InfantryTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x535d20 CreateTeamCommand::performAction_2 -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p07\batch_report.json
+PART 7: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p07
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x535de0 SetDefenseTabCommandClass::performAction_7 -> SetDefenseTabCommandClass
+[conv] 0x535ea0 SetInfantryTabCommandClass::performAction_12 -> SetInfantryTabCommandClass
+[conv] 0x535f30 SetUnitTabCommandClass::performAction_17 -> SetUnitTabCommandClass
+[conv] 0x5365a0 NextObjectCommandClass::performAction_26 -> NextObjectCommandClass
+[conv] 0x5366a0 PlanningModeCommandClass::performAction_31 -> PlanningModeCommandClass
+[conv] 0x536770 CombatantSelectCommandClass::performAction_39 -> CombatantSelectCommandClass
+[conv] 0x536810 TypeSelectCommandClass::performAction_45 -> TypeSelectCommandClass
+[conv] 0x5368d0 HealthNavCommandClass::performAction_53 -> HealthNavCommandClass
+[conv] 0x536970 VeterancyNavCommandClass::performAction_59 -> VeterancyNavCommandClass
+[conv] 0x536a10 PrevObjectCommandClass::performAction_65 -> PrevObjectCommandClass
+[conv] 0x536b10 StopCommandClass::performAction_70 -> StopCommandClass
+[conv] 0x536b90 AllToCheerCommandClass::performAction_75 -> AllToCheerCommandClass
+[conv] 0x537a50 MultiplayerDebugCommandClass::AddRef -> MultiplayerDebugCommandClass
+[conv] 0x537a60 MultiplayerDebugCommandClass::ddtor -> MultiplayerDebugCommandClass
+[conv] 0x537a70 MultiplayerDebugCommandClass::Release -> MultiplayerDebugCommandClass
+[conv] 0x537a80 MultiplayerDebugCommandClass::StubReturn8550640 -> MultiplayerDebugCommandClass
+[conv] 0x537b50 ScreenCaptureCommandClass::AddRef -> ScreenCaptureCommandClass
+[conv] 0x537de0 PageUserCommandClass::AddRef -> PageUserCommandClass
+[conv] 0x537f20 DeleteCommandClass::AddRef -> DeleteCommandClass
+[conv] 0x53a100 unknown::IsActive -> unknown
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SetDefenseTabCommandClass rc=2
+[era] SetInfantryTabCommandClass rc=2
+[era] SetUnitTabCommandClass   rc=2
+[era] NextObjectCommandClass   rc=2
+[era] PlanningModeCommandClass rc=2
+[era] CombatantSelectCommandClass rc=2
+[era] TypeSelectCommandClass   rc=2
+[era] HealthNavCommandClass    rc=2
+[era] VeterancyNavCommandClass rc=2
+[era] PrevObjectCommandClass   rc=2
+[era] StopCommandClass         rc=2
+[era] AllToCheerCommandClass   rc=2
+[era] MultiplayerDebugCommandClass rc=2
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] DeleteCommandClass       rc=2
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x53a100   MATCH            unknown::IsActive
+[ledger] 0x535de0 CreateTeamCommand::performAction_7 -> PENDING (attempt 2)
+[ledger] 0x535ea0 CreateTeamCommand::performAction_12 -> PENDING (attempt 2)
+[ledger] 0x535f30 CreateTeamCommand::performAction_17 -> PENDING (attempt 2)
+[ledger] 0x5365a0 CreateTeamCommand::performAction_26 -> PENDING (attempt 2)
+[ledger] 0x5366a0 CreateTeamCommand::performAction_31 -> PENDING (attempt 2)
+[ledger] 0x536770 CreateTeamCommand::performAction_39 -> PENDING (attempt 2)
+[ledger] 0x536810 CreateTeamCommand::performAction_45 -> PENDING (attempt 2)
+[ledger] 0x5368d0 CreateTeamCommand::performAction_53 -> PENDING (attempt 2)
+[ledger] 0x536970 CreateTeamCommand::performAction_59 -> PENDING (attempt 2)
+[ledger] 0x536a10 CreateTeamCommand::performAction_65 -> PENDING (attempt 2)
+[ledger] 0x536b10 CreateTeamCommand::performAction_70 -> PENDING (attempt 2)
+[ledger] 0x536b90 CreateTeamCommand::performAction_75 -> PENDING (attempt 2)
+[ledger] 0x537a50 Commands::AddRef -> PENDING (attempt 2)
+[ledger] 0x537a60 Commands::ddtor -> PENDING (attempt 2)
+[ledger] 0x537a70 Commands::Release -> PENDING (attempt 2)
+[ledger] 0x537a80 Commands::StubReturn8550640 -> PENDING (attempt 2)
+[ledger] 0x537b50 ScreenCaptureCommandClass::AddRef -> PENDING (attempt 2)
+[ledger] 0x537de0 PageUserCommandClass::AddRef -> PENDING (attempt 2)
+[ledger] 0x537f20 DeleteCommandClass::AddRef -> PENDING (attempt 2)
+[ledger] 0x53a100 LightningStorm::IsActive -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MATCH": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p08\batch_report.json
+PART 8: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p08
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x54a140 IsometricTileTypeClass::GetTypeIdentifier -> IsometricTileTypeClass
+[conv] 0x54a150 IsometricTileTypeClass::GetObjectSize -> IsometricTileTypeClass
+[conv] 0x555130 LightSourceClass::StubReturn76 -> LightSourceClass
+[conv] 0x555140 LightSourceClass::StubReturn54 -> LightSourceClass
+[conv] 0x55cbf0 VtableStub::Method_55CBF0 -> VtableStub
+[conv] 0x58b7d0 MapSeed::IsInitialized -> MapSeed
+[conv] 0x5b1b40 MechLocomotionClass::StubReturn52 -> MechLocomotionClass
+[conv] 0x5b2e10 MissionClass::Return450A -> MissionClass
+[conv] 0x5b2e20 MissionClass::Return450B -> MissionClass
+[conv] 0x5b2e30 MissionClass::Return450C -> MissionClass
+[conv] 0x5b2e40 MissionClass::StubReturn450 -> MissionClass
+[conv] 0x5b2e70 MissionClass::CheckState1 -> MissionClass
+[conv] 0x5b2e80 MissionClass::CheckState2 -> MissionClass
+[conv] 0x5b2e90 MissionClass::CheckMissionStatus -> MissionClass
+[conv] 0x5b2ed0 MissionClass::Return450D -> MissionClass
+[conv] 0x5b2ee0 MissionClass::Return450E -> MissionClass
+[conv] 0x5b2ef0 MissionClass::GetMaxSize -> MissionClass
+[conv] 0x5b2f10 MissionClass::Return450G -> MissionClass
+[conv] 0x5b2f20 MissionClass::Return450H -> MissionClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IsometricTileTypeClass   rc=0
+[era] LightSourceClass         rc=0
+[era] VtableStub               rc=0
+[era] MapSeed                  rc=0
+[era] MechLocomotionClass      rc=0
+[era] MissionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x54a140   MATCH            IsometricTileTypeClass::GetTypeIdentifier
+[diff] 0x54a150   MATCH            IsometricTileTypeClass::GetObjectSize
+[diff] 0x555130   MATCH            LightSourceClass::StubReturn76
+[diff] 0x555140   MATCH            LightSourceClass::StubReturn54
+[diff] 0x55cbf0   MATCH            VtableStub::Method_55CBF0
+[diff] 0x58b7d0   MATCH            MapSeed::IsInitialized
+[diff] 0x5b1b40   MATCH            MechLocomotionClass::StubReturn52
+[diff] 0x5b2e10   MATCH            MissionClass::Return450A
+[diff] 0x5b2e20   MATCH            MissionClass::Return450B
+[diff] 0x5b2e30   MATCH            MissionClass::Return450C
+[diff] 0x5b2e40   MATCH            MissionClass::StubReturn450
+[diff] 0x5b2e70   MATCH            MissionClass::CheckState1
+[diff] 0x5b2e80   MATCH            MissionClass::CheckState2
+[diff] 0x5b2e90   MATCH            MissionClass::CheckMissionStatus
+[diff] 0x5b2ed0   MATCH            MissionClass::Return450D
+[diff] 0x5b2ee0   MATCH            MissionClass::Return450E
+[diff] 0x5b2ef0   MATCH            MissionClass::GetMaxSize
+[diff] 0x5b2f10   MATCH            MissionClass::Return450G
+[diff] 0x5b2f20   MATCH            MissionClass::Return450H
+[ledger] 0x54a140 IsometricTileTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x54a150 IsometricTileTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x555130 LightSourceClass::StubReturn76 -> OK (attempt 2)
+[ledger] 0x555140 LightSourceClass::StubReturn54 -> OK (attempt 2)
+[ledger] 0x55cbf0 VtableStub::Method_55CBF0 -> OK (attempt 2)
+[ledger] 0x58b7d0 MapSeed::IsInitialized -> OK (attempt 2)
+[ledger] 0x5b1b40 MechLocomotionClass::StubReturn52 -> OK (attempt 2)
+[ledger] 0x5b2e10 MissionClass::Return450A -> OK (attempt 2)
+[ledger] 0x5b2e20 MissionClass::Return450B -> OK (attempt 2)
+[ledger] 0x5b2e30 MissionClass::Return450C -> OK (attempt 2)
+[ledger] 0x5b2e40 TechnoClass::StubReturn450 -> OK (attempt 2)
+[ledger] 0x5b2e50 0x5b2e50 -> PENDING (attempt 2)
+[ledger] 0x5b2e70 TechnoClass::CheckState1 -> OK (attempt 2)
+[ledger] 0x5b2e80 TechnoClass::CheckState2 -> OK (attempt 2)
+[ledger] 0x5b2e90 AircraftClass::CheckMissionStatus -> OK (attempt 2)
+[ledger] 0x5b2ed0 MissionClass::Return450D -> OK (attempt 2)
+[ledger] 0x5b2ee0 MissionClass::Return450E -> OK (attempt 2)
+[ledger] 0x5b2ef0 IPersistStream::GetMaxSize -> OK (attempt 2)
+[ledger] 0x5b2f10 MissionClass::Return450G -> OK (attempt 2)
+[ledger] 0x5b2f20 MissionClass::Return450H -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "DUP_SKIP": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p09\batch_report.json
+PART 9: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p09
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b2f30 MissionClass::CheckMissionStatus2 -> MissionClass
+[conv] 0x5b2f40 MissionClass::Return450I -> MissionClass
+[conv] 0x5b2f50 MissionClass::Return450J -> MissionClass
+[conv] 0x5b2f80 MissionClass::Return450K -> MissionClass
+[conv] 0x5b2f90 MissionClass::Return450L -> MissionClass
+[conv] 0x5b2fa0 MissionClass::Return450F -> MissionClass
+[conv] 0x5b2fb0 MissionClass::Return450M -> MissionClass
+[conv] 0x5b2fc0 MissionClass::Return450N -> MissionClass
+[conv] 0x5c03c0 VQMovieHandle::resetPathState -> VQMovieHandle
+[conv] 0x5d5db0 MultiplayerGameMode::MissionStubReturnZero -> MultiplayerGameMode
+[conv] 0x5fdf00 OverlayClass::StubReturn176 -> OverlayClass
+[conv] 0x5fdf50 OverlayClass::StubReturn20 -> OverlayClass
+[conv] 0x5fef00 OverlayTypeClass::GetTypeIdentifier -> OverlayTypeClass
+[conv] 0x5fef10 OverlayTypeClass::GetObjectSize -> OverlayTypeClass
+[conv] 0x62af50 ParasiteClass::StubReturn88 -> ParasiteClass
+[conv] 0x62af60 ParasiteClass::StubReturn67 -> ParasiteClass
+[conv] 0x62d770 ParticleClass::CheckStateFlag -> ParticleClass
+[conv] 0x62d970 ParticleClass::GetObjectSize -> ParticleClass
+[conv] 0x62d980 ParticleClass::GetTypeIdentifier -> ParticleClass
+[conv] 0x62fe80 ParticleSystemClass::StubReturn2 -> ParticleSystemClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MissionClass             rc=0
+[era] VQMovieHandle            rc=0
+[era] MultiplayerGameMode      rc=0
+[era] OverlayClass             rc=0
+[era] OverlayTypeClass         rc=0
+[era] ParasiteClass            rc=0
+[era] ParticleClass            rc=0
+[era] ParticleSystemClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b2f30   MATCH            MissionClass::CheckMissionStatus2
+[diff] 0x5b2f40   MATCH            MissionClass::Return450I
+[diff] 0x5b2f50   MATCH            MissionClass::Return450J
+[diff] 0x5b2f80   MATCH            MissionClass::Return450K
+[diff] 0x5b2f90   MATCH            MissionClass::Return450L
+[diff] 0x5b2fa0   MATCH            MissionClass::Return450F
+[diff] 0x5b2fb0   MATCH            MissionClass::Return450M
+[diff] 0x5b2fc0   MATCH            MissionClass::Return450N
+[diff] 0x5c03c0   MATCH            VQMovieHandle::resetPathState
+[diff] 0x5d5db0   MATCH            MultiplayerGameMode::MissionStubReturnZero
+[diff] 0x5fdf00   MATCH            OverlayClass::StubReturn176
+[diff] 0x5fdf50   MATCH            OverlayClass::StubReturn20
+[diff] 0x5fef00   MATCH            OverlayTypeClass::GetTypeIdentifier
+[diff] 0x5fef10   MATCH            OverlayTypeClass::GetObjectSize
+[diff] 0x62af50   MATCH            ParasiteClass::StubReturn88
+[diff] 0x62af60   MATCH            ParasiteClass::StubReturn67
+[diff] 0x62d770   MATCH            ParticleClass::CheckStateFlag
+[diff] 0x62d970   MATCH            ParticleClass::GetObjectSize
+[diff] 0x62d980   MATCH            ParticleClass::GetTypeIdentifier
+[diff] 0x62fe80   MATCH            ParticleSystemClass::StubReturn2
+[ledger] 0x5b2f30 AircraftClass::CheckMissionStatus2 -> OK (attempt 2)
+[ledger] 0x5b2f40 MissionClass::Return450I -> OK (attempt 2)
+[ledger] 0x5b2f50 MissionClass::Return450J -> OK (attempt 2)
+[ledger] 0x5b2f80 MissionClass::Return450K -> OK (attempt 2)
+[ledger] 0x5b2f90 MissionClass::Return450L -> OK (attempt 2)
+[ledger] 0x5b2fa0 MissionClass::Return450F -> OK (attempt 2)
+[ledger] 0x5b2fb0 MissionClass::Return450M -> OK (attempt 2)
+[ledger] 0x5b2fc0 MissionClass::Return450N -> OK (attempt 2)
+[ledger] 0x5c03c0 AbstractClass::resetPathState -> OK (attempt 2)
+[ledger] 0x5d5db0 ScenarioClass::MissionStubReturnZero -> OK (attempt 2)
+[ledger] 0x5fdf00 Object::StubReturn176 -> OK (attempt 2)
+[ledger] 0x5fdf50 Object::StubReturn20 -> OK (attempt 2)
+[ledger] 0x5fef00 OverlayTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x5fef10 OverlayTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x62af50 ParasiteClass::StubReturn88 -> OK (attempt 2)
+[ledger] 0x62af60 ParasiteClass::StubReturn67 -> OK (attempt 2)
+[ledger] 0x62d770 ParticleClass::CheckStateFlag -> OK (attempt 2)
+[ledger] 0x62d970 ParticleClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x62d980 ParticleClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x62fe80 ParticleSystemClass::StubReturn2 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p10\batch_report.json
+PART 10: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p10
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x630200 ParticleSystemClass::GetObjectSize -> ParticleSystemClass
+[conv] 0x630210 ParticleSystemClass::GetTypeIdentifier -> ParticleSystemClass
+[conv] 0x637aa0 unknown::GetFlag -> unknown
+[conv] 0x644920 ParticleSystemTypeClass::GetObjectSize -> ParticleSystemTypeClass
+[conv] 0x644930 ParticleSystemTypeClass::GetTypeIdentifier -> ParticleSystemTypeClass
+[conv] 0x645910 ParticleTypeClass::GetObjectSize -> ParticleTypeClass
+[conv] 0x645920 ParticleTypeClass::GetTypeIdentifier -> ParticleTypeClass
+[conv] 0x65b3a0 RadSiteClass::StubReturn116 -> RadSiteClass
+[conv] 0x65b3c0 RadSiteClass::StubReturn69 -> RadSiteClass
+[conv] 0x6635b0 RocketLocomotionClass::StubReturn96 -> RocketLocomotionClass
+[conv] 0x691ec0 ScriptClass::StubReturn26 -> ScriptClass
+[conv] 0x691ed0 ScriptClass::StubReturn48 -> ScriptClass
+[conv] 0x691f70 ScriptTypeClass::GetTypeIdentifier -> ScriptTypeClass
+[conv] 0x691f80 ScriptTypeClass::GetObjectSize -> ScriptTypeClass
+[conv] 0x6a42a0 ShipLocomotionClass::StubReturn112 -> ShipLocomotionClass
+[conv] 0x6a4910 SideClass::StubReturn180 -> SideClass
+[conv] 0x6a4920 SideClass::StubReturn28 -> SideClass
+[conv] 0x6b1370 SlaveManagerClass::StubReturn100 -> SlaveManagerClass
+[conv] 0x6b1380 SlaveManagerClass::StubReturn72 -> SlaveManagerClass
+[conv] 0x6b4f30 SmudgeClass::StubReturn176 -> SmudgeClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=0
+[era] unknown                  rc=0
+[era] ParticleSystemTypeClass  rc=0
+[era] ParticleTypeClass        rc=0
+[era] RadSiteClass             rc=0
+[era] RocketLocomotionClass    rc=0
+[era] ScriptClass              rc=0
+[era] ScriptTypeClass          rc=0
+[era] ShipLocomotionClass      rc=0
+[era] SideClass                rc=0
+[era] SlaveManagerClass        rc=0
+[era] SmudgeClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x630200   MATCH            ParticleSystemClass::GetObjectSize
+[diff] 0x630210   MATCH            ParticleSystemClass::GetTypeIdentifier
+[diff] 0x637aa0   MATCH            unknown::GetFlag
+[diff] 0x644920   MATCH            ParticleSystemTypeClass::GetObjectSize
+[diff] 0x644930   MATCH            ParticleSystemTypeClass::GetTypeIdentifier
+[diff] 0x645910   MATCH            ParticleTypeClass::GetObjectSize
+[diff] 0x645920   MATCH            ParticleTypeClass::GetTypeIdentifier
+[diff] 0x65b3a0   MATCH            RadSiteClass::StubReturn116
+[diff] 0x65b3c0   MATCH            RadSiteClass::StubReturn69
+[diff] 0x6635b0   MATCH            RocketLocomotionClass::StubReturn96
+[diff] 0x691ec0   MATCH            ScriptClass::StubReturn26
+[diff] 0x691ed0   MATCH            ScriptClass::StubReturn48
+[diff] 0x691f70   MATCH            ScriptTypeClass::GetTypeIdentifier
+[diff] 0x691f80   MATCH            ScriptTypeClass::GetObjectSize
+[diff] 0x6a42a0   MATCH            ShipLocomotionClass::StubReturn112
+[diff] 0x6a4910   MATCH            SideClass::StubReturn180
+[diff] 0x6a4920   MATCH            SideClass::StubReturn28
+[diff] 0x6b1370   MATCH            SlaveManagerClass::StubReturn100
+[diff] 0x6b1380   MATCH            SlaveManagerClass::StubReturn72
+[diff] 0x6b4f30   MATCH            SmudgeClass::StubReturn176
+[ledger] 0x630200 ParticleSystemClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x630210 ParticleSystemClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x637aa0 FactoryClass::GetFlag -> OK (attempt 2)
+[ledger] 0x644920 ParticleSystemTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x644930 ParticleSystemTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x645910 ParticleTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x645920 ParticleTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x65b3a0 RadSiteClass::StubReturn116 -> OK (attempt 2)
+[ledger] 0x65b3c0 RadSiteClass::StubReturn69 -> OK (attempt 2)
+[ledger] 0x6635b0 RocketLocomotionClass::StubReturn96 -> OK (attempt 2)
+[ledger] 0x691ec0 ScriptClass::StubReturn26 -> OK (attempt 2)
+[ledger] 0x691ed0 ScriptClass::StubReturn48 -> OK (attempt 2)
+[ledger] 0x691f70 ScriptTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x691f80 ScriptTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x6a42a0 ShipLocomotionClass::StubReturn112 -> OK (attempt 2)
+[ledger] 0x6a4910 SideClass::StubReturn180 -> OK (attempt 2)
+[ledger] 0x6a4920 SideClass::StubReturn28 -> OK (attempt 2)
+[ledger] 0x6b1370 SlaveManagerClass::StubReturn100 -> OK (attempt 2)
+[ledger] 0x6b1380 SlaveManagerClass::StubReturn72 -> OK (attempt 2)
+[ledger] 0x6b4f30 UnitClass::StubReturn176 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p11\batch_report.json
+PART 11: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p11
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b4f40 SmudgeClass::StubReturn29 -> SmudgeClass
+[conv] 0x6b6130 SmudgeTypeClass::GetTypeIdentifier -> SmudgeTypeClass
+[conv] 0x6b6140 SmudgeTypeClass::GetObjectSize -> SmudgeTypeClass
+[conv] 0x6b8120 SpawnManagerClass::StubReturn116 -> SpawnManagerClass
+[conv] 0x6b8130 SpawnManagerClass::StubReturn65 -> SpawnManagerClass
+[conv] 0x6ce200 SuperClass::StubReturn57 -> SuperClass
+[conv] 0x6ce210 SuperClass::StubReturn128 -> SuperClass
+[conv] 0x6dc450 Tactical::StubReturn56 -> Tactical
+[conv] 0x6dc460 Tactical::StubReturn3608 -> Tactical
+[conv] 0x6e4630 TActionClass::StubReturn148 -> TActionClass
+[conv] 0x6e4640 TActionClass::StubReturn47 -> TActionClass
+[conv] 0x6e5890 TagClass::StubReturn56 -> TagClass
+[conv] 0x6e58a0 TagClass::StubReturn44 -> TagClass
+[conv] 0x6e6490 TagTypeClass::GetTypeIdentifier -> TagTypeClass
+[conv] 0x6e64a0 TagTypeClass::GetObjectSize -> TagTypeClass
+[conv] 0x6e87d0 TaskForceClass::StubReturn33 -> TaskForceClass
+[conv] 0x6e87e0 TaskForceClass::StubReturn212 -> TaskForceClass
+[conv] 0x6f0430 TeamClass::StubReturn160 -> TeamClass
+[conv] 0x6f0440 TeamClass::StubReturn34 -> TeamClass
+[conv] 0x6f20a0 TeamTypeClass::GetTypeIdentifier -> TeamTypeClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SmudgeClass              rc=0
+[era] SmudgeTypeClass          rc=0
+[era] SpawnManagerClass        rc=0
+[era] SuperClass               rc=0
+[era] Tactical                 rc=0
+[era] TActionClass             rc=0
+[era] TagClass                 rc=0
+[era] TagTypeClass             rc=0
+[era] TaskForceClass           rc=0
+[era] TeamClass                rc=0
+[era] TeamTypeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b4f40   MATCH            SmudgeClass::StubReturn29
+[diff] 0x6b6130   MATCH            SmudgeTypeClass::GetTypeIdentifier
+[diff] 0x6b6140   MATCH            SmudgeTypeClass::GetObjectSize
+[diff] 0x6b8120   MATCH            SpawnManagerClass::StubReturn116
+[diff] 0x6b8130   MATCH            SpawnManagerClass::StubReturn65
+[diff] 0x6ce200   MATCH            SuperClass::StubReturn57
+[diff] 0x6ce210   MATCH            SuperClass::StubReturn128
+[diff] 0x6dc450   MATCH            Tactical::StubReturn56
+[diff] 0x6dc460   MATCH            Tactical::StubReturn3608
+[diff] 0x6e4630   MATCH            TActionClass::StubReturn148
+[diff] 0x6e4640   MATCH            TActionClass::StubReturn47
+[diff] 0x6e5890   MATCH            TagClass::StubReturn56
+[diff] 0x6e58a0   MATCH            TagClass::StubReturn44
+[diff] 0x6e6490   MATCH            TagTypeClass::GetTypeIdentifier
+[diff] 0x6e64a0   MATCH            TagTypeClass::GetObjectSize
+[diff] 0x6e87d0   MATCH            TaskForceClass::StubReturn33
+[diff] 0x6e87e0   MATCH            TaskForceClass::StubReturn212
+[diff] 0x6f0430   MATCH            TeamClass::StubReturn160
+[diff] 0x6f0440   MATCH            TeamClass::StubReturn34
+[diff] 0x6f20a0   MATCH            TeamTypeClass::GetTypeIdentifier
+[ledger] 0x6b4f40 UnitClass::StubReturn29 -> OK (attempt 2)
+[ledger] 0x6b6130 SmudgeTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x6b6140 SmudgeTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x6b8120 SpawnManagerClass::StubReturn116 -> OK (attempt 2)
+[ledger] 0x6b8130 SpawnManagerClass::StubReturn65 -> OK (attempt 2)
+[ledger] 0x6ce200 SuperClass::StubReturn57 -> OK (attempt 2)
+[ledger] 0x6ce210 SuperClass::StubReturn128 -> OK (attempt 2)
+[ledger] 0x6dc450 Tactical::StubReturn56 -> OK (attempt 2)
+[ledger] 0x6dc460 Tactical::StubReturn3608 -> OK (attempt 2)
+[ledger] 0x6e4630 TActionClass::StubReturn148 -> OK (attempt 2)
+[ledger] 0x6e4640 TActionClass::StubReturn47 -> OK (attempt 2)
+[ledger] 0x6e5890 TagClass::StubReturn56 -> OK (attempt 2)
+[ledger] 0x6e58a0 TagClass::StubReturn44 -> OK (attempt 2)
+[ledger] 0x6e6490 TagTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x6e64a0 TagTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x6e87d0 TaskForceClass::StubReturn33 -> OK (attempt 2)
+[ledger] 0x6e87e0 TaskForceClass::StubReturn212 -> OK (attempt 2)
+[ledger] 0x6f0430 TeamClass::StubReturn160 -> OK (attempt 2)
+[ledger] 0x6f0440 TeamClass::StubReturn34 -> OK (attempt 2)
+[ledger] 0x6f20a0 TeamTypeClass::GetTypeIdentifier -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p12\batch_report.json
+PART 12: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p12
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f20b0 TeamTypeClass::GetObjectSize -> TeamTypeClass
+[conv] 0x70dd90 TechnoClass::vt_entry_3E8 -> TechnoClass
+[conv] 0x71b190 TemporalClass::StubReturn80 -> TemporalClass
+[conv] 0x71b1a0 TemporalClass::StubReturn70 -> TemporalClass
+[conv] 0x71d2f0 TerrainClass::MissionStubReturnZero -> TerrainClass
+[conv] 0x71d300 TerrainClass::MissionStubReturnZero2 -> TerrainClass
+[conv] 0x71e330 TerrainTypeClass::GetTypeIdentifier -> TerrainTypeClass
+[conv] 0x71e340 TerrainTypeClass::GetObjectSize -> TerrainTypeClass
+[conv] 0x71fa50 TEventClass::StubReturn88 -> TEventClass
+[conv] 0x71fa60 TEventClass::StubReturn48 -> TEventClass
+[conv] 0x7236e0 TiberiumClass::StubReturn296 -> TiberiumClass
+[conv] 0x7236f0 TiberiumClass::StubReturn46 -> TiberiumClass
+[conv] 0x726930 TriggerClass::StubReturn72 -> TriggerClass
+[conv] 0x726940 TriggerClass::StubReturn38 -> TriggerClass
+[conv] 0x727ca0 TriggerTypeClass::GetTypeIdentifier -> TriggerTypeClass
+[conv] 0x727cb0 TriggerTypeClass::GetObjectSize -> TriggerTypeClass
+[conv] 0x7286b0 TubeClass::StubReturn452 -> TubeClass
+[conv] 0x7286c0 TubeClass::StubReturn53 -> TubeClass
+[conv] 0x72a200 TunnelLocomotionClass::StubReturn60 -> TunnelLocomotionClass
+[conv] 0x72dae0 CreatureClass::GetManager -> CreatureClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamTypeClass            rc=0
+[era] TechnoClass              rc=0
+[era] TemporalClass            rc=0
+[era] TerrainClass             rc=0
+[era] TerrainTypeClass         rc=0
+[era] TEventClass              rc=0
+[era] TiberiumClass            rc=0
+[era] TriggerClass             rc=0
+[era] TriggerTypeClass         rc=0
+[era] TubeClass                rc=0
+[era] TunnelLocomotionClass    rc=0
+[era] CreatureClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f20b0   MATCH            TeamTypeClass::GetObjectSize
+[diff] 0x70dd90   MATCH            TechnoClass::vt_entry_3E8
+[diff] 0x71b190   MATCH            TemporalClass::StubReturn80
+[diff] 0x71b1a0   MATCH            TemporalClass::StubReturn70
+[diff] 0x71d2f0   MATCH            TerrainClass::MissionStubReturnZero
+[diff] 0x71d300   MATCH            TerrainClass::MissionStubReturnZero2
+[diff] 0x71e330   MATCH            TerrainTypeClass::GetTypeIdentifier
+[diff] 0x71e340   MATCH            TerrainTypeClass::GetObjectSize
+[diff] 0x71fa50   MATCH            TEventClass::StubReturn88
+[diff] 0x71fa60   MATCH            TEventClass::StubReturn48
+[diff] 0x7236e0   MATCH            TiberiumClass::StubReturn296
+[diff] 0x7236f0   MATCH            TiberiumClass::StubReturn46
+[diff] 0x726930   MATCH            TriggerClass::StubReturn72
+[diff] 0x726940   MATCH            TriggerClass::StubReturn38
+[diff] 0x727ca0   MATCH            TriggerTypeClass::GetTypeIdentifier
+[diff] 0x727cb0   MATCH            TriggerTypeClass::GetObjectSize
+[diff] 0x7286b0   MATCH            TubeClass::StubReturn452
+[diff] 0x7286c0   MATCH            TubeClass::StubReturn53
+[diff] 0x72a200   MATCH            TunnelLocomotionClass::StubReturn60
+[diff] 0x72dae0   MATCH            CreatureClass::GetManager
+[ledger] 0x6f20b0 TeamTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x70dd90 TechnoClass::vt_entry_3E8 -> OK (attempt 2)
+[ledger] 0x71b190 TemporalClass::StubReturn80 -> OK (attempt 2)
+[ledger] 0x71b1a0 TemporalClass::StubReturn70 -> OK (attempt 2)
+[ledger] 0x71d2f0 TerrainClass::MissionStubReturnZero -> OK (attempt 2)
+[ledger] 0x71d300 TerrainClass::MissionStubReturnZero2 -> OK (attempt 2)
+[ledger] 0x71e330 TerrainTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x71e340 TerrainTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x71fa50 TEventClass::StubReturn88 -> OK (attempt 2)
+[ledger] 0x71fa60 TEventClass::StubReturn48 -> OK (attempt 2)
+[ledger] 0x7236e0 TiberiumClass::StubReturn296 -> OK (attempt 2)
+[ledger] 0x7236f0 TiberiumClass::StubReturn46 -> OK (attempt 2)
+[ledger] 0x726930 TriggerClass::StubReturn72 -> OK (attempt 2)
+[ledger] 0x726940 TriggerClass::StubReturn38 -> OK (attempt 2)
+[ledger] 0x727ca0 TriggerTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x727cb0 TriggerTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x7286b0 TubeClass::StubReturn452 -> OK (attempt 2)
+[ledger] 0x7286c0 TubeClass::StubReturn53 -> OK (attempt 2)
+[ledger] 0x72a200 TunnelLocomotionClass::StubReturn60 -> OK (attempt 2)
+[ledger] 0x72dae0 CreatureClass::GetManager -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p13\batch_report.json
+PART 13: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p13
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x72f510 VtableStub::72F510 -> VtableStub
+[conv] 0x732d00 Selection::GetFlag -> Selection
+[conv] 0x746dd0 UnitClass::StubReturn2280 -> UnitClass
+[conv] 0x746e20 UnitClass::StubReturn1 -> UnitClass
+[conv] 0x748160 UnitTypeClass::GetObjectSize -> UnitTypeClass
+[conv] 0x748170 UnitTypeClass::GetTypeIdentifier -> UnitTypeClass
+[conv] 0x74a960 VoxelAnimClass::StubReturn3 -> VoxelAnimClass
+[conv] 0x74ab10 VoxelAnimClass::StubReturn328 -> VoxelAnimClass
+[conv] 0x74ab20 VoxelAnimClass::StubReturn41 -> VoxelAnimClass
+[conv] 0x74b9f0 VoxelAnimTypeClass::GetTypeIdentifier -> VoxelAnimTypeClass
+[conv] 0x74ba00 VoxelAnimTypeClass::GetObjectSize -> VoxelAnimTypeClass
+[conv] 0x74f310 VeinholeMonsterClass::StubReturn63 -> VeinholeMonsterClass
+[conv] 0x74f320 VeinholeMonsterClass::StubReturn264 -> VeinholeMonsterClass
+[conv] 0x74fda0 NetworkBuffer::GetField2 -> NetworkBuffer
+[conv] 0x74fdb0 NetworkBuffer::GetField3 -> NetworkBuffer
+[conv] 0x753c70 unknown::DriverGet -> unknown
+[conv] 0x75cbd0 WalkLocomotionClass::StubReturn60 -> WalkLocomotionClass
+[conv] 0x75e4f0 WarheadTypeClass::GetObjectSize -> WarheadTypeClass
+[conv] 0x75e500 WarheadTypeClass::GetTypeIdentifier -> WarheadTypeClass
+[conv] 0x75f880 WaveClass::GetObjectSize -> WaveClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VtableStub               rc=2
+[era] Selection                rc=0
+[era] UnitClass                rc=0
+[era] UnitTypeClass            rc=0
+[era] VoxelAnimClass           rc=0
+[era] VoxelAnimTypeClass       rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] NetworkBuffer            rc=0
+[era] unknown                  rc=2
+[era] WalkLocomotionClass      rc=0
+[era] WarheadTypeClass         rc=0
+[era] WaveClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x732d00   MATCH            Selection::GetFlag
+[diff] 0x746dd0   MATCH            UnitClass::StubReturn2280
+[diff] 0x746e20   MATCH            UnitClass::StubReturn1
+[diff] 0x748160   MATCH            UnitTypeClass::GetObjectSize
+[diff] 0x748170   MATCH            UnitTypeClass::GetTypeIdentifier
+[diff] 0x74a960   MATCH            VoxelAnimClass::StubReturn3
+[diff] 0x74ab10   MATCH            VoxelAnimClass::StubReturn328
+[diff] 0x74ab20   MATCH            VoxelAnimClass::StubReturn41
+[diff] 0x74b9f0   MATCH            VoxelAnimTypeClass::GetTypeIdentifier
+[diff] 0x74ba00   MATCH            VoxelAnimTypeClass::GetObjectSize
+[diff] 0x74f310   MATCH            VeinholeMonsterClass::StubReturn63
+[diff] 0x74f320   MATCH            VeinholeMonsterClass::StubReturn264
+[diff] 0x74fda0   MATCH            NetworkBuffer::GetField2
+[diff] 0x74fdb0   MATCH            NetworkBuffer::GetField3
+[diff] 0x75cbd0   MATCH            WalkLocomotionClass::StubReturn60
+[diff] 0x75e4f0   MATCH            WarheadTypeClass::GetObjectSize
+[diff] 0x75e500   MATCH            WarheadTypeClass::GetTypeIdentifier
+[diff] 0x75f880   MATCH            WaveClass::GetObjectSize
+[ledger] 0x72f510 VtableStub::72F510 -> PENDING (attempt 2)
+[ledger] 0x732d00 Selection::GetFlag -> OK (attempt 2)
+[ledger] 0x746dd0 C07F5C70::StubReturn2280 -> OK (attempt 2)
+[ledger] 0x746e20 C07F5C70::StubReturn1 -> OK (attempt 2)
+[ledger] 0x748160 UnitTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x748170 UnitTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x74a960 VoxelAnimClass::StubReturn3 -> OK (attempt 2)
+[ledger] 0x74ab10 VoxelAnimClass::StubReturn328 -> OK (attempt 2)
+[ledger] 0x74ab20 VoxelAnimClass::StubReturn41 -> OK (attempt 2)
+[ledger] 0x74b9f0 VoxelAnimTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x74ba00 VoxelAnimTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x74f310 VeinholeMonsterClass::StubReturn63 -> OK (attempt 2)
+[ledger] 0x74f320 VeinholeMonsterClass::StubReturn264 -> OK (attempt 2)
+[ledger] 0x74fda0 NetworkBuffer::GetField2 -> OK (attempt 2)
+[ledger] 0x74fdb0 NetworkBuffer::GetField3 -> OK (attempt 2)
+[ledger] 0x753c70 Miles::DriverGet -> PENDING (attempt 2)
+[ledger] 0x75cbd0 WalkLocomotionClass::StubReturn60 -> OK (attempt 2)
+[ledger] 0x75e4f0 WarheadTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x75e500 WarheadTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x75f880 WaveClass::GetObjectSize -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MATCH": 18
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p14\batch_report.json
+PART 14: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p14
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x75f890 WaveClass::CheckStateFlag -> WaveClass
+[conv] 0x7631f0 WaveClass::GetTypeIdentifier -> WaveClass
+[conv] 0x763e00 WaypointPathClass::StubReturn64 -> WaypointPathClass
+[conv] 0x763e10 WaypointPathClass::StubReturn51 -> WaypointPathClass
+[conv] 0x765b40 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::Release -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x765b50 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766fa0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x766fb0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor -> _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x76a5a0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Release -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76a5b0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x76f160 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::Release -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f170 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor -> _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x76f180 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Release -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f190 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor -> _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76f1a0 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::Release -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x76f1b0 _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim::ddtor -> _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim
+[conv] 0x7730d0 WeaponTypeClass::GetObjectSize -> WeaponTypeClass
+[conv] 0x7730e0 WeaponTypeClass::GetTypeIdentifier -> WeaponTypeClass
+[conv] 0x775b10 unknown::GetCurrent -> unknown
+[conv] 0x775b20 unknown::GetCurrentType -> unknown
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WaveClass                rc=0
+[era] WaypointPathClass        rc=0
+[era] _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=2
+[era] _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry rc=2
+[era] _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=2
+[era] _VectorCursor_PAVMSAnim_V_DynamicVectorClass_PAVMSAnim rc=2
+[era] WeaponTypeClass          rc=0
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x75f890   MATCH            WaveClass::CheckStateFlag
+[diff] 0x7631f0   MATCH            WaveClass::GetTypeIdentifier
+[diff] 0x763e00   MATCH            WaypointPathClass::StubReturn64
+[diff] 0x763e10   MATCH            WaypointPathClass::StubReturn51
+[diff] 0x7730d0   MATCH            WeaponTypeClass::GetObjectSize
+[diff] 0x7730e0   MATCH            WeaponTypeClass::GetTypeIdentifier
+[diff] 0x775b20   MATCH            unknown::GetCurrentType
+[ledger] 0x75f890 WaveClass::CheckStateFlag -> OK (attempt 2)
+[ledger] 0x7631f0 WaveClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x763e00 WaypointPathClass::StubReturn64 -> OK (attempt 2)
+[ledger] 0x763e10 WaypointPathClass::StubReturn51 -> OK (attempt 2)
+[ledger] 0x765b40 Campaign_WorldDominationTour_24::Release -> PENDING (attempt 2)
+[ledger] 0x765b50 _VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor -> PENDING (attempt 2)
+[ledger] 0x766fa0 Conflict_WorldDominationTour_26::Release -> PENDING (attempt 2)
+[ledger] 0x766fb0 _VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor -> PENDING (attempt 2)
+[ledger] 0x76a5a0 Map_WorldDominationTour_38::Release -> PENDING (attempt 2)
+[ledger] 0x76a5b0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor -> PENDING (attempt 2)
+[ledger] 0x76f160 Count::Release -> PENDING (attempt 2)
+[ledger] 0x76f170 _VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor -> PENDING (attempt 2)
+[ledger] 0x76f180 VectorCursor::Release -> PENDING (attempt 2)
+[ledger] 0x76f190 _VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor -> PENDING (attempt 2)
+[ledger] 0x76f1a0 CampaignProperties_WorldDominationTour_22::Release -> PENDING (attempt 2)
+[ledger] 0x76f1b0 CampaignProperties_WorldDominationTour_22::ddtor -> PENDING (attempt 2)
+[ledger] 0x7730d0 WeaponTypeClass::GetObjectSize -> OK (attempt 2)
+[ledger] 0x7730e0 WeaponTypeClass::GetTypeIdentifier -> OK (attempt 2)
+[ledger] 0x775b10 Dialog::GetCurrent -> PENDING (attempt 2)
+[ledger] 0x775b20 Dialog::GetCurrentType -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p15\batch_report.json
+PART 15: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p15
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x777b50 unknown::GetEntry -> unknown
+[conv] 0x406520 AbstractTypeClass::sub_406520 -> AbstractTypeClass
+[conv] 0x406530 AbstractTypeClass::sub_406530 -> AbstractTypeClass
+[conv] 0x408070 Audio::IsSoundPlaying -> Audio
+[conv] 0x408140 ThemeClass::GetValue -> ThemeClass
+[conv] 0x40d280 MouseClass::ProcessInput -> MouseClass
+[conv] 0x41b9e0 TechnoClass::updateROFTimer -> TechnoClass
+[conv] 0x41c010 TechnoClass::IsDisguised -> TechnoClass
+[conv] 0x41c070 FootClass::CheckDockState -> FootClass
+[conv] 0x41c200 AircraftClass::CheckMissionFail -> AircraftClass
+[conv] 0x41cfa0 ObjectTypeClass::GetMember41_2 -> ObjectTypeClass
+[conv] 0x41cfd0 AircraftTypeClass::GetAuxField -> AircraftTypeClass
+[conv] 0x425520 AbstractClass::updateLayer -> AbstractClass
+[conv] 0x427290 AnimFile::Stub -> AnimFile
+[conv] 0x428e60 AnimTypeClass::GetAuxField -> AnimTypeClass
+[conv] 0x4581f0 BuildingClass::MissionStubReturnZero6 -> BuildingClass
+[conv] 0x459ee0 BuildingClass::GetTypePtr -> BuildingClass
+[conv] 0x465d70 BuildingClass::processPowerState -> BuildingClass
+[conv] 0x465db0 BuildingTypeClass::GetAuxField -> BuildingTypeClass
+[conv] 0x46b270 TechnoClass::updateHealthBar -> TechnoClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=0
+[era] AbstractTypeClass        rc=0
+[era] Audio                    rc=0
+[era] ThemeClass               rc=0
+[era] MouseClass               rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=2
+[era] AircraftClass            rc=0
+[era] ObjectTypeClass          rc=0
+[era] AircraftTypeClass        rc=0
+[era] AbstractClass            rc=0
+[era] AnimFile                 rc=0
+[era] AnimTypeClass            rc=0
+[era] BuildingClass            rc=0
+[era] BuildingTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x777b50   MATCH            unknown::GetEntry
+[diff] 0x406520   MATCH            AbstractTypeClass::sub_406520
+[diff] 0x406530   MATCH            AbstractTypeClass::sub_406530
+[diff] 0x408070   MATCH            Audio::IsSoundPlaying
+[diff] 0x408140   MISMATCH         ThemeClass::GetValue
+[diff] 0x40d280   MATCH            MouseClass::ProcessInput
+[diff] 0x41b9e0   MATCH            TechnoClass::updateROFTimer
+[diff] 0x41c010   MATCH            TechnoClass::IsDisguised
+[diff] 0x46b270   MATCH            TechnoClass::updateHealthBar
+[diff] 0x41c200   MATCH            AircraftClass::CheckMissionFail
+[diff] 0x41cfa0   MISMATCH         ObjectTypeClass::GetMember41_2
+[diff] 0x41cfd0   MATCH            AircraftTypeClass::GetAuxField
+[diff] 0x425520   MATCH            AbstractClass::updateLayer
+[diff] 0x427290   MATCH            AnimFile::Stub
+[diff] 0x428e60   MATCH            AnimTypeClass::GetAuxField
+[diff] 0x4581f0   MATCH            BuildingClass::MissionStubReturnZero6
+[diff] 0x459ee0   MATCH            BuildingClass::GetTypePtr
+[diff] 0x465d70   MATCH            BuildingClass::processPowerState
+[diff] 0x465db0   MATCH            BuildingTypeClass::GetAuxField
+[ledger] 0x777b50 GameOptions::GetEntry -> OK (attempt 2)
+[ledger] 0x406520 AbstractTypeClass::sub_406520 -> OK (attempt 2)
+[ledger] 0x406530 AbstractTypeClass::sub_406530 -> OK (attempt 2)
+[ledger] 0x408070 Audio::IsSoundPlaying -> OK (attempt 2)
+[ledger] 0x408140 ThemeClass::GetValue -> NG (attempt 2)
+[ledger] 0x40d280 MouseClass::ProcessInput -> OK (attempt 2)
+[ledger] 0x41b9e0 TechnoClass::updateROFTimer -> OK (attempt 2)
+[ledger] 0x41c010 TechnoClass::IsDisguised -> OK (attempt 2)
+[ledger] 0x41c070 AircraftClass::CheckDockState -> PENDING (attempt 2)
+[ledger] 0x41c200 AircraftClass::CheckMissionFail -> OK (attempt 2)
+[ledger] 0x41cfa0 ObjectClass::GetMember41_2 -> NG (attempt 2)
+[ledger] 0x41cfd0 AircraftTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x425520 AbstractClass::updateLayer -> OK (attempt 2)
+[ledger] 0x427290 AnimFile::Stub -> OK (attempt 2)
+[ledger] 0x428e60 AnimTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x4581f0 BuildingClass::MissionStubReturnZero6 -> OK (attempt 2)
+[ledger] 0x459ee0 BuildingClass::GetTypePtr -> OK (attempt 2)
+[ledger] 0x465d70 BuildingClass::processPowerState -> OK (attempt 2)
+[ledger] 0x465db0 BuildingTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x46b270 TechnoClass::updateHealthBar -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 89.5,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p16\batch_report.json
+PART 16: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p16
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x46b5b0 BulletClass::CheckMissionAbort -> BulletClass
+[conv] 0x4bad70 DSurface::GetPitch -> DSurface
+[conv] 0x4df1d0 TechnoClass::vt_entry_4B0 -> TechnoClass
+[conv] 0x4df1e0 TechnoClass::vt_entry_4B4 -> TechnoClass
+[conv] 0x512730 HouseTypeClass::loadBuildLimits -> HouseTypeClass
+[conv] 0x5176a0 InfantryClass::SetField6 -> InfantryClass
+[conv] 0x51faf0 InfantryClass::GetTypePtr -> InfantryClass
+[conv] 0x524d60 InfantryTypeClass::GetAuxField -> InfantryTypeClass
+[conv] 0x53f1f0 Multiplayer::Screen -> Multiplayer
+[conv] 0x54a160 IsometricTileTypeClass::GetAuxField -> IsometricTileTypeClass
+[conv] 0x557b00 ListClass::GetItemCount -> ListClass
+[conv] 0x55af40 RadarClass::SetGlobal -> RadarClass
+[conv] 0x578ac0 MapClass::IncrementRedrawCounter -> MapClass
+[conv] 0x5cb6c0 VtableStub::5CB6C0 -> VtableStub
+[conv] 0x5f5f30 ObjectClass::GetMember41 -> ObjectClass
+[conv] 0x5fdde0 OverlayClass::ProcessEvent -> OverlayClass
+[conv] 0x5fef20 OverlayTypeClass::GetAuxField -> OverlayTypeClass
+[conv] 0x600670 ComboBoxOwnerDraw::GetWidthHeight -> ComboBoxOwnerDraw
+[conv] 0x624130 OwnerDrawControl::InitVtable -> OwnerDrawControl
+[conv] 0x62d990 ParticleClass::Stub -> ParticleClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=0
+[era] DSurface                 rc=0
+[era] TechnoClass              rc=0
+[era] HouseTypeClass           rc=0
+[era] InfantryClass            rc=0
+[era] InfantryTypeClass        rc=0
+[era] Multiplayer              rc=2
+[era] IsometricTileTypeClass   rc=0
+[era] ListClass                rc=0
+[era] RadarClass               rc=2
+[era] MapClass                 rc=0
+[era] VtableStub               rc=2
+[era] ObjectClass              rc=0
+[era] OverlayClass             rc=0
+[era] OverlayTypeClass         rc=0
+[era] ComboBoxOwnerDraw        rc=0
+[era] OwnerDrawControl         rc=2
+[era] ParticleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x46b5b0   MATCH            BulletClass::CheckMissionAbort
+[diff] 0x4bad70   MATCH            DSurface::GetPitch
+[diff] 0x4df1d0   MATCH            TechnoClass::vt_entry_4B0
+[diff] 0x4df1e0   MATCH            TechnoClass::vt_entry_4B4
+[diff] 0x512730   MATCH            HouseTypeClass::loadBuildLimits
+[diff] 0x5176a0   MISMATCH         InfantryClass::SetField6
+[diff] 0x51faf0   MATCH            InfantryClass::GetTypePtr
+[diff] 0x524d60   MATCH            InfantryTypeClass::GetAuxField
+[diff] 0x54a160   MATCH            IsometricTileTypeClass::GetAuxField
+[diff] 0x557b00   MATCH            ListClass::GetItemCount
+[diff] 0x578ac0   MISMATCH         MapClass::IncrementRedrawCounter
+[diff] 0x5f5f30   MATCH            ObjectClass::GetMember41
+[diff] 0x5fdde0   MATCH            OverlayClass::ProcessEvent
+[diff] 0x5fef20   MATCH            OverlayTypeClass::GetAuxField
+[diff] 0x600670   MATCH            ComboBoxOwnerDraw::GetWidthHeight
+[diff] 0x62d990   MATCH            ParticleClass::Stub
+[ledger] 0x46b5b0 BulletClass::CheckMissionAbort -> OK (attempt 2)
+[ledger] 0x4bad70 DSurface::GetPitch -> OK (attempt 2)
+[ledger] 0x4df1d0 TechnoClass::vt_entry_4B0 -> OK (attempt 2)
+[ledger] 0x4df1e0 TechnoClass::vt_entry_4B4 -> OK (attempt 2)
+[ledger] 0x512730 HouseTypeClass::loadBuildLimits -> OK (attempt 2)
+[ledger] 0x5176a0 InfantryClass::SetField6 -> NG (attempt 2)
+[ledger] 0x51faf0 InfantryClass::GetTypePtr -> OK (attempt 2)
+[ledger] 0x524d60 InfantryTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x53f1f0 Multiplayer::Screen -> PENDING (attempt 2)
+[ledger] 0x54a160 IsometricTileTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x557b00 CheckListClass::GetItemCount -> OK (attempt 2)
+[ledger] 0x55af40 RadarClass::SetGlobal -> PENDING (attempt 2)
+[ledger] 0x578ac0 MapClass::IncrementRedrawCounter -> NG (attempt 2)
+[ledger] 0x5cb6c0 VtableStub::5CB6C0 -> PENDING (attempt 2)
+[ledger] 0x5f5f30 ObjectClass::GetMember41 -> OK (attempt 2)
+[ledger] 0x5fdde0 Object::ProcessEvent -> OK (attempt 2)
+[ledger] 0x5fef20 OverlayTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x600670 ComboBoxOwnerDraw::GetWidthHeight -> OK (attempt 2)
+[ledger] 0x624130 OwnerDrawControl::InitVtable -> PENDING (attempt 2)
+[ledger] 0x62d990 ParticleClass::Stub -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 87.5,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p17\batch_report.json
+PART 17: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p17
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x630220 ParticleSystemClass::Stub -> ParticleSystemClass
+[conv] 0x637060 TabClass::processTabInput -> TabClass
+[conv] 0x642b20 LoadingScreen::GetValue -> LoadingScreen
+[conv] 0x656de0 HouseClass::updateAlliedStatus -> HouseClass
+[conv] 0x65d660 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x681100 LoadOptions::GetData -> LoadOptions
+[conv] 0x681120 LoadOptions::GetFlag98 -> LoadOptions
+[conv] 0x681140 LoadOptions::GetFlag99 -> LoadOptions
+[conv] 0x6812d0 LoadOptions::GetFlag252 -> LoadOptions
+[conv] 0x691f90 ScriptTypeClass::GetAuxField -> ScriptTypeClass
+[conv] 0x69bbe0 SessionClass::GetGameSpeed -> SessionClass
+[conv] 0x6b4f20 SmudgeClass::CheckStatus -> SmudgeClass
+[conv] 0x6b6150 SmudgeTypeClass::GetAuxField -> SmudgeTypeClass
+[conv] 0x6e64b0 TagTypeClass::GetAuxField -> TagTypeClass
+[conv] 0x6f20c0 TeamTypeClass::GetAuxField -> TeamTypeClass
+[conv] 0x6f9dc0 TechnoClass::GetTarget -> TechnoClass
+[conv] 0x705d20 BuildingClass::GetPlanningToken -> BuildingClass
+[conv] 0x70c5b0 TechnoClass::GetShroudByte -> TechnoClass
+[conv] 0x70c5c0 TechnoClass::GetFogByte -> TechnoClass
+[conv] 0x70ddc0 BuildingClass::checkPlacement -> BuildingClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=0
+[era] TabClass                 rc=2
+[era] LoadingScreen            rc=0
+[era] HouseClass               rc=0
+[era] ReferenceCounted         rc=2
+[era] LoadOptions              rc=2
+[era] ScriptTypeClass          rc=0
+[era] SessionClass             rc=0
+[era] SmudgeClass              rc=0
+[era] SmudgeTypeClass          rc=0
+[era] TagTypeClass             rc=0
+[era] TeamTypeClass            rc=0
+[era] TechnoClass              rc=2
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x630220   MATCH            ParticleSystemClass::Stub
+[diff] 0x642b20   MATCH            LoadingScreen::GetValue
+[diff] 0x656de0   MATCH            HouseClass::updateAlliedStatus
+[diff] 0x681120   MATCH            LoadOptions::GetFlag98
+[diff] 0x681140   MATCH            LoadOptions::GetFlag99
+[diff] 0x6812d0   MATCH            LoadOptions::GetFlag252
+[diff] 0x691f90   MATCH            ScriptTypeClass::GetAuxField
+[diff] 0x69bbe0   MATCH            SessionClass::GetGameSpeed
+[diff] 0x6b4f20   MATCH            SmudgeClass::CheckStatus
+[diff] 0x6b6150   MATCH            SmudgeTypeClass::GetAuxField
+[diff] 0x6e64b0   MATCH            TagTypeClass::GetAuxField
+[diff] 0x6f20c0   MATCH            TeamTypeClass::GetAuxField
+[diff] 0x6f9dc0   MATCH            TechnoClass::GetTarget
+[diff] 0x70c5b0   MATCH            TechnoClass::GetShroudByte
+[diff] 0x70c5c0   MISMATCH         TechnoClass::GetFogByte
+[diff] 0x705d20   MATCH            BuildingClass::GetPlanningToken
+[diff] 0x70ddc0   MATCH            BuildingClass::checkPlacement
+[ledger] 0x630220 ParticleSystemClass::Stub -> OK (attempt 2)
+[ledger] 0x637060 TabClass::processTabInput -> PENDING (attempt 2)
+[ledger] 0x642b20 LoadingScreen::GetValue -> OK (attempt 2)
+[ledger] 0x656de0 HouseClass::updateAlliedStatus -> OK (attempt 2)
+[ledger] 0x65d660 ReferenceCounted::Constructor -> PENDING (attempt 2)
+[ledger] 0x681100 LoadOptions::GetData -> PENDING (attempt 2)
+[ledger] 0x681120 LoadOptions::GetFlag98 -> OK (attempt 2)
+[ledger] 0x681140 LoadOptions::GetFlag99 -> OK (attempt 2)
+[ledger] 0x6812d0 LoadOptions::GetFlag252 -> OK (attempt 2)
+[ledger] 0x691f90 ScriptTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x69bbe0 SessionClass::GetGameSpeed -> OK (attempt 2)
+[ledger] 0x6b4f20 UnitClass::CheckStatus -> OK (attempt 2)
+[ledger] 0x6b6150 SmudgeTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x6e64b0 TagTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x6f20c0 TeamTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x6f9dc0 TechnoClass::GetTarget -> OK (attempt 2)
+[ledger] 0x705d20 BuildingClass::GetPlanningToken -> OK (attempt 2)
+[ledger] 0x70c5b0 ObjectClass::GetShroudByte -> OK (attempt 2)
+[ledger] 0x70c5c0 ObjectClass::GetFogByte -> NG (attempt 2)
+[ledger] 0x70ddc0 BuildingClass::checkPlacement -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 94.1,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p18\batch_report.json
+PART 18: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p18
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x70fbd0 UnitClass::IsDeactivated -> UnitClass
+[conv] 0x71d150 TerrainClass::GetOffset -> TerrainClass
+[conv] 0x71e350 TerrainTypeClass::GetAuxField -> TerrainTypeClass
+[conv] 0x723700 TiberiumClass::Stub -> TiberiumClass
+[conv] 0x727cc0 TriggerTypeClass::GetAuxField -> TriggerTypeClass
+[conv] 0x746d80 FootClass::updateScanRange -> FootClass
+[conv] 0x748180 UnitTypeClass::GetAuxField -> UnitTypeClass
+[conv] 0x74ab30 VoxelAnimClass::LoadFrame -> VoxelAnimClass
+[conv] 0x759f70 MovieClass::GetWidth -> MovieClass
+[conv] 0x759f80 MovieClass::GetHeight -> MovieClass
+[conv] 0x7b2720 SessionClass::SetInstance -> SessionClass
+[conv] 0x408600 AudioNode::Release -> AudioNode
+[conv] 0x40d230 GScreenClass::AddRef -> GScreenClass
+[conv] 0x40d240 GScreenClass::Release -> GScreenClass
+[conv] 0x41c030 TechnoClass::CheckAction -> TechnoClass
+[conv] 0x425260 BuildingClass::SetField8 -> BuildingClass
+[conv] 0x425270 VtableStub::Method_425270 -> VtableStub
+[conv] 0x487e50 AbstractClass::compareType -> AbstractClass
+[conv] 0x48ace0 unknown::HRESULT_Fail -> unknown
+[conv] 0x4c9c60 FactoryClass::HasProgressChanged -> FactoryClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] UnitClass                rc=2
+[era] TerrainClass             rc=0
+[era] TerrainTypeClass         rc=0
+[era] TiberiumClass            rc=0
+[era] TriggerTypeClass         rc=0
+[era] FootClass                rc=0
+[era] UnitTypeClass            rc=0
+[era] VoxelAnimClass           rc=0
+[era] MovieClass               rc=0
+[era] SessionClass             rc=0
+[era] AudioNode                rc=2
+[era] GScreenClass             rc=0
+[era] TechnoClass              rc=0
+[era] BuildingClass            rc=2
+[era] VtableStub               rc=0
+[era] AbstractClass            rc=0
+[era] unknown                  rc=0
+[era] FactoryClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x71d150   MATCH            TerrainClass::GetOffset
+[diff] 0x71e350   MATCH            TerrainTypeClass::GetAuxField
+[diff] 0x723700   MATCH            TiberiumClass::Stub
+[diff] 0x727cc0   MATCH            TriggerTypeClass::GetAuxField
+[diff] 0x746d80   MATCH            FootClass::updateScanRange
+[diff] 0x748180   MATCH            UnitTypeClass::GetAuxField
+[diff] 0x74ab30   MATCH            VoxelAnimClass::LoadFrame
+[diff] 0x759f70   MATCH            MovieClass::GetWidth
+[diff] 0x759f80   MATCH            MovieClass::GetHeight
+[diff] 0x7b2720   MATCH            SessionClass::SetInstance
+[diff] 0x40d230   MATCH            GScreenClass::AddRef
+[diff] 0x40d240   MATCH            GScreenClass::Release
+[diff] 0x41c030   MISMATCH         TechnoClass::CheckAction
+[diff] 0x425270   MATCH            VtableStub::Method_425270
+[diff] 0x487e50   MATCH            AbstractClass::compareType
+[diff] 0x48ace0   MATCH            unknown::HRESULT_Fail
+[diff] 0x4c9c60   MISMATCH         FactoryClass::HasProgressChanged
+[ledger] 0x70fbd0 UnitClass::IsDeactivated -> PENDING (attempt 2)
+[ledger] 0x71d150 IRTTITypeInfo::GetOffset -> OK (attempt 2)
+[ledger] 0x71e350 TerrainTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x723700 TiberiumClass::Stub -> OK (attempt 2)
+[ledger] 0x727cc0 TriggerTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x746d80 FootClass::updateScanRange -> OK (attempt 2)
+[ledger] 0x748180 UnitTypeClass::GetAuxField -> OK (attempt 2)
+[ledger] 0x74ab30 VoxelAnimClass::LoadFrame -> OK (attempt 2)
+[ledger] 0x759f70 MovieClass::GetWidth -> OK (attempt 2)
+[ledger] 0x759f80 MovieClass::GetHeight -> OK (attempt 2)
+[ledger] 0x7b2720 SessionClass::SetInstance -> OK (attempt 2)
+[ledger] 0x408600 AudioNode::Release -> PENDING (attempt 2)
+[ledger] 0x40d230 InputManager_ProcessEvents::AddRef -> OK (attempt 2)
+[ledger] 0x40d240 InputManager_ProcessEvents::Release -> OK (attempt 2)
+[ledger] 0x41c030 TacticalClass::CheckAction -> NG (attempt 2)
+[ledger] 0x425260 AnimClass::SetField8 -> PENDING (attempt 2)
+[ledger] 0x425270 VtableStub::Method_425270 -> OK (attempt 2)
+[ledger] 0x487e50 AbstractClass::compareType -> OK (attempt 2)
+[ledger] 0x48ace0 Return::HRESULT_Fail -> OK (attempt 2)
+[ledger] 0x4c9c60 FactoryClass::HasProgressChanged -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 3,
+  "MATCH": 15,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 88.2,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p19\batch_report.json
+PART 19: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r3_400\p19
+ 16 files changed, 40 insertions(+), 20 deletions(-)
+ 9 files changed, 42 insertions(+), 28 deletions(-)
+ 16 files changed, 70 insertions(+), 74 deletions(-)
+ 22 files changed, 52 insertions(+), 53 deletions(-)
+ 10 files changed, 40 insertions(+), 20 deletions(-)
+ 14 files changed, 40 insertions(+), 20 deletions(-)
+ 14 files changed, 40 insertions(+), 20 deletions(-)
+ 11 files changed, 40 insertions(+), 20 deletions(-)
+ 7 files changed, 48 insertions(+), 32 deletions(-)
+ 8 files changed, 40 insertions(+), 20 deletions(-)
+ 10 files changed, 40 insertions(+), 20 deletions(-)
+ 14 files changed, 40 insertions(+), 20 deletions(-)
+ 13 files changed, 40 insertions(+), 20 deletions(-)
+ 14 files changed, 40 insertions(+), 20 deletions(-)
+ 12 files changed, 40 insertions(+), 20 deletions(-)
+ 6 files changed, 40 insertions(+), 20 deletions(-)
+ 16 files changed, 40 insertions(+), 20 deletions(-)
+ 16 files changed, 40 insertions(+), 20 deletions(-)
+ 18 files changed, 40 insertions(+), 20 deletions(-)
+ 17 files changed, 40 insertions(+), 20 deletions(-)

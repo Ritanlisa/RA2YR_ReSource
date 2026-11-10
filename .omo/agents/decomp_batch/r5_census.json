@@ -1,0 +1,1021 @@
+{
+ "total": 385,
+ "first_error_code": {
+  "C2440": {
+   "n": 52,
+   "cats": {
+    "ptr->ptr cast": 21,
+    "ptr<->int cast": 31
+   },
+   "samples": {
+    "C2440|ptr->ptr cast": [
+     {
+      "addr": "0x6252f0",
+      "name": "ComboBoxOwnerDraw::SortItems",
+      "msg": "'=' : cannot convert from 'unsigned int *' to 'int *'"
+     },
+     {
+      "addr": "0x7ae020",
+      "name": "WOLGameList::GrowBuffer",
+      "msg": "'=' : cannot convert from 'unsigned int *' to 'int *'"
+     },
+     {
+      "addr": "0x7ae0e0",
+      "name": "ComStreamClass::readData",
+      "msg": "'=' : cannot convert from 'unsigned int *' to 'int *'"
+     },
+     {
+      "addr": "0x7ae510",
+      "name": "HashTable_flat::Grow",
+      "msg": "'=' : cannot convert from 'unsigned int *' to 'int *'"
+     },
+     {
+      "addr": "0x404700",
+      "name": "AudioStream::SetupPlayback",
+      "msg": "'=' : cannot convert from 'char *' to 'unsigned char *'"
+     },
+     {
+      "addr": "0x624fc0",
+      "name": "HashTable_flat::Grow2",
+      "msg": "'=' : cannot convert from 'unsigned int *' to 'int *'"
+     }
+    ],
+    "C2440|ptr<->int cast": [
+     {
+      "addr": "0x4c4ef0",
+      "name": "TaskForceClass::ParseUnitCountAndType",
+      "msg": "'initializing' : cannot convert from 'unsigned char' to 'char *'"
+     },
+     {
+      "addr": "0x523250",
+      "name": "InfantryClass::ComputeTransform",
+      "msg": "'=' : cannot convert from 'unsigned int' to 'class TechnoClass *'"
+     },
+     {
+      "addr": "0x652cf0",
+      "name": "RadarClass::Destru_vt05",
+      "msg": "'=' : cannot convert from 'class MapClass *' to 'int'"
+     },
+     {
+      "addr": "0x556a20",
+      "name": "ObjectClass::checkLimbo",
+      "msg": "'=' : cannot convert from 'const int' to 'void *'"
+     },
+     {
+      "addr": "0x6b1020",
+      "name": "SlaveManagerClass::ShouldWakeUpNow",
+      "msg": "'initializing' : cannot convert from 'unsigned int' to 'class TechnoClass *'"
+     },
+     {
+      "addr": "0x540dc0",
+      "name": "SessionClass::initLAN",
+      "msg": "'initializing' : cannot convert from 'int' to 'void *'"
+     }
+    ]
+   }
+  },
+  "C2143": {
+   "n": 52,
+   "cats": {
+    "syntax (residual IDA tokens)": 52
+   },
+   "samples": {
+    "C2143|syntax (residual IDA tokens)": [
+     {
+      "addr": "0x50df30",
+      "name": "HouseClass::GetStartCoords",
+      "msg": "syntax error : missing ')' before 'this'"
+     },
+     {
+      "addr": "0x4daf10",
+      "name": "FootClass::UpdateState",
+      "msg": "syntax error : missing ')' before 'this'"
+     },
+     {
+      "addr": "0x4a0630",
+      "name": "ConnectionPointClass::Unadvise",
+      "msg": "syntax error : missing ')' before 'this'"
+     },
+     {
+      "addr": "0x54f2f0",
+      "name": "InputManager::EnqueueInputEvent",
+      "msg": "syntax error : missing ')' before 'this'"
+     },
+     {
+      "addr": "0x53fbd0",
+      "name": "IPXGlobalConnClass::Flush",
+      "msg": "syntax error : missing ')' before 'this'"
+     },
+     {
+      "addr": "0x474c70",
+      "name": "INIEntry::ReadColor",
+      "msg": "syntax error : missing ')' before 'this'"
+     }
+    ]
+   }
+  },
+  "C2228": {
+   "n": 40,
+   "cats": {
+    "pad member (type view missing)": 18,
+    "named member (member struct type missing)": 22
+   },
+   "samples": {
+    "C2228|pad member (type view missing)": [
+     {
+      "addr": "0x44e3a0",
+      "name": "BuildingClass::CheckOverlapWithOthers",
+      "msg": "left of '.__pad_58' must have class/struct/union type"
+     },
+     {
+      "addr": "0x44f640",
+      "name": "BuildingClass::GetFactoryPosition",
+      "msg": "left of '.__pad_58' must have class/struct/union type"
+     },
+     {
+      "addr": "0x451330",
+      "name": "BuildingClass::GetCrewCount",
+      "msg": "left of '.__pad_58' must have class/struct/union type"
+     },
+     {
+      "addr": "0x6403a0",
+      "name": "PowerClass::getDrain",
+      "msg": "left of '.__pad_1C' must have class/struct/union type"
+     },
+     {
+      "addr": "0x6da180",
+      "name": "TacticalMap::DrawOccupiedRegion",
+      "msg": "left of '.__pad_58' must have class/struct/union type"
+     },
+     {
+      "addr": "0x486ff0",
+      "name": "Cell::IsBuildableAdvanced",
+      "msg": "left of '.__pad_58' must have class/struct/union type"
+     }
+    ],
+    "C2228|named member (member struct type missing)": [
+     {
+      "addr": "0x6e2970",
+      "name": "BuildingLightClass::FindAllTargets",
+      "msg": "left of '.vfptr' must have class/struct/union type"
+     },
+     {
+      "addr": "0x4a95a0",
+      "name": "MapClass::SetCellFlagsAlongPath",
+      "msg": "left of '.bombVisible' must have class/struct/union type"
+     },
+     {
+      "addr": "0x4a9650",
+      "name": "BuildingClass::MarkExitPath",
+      "msg": "left of '.bombVisible' must have class/struct/union type"
+     },
+     {
+      "addr": "0x4fae50",
+      "name": "SuperWeapon::FireSuperWeaponHouseClass",
+      "msg": "left of '.nextArrayIndex' must have class/struct/union type"
+     },
+     {
+      "addr": "0x4ac960",
+      "name": "MapClass::ToggleZoom",
+      "msg": "left of '.bombVisible' must have class/struct/union type"
+     },
+     {
+      "addr": "0x6e4150",
+      "name": "TActionClass::executeGeneticMutatorAction",
+      "msg": "left of '.vfptr' must have class/struct/union type"
+     }
+    ]
+   }
+  },
+  "C2065": {
+   "n": 38,
+   "cats": {
+    "global-ish (g_/hungarian prefix)": 8,
+    "local (vN)": 24,
+    "other-lowercase": 5,
+    "Type/global-class (Uppercase)": 1
+   },
+   "samples": {
+    "C2065|global-ish (g_/hungarian prefix)": [
+     {
+      "addr": "0x5cd4d0",
+      "name": "MSBitPrintAnim::Draw",
+      "msg": "'g_GameFontObject' : undeclared identifier"
+     },
+     {
+      "addr": "0x6cf350",
+      "name": "SwizzleManagerClass::ConvertNodes",
+      "msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+     },
+     {
+      "addr": "0x5cd410",
+      "name": "MSBitPrintAnim::SetText",
+      "msg": "'g_GameFontObject' : undeclared identifier"
+     },
+     {
+      "addr": "0x52b2b0",
+      "name": "INIClass::deleteSection",
+      "msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+     },
+     {
+      "addr": "0x5388a0",
+      "name": "SortedArray::RemoveByKey",
+      "msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+     },
+     {
+      "addr": "0x475610",
+      "name": "INIClass::SetHouseName",
+      "msg": "'_CoreCrtNonSecureSearchSortCompareFunction' : undeclared identifier"
+     }
+    ],
+    "C2065|local (vN)": [
+     {
+      "addr": "0x5c1fa0",
+      "name": "MPCooperative::Revert",
+      "msg": "'v4' : undeclared identifier"
+     },
+     {
+      "addr": "0x5e9290",
+      "name": "NetworkLobby::CheckLobbyConditions",
+      "msg": "'v2' : undeclared identifier"
+     },
+     {
+      "addr": "0x485080",
+      "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
+      "msg": "'v7' : undeclared identifier"
+     },
+     {
+      "addr": "0x5022f0",
+      "name": "WaypointClass::IsCoordinateUsed",
+      "msg": "'v2' : undeclared identifier"
+     },
+     {
+      "addr": "0x7b4cd0",
+      "name": "String::Append2",
+      "msg": "'v4' : undeclared identifier"
+     },
+     {
+      "addr": "0x7b4940",
+      "name": "String::Reassign",
+      "msg": "'v4' : undeclared identifier"
+     }
+    ],
+    "C2065|other-lowercase": [
+     {
+      "addr": "0x6b7c60",
+      "name": "UnitClass::ClearTargetRef",
+      "msg": "'result' : undeclared identifier"
+     },
+     {
+      "addr": "0x4c9ea0",
+      "name": "ProductionClass::StartTimer",
+      "msg": "'result' : undeclared identifier"
+     },
+     {
+      "addr": "0x4863d0",
+      "name": "CellLand::IsBuildable",
+      "msg": "'result' : undeclared identifier"
+     },
+     {
+      "addr": "0x589370",
+      "name": "VectorClass::AllocateCellDataBuffer",
+      "msg": "'result' : undeclared identifier"
+     },
+     {
+      "addr": "0x7b0f50",
+      "name": "NetworkOptions::ApplySettings",
+      "msg": "'sprintf' : undeclared identifier"
+     }
+    ],
+    "C2065|Type/global-class (Uppercase)": [
+     {
+      "addr": "0x4ba5a0",
+      "name": "DSurface::Construct",
+      "msg": "'DSurface_Vtable' : undeclared identifier"
+     }
+    ]
+   }
+  },
+  "C2059": {
+   "n": 35,
+   "cats": {
+    "syntax (residual IDA tokens)": 35
+   },
+   "samples": {
+    "C2059|syntax (residual IDA tokens)": [
+     {
+      "addr": "0x6d5f60",
+      "name": "TacticalClass::SetViewportPosition",
+      "msg": "syntax error : '?'"
+     },
+     {
+      "addr": "0x4802a0",
+      "name": "TacticalClass::DrawCellTerrainOverlay",
+      "msg": "syntax error : '?'"
+     },
+     {
+      "addr": "0x540c60",
+      "name": "Network::SetConnectionParams",
+      "msg": "syntax error : '++'"
+     },
+     {
+      "addr": "0x625780",
+      "name": "HashTable_flat::Shrink2",
+      "msg": "syntax error : 'if'"
+     },
+     {
+      "addr": "0x6258e0",
+      "name": "ComboBoxOwnerDraw::SetCapacity",
+      "msg": "syntax error : 'if'"
+     },
+     {
+      "addr": "0x7adf70",
+      "name": "HashMap::Shrink2",
+      "msg": "syntax error : 'if'"
+     }
+    ]
+   }
+  },
+  "C2039": {
+   "n": 31,
+   "cats": {
+    "member not in class (body/hpp view gap)": 31
+   },
+   "samples": {
+    "C2039|member not in class (body/hpp view gap)": [
+     {
+      "addr": "0x4dc810",
+      "name": "FootClass::SetBuildingType",
+      "msg": "'planningPathIdx' : is not a member of 'FootClass'"
+     },
+     {
+      "addr": "0x50f9e0",
+      "name": "VectorClass__N::Remove",
+      "msg": "'m_C' : is not a member of '_VectorClass__N'"
+     },
+     {
+      "addr": "0x74c030",
+      "name": "VectorClass_E::Release",
+      "msg": "'m_C' : is not a member of '_VectorClass_E'"
+     },
+     {
+      "addr": "0x50fb20",
+      "name": "VectorClass__N::SetCapacity",
+      "msg": "'m_C' : is not a member of '_DynamicVectorClass__N'"
+     },
+     {
+      "addr": "0x501160",
+      "name": "CCINIClass::WriteHouses",
+      "msg": "'vfptr' : is not a member of 'HouseClass'"
+     },
+     {
+      "addr": "0x42d8f0",
+      "name": "VectorClass_ushort::Remove",
+      "msg": "'m_C' : is not a member of '_VectorClass_G'"
+     }
+    ]
+   }
+  },
+  "C2664": {
+   "n": 24,
+   "cats": {
+    "param conversion": 24
+   },
+   "samples": {
+    "C2664|param conversion": [
+     {
+      "addr": "0x5cc970",
+      "name": "MSBinkAnim::Play",
+      "msg": "'int (int,char *,class DSurface *,char *,unsigned int,int)' : cannot convert parameter 3 from 'int' to 'class D"
+     },
+     {
+      "addr": "0x5b4270",
+      "name": "HashTree::MarkEntry",
+      "msg": "'strcpy' : cannot convert parameter 2 from 'class HashTree *const ' to 'const char *'"
+     },
+     {
+      "addr": "0x41a9e0",
+      "name": "TechnoClass::CanFireAtTarget",
+      "msg": "'TriggerTypeClass__ReadINI' : cannot convert parameter 1 from 'class TechnoClass *const ' to 'int'"
+     },
+     {
+      "addr": "0x736d50",
+      "name": "TechnoClass::IsC4AnimationActive",
+      "msg": "'TriggerTypeClass__ReadINI' : cannot convert parameter 1 from 'class TechnoClass *const ' to 'int'"
+     },
+     {
+      "addr": "0x644630",
+      "name": "WarheadTypeClass::applyDamage",
+      "msg": "'strlen' : cannot convert parameter 1 from 'unsigned char' to 'const char *'"
+     },
+     {
+      "addr": "0x4756f0",
+      "name": "HouseTypeClass::loadCountryData",
+      "msg": "'GetString' : cannot convert parameter 3 from 'unsigned char *' to 'char *'"
+     }
+    ]
+   }
+  },
+  "C4234": {
+   "n": 22,
+   "cats": {
+    "__thiscall keyword in hpp": 22
+   },
+   "samples": {
+    "C4234|__thiscall keyword in hpp": [
+     {
+      "addr": "0x7b22e0",
+      "name": "AudioQueue::ReadBuffer",
+      "msg": "nonstandard extension used : '__thiscall' keyword reserved for future use"
+     },
+     {
+      "addr": "0x4052f0",
+      "name": "VocClass::Release",
+      "msg": "nonstandard extension used : '__thiscall' keyword reserved for future use"
+     },
+     {
+      "addr": "0x58a8f0",
+      "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
+      "msg": "nonstandard extension used : '__thiscall' keyword reserved for"
+     },
+     {
+      "addr": "0x58a2a0",
+      "name": "VectorClass_W4PassabilityType::SetCapacity_1",
+      "msg": "nonstandard extension used : '__thiscall' keyword reser"
+     },
+     {
+      "addr": "0x658970",
+      "name": "RadarHashVector::Release",
+      "msg": "nonstandard extension used : '__thiscall' keyword re"
+     },
+     {
+      "addr": "0x658b10",
+      "name": "RadarHashVector::ComputeHashIndex",
+      "msg": "nonstandard extension used : '__thiscall' key"
+     }
+    ]
+   }
+  },
+  "C2109": {
+   "n": 15,
+   "cats": {
+    "subscript on non-array": 15
+   },
+   "samples": {
+    "C2109|subscript on non-array": [
+     {
+      "addr": "0x48bf40",
+      "name": "ConnectionClass::sendAck",
+      "msg": "subscript requires array or pointer type"
+     },
+     {
+      "addr": "0x6d8530",
+      "name": "DisplayClass::ScrollTacticalView",
+      "msg": "subscript requires array or pointer type"
+     },
+     {
+      "addr": "0x626690",
+      "name": "FlagSystem::GetNextActive",
+      "msg": "subscript requires array or pointer type"
+     },
+     {
+      "addr": "0x656cb0",
+      "name": "RadarClass::SetViewMode",
+      "msg": "subscript requires array or pointer type"
+     },
+     {
+      "addr": "0x75edf0",
+      "name": "Voxel::BlendShadowColor",
+      "msg": "subscript requires array or pointer type"
+     },
+     {
+      "addr": "0x760190",
+      "name": "Voxel::BlendColor",
+      "msg": "subscript requires array or pointer type"
+     }
+    ]
+   }
+  },
+  "C2227": {
+   "n": 12,
+   "cats": {
+    "field_0x member": 2,
+    "named member (member struct type missing)": 8,
+    "pad member (type view missing)": 2
+   },
+   "samples": {
+    "C2227|field_0x member": [
+     {
+      "addr": "0x624be0",
+      "name": "Dialog::GrowBuffer",
+      "msg": "left of '->AnimClass_field_0x0' must point to class/struct/union"
+     },
+     {
+      "addr": "0x62e380",
+      "name": "ParticleSystemClass::CreateParticle",
+      "msg": "left of '->ParticleSystemTypeClass_field_0x294' must point to class/struct/union"
+     }
+    ],
+    "C2227|named member (member struct type missing)": [
+     {
+      "addr": "0x44d7d0",
+      "name": "BuildingClass::GetTargetFacing",
+      "msg": "left of '->TurretAnimIsVoxel' must point to class/struct/union"
+     },
+     {
+      "addr": "0x54b8d0",
+      "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
+      "msg": "left of '->vfptr' must point to class/struct/union"
+     },
+     {
+      "addr": "0x517cc0",
+      "name": "InfantryClass::PerFrameUpdate",
+      "msg": "left of '->ChangedHouse' must point to class/struct/union"
+     },
+     {
+      "addr": "0x448160",
+      "name": "FootClass::ProcessPrimarySelect",
+      "msg": "left of '->bunkersCount' must point to class/struct/union"
+     },
+     {
+      "addr": "0x4afb80",
+      "name": "JumpjetLocomotionClass::StubReturnTrue",
+      "msg": "left of '->location' must point to class/struct/union"
+     },
+     {
+      "addr": "0x69f290",
+      "name": "JumpjetLocomotionClass::StubReturnTrue_5",
+      "msg": "left of '->location' must point to class/struct/union"
+     }
+    ],
+    "C2227|pad member (type view missing)": [
+     {
+      "addr": "0x6c6740",
+      "name": "StaticButtonClass::HitTest",
+      "msg": "left of '->__pad_0' must point to class/struct/union"
+     },
+     {
+      "addr": "0x75f140",
+      "name": "Voxel::loadSectionData",
+      "msg": "left of '->__pad_0' must point to class/struct/union"
+     }
+    ]
+   }
+  },
+  "C2146": {
+   "n": 10,
+   "cats": {
+    "syntax (residual IDA tokens)": 10
+   },
+   "samples": {
+    "C2146|syntax (residual IDA tokens)": [
+     {
+      "addr": "0x4a4780",
+      "name": "Surface::CreateSurfacePalette",
+      "msg": "syntax error : missing '"
+     },
+     {
+      "addr": "0x6e0110",
+      "name": "ScenarioClass::Create",
+      "msg": "syntax error : missing ')' before identifier 'v8'"
+     },
+     {
+      "addr": "0x7b2ff0",
+      "name": "UDPInterfaceClass_Destru::Flush",
+      "msg": "syntax error : missing ',' before identifier 'p1'"
+     },
+     {
+      "addr": "0x4a60e0",
+      "name": "TextRenderer::Printf",
+      "msg": "syntax error : missing ',' before identifier 'p1'"
+     },
+     {
+      "addr": "0x638ce0",
+      "name": "ScriptAction::ClassifyAction",
+      "msg": "syntax error : missing ',' before identifier 'p1'"
+     },
+     {
+      "addr": "0x664440",
+      "name": "EventClass::validateEventType",
+      "msg": "syntax error : missing '"
+     }
+    ]
+   }
+  },
+  "C2036": {
+   "n": 9,
+   "cats": {
+    "other": 9
+   },
+   "samples": {
+    "C2036|other": [
+     {
+      "addr": "0x722390",
+      "name": "BuildingClass::FreeUpgradeQueue",
+      "msg": "'void *' : unknown size"
+     },
+     {
+      "addr": "0x722e50",
+      "name": "BuildingClass::FreeUpgradeQueue2",
+      "msg": "'void *' : unknown size"
+     },
+     {
+      "addr": "0x655740",
+      "name": "BuildingClass::RemoveGapCellCoverage",
+      "msg": "'void *' : unknown size"
+     },
+     {
+      "addr": "0x6e1530",
+      "name": "ScenarioClass::PrepareTextDisplay",
+      "msg": "'void *' : unknown size"
+     },
+     {
+      "addr": "0x69b7e0",
+      "name": "SessionClass::AssignColor",
+      "msg": "'void *' : unknown size"
+     },
+     {
+      "addr": "0x6e15f0",
+      "name": "ObjectClass::ReadINIEntry",
+      "msg": "'void *' : unknown size"
+     }
+    ]
+   }
+  },
+  "C2061": {
+   "n": 8,
+   "cats": {
+    "syntax (residual IDA tokens)": 8
+   },
+   "samples": {
+    "C2061|syntax (residual IDA tokens)": [
+     {
+      "addr": "0x7b3920",
+      "name": "UDPInterfaceClass::Reset",
+      "msg": "syntax error : identifier 'v5'"
+     },
+     {
+      "addr": "0x7474b0",
+      "name": "UnitTypeClass::CreateUnit",
+      "msg": "syntax error : identifier 'LPVOID'"
+     },
+     {
+      "addr": "0x4324b0",
+      "name": "BufferIOFileClass::SeekInternal",
+      "msg": "syntax error : identifier 'LONG'"
+     },
+     {
+      "addr": "0x53ee70",
+      "name": "GUID::Compare",
+      "msg": "syntax error : identifier 'v10'"
+     },
+     {
+      "addr": "0x487f40",
+      "name": "Rect::Union",
+      "msg": "syntax error : identifier 'LPRECT'"
+     },
+     {
+      "addr": "0x42dca0",
+      "name": "Pathfinding::SiftDown",
+      "msg": "syntax error : identifier 'v6'"
+     }
+    ]
+   }
+  },
+  "C2296": {
+   "n": 6,
+   "cats": {
+    "other": 6
+   },
+   "samples": {
+    "C2296|other": [
+     {
+      "addr": "0x6e0ef0",
+      "name": "HouseClass::UpdateTechBuildings",
+      "msg": "'&' : illegal, left operand has type 'class HouseClass *'"
+     },
+     {
+      "addr": "0x6b6080",
+      "name": "UnitClass::CreateUnloadPlacementCraters",
+      "msg": "'&' : illegal, left operand has type 'unsigned short *'"
+     },
+     {
+      "addr": "0x420e90",
+      "name": "AirstrikeClass::UpdateAll",
+      "msg": "'&' : illegal, left operand has type 'unsigned int *'"
+     },
+     {
+      "addr": "0x452360",
+      "name": "BuildingClass::PowerOff",
+      "msg": "'&' : illegal, left operand has type 'class BuildingTypeClass *'"
+     },
+     {
+      "addr": "0x578390",
+      "name": "MapClass::IsRectInBounds",
+      "msg": "'&' : illegal, left operand has type 'unsigned short *'"
+     },
+     {
+      "addr": "0x586360",
+      "name": "Cell::IsPassable",
+      "msg": "'&' : illegal, left operand has type 'unsigned int *'"
+     }
+    ]
+   }
+  },
+  "C2043": {
+   "n": 5,
+   "cats": {
+    "other": 5
+   },
+   "samples": {
+    "C2043|other": [
+     {
+      "addr": "0x720a80",
+      "name": "Movie::SelectNextBuildableType",
+      "msg": "illegal break"
+     },
+     {
+      "addr": "0x59c580",
+      "name": "RandomMap::GrowTiberium",
+      "msg": "illegal break"
+     },
+     {
+      "addr": "0x76b0a0",
+      "name": "File::LoadWDTDecompress",
+      "msg": "illegal break"
+     },
+     {
+      "addr": "0x6a8710",
+      "name": "TabCameoListClass::AddCameo_ReplaceItAll",
+      "msg": "illegal break"
+     },
+     {
+      "addr": "0x6b5f80",
+      "name": "Cell::IsWalkable",
+      "msg": "illegal break"
+     }
+    ]
+   }
+  },
+  "C2100": {
+   "n": 3,
+   "cats": {
+    "illegal indirection": 3
+   },
+   "samples": {
+    "C2100|illegal indirection": [
+     {
+      "addr": "0x4cbba0",
+      "name": "FootClass::FindPathWithRetry",
+      "msg": "illegal indirection"
+     },
+     {
+      "addr": "0x54da50",
+      "name": "JumpjetLocomotionClass::StubReturnZero_10",
+      "msg": "illegal indirection"
+     },
+     {
+      "addr": "0x55a9b0",
+      "name": "LocomotionClass::QueryInterface",
+      "msg": "illegal indirection"
+     }
+    ]
+   }
+  },
+  "C2446": {
+   "n": 3,
+   "cats": {
+    "other": 3
+   },
+   "samples": {
+    "C2446|other": [
+     {
+      "addr": "0x4a0a50",
+      "name": "EnumConnectionPointsClass::ddtor",
+      "msg": "'>' : no conversion from 'const int' to 'int *'"
+     },
+     {
+      "addr": "0x4a00b0",
+      "name": "EnumConnectionsClass::ddtor",
+      "msg": "'>' : no conversion from 'const int' to 'int *'"
+     },
+     {
+      "addr": "0x552b10",
+      "name": "Scenario::ComputeDisplayPosition",
+      "msg": "'!=' : no conversion from 'class LoadingScreen *' to 'unsigned int'"
+     }
+    ]
+   }
+  },
+  "C2106": {
+   "n": 3,
+   "cats": {
+    "other": 3
+   },
+   "samples": {
+    "C2106|other": [
+     {
+      "addr": "0x4788e0",
+      "name": "ParticleTypeClass::EnsureCapacity",
+      "msg": "'=' : left operand must be l-value"
+     },
+     {
+      "addr": "0x557d20",
+      "name": "ListClass::Destru_vt50",
+      "msg": "'|=' : left operand must be l-value"
+     },
+     {
+      "addr": "0x6a0310",
+      "name": "WalkLocomotionClass::SetWaypointTarget",
+      "msg": "'=' : left operand must be l-value"
+     }
+    ]
+   }
+  },
+  "C2027": {
+   "n": 3,
+   "cats": {
+    "other": 3
+   },
+   "samples": {
+    "C2027|other": [
+     {
+      "addr": "0x70b1d0",
+      "name": "TechnoClass::RevealAreaConditional",
+      "msg": "use of undefined type 'HouseClass'"
+     },
+     {
+      "addr": "0x707d20",
+      "name": "TechnoClass::GetCrew",
+      "msg": "use of undefined type 'HouseClass'"
+     },
+     {
+      "addr": "0x50e1c0",
+      "name": "TechnoClass::Process",
+      "msg": "use of undefined type 'HouseClass'"
+     }
+    ]
+   }
+  },
+  "C2046": {
+   "n": 3,
+   "cats": {
+    "other": 3
+   },
+   "samples": {
+    "C2046|other": [
+     {
+      "addr": "0x4e4820",
+      "name": "Lobby::FillPlayerFactions",
+      "msg": "illegal case"
+     },
+     {
+      "addr": "0x4e5310",
+      "name": "Lobby::InvalidateFactionCombos",
+      "msg": "illegal case"
+     },
+     {
+      "addr": "0x4e5d60",
+      "name": "Lobby::InvalidatePlayerSlots",
+      "msg": "illegal case"
+     }
+    ]
+   }
+  },
+  "C2362": {
+   "n": 3,
+   "cats": {
+    "other": 3
+   },
+   "samples": {
+    "C2362|other": [
+     {
+      "addr": "0x432ab0",
+      "name": "BinkMovieHandle::RenderFrameClipped",
+      "msg": "initialization of 'v12' is skipped by 'goto LABEL_18'"
+     },
+     {
+      "addr": "0x4c9220",
+      "name": "FacingClass::Update",
+      "msg": "initialization of 'v5' is skipped by 'goto LABEL_15'"
+     },
+     {
+      "addr": "0x526810",
+      "name": "INIClass::BinarySearchSection",
+      "msg": "initialization of 'v7' is skipped by 'goto LABEL_9'"
+     }
+    ]
+   }
+  },
+  "C2198": {
+   "n": 2,
+   "cats": {
+    "other": 2
+   },
+   "samples": {
+    "C2198|other": [
+     {
+      "addr": "0x7bcfb0",
+      "name": "TacticalMap::FillScanlinesOpaque",
+      "msg": "'int (__stdcall *)(class TacticalMap *,int,int,int)' : too few actual parameters"
+     },
+     {
+      "addr": "0x411330",
+      "name": "TacticalClass::FillScanlinesTransparent",
+      "msg": "'int (__stdcall *)(class TacticalClass *,int,int,int)' : too few actual parameters"
+     }
+    ]
+   }
+  },
+  "C2181": {
+   "n": 1,
+   "cats": {
+    "other": 1
+   },
+   "samples": {
+    "C2181|other": [
+     {
+      "addr": "0x4566b0",
+      "name": "BuildingClass::GetPowerFrame",
+      "msg": "illegal else without matching if"
+     }
+    ]
+   }
+  },
+  "C2019": {
+   "n": 1,
+   "cats": {
+    "other": 1
+   },
+   "samples": {
+    "C2019|other": [
+     {
+      "addr": "0x697e70",
+      "name": "SessionClass::IsValidHouse",
+      "msg": "expected preprocessor directive, found '3'"
+     }
+    ]
+   }
+  },
+  "C2660": {
+   "n": 1,
+   "cats": {
+    "callee arity": 1
+   },
+   "samples": {
+    "C2660|callee arity": [
+     {
+      "addr": "0x468430",
+      "name": "BulletClass::LoseTarget",
+      "msg": "'GetCoords' : function does not take 2 parameters"
+     }
+    ]
+   }
+  },
+  "C2653": {
+   "n": 1,
+   "cats": {
+    "other": 1
+   },
+   "samples": {
+    "C2653|other": [
+     {
+      "addr": "0x4024a0",
+      "name": "AudioSample::ResetState",
+      "msg": "'AudioController' : is not a class or namespace name"
+     }
+    ]
+   }
+  },
+  "C2086": {
+   "n": 1,
+   "cats": {
+    "other": 1
+   },
+   "samples": {
+    "C2086|other": [
+     {
+      "addr": "0x49e400",
+      "name": "CampaignClass::FindMission",
+      "msg": "'scenario_dword' : redefinition"
+     }
+    ]
+   }
+  },
+  "C2371": {
+   "n": 1,
+   "cats": {
+    "other": 1
+   },
+   "samples": {
+    "C2371|other": [
+     {
+      "addr": "0x4a2cd0",
+      "name": "CStreamClass::CopyStreamToBuffer",
+      "msg": "'size_t' : redefinition"
+     }
+    ]
+   }
+  }
+ }
+}

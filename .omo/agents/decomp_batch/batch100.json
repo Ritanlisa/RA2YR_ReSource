@@ -1,0 +1,707 @@
+[
+ {
+  "addr": "0x5B2990",
+  "name": "Math::Abs16Cmp",
+  "cls": "Math",
+  "size": 42,
+  "family": "pilot",
+  "pilot": true
+ },
+ {
+  "addr": "0x5F6560",
+  "name": "Math::DistSq2D",
+  "cls": "Math",
+  "size": 62,
+  "family": "pilot",
+  "pilot": true
+ },
+ {
+  "addr": "0x401940",
+  "name": "ObjectClass::GetMember06",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "pilot",
+  "pilot": true
+ },
+ {
+  "addr": "0x486380",
+  "name": "Cell::IsEmpty",
+  "cls": "Cell",
+  "size": 20,
+  "family": "pilot",
+  "pilot": true
+ },
+ {
+  "addr": "0x4870D0",
+  "name": "Cell::IsPassableOffset",
+  "cls": "Cell",
+  "size": 17,
+  "family": "pilot",
+  "pilot": true
+ },
+ {
+  "addr": "0x406540",
+  "name": "AbstractTypeClass::sub_406540",
+  "cls": "AbstractTypeClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4065c0",
+  "name": "AbstractTypeClass::sub_4065C0",
+  "cls": "AbstractTypeClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4065d0",
+  "name": "AbstractTypeClass::sub_4065D0",
+  "cls": "AbstractTypeClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4065e0",
+  "name": "AbstractTypeClass::sub_4065E0",
+  "cls": "AbstractTypeClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x406640",
+  "name": "AbstractTypeClass::sub_406640",
+  "cls": "AbstractTypeClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x410490",
+  "name": "AbstractClass::computeDistanceSquared",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x411540",
+  "name": "Surface::GetWidth",
+  "cls": "Surface",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x411550",
+  "name": "Surface::GetHeight",
+  "cls": "Surface",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x411630",
+  "name": "BSurface::GetBytesPerPixel",
+  "cls": "BSurface",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4389f0",
+  "name": "BombClass::IsDeathBomb",
+  "cls": "BombClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4722d0",
+  "name": "TechnoClass::processPowerDrain",
+  "cls": "TechnoClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4886a0",
+  "name": "ObjectClass::GetStateFlag",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x48ba80",
+  "name": "CellClass::GetBridgeIndex",
+  "cls": "CellClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x49fb60",
+  "name": "VectorClass::GetCount",
+  "cls": "VectorClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4a3c00",
+  "name": "CreditsScreen::Init",
+  "cls": "CreditsScreen",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4ca120",
+  "name": "ObjectClass::GetMember09",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4ca160",
+  "name": "AbstractClass::GetType",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x50e370",
+  "name": "AbstractClass::checkPassability",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x556620",
+  "name": "ObjectClass::GetWidth",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x556630",
+  "name": "ObjectClass::GetHeight",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5c02e0",
+  "name": "AbstractClass::validatePathNode",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5c0f30",
+  "name": "ScenarioClass::initTeams",
+  "cls": "ScenarioClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5f43e0",
+  "name": "AbstractClass::processStateUpdate",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x6241c0",
+  "name": "ObjectClass::Release",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x6241d0",
+  "name": "ObjectClass::GetMember01",
+  "cls": "ObjectClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x636dc0",
+  "name": "FactoryClass::GetState",
+  "cls": "FactoryClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65b4b0",
+  "name": "RadSiteClass::GetSpread",
+  "cls": "RadSiteClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65c330",
+  "name": "AbstractClass::processTeamOrder",
+  "cls": "AbstractClass",
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x40cc00",
+  "name": "VectorClass_ptr_IsometricTileClass::GetItem",
+  "cls": "VectorClass_ptr_IsometricTileClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x41b910",
+  "name": "AircraftClass::MissionStubReturnZero",
+  "cls": "AircraftClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x477740",
+  "name": "VtableStub::Method_477740",
+  "cls": "VtableStub",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4e1960",
+  "name": "VectorClass_ptr_ConvertClass::MarkDirty",
+  "cls": "VectorClass_ptr_ConvertClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5d87e0",
+  "name": "ScenarioClass::distributeStartingUnits",
+  "cls": "ScenarioClass",
+  "size": 38,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5fbf70",
+  "name": "Map_Helper_5FBF70",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x406310",
+  "name": "sub_406310",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x408ec0",
+  "name": "sub_408EC0",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x408ed0",
+  "name": "sub_408ED0",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x4090f0",
+  "name": "sub_4090F0",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x409330",
+  "name": "sub_409330",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x526950",
+  "name": "sub_526950",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x633a90",
+  "name": "sub_633A90",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x633aa0",
+  "name": "sub_633AA0",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x633b70",
+  "name": "sub_633B70",
+  "cls": null,
+  "size": 4,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55ab70",
+  "name": "JumpjetLocomotionClass::MissionStub2",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55ab80",
+  "name": "JumpjetLocomotionClass::MissionStub3",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55aba0",
+  "name": "JumpjetLocomotionClass::StubReturnFalse",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55abc0",
+  "name": "JumpjetLocomotionClass::CheckState2",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55abe0",
+  "name": "JumpjetLocomotionClass::MissionStub4",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55abf0",
+  "name": "JumpjetLocomotionClass::MissionStub5",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55ac60",
+  "name": "JumpjetLocomotionClass::StubReturnTrue_3",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55acd0",
+  "name": "JumpjetLocomotionClass::StubReturnZero_11",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55acf0",
+  "name": "JumpjetLocomotionClass::MissionStub10",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x55ad00",
+  "name": "JumpjetLocomotionClass::MissionStub11",
+  "cls": "JumpjetLocomotionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5865e0",
+  "name": "Game::Stub3",
+  "cls": "Game",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5c0e50",
+  "name": "ScenarioClass::StubReturnFalse3",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5c0ed0",
+  "name": "ScenarioClass::StubReturnFalse5",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5d6310",
+  "name": "ScenarioClass::MissionStubReturnZero2",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5d6440",
+  "name": "ScenarioClass::MissionStubReturnZero3",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5d67a0",
+  "name": "ScenarioClass::MissionStubReturnZero4",
+  "cls": "ScenarioClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5f3440",
+  "name": "EventClass::GetState",
+  "cls": "EventClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5f3530",
+  "name": "NullModemClass::Send",
+  "cls": "NullModemClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5f7610",
+  "name": "AbstractTypeClass::GetType",
+  "cls": "AbstractTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x5f9710",
+  "name": "ObjectTypeClass::SetRTTI71",
+  "cls": "ObjectTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x642ad0",
+  "name": "Scenario::SetByte96",
+  "cls": "Scenario",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x644940",
+  "name": "ParticleSystemTypeClass::Stub",
+  "cls": "ParticleSystemTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x644950",
+  "name": "ParticleSystemTypeClass::StubReturnFalse",
+  "cls": "ParticleSystemTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x645930",
+  "name": "ParticleTypeClass::Stub",
+  "cls": "ParticleTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x645940",
+  "name": "ParticleTypeClass::StubReturnFalse",
+  "cls": "ParticleTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65c320",
+  "name": "AbstractClass::updateTeamState",
+  "cls": "AbstractClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65c540",
+  "name": "AbstractClass::resetTeamState",
+  "cls": "AbstractClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65c600",
+  "name": "FileClass::Stub",
+  "cls": "FileClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x65d690",
+  "name": "VtableStub::RetZero_eax_35",
+  "cls": "VtableStub",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7099d0",
+  "name": "IPersistStream::IsDirty",
+  "cls": "IPersistStream",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x724aa0",
+  "name": "ToolTipManager::addRef",
+  "cls": "ToolTipManager",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x724bd0",
+  "name": "ToolTipManager::stubReturnFalse",
+  "cls": "ToolTipManager",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x726900",
+  "name": "TActionClass::executeDetonateAction",
+  "cls": "TActionClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x74ab40",
+  "name": "VoxelAnimClass::StubReturnFalse",
+  "cls": "VoxelAnimClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x74ba10",
+  "name": "VoxelAnimTypeClass::Stub",
+  "cls": "VoxelAnimTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x74ba20",
+  "name": "VoxelAnimTypeClass::StubReturnFalse",
+  "cls": "VoxelAnimTypeClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b40",
+  "name": "WebBrowser::StubReturnFalse",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b50",
+  "name": "WebBrowser::SetSize",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b60",
+  "name": "WebBrowser::CopyTo",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b70",
+  "name": "WebBrowser::Commit",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b80",
+  "name": "WebBrowser::Revert",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773b90",
+  "name": "WebBrowser::LockRegion",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x773bb0",
+  "name": "WebBrowser::Stat",
+  "cls": "WebBrowser",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ab340",
+  "name": "CComObject_CChatEventSink___ATL::StubReturnFalse",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ac4a0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_38",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ac4b0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_39",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ac4c0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_45",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ac4d0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_46",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ac4e0",
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_47",
+  "cls": "CComObject_CChatEventSink___ATL",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7ad610",
+  "name": "WonlineStringDialogControl_28::StubReturnFalse",
+  "cls": "WonlineStringDialogControl_28",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7b1750",
+  "name": "IPXInterfaceClass::Send",
+  "cls": "IPXInterfaceClass",
+  "size": 5,
+  "family": "fresh"
+ },
+ {
+  "addr": "0x7b9d80",
+  "name": "WWMouseClass::checkVisible",
+  "cls": "WWMouseClass",
+  "size": 5,
+  "family": "fresh"
+ }
+]
