@@ -5,10 +5,6 @@
 
 int __stdcall ConnectionPointClass::Unadvise(int p0, void * p1, int * p2)
 {
-        int __stdcall ConnectionPointClass::Unadvise(
-            ConnectionPointClass this->vtable1,
-            int (__stdcall ***p0)(unsigned int, int, int *),
-            int *p1);
         if ( p0 == 0 || p1 == 0 )
         {
             return (int)(-2147467261);

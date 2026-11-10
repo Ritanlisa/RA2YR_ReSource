@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class MapClass
 {
@@ -20,8 +22,8 @@ public:
 
     // ---- pilot methods (registry signatures)
     int ToggleZoom(int p0);  // 0x4AC960
-    char isCellAccessible(int p0);  // 0x430F30
     int UnselectAll_ClearLimboLaunchers();  // 0x48DC90
+    char isCellAccessible(int p0);  // 0x430F30
 };
 
 // ---- globals used by this unit (registry names)

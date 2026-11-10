@@ -29,8 +29,8 @@ short MouseClass::SetBounds(const void * p0)
             if ( (byte_8A0618 & 1) == 0 )
             {
                 byte_8A0618 |= 1u;
+                atexit(nullsub_10);
             }
-            atexit(nullsub_10);
             memcpy(word_8A041C, v5, 0x1E0u);
             this->u32_117C = word_8A041C;
             v7 = *CoordList__GetBounds(&p0, word_8A041C);

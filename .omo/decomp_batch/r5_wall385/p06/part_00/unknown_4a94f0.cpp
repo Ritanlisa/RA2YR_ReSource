@@ -4,12 +4,18 @@
 
 unsigned int * __stdcall unknown::GetBounds(int * p0, short * p1)
 {
-        short * v2 = p1;
-        int v3 = 512;
-        int v4 = -512;
-        int v5 = 512;
-        int v6 = -512;
-        int v12 = 0;
+        short * v2;
+        v2 = p1;
+        int v3;
+        v3 = 512;
+        int v4;
+        v4 = -512;
+        int v5;
+        v5 = 512;
+        int v6;
+        v6 = -512;
+        int v12;
+        v12 = 0;
         if ( p1 == 0 )
         {
             goto LABEL_17;
@@ -42,13 +48,15 @@ unsigned int * __stdcall unknown::GetBounds(int * p0, short * p1)
             }
             v2 += 2;
         }
-        int v9 = v4 - v3;
+        int v9;
+        v9 = v4 - v3;
         v12 = (v12 & ~0xFF) | ((1) & 0xFF);
         if ( v9 + 1 >= 1 )
         {
             v12 = (v12 & ~0xFF) | ((v9 + 1) & 0xFF);
         }
-        int v10 = v6 - v5;
+        int v10;
+        v10 = v6 - v5;
         if ( v10 + 1 < 1 )
         {
             v12 = (v12 & ~0xFF) | ((1) & 0xFF);

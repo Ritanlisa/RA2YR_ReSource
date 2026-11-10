@@ -1,0 +1,27 @@
+{
+ "symbol": "?Printf@unknown@@QAEPAIPAIIHHHHHHG@Z",
+ "sym_key": "unknown::Printf",
+ "size": 205,
+ "link_base": 0,
+ "bytes_hex": "81ec04040000568bb4240c04000085f674688b4424048d8c241004000050518d5424105652e8000000008b8424340400008b8c24300400008b94242c0400006a01508b842430040000518b8c2430040000528b942430040000505152e8000000008b0883c42c890e8b50048956048bc65e81c404040000c224008b8424240400008b8c24200400008b94241c0400006a01508b842420040000518b8c2420040000528b942420040000505152e8000000008b0883c41c890e8b500489150400000033c05e81c404040000c22400",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "?vswprintf@@YAHZZ",
+   "sym_key": "vswprintf"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?RenderTextLabel@@YAHZZ",
+   "sym_key": "RenderTextLabel"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?RenderTextLabel@@YAHZZ",
+   "sym_key": "RenderTextLabel"
+  }
+ ]
+}

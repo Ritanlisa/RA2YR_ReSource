@@ -29,8 +29,8 @@ short MIXClass::CopyHeader(const void * p0)
             if ( (byte_8A0619 & 1) == 0 )
             {
                 byte_8A0619 |= 1u;
+                atexit(nullsub_11);
             }
-            atexit(nullsub_11);
             memcpy(word_8A0298, v5, sizeof(word_8A0298));
             this->m118C = (int)word_8A0298;
             v7 = *CoordList__GetBounds(&p0, word_8A0298);

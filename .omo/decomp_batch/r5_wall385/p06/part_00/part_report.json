@@ -2,9 +2,13 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "COMPILE_FAIL": 17,
+   "MISMATCH": 3
   },
-  "pathologies": {},
+  "pathologies": {
+   "frame_sched": 1,
+   "codegen_shape": 2
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
  },
@@ -13,7 +17,7 @@
    "addr": "0x4a00b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\EnumConnectionsClass.cpp(13) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\EnumConnectionsClass.cpp(14) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
    "first_diff": null,
    "pathology": null,
    "name": "EnumConnectionsClass::ddtor",
@@ -28,7 +32,7 @@
    "addr": "0x4a0630",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\ConnectionPointClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\ConnectionPointClass.cpp(14) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\ConnectionPointCl",
    "first_diff": null,
    "pathology": null,
    "name": "ConnectionPointClass::Unadvise",
@@ -36,14 +40,14 @@
    "unit": "ConnectionPointClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "7/7",
+   "sites": "6/6",
    "rule_violations": 14
   },
   {
    "addr": "0x4a0a50",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\EnumConnectionPointsClass.cpp(13) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\EnumConnectionPointsClass.cpp(14) : error C2446: '>' : no conversion from 'const int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
    "first_diff": null,
    "pathology": null,
    "name": "EnumConnectionPointsClass::ddtor",
@@ -67,7 +71,7 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "15/24",
-   "rule_violations": 26
+   "rule_violations": 28
   },
   {
    "addr": "0x4a2cd0",
@@ -81,14 +85,14 @@
    "unit": "CStreamClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/17",
+   "sites": "15/15",
    "rule_violations": 0
   },
   {
    "addr": "0x4a4780",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\Surface.hpp(19) : error C2146: syntax error : missing ';' before identifier 'CreateSurfacePalette'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\Surface.hpp(21) : error C2146: syntax error : missing ';' before identifier 'CreateSurfacePalette'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
    "first_diff": null,
    "pathology": null,
    "name": "Surface::CreateSurfacePalette",
@@ -102,23 +106,28 @@
   {
    "addr": "0x4a60e0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\unknown.hpp(21) : error C2146: syntax error : missing ',' before identifier 'p1'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 212B ours 205B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 8]",
+    "ours": "+0 sub esp, 0x404"
+   },
+   "pathology": "frame_sched",
    "name": "TextRenderer::Printf",
    "emitted": "unknown::Printf",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "2/5",
-   "rule_violations": 0
+   "sites": "1/3",
+   "rule_violations": 0,
+   "orig_size": 212,
+   "ours_size": 205
   },
   {
    "addr": "0x4a61c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\unknown.hpp(21) : error C2146: syntax error : missing ',' before identifier 'p1'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\unknown_4a61c0.hpp(37) : error C2059: syntax error : '...'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\unknow",
    "first_diff": null,
    "pathology": null,
    "name": "TextRenderer::DrawText",
@@ -163,7 +172,7 @@
    "addr": "0x4a8d50",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\MIXClass.cpp(20) : error C2228: left of '.bombVisible' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\MIXClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\par",
    "first_diff": null,
    "pathology": null,
    "name": "MIXClass::CopyHeader",
@@ -171,23 +180,28 @@
    "unit": "MIXClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/20",
+   "sites": "4/21",
    "rule_violations": 18
   },
   {
    "addr": "0x4a94f0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\include\\unknown.hpp(21) : error C2146: syntax error : missing ',' before identifier 'p1'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 169B ours 152B",
+   "first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 mov edx, dword ptr [esp + 0xc]"
+   },
+   "pathology": "codegen_shape",
    "name": "CoordList::GetBounds",
    "emitted": "unknown::GetBounds",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "0/4",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 169,
+   "ours_size": 152
   },
   {
    "addr": "0x4a95a0",
@@ -268,7 +282,7 @@
    "addr": "0x4b0c40",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\DriveLocomotionClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\DriveLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\Dr",
    "first_diff": null,
    "pathology": null,
    "name": "JumpjetLocomotionClass::SetWaypointTarget",
@@ -276,14 +290,14 @@
    "unit": "DriveLocomotionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "11/18",
+   "sites": "9/16",
    "rule_violations": 1
   },
   {
    "addr": "0x4b4b00",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\DriveLocomotionClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\DriveLocomotionClass.cpp(35) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\Dr",
    "first_diff": null,
    "pathology": null,
    "name": "JumpjetLocomotionClass::StubReturnZero_2",
@@ -297,17 +311,22 @@
   {
    "addr": "0x4b5630",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p06\\part_00\\BlitterList.cpp(8) : error C2664: 'LinkedList__MoveNode' : cannot convert parameter 1 from 'void *' to 'int'",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 171B ours 175B",
+   "first_diff": {
+    "orig": "+9 call 0x556600",
+    "ours": "+9 push esi"
+   },
+   "pathology": "codegen_shape",
    "name": "BlitterList::CopyEntry",
    "emitted": "BlitterList::CopyEntry",
    "unit": "BlitterList",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "1/26",
-   "rule_violations": 25
+   "rule_violations": 25,
+   "orig_size": 171,
+   "ours_size": 175
   }
  ]
 }

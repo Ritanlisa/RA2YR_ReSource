@@ -3,16 +3,19 @@
 // source: decompile-results/full_export  fn 0x4A2CD0 (CStreamClass::CopyStreamToBuffer)
 #include "CStreamClass.hpp"
 
-long __stdcall CStreamClass::CopyStreamToBuffer(IStream *Src p1, signed int Size p2, size_t * p3)
+long __stdcall CStreamClass::CopyStreamToBuffer(IStream *Src p1, signed int p2, size_t * p3)
 {
-        IStream * v4 = Src;
-        size_t v5 = Size;
-        signed int v6 = Size;
-        if ( Src == 0 )
+        IStream * v4;
+        v4 = p1;
+        size_t v5;
+        v5 = p2;
+        signed int v6;
+        v6 = p2;
+        if ( p1 == 0 )
         {
             return (long)(-2147467261);
         }
-        if ( Size < 0 )
+        if ( p2 < 0 )
         {
             return (long)(-2147024809);
         }
@@ -25,7 +28,7 @@ long __stdcall CStreamClass::CopyStreamToBuffer(IStream *Src p1, signed int Size
             return (long)(-2147467259);
         }
         this->__pad_011 = 1;
-        if ( Size == 0 )
+        if ( p2 == 0 )
         {
             return (long)(0);
         }
@@ -33,38 +36,39 @@ long __stdcall CStreamClass::CopyStreamToBuffer(IStream *Src p1, signed int Size
         {
             *p1 = 0;
         }
-        int CStreamClass_field_0x14 = this->m014;
+        int CStreamClass_field_0x14;
+        CStreamClass_field_0x14 = this->m014;
         int result;
         int v9;
         unsigned long v10;
         if ( CStreamClass_field_0x14 > 0 )
         {
-            if ( Size >= 0x10000 - CStreamClass_field_0x14 )
+            if ( p2 >= 0x10000 - CStreamClass_field_0x14 )
             {
                 v5 = 0x10000 - CStreamClass_field_0x14;
             }
-            memcpy((void *)(this->m018 + this->m014), Src, v5);
+            memcpy((void *)(this->m018 + this->m014), p1, v5);
             v9 = v5 + this->m014;
-            v4 = (IStream *)((char *)Src + v5);
-            v6 = Size - v5;
+            v4 = (IStream *)((char *)p1 + v5);
+            v6 = p2 - v5;
             this->m014 = v9;
             if ( v9 == 0x10000 )
             {
                 result = IStream__Read((IStream *)this->m018, (void *)0x10000, v10);
+                if ( result < 0 )
+                {
+                    return (long)(result);
+                }
+                this->m014 = 0;
             }
-            if ( result < 0 )
-            {
-                return (long)(result);
-            }
-            this->m014 = 0;
-            v5 = Size;
+            v5 = p2;
         }
         if ( v6 < 0x10000 )
         {
             LABEL_23:
-        if ( v6 > 0 )
-          memcpy((void *)this->m018, v4, v6);
-            v5 = Size;
+        if ( v6 > 0 );
+            memcpy((void *)this->m018, v4, v6);
+            v5 = p2;
             this->m014 = v6;
             if ( p1 )
             {
@@ -83,8 +87,8 @@ long __stdcall CStreamClass::CopyStreamToBuffer(IStream *Src p1, signed int Size
             v4 += 0x2000;
             if ( v6 < 0x10000 )
             {
-                v5 = Size;
+                v5 = p2;
+                goto LABEL_23;
             }
-            goto LABEL_23;
         }
 }

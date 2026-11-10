@@ -11,6 +11,8 @@ class Timer;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CountdownTimer
 {
@@ -32,7 +34,7 @@ extern char stru_87F5F0[];
 extern char stru_A8EB00[];
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int MapClass__MarkForRedraw(int a0, int a1);
+extern int MapClass__MarkForRedraw(void * a0, int a1);
 extern int abs32(...);
 
 #endif  // DECOMP_PILOT_COUNTDOWNTIMER_HPP
@@ -48,6 +50,8 @@ class Object;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Timer
 {
@@ -67,7 +71,7 @@ extern char stru_87F5F0[];
 extern char stru_A8EB00[];
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int MapClass__MarkForRedraw(int a0, int a1);
+extern int MapClass__MarkForRedraw(void * a0, int a1);
 extern int abs32(...);
 
 #endif  // DECOMP_PILOT_TIMER_HPP

@@ -1785,35 +1785,35 @@
   "status": "OK"
  },
  "0x4a00b0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "EnumConnectionsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0630": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ConnectionPointClass::Unadvise",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0a50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2600": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2cd0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1848,7 +1848,7 @@
   "status": "NG"
  },
  "0x4a4780": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1862,21 +1862,21 @@
   "status": "OK"
  },
  "0x4a60e0": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "TextRenderer::Printf",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4a61c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "DiskLaserClass::PointerGotInvalid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1897,35 +1897,35 @@
   "status": "OK"
  },
  "0x4a8bf0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a8d50": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a94f0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 push ecx",
   "name": "CoordList::GetBounds",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4a95a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MapClass::SetCellFlagsAlongPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a9650": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::MarkExitPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1953,14 +1953,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x4ac960": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4adba0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1974,14 +1974,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x4afb80": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4b0c40": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1995,7 +1995,7 @@
   "status": "OK"
  },
  "0x4b4b00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2051,11 +2051,11 @@
   "status": "OK"
  },
  "0x4b5630": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+9 call 0x556600",
   "name": "BlitterList::CopyEntry",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4b5b30": {
   "attempts": 1,

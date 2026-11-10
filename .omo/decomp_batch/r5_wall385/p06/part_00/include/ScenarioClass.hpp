@@ -9,6 +9,8 @@ class LayerClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ScenarioClass
 {
@@ -41,6 +43,8 @@ class ScenarioClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class LayerClass
 {
@@ -50,8 +54,8 @@ public:
     // DECOMP_SIZECHECK(LayerClass, LayerClass, 320);
 
     // ---- pilot methods (registry signatures)
-    int CellIteratorReset();  // 0x578350
     int CellIteratorNext();  // 0x578290
+    int CellIteratorReset();  // 0x578350
 };
 
 // ---- globals used by this unit (registry names)

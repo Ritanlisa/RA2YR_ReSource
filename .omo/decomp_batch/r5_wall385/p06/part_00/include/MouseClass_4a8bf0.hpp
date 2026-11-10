@@ -9,6 +9,8 @@ class MapClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class MouseClass
 {
@@ -46,6 +48,8 @@ extern int __cdecl nullsub_10(const void *, const void *);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class MapClass
 {
@@ -55,7 +59,7 @@ public:
     // DECOMP_SIZECHECK(MapClass, MapClass, 5828);
 
     // ---- pilot methods (registry signatures)
-    char SetCellFlagsAlongPath(unsigned short * p0, unsigned short * p1);  // 0x4A95A0
+    char SetCellFlagsAlongPath(void * p0, void * p1);  // 0x4A95A0
 };
 
 // ---- globals used by this unit (registry names)

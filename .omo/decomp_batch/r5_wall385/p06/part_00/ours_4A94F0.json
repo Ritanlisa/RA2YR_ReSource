@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetBounds@unknown@@QAGPAIPAHPAF@Z",
+ "sym_key": "unknown::GetBounds",
+ "size": 152,
+ "link_base": 0,
+ "bytes_hex": "8b54240c5355bb00020000b900feffff33c0578beb85d28bf97459568d7202668b46fe663dff7f750566390674230fbf160fbfc03bc87f028bc83bd87c028bd83bfa7f028bfa3bea7c028bea83c604ebce2bcbb801000000415e3bc87c0881e1ff0000008bc12bfd8bcf4183f9017d1224010c018b4c24145f5d5b89018bc1c20c0033c85f81e1ff0000005d33c88b44240c5b8908c20c00",
+ "relocs": []
+}

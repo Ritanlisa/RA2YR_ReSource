@@ -10,6 +10,8 @@ class size_t;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CStreamClass
 {
@@ -27,14 +29,11 @@ public:
     // DECOMP_SIZECHECK(CStreamClass, CStreamClass, 84);
 
     // ---- pilot methods (registry signatures)
-    long __stdcall CopyStreamToBuffer(IStream *Src p1, signed int Size p2, size_t * p3);  // 0x4A2CD0
+    long __stdcall CopyStreamToBuffer(IStream *Src p1, signed int p2, size_t * p3);  // 0x4A2CD0
 };
 
-// ---- globals used by this unit (registry names)
-extern size_t Size;
-
 // ---- global callee prototypes (R3 non-leaf)
-extern long __stdcall IStream__Read(int a0, int a1, int a2);
-extern int __cdecl Src(const void *, const void *);
+extern long __stdcall IStream__Read(int a0, void * a1, int a2);
+extern long __stdcall IStream__Read(void * a0, void * a1, int a2);
 
 #endif  // DECOMP_PILOT_CSTREAMCLASS_HPP

@@ -9,11 +9,13 @@ class AbstractClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ConnectionPointClass
 {
 public:
-    void * vtable1;  // 0x000
+    char __pad_000[4];  // 0x000
     int m004;  // 0x004
     char __pad_008[20];  // 0x008
     int m01C;  // 0x01C
@@ -35,6 +37,8 @@ extern void * g_ScenarioClass_Instance;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class AbstractClass
 {

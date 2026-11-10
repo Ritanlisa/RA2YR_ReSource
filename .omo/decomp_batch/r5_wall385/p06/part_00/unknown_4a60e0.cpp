@@ -2,25 +2,15 @@
 // source: decompile-results/full_export  fn 0x4A60E0 (TextRenderer::Printf)
 #include "unknown_4a60e0.hpp"
 
-unsigned int * unknown::Printf(unsigned int * p0, size_t BufferCount p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t Format p8)
+unsigned int * unknown::Printf(unsigned int * p0, size_t p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t p8)
 {
-        unsigned int *__cdecl sub_4A60E0(
-            unsigned int *p0,
-            size_t BufferCount,
-            int p1,
-            int p2,
-            int p3,
-            int p4,
-            int p5,
-            int p6,
-            wchar_t Format);
         unsigned int * v9;
         unsigned int * v11;
         va_list v12;
         wchar_t Buffer[512];
-        if ( BufferCount )
+        if ( p0 )
         {
-            vswprintf(Buffer, BufferCount, &Format, v12);
+            vswprintf(Buffer, p0, &p1, v12);
             v9 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);
             *p0 = *v9;
             p0[1] = v9[1];

@@ -19,26 +19,26 @@ char MapClass::SetCellFlagsAlongPath(unsigned short * p0, unsigned short * p1)
             while ( *v6 != 0x7FFF || v6[1] != 0x7FFF )
             {
                 v8 = v6;
-            }
-            v6 += 2;
-            v9 = *v8;
-            v8 = (v8 & ~0xFF) | ((v4[1] + v8[1]) & 0xFF);
-            p1 = (p1 & ~0xFF) | ((*v4 + v9) & 0xFF);
-            p1 = (p1 & ~0xFF) | (((unsigned short)v8) & 0xFF);
-            p0 = p1;
-            result = ((LayerClass *)(this))->CoordinatesLegal((short *)&p0);
-            if ( (unsigned char)result )
-            {
-                result = ((CellCoord *)(this))->To_CellObj((short *)&p0);
-            }
-            v10 = *(unsigned int *)(result + 300);
-            if ( v7 )
-            {
-                *(unsigned int *)(result + 300) = v10 | 2;
-            }
-            else
-            {
-                *(unsigned int *)(result + 300) = v10 & 0xFFFFFFFD;
+                v6 += 2;
+                v9 = *v8;
+                v8 = (v8 & ~0xFF) | ((v4[1] + v8[1]) & 0xFF);
+                p1 = (p1 & ~0xFF) | ((*v4 + v9) & 0xFF);
+                p1 = (p1 & ~0xFF) | (((unsigned short)v8) & 0xFF);
+                p0 = p1;
+                result = ((LayerClass *)(this))->CoordinatesLegal((short *)&p0);
+                if ( (unsigned char)result )
+                {
+                    result = ((CellCoord *)(this))->To_CellObj((short *)&p0);
+                    v10 = *(unsigned int *)(result + 300);
+                    if ( v7 )
+                    {
+                        *(unsigned int *)(result + 300) = v10 | 2;
+                    }
+                    else
+                    {
+                        *(unsigned int *)(result + 300) = v10 & 0xFFFFFFFD;
+                    }
+                }
             }
         }
         return (char)(result);
@@ -64,9 +64,6 @@ int MapClass::ToggleZoom(int p0)
                 }
             }
         }
-        else
-        {
-        }
         v4 = 0;
         void * MapClass_field_0x0;
         MapClass * v7;
@@ -79,23 +76,24 @@ int MapClass::ToggleZoom(int p0)
                 {
                     v4 = 0;
                 }
+                MapClass_field_0x0 = this->vtable1;
+                this->m11A4[13] = 0;
+                this->m11A4[14] = 0;
+                this->m11A4[15] = 0;
+                this->m11A4[12] = 0;
+                (*((void (__stdcall **)(MapClass *, unsigned int, unsigned int))MapClass_field_0x0 + 18))(this, 0, 0);
+                if ( v4 )
+                {
+                    this->m11A4[16] = 1;
+                    return (int)(((MapClass *)(v7))->UnselectAll_ClearLimboLaunchers());
+                }
+                else
+                {
+                    v6 = (int (__stdcall **)(MapClass *))this->vtable1;
+                    this->m11A4[16] = 0;
+                    return (int)(v6[20](this));
+                }
             }
-            MapClass_field_0x0 = this->vtable1;
-            this->m11A4[13] = 0;
-            this->m11A4[14] = 0;
-            this->m11A4[15] = 0;
-            this->m11A4[12] = 0;
-            (*((void (__stdcall **)(MapClass *, unsigned int, unsigned int))MapClass_field_0x0 + 18))(this, 0, 0);
-            if ( v4 )
-            {
-                this->m11A4[16] = 1;
-            }
-            return (int)(((MapClass *)(v7))->UnselectAll_ClearLimboLaunchers());
-            this->m11A4[16] = 0;
-            return (int)(v6[20](this));
-        }
-        else
-        {
         }
         return (int)(result);
 }

@@ -18,9 +18,6 @@ int MapClass::ToggleZoom(int p0)
                 }
             }
         }
-        else
-        {
-        }
         v4 = 0;
         void * MapClass_field_0x0;
         MapClass * v7;
@@ -33,23 +30,24 @@ int MapClass::ToggleZoom(int p0)
                 {
                     v4 = 0;
                 }
+                MapClass_field_0x0 = this->vtable1;
+                this->m11A4[13] = 0;
+                this->m11A4[14] = 0;
+                this->m11A4[15] = 0;
+                this->m11A4[12] = 0;
+                (*((void (__stdcall **)(MapClass *, unsigned int, unsigned int))MapClass_field_0x0 + 18))(this, 0, 0);
+                if ( v4 )
+                {
+                    this->m11A4[16] = 1;
+                    return (int)(((MapClass *)(v7))->UnselectAll_ClearLimboLaunchers());
+                }
+                else
+                {
+                    v6 = (int (__stdcall **)(MapClass *))this->vtable1;
+                    this->m11A4[16] = 0;
+                    return (int)(v6[20](this));
+                }
             }
-            MapClass_field_0x0 = this->vtable1;
-            this->m11A4[13] = 0;
-            this->m11A4[14] = 0;
-            this->m11A4[15] = 0;
-            this->m11A4[12] = 0;
-            (*((void (__stdcall **)(MapClass *, unsigned int, unsigned int))MapClass_field_0x0 + 18))(this, 0, 0);
-            if ( v4 )
-            {
-                this->m11A4[16] = 1;
-            }
-            return (int)(((MapClass *)(v7))->UnselectAll_ClearLimboLaunchers());
-            this->m11A4[16] = 0;
-            return (int)(v6[20](this));
-        }
-        else
-        {
         }
         return (int)(result);
 }

@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BlitterList
 {
@@ -48,6 +50,6 @@ public:
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int LinkedList__MoveNode(int a0, int a1);
+extern int LinkedList__MoveNode(void * a0, void * a1);
 
 #endif  // DECOMP_PILOT_BLITTERLIST_HPP

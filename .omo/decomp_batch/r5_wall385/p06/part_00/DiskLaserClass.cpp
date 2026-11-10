@@ -18,8 +18,8 @@ void DiskLaserClass::PointerGotInvalid(int p0)
                0) )
             {
                 v3 = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++;
+                *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v3) = this;
             }
-            *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v3) = this;
         }
         int v4;
         if ( p0 == this->m028 )
@@ -34,7 +34,7 @@ void DiskLaserClass::PointerGotInvalid(int p0)
                0) )
             {
                 v4 = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++;
+                *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v4) = this;
             }
-            *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v4) = this;
         }
 }

@@ -22,36 +22,36 @@ LPDIRECTDRAW Surface::CreateSurfacePalette()
             if ( g_DDraw_PrimarySurface )
             {
                 v4 = this;
-            }
-            v5 = (char *)&unk_89FC95;
-            do v6 = (unsigned char)v4->__pad_0[0];
-            v9 = v4->__pad_0[1];
-            v7 = &v4->__pad_0[2];
-            v5 += 4;
-            v8 = (unsigned char)*v7;
-            *(v5 - 5) = v6;
-            v4 = (Surface *)(v7 + 1);
-            *(v5 - 4) = v9;
-            *(v5 - 3) = v8;
-            while ( (int)v5 < 9044117 )
-            {
-                result = g_DDraw_Palette;
-            }
-            if ( g_DDraw_Palette )
-            {
-                if ( byte_8A0098 == 0 )
+                v5 = (char *)&unk_89FC95;
+                do
                 {
-                    (*(void (__stdcall **)(int, int))(*(unsigned int *)v3 + 124))(v3, g_DDraw_Palette);
-                }
-            }
-            result = g_DDraw_Palette;
-            byte_8A0098 = 1;
-            return (*(int (__stdcall **)(int, unsigned int, unsigned int, int, void *))(*(unsigned int *)result + 24))(
+                    v6 = (unsigned char)v4->__pad_0[0];
+                    v9 = v4->__pad_0[1];
+                    v7 = &v4->__pad_0[2];
+                    v5 += 4;
+                    v8 = (unsigned char)*v7;
+                    *(v5 - 5) = v6;
+                    v4 = (Surface *)(v7 + 1);
+                    *(v5 - 4) = v9;
+                    *(v5 - 3) = v8;
+                } while ( (int)v5 < 9044117 );
+                result = g_DDraw_Palette;
+                if ( g_DDraw_Palette )
+                {
+                    if ( byte_8A0098 == 0 )
+                    {
+                        (*(void (__stdcall **)(int, int))(*(unsigned int *)v3 + 124))(v3, g_DDraw_Palette);
+                        result = g_DDraw_Palette;
+                        byte_8A0098 = 1;
+                    }
+                    return (*(int (__stdcall **)(int, unsigned int, unsigned int, int, void *))(*(unsigned int *)result + 24))(
                      result,
                      0,
                      0,
                      256,
                      &g_DDraw_PaletteEntries);
+                }
+            }
         }
         return (LPDIRECTDRAW)(result);
 }

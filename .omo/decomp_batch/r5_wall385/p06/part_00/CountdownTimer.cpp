@@ -16,22 +16,23 @@ char CountdownTimer::UpdateDisplay(char p0)
             if ( g_ScenarioClass_Instance[43].vfptr2 != (void *)-1 )
             {
                 p_vtable2 = &g_ScenarioClass_Instance[43].vfptr2;
+                uniqueId += ((Timer *)(this))->GetTicks() - (unsigned int)*p_vtable2;
             }
-            uniqueId += ((Timer *)(this))->GetTicks() - (unsigned int)*p_vtable2;
             v5 = *((unsigned int *)this + 1);
             this->tail_0 = (CountdownTimer)(uniqueId / 60);
             if ( uniqueId / 60 != v5 || ((abstractFlags & 0xFF) = p0) != 0 )
             {
                 *((unsigned int *)this + 1) = uniqueId / 60;
-            }
-            LABEL_26:
+                LABEL_26:
           *((unsigned char *)this + 8) = 1;
-            abstractFlags = (abstractFlags & ~0xFF) | ((MapClass__MarkForRedraw((GScreenClass *)&((char *)stru_87F5F0)[0x58 + (416)], 0)) & 0xFF);
-            byte_884B90 = 1;
-            return (char)(abstractFlags);
+                abstractFlags = (abstractFlags & ~0xFF) | ((MapClass__MarkForRedraw((GScreenClass *)&((char *)stru_87F5F0)[0x58 + (416)], 0)) & 0xFF);
+                byte_884B90 = 1;
+                return (char)(abstractFlags);
+            }
             return (char)(abstractFlags);
         }
-        CountdownTimer v7 = (CountdownTimer)(*(int (__stdcall **)(char *))(((char *)HouseClass_Player)[0xC + (24)] + 24))(&((char *)HouseClass_Player)[0xC + (24)]);
+        CountdownTimer v7;
+        v7 = (CountdownTimer)(*(int (__stdcall **)(char *))(((char *)HouseClass_Player)[0xC + (24)] + 24))(&((char *)HouseClass_Player)[0xC + (24)]);
         this->tail_0 = v7;
         this->tail_0 = *(int *)&v7 <= 0 ? 0 : v7;
         if ( g_ScenarioClass_Instance[127].vfptr3 != (void *)-1 )
@@ -39,7 +40,8 @@ char CountdownTimer::UpdateDisplay(char p0)
             goto LABEL_12;
         }
         abstractFlags = g_ScenarioClass_Instance[127].abstractFlags;
-        void * vtable3 = g_ScenarioClass_Instance[127].vfptr3;
+        void * vtable3;
+        vtable3 = g_ScenarioClass_Instance[127].vfptr3;
         if ( vtable3 != (void *)-1 )
         {
             if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - (int)vtable3 >= abstractFlags )
@@ -57,7 +59,8 @@ char CountdownTimer::UpdateDisplay(char p0)
         int v9;
         LABEL_13:
       v9 = *((unsigned int *)this + 1);
-        CountdownTimer v10 = this->tail_0;
+        CountdownTimer v10;
+        v10 = this->tail_0;
         int v11;
         int v12;
         int v13;
@@ -66,40 +69,41 @@ char CountdownTimer::UpdateDisplay(char p0)
             if ( p0 )
             {
                 *((unsigned char *)this + 10) = 0;
-            }
-            this->m004 = v10;
-            if ( v11 )
-            {
-                *((unsigned int *)this + 3) = v11 - 1;
-            }
-            *((unsigned int *)this + 3) = *(unsigned int *)&v10 - v9 <= 0 ? 3 : 1;
-            v12 = (int)abs32(*(unsigned int *)&v10 - v9) >> 3;
-            if ( v12 >= 1 )
-            {
-                if ( v12 > 143 )
-                {
-                    v12 = 143;
-                }
+                this->m004 = v10;
             }
             else
             {
-                v12 = 1;
+                v11 = *((unsigned int *)this + 3);
+                if ( v11 )
+                {
+                    *((unsigned int *)this + 3) = v11 - 1;
+                }
+                *((unsigned int *)this + 3) = *(unsigned int *)&v10 - v9 <= 0 ? 3 : 1;
+                v12 = (int)abs32(*(unsigned int *)&v10 - v9) >> 3;
+                if ( v12 >= 1 )
+                {
+                    if ( v12 > 143 )
+                    {
+                        v12 = 143;
+                    }
+                }
+                else
+                {
+                    v12 = 1;
+                }
+                if ( *((unsigned int *)this + 1) > *(unsigned int *)&v10 )
+                {
+                    v12 = -v12;
+                }
+                v13 = v12 + *((unsigned int *)this + 1);
+                *((unsigned int *)this + 1) = v13;
+                if ( v13 - v12 != v13 )
+                {
+                    *((unsigned char *)this + 10) = 1;
+                    *((unsigned char *)this + 9) = v12 > 0;
+                }
             }
-            if ( *((unsigned int *)this + 1) > *(unsigned int *)&v10 )
-            {
-                v12 = -v12;
-            }
-            v13 = v12 + *((unsigned int *)this + 1);
-            *((unsigned int *)this + 1) = v13;
-            if ( v13 - v12 != v13 )
-            {
-                *((unsigned char *)this + 10) = 1;
-            }
-            *((unsigned char *)this + 9) = v12 > 0;
             goto LABEL_26;
-        }
-        else
-        {
         }
         return (char)(abstractFlags);
 }

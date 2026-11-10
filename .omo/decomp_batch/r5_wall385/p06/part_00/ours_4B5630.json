@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyEntry@BlitterList@@QAEHH@Z",
+ "sym_key": "BlitterList::CopyEntry",
+ "size": 175,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf15756e8000000008b470c83c40889460c8b4f10894e108b57148956148b47188946188a4f1c884e1c8a571d88561d8a471e88461e8b4f20894e208b57248956248b47288946288a4f2c884e2c8a572d88562d8b47308946308a4f34884e348b57388956388b473c89463c8a4f40884e408b57448956448b47488946488a4f4c884e4c8b57508956508a47548846548a4f55884e558b57588956588a475c88465c8bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?LinkedList__MoveNode@@YAHPAX0@Z",
+   "sym_key": "LinkedList__MoveNode"
+  }
+ ]
+}

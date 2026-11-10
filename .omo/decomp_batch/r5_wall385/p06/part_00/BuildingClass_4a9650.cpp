@@ -18,26 +18,26 @@ char BuildingClass::MarkExitPath(unsigned short * p0, unsigned short * p1)
             while ( *v6 != 0x7FFF || v6[1] != 0x7FFF )
             {
                 v8 = v6;
-            }
-            v6 += 2;
-            v9 = *v8;
-            v8 = (v8 & ~0xFF) | ((v4[1] + v8[1]) & 0xFF);
-            p1 = (p1 & ~0xFF) | ((*v4 + v9) & 0xFF);
-            p1 = (p1 & ~0xFF) | (((unsigned short)v8) & 0xFF);
-            p0 = p1;
-            result = ((LayerClass *)(this))->CoordinatesLegal((short *)&p0);
-            if ( (unsigned char)result )
-            {
-                result = ((CellCoord *)(this))->To_CellObj((short *)&p0);
-            }
-            v10 = *(unsigned int *)(result + 300);
-            if ( v7 )
-            {
-                *(unsigned int *)(result + 300) = v10 | 4;
-            }
-            else
-            {
-                *(unsigned int *)(result + 300) = v10 & 0xFFFFFFFB;
+                v6 += 2;
+                v9 = *v8;
+                v8 = (v8 & ~0xFF) | ((v4[1] + v8[1]) & 0xFF);
+                p1 = (p1 & ~0xFF) | ((*v4 + v9) & 0xFF);
+                p1 = (p1 & ~0xFF) | (((unsigned short)v8) & 0xFF);
+                p0 = p1;
+                result = ((LayerClass *)(this))->CoordinatesLegal((short *)&p0);
+                if ( (unsigned char)result )
+                {
+                    result = ((CellCoord *)(this))->To_CellObj((short *)&p0);
+                    v10 = *(unsigned int *)(result + 300);
+                    if ( v7 )
+                    {
+                        *(unsigned int *)(result + 300) = v10 | 4;
+                    }
+                    else
+                    {
+                        *(unsigned int *)(result + 300) = v10 & 0xFFFFFFFB;
+                    }
+                }
             }
         }
         return (char)(result);

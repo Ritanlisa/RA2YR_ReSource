@@ -5,7 +5,8 @@
 
 int __stdcall EnumConnectionsClass::ddtor(int * p0, unsigned int p1, int p2, int * p3)
 {
-        int v4 = p1;
+        int v4;
+        v4 = p1;
         if ( p1 == 0 )
         {
             return (int)(-2147467261);
@@ -23,7 +24,8 @@ int __stdcall EnumConnectionsClass::ddtor(int * p0, unsigned int p1, int p2, int
             LABEL_7:
         *p2 = 0;
         }
-        int v6 = 0;
+        int v6;
+        v6 = 0;
         unsigned int i;
         int v8;
         int v9;

@@ -3,25 +3,15 @@
 // source: decompile-results/full_export  fn 0x4A60E0 (TextRenderer::Printf)
 #include "unknown.hpp"
 
-unsigned int * unknown::Printf(unsigned int * p0, size_t BufferCount p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t Format p8)
+unsigned int * unknown::Printf(unsigned int * p0, size_t p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t p8)
 {
-        unsigned int *__cdecl sub_4A60E0(
-            unsigned int *p0,
-            size_t BufferCount,
-            int p1,
-            int p2,
-            int p3,
-            int p4,
-            int p5,
-            int p6,
-            wchar_t Format);
         unsigned int * v9;
         unsigned int * v11;
         va_list v12;
         wchar_t Buffer[512];
-        if ( BufferCount )
+        if ( p0 )
         {
-            vswprintf(Buffer, BufferCount, &Format, v12);
+            vswprintf(Buffer, p0, &p1, v12);
             v9 = (unsigned int *)RenderTextLabel(p1, p2, p3, p4, p5, p6, 1);
             *p0 = *v9;
             p0[1] = v9[1];
@@ -40,7 +30,7 @@ unsigned int * unknown::Printf(unsigned int * p0, size_t BufferCount p1, int p2,
 // source: decompile-results/full_export  fn 0x4A61C0 (TextRenderer::DrawText)
 #include "unknown.hpp"
 
-int * unknown::DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7, ... p8)
+int * unknown::DrawText(int * p0, size_t p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7)
 {
         va_list Format;
         va_start(Format, p5);
@@ -51,9 +41,9 @@ int * unknown::DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * 
         int v13[2];
         unsigned char v14[4];
         wchar_t Buffer[512];
-        if ( BufferCount )
+        if ( p0 )
         {
-            vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12);
+            vswprintf(Buffer, p0, (const wchar_t *const)Format, v12);
             v8 = ((Color *)(v14))->ConvertToRGB();
             ((v13[0]) & 0xFFFF) = *(unsigned short *)v8;
             ((v13[0] >> 16) & 0xFF) = *(unsigned char *)(v8 + 2);
@@ -99,12 +89,18 @@ int * unknown::DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * 
 
 unsigned int * __stdcall unknown::GetBounds(int * p0, short * p1)
 {
-        short * v2 = p1;
-        int v3 = 512;
-        int v4 = -512;
-        int v5 = 512;
-        int v6 = -512;
-        int v12 = 0;
+        short * v2;
+        v2 = p1;
+        int v3;
+        v3 = 512;
+        int v4;
+        v4 = -512;
+        int v5;
+        v5 = 512;
+        int v6;
+        v6 = -512;
+        int v12;
+        v12 = 0;
         if ( p1 == 0 )
         {
             goto LABEL_17;
@@ -137,13 +133,15 @@ unsigned int * __stdcall unknown::GetBounds(int * p0, short * p1)
             }
             v2 += 2;
         }
-        int v9 = v4 - v3;
+        int v9;
+        v9 = v4 - v3;
         v12 = (v12 & ~0xFF) | ((1) & 0xFF);
         if ( v9 + 1 >= 1 )
         {
             v12 = (v12 & ~0xFF) | ((v9 + 1) & 0xFF);
         }
-        int v10 = v6 - v5;
+        int v10;
+        v10 = v6 - v5;
         if ( v10 + 1 < 1 )
         {
             v12 = (v12 & ~0xFF) | ((1) & 0xFF);

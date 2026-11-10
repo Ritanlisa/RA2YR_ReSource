@@ -9,6 +9,8 @@ class Color;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class unknown
 {
@@ -18,8 +20,8 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    unsigned int * Printf(unsigned int * p0, size_t BufferCount p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t Format p8);  // 0x4A60E0
-    int * DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7, ... p8);  // 0x4A61C0
+    unsigned int * Printf(unsigned int * p0, size_t p1, int p2, int p3, int p4, int p5, int p6, int p7, wchar_t p8);  // 0x4A60E0
+    int * DrawText(int * p0, size_t p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7);  // 0x4A61C0
     unsigned int * __stdcall GetBounds(int * p0, short * p1);  // 0x4A94F0
 };
 
@@ -34,7 +36,6 @@ extern unsigned int g_BitShift_Green_0;
 extern unsigned int g_BitShift_Red;
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int sub_4A60E0(...);
 extern int vswprintf(...);
 extern int RenderTextLabel(...);
 extern int va_start(...);
@@ -48,6 +49,8 @@ extern int va_start(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Color
 {
@@ -71,7 +74,6 @@ extern unsigned int g_BitShift_Green_0;
 extern unsigned int g_BitShift_Red;
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int sub_4A60E0(...);
 extern int vswprintf(...);
 extern int RenderTextLabel(...);
 extern int va_start(...);

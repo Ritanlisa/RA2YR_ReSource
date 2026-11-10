@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4A61C0 (TextRenderer::DrawText)
 #include "unknown_4a61c0.hpp"
 
-int * unknown::DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7, ... p8)
+int * unknown::DrawText(int * p0, size_t p1, int p2, unsigned int * p3, int p4, int p5, int p6, int p7)
 {
         va_list Format;
         va_start(Format, p5);
@@ -13,9 +13,9 @@ int * unknown::DrawText(int * p0, size_t BufferCount p1, int p2, unsigned int * 
         int v13[2];
         unsigned char v14[4];
         wchar_t Buffer[512];
-        if ( BufferCount )
+        if ( p0 )
         {
-            vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12);
+            vswprintf(Buffer, p0, (const wchar_t *const)Format, v12);
             v8 = ((Color *)(v14))->ConvertToRGB();
             ((v13[0]) & 0xFFFF) = *(unsigned short *)v8;
             ((v13[0] >> 16) & 0xFF) = *(unsigned char *)(v8 + 2);

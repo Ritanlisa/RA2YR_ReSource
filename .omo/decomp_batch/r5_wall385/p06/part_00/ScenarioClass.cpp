@@ -23,16 +23,16 @@ int ScenarioClass::ProcessGame(int * p0)
         if ( (int)p0[9] > 0 )
         {
             v15 = p0[9];
-            do v5 = *v4;
-            v6 = v4[1];
-            v4 += 2;
-            v16 = (v16 & ~0xFF) | ((v6 % 1000) & 0xFF);
-            v16 = (v16 & ~0xFF) | ((v6 / 1000) & 0xFF);
-            ((ScenarioClass *)(g_ScenarioClass_Instance))->Set_Waypoint(v5, (int)v16);
-            --v15;
-            while ( v15 )
+            do
             {
-            }
+                v5 = *v4;
+                v6 = v4[1];
+                v4 += 2;
+                v16 = (v16 & ~0xFF) | ((v6 % 1000) & 0xFF);
+                v16 = (v16 & ~0xFF) | ((v6 / 1000) & 0xFF);
+                ((ScenarioClass *)(g_ScenarioClass_Instance))->Set_Waypoint(v5, (int)v16);
+                --v15;
+            } while ( v15 );
         }
         int * v7 = v4 + 1;
         ((LayerClass *)(this))->CellIteratorReset();
