@@ -1,0 +1,11 @@
+{
+ "addr": "0x4105F0",
+ "name": "INoticeSource::Dispatch",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4105F0",
+ "bytes_hex": "836c240404e906fdffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

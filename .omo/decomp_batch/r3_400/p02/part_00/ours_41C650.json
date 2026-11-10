@@ -1,0 +1,15 @@
+{
+ "symbol": "?processGuardState@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::processGuardState",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240483c0fc50e800000000c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?AddRef@AircraftClass@@QAEHH@Z",
+   "sym_key": "AircraftClass::AddRef"
+  }
+ ]
+}

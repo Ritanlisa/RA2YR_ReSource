@@ -139,6 +139,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4105e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IRTTITypeInfo::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4105f0": {
+  "attempts": 1,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "INoticeSource::Dispatch",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x410600": {
+  "attempts": 1,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "XSurface::vt_entry_40",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4114f0": {
   "attempts": 1,
   "first_diff": null,
@@ -200,6 +221,27 @@
   "first_diff": "+0 xor al, al",
   "name": "TechnoClass::vt_entry_434",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x41c640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::processIdleState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x41c650": {
+  "attempts": 1,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "TechnoClass::processGuardState",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x41c660": {
+  "attempts": 1,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
+  "name": "TechnoClass::processAttackState",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x41cbe0": {
@@ -285,6 +327,20 @@
   "name": "BuildingClass::StubReturnFalse14",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x46b990": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_BulletClass::GetItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x46b9a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_BulletClass::GetItem_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x46c870": {
   "attempts": 1,
@@ -426,6 +482,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a3220": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CStreamClass::IStreamQueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4a3230": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CStreamClass::IStreamAddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4a3240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CStreamClass::IStreamRelease",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4a3c00": {
   "attempts": 4,
   "first_diff": null,
@@ -454,6 +531,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4b4d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetField_0x78",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b4da0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetField_0x7C",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b4db0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetField_0x80",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4b55a0": {
   "attempts": 1,
   "first_diff": null,
@@ -481,6 +579,48 @@
   "name": "JumpjetLocomotionClass::MissionStub9",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4b6740": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6740",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b6750": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6750",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b6760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6760",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b6770": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6770",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b6780": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6780",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4b6790": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::SmallStub_4B6790",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4bad60": {
   "attempts": 1,

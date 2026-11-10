@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_entry_40@AbstractClass@@QAGHH@Z",
+ "sym_key": "AbstractClass::vt_entry_40",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "518b4c2400e80000000059c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?COMStub_Release@AbstractClass@@QAEHXZ",
+   "sym_key": "AbstractClass::COMStub_Release"
+  }
+ ]
+}
