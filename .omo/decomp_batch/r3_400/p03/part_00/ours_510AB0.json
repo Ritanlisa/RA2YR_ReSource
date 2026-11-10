@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetItem_8@unknown@@QAGHH@Z",
+ "sym_key": "unknown::GetItem_8",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240883c0fc50e800000000c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?VectorClass_ptr_BuildChoiceClass_int_ouseClass__GetItem_1@@YGHH@Z",
+   "sym_key": "?VectorClass_ptr_BuildChoiceClass_int_ouseClass__GetItem_1@@YGHH@Z"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?readLoadoutData@unknown@@QAGHH@Z",
+ "sym_key": "unknown::readLoadoutData",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240883c0fc50e800000000c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?HouseTypeClass__Release@@YGHH@Z",
+   "sym_key": "?HouseTypeClass__Release@@YGHH@Z"
+  }
+ ]
+}
