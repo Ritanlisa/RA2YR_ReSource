@@ -5,9 +5,11 @@
 
 unsigned char BuildingClass::ProcessPrimarySelect()
 {
+        int result;
         BuildingTypeClass * Type;
-        int result = (int)this->Type;
-        int v2 = *(unsigned int *)(result + 3768);
+        result = (int)this->Type;
+        int v2;
+        v2 = *(unsigned int *)(result + 3768);
         result = (result & ~0xFF) | ((this->isPrimaryFactory) & 0xFF);
         int v4;
         int v5;
@@ -19,52 +21,52 @@ unsigned char BuildingClass::ProcessPrimarySelect()
             if ( (unsigned char)result )
             {
                 this->isPrimaryFactory = 0;
-            }
-            LABEL_17:
+                LABEL_17:
           result = (*((int (__stdcall **)(BuildingClass *, int))this->vfptr + 73))(this, 2);
-            return (unsigned char)((this->isPrimaryFactory));
+                return (unsigned char)((this->isPrimaryFactory));
+            }
             v4 = 0;
             bunkersCount = this->owner->bunkersCount;
             if ( bunkersCount <= 0 )
             {
                 LABEL_13:
           owner = this->owner;
+                this->isPrimaryFactory = 1;
+                if ( (unsigned char)((House *)(owner))->IsHumanPlayer() )
+                {
+                    ((VoxClass *)(&stru_818E00.ChargerBarrels[9]))->FindAndPlay(-1);
+                }
+                if ( this->Type->Factory[0] == 7 )
+                {
+                    ((House *)(this->owner))->ChooseHouseEnemy((int)this);
+                }
+                goto LABEL_17;
             }
-            this->isPrimaryFactory = 1;
-            if ( (unsigned char)((House *)(owner))->IsHumanPlayer() )
-            {
-                ((VoxClass *)(&stru_818E00.ChargerBarrels[9]))->FindAndPlay(-1);
-            }
-            if ( this->Type->Factory[0] == 7 )
-            {
-                ((House *)(this->owner))->ChooseHouseEnemy((int)this);
-            }
-            goto LABEL_17;
             while ( 1 )
             {
                 v5 = *(unsigned int *)(this->owner->absorbersCount + 4 * v4);
-            }
-            if ( *(unsigned char *)(v5 + 129) )
-            {
-                goto LABEL_12;
-            }
-            v6 = *(unsigned int *)(v5 + 1312);
-            Type = this->Type;
-            if ( *(unsigned int *)(v6 + 3768) != Type->Factory[0] )
-            {
-                goto LABEL_12;
-            }
-            if ( Type->?[1] )
-            {
-                break;
-            }
-            if ( !*(unsigned char *)(v6 + 3278) )
-            {
-                goto LABEL_11;
-            }
-            LABEL_12:
+                if ( *(unsigned char *)(v5 + 129) )
+                {
+                    goto LABEL_12;
+                }
+                v6 = *(unsigned int *)(v5 + 1312);
+                Type = this->Type;
+                if ( *(unsigned int *)(v6 + 3768) != Type->Factory[0] )
+                {
+                    goto LABEL_12;
+                }
+                if ( Type->?[1] )
+                {
+                    break;
+                }
+                if ( !*(unsigned char *)(v6 + 3278) )
+                {
+                    goto LABEL_11;
+                }
+                LABEL_12:
           if ( ++v4 >= bunkersCount )
             goto LABEL_13;
+            }
             if ( !*(unsigned char *)(v6 + 3278) )
             {
                 goto LABEL_12;
@@ -97,14 +99,15 @@ int BuildingClass::GetTargetFacing()
                             this,
                             &v7,
                             this->target);
+                *v8 = v6;
+                return (int)((int)v8);
             }
-            *v8 = v6;
-            return (int)v8;
-            *(unsigned short *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11;
-            return (int)v8;
-        }
-        else
-        {
+            else
+            {
+                v5 = *((ProgressTimer *)(this->primaryFacing))->GetValue(&v7);
+                *(unsigned short *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11;
+                return (int)((int)v8);
+            }
         }
         else
         {
@@ -112,7 +115,7 @@ int BuildingClass::GetTargetFacing()
             v4 = (v4 & ~0xFF) | ((0) & 0xFF);
             v4 = (v4 & ~0xFF) | ((((v2 >> 7) + 1) >> 1) & 0xFF);
             *(unsigned short *)v8 = v4;
-            return (int)v8;
+            return (int)((int)v8);
         }
 }
 
@@ -122,26 +125,31 @@ int BuildingClass::GetTargetFacing()
 
 char BuildingClass::CheckOverlapWithOthers()
 {
+        int v2;
         short v8[2];
-        int v2 = *(unsigned int *)(*((int (__stdcall **)(BuildingClass *, short *))this->vfptr + 110))(this, v8);
-        unsigned short * v3 = (unsigned short *)(*((int (__stdcall **)(BuildingClass *, unsigned int))this->vfptr + 66))(this, 0);
-        char v6 = 0;
+        v2 = *(unsigned int *)(*((int (__stdcall **)(BuildingClass *, short *))this->vfptr + 110))(this, v8);
+        unsigned short * v3;
+        v3 = (unsigned short *)(*((int (__stdcall **)(BuildingClass *, unsigned int))this->vfptr + 66))(this, 0);
+        char v6;
+        v6 = 0;
         LABEL_2:
       while ( *v3 != 0x7FFF || v3[1] != 0x7FFF );
-        int v7 = (v7 & ~0xFF) | ((v2 + *v3) & 0xFF);
+        int v7;
+        v7 = (v7 & ~0xFF) | ((v2 + *v3) & 0xFF);
         v7 = (v7 & ~0xFF) | ((((v2 >> 16) & 0xFFFF) + v3[1]) & 0xFF);
         *(unsigned int *)v8 = v7;
         v3 += 2;
-        BuildingClass * v4 = (BuildingClass *)*((unsigned int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v8) + 57);
+        BuildingClass * v4;
+        v4 = (BuildingClass *)*((unsigned int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v8) + 57);
         if ( v4 )
         {
             while ( this == v4 )
             {
                 v4 = (BuildingClass *)v4->nextObject;
-            }
-            if ( v4 == 0 )
-            {
-                goto LABEL_2;
+                if ( v4 == 0 )
+                {
+                    goto LABEL_2;
+                }
             }
             v6 = 1;
         }
@@ -172,7 +180,7 @@ int BuildingClass::GetFactoryPosition()
             *v11 = *v9;
             v11[1] = v9[1];
             v11[2] = v9[2];
-            return (int)v11;
+            return (int)((int)v11);
         }
         else
         {
@@ -185,7 +193,7 @@ int BuildingClass::GetFactoryPosition()
             *v11 = v5;
             v11[1] = v6;
             v11[2] = v4 + v7;
-            return (int)v11;
+            return (int)((int)v11);
         }
 }
 
@@ -212,12 +220,15 @@ int BuildingClass::GetCrewCount()
             if ( sideIndex == 1 )
             {
                 v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5372);
+            }
+            else
+            {
                 if ( sideIndex != 2 )
                 {
                     return (int)(0);
                 }
+                v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5376);
             }
-            v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5376);
         }
         else
         {
@@ -259,24 +270,24 @@ char BuildingClass::PowerOff()
             if ( Type->PowerDrain > 0 || Type->Powered )
             {
                 owner = this->owner;
+                this->HasPower = 0;
+                this->needsRedraw = 1;
+                ((owner->HouseClass_field_timer_B[2]) & 0xFF) = 1;
+                ((this->owner->HouseClass_field_timer_B[2] >> 8) & 0xFF) = 1;
+                this->owner->recheckTechTree = 1;
+                ((BuildingClass *)(this))->Deactivate();
+                if ( (unsigned char)((House *)(this->owner))->IsHumanPlayer() )
+                {
+                    ((VoxClass *)(&stru_818E00.TrailerAnim))->FindAndPlay(-1);
+                }
+                Type = this->Type;
+                v5 = Type->Factory[0];
+                if ( v5 )
+                {
+                    v4 = (v4 & ~0xFF) | ((Type->?[1]) & 0xFF);
+                    Type = (Type & ~0xFF) | ((((HouseClass *)((int)this->owner))->UpdateProduction(v5, v4, 0)) & 0xFF);
+                }
             }
-            this->HasPower = 0;
-            this->needsRedraw = 1;
-            ((owner->HouseClass_field_timer_B[2]) & 0xFF) = 1;
-            ((this->owner->HouseClass_field_timer_B[2] >> 8) & 0xFF) = 1;
-            this->owner->recheckTechTree = 1;
-            ((BuildingClass *)(this))->Deactivate();
-            if ( (unsigned char)((House *)(this->owner))->IsHumanPlayer() )
-            {
-                ((VoxClass *)(&stru_818E00.TrailerAnim))->FindAndPlay(-1);
-            }
-            Type = this->Type;
-            v5 = Type->Factory[0];
-            if ( v5 )
-            {
-                v4 = (v4 & ~0xFF) | ((Type->?[1]) & 0xFF);
-            }
-            Type = (Type & ~0xFF) | ((((HouseClass *)((int)this->owner))->UpdateProduction(v5, v4, 0)) & 0xFF);
         }
-        return (char)Type;
+        return (char)((char)Type);
 }

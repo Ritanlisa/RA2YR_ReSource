@@ -2,11 +2,12 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 19,
-   "MISMATCH": 1
+   "MISMATCH": 8,
+   "COMPILE_FAIL": 12
   },
   "pathologies": {
-   "codegen_shape": 1
+   "frame_sched": 4,
+   "codegen_shape": 4
   },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
@@ -15,23 +16,28 @@
   {
    "addr": "0x42e820",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BridgeClass.cpp(50) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BridgeClass.cpp(69) : error",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 368B ours 352B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x18",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "frame_sched",
    "name": "BridgeClass::GetCellData",
    "emitted": "BridgeClass::GetCellData",
    "unit": "BridgeClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/4",
-   "rule_violations": 11
+   "rule_violations": 11,
+   "orig_size": 368,
+   "ours_size": 352
   },
   {
    "addr": "0x42f4f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\_DynamicVectorClass_VBaseNodeClass.cpp(19) : error C2039: 'm_C' : is not a member of '_DynamicVectorClass_VBaseNodeClass'; D:\\RA2YR_ReSource\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\_DynamicVectorClass_VBaseNodeClass.cpp(71) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp",
    "first_diff": null,
    "pathology": null,
    "name": "BaseClass::Release",
@@ -39,14 +45,14 @@
    "unit": "_DynamicVectorClass_VBaseNodeClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/13",
-   "rule_violations": 13
+   "sites": "7/11",
+   "rule_violations": 1
   },
   {
    "addr": "0x42f9c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\_VectorClass_VBaseNodeClass.cpp(19) : error C2039: 'm_C' : is not a member of '_VectorClass_VBaseNodeClass'; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\_VectorClass_VBaseNodeClass.cpp(69) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
    "first_diff": null,
    "pathology": null,
    "name": "BaseNodeClass_Vector::Release",
@@ -54,14 +60,14 @@
    "unit": "_VectorClass_VBaseNodeClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 10
+   "sites": "7/11",
+   "rule_violations": 1
   },
   {
    "addr": "0x431800",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\HouseClass.cpp(17) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\HouseClass.cpp(23) : error C",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\HouseClass.cpp(27) : error C2039: 'vfptr' : is not a member of 'HouseClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\House",
    "first_diff": null,
    "pathology": null,
    "name": "HouseClass::ProcessData",
@@ -69,14 +75,14 @@
    "unit": "HouseClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/6",
+   "sites": "5/5",
    "rule_violations": 0
   },
   {
    "addr": "0x4324b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\include\\CCFileClass.hpp(31) : error C2061: syntax error : identifier 'LONG'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\CCFil",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\CCFileClass.cpp(60) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\CCFileClass",
    "first_diff": null,
    "pathology": null,
    "name": "BufferIOFileClass::SeekInternal",
@@ -90,98 +96,128 @@
   {
    "addr": "0x432ab0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BinkMovieHandle.cpp(64) : error C2362: initialization of 'v12' is skipped by 'goto LABEL_18'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 279B ours 247B",
+   "first_diff": {
+    "orig": "+3 mov eax, dword ptr [ecx + 4]",
+    "ours": "+3 push ebx"
+   },
+   "pathology": "codegen_shape",
    "name": "BinkMovieHandle::RenderFrameClipped",
    "emitted": "BinkMovieHandle::RenderFrameClipped",
    "unit": "BinkMovieHandle",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "5/5",
-   "rule_violations": 4
+   "rule_violations": 4,
+   "orig_size": 279,
+   "ours_size": 247
   },
   {
    "addr": "0x433270",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BinkMovie.cpp(26) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 192B ours 169B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x30",
+    "ours": "+0 sub esp, 0x28"
+   },
+   "pathology": "frame_sched",
    "name": "BinkMovie::BlitToTarget",
    "emitted": "BinkMovie::BlitToTarget",
    "unit": "BinkMovie",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/5",
-   "rule_violations": 2
+   "sites": "6/6",
+   "rule_violations": 2,
+   "orig_size": 192,
+   "ours_size": 169
   },
   {
    "addr": "0x4335e0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(57) : error C2043: illegal break; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(110) : error C2043: ille",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 217B ours 218B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x14",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "frame_sched",
    "name": "BinkMovieClass::AllocateRenderSurface",
    "emitted": "unknown::AllocateRenderSurface",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "0/0",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 217,
+   "ours_size": 218
   },
   {
    "addr": "0x4336c0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BinkMovieClass.cpp(43) : error C2043: illegal break",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 169B ours 176B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
    "name": "BinkMovieClass::ReleaseRenderSurface",
    "emitted": "BinkMovieClass::ReleaseRenderSurface",
    "unit": "BinkMovieClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "0/0",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 169,
+   "ours_size": 176
   },
   {
    "addr": "0x433770",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(57) : error C2043: illegal break; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(110) : error C2043: ille",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 232B ours 209B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x14",
+    "ours": "+0 sub esp, 0xc"
+   },
+   "pathology": "frame_sched",
    "name": "BinkMovieClass::OpenFile",
    "emitted": "unknown::OpenFile",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "0/0",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 232,
+   "ours_size": 209
   },
   {
    "addr": "0x433f50",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\MessageListClass.cpp(50) : error C2043: illegal break",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 331B ours 278B",
+   "first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
    "name": "MessageListClass::CountCharsInWidth",
    "emitted": "MessageListClass::CountCharsInWidth",
    "unit": "MessageListClass",
    "name_placeholder": false,
    "cls_src": "backfill",
    "sites": "1/1",
-   "rule_violations": 1
+   "rule_violations": 1,
+   "orig_size": 331,
+   "ours_size": 278
   },
   {
    "addr": "0x4371d0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(57) : error C2043: illegal break; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown.cpp(110) : error C2043: ille",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown_4371d0.cpp(15) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\unknown_4371d0.cpp(16) :",
    "first_diff": null,
    "pathology": null,
    "name": "Helper::ProcessData",
@@ -196,7 +232,7 @@
    "addr": "0x448070",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\AnimClass.cpp(65) : error C2362: initialization of 'v8' is skipped by 'goto LABEL_17'",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\AnimClass.cpp(76) : error C2664: 'ChooseHouseEnemy' : cannot convert parameter 1 from 'class AnimClass *const ' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "AnimClass::updateAnimation",
@@ -211,7 +247,7 @@
    "addr": "0x448160",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BuildingClass_448160.cpp(26) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p01\\part_00\\BuildingClass_448160.cpp(28) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
    "first_diff": null,
    "pathology": null,
    "name": "FootClass::ProcessPrimarySelect",
@@ -241,7 +277,7 @@
    "addr": "0x44e3a0",
    "batch": "adhoc",
    "verdict": "MISMATCH",
-   "note": "orig 156B ours 153B",
+   "note": "orig 156B ours 151B",
    "first_diff": {
     "orig": "+0 sub esp, 0xc",
     "ours": "+0 push ecx"
@@ -255,7 +291,7 @@
    "sites": "5/8",
    "rule_violations": 0,
    "orig_size": 156,
-   "ours_size": 153
+   "ours_size": 151
   },
   {
    "addr": "0x44f640",

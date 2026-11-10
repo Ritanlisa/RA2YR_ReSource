@@ -47,14 +47,14 @@ unsigned int * BridgeClass::GetCellData(int p0)
         int v14 = 3;
         do
         {
-        } while ();
-        ++v13;
-        --v14;
-        int v15;
-        while ( v14 )
-        {
-            v15 = p0;
-        }
+            if ( *v13 == v5 )
+            {
+                ++v12;
+            }
+            ++v13;
+            --v14;
+        } while ( v14 );
+        int v15 = p0;
         v19 = v12;
         int v16;
         int v17;
@@ -64,21 +64,22 @@ unsigned int * BridgeClass::GetCellData(int p0)
         {
             v16 = *((unsigned int *)this + 2);
             do
-          if ( *(int *)v16 >= 0 && *((unsigned int *)g_TriggerTypeCount + *(unsigned int *)v16) == v21 )
-            v17 = v8[39];
-            v18 = v8[40];
-            v22 = v8[41];
-            if ( *(unsigned short *)(v16 + 4) == (unsigned short)(v17 / 256)
+            {
+                if ( *(int *)v16 >= 0 && *((unsigned int *)g_TriggerTypeCount + *(unsigned int *)v16) == v21 )
+                {
+                    v17 = v8[39];
+                    v18 = v8[40];
+                    v22 = v8[41];
+                    if ( *(unsigned short *)(v16 + 4) == (unsigned short)(v17 / 256)
               && *(unsigned short *)(v16 + 6) == (unsigned short)(v18 / 256) )
-            {
-                --v19;
-            }
-            v16 += 16;
-            --v15;
-            while ( v15 )
-            {
-                v12 = v19;
-            }
+                    {
+                        --v19;
+                    }
+                }
+                v16 += 16;
+                --v15;
+            } while ( v15 );
+            v12 = v19;
         }
         return (unsigned int *)(v12 <= 0 ? 0 : v8);
 }

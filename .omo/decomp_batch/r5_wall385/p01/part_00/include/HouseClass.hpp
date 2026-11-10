@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class HouseClass
 {
@@ -20,14 +22,14 @@ public:
 
     // ---- pilot methods (registry signatures)
     bool ProcessData();  // 0x431800
+    int IsAlliedWith(void * p0);  // 0x4F9A50
     bool IsAllied(int p0);  // 0x4F9A10
-    int IsAlliedWith();  // 0x4F9A50
 };
 
 // ---- globals used by this unit (registry names)
 extern void * HouseClass_Player;
 extern int g_VisibilitySystem;
-extern unsigned char stru_A80220;
+extern char stru_A80220[];
 extern char stru_A8EB00[];
 
 #endif  // DECOMP_PILOT_HOUSECLASS_HPP

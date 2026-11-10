@@ -4,21 +4,28 @@
 
 bool AnimClass::updateAnimation(char p0)
 {
-        int v3 = *(unsigned int *)(this->u32_520 + 3768);
-        int v12 = v3;
+        int v3;
+        v3 = *(unsigned int *)(this->u32_520 + 3768);
+        int v12;
+        v12 = v3;
         if ( v3 == 0 )
         {
             return (bool)(0);
         }
-        unsigned char v11 = this->u32_3D3;
-        int v5 = this->q21C;
-        int v6 = *(unsigned int *)(v5 + 120);
-        int v7 = 0;
+        unsigned char v11;
+        v11 = this->u32_3D3;
+        int v5;
+        v5 = this->q21C;
+        int v6;
+        v6 = *(unsigned int *)(v5 + 120);
+        int v7;
+        v7 = 0;
         if ( v6 <= 0 )
         {
             goto LABEL_17;
         }
-        int * v8 = *(int **)(v5 + 108);
+        int * v8;
+        v8 = *(int **)(v5 + 108);
         int v9;
         int v10;
         while ( 1 )
@@ -65,7 +72,7 @@ bool AnimClass::updateAnimation(char p0)
         this->u32_3D3 = 1;
         if ( *(unsigned int *)(this->u32_520 + 3768) == 7 )
         {
-            ((House *)(*(House **)(this + 540))->ChooseHouseEnemy(), this);
+            ((House *)(*(House **)(this + 540)))->ChooseHouseEnemy(this);
         }
         return (bool)(this->u32_3D3 != v11);
 }

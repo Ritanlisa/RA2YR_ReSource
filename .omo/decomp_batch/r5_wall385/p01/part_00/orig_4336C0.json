@@ -1,0 +1,11 @@
+{
+ "addr": "0x4336C0",
+ "name": "BinkMovieClass::ReleaseRenderSurface",
+ "size": 169,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4336C0",
+ "bytes_hex": "83ec0c5355568bf1578b7c24208a0e32db80e1018d4707880a33c9c1e8034f894424108bea885c24187474eb048b4c24204133d2894c24208bc1b907000000f7f185d2750afec380fb08750332db46fec380fb08750332db46ba010000008acbd3e28a4c241833c08a0685d00f9fc0fec180f908884c2418750a45c644241800c64500008b4c241881e1ff000000d2e08a4d000ac84f884d0075928b4424105f5e5d5b83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

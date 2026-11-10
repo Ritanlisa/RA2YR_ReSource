@@ -14,25 +14,25 @@ char BuildingClass::PowerOff()
             if ( Type->PowerDrain > 0 || Type->Powered )
             {
                 owner = this->owner;
+                this->HasPower = 0;
+                this->needsRedraw = 1;
+                ((owner->HouseClass_field_timer_B[2]) & 0xFF) = 1;
+                ((this->owner->HouseClass_field_timer_B[2] >> 8) & 0xFF) = 1;
+                this->owner->recheckTechTree = 1;
+                ((BuildingClass *)(this))->Deactivate();
+                if ( (unsigned char)((House *)(this->owner))->IsHumanPlayer() )
+                {
+                    ((VoxClass *)(&stru_818E00.TrailerAnim))->FindAndPlay(-1);
+                }
+                Type = this->Type;
+                v5 = Type->Factory[0];
+                if ( v5 )
+                {
+                    v4 = (v4 & ~0xFF) | ((Type->?[1]) & 0xFF);
+                    Type = (Type & ~0xFF) | ((((HouseClass *)((int)this->owner))->UpdateProduction(v5, v4, 0)) & 0xFF);
+                }
             }
-            this->HasPower = 0;
-            this->needsRedraw = 1;
-            ((owner->HouseClass_field_timer_B[2]) & 0xFF) = 1;
-            ((this->owner->HouseClass_field_timer_B[2] >> 8) & 0xFF) = 1;
-            this->owner->recheckTechTree = 1;
-            ((BuildingClass *)(this))->Deactivate();
-            if ( (unsigned char)((House *)(this->owner))->IsHumanPlayer() )
-            {
-                ((VoxClass *)(&stru_818E00.TrailerAnim))->FindAndPlay(-1);
-            }
-            Type = this->Type;
-            v5 = Type->Factory[0];
-            if ( v5 )
-            {
-                v4 = (v4 & ~0xFF) | ((Type->?[1]) & 0xFF);
-            }
-            Type = (Type & ~0xFF) | ((((HouseClass *)((int)this->owner))->UpdateProduction(v5, v4, 0)) & 0xFF);
         }
-        return (char)Type;
+        return (char)((char)Type);
 }
 

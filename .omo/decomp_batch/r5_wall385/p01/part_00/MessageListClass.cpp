@@ -32,34 +32,38 @@ int MessageListClass::CountCharsInWidth(unsigned short * p0, int p1, int p2, int
                 if ( v9 == 9 )
                 {
                     v6 = v5->MessageRect[2] + v6 - (v5->MessageRect[2] + v6) % v5->MessageRect[2];
+                    if ( v9 != 10 && v9 != 13 )
+                    {
+                        ScrollOffset = 0;
+                        v11 = *(unsigned short *)(MaxMessageCount[6] + 2 * v9);
+                        if ( (unsigned short)v11 )
+                        {
+                            ScrollOffset = (unsigned char*)(MaxMessageCount[7] + (v11 - 1) * MaxMessageCount[5]);
+                        }
+                        v8 = p0;
+                        if ( ScrollOffset || (ScrollOffset = (unsigned char*)this->ScrollOffset) != 0 )
+                        {
+                            v6 += *ScrollOffset + this->MessageRect[3];
+                        }
+                    }
                 }
+                v12 = ++v17;
+                if ( v6 > p1 )
+                {
+                    break;
+                }
+                if ( p2 && v12 == p2 || p3 && (v9 == 13 || v9 == 10) )
+                {
+                    return (int)(v17);
+                }
+                v9 = v8[1];
+                p0 = ++v8;
+                if ( v9 == 0 )
+                {
+                    return (int)(v17);
+                }
+                v5 = this;
             }
-            v11 = *(unsigned short *)(MaxMessageCount[6] + 2 * v9);
-            if ( (unsigned short)v11 )
-            {
-                ScrollOffset = (unsigned char*)(MaxMessageCount[7] + (v11 - 1) * MaxMessageCount[5]);
-            }
-            v8 = p0;
-            if ( ScrollOffset || (ScrollOffset = (unsigned char*)this->ScrollOffset) != 0 )
-            {
-                v6 += *ScrollOffset + this->MessageRect[3];
-            }
-            v12 = ++v17;
-            if ( v6 > p1 )
-            {
-                break;
-            }
-            if ( p2 && v12 == p2 || p3 && (v9 == 13 || v9 == 10) )
-            {
-                return (int)(v17);
-            }
-            v9 = v8[1];
-            p0 = ++v8;
-            if ( v9 == 0 )
-            {
-                return (int)(v17);
-            }
-            v5 = this;
             v14 = v12 - 1;
             v17 = v14;
             if ( p3 )
@@ -67,28 +71,25 @@ int MessageListClass::CountCharsInWidth(unsigned short * p0, int p1, int p2, int
                 if ( v9 > 0x20u )
                 {
                     v15 = v8 - 1;
+                    v16 = v14;
+                    if ( v14 )
+                    {
+                        while ( *v15 > 0x20u )
+                        {
+                            --v16;
+                            --v15;
+                            if ( v16 == 0 )
+                            {
+                                return (int)(v14);
+                            }
+                        }
+                        if ( v16 )
+                        {
+                            return (int)(v16);
+                        }
+                    }
                 }
             }
-            v16 = v14;
-            if ( v14 )
-            {
-                while ( *v15 > 0x20u )
-                {
-                    --v16;
-                }
-            }
-            --v15;
-            if ( v16 == 0 )
-            {
-                return (int)(v14);
-            }
-            if ( v16 )
-            {
-                return (int)(v16);
-            }
-        }
-        else
-        {
         }
         return (int)(v17);
 }

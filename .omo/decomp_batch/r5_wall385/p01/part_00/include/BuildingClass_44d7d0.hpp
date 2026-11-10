@@ -10,6 +10,8 @@ class ProgressTimer;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingClass
 {
@@ -42,6 +44,8 @@ class BuildingClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ProgressTimer
 {
@@ -51,7 +55,7 @@ public:
     // DECOMP_SIZECHECK(ProgressTimer, ProgressTimer, 24);
 
     // ---- pilot methods (registry signatures)
-    unsigned int * GetValue(int * p0);  // 0x4C93D0
+    unsigned int * GetValue(void * p0);  // 0x4C93D0
 };
 
 #endif  // DECOMP_PILOT_PROGRESSTIMER_HPP

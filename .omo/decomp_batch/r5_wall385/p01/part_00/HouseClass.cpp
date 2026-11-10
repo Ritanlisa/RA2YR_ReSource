@@ -9,42 +9,43 @@ bool HouseClass::ProcessData()
         {
             return (bool)(0);
         }
-        char v6 = 0;
-        HouseClass * v1 = this;
-        int v7 = 8;
+        char v6;
+        v6 = 0;
+        HouseClass * v1;
+        v1 = this;
+        int v7;
+        v7 = 8;
+        int v2;
+        HouseClass * v3;
+        void * vtable0;
         do
         {
-        } while ();
-        HouseClass * v3 = v1;
-        int v2;
-        void * vtable0;
-        while ( 1 )
-        {
-            vtable0 = v3->vfptr;
-            if ( v3->vfptr )
+            v2 = 0;
+            v3 = v1;
+            while ( 1 )
             {
-                if ( (*((unsigned char *)vtable0 + 12) & 1) != 0
-              && (unsigned char)((HouseClass *)(HouseClass_Player))->IsAllied(*((unsigned int *)vtable0 + 68))
-              && (unsigned char)((HouseClass *)(*((#375 **)stru_A80220.vfptr3 + *((unsigned int *)vtable0 + 68))->IsAlliedWith()),
-                                    (#375 *)HouseClass_Player)
-              && !*(unsigned char *)(*((unsigned int *)stru_A80220.vfptr3 + *((unsigned int *)vtable0 + 68)) + 501) )
+                vtable0 = v3->vfptr;
+                if ( v3->vfptr )
                 {
-                    break;
+                    if ( (*((unsigned char *)vtable0 + 12) & 1) != 0
+              && (unsigned char)((HouseClass *)(HouseClass_Player))->IsAllied(*((unsigned int *)vtable0 + 68))
+              && (unsigned char)((HouseClass *)(*((#375 **)((char **)stru_A80220)[3] + *((unsigned int *)vtable0 + 68))))->IsAlliedWith((#375 *)HouseClass_Player)
+              && !*(unsigned char *)(*((unsigned int *)((char **)stru_A80220)[3] + *((unsigned int *)vtable0 + 68)) + 501) )
+                    {
+                        break;
+                    }
+                }
+                ++v2;
+                v3 = (HouseClass *)((char *)v3 + 4);
+                if ( v2 >= 3 )
+                {
+                    goto LABEL_12;
                 }
             }
-            ++v2;
-            v3 = (HouseClass *)((char *)v3 + 4);
-            if ( v2 >= 3 )
-            {
-                goto LABEL_12;
-            }
-        }
-        v6 = 1;
-        LABEL_12:
+            v6 = 1;
+            LABEL_12:
         v1 = (HouseClass *)((char *)v1 + 12);
-        --v7;
-        while ( v7 )
-        {
-            return (bool)(v6 && *(unsigned int *)&((char *)stru_A8EB00)[416] % this->bunkersCapacity < g_VisibilitySystem.spawnStatus + 1);
-        }
+            --v7;
+        } while ( v7 );
+        return (bool)(v6 && *(unsigned int *)&((char *)stru_A8EB00)[416] % this->bunkersCapacity < g_VisibilitySystem.spawnStatus + 1);
 }

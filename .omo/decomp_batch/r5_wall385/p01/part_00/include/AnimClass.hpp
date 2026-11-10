@@ -9,6 +9,8 @@ class House;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class AnimClass
 {
@@ -36,6 +38,8 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class House
 {
@@ -45,7 +49,7 @@ public:
     // DECOMP_SIZECHECK(House, House, 22400);
 
     // ---- pilot methods (registry signatures)
-    int ChooseHouseEnemy();  // 0x50DB00
+    int ChooseHouseEnemy(int p0);  // 0x50DB00
 };
 
 #endif  // DECOMP_PILOT_HOUSE_HPP

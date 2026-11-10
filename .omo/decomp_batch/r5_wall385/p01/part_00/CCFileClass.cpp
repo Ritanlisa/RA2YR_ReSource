@@ -3,18 +3,18 @@
 // source: decompile-results/full_export  fn 0x4324B0 (BufferIOFileClass::SeekInternal)
 #include "CCFileClass.hpp"
 
-int CCFileClass::SeekInternal(LONG lDistanceToMove p1, DWORD dwMoveMethod p2)
+int CCFileClass::SeekInternal(long p1, unsigned long p2)
 {
         if ( !((this->BufferSize >> 8) & 0xFF) )
         {
-            return (int)(((FileClass *)(this))->Seek(lDistanceToMove, dwMoveMethod));
+            return (int)(((FileClass *)(this))->Seek(p1, p2));
         }
         char v15 = 0;
         int FileID;
         int TotalBytesWritten;
-        if ( dwMoveMethod )
+        if ( p2 )
         {
-            if ( dwMoveMethod == 2 )
+            if ( p2 == 2 )
             {
                 this->FileID = this->TotalBytesWritten;
             }
@@ -24,10 +24,10 @@ int CCFileClass::SeekInternal(LONG lDistanceToMove p1, DWORD dwMoveMethod p2)
             this->FileID = 0;
         }
         int MixFileIndex = this->MixFileIndex;
-        long v5 = lDistanceToMove;
-        if ( MixFileIndex && lDistanceToMove >= MixFileIndex )
+        long v5 = p1;
+        if ( MixFileIndex && p1 >= MixFileIndex )
         {
-            v5 = lDistanceToMove - MixFileIndex;
+            v5 = p1 - MixFileIndex;
             v15 = 1;
         }
         FileID = this->FileID;
@@ -53,22 +53,24 @@ int CCFileClass::SeekInternal(LONG lDistanceToMove p1, DWORD dwMoveMethod p2)
             if ( v9 < BufferMaxSize || v9 >= BufferMaxSize + BufferReadSize )
             {
                 ((BufferIO *)(this))->Flush();
+                if ( this->MixFileIndex )
+                {
+                    v11 = this->__tail_0;
+                    v14 = this->FileID;
+                    ((this->BufferSize >> 8) & 0xFF) = 0;
+                    (*(void (__stdcall **)(CCFileClass *, int, unsigned int))(v11 + 40))(this, v14, 0);
+                    ((this->BufferSize >> 8) & 0xFF) = 1;
+                }
+                else
+                {
+                    ((FileClass *)(this))->Seek(this->FileID, 0);
+                }
+                this->BufferOffset = (this->BufferOffset & ~0xFF00) | ((0) & 0xFF) << 8;
             }
-            if ( this->MixFileIndex )
+            else
             {
-                v11 = this->__tail_0;
+                this->StreamSize = v9 - BufferMaxSize;
             }
-            v14 = this->FileID;
-            ((this->BufferSize >> 8) & 0xFF) = 0;
-            (*(void (__stdcall **)(CCFileClass *, int, unsigned int))(v11 + 40))(this, v14, 0);
-            ((this->BufferSize >> 8) & 0xFF) = 1;
-            this->BufferOffset = (this->BufferOffset & ~0xFF00) | ((0) & 0xFF) << 8;
-        }
-        else
-        {
-        }
-        else
-        {
         }
         else
         {

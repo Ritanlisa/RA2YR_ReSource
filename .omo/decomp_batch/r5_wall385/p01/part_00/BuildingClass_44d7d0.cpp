@@ -19,14 +19,15 @@ int BuildingClass::GetTargetFacing()
                             this,
                             &v7,
                             this->target);
+                *v8 = v6;
+                return (int)((int)v8);
             }
-            *v8 = v6;
-            return (int)v8;
-            *(unsigned short *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11;
-            return (int)v8;
-        }
-        else
-        {
+            else
+            {
+                v5 = *((ProgressTimer *)(this->primaryFacing))->GetValue(&v7);
+                *(unsigned short *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11;
+                return (int)((int)v8);
+            }
         }
         else
         {
@@ -34,7 +35,7 @@ int BuildingClass::GetTargetFacing()
             v4 = (v4 & ~0xFF) | ((0) & 0xFF);
             v4 = (v4 & ~0xFF) | ((((v2 >> 7) + 1) >> 1) & 0xFF);
             *(unsigned short *)v8 = v4;
-            return (int)v8;
+            return (int)((int)v8);
         }
 }
 

@@ -12,6 +12,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingClass
 {
@@ -49,6 +51,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class House
 {
@@ -58,8 +62,8 @@ public:
     // DECOMP_SIZECHECK(House, House, 22400);
 
     // ---- pilot methods (registry signatures)
-    int IsHumanPlayer();  // 0x50B6F0
     int ChooseHouseEnemy(int p0);  // 0x50DB00
+    int IsHumanPlayer();  // 0x50B6F0
 };
 
 // ---- globals used by this unit (registry names)
@@ -80,6 +84,8 @@ class HouseClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class VoxClass
 {

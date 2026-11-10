@@ -5,26 +5,37 @@
 
 int BinkMovieHandle::RenderFrameClipped(int p0, int p1)
 {
-        int * v3 = *(int **)(this + 4);
-        int v4 = v3[1];
-        int v5 = *v3;
+        int * v3;
+        v3 = *(int **)(this + 4);
+        int v4;
+        v4 = v3[1];
+        int v5;
+        v5 = *v3;
+        int * v6;
         unsigned char v19[16];
-        int * v6 = (int *)(*(int (__stdcall **)(unsigned int, unsigned char *))(**(unsigned int **)(this + 12) + 120))(this->width, v19);
-        int result = 0;
-        int v8 = v6[2];
-        int v9 = 0;
-        int v16 = p0;
-        int v18 = v4;
+        v6 = (int *)(*(int (__stdcall **)(unsigned int, unsigned char *))(**(unsigned int **)(this + 12) + 120))(this->width, v19);
+        int result;
+        result = 0;
+        int v8;
+        v8 = v6[2];
+        int v9;
+        v9 = 0;
+        int v16;
+        v16 = p0;
+        int v18;
+        v18 = v4;
         if ( v8 <= 0 )
         {
             goto LABEL_18;
         }
-        int v20 = v6[3];
+        int v20;
+        v20 = v6[3];
         if ( v20 <= 0 || v5 <= 0 || v4 <= 0 )
         {
             goto LABEL_18;
         }
-        int v10 = *v6;
+        int v10;
+        v10 = *v6;
         if ( p0 < *v6 )
         {
             v16 = *v6;
@@ -34,7 +45,8 @@ int BinkMovieHandle::RenderFrameClipped(int p0, int p1)
         {
             goto LABEL_18;
         }
-        int v11 = v6[1];
+        int v11;
+        v11 = v6[1];
         if ( p1 < v11 )
         {
             v18 += p1 - v11;
@@ -52,7 +64,8 @@ int BinkMovieHandle::RenderFrameClipped(int p0, int p1)
         {
             goto LABEL_18;
         }
-        int v12 = v18;
+        int v12;
+        v12 = v18;
         if ( v18 + p1 > v20 + v11 )
         {
             v12 = v20 + v11 - p1;

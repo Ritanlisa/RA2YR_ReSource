@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetCellData@BridgeClass@@QAEPAIH@Z",
+ "sym_key": "BridgeClass::GetCellData",
+ "size": 352,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558b6c2414568bd98bf5c1e6048b43085703c68b480485c9894c24140f842e0100008b0085c00f8c240100008b0d000000008b14818d44241450b9f801000089542414e8000000008bc8e8000000008bf885ff0f84f70000008b4b088b178d44241c50578d743104ff92b8010000668b08663b0e0f85d6000000668b5002663b56020f85c80000008b871c0200008b4b743bc10f85b70000008b7424108b87200500003bc6750c8bc75f5e5d5b83c408c204008a86880e000084c00f848f00000033c98d87ec050000894c241cba03000000393075014183c0044a75f58bf185ed8974241c7e558b4b088b1d000000008b0185c07c3e8b54241039148375358b879c0000009981e2ff00000003c2c1f80866394104751d8b87a00000009981e2ff00000003c2c1f8086639410675054e8974241c83c1104d75b68bce33c085c90f9ec04823c75f5e5d5b83c408c204005f5e5d33c05b83c408c20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 240,
+   "type": "DIR32",
+   "sym": "?g_TriggerTypeCount@@3IA",
+   "sym_key": "g_TriggerTypeCount"
+  }
+ ]
+}

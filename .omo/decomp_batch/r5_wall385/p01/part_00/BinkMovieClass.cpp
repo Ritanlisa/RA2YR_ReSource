@@ -21,29 +21,29 @@ unsigned int __fastcall BinkMovieClass::ReleaseRenderSurface(unsigned char * p0,
                 if ( !((v5 + 1) % 7u) && ++v4 == 8 )
                 {
                     v4 = 0;
+                    ++v3;
                 }
+                if ( ++v4 == 8 )
+                {
+                    v4 = 0;
+                    ++v3;
+                }
+                v9 = ((1 << v4) & *v3) != 0;
+                if ( ++v10 == 8 )
+                {
+                    ++v8;
+                    v10 = 0;
+                    *v8 = 0;
+                }
+                --v7;
+                *v8 |= v9 << v10;
+                if ( v7 == 0 )
+                {
+                    break;
+                }
+                ++v5;
             }
-            ++v3;
-            if ( ++v4 == 8 )
-            {
-                v4 = 0;
-            }
-            ++v3;
-            v9 = ((1 << v4) & *v3) != 0;
-            if ( ++v10 == 8 )
-            {
-                ++v8;
-            }
-            v10 = 0;
-            *v8 = 0;
-            --v7;
-            *v8 |= v9 << v10;
-            if ( v7 == 0 )
-            {
-                break;
-            }
-            ++v5;
-            return (unsigned int)(p2 + 7) >> 3;
+            return (unsigned int)((unsigned int)(p2 + 7) >> 3);
         }
         return (unsigned int)(result);
 }

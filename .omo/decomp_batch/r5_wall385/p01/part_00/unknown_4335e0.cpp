@@ -23,39 +23,39 @@ int __fastcall unknown::AllocateRenderSurface(unsigned char * p0, unsigned char 
                 if ( !((v5 + 1) % 7u) )
                 {
                     v11 = ++v4;
+                    if ( v4 == 8 )
+                    {
+                        v4 = 0;
+                        ++v7;
+                        v11 = 0;
+                        *v7 = 0;
+                    }
+                    ++v6;
+                    *v7 |= 1 << v11;
                 }
+                if ( ++v13 == 8 )
+                {
+                    v13 = 0;
+                    ++p0;
+                }
+                v8 = ((1 << v13) & (unsigned char)*p0) != 0;
+                v12 = ++v4;
+                if ( v4 == 8 )
+                {
+                    v4 = 0;
+                    ++v7;
+                    v12 = 0;
+                    *v7 = 0;
+                }
+                v9 = v14 == 1;
+                *v7 |= v8 << v12;
+                --v14;
+                if ( v9 )
+                {
+                    break;
+                }
+                ++v5;
             }
-            if ( v4 == 8 )
-            {
-                v4 = 0;
-            }
-            ++v7;
-            v11 = 0;
-            *v7 = 0;
-            ++v6;
-            *v7 |= 1 << v11;
-            if ( ++v13 == 8 )
-            {
-                v13 = 0;
-            }
-            ++p0;
-            v8 = ((1 << v13) & (unsigned char)*p0) != 0;
-            v12 = ++v4;
-            if ( v4 == 8 )
-            {
-                v4 = 0;
-            }
-            ++v7;
-            v12 = 0;
-            *v7 = 0;
-            v9 = v14 == 1;
-            *v7 |= v8 << v12;
-            --v14;
-            if ( v9 )
-            {
-                break;
-            }
-            ++v5;
         }
         return (int)(v6);
 }

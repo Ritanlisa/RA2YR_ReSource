@@ -68,6 +68,6 @@ int TechnoClass::GetScreenCoords()
         v26[1] = v8;
         v26[2] = v9;
         v26[3] = v10;
-        return (int)v26;
+        return (int)((int)v26);
 }
 

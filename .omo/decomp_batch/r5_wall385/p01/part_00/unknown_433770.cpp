@@ -4,14 +4,21 @@
 
 unsigned int __fastcall unknown::OpenFile(unsigned char * p0, unsigned char * p1, unsigned int p2)
 {
-        unsigned char * v3 = p0;
-        char v4 = 0;
+        unsigned char * v3;
+        v3 = p0;
+        char v4;
+        v4 = 0;
         *p1 = *p0 & 1;
-        int v5 = 0;
-        unsigned char * v6 = p1;
-        char v12 = 0;
-        int v10 = 0;
-        unsigned int v9 = 0;
+        int v5;
+        v5 = 0;
+        unsigned char * v6;
+        v6 = p1;
+        char v12;
+        v12 = 0;
+        int v10;
+        v10 = 0;
+        unsigned int v9;
+        v9 = 0;
         char v7;
         int v11;
         if ( p2 )
@@ -19,38 +26,38 @@ unsigned int __fastcall unknown::OpenFile(unsigned char * p0, unsigned char * p1
             while ( 1 )
             {
                 v11 = v5 + 1;
+                if ( !((v5 + 1) % 7u) && ++v4 == 8 )
+                {
+                    v4 = 0;
+                    ++v3;
+                }
+                if ( ++v4 == 8 )
+                {
+                    v4 = 0;
+                    ++v3;
+                }
+                v7 = ((1 << v4) & *v3) != 0;
+                if ( ++v12 == 8 )
+                {
+                    ++v6;
+                    v12 = 0;
+                    *v6 = 0;
+                }
+                *v6 |= v7 << v12;
+                if ( !(++v10 % 16) )
+                {
+                    ++v9;
+                    if ( !*((unsigned short *)v6 - 1) )
+                    {
+                        break;
+                    }
+                }
+                if ( v9 >= p2 )
+                {
+                    goto LABEL_14;
+                }
+                v5 = v11;
             }
-            if ( !((v5 + 1) % 7u) && ++v4 == 8 )
-            {
-                v4 = 0;
-            }
-            ++v3;
-            if ( ++v4 == 8 )
-            {
-                v4 = 0;
-            }
-            ++v3;
-            v7 = ((1 << v4) & *v3) != 0;
-            if ( ++v12 == 8 )
-            {
-                ++v6;
-            }
-            v12 = 0;
-            *v6 = 0;
-            *v6 |= v7 << v12;
-            if ( !(++v10 % 16) )
-            {
-                ++v9;
-            }
-            if ( !*((unsigned short *)v6 - 1) )
-            {
-                break;
-            }
-            if ( v9 >= p2 )
-            {
-                goto LABEL_14;
-            }
-            v5 = v11;
         }
         else
         {

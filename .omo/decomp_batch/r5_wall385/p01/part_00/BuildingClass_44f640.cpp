@@ -22,7 +22,7 @@ int BuildingClass::GetFactoryPosition()
             *v11 = *v9;
             v11[1] = v9[1];
             v11[2] = v9[2];
-            return (int)v11;
+            return (int)((int)v11);
         }
         else
         {
@@ -35,7 +35,7 @@ int BuildingClass::GetFactoryPosition()
             *v11 = v5;
             v11[1] = v6;
             v11[2] = v4 + v7;
-            return (int)v11;
+            return (int)((int)v11);
         }
 }
 

@@ -15,6 +15,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingClass
 {
@@ -82,6 +84,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class House
 {
@@ -91,8 +95,8 @@ public:
     // DECOMP_SIZECHECK(House, House, 22400);
 
     // ---- pilot methods (registry signatures)
-    int IsHumanPlayer();  // 0x50B6F0
     int ChooseHouseEnemy(int p0);  // 0x50DB00
+    int IsHumanPlayer();  // 0x50B6F0
 };
 
 // ---- globals used by this unit (registry names)
@@ -121,6 +125,8 @@ class ProgressTimer;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class VoxClass
 {
@@ -159,6 +165,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ProgressTimer
 {
@@ -168,7 +176,7 @@ public:
     // DECOMP_SIZECHECK(ProgressTimer, ProgressTimer, 24);
 
     // ---- pilot methods (registry signatures)
-    unsigned int * GetValue(int * p0);  // 0x4C93D0
+    unsigned int * GetValue(void * p0);  // 0x4C93D0
 };
 
 // ---- globals used by this unit (registry names)
@@ -197,6 +205,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CellCoord
 {
@@ -206,7 +216,7 @@ public:
     // DECOMP_SIZECHECK(CellCoord, CellCoord, 4);
 
     // ---- pilot methods (registry signatures)
-    void * To_CellObj(short * p0);  // 0x5657A0
+    void * To_CellObj(void * p0);  // 0x5657A0
 };
 
 // ---- globals used by this unit (registry names)
@@ -235,6 +245,8 @@ class VoxClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class HouseClass
 {

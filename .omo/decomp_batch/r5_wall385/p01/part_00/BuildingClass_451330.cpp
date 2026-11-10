@@ -21,12 +21,15 @@ int BuildingClass::GetCrewCount()
             if ( sideIndex == 1 )
             {
                 v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5372);
+            }
+            else
+            {
                 if ( sideIndex != 2 )
                 {
                     return (int)(0);
                 }
+                v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5376);
             }
-            v5 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5376);
         }
         else
         {

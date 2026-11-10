@@ -10,6 +10,8 @@ class FileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CCFileClass
 {
@@ -28,7 +30,7 @@ public:
     unsigned int MixFileIndex;  // 0x050
 
     // ---- pilot methods (registry signatures)
-    int SeekInternal(LONG lDistanceToMove p1, DWORD dwMoveMethod p2);  // 0x4324B0
+    int SeekInternal(long p1, unsigned long p2);  // 0x4324B0
 };
 
 #endif  // DECOMP_PILOT_CCFILECLASS_HPP
@@ -44,6 +46,8 @@ class CCFileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class FileClass
 {
@@ -69,6 +73,8 @@ class FileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BufferIO
 {
