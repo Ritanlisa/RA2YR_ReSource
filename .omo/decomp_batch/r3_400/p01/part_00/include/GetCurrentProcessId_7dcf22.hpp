@@ -14,7 +14,7 @@ public:
     // DECOMP_SIZECHECK(GetCurrentProcessId, GetCurrentProcessId, 4);
 
     // ---- pilot methods (registry signatures)
-    DWORD __stdcall 0();  // 0x7DCF22
+    unsigned long __stdcall 0();  // 0x7DCF22
 };
 
 #endif  // DECOMP_PILOT_GETCURRENTPROCESSID_HPP

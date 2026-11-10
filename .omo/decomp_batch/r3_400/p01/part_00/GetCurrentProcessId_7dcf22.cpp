@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x7DCF22 (GetCurrentProcessId::0)
 #include "GetCurrentProcessId_7dcf22.hpp"
 
-DWORD __stdcall GetCurrentProcessId::0()
+unsigned long __stdcall GetCurrentProcessId::0()
 {
         return GetCurrentProcessId();
 }

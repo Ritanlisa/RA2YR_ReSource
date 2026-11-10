@@ -3,7 +3,7 @@
 // source: decompile-results/full_export  fn 0x7D1512 (GetCurrentThreadId::0)
 #include "GetCurrentThreadId.hpp"
 
-DWORD __stdcall GetCurrentThreadId::0()
+unsigned long __stdcall GetCurrentThreadId::0()
 {
         return GetCurrentThreadId();
 }

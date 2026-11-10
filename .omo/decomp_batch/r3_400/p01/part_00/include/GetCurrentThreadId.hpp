@@ -14,7 +14,7 @@ public:
     // DECOMP_SIZECHECK(GetCurrentThreadId, GetCurrentThreadId, 4);
 
     // ---- pilot methods (registry signatures)
-    DWORD __stdcall 0();  // 0x7D1512
+    unsigned long __stdcall 0();  // 0x7D1512
 };
 
 #endif  // DECOMP_PILOT_GETCURRENTTHREADID_HPP

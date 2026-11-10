@@ -32,6 +32,13 @@ TYPE_MAP = {
     "int16_t": "short", "uint16_t": "unsigned short",
     "int32_t": "int", "uint32_t": "unsigned int",
     "int64_t": "__int64", "uint64_t": "unsigned __int64",
+    # R3 Win32 spelling aliases: the export prototypes/globals carry SDK
+    # names; without them `LONG __stdcall M()` is C2143 (LONG undeclared in
+    # a hpp that only includes string.h) and poisoned whole units.
+    "LONG": "long", "ULONG": "unsigned long", "DWORD": "unsigned long",
+    "UINT": "unsigned int", "USHORT": "unsigned short",
+    "BYTE": "unsigned char", "WORD": "unsigned short",
+    "HANDLE": "void *", "LPVOID": "void *", "LPCVOID": "const void *",
 }
 WIDTH_OF = {
     "unsigned short": 2, "short": 2, "unsigned int": 4, "int": 4,

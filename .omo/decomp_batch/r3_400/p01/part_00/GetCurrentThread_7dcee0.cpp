@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x7DCEE0 (GetCurrentThread::0)
 #include "GetCurrentThread_7dcee0.hpp"
 
-HANDLE __stdcall GetCurrentThread::0()
+void * __stdcall GetCurrentThread::0()
 {
         return GetCurrentThread();
 }
