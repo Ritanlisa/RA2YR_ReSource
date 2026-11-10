@@ -27,7 +27,7 @@ char String::Erase(int p0, int p1)
             strcpy(v8, *(const char **)this->m000);
             strcat(v8, (const char *)(p1 + v4 + this->m000));
             __3_YAXPAX_Z(*(void **)this->m000);
-            this->m000 = v8;
+            this->m000 = (unsigned char *)v8;
             result = (result & ~0xFF) | ((1) & 0xFF);
         }
         else

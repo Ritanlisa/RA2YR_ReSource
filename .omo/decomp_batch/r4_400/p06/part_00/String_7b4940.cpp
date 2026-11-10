@@ -29,7 +29,7 @@ char ** String::Reassign(const char ** p0)
                 v5 = 1;
             }
             v6 = (unsigned char *)__2_YAPAXI_Z(v5);
-            this->m000 = v6;
+            this->m000 = (unsigned char *)v6;
             *v6 = 0;
             if ( v4 )
             {

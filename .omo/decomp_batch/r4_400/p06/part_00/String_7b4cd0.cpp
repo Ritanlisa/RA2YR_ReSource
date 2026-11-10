@@ -30,7 +30,7 @@ const char ** String::Append2(char ** p0)
                 v7 = strlen(*(const char **)this->m000) + v5;
             }
             v8 = (char *)__2_YAPAXI_Z(v7);
-            this->m000 = v8;
+            this->m000 = (unsigned char *)v8;
             if ( v6 )
             {
                 strcpy(v8, v6);

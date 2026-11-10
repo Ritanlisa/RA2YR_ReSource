@@ -721,7 +721,7 @@
   "status": "PENDING"
  },
  "0x433270": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovie::BlitToTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1309,7 +1309,7 @@
   "status": "NG"
  },
  "0x486ff0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Cell::IsBuildableAdvanced",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1792,7 +1792,7 @@
   "status": "PENDING"
  },
  "0x4a0630": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ConnectionPointClass::Unadvise",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2177,7 +2177,7 @@
   "status": "PENDING"
  },
  "0x4c3d00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2541,7 +2541,7 @@
   "status": "PENDING"
  },
  "0x4fc6d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2562,7 +2562,7 @@
   "status": "PENDING"
  },
  "0x5022f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "WaypointClass::IsCoordinateUsed",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2618,7 +2618,7 @@
   "status": "PENDING"
  },
  "0x50e0e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::LostPoweredCenter",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2933,14 +2933,14 @@
   "status": "OK"
  },
  "0x526960": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::GetKeyCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x526a30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::FindKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4039,7 +4039,7 @@
   "status": "OK"
  },
  "0x5cd410": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MSBitPrintAnim::SetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4536,7 +4536,7 @@
   "status": "OK"
  },
  "0x635060": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FactoryClass::FinishProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5488,7 +5488,7 @@
   "status": "PENDING"
  },
  "0x6e6f20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingLoadQueue::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5530,7 +5530,7 @@
   "status": "PENDING"
  },
  "0x6ef610": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5999,14 +5999,14 @@
   "status": "NG"
  },
  "0x746420": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x7464e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::TransferTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6713,7 +6713,7 @@
   "status": "OK"
  },
  "0x7b1d10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 push ebx",
   "name": "AudioQueue::Cleanup",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -6741,7 +6741,7 @@
   "status": "PENDING"
  },
  "0x7b3310": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6755,7 +6755,7 @@
   "status": "PENDING"
  },
  "0x7b4940": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "String::Reassign",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6769,14 +6769,14 @@
   "status": "PENDING"
  },
  "0x7b4cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "String::Append2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x7b5020": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "String::Erase",
   "note": "decomp_batch r2: COMPILE_FAIL",

@@ -78,7 +78,7 @@
    "addr": "0x7b3310",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p06\\part_00\\UDPInterfaceClass.cpp(11) : error C2065: 'SOCKET' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p06\\part_00\\UDPInterfaceCla",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p06\\part_00\\UDPInterfaceClass.cpp(21) : error C2039: 'Socket' : is not a member of 'UDPInterfaceClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p06\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "UDPInterfaceClass::CheckStatus",
@@ -176,7 +176,7 @@
    "unit": "String",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/8",
+   "sites": "7/9",
    "rule_violations": 3
   },
   {
@@ -191,7 +191,7 @@
    "unit": "String",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "7/9",
+   "sites": "8/10",
    "rule_violations": 3
   },
   {
@@ -206,7 +206,7 @@
    "unit": "String",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "7/11",
+   "sites": "8/12",
    "rule_violations": 5
   },
   {

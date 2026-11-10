@@ -31,7 +31,7 @@ const char ** String::Append2(char ** p0)
                 v7 = strlen(*(const char **)this->m000) + v5;
             }
             v8 = (char *)__2_YAPAXI_Z(v7);
-            this->m000 = v8;
+            this->m000 = (unsigned char *)v8;
             if ( v6 )
             {
                 strcpy(v8, v6);
@@ -80,7 +80,7 @@ char ** String::Reassign(const char ** p0)
                 v5 = 1;
             }
             v6 = (unsigned char *)__2_YAPAXI_Z(v5);
-            this->m000 = v6;
+            this->m000 = (unsigned char *)v6;
             *v6 = 0;
             if ( v4 )
             {
@@ -119,7 +119,7 @@ char String::Erase(int p0, int p1)
             strcpy(v8, *(const char **)this->m000);
             strcat(v8, (const char *)(p1 + v4 + this->m000));
             __3_YAXPAX_Z(*(void **)this->m000);
-            this->m000 = v8;
+            this->m000 = (unsigned char *)v8;
             result = (result & ~0xFF) | ((1) & 0xFF);
         }
         else

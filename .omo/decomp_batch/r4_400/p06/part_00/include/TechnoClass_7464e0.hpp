@@ -3,6 +3,7 @@
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class FactoryClass;
+class TemporalClass;
 class UnitClass;
 
 #ifndef DECOMP_PILOT_TECHNOCLASS_HPP
@@ -38,6 +39,7 @@ extern unsigned char stru_A8EB00;
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class FactoryClass;
+class TemporalClass;
 
 #ifndef DECOMP_PILOT_UNITCLASS_HPP
 #define DECOMP_PILOT_UNITCLASS_HPP
@@ -64,6 +66,7 @@ extern unsigned char stru_A8EB00;
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class TemporalClass;
 class UnitClass;
 
 #ifndef DECOMP_PILOT_FACTORYCLASS_HPP
