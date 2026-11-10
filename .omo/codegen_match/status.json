@@ -111,6 +111,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4071c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioMixer::PlaySample",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4072c0": {
   "attempts": 3,
   "first_diff": null,
@@ -601,6 +608,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x42f4f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BaseClass::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x42f9c0": {
   "attempts": 1,
   "first_diff": null,
@@ -612,6 +626,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4324b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BufferIOFileClass::SeekInternal",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -677,6 +698,13 @@
   "name": "NeuronClass::StubReturn56",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x448070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimClass::updateAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x44d7d0": {
   "attempts": 1,
@@ -965,6 +993,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x475f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::SaveIntListToINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4766f0": {
   "attempts": 1,
   "first_diff": null,
@@ -1137,6 +1172,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MPCooperative::processTurn",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x49e400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1795,6 +1837,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Waypoint::FindByCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x509610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TriggerClass::ValidateTeamTriggerConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -2519,6 +2568,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x557d20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ListClass::Destru_vt50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x558120": {
   "attempts": 1,
   "first_diff": null,
@@ -2666,6 +2722,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x58a8f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x58b7d0": {
   "attempts": 2,
   "first_diff": null,
@@ -2677,6 +2740,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "RandomMap::GrowTiberium",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5acd30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSEngine::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x5aced0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSEngine::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -3057,6 +3134,13 @@
   "name": "ScenarioClass::distributeStartingUnits",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5e2be0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network::CountDisconnectedHouses",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5e84d0": {
   "attempts": 1,
@@ -3625,6 +3709,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65b800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadSiteClass::Tick",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x65c320": {
   "attempts": 2,
   "first_diff": null,
@@ -3680,6 +3771,13 @@
   "name": "RocketLocomotionClass::StubReturn96",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x664440": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EventClass::validateEventType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x67a730": {
   "attempts": 1,
@@ -3835,6 +3933,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x6a6a00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_245",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6a8710": {
   "attempts": 1,
   "first_diff": null,
@@ -3961,6 +4066,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x6cb830": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperClass::StopPreclickAnim",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6ce0b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperClass::Reset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6ce200": {
   "attempts": 2,
   "first_diff": null,
@@ -3988,6 +4107,13 @@
   "name": "BlowStraw_29::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6d02b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SidebarClass::LoadButtonSHPs",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6d5f60": {
   "attempts": 2,
@@ -4317,6 +4443,13 @@
   "name": "ObjectTypeClass::loadTypeMember_5717AD0",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
+ },
+ "0x71abc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FactoryClass::CompleteItem",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x71b190": {
   "attempts": 2,
@@ -4749,6 +4882,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "VeinholeMonsterClass::ProcessExpansion",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x74d670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
