@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetBuildingType@FootClass@@QAEHHD@Z",
+ "sym_key": "FootClass::SetBuildingType",
+ "size": 116,
+ "link_base": 0,
+ "bytes_hex": "8b4424045683f8ff8bf1751e33c9898620050000888e86060000898e28050000898e240500005ec208008a4c240c898620050000888e860600008b15000000000fbec9518b8c8210020000e8000000008b54240c33c98a480580e2000bcac78624050000000000008bc18986280500005ec20800",
+ "relocs": [
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?GetElement@Array@@QAEHH@Z",
+   "sym_key": "Array::GetElement"
+  }
+ ]
+}
