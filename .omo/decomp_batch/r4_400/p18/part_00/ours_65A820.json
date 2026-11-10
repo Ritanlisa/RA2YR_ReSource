@@ -1,0 +1,33 @@
+{
+ "symbol": "?ProcessGroupInput@ObjectClass@@QAEHHHH@Z",
+ "sym_key": "ObjectClass::ProcessGroupInput",
+ "size": 346,
+ "link_base": 0,
+ "bytes_hex": "538bd98b4c240c568b83d4000000573bc874188b93d80000008983d80000008993dc000000898bd400000083f903754c8b8be800000033f685c97e218b8330d200008b5424103b107413463bf10f8dfa0000008b780483c0043bd775ed8bcbe8000000008b83e40000005fc704b0000000005eb8010000005bc20c0083f9020f85c80000008a436c84c00f84bd0000008b4c24108b891c020000e80000000084db750b5f5eb80a0000005bc20c0085db7424f6431401741e8b8bd0f10100e8000000008b54241084d2750f5f5eb80a0000005bc20c008b54241085d2742e8b83e800000033ff85c07e088bb330d20000eb048b7424103916740347ebfd85c07e0b5f5eb8010000005bc20c008bb3e800000033c985f67f0b5f5eb80a0000005bc20c008b9b30d200008bc3833b00740f413bce7de38b780483c00485ff75f15f89148b5eb8010000005bc20c008bcbe8000000005f5e5bc20c00",
+ "relocs": [
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?ProcessInputKey@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ProcessInputKey"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NXZ",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?IsAlliedWithObjectHouse@Object@@QAE_NXZ",
+   "sym_key": "Object::IsAlliedWithObjectHouse"
+  },
+  {
+   "off": 336,
+   "type": "REL32",
+   "sym": "?ProcessInputKey@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::ProcessInputKey"
+  }
+ ]
+}
