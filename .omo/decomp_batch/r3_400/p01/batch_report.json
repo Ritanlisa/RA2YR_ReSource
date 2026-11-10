@@ -200,7 +200,7 @@
    "addr": "0x536b80",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.vc6-8447\\INCLUDE\\string.h(68) : error C2371: 'wchar_t' : redefinition; different basic types; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p01\\part_00\\StopCommandClass.cpp(8) : error ",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p01\\part_00\\StopCommandClass.cpp(8) : error C2065: 'UI_Create_730EA0' : undeclared identifier",
    "first_diff": null,
    "pathology": null,
    "name": "CreateTeamCommand::performAction_74",
