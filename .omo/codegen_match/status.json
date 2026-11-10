@@ -14,14 +14,14 @@
   "status": "OK"
  },
  "0x406520": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractTypeClass::sub_406520",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x406530": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractTypeClass::sub_406530",
   "note": "decomp_batch r2: MATCH",
@@ -91,14 +91,14 @@
   "status": "PENDING"
  },
  "0x408070": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Audio::IsSoundPlaying",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x408140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x20]",
   "name": "ThemeClass::GetValue",
   "note": "decomp_batch r2: MISMATCH/const_fold",
@@ -189,7 +189,7 @@
   "status": "OK"
  },
  "0x40d280": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MouseClass::ProcessInput",
   "note": "decomp_batch r2: MATCH",
@@ -273,7 +273,7 @@
   "status": "PENDING"
  },
  "0x41b9e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::updateROFTimer",
   "note": "decomp_batch r2: MATCH",
@@ -301,7 +301,7 @@
   "status": "NG"
  },
  "0x41c010": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::IsDisguised",
   "note": "decomp_batch r2: MATCH",
@@ -315,7 +315,7 @@
   "status": "NG"
  },
  "0x41c070": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AircraftClass::CheckDockState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -336,7 +336,7 @@
   "status": "OK"
  },
  "0x41c200": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AircraftClass::CheckMissionFail",
   "note": "decomp_batch r2: MATCH",
@@ -371,7 +371,7 @@
   "status": "OK"
  },
  "0x41cfa0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0xa4]",
   "name": "ObjectClass::GetMember41_2",
   "note": "decomp_batch r2: MISMATCH/const_fold",
@@ -392,7 +392,7 @@
   "status": "OK"
  },
  "0x41cfd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AircraftTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -441,7 +441,7 @@
   "status": "OK"
  },
  "0x425520": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::updateLayer",
   "note": "decomp_batch r2: MATCH",
@@ -490,7 +490,7 @@
   "status": "OK"
  },
  "0x427290": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AnimFile::Stub",
   "note": "decomp_batch r2: MATCH",
@@ -504,7 +504,7 @@
   "status": "OK"
  },
  "0x428e60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AnimTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -574,7 +574,7 @@
   "status": "OK"
  },
  "0x4581f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::MissionStubReturnZero6",
   "note": "decomp_batch r2: MATCH",
@@ -616,14 +616,14 @@
   "status": "OK"
  },
  "0x459ee0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::GetTypePtr",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x465d70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::processPowerState",
   "note": "decomp_batch r2: MATCH",
@@ -644,14 +644,14 @@
   "status": "OK"
  },
  "0x465db0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x46b270": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::updateHealthBar",
   "note": "decomp_batch r2: MATCH",
@@ -3822,7 +3822,7 @@
   "status": "OK"
  },
  "0x777b50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GameOptions::GetEntry",
   "note": "decomp_batch r2: MATCH",
