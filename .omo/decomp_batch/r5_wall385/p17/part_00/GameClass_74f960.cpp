@@ -12,14 +12,15 @@ short GameClass::ReadVersionFile()
             if ( (unsigned char)((FileClass *)(&v5))->Open(0) )
             {
                 ((FileClass *)(&v5))->Read(this->m02A, 16);
-            }
-            for ( this->m039[0] = 0;
+                for ( this->m039[0] = 0;
                 this->m008[strlen((char *)(this->m02A)) + 33] == 13;
                 this->m008[strlen((char *)(this->m02A)) + 33] = 0 )
-            {
+                {
+                }
             }
             else
             {
+                this->m02A[0] = 0;
             }
             ((RawFileClass *)(&v5))->Dtor();
             v2 = this->__pad_024[8];

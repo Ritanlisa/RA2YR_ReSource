@@ -10,6 +10,8 @@ class RawFileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class GameClass
 {
@@ -48,6 +50,8 @@ class FileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class RawFileClass
 {
@@ -57,8 +61,8 @@ public:
     // DECOMP_SIZECHECK(RawFileClass, RawFileClass, 28);
 
     // ---- pilot methods (registry signatures)
-    RawFileClass * Construct(int p0);  // 0x65CA80
     void Dtor();  // 0x65CA00
+    RawFileClass * Construct(int p0);  // 0x65CA80
 };
 
 // ---- globals used by this unit (registry names)
@@ -76,6 +80,8 @@ class RawFileClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class FileClass
 {
@@ -85,8 +91,8 @@ public:
     // DECOMP_SIZECHECK(FileClass, FileClass, 4);
 
     // ---- pilot methods (registry signatures)
-    char Open(int p0);  // 0x65CBF0
     unsigned long Read(int p0, int p1);  // 0x65CCE0
+    char Open(int p0);  // 0x65CBF0
 };
 
 // ---- globals used by this unit (registry names)

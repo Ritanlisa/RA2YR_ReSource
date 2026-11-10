@@ -39,7 +39,7 @@
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/5",
+   "sites": "6/6",
    "rule_violations": 1
   },
   {
@@ -54,14 +54,14 @@
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "6/6",
+   "sites": "7/7",
    "rule_violations": 0
   },
   {
    "addr": "0x746810",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\UnitClass.cpp(11) : error C2664: 'Update' : cannot convert parameter 1 from 'int *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\UnitClass.cpp(13) : error C2664: 'Update' : cannot convert parameter 1 from 'int *' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "UnitClass::PerFrameUpdate",
@@ -76,7 +76,7 @@
    "addr": "0x7474b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\include\\UnitTypeClass.hpp(22) : error C2061: syntax error : identifier 'LPVOID'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\U",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\UnitTypeClass.cpp(13) : error C2664: 'Construct' : cannot convert parameter 2 from 'short *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
    "first_diff": null,
    "pathology": null,
    "name": "UnitTypeClass::CreateUnit",
@@ -84,14 +84,14 @@
    "unit": "UnitTypeClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/9",
+   "sites": "3/8",
    "rule_violations": 0
   },
   {
    "addr": "0x74c030",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\_VectorClass_E.cpp(13) : error C2039: 'm_C' : is not a member of '_VectorClass_E'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\_VectorClass_E.cpp(16) : error C2440: '=' : cannot convert from 'int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_E::Release",
@@ -99,14 +99,14 @@
    "unit": "_VectorClass_E",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/14",
-   "rule_violations": 11
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x74d670",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\ObjectClass.cpp(12) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\part_00\\ObjectClass.cpp(13) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p17\\",
    "first_diff": null,
    "pathology": null,
    "name": "ObjectClass::IsCellSuitableForPlacement",
@@ -114,7 +114,7 @@
    "unit": "ObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "8/18",
+   "sites": "8/17",
    "rule_violations": 0
   },
   {
@@ -174,7 +174,7 @@
    "unit": "VoxelModel",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "2/15",
+   "sites": "3/16",
    "rule_violations": 24
   },
   {
@@ -234,7 +234,7 @@
    "unit": "VoxelRenderer",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "14/28",
+   "sites": "15/29",
    "rule_violations": 33
   },
   {

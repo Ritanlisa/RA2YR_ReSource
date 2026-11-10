@@ -9,7 +9,8 @@ char ObjectClass::IsCellSuitableForPlacement()
         {
             return (char)(1);
         }
-        int v2 = stru_B1D290.uniqueId - 1;
+        int v2;
+        v2 = stru_B1D290.uniqueId - 1;
         char * v3;
         __int64 v4;
         __int64 v5;
@@ -26,49 +27,49 @@ char ObjectClass::IsCellSuitableForPlacement()
             if ( v6 >= 1 )
             {
                 v8 = -1;
-            }
-            LABEL_10:
+                LABEL_10:
           v9 = -1;
-            while ( 1 )
-            {
-                v11 = (v11 & ~0xFF) | ((v9 + ((this->vfptr) & 0xFFFF)) & 0xFF);
-            }
-            v11 = (v11 & ~0xFF) | ((v8 + ((this->vfptr >> 16) & 0xFFFF)) & 0xFF);
-            *(unsigned int *)v12 = v11;
-            v10 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v12);
-            if ( v10[284] || *((unsigned int *)v10 + 59) || (char)v10[283] != v6 )
-            {
-                break;
-            }
-            if ( ++v9 > 1 )
-            {
-                if ( ++v8 <= 1 )
+                while ( 1 )
                 {
-                    goto LABEL_10;
+                    v11 = (v11 & ~0xFF) | ((v9 + ((this->vfptr) & 0xFFFF)) & 0xFF);
+                    v11 = (v11 & ~0xFF) | ((v8 + ((this->vfptr >> 16) & 0xFFFF)) & 0xFF);
+                    *(unsigned int *)v12 = v11;
+                    v10 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v12);
+                    if ( v10[284] || *((unsigned int *)v10 + 59) || (char)v10[283] != v6 )
+                    {
+                        break;
+                    }
+                    if ( ++v9 > 1 )
+                    {
+                        if ( ++v8 <= 1 )
+                        {
+                            goto LABEL_10;
+                        }
+                        return (char)(1);
+                    }
                 }
             }
-            return (char)(1);
         }
         else
         {
-            v3 = (char *)stru_B1D290.vfptr1 + 4 * v2;
+            v3 = (char *)((char **)stru_B1D290)[1] + 4 * v2;
             while ( 1 )
             {
                 v4 = (short)(((this->vfptr) & 0xFFFF)) - *(short *)(*(unsigned int *)v3 + 248);
-            }
-            if ( ((HIDWORD(v4) ^ v4) - HIDWORD(v4)) < 3 )
-            {
-                v5 = (short)(((this->vfptr >> 16) & 0xFFFF)) - *(short *)(*(unsigned int *)v3 + 250);
-            }
-            if ( ((HIDWORD(v5) ^ v5) - HIDWORD(v5)) < 3 )
-            {
-                break;
-            }
-            --v2;
-            v3 -= 4;
-            if ( v2 < 0 )
-            {
-                goto LABEL_7;
+                if ( ((HIDWORD(v4) ^ v4) - HIDWORD(v4)) < 3 )
+                {
+                    v5 = (short)(((this->vfptr >> 16) & 0xFFFF)) - *(short *)(*(unsigned int *)v3 + 250);
+                    if ( ((HIDWORD(v5) ^ v5) - HIDWORD(v5)) < 3 )
+                    {
+                        break;
+                    }
+                }
+                --v2;
+                v3 -= 4;
+                if ( v2 < 0 )
+                {
+                    goto LABEL_7;
+                }
             }
         }
         return (char)(0);

@@ -32,31 +32,30 @@ int Viewport::Clear()
                 if ( DataGlobal_B2FB64 <= DataGlobal_B2FB6C + DataGlobal_B2FB64 )
                 {
                     v3 = &g_VoxelRenderBuffer[256 * DataGlobal_B2FB64 + DataGlobal_B2FB60];
+                    v4 = DataGlobal_B2FB6C + 1;
+                    do
+                    {
+                        v5 = v3;
+                        v3 += 256;
+                        memset(v5, 0, DataGlobal_B2FB68 + 1);
+                        --v4;
+                    } while ( v4 );
+                    v1 = DataGlobal_B2FB60;
                 }
-            }
-            v4 = DataGlobal_B2FB6C + 1;
-            do v5 = v3;
-            v3 += 256;
-            memset(v5, 0, DataGlobal_B2FB68 + 1);
-            --v4;
-            while ( v4 )
-            {
-                v1 = DataGlobal_B2FB60;
             }
             if ( DataGlobal_B43180 && v2 <= DataGlobal_B2FB6C + v2 )
             {
                 v6 = DataGlobal_B2FB68 + 1;
-            }
-            v7 = &DataGlobal_B1D5E0[256 * v2 + v1];
-            v8 = DataGlobal_B2FB6C + 1;
-            do
-            memset(v7, 0, 4 * (v6 >> 2));
-            v9 = &v7[4 * (v6 >> 2)];
-            v7 += 256;
-            --v8;
-            memset(v9, 0, v6 & 3);
-            while ( v8 )
-            {
+                v7 = &DataGlobal_B1D5E0[256 * v2 + v1];
+                v8 = DataGlobal_B2FB6C + 1;
+                do
+                {
+                    memset(v7, 0, 4 * (v6 >> 2));
+                    v9 = &v7[4 * (v6 >> 2)];
+                    v7 += 256;
+                    --v8;
+                    memset(v9, 0, v6 & 3);
+                } while ( v8 );
             }
         }
         DataGlobal_B2D5E0 = 1176256512;

@@ -11,14 +11,14 @@ char VoxelRenderer::ProcessVoxelData(int p0, int p1, int p2, int p3)
         if ( *((unsigned char *)this + 50) > 1u )
         {
             v7 = (unsigned short *)(g_VoxelOffsetTable + 2);
-            do v8 = *(v7 - 1);
-            v7 += 2;
-            *(v7 - 1) = *((unsigned short *)this + 21) + v8;
-            ++v5;
-            *v7 = *(v7 - 2) + *((unsigned short *)this + 22);
-            while ( v5 < *((unsigned char*)this + 50) )
+            do
             {
-            }
+                v8 = *(v7 - 1);
+                v7 += 2;
+                *(v7 - 1) = *((unsigned short *)this + 21) + v8;
+                ++v5;
+                *v7 = *(v7 - 2) + *((unsigned short *)this + 22);
+            } while ( v5 < *((unsigned char*)this + 50) );
         }
         char result = *((unsigned char *)this + 49);
         p0 = (p0 & ~0xFF) | ((this->m018) & 0xFF);
@@ -48,79 +48,77 @@ char VoxelRenderer::ProcessVoxelData(int p0, int p1, int p2, int p3)
         VoxelRenderer * thisa;
         if ( result )
         {
-            do v28 = p0;
-            VoxelRenderer_field_0x0C = this->m00C;
-            v29 = p1;
-            v23 = 0;
-            if ( *((unsigned char *)this + 48) )
+            do
             {
-                do
-              v26 = p0;
-            }
-            v27 = p1;
-            v10 = *(unsigned int *)(this->m000 + 4 * this->m00C);
-            if ( v10 != -1 )
-            {
-                v11 = *((unsigned char*)this + 50);
-            }
-            v12 = (unsigned char*)(v10 + this->m008);
-            if ( *((unsigned char *)this + 50) )
-            {
-                do
-                    v13 = *v12;
-            }
-            v14 = v12 + 1;
-            v11 -= v13;
-            v4 = (v4 & ~0xFF) | ((g_VoxelOffsetTable[v13]) & 0xFF);
-            p0 += v4;
-            v4 = (v4 & ~0xFF) | ((((g_VoxelOffsetTable[v13] >> 16) & 0xFFFF)) & 0xFF);
-            p1 += v4;
-            v15 = *v14;
-            v16 = v14 + 1;
-            thisa = (VoxelRenderer *)p1;
-            if ( v15 )
-            {
-                v17 = v11 - v15;
-            }
-            v22 = v15;
-            v25 = v17;
-            do v17 = (v17 & ~0xFF) | ((*v16) & 0xFF);
-            v18 = p1 & 0xFF00;
-            ++v16;
-            v4 = v18 | ((p0 >> 8) & 0xFF);
-            g_VoxelRenderBuffer[v4] = v17;
-            g_VoxelRenderBuffer[((p0 >> 8) & 0xFF) | (v18 + 1)] = v17;
-            v17 = (v17 & ~0xFF) | ((*((unsigned short *)this + 21)) & 0xFF);
-            p1 = (int)&thisa->__pad_0[*((unsigned short *)this + 22)];
-            p0 += v17;
-            v19 = v22 == 1;
-            thisa = (VoxelRenderer *)p1;
-            --v22;
-            while ( v19 == 0 )
-            {
-                v11 = v25;
-            }
-            v12 = v16 + 1;
-            while ( v11 )
-            {
-                p0 = (p0 & ~0xFF) | ((v26 + *((unsigned short *)this + 15)) & 0xFF);
-            }
-            p1 = (p1 & ~0xFF) | ((v27 + *((unsigned short *)this + 16)) & 0xFF);
-            v20 = *((unsigned char*)this + 48);
-            v4 = this->m010 + this->m00C;
-            this->m00C = v4;
-            ++v23;
-            while ( v23 < v20 )
-            {
+                v28 = p0;
+                VoxelRenderer_field_0x0C = this->m00C;
+                v29 = p1;
+                v23 = 0;
+                if ( *((unsigned char *)this + 48) )
+                {
+                    do
+                    {
+                        v26 = p0;
+                        v27 = p1;
+                        v10 = *(unsigned int *)(this->m000 + 4 * this->m00C);
+                        if ( v10 != -1 )
+                        {
+                            v11 = *((unsigned char*)this + 50);
+                            v12 = (unsigned char*)(v10 + this->m008);
+                            if ( *((unsigned char *)this + 50) )
+                            {
+                                do
+                                {
+                                    v13 = *v12;
+                                    v14 = v12 + 1;
+                                    v11 -= v13;
+                                    v4 = (v4 & ~0xFF) | ((g_VoxelOffsetTable[v13]) & 0xFF);
+                                    p0 += v4;
+                                    v4 = (v4 & ~0xFF) | ((((g_VoxelOffsetTable[v13] >> 16) & 0xFFFF)) & 0xFF);
+                                    p1 += v4;
+                                    v15 = *v14;
+                                    v16 = (unsigned char *)(v14 + 1);
+                                    thisa = (VoxelRenderer *)p1;
+                                    if ( v15 )
+                                    {
+                                        v17 = v11 - v15;
+                                        v22 = v15;
+                                        v25 = v17;
+                                        do
+                                        {
+                                            v17 = (v17 & ~0xFF) | ((*v16) & 0xFF);
+                                            v18 = p1 & 0xFF00;
+                                            ++v16;
+                                            v4 = v18 | ((p0 >> 8) & 0xFF);
+                                            g_VoxelRenderBuffer[v4] = v17;
+                                            g_VoxelRenderBuffer[((p0 >> 8) & 0xFF) | (v18 + 1)] = v17;
+                                            v17 = (v17 & ~0xFF) | ((*((unsigned short *)this + 21)) & 0xFF);
+                                            p1 = (int)&thisa->__pad_0[*((unsigned short *)this + 22)];
+                                            p0 += v17;
+                                            v19 = v22 == 1;
+                                            thisa = (VoxelRenderer *)p1;
+                                            --v22;
+                                        } while ( v19 == 0 );
+                                        v11 = v25;
+                                    }
+                                    v12 = (unsigned char*)(v16 + 1);
+                                } while ( v11 );
+                            }
+                        }
+                        p0 = (p0 & ~0xFF) | ((v26 + *((unsigned short *)this + 15)) & 0xFF);
+                        p1 = (p1 & ~0xFF) | ((v27 + *((unsigned short *)this + 16)) & 0xFF);
+                        v20 = *((unsigned char*)this + 48);
+                        v4 = this->m010 + this->m00C;
+                        this->m00C = v4;
+                        ++v23;
+                    } while ( v23 < v20 );
+                }
                 p0 = (p0 & ~0xFF) | ((v28 + *((unsigned short *)this + 18)) & 0xFF);
-            }
-            p1 = (p1 & ~0xFF) | ((v29 + *((unsigned short *)this + 19)) & 0xFF);
-            v21 = *((unsigned char*)this + 49);
-            this->m00C = VoxelRenderer_field_0x0C + this->m014;
-            result = ++v24;
-            while ( v24 < v21 )
-            {
-            }
+                p1 = (p1 & ~0xFF) | ((v29 + *((unsigned short *)this + 19)) & 0xFF);
+                v21 = *((unsigned char*)this + 49);
+                this->m00C = VoxelRenderer_field_0x0C + this->m014;
+                result = ++v24;
+            } while ( v24 < v21 );
         }
         return (char)(result);
 }

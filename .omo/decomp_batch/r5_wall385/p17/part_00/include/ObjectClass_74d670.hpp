@@ -9,6 +9,8 @@ class CellCoord;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ObjectClass
 {
@@ -25,7 +27,7 @@ public:
 // ---- globals used by this unit (registry names)
 extern unsigned int g_IKnowWhatImDoing;
 extern char stru_87F5F0[];
-extern unsigned char stru_B1D290;
+extern char stru_B1D290[];
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int HIDWORD(...);
@@ -39,6 +41,8 @@ extern int HIDWORD(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class CellCoord
 {
@@ -48,13 +52,13 @@ public:
     // DECOMP_SIZECHECK(CellCoord, CellCoord, 4);
 
     // ---- pilot methods (registry signatures)
-    void * To_CellObj(short * p0);  // 0x5657A0
+    void * To_CellObj(void * p0);  // 0x5657A0
 };
 
 // ---- globals used by this unit (registry names)
 extern unsigned int g_IKnowWhatImDoing;
 extern char stru_87F5F0[];
-extern unsigned char stru_B1D290;
+extern char stru_B1D290[];
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int HIDWORD(...);

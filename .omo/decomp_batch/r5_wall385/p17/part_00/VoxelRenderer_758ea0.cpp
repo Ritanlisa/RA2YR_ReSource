@@ -13,8 +13,10 @@ char VoxelRenderer::ProjectVertex(float p0, float p1, float p2, char p3)
         {
             v6 = (v6 & ~0xFF) | ((1) & 0xFF);
         }
-        float v15 = 100000.0;
-        int v7 = 1;
+        float v15;
+        v15 = 100000.0;
+        int v7;
+        v7 = 1;
         int i;
         int v9;
         unsigned char * v10;
@@ -42,8 +44,8 @@ char VoxelRenderer::ProjectVertex(float p0, float p1, float p2, char p3)
             if ( v13 < v15 )
             {
                 v15 = v13;
+                v6 = (v6 & ~0xFF) | ((v7) & 0xFF);
             }
-            v6 = (v6 & ~0xFF) | ((v7) & 0xFF);
             LABEL_13:
         ++v7;
         }

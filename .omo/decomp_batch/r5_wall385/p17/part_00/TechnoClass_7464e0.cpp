@@ -8,14 +8,18 @@ int TechnoClass::TransferTurret(int * p0)
         {
             return (int)(((UnitClass *)(this))->SetTurret(0));
         }
-        TemporalClass * temporalUsing = this->temporalUsing;
+        TemporalClass * temporalUsing;
+        temporalUsing = this->temporalUsing;
         if ( temporalUsing == 0 )
         {
             return (int)(((UnitClass *)(this))->SetTurret(0));
         }
-        int v4 = this->diskLaserTimer[0];
-        int v5 = this->diskLaserTimer[2];
-        int v6 = 0;
+        int v4;
+        v4 = this->diskLaserTimer[0];
+        int v5;
+        v5 = this->diskLaserTimer[2];
+        int v6;
+        v6 = 0;
         if ( v4 == -1 )
         {
             goto LABEL_6;
@@ -29,8 +33,9 @@ int TechnoClass::TransferTurret(int * p0)
         }
         p0[157] = (int)temporalUsing;
         this->temporalUsing->creationFrame = (int)p0;
-        this->temporalUsing = 0;
-        FactoryClass * v7 = (FactoryClass *)p0[157];
+        this->temporalUsing = (TemporalClass *)(0);
+        FactoryClass * v7;
+        v7 = (FactoryClass *)p0[157];
         if ( v7 && v7->production[1] )
         {
             ((FactoryClass *)(v7))->CompleteItem();

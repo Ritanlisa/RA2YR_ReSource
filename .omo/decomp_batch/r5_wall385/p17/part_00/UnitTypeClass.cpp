@@ -3,21 +3,21 @@
 // source: decompile-results/full_export  fn 0x7474B0 (UnitTypeClass::CreateUnit)
 #include "UnitTypeClass.hpp"
 
-char UnitTypeClass::CreateUnit(short * p1, LPVOID ppv p2)
+char UnitTypeClass::CreateUnit(short * p1, void * p2)
 {
         int * v4 = (int *)__2_YAPAXI_Z(0x8E8u);
         if ( v4 == 0 )
         {
             return (char)(0);
         }
-        int * v5 = (int *)((UnitClass *)(v4))->Construct((int)this, ppv);
+        int * v5 = (int *)((UnitClass *)(v4))->Construct((int)this, p1);
         if ( v5 == 0 )
         {
             return (char)(0);
         }
-        ppv = (ppv & ~0xFF) | ((0) & 0xFF);
+        p1 = (p1 & ~0xFF) | ((0) & 0xFF);
         char v6 = ((Random *)(&g_ScenarioClass_Instance[14].NeedsSaveOrLink))->State();
-        unsigned int v7 = (unsigned int)ppv;
+        unsigned int v7 = (unsigned int)p1;
         unsigned short v8 = (v8 & ~0xFF) | ((0) & 0xFF);
         v8 = (v8 & ~0xFF) | ((v6) & 0xFF);
         ((v7 >> 8) & 0xFF) = 0;

@@ -5978,7 +5978,7 @@
   "status": "NG"
  },
  "0x736d50": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::IsC4AnimationActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5999,21 +5999,21 @@
   "status": "NG"
  },
  "0x746420": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7464e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::TransferTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x746810": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "UnitClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6041,7 +6041,7 @@
   "status": "OK"
  },
  "0x7474b0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6132,7 +6132,7 @@
   "status": "OK"
  },
  "0x74c030": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_E::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6146,7 +6146,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x74d670": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6174,14 +6174,14 @@
   "status": "OK"
  },
  "0x74f960": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x74fa20": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6209,56 +6209,56 @@
   "status": "COMPILE_FAIL"
  },
  "0x753e00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756dd0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756f80": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757790": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757e70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x758030": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x758ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+10 push esi",
   "name": "VoxelRenderer::ProjectVertex",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -6307,14 +6307,14 @@
   "status": "OK"
  },
  "0x75edf0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::BlendShadowColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x75f140": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::loadSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6335,7 +6335,7 @@
   "status": "OK"
  },
  "0x760190": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::BlendColor",
   "note": "decomp_batch r2: COMPILE_FAIL",

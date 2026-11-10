@@ -5,14 +5,18 @@
 int TechnoClass::CaptureTurret(int * p0)
 {
         int (__stdcall **vtable0)(TechnoClass *, int);
-        TemporalClass * v3 = (TemporalClass *)p0[157];
+        TemporalClass * v3;
+        v3 = (TemporalClass *)p0[157];
         if ( v3 == 0 )
         {
             goto LABEL_9;
         }
-        int v4 = p0[187];
-        int v5 = p0[189];
-        int v6 = 0;
+        int v4;
+        v4 = p0[187];
+        int v5;
+        v5 = p0[189];
+        int v6;
+        v6 = 0;
         if ( v4 == -1 )
         {
             goto LABEL_5;
@@ -24,7 +28,7 @@ int TechnoClass::CaptureTurret(int * p0)
         if ( v5 )
           v6 = 1;
         }
-        this->temporalUsing = v3;
+        this->temporalUsing = (TemporalClass *)(v3);
         v3->creationFrame = (int)this;
         p0[157] = 0;
         ((UnitClass *)(this))->SetTurret(7u);

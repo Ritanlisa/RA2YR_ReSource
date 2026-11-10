@@ -44,14 +44,18 @@ bool TechnoClass::IsC4AnimationActive()
 int TechnoClass::CaptureTurret(int * p0)
 {
         int (__stdcall **vtable0)(TechnoClass *, int);
-        TemporalClass * v3 = (TemporalClass *)p0[157];
+        TemporalClass * v3;
+        v3 = (TemporalClass *)p0[157];
         if ( v3 == 0 )
         {
             goto LABEL_9;
         }
-        int v4 = p0[187];
-        int v5 = p0[189];
-        int v6 = 0;
+        int v4;
+        v4 = p0[187];
+        int v5;
+        v5 = p0[189];
+        int v6;
+        v6 = 0;
         if ( v4 == -1 )
         {
             goto LABEL_5;
@@ -63,7 +67,7 @@ int TechnoClass::CaptureTurret(int * p0)
         if ( v5 )
           v6 = 1;
         }
-        this->temporalUsing = v3;
+        this->temporalUsing = (TemporalClass *)(v3);
         v3->creationFrame = (int)this;
         p0[157] = 0;
         ((UnitClass *)(this))->SetTurret(7u);
@@ -94,14 +98,18 @@ int TechnoClass::TransferTurret(int * p0)
         {
             return (int)(((UnitClass *)(this))->SetTurret(0));
         }
-        TemporalClass * temporalUsing = this->temporalUsing;
+        TemporalClass * temporalUsing;
+        temporalUsing = this->temporalUsing;
         if ( temporalUsing == 0 )
         {
             return (int)(((UnitClass *)(this))->SetTurret(0));
         }
-        int v4 = this->diskLaserTimer[0];
-        int v5 = this->diskLaserTimer[2];
-        int v6 = 0;
+        int v4;
+        v4 = this->diskLaserTimer[0];
+        int v5;
+        v5 = this->diskLaserTimer[2];
+        int v6;
+        v6 = 0;
         if ( v4 == -1 )
         {
             goto LABEL_6;
@@ -115,8 +123,9 @@ int TechnoClass::TransferTurret(int * p0)
         }
         p0[157] = (int)temporalUsing;
         this->temporalUsing->creationFrame = (int)p0;
-        this->temporalUsing = 0;
-        FactoryClass * v7 = (FactoryClass *)p0[157];
+        this->temporalUsing = (TemporalClass *)(0);
+        FactoryClass * v7;
+        v7 = (FactoryClass *)p0[157];
         if ( v7 && v7->production[1] )
         {
             ((FactoryClass *)(v7))->CompleteItem();
