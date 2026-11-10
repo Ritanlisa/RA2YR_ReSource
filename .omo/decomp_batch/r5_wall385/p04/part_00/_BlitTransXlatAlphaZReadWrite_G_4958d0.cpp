@@ -4,7 +4,6 @@
 
 unsigned int * _BlitTransXlatAlphaZReadWrite_G::AddRef(unsigned short * p0, unsigned char * p1, int p2, int p3, unsigned short * p4, unsigned short * p5, int p6, int p7)
 {
-        unsigned int *__stdcall ((BlitTransXlatAlphaZReadWrite_ushort *)(_BlitTransXlatAlphaZReadWrite_G this->m000))->AddRef(unsigned short *p0, unsigned char *p1, int p2, int p3, unsigned short *p4, unsigned short *p5, int p6, int p7);
         int v12 = (261 * (p6 <= 0 ? 0 : p6)) >> 11;
         if ( v12 > 254 )
         {
@@ -20,26 +19,27 @@ unsigned int * _BlitTransXlatAlphaZReadWrite_G::AddRef(unsigned short * p0, unsi
             result = &g_ZBufferDescriptor->m_Stream;
             v16 = (unsigned short *)p2;
             do
-          if ( v14 < (unsigned short)*p4 && *p1 )
-            *p0 = *(unsigned short *)(this->m003[0] + 2 * ((unsigned char)*p1 | v17[*p5]));
-            v14 = p3;
-            *p4 = p3;
-            result = &g_ZBufferDescriptor->m_Stream;
-            ++p4;
-            ++p0;
-            ++p1;
-            if ( (unsigned int)p4 >= result[7] )
             {
-                p4 = (unsigned short *)((char *)p4 - result[8]);
-            }
-            if ( (unsigned int)++p5 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
-            {
-                p5 = (unsigned short *)((char *)p5 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
-            }
-            v16 = (unsigned short *)((char *)v16 - 1);
-            while ( v16 )
-            {
-            }
+                if ( v14 < (unsigned short)*p4 && *p1 )
+                {
+                    *p0 = *(unsigned short *)(this->m004[0] + 2 * ((unsigned char)*p1 | v17[*p5]));
+                    v14 = p3;
+                    *p4 = p3;
+                    result = &g_ZBufferDescriptor->m_Stream;
+                }
+                ++p4;
+                ++p0;
+                ++p1;
+                if ( (unsigned int)p4 >= result[7] )
+                {
+                    p4 = (unsigned short *)((char *)p4 - result[8]);
+                }
+                if ( (unsigned int)++p5 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+                {
+                    p5 = (unsigned short *)((char *)p5 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
+                }
+                v16 = (unsigned short *)((char *)v16 - 1);
+            } while ( v16 );
         }
         return (unsigned int *)(result);
 }

@@ -24,15 +24,17 @@ unsigned short * _RLEBlitTransXlatAlpha_G::AddRef(int p0, unsigned char * p1, in
         else
         {
             do
-          if ( *p1++ )
-            --v15;
-            else
             {
-            }
-            while ( v15 > 0 )
-            {
-                v18 = -v15;
-            }
+                if ( *p1++ )
+                {
+                    --v15;
+                }
+                else
+                {
+                    v15 -= *p1++;
+                }
+            } while ( v15 > 0 );
+            v18 = -v15;
             v19 = p2 - v18;
             result = &p6[v18];
             v13 = p0 + 2 * v18;
@@ -51,23 +53,24 @@ unsigned short * _RLEBlitTransXlatAlpha_G::AddRef(int p0, unsigned char * p1, in
             if ( v20 )
             {
                 v13 += 2;
+                v23 = v20 | *(unsigned short *)&v25[2 * *result];
+                --v19;
+                ++result;
+                *(unsigned short *)(v13 - 2) = *(unsigned short *)(this->m004[0] + 2 * v23);
+                v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
             }
-            v23 = v20 | *(unsigned short *)&v25[2 * *result];
-            --v19;
-            ++result;
-            *(unsigned short *)(v13 - 2) = *(unsigned short *)(this->m003[0] + 2 * v23);
-            v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
-            v19 -= v21;
-            v22 = 2 * v21;
-            v13 += v22;
-            result = (unsigned short *)((char *)result + v22);
+            else
+            {
+                v21 = *p1++;
+                v19 -= v21;
+                v22 = 2 * v21;
+                v13 += v22;
+                result = (unsigned short *)((char *)result + v22);
+            }
             if ( (unsigned int)result >= *(unsigned int *)(v16 + 28) )
             {
                 result = (unsigned short *)((char *)result - *(unsigned int *)(v16 + 32));
             }
-        }
-        else
-        {
         }
         return (unsigned short *)(result);
 }

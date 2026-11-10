@@ -19,15 +19,17 @@ int _RLEBlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite(int p0, unsigned in
         else
         {
             do
-          if ( *(unsigned char *)p1++ )
-            --result;
-            else
             {
-            }
-            while ( result > 0 )
-            {
-                v18 = -result;
-            }
+                if ( *(unsigned char *)p1++ )
+                {
+                    --result;
+                }
+                else
+                {
+                    result -= *(unsigned char*)p1++;
+                }
+            } while ( result > 0 );
+            v18 = -result;
             v19 = p2 - v18;
             v14 = p0 + 2 * v18;
             result = (int)&p5[v18];
@@ -53,44 +55,46 @@ int _RLEBlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite(int p0, unsigned in
             if ( v20 )
             {
                 result = p4 - *p9;
+                if ( result >= *v12 )
+                {
+                    v15 = g_ZBufferDescriptor;
+                    ++p9;
+                    v14 += 2;
+                    ++v12;
+                }
+                else
+                {
+                    v14 += 2;
+                    p1 = (p1 & ~0xFF) | ((this->m_8) & 0xFF);
+                    m_4 = this->m_4;
+                    ++v12;
+                    m_4 = (m_4 & ~0xFF) | ((*(unsigned short *)(m_4 + 2 * v27) >> 2) & 0xFF);
+                    v22 = p1 & m_4;
+                    v23 = 3 * v22;
+                    v22 = (v22 & ~0xFF) | ((*(unsigned short *)(v14 - 2) >> 2) & 0xFF);
+                    v24 = p1 & v22;
+                    p1 = (unsigned int)v28;
+                    v25 = v24 + v23;
+                    *(unsigned short *)(v14 - 2) = v25;
+                    v25 = (v25 & ~0xFF) | ((*p9) & 0xFF);
+                    result = p4 - v25;
+                    ++p9;
+                    *(v12 - 1) = p4 - v25;
+                    v15 = g_ZBufferDescriptor;
+                }
+                --v19;
             }
-            if ( result >= *v12 )
+            else
             {
-                v15 = g_ZBufferDescriptor;
+                result = (result & ~0xFF) | ((*(unsigned char *)p1++) & 0xFF);
+                result = (unsigned char)result;
+                v19 -= (unsigned char)result;
+                v14 += 2 * (unsigned char)result;
             }
-            ++p9;
-            v14 += 2;
-            ++v12;
-            p1 = (p1 & ~0xFF) | ((this->m_8) & 0xFF);
-            m_4 = this->m_4;
-            ++v12;
-            m_4 = (m_4 & ~0xFF) | ((*(unsigned short *)(m_4 + 2 * v27) >> 2) & 0xFF);
-            v22 = p1 & m_4;
-            v23 = 3 * v22;
-            v22 = (v22 & ~0xFF) | ((*(unsigned short *)(v14 - 2) >> 2) & 0xFF);
-            v24 = p1 & v22;
-            p1 = (unsigned int)v28;
-            v25 = v24 + v23;
-            *(unsigned short *)(v14 - 2) = v25;
-            v25 = (v25 & ~0xFF) | ((*p9) & 0xFF);
-            result = p4 - v25;
-            ++p9;
-            *(v12 - 1) = p4 - v25;
-            v15 = g_ZBufferDescriptor;
-            --v19;
-            result = (unsigned char)result;
-            v19 -= (unsigned char)result;
-            v14 += 2 * (unsigned char)result;
             if ( (unsigned int)v12 >= v15[1].Stream_field_08 )
             {
                 v12 = (unsigned short *)((char *)v12 - v15[1].Stream_field_0C);
             }
-        }
-        else
-        {
-        }
-        else
-        {
         }
         return (int)(result);
 }

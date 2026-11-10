@@ -5,7 +5,6 @@
 
 int _BlitTransLucent50AlphaZReadWarp_G::AddRef(unsigned short * p0, unsigned char * p1, int p2, int p3, unsigned short * p4, unsigned short * p5, int p6, int p7)
 {
-        int __stdcall ((BlitTransLucent50AlphaZReadWarp_ushort *)(_BlitTransLucent50AlphaZReadWarp_G this->m000))->AddRef(unsigned short *p0, unsigned char *p1, int p2, int p3, unsigned short *p4, unsigned short *p5, int p6, int p7);
         _BlitTransLucent50AlphaZReadWarp_G * v18 = this;
         int v11 = (261 * (p6 <= 0 ? 0 : p6)) >> 11;
         if ( v11 > 254 )
@@ -23,31 +22,31 @@ int _BlitTransLucent50AlphaZReadWarp_G::AddRef(unsigned short * p0, unsigned cha
         {
             v14 = g_ZBufferDescriptor;
             v19 = (unsigned short *)p2;
-            do v15 = *p4++;
-            if ( p3 < v15 && *p1 )
+            do
             {
-                m_C = this->m_C;
-            }
-            this = v18;
-            *p0 = (m_C & (p0[p7] >> 1)) + (m_C & (*(unsigned short *)(v18->m_4 + 2 * ((unsigned char)*p1 | v20[*p5])) >> 1));
-            v14 = g_ZBufferDescriptor;
-            ++p0;
-            ++p1;
-            if ( (unsigned int)p4 >= v14[1].Stream_field_08 )
-            {
-                p4 = (unsigned short *)((char *)p4 - v14[1].Stream_field_0C);
-            }
-            v17 = p5 + 1;
-            if ( (unsigned int)(p5 + 1) >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
-            {
-                v17 = (unsigned short *)((char *)v17 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
-            }
-            p5 = v17;
-            result = (int)v19 - 1;
-            v19 = (unsigned short *)((char *)v19 - 1);
-            while ( v19 )
-            {
-            }
+                v15 = *p4++;
+                if ( p3 < v15 && *p1 )
+                {
+                    m_C = this->m_C;
+                    this = v18;
+                    *p0 = (m_C & (p0[p7] >> 1)) + (m_C & (*(unsigned short *)(v18->m_4 + 2 * ((unsigned char)*p1 | v20[*p5])) >> 1));
+                    v14 = g_ZBufferDescriptor;
+                }
+                ++p0;
+                ++p1;
+                if ( (unsigned int)p4 >= v14[1].Stream_field_08 )
+                {
+                    p4 = (unsigned short *)((char *)p4 - v14[1].Stream_field_0C);
+                }
+                v17 = p5 + 1;
+                if ( (unsigned int)(p5 + 1) >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+                {
+                    v17 = (unsigned short *)((char *)v17 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
+                }
+                p5 = v17;
+                result = (int)v19 - 1;
+                v19 = (unsigned short *)((char *)v19 - 1);
+            } while ( v19 );
         }
         return (int)(result);
 }

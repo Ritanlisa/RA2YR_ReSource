@@ -9,15 +9,14 @@ class RLEBlitTransXlatAlpha_ushort;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class _RLEBlitTransXlatAlpha_G
 {
 public:
-    union {  // overlapping views @0x000
-        int m000;
-        unsigned int m003[1];  /* element view */
-        char __pad_union_000[7];
-    };
+    int m000;  // 0x000
+    unsigned int m004[1];  /* element view */  // 0x004
 
     // ---- pilot methods (registry signatures)
     unsigned short * AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, unsigned short * p6, int p7, int p8, int p9);  // 0x4978C0
@@ -38,6 +37,8 @@ extern int __stdcall(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class RLEBlitTransXlatAlpha_ushort
 {
@@ -47,7 +48,7 @@ public:
     // DECOMP_SIZECHECK(RLEBlitTransXlatAlpha_ushort, RLEBlitTransXlatAlpha_ushort, 12);
 
     // ---- pilot methods (registry signatures)
-    unsigned short * AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, unsigned short * p6, int p7, int p8, int p9);  // 0x4978C0
+    unsigned short * AddRef(int p0, void * p1, int p2, int p3, int p4, int p5, void * p6, int p7, int p8, int p9);  // 0x4978C0
 };
 
 // ---- globals used by this unit (registry names)

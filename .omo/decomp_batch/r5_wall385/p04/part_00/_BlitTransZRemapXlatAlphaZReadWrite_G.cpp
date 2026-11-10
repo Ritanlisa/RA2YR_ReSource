@@ -5,14 +5,13 @@
 
 int _BlitTransZRemapXlatAlphaZReadWrite_G::AddRef(unsigned short * p0, unsigned char * p1, int p2, int p3, unsigned short * p4, unsigned short * p5, int p6, int p7)
 {
-        int __stdcall ((BlitTransZRemapXlatAlphaZReadWrite_ushort *)(_BlitTransZRemapXlatAlphaZReadWrite_G this->m000))->AddRef(unsigned short *p0, unsigned char *p1, int p2, int p3, unsigned short *p4, unsigned short *p5, int p6, int p7);
         int v10 = (261 * (p6 <= 0 ? 0 : p6)) >> 11;
         if ( v10 > 254 )
         {
             v10 = 254;
         }
         int v17 = this->m_C + (v10 << 9);
-        int v11 = *(unsigned int *)this->m_4;
+        int v11 = this->m_4;
         int result = p2;
         int v13;
         Stream * v15;
@@ -23,24 +22,25 @@ int _BlitTransZRemapXlatAlphaZReadWrite_G::AddRef(unsigned short * p0, unsigned 
             v15 = g_ZBufferDescriptor;
             v16 = (unsigned short *)p2;
             do
-          if ( v13 < (unsigned short)*p4 && *p1 )
-            v13 = p3;
-            *p0 = *(unsigned short *)(this->m_8
+            {
+                if ( v13 < (unsigned short)*p4 && *p1 )
+                {
+                    v13 = p3;
+                    *p0 = *(unsigned short *)(this->m_8
                            + 2 * (*(unsigned char*)((unsigned char)*p1 + v11) | *(unsigned short *)(v17 + 2 * *p5)));
-            *p4 = p3;
-            v15 = g_ZBufferDescriptor;
-            ++p4;
-            ++p0;
-            ++p1;
-            if ( (unsigned int)p4 >= v15[1].Stream_field_08 )
-            {
-                p4 = (unsigned short *)((char *)p4 - v15[1].Stream_field_0C);
-            }
-            result = (int)v16 - 1;
-            v16 = (unsigned short *)((char *)v16 - 1);
-            while ( v16 )
-            {
-            }
+                    *p4 = p3;
+                    v15 = g_ZBufferDescriptor;
+                }
+                ++p4;
+                ++p0;
+                ++p1;
+                if ( (unsigned int)p4 >= v15[1].Stream_field_08 )
+                {
+                    p4 = (unsigned short *)((char *)p4 - v15[1].Stream_field_0C);
+                }
+                result = (int)v16 - 1;
+                v16 = (unsigned short *)((char *)v16 - 1);
+            } while ( v16 );
         }
         return (int)(result);
 }

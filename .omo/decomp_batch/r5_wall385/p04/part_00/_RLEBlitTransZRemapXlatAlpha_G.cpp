@@ -24,15 +24,17 @@ unsigned short * _RLEBlitTransZRemapXlatAlpha_G::AddRef(int p0, unsigned char * 
         else
         {
             do
-          if ( *p1++ )
-            --v15;
-            else
             {
-            }
-            while ( v15 > 0 )
-            {
-                v17 = -v15;
-            }
+                if ( *p1++ )
+                {
+                    --v15;
+                }
+                else
+                {
+                    v15 -= *p1++;
+                }
+            } while ( v15 > 0 );
+            v17 = -v15;
             v18 = p2 - v17;
             p0 += 2 * v17;
             result = &p6[v17];
@@ -51,22 +53,23 @@ unsigned short * _RLEBlitTransZRemapXlatAlpha_G::AddRef(int p0, unsigned char * 
             if ( v19 )
             {
                 p0 += 2;
+                v22 = v24[v19] | *(unsigned short *)(v23 + 2 * *result);
+                --v18;
+                ++result;
+                *(unsigned short *)(p0 - 2) = *(unsigned short *)(this->m_8 + 2 * v22);
             }
-            v22 = v24[v19] | *(unsigned short *)(v23 + 2 * *result);
-            --v18;
-            ++result;
-            *(unsigned short *)(p0 - 2) = *(unsigned short *)(this->m_8 + 2 * v22);
-            v18 -= v20;
-            v21 = 2 * v20;
-            p0 += v21;
-            result = (unsigned short *)((char *)result + v21);
+            else
+            {
+                v20 = *p1++;
+                v18 -= v20;
+                v21 = 2 * v20;
+                p0 += v21;
+                result = (unsigned short *)((char *)result + v21);
+            }
             if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
             {
                 result = (unsigned short *)((char *)result - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
             }
-        }
-        else
-        {
         }
         return (unsigned short *)(result);
 }
