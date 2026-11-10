@@ -248,7 +248,7 @@
    "addr": "0x448160",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p10\\part_00\\BuildingClass.cpp(9) : error C2065: 'HouseClass' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p10\\part_00\\BuildingClass.cp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p10\\part_00\\BuildingClass.cpp(27) : error C2227: left of '->bunkersCount' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p10\\pa",
    "first_diff": null,
    "pathology": null,
    "name": "FootClass::ProcessPrimarySelect",

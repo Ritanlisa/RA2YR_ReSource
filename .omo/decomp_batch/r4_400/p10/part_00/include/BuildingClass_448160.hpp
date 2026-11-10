@@ -2,7 +2,9 @@
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class BuildingTypeClass;
 class House;
+class HouseClass;
 class VoxClass;
 
 #ifndef DECOMP_PILOT_BUILDINGCLASS_HPP
@@ -38,6 +40,8 @@ extern unsigned char stru_818E00;
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class BuildingClass;
+class BuildingTypeClass;
+class HouseClass;
 class VoxClass;
 
 #ifndef DECOMP_PILOT_HOUSE_HPP
@@ -67,7 +71,9 @@ extern unsigned char stru_818E00;
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class BuildingClass;
+class BuildingTypeClass;
 class House;
+class HouseClass;
 
 #ifndef DECOMP_PILOT_VOXCLASS_HPP
 #define DECOMP_PILOT_VOXCLASS_HPP
