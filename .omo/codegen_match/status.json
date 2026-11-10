@@ -2428,6 +2428,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x630220": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x633a90": {
   "attempts": 4,
   "first_diff": null,
@@ -2505,6 +2512,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x637060": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TabClass::processTabInput",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x637aa0": {
   "attempts": 1,
   "first_diff": null,
@@ -2523,6 +2537,13 @@
   "attempts": 3,
   "first_diff": "+0 mov byte ptr [ecx + 0x60], 0",
   "name": "Scenario::SetByte96",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x642b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadingScreen::GetValue",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2579,6 +2600,13 @@
   "attempts": 2,
   "first_diff": null,
   "name": "ParticleTypeClass::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x656de0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::updateAlliedStatus",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2645,6 +2673,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65d660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ReferenceCounted::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x65d690": {
   "attempts": 2,
   "first_diff": null,
@@ -2680,6 +2715,34 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x681100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::GetData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x681120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::GetFlag98",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x681140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::GetFlag99",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6812d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::GetFlag252",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x691ec0": {
   "attempts": 1,
   "first_diff": null,
@@ -2705,6 +2768,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ScriptTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x691f90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptTypeClass::GetAuxField",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x69bbe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SessionClass::GetGameSpeed",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2750,6 +2827,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b4f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::CheckStatus",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6b4f30": {
   "attempts": 1,
   "first_diff": null,
@@ -2775,6 +2859,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SmudgeTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b6150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmudgeTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2876,6 +2967,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6e64b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TagTypeClass::GetAuxField",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6e87d0": {
   "attempts": 1,
   "first_diff": null,
@@ -2918,6 +3016,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6f20c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamTypeClass::GetAuxField",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6f9dc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::GetTarget",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x705d20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::GetPlanningToken",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x705d60": {
   "attempts": 3,
   "first_diff": null,
@@ -2932,10 +3051,31 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x70c5b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::GetShroudByte",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x70c5c0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x271]",
+  "name": "ObjectClass::GetFogByte",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x70dd90": {
   "attempts": 1,
   "first_diff": null,
   "name": "TechnoClass::vt_entry_3E8",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x70ddc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::checkPlacement",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

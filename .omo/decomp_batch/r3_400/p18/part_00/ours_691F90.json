@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAuxField@ScriptTypeClass@@QAEHXZ",
+ "sym_key": "ScriptTypeClass::GetAuxField",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8198000000c3",
+ "relocs": []
+}

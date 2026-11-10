@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateAlliedStatus@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::updateAlliedStatus",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8a81d8140000c3",
+ "relocs": []
+}
