@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@AircraftTypeClass@@QAEHXZ",
+ "sym_key": "AircraftTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b803000000c3",
+ "relocs": []
+}

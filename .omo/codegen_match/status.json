@@ -118,6 +118,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x40a7a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::GetDirectSound",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x40cc00": {
   "attempts": 5,
   "first_diff": null,
@@ -230,6 +237,20 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x41c170": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftClass::MissionStubReturnZero2",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41c180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftClass::MissionStubReturnZero3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x41c640": {
   "attempts": 1,
   "first_diff": null,
@@ -255,6 +276,48 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AircraftTypeClass::GetDimensions",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41cfb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41cfc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41dd30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AirstrikeClass::StubReturn96",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41dd40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AirstrikeClass::StubReturn71",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41ffd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41ffe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AITriggerTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -286,10 +349,31 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x426530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimClass::MissionStubReturnZero",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x426580": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::getAltitude",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x428e40": {
   "attempts": 3,
   "first_diff": null,
   "name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x428e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -321,6 +405,34 @@
   "note": "via=mirror COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4393d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BombClass::StubReturn92",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4393e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BombClass::StubReturn68",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x43a9a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NeuronClass::StubReturn60",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x43a9b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NeuronClass::StubReturn56",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x459d90": {
   "attempts": 1,
   "first_diff": "+0 mov al, 1",
@@ -328,12 +440,40 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x459da0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::MissionStubReturnZero5",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x459e50": {
   "attempts": 1,
   "first_diff": "+0 xor al, al",
   "name": "BuildingClass::StubReturnFalse14",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x459e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::Mission_Guard",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x459ec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::Mission_Construction",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x465d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x46b990": {
   "attempts": 1,

@@ -1,0 +1,8 @@
+{
+ "symbol": "?MissionStubReturnZero@AnimClass@@QAEHXZ",
+ "sym_key": "AnimClass::MissionStubReturnZero",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8c8010000c3",
+ "relocs": []
+}

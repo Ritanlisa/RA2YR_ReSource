@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@AITriggerTypeClass@@QAEHXZ",
+ "sym_key": "AITriggerTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b83b000000c3",
+ "relocs": []
+}

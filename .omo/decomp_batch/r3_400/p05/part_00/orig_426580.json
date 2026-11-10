@@ -1,0 +1,11 @@
+{
+ "addr": "0x426580",
+ "name": "AbstractClass::getAltitude",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426580",
+ "bytes_hex": "b804000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

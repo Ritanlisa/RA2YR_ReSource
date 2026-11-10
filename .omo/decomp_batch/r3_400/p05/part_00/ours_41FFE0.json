@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@AITriggerTypeClass@@QAEHXZ",
+ "sym_key": "AITriggerTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b810010000c3",
+ "relocs": []
+}

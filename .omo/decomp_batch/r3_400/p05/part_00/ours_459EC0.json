@@ -1,0 +1,8 @@
+{
+ "symbol": "?Mission_Construction@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Mission_Construction",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b806000000c3",
+ "relocs": []
+}

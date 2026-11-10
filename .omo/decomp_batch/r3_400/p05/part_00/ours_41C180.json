@@ -1,0 +1,8 @@
+{
+ "symbol": "?MissionStubReturnZero3@AircraftClass@@QAEHXZ",
+ "sym_key": "AircraftClass::MissionStubReturnZero3",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b802000000c3",
+ "relocs": []
+}

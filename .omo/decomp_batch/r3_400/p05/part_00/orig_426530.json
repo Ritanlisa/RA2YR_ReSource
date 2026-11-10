@@ -1,0 +1,11 @@
+{
+ "addr": "0x426530",
+ "name": "AnimClass::MissionStubReturnZero",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426530",
+ "bytes_hex": "b8c8010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

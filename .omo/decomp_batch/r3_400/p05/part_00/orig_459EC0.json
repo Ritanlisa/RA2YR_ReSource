@@ -1,0 +1,11 @@
+{
+ "addr": "0x459EC0",
+ "name": "BuildingClass::Mission_Construction",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459EC0",
+ "bytes_hex": "b806000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

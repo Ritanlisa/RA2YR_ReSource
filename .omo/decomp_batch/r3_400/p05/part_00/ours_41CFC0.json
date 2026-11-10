@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@AircraftTypeClass@@QAEHXZ",
+ "sym_key": "AircraftTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8100e0000c3",
+ "relocs": []
+}

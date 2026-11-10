@@ -1,0 +1,8 @@
+{
+ "symbol": "?Mission_Guard@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::Mission_Guard",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b820070000c3",
+ "relocs": []
+}
