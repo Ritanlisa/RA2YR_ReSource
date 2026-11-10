@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4D0520 (JumpjetLocomotionClass::GetInterface2)
 #include "unknown_4d0520.hpp"
 
-LONG __stdcall unknown::GetInterface2(int p0)
+long __stdcall unknown::GetInterface2(int p0)
 {
         return COM__AddRef(p0 - 4);
 }

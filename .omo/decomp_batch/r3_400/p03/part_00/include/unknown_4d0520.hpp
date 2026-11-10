@@ -14,10 +14,10 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall GetInterface2(int p0);  // 0x4D0520
+    long __stdcall GetInterface2(int p0);  // 0x4D0520
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall COM__AddRef(int a0);
+extern long __stdcall COM__AddRef(int a0);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

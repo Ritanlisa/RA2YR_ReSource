@@ -12,7 +12,7 @@ int __stdcall unknown::GetInterface(int p0, const void * p1, int * p2)
 // source: decompile-results/full_export  fn 0x4D0520 (JumpjetLocomotionClass::GetInterface2)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::GetInterface2(int p0)
+long __stdcall unknown::GetInterface2(int p0)
 {
         return COM__AddRef(p0 - 4);
 }
@@ -21,7 +21,7 @@ LONG __stdcall unknown::GetInterface2(int p0)
 // source: decompile-results/full_export  fn 0x4D0530 (JumpjetLocomotionClass::Stub2)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::Stub2(int p0)
+long __stdcall unknown::Stub2(int p0)
 {
         return COM__ReleaseRef((volatile LONG *)(p0 - 4));
 }

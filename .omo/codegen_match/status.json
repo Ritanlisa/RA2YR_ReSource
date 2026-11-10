@@ -1197,21 +1197,21 @@
   "status": "OK"
  },
  "0x4d0510": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::GetInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4d0520": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "JumpjetLocomotionClass::GetInterface2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "PENDING"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4d0530": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::Stub2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1358,98 +1358,98 @@
   "status": "OK"
  },
  "0x510a20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AbstractClass::saveToStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x510a30": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "AbstractClass::loadFromStream",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510a40": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "AbstractClass::computeSize",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510a50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x510a60": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x24",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510a70": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x24",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510a80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x510a90": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x28",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510aa0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x28",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510ab0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x510ad0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x510ae0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x2c",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x510af0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 0x2c",
   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
@@ -1484,21 +1484,21 @@
   "status": "OK"
  },
  "0x5139e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseTypeClass::readBaseDefenses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x5139f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "HouseTypeClass::readAiBuildLists",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x513a00": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "HouseTypeClass::readLoadoutData",
   "note": "decomp_batch r2: MISMATCH/frame_sched",

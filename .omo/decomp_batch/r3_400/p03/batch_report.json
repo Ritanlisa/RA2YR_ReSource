@@ -2,11 +2,11 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 9,
-   "MISMATCH": 11
+   "COMPILE_FAIL": 8,
+   "MISMATCH": 12
   },
   "pathologies": {
-   "frame_sched": 11
+   "frame_sched": 12
   },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
@@ -32,23 +32,28 @@
   {
    "addr": "0x4d0520",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_00\\include\\unknown_4d0520.hpp(17) : error C2143: syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 10B ours 16B",
+   "first_diff": {
+    "orig": "+0 sub dword ptr [esp + 4], 4",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "frame_sched",
    "name": "JumpjetLocomotionClass::GetInterface2",
    "emitted": "unknown::GetInterface2",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "backfill",
    "sites": "1/1",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 10,
+   "ours_size": 16
   },
   {
    "addr": "0x4d0530",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_00\\include\\unknown_4d0530.hpp(17) : error C2143: syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_00\\unknown_4d0530.cpp(7) : error C2146: syntax error : missing ')' before identifier 'LONG'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r3_400\\p03\\part_00\\",
    "first_diff": null,
    "pathology": null,
    "name": "JumpjetLocomotionClass::Stub2",

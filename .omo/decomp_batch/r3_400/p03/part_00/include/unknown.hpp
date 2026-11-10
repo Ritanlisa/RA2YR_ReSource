@@ -15,8 +15,8 @@ public:
 
     // ---- pilot methods (registry signatures)
     int __stdcall GetInterface(int p0, const void * p1, int * p2);  // 0x4D0510
-    LONG __stdcall GetInterface2(int p0);  // 0x4D0520
-    LONG __stdcall Stub2(int p0);  // 0x4D0530
+    long __stdcall GetInterface2(int p0);  // 0x4D0520
+    long __stdcall Stub2(int p0);  // 0x4D0530
     int __stdcall saveToStream(int p0, const void * p1, int * p2);  // 0x510A20
     int __stdcall loadFromStream(int p0);  // 0x510A30
     int __stdcall computeSize(int p0);  // 0x510A40
@@ -38,8 +38,8 @@ public:
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int __stdcall LocomotionClass__QueryInterface(int a0, int a1, int a2);
-extern LONG __stdcall COM__AddRef(int a0);
-extern LONG __stdcall COM__ReleaseRef(int a0);
+extern long __stdcall COM__AddRef(int a0);
+extern long __stdcall COM__ReleaseRef(int a0);
 extern int __stdcall HouseClass__QueryInterface(int a0, int a1, int a2);
 extern int __stdcall HouseClass__COMStub_Ret1_1(int a0);
 extern int __stdcall HouseClass__COMStub_Ret1_2(int a0);
