@@ -1298,7 +1298,14 @@ def _ckpt_write(payload):
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    # epilog 仅用于 --help 展示：下列调度/诊断旗标走 sys.argv 探测、不进缓存键
+    # （注册进 argparse 会让 vars(args) 变化、作废全部既有结果缓存）。
+    ap = argparse.ArgumentParser(
+        epilog="Scheduler/diagnostic flags (sys.argv-probed, not cache-keyed): "
+               "--snapshot-dumps, --restore-dumps=<dir>, --incremental, "
+               "--no-incremental, --c1-covers, --strict-c1, --no-name-pins, "
+               "--family-table (per-family diagnostics; default OFF -- the prefix "
+               "re-solve loop was 92.5%% of legacy runtime), --use-rs.")
     ap.add_argument("--build-facts", action="store_true")
     ap.add_argument("--no-reg-flow", action="store_true")
     ap.add_argument("--no-c26-locality", action="store_true", help="disable C26 link-order locality")
@@ -1342,9 +1349,10 @@ def main():
                          "属循环论证，仅作备选口径报告。")
     # parse_known_args：让 --incremental / --no-incremental 作为纯调度旗标经 sys.argv 探测，
     # 不进 vars(args)（缓存键含 vars(args)，argparse 注册会作废全部既有结果缓存）。
-    # speed 轮同款待遇：--snapshot-dumps / --restore-dumps / --skip-family-table
+    # speed 轮同款待遇：--snapshot-dumps / --restore-dumps / --family-table
     # 亦走 sys.argv 探测（不进缓存键；前二者见 _restore_dumps_from_cache/_snapshot_dumps，
-    # 后者跳过族循环 70 次前缀重解——画像证据：92.5% 耗时在此，O(N²)）。
+    # 后者缺省关闭——族循环 70 次前缀重解画像证据占 92.5% 耗时，O(N²)，
+    # 诊断选项应对诊断付费，需要逐族诊断表时显式启用）。
     args, _sched_flags = ap.parse_known_args()
     _sched = set(_sched_flags) | set(sys.argv[1:])
 
@@ -7447,8 +7455,8 @@ def main():
         _root_diag = [] if os.environ.get("MC_ROOT_DIAG") else None
         # --use-rs：C10 不动点整体下沉（base_dom + 12 轮混沌传播 + 14 轮中和
         # 器，语义 1:1——dead_j 优先/本地互斥根 witness/边过滤重传播同款）。
-        # Rust 路径完成时以空 range 跳过下方 Python 循环（--skip-family-table
-        # 先例）；增量成功时照旧跳过（dom 来自检查点）。
+        # Rust 路径完成时以空 range 跳过下方 Python 循环（family-table 缺省
+        # 跳过先例）；增量成功时照旧跳过（dom 来自检查点）。
         _rs10_done = False
         if _rs_cell[0] is not None and not _incr_fp_ok:
             _t_rs10 = time.time()
@@ -7663,16 +7671,19 @@ def main():
     prev_k = None
     prev_pin = None
     perf_mark("evidence")         # speed 轮路径 3：实体构建+证据族加载+eq 边+C10 不动点段
-    # --skip-family-table（speed 轮，sys.argv 探测不进缓存键）：跳过族循环的
+    # --family-table（诊断旗标，缺省关闭；sys.argv 探测不进缓存键）：族循环跑
     # len(FAMILIES) 次前缀重解（每次 solve(enabled 前缀) 都全量重解——日志画像
     # heur_run_out3.txt 实证 70 次前缀重解占 6734.6s 中的 6229.2s = 92.5%）。
-    # 选用时 family_table 为空（result 产物中该表为空数组），最终解/冲突消解/
-    # dump 全部照常——单次全族求解即最终解。
-    _skip_family_table = "--skip-family-table" in _sched
-    if _skip_family_table:
-        print("[family-table] SKIPPED (--skip-family-table): %d prefix re-solves "
-              "omitted; result.family_table will be empty" % len(FAMILIES), flush=True)
-    for f in (FAMILIES if not _skip_family_table else ()):
+    # 2026-11-10 裁决翻转缺省：诊断表为诊断付费——快速路径（单次全族求解即最终解）
+    # 是唯一缺省路径；需要逐族诊断表时显式加 --family-table。
+    # 缺省时 family_table 为空（result 产物中该表为空数组），最终解/冲突消解/
+    # dump 全部照常。
+    _want_family_table = "--family-table" in _sched
+    if not _want_family_table:
+        print("[family-table] SKIPPED (default): use --family-table for per-family "
+              "diagnostics; %d prefix re-solves omitted; result.family_table will be "
+              "empty" % len(FAMILIES), flush=True)
+    for f in (FAMILIES if _want_family_table else ()):
         enabled.append(f)
         t0 = time.time()
         res = solve(enabled)
