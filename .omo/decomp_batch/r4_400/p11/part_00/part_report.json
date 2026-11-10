@@ -178,7 +178,7 @@
    "addr": "0x6ea3e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p11\\part_00\\TeamClass.cpp(11) : error C2065: 'TeamTypeClass' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p11\\part_00\\TeamClass.cpp(11",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p11\\part_00\\TeamClass.cpp(12) : error C2228: left of '.TeamTypeClass_field_70' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\",
    "first_diff": null,
    "pathology": null,
    "name": "TeamClass::UpdateReadinessState",

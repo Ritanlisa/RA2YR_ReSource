@@ -714,7 +714,7 @@
   "status": "PENDING"
  },
  "0x432ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieHandle::RenderFrameClipped",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1120,7 +1120,7 @@
   "status": "PENDING"
  },
  "0x475150": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BulletTypeClass::ReadTrajectoryFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2142,7 +2142,7 @@
   "status": "PENDING"
  },
  "0x4ba5a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2254,7 +2254,7 @@
   "status": "NG"
  },
  "0x4c9ea0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2366,14 +2366,14 @@
   "status": "OK"
  },
  "0x4d2a10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FoggedObject_DrawVector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4d2bc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3199,7 +3199,7 @@
   "status": "PENDING"
  },
  "0x53f0e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Network::FormatAddress",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3577,7 +3577,7 @@
   "status": "NG"
  },
  "0x5855a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::AssignCellOwnership",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3605,7 +3605,7 @@
   "status": "PENDING"
  },
  "0x586780": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3955,7 +3955,7 @@
   "status": "PENDING"
  },
  "0x5c2de0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MPCooperative::selectTeam",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4375,7 +4375,7 @@
   "status": "PENDING"
  },
  "0x626690": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4438,7 +4438,7 @@
   "status": "PENDING"
  },
  "0x62e4c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4697,7 +4697,7 @@
   "status": "PENDING"
  },
  "0x656cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4718,7 +4718,7 @@
   "status": "PENDING"
  },
  "0x658b10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "RadarHashVector::ComputeHashIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4837,7 +4837,7 @@
   "status": "OK"
  },
  "0x661850": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4991,7 +4991,7 @@
   "status": "PENDING"
  },
  "0x69deb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5131,7 +5131,7 @@
   "status": "PENDING"
  },
  "0x6b4650": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_UUndoInfoStruct::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5306,7 +5306,7 @@
   "status": "PENDING"
  },
  "0x6d6070": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Tactical::SetTacticalPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5369,7 +5369,7 @@
   "status": "OK"
  },
  "0x6dc660": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_UDirtyAreaStruct::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5523,7 +5523,7 @@
   "status": "OK"
  },
  "0x6ea3e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
