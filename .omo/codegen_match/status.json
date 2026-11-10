@@ -1638,140 +1638,140 @@
   "status": "COMPILE_FAIL"
  },
  "0x497b80": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497cf0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497e60": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x497fd0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498150": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4982e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4984d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4986d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4988c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498ed0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4990e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499280": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499430": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499650": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499860": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499a90": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x49b660": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 push ebx",
   "name": "MPCooperative::processTurn",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x49e400": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",

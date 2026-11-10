@@ -1,0 +1,21 @@
+{
+ "symbol": "?processTurn@MPCooperative@@QAEHPAD0@Z",
+ "sym_key": "MPCooperative::processTurn",
+ "size": 191,
+ "link_base": 0,
+ "bytes_hex": "8b4424045333db55563bc3578be9742a50e8000000008bf883c9ff33c083c404f2aef7d12bf98bc18bf78bfdc1e902f3a58bc883e103f3a4eb03885d008b4424183bc3743050e8000000008bf883c9ff33c083c404f2aef7d12bf98d9560f501008bc18bf78bfac1e902f3a58bc883e103f3a4eb03885d1cb8feffffff5f89451489453089451889453483c8ff895d3c894544894538885d6c895d40885d48895d4c895d50895d54895d58895d5c895d68895d60895d648bc55e5d5bc20800",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YAHZZ",
+   "sym_key": "ToWideStringChar"
+  },
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?ToWideStringChar@@YAHZZ",
+   "sym_key": "ToWideStringChar"
+  }
+ ]
+}
