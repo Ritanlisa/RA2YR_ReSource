@@ -1,0 +1,15 @@
+LIBRARY binkw32.dll
+EXPORTS
+  _BinkSetSoundSystem@8
+  _BinkOpenDirectSound@4
+  _BinkGetError@0
+  _BinkOpen@8
+  _BinkSetVolume@8
+  _BinkClose@4
+  _BinkDDSurfaceType@4
+  _BinkGoto@12
+  _BinkPause@8
+  _BinkNextFrame@4
+  _BinkCopyToBuffer@28
+  _BinkDoFrame@4
+  _BinkWait@4

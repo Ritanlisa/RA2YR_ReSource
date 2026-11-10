@@ -122,6 +122,12 @@ tools/*
 !tools/*.py
 !tools/ida_class_layouts.json
 !tools/**/*.py
+# 数据段对齐试点（datamatch）：脚本 + 构建配方入库，二进制产物不入库
+!tools/data_match/
+tools/data_match/w1/*
+!tools/data_match/w1/*.py
+!tools/data_match/w1/*.cmd
+!tools/data_match/w1/binkw32.def
 
 # 函数注入测试 (生成文件)
 injectFunctionTest/build_hook/
