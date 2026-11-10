@@ -6349,7 +6349,7 @@
   "status": "OK"
  },
  "0x763a50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6398,7 +6398,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x76a3f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Map_WorldDominationTour_43::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6426,7 +6426,7 @@
   "status": "OK"
  },
  "0x76b0a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6650,56 +6650,56 @@
   "status": "COMPILE_FAIL"
  },
  "0x7adf70": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7ae020": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WOLGameList::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7ae0e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ComStreamClass::readData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7ae460": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7ae510": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HashTable_flat::Grow",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7aec00": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7aef50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ComStreamClass::flushStream",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b0f50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "NetworkOptions::ApplySettings",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6720,7 +6720,7 @@
   "status": "NG"
  },
  "0x7b22e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AudioQueue::ReadBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6734,49 +6734,49 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b3920": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "UDPInterfaceClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b4940": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "String::Reassign",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b4c20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "String::Append",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b4cd0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "String::Append2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b5020": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "String::Erase",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
