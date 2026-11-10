@@ -1120,7 +1120,7 @@
   "status": "OK"
  },
  "0x4c5ab0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "EMPulseClass::StubReturn55",
   "note": "decomp_batch r2: MATCH",
@@ -1162,14 +1162,14 @@
   "status": "OK"
  },
  "0x4ca750": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FactoryClass::StubReturn12",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x4ca760": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FactoryClass::StubReturn116",
   "note": "decomp_batch r2: MATCH",
@@ -1190,7 +1190,7 @@
   "status": "NG"
  },
  "0x4d0390": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FlyLocomotionClass::StubReturn96",
   "note": "decomp_batch r2: MATCH",
@@ -1218,14 +1218,14 @@
   "status": "PENDING"
  },
  "0x4d27b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FoggedObjectClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x4d27c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FoggedObjectClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -1288,14 +1288,14 @@
   "status": "OK"
  },
  "0x4f2b40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_09",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4f2b50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::vt_placeholder_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1316,21 +1316,21 @@
   "status": "OK"
  },
  "0x4f3ff0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4f4000": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4f4c20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Byte::Zero",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1344,7 +1344,7 @@
   "status": "NG"
  },
  "0x50e360": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::computeMovementCost",
   "note": "decomp_batch r2: MATCH",
@@ -1463,14 +1463,14 @@
   "status": "OK"
  },
  "0x512710": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x512720": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -1505,7 +1505,7 @@
   "status": "NG"
  },
  "0x5172b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HoverLocomotionClass::StubReturn120",
   "note": "decomp_batch r2: MATCH",
@@ -1533,28 +1533,28 @@
   "status": "OK"
  },
  "0x5232f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryClass::StubReturn1776",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x523340": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryClass::StubReturn15",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x524d40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x524d50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -1589,7 +1589,7 @@
   "status": "OK"
  },
  "0x535d20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_2",
   "note": "decomp_batch r2: COMPILE_FAIL",
