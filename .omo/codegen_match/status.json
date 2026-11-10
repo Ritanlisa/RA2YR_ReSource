@@ -112,7 +112,7 @@
   "status": "OK"
  },
  "0x408600": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioNode::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -168,14 +168,14 @@
   "status": "PENDING"
  },
  "0x40d230": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InputManager_ProcessEvents::AddRef",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x40d240": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InputManager_ProcessEvents::Release",
   "note": "decomp_batch r2: MATCH",
@@ -308,7 +308,7 @@
   "status": "OK"
  },
  "0x41c030": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 mov byte ptr [ecx + 0x1d8], 0",
   "name": "TacticalClass::CheckAction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -427,14 +427,14 @@
   "status": "OK"
  },
  "0x425260": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AnimClass::SetField8",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x425270": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VtableStub::Method_425270",
   "note": "decomp_batch r2: MATCH",
@@ -826,7 +826,7 @@
   "status": "OK"
  },
  "0x487e50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::compareType",
   "note": "decomp_batch r2: MATCH",
@@ -861,7 +861,7 @@
   "status": "OK"
  },
  "0x48ace0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Return::HRESULT_Fail",
   "note": "decomp_batch r2: MATCH",
@@ -1134,7 +1134,7 @@
   "status": "OK"
  },
  "0x4c9c60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 mov al, byte ptr [ecx + 0x5d]",
   "name": "FactoryClass::HasProgressChanged",
   "note": "decomp_batch r2: MISMATCH/const_fold",
@@ -3150,7 +3150,7 @@
   "status": "OK"
  },
  "0x70fbd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::IsDeactivated",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3192,7 +3192,7 @@
   "status": "OK"
  },
  "0x71d150": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IRTTITypeInfo::GetOffset",
   "note": "decomp_batch r2: MATCH",
@@ -3227,7 +3227,7 @@
   "status": "OK"
  },
  "0x71e350": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -3276,7 +3276,7 @@
   "status": "OK"
  },
  "0x723700": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TiberiumClass::Stub",
   "note": "decomp_batch r2: MATCH",
@@ -3346,7 +3346,7 @@
   "status": "OK"
  },
  "0x727cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TriggerTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -3409,7 +3409,7 @@
   "status": "NG"
  },
  "0x746d80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FootClass::updateScanRange",
   "note": "decomp_batch r2: MATCH",
@@ -3444,7 +3444,7 @@
   "status": "OK"
  },
  "0x748180": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UnitTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -3472,7 +3472,7 @@
   "status": "OK"
  },
  "0x74ab30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VoxelAnimClass::LoadFrame",
   "note": "decomp_batch r2: MATCH",
@@ -3556,14 +3556,14 @@
   "status": "PENDING"
  },
  "0x759f70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MovieClass::GetWidth",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x759f80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MovieClass::GetHeight",
   "note": "decomp_batch r2: MATCH",
@@ -3892,7 +3892,7 @@
   "status": "OK"
  },
  "0x7b2720": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SessionClass::SetInstance",
   "note": "decomp_batch r2: MATCH",
