@@ -33,33 +33,29 @@ unsigned char * TabClass::updateTabProduction(int p0)
         *((unsigned int *)result + 21) = 0;
         unsigned char * v5 = result + 112;
         int v6 = 75;
+        int v7;
         do
         {
-        } while ();
-        *v5 = 0;
-        int v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
-        *((unsigned int *)v5 + 3) = 0;
-        *((unsigned int *)v5 + 1) = v7;
-        *((unsigned int *)v5 + 4) = 0;
-        *((unsigned int *)v5 + 5) = 1;
-        v5 += 52;
-        --v6;
-        unsigned int * v8;
-        while ( v6 )
-        {
-            v8 = result + 92;
-        }
+            *((unsigned int *)v5 - 1) = 0;
+            *v5 = 0;
+            v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+            *((unsigned int *)v5 + 3) = 0;
+            *((unsigned int *)v5 + 1) = v7;
+            *((unsigned int *)v5 + 4) = 0;
+            *((unsigned int *)v5 + 5) = 1;
+            v5 += 52;
+            --v6;
+        } while ( v6 );
+        unsigned int * v8 = (unsigned int *)(result + 92);
         int v9 = 75;
         do
         {
-        } while ();
-        *v8 = 0;
-        v8[1] = 0;
-        v8[2] = 0;
-        v8 += 13;
-        --v9;
-        while ( v9 )
-        {
-            return (unsigned char *)(result);
-        }
+            *(v8 - 1) = 0;
+            *v8 = 0;
+            v8[1] = 0;
+            v8[2] = 0;
+            v8 += 13;
+            --v9;
+        } while ( v9 );
+        return (unsigned char *)(result);
 }

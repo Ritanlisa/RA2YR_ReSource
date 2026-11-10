@@ -1,0 +1,39 @@
+{
+ "symbol": "?Update@TaskManager@@QAEHXZ",
+ "sym_key": "TaskManager::Update",
+ "size": 236,
+ "link_base": 0,
+ "bytes_hex": "51568bf1578b46248b486c85c97e148a889000000084c9740ac744240800000000eb078b4e30894c24088b7e484f0f88b4000000538b5c240c55bd070000008b563c8b04ba8b48043bcd0f848f00000085c9744f83f906744a83f90175298b00b90000000050e8000000008b4e3c8b14b9896a048b463c8b04b88b00508b08ff91f8000000eb308968048b463c8b56688b0cb8528b11b90000000052e800000000eb148968048b4e3c8b04b98b00508b10ff92f80000008b463c8b0cb8c701000000008b563ca1a00100008b0cba8b54241083c10889018bc38959048951084f0f8959ffffff5d5b5f5e59c3",
+ "relocs": [
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 103,
+   "type": "REL32",
+   "sym": "?processStateTransition@AbstractClass@@QAEXH@Z",
+   "sym_key": "AbstractClass::processStateTransition"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 157,
+   "type": "REL32",
+   "sym": "?GetExitCell@UnitClass@@QAEHPAX0@Z",
+   "sym_key": "UnitClass::GetExitCell"
+  },
+  {
+   "off": 199,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  }
+ ]
+}

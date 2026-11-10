@@ -2,9 +2,13 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "COMPILE_FAIL": 18,
+   "MISMATCH": 2
   },
-  "pathologies": {},
+  "pathologies": {
+   "codegen_shape": 1,
+   "branch_order": 1
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
   "rule_violation_fns": 15,
@@ -60,7 +64,7 @@
    "addr": "0x6a6140",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Sidebar.cpp(43) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\par",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Sidebar.cpp(43) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int *'",
    "first_diff": null,
    "pathology": null,
    "name": "Sidebar::FindProductionType",
@@ -90,7 +94,7 @@
    "addr": "0x6a80a0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TabClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'class TabClass *const ' to 'unsigned char *'; D:\\RA2YR_ReSource\\.omo\\dec",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TabClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'class TabClass *const ' to 'unsigned char *'",
    "first_diff": null,
    "pathology": null,
    "name": "TabClass::updateTabProduction",
@@ -98,7 +102,7 @@
    "unit": "TabClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "8/8",
+   "sites": "9/9",
    "rule_violations": 0
   },
   {
@@ -113,14 +117,14 @@
    "unit": "SidebarClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "10/11",
+   "sites": "11/12",
    "rule_violations": 0
   },
   {
    "addr": "0x6a8710",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TabCameoListClass.cpp(28) : error C2043: illegal break; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TabCameoListClass.cpp(44) ",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TabCameoListClass.cpp(50) : error C2440: 'type cast' : cannot convert from 'int' to 'class TabCameoListClass'; D:\\RA2YR_ReSource\\.omo\\decomp_",
    "first_diff": null,
    "pathology": null,
    "name": "TabCameoListClass::AddCameo_ReplaceItAll",
@@ -135,7 +139,7 @@
    "addr": "0x6ac5f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TActionClass.cpp(29) : error C2440: '=' : cannot convert from 'unsigned int' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TActionClass.cpp(56) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p1",
    "first_diff": null,
    "pathology": null,
    "name": "TActionClass::executeHarvestAction",
@@ -143,7 +147,7 @@
    "unit": "TActionClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "9/10",
+   "sites": "10/11",
    "rule_violations": 4
   },
   {
@@ -165,7 +169,7 @@
    "addr": "0x6b44a0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\_VectorClass_UUndoInfoStruct.cpp(14) : error C2440: 'initializing' : cannot convert from 'int *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\_VectorClass_UUndoInfoStruct.cpp(16) : error C2440: '=' : cannot convert from 'int *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_UUndoInfoStruct::Release",
@@ -173,14 +177,14 @@
    "unit": "_VectorClass_UUndoInfoStruct",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 10
+   "sites": "7/11",
+   "rule_violations": 1
   },
   {
    "addr": "0x6b4650",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\_DynamicVectorClass_UUndoInfoStruct.cpp(14) : error C2440: 'initializing' : cannot convert from 'int *' to 'unsigned int *'; D:\\RA2YR_ReSourc",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\_DynamicVectorClass_UUndoInfoStruct.cpp(16) : error C2440: '=' : cannot convert from 'int *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\deco",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_UUndoInfoStruct::SetCapacity",
@@ -188,8 +192,8 @@
    "unit": "_DynamicVectorClass_UUndoInfoStruct",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 13
+   "sites": "7/11",
+   "rule_violations": 1
   },
   {
    "addr": "0x6b55f0",
@@ -210,7 +214,7 @@
    "addr": "0x6b5f80",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Cell.cpp(27) : error C2039: 'm298' : is not a member of 'Cell'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Cell.cpp(29) : err",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Cell.cpp(29) : error C2039: 'm298' : is not a member of 'Cell'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\Cell.cpp(42) : err",
    "first_diff": null,
    "pathology": null,
    "name": "Cell::IsWalkable",
@@ -225,7 +229,7 @@
    "addr": "0x6b6080",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\UnitClass.cpp(18) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\UnitClass.cpp(20) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\",
    "first_diff": null,
    "pathology": null,
    "name": "UnitClass::CreateUnloadPlacementCraters",
@@ -239,23 +243,28 @@
   {
    "addr": "0x6b7100",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\TaskManager.cpp(45) : error C2660: 'GetExitCell' : function does not take 2 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\pa",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 294B ours 236B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
    "name": "TaskManager::Update",
    "emitted": "TaskManager::Update",
    "unit": "TaskManager",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/4",
-   "rule_violations": 30
+   "rule_violations": 31,
+   "orig_size": 294,
+   "ours_size": 236
   },
   {
    "addr": "0x6b7c60",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\UnitClass.cpp(18) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\UnitClass.cpp(20) : error C2296: '&' : illegal, left operand has type 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\",
    "first_diff": null,
    "pathology": null,
    "name": "UnitClass::ClearTargetRef",
@@ -269,23 +278,28 @@
   {
    "addr": "0x6baef0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\HashTable.cpp(37) : error C2059: syntax error : 'if'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\HashTable.cpp(38) : error C2",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 181B",
+   "first_diff": {
+    "orig": "+13 jbe 0x6baf9a",
+    "ours": "+13 jbe 0xb1"
+   },
+   "pathology": "branch_order",
    "name": "HashTable_flat::RebuildEx",
    "emitted": "HashTable::RebuildEx",
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "16/18",
-   "rule_violations": 6
+   "rule_violations": 6,
+   "orig_size": 174,
+   "ours_size": 181
   },
   {
    "addr": "0x6c6740",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\StaticButtonClass.cpp(29) : error C2664: 'int (class AudioStream *)' : cannot convert parameter 1 from 'void *' to 'class AudioStream *'; D:\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p14\\part_00\\StaticButtonClass.cpp(31) : error C2664: 'int (class AudioStream *)' : cannot convert parameter 1 from 'void *' to 'class AudioStream *'; D:\\",
    "first_diff": null,
    "pathology": null,
    "name": "StaticButtonClass::HitTest",

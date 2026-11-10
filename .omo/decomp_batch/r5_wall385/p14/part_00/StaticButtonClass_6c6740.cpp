@@ -4,12 +4,14 @@
 
 char StaticButtonClass::HitTest()
 {
-        INIClass * v2 = (INIClass *)((char *)this + 36);
+        INIClass * v2;
+        v2 = (INIClass *)((char *)this + 36);
         if ( *((unsigned int *)this + 9) )
         {
             goto LABEL_9;
         }
-        int StaticButtonClass_field_0x14 = this->m014;
+        int StaticButtonClass_field_0x14;
+        StaticButtonClass_field_0x14 = this->m014;
         int v4;
         int StaticButtonClass_field_0x10;
         int v6;
@@ -26,28 +28,28 @@ char StaticButtonClass::HitTest()
                 if ( this != (StaticButtonClass *)-36 )
                 {
                     v4 = (*(int (__stdcall **)(AudioStream *))(*(unsigned int *)((char *)g_DSurface_Hidden_2)[0x0] + 112))(g_DSurface_Hidden_2);
-                }
-            }
-            StaticButtonClass_field_0x14 = (StaticButtonClass_field_0x14 & ~0xFF) | (((unsigned char)((INIClass *)(this))->loadFile() & 0xFF);
+                    StaticButtonClass_field_0x14 = (StaticButtonClass_field_0x14 & ~0xFF) | (((unsigned char)((INIClass *)(this))->loadFile() & 0xFF);
                                                                       v2,
                                                                       this->m014
                                                                     * *((unsigned int *)this + 6)
                                                                     * v4);
-            if ( !*(unsigned int *)v2->__pad_0 )
-            {
-                return (char)(StaticButtonClass_field_0x14);
-            }
-            StaticButtonClass_field_0x10 = this->m010;
-            v6 = this->m014;
-            StaticButtonClass_field_0x0C = this->m00C;
-            v7 = *((unsigned int *)this + 6);
-            v13 = StaticButtonClass_field_0x10;
-            v15 = v7;
-            v14 = v6;
-            StaticButtonClass_field_0x14 = (StaticButtonClass_field_0x14 & ~0xFF) | ((Helper__ProcessData() & 0xFF);
+                }
+                if ( !*(unsigned int *)v2->__pad_0 )
+                {
+                    return (char)(StaticButtonClass_field_0x14);
+                }
+                StaticButtonClass_field_0x10 = this->m010;
+                v6 = this->m014;
+                StaticButtonClass_field_0x0C = this->m00C;
+                v7 = *((unsigned int *)this + 6);
+                v13 = StaticButtonClass_field_0x10;
+                v15 = v7;
+                v14 = v6;
+                StaticButtonClass_field_0x14 = (StaticButtonClass_field_0x14 & ~0xFF) | ((Helper__ProcessData() & 0xFF);
                                                    (void **)g_DSurface_Hidden_2,
                                                    (int)&StaticButtonClass_field_0x0C,
                                                    (int *)v2->__pad_0);
+            }
         }
         int v8;
         int v9;

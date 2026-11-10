@@ -14,18 +14,19 @@ int UnitClass::CreateUnloadPlacementCraters(unsigned short * p0)
         if ( result > 0 )
         {
             do
-          for ( i = 0; i < this->storedTiberium; ++i )
-    v9 = (v9 & ~0xFF) | ((i + *p0) & 0xFF);
-            v9 = (v9 & ~0xFF) | ((v7 + p0[1]) & 0xFF);
-            v8 = v9;
-            v6 = ((CellCoord *)(&DataGlobal_87F7E8))->To_CellObj((short *)&v8);
-            v6[18] = this->hijackerInfantryType;
-            *((unsigned char *)v6 + 287) = i + *((unsigned char *)this + 664) * v7;
-            ((BuildingClass *)(v6))->CreatePlacementCrater();
-            result = ++v7;
-            while ( v7 < this->chronoDestCoords )
             {
-            }
+                for ( i = 0; i < this->storedTiberium; ++i )
+                {
+                    v9 = (v9 & ~0xFF) | ((i + *p0) & 0xFF);
+                    v9 = (v9 & ~0xFF) | ((v7 + p0[1]) & 0xFF);
+                    v8 = v9;
+                    v6 = ((CellCoord *)(&DataGlobal_87F7E8))->To_CellObj((short *)&v8);
+                    v6[18] = this->hijackerInfantryType;
+                    *((unsigned char *)v6 + 287) = i + *((unsigned char *)this + 664) * v7;
+                    ((BuildingClass *)(v6))->CreatePlacementCrater();
+                }
+                result = ++v7;
+            } while ( v7 < this->chronoDestCoords );
         }
         return (int)(result);
 }
@@ -50,9 +51,6 @@ void UnitClass::ClearTargetRef(int p0)
                 this->health = 0;
             }
         }
-        else
-        {
-        }
         result = this->ambientSoundController[3] - 1;
         int v4;
         unsigned int * v5;
@@ -62,7 +60,7 @@ void UnitClass::ClearTargetRef(int p0)
         if ( result < 0 )
         {
             LABEL_10:
-          if ( p0 == this->occupant )
+          if ( p0 == this->occupant );
             ((TaskManager *)(this))->Update();
             return ((UnitClass *)(this))->ProcessIdleOrders();
         }
@@ -73,23 +71,23 @@ void UnitClass::ClearTargetRef(int p0)
             while ( p0 != **v5 )
             {
                 --result;
-            }
-            --v5;
-            if ( result < 0 )
-            {
-                goto LABEL_10;
+                --v5;
+                if ( result < 0 )
+                {
+                    goto LABEL_10;
+                }
             }
             v6 = *(unsigned int **)(v4 + 4 * result);
             if ( *(int *)(*v6 + 108) <= 0 || *(unsigned char *)(*v6 + 1738) || v6[5] == 1 )
             {
                 *v6 = 0;
+                *(unsigned int *)(*(unsigned int *)(this->ambientSoundController[0] + 4 * result) + 4) = 7;
+                nextObject = this->nextObject;
+                result = *(unsigned int *)(this->ambientSoundController[0] + 4 * result) + 8;
+                *(unsigned int *)result = *(unsigned int *)&((char *)stru_A8EB00)[416];
+                *(unsigned int *)(result + 4) = v8;
+                *(unsigned int *)(result + 8) = nextObject;
             }
-            *(unsigned int *)(*(unsigned int *)(this->ambientSoundController[0] + 4 * result) + 4) = 7;
-            nextObject = this->nextObject;
-            result = *(unsigned int *)(this->ambientSoundController[0] + 4 * result) + 8;
-            *(unsigned int *)result = *(unsigned int *)&((char *)stru_A8EB00)[416];
-            *(unsigned int *)(result + 4) = v8;
-            *(unsigned int *)(result + 8) = nextObject;
         }
         return result;
 }

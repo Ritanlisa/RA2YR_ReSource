@@ -21,9 +21,9 @@ void SmudgeTypeClass::vt_entry_A0(int * p0, int * p1, int p2, int p3, short * p4
             if ( p2 )
             {
                 Width = this->Width;
+                v14 += -15 * (p2 / Width + p2 % Width);
+                v13 += 60 * (p2 / Width - p2 % Width) / 2;
             }
-            v14 += -15 * (p2 / Width + p2 % Width);
-            v13 += 60 * (p2 / Width - p2 % Width) / 2;
             v10 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(p4);
             v12 = *((short *)v10 + 134);
             v11 = ZCoordToScreenY(p3);

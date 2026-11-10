@@ -22,11 +22,11 @@ char CreateTeamCommand::performAction_245(char p0, int p1)
                 if ( *((unsigned int *)this + 997 * v3 + 1378) )
                 {
                     --*((unsigned int *)this + 997 * v3 + 1379);
+                    (this->*((void (CreateTeamCommand::**)(unsigned int))this->vfptr_ptr)[14])(0);
+                    return (char)(1);
                 }
+                return (char)(0);
             }
-            (this->*((void (CreateTeamCommand::**)(unsigned int))this->vfptr_ptr)[14])(0);
-            return (char)(1);
-            return (char)(0);
             v6 = 26;
             if ( g_ScenarioClass_Instance[374].NeedsSaveOrLink )
             {
@@ -43,10 +43,10 @@ char CreateTeamCommand::performAction_245(char p0, int p1)
                 {
                     LABEL_13:
           ++*(unsigned int *)&v4->__pad_14[52];
+                    (this->*((void (CreateTeamCommand::**)(unsigned int))this->vfptr_ptr)[14])(0);
+                    return (char)(1);
                 }
             }
-            (this->*((void (CreateTeamCommand::**)(unsigned int))this->vfptr_ptr)[14])(0);
-            return (char)(1);
         }
         return (char)(0);
 }

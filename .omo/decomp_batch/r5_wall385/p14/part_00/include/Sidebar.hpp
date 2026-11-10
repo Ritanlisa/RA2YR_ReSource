@@ -9,6 +9,8 @@ class GScreenClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Sidebar
 {
@@ -25,7 +27,7 @@ public:
 extern char stru_87F5F0[];
 
 // ---- global callee prototypes (R3 non-leaf)
-extern int MapClass__MarkForRedraw(int a0, int a1);
+extern int MapClass__MarkForRedraw(void * a0, int a1);
 extern int GetHouseTechLevel(...);
 
 #endif  // DECOMP_PILOT_SIDEBAR_HPP

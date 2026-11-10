@@ -13,18 +13,19 @@ int UnitClass::CreateUnloadPlacementCraters(unsigned short * p0)
         if ( result > 0 )
         {
             do
-          for ( i = 0; i < this->storedTiberium; ++i )
-    v9 = (v9 & ~0xFF) | ((i + *p0) & 0xFF);
-            v9 = (v9 & ~0xFF) | ((v7 + p0[1]) & 0xFF);
-            v8 = v9;
-            v6 = ((CellCoord *)(&DataGlobal_87F7E8))->To_CellObj((short *)&v8);
-            v6[18] = this->hijackerInfantryType;
-            *((unsigned char *)v6 + 287) = i + *((unsigned char *)this + 664) * v7;
-            ((BuildingClass *)(v6))->CreatePlacementCrater();
-            result = ++v7;
-            while ( v7 < this->chronoDestCoords )
             {
-            }
+                for ( i = 0; i < this->storedTiberium; ++i )
+                {
+                    v9 = (v9 & ~0xFF) | ((i + *p0) & 0xFF);
+                    v9 = (v9 & ~0xFF) | ((v7 + p0[1]) & 0xFF);
+                    v8 = v9;
+                    v6 = ((CellCoord *)(&DataGlobal_87F7E8))->To_CellObj((short *)&v8);
+                    v6[18] = this->hijackerInfantryType;
+                    *((unsigned char *)v6 + 287) = i + *((unsigned char *)this + 664) * v7;
+                    ((BuildingClass *)(v6))->CreatePlacementCrater();
+                }
+                result = ++v7;
+            } while ( v7 < this->chronoDestCoords );
         }
         return (int)(result);
 }

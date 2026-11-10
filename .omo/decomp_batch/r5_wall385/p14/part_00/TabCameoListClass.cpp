@@ -22,29 +22,28 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int p0, int p1)
             for ( i = (int *)(this + 22); ; i += 13 )
             {
                 v7 = p0;
-            }
-            if ( RadarClass__GetBlip(p0, p1, i[1], *i) )
-            {
-                break;
-            }
-            result = *((unsigned int *)this + 21);
-            if ( ++v4 >= result )
-            {
-                return (int)(result);
+                if ( RadarClass__GetBlip(p0, p1, i[1], *i) )
+                {
+                    break;
+                }
+                result = *((unsigned int *)this + 21);
+                if ( ++v4 >= result )
+                {
+                    return (int)(result);
+                }
             }
             v8 = *((unsigned int *)this + 21) - 1;
             if ( v8 > v4 )
             {
                 v9 = 13 * v8;
-            }
-            v10 = v8 - v4;
-            v11 = this + v9 + 22;
-            do
-            --v10;
-            memcpy(v11, &v11[-13], 0x34u);
-            v11 -= 13;
-            while ( v10 )
-            {
+                v10 = v8 - v4;
+                v11 = this + v9 + 22;
+                do
+                {
+                    --v10;
+                    memcpy(v11, &v11[-13], 0x34u);
+                    v11 -= 13;
+                } while ( v10 );
                 v7 = p0;
             }
             v12 = this + 13 * v4;

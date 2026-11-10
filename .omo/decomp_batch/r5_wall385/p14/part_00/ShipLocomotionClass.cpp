@@ -25,41 +25,42 @@ char __stdcall ShipLocomotionClass::SetWaypointTarget(int p0, int p1, unsigned i
             if ( *v6 != g_OverlayTypeConfig || __PAIR64__(this->HeadToCoord[1], this->HeadToCoord[0]) != DataGlobal_B077FC )
             {
                 *v6 = g_OverlayTypeConfig;
+                this->HeadToCoord[0] = DataGlobal_B077FC;
+                v7 = HIDWORD(DataGlobal_B077FC);
+                v5[99] = 0;
+                this->HeadToCoord[1] = v7;
+                v4 = g_OverlayTypeConfig;
             }
-            this->HeadToCoord[0] = DataGlobal_B077FC;
-            v7 = HIDWORD(DataGlobal_B077FC);
-            v5[99] = 0;
-            this->HeadToCoord[1] = v7;
-            v4 = g_OverlayTypeConfig;
             if ( __PAIR64__(p2, p1) != __PAIR64__(DataGlobal_B077FC, v4)
           || ((v4 & 0xFF) = BYTE4(DataGlobal_B077FC), HIDWORD(p2) != HIDWORD(DataGlobal_B077FC)) )
             {
                 v8 = v13;
+                v5[99] = 1;
+                *v6 = p1;
+                this->HeadToCoord_qword = v8;
+                v11 = *((unsigned int *)v5 + 3);
+                v9 = ((Coord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_Cell(&v12);
+                if ( !(unsigned char)((CrateClass *)(v9))->ProcessPickup(v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) )
+                {
+                    v4 = (v4 & ~0xFF) | ((*(unsigned char *)(*((unsigned int *)v5 + 3) + 144)) & 0xFF);
+                    if ( (unsigned char)v4 )
+                    {
+                        v4 = (v4 & ~0xFF) | ((g_OverlayTypeConfig) & 0xFF);
+                        *v6 = g_OverlayTypeConfig;
+                        this->HeadToCoord_qword = DataGlobal_B077FC;
+                        v5[99] = 0;
+                    }
+                }
+                else
+                {
+                    ((WalkLocomotion *)((int)this - 4))->MoveTo(&v12, 1);
+                    v4 = (v4 & ~0xFF) | (((unsigned char)this + 48) & 0xFF);
+                    this->SlopeTimer[3] = p1;
+                    this->Dest_qword = p2;
+                    this->SpeedAccum = 0;
+                    this->MovementSpeed[0] = 1072693248;
+                }
             }
-            v5[99] = 1;
-            *v6 = p1;
-            this->HeadToCoord_qword = v8;
-            v11 = *((unsigned int *)v5 + 3);
-            v9 = ((Coord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_Cell(&v12);
-            if ( !(unsigned char)((CrateClass *)(v9))->ProcessPickup(v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) )
-            {
-                v4 = (v4 & ~0xFF) | ((*(unsigned char *)(*((unsigned int *)v5 + 3) + 144)) & 0xFF);
-            }
-            if ( (unsigned char)v4 )
-            {
-                v4 = (v4 & ~0xFF) | ((g_OverlayTypeConfig) & 0xFF);
-            }
-            *v6 = g_OverlayTypeConfig;
-            this->HeadToCoord_qword = DataGlobal_B077FC;
-            v5[99] = 0;
-            v4 = (v4 & ~0xFF) | (((unsigned char)this + 48) & 0xFF);
-            this->SlopeTimer[3] = p1;
-            this->Dest_qword = p2;
-            this->SpeedAccum = 0;
-            this->MovementSpeed[0] = 1072693248;
-        }
-        else
-        {
         }
         return (char)(v4);
 }

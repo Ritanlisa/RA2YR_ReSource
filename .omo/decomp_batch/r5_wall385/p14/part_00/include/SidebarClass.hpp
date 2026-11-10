@@ -6,12 +6,14 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class SidebarClass
 {
 public:
     char __pad_000[56];  // 0x000
-    int m038;  // 0x038
+    void * m038;  // 0x038
     char __pad_03C[5388];  // 0x03C
 
     // DECOMP_SIZECHECK(SidebarClass, SidebarClass, 5448);

@@ -5,8 +5,10 @@
 
 unsigned int * TActionClass::executeHarvestAction(int p0, int p1)
 {
-        unsigned int * result = (unsigned int *)g_LoadScreenProgress;
-        int v5 = 0;
+        unsigned int * result;
+        result = (unsigned int *)g_LoadScreenProgress;
+        int v5;
+        v5 = 0;
         unsigned int * v6;
         if ( g_LoadScreenProgress <= 0 )
         {
@@ -16,51 +18,51 @@ unsigned int * TActionClass::executeHarvestAction(int p0, int p1)
             {
                 LABEL_9:
           v5 = 0;
-            }
-            if ( g_TypeClass_FindCache <= 0 )
-            {
-                LABEL_13:
+                if ( g_TypeClass_FindCache <= 0 )
+                {
+                    LABEL_13:
             v5 = 0;
-            }
-            if ( g_TriggerClassCount <= 0 )
-            {
-                return (unsigned int *)(result);
-            }
-            result = g_TriggerTypeCount;
-            while ( p0 != *result )
-            {
-                ++v5;
-            }
-            ++result;
-            if ( v5 >= g_TriggerClassCount )
-            {
-                return (unsigned int *)(result);
-            }
-            else
-            {
-                result = g_AircraftTypeCount;
-            }
-            while ( p0 != *result )
-            {
-                ++v5;
-            }
-            ++result;
-            if ( v5 >= g_TypeClass_FindCache )
-            {
-                goto LABEL_13;
+                    if ( g_TriggerClassCount <= 0 )
+                    {
+                        return (unsigned int *)(result);
+                    }
+                    result = (unsigned int *)(g_TriggerTypeCount);
+                    while ( p0 != *result )
+                    {
+                        ++v5;
+                        ++result;
+                        if ( v5 >= g_TriggerClassCount )
+                        {
+                            return (unsigned int *)(result);
+                        }
+                    }
+                }
+                else
+                {
+                    result = (unsigned int *)(g_AircraftTypeCount);
+                    while ( p0 != *result )
+                    {
+                        ++v5;
+                        ++result;
+                        if ( v5 >= g_TypeClass_FindCache )
+                        {
+                            goto LABEL_13;
+                        }
+                    }
+                }
             }
             else
             {
                 result = g_UnitTypeCount2;
-            }
-            while ( p0 != *result )
-            {
-                ++v5;
-            }
-            ++result;
-            if ( v5 >= g_CrateCount )
-            {
-                goto LABEL_9;
+                while ( p0 != *result )
+                {
+                    ++v5;
+                    ++result;
+                    if ( v5 >= g_CrateCount )
+                    {
+                        goto LABEL_9;
+                    }
+                }
             }
         }
         else
@@ -69,11 +71,11 @@ unsigned int * TActionClass::executeHarvestAction(int p0, int p1)
             while ( *v6 != p0 )
             {
                 ++v5;
-            }
-            ++v6;
-            if ( v5 >= g_LoadScreenProgress )
-            {
-                goto LABEL_5;
+                ++v6;
+                if ( v5 >= g_LoadScreenProgress )
+                {
+                    goto LABEL_5;
+                }
             }
         }
         result = (unsigned int *)(*(int (**)(void))(*(unsigned int *)p0 + 44))();
@@ -86,22 +88,20 @@ unsigned int * TActionClass::executeHarvestAction(int p0, int p1)
                 v7 = 3;
             }
         }
-        else
-        {
-        }
         v7 = GetHouseTechLevel((int)result, v5) == 5;
-        else
-        {
-        }
         if ( result != (unsigned int *)57 && result != (unsigned int *)32 && result != (unsigned int *)31 )
         {
             return (unsigned int *)(result);
         }
         v7 = 1;
-        int v8 = 997 * v7;
-        int v9 = 0;
-        char * v10 = (char *)this + 4 * v8 + 5444;
-        unsigned int * v11 = v10 + 88;
+        int v8;
+        v8 = 997 * v7;
+        int v9;
+        v9 = 0;
+        char * v10;
+        v10 = (char *)this + 4 * v8 + 5444;
+        unsigned int * v11;
+        v11 = (unsigned int *)(v10 + 88);
         while ( *v11 != v5 )
         {
             ++v9;

@@ -5,28 +5,30 @@
 
 char _DynamicVectorClass_UUndoInfoStruct::SetCapacity(int p0, int * p1)
 {
-        int v3 = p0;
+        int v3;
+        v3 = p0;
         if ( p0 == 0 )
         {
             (this->*((void (_DynamicVectorClass_UUndoInfoStruct::**)())this->m000_ptr)[3])();
             goto LABEL_26;
         }
-        unsigned int * v5 = p1;
-        this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+        unsigned int * v5;
+        v5 = p1;
+        this->m_C = 0;
         int v9;
         if ( p1 )
         {
             if ( p0 - 1 >= 0 )
             {
                 v9 = p0;
-            }
-            do* v5 = 0;
-            v5[1] = 0;
-            v5[2] = 0;
-            v5 += 3;
-            --v9;
-            while ( v9 )
-            {
+                do
+                {
+                    *v5 = 0;
+                    v5[1] = 0;
+                    v5[2] = 0;
+                    v5 += 3;
+                    --v9;
+                } while ( v9 );
                 v5 = p1;
             }
             goto LABEL_13;
@@ -41,22 +43,22 @@ char _DynamicVectorClass_UUndoInfoStruct::SetCapacity(int p0, int * p1)
             if ( p0 - 1 >= 0 )
             {
                 v7 = p0;
+                do
+                {
+                    *v6 = 0;
+                    v6[1] = 0;
+                    v6[2] = 0;
+                    v6 += 3;
+                    --v7;
+                } while ( v7 );
             }
-            do* v6 = 0;
-            v6[1] = 0;
-            v6[2] = 0;
-            v6 += 3;
-            --v7;
-            while ( v7 )
-            {
-                LABEL_13:
+            LABEL_13:
         v8 = v5;
-            }
             goto LABEL_14;
         }
         v8 = 0;
         LABEL_14:
-    this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
+    this->m_C = 1;
         if ( v8 == 0 )
         {
             return (char)(0);
@@ -65,7 +67,7 @@ char _DynamicVectorClass_UUndoInfoStruct::SetCapacity(int p0, int * p1)
         int v11;
         unsigned int * v12;
         unsigned int * v13;
-        if ( this->m003[0] )
+        if ( this->m004[0] )
         {
             m_8 = this->m_8;
             if ( p0 < m_8 )
@@ -75,25 +77,25 @@ char _DynamicVectorClass_UUndoInfoStruct::SetCapacity(int p0, int * p1)
             if ( m_8 > 0 )
             {
                 v11 = 0;
-            }
-            do v12 = &v8[v11];
-            v13 = (unsigned int *)(v11 * 4 + this->m003[0]);
-            v11 += 3;
-            --m_8;
-            *v12 = *v13;
-            v12[1] = v13[1];
-            v12[2] = v13[2];
-            while ( m_8 )
-            {
+                do
+                {
+                    v12 = &v8[v11];
+                    v13 = (unsigned int *)(v11 * 4 + this->m004[0]);
+                    v11 += 3;
+                    --m_8;
+                    *v12 = *v13;
+                    v12[1] = v13[1];
+                    v12[2] = v13[2];
+                } while ( m_8 );
                 v3 = p0;
             }
             if ( ((this->m_C >> 8) & 0xFF) )
             {
                 __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                this->m004[0] = 0;
             }
-            this->m003[0] = 0;
         }
-        this->m003[0] = v8;
+        this->m004[0] = v8;
         this->m_8 = v3;
         ((this->m_C >> 8) & 0xFF) = p1 == 0;
         int v14;

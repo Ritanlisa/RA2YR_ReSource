@@ -30,31 +30,35 @@ int TaskManager::Update()
                 if ( v5 == 0 || v5 == 6 )
                 {
                     *(unsigned int *)(result + 4) = 7;
+                    v8 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);
+                    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v8 + 248))(*v8);
+                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;
+                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);
+                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+                    result = v9;
                 }
+                else
+                {
+                    if ( v5 == 1 )
+                    {
+                        ((AbstractClass *)(&g_MissionQueueFrame))->processStateTransition(*(unsigned int *)result);
+                        *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 4) = 7;
+                        v6 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);
+                        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v6 + 248))(*v6);
+                    }
+                    else
+                    {
+                        *(unsigned int *)(result + 4) = 7;
+                        ((UnitClass *)((int)&g_MissionQueueFrame))->GetExitCell(**(unsigned int ***)(*((unsigned int *)this + 15) + 4 * i), *((unsigned int **)this + 26));
+                    }
+                    **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;
+                    v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);
+                    *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
+                    result = v9;
+                }
+                v7[1] = result;
+                v7[2] = v3;
             }
-            v8 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);
-            (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v8 + 248))(*v8);
-            **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;
-            v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);
-            *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
-            result = v9;
-            *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 4) = 7;
-            v6 = *(unsigned int **)(*((unsigned int *)this + 15) + 4 * i);
-            (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v6 + 248))(*v6);
-            ((UnitClass *)((int)&g_MissionQueueFrame))->GetExitCell(**(unsigned int ***)(*((unsigned int *)this + 15) + 4 * i),
-                *((unsigned int **)this + 26));
-            **(unsigned int **)(*((unsigned int *)this + 15) + 4 * i) = 0;
-            v7 = (unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) + 8);
-            *v7 = *(unsigned int *)&((char *)stru_A8EB00)[416];
-            result = v9;
-            v7[1] = result;
-            v7[2] = v3;
-        }
-        else
-        {
-        }
-        else
-        {
         }
         return (int)(result);
 }

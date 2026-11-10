@@ -4,9 +4,12 @@
 
 char Cell::IsWalkable(unsigned short * p0, char p1)
 {
-        int result = (int)this->m29C;
-        int v4 = 0;
-        Cell * v9 = this;
+        int result;
+        result = (int)this->m29C;
+        int v4;
+        v4 = 0;
+        Cell * v9;
+        v9 = this;
         int v6;
         void * v7;
         int v8;
@@ -22,64 +25,64 @@ char Cell::IsWalkable(unsigned short * p0, char p1)
             while ( 1 )
             {
                 v6 = 0;
-            }
-            if ( (int)this->m298 > 0 )
-            {
-                break;
-            }
-            LABEL_15:
+                if ( (int)this->m298 > 0 )
+                {
+                    break;
+                }
+                LABEL_15:
           result = (int)this->m29C;
-            if ( ++v4 >= result )
-            {
-                goto LABEL_16;
+                if ( ++v4 >= result )
+                {
+                    goto LABEL_16;
+                }
             }
             while ( 1 )
             {
                 v11 = (v11 & ~0xFF) | ((v6 + *p0) & 0xFF);
+                v11 = (v11 & ~0xFF) | ((v4 + p0[1]) & 0xFF);
+                *(unsigned int *)v10 = v11;
+                v7 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v10);
+                result = ((LayerClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->CoordinatesLegal(p0);
+                if ( !(unsigned char)result )
+                {
+                    break;
+                }
+                if ( *((unsigned char *)v7 + 284) )
+                {
+                    break;
+                }
+                result = -1;
+                if ( *((unsigned int *)v7 + 18) != -1 )
+                {
+                    break;
+                }
+                if ( *((unsigned int *)v7 + 17) != -1 )
+                {
+                    break;
+                }
+                if ( p1 == 0 )
+                {
+                    result = ((Cell *)(v7))->IsBridge();
+                    if ( result )
+                    {
+                        break;
+                    }
+                }
+                v8 = *((unsigned int *)v7 + 14);
+                if ( v8 < 0 || v8 >= *(int *)&((char *)stru_A8EB00)[340] )
+                {
+                    v8 = 0;
+                }
+                if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[328] + 4 * v8) + 736) )
+                {
+                    break;
+                }
+                if ( ++v6 >= (int)v9->Cell_field_0x298 )
+                {
+                    this = v9;
+                    goto LABEL_15;
+                }
             }
-            v11 = (v11 & ~0xFF) | ((v4 + p0[1]) & 0xFF);
-            *(unsigned int *)v10 = v11;
-            v7 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v10);
-            result = ((LayerClass *)(&((char *)stru_87F5F0)[0x58 + (416)]))->CoordinatesLegal(p0);
-            if ( !(unsigned char)result )
-            {
-                break;
-            }
-            if ( *((unsigned char *)v7 + 284) )
-            {
-                break;
-            }
-            result = -1;
-            if ( *((unsigned int *)v7 + 18) != -1 )
-            {
-                break;
-            }
-            if ( *((unsigned int *)v7 + 17) != -1 )
-            {
-                break;
-            }
-            if ( p1 == 0 )
-            {
-                result = ((Cell *)(v7))->IsBridge();
-            }
-            if ( result )
-            {
-                break;
-            }
-            v8 = *((unsigned int *)v7 + 14);
-            if ( v8 < 0 || v8 >= *(int *)&((char *)stru_A8EB00)[340] )
-            {
-                v8 = 0;
-            }
-            if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[328] + 4 * v8) + 736) )
-            {
-                break;
-            }
-            if ( ++v6 >= (int)v9->Cell_field_0x298 )
-            {
-                this = v9;
-            }
-            goto LABEL_15;
             result = (result & ~0xFF) | ((0) & 0xFF);
         }
         return (char)(result);
