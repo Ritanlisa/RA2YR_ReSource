@@ -651,14 +651,14 @@
   "status": "PENDING"
  },
  "0x42d8f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_ushort::Remove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x42da30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass_ushort::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2380,7 +2380,7 @@
   "status": "PENDING"
  },
  "0x4da030": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2401,7 +2401,7 @@
   "status": "PENDING"
  },
  "0x4ddb90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FootClass::MoveToWeed",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3227,7 +3227,7 @@
   "status": "PENDING"
  },
  "0x540340": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IPXGlobalConnClass::SendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3290,7 +3290,7 @@
   "status": "OK"
  },
  "0x54b8d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4116,7 +4116,7 @@
   "status": "OK"
  },
  "0x5d74a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4361,7 +4361,7 @@
   "status": "PENDING"
  },
  "0x625830": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Rebuild2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4431,7 +4431,7 @@
   "status": "OK"
  },
  "0x62e380": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4683,14 +4683,14 @@
   "status": "PENDING"
  },
  "0x653760": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x655740": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::RemoveGapCellCoverage",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5229,7 +5229,7 @@
   "status": "OK"
  },
  "0x6baef0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::RebuildEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5404,7 +5404,7 @@
   "status": "PENDING"
  },
  "0x6e1780": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5418,7 +5418,7 @@
   "status": "PENDING"
  },
  "0x6e4150": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::executeGeneticMutatorAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5579,7 +5579,7 @@
   "status": "OK"
  },
  "0x7036c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5817,14 +5817,14 @@
   "status": "PENDING"
  },
  "0x722390": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x722e50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6041,7 +6041,7 @@
   "status": "OK"
  },
  "0x7474b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6685,7 +6685,7 @@
   "status": "PENDING"
  },
  "0x7aec00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6762,7 +6762,7 @@
   "status": "PENDING"
  },
  "0x7b4c20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "String::Append",
   "note": "decomp_batch r2: COMPILE_FAIL",

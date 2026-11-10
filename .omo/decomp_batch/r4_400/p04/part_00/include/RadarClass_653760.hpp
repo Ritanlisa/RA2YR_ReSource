@@ -14,7 +14,7 @@ class TacticalClass;
 class RadarClass
 {
 public:
-    unsigned int ptr_0;  // 0x000
+    unsigned char * ptr_0;  // 0x000
     char __pad_004[5815];  // 0x004
 
     // DECOMP_SIZECHECK(RadarClass, RadarClass, 5819);

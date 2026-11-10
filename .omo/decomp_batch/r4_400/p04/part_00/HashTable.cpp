@@ -26,7 +26,7 @@ void HashTable::Rebuild2()
             this->m00C = HashTable_field_0x0C - 1;
             v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1));
             v6 = 4 * this->m008;
-            this->m000 = v5;
+            this->m000 = (unsigned char *)v5;
             memset(v5, 0, v6);
             if ( (int)HashTable_field_0x08 > 0 )
             {
@@ -84,7 +84,7 @@ void HashTable::RebuildEx()
             this->m00C = HashTable_field_0x0C - 1;
             v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1));
             v6 = 4 * this->m008;
-            this->m000 = v5;
+            this->m000 = (unsigned char *)v5;
             memset(v5, 0, v6);
             if ( (int)HashTable_field_0x08 > 0 )
             {
@@ -143,7 +143,7 @@ void HashTable::Shrink()
             this->m00C = HashTable_field_0x0C - 1;
             v6 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1));
             v7 = 4 * this->m008;
-            this->m000 = v6;
+            this->m000 = (unsigned char *)v6;
             memset(v6, 0, v7);
             if ( (int)HashTable_field_0x08 > 0 )
             {

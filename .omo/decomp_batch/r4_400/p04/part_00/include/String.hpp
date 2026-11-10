@@ -12,7 +12,7 @@ class String
 public:
     union {  // multi-evidence view @0x000
         unsigned char m000;
-        unsigned int m000_dword;
+        unsigned char * m000_dword;
     };
 
     // ---- pilot methods (registry signatures)

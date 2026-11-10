@@ -43,7 +43,7 @@
    "addr": "0x7b4c20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\String.cpp(22) : error C2440: '=' : cannot convert from 'char *' to 'unsigned char'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\Strin",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\String.cpp(22) : error C2440: '=' : cannot convert from 'unsigned char *' to 'unsigned char'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part",
    "first_diff": null,
    "pathology": null,
    "name": "String::Append",
@@ -51,7 +51,7 @@
    "unit": "String",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/7",
+   "sites": "6/8",
    "rule_violations": 3
   },
   {
@@ -208,7 +208,7 @@
    "addr": "0x625830",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(29) : error C2440: '=' : cannot convert from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(37) : error C2059: syntax error : 'if'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(38) : error C2143: syn",
    "first_diff": null,
    "pathology": null,
    "name": "HashTable_flat::Rebuild2",
@@ -216,14 +216,14 @@
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "15/17",
+   "sites": "16/18",
    "rule_violations": 6
   },
   {
    "addr": "0x6baef0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(29) : error C2440: '=' : cannot convert from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(37) : error C2059: syntax error : 'if'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(38) : error C2143: syn",
    "first_diff": null,
    "pathology": null,
    "name": "HashTable_flat::RebuildEx",
@@ -231,14 +231,14 @@
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "15/17",
+   "sites": "16/18",
    "rule_violations": 6
   },
   {
    "addr": "0x7aec00",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(29) : error C2440: '=' : cannot convert from 'void *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(37) : error C2059: syntax error : 'if'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r4_400\\p04\\part_00\\HashTable.cpp(38) : error C2143: syn",
    "first_diff": null,
    "pathology": null,
    "name": "HashTable_flat::Shrink",
@@ -246,7 +246,7 @@
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "15/17",
+   "sites": "16/18",
    "rule_violations": 6
   },
   {

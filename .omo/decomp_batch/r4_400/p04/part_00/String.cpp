@@ -19,7 +19,7 @@ const char ** String::Append(const char * p0)
                 v6 = strlen(*(const char **)this->m000) + v4;
             }
             v7 = (char *)__2_YAPAXI_Z(v6);
-            this->m000 = v7;
+            this->m000 = (unsigned char *)v7;
             if ( v5 )
             {
                 strcpy(v7, v5);

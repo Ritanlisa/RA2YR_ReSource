@@ -20,7 +20,7 @@ unsigned int * __stdcall RadarClass::PixelToCellCheck(int * p0, int * p1)
         else
         {
             v4 = (void *)*((Tactical *)(g_TacticalClass_Instance))->PixelToCell(&p0, v6);
-            this->ptr_0 = v4;
+            this->ptr_0 = (unsigned char *)v4;
             return &this->ptr_0;
         }
 }
