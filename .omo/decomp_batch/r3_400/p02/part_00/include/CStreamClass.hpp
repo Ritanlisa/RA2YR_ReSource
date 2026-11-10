@@ -15,13 +15,13 @@ public:
 
     // ---- pilot methods (registry signatures)
     int __stdcall IStreamQueryInterface(int p0, const void * p1, int * p2);  // 0x4A3220
-    LONG __stdcall IStreamAddRef();  // 0x4A3230
-    LONG __stdcall IStreamRelease();  // 0x4A3240
+    long __stdcall IStreamAddRef();  // 0x4A3230
+    long __stdcall IStreamRelease();  // 0x4A3240
 };
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int __stdcall CStreamClass__QueryInterface(int a0);
-extern LONG __stdcall CStreamClass__AddRef(int a0);
-extern LONG __stdcall CStreamClass__Release(int a0);
+extern long __stdcall CStreamClass__AddRef(int a0);
+extern long __stdcall CStreamClass__Release(int a0);
 
 #endif  // DECOMP_PILOT_CSTREAMCLASS_HPP

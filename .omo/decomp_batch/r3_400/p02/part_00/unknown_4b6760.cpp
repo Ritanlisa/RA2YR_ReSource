@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4B6760 (JumpjetLocomotionClass::SmallStub_4B6760)
 #include "unknown_4b6760.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6760(int p0)
+long __stdcall unknown::SmallStub_4B6760(int p0)
 {
         return DropPodLocomotionClass__Release((volatile LONG *)(p0 - 4));
 }

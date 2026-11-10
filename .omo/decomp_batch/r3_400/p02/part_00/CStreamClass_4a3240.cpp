@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4A3240 (CStreamClass::IStreamRelease)
 #include "CStreamClass_4a3240.hpp"
 
-LONG __stdcall CStreamClass::IStreamRelease()
+long __stdcall CStreamClass::IStreamRelease()
 {
         return CStreamClass__Release((CStreamClass *)((char *)this - 4));
 }

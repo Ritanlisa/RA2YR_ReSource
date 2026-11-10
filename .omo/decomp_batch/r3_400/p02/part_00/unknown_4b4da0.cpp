@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4B4DA0 (JumpjetLocomotionClass::GetField_0x7C)
 #include "unknown_4b4da0.hpp"
 
-LONG __stdcall unknown::GetField_0x7C(int p0)
+long __stdcall unknown::GetField_0x7C(int p0)
 {
         return DriveLocomotionClass__AddRef(p0 - 4);
 }

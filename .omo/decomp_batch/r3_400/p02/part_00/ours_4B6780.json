@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallStub_4B6780@unknown@@QAGJH@Z",
+ "sym_key": "unknown::SmallStub_4B6780",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240883c0e850e800000000c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?DropPodLocomotionClass__AddRef@@YGJH@Z",
+   "sym_key": "?DropPodLocomotionClass__AddRef@@YGJH@Z"
+  }
+ ]
+}

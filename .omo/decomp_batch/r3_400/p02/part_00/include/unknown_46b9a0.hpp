@@ -14,10 +14,10 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall GetItem_0(int p0);  // 0x46B9A0
+    long __stdcall GetItem_0(int p0);  // 0x46B9A0
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall BulletClass__ValidateTarget(int a0);
+extern long __stdcall BulletClass__ValidateTarget(int a0);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

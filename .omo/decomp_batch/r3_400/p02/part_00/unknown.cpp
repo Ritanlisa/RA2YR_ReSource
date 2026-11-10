@@ -3,7 +3,7 @@
 // source: decompile-results/full_export  fn 0x46B990 (VectorClass_ptr_BulletClass::GetItem)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::GetItem(int p0)
+long __stdcall unknown::GetItem(int p0)
 {
         return BulletClass__CheckTargetValidity(p0 - 4);
 }
@@ -12,7 +12,7 @@ LONG __stdcall unknown::GetItem(int p0)
 // source: decompile-results/full_export  fn 0x46B9A0 (VectorClass_ptr_BulletClass::GetItem_0)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::GetItem_0(int p0)
+long __stdcall unknown::GetItem_0(int p0)
 {
         return BulletClass__ValidateTarget((volatile LONG *)(p0 - 4));
 }
@@ -30,7 +30,7 @@ int __stdcall unknown::GetField_0x78(int p0, const void * p1, int * p2)
 // source: decompile-results/full_export  fn 0x4B4DA0 (JumpjetLocomotionClass::GetField_0x7C)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::GetField_0x7C(int p0)
+long __stdcall unknown::GetField_0x7C(int p0)
 {
         return DriveLocomotionClass__AddRef(p0 - 4);
 }
@@ -39,7 +39,7 @@ LONG __stdcall unknown::GetField_0x7C(int p0)
 // source: decompile-results/full_export  fn 0x4B4DB0 (JumpjetLocomotionClass::GetField_0x80)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::GetField_0x80(int p0)
+long __stdcall unknown::GetField_0x80(int p0)
 {
         return DriveLocomotionClass__Release((volatile LONG *)(p0 - 4));
 }
@@ -57,7 +57,7 @@ int __stdcall unknown::SmallStub_4B6740(int p0, const void * p1, int * p2)
 // source: decompile-results/full_export  fn 0x4B6750 (JumpjetLocomotionClass::SmallStub_4B6750)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6750(int p0)
+long __stdcall unknown::SmallStub_4B6750(int p0)
 {
         return DropPodLocomotionClass__AddRef(p0 - 4);
 }
@@ -66,7 +66,7 @@ LONG __stdcall unknown::SmallStub_4B6750(int p0)
 // source: decompile-results/full_export  fn 0x4B6760 (JumpjetLocomotionClass::SmallStub_4B6760)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6760(int p0)
+long __stdcall unknown::SmallStub_4B6760(int p0)
 {
         return DropPodLocomotionClass__Release((volatile LONG *)(p0 - 4));
 }
@@ -84,7 +84,7 @@ int __stdcall unknown::SmallStub_4B6770(int p0, const void * p1, int * p2)
 // source: decompile-results/full_export  fn 0x4B6780 (JumpjetLocomotionClass::SmallStub_4B6780)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6780(int p0)
+long __stdcall unknown::SmallStub_4B6780(int p0)
 {
         return DropPodLocomotionClass__AddRef(p0 - 24);
 }
@@ -93,7 +93,7 @@ LONG __stdcall unknown::SmallStub_4B6780(int p0)
 // source: decompile-results/full_export  fn 0x4B6790 (JumpjetLocomotionClass::SmallStub_4B6790)
 #include "unknown.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6790(int p0)
+long __stdcall unknown::SmallStub_4B6790(int p0)
 {
         return DropPodLocomotionClass__Release((volatile LONG *)(p0 - 24));
 }

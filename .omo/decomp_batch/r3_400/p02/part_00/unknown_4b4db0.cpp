@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4B4DB0 (JumpjetLocomotionClass::GetField_0x80)
 #include "unknown_4b4db0.hpp"
 
-LONG __stdcall unknown::GetField_0x80(int p0)
+long __stdcall unknown::GetField_0x80(int p0)
 {
         return DriveLocomotionClass__Release((volatile LONG *)(p0 - 4));
 }

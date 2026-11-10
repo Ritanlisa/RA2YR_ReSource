@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x46B990 (VectorClass_ptr_BulletClass::GetItem)
 #include "unknown_46b990.hpp"
 
-LONG __stdcall unknown::GetItem(int p0)
+long __stdcall unknown::GetItem(int p0)
 {
         return BulletClass__CheckTargetValidity(p0 - 4);
 }

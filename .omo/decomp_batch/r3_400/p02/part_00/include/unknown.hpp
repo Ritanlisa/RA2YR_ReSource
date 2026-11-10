@@ -14,27 +14,27 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall GetItem(int p0);  // 0x46B990
-    LONG __stdcall GetItem_0(int p0);  // 0x46B9A0
+    long __stdcall GetItem(int p0);  // 0x46B990
+    long __stdcall GetItem_0(int p0);  // 0x46B9A0
     int __stdcall GetField_0x78(int p0, const void * p1, int * p2);  // 0x4B4D90
-    LONG __stdcall GetField_0x7C(int p0);  // 0x4B4DA0
-    LONG __stdcall GetField_0x80(int p0);  // 0x4B4DB0
+    long __stdcall GetField_0x7C(int p0);  // 0x4B4DA0
+    long __stdcall GetField_0x80(int p0);  // 0x4B4DB0
     int __stdcall SmallStub_4B6740(int p0, const void * p1, int * p2);  // 0x4B6740
-    LONG __stdcall SmallStub_4B6750(int p0);  // 0x4B6750
-    LONG __stdcall SmallStub_4B6760(int p0);  // 0x4B6760
+    long __stdcall SmallStub_4B6750(int p0);  // 0x4B6750
+    long __stdcall SmallStub_4B6760(int p0);  // 0x4B6760
     int __stdcall SmallStub_4B6770(int p0, const void * p1, int * p2);  // 0x4B6770
-    LONG __stdcall SmallStub_4B6780(int p0);  // 0x4B6780
-    LONG __stdcall SmallStub_4B6790(int p0);  // 0x4B6790
+    long __stdcall SmallStub_4B6780(int p0);  // 0x4B6780
+    long __stdcall SmallStub_4B6790(int p0);  // 0x4B6790
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall BulletClass__CheckTargetValidity(int a0);
-extern LONG __stdcall BulletClass__ValidateTarget(int a0);
+extern long __stdcall BulletClass__CheckTargetValidity(int a0);
+extern long __stdcall BulletClass__ValidateTarget(int a0);
 extern int __stdcall DriveLocomotionClass__QueryInterface(int a0, int a1, int a2);
-extern LONG __stdcall DriveLocomotionClass__AddRef(int a0);
-extern LONG __stdcall DriveLocomotionClass__Release(int a0);
+extern long __stdcall DriveLocomotionClass__AddRef(int a0);
+extern long __stdcall DriveLocomotionClass__Release(int a0);
 extern int __stdcall DropPodLocomotionClass__QueryInterface(int a0, int a1, int a2);
-extern LONG __stdcall DropPodLocomotionClass__AddRef(int a0);
-extern LONG __stdcall DropPodLocomotionClass__Release(int a0);
+extern long __stdcall DropPodLocomotionClass__AddRef(int a0);
+extern long __stdcall DropPodLocomotionClass__Release(int a0);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

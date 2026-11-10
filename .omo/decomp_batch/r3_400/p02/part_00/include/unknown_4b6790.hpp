@@ -14,10 +14,10 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall SmallStub_4B6790(int p0);  // 0x4B6790
+    long __stdcall SmallStub_4B6790(int p0);  // 0x4B6790
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall DropPodLocomotionClass__Release(int a0);
+extern long __stdcall DropPodLocomotionClass__Release(int a0);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

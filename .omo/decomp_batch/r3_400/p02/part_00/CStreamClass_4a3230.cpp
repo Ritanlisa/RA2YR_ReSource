@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4A3230 (CStreamClass::IStreamAddRef)
 #include "CStreamClass_4a3230.hpp"
 
-LONG __stdcall CStreamClass::IStreamAddRef()
+long __stdcall CStreamClass::IStreamAddRef()
 {
         return CStreamClass__AddRef((CStreamClass *)((char *)this - 4));
 }

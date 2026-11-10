@@ -12,7 +12,7 @@ int __stdcall CStreamClass::IStreamQueryInterface(int p0, const void * p1, int *
 // source: decompile-results/full_export  fn 0x4A3230 (CStreamClass::IStreamAddRef)
 #include "CStreamClass.hpp"
 
-LONG __stdcall CStreamClass::IStreamAddRef()
+long __stdcall CStreamClass::IStreamAddRef()
 {
         return CStreamClass__AddRef((CStreamClass *)((char *)this - 4));
 }
@@ -21,7 +21,7 @@ LONG __stdcall CStreamClass::IStreamAddRef()
 // source: decompile-results/full_export  fn 0x4A3240 (CStreamClass::IStreamRelease)
 #include "CStreamClass.hpp"
 
-LONG __stdcall CStreamClass::IStreamRelease()
+long __stdcall CStreamClass::IStreamRelease()
 {
         return CStreamClass__Release((CStreamClass *)((char *)this - 4));
 }

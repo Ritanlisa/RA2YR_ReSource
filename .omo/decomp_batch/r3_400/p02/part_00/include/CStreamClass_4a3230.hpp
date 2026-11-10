@@ -14,10 +14,10 @@ public:
     // DECOMP_SIZECHECK(CStreamClass, CStreamClass, 84);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall IStreamAddRef();  // 0x4A3230
+    long __stdcall IStreamAddRef();  // 0x4A3230
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall CStreamClass__AddRef(int a0);
+extern long __stdcall CStreamClass__AddRef(int a0);
 
 #endif  // DECOMP_PILOT_CSTREAMCLASS_HPP

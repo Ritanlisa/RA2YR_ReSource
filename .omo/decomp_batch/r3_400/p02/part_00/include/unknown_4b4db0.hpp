@@ -14,10 +14,10 @@ public:
     // DECOMP_SIZECHECK(unknown, unknown, 16);
 
     // ---- pilot methods (registry signatures)
-    LONG __stdcall GetField_0x80(int p0);  // 0x4B4DB0
+    long __stdcall GetField_0x80(int p0);  // 0x4B4DB0
 };
 
 // ---- global callee prototypes (R3 non-leaf)
-extern LONG __stdcall DriveLocomotionClass__Release(int a0);
+extern long __stdcall DriveLocomotionClass__Release(int a0);
 
 #endif  // DECOMP_PILOT_UNKNOWN_HPP

@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x46B9A0 (VectorClass_ptr_BulletClass::GetItem_0)
 #include "unknown_46b9a0.hpp"
 
-LONG __stdcall unknown::GetItem_0(int p0)
+long __stdcall unknown::GetItem_0(int p0)
 {
         return BulletClass__ValidateTarget((volatile LONG *)(p0 - 4));
 }

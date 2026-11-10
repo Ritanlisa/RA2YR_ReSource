@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x4B6780 (JumpjetLocomotionClass::SmallStub_4B6780)
 #include "unknown_4b6780.hpp"
 
-LONG __stdcall unknown::SmallStub_4B6780(int p0)
+long __stdcall unknown::SmallStub_4B6780(int p0)
 {
         return DropPodLocomotionClass__AddRef(p0 - 24);
 }
