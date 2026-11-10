@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@TagTypeClass@@QAEHXZ",
+ "sym_key": "TagTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8a4000000c3",
+ "relocs": []
+}

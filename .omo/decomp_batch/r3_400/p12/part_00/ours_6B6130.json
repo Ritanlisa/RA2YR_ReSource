@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@SmudgeTypeClass@@QAEHXZ",
+ "sym_key": "SmudgeTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b81e000000c3",
+ "relocs": []
+}

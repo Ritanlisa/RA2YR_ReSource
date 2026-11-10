@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F0440",
+ "name": "TeamClass::StubReturn34",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F0440",
+ "bytes_hex": "b822000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

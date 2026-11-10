@@ -2484,6 +2484,55 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b4f40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::StubReturn29",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b6130": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmudgeTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b6140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmudgeTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b8120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SpawnManagerClass::StubReturn116",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6b8130": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SpawnManagerClass::StubReturn65",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6ce200": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperClass::StubReturn57",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6ce210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperClass::StubReturn128",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6d0260": {
   "attempts": 3,
   "first_diff": null,
@@ -2491,10 +2540,101 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6dc450": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::StubReturn56",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6dc460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::StubReturn3608",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e4630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::StubReturn148",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e4640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::StubReturn47",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6e4650": {
   "attempts": 1,
   "first_diff": null,
   "name": "TActionClass::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e5890": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TagClass::StubReturn56",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e58a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TagClass::StubReturn44",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e6490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TagTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e64a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TagTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e87d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TaskForceClass::StubReturn33",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6e87e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TaskForceClass::StubReturn212",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6f0430": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::StubReturn160",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6f0440": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::StubReturn34",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6f20a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@SmudgeTypeClass@@QAEHXZ",
+ "sym_key": "SmudgeTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8a4020000c3",
+ "relocs": []
+}
