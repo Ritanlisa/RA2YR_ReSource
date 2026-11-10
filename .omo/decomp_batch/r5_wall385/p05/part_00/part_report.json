@@ -16,7 +16,7 @@
    "addr": "0x497b80",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75Alpha_G.hpp(30) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75Alpha_G.hpp(29) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
@@ -31,7 +31,7 @@
    "addr": "0x497cf0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50Alpha_G.hpp(26) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50Alpha_G.hpp(31) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
@@ -40,13 +40,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "3/4",
-   "rule_violations": 3
+   "rule_violations": 1
   },
   {
    "addr": "0x497e60",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25Alpha_G.hpp(30) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25Alpha_G.hpp(29) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\in",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
@@ -61,7 +61,7 @@
    "addr": "0x497fd0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(28) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wa",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\i",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
@@ -76,7 +76,7 @@
    "addr": "0x498150",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(28) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wa",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZRead_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\i",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
@@ -91,7 +91,7 @@
    "addr": "0x4982e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZRead_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\par",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
@@ -99,14 +99,14 @@
    "unit": "_RLEBlitTransZRemapXlatAlphaZRead_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/7",
-   "rule_violations": 4
+   "sites": "6/7",
+   "rule_violations": 1
   },
   {
    "addr": "0x4984d0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZRead_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
@@ -115,13 +115,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 5
+   "rule_violations": 1
   },
   {
    "addr": "0x4986d0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZRead_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
@@ -136,7 +136,7 @@
    "addr": "0x4988c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZRead_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZRead_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
@@ -145,13 +145,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 5
+   "rule_violations": 1
   },
   {
    "addr": "0x498ac0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWarp_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\p",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
@@ -160,13 +160,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 8
+   "rule_violations": 4
   },
   {
    "addr": "0x498cd0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWarp_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\p",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
@@ -181,7 +181,7 @@
    "addr": "0x498ed0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWarp_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWarp_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\p",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
@@ -190,13 +190,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 8
+   "rule_violations": 4
   },
   {
    "addr": "0x4990e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(28) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
@@ -211,7 +211,7 @@
    "addr": "0x499280",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(28) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransXlatAlphaZReadWrite_G.hpp(32) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
@@ -226,7 +226,7 @@
    "addr": "0x499430",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZReadWrite_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransZRemapXlatAlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p0",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
@@ -234,14 +234,14 @@
    "unit": "_RLEBlitTransZRemapXlatAlphaZReadWrite_G",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/7",
-   "rule_violations": 5
+   "sites": "6/7",
+   "rule_violations": 2
   },
   {
    "addr": "0x499650",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWrite_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent75AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
@@ -250,13 +250,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 5
+   "rule_violations": 1
   },
   {
    "addr": "0x499860",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWrite_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent50AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
@@ -265,13 +265,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 5
+   "rule_violations": 1
   },
   {
    "addr": "0x499a90",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWrite_G.hpp(23) : error C2143: syntax error : missing ';' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\_RLEBlitTransLucent25AlphaZReadWrite_G.hpp(33) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\",
    "first_diff": null,
    "pathology": null,
    "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
@@ -280,7 +280,7 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/5",
-   "rule_violations": 5
+   "rule_violations": 1
   },
   {
    "addr": "0x49b660",
@@ -297,7 +297,7 @@
    "unit": "MPCooperative",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "19/20",
+   "sites": "20/21",
    "rule_violations": 2,
    "orig_size": 180,
    "ours_size": 191
@@ -306,7 +306,7 @@
    "addr": "0x49e400",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\CampaignClass.hpp(18) : error C2086: 'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\Camp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\include\\CampaignClass.hpp(20) : error C2086: 'scenario_dword' : redefinition; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p05\\part_00\\Camp",
    "first_diff": null,
    "pathology": null,
    "name": "CampaignClass::FindMission",

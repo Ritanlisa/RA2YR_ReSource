@@ -24,19 +24,20 @@ unsigned short * _RLEBlitTransLucent50AlphaZReadWrite_G::AddRef(unsigned short *
         }
         else
         {
-            do v17 = p1 + 1;
-            if ( *p1++ == 0 )
+            do
             {
-                v16 -= *v17++;
-            }
-            p1 = v17;
-            else
-            {
-            }
-            while ( v16 > 0 )
-            {
-                v19 = -v16;
-            }
+                v17 = p1 + 1;
+                if ( *p1++ == 0 )
+                {
+                    v16 -= *v17++;
+                    p1 = v17;
+                }
+                else
+                {
+                    --v16;
+                }
+            } while ( v16 > 0 );
+            v19 = -v16;
             p2 -= v19;
             p0 += v19;
             result = &p5[v19];
@@ -57,51 +58,53 @@ unsigned short * _RLEBlitTransLucent50AlphaZReadWrite_G::AddRef(unsigned short *
             while ( 1 )
             {
                 v20 = ++p1;
-            }
-            if ( *v17 )
-            {
-                if ( p4 - *v12 >= *result )
+                if ( *v17 )
                 {
-                    ++v12;
-                }
-            }
-            ++p0;
-            ++result;
-            v23 = v12;
-            --p2;
-            *p0 = (this->m_C & (*p0 >> 1))
+                    if ( p4 - *v12 >= *result )
+                    {
+                        ++v12;
+                        ++p0;
+                        ++result;
+                        v23 = v12;
+                        --p2;
+                    }
+                    else
+                    {
+                        ++result;
+                        *p0 = (this->m_C & (*p0 >> 1))
                   + (this->m_C & (*(unsigned short *)(this->m_4 + 2 * (*v17 | *(unsigned short *)&v24[2 * *v11])) >> 1));
-            v12 = v23 + 1;
-            *(result - 1) = p4 - *v23++;
-            --p2;
-            ++p0;
-            ++v11;
-            v21 = *v20;
-            v12 += v21;
-            p2 -= v21;
-            p0 += v21;
-            result += v21;
-            v23 = v12;
-            v11 += v21;
-            if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
-            {
-                result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);
+                        v12 = v23 + 1;
+                        *(result - 1) = p4 - *v23++;
+                        --p2;
+                        ++p0;
+                    }
+                    ++v11;
+                }
+                else
+                {
+                    p1 = v20 + 1;
+                    v21 = *v20;
+                    v12 += v21;
+                    p2 -= v21;
+                    p0 += v21;
+                    result += v21;
+                    v23 = v12;
+                    v11 += v21;
+                }
+                if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 )
+                {
+                    result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C);
+                }
+                if ( (unsigned int)v11 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+                {
+                    v11 = (unsigned short *)((char *)v11 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
+                }
+                if ( p2 <= 0 )
+                {
+                    break;
+                }
+                v17 = p1;
             }
-            if ( (unsigned int)v11 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
-            {
-                v11 = (unsigned short *)((char *)v11 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
-            }
-            if ( p2 <= 0 )
-            {
-                break;
-            }
-            v17 = p1;
-        }
-        else
-        {
-        }
-        else
-        {
         }
         return (unsigned short *)(result);
 }

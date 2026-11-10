@@ -26,15 +26,17 @@ int _RLEBlitTransLucent75Alpha_G::AddRef(int p0, unsigned char * p1, int p2, int
         else
         {
             do
-          if ( *p1++ )
-            --result;
-            else
             {
-            }
-            while ( result > 0 )
-            {
-                v19 = -result;
-            }
+                if ( *p1++ )
+                {
+                    --result;
+                }
+                else
+                {
+                    result -= *p1++;
+                }
+            } while ( result > 0 );
+            v19 = -result;
             v20 = p2 - v19;
             v13 = p0 + 2 * v19;
             result = (int)&p6[v19];
@@ -60,32 +62,33 @@ int _RLEBlitTransLucent75Alpha_G::AddRef(int p0, unsigned char * p1, int p2, int
             if ( v21 )
             {
                 v22 = (v22 & ~0xFF) | ((*(unsigned short *)&v11[1].m_1[3]) & 0xFF);
+                v13 += 2;
+                v11 = this;
+                v24 = v21 | *(unsigned short *)&v29[2 * *v12];
+                v25 = *(unsigned short *)(this->m004[0] + 2 * v24);
+                v24 = (v24 & ~0xFF) | ((*(unsigned short *)(v13 - 2) >> 2) & 0xFF);
+                v26 = (unsigned int)v22 & v24;
+                v27 = (unsigned short)v22 & (v25 >> 2);
+                p1 = v30;
+                result = 3 * v26;
+                --v20;
+                *(unsigned short *)(v13 - 2) = result + v27;
+                v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
+                ++v12;
             }
-            v13 += 2;
-            v11 = this;
-            v24 = v21 | *(unsigned short *)&v29[2 * *v12];
-            v25 = *(unsigned short *)(this->m003[0] + 2 * v24);
-            v24 = (v24 & ~0xFF) | ((*(unsigned short *)(v13 - 2) >> 2) & 0xFF);
-            v26 = (unsigned int)v22 & v24;
-            v27 = (unsigned short)v22 & (v25 >> 2);
-            p1 = v30;
-            result = 3 * v26;
-            --v20;
-            *(unsigned short *)(v13 - 2) = result + v27;
-            v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
-            ++v12;
-            p1 = v22 + 1;
-            v20 -= v23;
-            result = 2 * v23;
-            v13 += result;
-            v12 = (unsigned short *)((char *)v12 + result);
+            else
+            {
+                v23 = *v22;
+                p1 = v22 + 1;
+                v20 -= v23;
+                result = 2 * v23;
+                v13 += result;
+                v12 = (unsigned short *)((char *)v12 + result);
+            }
             if ( (unsigned int)v12 >= *(unsigned int *)(v16 + 28) )
             {
                 v12 = (unsigned short *)((char *)v12 - *(unsigned int *)(v16 + 32));
             }
-        }
-        else
-        {
         }
         return (int)(result);
 }

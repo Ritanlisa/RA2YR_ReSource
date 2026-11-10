@@ -9,11 +9,16 @@ class RLEBlitTransLucent50Alpha_ushort;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class _RLEBlitTransLucent50Alpha_G
 {
 public:
     int m000;  // 0x000
+    char __pad_004[4];  // 0x004
+    int m_8;  // 0x008
+    int m_C;  // 0x00C
 
     // ---- pilot methods (registry signatures)
     unsigned short * AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, unsigned short * p6, int p7, int p8, int p9);  // 0x497CF0
@@ -34,6 +39,8 @@ extern int __stdcall(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class RLEBlitTransLucent50Alpha_ushort
 {
@@ -43,7 +50,7 @@ public:
     // DECOMP_SIZECHECK(RLEBlitTransLucent50Alpha_ushort, RLEBlitTransLucent50Alpha_ushort, 12);
 
     // ---- pilot methods (registry signatures)
-    unsigned short * AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, unsigned short * p6, int p7, int p8, int p9);  // 0x497CF0
+    unsigned short * AddRef(int p0, void * p1, int p2, int p3, int p4, int p5, void * p6, int p7, int p8, int p9);  // 0x497CF0
 };
 
 // ---- globals used by this unit (registry names)

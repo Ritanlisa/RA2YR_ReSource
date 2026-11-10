@@ -25,15 +25,17 @@ int _RLEBlitTransXlatAlphaZRead_G::Release(int p0, unsigned char * p1, int p2, i
         else
         {
             do
-          if ( *p1++ )
-            --v17;
-            else
             {
-            }
-            while ( v17 > 0 )
-            {
-                v19 = -v17;
-            }
+                if ( *p1++ )
+                {
+                    --v17;
+                }
+                else
+                {
+                    v17 -= *p1++;
+                }
+            } while ( v17 > 0 );
+            v19 = -v17;
             v13 = p0 + 2 * v19;
             v14 = p5 + 2 * v19;
             result = p2 - v19;
@@ -60,44 +62,45 @@ int _RLEBlitTransXlatAlphaZRead_G::Release(int p0, unsigned char * p1, int p2, i
             while ( 1 )
             {
                 v23 = *p1;
+                v24 = p1 + 1;
+                v29 = v24;
+                if ( v23 )
+                {
+                    v14 += 2;
+                    v26 = p4 - *v22++;
+                    v13 += 2;
+                    --result;
+                    if ( v26 < *(unsigned short *)(v14 - 2) )
+                    {
+                        *(unsigned short *)(v13 - 2) = p10
+                                  | *(unsigned short *)(this->m004[0] + 2 * (v23 | *(unsigned short *)&v30[2 * *v15]));
+                    }
+                    ++v15;
+                }
+                else
+                {
+                    v29 = v24 + 1;
+                    v25 = *v24;
+                    result -= v25;
+                    v22 += v25;
+                    v13 += 2 * v25;
+                    v14 += 2 * v25;
+                    v15 += v25;
+                }
+                if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 )
+                {
+                    v14 -= g_ZBufferDescriptor[1].Stream_field_0C;
+                }
+                if ( (unsigned int)v15 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
+                {
+                    v15 = (unsigned short *)((char *)v15 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
+                }
+                if ( result <= 0 )
+                {
+                    break;
+                }
+                p1 = v29;
             }
-            v24 = p1 + 1;
-            v29 = v24;
-            if ( v23 )
-            {
-                v14 += 2;
-            }
-            v26 = p4 - *v22++;
-            v13 += 2;
-            --result;
-            if ( v26 < *(unsigned short *)(v14 - 2) )
-            {
-                *(unsigned short *)(v13 - 2) = p10
-                                  | *(unsigned short *)(this->m003[0] + 2 * (v23 | *(unsigned short *)&v30[2 * *v15]));
-            }
-            ++v15;
-            v25 = *v24;
-            result -= v25;
-            v22 += v25;
-            v13 += 2 * v25;
-            v14 += 2 * v25;
-            v15 += v25;
-            if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 )
-            {
-                v14 -= g_ZBufferDescriptor[1].Stream_field_0C;
-            }
-            if ( (unsigned int)v15 >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
-            {
-                v15 = (unsigned short *)((char *)v15 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
-            }
-            if ( result <= 0 )
-            {
-                break;
-            }
-            p1 = v29;
-        }
-        else
-        {
         }
         return (int)(result);
 }

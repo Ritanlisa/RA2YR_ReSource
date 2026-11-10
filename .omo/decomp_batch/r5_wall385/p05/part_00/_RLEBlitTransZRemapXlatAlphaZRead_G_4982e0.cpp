@@ -5,7 +5,7 @@
 int _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef(int p0, unsigned char * p1, int p2, int p3, int p4, unsigned int p5, unsigned short * p6, int p7, int p8, char * p9)
 {
         int __stdcall ((RLEBlitTransZRemapXlatAlphaZRead_ushort *)(_RLEBlitTransZRemapXlatAlphaZRead_G this->m000))->AddRef(int p0, unsigned char *p1, int p2, int p3, int p4, unsigned int p5, unsigned short *p6, int p7, int p8, char *p9);
-        int v25 = *(unsigned int *)this->m_4;
+        int v25 = this->m_4;
         int v13 = p0;
         unsigned int v14 = p5;
         unsigned short * v15 = p6;
@@ -22,12 +22,17 @@ int _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef(int p0, unsigned char * p1, int 
         if ( p3 > 0 )
         {
             do
-          if ( *p1++ )
-            --v17;
-            while ( v17 > 0 )
             {
-                v19 = -v17;
-            }
+                if ( *p1++ )
+                {
+                    --v17;
+                }
+                else
+                {
+                    v17 -= *p1++;
+                }
+            } while ( v17 > 0 );
+            v19 = -v17;
             v13 = p0 + 2 * v19;
             p2 -= v19;
             v14 = p5 + 2 * v19;
@@ -42,9 +47,6 @@ int _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef(int p0, unsigned char * p1, int 
             }
             v15 = v20;
         }
-        else
-        {
-        }
         int result;
         unsigned char v22;
         int v23;
@@ -56,22 +58,26 @@ int _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef(int p0, unsigned char * p1, int 
             if ( v22 )
             {
                 v14 += 2;
-            }
-            v24 = p4 - *p9++;
-            v13 += 2;
-            if ( v24 < *(unsigned short *)(v14 - 2) )
-            {
-                *(unsigned short *)(v13 - 2) = *(unsigned short *)(*(unsigned int *)((char *)v26)[0x8]
+                v24 = p4 - *p9++;
+                v13 += 2;
+                if ( v24 < *(unsigned short *)(v14 - 2) )
+                {
+                    *(unsigned short *)(v13 - 2) = *(unsigned short *)(*(unsigned int *)((char *)v26)[0x8]
                                            + 2 * (*(unsigned char*)(v22 + v25) | *(unsigned short *)&v29[2 * *v15]));
+                }
+                --p2;
+                ++v15;
             }
-            --p2;
-            ++v15;
-            p2 -= v27;
-            v23 = 2 * v27;
-            v13 += v23;
-            v14 += v23;
-            p9 += v27;
-            v15 = (unsigned short *)((char *)v15 + v23);
+            else
+            {
+                v27 = *p1++;
+                p2 -= v27;
+                v23 = 2 * v27;
+                v13 += v23;
+                v14 += v23;
+                p9 += v27;
+                v15 = (unsigned short *)((char *)v15 + v23);
+            }
             if ( v14 >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 v14 -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -80,9 +86,6 @@ int _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef(int p0, unsigned char * p1, int 
             {
                 v15 = (unsigned short *)((char *)v15 - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
             }
-        }
-        else
-        {
         }
         return (int)(result);
 }

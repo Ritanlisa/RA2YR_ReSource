@@ -32,7 +32,7 @@ int MPCooperative::processTurn(char * p0, char * p1)
         this->u32_40 = 0;
         this->q048 = 0;
         this->u32_4C = 0;
-        this->ptr_50 = 0;
+        this->ptr_50 = (MultiplayerGameMode *)(0);
         this->__pad_054 = 0;
         this->q058 = 0;
         this->u32_5C = 0;

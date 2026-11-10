@@ -22,12 +22,17 @@ int _RLEBlitTransLucent75AlphaZReadWarp_G::AddRef(int p0, unsigned char * p1, in
         if ( p3 > 0 )
         {
             do
-          if ( *p1++ )
-            --v17;
-            while ( v17 > 0 )
             {
-                v19 = -v17;
-            }
+                if ( *p1++ )
+                {
+                    --v17;
+                }
+                else
+                {
+                    v17 -= *p1++;
+                }
+            } while ( v17 > 0 );
+            v19 = -v17;
             v12 = p0 + 2 * v19;
             p2 -= v19;
             v13 = p5 + 2 * v19;
@@ -42,9 +47,6 @@ int _RLEBlitTransLucent75AlphaZReadWarp_G::AddRef(int p0, unsigned char * p1, in
             }
             v14 = v20;
         }
-        else
-        {
-        }
         int result;
         unsigned char v22;
         int v23;
@@ -56,24 +58,32 @@ int _RLEBlitTransLucent75AlphaZReadWarp_G::AddRef(int p0, unsigned char * p1, in
             if ( v22 )
             {
                 v13 += 2;
-            }
-            v24 = p4 - *p9++;
-            if ( v24 >= *(unsigned short *)(v13 - 2) )
-            {
-                v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
-            }
-            v12 += 2;
-            *(unsigned short *)(v12 - 2) = 3 * (this->m_C & (*(unsigned short *)(v12 + 2 * p8 - 2) >> 2))
+                v24 = p4 - *p9++;
+                if ( v24 >= *(unsigned short *)(v13 - 2) )
+                {
+                    v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
+                    v12 += 2;
+                }
+                else
+                {
+                    v12 += 2;
+                    *(unsigned short *)(v12 - 2) = 3 * (this->m_C & (*(unsigned short *)(v12 + 2 * p8 - 2) >> 2))
                                 + (this->m_C & (*(unsigned short *)(this->m_4 + 2 * (v22 | *(unsigned short *)&v27[2 * *v14])) >> 2));
-            v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
-            --p2;
-            ++v14;
-            p2 -= v25;
-            v23 = 2 * v25;
-            v13 += v23;
-            v12 += v23;
-            p9 += v25;
-            v14 = (unsigned short *)((char *)v14 + v23);
+                    v16 = *(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)];
+                }
+                --p2;
+                ++v14;
+            }
+            else
+            {
+                v25 = *p1++;
+                p2 -= v25;
+                v23 = 2 * v25;
+                v13 += v23;
+                v12 += v23;
+                p9 += v25;
+                v14 = (unsigned short *)((char *)v14 + v23);
+            }
             if ( v13 >= g_ZBufferDescriptor[1].Stream_field_08 )
             {
                 v13 -= g_ZBufferDescriptor[1].Stream_field_0C;
@@ -82,12 +92,6 @@ int _RLEBlitTransLucent75AlphaZReadWarp_G::AddRef(int p0, unsigned char * p1, in
             {
                 v14 = (unsigned short *)((char *)v14 - *(unsigned int *)(v16 + 32));
             }
-        }
-        else
-        {
-        }
-        else
-        {
         }
         return (int)(result);
 }

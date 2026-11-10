@@ -24,15 +24,17 @@ unsigned short * _RLEBlitTransLucent50Alpha_G::AddRef(int p0, unsigned char * p1
         else
         {
             do
-          if ( *p1++ )
-            --v15;
-            else
             {
-            }
-            while ( v15 > 0 )
-            {
-                v17 = -v15;
-            }
+                if ( *p1++ )
+                {
+                    --v15;
+                }
+                else
+                {
+                    v15 -= *p1++;
+                }
+            } while ( v15 > 0 );
+            v17 = -v15;
             v18 = p2 - v17;
             v12 = p0 + 2 * v17;
             result = &p6[v17];
@@ -51,24 +53,25 @@ unsigned short * _RLEBlitTransLucent50Alpha_G::AddRef(int p0, unsigned char * p1
             if ( v19 )
             {
                 m_C = this->m_C;
-            }
-            v12 += 2;
-            this = v23;
-            *(unsigned short *)(v12 - 2) = (m_C & (*(unsigned short *)(v12 - 2) >> 1))
+                v12 += 2;
+                this = v23;
+                *(unsigned short *)(v12 - 2) = (m_C & (*(unsigned short *)(v12 - 2) >> 1))
                               + (m_C & (*(unsigned short *)(v23->m_4 + 2 * (v19 | *(unsigned short *)&v24[2 * *result])) >> 1));
-            --v18;
-            ++result;
-            v18 -= v20;
-            v21 = 2 * v20;
-            v12 += v21;
-            result = (unsigned short *)((char *)result + v21);
+                --v18;
+                ++result;
+            }
+            else
+            {
+                v20 = *p1++;
+                v18 -= v20;
+                v21 = 2 * v20;
+                v12 += v21;
+                result = (unsigned short *)((char *)result + v21);
+            }
             if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 28) )
             {
                 result = (unsigned short *)((char *)result - *(unsigned int *)(*(unsigned int *)&((char *)stru_87E790)[0xD8 + (60)] + 32));
             }
-        }
-        else
-        {
         }
         return (unsigned short *)(result);
 }

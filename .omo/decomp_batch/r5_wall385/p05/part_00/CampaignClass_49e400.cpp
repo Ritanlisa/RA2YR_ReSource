@@ -8,7 +8,8 @@ char CampaignClass::FindMission(char * p0, int * p1)
         {
             ((CampaignClass *)(this))->LoadFromINI();
         }
-        int v10 = 0;
+        int v10;
+        v10 = 0;
         int v4;
         int v5;
         int v6;
@@ -21,42 +22,42 @@ char CampaignClass::FindMission(char * p0, int * p1)
             while ( 2 )
             {
                 v4 = 0;
-            }
-            v11 = 0;
-            do v5 = v9 + this->scenario;
-            v6 = 0;
-            if ( *(char *)(v5 + 8) > 0 )
-            {
-                while ( _strnicmp(
-                        String1,
+                v11 = 0;
+                do
+                {
+                    v5 = v9 + this->scenario;
+                    v6 = 0;
+                    if ( *(char *)(v5 + 8) > 0 )
+                    {
+                        while ( _strnicmp(
+                        p0,
                         (const char *)(v4 + *(unsigned int *)(v5 + 12)),
                         strlen((const char *)(v4 + *(unsigned int *)(v5 + 12)))) )
-                {
-                    ++v6;
-                }
-            }
-            v4 += 780;
-            v5 = this->scenario + v9;
-            if ( v6 >= *(char *)(v5 + 8) )
-            {
-                v4 = v11;
-            }
-            goto LABEL_10;
-            *p0 = this->scenario + 76 * v10;
-            return (char)(1);
-            LABEL_10:
+                        {
+                            ++v6;
+                            v4 += 780;
+                            v5 = this->scenario + v9;
+                            if ( v6 >= *(char *)(v5 + 8) )
+                            {
+                                v4 = v11;
+                                goto LABEL_10;
+                            }
+                        }
+                        *p0 = this->scenario + 76 * v10;
+                        return (char)(1);
+                    }
+                    LABEL_10:
             v4 += 260;
-            v11 = v4;
-            while ( v4 < 780 )
-            {
+                    v11 = v4;
+                } while ( v4 < 780 );
                 v7 = ++v10 < this->q05C;
+                v9 += 76;
+                if ( v7 )
+                {
+                    continue;
+                }
+                break;
             }
-            v9 += 76;
-            if ( v7 )
-            {
-                continue;
-            }
-            break;
         }
         return (char)(0);
 }
