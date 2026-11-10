@@ -2142,7 +2142,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4ba5a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "DSurface::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2163,11 +2163,11 @@
   "status": "OK"
  },
  "0x4bbb00": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "DSurface::BlitStretch",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4bbc90": {
   "attempts": 2,
@@ -2177,21 +2177,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x4c3d00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4c4ef0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TaskForceClass::ParseUnitCountAndType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4c58c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "EMPulseClass::IterateCellsInRadius",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2212,28 +2212,28 @@
   "status": "OK"
  },
  "0x4c9220": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "FacingClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4c93d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4c9530": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 push ecx",
   "name": "MovementClass::CompareAbsCoords",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x4c9b20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FactoryClass::UpdateProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2254,7 +2254,7 @@
   "status": "NG"
  },
  "0x4c9ea0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ProductionClass::StartTimer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2310,14 +2310,14 @@
   "status": "NG"
  },
  "0x4caf20": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4cbba0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2366,42 +2366,42 @@
   "status": "OK"
  },
  "0x4d2a10": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FoggedObject_DrawVector::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4d2bc0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4da030": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4daf10": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4dc810": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+4 push ebx",
   "name": "FootClass::SetBuildingType",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x4ddb90": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+6 push edi",
   "name": "FootClass::MoveToWeed",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -2457,14 +2457,14 @@
   "status": "OK"
  },
  "0x4e4820": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5310": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",

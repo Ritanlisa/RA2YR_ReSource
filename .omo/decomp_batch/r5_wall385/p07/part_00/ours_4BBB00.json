@@ -1,0 +1,45 @@
+{
+ "symbol": "?BlitStretch@unknown@@QAIXHHH@Z",
+ "sym_key": "unknown::BlitStretch",
+ "size": 294,
+ "link_base": 0,
+ "bytes_hex": "8b4c240483ec0883f901538bda0f8c0c0100008d41ff85c00f8c01010000555657c744241000000000894c2414eb048b4c241c83f9017f07b800000100eb088b4424104999f7f933ed8bcd81e1ff00008079084981c900ffffff418b5424208d144a03ca33d28a118bf233d28a51010faff08bfa33d28a51020faff80fafd0c1fe10c1ff10c1fa1081feff0000007c05beff00000081ffff0000007c05bfff00000081faff0000007c05baff0000008b0d0000000083c302d3fa8b0d00000000d3e28b0d00000000d3ff8b0d00000000d3e78b0d00000000d3fe8b0d000000000bd7d3e60bd64581fd00010000668953fe0f8c52ffffff8b4c24148b74241083f9010f94c081c6000002004984c089742410894c24140f8413ffffff5f5e5d5b83c408c20800",
+ "relocs": [
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 204,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 212,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

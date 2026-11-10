@@ -36,9 +36,9 @@ char CreditsPower::DrawCreditsTextLine(char p0)
             if ( g_DDraw_Active )
             {
                 v8 = v5;
+                v7 = wcslen(*(const wchar_t **)this);
+                return (char)(DrawTextRendererTextAligned(8454143, 0, v9, *(unsigned short **)this, v7, v8, 0, dword_8A0F58, 0));
             }
-            v7 = wcslen(*(const wchar_t **)this);
-            return (char)(DrawTextRendererTextAligned(8454143, 0, v9, *(unsigned short **)this, v7, v8, 0, dword_8A0F58, 0));
         }
         return (char)(result);
 }

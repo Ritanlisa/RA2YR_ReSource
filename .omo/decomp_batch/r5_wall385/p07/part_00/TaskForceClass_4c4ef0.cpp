@@ -4,12 +4,12 @@
 
 TaskForceClass * TaskForceClass::ParseUnitCountAndType(char * p0)
 {
-        char * v9 = Buffer;
+        char * v9 = p0;
         this->vfptr = 0;
         this->vtable2 = 0;
         TypeClass v10;
-        sscanf(v9, "%d,%s", &Buffer, &v10);
-        this->vfptr = Buffer;
+        sscanf(v9, "%d,%s", &p0, &v10);
+        this->vfptr = p0;
         int ExitCellByName = ((Factory *)(&v10))->FindExitCellByName();
         int v4;
         int Index;
@@ -21,17 +21,18 @@ TaskForceClass * TaskForceClass::ParseUnitCountAndType(char * p0)
             if ( Index == -1 )
             {
                 v8 = ((TypeClass *)(&v10))->FindByName();
+                if ( v8 != -1 )
+                {
+                    this->vtable2 = *((unsigned int *)g_AircraftTypeCount + v8);
+                }
+                return (TaskForceClass *)(this->vfptr);
             }
-            if ( v8 != -1 )
+            else
             {
-                this->vtable2 = *((unsigned int *)g_AircraftTypeCount + v8);
+                v7 = *((unsigned int *)g_UnitTypeCount2 + Index);
+                this->vtable2 = v7;
+                return (TaskForceClass *)(this->vfptr);
             }
-            return (TaskForceClass *)(this->vfptr);
-            this->vtable2 = v7;
-            return (TaskForceClass *)(this->vfptr);
-        }
-        else
-        {
         }
         else
         {

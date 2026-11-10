@@ -5,13 +5,16 @@
 
 unsigned int * MovementClass::CompareAbsCoords(int * p0)
 {
-        short v2 = *((unsigned short *)this + 10);
+        short v2;
+        v2 = *((unsigned short *)this + 10);
         if ( v2 <= 0 )
         {
             goto LABEL_14;
         }
-        int v3 = *((unsigned int *)this + 2);
-        int v4 = *((unsigned int *)this + 4);
+        int v3;
+        v3 = *((unsigned int *)this + 2);
+        int v4;
+        v4 = *((unsigned int *)this + 4);
         int v7;
         int v11;
         if ( v3 != -1 )
@@ -20,19 +23,22 @@ unsigned int * MovementClass::CompareAbsCoords(int * p0)
             {
                 LABEL_14:
           v7 = this->m000;
+                v11 = this->m000;
+                goto LABEL_15;
             }
-            v11 = this->m000;
-            goto LABEL_15;
             v4 -= *(unsigned int *)&((char *)stru_A8EB00)[416] - v3;
         }
         if ( v4 == 0 )
         {
             goto LABEL_14;
         }
-        int v5 = (short)(this->m000 - (this->m004 & 0xFFFF));
-        int v6 = abs16(this->m000 - (this->m004 & 0xFFFF)) / v2;
+        int v5;
+        v5 = (short)(this->m000 - (this->m004 & 0xFFFF));
+        int v6;
+        v6 = abs16(this->m000 - (this->m004 & 0xFFFF)) / v2;
         v7 = this->m000;
-        int v14 = this->m000;
+        int v14;
+        v14 = this->m000;
         int v8;
         int v9;
         short v10;
@@ -45,10 +51,10 @@ unsigned int * MovementClass::CompareAbsCoords(int * p0)
                 if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - v9 >= v8 )
                 {
                     v10 = 0;
+                    goto LABEL_11;
                 }
+                v8 = (v8 & ~0xFF) | ((v8 - (*(unsigned short *)&((char *)stru_A8EB00)[416] - v9)) & 0xFF);
             }
-            goto LABEL_11;
-            v8 = (v8 & ~0xFF) | ((v8 - (*(unsigned short *)&((char *)stru_A8EB00)[416] - v9)) & 0xFF);
             v10 = v8;
             LABEL_11:
     v14 = (v14 & ~0xFF) | ((v14 - v10 * (v5 / (short)v6)) & 0xFF);

@@ -42,12 +42,12 @@ char * DSurface::Construct(int p0, int p1, char p2, char p3)
             if ( *v6 )
             {
                 memset(*((void **)this + 8), 0, 0x6Cu);
+                **((unsigned int **)this + 8) = 108;
+                (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *((unsigned int *)this + 8));
+                v8 = *((unsigned int *)this + 8);
+                *((unsigned int *)this + 4) = (unsigned int)(*(unsigned int *)(v8 + 84) + 7) >> 3;
+                this->u32_19 = (*(unsigned int *)(v8 + 104) & 0x4000) != 0;
             }
-            **((unsigned int **)this + 8) = 108;
-            (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *((unsigned int *)this + 8));
-            v8 = *((unsigned int *)this + 8);
-            *((unsigned int *)this + 4) = (unsigned int)(*(unsigned int *)(v8 + 84) + 7) >> 3;
-            this->u32_19 = (*(unsigned int *)(v8 + 104) & 0x4000) != 0;
         }
         return (char *)(this);
 }

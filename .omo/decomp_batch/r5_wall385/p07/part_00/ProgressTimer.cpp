@@ -5,13 +5,16 @@
 
 unsigned int * ProgressTimer::GetValue(int * p0)
 {
-        short ProgressTimer_field_0x14 = (short)this->m014;
+        short ProgressTimer_field_0x14;
+        ProgressTimer_field_0x14 = (short)this->m014;
         if ( ProgressTimer_field_0x14 <= 0 )
         {
             goto LABEL_14;
         }
-        void * ProgressTimer_field_0x8 = this->m008;
-        char * ProgressTimer_field_0x10 = (char *)this->m010;
+        void * ProgressTimer_field_0x8;
+        ProgressTimer_field_0x8 = this->m008;
+        char * ProgressTimer_field_0x10;
+        ProgressTimer_field_0x10 = (char *)this->m010;
         if ( ProgressTimer_field_0x8 != (void *)-1 )
         {
             if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - (int)ProgressTimer_field_0x8 >= (int)ProgressTimer_field_0x10 )
@@ -37,8 +40,8 @@ unsigned int * ProgressTimer::GetValue(int * p0)
             {
                 LABEL_12:
           *p0 = v12;
+                return (unsigned int *)(p0);
             }
-            return (unsigned int *)(p0);
             v8 = this->m010;
             v9 = this->m008;
             if ( v9 != (void *)-1 )
@@ -46,10 +49,10 @@ unsigned int * ProgressTimer::GetValue(int * p0)
                 if ( *(unsigned int *)&((char *)stru_A8EB00)[416] - (int)v9 >= (int)v8 )
                 {
                     v10 = 0;
+                    goto LABEL_11;
                 }
+                v8 = (v8 & ~0xFF) | (((unsigned short)v8 - (*(unsigned short *)&((char *)stru_A8EB00)[416] - (unsigned short)v9)) & 0xFF);
             }
-            goto LABEL_11;
-            v8 = (v8 & ~0xFF) | (((unsigned short)v8 - (*(unsigned short *)&((char *)stru_A8EB00)[416] - (unsigned short)v9)) & 0xFF);
             v10 = (short)v8;
             LABEL_11:
     v12 = (v12 & ~0xFF) | ((v12 - v10 * (v5 / (short)v7)) & 0xFF);

@@ -23,6 +23,6 @@ unsigned int * FootClass::UpdateState(int * p0, int p1, int p2, int p3, int * p4
         {
             this->vt_entry_68(this->locomotor[0], v13);
         }
-        return (unsigned int *)((TechnoClass *)(this))->UpdateState();
+        return (unsigned int *)((unsigned int *)((TechnoClass *)(this))->UpdateState());
 }
 

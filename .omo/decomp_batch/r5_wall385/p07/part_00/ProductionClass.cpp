@@ -5,7 +5,8 @@
 
 char ProductionClass::StartTimer(char p0)
 {
-        unsigned int * v4 = *(unsigned int **)(this + 88);
+        unsigned int * v4;
+        v4 = *(unsigned int **)(this + 88);
         int result;
         if ( v4 == 0 )
         {
@@ -21,13 +22,15 @@ char ProductionClass::StartTimer(char p0)
         {
             goto LABEL_24;
         }
-        int v5 = 0;
+        int v5;
+        v5 = 0;
         this->m070 = 0;
         if ( v4 )
         {
             v5 = ((HouseClass *)(v4))->CalcProductionSpeed();
         }
-        int v6 = v5 / 54;
+        int v6;
+        v6 = v5 / 54;
         if ( v6 >= 1 )
         {
             if ( v6 > 255 )
@@ -39,7 +42,8 @@ char ProductionClass::StartTimer(char p0)
         {
             v6 = 1;
         }
-        wchar_t * v7 = g_CurrentFrame;
+        wchar_t * v7;
+        v7 = g_CurrentFrame;
         this->m038 = v6;
         this->m02C = v7;
         int v10;
@@ -65,14 +69,14 @@ char ProductionClass::StartTimer(char p0)
                 if ( !this->m070 )
                 {
                     this->m071 = 1;
+                    this->m070 = 1;
+                    this->m02C = g_CurrentFrame;
+                    result = v10;
+                    this->m038 = 0;
+                    this->m030 = v10;
+                    this->m034 = 0;
                 }
             }
-            this->m070 = 1;
-            this->m02C = g_CurrentFrame;
-            result = v10;
-            this->m038 = 0;
-            this->m030 = v10;
-            this->m034 = 0;
             result = (result & ~0xFF) | ((1) & 0xFF);
         }
         else

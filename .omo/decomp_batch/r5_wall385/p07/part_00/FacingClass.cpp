@@ -5,18 +5,22 @@
 
 char FacingClass::Update(unsigned short * p0)
 {
-        int result = (result & ~0xFF) | ((*(unsigned short *)this) & 0xFF);
+        int result;
+        result = (result & ~0xFF) | ((*(unsigned short *)this) & 0xFF);
         if ( *(unsigned short *)this == *p0 )
         {
             return (char)((0));
         }
-        short v3 = *((unsigned short *)this + 10);
+        short v3;
+        v3 = *((unsigned short *)this + 10);
         if ( v3 <= 0 )
         {
             goto LABEL_15;
         }
-        int v4 = *((unsigned int *)this + 2);
-        int v5 = *((unsigned int *)this + 4);
+        int v4;
+        v4 = *((unsigned int *)this + 2);
+        int v5;
+        v5 = *((unsigned int *)this + 4);
         int v11;
         if ( v4 != -1 )
         {
@@ -24,17 +28,20 @@ char FacingClass::Update(unsigned short * p0)
             {
                 LABEL_15:
           v11 = *(unsigned int *)this;
+                goto LABEL_16;
             }
-            goto LABEL_16;
             v5 -= (int)g_CurrentFrame - v4;
         }
         if ( v5 == 0 )
         {
             goto LABEL_15;
         }
-        int v6 = (short)(result - *((unsigned short *)this + 2));
-        int v7 = (((short)(result - *((unsigned short *)this + 2)) ^ ((short)(result - *((unsigned short *)this + 2)) >> 31)) - ((short)(result - *((unsigned short *)this + 2)) >> 31)) / v3;
-        int v14 = *(unsigned int *)this;
+        int v6;
+        v6 = (short)(result - *((unsigned short *)this + 2));
+        int v7;
+        v7 = (((short)(result - *((unsigned short *)this + 2)) ^ ((short)(result - *((unsigned short *)this + 2)) >> 31)) - ((short)(result - *((unsigned short *)this + 2)) >> 31)) / v3;
+        int v14;
+        v14 = *(unsigned int *)this;
         int v8;
         int v9;
         short v10;
@@ -47,10 +54,10 @@ char FacingClass::Update(unsigned short * p0)
                 if ( (int)g_CurrentFrame - v8 >= v9 )
                 {
                     v10 = 0;
+                    goto LABEL_12;
                 }
+                v9 = (v9 & ~0xFF) | ((v9 - ((unsigned short)g_CurrentFrame - v8)) & 0xFF);
             }
-            goto LABEL_12;
-            v9 = (v9 & ~0xFF) | ((v9 - ((unsigned short)g_CurrentFrame - v8)) & 0xFF);
             v10 = v9;
             LABEL_12:
     v14 = (v14 & ~0xFF) | ((v14 - v10 * (v6 / (short)v7)) & 0xFF);
@@ -59,7 +66,8 @@ char FacingClass::Update(unsigned short * p0)
         LABEL_16:
       *((unsigned int *)this + 1) = v11;
         result = (int)p0;
-        int v12 = *(unsigned int *)p0;
+        int v12;
+        v12 = *(unsigned int *)p0;
         *(unsigned int *)this = *(unsigned int *)p0;
         char * v13;
         int v15;

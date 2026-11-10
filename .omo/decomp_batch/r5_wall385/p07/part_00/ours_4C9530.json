@@ -1,0 +1,33 @@
+{
+ "symbol": "?CompareAbsCoords@MovementClass@@QAEPAIPAH@Z",
+ "sym_key": "MovementClass::CompareAbsCoords",
+ "size": 235,
+ "link_base": 0,
+ "bytes_hex": "53568bf157668b7e146685ff7e218b46088b4e1083f8ff74128b15a00100008bda2bd83bd973082bc203c885c975108b7c241033c9668b0e8bc1e990000000668b06668b4e048bd025ffff00002bd181e1ffff00002bc1500fbfdae8000000000fbfcf99f7f933c983c404668b0e8bf96685c07e4a8b56108b760883feff5574228b2da00100002bee3bea720433f6eb142b35a001000003f233f281e6ff00000033d68bf20fbfe88bc399f7fd8bd75d0fafc62bd033d781e2ff00000033fa8b4424108bd733d081e2ff00000033c22ac88b44241081e1ff00000081e700ffffff0bcf5f5e89085bc20400",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?abs16@@YAHZZ",
+   "sym_key": "abs16"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  }
+ ]
+}

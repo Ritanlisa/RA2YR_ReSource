@@ -17,27 +17,31 @@ char Lobby::FillPlayerFactions()
                 {
                     case 1:
               v3 = 1314;
+                    break;
+                    case 2:
+              v3 = 1315;
+                    break;
+                    case 3:
+              v3 = 1316;
+                    break;
+                    case 4:
+              v3 = 1317;
+                    break;
+                    case 5:
+              v3 = 1318;
+                    break;
+                    case 6:
+              v3 = 1319;
+                    break;
+                    default:
+              v3 = i != 7 ? -1 : 1320;
+                    break;
                 }
             }
-            break;
-            case 2:
-              v3 = 1315;
-            break;
-            case 3:
-              v3 = 1316;
-            break;
-            case 4:
-              v3 = 1317;
-            break;
-            case 5:
-              v3 = 1318;
-            break;
-            case 6:
-              v3 = 1319;
-            break;
-            default:
-              v3 = i != 7 ? -1 : 1320;
-            break;
+            else
+            {
+                v3 = 1698;
+            }
             if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4)
           && ((v4 = g_NetworkPlayerName[i], v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
             {
@@ -47,9 +51,6 @@ char Lobby::FillPlayerFactions()
             {
                 result = FillComboBoxFactions((HWND)this, v3);
             }
-        }
-        else
-        {
         }
         return (char)(result);
 }
@@ -72,27 +73,31 @@ int Lobby::InvalidateFactionCombos()
                 {
                     case 1:
               v3 = 1700;
+                    break;
+                    case 2:
+              v3 = 1701;
+                    break;
+                    case 3:
+              v3 = 1702;
+                    break;
+                    case 4:
+              v3 = 1703;
+                    break;
+                    case 5:
+              v3 = 1704;
+                    break;
+                    case 6:
+              v3 = 1706;
+                    break;
+                    default:
+              v3 = i != 7 ? -1 : 1707;
+                    break;
                 }
             }
-            break;
-            case 2:
-              v3 = 1701;
-            break;
-            case 3:
-              v3 = 1702;
-            break;
-            case 4:
-              v3 = 1703;
-            break;
-            case 5:
-              v3 = 1704;
-            break;
-            case 6:
-              v3 = 1706;
-            break;
-            default:
-              v3 = i != 7 ? -1 : 1707;
-            break;
+            else
+            {
+                v3 = 1699;
+            }
             if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4)
           && ((v4 = g_NetworkPlayerName[i], v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
             {
@@ -102,9 +107,6 @@ int Lobby::InvalidateFactionCombos()
             {
                 result = FillComboBoxAllianceSlots((HWND)this, v3);
             }
-        }
-        else
-        {
         }
         return (int)(result);
 }

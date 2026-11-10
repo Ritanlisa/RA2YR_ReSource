@@ -2,11 +2,12 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 18,
-   "MISMATCH": 2
+   "COMPILE_FAIL": 16,
+   "MISMATCH": 4
   },
   "pathologies": {
-   "regalloc": 1,
+   "frame_sched": 1,
+   "regalloc": 2,
    "codegen_shape": 1
   },
   "match_rate_of_decided_pct": 0.0,
@@ -31,17 +32,22 @@
   {
    "addr": "0x4bbb00",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\unknown.cpp(54) : error C2043: illegal break",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 291B ours 294B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 mov ecx, dword ptr [esp + 4]"
+   },
+   "pathology": "frame_sched",
    "name": "DSurface::BlitStretch",
    "emitted": "unknown::BlitStretch",
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "6/6",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 291,
+   "ours_size": 294
   },
   {
    "addr": "0x4c3d00",
@@ -62,7 +68,7 @@
    "addr": "0x4c4ef0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\TaskForceClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\TaskForceClass.cpp(13) : error C2440: '=' : cannot convert from 'char *' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "TaskForceClass::ParseUnitCountAndType",
@@ -70,14 +76,14 @@
    "unit": "TaskForceClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/17",
+   "sites": "15/16",
    "rule_violations": 0
   },
   {
    "addr": "0x4c58c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\EMPulseClass.cpp(25) : error C2059: syntax error : '}'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\EMPulseClass.cpp(38) : err",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\EMPulseClass.cpp(37) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int *'",
    "first_diff": null,
    "pathology": null,
    "name": "EMPulseClass::IterateCellsInRadius",
@@ -92,7 +98,7 @@
    "addr": "0x4c9220",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\FacingClass.cpp(25) : error C2362: initialization of 'v5' is skipped by 'goto LABEL_15'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\FacingClass.cpp(77) : error C2440: '=' : cannot convert from 'class FacingClass *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
    "first_diff": null,
    "pathology": null,
    "name": "FacingClass::Update",
@@ -107,7 +113,7 @@
    "addr": "0x4c93d0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\ProgressTimer.cpp(13) : error C2440: 'initializing' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\ProgressTimer.cpp(15) : error C2440: '=' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\",
    "first_diff": null,
    "pathology": null,
    "name": "ProgressTimer::GetValue",
@@ -121,23 +127,28 @@
   {
    "addr": "0x4c9530",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\MovementClass.cpp(21) : error C2362: initialization of 'v4' is skipped by 'goto LABEL_14'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 157B ours 235B",
+   "first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 push ebx"
+   },
+   "pathology": "regalloc",
    "name": "MovementClass::CompareAbsCoords",
    "emitted": "MovementClass::CompareAbsCoords",
    "unit": "MovementClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "9/16",
-   "rule_violations": 10
+   "sites": "9/17",
+   "rule_violations": 10,
+   "orig_size": 157,
+   "ours_size": 235
   },
   {
    "addr": "0x4c9b20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\FactoryClass.cpp(35) : error C2664: 'Locomotor__GetSpeed' : cannot convert parameter 1 from 'class Locomotor *' to 'int'; D:\\RA2YR_ReSource\\.",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\FactoryClass.cpp(37) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\FactoryCla",
    "first_diff": null,
    "pathology": null,
    "name": "FactoryClass::UpdateProduction",
@@ -152,7 +163,7 @@
    "addr": "0x4c9ea0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\ProductionClass.cpp(42) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_bat",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\ProductionClass.cpp(46) : error C2440: '=' : cannot convert from 'void *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall3",
    "first_diff": null,
    "pathology": null,
    "name": "ProductionClass::StartTimer",
@@ -197,7 +208,7 @@
    "addr": "0x4d2a10",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\_VectorClass_UDrawRecord_FoggedObjectClass.cpp(22) : error C2039: 'm_C' : is not a member of '_VectorClass_UDrawRecord_FoggedObjectClass'; D:",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\_VectorClass_UDrawRecord_FoggedObjectClass.cpp(98) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.om",
    "first_diff": null,
    "pathology": null,
    "name": "FoggedObject_DrawVector::Release",
@@ -205,14 +216,14 @@
    "unit": "_VectorClass_UDrawRecord_FoggedObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 11
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x4d2bc0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\include\\_DynamicVectorClass_UDrawRecord_FoggedObjectClass.hpp(28) : error C2059: syntax error : '('; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_w",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\_DynamicVectorClass_UDrawRecord_FoggedObjectClass.cpp(100) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSo",
    "first_diff": null,
    "pathology": null,
    "name": "FoggedObjectClass::ResizeArray",
@@ -220,8 +231,8 @@
    "unit": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "10/21",
-   "rule_violations": 13
+   "sites": "10/16",
+   "rule_violations": 6
   },
   {
    "addr": "0x4da030",
@@ -277,7 +288,7 @@
    "addr": "0x4ddb90",
    "batch": "adhoc",
    "verdict": "MISMATCH",
-   "note": "orig 174B ours 142B",
+   "note": "orig 174B ours 136B",
    "first_diff": {
     "orig": "+6 push edi",
     "ours": "+6 mov eax, dword ptr [esi + 0x5a4]"
@@ -291,13 +302,13 @@
    "sites": "6/7",
    "rule_violations": 0,
    "orig_size": 174,
-   "ours_size": 142
+   "ours_size": 136
   },
   {
    "addr": "0x4e4820",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(23) : error C2046: illegal case; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(26) : error C2046: illegal ca",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(4",
    "first_diff": null,
    "pathology": null,
    "name": "Lobby::FillPlayerFactions",
@@ -312,7 +323,7 @@
    "addr": "0x4e5310",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(23) : error C2046: illegal case; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(26) : error C2046: illegal ca",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p07\\part_00\\Lobby.cpp(4",
    "first_diff": null,
    "pathology": null,
    "name": "Lobby::InvalidateFactionCombos",

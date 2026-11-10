@@ -22,37 +22,37 @@ void __fastcall unknown::BlitStretch(int p0, int p1, int p2)
             while ( 1 )
             {
                 v5 = v3 <= 1 ? 0x10000 : v12 / (v3 - 1);
-            }
-            for ( i = 0; i < 256; ++i )
-            {
-                v7 = (unsigned char*)(p2 + 2 * (i % 256) + i % 256);
-            }
-            v8 = (v5 * *v7) >> 16;
-            v9 = (v5 * v7[1]) >> 16;
-            v10 = (v5 * v7[2]) >> 16;
-            if ( v8 >= 255 )
-            {
-                v8 = 255;
-            }
-            if ( v9 >= 255 )
-            {
-                v9 = 255;
-            }
-            if ( v10 >= 255 )
-            {
-                v10 = 255;
-            }
-            p0 += 2;
-            *(unsigned short *)(p0 - 2) = (v8 >> g_BitShift_Green_0 << g_BitShift_Red)
+                for ( i = 0; i < 256; ++i )
+                {
+                    v7 = (unsigned char*)(p2 + 2 * (i % 256) + i % 256);
+                    v8 = (v5 * *v7) >> 16;
+                    v9 = (v5 * v7[1]) >> 16;
+                    v10 = (v5 * v7[2]) >> 16;
+                    if ( v8 >= 255 )
+                    {
+                        v8 = 255;
+                    }
+                    if ( v9 >= 255 )
+                    {
+                        v9 = 255;
+                    }
+                    if ( v10 >= 255 )
+                    {
+                        v10 = 255;
+                    }
+                    p0 += 2;
+                    *(unsigned short *)(p0 - 2) = (v8 >> g_BitShift_Green_0 << g_BitShift_Red)
                                | (v9 >> g_BitMask_Blue << g_BitMask_Green)
                                | (v10 >> g_BitMask_Red << g_BitShift_Blue);
-            v11 = v13 == 1;
-            v12 += 0x20000;
-            --v13;
-            if ( v11 )
-            {
-                break;
+                }
+                v11 = v13 == 1;
+                v12 += 0x20000;
+                --v13;
+                if ( v11 )
+                {
+                    break;
+                }
+                v3 = p1;
             }
-            v3 = p1;
         }
 }

@@ -1,14 +1,14 @@
 {
  "symbol": "?MoveToWeed@FootClass@@QAEDH@Z",
  "sym_key": "FootClass::MoveToWeed",
- "size": 142,
+ "size": 136,
  "link_base": 0,
- "bytes_hex": "83ec10568bf18b86a405000085c075758b4424188d4c240450518bcee8000000008b008b0d000000003bc189442418740d8b168d4424085056ff5248eb048b4424188b088b5004c1e908c1ea085152e8000000008b4c242083c4083bc87509b0015e83c410c204008d442418578b3e50b9f8010000e8000000006a015056ff97800400005f32c05e83c410c20400",
+ "bytes_hex": "83ec10568bf18b86a405000085c0756f8b4424188d4c240450518bcee8000000008b008b0d000000003bc189442418744e8b168d4424085056ff52488b088b5004c1e908c1ea085152e8000000008b4c242083c4083bc87509b0015e83c410c204008d442418578b3e50b9f8010000e8000000006a015056ff97800400005f32c05e83c410c20400",
  "relocs": [
   {
    "off": 29,
    "type": "REL32",
-   "sym": "?Validate@BuildingClass@@QAEPAHPAHH@Z",
+   "sym": "?Validate@BuildingClass@@QAEPAHPAXH@Z",
    "sym_key": "BuildingClass::Validate"
   },
   {
@@ -18,21 +18,21 @@
    "sym_key": "g_FootClass_Pool"
   },
   {
-   "off": 80,
+   "off": 74,
    "type": "REL32",
    "sym": "?__PAIR32__@@YAHZZ",
    "sym_key": "__PAIR32__"
   },
   {
-   "off": 113,
+   "off": 107,
    "type": "DIR32",
    "sym": "?stru_87F5F0@@3PADA",
    "sym_key": "stru_87F5F0"
   },
   {
-   "off": 118,
+   "off": 112,
    "type": "REL32",
-   "sym": "?To_CellObj@CellCoord@@QAEPAXPAF@Z",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
    "sym_key": "CellCoord::To_CellObj"
   }
  ]

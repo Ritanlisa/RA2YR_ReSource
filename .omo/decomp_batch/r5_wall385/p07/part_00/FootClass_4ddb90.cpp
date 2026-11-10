@@ -15,14 +15,14 @@ char FootClass::MoveToWeed(int p0)
             if ( p0 != g_FootClass_Pool )
             {
                 v3 = (unsigned int *)(*((int (__stdcall **)(FootClass *, unsigned char *))this->vfptr + 18))(this, v8);
+                if ( p0 == __PAIR32__(v3[1] / 256, *v3 / 256) )
+                {
+                    return (char)(1);
+                }
+                vtable0 = (void (__stdcall **)(FootClass *, void *, int))this->vfptr;
+                v6 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj((short *)&p0);
+                vtable0[288](this, v6, 1);
             }
-            if ( p0 == __PAIR32__(v3[1] / 256, *v3 / 256) )
-            {
-                return (char)(1);
-            }
-            vtable0 = (void (__stdcall **)(FootClass *, void *, int))this->vfptr;
-            v6 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj((short *)&p0);
-            vtable0[288](this, v6, 1);
         }
         return (char)(0);
 }

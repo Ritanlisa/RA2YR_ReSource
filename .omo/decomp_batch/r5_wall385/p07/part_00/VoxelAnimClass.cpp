@@ -8,9 +8,6 @@ unsigned int VoxelAnimClass::ProcessFrame()
         int v1 = 0;
         unsigned int * v2 = &DataGlobal_86D0BC;
         int v3 = 0x2000;
-        do
-        {
-        } while ();
         double v4;
         double v5;
         unsigned int v6;
@@ -19,25 +16,30 @@ unsigned int VoxelAnimClass::ProcessFrame()
         double v9;
         unsigned int v10;
         int v11;
+        unsigned int result;
         float v13;
         float v14;
         float v15;
-        if ( v4 == 0.0 )
+        float v16;
+        do
         {
-            v5 = 0.0;
-        }
-        else
-        {
-            if ( v4 <= 0.0 )
+            v4 = COERCE_FLOAT((v1 | 0xFE000) << 10);
+            if ( v4 == 0.0 )
             {
-                v4 = v4 * -1.0;
+                v5 = 0.0;
             }
-            v13 = v4;
-            v6 = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v13);
-            v7 = (LODWORD(v13) >> 23) - 127;
-            if ( (v7 & 1) != 0 )
+            else
             {
-                v6 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor';
+                if ( v4 <= 0.0 )
+                {
+                    v4 = v4 * -1.0;
+                }
+                v13 = v4;
+                v6 = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v13);
+                v7 = (LODWORD(v13) >> 23) - 127;
+                if ( (v7 & 1) != 0 )
+                {
+                    v6 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor';
           v5 = COERCE_FLOAT(((((short)v7 >> 1) + 127) << 23) + DataGlobal_8650BC[v6 >> 10]);
         }
         v14 = v5;
@@ -56,17 +58,15 @@ unsigned int VoxelAnimClass::ProcessFrame()
           v11 = (LODWORD(v15) >> 23) - 127;
           if ( (v11 & 1) != 0 )
             v10 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor';
+                }
+                v9 = COERCE_FLOAT(((((short)v11 >> 1) + 127) << 23) + DataGlobal_8650BC[v10 >> 10]);
             }
-            v9 = COERCE_FLOAT(((((short)v11 >> 1) + 127) << 23) + DataGlobal_8650BC[v10 >> 10]);
-        }
-        float v16 = v9;
-        ++v2;
-        unsigned int result = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v16);
-        ++v1;
-        *(v2 - 1) = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v16);
-        --v3;
-        while ( v3 )
-        {
-            return (unsigned int)(result);
-        }
+            v16 = v9;
+            ++v2;
+            result = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v16);
+            ++v1;
+            *(v2 - 1) = (unsigned int)&DataGlobal_7FFFFF & LODWORD(v16);
+            --v3;
+        } while ( v3 );
+        return (unsigned int)(result);
 }

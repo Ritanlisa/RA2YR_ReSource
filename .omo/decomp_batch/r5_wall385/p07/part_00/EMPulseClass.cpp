@@ -21,28 +21,27 @@ int EMPulseClass::IterateCellsInRadius()
             if ( -result <= result )
             {
                 do
-            v6 = v3 + *((unsigned short *)this + 19);
-            }
-            v11 = (v11 & ~0xFF) | ((v5 + *((unsigned short *)this + 18)) & 0xFF);
-            v11 = (v11 & ~0xFF) | ((v6) & 0xFF);
-            *(unsigned int *)v10 = v11;
-            if ( (unsigned short)v11 < 0x200u
+                {
+                    v6 = v3 + *((unsigned short *)this + 19);
+                    v11 = (v11 & ~0xFF) | ((v5 + *((unsigned short *)this + 18)) & 0xFF);
+                    v11 = (v11 & ~0xFF) | ((v6) & 0xFF);
+                    *(unsigned int *)v10 = v11;
+                    if ( (unsigned short)v11 < 0x200u
               && v6 < 0x200u
               && (unsigned char)((Cell *)(&((char *)stru_87F5F0)[0x58 + (416)]))->Exists(v10) )
-            {
-                v7 = v10[0] - *((short *)this + 18);
+                    {
+                        v7 = v10[0] - *((short *)this + 18);
+                        v8 = v10[1] - *((short *)this + 19);
+                        if ( v7 * v7 + v8 * v8 <= i )
+                        {
+                            v9 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v10);
+                            v9[80] &= ~0x80000u;
+                        }
+                    }
+                    ++v5;
+                } while ( v5 <= *((unsigned int *)this + 10) );
             }
-            v8 = v10[1] - *((short *)this + 19);
-            if ( v7 * v7 + v8 * v8 <= i )
-            {
-                v9 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v10);
-            }
-            v9[80] &= ~0x80000u;
-            ++v5;
-            while ( v5 <= *((unsigned int *)this + 10) )
-            {
-                result = *((unsigned int *)this + 10);
-            }
+            result = *((unsigned int *)this + 10);
         }
         return (int)(result);
 }

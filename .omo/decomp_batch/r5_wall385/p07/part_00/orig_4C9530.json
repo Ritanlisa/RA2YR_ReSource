@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C9530",
+ "name": "MovementClass::CompareAbsCoords",
+ "size": 157,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C9530",
+ "bytes_hex": "515355668b6914566685ed7e748b71088b41108b1d84eda80083feff740a8bd32bd63bd07d5b2bc285c07455668b0157662b41040fbff50fbff88bc79933c22bc299f7fe8b31897424106685c07e278b51108b490883f9ff740a2bd98bcb3bca7d1b2bd18bca0fbfd88bc799f7fb0fafc166294424108b4424105feb0833c9ebe58b318bc62bf08b442414668974240c8b4c240c5e5d89085b59c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
