@@ -4067,7 +4067,7 @@
   "status": "OK"
  },
  "0x5d4b20": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4116,7 +4116,7 @@
   "status": "OK"
  },
  "0x5d74a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4130,21 +4130,21 @@
   "status": "NG"
  },
  "0x5e2be0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Network::CountDisconnectedHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5e84d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "GameConfig::ComputeCRC",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5e9290": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "NetworkLobby::CheckLobbyConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4186,7 +4186,7 @@
   "status": "OK"
  },
  "0x5f4730": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectClass::GetPlacementScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4200,7 +4200,7 @@
   "status": "OK"
  },
  "0x5f5fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectClass::SetZ",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4214,7 +4214,7 @@
   "status": "NG"
  },
  "0x5f6a70": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ObjectClass::CheckGroundHeightDiff",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4305,7 +4305,7 @@
   "status": "OK"
  },
  "0x6234b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "SymbolTable::Rebuild",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4333,49 +4333,49 @@
   "status": "OK"
  },
  "0x624be0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x624fc0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Grow2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6252f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SortItems",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x625780": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x625830": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Rebuild2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6258e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x626690": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4431,14 +4431,14 @@
   "status": "OK"
  },
  "0x62e380": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x62e4c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4536,7 +4536,7 @@
   "status": "OK"
  },
  "0x635060": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "FactoryClass::FinishProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4550,7 +4550,7 @@
   "status": "OK"
  },
  "0x636ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
