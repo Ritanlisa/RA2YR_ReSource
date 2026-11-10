@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetMember41@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetMember41",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81a4000000c3",
+ "relocs": []
+}

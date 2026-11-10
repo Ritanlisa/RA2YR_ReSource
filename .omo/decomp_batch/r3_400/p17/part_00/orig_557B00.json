@@ -1,0 +1,11 @@
+{
+ "addr": "0x557B00",
+ "name": "CheckListClass::GetItemCount",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x557B00",
+ "bytes_hex": "8b816c010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

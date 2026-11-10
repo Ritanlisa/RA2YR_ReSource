@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetField6@InfantryClass@@QAE_NXZ",
+ "sym_key": "InfantryClass::SetField6",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "8b01f7d083e001c3",
+ "relocs": []
+}

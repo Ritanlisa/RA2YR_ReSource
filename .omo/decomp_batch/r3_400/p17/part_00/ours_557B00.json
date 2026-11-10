@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemCount@ListClass@@QAEHXZ",
+ "sym_key": "ListClass::GetItemCount",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b816c010000c3",
+ "relocs": []
+}

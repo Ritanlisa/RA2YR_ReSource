@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAuxField@IsometricTileTypeClass@@QAEHXZ",
+ "sym_key": "IsometricTileTypeClass::GetAuxField",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8194020000c3",
+ "relocs": []
+}

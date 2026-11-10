@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DF1D0",
+ "name": "TechnoClass::vt_entry_4B0",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DF1D0",
+ "bytes_hex": "8a81d1050000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

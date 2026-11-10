@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BAD70",
+ "name": "DSurface::GetPitch",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BAD70",
+ "bytes_hex": "8b41208b4010c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

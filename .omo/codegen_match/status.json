@@ -629,6 +629,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x46b5b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletClass::CheckMissionAbort",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x46b990": {
   "attempts": 1,
   "first_diff": null,
@@ -1035,6 +1042,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4bad70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DSurface::GetPitch",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4bbc90": {
   "attempts": 1,
   "first_diff": null,
@@ -1158,6 +1172,20 @@
   "attempts": 4,
   "first_diff": null,
   "name": "ObjectClass::IsHeightAboveThreshold_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4df1d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::vt_entry_4B0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4df1e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::vt_entry_4B4",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1385,6 +1413,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x512730": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::loadBuildLimits",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5139e0": {
   "attempts": 1,
   "first_diff": null,
@@ -1410,6 +1445,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "HoverLocomotionClass::StubReturn120",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5176a0": {
+  "attempts": 1,
+  "first_diff": "+2 not al",
+  "name": "InfantryClass::SetField6",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
+ },
+ "0x51faf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::GetTypePtr",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1445,6 +1494,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "InfantryTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x524d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1651,6 +1707,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53f1f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Multiplayer::Screen",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x53f4e0": {
   "attempts": 4,
   "first_diff": null,
@@ -1676,6 +1739,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "IsometricTileTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x54a160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IsometricTileTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1706,6 +1776,13 @@
   "name": "ObjectClass::GetHeight",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x557b00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CheckListClass::GetItemCount",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x558120": {
   "attempts": 1,
@@ -1791,12 +1868,26 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x55af40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadarClass::SetGlobal",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x55cbf0": {
   "attempts": 1,
   "first_diff": null,
   "name": "VtableStub::Method_55CBF0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x578ac0": {
+  "attempts": 1,
+  "first_diff": "+0 inc byte ptr [ecx + 0x1158]",
+  "name": "MapClass::IncrementRedrawCounter",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "status": "NG"
  },
  "0x5865e0": {
   "attempts": 4,
@@ -2057,6 +2148,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5cb6c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VtableStub::5CB6C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5cd320": {
   "attempts": 1,
   "first_diff": null,
@@ -2162,6 +2260,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f5f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::GetMember41",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5f6560": {
   "attempts": 13,
   "first_diff": "+0 sub esp, 0xc",
@@ -2187,6 +2292,13 @@
   "attempts": 4,
   "first_diff": null,
   "name": "Map_Helper_5FBF70",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5fdde0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object::ProcessEvent",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2217,6 +2329,27 @@
   "name": "OverlayTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5fef20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "OverlayTypeClass::GetAuxField",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x600670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ComboBoxOwnerDraw::GetWidthHeight",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x624130": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "OwnerDrawControl::InitVtable",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6241c0": {
   "attempts": 6,
@@ -2264,6 +2397,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ParticleClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x62d990": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

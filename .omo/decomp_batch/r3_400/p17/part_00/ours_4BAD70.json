@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPitch@DSurface@@QAEHXZ",
+ "sym_key": "DSurface::GetPitch",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b41208b4010c3",
+ "relocs": []
+}

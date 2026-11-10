@@ -1,0 +1,11 @@
+{
+ "addr": "0x5176A0",
+ "name": "InfantryClass::SetField6",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5176A0",
+ "bytes_hex": "8b01f6d02401c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
