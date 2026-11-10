@@ -308,7 +308,7 @@ def run_part(addrs, batch_src, out, reg, idx):
         unit_fwd = set()
         for ctx in ctxs:
             for _ln in ctx.lines:
-                for _m in re.finditer(r"\(\s*([A-Z]\w+)\s*\*", _ln):
+                for _m in re.finditer(r"\b([A-Z]\w+)\s*\*", _ln):
                     unit_fwd.add(_m.group(1))
             unit_globals.update(getattr(ctx, "used_globals", {}))
             for d in getattr(ctx, "used_callee_exts", []):
@@ -384,7 +384,7 @@ def run_part(addrs, batch_src, out, reg, idx):
                     exts2.append(decompile.free_decl(ctx.sig))
                 fwd2 = set()
                 for _ln in ctx.lines:
-                    for _m in re.finditer(r"\(\s*([A-Z]\w+)\s*\*", _ln):
+                    for _m in re.finditer(r"\b([A-Z]\w+)\s*\*", _ln):
                         fwd2.add(_m.group(1))
                 hpp2, _m2 = hpp_pilot.gen_class_hpp(
                     cls2, ctx.views, sigs2, size2,

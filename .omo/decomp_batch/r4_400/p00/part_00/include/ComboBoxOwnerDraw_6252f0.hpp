@@ -10,7 +10,7 @@
 class ComboBoxOwnerDraw
 {
 public:
-    int m000;  // 0x000
+    unsigned char * m000;  // 0x000
     char __pad_004[4];  // 0x004
     int m008;  // 0x008
     int m00C;  // 0x00C

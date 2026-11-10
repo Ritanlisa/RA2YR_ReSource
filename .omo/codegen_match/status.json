@@ -833,21 +833,21 @@
   "status": "PENDING"
  },
  "0x44e3a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::CheckOverlapWithOthers",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x44f640": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x451330": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -875,7 +875,7 @@
   "status": "PENDING"
  },
  "0x4566b0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingClass::GetPowerFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1799,7 +1799,7 @@
   "status": "PENDING"
  },
  "0x4a0a50": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2184,7 +2184,7 @@
   "status": "PENDING"
  },
  "0x4c4ef0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TaskForceClass::ParseUnitCountAndType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2317,7 +2317,7 @@
   "status": "PENDING"
  },
  "0x4cbba0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2877,7 +2877,7 @@
   "status": "OK"
  },
  "0x523250": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "InfantryClass::ComputeTransform",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3878,7 +3878,7 @@
   "status": "OK"
  },
  "0x5b4270": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTree::MarkEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3948,7 +3948,7 @@
   "status": "OK"
  },
  "0x5c1fa0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4011,7 +4011,7 @@
   "status": "PENDING"
  },
  "0x5cc970": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4046,7 +4046,7 @@
   "status": "PENDING"
  },
  "0x5cd4d0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "MSBitPrintAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4333,7 +4333,7 @@
   "status": "OK"
  },
  "0x624be0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4347,7 +4347,7 @@
   "status": "PENDING"
  },
  "0x6252f0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SortItems",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5299,7 +5299,7 @@
   "status": "PENDING"
  },
  "0x6d5f60": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "TacticalClass::SetViewportPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5383,7 +5383,7 @@
   "status": "PENDING"
  },
  "0x6e0ef0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HouseClass::UpdateTechBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5411,7 +5411,7 @@
   "status": "PENDING"
  },
  "0x6e2970": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6657,14 +6657,14 @@
   "status": "PENDING"
  },
  "0x7ae020": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "WOLGameList::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x7ae0e0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ComStreamClass::readData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6678,7 +6678,7 @@
   "status": "PENDING"
  },
  "0x7ae510": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "HashTable_flat::Grow",
   "note": "decomp_batch r2: COMPILE_FAIL",

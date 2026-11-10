@@ -1496,7 +1496,11 @@ _CRT_NAMES = {
 
 _CALL_KEYWORDS = {
     "if", "for", "while", "switch", "return", "sizeof", "do", "else",
-    "case", "defined", "catch", "throw", "new", "delete",
+    "case", "defined", "catch", "throw", "new", "delete", "abs16", "abs64",
+    "abs", "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
+    "BYTE3", "WORD1", "SLOWORD", "SHIWORD",
+    # calling-convention tokens appear inside fn-pointer casts
+    "__thiscall", "__stdcall", "__cdecl", "__fastcall", "__userpurge",
 }
 
 # bare type spellings must never become `extern int int(...);`
@@ -1667,17 +1671,35 @@ def pass_local_retype(ctx):
             continue
         off, rec, _src = _member_record_for(ctx, mem)
         if off is None:
+            # the body spelling may already be a synthesized view name
+            # (`m000`): resolve it by scanning the class's view offsets
+            for _o, _roles in ctx.views.scalars.get(cls, {}).items():
+                if any(v.get("name") == mem for v in _roles.values()):
+                    off = _o
+                    break
+        if off is None:
             continue
         roles = ctx.views.scalars.get(cls, {}).get(off, {})
         for _role, v in roles.items():
             if v.get("name") == mem and not (v.get("type") or "").endswith("*"):
-                v["type"] = "void *"
+                # `unsigned char *` (not void *): the body also does byte
+                # arithmetic on the slot (`this->M + 4 * i`), which VC6
+                # rejects on void* (C2036).  The store gets an explicit
+                # cast so the assignment direction stays legal.
+                v["type"] = "unsigned char *"
                 v["width"] = 4
+                v["src"] = "member-ptr-store"
+                text = re.sub(
+                    r"this->%s\s*=\s*%s\s*;" % (re.escape(mem),
+                                                re.escape(var)),
+                    "this->%s = (unsigned char *)%s;" % (mem, var),
+                    text)
                 ctx.sites.append(Site(
                     "member_retype", "this->%s" % mem,
-                    "%s@0x%X: dword member <- pointer store -> void *"
-                    % (mem, off), True))
+                    "%s@0x%X: dword member <- pointer store -> "
+                    "unsigned char *" % (mem, off), True))
                 break
+    ctx.lines = text.split("\n")
 
 
 # ---------------------------------------------------------------- pass 4: scope
@@ -1934,6 +1956,11 @@ def pass_ret_view_align(ctx):
     for off_roles in views_for.values():
         for role, v in list(off_roles.items()):
             if not (v["type"] or "").endswith("*"):
+                continue
+            if v.get("src") == "member-ptr-store":
+                # R4: this view was retyped from a pointer STORE; the
+                # arithmetic use is pointer arithmetic on that pointer
+                # (the assignment carries its own cast)
                 continue
             mem = v["name"]
             pat = r"this->%s\b" % re.escape(mem)

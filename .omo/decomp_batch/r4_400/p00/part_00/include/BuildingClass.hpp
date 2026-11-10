@@ -4,6 +4,7 @@
 // forward declarations
 class BuildingTypeClass;
 class CellCoord;
+class HouseClass;
 
 #ifndef DECOMP_PILOT_BUILDINGCLASS_HPP
 #define DECOMP_PILOT_BUILDINGCLASS_HPP
@@ -49,6 +50,7 @@ extern unsigned char stru_87F5F0;
 // forward declarations
 class BuildingClass;
 class BuildingTypeClass;
+class HouseClass;
 
 #ifndef DECOMP_PILOT_CELLCOORD_HPP
 #define DECOMP_PILOT_CELLCOORD_HPP

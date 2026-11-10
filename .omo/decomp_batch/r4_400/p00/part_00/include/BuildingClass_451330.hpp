@@ -3,6 +3,7 @@
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class BuildingTypeClass;
+class HouseClass;
 
 #ifndef DECOMP_PILOT_BUILDINGCLASS_HPP
 #define DECOMP_PILOT_BUILDINGCLASS_HPP

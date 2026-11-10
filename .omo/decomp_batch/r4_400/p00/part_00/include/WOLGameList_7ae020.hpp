@@ -10,7 +10,7 @@
 class WOLGameList
 {
 public:
-    int m000;  // 0x000
+    unsigned char * m000;  // 0x000
     char __pad_004[4];  // 0x004
     unsigned char m008;  // 0x008
     char __pad_009[3];  // 0x009

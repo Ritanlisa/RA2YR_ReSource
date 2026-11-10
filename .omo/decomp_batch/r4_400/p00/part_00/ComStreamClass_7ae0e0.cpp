@@ -26,7 +26,7 @@ void ComStreamClass::readData()
             this->m00C = v4;
             v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08);
             v6 = 4 * this->m008;
-            this->m000 = v5;
+            this->m000 = (unsigned char *)v5;
             memset(v5, 0, v6);
             if ( ComStreamClass_field_0x08 > 0 )
             {

@@ -24,10 +24,10 @@ void Dialog::GrowBuffer()
             v4 = (AnimClass *)((char *)&this->m00C->AnimClass_field_0x0 + 1);
             this->m008[0] = 2 * v2;
             v13 = v3;
-            this->m00C = v4;
+            this->m00C = (unsigned char *)v4;
             v5 = (void *)__2_YAPAXI_Z(8 * v2);
             v6 = 4 * this->m008[0];
-            this->m000 = v5;
+            this->m000 = (unsigned char *)v5;
             memset(v5, 0, v6);
             if ( v2 > 0 )
             {
