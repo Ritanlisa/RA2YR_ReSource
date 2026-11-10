@@ -6,15 +6,20 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class _VectorClass_VCentroid_WorldDominationTour
 {
 public:
     union {  // overlapping views @0x000
         void* m000_ptr;
-        unsigned int m003[1];  /* element view */
-        char __pad_union_000[7];
+        int m_1[1];  /* element view */
+        unsigned int m004[1];  /* element view */
+        char __pad_union_000[8];
     };
+    int m_8;  // 0x008
+    int m_C;  // 0x00C
 
     // ---- pilot methods (registry signatures)
     char Release(int p0, char * p1);  // 0x76A3F0

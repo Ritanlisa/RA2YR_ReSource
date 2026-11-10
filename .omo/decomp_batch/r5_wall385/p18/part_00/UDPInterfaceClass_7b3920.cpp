@@ -16,20 +16,23 @@ void UDPInterfaceClass::Reset(int * p0, short p1)
             if ( v4 > 0 )
             {
                 v7 = (unsigned int *)this + 64859;
+                v8 = (unsigned short *)this + 129750;
+                do
+                {
+                    if ( v5 == *v8 )
+                    {
+                        if ( *p0 == *v7 )
+                        {
+                            return;
+                        }
+                        v5 = p1;
+                    }
+                    ++v6;
+                    ++v8;
+                    ++v7;
+                } while ( v6 < v4 );
             }
-            v8 = (unsigned short *)this + 129750;
-            do
-            if ( v5 == *v8 )
-              if ( *p0 == *v7 )
-                return;
-            v5 = p1;
-            ++v6;
-            ++v8;
-            ++v7;
-            while ( v6 < v4 )
-            {
-                ((Debug *)(this))->Log();
-            }
+            ((Debug *)(this))->Log();
             *((unsigned int *)this + *((unsigned int *)this + 64858) + 64859) = *p0;
             *((unsigned short *)this + (*((unsigned int *)this + 64858))++ + 129750) = v5;
         }

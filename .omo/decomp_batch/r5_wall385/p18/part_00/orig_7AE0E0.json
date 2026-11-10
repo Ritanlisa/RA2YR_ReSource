@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AE0E0",
+ "name": "ComStreamClass::readData",
+ "size": 156,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AE0E0",
+ "bytes_hex": "51538bd9807b14010f848b00000055568b73088b2b578b7b0c8d043647894308896c2410c1e00250897b0ce807ad01008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e3c8bfd8bee8b3785f674288bceff53188b4b0cba01000000d3e24a23d08b038b0c908d049089308b4648894e488bf085c075d883c7044d75cc8b6c241055e8caa9010083c4045f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

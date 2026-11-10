@@ -10,7 +10,7 @@ const char ** String::Append2(char ** p0)
         if ( *p0 )
         {
             v10 = *p0;
-            v4 = v2;
+            v4 = (const char *)(v2);
         }
         else
         {
@@ -35,17 +35,18 @@ const char ** String::Append2(char ** p0)
             if ( v6 )
             {
                 strcpy((char *)(v8), (char *)(v6));
+                v4 = (const char *)(v10);
             }
-            v4 = v10;
+            else
+            {
+                *v8 = 0;
+            }
             strcat((char *)(*(char **)this->m000), (char *)(v4));
             if ( v6 )
             {
                 __3_YAXPAX_Z(v6);
             }
         }
-        else
-        {
-        }
-        return (const char **)this;
+        return (const char **)((const char **)this);
 }
 

@@ -24,28 +24,27 @@ void UDPInterfaceClass::CheckStatus(short p0)
                         return;
                     }
                 }
-            }
-            v6 = (SOCKET *)this + v4 + 64704;
-            ((Debug *)(this))->Log();
-            closesocket(*v6);
-            if ( *v6 == *((unsigned int *)this + 64717) )
-            {
-                *((unsigned int *)this + 64717) = -1;
-            }
-            v7 = v4;
-            if ( v4 < *((unsigned int *)this + 64716) - 1 )
-            {
-                v8 = (unsigned short *)this + v4 + 129424;
-            }
-            v9 = (unsigned int *)this + v4 + 64704;
-            do
-              ++v7;
-            *v9 = v9[1];
-            *v8 = v8[1];
-            ++v9;
-            ++v8;
-            while ( v7 < *((unsigned int *)this + 64716) - 1 )
-            {
+                v6 = (SOCKET *)this + v4 + 64704;
+                ((Debug *)(this))->Log();
+                closesocket(*v6);
+                if ( *v6 == *((unsigned int *)this + 64717) )
+                {
+                    *((unsigned int *)this + 64717) = -1;
+                }
+                v7 = v4;
+                if ( v4 < *((unsigned int *)this + 64716) - 1 )
+                {
+                    v8 = (unsigned short *)this + v4 + 129424;
+                    v9 = (unsigned int *)this + v4 + 64704;
+                    do
+                    {
+                        ++v7;
+                        *v9 = v9[1];
+                        *v8 = v8[1];
+                        ++v9;
+                        ++v8;
+                    } while ( v7 < *((unsigned int *)this + 64716) - 1 );
+                }
                 --*((unsigned int *)this + 64716);
             }
         }

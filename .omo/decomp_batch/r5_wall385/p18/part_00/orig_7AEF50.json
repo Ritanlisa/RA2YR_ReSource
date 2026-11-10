@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AEF50",
+ "name": "ComStreamClass::flushStream",
+ "size": 168,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AEF50",
+ "bytes_hex": "51538bd9568b73088b43303bf00f8691000000807b14010f84870000008bc6558b2b578b7b0c896c2410d1e88943084fc1e00250897b0ce88b9e01008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e3c8bfd8bee8b3785f674288bceff53188b4b0cba01000000d3e24a23d08b038b0c908d049089308b4648894e488bf085c075d883c7044d75cc8b6c241055e84e9b010083c4045f5d5e5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

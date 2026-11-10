@@ -38,89 +38,89 @@ unsigned int TacticalMap::FillScanlinesOpaque(int p0, int p1, int p2, int p3)
         if ( p3 > 0 )
         {
             v26 = p3;
-            do v9 = p2;
-            if ( v8 + 2 * p2 < result )
+            do
             {
-                v18 = p2;
-            }
-            v19 = (char *)v8;
-            if ( (v8 & 2) != 0 && p2 )
-            {
-                *(unsigned short *)v8 = -1;
-            }
-            v19 = (char *)(v8 + 2);
-            v18 = p2 - 1;
-            v20 = 0;
-            v21 = v18 >> 1;
-            if ( v18 >> 1 )
-            {
-                memset(v19, 0xFFu, 4 * v21);
-            }
-            v5 = this;
-            v20 = &v19[4 * v21];
-            if ( (v18 & 1) != 0 && v20 )
-            {
-                *(unsigned short *)v20 = -1;
-            }
-            else
-            {
-                v10 = (char *)v8;
-            }
-            v11 = (result - v8) >> 1;
-            v23 = v11;
-            if ( (v8 & 2) != 0 && v11 )
-            {
-                *(unsigned short *)v8 = -1;
-            }
-            v10 = (char *)(v8 + 2);
-            v23 = v11 - 1;
-            v12 = 0;
-            v13 = v23 >> 1;
-            if ( v23 >> 1 )
-            {
-                memset(v10, 0xFFu, 4 * v13);
-            }
-            v9 = p2;
-            v12 = &v10[4 * v13];
-            if ( (v23 & 1) != 0 && v12 )
-            {
-                *(unsigned short *)v12 = -1;
-            }
-            v14 = v9 - v11;
-            m_TintFactor = this->m_TintFactor;
-            v25 = v14;
-            v24 = m_TintFactor;
-            if ( ((m_TintFactor & 0xFF) & 2) != 0 && v14 )
-            {
-                *(unsigned short *)LODWORD(m_TintFactor) = -1;
-            }
-            LODWORD(m_TintFactor) += 2;
-            --v14;
-            v24 = m_TintFactor;
-            v25 = v14;
-            v16 = 0;
-            v17 = v14 >> 1;
-            if ( v14 >> 1 )
-            {
-                memset((void *)LODWORD(m_TintFactor), 0xFFu, 4 * v17);
-            }
-            v16 = (unsigned short *)(LODWORD(v24) + 4 * v17);
-            v14 = (v14 & ~0xFF) | ((v25) & 0xFF);
-            if ( (v14 & 1) != 0 && v16 )
-            {
-                *v16 = -1;
-            }
-            v5 = this;
-            result = v5->TacticalMap_field_1C;
-            v8 += 2 * v5[1].TacticalMap_field_04;
-            if ( v8 >= result )
-            {
-                v8 -= v5->TacticalMap_field_20;
-            }
-            --v26;
-            while ( v26 )
-            {
-            }
+                v9 = p2;
+                if ( v8 + 2 * p2 < result )
+                {
+                    v18 = p2;
+                    v19 = (char *)v8;
+                    if ( (v8 & 2) != 0 && p2 )
+                    {
+                        *(unsigned short *)v8 = -1;
+                        v19 = (char *)(v8 + 2);
+                        v18 = p2 - 1;
+                    }
+                    v20 = 0;
+                    v21 = v18 >> 1;
+                    if ( v18 >> 1 )
+                    {
+                        memset(v19, 0xFFu, 4 * v21);
+                        v5 = this;
+                        v20 = &v19[4 * v21];
+                    }
+                    if ( (v18 & 1) != 0 && v20 )
+                    {
+                        *(unsigned short *)v20 = -1;
+                    }
+                }
+                else
+                {
+                    v10 = (char *)v8;
+                    v11 = (result - v8) >> 1;
+                    v23 = v11;
+                    if ( (v8 & 2) != 0 && v11 )
+                    {
+                        *(unsigned short *)v8 = -1;
+                        v10 = (char *)(v8 + 2);
+                        v23 = v11 - 1;
+                    }
+                    v12 = 0;
+                    v13 = v23 >> 1;
+                    if ( v23 >> 1 )
+                    {
+                        memset(v10, 0xFFu, 4 * v13);
+                        v9 = p2;
+                        v12 = &v10[4 * v13];
+                    }
+                    if ( (v23 & 1) != 0 && v12 )
+                    {
+                        *(unsigned short *)v12 = -1;
+                    }
+                    v14 = v9 - v11;
+                    m_TintFactor = this->m_TintFactor;
+                    v25 = v14;
+                    v24 = m_TintFactor;
+                    if ( ((m_TintFactor & 0xFF) & 2) != 0 && v14 )
+                    {
+                        *(unsigned short *)LODWORD(m_TintFactor) = -1;
+                        LODWORD(m_TintFactor) += 2;
+                        --v14;
+                        v24 = m_TintFactor;
+                        v25 = v14;
+                    }
+                    v16 = 0;
+                    v17 = v14 >> 1;
+                    if ( v14 >> 1 )
+                    {
+                        memset((void *)LODWORD(m_TintFactor), 0xFFu, 4 * v17);
+                        v16 = (unsigned short *)(LODWORD(v24) + 4 * v17);
+                        v14 = (v14 & ~0xFF) | ((v25) & 0xFF);
+                    }
+                    if ( (v14 & 1) != 0 && v16 )
+                    {
+                        *v16 = -1;
+                    }
+                    v5 = this;
+                }
+                result = v5->TacticalMap_field_1C;
+                v8 += 2 * v5[1].TacticalMap_field_04;
+                if ( v8 >= result )
+                {
+                    v8 -= v5->TacticalMap_field_20;
+                }
+                --v26;
+            } while ( v26 );
         }
         return (unsigned int)(result);
 }

@@ -31,26 +31,25 @@ void HashTable::Shrink()
             if ( (int)HashTable_field_0x08 > 0 )
             {
                 v8 = v4;
-            }
-            v9 = HashTable_field_0x08;
-            do v10 = *v8;
-            if ( *v8 )
-            {
+                v9 = HashTable_field_0x08;
                 do
-                v11 = ((int (__stdcall *)(int))this->m018)(v10) & ((1 << this->m00C) - 1);
-            }
-            v12 = *(unsigned int *)(this->m000 + 4 * v11);
-            *(unsigned int *)(this->m000 + 4 * v11) = v10;
-            v13 = *(unsigned int *)(v10 + 272);
-            *(unsigned int *)(v10 + 272) = v12;
-            v10 = v13;
-            while ( v13 )
-            {
-                ++v8;
-            }
-            --v9;
-            while ( v9 )
-            {
+                {
+                    v10 = *v8;
+                    if ( *v8 )
+                    {
+                        do
+                        {
+                            v11 = ((int (__stdcall *)(int))this->m018)(v10) & ((1 << this->m00C) - 1);
+                            v12 = *(unsigned int *)(this->m000 + 4 * v11);
+                            *(unsigned int *)(this->m000 + 4 * v11) = v10;
+                            v13 = *(unsigned int *)(v10 + 272);
+                            *(unsigned int *)(v10 + 272) = v12;
+                            v10 = v13;
+                        } while ( v13 );
+                    }
+                    ++v8;
+                    --v9;
+                } while ( v9 );
                 v4 = v14;
             }
             __3_YAXPAX_Z(v4);

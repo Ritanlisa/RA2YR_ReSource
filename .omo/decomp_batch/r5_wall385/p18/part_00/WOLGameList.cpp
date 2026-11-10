@@ -31,27 +31,26 @@ void WOLGameList::GrowBuffer()
             memset(v5, 0, v6);
             if ( WOLGameList_field_0x08 > 0 )
             {
-                v7 = v3;
-            }
-            v8 = WOLGameList_field_0x08;
-            do v9 = *v7;
-            if ( *v7 )
-            {
+                v7 = (int *)(v3);
+                v8 = WOLGameList_field_0x08;
                 do
-                v10 = (*((int (__stdcall **)(int))this + 6))(v9) & ((1 << this->m00C) - 1);
-            }
-            v11 = *(unsigned int *)(this->m000 + 4 * v10);
-            *(unsigned int *)(this->m000 + 4 * v10) = v9;
-            v12 = *(unsigned int *)(v9 + 112);
-            *(unsigned int *)(v9 + 112) = v11;
-            v9 = v12;
-            while ( v12 )
-            {
-                ++v7;
-            }
-            --v8;
-            while ( v8 )
-            {
+                {
+                    v9 = *v7;
+                    if ( *v7 )
+                    {
+                        do
+                        {
+                            v10 = (*((int (__stdcall **)(int))this + 6))(v9) & ((1 << this->m00C) - 1);
+                            v11 = *(unsigned int *)(this->m000 + 4 * v10);
+                            *(unsigned int *)(this->m000 + 4 * v10) = v9;
+                            v12 = *(unsigned int *)(v9 + 112);
+                            *(unsigned int *)(v9 + 112) = v11;
+                            v9 = v12;
+                        } while ( v12 );
+                    }
+                    ++v7;
+                    --v8;
+                } while ( v8 );
                 v3 = v13;
             }
             __3_YAXPAX_Z(v3);

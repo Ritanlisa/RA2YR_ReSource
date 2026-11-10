@@ -5,7 +5,8 @@
 
 char File::LoadWDTDecompress(int p0, int p1)
 {
-        int v4 = this->ptr_24[0];
+        int v4;
+        v4 = this->ptr_24[0];
         if ( 4 * p1 < (unsigned int)(v4 * this->q020[0]) )
         {
             return (char)(0);
@@ -16,10 +17,14 @@ char File::LoadWDTDecompress(int p0, int p1)
         {
             *(unsigned int *)(*((unsigned int *)this + 17) + 4 * i) = __2_YAPAXI_Z(this->q020[0]);
         }
-        int v7 = 0;
-        int v8 = 0;
-        int v9 = 0;
-        int v16 = 0;
+        int v7;
+        v7 = 0;
+        int v8;
+        v8 = 0;
+        int v9;
+        v9 = 0;
+        int v16;
+        v16 = 0;
         int v10;
         int v11;
         bool v12;
@@ -31,55 +36,55 @@ char File::LoadWDTDecompress(int p0, int p1)
             while ( 1 )
             {
                 v10 = 0;
-            }
-            if ( this->q020[0] )
-            {
-                break;
-            }
-            LABEL_18:
-          if ( v8 )
-            v8 = 0;
-            ++v7;
-            v16 = 0;
-            if ( (unsigned int)++v9 >= this->ptr_24[0] )
-            {
-                return (char)(1);
+                if ( this->q020[0] )
+                {
+                    break;
+                }
+                LABEL_18:
+          if ( v8 );
+                v8 = 0;
+                ++v7;
+                v16 = 0;
+                if ( (unsigned int)++v9 >= this->ptr_24[0] )
+                {
+                    return (char)(1);
+                }
             }
             while ( 1 )
             {
                 if ( v8 == 0 )
                 {
                     v15 = *(unsigned char*)(v7 + p0);
+                    goto LABEL_14;
                 }
-            }
-            goto LABEL_14;
-            v11 = v8 - 1;
-            if ( v11 == 0 )
-            {
-                break;
-            }
-            v12 = v11 == 1;
-            v13 = *(unsigned char *)(v7 + p0);
-            if ( v12 )
-            {
-                v15 = (v15 & ~0xFF) | ((v13 >> 4) & 0xFF);
-            }
-            LABEL_14:
+                v11 = v8 - 1;
+                if ( v11 == 0 )
+                {
+                    break;
+                }
+                v12 = v11 == 1;
+                v13 = *(unsigned char *)(v7 + p0);
+                if ( v12 )
+                {
+                    v15 = (v15 & ~0xFF) | ((v13 >> 4) & 0xFF);
+                    LABEL_14:
             v14 = v15 & 3;
-            goto LABEL_15;
-            v14 = v13 >> 6;
-            LABEL_15:
+                    goto LABEL_15;
+                }
+                v14 = v13 >> 6;
+                LABEL_15:
           *(unsigned char *)(*(unsigned int *)(*((unsigned int *)this + 17) + 4 * v9) + v10) = v14;
-            v8 = ++v16;
-            if ( v16 == 4 )
-            {
-                v8 = 0;
-            }
-            ++v7;
-            v16 = 0;
-            if ( (unsigned int)++v10 >= this->q020[0] )
-            {
-                goto LABEL_18;
+                v8 = ++v16;
+                if ( v16 == 4 )
+                {
+                    v8 = 0;
+                    ++v7;
+                    v16 = 0;
+                }
+                if ( (unsigned int)++v10 >= this->q020[0] )
+                {
+                    goto LABEL_18;
+                }
             }
             v15 = (v15 & ~0xFF) | ((*(unsigned char *)(v7 + p0) >> 2) & 0xFF);
             goto LABEL_14;

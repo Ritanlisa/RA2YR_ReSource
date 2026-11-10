@@ -1,0 +1,21 @@
+{
+ "symbol": "?flushStream@ComStreamClass@@QAEXXZ",
+ "sym_key": "ComStreamClass::flushStream",
+ "size": 174,
+ "link_base": 0,
+ "bytes_hex": "51538bd9568b73088b43303bf00f8697000000807b14010f848d0000008b0355578b7b0c8b288bc6d1e84f8943088d0c8500000000897b0c51e8000000008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e408bfd897424108b3785f6742656ff53188b4b0cba01000000d3e28b0b4a23c28d04818b0889308b4648894e4885c08bf075da8b44241083c704488944241075c655e80000000083c4045f5d5e5b59c3",
+ "relocs": [
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 161,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

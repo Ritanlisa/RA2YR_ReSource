@@ -19,7 +19,7 @@ char ** String::Reassign(const char ** p0)
             {
                 __3_YAXPAX_Z(v3);
             }
-            this->m000 = 0;
+            this->m000 = (unsigned char *)(0);
             if ( v4 )
             {
                 v5 = strlen((char *)(v4)) + 1;
@@ -36,6 +36,6 @@ char ** String::Reassign(const char ** p0)
                 strcpy((char *)(*(char **)this->m000), (char *)(v4));
             }
         }
-        return (char **)this;
+        return (char **)((char **)this);
 }
 

@@ -9,7 +9,7 @@ int UDPInterfaceClass::Flush(char *Buffer p1, u_short p2)
         char v12;
         char v13;
         char v14;
-        sscanf(Buffer, "%d.%d.%d.%d", &v11, &v12, &v13, &v14);
+        sscanf(p1, "%d.%d.%d.%d", &v11, &v12, &v13, &v14);
         *v4 = v11;
         v4[1] = v12;
         u_short v5 = p1;

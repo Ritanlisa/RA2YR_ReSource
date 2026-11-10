@@ -10,7 +10,7 @@ int UDPInterfaceClass::Flush(char *Buffer p1, u_short p2)
         char v12;
         char v13;
         char v14;
-        sscanf(Buffer, "%d.%d.%d.%d", &v11, &v12, &v13, &v14);
+        sscanf(p1, "%d.%d.%d.%d", &v11, &v12, &v13, &v14);
         *v4 = v11;
         v4[1] = v12;
         u_short v5 = p1;
@@ -66,28 +66,27 @@ void UDPInterfaceClass::CheckStatus(short p0)
                         return;
                     }
                 }
-            }
-            v6 = (SOCKET *)this + v4 + 64704;
-            ((Debug *)(this))->Log();
-            closesocket(*v6);
-            if ( *v6 == *((unsigned int *)this + 64717) )
-            {
-                *((unsigned int *)this + 64717) = -1;
-            }
-            v7 = v4;
-            if ( v4 < *((unsigned int *)this + 64716) - 1 )
-            {
-                v8 = (unsigned short *)this + v4 + 129424;
-            }
-            v9 = (unsigned int *)this + v4 + 64704;
-            do
-              ++v7;
-            *v9 = v9[1];
-            *v8 = v8[1];
-            ++v9;
-            ++v8;
-            while ( v7 < *((unsigned int *)this + 64716) - 1 )
-            {
+                v6 = (SOCKET *)this + v4 + 64704;
+                ((Debug *)(this))->Log();
+                closesocket(*v6);
+                if ( *v6 == *((unsigned int *)this + 64717) )
+                {
+                    *((unsigned int *)this + 64717) = -1;
+                }
+                v7 = v4;
+                if ( v4 < *((unsigned int *)this + 64716) - 1 )
+                {
+                    v8 = (unsigned short *)this + v4 + 129424;
+                    v9 = (unsigned int *)this + v4 + 64704;
+                    do
+                    {
+                        ++v7;
+                        *v9 = v9[1];
+                        *v8 = v8[1];
+                        ++v9;
+                        ++v8;
+                    } while ( v7 < *((unsigned int *)this + 64716) - 1 );
+                }
                 --*((unsigned int *)this + 64716);
             }
         }
@@ -111,20 +110,23 @@ void UDPInterfaceClass::Reset(int * p0, short p1)
             if ( v4 > 0 )
             {
                 v7 = (unsigned int *)this + 64859;
+                v8 = (unsigned short *)this + 129750;
+                do
+                {
+                    if ( v5 == *v8 )
+                    {
+                        if ( *p0 == *v7 )
+                        {
+                            return;
+                        }
+                        v5 = p1;
+                    }
+                    ++v6;
+                    ++v8;
+                    ++v7;
+                } while ( v6 < v4 );
             }
-            v8 = (unsigned short *)this + 129750;
-            do
-            if ( v5 == *v8 )
-              if ( *p0 == *v7 )
-                return;
-            v5 = p1;
-            ++v6;
-            ++v8;
-            ++v7;
-            while ( v6 < v4 )
-            {
-                ((Debug *)(this))->Log();
-            }
+            ((Debug *)(this))->Log();
             *((unsigned int *)this + *((unsigned int *)this + 64858) + 64859) = *p0;
             *((unsigned short *)this + (*((unsigned int *)this + 64858))++ + 129750) = v5;
         }

@@ -23,17 +23,18 @@ const char ** String::Append(const char * p0)
             if ( v5 )
             {
                 strcpy((char *)(v7), (char *)(v5));
+                v2 = p0;
             }
-            v2 = p0;
+            else
+            {
+                *v7 = 0;
+            }
             strcat((char *)(*(char **)this->m000), (char *)(v2));
             if ( v5 )
             {
                 __3_YAXPAX_Z(v5);
             }
         }
-        else
-        {
-        }
-        return (const char **)this;
+        return (const char **)((const char **)this);
 }
 

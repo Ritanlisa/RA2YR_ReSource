@@ -1,0 +1,15 @@
+{
+ "symbol": "?Reset@UDPInterfaceClass@@QAEXPAHF@Z",
+ "sym_key": "UDPInterfaceClass::Reset",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "515355568bf1578bbe68f5030083ff100f8d810000008b44241c8944241033c085ff7e398d966cf503008d8eacf503000fbf5c241c33ed668b293bdd75148b5c24188b2a8b1b3bdd744d8b5c241c895c24104083c10283c2043bc77cd38bcee8000000008b5424188b8e68f503008b02668b54241089848e6cf503008b8e68f503006689944eacf503008b8668f5030040898668f503005f5e5d5b59c20800",
+ "relocs": [
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

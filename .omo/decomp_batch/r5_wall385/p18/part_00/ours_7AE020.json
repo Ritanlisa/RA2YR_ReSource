@@ -1,0 +1,21 @@
+{
+ "symbol": "?GrowBuffer@WOLGameList@@QAEXXZ",
+ "sym_key": "WOLGameList::GrowBuffer",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "51558be9807d14010f84950000008b45005333db568a5d088b308b450c8acbd0e18d14dd0000000057405289742414884d0889450ce80000000033c98bf88a4d0833c0c1e1028bd1897d00c1e902f3ab8bca83c40483e10385dbf3aa7e398bfe8b3785f6742756ff55188b4d0cba01000000d3e28b4d004a23c28d04818b0889308b4670894e7085c08bf075d983c7044b75cd8b74241056e80000000083c4045f5e5b5d59c3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 153,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

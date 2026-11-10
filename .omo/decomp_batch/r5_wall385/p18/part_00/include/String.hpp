@@ -6,12 +6,14 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class String
 {
 public:
     union {  // multi-evidence view @0x000
-        unsigned char m000;
+        unsigned int m000;
         unsigned char * m000_dword;
     };
 

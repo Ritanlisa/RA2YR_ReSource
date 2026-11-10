@@ -1,0 +1,39 @@
+{
+ "symbol": "?ApplySettings@NetworkOptions@@QAEHHPADH@Z",
+ "sym_key": "NetworkOptions::ApplySettings",
+ "size": 364,
+ "link_base": 0,
+ "bytes_hex": "8a8168f0030081ec1001000084c05357750d5f33c05b81c410010000c20c008b94241c0100008d44240c5052e8000000008bd885db0f842401000083fb0275548b4424088b4c24088b54240825ff00000081e1ff000000508b44240c81e2ff000000518b4c2410528b54241425ff00000081e1ff0000005081e2ff00000051528d442430680000000050e80000000083c420eb7d8b4c24088b5424088b44240881e1ff000000518b4c240c81e2ff00000025ff000000528b54241081e1ff000000508b442414518b4c242181e2ff00000025ff000000528b54242481e1ff000000508b442427518b4c242a81e2ff00000025ff0000005281e1ff00000050518d542440680000000052e80000000083c4308d7c241883c9ff33c0f2ae8b842424010000f7d1493bc87c0d5f33c05b81c410010000c20c008d7c241883c9ff33c056f2aef7d12bf98bc18bf78bbc2424010000c1e902f3a58bc883e103f3a45e8bc35f5b81c410010000c20c00",
+ "relocs": [
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?initSocket@IPXInterfaceClass@@QAEHHH@Z",
+   "sym_key": "IPXInterfaceClass::initSocket"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "??_C@_0CM@FMKG@?$DP?$DP?5?$DP?$DP?5?$DP?$DP?5?$DP?$DP?5?3?5?$CF02x?5?$CF02x?5?$CF02x?5?$CF02@",
+   "sym_key": "??_C@_0CM@FMKG@?$DP?$DP?5?$DP?$DP?5?$DP?$DP?5?$DP?$DP?5?3?5?$CF02x?5?$CF02x?5?$CF02x?5?$CF02@"
+  },
+  {
+   "off": 139,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 260,
+   "type": "DIR32",
+   "sym": "??_C@_0DE@KIIG@?$CF02x?5?$CF02x?5?$CF02x?5?$CF02x?5?3?5?$CF02x?5?$CF02x?5@",
+   "sym_key": "??_C@_0DE@KIIG@?$CF02x?5?$CF02x?5?$CF02x?5?$CF02x?5?3?5?$CF02x?5?$CF02x?5@"
+  },
+  {
+   "off": 266,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  }
+ ]
+}

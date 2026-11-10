@@ -18,87 +18,88 @@ char _VectorClass_VCentroid_WorldDominationTour::Release(int p0, char * p1)
         if ( p0 )
         {
             v5 = p1;
-            this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+            this->m_C = 0;
             if ( p1 )
             {
                 if ( p0 - 1 >= 0 )
                 {
                     v9 = p1 + 8;
+                    v10 = p0;
+                    do
+                    {
+                        *((unsigned int *)v9 - 2) = 0;
+                        *((unsigned int *)v9 - 1) = 0;
+                        *(unsigned int *)v9 = 0;
+                        v9 += 12;
+                        --v10;
+                    } while ( v10 );
                 }
-            }
-            v10 = p0;
-            do
-              *((unsigned int *)v9 - 2) = 0;
-            *((unsigned int *)v9 - 1) = 0;
-            *(unsigned int *)v9 = 0;
-            v9 += 12;
-            --v10;
-            while ( v10 )
-            {
             }
             else
             {
-            }
-            if ( v6 )
-            {
-                if ( p0 - 1 >= 0 )
+                v6 = __2_YAPAXI_Z(12 * p0);
+                if ( v6 )
                 {
-                    v7 = (unsigned int *)(v6 + 8);
+                    if ( p0 - 1 >= 0 )
+                    {
+                        v7 = (unsigned int *)(v6 + 8);
+                        v8 = p0;
+                        do
+                        {
+                            *(v7 - 2) = 0;
+                            *(v7 - 1) = 0;
+                            *v7 = 0;
+                            v7 += 3;
+                            --v8;
+                        } while ( v8 );
+                    }
+                    v5 = (char *)v6;
+                }
+                else
+                {
+                    v5 = 0;
                 }
             }
-            v8 = p0;
-            do
-                *(v7 - 2) = 0;
-            *(v7 - 1) = 0;
-            *v7 = 0;
-            v7 += 3;
-            --v8;
-            while ( v8 )
-            {
-                v5 = (char *)v6;
-            }
-            this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
+            this->m_C = 1;
             if ( v5 )
             {
-                if ( this->m003[0] )
+                if ( this->m004[0] )
                 {
                     m_8 = this->m_8;
+                    if ( p0 < m_8 )
+                    {
+                        m_8 = p0;
+                    }
+                    if ( m_8 > 0 )
+                    {
+                        v13 = 0;
+                        do
+                        {
+                            v14 = (unsigned int *)(this->m004[0] + v13);
+                            v15 = &v5[v13];
+                            v13 += 12;
+                            --m_8;
+                            *(unsigned int *)v15 = *v14;
+                            *((unsigned int *)v15 + 1) = v14[1];
+                            *((unsigned int *)v15 + 2) = v14[2];
+                        } while ( m_8 );
+                        v3 = p0;
+                    }
+                    if ( ((this->m_C >> 8) & 0xFF) )
+                    {
+                        __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                        this->m004[0] = 0;
+                    }
                 }
+                this->m004[0] = v5;
+                this->m_8 = v3;
+                ((this->m_C >> 8) & 0xFF) = p1 == 0;
+                return (char)(1);
             }
-            if ( p0 < m_8 )
+            else
             {
-                m_8 = p0;
+                return (char)(0);
             }
-            if ( m_8 > 0 )
-            {
-                v13 = 0;
-            }
-            do v14 = (unsigned int *)(this->m003[0] + v13);
-            v15 = &v5[v13];
-            v13 += 12;
-            --m_8;
-            *(unsigned int *)v15 = *v14;
-            *((unsigned int *)v15 + 1) = v14[1];
-            *((unsigned int *)v15 + 2) = v14[2];
-            while ( m_8 )
-            {
-                v3 = p0;
-            }
-            if ( ((this->m_C >> 8) & 0xFF) )
-            {
-                __3_YAXPAX_Z(*(void **)&this->m_1[3]);
-            }
-            this->m003[0] = 0;
-            this->m003[0] = v5;
-            this->m_8 = v3;
-            ((this->m_C >> 8) & 0xFF) = p1 == 0;
-            return (char)(1);
-        }
-        else
-        {
-        }
-        else
-        {
         }
         else
         {

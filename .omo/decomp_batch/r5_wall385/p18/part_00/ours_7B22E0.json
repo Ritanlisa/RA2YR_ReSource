@@ -1,0 +1,27 @@
+{
+ "symbol": "?ReadBuffer@WinsockInterfaceClass@@QAEHPAXH0PAIPAG@Z",
+ "sym_key": "WinsockInterfaceClass::ReadBuffer",
+ "size": 200,
+ "link_base": 0,
+ "bytes_hex": "538bd98b0d80010000e8000000008b431885c0750633c05bc214008b430c56578b7c24108b008b48108d70208bd1c1e902f3a58bca8b54241c83e103f3a48b0a83f9107605b9100000008b7c2418890a8bd18bf0c1e902f3a58bca8b54242083e103f3a4668b481a8b74241466890a8b4810890e8b531885d27e1c33c94a85d289531876128b530c418b3c8a897c8afc8b53183bca72ee8a481684c9741150e8000000008b0683c4045f5e5bc21400c64015008b835cf00300485f89835cf003008b065e5bc21400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Process@EventQueue@@QAEFXZ",
+   "sym_key": "EventQueue::Process"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

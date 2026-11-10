@@ -5,7 +5,6 @@
 
 int WinsockInterfaceClass::ReadBuffer(void * p0, int p1, void * p2, unsigned int * p3, unsigned short * p4)
 {
-        int __stdcall ((AudioQueue *)(WinsockInterfaceClass this->Socket))->ReadBuffer(void *p0, int p1, void *p2, unsigned int *p3, unsigned short *p4);
         ((EventQueue *)(*(EventQueue **)&((char *)stru_87F5F0)[0x58 + (296)]))->Process();
         if ( !*((unsigned int *)this + 6) )
         {

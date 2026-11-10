@@ -10,6 +10,8 @@ class SOCKET;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class UDPInterfaceClass
 {
@@ -27,7 +29,6 @@ public:
 };
 
 // ---- globals used by this unit (registry names)
-extern unsigned char Buffer;
 extern unsigned short hostshort;
 
 // ---- global callee prototypes (R3 non-leaf)
@@ -48,6 +49,8 @@ class UDPInterfaceClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Debug
 {
@@ -61,7 +64,6 @@ public:
 };
 
 // ---- globals used by this unit (registry names)
-extern unsigned char Buffer;
 extern unsigned short hostshort;
 
 // ---- global callee prototypes (R3 non-leaf)
