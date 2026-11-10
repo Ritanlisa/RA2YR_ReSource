@@ -15,8 +15,8 @@ bool LayerClass::IsWithinUsableArea(short * p0, char p1)
             if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
             {
                 g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                v7 = &g_MissionQueueFrame.briefing[130];
             }
-            v7 = &g_MissionQueueFrame.briefing[130];
             v3 = *((char *)v7 + 283);
             if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + *((unsigned int *)this + 61) + 2 * *((unsigned int *)this + 64) + 4 )
             {

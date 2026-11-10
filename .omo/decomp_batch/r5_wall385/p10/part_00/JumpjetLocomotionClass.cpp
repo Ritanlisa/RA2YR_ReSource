@@ -5,11 +5,6 @@
 
 MouseClass * JumpjetLocomotionClass::ClampToCellBounds(int * p0, short * p1, char p2)
 {
-        unsigned int *__stdcall JumpjetLocomotionClass::ClampToCellBounds(
-            JumpjetLocomotionClass this->ptr_0,
-            unsigned int *p0,
-            short *p1,
-            char p2);
         int v4 = *((unsigned int *)this + 61);
         int v5 = *p1;
         int v6 = p1[1];
@@ -32,10 +27,10 @@ MouseClass * JumpjetLocomotionClass::ClampToCellBounds(int * p0, short * p1, cha
             if ( v9 >= v10 )
             {
                 v11 = *((unsigned int *)this + 66);
-            }
-            if ( p2 )
-            {
-                --v11;
+                if ( p2 )
+                {
+                    --v11;
+                }
             }
             else
             {
@@ -47,15 +42,12 @@ MouseClass * JumpjetLocomotionClass::ClampToCellBounds(int * p0, short * p1, cha
                 {
                     v8 = *((unsigned int *)this + 65) - 1;
                 }
+                else
+                {
+                    v8 = *((unsigned int *)this + 65);
+                }
+                v11 = v9;
             }
-            else
-            {
-                v8 = *((unsigned int *)this + 65);
-            }
-            v11 = v9;
-        }
-        else
-        {
         }
         v8 = p2 != 0;
         v11 = v9;

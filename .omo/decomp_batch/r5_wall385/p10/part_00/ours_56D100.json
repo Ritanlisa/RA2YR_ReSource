@@ -14,7 +14,7 @@
   {
    "off": 41,
    "type": "REL32",
-   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAFD@Z",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
    "sym_key": "LayerClass::IsWithinUsableArea"
   },
   {
@@ -38,7 +38,7 @@
   {
    "off": 136,
    "type": "REL32",
-   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAFD@Z",
+   "sym": "?IsWithinUsableArea@LayerClass@@QAE_NPAXD@Z",
    "sym_key": "LayerClass::IsWithinUsableArea"
   },
   {
@@ -56,13 +56,13 @@
   {
    "off": 253,
    "type": "REL32",
-   "sym": "?GetTileIndex@MapClass@@QAEHPAFHD@Z",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
    "sym_key": "MapClass::GetTileIndex"
   },
   {
    "off": 269,
    "type": "REL32",
-   "sym": "?GetTileIndex@MapClass@@QAEHPAFHD@Z",
+   "sym": "?GetTileIndex@MapClass@@QAEHPAXHD@Z",
    "sym_key": "MapClass::GetTileIndex"
   }
  ]

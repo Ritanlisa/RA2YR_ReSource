@@ -1,0 +1,21 @@
+{
+ "symbol": "?ClampToCellBounds@JumpjetLocomotionClass@@QAEPAVMouseClass@@PAHPAFD@Z",
+ "sym_key": "JumpjetLocomotionClass::ClampToCellBounds",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "8b4424085355568bf1570fbf088b9ef4000000894c24180fbf7802f6c30174052bcf41eb022bcf8bc3992bc28b96fc000000d1f9d1f803c88b86000100002bca2bf88b86080100008be98b4c24182bfb03f98bcf8bbe04010000d1e8894c24182bc851d1efe8000000002bef55e8000000008b8e000100008b5424208a4424248baefc00000003ca83c40833d284c08b44241c8d71010f95c203d55fd1fe03f233f0d1f981e6ff0000002bca33c603cb33c85e81e1ff0000005d33c88b4424085b8908c20c00",
+ "relocs": [
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?abs32@@YAHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?abs32@@YAHZZ",
+   "sym_key": "abs32"
+  }
+ ]
+}

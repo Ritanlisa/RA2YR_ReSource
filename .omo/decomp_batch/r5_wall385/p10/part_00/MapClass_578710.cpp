@@ -29,20 +29,24 @@ void * MapClass::SpiralSearch()
             if ( v4 - v3 < v6 )
             {
                 this->ZoneIterator_X[0] = v4 + 1;
-            }
-            this->ZoneIterator_Y[0] = v3 - 1;
-            v8 = v5 - (v7 + 1);
-            v9 = this->ZoneIterator_X[0] - v8;
-            v10 = v8 + this->ZoneIterator_Y[0];
-            this->ZoneIterator_X[0] = v9;
-            this->ZoneIterator_Y[0] = v10;
-            if ( v7 )
-            {
-                this->ZoneIterator_Y[0] = v10 + 1;
+                this->ZoneIterator_Y[0] = v3 - 1;
             }
             else
             {
-                this->ZoneIterator_X[0] = v9 + 1;
+                v7 = (((unsigned char)v4 - (unsigned char)MapClass_field_0xF4 + (unsigned char)v3 - 1) & 1) == 1;
+                v8 = v5 - (v7 + 1);
+                v9 = this->ZoneIterator_X[0] - v8;
+                v10 = v8 + this->ZoneIterator_Y[0];
+                this->ZoneIterator_X[0] = v9;
+                this->ZoneIterator_Y[0] = v10;
+                if ( v7 )
+                {
+                    this->ZoneIterator_Y[0] = v10 + 1;
+                }
+                else
+                {
+                    this->ZoneIterator_X[0] = v9 + 1;
+                }
             }
             if ( (unsigned char)((LayerClass *)(this))->IsWithinUsableArea(v13, 1) )
             {
@@ -57,9 +61,6 @@ void * MapClass::SpiralSearch()
             {
                 return (void *)(0);
             }
-        }
-        else
-        {
         }
         unsigned int v12 = v13[0] + (v13[1] << 9);
         unsigned int * result;

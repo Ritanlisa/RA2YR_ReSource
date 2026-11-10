@@ -28,31 +28,32 @@ int LayerClass::ClearFactoryCellAssignments()
             if ( v4 != -1 )
             {
                 v5 = *(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[56] + 4 * v4);
-            }
-            v13 = *(unsigned int *)(result + 36);
-            v6 = *(unsigned int *)(v5 + 664);
-            v14 = v13 - *(unsigned char*)(result + 287) % v6;
-            v7 = 0;
-            v15 = ((v13 >> 16) & 0xFFFF) - *(unsigned char*)(result + 287) / v6;
-            if ( *(int *)(v5 + 668) > 0 )
-            {
-                do
-              for ( i = 0; i < v6; ++i )
-                v9 = ((short)(v7 + v15) << 9) + (short)(i + v14);
-            }
-            if ( v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
-            {
-                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF);
-            }
-            v11 = (v11 & ~0xFF) | ((v7 + v15) & 0xFF);
-            g_MissionQueueFrame.briefing[139] = v11;
-            v10 = &g_MissionQueueFrame.briefing[130];
-            v10[18] = -1;
-            v6 = *(unsigned int *)(v5 + 664);
-            ++v7;
-            while ( v7 < *(unsigned int *)(v5 + 668) )
-            {
-                v1 = this;
+                v13 = *(unsigned int *)(result + 36);
+                v6 = *(unsigned int *)(v5 + 664);
+                v14 = v13 - *(unsigned char*)(result + 287) % v6;
+                v7 = 0;
+                v15 = ((v13 >> 16) & 0xFFFF) - *(unsigned char*)(result + 287) / v6;
+                if ( *(int *)(v5 + 668) > 0 )
+                {
+                    do
+                    {
+                        for ( i = 0; i < v6; ++i )
+                        {
+                            v9 = ((short)(v7 + v15) << 9) + (short)(i + v14);
+                            if ( v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
+                            {
+                                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF);
+                                v11 = (v11 & ~0xFF) | ((v7 + v15) & 0xFF);
+                                g_MissionQueueFrame.briefing[139] = v11;
+                                v10 = &g_MissionQueueFrame.briefing[130];
+                            }
+                            v10[18] = -1;
+                            v6 = *(unsigned int *)(v5 + 664);
+                        }
+                        ++v7;
+                    } while ( v7 < *(unsigned int *)(v5 + 668) );
+                    v1 = this;
+                }
             }
         }
         return (int)(result);

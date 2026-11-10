@@ -48,14 +48,13 @@ char CrateClass::FindPlacement()
             if ( v8 || v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
             {
                 g_MissionQueueFrame.briefing[139] = v14;
+                v10 = &g_MissionQueueFrame.briefing[130];
             }
-            v10 = &g_MissionQueueFrame.briefing[130];
             if ( v10[59] == 2 )
             {
                 v15[0] = 0;
-            }
-            v15[1] = 0;
-            v11 = LayerClass__Pathfinding_Find(
+                v15[1] = 0;
+                v11 = LayerClass__Pathfinding_Find(
                   &((char *)stru_87F5F0)[0x58 + (416)],
                   (int)v15,
                   &v17,
@@ -73,8 +72,12 @@ char CrateClass::FindPlacement()
                   v15,
                   0,
                   0);
-            v16[1] = 0;
-            v11 = LayerClass__Pathfinding_Find(
+            }
+            else
+            {
+                v16[0] = 0;
+                v16[1] = 0;
+                v11 = LayerClass__Pathfinding_Find(
                   &((char *)stru_87F5F0)[0x58 + (416)],
                   (int)v16,
                   &v18,
@@ -92,6 +95,7 @@ char CrateClass::FindPlacement()
                   v16,
                   0,
                   0);
+            }
             *(unsigned int *)v13 = *v11;
             if ( ((BuildingClass *)(v4))->BeginCrumblingTimer(v13) )
             {
@@ -101,9 +105,6 @@ char CrateClass::FindPlacement()
             {
                 return (char)(0);
             }
-        }
-        else
-        {
         }
         return (char)(1);
 }

@@ -8,45 +8,44 @@ int __stdcall unknown::SpiralFindClosest(int p0, int p1, char p2)
         short v3 = ((v11 >> 16) & 0xFFFF);
         int v4 = 1;
         short v5 = v11;
-        do
-        {
-        } while ();
         unsigned int v6;
         char * v7;
         char * v8;
-        if ( v6 < 0x40000 && (v7 = *(char **)(g_Shroud_CellArray + 4 * v6)) != 0 )
-        {
-            v8 = v7;
-        }
-        else
-        {
-            v8 = (char *)&g_CellClassArray;
-            g_Map_GlobalCellIndex = v11;
-        }
-        int result = v8[283];
+        int result;
         unsigned int v10[2];
-        if ( result >= v4 - 2 && result <= v4 )
+        do
         {
-            if ( p2 )
+            v6 = v5 + (v3 << 9);
+            if ( v6 < 0x40000 && (v7 = *(char **)(g_Shroud_CellArray + 4 * v6)) != 0 )
             {
-                ((CellClass *)(v8 + 36))->RevealFogRect();
+                v8 = v7;
             }
-            v10[0] = 0;
-            v10[1] = 0;
-            result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0);
-            if ( result )
+            else
             {
-                result = (*(int (__stdcall **)(int, int))(*(unsigned int *)result + 408))(result, p1);
+                v8 = (char *)&g_CellClassArray;
+                g_Map_GlobalCellIndex = v11;
             }
-        }
-        ++v5;
-        v4 += 2;
-        ++v3;
-        v11 = (v11 & ~0xFF) | ((v5) & 0xFF);
-        v11 = (v11 & ~0xFF) | ((v3) & 0xFF);
-        while ( v4 < 15 )
-        {
-            return (int)(result);
-        }
+            result = v8[283];
+            if ( result >= v4 - 2 && result <= v4 )
+            {
+                if ( p2 )
+                {
+                    ((CellClass *)(v8 + 36))->RevealFogRect();
+                }
+                v10[0] = 0;
+                v10[1] = 0;
+                result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0);
+                if ( result )
+                {
+                    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)result + 408))(result, p1);
+                }
+            }
+            ++v5;
+            v4 += 2;
+            ++v3;
+            v11 = (v11 & ~0xFF) | ((v5) & 0xFF);
+            v11 = (v11 & ~0xFF) | ((v3) & 0xFF);
+        } while ( v4 < 15 );
+        return (int)(result);
 }
 

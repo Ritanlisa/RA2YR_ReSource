@@ -20,49 +20,50 @@ short MapClass::GetTileIndex(short * p0, int p1, char p2)
             if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
             {
                 g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                v7 = &g_MissionQueueFrame.briefing[130];
             }
-            v7 = &g_MissionQueueFrame.briefing[130];
             if ( (v7[80] & 0x100) != 0 )
             {
                 RegionMap = GetRegionMap((ObjectClass *)this, p0, 1, 0);
-            }
-            if ( RegionMap == -1 )
-            {
-                return (short)(-1);
-            }
-            v9 = 16 * RegionMap + *(unsigned int *)v5->__pad_54;
-            if ( *(unsigned char *)(v9 + 8) )
-            {
-                v4 = (short *)(16 * RegionMap + *(unsigned int *)v5->__pad_54);
-            }
-            else
-            {
-                v10 = *p0 + (p0[1] << 9);
-            }
-            if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
-            {
-                NeighbourContent = v11;
-            }
-            else
-            {
-                NeighbourContent = &g_MissionQueueFrame.briefing[130];
-            }
-            g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
-            for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
+                if ( RegionMap == -1 )
+                {
+                    return (short)(-1);
+                }
+                v9 = 16 * RegionMap + *(unsigned int *)v5->__pad_54;
+                if ( *(unsigned char *)(v9 + 8) )
+                {
+                    v4 = (short *)(16 * RegionMap + *(unsigned int *)v5->__pad_54);
+                }
+                else
+                {
+                    v10 = *p0 + (p0[1] << 9);
+                    if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
+                    {
+                        NeighbourContent = v11;
+                    }
+                    else
+                    {
+                        NeighbourContent = &g_MissionQueueFrame.briefing[130];
+                        g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                    }
+                    for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
                   (NeighbourContent[80] & 0x100) != 0;
                   NeighbourContent = (int *)((Cell *)(NeighbourContent))->GetNeighbourContent(i) )
-            {
-                if ( ((unsigned char)((Cell *)(NeighbourContent))->IsInRange()
+                    {
+                    }
+                    if ( ((unsigned char)((Cell *)(NeighbourContent))->IsInRange()
                || (unsigned char)((Cell *)(NeighbourContent))->IsInRange2())
               && NeighbourContent[59] != 3 )
-                {
-                    v4 = (short *)(v9 + 4);
+                    {
+                        v4 = (short *)(v9 + 4);
+                    }
+                    else
+                    {
+                        v4 = (short *)v9;
+                    }
+                    v5 = this;
                 }
             }
-            v5 = this;
-        }
-        else
-        {
         }
         int v14 = *v4 + v4[1] * ((int)v5->MapClass_field_0xF4 + *(unsigned int *)v5->__pad_F8 + 1);
         int v16;

@@ -5,7 +5,8 @@
 
 short CellClass::DetermineTileConnectivity(short * p0)
 {
-        int v2 = *p0 + p0[1] * ((int)&this->radSite->vfptr + this->radLevel[1] + 1);
+        int v2;
+        v2 = *p0 + p0[1] * ((int)&this->radSite->vfptr + this->radLevel[1] + 1);
         int CellClass_field_6C;
         if ( v2 >= 0 )
         {
@@ -19,13 +20,17 @@ short CellClass::DetermineTileConnectivity(short * p0)
         {
             v2 = 0;
         }
-        int unknown68 = this->m068;
+        int unknown68;
+        unknown68 = this->m068;
         unsigned int v15[8];
         v15[2] = 1;
         v15[6] = -1;
-        unsigned char * v5 = (unsigned char*)(unknown68 + 4 * v2);
-        int v6 = *(unsigned int *)&((char *)stru_87F5F0)[0x58 + (664)] + *(unsigned int *)&((char *)stru_87F5F0)[0x58 + (660)] + 1;
-        int v7 = *v5;
+        unsigned char * v5;
+        v5 = (unsigned char*)(unknown68 + 4 * v2);
+        int v6;
+        v6 = *(unsigned int *)&((char *)stru_87F5F0)[0x58 + (664)] + *(unsigned int *)&((char *)stru_87F5F0)[0x58 + (660)] + 1;
+        int v7;
+        v7 = *v5;
         v15[4] = v6;
         v15[0] = -v6;
         v15[1] = -(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (664)] + *(unsigned int *)&((char *)stru_87F5F0)[0x58 + (660)]);
@@ -46,16 +51,16 @@ short CellClass::DetermineTileConnectivity(short * p0)
             while ( 1 )
             {
                 v10 = &v5[4 * *v9];
-            }
-            if ( *v10 == v7 )
-            {
-                break;
-            }
-            ++v8;
-            ++v9;
-            if ( v8 >= 8 )
-            {
-                goto LABEL_9;
+                if ( *v10 == v7 )
+                {
+                    break;
+                }
+                ++v8;
+                ++v9;
+                if ( v8 >= 8 )
+                {
+                    goto LABEL_9;
+                }
             }
             v11 = 0;
             if ( v10 == 0 )
@@ -66,20 +71,21 @@ short CellClass::DetermineTileConnectivity(short * p0)
             v12 = v15;
             v14 = 8;
             do
-          if ( *((unsigned short *)&this->attachedTag->vfptr + *(unsigned short *)&v5[4 * *v12 + 2]) != *((unsigned short *)&this->attachedTag->vfptr
+            {
+                if ( *((unsigned short *)&this->attachedTag->vfptr + *(unsigned short *)&v5[4 * *v12 + 2]) != *((unsigned short *)&this->attachedTag->vfptr
                                                                                                  + v11)
             && v5[4 * *v12] != 7 )
-            v11 = *(unsigned short *)&v5[4 * *v12 + 2];
-            v16 = (short *)((char *)v16 + 1);
-            ++v12;
-            --v14;
-            while ( v14 )
-            {
-                if ( (int)v16 > 3 )
                 {
-                    LABEL_9:
-    return (short)((v6 & ~0xFF) | ((((Terrain *)(&((char *)stru_87F5F0)[0x58 + (416)]))->ConnectivityGraph()) & 0xFF));
+                    v11 = *(unsigned short *)&v5[4 * *v12 + 2];
+                    v16 = (short *)((char *)v16 + 1);
                 }
+                ++v12;
+                --v14;
+            } while ( v14 );
+            if ( (int)v16 > 3 )
+            {
+                LABEL_9:
+    return (short)((v6 & ~0xFF) | ((((Terrain *)(&((char *)stru_87F5F0)[0x58 + (416)]))->ConnectivityGraph()) & 0xFF));
             }
             v6 = (v6 & ~0xFF) | ((*((unsigned short *)v10 + 1)) & 0xFF);
             *((unsigned short *)v5 + 1) = v6;

@@ -48,14 +48,14 @@ char Cell::SetRadar(short * p0)
             for ( i = v17; ; ++i )
             {
                 v16 = &v5[4 * *i];
-            }
-            if ( !*v16 )
-            {
-                break;
-            }
-            if ( ++v9 >= 8 )
-            {
-                return (char)(((Terrain *)(&((char *)stru_87F5F0)[0x58 + (416)]))->ConnectivityGraph());
+                if ( !*v16 )
+                {
+                    break;
+                }
+                if ( ++v9 >= 8 )
+                {
+                    return (char)(((Terrain *)(&((char *)stru_87F5F0)[0x58 + (416)]))->ConnectivityGraph());
+                }
             }
             if ( !&v5[4 * *i] )
             {
@@ -66,18 +66,18 @@ char Cell::SetRadar(short * p0)
             v12 = 0;
             v13 = v17;
             v15 = 8;
-            do v14 = &v5[4 * *v13];
-            if ( *(unsigned short *)(v11 + 2 * *((unsigned short *)v14 + 1)) != *(unsigned short *)(v11 + 2 * v12) && *v14 != 7 )
+            do
             {
-                v12 = *((unsigned short *)v14 + 1);
-            }
-            ++v18;
-            ++v13;
-            --v15;
-            while ( v15 )
-            {
-                result = v18;
-            }
+                v14 = &v5[4 * *v13];
+                if ( *(unsigned short *)(v11 + 2 * *((unsigned short *)v14 + 1)) != *(unsigned short *)(v11 + 2 * v12) && *v14 != 7 )
+                {
+                    v12 = *((unsigned short *)v14 + 1);
+                    ++v18;
+                }
+                ++v13;
+                --v15;
+            } while ( v15 );
+            result = v18;
             if ( v18 > 3 || *v5 )
             {
                 return (char)(((Terrain *)(&((char *)stru_87F5F0)[0x58 + (416)]))->ConnectivityGraph());

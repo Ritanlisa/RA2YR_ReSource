@@ -32,12 +32,13 @@ int LayerClass::CellIteratorNext()
             if ( (((unsigned char)v5 - (unsigned char)v7 + (unsigned char)v6 - 1) & 1) != 0 )
             {
                 v8 = v7 - 1;
+                *((unsigned int *)this + 68) = v6 + 1;
             }
-            *((unsigned int *)this + 68) = v6 + 1;
             else
             {
+                v8 = v7 - 2;
+                *((unsigned int *)this + 67) = v5 + 1;
             }
-            *((unsigned int *)this + 67) = v5 + 1;
             v9 = *((unsigned int *)this + 67);
             v10 = *((unsigned int *)this + 68) << 9;
             *((unsigned int *)this + 69) = v8;

@@ -13,9 +13,12 @@ bool MapClass::IsAreaFree(int * p0, int p1)
         {
             v14 = 1 << p1;
         }
-        int v4 = *p0;
-        int v5 = p0[2] + *p0;
-        int * v16 = (int *)v4;
+        int v4;
+        v4 = *p0;
+        int v5;
+        v5 = p0[2] + *p0;
+        int * v16;
+        v16 = (int *)v4;
         if ( v4 >= v5 )
         {
             return (bool)(((MapClass *)(this))->IsRectInBounds(p0, 1));
@@ -35,8 +38,10 @@ bool MapClass::IsAreaFree(int * p0, int p1)
                 return (bool)(((MapClass *)(this))->IsRectInBounds(p0, 1));
             }
         }
-        int v17 = (v17 & ~0xFF) | ((v4) & 0xFF);
-        int v7 = (short)v4;
+        int v17;
+        v17 = (v17 & ~0xFF) | ((v4) & 0xFF);
+        int v7;
+        v7 = (short)v4;
         int v8;
         bool v9;
         int v10;
@@ -52,8 +57,12 @@ bool MapClass::IsAreaFree(int * p0, int p1)
             if ( v9 || v10 >= 0x40000 || (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) == 0 )
             {
                 v12 = &g_MissionQueueFrame.briefing[130];
+                g_MissionQueueFrame.briefing[139] = v17;
             }
-            g_MissionQueueFrame.briefing[139] = v17;
+            else
+            {
+                v12 = v11;
+            }
             result = ((CellClass *)(v12))->FindInfantry(0);
             if ( result )
             {
@@ -86,11 +95,8 @@ bool MapClass::IsAreaFree(int * p0, int p1)
             if ( ++v6 >= p0[3] + p0[1] )
             {
                 v4 = (int)v16;
+                goto LABEL_20;
             }
-            goto LABEL_20;
-        }
-        else
-        {
         }
         return (bool)((0));
 }

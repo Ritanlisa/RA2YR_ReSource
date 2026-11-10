@@ -13,8 +13,8 @@ int MapClass::FreeAllCells()
             if ( v3 )
             {
                 *(unsigned int *)(v3 + 44) = 0;
+                *(unsigned int *)(v3 + 48) = 0;
             }
-            *(unsigned int *)(v3 + 48) = 0;
         }
         int j;
         int v5;
@@ -24,8 +24,8 @@ int MapClass::FreeAllCells()
             if ( v5 )
             {
                 (*(void (__stdcall **)(int, int))(*(unsigned int *)v5 + 32))(v5, 1);
+                *((unsigned int *)this->m13C + j) = 0;
             }
-            *((unsigned int *)this->m13C + j) = 0;
         }
         ReturnFalse2();
         int result = this->m140;
@@ -62,49 +62,50 @@ short MapClass::GetTileIndex(short * p0, int p1, char p2)
             if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
             {
                 g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                v7 = &g_MissionQueueFrame.briefing[130];
             }
-            v7 = &g_MissionQueueFrame.briefing[130];
             if ( (v7[80] & 0x100) != 0 )
             {
                 RegionMap = GetRegionMap((ObjectClass *)this, p0, 1, 0);
-            }
-            if ( RegionMap == -1 )
-            {
-                return (short)(-1);
-            }
-            v9 = 16 * RegionMap + *(unsigned int *)v5->__pad_54;
-            if ( *(unsigned char *)(v9 + 8) )
-            {
-                v4 = (short *)(16 * RegionMap + *(unsigned int *)v5->__pad_54);
-            }
-            else
-            {
-                v10 = *p0 + (p0[1] << 9);
-            }
-            if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
-            {
-                NeighbourContent = v11;
-            }
-            else
-            {
-                NeighbourContent = &g_MissionQueueFrame.briefing[130];
-            }
-            g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
-            for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
+                if ( RegionMap == -1 )
+                {
+                    return (short)(-1);
+                }
+                v9 = 16 * RegionMap + *(unsigned int *)v5->__pad_54;
+                if ( *(unsigned char *)(v9 + 8) )
+                {
+                    v4 = (short *)(16 * RegionMap + *(unsigned int *)v5->__pad_54);
+                }
+                else
+                {
+                    v10 = *p0 + (p0[1] << 9);
+                    if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
+                    {
+                        NeighbourContent = v11;
+                    }
+                    else
+                    {
+                        NeighbourContent = &g_MissionQueueFrame.briefing[130];
+                        g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                    }
+                    for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
                   (NeighbourContent[80] & 0x100) != 0;
                   NeighbourContent = (int *)((Cell *)(NeighbourContent))->GetNeighbourContent(i) )
-            {
-                if ( ((unsigned char)((Cell *)(NeighbourContent))->IsInRange()
+                    {
+                    }
+                    if ( ((unsigned char)((Cell *)(NeighbourContent))->IsInRange()
                || (unsigned char)((Cell *)(NeighbourContent))->IsInRange2())
               && NeighbourContent[59] != 3 )
-                {
-                    v4 = (short *)(v9 + 4);
+                    {
+                        v4 = (short *)(v9 + 4);
+                    }
+                    else
+                    {
+                        v4 = (short *)v9;
+                    }
+                    v5 = this;
                 }
             }
-            v5 = this;
-        }
-        else
-        {
         }
         int v14 = *v4 + v4[1] * ((int)v5->MapClass_field_0xF4 + *(unsigned int *)v5->__pad_F8 + 1);
         int v16;
@@ -194,20 +195,24 @@ void * MapClass::SpiralSearch()
             if ( v4 - v3 < v6 )
             {
                 this->ZoneIterator_X[0] = v4 + 1;
-            }
-            this->ZoneIterator_Y[0] = v3 - 1;
-            v8 = v5 - (v7 + 1);
-            v9 = this->ZoneIterator_X[0] - v8;
-            v10 = v8 + this->ZoneIterator_Y[0];
-            this->ZoneIterator_X[0] = v9;
-            this->ZoneIterator_Y[0] = v10;
-            if ( v7 )
-            {
-                this->ZoneIterator_Y[0] = v10 + 1;
+                this->ZoneIterator_Y[0] = v3 - 1;
             }
             else
             {
-                this->ZoneIterator_X[0] = v9 + 1;
+                v7 = (((unsigned char)v4 - (unsigned char)MapClass_field_0xF4 + (unsigned char)v3 - 1) & 1) == 1;
+                v8 = v5 - (v7 + 1);
+                v9 = this->ZoneIterator_X[0] - v8;
+                v10 = v8 + this->ZoneIterator_Y[0];
+                this->ZoneIterator_X[0] = v9;
+                this->ZoneIterator_Y[0] = v10;
+                if ( v7 )
+                {
+                    this->ZoneIterator_Y[0] = v10 + 1;
+                }
+                else
+                {
+                    this->ZoneIterator_X[0] = v9 + 1;
+                }
             }
             if ( (unsigned char)((LayerClass *)(this))->IsWithinUsableArea(v13, 1) )
             {
@@ -222,9 +227,6 @@ void * MapClass::SpiralSearch()
             {
                 return (void *)(0);
             }
-        }
-        else
-        {
         }
         unsigned int v12 = v13[0] + (v13[1] << 9);
         unsigned int * result;
@@ -251,9 +253,12 @@ bool MapClass::IsAreaFree(int * p0, int p1)
         {
             v14 = 1 << p1;
         }
-        int v4 = *p0;
-        int v5 = p0[2] + *p0;
-        int * v16 = (int *)v4;
+        int v4;
+        v4 = *p0;
+        int v5;
+        v5 = p0[2] + *p0;
+        int * v16;
+        v16 = (int *)v4;
         if ( v4 >= v5 )
         {
             return (bool)(((MapClass *)(this))->IsRectInBounds(p0, 1));
@@ -273,8 +278,10 @@ bool MapClass::IsAreaFree(int * p0, int p1)
                 return (bool)(((MapClass *)(this))->IsRectInBounds(p0, 1));
             }
         }
-        int v17 = (v17 & ~0xFF) | ((v4) & 0xFF);
-        int v7 = (short)v4;
+        int v17;
+        v17 = (v17 & ~0xFF) | ((v4) & 0xFF);
+        int v7;
+        v7 = (short)v4;
         int v8;
         bool v9;
         int v10;
@@ -290,8 +297,12 @@ bool MapClass::IsAreaFree(int * p0, int p1)
             if ( v9 || v10 >= 0x40000 || (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) == 0 )
             {
                 v12 = &g_MissionQueueFrame.briefing[130];
+                g_MissionQueueFrame.briefing[139] = v17;
             }
-            g_MissionQueueFrame.briefing[139] = v17;
+            else
+            {
+                v12 = v11;
+            }
             result = ((CellClass *)(v12))->FindInfantry(0);
             if ( result )
             {
@@ -324,11 +335,8 @@ bool MapClass::IsAreaFree(int * p0, int p1)
             if ( ++v6 >= p0[3] + p0[1] )
             {
                 v4 = (int)v16;
+                goto LABEL_20;
             }
-            goto LABEL_20;
-        }
-        else
-        {
         }
         return (bool)((0));
 }

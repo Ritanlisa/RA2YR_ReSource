@@ -33,12 +33,13 @@ int LayerClass::CellIteratorNext()
             if ( (((unsigned char)v5 - (unsigned char)v7 + (unsigned char)v6 - 1) & 1) != 0 )
             {
                 v8 = v7 - 1;
+                *((unsigned int *)this + 68) = v6 + 1;
             }
-            *((unsigned int *)this + 68) = v6 + 1;
             else
             {
+                v8 = v7 - 2;
+                *((unsigned int *)this + 67) = v5 + 1;
             }
-            *((unsigned int *)this + 67) = v5 + 1;
             v9 = *((unsigned int *)this + 67);
             v10 = *((unsigned int *)this + 68) << 9;
             *((unsigned int *)this + 69) = v8;
@@ -64,8 +65,8 @@ bool LayerClass::IsWithinUsableArea(short * p0, char p1)
             if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
             {
                 g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
+                v7 = &g_MissionQueueFrame.briefing[130];
             }
-            v7 = &g_MissionQueueFrame.briefing[130];
             v3 = *((char *)v7 + 283);
             if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + *((unsigned int *)this + 61) + 2 * *((unsigned int *)this + 64) + 4 )
             {
@@ -109,33 +110,32 @@ int LayerClass::AssignCellOwnership()
                 if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)((char *)stru_A83D50)[0x34] + 4 * v5) + 680) )
                 {
                     v6 = -1;
-                }
-            }
-            v7 = 0;
-            v10 = 0x7FFFFFFF;
-            if ( stru_A8EB00.vfptr[20] > 0 )
-            {
-                do
-                v8 = *(ObjectClass **)(stru_A8EB00.vfptr[17] + 4 * v7);
-            }
-            v9 = ((ObjectClass *)(v8))->DistanceTo(i);
-            if ( v8->isAliveFlag
+                    v7 = 0;
+                    v10 = 0x7FFFFFFF;
+                    if ( ((char **)stru_A8EB00)[0][20] > 0 )
+                    {
+                        do
+                        {
+                            v8 = *(ObjectClass **)(((char **)stru_A8EB00)[0][17] + 4 * v7);
+                            v9 = ((ObjectClass *)(v8))->DistanceTo(i);
+                            if ( v8->isAliveFlag
                   && v8->isOnMap
                   && *(unsigned char *)(*(unsigned int *)(v8[3].nextArrayIndex + 52) + 423)
                   && (v6 == -1 || v9 < v10) )
-            {
-                v10 = v9;
-            }
-            v6 = v7;
-            ++v7;
-            while ( v7 < stru_A8EB00.vfptr[20] )
-            {
-                if ( v6 != -1 )
-                {
-                    *(unsigned int *)(i + 80) = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(stru_A8EB00.vfptr[17] + 4 * v6) + 540) + 48);
+                            {
+                                v10 = v9;
+                                v6 = v7;
+                            }
+                            ++v7;
+                        } while ( v7 < ((char **)stru_A8EB00)[0][20] );
+                        if ( v6 != -1 )
+                        {
+                            *(unsigned int *)(i + 80) = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(((char **)stru_A8EB00)[0][17] + 4 * v6) + 540) + 48);
+                        }
+                        v1 = this;
+                    }
                 }
             }
-            v1 = this;
             result = ((LayerClass *)(v1))->CellIteratorNext();
         }
         return (int)(result);
@@ -171,31 +171,32 @@ int LayerClass::ClearFactoryCellAssignments()
             if ( v4 != -1 )
             {
                 v5 = *(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[56] + 4 * v4);
-            }
-            v13 = *(unsigned int *)(result + 36);
-            v6 = *(unsigned int *)(v5 + 664);
-            v14 = v13 - *(unsigned char*)(result + 287) % v6;
-            v7 = 0;
-            v15 = ((v13 >> 16) & 0xFFFF) - *(unsigned char*)(result + 287) / v6;
-            if ( *(int *)(v5 + 668) > 0 )
-            {
-                do
-              for ( i = 0; i < v6; ++i )
-                v9 = ((short)(v7 + v15) << 9) + (short)(i + v14);
-            }
-            if ( v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
-            {
-                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF);
-            }
-            v11 = (v11 & ~0xFF) | ((v7 + v15) & 0xFF);
-            g_MissionQueueFrame.briefing[139] = v11;
-            v10 = &g_MissionQueueFrame.briefing[130];
-            v10[18] = -1;
-            v6 = *(unsigned int *)(v5 + 664);
-            ++v7;
-            while ( v7 < *(unsigned int *)(v5 + 668) )
-            {
-                v1 = this;
+                v13 = *(unsigned int *)(result + 36);
+                v6 = *(unsigned int *)(v5 + 664);
+                v14 = v13 - *(unsigned char*)(result + 287) % v6;
+                v7 = 0;
+                v15 = ((v13 >> 16) & 0xFFFF) - *(unsigned char*)(result + 287) / v6;
+                if ( *(int *)(v5 + 668) > 0 )
+                {
+                    do
+                    {
+                        for ( i = 0; i < v6; ++i )
+                        {
+                            v9 = ((short)(v7 + v15) << 9) + (short)(i + v14);
+                            if ( v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
+                            {
+                                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF);
+                                v11 = (v11 & ~0xFF) | ((v7 + v15) & 0xFF);
+                                g_MissionQueueFrame.briefing[139] = v11;
+                                v10 = &g_MissionQueueFrame.briefing[130];
+                            }
+                            v10[18] = -1;
+                            v6 = *(unsigned int *)(v5 + 664);
+                        }
+                        ++v7;
+                    } while ( v7 < *(unsigned int *)(v5 + 668) );
+                    v1 = this;
+                }
             }
         }
         return (int)(result);

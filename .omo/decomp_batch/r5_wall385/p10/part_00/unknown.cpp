@@ -5,17 +5,8 @@
 
 char __stdcall unknown::CheckCellsBuildable(unsigned short * p0, int p1, int p2, int p3, int p4, int p5, int p6, char p7, char p8)
 {
-        char __stdcall MapClass_CheckCellsBuildable(
-            unsigned short *p0,
-            int p1,
-            int p2,
-            int p3,
-            int p4,
-            int p5,
-            int p6,
-            char p7,
-            char p8);
-        int v9 = 0;
+        int v9;
+        v9 = 0;
         if ( p1 <= 0 )
         {
             return (char)(1);
@@ -48,8 +39,8 @@ char __stdcall unknown::CheckCellsBuildable(unsigned short * p0, int p1, int p2,
             else
             {
                 v14 = &g_CellClassArray;
+                g_Map_GlobalCellIndex = v16;
             }
-            g_Map_GlobalCellIndex = v16;
             if ( p8 && v14[17] != -1 || !((Cell *)((int)v14))->IsBuildable(p3, 0, 0, p4, p5, p6, p7) )
             {
                 return (char)(0);
@@ -67,7 +58,8 @@ char __stdcall unknown::CheckCellsBuildable(unsigned short * p0, int p1, int p2,
 
 bool __stdcall unknown::IsPassable(int * p0)
 {
-        int v1 = p0[2] / g_MapRenderState;
+        int v1;
+        v1 = p0[2] / g_MapRenderState;
         int v2;
         unsigned int v3;
         int result;
@@ -91,9 +83,9 @@ bool __stdcall unknown::IsPassable(int * p0)
             else
             {
                 result = (int)v9;
+                v5 = (unsigned int *)(g_CellClassArray);
+                g_Map_GlobalCellIndex = (int)v9;
             }
-            v5 = g_CellClassArray;
-            g_Map_GlobalCellIndex = (int)v9;
             if ( (v5[75] & 8) != 0 )
             {
                 goto LABEL_13;
@@ -109,8 +101,8 @@ bool __stdcall unknown::IsPassable(int * p0)
             if ( v6 >= 0x40000 || (result = *(unsigned int *)(g_Shroud_CellArray + 4 * v6)) == 0 )
             {
                 g_Map_GlobalCellIndex = (int)v10;
+                result = (int)g_CellClassArray;
             }
-            result = (int)g_CellClassArray;
         }
         if ( (*(unsigned char *)(result + 300) & 8) == 0 )
         {
@@ -130,44 +122,43 @@ int __stdcall unknown::SpiralFindClosest(int p0, int p1, char p2)
         short v3 = ((v11 >> 16) & 0xFFFF);
         int v4 = 1;
         short v5 = v11;
-        do
-        {
-        } while ();
         unsigned int v6;
         char * v7;
         char * v8;
-        if ( v6 < 0x40000 && (v7 = *(char **)(g_Shroud_CellArray + 4 * v6)) != 0 )
-        {
-            v8 = v7;
-        }
-        else
-        {
-            v8 = (char *)&g_CellClassArray;
-            g_Map_GlobalCellIndex = v11;
-        }
-        int result = v8[283];
+        int result;
         unsigned int v10[2];
-        if ( result >= v4 - 2 && result <= v4 )
+        do
         {
-            if ( p2 )
+            v6 = v5 + (v3 << 9);
+            if ( v6 < 0x40000 && (v7 = *(char **)(g_Shroud_CellArray + 4 * v6)) != 0 )
             {
-                ((CellClass *)(v8 + 36))->RevealFogRect();
+                v8 = v7;
             }
-            v10[0] = 0;
-            v10[1] = 0;
-            result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0);
-            if ( result )
+            else
             {
-                result = (*(int (__stdcall **)(int, int))(*(unsigned int *)result + 408))(result, p1);
+                v8 = (char *)&g_CellClassArray;
+                g_Map_GlobalCellIndex = v11;
             }
-        }
-        ++v5;
-        v4 += 2;
-        ++v3;
-        v11 = (v11 & ~0xFF) | ((v5) & 0xFF);
-        v11 = (v11 & ~0xFF) | ((v3) & 0xFF);
-        while ( v4 < 15 )
-        {
-            return (int)(result);
-        }
+            result = v8[283];
+            if ( result >= v4 - 2 && result <= v4 )
+            {
+                if ( p2 )
+                {
+                    ((CellClass *)(v8 + 36))->RevealFogRect();
+                }
+                v10[0] = 0;
+                v10[1] = 0;
+                result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0);
+                if ( result )
+                {
+                    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)result + 408))(result, p1);
+                }
+            }
+            ++v5;
+            v4 += 2;
+            ++v3;
+            v11 = (v11 & ~0xFF) | ((v5) & 0xFF);
+            v11 = (v11 & ~0xFF) | ((v3) & 0xFF);
+        } while ( v4 < 15 );
+        return (int)(result);
 }

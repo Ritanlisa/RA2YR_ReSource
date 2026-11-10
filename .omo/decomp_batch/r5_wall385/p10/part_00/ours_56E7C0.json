@@ -1,9 +1,9 @@
 {
  "symbol": "?CheckCellsBuildable@unknown@@QAGDPAGHHHHHHDD@Z",
  "sym_key": "unknown::CheckCellsBuildable",
- "size": 217,
+ "size": 219,
  "link_base": 0,
- "bytes_hex": "8b44240c535533db565785c00f8ebe0000008b6c24188b7424388b44242033ff85c00f8e91000000668b4502668b4d0003c703cb33c625ff00000033f033ce81e1ff00000033f18bd6c1fa100fbfc20fbfcec1e00903c13d00000400730f8b15000000008b048285c08bc87505b9000000008a44243889350000000084c07406837944ff75418b4424348b542430508b442430528b542430508b442430526a006a0050e80000000084c0741b8b442420473bf80f8c6fffffff8b44241c433bd87d0ee953ffffff5f5e5d32c05bc228005f5e5db0015bc22800",
+ "bytes_hex": "8b44240c535533db565785c00f8ec00000008b6c24188b7424388b44242033ff85c00f8e93000000668b4502668b4d0003c703cb33c625ff00000033f033ce81e1ff00000033f18bd6c1fa100fbfc20fbfcec1e00903c13d0000040073118b15000000008b048285c074048bc8eb0bb9000000008935000000008a44243884c07406837944ff75418b4424348b542430508b442430528b542430508b442430526a006a0050e80000000084c0741b8b442420473bf80f8c6dffffff8b44241c433bd87d0ee951ffffff5f5e5d32c05bc228005f5e5db0015bc22800",
  "relocs": [
   {
    "off": 96,
@@ -12,19 +12,19 @@
    "sym_key": "g_Shroud_CellArray"
   },
   {
-   "off": 110,
+   "off": 112,
    "type": "DIR32",
    "sym": "?g_CellClassArray@@3IA",
    "sym_key": "g_CellClassArray"
   },
   {
-   "off": 120,
+   "off": 118,
    "type": "DIR32",
    "sym": "?g_Map_GlobalCellIndex@@3IA",
    "sym_key": "g_Map_GlobalCellIndex"
   },
   {
-   "off": 164,
+   "off": 166,
    "type": "REL32",
    "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
    "sym_key": "Cell::IsBuildable"

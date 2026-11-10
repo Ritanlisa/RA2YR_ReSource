@@ -26,33 +26,32 @@ int LayerClass::AssignCellOwnership()
                 if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)((char *)stru_A83D50)[0x34] + 4 * v5) + 680) )
                 {
                     v6 = -1;
-                }
-            }
-            v7 = 0;
-            v10 = 0x7FFFFFFF;
-            if ( stru_A8EB00.vfptr[20] > 0 )
-            {
-                do
-                v8 = *(ObjectClass **)(stru_A8EB00.vfptr[17] + 4 * v7);
-            }
-            v9 = ((ObjectClass *)(v8))->DistanceTo(i);
-            if ( v8->isAliveFlag
+                    v7 = 0;
+                    v10 = 0x7FFFFFFF;
+                    if ( ((char **)stru_A8EB00)[0][20] > 0 )
+                    {
+                        do
+                        {
+                            v8 = *(ObjectClass **)(((char **)stru_A8EB00)[0][17] + 4 * v7);
+                            v9 = ((ObjectClass *)(v8))->DistanceTo(i);
+                            if ( v8->isAliveFlag
                   && v8->isOnMap
                   && *(unsigned char *)(*(unsigned int *)(v8[3].nextArrayIndex + 52) + 423)
                   && (v6 == -1 || v9 < v10) )
-            {
-                v10 = v9;
-            }
-            v6 = v7;
-            ++v7;
-            while ( v7 < stru_A8EB00.vfptr[20] )
-            {
-                if ( v6 != -1 )
-                {
-                    *(unsigned int *)(i + 80) = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(stru_A8EB00.vfptr[17] + 4 * v6) + 540) + 48);
+                            {
+                                v10 = v9;
+                                v6 = v7;
+                            }
+                            ++v7;
+                        } while ( v7 < ((char **)stru_A8EB00)[0][20] );
+                        if ( v6 != -1 )
+                        {
+                            *(unsigned int *)(i + 80) = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(((char **)stru_A8EB00)[0][17] + 4 * v6) + 540) + 48);
+                        }
+                        v1 = this;
+                    }
                 }
             }
-            v1 = this;
             result = ((LayerClass *)(v1))->CellIteratorNext();
         }
         return (int)(result);

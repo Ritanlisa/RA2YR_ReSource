@@ -9,12 +9,13 @@ class MouseClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class JumpjetLocomotionClass
 {
 public:
-    void * ptr_0;  // 0x000
-    char __pad_004[148];  // 0x004
+    char __pad_000[152];  // 0x000
 
     // DECOMP_SIZECHECK(JumpjetLocomotionClass, JumpjetLocomotionClass, 152);
 

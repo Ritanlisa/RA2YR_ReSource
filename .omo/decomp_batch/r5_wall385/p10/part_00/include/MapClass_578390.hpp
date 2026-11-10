@@ -9,6 +9,8 @@ class LayerClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class MapClass
 {
@@ -30,6 +32,8 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class LayerClass
 {
@@ -39,7 +43,7 @@ public:
     // DECOMP_SIZECHECK(LayerClass, LayerClass, 320);
 
     // ---- pilot methods (registry signatures)
-    bool IsWithinUsableArea(short * p0, char p1);  // 0x578460
+    bool IsWithinUsableArea(void * p0, char p1);  // 0x578460
 };
 
 #endif  // DECOMP_PILOT_LAYERCLASS_HPP

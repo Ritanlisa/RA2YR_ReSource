@@ -4,7 +4,8 @@
 
 bool __stdcall unknown::IsPassable(int * p0)
 {
-        int v1 = p0[2] / g_MapRenderState;
+        int v1;
+        v1 = p0[2] / g_MapRenderState;
         int v2;
         unsigned int v3;
         int result;
@@ -28,9 +29,9 @@ bool __stdcall unknown::IsPassable(int * p0)
             else
             {
                 result = (int)v9;
+                v5 = (unsigned int *)(g_CellClassArray);
+                g_Map_GlobalCellIndex = (int)v9;
             }
-            v5 = g_CellClassArray;
-            g_Map_GlobalCellIndex = (int)v9;
             if ( (v5[75] & 8) != 0 )
             {
                 goto LABEL_13;
@@ -46,8 +47,8 @@ bool __stdcall unknown::IsPassable(int * p0)
             if ( v6 >= 0x40000 || (result = *(unsigned int *)(g_Shroud_CellArray + 4 * v6)) == 0 )
             {
                 g_Map_GlobalCellIndex = (int)v10;
+                result = (int)g_CellClassArray;
             }
-            result = (int)g_CellClassArray;
         }
         if ( (*(unsigned char *)(result + 300) & 8) == 0 )
         {

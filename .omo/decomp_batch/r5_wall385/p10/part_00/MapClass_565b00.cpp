@@ -12,8 +12,8 @@ int MapClass::FreeAllCells()
             if ( v3 )
             {
                 *(unsigned int *)(v3 + 44) = 0;
+                *(unsigned int *)(v3 + 48) = 0;
             }
-            *(unsigned int *)(v3 + 48) = 0;
         }
         int j;
         int v5;
@@ -23,8 +23,8 @@ int MapClass::FreeAllCells()
             if ( v5 )
             {
                 (*(void (__stdcall **)(int, int))(*(unsigned int *)v5 + 32))(v5, 1);
+                *((unsigned int *)this->m13C + j) = 0;
             }
-            *((unsigned int *)this->m13C + j) = 0;
         }
         ReturnFalse2();
         int result = this->m140;

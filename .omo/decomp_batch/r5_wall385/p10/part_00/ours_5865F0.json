@@ -1,0 +1,39 @@
+{
+ "symbol": "?SpiralFindClosest@unknown@@QAGHHHD@Z",
+ "sym_key": "unknown::SpiralFindClosest",
+ "size": 199,
+ "link_base": 0,
+ "bytes_hex": "83ec088b4424105355568b7024578bdebd01000000c1fb10897424200fbfcb0fbf542420c1e10903ca81f9000004007310a1000000008b0c8885c974048bf9eb0bbf000000008935000000000fbe871b0100008d4dfe3bc17c3e3bc57f3a8a44242884c074088d4f24e80000000033c08d5424105050528bcf8944241c89442420e80000000085c0740e8b5424248b085250ff91980100008b7c242083c50247430fbfcb8bd1897c242033d681e2ff00000033f283fd0f0f8c62ffffff5f5e5d5b83c408c21000",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?RevealFogRect@CellClass@@QAEXXZ",
+   "sym_key": "CellClass::RevealFogRect"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  }
+ ]
+}

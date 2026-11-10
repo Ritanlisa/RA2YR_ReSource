@@ -4,17 +4,8 @@
 
 char __stdcall unknown::CheckCellsBuildable(unsigned short * p0, int p1, int p2, int p3, int p4, int p5, int p6, char p7, char p8)
 {
-        char __stdcall MapClass_CheckCellsBuildable(
-            unsigned short *p0,
-            int p1,
-            int p2,
-            int p3,
-            int p4,
-            int p5,
-            int p6,
-            char p7,
-            char p8);
-        int v9 = 0;
+        int v9;
+        v9 = 0;
         if ( p1 <= 0 )
         {
             return (char)(1);
@@ -47,8 +38,8 @@ char __stdcall unknown::CheckCellsBuildable(unsigned short * p0, int p1, int p2,
             else
             {
                 v14 = &g_CellClassArray;
+                g_Map_GlobalCellIndex = v16;
             }
-            g_Map_GlobalCellIndex = v16;
             if ( p8 && v14[17] != -1 || !((Cell *)((int)v14))->IsBuildable(p3, 0, 0, p4, p5, p6, p7) )
             {
                 return (char)(0);
