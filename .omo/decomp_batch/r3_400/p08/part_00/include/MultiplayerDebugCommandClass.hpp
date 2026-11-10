@@ -3,7 +3,6 @@
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class _UNKNOWN;
-class const wchar_t;
 
 #ifndef DECOMP_PILOT_MULTIPLAYERDEBUGCOMMANDCLASS_HPP
 #define DECOMP_PILOT_MULTIPLAYERDEBUGCOMMANDCLASS_HPP
