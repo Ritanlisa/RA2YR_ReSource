@@ -1,0 +1,15 @@
+{
+ "symbol": "?AdjustSurfaceFormat@BinkMovie@@QAEHH@Z",
+ "sym_key": "BinkMovie::AdjustSurfaceFormat",
+ "size": 133,
+ "link_base": 0,
+ "bytes_hex": "83ec14578bf98b472085c0746f83380074078b4824894c24048b482c85c97e178b483085c97e108b40108d4c240851508b10ff5278eb048b44241c8b5008568b771833c02bf25056e8000000008b4f102bf08b44241083c408d1fe03f18d4c240803c66a008944240c8b44242451508b10ff52145e5f83c414c2040033c05f83c414c20400",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?HIDWORD@@YAHZZ",
+   "sym_key": "HIDWORD"
+  }
+ ]
+}
