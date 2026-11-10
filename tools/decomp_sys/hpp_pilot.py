@@ -173,12 +173,20 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
 _PRIM_TYPES = {
     "void", "int", "unsigned int", "short", "unsigned short", "char",
     "signed char", "unsigned char", "bool", "float", "double", "long",
-    "unsigned long", "__int64", "unsigned __int64",
+    "unsigned long", "__int64", "unsigned __int64", "wchar_t",
 }
 
 
 def _is_prim(ty):
-    return (ty or "").strip() in _PRIM_TYPES
+    t = (ty or "").strip()
+    if t in _PRIM_TYPES:
+        return True
+    # R3: only a bare identifier can be forward-declared.  Qualified /
+    # keyword-prefixed spellings ("const void", "const wchar_t") are not
+    # class names -- `class const void;`/`class const wchar_t;` were hard
+    # compile failures (C2628 '$S1' followed by 'void', C2079 wchar_t
+    # uses undefined class) that poisoned whole units.
+    return not re.match(r"^[A-Za-z_]\w*$", t)
 
 
 def _view_span(roles, arr):

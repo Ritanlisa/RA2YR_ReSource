@@ -182,7 +182,7 @@
   "status": "OK"
  },
  "0x40d270": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+0 jmp 0x6d03a0",
   "name": "SidebarClass::initButtons2",
   "note": "decomp_batch r2: MATCH",
@@ -1232,7 +1232,7 @@
   "status": "OK"
  },
  "0x4de620": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ObjectClass::IsHeightAboveThreshold_0",
   "note": "decomp_batch r2: MATCH",
@@ -1253,14 +1253,14 @@
   "status": "OK"
  },
  "0x4e14a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ObjectClass::InputThunkA",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x4e14b0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ObjectClass::InputThunkB",
   "note": "decomp_batch r2: MATCH",
@@ -1526,7 +1526,7 @@
   "status": "OK"
  },
  "0x5216c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::GetThreatValue_0",
   "note": "decomp_batch r2: MATCH",
@@ -1778,7 +1778,7 @@
   "status": "PENDING"
  },
  "0x53f4e0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Struct::ZeroInitAndSetup_0",
   "note": "decomp_batch r2: MATCH",
@@ -2135,7 +2135,7 @@
   "status": "OK"
  },
  "0x5bbed0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FileFind::Close",
   "note": "decomp_batch r2: MATCH",
@@ -2191,21 +2191,21 @@
   "status": "OK"
  },
  "0x5c5d30": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+0 jmp 0x5d62c0",
   "name": "PlayerClass::AssignPlayerIndex_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5ca7d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MPBattleClass::vt_entry_18",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x5ca7f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::ClearFlag_0",
   "note": "decomp_batch r2: MATCH",
@@ -2289,7 +2289,7 @@
   "status": "NG"
  },
  "0x5ef280": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Struct::ZeroInitAndSetup_0_0",
   "note": "decomp_batch r2: MATCH",
@@ -2590,7 +2590,7 @@
   "status": "OK"
  },
  "0x63f7b0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+0 jmp 0x652cf0",
   "name": "PowerClass::Stub",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -2961,7 +2961,7 @@
   "status": "OK"
  },
  "0x6d0260": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BlowStraw_29::Stub",
   "note": "decomp_batch r2: MATCH",
@@ -3101,7 +3101,7 @@
   "status": "OK"
  },
  "0x705d60": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::GetType_Thunk",
   "note": "decomp_batch r2: MATCH",
@@ -3395,14 +3395,14 @@
   "status": "OK"
  },
  "0x740e50": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::GetAmmoCount_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x7447a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+0 jmp 0x4d4dc0",
   "name": "InfantryClass::ScanTarget_0",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -3829,7 +3829,7 @@
   "status": "OK"
  },
  "0x77d710": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "GameLoop::Thunk",
   "note": "decomp_batch r2: MATCH",
@@ -3990,21 +3990,21 @@
   "status": "OK"
  },
  "0x7c891a": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "OleUninitialize::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x7c89f2": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ImageList::DragEnter",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x7c89f8": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ImageList::BeginDrag",
   "note": "decomp_batch r2: COMPILE_FAIL",
