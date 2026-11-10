@@ -1,0 +1,11 @@
+{
+ "addr": "0x428E60",
+ "name": "AnimTypeClass::GetAuxField",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x428E60",
+ "bytes_hex": "8b8194020000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

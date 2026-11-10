@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsSoundPlaying@Audio@@QAEHXZ",
+ "sym_key": "Audio::IsSoundPlaying",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b410c83e001c3",
+ "relocs": []
+}

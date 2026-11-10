@@ -1,0 +1,8 @@
+{
+ "symbol": "?ProcessInput@MouseClass@@QAEHXZ",
+ "sym_key": "MouseClass::ProcessInput",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b8164550000c3",
+ "relocs": []
+}

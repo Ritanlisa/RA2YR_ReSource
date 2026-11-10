@@ -1,0 +1,11 @@
+{
+ "addr": "0x41C010",
+ "name": "TechnoClass::IsDisguised",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41C010",
+ "bytes_hex": "8a81d8010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

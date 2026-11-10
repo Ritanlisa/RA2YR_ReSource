@@ -1,0 +1,8 @@
+{
+ "symbol": "?processPowerState@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::processPowerState",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81dc0e0000c3",
+ "relocs": []
+}

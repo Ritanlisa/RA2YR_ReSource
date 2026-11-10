@@ -1,0 +1,11 @@
+{
+ "addr": "0x40D280",
+ "name": "MouseClass::ProcessInput",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40D280",
+ "bytes_hex": "8b8164550000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

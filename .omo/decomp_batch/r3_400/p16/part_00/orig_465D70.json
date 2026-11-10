@@ -1,0 +1,11 @@
+{
+ "addr": "0x465D70",
+ "name": "BuildingClass::processPowerState",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x465D70",
+ "bytes_hex": "8b81dc0e0000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

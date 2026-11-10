@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetEntry@unknown@@QAEHXZ",
+ "sym_key": "unknown::GetEntry",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822D1C@@3IA",
+   "sym_key": "DataGlobal_822D1C"
+  }
+ ]
+}

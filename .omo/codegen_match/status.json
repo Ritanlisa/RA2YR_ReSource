@@ -13,6 +13,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x406520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractTypeClass::sub_406520",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x406530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractTypeClass::sub_406530",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x406540": {
   "attempts": 4,
   "first_diff": null,
@@ -76,6 +90,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x408070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio::IsSoundPlaying",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x408140": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0x20]",
+  "name": "ThemeClass::GetValue",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x408520": {
   "attempts": 1,
   "first_diff": null,
@@ -136,6 +164,13 @@
   "attempts": 6,
   "first_diff": "+0 jmp 0x6d03a0",
   "name": "SidebarClass::initButtons2",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x40d280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MouseClass::ProcessInput",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -216,6 +251,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x41b9e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::updateROFTimer",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x41be60": {
   "attempts": 1,
   "first_diff": "+2 ret 4",
@@ -237,6 +279,20 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x41c010": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::IsDisguised",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41c070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftClass::CheckDockState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x41c170": {
   "attempts": 1,
   "first_diff": null,
@@ -248,6 +304,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AircraftClass::MissionStubReturnZero3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41c200": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftClass::CheckMissionFail",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -279,6 +342,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x41cfa0": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0xa4]",
+  "name": "ObjectClass::GetMember41_2",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x41cfb0": {
   "attempts": 1,
   "first_diff": null,
@@ -290,6 +360,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AircraftTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x41cfd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -318,6 +395,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AITriggerTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x425520": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::updateLayer",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -363,10 +447,24 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x427290": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimFile::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x428e40": {
   "attempts": 3,
   "first_diff": null,
   "name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x428e60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -433,6 +531,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4581f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::MissionStubReturnZero6",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x459d90": {
   "attempts": 1,
   "first_diff": "+0 mov al, 1",
@@ -468,6 +573,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x459ee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::GetTypePtr",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x465d70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::processPowerState",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x465d90": {
   "attempts": 1,
   "first_diff": null,
@@ -479,6 +598,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x465db0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingTypeClass::GetAuxField",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46b270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::updateHealthBar",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -3272,6 +3405,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Dialog::GetCurrentType",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x777b50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameOptions::GetEntry",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

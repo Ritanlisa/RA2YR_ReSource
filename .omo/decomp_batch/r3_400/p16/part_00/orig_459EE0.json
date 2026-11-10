@@ -1,0 +1,11 @@
+{
+ "addr": "0x459EE0",
+ "name": "BuildingClass::GetTypePtr",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459EE0",
+ "bytes_hex": "8b8120050000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

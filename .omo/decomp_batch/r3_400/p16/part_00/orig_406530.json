@@ -1,0 +1,11 @@
+{
+ "addr": "0x406530",
+ "name": "AbstractTypeClass::sub_406530",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406530",
+ "bytes_hex": "89913c010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

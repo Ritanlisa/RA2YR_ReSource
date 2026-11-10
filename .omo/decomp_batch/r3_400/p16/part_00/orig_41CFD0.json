@@ -1,0 +1,11 @@
+{
+ "addr": "0x41CFD0",
+ "name": "AircraftTypeClass::GetAuxField",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41CFD0",
+ "bytes_hex": "8b81f80d0000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

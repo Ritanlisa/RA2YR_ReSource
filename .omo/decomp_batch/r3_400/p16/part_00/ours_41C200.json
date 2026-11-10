@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckMissionFail@AircraftClass@@QAEHXZ",
+ "sym_key": "AircraftClass::CheckMissionFail",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81c4060000c3",
+ "relocs": []
+}

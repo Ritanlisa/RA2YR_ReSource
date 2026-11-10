@@ -1,0 +1,11 @@
+{
+ "addr": "0x425520",
+ "name": "AbstractClass::updateLayer",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x425520",
+ "bytes_hex": "8b81c8000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
