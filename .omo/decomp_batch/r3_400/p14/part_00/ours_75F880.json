@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@WaveClass@@QAEHXZ",
+ "sym_key": "WaveClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b840020000c3",
+ "relocs": []
+}

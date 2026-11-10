@@ -1,0 +1,11 @@
+{
+ "addr": "0x746DD0",
+ "name": "C07F5C70::StubReturn2280",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746DD0",
+ "bytes_hex": "b8e8080000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@VoxelAnimTypeClass@@QAEHXZ",
+ "sym_key": "VoxelAnimTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b82a000000c3",
+ "relocs": []
+}

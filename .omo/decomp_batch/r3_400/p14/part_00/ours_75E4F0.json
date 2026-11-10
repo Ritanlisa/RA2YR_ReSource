@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@WarheadTypeClass@@QAEHXZ",
+ "sym_key": "WarheadTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8d0010000c3",
+ "relocs": []
+}

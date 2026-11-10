@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@VoxelAnimTypeClass@@QAEHXZ",
+ "sym_key": "VoxelAnimTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b808030000c3",
+ "relocs": []
+}

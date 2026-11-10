@@ -1,0 +1,11 @@
+{
+ "addr": "0x74F310",
+ "name": "VeinholeMonsterClass::StubReturn63",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74F310",
+ "bytes_hex": "b83f000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

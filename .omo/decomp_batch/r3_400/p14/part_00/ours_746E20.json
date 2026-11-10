@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn1@UnitClass@@QAEHXZ",
+ "sym_key": "UnitClass::StubReturn1",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b801000000c3",
+ "relocs": []
+}

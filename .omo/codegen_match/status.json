@@ -2869,6 +2869,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x72f510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VtableStub::72F510",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x732d00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Selection::GetFlag",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x740e50": {
   "attempts": 3,
   "first_diff": null,
@@ -2883,10 +2897,73 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x746dd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "C07F5C70::StubReturn2280",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x746e20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "C07F5C70::StubReturn1",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x748160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x748170": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74a960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::StubReturn3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74ab10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::StubReturn328",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74ab20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::StubReturn41",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x74ab40": {
   "attempts": 2,
   "first_diff": null,
   "name": "VoxelAnimClass::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74b9f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74ba00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2904,10 +2981,73 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74f310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VeinholeMonsterClass::StubReturn63",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74f320": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VeinholeMonsterClass::StubReturn264",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x74f330": {
   "attempts": 1,
   "first_diff": null,
   "name": "AbstractClass::checkBuildingPlacement",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74fda0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NetworkBuffer::GetField2",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x74fdb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NetworkBuffer::GetField3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x753c70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Miles::DriverGet",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x75cbd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WalkLocomotionClass::StubReturn60",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x75e4f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WarheadTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x75e500": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WarheadTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x75f880": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WaveClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
