@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn15@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::StubReturn15",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b80f000000c3",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@InfantryTypeClass@@QAEHXZ",
+ "sym_key": "InfantryTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b810000000c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D0390",
+ "name": "FlyLocomotionClass::StubReturn96",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D0390",
+ "bytes_hex": "b860000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

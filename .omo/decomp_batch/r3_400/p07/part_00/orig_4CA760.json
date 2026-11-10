@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA760",
+ "name": "FactoryClass::StubReturn116",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA760",
+ "bytes_hex": "b874000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

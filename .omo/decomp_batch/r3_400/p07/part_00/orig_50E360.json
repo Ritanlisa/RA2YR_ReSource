@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E360",
+ "name": "AbstractClass::computeMovementCost",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E360",
+ "bytes_hex": "b80d000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

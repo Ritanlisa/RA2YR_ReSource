@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@InfantryTypeClass@@QAEHXZ",
+ "sym_key": "InfantryTypeClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b8d00e0000c3",
+ "relocs": []
+}

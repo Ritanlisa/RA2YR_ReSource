@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D27C0",
+ "name": "FoggedObjectClass::GetObjectSize",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D27C0",
+ "bytes_hex": "b878000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

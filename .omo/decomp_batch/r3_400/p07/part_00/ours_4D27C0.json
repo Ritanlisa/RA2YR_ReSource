@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetObjectSize@FoggedObjectClass@@QAEHXZ",
+ "sym_key": "FoggedObjectClass::GetObjectSize",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b878000000c3",
+ "relocs": []
+}

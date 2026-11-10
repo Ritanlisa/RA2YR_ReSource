@@ -1,0 +1,11 @@
+{
+ "addr": "0x523340",
+ "name": "InfantryClass::StubReturn15",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x523340",
+ "bytes_hex": "b80f000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
