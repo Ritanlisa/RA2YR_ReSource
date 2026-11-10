@@ -82,6 +82,11 @@ def spell_type(ty):
         return "int"
     if t in TYPE_MAP:
         return TYPE_MAP[t]
+    # R5: function-pointer spellings from export protos (`int (__stdcall *)
+    # (int)`) are illegal in declaration position -- 4-byte pointer for the
+    # pilot stub (codegen-neutral for decl-only sites)
+    if "(" in t:
+        return "void *"
     m = re.match(r"^([^*]+?)\s*(\*+)$", t)
     if m:
         base = spell_type(m.group(1))
@@ -163,6 +168,29 @@ def pass_param_rename(ctx):
     for i, an in enumerate(avars):
         if i < len(ctx.sig["param_names"]):
             body = re.sub(r"\b%s\b" % an, ctx.sig["param_names"][i], body)
+    # R5: the export proto can NAME its params (`void *Block`) while the
+    # body references them by that name; alias positionally to our p names
+    proto = ctx.ex.proto or ""
+    pm = re.search(r"\(([^)]*)\)\s*$", proto)
+    if pm:
+        _TYPE_WORDS = {
+            "int", "void", "char", "unsigned", "signed", "long", "short",
+            "float", "double", "const", "this", "bool", "wchar_t",
+            "__int8", "__int16", "__int32", "__int64",
+            "_DWORD", "_WORD", "_BYTE", "_QWORD", "va_list",
+        }
+        pnames = []
+        for part in pm.group(1).split(","):
+            nm = re.search(r"[*\s](\w+)\s*$", part.strip())
+            pnames.append(nm.group(1) if nm else None)
+        pnames = [n for n in pnames
+                  if n and n != "this" and n not in _TYPE_WORDS]
+        for i, nm in enumerate(pnames):
+            if i < len(ctx.sig["param_names"]) and \
+                    nm != ctx.sig["param_names"][i] and \
+                    not re.match(r"^[a-z]\d+$", nm or ""):
+                body = re.sub(r"\b%s\b" % re.escape(nm),
+                              ctx.sig["param_names"][i], body)
     ctx.lines = body.split("\n")
 
 
@@ -325,6 +353,16 @@ def pass_struct_globals(ctx):
         ctx.used_globals.setdefault(m.group(1), "char[]")
         return "((char *)%s)[%s]" % (m.group(1), m.group(2))
     text = _STRU_QMARK_IDX.sub(qm, text)
+
+    # 1b. stru_X.vfptrN -- MI vtable slot member read as a VALUE
+    #      (IPXManagerClass family); char* keeps the +N byte arithmetic
+    def vf(m):
+        nonlocal changed
+        changed += 1
+        ctx.used_globals.setdefault(m.group(1), "char[]")
+        k = int(m.group(2) or 0)
+        return "((char **)%s)[%d]" % (m.group(1), k)
+    text = re.sub(r"\b(stru_[0-9A-Fa-f]{6,})\.vfptr(\d*)\b", vf, text)
 
     # 2. stru_X.__pad_H[M] -- register the extern for every stru_ pad name
     #    present (sub_indexed rewrites the text)
@@ -1123,6 +1161,14 @@ def _member_record_for(ctx, mem_name):
         r2 = inh(ctx.sig["cls"], mem_name)
         if r2 is not None and r2[0] is not None:
             return r2
+    # R5: offset-encoding names (`m298` = 0x298, `m_C` = 0xC) -- the
+    # offset is IN the name; synthesize the record (template-instance
+    # classes like _VectorClass__N carry these in the export naming)
+    mm = re.match(r"^m_?([0-9A-Fa-f]{1,6})$", mem_name or "")
+    if mm:
+        off = int(mm.group(1), 16)
+        return off, {"offset": off, "name": mem_name, "type": None,
+                     "width": 4}, "offset-name-synth"
     return r
 
 
@@ -1769,6 +1815,11 @@ def pass_unknown_symbols(ctx):
         name = m.group(1)
         if name in _TYPE_KEYWORDS:
             continue
+        # R5: IDA local fn-ptr variables are named vN (`v7(x)` on a local
+        # `int (__stdcall *)(int) v7`) -- declaring `extern int v7(...)`
+        # collided with the local decl and poisoned the unit
+        if re.match(r"^v\d+$", name):
+            continue
         if name in _CALL_KEYWORDS or name in _CRT_NAMES or name in locals_:
             continue
         if name == ctx.sig.get("method"):
@@ -1827,9 +1878,11 @@ def pass_unknown_symbols(ctx):
 # body assigns a pointer through an explicit cast (`v5 = (void *)malloc(...)`).
 # C++ rejects the assignment (C2440).  When a local receives a `(T *)` cast
 # and is declared as int/dword, retype the declaration to `T *`.
-
-_CAST_ASSIGN = re.compile(r"\b([A-Za-z_]\w*)\s*=\s*\(\s*"
-                          r"(void|char|unsigned char|_BYTE|[A-Z]\w*)\s*\*\s*\)")
+_CAST_ASSIGN = re.compile(
+    r"\b([A-Za-z_]\w*)\s*=\s*\(\s*"
+    r"((?:const\s+)?(?:void|char|unsigned\s+char|signed\s+char|_BYTE|"
+    r"unsigned\s+int|int|unsigned\s+long|long|short|unsigned\s+short|"
+    r"__int16|__int32|_DWORD|_WORD|float|double|[A-Z]\w*))\s*\*\s*\)")
 
 
 def pass_local_retype(ctx):
@@ -1900,6 +1953,92 @@ def pass_local_retype(ctx):
                     "unsigned char *" % (mem, off), True))
                 break
     ctx.lines = text.split("\n")
+
+
+# ---------------------------------------------------------------- assign harmonize
+#
+# R5: VC6 rejects implicit pointer-spelling conversions that the pseudocode
+# implies (all are 4-byte moves; C-style casts are codegen-neutral):
+#   ptr-local = global;            (registry typed the global scalar)
+#   ptr-local = other-ptr-local [±k];   (different pointee spellings)
+#   this->M = expr;                (member view is ptr-typed)
+
+_PTR_LOCAL_DECL = re.compile(
+    r"^\s*((?:const\s+)?[A-Za-z_][\w\s]*?)\s*(\*+)\s*([A-Za-z_]\w*)\s*[;\[]",
+    re.M)
+
+
+def pass_assign_harmonize(ctx):
+    text = "\n".join(ctx.lines)
+    ptr_ty = {}
+    for m in _PTR_LOCAL_DECL.finditer(text):
+        ty = re.sub(r"\s+", " ", m.group(1)).strip()
+        if not ty or ty in ("return", "else"):
+            continue
+        ptr_ty[m.group(3)] = (ty + " " + m.group(2)).strip()
+    changed = 0
+    out = []
+    for ln in text.split("\n"):
+        st = ln.strip()
+        # 1/2: ptr-local = RHS;   (scalar-typed global or differing pointee)
+        m = re.match(r"^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$", st)
+        if m and m.group(1) in ptr_ty and \
+                not m.group(2).lstrip().startswith("("):
+            rhs = m.group(2).strip()
+            rm = re.match(r"^([A-Za-z_]\w*)\s*(?:([+-])\s*(\d+))?$", rhs)
+            need = False
+            if rm:
+                src = rm.group(1)
+                gty = ctx.used_globals.get(src)
+                if src in ctx.used_globals and not (gty or "").endswith("*"):
+                    need = True       # registry typed the global scalar
+                elif src in ptr_ty and ptr_ty[src] != ptr_ty[m.group(1)]:
+                    need = True       # differing pointee spelling
+            if need:
+                ty = ptr_ty[m.group(1)]
+                ln = ln.replace(st, "%s = (%s)(%s);"
+                                % (m.group(1), ty, rhs))
+                changed += 1
+        # 3: this->M = expr; with ptr-typed view
+        m2 = re.match(r"^this->([A-Za-z_]\w*)\s*=\s*(.+?);\s*$", st)
+        if m2:
+            cls = ctx.sig["cls"]
+            mem = m2.group(1)
+            rhs = m2.group(2).strip()
+            if not rhs.startswith("("):
+                for off_roles in ctx.views.scalars.get(cls, {}).values():
+                    hit = None
+                    for v in off_roles.values():
+                        if v.get("name") == mem and \
+                                (v.get("type") or "").endswith("*"):
+                            hit = v
+                            break
+                    if hit:
+                        ln = ln.replace(
+                            st, "this->%s = (%s)(%s);"
+                            % (mem, hit["type"], rhs))
+                        changed += 1
+                        break
+            elif re.match(r"^\(\s*(?:void|unsigned char|char|int|long|short)"
+                          r"\s*\*?\s*\)", rhs):
+                # R5: int-typed view receiving a POINTER-cast store
+                # (`this->m0AC = (void *)-1`) -- flip the view to a
+                # pointer (4-byte store either way; pilot shell type)
+                for off_roles in ctx.views.scalars.get(cls, {}).values():
+                    for v in off_roles.values():
+                        if v.get("name") == mem and \
+                                not (v.get("type") or "").endswith("*"):
+                            v["type"] = "void *"
+                            v["src"] = "ptr-cast-store"
+                            changed += 1
+                            break
+        out.append(ln)
+    if changed:
+        ctx.sites.append(Site(
+            "assign_harmonize", "%d sites" % changed,
+            "pointer-spelling casts inserted at assignments (C2440 family)",
+            True))
+        ctx.lines = out
 
 
 # ---------------------------------------------------------------- pass 4: scope
@@ -1982,7 +2121,14 @@ def pass_scope_shrink(ctx):
     absorbed = set()      # id(stmt) of defs merged into decls
     drop_decls = set()    # var names dropped entirely
     merge_at = {}         # var -> init text absorbed from its def stmt
+    # R5: VC6 C2362 -- a `goto` that jumps over a declaration WITH an
+    # initializer is illegal.  When the body carries goto labels, keep
+    # decls initializer-free (the assignment stays a separate statement;
+    # identical codegen).
+    has_goto = "goto " in flow_text or "goto" in full_text
     for var in decls:
+        if has_goto:
+            break
         defs = info[var]["defs"]
         if defs and defs[0].kind == "expr":
             t = txt_of(defs[0]).strip().rstrip(";")
@@ -2228,6 +2374,9 @@ def pass_era_normalize(ctx):
         text = re.sub(pat, sp, text)
     # whole-object zero init (ctor pattern): `*this = 0;` -> memset
     text = text.replace("*this = 0;", "memset(this, 0, sizeof(*this));")
+    # R5: parser double-else corruption leaves dead `else { }` blocks that
+    # are illegal without a matching if (C2181) -- scrub empty else arms
+    text = re.sub(r"else\s*\{\s*\}", "", text)
     # R5: blanket return cast to the signature's return type -- pointer /
     # int return-value disagreements between proto spellings were C2440
     # batch families (`return p0;` int* vs unsigned int* ret).  The cast
@@ -2237,9 +2386,6 @@ def pass_era_normalize(ctx):
         def _ret_wrap(m):
             expr = m.group(2).strip()
             if not expr:
-                return m.group(0)
-            if expr.startswith("(%s)" % ret_ty) or \
-                    expr.startswith("( %s )" % ret_ty):
                 return m.group(0)
             return "%sreturn (%s)(%s);" % (m.group(1), ret_ty, expr)
         text = re.sub(r"^(\s*)return\s+(.+?);\s*$", _ret_wrap, text,
@@ -2328,8 +2474,8 @@ def _proto_ret_void(proto):
     return bool(m) and m.group(1).strip() == "void"
 
 _CALL_KEYWORDS = {
-    "if", "for", "while", "switch", "return", "sizeof", "abs16", "abs64",
-    "abs", "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
+    "if", "for", "while", "switch", "return", "sizeof", "abs",
+    "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
     "BYTE3", "WORD1", "SLOWORD", "SHIWORD",
 }
 
@@ -2365,16 +2511,31 @@ def pass_callees(ctx):
         ctx.used_callees = {}
         ctx.used_callee_exts = []
     text = "\n".join(ctx.lines)
-    for m in list(_QUAL_CALL.finditer(text)):
+    # R5: the old lazy-regex args capture stopped at the FIRST `)` --
+    # nested-paren arguments were truncated and the replacement left the
+    # stray closer glued after the call (`(T *)(recv)->M()` mis-parse
+    # family, C2440 AudioController*->int).  Balanced scan instead.
+    pos = 0
+    segs = []
+    for m in re.finditer(
+            r"\b(?P<qual>[A-Za-z_]\w*(?:::[A-Za-z_]\w*)+)\s*\(", text):
+        if m.start() < pos:
+            continue
         qual = m.group("qual")
         head = qual.split("::")[0]
         if head in _CALL_KEYWORDS:
             continue
-        # our own method emission is `Cls::Method(...)` only in the def
-        # line -- bodies here are stripped of the signature already
         if qual == "%s::%s" % (ctx.sig.get("cls"), ctx.sig.get("method")):
             continue
-        args = _split_args(m.group("args"))
+        op = m.end() - 1
+        cl = _balanced_close(text, op)
+        if cl < 0:
+            continue
+        args = _split_args(text[op + 1:cl])
+        full_span = (m.start(), cl + 1)
+        pos = cl + 1
+        segs.append((full_span, qual, args))
+    for (s, e), qual, args in reversed(segs):
         addr, rec = ctx.reg.function_by_name(qual)
         owner = qual.rsplit("::", 1)[0] if "::" in qual else None
         method = qual.rsplit("::", 1)[-1]
@@ -2387,32 +2548,28 @@ def pass_callees(ctx):
                 rec.get("cc") or "thiscall")
             if cc in ("unknown", "__thiscall"):
                 cc = ""      # member: default convention IS thiscall
-            # member callee: receiver call form.  The owner class for the
-            # stub declaration is the CALL NAME's own prefix (diffasm
-            # compares the compiled symbol key against the signals NAME
-            # -- registry rec.cls may carry a different receiver typing:
-            # name `SidebarClass::InitButtons` vs cls TabClass @0x6D03A0)
             owner_cls = owner
             rret = spell_type(rec.get("ret") or "int")
             rparams = [(spell_type(p.get("type") or "int"),
                         p.get("name") or "p%d" % i)
                        for i, p in enumerate(rec.get("params") or [])]
             if len(rparams) != len(args) - 1:
-                # registry arity disagrees with the call site: trust the
-                # call site (int-typed) -- the binary jumps with these
                 rparams = [("int", "p%d" % i)
                            for i in range(max(0, len(args) - 1))]
+            else:
+                # R5: decl-only stub params accept ANY pointer arg
+                # (unsigned char* local -> char* param was C2664)
+                rparams = [("void *" if t.endswith("*") and
+                            t != "void *" else t, n)
+                           for t, n in rparams]
             recv = args[0] if args else "this"
-            # strip a leading cast from the receiver expr: IDA renders the
-            # callee's this-type as `(TabClass *)this` -- re-casting to the
-            # owner would require declaring TabClass too
             rcm = re.match(r"^\(\s*\w+\s*\*\s*\)\s*(.+)$", recv)
             if rcm:
                 recv = rcm.group(1)
             rest = ", ".join(args[1:])
             emit = "((%s *)(%s))->%s(%s)" % (re.sub(
                 r"[^A-Za-z0-9_]", "_", str(owner_cls)), recv, method, rest)
-            text = text.replace(m.group(0), emit, 1)
+            text = text[:s] + emit + text[e:]
             pseudo_sig = {
                 "addr": addr or "0x0", "ret": rret, "cc": cc,
                 "method": method,
@@ -2422,27 +2579,39 @@ def pass_callees(ctx):
             ctx.used_callees.setdefault(str(owner_cls), []).append(
                 pseudo_sig)
             ctx.sites.append(Site(
-                "callee", m.group(0)[:60],
+                "callee", ("%s(...)" % qual)[:60],
                 "member call -> %s (registry %s; stub decl recorded)"
                 % (emit[:60], addr), True))
         else:
-            # global/static callee (or unknown): extern prototype keyed to
-            # the call-site arity; qualified names are re-spelled to the
-            # sanitized free-fn name (a `Qual::Name(...)` call text cannot
-            # name a free function in C++)
             rret = spell_type(rec.get("ret")) if rec else "int"
             rcc = {"stdcall": " __stdcall", "fastcall": " __fastcall"}.get(
                 (rec or {}).get("cc") or "", "")
-            plist = ", ".join("int a%d" % i for i in range(len(args)))
+            # R5: param types follow the ARG form -- `this` / cast /
+            # arrow-receivers are pointers (`void *` accepts any), bare
+            # expressions stay int (C2664 TechnoClass* -> int family);
+            # args that are OUR OWN params inherit their declared type
+            sig_ptys = {}
+            for t, n in ctx.sig.get("params_spelled") or []:
+                sig_ptys[n] = t
+            plist = []
+            for i, a0 in enumerate(args):
+                a0s = a0.strip()
+                if a0s in sig_ptys:
+                    pt = sig_ptys[a0s]
+                elif a0s == "this" or "->" in a0s or \
+                        re.match(r"^\(\s*\w+\s*\*?\s*\)", a0s):
+                    pt = "void *"
+                else:
+                    pt = "int"
+                plist.append("%s a%d" % (pt, i))
             fname = re.sub(r"[^A-Za-z0-9_]", "_", qual)
-            decl = "extern %s%s %s(%s);" % (rret, rcc, fname, plist)
+            decl = "extern %s%s %s(%s);" % (rret, rcc, fname, ", ".join(plist))
             if decl not in ctx.used_callee_exts:
                 ctx.used_callee_exts.append(decl)
             if "::" in qual:
-                text = text.replace(m.group(0),
-                                    "%s(%s)" % (fname, m.group("args")), 1)
+                text = text[:s] + "%s(%s)" % (fname, text[s:e].split("(", 1)[1].rsplit(")", 1)[0]) + text[e:]
             ctx.sites.append(Site(
-                "callee", m.group(0)[:60],
+                "callee", ("%s(...)" % qual)[:60],
                 "global/static call -> extern prototype (site arity %d)"
                 % len(args), True))
     ctx.lines = text.split("\n")

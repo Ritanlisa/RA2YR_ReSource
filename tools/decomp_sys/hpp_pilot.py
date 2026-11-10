@@ -88,6 +88,25 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             if n in _PRIM_TYPES or n in WIDTH_OF:
                 continue
             fwd.add(n)
+    # R5: class-typed globals (`extern Stream * g_ZBufferDescriptor`) --
+    # the type names an undeclared class (C2143 BlitTrans hpp family).
+    # COLLISION: a global VARIABLE whose name equals a class name (the
+    # registry global `Stream` vs class `Stream`) makes the fwd decl and
+    # the extern fight -- degrade the global's type to void * instead.
+    if used_globals:
+        gnames = set(used_globals)
+        for name in list(used_globals):
+            ty = used_globals[name]
+            if ty.endswith("*"):
+                b = ty.replace("*", "").strip()
+                if b and not _is_prim(b) and b != cls_ident(cls) \
+                        and b not in _PRIM_TYPES and b not in WIDTH_OF:
+                    if b in gnames:
+                        # class name == sibling global name: degrade
+                        used_globals[name] = "void *"
+                        continue
+                    fwd.add(b)
+        fwd -= gnames
     fwd.discard(cls_ident(cls))
     if fwd:
         lines.append("// forward declarations")
@@ -99,6 +118,8 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("")
     lines.append("#include <string.h>   // memset (whole-object zero init)")
     lines.append("#include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)")
+    lines.append("#include <stdio.h>    // sprintf/sscanf/printf (R5)")
+    lines.append("#include <stdarg.h>   // va_list (R5)")
     lines.append("")
     lines.append("class %s" % cls_ident(cls))
     lines.append("{")

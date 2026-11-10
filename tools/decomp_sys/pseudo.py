@@ -81,8 +81,29 @@ def fetch(addr):
         if in_body and not line.startswith("//") and line.strip():
             body.append(line)
     # drop signature line, outer braces
-    if body and re.search(r"\)\s*$", body[0]) and "=" not in body[0].split("(")[0]:
-        body = body[1:]
+    # R5: the Hex-Rays section can open with a MULTI-LINE signature
+    # rendering (`char __thiscall Cls::M(\n  Cls *this,\n  ...)`) -- the
+    # old single-line drop leaked the whole proto into the body as
+    # garbage declarations (C2143 INIClass family).  Everything before
+    # the first standalone '{' that parses as a signature is dropped.
+    if body:
+        brace_idx = None
+        for i, ln in enumerate(body[:12]):
+            if ln.strip() == "{":
+                brace_idx = i
+                break
+        if brace_idx is not None:
+            head = body[:brace_idx]
+            looks_sig = bool(head) and "(" in head[0] \
+                and ";" not in " ".join(head)
+            if looks_sig or brace_idx == 0:
+                body = body[brace_idx + 1:]
+            elif head and re.search(r"\)\s*$", head[0]) \
+                    and "=" not in head[0].split("(")[0]:
+                body = body[1:]
+        elif body and re.search(r"\)\s*$", body[0]) \
+                and "=" not in body[0].split("(")[0]:
+            body = body[1:]
     if body and body[0].strip() == "{":
         body = body[1:]
     if body and body[-1].strip() == "}":
@@ -317,23 +338,63 @@ def _parse_stmts(text):
                             i += 1
             stmts.append(node)
             continue
-        if s == "do":
-            node = Stmt("do", s)
-            if i + 1 < n:
-                body_raw, body_sep = chunks[i + 1]
-                if body_sep == "{":
-                    inner = _brace_block(chunks, i + 1, body_raw)
-                    node.children = _parse_stmts(inner)
-                    j = _skip_brace(chunks, i + 1)
-                    # next should be while(...);
-                    if j + 1 < n:
-                        wraw, _wsep = chunks[j + 1]
-                        node.header = strip_anchor(wraw.strip()).rstrip(";")
-                        i = j + 2
-                    else:
-                        i = j + 1
-                else:
+        m_do = re.match(r"^do\b(.*)$", s, re.S)
+        if m_do:
+            node = Stmt("do", "do")
+            # R5: the old reconstruction (_brace_block) mixed absolute and
+            # relative chunk indices and LOST body statements -- the do
+            # body emptied and the while-header escaped as a top-level
+            # `while (c) { }` (Struct/IPX/BlitTrans C2143/C2036 batch).
+            # Mirror the if-branch: _skip_brace + _rebuild.  The '{' can
+            # ride the do chunk's own sep OR the next chunk's; a single
+            # statement can ride INSIDE the do chunk itself.
+
+            def _while_hdr(wraw):
+                wt = strip_anchor(wraw.strip()).rstrip(";").strip()
+                if wt.startswith("while"):
+                    pi = wt.find("(")
+                    if pi >= 0:
+                        return _extract_paren(wt, pi)[0]
+                return wt
+
+            inline_rest = m_do.group(1).strip()
+            if inline_rest:
+                node.children = _parse_stmts(inline_rest)
+                if i + 1 < n and chunks[i + 1][0].strip().startswith(
+                        "while"):
+                    node.header = _while_hdr(chunks[i + 1][0])
                     i += 2
+                else:
+                    i += 1
+            elif sep == "{":
+                j = _skip_brace(chunks, i)
+                inner = _rebuild(chunks, i + 1, j)
+                node.children = _parse_stmts(inner)
+                if j + 1 < n:
+                    node.header = _while_hdr(chunks[j + 1][0])
+                    i = j + 2
+                else:
+                    i = j + 1
+            elif i + 1 < n and chunks[i + 1][1] == "{":
+                j = _skip_brace(chunks, i + 1)
+                inner = _rebuild(chunks, i + 2, j)
+                node.children = _parse_stmts(inner)
+                if j + 1 < n:
+                    node.header = _while_hdr(chunks[j + 1][0])
+                    i = j + 2
+                else:
+                    i = j + 1
+            elif i + 2 < n and chunks[i + 1][0].strip() and \
+                    chunks[i + 2][0].strip().startswith("while"):
+                bs = strip_anchor(chunks[i + 1][0].strip())
+                node.children = _parse_stmts(bs)
+                node.header = _while_hdr(chunks[i + 2][0])
+                i = i + 3
+            elif i + 1 < n and chunks[i + 1][0].strip().startswith("while"):
+                node.header = _while_hdr(chunks[i + 1][0])
+                i = i + 2
+            else:
+                i += 1
             stmts.append(node)
             continue
         if s.startswith("return"):
@@ -360,13 +421,19 @@ def _parse_stmts(text):
 
 
 def _rebuild(chunks, i, j):
-    """Rejoin chunk texts (with ';' separators) over [i, j)."""
+    """Rejoin chunk texts over [i, j), re-emitting EVERY separator.
+
+    R5: the old version re-emitted only ';' -- '{'/'}' separators were
+    silently DROPPED, so a reconstructed if-body containing a do-block or
+    a nested if lost its braces and the recursive parse consumed single
+    statements / empty do-bodies / stray elses (C2181/C2143/C2036 batch).
+    """
     out = []
     for k in range(i, j):
         raw, sep = chunks[k]
         out.append(raw)
-        if sep == ";":
-            out.append(";")
+        if sep:
+            out.append(sep)
     return "".join(out)
 
 

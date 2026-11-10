@@ -221,6 +221,26 @@ def derive_signature(reg, ex):
     cc = {"fastcall": "__fastcall", "stdcall": "__stdcall",
           "cdecl": "__cdecl"}.get(cc_raw, cc_raw)
     params = []
+    # R5: proto params can carry IDA's own NAME annotations
+    # (`size_t BufferCount`) and varargs ellipsis -- strip the annotation
+    # word (never a type keyword) and drop bare `...` parts
+    _TY_WORDS = {
+        "int", "char", "void", "unsigned", "signed", "long", "short",
+        "float", "double", "const", "bool", "wchar_t", "size_t",
+        "__int8", "__int16", "__int32", "__int64",
+        "_DWORD", "_WORD", "_BYTE", "_QWORD", "va_list",
+    }
+
+    def _scrub_param(part):
+        part = part.strip()
+        while True:
+            m = re.match(r"^(.*\S)\s+([A-Za-z_]\w*)$", part)
+            if m and m.group(2) not in _TY_WORDS and \
+                    not m.group(1).endswith("*"):
+                part = m.group(1)
+            else:
+                break
+        return part
     if fn.get("params"):
         for p in fn["params"]:
             params.append((spell_type(p.get("type") or "int"), p.get("name") or "p0"))
@@ -237,7 +257,10 @@ def derive_signature(reg, ex):
                     part = part.strip()
                     if not part or part.endswith("this") or part == "this":
                         continue
-                    params.append((spell_type(part), "p%d" % i))
+                    if part == "..." or part.rstrip("*").strip() == "...":
+                        continue      # varargs: not a nameable parameter
+                    params.append((spell_type(_scrub_param(part)),
+                                   "p%d" % i))
     # arity cross-check vs the binary epilogue (D-fix: `ret` vs `ret 4`
     # cluster): the disasm's `retn N` is the callee's own stack cleanup --
     # for thiscall, N == sum(param widths). Excess signature params produce
@@ -444,6 +467,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_callees(ctx)
     passes.pass_unknown_symbols(ctx)
     passes.pass_local_retype(ctx)
+    passes.pass_assign_harmonize(ctx)
     passes.pass_scope_shrink(ctx)
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
