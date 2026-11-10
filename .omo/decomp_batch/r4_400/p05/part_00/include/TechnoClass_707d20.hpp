@@ -34,6 +34,7 @@ extern void * g_ScenarioClass_Instance;
 // registry hpp (DECOMP-1 will own this once gen_hpp.py covers
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
+class HouseClass;
 class TechnoClass;
 
 #ifndef DECOMP_PILOT_RANDOM_HPP

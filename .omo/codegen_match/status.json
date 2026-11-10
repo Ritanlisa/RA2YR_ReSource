@@ -7,7 +7,7 @@
   "status": "OK"
  },
  "0x402330": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioController::UpdatePlayback",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -763,7 +763,7 @@
   "status": "PENDING"
  },
  "0x4371d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1764,7 +1764,7 @@
   "status": "PENDING"
  },
  "0x49b660": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MPCooperative::processTurn",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2457,21 +2457,21 @@
   "status": "OK"
  },
  "0x4e4820": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4e5310": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4e5d60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2548,7 +2548,7 @@
   "status": "PENDING"
  },
  "0x4fd060": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2625,14 +2625,14 @@
   "status": "PENDING"
  },
  "0x50e1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x50e280": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HouseClass::ReactivateTechnos",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3486,7 +3486,7 @@
   "status": "OK"
  },
  "0x565b00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::FreeAllCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4137,7 +4137,7 @@
   "status": "PENDING"
  },
  "0x5e84d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GameConfig::ComputeCRC",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4200,7 +4200,7 @@
   "status": "OK"
  },
  "0x5f5fa0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::SetZ",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5243,7 +5243,7 @@
   "status": "PENDING"
  },
  "0x6c9c60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5278,7 +5278,7 @@
   "status": "OK"
  },
  "0x6cf350": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5390,7 +5390,7 @@
   "status": "PENDING"
  },
  "0x6e1530": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5600,7 +5600,7 @@
   "status": "OK"
  },
  "0x707d20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5803,7 +5803,7 @@
   "status": "PENDING"
  },
  "0x720140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6174,14 +6174,14 @@
   "status": "OK"
  },
  "0x74f960": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x74fa20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6734,7 +6734,7 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
