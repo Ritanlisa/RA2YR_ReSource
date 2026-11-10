@@ -305,7 +305,11 @@ def run_part(addrs, batch_src, out, reg, idx):
                         bucket.append(cs)
         unit_globals = {}
         unit_externs = []
+        unit_fwd = set()
         for ctx in ctxs:
+            for _ln in ctx.lines:
+                for _m in re.finditer(r"\(\s*([A-Z]\w+)\s*\*", _ln):
+                    unit_fwd.add(_m.group(1))
             unit_globals.update(getattr(ctx, "used_globals", {}))
             for d in getattr(ctx, "used_callee_exts", []):
                 if d not in unit_externs:
@@ -318,7 +322,7 @@ def run_part(addrs, batch_src, out, reg, idx):
             size = (reg.classes.get(cls) or {}).get("size") or 0
             hpp_text, members = hpp_pilot.gen_class_hpp(
                 cls, views, sigs, size, used_globals=unit_globals,
-                extra_externs=unit_externs)
+                extra_externs=unit_externs, extra_fwd=unit_fwd)
             with open(os.path.join(inc_dir, unit + ".hpp"), "a",
                       encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)
@@ -378,10 +382,14 @@ def run_part(addrs, batch_src, out, reg, idx):
                 exts2 = list(getattr(ctx, "used_callee_exts", []))
                 if ctx.sig.get("free"):
                     exts2.append(decompile.free_decl(ctx.sig))
+                fwd2 = set()
+                for _ln in ctx.lines:
+                    for _m in re.finditer(r"\(\s*([A-Z]\w+)\s*\*", _ln):
+                        fwd2.add(_m.group(1))
                 hpp2, _m2 = hpp_pilot.gen_class_hpp(
                     cls2, ctx.views, sigs2, size2,
                     used_globals=getattr(ctx, "used_globals", {}),
-                    extra_externs=exts2)
+                    extra_externs=exts2, extra_fwd=fwd2)
                 with open(os.path.join(inc_dir, iso_base + ".hpp"), "a",
                           encoding="utf-8", newline="\n") as f:
                     f.write(hpp2)

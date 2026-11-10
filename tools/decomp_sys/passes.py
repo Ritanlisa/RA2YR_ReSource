@@ -402,7 +402,7 @@ def pass_this_ptr_math(ctx):
             "bare *this -> this->%s (offset 0)" % name, True))
         return "this->" + name
 
-    text = re.sub(r"\*\s*this\b(?!\s*[\+\[])", star_this, text)
+    text = re.sub(r"\*\s*this\b(?!\s*(?:->|[\+\[]))", star_this, text)
     ctx.lines = text.split("\n")
 
 
@@ -1138,7 +1138,7 @@ def pass_vt_dispatch(ctx):
                 fnptr, pname, slot, call_args)
         else:
             call_args = args
-            emit = "((%s (__thiscall**)(%s*%s%s))this->%s)[%d](%s)" % (
+            emit = "((%s (__stdcall**)(%s*%s%s))this->%s)[%d](%s)" % (
                 fret, cls, ", " if fps else "", ", ".join(fps),
                 pname, slot, call_args)
             ctx.note("vt_foreign_dispatch",
@@ -1246,6 +1246,11 @@ def pass_member_shapes(ctx):
         name = _view_name(rec, base_off)
         w = read_w
         role = {1: "byte", 2: "word", 4: "dword", 8: "qword"}[w]
+        if _OFFSET_NAME.match(name):
+            # R4: placeholder registry names ("__pad_000") must not leak into
+            # the body -- the offset-name path spells the same slot "m%03X";
+            # a body/hpp name split is C2039 (ComboBoxOwnerDraw family).
+            name = "m%03X" % base_off
         if rec and not _OFFSET_NAME.match(name) and \
                 int(rec.get("width") or 0) != w and w != 4:
             name = "%s_%s" % (name, role)
@@ -1612,6 +1617,69 @@ def pass_unknown_symbols(ctx):
     ctx.lines = text.split("\n")
 
 
+# ---------------------------------------------------------------- local retype
+#
+# R4: IDA's local declarations are dword-typed (`int v5; // edi`), but the
+# body assigns a pointer through an explicit cast (`v5 = (void *)malloc(...)`).
+# C++ rejects the assignment (C2440).  When a local receives a `(T *)` cast
+# and is declared as int/dword, retype the declaration to `T *`.
+
+_CAST_ASSIGN = re.compile(r"\b([A-Za-z_]\w*)\s*=\s*\(\s*"
+                          r"(void|char|unsigned char|_BYTE|[A-Z]\w*)\s*\*\s*\)")
+
+
+def pass_local_retype(ctx):
+    text = "\n".join(ctx.lines)
+    want = {}
+    for m in _CAST_ASSIGN.finditer(text):
+        var, ty = m.group(1), m.group(2)
+        ty = spell_type(ty)
+        want.setdefault(var, ty + " *")
+    if not want:
+        return
+    changed = 0
+    for var, ty in want.items():
+        pat = re.compile(
+            r"\b(?:unsigned\s+)?(?:int|long|__int32|_DWORD)\s+%s\b"
+            % re.escape(var))
+        if pat.search(text):
+            text = pat.sub("%s %s" % (ty, var), text, count=1)
+            ctx.note("local_retype",
+                     "%s: dword local -> %s (receives a %s cast)"
+                     % (var, ty, ty))
+            changed += 1
+    if changed:
+        ctx.sites.append(Site(
+            "local_retype", "%d locals" % changed,
+            "declaration retyped to match the cast-assigned pointer", True))
+        ctx.lines = text.split("\n")
+
+    # member side: `this->M = <void* local>;` -- the registry record for M
+    # says int/dword, the binary stores a pointer there (ctor zeroing of a
+    # pointer array: `this->m000 = v5` with v5 from operator new).
+    ptr_locals = {v for v, ty in want.items() if ty.endswith("*")}
+    if not ptr_locals:
+        return
+    cls = ctx.sig["cls"]
+    for m in re.finditer(r"this->(\w+)\s*=\s*(\w+)\s*;", text):
+        mem, var = m.group(1), m.group(2)
+        if var not in ptr_locals:
+            continue
+        off, rec, _src = _member_record_for(ctx, mem)
+        if off is None:
+            continue
+        roles = ctx.views.scalars.get(cls, {}).get(off, {})
+        for _role, v in roles.items():
+            if v.get("name") == mem and not (v.get("type") or "").endswith("*"):
+                v["type"] = "void *"
+                v["width"] = 4
+                ctx.sites.append(Site(
+                    "member_retype", "this->%s" % mem,
+                    "%s@0x%X: dword member <- pointer store -> void *"
+                    % (mem, off), True))
+                break
+
+
 # ---------------------------------------------------------------- pass 4: scope
 
 def pass_scope_shrink(ctx):
@@ -1642,6 +1710,14 @@ def pass_scope_shrink(ctx):
         return st.text or ""
 
     flow_text = "\n".join(txt_of(st) for st in flow)
+    # R4: nested-use guard.  `flow` holds TOP-LEVEL statements only; a body
+    # wrapped in one `if`/loop makes every variable look unused here (the
+    # header text carries no bodies), which dropped live declarations
+    # (Dialog::GrowBuffer `v2 undeclared` family).  Count occurrences in the
+    # WHOLE body as the liveness backstop.
+    full_text = "\n".join(ctx.lines)
+    full_count = {v: len(re.findall(r"\b%s\b" % re.escape(v), full_text))
+                  for v in decls}
 
     # classify each var: first touching flow stmt, def stmts, read count
     info = {}
@@ -1722,7 +1798,15 @@ def pass_scope_shrink(ctx):
     for var, d in decls.items():
         if var not in emitted and var not in drop_decls:
             if info[var]["first"] is None:
-                ctx.note("dead_decl", "%s: never used -- decl dropped" % var)
+                if full_count.get(var, 0) > 1:
+                    new_flow.insert(0, decl_stmt(var))
+                    ctx.note(
+                        "scope_hoist",
+                        "%s: first use nested (not top level) -- decl "
+                        "hoisted to body top" % var)
+                else:
+                    ctx.note("dead_decl",
+                             "%s: never used -- decl dropped" % var)
             else:
                 new_flow.insert(0, decl_stmt(var))
                 ctx.note("scope_hoist",
@@ -1873,6 +1957,11 @@ def pass_era_normalize(ctx):
     from pseudo import render
     text = "\n".join(render(ctx.stmts)) if ctx.stmts is not None \
         else "\n".join(ctx.lines)
+    # R4: VC6 rejects `__thiscall` in a fn-pointer CAST TYPE (C4234); the
+    # pseudo's dispatch casts spell it.  The call shape is what matters for
+    # compilation -- the keyword inside a cast does not change codegen here,
+    # __stdcall compiles.
+    text = text.replace("__thiscall", "__stdcall")
     text = re.sub(r"\(int\)\s*\(\(", "((", text)
     text = text.replace("(unsigned __int8 *)", "(unsigned char*)")
     text = text.replace("(__int8 *)", "(char*)")

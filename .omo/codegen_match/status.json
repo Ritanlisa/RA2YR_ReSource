@@ -195,6 +195,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x410260": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x410490": {
   "attempts": 4,
   "first_diff": null,
@@ -573,6 +580,41 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x44e3a0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "BuildingClass::CheckOverlapWithOthers",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x44f640": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "BuildingClass::GetFactoryPosition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x451330": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "BuildingClass::GetCrewCount",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x451f60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::SyncCrateVisuals",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4566b0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "BuildingClass::GetPowerFrame",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4581f0": {
   "attempts": 2,
   "first_diff": null,
@@ -776,6 +818,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x47d210": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "CellClass::SetWallOwner",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x485010": {
   "attempts": 3,
   "first_diff": null,
@@ -902,6 +951,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a0a50": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "EnumConnectionPointsClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4a3220": {
   "attempts": 3,
   "first_diff": null,
@@ -950,6 +1006,34 @@
   "name": "DiskLaserClass::StubReturn73",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4ac660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::TogglePower",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4ac820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::SetObserverMode",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4ac8c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::TogglePower2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4af540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LocomotionClass::Initialize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4b4870": {
   "attempts": 1,
@@ -1112,6 +1196,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4c4ef0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "TaskForceClass::ParseUnitCountAndType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4c5aa0": {
   "attempts": 2,
   "first_diff": null,
@@ -1188,6 +1279,13 @@
   "name": "Math::ArcTan",
   "note": "via=mirror MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x4cbba0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "FootClass::FindPathWithRetry",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4d0390": {
   "attempts": 2,
@@ -1462,6 +1560,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5125a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseTypeClass::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x512710": {
   "attempts": 2,
   "first_diff": null,
@@ -1504,6 +1609,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x517210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5172b0": {
   "attempts": 2,
   "first_diff": null,
@@ -1531,6 +1643,13 @@
   "name": "TechnoClass::GetThreatValue_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x523250": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "InfantryClass::ComputeTransform",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5232f0": {
   "attempts": 2,
@@ -1573,6 +1692,20 @@
   "name": "sub_526950",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x52b170": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "SortedArray::Find",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x52b390": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "HashTable::BinarySearch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x535bd0": {
   "attempts": 1,
@@ -1760,6 +1893,13 @@
   "attempts": 3,
   "first_diff": null,
   "name": "DeleteCommandClass::Undo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x538980": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "SortedArray::FindPair",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1966,6 +2106,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5b1aa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5b1b40": {
   "attempts": 2,
   "first_diff": null,
@@ -2134,6 +2281,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5b4270": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "HashTree::MarkEntry",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5bbed0": {
   "attempts": 7,
   "first_diff": null,
@@ -2190,6 +2344,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c1fa0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "MPCooperative::Revert",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5c5d30": {
   "attempts": 8,
   "first_diff": "+0 jmp 0x5d62c0",
@@ -2218,6 +2379,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x5cc970": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "MSBinkAnim::Play",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5cd320": {
   "attempts": 1,
   "first_diff": null,
@@ -2231,6 +2399,13 @@
   "name": "MSBitPrintAnim::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5cd4d0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "MSBitPrintAnim::Draw",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5ceab0": {
   "attempts": 1,
@@ -2427,6 +2602,20 @@
   "name": "ObjectClass::GetMember01",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x624be0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "Dialog::GrowBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6252f0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "ComboBoxOwnerDraw::SortItems",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x62af50": {
   "attempts": 2,
@@ -2673,10 +2862,24 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x658de0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "RadarHashVector::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x659570": {
   "attempts": 5,
   "first_diff": null,
   "name": "sub_659570",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x65aeb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadioClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -2806,6 +3009,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6896c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::SetCountryFlag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x691ec0": {
   "attempts": 2,
   "first_diff": null,
@@ -2847,6 +3057,13 @@
   "name": "SessionClass::GetGameSpeed",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x69ec50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LocomotionClass::Process",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6a3ea0": {
   "attempts": 2,
@@ -2967,6 +3184,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6d5f60": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "TacticalClass::SetViewportPosition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6dc450": {
   "attempts": 2,
   "first_diff": null,
@@ -2980,6 +3204,20 @@
   "name": "Tactical::StubReturn3608",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e0ef0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "HouseClass::UpdateTechBuildings",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x6e2970": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "BuildingLightClass::FindAllTargets",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6e4630": {
   "attempts": 2,
@@ -3513,6 +3751,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74d5d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VeinholeMonsterClass::ProcessExpansion",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x74f310": {
   "attempts": 2,
   "first_diff": null,
@@ -3568,6 +3813,13 @@
   "name": "MovieClass::GetHeight",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x75ca80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x75cbd0": {
   "attempts": 2,
@@ -3883,6 +4135,34 @@
   "name": "WonlineStringDialogControl_28::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7ad930": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "CChatEventSink::GrowBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7ae020": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "WOLGameList::GrowBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7ae0e0": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "ComStreamClass::readData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7ae510": {
+  "attempts": 2,
+  "first_diff": null,
+  "name": "HashTable_flat::Grow",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x7b1750": {
   "attempts": 2,

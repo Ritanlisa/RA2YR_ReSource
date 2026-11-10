@@ -442,6 +442,7 @@ def run_function(addr, reg, views, idx):
     widen_byref_for_dispatch(ctx)
     passes.pass_callees(ctx)
     passes.pass_unknown_symbols(ctx)
+    passes.pass_local_retype(ctx)
     passes.pass_scope_shrink(ctx)
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)

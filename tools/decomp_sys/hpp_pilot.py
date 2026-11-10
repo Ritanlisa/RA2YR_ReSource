@@ -36,7 +36,7 @@ def _pad(off_from, off_to):
 
 
 def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
-                  used_globals=None, extra_externs=None):
+                  used_globals=None, extra_externs=None, extra_fwd=None):
     """views: ClassView; sigs: list of emitted signature dicts for this class.
 
     sigs may include callee pseudo-sigs (R3 non-leaf support): records with
@@ -78,6 +78,16 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
                 b = t.replace("*", "").strip()
                 if b and not _is_prim(b) and b != cls_ident(cls):
                     fwd.add(b)
+    if extra_fwd:
+        # R4: cast-only class references in the emitted bodies
+        # ((AnimClass *)x) need a forward declaration; the member/param
+        # scan above never sees them (C2065 AnimClass family).
+        for n in extra_fwd:
+            if not n or n == cls_ident(cls) or _is_prim(n):
+                continue
+            if n in _PRIM_TYPES or n in WIDTH_OF:
+                continue
+            fwd.add(n)
     fwd.discard(cls_ident(cls))
     if fwd:
         lines.append("// forward declarations")
