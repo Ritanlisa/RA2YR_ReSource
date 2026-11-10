@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C1FA0",
+ "name": "MPCooperative::Revert",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C1FA0",
+ "bytes_hex": "83ec08568bf18d442408c7442404000000008b8e3c0300005051b918f58900e8ecc3edff8b44240885c0750ab8feffffff5e83c408c38b4e4085c9740e8d54240452e8d99cedff84c0750833c089442404eb048b4424048b4c24083b41207c0ab8feffffff5e83c408c38b49148b04818b481085c9750ab8feffffff5e83c408c383f9017e0ab8feffffff5e83c408c38b50048b0ae8b6b9edff5e83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

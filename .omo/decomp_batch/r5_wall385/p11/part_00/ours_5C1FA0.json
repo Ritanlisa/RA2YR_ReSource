@@ -1,0 +1,33 @@
+{
+ "symbol": "?Revert@MPCooperative@@QAEHXZ",
+ "sym_key": "MPCooperative::Revert",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf18d442408c7442404000000008b8e3c0300005051b900000000e8000000008b44240885c0744b8b4e4085c974148d54240452e80000000084c074068b442404eb0633c0894424048b4c24083b412073218b49148b0c818b411085c0741483f8017f0f8b51048b0ae8000000005e83c408c3b8feffffff5e83c408c3",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_DDrawSurfaceManager@@3IA",
+   "sym_key": "g_DDrawSurfaceManager"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?GetSection@Movie@@QAEDHPAH@Z",
+   "sym_key": "Movie::GetSection"
+  },
+  {
+   "off": 57,
+   "type": "REL32",
+   "sym": "?GetState@Movie@@QAEDPAH@Z",
+   "sym_key": "Movie::GetState"
+  },
+  {
+   "off": 110,
+   "type": "REL32",
+   "sym": "?FindByName@SideClass@@QAEHXZ",
+   "sym_key": "SideClass::FindByName"
+  }
+ ]
+}
