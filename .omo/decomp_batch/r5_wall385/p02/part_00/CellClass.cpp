@@ -44,11 +44,11 @@ int * CellClass::GetScreenRect(int * p0)
             if ( v12 == 0 )
             {
                 *p0 = v17;
+                p0[1] = v18;
+                p0[2] = v19;
+                p0[3] = v20;
+                return (int *)(p0);
             }
-            p0[1] = v18;
-            p0[2] = v19;
-            p0[3] = v20;
-            return (int *)(p0);
             if ( height >= *v12 * v12[1] - 1 )
             {
                 height = *v12 * v12[1] - 1;
@@ -57,9 +57,9 @@ int * CellClass::GetScreenRect(int * p0)
             if ( (*(unsigned char *)(v13 + 36) & 1) != 0 )
             {
                 v14 = *(unsigned int *)(v13 + 4) - *(unsigned int *)(v13 + 24) < 0 ? 0 : *(unsigned int *)(v13 + 4) - *(unsigned int *)(v13 + 24);
+                v8 -= v14;
+                v7 = v14 + 30;
             }
-            v8 -= v14;
-            v7 = v14 + 30;
         }
         *p0 = v6;
         p0[1] = v8;

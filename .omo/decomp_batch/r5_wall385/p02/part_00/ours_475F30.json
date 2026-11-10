@@ -1,0 +1,39 @@
+{
+ "symbol": "?SaveIntListToINI@ScenarioClass@@QAEDPAEPADH@Z",
+ "sym_key": "ScenarioClass::SaveIntListToINI",
+ "size": 228,
+ "link_base": 0,
+ "bytes_hex": "81ec10020000a00000000053558bac2420020000894c2408578844241cb97f00000033c08d7c241df3ab8b451033db85c00f868a000000568a44242084c0742ebf0000000083c9ff33c08d542420f2aef7d12bf98bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca83e103f3a48b45048d5424148b0c9851680000000052e8000000008d7c242083c9ff33c083c40cf2aef7d12bf98d5424208bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58b45108bca83e103433bd8f3a40f8278ffffff5e8b4c240c8d44241c508b8424240200005050e8000000005f5d5b81c410020000c20c00",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 122,
+   "type": "DIR32",
+   "sym": "??_C@_02MECO@?$CFd?$AA@",
+   "sym_key": "??_C@_02MECO@?$CFd?$AA@"
+  },
+  {
+   "off": 128,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 212,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

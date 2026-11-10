@@ -1,0 +1,11 @@
+{
+ "addr": "0x4766F0",
+ "name": "ScenarioClass::SaveTypeNameListToINI",
+ "size": 207,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4766F0",
+ "bytes_hex": "81ec04020000a0649f8800894c24005788442408b97f00000033c08d7c2409f3ab8b8c241402000066abaa8b411085c07e758b51045355568bd88a44241484c0742ebf707f810083c9ff33c08d6c2414f2aef7d12bf98bf78bfd8be983c9fff2ae8bcd4fc1e902f3a58bcd83e103f3a48b3a83c9ff83c72433c0f2aef7d12bf98d6c24148bf78bfd8be983c9fff2ae8bcd4fc1e902f3a58bcd83c20483e1034bf3a475965e5d5b8b9424100200008b84240c0200008d4c2408518b4c24085250e8ab1e0b005f81c404020000c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -2,9 +2,16 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "MISMATCH": 6,
+   "COMPILE_FAIL": 14
   },
-  "pathologies": {},
+  "pathologies": {
+   "codegen_shape": 1,
+   "frame_sched": 2,
+   "extern_reloc": 1,
+   "regalloc": 1,
+   "const_fold": 1
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
   "rule_violation_fns": 14,
@@ -14,23 +21,28 @@
   {
    "addr": "0x4566b0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\TechnoClass.cpp(37) : error C2181: illegal else without matching if",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 159B ours 104B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 mov edx, dword ptr [ecx + 0x520]"
+   },
+   "pathology": "codegen_shape",
    "name": "BuildingClass::GetPowerFrame",
    "emitted": "TechnoClass::GetPowerFrame",
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "proto_this",
    "sites": "1/2",
-   "rule_violations": 7
+   "rule_violations": 10,
+   "orig_size": 159,
+   "ours_size": 104
   },
   {
    "addr": "0x465e70",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_VectorClass_V_TPoint3D_H.cpp(19) : error C2039: 'm_C' : is not a member of '_VectorClass_V_TPoint3D_H'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_VectorClass_V_TPoint3D_H.cpp(68) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_TPoint3D_int::Release",
@@ -38,8 +50,8 @@
    "unit": "_VectorClass_V_TPoint3D_H",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/13",
-   "rule_violations": 10
+   "sites": "7/11",
+   "rule_violations": 1
   },
   {
    "addr": "0x468430",
@@ -60,7 +72,7 @@
    "addr": "0x472160",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\CaptureManagerClass.cpp(8) : error C2065: 'va_list' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\Captu",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\include\\CaptureManagerClass.hpp(27) : error C2059: syntax error : '...'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\CaptureMa",
    "first_diff": null,
    "pathology": null,
    "name": "CaptureManagerClass::DrawLinks",
@@ -74,23 +86,28 @@
   {
    "addr": "0x474b50",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 207B ours 192B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0x8c",
+    "ours": "+0 sub esp, 0x88"
+   },
+   "pathology": "frame_sched",
    "name": "INIClass::GetCoord",
    "emitted": "INIClass::GetCoord",
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "4/6",
-   "rule_violations": 2
+   "sites": "3/5",
+   "rule_violations": 2,
+   "orig_size": 207,
+   "ours_size": 192
   },
   {
    "addr": "0x474c70",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry.",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry_474c70.cpp(20) : error C2106: '=' : left operand must be l-value",
    "first_diff": null,
    "pathology": null,
    "name": "INIEntry::ReadColor",
@@ -98,14 +115,14 @@
    "unit": "INIEntry",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "4/6",
+   "sites": "3/5",
    "rule_violations": 2
   },
   {
    "addr": "0x475150",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\BulletTypeClass.cpp(19) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\BulletTypeClass.cpp(21)",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\BulletTypeClass.cpp(21) : error C2297: '&' : illegal, right operand has type 'char *'",
    "first_diff": null,
    "pathology": null,
    "name": "BulletTypeClass::ReadTrajectoryFlags",
@@ -113,29 +130,34 @@
    "unit": "BulletTypeClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/7",
+   "sites": "5/6",
    "rule_violations": 0
   },
   {
    "addr": "0x475610",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 219B ours 215B",
+   "first_diff": {
+    "orig": "+8 lea edx, [esp]",
+    "ours": "+8 mov al, byte ptr [0]"
+   },
+   "pathology": "extern_reloc",
    "name": "INIClass::SetHouseName",
    "emitted": "INIClass::SetHouseName",
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "8/10",
-   "rule_violations": 0
+   "rule_violations": 0,
+   "orig_size": 219,
+   "ours_size": 215
   },
   {
    "addr": "0x4756f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\HouseTypeClass.cpp(9) : error C2664: 'GetString' : cannot convert parameter 3 from 'unsigned char *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\deco",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\HouseTypeClass.cpp(30) : error C2228: left of '.barrelFacing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall3",
    "first_diff": null,
    "pathology": null,
    "name": "HouseTypeClass::loadCountryData",
@@ -150,7 +172,7 @@
    "addr": "0x475b70",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\WeaponTypeClass.cpp(23) : error C2297: '&' : illegal, right operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\par",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\WeaponTypeClass.cpp(24) : error C2297: '&' : illegal, right operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\par",
    "first_diff": null,
    "pathology": null,
    "name": "WeaponTypeClass::ReadTrajectoryData",
@@ -158,14 +180,14 @@
    "unit": "WeaponTypeClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/7",
+   "sites": "5/6",
    "rule_violations": 0
   },
   {
    "addr": "0x475c70",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\WeaponTypeClass.cpp(23) : error C2297: '&' : illegal, right operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\par",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\WeaponTypeClass.cpp(24) : error C2297: '&' : illegal, right operand has type 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\par",
    "first_diff": null,
    "pathology": null,
    "name": "WeaponTypeClass::ReadVeteranData",
@@ -173,29 +195,34 @@
    "unit": "WeaponTypeClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/9",
+   "sites": "4/7",
    "rule_violations": 0
   },
   {
    "addr": "0x475f30",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ScenarioClass.cpp(19) : error C2065: 'sprintf' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ScenarioCl",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 238B ours 228B",
+   "first_diff": {
+    "orig": "+13 mov dword ptr [esp + 8], ecx",
+    "ours": "+13 mov ebp, dword ptr [esp + 0x220]"
+   },
+   "pathology": "regalloc",
    "name": "ScenarioClass::SaveIntListToINI",
    "emitted": "ScenarioClass::SaveIntListToINI",
    "unit": "ScenarioClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/6",
-   "rule_violations": 2
+   "sites": "4/5",
+   "rule_violations": 2,
+   "orig_size": 238,
+   "ours_size": 228
   },
   {
    "addr": "0x476240",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ObjectTypeClass.cpp(9) : error C2440: '=' : cannot convert from 'class ObjectTypeClass *const ' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\dec",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ObjectTypeClass.cpp(9) : error C2440: '=' : cannot convert from 'class ObjectTypeClass *const ' to 'unsigned int'",
    "first_diff": null,
    "pathology": null,
    "name": "ObjectTypeClass::ReadTypeListINI",
@@ -203,29 +230,34 @@
    "unit": "ObjectTypeClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "3/6",
+   "sites": "2/5",
    "rule_violations": 3
   },
   {
    "addr": "0x4766f0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ScenarioClass.cpp(19) : error C2065: 'sprintf' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ScenarioCl",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 207B ours 197B",
+   "first_diff": {
+    "orig": "+33 mov ecx, dword ptr [esp + 0x214]",
+    "ours": "+33 mov ecx, dword ptr [esp + 0x210]"
+   },
+   "pathology": "const_fold",
    "name": "ScenarioClass::SaveTypeNameListToINI",
    "emitted": "ScenarioClass::SaveTypeNameListToINI",
    "unit": "ScenarioClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "4/5",
-   "rule_violations": 3
+   "sites": "3/4",
+   "rule_violations": 3,
+   "orig_size": 207,
+   "ours_size": 197
   },
   {
    "addr": "0x476a20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass.",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIClass_476a20.cpp(17) : error C2440: '=' : cannot convert from 'void *' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "INIClass::WriteSuperWeaponList",
@@ -233,29 +265,34 @@
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "7/10",
+   "sites": "5/8",
    "rule_violations": 0
   },
   {
    "addr": "0x477640",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry.cpp(9) : error C2143: syntax error : missing ')' before 'this'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\INIEntry.",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 245B ours 206B",
+   "first_diff": {
+    "orig": "+4 sub esp, 0x94",
+    "ours": "+4 sub esp, 0x84"
+   },
+   "pathology": "frame_sched",
    "name": "INIEntry::ReadAbilities",
    "emitted": "INIEntry::ReadAbilities",
    "unit": "INIEntry",
    "name_placeholder": false,
    "cls_src": "backfill",
    "sites": "5/8",
-   "rule_violations": 12
+   "rule_violations": 12,
+   "orig_size": 245,
+   "ours_size": 206
   },
   {
    "addr": "0x478340",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_VectorClass_VRGBClass.cpp(22) : error C2039: 'm_C' : is not a member of '_VectorClass_VRGBClass'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wal",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_VectorClass_VRGBClass.cpp(94) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wa",
    "first_diff": null,
    "pathology": null,
    "name": "FilePipe_38::Release",
@@ -263,14 +300,14 @@
    "unit": "_VectorClass_VRGBClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 11
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x4784f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_DynamicVectorClass_VRGBClass.cpp(22) : error C2039: 'm_C' : is not a member of '_DynamicVectorClass_VRGBClass'; D:\\RA2YR_ReSource\\.omo\\decom",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\_DynamicVectorClass_VRGBClass.cpp(96) : error C2440: '=' : cannot convert from 'char *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
    "first_diff": null,
    "pathology": null,
    "name": "ParticleTypeClass::Release",
@@ -278,14 +315,14 @@
    "unit": "_DynamicVectorClass_VRGBClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "5/13",
-   "rule_violations": 14
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x4788e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ParticleTypeClass.cpp(19) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\Parti",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p02\\part_00\\ParticleTypeClass.cpp(18) : error C2440: '=' : cannot convert from 'void *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385",
    "first_diff": null,
    "pathology": null,
    "name": "ParticleTypeClass::EnsureCapacity",
@@ -293,7 +330,7 @@
    "unit": "ParticleTypeClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "2/5",
+   "sites": "3/6",
    "rule_violations": 1
   },
   {

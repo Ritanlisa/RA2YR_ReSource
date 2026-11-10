@@ -24,6 +24,6 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * p0, char * p1, int p2)
             *(unsigned int *)v8 = v6 & 0xFFFFFF;
             strcat((char *)(&v8[12]),  (const char *)(System_Read_6E7330((ObjectClass *)v8) + 36));
         }
-        return (char)(((INIClass *)(*(char **)&v8[8]))->SetString(Block, p0, &v8[12]));
+        return (char)(((INIClass *)(*(char **)&v8[8]))->SetString(p0, p0, &v8[12]));
 }
 

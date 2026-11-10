@@ -15,7 +15,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(int * p0)
         this->BehavesLike = (void *)v3;
         if ( v3 == 0 )
         {
-            this->ParticleTypeClass_field_28C = 0;
+            this->ParticleTypeClass_field_28C = (void *)(0);
             ((this->vtable4 >> 8) & 0xFF) = 0;
             return (unsigned int *)(&this->ArrayIndex);
         }
@@ -26,24 +26,23 @@ unsigned int * ParticleTypeClass::EnsureCapacity(int * p0)
         {
             if ( v3 - 1 >= 0 )
             {
-                v5 = v4 + 2;
-            }
-            v6 = v3;
-            do
-            *(v5 - 2) = 0;
-            *(v5 - 1) = 0;
-            *v5 = 0;
-            v5 += 3;
-            --v6;
-            while ( v6 )
-            {
+                v5 = (unsigned char *)(v4 + 2);
+                v6 = v3;
+                do
+                {
+                    *(v5 - 2) = 0;
+                    *(v5 - 1) = 0;
+                    *v5 = 0;
+                    v5 += 3;
+                    --v6;
+                } while ( v6 );
             }
         }
         else
         {
             v4 = 0;
         }
-        this->ParticleTypeClass_field_28C = v4;
+        this->ParticleTypeClass_field_28C = (void *)(v4);
         if ( v4 == 0 )
         {
             return (unsigned int *)(&this->ArrayIndex);
@@ -56,17 +55,16 @@ unsigned int * ParticleTypeClass::EnsureCapacity(int * p0)
             return (unsigned int *)(&this->ArrayIndex);
         }
         int v9 = 0;
+        int v10;
+        char * v11;
         do
         {
-        } while ();
-        char * v11 = (char *)this->ParticleTypeClass_field_28C + v9;
-        ++v8;
-        v9 += 3;
-        int v10;
-        *(unsigned short *)v11 = *(unsigned short *)v10;
-        v11[2] = *(unsigned char *)(v10 + 2);
-        while ( v8 < (int)this->BehavesLike )
-        {
-            return (unsigned int *)(&this->ArrayIndex);
-        }
+            v10 = p0[1] + v9;
+            v11 = (char *)this->ParticleTypeClass_field_28C + v9;
+            ++v8;
+            v9 += 3;
+            *(unsigned short *)v11 = *(unsigned short *)v10;
+            v11[2] = *(unsigned char *)(v10 + 2);
+        } while ( v8 < (int)this->BehavesLike );
+        return (unsigned int *)(&this->ArrayIndex);
 }

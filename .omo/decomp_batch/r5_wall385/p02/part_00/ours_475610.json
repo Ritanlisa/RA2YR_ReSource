@@ -1,0 +1,57 @@
+{
+ "symbol": "?SetHouseName@INIClass@@QAEDPAEPADPAX@Z",
+ "sym_key": "INIClass::SetHouseName",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "81ec8000000033c0a0000000008d5424005356578bd98bf883c9ff33c0f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a48bb424940000008bcee80000000084c074158d4c240c68800000005156e80000000083c40ceb5a83fefe750c33d28a15000000008bfaeb2883fefd750b33c0a0000000008bf8eb1885f67c353b3500000000732d8b0d000000008b3cb183c72483c9ff33c0f2aef7d12bf98d54240c8bc18bf78bfac1e902f3a58bc883e103f3a48b8424900000008d4c240c5150508bcbe8000000005f5e5b81c480000000c20c00",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?g_Str__none_@@3EA",
+   "sym_key": "g_Str__none_"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?FormatHouseClassPlayerName@@YAHZZ",
+   "sym_key": "FormatHouseClassPlayerName"
+  },
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_Str__random_@@3EA",
+   "sym_key": "g_Str__random_"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_Str__random_@@3EA",
+   "sym_key": "g_Str__random_"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 139,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 199,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

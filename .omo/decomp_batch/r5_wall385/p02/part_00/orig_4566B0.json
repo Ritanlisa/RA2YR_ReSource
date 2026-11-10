@@ -1,0 +1,11 @@
+{
+ "addr": "0x4566B0",
+ "name": "BuildingClass::GetPowerFrame",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4566B0",
+ "bytes_hex": "53568bf133db578b8e200500008b810c17000085c00f8f800000008a81d10c000084c074248a866802000084c0740d8a89d30c00005f5e5b0fbec1c38a89d20c00005f5e5b0fbec1c38a81c816000084c0753b8a81c716000084c075318bcee88c7a2b008bf88bce57e8227b2b0084c074278b078b80b400000085c07e1b9981e2ff0000005f03c25ec1f8085bc30fbe81071700005f5e5bc38bc35f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

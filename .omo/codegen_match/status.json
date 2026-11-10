@@ -875,11 +875,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x4566b0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ebx",
   "name": "BuildingClass::GetPowerFrame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4581f0": {
   "attempts": 5,
@@ -959,7 +959,7 @@
   "status": "OK"
  },
  "0x465e70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -973,7 +973,7 @@
   "status": "NG"
  },
  "0x468430": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1064,7 +1064,7 @@
   "status": "OK"
  },
  "0x472160": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CaptureManagerClass::DrawLinks",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1106,88 +1106,88 @@
   "status": "OK"
  },
  "0x474b50": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub esp, 0x8c",
   "name": "INIClass::GetCoord",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x474c70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "INIEntry::ReadColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475150": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BulletTypeClass::ReadTrajectoryFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475610": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+8 lea edx, [esp]",
   "name": "INIClass::SetHouseName",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x4756f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475b70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadTrajectoryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475c70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadVeteranData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475f30": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+13 mov dword ptr [esp + 8], ecx",
   "name": "ScenarioClass::SaveIntListToINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x476240": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectTypeClass::ReadTypeListINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4766f0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+33 mov ecx, dword ptr [esp + 0x214]",
   "name": "ScenarioClass::SaveTypeNameListToINI",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x476a20": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "INIClass::WriteSuperWeaponList",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x477640": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+4 sub esp, 0x94",
   "name": "INIEntry::ReadAbilities",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x477740": {
   "attempts": 6,
@@ -1197,21 +1197,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x478340": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "FilePipe_38::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4784f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ParticleTypeClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4788e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ParticleTypeClass::EnsureCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1225,7 +1225,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x47ff80": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CellClass::GetScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",

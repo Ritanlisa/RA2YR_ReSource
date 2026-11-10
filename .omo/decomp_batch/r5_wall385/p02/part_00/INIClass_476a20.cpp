@@ -4,41 +4,31 @@
 
 char INIClass::WriteSuperWeaponList(unsigned char * p0, char * p1, int p2, void * p3, int p4, short p5, int p6, int p7, int p8)
 {
-        char __stdcall INIClass::WriteSuperWeaponList(
-            INIClass this->vtable1,
-            unsigned char *p0,
-            char *p1,
-            int p2,
-            void *Block,
-            int p3,
-            short p4,
-            int p5,
-            int p6,
-            int p7);
         unsigned char Source[125];
         Source[0] = g_INI_DefaultBuffer;
-        void * v10 = Block;
+        void * v10 = p0;
         memset(&Source[1], 0, 0x7Cu);
         int * v11;
         int v12;
         int v13;
-        if ( p5 > 0 )
+        if ( p3 > 0 )
         {
-            v11 = (int *)Block;
-            v12 = p5;
+            v11 = (int *)p0;
+            v12 = p3;
             do
-          if ( Source[0] )
-            strcat((char *)(Source), (char *)(Str));
-            v13 = *v11++;
-            strcat((char *)(Source),  (const char *)(*((unsigned int *)g_SuperWeaponTypeCount + v13) + 36));
-            --v12;
-            while ( v12 )
             {
-                v10 = Block;
-            }
+                if ( Source[0] )
+                {
+                    strcat((char *)(Source), (char *)(Str));
+                }
+                v13 = *v11++;
+                strcat((char *)(Source),  (const char *)(*((unsigned int *)g_SuperWeaponTypeCount + v13) + 36));
+                --v12;
+            } while ( v12 );
+            v10 = p0;
         }
         char v14 = ((INIClass *)(this->vtable1))->SetString(p0, p1, Source);
-        if ( v10 && ((p4 >> 8) & 0xFF) )
+        if ( v10 && ((p2 >> 8) & 0xFF) )
         {
             __3_YAXPAX_Z(v10);
         }

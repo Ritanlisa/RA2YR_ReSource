@@ -9,6 +9,8 @@ class INIClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BulletTypeClass
 {
@@ -23,7 +25,6 @@ public:
 };
 
 // ---- globals used by this unit (registry names)
-extern char * Block;
 extern unsigned char Source;
 extern unsigned int g_SuperWeaponTypeArray;
 extern void * g_SuperWeaponTypeCount;
@@ -40,6 +41,8 @@ extern int __cdecl Str(const void *, const void *);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class INIClass
 {
@@ -49,11 +52,10 @@ public:
     // DECOMP_SIZECHECK(INIClass, INIClass, 64);
 
     // ---- pilot methods (registry signatures)
-    char SetString(unsigned char * p0, char * p1, char * p2);  // 0x528660
+    char SetString(void * p0, void * p1, void * p2);  // 0x528660
 };
 
 // ---- globals used by this unit (registry names)
-extern char * Block;
 extern unsigned char Source;
 extern unsigned int g_SuperWeaponTypeArray;
 extern void * g_SuperWeaponTypeCount;

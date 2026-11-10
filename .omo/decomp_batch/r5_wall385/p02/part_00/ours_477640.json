@@ -1,0 +1,51 @@
+{
+ "symbol": "?ReadAbilities@INIEntry@@QAEHHPAE0H@Z",
+ "sym_key": "INIEntry::ReadAbilities",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "8b54240c81ec840000008d4424046880000000508b84249400000068000000005250e80000000085c0746e53568d4c240c33db68000000005133f6895c2410e80000000083c4083bc37429381874258bc8e80000000083f8ff7407c64404080133f6680000000053e80000000083c4083bc375d78b8424900000008b5424086689701089580489580889580c5e89105b81c484000000c210008b8c24940000008b8424880000008b1189108b51048950048b51088950088b510c89500c668b49106689481081c484000000c21000",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?strtok@@YAHZZ",
+   "sym_key": "strtok"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "?LookupByName@INIEntry@@QAEHXZ",
+   "sym_key": "INIEntry::LookupByName"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?strtok@@YAHZZ",
+   "sym_key": "strtok"
+  }
+ ]
+}

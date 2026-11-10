@@ -5,12 +5,6 @@
 
 int INIEntry::ReadColor(int p0, unsigned char * p1, unsigned char * p2, unsigned char * p3)
 {
-        int __stdcall INIEntry::ReadColor(
-            INIEntry this->Key,
-            int p0,
-            unsigned char *p1,
-            unsigned char *p2,
-            unsigned char *p3);
         char Buffer[64];
         sprintf(Buffer, "%d,%d,%d", *p3, p3[1], p3[2]);
         char v7;
@@ -67,13 +61,13 @@ int INIEntry::ReadAbilities(int p0, unsigned char * p1, unsigned char * p2, int 
                 {
                     break;
                 }
+                v7 = ((INIEntry *)(i))->LookupByName();
+                if ( v7 != -1 )
+                {
+                    *((unsigned char *)&v9 + v7) = 1;
+                    v5 = v13;
+                }
             }
-            v7 = ((INIEntry *)(i))->LookupByName();
-            if ( v7 != -1 )
-            {
-                *((unsigned char *)&v9 + v7) = 1;
-            }
-            v5 = v13;
             *(unsigned int *)p0 = v9;
             *(unsigned int *)(p0 + 4) = v10;
             *(unsigned int *)(p0 + 8) = v11;

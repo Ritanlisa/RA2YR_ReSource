@@ -14,14 +14,14 @@ char INIClass::SetHouseName(unsigned char * p0, char * p1, void * p2)
         const char * v5;
         if ( p1 == (void *)-2 )
         {
-            v5 = g_Str__random_;
+            v5 = (const char *)(g_Str__random_);
             LABEL_10:
         strcpy((char *)(Source), (char *)(v5));
             goto LABEL_11;
         }
         if ( p1 == (void *)-3 )
         {
-            v5 = g_Str__random_;
+            v5 = (const char *)(g_Str__random_);
             goto LABEL_10;
         }
         if ( (int)p1 >= 0 && (int)p1 < g_SuperWeaponTypeArray )
@@ -30,6 +30,6 @@ char INIClass::SetHouseName(unsigned char * p0, char * p1, void * p2)
             goto LABEL_10;
         }
         LABEL_11:
-    return (char)((((INIClass *)(this))->SetString(Block, p0, Source)));
+    return (char)((((INIClass *)(this))->SetString(p0, p0, Source)));
 }
 

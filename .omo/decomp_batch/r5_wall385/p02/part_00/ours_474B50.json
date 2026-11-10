@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetCoord@INIClass@@QAEHHPAE00@Z",
+ "sym_key": "INIClass::GetCoord",
+ "size": 192,
+ "link_base": 0,
+ "bytes_hex": "81ec8800000033c033d2568bb4249c000000578bf98a46028a1633c9508a4e018d4424145152680000000050e8000000008b8424b000000083c4148d4c24508d5424106a40518b8c24a00000005250518bcfe80000000085c074478d54240b8d44240a528d4c241050518d54245c680000000052e8000000008b8424a800000083c41433c98a6c240d5f8a4c24065e6689088a4c240388480281c488000000c210008b842494000000668b165f6689108a4e028848025e81c488000000c21000",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?GetString@INIClass@@QAEIPAX000H@Z",
+   "sym_key": "INIClass::GetString"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_08POMI@?$CFd?0?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 117,
+   "type": "REL32",
+   "sym": "_sscanf",
+   "sym_key": "sscanf"
+  }
+ ]
+}

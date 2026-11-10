@@ -26,6 +26,6 @@ short BulletClass::LoseTarget()
             v2 = ((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj(v4);
             this->m10C = v2;
         }
-        return (short)v2;
+        return (short)((short)v2);
 }
 

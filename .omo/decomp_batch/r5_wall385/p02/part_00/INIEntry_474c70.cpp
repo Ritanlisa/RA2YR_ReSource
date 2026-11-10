@@ -4,12 +4,6 @@
 
 int INIEntry::ReadColor(int p0, unsigned char * p1, unsigned char * p2, unsigned char * p3)
 {
-        int __stdcall INIEntry::ReadColor(
-            INIEntry this->Key,
-            int p0,
-            unsigned char *p1,
-            unsigned char *p2,
-            unsigned char *p3);
         char Buffer[64];
         sprintf(Buffer, "%d,%d,%d", *p3, p3[1], p3[2]);
         char v7;

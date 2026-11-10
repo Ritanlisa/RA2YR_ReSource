@@ -40,8 +40,8 @@ int HouseTypeClass::loadCountryData(unsigned char * p0, unsigned char * p1, int 
                         return (int)(-1);
                     }
                 }
+                return (int)(v7);
             }
-            return (int)(v7);
         }
         return (int)(result);
 }

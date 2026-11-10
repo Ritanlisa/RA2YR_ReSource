@@ -27,13 +27,13 @@ int INIEntry::ReadAbilities(int p0, unsigned char * p1, unsigned char * p2, int 
                 {
                     break;
                 }
+                v7 = ((INIEntry *)(i))->LookupByName();
+                if ( v7 != -1 )
+                {
+                    *((unsigned char *)&v9 + v7) = 1;
+                    v5 = v13;
+                }
             }
-            v7 = ((INIEntry *)(i))->LookupByName();
-            if ( v7 != -1 )
-            {
-                *((unsigned char *)&v9 + v7) = 1;
-            }
-            v5 = v13;
             *(unsigned int *)p0 = v9;
             *(unsigned int *)(p0 + 4) = v10;
             *(unsigned int *)(p0 + 8) = v11;

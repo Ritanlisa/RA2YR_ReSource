@@ -13,30 +13,29 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * p0, char * p1, int p2)
         }
         char * v5 = (char *)g_SuperWeaponTypeCount;
         int v8 = g_SuperWeaponTypeArray;
+        int v6;
         do
         {
-        } while ();
-        int v6;
-        if ( ((1 << *(unsigned int *)(*(unsigned int *)v5 + 184)) & p1) != 0 )
-        {
-            if ( v4 )
+            v6 = *(unsigned int *)v5;
+            if ( ((1 << *(unsigned int *)(*(unsigned int *)v5 + 184)) & p1) != 0 )
             {
-                strcat((char *)(Source), (char *)(Str));
+                if ( v4 )
+                {
+                    strcat((char *)(Source), (char *)(Str));
+                }
+                strcat((char *)(Source),  (const char *)(v6 + 36));
+                v4 = Source[0];
             }
-            strcat((char *)(Source),  (const char *)(v6 + 36));
-            v4 = Source[0];
-        }
-        v5 += 4;
-        --v8;
-        while ( v8 )
+            v5 += 4;
+            --v8;
+        } while ( v8 );
+        if ( v4 )
         {
-            if ( v4 )
-            {
-                return (char)(((INIClass *)(this->vfptr))->SetString(Block, p0, Source));
-            }
+            return (char)(((INIClass *)(this->vfptr))->SetString(p0, p0, Source));
         }
         else
         {
+            return (char)(1);
         }
 }
 

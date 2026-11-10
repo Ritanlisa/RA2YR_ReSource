@@ -4,41 +4,31 @@
 
 char WeaponTypeClass::ReadVeteranData(unsigned char * p0, char * p1, int p2, int * p3, int p4, short p5, int p6, int p7, int p8)
 {
-        char __stdcall WeaponTypeClass::ReadVeteranData(
-            WeaponTypeClass this->ptr_0,
-            unsigned char *p0,
-            char *p1,
-            int p2,
-            int *Block,
-            int p3,
-            short p4,
-            int p5,
-            int p6,
-            int p7);
         unsigned char Source[125];
         Source[0] = g_INI_DefaultBuffer;
         memset(&Source[1], 0, 0x7Cu);
         int * v10;
         int v11;
         char * SampleNameByIndex;
-        if ( p5 > 0 )
+        if ( p3 > 0 )
         {
-            v10 = Block;
-            v11 = p5;
+            v10 = p0;
+            v11 = p3;
             do
-          if ( Source[0] )
-            strcat((char *)(Source), (char *)(Str));
-            SampleNameByIndex = VocClass__GetSampleNameByIndex(*v10++);
-            strcat((char *)(Source), (char *)(SampleNameByIndex));
-            --v11;
-            while ( v11 )
             {
-            }
+                if ( Source[0] )
+                {
+                    strcat((char *)(Source), (char *)(Str));
+                }
+                SampleNameByIndex = VocClass__GetSampleNameByIndex(*v10++);
+                strcat((char *)(Source), (char *)(SampleNameByIndex));
+                --v11;
+            } while ( v11 );
         }
         char v13 = ((INIClass *)(this))->SetString(p0, p1, Source);
-        if ( Block && ((p4 >> 8) & 0xFF) )
+        if ( p0 && ((p2 >> 8) & 0xFF) )
         {
-            __3_YAXPAX_Z(Block);
+            __3_YAXPAX_Z(p0);
         }
         return (char)(v13);
 }

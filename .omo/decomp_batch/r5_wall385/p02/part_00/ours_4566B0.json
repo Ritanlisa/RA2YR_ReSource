@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetPowerFrame@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::GetPowerFrame",
+ "size": 104,
+ "link_base": 0,
+ "bytes_hex": "8b9120050000568b820c17000085c07f558a82d10c000084c0741a8a816802000084c074088a82d30c00005ec38a82d20c00005ec351e8000000008bf056e80000000083c40884c0741a8b068b80b400000085c07e0e9981e2ff0000005e03c2c1f808c332c05ec3",
+ "relocs": [
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?TechnoClass__UpdatePowered@@YAHPAX@Z",
+   "sym_key": "TechnoClass__UpdatePowered"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?IsNonNullPtr@@YAHZZ",
+   "sym_key": "IsNonNullPtr"
+  }
+ ]
+}

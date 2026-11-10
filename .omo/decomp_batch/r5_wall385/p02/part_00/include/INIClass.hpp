@@ -9,6 +9,8 @@ class BuildingType;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class INIClass
 {
@@ -22,12 +24,11 @@ public:
     int GetCoord(int p0, unsigned char * p1, unsigned char * p2, unsigned char * p3);  // 0x474B50
     char SetHouseName(unsigned char * p0, char * p1, void * p2);  // 0x475610
     char WriteSuperWeaponList(unsigned char * p0, char * p1, int p2, void * p3, int p4, short p5, int p6, int p7, int p8);  // 0x476A20
-    unsigned int GetString(unsigned char * p0, unsigned char * p1, char * p2, char * p3, int p4);  // 0x528A10
-    char SetString(unsigned char * p0, char * p1, char * p2);  // 0x528660
+    unsigned int GetString(void * p0, void * p1, void * p2, void * p3, int p4);  // 0x528A10
+    char SetString(void * p0, void * p1, void * p2);  // 0x528660
 };
 
 // ---- globals used by this unit (registry names)
-extern char * Block;
 extern unsigned char Buffer;
 extern unsigned char Destination;
 extern unsigned char Source;
@@ -55,6 +56,8 @@ class INIClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class BuildingType
 {
@@ -65,7 +68,6 @@ public:
 };
 
 // ---- globals used by this unit (registry names)
-extern char * Block;
 extern unsigned char Buffer;
 extern unsigned char Destination;
 extern unsigned char Source;

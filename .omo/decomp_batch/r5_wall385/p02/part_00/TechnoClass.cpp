@@ -17,11 +17,16 @@ unsigned char TechnoClass::GetPowerFrame()
                 {
                     return (unsigned char)(*(char *)(v2 + 3283));
                 }
+                else
+                {
+                    return (unsigned char)(*(char *)(v2 + 3282));
+                }
+                if ( *(unsigned char *)(v2 + 5832) || *(unsigned char *)(v2 + 5831) )
+                {
+                    return (unsigned char)(*(char *)(v2 + 5895));
+                }
             }
-            else
-            {
-                return (unsigned char)(*(char *)(v2 + 3282));
-            }
+            updated = (unsigned int *)TechnoClass__UpdatePowered(this);
             if ( (unsigned char)IsNonNullPtr(updated) && (v6 = *(unsigned int *)(*updated + 180), v6 > 0) )
             {
                 return (unsigned char)(v6 / 256);
@@ -30,12 +35,6 @@ unsigned char TechnoClass::GetPowerFrame()
             {
                 return (unsigned char)(0);
             }
-        }
-        else
-        {
-        }
-        else
-        {
         }
         return (unsigned char)(result);
 }

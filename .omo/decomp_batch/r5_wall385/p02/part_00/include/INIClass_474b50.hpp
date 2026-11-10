@@ -6,18 +6,19 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class INIClass
 {
 public:
-    void * vtable1;  // 0x000
-    char __pad_004[60];  // 0x004
+    char __pad_000[64];  // 0x000
 
     // DECOMP_SIZECHECK(INIClass, INIClass, 64);
 
     // ---- pilot methods (registry signatures)
     int GetCoord(int p0, unsigned char * p1, unsigned char * p2, unsigned char * p3);  // 0x474B50
-    unsigned int GetString(unsigned char * p0, unsigned char * p1, char * p2, char * p3, int p4);  // 0x528A10
+    unsigned int GetString(void * p0, void * p1, void * p2, void * p3, int p4);  // 0x528A10
 };
 
 // ---- globals used by this unit (registry names)

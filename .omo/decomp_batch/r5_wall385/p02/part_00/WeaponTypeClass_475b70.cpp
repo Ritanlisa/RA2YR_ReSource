@@ -19,17 +19,20 @@ char WeaponTypeClass::ReadTrajectoryData(unsigned char * p0, char * p1, int p2)
         {
             v6 = (char *)g_TriggerTypeCount;
             do
-          if ( ((1 << v5) & p1) != 0 )
-            if ( Source[0] )
-              strcat((char *)(Source), (char *)(Str));
-            strcat((char *)(Source),  (const char *)(*(unsigned int *)v6 + 36));
-            v4 = v8;
-            ++v5;
-            v6 += 4;
-            while ( v5 < v4 )
             {
-            }
+                if ( ((1 << v5) & p1) != 0 )
+                {
+                    if ( Source[0] )
+                    {
+                        strcat((char *)(Source), (char *)(Str));
+                    }
+                    strcat((char *)(Source),  (const char *)(*(unsigned int *)v6 + 36));
+                    v4 = v8;
+                }
+                ++v5;
+                v6 += 4;
+            } while ( v5 < v4 );
         }
-        return (char)(((INIClass *)(this))->SetString(Block, p0, Source));
+        return (char)(((INIClass *)(this))->SetString(p0, p0, Source));
 }
 
