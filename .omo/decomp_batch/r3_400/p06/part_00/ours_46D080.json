@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn10@CampaignClass@@QAEHXZ",
+ "sym_key": "CampaignClass::StubReturn10",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b80a000000c3",
+ "relocs": []
+}

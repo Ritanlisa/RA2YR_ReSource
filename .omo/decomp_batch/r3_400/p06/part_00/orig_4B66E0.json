@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B66E0",
+ "name": "DropPodLocomotionClass::StubReturn48",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B66E0",
+ "bytes_hex": "b830000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

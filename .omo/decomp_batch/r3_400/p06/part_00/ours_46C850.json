@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@BulletTypeClass@@QAEHXZ",
+ "sym_key": "BulletTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b809000000c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B540",
+ "name": "BulletClass::MissionStubReturnZero",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B540",
+ "bytes_hex": "b860010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

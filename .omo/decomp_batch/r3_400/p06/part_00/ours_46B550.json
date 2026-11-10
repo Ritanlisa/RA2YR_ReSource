@@ -1,0 +1,8 @@
+{
+ "symbol": "?MissionStubReturnZero2@BulletClass@@QAEHXZ",
+ "sym_key": "BulletClass::MissionStubReturnZero2",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b808000000c3",
+ "relocs": []
+}

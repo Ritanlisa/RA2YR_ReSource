@@ -475,6 +475,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x465da0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46b540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletClass::MissionStubReturnZero",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46b550": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletClass::MissionStubReturnZero2",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x46b990": {
   "attempts": 1,
   "first_diff": null,
@@ -488,6 +509,20 @@
   "name": "VectorClass_ptr_BulletClass::GetItem_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x46c850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletTypeClass::GetTypeIdentifier",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46c860": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletTypeClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x46c870": {
   "attempts": 1,
@@ -503,6 +538,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x46d070": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignClass::StubReturn928",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46d080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignClass::StubReturn10",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4722c0": {
   "attempts": 4,
   "first_diff": "+5 test edx, edx",
@@ -514,6 +563,20 @@
   "attempts": 4,
   "first_diff": null,
   "name": "TechnoClass::processPowerDrain",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4729a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CaptureManagerClass::GetObjectSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4729b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CaptureManagerClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -577,6 +640,20 @@
   "attempts": 8,
   "first_diff": "+6 cmp word ptr [ecx + edx*2 + 0x7c], ax",
   "name": "Cell::IsPassableOffset",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x487e60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::StubReturn11",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x487e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::StubReturn328",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -657,6 +734,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a60d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TextRenderer::GetInstance",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4a7c70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DiskLaserClass::StubReturn64",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4a7c80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DiskLaserClass::StubReturn73",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4b4870": {
   "attempts": 1,
   "first_diff": null,
@@ -675,6 +773,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::MissionStub7",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4b4cf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DriveLocomotionClass::StubReturn112",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -727,6 +832,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4b6670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::CheckState3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4b6680": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::CheckState4",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4b66e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DropPodLocomotionClass::StubReturn48",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4b6740": {
   "attempts": 1,
   "first_diff": null,
@@ -773,6 +899,20 @@
   "attempts": 1,
   "first_diff": null,
   "name": "DSurface::GetBytesPerPixel",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4bbc90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DDraw::GetStatus",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4c5aa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EMPulseClass::StubReturn52",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturn64@DiskLaserClass@@QAEHXZ",
+ "sym_key": "DiskLaserClass::StubReturn64",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b840000000c3",
+ "relocs": []
+}
