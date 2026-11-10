@@ -177,6 +177,32 @@ cmake --build build_linux
 | fild vs fld (int vs double) | 坐标类型不同 | 查 IDA 指令确认 |
 | gen/re_impl.cpp 被覆盖 | 手动编辑后 regen 覆盖 | 改 gen_re_impl.py 模板 |
 
+## ⚠️ 当前活跃方向 2：数据段字节级对齐（data-first 战略，2026-11-11 首战完成）
+
+**datamatch 试点已完成（2026-11-11，commit 43def80ab，已推送）**——报告 =
+`.omo/agents/datamatch/report.md`（本地），工具 = `tools/data_match/`（提取器/生成器/比对器
++ `w1/` 构建配方）。要点：
+
+- **原版无独立 .idata 段**：导入结构（IAT 0x3E1000 / 描述符表 0x40F0E0 / INT+hint 池
+  0x40F220..0x411074）全部住在 .rdata 内；15 DLL / 371 导入（339 按名 + 32 按序号）。
+- **已 100% 复现**（test2 变体）：描述符序（=各 DLL 首次引用的发现序）15/15、DLL 名串、
+  IAT/INT 数组布局序（DLL 名大小写敏感字母序）、hint/name 池逐 DLL 内容+顺序、hint 值
+  **339/339 零漂移**（era 库原生；binkw32.lib 无存 → 由 BINKW32.DLL 导出表伪造 + hint
+  补真值 = `w1/binkw32_h.lib`）；KERNEL32 池双批次（游戏波 103 + libcmt CRT 波 59）结构已复现。
+- **唯一缺口 = IAT/INT 槽内顺序（3040B，≈导入区 35% 字节）**：link 6.00.8447 内部置换，
+  呈分段逆序形态；哈希桶（14 hash × 15 模数）/库字典序/obj 符号表三模型**已实测证伪勿重跑**
+  （`solve_int_hash.py` / `lib_dict_order.py`）。小规模构建规则：池=引用序 FIFO、INT=引用序
+  LIFO（24 全排列验证），全量构建不成立（上下文依赖）。破译需反汇编 LINK.EXE 符号表路径
+  或更大黑箱实验矩阵——.idata ≥95% 的唯一拦路虎。
+- **.rdata 规则**：/GF 池 = 去重 + 不后缀合并 + 池序=源码首次出现序**逆序** + 串间 4 字节
+  对齐（gf_probe.c 实验证实）；游戏串含重复副本 → 非全走 /GF 池（8168 遗留库非池化表，
+  与 Rich 指纹互证）；CRT 串块（locale/月份/数学名）由 libcmt 自带、链接即现。
+- **TheaterClass 表 0x3E1B78..0x3E1E18（6×0x70B）首试逐字节 100% 复现**：`gen_theater.py`
+  真值提取 → 结构体 → era CL /O2 编译。证明 .rdata 静态表复现无原理性障碍，只欠逐表
+  布局考古工作量——可流水线化到 vtable/RTTI/其余静态表。
+- 下一步杠杆（按序）：①破译 LINK 槽位置换 ②.rdata 表按 Theater 模式放量 ③CRT 波内容随
+  src/ 函数重建自然收敛（原版 59 项 = 真实 CRT 调用面，桩测试只能拉 28 项）。
+
 ## ⚠️ 当前活跃方向：CSP 机械重建（2026-09-20 定案，覆盖旧管线）
 
 **用户已定案六步机械重建计划，1-5 步 + 第 6 步回填已全部机械完成**（见
