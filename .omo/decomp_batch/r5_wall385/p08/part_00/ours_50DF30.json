@@ -44,7 +44,7 @@
   {
    "off": 97,
    "type": "REL32",
-   "sym": "?To_CellObj@CellCoord@@QAEPAXPAF@Z",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
    "sym_key": "CellCoord::To_CellObj"
   }
  ]

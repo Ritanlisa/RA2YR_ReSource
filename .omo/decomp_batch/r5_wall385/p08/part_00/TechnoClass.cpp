@@ -15,18 +15,17 @@ void TechnoClass::Process(int p0)
             if ( *(unsigned int *)&((char *)stru_A8EB00)[164] - 1 >= 0 )
             {
                 do
-            v5 = *(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
-            }
-            if ( *(TechnoClass **)(v5 + 540) == this
+                {
+                    v5 = *(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
+                    if ( *(TechnoClass **)(v5 + 540) == this
               && (*(int (__stdcall **)(unsigned int))(*(unsigned int *)v5 + 132))(*(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4)) == p0
               && !*(unsigned char *)(v5 + 129) )
-            {
-                ((TechnoClass *)(v5))->Deactivate();
-            }
-            v3 = 1;
-            --v4;
-            while ( v4 >= 0 )
-            {
+                    {
+                        ((TechnoClass *)(v5))->Deactivate();
+                        v3 = 1;
+                    }
+                    --v4;
+                } while ( v4 >= 0 );
                 if ( v3 && g_WTFMode )
                 {
                     if ( g_GameMode_Current )
@@ -35,15 +34,15 @@ void TechnoClass::Process(int p0)
                         {
                             return;
                         }
+                        goto LABEL_15;
                     }
-                }
-            }
-            goto LABEL_15;
-            if ( ((this->disguiseBlinkTimer[0]) & 0xFF) || ((this->disguiseBlinkTimer[0] >> 8) & 0xFF) )
-            {
-                LABEL_15:
+                    if ( ((this->disguiseBlinkTimer[0]) & 0xFF) || ((this->disguiseBlinkTimer[0] >> 8) & 0xFF) )
+                    {
+                        LABEL_15:
               if ( g_IKnowWhatImDoing == 0 )
                 ((VoxClass *)(&g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1);
+                    }
+                }
             }
         }
 }

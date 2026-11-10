@@ -10,14 +10,17 @@ int INIClass::GetKeyCount(unsigned char * p0)
         }
         unsigned int v12[3];
         memset(v12, 0, sizeof(v12));
-        char * v2 = this + 40;
-        int v3 = ((Checksummer *)(v12))->Add_Buffer(p0, strlen((const char *)p0));
+        char * v2;
+        v2 = this + 40;
+        int v3;
+        v3 = ((Checksummer *)(v12))->Add_Buffer(p0, strlen((const char *)p0));
         p0 = (unsigned char*)v3;
         if ( !*((unsigned int *)v2 + 1) )
         {
             return (int)(0);
         }
-        unsigned int * v4 = (unsigned int *)*((unsigned int *)v2 + 4);
+        unsigned int * v4;
+        v4 = (unsigned int *)*((unsigned int *)v2 + 4);
         int v5;
         if ( v4 == 0 || *v4 != v3 )
         {
@@ -28,7 +31,8 @@ int INIClass::GetKeyCount(unsigned char * p0)
             }
             *((unsigned int *)v2 + 4) = v5;
         }
-        int v6 = *((unsigned int *)v2 + 1);
+        int v6;
+        v6 = *((unsigned int *)v2 + 1);
         p0 = (unsigned char*)v3;
         unsigned int * v7;
         int v8;
@@ -44,10 +48,10 @@ int INIClass::GetKeyCount(unsigned char * p0)
             if ( v8 )
             {
                 *((unsigned int *)v2 + 4) = v8;
-            }
-            LABEL_12:
+                LABEL_12:
           v9 = (int *)(*((unsigned int *)v2 + 4) + 4);
-            goto LABEL_14;
+                goto LABEL_14;
+            }
         }
         v9 = (int *)&DataGlobal_B7882C;
         int v10;

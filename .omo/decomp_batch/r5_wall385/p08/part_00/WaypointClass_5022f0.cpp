@@ -4,8 +4,10 @@
 
 char WaypointClass::IsCoordinateUsed(unsigned short * p0)
 {
-        signed int v2 = 0;
-        signed int v12 = 0;
+        signed int v2;
+        v2 = 0;
+        signed int v12;
+        v12 = 0;
         int * i;
         int v4;
         int v5;
@@ -16,16 +18,16 @@ char WaypointClass::IsCoordinateUsed(unsigned short * p0)
             if ( !*i )
             {
                 v4 = __2_YAPAXI_Z(0x40u);
+                if ( v4 )
+                {
+                    v5 = ((WaypointPathClass *)(v4))->Construct(v2);
+                }
+                else
+                {
+                    v5 = 0;
+                }
+                *i = v5;
             }
-            if ( v4 )
-            {
-                v5 = ((WaypointPathClass *)(v4))->Construct(v2);
-            }
-            else
-            {
-                v5 = 0;
-            }
-            *i = v5;
             v6 = (Array *)*i;
             v7 = 0;
             if ( *(int *)(*i + 56) > 0 )
@@ -55,8 +57,8 @@ char WaypointClass::IsCoordinateUsed(unsigned short * p0)
             if ( ++v7 >= *(unsigned int *)(*i + 56) )
             {
                 v2 = v12;
+                goto LABEL_13;
             }
-            goto LABEL_13;
         }
 }
 

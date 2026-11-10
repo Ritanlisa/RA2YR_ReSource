@@ -9,6 +9,8 @@ class TechnoClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class InfantryClass
 {
@@ -34,6 +36,8 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class TechnoClass
 {
@@ -45,8 +49,8 @@ public:
     // DECOMP_SIZECHECK(TechnoClass, TechnoClass, 1312);
 
     // ---- pilot methods (registry signatures)
+    unsigned int * ComputeTransform(void * p0, int p1, int p2, int p3, int p4);  // 0x6F3AD0
     int IndexOf(int p0);  // 0x473500
-    unsigned int * ComputeTransform(int * p0, int p1, int p2, int p3, int p4);  // 0x6F3AD0
 };
 
 #endif  // DECOMP_PILOT_TECHNOCLASS_HPP

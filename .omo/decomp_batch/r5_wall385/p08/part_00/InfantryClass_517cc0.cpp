@@ -5,15 +5,19 @@
 unsigned int * InfantryClass::PerFrameUpdate(int p0, int p1)
 {
         int v2;
-        int v3 = v2;
+        int v3;
+        v3 = v2;
+        unsigned int * result;
         TechnoClass * v14;
-        unsigned int * result = ((TechnoClass *)(v14))->Update(p0);
-        BuildingClass * v5 = *(BuildingClass **)(v3 + 540);
+        result = ((TechnoClass *)(v14))->Update(p0);
+        BuildingClass * v5;
+        v5 = *(BuildingClass **)(v3 + 540);
         if ( v5 )
         {
             result = (unsigned int *)((BuildingClass *)(v5))->PowerUpdate((unsigned char *)v3);
         }
-        int v6 = *(unsigned int *)(v3 + 1728);
+        int v6;
+        v6 = *(unsigned int *)(v3 + 1728);
         int v7;
         int v8;
         int v9;
@@ -27,28 +31,28 @@ unsigned int * InfantryClass::PerFrameUpdate(int p0, int p1)
             if ( v7 )
             {
                 v8 = 0;
+                v9 = *(unsigned int *)(v7 + 52) + 332;
+                v10 = *(unsigned int *)(v9 + 16);
+                if ( v10 > 0 )
+                {
+                    v11 = *(unsigned int **)(v9 + 4);
+                    while ( *v11 != v6 )
+                    {
+                        ++v8;
+                        ++v11;
+                        if ( v8 >= v10 )
+                        {
+                            goto LABEL_11;
+                        }
+                    }
+                    ((Power *)((v3 + 336)))->ChangedHouse(1);
+                }
             }
-            v9 = *(unsigned int *)(v7 + 52) + 332;
-            v10 = *(unsigned int *)(v9 + 16);
-            if ( v10 > 0 )
-            {
-                v11 = *(unsigned int **)(v9 + 4);
-            }
-            while ( *v11 != v6 )
-            {
-                ++v8;
-            }
-            ++v11;
-            if ( v8 >= v10 )
-            {
-                goto LABEL_11;
-            }
-            ((Power *)((v3 + 336))->ChangedHouse(), 1);
             LABEL_11:
         v12 = *(unsigned int *)(v3 + 540);
             if ( v12 && *(unsigned char *)(v12 + 703) && *(unsigned char *)(*(unsigned int *)(v3 + 1728) + 3214) )
             {
-                ((Power *)((v3 + 336))->ChangedHouse(), 1);
+                ((Power *)((v3 + 336)))->ChangedHouse(1);
             }
             result = *(unsigned int **)(v3 + 1728);
             *(unsigned int *)(v3 + 108) = result[40];

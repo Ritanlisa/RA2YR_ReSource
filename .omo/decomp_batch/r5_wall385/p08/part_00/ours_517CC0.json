@@ -1,0 +1,33 @@
+{
+ "symbol": "?PerFrameUpdate@InfantryClass@@QAEPAIHH@Z",
+ "sym_key": "InfantryClass::PerFrameUpdate",
+ "size": 222,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c2404565750e8000000008b74240c8b8e1c02000085c9740656e8000000008bbec006000085ff0f84a70000008b861c02000085c074318b403433c9054c0100008b501085d27e208b40043938740c4183c0043bca7d11393875f46a018d8e50010000e8000000008b861c02000085c074278a88bf02000084c9741d8b8ec00600008a818e0c000084c0740d6a018d8e50010000e8000000008b86c00600008b90a000000089566c8b88a0000000894e708b888006000083f9ff75068b8884060000898efc0200008a90d00c00008896d20300005f5ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Update@TechnoClass@@QAEPAIH@Z",
+   "sym_key": "TechnoClass::Update"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?PowerUpdate@BuildingClass@@QAEHPAX@Z",
+   "sym_key": "BuildingClass::PowerUpdate"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  }
+ ]
+}

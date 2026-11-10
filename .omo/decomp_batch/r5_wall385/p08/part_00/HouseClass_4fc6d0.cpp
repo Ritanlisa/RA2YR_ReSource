@@ -19,7 +19,7 @@ int HouseClass::ClearLowPowerTargets()
             if ( PriorityTarget != (HouseClass *)result
           && (PriorityTarget != this
            || (result = *(unsigned int *)(v4 + 704)) != 0
-           && ((result & 0xFF) = ((HouseClass *)(*(HouseClass **)(result + 700))->AssignCivilianToLowPowerTargets(), v4),
+           && ((result & 0xFF) = ((HouseClass *)(*(HouseClass **)(result + 700)))->AssignCivilianToLowPowerTargets(v4),
                (unsigned char)result))
           || PriorityTarget != this
           || v4 == v3 )
@@ -29,13 +29,12 @@ int HouseClass::ClearLowPowerTargets()
             else
             {
                 v8 = *(unsigned int *)(v4 + 108);
-            }
-            v6 = *(TriggerClass **)(v4 + 632);
-            if ( v6 )
-            {
-                ((TriggerClass *)(v6))->UnlinkTags();
-            }
-            result = (*(int (__stdcall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))(
+                v6 = *(TriggerClass **)(v4 + 632);
+                if ( v6 )
+                {
+                    ((TriggerClass *)(v6))->UnlinkTags();
+                }
+                result = (*(int (__stdcall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))(
                      v4,
                      &v8,
                      0,
@@ -44,7 +43,8 @@ int HouseClass::ClearLowPowerTargets()
                      1,
                      1,
                      0);
-            v3 = v4;
+                v3 = v4;
+            }
         }
         return (int)(result);
 }

@@ -2,11 +2,12 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 19,
-   "MISMATCH": 1
+   "COMPILE_FAIL": 16,
+   "MISMATCH": 4
   },
   "pathologies": {
-   "regalloc": 1
+   "regalloc": 2,
+   "codegen_shape": 2
   },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
@@ -16,7 +17,7 @@
    "addr": "0x4e5d60",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Lobby.cpp(23) : error C2046: illegal case; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Lobby.cpp(26) : error C2046: illegal ca",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Lobby.cpp(46) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Lobby.cpp(4",
    "first_diff": null,
    "pathology": null,
    "name": "Lobby::InvalidatePlayerSlots",
@@ -31,7 +32,7 @@
    "addr": "0x4fae50",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\SuperWeapon.cpp(31) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\SuperWeapon.cpp(31) : error C2228: left of '.nextArrayIndex' must have class/struct/union type",
    "first_diff": null,
    "pathology": null,
    "name": "SuperWeapon::FireSuperWeaponHouseClass",
@@ -39,7 +40,7 @@
    "unit": "SuperWeapon",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/8",
+   "sites": "6/8",
    "rule_violations": 10
   },
   {
@@ -69,7 +70,7 @@
    "unit": "HouseClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/4",
+   "sites": "5/5",
    "rule_violations": 3
   },
   {
@@ -91,7 +92,7 @@
    "addr": "0x5022f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\WaypointClass.cpp(23) : error C2440: '=' : cannot convert from 'class WaypointPathClass *' to 'int'",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\WaypointClass.cpp(24) : error C2440: '=' : cannot convert from 'class WaypointPathClass *' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "WaypointClass::IsCoordinateUsed",
@@ -106,7 +107,7 @@
    "addr": "0x5023b0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Waypoint.cpp(15) : error C2440: '=' : cannot convert from 'class Waypoint *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\Waypoint.cpp(17) : error C2440: '=' : cannot convert from 'class Waypoint *' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\",
    "first_diff": null,
    "pathology": null,
    "name": "Waypoint::FindByCell",
@@ -121,7 +122,7 @@
    "addr": "0x509610",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\TriggerClass.cpp(28) : error C2059: syntax error : 'if'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\TriggerClass.cpp(30) : er",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\TriggerClass.cpp(37) : error C2228: left of '.uniqueId' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08",
    "first_diff": null,
    "pathology": null,
    "name": "TriggerClass::ValidateTeamTriggerConditions",
@@ -136,7 +137,7 @@
    "addr": "0x50b760",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\BuildingTypeClass.cpp(13) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\BuildingTypeClass.cpp(15) : error C2228: left of '.__pad_FC' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
    "first_diff": null,
    "pathology": null,
    "name": "BuildingTypeClass::ProcessData",
@@ -171,7 +172,7 @@
    "addr": "0x50e0e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e0e0.cpp(23) : error C2059: syntax error : '}'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e0e0.cpp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e0e0.cpp(25) : error C2446: '==' : no conversion from 'class HouseClass *const ' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decom",
    "first_diff": null,
    "pathology": null,
    "name": "HouseClass::LostPoweredCenter",
@@ -185,23 +186,28 @@
   {
    "addr": "0x50e1c0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\TechnoClass.cpp(19) : error C2059: syntax error : '}'",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 179B ours 157B",
+   "first_diff": {
+    "orig": "+4 push ebx",
+    "ours": "+4 push ebp"
+   },
+   "pathology": "regalloc",
    "name": "TechnoClass::Process",
    "emitted": "TechnoClass::Process",
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "9/11",
-   "rule_violations": 2
+   "rule_violations": 2,
+   "orig_size": 179,
+   "ours_size": 157
   },
   {
    "addr": "0x50e280",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e280.cpp(18) : error C2059: syntax error : '}'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e280.cpp",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\HouseClass_50e280.cpp(20) : error C2039: 'vfptr' : is not a member of 'TechnoClass'",
    "first_diff": null,
    "pathology": null,
    "name": "HouseClass::ReactivateTechnos",
@@ -216,7 +222,7 @@
    "addr": "0x50f9e0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\_VectorClass__N.cpp(13) : error C2039: 'm_C' : is not a member of '_VectorClass__N'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\_VectorClass__N.cpp(16) : error C2440: '=' : cannot convert from 'int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_0",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass__N::Remove",
@@ -224,14 +230,14 @@
    "unit": "_VectorClass__N",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/14",
-   "rule_violations": 11
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x50fb20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\_DynamicVectorClass__N.cpp(13) : error C2039: 'm_C' : is not a member of '_DynamicVectorClass__N'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wal",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\_DynamicVectorClass__N.cpp(16) : error C2440: '=' : cannot convert from 'int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass__N::SetCapacity",
@@ -239,29 +245,34 @@
    "unit": "_DynamicVectorClass__N",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "6/14",
-   "rule_violations": 14
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x517cc0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\InfantryClass.cpp(47) : error C2227: left of '->ChangedHouse' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 207B ours 222B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "codegen_shape",
    "name": "InfantryClass::PerFrameUpdate",
    "emitted": "InfantryClass::PerFrameUpdate",
    "unit": "InfantryClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/4",
-   "rule_violations": 14
+   "rule_violations": 14,
+   "orig_size": 207,
+   "ours_size": 222
   },
   {
    "addr": "0x523250",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\InfantryClass.cpp(47) : error C2227: left of '->ChangedHouse' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\InfantryClass_523250.cpp(12) : error C2440: '=' : cannot convert from 'unsigned int' to 'class TechnoClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_",
    "first_diff": null,
    "pathology": null,
    "name": "InfantryClass::ComputeTransform",
@@ -275,23 +286,28 @@
   {
    "addr": "0x526810",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass.cpp(41) : error C2362: initialization of 'v7' is skipped by 'goto LABEL_9'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 305B ours 334B",
+   "first_diff": {
+    "orig": "+8 xor ebx, ebx",
+    "ours": "+8 push ebp"
+   },
+   "pathology": "codegen_shape",
    "name": "INIClass::BinarySearchSection",
    "emitted": "INIClass::BinarySearchSection",
    "unit": "INIClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "16/18",
-   "rule_violations": 11
+   "rule_violations": 11,
+   "orig_size": 305,
+   "ours_size": 334
   },
   {
    "addr": "0x526960",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass.cpp(41) : error C2362: initialization of 'v7' is skipped by 'goto LABEL_9'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass_526960.cpp(14) : error C2440: '=' : cannot convert from 'class INIClass *' to 'char *'",
    "first_diff": null,
    "pathology": null,
    "name": "INIClass::GetKeyCount",
@@ -306,7 +322,7 @@
    "addr": "0x526a30",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass.cpp(41) : error C2362: initialization of 'v7' is skipped by 'goto LABEL_9'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass_526a30.cpp(8) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p08\\part_00\\INIClass_526a30.cpp(16) ",
    "first_diff": null,
    "pathology": null,
    "name": "INIClass::FindKey",

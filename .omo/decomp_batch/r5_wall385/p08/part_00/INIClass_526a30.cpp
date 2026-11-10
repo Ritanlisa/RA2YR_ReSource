@@ -4,21 +4,25 @@
 
 int INIClass::FindKey(char ** p0)
 {
-        unsigned char * v3 = (unsigned char*)((String *)(p0))->GetOrEmpty_Alt();
+        unsigned char * v3;
+        v3 = (unsigned char*)((String *)(p0))->GetOrEmpty_Alt();
         if ( v3 == 0 )
         {
             return (int)(0);
         }
         unsigned int v15[3];
         memset(v15, 0, sizeof(v15));
-        char * v4 = this + 40;
-        int v5 = ((Checksummer *)(v15))->Add_Buffer(v3, strlen((const char *)v3));
+        char * v4;
+        v4 = this + 40;
+        int v5;
+        v5 = ((Checksummer *)(v15))->Add_Buffer(v3, strlen((const char *)v3));
         p0 = (char **)v5;
         if ( !*((unsigned int *)v4 + 1) )
         {
             return (int)(0);
         }
-        unsigned int * v6 = (unsigned int *)*((unsigned int *)v4 + 4);
+        unsigned int * v6;
+        v6 = (unsigned int *)*((unsigned int *)v4 + 4);
         size_t v7;
         if ( v6 == 0 || *v6 != v5 )
         {
@@ -29,8 +33,10 @@ int INIClass::FindKey(char ** p0)
             }
             *((unsigned int *)v4 + 4) = v7;
         }
-        int v8 = *((unsigned int *)v4 + 1);
-        int v14 = v5;
+        int v8;
+        v8 = *((unsigned int *)v4 + 1);
+        int v14;
+        v14 = v5;
         unsigned int * v9;
         size_t v10;
         int * v11;
@@ -45,10 +51,10 @@ int INIClass::FindKey(char ** p0)
             if ( v10 )
             {
                 *((unsigned int *)v4 + 4) = v10;
-            }
-            LABEL_12:
+                LABEL_12:
           v11 = (int *)(*((unsigned int *)v4 + 4) + 4);
-            goto LABEL_14;
+                goto LABEL_14;
+            }
         }
         v11 = (int *)&DataGlobal_B7882C;
         int v12;

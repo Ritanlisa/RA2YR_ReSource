@@ -4,7 +4,8 @@
 
 void HouseClass::LostPoweredCenter(int p0)
 {
-        int v3 = this->poweredUnitCenters - 1;
+        int v3;
+        v3 = this->poweredUnitCenters - 1;
         this->poweredUnitCenters = v3;
         char v4;
         int v5;
@@ -14,40 +15,39 @@ void HouseClass::LostPoweredCenter(int p0)
             if ( p0 )
             {
                 v4 = 0;
-            }
-            v5 = g_SidebarState - 1;
-            if ( g_SidebarState - 1 >= 0 )
-            {
-                do
-              v6 = *((unsigned int *)g_TechnoClass_Count + v5);
-            }
-            if ( *(unsigned int *)(v6 + 540) == this
+                v5 = g_SidebarState - 1;
+                if ( g_SidebarState - 1 >= 0 )
+                {
+                    do
+                    {
+                        v6 = *((unsigned int *)g_TechnoClass_Count + v5);
+                        if ( *(unsigned int *)(v6 + 540) == this
                 && (*(int (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 132))(*((unsigned int *)g_TechnoClass_Count + v5)) == p0
                 && !*(unsigned char *)(v6 + 129) )
-            {
-                ((TechnoClass *)(v6))->Deactivate();
-            }
-            v4 = 1;
-            --v5;
-            while ( v5 >= 0 )
-            {
-                if ( v4 && g_WTFMode )
-                {
-                    if ( g_GameMode_Current[0] )
-                    {
-                        if ( (#375 *)this != HouseClass_Player )
                         {
-                            return;
+                            ((TechnoClass *)(v6))->Deactivate();
+                            v4 = 1;
+                        }
+                        --v5;
+                    } while ( v5 >= 0 );
+                    if ( v4 && g_WTFMode )
+                    {
+                        if ( g_GameMode_Current[0] )
+                        {
+                            if ( (#375 *)this != HouseClass_Player )
+                            {
+                                return;
+                            }
+                            goto LABEL_16;
+                        }
+                        if ( this->currentPlayer || this->PlayerControl )
+                        {
+                            LABEL_16:
+                if ( g_IKnowWhatImDoing == 0 )
+                  ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1);
                         }
                     }
                 }
-            }
-            goto LABEL_16;
-            if ( this->currentPlayer || this->PlayerControl )
-            {
-                LABEL_16:
-                if ( g_IKnowWhatImDoing == 0 )
-                  ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1);
             }
         }
 }

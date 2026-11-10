@@ -10,15 +10,20 @@ int INIClass::BinarySearchSection(unsigned char * p0)
         }
         unsigned int v15[3];
         memset(v15, 0, sizeof(v15));
-        int v3 = ((Checksummer *)(v15))->Add_Buffer(p0, strlen((const char *)p0));
-        size_t v4 = this->INIClass_field_2C;
-        unsigned int v5 = v3;
-        int v16 = v3;
+        int v3;
+        v3 = ((Checksummer *)(v15))->Add_Buffer(p0, strlen((const char *)p0));
+        size_t v4;
+        v4 = this->INIClass_field_2C;
+        unsigned int v5;
+        v5 = v3;
+        int v16;
+        v16 = v3;
         if ( v4 == 0 )
         {
             return (int)(0);
         }
-        unsigned int * v6 = *(unsigned int **)(this + 56);
+        unsigned int * v6;
+        v6 = *(unsigned int **)(this + 56);
         if ( v6 && *v6 == v5 )
         {
             goto LABEL_9;
@@ -30,7 +35,8 @@ int INIClass::BinarySearchSection(unsigned char * p0)
             this->needsSave_flag = 1;
         }
         v15[0] = v5;
-        int v7 = System_Search(v15);
+        int v7;
+        v7 = System_Search(v15);
         if ( v7 == 0 )
         {
             return (int)(0);
@@ -43,7 +49,8 @@ int INIClass::BinarySearchSection(unsigned char * p0)
         {
             return (int)(DataGlobal_B7882C);
         }
-        unsigned int * v9 = *(unsigned int **)(this + 56);
+        unsigned int * v9;
+        v9 = *(unsigned int **)(this + 56);
         if ( v9 && *v9 == v5 )
         {
             return (int)(*(unsigned int *)(this->unknown38 + 4));
@@ -54,8 +61,10 @@ int INIClass::BinarySearchSection(unsigned char * p0)
             this->unknown38 = 0;
             this->needsSave_flag = 1;
         }
-        int v10 = this->INIClass_field_2C;
-        int v11 = this->ptr_28;
+        int v10;
+        v10 = this->INIClass_field_2C;
+        int v11;
+        v11 = this->ptr_28;
         if ( v10 <= 0 )
         {
             return (int)(DataGlobal_B7882C);

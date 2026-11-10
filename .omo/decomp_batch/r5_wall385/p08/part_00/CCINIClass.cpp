@@ -21,12 +21,11 @@ int CCINIClass::WriteHouses()
         if ( result > 0 )
         {
             do
-          ((HouseClass *)(HouseClass_Array->vfptr[4 * v4]))->SaveToINI(this);
-            result = HouseClass_Count;
-            ++v4;
-            while ( v4 < HouseClass_Count )
             {
-            }
+                ((HouseClass *)(HouseClass_Array->vfptr[4 * v4]))->SaveToINI(this);
+                result = HouseClass_Count;
+                ++v4;
+            } while ( v4 < HouseClass_Count );
         }
         return (int)(result);
 }

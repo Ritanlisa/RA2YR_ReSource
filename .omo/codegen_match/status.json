@@ -2471,7 +2471,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4e5d60": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2534,49 +2534,49 @@
   "status": "COMPILE_FAIL"
  },
  "0x4fae50": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fc6d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fd060": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x501160": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5022f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WaypointClass::IsCoordinateUsed",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5023b0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Waypoint::FindByCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x509610": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TriggerClass::ValidateTeamTriggerConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2604,35 +2604,35 @@
   "status": "NG"
  },
  "0x50b760": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingTypeClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x50df30": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 mov eax, dword ptr [0xa8ef98]",
   "name": "HouseClass::GetStartCoords",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x50e0e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::LostPoweredCenter",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x50e1c0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+4 push ebx",
   "name": "TechnoClass::Process",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x50e280": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "HouseClass::ReactivateTechnos",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2660,14 +2660,14 @@
   "status": "NG"
  },
  "0x50f9e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x50fb20": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass__N::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2856,11 +2856,11 @@
   "status": "NG"
  },
  "0x517cc0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 push esi",
   "name": "InfantryClass::PerFrameUpdate",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x51faf0": {
   "attempts": 5,
@@ -2877,7 +2877,7 @@
   "status": "OK"
  },
  "0x523250": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "InfantryClass::ComputeTransform",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2919,11 +2919,11 @@
   "status": "OK"
  },
  "0x526810": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+8 xor ebx, ebx",
   "name": "INIClass::BinarySearchSection",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x526950": {
   "attempts": 8,
@@ -2933,14 +2933,14 @@
   "status": "OK"
  },
  "0x526960": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "INIClass::GetKeyCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x526a30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "INIClass::FindKey",
   "note": "decomp_batch r2: COMPILE_FAIL",

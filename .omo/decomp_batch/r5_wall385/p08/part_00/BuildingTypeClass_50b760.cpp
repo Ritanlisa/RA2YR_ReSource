@@ -8,41 +8,48 @@ char BuildingTypeClass::ProcessData(int * p0, short * p1)
         {
             return (char)(1);
         }
-        int * v5 = p0;
-        int v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5216);
-        int v12 = 2 * v11 + ((BuildingTypeClass *)(p0))->GetFoundationWidth();
-        int v6 = 2 * v11 + ((BuildingTypeClass *)(v5))->GetFoundationHeight(0);
-        int v7 = 1 << this->?;
-        short * v8 = p1;
-        int v9 = *p1 - v11 - 1;
+        int * v5;
+        v5 = p0;
+        int v11;
+        v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5216);
+        int v12;
+        v12 = 2 * v11 + ((BuildingTypeClass *)(p0))->GetFoundationWidth();
+        int v6;
+        v6 = 2 * v11 + ((BuildingTypeClass *)(v5))->GetFoundationHeight(0);
+        int v7;
+        v7 = 1 << this->?;
+        short * v8;
+        v8 = p1;
+        int v9;
+        v9 = *p1 - v11 - 1;
         int v10;
         if ( v9 < *p1 + v12 + 1 )
         {
             while ( 1 )
             {
                 v10 = v8[1] - v11 - 1;
-            }
-            if ( v10 < v8[1] + v6 + 1 )
-            {
-                break;
-            }
-            LABEL_8:
+                if ( v10 < v8[1] + v6 + 1 )
+                {
+                    break;
+                }
+                LABEL_8:
           if ( ++v9 >= *v8 + v12 + 1 )
             return (char)(0);
+            }
             while ( 1 )
             {
                 p0 = (p0 & ~0xFF) | ((v9) & 0xFF);
+                p0 = (p0 & ~0xFF) | ((v10) & 0xFF);
+                if ( (v7 & *((unsigned int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj((short *)&p0) + 55)) != 0 )
+                {
+                    return (char)(1);
+                }
+                if ( ++v10 >= p1[1] + v6 + 1 )
+                {
+                    v8 = p1;
+                    goto LABEL_8;
+                }
             }
-            p0 = (p0 & ~0xFF) | ((v10) & 0xFF);
-            if ( (v7 & *((unsigned int *)((CellCoord *)(&((char *)stru_87F5F0)[0x58 + (416)]))->To_CellObj((short *)&p0) + 55)) != 0 )
-            {
-                return (char)(1);
-            }
-            if ( ++v10 >= p1[1] + v6 + 1 )
-            {
-                v8 = p1;
-            }
-            goto LABEL_8;
         }
         return (char)(0);
 }

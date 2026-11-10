@@ -30,7 +30,7 @@ char SuperWeapon::FireSuperWeaponHouseClass(int p0, int p1)
         int v10;
         for ( i = stru_A80220.nextArrayIndex - 1; i >= 0; --i )
         {
-            v10 = *((unsigned int *)stru_A80220.vfptr3 + i);
+            v10 = *((unsigned int *)((char **)stru_A80220)[3] + i);
             if ( v10 )
             {
                 ((SuperWeapon *)(v10))->EvaluateAITarget(v6, (short *)p1);

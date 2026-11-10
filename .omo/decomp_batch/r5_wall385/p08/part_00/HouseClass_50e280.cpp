@@ -14,18 +14,17 @@ void HouseClass::ReactivateTechnos(int p0)
             if ( *(unsigned int *)&((char *)stru_A8EB00)[164] - 1 >= 0 )
             {
                 do
-            v5 = *(TechnoClass **)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
-            }
-            if ( v5->owner == this
+                {
+                    v5 = *(TechnoClass **)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
+                    if ( v5->owner == this
               && (*((int (__stdcall **)(unsigned int))v5->vfptr + 33))(*(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4)) == p0
               && !v5->inLimbo )
-            {
-                ((TechnoClass *)(v5))->Activate();
-            }
-            v3 = 1;
-            --v4;
-            while ( v4 >= 0 )
-            {
+                    {
+                        ((TechnoClass *)(v5))->Activate();
+                        v3 = 1;
+                    }
+                    --v4;
+                } while ( v4 >= 0 );
                 if ( v3 && g_WTFMode )
                 {
                     if ( g_GameMode_Current )
@@ -34,15 +33,15 @@ void HouseClass::ReactivateTechnos(int p0)
                         {
                             return;
                         }
+                        goto LABEL_15;
                     }
-                }
-            }
-            goto LABEL_15;
-            if ( this->currentPlayer || this->playerControl )
-            {
-                LABEL_15:
+                    if ( this->currentPlayer || this->playerControl )
+                    {
+                        LABEL_15:
               if ( g_IKnowWhatImDoing == 0 )
                 ((VoxClass *)(&stru_824FE4))->FindAndPlay(-1);
+                    }
+                }
             }
         }
 }

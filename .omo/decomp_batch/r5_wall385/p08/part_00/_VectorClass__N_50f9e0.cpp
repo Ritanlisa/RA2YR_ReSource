@@ -7,45 +7,46 @@ char _VectorClass__N::Remove(int p0, char * p1)
         char * v4;
         signed int m_8;
         signed int i;
-        if ( Size )
+        if ( p0 )
         {
-            this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+            this->m_C = 0;
             if ( p0 )
             {
                 v4 = p0;
             }
             else
             {
-                v4 = (char *)__2_YAPAXI_Z(Size);
+                v4 = (char *)__2_YAPAXI_Z(p0);
             }
-            this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
+            this->m_C = 1;
             if ( v4 )
             {
-                if ( this->m003[0] )
+                if ( this->m004[0] )
                 {
                     m_8 = this->m_8;
+                    if ( p0 < m_8 )
+                    {
+                        m_8 = p0;
+                    }
+                    for ( i = 0; i < m_8; v4[i - 1] = *(unsigned char *)(this->m004[0] + i - 1) )
+                    {
+                        ++i;
+                    }
+                    if ( ((this->m_C >> 8) & 0xFF) )
+                    {
+                        __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                        this->m004[0] = 0;
+                    }
                 }
+                this->m004[0] = v4;
+                this->m_8 = p0;
+                ((this->m_C >> 8) & 0xFF) = p0 == 0;
+                return (char)(1);
             }
-            if ( Size < m_8 )
+            else
             {
-                m_8 = Size;
+                return (char)(0);
             }
-            for ( i = 0; i < m_8; v4[i - 1] = *(unsigned char *)(this->m003[0] + i - 1) )
-            {
-                ++i;
-            }
-            if ( ((this->m_C >> 8) & 0xFF) )
-            {
-                __3_YAXPAX_Z(*(void **)&this->m_1[3]);
-            }
-            this->m003[0] = 0;
-            this->m003[0] = v4;
-            this->m_8 = Size;
-            ((this->m_C >> 8) & 0xFF) = p0 == 0;
-            return (char)(1);
-        }
-        else
-        {
         }
         else
         {

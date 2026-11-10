@@ -20,7 +20,7 @@ int HouseClass::ClearLowPowerTargets()
             if ( PriorityTarget != (HouseClass *)result
           && (PriorityTarget != this
            || (result = *(unsigned int *)(v4 + 704)) != 0
-           && ((result & 0xFF) = ((HouseClass *)(*(HouseClass **)(result + 700))->AssignCivilianToLowPowerTargets(), v4),
+           && ((result & 0xFF) = ((HouseClass *)(*(HouseClass **)(result + 700)))->AssignCivilianToLowPowerTargets(v4),
                (unsigned char)result))
           || PriorityTarget != this
           || v4 == v3 )
@@ -30,13 +30,12 @@ int HouseClass::ClearLowPowerTargets()
             else
             {
                 v8 = *(unsigned int *)(v4 + 108);
-            }
-            v6 = *(TriggerClass **)(v4 + 632);
-            if ( v6 )
-            {
-                ((TriggerClass *)(v6))->UnlinkTags();
-            }
-            result = (*(int (__stdcall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))(
+                v6 = *(TriggerClass **)(v4 + 632);
+                if ( v6 )
+                {
+                    ((TriggerClass *)(v6))->UnlinkTags();
+                }
+                result = (*(int (__stdcall **)(int, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 364))(
                      v4,
                      &v8,
                      0,
@@ -45,7 +44,8 @@ int HouseClass::ClearLowPowerTargets()
                      1,
                      1,
                      0);
-            v3 = v4;
+                v3 = v4;
+            }
         }
         return (int)(result);
 }
@@ -60,13 +60,16 @@ int HouseClass::FindBuildingOfType(int p0, int p1)
         {
             return (int)(0);
         }
-        int v4 = 0;
-        int bunkersCount = this->bunkersCount;
+        int v4;
+        v4 = 0;
+        int bunkersCount;
+        bunkersCount = this->bunkersCount;
         if ( bunkersCount <= 0 )
         {
             return (int)(0);
         }
-        int v5 = g_TriggerClassCount;
+        int v5;
+        v5 = g_TriggerClassCount;
         int v6;
         int v7;
         unsigned int * v8;
@@ -87,16 +90,16 @@ int HouseClass::FindBuildingOfType(int p0, int p1)
             }
             else
             {
-                v8 = g_TriggerTypeCount;
-            }
-            while ( *v8 != *(unsigned int *)(v6 + 1312) )
-            {
-                ++v7;
-            }
-            ++v8;
-            if ( v7 >= v5 )
-            {
-                goto LABEL_10;
+                v8 = (unsigned int *)(g_TriggerTypeCount);
+                while ( *v8 != *(unsigned int *)(v6 + 1312) )
+                {
+                    ++v7;
+                    ++v8;
+                    if ( v7 >= v5 )
+                    {
+                        goto LABEL_10;
+                    }
+                }
             }
             if ( v7 != p0 )
             {
@@ -163,7 +166,8 @@ unsigned int * HouseClass::GetStartCoords(int * p0)
 
 void HouseClass::LostPoweredCenter(int p0)
 {
-        int v3 = this->poweredUnitCenters - 1;
+        int v3;
+        v3 = this->poweredUnitCenters - 1;
         this->poweredUnitCenters = v3;
         char v4;
         int v5;
@@ -173,40 +177,39 @@ void HouseClass::LostPoweredCenter(int p0)
             if ( p0 )
             {
                 v4 = 0;
-            }
-            v5 = g_SidebarState - 1;
-            if ( g_SidebarState - 1 >= 0 )
-            {
-                do
-              v6 = *((unsigned int *)g_TechnoClass_Count + v5);
-            }
-            if ( *(unsigned int *)(v6 + 540) == this
+                v5 = g_SidebarState - 1;
+                if ( g_SidebarState - 1 >= 0 )
+                {
+                    do
+                    {
+                        v6 = *((unsigned int *)g_TechnoClass_Count + v5);
+                        if ( *(unsigned int *)(v6 + 540) == this
                 && (*(int (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 132))(*((unsigned int *)g_TechnoClass_Count + v5)) == p0
                 && !*(unsigned char *)(v6 + 129) )
-            {
-                ((TechnoClass *)(v6))->Deactivate();
-            }
-            v4 = 1;
-            --v5;
-            while ( v5 >= 0 )
-            {
-                if ( v4 && g_WTFMode )
-                {
-                    if ( g_GameMode_Current[0] )
-                    {
-                        if ( (#375 *)this != HouseClass_Player )
                         {
-                            return;
+                            ((TechnoClass *)(v6))->Deactivate();
+                            v4 = 1;
+                        }
+                        --v5;
+                    } while ( v5 >= 0 );
+                    if ( v4 && g_WTFMode )
+                    {
+                        if ( g_GameMode_Current[0] )
+                        {
+                            if ( (#375 *)this != HouseClass_Player )
+                            {
+                                return;
+                            }
+                            goto LABEL_16;
+                        }
+                        if ( this->currentPlayer || this->PlayerControl )
+                        {
+                            LABEL_16:
+                if ( g_IKnowWhatImDoing == 0 )
+                  ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1);
                         }
                     }
                 }
-            }
-            goto LABEL_16;
-            if ( this->currentPlayer || this->PlayerControl )
-            {
-                LABEL_16:
-                if ( g_IKnowWhatImDoing == 0 )
-                  ((VoxClass *)(g_Str_EVA_RobotTanksOffline))->FindAndPlay(-1);
             }
         }
 }
@@ -227,18 +230,17 @@ void HouseClass::ReactivateTechnos(int p0)
             if ( *(unsigned int *)&((char *)stru_A8EB00)[164] - 1 >= 0 )
             {
                 do
-            v5 = *(TechnoClass **)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
-            }
-            if ( v5->owner == this
+                {
+                    v5 = *(TechnoClass **)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4);
+                    if ( v5->owner == this
               && (*((int (__stdcall **)(unsigned int))v5->vfptr + 33))(*(unsigned int *)(*(unsigned int *)&((char *)stru_A8EB00)[152] + 4 * v4)) == p0
               && !v5->inLimbo )
-            {
-                ((TechnoClass *)(v5))->Activate();
-            }
-            v3 = 1;
-            --v4;
-            while ( v4 >= 0 )
-            {
+                    {
+                        ((TechnoClass *)(v5))->Activate();
+                        v3 = 1;
+                    }
+                    --v4;
+                } while ( v4 >= 0 );
                 if ( v3 && g_WTFMode )
                 {
                     if ( g_GameMode_Current )
@@ -247,15 +249,15 @@ void HouseClass::ReactivateTechnos(int p0)
                         {
                             return;
                         }
+                        goto LABEL_15;
                     }
-                }
-            }
-            goto LABEL_15;
-            if ( this->currentPlayer || this->playerControl )
-            {
-                LABEL_15:
+                    if ( this->currentPlayer || this->playerControl )
+                    {
+                        LABEL_15:
               if ( g_IKnowWhatImDoing == 0 )
                 ((VoxClass *)(&stru_824FE4))->FindAndPlay(-1);
+                    }
+                }
             }
         }
 }

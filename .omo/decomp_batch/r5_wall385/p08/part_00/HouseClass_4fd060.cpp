@@ -8,13 +8,16 @@ int HouseClass::FindBuildingOfType(int p0, int p1)
         {
             return (int)(0);
         }
-        int v4 = 0;
-        int bunkersCount = this->bunkersCount;
+        int v4;
+        v4 = 0;
+        int bunkersCount;
+        bunkersCount = this->bunkersCount;
         if ( bunkersCount <= 0 )
         {
             return (int)(0);
         }
-        int v5 = g_TriggerClassCount;
+        int v5;
+        v5 = g_TriggerClassCount;
         int v6;
         int v7;
         unsigned int * v8;
@@ -35,16 +38,16 @@ int HouseClass::FindBuildingOfType(int p0, int p1)
             }
             else
             {
-                v8 = g_TriggerTypeCount;
-            }
-            while ( *v8 != *(unsigned int *)(v6 + 1312) )
-            {
-                ++v7;
-            }
-            ++v8;
-            if ( v7 >= v5 )
-            {
-                goto LABEL_10;
+                v8 = (unsigned int *)(g_TriggerTypeCount);
+                while ( *v8 != *(unsigned int *)(v6 + 1312) )
+                {
+                    ++v7;
+                    ++v8;
+                    if ( v7 >= v5 )
+                    {
+                        goto LABEL_10;
+                    }
+                }
             }
             if ( v7 != p0 )
             {

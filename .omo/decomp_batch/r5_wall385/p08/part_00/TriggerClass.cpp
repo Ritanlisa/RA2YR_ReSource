@@ -24,41 +24,41 @@ char TriggerClass::ValidateTeamTriggerConditions(int p0)
         if ( *(int *)(v4 + 156) > 0 )
         {
             v10 = 168;
-            do v5 = *(unsigned int *)(v10 + v4);
-            if ( v5 == 0
+            do
+            {
+                v5 = *(unsigned int *)(v10 + v4);
+                if ( v5 == 0
             || !(*(int (__stdcall **)(int, int, int, unsigned int, TriggerClass *))(*(unsigned int *)v5 + 148))(v5, 1, 1, 0, this) )
-            {
-                if ( g_GameMode_Current )
                 {
-                    return (char)(0);
-                }
-            }
-            v6 = FootClass_Array.uniqueId - 1;
-            if ( FootClass_Array.uniqueId - 1 < 0 )
-            {
-                return (char)(0);
-            }
-            while ( 1 )
-            {
-                v7 = (TriggerClass **)*((unsigned int *)FootClass_Array.vfptr1 + v6);
-            }
-            if ( v7[135] == this
+                    if ( g_GameMode_Current )
+                    {
+                        return (char)(0);
+                    }
+                    v6 = FootClass_Array.uniqueId - 1;
+                    if ( FootClass_Array.uniqueId - 1 < 0 )
+                    {
+                        return (char)(0);
+                    }
+                    while ( 1 )
+                    {
+                        v7 = (TriggerClass **)*((unsigned int *)FootClass_Array.vfptr1 + v6);
+                        if ( v7[135] == this
                 && v5 == ((int (__stdcall *)(unsigned int))(*v7)[1].timer[2])(*((unsigned int *)FootClass_Array.vfptr1 + v6))
                 && ((TriggerClass *)(p0))->EvaluateObjectForTrigger((int)v7, (int)this) )
-            {
-                break;
-            }
-            if ( --v6 < 0 )
-            {
-                return (char)(0);
-            }
-            v2 = p0;
-            v4 = *(unsigned int *)(v2 + 228);
-            v8 = ++v11 < *(unsigned int *)(v4 + 156);
-            v10 += 8;
-            while ( v8 )
-            {
-            }
+                        {
+                            break;
+                        }
+                        if ( --v6 < 0 )
+                        {
+                            return (char)(0);
+                        }
+                    }
+                    v2 = p0;
+                }
+                v4 = *(unsigned int *)(v2 + 228);
+                v8 = ++v11 < *(unsigned int *)(v4 + 156);
+                v10 += 8;
+            } while ( v8 );
         }
         return (char)(1);
 }

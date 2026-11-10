@@ -1,0 +1,51 @@
+{
+ "symbol": "?BinarySearchSection@INIClass@@QAEHPAE@Z",
+ "sym_key": "INIClass::BinarySearchSection",
+ "size": 334,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec0c535533ed563bd5578bf1750c5f5e5d33c05b83c40cc2040033c08bfa8944241083c9ff89442414f2aef7d1498944241851528d4c2418e8000000008b4e2c8bd83bcd750c5f5e5d33c05b83c40cc204008b86000e00003bc57404391874498a463484c0751e68000000006a08518b8e000a000051e80000000083c410896e38c64634018d542410895c241052e80000000083c4043bc5750c5f5e5d33c05b83c40cc204008946388b462c3bc574748b8e000e00003bcd7414391975108b46385f5e5d8b40045b83c40cc204008a4e3484c9751e8b8e000a000068000000006a085051e80000000083c410896e38c64634018b7e2c8b6e2885ff7e278bc7992bc2d1f88b54c5008d4cc5003bd37e048bf8eb0c741f83caff8d69082bd003fa85ff7fd95f33c0a0000000005e5d5b83c40cc2040085c974eb894e388b41045f5e5d5b83c40cc20400",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?CompareFunc4Int@@YAHPBX0@Z",
+   "sym_key": "CompareFunc4Int"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?System_Search@@YAHZZ",
+   "sym_key": "System_Search"
+  },
+  {
+   "off": 225,
+   "type": "DIR32",
+   "sym": "?CompareFunc4Int@@YAHPBX0@Z",
+   "sym_key": "CompareFunc4Int"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "_qsort",
+   "sym_key": "qsort"
+  },
+  {
+   "off": 301,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  }
+ ]
+}

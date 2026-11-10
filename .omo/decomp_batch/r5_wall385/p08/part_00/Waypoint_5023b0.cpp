@@ -4,8 +4,10 @@
 
 unsigned int * Waypoint::FindByCell(unsigned short * p0)
 {
-        signed int v2 = 0;
-        signed int v10 = 0;
+        signed int v2;
+        v2 = 0;
+        signed int v10;
+        v10 = 0;
         char * i;
         void * v4;
         int v5;
@@ -16,16 +18,16 @@ unsigned int * Waypoint::FindByCell(unsigned short * p0)
             if ( !*(unsigned int *)i )
             {
                 v4 = __2_YAPAXI_Z(0x40u);
+                if ( v4 )
+                {
+                    v5 = ((WaypointPathClass *)((int)v4))->Construct(v2);
+                }
+                else
+                {
+                    v5 = 0;
+                }
+                *(unsigned int *)i = v5;
             }
-            if ( v4 )
-            {
-                v5 = ((WaypointPathClass *)((int)v4))->Construct(v2);
-            }
-            else
-            {
-                v5 = 0;
-            }
-            *(unsigned int *)i = v5;
             v6 = *(unsigned int **)i;
             v7 = 0;
             if ( *(int *)(*(unsigned int *)i + 56) > 0 )
@@ -51,8 +53,8 @@ unsigned int * Waypoint::FindByCell(unsigned short * p0)
             if ( ++v7 >= *(unsigned int *)(*(unsigned int *)i + 56) )
             {
                 v2 = v10;
+                goto LABEL_12;
             }
-            goto LABEL_12;
         }
 }
 
