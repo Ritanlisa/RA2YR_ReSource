@@ -1,0 +1,11 @@
+{
+ "addr": "0x62AF60",
+ "name": "ParasiteClass::StubReturn67",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62AF60",
+ "bytes_hex": "b843000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

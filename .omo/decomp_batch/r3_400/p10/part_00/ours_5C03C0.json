@@ -1,0 +1,8 @@
+{
+ "symbol": "?resetPathState@VQMovieHandle@@QAEHXZ",
+ "sym_key": "VQMovieHandle::resetPathState",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b821000000c3",
+ "relocs": []
+}

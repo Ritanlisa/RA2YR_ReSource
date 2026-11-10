@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckStateFlag@ParticleClass@@QAEHXZ",
+ "sym_key": "ParticleClass::CheckStateFlag",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b803000000c3",
+ "relocs": []
+}
