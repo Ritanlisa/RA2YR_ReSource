@@ -49,14 +49,14 @@
   "status": "PENDING"
  },
  "0x405c00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioFileClass::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x405d40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioController::Stop",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1064,7 +1064,7 @@
   "status": "OK"
  },
  "0x472160": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CaptureManagerClass::DrawLinks",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1393,7 +1393,7 @@
   "status": "PENDING"
  },
  "0x48b750": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ConnectionClass::allocPacketSlot",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1813,7 +1813,7 @@
   "status": "PENDING"
  },
  "0x4a2cd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1897,14 +1897,14 @@
   "status": "OK"
  },
  "0x4a8bf0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4a8d50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2919,7 +2919,7 @@
   "status": "OK"
  },
  "0x526810": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "INIClass::BinarySearchSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3262,7 +3262,7 @@
   "status": "PENDING"
  },
  "0x547230": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalClass::DrawCellOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3318,7 +3318,7 @@
   "status": "PENDING"
  },
  "0x54fe60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TimerClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3514,14 +3514,14 @@
   "status": "PENDING"
  },
  "0x56d460": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Cell::SetRadar",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x56d5a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CellClass::DetermineTileConnectivity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3563,7 +3563,7 @@
   "status": "PENDING"
  },
  "0x578710": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3584,7 +3584,7 @@
   "status": "PENDING"
  },
  "0x586360": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3626,7 +3626,7 @@
   "status": "PENDING"
  },
  "0x589370": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass::AllocateCellDataBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3997,14 +3997,14 @@
   "status": "PENDING"
  },
  "0x5cc110": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::DrawConstructionFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x5cc550": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4186,7 +4186,7 @@
   "status": "OK"
  },
  "0x5f4730": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ObjectClass::GetPlacementScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4739,7 +4739,7 @@
   "status": "PENDING"
  },
  "0x65a820": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+1 mov ebx, dword ptr [esp + 0xc]",
   "name": "ObjectClass::ProcessGroupInput",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
@@ -5096,7 +5096,7 @@
   "status": "PENDING"
  },
  "0x6ac5f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
