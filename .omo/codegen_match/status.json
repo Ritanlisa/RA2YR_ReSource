@@ -3073,7 +3073,7 @@
   "status": "OK"
  },
  "0x6f20b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TeamTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -3129,7 +3129,7 @@
   "status": "NG"
  },
  "0x70dd90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::vt_entry_3E8",
   "note": "decomp_batch r2: MATCH",
@@ -3178,14 +3178,14 @@
   "status": "NG"
  },
  "0x71b190": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TemporalClass::StubReturn80",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x71b1a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TemporalClass::StubReturn70",
   "note": "decomp_batch r2: MATCH",
@@ -3199,28 +3199,28 @@
   "status": "OK"
  },
  "0x71d2f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainClass::MissionStubReturnZero",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x71d300": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainClass::MissionStubReturnZero2",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x71e330": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x71e340": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TerrainTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -3241,14 +3241,14 @@
   "status": "OK"
  },
  "0x71fa50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TEventClass::StubReturn88",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x71fa60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TEventClass::StubReturn48",
   "note": "decomp_batch r2: MATCH",
@@ -3262,14 +3262,14 @@
   "status": "OK"
  },
  "0x7236e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TiberiumClass::StubReturn296",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x7236f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TiberiumClass::StubReturn46",
   "note": "decomp_batch r2: MATCH",
@@ -3318,28 +3318,28 @@
   "status": "OK"
  },
  "0x726930": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TriggerClass::StubReturn72",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x726940": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TriggerClass::StubReturn38",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x727ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TriggerTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x727cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TriggerTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -3353,28 +3353,28 @@
   "status": "OK"
  },
  "0x7286b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TubeClass::StubReturn452",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x7286c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TubeClass::StubReturn53",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x72a200": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TunnelLocomotionClass::StubReturn60",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x72dae0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CreatureClass::GetManager",
   "note": "decomp_batch r2: MATCH",
