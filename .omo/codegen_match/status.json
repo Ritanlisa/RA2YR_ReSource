@@ -644,7 +644,7 @@
   "status": "OK"
  },
  "0x42a5b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -735,7 +735,7 @@
   "status": "NG"
  },
  "0x4335e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieClass::AllocateRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -749,7 +749,7 @@
   "status": "PENDING"
  },
  "0x433770": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieClass::OpenFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1372,7 +1372,7 @@
   "status": "OK"
  },
  "0x48b2a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Struct::ClearAllMemberFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1477,42 +1477,42 @@
   "status": "PENDING"
  },
  "0x493f30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x494080": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent75Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4941e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent50Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x494330": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x494b60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x494c40": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1568,14 +1568,14 @@
   "status": "PENDING"
  },
  "0x4958d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x495a50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2212,7 +2212,7 @@
   "status": "OK"
  },
  "0x4c9220": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FacingClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3185,14 +3185,14 @@
   "status": "OK"
  },
  "0x53ee70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GUID::Compare",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x53ef60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Network::processPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3535,7 +3535,7 @@
   "status": "PENDING"
  },
  "0x578290": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::CellIteratorNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3549,7 +3549,7 @@
   "status": "PENDING"
  },
  "0x578460": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LayerClass::IsWithinUsableArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3654,7 +3654,7 @@
   "status": "OK"
  },
  "0x58bb30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5075,7 +5075,7 @@
   "status": "PENDING"
  },
  "0x6a80a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TabClass::updateTabProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5327,7 +5327,7 @@
   "status": "PENDING"
  },
  "0x6da080": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "PlayerClass::HasOccupiedCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
