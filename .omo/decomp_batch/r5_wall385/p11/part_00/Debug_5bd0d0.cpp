@@ -33,32 +33,33 @@ char Debug::ScrollText(const char * p0)
             if ( v5 < v7 )
             {
                 v12 = (char *)(this + v13 + 20 * v5 + 5 * v5);
-            }
-            v9 = &p0[-v5];
-            v11 = (unsigned int *)(this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100));
-            for ( i = &p0[-v5]; ; v9 = i )
-            {
-                v15 = v9[v8];
-            }
-            *v12 = Debug_Helper(v15);
-            *v11 = this->m2710;
-            if ( v15 == 10 )
-            {
-                v10 = this->m2720;
-            }
-            this->m271C = 0;
-            this->m2720 = v10 + 1;
-            ++v8;
-            v11 += 25;
-            v12 += 25;
-            if ( v8 >= v7 )
-            {
-                break;
+                v9 = &p0[-v5];
+                v11 = (unsigned int *)(this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100));
+                for ( i = &p0[-v5]; ; v9 = i )
+                {
+                    v15 = v9[v8];
+                    *v12 = Debug_Helper(v15);
+                    *v11 = this->m2710;
+                    if ( v15 == 10 )
+                    {
+                        v10 = this->m2720;
+                        this->m271C = 0;
+                        this->m2720 = v10 + 1;
+                    }
+                    else
+                    {
+                        ++this->m271C;
+                    }
+                    ++v8;
+                    v11 += 25;
+                    v12 += 25;
+                    if ( v8 >= v7 )
+                    {
+                        break;
+                    }
+                }
             }
             return (char)(((Text *)(this))->DrawRepeated(v5, v13, v7 - v5, 1));
-        }
-        else
-        {
         }
         return (char)(result);
 }

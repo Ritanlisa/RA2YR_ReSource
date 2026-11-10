@@ -26,26 +26,26 @@ void Heap::SiftDown(int p0)
         int v7;
         if ( v3 != p0 )
         {
-            do v5 = *((unsigned int *)this + 2);
-            v6 = 2 * v3 + 1;
-            v7 = *(unsigned int *)(v5 + 4 * v2);
-            *(unsigned int *)(v5 + 4 * v2) = *(unsigned int *)(v5 + 4 * v3);
-            v2 = v3;
-            *(unsigned int *)(*((unsigned int *)this + 2) + 4 * v3) = v7;
-            if ( 2 * v3 <= *(unsigned int *)this
+            do
+            {
+                v5 = *((unsigned int *)this + 2);
+                v6 = 2 * v3 + 1;
+                v7 = *(unsigned int *)(v5 + 4 * v2);
+                *(unsigned int *)(v5 + 4 * v2) = *(unsigned int *)(v5 + 4 * v3);
+                v2 = v3;
+                *(unsigned int *)(*((unsigned int *)this + 2) + 4 * v3) = v7;
+                if ( 2 * v3 <= *(unsigned int *)this
             && *(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v3) + 4) > (double)*(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 8 * v3)
                                                                                               + 4) )
-            {
-                v3 *= 2;
-            }
-            if ( v6 <= *(unsigned int *)this
+                {
+                    v3 *= 2;
+                }
+                if ( v6 <= *(unsigned int *)this
             && *(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v3) + 4) > (double)*(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v6)
                                                                                               + 4) )
-            {
-                v3 = v6;
-            }
-            while ( v3 != v2 )
-            {
-            }
+                {
+                    v3 = v6;
+                }
+            } while ( v3 != v2 );
         }
 }

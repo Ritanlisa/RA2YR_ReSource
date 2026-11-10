@@ -34,7 +34,7 @@ int MPCooperative::Revert()
         }
         if ( v6 <= 1 )
         {
-            return (int)(((SideClass *)(**(SideClass ***)(v5 + 4))->FindByName()));
+            return (int)(((SideClass *)(**(SideClass ***)(v5 + 4)))->FindByName());
         }
         return (int)(-2);
 }

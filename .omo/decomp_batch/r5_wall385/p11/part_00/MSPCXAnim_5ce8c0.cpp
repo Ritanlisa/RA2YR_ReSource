@@ -4,8 +4,10 @@
 
 char MSPCXAnim::Draw(int * p0, int * p1)
 {
-        MSPCXAnim * v3 = this;
-        int Width = *((unsigned int *)this + 9);
+        MSPCXAnim * v3;
+        v3 = this;
+        int Width;
+        Width = *((unsigned int *)this + 9);
         if ( Width == 0 )
         {
             return (char)(Width);
@@ -39,24 +41,32 @@ char MSPCXAnim::Draw(int * p0, int * p1)
                           v15);
             return (char)(Width);
         }
-        int * v6 = (int *)((char *)this + 44);
+        int * v6;
+        v6 = (int *)((char *)this + 44);
         Rect v19;
         ((Rect *)(&v19))->Set(0, 0, 0, 0);
-        int v7 = *v6;
-        int v8 = v6[1];
-        int v9 = v6[2];
-        int v10 = v6[3];
-        int * v22 = (int *)p1[2];
+        int v7;
+        v7 = *v6;
+        int v8;
+        v8 = v6[1];
+        int v9;
+        v9 = v6[2];
+        int v10;
+        v10 = v6[3];
+        int * v22;
+        v22 = (int *)p1[2];
         if ( p1[2] <= 0 )
         {
             goto LABEL_24;
         }
-        int v17 = p1[3];
+        int v17;
+        v17 = p1[3];
         if ( v17 <= 0 || v6[2] <= 0 || v6[3] <= 0 )
         {
             goto LABEL_24;
         }
-        int v11 = *p1;
+        int v11;
+        v11 = *p1;
         if ( v7 < *p1 )
         {
             v9 += v7 - v11;
@@ -66,7 +76,8 @@ char MSPCXAnim::Draw(int * p0, int * p1)
         {
             goto LABEL_22;
         }
-        int v12 = p1[1];
+        int v12;
+        v12 = p1[1];
         if ( v8 < v12 )
         {
             v10 += v8 - v12;

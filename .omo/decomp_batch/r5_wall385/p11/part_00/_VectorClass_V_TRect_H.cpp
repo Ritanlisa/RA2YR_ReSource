@@ -16,7 +16,7 @@ char _VectorClass_V_TRect_H::Release(int p0, char * p1)
         if ( p0 )
         {
             v5 = p1;
-            this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+            this->m_C = 0;
             if ( p1 )
             {
                 v7 = p1;
@@ -24,56 +24,57 @@ char _VectorClass_V_TRect_H::Release(int p0, char * p1)
             else
             {
                 v6 = __2_YAPAXI_Z(16 * p0);
+                if ( v6 )
+                {
+                    v7 = (char *)v6;
+                }
+                else
+                {
+                    v7 = 0;
+                }
             }
-            if ( v6 )
+            this->m_C = 1;
+            if ( v7 )
             {
-                v7 = (char *)v6;
+                if ( this->m004[0] )
+                {
+                    m_8 = this->m_8;
+                    if ( p0 < m_8 )
+                    {
+                        m_8 = p0;
+                    }
+                    if ( m_8 > 0 )
+                    {
+                        v10 = 0;
+                        do
+                        {
+                            v11 = &v7[v10];
+                            v12 = (unsigned int *)(v10 + this->m004[0]);
+                            v10 += 16;
+                            --m_8;
+                            *(unsigned int *)v11 = *v12;
+                            *((unsigned int *)v11 + 1) = v12[1];
+                            *((unsigned int *)v11 + 2) = v12[2];
+                            *((unsigned int *)v11 + 3) = v12[3];
+                        } while ( m_8 );
+                        v5 = p1;
+                        v3 = p0;
+                    }
+                    if ( ((this->m_C >> 8) & 0xFF) )
+                    {
+                        __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                        this->m004[0] = 0;
+                    }
+                }
+                this->m004[0] = v7;
+                this->m_8 = v3;
+                ((this->m_C >> 8) & 0xFF) = v5 == 0;
+                return (char)(1);
             }
             else
             {
-                v7 = 0;
+                return (char)(0);
             }
-            this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
-            if ( v7 )
-            {
-                if ( this->m003[0] )
-                {
-                    m_8 = this->m_8;
-                }
-            }
-            if ( p0 < m_8 )
-            {
-                m_8 = p0;
-            }
-            if ( m_8 > 0 )
-            {
-                v10 = 0;
-            }
-            do v11 = &v7[v10];
-            v12 = (unsigned int *)(v10 + this->m003[0]);
-            v10 += 16;
-            --m_8;
-            *(unsigned int *)v11 = *v12;
-            *((unsigned int *)v11 + 1) = v12[1];
-            *((unsigned int *)v11 + 2) = v12[2];
-            *((unsigned int *)v11 + 3) = v12[3];
-            while ( m_8 )
-            {
-                v5 = p1;
-            }
-            v3 = p0;
-            if ( ((this->m_C >> 8) & 0xFF) )
-            {
-                __3_YAXPAX_Z(*(void **)&this->m_1[3]);
-            }
-            this->m003[0] = 0;
-            this->m003[0] = v7;
-            this->m_8 = v3;
-            ((this->m_C >> 8) & 0xFF) = v5 == 0;
-            return (char)(1);
-        }
-        else
-        {
         }
         else
         {

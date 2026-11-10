@@ -3633,14 +3633,14 @@
   "status": "NG"
  },
  "0x58a2a0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_W4PassabilityType::SetCapacity_1",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x58a8f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3654,7 +3654,7 @@
   "status": "OK"
  },
  "0x58bb30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3668,35 +3668,35 @@
   "status": "NG"
  },
  "0x59c580": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+38 jne 0x59c5e1",
   "name": "RandomMap::GrowTiberium",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x5ac960": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 push ecx",
   "name": "PriorityQueue::Pop",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5acd30": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSEngine::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5aced0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSEngine::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5ad870": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+5 mov esi, dword ptr [esp + 0x10]",
   "name": "Heap::SiftDown",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -3878,7 +3878,7 @@
   "status": "OK"
  },
  "0x5b4270": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "HashTree::MarkEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3892,7 +3892,7 @@
   "status": "OK"
  },
  "0x5bd0d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3948,14 +3948,14 @@
   "status": "OK"
  },
  "0x5c1fa0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+42 jne 0x5c1fd6",
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x5c2de0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MPCooperative::selectTeam",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3990,35 +3990,35 @@
   "status": "COMPILE_FAIL"
  },
  "0x5cbb80": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSOverlayAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc110": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::DrawConstructionFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc550": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc970": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4039,21 +4039,21 @@
   "status": "OK"
  },
  "0x5cd410": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSBitPrintAnim::SetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd4d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSBitPrintAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5ce8c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",

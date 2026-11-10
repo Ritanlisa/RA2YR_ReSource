@@ -9,13 +9,18 @@ int PriorityQueue::Pop()
         {
             return (int)(0);
         }
-        int v2 = *((unsigned int *)this + 2);
-        int v3 = 1;
-        int v4 = *(unsigned int *)(v2 + 4);
+        int v2;
+        v2 = *((unsigned int *)this + 2);
+        int v3;
+        v3 = 1;
+        int v4;
+        v4 = *(unsigned int *)(v2 + 4);
         *(unsigned int *)(v2 + 4) = *(unsigned int *)(v2 + 4 * this->m000);
-        int v10 = v4;
+        int v10;
+        v10 = v4;
         *(unsigned int *)(*((unsigned int *)this + 2) + 4 * this->m000) = 0;
-        int v5 = this->m000 - 1;
+        int v5;
+        v5 = this->m000 - 1;
         this->m000 = v5;
         int v6;
         if ( v5 < 2
@@ -36,29 +41,28 @@ int PriorityQueue::Pop()
         {
             v6 = 3;
             do
-    LABEL_10:
+            {
+                LABEL_10:
           v7 = *((unsigned int *)this + 2);
-            v8 = 2 * v6 + 1;
-            v9 = *(unsigned int *)(v7 + 4 * v3);
-            *(unsigned int *)(v7 + 4 * v3) = *(unsigned int *)(v7 + 4 * v6);
-            v3 = v6;
-            *(unsigned int *)(*((unsigned int *)this + 2) + 4 * v6) = v9;
-            if ( 2 * v6 <= this->m000
+                v8 = 2 * v6 + 1;
+                v9 = *(unsigned int *)(v7 + 4 * v3);
+                *(unsigned int *)(v7 + 4 * v3) = *(unsigned int *)(v7 + 4 * v6);
+                v3 = v6;
+                *(unsigned int *)(*((unsigned int *)this + 2) + 4 * v6) = v9;
+                if ( 2 * v6 <= this->m000
             && *(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v6) + 4) > (double)*(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 8 * v6)
                                                                                               + 4) )
-            {
-                v6 *= 2;
-            }
-            if ( v8 <= this->m000
+                {
+                    v6 *= 2;
+                }
+                if ( v8 <= this->m000
             && *(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v6) + 4) > (double)*(float *)(*(unsigned int *)(*((unsigned int *)this + 2) + 4 * v8)
                                                                                               + 4) )
-            {
-                v6 = v8;
-            }
-            while ( v6 != v3 )
-            {
-                return (int)(v10);
-            }
+                {
+                    v6 = v8;
+                }
+            } while ( v6 != v3 );
+            return (int)(v10);
         }
         if ( v6 != 1 )
         {

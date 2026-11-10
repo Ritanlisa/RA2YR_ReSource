@@ -1,0 +1,21 @@
+{
+ "symbol": "?GrowTiberium@RandomMap@@QAEDXZ",
+ "sym_key": "RandomMap::GrowTiberium",
+ "size": 140,
+ "link_base": 0,
+ "bytes_hex": "558bec83e4f85153568bf133db578b96080300008b463c4283f803899608030000740583f804752d837e4c147e2733ff53538d44241453508bce895c241c47e80000000084c0750783ff0a7ce3eb06ff860803000033ff8d4c240c895c240c518bcee800000000473ac3750c83ff0a7ce65f5e5b8be55dc38b8e080300005f41898e080300005e5b8be55dc3",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?ProcessGrowth@Tiberium@@QAEDHND@Z",
+   "sym_key": "Tiberium::ProcessGrowth"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?Grow@TiberiumClass@@QAEDPAX@Z",
+   "sym_key": "TiberiumClass::Grow"
+  }
+ ]
+}

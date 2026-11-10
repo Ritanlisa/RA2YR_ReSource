@@ -15,13 +15,13 @@ char RandomMap::GrowTiberium()
             while ( v3 < 10 )
             {
                 v6 = 0;
+                ++v3;
+                if ( ((Tiberium *)(this))->ProcessGrowth((int)&v6, 0.0, 0) )
+                {
+                    ++*((unsigned int *)this + 194);
+                    break;
+                }
             }
-            ++v3;
-            if ( ((Tiberium *)(this))->ProcessGrowth((int)&v6, 0.0, 0) )
-            {
-                ++*((unsigned int *)this + 194);
-            }
-            break;
         }
         int v4 = 0;
         char result = 0;
@@ -33,8 +33,8 @@ char RandomMap::GrowTiberium()
             if ( result )
             {
                 ++*((unsigned int *)this + 194);
+                return (char)(result);
             }
-            return (char)(result);
         }
         return (char)(result);
 }

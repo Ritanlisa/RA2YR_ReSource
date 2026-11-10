@@ -35,7 +35,7 @@ int MPCooperative::Revert()
         }
         if ( v6 <= 1 )
         {
-            return (int)(((SideClass *)(**(SideClass ***)(v5 + 4))->FindByName()));
+            return (int)(((SideClass *)(**(SideClass ***)(v5 + 4)))->FindByName());
         }
         return (int)(-2);
 }
@@ -62,16 +62,16 @@ unsigned int * __stdcall MPCooperative::selectTeam(int * p0, int p1, int p2, int
         House * v10;
         if ( stru_A80220.nextArrayIndex > 0 )
         {
-            do v10 = (House *)*((unsigned int *)stru_A80220.vfptr3 + v9);
-            if ( v10 && (unsigned char)((House *)(v10))->IsCurrentPlayer() )
+            do
             {
-                ++v8;
-            }
-            ++v9;
-            while ( v9 < stru_A80220.nextArrayIndex )
-            {
-                v4 = p1;
-            }
+                v10 = (House *)*((unsigned int *)((char **)stru_A80220)[3] + v9);
+                if ( v10 && (unsigned char)((House *)(v10))->IsCurrentPlayer() )
+                {
+                    ++v8;
+                }
+                ++v9;
+            } while ( v9 < stru_A80220.nextArrayIndex );
+            v4 = p1;
         }
         int j;
         void * v12;
@@ -84,15 +84,16 @@ unsigned int * __stdcall MPCooperative::selectTeam(int * p0, int p1, int p2, int
             if ( *(unsigned char *)(vtable2 + p2) )
             {
                 do
-            if ( vtable2 >= *(unsigned int *)(v4 + 16) )
-              break;
+                {
+                    if ( vtable2 >= *(unsigned int *)(v4 + 16) )
+                    {
+                        break;
+                    }
+                    v15 = *(unsigned char *)(vtable2 + p2 + 1);
+                    ++vtable2;
+                } while ( v15 );
             }
-            v15 = *(unsigned char *)(vtable2 + p2 + 1);
-            ++vtable2;
-            while ( v15 )
-            {
-                *(unsigned char *)(vtable2 + p2) = 1;
-            }
+            *(unsigned char *)(vtable2 + p2) = 1;
             *(&g_ScenarioClass_Instance[124].uniqueId + vtable2) = p0;
             v16 = *(void **)(*(unsigned int *)(v4 + 4) + 4 * vtable2);
             this->vtable1 = v16;
@@ -104,8 +105,8 @@ unsigned int * __stdcall MPCooperative::selectTeam(int * p0, int p1, int p2, int
               *(unsigned char *)(j + p2);
               j = (j + 1) % (int)g_ScenarioClass_Instance[127].vfptr2 )
             {
-                *(unsigned char *)(j + p2) = 1;
             }
+            *(unsigned char *)(j + p2) = 1;
             *(&g_ScenarioClass_Instance[124].uniqueId + j) = p0;
             v12 = *(void **)(*(unsigned int *)(p1 + 4) + 4 * j);
             this->vtable1 = v12;

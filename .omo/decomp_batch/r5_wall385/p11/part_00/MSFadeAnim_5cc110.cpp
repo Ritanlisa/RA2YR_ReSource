@@ -4,23 +4,31 @@
 
 void MSFadeAnim::DrawConstructionFrame(int p0, int * p1)
 {
-        int v17 = 0;
-        int v18 = 0;
-        int v19 = 0;
-        int v20 = 0;
+        int v17;
+        v17 = 0;
+        int v18;
+        v18 = 0;
+        int v19;
+        v19 = 0;
+        int v20;
+        v20 = 0;
         if ( p1 == 0 )
         {
             goto LABEL_6;
         }
+        int * FoundationSize;
         int v16[4];
-        int * FoundationSize = Building__GetFoundationSize(v16, *((unsigned int *)this + 10));
+        FoundationSize = Building__GetFoundationSize(v16, *((unsigned int *)this + 10));
         v17 = *FoundationSize;
         v18 = FoundationSize[1];
         v19 = FoundationSize[2];
-        int v5 = this->m008[0] + v18;
+        int v5;
+        v5 = this->m008[0] + v18;
         v20 = FoundationSize[3];
-        int v6 = this->m004[0] + v17;
-        int v7 = *((unsigned int *)this + 14);
+        int v6;
+        v6 = this->m004[0] + v17;
+        int v7;
+        v7 = *((unsigned int *)this + 14);
         v17 = v6;
         v18 = v5;
         int v8;
@@ -30,11 +38,13 @@ void MSFadeAnim::DrawConstructionFrame(int p0, int * p1)
             v17 = *(short *)(v8 + 2) / -2 + v6;
             v18 = *(short *)(v8 + 4) / -2 + v5;
         }
-        int * v9 = ClipRectIntersection(v16, p1, &v17, 0, 0);
+        int * v9;
+        v9 = ClipRectIntersection(v16, p1, &v17, 0, 0);
         v17 = *v9;
         v18 = v9[1];
         v19 = v9[2];
-        int v10 = v9[3];
+        int v10;
+        v10 = v9[3];
         v20 = v10;
         unsigned int v11;
         int v12;
@@ -49,9 +59,13 @@ void MSFadeAnim::DrawConstructionFrame(int p0, int * p1)
             if ( v11 >= 4 )
             {
                 v12 = *((unsigned int *)this + 14);
+                v13 = DataGlobal_830084;
             }
-            v13 = DataGlobal_830084;
-            v13 = *((unsigned int *)this + 14);
+            else
+            {
+                v12 = DataGlobal_830078[v11];
+                v13 = *((unsigned int *)this + 14);
+            }
             v16[0] = this->m004[0];
             v16[1] = this->m008[0];
             v15 = v13 | v12;
@@ -73,9 +87,6 @@ void MSFadeAnim::DrawConstructionFrame(int p0, int * p1)
           0,
           0,
           0);
-        }
-        else
-        {
         }
 }
 

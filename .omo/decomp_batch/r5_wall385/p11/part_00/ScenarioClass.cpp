@@ -21,38 +21,39 @@ void * ScenarioClass::CopyStartPositions()
             if ( g_ScenarioClass_Instance[122].abstractFlags > 0 )
             {
                 v4 = 4416;
-            }
-            v5 = &g_MissionQueueFrame.waypoints[1470];
-            v6 = 4544;
-            while ( 1 )
-            {
-                if ( v4 < 4416 || v3 >= g_MissionQueueFrame.localVariables[162] )
+                v5 = &g_MissionQueueFrame.waypoints[1470];
+                v6 = 4544;
+                while ( 1 )
                 {
-                    v7 = 0;
+                    if ( v4 < 4416 || v3 >= g_MissionQueueFrame.localVariables[162] )
+                    {
+                        v7 = 0;
+                        v8 = 0;
+                    }
+                    else
+                    {
+                        v7 = *(void **)&v5[v4];
+                        v8 = *(void **)&v5[v4 + 4];
+                    }
+                    *(void **)((char *)&v2->vfptr + v4) = v7;
+                    ++v3;
+                    v6 += 4;
+                    *(void **)((char *)&g_ScenarioClass_Instance->vfptr1 + v4) = v8;
+                    v4 += 8;
+                    *(unsigned int *)((char *)g_ScenarioClass_Instance + v6 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v6 + 1302];
+                    v2 = g_ScenarioClass_Instance;
+                    if ( v3 >= g_ScenarioClass_Instance[122].abstractFlags )
+                    {
+                        break;
+                    }
+                    v5 = &g_MissionQueueFrame.waypoints[1470];
                 }
             }
-            v8 = 0;
-            v8 = *(void **)&v5[v4 + 4];
-            *(void **)((char *)&v2->vfptr + v4) = v7;
-            ++v3;
-            v6 += 4;
-            *(void **)((char *)&g_ScenarioClass_Instance->vfptr1 + v4) = v8;
-            v4 += 8;
-            *(unsigned int *)((char *)g_ScenarioClass_Instance + v6 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v6 + 1302];
-            v2 = g_ScenarioClass_Instance;
-            if ( v3 >= g_ScenarioClass_Instance[122].abstractFlags )
-            {
-                break;
-            }
-            v5 = &g_MissionQueueFrame.waypoints[1470];
             v2[122].vfptr1 = (void *)g_MissionQueueFrame.briefing[355];
             g_ScenarioClass_Instance[122].vfptr2 = (void *)g_MissionQueueFrame.briefing[354];
             g_ScenarioClass_Instance[122].vfptr3 = (void *)g_MissionQueueFrame.localVariables[131];
             result = (void *)g_MissionQueueFrame.localVariables[147];
             g_ScenarioClass_Instance[122].uniqueId = g_MissionQueueFrame.localVariables[147];
-        }
-        else
-        {
         }
         return (void *)(result);
 }

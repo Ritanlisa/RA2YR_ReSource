@@ -4,8 +4,10 @@
 
 void MSVQAnim::Play(int p0, int * p1)
 {
-        int MSVQAnim_field_0x1C = this->m01C;
-        MSVQAnim * v15 = this;
+        int MSVQAnim_field_0x1C;
+        MSVQAnim_field_0x1C = this->m01C;
+        MSVQAnim * v15;
+        v15 = this;
         if ( MSVQAnim_field_0x1C == 0 || *((unsigned char *)this + 45) )
         {
             return;
@@ -22,24 +24,32 @@ void MSVQAnim::Play(int p0, int * p1)
           1);
             return;
         }
-        int * v5 = (int *)(MSVQAnim_field_0x1C + 52);
+        int * v5;
+        v5 = (int *)(MSVQAnim_field_0x1C + 52);
         Rect v16;
         ((Rect *)(&v16))->Set(0, 0, 0, 0);
-        int v6 = *v5;
-        int v7 = v5[1];
-        int v8 = v5[2];
-        int v9 = v5[3];
-        int * v19 = (int *)p1[2];
+        int v6;
+        v6 = *v5;
+        int v7;
+        v7 = v5[1];
+        int v8;
+        v8 = v5[2];
+        int v9;
+        v9 = v5[3];
+        int * v19;
+        v19 = (int *)p1[2];
         if ( p1[2] <= 0 )
         {
             goto LABEL_23;
         }
-        int v14 = p1[3];
+        int v14;
+        v14 = p1[3];
         if ( v14 <= 0 || v5[2] <= 0 || v5[3] <= 0 )
         {
             goto LABEL_23;
         }
-        int v10 = *p1;
+        int v10;
+        v10 = *p1;
         if ( v6 < *p1 )
         {
             v8 += v6 - v10;
@@ -49,7 +59,8 @@ void MSVQAnim::Play(int p0, int * p1)
         {
             goto LABEL_21;
         }
-        int v11 = p1[1];
+        int v11;
+        v11 = p1[1];
         if ( v7 < v11 )
         {
             v9 += v7 - v11;

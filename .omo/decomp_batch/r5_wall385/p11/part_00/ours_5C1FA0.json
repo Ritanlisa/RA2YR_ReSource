@@ -14,13 +14,13 @@
   {
    "off": 32,
    "type": "REL32",
-   "sym": "?GetSection@Movie@@QAEDHPAH@Z",
+   "sym": "?GetSection@Movie@@QAEDHPAX@Z",
    "sym_key": "Movie::GetSection"
   },
   {
    "off": 57,
    "type": "REL32",
-   "sym": "?GetState@Movie@@QAEDPAH@Z",
+   "sym": "?GetState@Movie@@QAEDPAX@Z",
    "sym_key": "Movie::GetState"
   },
   {

@@ -39,9 +39,9 @@ void MSOverlayAnim::DrawPlacementPreview(int p0, int * p1)
             if ( (v9 & 0x200) != 0 )
             {
                 v10 = *((unsigned int *)this + 7);
+                v19 = *(short *)(v10 + 2) / -2 + v7;
+                v20 = *(short *)(v10 + 4) / -2 + v8;
             }
-            v19 = *(short *)(v10 + 2) / -2 + v7;
-            v20 = *(short *)(v10 + 4) / -2 + v8;
             if ( p1 == 0
           || (v11 = ClipRectIntersection(v18, p1, &v19, 0, 0),
               v19 = *v11,
@@ -53,18 +53,17 @@ void MSOverlayAnim::DrawPlacementPreview(int p0, int * p1)
           && v12 > 0 )
             {
                 v13 = *((unsigned int *)this + 16);
-            }
-            if ( v13 >= 3 )
-            {
-                v13 = 3;
-            }
-            v14 = DataGlobal_830078[v13];
-            v18[0] = this->m004;
-            v15 = *((unsigned int *)this + 14);
-            v18[1] = this->m008;
-            v17 = v15 | v14;
-            v16 = (int *)(*(int (__stdcall **)(int, char *))(*(unsigned int *)p0 + 120))(p0, v23);
-            DrawToSurfaceSHP(
+                if ( v13 >= 3 )
+                {
+                    v13 = 3;
+                }
+                v14 = DataGlobal_830078[v13];
+                v18[0] = this->m004;
+                v15 = *((unsigned int *)this + 14);
+                v18[1] = this->m008;
+                v17 = v15 | v14;
+                v16 = (int *)(*(int (__stdcall **)(int, char *))(*(unsigned int *)p0 + 120))(p0, v23);
+                DrawToSurfaceSHP(
             p0,
             *((unsigned int *)this + 8),
             *((unsigned int *)this + 7),
@@ -81,6 +80,7 @@ void MSOverlayAnim::DrawPlacementPreview(int p0, int * p1)
             0,
             0,
             0);
+            }
         }
 }
 

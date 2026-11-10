@@ -16,28 +16,28 @@ int HashTree::MarkEntry()
         bool v4;
         if ( g_FileCacheHashRoot )
         {
-            do v3 = v2[2];
-            v4 = v3 < result;
-            if ( v3 == result )
+            do
             {
-                if ( v2[3] )
+                v3 = v2[2];
+                v4 = v3 < result;
+                if ( v3 == result )
                 {
-                    v2[3] = 0;
+                    if ( v2[3] )
+                    {
+                        v2[3] = 0;
+                        return (int)(result);
+                    }
+                    v4 = v3 < result;
                 }
-            }
-            return (int)(result);
-            v4 = v3 < result;
-            if ( v4 )
-            {
-                v2 = (unsigned int *)v2[1];
-            }
-            else
-            {
-                v2 = (unsigned int *)*v2;
-            }
-            while ( v2 )
-            {
-            }
+                if ( v4 )
+                {
+                    v2 = (unsigned int *)v2[1];
+                }
+                else
+                {
+                    v2 = (unsigned int *)*v2;
+                }
+            } while ( v2 );
         }
         return (int)(result);
 }

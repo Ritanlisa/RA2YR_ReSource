@@ -5,23 +5,31 @@
 
 void MSShapeAnim::Draw(int p0, int * p1)
 {
-        int v15 = 0;
-        int v16 = 0;
-        int v17 = 0;
-        int v18 = 0;
+        int v15;
+        v15 = 0;
+        int v16;
+        v16 = 0;
+        int v17;
+        v17 = 0;
+        int v18;
+        v18 = 0;
         if ( p1 == 0 )
         {
             goto LABEL_10;
         }
+        int * FoundationSize;
         int v14[4];
-        int * FoundationSize = Building__GetFoundationSize(v14, *((unsigned int *)this + 10));
+        FoundationSize = Building__GetFoundationSize(v14, *((unsigned int *)this + 10));
         v15 = *FoundationSize;
         v16 = FoundationSize[1];
         v17 = FoundationSize[2];
-        int v5 = *((unsigned int *)this + 2) + v16;
+        int v5;
+        v5 = *((unsigned int *)this + 2) + v16;
         v18 = FoundationSize[3];
-        int v6 = this->m004 + v15;
-        int v7 = *((unsigned int *)this + 14);
+        int v6;
+        v6 = this->m004 + v15;
+        int v7;
+        v7 = *((unsigned int *)this + 14);
         v15 = v6;
         v16 = v5;
         int v8;
@@ -31,11 +39,13 @@ void MSShapeAnim::Draw(int p0, int * p1)
             v15 = *(short *)(v8 + 2) / -2 + v6;
             v16 = *(short *)(v8 + 4) / -2 + v5;
         }
-        int * v9 = ClipRectIntersection(v14, p1, &v15, 0, 0);
+        int * v9;
+        v9 = ClipRectIntersection(v14, p1, &v15, 0, 0);
         v15 = *v9;
         v16 = v9[1];
         v17 = v9[2];
-        int v10 = v9[3];
+        int v10;
+        v10 = v9[3];
         v18 = v10;
         int v11;
         int * v12;
@@ -44,8 +54,8 @@ void MSShapeAnim::Draw(int p0, int * p1)
         if ( v17 > 0 && v10 > 0 )
         {
             LABEL_10:
-        if ( *((unsigned char *)this + 12) )
-          v11 = *((unsigned int *)this + 14);
+        if ( *((unsigned char *)this + 12) );
+            v11 = *((unsigned int *)this + 14);
             v14[0] = this->m004;
             ((v11 >> 8) & 0xFF) |= 4u;
             v13 = v11;

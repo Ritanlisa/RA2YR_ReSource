@@ -9,6 +9,8 @@ class Checksummer;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class HashTree
 {
@@ -37,6 +39,8 @@ extern int _strupr(...);
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Checksummer
 {
@@ -46,7 +50,7 @@ public:
     // DECOMP_SIZECHECK(Checksummer, Checksummer, 16);
 
     // ---- pilot methods (registry signatures)
-    int Add_Buffer(unsigned char * p0, int p1);  // 0x4A1DE0
+    int Add_Buffer(void * p0, int p1);  // 0x4A1DE0
 };
 
 // ---- globals used by this unit (registry names)
