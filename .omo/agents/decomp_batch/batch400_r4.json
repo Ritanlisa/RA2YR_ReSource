@@ -1,0 +1,4002 @@
+[
+ {
+  "addr": "0x5cc970",
+  "name": "MSBinkAnim::Play",
+  "cls": "MSBinkAnim",
+  "size": 155,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x44e3a0",
+  "name": "BuildingClass::CheckOverlapWithOthers",
+  "cls": "BuildingClass",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x624be0",
+  "name": "Dialog::GrowBuffer",
+  "cls": "Dialog",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6252f0",
+  "name": "ComboBoxOwnerDraw::SortItems",
+  "cls": "ComboBoxOwnerDraw",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7ae020",
+  "name": "WOLGameList::GrowBuffer",
+  "cls": "WOLGameList",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7ae0e0",
+  "name": "ComStreamClass::readData",
+  "cls": "ComStreamClass",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7ae510",
+  "name": "HashTable_flat::Grow",
+  "cls": "HashTable_flat",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5b4270",
+  "name": "HashTree::MarkEntry",
+  "cls": "HashTree",
+  "size": 157,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6d5f60",
+  "name": "TacticalClass::SetViewportPosition",
+  "cls": "TacticalClass",
+  "size": 157,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x44f640",
+  "name": "BuildingClass::GetFactoryPosition",
+  "cls": "BuildingClass",
+  "size": 158,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x451330",
+  "name": "BuildingClass::GetCrewCount",
+  "cls": "BuildingClass",
+  "size": 158,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4cbba0",
+  "name": "FootClass::FindPathWithRetry",
+  "cls": "FootClass",
+  "size": 158,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cd4d0",
+  "name": "MSBitPrintAnim::Draw",
+  "cls": "MSBitPrintAnim",
+  "size": 158,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c4ef0",
+  "name": "TaskForceClass::ParseUnitCountAndType",
+  "cls": "TaskForceClass",
+  "size": 158,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a0a50",
+  "name": "EnumConnectionPointsClass::ddtor",
+  "cls": "EnumConnectionPointsClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4566b0",
+  "name": "BuildingClass::GetPowerFrame",
+  "cls": "BuildingClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e0ef0",
+  "name": "HouseClass::UpdateTechBuildings",
+  "cls": "HouseClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e2970",
+  "name": "BuildingLightClass::FindAllTargets",
+  "cls": "BuildingLightClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x523250",
+  "name": "InfantryClass::ComputeTransform",
+  "cls": "InfantryClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5c1fa0",
+  "name": "MPCooperative::Revert",
+  "cls": "MPCooperative",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x41a9e0",
+  "name": "TechnoClass::CanFireAtTarget",
+  "cls": "TechnoClass",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x697e70",
+  "name": "SessionClass::IsValidHouse",
+  "cls": "SessionClass",
+  "size": 160,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x652cf0",
+  "name": "RadarClass::Destru_vt05",
+  "cls": "RadarClass",
+  "size": 160,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x720a80",
+  "name": "Movie::SelectNextBuildableType",
+  "cls": "Movie",
+  "size": 160,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x736d50",
+  "name": "TechnoClass::IsC4AnimationActive",
+  "cls": "TechnoClass",
+  "size": 160,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50eb70",
+  "name": "VectorClass::InsertAt",
+  "cls": "VectorClass",
+  "size": 161,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6403a0",
+  "name": "PowerClass::getDrain",
+  "cls": "PowerClass",
+  "size": 161,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x44d7d0",
+  "name": "BuildingClass::GetTargetFacing",
+  "cls": "BuildingClass",
+  "size": 161,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x644630",
+  "name": "WarheadTypeClass::applyDamage",
+  "cls": "WarheadTypeClass",
+  "size": 161,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x404700",
+  "name": "AudioStream::SetupPlayback",
+  "cls": "AudioStream",
+  "size": 162,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x54da50",
+  "name": "JumpjetLocomotionClass::StubReturnZero_10",
+  "cls": "JumpjetLocomotionClass",
+  "size": 162,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x624fc0",
+  "name": "HashTable_flat::Grow2",
+  "cls": "HashTable_flat",
+  "size": 162,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4756f0",
+  "name": "HouseTypeClass::loadCountryData",
+  "cls": "HouseTypeClass",
+  "size": 162,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6234b0",
+  "name": "SymbolTable::Rebuild",
+  "cls": "SymbolTable",
+  "size": 162,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x70ed80",
+  "name": "TechnoClass::GetAnimationFlags",
+  "cls": "TechnoClass",
+  "size": 163,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4788e0",
+  "name": "ParticleTypeClass::EnsureCapacity",
+  "cls": "ParticleTypeClass",
+  "size": 163,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x59c580",
+  "name": "RandomMap::GrowTiberium",
+  "cls": "RandomMap",
+  "size": 163,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5023b0",
+  "name": "Waypoint::FindByCell",
+  "cls": "Waypoint",
+  "size": 163,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x556a20",
+  "name": "ObjectClass::checkLimbo",
+  "cls": "ObjectClass",
+  "size": 164,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x55a9b0",
+  "name": "LocomotionClass::QueryInterface",
+  "cls": "LocomotionClass",
+  "size": 164,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50df30",
+  "name": "HouseClass::GetStartCoords",
+  "cls": "HouseClass",
+  "size": 164,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x468430",
+  "name": "BulletClass::LoseTarget",
+  "cls": "BulletClass",
+  "size": 164,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5e9290",
+  "name": "NetworkLobby::CheckLobbyConditions",
+  "cls": "NetworkLobby",
+  "size": 164,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4024a0",
+  "name": "AudioSample::ResetState",
+  "cls": "AudioSample",
+  "size": 165,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x70b1d0",
+  "name": "TechnoClass::RevealAreaConditional",
+  "cls": "TechnoClass",
+  "size": 165,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4802a0",
+  "name": "TacticalClass::DrawCellTerrainOverlay",
+  "cls": "TacticalClass",
+  "size": 165,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a00b0",
+  "name": "EnumConnectionsClass::ddtor",
+  "cls": "EnumConnectionsClass",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b3920",
+  "name": "UDPInterfaceClass::Reset",
+  "cls": "UDPInterfaceClass",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a95a0",
+  "name": "MapClass::SetCellFlagsAlongPath",
+  "cls": "MapClass",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a9650",
+  "name": "BuildingClass::MarkExitPath",
+  "cls": "BuildingClass",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a4780",
+  "name": "Surface::CreateSurfacePalette",
+  "cls": "Surface",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4fae50",
+  "name": "SuperWeapon::FireSuperWeaponHouseClass",
+  "cls": "SuperWeapon",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6c6740",
+  "name": "StaticButtonClass::HitTest",
+  "cls": "StaticButtonClass",
+  "size": 166,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4dc810",
+  "name": "FootClass::SetBuildingType",
+  "cls": "FootClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b6080",
+  "name": "UnitClass::CreateUnloadPlacementCraters",
+  "cls": "UnitClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50f9e0",
+  "name": "VectorClass__N::Remove",
+  "cls": "VectorClass__N",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x540c60",
+  "name": "Network::SetConnectionParams",
+  "cls": "Network",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x74c030",
+  "name": "VectorClass_E::Release",
+  "cls": "VectorClass_E",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4ac960",
+  "name": "MapClass::ToggleZoom",
+  "cls": "MapClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x509b20",
+  "name": "HouseClass::Find",
+  "cls": "HouseClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x509c10",
+  "name": "HouseClass::FireStoredSW",
+  "cls": "HouseClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x746810",
+  "name": "UnitClass::PerFrameUpdate",
+  "cls": "UnitClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6da180",
+  "name": "TacticalMap::DrawOccupiedRegion",
+  "cls": "TacticalMap",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x625780",
+  "name": "HashTable_flat::Shrink2",
+  "cls": "HashTable_flat",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6258e0",
+  "name": "ComboBoxOwnerDraw::SetCapacity",
+  "cls": "ComboBoxOwnerDraw",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7adf70",
+  "name": "HashMap::Shrink2",
+  "cls": "HashMap",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7ae460",
+  "name": "HashMap::Shrink",
+  "cls": "HashMap",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7aef50",
+  "name": "ComStreamClass::flushStream",
+  "cls": "ComStreamClass",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x485080",
+  "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
+  "cls": "JumpjetLocomotionClass",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e0110",
+  "name": "ScenarioClass::Create",
+  "cls": "ScenarioClass",
+  "size": 168,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4daf10",
+  "name": "FootClass::UpdateState",
+  "cls": "FootClass",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50fb20",
+  "name": "VectorClass__N::SetCapacity",
+  "cls": "VectorClass__N",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x736ca0",
+  "name": "TechnoClass::UpdateUnitAnimation",
+  "cls": "TechnoClass",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x501160",
+  "name": "CCINIClass::WriteHouses",
+  "cls": "CCINIClass",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x420e90",
+  "name": "AirstrikeClass::UpdateAll",
+  "cls": "AirstrikeClass",
+  "size": 170,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x433330",
+  "name": "BinkMovie::AdjustSurfaceFormat",
+  "cls": "BinkMovie",
+  "size": 170,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x452360",
+  "name": "BuildingClass::PowerOff",
+  "cls": "BuildingClass",
+  "size": 170,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4b5630",
+  "name": "BlitterList::CopyEntry",
+  "cls": "BlitterList",
+  "size": 171,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b1020",
+  "name": "SlaveManagerClass::ShouldWakeUpNow",
+  "cls": "SlaveManagerClass",
+  "size": 171,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x540dc0",
+  "name": "SessionClass::initLAN",
+  "cls": "SessionClass",
+  "size": 171,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x62e380",
+  "name": "ParticleSystemClass::CreateParticle",
+  "cls": "ParticleSystemClass",
+  "size": 171,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x653760",
+  "name": "TacticalClass::PixelToCellCheck",
+  "cls": "TacticalClass",
+  "size": 171,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b4c20",
+  "name": "String::Append",
+  "cls": "String",
+  "size": 172,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x540340",
+  "name": "IPXGlobalConnClass::SendPacket",
+  "cls": "IPXGlobalConnClass",
+  "size": 172,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x722390",
+  "name": "BuildingClass::FreeUpgradeQueue",
+  "cls": "BuildingClass",
+  "size": 172,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x722e50",
+  "name": "BuildingClass::FreeUpgradeQueue2",
+  "cls": "BuildingClass",
+  "size": 172,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x655740",
+  "name": "BuildingClass::RemoveGapCellCoverage",
+  "cls": "BuildingClass",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7036c0",
+  "name": "TechnoClass::TransitionEffectState",
+  "cls": "TechnoClass",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42d8f0",
+  "name": "VectorClass_ushort::Remove",
+  "cls": "VectorClass_ushort",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x54b8d0",
+  "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
+  "cls": "JumpjetLocomotionClass",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7474b0",
+  "name": "UnitTypeClass::CreateUnit",
+  "cls": "UnitTypeClass",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e4150",
+  "name": "TActionClass::executeGeneticMutatorAction",
+  "cls": "TActionClass",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5d74a0",
+  "name": "HouseClass::InitAlliances",
+  "cls": "HouseClass",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x625830",
+  "name": "HashTable_flat::Rebuild2",
+  "cls": "HashTable_flat",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6baef0",
+  "name": "HashTable_flat::RebuildEx",
+  "cls": "HashTable_flat",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7aec00",
+  "name": "HashTable_flat::Shrink",
+  "cls": "HashTable_flat",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4ddb90",
+  "name": "FootClass::MoveToWeed",
+  "cls": "FootClass",
+  "size": 174,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4da030",
+  "name": "InfantryClass::ProcessExitQueue",
+  "cls": "InfantryClass",
+  "size": 175,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42da30",
+  "name": "VectorClass_ushort::SetCapacity",
+  "cls": "VectorClass_ushort",
+  "size": 175,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e1780",
+  "name": "TActionClass::PlayAudioAtRandomWP",
+  "cls": "TActionClass",
+  "size": 175,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x707d20",
+  "name": "TechnoClass::GetCrew",
+  "cls": "TechnoClass",
+  "size": 176,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4e4820",
+  "name": "Lobby::FillPlayerFactions",
+  "cls": "Lobby",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4e5310",
+  "name": "Lobby::InvalidateFactionCombos",
+  "cls": "Lobby",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4e5d60",
+  "name": "Lobby::InvalidatePlayerSlots",
+  "cls": "Lobby",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5e84d0",
+  "name": "GameConfig::ComputeCRC",
+  "cls": "GameConfig",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b2ff0",
+  "name": "UDPInterfaceClass_Destru::Flush",
+  "cls": "UDPInterfaceClass_Destru",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6cf350",
+  "name": "SwizzleManagerClass::ConvertNodes",
+  "cls": "SwizzleManagerClass",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x402330",
+  "name": "AudioController::UpdatePlayback",
+  "cls": "AudioController",
+  "size": 178,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x720140",
+  "name": "AbstractClass::fireWeapon",
+  "cls": "AbstractClass",
+  "size": 178,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4371d0",
+  "name": "Helper::ProcessData",
+  "cls": "Helper",
+  "size": 178,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e1530",
+  "name": "ScenarioClass::PrepareTextDisplay",
+  "cls": "ScenarioClass",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4fd060",
+  "name": "HouseClass::FindBuildingOfType",
+  "cls": "HouseClass",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50e1c0",
+  "name": "TechnoClass::Process",
+  "cls": "TechnoClass",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50e280",
+  "name": "HouseClass::ReactivateTechnos",
+  "cls": "HouseClass",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x565b00",
+  "name": "MapClass::FreeAllCells",
+  "cls": "MapClass",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6c9c60",
+  "name": "BinkMovie::CheckKeyframeTransition",
+  "cls": "BinkMovie",
+  "size": 179,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x49b660",
+  "name": "MPCooperative::processTurn",
+  "cls": "MPCooperative",
+  "size": 180,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5f5fa0",
+  "name": "ObjectClass::SetZ",
+  "cls": "ObjectClass",
+  "size": 180,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x74f960",
+  "name": "GameClass::ReadVersionFile",
+  "cls": "GameClass",
+  "size": 180,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x74fa20",
+  "name": "GameClass::ReadVersionFile2",
+  "cls": "GameClass",
+  "size": 180,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4fc6d0",
+  "name": "HouseClass::ClearLowPowerTargets",
+  "cls": "HouseClass",
+  "size": 181,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x486ff0",
+  "name": "Cell::IsBuildableAdvanced",
+  "cls": "Cell",
+  "size": 182,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cd410",
+  "name": "MSBitPrintAnim::SetText",
+  "cls": "MSBitPrintAnim",
+  "size": 182,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x635060",
+  "name": "FactoryClass::FinishProduction",
+  "cls": "FactoryClass",
+  "size": 183,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b3310",
+  "name": "UDPInterfaceClass::CheckStatus",
+  "cls": "UDPInterfaceClass",
+  "size": 188,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x746420",
+  "name": "TechnoClass::CaptureTurret",
+  "cls": "TechnoClass",
+  "size": 188,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5022f0",
+  "name": "WaypointClass::IsCoordinateUsed",
+  "cls": "WaypointClass",
+  "size": 191,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x433270",
+  "name": "BinkMovie::BlitToTarget",
+  "cls": "BinkMovie",
+  "size": 192,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6ef610",
+  "name": "TeamClass::PlayMemberAnimation",
+  "cls": "TeamClass",
+  "size": 192,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x526960",
+  "name": "INIClass::GetKeyCount",
+  "cls": "INIClass",
+  "size": 193,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b4cd0",
+  "name": "String::Append2",
+  "cls": "String",
+  "size": 195,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b4940",
+  "name": "String::Reassign",
+  "cls": "String",
+  "size": 196,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b5020",
+  "name": "String::Erase",
+  "cls": "String",
+  "size": 196,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e6f20",
+  "name": "BuildingLoadQueue::Find",
+  "cls": "BuildingLoadQueue",
+  "size": 196,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7464e0",
+  "name": "TechnoClass::TransferTurret",
+  "cls": "TechnoClass",
+  "size": 196,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50e0e0",
+  "name": "HouseClass::LostPoweredCenter",
+  "cls": "HouseClass",
+  "size": 198,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c3d00",
+  "name": "CreditsPower::DrawCreditsTextLine",
+  "cls": "CreditsPower",
+  "size": 199,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a0630",
+  "name": "ConnectionPointClass::Unadvise",
+  "cls": "ConnectionPointClass",
+  "size": 200,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x526a30",
+  "name": "INIClass::FindKey",
+  "cls": "INIClass",
+  "size": 200,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b1d10",
+  "name": "AudioQueue::Cleanup",
+  "cls": "AudioQueue",
+  "size": 201,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4035f0",
+  "name": "AudioQueue::FindBestChannel",
+  "cls": "AudioQueue",
+  "size": 202,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b22e0",
+  "name": "AudioQueue::ReadBuffer",
+  "cls": "AudioQueue",
+  "size": 202,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5865f0",
+  "name": "CellClass::SpiralFindClosest",
+  "cls": "CellClass",
+  "size": 202,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b5b80",
+  "name": "String::ToLowerCopy",
+  "cls": "String",
+  "size": 202,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a7900",
+  "name": "DiskLaserClass::PointerGotInvalid",
+  "cls": "DiskLaserClass",
+  "size": 204,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e6ff0",
+  "name": "BuildingLoadQueue::FindObject",
+  "cls": "BuildingLoadQueue",
+  "size": 204,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e7a80",
+  "name": "BuildingLoadQueue::FindBuilding",
+  "cls": "BuildingLoadQueue",
+  "size": 204,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x69b7e0",
+  "name": "SessionClass::AssignColor",
+  "cls": "SessionClass",
+  "size": 205,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5d4b20",
+  "name": "WideString::WordWrap",
+  "cls": "WideString",
+  "size": 205,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x526cc0",
+  "name": "INIClass::GetStringByIndex",
+  "cls": "INIClass",
+  "size": 205,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x578390",
+  "name": "MapClass::IsRectInBounds",
+  "cls": "MapClass",
+  "size": 205,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56e7c0",
+  "name": "MapClass::CheckCellsBuildable",
+  "cls": "MapClass",
+  "size": 206,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b7c60",
+  "name": "UnitClass::ClearTargetRef",
+  "cls": "UnitClass",
+  "size": 206,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4766f0",
+  "name": "ScenarioClass::SaveTypeNameListToINI",
+  "cls": "ScenarioClass",
+  "size": 207,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x431800",
+  "name": "HouseClass::ProcessData",
+  "cls": "HouseClass",
+  "size": 207,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x474b50",
+  "name": "INIClass::GetCoord",
+  "cls": "INIClass",
+  "size": 207,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x720070",
+  "name": "AbstractClass::selectWeapon",
+  "cls": "AbstractClass",
+  "size": 207,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x517cc0",
+  "name": "InfantryClass::PerFrameUpdate",
+  "cls": "InfantryClass",
+  "size": 207,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x54f2f0",
+  "name": "InputManager::EnqueueInputEvent",
+  "cls": "InputManager",
+  "size": 210,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c58c0",
+  "name": "EMPulseClass::IterateCellsInRadius",
+  "cls": "EMPulseClass",
+  "size": 210,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x53fbd0",
+  "name": "IPXGlobalConnClass::Flush",
+  "cls": "IPXGlobalConnClass",
+  "size": 210,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b55f0",
+  "name": "SmudgeTypeClass::vt_entry_A0",
+  "cls": "SmudgeTypeClass",
+  "size": 210,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a60e0",
+  "name": "TextRenderer::Printf",
+  "cls": "TextRenderer",
+  "size": 212,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x52b2b0",
+  "name": "INIClass::deleteSection",
+  "cls": "INIClass",
+  "size": 213,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5388a0",
+  "name": "SortedArray::RemoveByKey",
+  "cls": "SortedArray",
+  "size": 213,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e15f0",
+  "name": "ObjectClass::ReadINIEntry",
+  "cls": "ObjectClass",
+  "size": 215,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a6140",
+  "name": "Sidebar::FindProductionType",
+  "cls": "Sidebar",
+  "size": 216,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x76b0a0",
+  "name": "File::LoadWDTDecompress",
+  "cls": "File",
+  "size": 216,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x71c4d0",
+  "name": "TerrainClass::IsPlacementValid",
+  "cls": "TerrainClass",
+  "size": 217,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a8710",
+  "name": "TabCameoListClass::AddCameo_ReplaceItAll",
+  "cls": "TabCameoListClass",
+  "size": 218,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x475610",
+  "name": "INIClass::SetHouseName",
+  "cls": "INIClass",
+  "size": 219,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x50b760",
+  "name": "BuildingTypeClass::ProcessData",
+  "cls": "BuildingTypeClass",
+  "size": 219,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x465e70",
+  "name": "VectorClass_TPoint3D_int::Release",
+  "cls": "VectorClass_TPoint3D_int",
+  "size": 221,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x474c70",
+  "name": "INIEntry::ReadColor",
+  "cls": "INIEntry",
+  "size": 221,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x638ce0",
+  "name": "ScriptAction::ClassifyAction",
+  "cls": "ScriptAction",
+  "size": 221,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5fed00",
+  "name": "OverlayTypeClass::GetRadarColor",
+  "cls": "OverlayTypeClass",
+  "size": 221,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5f6a70",
+  "name": "ObjectClass::CheckGroundHeightDiff",
+  "cls": "ObjectClass",
+  "size": 224,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4052f0",
+  "name": "VocClass::Release",
+  "cls": "VocClass",
+  "size": 225,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x75f140",
+  "name": "Voxel::loadSectionData",
+  "cls": "Voxel",
+  "size": 226,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42f9c0",
+  "name": "BaseNodeClass_Vector::Release",
+  "cls": "BaseNodeClass_Vector",
+  "size": 226,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5acd30",
+  "name": "MSEngine::Release",
+  "cls": "MSEngine",
+  "size": 226,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x65b800",
+  "name": "RadSiteClass::Tick",
+  "cls": "RadSiteClass",
+  "size": 226,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x557d20",
+  "name": "ListClass::Destru_vt50",
+  "cls": "ListClass",
+  "size": 226,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x49e400",
+  "name": "CampaignClass::FindMission",
+  "cls": "CampaignClass",
+  "size": 227,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6d02b0",
+  "name": "SidebarClass::LoadButtonSHPs",
+  "cls": "SidebarClass",
+  "size": 228,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4071c0",
+  "name": "AudioMixer::PlaySample",
+  "cls": "AudioMixer",
+  "size": 229,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6cb830",
+  "name": "SuperClass::StopPreclickAnim",
+  "cls": "SuperClass",
+  "size": 230,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x448070",
+  "name": "AnimClass::updateAnimation",
+  "cls": "AnimClass",
+  "size": 234,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x71abc0",
+  "name": "FactoryClass::CompleteItem",
+  "cls": "FactoryClass",
+  "size": 234,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4324b0",
+  "name": "BufferIOFileClass::SeekInternal",
+  "cls": "BufferIOFileClass",
+  "size": 234,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5e2be0",
+  "name": "Network::CountDisconnectedHouses",
+  "cls": "Network",
+  "size": 235,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42f4f0",
+  "name": "BaseClass::Release",
+  "cls": "BaseClass",
+  "size": 235,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5aced0",
+  "name": "MSEngine::SetCapacity",
+  "cls": "MSEngine",
+  "size": 235,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x509610",
+  "name": "TriggerClass::ValidateTeamTriggerConditions",
+  "cls": "TriggerClass",
+  "size": 237,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x475f30",
+  "name": "ScenarioClass::SaveIntListToINI",
+  "cls": "ScenarioClass",
+  "size": 238,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x74d670",
+  "name": "ObjectClass::IsCellSuitableForPlacement",
+  "cls": "ObjectClass",
+  "size": 238,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x664440",
+  "name": "EventClass::validateEventType",
+  "cls": "EventClass",
+  "size": 238,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a6a00",
+  "name": "CreateTeamCommand::performAction_245",
+  "cls": "CreateTeamCommand",
+  "size": 240,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6ce0b0",
+  "name": "SuperClass::Reset",
+  "cls": "SuperClass",
+  "size": 240,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x58a8f0",
+  "name": "VectorClass_UHashObject_uint_SubzoneConn::Release",
+  "cls": "VectorClass_UHashObject_uint_SubzoneConn",
+  "size": 241,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x478340",
+  "name": "FilePipe_38::Release",
+  "cls": "FilePipe_38",
+  "size": 242,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48bf40",
+  "name": "ConnectionClass::sendAck",
+  "cls": "ConnectionClass",
+  "size": 242,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42df90",
+  "name": "BitmapClass::ProcessFrame",
+  "cls": "BitmapClass",
+  "size": 245,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x477640",
+  "name": "INIEntry::ReadAbilities",
+  "cls": "INIEntry",
+  "size": 245,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x62d830",
+  "name": "ParticleClass::vt_entry_1E8",
+  "cls": "ParticleClass",
+  "size": 246,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6e6e20",
+  "name": "BuildingLoadQueue::GetNext",
+  "cls": "BuildingLoadQueue",
+  "size": 246,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x475c70",
+  "name": "WeaponTypeClass::ReadVeteranData",
+  "cls": "WeaponTypeClass",
+  "size": 247,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x542520",
+  "name": "IPXManagerClass::ProcessQueue",
+  "cls": "IPXManagerClass",
+  "size": 247,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x58a2a0",
+  "name": "VectorClass_W4PassabilityType::SetCapacity_1",
+  "cls": "VectorClass_W4PassabilityType",
+  "size": 247,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4784f0",
+  "name": "ParticleTypeClass::Release",
+  "cls": "ParticleTypeClass",
+  "size": 248,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b5f80",
+  "name": "Cell::IsWalkable",
+  "cls": "Cell",
+  "size": 248,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x76a3f0",
+  "name": "Map_WorldDominationTour_43::Release",
+  "cls": "Map_WorldDominationTour_43",
+  "size": 249,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x476240",
+  "name": "ObjectTypeClass::ReadTypeListINI",
+  "cls": "ObjectTypeClass",
+  "size": 250,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x475b70",
+  "name": "WeaponTypeClass::ReadTrajectoryData",
+  "cls": "WeaponTypeClass",
+  "size": 251,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4047b0",
+  "name": "AudioStream::SelectRandom",
+  "cls": "AudioStream",
+  "size": 251,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x448160",
+  "name": "FootClass::ProcessPrimarySelect",
+  "cls": "FootClass",
+  "size": 251,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x476a20",
+  "name": "INIClass::WriteSuperWeaponList",
+  "cls": "INIClass",
+  "size": 253,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x658970",
+  "name": "RadarHashVector::Release",
+  "cls": "RadarHashVector",
+  "size": 253,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b44a0",
+  "name": "VectorClass_UUndoInfoStruct::Release",
+  "cls": "VectorClass_UUndoInfoStruct",
+  "size": 253,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6d8530",
+  "name": "DisplayClass::ScrollTacticalView",
+  "cls": "DisplayClass",
+  "size": 254,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6d6070",
+  "name": "Tactical::SetTacticalPosition",
+  "cls": "Tactical",
+  "size": 255,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4ba5a0",
+  "name": "DSurface::Construct",
+  "cls": "DSurface",
+  "size": 257,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x626690",
+  "name": "FlagSystem::GetNextActive",
+  "cls": "FlagSystem",
+  "size": 257,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x53f0e0",
+  "name": "Network::FormatAddress",
+  "cls": "Network",
+  "size": 258,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4d2a10",
+  "name": "FoggedObject_DrawVector::Release",
+  "cls": "FoggedObject_DrawVector",
+  "size": 259,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x661850",
+  "name": "Random::AdvanceRandomBytes",
+  "cls": "Random",
+  "size": 259,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b4650",
+  "name": "VectorClass_UUndoInfoStruct::SetCapacity",
+  "cls": "VectorClass_UUndoInfoStruct",
+  "size": 259,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x475150",
+  "name": "BulletTypeClass::ReadTrajectoryFlags",
+  "cls": "BulletTypeClass",
+  "size": 260,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5c2de0",
+  "name": "MPCooperative::selectTeam",
+  "cls": "MPCooperative",
+  "size": 261,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x69deb0",
+  "name": "ShapeButton::Draw",
+  "cls": "ShapeButton",
+  "size": 262,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x658b10",
+  "name": "RadarHashVector::ComputeHashIndex",
+  "cls": "RadarHashVector",
+  "size": 263,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6ea3e0",
+  "name": "TeamClass::UpdateReadinessState",
+  "cls": "TeamClass",
+  "size": 264,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4d2bc0",
+  "name": "FoggedObjectClass::ResizeArray",
+  "cls": "FoggedObjectClass",
+  "size": 269,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x656cb0",
+  "name": "RadarClass::SetViewMode",
+  "cls": "RadarClass",
+  "size": 269,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5855a0",
+  "name": "LayerClass::AssignCellOwnership",
+  "cls": "LayerClass",
+  "size": 270,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x62e4c0",
+  "name": "ParticleClass::CreateInstance",
+  "cls": "ParticleClass",
+  "size": 270,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c9ea0",
+  "name": "ProductionClass::StartTimer",
+  "cls": "ProductionClass",
+  "size": 272,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6dc660",
+  "name": "VectorClass_UDirtyAreaStruct::Release",
+  "cls": "VectorClass_UDirtyAreaStruct",
+  "size": 274,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x586780",
+  "name": "MapClass::IsAreaFree",
+  "cls": "MapClass",
+  "size": 278,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x432ab0",
+  "name": "BinkMovieHandle::RenderFrameClipped",
+  "cls": "BinkMovieHandle",
+  "size": 279,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4afb80",
+  "name": "JumpjetLocomotionClass::StubReturnTrue",
+  "cls": "JumpjetLocomotionClass",
+  "size": 150,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x69f290",
+  "name": "JumpjetLocomotionClass::StubReturnTrue_5",
+  "cls": "JumpjetLocomotionClass",
+  "size": 150,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493a60",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+  "cls": "BlitTransXlatAlpha_ushort",
+  "size": 151,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a5090",
+  "name": "SidebarClass::InitPositions",
+  "cls": "SidebarClass",
+  "size": 152,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x763a50",
+  "name": "Waypoint::FindCell",
+  "cls": "Waypoint",
+  "size": 152,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c93d0",
+  "name": "ProgressTimer::GetValue",
+  "cls": "ProgressTimer",
+  "size": 153,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493cc0",
+  "name": "BlitPlainXlatAlpha_ushort::AddRef",
+  "cls": "BlitPlainXlatAlpha_ushort",
+  "size": 156,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493930",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+  "cls": "BlitTransXlatAlpha_ushort",
+  "size": 157,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493b90",
+  "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
+  "cls": "BlitTransXlatAlpha_ushort",
+  "size": 157,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c9530",
+  "name": "MovementClass::CompareAbsCoords",
+  "cls": "MovementClass",
+  "size": 157,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x408a70",
+  "name": "AudioMixer::SetupChannels",
+  "cls": "AudioMixer",
+  "size": 159,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4664c0",
+  "name": "Particle::Init",
+  "cls": "Particle",
+  "size": 160,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x602ae0",
+  "name": "Dialog::IsSpecialTemplate",
+  "cls": "Dialog",
+  "size": 161,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493df0",
+  "name": "BlitTransXlatAlpha_ushort::AddRef",
+  "cls": "BlitTransXlatAlpha_ushort",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7c35c0",
+  "name": "AbstractClass::finalizeDestruction",
+  "cls": "AbstractClass",
+  "size": 167,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4336c0",
+  "name": "BinkMovieClass::ReleaseRenderSurface",
+  "cls": "BinkMovieClass",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a94f0",
+  "name": "CoordList::GetBounds",
+  "cls": "CoordList",
+  "size": 169,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x65c7e0",
+  "name": "Random::Range",
+  "cls": "Random",
+  "size": 173,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x578540",
+  "name": "Type::CheckAmbiguity",
+  "cls": "Type",
+  "size": 175,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x636ce0",
+  "name": "ScriptAction::ClearBuildingState",
+  "cls": "ScriptAction",
+  "size": 176,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x53ee70",
+  "name": "GUID::Compare",
+  "cls": "GUID",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x53ef60",
+  "name": "Network::processPacket",
+  "cls": "Network",
+  "size": 177,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x578290",
+  "name": "LayerClass::CellIteratorNext",
+  "cls": "LayerClass",
+  "size": 178,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a80a0",
+  "name": "TabClass::updateTabProduction",
+  "cls": "TabClass",
+  "size": 184,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x493f30",
+  "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
+  "cls": "BlitTransZRemapXlatAlpha_ushort",
+  "size": 186,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4941e0",
+  "name": "BlitTransLucent50Alpha_ushort::AddRef",
+  "cls": "BlitTransLucent50Alpha_ushort",
+  "size": 191,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494080",
+  "name": "BlitTransLucent75Alpha_ushort::AddRef",
+  "cls": "BlitTransLucent75Alpha_ushort",
+  "size": 197,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494330",
+  "name": "BlitTransLucent25Alpha_ushort::AddRef",
+  "cls": "BlitTransLucent25Alpha_ushort",
+  "size": 197,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6da080",
+  "name": "PlayerClass::HasOccupiedCell",
+  "cls": "PlayerClass",
+  "size": 213,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x578460",
+  "name": "LayerClass::IsWithinUsableArea",
+  "cls": "LayerClass",
+  "size": 215,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4335e0",
+  "name": "BinkMovieClass::AllocateRenderSurface",
+  "cls": "BinkMovieClass",
+  "size": 217,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494b60",
+  "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
+  "cls": "BlitTransXlatAlphaZRead_ushort",
+  "size": 218,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495a50",
+  "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+  "cls": "BlitTransZRemapXlatAlphaZReadWrite_ushort",
+  "size": 218,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42a5b0",
+  "name": "CellClass::ClearOccupancyGrid",
+  "cls": "CellClass",
+  "size": 222,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494c40",
+  "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
+  "cls": "BlitTransXlatAlphaZRead_ushort",
+  "size": 223,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c9220",
+  "name": "FacingClass::Update",
+  "cls": "FacingClass",
+  "size": 223,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4958d0",
+  "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
+  "cls": "BlitTransXlatAlphaZReadWrite_ushort",
+  "size": 225,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x58bb30",
+  "name": "ScenarioClass::CopyStartPositions",
+  "cls": "ScenarioClass",
+  "size": 231,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x433770",
+  "name": "BinkMovieClass::OpenFile",
+  "cls": "BinkMovieClass",
+  "size": 232,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48b2a0",
+  "name": "Struct::ClearAllMemberFlags",
+  "cls": "Struct",
+  "size": 239,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x487f40",
+  "name": "Rect::Union",
+  "cls": "Rect",
+  "size": 240,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7dfc00",
+  "name": "Voxel::FacePixelBuffer3",
+  "cls": "Voxel",
+  "size": 246,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494d90",
+  "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "cls": "BlitTransZRemapXlatAlphaZRead_ushort",
+  "size": 248,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4950c0",
+  "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+  "cls": "BlitTransLucent50AlphaZRead_ushort",
+  "size": 256,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495590",
+  "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "cls": "BlitTransLucent50AlphaZReadWarp_ushort",
+  "size": 262,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495d60",
+  "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+  "cls": "BlitTransLucent50AlphaZReadWrite_ushort",
+  "size": 264,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4978c0",
+  "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
+  "cls": "RLEBlitTransXlatAlpha_ushort",
+  "size": 265,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7df9c0",
+  "name": "Voxel::FacePixelBuffer",
+  "cls": "Voxel",
+  "size": 265,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7dfae0",
+  "name": "Voxel::FacePixelBufferEx",
+  "cls": "Voxel",
+  "size": 265,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x494f20",
+  "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+  "cls": "BlitTransLucent75AlphaZRead_ushort",
+  "size": 267,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495250",
+  "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+  "cls": "BlitTransLucent25AlphaZRead_ushort",
+  "size": 267,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495bc0",
+  "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+  "cls": "BlitTransLucent75AlphaZReadWrite_ushort",
+  "size": 268,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495f00",
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "cls": "BlitTransLucent25AlphaZReadWrite_ushort",
+  "size": 268,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497610",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
+  "cls": "RLEBlitTransZRemapXlatAlpha_ushort",
+  "size": 271,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4953f0",
+  "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+  "cls": "BlitTransLucent75AlphaZReadWarp_ushort",
+  "size": 272,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x495730",
+  "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+  "cls": "BlitTransLucent25AlphaZReadWarp_ushort",
+  "size": 272,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x517440",
+  "name": "Color::ConvertToRGB",
+  "cls": "Color",
+  "size": 277,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4974b0",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
+  "cls": "RLEBlitTransZRemapXlatAlpha_ushort",
+  "size": 278,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497760",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
+  "cls": "RLEBlitTransZRemapXlatAlpha_ushort",
+  "size": 278,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497a10",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+  "cls": "RLEBlitTransZRemapXlatAlpha_ushort",
+  "size": 290,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4bbb00",
+  "name": "DSurface::BlitStretch",
+  "cls": "DSurface",
+  "size": 291,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x586ac0",
+  "name": "JumpjetLocomotionClass::ClampToCellBounds",
+  "cls": "JumpjetLocomotionClass",
+  "size": 292,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497cf0",
+  "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+  "cls": "RLEBlitTransLucent50Alpha_ushort",
+  "size": 299,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497b80",
+  "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+  "cls": "RLEBlitTransLucent75Alpha_ushort",
+  "size": 301,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497e60",
+  "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+  "cls": "RLEBlitTransLucent25Alpha_ushort",
+  "size": 301,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x75edf0",
+  "name": "Voxel::BlendShadowColor",
+  "cls": "Voxel",
+  "size": 310,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x433f50",
+  "name": "MessageListClass::CountCharsInWidth",
+  "cls": "MessageListClass",
+  "size": 331,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48b890",
+  "name": "PacketQueue::ReleaseEntry",
+  "cls": "PacketQueue",
+  "size": 331,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x760190",
+  "name": "Voxel::BlendColor",
+  "cls": "Voxel",
+  "size": 332,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5975e0",
+  "name": "SettingsClass::ClampValues",
+  "cls": "SettingsClass",
+  "size": 334,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x497fd0",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+  "cls": "RLEBlitTransXlatAlphaZRead_ushort",
+  "size": 381,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x498150",
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
+  "cls": "RLEBlitTransXlatAlphaZRead_ushort",
+  "size": 386,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x753e00",
+  "name": "Viewport::Clear",
+  "cls": "Viewport",
+  "size": 387,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7c81db",
+  "name": "AudioCodec::Decode",
+  "cls": "AudioCodec",
+  "size": 391,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x69db30",
+  "name": "SHA1::Transform",
+  "cls": "SHA1",
+  "size": 405,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7bd2d0",
+  "name": "AudioStream::CalcReadPos",
+  "cls": "AudioStream",
+  "size": 406,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x756f80",
+  "name": "VoxelModel::ParseSectionData",
+  "cls": "VoxelModel",
+  "size": 411,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4990e0",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+  "cls": "RLEBlitTransXlatAlphaZReadWrite_ushort",
+  "size": 415,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x756dd0",
+  "name": "VoxelModel::LoadVXLHeader",
+  "cls": "VoxelModel",
+  "size": 417,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x499280",
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
+  "cls": "RLEBlitTransXlatAlphaZReadWrite_ushort",
+  "size": 420,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48b570",
+  "name": "PacketQueue::ExtractEntry",
+  "cls": "PacketQueue",
+  "size": 424,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4982e0",
+  "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "cls": "RLEBlitTransZRemapXlatAlphaZRead_ushort",
+  "size": 426,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4986d0",
+  "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
+  "cls": "RLEBlitTransLucent50AlphaZRead_ushort",
+  "size": 428,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x498cd0",
+  "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "cls": "RLEBlitTransLucent50AlphaZReadWarp_ushort",
+  "size": 433,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x757e70",
+  "name": "VoxelRenderer::ProcessVoxelData",
+  "cls": "VoxelRenderer",
+  "size": 438,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4984d0",
+  "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
+  "cls": "RLEBlitTransLucent75AlphaZRead_ushort",
+  "size": 443,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4988c0",
+  "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
+  "cls": "RLEBlitTransLucent25AlphaZRead_ushort",
+  "size": 443,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x758030",
+  "name": "VoxelRenderer::RenderFrame",
+  "cls": "VoxelRenderer",
+  "size": 446,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x498ac0",
+  "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
+  "cls": "RLEBlitTransLucent75AlphaZReadWarp_ushort",
+  "size": 454,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x498ed0",
+  "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
+  "cls": "RLEBlitTransLucent25AlphaZReadWarp_ushort",
+  "size": 454,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x499650",
+  "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
+  "cls": "RLEBlitTransLucent75AlphaZReadWrite_ushort",
+  "size": 457,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x499a90",
+  "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "cls": "RLEBlitTransLucent25AlphaZReadWrite_ushort",
+  "size": 457,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x499430",
+  "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
+  "cls": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort",
+  "size": 468,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4863d0",
+  "name": "CellLand::IsBuildable",
+  "cls": "CellLand",
+  "size": 477,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x757790",
+  "name": "VoxelRenderer::DrawSectionLines",
+  "cls": "VoxelRenderer",
+  "size": 483,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x499860",
+  "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
+  "cls": "RLEBlitTransLucent50AlphaZReadWrite_ushort",
+  "size": 485,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7575a0",
+  "name": "VoxelRenderer::DrawSection",
+  "cls": "VoxelRenderer",
+  "size": 491,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a8220",
+  "name": "SidebarClass::InitCameoGrid",
+  "cls": "SidebarClass",
+  "size": 268,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 2
+ },
+ {
+  "addr": "0x4b4b00",
+  "name": "JumpjetLocomotionClass::StubReturnZero_2",
+  "cls": "JumpjetLocomotionClass",
+  "size": 217,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 5
+ },
+ {
+  "addr": "0x6a4130",
+  "name": "JumpjetLocomotionClass::StubReturnZero_15",
+  "cls": "JumpjetLocomotionClass",
+  "size": 217,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 5
+ },
+ {
+  "addr": "0x552b10",
+  "name": "Scenario::ComputeDisplayPosition",
+  "cls": "Scenario",
+  "size": 194,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": true,
+  "n_ds": 6
+ },
+ {
+  "addr": "0x42dca0",
+  "name": "Pathfinding::SiftDown",
+  "cls": "Pathfinding",
+  "size": 184,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5ad870",
+  "name": "Heap::SiftDown",
+  "cls": "Heap",
+  "size": 184,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x758ea0",
+  "name": "VoxelRenderer::ProjectVertex",
+  "cls": "VoxelRenderer",
+  "size": 198,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5ac960",
+  "name": "PriorityQueue::Pop",
+  "cls": "PriorityQueue",
+  "size": 241,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6632e0",
+  "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
+  "cls": "JumpjetLocomotionClass",
+  "size": 218,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 1
+ },
+ {
+  "addr": "0x41fe20",
+  "name": "AITriggerTypeClass::RegisterFailure",
+  "cls": "AITriggerTypeClass",
+  "size": 187,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 4
+ },
+ {
+  "addr": "0x41fd60",
+  "name": "AITriggerTypeClass::RegisterSuccess",
+  "cls": "AITriggerTypeClass",
+  "size": 191,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 4
+ },
+ {
+  "addr": "0x4caf20",
+  "name": "VoxelAnimClass::ProcessFrame",
+  "cls": "VoxelAnimClass",
+  "size": 314,
+  "family": "fresh4",
+  "n_calls": 0,
+  "no_float": false,
+  "n_ds": 8
+ },
+ {
+  "addr": "0x480510",
+  "name": "BuildingPlacement::ValidateType",
+  "cls": "BuildingPlacement",
+  "size": 283,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6da230",
+  "name": "DisplayClass::GetCoordDelta",
+  "cls": "DisplayClass",
+  "size": 284,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5bd0d0",
+  "name": "Debug::ScrollText",
+  "cls": "Debug",
+  "size": 287,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x588ac0",
+  "name": "LayerClass::ClearFactoryCellAssignments",
+  "cls": "LayerClass",
+  "size": 289,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4c9b20",
+  "name": "FactoryClass::UpdateProduction",
+  "cls": "FactoryClass",
+  "size": 290,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56d100",
+  "name": "MapSeed::CheckTileMatch",
+  "cls": "MapSeed",
+  "size": 290,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4adba0",
+  "name": "ScenarioClass::ProcessGame",
+  "cls": "ScenarioClass",
+  "size": 291,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x484050",
+  "name": "Tactical::CreateTacticalLightSurface",
+  "cls": "Tactical",
+  "size": 292,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6b7100",
+  "name": "TaskManager::Update",
+  "cls": "TaskManager",
+  "size": 294,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cbb80",
+  "name": "MSOverlayAnim::Draw",
+  "cls": "MSOverlayAnim",
+  "size": 298,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x455c20",
+  "name": "ObjectClass::GetScreenCoords",
+  "cls": "ObjectClass",
+  "size": 302,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a2cd0",
+  "name": "CStreamClass::CopyStreamToBuffer",
+  "cls": "CStreamClass",
+  "size": 302,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x589370",
+  "name": "VectorClass::AllocateCellDataBuffer",
+  "cls": "VectorClass",
+  "size": 303,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x526810",
+  "name": "INIClass::BinarySearchSection",
+  "cls": "INIClass",
+  "size": 305,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56d5a0",
+  "name": "CellClass::DetermineTileConnectivity",
+  "cls": "CellClass",
+  "size": 306,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x586360",
+  "name": "Cell::IsPassable",
+  "cls": "Cell",
+  "size": 309,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48b750",
+  "name": "ConnectionClass::allocPacketSlot",
+  "cls": "ConnectionClass",
+  "size": 310,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x405d40",
+  "name": "AudioController::Stop",
+  "cls": "AudioController",
+  "size": 312,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cc550",
+  "name": "ScenarioClass::DrawPlacementPreview",
+  "cls": "ScenarioClass",
+  "size": 313,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x472160",
+  "name": "CaptureManagerClass::DrawLinks",
+  "cls": "CaptureManagerClass",
+  "size": 314,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x547230",
+  "name": "TacticalClass::DrawCellOverlay",
+  "cls": "TacticalClass",
+  "size": 315,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56d460",
+  "name": "Cell::SetRadar",
+  "cls": "Cell",
+  "size": 315,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x405c00",
+  "name": "AudioFileClass::Release",
+  "cls": "AudioFileClass",
+  "size": 315,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cc110",
+  "name": "ScenarioClass::DrawConstructionFrame",
+  "cls": "ScenarioClass",
+  "size": 316,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x578710",
+  "name": "MapClass::SpiralSearch",
+  "cls": "MapClass",
+  "size": 317,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5f4730",
+  "name": "ObjectClass::GetPlacementScreenRect",
+  "cls": "ObjectClass",
+  "size": 319,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a8bf0",
+  "name": "Mouse::SetBounds",
+  "cls": "Mouse",
+  "size": 321,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a8d50",
+  "name": "MIXClass::CopyHeader",
+  "cls": "MIXClass",
+  "size": 321,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6ac5f0",
+  "name": "TActionClass::executeHarvestAction",
+  "cls": "TActionClass",
+  "size": 323,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x65a820",
+  "name": "ObjectClass::ProcessGroupInput",
+  "cls": "ObjectClass",
+  "size": 329,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x54fe60",
+  "name": "TimerClass::Construct",
+  "cls": "TimerClass",
+  "size": 331,
+  "family": "fresh4",
+  "n_calls": 1,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x68c710",
+  "name": "FontClass::InitMetrics",
+  "cls": "FontClass",
+  "size": 335,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x48b410",
+  "name": "ConnectionClass::queueSendPacket",
+  "cls": "ConnectionClass",
+  "size": 339,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5cd0e0",
+  "name": "MSVQAnim::Play",
+  "cls": "MSVQAnim",
+  "size": 350,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4b0c40",
+  "name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "cls": "JumpjetLocomotionClass",
+  "size": 350,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6a0310",
+  "name": "WalkLocomotionClass::SetWaypointTarget",
+  "cls": "WalkLocomotionClass",
+  "size": 350,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x54f050",
+  "name": "EventQueue::Read",
+  "cls": "EventQueue",
+  "size": 354,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7248c0",
+  "name": "TooltipClass::GetText",
+  "cls": "TooltipClass",
+  "size": 361,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56d230",
+  "name": "MapClass::GetTileIndex",
+  "cls": "MapClass",
+  "size": 362,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7b0f50",
+  "name": "NetworkOptions::ApplySettings",
+  "cls": "NetworkOptions",
+  "size": 364,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x42e820",
+  "name": "BridgeClass::GetCellData",
+  "cls": "BridgeClass",
+  "size": 368,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x5ce8c0",
+  "name": "MSPCXAnim::Draw",
+  "cls": "MSPCXAnim",
+  "size": 369,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a2600",
+  "name": "CountdownTimer::UpdateDisplay",
+  "cls": "CountdownTimer",
+  "size": 369,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x56bd40",
+  "name": "CrateClass::FindPlacement",
+  "cls": "CrateClass",
+  "size": 370,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7bcfb0",
+  "name": "TacticalMap::FillScanlinesOpaque",
+  "cls": "TacticalMap",
+  "size": 371,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x411330",
+  "name": "TacticalClass::FillScanlinesTransparent",
+  "cls": "TacticalClass",
+  "size": 377,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6d6410",
+  "name": "Terrain::ClimbCheck",
+  "cls": "Terrain",
+  "size": 379,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x47ff80",
+  "name": "CellClass::GetScreenRect",
+  "cls": "CellClass",
+  "size": 392,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x71d160",
+  "name": "TerrainClass::Export",
+  "cls": "TerrainClass",
+  "size": 398,
+  "family": "fresh4",
+  "n_calls": 3,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x4a61c0",
+  "name": "TextRenderer::DrawText",
+  "cls": "TextRenderer",
+  "size": 416,
+  "family": "fresh4",
+  "n_calls": 4,
+  "no_float": true,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x6da7d0",
+  "name": "Tactical::AddCellToDrawList",
+  "cls": "Tactical",
+  "size": 424,
+  "family": "fresh4",
+  "n_calls": 2,
+  "no_float": true,
+  "n_ds": 0
+ }
+]

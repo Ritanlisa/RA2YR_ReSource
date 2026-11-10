@@ -1,0 +1,1641 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cc970 MSBinkAnim::Play -> MSBinkAnim
+[conv] 0x44e3a0 BuildingClass::CheckOverlapWithOthers -> BuildingClass
+[conv] 0x624be0 Dialog::GrowBuffer -> Dialog
+[conv] 0x6252f0 ComboBoxOwnerDraw::SortItems -> ComboBoxOwnerDraw
+[conv] 0x7ae020 WOLGameList::GrowBuffer -> WOLGameList
+[conv] 0x7ae0e0 ComStreamClass::readData -> ComStreamClass
+[conv] 0x7ae510 HashTable::Grow -> HashTable
+[conv] 0x5b4270 HashTree::MarkEntry -> HashTree
+[conv] 0x6d5f60 TacticalClass::SetViewportPosition -> TacticalClass
+[conv] 0x44f640 BuildingClass::GetFactoryPosition -> BuildingClass
+[conv] 0x451330 BuildingClass::GetCrewCount -> BuildingClass
+[conv] 0x4cbba0 FootClass::FindPathWithRetry -> FootClass
+[conv] 0x5cd4d0 MSBitPrintAnim::Draw -> MSBitPrintAnim
+[conv] 0x4c4ef0 TaskForceClass::ParseUnitCountAndType -> TaskForceClass
+[conv] 0x4a0a50 EnumConnectionPointsClass::ddtor -> EnumConnectionPointsClass
+[conv] 0x4566b0 TechnoClass::GetPowerFrame -> TechnoClass
+[conv] 0x6e0ef0 HouseClass::UpdateTechBuildings -> HouseClass
+[conv] 0x6e2970 BuildingLightClass::FindAllTargets -> BuildingLightClass
+[conv] 0x523250 InfantryClass::ComputeTransform -> InfantryClass
+[conv] 0x5c1fa0 MPCooperative::Revert -> MPCooperative
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MSBinkAnim               rc=2
+[era] BuildingClass            rc=2
+[era] Dialog                   rc=2
+[era] ComboBoxOwnerDraw        rc=2
+[era] WOLGameList              rc=2
+[era] ComStreamClass           rc=2
+[era] HashTable                rc=2
+[era] HashTree                 rc=2
+[era] TacticalClass            rc=2
+[era] FootClass                rc=2
+[era] MSBitPrintAnim           rc=2
+[era] TaskForceClass           rc=2
+[era] EnumConnectionPointsClass rc=2
+[era] TechnoClass              rc=2
+[era] HouseClass               rc=2
+[era] BuildingLightClass       rc=2
+[era] InfantryClass            rc=2
+[era] MPCooperative            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5cc970 MSBinkAnim::Play -> PENDING (attempt 3)
+[ledger] 0x44e3a0 BuildingClass::CheckOverlapWithOthers -> PENDING (attempt 3)
+[ledger] 0x624be0 Dialog::GrowBuffer -> PENDING (attempt 3)
+[ledger] 0x6252f0 ComboBoxOwnerDraw::SortItems -> PENDING (attempt 3)
+[ledger] 0x7ae020 WOLGameList::GrowBuffer -> PENDING (attempt 3)
+[ledger] 0x7ae0e0 ComStreamClass::readData -> PENDING (attempt 3)
+[ledger] 0x7ae510 HashTable_flat::Grow -> PENDING (attempt 3)
+[ledger] 0x5b4270 HashTree::MarkEntry -> PENDING (attempt 3)
+[ledger] 0x6d5f60 TacticalClass::SetViewportPosition -> PENDING (attempt 3)
+[ledger] 0x44f640 BuildingClass::GetFactoryPosition -> PENDING (attempt 3)
+[ledger] 0x451330 BuildingClass::GetCrewCount -> PENDING (attempt 3)
+[ledger] 0x4cbba0 FootClass::FindPathWithRetry -> PENDING (attempt 3)
+[ledger] 0x5cd4d0 MSBitPrintAnim::Draw -> PENDING (attempt 3)
+[ledger] 0x4c4ef0 TaskForceClass::ParseUnitCountAndType -> PENDING (attempt 3)
+[ledger] 0x4a0a50 EnumConnectionPointsClass::ddtor -> PENDING (attempt 3)
+[ledger] 0x4566b0 BuildingClass::GetPowerFrame -> PENDING (attempt 3)
+[ledger] 0x6e0ef0 HouseClass::UpdateTechBuildings -> PENDING (attempt 3)
+[ledger] 0x6e2970 BuildingLightClass::FindAllTargets -> PENDING (attempt 3)
+[ledger] 0x523250 InfantryClass::ComputeTransform -> PENDING (attempt 3)
+[ledger] 0x5c1fa0 MPCooperative::Revert -> PENDING (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p00\batch_report.json
+PART 0: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p00
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x41a9e0 TechnoClass::CanFireAtTarget -> TechnoClass
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x652cf0 RadarClass::Destru_vt05 -> RadarClass
+[conv] 0x720a80 Movie::SelectNextBuildableType -> Movie
+[conv] 0x736d50 TechnoClass::IsC4AnimationActive -> TechnoClass
+[conv] 0x50eb70 DynamicVectorClass::InsertAt -> DynamicVectorClass
+[conv] 0x6403a0 PowerClass::getDrain -> PowerClass
+[conv] 0x44d7d0 BuildingClass::GetTargetFacing -> BuildingClass
+[conv] 0x644630 WarheadTypeClass::applyDamage -> WarheadTypeClass
+[conv] 0x404700 AudioStream::SetupPlayback -> AudioStream
+[conv] 0x54da50 JumpjetLocomotionClass::StubReturnZero_10 -> JumpjetLocomotionClass
+[conv] 0x624fc0 HashTable::Grow2 -> HashTable
+[conv] 0x4756f0 HouseTypeClass::loadCountryData -> HouseTypeClass
+[conv] 0x6234b0 SymbolTable::Rebuild -> SymbolTable
+[conv] 0x70ed80 TechnoClass::GetAnimationFlags -> TechnoClass
+[conv] 0x4788e0 ParticleTypeClass::EnsureCapacity -> ParticleTypeClass
+[conv] 0x59c580 RandomMap::GrowTiberium -> RandomMap
+[conv] 0x5023b0 Waypoint::FindByCell -> Waypoint
+[conv] 0x556a20 ObjectClass::checkLimbo -> ObjectClass
+[conv] 0x55a9b0 LocomotionClass::QueryInterface -> LocomotionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] SessionClass             rc=2
+[era] RadarClass               rc=2
+[era] Movie                    rc=2
+[era] DynamicVectorClass       rc=0
+[era] PowerClass               rc=2
+[era] BuildingClass            rc=2
+[era] WarheadTypeClass         rc=2
+[era] AudioStream              rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] HashTable                rc=2
+[era] HouseTypeClass           rc=2
+[era] SymbolTable              rc=2
+[era] ParticleTypeClass        rc=2
+[era] RandomMap                rc=2
+[era] Waypoint                 rc=2
+[era] ObjectClass              rc=2
+[era] LocomotionClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x50eb70   MISMATCH         DynamicVectorClass::InsertAt
+[ledger] 0x41a9e0 TechnoClass::CanFireAtTarget -> PENDING (attempt 2)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> PENDING (attempt 2)
+[ledger] 0x652cf0 RadarClass::Destru_vt05 -> PENDING (attempt 2)
+[ledger] 0x720a80 Movie::SelectNextBuildableType -> PENDING (attempt 2)
+[ledger] 0x736d50 TechnoClass::IsC4AnimationActive -> PENDING (attempt 2)
+[ledger] 0x50eb70 VectorClass::InsertAt -> NG (attempt 2)
+[ledger] 0x6403a0 PowerClass::getDrain -> PENDING (attempt 2)
+[ledger] 0x44d7d0 BuildingClass::GetTargetFacing -> PENDING (attempt 2)
+[ledger] 0x644630 WarheadTypeClass::applyDamage -> PENDING (attempt 2)
+[ledger] 0x404700 AudioStream::SetupPlayback -> PENDING (attempt 2)
+[ledger] 0x54da50 JumpjetLocomotionClass::StubReturnZero_10 -> PENDING (attempt 2)
+[ledger] 0x624fc0 HashTable_flat::Grow2 -> PENDING (attempt 2)
+[ledger] 0x4756f0 HouseTypeClass::loadCountryData -> PENDING (attempt 2)
+[ledger] 0x6234b0 SymbolTable::Rebuild -> PENDING (attempt 2)
+[ledger] 0x70ed80 TechnoClass::GetAnimationFlags -> PENDING (attempt 2)
+[ledger] 0x4788e0 ParticleTypeClass::EnsureCapacity -> PENDING (attempt 2)
+[ledger] 0x59c580 RandomMap::GrowTiberium -> PENDING (attempt 2)
+[ledger] 0x5023b0 Waypoint::FindByCell -> PENDING (attempt 2)
+[ledger] 0x556a20 ObjectClass::checkLimbo -> PENDING (attempt 2)
+[ledger] 0x55a9b0 LocomotionClass::QueryInterface -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p01\batch_report.json
+PART 1: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p01
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x50df30 HouseClass::GetStartCoords -> HouseClass
+[conv] 0x468430 BulletClass::LoseTarget -> BulletClass
+[conv] 0x5e9290 NetworkLobby::CheckLobbyConditions -> NetworkLobby
+[conv] 0x4024a0 AudioSample::ResetState -> AudioSample
+[conv] 0x70b1d0 TechnoClass::RevealAreaConditional -> TechnoClass
+[conv] 0x4802a0 TacticalClass::DrawCellTerrainOverlay -> TacticalClass
+[conv] 0x4a00b0 EnumConnectionsClass::ddtor -> EnumConnectionsClass
+[conv] 0x7b3920 UDPInterfaceClass::Reset -> UDPInterfaceClass
+[conv] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> MapClass
+[conv] 0x4a9650 BuildingClass::MarkExitPath -> BuildingClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4fae50 SuperWeapon::FireSuperWeaponHouseClass -> SuperWeapon
+[conv] 0x6c6740 StaticButtonClass::HitTest -> StaticButtonClass
+[conv] 0x4dc810 FootClass::SetBuildingType -> FootClass
+[conv] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> UnitClass
+[conv] 0x50f9e0 _VectorClass__N::Remove -> _VectorClass__N
+[conv] 0x540c60 IPXManagerClass::SetConnectionParams -> IPXManagerClass
+[conv] 0x74c030 _VectorClass_E::Release -> _VectorClass_E
+[conv] 0x4ac960 MapClass::ToggleZoom -> MapClass
+[conv] 0x509b20 HouseClass::Find -> HouseClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] BulletClass              rc=2
+[era] NetworkLobby             rc=2
+[era] AudioSample              rc=2
+[era] TechnoClass              rc=2
+[era] TacticalClass            rc=2
+[era] EnumConnectionsClass     rc=2
+[era] UDPInterfaceClass        rc=2
+[era] MapClass                 rc=2
+[era] BuildingClass            rc=2
+[era] Surface                  rc=2
+[era] SuperWeapon              rc=2
+[era] StaticButtonClass        rc=2
+[era] FootClass                rc=2
+[era] UnitClass                rc=2
+[era] _VectorClass__N          rc=2
+[era] IPXManagerClass          rc=2
+[era] _VectorClass_E           rc=2
+=== diffasm byte-compare ===
+[diff] 0x509b20   MISMATCH         HouseClass::Find
+[ledger] 0x50df30 HouseClass::GetStartCoords -> PENDING (attempt 2)
+[ledger] 0x468430 BulletClass::LoseTarget -> PENDING (attempt 2)
+[ledger] 0x5e9290 NetworkLobby::CheckLobbyConditions -> PENDING (attempt 2)
+[ledger] 0x4024a0 AudioSample::ResetState -> PENDING (attempt 2)
+[ledger] 0x70b1d0 TechnoClass::RevealAreaConditional -> PENDING (attempt 2)
+[ledger] 0x4802a0 TacticalClass::DrawCellTerrainOverlay -> PENDING (attempt 2)
+[ledger] 0x4a00b0 EnumConnectionsClass::ddtor -> PENDING (attempt 2)
+[ledger] 0x7b3920 UDPInterfaceClass::Reset -> PENDING (attempt 2)
+[ledger] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> PENDING (attempt 2)
+[ledger] 0x4a9650 BuildingClass::MarkExitPath -> PENDING (attempt 2)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> PENDING (attempt 2)
+[ledger] 0x4fae50 SuperWeapon::FireSuperWeaponHouseClass -> PENDING (attempt 2)
+[ledger] 0x6c6740 StaticButtonClass::HitTest -> PENDING (attempt 2)
+[ledger] 0x4dc810 FootClass::SetBuildingType -> PENDING (attempt 2)
+[ledger] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> PENDING (attempt 2)
+[ledger] 0x50f9e0 VectorClass__N::Remove -> PENDING (attempt 2)
+[ledger] 0x540c60 Network::SetConnectionParams -> PENDING (attempt 2)
+[ledger] 0x74c030 VectorClass_E::Release -> PENDING (attempt 2)
+[ledger] 0x4ac960 MapClass::ToggleZoom -> PENDING (attempt 2)
+[ledger] 0x509b20 HouseClass::Find -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p02\batch_report.json
+PART 2: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p02
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x509c10 HouseClass::FireStoredSW -> HouseClass
+[conv] 0x746810 UnitClass::PerFrameUpdate -> UnitClass
+[conv] 0x6da180 TacticalMap::DrawOccupiedRegion -> TacticalMap
+[conv] 0x625780 HashTable::Shrink2 -> HashTable
+[conv] 0x6258e0 ComboBoxOwnerDraw::SetCapacity -> ComboBoxOwnerDraw
+[conv] 0x7adf70 HashMap::Shrink2 -> HashMap
+[conv] 0x7ae460 HashMap::Shrink -> HashMap
+[conv] 0x7aef50 ComStreamClass::flushStream -> ComStreamClass
+[conv] 0x485080 JumpjetLocomotionClass::FindClosestOccupiableCell -> JumpjetLocomotionClass
+[conv] 0x6e0110 ScenarioClass::Create -> ScenarioClass
+[conv] 0x4daf10 FootClass::UpdateState -> FootClass
+[conv] 0x50fb20 _DynamicVectorClass__N::SetCapacity -> _DynamicVectorClass__N
+[conv] 0x736ca0 TechnoClass::UpdateUnitAnimation -> TechnoClass
+[conv] 0x501160 CCINIClass::WriteHouses -> CCINIClass
+[conv] 0x420e90 AirstrikeClass::UpdateAll -> AirstrikeClass
+[conv] 0x433330 BinkMovie::AdjustSurfaceFormat -> BinkMovie
+[conv] 0x452360 BuildingClass::PowerOff -> BuildingClass
+[conv] 0x4b5630 BlitterList::CopyEntry -> BlitterList
+[conv] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> SlaveManagerClass
+[conv] 0x540dc0 SessionClass::initLAN -> SessionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] UnitClass                rc=2
+[era] TacticalMap              rc=2
+[era] HashTable                rc=2
+[era] ComboBoxOwnerDraw        rc=2
+[era] HashMap                  rc=2
+[era] ComStreamClass           rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ScenarioClass            rc=2
+[era] FootClass                rc=2
+[era] _DynamicVectorClass__N   rc=2
+[era] TechnoClass              rc=2
+[era] CCINIClass               rc=2
+[era] AirstrikeClass           rc=2
+[era] BinkMovie                rc=0
+[era] BuildingClass            rc=2
+[era] BlitterList              rc=2
+[era] SlaveManagerClass        rc=2
+[era] SessionClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x509c10   MISMATCH         HouseClass::FireStoredSW
+[diff] 0x433330   MISMATCH         BinkMovie::AdjustSurfaceFormat
+[ledger] 0x509c10 HouseClass::FireStoredSW -> NG (attempt 2)
+[ledger] 0x746810 UnitClass::PerFrameUpdate -> PENDING (attempt 2)
+[ledger] 0x6da180 TacticalMap::DrawOccupiedRegion -> PENDING (attempt 2)
+[ledger] 0x625780 HashTable_flat::Shrink2 -> PENDING (attempt 2)
+[ledger] 0x6258e0 ComboBoxOwnerDraw::SetCapacity -> PENDING (attempt 2)
+[ledger] 0x7adf70 HashMap::Shrink2 -> PENDING (attempt 2)
+[ledger] 0x7ae460 HashMap::Shrink -> PENDING (attempt 2)
+[ledger] 0x7aef50 ComStreamClass::flushStream -> PENDING (attempt 2)
+[ledger] 0x485080 JumpjetLocomotionClass::FindClosestOccupiableCell -> PENDING (attempt 2)
+[ledger] 0x6e0110 ScenarioClass::Create -> PENDING (attempt 2)
+[ledger] 0x4daf10 FootClass::UpdateState -> PENDING (attempt 2)
+[ledger] 0x50fb20 VectorClass__N::SetCapacity -> PENDING (attempt 2)
+[ledger] 0x736ca0 TechnoClass::UpdateUnitAnimation -> PENDING (attempt 2)
+[ledger] 0x501160 CCINIClass::WriteHouses -> PENDING (attempt 2)
+[ledger] 0x420e90 AirstrikeClass::UpdateAll -> PENDING (attempt 2)
+[ledger] 0x433330 BinkMovie::AdjustSurfaceFormat -> NG (attempt 2)
+[ledger] 0x452360 BuildingClass::PowerOff -> PENDING (attempt 2)
+[ledger] 0x4b5630 BlitterList::CopyEntry -> PENDING (attempt 2)
+[ledger] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> PENDING (attempt 2)
+[ledger] 0x540dc0 SessionClass::initLAN -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p03\batch_report.json
+PART 3: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p03
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x653760 RadarClass::PixelToCellCheck -> RadarClass
+[conv] 0x7b4c20 String::Append -> String
+[conv] 0x540340 IPXGlobalConnClass::SendPacket -> IPXGlobalConnClass
+[conv] 0x722390 BuildingClass::FreeUpgradeQueue -> BuildingClass
+[conv] 0x722e50 BuildingClass::FreeUpgradeQueue2 -> BuildingClass
+[conv] 0x655740 BuildingClass::RemoveGapCellCoverage -> BuildingClass
+[conv] 0x7036c0 TechnoClass::TransitionEffectState -> TechnoClass
+[conv] 0x42d8f0 _VectorClass_G::Remove -> _VectorClass_G
+[conv] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> JumpjetLocomotionClass
+[conv] 0x7474b0 UnitTypeClass::CreateUnit -> UnitTypeClass
+[conv] 0x6e4150 TActionClass::executeGeneticMutatorAction -> TActionClass
+[conv] 0x5d74a0 MultiplayerGameMode::InitAlliances -> MultiplayerGameMode
+[conv] 0x625830 HashTable::Rebuild2 -> HashTable
+[conv] 0x6baef0 HashTable::RebuildEx -> HashTable
+[conv] 0x7aec00 HashTable::Shrink -> HashTable
+[conv] 0x4ddb90 FootClass::MoveToWeed -> FootClass
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x42da30 _DynamicVectorClass_G::SetCapacity -> _DynamicVectorClass_G
+[conv] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> TActionClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ParticleSystemClass      rc=2
+[era] RadarClass               rc=2
+[era] String                   rc=2
+[era] IPXGlobalConnClass       rc=2
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] _VectorClass_G           rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] UnitTypeClass            rc=2
+[era] TActionClass             rc=2
+[era] MultiplayerGameMode      rc=2
+[era] HashTable                rc=2
+[era] FootClass                rc=2
+[era] InfantryClass            rc=2
+[era] _DynamicVectorClass_G    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> PENDING (attempt 2)
+[ledger] 0x653760 TacticalClass::PixelToCellCheck -> PENDING (attempt 2)
+[ledger] 0x7b4c20 String::Append -> PENDING (attempt 2)
+[ledger] 0x540340 IPXGlobalConnClass::SendPacket -> PENDING (attempt 2)
+[ledger] 0x722390 BuildingClass::FreeUpgradeQueue -> PENDING (attempt 2)
+[ledger] 0x722e50 BuildingClass::FreeUpgradeQueue2 -> PENDING (attempt 2)
+[ledger] 0x655740 BuildingClass::RemoveGapCellCoverage -> PENDING (attempt 2)
+[ledger] 0x7036c0 TechnoClass::TransitionEffectState -> PENDING (attempt 2)
+[ledger] 0x42d8f0 VectorClass_ushort::Remove -> PENDING (attempt 2)
+[ledger] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> PENDING (attempt 2)
+[ledger] 0x7474b0 UnitTypeClass::CreateUnit -> PENDING (attempt 2)
+[ledger] 0x6e4150 TActionClass::executeGeneticMutatorAction -> PENDING (attempt 2)
+[ledger] 0x5d74a0 HouseClass::InitAlliances -> PENDING (attempt 2)
+[ledger] 0x625830 HashTable_flat::Rebuild2 -> PENDING (attempt 2)
+[ledger] 0x6baef0 HashTable_flat::RebuildEx -> PENDING (attempt 2)
+[ledger] 0x7aec00 HashTable_flat::Shrink -> PENDING (attempt 2)
+[ledger] 0x4ddb90 FootClass::MoveToWeed -> PENDING (attempt 2)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> PENDING (attempt 2)
+[ledger] 0x42da30 VectorClass_ushort::SetCapacity -> PENDING (attempt 2)
+[ledger] 0x6e1780 TActionClass::PlayAudioAtRandomWP -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p04\batch_report.json
+PART 4: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p04
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x707d20 TechnoClass::GetCrew -> TechnoClass
+[conv] 0x4e4820 Lobby::FillPlayerFactions -> Lobby
+[conv] 0x4e5310 Lobby::InvalidateFactionCombos -> Lobby
+[conv] 0x4e5d60 Lobby::InvalidatePlayerSlots -> Lobby
+[conv] 0x5e84d0 unknown::ComputeCRC -> unknown
+[conv] 0x7b2ff0 UDPInterfaceClass::Flush -> UDPInterfaceClass
+[conv] 0x6cf350 SwizzleManagerClass::ConvertNodes -> SwizzleManagerClass
+[conv] 0x402330 AudioController::UpdatePlayback -> AudioController
+[conv] 0x720140 TextButtonClass::fireWeapon -> TextButtonClass
+[conv] 0x4371d0 unknown::ProcessData -> unknown
+[conv] 0x6e1530 ScenarioClass::PrepareTextDisplay -> ScenarioClass
+[conv] 0x4fd060 HouseClass::FindBuildingOfType -> HouseClass
+[conv] 0x50e1c0 TechnoClass::Process -> TechnoClass
+[conv] 0x50e280 HouseClass::ReactivateTechnos -> HouseClass
+[conv] 0x565b00 MapClass::FreeAllCells -> MapClass
+[conv] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> BinkMovie
+[conv] 0x49b660 MPCooperative::processTurn -> MPCooperative
+[conv] 0x5f5fa0 IUnknown::SetZ -> IUnknown
+[conv] 0x74f960 GameClass::ReadVersionFile -> GameClass
+[conv] 0x74fa20 GameClass::ReadVersionFile2 -> GameClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] Lobby                    rc=2
+[era] unknown                  rc=2
+[era] UDPInterfaceClass        rc=2
+[era] SwizzleManagerClass      rc=2
+[era] AudioController          rc=2
+[era] TextButtonClass          rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] MapClass                 rc=2
+[era] BinkMovie                rc=2
+[era] MPCooperative            rc=2
+[era] IUnknown                 rc=2
+[era] GameClass                rc=2
+=== diffasm byte-compare ===
+[ledger] 0x707d20 TechnoClass::GetCrew -> PENDING (attempt 2)
+[ledger] 0x4e4820 Lobby::FillPlayerFactions -> PENDING (attempt 2)
+[ledger] 0x4e5310 Lobby::InvalidateFactionCombos -> PENDING (attempt 2)
+[ledger] 0x4e5d60 Lobby::InvalidatePlayerSlots -> PENDING (attempt 2)
+[ledger] 0x5e84d0 GameConfig::ComputeCRC -> PENDING (attempt 2)
+[ledger] 0x7b2ff0 UDPInterfaceClass_Destru::Flush -> PENDING (attempt 2)
+[ledger] 0x6cf350 SwizzleManagerClass::ConvertNodes -> PENDING (attempt 2)
+[ledger] 0x402330 AudioController::UpdatePlayback -> PENDING (attempt 2)
+[ledger] 0x720140 AbstractClass::fireWeapon -> PENDING (attempt 2)
+[ledger] 0x4371d0 Helper::ProcessData -> PENDING (attempt 2)
+[ledger] 0x6e1530 ScenarioClass::PrepareTextDisplay -> PENDING (attempt 2)
+[ledger] 0x4fd060 HouseClass::FindBuildingOfType -> PENDING (attempt 2)
+[ledger] 0x50e1c0 TechnoClass::Process -> PENDING (attempt 2)
+[ledger] 0x50e280 HouseClass::ReactivateTechnos -> PENDING (attempt 2)
+[ledger] 0x565b00 MapClass::FreeAllCells -> PENDING (attempt 2)
+[ledger] 0x6c9c60 BinkMovie::CheckKeyframeTransition -> PENDING (attempt 2)
+[ledger] 0x49b660 MPCooperative::processTurn -> PENDING (attempt 2)
+[ledger] 0x5f5fa0 ObjectClass::SetZ -> PENDING (attempt 2)
+[ledger] 0x74f960 GameClass::ReadVersionFile -> PENDING (attempt 2)
+[ledger] 0x74fa20 GameClass::ReadVersionFile2 -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p05\batch_report.json
+PART 5: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p05
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x4fc6d0 HouseClass::ClearLowPowerTargets -> HouseClass
+[conv] 0x486ff0 Cell::IsBuildableAdvanced -> Cell
+[conv] 0x5cd410 MSBitPrintAnim::SetText -> MSBitPrintAnim
+[conv] 0x635060 FactoryClass::FinishProduction -> FactoryClass
+[conv] 0x7b3310 UDPInterfaceClass::CheckStatus -> UDPInterfaceClass
+[conv] 0x746420 TechnoClass::CaptureTurret -> TechnoClass
+[conv] 0x5022f0 WaypointClass::IsCoordinateUsed -> WaypointClass
+[conv] 0x433270 BinkMovie::BlitToTarget -> BinkMovie
+[conv] 0x6ef610 TeamClass::PlayMemberAnimation -> TeamClass
+[conv] 0x526960 INIClass::GetKeyCount -> INIClass
+[conv] 0x7b4cd0 String::Append2 -> String
+[conv] 0x7b4940 String::Reassign -> String
+[conv] 0x7b5020 String::Erase -> String
+[conv] 0x6e6f20 BuildingLoadQueue::Find -> BuildingLoadQueue
+[conv] 0x7464e0 TechnoClass::TransferTurret -> TechnoClass
+[conv] 0x50e0e0 HouseClass::LostPoweredCenter -> HouseClass
+[conv] 0x4c3d00 CreditsPower::DrawCreditsTextLine -> CreditsPower
+[conv] 0x4a0630 ConnectionPointClass::Unadvise -> ConnectionPointClass
+[conv] 0x526a30 INIClass::FindKey -> INIClass
+[conv] 0x7b1d10 WinsockInterfaceClass::Cleanup -> WinsockInterfaceClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] Cell                     rc=2
+[era] MSBitPrintAnim           rc=2
+[era] FactoryClass             rc=2
+[era] UDPInterfaceClass        rc=2
+[era] TechnoClass              rc=2
+[era] WaypointClass            rc=2
+[era] BinkMovie                rc=2
+[era] TeamClass                rc=2
+[era] INIClass                 rc=2
+[era] String                   rc=2
+[era] BuildingLoadQueue        rc=2
+[era] CreditsPower             rc=2
+[era] ConnectionPointClass     rc=2
+[era] WinsockInterfaceClass    rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b1d10   MISMATCH         WinsockInterfaceClass::Cleanup
+[ledger] 0x4fc6d0 HouseClass::ClearLowPowerTargets -> PENDING (attempt 2)
+[ledger] 0x486ff0 Cell::IsBuildableAdvanced -> PENDING (attempt 2)
+[ledger] 0x5cd410 MSBitPrintAnim::SetText -> PENDING (attempt 2)
+[ledger] 0x635060 FactoryClass::FinishProduction -> PENDING (attempt 2)
+[ledger] 0x7b3310 UDPInterfaceClass::CheckStatus -> PENDING (attempt 2)
+[ledger] 0x746420 TechnoClass::CaptureTurret -> PENDING (attempt 2)
+[ledger] 0x5022f0 WaypointClass::IsCoordinateUsed -> PENDING (attempt 2)
+[ledger] 0x433270 BinkMovie::BlitToTarget -> PENDING (attempt 2)
+[ledger] 0x6ef610 TeamClass::PlayMemberAnimation -> PENDING (attempt 2)
+[ledger] 0x526960 INIClass::GetKeyCount -> PENDING (attempt 2)
+[ledger] 0x7b4cd0 String::Append2 -> PENDING (attempt 2)
+[ledger] 0x7b4940 String::Reassign -> PENDING (attempt 2)
+[ledger] 0x7b5020 String::Erase -> PENDING (attempt 2)
+[ledger] 0x6e6f20 BuildingLoadQueue::Find -> PENDING (attempt 2)
+[ledger] 0x7464e0 TechnoClass::TransferTurret -> PENDING (attempt 2)
+[ledger] 0x50e0e0 HouseClass::LostPoweredCenter -> PENDING (attempt 2)
+[ledger] 0x4c3d00 CreditsPower::DrawCreditsTextLine -> PENDING (attempt 2)
+[ledger] 0x4a0630 ConnectionPointClass::Unadvise -> PENDING (attempt 2)
+[ledger] 0x526a30 INIClass::FindKey -> PENDING (attempt 2)
+[ledger] 0x7b1d10 AudioQueue::Cleanup -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p06\batch_report.json
+PART 6: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p06
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4035f0 unknown::FindBestChannel -> unknown
+[conv] 0x7b22e0 WinsockInterfaceClass::ReadBuffer -> WinsockInterfaceClass
+[conv] 0x5865f0 unknown::SpiralFindClosest -> unknown
+[conv] 0x7b5b80 String::ToLowerCopy -> String
+[conv] 0x4a7900 DiskLaserClass::PointerGotInvalid -> DiskLaserClass
+[conv] 0x6e6ff0 BuildingLoadQueue::FindObject -> BuildingLoadQueue
+[conv] 0x6e7a80 BuildingLoadQueue::FindBuilding -> BuildingLoadQueue
+[conv] 0x69b7e0 SessionClass::AssignColor -> SessionClass
+[conv] 0x5d4b20 unknown::WordWrap -> unknown
+[conv] 0x526cc0 INIClass::GetStringByIndex -> INIClass
+[conv] 0x578390 MapClass::IsRectInBounds -> MapClass
+[conv] 0x56e7c0 unknown::CheckCellsBuildable -> unknown
+[conv] 0x6b7c60 UnitClass::ClearTargetRef -> UnitClass
+[conv] 0x4766f0 ScenarioClass::SaveTypeNameListToINI -> ScenarioClass
+[conv] 0x431800 HouseClass::ProcessData -> HouseClass
+[conv] 0x474b50 INIClass::GetCoord -> INIClass
+[conv] 0x720070 TextButtonClass::selectWeapon -> TextButtonClass
+[conv] 0x517cc0 InfantryClass::PerFrameUpdate -> InfantryClass
+[conv] 0x54f2f0 InputManager::EnqueueInputEvent -> InputManager
+[conv] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> EMPulseClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] WinsockInterfaceClass    rc=2
+[era] String                   rc=0
+[era] DiskLaserClass           rc=2
+[era] BuildingLoadQueue        rc=2
+[era] SessionClass             rc=2
+[era] INIClass                 rc=2
+[era] MapClass                 rc=2
+[era] UnitClass                rc=2
+[era] ScenarioClass            rc=2
+[era] HouseClass               rc=2
+[era] TextButtonClass          rc=2
+[era] InfantryClass            rc=2
+[era] InputManager             rc=2
+[era] EMPulseClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b5b80   MISMATCH         String::ToLowerCopy
+[ledger] 0x4035f0 AudioQueue::FindBestChannel -> PENDING (attempt 2)
+[ledger] 0x7b22e0 AudioQueue::ReadBuffer -> PENDING (attempt 2)
+[ledger] 0x5865f0 CellClass::SpiralFindClosest -> PENDING (attempt 2)
+[ledger] 0x7b5b80 String::ToLowerCopy -> NG (attempt 2)
+[ledger] 0x4a7900 DiskLaserClass::PointerGotInvalid -> PENDING (attempt 2)
+[ledger] 0x6e6ff0 BuildingLoadQueue::FindObject -> PENDING (attempt 2)
+[ledger] 0x6e7a80 BuildingLoadQueue::FindBuilding -> PENDING (attempt 2)
+[ledger] 0x69b7e0 SessionClass::AssignColor -> PENDING (attempt 2)
+[ledger] 0x5d4b20 WideString::WordWrap -> PENDING (attempt 2)
+[ledger] 0x526cc0 INIClass::GetStringByIndex -> PENDING (attempt 2)
+[ledger] 0x578390 MapClass::IsRectInBounds -> PENDING (attempt 2)
+[ledger] 0x56e7c0 MapClass::CheckCellsBuildable -> PENDING (attempt 2)
+[ledger] 0x6b7c60 UnitClass::ClearTargetRef -> PENDING (attempt 2)
+[ledger] 0x4766f0 ScenarioClass::SaveTypeNameListToINI -> PENDING (attempt 2)
+[ledger] 0x431800 HouseClass::ProcessData -> PENDING (attempt 2)
+[ledger] 0x474b50 INIClass::GetCoord -> PENDING (attempt 2)
+[ledger] 0x720070 AbstractClass::selectWeapon -> PENDING (attempt 2)
+[ledger] 0x517cc0 InfantryClass::PerFrameUpdate -> PENDING (attempt 2)
+[ledger] 0x54f2f0 InputManager::EnqueueInputEvent -> PENDING (attempt 2)
+[ledger] 0x4c58c0 EMPulseClass::IterateCellsInRadius -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p07\batch_report.json
+PART 7: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p07
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x53fbd0 IPXGlobalConnClass::Flush -> IPXGlobalConnClass
+[conv] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> SmudgeTypeClass
+[conv] 0x4a60e0 unknown::Printf -> unknown
+[conv] 0x52b2b0 INIClass::deleteSection -> INIClass
+[conv] 0x5388a0 SortedArray::RemoveByKey -> SortedArray
+[conv] 0x6e15f0 ObjectClass::ReadINIEntry -> ObjectClass
+[conv] 0x6a6140 Sidebar::FindProductionType -> Sidebar
+[conv] 0x76b0a0 File::LoadWDTDecompress -> File
+[conv] 0x71c4d0 TerrainClass::IsPlacementValid -> TerrainClass
+[conv] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> TabCameoListClass
+[conv] 0x475610 INIClass::SetHouseName -> INIClass
+[conv] 0x50b760 BuildingTypeClass::ProcessData -> BuildingTypeClass
+[conv] 0x465e70 _VectorClass_V_TPoint3D_H::Release -> _VectorClass_V_TPoint3D_H
+[conv] 0x474c70 INIEntry::ReadColor -> INIEntry
+[conv] 0x638ce0 unknown::ClassifyAction -> unknown
+[conv] 0x5fed00 OverlayTypeClass::GetRadarColor -> OverlayTypeClass
+[conv] 0x5f6a70 IUnknown::CheckGroundHeightDiff -> IUnknown
+[conv] 0x4052f0 VocClass::Release -> VocClass
+[conv] 0x75f140 Voxel::loadSectionData -> Voxel
+[conv] 0x42f9c0 _VectorClass_VBaseNodeClass::Release -> _VectorClass_VBaseNodeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXGlobalConnClass       rc=2
+[era] SmudgeTypeClass          rc=2
+[era] unknown                  rc=2
+[era] INIClass                 rc=2
+[era] SortedArray              rc=2
+[era] ObjectClass              rc=2
+[era] Sidebar                  rc=2
+[era] File                     rc=2
+[era] TerrainClass             rc=2
+[era] TabCameoListClass        rc=2
+[era] BuildingTypeClass        rc=2
+[era] _VectorClass_V_TPoint3D_H rc=2
+[era] INIEntry                 rc=2
+[era] OverlayTypeClass         rc=0
+[era] IUnknown                 rc=2
+[era] VocClass                 rc=2
+[era] Voxel                    rc=2
+[era] _VectorClass_VBaseNodeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x5fed00   MISMATCH         OverlayTypeClass::GetRadarColor
+[ledger] 0x53fbd0 IPXGlobalConnClass::Flush -> PENDING (attempt 2)
+[ledger] 0x6b55f0 SmudgeTypeClass::vt_entry_A0 -> PENDING (attempt 2)
+[ledger] 0x4a60e0 TextRenderer::Printf -> PENDING (attempt 2)
+[ledger] 0x52b2b0 INIClass::deleteSection -> PENDING (attempt 2)
+[ledger] 0x5388a0 SortedArray::RemoveByKey -> PENDING (attempt 2)
+[ledger] 0x6e15f0 ObjectClass::ReadINIEntry -> PENDING (attempt 2)
+[ledger] 0x6a6140 Sidebar::FindProductionType -> PENDING (attempt 2)
+[ledger] 0x76b0a0 File::LoadWDTDecompress -> PENDING (attempt 2)
+[ledger] 0x71c4d0 TerrainClass::IsPlacementValid -> PENDING (attempt 2)
+[ledger] 0x6a8710 TabCameoListClass::AddCameo_ReplaceItAll -> PENDING (attempt 2)
+[ledger] 0x475610 INIClass::SetHouseName -> PENDING (attempt 2)
+[ledger] 0x50b760 BuildingTypeClass::ProcessData -> PENDING (attempt 2)
+[ledger] 0x465e70 VectorClass_TPoint3D_int::Release -> PENDING (attempt 2)
+[ledger] 0x474c70 INIEntry::ReadColor -> PENDING (attempt 2)
+[ledger] 0x638ce0 ScriptAction::ClassifyAction -> PENDING (attempt 2)
+[ledger] 0x5fed00 OverlayTypeClass::GetRadarColor -> NG (attempt 2)
+[ledger] 0x5f6a70 ObjectClass::CheckGroundHeightDiff -> PENDING (attempt 2)
+[ledger] 0x4052f0 VocClass::Release -> PENDING (attempt 2)
+[ledger] 0x75f140 Voxel::loadSectionData -> PENDING (attempt 2)
+[ledger] 0x42f9c0 BaseNodeClass_Vector::Release -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p08\batch_report.json
+PART 8: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p08
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x5acd30 _VectorClass_V_TRect_H::Release -> _VectorClass_V_TRect_H
+[conv] 0x65b800 RadSiteClass::Tick -> RadSiteClass
+[conv] 0x557d20 ListClass::Destru_vt50 -> ListClass
+[conv] 0x49e400 CampaignClass::FindMission -> CampaignClass
+[conv] 0x6d02b0 TabClass::LoadButtonSHPs -> TabClass
+[conv] 0x4071c0 AudioMixer::PlaySample -> AudioMixer
+[conv] 0x6cb830 SuperClass::StopPreclickAnim -> SuperClass
+[conv] 0x448070 AnimClass::updateAnimation -> AnimClass
+[conv] 0x71abc0 FactoryClass::CompleteItem -> FactoryClass
+[conv] 0x4324b0 CCFileClass::SeekInternal -> CCFileClass
+[conv] 0x5e2be0 Network::CountDisconnectedHouses -> Network
+[conv] 0x42f4f0 _DynamicVectorClass_VBaseNodeClass::Release -> _DynamicVectorClass_VBaseNodeClass
+[conv] 0x5aced0 _DynamicVectorClass_V_TRect_H::SetCapacity -> _DynamicVectorClass_V_TRect_H
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x475f30 ScenarioClass::SaveIntListToINI -> ScenarioClass
+[conv] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> ObjectClass
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x6a6a00 CreateTeamCommand::performAction_245 -> CreateTeamCommand
+[conv] 0x6ce0b0 SuperClass::Reset -> SuperClass
+[conv] 0x58a8f0 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::Release -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_V_TRect_H   rc=2
+[era] RadSiteClass             rc=2
+[era] ListClass                rc=2
+[era] CampaignClass            rc=2
+[era] TabClass                 rc=2
+[era] AudioMixer               rc=2
+[era] SuperClass               rc=2
+[era] AnimClass                rc=2
+[era] FactoryClass             rc=2
+[era] CCFileClass              rc=2
+[era] Network                  rc=2
+[era] _DynamicVectorClass_VBaseNodeClass rc=2
+[era] _DynamicVectorClass_V_TRect_H rc=2
+[era] TriggerClass             rc=2
+[era] ScenarioClass            rc=2
+[era] ObjectClass              rc=2
+[era] EventClass               rc=2
+[era] CreateTeamCommand        rc=2
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5acd30 MSEngine::Release -> PENDING (attempt 2)
+[ledger] 0x65b800 RadSiteClass::Tick -> PENDING (attempt 2)
+[ledger] 0x557d20 ListClass::Destru_vt50 -> PENDING (attempt 2)
+[ledger] 0x49e400 CampaignClass::FindMission -> PENDING (attempt 2)
+[ledger] 0x6d02b0 SidebarClass::LoadButtonSHPs -> PENDING (attempt 2)
+[ledger] 0x4071c0 AudioMixer::PlaySample -> PENDING (attempt 2)
+[ledger] 0x6cb830 SuperClass::StopPreclickAnim -> PENDING (attempt 2)
+[ledger] 0x448070 AnimClass::updateAnimation -> PENDING (attempt 2)
+[ledger] 0x71abc0 FactoryClass::CompleteItem -> PENDING (attempt 2)
+[ledger] 0x4324b0 BufferIOFileClass::SeekInternal -> PENDING (attempt 2)
+[ledger] 0x5e2be0 Network::CountDisconnectedHouses -> PENDING (attempt 2)
+[ledger] 0x42f4f0 BaseClass::Release -> PENDING (attempt 2)
+[ledger] 0x5aced0 MSEngine::SetCapacity -> PENDING (attempt 2)
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> PENDING (attempt 2)
+[ledger] 0x475f30 ScenarioClass::SaveIntListToINI -> PENDING (attempt 2)
+[ledger] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> PENDING (attempt 2)
+[ledger] 0x664440 EventClass::validateEventType -> PENDING (attempt 2)
+[ledger] 0x6a6a00 CreateTeamCommand::performAction_245 -> PENDING (attempt 2)
+[ledger] 0x6ce0b0 SuperClass::Reset -> PENDING (attempt 2)
+[ledger] 0x58a8f0 VectorClass_UHashObject_uint_SubzoneConn::Release -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p09\batch_report.json
+PART 9: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p09
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x478340 _VectorClass_VRGBClass::Release -> _VectorClass_VRGBClass
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x477640 INIEntry::ReadAbilities -> INIEntry
+[conv] 0x62d830 ParticleClass::vt_entry_1E8 -> ParticleClass
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x475c70 WeaponTypeClass::ReadVeteranData -> WeaponTypeClass
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x58a2a0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::SetCapacity_1 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x4784f0 _DynamicVectorClass_VRGBClass::Release -> _DynamicVectorClass_VRGBClass
+[conv] 0x6b5f80 Cell::IsWalkable -> Cell
+[conv] 0x76a3f0 _VectorClass_VCentroid_WorldDominationTour::Release -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x476240 ObjectTypeClass::ReadTypeListINI -> ObjectTypeClass
+[conv] 0x475b70 WeaponTypeClass::ReadTrajectoryData -> WeaponTypeClass
+[conv] 0x4047b0 AudioStream::SelectRandom -> AudioStream
+[conv] 0x448160 BuildingClass::ProcessPrimarySelect -> BuildingClass
+[conv] 0x476a20 INIClass::WriteSuperWeaponList -> INIClass
+[conv] 0x658970 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Release -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x6b44a0 _VectorClass_UUndoInfoStruct::Release -> _VectorClass_UUndoInfoStruct
+[conv] 0x6d8530 DisplayClass::ScrollTacticalView -> DisplayClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_VRGBClass   rc=2
+[era] ConnectionClass          rc=2
+[era] Base64Straw              rc=2
+[era] INIEntry                 rc=2
+[era] ParticleClass            rc=0
+[era] BuildingLoadQueue        rc=2
+[era] WeaponTypeClass          rc=2
+[era] IPXManagerClass          rc=2
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] _DynamicVectorClass_VRGBClass rc=2
+[era] Cell                     rc=2
+[era] _VectorClass_VCentroid_WorldDominationTour rc=2
+[era] ObjectTypeClass          rc=2
+[era] AudioStream              rc=2
+[era] BuildingClass            rc=2
+[era] INIClass                 rc=2
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] _VectorClass_UUndoInfoStruct rc=2
+[era] DisplayClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x62d830   MISMATCH         ParticleClass::vt_entry_1E8
+[ledger] 0x478340 FilePipe_38::Release -> PENDING (attempt 2)
+[ledger] 0x48bf40 ConnectionClass::sendAck -> PENDING (attempt 2)
+[ledger] 0x42df90 BitmapClass::ProcessFrame -> PENDING (attempt 2)
+[ledger] 0x477640 INIEntry::ReadAbilities -> PENDING (attempt 2)
+[ledger] 0x62d830 ParticleClass::vt_entry_1E8 -> NG (attempt 2)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> PENDING (attempt 2)
+[ledger] 0x475c70 WeaponTypeClass::ReadVeteranData -> PENDING (attempt 2)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> PENDING (attempt 2)
+[ledger] 0x58a2a0 VectorClass_W4PassabilityType::SetCapacity_1 -> PENDING (attempt 2)
+[ledger] 0x4784f0 ParticleTypeClass::Release -> PENDING (attempt 2)
+[ledger] 0x6b5f80 Cell::IsWalkable -> PENDING (attempt 2)
+[ledger] 0x76a3f0 Map_WorldDominationTour_43::Release -> PENDING (attempt 2)
+[ledger] 0x476240 ObjectTypeClass::ReadTypeListINI -> PENDING (attempt 2)
+[ledger] 0x475b70 WeaponTypeClass::ReadTrajectoryData -> PENDING (attempt 2)
+[ledger] 0x4047b0 AudioStream::SelectRandom -> PENDING (attempt 2)
+[ledger] 0x448160 FootClass::ProcessPrimarySelect -> PENDING (attempt 2)
+[ledger] 0x476a20 INIClass::WriteSuperWeaponList -> PENDING (attempt 2)
+[ledger] 0x658970 RadarHashVector::Release -> PENDING (attempt 2)
+[ledger] 0x6b44a0 VectorClass_UUndoInfoStruct::Release -> PENDING (attempt 2)
+[ledger] 0x6d8530 DisplayClass::ScrollTacticalView -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p10\batch_report.json
+PART 10: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p10
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x6d6070 TacticalClass::SetTacticalPosition -> TacticalClass
+[conv] 0x4ba5a0 DSurface::Construct -> DSurface
+[conv] 0x626690 FlagSystem::GetNextActive -> FlagSystem
+[conv] 0x53f0e0 Network::FormatAddress -> Network
+[conv] 0x4d2a10 _VectorClass_UDrawRecord_FoggedObjectClass::Release -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x661850 Random::AdvanceRandomBytes -> Random
+[conv] 0x6b4650 _DynamicVectorClass_UUndoInfoStruct::SetCapacity -> _DynamicVectorClass_UUndoInfoStruct
+[conv] 0x475150 BulletTypeClass::ReadTrajectoryFlags -> BulletTypeClass
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x69deb0 ShapeButtonClass::Draw -> ShapeButtonClass
+[conv] 0x658b10 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::ComputeHashIndex -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+[conv] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x656cb0 RadarClass::SetViewMode -> RadarClass
+[conv] 0x5855a0 LayerClass::AssignCellOwnership -> LayerClass
+[conv] 0x62e4c0 ParticleClass::CreateInstance -> ParticleClass
+[conv] 0x4c9ea0 ProductionClass::StartTimer -> ProductionClass
+[conv] 0x6dc660 _VectorClass_UDirtyAreaStruct::Release -> _VectorClass_UDirtyAreaStruct
+[conv] 0x586780 MapClass::IsAreaFree -> MapClass
+[conv] 0x432ab0 BinkMovieHandle::RenderFrameClipped -> BinkMovieHandle
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TacticalClass            rc=2
+[era] DSurface                 rc=2
+[era] FlagSystem               rc=2
+[era] Network                  rc=2
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] Random                   rc=2
+[era] _DynamicVectorClass_UUndoInfoStruct rc=2
+[era] BulletTypeClass          rc=2
+[era] MPCooperative            rc=2
+[era] ShapeButtonClass         rc=2
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] TeamClass                rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] RadarClass               rc=2
+[era] LayerClass               rc=2
+[era] ParticleClass            rc=2
+[era] ProductionClass          rc=2
+[era] _VectorClass_UDirtyAreaStruct rc=2
+[era] MapClass                 rc=2
+[era] BinkMovieHandle          rc=2
+=== diffasm byte-compare ===
+[ledger] 0x6d6070 Tactical::SetTacticalPosition -> PENDING (attempt 2)
+[ledger] 0x4ba5a0 DSurface::Construct -> PENDING (attempt 2)
+[ledger] 0x626690 FlagSystem::GetNextActive -> PENDING (attempt 2)
+[ledger] 0x53f0e0 Network::FormatAddress -> PENDING (attempt 2)
+[ledger] 0x4d2a10 FoggedObject_DrawVector::Release -> PENDING (attempt 2)
+[ledger] 0x661850 Random::AdvanceRandomBytes -> PENDING (attempt 2)
+[ledger] 0x6b4650 VectorClass_UUndoInfoStruct::SetCapacity -> PENDING (attempt 2)
+[ledger] 0x475150 BulletTypeClass::ReadTrajectoryFlags -> PENDING (attempt 2)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> PENDING (attempt 2)
+[ledger] 0x69deb0 ShapeButton::Draw -> PENDING (attempt 2)
+[ledger] 0x658b10 RadarHashVector::ComputeHashIndex -> PENDING (attempt 2)
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> PENDING (attempt 2)
+[ledger] 0x4d2bc0 FoggedObjectClass::ResizeArray -> PENDING (attempt 2)
+[ledger] 0x656cb0 RadarClass::SetViewMode -> PENDING (attempt 2)
+[ledger] 0x5855a0 LayerClass::AssignCellOwnership -> PENDING (attempt 2)
+[ledger] 0x62e4c0 ParticleClass::CreateInstance -> PENDING (attempt 2)
+[ledger] 0x4c9ea0 ProductionClass::StartTimer -> PENDING (attempt 2)
+[ledger] 0x6dc660 VectorClass_UDirtyAreaStruct::Release -> PENDING (attempt 2)
+[ledger] 0x586780 MapClass::IsAreaFree -> PENDING (attempt 2)
+[ledger] 0x432ab0 BinkMovieHandle::RenderFrameClipped -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p11\batch_report.json
+PART 11: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p11
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> JumpjetLocomotionClass
+[conv] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> JumpjetLocomotionClass
+[conv] 0x493a60 _BlitTransLucent50ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent50 -> _BlitTransLucent50ZReadWrite_G
+[conv] 0x6a5090 SidebarClass::InitPositions -> SidebarClass
+[conv] 0x763a50 Waypoint::FindCell -> Waypoint
+[conv] 0x4c93d0 ProgressTimer::GetValue -> ProgressTimer
+[conv] 0x493cc0 _BlitPlainXlatAlpha_G::AddRef -> _BlitPlainXlatAlpha_G
+[conv] 0x493930 _BlitTransLucent75ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent25 -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x493b90 _BlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent25_0 -> _BlitTransLucent25ZReadWrite_G
+[conv] 0x4c9530 MovementClass::CompareAbsCoords -> MovementClass
+[conv] 0x408a70 AudioMixer::SetupChannels -> AudioMixer
+[conv] 0x4664c0 Particle::Init -> Particle
+[conv] 0x602ae0 Dialog::IsSpecialTemplate -> Dialog
+[conv] 0x493df0 _BlitTransXlatAlpha_G::AddRef -> _BlitTransXlatAlpha_G
+[conv] 0x7c35c0 AbstractClass::finalizeDestruction -> AbstractClass
+[conv] 0x4336c0 BinkMovieClass::ReleaseRenderSurface -> BinkMovieClass
+[conv] 0x4a94f0 unknown::GetBounds -> unknown
+[conv] 0x65c7e0 Random::Range -> Random
+[conv] 0x578540 Type::CheckAmbiguity -> Type
+[conv] 0x636ce0 ScriptAction::ClearBuildingState -> ScriptAction
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] JumpjetLocomotionClass   rc=2
+[era] _BlitTransLucent50ZReadWrite_G rc=2
+[era] SidebarClass             rc=2
+[era] Waypoint                 rc=2
+[era] ProgressTimer            rc=2
+[era] _BlitPlainXlatAlpha_G    rc=2
+[era] _BlitTransLucent75ZReadWrite_G rc=2
+[era] _BlitTransLucent25ZReadWrite_G rc=2
+[era] MovementClass            rc=2
+[era] AudioMixer               rc=2
+[era] Particle                 rc=0
+[era] Dialog                   rc=0
+[era] _BlitTransXlatAlpha_G    rc=2
+[era] AbstractClass            rc=0
+[era] BinkMovieClass           rc=2
+[era] unknown                  rc=2
+[era] Random                   rc=2
+[era] Type                     rc=2
+[era] ScriptAction             rc=2
+=== diffasm byte-compare ===
+[diff] 0x4664c0   MISMATCH         Particle::Init
+[diff] 0x602ae0   MATCH            Dialog::IsSpecialTemplate
+[diff] 0x7c35c0   MISMATCH         AbstractClass::finalizeDestruction
+[ledger] 0x4afb80 JumpjetLocomotionClass::StubReturnTrue -> PENDING (attempt 2)
+[ledger] 0x69f290 JumpjetLocomotionClass::StubReturnTrue_5 -> PENDING (attempt 2)
+[ledger] 0x493a60 BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50 -> PENDING (attempt 2)
+[ledger] 0x6a5090 SidebarClass::InitPositions -> PENDING (attempt 2)
+[ledger] 0x763a50 Waypoint::FindCell -> PENDING (attempt 2)
+[ledger] 0x4c93d0 ProgressTimer::GetValue -> PENDING (attempt 2)
+[ledger] 0x493cc0 BlitPlainXlatAlpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x493930 BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25 -> PENDING (attempt 2)
+[ledger] 0x493b90 BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0 -> PENDING (attempt 2)
+[ledger] 0x4c9530 MovementClass::CompareAbsCoords -> PENDING (attempt 2)
+[ledger] 0x408a70 AudioMixer::SetupChannels -> PENDING (attempt 2)
+[ledger] 0x4664c0 Particle::Init -> NG (attempt 2)
+[ledger] 0x602ae0 Dialog::IsSpecialTemplate -> OK (attempt 2)
+[ledger] 0x493df0 BlitTransXlatAlpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x7c35c0 AbstractClass::finalizeDestruction -> NG (attempt 2)
+[ledger] 0x4336c0 BinkMovieClass::ReleaseRenderSurface -> PENDING (attempt 2)
+[ledger] 0x4a94f0 CoordList::GetBounds -> PENDING (attempt 2)
+[ledger] 0x65c7e0 Random::Range -> PENDING (attempt 2)
+[ledger] 0x578540 Type::CheckAmbiguity -> PENDING (attempt 2)
+[ledger] 0x636ce0 ScriptAction::ClearBuildingState -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 2,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p12\batch_report.json
+PART 12: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p12
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x53ee70 GUID::Compare -> GUID
+[conv] 0x53ef60 Network::processPacket -> Network
+[conv] 0x578290 LayerClass::CellIteratorNext -> LayerClass
+[conv] 0x6a80a0 TabClass::updateTabProduction -> TabClass
+[conv] 0x493f30 _BlitTransZRemapXlatAlpha_G::AddRef -> _BlitTransZRemapXlatAlpha_G
+[conv] 0x4941e0 _BlitTransLucent50Alpha_G::AddRef -> _BlitTransLucent50Alpha_G
+[conv] 0x494080 _BlitTransLucent75Alpha_G::AddRef -> _BlitTransLucent75Alpha_G
+[conv] 0x494330 _BlitTransLucent25Alpha_G::AddRef -> _BlitTransLucent25Alpha_G
+[conv] 0x6da080 PlayerClass::HasOccupiedCell -> PlayerClass
+[conv] 0x578460 LayerClass::IsWithinUsableArea -> LayerClass
+[conv] 0x4335e0 unknown::AllocateRenderSurface -> unknown
+[conv] 0x494b60 _BlitTransXlatAlphaZRead_G::AddRef -> _BlitTransXlatAlphaZRead_G
+[conv] 0x495a50 _BlitTransZRemapXlatAlphaZReadWrite_G::AddRef -> _BlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x42a5b0 CellClass::ClearOccupancyGrid -> CellClass
+[conv] 0x494c40 _BlitTransXlatAlphaZRead_G::BlitRect -> _BlitTransXlatAlphaZRead_G
+[conv] 0x4c9220 FacingClass::Update -> FacingClass
+[conv] 0x4958d0 _BlitTransXlatAlphaZReadWrite_G::AddRef -> _BlitTransXlatAlphaZReadWrite_G
+[conv] 0x58bb30 ScenarioClass::CopyStartPositions -> ScenarioClass
+[conv] 0x433770 unknown::OpenFile -> unknown
+[conv] 0x48b2a0 Struct::ClearAllMemberFlags -> Struct
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GUID                     rc=2
+[era] Network                  rc=2
+[era] LayerClass               rc=2
+[era] TabClass                 rc=2
+[era] _BlitTransZRemapXlatAlpha_G rc=2
+[era] _BlitTransLucent50Alpha_G rc=2
+[era] _BlitTransLucent75Alpha_G rc=2
+[era] _BlitTransLucent25Alpha_G rc=2
+[era] PlayerClass              rc=2
+[era] unknown                  rc=2
+[era] _BlitTransXlatAlphaZRead_G rc=2
+[era] _BlitTransZRemapXlatAlphaZReadWrite_G rc=2
+[era] CellClass                rc=2
+[era] FacingClass              rc=2
+[era] _BlitTransXlatAlphaZReadWrite_G rc=2
+[era] ScenarioClass            rc=2
+[era] Struct                   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x53ee70 GUID::Compare -> PENDING (attempt 2)
+[ledger] 0x53ef60 Network::processPacket -> PENDING (attempt 2)
+[ledger] 0x578290 LayerClass::CellIteratorNext -> PENDING (attempt 2)
+[ledger] 0x6a80a0 TabClass::updateTabProduction -> PENDING (attempt 2)
+[ledger] 0x493f30 BlitTransZRemapXlatAlpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4941e0 BlitTransLucent50Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x494080 BlitTransLucent75Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x494330 BlitTransLucent25Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x6da080 PlayerClass::HasOccupiedCell -> PENDING (attempt 2)
+[ledger] 0x578460 LayerClass::IsWithinUsableArea -> PENDING (attempt 2)
+[ledger] 0x4335e0 BinkMovieClass::AllocateRenderSurface -> PENDING (attempt 2)
+[ledger] 0x494b60 BlitTransXlatAlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495a50 BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x42a5b0 CellClass::ClearOccupancyGrid -> PENDING (attempt 2)
+[ledger] 0x494c40 BlitTransXlatAlphaZRead_ushort::BlitRect -> PENDING (attempt 2)
+[ledger] 0x4c9220 FacingClass::Update -> PENDING (attempt 2)
+[ledger] 0x4958d0 BlitTransXlatAlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x58bb30 ScenarioClass::CopyStartPositions -> PENDING (attempt 2)
+[ledger] 0x433770 BinkMovieClass::OpenFile -> PENDING (attempt 2)
+[ledger] 0x48b2a0 Struct::ClearAllMemberFlags -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p13\batch_report.json
+PART 13: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p13
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x487f40 unknown::Union -> unknown
+[conv] 0x7dfc00 Voxel::FacePixelBuffer3 -> Voxel
+[conv] 0x494d90 _BlitTransZRemapXlatAlphaZRead_G::AddRef -> _BlitTransZRemapXlatAlphaZRead_G
+[conv] 0x4950c0 _BlitTransLucent50AlphaZRead_G::AddRef -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x495590 _BlitTransLucent50AlphaZReadWarp_G::AddRef -> _BlitTransLucent50AlphaZReadWarp_G
+[conv] 0x495d60 _BlitTransLucent50AlphaZReadWrite_G::AddRef -> _BlitTransLucent50AlphaZReadWrite_G
+[conv] 0x4978c0 _RLEBlitTransXlatAlpha_G::AddRef -> _RLEBlitTransXlatAlpha_G
+[conv] 0x7df9c0 Voxel::FacePixelBuffer -> Voxel
+[conv] 0x7dfae0 Voxel::FacePixelBufferEx -> Voxel
+[conv] 0x494f20 _BlitTransLucent75AlphaZRead_G::AddRef -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x495250 _BlitTransLucent25AlphaZRead_G::AddRef -> _BlitTransLucent25AlphaZRead_G
+[conv] 0x495bc0 _BlitTransLucent75AlphaZReadWrite_G::AddRef -> _BlitTransLucent75AlphaZReadWrite_G
+[conv] 0x495f00 _BlitTransLucent25AlphaZReadWrite_G::AddRef -> _BlitTransLucent25AlphaZReadWrite_G
+[conv] 0x497610 _RLEBlitTransLucent50ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent50 -> _RLEBlitTransLucent50ZReadWrite_G
+[conv] 0x4953f0 _BlitTransLucent75AlphaZReadWarp_G::AddRef -> _BlitTransLucent75AlphaZReadWarp_G
+[conv] 0x495730 _BlitTransLucent25AlphaZReadWarp_G::AddRef -> _BlitTransLucent25AlphaZReadWarp_G
+[conv] 0x517440 Color::ConvertToRGB -> Color
+[conv] 0x4974b0 _RLEBlitTransLucent75ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent25 -> _RLEBlitTransLucent75ZReadWrite_G
+[conv] 0x497760 _RLEBlitTransLucent25ZReadWrite_G::Blit_Alpha_ZReadWrite -> _RLEBlitTransLucent25ZReadWrite_G
+[conv] 0x497a10 _RLEBlitTransZRemapXlatAlpha_G::AddRef -> _RLEBlitTransZRemapXlatAlpha_G
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] Voxel                    rc=2
+[era] _BlitTransZRemapXlatAlphaZRead_G rc=2
+[era] _BlitTransLucent50AlphaZRead_G rc=2
+[era] _BlitTransLucent50AlphaZReadWarp_G rc=2
+[era] _BlitTransLucent50AlphaZReadWrite_G rc=2
+[era] _RLEBlitTransXlatAlpha_G rc=2
+[era] _BlitTransLucent75AlphaZRead_G rc=2
+[era] _BlitTransLucent25AlphaZRead_G rc=2
+[era] _BlitTransLucent75AlphaZReadWrite_G rc=2
+[era] _BlitTransLucent25AlphaZReadWrite_G rc=2
+[era] _RLEBlitTransLucent50ZReadWrite_G rc=2
+[era] _BlitTransLucent75AlphaZReadWarp_G rc=2
+[era] _BlitTransLucent25AlphaZReadWarp_G rc=2
+[era] Color                    rc=0
+[era] _RLEBlitTransLucent75ZReadWrite_G rc=2
+[era] _RLEBlitTransLucent25ZReadWrite_G rc=2
+[era] _RLEBlitTransZRemapXlatAlpha_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x517440   MISMATCH         Color::ConvertToRGB
+[ledger] 0x487f40 Rect::Union -> PENDING (attempt 2)
+[ledger] 0x7dfc00 Voxel::FacePixelBuffer3 -> PENDING (attempt 2)
+[ledger] 0x494d90 BlitTransZRemapXlatAlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4950c0 BlitTransLucent50AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495590 BlitTransLucent50AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495d60 BlitTransLucent50AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4978c0 RLEBlitTransXlatAlpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x7df9c0 Voxel::FacePixelBuffer -> PENDING (attempt 2)
+[ledger] 0x7dfae0 Voxel::FacePixelBufferEx -> PENDING (attempt 2)
+[ledger] 0x494f20 BlitTransLucent75AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495250 BlitTransLucent25AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495bc0 BlitTransLucent75AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495f00 BlitTransLucent25AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x497610 RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50 -> PENDING (attempt 2)
+[ledger] 0x4953f0 BlitTransLucent75AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x495730 BlitTransLucent25AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x517440 Color::ConvertToRGB -> NG (attempt 2)
+[ledger] 0x4974b0 RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25 -> PENDING (attempt 2)
+[ledger] 0x497760 RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite -> PENDING (attempt 2)
+[ledger] 0x497a10 RLEBlitTransZRemapXlatAlpha_ushort::AddRef -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p14\batch_report.json
+PART 14: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p14
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x4bbb00 unknown::BlitStretch -> unknown
+[conv] 0x586ac0 JumpjetLocomotionClass::ClampToCellBounds -> JumpjetLocomotionClass
+[conv] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> _RLEBlitTransLucent75Alpha_G
+[conv] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x75edf0 Voxel::BlendShadowColor -> Voxel
+[conv] 0x433f50 MessageListClass::CountCharsInWidth -> MessageListClass
+[conv] 0x48b890 PacketQueue::ReleaseEntry -> PacketQueue
+[conv] 0x760190 Voxel::BlendColor -> Voxel
+[conv] 0x5975e0 SettingsClass::ClampValues -> SettingsClass
+[conv] 0x497fd0 _RLEBlitTransXlatAlphaZRead_G::AddRef -> _RLEBlitTransXlatAlphaZRead_G
+[conv] 0x498150 _RLEBlitTransXlatAlphaZRead_G::Release -> _RLEBlitTransXlatAlphaZRead_G
+[conv] 0x753e00 Viewport::Clear -> Viewport
+[conv] 0x7c81db unknown::Decode -> unknown
+[conv] 0x69db30 unknown::Transform -> unknown
+[conv] 0x7bd2d0 AudioStream::CalcReadPos -> AudioStream
+[conv] 0x756f80 VoxelModel::ParseSectionData -> VoxelModel
+[conv] 0x4990e0 _RLEBlitTransXlatAlphaZReadWrite_G::AddRef -> _RLEBlitTransXlatAlphaZReadWrite_G
+[conv] 0x756dd0 VoxelModel::LoadVXLHeader -> VoxelModel
+[conv] 0x499280 _RLEBlitTransXlatAlphaZReadWrite_G::Release -> _RLEBlitTransXlatAlphaZReadWrite_G
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _RLEBlitTransLucent50Alpha_G rc=2
+[era] _RLEBlitTransLucent75Alpha_G rc=2
+[era] _RLEBlitTransLucent25Alpha_G rc=2
+[era] Voxel                    rc=2
+[era] MessageListClass         rc=2
+[era] PacketQueue              rc=0
+[era] SettingsClass            rc=0
+[era] _RLEBlitTransXlatAlphaZRead_G rc=2
+[era] Viewport                 rc=2
+[era] AudioStream              rc=2
+[era] VoxelModel               rc=2
+[era] _RLEBlitTransXlatAlphaZReadWrite_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x48b890   MISMATCH         PacketQueue::ReleaseEntry
+[diff] 0x5975e0   MISMATCH         SettingsClass::ClampValues
+[ledger] 0x4bbb00 DSurface::BlitStretch -> PENDING (attempt 2)
+[ledger] 0x586ac0 JumpjetLocomotionClass::ClampToCellBounds -> PENDING (attempt 2)
+[ledger] 0x497cf0 RLEBlitTransLucent50Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x497b80 RLEBlitTransLucent75Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x497e60 RLEBlitTransLucent25Alpha_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x75edf0 Voxel::BlendShadowColor -> PENDING (attempt 2)
+[ledger] 0x433f50 MessageListClass::CountCharsInWidth -> PENDING (attempt 2)
+[ledger] 0x48b890 PacketQueue::ReleaseEntry -> NG (attempt 2)
+[ledger] 0x760190 Voxel::BlendColor -> PENDING (attempt 2)
+[ledger] 0x5975e0 SettingsClass::ClampValues -> NG (attempt 2)
+[ledger] 0x497fd0 RLEBlitTransXlatAlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x498150 RLEBlitTransXlatAlphaZRead_ushort::Release -> PENDING (attempt 2)
+[ledger] 0x753e00 Viewport::Clear -> PENDING (attempt 2)
+[ledger] 0x7c81db AudioCodec::Decode -> PENDING (attempt 2)
+[ledger] 0x69db30 SHA1::Transform -> PENDING (attempt 2)
+[ledger] 0x7bd2d0 AudioStream::CalcReadPos -> PENDING (attempt 2)
+[ledger] 0x756f80 VoxelModel::ParseSectionData -> PENDING (attempt 2)
+[ledger] 0x4990e0 RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x756dd0 VoxelModel::LoadVXLHeader -> PENDING (attempt 2)
+[ledger] 0x499280 RLEBlitTransXlatAlphaZReadWrite_ushort::Release -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p15\batch_report.json
+PART 15: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p15
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x48b570 PacketQueue::ExtractEntry -> PacketQueue
+[conv] 0x4982e0 _RLEBlitTransZRemapXlatAlphaZRead_G::AddRef -> _RLEBlitTransZRemapXlatAlphaZRead_G
+[conv] 0x4986d0 _RLEBlitTransLucent50AlphaZRead_G::AddRef -> _RLEBlitTransLucent50AlphaZRead_G
+[conv] 0x498cd0 _RLEBlitTransLucent50AlphaZReadWarp_G::AddRef -> _RLEBlitTransLucent50AlphaZReadWarp_G
+[conv] 0x757e70 VoxelRenderer::ProcessVoxelData -> VoxelRenderer
+[conv] 0x4984d0 _RLEBlitTransLucent75AlphaZRead_G::AddRef -> _RLEBlitTransLucent75AlphaZRead_G
+[conv] 0x4988c0 _RLEBlitTransLucent25AlphaZRead_G::AddRef -> _RLEBlitTransLucent25AlphaZRead_G
+[conv] 0x758030 VoxelRenderer::RenderFrame -> VoxelRenderer
+[conv] 0x498ac0 _RLEBlitTransLucent75AlphaZReadWarp_G::AddRef -> _RLEBlitTransLucent75AlphaZReadWarp_G
+[conv] 0x498ed0 _RLEBlitTransLucent25AlphaZReadWarp_G::AddRef -> _RLEBlitTransLucent25AlphaZReadWarp_G
+[conv] 0x499650 _RLEBlitTransLucent75AlphaZReadWrite_G::AddRef -> _RLEBlitTransLucent75AlphaZReadWrite_G
+[conv] 0x499a90 _RLEBlitTransLucent25AlphaZReadWrite_G::AddRef -> _RLEBlitTransLucent25AlphaZReadWrite_G
+[conv] 0x499430 _RLEBlitTransZRemapXlatAlphaZReadWrite_G::AddRef -> _RLEBlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x4863d0 CellLand::IsBuildable -> CellLand
+[conv] 0x757790 VoxelRenderer::DrawSectionLines -> VoxelRenderer
+[conv] 0x499860 _RLEBlitTransLucent50AlphaZReadWrite_G::AddRef -> _RLEBlitTransLucent50AlphaZReadWrite_G
+[conv] 0x7575a0 VoxelRenderer::DrawSection -> VoxelRenderer
+[conv] 0x6a8220 SidebarClass::InitCameoGrid -> SidebarClass
+[conv] 0x4b4b00 DriveLocomotionClass::StubReturnZero_2 -> DriveLocomotionClass
+[conv] 0x6a4130 ShipLocomotionClass::StubReturnZero_15 -> ShipLocomotionClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] PacketQueue              rc=2
+[era] _RLEBlitTransZRemapXlatAlphaZRead_G rc=2
+[era] _RLEBlitTransLucent50AlphaZRead_G rc=2
+[era] _RLEBlitTransLucent50AlphaZReadWarp_G rc=2
+[era] VoxelRenderer            rc=2
+[era] _RLEBlitTransLucent75AlphaZRead_G rc=2
+[era] _RLEBlitTransLucent25AlphaZRead_G rc=2
+[era] _RLEBlitTransLucent75AlphaZReadWarp_G rc=2
+[era] _RLEBlitTransLucent25AlphaZReadWarp_G rc=2
+[era] _RLEBlitTransLucent75AlphaZReadWrite_G rc=2
+[era] _RLEBlitTransLucent25AlphaZReadWrite_G rc=2
+[era] _RLEBlitTransZRemapXlatAlphaZReadWrite_G rc=2
+[era] CellLand                 rc=2
+[era] _RLEBlitTransLucent50AlphaZReadWrite_G rc=2
+[era] SidebarClass             rc=2
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+=== diffasm byte-compare ===
+[ledger] 0x48b570 PacketQueue::ExtractEntry -> PENDING (attempt 2)
+[ledger] 0x4982e0 RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4986d0 RLEBlitTransLucent50AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x498cd0 RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x757e70 VoxelRenderer::ProcessVoxelData -> PENDING (attempt 2)
+[ledger] 0x4984d0 RLEBlitTransLucent75AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4988c0 RLEBlitTransLucent25AlphaZRead_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x758030 VoxelRenderer::RenderFrame -> PENDING (attempt 2)
+[ledger] 0x498ac0 RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x498ed0 RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x499650 RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x499a90 RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x499430 RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x4863d0 CellLand::IsBuildable -> PENDING (attempt 2)
+[ledger] 0x757790 VoxelRenderer::DrawSectionLines -> PENDING (attempt 2)
+[ledger] 0x499860 RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef -> PENDING (attempt 2)
+[ledger] 0x7575a0 VoxelRenderer::DrawSection -> PENDING (attempt 2)
+[ledger] 0x6a8220 SidebarClass::InitCameoGrid -> PENDING (attempt 2)
+[ledger] 0x4b4b00 JumpjetLocomotionClass::StubReturnZero_2 -> PENDING (attempt 2)
+[ledger] 0x6a4130 JumpjetLocomotionClass::StubReturnZero_15 -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p16\batch_report.json
+PART 16: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p16
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x552b10 Scenario::ComputeDisplayPosition -> Scenario
+[conv] 0x42dca0 Pathfinding::SiftDown -> Pathfinding
+[conv] 0x5ad870 Heap::SiftDown -> Heap
+[conv] 0x758ea0 VoxelRenderer::ProjectVertex -> VoxelRenderer
+[conv] 0x5ac960 PriorityQueue::Pop -> PriorityQueue
+[conv] 0x6632e0 RocketLocomotionClass::ComputeFloatExpression_3 -> RocketLocomotionClass
+[conv] 0x41fe20 AITriggerTypeClass::RegisterFailure -> AITriggerTypeClass
+[conv] 0x41fd60 AITriggerTypeClass::RegisterSuccess -> AITriggerTypeClass
+[conv] 0x4caf20 VoxelAnimClass::ProcessFrame -> VoxelAnimClass
+[conv] 0x480510 BuildingPlacement::ValidateType -> BuildingPlacement
+[conv] 0x6da230 DisplayClass::GetCoordDelta -> DisplayClass
+[conv] 0x5bd0d0 Debug::ScrollText -> Debug
+[conv] 0x588ac0 LayerClass::ClearFactoryCellAssignments -> LayerClass
+[conv] 0x4c9b20 FactoryClass::UpdateProduction -> FactoryClass
+[conv] 0x56d100 MapSeed::CheckTileMatch -> MapSeed
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x6b7100 TaskManager::Update -> TaskManager
+[conv] 0x5cbb80 MSShapeAnim::Draw -> MSShapeAnim
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Scenario                 rc=2
+[era] Pathfinding              rc=2
+[era] Heap                     rc=2
+[era] VoxelRenderer            rc=2
+[era] PriorityQueue            rc=2
+[era] RocketLocomotionClass    rc=2
+[era] AITriggerTypeClass       rc=2
+[era] VoxelAnimClass           rc=2
+[era] BuildingPlacement        rc=2
+[era] DisplayClass             rc=2
+[era] Debug                    rc=2
+[era] LayerClass               rc=2
+[era] FactoryClass             rc=2
+[era] MapSeed                  rc=2
+[era] ScenarioClass            rc=2
+[era] Tactical                 rc=2
+[era] TaskManager              rc=2
+[era] MSShapeAnim              rc=2
+[era] TechnoClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x552b10 Scenario::ComputeDisplayPosition -> PENDING (attempt 2)
+[ledger] 0x42dca0 Pathfinding::SiftDown -> PENDING (attempt 2)
+[ledger] 0x5ad870 Heap::SiftDown -> PENDING (attempt 2)
+[ledger] 0x758ea0 VoxelRenderer::ProjectVertex -> PENDING (attempt 2)
+[ledger] 0x5ac960 PriorityQueue::Pop -> PENDING (attempt 2)
+[ledger] 0x6632e0 JumpjetLocomotionClass::ComputeFloatExpression_3 -> PENDING (attempt 2)
+[ledger] 0x41fe20 AITriggerTypeClass::RegisterFailure -> PENDING (attempt 2)
+[ledger] 0x41fd60 AITriggerTypeClass::RegisterSuccess -> PENDING (attempt 2)
+[ledger] 0x4caf20 VoxelAnimClass::ProcessFrame -> PENDING (attempt 2)
+[ledger] 0x480510 BuildingPlacement::ValidateType -> PENDING (attempt 2)
+[ledger] 0x6da230 DisplayClass::GetCoordDelta -> PENDING (attempt 2)
+[ledger] 0x5bd0d0 Debug::ScrollText -> PENDING (attempt 2)
+[ledger] 0x588ac0 LayerClass::ClearFactoryCellAssignments -> PENDING (attempt 2)
+[ledger] 0x4c9b20 FactoryClass::UpdateProduction -> PENDING (attempt 2)
+[ledger] 0x56d100 MapSeed::CheckTileMatch -> PENDING (attempt 2)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> PENDING (attempt 2)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> PENDING (attempt 2)
+[ledger] 0x6b7100 TaskManager::Update -> PENDING (attempt 2)
+[ledger] 0x5cbb80 MSOverlayAnim::Draw -> PENDING (attempt 2)
+[ledger] 0x455c20 ObjectClass::GetScreenCoords -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p17\batch_report.json
+PART 17: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p17
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x589370 VectorClass::AllocateCellDataBuffer -> VectorClass
+[conv] 0x526810 INIClass::BinarySearchSection -> INIClass
+[conv] 0x56d5a0 CellClass::DetermineTileConnectivity -> CellClass
+[conv] 0x586360 unknown::IsPassable -> unknown
+[conv] 0x48b750 ModemConnectionClass::allocPacketSlot -> ModemConnectionClass
+[conv] 0x405d40 AudioController::Stop -> AudioController
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x472160 CaptureManagerClass::DrawLinks -> CaptureManagerClass
+[conv] 0x547230 TacticalClass::DrawCellOverlay -> TacticalClass
+[conv] 0x56d460 Cell::SetRadar -> Cell
+[conv] 0x405c00 AudioFileClass::Release -> AudioFileClass
+[conv] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> MSFadeAnim
+[conv] 0x578710 MapClass::SpiralSearch -> MapClass
+[conv] 0x5f4730 IUnknown::GetPlacementScreenRect -> IUnknown
+[conv] 0x4a8bf0 MouseClass::SetBounds -> MouseClass
+[conv] 0x4a8d50 MIXClass::CopyHeader -> MIXClass
+[conv] 0x6ac5f0 TActionClass::executeHarvestAction -> TActionClass
+[conv] 0x65a820 ObjectClass::ProcessGroupInput -> ObjectClass
+[conv] 0x54fe60 TimerClass::Construct -> TimerClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CStreamClass             rc=2
+[era] VectorClass              rc=2
+[era] INIClass                 rc=2
+[era] CellClass                rc=2
+[era] unknown                  rc=2
+[era] ModemConnectionClass     rc=2
+[era] AudioController          rc=2
+[era] MSOverlayAnim            rc=2
+[era] CaptureManagerClass      rc=2
+[era] TacticalClass            rc=2
+[era] Cell                     rc=2
+[era] AudioFileClass           rc=2
+[era] MSFadeAnim               rc=2
+[era] MapClass                 rc=2
+[era] IUnknown                 rc=2
+[era] MouseClass               rc=2
+[era] MIXClass                 rc=2
+[era] TActionClass             rc=2
+[era] ObjectClass              rc=0
+[era] TimerClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x65a820   MISMATCH         ObjectClass::ProcessGroupInput
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> PENDING (attempt 2)
+[ledger] 0x589370 VectorClass::AllocateCellDataBuffer -> PENDING (attempt 2)
+[ledger] 0x526810 INIClass::BinarySearchSection -> PENDING (attempt 2)
+[ledger] 0x56d5a0 CellClass::DetermineTileConnectivity -> PENDING (attempt 2)
+[ledger] 0x586360 Cell::IsPassable -> PENDING (attempt 2)
+[ledger] 0x48b750 ConnectionClass::allocPacketSlot -> PENDING (attempt 2)
+[ledger] 0x405d40 AudioController::Stop -> PENDING (attempt 2)
+[ledger] 0x5cc550 ScenarioClass::DrawPlacementPreview -> PENDING (attempt 2)
+[ledger] 0x472160 CaptureManagerClass::DrawLinks -> PENDING (attempt 2)
+[ledger] 0x547230 TacticalClass::DrawCellOverlay -> PENDING (attempt 2)
+[ledger] 0x56d460 Cell::SetRadar -> PENDING (attempt 2)
+[ledger] 0x405c00 AudioFileClass::Release -> PENDING (attempt 2)
+[ledger] 0x5cc110 ScenarioClass::DrawConstructionFrame -> PENDING (attempt 2)
+[ledger] 0x578710 MapClass::SpiralSearch -> PENDING (attempt 2)
+[ledger] 0x5f4730 ObjectClass::GetPlacementScreenRect -> PENDING (attempt 2)
+[ledger] 0x4a8bf0 Mouse::SetBounds -> PENDING (attempt 2)
+[ledger] 0x4a8d50 MIXClass::CopyHeader -> PENDING (attempt 2)
+[ledger] 0x6ac5f0 TActionClass::executeHarvestAction -> PENDING (attempt 2)
+[ledger] 0x65a820 ObjectClass::ProcessGroupInput -> NG (attempt 2)
+[ledger] 0x54fe60 TimerClass::Construct -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p18\batch_report.json
+PART 18: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p18
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x68c710 FontClass::InitMetrics -> FontClass
+[conv] 0x48b410 ModemConnectionClass::queueSendPacket -> ModemConnectionClass
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> DriveLocomotionClass
+[conv] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> ShipLocomotionClass
+[conv] 0x54f050 EventQueue::Read -> EventQueue
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x56d230 MapClass::GetTileIndex -> MapClass
+[conv] 0x7b0f50 NetworkOptions::ApplySettings -> NetworkOptions
+[conv] 0x42e820 BridgeClass::GetCellData -> BridgeClass
+[conv] 0x5ce8c0 MSPCXAnim::Draw -> MSPCXAnim
+[conv] 0x4a2600 CountdownTimer::UpdateDisplay -> CountdownTimer
+[conv] 0x56bd40 CrateClass::FindPlacement -> CrateClass
+[conv] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> TacticalMap
+[conv] 0x411330 TacticalClass::FillScanlinesTransparent -> TacticalClass
+[conv] 0x6d6410 unknown::ClimbCheck -> unknown
+[conv] 0x47ff80 CellClass::GetScreenRect -> CellClass
+[conv] 0x71d160 TerrainClass::Export -> TerrainClass
+[conv] 0x4a61c0 unknown::DrawText -> unknown
+[conv] 0x6da7d0 Tactical::AddCellToDrawList -> Tactical
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FontClass                rc=2
+[era] ModemConnectionClass     rc=2
+[era] MSVQAnim                 rc=2
+[era] DriveLocomotionClass     rc=2
+[era] ShipLocomotionClass      rc=2
+[era] EventQueue               rc=2
+[era] TooltipClass             rc=2
+[era] MapClass                 rc=2
+[era] NetworkOptions           rc=2
+[era] BridgeClass              rc=2
+[era] MSPCXAnim                rc=2
+[era] CountdownTimer           rc=2
+[era] CrateClass               rc=2
+[era] TacticalMap              rc=2
+[era] TacticalClass            rc=2
+[era] unknown                  rc=2
+[era] CellClass                rc=2
+[era] TerrainClass             rc=2
+[era] Tactical                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x68c710 FontClass::InitMetrics -> PENDING (attempt 2)
+[ledger] 0x48b410 ConnectionClass::queueSendPacket -> PENDING (attempt 2)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> PENDING (attempt 2)
+[ledger] 0x4b0c40 JumpjetLocomotionClass::SetWaypointTarget -> PENDING (attempt 2)
+[ledger] 0x6a0310 WalkLocomotionClass::SetWaypointTarget -> PENDING (attempt 2)
+[ledger] 0x54f050 EventQueue::Read -> PENDING (attempt 2)
+[ledger] 0x7248c0 TooltipClass::GetText -> PENDING (attempt 2)
+[ledger] 0x56d230 MapClass::GetTileIndex -> PENDING (attempt 2)
+[ledger] 0x7b0f50 NetworkOptions::ApplySettings -> PENDING (attempt 2)
+[ledger] 0x42e820 BridgeClass::GetCellData -> PENDING (attempt 2)
+[ledger] 0x5ce8c0 MSPCXAnim::Draw -> PENDING (attempt 2)
+[ledger] 0x4a2600 CountdownTimer::UpdateDisplay -> PENDING (attempt 2)
+[ledger] 0x56bd40 CrateClass::FindPlacement -> PENDING (attempt 2)
+[ledger] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> PENDING (attempt 2)
+[ledger] 0x411330 TacticalClass::FillScanlinesTransparent -> PENDING (attempt 2)
+[ledger] 0x6d6410 Terrain::ClimbCheck -> PENDING (attempt 2)
+[ledger] 0x47ff80 CellClass::GetScreenRect -> PENDING (attempt 2)
+[ledger] 0x71d160 TerrainClass::Export -> PENDING (attempt 2)
+[ledger] 0x4a61c0 TextRenderer::DrawText -> PENDING (attempt 2)
+[ledger] 0x6da7d0 Tactical::AddCellToDrawList -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p19\batch_report.json
+PART 19: 20 fns -> D:\RA2YR_ReSource\.omo\decomp_batch\r4_400\p19
+ 31 files changed, 150 insertions(+), 70 deletions(-)
+ 17 files changed, 80 insertions(+), 36 deletions(-)
+ 5 files changed, 46 insertions(+), 20 deletions(-)
+ 28 files changed, 105 insertions(+), 59 deletions(-)
+ 20 files changed, 74 insertions(+), 54 deletions(-)
+ 6 files changed, 51 insertions(+), 20 deletions(-)
+ 16 files changed, 75 insertions(+), 38 deletions(-)
+ 5 files changed, 42 insertions(+), 20 deletions(-)
+ 3 files changed, 40 insertions(+), 20 deletions(-)
+ 12 files changed, 58 insertions(+), 26 deletions(-)
+ 7 files changed, 54 insertions(+), 22 deletions(-)
+ 6 files changed, 48 insertions(+), 22 deletions(-)
+ 13 files changed, 70 insertions(+), 26 deletions(-)
+ 11 files changed, 74 insertions(+), 28 deletions(-)
+ 23 files changed, 130 insertions(+), 38 deletions(-)
+ 4 files changed, 40 insertions(+), 20 deletions(-)
+ 2 files changed, 40 insertions(+), 20 deletions(-)
+ 8 files changed, 46 insertions(+), 26 deletions(-)
+ 3 files changed, 40 insertions(+), 20 deletions(-)
+ 14 files changed, 80 insertions(+), 26 deletions(-)
