@@ -6888,11 +6888,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x7bd2d0": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+4 mov ebx, ecx",
   "name": "AudioStream::CalcReadPos",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c35c0": {
   "attempts": 2,
@@ -6902,7 +6902,7 @@
   "status": "NG"
  },
  "0x7c81db": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "AudioCodec::Decode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6979,21 +6979,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",

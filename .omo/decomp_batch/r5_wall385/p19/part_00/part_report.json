@@ -2,9 +2,12 @@
  "summary": {
   "total": 5,
   "verdicts": {
-   "COMPILE_FAIL": 5
+   "MISMATCH": 1,
+   "COMPILE_FAIL": 4
   },
-  "pathologies": {},
+  "pathologies": {
+   "codegen_shape": 1
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
  },
@@ -12,23 +15,28 @@
   {
    "addr": "0x7bd2d0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\AudioStream.cpp(56) : error C2059: syntax error : '}'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\AudioStream.cpp(79) : error",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 406B ours 416B",
+   "first_diff": {
+    "orig": "+4 mov ebx, ecx",
+    "ours": "+4 push ebp"
+   },
+   "pathology": "codegen_shape",
    "name": "AudioStream::CalcReadPos",
    "emitted": "AudioStream::CalcReadPos",
    "unit": "AudioStream",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "4/4",
-   "rule_violations": 46
+   "rule_violations": 46,
+   "orig_size": 406,
+   "ours_size": 416
   },
   {
    "addr": "0x7c81db",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\unknown.cpp(39) : error C2440: '=' : cannot convert from 'unsigned char *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\unknown.cpp(93) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\unknown.cpp(168",
    "first_diff": null,
    "pathology": null,
    "name": "AudioCodec::Decode",
@@ -36,14 +44,14 @@
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "0/6",
+   "sites": "1/7",
    "rule_violations": 0
   },
   {
    "addr": "0x7df9c0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(11) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(27) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(72) : e",
    "first_diff": null,
    "pathology": null,
    "name": "Voxel::FacePixelBuffer",
@@ -51,14 +59,14 @@
    "unit": "Voxel",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/22",
+   "sites": "5/23",
    "rule_violations": 1
   },
   {
    "addr": "0x7dfae0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(11) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(27) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(72) : e",
    "first_diff": null,
    "pathology": null,
    "name": "Voxel::FacePixelBufferEx",
@@ -66,14 +74,14 @@
    "unit": "Voxel",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/21",
-   "rule_violations": 20
+   "sites": "5/22",
+   "rule_violations": 22
   },
   {
    "addr": "0x7dfc00",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(11) : error C2440: 'initializing' : cannot convert from 'unsigned int' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(27) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p19\\part_00\\Voxel.cpp(72) : e",
    "first_diff": null,
    "pathology": null,
    "name": "Voxel::FacePixelBuffer3",
@@ -81,7 +89,7 @@
    "unit": "Voxel",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "2/19",
+   "sites": "3/20",
    "rule_violations": 1
   }
  ]

@@ -8,35 +8,26 @@ int Voxel::FacePixelBuffer(int * p0)
         int v1 = *((short *)p0 + 21);
         int v2 = *((short *)p0 + 22);
         int v3 = *((unsigned char*)p0 + 50);
-        int * v4 = g_VoxelOffsetTable;
+        int * v4 = (int *)(g_VoxelOffsetTable);
         int v5 = 0;
         int v6 = 0;
+        unsigned short * v7;
         do
         {
-        } while ();
-        unsigned short * v7 = (unsigned short *)v4 + 1;
-        v5 += v1;
-        *v7 = v6;
-        v4 = (int *)(v7 + 1);
-        v6 += v2;
-        --v3;
-        int * v8;
+            *(unsigned short *)v4 = v5;
+            v7 = (unsigned short *)v4 + 1;
+            v5 += v1;
+            *v7 = v6;
+            v4 = (int *)(v7 + 1);
+            v6 += v2;
+            --v3;
+        } while ( v3 );
         int savedregs;
-        while ( v3 )
-        {
-            v8 = &savedregs;
-        }
+        int * v8 = &savedregs;
         ((v3 >> 8) & 0xFF) = *((unsigned char *)p0 + 49);
-        do
-        {
-        } while ();
-        *(v8 - 2) = *(v8 - 3);
-        v3 = (v3 & ~0xFF) | ((*((unsigned char *)p0 + 48)) & 0xFF);
-        do
-        {
-        } while ();
-        int v9 = *p0;
-        int v10 = *(unsigned int *)(*p0 + 4 * p0[3]);
+        int v9;
+        int v10;
+        int result;
         unsigned char * v12;
         int v13;
         int v14;
@@ -48,59 +39,65 @@ int Voxel::FacePixelBuffer(int * p0)
         int v20;
         int * v21;
         int v22;
-        if ( v10 >= 0 )
+        do
         {
-            v22 = v3;
-            v21 = v8;
-            v12 = (unsigned char *)(p0[2] + v10);
-            v13 = *((unsigned char*)p0 + 50);
-            v9 = (v9 & ~0xFF) | ((*((unsigned short *)p0 + 13)) & 0xFF);
-            v15 = v9 << 16;
-            v14 = *(int *)((char *)p0 + 42);
-            v15 = (v15 & ~0xFF) | ((*((unsigned short *)p0 + 12)) & 0xFF);
-            while ( 1 )
+            *(v8 - 1) = p0[3];
+            *(v8 - 2) = *(v8 - 3);
+            v3 = (v3 & ~0xFF) | ((*((unsigned char *)p0 + 48)) & 0xFF);
+            do
             {
-                v16 = 0;
-            }
-            if ( v13 == 0 )
-            {
-                break;
-            }
-            v16 = (v16 & ~0xFF) | ((*v12) & 0xFF);
-            v17 = v12 + 1;
-            v13 = (v13 & ~0xFF) | ((v13 - v16) & 0xFF);
-            v15 += g_VoxelOffsetTable[v16];
-            ((v13 >> 8) & 0xFF) = *v17;
-            for ( i = v17 + 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v19] = g_VoxelColorPalette[v20] )
-            {
-                v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
-            }
-            v19 = ((v15 >> 16) & 0xFFFF);
-            v20 = (unsigned char)i[1];
-            v19 = (v19 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
-            ((v20 >> 8) & 0xFF) = g_VoxelShadeTable[v20];
-            v20 = (v20 & ~0xFF) | ((*i) & 0xFF);
-            v15 += v14;
-            i += 2;
-            --((v13 >> 8) & 0xFF);
-            v12 = i + 1;
-            v8 = v21;
-            v3 = v22;
-        }
-        *(v8 - 3) += *(int *)((char *)p0 + 30);
-        p0[3] += p0[4];
-        v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
-        while ( (unsigned char)v3 )
-        {
+                p0[6] = *(v8 - 3);
+                v9 = *p0;
+                v10 = *(unsigned int *)(*p0 + 4 * p0[3]);
+                if ( v10 >= 0 )
+                {
+                    v22 = v3;
+                    v21 = v8;
+                    v12 = (unsigned char *)(p0[2] + v10);
+                    v13 = *((unsigned char*)p0 + 50);
+                    v9 = (v9 & ~0xFF) | ((*((unsigned short *)p0 + 13)) & 0xFF);
+                    v15 = v9 << 16;
+                    v14 = *(int *)((char *)p0 + 42);
+                    v15 = (v15 & ~0xFF) | ((*((unsigned short *)p0 + 12)) & 0xFF);
+                    while ( 1 )
+                    {
+                        v16 = 0;
+                        if ( v13 == 0 )
+                        {
+                            break;
+                        }
+                        v16 = (v16 & ~0xFF) | ((*v12) & 0xFF);
+                        v17 = v12 + 1;
+                        v13 = (v13 & ~0xFF) | ((v13 - v16) & 0xFF);
+                        v15 += g_VoxelOffsetTable[v16];
+                        ((v13 >> 8) & 0xFF) = *v17;
+                        for ( i = v17 + 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v19] = g_VoxelColorPalette[v20] )
+                        {
+                            v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
+                            v19 = ((v15 >> 16) & 0xFFFF);
+                            v20 = (unsigned char)i[1];
+                            v19 = (v19 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
+                            ((v20 >> 8) & 0xFF) = g_VoxelShadeTable[v20];
+                            v20 = (v20 & ~0xFF) | ((*i) & 0xFF);
+                            v15 += v14;
+                            i += 2;
+                            --((v13 >> 8) & 0xFF);
+                        }
+                        v12 = i + 1;
+                    }
+                    v8 = v21;
+                    v3 = v22;
+                }
+                *(v8 - 3) += *(int *)((char *)p0 + 30);
+                p0[3] += p0[4];
+                v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
+            } while ( (unsigned char)v3 );
             *(v8 - 3) = p0[9] + *(v8 - 2);
-        }
-        int result = p0[5] + *(v8 - 1);
-        p0[3] = result;
-        --((v3 >> 8) & 0xFF);
-        while ( ((v3 >> 8) & 0xFF) )
-        {
-            return (int)(result);
-        }
+            result = p0[5] + *(v8 - 1);
+            p0[3] = result;
+            --((v3 >> 8) & 0xFF);
+        } while ( ((v3 >> 8) & 0xFF) );
+        return (int)(result);
 }
 
 // GENERATED by tools/decomp_sys/decompile.py -- DO NOT EDIT.
@@ -112,36 +109,27 @@ int Voxel::FacePixelBufferEx(int p0)
         int v1 = *(short *)(p0 + 42);
         int v2 = *(short *)(p0 + 44);
         int v3 = *(unsigned char*)(p0 + 50);
-        int * v4 = g_VoxelOffsetTable;
+        int * v4 = (int *)(g_VoxelOffsetTable);
         int v5 = 0;
         int v6 = 0;
+        unsigned short * v7;
         do
         {
-        } while ();
-        unsigned short * v7 = (unsigned short *)v4 + 1;
-        v5 += v1;
-        *v7 = v6;
-        v4 = (int *)(v7 + 1);
-        v6 += v2;
-        --v3;
-        int * v8;
+            *(unsigned short *)v4 = v5;
+            v7 = (unsigned short *)v4 + 1;
+            v5 += v1;
+            *v7 = v6;
+            v4 = (int *)(v7 + 1);
+            v6 += v2;
+            --v3;
+        } while ( v3 );
         int savedregs;
-        while ( v3 )
-        {
-            v8 = &savedregs;
-        }
+        int * v8 = &savedregs;
         int v23 = *(unsigned int *)(p0 + 24);
         ((v3 >> 8) & 0xFF) = *(unsigned char *)(p0 + 49);
-        do
-        {
-        } while ();
-        *(v8 - 2) = *(v8 - 3);
-        v3 = (v3 & ~0xFF) | ((*(unsigned char *)(p0 + 48)) & 0xFF);
-        do
-        {
-        } while ();
-        int v9 = *(unsigned int *)(p0 + 4);
-        int v10 = *(unsigned int *)(v9 + 4 * *(unsigned int *)(p0 + 12));
+        int v9;
+        int v10;
+        int result;
         unsigned char * v12;
         int v13;
         int v14;
@@ -153,54 +141,60 @@ int Voxel::FacePixelBufferEx(int p0)
         int v20;
         int * v21;
         int v22;
-        if ( v10 >= 0 )
+        do
         {
-            v22 = v3;
-            v21 = v8;
-            v12 = (unsigned char*)(*(unsigned int *)(p0 + 8) + v10);
-            v13 = *(unsigned char*)(p0 + 50);
-            v9 = (v9 & ~0xFF) | ((*(unsigned short *)(p0 + 26)) & 0xFF);
-            v15 = v9 << 16;
-            v14 = *(unsigned int *)(p0 + 42);
-            v15 = (v15 & ~0xFF) | ((*(unsigned short *)(p0 + 24)) & 0xFF);
-            while ( v13 )
+            *(v8 - 1) = *(unsigned int *)(p0 + 12);
+            *(v8 - 2) = *(v8 - 3);
+            v3 = (v3 & ~0xFF) | ((*(unsigned char *)(p0 + 48)) & 0xFF);
+            do
             {
-                ((v13 >> 8) & 0xFF) = *v12;
-            }
-            for ( i = v12 - 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v17] = g_VoxelColorPalette[v18] )
-            {
-                v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
-            }
-            v17 = ((v15 >> 16) & 0xFFFF);
-            v18 = *i;
-            v17 = (v17 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
-            ((v18 >> 8) & 0xFF) = g_VoxelShadeTable[v18];
-            v18 = (v18 & ~0xFF) | ((*(i - 1)) & 0xFF);
-            v15 += v14;
-            i -= 2;
-            --((v13 >> 8) & 0xFF);
-            v19 = i - 1;
-            v20 = *v19;
-            v12 = v19 - 1;
-            v13 = (v13 & ~0xFF) | ((v13 - v20) & 0xFF);
-            v15 += g_VoxelOffsetTable[v20];
-            v8 = v21;
-            v3 = v22;
-        }
-        *(v8 - 3) += *(unsigned int *)(p0 + 30);
-        *(unsigned int *)(p0 + 12) += *(unsigned int *)(p0 + 16);
-        v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
-        while ( (unsigned char)v3 )
-        {
+                *(unsigned int *)(p0 + 24) = *(v8 - 3);
+                v9 = *(unsigned int *)(p0 + 4);
+                v10 = *(unsigned int *)(v9 + 4 * *(unsigned int *)(p0 + 12));
+                if ( v10 >= 0 )
+                {
+                    v22 = v3;
+                    v21 = v8;
+                    v12 = (unsigned char*)(*(unsigned int *)(p0 + 8) + v10);
+                    v13 = *(unsigned char*)(p0 + 50);
+                    v9 = (v9 & ~0xFF) | ((*(unsigned short *)(p0 + 26)) & 0xFF);
+                    v15 = v9 << 16;
+                    v14 = *(unsigned int *)(p0 + 42);
+                    v15 = (v15 & ~0xFF) | ((*(unsigned short *)(p0 + 24)) & 0xFF);
+                    while ( v13 )
+                    {
+                        ((v13 >> 8) & 0xFF) = *v12;
+                        for ( i = v12 - 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v17] = g_VoxelColorPalette[v18] )
+                        {
+                            v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
+                            v17 = ((v15 >> 16) & 0xFFFF);
+                            v18 = *i;
+                            v17 = (v17 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
+                            ((v18 >> 8) & 0xFF) = g_VoxelShadeTable[v18];
+                            v18 = (v18 & ~0xFF) | ((*(i - 1)) & 0xFF);
+                            v15 += v14;
+                            i -= 2;
+                            --((v13 >> 8) & 0xFF);
+                        }
+                        v19 = i - 1;
+                        v20 = *v19;
+                        v12 = v19 - 1;
+                        v13 = (v13 & ~0xFF) | ((v13 - v20) & 0xFF);
+                        v15 += g_VoxelOffsetTable[v20];
+                    }
+                    v8 = v21;
+                    v3 = v22;
+                }
+                *(v8 - 3) += *(unsigned int *)(p0 + 30);
+                *(unsigned int *)(p0 + 12) += *(unsigned int *)(p0 + 16);
+                v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
+            } while ( (unsigned char)v3 );
             *(v8 - 3) = *(unsigned int *)(p0 + 36) + *(v8 - 2);
-        }
-        int result = *(unsigned int *)(p0 + 20) + *(v8 - 1);
-        *(unsigned int *)(p0 + 12) = result;
-        --((v3 >> 8) & 0xFF);
-        while ( ((v3 >> 8) & 0xFF) )
-        {
-            return (int)(result);
-        }
+            result = *(unsigned int *)(p0 + 20) + *(v8 - 1);
+            *(unsigned int *)(p0 + 12) = result;
+            --((v3 >> 8) & 0xFF);
+        } while ( ((v3 >> 8) & 0xFF) );
+        return (int)(result);
 }
 
 // GENERATED by tools/decomp_sys/decompile.py -- DO NOT EDIT.
@@ -213,35 +207,26 @@ int Voxel::FacePixelBuffer3(int * p0)
         int v2 = *((short *)p0 + 22);
         int v3 = 255;
         v3 = (v3 & ~0xFF) | ((-1 - *((unsigned char *)p0 + 50)) & 0xFF);
-        int * v4 = g_VoxelOffsetTable;
+        int * v4 = (int *)(g_VoxelOffsetTable);
         int v5 = 0;
         int v6 = 0;
+        unsigned short * v7;
         do
         {
-        } while ();
-        unsigned short * v7 = (unsigned short *)v4 + 1;
-        v5 += v1;
-        *v7 = v6;
-        v4 = (int *)(v7 + 1);
-        v6 += v2;
-        --v3;
-        int * v8;
+            *(unsigned short *)v4 = v5;
+            v7 = (unsigned short *)v4 + 1;
+            v5 += v1;
+            *v7 = v6;
+            v4 = (int *)(v7 + 1);
+            v6 += v2;
+            --v3;
+        } while ( v3 );
         int savedregs;
-        while ( v3 )
-        {
-            v8 = &savedregs;
-        }
+        int * v8 = &savedregs;
         ((v3 >> 8) & 0xFF) = *((unsigned char *)p0 + 49);
-        do
-        {
-        } while ();
-        *(v8 - 2) = *(v8 - 3);
-        v3 = (v3 & ~0xFF) | ((*((unsigned char *)p0 + 48)) & 0xFF);
-        do
-        {
-        } while ();
-        int v9 = *p0;
-        int v10 = *(unsigned int *)(*p0 + 4 * p0[3]);
+        int v9;
+        int v10;
+        int result;
         unsigned char * v12;
         int v13;
         int v14;
@@ -253,55 +238,61 @@ int Voxel::FacePixelBuffer3(int * p0)
         char v20;
         int * v21;
         int v22;
-        if ( v10 >= 0 )
+        do
         {
-            v22 = v3;
-            v21 = v8;
-            v12 = (unsigned char *)(p0[2] + v10);
-            v13 = *((unsigned char*)p0 + 50);
-            v9 = (v9 & ~0xFF) | ((*((unsigned short *)p0 + 13)) & 0xFF);
-            v15 = v9 << 16;
-            v14 = *(int *)((char *)p0 + 42);
-            v15 = (v15 & ~0xFF) | ((*((unsigned short *)p0 + 12)) & 0xFF);
-            while ( 1 )
+            *(v8 - 1) = p0[3];
+            *(v8 - 2) = *(v8 - 3);
+            v3 = (v3 & ~0xFF) | ((*((unsigned char *)p0 + 48)) & 0xFF);
+            do
             {
-                v16 = 0;
-            }
-            if ( v13 == 0 )
-            {
-                break;
-            }
-            v16 = (v16 & ~0xFF) | ((*v12) & 0xFF);
-            v17 = v12 + 1;
-            v13 = (v13 & ~0xFF) | ((v13 - v16) & 0xFF);
-            v15 += g_VoxelOffsetTable[v16];
-            ((v13 >> 8) & 0xFF) = *v17;
-            for ( i = v17 + 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v19] = v20 )
-            {
-                v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
-            }
-            v19 = ((v15 >> 16) & 0xFFFF);
-            v20 = *i;
-            v19 = (v19 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
-            ++i;
-            v15 += v14;
-            --((v13 >> 8) & 0xFF);
-            v12 = i + 1;
-            v8 = v21;
-            v3 = v22;
-        }
-        *(v8 - 3) += *(int *)((char *)p0 + 30);
-        p0[3] += p0[4];
-        v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
-        while ( (unsigned char)v3 )
-        {
+                p0[6] = *(v8 - 3);
+                v9 = *p0;
+                v10 = *(unsigned int *)(*p0 + 4 * p0[3]);
+                if ( v10 >= 0 )
+                {
+                    v22 = v3;
+                    v21 = v8;
+                    v12 = (unsigned char *)(p0[2] + v10);
+                    v13 = *((unsigned char*)p0 + 50);
+                    v9 = (v9 & ~0xFF) | ((*((unsigned short *)p0 + 13)) & 0xFF);
+                    v15 = v9 << 16;
+                    v14 = *(int *)((char *)p0 + 42);
+                    v15 = (v15 & ~0xFF) | ((*((unsigned short *)p0 + 12)) & 0xFF);
+                    while ( 1 )
+                    {
+                        v16 = 0;
+                        if ( v13 == 0 )
+                        {
+                            break;
+                        }
+                        v16 = (v16 & ~0xFF) | ((*v12) & 0xFF);
+                        v17 = v12 + 1;
+                        v13 = (v13 & ~0xFF) | ((v13 - v16) & 0xFF);
+                        v15 += g_VoxelOffsetTable[v16];
+                        ((v13 >> 8) & 0xFF) = *v17;
+                        for ( i = v17 + 1; ((v13 >> 8) & 0xFF); g_VoxelRenderBuffer[v19] = v20 )
+                        {
+                            v13 = (v13 & ~0xFF) | ((v13 - 1) & 0xFF);
+                            v19 = ((v15 >> 16) & 0xFFFF);
+                            v20 = *i;
+                            v19 = (v19 & ~0xFF) | ((((v15 >> 8) & 0xFF)) & 0xFF);
+                            ++i;
+                            v15 += v14;
+                            --((v13 >> 8) & 0xFF);
+                        }
+                        v12 = (unsigned char *)(i + 1);
+                    }
+                    v8 = v21;
+                    v3 = v22;
+                }
+                *(v8 - 3) += *(int *)((char *)p0 + 30);
+                p0[3] += p0[4];
+                v3 = (v3 & ~0xFF) | ((v3 - 1) & 0xFF);
+            } while ( (unsigned char)v3 );
             *(v8 - 3) = p0[9] + *(v8 - 2);
-        }
-        int result = p0[5] + *(v8 - 1);
-        p0[3] = result;
-        --((v3 >> 8) & 0xFF);
-        while ( ((v3 >> 8) & 0xFF) )
-        {
-            return (int)(result);
-        }
+            result = p0[5] + *(v8 - 1);
+            p0[3] = result;
+            --((v3 >> 8) & 0xFF);
+        } while ( ((v3 >> 8) & 0xFF) );
+        return (int)(result);
 }

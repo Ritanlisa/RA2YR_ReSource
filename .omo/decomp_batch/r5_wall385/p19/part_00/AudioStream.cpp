@@ -52,15 +52,14 @@ int AudioStream::CalcReadPos()
             if ( v17 < v15 )
             {
                 do
-            ++v14;
-            }
-            *(unsigned char *)(*((unsigned int *)this + 485) + v14 - 1) = 1;
-            while ( v14 < *((unsigned int *)this + 487) )
-            {
-                for ( i = 0; i < v8; *(unsigned char *)(*((unsigned int *)this + 485) + i - 1) = 1 )
                 {
-                    ++i;
-                }
+                    ++v14;
+                    *(unsigned char *)(*((unsigned int *)this + 485) + v14 - 1) = 1;
+                } while ( v14 < *((unsigned int *)this + 487) );
+            }
+            for ( i = 0; i < v8; *(unsigned char *)(*((unsigned int *)this + 485) + i - 1) = 1 )
+            {
+                ++i;
             }
             return (int)(-1);
         }
@@ -76,10 +75,8 @@ int AudioStream::CalcReadPos()
         }
         do
         {
-        } while ();
-        *(unsigned char *)(*((unsigned int *)this + 485) + v12 - 1) = 1;
-        while ( v12 < v8 )
-        {
-            return (int)(-1);
-        }
+            ++v12;
+            *(unsigned char *)(*((unsigned int *)this + 485) + v12 - 1) = 1;
+        } while ( v12 < v8 );
+        return (int)(-1);
 }
