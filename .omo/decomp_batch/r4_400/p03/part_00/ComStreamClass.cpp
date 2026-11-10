@@ -26,7 +26,7 @@ void ComStreamClass::flushStream()
             this->m00C = ComStreamClass_field_0x0C - 1;
             v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1));
             v6 = 4 * this->m008;
-            this->m000 = v5;
+            this->m000 = (unsigned char *)v5;
             memset(v5, 0, v6);
             if ( (int)ComStreamClass_field_0x08 > 0 )
             {

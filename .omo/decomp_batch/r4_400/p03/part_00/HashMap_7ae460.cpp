@@ -26,7 +26,7 @@ void HashMap::Shrink()
             this->m00C = HashMap_field_0x0C - 1;
             v6 = (void *)__2_YAPAXI_Z(4 * (HashMap_field_0x08 >> 1));
             v7 = 4 * this->m008;
-            this->m000 = v6;
+            this->m000 = (unsigned char *)v6;
             memset(v6, 0, v7);
             if ( (int)HashMap_field_0x08 > 0 )
             {

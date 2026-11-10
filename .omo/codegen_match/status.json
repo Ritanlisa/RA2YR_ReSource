@@ -532,7 +532,7 @@
   "status": "OK"
  },
  "0x420e90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -728,7 +728,7 @@
   "status": "PENDING"
  },
  "0x433330": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 sub esp, 0x30",
   "name": "BinkMovie::AdjustSurfaceFormat",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
@@ -861,7 +861,7 @@
   "status": "PENDING"
  },
  "0x452360": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1260,7 +1260,7 @@
   "status": "PENDING"
  },
  "0x485080": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2051,7 +2051,7 @@
   "status": "OK"
  },
  "0x4b5630": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitterList::CopyEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2387,7 +2387,7 @@
   "status": "PENDING"
  },
  "0x4daf10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2555,7 +2555,7 @@
   "status": "PENDING"
  },
  "0x501160": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2590,7 +2590,7 @@
   "status": "NG"
  },
  "0x509c10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 sub esp, 8",
   "name": "HouseClass::FireStoredSW",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -2667,7 +2667,7 @@
   "status": "PENDING"
  },
  "0x50fb20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "VectorClass__N::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3241,7 +3241,7 @@
   "status": "PENDING"
  },
  "0x540dc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SessionClass::initLAN",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4354,7 +4354,7 @@
   "status": "PENDING"
  },
  "0x625780": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashTable_flat::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4368,7 +4368,7 @@
   "status": "PENDING"
  },
  "0x6258e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::SetCapacity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5103,7 +5103,7 @@
   "status": "PENDING"
  },
  "0x6b1020": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SlaveManagerClass::ShouldWakeUpNow",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5334,7 +5334,7 @@
   "status": "PENDING"
  },
  "0x6da180": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TacticalMap::DrawOccupiedRegion",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5376,7 +5376,7 @@
   "status": "PENDING"
  },
  "0x6e0110": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::Create",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5971,7 +5971,7 @@
   "status": "OK"
  },
  "0x736ca0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "TechnoClass::UpdateUnitAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6013,7 +6013,7 @@
   "status": "PENDING"
  },
  "0x746810": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "UnitClass::PerFrameUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6650,7 +6650,7 @@
   "status": "PENDING"
  },
  "0x7adf70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6671,7 +6671,7 @@
   "status": "PENDING"
  },
  "0x7ae460": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6692,7 +6692,7 @@
   "status": "PENDING"
  },
  "0x7aef50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ComStreamClass::flushStream",
   "note": "decomp_batch r2: COMPILE_FAIL",

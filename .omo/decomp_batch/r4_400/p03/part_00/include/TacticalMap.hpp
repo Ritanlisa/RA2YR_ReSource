@@ -3,6 +3,7 @@
 // non-vtable methods + multi-width views).  DO NOT EDIT.
 // forward declarations
 class AudioStream;
+class CellStruct;
 
 #ifndef DECOMP_PILOT_TACTICALMAP_HPP
 #define DECOMP_PILOT_TACTICALMAP_HPP
