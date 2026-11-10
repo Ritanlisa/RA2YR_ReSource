@@ -6,6 +6,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4024a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioSample::ResetState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x404700": {
   "attempts": 1,
   "first_diff": null,
@@ -713,6 +720,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x468430": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletClass::LoseTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x46b270": {
   "attempts": 2,
   "first_diff": null,
@@ -860,6 +874,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4802a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::DrawCellTerrainOverlay",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x485010": {
   "attempts": 3,
   "first_diff": null,
@@ -986,6 +1007,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a00b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EnumConnectionsClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4a0a50": {
   "attempts": 2,
   "first_diff": null,
@@ -1021,6 +1049,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a4780": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Surface::CreateSurfacePalette",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4a60d0": {
   "attempts": 2,
   "first_diff": null,
@@ -1042,6 +1077,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a95a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::SetCellFlagsAlongPath",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4a9650": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::MarkExitPath",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4ac660": {
   "attempts": 1,
   "first_diff": null,
@@ -1060,6 +1109,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::TogglePower2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4ac960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1364,6 +1420,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4dc810": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::SetBuildingType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4de620": {
   "attempts": 6,
   "first_diff": null,
@@ -1469,6 +1532,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x4fae50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperWeapon::FireSuperWeaponHouseClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x5023b0": {
   "attempts": 1,
   "first_diff": null,
@@ -1476,12 +1546,26 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x509b20": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "HouseClass::Find",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x50b6f0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [0xa8b238]",
   "name": "House::IsHumanPlayer",
   "note": "decomp_pilot",
   "status": "NG"
+ },
+ "0x50df30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::GetStartCoords",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x50e360": {
   "attempts": 2,
@@ -1503,6 +1587,13 @@
   "name": "VectorClass::InsertAt",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x50f9e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass__N::Remove",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x510a20": {
   "attempts": 3,
@@ -1972,6 +2063,13 @@
   "name": "Struct::ZeroInitAndSetup_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x540c60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network::SetConnectionParams",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x540f90": {
   "attempts": 1,
@@ -2539,6 +2637,13 @@
   "name": "ScenarioClass::distributeStartingUnits",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5e9290": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NetworkLobby::CheckLobbyConditions",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x5ef280": {
   "attempts": 5,
@@ -3247,6 +3352,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6b6080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::CreateUnloadPlacementCraters",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x6b6130": {
   "attempts": 2,
   "first_diff": null,
@@ -3281,6 +3393,13 @@
   "name": "SpawnManagerClass::StubReturn65",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6c6740": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "StaticButtonClass::HitTest",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x6ce200": {
   "attempts": 2,
@@ -3470,6 +3589,13 @@
   "name": "IPersistStream::IsDirty",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x70b1d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::RevealAreaConditional",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x70c5b0": {
   "attempts": 2,
@@ -3890,6 +4016,13 @@
   "name": "VoxelAnimTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x74c030": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_E::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x74d5d0": {
   "attempts": 1,
@@ -4317,6 +4450,13 @@
   "name": "SessionClass::SetInstance",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7b3920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UDPInterfaceClass::Reset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x7b89f0": {
   "attempts": 1,
