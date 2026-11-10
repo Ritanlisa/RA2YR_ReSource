@@ -2,9 +2,13 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "COMPILE_FAIL": 15,
+   "MISMATCH": 5
   },
-  "pathologies": {},
+  "pathologies": {
+   "branch_polarity": 2,
+   "branch_order": 3
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0
  },
@@ -13,7 +17,7 @@
    "addr": "0x5d4b20",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\unknown.cpp(12) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\unknown.cpp(13) : error C2440: '=' : cannot convert from 'int *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\pa",
    "first_diff": null,
    "pathology": null,
    "name": "WideString::WordWrap",
@@ -21,7 +25,7 @@
    "unit": "unknown",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "1/2",
+   "sites": "0/1",
    "rule_violations": 0
   },
   {
@@ -36,14 +40,14 @@
    "unit": "MultiplayerGameMode",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "2/3",
+   "sites": "3/3",
    "rule_violations": 3
   },
   {
    "addr": "0x5e2be0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\Network.cpp(8) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\Network.cpp(9) : error C2228: left of '.nextArrayIndex' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12",
    "first_diff": null,
    "pathology": null,
    "name": "Network::CountDisconnectedHouses",
@@ -51,14 +55,14 @@
    "unit": "Network",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "2/3",
+   "sites": "3/3",
    "rule_violations": 4
   },
   {
    "addr": "0x5e84d0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\unknown.cpp(12) : error C2440: 'initializing' : cannot convert from 'unsigned char' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\unknown.cpp(13) : error C2440: '=' : cannot convert from 'int *' to 'unsigned short *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\pa",
    "first_diff": null,
    "pathology": null,
    "name": "GameConfig::ComputeCRC",
@@ -73,7 +77,7 @@
    "addr": "0x5e9290",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\NetworkLobby.cpp(29) : error C2440: 'initializing' : cannot convert from 'int' to 'long *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p1",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\NetworkLobby.cpp(29) : error C2440: 'initializing' : cannot convert from 'class LPARAM *' to 'long *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5",
    "first_diff": null,
    "pathology": null,
    "name": "NetworkLobby::CheckLobbyConditions",
@@ -81,7 +85,7 @@
    "unit": "NetworkLobby",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "11/11",
+   "sites": "12/12",
    "rule_violations": 1
   },
   {
@@ -148,7 +152,7 @@
    "addr": "0x624be0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\Dialog.cpp(24) : error C2227: left of '->AnimClass_field_0x0' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\Dialog.cpp(24) : error C2227: left of '->AnimClass_field_0x0' must point to class/struct/union",
    "first_diff": null,
    "pathology": null,
    "name": "Dialog::GrowBuffer",
@@ -156,89 +160,114 @@
    "unit": "Dialog",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "14/16",
+   "sites": "15/17",
    "rule_violations": 6
   },
   {
    "addr": "0x624fc0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\HashTable.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\pa",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 162B ours 167B",
+   "first_diff": {
+    "orig": "+8 je 0x62505f",
+    "ours": "+8 je 0xa4"
+   },
+   "pathology": "branch_polarity",
    "name": "HashTable_flat::Grow2",
    "emitted": "HashTable::Grow2",
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "14/16",
-   "rule_violations": 5
+   "sites": "15/17",
+   "rule_violations": 5,
+   "orig_size": 162,
+   "ours_size": 167
   },
   {
    "addr": "0x6252f0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\ComboBoxOwnerDraw.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 156B ours 160B",
+   "first_diff": {
+    "orig": "+8 je 0x625389",
+    "ours": "+8 je 0x9d"
+   },
+   "pathology": "branch_polarity",
    "name": "ComboBoxOwnerDraw::SortItems",
    "emitted": "ComboBoxOwnerDraw::SortItems",
    "unit": "ComboBoxOwnerDraw",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "13/16",
-   "rule_violations": 5
+   "sites": "14/17",
+   "rule_violations": 5,
+   "orig_size": 156,
+   "ours_size": 160
   },
   {
    "addr": "0x625780",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\HashTable.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\pa",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 168B ours 175B",
+   "first_diff": {
+    "orig": "+13 jbe 0x625824",
+    "ours": "+13 jbe 0xab"
+   },
+   "pathology": "branch_order",
    "name": "HashTable_flat::Shrink2",
    "emitted": "HashTable::Shrink2",
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "16/18",
-   "rule_violations": 6
+   "rule_violations": 6,
+   "orig_size": 168,
+   "ours_size": 175
   },
   {
    "addr": "0x625830",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\HashTable.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\pa",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 174B ours 181B",
+   "first_diff": {
+    "orig": "+13 jbe 0x6258da",
+    "ours": "+13 jbe 0xb1"
+   },
+   "pathology": "branch_order",
    "name": "HashTable_flat::Rebuild2",
    "emitted": "HashTable::Rebuild2",
    "unit": "HashTable",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "16/18",
-   "rule_violations": 6
+   "rule_violations": 6,
+   "orig_size": 174,
+   "ours_size": 181
   },
   {
    "addr": "0x6258e0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\ComboBoxOwnerDraw.cpp(34) : error C2440: '=' : cannot convert from 'unsigned int *' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall38",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 168B ours 174B",
+   "first_diff": {
+    "orig": "+13 jbe 0x625984",
+    "ours": "+13 jbe 0xaa"
+   },
+   "pathology": "branch_order",
    "name": "ComboBoxOwnerDraw::SetCapacity",
    "emitted": "ComboBoxOwnerDraw::SetCapacity",
    "unit": "ComboBoxOwnerDraw",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "14/17",
-   "rule_violations": 8
+   "rule_violations": 8,
+   "orig_size": 168,
+   "ours_size": 174
   },
   {
    "addr": "0x626690",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FlagSystem.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FlagSys",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FlagSystem.cpp(9) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FlagSys",
    "first_diff": null,
    "pathology": null,
    "name": "FlagSystem::GetNextActive",
@@ -283,7 +312,7 @@
    "addr": "0x635060",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FactoryClass.cpp(51) : error C2440: '=' : cannot convert from 'class FactoryClass *const ' to 'unsigned int'",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\FactoryClass.cpp(47) : error C2440: '=' : cannot convert from 'class FactoryClass *const ' to 'unsigned int'",
    "first_diff": null,
    "pathology": null,
    "name": "FactoryClass::FinishProduction",
@@ -298,7 +327,7 @@
    "addr": "0x636ce0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\ScriptAction.cpp(14) : error C2440: '=' : cannot convert from 'int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\S",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p12\\part_00\\ScriptAction.cpp(14) : error C2440: '=' : cannot convert from 'int' to 'void *'",
    "first_diff": null,
    "pathology": null,
    "name": "ScriptAction::ClearBuildingState",
@@ -306,7 +335,7 @@
    "unit": "ScriptAction",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "11/11",
+   "sites": "12/12",
    "rule_violations": 4
   }
  ]

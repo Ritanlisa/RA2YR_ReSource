@@ -10,6 +10,8 @@ class Random;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ParticleClass
 {
@@ -31,7 +33,7 @@ public:
 
     // ---- pilot methods (registry signatures)
     int CreateInstance(int * p0, float p1, int p2);  // 0x62E4C0
-    int Construct(int p0);  // 0x62B5E0
+    int Construct(int p0, void * p1, float p2, int p3);  // 0x62B5E0
 };
 
 // ---- globals used by this unit (registry names)
@@ -54,6 +56,8 @@ class ParticleClass;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Random
 {

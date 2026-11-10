@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class ScriptAction
 {
@@ -15,7 +17,7 @@ public:
     char __pad_00C[8];  // 0x00C
     int m014;  // 0x014
     char __pad_018[116];  // 0x018
-    int m08C;  // 0x08C
+    void * m08C;  // 0x08C
     char __pad_090[4];  // 0x090
     int m094;  // 0x094
     unsigned char m098;  // 0x098

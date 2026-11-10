@@ -11,41 +11,38 @@ char * unknown::ComputeCRC()
         int * v10 = &DataGlobal_ABE010;
         int v2 = 320;
         memset(&DataGlobal_ABE050, 0, 0x100u);
-        do
-        {
-        } while ();
         unsigned int v3;
         int v4;
         int v5;
         int * v6;
         int v7;
-        if ( v2 < 4 )
+        do
         {
-            v5 = 0;
-            v6 = v1;
-            v7 = v2;
-            v2 = 0;
-            do v5 = *(unsigned char*)v6 | (v5 << 8);
-            v6 = (int *)((char *)v6 + 1);
-            --v7;
-            while ( v7 )
+            v3 = v0 >> 31;
+            if ( v2 < 4 )
             {
+                v5 = 0;
+                v6 = v1;
+                v7 = v2;
+                v2 = 0;
+                do
+                {
+                    v5 = *(unsigned char*)v6 | (v5 << 8);
+                    v6 = (int *)((char *)v6 + 1);
+                    --v7;
+                } while ( v7 );
                 v1 = v10;
+                v0 = v3 + v5 + 2 * v0;
             }
-            v0 = v3 + v5 + 2 * v0;
-        }
-        else
-        {
-            v4 = *v1++;
-            v10 = v1;
-            v0 = v3 + v4 + 2 * v0;
-            v2 -= 4;
-        }
-        char * v8;
-        while ( v2 > 0 )
-        {
-            v8 = (char *)__2_YAPAXI_Z(0xCu);
-        }
+            else
+            {
+                v4 = *v1++;
+                v10 = v1;
+                v0 = v3 + v4 + 2 * v0;
+                v2 -= 4;
+            }
+        } while ( v2 > 0 );
+        char * v8 = (char *)__2_YAPAXI_Z(0xCu);
         sprintf(v8, "%08X", v0);
         memcpy(&DataGlobal_ABE050, v11, 0x100u);
         return (char *)(v8);

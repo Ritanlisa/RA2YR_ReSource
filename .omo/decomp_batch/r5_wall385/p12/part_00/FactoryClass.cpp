@@ -30,14 +30,11 @@ char FactoryClass::FinishProduction(int p0)
                 if ( this )
                 {
                     result = (result & ~0xFF) | ((*((unsigned char *)this + 28)) & 0xFF);
-                }
-            }
-            if ( !(unsigned char)result )
-            {
-                *((unsigned char *)this + 28) = 1;
-            }
-            result = DataGlobal_AC4CA0;
-            if ( DataGlobal_AC4CA8 < DataGlobal_AC4CA0
+                    if ( !(unsigned char)result )
+                    {
+                        *((unsigned char *)this + 28) = 1;
+                        result = DataGlobal_AC4CA0;
+                        if ( DataGlobal_AC4CA8 < DataGlobal_AC4CA0
                 || (DataGlobal_AC4CA5 || DataGlobal_AC4CA0 == 0)
                 && DataGlobal_AC4CAC > 0
                 && (result = (*(int (__stdcall **)(unsigned int *, int, unsigned int))(g_ScriptConfig + 8))(
@@ -45,10 +42,13 @@ char FactoryClass::FinishProduction(int p0)
                                DataGlobal_AC4CA0 + DataGlobal_AC4CAC,
                                0),
                     (unsigned char)result) )
-            {
-                result = DataGlobal_AC4CA8++;
+                        {
+                            result = DataGlobal_AC4CA8++;
+                            *((unsigned int *)DataGlobal_AC4C9C + result) = this;
+                        }
+                    }
+                }
             }
-            *((unsigned int *)DataGlobal_AC4C9C + result) = this;
         }
         *(unsigned int *)(p0 + 8) = -1;
         return (char)(result);

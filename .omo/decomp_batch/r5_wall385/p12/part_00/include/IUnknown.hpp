@@ -9,6 +9,8 @@ class Coord;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class IUnknown
 {
@@ -54,6 +56,8 @@ class IUnknown;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Coord
 {
@@ -63,8 +67,8 @@ public:
     // DECOMP_SIZECHECK(Coord, Coord, 320);
 
     // ---- pilot methods (registry signatures)
-    bool To_Screen(int * p0, int * p1);  // 0x6D2140
-    void * To_Cell(int * p0);  // 0x565730
+    bool To_Screen(void * p0, void * p1);  // 0x6D2140
+    void * To_Cell(void * p0);  // 0x565730
 };
 
 // ---- globals used by this unit (registry names)

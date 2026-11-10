@@ -14,11 +14,7 @@ int ParticleClass::CreateInstance(int * p0, float p1, int p2)
         {
             return (int)(0);
         }
-        int v6;
-        v6 = ((ParticleClass *)((int)v5))->Construct(*((unsigned int *)g_BuildingProductionQueue + *(unsigned int *)(this->u32_AC + 660)),
-             p0,
-             p1,
-             this);
+        int v6 = ((ParticleClass *)((int)v5))->Construct(*((unsigned int *)g_BuildingProductionQueue + *(unsigned int *)(this->u32_AC + 660)), p0, p1, this);
         if ( v6 == 0 )
         {
             return (int)(0);
@@ -57,12 +53,12 @@ int ParticleClass::CreateInstance(int * p0, float p1, int p2)
         {
             v17 = (unsigned int *)(v13 + 4 * v15);
             v18 = v15 - (v16 - 2);
-            do v17[1] = *v17;
-            --v17;
-            --v18;
-            while ( v18 )
+            do
             {
-            }
+                v17[1] = *v17;
+                --v17;
+                --v18;
+            } while ( v18 );
         }
         *(unsigned int *)(v13 + 4 * v16 - 4) = v6;
         return (int)(v6);

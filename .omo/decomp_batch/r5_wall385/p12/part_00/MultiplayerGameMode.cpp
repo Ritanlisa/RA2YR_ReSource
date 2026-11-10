@@ -10,42 +10,39 @@ char MultiplayerGameMode::InitAlliances()
         {
             return (char)(1);
         }
-        unsigned int * vtable3 = stru_A80220.vfptr3;
+        unsigned int * vtable3 = ((char **)stru_A80220)[3];
         int v3 = 1;
         int v4 = 0;
         int v9 = 1;
-        do
-        {
-        } while ();
         int * v5;
         int v6;
         int * v7;
-        if ( !*(unsigned char *)(v5[13] + 422) )
+        do
         {
-            v6 = v5[22551];
-            if ( v6 != -2 && v6 != -1 && v3 < nextArrayIndex )
+            v5 = (int *)vtable3[v4];
+            if ( !*(unsigned char *)(v5[13] + 422) )
             {
-                do
-              v7 = (int *)vtable3[v3];
+                v6 = v5[22551];
+                if ( v6 != -2 && v6 != -1 && v3 < nextArrayIndex )
+                {
+                    do
+                    {
+                        v7 = (int *)vtable3[v3];
+                        if ( !*(unsigned char *)(v7[13] + 422) && *(unsigned int *)(vtable3[v4] + 90204) == v7[22551] )
+                        {
+                            ((HouseClass *)(v5))->HandleAlliance((int)v7, 0);
+                            ((HouseClass *)(v7))->HandleAlliance((int)v5, 0);
+                            vtable3 = ((char **)stru_A80220)[3];
+                        }
+                        nextArrayIndex = stru_A80220.nextArrayIndex;
+                        ++v3;
+                    } while ( v3 < stru_A80220.nextArrayIndex );
+                    v3 = v9;
+                }
             }
-            if ( !*(unsigned char *)(v7[13] + 422) && *(unsigned int *)(vtable3[v4] + 90204) == v7[22551] )
-            {
-                ((HouseClass *)(v5))->HandleAlliance((int)v7, 0);
-            }
-            ((HouseClass *)(v7))->HandleAlliance((int)v5, 0);
-            vtable3 = stru_A80220.vfptr3;
-            nextArrayIndex = stru_A80220.nextArrayIndex;
             ++v3;
-            while ( v3 < stru_A80220.nextArrayIndex )
-            {
-                v3 = v9;
-            }
-        }
-        ++v3;
-        ++v4;
-        v9 = v3;
-        while ( v3 - 1 < nextArrayIndex )
-        {
-            return (char)(1);
-        }
+            ++v4;
+            v9 = v3;
+        } while ( v3 - 1 < nextArrayIndex );
+        return (char)(1);
 }

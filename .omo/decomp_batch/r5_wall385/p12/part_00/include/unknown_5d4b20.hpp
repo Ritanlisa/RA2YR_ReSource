@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class unknown
 {
@@ -17,9 +19,6 @@ public:
     // ---- pilot methods (registry signatures)
     int __stdcall WordWrap(int * p0, int * p1, int p2, int p3, int p4);  // 0x5D4B20
 };
-
-// ---- globals used by this unit (registry names)
-extern unsigned char String;
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int wcslen(...);

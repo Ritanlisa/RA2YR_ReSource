@@ -25,11 +25,11 @@ char NetworkLobby::CheckLobbyConditions()
             ++v2;
         }
         int v3 = 0;
-        long * v4 = g_NetworkPlayerName;
+        long * v4 = (LPARAM *)(g_NetworkPlayerName);
         int result;
         while ( 1 )
         {
-            result = ((GUID *)((*v4 + 40))->Compare(), (int)this);
+            result = ((GUID *)((*v4 + 40)))->Compare((int)this);
             if ( (unsigned char)result )
             {
                 break;

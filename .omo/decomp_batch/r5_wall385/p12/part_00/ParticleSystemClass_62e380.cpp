@@ -14,11 +14,7 @@ int ParticleSystemClass::CreateParticle(int * p0, int * p1)
             return (int)(0);
         }
         double v3;
-        int v6;
-        v6 = ((ParticleClass *)(v5))->Construct(v3, *(unsigned int *)(*(unsigned int *)&((char *)stru_A83D50)[0x3C + (16)] + 4 * (int)this->Type->ParticleSystemTypeClass_field_0x294),
-             p0,
-             *(float *)&p1,
-             (int)this);
+        int v6 = ((ParticleClass *)(v5))->Construct(v3, *(unsigned int *)(*(unsigned int *)&((char *)stru_A83D50)[0x3C + (16)] + 4 * (int)this->Type->ParticleSystemTypeClass_field_0x294), p0, *(float *)&p1, (int)this);
         if ( v6 == 0 )
         {
             return (int)(0);

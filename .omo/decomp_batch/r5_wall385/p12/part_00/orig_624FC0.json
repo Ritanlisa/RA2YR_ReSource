@@ -1,0 +1,11 @@
+{
+ "addr": "0x624FC0",
+ "name": "HashTable_flat::Grow2",
+ "size": 162,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x624FC0",
+ "bytes_hex": "51538bd9807b14010f849100000055568b73088b2b578b7b0c8d043647894308896c2410c1e00250897b0ce8273e1a008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e428bfd8bee8b3785f6742e8bceff53188b4b0cba01000000d3e24a23d08b038b0c908d049089308b8604020000898e040200008bf085c075d283c7044d75c68b6c241055e8e43a1a0083c4045f5e5d5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?SortItems@ComboBoxOwnerDraw@@QAEXXZ",
+ "sym_key": "ComboBoxOwnerDraw::SortItems",
+ "size": 160,
+ "link_base": 0,
+ "bytes_hex": "51538bd9807b14010f848f0000008b0355568b73088b288b430c8d14f500000000578d0c364052896c2414894b0889430ce8000000008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e3a8bfd8bee8b3785f6742656ff53188b4b0cba01000000d3e28b0b4a23c28d04818b0889308b460c894e0c85c08bf075da83c7044d75ce8b6c241055e80000000083c4045f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 147,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -39,19 +39,20 @@ int IUnknown::GetPlacementScreenRect()
           || (int)DSurface_ViewBounds.field_4 + *(unsigned int *)&DSurface_ViewBounds.__pad_8[4] <= (int)v15 )
             {
                 *v18 = DataGlobal_AC1350;
+                v18[1] = DataGlobal_AC1354;
+                v18[2] = DataGlobal_AC1358;
+                v18[3] = DataGlobal_AC135C;
+                return (int)((int)v18);
             }
-            v18[1] = DataGlobal_AC1354;
-            v18[2] = DataGlobal_AC1358;
-            v18[3] = DataGlobal_AC135C;
-            return (int)v18;
-            v13 = v17;
-            v18[1] = (int)v12;
-            v18[2] = v8;
-            v18[3] = v13;
-            return (int)v18;
-        }
-        else
-        {
+            else
+            {
+                *v18 = v11;
+                v13 = v17;
+                v18[1] = (int)v12;
+                v18[2] = v8;
+                v18[3] = v13;
+                return (int)((int)v18);
+            }
         }
         else
         {
@@ -59,7 +60,7 @@ int IUnknown::GetPlacementScreenRect()
             v18[1] = DataGlobal_AC1354;
             v18[2] = DataGlobal_AC1358;
             v18[3] = DataGlobal_AC135C;
-            return (int)v18;
+            return (int)((int)v18);
         }
 }
 

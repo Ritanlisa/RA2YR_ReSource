@@ -9,9 +9,12 @@ int __stdcall unknown::WordWrap(int * p0, int * p1, int p2, int p3, int p4)
         {
             return (int)(0);
         }
-        wchar_t * v6 = String;
-        signed int v7 = wcslen(String);
-        int v8 = p2;
+        wchar_t * v6;
+        v6 = p0;
+        signed int v7;
+        v7 = wcslen(p0);
+        int v8;
+        v8 = p2;
         if ( p2 > v7 )
         {
             v8 = v7;
@@ -24,43 +27,43 @@ int __stdcall unknown::WordWrap(int * p0, int * p1, int p2, int p3, int p4)
             v9 = v8;
             if ( v8 >= p1 )
             {
-                v11 = &String[v8 - 1];
+                v11 = &p0[v8 - 1];
+                while ( !*v11 || *v11 > 0x20u )
+                {
+                    --v9;
+                    --v11;
+                    if ( v9 < p1 )
+                    {
+                        goto LABEL_17;
+                    }
+                }
+                goto LABEL_18;
             }
-            while ( !*v11 || *v11 > 0x20u )
-            {
-                --v9;
-            }
-            --v11;
-            if ( v9 < p1 )
-            {
-                goto LABEL_17;
-            }
-            goto LABEL_18;
         }
         else
         {
             v9 = p1;
             if ( p1 <= v8 )
             {
-                v10 = &String[p1 - 1];
+                v10 = &p0[p1 - 1];
+                while ( !*v10 || *v10 > 0x20u )
+                {
+                    ++v9;
+                    ++v10;
+                    if ( v9 > v8 )
+                    {
+                        goto LABEL_17;
+                    }
+                }
+                goto LABEL_18;
             }
-            while ( !*v10 || *v10 > 0x20u )
-            {
-                ++v9;
-            }
-            ++v10;
-            if ( v9 > v8 )
-            {
-                goto LABEL_17;
-            }
-            goto LABEL_18;
         }
         LABEL_17:
       v9 = p1;
         LABEL_18:
       if ( p0 );
-        memcpy(p0, String, 2 * v9);
-        v6 = String;
+        memcpy(p0, p0, 2 * v9);
+        v6 = p0;
         p0[v9] = 0;
         memcpy(v6, &v6[v9], 2 * (v7 + 0x7FFFFFFF * v9) + 2);
         return (int)(v9);
@@ -79,41 +82,38 @@ char * unknown::ComputeCRC()
         int * v10 = &DataGlobal_ABE010;
         int v2 = 320;
         memset(&DataGlobal_ABE050, 0, 0x100u);
-        do
-        {
-        } while ();
         unsigned int v3;
         int v4;
         int v5;
         int * v6;
         int v7;
-        if ( v2 < 4 )
+        do
         {
-            v5 = 0;
-            v6 = v1;
-            v7 = v2;
-            v2 = 0;
-            do v5 = *(unsigned char*)v6 | (v5 << 8);
-            v6 = (int *)((char *)v6 + 1);
-            --v7;
-            while ( v7 )
+            v3 = v0 >> 31;
+            if ( v2 < 4 )
             {
+                v5 = 0;
+                v6 = v1;
+                v7 = v2;
+                v2 = 0;
+                do
+                {
+                    v5 = *(unsigned char*)v6 | (v5 << 8);
+                    v6 = (int *)((char *)v6 + 1);
+                    --v7;
+                } while ( v7 );
                 v1 = v10;
+                v0 = v3 + v5 + 2 * v0;
             }
-            v0 = v3 + v5 + 2 * v0;
-        }
-        else
-        {
-            v4 = *v1++;
-            v10 = v1;
-            v0 = v3 + v4 + 2 * v0;
-            v2 -= 4;
-        }
-        char * v8;
-        while ( v2 > 0 )
-        {
-            v8 = (char *)__2_YAPAXI_Z(0xCu);
-        }
+            else
+            {
+                v4 = *v1++;
+                v10 = v1;
+                v0 = v3 + v4 + 2 * v0;
+                v2 -= 4;
+            }
+        } while ( v2 > 0 );
+        char * v8 = (char *)__2_YAPAXI_Z(0xCu);
         sprintf(v8, "%08X", v0);
         memcpy(&DataGlobal_ABE050, v11, 0x100u);
         return (char *)(v8);

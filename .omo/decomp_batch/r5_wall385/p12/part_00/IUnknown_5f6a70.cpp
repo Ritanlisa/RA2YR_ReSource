@@ -4,19 +4,23 @@
 
 unsigned char IUnknown::CheckGroundHeightDiff()
 {
-        char v2 = this->m08C[0];
+        char v2;
+        v2 = this->m08C[0];
+        unsigned int * v3;
         unsigned int v8[3];
         int v9;
-        unsigned int * v3 = (unsigned int *)(*(int (__stdcall **)(IUnknown *, unsigned int *, int))(this->field_0 + 76))(this, v8, v9);
+        v3 = (unsigned int *)(*(int (__stdcall **)(IUnknown *, unsigned int *, int))(this->field_0 + 76))(this, v8, v9);
         unsigned int v7[3];
         v7[0] = *v3;
         v7[1] = v3[1];
         v7[2] = v3[2];
-        int GroundHeight = Cell__GetGroundHeight(v7);
+        int GroundHeight;
+        GroundHeight = Cell__GetGroundHeight(v7);
         v8[0] = this->field_9C;
         v8[1] = this->m0A0;
         v8[2] = this->field_A4;
-        int v5 = Cell__GetGroundHeight(v8);
+        int v5;
+        v5 = Cell__GetGroundHeight(v8);
         int result;
         if ( this->m08C[0] )
         {
@@ -37,8 +41,5 @@ unsigned char IUnknown::CheckGroundHeightDiff()
         LABEL_6:
       if ( this->m08C[0] && GroundHeight - v5 > 3 * result )
     result = (result & ~0xFF) | ((0) & 0xFF);
-        else
-        {
-        }
 }
 

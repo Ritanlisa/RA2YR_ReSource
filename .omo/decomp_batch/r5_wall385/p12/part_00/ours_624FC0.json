@@ -1,0 +1,21 @@
+{
+ "symbol": "?Grow2@HashTable@@QAEXXZ",
+ "sym_key": "HashTable::Grow2",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "51538bd9807b14010f84960000008b0355568b73088b288a430c8d14f500000000578d0c36fec052896c2414894b0888430ce8000000008b4b088bf8c1e1028bd133c0c1e902893b83c404f3ab8bca83e10385f6f3aa7e408bfd8bee8b3785f6742c56ff53188a4b0cba01000000d3e28b0b4a23c28d04818b0889308b8604020000898e0402000085c08bf075d483c7044d75c88b6c241055e80000000083c4045f5e5d5b59c3",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAHZZ",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAHZZ",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

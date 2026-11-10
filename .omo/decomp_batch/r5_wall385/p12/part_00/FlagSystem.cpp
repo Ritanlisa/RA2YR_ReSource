@@ -5,7 +5,8 @@
 
 int FlagSystem::GetNextActive()
 {
-        unsigned int * v1 = *(unsigned int **)&g_FileExtensionState[12];
+        unsigned int * v1;
+        v1 = *(unsigned int **)&g_FileExtensionState[12];
         if ( *((unsigned char *)this + 8) )
         {
             return (int)(0);
@@ -57,12 +58,18 @@ int FlagSystem::GetNextActive()
         {
             return (int)(0);
         }
-        int v9 = *(unsigned int *)&g_FileExtensionState[12];
-        int v10 = (*(int (__stdcall **)(Flag *))(v9 + 4))(v6);
-        int v11 = *(unsigned int *)(*(unsigned int *)v9 + 24 * (v10 % *(unsigned int *)(v9 + 8)) + 16);
-        int v12 = *(unsigned int *)v9 + 24 * (v10 % *(unsigned int *)(v9 + 8));
-        int v13 = v11 - 1;
-        int v16 = v12;
+        int v9;
+        v9 = *(unsigned int *)&g_FileExtensionState[12];
+        int v10;
+        v10 = (*(int (__stdcall **)(Flag *))(v9 + 4))(v6);
+        int v11;
+        v11 = *(unsigned int *)(*(unsigned int *)v9 + 24 * (v10 % *(unsigned int *)(v9 + 8)) + 16);
+        int v12;
+        v12 = *(unsigned int *)v9 + 24 * (v10 % *(unsigned int *)(v9 + 8));
+        int v13;
+        v13 = v11 - 1;
+        int v16;
+        v16 = v12;
         if ( v13 < 0 )
         {
             return (int)(0);

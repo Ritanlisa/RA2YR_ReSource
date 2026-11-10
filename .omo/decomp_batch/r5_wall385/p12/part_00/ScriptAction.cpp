@@ -15,17 +15,17 @@ int ScriptAction::ClearBuildingState()
             if ( ScriptAction_field_0x94 != (void *)-1 )
             {
                 v2 = *(unsigned int **)(this->m008[0] + 4 * (unsigned int)ScriptAction_field_0x94);
+                if ( v2 )
+                {
+                    v2[45] = -1;
+                    v3 = v2[12];
+                    for ( i = 0; i < v3; *(unsigned int *)(*(unsigned int *)(v2[9] + 4 * i - 4) + 116) = -1 )
+                    {
+                        ++i;
+                    }
+                    v2[43] = -1;
+                }
             }
-            if ( v2 )
-            {
-                v2[45] = -1;
-            }
-            v3 = v2[12];
-            for ( i = 0; i < v3; *(unsigned int *)(*(unsigned int *)(v2[9] + 4 * i - 4) + 116) = -1 )
-            {
-                ++i;
-            }
-            v2[43] = -1;
             this->m098 = 0;
         }
         int ScriptAction_field_0x14 = this->m014;
@@ -41,20 +41,19 @@ int ScriptAction::ClearBuildingState()
             if ( v8 )
             {
                 v8[45] = -1;
+                v9 = v8[12];
+                result = 0;
+                if ( v9 > 0 )
+                {
+                    do
+                    {
+                        ++result;
+                        *(unsigned int *)(*(unsigned int *)(v8[9] + 4 * result - 4) + 116) = -1;
+                    } while ( result < v9 );
+                    ScriptAction_field_0x14 = v10;
+                }
+                v8[43] = -1;
             }
-            v9 = v8[12];
-            result = 0;
-            if ( v9 > 0 )
-            {
-                do
-              ++result;
-            }
-            *(unsigned int *)(*(unsigned int *)(v8[9] + 4 * result - 4) + 116) = -1;
-            while ( result < v9 )
-            {
-                ScriptAction_field_0x14 = v10;
-            }
-            v8[43] = -1;
         }
         this->m08C = (void *)-1;
         return (int)(result);

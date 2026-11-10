@@ -5,61 +5,64 @@
 
 int Network::CountDisconnectedHouses()
 {
-        int nextArrayIndex = stru_A80220.nextArrayIndex;
-        int v2 = 0;
-        int v8 = 0;
-        int v9 = 0;
+        int nextArrayIndex;
+        nextArrayIndex = stru_A80220.nextArrayIndex;
+        int v2;
+        v2 = 0;
+        int v8;
+        v8 = 0;
+        int v9;
+        v9 = 0;
         if ( stru_A80220.nextArrayIndex <= 0 )
         {
             return (int)(0);
         }
-        do
-        {
-        } while ();
         int v3;
         char v4;
         int v5;
         int v6;
-        if ( v3 && !*(unsigned char *)(v3 + 501) && !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) && (Network *)v3 != this )
+        do
         {
-            v4 = 0;
-            v5 = 0;
-            if ( nextArrayIndex <= 0 )
+            v3 = *((unsigned int *)((char **)stru_A80220)[3] + v2);
+            if ( v3 && !*(unsigned char *)(v3 + 501) && !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) && (Network *)v3 != this )
             {
-                goto LABEL_20;
-            }
-            do
-            if ( v5 != v9 )
-              v6 = *((unsigned int *)stru_A80220.vfptr3 + v5);
-            if ( v6 )
-            {
-                if ( !*(unsigned char *)(v6 + 501)
+                v4 = 0;
+                v5 = 0;
+                if ( nextArrayIndex <= 0 )
+                {
+                    goto LABEL_20;
+                }
+                do
+                {
+                    if ( v5 != v9 )
+                    {
+                        v6 = *((unsigned int *)((char **)stru_A80220)[3] + v5);
+                        if ( v6 )
+                        {
+                            if ( !*(unsigned char *)(v6 + 501)
                   && !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422)
                   && (Network *)v6 != this
-                  && (unsigned char)((HouseClass *)((#375 *)v3))->IsAlliedWith(*((#375 **)stru_A80220.vfptr3 + v5))
+                  && (unsigned char)((HouseClass *)((#375 *)v3))->IsAlliedWith(*((#375 **)((char **)stru_A80220)[3] + v5))
                   && (unsigned char)((HouseClass *)((#375 *)v6))->IsAlliedWith((#375 *)v3) )
-                {
-                    if ( v5 > v9 && v4 == 0 )
-                    {
-                        ++v8;
+                            {
+                                if ( v5 > v9 && v4 == 0 )
+                                {
+                                    ++v8;
+                                }
+                                v4 = 1;
+                            }
+                        }
                     }
-                }
-            }
-            v4 = 1;
-            nextArrayIndex = stru_A80220.nextArrayIndex;
-            ++v5;
-            while ( v5 < stru_A80220.nextArrayIndex )
-            {
+                    nextArrayIndex = stru_A80220.nextArrayIndex;
+                    ++v5;
+                } while ( v5 < stru_A80220.nextArrayIndex );
                 if ( v4 == 0 )
                 {
                     LABEL_20:
             ++v8;
                 }
             }
-        }
-        v2 = ++v9;
-        while ( v9 < nextArrayIndex )
-        {
-            return (int)(v8);
-        }
+            v2 = ++v9;
+        } while ( v9 < nextArrayIndex );
+        return (int)(v8);
 }

@@ -15,11 +15,11 @@ void SymbolTable::Rebuild(int ** p0)
             while ( i != v4 )
             {
                 v5 = v4;
-            }
-            v4 = (unsigned int *)*v4;
-            if ( v4 == 0 )
-            {
-                goto LABEL_10;
+                v4 = (unsigned int *)*v4;
+                if ( v4 == 0 )
+                {
+                    goto LABEL_10;
+                }
             }
             if ( v5 )
             {
@@ -42,10 +42,10 @@ void SymbolTable::Rebuild(int ** p0)
             if ( v8 )
             {
                 *(unsigned int *)(v8 + 8) = v8 + 16;
+                *(unsigned int *)v8 = *((unsigned int *)this + 13);
+                *(unsigned int *)(v8 + 4) = 0;
+                *((unsigned int *)this + 13) = v8;
             }
-            *(unsigned int *)v8 = *((unsigned int *)this + 13);
-            *(unsigned int *)(v8 + 4) = 0;
-            *((unsigned int *)this + 13) = v8;
             *(unsigned int *)(v8 + 12) = j[3];
             *(unsigned int *)(v8 + 4) = j[1];
             wcscpy(*(wchar_t **)(v8 + 8), (const wchar_t *)j[2]);
