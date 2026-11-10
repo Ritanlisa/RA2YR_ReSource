@@ -706,6 +706,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x433f50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MessageListClass::CountCharsInWidth",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x4371d0": {
   "attempts": 1,
   "first_diff": null,
@@ -1280,6 +1287,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x48b890": {
+  "attempts": 1,
+  "first_diff": "+9 je 0x48b9d4",
+  "name": "PacketQueue::ReleaseEntry",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x48ba80": {
   "attempts": 4,
   "first_diff": null,
@@ -1508,6 +1522,55 @@
   "attempts": 1,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497b80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransLucent75Alpha_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497cf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransLucent50Alpha_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497e60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransLucent25Alpha_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x497fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x498150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x4990e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x499280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
@@ -1853,6 +1916,13 @@
   "name": "DSurface::GetPitch",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4bbb00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DSurface::BlitStretch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x4bbc90": {
   "attempts": 2,
@@ -3198,6 +3268,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x586ac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::ClampToCellBounds",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x58a2a0": {
   "attempts": 1,
   "first_diff": null,
@@ -3225,6 +3302,13 @@
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
+ },
+ "0x5975e0": {
+  "attempts": 1,
+  "first_diff": "+15 jl 0x5975f6",
+  "name": "SettingsClass::ClampValues",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x59c580": {
   "attempts": 1,
@@ -4458,6 +4542,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x69db30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SHA1::Transform",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x69deb0": {
   "attempts": 1,
   "first_diff": null,
@@ -5606,6 +5697,27 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
+ "0x753e00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Viewport::Clear",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x756dd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelModel::LoadVXLHeader",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x756f80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelModel::ParseSectionData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x759f70": {
   "attempts": 2,
   "first_diff": null,
@@ -5648,6 +5760,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x75edf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::BlendShadowColor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x75f140": {
   "attempts": 1,
   "first_diff": null,
@@ -5668,6 +5787,13 @@
   "name": "WaveClass::CheckStateFlag",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x760190": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::BlendColor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x7631f0": {
   "attempts": 3,
@@ -6201,12 +6327,26 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7bd2d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioStream::CalcReadPos",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
  "0x7c35c0": {
   "attempts": 1,
   "first_diff": "+2 push esi",
   "name": "AbstractClass::finalizeDestruction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7c81db": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioCodec::Decode",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  },
  "0x7c891a": {
   "attempts": 5,
