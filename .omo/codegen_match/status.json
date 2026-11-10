@@ -182,7 +182,7 @@
   "status": "PENDING"
  },
  "0x408a70": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -742,7 +742,7 @@
   "status": "PENDING"
  },
  "0x4336c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BinkMovieClass::ReleaseRenderSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -966,7 +966,7 @@
   "status": "PENDING"
  },
  "0x4664c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+50 mov esi, dword ptr [esp + 0x14]",
   "name": "Particle::Init",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -1442,35 +1442,35 @@
   "status": "OK"
  },
  "0x493930": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x493a60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x493b90": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x493cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitPlainXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x493df0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "BlitTransXlatAlpha_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1911,7 +1911,7 @@
   "status": "PENDING"
  },
  "0x4a94f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CoordList::GetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1974,7 +1974,7 @@
   "status": "PENDING"
  },
  "0x4afb80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2219,14 +2219,14 @@
   "status": "PENDING"
  },
  "0x4c93d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ProgressTimer::GetValue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "PENDING"
  },
  "0x4c9530": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "MovementClass::CompareAbsCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3556,7 +3556,7 @@
   "status": "PENDING"
  },
  "0x578540": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Type::CheckAmbiguity",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4298,7 +4298,7 @@
   "status": "OK"
  },
  "0x602ae0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Dialog::IsSpecialTemplate",
   "note": "decomp_batch r2: MATCH",
@@ -4550,7 +4550,7 @@
   "status": "OK"
  },
  "0x636ce0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4816,7 +4816,7 @@
   "status": "OK"
  },
  "0x65c7e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Random::Range",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5005,7 +5005,7 @@
   "status": "PENDING"
  },
  "0x69f290": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5054,7 +5054,7 @@
   "status": "OK"
  },
  "0x6a5090": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SidebarClass::InitPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6349,7 +6349,7 @@
   "status": "OK"
  },
  "0x763a50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6895,7 +6895,7 @@
   "status": "PENDING"
  },
  "0x7c35c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+2 push esi",
   "name": "AbstractClass::finalizeDestruction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
