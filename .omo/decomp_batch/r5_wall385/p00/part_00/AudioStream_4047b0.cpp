@@ -21,23 +21,23 @@ int AudioStream::SelectRandom()
             if ( (v3 & 2) != 0 )
             {
                 v5 = ((Random *)(&Randomizer_Global))->Range(0, v4 - 1);
-            }
-            v6 = this->u32_1E0 - 1;
-            this->u32_AC = *(unsigned int *)(this + 4 * v5 + 352);
-            v7 = v5;
-            if ( v5 < v6 )
-            {
-                v8 = (unsigned int *)(this + 4 * v5 + 352);
-            }
-            do
-              ++v7;
-            *v8 = v8[1];
-            ++v8;
-            while ( v7 < this->u32_1E0 - 1 )
-            {
+                v6 = this->u32_1E0 - 1;
+                this->u32_AC = *(unsigned int *)(this + 4 * v5 + 352);
+                v7 = v5;
+                if ( v5 < v6 )
+                {
+                    v8 = (unsigned int *)(this + 4 * v5 + 352);
+                    do
+                    {
+                        ++v7;
+                        *v8 = v8[1];
+                        ++v8;
+                    } while ( v7 < this->u32_1E0 - 1 );
+                }
             }
             else
             {
+                ++this->u32_AC;
             }
             --this->u32_1E0;
             v9 = *(unsigned int *)(this + 4 * this->u32_AC + 40);
@@ -50,8 +50,8 @@ int AudioStream::SelectRandom()
             if ( v10 == 0 || this->u32_1E4 < v10 - 1 )
             {
                 ++this->u32_1E4;
+                return (int)(((AudioStream *)(this))->SetupPlayback());
             }
-            return (int)(((AudioStream *)(this))->SetupPlayback());
         }
         if ( (v3 & 0x40) == 0 )
         {

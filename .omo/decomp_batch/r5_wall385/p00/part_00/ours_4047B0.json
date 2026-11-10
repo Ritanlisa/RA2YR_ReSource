@@ -1,0 +1,27 @@
+{
+ "symbol": "?SelectRandom@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::SelectRandom",
+ "size": 289,
+ "link_base": 0,
+ "bytes_hex": "568bf18b8e001701008b41588b511083f821720af6461820750433c05ec38b86e001000085c00f8485000000f6461820757ff6c202744c4857506a00b900000000e8000000008d48588bbee00100008bd1c1e2052bd1c1e20803d64f3bc75f8b0a898eac0000008bc87d1e8bc28b50044189108b96e001000083c0044a3bca72eceb06ff86ac0000008b86e0010000488986e00100008b86ac00000083c00a8bc8c1e1052bc8c1e1088b04315e83c01cc3f6c201742ef646182075288b494c85c9740b8b86e4010000493bc173168b86e40100008bce408986e4010000e8000000005ec3f6c240750433c05ec38b4618a810740433c05ec38b8ea800000083f9017d0433c05ec30c108946188d41098bd0c1e2052bd0c1e2088b04325e83c01cc3",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 222,
+   "type": "REL32",
+   "sym": "?SetupPlayback@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SetupPlayback"
+  }
+ ]
+}

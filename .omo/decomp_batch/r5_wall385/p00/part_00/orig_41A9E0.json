@@ -1,0 +1,11 @@
+{
+ "addr": "0x41A9E0",
+ "name": "TechnoClass::CanFireAtTarget",
+ "size": 159,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x41A9E0",
+ "bytes_hex": "8b44240c538b5c2408568bf1578b4c24145051538bcee8b5162e0085c0757a8a86c906000084c074158b861801000085c0750b5f5eb8010000005bc20c008d5424188d8ea003000052e8a2e90a008b388b8ec00600008d86c006000050ff511c85c075338d54241853528bcee85f931d00662b380fbfc7998bc8b80008000033ca2bca9933c22bc23bc17d0b5f5eb8020000005bc20c0033c05f5e5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

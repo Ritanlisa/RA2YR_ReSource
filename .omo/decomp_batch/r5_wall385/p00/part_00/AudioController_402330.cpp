@@ -19,24 +19,25 @@ int AudioController::UpdatePlayback()
             v2 = (unsigned int *)*((unsigned int *)this + 90);
             if ( v2 )
             {
-                Offset = ((AudioController *)(*((AudioController **)this + 90))->GetOffset());
+                Offset = ((AudioController *)(*((AudioController **)this + 90)))->GetOffset();
+                *((unsigned int *)this + 91) = Offset;
+                if ( Offset )
+                {
+                    *((unsigned int *)this + 92) = *(unsigned int *)(Offset + 12);
+                    v4 = *(unsigned int *)(Offset + 16);
+                    *((unsigned int *)this + 93) = v4;
+                    *((unsigned int *)this + 94) = v4;
+                    *v2 = 0;
+                }
+                else
+                {
+                    v5 = (unsigned int *)*((unsigned int *)this + 90);
+                    *((unsigned int *)this + 92) = *v5;
+                    v6 = v5[1];
+                    *((unsigned int *)this + 93) = v6;
+                    *((unsigned int *)this + 94) = v6;
+                }
             }
-            *((unsigned int *)this + 91) = Offset;
-            if ( Offset )
-            {
-                *((unsigned int *)this + 92) = *(unsigned int *)(Offset + 12);
-            }
-            v4 = *(unsigned int *)(Offset + 16);
-            *((unsigned int *)this + 93) = v4;
-            *((unsigned int *)this + 94) = v4;
-            *v2 = 0;
-            *((unsigned int *)this + 92) = *v5;
-            v6 = v5[1];
-            *((unsigned int *)this + 93) = v6;
-            *((unsigned int *)this + 94) = v6;
-        }
-        else
-        {
         }
         else
         {

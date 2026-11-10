@@ -6,6 +6,8 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class AudioStream
 {
@@ -17,7 +19,7 @@ public:
     int m028;  // 0x028
     char __pad_02C[124];  // 0x02C
     int m0A8[1];  /* element view */  // 0x0A8
-    unsigned int m0AC;  // 0x0AC
+    void * m0AC;  // 0x0AC
     char __pad_0B0[40];  // 0x0B0
     int m0D8[1];  /* element view */  // 0x0D8
     char __pad_0DC[260];  // 0x0DC

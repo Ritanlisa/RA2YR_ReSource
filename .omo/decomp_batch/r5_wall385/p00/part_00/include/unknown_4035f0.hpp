@@ -9,6 +9,8 @@ class AudioQueue;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class unknown
 {
@@ -30,6 +32,8 @@ public:
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class AudioQueue
 {
@@ -39,8 +43,8 @@ public:
     // DECOMP_SIZECHECK(AudioQueue, AudioQueue, 258164);
 
     // ---- pilot methods (registry signatures)
-    AudioQueue * GetNext();  // 0x4073C0
     AudioQueue * GetNextAlt();  // 0x4073E0
+    AudioQueue * GetNext();  // 0x4073C0
 };
 
 #endif  // DECOMP_PILOT_AUDIOQUEUE_HPP

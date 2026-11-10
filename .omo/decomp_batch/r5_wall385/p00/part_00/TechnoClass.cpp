@@ -12,19 +12,20 @@ int __fastcall TechnoClass::CanFireAtTarget(int p0, int p1, unsigned char * p2, 
             if ( !*((unsigned char *)this + 1737) || this->passengers[1] )
             {
                 v7 = *((ProgressTimer *)(this->secondaryFacing))->GetValue(&p3);
-            }
-            if ( (*(int (__stdcall **)(char *))(*((unsigned int *)this + 432) + 28))((char *)this + 1728)
+                if ( (*(int (__stdcall **)(char *))(*((unsigned int *)this + 432) + 28))((char *)this + 1728)
             || abs16(v7 - *(unsigned short *)((ObjectClass *)(this))->CalcTargetFacing((int *)&p3, (int)p1)) <= 0x800u )
-            {
-                return (int)(0);
+                {
+                    return (int)(0);
+                }
+                else
+                {
+                    return (int)(2);
+                }
             }
             else
             {
-                return (int)(2);
+                return (int)(1);
             }
-        }
-        else
-        {
         }
         return (int)(result);
 }

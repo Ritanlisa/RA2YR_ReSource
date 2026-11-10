@@ -57,31 +57,37 @@ int AudioMixer::PlaySample()
                 if ( v16 <= v4 )
                 {
                     v20 = v16 + this->AudioMixer_field_04;
+                    v19 = this->AudioMixer_field_00;
+                    v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                    this->AudioMixer_field_04 = v20;
                 }
+                else
+                {
+                    this->AudioMixer_field_04 += v4;
+                    v19 = this->AudioMixer_field_00;
+                    v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                }
+                this->AudioMixer_field_00 = v19;
+                return (int)(1);
             }
-            v19 = this->AudioMixer_field_00;
-            v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_04 = v20;
             else
             {
+                if ( v16 <= -v4 )
+                {
+                    v18 = this->AudioMixer_field_04 - v16;
+                    v17 = this->AudioMixer_field_00;
+                    v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                    this->AudioMixer_field_04 = v18;
+                }
+                else
+                {
+                    this->AudioMixer_field_04 += v4;
+                    v17 = this->AudioMixer_field_00;
+                    v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                }
+                this->AudioMixer_field_00 = v17;
+                return (int)(1);
             }
-            v19 = this->AudioMixer_field_00;
-            v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_00 = v19;
-            return (int)(1);
-            else
-            {
-            }
-            v17 = this->AudioMixer_field_00;
-            v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_04 = v18;
-            else
-            {
-            }
-            v17 = this->AudioMixer_field_00;
-            v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_00 = v17;
-            return (int)(1);
         }
 }
 
@@ -106,22 +112,21 @@ int AudioMixer::SetupChannels()
             if ( AudioMixer_field_04 )
             {
                 v3 = (AudioMixer *)this->AudioMixer_field_04;
-            }
-            do p_AudioMixer_field_0C = &v3[1].AudioMixer_field_0C;
-            v5 = 2;
-            do
-              *(p_AudioMixer_field_0C - 1) = v3[1].AudioMixer_field_00;
-            *p_AudioMixer_field_0C = v3[1].AudioMixer_field_04;
-            p_AudioMixer_field_0C += 2;
-            --v5;
-            while ( v5 )
-            {
-                v3[2].AudioMixer_field_04 = v2;
-            }
-            v3 = (AudioMixer *)v3->AudioMixer_field_00;
-            ++v2;
-            while ( v3 != (AudioMixer *)&this->AudioMixer_field_04 )
-            {
+                do
+                {
+                    p_AudioMixer_field_0C = &v3[1].AudioMixer_field_0C;
+                    v5 = 2;
+                    do
+                    {
+                        *(p_AudioMixer_field_0C - 1) = v3[1].AudioMixer_field_00;
+                        *p_AudioMixer_field_0C = v3[1].AudioMixer_field_04;
+                        p_AudioMixer_field_0C += 2;
+                        --v5;
+                    } while ( v5 );
+                    v3[2].AudioMixer_field_04 = v2;
+                    v3 = (AudioMixer *)v3->AudioMixer_field_00;
+                    ++v2;
+                } while ( v3 != (AudioMixer *)&this->AudioMixer_field_04 );
             }
         }
         AudioMixer * v6 = (AudioMixer *)((char *)this + 76);
@@ -129,29 +134,26 @@ int AudioMixer::SetupChannels()
         AudioMixer * v8 = (AudioMixer *)((char *)this + 76);
         do
         {
-        } while ();
-        v8->AudioMixer_field_00 = -1001;
-        v8->AudioMixer_field_04 = v8->AudioMixer_field_00;
-        v8[-1].AudioMixer_field_14 = 0;
-        v8[-1].AudioMixer_field_10 = 0;
-        v8[-2].AudioMixer_field_08 = (int)AudioMixer_field_04;
-        if ( AudioMixer_field_04 )
-        {
-            v8[-2].AudioMixer_field_00 = *(&AudioMixer_field_04[1].AudioMixer_field_08 + 2 * v8[-2].AudioMixer_field_10);
-        }
-        else
-        {
-            v8[-2].AudioMixer_field_00 = 0;
-        }
-        v8[-2].AudioMixer_field_04 = 0;
-        v8[-2].AudioMixer_field_0C &= ~1u;
-        v8 = (AudioMixer *)((char *)v8 + 64);
-        --v7;
-        int result;
-        while ( v7 )
-        {
-            result = v6->AudioMixer_field_00 + this->AudioMixer_field_14;
-        }
+            v8[-1].AudioMixer_field_0C = (int)AudioMixer_field_04;
+            v8->AudioMixer_field_00 = -1001;
+            v8->AudioMixer_field_04 = v8->AudioMixer_field_00;
+            v8[-1].AudioMixer_field_14 = 0;
+            v8[-1].AudioMixer_field_10 = 0;
+            v8[-2].AudioMixer_field_08 = (int)AudioMixer_field_04;
+            if ( AudioMixer_field_04 )
+            {
+                v8[-2].AudioMixer_field_00 = *(&AudioMixer_field_04[1].AudioMixer_field_08 + 2 * v8[-2].AudioMixer_field_10);
+            }
+            else
+            {
+                v8[-2].AudioMixer_field_00 = 0;
+            }
+            v8[-2].AudioMixer_field_04 = 0;
+            v8[-2].AudioMixer_field_0C &= ~1u;
+            v8 = (AudioMixer *)((char *)v8 + 64);
+            --v7;
+        } while ( v7 );
+        int result = v6->AudioMixer_field_00 + this->AudioMixer_field_14;
         v6->AudioMixer_field_00 = result;
         return (int)(result);
 }

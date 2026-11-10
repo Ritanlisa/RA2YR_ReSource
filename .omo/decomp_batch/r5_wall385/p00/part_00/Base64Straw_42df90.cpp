@@ -2,7 +2,7 @@
 // source: decompile-results/full_export  fn 0x42DF90 (BitmapClass::ProcessFrame)
 #include "Base64Straw_42df90.hpp"
 
-size_t Base64Straw::ProcessFrame(char * p1, signed int Size p2)
+size_t Base64Straw::ProcessFrame(char * p1, signed int p2)
 {
         size_t result = 0;
         size_t v16 = 0;
@@ -27,7 +27,7 @@ size_t Base64Straw::ProcessFrame(char * p1, signed int Size p2)
             v6 = (Base64Straw *)((char *)this + 20);
             v7 = 4;
         }
-        signed int v8 = Size;
+        signed int v8 = p1;
         int v9;
         size_t v10;
         signed int v11;
@@ -35,44 +35,44 @@ size_t Base64Straw::ProcessFrame(char * p1, signed int Size p2)
         size_t v13;
         int v14;
         int v15;
-        if ( Size > 0 )
+        if ( p1 > 0 )
         {
             while ( 1 )
             {
                 v9 = *((unsigned int *)this + 4);
-            }
-            if ( v9 > 0 )
-            {
-                v10 = v8;
-            }
-            if ( v8 >= v9 )
-            {
-                v10 = *((unsigned int *)this + 4);
-            }
-            memcpy(p1, &v6->__pad_0[v7 - v9], v10);
-            *((unsigned int *)this + 4) -= v10;
-            v11 = Size - v10;
-            v12 = &p1[v10];
-            v13 = v10 + v16;
-            v5 = v17;
-            p1 = v12;
-            Size = v11;
-            v16 = v13;
-            v8 = v11;
-            if ( v8 == 0 )
-            {
-                break;
-            }
-            v14 = ((Delegate *)(this))->Invoke((int)v5, v18);
-            v15 = *((unsigned int *)this + 3)
+                if ( v9 > 0 )
+                {
+                    v10 = v8;
+                    if ( v8 >= v9 )
+                    {
+                        v10 = *((unsigned int *)this + 4);
+                    }
+                    memcpy(p1, &v6->__pad_0[v7 - v9], v10);
+                    *((unsigned int *)this + 4) -= v10;
+                    v11 = p1 - v10;
+                    v12 = &p1[v10];
+                    v13 = v10 + v16;
+                    v5 = v17;
+                    p1 = v12;
+                    p1 = v11;
+                    v16 = v13;
+                    v8 = v11;
+                }
+                if ( v8 == 0 )
+                {
+                    break;
+                }
+                v14 = ((Delegate *)(this))->Invoke((int)v5, v18);
+                v15 = *((unsigned int *)this + 3)
               ? DecodeBitmapRGB((unsigned char*)v5, v14, v6, v7)
               : EncodeBitmapRGB(v5->__pad_0, v14, v6, v7);
-            *((unsigned int *)this + 4) = v15;
-            if ( v15 == 0 || Size <= 0 )
-            {
-                break;
+                *((unsigned int *)this + 4) = v15;
+                if ( v15 == 0 || p1 <= 0 )
+                {
+                    break;
+                }
+                v8 = p1;
             }
-            v8 = Size;
             return (size_t)(v16);
         }
         return (size_t)(result);

@@ -38,35 +38,34 @@ int CellClass::ClearOccupancyGrid()
             for ( k = g_MapCellWidth * g_MapCellWidth - 1; k >= 0; *((unsigned int *)&this->rubble->vfptr1 + k) = 0 )
             {
                 --k;
+                *((unsigned int *)&this->attachedTag->vfptr1 + k) = 0;
             }
-            *((unsigned int *)&this->attachedTag->vfptr1 + k) = 0;
             v7 = &((char *)stru_87F5F0)[0x58 + (456)] - (char *)this;
             p_CellClass_field_4C = &this->CellClass_field_4C;
             v15 = 3;
-            do v9 = *p_CellClass_field_4C;
-            v10 = *(int *)((char *)p_CellClass_field_4C + v7) - 1;
-            if ( v10 >= 0 )
-            {
-                v11 = (unsigned int *)(v9 + 4 * v10);
-            }
-            v12 = *(p_CellClass_field_4C - 3) - v9;
-            v13 = p_CellClass_field_4C[3] - v9;
-            v14 = v10 + 1;
             do
-              *(unsigned int *)((char *)v11 + v12) = 0;
-            *v11 = 0;
-            *(unsigned int *)((char *)v11-- + v13) = 0;
-            --v14;
-            while ( v14 )
             {
-                v7 = &((char *)stru_87F5F0)[0x58 + (456)] - (char *)this;
-            }
-            ++p_CellClass_field_4C;
-            --v15;
-            while ( v15 )
-            {
-                result = this->m028 + 1;
-            }
+                v9 = *p_CellClass_field_4C;
+                v10 = *(int *)((char *)p_CellClass_field_4C + v7) - 1;
+                if ( v10 >= 0 )
+                {
+                    v11 = (unsigned int *)(v9 + 4 * v10);
+                    v12 = *(p_CellClass_field_4C - 3) - v9;
+                    v13 = p_CellClass_field_4C[3] - v9;
+                    v14 = v10 + 1;
+                    do
+                    {
+                        *(unsigned int *)((char *)v11 + v12) = 0;
+                        *v11 = 0;
+                        *(unsigned int *)((char *)v11-- + v13) = 0;
+                        --v14;
+                    } while ( v14 );
+                    v7 = &((char *)stru_87F5F0)[0x58 + (456)] - (char *)this;
+                }
+                ++p_CellClass_field_4C;
+                --v15;
+            } while ( v15 );
+            result = this->m028 + 1;
             this->m028 = result;
         }
         return (int)(result);

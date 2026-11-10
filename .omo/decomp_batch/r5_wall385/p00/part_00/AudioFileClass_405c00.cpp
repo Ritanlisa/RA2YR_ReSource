@@ -15,53 +15,52 @@ unsigned int * AudioFileClass::Release()
             if ( *((int **)this + 3) == &DataGlobal_87E294 )
             {
                 v2 = this->tail_0;
-            }
-            if ( this->tail_0 )
-            {
-                if ( *((unsigned int *)this + 2) == *(unsigned int *)(*(unsigned int *)&v2 + 36)
+                if ( this->tail_0 )
+                {
+                    if ( *((unsigned int *)this + 2) == *(unsigned int *)(*(unsigned int *)&v2 + 36)
               && *((unsigned int *)this + 1) == *(unsigned int *)(*(unsigned int *)&v2 + 312)
               && (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 1) == 0 )
-                {
-                    v3 = *(unsigned int *)(*(unsigned int *)&v2 + 176);
+                    {
+                        v3 = *(unsigned int *)(*(unsigned int *)&v2 + 176);
+                        if ( v3 && v2 == *(unsigned int *)(v3 + 192) )
+                        {
+                            if ( (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 2) != 0 )
+                            {
+                                ((Voice *)(v6))->Stop();
+                            }
+                            ((AudioStream *)(*(AudioStream **)(*(unsigned int *)&v2 + 176)))->ReleaseChannel();
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 192) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 188) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 180) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 184) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 144) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 152) = 0;
+                            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 156) = 0;
+                            result = this;
+                            *(unsigned int *)(*(unsigned int *)&v2 + 176) = 0;
+                        }
+                        v4 = 0;
+                        if ( *(int *)(*(unsigned int *)&v2 + 168) > 0 )
+                        {
+                            v5 = (RefCount **)(*(unsigned int *)&v2 + 40);
+                            do
+                            {
+                                ((RefCount *)(*v5))->Decrement();
+                                *v5 = 0;
+                                ++v4;
+                                ++v5;
+                            } while ( v4 < *(unsigned int *)(*(unsigned int *)&v2 + 168) );
+                            result = this;
+                        }
+                        *(unsigned int *)(*(unsigned int *)&v2 + 168) = 0;
+                        *(unsigned int *)(*(unsigned int *)&v2 + 28) = 4;
+                        *(unsigned int *)(*(unsigned int *)&v2 + 312) = 0;
+                        *(unsigned int *)(*(unsigned int *)&v2 + 632) = 0;
+                        *(unsigned int *)(*(unsigned int *)&v2 + 24) |= 1u;
+                    }
+                    *result = 0;
                 }
             }
-            if ( v3 && v2 == *(unsigned int *)(v3 + 192) )
-            {
-                if ( (*(unsigned char *)(*(unsigned int *)&v2 + 24) & 2) != 0 )
-                {
-                    ((Voice *)(v6))->Stop();
-                }
-            }
-            ((AudioStream *)(*(AudioStream **)(*(unsigned int *)&v2 + 176))->ReleaseChannel());
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 192) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 188) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 180) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 184) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 144) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 152) = 0;
-            *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v2 + 176) + 156) = 0;
-            result = this;
-            *(unsigned int *)(*(unsigned int *)&v2 + 176) = 0;
-            v4 = 0;
-            if ( *(int *)(*(unsigned int *)&v2 + 168) > 0 )
-            {
-                v5 = (RefCount **)(*(unsigned int *)&v2 + 40);
-            }
-            do
-                  ((RefCount *)(*v5))->Decrement();
-            *v5 = 0;
-            ++v4;
-            ++v5;
-            while ( v4 < *(unsigned int *)(*(unsigned int *)&v2 + 168) )
-            {
-                result = this;
-            }
-            *(unsigned int *)(*(unsigned int *)&v2 + 168) = 0;
-            *(unsigned int *)(*(unsigned int *)&v2 + 28) = 4;
-            *(unsigned int *)(*(unsigned int *)&v2 + 312) = 0;
-            *(unsigned int *)(*(unsigned int *)&v2 + 632) = 0;
-            *(unsigned int *)(*(unsigned int *)&v2 + 24) |= 1u;
-            *result = 0;
         }
         result[2] = 0;
         result[3] = 0;

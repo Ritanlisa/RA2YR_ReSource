@@ -6,15 +6,21 @@
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class _DynamicVectorClass_G
 {
 public:
     union {  // overlapping views @0x000
         void* m000_ptr;
-        unsigned int m003[1];  /* element view */
-        char __pad_union_000[7];
+        int m_1[1];  /* element view */
+        unsigned int m004[1];  /* element view */
+        char __pad_union_000[8];
     };
+    int m_8;  // 0x008
+    int m_C;  // 0x00C
+    int m_10;  // 0x010
 
     // ---- pilot methods (registry signatures)
     char SetCapacity(int p0, unsigned short * p1);  // 0x42DA30

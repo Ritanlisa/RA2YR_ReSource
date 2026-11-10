@@ -17,7 +17,7 @@ int __fastcall unknown::FindBestChannel(int p0, int p1)
         int v9 = 127;
         int v11 = 0;
         unsigned int v5 = -1;
-        int result = ((AudioQueue *)((p0 + 248))->GetNext());
+        int result = ((AudioQueue *)((p0 + 248)))->GetNext();
         int v7;
         unsigned int v8;
         if ( result )
@@ -30,40 +30,42 @@ int __fastcall unknown::FindBestChannel(int p0, int p1)
                     {
                         return (int)(result);
                     }
-                }
-            }
-            v7 = *(unsigned int *)(result + 160);
-            if ( (*(unsigned char *)(result + 164) & 1) != 0 )
-            {
-                if ( v7 >= v3 )
-                {
-                    if ( v7 == v3 )
+                    v7 = *(unsigned int *)(result + 160);
+                    if ( (*(unsigned char *)(result + 164) & 1) != 0 )
                     {
-                        v8 = *(unsigned int *)(result + 220);
+                        if ( v7 >= v3 )
+                        {
+                            if ( v7 == v3 )
+                            {
+                                v8 = *(unsigned int *)(result + 220);
+                                if ( v8 < v5 && v5 - v8 >= 0x666 )
+                                {
+                                    v3 = *(unsigned int *)(result + 160);
+                                    v4 = result;
+                                    v5 = *(unsigned int *)(result + 220);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            v5 = *(unsigned int *)(result + 220);
+                            v3 = *(unsigned int *)(result + 160);
+                            v4 = result;
+                        }
+                        if ( v7 < v9 )
+                        {
+                            v9 = *(unsigned int *)(result + 160);
+                            v11 = result;
+                        }
                     }
                 }
+                result = ((AudioQueue *)(result))->GetNextAlt();
+                if ( result == 0 )
+                {
+                    break;
+                }
+                v2 = v10;
             }
-            if ( v8 < v5 && v5 - v8 >= 0x666 )
-            {
-                v3 = *(unsigned int *)(result + 160);
-            }
-            v4 = result;
-            v5 = *(unsigned int *)(result + 220);
-            v3 = *(unsigned int *)(result + 160);
-            v4 = result;
-            v11 = result;
-            result = ((AudioQueue *)(result))->GetNextAlt();
-            if ( result == 0 )
-            {
-                break;
-            }
-            v2 = v10;
-        }
-        else
-        {
-        }
-        else
-        {
         }
         result = v11;
         if ( v11 == 0 || v9 > v3 )

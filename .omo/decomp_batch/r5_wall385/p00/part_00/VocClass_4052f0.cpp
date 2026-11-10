@@ -18,32 +18,31 @@ int VocClass::Release()
                 {
                     ((Voice *)(v1))->Stop();
                 }
+                ((AudioStream *)(this->pVoiceChannel))->ReleaseChannel();
+                *((unsigned int *)this->pVoiceChannel + 48) = 0;
+                *((unsigned int *)this->pVoiceChannel + 47) = 0;
+                *((unsigned int *)this->pVoiceChannel + 45) = 0;
+                *((unsigned int *)this->pVoiceChannel + 46) = 0;
+                *((unsigned int *)this->pVoiceChannel + 36) = 0;
+                *((unsigned int *)this->pVoiceChannel + 38) = 0;
+                *((unsigned int *)this->pVoiceChannel + 39) = 0;
+                this->pVoiceChannel = (void *)(0);
             }
-            ((AudioStream *)(this->pVoiceChannel))->ReleaseChannel();
-            *((unsigned int *)this->pVoiceChannel + 48) = 0;
-            *((unsigned int *)this->pVoiceChannel + 47) = 0;
-            *((unsigned int *)this->pVoiceChannel + 45) = 0;
-            *((unsigned int *)this->pVoiceChannel + 46) = 0;
-            *((unsigned int *)this->pVoiceChannel + 36) = 0;
-            *((unsigned int *)this->pVoiceChannel + 38) = 0;
-            *((unsigned int *)this->pVoiceChannel + 39) = 0;
-            this->pVoiceChannel = 0;
             result = this->ActiveBufferCount;
             v5 = 0;
             if ( result > 0 )
             {
                 v6 = (RefCount **)&this->Volume[4];
+                do
+                {
+                    ((RefCount *)(*v6))->Decrement();
+                    *v6 = 0;
+                    result = this->ActiveBufferCount;
+                    ++v5;
+                    ++v6;
+                } while ( v5 < result );
             }
-            do
-            ((RefCount *)(*v6))->Decrement();
-            *v6 = 0;
-            result = this->ActiveBufferCount;
-            ++v5;
-            ++v6;
-            while ( v5 < result )
-            {
-                this->ActiveBufferCount = 0;
-            }
+            this->ActiveBufferCount = 0;
             this->Volume[1] = 4;
             this->Attack = 0;
             *((unsigned int *)this + 158) = 0;

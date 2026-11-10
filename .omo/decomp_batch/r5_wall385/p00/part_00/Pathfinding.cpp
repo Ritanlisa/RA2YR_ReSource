@@ -25,26 +25,26 @@ void Pathfinding::SiftDown(int p0)
         int v7;
         if ( v3 != p0 )
         {
-            do Pathfinding_field_0x08 = this->m008;
-            v6 = 2 * v3 + 1;
-            v7 = *(unsigned int *)(Pathfinding_field_0x08 + 4 * v2);
-            *(unsigned int *)(Pathfinding_field_0x08 + 4 * v2) = *(unsigned int *)(Pathfinding_field_0x08 + 4 * v3);
-            v2 = v3;
-            *(unsigned int *)(this->m008 + 4 * v3) = v7;
-            if ( 2 * v3 <= this->m000
+            do
+            {
+                Pathfinding_field_0x08 = this->m008;
+                v6 = 2 * v3 + 1;
+                v7 = *(unsigned int *)(Pathfinding_field_0x08 + 4 * v2);
+                *(unsigned int *)(Pathfinding_field_0x08 + 4 * v2) = *(unsigned int *)(Pathfinding_field_0x08 + 4 * v3);
+                v2 = v3;
+                *(unsigned int *)(this->m008 + 4 * v3) = v7;
+                if ( 2 * v3 <= this->m000
             && *(float *)(*(unsigned int *)(this->m008 + 4 * v3) + 8) > (double)*(float *)(*(unsigned int *)(this->m008 + 8 * v3)
                                                                                                      + 8) )
-            {
-                v3 *= 2;
-            }
-            if ( v6 <= this->m000
+                {
+                    v3 *= 2;
+                }
+                if ( v6 <= this->m000
             && *(float *)(*(unsigned int *)(this->m008 + 4 * v3) + 8) > (double)*(float *)(*(unsigned int *)(this->m008 + 4 * v6)
                                                                                                      + 8) )
-            {
-                v3 = v6;
-            }
-            while ( v3 != v2 )
-            {
-            }
+                {
+                    v3 = v6;
+                }
+            } while ( v3 != v2 );
         }
 }

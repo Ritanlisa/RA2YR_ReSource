@@ -56,31 +56,37 @@ int AudioMixer::PlaySample()
                 if ( v16 <= v4 )
                 {
                     v20 = v16 + this->AudioMixer_field_04;
+                    v19 = this->AudioMixer_field_00;
+                    v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                    this->AudioMixer_field_04 = v20;
                 }
+                else
+                {
+                    this->AudioMixer_field_04 += v4;
+                    v19 = this->AudioMixer_field_00;
+                    v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                }
+                this->AudioMixer_field_00 = v19;
+                return (int)(1);
             }
-            v19 = this->AudioMixer_field_00;
-            v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_04 = v20;
             else
             {
+                if ( v16 <= -v4 )
+                {
+                    v18 = this->AudioMixer_field_04 - v16;
+                    v17 = this->AudioMixer_field_00;
+                    v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                    this->AudioMixer_field_04 = v18;
+                }
+                else
+                {
+                    this->AudioMixer_field_04 += v4;
+                    v17 = this->AudioMixer_field_00;
+                    v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
+                }
+                this->AudioMixer_field_00 = v17;
+                return (int)(1);
             }
-            v19 = this->AudioMixer_field_00;
-            v19 = (v19 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_00 = v19;
-            return (int)(1);
-            else
-            {
-            }
-            v17 = this->AudioMixer_field_00;
-            v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_04 = v18;
-            else
-            {
-            }
-            v17 = this->AudioMixer_field_00;
-            v17 = (v17 & ~0xFF) | ((this->AudioMixer_field_00 | 2) & 0xFF);
-            this->AudioMixer_field_00 = v17;
-            return (int)(1);
         }
 }
 

@@ -2,9 +2,14 @@
  "summary": {
   "total": 20,
   "verdicts": {
-   "COMPILE_FAIL": 20
+   "MISMATCH": 4,
+   "COMPILE_FAIL": 16
   },
-  "pathologies": {},
+  "pathologies": {
+   "branch_polarity": 1,
+   "const_fold": 1,
+   "codegen_shape": 2
+  },
   "match_rate_of_decided_pct": 0.0,
   "match_rate_of_total_pct": 0.0,
   "rule_violation_fns": 18,
@@ -14,17 +19,22 @@
   {
    "addr": "0x402330",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioController.hpp(62) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioCo",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 178B ours 164B",
+   "first_diff": {
+    "orig": "+12 je 0x4023b0",
+    "ours": "+12 je 0x74"
+   },
+   "pathology": "branch_polarity",
    "name": "AudioController::UpdatePlayback",
    "emitted": "AudioController::UpdatePlayback",
    "unit": "AudioController",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "1/2",
-   "rule_violations": 34
+   "sites": "1/1",
+   "rule_violations": 36,
+   "orig_size": 178,
+   "ours_size": 164
   },
   {
    "addr": "0x4024a0",
@@ -45,7 +55,7 @@
    "addr": "0x4035f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\unknown.cpp(20) : error C2227: left of '->GetNext' must point to class/struct/union; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\unknown.cpp(20) : error C2440: 'initializing' : cannot convert from 'class AudioQueue *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wal",
    "first_diff": null,
    "pathology": null,
    "name": "AudioQueue::FindBestChannel",
@@ -54,13 +64,13 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "2/2",
-   "rule_violations": 8
+   "rule_violations": 10
   },
   {
    "addr": "0x404700",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AudioStream.cpp(11) : error C2039: 'm1E0' : is not a member of 'AudioStream'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\Audi",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AudioStream_404700.cpp(39) : error C2440: 'initializing' : cannot convert from 'int *' to 'char *'",
    "first_diff": null,
    "pathology": null,
    "name": "AudioStream::SetupPlayback",
@@ -68,29 +78,34 @@
    "unit": "AudioStream",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "17/17",
+   "sites": "18/18",
    "rule_violations": 12
   },
   {
    "addr": "0x4047b0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AudioStream.cpp(11) : error C2039: 'm1E0' : is not a member of 'AudioStream'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\Audi",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 251B ours 289B",
+   "first_diff": {
+    "orig": "+3 mov ecx, dword ptr [esi + 0x24]",
+    "ours": "+3 mov ecx, dword ptr [esi + 0x11700]"
+   },
+   "pathology": "const_fold",
    "name": "AudioStream::SelectRandom",
    "emitted": "AudioStream::SelectRandom",
    "unit": "AudioStream",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "18/18",
-   "rule_violations": 9
+   "rule_violations": 9,
+   "orig_size": 251,
+   "ours_size": 289
   },
   {
    "addr": "0x4052f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\VocClass.hpp(57) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\VocClass.hpp(5",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\VocClass.cpp(15) : error C2440: '=' : cannot convert from 'class VocClass ** ' to 'class VocClass *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
    "first_diff": null,
    "pathology": null,
    "name": "VocClass::Release",
@@ -98,14 +113,14 @@
    "unit": "VocClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/3",
+   "sites": "4/4",
    "rule_violations": 3
   },
   {
    "addr": "0x405c00",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioFileClass.hpp(47) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioFil",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AudioFileClass.cpp(8) : error C2440: 'initializing' : cannot convert from 'class AudioFileClass *const ' to 'unsigned int *'; D:\\RA2YR_ReSour",
    "first_diff": null,
    "pathology": null,
    "name": "AudioFileClass::Release",
@@ -120,7 +135,7 @@
    "addr": "0x405d40",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioController.hpp(62) : error C2059: syntax error : ')'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\AudioCo",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AudioController_405d40.cpp(7) : error C2440: 'initializing' : cannot convert from 'int [1]' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decom",
    "first_diff": null,
    "pathology": null,
    "name": "AudioController::Stop",
@@ -179,17 +194,22 @@
   {
    "addr": "0x41a9e0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\TechnoClass.cpp(8) : error C2664: 'TriggerTypeClass__ReadINI' : cannot convert parameter 1 from 'class TechnoClass *const ' to 'int'; D:\\RA2Y",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 159B ours 158B",
+   "first_diff": {
+    "orig": "+20 mov ecx, esi",
+    "ours": "+20 push edx"
+   },
+   "pathology": "codegen_shape",
    "name": "TechnoClass::CanFireAtTarget",
    "emitted": "TechnoClass::CanFireAtTarget",
    "unit": "TechnoClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
-   "rule_violations": 6
+   "sites": "3/5",
+   "rule_violations": 6,
+   "orig_size": 159,
+   "ours_size": 158
   },
   {
    "addr": "0x41fd60",
@@ -225,7 +245,7 @@
    "addr": "0x420e90",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AirstrikeClass.cpp(8) : error C2296: '&' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p0",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\AirstrikeClass.cpp(9) : error C2296: '&' : illegal, left operand has type 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p0",
    "first_diff": null,
    "pathology": null,
    "name": "AirstrikeClass::UpdateAll",
@@ -233,7 +253,7 @@
    "unit": "AirstrikeClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "4/7",
+   "sites": "5/8",
    "rule_violations": 0
   },
   {
@@ -255,7 +275,7 @@
    "addr": "0x42d8f0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\_VectorClass_G.cpp(13) : error C2039: 'm_C' : is not a member of '_VectorClass_G'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\_VectorClass_G.cpp(42) : error C2440: '=' : cannot convert from 'unsigned short *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_ushort::Remove",
@@ -263,14 +283,14 @@
    "unit": "_VectorClass_G",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/13",
-   "rule_violations": 11
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x42da30",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\_DynamicVectorClass_G.cpp(13) : error C2039: 'm_C' : is not a member of '_DynamicVectorClass_G'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall3",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\_DynamicVectorClass_G.cpp(44) : error C2440: '=' : cannot convert from 'unsigned short *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_ba",
    "first_diff": null,
    "pathology": null,
    "name": "VectorClass_ushort::SetCapacity",
@@ -278,29 +298,34 @@
    "unit": "_DynamicVectorClass_G",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/13",
-   "rule_violations": 14
+   "sites": "7/11",
+   "rule_violations": 2
   },
   {
    "addr": "0x42dca0",
    "batch": "adhoc",
-   "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\Pathfinding.cpp(29) : error C2061: syntax error : identifier 'v6'",
-   "first_diff": null,
-   "pathology": null,
+   "verdict": "MISMATCH",
+   "note": "orig 184B ours 187B",
+   "first_diff": {
+    "orig": "+5 mov esi, dword ptr [esp + 0x10]",
+    "ours": "+5 push edi"
+   },
+   "pathology": "codegen_shape",
    "name": "Pathfinding::SiftDown",
    "emitted": "Pathfinding::SiftDown",
    "unit": "Pathfinding",
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "14/14",
-   "rule_violations": 12
+   "rule_violations": 12,
+   "orig_size": 184,
+   "ours_size": 187
   },
   {
    "addr": "0x42df90",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\include\\Base64Straw.hpp(22) : error C2146: syntax error : missing ',' before identifier 'p2'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00\\part_00\\Base64Straw.cpp(31) : error C2440: 'initializing' : cannot convert from 'char *' to 'int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r5_wall385\\p00",
    "first_diff": null,
    "pathology": null,
    "name": "BitmapClass::ProcessFrame",
@@ -308,7 +333,7 @@
    "unit": "Base64Straw",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/5",
+   "sites": "2/4",
    "rule_violations": 21
   }
  ]

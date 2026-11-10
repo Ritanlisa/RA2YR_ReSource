@@ -9,6 +9,8 @@ class Delegate;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Base64Straw
 {
@@ -19,11 +21,8 @@ public:
     // DECOMP_SIZECHECK(Base64Straw, Base64Straw, 20);
 
     // ---- pilot methods (registry signatures)
-    size_t ProcessFrame(char * p1, signed int Size p2);  // 0x42DF90
+    size_t ProcessFrame(char * p1, signed int p2);  // 0x42DF90
 };
-
-// ---- globals used by this unit (registry names)
-extern size_t Size;
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int DecodeBitmapRGB(...);
@@ -41,6 +40,8 @@ class Base64Straw;
 
 #include <string.h>   // memset (whole-object zero init)
 #include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)
+#include <stdio.h>    // sprintf/sscanf/printf (R5)
+#include <stdarg.h>   // va_list (R5)
 
 class Delegate
 {
@@ -52,9 +53,6 @@ public:
     // ---- pilot methods (registry signatures)
     int Invoke(int p0, int p1);  // 0x6C98E0
 };
-
-// ---- globals used by this unit (registry names)
-extern size_t Size;
 
 // ---- global callee prototypes (R3 non-leaf)
 extern int DecodeBitmapRGB(...);

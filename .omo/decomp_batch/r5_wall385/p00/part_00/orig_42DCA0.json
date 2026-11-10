@@ -1,0 +1,11 @@
+{
+ "addr": "0x42DCA0",
+ "name": "Pathfinding::SiftDown",
+ "size": 184,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42DCA0",
+ "bytes_hex": "538b1955568b742410578d14368d7c36013bd37f188b41088b2c908b04b0d94508d94008ded9dfe0f6c44174028bd63bfb7f1a8b41088b1cb88b0490d94308d94008ded9dfe0f6c44175028bd73bd674608b41088d6c12018b1c908b3cb0891cb08b41088bf2893c908b198d3c123bfb7f1d8b41088b04b8d940088b41088b0490d94008ded9dfe0f6c44175028bd73beb7f1a8b41088b3ca88b0490d94708d94008ded9dfe0f6c44175028bd53bd675a05f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

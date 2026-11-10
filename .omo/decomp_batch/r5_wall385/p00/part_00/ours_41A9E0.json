@@ -1,0 +1,33 @@
+{
+ "symbol": "?CanFireAtTarget@TechnoClass@@QAIHHHPAEHD@Z",
+ "sym_key": "TechnoClass::CanFireAtTarget",
+ "size": 158,
+ "link_base": 0,
+ "bytes_hex": "8b44240c538b5c2408568bf1578b4c24145051535256e80000000083c41485c075768a86c906000084c074158b86f800000085c0750b5f5eb8010000005bc210008b8ea00300008d54241852e8000000008b388b8ec00600008d86c006000050ff511c85c0752f8d54241853528bcee80000000033c9668b082bf957e80000000083c4043d00080000760b5f5eb8020000005bc2100033c05f5e5bc21000",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?TriggerTypeClass__ReadINI@@YAHPAXHHPAEH@Z",
+   "sym_key": "TriggerTypeClass__ReadINI"
+  },
+  {
+   "off": 77,
+   "type": "REL32",
+   "sym": "?GetValue@ProgressTimer@@QAEPAIPAX@Z",
+   "sym_key": "ProgressTimer::GetValue"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?CalcTargetFacing@ObjectClass@@QAEPAHPAXH@Z",
+   "sym_key": "ObjectClass::CalcTargetFacing"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?abs16@@YAHZZ",
+   "sym_key": "abs16"
+  }
+ ]
+}

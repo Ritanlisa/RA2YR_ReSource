@@ -9,7 +9,7 @@ char _VectorClass_G::Remove(int p0, unsigned short * p1)
         int i;
         if ( p0 )
         {
-            this->m_C = (this->m_C & ~0xFF) | ((0) & 0xFF);
+            this->m_C = 0;
             if ( p1 )
             {
                 v4 = p1;
@@ -18,34 +18,35 @@ char _VectorClass_G::Remove(int p0, unsigned short * p1)
             {
                 v4 = (unsigned short *)__2_YAPAXI_Z(2 * p0);
             }
-            this->m_C = (this->m_C & ~0xFF) | ((1) & 0xFF);
+            this->m_C = 1;
             if ( v4 )
             {
-                if ( this->m003[0] )
+                if ( this->m004[0] )
                 {
                     m_8 = this->m_8;
+                    if ( p0 < m_8 )
+                    {
+                        m_8 = p0;
+                    }
+                    for ( i = 0; i < m_8; v4[i - 1] = *(unsigned short *)(this->m004[0] + 2 * i - 2) )
+                    {
+                        ++i;
+                    }
+                    if ( ((this->m_C >> 8) & 0xFF) )
+                    {
+                        __3_YAXPAX_Z(*(void **)&this->m_1[3]);
+                        this->m004[0] = 0;
+                    }
                 }
+                this->m004[0] = v4;
+                this->m_8 = p0;
+                ((this->m_C >> 8) & 0xFF) = p1 == 0;
+                return (char)(1);
             }
-            if ( p0 < m_8 )
+            else
             {
-                m_8 = p0;
+                return (char)(0);
             }
-            for ( i = 0; i < m_8; v4[i - 1] = *(unsigned short *)(this->m003[0] + 2 * i - 2) )
-            {
-                ++i;
-            }
-            if ( ((this->m_C >> 8) & 0xFF) )
-            {
-                __3_YAXPAX_Z(*(void **)&this->m_1[3]);
-            }
-            this->m003[0] = 0;
-            this->m003[0] = v4;
-            this->m_8 = p0;
-            ((this->m_C >> 8) & 0xFF) = p1 == 0;
-            return (char)(1);
-        }
-        else
-        {
         }
         else
         {
