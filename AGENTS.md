@@ -1000,6 +1000,20 @@ python tools/type_infer/auto_name.py
 
 ### 最近完成（按时间倒序）
 
+- **2026-11-11 (R5)**: decomp_sys 编译墙攻坚（承接 R4 定案"先修墙不加函数"）——22 处修复，385 件重跑 **3.4%→19.5% 编译通过**，回归 0 伤
+  - **核心发现**：编译墙主根因在**转换管线文本损坏层**，不在预期的壳供给层。四个单一 bug 大族：
+    ①`pass_macro_residual_sweep` re.sub 只替换 `LOWORD(` 片段不消费参数→括号不平衡撕碎后续解析（C2143/C2059 87 件首错族）；
+    ②`pseudo._rebuild` 重建 if 体只回填 `;` **丢 `{}`**→体内 do/嵌套 if 花括号消失、递归解析错位（空 do 体/孤儿 while/双 else 三症状同根，修后 mid60 通过率单点翻倍 8.3%→16.7%）；
+    ③`_QUAL_CALL` args 懒惰匹配停在第一个 `)`→嵌套实参截断+cast 优先级劫持；
+    ④`pseudo.fetch` 多行 proto 整块泄漏进函数体。
+    另 18 处：inherited_from 继承边回退（planningPathIdx 挂 AircraftClass 表）、`stru_X.?[N]`/`__pad_H[M]`/`.vfptrN` char* 重写、嵌套先用 decl 定位、fn-ptr 拼写→`void*`、类名与全局变量名冲突降级、局部指针成员视图（`v4->nextObject`）、`m_H` 偏移编码名合成、goto 禁 init 合并（C2362）等。
+  - **回归**：358/359 历史 MATCH 保持；唯一翻转 0x4a3c00 经 git stash 二分证实为 **HEAD bbb34ab80 先在回归**（账本陈旧件）。
+  - **偏差**：未达 ≥50% 目标——剩余 310 件为异质长尾（最大族 C2440=88 件成因分散于逐函数类型推断债），无下一个单点根因可扫。
+  - 75 件编译通过者全 MISMATCH（regalloc14/frame_sched12/codegen_shape24）= 形态层下一战场，与 R4 §6 预测一致。
+  - 工具：逐 pass 快照探针 `.omo/agents/decomp_batch/r5_pass_probe.py`（单函数文本演化定位）。报告 = `.omo/agents/decomp_batch/report_r5.md`；
+    下一步 = C2440 分桶工单（LHS×RHS 形态，类型层推理）+ 75 件形态层对照集。**勿重跑**：批量 `ScalarDtor` 改名（R4 已证伪）。
+  - 同日 datamatch 试点首战完成（见「当前活跃方向 2」节）。
+
 - **2026-10-26 (X134)**: Mission/Radio/Techno 链 own-part 对齐 + vt_slot 转换——最大幻影堆清偿
   - **W1**: 修正 X133 表生成器的 base_n 口径（用二进制基类计数 122/157/161，旧表用编译计数）；
     Mission binary own 35 / Radio own 4 / Techno own 148。arity 三源法：Capstone first-retn 主证 +
