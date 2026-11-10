@@ -36,8 +36,14 @@ def _pad(off_from, off_to):
 
 
 def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
-                  used_globals=None):
-    """views: ClassView; sigs: list of emitted signature dicts for this class."""
+                  used_globals=None, extra_externs=None):
+    """views: ClassView; sigs: list of emitted signature dicts for this class.
+
+    sigs may include callee pseudo-sigs (R3 non-leaf support): records with
+    `_callee` mark methods declared-only (called from another unit class's
+    body) -- they render identically (a declaration line).
+    extra_externs: full `extern RET name(args);` lines for global callees.
+    """
     scal = views.scalars.get(cls, {})
     arrs = views.arrays.get(cls, {})
     vts = views.virtuals.get(cls, {})
@@ -141,7 +147,8 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("")
     lines.append("    // ---- pilot methods (registry signatures)")
     for s in sigs:
-        cc = " __fastcall" if s.get("cc") == "__fastcall" else ""
+        cc = {"__fastcall": " __fastcall",
+              "__stdcall": " __stdcall"}.get(s.get("cc"), "")
         lines.append("    %s%s %s(%s);  // 0x%s" % (
             s["ret"], cc, s["method"], ", ".join(
                 "%s %s" % (t, n) for t, n in s["params_spelled"]),
@@ -152,6 +159,11 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
         lines.append("// ---- globals used by this unit (registry names)")
         for name in sorted(used_globals):
             lines.append("extern %s %s;" % (used_globals[name], name))
+        lines.append("")
+    if extra_externs:
+        lines.append("// ---- global callee prototypes (R3 non-leaf)")
+        for d in extra_externs:
+            lines.append(d)
         lines.append("")
     lines.append("#endif  // %s" % guard_of(cls))
     lines.append("")

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CA7D0",
+ "name": "MPBattleClass::vt_entry_18",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CA7D0",
+ "bytes_hex": "e96bbb0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

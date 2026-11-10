@@ -452,7 +452,13 @@ _ABS_CALL = re.compile(r"\b(abs16|abs64|abs)\s*\(")
 
 
 def _expand_abs(fn, arg):
+    # R3: the Westwood house idiom is the BRANCHLESS algebraic abs
+    # (`(x ^ (x >> 31)) - (x >> 31)`) -- verified against the binary
+    # (FacingClass::Set_SyncLog 0x4C9300: `movsx; mov eax; cdq; xor;
+    # sub`); the ternary form compiles to the branchy test/jge/neg shape
+    # the original never emits (Abs16Cmp round-2 MISMATCH root cause).
     cast = {"abs16": "short", "abs64": "__int64", "abs": "int"}[fn]
+    shift = 63 if fn == "abs64" else 31
     if re.search(r"[^=!<>]=[^=]", arg):
         return None
     if re.search(r"\+\+|--", arg):
@@ -460,7 +466,7 @@ def _expand_abs(fn, arg):
     if re.search(r"\b\w+\s*\(", arg):
         return None
     c = "(%s)(%s)" % (cast, arg)
-    return "((%s < 0) ? -%s : %s)" % (c, c, c)
+    return "((%s ^ (%s >> %d)) - (%s >> %d))" % (c, c, shift, c, shift)
 
 
 def pass_intrinsics_abs(ctx):
@@ -528,8 +534,9 @@ def _member_narrow_state(ctx, mem_name):
     """Narrow-state of a member for macro branching.
 
     Returns (offset, is_narrow, width) or (None, False, None):
-      is_narrow True when IG evidence or declared type gives byte/word width
-      that is NARROWER than the macro's own width requirement context.
+      is_narrow True when IG evidence, declared type, or THIS function's
+      disasm byte/word access at the offset gives a width NARROWER than
+      the macro's own width requirement context.
     """
     off, rec, _src = _member_record_for(ctx, mem_name)
     if off is None:
@@ -539,6 +546,11 @@ def _member_narrow_state(ctx, mem_name):
     ig = ctx.reg.ig_granularity(ctx.sig["cls"], real_off)
     if ig and ig["width"] < width:
         width = ig["width"]
+    # R3: the function's own disasm is narrow-access evidence (SetByte96
+    # family: `mov byte ptr [ecx+off], 0` stores with no IG record at all)
+    dmin = _disasm_min_width(ctx, real_off)
+    if dmin is not None and dmin < width:
+        width = dmin
     return real_off, width in (1, 2), width
 
 
@@ -696,12 +708,30 @@ def pass_intrinsics_lobyte(ctx):
         ret_next = (j < len(lines) and
                     re.match(r"^return\s+%s\s*;?\s*$" % var, lines[j].strip()))
         if ret_next:
-            if ctx.sig["ret"] == "bool":
+            # comparison test must ignore the '>' of member arrows (->)
+            probe = expr.replace("->", ".")
+            is_cmp = bool(re.search(r"[<>]=?|==|!=|&&|\|\||!", probe))
+            if ctx.sig["ret"] in ("bool", "char", "unsigned char") \
+                    and not is_cmp:
+                # byte-family return + byte-value expr: plain return
+                # (R1/S1 verified: `mov al,[ecx+off]` / `mov al,1`)
                 out.append("return (%s);" % expr)
                 ctx.sites.append(Site(
                     "intrinsic", "%s(%s) = %s; return %s;" % (macro, var, expr, var),
-                    "bool-return %s idiom -> direct return of expr "
+                    "byte-return %s idiom -> direct return of expr "
                     "(no narrow evidence; fallback)" % macro, False))
+            elif ctx.sig["ret"] in ("bool", "char", "unsigned char") and is_cmp:
+                # comparison-valued expr: the `if (e) return 1; return 0;`
+                # shape is the ONLY one VC6 compiles to the al-only
+                # normalization (C5 probe: xor al,al/mov al,1 vs the
+                # eax forms a plain `return e;` produces)
+                out.append("if (%s)" % expr)
+                out.append("    return 1;")
+                out.append("return 0;")
+                ctx.sites.append(Site(
+                    "intrinsic", "%s(%s) = %s; return %s;" % (macro, var, expr, var),
+                    "bool-return %s comparison idiom -> if/return-1-0 form"
+                    % macro, False))
             else:
                 out.append("return (%s & ~0xFF) | ((%s) & 0xFF);" % (var, expr))
                 ctx.sites.append(Site(
@@ -915,6 +945,64 @@ def _disasm_this_offsets(ctx):
                 offs.add(int(m.group(1) or "0", 16))
         ctx._dis_offs = offs
     return ctx._dis_offs
+
+
+# per-offset access widths the binary exhibits for THIS function
+# (R3 disasm-width arbitration: a class-level IG-narrowed member may be
+# read full-width here (ObjectClass 4B getters) or a w4 member may be
+# byte/word-stored here (SetByte96 family) -- the function's own disasm
+# outranks the class-level merge for the VIEW this function emits).
+_W_PTR_PREFIX = [
+    (re.compile(r"\bbyte\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 1),
+    (re.compile(r"\bword\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 2),
+    (re.compile(r"\bdword\s+ptr\s+\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 4),
+]
+# width-carrying register operands around a [ecx+N] memory operand:
+# 8-bit -> byte, 16-bit -> word, 32-bit -> dword (either side of the op)
+_W_REG = [
+    (re.compile(r"\b(?:al|ah|bl|bh|cl|ch|dl|dh)\b[^;\n]*"
+                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 1),
+    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\b(?:al|ah|bl|bh|cl|ch|dl|dh)\b"), 1),
+    (re.compile(r"\b(?:ax|bx|cx|dx|si|di|bp|sp)\b[^;\n]*"
+                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 2),
+    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\b(?:ax|bx|cx|dx|si|di|bp|sp)\b"), 2),
+    (re.compile(r"\b(?:eax|ebx|edx|esi|edi|ebp)\b[^;\n]*"
+                r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\]"), 4),
+    (re.compile(r"\[ecx\+0?x?([0-9A-Fa-f]+)h?\][^;\n]*"
+                r"\b(?:eax|ebx|edx|esi|edi|ebp)\b"), 4),
+]
+
+
+def _disasm_this_widths(ctx):
+    """{offset: set(access widths)} for this function's [ecx+N] ops.
+
+    Explicit `byte/word/dword ptr` prefixes and width-carrying register
+    operands both contribute; an offset touched at several widths keeps
+    them all (narrowing uses the min, widening the max).
+    """
+    if not hasattr(ctx, "_dis_widths"):
+        w = {}
+        for dl in ctx.ex.disasm_lines:
+            for pat, width in _W_PTR_PREFIX + _W_REG:
+                for m in pat.finditer(dl):
+                    off = int(m.group(1), 16)
+                    w.setdefault(off, set()).add(width)
+        ctx._dis_widths = w
+    return ctx._dis_widths
+
+
+def _disasm_min_width(ctx, off):
+    """Narrowest width THIS function touches [ecx+off] at, or None."""
+    s = _disasm_this_widths(ctx).get(int(off))
+    return min(s) if s else None
+
+
+def _disasm_max_width(ctx, off):
+    """Widest width THIS function touches [ecx+off] at, or None."""
+    s = _disasm_this_widths(ctx).get(int(off))
+    return max(s) if s else None
 
 
 def _disasm_arbitrate(ctx, cls, name, off, rec, src):
@@ -1191,6 +1279,25 @@ def pass_member_shapes(ctx):
                             # wrong ptr spelling, width evidence wins
                         elif WIDTH_OF.get(sp) == w:
                             ty = sp
+                    # R3 disasm-width arbitration (function-scoped): THIS
+                    # function's own [ecx+off] access width outranks the
+                    # class-level IG merge for the view emitted here --
+                    # an IG-narrowed (bool) member read as a dword by
+                    # this getter must stay a dword read
+                    # (ObjectClass 4B getter family).
+                    dmax = _disasm_max_width(ctx, off_i)
+                    if dmax and dmax > w:
+                        w = dmax if w in (1, 2) else w
+                        if w in (1, 2, 4, 8):
+                            ty = {1: "unsigned char", 2: "short",
+                                  4: "int", 8: "__int64"}[w]
+                            ctx.note(
+                                "disasm_width_widen",
+                                "%s@0x%X registry width %d -> %d (this "
+                                "fn reads it wide; class-level IG merge "
+                                "must not swallow the dword read)"
+                                % (mem, off_i,
+                                   int((rec or {}).get("width") or 4), w))
                     if ty is None:
                         w = w if w in (1, 2, 4, 8) else 4
                         ty = {1: "unsigned char", 2: "short", 4: "int",
@@ -1235,6 +1342,28 @@ def pass_member_shapes(ctx):
                 pass   # true pointer, w stays 4
             elif rsp.endswith("*") and w in (1, 2):
                 w = w  # wrong ptr spelling: width evidence already correct
+        # R3 disasm-width arbitration (function-scoped, narrow direction):
+        # a byte/word store in THIS function is real narrow evidence even
+        # with no IG record (SetByte96 family: `mov byte ptr [ecx+off], 0`);
+        # a dword read by this fn of an IG-narrowed member stays wide
+        # (ObjectClass 4B getter family).  The NARROW direction also
+        # overrides pointer spellings -- a byte store at the offset means
+        # this function's view is a byte there, whatever the registry
+        # merged in (TActionClass@0x44 AbstractClass* vs `mov byte
+        # ptr [ecx+44h], 0`).
+        dmax = _disasm_max_width(ctx, view_off)
+        dmin = _disasm_min_width(ctx, view_off)
+        is_ptr_ty = bool(rt and spell_type(rt).endswith("*"))
+        if dmax and dmax > w and not is_ptr_ty:
+            w = dmax
+            ctx.note("disasm_width_widen",
+                     "%s@0x%X registry width -> %d (dword read this fn)"
+                     % (reg_name, view_off, w))
+        elif dmin and dmin < w and dmin in (1, 2):
+            w = dmin
+            ctx.note("disasm_width_narrow",
+                     "%s@0x%X registry width -> %d (narrow access this fn)"
+                     % (reg_name, view_off, w))
         if _OFFSET_NAME.match(reg_name):
             reg_name = "m%03X" % view_off   # placeholder names must not
             # collide with hpp pad emission (__pad_0 C2039 family)
@@ -1555,3 +1684,180 @@ def pass_era_normalize(ctx):
     text = text.replace("*this = 0;", "memset(this, 0, sizeof(*this));")
     ctx.lines = text.split("\n")
     ctx.stmts = None   # lines are authoritative post-normalization
+
+
+# ---------------------------------------------------------------- pass: callees
+#
+# R3 non-leaf expansion: qualified call sites in the pseudocode
+# (`return SidebarClass::InitButtons((TabClass *)this);` -- the tail-jmp
+# thunk family) need declarations the unit hpp does not carry.  For each
+# call the registry supplies the callee signature; thiscall members are
+# re-rendered as receiver calls (`((Owner *)arg0)->Method(rest)`) and a
+# pseudo-sig is recorded so the hpp declares the method on a stub class.
+
+_QUAL_CALL = re.compile(
+    r"\b(?P<qual>[A-Za-z_]\w*(?:::[A-Za-z_]\w*)+)\s*\((?P<args>[^;]*?)\)"
+    r"(?=[;\s,)]|$])")
+
+
+def _proto_ret_void(proto):
+    """True when the export prototype's return type spells `void`."""
+    p = (proto or "").strip()
+    for c in ("__thiscall", "__stdcall", "__cdecl", "__fastcall",
+              "__userpurge"):
+        p = p.replace(c, " ")
+    m = re.match(r"^(.*?)\s*\(", p)
+    return bool(m) and m.group(1).strip() == "void"
+
+_CALL_KEYWORDS = {
+    "if", "for", "while", "switch", "return", "sizeof", "abs16", "abs64",
+    "abs", "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
+    "BYTE3", "WORD1", "SLOWORD", "SHIWORD",
+}
+
+
+def _split_args(argstr):
+    if not argstr.strip():
+        return []
+    out, depth, cur = [], 0, []
+    for ch in argstr:
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth -= 1
+        if ch == "," and depth == 0:
+            out.append("".join(cur).strip())
+            cur = []
+        else:
+            cur.append(ch)
+    out.append("".join(cur).strip())
+    return out
+
+
+def pass_callees(ctx):
+    """Declare + rewrite qualified call sites (R3 non-leaf support).
+
+    Emits are collected, not applied here:
+      ctx.used_callees     -- {owner_cls: [pseudo_sig,...]} (member calls;
+                              batch_run/decompile.main inject these into
+                              the unit's by_cls so hpp_pilot declares them)
+      ctx.used_callee_exts -- [extern declaration lines] (global/static)
+    """
+    if not hasattr(ctx, "used_callees"):
+        ctx.used_callees = {}
+        ctx.used_callee_exts = []
+    text = "\n".join(ctx.lines)
+    for m in list(_QUAL_CALL.finditer(text)):
+        qual = m.group("qual")
+        head = qual.split("::")[0]
+        if head in _CALL_KEYWORDS:
+            continue
+        # our own method emission is `Cls::Method(...)` only in the def
+        # line -- bodies here are stripped of the signature already
+        if qual == "%s::%s" % (ctx.sig.get("cls"), ctx.sig.get("method")):
+            continue
+        args = _split_args(m.group("args"))
+        addr, rec = ctx.reg.function_by_name(qual)
+        owner = qual.rsplit("::", 1)[0] if "::" in qual else None
+        method = qual.rsplit("::", 1)[-1]
+        if rec is not None and rec.get("cls") and \
+                str(rec.get("cc") or "thiscall") in (
+                    "thiscall", "__fastcall", "__stdcall", "unknown", None,
+                    "__thiscall"):
+            cc = {"fastcall": "__fastcall", "stdcall": "__stdcall"}.get(
+                rec.get("cc") or "thiscall",
+                rec.get("cc") or "thiscall")
+            if cc in ("unknown", "__thiscall"):
+                cc = ""      # member: default convention IS thiscall
+            # member callee: receiver call form.  The owner class for the
+            # stub declaration is the CALL NAME's own prefix (diffasm
+            # compares the compiled symbol key against the signals NAME
+            # -- registry rec.cls may carry a different receiver typing:
+            # name `SidebarClass::InitButtons` vs cls TabClass @0x6D03A0)
+            owner_cls = owner
+            rret = spell_type(rec.get("ret") or "int")
+            rparams = [(spell_type(p.get("type") or "int"),
+                        p.get("name") or "p%d" % i)
+                       for i, p in enumerate(rec.get("params") or [])]
+            if len(rparams) != len(args) - 1:
+                # registry arity disagrees with the call site: trust the
+                # call site (int-typed) -- the binary jumps with these
+                rparams = [("int", "p%d" % i)
+                           for i in range(max(0, len(args) - 1))]
+            recv = args[0] if args else "this"
+            # strip a leading cast from the receiver expr: IDA renders the
+            # callee's this-type as `(TabClass *)this` -- re-casting to the
+            # owner would require declaring TabClass too
+            rcm = re.match(r"^\(\s*\w+\s*\*\s*\)\s*(.+)$", recv)
+            if rcm:
+                recv = rcm.group(1)
+            rest = ", ".join(args[1:])
+            emit = "((%s *)(%s))->%s(%s)" % (re.sub(
+                r"[^A-Za-z0-9_]", "_", str(owner_cls)), recv, method, rest)
+            text = text.replace(m.group(0), emit, 1)
+            pseudo_sig = {
+                "addr": addr or "0x0", "ret": rret, "cc": cc,
+                "method": method,
+                "params_spelled": rparams, "params": rparams,
+                "_callee": True,
+            }
+            ctx.used_callees.setdefault(str(owner_cls), []).append(
+                pseudo_sig)
+            ctx.sites.append(Site(
+                "callee", m.group(0)[:60],
+                "member call -> %s (registry %s; stub decl recorded)"
+                % (emit[:60], addr), True))
+        else:
+            # global/static callee (or unknown): extern prototype keyed to
+            # the call-site arity; qualified names are re-spelled to the
+            # sanitized free-fn name (a `Qual::Name(...)` call text cannot
+            # name a free function in C++)
+            rret = spell_type(rec.get("ret")) if rec else "int"
+            rcc = {"stdcall": " __stdcall", "fastcall": " __fastcall"}.get(
+                (rec or {}).get("cc") or "", "")
+            plist = ", ".join("int a%d" % i for i in range(len(args)))
+            fname = re.sub(r"[^A-Za-z0-9_]", "_", qual)
+            decl = "extern %s%s %s(%s);" % (rret, rcc, fname, plist)
+            if decl not in ctx.used_callee_exts:
+                ctx.used_callee_exts.append(decl)
+            if "::" in qual:
+                text = text.replace(m.group(0),
+                                    "%s(%s)" % (fname, m.group("args")), 1)
+            ctx.sites.append(Site(
+                "callee", m.group(0)[:60],
+                "global/static call -> extern prototype (site arity %d)"
+                % len(args), True))
+    ctx.lines = text.split("\n")
+
+    # whole-body forward: align OUR return type with the callee's so the
+    # compiler can emit the bare tail jmp (5B thunk family).  Covers both
+    # `return ((C *)x)->M(...);` and the void statement form
+    # `((C *)x)->M(...);` (FileFind::Close family).
+    whole = [ln.strip().rstrip(";").strip() for ln in ctx.lines if ln.strip()]
+    if len(whole) == 1 and ctx.used_callees:
+        m = re.match(
+            r"^(?:return\s+)?\(\(\w+\s*\*.*\)->\w+\([^;]*\)$", whole[0])
+        if m:
+            for sigs in ctx.used_callees.values():
+                for cs in sigs:
+                    if cs["method"] and ("->%s(" % cs["method"]) in whole[0]:
+                        cret = cs["ret"]
+                        starts_return = whole[0].startswith("return")
+                        if starts_return and cret == "void":
+                            cret = "int"   # `return callee();` needs a value
+                        # R3: no-return statement form -- our own export
+                        # proto outranks a placeholder callee ret.  The
+                        # binary is a bare tail jmp whose body returns
+                        # nothing (PowerClass::Stub -> RadarClass::
+                        # Destru_vt05: callee registry ret 'int' is a
+                        # default, our proto says void); aligning to the
+                        # callee here re-types the thunk and the unit dies
+                        # on C4716 must-return.
+                        if not starts_return and _proto_ret_void(ctx.ex.proto):
+                            cret = "void"
+                        if ctx.sig["ret"] != cret:
+                            ctx.sig["ret"] = cret
+                            ctx.note("tail_forward_ret_align",
+                                     "whole-body forward: ret aligned to "
+                                     "callee %s (%s) for bare tail jmp"
+                                     % (cs["method"], cret))

@@ -98,7 +98,7 @@
   "status": "PENDING"
  },
  "0x40d270": {
-  "attempts": 3,
+  "attempts": 6,
   "first_diff": "+0 jmp 0x6d03a0",
   "name": "SidebarClass::initButtons2",
   "note": "decomp_batch r2: MATCH",
@@ -308,7 +308,7 @@
   "status": "PENDING"
  },
  "0x486380": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+14 xor al, al",
   "name": "Cell::IsEmpty",
   "note": "decomp_batch r2: MATCH",
@@ -497,9 +497,23 @@
   "status": "NG"
  },
  "0x4de620": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "ObjectClass::IsHeightAboveThreshold_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e14a0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "ObjectClass::InputThunkA",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e14b0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "ObjectClass::InputThunkB",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -559,6 +573,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5216c0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "TechnoClass::GetThreatValue_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x526950": {
   "attempts": 5,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x2c]",
@@ -595,7 +616,7 @@
   "status": "OK"
  },
  "0x53f4e0": {
-  "attempts": 1,
+  "attempts": 4,
   "first_diff": null,
   "name": "Struct::ZeroInitAndSetup_0",
   "note": "decomp_batch r2: MATCH",
@@ -707,11 +728,11 @@
   "status": "OK"
  },
  "0x5865e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+2 ret 4",
   "name": "Game::Stub3",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5b2950": {
   "attempts": 4,
@@ -721,14 +742,14 @@
   "status": "NG"
  },
  "0x5b2990": {
-  "attempts": 15,
+  "attempts": 16,
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "Math::Abs16Cmp",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
  "0x5bbed0": {
-  "attempts": 2,
+  "attempts": 5,
   "first_diff": null,
   "name": "FileFind::Close",
   "note": "decomp_batch r2: MATCH",
@@ -763,9 +784,23 @@
   "status": "OK"
  },
  "0x5c5d30": {
-  "attempts": 3,
+  "attempts": 6,
   "first_diff": "+0 jmp 0x5d62c0",
   "name": "PlayerClass::AssignPlayerIndex_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5ca7d0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "MPBattleClass::vt_entry_18",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5ca7f0": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "ScenarioClass::ClearFlag_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -791,11 +826,11 @@
   "status": "OK"
  },
  "0x5d6310": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+2 ret 4",
   "name": "ScenarioClass::MissionStubReturnZero2",
-  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5d6350": {
   "attempts": 1,
@@ -824,6 +859,13 @@
   "name": "ScenarioClass::distributeStartingUnits",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5ef280": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "Struct::ZeroInitAndSetup_0_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5f1950": {
   "attempts": 1,
@@ -854,7 +896,7 @@
   "status": "OK"
  },
  "0x5f6560": {
-  "attempts": 12,
+  "attempts": 13,
   "first_diff": "+0 sub esp, 0xc",
   "name": "Math::DistSq2D",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -882,11 +924,11 @@
   "status": "OK"
  },
  "0x6241c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+3 ret ",
   "name": "ObjectClass::Release",
-  "note": "decomp_batch r2: MISMATCH/codegen_shape",
-  "status": "NG"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6241d0": {
   "attempts": 4,
@@ -971,6 +1013,13 @@
   "name": "FactoryClass::GetState",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x63f7b0": {
+  "attempts": 3,
+  "first_diff": "+0 jmp 0x652cf0",
+  "name": "PowerClass::Stub",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x642ad0": {
   "attempts": 3,
@@ -1084,10 +1133,24 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6d0260": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "BlowStraw_29::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6e4650": {
   "attempts": 1,
   "first_diff": null,
   "name": "TActionClass::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x705d60": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "BuildingClass::GetType_Thunk",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1155,7 +1218,7 @@
   "status": "OK"
  },
  "0x726900": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+0 mov byte ptr [ecx + 0x44], 0",
   "name": "TActionClass::executeDetonateAction",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
@@ -1167,6 +1230,20 @@
   "name": "Property::GetField11",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x740e50": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "TechnoClass::GetAmmoCount_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x7447a0": {
+  "attempts": 3,
+  "first_diff": "+0 jmp 0x4d4dc0",
+  "name": "InfantryClass::ScanTarget_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x74ab40": {
   "attempts": 2,
@@ -1280,6 +1357,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x77d710": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "GameLoop::Thunk",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x7ab340": {
   "attempts": 2,
   "first_diff": null,
@@ -1370,5 +1454,26 @@
   "name": "WWMouseClass::checkBounds",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7c891a": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "OleUninitialize::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c89f2": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "ImageList::DragEnter",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
+ },
+ "0x7c89f8": {
+  "attempts": 3,
+  "first_diff": null,
+  "name": "ImageList::BeginDrag",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "PENDING"
  }
 }

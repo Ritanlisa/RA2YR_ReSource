@@ -1,0 +1,11 @@
+{
+ "addr": "0x705D60",
+ "name": "BuildingClass::GetType_Thunk",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x705D60",
+ "bytes_hex": "e95b28f3ff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

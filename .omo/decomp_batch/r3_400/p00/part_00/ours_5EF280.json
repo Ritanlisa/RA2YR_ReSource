@@ -1,0 +1,15 @@
+{
+ "symbol": "?ZeroInitAndSetup_0_0@NullModemConnClass@@QAEHXZ",
+ "sym_key": "NullModemConnClass::ZeroInitAndSetup_0_0",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?ZeroInitAndSetup@Struct@@QAEHXZ",
+   "sym_key": "Struct::ZeroInitAndSetup"
+  }
+ ]
+}

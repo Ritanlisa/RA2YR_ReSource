@@ -41,6 +41,7 @@ class Registry(object):
         self._vsa = None
         self._g_by_addr = None
         self._ig = None          # (cls, off) -> {width, types, count}
+        self._fn_by_name = None  # qualified name -> addr
         self.notes = []          # registry-gap reports
 
     @classmethod
@@ -234,6 +235,19 @@ class Registry(object):
             if a.lower() == norm:
                 return v
         return None
+
+    def function_by_name(self, qual_name):
+        """('Owner::Method' or global name) -> (addr, registry record) or
+        (None, None).  First address wins on ICF-folded duplicate names."""
+        if self._fn_by_name is None:
+            idx = {}
+            for a, v in self.functions.items():
+                nm = v.get("name")
+                if nm:
+                    idx.setdefault(nm, a)
+            self._fn_by_name = idx
+        a = self._fn_by_name.get(qual_name)
+        return (a, self.functions.get(a)) if a else (None, None)
 
     # ------------------------------------------------------------ globals
     @property

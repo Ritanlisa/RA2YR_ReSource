@@ -53,6 +53,54 @@ PILOT = [
 
 # ---------------------------------------------------------------- signature
 
+# return-value channel writers: mnemonic + first operand register spelling
+_RET_WRITERS = re.compile(
+    r"^\s*[0-9A-Fa-f]+:\s*"
+    r"(?P<mn>mov|xor|and|or|setn?l|setn?le|setn?g|setn?ge|setn?e|setn?z|"
+    r"setn?ne|setn?nz|setn?b|setn?be|setn?a|setn?ae|setn?s|setn?ns)\s+"
+    r"(?P<dst>e?ax|al|ah)\b",
+    re.I)
+
+
+def _disasm_ret_width(disasm_lines):
+    """Narrowest register width the return paths write (R3 ret_norm fix).
+
+    Walks each instruction run ending in a `retn`; the LAST writer of the
+    eax/al/ax channel in the run decides that path's width.  Returns the
+    minimum across paths: 1 (al), 2 (ax), 4 (eax), or None.
+    """
+    widths = []
+    run = []
+    retn_re = re.compile(r"^\s*[0-9A-Fa-f]+:\s*retn?\b")
+    for dl in list(disasm_lines) + ["xxxxxx: retn"]:
+        if retn_re.match(dl):
+            w = None
+            for ins in run:
+                wm = _RET_WRITERS.match(ins)
+                if not wm:
+                    continue
+                dst = wm.group("dst").lower()
+                w = 1 if dst in ("al", "ah") else (2 if dst == "ax" else 4)
+            if w is not None:
+                widths.append(w)
+            run = []
+            continue
+        run.append(dl)
+    if not widths:
+        return None
+    return min(widths)
+
+
+def _proto_ret(proto):
+    """Return-type spelling of an export prototype (`void __thiscall(...)`)."""
+    p = (proto or "").strip()
+    for c in ("__thiscall", "__stdcall", "__cdecl", "__fastcall",
+              "__userpurge"):
+        p = p.replace(c, " ")
+    m = re.match(r"^(.*?)\s*\(", p)
+    return m.group(1).strip() if m else ""
+
+
 def derive_signature(reg, ex):
     fn = reg.function(ex.addr) or {}
     name = fn.get("name") or ex.name
@@ -69,6 +117,16 @@ def derive_signature(reg, ex):
             cls, cls_src = pty, "proto_this"
     method = fn.get("method") or (name.split("::")[-1] if "::" in name else name)
     ret = spell_type(fn.get("ret") or "int")
+    ret_notes = []
+    # R3: a registry `unknown` return is not a type -- the export proto is
+    # the only ret evidence.  Without this a tail-jmp thunk whose callee
+    # ret was never resolved emitted `int Stub(){ Callee(); }` -> C4716
+    # must-return (PowerClass::Stub 0x63F7B0 family).
+    if fn.get("ret") in (None, "", "unknown") and \
+            _proto_ret(ex.proto) == "void":
+        ret_notes.append(("ret_proto_void",
+                          "registry ret unknown + proto void -> void"))
+        ret = "void"
     # registry spells conventions without the leading underscores
     # ("fastcall"/"stdcall"/"cdecl"); the emitter and every downstream
     # pass key on the C++ spelling with underscores.  Without this
@@ -127,10 +185,76 @@ def derive_signature(reg, ex):
         elif not no_stack_read:
             pass   # body reads stack args: signature arity is real (static
             # member / mislabelled calling convention -- pathology, not fix)
+        elif retn_bytes > 4 * len(params):
+            # R3 stdcall arbitration (COM-stub family 0x773B40..0x773BB0):
+            # thiscall pops ONLY its params (this travels in ECX), so
+            # `retn N` with N > 4*nparams is impossible for thiscall.
+            # The binary truth: __stdcall member (this = first STACK arg,
+            # callee pops 4*(1 + nparams)).  Pad unused int params to the
+            # arity the epilogue declares.
+            want_n = retn_bytes // 4 - 1
+            if want_n >= 0 and retn_bytes % 4 == 0:
+                cc = "__stdcall"
+                pad = want_n - len(params)
+                for k in range(pad):
+                    params.append(("int", "p%d" % (len(params))))
+                if pad > 0:
+                    ret_notes.append(
+                        ("cc_stdcall_arbitration",
+                         "thiscall retn 0x%X > 4*%d params -> __stdcall "
+                         "member, padded %d unused int param(s) (COM-stub "
+                         "family; body never reads [esp+])"
+                         % (retn_bytes, len(params) - pad, pad)))
         else:
             while params and sum(
                     (WIDTH_TY.get(t, 4) or 4) for t, _ in params) > retn_bytes:
                 dropped.append(params.pop())
+    elif cc == "__stdcall":
+        # R3 stdcall-member arity (Game::Stub3 / MissionStubReturnZero2
+        # family): callee pops 4*(1 + nparams) INCLUDING this.  A retn
+        # that small means IDA counted the this as a param -- drop the
+        # phantom params (body never reads the stack).
+        retn_bytes = 0
+        dis = ex.disasm_lines
+        for dl in reversed(dis[-4:]):
+            m2 = re.match(r"^\s*[0-9A-Fa-f]+:\s*retn\s+(?:0x)?([0-9A-Fa-f]+)",
+                          dl)
+            if m2:
+                retn_bytes = int(m2.group(1), 16)
+                break
+            if re.match(r"^\s*[0-9A-Fa-f]+:\s*retn\b", dl):
+                break
+        no_stack_read = not any("[esp" in d for d in dis)
+        if retn_bytes and no_stack_read and retn_bytes % 4 == 0:
+            have = sum((WIDTH_TY.get(t, 4) or 4) for t, _ in params)
+            want = max(0, retn_bytes // 4 - 1)
+            while len(params) > want:
+                dropped.append(params.pop())
+            if len(params) < want:
+                pad = want - len(params)
+                for k in range(pad):
+                    params.append(("int", "p%d" % len(params)))
+                if pad:
+                    ret_notes.append(
+                        ("cc_stdcall_arity",
+                         "stdcall member retn 0x%X -> arity %d padded"
+                         % (retn_bytes, want)))
+    # R3 ret-width narrowing from the binary's return paths: when EVERY
+    # value-producing ret writes only AL (mov al / xor al / setcc al) the
+    # real return type is char-width; AX-only -> short.  Only narrows an
+    # int-family registry ret (bool/char/ptr spellings are left alone).
+    if ret in ("int", "unsigned int", "long", "unsigned long"):
+        rw = _disasm_ret_width(ex.disasm_lines)
+        if rw == 1:
+            ret_notes.append(("ret_width_narrow",
+                              "all ret paths write AL only -> ret int "
+                              "narrowed to unsigned char"))
+            ret = "unsigned char"
+        elif rw == 2:
+            ret_notes.append(("ret_width_narrow",
+                              "all ret paths write AX only -> ret int "
+                              "narrowed to short"))
+            ret = "short"
     return {
         "addr": ex.addr,
         "cls": cls,
@@ -144,6 +268,7 @@ def derive_signature(reg, ex):
         "cc": cc,
         "params": params,                      # [(era_type, name)]
         "arity_dropped": ["%s %s" % (t, n) for t, n in dropped],
+        "sig_notes": ret_notes,
         "param_names": [n for _, n in params],
         "params_spelled": params,
     }
@@ -199,6 +324,7 @@ def run_function(addr, reg, views, idx):
     passes.pass_vt_dispatch(ctx)
     passes.pass_member_shapes(ctx)
     widen_byref_for_dispatch(ctx)
+    passes.pass_callees(ctx)
     passes.pass_scope_shrink(ctx)
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
@@ -225,7 +351,8 @@ def emit_cpp(ctx, unit, hpp_name=None):
     sig = ctx.sig
     args = ", ".join("%s %s" % (t, n) for t, n in sig["params"])
     cls_ident = re.sub(r"[^A-Za-z0-9_]", "_", sig["cls"] or "Unnamed")
-    cc_tok = " __fastcall" if sig.get("cc") == "__fastcall" else ""
+    cc_tok = {"__fastcall": " __fastcall",
+              "__stdcall": " __stdcall"}.get(sig.get("cc"), "")
     head = "%s%s %s::%s(%s)" % (sig["ret"], cc_tok, cls_ident,
                                 sig["method"], args)
     if ctx.stmts is not None:
@@ -319,14 +446,26 @@ def main():
         by_cls = OrderedDict()
         for ctx in ctxs:
             by_cls.setdefault(ctx.sig["cls"], []).append(ctx.sig)
+        for ctx in ctxs:
+            for owner, csigs in getattr(ctx, "used_callees", {}).items():
+                bucket = by_cls.setdefault(owner, [])
+                for cs in csigs:
+                    if not any(s.get("method") == cs.get("method")
+                               for s in bucket):
+                        bucket.append(cs)
         members_by_cls = {}
         unit_globals = {}
+        unit_externs = []
         for ctx in ctxs:
             unit_globals.update(getattr(ctx, "used_globals", {}))
+            for d in getattr(ctx, "used_callee_exts", []):
+                if d not in unit_externs:
+                    unit_externs.append(d)
         for cls, sigs in by_cls.items():
             size = (reg.classes.get(cls) or {}).get("size") or 0
             hpp_text, members = hpp_pilot.gen_class_hpp(
-                cls, views, sigs, size, used_globals=unit_globals)
+                cls, views, sigs, size, used_globals=unit_globals,
+                extra_externs=unit_externs)
             hpp_path = os.path.join(inc_dir, unit + ".hpp")
             with open(hpp_path, "a", encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)

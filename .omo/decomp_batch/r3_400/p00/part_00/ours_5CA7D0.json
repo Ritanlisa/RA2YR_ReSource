@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_entry_18@MultiplayerSiege@@QAEDXZ",
+ "sym_key": "MultiplayerSiege::vt_entry_18",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?createStartingForces@ScenarioClass@@QAEDXZ",
+   "sym_key": "ScenarioClass::createStartingForces"
+  }
+ ]
+}

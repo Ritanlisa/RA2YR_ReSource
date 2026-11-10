@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EF280",
+ "name": "Struct::ZeroInitAndSetup_0_0",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EF280",
+ "bytes_hex": "e98bcce9ff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

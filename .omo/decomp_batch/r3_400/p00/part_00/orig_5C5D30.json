@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C5D30",
+ "name": "PlayerClass::AssignPlayerIndex_0",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C5D30",
+ "bytes_hex": "e98b050100",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

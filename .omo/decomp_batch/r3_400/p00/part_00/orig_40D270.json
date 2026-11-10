@@ -1,0 +1,11 @@
+{
+ "addr": "0x40D270",
+ "name": "SidebarClass::initButtons2",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x40D270",
+ "bytes_hex": "e92b312c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

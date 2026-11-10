@@ -1,0 +1,15 @@
+{
+ "symbol": "?Stub@PowerClass@@QAEXH@Z",
+ "sym_key": "PowerClass::Stub",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?Destru_vt05@RadarClass@@QAEHXZ",
+   "sym_key": "RadarClass::Destru_vt05"
+  }
+ ]
+}

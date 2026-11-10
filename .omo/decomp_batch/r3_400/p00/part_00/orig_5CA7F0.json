@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CA7F0",
+ "name": "ScenarioClass::ClearFlag_0",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CA7F0",
+ "bytes_hex": "e99bbf0000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

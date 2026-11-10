@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearFlag_0@MultiplayerSiege@@QAEDXZ",
+ "sym_key": "MultiplayerSiege::ClearFlag_0",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?ClearFlag@ScenarioClass@@QAEDXZ",
+   "sym_key": "ScenarioClass::ClearFlag"
+  }
+ ]
+}

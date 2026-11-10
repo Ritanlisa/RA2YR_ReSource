@@ -291,13 +291,28 @@ def run_part(addrs, batch_src, out, reg, idx):
         by_cls = OrderedDict()
         for ctx in ctxs:
             by_cls.setdefault(ctx.sig["cls"], []).append(ctx.sig)
+        # R3 non-leaf: callee pseudo-sigs ride the by_cls mechanism -- a
+        # called member gets its declaration inside the owner class block
+        # (stub class when the owner has no functions of its own here)
+        for ctx in ctxs:
+            for owner, csigs in getattr(ctx, "used_callees", {}).items():
+                bucket = by_cls.setdefault(owner, [])
+                for cs in csigs:
+                    if not any(s.get("method") == cs.get("method")
+                               for s in bucket):
+                        bucket.append(cs)
         unit_globals = {}
+        unit_externs = []
         for ctx in ctxs:
             unit_globals.update(getattr(ctx, "used_globals", {}))
+            for d in getattr(ctx, "used_callee_exts", []):
+                if d not in unit_externs:
+                    unit_externs.append(d)
         for cls, sigs in by_cls.items():
             size = (reg.classes.get(cls) or {}).get("size") or 0
             hpp_text, members = hpp_pilot.gen_class_hpp(
-                cls, views, sigs, size, used_globals=unit_globals)
+                cls, views, sigs, size, used_globals=unit_globals,
+                extra_externs=unit_externs)
             with open(os.path.join(inc_dir, unit + ".hpp"), "a",
                       encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)
@@ -344,11 +359,18 @@ def run_part(addrs, batch_src, out, reg, idx):
                                            hpp_name=iso_base) + "\n")
             by_cls2 = OrderedDict()
             by_cls2.setdefault(ctx.sig["cls"], []).append(ctx.sig)
+            for owner, csigs in getattr(ctx, "used_callees", {}).items():
+                bucket = by_cls2.setdefault(owner, [])
+                for cs in csigs:
+                    if not any(s.get("method") == cs.get("method")
+                               for s in bucket):
+                        bucket.append(cs)
             for cls2, sigs2 in by_cls2.items():
                 size2 = (reg.classes.get(cls2) or {}).get("size") or 0
                 hpp2, _m2 = hpp_pilot.gen_class_hpp(
                     cls2, ctx.views, sigs2, size2,
-                    used_globals=getattr(ctx, "used_globals", {}))
+                    used_globals=getattr(ctx, "used_globals", {}),
+                    extra_externs=getattr(ctx, "used_callee_exts", []))
                 with open(os.path.join(inc_dir, iso_base + ".hpp"), "a",
                           encoding="utf-8", newline="\n") as f:
                     f.write(hpp2)

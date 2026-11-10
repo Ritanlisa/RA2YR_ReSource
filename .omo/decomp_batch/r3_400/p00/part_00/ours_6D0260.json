@@ -1,0 +1,15 @@
+{
+ "symbol": "?Stub@TabClass@@QAEHXZ",
+ "sym_key": "TabClass::Stub",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?processDamage@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::processDamage"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x740E50",
+ "name": "TechnoClass::GetAmmoCount_0",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x740E50",
+ "bytes_hex": "e9db7dfcff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
