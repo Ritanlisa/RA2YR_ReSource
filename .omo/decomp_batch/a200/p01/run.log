@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x72f500 sub_72F500 -> _addr_72
+[conv] 0x7cf762 sub_7CF762 -> _addr_7C
+[conv] 0x636fd0 ObjectClass::sub_636FD0 -> ObjectClass
+[conv] 0x410310 AbstractClass::COMStub_Release -> AbstractClass
+[conv] 0x633b30 ObjectClass::sub_633B30 -> ObjectClass
+[conv] 0x4026a0 AudioFile::GetCallback -> AudioFile
+[conv] 0x7b66c0 ObjectClass::unknown_libname_74 -> ObjectClass
+[conv] 0x633a70 ObjectClass::sub_633A70 -> ObjectClass
+[conv] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> JumpjetLocomotionClass
+[conv] 0x5d4400 PriQueue::GetItemPtr -> PriQueue
+[conv] 0x50dff0 ObjectClass::GlobalHelper_0E4540_Helper -> ObjectClass
+[conv] 0x40d590 _VectorClass_PAVMixFileClass::Get -> _VectorClass_PAVMixFileClass
+[conv] 0x46c840 BulletTypeClass::SetScaledSpawnDelay -> BulletTypeClass
+[conv] 0x4e8400 _VectorClass_PAVAITriggerTypeClass::Get -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e8f50 _VectorClass_PAVInfantryTypeClass::Get -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x5369e0 VeterancyNavCommandClass::performAction_63 -> VeterancyNavCommandClass
+[conv] 0x5d8100 _VectorClass_PAVMultiplayerTeam::Get -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x6b1460 _VectorClass_PAVSlaveManagerClass::Get -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x769480 ObjectClass::unknown_libname_37 -> ObjectClass
+[conv] 0x6343b0 ObjectClass::sub_6343B0 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_7C                 rc=0
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] AudioFile                rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] PriQueue                 rc=0
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] BulletTypeClass          rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVInfantryTypeClass rc=0
+[era] VeterancyNavCommandClass rc=0
+[era] _VectorClass_PAVMultiplayerTeam rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x72f500   MATCH            sub_72F500
+[diff] 0x7cf762   MATCH            sub_7CF762
+[diff] 0x636fd0   MATCH            ObjectClass::sub_636FD0
+[diff] 0x633b30   MATCH            ObjectClass::sub_633B30
+[diff] 0x7b66c0   MATCH            ObjectClass::unknown_libname_74
+[diff] 0x633a70   MISMATCH         ObjectClass::sub_633A70
+[diff] 0x50dff0   MISMATCH         ObjectClass::GlobalHelper_0E4540_Helper
+[diff] 0x769480   MATCH            ObjectClass::unknown_libname_37
+[diff] 0x6343b0   MATCH            ObjectClass::sub_6343B0
+[diff] 0x410310   MATCH            AbstractClass::COMStub_Release
+[diff] 0x4026a0   MATCH            AudioFile::GetCallback
+[diff] 0x5d4400   MISMATCH         PriQueue::GetItemPtr
+[diff] 0x40d590   MATCH            _VectorClass_PAVMixFileClass::Get
+[diff] 0x46c840   MATCH            BulletTypeClass::SetScaledSpawnDelay
+[diff] 0x4e8400   MATCH            _VectorClass_PAVAITriggerTypeClass::Get
+[diff] 0x4e8f50   MATCH            _VectorClass_PAVInfantryTypeClass::Get
+[diff] 0x5369e0   MISMATCH         VeterancyNavCommandClass::performAction_63
+[diff] 0x5d8100   MATCH            _VectorClass_PAVMultiplayerTeam::Get
+[diff] 0x6b1460   MATCH            _VectorClass_PAVSlaveManagerClass::Get
+[ledger] 0x72f500 sub_72F500 -> OK (attempt 1)
+[ledger] 0x7cf762 sub_7CF762 -> OK (attempt 1)
+[ledger] 0x636fd0 ObjectClass::sub_636FD0 -> OK (attempt 1)
+[ledger] 0x410310 AbstractClass::COMStub_Release -> OK (attempt 1)
+[ledger] 0x633b30 ObjectClass::sub_633B30 -> OK (attempt 1)
+[ledger] 0x4026a0 AudioFile::GetCallback -> OK (attempt 1)
+[ledger] 0x7b66c0 ObjectClass::unknown_libname_74 -> OK (attempt 1)
+[ledger] 0x633a70 ObjectClass::sub_633A70 -> NG (attempt 1)
+[ledger] 0x75ab30 JumpjetLocomotionClass::SmallStub_75AB30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d4400 PriQueue::GetItemPtr -> NG (attempt 1)
+[ledger] 0x50dff0 ObjectClass::GlobalHelper_0E4540_Helper -> NG (attempt 1)
+[ledger] 0x40d590 _VectorClass_PAVMixFileClass::Get -> OK (attempt 1)
+[ledger] 0x46c840 BulletTypeClass::SetScaledSpawnDelay -> OK (attempt 1)
+[ledger] 0x4e8400 _VectorClass_PAVAITriggerTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8f50 _VectorClass_PAVInfantryTypeClass::Get -> OK (attempt 1)
+[ledger] 0x5369e0 VeterancyNavCommandClass::performAction_63 -> NG (attempt 1)
+[ledger] 0x5d8100 _VectorClass_PAVMultiplayerTeam::Get -> OK (attempt 1)
+[ledger] 0x6b1460 _VectorClass_PAVSlaveManagerClass::Get -> OK (attempt 1)
+[ledger] 0x769480 ObjectClass::unknown_libname_37 -> OK (attempt 1)
+[ledger] 0x6343b0 ObjectClass::sub_6343B0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 15,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "extern_reloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 78.9,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p01\batch_report.json

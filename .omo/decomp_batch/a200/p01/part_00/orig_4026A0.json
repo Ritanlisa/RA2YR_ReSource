@@ -1,0 +1,11 @@
+{
+ "addr": "0x4026A0",
+ "name": "AudioFile::GetCallback",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4026A0",
+ "bytes_hex": "8b81d4000000ff6028",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

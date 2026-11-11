@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCallback@AudioFile@@QAEHXZ",
+ "sym_key": "AudioFile::GetCallback",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "8b81d4000000ff6028",
+ "relocs": []
+}
