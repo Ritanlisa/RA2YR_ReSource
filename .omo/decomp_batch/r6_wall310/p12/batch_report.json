@@ -57,8 +57,8 @@
    "unit": "SuperClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "24/25",
-   "rule_violations": 1
+   "sites": "22/23",
+   "rule_violations": 18
   },
   {
    "addr": "0x6ce0b0",
@@ -87,7 +87,7 @@
    "unit": "SwizzleManagerClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "8/11",
+   "sites": "7/10",
    "rule_violations": 12
   },
   {

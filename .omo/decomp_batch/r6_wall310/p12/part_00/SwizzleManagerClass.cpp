@@ -5,30 +5,30 @@
 
 int SwizzleManagerClass::ConvertNodes()
 {
-        char * result = (char *)this ->u32_14;
-        signed char * v3;
-        signed char * v4;
+        int result = (unsigned int)(this->u32_14);
+        signed int v3;
+        signed int v4;
         unsigned int * v5;
-        char * v6;
-        char * v7;
+        int v6;
+        int v7;
         unsigned int * v8;
         unsigned int * v9;
         int v10;
         if ( result )
         {
-            v3 = (signed char *)((char *)this ->m02C);
+            v3 = this->m02C;
             if ( v3 > 0 )
             {
                 qsort(*(void **)((char *)this + 32), v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320);
             }
-            v4 = (signed char *)((char *)this ->u32_14);
+            v4 = this->u32_14;
             if ( v4 > 0 )
             {
                 qsort(*(void **)((char *)this + 8), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320);
             }
             v5 = (unsigned int *)(*(unsigned int **)((char *)this + 32));
-            v6 = (char *)this ->m02C;
-            v7 = (char *)this ->u32_14;
+            v6 = (unsigned int)(this->m02C);
+            v7 = (unsigned int)(this->u32_14);
             v8 = (unsigned int *)(*(unsigned int **)((char *)this + 8));
             while ( v7 > 0 )
             {
@@ -49,8 +49,8 @@ int SwizzleManagerClass::ConvertNodes()
                     }
                 }
             }
-            (*(void (__stdcall **)(int))((char *)this ->__pad_004 + 12))((char *)this + 4);
-            return (int)((*(int (__stdcall **)(int))((char *)this ->u32_1C + 12))((char *)this + 28));
+            (*(void (__stdcall **)(int))(this->__pad_004 + 12))((char *)this + 4);
+            return (int)((*(int (__stdcall **)(int))(this->u32_1C + 12))((char *)this + 28));
         }
         return (int)(result);
 }

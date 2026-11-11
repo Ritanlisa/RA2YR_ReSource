@@ -5,13 +5,13 @@
 
 char SuperClass::StopPreclickAnim(int p0)
 {
-        char * v3 = (char *)this ->u32_68;
+        int v3 = (unsigned int)(this->u32_68);
         int v4;
         unsigned int v8[4];
         if ( v3 )
         {
             *(unsigned char *)(v3 + 405) = 0;
-            (char *)this ->u32_68 = 0;
+            this->u32_68 = 0;
             v8[0] = (unsigned int)(this);
             v4 = (*(int (__stdcall **)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8);
             if ( v4 != -1 )
@@ -20,7 +20,7 @@ char SuperClass::StopPreclickAnim(int p0)
             }
         }
         int v5;
-        if ( (char *)this ->u32_6C )
+        if ( this->u32_6C )
         {
             v8[0] = (unsigned int)(this);
             v5 = (*(int (__stdcall **)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8);
@@ -28,30 +28,30 @@ char SuperClass::StopPreclickAnim(int p0)
             {
                 ((DynamicVector *)(&stru_B0F5B8))->RemoveItem(v5);
             }
-            (char *)this ->u32_6C = 0;
+            this->u32_6C = 0;
         }
-        if ( !(char *)this ->Granted
-        || (char *)this ->IsCharged
-        || (char *)this ->q070 && !*(unsigned char *)((char *)this ->u32_28 + 237) )
+        if ( !this->Granted
+        || this->IsCharged
+        || this->q070 && !*(unsigned char *)(this->u32_28 + 237) )
         {
             return (char)(0);
         }
-        (char *)this ->u32_78 = -1;
-        if ( (char *)this ->q030 == -1 )
+        this->u32_78 = -1;
+        if ( this->q030 == -1 )
         {
-            (char *)this ->q030 = (unsigned int)(g_CurrentFrame);
+            this->q030 = (unsigned int)(g_CurrentFrame);
         }
-        char * v6 = (char *)this ->u32_24;
+        int v6 = (unsigned int)(this->u32_24);
         if ( v6 == -1 )
         {
-            v6 = (char *)(*(unsigned int *)((char *)this ->u32_28 + 176));
+            v6 = *(unsigned int *)(this->u32_28 + 176);
         }
-        (char *)this ->q030 = (unsigned int)(g_CurrentFrame);
-        (char *)this ->u32_34 = v8[2];
-        (char *)this ->u32_38 = (unsigned int)(v6);
-        if ( *(unsigned char *)((char *)this ->u32_28 + 229) )
+        this->q030 = (unsigned int)(g_CurrentFrame);
+        this->u32_34 = v8[2];
+        this->u32_38 = v6;
+        if ( *(unsigned char *)(this->u32_28 + 229) )
         {
-            (char *)this ->u32_7C = 0;
+            this->u32_7C = 0;
         }
         return (char)(1);
 }
