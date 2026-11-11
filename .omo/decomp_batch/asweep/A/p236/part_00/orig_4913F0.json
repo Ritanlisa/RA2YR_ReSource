@@ -1,0 +1,11 @@
+{
+ "addr": "0x4913F0",
+ "name": "ConvertClass::AddRef",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4913F0",
+ "bytes_hex": "568b742410578bf985f67e288b4424108b54240c538a088b5f04884c2418408b4c241881e1ff000000424e8a0c19884aff75e25b5f5ec22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

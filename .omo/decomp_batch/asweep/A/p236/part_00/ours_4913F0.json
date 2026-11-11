@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_BlitPlainXlat_E@@QAEXHPAEHHHHHH@Z",
+ "sym_key": "_BlitPlainXlat_E::AddRef",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b44240c5785c08bf97e2e8b4c240853568b7424148d51ff8a0e8b5f04884c2418468b4c24184281e1ff0000004885c08a0c19880a75e15e5b5fc22000",
+ "relocs": []
+}

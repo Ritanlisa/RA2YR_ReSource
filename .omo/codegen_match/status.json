@@ -477,6 +477,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x406130": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "AudioSource::Get",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AudioSource::Get",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x406170": {
   "attempts": 1,
   "clean": false,
@@ -13588,6 +13600,18 @@
   "orig_name": "VectorClass_ptr_ConvertClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4913f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "_BlitPlainXlat_E::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ConvertClass::AddRef",
+  "rule_violations": 1,
+  "status": "NG",
   "this_as_id": false
  },
  "0x491670": {
@@ -61239,6 +61263,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6f1c40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeamTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TeamTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6f1f30": {
   "attempts": 1,
   "first_diff": null,
@@ -62870,6 +62906,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x719c60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeleportLocomotionClass::StubReturnZero_17",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::StubReturnZero_17",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x719e20": {
   "attempts": 1,
   "clean": true,
@@ -63028,6 +63076,18 @@
   "name": "sub_71A3D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x71a720": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TemporalClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TemporalClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x71a760": {
   "attempts": 1,
@@ -63283,6 +63343,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x71d310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TerrainClass::MissionStubReturnZero3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TerrainClass::MissionStubReturnZero3",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71d370": {
   "attempts": 1,
   "clean": true,
@@ -63394,6 +63466,18 @@
   "orig_name": "nullsub_247",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x71e260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TerrainTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TerrainTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x71e330": {
@@ -64003,6 +64087,18 @@
   "name": "sub_721620",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "sub_721620",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x721e40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TiberiumClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TiberiumClass::ddtor",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -65047,6 +65143,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x727bb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TriggerTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TriggerTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x727ca0": {
   "attempts": 5,
   "first_diff": null,
@@ -65193,6 +65301,18 @@
   "name": "TubeClass::StubReturn53",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7286d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TubeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TubeClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x728710": {
   "attempts": 1,
@@ -65362,6 +65482,18 @@
   "orig_name": "JumpjetLocomotionClass::IsStateInRange",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x72a110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TunnelLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TunnelLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x72a1a0": {
@@ -67554,6 +67686,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x746de0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "UnitClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "C07F5C70::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x746e20": {
   "attempts": 8,
   "clean": true,
@@ -67733,6 +67877,18 @@
   "orig_name": "UnitTypeClass::GetGameplayValue",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x747f30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "UnitTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UnitTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x748010": {
@@ -67975,6 +68131,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74aad0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "VoxelAnimClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VoxelAnimClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x74ab10": {
   "attempts": 5,
   "first_diff": null,
@@ -68103,6 +68271,18 @@
   "orig_name": "sub_74AD60",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x74b7d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "VoxelAnimTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VoxelAnimTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x74b8d0": {
@@ -69979,6 +70159,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x75c640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WalkLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WalkLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x75c680": {
   "attempts": 1,
   "first_diff": null,
@@ -70162,6 +70354,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x75e080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WarheadTypeClass::vt_03",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WarheadTypeClass::vt_03",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x75e4f0": {
   "attempts": 5,
   "first_diff": null,
@@ -70337,6 +70541,18 @@
   "name": "WaveClass::UpdateWave",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x75f840": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WaveClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WaveClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x75f880": {
   "attempts": 5,
@@ -70575,6 +70791,18 @@
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x763c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WaypointPathClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WaypointPathClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x763e00": {
   "attempts": 6,
@@ -72936,6 +73164,18 @@
   "orig_name": "InfantryClass::startPanic",
   "rule_violations": 1,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x772c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WeaponTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "WeaponTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x772eb0": {

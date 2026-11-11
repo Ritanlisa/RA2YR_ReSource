@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p236\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f1c40 TeamTypeClass::GetClassIdentifier -> TeamTypeClass
+[conv] 0x719c60 TeleportLocomotionClass::StubReturnZero_17 -> TeleportLocomotionClass
+[conv] 0x71a720 TemporalClass::ddtor -> TemporalClass
+[conv] 0x71d310 TerrainClass::MissionStubReturnZero3 -> TerrainClass
+[conv] 0x71e260 TerrainTypeClass::GetClassIdentifier -> TerrainTypeClass
+[conv] 0x721e40 TiberiumClass::ddtor -> TiberiumClass
+[conv] 0x727bb0 TriggerTypeClass::GetClassIdentifier -> TriggerTypeClass
+[conv] 0x7286d0 TubeClass::ddtor -> TubeClass
+[conv] 0x72a110 TunnelLocomotionClass::ddtor -> TunnelLocomotionClass
+[conv] 0x746de0 UnitClass::ddtor -> UnitClass
+[conv] 0x747f30 UnitTypeClass::GetClassIdentifier -> UnitTypeClass
+[conv] 0x74aad0 VoxelAnimClass::ddtor -> VoxelAnimClass
+[conv] 0x74b7d0 VoxelAnimTypeClass::GetClassIdentifier -> VoxelAnimTypeClass
+[conv] 0x75c640 WalkLocomotionClass::ddtor -> WalkLocomotionClass
+[conv] 0x75e080 WarheadTypeClass::vt_03 -> WarheadTypeClass
+[conv] 0x75f840 WaveClass::GetClassIdentifier -> WaveClass
+[conv] 0x763c30 WaypointPathClass::ddtor -> WaypointPathClass
+[conv] 0x772c90 WeaponTypeClass::GetClassIdentifier -> WeaponTypeClass
+[conv] 0x406130 AudioSource::Get -> AudioSource
+[conv] 0x4913f0 _BlitPlainXlat_E::AddRef -> _BlitPlainXlat_E
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamTypeClass            rc=2
+[era] TeleportLocomotionClass  rc=2
+[era] TemporalClass            rc=2
+[era] TerrainClass             rc=2
+[era] TerrainTypeClass         rc=2
+[era] TiberiumClass            rc=2
+[era] TriggerTypeClass         rc=2
+[era] TubeClass                rc=2
+[era] TunnelLocomotionClass    rc=2
+[era] UnitClass                rc=2
+[era] UnitTypeClass            rc=2
+[era] VoxelAnimClass           rc=2
+[era] VoxelAnimTypeClass       rc=2
+[era] WalkLocomotionClass      rc=2
+[era] WarheadTypeClass         rc=2
+[era] WaveClass                rc=2
+[era] WaypointPathClass        rc=2
+[era] WeaponTypeClass          rc=2
+[era] AudioSource              rc=2
+[era] _BlitPlainXlat_E         rc=0
+=== diffasm byte-compare ===
+[diff] 0x4913f0   MISMATCH         _BlitPlainXlat_E::AddRef
+[ledger] 0x6f1c40 TeamTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x719c60 TeleportLocomotionClass::StubReturnZero_17 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71a720 TemporalClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71d310 TerrainClass::MissionStubReturnZero3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71e260 TerrainTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721e40 TiberiumClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x727bb0 TriggerTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7286d0 TubeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72a110 TunnelLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x746de0 UnitClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747f30 UnitTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74aad0 VoxelAnimClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74b7d0 VoxelAnimTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75c640 WalkLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75e080 WarheadTypeClass::vt_03 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75f840 WaveClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x763c30 WaypointPathClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772c90 WeaponTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406130 AudioSource::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4913f0 _BlitPlainXlat_E::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p236\batch_report.json
