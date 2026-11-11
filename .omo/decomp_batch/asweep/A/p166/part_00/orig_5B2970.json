@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2970",
+ "name": "Movement::DivideAndStoreScaled",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2970",
+ "bytes_hex": "0fbf0199f77c240866894424088b4424048b4c24088908c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

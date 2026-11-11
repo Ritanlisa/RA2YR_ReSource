@@ -1,0 +1,27 @@
+{
+ "symbol": "?isHouseAllyChangeAllowed@MPBattleClass@@QAEHXZ",
+ "sym_key": "MPBattleClass::isHouseAllyChangeAllowed",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "b880000000c7050000000000000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAE8@@3IA",
+   "sym_key": "DataGlobal_ABFAE8"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAE0@@3IA",
+   "sym_key": "DataGlobal_ABFAE0"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFAE4@@3IA",
+   "sym_key": "DataGlobal_ABFAE4"
+  }
+ ]
+}
