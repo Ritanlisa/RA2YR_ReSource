@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4784c0",
+  "name": "FilePipe_38::Write",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 35,
+  "part": "p202",
+  "unit": "_VectorClass_VRGBClass",
+  "emitted": "_VectorClass_VRGBClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x4784cc",
+   "ours": "+5 je 0x1e"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x58aa60",
+  "name": "VectorClass_UHashObject_uint_SubzoneConn::GetCapacity",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p203",
+  "unit": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct",
+  "emitted": "_VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x58aa6c",
+   "ours": "+5 je 0x1f"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x45a020",
+  "name": "BuildingClass::updateFactoryProduction",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p174",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::updateFactoryProduction",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e01c0",
+  "name": "AbstractClass::queueMission",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p177",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::queueMission",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x628470",
+  "name": "VectorClass_ptr_ColorScheme::GetItemIndex",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 35,
+  "part": "p202",
+  "unit": "_VectorClass_VHSVClass",
+  "emitted": "_VectorClass_VHSVClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x62847c",
+   "ours": "+5 je 0x1e"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x4ca8c0",
+  "name": "AbstractClass::checkScriptCondition",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p176",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::checkScriptCondition",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5c5040",
+  "name": "MPCooperative::syncPlayers",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p184",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::syncPlayers",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d8140",
+  "name": "ScenarioClass::validateMap",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p185",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::validateMap",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x720940",
+  "name": "ScenarioClass::processEndgame",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 28,
+  "part": "p191",
+  "unit": "ScenarioClass",
+  "emitted": "ScenarioClass::processEndgame",
+  "first_diff": {
+   "orig": "+9 jae 0x720954",
+   "ours": "+9 jb 0x13"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x588de0",
+  "name": "DynamicVector::initCellVectors",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 36,
+  "part": "p203",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::initCellVectors",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x5c0aa0",
+  "name": "TacticalClass::ProbeCalling",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p184",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::ProbeCalling",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6b43e0",
+  "name": "VectorClass_UUndoInfoStruct::GetItemIndex",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p204",
+  "unit": "_DynamicVectorClass_UUndoInfoStruct",
+  "emitted": "_DynamicVectorClass_UUndoInfoStruct::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x6b43ec",
+   "ours": "+5 je 0x1f"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x6e8780",
+  "name": "HouseClass::GetMaxBuildLevel",
+  "family": "JCC_INVERT_PLUS",
+  "path": "codegen_shape",
+  "size": 65,
+  "part": "p247",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::GetMaxBuildLevel",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x9c]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 65
+ },
+ {
+  "addr": "0x76a570",
+  "name": "Map_WorldDominationTour_43::Write",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p205",
+  "unit": "_VectorClass_VCentroid_WorldDominationTour",
+  "emitted": "_VectorClass_VCentroid_WorldDominationTour::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x76a57c",
+   "ours": "+5 je 0x1f"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x6dc820",
+  "name": "VectorClass_UDirtyAreaStruct::GetCapacity",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p204",
+  "unit": "_VectorClass_UDirtyAreaStruct",
+  "emitted": "_VectorClass_UDirtyAreaStruct::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x6dc82c",
+   "ours": "+5 je 0x1f"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x40d8c0",
+  "name": "sub_40D8C0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 27,
+  "part": "p173",
+  "unit": "_addr_40",
+  "emitted": "sub_40D8C0",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x885782",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x5368a0",
+  "name": "CreateTeamCommand::performAction_51",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 15,
+  "part": "p57",
+  "unit": "TypeSelectCommandClass",
+  "emitted": "TypeSelectCommandClass::performAction_51",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x7db066",
+  "name": "___addl",
+  "family": "TWO_FOUR_INSNS",
+  "path": "branch_order",
+  "size": 33,
+  "part": "p200",
+  "unit": "_addr_7D",
+  "emitted": "___addl",
+  "first_diff": {
+   "orig": "+20 jae 0x7db07f",
+   "ours": "+20 jae 0x1b"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x54ecd0",
+  "name": "sub_54ECD0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p119",
+  "unit": "_addr_54",
+  "emitted": "sub_54ECD0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7ecec0]",
+   "ours": "+0 mov byte ptr [0], 0"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x5f6c70",
+  "name": "AbstractClass::COMStub_79",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 8,
+  "part": "p31",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_79",
+  "first_diff": {
+   "orig": "+2 jmp dword ptr [eax + 0x138]",
+   "ours": "+2 push ecx"
+  },
+  "ours_size": 10
+ }
+]
