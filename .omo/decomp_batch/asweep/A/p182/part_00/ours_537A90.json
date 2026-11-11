@@ -1,0 +1,27 @@
+{
+ "symbol": "?Execute@MultiplayerDebugCommandClass@@QAGDXZ",
+ "sym_key": "MultiplayerDebugCommandClass::Execute",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c0740fa00000000084c00f94c0a200000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B8B4@@3EA",
+   "sym_key": "DataGlobal_A8B8B4"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B8B5@@3EA",
+   "sym_key": "DataGlobal_A8B8B5"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8B8B5@@3EA",
+   "sym_key": "DataGlobal_A8B8B5"
+  }
+ ]
+}

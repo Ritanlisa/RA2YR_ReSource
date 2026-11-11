@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetQueueCount@IPXManagerClass@@QAEHXZ",
+ "sym_key": "IPXManagerClass::GetQueueCount",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8a410484c074118a410584c0740a8b41488b48048b4128c333c0c3",
+ "relocs": []
+}

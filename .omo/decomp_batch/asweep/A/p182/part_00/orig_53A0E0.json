@@ -1,0 +1,11 @@
+{
+ "addr": "0x53A0E0",
+ "name": "Weapon_Helper",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53A0E0",
+ "bytes_hex": "a0b4faa90084c0750ca1b8faa90085c07f0333c0c3b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

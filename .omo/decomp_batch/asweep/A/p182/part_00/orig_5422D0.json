@@ -1,0 +1,11 @@
+{
+ "addr": "0x5422D0",
+ "name": "Network::GetQueueCount",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5422D0",
+ "bytes_hex": "8a410484c074118a410584c0740a8b41488b48048b4128c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

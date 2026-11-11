@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetReloadIfNeeded@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::ResetReloadIfNeeded",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8b81c00600008a90bc0e000084d2750ac781d406000000000000c3",
+ "relocs": []
+}

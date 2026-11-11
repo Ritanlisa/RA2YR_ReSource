@@ -1,0 +1,11 @@
+{
+ "addr": "0x537A90",
+ "name": "Commands::Execute",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x537A90",
+ "bytes_hex": "a0b4b8a80084c0740fa0b5b8a80084c00f94c0a2b5b8a800c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

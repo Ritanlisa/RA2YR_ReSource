@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p182\part_00
+=== convert (20 addrs) ===
+[conv] 0x513540 _VectorClass_PBVAircraftTypeClass::PointerToIndex -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x521c40 InfantryClass::ResetReloadIfNeeded -> InfantryClass
+[conv] 0x524f00 _DynamicVectorClass_PBVAnimTypeClass::LoadTypeData -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x525230 _VectorClass_PBVAnimTypeClass::Remove -> _VectorClass_PBVAnimTypeClass
+[conv] 0x52b4d0 INIClass::deleteKey -> INIClass
+[conv] 0x52b600 SortedArray::CheckCache -> SortedArray
+[conv] 0x537a90 MultiplayerDebugCommandClass::Execute -> MultiplayerDebugCommandClass
+[conv] 0x538680 _VectorClass_PAVCCINIClass::Get -> _VectorClass_PAVCCINIClass
+[conv] 0x53a0e0 Weapon_Helper -> Weapon
+[conv] 0x53c4f0 _DynamicVectorClass_PBVAnimClass::PointerToIndex -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x53c680 _VectorClass_PBVAnimClass::Write -> _VectorClass_PBVAnimClass
+[conv] 0x53da70 _DynamicVectorClass_PAVIonBlastClass::GetItemIndex -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x53dc00 _VectorClass_PAVIonBlastClass::GetCapacity -> _VectorClass_PAVIonBlastClass
+[conv] 0x5422d0 IPXManagerClass::GetQueueCount -> IPXManagerClass
+[conv] 0x5422f0 IPXManagerClass::GetSpeed -> IPXManagerClass
+[conv] 0x543e50 sub_543E50 -> _addr_54
+[conv] 0x54a220 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::GetItemIndex -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54a3b0 _VectorClass_PAG::GetCapacity -> _VectorClass_PAG
+[conv] 0x54e8c0 _DynamicVectorClass_PAUKamikazeControl::PointerToIndex -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x54ea50 _VectorClass_PAUKamikazeControl::Write -> _VectorClass_PAUKamikazeControl
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVAircraftTypeClass rc=0
+[era] InfantryClass            rc=0
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] INIClass                 rc=0
+[era] SortedArray              rc=0
+[era] MultiplayerDebugCommandClass rc=0
+[era] _VectorClass_PAVCCINIClass rc=0
+[era] Weapon                   rc=0
+[era] _DynamicVectorClass_PBVAnimClass rc=0
+[era] _VectorClass_PBVAnimClass rc=0
+[era] _DynamicVectorClass_PAVIonBlastClass rc=0
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] IPXManagerClass          rc=0
+[era] _addr_54                 rc=0
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAG         rc=0
+[era] _DynamicVectorClass_PAUKamikazeControl rc=0
+[era] _VectorClass_PAUKamikazeControl rc=0
+=== diffasm byte-compare ===
+[diff] 0x513540   MISMATCH         _VectorClass_PBVAircraftTypeClass::PointerToIndex
+[diff] 0x521c40   MATCH            InfantryClass::ResetReloadIfNeeded
+[diff] 0x524f00   MISMATCH         _DynamicVectorClass_PBVAnimTypeClass::LoadTypeData
+[diff] 0x525230   MISMATCH         _VectorClass_PBVAnimTypeClass::Remove
+[diff] 0x52b4d0   MISMATCH         INIClass::deleteKey
+[diff] 0x52b600   MATCH            SortedArray::CheckCache
+[diff] 0x537a90   MATCH            MultiplayerDebugCommandClass::Execute
+[diff] 0x538680   MISMATCH         _VectorClass_PAVCCINIClass::Get
+[diff] 0x53a0e0   MISMATCH         Weapon_Helper
+[diff] 0x53c4f0   MISMATCH         _DynamicVectorClass_PBVAnimClass::PointerToIndex
+[diff] 0x53c680   MISMATCH         _VectorClass_PBVAnimClass::Write
+[diff] 0x53da70   MISMATCH         _DynamicVectorClass_PAVIonBlastClass::GetItemIndex
+[diff] 0x53dc00   MISMATCH         _VectorClass_PAVIonBlastClass::GetCapacity
+[diff] 0x5422d0   MATCH            IPXManagerClass::GetQueueCount
+[diff] 0x5422f0   MATCH            IPXManagerClass::GetSpeed
+[diff] 0x543e50   MATCH            sub_543E50
+[diff] 0x54a220   MISMATCH         _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::GetItemIndex
+[diff] 0x54a3b0   MISMATCH         _VectorClass_PAG::GetCapacity
+[diff] 0x54e8c0   MISMATCH         _DynamicVectorClass_PAUKamikazeControl::PointerToIndex
+[diff] 0x54ea50   MISMATCH         _VectorClass_PAUKamikazeControl::Write
+[ledger] 0x513540 _VectorClass_PBVAircraftTypeClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x521c40 InfantryClass::ResetReloadIfNeeded -> OK (attempt 1)
+[ledger] 0x524f00 _DynamicVectorClass_PBVAnimTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x525230 _VectorClass_PBVAnimTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x52b4d0 INIClass::deleteKey -> NG (attempt 1)
+[ledger] 0x52b600 SortedArray::CheckCache -> OK (attempt 1)
+[ledger] 0x537a90 MultiplayerDebugCommandClass::Execute -> OK (attempt 1)
+[ledger] 0x538680 _VectorClass_PAVCCINIClass::Get -> NG (attempt 1)
+[ledger] 0x53a0e0 Weapon_Helper -> NG (attempt 1)
+[ledger] 0x53c4f0 _DynamicVectorClass_PBVAnimClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x53c680 _VectorClass_PBVAnimClass::Write -> NG (attempt 1)
+[ledger] 0x53da70 _DynamicVectorClass_PAVIonBlastClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x53dc00 _VectorClass_PAVIonBlastClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x5422d0 IPXManagerClass::GetQueueCount -> OK (attempt 1)
+[ledger] 0x5422f0 IPXManagerClass::GetSpeed -> OK (attempt 1)
+[ledger] 0x543e50 sub_543E50 -> OK (attempt 1)
+[ledger] 0x54a220 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x54a3b0 _VectorClass_PAG::GetCapacity -> NG (attempt 1)
+[ledger] 0x54e8c0 _DynamicVectorClass_PAUKamikazeControl::PointerToIndex -> NG (attempt 1)
+[ledger] 0x54ea50 _VectorClass_PAUKamikazeControl::Write -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "MATCH": 6
+ },
+ "pathologies": {
+  "branch_order": 12,
+  "branch_polarity": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 30.0,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p182\batch_report.json

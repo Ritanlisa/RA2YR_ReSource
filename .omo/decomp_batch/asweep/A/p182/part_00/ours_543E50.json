@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_543E50@@YAPAEXZ",
+ "sym_key": "Unnamed::sub_543E50",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "b800000000b90001000032d28850fe8850ff881083c0034975f2c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABBED2@@3EA",
+   "sym_key": "DataGlobal_ABBED2"
+  }
+ ]
+}
