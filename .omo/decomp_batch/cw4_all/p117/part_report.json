@@ -1,0 +1,374 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 20
+  },
+  "by_family_total": {
+   "RELOC_KEY": 11,
+   "FP_RECIP": 9
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x5ca470",
+   "name": "sub_5CA470",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5CA470",
+   "unit": "_addr_5C",
+   "head": "void __cdecl sub_5CA470()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5cac50",
+   "name": "sub_5CAC50",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5CAC50",
+   "unit": "_addr_5C",
+   "head": "void __cdecl sub_5CAC50()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7ee7d0]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5cac70",
+   "name": "sub_5CAC70",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5CAC70",
+   "unit": "_addr_5C",
+   "head": "void __cdecl sub_5CAC70()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5cb1c0",
+   "name": "MPBattleClass::onPlayerDisconnect",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MPBattleClass",
+   "method": "onPlayerDisconnect",
+   "unit": "MPBattleClass",
+   "head": "void MPBattleClass::onPlayerDisconnect()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7ee800]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5cb1e0",
+   "name": "MPBattleClass::getMaximumPlayers",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MPBattleClass",
+   "method": "getMaximumPlayers",
+   "unit": "MPBattleClass",
+   "head": "void MPBattleClass::getMaximumPlayers()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d3810",
+   "name": "MPBattleClass::validateHouse",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MPBattleClass",
+   "method": "validateHouse",
+   "unit": "MPBattleClass",
+   "head": "void MPBattleClass::validateHouse()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eec78]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d3830",
+   "name": "MPBattleClass::validateOwner",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MPBattleClass",
+   "method": "validateOwner",
+   "unit": "MPBattleClass",
+   "head": "void MPBattleClass::validateOwner()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d58e0",
+   "name": "MPBattleClass::allyTeams",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "MPBattleClass",
+   "method": "allyTeams",
+   "unit": "MPBattleClass",
+   "head": "void MPBattleClass::allyTeams()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eed08]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d8a90",
+   "name": "sub_5D8A90",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5D8A90",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5D8A90()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eeec8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d8ab0",
+   "name": "sub_5D8AB0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5D8AB0",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5D8AB0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d8db0",
+   "name": "sub_5D8DB0",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5D8DB0",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5D8DB0()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eeee8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5d8dd0",
+   "name": "sub_5D8DD0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5D8DD0",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5D8DD0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5da500",
+   "name": "sub_5DA500",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5DA500",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5DA500()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eeef8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5da520",
+   "name": "sub_5DA520",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5DA520",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5DA520()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5dad20",
+   "name": "sub_5DAD20",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5DAD20",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5DAD20()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eef08]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5dad40",
+   "name": "sub_5DAD40",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5DAD40",
+   "unit": "_addr_5D",
+   "head": "void __cdecl sub_5DAD40()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5e2480",
+   "name": "sub_5E2480",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5E2480",
+   "unit": "_addr_5E",
+   "head": "void __cdecl sub_5E2480()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5ef340",
+   "name": "sub_5EF340",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5EF340",
+   "unit": "_addr_5E",
+   "head": "void __cdecl sub_5EF340()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5f1400",
+   "name": "sub_5F1400",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5F1400",
+   "unit": "_addr_5F",
+   "head": "void __cdecl sub_5F1400()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7eefc8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x5f1420",
+   "name": "sub_5F1420",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_5F1420",
+   "unit": "_addr_5F",
+   "head": "void __cdecl sub_5F1420()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  }
+ ]
+}

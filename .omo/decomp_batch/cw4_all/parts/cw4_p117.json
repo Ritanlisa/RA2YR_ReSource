@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5ca470",
+  "name": "sub_5CA470",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "_addr_5C",
+  "emitted": "sub_5CA470",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5cac50",
+  "name": "sub_5CAC50",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "_addr_5C",
+  "emitted": "sub_5CAC50",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ee7d0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5cac70",
+  "name": "sub_5CAC70",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "_addr_5C",
+  "emitted": "sub_5CAC70",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5cb1c0",
+  "name": "MPBattleClass::onPlayerDisconnect",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "MPBattleClass",
+  "emitted": "MPBattleClass::onPlayerDisconnect",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ee800]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5cb1e0",
+  "name": "MPBattleClass::getMaximumPlayers",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "MPBattleClass",
+  "emitted": "MPBattleClass::getMaximumPlayers",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d3810",
+  "name": "MPBattleClass::validateHouse",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "MPBattleClass",
+  "emitted": "MPBattleClass::validateHouse",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eec78]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d3830",
+  "name": "MPBattleClass::validateOwner",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "MPBattleClass",
+  "emitted": "MPBattleClass::validateOwner",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d58e0",
+  "name": "MPBattleClass::allyTeams",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p96",
+  "unit": "MPBattleClass",
+  "emitted": "MPBattleClass::allyTeams",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eed08]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d8a90",
+  "name": "sub_5D8A90",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5D8A90",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eeec8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d8ab0",
+  "name": "sub_5D8AB0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5D8AB0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d8db0",
+  "name": "sub_5D8DB0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5D8DB0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eeee8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5d8dd0",
+  "name": "sub_5D8DD0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5D8DD0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5da500",
+  "name": "sub_5DA500",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5DA500",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eeef8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5da520",
+  "name": "sub_5DA520",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5DA520",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5dad20",
+  "name": "sub_5DAD20",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5DAD20",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eef08]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5dad40",
+  "name": "sub_5DAD40",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5D",
+  "emitted": "sub_5DAD40",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5e2480",
+  "name": "sub_5E2480",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5E",
+  "emitted": "sub_5E2480",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5ef340",
+  "name": "sub_5EF340",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5E",
+  "emitted": "sub_5EF340",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5f1400",
+  "name": "sub_5F1400",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5F",
+  "emitted": "sub_5F1400",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7eefc8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5f1420",
+  "name": "sub_5F1420",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p97",
+  "unit": "_addr_5F",
+  "emitted": "sub_5F1420",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ }
+]
