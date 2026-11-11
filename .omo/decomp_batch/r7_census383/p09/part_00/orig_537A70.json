@@ -1,0 +1,11 @@
+{
+ "addr": "0x537A70",
+ "name": "Commands::Release",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x537A70",
+ "bytes_hex": "b8c0788200c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x537A80",
+ "name": "Commands::StubReturn8550640",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x537A80",
+ "bytes_hex": "b8f0788200c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

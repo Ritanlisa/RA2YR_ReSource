@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_74@StopCommandClass@@QAGPAGXZ",
+ "sym_key": "StopCommandClass::performAction_74",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?UI_Create_730EA0@@YAHZZ",
+   "sym_key": "UI_Create_730EA0"
+  }
+ ]
+}

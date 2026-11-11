@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@MultiplayerDebugCommandClass@@QAEPAPADXZ",
+ "sym_key": "MultiplayerDebugCommandClass::Release",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?off_8278C0@@3IA",
+   "sym_key": "off_8278C0"
+  }
+ ]
+}

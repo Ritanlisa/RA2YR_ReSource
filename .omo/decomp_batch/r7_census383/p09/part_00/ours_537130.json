@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_128@CenterREventCommandClass@@QAGGXZ",
+ "sym_key": "CenterREventCommandClass::performAction_128",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "51e8000000008b4c240033c125ff00000033c159c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "REL32",
+   "sym": "?UI_Create_734120@@YAHZZ",
+   "sym_key": "UI_Create_734120"
+  }
+ ]
+}
