@@ -1,0 +1,39 @@
+{
+ "symbol": "?RSAOperation@BigInt@@QAEHPADH0@Z",
+ "sym_key": "BigInt::RSAOperation",
+ "size": 358,
+ "link_base": 0,
+ "bytes_hex": "81ec04030000538bd96a4033d28d4c240cc744240800000000e8000000008b83000200008b8c2410030000489983e20703c2c1f803403bc87d0c33c05b81c404030000c20c00558bac241003000056576a4033d28d8c2418020000e8000000008b8300020000b940000000488db42414020000998d7c241483e207f3a503c28bf58bc88d7c2414c1f903416a408bc133d2c1e902f3a58bc883e103f3a48d8c2418010000e8000000006a408d830001000053508d5424208d8c2420010000e800000000a3000000008b830002000048b940000000998db424140100008d7c241483e207f3a503c28bbc24200300008bc88d742414c1f9038bd1c1e902f3a58bca83e103f3a48b83000200008bb424200300004883c9ff9983e20703c28b542410c1f80303f02bc889b424200300008d34108b94241c0300008d6c280103ca403bc8898c241c0300000f9cc084c0897424100f84f9feffff8bc65f5e5d5b81c404030000c20c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?InitArrayWithValue@@YIHPAXHH@Z",
+   "sym_key": "InitArrayWithValue"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?ModBigIntExp@@YIHPAX000H@Z",
+   "sym_key": "ModBigIntExp"
+  },
+  {
+   "off": 196,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8F8F8@@3IA",
+   "sym_key": "DataGlobal_A8F8F8"
+  }
+ ]
+}

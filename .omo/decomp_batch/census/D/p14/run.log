@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x722d00 BuildingClass::ClearOccupancyData -> BuildingClass
+[conv] 0x545000 TheatreClass::InitView -> TheatreClass
+[conv] 0x524d70 InfantryTypeClass::ddtor -> InfantryTypeClass
+[conv] 0x7b64e0 unknown::ConcatStringAlloc -> unknown
+[conv] 0x632870 BigInt::RSAOperation -> BigInt
+[conv] 0x6386e0 unknown::ClearFactoryClassProduction -> unknown
+[conv] 0x6319c0 ObjectClass::Network_Set -> ObjectClass
+[conv] 0x7438f0 UnitClass::CanCrushTarget -> UnitClass
+[conv] 0x410800 AbstractTypeClass::Constructor -> AbstractTypeClass
+[conv] 0x792cf0 unknown::sub_792CF0 -> unknown
+[conv] 0x455820 BuildingClass::ScanCircleForUnits2 -> BuildingClass
+[conv] 0x47a6f0 unknown::LockVolume -> unknown
+[conv] 0x696ae0 ObjectClass::DlgProcLoadGame_Load_696AE0 -> ObjectClass
+[conv] 0x7760b0 unknown::Render_Render_7760B0 -> unknown
+[conv] 0x71e6a0 TActionClass::TActionClass -> TActionClass
+[conv] 0x639a50 ScriptAction::ExecutePlacement -> ScriptAction
+[conv] 0x5c1640 MPCooperative::MPCooperative_Cleanup -> MPCooperative
+[conv] 0x5ce640 MSPCXAnim::Construct -> MSPCXAnim
+[conv] 0x5c1300 ObjectClass::ReadMPMapsINI -> ObjectClass
+[conv] 0x501750 ObjectClass::sub_501750 -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] TheatreClass             rc=2
+[era] InfantryTypeClass        rc=2
+[era] unknown                  rc=2
+[era] BigInt                   rc=0
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+[era] AbstractTypeClass        rc=2
+[era] TActionClass             rc=2
+[era] ScriptAction             rc=2
+[era] MPCooperative            rc=2
+[era] MSPCXAnim                rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b64e0   MISMATCH         unknown::ConcatStringAlloc
+[diff] 0x632870   MISMATCH         BigInt::RSAOperation
+[ledger] 0x722d00 BuildingClass::ClearOccupancyData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x545000 TheatreClass::InitView -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524d70 InfantryTypeClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b64e0 ConcatStringAlloc -> NG (attempt 1)
+[ledger] 0x632870 BigInt::RSAOperation -> NG (attempt 1)
+[ledger] 0x6386e0 ClearFactoryClassProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6319c0 Network_Set -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7438f0 UnitClass::CanCrushTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410800 AbstractTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x792cf0 sub_792CF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x455820 FootClass::ScanCircleForUnits2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47a6f0 CDROM::LockVolume -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696ae0 DlgProcLoadGame_Load_696AE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7760b0 Render_Render_7760B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71e6a0 TActionClass::TActionClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639a50 ScriptAction::ExecutePlacement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1640 MPCooperative_Cleanup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce640 MSPCXAnim::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c1300 ReadMPMapsINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x501750 sub_501750 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2654,
+ "verdicts": {
+  "MISMATCH": 710,
+  "MATCH": 521,
+  "COMPILE_FAIL": 881,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 525,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 246,
+  "ret_norm": 7,
+  "frame_sched": 73,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 116,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.3,
+ "match_rate_of_total_pct": 19.6,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p14\batch_report.json

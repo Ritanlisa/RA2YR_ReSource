@@ -790,6 +790,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x410800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractTypeClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x410be0": {
   "attempts": 1,
   "first_diff": "+2 mov edi, dword ptr [esp + 0xc]",
@@ -2008,6 +2015,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x455820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::ScanCircleForUnits2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x455c20": {
   "attempts": 9,
   "first_diff": null,
@@ -2726,6 +2740,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_479A40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x47a6f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CDROM::LockVolume",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6208,6 +6229,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x501750": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_501750",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5022f0": {
   "attempts": 8,
   "first_diff": "+10 xor esi, esi",
@@ -6851,6 +6879,13 @@
   "name": "InfantryTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x524d70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryTypeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5251f0": {
   "attempts": 1,
@@ -7663,6 +7698,13 @@
   "name": "0x544df0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x545000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TheatreClass::InitView",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x547150": {
   "attempts": 1,
@@ -9358,6 +9400,20 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5c1300": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ReadMPMapsINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5c1640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MPCooperative_Cleanup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5c1fa0": {
   "attempts": 12,
   "first_diff": "+42 jne 0x5c1fd6",
@@ -9628,6 +9684,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_5CE330",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5ce640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSPCXAnim::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10975,6 +11038,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6319c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network_Set",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x631c10": {
   "attempts": 1,
   "first_diff": null,
@@ -11014,6 +11084,13 @@
   "attempts": 1,
   "first_diff": "+9 xor ecx, ecx",
   "name": "BigInt::DecryptBlock",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x632870": {
+  "attempts": 1,
+  "first_diff": "+7 push esi",
+  "name": "BigInt::RSAOperation",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
@@ -11227,6 +11304,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6386e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ClearFactoryClassProduction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x638c40": {
   "attempts": 1,
   "first_diff": "+3 je 0x638c4a",
@@ -11245,6 +11329,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SelectScriptNode",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x639a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptAction::ExecutePlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -12477,6 +12568,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "NetworkDialog::Dispatch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x696ae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DlgProcLoadGame_Load_696AE0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14867,6 +14965,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x71e6a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass::TActionClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x71f680": {
   "attempts": 1,
   "first_diff": "+10 mov al, byte ptr [ecx + 0x71f700]",
@@ -15032,6 +15137,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::AddOccupancy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x722d00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ClearOccupancyData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15615,6 +15727,13 @@
   "name": "TechnoClass::GetAmmoCount_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7438f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::CanCrushTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7447a0": {
   "attempts": 5,
@@ -16946,6 +17065,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7760b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Render_Render_7760B0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x776ea0": {
   "attempts": 1,
   "first_diff": null,
@@ -17146,6 +17272,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_786DC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x792cf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_792CF0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -17560,6 +17693,13 @@
   "first_diff": "+1 push ebx",
   "name": "ProcessStringAndCopy",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x7b64e0": {
+  "attempts": 1,
+  "first_diff": "+4 mov esi, edx",
+  "name": "ConcatStringAlloc",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
  },
  "0x7b6760": {

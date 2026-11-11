@@ -1,0 +1,45 @@
+{
+ "symbol": "?ConcatStringAlloc@unknown@@QAIPAPADPAPADPAPBD0@Z",
+ "sym_key": "unknown::ConcatStringAlloc",
+ "size": 328,
+ "link_base": 0,
+ "bytes_hex": "515355568b742414578bea8b3e33db85ff896c2410743383c9ff33c0f2aef7d151e8000000008b3e8bd883c9ff33c083c404f2aef7d12bf98bc18bf78bfbc1e902f3a58bc883e103f3a48b4c241c8b3185f67505be0000000085f6897424180f84900000008bfe83c9ff33c08bebf2aef7d1498bd14285db740c8bfb83c9fff2aef7d14903d152e80000000083c4048bd885ed74258bfd83c9ff33c0f2aef7d12bf98bd18bf78bfbc1e902f3a58bca83e103f3a48b742418eb03c603008bfe83c9ff33c0f2aef7d12bf98bf78bd18bfb83c9fff2ae8bca4fc1e902f3a58bca83e10385edf3a4740955e80000000083c4048b6c241085dbc7450000000000743e8bfb83c9ff33c0f2aef7d151e8000000008bd08bfb83c9ff33c089550053f2aef7d12bf98bc18bf78bfac1e902f3a58bc883e103f3a4e80000000083c4085f8bc55e5d5b59c20800",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 234,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 269,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
