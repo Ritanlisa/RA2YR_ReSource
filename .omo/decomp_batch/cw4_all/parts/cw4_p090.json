@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x76b870",
+  "name": "VectorClass_rc_ptr_WDTTerritory::AddRef",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 70,
+  "part": "p250",
+  "unit": "_VectorClass_V_rc_ptr_VWDTTerritory",
+  "emitted": "_VectorClass_V_rc_ptr_VWDTTerritory::AddRef",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x491590",
+  "name": "AbstractClass::readFactoryINI",
+  "family": "REG_ALLOC",
+  "path": "regalloc",
+  "size": 71,
+  "part": "p250",
+  "unit": "__BlitTransZRemapXlat_E",
+  "emitted": "?$BlitTransZRemapXlat@E::readFactoryINI",
+  "first_diff": {
+   "orig": "+3 push edi",
+   "ours": "+3 push esi"
+  },
+  "ours_size": 71
+ },
+ {
+  "addr": "0x7694c0",
+  "name": "Map_Load_7694C0",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 71,
+  "part": "p250",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Map_Load_7694C0",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 58
+ },
+ {
+  "addr": "0x402800",
+  "name": "AudioStream::CheckFormatChanged",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 72,
+  "part": "p250",
+  "unit": "AudioStream",
+  "emitted": "AudioStream::CheckFormatChanged",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x49b610",
+  "name": "MissionClass::Init",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 72,
+  "part": "p250",
+  "unit": "MissionClass",
+  "emitted": "MissionClass::Init",
+  "first_diff": {
+   "orig": "+2 mov edx, 0xfffffffe",
+   "ours": "+2 or edx, 0xffffffff"
+  },
+  "ours_size": 77
+ },
+ {
+  "addr": "0x6b0a90",
+  "name": "sub_6B0A90",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 72,
+  "part": "p250",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_6B0A90",
+  "first_diff": {
+   "orig": "+7 sub esp, 0xc",
+   "ours": "+7 mov eax, dword ptr [eax + edx*4]"
+  },
+  "ours_size": 70
+ },
+ {
+  "addr": "0x72ad90",
+  "name": "SidebarClass::calcSidebarRect",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 72,
+  "part": "p250",
+  "unit": "SidebarClass",
+  "emitted": "SidebarClass::calcSidebarRect",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [0xa8eb84]",
+   "ours": "+0 mov edx, dword ptr [0]"
+  },
+  "ours_size": 67
+ },
+ {
+  "addr": "0x55af60",
+  "name": "PingPongBuffer::GetWriteOffset",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 73,
+  "part": "p251",
+  "unit": "PingPongBuffer",
+  "emitted": "PingPongBuffer::GetWriteOffset",
+  "first_diff": {
+   "orig": "+32 mov byte ptr [0xabcd50], 0",
+   "ours": "+32 mov byte ptr [0], 0"
+  },
+  "ours_size": 73
+ },
+ {
+  "addr": "0x7ccfb3",
+  "name": "__store_number",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 73,
+  "part": "p251",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::__store_number",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 105
+ },
+ {
+  "addr": "0x7d78b5",
+  "name": "__ZeroTail",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 73,
+  "part": "p251",
+  "unit": "_addr_7D",
+  "emitted": "__ZeroTail",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 8]",
+   "ours": "+0 mov ecx, dword ptr [esp + 8]"
+  },
+  "ours_size": 100
+ },
+ {
+  "addr": "0x4072e0",
+  "name": "sub_4072E0",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 74,
+  "part": "p251",
+  "unit": "_addr_40",
+  "emitted": "sub_4072E0",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 65
+ },
+ {
+  "addr": "0x4734b0",
+  "name": "FootClass::updateMovementAnimation",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 74,
+  "part": "p251",
+  "unit": "FootClass",
+  "emitted": "FootClass::updateMovementAnimation",
+  "first_diff": {
+   "orig": "+7 je 0x4734f6",
+   "ours": "+7 je 0x44"
+  },
+  "ours_size": 72
+ },
+ {
+  "addr": "0x53f4f0",
+  "name": "Network_Init_53F4F0",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 74,
+  "part": "p251",
+  "unit": "Network_Init",
+  "emitted": "Network_Init_53F4F0",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 88
+ },
+ {
+  "addr": "0x6ce1a0",
+  "name": "SuperClass::ShouldFlashTab",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 74,
+  "part": "p251",
+  "unit": "SuperClass",
+  "emitted": "SuperClass::ShouldFlashTab",
+  "first_diff": {
+   "orig": "+5 jne 0x6ce1e7",
+   "ours": "+5 je 0xa"
+  },
+  "ours_size": 84
+ },
+ {
+  "addr": "0x40e340",
+  "name": "LinkedList_flat::Prepend",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 75,
+  "part": "p251",
+  "unit": "LinkedList",
+  "emitted": "LinkedList::Prepend",
+  "first_diff": {
+   "orig": "+49 mov edx, dword ptr [ecx + 4]",
+   "ours": "+49 mov edx, dword ptr [ecx + 8]"
+  },
+  "ours_size": 75
+ },
+ {
+  "addr": "0x63dad0",
+  "name": "Gap2Recv_DAD0::PackRGBFromBytes",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 75,
+  "part": "p251",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::PackRGBFromBytes",
+  "first_diff": {
+   "orig": "+0 mov edx, ecx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x76f670",
+  "name": "WDTClass::CountCellType",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 75,
+  "part": "p251",
+  "unit": "WDTClass",
+  "emitted": "WDTClass::CountCellType",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0xc]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 73
+ },
+ {
+  "addr": "0x431170",
+  "name": "BufferIO::FindActiveChannel",
+  "family": "IMM",
+  "path": "const_fold",
+  "size": 76,
+  "part": "p252",
+  "unit": "BufferIO",
+  "emitted": "BufferIO::FindActiveChannel",
+  "first_diff": {
+   "orig": "+59 add esi, 0xc",
+   "ours": "+59 add esi, 0x64"
+  },
+  "ours_size": 76
+ },
+ {
+  "addr": "0x5899e0",
+  "name": "VectorClass_USubzoneTrackingStruct::GetSize",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 76,
+  "part": "p252",
+  "unit": "_VectorClass_USubzoneTrackingStruct",
+  "emitted": "_VectorClass_USubzoneTrackingStruct::GetSize",
+  "first_diff": {
+   "orig": "+27 jle 0x589a22",
+   "ours": "+27 jle 0x44"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x5c7db0",
+  "name": "Math_Compute",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 76,
+  "part": "p252",
+  "unit": "Math",
+  "emitted": "Math_Compute",
+  "first_diff": {
+   "orig": "+5 push esi",
+   "ours": "+5 push edi"
+  },
+  "ours_size": 72
+ }
+]
