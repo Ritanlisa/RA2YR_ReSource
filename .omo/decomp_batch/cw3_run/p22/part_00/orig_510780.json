@@ -1,0 +1,11 @@
+{
+ "addr": "0x510780",
+ "name": "ScoutVector::Construct",
+ "size": 147,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x510780",
+ "bytes_hex": "53568b74240c578bf933db3bf3895f04897708c6470c01885f0dc707a4a97e0074698b5424143bd374208d4eff8bc23bcb7c0c41891888580483c0084975f58957048bc75f5e5bc208008d04f50000000050e840862b0083c4043bc374248d56ff8bc83bd37c1d42891988590483c1084a75f5894704c6470d018bc75f5e5bc2080033c0894704c6470d018bc75f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

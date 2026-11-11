@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x662240",
+  "name": "sub_662240",
+  "cls": null,
+  "size": 127,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ },
+ {
+  "addr": "0x75ae30",
+  "name": "JumpjetLocomotionClass::DispatchVirtualCall_9",
+  "cls": null,
+  "size": 131,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x4c68e0",
+  "name": "sub_4C68E0",
+  "cls": null,
+  "size": 136,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'a11' : undeclared identifier"
+ },
+ {
+  "addr": "0x5137d0",
+  "name": "HouseTypeClass::readParaDropTypes",
+  "cls": null,
+  "size": 136,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'VectorClass' : illegal use of this type as an expression"
+ },
+ {
+  "addr": "0x71ff20",
+  "name": "sub_71FF20",
+  "cls": null,
+  "size": 136,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'a10' : undeclared identifier"
+ },
+ {
+  "addr": "0x47bb60",
+  "name": "CellClass::DTOR",
+  "cls": null,
+  "size": 137,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x6551c0",
+  "name": "BuildingClass::AddUpgrade",
+  "cls": null,
+  "size": 139,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x7c8e25",
+  "name": "_bsearch",
+  "cls": null,
+  "size": 140,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x635e90",
+  "name": "sub_635E90",
+  "cls": null,
+  "size": 144,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'class Coord3D *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x4a7a30",
+  "name": "DiskLaserClass::DiskLaserClass",
+  "cls": null,
+  "size": 145,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'DiskLaserClass' (constructor with return type, or illegal redefinition of curr"
+ },
+ {
+  "addr": "0x510780",
+  "name": "ScoutVector::Construct",
+  "cls": null,
+  "size": 147,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x42e990",
+  "name": "sub_42E990",
+  "cls": null,
+  "size": 148,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x77ca60",
+  "name": "sub_77CA60",
+  "cls": null,
+  "size": 148,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'String' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x40e060",
+  "name": "sub_40E060",
+  "cls": null,
+  "size": 149,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x47d210",
+  "name": "CellClass::SetWallOwner",
+  "cls": null,
+  "size": 150,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'int' to 'class CellClass *const '"
+ },
+ {
+  "addr": "0x658de0",
+  "name": "RadarHashVector::Construct",
+  "cls": null,
+  "size": 150,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x52b170",
+  "name": "SortedArray::Find",
+  "cls": null,
+  "size": 151,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void' to 'int'"
+ },
+ {
+  "addr": "0x52b390",
+  "name": "HashTable::BinarySearch",
+  "cls": null,
+  "size": 151,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void' to 'int'"
+ },
+ {
+  "addr": "0x538980",
+  "name": "SortedArray::FindPair",
+  "cls": null,
+  "size": 151,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void' to 'int'"
+ },
+ {
+  "addr": "0x4ac660",
+  "name": "BuildingClass::TogglePower",
+  "cls": null,
+  "size": 152,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.bombVisible' must have class/struct/union type"
+ }
+]

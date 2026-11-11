@@ -2865,11 +2865,15 @@
   "this_as_id": false
  },
  "0x40e060": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_40E060",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_40E060",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x40e1b0": {
   "attempts": 3,
@@ -7768,11 +7772,16 @@
   "status": "NG"
  },
  "0x42e990": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_42E990",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 push ebp",
+  "name": "ObjectClass::sub_42E990",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_42E990",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x42ead0": {
   "attempts": 1,
@@ -12961,11 +12970,16 @@
   "this_as_id": false
  },
  "0x47bb60": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "CellClass::DTOR",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CellClass::DTOR",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x47c3d0": {
   "attempts": 1,
@@ -12975,11 +12989,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x47d210": {
-  "attempts": 15,
+  "attempts": 16,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CellClass::SetWallOwner",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x47e470": {
   "attempts": 1,
@@ -17999,11 +18018,16 @@
   "status": "NG"
  },
  "0x4a7a30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DiskLaserClass::DiskLaserClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DiskLaserClass::DiskLaserClass",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4a7b80": {
   "attempts": 1,
@@ -18343,11 +18367,16 @@
   "this_as_id": false
  },
  "0x4ac660": {
-  "attempts": 4,
+  "attempts": 5,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::TogglePower",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildingClass::TogglePower",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ac820": {
   "attempts": 4,
@@ -20991,11 +21020,16 @@
   "this_as_id": false
  },
  "0x4c68e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_4C68E0",
+  "name": "ObjectClass::sub_4C68E0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_4C68E0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4c81d0": {
   "attempts": 2,
@@ -29642,11 +29676,16 @@
   "this_as_id": false
  },
  "0x510780": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov esi, dword ptr [esp + 0xc]",
   "name": "ScoutVector::Construct",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ScoutVector::Construct",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x510820": {
   "attempts": 1,
@@ -30351,11 +30390,16 @@
   "this_as_id": false
  },
  "0x5137d0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ebx",
   "name": "HouseTypeClass::readParaDropTypes",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "HouseTypeClass::readParaDropTypes",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5139e0": {
   "attempts": 4,
@@ -31460,11 +31504,16 @@
   "this_as_id": false
  },
  "0x52b170": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SortedArray::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SortedArray::Find",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x52b2b0": {
   "attempts": 9,
@@ -31474,11 +31523,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x52b390": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HashTable::BinarySearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HashTable::BinarySearch",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x52b4d0": {
   "attempts": 1,
@@ -32831,11 +32885,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x538980": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "SortedArray::FindPair",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SortedArray::FindPair",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x538b30": {
   "attempts": 2,
@@ -52030,11 +52089,16 @@
   "this_as_id": false
  },
  "0x635e90": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_635E90",
+  "name": "ObjectClass::sub_635E90",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_635E90",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x635f20": {
   "attempts": 1,
@@ -54366,11 +54430,16 @@
   "this_as_id": false
  },
  "0x6551c0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebx",
   "name": "BuildingClass::AddUpgrade",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "BuildingClass::AddUpgrade",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x655560": {
   "attempts": 1,
@@ -54568,11 +54637,16 @@
   "this_as_id": false
  },
  "0x658de0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "RadarHashVector::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RadarHashVector::Construct",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x658e80": {
   "attempts": 3,
@@ -56481,11 +56555,16 @@
   "this_as_id": false
  },
  "0x662240": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_662240",
+  "name": "ObjectClass::sub_662240",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_662240",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6632e0": {
   "attempts": 11,
@@ -70837,11 +70916,16 @@
   "this_as_id": false
  },
  "0x71ff20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_71FF20",
+  "name": "TextButtonClass::sub_71FF20",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_71FF20",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x71ffe0": {
   "attempts": 2,
@@ -77670,11 +77754,16 @@
   "this_as_id": false
  },
  "0x75ae30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "JumpjetLocomotionClass::DispatchVirtualCall_9",
+  "name": "WalkLocomotionClass::DispatchVirtualCall_9",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "JumpjetLocomotionClass::DispatchVirtualCall_9",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x75c640": {
   "attempts": 1,
@@ -82125,7 +82214,7 @@
   "this_as_id": false
  },
  "0x77ca60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CA60",
@@ -85321,11 +85410,15 @@
   "this_as_id": false
  },
  "0x7c8e25": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "_bsearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "_bsearch",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7c8ec0": {
   "attempts": 1,

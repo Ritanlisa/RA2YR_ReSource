@@ -1,0 +1,21 @@
+{
+ "symbol": "?readParaDropTypes@HouseTypeClass@@QAEPAIPAH@Z",
+ "sym_key": "HouseTypeClass::readParaDropTypes",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b7c240c8b460cc7460400000000250100ffffc74608000000000c013bf789460cc706000000007460e8000000008b470885c089460874418d0c850000000051e80000000083c40489460485c0743a8b560c8b4e0833c022f083ca0185c989560c7e268b4f048b56048b0c81890c828b4e08403bc17ceceb108b460cc746040000000080e40089460c8b57108956108b4714894614c706000000008bc65f5ec20400",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?ClearAndFree4@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::ClearAndFree4"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
