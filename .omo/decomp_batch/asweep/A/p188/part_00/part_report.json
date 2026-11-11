@@ -1,0 +1,451 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "branch_order": 19
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6b15d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 28B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b15dc",
+    "ours": "+5 je 0x17"
+   },
+   "pathology": "branch_order",
+   "name": "AbstractClass::selectAIAction",
+   "emitted": "VectorClass::selectAIAction",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 28,
+   "clean": false
+  },
+  {
+   "addr": "0x6b1830",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b183c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SlaveManagerClass::GetCapacity",
+   "emitted": "_VectorClass_PAVSlaveManagerClass::GetCapacity",
+   "unit": "_VectorClass_PAVSlaveManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6b8190",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b819c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "SpawnManagerClass_25::LoadState",
+   "emitted": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState",
+   "unit": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6b81f0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6b81fc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SpawnManagerClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVSpawnManagerClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVSpawnManagerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6bed80",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6bed8c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_K::GetItemIndex",
+   "emitted": "_DynamicVectorClass_K::GetItemIndex",
+   "unit": "_DynamicVectorClass_K",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6c6330",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6c633c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_K::GetCapacity",
+   "emitted": "_VectorClass_K::GetCapacity",
+   "unit": "_VectorClass_K",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6ca7f0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6ca7fc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SubTitle::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVSubTitle::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVSubTitle",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6cab30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6cab3c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_SubTitle::GetCapacity",
+   "emitted": "_VectorClass_PAVSubTitle::GetCapacity",
+   "unit": "_VectorClass_PAVSubTitle",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6cde90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 29B",
+   "first_diff": {
+    "orig": "+11 je 0x6cdea0",
+    "ours": "+11 jne 0x17"
+   },
+   "pathology": "branch_order",
+   "name": "SuperClass::ShouldDrawProgress",
+   "emitted": "SuperClass::ShouldDrawProgress",
+   "unit": "SuperClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 29,
+   "clean": false
+  },
+  {
+   "addr": "0x6cf410",
+   "batch": "censusA",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p188\\part_00\\SwizzleManagerClass.cpp(12) : error C2100: illegal indirection",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SwizzleManagerClass::Clear",
+   "emitted": "SwizzleManagerClass::Clear",
+   "unit": "SwizzleManagerClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x6cf520",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6cf52c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "SwizzleManagerClass_19::PointerToIndex",
+   "emitted": "_DynamicVectorClass_VSwizzlePointerClass::PointerToIndex",
+   "unit": "_DynamicVectorClass_VSwizzlePointerClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6dc5b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6dc5bc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_UDirtyAreaStruct::GetItemIndex_0",
+   "emitted": "_DynamicVectorClass_PAVShadowControlClass::GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVShadowControlClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6dcb30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6dcb3c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_UDirtyAreaStruct___16::GetCapacity",
+   "emitted": "_VectorClass_PAVShadowControlClass::GetCapacity",
+   "unit": "_VectorClass_PAVShadowControlClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6e4820",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6e482c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "Tactical_42::PointerToIndex",
+   "emitted": "Tactical::PointerToIndex",
+   "unit": "Tactical",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/3",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6e49b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6e49bc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "Tactical_42::InitMap",
+   "emitted": "_VectorClass_PAVTActionClass::InitMap",
+   "unit": "_VectorClass_PAVTActionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6e6510",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6e651c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TagTypeClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVTagTypeClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVTagTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6e66a0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6e66ac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TagTypeClass::LoadTypeData",
+   "emitted": "_VectorClass_PAVTagTypeClass::LoadTypeData",
+   "unit": "_VectorClass_PAVTagTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6f21f0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6f21fc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TeamTypeClass_28::PointerToIndex",
+   "emitted": "_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::PointerToIndex",
+   "unit": "_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x6f2490",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x6f249c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "TeamTypeClass_28::Write",
+   "emitted": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Write",
+   "unit": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x71b270",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x71b27c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_TemporalClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVTemporalClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p188\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b15d0 VectorClass::selectAIAction -> VectorClass
+[conv] 0x6b1830 _VectorClass_PAVSlaveManagerClass::GetCapacity -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b8190 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState -> _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b81f0 _DynamicVectorClass_PAVSpawnManagerClass::GetItemIndex -> _DynamicVectorClass_PAVSpawnManagerClass
+[conv] 0x6bed80 _DynamicVectorClass_K::GetItemIndex -> _DynamicVectorClass_K
+[conv] 0x6c6330 _VectorClass_K::GetCapacity -> _VectorClass_K
+[conv] 0x6ca7f0 _DynamicVectorClass_PAVSubTitle::GetItemIndex -> _DynamicVectorClass_PAVSubTitle
+[conv] 0x6cab30 _VectorClass_PAVSubTitle::GetCapacity -> _VectorClass_PAVSubTitle
+[conv] 0x6cde90 SuperClass::ShouldDrawProgress -> SuperClass
+[conv] 0x6cf410 SwizzleManagerClass::Clear -> SwizzleManagerClass
+[conv] 0x6cf520 _DynamicVectorClass_VSwizzlePointerClass::PointerToIndex -> _DynamicVectorClass_VSwizzlePointerClass
+[conv] 0x6dc5b0 _DynamicVectorClass_PAVShadowControlClass::GetItemIndex_0 -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x6dcb30 _VectorClass_PAVShadowControlClass::GetCapacity -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e4820 Tactical::PointerToIndex -> Tactical
+[conv] 0x6e49b0 _VectorClass_PAVTActionClass::InitMap -> _VectorClass_PAVTActionClass
+[conv] 0x6e6510 _DynamicVectorClass_PAVTagTypeClass::GetItemIndex -> _DynamicVectorClass_PAVTagTypeClass
+[conv] 0x6e66a0 _VectorClass_PAVTagTypeClass::LoadTypeData -> _VectorClass_PAVTagTypeClass
+[conv] 0x6f21f0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::PointerToIndex -> _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x6f2490 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Write -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x71b270 _DynamicVectorClass_PAVTemporalClass::GetItemIndex -> _DynamicVectorClass_PAVTemporalClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+[era] _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _DynamicVectorClass_PAVSpawnManagerClass rc=0
+[era] _DynamicVectorClass_K    rc=0
+[era] _VectorClass_K           rc=0
+[era] _DynamicVectorClass_PAVSubTitle rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] SuperClass               rc=0
+[era] SwizzleManagerClass      rc=2
+[era] _DynamicVectorClass_VSwizzlePointerClass rc=0
+[era] _DynamicVectorClass_PAVShadowControlClass rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+[era] Tactical                 rc=0
+[era] _VectorClass_PAVTActionClass rc=0
+[era] _DynamicVectorClass_PAVTagTypeClass rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVTemporalClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b15d0   MISMATCH         VectorClass::selectAIAction
+[diff] 0x6b1830   MISMATCH         _VectorClass_PAVSlaveManagerClass::GetCapacity
+[diff] 0x6b8190   MISMATCH         _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState
+[diff] 0x6b81f0   MISMATCH         _DynamicVectorClass_PAVSpawnManagerClass::GetItemIndex
+[diff] 0x6bed80   MISMATCH         _DynamicVectorClass_K::GetItemIndex
+[diff] 0x6c6330   MISMATCH         _VectorClass_K::GetCapacity
+[diff] 0x6ca7f0   MISMATCH         _DynamicVectorClass_PAVSubTitle::GetItemIndex
+[diff] 0x6cab30   MISMATCH         _VectorClass_PAVSubTitle::GetCapacity
+[diff] 0x6cde90   MISMATCH         SuperClass::ShouldDrawProgress
+[diff] 0x6cf520   MISMATCH         _DynamicVectorClass_VSwizzlePointerClass::PointerToIndex
+[diff] 0x6dc5b0   MISMATCH         _DynamicVectorClass_PAVShadowControlClass::GetItemIndex_0
+[diff] 0x6dcb30   MISMATCH         _VectorClass_PAVShadowControlClass::GetCapacity
+[diff] 0x6e4820   MISMATCH         Tactical::PointerToIndex
+[diff] 0x6e49b0   MISMATCH         _VectorClass_PAVTActionClass::InitMap
+[diff] 0x6e6510   MISMATCH         _DynamicVectorClass_PAVTagTypeClass::GetItemIndex
+[diff] 0x6e66a0   MISMATCH         _VectorClass_PAVTagTypeClass::LoadTypeData
+[diff] 0x6f21f0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::PointerToIndex
+[diff] 0x6f2490   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Write
+[diff] 0x71b270   MISMATCH         _DynamicVectorClass_PAVTemporalClass::GetItemIndex
+[ledger] 0x6b15d0 VectorClass::selectAIAction -> NG (attempt 1)
+[ledger] 0x6b1830 _VectorClass_PAVSlaveManagerClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x6b8190 _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState -> NG (attempt 1)
+[ledger] 0x6b81f0 _DynamicVectorClass_PAVSpawnManagerClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x6bed80 _DynamicVectorClass_K::GetItemIndex -> NG (attempt 1)
+[ledger] 0x6c6330 _VectorClass_K::GetCapacity -> NG (attempt 1)
+[ledger] 0x6ca7f0 _DynamicVectorClass_PAVSubTitle::GetItemIndex -> NG (attempt 1)
+[ledger] 0x6cab30 _VectorClass_PAVSubTitle::GetCapacity -> NG (attempt 1)
+[ledger] 0x6cde90 SuperClass::ShouldDrawProgress -> NG (attempt 1)
+[ledger] 0x6cf410 SwizzleManagerClass::Clear -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf520 _DynamicVectorClass_VSwizzlePointerClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x6dc5b0 _DynamicVectorClass_PAVShadowControlClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x6dcb30 _VectorClass_PAVShadowControlClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x6e4820 Tactical::PointerToIndex -> NG (attempt 1)
+[ledger] 0x6e49b0 _VectorClass_PAVTActionClass::InitMap -> NG (attempt 1)
+[ledger] 0x6e6510 _DynamicVectorClass_PAVTagTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x6e66a0 _VectorClass_PAVTagTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x6f21f0 _DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x6f2490 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Write -> NG (attempt 1)
+[ledger] 0x71b270 _DynamicVectorClass_PAVTemporalClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 19
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p188\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CDE90",
+ "name": "SuperClass::ShouldDrawProgress",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CDE90",
+ "bytes_hex": "8b41288a90e500000084d27403b001c38a516f33c084d20f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
