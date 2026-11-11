@@ -5,9 +5,9 @@ import gdb
 
 LOG = None
 INF = None
-PATTERN = "2e69646174612434"   # .idata$4
+PATTERN = "5e2000006a2000007a2000005020000000000000"
 BASEADDR = 0x4968c4
-RANGES = [(0x0f000000, 0x20000000)]
+RANGES = [(0x00100000, 0x10000000)]
 
 
 def log(msg):
@@ -81,6 +81,42 @@ class Probe(gdb.Breakpoint):
                 log("%s %s" % (self.pname, cstr(u32(esp + 8))))
             elif self.kind == "ret_only":
                 log("%s hit esp=%08x" % (self.pname, esp))
+            elif self.kind == "fwritechk":
+                buf = u32(esp + 4)
+                sz = u32(esp + 8)
+                cnt = u32(esp + 0xC)
+                hit = None
+                total = (sz or 0) * (cnt or 0)
+                try:
+                    data = bytes(gdb.selected_inferior().read_memory(buf, min(total, 0x200000)))
+                    pat = bytes.fromhex(PATTERN)
+                    i = data.find(pat)
+                    if i >= 0:
+                        hit = buf + i
+                except Exception:
+                    pass
+                log("%s fwrite buf=%08x size=%s cnt=%s hit=%s" %
+                    (self.pname, buf or 0, sz, cnt, hex(hit) if hit else "-"))
+            elif self.kind == "writechk":
+                fd = u32(esp + 4)
+                buf = u32(esp + 8)
+                cnt = u32(esp + 0xC)
+                hit = None
+                try:
+                    data = bytes(gdb.selected_inferior().read_memory(buf, cnt))
+                    pat = bytes.fromhex(PATTERN)
+                    i = data.find(pat)
+                    if i >= 0:
+                        hit = buf + i
+                except Exception:
+                    pass
+                log("%s write fd=%s buf=%08x cnt=%s hit=%s" %
+                    (self.pname, fd, buf or 0, cnt, hex(hit) if hit else "-"))
+            elif self.kind == "secinit":
+                rec = u32(esp + 4)
+                size = u32(esp + 8)
+                name = cstr(u32(esp + 0xC), 12)
+                log("%s rec=%08x size=%s name=%s" % (self.pname, rec or 0, size, name))
             elif self.kind == "findstr":
                 pat = bytes.fromhex(PATTERN)
                 found = []
