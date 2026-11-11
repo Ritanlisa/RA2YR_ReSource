@@ -1,0 +1,8 @@
+{
+ "symbol": "?CellIteratorReset@LayerClass@@QAEHXZ",
+ "sym_key": "LayerClass::CellIteratorReset",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b81f4000000c7810c010000010000008981100100008d50ff8991140100008b913c010000c1e00b8d441004898118010000c3",
+ "relocs": []
+}

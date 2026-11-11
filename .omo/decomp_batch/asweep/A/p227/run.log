@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p227\part_00
+=== convert (20 addrs) ===
+[conv] 0x551450 _VectorClass_PAVLaserDrawClass::GetSize -> _VectorClass_PAVLaserDrawClass
+[conv] 0x5553e0 _VectorClass_PAVLightSourceClass::GetSize -> _VectorClass_PAVLightSourceClass
+[conv] 0x557030 _VectorClass_PAVLineTrail::GetSize -> _VectorClass_PAVLineTrail
+[conv] 0x558360 _VectorClass_PBG::GetSize -> _VectorClass_PBG
+[conv] 0x55a2d0 _VectorClass_PAVFileEntryClass::FindItem -> _VectorClass_PAVFileEntryClass
+[conv] 0x578350 LayerClass::CellIteratorReset -> LayerClass
+[conv] 0x589dc0 VectorClass::InitCellVe_vt04 -> VectorClass
+[conv] 0x589fd0 _VectorClass_W4PassabilityType::GetSize -> _VectorClass_W4PassabilityType
+[conv] 0x58a7e0 _VectorClass_U_HashObject_II::GetSize -> _VectorClass_U_HashObject_II
+[conv] 0x58aa20 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5943e0 List::FindByValue -> List
+[conv] 0x5acb80 _VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5c0bf0 VectorClass::applyDamageEffects -> VectorClass
+[conv] 0x5c5250 VectorClass::checkTimeout -> VectorClass
+[conv] 0x5c54b0 VectorClass::processAITurn -> VectorClass
+[conv] 0x5c5710 _VectorClass_PAVCoopCampaignClass::Read -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d0c00 _VectorClass_PAVMSTextEntry::GetSize -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d0e60 _VectorClass_PAVMapSelection::GetSize -> _VectorClass_PAVMapSelection
+[conv] 0x5d10c0 _VectorClass_PAVMapStage::FindIndex -> _VectorClass_PAVMapStage
+[conv] 0x5d1580 _VectorClass_PAVMSSfxEntry::GetSize -> _VectorClass_PAVMSSfxEntry
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVLaserDrawClass rc=2
+[era] _VectorClass_PAVLightSourceClass rc=2
+[era] _VectorClass_PAVLineTrail rc=2
+[era] _VectorClass_PBG         rc=2
+[era] _VectorClass_PAVFileEntryClass rc=2
+[era] LayerClass               rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_W4PassabilityType rc=2
+[era] _VectorClass_U_HashObject_II rc=2
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] List                     rc=2
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=2
+[era] _VectorClass_PAVCoopCampaignClass rc=2
+[era] _VectorClass_PAVMSTextEntry rc=2
+[era] _VectorClass_PAVMapSelection rc=2
+[era] _VectorClass_PAVMapStage rc=2
+[era] _VectorClass_PAVMSSfxEntry rc=2
+=== diffasm byte-compare ===
+[diff] 0x578350   MATCH            LayerClass::CellIteratorReset
+[diff] 0x589dc0   MISMATCH         VectorClass::InitCellVe_vt04
+[diff] 0x5c0bf0   MISMATCH         VectorClass::applyDamageEffects
+[diff] 0x5c5250   MISMATCH         VectorClass::checkTimeout
+[diff] 0x5c54b0   MISMATCH         VectorClass::processAITurn
+[ledger] 0x551450 _VectorClass_PAVLaserDrawClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5553e0 _VectorClass_PAVLightSourceClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557030 _VectorClass_PAVLineTrail::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558360 _VectorClass_PBG::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a2d0 _VectorClass_PAVFileEntryClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x578350 LayerClass::CellIteratorReset -> OK (attempt 1)
+[ledger] 0x589dc0 VectorClass::InitCellVe_vt04 -> NG (attempt 1)
+[ledger] 0x589fd0 _VectorClass_W4PassabilityType::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a7e0 _VectorClass_U_HashObject_II::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58aa20 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5943e0 List::FindByValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5acb80 _VectorClass_PAU_WIN32_FIND_DATAA::GenerateSeed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0bf0 VectorClass::applyDamageEffects -> NG (attempt 1)
+[ledger] 0x5c5250 VectorClass::checkTimeout -> NG (attempt 1)
+[ledger] 0x5c54b0 VectorClass::processAITurn -> NG (attempt 1)
+[ledger] 0x5c5710 _VectorClass_PAVCoopCampaignClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0c00 _VectorClass_PAVMSTextEntry::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0e60 _VectorClass_PAVMapSelection::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d10c0 _VectorClass_PAVMapStage::FindIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1580 _VectorClass_PAVMSSfxEntry::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MATCH": 1,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p227\batch_report.json
