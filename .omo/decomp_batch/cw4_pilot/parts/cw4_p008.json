@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x53a0e0",
+  "name": "Weapon_Helper",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 27,
+  "part": "p182",
+  "unit": "Weapon",
+  "emitted": "Weapon_Helper",
+  "first_diff": {
+   "orig": "+16 jg 0x53a0f5",
+   "ours": "+16 ja 0x15"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x63db20",
+  "name": "HandlePlanningModeClick_Handle",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 58,
+  "part": "p237",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::HandlePlanningModeClick_Handle",
+  "first_diff": {
+   "orig": "+11 jl 0x63db54",
+   "ours": "+11 jb 0x34"
+  },
+  "ours_size": 58
+ },
+ {
+  "addr": "0x422b80",
+  "name": "TerrainClass::ClearAnimationLinkFlags",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 49,
+  "part": "p220",
+  "unit": "TerrainClass",
+  "emitted": "TerrainClass::ClearAnimationLinkFlags",
+  "first_diff": {
+   "orig": "+13 jle 0x422bb0",
+   "ours": "+13 jbe 0x30"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x748fd0",
+  "name": "HouseClass::ClearStatArray",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 49,
+  "part": "p222",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::ClearStatArray",
+  "first_diff": {
+   "orig": "+35 jl 0x748fe1",
+   "ours": "+35 jb 0x11"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x485060",
+  "name": "Cell::IsValidHeight",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 29,
+  "part": "p192",
+  "unit": "Cell",
+  "emitted": "Cell::IsValidHeight",
+  "first_diff": {
+   "orig": "+11 jl 0x48507a",
+   "ours": "+11 jb 0x1a"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x626660",
+  "name": "HashStringMod31",
+  "family": "REORDER",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "_addr_62",
+  "emitted": "HashStringMod31",
+  "first_diff": {
+   "orig": "+12 movsx edx, dl",
+   "ours": "+12 inc ecx"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x544e00",
+  "name": "Map_Get",
+  "family": "REORDER",
+  "path": "codegen_shape",
+  "size": 44,
+  "part": "p218",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::Map_Get",
+  "first_diff": {
+   "orig": "+25 pop esi",
+   "ours": "+25 mov eax, ecx"
+  },
+  "ours_size": 44
+ },
+ {
+  "addr": "0x6cfdb0",
+  "name": "globalHelper_0CFDB0",
+  "family": "REORDER",
+  "path": "extern_reloc",
+  "size": 57,
+  "part": "p237",
+  "unit": "_addr_6C",
+  "emitted": "globalHelper_0CFDB0",
+  "first_diff": {
+   "orig": "+40 pop esi",
+   "ours": "+40 mov dword ptr [0], eax"
+  },
+  "ours_size": 57
+ },
+ {
+  "addr": "0x6dc7b0",
+  "name": "VectorClass_UDirtyAreaStruct::GetSize",
+  "family": "REORDER",
+  "path": "codegen_shape",
+  "size": 111,
+  "part": "p260",
+  "unit": "_VectorClass_UDirtyAreaStruct",
+  "emitted": "_VectorClass_UDirtyAreaStruct::GetSize",
+  "first_diff": {
+   "orig": "+83 add ecx, 0x14",
+   "ours": "+83 cmp esi, edi"
+  },
+  "ours_size": 111
+ },
+ {
+  "addr": "0x5afc20",
+  "name": "InvertMatrix3x3Signs",
+  "family": "REORDER",
+  "path": "codegen_shape",
+  "size": 181,
+  "part": "p265",
+  "unit": "_addr_5A",
+  "emitted": "InvertMatrix3x3Signs",
+  "first_diff": {
+   "orig": "+16 fld dword ptr [esp + 8]",
+   "ours": "+16 mov dword ptr [esp + 0xc], ecx"
+  },
+  "ours_size": 181
+ },
+ {
+  "addr": "0x486730",
+  "name": "Value::InRange",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "signedness",
+  "size": 26,
+  "part": "p162",
+  "unit": "Value",
+  "emitted": "Value::InRange",
+  "first_diff": {
+   "orig": "+11 jl 0x486747",
+   "ours": "+11 jb 0x1a"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x6cf540",
+  "name": "SwizzleManagerClass_19::Lookup",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_VSwizzlePointerClass",
+  "emitted": "_VectorClass_VSwizzlePointerClass::Lookup",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x6dc4c0",
+  "name": "Vector2::Subtract",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "eval_order",
+  "size": 30,
+  "part": "p193",
+  "unit": "Vector2",
+  "emitted": "Vector2::Subtract",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x5c0340",
+  "name": "AbstractClass::computePathDistance",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "codegen_shape",
+  "size": 54,
+  "part": "p231",
+  "unit": "VQMovieHandle",
+  "emitted": "VQMovieHandle::computePathDistance",
+  "first_diff": {
+   "orig": "+23 lea eax, [ecx + 0x24]",
+   "ours": "+23 mov edx, dword ptr [ecx + 0x24]"
+  },
+  "ours_size": 55
+ },
+ {
+  "addr": "0x4e1100",
+  "name": "BulletClass::ResetDetonationTimer",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "extern_reloc",
+  "size": 40,
+  "part": "p214",
+  "unit": "BulletClass",
+  "emitted": "BulletClass::ResetDetonationTimer",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x48b390",
+  "name": "EventClass::serializeEvent",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 120,
+  "part": "p261",
+  "unit": "EventClass",
+  "emitted": "EventClass::serializeEvent",
+  "first_diff": {
+   "orig": "+5 xor edi, edi",
+   "ours": "+5 xor esi, esi"
+  },
+  "ours_size": 120
+ },
+ {
+  "addr": "0x7490a0",
+  "name": "SumArray",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "codegen_shape",
+  "size": 25,
+  "part": "p160",
+  "unit": "_addr_74",
+  "emitted": "SumArray",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x800]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x4f3090",
+  "name": "GraphicMenuAnimItem::Release",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 66,
+  "part": "p248",
+  "unit": "GraphicMenuAnimItem",
+  "emitted": "GraphicMenuAnimItem::Release",
+  "first_diff": {
+   "orig": "+12 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+12 mov eax, dword ptr [ecx + 0x10]"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x584030",
+  "name": "Map_Helper_584030",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 144,
+  "part": "p263",
+  "unit": "Map_Helper",
+  "emitted": "Map_Helper_584030",
+  "first_diff": {
+   "orig": "+19 mov dword ptr [esp + 0x10], eax",
+   "ours": "+19 mov dword ptr [esp + 0x18], ebp"
+  },
+  "ours_size": 166
+ },
+ {
+  "addr": "0x49b430",
+  "name": "EncodeDigitHex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 25,
+  "part": "p160",
+  "unit": "_addr_49",
+  "emitted": "EncodeDigitHex",
+  "first_diff": {
+   "orig": "+0 test ecx, ecx",
+   "ours": "+0 cmp ecx, 0x10"
+  },
+  "ours_size": 20
+ }
+]
