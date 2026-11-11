@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p45\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8bf0 _VectorClass_PAVTeamTypeClass::Get -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4e8c50 _VectorClass_PAVScriptTypeClass::Get -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4e8cb0 _VectorClass_PAVOverlayTypeClass::Get -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4e8d70 _VectorClass_PAVTerrainTypeClass::Get -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4e8dd0 _VectorClass_PAVBuildingTypeClass::SaveToINI -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4e8e30 _VectorClass_PAVAircraftTypeClass::Get -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4e8e90 _VectorClass_PAVUnitTypeClass::Get -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4e8ef0 _VectorClass_PAVAnimTypeClass::Get -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4e8fb0 _VectorClass_PAVBulletTypeClass::Get -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4e9010 _VectorClass_PAVVoxelAnimTypeClass::Get -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4e9070 _VectorClass_PAVIsometricTileTypeClass::Get -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4e9130 _VectorClass_PAVParticleSystemTypeClass::Get -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4e9190 _VectorClass_PAVSuperWeaponTypeClass::Get -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4e91f0 _VectorClass_PAVAbstractTypeClass::Get -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4f28a0 _VectorClass_PAVGraphicMenuItem::Seek -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x4f6a00 HouseClass::GetItem -> HouseClass
+[conv] 0x4f6a10 HouseClass::GetItem_0 -> HouseClass
+[conv] 0x50da00 TActionClass::executeGuardAction -> TActionClass
+[conv] 0x50da40 ObjectClass::sub_50DA40 -> ObjectClass
+[conv] 0x50dfe0 TActionClass::executeDeployAction -> TActionClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTeamTypeClass rc=0
+[era] _VectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVOverlayTypeClass rc=0
+[era] _VectorClass_PAVTerrainTypeClass rc=0
+[era] _VectorClass_PAVBuildingTypeClass rc=0
+[era] _VectorClass_PAVAircraftTypeClass rc=0
+[era] _VectorClass_PAVUnitTypeClass rc=0
+[era] _VectorClass_PAVAnimTypeClass rc=0
+[era] _VectorClass_PAVBulletTypeClass rc=0
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] _VectorClass_PAVGraphicMenuItem rc=0
+[era] HouseClass               rc=0
+[era] TActionClass             rc=0
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e8bf0   MATCH            _VectorClass_PAVTeamTypeClass::Get
+[diff] 0x4e8c50   MATCH            _VectorClass_PAVScriptTypeClass::Get
+[diff] 0x4e8cb0   MATCH            _VectorClass_PAVOverlayTypeClass::Get
+[diff] 0x4e8d70   MATCH            _VectorClass_PAVTerrainTypeClass::Get
+[diff] 0x4e8dd0   MATCH            _VectorClass_PAVBuildingTypeClass::SaveToINI
+[diff] 0x4e8e30   MATCH            _VectorClass_PAVAircraftTypeClass::Get
+[diff] 0x4e8e90   MATCH            _VectorClass_PAVUnitTypeClass::Get
+[diff] 0x4e8ef0   MATCH            _VectorClass_PAVAnimTypeClass::Get
+[diff] 0x4e8fb0   MATCH            _VectorClass_PAVBulletTypeClass::Get
+[diff] 0x4e9010   MATCH            _VectorClass_PAVVoxelAnimTypeClass::Get
+[diff] 0x4e9070   MATCH            _VectorClass_PAVIsometricTileTypeClass::Get
+[diff] 0x4e9130   MATCH            _VectorClass_PAVParticleSystemTypeClass::Get
+[diff] 0x4e9190   MATCH            _VectorClass_PAVSuperWeaponTypeClass::Get
+[diff] 0x4e91f0   MATCH            _VectorClass_PAVAbstractTypeClass::Get
+[diff] 0x4f28a0   MATCH            _VectorClass_PAVGraphicMenuItem::Seek
+[diff] 0x4f6a00   MISMATCH         HouseClass::GetItem
+[diff] 0x4f6a10   MISMATCH         HouseClass::GetItem_0
+[diff] 0x50da00   MATCH            TActionClass::executeGuardAction
+[diff] 0x50dfe0   MATCH            TActionClass::executeDeployAction
+[diff] 0x50da40   MISMATCH         ObjectClass::sub_50DA40
+[ledger] 0x4e8bf0 _VectorClass_PAVTeamTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8c50 _VectorClass_PAVScriptTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8cb0 _VectorClass_PAVOverlayTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8d70 _VectorClass_PAVTerrainTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8dd0 _VectorClass_PAVBuildingTypeClass::SaveToINI -> OK (attempt 1)
+[ledger] 0x4e8e30 _VectorClass_PAVAircraftTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8e90 _VectorClass_PAVUnitTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8ef0 _VectorClass_PAVAnimTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8fb0 _VectorClass_PAVBulletTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e9010 _VectorClass_PAVVoxelAnimTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e9070 _VectorClass_PAVIsometricTileTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e9130 _VectorClass_PAVParticleSystemTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e9190 _VectorClass_PAVSuperWeaponTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e91f0 _VectorClass_PAVAbstractTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4f28a0 _VectorClass_PAVGraphicMenuItem::Seek -> OK (attempt 1)
+[ledger] 0x4f6a00 HouseClass::GetItem -> NG (attempt 1)
+[ledger] 0x4f6a10 HouseClass::GetItem_0 -> NG (attempt 1)
+[ledger] 0x50da00 TActionClass::executeGuardAction -> OK (attempt 1)
+[ledger] 0x50da40 ObjectClass::sub_50DA40 -> NG (attempt 1)
+[ledger] 0x50dfe0 TActionClass::executeDeployAction -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "cc_mismatch": 3
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p45\batch_report.json

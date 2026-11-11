@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItem@HouseClass@@QAGHH@Z",
+ "sym_key": "HouseClass::GetItem",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b8080530000c20800",
+ "relocs": []
+}
