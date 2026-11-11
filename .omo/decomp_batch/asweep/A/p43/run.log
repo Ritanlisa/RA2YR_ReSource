@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x487c70 TerrainClass::SetFieldF8 -> TerrainClass
+[conv] 0x4913e0 _VectorClass_PAVConvertClass::Get -> _VectorClass_PAVConvertClass
+[conv] 0x49e9a0 _VectorClass_PAD::Clear -> _VectorClass_PAD
+[conv] 0x49ea00 _VectorClass_PAV_DynamicVectorClass_PAD::Get -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x4a0f70 _VectorClass_PAUIConnectionPoint::EnumConnections -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a3630 ObjectClass::sub_4A3630 -> ObjectClass
+[conv] 0x4a4b20 _VectorClass_PAU_DDSURFACEDESC::Seek -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7d70 _VectorClass_PAVDiskLaserClass::Seek -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4b9bd0 Struct::Zero3 -> Struct
+[conv] 0x4b9c30 _DynamicVectorClass_PAUButtonFadeEffect::GetItem -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4c2c90 _VectorClass_PAVEBolt::Get -> _VectorClass_PAVEBolt
+[conv] 0x4c49f0 _VectorClass_PAVEgoClass::Get -> _VectorClass_PAVEgoClass
+[conv] 0x4c5bb0 _VectorClass_PAVEMPulseClass::Get -> _VectorClass_PAVEMPulseClass
+[conv] 0x4ca8e0 _VectorClass_PBVTechnoTypeClass::Seek -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4d94a0 TechnoClass::SetMember360 -> TechnoClass
+[conv] 0x4e01e0 _VectorClass_PAVAbstractClass::Seek -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0240 _VectorClass_PAVFootClass::Seek -> _VectorClass_PAVFootClass
+[conv] 0x4e1450 GadgetClass::Hide -> GadgetClass
+[conv] 0x4e1460 ShpButtonClass::Show -> ShpButtonClass
+[conv] 0x4e8340 _VectorClass_PAVBuildingClass::Count -> _VectorClass_PAVBuildingClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TerrainClass             rc=0
+[era] _VectorClass_PAVConvertClass rc=0
+[era] _VectorClass_PAD         rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _VectorClass_PAUIConnectionPoint rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] Struct                   rc=0
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] GadgetClass              rc=0
+[era] ShpButtonClass           rc=0
+[era] _VectorClass_PAVBuildingClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x487c70   MATCH            TerrainClass::SetFieldF8
+[diff] 0x4913e0   MATCH            _VectorClass_PAVConvertClass::Get
+[diff] 0x49e9a0   MATCH            _VectorClass_PAD::Clear
+[diff] 0x49ea00   MATCH            _VectorClass_PAV_DynamicVectorClass_PAD::Get
+[diff] 0x4a0f70   MATCH            _VectorClass_PAUIConnectionPoint::EnumConnections
+[diff] 0x4a3630   MATCH            ObjectClass::sub_4A3630
+[diff] 0x4a4b20   MATCH            _VectorClass_PAU_DDSURFACEDESC::Seek
+[diff] 0x4a7d70   MATCH            _VectorClass_PAVDiskLaserClass::Seek
+[diff] 0x4b9bd0   MATCH            Struct::Zero3
+[diff] 0x4b9c30   MATCH            _DynamicVectorClass_PAUButtonFadeEffect::GetItem
+[diff] 0x4c2c90   MATCH            _VectorClass_PAVEBolt::Get
+[diff] 0x4c49f0   MATCH            _VectorClass_PAVEgoClass::Get
+[diff] 0x4c5bb0   MATCH            _VectorClass_PAVEMPulseClass::Get
+[diff] 0x4ca8e0   MATCH            _VectorClass_PBVTechnoTypeClass::Seek
+[diff] 0x4d94a0   MATCH            TechnoClass::SetMember360
+[diff] 0x4e01e0   MATCH            _VectorClass_PAVAbstractClass::Seek
+[diff] 0x4e0240   MATCH            _VectorClass_PAVFootClass::Seek
+[diff] 0x4e1450   MATCH            GadgetClass::Hide
+[diff] 0x4e1460   MISMATCH         ShpButtonClass::Show
+[diff] 0x4e8340   MATCH            _VectorClass_PAVBuildingClass::Count
+[ledger] 0x487c70 TerrainClass::SetFieldF8 -> OK (attempt 1)
+[ledger] 0x4913e0 _VectorClass_PAVConvertClass::Get -> OK (attempt 1)
+[ledger] 0x49e9a0 _VectorClass_PAD::Clear -> OK (attempt 1)
+[ledger] 0x49ea00 _VectorClass_PAV_DynamicVectorClass_PAD::Get -> OK (attempt 1)
+[ledger] 0x4a0f70 _VectorClass_PAUIConnectionPoint::EnumConnections -> OK (attempt 1)
+[ledger] 0x4a3630 ObjectClass::sub_4A3630 -> OK (attempt 1)
+[ledger] 0x4a4b20 _VectorClass_PAU_DDSURFACEDESC::Seek -> OK (attempt 1)
+[ledger] 0x4a7d70 _VectorClass_PAVDiskLaserClass::Seek -> OK (attempt 1)
+[ledger] 0x4b9bd0 Struct::Zero3 -> OK (attempt 1)
+[ledger] 0x4b9c30 _DynamicVectorClass_PAUButtonFadeEffect::GetItem -> OK (attempt 1)
+[ledger] 0x4c2c90 _VectorClass_PAVEBolt::Get -> OK (attempt 1)
+[ledger] 0x4c49f0 _VectorClass_PAVEgoClass::Get -> OK (attempt 1)
+[ledger] 0x4c5bb0 _VectorClass_PAVEMPulseClass::Get -> OK (attempt 1)
+[ledger] 0x4ca8e0 _VectorClass_PBVTechnoTypeClass::Seek -> OK (attempt 1)
+[ledger] 0x4d94a0 TechnoClass::SetMember360 -> OK (attempt 1)
+[ledger] 0x4e01e0 _VectorClass_PAVAbstractClass::Seek -> OK (attempt 1)
+[ledger] 0x4e0240 _VectorClass_PAVFootClass::Seek -> OK (attempt 1)
+[ledger] 0x4e1450 GadgetClass::Hide -> OK (attempt 1)
+[ledger] 0x4e1460 ShpButtonClass::Show -> NG (attempt 1)
+[ledger] 0x4e8340 _VectorClass_PAVBuildingClass::Count -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 15,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p43\batch_report.json

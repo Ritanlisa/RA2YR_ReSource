@@ -5950,6 +5950,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x487c70": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TerrainClass::SetFieldF8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "TerrainClass::SetFieldF8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x487c80": {
   "attempts": 1,
   "clean": true,
@@ -6387,6 +6399,18 @@
   "name": "sub_491330",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x4913e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVConvertClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_ConvertClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4916b0": {
   "attempts": 1,
@@ -7206,6 +7230,30 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x49e9a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAD::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "DynamicVectorClass_PAD::Clear",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x49ea00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAV_DynamicVectorClass_PAD::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "DynamicVectorClass_PAD_16::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x49eb50": {
   "attempts": 1,
   "clean": false,
@@ -7364,6 +7412,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a0f70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUIConnectionPoint::EnumConnections",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ConnectionPointClass_9::EnumConnections",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4a1670": {
   "attempts": 3,
   "clean": false,
@@ -7460,6 +7520,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a3630": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_4A3630",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_4A3630",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4a3640": {
   "attempts": 1,
   "first_diff": null,
@@ -7547,6 +7619,18 @@
   "name": "CStreamClass::ClearBuffer",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4a4b20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAU_DDSURFACEDESC::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CStreamClass_16::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4a4b30": {
   "attempts": 1,
@@ -7782,6 +7866,18 @@
   "name": "DiskLaserClass::StubReturn73",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4a7d70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVDiskLaserClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Dial8Class_48::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4a7fe0": {
   "attempts": 1,
@@ -8550,12 +8646,36 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4b9bd0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "Struct::Zero3",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Struct::Zero3",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4b9c10": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4b9c1c",
   "name": "FilePipe_30::GetCount",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4b9c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAUButtonFadeEffect::GetItem",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_CrossDissolveEffect::GetItem",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4b9c90": {
   "attempts": 1,
@@ -8788,6 +8908,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4c2c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVEBolt::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_EBolt::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4c2dc0": {
   "attempts": 1,
   "clean": false,
@@ -8843,6 +8975,18 @@
   "name": "CreditsPower::DrawCreditsTextLine",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x4c49f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVEgoClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_EgoClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4c4d90": {
   "attempts": 2,
@@ -8906,6 +9050,18 @@
   "name": "EMPulseClass::StubReturn55",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4c5bb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVEMPulseClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_ptr_EMPulseClass::Get",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4c5d20": {
   "attempts": 1,
@@ -9156,6 +9312,18 @@
   "name": "FactoryClass::StubReturn116",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4ca8e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVTechnoTypeClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FactoryClass_33::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4ca930": {
   "attempts": 1,
@@ -9485,6 +9653,18 @@
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
  },
+ "0x4d94a0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::SetMember360",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ObjectClass::SetMember360",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4d9c00": {
   "attempts": 1,
   "first_diff": null,
@@ -9740,6 +9920,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4e01e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAbstractClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClassVector::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e0240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVFootClass::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "FoggedObjectClass_42::Seek",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4e0250": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
@@ -9799,6 +10003,30 @@
   "name": "ControlClass::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4e1450": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "GadgetClass::Hide",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "DialogControl::Hide",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e1460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+0 mov al, 1",
+  "name": "ShpButtonClass::Show",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "DialogControl::Show",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4e1470": {
   "attempts": 1,
@@ -10217,6 +10445,18 @@
   "name": "HouseClass::COMStub_6",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e8340": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVBuildingClass::Count",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VectorClass_Building::Count",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4e8380": {
   "attempts": 1,

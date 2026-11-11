@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1460",
+ "name": "DialogControl::Show",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1460",
+ "bytes_hex": "b00188411e88411c8b01ff6054",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

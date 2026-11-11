@@ -1,0 +1,8 @@
+{
+ "symbol": "?Show@ShpButtonClass@@QAEHXZ",
+ "sym_key": "ShpButtonClass::Show",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b01c7411c01000000ff6054",
+ "relocs": []
+}
