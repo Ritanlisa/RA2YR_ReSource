@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@_BlitTransLucent75Alpha_G@@QAEHPAGPAEHHH0HH@Z",
+ "sym_key": "_BlitTransLucent75Alpha_G::AddRef",
+ "size": 230,
+ "link_base": 0,
+ "bytes_hex": "518b44242033d285c00f9ec24a23c28bd0c1e20603d08d0490c1f80b3dfe0000007e05b8fe000000568b7108c1e00903c6894424048b44241485c00f8ea00000008b15140100008b74242053558be8578b7c2418896c24308b44241c8a0084c0884424208b44241c0f94c34084db8944241c75478b6c241033c0668b0633db668b510c668b5c45008b44242025ff0000008b6c24300bd88b4104668b1c58668b0766c1e80266c1eb0223c223da8d144003da66891f8b15140100008d46028b721c83c7023bc672032b42208bf08d45ff8be885ed896c24300f857affffff5f5d5b5e59c22000",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 183,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

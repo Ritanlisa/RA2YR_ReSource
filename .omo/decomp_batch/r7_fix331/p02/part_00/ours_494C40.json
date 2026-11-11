@@ -1,0 +1,27 @@
+{
+ "symbol": "?BlitRect@_BlitTransXlatAlphaZRead_G@@QAEHPAGPAEHH00HHF@Z",
+ "sym_key": "_BlitTransXlatAlphaZRead_G::BlitRect",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "518b44242033d285c00f9ec24a894c240023c28bd0c1e20603d08d0490c1f80b3dfe0000007e05b8fe000000568b71088b4c2414c1e00903c685c90f8ea90000008b742420538b1d00000000558b6c2414578b7c2428894c2430668b1783c70281e2ffff0000395424247d3b8b54241c8a1284d2743133c933db668b0e81e2ff000000668b1c480bda8b5424108b4a04668b14598b4c2430660b542438668955008b1d000000008b54241c83c502428954241c8b935c0500003bfa72062bbb600500008b151401000083c6023b721c72032b72208d51ff8bca85c9894c24300f8575ffffff5f5d8bc25b5e59c22400",
+ "relocs": [
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 197,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@_BlitTransZRemapXlatAlpha_G@@QAEHPAGPAEHHH0HH@Z",
+ "sym_key": "_BlitTransZRemapXlatAlpha_G::AddRef",
+ "size": 219,
+ "link_base": 0,
+ "bytes_hex": "83ec088b410433d2894424048b44242485c00f9ec24a23c28bd0c1e20603d08d0490c1f80b3dfe0000007e05b8fe000000568b710cc1e00903c6894424048b44241885c00f8e8a0000008b35140100008b54242453558be8578b7c241c896c24348b4424208a1884db885c24248b5c24200f94c04384c0895c242075378b5c241033c0668b028b6c241433f6668b34438b44242425ff00000033db8a1c288b41088b6c24340bf3668b04706689078b35140100008b461c83c20283c7023bd072032b56208d45ff8be885ed896c243475905f5d5b5e83c408c22000",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  },
+  {
+   "off": 176,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

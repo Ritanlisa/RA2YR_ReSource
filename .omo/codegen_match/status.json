@@ -1477,130 +1477,130 @@
   "status": "NG"
  },
  "0x493f30": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
   "name": "BlitTransZRemapXlatAlpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x494080": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
   "name": "BlitTransLucent75Alpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4941e0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+4 xor edx, edx",
   "name": "BlitTransLucent50Alpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x494330": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
   "name": "BlitTransLucent25Alpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x494b60": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
   "name": "BlitTransXlatAlphaZRead_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x494c40": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 mov eax, dword ptr [esp + 0x1c]",
   "name": "BlitTransXlatAlphaZRead_ushort::BlitRect",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x494d90": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x494f20": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4950c0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495250": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4953f0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebx",
   "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x495590": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495730": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebx",
   "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x4958d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x495a50": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebp",
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x495bc0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebx",
   "name": "BlitTransLucent75AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x495d60": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+0 push ebx",
   "name": "BlitTransLucent50AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x495f00": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebx",
   "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4974b0": {
   "attempts": 15,
@@ -1617,18 +1617,18 @@
   "status": "NG"
  },
  "0x497760": {
-  "attempts": 8,
-  "first_diff": null,
+  "attempts": 9,
+  "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4978c0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 mov edx, dword ptr [esp + 0x24]",
   "name": "RLEBlitTransXlatAlpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x497a10": {
   "attempts": 7,

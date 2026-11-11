@@ -1,0 +1,21 @@
+{
+ "symbol": "?AddRef@_BlitTransZRemapXlatAlphaZReadWrite_G@@QAEHPAGPAEHH00HH@Z",
+ "sym_key": "_BlitTransZRemapXlatAlphaZReadWrite_G::AddRef",
+ "size": 238,
+ "link_base": 0,
+ "bytes_hex": "8b44241c83ec08558be933c985c00f9ec14923c18bd0c1e20603d08d0490c1f80b3dfe0000007e05b8fe0000008b550cc1e00903c2894424048b4504894424088b44241885c00f8e9b0000008b4c241c8b54242053568b35000000008bd8578b7c241c895c243433c0668b023bc87d488b4424208a0084c0743e8b7424308b5c241033c925ff000000668b0e33f6668b344b8b5c241433c98a0c188b45080bf18b5c2434668b0c7066890f8b4c242866890a8b35000000008b44242083c20283c70240894424208b865c0500003bd072062b96600500008d43ff8bd885db895c243475835f5e5b5d83c408c22000",
+ "relocs": [
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 180,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}
