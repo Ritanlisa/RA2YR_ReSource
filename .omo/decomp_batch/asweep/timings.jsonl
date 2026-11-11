@@ -93,3 +93,4 @@
 {"layer": "A", "part": 92, "n": 20, "seconds": 10.7, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "A", "part": 93, "n": 20, "seconds": 11.2, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "A", "part": 94, "n": 20, "seconds": 10.1, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "A", "part": 95, "n": 20, "seconds": 9.0, "ok": true, "verdicts": {"MISMATCH": 20}}
