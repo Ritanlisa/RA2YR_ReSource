@@ -155,3 +155,4 @@
 {"layer": "A", "part": 154, "n": 20, "seconds": 10.9, "ok": true, "verdicts": {"MATCH": 20}}
 {"layer": "A", "part": 155, "n": 20, "seconds": 13.8, "ok": true, "verdicts": {"MATCH": 17, "COMPILE_FAIL": 3}}
 {"layer": "A", "part": 156, "n": 20, "seconds": 11.0, "ok": true, "verdicts": {"COMPILE_FAIL": 3, "MATCH": 17}}
+{"layer": "A", "part": 157, "n": 20, "seconds": 10.7, "ok": true, "verdicts": {"MATCH": 20}}

@@ -51868,6 +51868,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x749390": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_749390",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_749390",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x749b20": {
   "attempts": 1,
   "first_diff": null,
@@ -51993,6 +52004,17 @@
   "name": "sub_74AD20",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_74AD20",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x74ad60": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_74AD60",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_74AD60",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -52395,6 +52417,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x7500f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_7500F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7500F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x750140": {
   "attempts": 1,
   "clean": false,
@@ -52678,6 +52711,17 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x7539b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_7539B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7539B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x753ad0": {
   "attempts": 1,
   "clean": true,
@@ -52828,6 +52872,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x754b00": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_754B00",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_754B00",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x754b20": {
   "attempts": 1,
   "clean": true,
@@ -52925,6 +52980,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x755c90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_755C90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_755C90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x755db0": {
   "attempts": 1,
   "first_diff": null,
@@ -52999,6 +53065,17 @@
   "name": "VoxelRenderer::ProjectVertex",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x758f70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_758F70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_758F70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x758fc0": {
   "attempts": 1,
@@ -53192,6 +53269,17 @@
   "orig_name": "ResetAnimSystem",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x75a880": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_75A880",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_75A880",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x75a8d0": {
@@ -53587,6 +53675,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x75e930": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_75E930",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_75E930",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x75edf0": {
   "attempts": 9,
   "first_diff": null,
@@ -53790,6 +53889,17 @@
   "orig_name": "sub_763550",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x763570": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_763570",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_763570",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x7636f0": {
@@ -54208,6 +54318,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7670f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_7670F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7670F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x767140": {
   "attempts": 1,
   "clean": false,
@@ -54318,6 +54439,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x7678f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_7678F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_7678F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x767940": {
   "attempts": 1,
   "clean": false,
@@ -54391,6 +54523,17 @@
   "name": "sub_767AC0",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_767AC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x767c80": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_767C80",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_767C80",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -54733,6 +54876,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x76aa90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_76AA90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76AA90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x76b080": {
   "attempts": 1,
   "clean": false,
@@ -54784,6 +54938,17 @@
   "name": "WDTState_4::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x76bc80": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_76BC80",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76BC80",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x76bcd0": {
   "attempts": 1,
@@ -54898,6 +55063,17 @@
   "name": "Conflict::GetOwnerHouse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x76c080": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_76C080",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76C080",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x76c0d0": {
   "attempts": 1,
@@ -55105,6 +55281,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x76f260": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_76F260",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76F260",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x76f2b0": {
   "attempts": 1,
   "clean": false,
@@ -55178,6 +55365,17 @@
   "name": "sub_76F430",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_76F430",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x76f700": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_76F700",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_76F700",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -55549,6 +55747,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x771c50": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_771C50",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_771C50",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x772080": {
   "attempts": 1,
   "first_diff": null,
@@ -55590,6 +55799,17 @@
   "name": "WeaponTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x773240": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_773240",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_773240",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x773290": {
   "attempts": 1,
