@@ -1,0 +1,77 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p57\part_00
+=== convert (20 addrs) ===
+[conv] 0x787010 ObjectClass::LoginFlowWOL -> ObjectClass
+[conv] 0x4ce840 DropPod::ProcessLanding -> DropPod
+[conv] 0x5cf8e0 MSChoiceClass::LoadFromINI -> MSChoiceClass
+[conv] 0x5bb6e0 Modem::EnumerateDevices -> Modem
+[conv] 0x5b4ee0 ModemGuest::InitDialog -> ModemGuest
+[conv] 0x5b20f0 Movement::CalcVelocity -> Movement
+[conv] 0x4c1f20 Lightning::Draw -> Lightning
+[conv] 0x485af0 BuildingClass::VisualizePlacement -> BuildingClass
+[conv] 0x616980 ButtonOwnerDraw::DlgProc -> ButtonOwnerDraw
+[conv] 0x4ab9b0 DisplayClass::ExecuteCommand -> DisplayClass
+[conv] 0x511850 HouseTypeClass::LoadFromINI -> HouseTypeClass
+[conv] 0x50a5c0 HouseClass::AIBuildBase -> HouseClass
+[conv] 0x772080 WeaponTypeClass::ReadINI -> WeaponTypeClass
+[conv] 0x5f1fa0 NullModemClass::DetectModem -> NullModemClass
+[conv] 0x73e5e0 VoxelTypeClass::ReadINI -> VoxelTypeClass
+[conv] 0x788b00 ObjectClass::CreateAccountWOL -> ObjectClass
+[conv] 0x749f30 VoxelAnimClass::Update -> VoxelAnimClass
+[conv] 0x43fb20 BuildingClass::ProcessSpreadEffect -> BuildingClass
+[conv] 0x793d20 NegotiateNetworkConnection -> _addr_79
+[conv] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> HouseClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] DropPod                  rc=2
+[era] MSChoiceClass            rc=2
+[era] Modem                    rc=2
+[era] ModemGuest               rc=2
+[era] Movement                 rc=2
+[era] Lightning                rc=2
+[era] BuildingClass            rc=2
+[era] ButtonOwnerDraw          rc=2
+[era] DisplayClass             rc=2
+[era] HouseTypeClass           rc=2
+[era] HouseClass               rc=2
+[era] WeaponTypeClass          rc=2
+[era] NullModemClass           rc=2
+[era] VoxelTypeClass           rc=2
+[era] VoxelAnimClass           rc=2
+[era] _addr_79                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x787010 ObjectClass::LoginFlowWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ce840 DropPod::ProcessLanding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cf8e0 MSChoiceClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bb6e0 Modem::EnumerateDevices -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4ee0 ModemGuest::InitDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b20f0 Movement::CalcVelocity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4c1f20 Lightning::Draw -> COMPILE_FAIL (attempt 2)
+[ledger] 0x485af0 BuildingClass::VisualizePlacement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x616980 ButtonOwnerDraw::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4ab9b0 DisplayClass::ExecuteCommand -> COMPILE_FAIL (attempt 2)
+[ledger] 0x511850 HouseTypeClass::LoadFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50a5c0 HouseClass::AIBuildBase -> COMPILE_FAIL (attempt 2)
+[ledger] 0x772080 WeaponTypeClass::ReadINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f1fa0 NullModemClass::DetectModem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x73e5e0 VoxelTypeClass::ReadINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x788b00 ObjectClass::CreateAccountWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x749f30 VoxelAnimClass::Update -> COMPILE_FAIL (attempt 2)
+[ledger] 0x43fb20 BuildingClass::ProcessSpreadEffect -> COMPILE_FAIL (attempt 2)
+[ledger] 0x793d20 NegotiateNetworkConnection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5054b0 HouseClass::GenerateAIBuildListEnsureSanity -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p57\batch_report.json

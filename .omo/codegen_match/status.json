@@ -9603,11 +9603,16 @@
   "this_as_id": false
  },
  "0x43fb20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::ProcessSpreadEffect",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildingClass::ProcessSpreadEffect",
+  "rule_violations": 37,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4456d0": {
   "attempts": 2,
@@ -13594,11 +13599,16 @@
   "this_as_id": false
  },
  "0x485af0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::VisualizePlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildingClass::VisualizePlacement",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x486380": {
   "attempts": 14,
@@ -18904,11 +18914,16 @@
   "this_as_id": false
  },
  "0x4ab9b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "PlayerClass::ExecuteCommand",
+  "name": "DisplayClass::ExecuteCommand",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "PlayerClass::ExecuteCommand",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ac310": {
   "attempts": 1,
@@ -20711,11 +20726,16 @@
   "this_as_id": false
  },
  "0x4c1f20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Lightning::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Lightning::Draw",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4c2bd0": {
   "attempts": 1,
@@ -22746,11 +22766,16 @@
   "this_as_id": false
  },
  "0x4ce840": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DropPod::ProcessLanding",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DropPod::ProcessLanding",
+  "rule_violations": 18,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4cf940": {
   "attempts": 1,
@@ -29378,11 +29403,16 @@
   "this_as_id": false
  },
  "0x5054b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::GenerateAIBuildListEnsureSanity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::GenerateAIBuildListEnsureSanity",
+  "rule_violations": 17,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x505f80": {
   "attempts": 1,
@@ -29542,11 +29572,16 @@
   "status": "NG"
  },
  "0x50a5c0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::AIBuildBase",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::AIBuildBase",
+  "rule_violations": 50,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50b6f0": {
   "attempts": 1,
@@ -30974,11 +31009,16 @@
   "this_as_id": false
  },
  "0x511850": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseTypeClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseTypeClass::LoadFromINI",
+  "rule_violations": 79,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x512280": {
   "attempts": 1,
@@ -42689,11 +42729,16 @@
   "this_as_id": false
  },
  "0x5b20f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Movement::CalcVelocity",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Movement::CalcVelocity",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5b2930": {
   "attempts": 1,
@@ -43431,11 +43476,16 @@
   "this_as_id": false
  },
  "0x5b4ee0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ModemGuest::InitDialog",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ModemGuest::InitDialog",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5b57d0": {
   "attempts": 2,
@@ -43588,11 +43638,16 @@
   "this_as_id": false
  },
  "0x5bb6e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Modem::EnumerateDevices",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Modem::EnumerateDevices",
+  "rule_violations": 11,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5bbed0": {
   "attempts": 10,
@@ -46686,11 +46741,16 @@
   "this_as_id": false
  },
  "0x5cf8e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSChoiceClass::LoadFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MSChoiceClass::LoadFromINI",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5d0190": {
   "attempts": 2,
@@ -49660,11 +49720,16 @@
   "this_as_id": false
  },
  "0x5f1fa0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "NullModemClass::DetectModem",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "NullModemClass::DetectModem",
+  "rule_violations": 12,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f3340": {
   "attempts": 1,
@@ -51768,11 +51833,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x616980": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "ButtonOwnerDraw::DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ButtonOwnerDraw::DlgProc",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x61d950": {
   "attempts": 1,
@@ -77622,11 +77692,16 @@
   "this_as_id": false
  },
  "0x73e5e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "VoxelTypeClass::ReadINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelTypeClass::ReadINI",
+  "rule_violations": 23,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x740810": {
   "attempts": 2,
@@ -78258,11 +78333,16 @@
   "this_as_id": false
  },
  "0x749f30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelAnimClass::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelAnimClass::Update",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x74a960": {
   "attempts": 5,
@@ -83902,11 +83982,16 @@
   "this_as_id": false
  },
  "0x772080": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WeaponTypeClass::ReadINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WeaponTypeClass::ReadINI",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x772a90": {
   "attempts": 1,
@@ -85391,11 +85476,16 @@
   "this_as_id": false
  },
  "0x787010": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "LoginFlowWOL",
+  "name": "ObjectClass::LoginFlowWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LoginFlowWOL",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x788800": {
   "attempts": 2,
@@ -85409,11 +85499,16 @@
   "this_as_id": false
  },
  "0x788b00": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "CreateAccountWOL",
+  "name": "ObjectClass::CreateAccountWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateAccountWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x78db70": {
   "attempts": 2,
@@ -85486,11 +85581,15 @@
   "this_as_id": false
  },
  "0x793d20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "NegotiateNetworkConnection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "NegotiateNetworkConnection",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x796b20": {
   "attempts": 1,
