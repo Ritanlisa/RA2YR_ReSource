@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_491FD0@_RLEBlitTransXlatZReadWrite_E@@QAEPAGHPAEHHHPAGHHHPAD@Z",
+ "sym_key": "_RLEBlitTransXlatZReadWrite_E::sub_491FD0",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "518b5424145355568b742428578b7c2418894c24108b0d000000008bc685d28bdf7f0a8b7c24208b6c241ceb378b6c241c8a45004584c074034aeb0833c08a45002bd04585d27fe9f7da8d1c3a8b7c24202bfa8d04563b815c05000072062b816005000085ff0f8e810000008b74243c8a55004584d28854241c74440fbe0e8b542428432bd133c9668b083bd17d248b4c24108b54241c81e2ff0000008b49048a14118853ff8b542428660fbe0e2bd16689108b0d0000000083c002464feb1b8a550045885424208b54242081e2ff0000002bfa03da03f28d04503b815c05000072062b816005000085ff7f835f5e5d5b59c22800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}
