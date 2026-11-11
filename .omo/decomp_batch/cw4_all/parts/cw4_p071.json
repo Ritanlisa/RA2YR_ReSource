@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x70e340",
+  "name": "ObjectClass::ResetTimer2",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 32,
+  "part": "p195",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::ResetTimer2",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x71f800",
+  "name": "TEventClass::CheckConditions",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 32,
+  "part": "p195",
+  "unit": "TEventClass",
+  "emitted": "TEventClass::CheckConditions",
+  "first_diff": {
+   "orig": "+17 cmp dword ptr [ecx + 0x30], edx",
+   "ours": "+17 push esi"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x7291d0",
+  "name": "JumpjetLocomotionClass::StubReturnZero_21",
+  "family": "RET_ARITY",
+  "path": "width_mismatch",
+  "size": 32,
+  "part": "p195",
+  "unit": "TunnelLocomotionClass",
+  "emitted": "TunnelLocomotionClass::StubReturnZero_21",
+  "first_diff": {
+   "orig": "+10 mov cl, byte ptr [esp + 8]",
+   "ours": "+10 mov ecx, dword ptr [esp + 8]"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x40da20",
+  "name": "sub_40DA20",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 33,
+  "part": "p196",
+  "unit": "_addr_40",
+  "emitted": "sub_40DA20",
+  "first_diff": {
+   "orig": "+2 mov dword ptr [0x886fa8], 0x280",
+   "ours": "+2 mov dword ptr [0], 0x280"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x40da50",
+  "name": "sub_40DA50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 33,
+  "part": "p196",
+  "unit": "_addr_40",
+  "emitted": "sub_40DA50",
+  "first_diff": {
+   "orig": "+2 mov dword ptr [0x886fb8], 0x280",
+   "ours": "+2 mov dword ptr [0], 0x280"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x5f65a0",
+  "name": "ObjectClass::GetCoords",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p196",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::GetCoords",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x660c50",
+  "name": "Map_Reset_660C50",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 33,
+  "part": "p196",
+  "unit": "Map_Reset",
+  "emitted": "Map_Reset_660C50",
+  "first_diff": {
+   "orig": "+0 or eax, 0xffffffff",
+   "ours": "+0 mov ecx, dword ptr [0]"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x683000",
+  "name": "ScenarioClass::LookupMethod",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p196",
+  "unit": "ScenarioClass",
+  "emitted": "ScenarioClass::LookupMethod",
+  "first_diff": {
+   "orig": "+0 xor edx, edx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 58
+ },
+ {
+  "addr": "0x6ac7c0",
+  "name": "TabClass::drawTabBackground",
+  "family": "WIDTH",
+  "path": "regalloc",
+  "size": 33,
+  "part": "p196",
+  "unit": "TabClass",
+  "emitted": "TabClass::drawTabBackground",
+  "first_diff": {
+   "orig": "+2 xor ecx, ecx",
+   "ours": "+2 xor edx, edx"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf110",
+  "name": "VectorClass_K_14::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p196",
+  "unit": "_TClassFactory_VWaveClass",
+  "emitted": "_TClassFactory_VWaveClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf290",
+  "name": "VectorClass_K_20::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p196",
+  "unit": "_TClassFactory_VTerrainTypeClass",
+  "emitted": "_TClassFactory_VTerrainTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf410",
+  "name": "VectorClass_K_26::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p196",
+  "unit": "_TClassFactory_VTerrainClass",
+  "emitted": "_TClassFactory_VTerrainClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf590",
+  "name": "VectorClass_K_32::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VSuperWeaponTypeClass",
+  "emitted": "_TClassFactory_VSuperWeaponTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf710",
+  "name": "VectorClass_K_38::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VSuperClass",
+  "emitted": "_TClassFactory_VSuperClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bf890",
+  "name": "VectorClass_K_44::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VTactical",
+  "emitted": "_TClassFactory_VTactical::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bfa10",
+  "name": "TClassFactory_CellClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VCellClass",
+  "emitted": "_TClassFactory_VCellClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bfb90",
+  "name": "TClassFactory_EMPulseClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VEMPulseClass",
+  "emitted": "_TClassFactory_VEMPulseClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6bfd10",
+  "name": "TClassFactory_LightSourceClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VLightSourceClass",
+  "emitted": "_TClassFactory_VLightSourceClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0190",
+  "name": "TClassFactory_CampaignClass::AdjustRefCOM",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VTubeClass",
+  "emitted": "_TClassFactory_VTubeClass::AdjustRefCOM",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0310",
+  "name": "TClassFactory_CampaignClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VCampaignClass",
+  "emitted": "_TClassFactory_VCampaignClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ }
+]

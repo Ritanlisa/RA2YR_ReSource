@@ -1,0 +1,506 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 15,
+   "NO_HIT": 5
+  },
+  "by_family_total": {
+   "FRAME": 1,
+   "STRUCTURAL": 4,
+   "RET_ARITY": 12,
+   "TOKEN_MISMATCH": 1,
+   "RELOC_KEY": 1,
+   "WIDTH": 1
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x70e340",
+   "name": "ObjectClass::ResetTimer2",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "ResetTimer2",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::ResetTimer2()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x71f800",
+   "name": "TEventClass::CheckConditions",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TEventClass",
+   "method": "CheckConditions",
+   "unit": "TEventClass",
+   "head": "int TEventClass::CheckConditions(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+17 cmp dword ptr [ecx + 0x30], edx",
+    "ours": "+17 push esi"
+   }
+  },
+  {
+   "addr": "0x7291d0",
+   "name": "JumpjetLocomotionClass::StubReturnZero_21",
+   "family": "RET_ARITY",
+   "path": "width_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+10 mov cl, byte ptr [esp + 8]",
+      "ours": "+10 mov ecx, dword ptr [esp + 8]"
+     },
+     "ours_size": 32
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TunnelLocomotionClass",
+   "method": "StubReturnZero_21",
+   "unit": "TunnelLocomotionClass",
+   "head": "unsigned char __stdcall TunnelLocomotionClass::StubReturnZero_21(int p0, char p1)",
+   "baseline_first_diff": {
+    "orig": "+10 mov cl, byte ptr [esp + 8]",
+    "ours": "+10 mov ecx, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x40da20",
+   "name": "sub_40DA20",
+   "family": "TOKEN_MISMATCH",
+   "path": "extern_reloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.14,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 mov dword ptr [0x886fa8], 0x280",
+      "ours": "+2 mov dword ptr [0], 0x280"
+     },
+     "ours_size": 33
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_40DA20",
+   "unit": "_addr_40",
+   "head": "int __cdecl sub_40DA20()",
+   "baseline_first_diff": {
+    "orig": "+2 mov dword ptr [0x886fa8], 0x280",
+    "ours": "+2 mov dword ptr [0], 0x280"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x40da50",
+   "name": "sub_40DA50",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_40DA50",
+   "unit": "_addr_40",
+   "head": "int __cdecl sub_40DA50()",
+   "baseline_first_diff": {
+    "orig": "+2 mov dword ptr [0x886fb8], 0x280",
+    "ours": "+2 mov dword ptr [0], 0x280"
+   }
+  },
+  {
+   "addr": "0x5f65a0",
+   "name": "ObjectClass::GetCoords",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 4]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 29
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 4]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 29
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "GetCoords",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::GetCoords()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x660c50",
+   "name": "Map_Reset_660C50",
+   "family": "STRUCTURAL",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "Map_Reset_660C50",
+   "unit": "Map_Reset",
+   "head": "int __cdecl Map_Reset_660C50()",
+   "baseline_first_diff": {
+    "orig": "+0 or eax, 0xffffffff",
+    "ours": "+0 mov ecx, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x683000",
+   "name": "ScenarioClass::LookupMethod",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_LOOP_WHILE2DO",
+     "kind": "loop",
+     "desc": "while(C){B} -> do{B}while(C)",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 cmp dword ptr [eax], ecx",
+      "ours": "+7 mov dl, byte ptr [0]"
+     },
+     "ours_size": 48
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ScenarioClass",
+   "method": "LookupMethod",
+   "unit": "ScenarioClass",
+   "head": "_UNKNOWN ** ScenarioClass::LookupMethod()",
+   "baseline_first_diff": {
+    "orig": "+0 xor edx, edx",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_LOOP_WHILE2DO"
+   ]
+  },
+  {
+   "addr": "0x6ac7c0",
+   "name": "TabClass::drawTabBackground",
+   "family": "WIDTH",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 xor ecx, ecx",
+      "ours": "+2 xor edx, edx"
+     },
+     "ours_size": 33
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 xor ecx, ecx",
+      "ours": "+2 xor edx, edx"
+     },
+     "ours_size": 33
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `v2` inlined at use",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+7 mov byte ptr [eax + 0x18], cl",
+      "ours": "+7 mov dword ptr [eax + 0x18], ecx"
+     },
+     "ours_size": 33
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TabClass",
+   "method": "drawTabBackground",
+   "unit": "TabClass",
+   "head": "int TabClass::drawTabBackground()",
+   "baseline_first_diff": {
+    "orig": "+2 xor ecx, ecx",
+    "ours": "+2 xor edx, edx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN",
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x6bf110",
+   "name": "VectorClass_K_14::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VWaveClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VWaveClass",
+   "head": "int __stdcall _TClassFactory_VWaveClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bf290",
+   "name": "VectorClass_K_20::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTerrainTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VTerrainTypeClass",
+   "head": "int __stdcall _TClassFactory_VTerrainTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bf410",
+   "name": "VectorClass_K_26::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTerrainClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VTerrainClass",
+   "head": "int __stdcall _TClassFactory_VTerrainClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bf590",
+   "name": "VectorClass_K_32::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VSuperWeaponTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VSuperWeaponTypeClass",
+   "head": "int __stdcall _TClassFactory_VSuperWeaponTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bf710",
+   "name": "VectorClass_K_38::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VSuperClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VSuperClass",
+   "head": "int __stdcall _TClassFactory_VSuperClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bf890",
+   "name": "VectorClass_K_44::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTactical",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VTactical",
+   "head": "int __stdcall _TClassFactory_VTactical::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bfa10",
+   "name": "TClassFactory_CellClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VCellClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VCellClass",
+   "head": "int __stdcall _TClassFactory_VCellClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bfb90",
+   "name": "TClassFactory_EMPulseClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VEMPulseClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VEMPulseClass",
+   "head": "int __stdcall _TClassFactory_VEMPulseClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6bfd10",
+   "name": "TClassFactory_LightSourceClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VLightSourceClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VLightSourceClass",
+   "head": "int __stdcall _TClassFactory_VLightSourceClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c0190",
+   "name": "TClassFactory_CampaignClass::AdjustRefCOM",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTubeClass",
+   "method": "AdjustRefCOM",
+   "unit": "_TClassFactory_VTubeClass",
+   "head": "int __stdcall _TClassFactory_VTubeClass::AdjustRefCOM(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c0310",
+   "name": "TClassFactory_CampaignClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VCampaignClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VCampaignClass",
+   "head": "int __stdcall _TClassFactory_VCampaignClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  }
+ ]
+}
