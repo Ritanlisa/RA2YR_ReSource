@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f01b0 _VectorClass_PAVCampaignClass::QueryInterface -> _VectorClass_PAVCampaignClass
+[conv] 0x4f0520 _DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___ -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4f0890 _VectorClass_PAVUnitTypeClass::QueryInterface -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4f0c00 _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x50e7e0 _TypeList_PBVTeamTypeClass::Constructor -> _TypeList_PBVTeamTypeClass
+[conv] 0x510310 _VectorClass_PBVTeamTypeClass::Constructor_0 -> _VectorClass_PBVTeamTypeClass
+[conv] 0x5135c0 _DynamicVectorClass_PBVAircraftTypeClass::Constructor_1 -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x54a760 _DynamicVectorClass_PAG::Constructor -> _DynamicVectorClass_PAG
+[conv] 0x557170 _VectorClass_PAVLineTrail::QueryInterface -> _VectorClass_PAVLineTrail
+[conv] 0x58aae0 _DynamicVectorClass_W4PassabilityType::Constructor_1 -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x5ad610 _DynamicVectorClass_N::Constructor_VectorClass_double_ -> _DynamicVectorClass_N
+[conv] 0x5d1710 _DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_ -> _DynamicVectorClass_VPoint2D
+[conv] 0x5d2ca0 _VectorClass_PAVMSAnim::QueryInterface -> _VectorClass_PAVMSAnim
+[conv] 0x5d8900 _DynamicVectorClass_PAVMultiplayerGameMode::Destruct -> _DynamicVectorClass_PAVMultiplayerGameMode
+[conv] 0x6287b0 _DynamicVectorClass_VHSVClass::Destructor_2 -> _DynamicVectorClass_VHSVClass
+[conv] 0x63ee80 _DynamicVectorClass_PAVEventClass::Destructor_0 -> _DynamicVectorClass_PAVEventClass
+[conv] 0x664ac0 _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface -> _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67c0b0 _VectorClass_PBVSmudgeTypeClass::QueryInterface -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x6b1930 VectorClass::checkAIResources -> VectorClass
+[conv] 0x6c64d0 _DynamicVectorClass_K::Constructor -> _DynamicVectorClass_K
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVCampaignClass rc=2
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=2
+[era] _VectorClass_PAVUnitTypeClass rc=2
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=2
+[era] _TypeList_PBVTeamTypeClass rc=2
+[era] _VectorClass_PBVTeamTypeClass rc=2
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=2
+[era] _DynamicVectorClass_PAG  rc=2
+[era] _VectorClass_PAVLineTrail rc=2
+[era] _DynamicVectorClass_W4PassabilityType rc=2
+[era] _DynamicVectorClass_N    rc=2
+[era] _DynamicVectorClass_VPoint2D rc=2
+[era] _VectorClass_PAVMSAnim   rc=2
+[era] _DynamicVectorClass_PAVMultiplayerGameMode rc=2
+[era] _DynamicVectorClass_VHSVClass rc=2
+[era] _DynamicVectorClass_PAVEventClass rc=2
+[era] _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass rc=2
+[era] _VectorClass_PBVSmudgeTypeClass rc=2
+[era] VectorClass              rc=2
+[era] _DynamicVectorClass_K    rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4f01b0 VectorClass_ptr_CampaignClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f0520 VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f0890 VectorClass_ptr_UnitTypeClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f0c00 VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50e7e0 VectorClass_BuildingType::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x510310 VectorClass_BuildingType::Constructor_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5135c0 TypeList_Infantry::Constructor_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a760 IsometricTileTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557170 VectorClass_ptr_LineTrail::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58aae0 VectorClass_W4PassabilityType::Constructor_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad610 VectorClass_N::Constructor_VectorClass_double_ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1710 MSPCXAnim_42::Constructor_VectorClass_Point2D_ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2ca0 CampaignProperties_WorldDominationTour_22::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8900 MultiplayerModeVector2::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6287b0 DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ee80 BlowPipe_23::Destructor_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664ac0 RocketLocomotionClass_17::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c0b0 SmudgeTypeVector::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1930 AbstractClass::checkAIResources -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c64d0 VectorClass_K::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2159,
+ "verdicts": {
+  "MISMATCH": 592,
+  "MATCH": 520,
+  "COMPILE_FAIL": 550,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 484,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 189,
+  "ret_norm": 6,
+  "frame_sched": 65,
+  "const_fold": 66,
+  "branch_polarity": 41,
+  "regalloc": 97,
+  "branch_order": 70,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 22,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.8,
+ "match_rate_of_total_pct": 24.1,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p23\batch_report.json
