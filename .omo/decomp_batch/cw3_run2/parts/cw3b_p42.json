@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7d68fb",
+  "name": "__get_lc_lconv",
+  "cls": null,
+  "size": 290,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'fix_grouping_0' : cannot convert parameter 1 from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x4adba0",
+  "name": "ScenarioClass::ProcessGame",
+  "cls": null,
+  "size": 291,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x703590",
+  "name": "MapClass::FindPlacementCellsAlt",
+  "cls": null,
+  "size": 291,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x484050",
+  "name": "Tactical::CreateTacticalLightSurface",
+  "cls": null,
+  "size": 292,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x609cf0",
+  "name": "sub_609CF0",
+  "cls": null,
+  "size": 292,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x627170",
+  "name": "FileSystem::findFile",
+  "cls": null,
+  "size": 293,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x638e60",
+  "name": "SelectScriptNode",
+  "cls": null,
+  "size": 294,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x453240",
+  "name": "BuildingClass::TraverseBridgeSegments",
+  "cls": null,
+  "size": 296,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.scenario' must have class/struct/union type"
+ },
+ {
+  "addr": "0x425280",
+  "name": "AnimClass::SaveLoad_Prefix",
+  "cls": null,
+  "size": 297,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C4716",
+  "first_msg": "'AnimClass::SaveLoad_Prefix' : must return a value"
+ },
+ {
+  "addr": "0x7090a0",
+  "name": "TechnoClass::VoiceAttack",
+  "cls": null,
+  "size": 298,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.Size' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7759e0",
+  "name": "MessageDialogLoopAlt",
+  "cls": null,
+  "size": 300,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'hWnd' : undeclared identifier"
+ },
+ {
+  "addr": "0x402040",
+  "name": "AudioController::Constructor",
+  "cls": null,
+  "size": 302,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'AdvanceQueue' : is not a member of 'AudioController'"
+ },
+ {
+  "addr": "0x4a2cd0",
+  "name": "CStreamClass::CopyStreamToBuffer",
+  "cls": null,
+  "size": 302,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2371",
+  "first_msg": "'size_t' : redefinition"
+ },
+ {
+  "addr": "0x77bcb0",
+  "name": "sub_77BCB0",
+  "cls": null,
+  "size": 302,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DeleteAndZero' : undeclared identifier"
+ },
+ {
+  "addr": "0x4d0180",
+  "name": "DamageArea::CheckOccupancyEligibility",
+  "cls": null,
+  "size": 303,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,void *,int *)' : cannot convert parameter 1 from 'int (__stdcall ***  )(unsigned int,void"
+ },
+ {
+  "addr": "0x74fdc0",
+  "name": "GetModuleVersion",
+  "cls": null,
+  "size": 304,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'CHAR' : undeclared identifier"
+ },
+ {
+  "addr": "0x4ccb40",
+  "name": "JumpjetLocomotionClass::ProcessLocomotionStep",
+  "cls": null,
+  "size": 306,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x5d3a60",
+  "name": "MessageListClass::Init",
+  "cls": null,
+  "size": 306,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'memset32' : cannot convert parameter 1 from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x645660",
+  "name": "ParticleTypeClass::SaveLoad_Prefix",
+  "cls": null,
+  "size": 308,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'TypeList' : undeclared identifier"
+ },
+ {
+  "addr": "0x46ae70",
+  "name": "BulletClass::SaveLoad_Prefix",
+  "cls": null,
+  "size": 309,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ }
+]

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p42\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d68fb __get_lc_lconv -> _addr_7D
+[conv] 0x4adba0 ScenarioClass::ProcessGame -> ScenarioClass
+[conv] 0x703590 MapClass::FindPlacementCellsAlt -> MapClass
+[conv] 0x484050 Tactical::CreateTacticalLightSurface -> Tactical
+[conv] 0x609cf0 sub_609CF0 -> _addr_60
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x638e60 ObjectClass::SelectScriptNode -> ObjectClass
+[conv] 0x453240 BuildingClass::TraverseBridgeSegments -> BuildingClass
+[conv] 0x425280 AnimClass::SaveLoad_Prefix -> AnimClass
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x7759e0 MessageDialogLoopAlt -> _addr_77
+[conv] 0x402040 AudioController::Constructor -> AudioController
+[conv] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> CStreamClass
+[conv] 0x77bcb0 sub_77BCB0 -> _addr_77
+[conv] 0x4d0180 DamageArea::CheckOccupancyEligibility -> DamageArea
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x4ccb40 FlyLocomotionClass::ProcessLocomotionStep -> FlyLocomotionClass
+[conv] 0x5d3a60 MessageListClass::Init -> MessageListClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x46ae70 BulletClass::SaveLoad_Prefix -> BulletClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7D                 rc=2
+[era] ScenarioClass            rc=2
+[era] MapClass                 rc=2
+[era] Tactical                 rc=2
+[era] _addr_60                 rc=2
+[era] FileSystem               rc=2
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=2
+[era] AnimClass                rc=2
+[era] TechnoClass              rc=2
+[era] _addr_77                 rc=2
+[era] AudioController          rc=2
+[era] CStreamClass             rc=2
+[era] DamageArea               rc=2
+[era] _addr_74                 rc=2
+[era] FlyLocomotionClass       rc=2
+[era] MessageListClass         rc=2
+[era] ParticleTypeClass        rc=2
+[era] BulletClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x638e60   MISMATCH         ObjectClass::SelectScriptNode
+[ledger] 0x7d68fb __get_lc_lconv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4adba0 ScenarioClass::ProcessGame -> COMPILE_FAIL (attempt 13)
+[ledger] 0x703590 MapClass::FindPlacementCellsAlt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x484050 Tactical::CreateTacticalLightSurface -> COMPILE_FAIL (attempt 11)
+[ledger] 0x609cf0 sub_609CF0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 3)
+[ledger] 0x638e60 ObjectClass::SelectScriptNode -> NG (attempt 3)
+[ledger] 0x453240 BuildingClass::TraverseBridgeSegments -> COMPILE_FAIL (attempt 3)
+[ledger] 0x425280 AnimClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 3)
+[ledger] 0x402040 AudioController::Constructor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4a2cd0 CStreamClass::CopyStreamToBuffer -> COMPILE_FAIL (attempt 11)
+[ledger] 0x77bcb0 sub_77BCB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4d0180 DamageArea::CheckOccupancyEligibility -> COMPILE_FAIL (attempt 3)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4ccb40 FlyLocomotionClass::ProcessLocomotionStep -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5d3a60 MessageListClass::Init -> COMPILE_FAIL (attempt 3)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46ae70 BulletClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p42\batch_report.json
