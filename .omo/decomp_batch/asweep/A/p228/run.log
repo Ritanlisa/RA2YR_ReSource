@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p228\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d2900 _VectorClass_PAVMSAnim::Read -> _VectorClass_PAVMSAnim
+[conv] 0x5d2b60 _VectorClass_PAVMSSfx::GetSize -> _VectorClass_PAVMSSfx
+[conv] 0x5d5270 _VectorClass_PAUHWND::Create -> _VectorClass_PAUHWND
+[conv] 0x5d8410 _VectorClass_PAVMultiplayerTeam::GetSize -> _VectorClass_PAVMultiplayerTeam
+[conv] 0x5d8670 VectorClass::initLocalVariables -> VectorClass
+[conv] 0x5f9ca0 _VectorClass_PAVObjectTypeClass::GetSize -> _VectorClass_PAVObjectTypeClass
+[conv] 0x600140 _VectorClass_PAVSpotLightClass::GetSize -> _VectorClass_PAVSpotLightClass
+[conv] 0x62b1f0 _VectorClass_PAVParasiteClass::GetSize -> _VectorClass_PAVParasiteClass
+[conv] 0x63de60 _VectorClass_PAVPlanningMemberClass::GetSize -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e170 _VectorClass_PAVPlanningBranchClass::GetSize -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x63e430 _VectorClass_PAVPlanningNodeClass::FindItemIndex -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e770 _VectorClass_PAVEventClass::Read -> _VectorClass_PAVEventClass
+[conv] 0x63ea70 _VectorClass_PAVPlanningTokenClass::GetSize -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x65a360 _VectorClass_PAVRadBeam::GetSize -> _VectorClass_PAVRadBeam
+[conv] 0x65c070 _VectorClass_PAVRadSiteClass::GetSize -> _VectorClass_PAVRadSiteClass
+[conv] 0x660e00 _VectorClass_PAVRadarEventClass::GetSize -> _VectorClass_PAVRadarEventClass
+[conv] 0x67ac10 _VectorClass_PBVVoxelAnimTypeClass::IndexOf -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67af90 _VectorClass_PBVSmudgeTypeClass::AddSmudge -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67b310 _VectorClass_PBVTerrainTypeClass::IndexOf -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x69c830 _VectorClass_W4DiskID::findPlayer -> _VectorClass_W4DiskID
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVMSAnim   rc=2
+[era] _VectorClass_PAVMSSfx    rc=2
+[era] _VectorClass_PAUHWND     rc=2
+[era] _VectorClass_PAVMultiplayerTeam rc=2
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVObjectTypeClass rc=2
+[era] _VectorClass_PAVSpotLightClass rc=2
+[era] _VectorClass_PAVParasiteClass rc=2
+[era] _VectorClass_PAVPlanningMemberClass rc=2
+[era] _VectorClass_PAVPlanningBranchClass rc=2
+[era] _VectorClass_PAVPlanningNodeClass rc=2
+[era] _VectorClass_PAVEventClass rc=2
+[era] _VectorClass_PAVPlanningTokenClass rc=2
+[era] _VectorClass_PAVRadBeam  rc=2
+[era] _VectorClass_PAVRadSiteClass rc=2
+[era] _VectorClass_PAVRadarEventClass rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PBVSmudgeTypeClass rc=2
+[era] _VectorClass_PBVTerrainTypeClass rc=2
+[era] _VectorClass_W4DiskID    rc=2
+=== diffasm byte-compare ===
+[diff] 0x5d8670   MISMATCH         VectorClass::initLocalVariables
+[ledger] 0x5d2900 _VectorClass_PAVMSAnim::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2b60 _VectorClass_PAVMSSfx::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5270 _VectorClass_PAUHWND::Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8410 _VectorClass_PAVMultiplayerTeam::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8670 VectorClass::initLocalVariables -> NG (attempt 1)
+[ledger] 0x5f9ca0 _VectorClass_PAVObjectTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x600140 _VectorClass_PAVSpotLightClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62b1f0 _VectorClass_PAVParasiteClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63de60 _VectorClass_PAVPlanningMemberClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e170 _VectorClass_PAVPlanningBranchClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e430 _VectorClass_PAVPlanningNodeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e770 _VectorClass_PAVEventClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ea70 _VectorClass_PAVPlanningTokenClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a360 _VectorClass_PAVRadBeam::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c070 _VectorClass_PAVRadSiteClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660e00 _VectorClass_PAVRadarEventClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67ac10 _VectorClass_PBVVoxelAnimTypeClass::IndexOf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67af90 _VectorClass_PBVSmudgeTypeClass::AddSmudge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b310 _VectorClass_PBVTerrainTypeClass::IndexOf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c830 _VectorClass_W4DiskID::findPlayer -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p228\batch_report.json
