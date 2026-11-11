@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p153\part_00
+=== convert (20 addrs) ===
+[conv] 0x629170 sub_629170 -> _addr_62
+[conv] 0x62b5c0 sub_62B5C0 -> _addr_62
+[conv] 0x62dc30 sub_62DC30 -> _addr_62
+[conv] 0x6302f0 sub_6302F0 -> _addr_63
+[conv] 0x630980 sub_630980 -> _addr_63
+[conv] 0x6335c0 sub_6335C0 -> _addr_63
+[conv] 0x633ae0 ObjectClass::sub_633AE0 -> ObjectClass
+[conv] 0x6404d0 sub_6404D0 -> _addr_64
+[conv] 0x642770 sub_642770 -> _addr_64
+[conv] 0x646c70 sub_646C70 -> _addr_64
+[conv] 0x659070 sub_659070 -> _addr_65
+[conv] 0x65a730 sub_65A730 -> _addr_65
+[conv] 0x65b140 sub_65B140 -> _addr_65
+[conv] 0x65d8b0 sub_65D8B0 -> _addr_65
+[conv] 0x65f310 sub_65F310 -> _addr_65
+[conv] 0x661ea0 sub_661EA0 -> _addr_66
+[conv] 0x6637e0 sub_6637E0 -> _addr_66
+[conv] 0x664d00 sub_664D00 -> _addr_66
+[conv] 0x67c480 sub_67C480 -> _addr_67
+[conv] 0x683260 sub_683260 -> _addr_68
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_64                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_66                 rc=0
+[era] _addr_67                 rc=0
+[era] _addr_68                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x629170   MATCH            sub_629170
+[diff] 0x62b5c0   MATCH            sub_62B5C0
+[diff] 0x62dc30   MATCH            sub_62DC30
+[diff] 0x6302f0   MATCH            sub_6302F0
+[diff] 0x630980   MATCH            sub_630980
+[diff] 0x6335c0   MATCH            sub_6335C0
+[diff] 0x6404d0   MATCH            sub_6404D0
+[diff] 0x642770   MATCH            sub_642770
+[diff] 0x646c70   MATCH            sub_646C70
+[diff] 0x659070   MATCH            sub_659070
+[diff] 0x65a730   MATCH            sub_65A730
+[diff] 0x65b140   MATCH            sub_65B140
+[diff] 0x65d8b0   MATCH            sub_65D8B0
+[diff] 0x65f310   MATCH            sub_65F310
+[diff] 0x661ea0   MATCH            sub_661EA0
+[diff] 0x6637e0   MATCH            sub_6637E0
+[diff] 0x664d00   MATCH            sub_664D00
+[diff] 0x67c480   MATCH            sub_67C480
+[diff] 0x683260   MATCH            sub_683260
+[ledger] 0x629170 sub_629170 -> OK (attempt 1)
+[ledger] 0x62b5c0 sub_62B5C0 -> OK (attempt 1)
+[ledger] 0x62dc30 sub_62DC30 -> OK (attempt 1)
+[ledger] 0x6302f0 sub_6302F0 -> OK (attempt 1)
+[ledger] 0x630980 sub_630980 -> OK (attempt 1)
+[ledger] 0x6335c0 sub_6335C0 -> OK (attempt 1)
+[ledger] 0x633ae0 ObjectClass::sub_633AE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6404d0 sub_6404D0 -> OK (attempt 1)
+[ledger] 0x642770 sub_642770 -> OK (attempt 1)
+[ledger] 0x646c70 sub_646C70 -> OK (attempt 1)
+[ledger] 0x659070 sub_659070 -> OK (attempt 1)
+[ledger] 0x65a730 sub_65A730 -> OK (attempt 1)
+[ledger] 0x65b140 sub_65B140 -> OK (attempt 1)
+[ledger] 0x65d8b0 sub_65D8B0 -> OK (attempt 1)
+[ledger] 0x65f310 sub_65F310 -> OK (attempt 1)
+[ledger] 0x661ea0 sub_661EA0 -> OK (attempt 1)
+[ledger] 0x6637e0 sub_6637E0 -> OK (attempt 1)
+[ledger] 0x664d00 sub_664D00 -> OK (attempt 1)
+[ledger] 0x67c480 sub_67C480 -> OK (attempt 1)
+[ledger] 0x683260 sub_683260 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p153\batch_report.json
