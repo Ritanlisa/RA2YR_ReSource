@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x773e90 WebBrowser::ShowDialog -> WebBrowser
+[conv] 0x507f60 HouseClass::CollectAircraftBuildCandidates -> HouseClass
+[conv] 0x457aa0 BuildingClass::CreateFoggedObjects -> BuildingClass
+[conv] 0x512290 HouseTypeClass::SaveLoad_Prefix -> HouseTypeClass
+[conv] 0x4fc9e0 HouseClass::CheckWinCondition -> HouseClass
+[conv] 0x7712c0 ScoreScreen::RemoveItem -> ScoreScreen
+[conv] 0x565800 MapClass::Destru_vt05 -> MapClass
+[conv] 0x50a150 HouseClass::Fire_PsyDom -> HouseClass
+[conv] 0x610950 TriggerClass::FindByEventType -> TriggerClass
+[conv] 0x528c00 INIClass::ReadString -> INIClass
+[conv] 0x5098f0 HouseClass::UpdateAITryFireSW -> HouseClass
+[conv] 0x5a33f0 ObjectClass::GenerateTerrainHeightMapInternal -> ObjectClass
+[conv] 0x7cf125 _usepowhlp -> _addr_7C
+[conv] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> ScenarioClass
+[conv] 0x5cca20 MSVQAnim::Construct -> MSVQAnim
+[conv] 0x738680 TechnoClass::CreateDeathAnim -> TechnoClass
+[conv] 0x5f4520 ObjectClass::HandleSelection -> ObjectClass
+[conv] 0x5c6dd0 MultiplyAddBigInteger -> _addr_5C
+[conv] 0x754510 Voxel::RenderFrame -> Voxel
+[conv] 0x5f5940 IUnknown::ParachuteDrop -> IUnknown
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WebBrowser               rc=2
+[era] HouseClass               rc=2
+[era] BuildingClass            rc=2
+[era] HouseTypeClass           rc=2
+[era] ScoreScreen              rc=2
+[era] MapClass                 rc=2
+[era] TriggerClass             rc=2
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] ScenarioClass            rc=2
+[era] MSVQAnim                 rc=2
+[era] TechnoClass              rc=2
+[era] _addr_5C                 rc=2
+[era] Voxel                    rc=0
+[era] IUnknown                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x507f60   MISMATCH         HouseClass::CollectAircraftBuildCandidates
+[diff] 0x754510   MISMATCH         Voxel::RenderFrame
+[ledger] 0x773e90 WebBrowser::ShowDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x507f60 HouseClass::CollectAircraftBuildCandidates -> NG (attempt 2)
+[ledger] 0x457aa0 BuildingClass::CreateFoggedObjects -> COMPILE_FAIL (attempt 2)
+[ledger] 0x512290 HouseTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4fc9e0 HouseClass::CheckWinCondition -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7712c0 ScoreScreen::RemoveItem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x565800 MapClass::Destru_vt05 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x50a150 HouseClass::Fire_PsyDom -> COMPILE_FAIL (attempt 2)
+[ledger] 0x610950 TriggerClass::FindByEventType -> COMPILE_FAIL (attempt 2)
+[ledger] 0x528c00 INIClass::ReadString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5098f0 HouseClass::UpdateAITryFireSW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5a33f0 ObjectClass::GenerateTerrainHeightMapInternal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf125 _usepowhlp -> COMPILE_FAIL (attempt 3)
+[ledger] 0x689470 ScenarioClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cca20 MSVQAnim::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x738680 TechnoClass::CreateDeathAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f4520 ObjectClass::HandleSelection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c6dd0 MultiplyAddBigInteger -> COMPILE_FAIL (attempt 3)
+[ledger] 0x754510 Voxel::RenderFrame -> NG (attempt 2)
+[ledger] 0x5f5940 IUnknown::ParachuteDrop -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p48\batch_report.json

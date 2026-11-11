@@ -9902,11 +9902,16 @@
   "this_as_id": false
  },
  "0x457aa0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "BuildingClass::CreateFoggedObjects",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BuildingClass::CreateFoggedObjects",
+  "rule_violations": 13,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4581f0": {
   "attempts": 5,
@@ -29009,11 +29014,16 @@
   "this_as_id": false
  },
  "0x4fc9e0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::CheckWinCondition",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::CheckWinCondition",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4fce00": {
   "attempts": 1,
@@ -29224,11 +29234,16 @@
   "status": "OK"
  },
  "0x507f60": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x1c",
   "name": "HouseClass::CollectAircraftBuildCandidates",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "HouseClass::CollectAircraftBuildCandidates",
+  "rule_violations": 16,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5090f0": {
   "attempts": 1,
@@ -29279,11 +29294,16 @@
   "this_as_id": false
  },
  "0x5098f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseClass::UpdateAITryFireSW",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::UpdateAITryFireSW",
+  "rule_violations": 9,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x509b20": {
   "attempts": 6,
@@ -29323,11 +29343,16 @@
   "this_as_id": false
  },
  "0x50a150": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "HouseClass::Fire_PsyDom",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::Fire_PsyDom",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50a490": {
   "attempts": 1,
@@ -30773,11 +30798,16 @@
   "status": "OK"
  },
  "0x512290": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "HouseTypeClass::SaveLoad_Prefix",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseTypeClass::SaveLoad_Prefix",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x512570": {
   "attempts": 1,
@@ -32150,11 +32180,16 @@
   "status": "NG"
  },
  "0x528c00": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "INIClass::ReadString",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "INIClass::ReadString",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5295a0": {
   "attempts": 2,
@@ -39221,11 +39256,16 @@
   "this_as_id": false
  },
  "0x565800": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MapClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MapClass::Destru_vt05",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x565b00": {
   "attempts": 14,
@@ -41049,11 +41089,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x5a33f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "GenerateTerrainHeightMapInternal",
+  "name": "ObjectClass::GenerateTerrainHeightMapInternal",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "GenerateTerrainHeightMapInternal",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5a4fa0": {
   "attempts": 2,
@@ -45227,11 +45272,15 @@
   "this_as_id": false
  },
  "0x5c6dd0": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "MultiplyAddBigInteger",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MultiplyAddBigInteger",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c71e0": {
   "attempts": 2,
@@ -46063,11 +46112,16 @@
   "status": "NG"
  },
  "0x5cca20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSVQAnim::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MSVQAnim::Construct",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5cd0e0": {
   "attempts": 10,
@@ -49787,11 +49841,16 @@
   "this_as_id": false
  },
  "0x5f4520": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ObjectClass::HandleSelection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::HandleSelection",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f4730": {
   "attempts": 10,
@@ -49837,11 +49896,16 @@
   "this_as_id": false
  },
  "0x5f5940": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "ObjectClass::ParachuteDrop",
+  "name": "IUnknown::ParachuteDrop",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::ParachuteDrop",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f5b50": {
   "attempts": 1,
@@ -51330,11 +51394,16 @@
   "this_as_id": false
  },
  "0x610950": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TriggerClass::FindByEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TriggerClass::FindByEventType",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x610bf0": {
   "attempts": 2,
@@ -59453,11 +59522,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x689470": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScenarioClass::SaveLoad_Prefix_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScenarioClass::SaveLoad_Prefix_0",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6896c0": {
   "attempts": 5,
@@ -76924,11 +76998,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x738680": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::CreateDeathAnim",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TechnoClass::CreateDeathAnim",
+  "rule_violations": 8,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x738d30": {
   "attempts": 1,
@@ -78968,11 +79047,16 @@
   "this_as_id": false
  },
  "0x754510": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x34",
   "name": "Voxel::RenderFrame",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "Voxel::RenderFrame",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x754740": {
   "attempts": 1,
@@ -83015,11 +83099,16 @@
   "this_as_id": false
  },
  "0x7712c0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScoreScreen::RemoveItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScoreScreen::RemoveItem",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7714b0": {
   "attempts": 2,
@@ -83453,11 +83542,16 @@
   "status": "OK"
  },
  "0x773e90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "WebBrowser::ShowDialog",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WebBrowser::ShowDialog",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x774070": {
   "attempts": 1,
@@ -88584,7 +88678,7 @@
   "this_as_id": false
  },
  "0x7cf125": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "_usepowhlp",
