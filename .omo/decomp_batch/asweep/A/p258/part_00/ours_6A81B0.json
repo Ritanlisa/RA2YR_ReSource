@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearProductionQueue@HouseClass@@QAEPAIXZ",
+ "sym_key": "HouseClass::ClearProductionQueue",
+ "size": 99,
+ "link_base": 0,
+ "bytes_hex": "518b413c538b5c240425ff0000ff5633d25789413c8b8180000000c74140ffffffff89514489514c895154bf4b0000008950d88950dc8950e08950e48950e88b35000000008d48f4891083c0344f89318959048951088950b88950d475d25f5e5b59c3",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

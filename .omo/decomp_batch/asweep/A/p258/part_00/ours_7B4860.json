@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetCapacity@VectorClass_Wstring@@QAE_NPAPBD@Z",
+ "sym_key": "VectorClass_Wstring::SetCapacity",
+ "size": 143,
+ "link_base": 0,
+ "bytes_hex": "8a09568bc125ff00000084c98b008b4c2408751883390075138b44240833c924005e85c00f95c18ac1c2040085c0744a8b3185f67444538a108a1e8aca3ad3751e84c974168a50018a5e018aca3ad3750e83c00283c60284c975dc33c0eb051bc083d8ff85c05b7419240133c90c015e85c00f95c18ac1c204008b44240824010c0133c95e85c00f95c18ac1c20400",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C9380",
+ "name": "__aulldiv",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C9380",
+ "bytes_hex": "53568b4424180bc075188b4c24148b44241033d2f7f18bd88b44240cf7f18bd3eb418bc88b5c24148b5424108b44240cd1e9d1dbd1ead1d80bc975f4f7f38bf0f76424188bc88b442414f7e603d1720e3b542410770872073b44240c76014e33d28bc65e5bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

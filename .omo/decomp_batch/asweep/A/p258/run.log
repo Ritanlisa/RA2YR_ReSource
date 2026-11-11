@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p258\part_00
+=== convert (20 addrs) ===
+[conv] 0x753bf0 sub_753BF0 -> _addr_75
+[conv] 0x7b4710 String::Equals_Alt -> String
+[conv] 0x7b47f0 String::NotEquals -> String
+[conv] 0x4202f0 ObjectClass::sub_4202F0 -> ObjectClass
+[conv] 0x5bd360 Debug_Helper -> Debug
+[conv] 0x661640 sub_661640 -> _addr_66
+[conv] 0x6a81b0 HouseClass::ClearProductionQueue -> HouseClass
+[conv] 0x6b93e0 ObjectClass::sub_6B93E0 -> ObjectClass
+[conv] 0x7c5fff Event_Process_7C5FFF -> Event_Process
+[conv] 0x5accc0 _VectorClass_V_TRect_H::AddRef -> _VectorClass_V_TRect_H
+[conv] 0x7b4780 String::Compare -> String
+[conv] 0x7b4860 VectorClass_Wstring::SetCapacity -> VectorClass_Wstring
+[conv] 0x69b600 NetworkSession::IsPlayerInGame -> NetworkSession
+[conv] 0x4d3710 FootClass::Destru_vt337 -> FootClass
+[conv] 0x565730 Coord::To_Cell -> Coord
+[conv] 0x70ed10 TechnoClass::Update2 -> TechnoClass
+[conv] 0x7c9380 __aulldiv -> _addr_7C
+[conv] 0x4e3830 CountryCombo::IDToIndex -> CountryCombo
+[conv] 0x4e4230 StartCombo::IDToIndex -> StartCombo
+[conv] 0x4e4ec0 Dialog::SideIDToIndex -> Dialog
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_75                 rc=2
+[era] String                   rc=0
+[era] ObjectClass              rc=2
+[era] Debug                    rc=0
+[era] _addr_66                 rc=2
+[era] HouseClass               rc=0
+[era] Event_Process            rc=2
+[era] _VectorClass_V_TRect_H   rc=2
+[era] VectorClass_Wstring      rc=0
+[era] NetworkSession           rc=0
+[era] FootClass                rc=0
+[era] Coord                    rc=2
+[era] TechnoClass              rc=0
+[era] _addr_7C                 rc=0
+[era] CountryCombo             rc=0
+[era] StartCombo               rc=0
+[era] Dialog                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b4710   MISMATCH         String::Equals_Alt
+[diff] 0x7b47f0   MISMATCH         String::NotEquals
+[diff] 0x7b4780   MISMATCH         String::Compare
+[diff] 0x6b93e0   MISMATCH         ObjectClass::sub_6B93E0
+[diff] 0x5bd360   MISMATCH         Debug_Helper
+[diff] 0x6a81b0   MISMATCH         HouseClass::ClearProductionQueue
+[diff] 0x7b4860   MISMATCH         VectorClass_Wstring::SetCapacity
+[diff] 0x69b600   MISMATCH         NetworkSession::IsPlayerInGame
+[diff] 0x4d3710   MISMATCH         FootClass::Destru_vt337
+[diff] 0x70ed10   MISMATCH         TechnoClass::Update2
+[diff] 0x7c9380   MISMATCH         __aulldiv
+[diff] 0x4e3830   MISMATCH         CountryCombo::IDToIndex
+[diff] 0x4e4230   MISMATCH         StartCombo::IDToIndex
+[diff] 0x4e4ec0   MISMATCH         Dialog::SideIDToIndex
+[ledger] 0x753bf0 sub_753BF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4710 String::Equals_Alt -> NG (attempt 1)
+[ledger] 0x7b47f0 String::NotEquals -> NG (attempt 1)
+[ledger] 0x4202f0 ObjectClass::sub_4202F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd360 Debug_Helper -> NG (attempt 1)
+[ledger] 0x661640 sub_661640 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a81b0 HouseClass::ClearProductionQueue -> NG (attempt 1)
+[ledger] 0x6b93e0 ObjectClass::sub_6B93E0 -> NG (attempt 1)
+[ledger] 0x7c5fff Event_Process_7C5FFF -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5accc0 _VectorClass_V_TRect_H::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4780 String::Compare -> NG (attempt 1)
+[ledger] 0x7b4860 VectorClass_Wstring::SetCapacity -> NG (attempt 1)
+[ledger] 0x69b600 NetworkSession::IsPlayerInGame -> NG (attempt 1)
+[ledger] 0x4d3710 FootClass::Destru_vt337 -> NG (attempt 1)
+[ledger] 0x565730 Coord::To_Cell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70ed10 TechnoClass::Update2 -> NG (attempt 1)
+[ledger] 0x7c9380 __aulldiv -> NG (attempt 1)
+[ledger] 0x4e3830 CountryCombo::IDToIndex -> NG (attempt 1)
+[ledger] 0x4e4230 StartCombo::IDToIndex -> NG (attempt 1)
+[ledger] 0x4e4ec0 Dialog::SideIDToIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "branch_polarity": 3,
+  "codegen_shape": 6,
+  "regalloc": 3,
+  "width_mismatch": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p258\batch_report.json

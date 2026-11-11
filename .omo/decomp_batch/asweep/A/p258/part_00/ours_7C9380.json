@@ -1,0 +1,45 @@
+{
+ "symbol": "?__aulldiv@@YAI_K_J@Z",
+ "sym_key": "Unnamed::__aulldiv",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "558b6c241485ed560f84850000008b7424148b44240c8b54241053578bdd8acb80e1010fbec9c1e11fd1ee0bf1b901000000d1ebe80000000085db75e153565250e8000000008b5c241c33ff8bf057565753e800000000528bd60fafd55289442424e80000000083c40885c0751d55535756e8000000003b542418720f770c8b44241c8b4c24143bc176014e5f8bc65b5e5dc38b4424108b74241433d28b4c240cf7f66a00565251e8000000005e5dc3",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "__aullshr",
+   "sym_key": "_aullshr"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "__aulldiv",
+   "sym_key": "_aulldiv"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "?__CFADD__@@YAHHHZZ",
+   "sym_key": "__CFADD__"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "__allmul",
+   "sym_key": "_allmul"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "__aulldiv",
+   "sym_key": "_aulldiv"
+  }
+ ]
+}

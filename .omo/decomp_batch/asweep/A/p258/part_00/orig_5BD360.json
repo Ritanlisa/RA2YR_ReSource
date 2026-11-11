@@ -1,0 +1,11 @@
+{
+ "addr": "0x5BD360",
+ "name": "Debug_Helper",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5BD360",
+ "bytes_hex": "8a4424043c0a7505b020c204003cb37505b07cc204003cc47505b02dc204003ccd7505b03dc204003cda74343cc274303cbf742c3cc674283cc374243cd174203cc5741c3cd874183cb574143cc074103cc1740c3cd974083cd574043cb47502b02bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B4780",
+ "name": "String::Compare",
+ "size": 102,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B4780",
+ "bytes_hex": "8b018b4c240485c056750b8339007506b0015ec2040085c074468b3185f67440538a108a1e8aca3ad3752684c974168a50018a5e018aca3ad3751683c00283c60284c975dc33c05b85c00f94c05ec204001bc05b83d8ff5e85c00f94c0c2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A81B0",
+ "name": "HouseClass::ClearProductionQueue",
+ "size": 101,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A81B0",
+ "bytes_hex": "83ec0c33d288513e88513f5356578b7c241088513dc74140ffffffff89514489514c8951548d8180000000be4b0000008950d88950dc8950e08950e48950e88b0d84eda8008d58f4891083c0344e890b897b048953088950b88950d475d25f5e5b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

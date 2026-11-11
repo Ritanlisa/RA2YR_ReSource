@@ -1,0 +1,21 @@
+{
+ "symbol": "?Destru_vt337@FootClass@@QAEXN@Z",
+ "sym_key": "FootClass::Destru_vt337",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "dd442404dc1d00000000dfe0f6c4017439dd442404dc1d00000000dfe0f6c44175178b4424048b54240889817805000089917c050000c2080033c089817805000089817c050000c20800c7817805000000000000c7817c0500000000f03fc20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

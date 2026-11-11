@@ -1,0 +1,11 @@
+{
+ "addr": "0x70ED10",
+ "name": "TechnoClass::Update2",
+ "size": 104,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70ED10",
+ "bytes_hex": "8b411833d23bc2745ed94110d84114568b711c4e89711c3bf2d959145e7f4848740d48741f48753f895118895114c38b410cc741180200000083f80189411c8951107f238b4108c741180300000083f80189411c7d07c7411c01000000db01da711cd9e0d95910c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

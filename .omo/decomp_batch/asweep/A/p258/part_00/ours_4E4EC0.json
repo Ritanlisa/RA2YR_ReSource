@@ -1,0 +1,8 @@
+{
+ "symbol": "?SideIDToIndex@Dialog@@QAEEXZ",
+ "sym_key": "Dialog::SideIDToIndex",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "81f9a3060000750332c0c381f9a40600007503b001c381f9a50600007503b002c381f9a60600007503b003c381f9a70600007503b004c381f9a80600007503b005c381f9aa0600007503b006c333c081f9ab0600000f95c0f7d824f883c007c3",
+ "relocs": []
+}

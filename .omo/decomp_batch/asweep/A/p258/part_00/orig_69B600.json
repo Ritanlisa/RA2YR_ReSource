@@ -1,0 +1,11 @@
+{
+ "addr": "0x69B600",
+ "name": "NetworkSession::IsPlayerInGame",
+ "size": 103,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69B600",
+ "bytes_hex": "558b6c24085683fdfe57744b8bb94c28000033d285ff7e2a8bb1402800008b06837857fe750d837853ff7507b8feffffffeb038b40533bc574254283c6043bd77cdc33c081c184000000392974114083c10483f8087cf35f5e32c05dc204005f5eb0015dc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

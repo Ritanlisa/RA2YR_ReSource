@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsPlayerInGame@NetworkSession@@QAEDH@Z",
+ "sym_key": "NetworkSession::IsPlayerInGame",
+ "size": 110,
+ "link_base": 0,
+ "bytes_hex": "538b5c24085683fbfe5775085f5e32c05bc204008bb94c28000033d285ff7e2a8bb1402800008b06837857fe750d837853ff7507b8feffffffeb038b40533bc374244283c6043bd77cdc8d818400000033d2391874104283fa087db08b480483c0043bcb75f05f5eb0015bc20400",
+ "relocs": []
+}

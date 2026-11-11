@@ -1,0 +1,21 @@
+{
+ "symbol": "?Debug_Helper@@YGDD@Z",
+ "sym_key": "Unnamed::Debug_Helper",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8a4424040fbec883c14d83f957772533d28a9100000000ff249500000000b020c20400b07cc20400b02dc20400b03dc20400b02bc20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1803",
+   "sym_key": "$L1803"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "$L1804",
+   "sym_key": "$L1804"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E3830",
+ "name": "CountryCombo::IDToIndex",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E3830",
+ "bytes_hex": "8bc13da1060000750333c0c33d100500007506b801000000c33d130500007506b802000000c33d1e0500007506b803000000c33d140500007506b804000000c33d1f0500007506b805000000c33d200500007506b806000000c32d21050000f7d81bc024f883c007c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
