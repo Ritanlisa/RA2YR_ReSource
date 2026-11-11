@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x71abc0 FactoryClass::CompleteItem -> FactoryClass
+[conv] 0x5e2be0 Network::CountDisconnectedHouses -> Network
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> TriggerClass
+[conv] 0x664440 EventClass::validateEventType -> EventClass
+[conv] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> ObjectClass
+[conv] 0x6a6a00 CreateTeamCommand::performAction_245 -> CreateTeamCommand
+[conv] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> _CComObject_VCDownloadEventSink_ATL
+[conv] 0x542520 IPXManagerClass::ProcessQueue -> IPXManagerClass
+[conv] 0x6b5f80 Cell::IsWalkable -> Cell
+[conv] 0x47c3d0 Object::FindClosestObjectCell -> Object
+[conv] 0x6d8530 DisplayClass::ScrollTacticalView -> DisplayClass
+[conv] 0x7170a0 TechnoTypeClass::DeserializeArrays -> TechnoTypeClass
+[conv] 0x4ba5a0 DSurface::Construct -> DSurface
+[conv] 0x626690 FlagSystem::GetNextActive -> FlagSystem
+[conv] 0x5a7e90 Object_Helper_5A7E90 -> Object_Helper
+[conv] 0x661850 Random::AdvanceRandomBytes -> Random
+[conv] 0x5c2de0 MPCooperative::selectTeam -> MPCooperative
+[conv] 0x69deb0 ShapeButtonClass::Draw -> ShapeButtonClass
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FactoryClass             rc=2
+[era] Network                  rc=0
+[era] PlayerClass              rc=2
+[era] TriggerClass             rc=2
+[era] EventClass               rc=2
+[era] ObjectClass              rc=2
+[era] CreateTeamCommand        rc=2
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+[era] IPXManagerClass          rc=2
+[era] Cell                     rc=2
+[era] Object                   rc=0
+[era] DisplayClass             rc=2
+[era] TechnoTypeClass          rc=0
+[era] DSurface                 rc=2
+[era] FlagSystem               rc=2
+[era] Object_Helper            rc=2
+[era] Random                   rc=0
+[era] MPCooperative            rc=2
+[era] ShapeButtonClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x5e2be0   MISMATCH         Network::CountDisconnectedHouses
+[diff] 0x47c3d0   MISMATCH         Object::FindClosestObjectCell
+[diff] 0x7170a0   MISMATCH         TechnoTypeClass::DeserializeArrays
+[diff] 0x661850   MISMATCH         Random::AdvanceRandomBytes
+[ledger] 0x71abc0 FactoryClass::CompleteItem -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5e2be0 Network::CountDisconnectedHouses -> NG (attempt 10)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 2)
+[ledger] 0x509610 TriggerClass::ValidateTeamTriggerConditions -> COMPILE_FAIL (attempt 10)
+[ledger] 0x664440 EventClass::validateEventType -> COMPILE_FAIL (attempt 10)
+[ledger] 0x74d670 ObjectClass::IsCellSuitableForPlacement -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6a6a00 CreateTeamCommand::performAction_245 -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x542520 IPXManagerClass::ProcessQueue -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6b5f80 Cell::IsWalkable -> COMPILE_FAIL (attempt 13)
+[ledger] 0x47c3d0 Object::FindClosestObjectCell -> NG (attempt 2)
+[ledger] 0x6d8530 DisplayClass::ScrollTacticalView -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7170a0 TechnoTypeClass::DeserializeArrays -> NG (attempt 2)
+[ledger] 0x4ba5a0 DSurface::Construct -> COMPILE_FAIL (attempt 10)
+[ledger] 0x626690 FlagSystem::GetNextActive -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5a7e90 Object_Helper_5A7E90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x661850 Random::AdvanceRandomBytes -> NG (attempt 12)
+[ledger] 0x5c2de0 MPCooperative::selectTeam -> COMPILE_FAIL (attempt 10)
+[ledger] 0x69deb0 ShapeButtonClass::Draw -> COMPILE_FAIL (attempt 13)
+[ledger] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p28\batch_report.json

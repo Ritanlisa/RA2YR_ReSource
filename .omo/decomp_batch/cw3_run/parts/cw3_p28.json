@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x71abc0",
+  "name": "FactoryClass::CompleteItem",
+  "cls": null,
+  "size": 234,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2660",
+  "first_msg": "'StubReturn12' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x5e2be0",
+  "name": "Network::CountDisconnectedHouses",
+  "cls": null,
+  "size": 235,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.nextArrayIndex' must have class/struct/union type"
+ },
+ {
+  "addr": "0x430f70",
+  "name": "PlayerClass::FindNearestWaypoint",
+  "cls": null,
+  "size": 237,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fild' : undeclared identifier"
+ },
+ {
+  "addr": "0x509610",
+  "name": "TriggerClass::ValidateTeamTriggerConditions",
+  "cls": null,
+  "size": 237,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x664440",
+  "name": "EventClass::validateEventType",
+  "cls": null,
+  "size": 238,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x74d670",
+  "name": "ObjectClass::IsCellSuitableForPlacement",
+  "cls": null,
+  "size": 238,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6a6a00",
+  "name": "CreateTeamCommand::performAction_245",
+  "cls": null,
+  "size": 240,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x7ad690",
+  "name": "WonlineStringDialogControl_28::QueryInterface",
+  "cls": null,
+  "size": 243,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x542520",
+  "name": "IPXManagerClass::ProcessQueue",
+  "cls": null,
+  "size": 247,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x6b5f80",
+  "name": "Cell::IsWalkable",
+  "cls": null,
+  "size": 248,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'m298' : is not a member of 'Cell'"
+ },
+ {
+  "addr": "0x47c3d0",
+  "name": "Object::FindClosestObjectCell",
+  "cls": null,
+  "size": 250,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x6d8530",
+  "name": "DisplayClass::ScrollTacticalView",
+  "cls": null,
+  "size": 254,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7170a0",
+  "name": "ObjectTypeClass::DeserializeArrays",
+  "cls": null,
+  "size": 255,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'COMObject__GetSizeMaxWrapper' : cannot convert parameter 1 from 'class ObjectTypeClass *' to 'int'"
+ },
+ {
+  "addr": "0x4ba5a0",
+  "name": "DSurface::Construct",
+  "cls": null,
+  "size": 257,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DSurface_Vtable' : undeclared identifier"
+ },
+ {
+  "addr": "0x626690",
+  "name": "FlagSystem::GetNextActive",
+  "cls": null,
+  "size": 257,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x5a7e90",
+  "name": "Object_Helper_5A7E90",
+  "cls": null,
+  "size": 259,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x661850",
+  "name": "Random::AdvanceRandomBytes",
+  "cls": null,
+  "size": 259,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x5c2de0",
+  "name": "MPCooperative::selectTeam",
+  "cls": null,
+  "size": 261,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.nextArrayIndex' must have class/struct/union type"
+ },
+ {
+  "addr": "0x69deb0",
+  "name": "ShapeButton::Draw",
+  "cls": null,
+  "size": 262,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'class AudioStream *'"
+ },
+ {
+  "addr": "0x659ee0",
+  "name": "Weapon_Update_Update_659EE0",
+  "cls": null,
+  "size": 264,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'fstp' : undeclared identifier"
+ }
+]
