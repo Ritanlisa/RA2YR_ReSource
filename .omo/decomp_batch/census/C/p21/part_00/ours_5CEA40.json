@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPalette@MSPCXAnim@@QAEXH@Z",
+ "sym_key": "MSPCXAnim::SetPalette",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b462485c0742d8a4e0c84c974268b4e1c8b10576a018b398d4c240c6a005150ff52788b56248b4e1c508d462c525051ff57085f5e83c410c20400",
+ "relocs": []
+}

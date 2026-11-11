@@ -1,0 +1,358 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 8,
+   "MISMATCH": 10,
+   "NO_CLS": 2
+  },
+  "pathologies": {
+   "branch_order": 2,
+   "regalloc": 3,
+   "branch_polarity": 2,
+   "codegen_shape": 1,
+   "cc_mismatch": 1,
+   "ret_norm": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7d2e9b",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\include\\exception.hpp(20) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\include\\exception.hpp(20)",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??0exception_QAE_ABQBD_Z",
+   "emitted": "exception::??0exception_QAE_ABQBD_Z",
+   "unit": "exception",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 5
+  },
+  {
+   "addr": "0x5400d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 62B ours 64B",
+   "first_diff": {
+    "orig": "+14 jle 0x540106",
+    "ours": "+14 jle 0x38"
+   },
+   "pathology": "branch_order",
+   "name": "IPXGlobalConnClass::CheckStatus",
+   "emitted": "IPXGlobalConnClass::CheckStatus",
+   "unit": "IPXGlobalConnClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 62,
+   "ours_size": 64
+  },
+  {
+   "addr": "0x77c840",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x77c840",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4de710",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\FootClass.cpp(8) : error C2440: 'type cast' : cannot convert from 'double' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00",
+   "first_diff": null,
+   "pathology": null,
+   "name": "FootClass::PopAndProcess",
+   "emitted": "FootClass::PopAndProcess",
+   "unit": "FootClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/4",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5cea40",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 63B ours 65B",
+   "first_diff": {
+    "orig": "+6 mov ecx, dword ptr [esi + 0x24]",
+    "ours": "+6 mov eax, dword ptr [esi + 0x24]"
+   },
+   "pathology": "regalloc",
+   "name": "MSPCXAnim::SetPalette",
+   "emitted": "MSPCXAnim::SetPalette",
+   "unit": "MSPCXAnim",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 10,
+   "orig_size": 63,
+   "ours_size": 65
+  },
+  {
+   "addr": "0x65be90",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 64B ours 68B",
+   "first_diff": {
+    "orig": "+4 push esi",
+    "ours": "+4 push ebp"
+   },
+   "pathology": "regalloc",
+   "name": "RadSiteClass::DecreaseLight",
+   "emitted": "RadSiteClass::DecreaseLight",
+   "unit": "RadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 64,
+   "ours_size": 68
+  },
+  {
+   "addr": "0x4c3c90",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\ObjectClass_4c3c90.cpp(7) : error C2440: '=' : cannot convert from 'class ObjectClass *' to 'unsigned char'; D:\\RA2YR_ReSource\\.omo\\decomp_batc",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_4C3C90",
+   "emitted": "ObjectClass::sub_4C3C90",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "6/8",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6cee60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 65B ours 96B",
+   "first_diff": {
+    "orig": "+6 je 0x6cee96",
+    "ours": "+6 jne 0xe"
+   },
+   "pathology": "branch_order",
+   "name": "ObjectTypeClass_Read",
+   "emitted": "ObjectClass::ObjectTypeClass_Read",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/4",
+   "rule_violations": 0,
+   "orig_size": 65,
+   "ours_size": 96
+  },
+  {
+   "addr": "0x6b0d10",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 65B ours 66B",
+   "first_diff": {
+    "orig": "+9 jne 0x6b0d4e",
+    "ours": "+9 jne 0x3f"
+   },
+   "pathology": "branch_polarity",
+   "name": "TechnoClass::RefreshDeployOccupierState",
+   "emitted": "TechnoClass::RefreshDeployOccupierState",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 65,
+   "ours_size": 66
+  },
+  {
+   "addr": "0x75cbe0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\WalkLocomotionClass.cpp(8) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\WalkLocomotionClas",
+   "first_diff": null,
+   "pathology": null,
+   "name": "WalkLocomotionClass::ProcessMove",
+   "emitted": "WalkLocomotionClass::ProcessMove",
+   "unit": "WalkLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "9/9",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x6379c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 66B ours 67B",
+   "first_diff": {
+    "orig": "+7 jne 0x637a01",
+    "ours": "+7 jne 0x42"
+   },
+   "pathology": "branch_polarity",
+   "name": "UI_Create_731A50_Create",
+   "emitted": "ObjectClass::UI_Create_731A50_Create",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "10/10",
+   "rule_violations": 0,
+   "orig_size": 66,
+   "ours_size": 67
+  },
+  {
+   "addr": "0x6a94f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 67B ours 72B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "SmallFunc_6A94F0",
+   "emitted": "ObjectClass::SmallFunc_6A94F0",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/2",
+   "rule_violations": 2,
+   "orig_size": 67,
+   "ours_size": 72
+  },
+  {
+   "addr": "0x504740",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 67B ours 71B",
+   "first_diff": {
+    "orig": "+1 mov esi, dword ptr [esp + 8]",
+    "ours": "+1 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "HouseClass::EnsurePlanningPathExists",
+   "emitted": "HouseClass::EnsurePlanningPathExists",
+   "unit": "HouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 67,
+   "ours_size": 71
+  },
+  {
+   "addr": "0x4af8e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 67B ours 49B",
+   "first_diff": {
+    "orig": "+13 ret 8",
+    "ours": "+13 ret 0xc"
+   },
+   "pathology": "cc_mismatch",
+   "name": "JumpjetLocomotionClass::StubReturnZero",
+   "emitted": "JumpjetLocomotionClass::StubReturnZero",
+   "unit": "JumpjetLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 67,
+   "ours_size": 49
+  },
+  {
+   "addr": "0x46da20",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x46da20",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x452170",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 68B ours 66B",
+   "first_diff": {
+    "orig": "+11 mov ebx, eax",
+    "ours": "+11 mov bl, al"
+   },
+   "pathology": "ret_norm",
+   "name": "BuildingClass::SetConnectedBuildingMission",
+   "emitted": "BuildingClass::SetConnectedBuildingMission",
+   "unit": "BuildingClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1,
+   "orig_size": 68,
+   "ours_size": 66
+  },
+  {
+   "addr": "0x7de17d",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\unknown.cpp(11) : error C2065: 'HANDLE' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\unknown.cpp(11) : err",
+   "first_diff": null,
+   "pathology": null,
+   "name": "__putch",
+   "emitted": "unknown::__putch",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x466660",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\BulletClass.cpp(12) : error C2665: 'atexit' : none of the 2 overloads can convert parameter 1 from type 'int (__cdecl *)(const void *,const voi",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BulletClass::CalculateSpreadAngle",
+   "emitted": "BulletClass::CalculateSpreadAngle",
+   "unit": "BulletClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/4",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5550c0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\LightSourceClass.cpp(14) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\LightSourceClass.cpp",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LightSourceClass::Write",
+   "emitted": "LightSourceClass::Write",
+   "unit": "LightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "7/7",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7693f0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p21\\part_00\\WDTGame.cpp(24) : error C2664: 'ReleaseAll' : cannot convert parameter 1 from 'char *' to 'int'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "WDTGame::ToggleTeamMode",
+   "emitted": "WDTGame::ToggleTeamMode",
+   "unit": "WDTGame",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/11",
+   "rule_violations": 4
+  }
+ ]
+}

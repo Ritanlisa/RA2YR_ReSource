@@ -1,0 +1,11 @@
+{
+ "addr": "0x504740",
+ "name": "HouseClass::EnsurePlanningPathExists",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x504740",
+ "bytes_hex": "568b742408578bf98b84b71002000085c0752b6a40e8bd462c0083c40485c07414568bc8e8a7f025008984b7100200005f5ec2040033c08984b7100200005f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

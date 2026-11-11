@@ -1,0 +1,11 @@
+{
+ "addr": "0x5400D0",
+ "name": "IPXGlobalConnClass::CheckStatus",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5400D0",
+ "bytes_hex": "56578bf933f68b4f048b413885c07e2656e8fab8f4fff6000274128b4f046a006a00566a006a00e894b7f4ff4e8b4f04463b71387cda5fb8010000005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?EnsurePlanningPathExists@HouseClass@@QAEHI@Z",
+ "sym_key": "HouseClass::EnsurePlanningPathExists",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf18b84be1002000085c0752f6a40e80000000083c40485c07414578bc8e8000000008984be100200005f5ec20400c784be100200000000000033c05f5ec20400",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 37,
+   "type": "REL32",
+   "sym": "?Construct@WaypointPathClass@@QAEPAV1@I@Z",
+   "sym_key": "WaypointPathClass::Construct"
+  }
+ ]
+}

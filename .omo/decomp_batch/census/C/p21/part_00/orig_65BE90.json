@@ -1,0 +1,11 @@
+{
+ "addr": "0x65BE90",
+ "name": "RadSiteClass::DecreaseLight",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65BE90",
+ "bytes_hex": "8b416053568b71700fafc6578b796c99f7ff6a008b5924508b415c0fafc699f7ff508b41580fafc699f7ff8b51688bcb508b43242bc250e8d48befff5f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

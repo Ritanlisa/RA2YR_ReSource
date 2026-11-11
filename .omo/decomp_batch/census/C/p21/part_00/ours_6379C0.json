@@ -1,0 +1,39 @@
+{
+ "symbol": "?UI_Create_731A50_Create@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::UI_Create_731A50_Create",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c07539a140020000c60500000000016a00680000803f8b88d4010000ba00200000e8000000008b0d0000000085c9740c8b116a0068c711000051ff12c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3PADA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3PADA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?PlayVocClass@@YIHHHMH@Z",
+   "sym_key": "PlayVocClass"
+  },
+  {
+   "off": 46,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4B80@@3PADA",
+   "sym_key": "DataGlobal_AC4B80"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?DecreaseLight@RadSiteClass@@QAEDXZ",
+ "sym_key": "RadSiteClass::DecreaseLight",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8b41605355568b7170570fafc68b796c33d2f7f78b595c6a0033d28b6924508bc30fafc6f7f733d2508b41580fafc6f7f78bcd508b45242bc350e8000000005f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?UpdateScrollTarget@TacticalClass@@QAEDHHHHD@Z",
+   "sym_key": "TacticalClass::UpdateScrollTarget"
+  }
+ ]
+}

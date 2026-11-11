@@ -1,0 +1,15 @@
+{
+ "symbol": "?SmallFunc_6A94F0@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::SmallFunc_6A94F0",
+ "size": 72,
+ "link_base": 0,
+ "bytes_hex": "568b742408578bf98d0c7633c08d148e8b4c976485c97405e8000000008d4c76068d548e02833c970175188d0c768d148ec1e2048b7c3a783bf87e0703c7992bc2d1f85f5ec20400",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?GetMember09@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::GetMember09"
+  }
+ ]
+}

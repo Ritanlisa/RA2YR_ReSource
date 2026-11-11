@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CEE60",
+ "name": "ObjectTypeClass_Read",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CEE60",
+ "bytes_hex": "56578bf985ff742ea140e3a80033f685c07e23a134e3a800578b0cb083c12451e89b9e0f0083c40885c07410a140e3a800463bf07cdd5f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x452170",
+ "name": "BuildingClass::SetConnectedBuildingMission",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x452170",
+ "bytes_hex": "8b442404535683f80f8bf18bd875138b066a006a00ff506883f8057505bb100000008d8e5c050000be150000008b0185c0740688987801000083c1044e75ee5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

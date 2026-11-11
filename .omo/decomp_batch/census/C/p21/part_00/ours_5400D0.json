@@ -1,0 +1,21 @@
+{
+ "symbol": "?CheckStatus@IPXGlobalConnClass@@QAEHXZ",
+ "sym_key": "IPXGlobalConnClass::CheckStatus",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "56578bf933f68b4f048b413885c07e2856e800000000f6000274148b4f048bc66a006a00506a006a004ee8000000008b4f04463b71387cd85fb8010000005ec3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?GetTileType@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileType"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "?ReleaseEntry@PacketQueue@@QAEHPAX0H00@Z",
+   "sym_key": "PacketQueue::ReleaseEntry"
+  }
+ ]
+}

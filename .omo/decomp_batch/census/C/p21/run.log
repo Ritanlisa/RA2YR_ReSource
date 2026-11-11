@@ -1,0 +1,104 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d2e9b exception::??0exception_QAE_ABQBD_Z -> exception
+[conv] 0x5400d0 IPXGlobalConnClass::CheckStatus -> IPXGlobalConnClass
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x5cea40 MSPCXAnim::SetPalette -> MSPCXAnim
+[conv] 0x65be90 RadSiteClass::DecreaseLight -> RadSiteClass
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x6cee60 ObjectClass::ObjectTypeClass_Read -> ObjectClass
+[conv] 0x6b0d10 TechnoClass::RefreshDeployOccupierState -> TechnoClass
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x6379c0 ObjectClass::UI_Create_731A50_Create -> ObjectClass
+[conv] 0x6a94f0 ObjectClass::SmallFunc_6A94F0 -> ObjectClass
+[conv] 0x504740 HouseClass::EnsurePlanningPathExists -> HouseClass
+[conv] 0x4af8e0 JumpjetLocomotionClass::StubReturnZero -> JumpjetLocomotionClass
+[conv] 0x452170 BuildingClass::SetConnectedBuildingMission -> BuildingClass
+[conv] 0x7de17d unknown::__putch -> unknown
+[conv] 0x466660 BulletClass::CalculateSpreadAngle -> BulletClass
+[conv] 0x5550c0 LightSourceClass::Write -> LightSourceClass
+[conv] 0x7693f0 WDTGame::ToggleTeamMode -> WDTGame
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] exception                rc=2
+[era] IPXGlobalConnClass       rc=0
+[era] FootClass                rc=2
+[era] MSPCXAnim                rc=0
+[era] RadSiteClass             rc=0
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=0
+[era] WalkLocomotionClass      rc=2
+[era] HouseClass               rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] BuildingClass            rc=0
+[era] unknown                  rc=2
+[era] BulletClass              rc=2
+[era] LightSourceClass         rc=2
+[era] WDTGame                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x5400d0   MISMATCH         IPXGlobalConnClass::CheckStatus
+[diff] 0x5cea40   MISMATCH         MSPCXAnim::SetPalette
+[diff] 0x65be90   MISMATCH         RadSiteClass::DecreaseLight
+[diff] 0x6cee60   MISMATCH         ObjectClass::ObjectTypeClass_Read
+[diff] 0x6379c0   MISMATCH         ObjectClass::UI_Create_731A50_Create
+[diff] 0x6a94f0   MISMATCH         ObjectClass::SmallFunc_6A94F0
+[diff] 0x6b0d10   MISMATCH         TechnoClass::RefreshDeployOccupierState
+[diff] 0x504740   MISMATCH         HouseClass::EnsurePlanningPathExists
+[diff] 0x4af8e0   MISMATCH         JumpjetLocomotionClass::StubReturnZero
+[diff] 0x452170   MISMATCH         BuildingClass::SetConnectedBuildingMission
+[ledger] 0x7d2e9b ??0exception_QAE_ABQBD_Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5400d0 IPXGlobalConnClass::CheckStatus -> NG (attempt 1)
+[ledger] 0x77c840 0x77c840 -> PENDING (attempt 1)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cea40 MSPCXAnim::SetPalette -> NG (attempt 1)
+[ledger] 0x65be90 RadSiteClass::DecreaseLight -> NG (attempt 1)
+[ledger] 0x4c3c90 sub_4C3C90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cee60 ObjectTypeClass_Read -> NG (attempt 1)
+[ledger] 0x6b0d10 TechnoClass::RefreshDeployOccupierState -> NG (attempt 1)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6379c0 UI_Create_731A50_Create -> NG (attempt 1)
+[ledger] 0x6a94f0 SmallFunc_6A94F0 -> NG (attempt 1)
+[ledger] 0x504740 HouseClass::EnsurePlanningPathExists -> NG (attempt 1)
+[ledger] 0x4af8e0 JumpjetLocomotionClass::StubReturnZero -> NG (attempt 1)
+[ledger] 0x46da20 0x46da20 -> PENDING (attempt 1)
+[ledger] 0x452170 BuildingClass::SetConnectedBuildingMission -> NG (attempt 1)
+[ledger] 0x7de17d __putch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x466660 BulletClass::CalculateSpreadAngle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5550c0 LightSourceClass::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7693f0 WDTGame::ToggleTeamMode -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2119,
+ "verdicts": {
+  "MISMATCH": 590,
+  "MATCH": 520,
+  "COMPILE_FAIL": 514,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 482,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 189,
+  "ret_norm": 6,
+  "frame_sched": 65,
+  "const_fold": 65,
+  "branch_polarity": 40,
+  "regalloc": 97,
+  "branch_order": 70,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 22,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.8,
+ "match_rate_of_total_pct": 24.5,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p21\batch_report.json

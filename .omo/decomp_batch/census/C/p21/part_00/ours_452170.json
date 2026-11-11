@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetConnectedBuildingMission@BuildingClass@@QAEHH@Z",
+ "sym_key": "BuildingClass::SetConnectedBuildingMission",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "8b442404535683f80f8bf18ad875118b066a006a0056ff506883f8057502b3108b8e5c050000be150000008b0185c0740688987801000083c1044e75ee5e5bc20400",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnZero@JumpjetLocomotionClass@@QAGHHH@Z",
+ "sym_key": "JumpjetLocomotionClass::StubReturnZero",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b44240885c07508b803400080c20c008b4c24048b515085d27408b805400080c20c008941508b0850ff510433c0c20c00",
+ "relocs": []
+}
