@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BF50",
+ "name": "sub_72BF50",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BF50",
+ "bytes_hex": "a039fdb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

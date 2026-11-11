@@ -1,0 +1,11 @@
+{
+ "addr": "0x72BD90",
+ "name": "UI_Create_72BD90",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72BD90",
+ "bytes_hex": "a14cfdb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
