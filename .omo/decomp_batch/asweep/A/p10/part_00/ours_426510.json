@@ -1,0 +1,8 @@
+{
+ "symbol": "?getCoordCenter2@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::getCoordCenter2",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "b001c3",
+ "relocs": []
+}

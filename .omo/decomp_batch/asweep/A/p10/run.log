@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x426490 ObjectClass::COMStub_Return0_88 -> ObjectClass
+[conv] 0x4264b0 ObjectClass::COMStub_Return0_99 -> ObjectClass
+[conv] 0x4264e0 ObjectClass::COMStub_Return0_117 -> ObjectClass
+[conv] 0x4264f0 ObjectClass::COMStub_Return0_118 -> ObjectClass
+[conv] 0x426500 ObjectClass::COMStub_Return0_119 -> ObjectClass
+[conv] 0x426510 ObjectClass::getCoordCenter2 -> ObjectClass
+[conv] 0x426520 ObjectClass::COMStub_Return0_121 -> ObjectClass
+[conv] 0x4369e0 BuildingLightClass::SD_vt34 -> BuildingLightClass
+[conv] 0x438a60 ObjectClass::_0Iostream_init_QAE_XZ_1 -> ObjectClass
+[conv] 0x452250 BuildingClass::StubReturn0 -> BuildingClass
+[conv] 0x459d80 TechnoClass::StubReturnFalse -> TechnoClass
+[conv] 0x459dc0 TechnoClass::COMStub_Return0_190 -> TechnoClass
+[conv] 0x459dd0 TechnoClass::StubReturnFalse2 -> TechnoClass
+[conv] 0x459df0 TechnoClass::StubReturnFalse3 -> TechnoClass
+[conv] 0x459e10 TechnoClass::StubReturnFalse10 -> TechnoClass
+[conv] 0x459e30 TechnoClass::StubReturnFalse12 -> TechnoClass
+[conv] 0x459e40 TechnoClass::StubReturnFalse13 -> TechnoClass
+[conv] 0x459e60 TechnoClass::COMStub_Return0_270 -> TechnoClass
+[conv] 0x465910 AbstractClass::releaseRef -> AbstractClass
+[conv] 0x465920 AbstractClass::finalRelease -> AbstractClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] BuildingLightClass       rc=0
+[era] BuildingClass            rc=0
+[era] TechnoClass              rc=0
+[era] AbstractClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x426490   MATCH            ObjectClass::COMStub_Return0_88
+[diff] 0x4264b0   MISMATCH         ObjectClass::COMStub_Return0_99
+[diff] 0x4264e0   MATCH            ObjectClass::COMStub_Return0_117
+[diff] 0x4264f0   MATCH            ObjectClass::COMStub_Return0_118
+[diff] 0x426500   MATCH            ObjectClass::COMStub_Return0_119
+[diff] 0x426510   MATCH            ObjectClass::getCoordCenter2
+[diff] 0x426520   MATCH            ObjectClass::COMStub_Return0_121
+[diff] 0x438a60   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_1
+[diff] 0x4369e0   MATCH            BuildingLightClass::SD_vt34
+[diff] 0x452250   MATCH            BuildingClass::StubReturn0
+[diff] 0x459d80   MATCH            TechnoClass::StubReturnFalse
+[diff] 0x459dc0   MISMATCH         TechnoClass::COMStub_Return0_190
+[diff] 0x459dd0   MATCH            TechnoClass::StubReturnFalse2
+[diff] 0x459df0   MATCH            TechnoClass::StubReturnFalse3
+[diff] 0x459e10   MATCH            TechnoClass::StubReturnFalse10
+[diff] 0x459e30   MATCH            TechnoClass::StubReturnFalse12
+[diff] 0x459e40   MATCH            TechnoClass::StubReturnFalse13
+[diff] 0x459e60   MISMATCH         TechnoClass::COMStub_Return0_270
+[diff] 0x465910   MATCH            AbstractClass::releaseRef
+[diff] 0x465920   MATCH            AbstractClass::finalRelease
+[ledger] 0x426490 ObjectClass::COMStub_Return0_88 -> OK (attempt 1)
+[ledger] 0x4264b0 ObjectClass::COMStub_Return0_99 -> NG (attempt 1)
+[ledger] 0x4264e0 ObjectClass::COMStub_Return0_117 -> OK (attempt 1)
+[ledger] 0x4264f0 ObjectClass::COMStub_Return0_118 -> OK (attempt 1)
+[ledger] 0x426500 ObjectClass::COMStub_Return0_119 -> OK (attempt 1)
+[ledger] 0x426510 ObjectClass::getCoordCenter2 -> OK (attempt 1)
+[ledger] 0x426520 ObjectClass::COMStub_Return0_121 -> OK (attempt 1)
+[ledger] 0x4369e0 BuildingLightClass::SD_vt34 -> OK (attempt 1)
+[ledger] 0x438a60 ObjectClass::_0Iostream_init_QAE_XZ_1 -> OK (attempt 1)
+[ledger] 0x452250 BuildingClass::StubReturn0 -> OK (attempt 1)
+[ledger] 0x459d80 TechnoClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x459dc0 TechnoClass::COMStub_Return0_190 -> NG (attempt 1)
+[ledger] 0x459dd0 TechnoClass::StubReturnFalse2 -> OK (attempt 1)
+[ledger] 0x459df0 TechnoClass::StubReturnFalse3 -> OK (attempt 1)
+[ledger] 0x459e10 TechnoClass::StubReturnFalse10 -> OK (attempt 1)
+[ledger] 0x459e30 TechnoClass::StubReturnFalse12 -> OK (attempt 1)
+[ledger] 0x459e40 TechnoClass::StubReturnFalse13 -> OK (attempt 1)
+[ledger] 0x459e60 TechnoClass::COMStub_Return0_270 -> NG (attempt 1)
+[ledger] 0x465910 AbstractClass::releaseRef -> OK (attempt 1)
+[ledger] 0x465920 AbstractClass::finalRelease -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p10\batch_report.json
