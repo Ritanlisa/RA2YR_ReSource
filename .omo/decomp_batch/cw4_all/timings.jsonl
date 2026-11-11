@@ -45,3 +45,4 @@
 {"part": 44, "n": 20, "seconds": 0.7, "summary": {"verdicts": {"NO_VARIANT": 17, "NO_HIT": 2, "MATCH": 1}, "by_family_total": {"STRUCTURAL": 8, "MEMBER_OFFSET": 1, "JCC_INVERT": 1, "RET_ARITY": 10}, "by_family_hits": {"JCC_INVERT": 1}}}
 {"part": 45, "n": 20, "seconds": 1.4, "summary": {"verdicts": {"NO_HIT": 6, "NO_VARIANT": 14}, "by_family_total": {"STRUCTURAL": 6, "TOKEN_MISMATCH": 1, "RELOC_KEY": 13}, "by_family_hits": {}}}
 {"part": 46, "n": 20, "seconds": 0.3, "summary": {"verdicts": {"NO_VARIANT": 18, "MATCH": 2}, "by_family_total": {"RELOC_KEY": 18, "JCC_INVERT": 2}, "by_family_hits": {"JCC_INVERT": 2}}}
+{"part": 47, "n": 20, "seconds": 0.4, "summary": {"verdicts": {"NO_VARIANT": 18, "NO_HIT": 2}, "by_family_total": {"RELOC_KEY": 14, "JCC_LAYOUT_PLUS": 2, "WIDTH": 1, "STRUCTURAL": 3}, "by_family_hits": {}}}
