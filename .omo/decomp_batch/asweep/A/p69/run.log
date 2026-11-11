@@ -1,0 +1,70 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p69\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c43c0 ObjectClass::WinMain_Helper_6C43C0 -> ObjectClass
+[conv] 0x6c4540 ObjectClass::WinMain_Helper_6C4540 -> ObjectClass
+[conv] 0x6c46c0 ObjectClass::WinMain_Helper_6C46C0 -> ObjectClass
+[conv] 0x6c4840 ObjectClass::WinMain_Helper_6C4840 -> ObjectClass
+[conv] 0x6c4b40 ObjectClass::WinMain_Helper_6C4B40 -> ObjectClass
+[conv] 0x6c4cc0 ObjectClass::WinMain_Helper_6C4CC0 -> ObjectClass
+[conv] 0x6c4e40 ObjectClass::WinMain_Helper_6C4E40 -> ObjectClass
+[conv] 0x6c4fc0 ObjectClass::WinMain_Helper_6C4FC0 -> ObjectClass
+[conv] 0x6c52c0 ObjectClass::WinMain_Helper_6C52C0 -> ObjectClass
+[conv] 0x6c5440 ObjectClass::WinMain_Helper_6C5440 -> ObjectClass
+[conv] 0x6c55c0 ObjectClass::WinMain_Helper_6C55C0 -> ObjectClass
+[conv] 0x6c5740 ObjectClass::WinMain_Helper_6C5740 -> ObjectClass
+[conv] 0x6c5a40 ObjectClass::WinMain_Helper_6C5A40 -> ObjectClass
+[conv] 0x6c5bc0 ObjectClass::WinMain_Helper_6C5BC0 -> ObjectClass
+[conv] 0x6c5d40 ObjectClass::WinMain_Helper_6C5D40 -> ObjectClass
+[conv] 0x6c5ec0 ObjectClass::WinMain_Helper_6C5EC0 -> ObjectClass
+[conv] 0x6c6040 ObjectClass::WinMain_Helper_6C6040 -> ObjectClass
+[conv] 0x6e55c0 TagClass::AddTrigger -> TagClass
+[conv] 0x7564a0 ObjectClass::sub_7564A0 -> ObjectClass
+[conv] 0x773aa0 WebBrowser::AddRef -> WebBrowser
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TagClass                 rc=0
+[era] WebBrowser               rc=0
+=== diffasm byte-compare ===
+[diff] 0x7564a0   MISMATCH         ObjectClass::sub_7564A0
+[diff] 0x6e55c0   MATCH            TagClass::AddTrigger
+[diff] 0x773aa0   MISMATCH         WebBrowser::AddRef
+[ledger] 0x6c43c0 ObjectClass::WinMain_Helper_6C43C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4540 ObjectClass::WinMain_Helper_6C4540 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c46c0 ObjectClass::WinMain_Helper_6C46C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4840 ObjectClass::WinMain_Helper_6C4840 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4b40 ObjectClass::WinMain_Helper_6C4B40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4cc0 ObjectClass::WinMain_Helper_6C4CC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4e40 ObjectClass::WinMain_Helper_6C4E40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4fc0 ObjectClass::WinMain_Helper_6C4FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c52c0 ObjectClass::WinMain_Helper_6C52C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5440 ObjectClass::WinMain_Helper_6C5440 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c55c0 ObjectClass::WinMain_Helper_6C55C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5740 ObjectClass::WinMain_Helper_6C5740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5a40 ObjectClass::WinMain_Helper_6C5A40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5bc0 ObjectClass::WinMain_Helper_6C5BC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5d40 ObjectClass::WinMain_Helper_6C5D40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5ec0 ObjectClass::WinMain_Helper_6C5EC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6040 ObjectClass::WinMain_Helper_6C6040 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e55c0 TagClass::AddTrigger -> OK (attempt 1)
+[ledger] 0x7564a0 ObjectClass::sub_7564A0 -> NG (attempt 1)
+[ledger] 0x773aa0 WebBrowser::AddRef -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MATCH": 1,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 33.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p69\batch_report.json

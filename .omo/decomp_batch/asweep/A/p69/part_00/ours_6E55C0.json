@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddTrigger@TagClass@@QAEHH@Z",
+ "sym_key": "TagClass::AddTrigger",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b5128895028894128c20400",
+ "relocs": []
+}
