@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyFromTemplate@Stream@@QAEXXZ",
+ "sym_key": "Stream::CopyFromTemplate",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "56578bf9be00000000b922000000f3a55f5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_84E738@@3EA",
+   "sym_key": "DataGlobal_84E738"
+  }
+ ]
+}

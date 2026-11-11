@@ -1,0 +1,8 @@
+{
+ "symbol": "?Init@KeyValuePair@@QAEPAV1@H@Z",
+ "sym_key": "KeyValuePair::Init",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8bc18b4c2404890833c9894804894808c20400",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x556B30",
+ "name": "TacticalClass::GetField",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556B30",
+ "bytes_hex": "8b410433d23bc274098990a8000000895104c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

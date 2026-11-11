@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@TacticalClass@@QAEHXZ",
+ "sym_key": "TacticalClass::GetField",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b410433d23bc274098990a8000000895104c3",
+ "relocs": []
+}

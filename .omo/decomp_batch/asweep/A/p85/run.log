@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p85\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e4580 IsAvailableColorhWnd -> _addr_4E
+[conv] 0x4e50a0 sub_4E50A0 -> _addr_4E
+[conv] 0x52aec0 KeyValuePair::Init -> KeyValuePair
+[conv] 0x52b080 INIClass::getValue -> INIClass
+[conv] 0x556b30 TacticalClass::GetField -> TacticalClass
+[conv] 0x55a710 LocomotionClass::ResetPosition -> LocomotionClass
+[conv] 0x5a9960 ObjectClass::sub_5A9960 -> ObjectClass
+[conv] 0x5b3950 FromNameIndex -> _addr_5B
+[conv] 0x717a80 ObjectTypeClass::loadTypeMember_5717A80 -> ObjectTypeClass
+[conv] 0x7266c0 ObjectClass::sub_7266C0 -> ObjectClass
+[conv] 0x75a7d0 ResetAnimSystem -> _addr_75
+[conv] 0x769d70 Map_Load_769D70 -> Map_Load
+[conv] 0x7be640 Stream::CopyFromTemplate -> Stream
+[conv] 0x7d13f8 __initptd -> _addr_7D
+[conv] 0x403d10 sub_403D10 -> _addr_40
+[conv] 0x406950 sub_406950 -> _addr_40
+[conv] 0x406970 sub_406970 -> _addr_40
+[conv] 0x40adc0 sub_40ADC0 -> _addr_40
+[conv] 0x40ade0 sub_40ADE0 -> _addr_40
+[conv] 0x40b380 sub_40B380 -> _addr_40
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=2
+[era] KeyValuePair             rc=0
+[era] INIClass                 rc=2
+[era] TacticalClass            rc=0
+[era] LocomotionClass          rc=0
+[era] ObjectClass              rc=2
+[era] _addr_5B                 rc=2
+[era] ObjectTypeClass          rc=0
+[era] _addr_75                 rc=2
+[era] Map_Load                 rc=2
+[era] Stream                   rc=0
+[era] _addr_7D                 rc=0
+[era] _addr_40                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x52aec0   MATCH            KeyValuePair::Init
+[diff] 0x556b30   MATCH            TacticalClass::GetField
+[diff] 0x55a710   MISMATCH         LocomotionClass::ResetPosition
+[diff] 0x7266c0   MATCH            ObjectClass::sub_7266C0
+[diff] 0x717a80   MATCH            ObjectTypeClass::loadTypeMember_5717A80
+[diff] 0x7be640   MATCH            Stream::CopyFromTemplate
+[diff] 0x7d13f8   MISMATCH         __initptd
+[diff] 0x403d10   MISMATCH         sub_403D10
+[diff] 0x406950   MISMATCH         sub_406950
+[diff] 0x406970   MISMATCH         sub_406970
+[diff] 0x40adc0   MISMATCH         sub_40ADC0
+[diff] 0x40ade0   MISMATCH         sub_40ADE0
+[diff] 0x40b380   MISMATCH         sub_40B380
+[ledger] 0x4e4580 IsAvailableColorhWnd -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e50a0 sub_4E50A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52aec0 KeyValuePair::Init -> OK (attempt 1)
+[ledger] 0x52b080 INIClass::getValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556b30 TacticalClass::GetField -> OK (attempt 1)
+[ledger] 0x55a710 LocomotionClass::ResetPosition -> NG (attempt 1)
+[ledger] 0x5a9960 ObjectClass::sub_5A9960 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3950 FromNameIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717a80 ObjectTypeClass::loadTypeMember_5717A80 -> OK (attempt 1)
+[ledger] 0x7266c0 ObjectClass::sub_7266C0 -> OK (attempt 1)
+[ledger] 0x75a7d0 ResetAnimSystem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769d70 Map_Load_769D70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7be640 Stream::CopyFromTemplate -> OK (attempt 1)
+[ledger] 0x7d13f8 __initptd -> NG (attempt 1)
+[ledger] 0x403d10 sub_403D10 -> NG (attempt 1)
+[ledger] 0x406950 sub_406950 -> NG (attempt 1)
+[ledger] 0x406970 sub_406970 -> NG (attempt 1)
+[ledger] 0x40adc0 sub_40ADC0 -> NG (attempt 1)
+[ledger] 0x40ade0 sub_40ADE0 -> NG (attempt 1)
+[ledger] 0x40b380 sub_40B380 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MATCH": 5,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "const_fold": 1,
+  "extern_reloc": 6
+ },
+ "match_rate_of_decided_pct": 38.5,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p85\batch_report.json
