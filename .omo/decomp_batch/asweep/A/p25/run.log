@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x72ca90 sub_72CA90 -> _addr_72
+[conv] 0x72caa0 sub_72CAA0 -> _addr_72
+[conv] 0x72cab0 UI_Create_72CAB0 -> UI_Create
+[conv] 0x72cc60 sub_72CC60 -> _addr_72
+[conv] 0x72cc70 sub_72CC70 -> _addr_72
+[conv] 0x72cc80 UI_Helper_72CC80 -> UI_Helper
+[conv] 0x72ce40 sub_72CE40 -> _addr_72
+[conv] 0x72d010 sub_72D010 -> _addr_72
+[conv] 0x72d020 sub_72D020 -> _addr_72
+[conv] 0x72d030 UI_Create_72D030 -> UI_Create
+[conv] 0x72d1f0 sub_72D1F0 -> _addr_72
+[conv] 0x72d200 sub_72D200 -> _addr_72
+[conv] 0x72d210 UI_Create_72D210 -> UI_Create
+[conv] 0x72d440 sub_72D440 -> _addr_72
+[conv] 0x72d450 VtableStub_72D450 -> VtableStub
+[conv] 0x72d800 sub_72D800 -> _addr_72
+[conv] 0x72d810 sub_72D810 -> _addr_72
+[conv] 0x72d820 UI_Create_72D820 -> UI_Create
+[conv] 0x72dab0 sub_72DAB0 -> _addr_72
+[conv] 0x72dac0 UI_Helper_72DAC0 -> UI_Helper
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] UI_Create                rc=0
+[era] UI_Helper                rc=0
+[era] VtableStub               rc=0
+=== diffasm byte-compare ===
+[diff] 0x72ca90   MATCH            sub_72CA90
+[diff] 0x72caa0   MATCH            sub_72CAA0
+[diff] 0x72cc60   MATCH            sub_72CC60
+[diff] 0x72cc70   MATCH            sub_72CC70
+[diff] 0x72ce40   MATCH            sub_72CE40
+[diff] 0x72d010   MATCH            sub_72D010
+[diff] 0x72d020   MATCH            sub_72D020
+[diff] 0x72d1f0   MATCH            sub_72D1F0
+[diff] 0x72d200   MATCH            sub_72D200
+[diff] 0x72d440   MATCH            sub_72D440
+[diff] 0x72d800   MATCH            sub_72D800
+[diff] 0x72d810   MATCH            sub_72D810
+[diff] 0x72dab0   MATCH            sub_72DAB0
+[diff] 0x72cab0   MATCH            UI_Create_72CAB0
+[diff] 0x72d030   MATCH            UI_Create_72D030
+[diff] 0x72d210   MATCH            UI_Create_72D210
+[diff] 0x72d820   MATCH            UI_Create_72D820
+[diff] 0x72cc80   MATCH            UI_Helper_72CC80
+[diff] 0x72dac0   MATCH            UI_Helper_72DAC0
+[diff] 0x72d450   MATCH            VtableStub_72D450
+[ledger] 0x72ca90 sub_72CA90 -> OK (attempt 1)
+[ledger] 0x72caa0 sub_72CAA0 -> OK (attempt 1)
+[ledger] 0x72cab0 UI_Create_72CAB0 -> OK (attempt 1)
+[ledger] 0x72cc60 sub_72CC60 -> OK (attempt 1)
+[ledger] 0x72cc70 sub_72CC70 -> OK (attempt 1)
+[ledger] 0x72cc80 UI_Helper_72CC80 -> OK (attempt 1)
+[ledger] 0x72ce40 sub_72CE40 -> OK (attempt 1)
+[ledger] 0x72d010 sub_72D010 -> OK (attempt 1)
+[ledger] 0x72d020 sub_72D020 -> OK (attempt 1)
+[ledger] 0x72d030 UI_Create_72D030 -> OK (attempt 1)
+[ledger] 0x72d1f0 sub_72D1F0 -> OK (attempt 1)
+[ledger] 0x72d200 sub_72D200 -> OK (attempt 1)
+[ledger] 0x72d210 UI_Create_72D210 -> OK (attempt 1)
+[ledger] 0x72d440 sub_72D440 -> OK (attempt 1)
+[ledger] 0x72d450 VtableStub_72D450 -> OK (attempt 1)
+[ledger] 0x72d800 sub_72D800 -> OK (attempt 1)
+[ledger] 0x72d810 sub_72D810 -> OK (attempt 1)
+[ledger] 0x72d820 UI_Create_72D820 -> OK (attempt 1)
+[ledger] 0x72dab0 sub_72DAB0 -> OK (attempt 1)
+[ledger] 0x72dac0 UI_Helper_72DAC0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p25\batch_report.json

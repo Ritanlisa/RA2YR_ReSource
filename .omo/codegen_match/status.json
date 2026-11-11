@@ -25052,12 +25052,89 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x72ca90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72CA90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72CA90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72caa0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72CAA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72CAA0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72cab0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Create_72CAB0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Create_72CAB0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72cc60": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72CC60",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72CC60",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72cc70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72CC70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72CC70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72cc80": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Helper_72CC80",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Helper_72CC80",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x72ce30": {
   "attempts": 2,
   "first_diff": null,
   "name": "sub_72CE30",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x72ce40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72CE40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72CE40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x72ce50": {
   "attempts": 1,
@@ -25066,6 +25143,39 @@
   "name": "UI_Create_72CE50",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "UI_Create_72CE50",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d010": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D010",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D010",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d020": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D020",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D020",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d030": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Create_72D030",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Create_72D030",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -25084,6 +25194,39 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x72d1f0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D1F0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D1F0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d200": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D200",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D200",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d210": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Create_72D210",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Create_72D210",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x72d350": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [0xb0fbac]",
@@ -25098,6 +25241,28 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x72d440": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D440",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D440",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d450": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "VtableStub_72D450",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VtableStub_72D450",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x72d460": {
   "attempts": 1,
   "first_diff": null,
@@ -25111,6 +25276,61 @@
   "name": "Game::LoadMultiplayerScoreAssets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x72d800": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D800",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D800",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d810": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72D810",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72D810",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72d820": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Create_72D820",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Create_72D820",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72dab0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_72DAB0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_72DAB0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x72dac0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "UI_Helper_72DAC0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "UI_Helper_72DAC0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x72dae0": {
   "attempts": 5,

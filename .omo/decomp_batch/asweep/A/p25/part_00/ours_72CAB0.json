@@ -1,0 +1,15 @@
+{
+ "symbol": "?UI_Create_72CAB0@@YAHXZ",
+ "sym_key": "Unnamed::UI_Create_72CAB0",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0FCF8@@3IA",
+   "sym_key": "DataGlobal_B0FCF8"
+  }
+ ]
+}
