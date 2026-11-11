@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6B88D0@@YAHXZ",
+ "sym_key": "Unnamed::sub_6B88D0",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B8A8@@3IA",
+   "sym_key": "DataGlobal_B0B8A8"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B8AC@@3IA",
+   "sym_key": "DataGlobal_B0B8AC"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B8B0@@3IA",
+   "sym_key": "DataGlobal_B0B8B0"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0B8B4@@3IA",
+   "sym_key": "DataGlobal_B0B8B4"
+  }
+ ]
+}
