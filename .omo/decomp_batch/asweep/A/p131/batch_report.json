@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "extern_reloc": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x6b6ab0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f35d8]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B6AB0",
+   "emitted": "sub_6B6AB0",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6b8960",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f36f8]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B8960",
+   "emitted": "sub_6B8960",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6b8980",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f36f8]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B8980",
+   "emitted": "sub_6B8980",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6b89a0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f36f8]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B89A0",
+   "emitted": "sub_6B89A0",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6bb0e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3708]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6BB0E0",
+   "emitted": "sub_6BB0E0",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6bb100",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3708]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6BB100",
+   "emitted": "sub_6BB100",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6bb120",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3708]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6BB120",
+   "emitted": "sub_6BB120",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c6950",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f38]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C6950",
+   "emitted": "sub_6C6950",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c6970",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f38]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C6970",
+   "emitted": "sub_6C6970",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c8cf0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f50]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C8CF0",
+   "emitted": "sub_6C8CF0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c8d10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f50]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C8D10",
+   "emitted": "sub_6C8D10",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c8d30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f50]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C8D30",
+   "emitted": "sub_6C8D30",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c9460",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f60]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C9460",
+   "emitted": "sub_6C9460",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c9480",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f60]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C9480",
+   "emitted": "sub_6C9480",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6c94a0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3f60]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C94A0",
+   "emitted": "sub_6C94A0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6cac80",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3fb0]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CAC80",
+   "emitted": "sub_6CAC80",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6cacc0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f3fb0]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CACC0",
+   "emitted": "sub_6CACC0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6ce3f0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f4058]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CE3F0",
+   "emitted": "sub_6CE3F0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6ce410",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f4058]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CE410",
+   "emitted": "sub_6CE410",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  },
+  {
+   "addr": "0x6ce430",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7f4058]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CE430",
+   "emitted": "sub_6CE430",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21,
+   "clean": false
+  }
+ ]
+}
