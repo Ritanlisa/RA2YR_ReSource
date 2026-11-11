@@ -1,0 +1,11 @@
+{
+ "addr": "0x487F20",
+ "name": "Coord2D::Sub",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487F20",
+ "bytes_hex": "8b4424088b118b4904568b302bd68b70048b4424082bce5e8910894804c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

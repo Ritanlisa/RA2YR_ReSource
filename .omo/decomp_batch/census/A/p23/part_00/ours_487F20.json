@@ -1,0 +1,8 @@
+{
+ "symbol": "?Sub@Coord2D@@QAEPAHPAH0@Z",
+ "sym_key": "Coord2D::Sub",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b51048b09568b70042bd68b308b4424082bce5e8908895004c20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Count@_VectorClass_VPoint2D@@QAEPAIPAHH@Z",
+ "sym_key": "_VectorClass_VPoint2D::Count",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b49048b5424088b442404568b34d189308b4cd1048948045ec20800",
+ "relocs": []
+}

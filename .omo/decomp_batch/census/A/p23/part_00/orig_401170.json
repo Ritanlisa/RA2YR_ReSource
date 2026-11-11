@@ -1,0 +1,11 @@
+{
+ "addr": "0x401170",
+ "name": "ObjectClass::ClearFlags2",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401170",
+ "bytes_hex": "8b11b8fdffffff23d089118b515023d08951508b512823d0895128c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

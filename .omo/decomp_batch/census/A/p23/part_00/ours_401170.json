@@ -1,0 +1,8 @@
+{
+ "symbol": "?ClearFlags2@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::ClearFlags2",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b11b8fdffffff23d089118b515023d08951508b512823d0895128c3",
+ "relocs": []
+}

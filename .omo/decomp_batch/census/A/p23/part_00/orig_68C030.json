@@ -1,0 +1,11 @@
+{
+ "addr": "0x68C030",
+ "name": "BuildingType::Init",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x68C030",
+ "bytes_hex": "8b44240485c07c0f83f8107d0a8b848180110000c2040083c8ffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

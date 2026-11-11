@@ -1,0 +1,109 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x401170 ObjectClass::ClearFlags2 -> ObjectClass
+[conv] 0x4e0250 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Clear -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x5d05f0 _VectorClass_VPoint2D::Count -> _VectorClass_VPoint2D
+[conv] 0x68c030 BuildingType::Init -> BuildingType
+[conv] 0x763700 ObjectClass::sub_763700 -> ObjectClass
+[conv] 0x5cf810 CampaignClass::Check -> CampaignClass
+[conv] 0x6ef5f0 TeamTypeClass::Check -> TeamTypeClass
+[conv] 0x4071a0 unknown::SetRateMixerSample -> unknown
+[conv] 0x58c2a0 Tactical::GetCellData -> Tactical
+[conv] 0x6cf490 SwizzleManagerClass::Add -> SwizzleManagerClass
+[conv] 0x487f20 Coord2D::Sub -> Coord2D
+[conv] 0x5fe020 OverlayClass::updateOverlayState -> OverlayClass
+[conv] 0x7719e0 DynamicVectorClass_uint::sub_7719E0 -> DynamicVectorClass_uint
+[conv] 0x556640 LinkClass::FindPrev -> LinkClass
+[conv] 0x6bef90 _TClassFactory_VCStreamClass::GetSize -> _TClassFactory_VCStreamClass
+[conv] 0x6bfe90 _TClassFactory_VSideClass::GetSize -> _TClassFactory_VSideClass
+[conv] 0x6c0d90 _TClassFactory_VCaptureManagerClass::GetSize -> _TClassFactory_VCaptureManagerClass
+[conv] 0x6c1c90 _TClassFactory_VTriggerTypeClass::GetSize -> _TClassFactory_VTriggerTypeClass
+[conv] 0x6c2b90 _TClassFactory_VAircraftTypeClass::GetSize -> _TClassFactory_VAircraftTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _VectorClass_VPoint2D    rc=0
+[era] BuildingType             rc=0
+[era] CampaignClass            rc=2
+[era] TeamTypeClass            rc=0
+[era] unknown                  rc=0
+[era] Tactical                 rc=2
+[era] SwizzleManagerClass      rc=2
+[era] Coord2D                  rc=0
+[era] OverlayClass             rc=2
+[era] DynamicVectorClass_uint  rc=2
+[era] LinkClass                rc=2
+[era] _TClassFactory_VCStreamClass rc=0
+[era] _TClassFactory_VSideClass rc=0
+[era] _TClassFactory_VCaptureManagerClass rc=0
+[era] _TClassFactory_VTriggerTypeClass rc=0
+[era] _TClassFactory_VAircraftTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x401170   MATCH            ObjectClass::ClearFlags2
+[diff] 0x4e0250   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Clear
+[diff] 0x5d05f0   MISMATCH         _VectorClass_VPoint2D::Count
+[diff] 0x68c030   MISMATCH         BuildingType::Init
+[diff] 0x6ef5f0   MATCH            TeamTypeClass::Check
+[diff] 0x4071a0   MISMATCH         unknown::SetRateMixerSample
+[diff] 0x487f20   MISMATCH         Coord2D::Sub
+[diff] 0x6bef90   MISMATCH         _TClassFactory_VCStreamClass::GetSize
+[diff] 0x6bfe90   MISMATCH         _TClassFactory_VSideClass::GetSize
+[diff] 0x6c0d90   MISMATCH         _TClassFactory_VCaptureManagerClass::GetSize
+[diff] 0x6c1c90   MISMATCH         _TClassFactory_VTriggerTypeClass::GetSize
+[diff] 0x6c2b90   MISMATCH         _TClassFactory_VAircraftTypeClass::GetSize
+[ledger] 0x401170 ObjectClass::ClearFlags2 -> OK (attempt 1)
+[ledger] 0x4e0250 VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear -> NG (attempt 1)
+[ledger] 0x5d05f0 VectorClass_Point2D::Count -> NG (attempt 1)
+[ledger] 0x7c5ee4 0x7c5ee4 -> PENDING (attempt 1)
+[ledger] 0x68c030 BuildingType::Init -> NG (attempt 1)
+[ledger] 0x763700 sub_763700 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cf810 CampaignClass::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ef5f0 TeamTypeClass::Check -> OK (attempt 1)
+[ledger] 0x4071a0 SetRateMixerSample -> NG (attempt 1)
+[ledger] 0x58c2a0 Tactical::GetCellData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf490 SwizzleManagerClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487f20 Coord2D::Sub -> NG (attempt 1)
+[ledger] 0x5fe020 OverlayClass::updateOverlayState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7719e0 sub_7719E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556640 LinkedList_flat::FindPrev -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bef90 VectorClass_K_8::GetSize -> NG (attempt 1)
+[ledger] 0x6bfe90 TClassFactory_SideClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0d90 TClassFactory_CaptureManagerClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1c90 TClassFactory_TriggerTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2b90 TClassFactory_AircraftTypeClass::GetSize -> NG (attempt 1)
+======================================================================
+{
+ "total": 1517,
+ "verdicts": {
+  "MISMATCH": 374,
+  "MATCH": 497,
+  "COMPILE_FAIL": 337,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 302,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 6,
+  "codegen_shape": 129,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 27,
+  "regalloc": 51,
+  "branch_order": 59,
+  "width_mismatch": 3,
+  "extern_reloc": 15,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 57.1,
+ "match_rate_of_total_pct": 32.8,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p23\batch_report.json

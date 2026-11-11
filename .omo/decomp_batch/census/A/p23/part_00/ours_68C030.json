@@ -1,0 +1,8 @@
+{
+ "symbol": "?Init@BuildingType@@QAEHI@Z",
+ "sym_key": "BuildingType::Init",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f810720683c8ffc204008b848180110000c20400",
+ "relocs": []
+}

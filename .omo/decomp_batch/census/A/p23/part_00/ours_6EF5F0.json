@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@TeamTypeClass@@QAEHH@Z",
+ "sym_key": "TeamTypeClass::Check",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b415485c074148b4c24048988f00000008b80d805000085c075f0c20400",
+ "relocs": []
+}

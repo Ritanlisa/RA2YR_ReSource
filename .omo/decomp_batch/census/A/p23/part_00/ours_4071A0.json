@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetRateMixerSample@unknown@@QAIHPAHHIH@Z",
+ "sym_key": "unknown::SetRateMixerSample",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b4424048bca568b74240cc1e01033d2897110f7f65e89410c8b44240c894114c20c00",
+ "relocs": []
+}

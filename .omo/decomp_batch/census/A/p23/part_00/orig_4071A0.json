@@ -1,0 +1,11 @@
+{
+ "addr": "0x4071A0",
+ "name": "SetRateMixerSample",
+ "size": 31,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4071A0",
+ "bytes_hex": "8bc2568b74240833d2c1e010f7f68971105e89410c8b442408894114c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
