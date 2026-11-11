@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cde80 nullsub_235 -> _addr_6C
+[conv] 0x6d2b50 nullsub_238 -> _addr_6D
+[conv] 0x6e57de ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_18 -> ObjectClass
+[conv] 0x6f60c0 TechnoClass::vt_entry_448 -> TechnoClass
+[conv] 0x701190 TechnoClass::StubReturnFalse11 -> TechnoClass
+[conv] 0x709a20 TechnoClass::COMStub_Return0_287 -> TechnoClass
+[conv] 0x709a30 TechnoClass::Stub -> TechnoClass
+[conv] 0x70f020 TechnoClass::StubReturnFalse5 -> TechnoClass
+[conv] 0x70f030 TechnoClass::StubReturnFalse6 -> TechnoClass
+[conv] 0x70f0e0 TechnoClass::StubReturnFalse7 -> TechnoClass
+[conv] 0x70f0f0 TechnoClass::StubReturnFalse8 -> TechnoClass
+[conv] 0x711e80 TechnoTypeClass::processWeaponFire -> TechnoTypeClass
+[conv] 0x717a40 ObjectClass::ReadPointerFromECX4 -> ObjectClass
+[conv] 0x724f90 ObjectClass::_0Iostream_init_QAE_XZ_6 -> ObjectClass
+[conv] 0x726fce ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_20 -> ObjectClass
+[conv] 0x7490c0 ObjectClass::_0Iostream_init_QAE_XZ_7 -> ObjectClass
+[conv] 0x7532be ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_21 -> ObjectClass
+[conv] 0x7533a0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_22 -> ObjectClass
+[conv] 0x754900 ObjectClass::_0Iostream_init_QAE_XZ_8 -> ObjectClass
+[conv] 0x75a400 ReturnNull2 -> _addr_75
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6C                 rc=0
+[era] _addr_6D                 rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=0
+[era] _addr_75                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x6cde80   MISMATCH         nullsub_235
+[diff] 0x6d2b50   MISMATCH         nullsub_238
+[diff] 0x6e57de   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_18
+[diff] 0x717a40   MATCH            ObjectClass::ReadPointerFromECX4
+[diff] 0x724f90   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_6
+[diff] 0x726fce   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_20
+[diff] 0x7490c0   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_7
+[diff] 0x7532be   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_21
+[diff] 0x7533a0   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_22
+[diff] 0x754900   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_8
+[diff] 0x6f60c0   MISMATCH         TechnoClass::vt_entry_448
+[diff] 0x701190   MATCH            TechnoClass::StubReturnFalse11
+[diff] 0x709a20   MISMATCH         TechnoClass::COMStub_Return0_287
+[diff] 0x709a30   MISMATCH         TechnoClass::Stub
+[diff] 0x70f020   MATCH            TechnoClass::StubReturnFalse5
+[diff] 0x70f030   MATCH            TechnoClass::StubReturnFalse6
+[diff] 0x70f0e0   MATCH            TechnoClass::StubReturnFalse7
+[diff] 0x70f0f0   MATCH            TechnoClass::StubReturnFalse8
+[diff] 0x711e80   MATCH            TechnoTypeClass::processWeaponFire
+[diff] 0x75a400   MATCH            ReturnNull2
+[ledger] 0x6cde80 nullsub_235 -> NG (attempt 1)
+[ledger] 0x6d2b50 nullsub_238 -> NG (attempt 1)
+[ledger] 0x6e57de ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_18 -> OK (attempt 1)
+[ledger] 0x6f60c0 TechnoClass::vt_entry_448 -> NG (attempt 1)
+[ledger] 0x701190 TechnoClass::StubReturnFalse11 -> OK (attempt 1)
+[ledger] 0x709a20 TechnoClass::COMStub_Return0_287 -> NG (attempt 1)
+[ledger] 0x709a30 TechnoClass::Stub -> NG (attempt 1)
+[ledger] 0x70f020 TechnoClass::StubReturnFalse5 -> OK (attempt 1)
+[ledger] 0x70f030 TechnoClass::StubReturnFalse6 -> OK (attempt 1)
+[ledger] 0x70f0e0 TechnoClass::StubReturnFalse7 -> OK (attempt 1)
+[ledger] 0x70f0f0 TechnoClass::StubReturnFalse8 -> OK (attempt 1)
+[ledger] 0x711e80 TechnoTypeClass::processWeaponFire -> OK (attempt 1)
+[ledger] 0x717a40 ObjectClass::ReadPointerFromECX4 -> OK (attempt 1)
+[ledger] 0x724f90 ObjectClass::_0Iostream_init_QAE_XZ_6 -> OK (attempt 1)
+[ledger] 0x726fce ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_20 -> OK (attempt 1)
+[ledger] 0x7490c0 ObjectClass::_0Iostream_init_QAE_XZ_7 -> OK (attempt 1)
+[ledger] 0x7532be ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_21 -> OK (attempt 1)
+[ledger] 0x7533a0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_22 -> OK (attempt 1)
+[ledger] 0x754900 ObjectClass::_0Iostream_init_QAE_XZ_8 -> OK (attempt 1)
+[ledger] 0x75a400 ReturnNull2 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "MATCH": 15
+ },
+ "pathologies": {
+  "cc_mismatch": 3,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 75.0,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p16\batch_report.json
