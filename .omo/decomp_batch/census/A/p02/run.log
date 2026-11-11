@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x70f110 TechnoClass::StubReturnFalse9 -> TechnoClass
+[conv] 0x75f8a0 WaveClass::StubReturnFalse -> WaveClass
+[conv] 0x7dc72b unknown::nullsub_271 -> unknown
+[conv] 0x4a8410 unknown::sub_4A8410 -> unknown
+[conv] 0x5f4380 ObjectClass::COMStub_89 -> ObjectClass
+[conv] 0x6e0040 unknown::sub_6E0040 -> unknown
+[conv] 0x7c8b38 ObjectClass::sub_7C8B38 -> ObjectClass
+[conv] 0x536c90 GuardCommandClass::performAction_85 -> GuardCommandClass
+[conv] 0x5371d0 SidebarDownCommandClass::performAction_134 -> SidebarDownCommandClass
+[conv] 0x5378e0 SetView4CommandClass::performAction_178 -> SetView4CommandClass
+[conv] 0x543aa0 AbstractClass::COMStub_Ret17_11 -> AbstractClass
+[conv] 0x5b2eb0 MissionClass::COMStub_Ret450_139 -> MissionClass
+[conv] 0x5f42a0 ObjectClass::COMStub_Ret2147483647_35 -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] WaveClass                rc=0
+[era] unknown                  rc=0
+[era] ObjectClass              rc=0
+[era] GuardCommandClass        rc=0
+[era] SidebarDownCommandClass  rc=0
+[era] SetView4CommandClass     rc=0
+[era] AbstractClass            rc=0
+[era] MissionClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x70f110   MATCH            TechnoClass::StubReturnFalse9
+[diff] 0x75f8a0   MATCH            WaveClass::StubReturnFalse
+[diff] 0x7dc72b   MATCH            unknown::nullsub_271
+[diff] 0x4a8410   MATCH            unknown::sub_4A8410
+[diff] 0x6e0040   MATCH            unknown::sub_6E0040
+[diff] 0x5f4380   MATCH            ObjectClass::COMStub_89
+[diff] 0x7c8b38   MATCH            ObjectClass::sub_7C8B38
+[diff] 0x5f42a0   MATCH            ObjectClass::COMStub_Ret2147483647_35
+[diff] 0x536c90   MATCH            GuardCommandClass::performAction_85
+[diff] 0x5371d0   MATCH            SidebarDownCommandClass::performAction_134
+[diff] 0x5378e0   MATCH            SetView4CommandClass::performAction_178
+[diff] 0x543aa0   MATCH            AbstractClass::COMStub_Ret17_11
+[diff] 0x5b2eb0   MATCH            MissionClass::COMStub_Ret450_139
+[ledger] 0x70f110 TechnoClass::StubReturnFalse9 -> OK (attempt 1)
+[ledger] 0x75f8a0 WaveClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x7dc72b nullsub_271 -> OK (attempt 1)
+[ledger] 0x7c5ee0 0x7c5ee0 -> PENDING (attempt 1)
+[ledger] 0x4a8410 sub_4A8410 -> OK (attempt 1)
+[ledger] 0x5f4380 AbstractClass::COMStub_89 -> OK (attempt 1)
+[ledger] 0x6e0040 sub_6E0040 -> OK (attempt 1)
+[ledger] 0x7c8b38 sub_7C8B38 -> OK (attempt 1)
+[ledger] 0x413590 0x413590 -> PENDING (attempt 1)
+[ledger] 0x4a80d0 0x4a80d0 -> PENDING (attempt 1)
+[ledger] 0x536c90 CreateTeamCommand::performAction_85 -> OK (attempt 1)
+[ledger] 0x5371d0 CreateTeamCommand::performAction_134 -> OK (attempt 1)
+[ledger] 0x5378e0 CreateTeamCommand::performAction_178 -> OK (attempt 1)
+[ledger] 0x543aa0 AbstractClass::COMStub_Ret17_11 -> OK (attempt 1)
+[ledger] 0x5b2eb0 AbstractClass::COMStub_Ret450_139 -> OK (attempt 1)
+[ledger] 0x5f42a0 AbstractClass::COMStub_Ret2147483647_35 -> OK (attempt 1)
+[ledger] 0x72b010 0x72b010 -> PENDING (attempt 1)
+[ledger] 0x72b370 0x72b370 -> PENDING (attempt 1)
+[ledger] 0x72bba0 0x72bba0 -> PENDING (attempt 1)
+[ledger] 0x72c140 0x72c140 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1097,
+ "verdicts": {
+  "MISMATCH": 289,
+  "MATCH": 442,
+  "COMPILE_FAIL": 317,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 42,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 113,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 60.5,
+ "match_rate_of_total_pct": 40.3,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p02\batch_report.json

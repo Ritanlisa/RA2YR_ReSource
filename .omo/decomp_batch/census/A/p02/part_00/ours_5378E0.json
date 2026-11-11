@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_178@SetView4CommandClass@@QAEPADXZ",
+ "sym_key": "SetView4CommandClass::performAction_178",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aSetview4@@3PADA",
+   "sym_key": "aSetview4"
+  }
+ ]
+}

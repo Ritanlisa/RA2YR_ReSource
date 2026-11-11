@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_85@GuardCommandClass@@QAEPADXZ",
+ "sym_key": "GuardCommandClass::performAction_85",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aGuardobject@@3PADA",
+   "sym_key": "aGuardobject"
+  }
+ ]
+}
