@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x4e6560",
+  "batch": "nocls",
+  "name": "sub_4E6560",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4e6820",
+  "batch": "nocls",
+  "name": "sub_4E6820",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e6ae0",
+  "batch": "nocls",
+  "name": "sub_4E6AE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4e6da0",
+  "batch": "nocls",
+  "name": "sub_4E6DA0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e7060",
+  "batch": "nocls",
+  "name": "sub_4E7060",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4e7320",
+  "batch": "nocls",
+  "name": "sub_4E7320",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e7660",
+  "batch": "nocls",
+  "name": "sub_4E7660",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4e78a0",
+  "batch": "nocls",
+  "name": "sub_4E78A0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e7be0",
+  "batch": "nocls",
+  "name": "sub_4E7BE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4e7f70",
+  "batch": "nocls",
+  "name": "sub_4E7F70",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e8090",
+  "batch": "nocls",
+  "name": "unknown_libname_18",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e8110",
+  "batch": "nocls",
+  "name": "unknown_libname_20",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x4e8160",
+  "batch": "nocls",
+  "name": "sub_4E8160",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4f1840",
+  "batch": "nocls",
+  "name": "ShowGameDialog",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4f4010",
+  "batch": "nocls",
+  "name": "sub_4F4010",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4f40c0",
+  "batch": "nocls",
+  "name": "sub_4F40C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4f41a0",
+  "batch": "nocls",
+  "name": "sub_4F41A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4f4f50",
+  "batch": "nocls",
+  "name": "sub_4F4F50",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x506b80",
+  "batch": "nocls",
+  "name": "nullsub_17",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x511200",
+  "batch": "nocls",
+  "name": "sub_511200",
+  "cc": "unknown"
+ }
+]

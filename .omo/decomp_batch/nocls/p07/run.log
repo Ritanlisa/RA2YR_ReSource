@@ -1,0 +1,74 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e6560 sub_4E6560 -> _addr_4E
+[conv] 0x4e6820 sub_4E6820 -> _addr_4E
+[conv] 0x4e6ae0 sub_4E6AE0 -> _addr_4E
+[conv] 0x4e6da0 sub_4E6DA0 -> _addr_4E
+[conv] 0x4e7060 sub_4E7060 -> _addr_4E
+[conv] 0x4e7320 sub_4E7320 -> _addr_4E
+[conv] 0x4e7660 sub_4E7660 -> _addr_4E
+[conv] 0x4e78a0 sub_4E78A0 -> _addr_4E
+[conv] 0x4e7be0 sub_4E7BE0 -> _addr_4E
+[conv] 0x4e7f70 sub_4E7F70 -> _addr_4E
+[conv] 0x4e8090 unknown_libname_18 -> _addr_4E
+[conv] 0x4e8110 unknown_libname_20 -> _addr_4E
+[conv] 0x4e8160 sub_4E8160 -> _addr_4E
+[conv] 0x4f1840 ShowGameDialog -> _addr_4F
+[conv] 0x4f4010 sub_4F4010 -> _addr_4F
+[conv] 0x4f40c0 sub_4F40C0 -> _addr_4F
+[conv] 0x4f41a0 sub_4F41A0 -> _addr_4F
+[conv] 0x4f4f50 sub_4F4F50 -> _addr_4F
+[conv] 0x506b80 nullsub_17 -> _addr_50
+[conv] 0x511200 sub_511200 -> _addr_51
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=2
+[era] _addr_4F                 rc=2
+[era] _addr_50                 rc=0
+[era] _addr_51                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x4e8110   MISMATCH         unknown_libname_20
+[diff] 0x4f4010   MATCH            sub_4F4010
+[diff] 0x4f40c0   MISMATCH         sub_4F40C0
+[diff] 0x4f4f50   MISMATCH         sub_4F4F50
+[diff] 0x506b80   MATCH            nullsub_17
+[ledger] 0x4e6560 sub_4E6560 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e6820 sub_4E6820 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e6ae0 sub_4E6AE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e6da0 sub_4E6DA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e7060 sub_4E7060 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e7320 sub_4E7320 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e7660 sub_4E7660 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e78a0 sub_4E78A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e7be0 sub_4E7BE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e7f70 sub_4E7F70 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e8090 unknown_libname_18 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4e8110 unknown_libname_20 -> NG (attempt 3)
+[ledger] 0x4e8160 sub_4E8160 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f1840 ShowGameDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f4010 sub_4F4010 -> OK (attempt 2)
+[ledger] 0x4f40c0 sub_4F40C0 -> NG (attempt 2)
+[ledger] 0x4f41a0 sub_4F41A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f4f50 sub_4F4F50 -> NG (attempt 2)
+[ledger] 0x506b80 nullsub_17 -> OK (attempt 2)
+[ledger] 0x511200 sub_511200 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 3,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 40.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p07\batch_report.json
