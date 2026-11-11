@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c12c0 _TClassFactory_VRadSiteClass::AddRef -> _TClassFactory_VRadSiteClass
+[conv] 0x6c2340 _TClassFactory_VTeamClass::AddRef -> _TClassFactory_VTeamClass
+[conv] 0x6c33c0 _TClassFactory_VUnitClass::AddRef -> _TClassFactory_VUnitClass
+[conv] 0x6c45c0 _TClassFactory_VTunnelLocomotionClass::AddRef -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c5640 _TClassFactory_VParticleClass::ProcessCharged -> _TClassFactory_VParticleClass
+[conv] 0x7d9fac sub_7D9FAC -> _addr_7D
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x5aff50 MechLocomotionClass::sub_5AFF50 -> MechLocomotionClass
+[conv] 0x76bc60 WDTState::Constructor -> WDTState
+[conv] 0x7d8496 unknown_libname_78 -> _addr_7D
+[conv] 0x536950 HealthNavCommandClass::performAction_58 -> HealthNavCommandClass
+[conv] 0x7a2730 ObjectClass::Network_Create_7A2730 -> ObjectClass
+[conv] 0x40d310 sub_40D310 -> _addr_40
+[conv] 0x600530 sub_600530 -> _addr_60
+[conv] 0x77ca00 sub_77CA00 -> _addr_77
+[conv] 0x77d0f0 sub_77D0F0 -> _addr_77
+[conv] 0x535df0 SetDefenseTabCommandClass::performAction_8 -> SetDefenseTabCommandClass
+[conv] 0x536210 CenterTeamCommand::GetTeamString -> CenterTeamCommand
+[conv] 0x536840 TypeSelectCommandClass::performAction_47 -> TypeSelectCommandClass
+[conv] 0x536b20 StopCommandClass::performAction_71 -> StopCommandClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VRadSiteClass rc=0
+[era] _TClassFactory_VTeamClass rc=0
+[era] _TClassFactory_VUnitClass rc=0
+[era] _TClassFactory_VTunnelLocomotionClass rc=0
+[era] _TClassFactory_VParticleClass rc=0
+[era] _addr_7D                 rc=2
+[era] BinkMovieHandle          rc=2
+[era] MechLocomotionClass      rc=0
+[era] WDTState                 rc=0
+[era] HealthNavCommandClass    rc=2
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=2
+[era] _addr_60                 rc=2
+[era] _addr_77                 rc=2
+[era] SetDefenseTabCommandClass rc=2
+[era] CenterTeamCommand        rc=2
+[era] TypeSelectCommandClass   rc=2
+[era] StopCommandClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x6c12c0   MISMATCH         _TClassFactory_VRadSiteClass::AddRef
+[diff] 0x6c2340   MISMATCH         _TClassFactory_VTeamClass::AddRef
+[diff] 0x6c33c0   MISMATCH         _TClassFactory_VUnitClass::AddRef
+[diff] 0x6c45c0   MISMATCH         _TClassFactory_VTunnelLocomotionClass::AddRef
+[diff] 0x6c5640   MISMATCH         _TClassFactory_VParticleClass::ProcessCharged
+[diff] 0x5aff50   MISMATCH         MechLocomotionClass::sub_5AFF50
+[diff] 0x76bc60   MISMATCH         WDTState::Constructor
+[ledger] 0x6c12c0 _TClassFactory_VRadSiteClass::AddRef -> NG (attempt 2)
+[ledger] 0x6c2340 _TClassFactory_VTeamClass::AddRef -> NG (attempt 2)
+[ledger] 0x6c33c0 _TClassFactory_VUnitClass::AddRef -> NG (attempt 2)
+[ledger] 0x6c45c0 _TClassFactory_VTunnelLocomotionClass::AddRef -> NG (attempt 2)
+[ledger] 0x6c5640 _TClassFactory_VParticleClass::ProcessCharged -> NG (attempt 2)
+[ledger] 0x7d9fac sub_7D9FAC -> COMPILE_FAIL (attempt 3)
+[ledger] 0x433040 BinkMovieHandle::RenderFrameToSurface -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5aff50 MechLocomotionClass::sub_5AFF50 -> NG (attempt 2)
+[ledger] 0x76bc60 WDTState::Constructor -> NG (attempt 2)
+[ledger] 0x7d8496 unknown_libname_78 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x536950 HealthNavCommandClass::performAction_58 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7a2730 ObjectClass::Network_Create_7A2730 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40d310 sub_40D310 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x600530 sub_600530 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77ca00 sub_77CA00 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77d0f0 sub_77D0F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x535df0 SetDefenseTabCommandClass::performAction_8 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536210 CenterTeamCommand::GetTeamString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536840 TypeSelectCommandClass::performAction_47 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536b20 StopCommandClass::performAction_71 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 13
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p06\batch_report.json

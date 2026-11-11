@@ -2392,11 +2392,15 @@
   "this_as_id": false
  },
  "0x40d310": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_40D310",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_40D310",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x40d3c0": {
   "attempts": 2,
@@ -8153,11 +8157,16 @@
   "this_as_id": false
  },
  "0x433040": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "BinkMovie::RenderFrameToSurface",
+  "name": "BinkMovieHandle::RenderFrameToSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BinkMovie::RenderFrameToSurface",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x433270": {
   "attempts": 6,
@@ -31399,11 +31408,16 @@
   "status": "NG"
  },
  "0x535df0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_8",
+  "name": "SetDefenseTabCommandClass::performAction_8",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_8",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x535ea0": {
   "attempts": 5,
@@ -31463,11 +31477,16 @@
   "this_as_id": false
  },
  "0x536210": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CSF::GetTeamString",
+  "name": "CenterTeamCommand::GetTeamString",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CSF::GetTeamString",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536290": {
   "attempts": 1,
@@ -31558,11 +31577,16 @@
   "status": "NG"
  },
  "0x536840": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_47",
+  "name": "TypeSelectCommandClass::performAction_47",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_47",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536880": {
   "attempts": 1,
@@ -31620,11 +31644,16 @@
   "this_as_id": false
  },
  "0x536950": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_58",
+  "name": "HealthNavCommandClass::performAction_58",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_58",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536970": {
   "attempts": 5,
@@ -31660,11 +31689,16 @@
   "status": "NG"
  },
  "0x536b20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_71",
+  "name": "StopCommandClass::performAction_71",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_71",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536b80": {
   "attempts": 7,
@@ -40383,11 +40417,16 @@
   "this_as_id": false
  },
  "0x5aff50": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_5AFF50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov dword ptr [ecx], 0x7edc38",
+  "name": "MechLocomotionClass::sub_5AFF50",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "sub_5AFF50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5aff70": {
   "attempts": 1,
@@ -49113,11 +49152,15 @@
   "this_as_id": false
  },
  "0x600530": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_600530",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_600530",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x600660": {
   "attempts": 1,
@@ -61862,11 +61905,16 @@
   "this_as_id": false
  },
  "0x6c12c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_RadSiteClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "_TClassFactory_VRadSiteClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_RadSiteClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c1390": {
   "attempts": 1,
@@ -62144,11 +62192,16 @@
   "this_as_id": false
  },
  "0x6c2340": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_TeamClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "_TClassFactory_VTeamClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TeamClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c2410": {
   "attempts": 1,
@@ -62426,11 +62479,16 @@
   "this_as_id": false
  },
  "0x6c33c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_UnitClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "_TClassFactory_VUnitClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_UnitClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c3490": {
   "attempts": 1,
@@ -62739,11 +62797,16 @@
   "this_as_id": false
  },
  "0x6c45c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_TunnelLocomotionClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "_TClassFactory_VTunnelLocomotionClass::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TunnelLocomotionClass::AddRef",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c4690": {
   "attempts": 1,
@@ -63035,11 +63098,16 @@
   "this_as_id": false
  },
  "0x6c5640": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "SuperWeaponClass::ProcessCharged",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "_TClassFactory_VParticleClass::ProcessCharged",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SuperWeaponClass::ProcessCharged",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c5710": {
   "attempts": 1,
@@ -78697,11 +78765,16 @@
   "this_as_id": false
  },
  "0x76bc60": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "WDTState_4::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 mov dword ptr [esi], 0x7ebfa4",
+  "name": "WDTState::Constructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "WDTState_4::Constructor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x76bc80": {
   "attempts": 1,
@@ -80808,7 +80881,7 @@
   "this_as_id": false
  },
  "0x77ca00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77CA00",
@@ -80874,7 +80947,7 @@
   "this_as_id": false
  },
  "0x77d0f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77D0F0",
@@ -81229,11 +81302,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x7a2730": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "Network_Create_7A2730",
+  "name": "ObjectClass::Network_Create_7A2730",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Network_Create_7A2730",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7a2800": {
   "attempts": 1,
@@ -85449,7 +85527,7 @@
   "this_as_id": false
  },
  "0x7d8496": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "unknown_libname_78",
@@ -85569,7 +85647,7 @@
   "this_as_id": false
  },
  "0x7d9fac": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_7D9FAC",

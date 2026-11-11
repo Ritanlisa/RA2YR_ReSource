@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@WDTState@@QAEPAIXZ",
+ "sym_key": "WDTState::Constructor",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000c7060000000033c05ec3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  }
+ ]
+}
