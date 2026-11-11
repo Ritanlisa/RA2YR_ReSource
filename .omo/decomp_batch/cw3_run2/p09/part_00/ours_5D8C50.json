@@ -1,0 +1,15 @@
+{
+ "symbol": "?Constructor@MultiplayerTeam@@QAEPAPAGPAPBHPAH@Z",
+ "sym_key": "MultiplayerTeam::Constructor",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf1508d4e04e8000000008b4c240cc70600000000894e088bc65ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?AssignFromPtr@WideString@@QAEPAPAGPAX@Z",
+   "sym_key": "WideString::AssignFromPtr"
+  }
+ ]
+}

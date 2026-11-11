@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x769dc0",
+  "name": "Map_WorldDominationTour_20::Constructor",
+  "cls": null,
+  "size": 32,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorCursor_V_TRect_H_V_VectorClass_V_T"
+ },
+ {
+  "addr": "0x7b0cb0",
+  "name": "sub_7B0CB0",
+  "cls": null,
+  "size": 33,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2400",
+  "first_msg": "inline assembler syntax error in 'opcode'"
+ },
+ {
+  "addr": "0x516370",
+  "name": "JumpjetLocomotionClass::UpdateFacingDirection_0",
+  "cls": null,
+  "size": 34,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->primaryFacing' must point to class/struct/union"
+ },
+ {
+  "addr": "0x559d30",
+  "name": "sub_559D30",
+  "cls": null,
+  "size": 34,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'CompareFileTime' : cannot convert parameter 1 from 'const class FILETIME *' to 'void *'"
+ },
+ {
+  "addr": "0x5d8c50",
+  "name": "MultiplayerTeam::Constructor",
+  "cls": null,
+  "size": 35,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x7cb47a",
+  "name": "__unlock_file2",
+  "cls": null,
+  "size": 35,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'LPCRITICAL_SECTION' : undeclared identifier"
+ },
+ {
+  "addr": "0x5cabd0",
+  "name": "MultiplayerSiege::QueryInterface",
+  "cls": null,
+  "size": 36,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x765790",
+  "name": "COMClass::invokeMethod",
+  "cls": null,
+  "size": 36,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'rc_ptr' : undeclared identifier"
+ },
+ {
+  "addr": "0x7a2800",
+  "name": "Map_Handle_7A2800",
+  "cls": null,
+  "size": 36,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x773b10",
+  "name": "WebBrowser::Write",
+  "cls": null,
+  "size": 37,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned int,int,unsigned int,unsigned short *)' : cannot convert parameter 4 from 'char []' to 'unsig"
+ },
+ {
+  "addr": "0x77d160",
+  "name": "sub_77D160",
+  "cls": null,
+  "size": 37,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2673",
+  "first_msg": "'sub_77D160' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x6bf960",
+  "name": "TClassFactory_CellClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c09e0",
+  "name": "TClassFactory_SpawnManagerClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c1a60",
+  "name": "TClassFactory_TriggerClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c2ae0",
+  "name": "TClassFactory_AircraftTypeClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c3b60",
+  "name": "TClassFactory_AnimTypeClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c4be0",
+  "name": "TClassFactory_TeleportLocomotionClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x6c5de0",
+  "name": "TClassFactory_NeuronClass::GetClassName",
+  "cls": null,
+  "size": 38,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'volatile class LONG *' : unknown size"
+ },
+ {
+  "addr": "0x40d9c0",
+  "name": "sub_40D9C0",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InitArrayWithValue' : cannot convert parameter 1 from 'unsigned int' to 'int *'"
+ },
+ {
+  "addr": "0x40f410",
+  "name": "sub_40F410",
+  "cls": null,
+  "size": 39,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ }
+]

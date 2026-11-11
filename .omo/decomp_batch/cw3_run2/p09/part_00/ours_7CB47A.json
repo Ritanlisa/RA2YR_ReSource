@@ -1,0 +1,21 @@
+{
+ "symbol": "?__unlock_file2@@YAXHH@Z",
+ "sym_key": "Unnamed::__unlock_file2",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8147c0e8b44240883c02050e800000000c383c01c50e80000000059c3",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?LeaveCriticalSection@@YGXPAX@Z",
+   "sym_key": "LeaveCriticalSection"
+  },
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}

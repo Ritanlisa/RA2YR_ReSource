@@ -1,0 +1,11 @@
+{
+ "addr": "0x765790",
+ "name": "COMClass::invokeMethod",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x765790",
+ "bytes_hex": "568bf1c706246f7f00e8c27ceffff644240801740956e89233060083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

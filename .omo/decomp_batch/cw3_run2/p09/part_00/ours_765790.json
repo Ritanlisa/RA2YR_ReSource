@@ -1,0 +1,21 @@
+{
+ "symbol": "?invokeMethod@COMClass@@QAEPAID@Z",
+ "sym_key": "COMClass::invokeMethod",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "568bf1c70600000000e800000000f644240801740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Release@ComPtr@@QAEPAIXZ",
+   "sym_key": "ComPtr::Release"
+  },
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

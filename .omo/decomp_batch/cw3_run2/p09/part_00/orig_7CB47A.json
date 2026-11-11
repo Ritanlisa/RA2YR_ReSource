@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB47A",
+ "name": "__unlock_file2",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB47A",
+ "bytes_hex": "8b44240483f8147d0b83c01c50e8ca25000059c38b44240883c02050ff15ec117e00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

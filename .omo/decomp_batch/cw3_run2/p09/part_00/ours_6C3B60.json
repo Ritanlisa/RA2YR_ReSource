@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetClassName@_TClassFactory_VAnimTypeClass@@QAGJXZ",
+ "sym_key": "_TClassFactory_VAnimTypeClass::GetClassName",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "5156578b7c24088d470450e8000000008bf085f6750957e80000000083c4048bc65f5e59c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
