@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p145\part_00
+=== convert (20 addrs) ===
+[conv] 0x41b7d0 TechnoClass::processDamageAnimation -> TechnoClass
+[conv] 0x41c890 sub_41C890 -> _addr_41
+[conv] 0x41d260 sub_41D260 -> _addr_41
+[conv] 0x41e140 sub_41E140 -> _addr_41
+[conv] 0x4206d0 sub_4206D0 -> _addr_42
+[conv] 0x421c90 sub_421C90 -> _addr_42
+[conv] 0x426650 sub_426650 -> _addr_42
+[conv] 0x427510 sub_427510 -> _addr_42
+[conv] 0x428ff0 sub_428FF0 -> _addr_42
+[conv] 0x429570 sub_429570 -> _addr_42
+[conv] 0x42ff80 sub_42FF80 -> _addr_42
+[conv] 0x4318d0 sub_4318D0 -> _addr_43
+[conv] 0x432670 sub_432670 -> _addr_43
+[conv] 0x433860 sub_433860 -> _addr_43
+[conv] 0x434ab0 sub_434AB0 -> _addr_43
+[conv] 0x435800 sub_435800 -> _addr_43
+[conv] 0x438530 sub_438530 -> _addr_43
+[conv] 0x439480 sub_439480 -> _addr_43
+[conv] 0x43adf0 ObjectClass::sub_43ADF0 -> ObjectClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=0
+[era] ObjectClass              rc=2
+=== diffasm byte-compare ===
+[diff] 0x41b7d0   MISMATCH         TechnoClass::processDamageAnimation
+[diff] 0x41c890   MATCH            sub_41C890
+[diff] 0x41d260   MISMATCH         sub_41D260
+[diff] 0x41e140   MATCH            sub_41E140
+[diff] 0x4206d0   MATCH            sub_4206D0
+[diff] 0x421c90   MATCH            sub_421C90
+[diff] 0x426650   MATCH            sub_426650
+[diff] 0x427510   MATCH            sub_427510
+[diff] 0x428ff0   MATCH            sub_428FF0
+[diff] 0x429570   MATCH            sub_429570
+[diff] 0x42ff80   MATCH            sub_42FF80
+[diff] 0x4318d0   MATCH            sub_4318D0
+[diff] 0x432670   MATCH            sub_432670
+[diff] 0x433860   MATCH            sub_433860
+[diff] 0x434ab0   MATCH            sub_434AB0
+[diff] 0x435800   MATCH            sub_435800
+[diff] 0x438530   MATCH            sub_438530
+[diff] 0x439480   MATCH            sub_439480
+[ledger] 0x41b7d0 TechnoClass::processDamageAnimation -> NG (attempt 1)
+[ledger] 0x41c890 sub_41C890 -> OK (attempt 1)
+[ledger] 0x41d260 sub_41D260 -> NG (attempt 1)
+[ledger] 0x41e140 sub_41E140 -> OK (attempt 1)
+[ledger] 0x4206d0 sub_4206D0 -> OK (attempt 1)
+[ledger] 0x421c90 sub_421C90 -> OK (attempt 1)
+[ledger] 0x426650 sub_426650 -> OK (attempt 1)
+[ledger] 0x427510 sub_427510 -> OK (attempt 1)
+[ledger] 0x428ff0 sub_428FF0 -> OK (attempt 1)
+[ledger] 0x429570 sub_429570 -> OK (attempt 1)
+[ledger] 0x42f380 0x42f380 -> PENDING (attempt 1)
+[ledger] 0x42ff80 sub_42FF80 -> OK (attempt 1)
+[ledger] 0x4318d0 sub_4318D0 -> OK (attempt 1)
+[ledger] 0x432670 sub_432670 -> OK (attempt 1)
+[ledger] 0x433860 sub_433860 -> OK (attempt 1)
+[ledger] 0x434ab0 sub_434AB0 -> OK (attempt 1)
+[ledger] 0x435800 sub_435800 -> OK (attempt 1)
+[ledger] 0x438530 sub_438530 -> OK (attempt 1)
+[ledger] 0x439480 sub_439480 -> OK (attempt 1)
+[ledger] 0x43adf0 ObjectClass::sub_43ADF0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "MATCH": 16,
+  "NO_EXPORT": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 88.9,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p145\batch_report.json

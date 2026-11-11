@@ -1,0 +1,8 @@
+{
+ "symbol": "?processDamageAnimation@TechnoClass@@QAGHXZ",
+ "sym_key": "TechnoClass::processDamageAnimation",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4c240433c08b9158faffff85d20f95c0c20400",
+ "relocs": []
+}
