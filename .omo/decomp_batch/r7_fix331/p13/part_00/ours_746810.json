@@ -1,0 +1,33 @@
+{
+ "symbol": "?PerFrameUpdate@UnitClass@@QAEPAIPAHH@Z",
+ "sym_key": "UnitClass::PerFrameUpdate",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c2404565750e8000000008b74240c8bbec406000085ff0f848f0000008b861c02000085c074318b403433c905680100008b501085d27e208b40043938740c4183c0043bca7d11393875f46a018d8e50010000e8000000008b861c02000085c074318a88c002000084c974278b86c40600008a88ce0c000084c975178a888e0c000084c9740d6a018d8e50010000e8000000008b86c40600008a880508000084c974096a008bcee8000000005f5ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?Update@TechnoClass@@QAEPAIPAX@Z",
+   "sym_key": "TechnoClass::Update"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?ChangedHouse@Power@@QAEDD@Z",
+   "sym_key": "Power::ChangedHouse"
+  },
+  {
+   "off": 173,
+   "type": "REL32",
+   "sym": "?SetTurret@UnitClass@@QAEHI@Z",
+   "sym_key": "UnitClass::SetTurret"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?TransitionEffectState@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::TransitionEffectState",
+ "size": 176,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b862002000083f802740983f8010f85950000008b06c78620020000030000008b0d40020000568b91280600004a899624020000ff90840000008b0da00100008b8010030000898e2c0200008b4c2404898e300200008b4c24048bd1898638020000898634020000240081e2ff000000c7863c020000ffffffff0bc284c9752933c08d5424048a869c0000006a00528b08a140020000894c240c8b88a006000051e80000000083c40c5e59c3",
+ "relocs": [
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 150,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 166,
+   "type": "REL32",
+   "sym": "?StartAudioControllerAt@@YAHHPAXHZZ",
+   "sym_key": "StartAudioControllerAt"
+  }
+ ]
+}
