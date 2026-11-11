@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetCellTransform@Tactical@@QAEPADHHHHHH@Z",
+ "sym_key": "Tactical::SetCellTransform",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b54240cc1e00503c18b4c240889088b4c24108950048b5424148948088b4c241889501889481cc7400c0000803fc21800",
+ "relocs": []
+}

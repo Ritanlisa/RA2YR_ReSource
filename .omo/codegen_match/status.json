@@ -1798,6 +1798,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4780e0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "TypeList_TechnoType::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x478120": {
   "attempts": 1,
   "first_diff": "+5 jne 0x47812c",
@@ -2722,6 +2729,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x4a35f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::SetCellTransform",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4a3640": {
   "attempts": 1,
   "first_diff": null,
@@ -3134,6 +3148,13 @@
   "name": "VectorClass_ptr_CrossDissolveEffect::Clear",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4ba020": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_CrossDissolveEffect::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x4ba420": {
   "attempts": 1,
@@ -3583,6 +3604,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x4e0ca0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4e14a0": {
   "attempts": 10,
   "first_diff": null,
@@ -3758,6 +3786,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e9a40": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_AITriggerTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4e9f40": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4e9f4c",
@@ -3770,6 +3805,13 @@
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x4eaec0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_WaveClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x4eb620": {
@@ -3786,6 +3828,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ec680": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_SideClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4ecb80": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4ecb8c",
@@ -3800,6 +3849,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4edbe0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_AircraftTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4ee340": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4ee34c",
@@ -3812,6 +3868,13 @@
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
   "name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x4ef3a0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_AbstractTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x4f2a40": {
@@ -4415,6 +4478,13 @@
   "name": "InfantryTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5251f0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "DynamicVectorClass_AnimType::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x526810": {
   "attempts": 6,
@@ -5116,6 +5186,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x555640": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_PendingCellClass_LightSourceClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x5558c0": {
   "attempts": 1,
   "first_diff": null,
@@ -5648,6 +5725,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x5ac7c0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_MapRegionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x5ac960": {
   "attempts": 4,
   "first_diff": "+0 push ecx",
@@ -5667,6 +5751,13 @@
   "first_diff": "+0 push ecx",
   "name": "MSEngine::SetCapacity",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x5ad350": {
+  "attempts": 1,
+  "first_diff": "+1 mov esi, dword ptr [ecx + 0x10]",
+  "name": "VectorClass_N::FindItemIndex",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x5ad870": {
@@ -6299,6 +6390,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x5d1320": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "MSPCXAnim_42::Load",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x5d1a80": {
   "attempts": 1,
   "first_diff": null,
@@ -6864,6 +6962,13 @@
   "first_diff": "+5 jne 0x627dbc",
   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemIndex",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x627f30": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_ColorScheme::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x627f70": {
@@ -7657,6 +7762,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x664930": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "RocketLocomotionClass_17::IndexOf",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x664a40": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -8090,6 +8202,13 @@
   "name": "SlaveManagerClass::StubReturn72",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b17f0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_SlaveManagerClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x6b2390": {
   "attempts": 1,
@@ -9043,6 +9162,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x70f7e0": {
+  "attempts": 1,
+  "first_diff": "+15 je 0x70f80b",
+  "name": "FootClass::updateThreat",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x70fbd0": {
   "attempts": 5,
   "first_diff": null,
@@ -9259,6 +9385,13 @@
   "name": "TEventClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x71fd20": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "VectorClass_ptr_TEventClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x71fe30": {
   "attempts": 1,
@@ -10673,6 +10806,13 @@
   "name": "CComObject_CChatEventSink___ATL::DispatchStub_47",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7ad1b0": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "WonlineStringDialogControl_12::Read",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x7ad2c0": {
   "attempts": 1,

@@ -1,0 +1,120 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p27\part_00
+=== convert (20 addrs) ===
+[conv] 0x4780e0 _VectorClass_PAVTechnoTypeClass::GetSize -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x4ba020 _VectorClass_PAUCrossDissolveEffect::GetSize -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4e9a40 _VectorClass_PAVAITriggerTypeClass::GetSize -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4eaec0 _VectorClass_PAVWaveClass::GetSize -> _VectorClass_PAVWaveClass
+[conv] 0x4ec680 _VectorClass_PAVSideClass::GetSize -> _VectorClass_PAVSideClass
+[conv] 0x4edbe0 _VectorClass_PAVAircraftTypeClass::GetSize -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4ef3a0 _VectorClass_PAVAbstractTypeClass::GetSize -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x5251f0 _VectorClass_PBVAnimTypeClass::GetSize -> _VectorClass_PBVAnimTypeClass
+[conv] 0x555640 _VectorClass_PAVPendingCellClass_LightSourceClass::GetSize -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x5ac7c0 _VectorClass_PAVMapRegionClass::GetSize -> _VectorClass_PAVMapRegionClass
+[conv] 0x5d1320 _VectorClass_PAVMSAnimEntry::Load -> _VectorClass_PAVMSAnimEntry
+[conv] 0x627f30 _VectorClass_PAVColorScheme::GetSize -> _VectorClass_PAVColorScheme
+[conv] 0x664930 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::IndexOf -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x6b17f0 _VectorClass_PAVSlaveManagerClass::GetSize -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x71fd20 _VectorClass_PAVTEventClass::GetSize -> _VectorClass_PAVTEventClass
+[conv] 0x7ad1b0 _VectorClass_PAUtConnInfoStruct::Read -> _VectorClass_PAUtConnInfoStruct
+[conv] 0x5ad350 _DynamicVectorClass_N::FindItemIndex -> _DynamicVectorClass_N
+[conv] 0x4a35f0 Tactical::SetCellTransform -> Tactical
+[conv] 0x70f7e0 FootClass::updateThreat -> FootClass
+[conv] 0x4e0ca0 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::FindItemIndex -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _VectorClass_PAVAITriggerTypeClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVAircraftTypeClass rc=0
+[era] _VectorClass_PAVAbstractTypeClass rc=0
+[era] _VectorClass_PBVAnimTypeClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _VectorClass_PAVSlaveManagerClass rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _VectorClass_PAUtConnInfoStruct rc=0
+[era] _DynamicVectorClass_N    rc=0
+[era] Tactical                 rc=0
+[era] FootClass                rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4780e0   MISMATCH         _VectorClass_PAVTechnoTypeClass::GetSize
+[diff] 0x4ba020   MISMATCH         _VectorClass_PAUCrossDissolveEffect::GetSize
+[diff] 0x4e9a40   MISMATCH         _VectorClass_PAVAITriggerTypeClass::GetSize
+[diff] 0x4eaec0   MISMATCH         _VectorClass_PAVWaveClass::GetSize
+[diff] 0x4ec680   MISMATCH         _VectorClass_PAVSideClass::GetSize
+[diff] 0x4edbe0   MISMATCH         _VectorClass_PAVAircraftTypeClass::GetSize
+[diff] 0x4ef3a0   MISMATCH         _VectorClass_PAVAbstractTypeClass::GetSize
+[diff] 0x5251f0   MISMATCH         _VectorClass_PBVAnimTypeClass::GetSize
+[diff] 0x555640   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::GetSize
+[diff] 0x5ac7c0   MISMATCH         _VectorClass_PAVMapRegionClass::GetSize
+[diff] 0x5d1320   MISMATCH         _VectorClass_PAVMSAnimEntry::Load
+[diff] 0x627f30   MISMATCH         _VectorClass_PAVColorScheme::GetSize
+[diff] 0x664930   MISMATCH         _VectorClass_PAUConnectionListStruct_OwnerTalkClass::IndexOf
+[diff] 0x6b17f0   MISMATCH         _VectorClass_PAVSlaveManagerClass::GetSize
+[diff] 0x71fd20   MISMATCH         _VectorClass_PAVTEventClass::GetSize
+[diff] 0x7ad1b0   MISMATCH         _VectorClass_PAUtConnInfoStruct::Read
+[diff] 0x5ad350   MISMATCH         _DynamicVectorClass_N::FindItemIndex
+[diff] 0x4a35f0   MATCH            Tactical::SetCellTransform
+[diff] 0x70f7e0   MISMATCH         FootClass::updateThreat
+[diff] 0x4e0ca0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::FindItemIndex
+[ledger] 0x4780e0 TypeList_TechnoType::GetSize -> NG (attempt 1)
+[ledger] 0x4ba020 VectorClass_ptr_CrossDissolveEffect::GetSize -> NG (attempt 1)
+[ledger] 0x4e9a40 VectorClass_ptr_AITriggerTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x4eaec0 VectorClass_ptr_WaveClass::GetSize -> NG (attempt 1)
+[ledger] 0x4ec680 VectorClass_ptr_SideClass::GetSize -> NG (attempt 1)
+[ledger] 0x4edbe0 VectorClass_ptr_AircraftTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x4ef3a0 VectorClass_ptr_AbstractTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x5251f0 DynamicVectorClass_AnimType::GetSize -> NG (attempt 1)
+[ledger] 0x555640 VectorClass_ptr_PendingCellClass_LightSourceClass::GetSize -> NG (attempt 1)
+[ledger] 0x5ac7c0 VectorClass_ptr_MapRegionClass::GetSize -> NG (attempt 1)
+[ledger] 0x5d1320 MSPCXAnim_42::Load -> NG (attempt 1)
+[ledger] 0x627f30 VectorClass_ptr_ColorScheme::GetSize -> NG (attempt 1)
+[ledger] 0x664930 RocketLocomotionClass_17::IndexOf -> NG (attempt 1)
+[ledger] 0x6b17f0 VectorClass_ptr_SlaveManagerClass::GetSize -> NG (attempt 1)
+[ledger] 0x71fd20 VectorClass_ptr_TEventClass::GetSize -> NG (attempt 1)
+[ledger] 0x7ad1b0 WonlineStringDialogControl_12::Read -> NG (attempt 1)
+[ledger] 0x5ad350 VectorClass_N::FindItemIndex -> NG (attempt 1)
+[ledger] 0x4a35f0 Tactical::SetCellTransform -> OK (attempt 1)
+[ledger] 0x70f7e0 FootClass::updateThreat -> NG (attempt 1)
+[ledger] 0x4e0ca0 VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::FindItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 1597,
+ "verdicts": {
+  "MISMATCH": 431,
+  "MATCH": 502,
+  "COMPILE_FAIL": 349,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 308,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 7,
+  "codegen_shape": 150,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 32,
+  "branch_polarity": 30,
+  "regalloc": 52,
+  "branch_order": 67,
+  "width_mismatch": 4,
+  "extern_reloc": 16,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 53.8,
+ "match_rate_of_total_pct": 31.4,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p27\batch_report.json

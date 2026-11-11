@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A35F0",
+ "name": "Tactical::SetCellTransform",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A35F0",
+ "bytes_hex": "8b4424048b54240cc1e00503c18b4c240889088b4c24108950048b5424148948088b4c241889501889481cc7400c0000803fc21800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

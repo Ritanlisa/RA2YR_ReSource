@@ -1,0 +1,8 @@
+{
+ "symbol": "?Read@_VectorClass_PAUtConnInfoStruct@@QAEHPAH@Z",
+ "sym_key": "_VectorClass_PAUtConnInfoStruct::Read",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8a41105684c05775075f33c05ec204008b710c33c085f67e238b49108b54240c8b128b393bfa7417403bc67d0f8b790483c1043bfa75f15f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}
