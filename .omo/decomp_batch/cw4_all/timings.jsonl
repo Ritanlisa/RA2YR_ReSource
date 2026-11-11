@@ -111,3 +111,4 @@
 {"part": 110, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RELOC_KEY": 9, "FP_RECIP": 11}, "by_family_hits": {}}}
 {"part": 111, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RELOC_KEY": 11, "FP_RECIP": 9}, "by_family_hits": {}}}
 {"part": 112, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RELOC_KEY": 10, "FP_RECIP": 10}, "by_family_hits": {}}}
+{"part": 113, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FP_RECIP": 11, "RELOC_KEY": 9}, "by_family_hits": {}}}
