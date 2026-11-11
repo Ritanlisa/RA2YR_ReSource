@@ -1,0 +1,27 @@
+{
+ "symbol": "?MakeTraversable@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::MakeTraversable",
+ "size": 157,
+ "link_base": 0,
+ "bytes_hex": "568bf18b86200500008a88b716000084c97504b0015ec38b0e56ff918401000083f81875538b8e50030000e80000000084c075448b8e50030000e80000000084c075358b96200500008a82b716000084c07504b0015ec38b0656ff908401000083f81875348b8e50030000e80000000084c07425b0015ec38b0e6aff56ff91f00100008b166a006a1856ff92e80100008b0656ff90ec01000032c05ec3",
+ "relocs": [
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?CheckFlag24@BuildingClass@@QAE_NXZ",
+   "sym_key": "BuildingClass::CheckFlag24"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?CheckNone@Flag@@QAE_NXZ",
+   "sym_key": "Flag::CheckNone"
+  },
+  {
+   "off": 108,
+   "type": "REL32",
+   "sym": "?CheckPowerFlags@BuildingClass@@QAEDXZ",
+   "sym_key": "BuildingClass::CheckPowerFlags"
+  }
+ ]
+}

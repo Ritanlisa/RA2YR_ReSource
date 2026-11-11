@@ -1,0 +1,11 @@
+{
+ "addr": "0x452540",
+ "name": "BuildingClass::MakeTraversable",
+ "size": 161,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x452540",
+ "bytes_hex": "568bf1578b86200500008a88b716000084c975055fb0015ec38b168bceff928401000083f81875508dbe500300008bcfe8bb2b050084c0753f8bcfe8502c050084c075348b86200500008a88b716000084c975055fb0015ec38b168bceff928401000083f81875348bcfe8012c050084c074295fb0015ec38b066aff8bceff90f00100008b166a006a188bceff92e80100008b068bceff90ec0100005f32c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

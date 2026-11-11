@@ -1,0 +1,94 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e8510 TaskForceClass::GetUnitType -> TaskForceClass
+[conv] 0x7b8610 unknown::sub_7B8610 -> unknown
+[conv] 0x452540 BuildingClass::MakeTraversable -> BuildingClass
+[conv] 0x58a630 _DynamicVectorClass_U_HashObject_II::Constructor -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x5d0190 ObjectClass::sub_5D0190 -> ObjectClass
+[conv] 0x786dc0 ObjectClass::sub_786DC0 -> ObjectClass
+[conv] 0x5cf760 CampaignClass::DeleteAndZero -> CampaignClass
+[conv] 0x7ced9e unknown::__cftof2 -> unknown
+[conv] 0x4a2ab0 CStreamClass::StreamRead -> CStreamClass
+[conv] 0x517110 ObjectClass::sub_517110 -> ObjectClass
+[conv] 0x6b1f50 SliderClass::SetValue -> SliderClass
+[conv] 0x40a850 ObjectClass::sub_40A850 -> ObjectClass
+[conv] 0x65cbf0 RawFileClass::Open -> RawFileClass
+[conv] 0x471c90 CaptureManagerClass::CanCapture -> CaptureManagerClass
+[conv] 0x5e9340 ObjectClass::Audio_Helper -> ObjectClass
+[conv] 0x5b4630 MixFileClass::Constructor_MixFileClass -> MixFileClass
+[conv] 0x60d380 unknown::Screen -> unknown
+[conv] 0x6c6680 StaticButtonClass::Draw -> StaticButtonClass
+[conv] 0x451690 BuildingClass::ClearSuperWeaponAnim -> BuildingClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TaskForceClass           rc=2
+[era] unknown                  rc=2
+[era] BuildingClass            rc=2
+[era] _DynamicVectorClass_U_HashObject_II rc=2
+[era] ObjectClass              rc=2
+[era] CampaignClass            rc=2
+[era] CStreamClass             rc=2
+[era] SliderClass              rc=2
+[era] RawFileClass             rc=2
+[era] CaptureManagerClass      rc=2
+[era] MixFileClass             rc=2
+[era] StaticButtonClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x452540   MISMATCH         BuildingClass::MakeTraversable
+[diff] 0x6c6680   MISMATCH         StaticButtonClass::Draw
+[ledger] 0x6e8510 TaskForceClass::GetUnitType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x770d70 0x770d70 -> PENDING (attempt 1)
+[ledger] 0x7b8610 sub_7B8610 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452540 BuildingClass::MakeTraversable -> NG (attempt 1)
+[ledger] 0x58a630 VectorClass_W4PassabilityType::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0190 sub_5D0190 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x786dc0 sub_786DC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cf760 CampaignClass::DeleteAndZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ced9e __cftof2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a2ab0 CStreamClass::StreamRead -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517110 sub_517110 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1f50 SliderClass::SetValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40a850 sub_40A850 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65cbf0 FileClass::Open -> COMPILE_FAIL (attempt 1)
+[ledger] 0x471c90 CaptureManagerClass::CanCapture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9340 Audio_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b4630 BlowStraw::Constructor_MixFileClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60d380 Campaign::Screen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6680 StaticButtonClass::Draw -> NG (attempt 1)
+[ledger] 0x451690 BuildingClass::ClearSuperWeaponAnim -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2494,
+ "verdicts": {
+  "MISMATCH": 686,
+  "MATCH": 521,
+  "COMPILE_FAIL": 758,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 512,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 237,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 69,
+  "branch_polarity": 50,
+  "regalloc": 110,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.2,
+ "match_rate_of_total_pct": 20.9,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p06\batch_report.json

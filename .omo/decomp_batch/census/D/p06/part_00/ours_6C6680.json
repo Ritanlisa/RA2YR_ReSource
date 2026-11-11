@@ -1,0 +1,63 @@
+{
+ "symbol": "?Draw@StaticButtonClass@@QAEXPAHD@Z",
+ "sym_key": "StaticButtonClass::Draw",
+ "size": 170,
+ "link_base": 0,
+ "bytes_hex": "83ec0c568bf1578b463085c0741050e80000000083c404c74630000000008b7c241885ff742457e8000000008d44000250e80000000083c40889463085c0740a5750e80000000083c4088b168bceff128a44241c84c0744a8b463085c074438b068bceff50048bcee8000000008b4e306a00518bf8e8000000008946188b571c6a006a008d4c2410895618e800000000508d4e24e8000000008d4c2408e8000000005f5e83c40cc20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 40,
+   "type": "REL32",
+   "sym": "?wcslen@@YAHPAXZZ",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?wcscpy@@YAHPAX0ZZ",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 105,
+   "type": "REL32",
+   "sym": "?GetInstance@TextRenderer@@QAEHXZ",
+   "sym_key": "TextRenderer::GetInstance"
+  },
+  {
+   "off": 118,
+   "type": "REL32",
+   "sym": "?Text__MeasureWidth@@YGHHH@Z",
+   "sym_key": "Text__MeasureWidth"
+  },
+  {
+   "off": 140,
+   "type": "REL32",
+   "sym": "?Init@Buffer@@QAEPAIHH@Z",
+   "sym_key": "Buffer::Init"
+  },
+  {
+   "off": 149,
+   "type": "REL32",
+   "sym": "?ReleaseBuffer@StaticButtonClass@@QAEPAV1@PAX@Z",
+   "sym_key": "StaticButtonClass::ReleaseBuffer"
+  },
+  {
+   "off": 158,
+   "type": "REL32",
+   "sym": "?Clear@Vector@@QAEXXZ",
+   "sym_key": "Vector::Clear"
+  }
+ ]
+}
