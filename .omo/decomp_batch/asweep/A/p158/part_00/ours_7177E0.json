@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetEliteWeaponSlot@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::GetEliteWeaponSlot",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8d41700faf44240405940a0000c20400",
+ "relocs": []
+}

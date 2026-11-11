@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetWeaponSlot@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::GetWeaponSlot",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8d41700faf4424040598080000c20400",
+ "relocs": []
+}

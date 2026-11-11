@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p158\part_00
+=== convert (20 addrs) ===
+[conv] 0x774100 sub_774100 -> _addr_77
+[conv] 0x775670 sub_775670 -> _addr_77
+[conv] 0x776210 sub_776210 -> _addr_77
+[conv] 0x7771b0 sub_7771B0 -> _addr_77
+[conv] 0x7784d0 sub_7784D0 -> _addr_77
+[conv] 0x77b070 sub_77B070 -> _addr_77
+[conv] 0x77d970 Network::IsLobbyFeature -> Network
+[conv] 0x7af090 sub_7AF090 -> _addr_7A
+[conv] 0x7b05a0 sub_7B05A0 -> _addr_7B
+[conv] 0x7b17b0 sub_7B17B0 -> _addr_7B
+[conv] 0x7b2d90 sub_7B2D90 -> _addr_7B
+[conv] 0x7b84b0 sub_7B84B0 -> _addr_7B
+[conv] 0x7ba5c0 sub_7BA5C0 -> _addr_7B
+[conv] 0x7bc950 sub_7BC950 -> _addr_7B
+[conv] 0x7cf330 __startTwoArgErrorHandling -> _addr_7C
+[conv] 0x7cf768 __set_sbh_threshold -> _addr_7C
+[conv] 0x5be970 Render_Render_5BE970 -> Render_Render
+[conv] 0x7177c0 TechnoClass::GetWeaponSlot -> TechnoClass
+[conv] 0x7177e0 TechnoClass::GetEliteWeaponSlot -> TechnoClass
+[conv] 0x473430 LinkedList::Pop -> LinkedList
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] Network                  rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=0
+[era] Render_Render            rc=2
+[era] TechnoClass              rc=0
+[era] LinkedList               rc=0
+=== diffasm byte-compare ===
+[diff] 0x774100   MATCH            sub_774100
+[diff] 0x775670   MATCH            sub_775670
+[diff] 0x776210   MATCH            sub_776210
+[diff] 0x7771b0   MATCH            sub_7771B0
+[diff] 0x7784d0   MATCH            sub_7784D0
+[diff] 0x77b070   MATCH            sub_77B070
+[diff] 0x77d970   MISMATCH         Network::IsLobbyFeature
+[diff] 0x7af090   MATCH            sub_7AF090
+[diff] 0x7b05a0   MATCH            sub_7B05A0
+[diff] 0x7b17b0   MATCH            sub_7B17B0
+[diff] 0x7b2d90   MATCH            sub_7B2D90
+[diff] 0x7b84b0   MATCH            sub_7B84B0
+[diff] 0x7ba5c0   MATCH            sub_7BA5C0
+[diff] 0x7bc950   MATCH            sub_7BC950
+[diff] 0x7cf330   MISMATCH         __startTwoArgErrorHandling
+[diff] 0x7cf768   MISMATCH         __set_sbh_threshold
+[diff] 0x7177c0   MISMATCH         TechnoClass::GetWeaponSlot
+[diff] 0x7177e0   MISMATCH         TechnoClass::GetEliteWeaponSlot
+[diff] 0x473430   MISMATCH         LinkedList::Pop
+[ledger] 0x774100 sub_774100 -> OK (attempt 1)
+[ledger] 0x775670 sub_775670 -> OK (attempt 1)
+[ledger] 0x776210 sub_776210 -> OK (attempt 1)
+[ledger] 0x7771b0 sub_7771B0 -> OK (attempt 1)
+[ledger] 0x7784d0 sub_7784D0 -> OK (attempt 1)
+[ledger] 0x77b070 sub_77B070 -> OK (attempt 1)
+[ledger] 0x77d970 Network::IsLobbyFeature -> NG (attempt 1)
+[ledger] 0x7af090 sub_7AF090 -> OK (attempt 1)
+[ledger] 0x7b05a0 sub_7B05A0 -> OK (attempt 1)
+[ledger] 0x7b17b0 sub_7B17B0 -> OK (attempt 1)
+[ledger] 0x7b2d90 sub_7B2D90 -> OK (attempt 1)
+[ledger] 0x7b84b0 sub_7B84B0 -> OK (attempt 1)
+[ledger] 0x7ba5c0 sub_7BA5C0 -> OK (attempt 1)
+[ledger] 0x7bc950 sub_7BC950 -> OK (attempt 1)
+[ledger] 0x7cf330 __startTwoArgErrorHandling -> NG (attempt 1)
+[ledger] 0x7cf768 __set_sbh_threshold -> NG (attempt 1)
+[ledger] 0x5be970 Render_Render_5BE970 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7177c0 TechnoClass::GetWeaponSlot -> NG (attempt 1)
+[ledger] 0x7177e0 TechnoClass::GetEliteWeaponSlot -> NG (attempt 1)
+[ledger] 0x473430 LinkedList::Pop -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 13,
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 68.4,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p158\batch_report.json

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Pop@LinkedList@@QAEHXZ",
+ "sym_key": "LinkedList::Pop",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b410885c0740f8b5030895108c7403000000000ff09c3",
+ "relocs": []
+}

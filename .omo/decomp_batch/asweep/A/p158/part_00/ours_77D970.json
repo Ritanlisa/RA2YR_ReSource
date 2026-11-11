@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsLobbyFeature@Network@@QAEDXZ",
+ "sym_key": "Network::IsLobbyFeature",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "833d0000000004750ca100000000c1e80883e001c332c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B76B30@@3IA",
+   "sym_key": "DataGlobal_B76B30"
+  }
+ ]
+}

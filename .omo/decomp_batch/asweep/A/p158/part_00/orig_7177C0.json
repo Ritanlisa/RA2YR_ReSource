@@ -1,0 +1,11 @@
+{
+ "addr": "0x7177C0",
+ "name": "TechnoClass::GetWeaponSlot",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7177C0",
+ "bytes_hex": "8b4424048d14c5000000002bd08d849198080000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

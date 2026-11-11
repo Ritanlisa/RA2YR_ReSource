@@ -1,0 +1,15 @@
+{
+ "symbol": "?__set_sbh_threshold@@YAHI@Z",
+ "sym_key": "Unnamed::__set_sbh_threshold",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b4424043df8030000760333c0c3a300000000b801000000c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C584@@3IA",
+   "sym_key": "DataGlobal_87C584"
+  }
+ ]
+}
