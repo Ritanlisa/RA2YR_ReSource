@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x72a2a0",
+  "name": "sub_72A2A0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_72",
+  "emitted": "sub_72A2A0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x72a6e0",
+  "name": "sub_72A6E0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_72",
+  "emitted": "sub_72A6E0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f5bd0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x72a700",
+  "name": "sub_72A700",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_72",
+  "emitted": "sub_72A700",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x7307b0",
+  "name": "sub_7307B0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_73",
+  "emitted": "sub_7307B0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f5c08]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x734460",
+  "name": "sub_734460",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_73",
+  "emitted": "sub_734460",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f5c18]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x734480",
+  "name": "sub_734480",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_73",
+  "emitted": "sub_734480",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x7351b0",
+  "name": "sub_7351B0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_73",
+  "emitted": "sub_7351B0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f5c28]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x7351d0",
+  "name": "sub_7351D0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_73",
+  "emitted": "sub_7351D0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x746f10",
+  "name": "sub_746F10",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_746F10",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f61d8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x746f30",
+  "name": "sub_746F30",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_746F30",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x7491d0",
+  "name": "sub_7491D0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_7491D0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f62d8]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x7491f0",
+  "name": "sub_7491F0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_7491F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x74aba0",
+  "name": "sub_74ABA0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_74ABA0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f6508]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x74c1c0",
+  "name": "sub_74C1C0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_74C1C0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f6610]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x74c1e0",
+  "name": "sub_74C1E0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_74",
+  "emitted": "sub_74C1E0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x750140",
+  "name": "sub_750140",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p104",
+  "unit": "_addr_75",
+  "emitted": "sub_750140",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f6898]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x750160",
+  "name": "sub_750160",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p105",
+  "unit": "_addr_75",
+  "emitted": "sub_750160",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x752050",
+  "name": "sub_752050",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p105",
+  "unit": "_addr_75",
+  "emitted": "sub_752050",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f68f0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x752070",
+  "name": "sub_752070",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p105",
+  "unit": "_addr_75",
+  "emitted": "sub_752070",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x754940",
+  "name": "sub_754940",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p105",
+  "unit": "_addr_75",
+  "emitted": "sub_754940",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7f6940]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ }
+]
