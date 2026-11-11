@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p199\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c3d90 _TClassFactory_VHouseTypeClass::GetSize -> _TClassFactory_VHouseTypeClass
+[conv] 0x6c3f10 _TClassFactory_VHouseClass::GetSize -> _TClassFactory_VHouseClass
+[conv] 0x6c4090 _TClassFactory_VDriveLocomotionClass::GetSize -> _TClassFactory_VDriveLocomotionClass
+[conv] 0x6c4210 _TClassFactory_VJumpjetLocomotionClass::GetSize -> _TClassFactory_VJumpjetLocomotionClass
+[conv] 0x6c4390 _TClassFactory_VHoverLocomotionClass::GetSize -> _TClassFactory_VHoverLocomotionClass
+[conv] 0x6c4510 _TClassFactory_VRocketLocomotionClass::GetSize -> _TClassFactory_VRocketLocomotionClass
+[conv] 0x6c4690 _TClassFactory_VTunnelLocomotionClass::GetSize -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c4990 _TClassFactory_VDropPodLocomotionClass::GetSize -> _TClassFactory_VDropPodLocomotionClass
+[conv] 0x6c4b10 _TClassFactory_VFlyLocomotionClass::GetSize -> _TClassFactory_VFlyLocomotionClass
+[conv] 0x6c4c90 _TClassFactory_VTeleportLocomotionClass::GetSize -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c4e10 _TClassFactory_VMechLocomotionClass::GetSize -> _TClassFactory_VMechLocomotionClass
+[conv] 0x6c4f90 _TClassFactory_VShipLocomotionClass::GetSize -> _TClassFactory_VShipLocomotionClass
+[conv] 0x6c5110 _TClassFactory_VBulletClass::GetSize -> _TClassFactory_VBulletClass
+[conv] 0x6c5290 _TClassFactory_VFactoryClass::GetSize -> _TClassFactory_VFactoryClass
+[conv] 0x6c5410 _TClassFactory_VWarheadTypeClass::GetSize -> _TClassFactory_VWarheadTypeClass
+[conv] 0x6c5590 _TClassFactory_VWeaponTypeClass::GetSize -> _TClassFactory_VWeaponTypeClass
+[conv] 0x6c5890 _TClassFactory_VParticleTypeClass::GetSize -> _TClassFactory_VParticleTypeClass
+[conv] 0x6c5a10 _TClassFactory_VParticleSystemClass::GetSize -> _TClassFactory_VParticleSystemClass
+[conv] 0x6c5b90 _TClassFactory_VParticleSystemTypeClass::GetSize -> _TClassFactory_VParticleSystemTypeClass
+[conv] 0x6c5d10 _TClassFactory_VAITriggerTypeClass::GetSize -> _TClassFactory_VAITriggerTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VHouseTypeClass rc=0
+[era] _TClassFactory_VHouseClass rc=0
+[era] _TClassFactory_VDriveLocomotionClass rc=0
+[era] _TClassFactory_VJumpjetLocomotionClass rc=0
+[era] _TClassFactory_VHoverLocomotionClass rc=0
+[era] _TClassFactory_VRocketLocomotionClass rc=0
+[era] _TClassFactory_VTunnelLocomotionClass rc=0
+[era] _TClassFactory_VDropPodLocomotionClass rc=0
+[era] _TClassFactory_VFlyLocomotionClass rc=0
+[era] _TClassFactory_VTeleportLocomotionClass rc=0
+[era] _TClassFactory_VMechLocomotionClass rc=0
+[era] _TClassFactory_VShipLocomotionClass rc=0
+[era] _TClassFactory_VBulletClass rc=0
+[era] _TClassFactory_VFactoryClass rc=0
+[era] _TClassFactory_VWarheadTypeClass rc=0
+[era] _TClassFactory_VWeaponTypeClass rc=0
+[era] _TClassFactory_VParticleTypeClass rc=0
+[era] _TClassFactory_VParticleSystemClass rc=0
+[era] _TClassFactory_VParticleSystemTypeClass rc=0
+[era] _TClassFactory_VAITriggerTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c3d90   MISMATCH         _TClassFactory_VHouseTypeClass::GetSize
+[diff] 0x6c3f10   MISMATCH         _TClassFactory_VHouseClass::GetSize
+[diff] 0x6c4090   MISMATCH         _TClassFactory_VDriveLocomotionClass::GetSize
+[diff] 0x6c4210   MISMATCH         _TClassFactory_VJumpjetLocomotionClass::GetSize
+[diff] 0x6c4390   MISMATCH         _TClassFactory_VHoverLocomotionClass::GetSize
+[diff] 0x6c4510   MISMATCH         _TClassFactory_VRocketLocomotionClass::GetSize
+[diff] 0x6c4690   MISMATCH         _TClassFactory_VTunnelLocomotionClass::GetSize
+[diff] 0x6c4990   MISMATCH         _TClassFactory_VDropPodLocomotionClass::GetSize
+[diff] 0x6c4b10   MISMATCH         _TClassFactory_VFlyLocomotionClass::GetSize
+[diff] 0x6c4c90   MISMATCH         _TClassFactory_VTeleportLocomotionClass::GetSize
+[diff] 0x6c4e10   MISMATCH         _TClassFactory_VMechLocomotionClass::GetSize
+[diff] 0x6c4f90   MISMATCH         _TClassFactory_VShipLocomotionClass::GetSize
+[diff] 0x6c5110   MISMATCH         _TClassFactory_VBulletClass::GetSize
+[diff] 0x6c5290   MISMATCH         _TClassFactory_VFactoryClass::GetSize
+[diff] 0x6c5410   MISMATCH         _TClassFactory_VWarheadTypeClass::GetSize
+[diff] 0x6c5590   MISMATCH         _TClassFactory_VWeaponTypeClass::GetSize
+[diff] 0x6c5890   MISMATCH         _TClassFactory_VParticleTypeClass::GetSize
+[diff] 0x6c5a10   MISMATCH         _TClassFactory_VParticleSystemClass::GetSize
+[diff] 0x6c5b90   MISMATCH         _TClassFactory_VParticleSystemTypeClass::GetSize
+[diff] 0x6c5d10   MISMATCH         _TClassFactory_VAITriggerTypeClass::GetSize
+[ledger] 0x6c3d90 _TClassFactory_VHouseTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3f10 _TClassFactory_VHouseClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4090 _TClassFactory_VDriveLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4210 _TClassFactory_VJumpjetLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4390 _TClassFactory_VHoverLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4510 _TClassFactory_VRocketLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4690 _TClassFactory_VTunnelLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4990 _TClassFactory_VDropPodLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4b10 _TClassFactory_VFlyLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4c90 _TClassFactory_VTeleportLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4e10 _TClassFactory_VMechLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c4f90 _TClassFactory_VShipLocomotionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5110 _TClassFactory_VBulletClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5290 _TClassFactory_VFactoryClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5410 _TClassFactory_VWarheadTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5590 _TClassFactory_VWeaponTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5890 _TClassFactory_VParticleTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5a10 _TClassFactory_VParticleSystemClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5b90 _TClassFactory_VParticleSystemTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c5d10 _TClassFactory_VAITriggerTypeClass::GetSize -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p199\batch_report.json

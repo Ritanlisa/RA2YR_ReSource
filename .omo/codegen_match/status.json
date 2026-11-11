@@ -50566,6 +50566,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c3d90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VHouseTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_HouseTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c3dc0": {
   "attempts": 1,
   "clean": false,
@@ -50576,6 +50588,18 @@
   "orig_name": "WinMain_Helper_6C3DC0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3f10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VHouseClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_HouseClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3f40": {
@@ -50597,6 +50621,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c4090": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VDriveLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_DriveLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c40c0": {
   "attempts": 1,
   "clean": false,
@@ -50607,6 +50643,18 @@
   "orig_name": "WinMain_Helper_6C40C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c4210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VJumpjetLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_JumpjetLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c4240": {
@@ -50621,6 +50669,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c4390": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VHoverLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_HoverLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c43c0": {
   "attempts": 1,
   "clean": false,
@@ -50631,6 +50691,18 @@
   "orig_name": "WinMain_Helper_6C43C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c4510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VRocketLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_RocketLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c4540": {
@@ -50651,6 +50723,18 @@
   "name": "TClassFactory_TunnelLocomotionClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c4690": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTunnelLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TunnelLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c46c0": {
   "attempts": 1,
@@ -50690,12 +50774,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c4990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VDropPodLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_DropPodLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c49c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C49C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c4b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VFlyLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_FlyLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c4b40": {
   "attempts": 1,
@@ -50723,6 +50831,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c4c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTeleportLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TeleportLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4cc0": {
   "attempts": 1,
   "clean": false,
@@ -50735,6 +50855,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c4e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VMechLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_MechLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c4e40": {
   "attempts": 1,
   "clean": false,
@@ -50745,6 +50877,18 @@
   "orig_name": "WinMain_Helper_6C4E40",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c4f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VShipLocomotionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ShipLocomotionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c4fc0": {
@@ -50766,6 +50910,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c5110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VBulletClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_BulletClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5140": {
   "attempts": 1,
   "clean": false,
@@ -50778,6 +50934,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c5290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VFactoryClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_FactoryClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c52c0": {
   "attempts": 1,
   "clean": false,
@@ -50788,6 +50956,18 @@
   "orig_name": "WinMain_Helper_6C52C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c5410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VWarheadTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_WarheadTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c5440": {
@@ -50808,6 +50988,18 @@
   "name": "TClassFactory_WeaponTypeClass::GetClassIdentifier",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c5590": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VWeaponTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_WeaponTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c55c0": {
   "attempts": 1,
@@ -50847,12 +51039,36 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c5890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VParticleTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ParticleTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c58c0": {
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C58C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c5a10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VParticleSystemClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ParticleSystemClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c5a40": {
   "attempts": 1,
@@ -50873,6 +51089,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c5b90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VParticleSystemTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ParticleSystemTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c5bc0": {
   "attempts": 1,
   "clean": false,
@@ -50883,6 +51111,18 @@
   "orig_name": "WinMain_Helper_6C5BC0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c5d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VAITriggerTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_AITriggerTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c5d40": {

@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6c3d90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_HouseTypeClass::GetSize",
+   "emitted": "_TClassFactory_VHouseTypeClass::GetSize",
+   "unit": "_TClassFactory_VHouseTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3f10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_HouseClass::GetSize",
+   "emitted": "_TClassFactory_VHouseClass::GetSize",
+   "unit": "_TClassFactory_VHouseClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4090",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_DriveLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VDriveLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VDriveLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4210",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_JumpjetLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VJumpjetLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VJumpjetLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4390",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_HoverLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VHoverLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VHoverLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4510",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_RocketLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VRocketLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VRocketLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4690",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TunnelLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VTunnelLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VTunnelLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4990",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_DropPodLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VDropPodLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VDropPodLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4b10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_FlyLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VFlyLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VFlyLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4c90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TeleportLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VTeleportLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VTeleportLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4e10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_MechLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VMechLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VMechLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c4f90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ShipLocomotionClass::GetSize",
+   "emitted": "_TClassFactory_VShipLocomotionClass::GetSize",
+   "unit": "_TClassFactory_VShipLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5110",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BulletClass::GetSize",
+   "emitted": "_TClassFactory_VBulletClass::GetSize",
+   "unit": "_TClassFactory_VBulletClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5290",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_FactoryClass::GetSize",
+   "emitted": "_TClassFactory_VFactoryClass::GetSize",
+   "unit": "_TClassFactory_VFactoryClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5410",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_WarheadTypeClass::GetSize",
+   "emitted": "_TClassFactory_VWarheadTypeClass::GetSize",
+   "unit": "_TClassFactory_VWarheadTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5590",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_WeaponTypeClass::GetSize",
+   "emitted": "_TClassFactory_VWeaponTypeClass::GetSize",
+   "unit": "_TClassFactory_VWeaponTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5890",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ParticleTypeClass::GetSize",
+   "emitted": "_TClassFactory_VParticleTypeClass::GetSize",
+   "unit": "_TClassFactory_VParticleTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5a10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ParticleSystemClass::GetSize",
+   "emitted": "_TClassFactory_VParticleSystemClass::GetSize",
+   "unit": "_TClassFactory_VParticleSystemClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5b90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ParticleSystemTypeClass::GetSize",
+   "emitted": "_TClassFactory_VParticleSystemTypeClass::GetSize",
+   "unit": "_TClassFactory_VParticleSystemTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c5d10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_AITriggerTypeClass::GetSize",
+   "emitted": "_TClassFactory_VAITriggerTypeClass::GetSize",
+   "unit": "_TClassFactory_VAITriggerTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  }
+ ]
+}
