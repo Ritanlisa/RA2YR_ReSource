@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x730ad0",
+  "batch": "nocls",
+  "name": "sub_730AD0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x731a10",
+  "batch": "nocls",
+  "name": "UI_Delete",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7344a0",
+  "batch": "nocls",
+  "name": "sub_7344A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7352c0",
+  "batch": "nocls",
+  "name": "sub_7352C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x735320",
+  "batch": "nocls",
+  "name": "sub_735320",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x746fb0",
+  "batch": "nocls",
+  "name": "sub_746FB0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x748af0",
+  "batch": "nocls",
+  "name": "sub_748AF0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x749230",
+  "batch": "nocls",
+  "name": "sub_749230",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x74abc0",
+  "batch": "nocls",
+  "name": "sub_74ABC0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x74ace0",
+  "batch": "nocls",
+  "name": "sub_74ACE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x74c170",
+  "batch": "nocls",
+  "name": "sub_74C170",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x74de90",
+  "batch": "nocls",
+  "name": "InitializeVeinholeSystem",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x74fdc0",
+  "batch": "nocls",
+  "name": "GetModuleVersion",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7501c0",
+  "batch": "nocls",
+  "name": "sub_7501C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x752020",
+  "batch": "nocls",
+  "name": "sub_752020",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x752340",
+  "batch": "nocls",
+  "name": "Audio_Cleanup",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x754b40",
+  "batch": "nocls",
+  "name": "sub_754B40",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x758fe0",
+  "batch": "nocls",
+  "name": "sub_758FE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x759040",
+  "batch": "nocls",
+  "name": "sub_759040",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x759140",
+  "batch": "nocls",
+  "name": "sub_759140",
+  "cc": "unknown"
+ }
+]

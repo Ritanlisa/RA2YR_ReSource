@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_754B40@@YAPAIXZ",
+ "sym_key": "Unnamed::sub_754B40",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "5657be00000000bf15000000680000803f6a006a006a008bcee80000000083c6104f75e85f5ec3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B44348@@3EA",
+   "sym_key": "DataGlobal_B44348"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?Set@Int4@@QAEPAV1@HHHH@Z",
+   "sym_key": "Int4::Set"
+  }
+ ]
+}

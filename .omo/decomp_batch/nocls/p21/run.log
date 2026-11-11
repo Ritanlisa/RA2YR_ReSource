@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x730ad0 sub_730AD0 -> _addr_73
+[conv] 0x731a10 UI_Delete -> UI
+[conv] 0x7344a0 sub_7344A0 -> _addr_73
+[conv] 0x7352c0 sub_7352C0 -> _addr_73
+[conv] 0x735320 sub_735320 -> _addr_73
+[conv] 0x746fb0 sub_746FB0 -> _addr_74
+[conv] 0x748af0 sub_748AF0 -> _addr_74
+[conv] 0x749230 sub_749230 -> _addr_74
+[conv] 0x74abc0 sub_74ABC0 -> _addr_74
+[conv] 0x74ace0 sub_74ACE0 -> _addr_74
+[conv] 0x74c170 sub_74C170 -> _addr_74
+[conv] 0x74de90 InitializeVeinholeSystem -> _addr_74
+[conv] 0x74fdc0 GetModuleVersion -> _addr_74
+[conv] 0x7501c0 sub_7501C0 -> _addr_75
+[conv] 0x752020 sub_752020 -> _addr_75
+[conv] 0x752340 Audio_Cleanup -> Audio
+[conv] 0x754b40 sub_754B40 -> _addr_75
+[conv] 0x758fe0 sub_758FE0 -> _addr_75
+[conv] 0x759040 sub_759040 -> _addr_75
+[conv] 0x759140 sub_759140 -> _addr_75
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_73                 rc=0
+[era] UI                       rc=2
+[era] _addr_74                 rc=2
+[era] _addr_75                 rc=2
+[era] Audio                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x730ad0   MATCH            sub_730AD0
+[diff] 0x7344a0   MISMATCH         sub_7344A0
+[diff] 0x7352c0   MISMATCH         sub_7352C0
+[diff] 0x735320   MISMATCH         sub_735320
+[diff] 0x748af0   MISMATCH         sub_748AF0
+[diff] 0x749230   MISMATCH         sub_749230
+[diff] 0x74abc0   MISMATCH         sub_74ABC0
+[diff] 0x74c170   MATCH            sub_74C170
+[diff] 0x7501c0   MISMATCH         sub_7501C0
+[diff] 0x754b40   MATCH            sub_754B40
+[diff] 0x758fe0   MISMATCH         sub_758FE0
+[diff] 0x759040   MISMATCH         sub_759040
+[diff] 0x759140   MATCH            sub_759140
+[diff] 0x752340   MISMATCH         Audio_Cleanup
+[ledger] 0x730ad0 sub_730AD0 -> OK (attempt 2)
+[ledger] 0x731a10 UI_Delete -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7344a0 sub_7344A0 -> NG (attempt 2)
+[ledger] 0x7352c0 sub_7352C0 -> NG (attempt 2)
+[ledger] 0x735320 sub_735320 -> NG (attempt 2)
+[ledger] 0x746fb0 sub_746FB0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x748af0 sub_748AF0 -> NG (attempt 2)
+[ledger] 0x749230 sub_749230 -> NG (attempt 2)
+[ledger] 0x74abc0 sub_74ABC0 -> NG (attempt 2)
+[ledger] 0x74ace0 sub_74ACE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74c170 sub_74C170 -> OK (attempt 2)
+[ledger] 0x74de90 InitializeVeinholeSystem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x74fdc0 GetModuleVersion -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7501c0 sub_7501C0 -> NG (attempt 2)
+[ledger] 0x752020 sub_752020 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x752340 Audio_Cleanup -> NG (attempt 2)
+[ledger] 0x754b40 sub_754B40 -> OK (attempt 2)
+[ledger] 0x758fe0 sub_758FE0 -> NG (attempt 2)
+[ledger] 0x759040 sub_759040 -> NG (attempt 2)
+[ledger] 0x759140 sub_759140 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 4,
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "codegen_shape": 2,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p21\batch_report.json
