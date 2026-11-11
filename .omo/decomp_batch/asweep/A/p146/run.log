@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p146\part_00
+=== convert (20 addrs) ===
+[conv] 0x43b130 sub_43B130 -> _addr_43
+[conv] 0x45b190 sub_45B190 -> _addr_45
+[conv] 0x4662c0 sub_4662C0 -> _addr_46
+[conv] 0x46b9b0 sub_46B9B0 -> _addr_46
+[conv] 0x46d310 sub_46D310 -> _addr_46
+[conv] 0x471730 sub_471730 -> _addr_47
+[conv] 0x473730 sub_473730 -> _addr_47
+[conv] 0x4739d0 sub_4739D0 -> _addr_47
+[conv] 0x4741d0 sub_4741D0 -> _addr_47
+[conv] 0x478990 sub_478990 -> _addr_47
+[conv] 0x479080 sub_479080 -> _addr_47
+[conv] 0x47b340 sub_47B340 -> _addr_47
+[conv] 0x487d50 Cell::GetSlopeIndex -> Cell
+[conv] 0x4880d0 sub_4880D0 -> _addr_48
+[conv] 0x488260 sub_488260 -> _addr_48
+[conv] 0x488960 ColorListClass::SetIndex -> ColorListClass
+[conv] 0x488f70 sub_488F70 -> _addr_48
+[conv] 0x48bb20 sub_48BB20 -> _addr_48
+[conv] 0x48bc50 sub_48BC50 -> _addr_48
+[conv] 0x48c690 sub_48C690 -> _addr_48
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+[era] Cell                     rc=0
+[era] _addr_48                 rc=0
+[era] ColorListClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x43b130   MATCH            sub_43B130
+[diff] 0x45b190   MATCH            sub_45B190
+[diff] 0x4662c0   MATCH            sub_4662C0
+[diff] 0x46b9b0   MATCH            sub_46B9B0
+[diff] 0x46d310   MATCH            sub_46D310
+[diff] 0x471730   MATCH            sub_471730
+[diff] 0x473730   MATCH            sub_473730
+[diff] 0x4739d0   MATCH            sub_4739D0
+[diff] 0x4741d0   MATCH            sub_4741D0
+[diff] 0x478990   MATCH            sub_478990
+[diff] 0x479080   MATCH            sub_479080
+[diff] 0x47b340   MATCH            sub_47B340
+[diff] 0x487d50   MISMATCH         Cell::GetSlopeIndex
+[diff] 0x4880d0   MATCH            sub_4880D0
+[diff] 0x488260   MATCH            sub_488260
+[diff] 0x488f70   MATCH            sub_488F70
+[diff] 0x48bb20   MATCH            sub_48BB20
+[diff] 0x48bc50   MATCH            sub_48BC50
+[diff] 0x48c690   MATCH            sub_48C690
+[diff] 0x488960   MATCH            ColorListClass::SetIndex
+[ledger] 0x43b130 sub_43B130 -> OK (attempt 1)
+[ledger] 0x45b190 sub_45B190 -> OK (attempt 1)
+[ledger] 0x4662c0 sub_4662C0 -> OK (attempt 1)
+[ledger] 0x46b9b0 sub_46B9B0 -> OK (attempt 1)
+[ledger] 0x46d310 sub_46D310 -> OK (attempt 1)
+[ledger] 0x471730 sub_471730 -> OK (attempt 1)
+[ledger] 0x473730 sub_473730 -> OK (attempt 1)
+[ledger] 0x4739d0 sub_4739D0 -> OK (attempt 1)
+[ledger] 0x4741d0 sub_4741D0 -> OK (attempt 1)
+[ledger] 0x478990 sub_478990 -> OK (attempt 1)
+[ledger] 0x479080 sub_479080 -> OK (attempt 1)
+[ledger] 0x47b340 sub_47B340 -> OK (attempt 1)
+[ledger] 0x487d50 Cell::GetSlopeIndex -> NG (attempt 1)
+[ledger] 0x4880d0 sub_4880D0 -> OK (attempt 1)
+[ledger] 0x488260 sub_488260 -> OK (attempt 1)
+[ledger] 0x488960 ColorListClass::SetIndex -> OK (attempt 1)
+[ledger] 0x488f70 sub_488F70 -> OK (attempt 1)
+[ledger] 0x48bb20 sub_48BB20 -> OK (attempt 1)
+[ledger] 0x48bc50 sub_48BC50 -> OK (attempt 1)
+[ledger] 0x48c690 sub_48C690 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p146\batch_report.json
