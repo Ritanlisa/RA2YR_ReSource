@@ -3563,7 +3563,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x578710": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::SpiralSearch",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3577,14 +3577,14 @@
   "status": "NG"
  },
  "0x5855a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "LayerClass::AssignCellOwnership",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x586360": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Cell::IsPassable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3605,7 +3605,7 @@
   "status": "NG"
  },
  "0x586780": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MapClass::IsAreaFree",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3619,7 +3619,7 @@
   "status": "NG"
  },
  "0x588ac0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "LayerClass::ClearFactoryCellAssignments",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3654,7 +3654,7 @@
   "status": "OK"
  },
  "0x58bb30": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ScenarioClass::CopyStartPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3703,7 +3703,7 @@
   "status": "NG"
  },
  "0x5b1aa0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsPositionWithinThreshold_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3878,7 +3878,7 @@
   "status": "OK"
  },
  "0x5b4270": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "HashTree::MarkEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3892,7 +3892,7 @@
   "status": "OK"
  },
  "0x5bd0d0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3955,7 +3955,7 @@
   "status": "NG"
  },
  "0x5c2de0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MPCooperative::selectTeam",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3983,42 +3983,42 @@
   "status": "OK"
  },
  "0x5cb6c0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "VtableStub::5CB6C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cbb80": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSOverlayAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc110": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ScenarioClass::DrawConstructionFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc550": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "ScenarioClass::DrawPlacementPreview",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cc970": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4039,21 +4039,21 @@
   "status": "OK"
  },
  "0x5cd410": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSBitPrintAnim::SetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5cd4d0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "MSBitPrintAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5ce8c0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4067,7 +4067,7 @@
   "status": "OK"
  },
  "0x5d4b20": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
