@@ -76,3 +76,4 @@
 {"layer": "A", "part": 75, "n": 20, "seconds": 11.2, "ok": true, "verdicts": {"MATCH": 18, "COMPILE_FAIL": 1, "MISMATCH": 1}}
 {"layer": "A", "part": 76, "n": 20, "seconds": 13.0, "ok": true, "verdicts": {"MISMATCH": 3, "MATCH": 10, "COMPILE_FAIL": 7}}
 {"layer": "A", "part": 77, "n": 20, "seconds": 13.7, "ok": true, "verdicts": {"MATCH": 17, "MISMATCH": 1, "COMPILE_FAIL": 2}}
+{"layer": "A", "part": 78, "n": 20, "seconds": 11.3, "ok": true, "verdicts": {"MATCH": 19, "COMPILE_FAIL": 1}}

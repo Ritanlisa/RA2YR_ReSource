@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3040",
+ "name": "MissionClass::GetPrimaryOrFallback",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3040",
+ "bytes_hex": "8b81ac00000083f8ff75068b81b4000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

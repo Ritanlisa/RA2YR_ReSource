@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPrimaryOrFallback@MissionClass@@QAEHXZ",
+ "sym_key": "MissionClass::GetPrimaryOrFallback",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b81ac00000083f8ff75068b81b4000000c3",
+ "relocs": []
+}

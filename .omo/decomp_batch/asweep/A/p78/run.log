@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p78\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b2d40 sub_5B2D40 -> _addr_5B
+[conv] 0x5b3040 MissionClass::GetPrimaryOrFallback -> MissionClass
+[conv] 0x5b36e0 IPersistStream::SetField -> IPersistStream
+[conv] 0x5b4970 sub_5B4970 -> _addr_5B
+[conv] 0x5b77a0 sub_5B77A0 -> _addr_5B
+[conv] 0x5bc140 sub_5BC140 -> _addr_5B
+[conv] 0x5bd990 sub_5BD990 -> _addr_5B
+[conv] 0x5bf790 sub_5BF790 -> _addr_5B
+[conv] 0x5c12a0 sub_5C12A0 -> _addr_5C
+[conv] 0x5c5ca0 sub_5C5CA0 -> _addr_5C
+[conv] 0x5c6040 sub_5C6040 -> _addr_5C
+[conv] 0x5c93a0 sub_5C93A0 -> _addr_5C
+[conv] 0x5c96c0 sub_5C96C0 -> _addr_5C
+[conv] 0x5ca5d0 sub_5CA5D0 -> _addr_5C
+[conv] 0x5cadd0 MPBattleClass::areTeamChangesAllowed -> MPBattleClass
+[conv] 0x5d5a60 sub_5D5A60 -> _addr_5D
+[conv] 0x5d8c10 sub_5D8C10 -> _addr_5D
+[conv] 0x5d8f30 sub_5D8F30 -> _addr_5D
+[conv] 0x5da680 sub_5DA680 -> _addr_5D
+[conv] 0x5daea0 sub_5DAEA0 -> _addr_5D
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] MissionClass             rc=0
+[era] IPersistStream           rc=2
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b2d40   MATCH            sub_5B2D40
+[diff] 0x5b4970   MATCH            sub_5B4970
+[diff] 0x5b77a0   MATCH            sub_5B77A0
+[diff] 0x5bc140   MATCH            sub_5BC140
+[diff] 0x5bd990   MATCH            sub_5BD990
+[diff] 0x5bf790   MATCH            sub_5BF790
+[diff] 0x5b3040   MATCH            MissionClass::GetPrimaryOrFallback
+[diff] 0x5c12a0   MATCH            sub_5C12A0
+[diff] 0x5c5ca0   MATCH            sub_5C5CA0
+[diff] 0x5c6040   MATCH            sub_5C6040
+[diff] 0x5c93a0   MATCH            sub_5C93A0
+[diff] 0x5c96c0   MATCH            sub_5C96C0
+[diff] 0x5ca5d0   MATCH            sub_5CA5D0
+[diff] 0x5cadd0   MATCH            MPBattleClass::areTeamChangesAllowed
+[diff] 0x5d5a60   MATCH            sub_5D5A60
+[diff] 0x5d8c10   MATCH            sub_5D8C10
+[diff] 0x5d8f30   MATCH            sub_5D8F30
+[diff] 0x5da680   MATCH            sub_5DA680
+[diff] 0x5daea0   MATCH            sub_5DAEA0
+[ledger] 0x5b2d40 sub_5B2D40 -> OK (attempt 1)
+[ledger] 0x5b3040 MissionClass::GetPrimaryOrFallback -> OK (attempt 1)
+[ledger] 0x5b36e0 IPersistStream::SetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b4970 sub_5B4970 -> OK (attempt 1)
+[ledger] 0x5b77a0 sub_5B77A0 -> OK (attempt 1)
+[ledger] 0x5bc140 sub_5BC140 -> OK (attempt 1)
+[ledger] 0x5bd990 sub_5BD990 -> OK (attempt 1)
+[ledger] 0x5bf790 sub_5BF790 -> OK (attempt 1)
+[ledger] 0x5c12a0 sub_5C12A0 -> OK (attempt 1)
+[ledger] 0x5c5ca0 sub_5C5CA0 -> OK (attempt 1)
+[ledger] 0x5c6040 sub_5C6040 -> OK (attempt 1)
+[ledger] 0x5c93a0 sub_5C93A0 -> OK (attempt 1)
+[ledger] 0x5c96c0 sub_5C96C0 -> OK (attempt 1)
+[ledger] 0x5ca5d0 sub_5CA5D0 -> OK (attempt 1)
+[ledger] 0x5cadd0 MPBattleClass::areTeamChangesAllowed -> OK (attempt 1)
+[ledger] 0x5d5a60 sub_5D5A60 -> OK (attempt 1)
+[ledger] 0x5d8c10 sub_5D8C10 -> OK (attempt 1)
+[ledger] 0x5d8f30 sub_5D8F30 -> OK (attempt 1)
+[ledger] 0x5da680 sub_5DA680 -> OK (attempt 1)
+[ledger] 0x5daea0 sub_5DAEA0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p78\batch_report.json
