@@ -1,0 +1,373 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 20
+  },
+  "by_family_total": {
+   "RET_ARITY": 20
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x6c2710",
+   "name": "TClassFactory_TaskForceClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTaskForceClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VTaskForceClass",
+   "head": "int __stdcall _TClassFactory_VTaskForceClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c2890",
+   "name": "TClassFactory_UnitTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VUnitTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VUnitTypeClass",
+   "head": "int __stdcall _TClassFactory_VUnitTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c2a10",
+   "name": "TClassFactory_BuildingTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VBuildingTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VBuildingTypeClass",
+   "head": "int __stdcall _TClassFactory_VBuildingTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c2d10",
+   "name": "TClassFactory_InfantryTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VInfantryTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VInfantryTypeClass",
+   "head": "int __stdcall _TClassFactory_VInfantryTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c2e90",
+   "name": "TClassFactory_BulletTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VBulletTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VBulletTypeClass",
+   "head": "int __stdcall _TClassFactory_VBulletTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3010",
+   "name": "TClassFactory_IsometricTileTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VIsometricTileTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VIsometricTileTypeClass",
+   "head": "int __stdcall _TClassFactory_VIsometricTileTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3190",
+   "name": "TClassFactory_OverlayTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VOverlayTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VOverlayTypeClass",
+   "head": "int __stdcall _TClassFactory_VOverlayTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3310",
+   "name": "TClassFactory_SmudgeTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VSmudgeTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VSmudgeTypeClass",
+   "head": "int __stdcall _TClassFactory_VSmudgeTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3490",
+   "name": "TClassFactory_UnitClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VUnitClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VUnitClass",
+   "head": "int __stdcall _TClassFactory_VUnitClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3610",
+   "name": "TClassFactory_BuildingClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VBuildingClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VBuildingClass",
+   "head": "int __stdcall _TClassFactory_VBuildingClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3a90",
+   "name": "TClassFactory_AnimClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VAnimClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VAnimClass",
+   "head": "int __stdcall _TClassFactory_VAnimClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3c10",
+   "name": "TClassFactory_AnimTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VAnimTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VAnimTypeClass",
+   "head": "int __stdcall _TClassFactory_VAnimTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3d90",
+   "name": "TClassFactory_HouseTypeClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VHouseTypeClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VHouseTypeClass",
+   "head": "int __stdcall _TClassFactory_VHouseTypeClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c3f10",
+   "name": "TClassFactory_HouseClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VHouseClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VHouseClass",
+   "head": "int __stdcall _TClassFactory_VHouseClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4090",
+   "name": "TClassFactory_DriveLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VDriveLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VDriveLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VDriveLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4210",
+   "name": "TClassFactory_JumpjetLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VJumpjetLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VJumpjetLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VJumpjetLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4390",
+   "name": "TClassFactory_HoverLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VHoverLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VHoverLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VHoverLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4510",
+   "name": "TClassFactory_RocketLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VRocketLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VRocketLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VRocketLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4690",
+   "name": "TClassFactory_TunnelLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VTunnelLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VTunnelLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VTunnelLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  },
+  {
+   "addr": "0x6c4990",
+   "name": "TClassFactory_DropPodLocomotionClass::GetSize",
+   "family": "RET_ARITY",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "_TClassFactory_VDropPodLocomotionClass",
+   "method": "GetSize",
+   "unit": "_TClassFactory_VDropPodLocomotionClass",
+   "head": "int __stdcall _TClassFactory_VDropPodLocomotionClass::GetSize(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   }
+  }
+ ]
+}

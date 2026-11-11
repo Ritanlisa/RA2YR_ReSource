@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6c2710",
+  "name": "TClassFactory_TaskForceClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTaskForceClass",
+  "emitted": "_TClassFactory_VTaskForceClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2890",
+  "name": "TClassFactory_UnitTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VUnitTypeClass",
+  "emitted": "_TClassFactory_VUnitTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2a10",
+  "name": "TClassFactory_BuildingTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VBuildingTypeClass",
+  "emitted": "_TClassFactory_VBuildingTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2d10",
+  "name": "TClassFactory_InfantryTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VInfantryTypeClass",
+  "emitted": "_TClassFactory_VInfantryTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2e90",
+  "name": "TClassFactory_BulletTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VBulletTypeClass",
+  "emitted": "_TClassFactory_VBulletTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3010",
+  "name": "TClassFactory_IsometricTileTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VIsometricTileTypeClass",
+  "emitted": "_TClassFactory_VIsometricTileTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3190",
+  "name": "TClassFactory_OverlayTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VOverlayTypeClass",
+  "emitted": "_TClassFactory_VOverlayTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3310",
+  "name": "TClassFactory_SmudgeTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VSmudgeTypeClass",
+  "emitted": "_TClassFactory_VSmudgeTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3490",
+  "name": "TClassFactory_UnitClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VUnitClass",
+  "emitted": "_TClassFactory_VUnitClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3610",
+  "name": "TClassFactory_BuildingClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VBuildingClass",
+  "emitted": "_TClassFactory_VBuildingClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3a90",
+  "name": "TClassFactory_AnimClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VAnimClass",
+  "emitted": "_TClassFactory_VAnimClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3c10",
+  "name": "TClassFactory_AnimTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VAnimTypeClass",
+  "emitted": "_TClassFactory_VAnimTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3d90",
+  "name": "TClassFactory_HouseTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VHouseTypeClass",
+  "emitted": "_TClassFactory_VHouseTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c3f10",
+  "name": "TClassFactory_HouseClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VHouseClass",
+  "emitted": "_TClassFactory_VHouseClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4090",
+  "name": "TClassFactory_DriveLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VDriveLocomotionClass",
+  "emitted": "_TClassFactory_VDriveLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4210",
+  "name": "TClassFactory_JumpjetLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VJumpjetLocomotionClass",
+  "emitted": "_TClassFactory_VJumpjetLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4390",
+  "name": "TClassFactory_HoverLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VHoverLocomotionClass",
+  "emitted": "_TClassFactory_VHoverLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4510",
+  "name": "TClassFactory_RocketLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VRocketLocomotionClass",
+  "emitted": "_TClassFactory_VRocketLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4690",
+  "name": "TClassFactory_TunnelLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VTunnelLocomotionClass",
+  "emitted": "_TClassFactory_VTunnelLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c4990",
+  "name": "TClassFactory_DropPodLocomotionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p199",
+  "unit": "_TClassFactory_VDropPodLocomotionClass",
+  "emitted": "_TClassFactory_VDropPodLocomotionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ }
+]
