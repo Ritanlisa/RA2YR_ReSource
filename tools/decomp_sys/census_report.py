@@ -180,8 +180,8 @@ def main():
     L.append("## 0. 结论速览")
     L.append("")
     L.append("| 层 | 定义 | 抽样 | MATCH | MISMATCH | COMPILE_FAIL | "
-             "CONV_FAIL | NO_CLS | NO_PSEUDO/NO_EXPORT | 末判率 MATCH/总 | "
-             "编译率 | 对拍匹配率 |")
+             "CONV_FAIL | NO_CLS | NO_PSEUDO/NO_EXPORT/DUP/OBJ | "
+             "末判率 MATCH/总 | 编译率 | 对拍匹配率 |")
     L.append("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
     for lyr in LAYERS:
         if lyr not in batches:
@@ -201,22 +201,26 @@ def main():
         compiled = mat + mis + obje
         L.append("| %s | %s | %d | %d | %d | %d | %d | %d | %d | "
                  "%.1f%% | %.1f%% | %.1f%% |"
-                 % (lyr, LAYER_DESC[lyr], n, mat, mis, cf, conv, ncls,
-                    nps + dup + unrun, pct(mat, n), pct(compiled, n),
-                    pct(mat, mat + mis)))
+                  % (lyr, LAYER_DESC[lyr], n, mat, mis, cf, conv, ncls,
+                     nps + dup + obje + unrun, pct(mat, n), pct(compiled, n),
+                     pct(mat, mat + mis)))
     tot = Counter()
     for lyr in LAYERS:
         if lyr in tables:
             tot.update(tables[lyr])
     n_all = sum(len(b) for b in batches.values())
+    other_all = (tot.get("NO_PSEUDO", 0) + tot.get("NO_EXPORT", 0) +
+                 tot.get("DUP_SKIP", 0) + tot.get("OBJ_EXTRACT_FAIL", 0) +
+                 tot.get("INTERNAL_ERROR", 0))
+    compiled_all = (tot.get("MATCH", 0) + tot.get("MISMATCH", 0) +
+                    tot.get("OBJ_EXTRACT_FAIL", 0))
     L.append("| **合计** | — | **%d** | **%d** | **%d** | **%d** | **%d** | "
              "**%d** | **%d** | **%.1f%%** | **%.1f%%** | **%.1f%%** |"
              % (n_all, tot.get("MATCH", 0), tot.get("MISMATCH", 0),
                 tot.get("COMPILE_FAIL", 0), tot.get("CONV_FAIL", 0),
-                tot.get("NO_CLS", 0),
-                tot.get("NO_PSEUDO", 0) + tot.get("NO_EXPORT", 0),
+                tot.get("NO_CLS", 0), other_all,
                 pct(tot.get("MATCH", 0), n_all),
-                pct(tot.get("MATCH", 0) + tot.get("MISMATCH", 0), n_all),
+                pct(compiled_all, n_all),
                 pct(tot.get("MATCH", 0),
                     tot.get("MATCH", 0) + tot.get("MISMATCH", 0))))
     L.append("")
