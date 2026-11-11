@@ -1,0 +1,8 @@
+{
+ "symbol": "?Copy6Bytes@Struct@@QAEFH@Z",
+ "sym_key": "Struct::Copy6Bytes",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b10895104668b400466894108c20400",
+ "relocs": []
+}

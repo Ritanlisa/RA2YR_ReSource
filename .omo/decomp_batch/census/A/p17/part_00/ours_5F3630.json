@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetAddress@NullModemClass@@QAEHH@Z",
+ "sym_key": "NullModemClass::SetAddress",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b413885c074098b40048b4038c2040033c0c20400",
+ "relocs": []
+}

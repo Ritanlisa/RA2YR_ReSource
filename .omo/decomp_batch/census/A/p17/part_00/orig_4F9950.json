@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F9950",
+ "name": "HouseClass::AddPower",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F9950",
+ "bytes_hex": "8b4424048b910c03000003d089910c030000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

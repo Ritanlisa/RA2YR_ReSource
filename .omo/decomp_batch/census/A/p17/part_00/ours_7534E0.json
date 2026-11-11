@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetEVAIndex@VoxClass@@QAEHXZ",
+ "sym_key": "VoxClass::SetEVAIndex",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "5183f9ff750ec705000000000000000033c059c3890d000000008b44240059c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C8@@3IA",
+   "sym_key": "DataGlobal_B1D4C8"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D4C8@@3IA",
+   "sym_key": "DataGlobal_B1D4C8"
+  }
+ ]
+}

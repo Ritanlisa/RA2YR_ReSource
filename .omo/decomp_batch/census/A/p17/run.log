@@ -1,0 +1,83 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x6edf90 ObjectClass::sub_6EDF90 -> ObjectClass
+[conv] 0x7534e0 VoxClass::SetEVAIndex -> VoxClass
+[conv] 0x4f9950 HouseClass::AddPower -> HouseClass
+[conv] 0x5f3630 NullModemClass::SetAddress -> NullModemClass
+[conv] 0x72b2f0 LoadingScreen::GetBackgroundImage -> LoadingScreen
+[conv] 0x53ede0 Struct::Copy6Bytes -> Struct
+[conv] 0x696f50 SessionClass::GetOption -> SessionClass
+[conv] 0x41b840 TechnoClass::updateWeaponCooldown -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] VoxClass                 rc=0
+[era] HouseClass               rc=0
+[era] NullModemClass           rc=0
+[era] LoadingScreen            rc=2
+[era] Struct                   rc=0
+[era] SessionClass             rc=0
+[era] TechnoClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x6edf90   MATCH            ObjectClass::sub_6EDF90
+[diff] 0x7534e0   MISMATCH         VoxClass::SetEVAIndex
+[diff] 0x4f9950   MATCH            HouseClass::AddPower
+[diff] 0x5f3630   MATCH            NullModemClass::SetAddress
+[diff] 0x53ede0   MISMATCH         Struct::Copy6Bytes
+[diff] 0x696f50   MATCH            SessionClass::GetOption
+[diff] 0x41b840   MATCH            TechnoClass::updateWeaponCooldown
+[ledger] 0x6edf90 sub_6EDF90 -> OK (attempt 1)
+[ledger] 0x7534e0 VoxClass::SetEVAIndex -> NG (attempt 1)
+[ledger] 0x4f9950 HouseClass::AddPower -> OK (attempt 1)
+[ledger] 0x5f3630 NullModemClass::SetAddress -> OK (attempt 1)
+[ledger] 0x72b2f0 LoadingScreen::GetBackgroundImage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cb847 0x7cb847 -> PENDING (attempt 1)
+[ledger] 0x53ede0 Struct::Copy6Bytes -> NG (attempt 1)
+[ledger] 0x696f50 SessionClass::GetOption -> OK (attempt 1)
+[ledger] 0x77e780 0x77e780 -> PENDING (attempt 1)
+[ledger] 0x40ee20 0x40ee20 -> PENDING (attempt 1)
+[ledger] 0x41b840 TechnoClass::updateWeaponCooldown -> OK (attempt 1)
+[ledger] 0x42e090 0x42e090 -> PENDING (attempt 1)
+[ledger] 0x437190 0x437190 -> PENDING (attempt 1)
+[ledger] 0x473380 0x473380 -> PENDING (attempt 1)
+[ledger] 0x488740 0x488740 -> PENDING (attempt 1)
+[ledger] 0x48e680 0x48e680 -> PENDING (attempt 1)
+[ledger] 0x4a59c0 0x4a59c0 -> PENDING (attempt 1)
+[ledger] 0x4b6990 0x4b6990 -> PENDING (attempt 1)
+[ledger] 0x4c81d0 0x4c81d0 -> PENDING (attempt 1)
+[ledger] 0x4e24e0 0x4e24e0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1397,
+ "verdicts": {
+  "MISMATCH": 313,
+  "MATCH": 494,
+  "COMPILE_FAIL": 330,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 253,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 123,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 47,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 12,
+  "cc_mismatch": 6,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.2,
+ "match_rate_of_total_pct": 35.4,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p17\batch_report.json

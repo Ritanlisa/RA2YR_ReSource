@@ -1,0 +1,11 @@
+{
+ "addr": "0x53EDE0",
+ "name": "Struct::Copy6Bytes",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53EDE0",
+ "bytes_hex": "8b44240483c1048b108911668b400466894104c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

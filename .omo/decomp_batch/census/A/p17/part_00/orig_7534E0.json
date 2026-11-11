@@ -1,0 +1,11 @@
+{
+ "addr": "0x7534E0",
+ "name": "VoxClass::SetEVAIndex",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7534E0",
+ "bytes_hex": "83f9ff750833c0a3c8d4b100c3890dc8d4b100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

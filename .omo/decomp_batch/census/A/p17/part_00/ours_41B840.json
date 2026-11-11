@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateWeaponCooldown@TechnoClass@@QAGEXZ",
+ "sym_key": "TechnoClass::updateWeaponCooldown",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b480433c08a910e0e000084d20f95c0c20400",
+ "relocs": []
+}

@@ -1,0 +1,254 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MATCH": 5,
+   "MISMATCH": 2,
+   "COMPILE_FAIL": 1,
+   "NO_CLS": 12
+  },
+  "pathologies": {
+   "codegen_shape": 2
+  },
+  "match_rate_of_decided_pct": 71.4,
+  "match_rate_of_total_pct": 25.0
+ },
+ "results": [
+  {
+   "addr": "0x6edf90",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "20B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_6EDF90",
+   "emitted": "ObjectClass::sub_6EDF90",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 1,
+   "orig_size": 20,
+   "ours_size": 20
+  },
+  {
+   "addr": "0x7534e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 20B ours 32B",
+   "first_diff": {
+    "orig": "+0 cmp ecx, -1",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "codegen_shape",
+   "name": "VoxClass::SetEVAIndex",
+   "emitted": "VoxClass::SetEVAIndex",
+   "unit": "VoxClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 20,
+   "ours_size": 32
+  },
+  {
+   "addr": "0x4f9950",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "21B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "HouseClass::AddPower",
+   "emitted": "HouseClass::AddPower",
+   "unit": "HouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 21,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x5f3630",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "21B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "NullModemClass::SetAddress",
+   "emitted": "NullModemClass::SetAddress",
+   "unit": "NullModemClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 3,
+   "orig_size": 21,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x72b2f0",
+   "batch": "censusA",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p17\\part_00\\LoadingScreen.cpp(8) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\A\\p17\\part_00\\LoadingS",
+   "first_diff": null,
+   "pathology": null,
+   "name": "LoadingScreen::GetBackgroundImage",
+   "emitted": "LoadingScreen::GetBackgroundImage",
+   "unit": "LoadingScreen",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7cb847",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7cb847",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x53ede0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 22B ours 20B",
+   "first_diff": {
+    "orig": "+4 add ecx, 4",
+    "ours": "+4 mov edx, dword ptr [eax]"
+   },
+   "pathology": "codegen_shape",
+   "name": "Struct::Copy6Bytes",
+   "emitted": "Struct::Copy6Bytes",
+   "unit": "Struct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 3,
+   "orig_size": 22,
+   "ours_size": 20
+  },
+  {
+   "addr": "0x696f50",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "22B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SessionClass::GetOption",
+   "emitted": "SessionClass::GetOption",
+   "unit": "SessionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 6,
+   "orig_size": 22,
+   "ours_size": 22
+  },
+  {
+   "addr": "0x77e780",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x77e780",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40ee20",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40ee20",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x41b840",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "23B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TechnoClass::updateWeaponCooldown",
+   "emitted": "TechnoClass::updateWeaponCooldown",
+   "unit": "TechnoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 23,
+   "ours_size": 23
+  },
+  {
+   "addr": "0x42e090",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x42e090",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x437190",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x437190",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x473380",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x473380",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x488740",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x488740",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x48e680",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x48e680",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a59c0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4a59c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4b6990",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4b6990",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c81d0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c81d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e24e0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e24e0",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}
