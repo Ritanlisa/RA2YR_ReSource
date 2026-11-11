@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p47\part_00
+=== convert (20 addrs) ===
+[conv] 0x555250 _VectorClass_PAVLightSourceClass::Get -> _VectorClass_PAVLightSourceClass
+[conv] 0x5552b0 _VectorClass_PAVPendingCellClass_LightSourceClass::Get -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556f00 _VectorClass_PAVLineTrail::Get -> _VectorClass_PAVLineTrail
+[conv] 0x558230 _VectorClass_PBG::Count -> _VectorClass_PBG
+[conv] 0x588ef0 _VectorClass_PAVCellClass::InitCellVe_vt06 -> _VectorClass_PAVCellClass
+[conv] 0x588f50 _VectorClass_W4PassabilityType::Clear -> _VectorClass_W4PassabilityType
+[conv] 0x5ac3f0 _VectorClass_PAVMapRegionClass::Get -> _VectorClass_PAVMapRegionClass
+[conv] 0x5ac510 _VectorClass_PAU_WIN32_FIND_DATAA::GetCell -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ac640 _VectorClass_N::Clear -> _VectorClass_N
+[conv] 0x5bf8b0 ObjectClass::sub_5BF8B0 -> ObjectClass
+[conv] 0x5c0ac0 _VectorClass_PBD::ProbeCalling2 -> _VectorClass_PBD
+[conv] 0x5c5060 _VectorClass_PAUMPlayerScoreType::dispatchEvent -> _VectorClass_PAUMPlayerScoreType
+[conv] 0x5c50c0 _VectorClass_PAUNodeNameType::Clear -> _VectorClass_PAUNodeNameType
+[conv] 0x5d0660 _VectorClass_PAVMSTextEntry::Get -> _VectorClass_PAVMSTextEntry
+[conv] 0x5d06c0 _VectorClass_PAVMapSelection::Get -> _VectorClass_PAVMapSelection
+[conv] 0x5d0720 _VectorClass_PAVMapStage::GetFrame -> _VectorClass_PAVMapStage
+[conv] 0x5d0780 _VectorClass_PAVMSAnimEntry::GetFrame -> _VectorClass_PAVMSAnimEntry
+[conv] 0x5d07e0 _VectorClass_PAVMSSfxEntry::Get -> _VectorClass_PAVMSSfxEntry
+[conv] 0x5d2770 _VectorClass_PAVMSAnim::Seek -> _VectorClass_PAVMSAnim
+[conv] 0x5d27d0 _VectorClass_PAVMSSfx::Get -> _VectorClass_PAVMSSfx
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _VectorClass_PAVCellClass rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _VectorClass_PAVMapRegionClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_N           rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_PBD         rc=0
+[era] _VectorClass_PAUMPlayerScoreType rc=0
+[era] _VectorClass_PAUNodeNameType rc=0
+[era] _VectorClass_PAVMSTextEntry rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] _VectorClass_PAVMapStage rc=0
+[era] _VectorClass_PAVMSAnimEntry rc=0
+[era] _VectorClass_PAVMSSfxEntry rc=0
+[era] _VectorClass_PAVMSAnim   rc=0
+[era] _VectorClass_PAVMSSfx    rc=0
+=== diffasm byte-compare ===
+[diff] 0x555250   MATCH            _VectorClass_PAVLightSourceClass::Get
+[diff] 0x5552b0   MATCH            _VectorClass_PAVPendingCellClass_LightSourceClass::Get
+[diff] 0x556f00   MATCH            _VectorClass_PAVLineTrail::Get
+[diff] 0x558230   MATCH            _VectorClass_PBG::Count
+[diff] 0x588ef0   MATCH            _VectorClass_PAVCellClass::InitCellVe_vt06
+[diff] 0x588f50   MATCH            _VectorClass_W4PassabilityType::Clear
+[diff] 0x5ac3f0   MATCH            _VectorClass_PAVMapRegionClass::Get
+[diff] 0x5ac510   MATCH            _VectorClass_PAU_WIN32_FIND_DATAA::GetCell
+[diff] 0x5ac640   MATCH            _VectorClass_N::Clear
+[diff] 0x5c0ac0   MATCH            _VectorClass_PBD::ProbeCalling2
+[diff] 0x5c5060   MATCH            _VectorClass_PAUMPlayerScoreType::dispatchEvent
+[diff] 0x5c50c0   MATCH            _VectorClass_PAUNodeNameType::Clear
+[diff] 0x5d0660   MATCH            _VectorClass_PAVMSTextEntry::Get
+[diff] 0x5d06c0   MATCH            _VectorClass_PAVMapSelection::Get
+[diff] 0x5d0720   MATCH            _VectorClass_PAVMapStage::GetFrame
+[diff] 0x5d0780   MATCH            _VectorClass_PAVMSAnimEntry::GetFrame
+[diff] 0x5d07e0   MATCH            _VectorClass_PAVMSSfxEntry::Get
+[diff] 0x5d2770   MATCH            _VectorClass_PAVMSAnim::Seek
+[diff] 0x5d27d0   MATCH            _VectorClass_PAVMSSfx::Get
+[ledger] 0x555250 _VectorClass_PAVLightSourceClass::Get -> OK (attempt 1)
+[ledger] 0x5552b0 _VectorClass_PAVPendingCellClass_LightSourceClass::Get -> OK (attempt 1)
+[ledger] 0x556f00 _VectorClass_PAVLineTrail::Get -> OK (attempt 1)
+[ledger] 0x558230 _VectorClass_PBG::Count -> OK (attempt 1)
+[ledger] 0x588ef0 _VectorClass_PAVCellClass::InitCellVe_vt06 -> OK (attempt 1)
+[ledger] 0x588f50 _VectorClass_W4PassabilityType::Clear -> OK (attempt 1)
+[ledger] 0x5ac3f0 _VectorClass_PAVMapRegionClass::Get -> OK (attempt 1)
+[ledger] 0x5ac510 _VectorClass_PAU_WIN32_FIND_DATAA::GetCell -> OK (attempt 1)
+[ledger] 0x5ac640 _VectorClass_N::Clear -> OK (attempt 1)
+[ledger] 0x5bf8b0 ObjectClass::sub_5BF8B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0ac0 _VectorClass_PBD::ProbeCalling2 -> OK (attempt 1)
+[ledger] 0x5c5060 _VectorClass_PAUMPlayerScoreType::dispatchEvent -> OK (attempt 1)
+[ledger] 0x5c50c0 _VectorClass_PAUNodeNameType::Clear -> OK (attempt 1)
+[ledger] 0x5d0660 _VectorClass_PAVMSTextEntry::Get -> OK (attempt 1)
+[ledger] 0x5d06c0 _VectorClass_PAVMapSelection::Get -> OK (attempt 1)
+[ledger] 0x5d0720 _VectorClass_PAVMapStage::GetFrame -> OK (attempt 1)
+[ledger] 0x5d0780 _VectorClass_PAVMSAnimEntry::GetFrame -> OK (attempt 1)
+[ledger] 0x5d07e0 _VectorClass_PAVMSSfxEntry::Get -> OK (attempt 1)
+[ledger] 0x5d2770 _VectorClass_PAVMSAnim::Seek -> OK (attempt 1)
+[ledger] 0x5d27d0 _VectorClass_PAVMSSfx::Get -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p47\batch_report.json
