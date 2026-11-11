@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x427d00",
+  "name": "AnimTypeClass::LoadFromINI",
+  "cls": null,
+  "size": 2806,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x68ad70",
+  "name": "ScenarioClass::SaveToINI",
+  "cls": null,
+  "size": 2864,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.LeaveGrinderSound' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5fb320",
+  "name": "HotkeyOptions::DlgProc",
+  "cls": null,
+  "size": 3017,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'String'"
+ },
+ {
+  "addr": "0x612b70",
+  "name": "TabControl::WndProc",
+  "cls": null,
+  "size": 3127,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'String'"
+ },
+ {
+  "addr": "0x6f7ca0",
+  "name": "TechnoClass::EvaluateTarget",
+  "cls": null,
+  "size": 3259,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_EA' : undeclared identifier"
+ },
+ {
+  "addr": "0x576ba0",
+  "name": "CellClass::PropagateTerrainVariant5",
+  "cls": null,
+  "size": 3402,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x530460",
+  "name": "MixFile::LoadAll",
+  "cls": null,
+  "size": 3635,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'MixFil' : undeclared identifier"
+ },
+ {
+  "addr": "0x799ea0",
+  "name": "OptionsDlgProcWOL",
+  "cls": null,
+  "size": 3839,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'String'"
+ },
+ {
+  "addr": "0x6f8df0",
+  "name": "TechnoClass::SelectAutoTarget_Start_AU",
+  "cls": null,
+  "size": 4031,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_EA' : undeclared identifier"
+ },
+ {
+  "addr": "0x6a9540",
+  "name": "Sidebar::UpdateProductionDisplay",
+  "cls": null,
+  "size": 4210,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C4716",
+  "first_msg": "'Sidebar::UpdateProductionDisplay' : must return a value"
+ },
+ {
+  "addr": "0x67d300",
+  "name": "SaveGame::Start",
+  "cls": null,
+  "size": 4411,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'in' : undeclared identifier"
+ },
+ {
+  "addr": "0x739ec0",
+  "name": "BuildingClass::ProcessSell",
+  "cls": null,
+  "size": 4591,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x519630",
+  "name": "InfantryClass::RepairBridge",
+  "cls": null,
+  "size": 5083,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '...'"
+ },
+ {
+  "addr": "0x648710",
+  "name": "QueueNetworkProcessor",
+  "cls": null,
+  "size": 5519,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'String'"
+ },
+ {
+  "addr": "0x741970",
+  "name": "UnitClass::AssignDestination_SyncLog",
+  "cls": null,
+  "size": 6167,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'CellCl' : undeclared identifier"
+ },
+ {
+  "addr": "0x481a00",
+  "name": "CrateClass::ProcessPickup",
+  "cls": null,
+  "size": 6548,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x6fdd50",
+  "name": "TechnoClass::FireWeapon",
+  "cls": null,
+  "size": 7167,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_EA' : undeclared identifier"
+ },
+ {
+  "addr": "0x4b2630",
+  "name": "JumpjetLocomotion::Update",
+  "cls": null,
+  "size": 8503,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x6691e0",
+  "name": "Rules::ReadMiscINI",
+  "cls": null,
+  "size": 10016,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'in' : undeclared identifier"
+ },
+ {
+  "addr": "0x66d530",
+  "name": "RulesClass::LoadFromINI",
+  "cls": null,
+  "size": 18793,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_D' : undeclared identifier"
+ }
+]
