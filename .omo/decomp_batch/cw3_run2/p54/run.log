@@ -1,0 +1,75 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x62f9a0 ObjectClass::UpdateBuildingDamageParticles -> ObjectClass
+[conv] 0x6d7840 TacticalClass::DrawMap -> TacticalClass
+[conv] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> ObjectClass
+[conv] 0x42b420 GeneratePathWaypoints -> _addr_42
+[conv] 0x48c8b0 ObjectClass::MainGameFrame -> ObjectClass
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x434120 FontClass::RenderGlyph -> FontClass
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x76dad0 TechnoClass::TerritorySelectWDT -> TechnoClass
+[conv] 0x6c8ff0 DlgProcScoreScreen -> _addr_6C
+[conv] 0x420f40 UpdateSpotlightsFoo -> _addr_42
+[conv] 0x736579 InfantryClass::UpdateBehavior -> InfantryClass
+[conv] 0x77a080 ObjectClass::SaveProfileWOL -> ObjectClass
+[conv] 0x47e470 SetCellClassOccupancyFlags -> _addr_47
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x78ebc0 DlgProcGameSetup -> _addr_78
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x78db70 WOLLogin::DlgProc -> WOLLogin
+[conv] 0x533fd0 AllocateSurfaceScreenSurfaces -> _addr_53
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=2
+[era] _addr_42                 rc=2
+[era] FontClass                rc=2
+[era] House                    rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] _addr_6C                 rc=2
+[era] InfantryClass            rc=2
+[era] _addr_47                 rc=2
+[era] Frame                    rc=2
+[era] _addr_78                 rc=2
+[era] _addr_65                 rc=2
+[era] WOLLogin                 rc=2
+[era] _addr_53                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x62f9a0 ObjectClass::UpdateBuildingDamageParticles -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6d7840 TacticalClass::DrawMap -> COMPILE_FAIL (attempt 3)
+[ledger] 0x78f200 ObjectClass::BuildWOLPlayerTooltip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42b420 GeneratePathWaypoints -> COMPILE_FAIL (attempt 3)
+[ledger] 0x48c8b0 ObjectClass::MainGameFrame -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 3)
+[ledger] 0x434120 FontClass::RenderGlyph -> COMPILE_FAIL (attempt 3)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 3)
+[ledger] 0x76dad0 TechnoClass::TerritorySelectWDT -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 3)
+[ledger] 0x420f40 UpdateSpotlightsFoo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x736579 InfantryClass::UpdateBehavior -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77a080 ObjectClass::SaveProfileWOL -> COMPILE_FAIL (attempt 3)
+[ledger] 0x47e470 SetCellClassOccupancyFlags -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 3)
+[ledger] 0x78ebc0 DlgProcGameSetup -> COMPILE_FAIL (attempt 3)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 4)
+[ledger] 0x78db70 WOLLogin::DlgProc -> COMPILE_FAIL (attempt 3)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p54\batch_report.json

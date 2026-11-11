@@ -6273,7 +6273,7 @@
   "this_as_id": false
  },
  "0x420f40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "UpdateSpotlightsFoo",
@@ -7517,7 +7517,7 @@
   "this_as_id": false
  },
  "0x42b420": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GeneratePathWaypoints",
@@ -8583,7 +8583,7 @@
   "status": "OK"
  },
  "0x434120": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13356,7 +13356,7 @@
   "this_as_id": false
  },
  "0x47e470": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "SetCellClassOccupancyFlags",
@@ -14799,7 +14799,7 @@
   "this_as_id": false
  },
  "0x48c8b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -21298,7 +21298,7 @@
   "status": "NG"
  },
  "0x4c54e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28798,7 +28798,7 @@
   "this_as_id": false
  },
  "0x4f4780": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29109,7 +29109,7 @@
   "this_as_id": false
  },
  "0x4f9b70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29814,7 +29814,7 @@
   "status": "NG"
  },
  "0x50db00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -32857,7 +32857,7 @@
   "this_as_id": false
  },
  "0x533fd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "AllocateSurfaceScreenSurfaces",
@@ -53006,7 +53006,7 @@
   "this_as_id": false
  },
  "0x62f9a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -57893,7 +57893,7 @@
   "this_as_id": false
  },
  "0x65d8e0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "DeployScriptActionPlane",
@@ -67150,7 +67150,7 @@
   "this_as_id": false
  },
  "0x6c8ff0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DlgProcScoreScreen",
@@ -68742,7 +68742,7 @@
   "this_as_id": false
  },
  "0x6d7840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77667,7 +77667,7 @@
   "this_as_id": false
  },
  "0x736579": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -83358,7 +83358,7 @@
   "this_as_id": false
  },
  "0x76dad0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -84960,7 +84960,7 @@
   "this_as_id": false
  },
  "0x77a080": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85605,7 +85605,7 @@
   "this_as_id": false
  },
  "0x78db70": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": null,
@@ -85617,7 +85617,7 @@
   "this_as_id": false
  },
  "0x78ebc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DlgProcGameSetup",
@@ -85628,7 +85628,7 @@
   "this_as_id": false
  },
  "0x78f200": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
