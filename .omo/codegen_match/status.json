@@ -6307,7 +6307,7 @@
   "status": "OK"
  },
  "0x75edf0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Voxel::BlendShadowColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6335,7 +6335,7 @@
   "status": "OK"
  },
  "0x760190": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Voxel::BlendColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6349,7 +6349,7 @@
   "status": "OK"
  },
  "0x763a50": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6370,28 +6370,28 @@
   "status": "OK"
  },
  "0x765b40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Campaign_WorldDominationTour_24::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x765b50": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x766fa0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Conflict_WorldDominationTour_26::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x766fb0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6405,14 +6405,14 @@
   "status": "NG"
  },
  "0x76a5a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Map_WorldDominationTour_38::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76a5b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6454,42 +6454,42 @@
   "status": "OK"
  },
  "0x76f160": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Count::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f170": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f180": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "VectorCursor::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f190": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f1a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f1b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6566,7 +6566,7 @@
   "status": "OK"
  },
  "0x775b10": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Dialog::GetCurrent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6650,7 +6650,7 @@
   "status": "NG"
  },
  "0x7adf70": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6671,7 +6671,7 @@
   "status": "NG"
  },
  "0x7ae460": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6685,7 +6685,7 @@
   "status": "NG"
  },
  "0x7aec00": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6734,7 +6734,7 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
