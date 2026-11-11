@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p226\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ee560 _VectorClass_PAVBulletTypeClass::GetSize -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee7c0 _VectorClass_PAVVoxelAnimTypeClass::GetSize -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4eea20 _VectorClass_PAVIsometricTileTypeClass::GetSize -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eec80 _VectorClass_PAVParticleTypeClass::GetSize -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4eeee0 _VectorClass_PAVParticleSystemTypeClass::GetSize -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef140 _VectorClass_PAVSuperWeaponTypeClass::GetSize -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4f2a00 _VectorClass_PAVGraphicMenuItem::Read -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x50ea30 _VectorClass_PBVBuildingTypeClass::GetSize -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50ed40 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50f600 _VectorClass_PAUBuildChoiceClass_HouseClass::GetSize -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f860 _VectorClass_PBVTeamTypeClass::FindItemIndex -> _VectorClass_PBVTeamTypeClass
+[conv] 0x512d60 _VectorClass_PBVInfantryTypeClass::AddType -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x513130 _VectorClass_PBVUnitTypeClass::Add -> _VectorClass_PBVUnitTypeClass
+[conv] 0x513500 _VectorClass_PBVAircraftTypeClass::IndexOf -> _VectorClass_PBVAircraftTypeClass
+[conv] 0x5228d0 InfantryClass::IsBombDeployMission -> InfantryClass
+[conv] 0x538640 _VectorClass_PAVCCINIClass::GetSize -> _VectorClass_PAVCCINIClass
+[conv] 0x53c640 _VectorClass_PBVAnimClass::Read -> _VectorClass_PBVAnimClass
+[conv] 0x53dbc0 _VectorClass_PAVIonBlastClass::GetSize -> _VectorClass_PAVIonBlastClass
+[conv] 0x54a370 _VectorClass_PAG::GetSize -> _VectorClass_PAG
+[conv] 0x54ea10 _VectorClass_PAUKamikazeControl::Read -> _VectorClass_PAUKamikazeControl
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVBulletTypeClass rc=2
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PAVIsometricTileTypeClass rc=2
+[era] _VectorClass_PAVParticleTypeClass rc=2
+[era] _VectorClass_PAVParticleSystemTypeClass rc=2
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=2
+[era] _VectorClass_PAVGraphicMenuItem rc=2
+[era] _VectorClass_PBVBuildingTypeClass rc=2
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=2
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=2
+[era] _VectorClass_PBVTeamTypeClass rc=2
+[era] _VectorClass_PBVInfantryTypeClass rc=2
+[era] _VectorClass_PBVUnitTypeClass rc=2
+[era] _VectorClass_PBVAircraftTypeClass rc=2
+[era] InfantryClass            rc=0
+[era] _VectorClass_PAVCCINIClass rc=2
+[era] _VectorClass_PBVAnimClass rc=2
+[era] _VectorClass_PAVIonBlastClass rc=2
+[era] _VectorClass_PAG         rc=2
+[era] _VectorClass_PAUKamikazeControl rc=2
+=== diffasm byte-compare ===
+[diff] 0x5228d0   MISMATCH         InfantryClass::IsBombDeployMission
+[ledger] 0x4ee560 _VectorClass_PAVBulletTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee7c0 _VectorClass_PAVVoxelAnimTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eea20 _VectorClass_PAVIsometricTileTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eec80 _VectorClass_PAVParticleTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eeee0 _VectorClass_PAVParticleSystemTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef140 _VectorClass_PAVSuperWeaponTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f2a00 _VectorClass_PAVGraphicMenuItem::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ea30 _VectorClass_PBVBuildingTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ed40 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f600 _VectorClass_PAUBuildChoiceClass_HouseClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f860 _VectorClass_PBVTeamTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512d60 _VectorClass_PBVInfantryTypeClass::AddType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513130 _VectorClass_PBVUnitTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513500 _VectorClass_PBVAircraftTypeClass::IndexOf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5228d0 InfantryClass::IsBombDeployMission -> NG (attempt 1)
+[ledger] 0x538640 _VectorClass_PAVCCINIClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53c640 _VectorClass_PBVAnimClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53dbc0 _VectorClass_PAVIonBlastClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a370 _VectorClass_PAG::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54ea10 _VectorClass_PAUKamikazeControl::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p226\batch_report.json

@@ -23683,6 +23683,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ee560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVBulletTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BulletTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee5a0": {
   "attempts": 1,
   "clean": false,
@@ -23707,6 +23719,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ee7c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVoxelAnimTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee800": {
   "attempts": 1,
   "clean": false,
@@ -23727,6 +23751,18 @@
   "name": "_DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4eea20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVIsometricTileTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_IsometricTileTypeClass::GetSize",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -23762,6 +23798,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4eec80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVParticleTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4eecc0": {
   "attempts": 1,
   "clean": false,
@@ -23780,6 +23828,18 @@
   "name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4eeee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVParticleSystemTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleSystemTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4eef20": {
   "attempts": 1,
@@ -23811,6 +23871,18 @@
   "name": "VectorClass_ptr_SuperWeaponTypeClass::Remove",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4ef140": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSuperWeaponTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SuperWeaponTypeClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ef180": {
   "attempts": 1,
@@ -24104,6 +24176,18 @@
   "name": "HouseClass_24::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4f2a00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVGraphicMenuItem::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass_24::Read",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4f2a40": {
   "attempts": 1,
@@ -25596,6 +25680,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x50ea30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVBuildingTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_BuildingType::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50ea70": {
   "attempts": 1,
   "first_diff": "+5 jne 0x50ea7c",
@@ -25621,6 +25717,18 @@
   "name": "VectorClass::InsertAt",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x50ed40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUStartingTechnoStruct_HouseClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UAngerStruct___16::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50ed80": {
   "attempts": 1,
@@ -25682,6 +25790,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50f600": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUBuildChoiceClass_HouseClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50f640": {
   "attempts": 1,
   "clean": false,
@@ -25704,6 +25824,18 @@
   "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x50f860": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVTeamTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_BuildingType::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x50f8a0": {
@@ -26331,6 +26463,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x512d60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PBVInfantryTypeClass::AddType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryTypeVector::AddType",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x512da0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x512dac",
@@ -26351,6 +26495,18 @@
   "name": "Vector::Destructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x513130": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_VectorClass_PBVUnitTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "UnitTypeVector::Add",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x513170": {
   "attempts": 1,
@@ -26385,6 +26541,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "HouseTypeClass_28::AddRef",
   "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x513500": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAircraftTypeClass::IndexOf",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseTypeClass_36::IndexOf",
+  "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -26894,6 +27062,18 @@
   "orig_name": "sub_522540",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5228d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+6 mov dl, byte ptr [eax + 0xec8]",
+  "name": "InfantryClass::IsBombDeployMission",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "InfantryClass::IsBombDeployMission",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x522a50": {
@@ -28496,6 +28676,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x538640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVCCINIClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_CCINIClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x538680": {
   "attempts": 1,
   "clean": false,
@@ -28946,6 +29138,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x53c640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAnimClass::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DeleteCommandClass_28::Read",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x53c680": {
   "attempts": 1,
   "clean": false,
@@ -29126,6 +29330,18 @@
   "name": "VectorClass_ptr_IonBlastClass::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x53dbc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVIonBlastClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_IonBlastClass::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x53dc00": {
   "attempts": 1,
@@ -30363,6 +30579,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x54a370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAG::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_PAG::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x54a3b0": {
   "attempts": 1,
   "clean": false,
@@ -30762,6 +30990,18 @@
   "orig_name": "JumpjetLocomotionClass_26::Seek",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x54ea10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUKamikazeControl::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass_26::Read",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x54ea50": {

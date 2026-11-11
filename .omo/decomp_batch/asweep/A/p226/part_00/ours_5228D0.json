@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsBombDeployMission@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::IsBombDeployMission",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b81c00600008b507085d274208b81c406000083f81b740f83f81c740a83f81d740583f81e7506b801000000c333c0c3",
+ "relocs": []
+}
