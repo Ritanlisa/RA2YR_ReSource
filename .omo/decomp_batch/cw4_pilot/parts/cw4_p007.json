@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6a4220",
+  "name": "JumpjetLocomotionClass::SetByteField_2",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 11,
+  "part": "p38",
+  "unit": "ShipLocomotionClass",
+  "emitted": "ShipLocomotionClass::SetByteField_2",
+  "first_diff": {
+   "orig": "+8 ret 4",
+   "ours": "+8 mov eax, dword ptr [eax]"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x483610",
+  "name": "ObjectClass::processPointerInvalid",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p42",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::processPointerInvalid",
+  "first_diff": {
+   "orig": "+6 shr eax, 8",
+   "ours": "+6 sar eax, 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x7cf11e",
+  "name": "evenint",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 7,
+  "part": "p30",
+  "unit": "_addr_7C",
+  "emitted": "evenint",
+  "first_diff": {
+   "orig": "+0 mov eax, 2",
+   "ours": "+0 jmp 5"
+  },
+  "ours_size": 5
+ },
+ {
+  "addr": "0x487d50",
+  "name": "Cell::GetSlopeIndex",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 23,
+  "part": "p146",
+  "unit": "Cell",
+  "emitted": "Cell::GetSlopeIndex",
+  "first_diff": {
+   "orig": "+13 shr eax, 7",
+   "ours": "+13 sar eax, 7"
+  },
+  "ours_size": 23
+ },
+ {
+  "addr": "0x4521c0",
+  "name": "BuildingClass::DisableTemporal",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 66,
+  "part": "p248",
+  "unit": "BuildingClass",
+  "emitted": "BuildingClass::DisableTemporal",
+  "first_diff": {
+   "orig": "+7 push esi",
+   "ours": "+7 mov ecx, dword ptr [ecx + 0x55c]"
+  },
+  "ours_size": 66
+ },
+ {
+  "addr": "0x5373d0",
+  "name": "CreateTeamCommand::performAction_149",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p21",
+  "unit": "View2CommandClass",
+  "emitted": "View2CommandClass::performAction_149",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x827708",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x537820",
+  "name": "CreateTeamCommand::performAction_173",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p21",
+  "unit": "SetView3CommandClass",
+  "emitted": "SetView3CommandClass::performAction_173",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x827814",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x437f30",
+  "name": "CellStruct::Copy",
+  "family": "TOKEN_MISMATCH",
+  "path": "eval_order",
+  "size": 17,
+  "part": "p70",
+  "unit": "CellStruct",
+  "emitted": "CellStruct::Copy",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov edx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x537140",
+  "name": "CreateTeamCommand::performAction_129",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p21",
+  "unit": "SidebarUpCommandClass",
+  "emitted": "SidebarUpCommandClass::performAction_129",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x82764c",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x5374c0",
+  "name": "CreateTeamCommand::performAction_154",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p21",
+  "unit": "View3CommandClass",
+  "emitted": "View3CommandClass::performAction_154",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x82773c",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x536d10",
+  "name": "CreateTeamCommand::performAction_90",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "ScatterCommandClass",
+  "emitted": "ScatterCommandClass::performAction_90",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x8274b0",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x6ac870",
+  "name": "SidebarClass::initButtons",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 32,
+  "part": "p195",
+  "unit": "SidebarClass",
+  "emitted": "SidebarClass::initButtons",
+  "first_diff": {
+   "orig": "+2 xor ecx, ecx",
+   "ours": "+2 xor edx, edx"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x7d2f57",
+  "name": "?what_exception__UBEPBDXZ",
+  "family": "TOKEN_MISMATCH",
+  "path": "const_fold",
+  "size": 13,
+  "part": "p51",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::what_exception__UBEPBDXZ",
+  "first_diff": {
+   "orig": "+7 mov eax, 0x7f9914",
+   "ours": "+7 mov eax, 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x5376a0",
+  "name": "CreateTeamCommand::performAction_163",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p21",
+  "unit": "SetView1CommandClass",
+  "emitted": "SetView1CommandClass::performAction_163",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x8277a4",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x7d13f8",
+  "name": "__initptd",
+  "family": "TOKEN_MISMATCH",
+  "path": "const_fold",
+  "size": 19,
+  "part": "p85",
+  "unit": "_addr_7D",
+  "emitted": "__initptd",
+  "first_diff": {
+   "orig": "+4 mov dword ptr [eax + 0x50], 0x87cb20",
+   "ours": "+4 mov dword ptr [eax + 0x50], 0"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x54e220",
+  "name": "sub_54E220",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p165",
+  "unit": "_addr_54",
+  "emitted": "sub_54E220",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xabc680], 0",
+   "ours": "+5 mov byte ptr [0], 0"
+  },
+  "ours_size": 23
+ },
+ {
+  "addr": "0x536e30",
+  "name": "CreateTeamCommand::performAction_100",
+  "family": "TOKEN_MISMATCH",
+  "path": "extern_reloc",
+  "size": 6,
+  "part": "p20",
+  "unit": "CenterBaseCommandClass",
+  "emitted": "CenterBaseCommandClass::performAction_100",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x827514",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x4867b0",
+  "name": "Cell::IsShore",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 36,
+  "part": "p203",
+  "unit": "Cell",
+  "emitted": "Cell::IsShore",
+  "first_diff": {
+   "orig": "+21 jl 0x4867ce",
+   "ours": "+21 jb 0x1e"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x7aee90",
+  "name": "CChatEventSink::Check",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 34,
+  "part": "p202",
+  "unit": "CChatEventSink",
+  "emitted": "CChatEventSink::Check",
+  "first_diff": {
+   "orig": "+10 jge 0x7aeead",
+   "ours": "+10 jae 0x1d"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x7532a0",
+  "name": "globalHelper_0532A0",
+  "family": "ROTATE_EXACT",
+  "path": "branch_order",
+  "size": 30,
+  "part": "p193",
+  "unit": "_addr_75",
+  "emitted": "globalHelper_0532A0",
+  "first_diff": {
+   "orig": "+2 jl 0x7532be",
+   "ours": "+2 jl 0x1e"
+  },
+  "ours_size": 46
+ }
+]
