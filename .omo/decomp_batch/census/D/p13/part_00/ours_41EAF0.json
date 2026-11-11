@@ -1,0 +1,51 @@
+{
+ "symbol": "?EnemyHouseOwns@AITriggerTypeClass@@QAE_NHPAH@Z",
+ "sym_key": "AITriggerTypeClass::EnemyHouseOwns",
+ "size": 264,
+ "link_base": 0,
+ "bytes_hex": "53558b6c24108bd985ed0f84f1000000568bb3d800000085f657746b8b0656ff50408b0e568bf8c744241c00000000ff512c83c0fd83f825774733d28a9000000000ff249500000000578d8d8c550000e800000000eb32578d8d50550000e800000000eb24578d8d78550000e800000000eb16578d8d64550000e800000000eb088b442418eb0233c08b8be80000005f83f9055e776bff248d000000008b8be40000005d3bc15b0f92c0c208008b8be40000005d3bc15b0f96c0c208008b8be40000005d3bc15b0f94c0c208008b8be40000005d3bc15b0f93c0c208008b8be40000005d3bc15b0f97c0c208008b93e400000033c93bc25d0f95c18ac15bc208005d32c05bc20800",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "$L1198",
+   "sym_key": "$L1198"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "$L1199",
+   "sym_key": "$L1199"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?GetOrGrow@DynamicVector@@QAEHH@Z",
+   "sym_key": "DynamicVector::GetOrGrow"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "$L1200",
+   "sym_key": "$L1200"
+  }
+ ]
+}

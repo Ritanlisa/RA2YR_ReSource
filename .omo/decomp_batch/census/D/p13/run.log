@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x4d0180 DamageArea::CheckOccupancyEligibility -> DamageArea
+[conv] 0x5d3a60 MessageListClass::Init -> MessageListClass
+[conv] 0x4ccb40 FlyLocomotionClass::ProcessLocomotionStep -> FlyLocomotionClass
+[conv] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> ParticleTypeClass
+[conv] 0x46ae70 BulletClass::SaveLoad_Prefix -> BulletClass
+[conv] 0x5239d0 InfantryClass::DTOR -> InfantryClass
+[conv] 0x7daf28 unknown::___getlocaleinfo -> unknown
+[conv] 0x716150 TechnoTypeClass::ValidatePath -> TechnoTypeClass
+[conv] 0x71c930 TerrainClass::ApplyCellModifications -> TerrainClass
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x779dd0 ObjectClass::LoadConfigWOL -> ObjectClass
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x41eaf0 AITriggerTypeClass::EnemyHouseOwns -> AITriggerTypeClass
+[conv] 0x634cc0 ScriptAction::FindBuildingMatch -> ScriptAction
+[conv] 0x52d640 unknown::DlgProc -> unknown
+[conv] 0x5fc380 Object::SpawnAtCell -> Object
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DamageArea               rc=2
+[era] MessageListClass         rc=2
+[era] FlyLocomotionClass       rc=2
+[era] ParticleTypeClass        rc=2
+[era] BulletClass              rc=2
+[era] InfantryClass            rc=2
+[era] unknown                  rc=2
+[era] TechnoTypeClass          rc=0
+[era] TerrainClass             rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] AITriggerTypeClass       rc=0
+[era] ScriptAction             rc=2
+[era] Object                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x716150   MISMATCH         TechnoTypeClass::ValidatePath
+[diff] 0x41eaf0   MISMATCH         AITriggerTypeClass::EnemyHouseOwns
+[ledger] 0x4d0180 DamageArea::CheckOccupancyEligibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74fdc0 0x74fdc0 -> PENDING (attempt 1)
+[ledger] 0x5d3a60 MessageListClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ccb40 JumpjetLocomotionClass::ProcessLocomotionStep -> COMPILE_FAIL (attempt 1)
+[ledger] 0x645660 ParticleTypeClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46ae70 BulletClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5239d0 InfantryTypeClass::DTOR -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7daf28 ___getlocaleinfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x716150 BuildingClass::ValidatePath -> NG (attempt 1)
+[ledger] 0x427940 0x427940 -> PENDING (attempt 1)
+[ledger] 0x71c930 TerrainClass::ApplyCellModifications -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779f10 SavePersonaConfigWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x779dd0 LoadConfigWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76e2f0 Team_Start_76E2F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41eaf0 AITriggerTypeClass::EnemyHouseOwns -> NG (attempt 1)
+[ledger] 0x634cc0 ScriptAction::FindBuildingMatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52d640 CampaignMenu::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fc380 Object::SpawnAtCell -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2634,
+ "verdicts": {
+  "MISMATCH": 708,
+  "MATCH": 521,
+  "COMPILE_FAIL": 863,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 525,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 245,
+  "ret_norm": 7,
+  "frame_sched": 73,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 116,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.4,
+ "match_rate_of_total_pct": 19.8,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p13\batch_report.json

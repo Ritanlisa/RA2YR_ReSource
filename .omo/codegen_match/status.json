@@ -1182,6 +1182,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x41eaf0": {
+  "attempts": 1,
+  "first_diff": "+0 push ecx",
+  "name": "AITriggerTypeClass::EnemyHouseOwns",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x41f0d0": {
   "attempts": 1,
   "first_diff": null,
@@ -1417,6 +1424,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x427490",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x427940": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x427940",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -2015,6 +2029,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x459470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::UpdateDamageAnim",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x459840": {
   "attempts": 1,
   "first_diff": null,
@@ -2173,6 +2194,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x46ae70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BulletClass::SaveLoad_Prefix",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5053,10 +5081,24 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4ccb40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::ProcessLocomotionStep",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4cd510": {
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::IsMapCoordVisible",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4d0180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DamageArea::CheckOccupancyEligibility",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6768,6 +6810,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5239d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryTypeClass::DTOR",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5247c0": {
   "attempts": 1,
   "first_diff": null,
@@ -6907,6 +6956,13 @@
   "name": "0x52b960",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x52d640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignMenu::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x532100": {
   "attempts": 1,
@@ -9778,6 +9834,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x5d3a60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MessageListClass::Init",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d4b20": {
   "attempts": 11,
   "first_diff": null,
@@ -10330,6 +10393,13 @@
   "name": "0x5fc240",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5fc380": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object::SpawnAtCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5fdde0": {
   "attempts": 5,
@@ -11066,6 +11136,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x634cc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptAction::FindBuildingMatch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x635060": {
   "attempts": 8,
   "first_diff": "+49 je 0x63510e",
@@ -11429,6 +11506,13 @@
   "name": "0x644b60",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x645660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleTypeClass::SaveLoad_Prefix",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x645910": {
   "attempts": 6,
@@ -14538,6 +14622,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x716150": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "BuildingClass::ValidatePath",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x7170a0": {
   "attempts": 1,
   "first_diff": null,
@@ -14684,6 +14775,13 @@
   "name": "TerrainClass::IsPlacementValid",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x71c930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerrainClass::ApplyCellModifications",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x71d150": {
   "attempts": 5,
@@ -14929,6 +15027,13 @@
   "name": "BuildingClass::FreeUpgradeQueue",
   "note": "decomp_batch r2: MISMATCH/signedness",
   "status": "NG"
+ },
+ "0x722af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::AddOccupancy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x722e50": {
   "attempts": 8,
@@ -15847,6 +15952,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x74fdc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x74fdc0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x74ff90": {
   "attempts": 1,
   "first_diff": "+2 fcomp dword ptr [0x7e2ac8]",
@@ -16554,6 +16666,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x76e2f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Team_Start_76E2F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x76f020": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
@@ -16875,6 +16994,20 @@
   "name": "0x7786a0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x779dd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadConfigWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x779f10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SavePersonaConfigWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x77a7c0": {
   "attempts": 1,
@@ -18394,6 +18527,13 @@
   "name": "0x7d9fac",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7daf28": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "___getlocaleinfo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7dbb55": {
   "attempts": 1,
