@@ -1,0 +1,11 @@
+{
+ "addr": "0x58D010",
+ "name": "Map_Helper_58D010",
+ "size": 82,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58D010",
+ "bytes_hex": "a1dcc28900530fafc085c08ad97e41565733f68bf8a110edab0003c6837838ff75266683380075076683780200741950b9e8f78700e85687fdff8bc8e8aff7ffff85c0740388581a83c6504f75c75f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

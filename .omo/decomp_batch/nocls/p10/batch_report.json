@@ -1,0 +1,393 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 4,
+   "MISMATCH": 13,
+   "MATCH": 3
+  },
+  "pathologies": {
+   "extern_reloc": 8,
+   "codegen_shape": 2,
+   "signedness": 2,
+   "branch_polarity": 1
+  },
+  "match_rate_of_decided_pct": 18.8,
+  "match_rate_of_total_pct": 15.0,
+  "rule_violation_fns": 1,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x55a4d0",
+   "batch": "nocls",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\part_00\\_addr_55_55a4d0.cpp(7) : error C2065: 'pow' : undeclared identifier",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_55A4D0",
+   "emitted": "sub_55A4D0",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x55a540",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7ed350]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_55A540",
+   "emitted": "sub_55A540",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x55cc10",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 8B ours 8B",
+   "first_diff": {
+    "orig": "+0 mov byte ptr [0xabcd58], 0",
+    "ours": "+0 mov byte ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_55CC10",
+   "emitted": "sub_55CC10",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 8,
+   "ours_size": 8
+  },
+  {
+   "addr": "0x55f7f0",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7ed3b8]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_55F7F0",
+   "emitted": "sub_55F7F0",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x55f890",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0xabcf50]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_55F890",
+   "emitted": "sub_55F890",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51
+  },
+  {
+   "addr": "0x55f920",
+   "batch": "nocls",
+   "verdict": "MATCH",
+   "note": "15B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_55F920",
+   "emitted": "sub_55F920",
+   "unit": "_addr_55",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 15,
+   "ours_size": 15
+  },
+  {
+   "addr": "0x5616f0",
+   "batch": "nocls",
+   "verdict": "MATCH",
+   "note": "23B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_5616F0",
+   "emitted": "sub_5616F0",
+   "unit": "_addr_56",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 23,
+   "ours_size": 23
+  },
+  {
+   "addr": "0x561760",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_561760",
+   "emitted": "sub_561760",
+   "unit": "_addr_56",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19
+  },
+  {
+   "addr": "0x578d80",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 219B ours 238B",
+   "first_diff": {
+    "orig": "+8 jl 0x578d95",
+    "ours": "+8 jb 0x15"
+   },
+   "pathology": "signedness",
+   "name": "Map_Helper",
+   "emitted": "Map_Helper",
+   "unit": "Map",
+   "name_placeholder": false,
+   "cls_src": null,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 219,
+   "ours_size": 238
+  },
+  {
+   "addr": "0x5889f0",
+   "batch": "nocls",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\part_00\\_addr_58_5889f0.cpp(20) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\part_00\\_addr_58_58",
+   "first_diff": null,
+   "pathology": null,
+   "name": "globalHelper_0889F0",
+   "emitted": "globalHelper_0889F0",
+   "unit": "_addr_58",
+   "name_placeholder": false,
+   "cls_src": null,
+   "sites": "4/4",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x58b270",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 44B ours 54B",
+   "first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_58B270",
+   "emitted": "sub_58B270",
+   "unit": "_addr_58",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "4/4",
+   "rule_violations": 0,
+   "orig_size": 44,
+   "ours_size": 54
+  },
+  {
+   "addr": "0x58b3d0",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7ed618]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_58B3D0",
+   "emitted": "sub_58B3D0",
+   "unit": "_addr_58",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x58b410",
+   "batch": "nocls",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\part_00\\_addr_58_58b410.cpp(8) : error C2440: 'type cast' : cannot convert from 'double' to 'class Math *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_58B410",
+   "emitted": "sub_58B410",
+   "unit": "_addr_58",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "6/6",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x58d010",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 82B ours 82B",
+   "first_diff": {
+    "orig": "+13 jle 0x58d060",
+    "ours": "+13 jbe 0x50"
+   },
+   "pathology": "signedness",
+   "name": "Map_Helper_58D010",
+   "emitted": "Map_Helper_58D010",
+   "unit": "Map_Helper",
+   "name_placeholder": false,
+   "cls_src": null,
+   "sites": "5/5",
+   "rule_violations": 2,
+   "orig_size": 82,
+   "ours_size": 82
+  },
+  {
+   "addr": "0x5a1f60",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 76B ours 71B",
+   "first_diff": {
+    "orig": "+37 je 0x5a1fa8",
+    "ours": "+37 je 0x43"
+   },
+   "pathology": "branch_polarity",
+   "name": "SmallFunc_5A1F60",
+   "emitted": "SmallFunc_5A1F60",
+   "unit": "SmallFunc",
+   "name_placeholder": false,
+   "cls_src": null,
+   "sites": "6/6",
+   "rule_violations": 0,
+   "orig_size": 76,
+   "ours_size": 71
+  },
+  {
+   "addr": "0x5adc90",
+   "batch": "nocls",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\part_00\\_addr_5A_5adc90.cpp(7) : error C2440: 'type cast' : cannot convert from 'double' to 'class Math *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\nocls\\p10\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_5ADC90",
+   "emitted": "sub_5ADC90",
+   "unit": "_addr_5A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5afd10",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7edb58]",
+    "ours": "+6 fmul qword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_5AFD10",
+   "emitted": "sub_5AFD10",
+   "unit": "_addr_5A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19
+  },
+  {
+   "addr": "0x5afd90",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 21B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7edb60]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_5AFD90",
+   "emitted": "sub_5AFD90",
+   "unit": "_addr_5A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x5afe90",
+   "batch": "nocls",
+   "verdict": "MATCH",
+   "note": "18B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_5AFE90",
+   "emitted": "sub_5AFE90",
+   "unit": "_addr_5A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 18,
+   "ours_size": 18
+  },
+  {
+   "addr": "0x5afeb0",
+   "batch": "nocls",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xabee40], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_5AFEB0",
+   "emitted": "sub_5AFEB0",
+   "unit": "_addr_5A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26
+  }
+ ]
+}

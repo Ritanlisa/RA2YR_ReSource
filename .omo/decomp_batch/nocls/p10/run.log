@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x55a4d0 sub_55A4D0 -> _addr_55
+[conv] 0x55a540 sub_55A540 -> _addr_55
+[conv] 0x55cc10 sub_55CC10 -> _addr_55
+[conv] 0x55f7f0 sub_55F7F0 -> _addr_55
+[conv] 0x55f890 sub_55F890 -> _addr_55
+[conv] 0x55f920 sub_55F920 -> _addr_55
+[conv] 0x5616f0 sub_5616F0 -> _addr_56
+[conv] 0x561760 sub_561760 -> _addr_56
+[conv] 0x578d80 Map_Helper -> Map
+[conv] 0x5889f0 globalHelper_0889F0 -> _addr_58
+[conv] 0x58b270 sub_58B270 -> _addr_58
+[conv] 0x58b3d0 sub_58B3D0 -> _addr_58
+[conv] 0x58b410 sub_58B410 -> _addr_58
+[conv] 0x58d010 Map_Helper_58D010 -> Map_Helper
+[conv] 0x5a1f60 SmallFunc_5A1F60 -> SmallFunc
+[conv] 0x5adc90 sub_5ADC90 -> _addr_5A
+[conv] 0x5afd10 sub_5AFD10 -> _addr_5A
+[conv] 0x5afd90 sub_5AFD90 -> _addr_5A
+[conv] 0x5afe90 sub_5AFE90 -> _addr_5A
+[conv] 0x5afeb0 sub_5AFEB0 -> _addr_5A
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_55                 rc=2
+[era] _addr_56                 rc=0
+[era] Map                      rc=0
+[era] _addr_58                 rc=2
+[era] Map_Helper               rc=0
+[era] SmallFunc                rc=0
+[era] _addr_5A                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x55a540   MISMATCH         sub_55A540
+[diff] 0x55cc10   MISMATCH         sub_55CC10
+[diff] 0x55f7f0   MISMATCH         sub_55F7F0
+[diff] 0x55f890   MISMATCH         sub_55F890
+[diff] 0x55f920   MATCH            sub_55F920
+[diff] 0x5616f0   MATCH            sub_5616F0
+[diff] 0x561760   MISMATCH         sub_561760
+[diff] 0x578d80   MISMATCH         Map_Helper
+[diff] 0x58b270   MISMATCH         sub_58B270
+[diff] 0x58b3d0   MISMATCH         sub_58B3D0
+[diff] 0x58d010   MISMATCH         Map_Helper_58D010
+[diff] 0x5a1f60   MISMATCH         SmallFunc_5A1F60
+[diff] 0x5afd10   MISMATCH         sub_5AFD10
+[diff] 0x5afd90   MISMATCH         sub_5AFD90
+[diff] 0x5afe90   MATCH            sub_5AFE90
+[diff] 0x5afeb0   MISMATCH         sub_5AFEB0
+[ledger] 0x55a4d0 sub_55A4D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x55a540 sub_55A540 -> NG (attempt 2)
+[ledger] 0x55cc10 sub_55CC10 -> NG (attempt 2)
+[ledger] 0x55f7f0 sub_55F7F0 -> NG (attempt 2)
+[ledger] 0x55f890 sub_55F890 -> NG (attempt 2)
+[ledger] 0x55f920 sub_55F920 -> OK (attempt 2)
+[ledger] 0x5616f0 sub_5616F0 -> OK (attempt 2)
+[ledger] 0x561760 sub_561760 -> NG (attempt 2)
+[ledger] 0x578d80 Map_Helper -> NG (attempt 2)
+[ledger] 0x5889f0 globalHelper_0889F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58b270 sub_58B270 -> NG (attempt 2)
+[ledger] 0x58b3d0 sub_58B3D0 -> NG (attempt 2)
+[ledger] 0x58b410 sub_58B410 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x58d010 Map_Helper_58D010 -> NG (attempt 2)
+[ledger] 0x5a1f60 SmallFunc_5A1F60 -> NG (attempt 2)
+[ledger] 0x5adc90 sub_5ADC90 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5afd10 sub_5AFD10 -> NG (attempt 2)
+[ledger] 0x5afd90 sub_5AFD90 -> NG (attempt 2)
+[ledger] 0x5afe90 sub_5AFE90 -> OK (attempt 2)
+[ledger] 0x5afeb0 sub_5AFEB0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 13,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 2,
+  "signedness": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 18.8,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p10\batch_report.json

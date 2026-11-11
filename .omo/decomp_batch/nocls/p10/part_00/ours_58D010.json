@@ -1,0 +1,39 @@
+{
+ "symbol": "?Map_Helper_58D010@@YIHD@Z",
+ "sym_key": "Unnamed::Map_Helper_58D010",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "a100000000530fafc085c08ad97641565733f68bf8a10000000003c6837838ff75266683380075076683780200741950b900000000e8000000008bc8e80000000085c0740388581a83c6504f75c75f5e5bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 61,
+   "type": "REL32",
+   "sym": "?GenerateTerrain@RandomMap@@QAEHXZ",
+   "sym_key": "RandomMap::GenerateTerrain"
+  }
+ ]
+}
