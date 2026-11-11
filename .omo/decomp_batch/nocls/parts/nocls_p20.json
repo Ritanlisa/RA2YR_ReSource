@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x7287f0",
+  "batch": "nocls",
+  "name": "sub_7287F0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72a2c0",
+  "batch": "nocls",
+  "name": "sub_72A2C0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72a880",
+  "batch": "nocls",
+  "name": "sub_72A880",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72a9d0",
+  "batch": "nocls",
+  "name": "sub_72A9D0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x72b010",
+  "batch": "nocls",
+  "name": "UI_Draw_72B010",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72b370",
+  "batch": "nocls",
+  "name": "sub_72B370",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72bac0",
+  "batch": "nocls",
+  "name": "WOLobby_Load",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72bba0",
+  "batch": "nocls",
+  "name": "sub_72BBA0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72c140",
+  "batch": "nocls",
+  "name": "sub_72C140",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72c6f0",
+  "batch": "nocls",
+  "name": "UI_Create_72C6F0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72ce30",
+  "batch": "nocls",
+  "name": "sub_72CE30",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72d120",
+  "batch": "nocls",
+  "name": "UI_Show",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72d430",
+  "batch": "nocls",
+  "name": "sub_72D430",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72e260",
+  "batch": "nocls",
+  "name": "UI_Draw_72E260",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72e990",
+  "batch": "nocls",
+  "name": "sub_72E990",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x72f350",
+  "batch": "nocls",
+  "name": "House_Load",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x72f4b0",
+  "batch": "nocls",
+  "name": "UI_Helper_72F4B0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7307d0",
+  "batch": "nocls",
+  "name": "sub_7307D0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x730890",
+  "batch": "nocls",
+  "name": "sub_730890",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x730930",
+  "batch": "nocls",
+  "name": "sub_730930",
+  "cc": "unknown"
+ }
+]

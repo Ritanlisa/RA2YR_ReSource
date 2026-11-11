@@ -17003,11 +17003,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x7287f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x7287f0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_7287F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x729480": {
   "attempts": 1,
@@ -17038,32 +17038,32 @@
   "status": "OK"
  },
  "0x72a2c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x72a2c0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f5b38]",
+  "name": "sub_72A2C0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x72a880": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x72a880",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+5 mov dword ptr [0xb0fb28], 0",
+  "name": "sub_72A880",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x72a9d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72a9d0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72A9D0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72b010": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72b010",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "UI_Draw_72B010",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72b2f0": {
   "attempts": 1,
@@ -17073,11 +17073,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x72b370": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72b370",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72B370",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72b870": {
   "attempts": 1,
@@ -17087,25 +17087,25 @@
   "status": "NG"
  },
  "0x72bac0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72bac0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "WOLobby_Load",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x72bba0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72bba0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72BBA0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72c140": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72c140",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72C140",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72c290": {
   "attempts": 1,
@@ -17115,25 +17115,25 @@
   "status": "NG"
  },
  "0x72c6f0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72c6f0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "UI_Create_72C6F0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72ce30": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72ce30",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72CE30",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72d120": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72d120",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "UI_Show",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x72d170": {
   "attempts": 1,
@@ -17150,11 +17150,11 @@
   "status": "NG"
  },
  "0x72d430": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72d430",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_72D430",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72d460": {
   "attempts": 1,
@@ -17178,32 +17178,32 @@
   "status": "OK"
  },
  "0x72e260": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72e260",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "UI_Draw_72E260",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72e990": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x72e990",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 sub esp, 8",
+  "name": "sub_72E990",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x72f350": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72f350",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "House_Load",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x72f4b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x72f4b0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "UI_Helper_72F4B0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x72f510": {
   "attempts": 5,
@@ -17213,25 +17213,25 @@
   "status": "COMPILE_FAIL"
  },
  "0x7307d0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x7307d0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_7307D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x730890": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x730890",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fild dword ptr [0xb0fe50]",
+  "name": "sub_730890",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x730930": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x730930",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_730930",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x730990": {
   "attempts": 1,

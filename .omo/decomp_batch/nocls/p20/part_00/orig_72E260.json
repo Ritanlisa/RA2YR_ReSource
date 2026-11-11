@@ -1,0 +1,11 @@
+{
+ "addr": "0x72E260",
+ "name": "UI_Draw_72E260",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72E260",
+ "bytes_hex": "a0e0fbb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

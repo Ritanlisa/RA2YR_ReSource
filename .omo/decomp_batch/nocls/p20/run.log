@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x7287f0 sub_7287F0 -> _addr_72
+[conv] 0x72a2c0 sub_72A2C0 -> _addr_72
+[conv] 0x72a880 sub_72A880 -> _addr_72
+[conv] 0x72a9d0 sub_72A9D0 -> _addr_72
+[conv] 0x72b010 UI_Draw_72B010 -> UI_Draw
+[conv] 0x72b370 sub_72B370 -> _addr_72
+[conv] 0x72bac0 WOLobby_Load -> WOLobby
+[conv] 0x72bba0 sub_72BBA0 -> _addr_72
+[conv] 0x72c140 sub_72C140 -> _addr_72
+[conv] 0x72c6f0 UI_Create_72C6F0 -> UI_Create
+[conv] 0x72ce30 sub_72CE30 -> _addr_72
+[conv] 0x72d120 UI_Show -> UI
+[conv] 0x72d430 sub_72D430 -> _addr_72
+[conv] 0x72e260 UI_Draw_72E260 -> UI_Draw
+[conv] 0x72e990 sub_72E990 -> _addr_72
+[conv] 0x72f350 House_Load -> House
+[conv] 0x72f4b0 UI_Helper_72F4B0 -> UI_Helper
+[conv] 0x7307d0 sub_7307D0 -> _addr_73
+[conv] 0x730890 sub_730890 -> _addr_73
+[conv] 0x730930 sub_730930 -> _addr_73
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=2
+[era] UI_Draw                  rc=0
+[era] WOLobby                  rc=2
+[era] UI_Create                rc=0
+[era] UI                       rc=2
+[era] House                    rc=2
+[era] UI_Helper                rc=0
+[era] _addr_73                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x72a2c0   MISMATCH         sub_72A2C0
+[diff] 0x72a880   MISMATCH         sub_72A880
+[diff] 0x72a9d0   MATCH            sub_72A9D0
+[diff] 0x72b370   MATCH            sub_72B370
+[diff] 0x72bba0   MATCH            sub_72BBA0
+[diff] 0x72c140   MATCH            sub_72C140
+[diff] 0x72ce30   MATCH            sub_72CE30
+[diff] 0x72d430   MATCH            sub_72D430
+[diff] 0x72e990   MISMATCH         sub_72E990
+[diff] 0x72b010   MATCH            UI_Draw_72B010
+[diff] 0x72e260   MATCH            UI_Draw_72E260
+[diff] 0x72c6f0   MATCH            UI_Create_72C6F0
+[diff] 0x72f4b0   MATCH            UI_Helper_72F4B0
+[diff] 0x7307d0   MISMATCH         sub_7307D0
+[diff] 0x730890   MISMATCH         sub_730890
+[diff] 0x730930   MATCH            sub_730930
+[ledger] 0x7287f0 sub_7287F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72a2c0 sub_72A2C0 -> NG (attempt 2)
+[ledger] 0x72a880 sub_72A880 -> NG (attempt 2)
+[ledger] 0x72a9d0 sub_72A9D0 -> OK (attempt 2)
+[ledger] 0x72b010 UI_Draw_72B010 -> OK (attempt 2)
+[ledger] 0x72b370 sub_72B370 -> OK (attempt 2)
+[ledger] 0x72bac0 WOLobby_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72bba0 sub_72BBA0 -> OK (attempt 2)
+[ledger] 0x72c140 sub_72C140 -> OK (attempt 2)
+[ledger] 0x72c6f0 UI_Create_72C6F0 -> OK (attempt 2)
+[ledger] 0x72ce30 sub_72CE30 -> OK (attempt 2)
+[ledger] 0x72d120 UI_Show -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72d430 sub_72D430 -> OK (attempt 2)
+[ledger] 0x72e260 UI_Draw_72E260 -> OK (attempt 2)
+[ledger] 0x72e990 sub_72E990 -> NG (attempt 2)
+[ledger] 0x72f350 House_Load -> COMPILE_FAIL (attempt 2)
+[ledger] 0x72f4b0 UI_Helper_72F4B0 -> OK (attempt 2)
+[ledger] 0x7307d0 sub_7307D0 -> NG (attempt 2)
+[ledger] 0x730890 sub_730890 -> NG (attempt 2)
+[ledger] 0x730930 sub_730930 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 4,
+  "MISMATCH": 5,
+  "MATCH": 11
+ },
+ "pathologies": {
+  "extern_reloc": 3,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 68.8,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p20\batch_report.json
