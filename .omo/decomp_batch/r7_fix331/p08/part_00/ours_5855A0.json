@@ -1,0 +1,45 @@
+{
+ "symbol": "?AssignCellOwnership@LayerClass@@QAEHXZ",
+ "sym_key": "LayerClass::AssignCellOwnership",
+ "size": 288,
+ "link_base": 0,
+ "bytes_hex": "83ec0855568bf18974240c8b86f40000008b963c010000898610010000c7860c010000010000008d48ffc1e00b898e140100008bce8d441004898618010000e8000000008be885ed0f84ca00000053578b454483f8ff0f84a30000000fbe0d340000008b118b04828a88a802000084c90f8489000000a10000000083cbff33ffc7442410ffffff7f8a481484c97e700fbe4811558b34b98bcee8000000008a8e9000000084c9742d8a4e7484c9742633d28a961c0200008b4a348a91a701000084d2741183fbff74063b4424107d06894424108bdfa100000000470fbe50143bfa7cac83fbff74130fbe40118b0c988b911c0200008b42308945508b7424148bcee8000000008be885ed0f8540ffffff5f5b5e5d83c408c38bc55e5d83c408c3",
+ "relocs": [
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?stru_A83D50@@3PADA",
+   "sym_key": "stru_A83D50"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?DistanceTo@ObjectClass@@QAEHH@Z",
+   "sym_key": "ObjectClass::DistanceTo"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 258,
+   "type": "REL32",
+   "sym": "?CellIteratorNext@LayerClass@@QAEHXZ",
+   "sym_key": "LayerClass::CellIteratorNext"
+  }
+ ]
+}

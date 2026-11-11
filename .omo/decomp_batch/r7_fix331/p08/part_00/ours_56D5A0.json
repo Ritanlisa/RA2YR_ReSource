@@ -1,0 +1,33 @@
+{
+ "symbol": "?DetermineTileConnectivity@CellClass@@QAEFPAF@Z",
+ "sym_key": "CellClass::DetermineTileConnectivity",
+ "size": 362,
+ "link_base": 0,
+ "bytes_hex": "8b81f80000008b91f400000083ec2c8d4410018b542430535556570fbf72020fbf120fafc603c2780c8b516c3bc27c078d42ffeb0233c08b5168c744242401000000c7442434ffffffff8d3482a1f00200008b15ec02000003c233d28a16894424308d78018bdf897c242cf7db895c241c8bd8f7db895c24208d580283c8ff895c24282bc783fa07894424380f84cb000000c7442440000000008d6c241c8b450033db8a1c868d04863bda8944241874138b44244083c5044083f808894424407d66ebda33db3bc3745e8d54241c895c2410895424408b5118c7442414080000008b4424408b0833c0668b448e028d0c8e668b2c42663b2c5a7410803907740b8bd88b44241040894424108b4c24408b44241483c10448894c24408944241475c0837c2410037e1db9f8010000e80000000033c725ff00000033c75f5e5d5b83c42cc204008b54241881e700ffffff8a420225ff0000000bf866897e02668bc75f5e5d5b83c42cc20400",
+ "relocs": [
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 302,
+   "type": "REL32",
+   "sym": "?ConnectivityGraph@Terrain@@QAEHXZ",
+   "sym_key": "Terrain::ConnectivityGraph"
+  }
+ ]
+}
