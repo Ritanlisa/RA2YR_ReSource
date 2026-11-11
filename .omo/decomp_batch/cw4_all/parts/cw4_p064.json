@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x588f90",
+  "name": "VectorClass_W4PassabilityType::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_DynamicVectorClass_U_HashObject_II",
+  "emitted": "_DynamicVectorClass_U_HashObject_II::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x588f9c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x589530",
+  "name": "VectorClass::initSubzoneData",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::initSubzoneData",
+  "first_diff": {
+   "orig": "+5 jne 0x58953c",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x589e00",
+  "name": "VectorClass::InitCellVe_vt05",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::InitCellVe_vt05",
+  "first_diff": {
+   "orig": "+5 jne 0x589e0c",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x58a010",
+  "name": "VectorClass_W4PassabilityType::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_VectorClass_W4PassabilityType",
+  "emitted": "_VectorClass_W4PassabilityType::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x58a01c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ac3d0",
+  "name": "VectorClass_ptr_MapRegionClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "VectorClass_ptr_MapRegionClass",
+  "emitted": "VectorClass_ptr_MapRegionClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x5ac3dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ac4f0",
+  "name": "MapSeedClass_18::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAU_WIN32_FIND_DATAA",
+  "emitted": "_DynamicVectorClass_PAU_WIN32_FIND_DATAA::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x5ac4fc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ac5d0",
+  "name": "DynamicVector::validateCellCoord",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p184",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::validateCellCoord",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ac620",
+  "name": "VectorClass_N::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_N",
+  "emitted": "_DynamicVectorClass_N::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x5ac62c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ac800",
+  "name": "VectorClass_ptr_MapRegionClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_VectorClass_PAVMapRegionClass",
+  "emitted": "_VectorClass_PAVMapRegionClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x5ac80c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5aceb0",
+  "name": "MSEngine::Run",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_VectorClass_V_TRect_H",
+  "emitted": "_VectorClass_V_TRect_H::Run",
+  "first_diff": {
+   "orig": "+5 jne 0x5acebc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5ad270",
+  "name": "VectorClass_N::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_VectorClass_N",
+  "emitted": "_VectorClass_N::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x5ad27c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5c5100",
+  "name": "MPCooperative::updateGameClock",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p184",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::updateGameClock",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5c5290",
+  "name": "MPCooperative::handleDisconnect",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::handleDisconnect",
+  "first_diff": {
+   "orig": "+5 jne 0x5c529c",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x5c54f0",
+  "name": "MPCooperative::evaluateAIStrategy",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::evaluateAIStrategy",
+  "first_diff": {
+   "orig": "+5 jne 0x5c54fc",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x5d05d0",
+  "name": "MSPCXAnim_42::GetCount_8B",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_VPoint2D",
+  "emitted": "_DynamicVectorClass_VPoint2D::GetCount_8B",
+  "first_diff": {
+   "orig": "+5 jne 0x5d05dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d06a0",
+  "name": "MSPCXAnim_42::GetCount_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAVMapSelection",
+  "emitted": "_DynamicVectorClass_PAVMapSelection::GetCount_0",
+  "first_diff": {
+   "orig": "+5 jne 0x5d06ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d0760",
+  "name": "MSPCXAnim_26::GetCount",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAVMSAnimEntry",
+  "emitted": "_DynamicVectorClass_PAVMSAnimEntry::GetCount",
+  "first_diff": {
+   "orig": "+5 jne 0x5d076c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d07c0",
+  "name": "MSPCXAnim_26::GetCount_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAVMSSfxEntry",
+  "emitted": "_DynamicVectorClass_PAVMSSfxEntry::GetCount_0",
+  "first_diff": {
+   "orig": "+5 jne 0x5d07cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d09a0",
+  "name": "VectorClass_Point2D::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_VectorClass_VPoint2D",
+  "emitted": "_VectorClass_VPoint2D::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x5d09ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5d0c40",
+  "name": "VectorClass_ptr_MSTextEntry::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p185",
+  "unit": "_VectorClass_PAVMSTextEntry",
+  "emitted": "_VectorClass_PAVMSTextEntry::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x5d0c4c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
