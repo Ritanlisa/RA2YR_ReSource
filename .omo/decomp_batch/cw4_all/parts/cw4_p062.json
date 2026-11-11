@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4ed760",
+  "name": "VectorClass_ptr_TerrainTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVTerrainTypeClass",
+  "emitted": "_VectorClass_PAVTerrainTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ed76c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ed9c0",
+  "name": "VectorClass_ptr_BuildingTypeClass::Remove",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVBuildingTypeClass",
+  "emitted": "_VectorClass_PAVBuildingTypeClass::Remove",
+  "first_diff": {
+   "orig": "+5 jne 0x4ed9cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4edc20",
+  "name": "VectorClass_ptr_AircraftTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVAircraftTypeClass",
+  "emitted": "_VectorClass_PAVAircraftTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4edc2c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ee5a0",
+  "name": "VectorClass_ptr_BulletTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVBulletTypeClass",
+  "emitted": "_VectorClass_PAVBulletTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ee5ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ee800",
+  "name": "VectorClass_ptr_VoxelAnimTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVVoxelAnimTypeClass",
+  "emitted": "_VectorClass_PAVVoxelAnimTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ee80c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4eea60",
+  "name": "VectorClass_ptr_IsometricTileTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVIsometricTileTypeClass",
+  "emitted": "_VectorClass_PAVIsometricTileTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4eea6c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4eef20",
+  "name": "VectorClass_ptr_ParticleSystemTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVParticleSystemTypeClass",
+  "emitted": "_VectorClass_PAVParticleSystemTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4eef2c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ef180",
+  "name": "VectorClass_ptr_SuperWeaponTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVSuperWeaponTypeClass",
+  "emitted": "_VectorClass_PAVSuperWeaponTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ef18c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4f2880",
+  "name": "HouseClass::vt_placeholder_06",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p181",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::vt_placeholder_06",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4f7850",
+  "name": "sub_4F7850",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 27,
+  "part": "p181",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4F7850",
+  "first_diff": {
+   "orig": "+2 xor ecx, ecx",
+   "ours": "+2 xor edx, edx"
+  },
+  "ours_size": 24
+ },
+ {
+  "addr": "0x50e590",
+  "name": "VectorClass_UAngerStruct::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_UAngerStruct",
+  "emitted": "_DynamicVectorClass_UAngerStruct::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x50e59c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50e600",
+  "name": "AbstractClass::setTargetCoordinates",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 27,
+  "part": "p181",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::setTargetCoordinates",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50e670",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "emitted": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x50e67c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50e6d0",
+  "name": "VectorClass_BuildingType::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_PBVTeamTypeClass",
+  "emitted": "_DynamicVectorClass_PBVTeamTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x50e6dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50e7a0",
+  "name": "VectorClass__N_18::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass",
+  "emitted": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x50e7ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50f050",
+  "name": "VectorClass_UAngerStruct::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_UAngerStruct",
+  "emitted": "_VectorClass_UAngerStruct::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x50f05c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50f380",
+  "name": "VectorClass_UScoutStruct::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_UScoutStruct",
+  "emitted": "_VectorClass_UScoutStruct::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x50f38c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50f8a0",
+  "name": "VectorClass_BuildingType::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_PBVTeamTypeClass",
+  "emitted": "_VectorClass_PBVTeamTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x50f8ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50fe00",
+  "name": "VectorClass__N_18::Get",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass",
+  "emitted": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Get",
+  "first_diff": {
+   "orig": "+5 jne 0x50fe0c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5128d0",
+  "name": "TypeList_Infantry::GetIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_PBVInfantryTypeClass",
+  "emitted": "_DynamicVectorClass_PBVInfantryTypeClass::GetIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x5128dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
