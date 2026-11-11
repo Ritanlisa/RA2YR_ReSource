@@ -272,6 +272,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4084e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioStream::InitNodeFields",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x408520": {
   "attempts": 6,
   "first_diff": null,
@@ -432,6 +439,13 @@
   "name": "MouseClass::ProcessInput",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x40d310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40d310",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x40d6c0": {
   "attempts": 1,
@@ -1216,6 +1230,13 @@
   "name": "BinkMovieHandle::RenderFrameClipped",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x433040": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BinkMovie::RenderFrameToSurface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x433270": {
   "attempts": 6,
@@ -4934,6 +4955,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x536950": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_58",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x536970": {
   "attempts": 5,
   "first_diff": "+0 mov eax, 0x827374",
@@ -6158,6 +6186,13 @@
   "name": "0x5afeb0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5aff50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_5AFF50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5affe0": {
   "attempts": 1,
@@ -8196,6 +8231,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x661510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RulesClass::readCombatDamage",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x661850": {
   "attempts": 11,
   "first_diff": null,
@@ -8384,6 +8426,13 @@
   "name": "0x68cb80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x690fc0": {
+  "attempts": 1,
+  "first_diff": "+7 jne 0x690fd4",
+  "name": "ScoreAnimClass::Release",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x691220": {
   "attempts": 1,
@@ -8924,6 +8973,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6bf1c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_K_20::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6bf440": {
   "attempts": 1,
   "first_diff": null,
@@ -8945,6 +9001,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c0240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TClassFactory_CampaignClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c0d90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -8956,6 +9019,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C10C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c12c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TClassFactory_RadSiteClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8973,6 +9043,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TClassFactory_TeamClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c2b90": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -8984,6 +9061,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C2D40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c33c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TClassFactory_UnitClass::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9001,6 +9085,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c45c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TClassFactory_TunnelLocomotionClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c4810": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -9012,6 +9103,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C49C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c5640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperWeaponClass::ProcessCharged",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11136,6 +11234,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x76bc60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WDTState_4::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x76bfa0": {
   "attempts": 1,
   "first_diff": null,
@@ -11429,6 +11534,13 @@
   "name": "0x7813b0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7a2730": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network_Create_7A2730",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7ab340": {
   "attempts": 5,
@@ -12235,6 +12347,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7cbf00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cbf00",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7cd790": {
   "attempts": 1,
   "first_diff": null,
@@ -12291,12 +12410,26 @@
   "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "status": "PENDING"
  },
+ "0x7d7c1b": {
+  "attempts": 1,
+  "first_diff": "+0 push 0x87d3c0",
+  "name": "Fltin2_Helper",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x7d7ee0": {
   "attempts": 1,
   "first_diff": null,
   "name": "unknown_libname_76",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7d8496": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d8496",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7d8ef5": {
   "attempts": 1,
@@ -12309,6 +12442,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7d92e1",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7d9fac": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d9fac",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

@@ -1,0 +1,11 @@
+{
+ "addr": "0x690FC0",
+ "name": "ScoreAnimClass::Release",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x690FC0",
+ "bytes_hex": "568bf1837e0cff750b8d4e10e86f7c030089460c5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

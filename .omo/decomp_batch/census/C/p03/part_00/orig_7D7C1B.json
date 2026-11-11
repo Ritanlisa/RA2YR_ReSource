@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7C1B",
+ "name": "Fltin2_Helper",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7C1B",
+ "bytes_hex": "68c0d38700ff74240cff74240ce882feffff83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,97 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bf1c0 _TClassFactory_VTerrainTypeClass::AddRef -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6c0240 _TClassFactory_VCampaignClass::AddRef -> _TClassFactory_VCampaignClass
+[conv] 0x6c12c0 _TClassFactory_VRadSiteClass::AddRef -> _TClassFactory_VRadSiteClass
+[conv] 0x6c2340 _TClassFactory_VTeamClass::AddRef -> _TClassFactory_VTeamClass
+[conv] 0x6c33c0 _TClassFactory_VUnitClass::AddRef -> _TClassFactory_VUnitClass
+[conv] 0x6c45c0 _TClassFactory_VTunnelLocomotionClass::AddRef -> _TClassFactory_VTunnelLocomotionClass
+[conv] 0x6c5640 _TClassFactory_VParticleClass::ProcessCharged -> _TClassFactory_VParticleClass
+[conv] 0x433040 BinkMovieHandle::RenderFrameToSurface -> BinkMovieHandle
+[conv] 0x5aff50 MechLocomotionClass::sub_5AFF50 -> MechLocomotionClass
+[conv] 0x76bc60 WDTState::Constructor -> WDTState
+[conv] 0x661510 RulesClass::readCombatDamage -> RulesClass
+[conv] 0x536950 HealthNavCommandClass::performAction_58 -> HealthNavCommandClass
+[conv] 0x4084e0 AudioStream::InitNodeFields -> AudioStream
+[conv] 0x7a2730 ObjectClass::Network_Create_7A2730 -> ObjectClass
+[conv] 0x690fc0 ScoreAnimClass::Release -> ScoreAnimClass
+[conv] 0x7d7c1b unknown::Fltin2_Helper -> unknown
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VTerrainTypeClass rc=2
+[era] _TClassFactory_VCampaignClass rc=2
+[era] _TClassFactory_VRadSiteClass rc=2
+[era] _TClassFactory_VTeamClass rc=2
+[era] _TClassFactory_VUnitClass rc=2
+[era] _TClassFactory_VTunnelLocomotionClass rc=2
+[era] _TClassFactory_VParticleClass rc=2
+[era] BinkMovieHandle          rc=2
+[era] MechLocomotionClass      rc=2
+[era] WDTState                 rc=2
+[era] RulesClass               rc=0
+[era] HealthNavCommandClass    rc=2
+[era] AudioStream              rc=0
+[era] ObjectClass              rc=2
+[era] ScoreAnimClass           rc=0
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x661510   MATCH            RulesClass::readCombatDamage
+[diff] 0x4084e0   MATCH            AudioStream::InitNodeFields
+[diff] 0x690fc0   MISMATCH         ScoreAnimClass::Release
+[diff] 0x7d7c1b   MISMATCH         unknown::Fltin2_Helper
+[ledger] 0x6bf1c0 VectorClass_K_20::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c0240 TClassFactory_CampaignClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c12c0 TClassFactory_RadSiteClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2340 TClassFactory_TeamClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c33c0 TClassFactory_UnitClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c45c0 TClassFactory_TunnelLocomotionClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5640 SuperWeaponClass::ProcessCharged -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9fac 0x7d9fac -> PENDING (attempt 1)
+[ledger] 0x433040 BinkMovie::RenderFrameToSurface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aff50 sub_5AFF50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76bc60 WDTState_4::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661510 RulesClass::readCombatDamage -> OK (attempt 1)
+[ledger] 0x7d8496 0x7d8496 -> PENDING (attempt 1)
+[ledger] 0x536950 CreateTeamCommand::performAction_58 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbf00 0x7cbf00 -> PENDING (attempt 1)
+[ledger] 0x4084e0 AudioStream::InitNodeFields -> OK (attempt 1)
+[ledger] 0x7a2730 Network_Create_7A2730 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x690fc0 ScoreAnimClass::Release -> NG (attempt 1)
+[ledger] 0x7d7c1b Fltin2_Helper -> NG (attempt 1)
+[ledger] 0x40d310 0x40d310 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1759,
+ "verdicts": {
+  "MISMATCH": 494,
+  "MATCH": 508,
+  "COMPILE_FAIL": 417,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 328,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 176,
+  "ret_norm": 5,
+  "frame_sched": 63,
+  "const_fold": 51,
+  "branch_polarity": 34,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 9,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 50.7,
+ "match_rate_of_total_pct": 28.9,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p03\batch_report.json

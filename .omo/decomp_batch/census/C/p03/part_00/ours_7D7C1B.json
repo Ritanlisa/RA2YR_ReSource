@@ -1,0 +1,21 @@
+{
+ "symbol": "?Fltin2_Helper@unknown@@QAEHHH@Z",
+ "sym_key": "unknown::Fltin2_Helper",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c240468000000005051e80000000083c40cc20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87D3C0@@3EA",
+   "sym_key": "DataGlobal_87D3C0"
+  },
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?_ld12cvt@@YAHHHPAXZZ",
+   "sym_key": "_ld12cvt"
+  }
+ ]
+}

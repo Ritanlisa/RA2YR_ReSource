@@ -1,0 +1,11 @@
+{
+ "addr": "0x4084E0",
+ "name": "AudioStream::InitNodeFields",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4084E0",
+ "bytes_hex": "33c0890189410489411489411883c108e9cbedffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

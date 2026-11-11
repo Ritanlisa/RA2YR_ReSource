@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@ScoreAnimClass@@QAEXXZ",
+ "sym_key": "ScoreAnimClass::Release",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "568bf1837e0cff7508e80000000089460c5ec3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  }
+ ]
+}

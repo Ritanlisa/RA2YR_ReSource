@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitNodeFields@AudioStream@@QAEXXZ",
+ "sym_key": "AudioStream::InitNodeFields",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "33c0890189410489411489411883c108e900000000",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?Init@DListNode@@QAEXXZ",
+   "sym_key": "DListNode::Init"
+  }
+ ]
+}
