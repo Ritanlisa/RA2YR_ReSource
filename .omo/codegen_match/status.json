@@ -7,28 +7,28 @@
   "status": "OK"
  },
  "0x402330": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+12 je 0x4023b0",
   "name": "AudioController::UpdatePlayback",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
  "0x4024a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AudioSample::ResetState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4035f0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+0 sub esp, 0xc",
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x404700": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+7 xor eax, eax",
   "name": "AudioStream::SetupPlayback",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -42,21 +42,21 @@
   "status": "NG"
  },
  "0x4052f0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+0 push esi",
   "name": "VocClass::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x405c00": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+19 je 0x405d31",
   "name": "AudioFileClass::Release",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
  "0x405d40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AudioController::Stop",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -133,7 +133,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4071c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AudioMixer::PlaySample",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -182,7 +182,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x408a70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -308,7 +308,7 @@
   "status": "NG"
  },
  "0x411330": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -329,7 +329,7 @@
   "status": "OK"
  },
  "0x411540": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Surface::GetWidth",
   "note": "decomp_batch r2: MATCH",
@@ -413,7 +413,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x41c170": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AircraftClass::MissionStubReturnZero2",
   "note": "decomp_batch r2: MATCH",
@@ -504,14 +504,14 @@
   "status": "OK"
  },
  "0x41fd60": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterSuccess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x41fe20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterFailure",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -532,7 +532,7 @@
   "status": "OK"
  },
  "0x420e90": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -553,7 +553,7 @@
   "status": "OK"
  },
  "0x425520": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AbstractClass::updateLayer",
   "note": "decomp_batch r2: MATCH",
@@ -588,7 +588,7 @@
   "status": "NG"
  },
  "0x426530": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AnimClass::MissionStubReturnZero",
   "note": "decomp_batch r2: MATCH",
@@ -609,7 +609,7 @@
   "status": "OK"
  },
  "0x428e40": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40",
   "note": "decomp_batch r2: MATCH",
@@ -644,21 +644,21 @@
   "status": "OK"
  },
  "0x42a5b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42d8f0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+1 push ebp",
   "name": "VectorClass_ushort::Remove",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x42da30": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+1 push ebp",
   "name": "VectorClass_ushort::SetCapacity",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -672,42 +672,42 @@
   "status": "NG"
  },
  "0x42df90": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BitmapClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42e820": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 sub esp, 0x18",
   "name": "BridgeClass::GetCellData",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
  "0x42f4f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 push ecx",
   "name": "BaseClass::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x42f9c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 push ecx",
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x431800": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4324b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+1 push ebx",
   "name": "BufferIOFileClass::SeekInternal",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -756,7 +756,7 @@
   "status": "NG"
  },
  "0x433f50": {
-  "attempts": 4,
+  "attempts": 6,
   "first_diff": "+0 sub esp, 8",
   "name": "MessageListClass::CountCharsInWidth",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -945,7 +945,7 @@
   "status": "OK"
  },
  "0x465da0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -987,7 +987,7 @@
   "status": "OK"
  },
  "0x46b540": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BulletClass::MissionStubReturnZero",
   "note": "decomp_batch r2: MATCH",
@@ -1232,7 +1232,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4802a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+1 push ebp",
   "name": "TacticalClass::DrawCellTerrainOverlay",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -1330,7 +1330,7 @@
   "status": "OK"
  },
  "0x487e60": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CellClass::StubReturn11",
   "note": "decomp_batch r2: MATCH",
@@ -1855,7 +1855,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4a60d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TextRenderer::GetInstance",
   "note": "decomp_batch r2: MATCH",
@@ -2282,7 +2282,7 @@
   "status": "OK"
  },
  "0x4ca750": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FactoryClass::StubReturn12",
   "note": "decomp_batch r2: MATCH",
@@ -2429,14 +2429,14 @@
   "status": "OK"
  },
  "0x4e14a0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ObjectClass::InputThunkA",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x4e14b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ObjectClass::InputThunkB",
   "note": "decomp_batch r2: MATCH",
@@ -2625,7 +2625,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x50e1c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+4 push ebx",
   "name": "TechnoClass::Process",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -3430,7 +3430,7 @@
   "status": "OK"
  },
  "0x55abe0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::MissionStub4",
   "note": "decomp_batch r2: MATCH",
@@ -3528,7 +3528,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x56e7c0": {
-  "attempts": 4,
+  "attempts": 6,
   "first_diff": "+0 mov eax, dword ptr [esp + 8]",
   "name": "MapClass::CheckCellsBuildable",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
@@ -3710,7 +3710,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5b1b40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MechLocomotionClass::StubReturn52",
   "note": "decomp_batch r2: MATCH",
@@ -3738,7 +3738,7 @@
   "status": "OK"
  },
  "0x5b2e20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "MissionClass::Return450B",
   "note": "decomp_batch r2: MATCH",
@@ -3801,7 +3801,7 @@
   "status": "OK"
  },
  "0x5b2ef0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "IPersistStream::GetMaxSize",
   "note": "decomp_batch r2: MATCH",
@@ -3906,7 +3906,7 @@
   "status": "OK"
  },
  "0x5c03c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AbstractClass::resetPathState",
   "note": "decomp_batch r2: MATCH",
@@ -3948,7 +3948,7 @@
   "status": "OK"
  },
  "0x5c1fa0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+42 jne 0x5c1fd6",
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: MISMATCH/branch_order",
@@ -4193,7 +4193,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5f5f30": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::GetMember41",
   "note": "decomp_batch r2: MATCH",
@@ -4291,7 +4291,7 @@
   "status": "OK"
  },
  "0x600670": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ComboBoxOwnerDraw::GetWidthHeight",
   "note": "decomp_batch r2: MATCH",
@@ -4851,7 +4851,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x6635b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RocketLocomotionClass::StubReturn96",
   "note": "decomp_batch r2: MATCH",
@@ -4949,7 +4949,7 @@
   "status": "OK"
  },
  "0x691f80": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ScriptTypeClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
@@ -5110,14 +5110,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x6b1370": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SlaveManagerClass::StubReturn100",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
  "0x6b1380": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SlaveManagerClass::StubReturn72",
   "note": "decomp_batch r2: MATCH",
@@ -5145,7 +5145,7 @@
   "status": "OK"
  },
  "0x6b4f30": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "UnitClass::StubReturn176",
   "note": "decomp_batch r2: MATCH",
@@ -5649,7 +5649,7 @@
   "status": "OK"
  },
  "0x70ed80": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+0 push ebx",
   "name": "TechnoClass::GetAnimationFlags",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -5761,7 +5761,7 @@
   "status": "OK"
  },
  "0x71e350": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TerrainTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
@@ -5810,7 +5810,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x720a80": {
-  "attempts": 4,
+  "attempts": 6,
   "first_diff": "+0 push ebp",
   "name": "Movie::SelectNextBuildableType",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -5936,7 +5936,7 @@
   "status": "OK"
  },
  "0x7286c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TubeClass::StubReturn53",
   "note": "decomp_batch r2: MATCH",
@@ -6097,7 +6097,7 @@
   "status": "OK"
  },
  "0x74ab40": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "VoxelAnimClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
@@ -6286,7 +6286,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x75cbd0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "WalkLocomotionClass::StubReturn60",
   "note": "decomp_batch r2: MATCH",
@@ -6503,7 +6503,7 @@
   "status": "OK"
  },
  "0x7730e0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "WeaponTypeClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
@@ -6622,7 +6622,7 @@
   "status": "OK"
  },
  "0x7ac4d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CComObject_CChatEventSink___ATL::DispatchStub_46",
   "note": "decomp_batch r2: MATCH",
@@ -6762,7 +6762,7 @@
   "status": "NG"
  },
  "0x7b4c20": {
-  "attempts": 4,
+  "attempts": 6,
   "first_diff": "+11 je 0x7b4cc4",
   "name": "String::Append",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
