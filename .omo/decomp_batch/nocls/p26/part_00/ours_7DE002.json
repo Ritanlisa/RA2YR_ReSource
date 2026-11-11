@@ -1,0 +1,75 @@
+{
+ "symbol": "?_towlower@@YAGG@Z",
+ "sym_key": "Unnamed::_towlower",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "568b7424086681feffff57747ea10000000033ff85c074616800000000e800000000a10000000085c074196800000000e8000000006a13e80000000083c404bf0100000081e6ffff000056e80000000083c4048bf085ff74106a13e80000000083c404668bc65f5ec36800000000e800000000668bc65f5ec36683fe4172f46683fe5a77ee8d46205f5ec35f660dffff5ec3",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782A0@@3IA",
+   "sym_key": "CRTGlobal_B782A0"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?InterlockedIncrement@@YGJPAX@Z",
+   "sym_key": "InterlockedIncrement"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA0@@3IA",
+   "sym_key": "CRTGlobal_B78BA0"
+  },
+  {
+   "off": 44,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPAX@Z",
+   "sym_key": "InterlockedDecrement"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?towlower_0@@YAHHZZ",
+   "sym_key": "towlower_0"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78BA4@@3IA",
+   "sym_key": "CRTGlobal_B78BA4"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?InterlockedDecrement@@YGJPAX@Z",
+   "sym_key": "InterlockedDecrement"
+  }
+ ]
+}

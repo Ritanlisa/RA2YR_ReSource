@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DE002",
+ "name": "_towlower",
+ "size": 122,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DE002",
+ "bytes_hex": "558b6c2408b8ffff000057663be8746733ff393da082b70075146683fd4172096683fd5a770383c520668bc5eb495356bea48bb70056ff15c8117e00393da08bb7008b1dcc117e00740e56ffd36a13e89ff9feff596a015f55e81c00000085ff598be8740a6a13e8e8f9feff59eb0356ffd35e668bc55b5f5dc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

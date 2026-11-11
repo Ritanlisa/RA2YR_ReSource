@@ -1,0 +1,65 @@
+======================================================================
+PART 1/1  (17 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p26\part_00
+=== convert (17 addrs) ===
+[conv] 0x7ceaff __ms_p5_mp_test_fdiv -> _addr_7C
+[conv] 0x7cf125 _usepowhlp -> _addr_7C
+[conv] 0x7cf3a5 __load_CW -> _addr_7C
+[conv] 0x7d3401 __fcloseall -> _addr_7D
+[conv] 0x7d461e ___wtomb_environ -> _addr_7D
+[conv] 0x7d5ac0 __setenvp -> _addr_7D
+[conv] 0x7d5ef8 __FF_MSGBANNER -> _addr_7D
+[conv] 0x7d6830 ___init_monetary -> _addr_7D
+[conv] 0x7d8496 unknown_libname_78 -> _addr_7D
+[conv] 0x7d92e1 __isnan -> _addr_7D
+[conv] 0x7d9fac sub_7D9FAC -> _addr_7D
+[conv] 0x7dcf3a GetEnvironmentStrings -> _addr_7D
+[conv] 0x7de002 _towlower -> _addr_7D
+[conv] 0x7df7c0 Audio_Process_7DF7C0 -> Audio_Process
+[conv] 0x7df8c0 Audio_Process_7DF8C0 -> Audio_Process
+[conv] 0x7df9b7 sub_7DF9B7 -> _addr_7D
+[conv] 0x7dfd00 Audio_Process_7DFD00 -> Audio_Process
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=2
+[era] Audio_Process            rc=2
+=== diffasm byte-compare ===
+[diff] 0x7cf3a5   MISMATCH         __load_CW
+[diff] 0x7de002   MISMATCH         _towlower
+[diff] 0x7df9b7   MISMATCH         sub_7DF9B7
+[ledger] 0x7ceaff __ms_p5_mp_test_fdiv -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf125 _usepowhlp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cf3a5 __load_CW -> NG (attempt 2)
+[ledger] 0x7d3401 __fcloseall -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d461e ___wtomb_environ -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5ac0 __setenvp -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d5ef8 __FF_MSGBANNER -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d6830 ___init_monetary -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d8496 unknown_libname_78 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d92e1 __isnan -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7d9fac sub_7D9FAC -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcf3a GetEnvironmentStrings -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7de002 _towlower -> NG (attempt 2)
+[ledger] 0x7df7c0 Audio_Process_7DF7C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7df8c0 Audio_Process_7DF8C0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7df9b7 sub_7DF9B7 -> NG (attempt 2)
+[ledger] 0x7dfd00 Audio_Process_7DFD00 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 17,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p26\batch_report.json

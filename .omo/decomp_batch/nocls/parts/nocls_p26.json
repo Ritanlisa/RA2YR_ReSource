@@ -1,0 +1,104 @@
+[
+ {
+  "addr": "0x7ceaff",
+  "batch": "nocls",
+  "name": "__ms_p5_mp_test_fdiv",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7cf125",
+  "batch": "nocls",
+  "name": "_usepowhlp",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7cf3a5",
+  "batch": "nocls",
+  "name": "__load_CW",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d3401",
+  "batch": "nocls",
+  "name": "__fcloseall",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7d461e",
+  "batch": "nocls",
+  "name": "___wtomb_environ",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d5ac0",
+  "batch": "nocls",
+  "name": "__setenvp",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d5ef8",
+  "batch": "nocls",
+  "name": "__FF_MSGBANNER",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d6830",
+  "batch": "nocls",
+  "name": "___init_monetary",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d8496",
+  "batch": "nocls",
+  "name": "unknown_libname_78",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7d92e1",
+  "batch": "nocls",
+  "name": "__isnan",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7d9fac",
+  "batch": "nocls",
+  "name": "sub_7D9FAC",
+  "cc": "stdcall"
+ },
+ {
+  "addr": "0x7dcf3a",
+  "batch": "nocls",
+  "name": "GetEnvironmentStrings",
+  "cc": "stdcall"
+ },
+ {
+  "addr": "0x7de002",
+  "batch": "nocls",
+  "name": "_towlower",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7df7c0",
+  "batch": "nocls",
+  "name": "Audio_Process_7DF7C0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7df8c0",
+  "batch": "nocls",
+  "name": "Audio_Process_7DF8C0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7df9b7",
+  "batch": "nocls",
+  "name": "sub_7DF9B7",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7dfd00",
+  "batch": "nocls",
+  "name": "Audio_Process_7DFD00",
+  "cc": "cdecl"
+ }
+]
