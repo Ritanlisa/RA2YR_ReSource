@@ -277,7 +277,8 @@ def run_part(addrs, batch_src, out, reg, idx):
         ctx.batch = r["batch"]
         contexts.append((ctx, unit))
         r["name"] = ctx.sig["orig_name"]
-        r["emitted"] = "%s::%s" % key
+        r["emitted"] = ("%s::%s" % key) if ctx.sig["cls"] else \
+            ctx.sig["method"]
         r["unit"] = unit
         r["name_placeholder"] = ctx.sig.get("name_placeholder", False)
         r["cls_src"] = ctx.sig.get("cls_src")
@@ -316,6 +317,8 @@ def run_part(addrs, batch_src, out, reg, idx):
             f.write("\n".join(cpp_parts) + "\n")
         by_cls = OrderedDict()
         for ctx in ctxs:
+            if ctx.sig["cls"] is None:
+                continue        # NO_CLS global: extern-only unit hpp
             bucket = by_cls.setdefault(ctx.sig["cls"], [])
             if not ctx.sig.get("free"):
                 bucket.append(ctx.sig)
@@ -357,6 +360,14 @@ def run_part(addrs, batch_src, out, reg, idx):
                       encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)
             unit_members[(unit, cls)] = members
+        if not by_cls:
+            # class-less unit (NO_CLS free functions only): the cpp still
+            # includes <unit>.hpp, so it must exist with the extern block
+            with open(os.path.join(inc_dir, unit + ".hpp"), "a",
+                      encoding="utf-8", newline="\n") as f:
+                f.write(hpp_pilot.gen_free_hpp(
+                    unit, used_globals=unit_globals,
+                    extra_externs=unit_externs, extra_fwd=unit_fwd))
 
     # ---- rule self-check
     print("=== rule self-check ===")
@@ -398,9 +409,10 @@ def run_part(addrs, batch_src, out, reg, idx):
                 f.write(decompile.emit_cpp(ctx, unit,
                                            hpp_name=iso_base) + "\n")
             by_cls2 = OrderedDict()
-            bucket2 = by_cls2.setdefault(ctx.sig["cls"], [])
-            if not ctx.sig.get("free"):
-                bucket2.append(ctx.sig)
+            if ctx.sig["cls"] is not None:
+                bucket2 = by_cls2.setdefault(ctx.sig["cls"], [])
+                if not ctx.sig.get("free"):
+                    bucket2.append(ctx.sig)
             for owner, csigs in getattr(ctx, "used_callees", {}).items():
                 bucket = by_cls2.setdefault(owner, [])
                 for cs in csigs:
@@ -410,15 +422,15 @@ def run_part(addrs, batch_src, out, reg, idx):
             for cls2, bucket2 in decompile.shell_augment(
                     by_cls2, ctx.views, reg).items():
                 by_cls2.setdefault(cls2, bucket2)
+            exts2 = list(getattr(ctx, "used_callee_exts", []))
+            if ctx.sig.get("free"):
+                exts2.append(decompile.free_decl(ctx.sig))
+            fwd2 = set()
+            for _ln in ctx.lines:
+                for _m in re.finditer(r"\b([A-Z]\w+)\s*\*", _ln):
+                    fwd2.add(_m.group(1))
             for cls2, sigs2 in by_cls2.items():
                 size2 = (reg.classes.get(cls2) or {}).get("size") or 0
-                exts2 = list(getattr(ctx, "used_callee_exts", []))
-                if ctx.sig.get("free"):
-                    exts2.append(decompile.free_decl(ctx.sig))
-                fwd2 = set()
-                for _ln in ctx.lines:
-                    for _m in re.finditer(r"\b([A-Z]\w+)\s*\*", _ln):
-                        fwd2.add(_m.group(1))
                 hpp2, _m2 = hpp_pilot.gen_class_hpp(
                     cls2, ctx.views, sigs2, size2,
                     used_globals=getattr(ctx, "used_globals", {}),
@@ -426,6 +438,14 @@ def run_part(addrs, batch_src, out, reg, idx):
                 with open(os.path.join(inc_dir, iso_base + ".hpp"), "a",
                           encoding="utf-8", newline="\n") as f:
                     f.write(hpp2)
+            if not by_cls2:
+                # class-less isolated unit (NO_CLS global): extern-only hpp
+                with open(os.path.join(inc_dir, iso_base + ".hpp"), "a",
+                          encoding="utf-8", newline="\n") as f:
+                    f.write(hpp_pilot.gen_free_hpp(
+                        iso_base,
+                        used_globals=getattr(ctx, "used_globals", {}),
+                        extra_externs=exts2, extra_fwd=fwd2))
             icr = decompile.era_compile(iso, out)
             if icr.returncode == 0:
                 good.append((ctx, os.path.splitext(iso)[0] + ".obj"))

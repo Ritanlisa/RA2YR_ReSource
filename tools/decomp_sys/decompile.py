@@ -300,6 +300,14 @@ def derive_signature(reg, ex):
         pty = pm.group(1)
         if pty in reg.classes and pty != cls:
             cls, cls_src = pty, "proto_this"
+    # NO_CLS recovery: a signals-cls-less function may still carry hard
+    # class evidence (vtable-slot ownership / class-typed proto this /
+    # qualified name).  The resolver canonicalizes aliases and namespaces,
+    # so a class the registry knows under another spelling binds too.
+    if cls is None:
+        att = reg.resolve_function_class(ex.addr, ex.proto, name)
+        if att["cls"]:
+            cls, cls_src = att["cls"], "resolve:%s" % att["src"]
     method = fn.get("method") or (name.split("::")[-1] if "::" in name else name)
     ret = spell_type(fn.get("ret") or "int")
     ret_notes = []
@@ -367,6 +375,22 @@ def derive_signature(reg, ex):
                         continue      # varargs: not a nameable parameter
                     params.append((spell_type(_scrub_param(part)),
                                    "p%d" % i))
+    # NO_CLS-recovered members: signals carried an untyped all-`int` param
+    # list (the very loss the vtable-slot attribution had to recover from),
+    # while the export proto -- the same live-typing authority used for the
+    # return type above -- spells the real pointer widths.  Re-spell ONLY
+    # this recovered population; registry-typed signatures are never
+    # touched (no blast radius on the 109 already byte-matching NO_CLS
+    # free functions or on the historical MATCH pool).
+    if cls_src and str(cls_src).startswith("resolve:") and params and \
+            all(t == "int" for t, _ in params):
+        pp = _proto_params(ex.proto)
+        if pp:
+            params = pp
+            ret_notes.append(
+                ("proto_param_spell",
+                 "NO_CLS-recovered member: all-int registry params -> "
+                 "proto types (%d params)" % len(pp)))
     # arity cross-check vs the binary epilogue (D-fix: `ret` vs `ret 4`
     # cluster): the disasm's `retn N` is the callee's own stack cleanup --
     # for thiscall, N == sum(param widths). Excess signature params produce
@@ -592,8 +616,8 @@ def shell_augment(by_cls, views, reg, depth=2):
     while frontier and d < depth:
         nxt = set()
         for c in frontier:
-            if c in by_cls or c in out:
-                continue
+            if not c or c in by_cls or c in out:
+                continue        # None == NO_CLS free function view bucket
             size = (reg.classes.get(c) or {}).get("size") or 0
             has_views = bool(views.scalars.get(c) or views.arrays.get(c))
             if not size and not has_views:
@@ -617,8 +641,38 @@ def run_function(addr, reg, views, idx):
     ex = pseudo.fetch(addr)
     sig = derive_signature(reg, ex)
     if sig["cls"] is None:
-        raise SystemExit("no registry class for %s" % addr)
+        # NO_CLS contract (2026-11-12): a function with no class evidence
+        # is a GLOBAL function -- the emitter's file-level free channel is
+        # the honest shape.  Previously this hard-failed ("no registry
+        # class") and burned 26.8% of the census sample.
+        #
+        # Calling convention is preserved from the binary/registry:
+        #   cdecl/unknown -> __cdecl, stdcall -> __stdcall,
+        #   fastcall      -> __fastcall,
+        #   thiscall      -> __fastcall with an explicit `this_` first
+        #                    parameter (ECX == arg1; member-NESS without a
+        #                    class identity cannot be spelled as a member).
+        sig["free"] = True
+        cc = sig.get("cc")
+        if cc in ("thiscall", "__thiscall"):
+            sig["cc"] = "__fastcall"
+            sig["params"].insert(0, ("int", "this_"))
+            sig["param_names"].insert(0, "this_")
+            sig["free_this"] = True
+        elif cc not in ("__cdecl", "__stdcall", "__fastcall"):
+            sig["cc"] = "__cdecl"
+        sig["this_at_a1"] = False
+        sig["sig_notes"].append(
+            ("free_no_cls",
+             "no class evidence (vsa_slot/proto_this/name_prefix) -> global "
+             "free function, cc %s%s" % (sig["cc"],
+                                         " + explicit this_" if
+                                         sig.get("free_this") else "")))
     ctx = FunctionCtx(ex, sig, reg, views)
+    if sig.get("free_this"):
+        # the raw pseudo-code receiver keyword is C++-reserved; the free
+        # shell spells it as the explicit first parameter
+        ctx.lines = [re.sub(r"\bthis\b", "this_", ln) for ln in ctx.lines]
     passes.pass_param_rename(ctx)
     passes.pass_globals(ctx)
     passes.pass_struct_globals(ctx)
@@ -676,10 +730,18 @@ def run_function(addr, reg, views, idx):
 
 # ---------------------------------------------------------------- emission
 
+def _cc_token(sig, default="__cdecl"):
+    """Emission calling-convention token for a free function."""
+    return {"__fastcall": " __fastcall",
+            "__stdcall": " __stdcall",
+            "__cdecl": " __cdecl"}.get(sig.get("cc"), " " + default)
+
+
 def free_decl(sig):
     """`extern RET __cdecl Name(args);` for a cdecl-arbitrated free fn."""
     args = ", ".join("%s %s" % (t, n) for t, n in sig["params_spelled"])
-    return "extern %s __cdecl %s(%s);" % (sig["ret"], sig["method"], args)
+    return "extern %s %s %s(%s);" % (sig["ret"], _cc_token(sig).strip(),
+                                     sig["method"], args)
 
 
 def emit_cpp(ctx, unit, hpp_name=None):
@@ -688,10 +750,12 @@ def emit_cpp(ctx, unit, hpp_name=None):
     args = ", ".join("%s %s" % (t, n) for t, n in sig["params"])
     cls_ident = re.sub(r"[^A-Za-z0-9_]", "_", sig["cls"] or "Unnamed")
     if sig.get("free"):
-        # R4 cdecl arbitration: the binary has no receiver register, so the
-        # function is emitted at global scope with __cdecl (a thiscall
-        # member would pop its arguments).
-        head = "%s __cdecl %s(%s)" % (sig["ret"], sig["method"], args)
+        # R4 cdecl arbitration / NO_CLS global path: the binary has no
+        # class identity (or no receiver register), so the function is
+        # emitted at global scope with its registry calling convention
+        # (a thiscall member would pop its arguments).
+        head = "%s%s %s(%s)" % (sig["ret"], _cc_token(sig), sig["method"],
+                                args)
     else:
         cc_tok = {"__fastcall": " __fastcall",
                   "__stdcall": " __stdcall"}.get(sig.get("cc"), "")
@@ -787,6 +851,8 @@ def main():
         # pilot hpp: all classes touched by this unit
         by_cls = OrderedDict()
         for ctx in ctxs:
+            if ctx.sig["cls"] is None:
+                continue        # NO_CLS global: extern-only unit hpp
             bucket = by_cls.setdefault(ctx.sig["cls"], [])
             if not ctx.sig.get("free"):
                 bucket.append(ctx.sig)
@@ -821,6 +887,14 @@ def main():
             with open(hpp_path, "a", encoding="utf-8", newline="\n") as f:
                 f.write(hpp_text)
             members_by_cls[cls] = members
+        if not by_cls:
+            # class-less unit (NO_CLS free functions only): the cpp still
+            # includes <unit>.hpp, so it must exist with the extern block
+            hpp_path = os.path.join(inc_dir, unit + ".hpp")
+            with open(hpp_path, "a", encoding="utf-8", newline="\n") as f:
+                f.write(hpp_pilot.gen_free_hpp(
+                    unit, used_globals=unit_globals,
+                    extra_externs=unit_externs))
         unit_sigs = []
         for cls, sigs in by_cls.items():
             unit_sigs.extend(sigs)
@@ -848,7 +922,8 @@ def main():
         entry = {
             "addr": ctx.sig["addr"],
             "orig_name": ctx.sig["orig_name"],
-            "emitted": "%s::%s" % (ctx.sig["cls"], ctx.sig["method"]),
+            "emitted": ("%s::%s" % (ctx.sig["cls"], ctx.sig["method"])
+                        if ctx.sig["cls"] else ctx.sig["method"]),
             "name_placeholder": ctx.sig.get("name_placeholder", False),
             "cls_src": ctx.sig.get("cls_src"),
             "ret": ctx.sig["ret"],

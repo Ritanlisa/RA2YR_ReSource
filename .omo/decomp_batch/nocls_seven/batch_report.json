@@ -1,0 +1,173 @@
+{
+ "summary": {
+  "total": 7,
+  "verdicts": {
+   "MISMATCH": 7
+  },
+  "pathologies": {
+   "codegen_shape": 2,
+   "const_fold": 2,
+   "eval_order": 3
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 7,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x491b40",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 207B ours 227B",
+   "first_diff": {
+    "orig": "+6 mov ebx, dword ptr [esp + 0x10]",
+    "ours": "+6 push ebp"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_491B40",
+   "emitted": "RLEBlitTransXlatZRead::sub_491B40",
+   "unit": "RLEBlitTransXlatZRead",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 207,
+   "ours_size": 227,
+   "clean": false
+  },
+  {
+   "addr": "0x4965b0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 213B ours 252B",
+   "first_diff": {
+    "orig": "+5 mov edx, dword ptr [esp + 0x1c]",
+    "ours": "+5 push ebx"
+   },
+   "pathology": "codegen_shape",
+   "name": "sub_4965B0",
+   "emitted": "RLEBlitTransXlatZRead::sub_4965B0",
+   "unit": "RLEBlitTransXlatZRead",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 1,
+   "orig_size": 213,
+   "ours_size": 252,
+   "clean": false
+  },
+  {
+   "addr": "0x491ea0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 233B ours 266B",
+   "first_diff": {
+    "orig": "+6 mov ebx, dword ptr [esp + 0x10]",
+    "ours": "+6 mov ebx, dword ptr [esp + 0xc]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_491EA0",
+   "emitted": "__RLEBlitTransRemapXlatZRead_E::sub_491EA0",
+   "unit": "__RLEBlitTransRemapXlatZRead_E",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/5",
+   "rule_violations": 1,
+   "orig_size": 233,
+   "ours_size": 266,
+   "clean": false
+  },
+  {
+   "addr": "0x491c50",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 246B ours 303B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [esp + 0x2c]",
+    "ours": "+1 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "const_fold",
+   "name": "sub_491C50",
+   "emitted": "__RLEBlitTransZRemapXlatZRead_E::sub_491C50",
+   "unit": "__RLEBlitTransZRemapXlatZRead_E",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 1,
+   "orig_size": 246,
+   "ours_size": 303,
+   "clean": false
+  },
+  {
+   "addr": "0x4966d0",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 257B ours 278B",
+   "first_diff": {
+    "orig": "+1 mov eax, ecx",
+    "ours": "+1 mov eax, dword ptr [esp + 0x14]"
+   },
+   "pathology": "eval_order",
+   "name": "sub_4966D0",
+   "emitted": "__RLEBlitTransZRemapXlatZRead_G::sub_4966D0",
+   "unit": "__RLEBlitTransZRemapXlatZRead_G",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 2,
+   "orig_size": 257,
+   "ours_size": 278,
+   "clean": false
+  },
+  {
+   "addr": "0x492100",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 264B ours 292B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [ecx + 4]",
+    "ours": "+1 mov dword ptr [esp], ecx"
+   },
+   "pathology": "eval_order",
+   "name": "sub_492100",
+   "emitted": "__RLEBlitTransZRemapXlatZReadWrite_E::sub_492100",
+   "unit": "__RLEBlitTransZRemapXlatZReadWrite_E",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 2,
+   "orig_size": 264,
+   "ours_size": 292,
+   "clean": false
+  },
+  {
+   "addr": "0x497230",
+   "batch": "adhoc",
+   "verdict": "MISMATCH",
+   "note": "orig 273B ours 298B",
+   "first_diff": {
+    "orig": "+1 mov eax, dword ptr [ecx + 4]",
+    "ours": "+1 mov dword ptr [esp], ecx"
+   },
+   "pathology": "eval_order",
+   "name": "sub_497230",
+   "emitted": "__RLEBlitTransZRemapXlatZReadWrite_G::sub_497230",
+   "unit": "__RLEBlitTransZRemapXlatZReadWrite_G",
+   "name_placeholder": true,
+   "cls_src": "resolve:vsa_slot",
+   "this_as_id": false,
+   "sites": "4/4",
+   "rule_violations": 2,
+   "orig_size": 273,
+   "ours_size": 298,
+   "clean": false
+  }
+ ]
+}

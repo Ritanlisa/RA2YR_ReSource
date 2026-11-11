@@ -1,0 +1,11 @@
+{
+ "addr": "0x401940",
+ "name": "ObjectClass::GetMember06",
+ "size": 4,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401940",
+ "bytes_hex": "8b4118c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

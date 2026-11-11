@@ -15,6 +15,7 @@ Every restore records which source supplied it.
 """
 import json
 import os
+import re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 REG_JSON = os.path.join(ROOT, ".omo", "decomp_sys", "decomp_registry.json")
@@ -43,6 +44,7 @@ class Registry(object):
         self._ig = None          # (cls, off) -> {width, types, count}
         self._fn_by_name = None  # qualified name -> addr
         self._rev_member = None  # member name -> {offset: type} (R7)
+        self._vsa_idx = None     # int addr -> [vtable slot claims]
         self.notes = []          # registry-gap reports
 
     @classmethod
@@ -62,10 +64,170 @@ class Registry(object):
 
     def class_keys(self, cls):
         """Lookup keys for a receiver class name (canon + legacy alias)."""
+        if not cls:
+            return []
         keys = [cls]
         if cls + "Class" != cls:
             keys.append(cls + "Class")
         return keys
+
+    # ---------------------------------------------------- class-name resolution
+    _CANONIZER = None
+
+    @classmethod
+    def _canon(cls, name):
+        """Raw class name -> canonical emission key (registry.py parity).
+
+        The registry builder owns the one canonicalization rule set
+        (RTTI-name map -> mangled alias -> template fallback -> sanitize);
+        reusing its Canonizer keeps this resolver byte-identical with the
+        class keys already present in decomp_registry.json.
+        """
+        if cls._CANONIZER is None:
+            here = os.path.dirname(os.path.abspath(__file__))
+            import sys
+            if here not in sys.path:
+                sys.path.insert(0, here)
+            import registry as _builder
+            cls._CANONIZER = _builder.Canonizer(
+                _j(os.path.join(ROOT, "anchors", "class_name_align.json")),
+                _j(os.path.join(ROOT, "anchors", "mangled_alias.json")))
+        return cls._CANONIZER(name)
+
+    def class_key(self, name):
+        """Lenient class-name lookup -> a registry class key or None.
+
+        Accepts the raw name, the `Class`-suffixed variant, the canonical
+        (RTTI/alias) spelling, and a namespace-qualified tail
+        (`ns::Class` -> `Class`).  This is the NO_CLS alias/namespace
+        normalization hook: a function whose evidence names a class that
+        the registry knows under a different spelling resolves instead of
+        hard-failing.
+        """
+        if not name or not isinstance(name, str):
+            return None
+        variants = [name]
+        if "::" in name:
+            variants.append(name.split("::")[-1])
+        keys = []
+
+        def _add(k):
+            if k and k not in keys:
+                keys.append(k)
+
+        for v in variants:
+            for k in self.class_keys(v):
+                _add(k)
+            c = self._canon(v)
+            for k in self.class_keys(c):
+                _add(k)
+        for k in keys:
+            if k in self.classes:
+                return k
+        return None
+
+    # ------------------------------------------- binary vtable-slot ownership
+    def _vsa_by_addr(self):
+        """int addr -> [{raw, cls, resolved, slot, name, proto}] index over
+        every vtable_slot_authority main-table slot.
+
+        Address keys are normalized through int() -- the authority stores
+        8-digit zero-padded hex ('0x00491B40') while signals/registry use
+        bare hex ('0x491b40'); a string compare silently misses every
+        template-family hit (the pre-fix state of this lookup).
+        """
+        if self._vsa_idx is None:
+            idx = {}
+            for raw_cls, ent in self.vsa.items():
+                resolved = self.class_key(raw_cls)
+                cname = resolved or self._canon(raw_cls)
+                for sn, srec in (ent.get("slots") or {}).items():
+                    try:
+                        a = int(str(srec.get("addr")), 16)
+                    except (TypeError, ValueError):
+                        continue
+                    idx.setdefault(a, []).append({
+                        "raw": raw_cls, "cls": cname,
+                        "resolved": resolved, "slot": int(sn),
+                        "name": srec.get("name"), "proto": srec.get("proto")})
+            self._vsa_idx = idx
+        return self._vsa_idx
+
+    def vsa_claims(self, addr):
+        """Vtable main-table slot claims on a function address."""
+        try:
+            a = int(str(addr), 16)
+        except (TypeError, ValueError):
+            return []
+        return self._vsa_by_addr().get(a) or []
+
+    _PROTO_THIS = re.compile(r"\(\s*([A-Za-z_?$@][\w?$@]*)\s*\*\s*_?this\b")
+
+    def resolve_function_class(self, addr, proto=None, name=None):
+        """Multi-source class attribution for a registry-cls-less function.
+
+        Arbitration priority (per the NO_CLS task):
+          a. vsa_slot    -- vtable_slot_authority main-table ownership
+                            (binary identity); only a UNIQUE resolved class
+                            may claim the address (multi-claim == inherited
+                            implementation, no discriminative power)
+          b. proto_this  -- full_export proto `Class *this` receiver type,
+                            canonicalized through the registry Canonizer
+          c. name_prefix -- `Class::Method` name prefix (weakest)
+          cc+ECX evidence is member-NESS, not class identity; it is
+          recorded by the caller but cannot name a class.
+
+        Returns {'cls': key|None, 'src': src|None, 'evidence': [...],
+                 'rejected': [...]}.  `evidence`/`rejected` make every
+        non-attribution auditable (remaining-ledger input).
+        """
+        out = {"cls": None, "src": None, "evidence": [], "rejected": []}
+
+        claims = self.vsa_claims(addr)
+        if claims:
+            resolved = sorted({c["resolved"] for c in claims
+                               if c["resolved"]})
+            out["evidence"].append({"source": "vsa_slot", "claims": claims})
+            if len(resolved) == 1:
+                out["cls"], out["src"] = resolved[0], "vsa_slot"
+            elif resolved:
+                out["rejected"].append({
+                    "source": "vsa_slot", "classes": resolved,
+                    "why": "multiple vtable owners (inherited impl)"})
+            else:
+                out["rejected"].append({
+                    "source": "vsa_slot",
+                    "classes": sorted({c["cls"] for c in claims}),
+                    "why": "slot owner class not in registry"})
+
+        if out["cls"] is None and proto:
+            m = self._PROTO_THIS.search(proto)
+            if m:
+                raw = m.group(1)
+                key = self.class_key(raw)
+                out["evidence"].append({
+                    "source": "proto_this", "raw": raw,
+                    "canon": self._canon(raw), "resolved": key})
+                if key:
+                    out["cls"], out["src"] = key, "proto_this"
+                else:
+                    out["rejected"].append({
+                        "source": "proto_this", "raw": raw,
+                        "canon": self._canon(raw),
+                        "why": "class not in registry"})
+
+        if out["cls"] is None and name and "::" in name:
+            pre = name.split("::")[0]
+            key = self.class_key(pre)
+            out["evidence"].append({
+                "source": "name_prefix", "raw": pre, "resolved": key})
+            if key:
+                out["cls"], out["src"] = key, "name_prefix"
+            else:
+                out["rejected"].append({
+                    "source": "name_prefix", "raw": pre,
+                    "why": "class not in registry"})
+        return out
 
     _PLACEHOLDER = None
 
