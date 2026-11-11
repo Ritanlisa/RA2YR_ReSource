@@ -1,0 +1,106 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x43a0b0 Triple::Set -> Triple
+[conv] 0x41d240 sub_41D240 -> _addr_41
+[conv] 0x486790 RandomMap::Check -> RandomMap
+[conv] 0x4cc0e0 sub_4CC0E0 -> _addr_4C
+[conv] 0x551970 sub_551970 -> _addr_55
+[conv] 0x5c96e0 sub_5C96E0 -> _addr_5C
+[conv] 0x644bc0 sub_644BC0 -> _addr_64
+[conv] 0x6b5240 MapCoords::Init -> MapCoords
+[conv] 0x723c60 sub_723C60 -> _addr_72
+[conv] 0x767e70 sub_767E70 -> _addr_76
+[conv] 0x40cca0 DynamicVector::GetPtrOffset -> DynamicVector
+[conv] 0x43ac90 _VectorClass_PAVNeuronClass::Fire -> _VectorClass_PAVNeuronClass
+[conv] 0x4a0ee0 _DynamicVectorClass_UtagCONNECTDATA::GetItemIndex -> _DynamicVectorClass_UtagCONNECTDATA
+[conv] 0x4e8380 _DynamicVectorClass_PAVSuperClass::GetItemIndex -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4e8f30 _DynamicVectorClass_PAVInfantryTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVInfantryTypeClass
+[conv] 0x4ec6c0 _VectorClass_PAVSideClass::GetCapacity -> _VectorClass_PAVSideClass
+[conv] 0x50ed80 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetCapacity -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x54a610 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::LoadTypeData -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x5acbc0 _VectorClass_PAU_WIN32_FIND_DATAA::Generate -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5d5580 _VectorClass_UAcceleratorTracker::GetCapacity -> _VectorClass_UAcceleratorTracker
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Triple                   rc=0
+[era] _addr_41                 rc=0
+[era] RandomMap                rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_5C                 rc=0
+[era] _addr_64                 rc=0
+[era] MapCoords                rc=0
+[era] _addr_72                 rc=0
+[era] _addr_76                 rc=0
+[era] DynamicVector            rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] _DynamicVectorClass_UtagCONNECTDATA rc=0
+[era] _DynamicVectorClass_PAVSuperClass rc=0
+[era] _DynamicVectorClass_PAVInfantryTypeClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=0
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=0
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=0
+[era] _VectorClass_UAcceleratorTracker rc=0
+=== diffasm byte-compare ===
+[diff] 0x43a0b0   MATCH            Triple::Set
+[diff] 0x41d240   MISMATCH         sub_41D240
+[diff] 0x486790   MISMATCH         RandomMap::Check
+[diff] 0x4cc0e0   MISMATCH         sub_4CC0E0
+[diff] 0x551970   MISMATCH         sub_551970
+[diff] 0x5c96e0   MISMATCH         sub_5C96E0
+[diff] 0x644bc0   MISMATCH         sub_644BC0
+[diff] 0x6b5240   MISMATCH         MapCoords::Init
+[diff] 0x723c60   MISMATCH         sub_723C60
+[diff] 0x767e70   MISMATCH         sub_767E70
+[diff] 0x40cca0   MISMATCH         DynamicVector::GetPtrOffset
+[diff] 0x43ac90   MISMATCH         _VectorClass_PAVNeuronClass::Fire
+[diff] 0x4a0ee0   MISMATCH         _DynamicVectorClass_UtagCONNECTDATA::GetItemIndex
+[diff] 0x4e8380   MISMATCH         _DynamicVectorClass_PAVSuperClass::GetItemIndex
+[diff] 0x4e8f30   MISMATCH         _DynamicVectorClass_PAVInfantryTypeClass::GetItemIndex_0
+[diff] 0x4ec6c0   MISMATCH         _VectorClass_PAVSideClass::GetCapacity
+[diff] 0x50ed80   MISMATCH         _VectorClass_PAUStartingTechnoStruct_HouseClass::GetCapacity
+[diff] 0x54a610   MISMATCH         _VectorClass_PAUTileInsertType_IsometricTileTypeClass::LoadTypeData
+[diff] 0x5acbc0   MISMATCH         _VectorClass_PAU_WIN32_FIND_DATAA::Generate
+[diff] 0x5d5580   MISMATCH         _VectorClass_UAcceleratorTracker::GetCapacity
+[ledger] 0x43a0b0 Triple::Set -> OK (attempt 1)
+[ledger] 0x41d240 sub_41D240 -> NG (attempt 1)
+[ledger] 0x486790 RandomMap::Check -> NG (attempt 1)
+[ledger] 0x4cc0e0 sub_4CC0E0 -> NG (attempt 1)
+[ledger] 0x551970 sub_551970 -> NG (attempt 1)
+[ledger] 0x5c96e0 sub_5C96E0 -> NG (attempt 1)
+[ledger] 0x644bc0 sub_644BC0 -> NG (attempt 1)
+[ledger] 0x6b5240 MapCoords::Init -> NG (attempt 1)
+[ledger] 0x723c60 sub_723C60 -> NG (attempt 1)
+[ledger] 0x767e70 sub_767E70 -> NG (attempt 1)
+[ledger] 0x40cca0 DynamicVector::GetPtrOffset -> NG (attempt 1)
+[ledger] 0x43ac90 _VectorClass_PAVNeuronClass::Fire -> NG (attempt 1)
+[ledger] 0x4a0ee0 _DynamicVectorClass_UtagCONNECTDATA::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8380 _DynamicVectorClass_PAVSuperClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8f30 _DynamicVectorClass_PAVInfantryTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4ec6c0 _VectorClass_PAVSideClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x50ed80 _VectorClass_PAUStartingTechnoStruct_HouseClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x54a610 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x5acbc0 _VectorClass_PAU_WIN32_FIND_DATAA::Generate -> NG (attempt 1)
+[ledger] 0x5d5580 _VectorClass_UAcceleratorTracker::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "signedness": 1,
+  "ret_norm": 1,
+  "branch_order": 9
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p06\batch_report.json

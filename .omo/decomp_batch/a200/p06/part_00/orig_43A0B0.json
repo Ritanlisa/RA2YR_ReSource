@@ -1,0 +1,11 @@
+{
+ "addr": "0x43A0B0",
+ "name": "Triple::Set",
+ "size": 25,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x43A0B0",
+ "bytes_hex": "8b5424088bc18b4c240489088b4c240c895004894808c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
