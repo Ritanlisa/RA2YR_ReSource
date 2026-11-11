@@ -1,0 +1,33 @@
+{
+ "symbol": "?Update@FacingClass@@QAEDPAG@Z",
+ "sym_key": "FacingClass::Update",
+ "size": 286,
+ "link_base": 0,
+ "bytes_hex": "668b1183ec088bc2568b74241025ff00000081e600ffffff0bc68b742410663b16750932c05e83c408c204005355668b6914576685ed896c24107e278b71088b511083feff8954241474148b3d000000008bdf2bde3bda7d0a8bde2bdf03d385d275048b19eb71662b41040fbfdd0fbff88bd7c1fa1f8bc233c72bc299f7fb8b196685c07e528b54241483feff742c8b2d000000002bee3bea7c088b6c241033f6eb1a8bea2b2d0000000003ee33ea81e5ff00000033d58b6c24108bf20fbfd08bc78bfa99f7ff8bd30fafc62bd033d381e2ff00000033da8b44241c8959046685ed8b0089017e2a662bc30fbff08bd6c1fa1f8bc233c62bc20fbff599f7fe8b15000000008951088b54241c89510c8941105f5d5bb0015e83c408c20400",
+ "relocs": [
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 145,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 167,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 257,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

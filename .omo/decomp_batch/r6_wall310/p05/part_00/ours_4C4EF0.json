@@ -1,0 +1,57 @@
+{
+ "symbol": "?ParseUnitCountAndType@TaskForceClass@@QAEPAV1@PAD@Z",
+ "sym_key": "TaskForceClass::ParseUnitCountAndType",
+ "size": 150,
+ "link_base": 0,
+ "bytes_hex": "518b542408568bf18d4424048d4c240c5051680000000052c70600000000c7460400000000e8000000008b44241c83c4108d4c24048906e80000000083f8ff75428d4c2404e80000000083f8ff75218d4c2404e80000000083f8ff74328b0d000000008b14818b068956045e59c204008b0d000000008b14818b068956045e59c204008b0d000000008b14818956048b065e59c20400",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "??_C@_05ONBE@?$CFd?0?$CFs?$AA@",
+   "sym_key": "??_C@_05ONBE@?$CFd?0?$CFs?$AA@"
+  },
+  {
+   "off": 38,
+   "type": "REL32",
+   "sym": "_sscanf",
+   "sym_key": "sscanf"
+  },
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?FindExitCellByName@Factory@@QAEHXZ",
+   "sym_key": "Factory::FindExitCellByName"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?FindIndex@BuildingTypeClass@@QAEHXZ",
+   "sym_key": "BuildingTypeClass::FindIndex"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?FindByName@TypeClass@@QAEHXZ",
+   "sym_key": "TypeClass::FindByName"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_AircraftTypeCount@@3IA",
+   "sym_key": "g_AircraftTypeCount"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_UnitTypeCount2@@3PAXA",
+   "sym_key": "g_UnitTypeCount2"
+  },
+  {
+   "off": 133,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  }
+ ]
+}

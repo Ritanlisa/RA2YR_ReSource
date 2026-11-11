@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C4EF0",
+ "name": "TaskForceClass::ParseUnitCountAndType",
+ "size": 158,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C4EF0",
+ "bytes_hex": "83ec408b5424448d442400568bf18d4c24485051685c08820052c70600000000c7460400000000e8145630008b44245883c4108d4c24048906e862ed050083f8ff74158b0d4ce3a8008b14818bc68956045e83c440c204008d4c2404e81f24280083f8ff74158b0de43ca8008b14818bc68956045e83c440c204008d4c2404e82c7bf5ff83f8ff740c8b0d1cb2a8008b14818956048bc65e83c440c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
