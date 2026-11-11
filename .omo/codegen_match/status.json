@@ -6979,21 +6979,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",

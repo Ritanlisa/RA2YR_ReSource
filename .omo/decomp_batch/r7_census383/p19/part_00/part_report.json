@@ -1,0 +1,58 @@
+{
+ "summary": {
+  "total": 3,
+  "verdicts": {
+   "COMPILE_FAIL": 3
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7df9c0",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBuffer",
+   "emitted": "Voxel::FacePixelBuffer",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/23",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x7dfae0",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBufferEx",
+   "emitted": "Voxel::FacePixelBufferEx",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/22",
+   "rule_violations": 22
+  },
+  {
+   "addr": "0x7dfc00",
+   "batch": "adhoc",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.cpp(72) : error C2109: subscript requires array or pointer type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r7_census383\\p19\\part_00\\Voxel.c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Voxel::FacePixelBuffer3",
+   "emitted": "Voxel::FacePixelBuffer3",
+   "unit": "Voxel",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/21",
+   "rule_violations": 1
+  }
+ ]
+}
