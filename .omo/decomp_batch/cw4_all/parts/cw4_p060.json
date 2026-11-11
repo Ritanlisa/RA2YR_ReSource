@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4e8440",
+  "name": "VectorClass_ptr_BuildingLightClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVBuildingLightClass",
+  "emitted": "_DynamicVectorClass_PAVBuildingLightClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e844c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e84a0",
+  "name": "ParticleSystemClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVParticleClass",
+  "emitted": "_DynamicVectorClass_PAVParticleClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4e84ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8500",
+  "name": "VectorClass_ptr_TeamClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVTeamClass",
+  "emitted": "_DynamicVectorClass_PAVTeamClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e850c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8630",
+  "name": "VectorClass_ptr_TubeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVTubeClass",
+  "emitted": "_DynamicVectorClass_PAVTubeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e863c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8690",
+  "name": "VectorClass_ptr_BuildingLightClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVParticleSystemClass",
+  "emitted": "_DynamicVectorClass_PAVParticleSystemClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e869c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e86f0",
+  "name": "VectorClass_ptr_TubeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVWaveClass",
+  "emitted": "_DynamicVectorClass_PAVWaveClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e86fc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8750",
+  "name": "VectorClass_ptr_TubeClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVOverlayClass",
+  "emitted": "_DynamicVectorClass_PAVOverlayClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x4e875c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e87b0",
+  "name": "ParticleSystemClass::updateParticles",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVSmudgeClass",
+  "emitted": "_DynamicVectorClass_PAVSmudgeClass::updateParticles",
+  "first_diff": {
+   "orig": "+5 jne 0x4e87bc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8810",
+  "name": "ParticleSystemClass_32::GetIndex2",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVTerrainClass",
+  "emitted": "_DynamicVectorClass_PAVTerrainClass::GetIndex2",
+  "first_diff": {
+   "orig": "+5 jne 0x4e881c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8990",
+  "name": "VectorClass_ptr_TeamClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVAnimClass",
+  "emitted": "_DynamicVectorClass_PAVAnimClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e899c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e89f0",
+  "name": "VectorClass_ptr_TeamClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVFactoryClass",
+  "emitted": "_DynamicVectorClass_PAVFactoryClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x4e89fc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8ab0",
+  "name": "VectorClass_ptr_CampaignClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVSideClass",
+  "emitted": "_DynamicVectorClass_PAVSideClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8abc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8b10",
+  "name": "VectorClass_ptr_HouseTypeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVHouseTypeClass",
+  "emitted": "_DynamicVectorClass_PAVHouseTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8b1c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8b70",
+  "name": "VectorClass_ptr_HouseTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVTaskForceClass",
+  "emitted": "_DynamicVectorClass_PAVTaskForceClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8b7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8bd0",
+  "name": "VectorClass_ptr_HouseTypeClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVTeamTypeClass",
+  "emitted": "_DynamicVectorClass_PAVTeamTypeClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8bdc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8c30",
+  "name": "VectorClass_ptr_ScriptTypeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVScriptTypeClass",
+  "emitted": "_DynamicVectorClass_PAVScriptTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8c3c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8d50",
+  "name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVTerrainTypeClass",
+  "emitted": "_DynamicVectorClass_PAVTerrainTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8d5c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8db0",
+  "name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVBuildingTypeClass",
+  "emitted": "_DynamicVectorClass_PAVBuildingTypeClass::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8dbc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8e10",
+  "name": "VectorClass_ptr_AircraftTypeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVAircraftTypeClass",
+  "emitted": "_DynamicVectorClass_PAVAircraftTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8e1c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8e70",
+  "name": "VectorClass_ptr_AircraftTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVUnitTypeClass",
+  "emitted": "_DynamicVectorClass_PAVUnitTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8e7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
