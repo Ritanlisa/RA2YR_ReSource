@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E5D60",
+ "name": "Lobby::InvalidatePlayerSlots",
+ "size": 177,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E5D60",
+ "bytes_hex": "56578bf933f685f67507ba6d070000eb5d83fe017507ba6e070000eb5183fe027507ba6f070000eb4583fe037507ba70070000eb3983fe047507ba71070000eb2d83fe057507ba72070000eb2183fe067507ba73070000eb158bd683ea07f7da1bd281e28bf8ffff81c274070000a138b2a80083f803740583f80475178b04b590daa8008b0db411ac003bc1740f83786bff74098bcfe865fdffffeb078bcfe8acfeffff4683fe080f8c58ffffff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

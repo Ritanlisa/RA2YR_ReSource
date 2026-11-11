@@ -1,0 +1,45 @@
+{
+ "symbol": "?UpdateAll@AirstrikeClass@@QAEDXZ",
+ "sym_key": "AirstrikeClass::UpdateAll",
+ "size": 153,
+ "link_base": 0,
+ "bytes_hex": "a0000000005684c07562c605000000000133f68bce81e1ff00008079084981c900ffffff418bc69981e2ff00000003c2c1f8080fafc8b809040281f7e903d1c1fa068bc2c1e81f03d081faff0000007f0985d27d0880e200eb0380caff8896000000004681fe000001007ca78b0d00000000a1000000008d71ff8b0cb08a513c84d2741085c9740c8b116a01ff5220a1000000004e79e35ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A134@@3EA",
+   "sym_key": "DataGlobal_89A134"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89A134@@3EA",
+   "sym_key": "DataGlobal_89A134"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A118@@3PAEA",
+   "sym_key": "DataGlobal_88A118"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_AlphaShapeLimit@@3IA",
+   "sym_key": "g_AlphaShapeLimit"
+  },
+  {
+   "off": 115,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?DataGlobal_88A0F4@@3IA",
+   "sym_key": "DataGlobal_88A0F4"
+  }
+ ]
+}

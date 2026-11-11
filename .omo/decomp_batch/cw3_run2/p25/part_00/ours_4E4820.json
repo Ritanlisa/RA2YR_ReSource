@@ -1,0 +1,45 @@
+{
+ "symbol": "?FillPlayerFactions@Lobby@@QAEDXZ",
+ "sym_key": "Lobby::FillPlayerFactions",
+ "size": 167,
+ "link_base": 0,
+ "bytes_hex": "56578bf933f685f674508d46ff83f8057731ff248500000000ba22050000eb3fba23050000eb38ba24050000eb31ba25050000eb2aba26050000eb23ba27050000eb1c8bd683ea07f7da1bd281e2d7faffff81c228050000eb05baa2060000a10000000083f803740583f80475178b04b5000000008b0d000000003bc1741483786bff740e8bcfe80000000025ff000000eb078bcfe8000000004683fe080f8c62ffffff5f5ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "$L1932",
+   "sym_key": "$L1932"
+  },
+  {
+   "off": 96,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3PAHA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 119,
+   "type": "DIR32",
+   "sym": "?g_Lobby_MaxPlayers@@3HA",
+   "sym_key": "g_Lobby_MaxPlayers"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?FillComboBoxFactions@@YI_NPAXH@Z",
+   "sym_key": "FillComboBoxFactions"
+  },
+  {
+   "off": 150,
+   "type": "REL32",
+   "sym": "?FillListBox@@YIJPAXH@Z",
+   "sym_key": "FillListBox"
+  }
+ ]
+}
