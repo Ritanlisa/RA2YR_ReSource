@@ -1,0 +1,8 @@
+{
+ "symbol": "?Release@GraphicMenuImageItem@@QAEHPAI@Z",
+ "sym_key": "GraphicMenuImageItem::Release",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "8a41095684c074348b7424088b41148b163bd07227578b791c03f83bd75f731c8b46048b51183bc27c128b492003ca3bc17309b8010000005ec2040033c05ec20400",
+ "relocs": []
+}

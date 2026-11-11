@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetDimensions@UnitTypeClass@@QAEPAHPAH@Z",
+ "sym_key": "UnitTypeClass::GetDimensions",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b81ec0100008bc8c1e9022bc183f83c8bc87c07b93c0000008bc18b542404894208890a894a048bc2c20400",
+ "relocs": []
+}

@@ -2799,6 +2799,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a4b30": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "CStreamClass_16::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4a4d60": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -3835,6 +3842,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e9200": {
+  "attempts": 1,
+  "first_diff": "+13 jne 0x4e9236",
+  "name": "HouseClass::COMStub_1",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x4e9a40": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -3856,6 +3870,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ea8e0": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_TubeClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4eaec0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -3868,6 +3889,13 @@
   "first_diff": "+5 jne 0x4eb62c",
   "name": "ParticleSystemClass_32::Read",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4ebe40": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_AnimClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x4ec070": {
@@ -3898,6 +3926,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4ed600": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_TerrainTypeClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4edbe0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -3910,6 +3945,13 @@
   "first_diff": "+5 jne 0x4ee34c",
   "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4eeb60": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_ParticleTypeClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x4eed90": {
@@ -3946,6 +3988,13 @@
   "name": "HouseClass::vt_placeholder_10",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4f3640": {
+  "attempts": 1,
+  "first_diff": "+12 mov edx, dword ptr [ecx + 0x14]",
+  "name": "GraphicMenuImageItem::Release",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x4f3af0": {
   "attempts": 1,
@@ -4359,6 +4408,13 @@
   "name": "HouseTypeClass::loadBuildLimits",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x512c40": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "TypeList_Infantry::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x512da0": {
   "attempts": 1,
@@ -5179,6 +5235,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x551330": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_LaserDrawClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x5517f0": {
   "attempts": 1,
   "first_diff": null,
@@ -5695,6 +5758,13 @@
   "first_diff": "+5 jne 0x589a3c",
   "name": "VectorClass_USubzoneTrackingStruct::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x58a110": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_UHashObject_uint_uint::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x58a2a0": {
@@ -6320,6 +6390,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5cae70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MultiplayerSiegeDefenderTeam::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5cb340": {
   "attempts": 1,
   "first_diff": null,
@@ -6444,6 +6521,13 @@
   "first_diff": "+5 jne 0x5d070c",
   "name": "MSPCXAnim_26::Draw",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x5d0d40": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_MapSelection::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x5d1320": {
@@ -6634,6 +6718,13 @@
   "name": "NetworkLobby::CheckLobbyConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5e94d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Hash_Check_5E94D0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5ea8e0": {
   "attempts": 1,
@@ -7384,6 +7475,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x63e950": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_PlanningTokenClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x63f2e0": {
   "attempts": 1,
   "first_diff": null,
@@ -7979,6 +8077,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x691540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScriptClass::GetNextAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x691ec0": {
   "attempts": 5,
   "first_diff": null,
@@ -8082,6 +8187,13 @@
   "first_diff": "+5 jne 0x69cbac",
   "name": "VectorClass_Wstring::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x69cd40": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_MultiMission::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x69db30": {
@@ -8706,6 +8818,13 @@
   "name": "SwizzleManagerClass::Add",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6cf560": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "SwizzleManagerClass_19::AddRef",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x6cf700": {
   "attempts": 1,
@@ -9981,6 +10100,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x747590": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [ecx + 0x1ec]",
+  "name": "UnitTypeClass::GetDimensions",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x748160": {
   "attempts": 5,
   "first_diff": null,
@@ -10239,6 +10365,13 @@
   "name": "VectorClass_ptr_VoxClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7536b0": {
+  "attempts": 1,
+  "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
+  "name": "VectorClass_ptr_VoxClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x753c70": {
   "attempts": 3,
@@ -11534,6 +11667,13 @@
   "name": "0x7cb847",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7cd790": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_strcspn",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7cd95f": {
   "attempts": 1,

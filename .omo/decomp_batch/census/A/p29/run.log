@@ -1,0 +1,116 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a4b30 _VectorClass_PAU_DDSURFACEDESC::AddRef -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4e9200 _VectorClass_PAVTagClass::COMStub_1 -> _VectorClass_PAVTagClass
+[conv] 0x4ea8e0 _VectorClass_PAVTubeClass::Add -> _VectorClass_PAVTubeClass
+[conv] 0x4ebe40 _VectorClass_PAVAnimClass::Add -> _VectorClass_PAVAnimClass
+[conv] 0x4ed600 _VectorClass_PAVTerrainTypeClass::Add -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4eeb60 _VectorClass_PAVParticleTypeClass::Add -> _VectorClass_PAVParticleTypeClass
+[conv] 0x512c40 _VectorClass_PBVInfantryTypeClass::AddRef -> _VectorClass_PBVInfantryTypeClass
+[conv] 0x551330 _VectorClass_PAVLaserDrawClass::Add -> _VectorClass_PAVLaserDrawClass
+[conv] 0x58a110 _VectorClass_U_HashObject_II::AddRef -> _VectorClass_U_HashObject_II
+[conv] 0x5d0d40 _VectorClass_PAVMapSelection::Add -> _VectorClass_PAVMapSelection
+[conv] 0x5e94d0 unknown::Hash_Check_5E94D0 -> unknown
+[conv] 0x63e950 _VectorClass_PAVPlanningTokenClass::Add -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x69cd40 _VectorClass_PAVMultiMission::Add -> _VectorClass_PAVMultiMission
+[conv] 0x6cf560 _VectorClass_VSwizzlePointerClass::AddRef -> _VectorClass_VSwizzlePointerClass
+[conv] 0x7536b0 _VectorClass_PAVVoxClass::Add -> _VectorClass_PAVVoxClass
+[conv] 0x7cd790 unknown::_strcspn -> unknown
+[conv] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> MultiplayerSiegeDefenderTeam
+[conv] 0x747590 UnitTypeClass::GetDimensions -> UnitTypeClass
+[conv] 0x691540 ScriptClass::GetNextAction -> ScriptClass
+[conv] 0x4f3640 GraphicMenuImageItem::Release -> GraphicMenuImageItem
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _VectorClass_PAVTagClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVTerrainTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] _VectorClass_PBVInfantryTypeClass rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] _VectorClass_PAVMapSelection rc=0
+[era] unknown                  rc=2
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] MultiplayerSiegeDefenderTeam rc=2
+[era] UnitTypeClass            rc=0
+[era] ScriptClass              rc=2
+[era] GraphicMenuImageItem     rc=0
+=== diffasm byte-compare ===
+[diff] 0x4a4b30   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::AddRef
+[diff] 0x4e9200   MISMATCH         _VectorClass_PAVTagClass::COMStub_1
+[diff] 0x4ea8e0   MISMATCH         _VectorClass_PAVTubeClass::Add
+[diff] 0x4ebe40   MISMATCH         _VectorClass_PAVAnimClass::Add
+[diff] 0x4ed600   MISMATCH         _VectorClass_PAVTerrainTypeClass::Add
+[diff] 0x4eeb60   MISMATCH         _VectorClass_PAVParticleTypeClass::Add
+[diff] 0x512c40   MISMATCH         _VectorClass_PBVInfantryTypeClass::AddRef
+[diff] 0x551330   MISMATCH         _VectorClass_PAVLaserDrawClass::Add
+[diff] 0x58a110   MISMATCH         _VectorClass_U_HashObject_II::AddRef
+[diff] 0x5d0d40   MISMATCH         _VectorClass_PAVMapSelection::Add
+[diff] 0x5e94d0   MATCH            unknown::Hash_Check_5E94D0
+[diff] 0x63e950   MISMATCH         _VectorClass_PAVPlanningTokenClass::Add
+[diff] 0x69cd40   MISMATCH         _VectorClass_PAVMultiMission::Add
+[diff] 0x6cf560   MISMATCH         _VectorClass_VSwizzlePointerClass::AddRef
+[diff] 0x7536b0   MISMATCH         _VectorClass_PAVVoxClass::Add
+[diff] 0x747590   MISMATCH         UnitTypeClass::GetDimensions
+[diff] 0x4f3640   MISMATCH         GraphicMenuImageItem::Release
+[ledger] 0x4a4b30 CStreamClass_16::AddRef -> NG (attempt 1)
+[ledger] 0x4e9200 HouseClass::COMStub_1 -> NG (attempt 1)
+[ledger] 0x4ea8e0 VectorClass_ptr_TubeClass::Add -> NG (attempt 1)
+[ledger] 0x4ebe40 VectorClass_ptr_AnimClass::Add -> NG (attempt 1)
+[ledger] 0x4ed600 VectorClass_ptr_TerrainTypeClass::Add -> NG (attempt 1)
+[ledger] 0x4eeb60 VectorClass_ptr_ParticleTypeClass::Add -> NG (attempt 1)
+[ledger] 0x512c40 TypeList_Infantry::AddRef -> NG (attempt 1)
+[ledger] 0x551330 VectorClass_ptr_LaserDrawClass::Add -> NG (attempt 1)
+[ledger] 0x58a110 VectorClass_UHashObject_uint_uint::AddRef -> NG (attempt 1)
+[ledger] 0x5d0d40 VectorClass_ptr_MapSelection::Add -> NG (attempt 1)
+[ledger] 0x5e94d0 Hash_Check_5E94D0 -> OK (attempt 1)
+[ledger] 0x63e950 VectorClass_ptr_PlanningTokenClass::Add -> NG (attempt 1)
+[ledger] 0x69cd40 VectorClass_ptr_MultiMission::Add -> NG (attempt 1)
+[ledger] 0x6cf560 SwizzleManagerClass_19::AddRef -> NG (attempt 1)
+[ledger] 0x7536b0 VectorClass_ptr_VoxClass::Add -> NG (attempt 1)
+[ledger] 0x7cd790 _strcspn -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5cae70 MultiplayerSiegeDefenderTeam::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x747590 UnitTypeClass::GetDimensions -> NG (attempt 1)
+[ledger] 0x691540 ScriptClass::GetNextAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f3640 GraphicMenuImageItem::Release -> NG (attempt 1)
+======================================================================
+{
+ "total": 1637,
+ "verdicts": {
+  "MISMATCH": 454,
+  "MATCH": 503,
+  "COMPILE_FAIL": 362,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 310,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 8,
+  "codegen_shape": 151,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 48,
+  "branch_polarity": 32,
+  "regalloc": 54,
+  "branch_order": 67,
+  "width_mismatch": 4,
+  "extern_reloc": 16,
+  "cc_mismatch": 7,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 52.6,
+ "match_rate_of_total_pct": 30.7,
+ "rule_violation_fns": 16,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p29\batch_report.json

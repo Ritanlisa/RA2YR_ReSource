@@ -1,0 +1,11 @@
+{
+ "addr": "0x747590",
+ "name": "UnitTypeClass::GetDimensions",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x747590",
+ "bytes_hex": "8b89ec0100008bc19983e20303d08bc1c1fa022bc28bc883f93c7c05b93c00000083f83c7c05b83c0000008b542404568bf2890e894e048946088bc25ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
