@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4126d0",
+  "name": "sub_4126D0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_4126D0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2230]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x4126f0",
+  "name": "sub_4126F0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_4126F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2230]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x412710",
+  "name": "sub_412710",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_412710",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2230]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x413b30",
+  "name": "sub_413B30",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_413B30",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2240]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x413b50",
+  "name": "sub_413B50",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_413B50",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2240]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41c730",
+  "name": "sub_41C730",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41C730",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2830]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41c750",
+  "name": "sub_41C750",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41C750",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2830]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41d0e0",
+  "name": "sub_41D0E0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41D0E0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2930]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41d100",
+  "name": "sub_41D100",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41D100",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2930]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41d120",
+  "name": "sub_41D120",
+  "family": "FOLD_STORE",
+  "path": "width_mismatch",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41D120",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2930]",
+   "ours": "+0 mov dword ptr [4], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41e1d0",
+  "name": "sub_41E1D0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41E1D0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2a10]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x41e1f0",
+  "name": "sub_41E1F0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_41",
+  "emitted": "sub_41E1F0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2a10]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x420760",
+  "name": "sub_420760",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_42",
+  "emitted": "sub_420760",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2b18]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x420780",
+  "name": "sub_420780",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_42",
+  "emitted": "sub_420780",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2b18]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x4207a0",
+  "name": "sub_4207A0",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_42",
+  "emitted": "sub_4207A0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e2b18]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x421d20",
+  "name": "sub_421D20",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p109",
+  "unit": "_addr_42",
+  "emitted": "sub_421D20",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e3310]",
+   "ours": "+0 mov dword ptr [0], 0x54442d1a"
+  },
+  "ours_size": 21
+ },
+ {
+  "addr": "0x4264b0",
+  "name": "AbstractClass::COMStub_Return0_99",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p10",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::COMStub_Return0_99",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x459dc0",
+  "name": "AbstractClass::COMStub_Return0_190",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p10",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::COMStub_Return0_190",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x459e60",
+  "name": "AbstractClass::COMStub_Return0_270",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p10",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::COMStub_Return0_270",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x421d40",
+  "name": "sub_421D40",
+  "family": "FOLD_STORE",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p110",
+  "unit": "_addr_42",
+  "emitted": "sub_421D40",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e3310]",
+   "ours": "+0 mov dword ptr [0], 0x382d7366"
+  },
+  "ours_size": 21
+ }
+]

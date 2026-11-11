@@ -1,0 +1,374 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 20
+  },
+  "by_family_total": {
+   "FOLD_STORE": 17,
+   "RET_VOID_STUB": 3
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x4126d0",
+   "name": "sub_4126D0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4126D0",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_4126D0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2230]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x4126f0",
+   "name": "sub_4126F0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4126F0",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_4126F0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2230]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x412710",
+   "name": "sub_412710",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_412710",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_412710()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2230]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x413b30",
+   "name": "sub_413B30",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_413B30",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_413B30()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2240]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x413b50",
+   "name": "sub_413B50",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_413B50",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_413B50()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2240]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x41c730",
+   "name": "sub_41C730",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41C730",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41C730()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2830]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x41c750",
+   "name": "sub_41C750",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41C750",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41C750()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2830]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x41d0e0",
+   "name": "sub_41D0E0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41D0E0",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41D0E0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2930]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x41d100",
+   "name": "sub_41D100",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41D100",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41D100()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2930]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x41d120",
+   "name": "sub_41D120",
+   "family": "FOLD_STORE",
+   "path": "width_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41D120",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41D120()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2930]",
+    "ours": "+0 mov dword ptr [4], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x41e1d0",
+   "name": "sub_41E1D0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41E1D0",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41E1D0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2a10]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x41e1f0",
+   "name": "sub_41E1F0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_41E1F0",
+   "unit": "_addr_41",
+   "head": "void __cdecl sub_41E1F0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2a10]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x420760",
+   "name": "sub_420760",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_420760",
+   "unit": "_addr_42",
+   "head": "void __cdecl sub_420760()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2b18]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x420780",
+   "name": "sub_420780",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_420780",
+   "unit": "_addr_42",
+   "head": "void __cdecl sub_420780()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2b18]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  },
+  {
+   "addr": "0x4207a0",
+   "name": "sub_4207A0",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4207A0",
+   "unit": "_addr_42",
+   "head": "void __cdecl sub_4207A0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e2b18]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x421d20",
+   "name": "sub_421D20",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_421D20",
+   "unit": "_addr_42",
+   "head": "void __cdecl sub_421D20()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e3310]",
+    "ours": "+0 mov dword ptr [0], 0x54442d1a"
+   }
+  },
+  {
+   "addr": "0x4264b0",
+   "name": "AbstractClass::COMStub_Return0_99",
+   "family": "RET_VOID_STUB",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "COMStub_Return0_99",
+   "unit": "ObjectClass",
+   "head": "int __stdcall ObjectClass::COMStub_Return0_99()",
+   "baseline_first_diff": {
+    "orig": "+0 ret 4",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x459dc0",
+   "name": "AbstractClass::COMStub_Return0_190",
+   "family": "RET_VOID_STUB",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "COMStub_Return0_190",
+   "unit": "TechnoClass",
+   "head": "int __stdcall TechnoClass::COMStub_Return0_190()",
+   "baseline_first_diff": {
+    "orig": "+0 ret 4",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x459e60",
+   "name": "AbstractClass::COMStub_Return0_270",
+   "family": "RET_VOID_STUB",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "COMStub_Return0_270",
+   "unit": "TechnoClass",
+   "head": "int __stdcall TechnoClass::COMStub_Return0_270(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 ret 8",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x421d40",
+   "name": "sub_421D40",
+   "family": "FOLD_STORE",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_421D40",
+   "unit": "_addr_42",
+   "head": "void __cdecl sub_421D40()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e3310]",
+    "ours": "+0 mov dword ptr [0], 0x382d7366"
+   }
+  }
+ ]
+}
