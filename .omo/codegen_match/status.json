@@ -13142,7 +13142,7 @@
   "this_as_id": false
  },
  "0x4791f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13465,7 +13465,7 @@
   "this_as_id": false
  },
  "0x484180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -13597,7 +13597,7 @@
   "this_as_id": false
  },
  "0x485590": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -16633,7 +16633,7 @@
   "this_as_id": false
  },
  "0x49c5a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -28328,7 +28328,7 @@
   "this_as_id": false
  },
  "0x4f1ca0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29133,7 +29133,7 @@
   "this_as_id": false
  },
  "0x4fa350": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -39051,7 +39051,7 @@
   "status": "NG"
  },
  "0x55bc00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "CompressLCWBuffer",
@@ -39208,7 +39208,7 @@
   "this_as_id": false
  },
  "0x55f1e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -39981,7 +39981,7 @@
   "this_as_id": false
  },
  "0x57acf0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GenerateMapClassCliffTransitions",
@@ -41424,7 +41424,7 @@
   "status": "NG"
  },
  "0x5a2f50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41492,7 +41492,7 @@
   "this_as_id": false
  },
  "0x5a89d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "ScheduleMapSeedBuildings",
@@ -52779,7 +52779,7 @@
   "this_as_id": false
  },
  "0x62b5e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55037,7 +55037,7 @@
   "this_as_id": false
  },
  "0x63fea0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -56465,7 +56465,7 @@
   "this_as_id": false
  },
  "0x655c50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71386,7 +71386,7 @@
   "this_as_id": true
  },
  "0x7049c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DrawTacticalMapLine",
@@ -79340,7 +79340,7 @@
   "this_as_id": false
  },
  "0x750440": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -81208,7 +81208,7 @@
   "this_as_id": false
  },
  "0x7609e0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -84724,7 +84724,7 @@
   "this_as_id": false
  },
  "0x7775c0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "MainWindowProc",
@@ -85536,7 +85536,7 @@
   "this_as_id": false
  },
  "0x782bb0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "FindBuddyList",
@@ -85806,7 +85806,7 @@
   "status": "PENDING"
  },
  "0x79dfe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "GameSetupDlgProcWOL",
