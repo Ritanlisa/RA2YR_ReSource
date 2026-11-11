@@ -6391,7 +6391,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x766fb0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VGameOption_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6405,14 +6405,14 @@
   "status": "NG"
  },
  "0x76a5a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Map_WorldDominationTour_38::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76a5b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6454,42 +6454,42 @@
   "status": "OK"
  },
  "0x76f160": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Count::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f170": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f180": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VectorCursor::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f190": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f1a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x76f1b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6566,7 +6566,7 @@
   "status": "OK"
  },
  "0x775b10": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Dialog::GetCurrent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6650,7 +6650,7 @@
   "status": "NG"
  },
  "0x7adf70": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6671,7 +6671,7 @@
   "status": "NG"
  },
  "0x7ae460": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6685,7 +6685,7 @@
   "status": "NG"
  },
  "0x7aec00": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6734,14 +6734,14 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6797,14 +6797,14 @@
   "status": "OK"
  },
  "0x7b9d70": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "WWMouseClass::checkStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b9d80": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6860,11 +6860,11 @@
   "status": "OK"
  },
  "0x7bab70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "XSurface::entry_3C_",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x7bab80": {
   "attempts": 5,
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6909,7 +6909,7 @@
   "status": "NG"
  },
  "0x7c891a": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "OleUninitialize::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
