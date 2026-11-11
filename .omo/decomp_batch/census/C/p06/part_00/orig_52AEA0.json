@@ -1,0 +1,11 @@
+{
+ "addr": "0x52AEA0",
+ "name": "Delegate::DestroyStraw",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52AEA0",
+ "bytes_hex": "568bf1e8a8e91900f644240801740956e888dc290083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

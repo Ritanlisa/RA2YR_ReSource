@@ -1,0 +1,11 @@
+{
+ "addr": "0x6AC780",
+ "name": "SidebarClass::queryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6AC780",
+ "bytes_hex": "568bf1e8084ce3fff644240801740956e8a8c3110083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

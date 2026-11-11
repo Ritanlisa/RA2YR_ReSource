@@ -202,6 +202,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x406ee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x406ee0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x407010": {
   "attempts": 5,
   "first_diff": null,
@@ -2134,6 +2141,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x487e80": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "CellClass::CopyTo",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x487f20": {
   "attempts": 1,
   "first_diff": "+4 mov edx, dword ptr [ecx]",
@@ -2813,6 +2827,48 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x499ce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::setTileIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x499e40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_17",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x499fa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_28",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49a100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_39",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49a3e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49a880": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "??_Gfacet_locale_std__UAEPAXI_Z_61",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x49b660": {
   "attempts": 4,
   "first_diff": "+0 push ebx",
@@ -2861,6 +2917,13 @@
   "name": "0x49fda0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x49fff0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EnumConnectionsClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4a00b0": {
   "attempts": 9,
@@ -3728,6 +3791,13 @@
   "first_diff": "+0 push ecx",
   "name": "FoggedObjectClass::CheckVisibility",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x4d2910": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "FoggedObjectClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x4d2a10": {
@@ -4878,6 +4948,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x52aea0": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "Delegate::DestroyStraw",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x52b170": {
   "attempts": 5,
   "first_diff": null,
@@ -5367,6 +5444,13 @@
   "name": "Struct::ZeroInitAndSetup_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x53f5b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network_Helper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x53fbd0": {
   "attempts": 9,
@@ -6782,6 +6866,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5c94d0": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "MultiplayerObserverTeam::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x5c9560": {
   "attempts": 1,
   "first_diff": null,
@@ -8140,6 +8231,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x652940": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x652940",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x652cf0": {
   "attempts": 9,
   "first_diff": null,
@@ -8924,6 +9022,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6ac780": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "SidebarClass::queryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x6aef60": {
   "attempts": 1,
   "first_diff": null,
@@ -9329,6 +9434,13 @@
   "name": "0x6c6ab0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6c98e0": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [ecx + 4]",
+  "name": "Delegate::Invoke",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x6c9900": {
   "attempts": 1,
@@ -10289,6 +10401,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x720210": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "AbstractClass::checkAmmunition",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x720440": {
   "attempts": 1,
   "first_diff": null,
@@ -10643,6 +10762,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x730ad0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x731a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x731a10",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -11157,6 +11283,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x75a100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x75a100",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x75ca80": {
   "attempts": 3,
   "first_diff": "+13 push ebx",
@@ -11428,6 +11561,13 @@
   "first_diff": "+0 push esi",
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x76b6f0": {
+  "attempts": 1,
+  "first_diff": "+16 call 0x7c8b3d",
+  "name": "WDTState::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x76ba50": {

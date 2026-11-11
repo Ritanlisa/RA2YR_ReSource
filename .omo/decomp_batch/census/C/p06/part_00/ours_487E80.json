@@ -1,0 +1,21 @@
+{
+ "symbol": "?CopyTo@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::CopyTo",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "51568bf1e800000000f644240701740956e80000000083c4048b065e59c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "REL32",
+   "sym": "?DTOR@CellClass@@QAEXXZ",
+   "sym_key": "CellClass::DTOR"
+  },
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

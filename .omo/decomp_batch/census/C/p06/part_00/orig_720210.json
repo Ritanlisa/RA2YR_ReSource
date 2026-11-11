@@ -1,0 +1,11 @@
+{
+ "addr": "0x720210",
+ "name": "AbstractClass::checkAmmunition",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720210",
+ "bytes_hex": "568bf1e87811dcfff644240801740956e818890a0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

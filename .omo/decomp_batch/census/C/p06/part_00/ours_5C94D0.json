@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@MultiplayerObserverTeam@@QAEPAPAXD@Z",
+ "sym_key": "MultiplayerObserverTeam::QueryInterface",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "568bf1e800000000f644240801740956e80000000083c4048bc65ec20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Destructor@MultiplayerTeam@@QAEXXZ",
+   "sym_key": "MultiplayerTeam::Destructor"
+  },
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -1,0 +1,330 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 8,
+   "MISMATCH": 8,
+   "NO_CLS": 4
+  },
+  "pathologies": {
+   "regalloc": 2,
+   "const_fold": 6
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x49fff0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\EnumConnectionsClass.cpp(8) : error C2228: left of '.waypoints' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C",
+   "first_diff": null,
+   "pathology": null,
+   "name": "EnumConnectionsClass::AddRef",
+   "emitted": "EnumConnectionsClass::AddRef",
+   "unit": "EnumConnectionsClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x6c98e0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 31B",
+   "first_diff": {
+    "orig": "+0 mov ecx, dword ptr [ecx + 4]",
+    "ours": "+0 mov eax, dword ptr [ecx + 4]"
+   },
+   "pathology": "regalloc",
+   "name": "Delegate::Invoke",
+   "emitted": "Straw::Invoke",
+   "unit": "Straw",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 31
+  },
+  {
+   "addr": "0x487e80",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ecx"
+   },
+   "pathology": "regalloc",
+   "name": "CellClass::CopyTo",
+   "emitted": "CellClass::CopyTo",
+   "unit": "CellClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x4d2910",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "FoggedObjectClass::ddtor",
+   "emitted": "FoggedObjectClass::ddtor",
+   "unit": "FoggedObjectClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x52aea0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "Delegate::DestroyStraw",
+   "emitted": "Base64Straw::DestroyStraw",
+   "unit": "Base64Straw",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x5c94d0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "MultiplayerObserverTeam::QueryInterface",
+   "emitted": "MultiplayerObserverTeam::QueryInterface",
+   "unit": "MultiplayerObserverTeam",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x6ac780",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "SidebarClass::queryInterface",
+   "emitted": "SelectClass_StripClass_SidebarClass::queryInterface",
+   "unit": "SelectClass_StripClass_SidebarClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x720210",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "AbstractClass::checkAmmunition",
+   "emitted": "TextButtonClass::checkAmmunition",
+   "unit": "TextButtonClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x76b6f0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 30B ours 30B",
+   "first_diff": {
+    "orig": "+16 call 0x7c8b3d",
+    "ours": "+16 call 0x15"
+   },
+   "pathology": "const_fold",
+   "name": "WDTState::QueryInterface",
+   "emitted": "WDTState::QueryInterface",
+   "unit": "WDTState",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 30,
+   "ours_size": 30
+  },
+  {
+   "addr": "0x406ee0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x406ee0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x652940",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x652940",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x75a100",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x75a100",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x53f5b0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\ObjectClass.cpp(8) : error C2228: left of '.isAliveFlag' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\pa",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Network_Helper",
+   "emitted": "ObjectClass::Network_Helper",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x731a10",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x731a10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x499ce0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\BlitPlainXlat.hpp(20) : error C2653: 'std' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AbstractClass::setTileIndex",
+   "emitted": "BlitPlainXlat::setTileIndex",
+   "unit": "BlitPlainXlat",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x499e40",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_RLEBlitTransZRemapXlatZRead_E.hpp(17) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\incl",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??_Gfacet_locale_std__UAEPAXI_Z_17",
+   "emitted": "_RLEBlitTransZRemapXlatZRead_E::??_Gfacet_locale_std__UAEPAXI_Z_17",
+   "unit": "_RLEBlitTransZRemapXlatZRead_E",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x499fa0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_BlitTransLucent50_G.hpp(17) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_BlitT",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??_Gfacet_locale_std__UAEPAXI_Z_28",
+   "emitted": "_BlitTransLucent50_G::??_Gfacet_locale_std__UAEPAXI_Z_28",
+   "unit": "_BlitTransLucent50_G",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x49a100",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_BlitTransLucent25ZReadWarp_G.hpp(17) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\inclu",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??_Gfacet_locale_std__UAEPAXI_Z_39",
+   "emitted": "_BlitTransLucent25ZReadWarp_G::??_Gfacet_locale_std__UAEPAXI_Z_39",
+   "unit": "_BlitTransLucent25ZReadWarp_G",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x49a3e0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_BlitTranslucent50NonzeroAlpha_G.hpp(17) : error C2653: 'std' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1",
+   "emitted": "_BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1",
+   "unit": "_BlitTranslucent50NonzeroAlpha_G",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/3",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x49a880",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\include\\_RLEBlitTransLucent75ZRead_G.hpp(17) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p06\\part_00\\includ",
+   "first_diff": null,
+   "pathology": null,
+   "name": "??_Gfacet_locale_std__UAEPAXI_Z_61",
+   "emitted": "_RLEBlitTransLucent75ZRead_G::??_Gfacet_locale_std__UAEPAXI_Z_61",
+   "unit": "_RLEBlitTransLucent75ZRead_G",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  }
+ ]
+}

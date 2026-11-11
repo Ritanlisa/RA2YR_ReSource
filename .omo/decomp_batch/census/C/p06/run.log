@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x49fff0 EnumConnectionsClass::AddRef -> EnumConnectionsClass
+[conv] 0x6c98e0 Straw::Invoke -> Straw
+[conv] 0x487e80 CellClass::CopyTo -> CellClass
+[conv] 0x4d2910 FoggedObjectClass::ddtor -> FoggedObjectClass
+[conv] 0x52aea0 Base64Straw::DestroyStraw -> Base64Straw
+[conv] 0x5c94d0 MultiplayerObserverTeam::QueryInterface -> MultiplayerObserverTeam
+[conv] 0x6ac780 SelectClass_StripClass_SidebarClass::queryInterface -> SelectClass_StripClass_SidebarClass
+[conv] 0x720210 TextButtonClass::checkAmmunition -> TextButtonClass
+[conv] 0x76b6f0 WDTState::QueryInterface -> WDTState
+[conv] 0x53f5b0 ObjectClass::Network_Helper -> ObjectClass
+[conv] 0x499ce0 BlitPlainXlat::setTileIndex -> BlitPlainXlat
+[conv] 0x499e40 _RLEBlitTransZRemapXlatZRead_E::??_Gfacet_locale_std__UAEPAXI_Z_17 -> _RLEBlitTransZRemapXlatZRead_E
+[conv] 0x499fa0 _BlitTransLucent50_G::??_Gfacet_locale_std__UAEPAXI_Z_28 -> _BlitTransLucent50_G
+[conv] 0x49a100 _BlitTransLucent25ZReadWarp_G::??_Gfacet_locale_std__UAEPAXI_Z_39 -> _BlitTransLucent25ZReadWarp_G
+[conv] 0x49a3e0 _BlitTranslucent50NonzeroAlpha_G::Constructor_Blitter_1 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x49a880 _RLEBlitTransLucent75ZRead_G::??_Gfacet_locale_std__UAEPAXI_Z_61 -> _RLEBlitTransLucent75ZRead_G
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EnumConnectionsClass     rc=2
+[era] Straw                    rc=0
+[era] CellClass                rc=0
+[era] FoggedObjectClass        rc=0
+[era] Base64Straw              rc=0
+[era] MultiplayerObserverTeam  rc=0
+[era] SelectClass_StripClass_SidebarClass rc=0
+[era] TextButtonClass          rc=0
+[era] WDTState                 rc=0
+[era] ObjectClass              rc=2
+[era] BlitPlainXlat            rc=2
+[era] _RLEBlitTransZRemapXlatZRead_E rc=2
+[era] _BlitTransLucent50_G     rc=2
+[era] _BlitTransLucent25ZReadWarp_G rc=2
+[era] _BlitTranslucent50NonzeroAlpha_G rc=2
+[era] _RLEBlitTransLucent75ZRead_G rc=2
+=== diffasm byte-compare ===
+[diff] 0x6c98e0   MISMATCH         Straw::Invoke
+[diff] 0x487e80   MISMATCH         CellClass::CopyTo
+[diff] 0x4d2910   MISMATCH         FoggedObjectClass::ddtor
+[diff] 0x52aea0   MISMATCH         Base64Straw::DestroyStraw
+[diff] 0x5c94d0   MISMATCH         MultiplayerObserverTeam::QueryInterface
+[diff] 0x6ac780   MISMATCH         SelectClass_StripClass_SidebarClass::queryInterface
+[diff] 0x720210   MISMATCH         TextButtonClass::checkAmmunition
+[diff] 0x76b6f0   MISMATCH         WDTState::QueryInterface
+[ledger] 0x49fff0 EnumConnectionsClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c98e0 Delegate::Invoke -> NG (attempt 1)
+[ledger] 0x487e80 CellClass::CopyTo -> NG (attempt 1)
+[ledger] 0x4d2910 FoggedObjectClass::ddtor -> NG (attempt 1)
+[ledger] 0x52aea0 Delegate::DestroyStraw -> NG (attempt 1)
+[ledger] 0x5c94d0 MultiplayerObserverTeam::QueryInterface -> NG (attempt 1)
+[ledger] 0x6ac780 SidebarClass::queryInterface -> NG (attempt 1)
+[ledger] 0x720210 AbstractClass::checkAmmunition -> NG (attempt 1)
+[ledger] 0x76b6f0 WDTState::QueryInterface -> NG (attempt 1)
+[ledger] 0x406ee0 0x406ee0 -> PENDING (attempt 1)
+[ledger] 0x652940 0x652940 -> PENDING (attempt 1)
+[ledger] 0x75a100 0x75a100 -> PENDING (attempt 1)
+[ledger] 0x53f5b0 Network_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731a10 0x731a10 -> PENDING (attempt 1)
+[ledger] 0x499ce0 AbstractClass::setTileIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x499e40 ??_Gfacet_locale_std__UAEPAXI_Z_17 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x499fa0 ??_Gfacet_locale_std__UAEPAXI_Z_28 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a100 ??_Gfacet_locale_std__UAEPAXI_Z_39 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a3e0 BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49a880 ??_Gfacet_locale_std__UAEPAXI_Z_61 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1819,
+ "verdicts": {
+  "MISMATCH": 512,
+  "MATCH": 509,
+  "COMPILE_FAIL": 447,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 339,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 179,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 60,
+  "branch_polarity": 34,
+  "regalloc": 60,
+  "branch_order": 67,
+  "width_mismatch": 6,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 49.9,
+ "match_rate_of_total_pct": 28.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p06\batch_report.json

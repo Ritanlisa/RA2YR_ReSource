@@ -1,0 +1,11 @@
+{
+ "addr": "0x76B6F0",
+ "name": "WDTState::QueryInterface",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76B6F0",
+ "bytes_hex": "568bf1e8c8f8fffff644240801740956e838d4050083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x487E80",
+ "name": "CellClass::CopyTo",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487E80",
+ "bytes_hex": "568bf1e8d83cfffff644240801740956e8a80c340083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
