@@ -1,0 +1,8 @@
+{
+ "symbol": "?executeAction@CommandClass@@QAE_NPAH@Z",
+ "sym_key": "CommandClass::executeAction",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b411085c074128b4c24048b003b017508b801000000c2040033c0c20400",
+ "relocs": []
+}

@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p189\part_00
+=== convert (20 addrs) ===
+[conv] 0x71fbd0 _DynamicVectorClass_PAVTEventClass::GetItemIndex -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x71fd60 _VectorClass_PAVTEventClass::GetCapacity -> _VectorClass_PAVTEventClass
+[conv] 0x7212e0 _DynamicVectorClass_PAUThemeControl::GetItemIndex -> _DynamicVectorClass_PAUThemeControl
+[conv] 0x723760 _DynamicVectorClass_PAVTiberiumClass::GetItemIndex -> _DynamicVectorClass_PAVTiberiumClass
+[conv] 0x7238f0 _VectorClass_PAVTiberiumClass::GetCapacity -> _VectorClass_PAVTiberiumClass
+[conv] 0x724c60 _DynamicVectorClass_PBVToolTip::write -> _DynamicVectorClass_PBVToolTip
+[conv] 0x724df0 _VectorClass_PBVToolTip::setString -> _VectorClass_PBVToolTip
+[conv] 0x724fa0 CommandClass::executeAction -> CommandClass
+[conv] 0x74f390 IRTTITypeInfo::PointerToIndex -> IRTTITypeInfo
+[conv] 0x74f520 _VectorClass_PAVVeinholeMonsterClass::Write -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751900 _DynamicVectorClass_PAVVocClass::GetItemIndex -> _DynamicVectorClass_PAVVocClass
+[conv] 0x753680 _DynamicVectorClass_PAVVoxClass::getItemAt -> _DynamicVectorClass_PAVVoxClass
+[conv] 0x753810 _VectorClass_PAVVoxClass::GetCapacity -> _VectorClass_PAVVoxClass
+[conv] 0x75a460 _DynamicVectorClass_PAVMovieHandle::GetItemIndex -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x75a5f0 _VectorClass_PAVMovieHandle::GetCapacity -> _VectorClass_PAVMovieHandle
+[conv] 0x763fc0 _DynamicVectorClass_PAVWaypointPathClass::GetItemIndex -> _DynamicVectorClass_PAVWaypointPathClass
+[conv] 0x7656b0 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::setProperty -> _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x7659d0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Write -> _VectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766830 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::PointerToIndex -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x766da0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Write -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVTEventClass rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAUThemeControl rc=0
+[era] _DynamicVectorClass_PAVTiberiumClass rc=0
+[era] _VectorClass_PAVTiberiumClass rc=0
+[era] _DynamicVectorClass_PBVToolTip rc=0
+[era] _VectorClass_PBVToolTip  rc=0
+[era] CommandClass             rc=0
+[era] IRTTITypeInfo            rc=0
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] _DynamicVectorClass_PAVVocClass rc=0
+[era] _DynamicVectorClass_PAVVoxClass rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] _VectorClass_PAVMovieHandle rc=0
+[era] _DynamicVectorClass_PAVWaypointPathClass rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x71fbd0   MISMATCH         _DynamicVectorClass_PAVTEventClass::GetItemIndex
+[diff] 0x71fd60   MISMATCH         _VectorClass_PAVTEventClass::GetCapacity
+[diff] 0x7212e0   MISMATCH         _DynamicVectorClass_PAUThemeControl::GetItemIndex
+[diff] 0x723760   MISMATCH         _DynamicVectorClass_PAVTiberiumClass::GetItemIndex
+[diff] 0x7238f0   MISMATCH         _VectorClass_PAVTiberiumClass::GetCapacity
+[diff] 0x724c60   MISMATCH         _DynamicVectorClass_PBVToolTip::write
+[diff] 0x724df0   MISMATCH         _VectorClass_PBVToolTip::setString
+[diff] 0x724fa0   MISMATCH         CommandClass::executeAction
+[diff] 0x74f390   MISMATCH         IRTTITypeInfo::PointerToIndex
+[diff] 0x74f520   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::Write
+[diff] 0x751900   MISMATCH         _DynamicVectorClass_PAVVocClass::GetItemIndex
+[diff] 0x753680   MISMATCH         _DynamicVectorClass_PAVVoxClass::getItemAt
+[diff] 0x753810   MISMATCH         _VectorClass_PAVVoxClass::GetCapacity
+[diff] 0x75a460   MISMATCH         _DynamicVectorClass_PAVMovieHandle::GetItemIndex
+[diff] 0x75a5f0   MISMATCH         _VectorClass_PAVMovieHandle::GetCapacity
+[diff] 0x763fc0   MISMATCH         _DynamicVectorClass_PAVWaypointPathClass::GetItemIndex
+[diff] 0x7656b0   MISMATCH         _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::setProperty
+[diff] 0x7659d0   MISMATCH         _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Write
+[diff] 0x766830   MISMATCH         _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::PointerToIndex
+[diff] 0x766da0   MISMATCH         _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Write
+[ledger] 0x71fbd0 _DynamicVectorClass_PAVTEventClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x71fd60 _VectorClass_PAVTEventClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x7212e0 _DynamicVectorClass_PAUThemeControl::GetItemIndex -> NG (attempt 1)
+[ledger] 0x723760 _DynamicVectorClass_PAVTiberiumClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x7238f0 _VectorClass_PAVTiberiumClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x724c60 _DynamicVectorClass_PBVToolTip::write -> NG (attempt 1)
+[ledger] 0x724df0 _VectorClass_PBVToolTip::setString -> NG (attempt 1)
+[ledger] 0x724fa0 CommandClass::executeAction -> NG (attempt 1)
+[ledger] 0x74f390 IRTTITypeInfo::PointerToIndex -> NG (attempt 1)
+[ledger] 0x74f520 _VectorClass_PAVVeinholeMonsterClass::Write -> NG (attempt 1)
+[ledger] 0x751900 _DynamicVectorClass_PAVVocClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x753680 _DynamicVectorClass_PAVVoxClass::getItemAt -> NG (attempt 1)
+[ledger] 0x753810 _VectorClass_PAVVoxClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x75a460 _DynamicVectorClass_PAVMovieHandle::GetItemIndex -> NG (attempt 1)
+[ledger] 0x75a5f0 _VectorClass_PAVMovieHandle::GetCapacity -> NG (attempt 1)
+[ledger] 0x763fc0 _DynamicVectorClass_PAVWaypointPathClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x7656b0 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::setProperty -> NG (attempt 1)
+[ledger] 0x7659d0 _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Write -> NG (attempt 1)
+[ledger] 0x766830 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::PointerToIndex -> NG (attempt 1)
+[ledger] 0x766da0 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Write -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 19,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p189\batch_report.json
