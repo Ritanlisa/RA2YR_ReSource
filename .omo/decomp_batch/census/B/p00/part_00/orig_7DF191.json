@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DF191",
+ "name": "Object_Calc_7DF191",
+ "size": 221,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DF191",
+ "bytes_hex": "558bec83c4e8535152565733c08945ec8b451c8945f8c745e8000000008b75088975f48b7d0c897df08b45188945fc33c033db8a0684c07475668b1f8845e8895decc1eb078b45ecc1e80281e3f800000025f80000008bd38bc80faf5de80faf45e8c1eb08c1e80802da0f93c202c10f93c1fecafec90ada0ac1c1eb03c1e803c1e30ac1e0058b4decc1e1030bc381e1ff0000008bd10faf4de8c1e90802ca0f93c2feca0acac1e9030bc16689074683c702ff4dfc0f8578ffffff8b75f40375108975f48b7df0037d14897df0ff4df80f8553ffffff5f5e5a595bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

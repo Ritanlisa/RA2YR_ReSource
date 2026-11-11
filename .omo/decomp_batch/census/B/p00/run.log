@@ -1,0 +1,88 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x578640 ObjectClass::Math_Helper -> ObjectClass
+[conv] 0x491d90 _RLEBlitTransRemapDestZRead_E::sub_491D90 -> _RLEBlitTransRemapDestZRead_E
+[conv] 0x7e00a6 unknown::sub_7E00A6 -> unknown
+[conv] 0x496820 _RLEBlitTransDarkenZRead_G::sub_496820 -> _RLEBlitTransDarkenZRead_G
+[conv] 0x504790 unknown::UpdateHouseClassAnger -> unknown
+[conv] 0x578b70 ObjectClass::sub_578B70 -> ObjectClass
+[conv] 0x492250 _RLEBlitTransRemapDestZReadWrite_E::sub_492250 -> _RLEBlitTransRemapDestZReadWrite_E
+[conv] 0x497390 _RLEBlitTransDarkenZReadWrite_G::sub_497390 -> _RLEBlitTransDarkenZReadWrite_G
+[conv] 0x7deefa unknown::Object_Calc -> unknown
+[conv] 0x7defd7 unknown::Object_Calc_7DEFD7 -> unknown
+[conv] 0x7df0b4 unknown::Object_Calc_7DF0B4 -> unknown
+[conv] 0x7df191 unknown::Object_Calc_7DF191 -> unknown
+[conv] 0x7d4c00 unknown::_strcat -> unknown
+[conv] 0x491fd0 _RLEBlitTransXlatZReadWrite_E::sub_491FD0 -> _RLEBlitTransXlatZReadWrite_E
+[conv] 0x4be9d0 unknown::BlendColorPack -> unknown
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] _RLEBlitTransRemapDestZRead_E rc=2
+[era] unknown                  rc=2
+[era] _RLEBlitTransDarkenZRead_G rc=2
+[era] _RLEBlitTransRemapDestZReadWrite_E rc=2
+[era] _RLEBlitTransDarkenZReadWrite_G rc=2
+[era] _RLEBlitTransXlatZReadWrite_E rc=2
+=== diffasm byte-compare ===
+[diff] 0x7deefa   MISMATCH         unknown::Object_Calc
+[diff] 0x7defd7   MISMATCH         unknown::Object_Calc_7DEFD7
+[diff] 0x7df0b4   MISMATCH         unknown::Object_Calc_7DF0B4
+[diff] 0x7df191   MISMATCH         unknown::Object_Calc_7DF191
+[diff] 0x7d4c00   MISMATCH         unknown::_strcat
+[diff] 0x4be9d0   MISMATCH         unknown::BlendColorPack
+[ledger] 0x578640 Math_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491d90 sub_491D90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7e00a6 sub_7E00A6 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496820 sub_496820 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5889f0 0x5889f0 -> PENDING (attempt 1)
+[ledger] 0x504790 UpdateHouseClassAnger -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491b40 0x491b40 -> PENDING (attempt 1)
+[ledger] 0x4965b0 0x4965b0 -> PENDING (attempt 1)
+[ledger] 0x578b70 sub_578B70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x578d80 0x578d80 -> PENDING (attempt 1)
+[ledger] 0x492250 sub_492250 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x497390 sub_497390 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7deefa Object_Calc -> NG (attempt 1)
+[ledger] 0x7defd7 Object_Calc_7DEFD7 -> NG (attempt 1)
+[ledger] 0x7df0b4 Object_Calc_7DF0B4 -> NG (attempt 1)
+[ledger] 0x7df191 Object_Calc_7DF191 -> NG (attempt 1)
+[ledger] 0x7d4c00 _strcat -> NG (attempt 1)
+[ledger] 0x491fd0 sub_491FD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f66a0 0x5f66a0 -> PENDING (attempt 1)
+[ledger] 0x4be9d0 BlendColorPack -> NG (attempt 1)
+======================================================================
+{
+ "total": 977,
+ "verdicts": {
+  "MISMATCH": 273,
+  "MATCH": 411,
+  "COMPILE_FAIL": 278,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 8,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 3,
+  "codegen_shape": 105,
+  "ret_norm": 2,
+  "frame_sched": 57,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 42,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 60.1,
+ "match_rate_of_total_pct": 42.1,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p00\batch_report.json

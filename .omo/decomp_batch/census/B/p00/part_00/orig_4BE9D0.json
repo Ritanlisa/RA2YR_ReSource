@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BE9D0",
+ "name": "BlendColorPack",
+ "size": 226,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BE9D0",
+ "bytes_hex": "33c0568a01578b7c240c8bf003f233d28a510133c08a41028b4c241003d703c133c933ff81feff0000007c0bbf010000008d8e01ffffff81faff0000007c08478d8c1101ffffff3dff0000007c08478d8c0101ffffff85ff742983ff037d2483ff017502d1f981feff0000007d0203f181faff0000007d0203d13dff0000007d0703c13dff0000007e05b8ff00000081faff0000007e05baff00000081feff0000007e05beff0000008b0ddc0d8a005fd3f88b0dd80d8a00d3e08b0de40d8a00d3fa8b0de00d8a00d3e28b0dd40d8a00d3fe8b0dd00d8a000bc2d3e60bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

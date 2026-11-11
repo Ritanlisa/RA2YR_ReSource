@@ -1,0 +1,45 @@
+{
+ "symbol": "?BlendColorPack@unknown@@QAIHPAEHHH@Z",
+ "sym_key": "unknown::BlendColorPack",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "8b4c240433c08a02568bf08b44240c03f133c98a4a01578bf98b4c241403f833c08a420233d203c133c981feff0000007c0bba010000008d8e01ffffff81ffff0000007c08428d8c3901ffffff3dff0000007c08428d8c0101ffffff85d2743183fa037d2c83fa017502d1f981feff0000007d0203f181ffff0000007d0203f93dff0000000f9ec23dff0000007d0a03c13dff0000000f9ec284d27505b8ff00000081ffff0000007e05bfff00000081feff0000007e05beff0000008b0d00000000d3f88b0d00000000d3e08b0d00000000d3ff8b0d00000000d3e78b0d00000000d3fe8b0d000000000bc75fd3e60bc65ec20c00",
+ "relocs": [
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 206,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 214,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 222,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 230,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  }
+ ]
+}

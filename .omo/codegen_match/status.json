@@ -265,6 +265,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x40e1b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40e1b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x410260": {
   "attempts": 4,
   "first_diff": null,
@@ -1441,6 +1448,34 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x491b40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x491b40",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x491d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_491D90",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x491fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_491FD0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x492250": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_492250",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x493930": {
   "attempts": 11,
   "first_diff": "+4 push esi",
@@ -1601,6 +1636,27 @@
   "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x4965b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4965b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x496820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_496820",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x497390": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_497390",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4974b0": {
   "attempts": 15,
@@ -2176,6 +2232,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x4be9d0": {
+  "attempts": 1,
+  "first_diff": "+0 xor eax, eax",
+  "name": "BlendColorPack",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4c3d00": {
   "attempts": 10,
   "first_diff": "+0 sub esp, 0x10",
@@ -2477,6 +2540,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4e8110": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e8110",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4e8260": {
   "attempts": 1,
   "first_diff": null,
@@ -2574,6 +2644,13 @@
   "name": "Waypoint::FindByCell",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x504790": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UpdateHouseClassAnger",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x509610": {
   "attempts": 9,
@@ -3100,6 +3177,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x536c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x536c00",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
+ },
  "0x537130": {
   "attempts": 4,
   "first_diff": "+0 call 0x734120",
@@ -3562,6 +3646,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x578640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Math_Helper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x578710": {
   "attempts": 11,
   "first_diff": null,
@@ -3575,6 +3666,20 @@
   "name": "MapClass::IncrementRedrawCounter",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
+ },
+ "0x578b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_578B70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x578d80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x578d80",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5855a0": {
   "attempts": 8,
@@ -3617,6 +3722,13 @@
   "name": "JumpjetLocomotionClass::ClampToCellBounds",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x5889f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5889f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x588ac0": {
   "attempts": 9,
@@ -4212,6 +4324,13 @@
   "name": "Math::DistSq2D",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5f66a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5f66a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5f6a70": {
   "attempts": 8,
@@ -6201,6 +6320,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x750041": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x750041",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
  "0x753c70": {
   "attempts": 3,
   "first_diff": null,
@@ -6908,10 +7034,66 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7c87d6": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RedrawWindow",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c8818": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetTextMetricsA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c885a": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e1084]",
+  "name": "GetBkMode",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c889c": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RegOpenKeyExA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c88e4": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CLSIDFromString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7c891a": {
   "attempts": 8,
   "first_diff": null,
   "name": "OleUninitialize::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c892c": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SysFreeString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c896e": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ntohl",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c89b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sendto",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6957,10 +7139,73 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7c8a16": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c8a16",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7c8a58": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e159c]",
+  "name": "_BinkOpen_8",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c8fc9": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c8fc9",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7caacb": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7caacb",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
+ "0x7cabfb": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cabfb",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
  "0x7d1512": {
   "attempts": 6,
   "first_diff": null,
   "name": "GetCurrentThreadId::0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7d4c00": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
+  "name": "_strcat",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x7dc6fa": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7dc6fa",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
+ "0x7dce62": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e127c]",
+  "name": "HeapFree",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7dceaa": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IsBadWritePtr",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6971,12 +7216,68 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7dcef2": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e12c8]",
+  "name": "SetHandleCount",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x7dcf22": {
   "attempts": 6,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7dcf3a": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7dcf3a",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7dcf7c": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CompareStringW",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7dcfbe": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e1380]",
+  "name": "VariantInit",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7deefa": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "Object_Calc",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7defd7": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "Object_Calc_7DEFD7",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7df0b4": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "Object_Calc_7DF0B4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7df191": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "Object_Calc_7DF191",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7df9c0": {
   "attempts": 9,
@@ -6996,6 +7297,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7e00a6": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_7E00A6",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  }
