@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateTiberiumGrowth@MSOverlayAnim@@QAEHXZ",
+ "sym_key": "MSOverlayAnim::updateTiberiumGrowth",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0740983794004730333c0c3b801000000c3",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?Network_Init_5402B0@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::Network_Init_5402B0",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c0740ac781c400000000000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA05A4@@3IA",
+   "sym_key": "DataGlobal_AA05A4"
+  }
+ ]
+}

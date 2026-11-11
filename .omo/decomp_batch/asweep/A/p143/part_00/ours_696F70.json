@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetOption2@SessionClass@@QAEHXZ",
+ "sym_key": "SessionClass::GetOption2",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b5168b8feffffff3bd07506837964ff74038b4164c3",
+ "relocs": []
+}

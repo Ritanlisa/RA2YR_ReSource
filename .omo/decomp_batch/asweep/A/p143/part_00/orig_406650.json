@@ -1,0 +1,11 @@
+{
+ "addr": "0x406650",
+ "name": "AudioMixer::SetVolume",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x406650",
+ "bytes_hex": "8a5110b80100000084d074078b514c85d2740233c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

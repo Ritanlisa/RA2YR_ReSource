@@ -1,0 +1,11 @@
+{
+ "addr": "0x5402B0",
+ "name": "Network_Init_5402B0",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5402B0",
+ "bytes_hex": "a1a405aa0085c0740ac781c400000000000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

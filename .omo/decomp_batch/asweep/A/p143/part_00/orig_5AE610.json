@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE610",
+ "name": "Transform::Copy",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE610",
+ "bytes_hex": "568b7424088bc157b90c0000008bf8f3a55f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

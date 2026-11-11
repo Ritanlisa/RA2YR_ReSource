@@ -1,0 +1,8 @@
+{
+ "symbol": "?drawSelectionBox@TechnoClass@@QAEDH@Z",
+ "sym_key": "TechnoClass::drawSelectionBox",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b442404668b10668951208a4002884122c20400",
+ "relocs": []
+}

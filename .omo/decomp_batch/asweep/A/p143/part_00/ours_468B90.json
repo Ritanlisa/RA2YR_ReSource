@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateFlightPath@BulletClass@@QAEEXZ",
+ "sym_key": "BulletClass::UpdateFlightPath",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "8b81ac00000033c98a90f702000084d20f95c1f7d983e1fe83c1038ac1c3",
+ "relocs": []
+}

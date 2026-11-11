@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetVolume@AudioMixer@@QAEHXZ",
+ "sym_key": "AudioMixer::SetVolume",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8a5110b80100000084d074078b514c85d2740233c0c3",
+ "relocs": []
+}

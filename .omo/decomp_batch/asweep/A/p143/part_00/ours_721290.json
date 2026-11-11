@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetScoreVolume@GameSettings@@QAEHH@Z",
+ "sym_key": "GameSettings::SetScoreVolume",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b4424043dff0000007c05b8ff00000089410cc20400",
+ "relocs": []
+}

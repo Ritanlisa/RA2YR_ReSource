@@ -1,0 +1,11 @@
+{
+ "addr": "0x721290",
+ "name": "GameSettings::SetScoreVolume",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x721290",
+ "bytes_hex": "8b4424043dff0000007c05b8ff00000089410cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

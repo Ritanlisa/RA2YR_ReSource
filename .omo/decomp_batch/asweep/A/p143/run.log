@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p143\part_00
+=== convert (20 addrs) ===
+[conv] 0x406650 AudioMixer::SetVolume -> AudioMixer
+[conv] 0x42d470 CellStruct::Set -> CellStruct
+[conv] 0x4305e0 ObjectClass::sub_4305E0 -> ObjectClass
+[conv] 0x468b90 BulletClass::UpdateFlightPath -> BulletClass
+[conv] 0x4722a0 CaptureManagerClass::CannotControlAnyMore -> CaptureManagerClass
+[conv] 0x4a2350 TabClass::initStripClass -> TabClass
+[conv] 0x536710 PlanningModeCommandClass::performAction_35 -> PlanningModeCommandClass
+[conv] 0x53edc0 Network::CopyAddress_Small -> Network
+[conv] 0x5402b0 ObjectClass::Network_Init_5402B0 -> ObjectClass
+[conv] 0x5980a0 ObjectClass::sub_5980A0 -> ObjectClass
+[conv] 0x5ae610 Transform::Copy -> Transform
+[conv] 0x5cc740 MSOverlayAnim::updateTiberiumGrowth -> MSOverlayAnim
+[conv] 0x5d7550 sub_5D7550 -> _addr_5D
+[conv] 0x652540 ObjectClass::Network_Process_652540 -> ObjectClass
+[conv] 0x659470 TechnoClass::drawSelectionBox -> TechnoClass
+[conv] 0x696f30 MPCooperative::finalizeSession -> MPCooperative
+[conv] 0x696f70 SessionClass::GetOption2 -> SessionClass
+[conv] 0x69b700 Session::GetPlayerOption -> Session
+[conv] 0x69b720 Session::GetPlayerColor -> Session
+[conv] 0x721290 GameSettings::SetScoreVolume -> GameSettings
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AudioMixer               rc=0
+[era] CellStruct               rc=0
+[era] ObjectClass              rc=0
+[era] BulletClass              rc=0
+[era] CaptureManagerClass      rc=0
+[era] TabClass                 rc=2
+[era] PlanningModeCommandClass rc=0
+[era] Network                  rc=0
+[era] Transform                rc=0
+[era] MSOverlayAnim            rc=0
+[era] _addr_5D                 rc=2
+[era] TechnoClass              rc=0
+[era] MPCooperative            rc=0
+[era] SessionClass             rc=0
+[era] Session                  rc=2
+[era] GameSettings             rc=0
+=== diffasm byte-compare ===
+[diff] 0x406650   MATCH            AudioMixer::SetVolume
+[diff] 0x42d470   MISMATCH         CellStruct::Set
+[diff] 0x4305e0   MISMATCH         ObjectClass::sub_4305E0
+[diff] 0x5402b0   MATCH            ObjectClass::Network_Init_5402B0
+[diff] 0x5980a0   MISMATCH         ObjectClass::sub_5980A0
+[diff] 0x652540   MISMATCH         ObjectClass::Network_Process_652540
+[diff] 0x468b90   MISMATCH         BulletClass::UpdateFlightPath
+[diff] 0x4722a0   MISMATCH         CaptureManagerClass::CannotControlAnyMore
+[diff] 0x536710   MISMATCH         PlanningModeCommandClass::performAction_35
+[diff] 0x53edc0   MISMATCH         Network::CopyAddress_Small
+[diff] 0x5ae610   MATCH            Transform::Copy
+[diff] 0x5cc740   MATCH            MSOverlayAnim::updateTiberiumGrowth
+[diff] 0x659470   MISMATCH         TechnoClass::drawSelectionBox
+[diff] 0x696f30   MATCH            MPCooperative::finalizeSession
+[diff] 0x696f70   MISMATCH         SessionClass::GetOption2
+[diff] 0x721290   MATCH            GameSettings::SetScoreVolume
+[ledger] 0x406650 AudioMixer::SetVolume -> OK (attempt 1)
+[ledger] 0x42d470 CellStruct::Set -> NG (attempt 1)
+[ledger] 0x4305e0 ObjectClass::sub_4305E0 -> NG (attempt 1)
+[ledger] 0x468b90 BulletClass::UpdateFlightPath -> NG (attempt 1)
+[ledger] 0x4722a0 CaptureManagerClass::CannotControlAnyMore -> NG (attempt 1)
+[ledger] 0x4a2350 TabClass::initStripClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536710 PlanningModeCommandClass::performAction_35 -> NG (attempt 1)
+[ledger] 0x53edc0 Network::CopyAddress_Small -> NG (attempt 1)
+[ledger] 0x5402b0 ObjectClass::Network_Init_5402B0 -> OK (attempt 1)
+[ledger] 0x5980a0 ObjectClass::sub_5980A0 -> NG (attempt 1)
+[ledger] 0x5ae610 Transform::Copy -> OK (attempt 1)
+[ledger] 0x5cc740 MSOverlayAnim::updateTiberiumGrowth -> OK (attempt 1)
+[ledger] 0x5d7550 sub_5D7550 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652540 ObjectClass::Network_Process_652540 -> NG (attempt 1)
+[ledger] 0x659470 TechnoClass::drawSelectionBox -> NG (attempt 1)
+[ledger] 0x696f30 MPCooperative::finalizeSession -> OK (attempt 1)
+[ledger] 0x696f70 SessionClass::GetOption2 -> NG (attempt 1)
+[ledger] 0x69b700 Session::GetPlayerOption -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69b720 Session::GetPlayerColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721290 GameSettings::SetScoreVolume -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 6,
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "eval_order": 1,
+  "width_mismatch": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 37.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p143\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x652540",
+ "name": "Network_Process_652540",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x652540",
+ "bytes_hex": "8b0185c0740d8b51044283e27f4889510489018b01c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
