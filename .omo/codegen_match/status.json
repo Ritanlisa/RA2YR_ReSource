@@ -3261,11 +3261,15 @@
   "this_as_id": false
  },
  "0x40f270": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_40F270",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_40F270",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x40f2d0": {
   "attempts": 1,
@@ -4059,11 +4063,16 @@
   "this_as_id": false
  },
  "0x410e50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "StreamObj::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "StreamObj::Release",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x410e70": {
   "attempts": 1,
@@ -31746,11 +31755,16 @@
   "status": "OK"
  },
  "0x536ce0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_88",
+  "name": "GuardCommandClass::performAction_88",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_88",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536d10": {
   "attempts": 1,
@@ -31801,11 +31815,16 @@
   "this_as_id": false
  },
  "0x536ee0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_107",
+  "name": "AllianceCommandClass::performAction_107",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_107",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x536f30": {
   "attempts": 1,
@@ -31856,11 +31875,16 @@
   "this_as_id": false
  },
  "0x5370d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_125",
+  "name": "CenterREventCommandClass::performAction_125",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_125",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x537130": {
   "attempts": 4,
@@ -31901,11 +31925,16 @@
   "this_as_id": false
  },
  "0x5372b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_142",
+  "name": "OptionsCommandClass::performAction_142",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_142",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5372e0": {
   "attempts": 1,
@@ -31963,11 +31992,16 @@
   "this_as_id": false
  },
  "0x537600": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_162",
+  "name": "View4CommandClass::performAction_162",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_162",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5376a0": {
   "attempts": 1,
@@ -32013,11 +32047,16 @@
   "status": "OK"
  },
  "0x537910": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_180",
+  "name": "SetView4CommandClass::performAction_180",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_180",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5379a0": {
   "attempts": 1,
@@ -32177,11 +32216,16 @@
   "this_as_id": false
  },
  "0x537e90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CreateTeamCommand::performAction_194",
+  "name": "CursorPositionCommandClass::performAction_194",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CreateTeamCommand::performAction_194",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x537ef0": {
   "attempts": 1,
@@ -39347,11 +39391,16 @@
   "status": "NG"
  },
  "0x597fa0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 push 0x82ba48",
   "name": "MapSeedClass::GetCell",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MapSeedClass::GetCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x598030": {
   "attempts": 1,
@@ -50568,11 +50617,16 @@
   "status": "NG"
  },
  "0x631e30": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+8 mov dword ptr [esi], 0x7efda4",
   "name": "TacticalClass::saveConfig",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TacticalClass::saveConfig",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x631e50": {
   "attempts": 1,
@@ -50623,11 +50677,16 @@
   "this_as_id": false
  },
  "0x631fe0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_631FE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 jne 0x631fed",
+  "name": "ObjectClass::sub_631FE0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "sub_631FE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x632740": {
   "attempts": 1,
@@ -53478,11 +53537,16 @@
   "status": "NG"
  },
  "0x653f50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "CellClass::DrawWrapper",
+  "name": "RadarClass::DrawWrapper",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "CellClass::DrawWrapper",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x654320": {
   "attempts": 1,
@@ -58209,11 +58273,16 @@
   "this_as_id": false
  },
  "0x69adf0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "IsRandMap::Sed",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "IsRandMap::Sed",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x69b540": {
   "attempts": 1,
@@ -80156,7 +80225,7 @@
   "this_as_id": false
  },
  "0x775d90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_775D90",
@@ -80848,7 +80917,7 @@
   "this_as_id": false
  },
  "0x77c580": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C580",
@@ -81235,11 +81304,16 @@
   "this_as_id": false
  },
  "0x799d10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "Dialog::CloseAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Dialog::CloseAll",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x799ea0": {
   "attempts": 1,
@@ -82806,11 +82880,16 @@
   "this_as_id": false
  },
  "0x7b6760": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DeleteAndZero::Alt",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DeleteAndZero::Alt",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b68e0": {
   "attempts": 1,
@@ -84333,11 +84412,16 @@
   "status": "PENDING"
  },
  "0x7cac34": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_7CAC34",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push esi",
+  "name": "bad_cast::sub_7CAC34",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_7CAC34",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7cac4c": {
   "attempts": 1,
@@ -84610,11 +84694,16 @@
   "this_as_id": false
  },
  "0x7cca19": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "String::Wrapper5to4",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "String::Wrapper5to4",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7ccf1d": {
   "attempts": 1,

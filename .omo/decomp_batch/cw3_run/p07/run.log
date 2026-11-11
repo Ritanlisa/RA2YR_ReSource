@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x536ce0 GuardCommandClass::performAction_88 -> GuardCommandClass
+[conv] 0x536ee0 AllianceCommandClass::performAction_107 -> AllianceCommandClass
+[conv] 0x5370d0 CenterREventCommandClass::performAction_125 -> CenterREventCommandClass
+[conv] 0x5372b0 OptionsCommandClass::performAction_142 -> OptionsCommandClass
+[conv] 0x537600 View4CommandClass::performAction_162 -> View4CommandClass
+[conv] 0x537910 SetView4CommandClass::performAction_180 -> SetView4CommandClass
+[conv] 0x537e90 CursorPositionCommandClass::performAction_194 -> CursorPositionCommandClass
+[conv] 0x597fa0 MapSeedClass::GetCell -> MapSeedClass
+[conv] 0x69adf0 IsRandMap::Sed -> IsRandMap
+[conv] 0x775d90 sub_775D90 -> _addr_77
+[conv] 0x7cac34 bad_cast::sub_7CAC34 -> bad_cast
+[conv] 0x410e50 StreamObj::Release -> StreamObj
+[conv] 0x631e30 TacticalClass::saveConfig -> TacticalClass
+[conv] 0x7b6760 DeleteAndZero::Alt -> DeleteAndZero
+[conv] 0x40f270 sub_40F270 -> _addr_40
+[conv] 0x7cca19 String::Wrapper5to4 -> String
+[conv] 0x653f50 RadarClass::DrawWrapper -> RadarClass
+[conv] 0x799d10 Dialog::CloseAll -> Dialog
+[conv] 0x631fe0 ObjectClass::sub_631FE0 -> ObjectClass
+[conv] 0x77c580 sub_77C580 -> _addr_77
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GuardCommandClass        rc=2
+[era] AllianceCommandClass     rc=2
+[era] CenterREventCommandClass rc=2
+[era] OptionsCommandClass      rc=2
+[era] View4CommandClass        rc=2
+[era] SetView4CommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] MapSeedClass             rc=0
+[era] IsRandMap                rc=2
+[era] _addr_77                 rc=2
+[era] bad_cast                 rc=0
+[era] StreamObj                rc=2
+[era] TacticalClass            rc=0
+[era] DeleteAndZero            rc=2
+[era] _addr_40                 rc=2
+[era] String                   rc=2
+[era] RadarClass               rc=2
+[era] Dialog                   rc=2
+[era] ObjectClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x597fa0   MISMATCH         MapSeedClass::GetCell
+[diff] 0x7cac34   MISMATCH         bad_cast::sub_7CAC34
+[diff] 0x631e30   MISMATCH         TacticalClass::saveConfig
+[diff] 0x631fe0   MISMATCH         ObjectClass::sub_631FE0
+[ledger] 0x536ce0 GuardCommandClass::performAction_88 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x536ee0 AllianceCommandClass::performAction_107 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5370d0 CenterREventCommandClass::performAction_125 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5372b0 OptionsCommandClass::performAction_142 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537600 View4CommandClass::performAction_162 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537910 SetView4CommandClass::performAction_180 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x537e90 CursorPositionCommandClass::performAction_194 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x597fa0 MapSeedClass::GetCell -> NG (attempt 2)
+[ledger] 0x69adf0 IsRandMap::Sed -> COMPILE_FAIL (attempt 2)
+[ledger] 0x775d90 sub_775D90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cac34 bad_cast::sub_7CAC34 -> NG (attempt 2)
+[ledger] 0x410e50 StreamObj::Release -> COMPILE_FAIL (attempt 2)
+[ledger] 0x631e30 TacticalClass::saveConfig -> NG (attempt 2)
+[ledger] 0x7b6760 DeleteAndZero::Alt -> COMPILE_FAIL (attempt 2)
+[ledger] 0x40f270 sub_40F270 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cca19 String::Wrapper5to4 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x653f50 RadarClass::DrawWrapper -> COMPILE_FAIL (attempt 2)
+[ledger] 0x799d10 Dialog::CloseAll -> COMPILE_FAIL (attempt 2)
+[ledger] 0x631fe0 ObjectClass::sub_631FE0 -> NG (attempt 2)
+[ledger] 0x77c580 sub_77C580 -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "codegen_shape": 1,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p07\batch_report.json
