@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_492370@_RLEBlitTransRemapXlatZReadWrite_E@@QAEPAGPAE0HHHPAGHHHPAD@Z",
+ "sym_key": "_RLEBlitTransRemapXlatZReadWrite_E::sub_492370",
+ "size": 318,
+ "link_base": 0,
+ "bytes_hex": "518b542414538b1d0000000055568b742414578b7c242c85d2894c24108bc78beb7f0e8b4c2420894c24208b4c241ceb388b4c241c8a014184c074034aeb0733c08a012bd04185d27feb8b442420f7da2bc203f2894424208d04573b835c05000072062b83600500008b54242085d20f8ec10000008b7c243c8a114184d288542424746e0fbe178b6c24282bea33d2668b103bea7c128b542420474683c0024a8beb89542420eb748b5c24108b6c242481e5ff00000033d28b5b0483c00246478a142b8b5c24108b5b088a141a8b5c24288856ff660fbe57ff2bda8b542420668958fe8b1d000000004a8beb89542420eb2a8a11418854242c894c241c8b54242c8b4c242081e2ff0000002bca03f2894c24208b4c241c03fa8d04503b855c05000072062b85600500008b54242085d20f8f43ffffff5f5e5d5b59c22800",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 229,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}

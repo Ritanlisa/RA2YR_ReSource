@@ -14644,11 +14644,16 @@
   "this_as_id": false
  },
  "0x492370": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_492370",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov eax, dword ptr [esp + 0x1c]",
+  "name": "_RLEBlitTransRemapXlatZReadWrite_E::sub_492370",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_492370",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4924c0": {
   "attempts": 1,
@@ -15059,18 +15064,28 @@
   "status": "NG"
  },
  "0x494d90": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "name": "_BlitTransZRemapXlatAlphaZRead_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x494f20": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+  "name": "_BlitTransLucent75AlphaZRead_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x495030": {
   "attempts": 1,
@@ -15080,18 +15095,28 @@
   "status": "OK"
  },
  "0x4950c0": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+  "name": "_BlitTransLucent50AlphaZRead_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x495250": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+  "name": "_BlitTransLucent25AlphaZRead_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4953f0": {
   "attempts": 10,
@@ -15108,11 +15133,16 @@
   "status": "OK"
  },
  "0x495590": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "name": "_BlitTransLucent50AlphaZReadWarp_G::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x495730": {
   "attempts": 10,
@@ -15279,25 +15309,40 @@
   "this_as_id": false
  },
  "0x496930": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_496930",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov edx, dword ptr [esp + 8]",
+  "name": "_RLEBlitTransLucent75ZRead_G::sub_496930",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_496930",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x496a80": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_496A80",
+  "name": "_RLEBlitTransLucent50ZRead_G::sub_496A80",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_496A80",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x496bc0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_496BC0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov edx, dword ptr [esp + 8]",
+  "name": "_RLEBlitTransLucent25ZRead_G::sub_496BC0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_496BC0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x496d10": {
   "attempts": 1,
@@ -15307,11 +15352,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x496e60": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_496E60",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 mov edx, dword ptr [esp + 8]",
+  "name": "_RLEBlitTransLucent50ZReadWarp_G::sub_496E60",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_496E60",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x496fb0": {
   "attempts": 1,
@@ -37905,11 +37955,16 @@
   "this_as_id": false
  },
  "0x578c50": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_578C50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 0x10",
+  "name": "ObjectClass::sub_578C50",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_578C50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x578d80": {
   "attempts": 2,
@@ -66402,11 +66457,16 @@
   "this_as_id": false
  },
  "0x6e8000": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "sub_6E8000",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 push esi",
+  "name": "ObjectClass::sub_6E8000",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "sub_6E8000",
+  "rule_violations": 10,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6e8160": {
   "attempts": 1,
@@ -76578,11 +76638,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x75ef30": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 sub esp, 8",
   "name": "sub_75EF30",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_75EF30",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x75f140": {
   "attempts": 8,
@@ -83695,11 +83759,15 @@
   "this_as_id": false
  },
  "0x7c91d0": {
-  "attempts": 5,
+  "attempts": 6,
+  "clean": false,
   "first_diff": null,
   "name": "_strncpy",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "_strncpy",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7c92d0": {
   "attempts": 1,
@@ -85636,7 +85704,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7df7c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DF7C0",
@@ -85647,7 +85715,7 @@
   "this_as_id": false
  },
  "0x7df8c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DF8C0",
@@ -85669,28 +85737,43 @@
   "this_as_id": false
  },
  "0x7df9c0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Voxel::FacePixelBuffer",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7dfae0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Voxel::FacePixelBufferEx",
+  "rule_violations": 22,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7dfc00": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Voxel::FacePixelBuffer3",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7dfd00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "Audio_Process_7DFD00",

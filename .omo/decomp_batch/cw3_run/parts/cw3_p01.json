@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6e8000",
+  "name": "sub_6E8000",
+  "cls": null,
+  "size": 240,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x75ef30",
+  "name": "sub_75EF30",
+  "cls": null,
+  "size": 240,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7dfc00",
+  "name": "Voxel::FacePixelBuffer3",
+  "cls": null,
+  "size": 246,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7dfd00",
+  "name": "Audio_Process_7DFD00",
+  "cls": null,
+  "size": 246,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7df8c0",
+  "name": "Audio_Process_7DF8C0",
+  "cls": null,
+  "size": 247,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x494d90",
+  "name": "BlitTransZRemapXlatAlphaZRead_ushort::AddRef",
+  "cls": null,
+  "size": 248,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2027",
+  "first_msg": "use of undefined type 'Stream'"
+ },
+ {
+  "addr": "0x7df7c0",
+  "name": "Audio_Process_7DF7C0",
+  "cls": null,
+  "size": 248,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7c91d0",
+  "name": "_strncpy",
+  "cls": null,
+  "size": 254,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2043",
+  "first_msg": "illegal break"
+ },
+ {
+  "addr": "0x496a80",
+  "name": "sub_496A80",
+  "cls": null,
+  "size": 255,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x4950c0",
+  "name": "BlitTransLucent50AlphaZRead_ushort::AddRef",
+  "cls": null,
+  "size": 256,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2039",
+  "first_msg": "'m_1' : is not a member of '_BlitTransLucent50AlphaZRead_G'"
+ },
+ {
+  "addr": "0x496e60",
+  "name": "sub_496E60",
+  "cls": null,
+  "size": 260,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x578c50",
+  "name": "sub_578C50",
+  "cls": null,
+  "size": 260,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x495590",
+  "name": "BlitTransLucent50AlphaZReadWarp_ushort::AddRef",
+  "cls": null,
+  "size": 262,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x496930",
+  "name": "sub_496930",
+  "cls": null,
+  "size": 262,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x496bc0",
+  "name": "sub_496BC0",
+  "cls": null,
+  "size": 262,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x492370",
+  "name": "sub_492370",
+  "cls": null,
+  "size": 265,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x7df9c0",
+  "name": "Voxel::FacePixelBuffer",
+  "cls": null,
+  "size": 265,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7dfae0",
+  "name": "Voxel::FacePixelBufferEx",
+  "cls": null,
+  "size": 265,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x494f20",
+  "name": "BlitTransLucent75AlphaZRead_ushort::AddRef",
+  "cls": null,
+  "size": 267,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x495250",
+  "name": "BlitTransLucent25AlphaZRead_ushort::AddRef",
+  "cls": null,
+  "size": 267,
+  "family": "cw3_B",
+  "layer": "B",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ }
+]
