@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x487150",
+  "name": "FootClass::checkTerrainSpeed",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 12,
+  "part": "p39",
+  "unit": "FootClass",
+  "emitted": "FootClass::checkTerrainSpeed",
+  "first_diff": {
+   "orig": "+4 inc word ptr [ecx + eax*2 + 0x7c]",
+   "ours": "+4 inc byte ptr [eax + ecx + 0x7c]"
+  },
+  "ours_size": 11
+ },
+ {
+  "addr": "0x487160",
+  "name": "FootClass::updateLocomotion",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 12,
+  "part": "p39",
+  "unit": "FootClass",
+  "emitted": "FootClass::updateLocomotion",
+  "first_diff": {
+   "orig": "+4 dec word ptr [ecx + eax*2 + 0x7c]",
+   "ours": "+4 dec byte ptr [eax + ecx + 0x7c]"
+  },
+  "ours_size": 11
+ },
+ {
+  "addr": "0x50da10",
+  "name": "GlobalHelper_0E4440_Helper",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 12,
+  "part": "p40",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::GlobalHelper_0E4440_Helper",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ef98]",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x712120",
+  "name": "AircraftTypeClass::GetGameplayValue",
+  "family": "RELOC_KEY",
+  "path": "const_fold",
+  "size": 12,
+  "part": "p40",
+  "unit": "TechnoTypeClass",
+  "emitted": "TechnoTypeClass::GetGameplayValue",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0x8871e0]",
+   "ours": "+0 mov eax, dword ptr [0x240]"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x747f20",
+  "name": "UnitTypeClass::GetGameplayValue",
+  "family": "RELOC_KEY",
+  "path": "const_fold",
+  "size": 12,
+  "part": "p40",
+  "unit": "UnitTypeClass",
+  "emitted": "UnitTypeClass::GetGameplayValue",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0x8871e0]",
+   "ours": "+0 mov eax, dword ptr [0x240]"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x7d79fb",
+  "name": "__FillZeroMan",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 12,
+  "part": "p40",
+  "unit": "_addr_7D",
+  "emitted": "__FillZeroMan",
+  "first_diff": {
+   "orig": "+0 push edi",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x407150",
+  "name": "EndBufferMixer",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p41",
+  "unit": "_addr_40",
+  "emitted": "EndBufferMixer",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x40ccc0",
+  "name": "VectorClass::GetAt",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 13,
+  "part": "p41",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::GetAt",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 11
+ },
+ {
+  "addr": "0x41fd30",
+  "name": "sub_41FD30",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p41",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_41FD30",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x41fd40",
+  "name": "sub_41FD40",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p41",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_41FD40",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x41fd50",
+  "name": "sub_41FD50",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p41",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_41FD50",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x433c90",
+  "name": "Char::Swap",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 13,
+  "part": "p42",
+  "unit": "Char",
+  "emitted": "Char::Swap",
+  "first_diff": {
+   "orig": "+0 mov dl, byte ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 23
+ },
+ {
+  "addr": "0x433ce0",
+  "name": "sub_433CE0",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 13,
+  "part": "p42",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_433CE0",
+  "first_diff": {
+   "orig": "+4 mov al, byte ptr [ecx + 0x40]",
+   "ours": "+4 mov al, byte ptr [ecx + 0x3c]"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x434100",
+  "name": "sub_434100",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 13,
+  "part": "p42",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_434100",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 4]",
+   "ours": "+0 mov dl, byte ptr [esp + 4]"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x4e1460",
+  "name": "DialogControl::Show",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 13,
+  "part": "p43",
+  "unit": "ShpButtonClass",
+  "emitted": "ShpButtonClass::Show",
+  "first_diff": {
+   "orig": "+0 mov al, 1",
+   "ours": "+0 mov eax, dword ptr [ecx]"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x4f6a00",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p45",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::GetItem",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x4f6a10",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p45",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::GetItem_0",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x50da40",
+  "name": "sub_50DA40",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 13,
+  "part": "p45",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_50DA40",
+  "first_diff": {
+   "orig": "+10 ret 4",
+   "ours": "+10 ret 8"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x5367e0",
+  "name": "CreateTeamCommand::performAction_43",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p46",
+  "unit": "CombatantSelectCommandClass",
+  "emitted": "CombatantSelectCommandClass::performAction_43",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x536880",
+  "name": "CreateTeamCommand::performAction_49",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p46",
+  "unit": "TypeSelectCommandClass",
+  "emitted": "TypeSelectCommandClass::performAction_49",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 15
+ }
+]

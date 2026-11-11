@@ -1,0 +1,505 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 14,
+   "NO_HIT": 6
+  },
+  "by_family_total": {
+   "WIDTH": 2,
+   "RELOC_KEY": 3,
+   "STRUCTURAL": 6,
+   "RET_ARITY": 6,
+   "MEMBER_OFFSET": 1,
+   "TWO_FOUR_INSNS": 2
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x487150",
+   "name": "FootClass::checkTerrainSpeed",
+   "family": "WIDTH",
+   "path": "width_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "FootClass",
+   "method": "checkTerrainSpeed",
+   "unit": "FootClass",
+   "head": "int FootClass::checkTerrainSpeed(int p0)",
+   "baseline_first_diff": {
+    "orig": "+4 inc word ptr [ecx + eax*2 + 0x7c]",
+    "ours": "+4 inc byte ptr [eax + ecx + 0x7c]"
+   }
+  },
+  {
+   "addr": "0x487160",
+   "name": "FootClass::updateLocomotion",
+   "family": "WIDTH",
+   "path": "width_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "FootClass",
+   "method": "updateLocomotion",
+   "unit": "FootClass",
+   "head": "int FootClass::updateLocomotion(int p0)",
+   "baseline_first_diff": {
+    "orig": "+4 dec word ptr [ecx + eax*2 + 0x7c]",
+    "ours": "+4 dec byte ptr [eax + ecx + 0x7c]"
+   }
+  },
+  {
+   "addr": "0x50da10",
+   "name": "GlobalHelper_0E4440_Helper",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "GlobalHelper_0E4440_Helper",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::GlobalHelper_0E4440_Helper()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0xa8ef98]",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x712120",
+   "name": "AircraftTypeClass::GetGameplayValue",
+   "family": "RELOC_KEY",
+   "path": "const_fold",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoTypeClass",
+   "method": "GetGameplayValue",
+   "unit": "TechnoTypeClass",
+   "head": "int TechnoTypeClass::GetGameplayValue()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0x8871e0]",
+    "ours": "+0 mov eax, dword ptr [0x240]"
+   }
+  },
+  {
+   "addr": "0x747f20",
+   "name": "UnitTypeClass::GetGameplayValue",
+   "family": "RELOC_KEY",
+   "path": "const_fold",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "UnitTypeClass",
+   "method": "GetGameplayValue",
+   "unit": "UnitTypeClass",
+   "head": "int UnitTypeClass::GetGameplayValue()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0x8871e0]",
+    "ours": "+0 mov eax, dword ptr [0x240]"
+   }
+  },
+  {
+   "addr": "0x7d79fb",
+   "name": "__FillZeroMan",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push edi",
+      "ours": "+0 mov eax, dword ptr [esp + 4]"
+     },
+     "ours_size": 17
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push edi",
+      "ours": "+0 mov eax, dword ptr [esp + 4]"
+     },
+     "ours_size": 17
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "__FillZeroMan",
+   "unit": "_addr_7D",
+   "head": "int __cdecl __FillZeroMan(unsigned int * p0)",
+   "baseline_first_diff": {
+    "orig": "+0 push edi",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x407150",
+   "name": "EndBufferMixer",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+2 or al, 1",
+      "ours": "+2 shl edx, 0x10"
+     },
+     "ours_size": 11
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [ecx]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 26
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "EndBufferMixer",
+   "unit": "_addr_40",
+   "head": "unsigned char __fastcall EndBufferMixer(int * p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [ecx]",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x40ccc0",
+   "name": "VectorClass::GetAt",
+   "family": "STRUCTURAL",
+   "path": "eval_order",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "VectorClass",
+   "method": "GetAt",
+   "unit": "VectorClass",
+   "head": "int VectorClass::GetAt(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [ecx + 4]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   }
+  },
+  {
+   "addr": "0x41fd30",
+   "name": "sub_41FD30",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_41FD30",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_41FD30(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x41fd40",
+   "name": "sub_41FD40",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_41FD40",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_41FD40(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x41fd50",
+   "name": "sub_41FD50",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_41FD50",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_41FD50(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x433c90",
+   "name": "Char::Swap",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p100\\t_433C90\\Char.cpp(9) : error C2065: 'result' : undeclared identifier"
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Char",
+   "method": "Swap",
+   "unit": "Char",
+   "head": "char Char::Swap(char p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov dl, byte ptr [esp + 4]",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "variants_generated": [
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x433ce0",
+   "name": "sub_433CE0",
+   "family": "MEMBER_OFFSET",
+   "path": "const_fold",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov al, byte ptr [ecx + 0x40]",
+      "ours": "+4 mov al, byte ptr [ecx + 0x3c]"
+     },
+     "ours_size": 13
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_433CE0",
+   "unit": "ObjectClass",
+   "head": "char ObjectClass::sub_433CE0(int p0)",
+   "baseline_first_diff": {
+    "orig": "+4 mov al, byte ptr [ecx + 0x40]",
+    "ours": "+4 mov al, byte ptr [ecx + 0x3c]"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x434100",
+   "name": "sub_434100",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 4]",
+      "ours": "+0 mov eax, dword ptr [esp + 4]"
+     },
+     "ours_size": 15
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_434100",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_434100(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 4]",
+    "ours": "+0 mov dl, byte ptr [esp + 4]"
+   },
+   "variants_generated": [
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x4e1460",
+   "name": "DialogControl::Show",
+   "family": "STRUCTURAL",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, 1",
+      "ours": "+0 mov eax, dword ptr [ecx]"
+     },
+     "ours_size": 12
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ShpButtonClass",
+   "method": "Show",
+   "unit": "ShpButtonClass",
+   "head": "int ShpButtonClass::Show()",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, 1",
+    "ours": "+0 mov eax, dword ptr [ecx]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x4f6a00",
+   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "HouseClass",
+   "method": "GetItem",
+   "unit": "HouseClass",
+   "head": "int __stdcall HouseClass::GetItem(int p0)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x4f6a10",
+   "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "HouseClass",
+   "method": "GetItem_0",
+   "unit": "HouseClass",
+   "head": "int __stdcall HouseClass::GetItem_0(int p0)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x50da40",
+   "name": "sub_50DA40",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_50DA40",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_50DA40(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+10 ret 4",
+    "ours": "+10 ret 8"
+   }
+  },
+  {
+   "addr": "0x5367e0",
+   "name": "CreateTeamCommand::performAction_43",
+   "family": "TWO_FOUR_INSNS",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "CombatantSelectCommandClass",
+   "method": "performAction_43",
+   "unit": "CombatantSelectCommandClass",
+   "head": "int __stdcall CombatantSelectCommandClass::performAction_43(unsigned int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x536880",
+   "name": "CreateTeamCommand::performAction_49",
+   "family": "TWO_FOUR_INSNS",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TypeSelectCommandClass",
+   "method": "performAction_49",
+   "unit": "TypeSelectCommandClass",
+   "head": "int __stdcall TypeSelectCommandClass::performAction_49(unsigned int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 push ecx"
+   }
+  }
+ ]
+}
