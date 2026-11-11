@@ -41,3 +41,4 @@
 {"part": 40, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 16, "RET_ARITY": 3, "RET_VOID_STUB": 1}, "by_family_hits": {}}}
 {"part": 41, "n": 20, "seconds": 1.4, "summary": {"verdicts": {"NO_VARIANT": 12, "NO_HIT": 8}, "by_family_total": {"FOLD_STORE": 1, "STRUCTURAL": 9, "RELOC_KEY": 2, "ONE_INSN": 4, "REG_ALLOC": 1, "RET_ARITY": 2, "FRAME": 1}, "by_family_hits": {}}}
 {"part": 42, "n": 20, "seconds": 1.4, "summary": {"verdicts": {"NO_VARIANT": 11, "NO_HIT": 9}, "by_family_total": {"RET_ARITY": 2, "STRUCTURAL": 12, "ONE_INSN": 1, "TWO_FOUR_INSNS": 3, "WIDTH": 1, "MEMBER_OFFSET": 1}, "by_family_hits": {}}}
+{"part": 43, "n": 20, "seconds": 1.0, "summary": {"verdicts": {"NO_VARIANT": 16, "NO_HIT": 3, "MATCH": 1}, "by_family_total": {"STRUCTURAL": 6, "RELOC_KEY": 2, "RET_ARITY": 2, "RET_VOID_STUB": 6, "JCC_INVERT": 1, "JCC_INVERT_PLUS": 1, "FRAME": 1, "TWO_FOUR_INSNS": 1}, "by_family_hits": {"JCC_INVERT": 1}}}
