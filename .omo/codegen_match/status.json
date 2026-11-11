@@ -300,6 +300,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40e840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_ScriptClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x410260": {
   "attempts": 4,
   "first_diff": null,
@@ -607,6 +614,13 @@
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x421850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_AlphaShapeClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x421b60": {
   "attempts": 1,
@@ -937,6 +951,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x43af10": {
+  "attempts": 1,
+  "first_diff": "+2 xor ecx, ecx",
+  "name": "sub_43AF10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x448070": {
   "attempts": 8,
   "first_diff": "+61 jle 0x44811d",
@@ -1137,6 +1158,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "BulletClass::CheckMissionAbort",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x46b630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_BulletClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1515,6 +1543,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "Return::HRESULT_Fail",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x48ad60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_DamageGroup::Clear",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2470,6 +2505,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x4b9c90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_CrossDissolveEffect::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4ba5a0": {
   "attempts": 9,
   "first_diff": null,
@@ -2841,6 +2883,41 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e82e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::COMStub_6",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e85f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_TriggerTypeClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e89b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_AnimClass::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e8d10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_SmudgeTypeClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4e90d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_ParticleTypeClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4f2b40": {
   "attempts": 4,
   "first_diff": null,
@@ -3008,6 +3085,13 @@
   "name": "HouseClass::GetStartCoords",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x50e000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::SetMapSeed",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x50e0e0": {
   "attempts": 9,
@@ -3274,6 +3358,13 @@
   "name": "TechnoClass::GetThreatValue_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5224d0": {
+  "attempts": 1,
+  "first_diff": "+6 mov al, byte ptr [eax + 0xec3]",
+  "name": "InfantryClass::IsBridgeRepairEnabled",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
  },
  "0x522a50": {
   "attempts": 1,
@@ -3639,6 +3730,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53da90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_IonBlastClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x53ee70": {
   "attempts": 8,
   "first_diff": "+0 mov eax, ecx",
@@ -3881,6 +3979,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SliderClass::vt_method_558120",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x55a1a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::vt06",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -4570,6 +4675,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c5120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CoopCampaignVector::Seek",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5c5d30": {
   "attempts": 11,
   "first_diff": "+0 jmp 0x5d62c0",
@@ -4765,6 +4877,13 @@
   "name": "HouseClass::InitAlliances",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5d8160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::loadTheater",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5d87e0": {
   "attempts": 5,
@@ -5326,6 +5445,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x63dc10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_PlanningBranchClass::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x63f2e0": {
   "attempts": 1,
   "first_diff": null,
@@ -5662,6 +5788,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x67a460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TypeList_VoxelAnim::Clear",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x67a730": {
   "attempts": 1,
   "first_diff": null,
@@ -5785,6 +5918,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "SessionClass::GetGameSpeed",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x69c650": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_GlobalPacketType::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },

@@ -1,0 +1,120 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x40e840 _VectorClass_PAVScriptClass::Get -> _VectorClass_PAVScriptClass
+[conv] 0x421850 _VectorClass_PAVAlphaShapeClass::Get -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x43af10 ObjectClass::sub_43AF10 -> ObjectClass
+[conv] 0x46b630 _VectorClass_PAVBulletClass::Get -> _VectorClass_PAVBulletClass
+[conv] 0x48ad60 _VectorClass_PAUDamageGroup::Clear -> _VectorClass_PAUDamageGroup
+[conv] 0x4b9c90 _VectorClass_PAUCrossDissolveEffect::Clear -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4e82e0 _VectorClass_PAVTagClass::COMStub_6 -> _VectorClass_PAVTagClass
+[conv] 0x4e85f0 _VectorClass_PAVTriggerTypeClass::Get -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4e89b0 _VectorClass_PAVAnimClass::Clear -> _VectorClass_PAVAnimClass
+[conv] 0x4e8d10 _VectorClass_PAVSmudgeTypeClass::Get -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4e90d0 _VectorClass_PAVParticleTypeClass::Get -> _VectorClass_PAVParticleTypeClass
+[conv] 0x50e000 HouseClass::SetMapSeed -> HouseClass
+[conv] 0x5224d0 InfantryClass::IsBridgeRepairEnabled -> InfantryClass
+[conv] 0x53da90 _VectorClass_PAVIonBlastClass::Get -> _VectorClass_PAVIonBlastClass
+[conv] 0x55a1a0 _VectorClass_PAVFileEntryClass::vt06 -> _VectorClass_PAVFileEntryClass
+[conv] 0x5c5120 _VectorClass_PAVCoopCampaignClass::Seek -> _VectorClass_PAVCoopCampaignClass
+[conv] 0x5d8160 _VectorClass_PAVMultiplayerGameMode::loadTheater -> _VectorClass_PAVMultiplayerGameMode
+[conv] 0x63dc10 _VectorClass_PAVPlanningBranchClass::Clear -> _VectorClass_PAVPlanningBranchClass
+[conv] 0x67a460 _VectorClass_PBVVoxelAnimTypeClass::Clear -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x69c650 _VectorClass_PAUGlobalPacketType::Get -> _VectorClass_PAUGlobalPacketType
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVBulletClass rc=0
+[era] _VectorClass_PAUDamageGroup rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _VectorClass_PAVTagClass rc=0
+[era] _VectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVAnimClass rc=0
+[era] _VectorClass_PAVSmudgeTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] HouseClass               rc=0
+[era] InfantryClass            rc=0
+[era] _VectorClass_PAVIonBlastClass rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] _VectorClass_PAVCoopCampaignClass rc=0
+[era] _VectorClass_PAVMultiplayerGameMode rc=0
+[era] _VectorClass_PAVPlanningBranchClass rc=0
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAUGlobalPacketType rc=0
+=== diffasm byte-compare ===
+[diff] 0x40e840   MATCH            _VectorClass_PAVScriptClass::Get
+[diff] 0x421850   MATCH            _VectorClass_PAVAlphaShapeClass::Get
+[diff] 0x43af10   MISMATCH         ObjectClass::sub_43AF10
+[diff] 0x46b630   MATCH            _VectorClass_PAVBulletClass::Get
+[diff] 0x48ad60   MATCH            _VectorClass_PAUDamageGroup::Clear
+[diff] 0x4b9c90   MATCH            _VectorClass_PAUCrossDissolveEffect::Clear
+[diff] 0x4e82e0   MATCH            _VectorClass_PAVTagClass::COMStub_6
+[diff] 0x4e85f0   MATCH            _VectorClass_PAVTriggerTypeClass::Get
+[diff] 0x4e89b0   MATCH            _VectorClass_PAVAnimClass::Clear
+[diff] 0x4e8d10   MATCH            _VectorClass_PAVSmudgeTypeClass::Get
+[diff] 0x4e90d0   MATCH            _VectorClass_PAVParticleTypeClass::Get
+[diff] 0x50e000   MATCH            HouseClass::SetMapSeed
+[diff] 0x5224d0   MISMATCH         InfantryClass::IsBridgeRepairEnabled
+[diff] 0x53da90   MATCH            _VectorClass_PAVIonBlastClass::Get
+[diff] 0x55a1a0   MATCH            _VectorClass_PAVFileEntryClass::vt06
+[diff] 0x5c5120   MATCH            _VectorClass_PAVCoopCampaignClass::Seek
+[diff] 0x5d8160   MATCH            _VectorClass_PAVMultiplayerGameMode::loadTheater
+[diff] 0x63dc10   MATCH            _VectorClass_PAVPlanningBranchClass::Clear
+[diff] 0x67a460   MATCH            _VectorClass_PBVVoxelAnimTypeClass::Clear
+[diff] 0x69c650   MATCH            _VectorClass_PAUGlobalPacketType::Get
+[ledger] 0x40e840 VectorClass_ptr_ScriptClass::Get -> OK (attempt 1)
+[ledger] 0x421850 VectorClass_ptr_AlphaShapeClass::Get -> OK (attempt 1)
+[ledger] 0x43af10 sub_43AF10 -> NG (attempt 1)
+[ledger] 0x46b630 VectorClass_ptr_BulletClass::Get -> OK (attempt 1)
+[ledger] 0x48ad60 VectorClass_ptr_DamageGroup::Clear -> OK (attempt 1)
+[ledger] 0x4b9c90 VectorClass_ptr_CrossDissolveEffect::Clear -> OK (attempt 1)
+[ledger] 0x4e82e0 HouseClass::COMStub_6 -> OK (attempt 1)
+[ledger] 0x4e85f0 VectorClass_ptr_TriggerTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e89b0 VectorClass_ptr_AnimClass::Clear -> OK (attempt 1)
+[ledger] 0x4e8d10 VectorClass_ptr_SmudgeTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e90d0 VectorClass_ptr_ParticleTypeClass::Get -> OK (attempt 1)
+[ledger] 0x50e000 HouseClass::SetMapSeed -> OK (attempt 1)
+[ledger] 0x5224d0 InfantryClass::IsBridgeRepairEnabled -> NG (attempt 1)
+[ledger] 0x53da90 VectorClass_ptr_IonBlastClass::Get -> OK (attempt 1)
+[ledger] 0x55a1a0 LoadOptions::vt06 -> OK (attempt 1)
+[ledger] 0x5c5120 CoopCampaignVector::Seek -> OK (attempt 1)
+[ledger] 0x5d8160 ScenarioClass::loadTheater -> OK (attempt 1)
+[ledger] 0x63dc10 VectorClass_ptr_PlanningBranchClass::Clear -> OK (attempt 1)
+[ledger] 0x67a460 TypeList_VoxelAnim::Clear -> OK (attempt 1)
+[ledger] 0x69c650 VectorClass_ptr_GlobalPacketType::Get -> OK (attempt 1)
+======================================================================
+{
+ "total": 1157,
+ "verdicts": {
+  "MISMATCH": 298,
+  "MATCH": 475,
+  "COMPILE_FAIL": 320,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 57,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 117,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 24,
+  "regalloc": 45,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.4,
+ "match_rate_of_total_pct": 41.1,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p05\batch_report.json

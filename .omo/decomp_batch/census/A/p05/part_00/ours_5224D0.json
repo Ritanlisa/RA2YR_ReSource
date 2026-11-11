@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsBridgeRepairEnabled@InfantryClass@@QAEDXZ",
+ "sym_key": "InfantryClass::IsBridgeRepairEnabled",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b81c00600008a406cc3",
+ "relocs": []
+}

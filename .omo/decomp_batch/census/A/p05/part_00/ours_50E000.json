@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetMapSeed@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::SetMapSeed",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b442404898190540000c20400",
+ "relocs": []
+}
