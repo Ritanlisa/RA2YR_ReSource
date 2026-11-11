@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E5310",
+ "name": "Lobby::InvalidateFactionCombos",
+ "size": 177,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E5310",
+ "bytes_hex": "56578bf933f685f67507baa3060000eb5d83fe017507baa4060000eb5183fe027507baa5060000eb4583fe037507baa6060000eb3983fe047507baa7060000eb2d83fe057507baa8060000eb2183fe067507baaa060000eb158bd683ea07f7da1bd281e254f9ffff81c2ab060000a138b2a80083f803740583f80475178b04b590daa8008b0db411ac003bc1740f83786bff74098bcfe815fdffffeb078bcfe8acfeffff4683fe080f8c58ffffff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

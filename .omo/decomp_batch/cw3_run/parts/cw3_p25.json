@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7ae460",
+  "name": "HashMap::Shrink",
+  "cls": null,
+  "size": 168,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Shrink2' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x4daf10",
+  "name": "FootClass::UpdateState",
+  "cls": null,
+  "size": 169,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'WalkPathClassPath' : cannot convert parameter 4 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x420e90",
+  "name": "AirstrikeClass::UpdateAll",
+  "cls": null,
+  "size": 170,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'unsigned int *'"
+ },
+ {
+  "addr": "0x41f0d0",
+  "name": "AITriggerTypeClass::IronCurtainCharged",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x540dc0",
+  "name": "SessionClass::initLAN",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'constructor' : cannot convert parameter 7 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x62e380",
+  "name": "ParticleSystemClass::CreateParticle",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'class IUnknown *' to 'int'"
+ },
+ {
+  "addr": "0x6b1020",
+  "name": "SlaveManagerClass::ShouldWakeUpNow",
+  "cls": null,
+  "size": 171,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'currentPlayer' : is not a member of 'HouseClass'"
+ },
+ {
+  "addr": "0x54b8d0",
+  "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
+  "cls": null,
+  "size": 173,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x610bf0",
+  "name": "sub_610BF0",
+  "cls": null,
+  "size": 173,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x5d74a0",
+  "name": "HouseClass::InitAlliances",
+  "cls": null,
+  "size": 174,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2040",
+  "first_msg": "'dispatchEvents' : 'void (void)' differs in levels of indirection from 'int'"
+ },
+ {
+  "addr": "0x7aec00",
+  "name": "HashTable_flat::Shrink",
+  "cls": null,
+  "size": 174,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Shrink' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x4da030",
+  "name": "InfantryClass::ProcessExitQueue",
+  "cls": null,
+  "size": 175,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'class AbstractClass *'"
+ },
+ {
+  "addr": "0x4219e0",
+  "name": "VectorClass_ptr_AlphaShapeClass::SetCapacity",
+  "cls": null,
+  "size": 176,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x4caa70",
+  "name": "AbstractClass::executeScriptAction",
+  "cls": null,
+  "size": 176,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x4f2a60",
+  "name": "HouseClass::processWaypointPlanning",
+  "cls": null,
+  "size": 176,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x5ac820",
+  "name": "VectorClass_ptr_MapRegionClass::SetCapacity",
+  "cls": null,
+  "size": 176,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'__3_YAXPAX_Z' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x707d20",
+  "name": "TechnoClass::GetCrew",
+  "cls": null,
+  "size": 176,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x4e4820",
+  "name": "Lobby::FillPlayerFactions",
+  "cls": null,
+  "size": 177,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4e5310",
+  "name": "Lobby::InvalidateFactionCombos",
+  "cls": null,
+  "size": 177,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4e5d60",
+  "name": "Lobby::InvalidatePlayerSlots",
+  "cls": null,
+  "size": 177,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ }
+]

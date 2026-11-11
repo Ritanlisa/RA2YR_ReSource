@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x7ae460 HashMap::Shrink -> HashMap
+[conv] 0x4daf10 FootClass::UpdateState -> FootClass
+[conv] 0x420e90 AirstrikeClass::UpdateAll -> AirstrikeClass
+[conv] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> AITriggerTypeClass
+[conv] 0x540dc0 SessionClass::initLAN -> SessionClass
+[conv] 0x62e380 ParticleSystemClass::CreateParticle -> ParticleSystemClass
+[conv] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> SlaveManagerClass
+[conv] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> JumpjetLocomotionClass
+[conv] 0x610bf0 ObjectClass::sub_610BF0 -> ObjectClass
+[conv] 0x5d74a0 MultiplayerGameMode::InitAlliances -> MultiplayerGameMode
+[conv] 0x7aec00 HashTable::Shrink -> HashTable
+[conv] 0x4da030 InfantryClass::ProcessExitQueue -> InfantryClass
+[conv] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> VectorClass_ptr_AlphaShapeClass
+[conv] 0x4caa70 DynamicVector::executeScriptAction -> DynamicVector
+[conv] 0x4f2a60 DynamicVector::processWaypointPlanning -> DynamicVector
+[conv] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> VectorClass_ptr_MapRegionClass
+[conv] 0x707d20 TechnoClass::GetCrew -> TechnoClass
+[conv] 0x4e4820 Lobby::FillPlayerFactions -> Lobby
+[conv] 0x4e5310 Lobby::InvalidateFactionCombos -> Lobby
+[conv] 0x4e5d60 Lobby::InvalidatePlayerSlots -> Lobby
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HashMap                  rc=2
+[era] FootClass                rc=2
+[era] AirstrikeClass           rc=0
+[era] AITriggerTypeClass       rc=2
+[era] SessionClass             rc=2
+[era] ParticleSystemClass      rc=2
+[era] SlaveManagerClass        rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] ObjectClass              rc=2
+[era] MultiplayerGameMode      rc=2
+[era] HashTable                rc=2
+[era] InfantryClass            rc=2
+[era] VectorClass_ptr_AlphaShapeClass rc=2
+[era] DynamicVector            rc=2
+[era] VectorClass_ptr_MapRegionClass rc=2
+[era] TechnoClass              rc=2
+[era] Lobby                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x420e90   MISMATCH         AirstrikeClass::UpdateAll
+[diff] 0x4e4820   MISMATCH         Lobby::FillPlayerFactions
+[diff] 0x4e5310   MISMATCH         Lobby::InvalidateFactionCombos
+[diff] 0x4e5d60   MISMATCH         Lobby::InvalidatePlayerSlots
+[ledger] 0x7ae460 HashMap::Shrink -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4daf10 FootClass::UpdateState -> COMPILE_FAIL (attempt 10)
+[ledger] 0x420e90 AirstrikeClass::UpdateAll -> NG (attempt 12)
+[ledger] 0x41f0d0 AITriggerTypeClass::IronCurtainCharged -> COMPILE_FAIL (attempt 2)
+[ledger] 0x540dc0 SessionClass::initLAN -> COMPILE_FAIL (attempt 10)
+[ledger] 0x62e380 ParticleSystemClass::CreateParticle -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6b1020 SlaveManagerClass::ShouldWakeUpNow -> COMPILE_FAIL (attempt 11)
+[ledger] 0x54b8d0 JumpjetLocomotionClass::ConvertCoordToCell_0 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x610bf0 ObjectClass::sub_610BF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d74a0 MultiplayerGameMode::InitAlliances -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7aec00 HashTable::Shrink -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4da030 InfantryClass::ProcessExitQueue -> COMPILE_FAIL (attempt 12)
+[ledger] 0x4219e0 VectorClass_ptr_AlphaShapeClass::SetCapacity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4caa70 DynamicVector::executeScriptAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4f2a60 DynamicVector::processWaypointPlanning -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ac820 VectorClass_ptr_MapRegionClass::SetCapacity -> COMPILE_FAIL (attempt 2)
+[ledger] 0x707d20 TechnoClass::GetCrew -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4e4820 Lobby::FillPlayerFactions -> NG (attempt 10)
+[ledger] 0x4e5310 Lobby::InvalidateFactionCombos -> NG (attempt 10)
+[ledger] 0x4e5d60 Lobby::InvalidatePlayerSlots -> NG (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "branch_order": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p25\batch_report.json

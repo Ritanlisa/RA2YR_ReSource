@@ -1,0 +1,11 @@
+{
+ "addr": "0x420E90",
+ "name": "AirstrikeClass::UpdateAll",
+ "size": 170,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x420E90",
+ "bytes_hex": "a034a189005684c0756dc60534a189000133f68bce81e1ff00008079084981c900ffffff418bc69981e2ff00000003c2c1f8080fafc18bc8b809040281f7e903d1c1fa068bc2c1e81f03d081faff0000007f1085d27d0433d2eb0d81faff0000007e05baff000000889618a188004681fe000001007c9c8b0d00a188008d71ff85f67c24a1f4a088008b14b08a4a3c84c974128bca85c9740c8b016a01ff5020a1f4a088004e79e15ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E4820",
+ "name": "Lobby::FillPlayerFactions",
+ "size": 177,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E4820",
+ "bytes_hex": "56578bf933f685f67507baa2060000eb5d83fe017507ba22050000eb5183fe027507ba23050000eb4583fe037507ba24050000eb3983fe047507ba25050000eb2d83fe057507ba26050000eb2183fe067507ba27050000eb158bd683ea07f7da1bd281e2d7faffff81c228050000a138b2a80083f803740583f80475178b04b590daa8008b0db411ac003bc1740f83786bff74098bcfe8e5fcffffeb078bcfe8acfeffff4683fe080f8c58ffffff5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
