@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetTileIndex@TerrainTypeClass@@QAEPAPAXH@Z",
+ "sym_key": "TerrainTypeClass::GetTileIndex",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "568bf168e0000000e80000000083c40485c074116834040000568bc8e8000000005ec2040033c05ec20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_BuildingLoadQueue_Array@@3PAXA",
+   "sym_key": "g_BuildingLoadQueue_Array"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?Construct@TerrainClass@@QAEPAPAXPAX0@Z",
+   "sym_key": "TerrainClass::Construct"
+  }
+ ]
+}

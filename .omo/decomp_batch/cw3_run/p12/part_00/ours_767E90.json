@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_767E90@MSFrameAnim@@QAEPAIXZ",
+ "sym_key": "MSFrameAnim::sub_767E90",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "56578bf133ff897e04897e08897e0ce800000000897e18893e8946105f33c05ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?Timer__GetTicks@@YAKXZ",
+   "sym_key": "Timer__GetTicks"
+  }
+ ]
+}

@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6b4840",
+  "name": "sub_6B4840",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x6d1830",
+  "name": "sub_6D1830",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x6f7970",
+  "name": "TechnoClass::CheckCellPassable3",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'class CellClass *'"
+ },
+ {
+  "addr": "0x71a1c0",
+  "name": "sub_71A1C0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x7287f0",
+  "name": "sub_7287F0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x752020",
+  "name": "sub_752020",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x766d30",
+  "name": "Conflict_WorldDominationTour_12::ddtor",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,int)' : cannot convert parameter 1 from 'int (__stdcall ***  )(unsigned int,int)' to 'uns"
+ },
+ {
+  "addr": "0x767ca0",
+  "name": "sub_767CA0",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x767e90",
+  "name": "sub_767E90",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x77b690",
+  "name": "sub_77B690",
+  "cls": null,
+  "size": 40,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'pow' : undeclared identifier"
+ },
+ {
+  "addr": "0x40dd70",
+  "name": "AbstractClass::IsTechnoType",
+  "cls": null,
+  "size": 41,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int)' : cannot convert parameter 1 from 'class AbstractClass *const ' to 'unsigned int'"
+ },
+ {
+  "addr": "0x71de10",
+  "name": "TerrainTypeClass::GetTileIndex",
+  "cls": null,
+  "size": 43,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.ImpactWaterSound' must have class/struct/union type"
+ },
+ {
+  "addr": "0x766800",
+  "name": "Conflict_WorldDominationTour_12_::ReleaseBuffer",
+  "cls": null,
+  "size": 43,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'int (unsigned int,int)' : cannot convert parameter 1 from"
+ },
+ {
+  "addr": "0x5c21a0",
+  "name": "MPCooperative::CheckReady",
+  "cls": null,
+  "size": 44,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x721570",
+  "name": "sub_721570",
+  "cls": null,
+  "size": 44,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x554400",
+  "name": "sub_554400",
+  "cls": null,
+  "size": 45,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x679f70",
+  "name": "VectorClass::Dtor",
+  "cls": null,
+  "size": 45,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x7cbdaf",
+  "name": "__cinit",
+  "cls": null,
+  "size": 45,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x536140",
+  "name": "AddTeamCommand::Read",
+  "cls": null,
+  "size": 46,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x769ca0",
+  "name": "Map_WorldDominationTour_20::Seek",
+  "cls": null,
+  "size": 47,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'rc_ptr' : undeclared identifier"
+ }
+]

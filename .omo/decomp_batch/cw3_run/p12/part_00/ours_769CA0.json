@@ -1,0 +1,21 @@
+{
+ "symbol": "?Seek@_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour@@QAEPAIPAHH@Z",
+ "sym_key": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Seek",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b41048b4c2408568b742408578d3cc88bcee800000000c706000000008b5704528bcee8000000008bc65f5ec20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?Constructor@ComPtr@@QAEPAV1@XZ",
+   "sym_key": "ComPtr::Constructor"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?Set@ComPtr@@QAEHH@Z",
+   "sym_key": "ComPtr::Set"
+  }
+ ]
+}
