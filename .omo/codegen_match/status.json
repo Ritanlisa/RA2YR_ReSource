@@ -5278,7 +5278,7 @@
   "status": "OK"
  },
  "0x6cf350": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5292,7 +5292,7 @@
   "status": "OK"
  },
  "0x6d02b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5313,14 +5313,14 @@
   "status": "NG"
  },
  "0x6d6410": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6d8530": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "DisplayClass::ScrollTacticalView",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5341,14 +5341,14 @@
   "status": "NG"
  },
  "0x6da230": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da7d0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5383,35 +5383,35 @@
   "status": "NG"
  },
  "0x6e0ef0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "HouseClass::UpdateTechBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1530": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e15f0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1780": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e2970": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5481,28 +5481,28 @@
   "status": "OK"
  },
  "0x6e6e20": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "BuildingLoadQueue::GetNext",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6f20": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingLoadQueue::Find",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e6ff0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e7a80": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5523,14 +5523,14 @@
   "status": "OK"
  },
  "0x6ea3e0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ef610": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5600,7 +5600,7 @@
   "status": "OK"
  },
  "0x707d20": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5614,7 +5614,7 @@
   "status": "OK"
  },
  "0x70b1d0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::RevealAreaConditional",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5663,7 +5663,7 @@
   "status": "OK"
  },
  "0x70fbd0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "UnitClass::IsDeactivated",
   "note": "decomp_batch r2: COMPILE_FAIL",
