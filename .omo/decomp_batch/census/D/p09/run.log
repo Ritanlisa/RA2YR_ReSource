@@ -1,0 +1,99 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x4aab30 CellClass::CheckBuildablePair -> CellClass
+[conv] 0x6abb60 HouseClass::RemoveFromProductionQueue -> HouseClass
+[conv] 0x5d67b0 GameConfig::Constructor -> GameConfig
+[conv] 0x4fb840 Object::Activate -> Object
+[conv] 0x4dafc0 TechnoClass::ComputeSpeedFactor -> TechnoClass
+[conv] 0x434bf0 unknown::sub_434BF0 -> unknown
+[conv] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> WeaponTypeClass
+[conv] 0x5d2260 GameClass::loadScenarioFiles -> GameClass
+[conv] 0x438210 BlowStraw::Get -> BlowStraw
+[conv] 0x6e35f0 ObjectClass::sub_6E35F0 -> ObjectClass
+[conv] 0x731af0 ObjectClass::BlowStraw_29_Get -> ObjectClass
+[conv] 0x436f40 BuildingLightClass::SD_vt13 -> BuildingLightClass
+[conv] 0x796de0 Game::CreateAIPlayer -> Game
+[conv] 0x7af3d0 ObjectClass::GetRegionStringWOL -> ObjectClass
+[conv] 0x682150 unknown::Map_Read -> unknown
+[conv] 0x6b4a50 UnitClass::Create -> UnitClass
+[conv] 0x5ce7d0 MSPCXAnim::Load -> MSPCXAnim
+[conv] 0x5d1b30 MSEngine::Destruct -> MSEngine
+[conv] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> JumpjetLocomotionClass
+[conv] 0x6bec60 GameClass::Shutdown -> GameClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] CellClass                rc=0
+[era] HouseClass               rc=2
+[era] GameConfig               rc=2
+[era] Object                   rc=2
+[era] TechnoClass              rc=0
+[era] unknown                  rc=2
+[era] WeaponTypeClass          rc=2
+[era] GameClass                rc=2
+[era] BlowStraw                rc=2
+[era] ObjectClass              rc=2
+[era] BuildingLightClass       rc=2
+[era] Game                     rc=2
+[era] UnitClass                rc=2
+[era] MSPCXAnim                rc=2
+[era] MSEngine                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[diff] 0x4aab30   MISMATCH         CellClass::CheckBuildablePair
+[diff] 0x4dafc0   MISMATCH         TechnoClass::ComputeSpeedFactor
+[ledger] 0x4aab30 CellClass::CheckBuildablePair -> NG (attempt 1)
+[ledger] 0x6abb60 HouseClass::RemoveFromProductionQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d67b0 GameConfig::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fb840 BuildingPlacement::Activate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dafc0 TechnoClass::ComputeSpeedFactor -> NG (attempt 1)
+[ledger] 0x434bf0 sub_434BF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x772eb0 WeaponTypeClass::SaveLoad_Prefix_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2260 GameClass::loadScenarioFiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x438210 BlowStraw::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e35f0 sub_6E35F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x731af0 BlowStraw_29_Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x436f40 BuildingLightClass::SD_vt13 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x796de0 Game::CreateAIPlayer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7af3d0 GetRegionStringWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x682150 Map_Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b4a50 UnitClass::Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce7d0 MSPCXAnim::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1b30 MSEngine::Destruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cd510 JumpjetLocomotionClass::IsMapCoordVisible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bec60 GameClass::Shutdown -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2554,
+ "verdicts": {
+  "MISMATCH": 692,
+  "MATCH": 521,
+  "COMPILE_FAIL": 805,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 519,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 239,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 111,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.0,
+ "match_rate_of_total_pct": 20.4,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p09\batch_report.json

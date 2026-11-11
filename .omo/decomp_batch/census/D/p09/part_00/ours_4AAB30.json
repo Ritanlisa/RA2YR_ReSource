@@ -1,0 +1,57 @@
+{
+ "symbol": "?CheckBuildablePair@CellClass@@QAEDPAF0HHH@Z",
+ "sym_key": "CellClass::CheckBuildablePair",
+ "size": 181,
+ "link_base": 0,
+ "bytes_hex": "535556578b7c241c8bf183ff0475095f5e5db0015bc214008b5c24148bce53e8000000006a016aff6a006aff6a016a01578bc8e80000000084c074728b6c24188bce55e8000000008b4c24248b5424206a016aff51526a016a01578bc8e80000000084c0744833ff538bce897c2420e800000000578d4c242057518bc8e80000000085c074095f5e5d32c05bc21400558bce897c2420e800000000578d54242057528bc8e800000000f7d81bc0405f5e5d5bc21400",
+ "relocs": [
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 52,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  },
+  {
+   "off": 68,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 94,
+   "type": "REL32",
+   "sym": "?IsBuildable@Cell@@QAE_NHDDHHHD@Z",
+   "sym_key": "Cell::IsBuildable"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 126,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  },
+  {
+   "off": 151,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?FindClosestObjectCell@Object@@QAEHPAXDH@Z",
+   "sym_key": "Object::FindClosestObjectCell"
+  }
+ ]
+}

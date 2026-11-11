@@ -1672,12 +1672,26 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x434bf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_434BF0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x435720": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x435720",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x436f40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingLightClass::SD_vt13",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x437190": {
   "attempts": 1,
@@ -1699,6 +1713,13 @@
   "name": "BlitterCopySimpleSHP",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x438210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlowStraw::Get",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x438510": {
   "attempts": 1,
@@ -4171,6 +4192,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4aab30": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 8",
+  "name": "CellClass::CheckBuildablePair",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4ac660": {
   "attempts": 4,
   "first_diff": null,
@@ -4941,6 +4969,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4cd510": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::IsMapCoordVisible",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4d02b0": {
   "attempts": 1,
   "first_diff": null,
@@ -5087,6 +5122,13 @@
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4dafc0": {
+  "attempts": 1,
+  "first_diff": "+23 je 0x4daff7",
+  "name": "TechnoClass::ComputeSpeedFactor",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x4dba40": {
   "attempts": 1,
@@ -5946,6 +5988,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4fb840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingPlacement::Activate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9365,6 +9414,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5ce7d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSPCXAnim::Load",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5ce8c0": {
   "attempts": 9,
   "first_diff": null,
@@ -9484,6 +9540,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5d1b30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MSEngine::Destruct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5d1c20": {
   "attempts": 1,
   "first_diff": "+7 je 0x5d1c7b",
@@ -9497,6 +9560,13 @@
   "name": "MSEngine::ProcessEvents",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5d2260": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameClass::loadScenarioFiles",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5d2750": {
   "attempts": 1,
@@ -9651,6 +9721,13 @@
   "name": "ScenarioClass::MissionStubReturnZero4",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5d67b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameConfig::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5d74a0": {
   "attempts": 9,
@@ -11871,6 +11948,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x682150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Map_Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6824b0": {
   "attempts": 1,
   "first_diff": null,
@@ -12375,6 +12459,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x6abb60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::RemoveFromProductionQueue",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6ac5f0": {
   "attempts": 10,
   "first_diff": null,
@@ -12542,6 +12633,13 @@
   "name": "0x6b4a10",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6b4a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::Create",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6b4f20": {
   "attempts": 5,
@@ -12717,6 +12815,13 @@
   "name": "0x6bb220",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6bec60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameClass::Shutdown",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6bed50": {
   "attempts": 1,
@@ -13494,6 +13599,13 @@
   "name": "SmallFunc_6E3120",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6e35f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_6E35F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6e3e50": {
   "attempts": 1,
@@ -14965,6 +15077,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x731af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlowStraw_29_Get",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x732d00": {
   "attempts": 5,
   "first_diff": null,
@@ -16204,6 +16323,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x772eb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WeaponTypeClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x772fa0": {
   "attempts": 1,
   "first_diff": null,
@@ -16505,6 +16631,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x796de0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Game::CreateAIPlayer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7982d0": {
   "attempts": 1,
   "first_diff": null,
@@ -16707,6 +16840,13 @@
   "name": "0x7af280",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7af3d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetRegionStringWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7af4d0": {
   "attempts": 1,

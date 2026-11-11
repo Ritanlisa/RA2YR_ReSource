@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AAB30",
+ "name": "CellClass::CheckBuildablePair",
+ "size": 220,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AAB30",
+ "bytes_hex": "83ec08535556578b7c24248bf183ff04750c5f5e5db0015b83c408c214008b5c241c6a0133ed6aff556aff6a016a0157538bcee838ac0b008bc8e83189fdff84c0750a5f5e5d5b83c408c214008b44242c8b4c24286a016aff50516a016a01578b7c243c578bcee804ac0b008bc8e8fd88fdff84c0750a5f5e5d5b83c408c21400558d5424145552538bce896c2420896c2424e8d8ab0b008bc8e80118fdff85c0740c5f5e5d32c05b83c408c21400558d4424145550578bce896c2420896c2424e8aaab0b008bc8e8d317fdff5f5e85c05d5b0f94c083c408c21400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

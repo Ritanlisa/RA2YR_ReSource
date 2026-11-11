@@ -1,0 +1,39 @@
+{
+ "symbol": "?ComputeSpeedFactor@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ComputeSpeedFactor",
+ "size": 195,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf157c7442408000000008b867406000085c0740a8b0850ff5138894424088b16535556ff92840000008bce8bd8e8000000008bf88b060fafbbc40d000056ff90840000008bce8be8e8000000008b0e8bd80faf9dc80d000056ff91840000008bce89442414e8000000008b5424148be88bce0fafaac00d0000e80000000084c074118b0656ff90840000008b80cc0d0000eb0233c03bfb7f028bfb3bfd7f028bfd5d3bf85b7f028bf88bcee8000000008b4c240803c75f03c15e83c408c3",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?ScanNeighborCells@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::ScanNeighborCells"
+  },
+  {
+   "off": 78,
+   "type": "REL32",
+   "sym": "?IsValidBuildingPlacement@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::IsValidBuildingPlacement"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?CheckAdjacencyFlags@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::CheckAdjacencyFlags"
+  },
+  {
+   "off": 127,
+   "type": "REL32",
+   "sym": "?CheckTargetCell@TechnoClass@@QAEDXZ",
+   "sym_key": "TechnoClass::CheckTargetCell"
+  },
+  {
+   "off": 177,
+   "type": "REL32",
+   "sym": "?GetDrawHeight@TechnoClass@@QAEHXZ",
+   "sym_key": "TechnoClass::GetDrawHeight"
+  }
+ ]
+}
