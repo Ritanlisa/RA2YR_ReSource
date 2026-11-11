@@ -1,0 +1,830 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_HIT": 16,
+   "MATCH": 1,
+   "NO_VARIANT": 3
+  },
+  "by_family_total": {
+   "STRUCTURAL": 14,
+   "JCC_INVERT_PLUS": 2,
+   "FRAME": 1,
+   "IMM": 2,
+   "REG_ALLOC": 1
+  },
+  "by_family_hits": {
+   "JCC_INVERT_PLUS": 1
+  }
+ },
+ "results": [
+  {
+   "addr": "0x6342e0",
+   "name": "Team_Helper_6342E0",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+23 mov esi, dword ptr [edx + 4]",
+      "ours": "+23 mov edx, dword ptr [edx + 4]"
+     },
+     "ours_size": 51
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+23 mov esi, dword ptr [edx + 4]",
+      "ours": "+23 mov edx, dword ptr [edx + 4]"
+     },
+     "ours_size": 51
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "Team_Helper_6342E0",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::Team_Helper_6342E0(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+23 mov esi, dword ptr [edx + 4]",
+    "ours": "+23 mov edx, dword ptr [edx + 4]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x69f3a0",
+   "name": "JumpjetLocomotionClass::GetCoordinate_1",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_69F3A0\\JumpjetLocomotionClass.cpp(8) : error C2039: 'TurnRate' : is not a member of 'JumpjetLocomotionClass'"
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.03,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_69F3A0\\JumpjetLocomotionClass.cpp(8) : error C2039: 'TurnRate' : is not a member of 'JumpjetLocomotionClass'"
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `Deviation` inlined at use",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_69F3A0\\JumpjetLocomotionClass.cpp(8) : error C2039: 'TurnRate' : is not a member of 'JumpjetLocomotionClass'"
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "JumpjetLocomotionClass",
+   "method": "GetCoordinate_1",
+   "unit": "JumpjetLocomotionClass",
+   "head": "unsigned int * __stdcall JumpjetLocomotionClass::GetCoordinate_1(int * p0, int * p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN",
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x6b4620",
+   "name": "VectorClass_UUndoInfoStruct::GetCapacity",
+   "family": "JCC_INVERT_PLUS",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 36
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_UUndoInfoStruct",
+   "method": "GetCapacity",
+   "unit": "_VectorClass_UUndoInfoStruct",
+   "head": "unsigned int _VectorClass_UUndoInfoStruct::GetCapacity(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x6b462c",
+    "ours": "+5 je 0x1f"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 36,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((p0 - this->m004[0]) / 0xCu);"
+  },
+  {
+   "addr": "0x6cc360",
+   "name": "SuperClass::CanFire",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_ELSE_FROM_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(C){A}else{return B}",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+5 jne 0x6cc381",
+      "ours": "+5 je 0xa"
+     },
+     "ours_size": 38
+    },
+    {
+     "vid": "V_IF_GUARD_FROM_TAIL",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(!C){return B} A",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+5 jne 0x6cc381",
+      "ours": "+5 je 0xa"
+     },
+     "ours_size": 38
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "SuperClass",
+   "method": "CanFire",
+   "unit": "SuperClass",
+   "head": "char SuperClass::CanFire()",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x6cc381",
+    "ours": "+5 je 0xa"
+   },
+   "variants_generated": [
+    "V_IF_ELSE_FROM_GUARD",
+    "V_IF_GUARD_FROM_TAIL"
+   ]
+  },
+  {
+   "addr": "0x70f740",
+   "name": "sub_70F740",
+   "family": "FRAME",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_70F740",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_70F740(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+    "ours": "+0 mov eax, dword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x7475d0",
+   "name": "UnitTypeClass::GetDefaultDimensions",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+5 push esi",
+      "ours": "+5 lea ecx, [eax + eax]"
+     },
+     "ours_size": 31
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+5 push esi",
+      "ours": "+5 lea ecx, [eax + eax]"
+     },
+     "ours_size": 31
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `v1` inlined at use",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [0xb1d138]",
+      "ours": "+0 mov eax, dword ptr [esp + 4]"
+     },
+     "ours_size": 32
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "UnitTypeClass",
+   "method": "GetDefaultDimensions",
+   "unit": "UnitTypeClass",
+   "head": "unsigned int * __stdcall UnitTypeClass::GetDefaultDimensions(int * p0)",
+   "baseline_first_diff": {
+    "orig": "+5 push esi",
+    "ours": "+5 lea ecx, [eax + eax]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN",
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x7515c0",
+   "name": "System_Get_7515C0",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (g_VocPlayState <= 0)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [0xb1d388]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 48
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "System_Get_7515C0",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::System_Get_7515C0()",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [0xb1d388]",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x763f30",
+   "name": "AbstractClass::updateSuperWeaponTimer",
+   "family": "JCC_INVERT_PLUS",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+     },
+     "ours_size": 36
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+     },
+     "ours_size": 36
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+     },
+     "ours_size": 36
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "DynamicVector",
+   "method": "updateSuperWeaponTimer",
+   "unit": "DynamicVector",
+   "head": "unsigned int DynamicVector::updateSuperWeaponTimer(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ]
+  },
+  {
+   "addr": "0x7642b0",
+   "name": "AbstractClass::updateSpecialTimer",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 mov edx, dword ptr [esp + 4]",
+      "ours": "+12 movsx eax, word ptr [ecx + 4]"
+     },
+     "ours_size": 37
+    },
+    {
+     "vid": "V_IF_GUARD_EQ",
+     "kind": "if_else",
+     "desc": "guard with (C)==0 spelling",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 mov edx, dword ptr [esp + 4]",
+      "ours": "+12 movsx eax, word ptr [ecx + 4]"
+     },
+     "ours_size": 37
+    },
+    {
+     "vid": "V_IF_SWAPNEG",
+     "kind": "if_else",
+     "desc": "if(!C){B} else {A} (block swap + negated cond)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+12 mov edx, dword ptr [esp + 4]",
+      "ours": "+12 movsx eax, word ptr [ecx + 4]"
+     },
+     "ours_size": 37
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "VectorClass",
+   "method": "updateSpecialTimer",
+   "unit": "VectorClass",
+   "head": "unsigned int VectorClass::updateSpecialTimer(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x7642bc",
+    "ours": "+5 je 0x20"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ]
+  },
+  {
+   "addr": "0x7bc7f0",
+   "name": "sub_7BC7F0",
+   "family": "IMM",
+   "path": "cc_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_CONST_MUL_COMMUTE",
+     "kind": "const",
+     "desc": "literal * x -> x * literal",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+      "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+     },
+     "ours_size": 36
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_BlitPlain_G",
+   "method": "sub_7BC7F0",
+   "unit": "_BlitPlain_G",
+   "head": "int __stdcall _BlitPlain_G::sub_7BC7F0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "variants_generated": [
+    "V_CONST_MUL_COMMUTE"
+   ]
+  },
+  {
+   "addr": "0x7bc840",
+   "name": "sub_7BC840",
+   "family": "IMM",
+   "path": "cc_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_CONST_MUL_COMMUTE",
+     "kind": "const",
+     "desc": "literal * x -> x * literal",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+      "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+     },
+     "ours_size": 36
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_BlitPlain_G",
+   "method": "sub_7BC840",
+   "unit": "_BlitPlain_G",
+   "head": "int __stdcall _BlitPlain_G::sub_7BC840(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "variants_generated": [
+    "V_CONST_MUL_COMMUTE"
+   ]
+  },
+  {
+   "addr": "0x42b1c0",
+   "name": "Cell::PosToIndex",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "Cell",
+   "method": "PosToIndex",
+   "unit": "Cell",
+   "head": "int Cell::PosToIndex()",
+   "baseline_first_diff": {
+    "orig": "+0 movsx edx, word ptr [ecx + 2]",
+    "ours": "+0 mov ax, word ptr [ecx]"
+   }
+  },
+  {
+   "addr": "0x477960",
+   "name": "FilePipe_38::Seek",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov edx, dword ptr [ecx + 4]",
+      "ours": "+4 lea edx, [eax + eax*2]"
+     },
+     "ours_size": 31
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_VRGBClass",
+   "method": "Seek",
+   "unit": "_VectorClass_VRGBClass",
+   "head": "int _VectorClass_VRGBClass::Seek(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 mov edx, dword ptr [ecx + 4]",
+    "ours": "+4 lea edx, [eax + eax*2]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x4c6140",
+   "name": "Menu::Reset",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, ecx",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 43
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+29 rep stosd dword ptr es:[edi], eax",
+      "ours": "+29 mov word ptr [edx + 0x30], ax"
+     },
+     "ours_size": 39
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Menu",
+   "method": "Reset",
+   "unit": "Menu",
+   "head": "int Menu::Reset()",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, ecx",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN"
+   ]
+  },
+  {
+   "addr": "0x5ef240",
+   "name": "Audio_Read",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (i < p1)",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+10 jle 0x5ef262",
+      "ours": "+10 jle 0x24"
+     },
+     "ours_size": 39
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "Audio_Read",
+   "unit": "Audio",
+   "head": "unsigned int __fastcall Audio_Read(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+10 jle 0x5ef262",
+    "ours": "+10 jle 0x24"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x627de0",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItem",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+4 mov edx, dword ptr [ecx + 4]",
+      "ours": "+4 lea edx, [eax + eax*2]"
+     },
+     "ours_size": 31
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_VHSVClass",
+   "method": "GetItem",
+   "unit": "_VectorClass_VHSVClass",
+   "head": "int _VectorClass_VHSVClass::GetItem(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+4 mov edx, dword ptr [ecx + 4]",
+    "ours": "+4 lea edx, [eax + eax*2]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0"
+   ]
+  },
+  {
+   "addr": "0x65adc0",
+   "name": "RadioClass::HasFreeLink",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (v1 <= 0)",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [ecx + 0xe8]",
+      "ours": "+0 push esi"
+     },
+     "ours_size": 47
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "RadioClass",
+   "method": "HasFreeLink",
+   "unit": "RadioClass",
+   "head": "char RadioClass::HasFreeLink()",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [ecx + 0xe8]",
+    "ours": "+0 push esi"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x70d150",
+   "name": "FrameTimer::Init25",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "FrameTimer",
+   "method": "Init25",
+   "unit": "FrameTimer",
+   "head": "int FrameTimer::Init25()",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x70de40",
+   "name": "TechnoClass::GattlingValueRateDown_GattlingRateDownDelay",
+   "family": "REG_ALLOC",
+   "path": "eval_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov eax, dword ptr [esp + 4]",
+      "ours": "+0 mov edx, dword ptr [ecx + 0x144]"
+     },
+     "ours_size": 37
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "GattlingValueRateDown_GattlingRateDownDelay",
+   "unit": "TechnoClass",
+   "head": "int TechnoClass::GattlingValueRateDown_GattlingRateDownDelay(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 mov edx, dword ptr [ecx + 0x144]"
+   },
+   "variants_generated": [
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x7ca489",
+   "name": "_wcscpy",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489\\include\\_addr_7C.hpp(21) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489"
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.03,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489\\include\\_addr_7C.hpp(21) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489"
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.04,
+     "result": "COMPILE_FAIL",
+     "error": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489\\include\\_addr_7C.hpp(21) : error C2143: syntax error : missing ';' before '__cdecl'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw4_all\\p077\\t_7CA489"
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_wcscpy",
+   "unit": "_addr_7C",
+   "head": "wchar_t * __cdecl _wcscpy(int * p0, const int * p1)",
+   "baseline_first_diff": {
+    "orig": "+0 mov ecx, dword ptr [esp + 8]",
+    "ours": "+0 mov edx, dword ptr [esp + 8]"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN",
+    "V_ORD_INLINE_TEMP"
+   ]
+  }
+ ]
+}

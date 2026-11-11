@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6342e0",
+  "name": "Team_Helper_6342E0",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 36,
+  "part": "p204",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Team_Helper_6342E0",
+  "first_diff": {
+   "orig": "+23 mov esi, dword ptr [edx + 4]",
+   "ours": "+23 mov edx, dword ptr [edx + 4]"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x69f3a0",
+  "name": "JumpjetLocomotionClass::GetCoordinate_1",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 36,
+  "part": "p204",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::GetCoordinate_1",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x6b4620",
+  "name": "VectorClass_UUndoInfoStruct::GetCapacity",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p204",
+  "unit": "_VectorClass_UUndoInfoStruct",
+  "emitted": "_VectorClass_UUndoInfoStruct::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x6b462c",
+   "ours": "+5 je 0x1f"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x6cc360",
+  "name": "SuperClass::CanFire",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p204",
+  "unit": "SuperClass",
+  "emitted": "SuperClass::CanFire",
+  "first_diff": {
+   "orig": "+5 jne 0x6cc381",
+   "ours": "+5 je 0xa"
+  },
+  "ours_size": 38
+ },
+ {
+  "addr": "0x70f740",
+  "name": "sub_70F740",
+  "family": "FRAME",
+  "path": "extern_reloc",
+  "size": 36,
+  "part": "p204",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_70F740",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x7475d0",
+  "name": "UnitTypeClass::GetDefaultDimensions",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 36,
+  "part": "p204",
+  "unit": "UnitTypeClass",
+  "emitted": "UnitTypeClass::GetDefaultDimensions",
+  "first_diff": {
+   "orig": "+5 push esi",
+   "ours": "+5 lea ecx, [eax + eax]"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x7515c0",
+  "name": "System_Get_7515C0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 36,
+  "part": "p204",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::System_Get_7515C0",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [0xb1d388]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 48
+ },
+ {
+  "addr": "0x763f30",
+  "name": "AbstractClass::updateSuperWeaponTimer",
+  "family": "JCC_INVERT_PLUS",
+  "path": "ret_norm",
+  "size": 36,
+  "part": "p205",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::updateSuperWeaponTimer",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x7642b0",
+  "name": "AbstractClass::updateSpecialTimer",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 36,
+  "part": "p205",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::updateSpecialTimer",
+  "first_diff": {
+   "orig": "+5 jne 0x7642bc",
+   "ours": "+5 je 0x20"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x7bc7f0",
+  "name": "sub_7BC7F0",
+  "family": "IMM",
+  "path": "cc_mismatch",
+  "size": 36,
+  "part": "p205",
+  "unit": "_BlitPlain_G",
+  "emitted": "_BlitPlain_G::sub_7BC7F0",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+   "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x7bc840",
+  "name": "sub_7BC840",
+  "family": "IMM",
+  "path": "cc_mismatch",
+  "size": 36,
+  "part": "p205",
+  "unit": "_BlitPlain_G",
+  "emitted": "_BlitPlain_G::sub_7BC840",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 0xc]",
+   "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x42b1c0",
+  "name": "Cell::PosToIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "Cell",
+  "emitted": "Cell::PosToIndex",
+  "first_diff": {
+   "orig": "+0 movsx edx, word ptr [ecx + 2]",
+   "ours": "+0 mov ax, word ptr [ecx]"
+  },
+  "ours_size": 45
+ },
+ {
+  "addr": "0x477960",
+  "name": "FilePipe_38::Seek",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "_VectorClass_VRGBClass",
+  "emitted": "_VectorClass_VRGBClass::Seek",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [ecx + 4]",
+   "ours": "+4 lea edx, [eax + eax*2]"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x4c6140",
+  "name": "Menu::Reset",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "Menu",
+  "emitted": "Menu::Reset",
+  "first_diff": {
+   "orig": "+0 mov edx, ecx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 43
+ },
+ {
+  "addr": "0x5ef240",
+  "name": "Audio_Read",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 37,
+  "part": "p205",
+  "unit": "Audio",
+  "emitted": "Audio_Read",
+  "first_diff": {
+   "orig": "+10 jle 0x5ef262",
+   "ours": "+10 jle 0x24"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x627de0",
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItem",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "_VectorClass_VHSVClass",
+  "emitted": "_VectorClass_VHSVClass::GetItem",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [ecx + 4]",
+   "ours": "+4 lea edx, [eax + eax*2]"
+  },
+  "ours_size": 31
+ },
+ {
+  "addr": "0x65adc0",
+  "name": "RadioClass::HasFreeLink",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "RadioClass",
+  "emitted": "RadioClass::HasFreeLink",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0xe8]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 47
+ },
+ {
+  "addr": "0x70d150",
+  "name": "FrameTimer::Init25",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 37,
+  "part": "p205",
+  "unit": "FrameTimer",
+  "emitted": "FrameTimer::Init25",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ed84]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x70de40",
+  "name": "TechnoClass::GattlingValueRateDown_GattlingRateDownDelay",
+  "family": "REG_ALLOC",
+  "path": "eval_order",
+  "size": 37,
+  "part": "p205",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::GattlingValueRateDown_GattlingRateDownDelay",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0x144]"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x7ca489",
+  "name": "_wcscpy",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 37,
+  "part": "p206",
+  "unit": "_addr_7C",
+  "emitted": "_wcscpy",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 8]",
+   "ours": "+0 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 42
+ }
+]
