@@ -1,0 +1,104 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p174\part_00
+=== convert (20 addrs) ===
+[conv] 0x40e820 _DynamicVectorClass_PAVScriptClass::GetItemIndex -> _DynamicVectorClass_PAVScriptClass
+[conv] 0x40eef0 _DynamicVectorClass_PAVVoxelAnimClass::GetItemIndex -> _DynamicVectorClass_PAVVoxelAnimClass
+[conv] 0x40f080 _VectorClass_PAVVoxelAnimClass::GetCapacity -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f610 _DynamicVectorClass_PAVWarheadTypeClass::GetItemIndex -> _DynamicVectorClass_PAVWarheadTypeClass
+[conv] 0x40f7a0 _VectorClass_PAVWarheadTypeClass::LoadTypeData -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40fbe0 _DynamicVectorClass_PAVWeaponTypeClass::GetItemIndex -> _DynamicVectorClass_PAVWeaponTypeClass
+[conv] 0x40fd70 _VectorClass_PAVWeaponTypeClass::LoadTypeData -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x41de10 _DynamicVectorClass_PAVAirstrikeClass::GetItemIndex -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x41dfa0 _VectorClass_PAVAirstrikeClass::GetCapacity -> _VectorClass_PAVAirstrikeClass
+[conv] 0x4203a0 _DynamicVectorClass_PAVAlphaLightingRemapClass::PointerToIndex -> _DynamicVectorClass_PAVAlphaLightingRemapClass
+[conv] 0x421830 VectorClass_ptr_AlphaShapeClass::GetItemIndex -> VectorClass_ptr_AlphaShapeClass
+[conv] 0x4219c0 _VectorClass_PAVAlphaShapeClass::GetCapacity -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x428c10 AnimTypeClass::GetAnimData -> AnimTypeClass
+[conv] 0x42d570 _DynamicVectorClass_I::GetIndex -> _DynamicVectorClass_I
+[conv] 0x42d760 _VectorClass_I::GetCapacity -> _VectorClass_I
+[conv] 0x42f3d0 _DynamicVectorClass_VBaseNodeClass::Write -> _DynamicVectorClass_VBaseNodeClass
+[conv] 0x42f450 _DynamicVectorClass_VCell::Write -> _DynamicVectorClass_VCell
+[conv] 0x42f840 _VectorClass_VCell::GetCapacity -> _VectorClass_VCell
+[conv] 0x459fc0 _DynamicVectorClass_PBVParticleSystemTypeClass::LoadTypeData -> _DynamicVectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a020 DynamicVector::updateFactoryProduction -> DynamicVector
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVScriptClass rc=0
+[era] _DynamicVectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _DynamicVectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _DynamicVectorClass_PAVWeaponTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=0
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] _DynamicVectorClass_PAVAlphaLightingRemapClass rc=0
+[era] VectorClass_ptr_AlphaShapeClass rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] AnimTypeClass            rc=0
+[era] _DynamicVectorClass_I    rc=0
+[era] _VectorClass_I           rc=0
+[era] _DynamicVectorClass_VBaseNodeClass rc=0
+[era] _DynamicVectorClass_VCell rc=0
+[era] _VectorClass_VCell       rc=0
+[era] _DynamicVectorClass_PBVParticleSystemTypeClass rc=0
+[era] DynamicVector            rc=0
+=== diffasm byte-compare ===
+[diff] 0x40e820   MISMATCH         _DynamicVectorClass_PAVScriptClass::GetItemIndex
+[diff] 0x40eef0   MISMATCH         _DynamicVectorClass_PAVVoxelAnimClass::GetItemIndex
+[diff] 0x40f080   MISMATCH         _VectorClass_PAVVoxelAnimClass::GetCapacity
+[diff] 0x40f610   MISMATCH         _DynamicVectorClass_PAVWarheadTypeClass::GetItemIndex
+[diff] 0x40f7a0   MISMATCH         _VectorClass_PAVWarheadTypeClass::LoadTypeData
+[diff] 0x40fbe0   MISMATCH         _DynamicVectorClass_PAVWeaponTypeClass::GetItemIndex
+[diff] 0x40fd70   MISMATCH         _VectorClass_PAVWeaponTypeClass::LoadTypeData
+[diff] 0x41de10   MISMATCH         _DynamicVectorClass_PAVAirstrikeClass::GetItemIndex
+[diff] 0x41dfa0   MISMATCH         _VectorClass_PAVAirstrikeClass::GetCapacity
+[diff] 0x4203a0   MISMATCH         _DynamicVectorClass_PAVAlphaLightingRemapClass::PointerToIndex
+[diff] 0x421830   MISMATCH         VectorClass_ptr_AlphaShapeClass::GetItemIndex
+[diff] 0x4219c0   MISMATCH         _VectorClass_PAVAlphaShapeClass::GetCapacity
+[diff] 0x428c10   MATCH            AnimTypeClass::GetAnimData
+[diff] 0x42d570   MISMATCH         _DynamicVectorClass_I::GetIndex
+[diff] 0x42d760   MISMATCH         _VectorClass_I::GetCapacity
+[diff] 0x42f3d0   MISMATCH         _DynamicVectorClass_VBaseNodeClass::Write
+[diff] 0x42f450   MISMATCH         _DynamicVectorClass_VCell::Write
+[diff] 0x42f840   MISMATCH         _VectorClass_VCell::GetCapacity
+[diff] 0x459fc0   MISMATCH         _DynamicVectorClass_PBVParticleSystemTypeClass::LoadTypeData
+[diff] 0x45a020   MISMATCH         DynamicVector::updateFactoryProduction
+[ledger] 0x40e820 _DynamicVectorClass_PAVScriptClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x40eef0 _DynamicVectorClass_PAVVoxelAnimClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x40f080 _VectorClass_PAVVoxelAnimClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x40f610 _DynamicVectorClass_PAVWarheadTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x40f7a0 _VectorClass_PAVWarheadTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x40fbe0 _DynamicVectorClass_PAVWeaponTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x40fd70 _VectorClass_PAVWeaponTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x41de10 _DynamicVectorClass_PAVAirstrikeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x41dfa0 _VectorClass_PAVAirstrikeClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4203a0 _DynamicVectorClass_PAVAlphaLightingRemapClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x421830 VectorClass_ptr_AlphaShapeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4219c0 _VectorClass_PAVAlphaShapeClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x428c10 AnimTypeClass::GetAnimData -> OK (attempt 1)
+[ledger] 0x42d570 _DynamicVectorClass_I::GetIndex -> NG (attempt 1)
+[ledger] 0x42d760 _VectorClass_I::GetCapacity -> NG (attempt 1)
+[ledger] 0x42f3d0 _DynamicVectorClass_VBaseNodeClass::Write -> NG (attempt 1)
+[ledger] 0x42f450 _DynamicVectorClass_VCell::Write -> NG (attempt 1)
+[ledger] 0x42f840 _VectorClass_VCell::GetCapacity -> NG (attempt 1)
+[ledger] 0x459fc0 _DynamicVectorClass_PBVParticleSystemTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x45a020 DynamicVector::updateFactoryProduction -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 18,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p174\batch_report.json

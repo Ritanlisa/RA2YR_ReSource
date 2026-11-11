@@ -1,0 +1,11 @@
+{
+ "addr": "0x428C10",
+ "name": "AnimTypeClass::GetAnimData",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x428C10",
+ "bytes_hex": "8b81c80200008b5424043bc2750ac781c802000000000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
