@@ -1,0 +1,45 @@
+{
+ "symbol": "?sub_620870@@YIHG@Z",
+ "sym_key": "Unnamed::sub_620870",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "568bf1668b0d000000008bc666d3e88b0d000000008bd6d2e0668b0d0000000066d3ea8b0d0000000025ff0000002402d2e2668b0d000000000c02c1e00881e2ff0000000bc28bd666d3ea8b0d000000005ec1e008d2e281e2ff0000000bc2c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  }
+ ]
+}

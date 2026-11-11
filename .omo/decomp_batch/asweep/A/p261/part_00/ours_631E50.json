@@ -1,0 +1,8 @@
+{
+ "symbol": "?InterpolateColor@TacticalClass@@QAEHH@Z",
+ "sym_key": "TacticalClass::InterpolateColor",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "8b4114560faf4424088b71105703c63d002000008941107e07c74110002000008b51108bc225ff0f0000f6c6107409ba001000002bd08bc28b71248b7918ba001000000faff82bd00faff203f78b791cc1ee0c0faff88971048b71280faff203f75fc1ee0c8971088b712c0faff28b51200fafd003f2c1ee0c89710c5ec20400",
+ "relocs": []
+}

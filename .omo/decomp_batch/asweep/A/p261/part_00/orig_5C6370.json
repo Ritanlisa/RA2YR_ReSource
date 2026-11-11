@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6370",
+ "name": "DecodeLengthLCW",
+ "size": 126,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6370",
+ "bytes_hex": "8a02535542563c02578be9756a8a02a880750925ff0000008bf8eb1e83e07f4283f8027f5233c98a0a4283f8018bf97e0a33c08a02c1e7080bf8428b4c24148d348d000000003bfe772d8a028bda24808bd6f6d81ac02bd725ff0000008d0c2e85d27e06494a880175fa85ff7e098a1349434f881175f75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

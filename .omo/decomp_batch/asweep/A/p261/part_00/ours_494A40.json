@@ -1,0 +1,21 @@
+{
+ "symbol": "?Blit_Alpha_Lucent50_0@_BlitTranslucent50ZeroAlpha_G@@QAEPAGPAGPAEHHH0HH@Z",
+ "sym_key": "_BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "8b442418568b74241085f67e728b15000000005355578b7c2418897424288b7424148a1f4784db885c241c743466833800752e8b5c241c8b6904668b510881e3ff000000668b5c5d00668b2e66d1eb66d1ed23da23ea03dd66891e8b15000000008b5a1c83c00283c6023bc372032b42208b5c24284b895c242875a65f5d5b5ec22000",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_VisibleSurfaceDescriptor@@3PADA",
+   "sym_key": "g_VisibleSurfaceDescriptor"
+  }
+ ]
+}

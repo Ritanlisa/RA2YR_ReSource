@@ -1,0 +1,8 @@
+{
+ "symbol": "?serializeEvent@EventClass@@QAEHXZ",
+ "sym_key": "EventClass::serializeEvent",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "8b4104565733f633ff3bc68971287e655333c08b512403d08b1a83e3fe891a8b512403d08b1a83e3fd891a8b512403d083c024478b1a83e3fb891a8b5124897402e08b5124897402e48b5124897402e88b5124897402ec8b5124897402f48b512466897402fc8b51308974bafc8b51043bfa7c9f5b5f5ec3",
+ "relocs": []
+}

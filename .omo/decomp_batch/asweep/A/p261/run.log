@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p261\part_00
+=== convert (20 addrs) ===
+[conv] 0x48b390 EventClass::serializeEvent -> EventClass
+[conv] 0x5afb80 TransformMatrix3x4Point -> _addr_5A
+[conv] 0x496250 _RLEBlitTransDarken_G::Blit_RLE_Lucent50 -> _RLEBlitTransDarken_G
+[conv] 0x5af120 ObjectClass::sub_5AF120 -> ObjectClass
+[conv] 0x620870 sub_620870 -> _addr_62
+[conv] 0x5bdc00 sub_5BDC00 -> _addr_5B
+[conv] 0x7d15a0 _strlen -> _addr_7D
+[conv] 0x4b4780 JumpjetLocomotion::TransformCoords -> JumpjetLocomotion
+[conv] 0x6a3db0 WalkLocomotion::TransformCoords -> WalkLocomotion
+[conv] 0x4c6860 ScriptAction::InitActionFields -> ScriptAction
+[conv] 0x7c19f0 Audio_Process_7C19F0 -> Audio_Process
+[conv] 0x6e4560 TActionClass::executeEMPulseAction -> TActionClass
+[conv] 0x5c6370 DecodeLengthLCW -> _addr_5C
+[conv] 0x5f6790 Network_Process_5F6790 -> Network_Process
+[conv] 0x4a1c10 Power::FinalizeDrain -> Power
+[conv] 0x5ae8f0 Matrix3x3::Multiply -> Matrix3x3
+[conv] 0x631e50 TacticalClass::InterpolateColor -> TacticalClass
+[conv] 0x494920 _BlitTranslucent50NonzeroAlpha_G::Blit_Alpha_Lucent50 -> _BlitTranslucent50NonzeroAlpha_G
+[conv] 0x494a40 _BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0 -> _BlitTranslucent50ZeroAlpha_G
+[conv] 0x6d1fe0 TacticalClass::AdjustForZShapeMove -> TacticalClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] EventClass               rc=0
+[era] _addr_5A                 rc=0
+[era] _RLEBlitTransDarken_G    rc=2
+[era] ObjectClass              rc=2
+[era] _addr_62                 rc=0
+[era] _addr_5B                 rc=2
+[era] _addr_7D                 rc=0
+[era] JumpjetLocomotion        rc=2
+[era] WalkLocomotion           rc=2
+[era] ScriptAction             rc=0
+[era] Audio_Process            rc=2
+[era] TActionClass             rc=0
+[era] _addr_5C                 rc=0
+[era] Network_Process          rc=0
+[era] Power                    rc=2
+[era] Matrix3x3                rc=0
+[era] TacticalClass            rc=0
+[era] _BlitTranslucent50NonzeroAlpha_G rc=0
+[era] _BlitTranslucent50ZeroAlpha_G rc=0
+=== diffasm byte-compare ===
+[diff] 0x48b390   MISMATCH         EventClass::serializeEvent
+[diff] 0x5afb80   MISMATCH         TransformMatrix3x4Point
+[diff] 0x620870   MISMATCH         sub_620870
+[diff] 0x7d15a0   MISMATCH         _strlen
+[diff] 0x4c6860   MISMATCH         ScriptAction::InitActionFields
+[diff] 0x6e4560   MATCH            TActionClass::executeEMPulseAction
+[diff] 0x5c6370   MISMATCH         DecodeLengthLCW
+[diff] 0x5f6790   MISMATCH         Network_Process_5F6790
+[diff] 0x5ae8f0   MISMATCH         Matrix3x3::Multiply
+[diff] 0x631e50   MISMATCH         TacticalClass::InterpolateColor
+[diff] 0x6d1fe0   MISMATCH         TacticalClass::AdjustForZShapeMove
+[diff] 0x494920   MISMATCH         _BlitTranslucent50NonzeroAlpha_G::Blit_Alpha_Lucent50
+[diff] 0x494a40   MISMATCH         _BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0
+[ledger] 0x48b390 EventClass::serializeEvent -> NG (attempt 1)
+[ledger] 0x5afb80 TransformMatrix3x4Point -> NG (attempt 1)
+[ledger] 0x496250 _RLEBlitTransDarken_G::Blit_RLE_Lucent50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5af120 ObjectClass::sub_5AF120 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x620870 sub_620870 -> NG (attempt 1)
+[ledger] 0x5bdc00 sub_5BDC00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d15a0 _strlen -> NG (attempt 1)
+[ledger] 0x4b4780 JumpjetLocomotion::TransformCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a3db0 WalkLocomotion::TransformCoords -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c6860 ScriptAction::InitActionFields -> NG (attempt 1)
+[ledger] 0x7c19f0 Audio_Process_7C19F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4560 TActionClass::executeEMPulseAction -> OK (attempt 1)
+[ledger] 0x5c6370 DecodeLengthLCW -> NG (attempt 1)
+[ledger] 0x5f6790 Network_Process_5F6790 -> NG (attempt 1)
+[ledger] 0x4a1c10 Power::FinalizeDrain -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae8f0 Matrix3x3::Multiply -> NG (attempt 1)
+[ledger] 0x631e50 TacticalClass::InterpolateColor -> NG (attempt 1)
+[ledger] 0x494920 _BlitTranslucent50NonzeroAlpha_G::Blit_Alpha_Lucent50 -> NG (attempt 1)
+[ledger] 0x494a40 _BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0 -> NG (attempt 1)
+[ledger] 0x6d1fe0 TacticalClass::AdjustForZShapeMove -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "codegen_shape": 5,
+  "branch_order": 1,
+  "ret_norm": 1,
+  "cc_mismatch": 2,
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p261\batch_report.json

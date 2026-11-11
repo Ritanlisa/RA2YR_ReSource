@@ -1,0 +1,8 @@
+{
+ "symbol": "?TransformMatrix3x4Point@@YIPAMPAM00@Z",
+ "sym_key": "Unnamed::TransformMatrix3x4Point",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "d94218568b7424088bc1d84e08d94210d80edec1d94214d84e04dec1d8421cd94228d84e08d94220d80edec1d94224d84e04dec1d8422cd94208d84e08d94204d84e04dec1d902d80e5edec1d8420cd918d9c9d95804d95808c20400",
+ "relocs": []
+}

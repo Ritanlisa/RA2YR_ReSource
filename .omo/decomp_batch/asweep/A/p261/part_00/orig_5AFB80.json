@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AFB80",
+ "name": "TransformMatrix3x4Point",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AFB80",
+ "bytes_hex": "83ec0cd94208568b742414d84e08d94204d84e048bc1dec1d902d80edec1d8420cd95c2404d94210d80ed94218d84e08dec1d94214d84e04dec1d8421cd95c2408d94220d80ed94228d84e08dec1d94224d84e045edec1d8422c8b54240089118b542404d95c24088951048b54240889510883c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

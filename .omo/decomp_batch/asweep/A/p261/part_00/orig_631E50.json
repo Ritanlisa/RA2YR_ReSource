@@ -1,0 +1,11 @@
+{
+ "addr": "0x631E50",
+ "name": "TacticalClass::InterpolateColor",
+ "size": 130,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631E50",
+ "bytes_hex": "8b4114560faf4424088b71105703f08bc68971103d002000007e07c74110002000008b51108bc225ff0f0000f6c6107409ba001000002bd08bc28b71248b7918ba001000000faff82bd00faff203f78b791cc1fe0c0faff88971048b71280faff203f75fc1fe0c8971088b712c0faff28b51200fafd003f2c1fe0c89710c5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

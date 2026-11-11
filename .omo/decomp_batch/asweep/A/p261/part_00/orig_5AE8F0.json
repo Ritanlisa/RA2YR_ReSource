@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AE8F0",
+ "name": "Matrix3x3::Multiply",
+ "size": 129,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AE8F0",
+ "bytes_hex": "518b442408d900d9c0d809d8410cd9542408d9590cd9c0d84910d8411cd9542400d9591cd84920d8412cd9512cd94004d9c0d84904d8442408d9542408d9590cd9c0d84914d8442400d9542400d9591cd84924dec1d9512cd94008d9c0d84908d8442408d9590cd9c0d84918d8442400d9591cd84928d8c1d9592cddd859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

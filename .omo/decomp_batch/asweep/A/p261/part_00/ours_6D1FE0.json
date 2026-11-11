@@ -1,0 +1,8 @@
+{
+ "symbol": "?AdjustForZShapeMove@TacticalClass@@QAGPAHPAH0@Z",
+ "sym_key": "TacticalClass::AdjustForZShapeMove",
+ "size": 117,
+ "link_base": 0,
+ "bytes_hex": "8b44240c56578b308b48048d04768d0480d1e0992bc28bf88d0449d1ff8d0480d1e0992bc2d1f803f88d04768d0480c1e002992bc28bf08d0449d1fe8d04808b4c2410c1e002992bc2d1f82bf08bc69981e2ff00000003c2c1f80889018bc79981e2ff0000005f03c25ec1f8088941048bc1c20c00",
+ "relocs": []
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?InitActionFields@ScriptAction@@QAEPADHHDDHDHDHD@Z",
+ "sym_key": "ScriptAction::InitActionFields",
+ "size": 100,
+ "link_base": 0,
+ "bytes_hex": "8bc18b4c240485c97d13c64002ffc600008b0d00000000894804c228008b5424088848028a4c24108950088b54241488480c8a4c241889500c8b54241c8848148b4c24248950188a542428c60004c640250089481c8850248b0d00000000894804c22800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

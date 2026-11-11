@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C6860",
+ "name": "ScriptAction::InitActionFields",
+ "size": 125,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C6860",
+ "bytes_hex": "8bc18b4c240485c97c608b5424088848028d4807c60004c6401d0089118a54240c8851048a4c241088480c8b4c24148d500e89480e8a4c2418884a048b4c241c8d50138948138a4c2420884a048b4c24248d50188948188a4c2428884a048b1584eda800895003c22800c64002ffc600008b0d84eda800894803c22800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

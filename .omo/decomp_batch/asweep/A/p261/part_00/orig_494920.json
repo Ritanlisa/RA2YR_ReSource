@@ -1,0 +1,11 @@
+{
+ "addr": "0x494920",
+ "name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50",
+ "size": 131,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x494920",
+ "bytes_hex": "8b54240c8b44241885d27e74538b5c240c55568b742410578b3da4e88700895424288a134384d28854241c743466833800742e8b7c241c8b6904668b510881e7ff000000668b7c7d00668b2e66d1ef66d1ed23fa23ea03fd66893e8b3da4e887008b571c83c00283c6023bc272032b47208b5424284a8954242875a65f5e5d5bc22000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

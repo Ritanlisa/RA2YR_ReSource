@@ -1,0 +1,11 @@
+{
+ "addr": "0x48B390",
+ "name": "EventClass::serializeEvent",
+ "size": 120,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48B390",
+ "bytes_hex": "8b4104565733ff33f63bc78979287e655333c08b512403d08b1a83e3fe891a8b512403d08b1a83e3fd891a8b512403d083c0248b1a83e3fb46891a8b5124897c02e08b5124897c02e48b5124897c02e88b5124897c02ec8b5124897c02f48b512466897c02fc8b5130897cb2fc8b51043bf27c9f5b5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

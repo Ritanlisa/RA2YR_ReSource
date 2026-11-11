@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6790",
+ "name": "Network_Process_5F6790",
+ "size": 127,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6790",
+ "bytes_hex": "83ec0c5355568b7210578bd98d7eff33c033ed33c985ff895c2418897424147c398b52048d14ba47897c24108b3283ea0481c69c0000008bde8b3303c68b7424108b7b0403ef8b5b0803cb4e8974241075da8b7424148b5c241899f7fe8bf88bc599f7fe8be88bc199f7fe8bcb89395f5e8969045d8941088bc35b83c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

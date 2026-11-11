@@ -1,0 +1,8 @@
+{
+ "symbol": "?executeEMPulseAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeEMPulseAction",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "51538b5c240c85db894c2404750732c05b59c21000558b6b784d785a56578b436c8b4c24108b3ca88d71548b872005000083c0248a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c075108b5424108b82900000008987f00000004d79aa5f5e5db0015b59c21000",
+ "relocs": []
+}

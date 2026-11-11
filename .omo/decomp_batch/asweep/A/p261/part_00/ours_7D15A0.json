@@ -1,0 +1,8 @@
+{
+ "symbol": "?_strlen@@YAIPBD@Z",
+ "sym_key": "Unnamed::_strlen",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408f6c3038bc374198a0b8d430184c9740ba803740c8a084084c975f52bc35b48c38b0883c0048d91fffefe7ef7d133d1f7c20001018174e98b48fc84c97428f6c5ff75072bc35b83e803c3f7c10000ff0075072bc35b83e802c3f7c1000000ff75bf2bc35b48c32bc35b83e804c3",
+ "relocs": []
+}
