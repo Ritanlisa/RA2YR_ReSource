@@ -1,0 +1,15 @@
+{
+ "symbol": "?Release@BinkMovieHandle@@QAEHXZ",
+ "sym_key": "BinkMovieHandle::Release",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "568b71108b460450e80000000083c40485c07504c6462d015ec3",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?BinkWait@@YAHHZZ",
+   "sym_key": "BinkWait"
+  }
+ ]
+}

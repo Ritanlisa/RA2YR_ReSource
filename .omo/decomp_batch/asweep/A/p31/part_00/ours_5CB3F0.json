@@ -1,0 +1,15 @@
+{
+ "symbol": "?Read@UnholyAlliance@@QAEDXZ",
+ "sym_key": "UnholyAlliance::Read",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b001a200000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?Bases@@3PADA",
+   "sym_key": "Bases"
+  }
+ ]
+}

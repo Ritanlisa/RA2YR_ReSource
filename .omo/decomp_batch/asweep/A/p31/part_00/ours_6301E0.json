@@ -1,0 +1,8 @@
+{
+ "symbol": "?ProcessFrame@ParticleSystemClass@@QAEXXZ",
+ "sym_key": "ParticleSystemClass::ProcessFrame",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "c681f800000001c3",
+ "relocs": []
+}

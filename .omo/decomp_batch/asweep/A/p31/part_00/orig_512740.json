@@ -1,0 +1,11 @@
+{
+ "addr": "0x512740",
+ "name": "HouseTypeClass::AddRef",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x512740",
+ "bytes_hex": "b801000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

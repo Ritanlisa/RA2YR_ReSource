@@ -1,0 +1,11 @@
+{
+ "addr": "0x5220F0",
+ "name": "InfantryClass::SetPermanentBerzerk",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5220F0",
+ "bytes_hex": "c681d806000001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

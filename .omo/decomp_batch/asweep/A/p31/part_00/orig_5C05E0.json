@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C05E0",
+ "name": "BinkMovieHandle::BlitToTarget",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C05E0",
+ "bytes_hex": "8b4910e90826e7ff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

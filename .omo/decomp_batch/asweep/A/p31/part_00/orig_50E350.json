@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E350",
+ "name": "HouseClass::COMStub_Ret1_2",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E350",
+ "bytes_hex": "b801000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

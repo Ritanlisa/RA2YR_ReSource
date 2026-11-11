@@ -1,0 +1,8 @@
+{
+ "symbol": "?AcquiredThreatNode@HouseClass@@QAEXXZ",
+ "sym_key": "HouseClass::AcquiredThreatNode",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "c681fb01000001c3",
+ "relocs": []
+}

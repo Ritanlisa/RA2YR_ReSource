@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPermanentBerzerk@InfantryClass@@QAEXXZ",
+ "sym_key": "InfantryClass::SetPermanentBerzerk",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "c681d806000001c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CC690",
+ "name": "Map_Process_5CC690",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CC690",
+ "bytes_hex": "c7414000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

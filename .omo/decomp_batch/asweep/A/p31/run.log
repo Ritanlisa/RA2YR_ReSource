@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8250 TiberianSunClassFactory::vt_placeholder_01 -> TiberianSunClassFactory
+[conv] 0x509130 HouseClass::AcquiredThreatNode -> HouseClass
+[conv] 0x50e340 HouseClass::COMStub_Ret1_1 -> HouseClass
+[conv] 0x50e350 HouseClass::COMStub_Ret1_2 -> HouseClass
+[conv] 0x512740 HouseTypeClass::AddRef -> HouseTypeClass
+[conv] 0x512750 HouseTypeClass::Release -> HouseTypeClass
+[conv] 0x517100 HoverLocomotionClass::SmallStub_517100 -> HoverLocomotionClass
+[conv] 0x5220f0 InfantryClass::SetPermanentBerzerk -> InfantryClass
+[conv] 0x55abb0 LocomotionClass::CheckState -> LocomotionClass
+[conv] 0x55cc00 sub_55CC00 -> _addr_55
+[conv] 0x5b19d0 MechLocomotionClass::SmallStub_5B19D0 -> MechLocomotionClass
+[conv] 0x5bc450 GetTextBufferEntry -> _addr_5B
+[conv] 0x5c0590 BinkMovieHandle::Release -> BinkMovieHandle
+[conv] 0x5c05e0 BinkMovieHandle::BlitToTarget -> BinkMovieHandle
+[conv] 0x5c1cb0 MPCooperative::COMStub -> MPCooperative
+[conv] 0x5cb3f0 UnholyAlliance::Read -> UnholyAlliance
+[conv] 0x5cb430 UnholyAlliance::Seek -> UnholyAlliance
+[conv] 0x5cc690 ObjectClass::Map_Process_5CC690 -> ObjectClass
+[conv] 0x5f6c70 ObjectClass::COMStub_79 -> ObjectClass
+[conv] 0x6301e0 ParticleSystemClass::ProcessFrame -> ParticleSystemClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TiberianSunClassFactory  rc=0
+[era] HouseClass               rc=0
+[era] HouseTypeClass           rc=0
+[era] HoverLocomotionClass     rc=0
+[era] InfantryClass            rc=0
+[era] LocomotionClass          rc=0
+[era] _addr_55                 rc=0
+[era] MechLocomotionClass      rc=0
+[era] _addr_5B                 rc=2
+[era] BinkMovieHandle          rc=0
+[era] MPCooperative            rc=0
+[era] UnholyAlliance           rc=0
+[era] ObjectClass              rc=0
+[era] ParticleSystemClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e8250   MATCH            TiberianSunClassFactory::vt_placeholder_01
+[diff] 0x509130   MATCH            HouseClass::AcquiredThreatNode
+[diff] 0x50e340   MATCH            HouseClass::COMStub_Ret1_1
+[diff] 0x50e350   MATCH            HouseClass::COMStub_Ret1_2
+[diff] 0x512740   MATCH            HouseTypeClass::AddRef
+[diff] 0x512750   MATCH            HouseTypeClass::Release
+[diff] 0x517100   MATCH            HoverLocomotionClass::SmallStub_517100
+[diff] 0x5220f0   MATCH            InfantryClass::SetPermanentBerzerk
+[diff] 0x55abb0   MATCH            LocomotionClass::CheckState
+[diff] 0x55cc00   MISMATCH         sub_55CC00
+[diff] 0x5b19d0   MATCH            MechLocomotionClass::SmallStub_5B19D0
+[diff] 0x5c0590   MISMATCH         BinkMovieHandle::Release
+[diff] 0x5c05e0   MISMATCH         BinkMovieHandle::BlitToTarget
+[diff] 0x5c1cb0   MATCH            MPCooperative::COMStub
+[diff] 0x5cb3f0   MATCH            UnholyAlliance::Read
+[diff] 0x5cb430   MATCH            UnholyAlliance::Seek
+[diff] 0x5cc690   MATCH            ObjectClass::Map_Process_5CC690
+[diff] 0x5f6c70   MISMATCH         ObjectClass::COMStub_79
+[diff] 0x6301e0   MATCH            ParticleSystemClass::ProcessFrame
+[ledger] 0x4e8250 TiberianSunClassFactory::vt_placeholder_01 -> OK (attempt 1)
+[ledger] 0x509130 HouseClass::AcquiredThreatNode -> OK (attempt 1)
+[ledger] 0x50e340 HouseClass::COMStub_Ret1_1 -> OK (attempt 1)
+[ledger] 0x50e350 HouseClass::COMStub_Ret1_2 -> OK (attempt 1)
+[ledger] 0x512740 HouseTypeClass::AddRef -> OK (attempt 1)
+[ledger] 0x512750 HouseTypeClass::Release -> OK (attempt 1)
+[ledger] 0x517100 HoverLocomotionClass::SmallStub_517100 -> OK (attempt 1)
+[ledger] 0x5220f0 InfantryClass::SetPermanentBerzerk -> OK (attempt 1)
+[ledger] 0x55abb0 LocomotionClass::CheckState -> OK (attempt 1)
+[ledger] 0x55cc00 sub_55CC00 -> NG (attempt 1)
+[ledger] 0x5b19d0 MechLocomotionClass::SmallStub_5B19D0 -> OK (attempt 1)
+[ledger] 0x5bc450 GetTextBufferEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0590 BinkMovieHandle::Release -> NG (attempt 1)
+[ledger] 0x5c05e0 BinkMovieHandle::BlitToTarget -> NG (attempt 1)
+[ledger] 0x5c1cb0 MPCooperative::COMStub -> OK (attempt 1)
+[ledger] 0x5cb3f0 UnholyAlliance::Read -> OK (attempt 1)
+[ledger] 0x5cb430 UnholyAlliance::Seek -> OK (attempt 1)
+[ledger] 0x5cc690 ObjectClass::Map_Process_5CC690 -> OK (attempt 1)
+[ledger] 0x5f6c70 ObjectClass::COMStub_79 -> NG (attempt 1)
+[ledger] 0x6301e0 ParticleSystemClass::ProcessFrame -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 15,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 2,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 78.9,
+ "match_rate_of_total_pct": 75.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p31\batch_report.json
