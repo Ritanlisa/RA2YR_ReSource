@@ -1,0 +1,8 @@
+{
+ "symbol": "?Lock@XSurface@@QAEHHH@Z",
+ "sym_key": "XSurface::Lock",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b410c4089410c33c0c20800",
+ "relocs": []
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p39\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bb990 ObjectClass::TopLevelExceptionFilter -> ObjectClass
+[conv] 0x70f000 TechnoClass::ClearUnknownFlag -> TechnoClass
+[conv] 0x717bc0 TechnoTypeClass::Constructor_0 -> TechnoTypeClass
+[conv] 0x717bd0 IntDynamicVector::Construct -> IntDynamicVector
+[conv] 0x717be0 TechnoTypeClass::Constructor_1 -> TechnoTypeClass
+[conv] 0x717bf0 ObjectTypeClass::CheckFlag -> ObjectTypeClass
+[conv] 0x724c00 Frame::Init -> Frame
+[conv] 0x75cbc0 WalkLocomotionClass::SetByteField_3 -> WalkLocomotionClass
+[conv] 0x75e690 WarheadTypeClass::checkImmunity -> WarheadTypeClass
+[conv] 0x75e6a0 WarheadTypeClass::calculateDamage -> WarheadTypeClass
+[conv] 0x764ff0 ObjectClass::sub_764FF0 -> ObjectClass
+[conv] 0x76ff30 WDTObject::GetAndClearFlag -> WDTObject
+[conv] 0x7ba320 WWMouseClass::IsRefCountNegative -> WWMouseClass
+[conv] 0x7c8b2d ObjectClass::sub_7C8B2D -> ObjectClass
+[conv] 0x411560 XSurface::Lock -> XSurface
+[conv] 0x41b860 TechnoClass::checkAmmo -> TechnoClass
+[conv] 0x454250 BuildingClass::IsProducing -> BuildingClass
+[conv] 0x485240 ObjectClass::SetMember09 -> ObjectClass
+[conv] 0x487150 FootClass::checkTerrainSpeed -> FootClass
+[conv] 0x487160 FootClass::updateLocomotion -> FootClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=2
+[era] IntDynamicVector         rc=2
+[era] ObjectTypeClass          rc=2
+[era] Frame                    rc=0
+[era] WalkLocomotionClass      rc=2
+[era] WarheadTypeClass         rc=2
+[era] WDTObject                rc=0
+[era] WWMouseClass             rc=2
+[era] XSurface                 rc=0
+[era] BuildingClass            rc=0
+[era] FootClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x764ff0   MISMATCH         ObjectClass::sub_764FF0
+[diff] 0x7c8b2d   MATCH            ObjectClass::sub_7C8B2D
+[diff] 0x485240   MATCH            ObjectClass::SetMember09
+[diff] 0x70f000   MISMATCH         TechnoClass::ClearUnknownFlag
+[diff] 0x41b860   MISMATCH         TechnoClass::checkAmmo
+[diff] 0x724c00   MATCH            Frame::Init
+[diff] 0x76ff30   MATCH            WDTObject::GetAndClearFlag
+[diff] 0x411560   MATCH            XSurface::Lock
+[diff] 0x454250   MATCH            BuildingClass::IsProducing
+[diff] 0x487150   MISMATCH         FootClass::checkTerrainSpeed
+[diff] 0x487160   MISMATCH         FootClass::updateLocomotion
+[ledger] 0x6bb990 ObjectClass::TopLevelExceptionFilter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70f000 TechnoClass::ClearUnknownFlag -> NG (attempt 1)
+[ledger] 0x717bc0 TechnoTypeClass::Constructor_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717bd0 IntDynamicVector::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717be0 TechnoTypeClass::Constructor_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x717bf0 ObjectTypeClass::CheckFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724c00 Frame::Init -> OK (attempt 1)
+[ledger] 0x75cbc0 WalkLocomotionClass::SetByteField_3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75e690 WarheadTypeClass::checkImmunity -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75e6a0 WarheadTypeClass::calculateDamage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764ff0 ObjectClass::sub_764FF0 -> NG (attempt 1)
+[ledger] 0x76ff30 WDTObject::GetAndClearFlag -> OK (attempt 1)
+[ledger] 0x7ba320 WWMouseClass::IsRefCountNegative -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8b2d ObjectClass::sub_7C8B2D -> OK (attempt 1)
+[ledger] 0x411560 XSurface::Lock -> OK (attempt 1)
+[ledger] 0x41b860 TechnoClass::checkAmmo -> NG (attempt 1)
+[ledger] 0x454250 BuildingClass::IsProducing -> OK (attempt 1)
+[ledger] 0x485240 ObjectClass::SetMember09 -> OK (attempt 1)
+[ledger] 0x487150 FootClass::checkTerrainSpeed -> NG (attempt 1)
+[ledger] 0x487160 FootClass::updateLocomotion -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 5,
+  "MATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "width_mismatch": 3,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 54.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p39\batch_report.json

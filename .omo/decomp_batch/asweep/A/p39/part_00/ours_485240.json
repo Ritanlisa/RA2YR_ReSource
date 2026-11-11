@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetMember09@ObjectClass@@QAEPAIPAH@Z",
+ "sym_key": "ObjectClass::SetMember09",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b10895124c20400",
+ "relocs": []
+}

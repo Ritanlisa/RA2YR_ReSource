@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsProducing@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::IsProducing",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8a81dd06000084c00f95c0c3",
+ "relocs": []
+}

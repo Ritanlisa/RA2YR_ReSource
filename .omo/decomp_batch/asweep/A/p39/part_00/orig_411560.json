@@ -1,0 +1,11 @@
+{
+ "addr": "0x411560",
+ "name": "XSurface::Lock",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x411560",
+ "bytes_hex": "8b410c4089410c33c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

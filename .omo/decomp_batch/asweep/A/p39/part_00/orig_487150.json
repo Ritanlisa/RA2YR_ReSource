@@ -1,0 +1,11 @@
+{
+ "addr": "0x487150",
+ "name": "FootClass::checkTerrainSpeed",
+ "size": 12,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487150",
+ "bytes_hex": "8b44240466ff44417cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
