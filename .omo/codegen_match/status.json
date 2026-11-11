@@ -7,7 +7,7 @@
   "status": "OK"
  },
  "0x402330": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+12 je 0x4023b0",
   "name": "AudioController::UpdatePlayback",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -42,7 +42,7 @@
   "status": "NG"
  },
  "0x4052f0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+0 push esi",
   "name": "VocClass::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -511,7 +511,7 @@
   "status": "NG"
  },
  "0x41fe20": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+1 mov edx, dword ptr [ecx + 0x108]",
   "name": "AITriggerTypeClass::RegisterFailure",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
@@ -693,7 +693,7 @@
   "status": "NG"
  },
  "0x42f9c0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 push ecx",
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -749,7 +749,7 @@
   "status": "NG"
  },
  "0x433770": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 sub esp, 0x14",
   "name": "BinkMovieClass::OpenFile",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
@@ -854,7 +854,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x451f60": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": "+26 je 0x451fe2",
   "name": "BuildingClass::SyncCrateVisuals",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -1547,7 +1547,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4953f0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+0 push ebx",
   "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -1561,7 +1561,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x495730": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+0 push ebx",
   "name": "BlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -1617,7 +1617,7 @@
   "status": "NG"
  },
  "0x497760": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": "+5 mov edx, dword ptr [esp + 0x1c]",
   "name": "RLEBlitTransZRemapXlatAlpha_ushort::Blit_Alpha_ZReadWrite",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -1694,7 +1694,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4988c0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+1 mov eax, dword ptr [esp + 0x2c]",
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -2562,7 +2562,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5022f0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+10 xor esi, esi",
   "name": "WaypointClass::IsCoordinateUsed",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -2583,7 +2583,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x509b20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+13 je 0x509bc0",
   "name": "HouseClass::Find",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -2653,14 +2653,14 @@
   "status": "OK"
  },
  "0x50eb70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+0 push esi",
   "name": "VectorClass::InsertAt",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x50f9e0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+12 je 0x50fa77",
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -2919,7 +2919,7 @@
   "status": "OK"
  },
  "0x526810": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+8 xor ebx, ebx",
   "name": "INIClass::BinarySearchSection",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -3185,7 +3185,7 @@
   "status": "OK"
  },
  "0x53ee70": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 mov eax, ecx",
   "name": "GUID::Compare",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
@@ -3199,7 +3199,7 @@
   "status": "NG"
  },
  "0x53f0e0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+0 mov edx, dword ptr [esp + 4]",
   "name": "Network::FormatAddress",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -3311,7 +3311,7 @@
   "status": "NG"
  },
  "0x54f2f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 mov al, byte ptr [0xa8ed9c]",
   "name": "InputManager::EnqueueInputEvent",
   "note": "decomp_batch r2: MISMATCH/const_fold",
@@ -3486,7 +3486,7 @@
   "status": "OK"
  },
  "0x565b00": {
-  "attempts": 13,
+  "attempts": 14,
   "first_diff": "+57 jle 0x565b63",
   "name": "MapClass::FreeAllCells",
   "note": "decomp_batch r2: MISMATCH/branch_order",
@@ -3598,7 +3598,7 @@
   "status": "OK"
  },
  "0x5865f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+3 mov eax, dword ptr [esp + 0xc]",
   "name": "CellClass::SpiralFindClosest",
   "note": "decomp_batch r2: MISMATCH/const_fold",
@@ -3717,7 +3717,7 @@
   "status": "OK"
  },
  "0x5b2950": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": "+0 mov ax, word ptr [ecx]",
   "name": "Math::Sub16",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3948,7 +3948,7 @@
   "status": "OK"
  },
  "0x5c1fa0": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": "+42 jne 0x5c1fd6",
   "name": "MPCooperative::Revert",
   "note": "decomp_batch r2: MISMATCH/branch_order",
@@ -4263,7 +4263,7 @@
   "status": "OK"
  },
  "0x5fed00": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": "+0 push ecx",
   "name": "OverlayTypeClass::GetRadarColor",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -4340,7 +4340,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x624fc0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+8 je 0x62505f",
   "name": "HashTable_flat::Grow2",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -4361,7 +4361,7 @@
   "status": "NG"
  },
  "0x625830": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+13 jbe 0x6258da",
   "name": "HashTable_flat::Rebuild2",
   "note": "decomp_batch r2: MISMATCH/branch_order",
@@ -4536,7 +4536,7 @@
   "status": "OK"
  },
  "0x635060": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+49 je 0x63510e",
   "name": "FactoryClass::FinishProduction",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -4578,7 +4578,7 @@
   "status": "OK"
  },
  "0x638ce0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 sub esp, 0x70",
   "name": "ScriptAction::ClassifyAction",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
@@ -4774,7 +4774,7 @@
   "status": "OK"
  },
  "0x65b800": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+0 sub esp, 0xc",
   "name": "RadSiteClass::Tick",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -5579,7 +5579,7 @@
   "status": "OK"
  },
  "0x7036c0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": "+0 sub esp, 0xc",
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -5824,7 +5824,7 @@
   "status": "NG"
  },
  "0x722e50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+13 jle 0x722ef9",
   "name": "BuildingClass::FreeUpgradeQueue2",
   "note": "decomp_batch r2: MISMATCH/signedness",
