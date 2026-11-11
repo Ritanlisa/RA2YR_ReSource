@@ -1,0 +1,39 @@
+{
+ "symbol": "?sub_4CB8B0@ObjectClass@@QAEGXZ",
+ "sym_key": "ObjectClass::sub_4CB8B0",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460425ffff000083c0fd83f803772dff2485000000008b4e0833d2668b1152e8000000008b4e08668901eb108b56088b0250e8000000008b4e08890133d2668b560452e8000000008b56048bca33c2c1e91025ffff000081e1ffff000033c251894604e8000000008b560425ffff00008bc80bca81e1ffff0000894e045ec3",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "$L1838",
+   "sym_key": "$L1838"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?htons@@YGGH@Z",
+   "sym_key": "htons"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?htonl@@YGKH@Z",
+   "sym_key": "htonl"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?htons@@YGGH@Z",
+   "sym_key": "htons"
+  },
+  {
+   "off": 104,
+   "type": "REL32",
+   "sym": "?htons@@YGGH@Z",
+   "sym_key": "htons"
+  }
+ ]
+}

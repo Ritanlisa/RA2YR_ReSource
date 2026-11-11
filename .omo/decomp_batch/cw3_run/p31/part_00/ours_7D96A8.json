@@ -1,0 +1,39 @@
+{
+ "symbol": "?__lock_fhandle@ObjectClass@@QAEXH@Z",
+ "sym_key": "ObjectClass::__lock_fhandle",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404538bc15683e01f57c1f9058d3cc08d1c8d00000000c1e7028b0b8bf703f18b460885c075276a11e8000000008b460883c40485c0750c8d460c50e800000000ff46086a11e80000000083c4048b0b8d540f0c52e8000000005f5e5bc20400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78A80@@3PAIA",
+   "sym_key": "CRTGlobal_B78A80"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?InitializeCriticalSection@@YGXPAX@Z",
+   "sym_key": "InitializeCriticalSection"
+  },
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 88,
+   "type": "REL32",
+   "sym": "?EnterCriticalSection@@YGXPAX@Z",
+   "sym_key": "EnterCriticalSection"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "?validateGameFile@PKPipe@@QAEPAID@Z",
+ "sym_key": "PKPipe::validateGameFile",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "53568bf1578b5e208d7e1485dbc7070000000074108bcbe80000000053e80000000083c4048bcfc7470c00000000e8000000008bcee800000000f644241001740956e80000000083c4048b065f5e5bc20400",
+ "relocs": [
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?Release@COMObject@@QAEHXZ",
+   "sym_key": "COMObject::Release"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?Dtor@Pipe@@QAEHXZ",
+   "sym_key": "Pipe::Dtor"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

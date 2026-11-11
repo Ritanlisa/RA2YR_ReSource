@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_60B740@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_60B740",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "83ec20568bf156e8000000008d4c24145150e8000000008d5424045256e8000000008b4c24108b4424088b54240c2bc86a00518b4c240c2bd1528b5424242bc2508b4424242bc85156e8000000005e83c420c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?GetParent@@YGPAXPAX@Z",
+   "sym_key": "GetParent"
+  },
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?GetWindowRect@@YGHPAXPAVtagRECT@@@Z",
+   "sym_key": "GetWindowRect"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?MoveWindow@@YGHPAXHHHHH@Z",
+   "sym_key": "MoveWindow"
+  }
+ ]
+}
