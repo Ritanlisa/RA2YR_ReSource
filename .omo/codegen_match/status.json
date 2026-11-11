@@ -4312,7 +4312,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x624130": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "OwnerDrawControl::InitVtable",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4333,7 +4333,7 @@
   "status": "OK"
  },
  "0x624be0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4375,7 +4375,7 @@
   "status": "NG"
  },
  "0x626690": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4431,14 +4431,14 @@
   "status": "OK"
  },
  "0x62e380": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x62e4c0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4550,7 +4550,7 @@
   "status": "OK"
  },
  "0x636ce0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4564,7 +4564,7 @@
   "status": "OK"
  },
  "0x637060": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TabClass::processTabInput",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4592,7 +4592,7 @@
   "status": "NG"
  },
  "0x6403a0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "PowerClass::getDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4613,7 +4613,7 @@
   "status": "OK"
  },
  "0x644630": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "WarheadTypeClass::applyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4676,7 +4676,7 @@
   "status": "OK"
  },
  "0x652cf0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4697,7 +4697,7 @@
   "status": "NG"
  },
  "0x656cb0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4725,7 +4725,7 @@
   "status": "NG"
  },
  "0x658de0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "RadarHashVector::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4746,7 +4746,7 @@
   "status": "NG"
  },
  "0x65aeb0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "RadioClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4823,7 +4823,7 @@
   "status": "NG"
  },
  "0x65d660": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ReferenceCounted::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4837,14 +4837,14 @@
   "status": "OK"
  },
  "0x661850": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6632e0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4858,7 +4858,7 @@
   "status": "OK"
  },
  "0x664440": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4914,14 +4914,14 @@
   "status": "OK"
  },
  "0x6896c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "ScenarioClass::SetCountryFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x68c710": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4963,7 +4963,7 @@
   "status": "OK"
  },
  "0x697e70": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
   "note": "decomp_batch r2: COMPILE_FAIL",
