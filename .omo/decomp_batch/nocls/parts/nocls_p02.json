@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x421ce0",
+  "batch": "nocls",
+  "name": "sub_421CE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x421df0",
+  "batch": "nocls",
+  "name": "sub_421DF0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x427490",
+  "batch": "nocls",
+  "name": "sub_427490",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x427940",
+  "batch": "nocls",
+  "name": "LoadBuildingTypeClassTheatreSHP",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x429080",
+  "batch": "nocls",
+  "name": "sub_429080",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x429740",
+  "batch": "nocls",
+  "name": "sub_429740",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x42e090",
+  "batch": "nocls",
+  "name": "sub_42E090",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x42e430",
+  "batch": "nocls",
+  "name": "sub_42E430",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x42e480",
+  "batch": "nocls",
+  "name": "sub_42E480",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x430010",
+  "batch": "nocls",
+  "name": "sub_430010",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4335a0",
+  "batch": "nocls",
+  "name": "sub_4335A0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x435720",
+  "batch": "nocls",
+  "name": "sub_435720",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x437190",
+  "batch": "nocls",
+  "name": "sub_437190",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x438510",
+  "batch": "nocls",
+  "name": "sub_438510",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x439530",
+  "batch": "nocls",
+  "name": "sub_439530",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x43a1b0",
+  "batch": "nocls",
+  "name": "sub_43A1B0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x43b010",
+  "batch": "nocls",
+  "name": "sub_43B010",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x4503e0",
+  "batch": "nocls",
+  "name": "nullsub_101",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x45b050",
+  "batch": "nocls",
+  "name": "sub_45B050",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x45b0e0",
+  "batch": "nocls",
+  "name": "sub_45B0E0",
+  "cc": "unknown"
+ }
+]

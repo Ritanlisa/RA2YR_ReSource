@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x421ce0 sub_421CE0 -> _addr_42
+[conv] 0x421df0 sub_421DF0 -> _addr_42
+[conv] 0x427490 sub_427490 -> _addr_42
+[conv] 0x427940 LoadBuildingTypeClassTheatreSHP -> _addr_42
+[conv] 0x429080 sub_429080 -> _addr_42
+[conv] 0x429740 sub_429740 -> _addr_42
+[conv] 0x42e090 sub_42E090 -> _addr_42
+[conv] 0x42e430 sub_42E430 -> _addr_42
+[conv] 0x42e480 sub_42E480 -> _addr_42
+[conv] 0x430010 sub_430010 -> _addr_43
+[conv] 0x4335a0 sub_4335A0 -> _addr_43
+[conv] 0x435720 sub_435720 -> _addr_43
+[conv] 0x437190 sub_437190 -> _addr_43
+[conv] 0x438510 sub_438510 -> _addr_43
+[conv] 0x439530 sub_439530 -> _addr_43
+[conv] 0x43a1b0 sub_43A1B0 -> _addr_43
+[conv] 0x43b010 sub_43B010 -> _addr_43
+[conv] 0x4503e0 nullsub_101 -> _addr_45
+[conv] 0x45b050 sub_45B050 -> _addr_45
+[conv] 0x45b0e0 sub_45B0E0 -> _addr_45
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=2
+[era] _addr_43                 rc=2
+[era] _addr_45                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x421ce0   MISMATCH         sub_421CE0
+[diff] 0x421df0   MISMATCH         sub_421DF0
+[diff] 0x429080   MISMATCH         sub_429080
+[diff] 0x429740   MATCH            sub_429740
+[diff] 0x42e090   MATCH            sub_42E090
+[diff] 0x42e480   MISMATCH         sub_42E480
+[diff] 0x430010   MISMATCH         sub_430010
+[diff] 0x435720   MISMATCH         sub_435720
+[diff] 0x437190   MATCH            sub_437190
+[diff] 0x438510   MISMATCH         sub_438510
+[diff] 0x439530   MISMATCH         sub_439530
+[diff] 0x43a1b0   MISMATCH         sub_43A1B0
+[diff] 0x4503e0   MATCH            nullsub_101
+[diff] 0x45b050   MISMATCH         sub_45B050
+[diff] 0x45b0e0   MISMATCH         sub_45B0E0
+[ledger] 0x421ce0 sub_421CE0 -> NG (attempt 2)
+[ledger] 0x421df0 sub_421DF0 -> NG (attempt 2)
+[ledger] 0x427490 sub_427490 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x427940 LoadBuildingTypeClassTheatreSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x429080 sub_429080 -> NG (attempt 2)
+[ledger] 0x429740 sub_429740 -> OK (attempt 2)
+[ledger] 0x42e090 sub_42E090 -> OK (attempt 2)
+[ledger] 0x42e430 sub_42E430 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x42e480 sub_42E480 -> NG (attempt 2)
+[ledger] 0x430010 sub_430010 -> NG (attempt 2)
+[ledger] 0x4335a0 sub_4335A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x435720 sub_435720 -> NG (attempt 2)
+[ledger] 0x437190 sub_437190 -> OK (attempt 2)
+[ledger] 0x438510 sub_438510 -> NG (attempt 2)
+[ledger] 0x439530 sub_439530 -> NG (attempt 2)
+[ledger] 0x43a1b0 sub_43A1B0 -> NG (attempt 2)
+[ledger] 0x43b010 sub_43B010 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4503e0 nullsub_101 -> OK (attempt 1)
+[ledger] 0x45b050 sub_45B050 -> NG (attempt 2)
+[ledger] 0x45b0e0 sub_45B0E0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 5,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 26.7,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p02\batch_report.json

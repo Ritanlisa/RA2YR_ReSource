@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_45B050@@YAXXZ",
+ "sym_key": "Unnamed::sub_45B050",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "c705000000001a2d4454c70504000000fb21f93fc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C898@@3NA",
+   "sym_key": "DataGlobal_89C898"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89C898@@3NA",
+   "sym_key": "DataGlobal_89C898"
+  }
+ ]
+}
