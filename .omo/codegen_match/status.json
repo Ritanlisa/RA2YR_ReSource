@@ -4970,7 +4970,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x69b7e0": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4984,35 +4984,35 @@
   "status": "OK"
  },
  "0x69db30": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69deb0": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69ec50": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "LocomotionClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69f290": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a0310": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "WalkLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5026,7 +5026,7 @@
   "status": "OK"
  },
  "0x6a4130": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5054,7 +5054,7 @@
   "status": "OK"
  },
  "0x6a5090": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SidebarClass::InitPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5068,7 +5068,7 @@
   "status": "NG"
  },
  "0x6a6a00": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_245",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5082,28 +5082,28 @@
   "status": "NG"
  },
  "0x6a8220": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "SidebarClass::InitCameoGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a8710": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "TabCameoListClass::AddCameo_ReplaceItAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ac5f0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b1020": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "SlaveManagerClass::ShouldWakeUpNow",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5159,21 +5159,21 @@
   "status": "OK"
  },
  "0x6b55f0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b5f80": {
-  "attempts": 11,
+  "attempts": 12,
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b6080": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "UnitClass::CreateUnloadPlacementCraters",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5208,7 +5208,7 @@
   "status": "NG"
  },
  "0x6b7c60": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5236,14 +5236,14 @@
   "status": "NG"
  },
  "0x6c6740": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "StaticButtonClass::HitTest",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6c9c60": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5257,7 +5257,7 @@
   "status": "NG"
  },
  "0x6ce0b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SuperClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
