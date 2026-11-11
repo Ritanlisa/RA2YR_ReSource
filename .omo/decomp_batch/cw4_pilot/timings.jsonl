@@ -4,3 +4,4 @@
 {"part": 3, "n": 20, "seconds": 2.3, "summary": {"verdicts": {"MATCH": 19, "NO_VARIANT": 1}, "by_family_total": {"JCC_INVERT": 20}, "by_family_hits": {"JCC_INVERT": 19}}}
 {"part": 4, "n": 20, "seconds": 2.2, "summary": {"verdicts": {"MATCH": 18, "NO_VARIANT": 2}, "by_family_total": {"JCC_INVERT": 20}, "by_family_hits": {"JCC_INVERT": 18}}}
 {"part": 5, "n": 20, "seconds": 3.4, "summary": {"verdicts": {"MATCH": 6, "NO_HIT": 10, "NO_VARIANT": 4}, "by_family_total": {"JCC_INVERT_PLUS": 15, "TWO_FOUR_INSNS": 5}, "by_family_hits": {"JCC_INVERT_PLUS": 6}}}
+{"part": 6, "n": 20, "seconds": 1.0, "summary": {"verdicts": {"NO_VARIANT": 16, "NO_HIT": 4}, "by_family_total": {"TWO_FOUR_INSNS": 15, "ONE_INSN": 5}, "by_family_hits": {}}}

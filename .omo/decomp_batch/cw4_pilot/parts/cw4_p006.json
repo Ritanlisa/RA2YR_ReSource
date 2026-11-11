@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x633b10",
+  "name": "sub_633B10",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 10,
+  "part": "p36",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_633B10",
+  "first_diff": {
+   "orig": "+4 mov dword ptr [ecx + 0x74], eax",
+   "ours": "+4 test eax, eax"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x5618b0",
+  "name": "sub_5618B0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p58",
+  "unit": "_addr_56",
+  "emitted": "sub_5618B0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x7b5400",
+  "name": "String::GetOrEmpty",
+  "family": "TWO_FOUR_INSNS",
+  "path": "branch_polarity",
+  "size": 12,
+  "part": "p40",
+  "unit": "String",
+  "emitted": "String::GetOrEmpty",
+  "first_diff": {
+   "orig": "+4 jne 0x7b540b",
+   "ours": "+4 jne 0xc"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x7d385a",
+  "name": "__getmbcp",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 16,
+  "part": "p70",
+  "unit": "_addr_7D",
+  "emitted": "__getmbcp",
+  "first_diff": {
+   "orig": "+5 neg eax",
+   "ours": "+5 mov ecx, dword ptr [0]"
+  },
+  "ours_size": 18
+ },
+ {
+  "addr": "0x429730",
+  "name": "sub_429730",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p54",
+  "unit": "_addr_42",
+  "emitted": "sub_429730",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x421e50",
+  "name": "sub_421E50",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p54",
+  "unit": "_addr_42",
+  "emitted": "sub_421E50",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x646c20",
+  "name": "sub_646C20",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p60",
+  "unit": "_addr_64",
+  "emitted": "sub_646C20",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x412800",
+  "name": "sub_412800",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p53",
+  "unit": "_addr_41",
+  "emitted": "sub_412800",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x691260",
+  "name": "sub_691260",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p129",
+  "unit": "_addr_69",
+  "emitted": "sub_691260",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7f0f40]",
+   "ours": "+0 mov byte ptr [0], 1"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x6cadb0",
+  "name": "sub_6CADB0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6C",
+  "emitted": "sub_6CADB0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x536940",
+  "name": "CreateTeamCommand::performAction_57",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 13,
+  "part": "p46",
+  "unit": "HealthNavCommandClass",
+  "emitted": "HealthNavCommandClass::performAction_57",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x4e7ed0",
+  "name": "sub_4E7ED0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 39,
+  "part": "p214",
+  "unit": "_addr_4E",
+  "emitted": "sub_4E7ED0",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x8b4204",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x6f0610",
+  "name": "sub_6F0610",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6F",
+  "emitted": "sub_6F0610",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x54ed10",
+  "name": "sub_54ED10",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p119",
+  "unit": "_addr_54",
+  "emitted": "sub_54ED10",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7ecec0]",
+   "ours": "+0 mov byte ptr [0], 1"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x535cf0",
+  "name": "CreateTeamCommand::vt02",
+  "family": "TWO_FOUR_INSNS",
+  "path": "width_mismatch",
+  "size": 5,
+  "part": "p18",
+  "unit": "CommandClass",
+  "emitted": "CommandClass::vt02",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 movsx eax, byte ptr [ecx + 0x40]"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x4b4bf0",
+  "name": "JumpjetLocomotionClass::SetByteField_0",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 11,
+  "part": "p38",
+  "unit": "DriveLocomotionClass",
+  "emitted": "DriveLocomotionClass::SetByteField_0",
+  "first_diff": {
+   "orig": "+8 ret 4",
+   "ours": "+8 mov eax, dword ptr [eax]"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x7cf117",
+  "name": "notanint",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 7,
+  "part": "p30",
+  "unit": "_addr_7C",
+  "emitted": "notanint",
+  "first_diff": {
+   "orig": "+0 mov eax, 0",
+   "ours": "+0 jmp 5"
+  },
+  "ours_size": 5
+ },
+ {
+  "addr": "0x4a5360",
+  "name": "MovementAI::Check",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p207",
+  "unit": "MovementAI",
+  "emitted": "MovementAI::Check",
+  "first_diff": {
+   "orig": "+37 ret ",
+   "ours": "+37 xor al, al"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x588960",
+  "name": "Object_Create",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 41,
+  "part": "p216",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Object_Create",
+  "first_diff": {
+   "orig": "+18 mov dword ptr [ecx + 0x148], eax",
+   "ours": "+18 test eax, eax"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x4b4be0",
+  "name": "JumpjetLocomotionClass::SetByteField",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 11,
+  "part": "p38",
+  "unit": "DriveLocomotionClass",
+  "emitted": "DriveLocomotionClass::SetByteField",
+  "first_diff": {
+   "orig": "+8 ret 4",
+   "ours": "+8 mov eax, dword ptr [eax]"
+  },
+  "ours_size": 13
+ }
+]
