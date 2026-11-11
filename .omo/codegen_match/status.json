@@ -1771,7 +1771,7 @@
   "status": "NG"
  },
  "0x49e400": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1785,35 +1785,35 @@
   "status": "OK"
  },
  "0x4a00b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "EnumConnectionsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0630": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ConnectionPointClass::Unadvise",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0a50": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2600": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2cd0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1848,7 +1848,7 @@
   "status": "NG"
  },
  "0x4a4780": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Surface::CreateSurfacePalette",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1869,7 +1869,7 @@
   "status": "NG"
  },
  "0x4a61c0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "TextRenderer::DrawText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1897,14 +1897,14 @@
   "status": "OK"
  },
  "0x4a8bf0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Mouse::SetBounds",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a8d50": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "MIXClass::CopyHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1918,70 +1918,70 @@
   "status": "NG"
  },
  "0x4a95a0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::SetCellFlagsAlongPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a9650": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingClass::MarkExitPath",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac660": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::TogglePower",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac820": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "TacticalClass::SetObserverMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac8c0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "BuildingClass::TogglePower2",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4ac960": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "MapClass::ToggleZoom",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4adba0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "ScenarioClass::ProcessGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4af540": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "LocomotionClass::Initialize",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4afb80": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4b0c40": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
