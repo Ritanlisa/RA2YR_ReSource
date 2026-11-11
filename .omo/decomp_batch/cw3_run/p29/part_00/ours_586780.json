@@ -1,0 +1,51 @@
+{
+ "symbol": "?IsAreaFree@MapClass@@QAE_NPAHH@Z",
+ "sym_key": "MapClass::IsAreaFree",
+ "size": 335,
+ "link_base": 0,
+ "bytes_hex": "83ec088bd18b4c24108954240483f9ff750ac744241000000000eb0bb801000000d3e0894424108b4c240c5355568b018b59088bf05703f3894424103bc67c1a6a01518bcae800000000f7d85f5e1bc05df7d85b83c408c208008b7c241c8b59048b510c03d33bda0f8da50000008bcf33c881e1ff00000033f90fbfe80fbfc38bd733d3c1e00981e2ff00000003c533fa85c07c193d000004007d120fbe0d340300008b048185c074048bf0eb0bbe58160000893d7c1600006a008bcee80000000085c0757d8b5424208b86dc00000085c2756f837e44ff75698b464c85c075628a861c01000084c075588bcee80000000085c0754d8b44241c438b48048b500c03ca3bd90f8c72ffffff8b4424108b4c241c8b118b59084003d33bc2894424100f8c37ffffff6a01518b4c241ce800000000f7d85f5e1bc05df7d85b83c408c208005f5e5d32c05b83c408c20800",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?IsRectInBounds@MapClass@@QAEHPAXH@Z",
+   "sym_key": "MapClass::IsRectInBounds"
+  },
+  {
+   "off": 159,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 181,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?FindInfantry@CellClass@@QAEPAID@Z",
+   "sym_key": "CellClass::FindInfantry"
+  },
+  {
+   "off": 238,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 303,
+   "type": "REL32",
+   "sym": "?IsRectInBounds@MapClass@@QAEHPAXH@Z",
+   "sym_key": "MapClass::IsRectInBounds"
+  }
+ ]
+}

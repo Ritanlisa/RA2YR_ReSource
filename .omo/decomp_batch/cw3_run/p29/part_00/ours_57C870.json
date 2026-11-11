@@ -1,0 +1,81 @@
+{
+ "symbol": "?globalHelper_07C870@@YGDH@Z",
+ "sym_key": "Unnamed::globalHelper_07C870",
+ "size": 372,
+ "link_base": 0,
+ "bytes_hex": "83ec0853558b2d000000008b5424148bdd56c1fb108bc3895c241825ff00000057894424148b44241c8bfa895424100fbff2eb0a8b2d000000008b5c241c03f58bca33f080e20081e6ff000000c1f91033c68b74241c03d903ce8b74241033c881e1ff00000003f58b6c241433c10fbfcb897424100bd50fbff6c1e10903ce85c97c1681f9000004007d0e8b2d000000008b4c8d0085c9750b8b0d00000000a3000000008b494483f94a7c0583f9657e838b2d000000008bd7c1fa1003c5c1ed1066894424108d0c2b66894c24128b4c241ca1000000008d342a03c703d58bd833c733d925ff00000081e3ff00000033f833cb33d181e2ff0000000fbfc633ca0fbfd7c1e00903c28bd685c07c143d000004007d0d8b1d000000008b048385c0750ba100000000890d000000008b404483f84a7c0583f8657e98a1000000008b54241c03c88b44241c33c803f281e1ff00000033c133f081e6ff00000033c6508b44241450e8000000005f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 160,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 179,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 211,
+   "type": "DIR32",
+   "sym": "?g_DirectionOffsetPool@@3IA",
+   "sym_key": "g_DirectionOffsetPool"
+  },
+  {
+   "off": 279,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 291,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 297,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?Direction_X_Offsets@@3PAHA",
+   "sym_key": "Direction_X_Offsets"
+  },
+  {
+   "off": 358,
+   "type": "REL32",
+   "sym": "?UpdateTeamsInAreaMap@@YGDPAXH@Z",
+   "sym_key": "UpdateTeamsInAreaMap"
+  }
+ ]
+}

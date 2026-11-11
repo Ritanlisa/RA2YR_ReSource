@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x6ea3e0 TeamClass::UpdateReadinessState -> TeamClass
+[conv] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x656cb0 RadarClass::SetViewMode -> RadarClass
+[conv] 0x58c6f0 Memory_Helper_58C6F0 -> Memory_Helper
+[conv] 0x4c9ea0 ProductionClass::StartTimer -> ProductionClass
+[conv] 0x586780 MapClass::IsAreaFree -> MapClass
+[conv] 0x6da230 DisplayClass::GetCoordDelta -> DisplayClass
+[conv] 0x57c870 globalHelper_07C870 -> _addr_57
+[conv] 0x5bd0d0 Debug::ScrollText -> Debug
+[conv] 0x588ac0 LayerClass::ClearFactoryCellAssignments -> LayerClass
+[conv] 0x485460 BuildingClass::CheckAdjacentCells -> BuildingClass
+[conv] 0x455c20 TechnoClass::GetScreenCoords -> TechnoClass
+[conv] 0x733cd0 ObjectClass::sub_733CD0 -> ObjectClass
+[conv] 0x586360 Cell::IsPassable -> Cell
+[conv] 0x547230 TacticalClass::DrawCellOverlay -> TacticalClass
+[conv] 0x56d460 Cell::SetRadar -> Cell
+[conv] 0x578710 MapClass::SpiralSearch -> MapClass
+[conv] 0x6ac5f0 TActionClass::executeHarvestAction -> TActionClass
+[conv] 0x54fe60 TimerClass::Construct -> TimerClass
+[conv] 0x68c710 FontClass::InitMetrics -> FontClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamClass                rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] RadarClass               rc=0
+[era] Memory_Helper            rc=0
+[era] ProductionClass          rc=2
+[era] MapClass                 rc=2
+[era] DisplayClass             rc=2
+[era] _addr_57                 rc=0
+[era] Debug                    rc=0
+[era] LayerClass               rc=0
+[era] BuildingClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] Cell                     rc=2
+[era] TacticalClass            rc=2
+[era] TActionClass             rc=2
+[era] TimerClass               rc=2
+[era] FontClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x656cb0   MISMATCH         RadarClass::SetViewMode
+[diff] 0x58c6f0   MISMATCH         Memory_Helper_58C6F0
+[diff] 0x586780   MISMATCH         MapClass::IsAreaFree
+[diff] 0x57c870   MISMATCH         globalHelper_07C870
+[diff] 0x5bd0d0   MISMATCH         Debug::ScrollText
+[diff] 0x588ac0   MISMATCH         LayerClass::ClearFactoryCellAssignments
+[ledger] 0x6ea3e0 TeamClass::UpdateReadinessState -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4d2bc0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::ResizeArray -> COMPILE_FAIL (attempt 10)
+[ledger] 0x656cb0 RadarClass::SetViewMode -> NG (attempt 10)
+[ledger] 0x58c6f0 Memory_Helper_58C6F0 -> NG (attempt 2)
+[ledger] 0x4c9ea0 ProductionClass::StartTimer -> COMPILE_FAIL (attempt 10)
+[ledger] 0x586780 MapClass::IsAreaFree -> NG (attempt 10)
+[ledger] 0x6da230 DisplayClass::GetCoordDelta -> COMPILE_FAIL (attempt 10)
+[ledger] 0x57c870 globalHelper_07C870 -> NG (attempt 2)
+[ledger] 0x5bd0d0 Debug::ScrollText -> NG (attempt 10)
+[ledger] 0x588ac0 LayerClass::ClearFactoryCellAssignments -> NG (attempt 10)
+[ledger] 0x485460 BuildingClass::CheckAdjacentCells -> COMPILE_FAIL (attempt 2)
+[ledger] 0x455c20 TechnoClass::GetScreenCoords -> COMPILE_FAIL (attempt 10)
+[ledger] 0x733cd0 ObjectClass::sub_733CD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x586360 Cell::IsPassable -> COMPILE_FAIL (attempt 10)
+[ledger] 0x547230 TacticalClass::DrawCellOverlay -> COMPILE_FAIL (attempt 10)
+[ledger] 0x56d460 Cell::SetRadar -> COMPILE_FAIL (attempt 10)
+[ledger] 0x578710 MapClass::SpiralSearch -> COMPILE_FAIL (attempt 12)
+[ledger] 0x6ac5f0 TActionClass::executeHarvestAction -> COMPILE_FAIL (attempt 11)
+[ledger] 0x54fe60 TimerClass::Construct -> COMPILE_FAIL (attempt 12)
+[ledger] 0x68c710 FontClass::InitMetrics -> COMPILE_FAIL (attempt 10)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "const_fold": 1,
+  "eval_order": 1,
+  "frame_sched": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p29\batch_report.json

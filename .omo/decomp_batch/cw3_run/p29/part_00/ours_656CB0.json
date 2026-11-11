@@ -1,0 +1,45 @@
+{
+ "symbol": "?SetViewMode@RadarClass@@QAEEHD@Z",
+ "sym_key": "RadarClass::SetViewMode",
+ "size": 279,
+ "link_base": 0,
+ "bytes_hex": "a10000000053565785c08bf1741da1000000008a88f501000084c9740ea100000000bf0100000085c075048b7c24108b9eb01400003bdf0f84d200000083fb03740a83fb04751c83ff03741783beac14000005740e89beb41400005f8ac35e5bc2080085ff751d83fb010f94c151578bcee80000000089beb01400005f8ac35e5bc2080083ff01742e83ff04741b8b9eac14000083fb01743783fb0574326a006a018bcee80000000089beb01400005f8ac35e5bc208008b9eac14000083fb01740583fb05752b80bed814000001752289beb0140000c786ac14000004000000c786fc140000190000005f8ac35e5bc208008b5424148a86d814000052508bcee800000000c786b0140000010000005f8ac35e5bc20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?MuteSWLaunches@@3IA",
+   "sym_key": "MuteSWLaunches"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?Toggle@RadarClass@@QAEXDD@Z",
+   "sym_key": "RadarClass::Toggle"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?Toggle@RadarClass@@QAEXDD@Z",
+   "sym_key": "RadarClass::Toggle"
+  },
+  {
+   "off": 257,
+   "type": "REL32",
+   "sym": "?Toggle@RadarClass@@QAEXDD@Z",
+   "sym_key": "RadarClass::Toggle"
+  }
+ ]
+}
