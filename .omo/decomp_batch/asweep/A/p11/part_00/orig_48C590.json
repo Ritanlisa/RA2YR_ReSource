@@ -1,0 +1,11 @@
+{
+ "addr": "0x48C590",
+ "name": "ConnectionClass::StubReturnFalse",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48C590",
+ "bytes_hex": "33c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

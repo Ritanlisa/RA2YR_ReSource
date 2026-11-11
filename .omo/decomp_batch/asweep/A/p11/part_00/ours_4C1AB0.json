@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsDSurface@DSurface@@QAEDXZ",
+ "sym_key": "DSurface::IsDSurface",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "b001c3",
+ "relocs": []
+}

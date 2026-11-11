@@ -9,3 +9,4 @@
 {"layer": "A", "part": 8, "n": 20, "seconds": 12.4, "ok": true, "verdicts": {"MATCH": 14, "OBJ_EXTRACT_FAIL": 2, "MISMATCH": 4}}
 {"layer": "A", "part": 9, "n": 20, "seconds": 13.0, "ok": true, "verdicts": {"MATCH": 16, "MISMATCH": 4}}
 {"layer": "A", "part": 10, "n": 20, "seconds": 11.8, "ok": true, "verdicts": {"MATCH": 17, "MISMATCH": 3}}
+{"layer": "A", "part": 11, "n": 20, "seconds": 10.8, "ok": true, "verdicts": {"MATCH": 19, "MISMATCH": 1}}

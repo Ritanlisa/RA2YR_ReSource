@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x465d30 ReturnFalse_465D30 -> ReturnFalse
+[conv] 0x465d80 ObjectClass::_0Iostream_init_QAE_XZ_2 -> ObjectClass
+[conv] 0x48c590 ConnectionClass::StubReturnFalse -> ConnectionClass
+[conv] 0x49f7a0 CopyProtection::CheckProtectedData -> CopyProtection
+[conv] 0x4a3b30 ReturnNull -> _addr_4A
+[conv] 0x4a3bf0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_3 -> ObjectClass
+[conv] 0x4aad20 DisplayClass::vt_entry_B0 -> DisplayClass
+[conv] 0x4aeba0 GadgetClass::COMStub_Return0 -> GadgetClass
+[conv] 0x4aebd0 GScreenClass::StubReturnFalse -> GScreenClass
+[conv] 0x4aebe0 MapClass::Stub -> MapClass
+[conv] 0x4b4c70 IUnknown::Stub3 -> IUnknown
+[conv] 0x4b4c90 IUnknown::Stub4 -> IUnknown
+[conv] 0x4b63a0 DropPodLocomotionClass::Stub6 -> DropPodLocomotionClass
+[conv] 0x4b6620 LocomotionClass::Stub7 -> LocomotionClass
+[conv] 0x4b6650 LocomotionClass::Stub8 -> LocomotionClass
+[conv] 0x4b6660 LocomotionClass::Stub9 -> LocomotionClass
+[conv] 0x4c1ab0 DSurface::IsDSurface -> DSurface
+[conv] 0x4c2c30 ObjectClass::_0Iostream_init_QAE_XZ_3 -> ObjectClass
+[conv] 0x4c9150 XSurface::vt_entry_68 -> XSurface
+[conv] 0x4c91b0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_5 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ReturnFalse              rc=0
+[era] ObjectClass              rc=0
+[era] ConnectionClass          rc=0
+[era] CopyProtection           rc=0
+[era] _addr_4A                 rc=0
+[era] DisplayClass             rc=0
+[era] GadgetClass              rc=0
+[era] GScreenClass             rc=0
+[era] MapClass                 rc=0
+[era] IUnknown                 rc=0
+[era] DropPodLocomotionClass   rc=0
+[era] LocomotionClass          rc=0
+[era] DSurface                 rc=0
+[era] XSurface                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x465d30   MATCH            ReturnFalse_465D30
+[diff] 0x465d80   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_2
+[diff] 0x4a3bf0   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_3
+[diff] 0x4c2c30   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_3
+[diff] 0x4c91b0   MATCH            ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_5
+[diff] 0x48c590   MATCH            ConnectionClass::StubReturnFalse
+[diff] 0x49f7a0   MATCH            CopyProtection::CheckProtectedData
+[diff] 0x4a3b30   MATCH            ReturnNull
+[diff] 0x4aad20   MATCH            DisplayClass::vt_entry_B0
+[diff] 0x4aeba0   MATCH            GadgetClass::COMStub_Return0
+[diff] 0x4aebd0   MISMATCH         GScreenClass::StubReturnFalse
+[diff] 0x4aebe0   MATCH            MapClass::Stub
+[diff] 0x4b4c70   MATCH            IUnknown::Stub3
+[diff] 0x4b4c90   MATCH            IUnknown::Stub4
+[diff] 0x4b63a0   MATCH            DropPodLocomotionClass::Stub6
+[diff] 0x4b6620   MATCH            LocomotionClass::Stub7
+[diff] 0x4b6650   MATCH            LocomotionClass::Stub8
+[diff] 0x4b6660   MATCH            LocomotionClass::Stub9
+[diff] 0x4c1ab0   MATCH            DSurface::IsDSurface
+[diff] 0x4c9150   MATCH            XSurface::vt_entry_68
+[ledger] 0x465d30 ReturnFalse_465D30 -> OK (attempt 1)
+[ledger] 0x465d80 ObjectClass::_0Iostream_init_QAE_XZ_2 -> OK (attempt 1)
+[ledger] 0x48c590 ConnectionClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x49f7a0 CopyProtection::CheckProtectedData -> OK (attempt 1)
+[ledger] 0x4a3b30 ReturnNull -> OK (attempt 1)
+[ledger] 0x4a3bf0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_3 -> OK (attempt 1)
+[ledger] 0x4aad20 DisplayClass::vt_entry_B0 -> OK (attempt 1)
+[ledger] 0x4aeba0 GadgetClass::COMStub_Return0 -> OK (attempt 1)
+[ledger] 0x4aebd0 GScreenClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x4aebe0 MapClass::Stub -> OK (attempt 1)
+[ledger] 0x4b4c70 IUnknown::Stub3 -> OK (attempt 1)
+[ledger] 0x4b4c90 IUnknown::Stub4 -> OK (attempt 1)
+[ledger] 0x4b63a0 DropPodLocomotionClass::Stub6 -> OK (attempt 1)
+[ledger] 0x4b6620 LocomotionClass::Stub7 -> OK (attempt 1)
+[ledger] 0x4b6650 LocomotionClass::Stub8 -> OK (attempt 1)
+[ledger] 0x4b6660 LocomotionClass::Stub9 -> OK (attempt 1)
+[ledger] 0x4c1ab0 DSurface::IsDSurface -> OK (attempt 1)
+[ledger] 0x4c2c30 ObjectClass::_0Iostream_init_QAE_XZ_3 -> OK (attempt 1)
+[ledger] 0x4c9150 XSurface::vt_entry_68 -> OK (attempt 1)
+[ledger] 0x4c91b0 ObjectClass::do_always_noconv_codecvt_base_std__MBE_NXZ_5 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 95.0,
+ "match_rate_of_total_pct": 95.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p11\batch_report.json

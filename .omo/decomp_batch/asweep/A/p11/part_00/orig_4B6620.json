@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B6620",
+ "name": "JumpjetLocomotionClass::Stub7",
+ "size": 3,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B6620",
+ "bytes_hex": "c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
