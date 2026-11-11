@@ -5691,7 +5691,7 @@
   "status": "NG"
  },
  "0x71abc0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "FactoryClass::CompleteItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5726,7 +5726,7 @@
   "status": "OK"
  },
  "0x71d160": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5796,14 +5796,14 @@
   "status": "OK"
  },
  "0x720070": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "AbstractClass::selectWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x720140": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "AbstractClass::fireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5852,7 +5852,7 @@
   "status": "OK"
  },
  "0x7248c0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5957,7 +5957,7 @@
   "status": "OK"
  },
  "0x72f510": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VtableStub::72F510",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5978,7 +5978,7 @@
   "status": "NG"
  },
  "0x736d50": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::IsC4AnimationActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5999,14 +5999,14 @@
   "status": "NG"
  },
  "0x746420": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7464e0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::TransferTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6041,7 +6041,7 @@
   "status": "OK"
  },
  "0x7474b0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6139,14 +6139,14 @@
   "status": "NG"
  },
  "0x74d5d0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VeinholeMonsterClass::ProcessExpansion",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x74d670": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6174,7 +6174,7 @@
   "status": "OK"
  },
  "0x74f960": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6209,49 +6209,49 @@
   "status": "OK"
  },
  "0x753e00": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756dd0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756f80": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757790": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757e70": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x758030": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
