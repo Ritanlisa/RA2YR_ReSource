@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p163\part_00
+=== convert (20 addrs) ===
+[conv] 0x48c880 sub_48C880 -> _addr_48
+[conv] 0x48e460 sub_48E460 -> _addr_48
+[conv] 0x49b350 sub_49B350 -> _addr_49
+[conv] 0x49bc80 Movie::GetSectionID -> Movie
+[conv] 0x49bca0 MPCooperative::GetMovieScore -> MPCooperative
+[conv] 0x49bcc0 Movie::GetState -> Movie
+[conv] 0x49ff20 sub_49FF20 -> _addr_49
+[conv] 0x4a1730 sub_4A1730 -> _addr_4A
+[conv] 0x4a2330 sub_4A2330 -> _addr_4A
+[conv] 0x4a5070 sub_4A5070 -> _addr_4A
+[conv] 0x4a50f0 TechnoClass::checkCloakState -> TechnoClass
+[conv] 0x4a6c30 sub_4A6C30 -> _addr_4A
+[conv] 0x4a8610 sub_4A8610 -> _addr_4A
+[conv] 0x4af500 sub_4AF500 -> _addr_4A
+[conv] 0x4b6970 sub_4B6970 -> _addr_4B
+[conv] 0x4ba580 sub_4BA580 -> _addr_4B
+[conv] 0x4c1d50 sub_4C1D50 -> _addr_4C
+[conv] 0x4c3770 sub_4C3770 -> _addr_4C
+[conv] 0x4c4ed0 sub_4C4ED0 -> _addr_4C
+[conv] 0x4c51d0 sub_4C51D0 -> _addr_4C
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_48                 rc=0
+[era] _addr_49                 rc=0
+[era] Movie                    rc=0
+[era] MPCooperative            rc=0
+[era] _addr_4A                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_4B                 rc=0
+[era] _addr_4C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x48c880   MISMATCH         sub_48C880
+[diff] 0x48e460   MISMATCH         sub_48E460
+[diff] 0x49b350   MISMATCH         sub_49B350
+[diff] 0x49ff20   MISMATCH         sub_49FF20
+[diff] 0x49bc80   MISMATCH         Movie::GetSectionID
+[diff] 0x49bcc0   MISMATCH         Movie::GetState
+[diff] 0x49bca0   MISMATCH         MPCooperative::GetMovieScore
+[diff] 0x4a1730   MISMATCH         sub_4A1730
+[diff] 0x4a2330   MISMATCH         sub_4A2330
+[diff] 0x4a5070   MISMATCH         sub_4A5070
+[diff] 0x4a6c30   MISMATCH         sub_4A6C30
+[diff] 0x4a8610   MISMATCH         sub_4A8610
+[diff] 0x4af500   MISMATCH         sub_4AF500
+[diff] 0x4a50f0   MISMATCH         TechnoClass::checkCloakState
+[diff] 0x4b6970   MISMATCH         sub_4B6970
+[diff] 0x4ba580   MISMATCH         sub_4BA580
+[diff] 0x4c1d50   MISMATCH         sub_4C1D50
+[diff] 0x4c3770   MISMATCH         sub_4C3770
+[diff] 0x4c4ed0   MISMATCH         sub_4C4ED0
+[diff] 0x4c51d0   MISMATCH         sub_4C51D0
+[ledger] 0x48c880 sub_48C880 -> NG (attempt 1)
+[ledger] 0x48e460 sub_48E460 -> NG (attempt 1)
+[ledger] 0x49b350 sub_49B350 -> NG (attempt 1)
+[ledger] 0x49bc80 Movie::GetSectionID -> NG (attempt 1)
+[ledger] 0x49bca0 MPCooperative::GetMovieScore -> NG (attempt 1)
+[ledger] 0x49bcc0 Movie::GetState -> NG (attempt 1)
+[ledger] 0x49ff20 sub_49FF20 -> NG (attempt 1)
+[ledger] 0x4a1730 sub_4A1730 -> NG (attempt 1)
+[ledger] 0x4a2330 sub_4A2330 -> NG (attempt 1)
+[ledger] 0x4a5070 sub_4A5070 -> NG (attempt 1)
+[ledger] 0x4a50f0 TechnoClass::checkCloakState -> NG (attempt 1)
+[ledger] 0x4a6c30 sub_4A6C30 -> NG (attempt 1)
+[ledger] 0x4a8610 sub_4A8610 -> NG (attempt 1)
+[ledger] 0x4af500 sub_4AF500 -> NG (attempt 1)
+[ledger] 0x4b6970 sub_4B6970 -> NG (attempt 1)
+[ledger] 0x4ba580 sub_4BA580 -> NG (attempt 1)
+[ledger] 0x4c1d50 sub_4C1D50 -> NG (attempt 1)
+[ledger] 0x4c3770 sub_4C3770 -> NG (attempt 1)
+[ledger] 0x4c4ed0 sub_4C4ED0 -> NG (attempt 1)
+[ledger] 0x4c51d0 sub_4C51D0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 16,
+  "const_fold": 1,
+  "branch_order": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p163\batch_report.json

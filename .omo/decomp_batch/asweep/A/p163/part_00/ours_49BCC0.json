@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetState@Movie@@QAEDPAH@Z",
+ "sym_key": "Movie::GetState",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8a416c84c074108b41388b4c2404890124010c01c204008b4424042400c20400",
+ "relocs": []
+}

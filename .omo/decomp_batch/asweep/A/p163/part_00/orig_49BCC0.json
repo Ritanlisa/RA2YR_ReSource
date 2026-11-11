@@ -1,0 +1,11 @@
+{
+ "addr": "0x49BCC0",
+ "name": "Movie::GetState",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49BCC0",
+ "bytes_hex": "8a416c84c0750532c0c204008b41388b4c24048901b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

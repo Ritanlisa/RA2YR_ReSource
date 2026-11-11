@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A50F0",
+ "name": "TechnoClass::checkCloakState",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A50F0",
+ "bytes_hex": "8bc18b0d84eda80089480833c9894810894814884818884819c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
