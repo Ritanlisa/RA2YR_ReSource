@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p29\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c0630 MovieHandle::sub_5C0630 -> MovieHandle
+[conv] 0x5d7cd0 InitializerBase@MultiplayerGameMode::sub_5D7CD0 -> InitializerBase_MultiplayerGameMode
+[conv] 0x5d8fc0 ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ -> ObjectClass
+[conv] 0x624090 DialogControl@OwnerDraw::sub_624090 -> DialogControl_OwnerDraw
+[conv] 0x631f30 PixelFXClass::sub_631F30 -> PixelFXClass
+[conv] 0x636d90 ObjectClass::GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ -> ObjectClass
+[conv] 0x636fc0 ObjectClass::GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ -> ObjectClass
+[conv] 0x637020 ObjectClass::WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ -> ObjectClass
+[conv] 0x63a4a0 ObjectClass::sub_63A4A0 -> ObjectClass
+[conv] 0x63ad30 ObjectClass::sub_63AD30 -> ObjectClass
+[conv] 0x63b080 ObjectClass::sub_63B080 -> ObjectClass
+[conv] 0x681180 ObjectClass::sub_681180 -> ObjectClass
+[conv] 0x6811b0 TechnoClass::sub_6811B0 -> TechnoClass
+[conv] 0x6811f0 TechnoClass::sub_6811F0 -> TechnoClass
+[conv] 0x6cea10 SuperWeaponTypeClass::SD_vt16 -> SuperWeaponTypeClass
+[conv] 0x6dc420 ObjectClass::GetHeightMap -> ObjectClass
+[conv] 0x70dcf0 TechnoClass::applyEMPulseDamage -> TechnoClass
+[conv] 0x70ddf0 TechnoClass::GetMember81 -> TechnoClass
+[conv] 0x711eb0 TechnoTypeClass::GetMember388 -> TechnoTypeClass
+[conv] 0x724510 TechnoClass::sub_724510 -> TechnoClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MovieHandle              rc=2
+[era] InitializerBase_MultiplayerGameMode rc=0
+[era] ObjectClass              rc=2
+[era] DialogControl_OwnerDraw  rc=0
+[era] PixelFXClass             rc=0
+[era] TechnoClass              rc=0
+[era] SuperWeaponTypeClass     rc=0
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x5d7cd0   MISMATCH         InitializerBase@MultiplayerGameMode::sub_5D7CD0
+[diff] 0x5d8fc0   MATCH            ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ
+[diff] 0x636d90   MATCH            ObjectClass::GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ
+[diff] 0x636fc0   MATCH            ObjectClass::GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ
+[diff] 0x637020   MATCH            ObjectClass::WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ
+[diff] 0x681180   MATCH            ObjectClass::sub_681180
+[diff] 0x6dc420   MATCH            ObjectClass::GetHeightMap
+[diff] 0x624090   MISMATCH         DialogControl@OwnerDraw::sub_624090
+[diff] 0x631f30   MISMATCH         PixelFXClass::sub_631F30
+[diff] 0x6811b0   MATCH            TechnoClass::sub_6811B0
+[diff] 0x6811f0   MATCH            TechnoClass::sub_6811F0
+[diff] 0x70dcf0   MATCH            TechnoClass::applyEMPulseDamage
+[diff] 0x70ddf0   MATCH            TechnoClass::GetMember81
+[diff] 0x724510   MATCH            TechnoClass::sub_724510
+[diff] 0x6cea10   MATCH            SuperWeaponTypeClass::SD_vt16
+[ledger] 0x5c0630 MovieHandle::sub_5C0630 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d7cd0 InitializerBase@MultiplayerGameMode::sub_5D7CD0 -> NG (attempt 1)
+[ledger] 0x5d8fc0 ObjectClass::_Release__NonReentrantLock_details_Concurrency__QAEXXZ -> OK (attempt 1)
+[ledger] 0x624090 DialogControl@OwnerDraw::sub_624090 -> NG (attempt 1)
+[ledger] 0x631f30 PixelFXClass::sub_631F30 -> NG (attempt 1)
+[ledger] 0x636d90 ObjectClass::GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ -> OK (attempt 1)
+[ledger] 0x636fc0 ObjectClass::GetMaskId_irtualProcessor_details_Concurrency__QBEIXZ -> OK (attempt 1)
+[ledger] 0x637020 ObjectClass::WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ -> OK (attempt 1)
+[ledger] 0x63a4a0 ObjectClass::sub_63A4A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ad30 ObjectClass::sub_63AD30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63b080 ObjectClass::sub_63B080 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x681180 ObjectClass::sub_681180 -> OK (attempt 1)
+[ledger] 0x6811b0 TechnoClass::sub_6811B0 -> OK (attempt 1)
+[ledger] 0x6811f0 TechnoClass::sub_6811F0 -> OK (attempt 1)
+[ledger] 0x6cea10 SuperWeaponTypeClass::SD_vt16 -> OK (attempt 1)
+[ledger] 0x6dc420 ObjectClass::GetHeightMap -> OK (attempt 1)
+[ledger] 0x70dcf0 TechnoClass::applyEMPulseDamage -> OK (attempt 1)
+[ledger] 0x70ddf0 TechnoClass::GetMember81 -> OK (attempt 1)
+[ledger] 0x711eb0 TechnoTypeClass::GetMember388 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724510 TechnoClass::sub_724510 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 3,
+  "MATCH": 12
+ },
+ "pathologies": {
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 80.0,
+ "match_rate_of_total_pct": 60.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p29\batch_report.json

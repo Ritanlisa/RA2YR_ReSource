@@ -1,0 +1,11 @@
+{
+ "addr": "0x637020",
+ "name": "?WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637020",
+ "bytes_hex": "8a8198000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

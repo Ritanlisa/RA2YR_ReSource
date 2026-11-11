@@ -1,0 +1,11 @@
+{
+ "addr": "0x636D90",
+ "name": "?GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x636D90",
+ "bytes_hex": "8b818c000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
