@@ -1,0 +1,21 @@
+{
+ "symbol": "?GrowBuffer@CChatEventSink@@QAEDXZ",
+ "sym_key": "CChatEventSink::GrowBuffer",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "51538bd9558b038b4b048d04403bc17e065d32c05b59c38bc1992bc2d1f883f80a8be87d05bd0a0000003be97c065d32c05b59c38bcd56c1e10503cd8d544d00c1e20252e8000000008b730883c40485f68944240c74218b0b578bd18bf8c1e20503d18d0c51c1e1028bc1c1e902f3a58bc883e103f3a45f8b4b0851e8000000008b54241083c404896b048953085e5db0015b59c3",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 125,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

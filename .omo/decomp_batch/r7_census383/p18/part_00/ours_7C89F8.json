@@ -1,0 +1,15 @@
+{
+ "symbol": "?BeginDrag@unknown@@QAGHPAXHHH@Z",
+ "sym_key": "unknown::BeginDrag",
+ "size": 31,
+ "link_base": 0,
+ "bytes_hex": "8b4424148b4c24108b54240c508b44240c515250e80000000083c410c21400",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?ImageList_BeginDrag@@YAHZZ",
+   "sym_key": "ImageList_BeginDrag"
+  }
+ ]
+}

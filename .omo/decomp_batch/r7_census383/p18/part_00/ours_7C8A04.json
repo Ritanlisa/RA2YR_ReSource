@@ -1,0 +1,15 @@
+{
+ "symbol": "?EndDrag@ImageList@@QAGXXZ",
+ "sym_key": "ImageList::EndDrag",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "e800000000c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?ImageList_EndDrag@@YAHZZ",
+   "sym_key": "ImageList_EndDrag"
+  }
+ ]
+}

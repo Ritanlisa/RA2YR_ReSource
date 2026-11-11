@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AD930",
+ "name": "CChatEventSink::GrowBuffer",
+ "size": 150,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AD930",
+ "bytes_hex": "5153558be98b45008b4d048d04403bc17e065d32c05b59c38bc1992bc28bd8d1fb83fb0a7d05bb0a0000003bd97c065d32c05b59c38bcb56c1e10503cb8d144bc1e20252e89eb401008b750883c40485f68944240c74228b4d00578bd18bf8c1e20503d18d0c51c1e1028bc1c1e902f3a58bc883e103f3a45f8b4d0851e88bb101008b54241083c404895508895d045e5db0015b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

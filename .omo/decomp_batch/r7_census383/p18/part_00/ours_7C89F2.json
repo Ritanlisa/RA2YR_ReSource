@@ -1,0 +1,15 @@
+{
+ "symbol": "?DragEnter@unknown@@QAGHPAXHH@Z",
+ "sym_key": "unknown::DragEnter",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b4424108b4c240c8b542408505152e80000000083c40cc21000",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?ImageList_DragEnter@@YAHZZ",
+   "sym_key": "ImageList_DragEnter"
+  }
+ ]
+}

@@ -6643,14 +6643,14 @@
   "status": "OK"
  },
  "0x7ad930": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+2 push ebp",
   "name": "CChatEventSink::GrowBuffer",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7adf70": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6671,7 +6671,7 @@
   "status": "NG"
  },
  "0x7ae460": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6685,7 +6685,7 @@
   "status": "NG"
  },
  "0x7aec00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6734,14 +6734,14 @@
   "status": "OK"
  },
  "0x7b2ff0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "UDPInterfaceClass_Destru::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6797,14 +6797,14 @@
   "status": "OK"
  },
  "0x7b9d70": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "WWMouseClass::checkStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b9d80": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6860,7 +6860,7 @@
   "status": "OK"
  },
  "0x7bab70": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "XSurface::entry_3C_",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6909,70 +6909,70 @@
   "status": "NG"
  },
  "0x7c891a": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "OleUninitialize::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c89f2": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "first_diff": "+0 jmp dword ptr [0x7e1034]",
   "name": "ImageList::DragEnter",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c89f8": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "first_diff": "+0 jmp dword ptr [0x7e1038]",
   "name": "ImageList::BeginDrag",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c89fe": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 jmp dword ptr [0x7e103c]",
   "name": "ImageList::Destroy",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c8a04": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 jmp dword ptr [0x7e1040]",
   "name": "ImageList::EndDrag",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c8a0a": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 jmp dword ptr [0x7e1030]",
   "name": "ImageList::DragMove",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7c8a10": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 jmp dword ptr [0x7e1028]",
   "name": "ImageList::DragShowNolock",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7d1512": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "GetCurrentThreadId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcee0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "GetCurrentThread::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcf22": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",

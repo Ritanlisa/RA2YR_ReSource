@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C89F8",
+ "name": "ImageList::BeginDrag",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C89F8",
+ "bytes_hex": "ff2538107e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
