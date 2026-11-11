@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x578880 MapClass::FastCellLookup -> MapClass
+[conv] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> ObjectClass
+[conv] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> FoggedObjectClass
+[conv] 0x574780 CellClass::TransitionCliff -> CellClass
+[conv] 0x6b8ca0 GameMode::ReadFlagsFromINI -> GameMode
+[conv] 0x5f3900 ObjectClass::ctor -> ObjectClass
+[conv] 0x4dd0a0 FootClass::FindMoveTarget -> FootClass
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x7b8a00 WWMouseClass::AddRef -> WWMouseClass
+[conv] 0x634e10 ScriptAction::PlaceObject -> ScriptAction
+[conv] 0x639800 unknown::CompleteBuildingProduction -> unknown
+[conv] 0x42e1c0 ObjectClass::RenderTooltipBorder -> ObjectClass
+[conv] 0x5e9e70 unknown::SetupSkirmishPlayerSlots -> unknown
+[conv] 0x773600 WebBrowser::LoadURLFromRegistry -> WebBrowser
+[conv] 0x5113f0 SuperWeaponTypeClass::Construct -> SuperWeaponTypeClass
+[conv] 0x7468c0 UnitClass::CheckForNearbyEnemies -> UnitClass
+[conv] 0x7abd40 CChatEventSink::DispatchStub_34 -> CChatEventSink
+[conv] 0x6efa10 TeamClass::SelectDeploymentTarget -> TeamClass
+[conv] 0x522fe0 InfantryClass::CreateDeployLocomotor -> InfantryClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=2
+[era] ObjectClass              rc=2
+[era] FoggedObjectClass        rc=2
+[era] CellClass                rc=2
+[era] GameMode                 rc=2
+[era] FootClass                rc=2
+[era] WWMouseClass             rc=2
+[era] ScriptAction             rc=2
+[era] unknown                  rc=2
+[era] WebBrowser               rc=2
+[era] SuperWeaponTypeClass     rc=2
+[era] UnitClass                rc=2
+[era] CChatEventSink           rc=2
+[era] TeamClass                rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[ledger] 0x578880 MapClass::FastCellLookup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x757360 ProcessVoxelDepthSamples -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d1650 DestructFoggedObjectClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x574780 MapClass::TransitionCliff -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8ca0 GameMode::ReadFlagsFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f3900 ObjectClass::ctor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4dd0a0 FootClass::FindMoveTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b8a00 WWMouseClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x634e10 ScriptAction::PlaceObject -> COMPILE_FAIL (attempt 1)
+[ledger] 0x639800 CompleteBuildingProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42e1c0 RenderTooltipBorder -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9e70 SetupSkirmishPlayerSlots -> COMPILE_FAIL (attempt 1)
+[ledger] 0x773600 WebBrowser::LoadURLFromRegistry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5113f0 SuperWeaponTypeClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e3ab0 0x5e3ab0 -> PENDING (attempt 1)
+[ledger] 0x7468c0 UnitClass::CheckForNearbyEnemies -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7abd40 CComObject_CChatEventSink___ATL::DispatchStub_34 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6efa10 TeamClass::SelectDeploymentTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522fe0 InfantryClass::CreateDeployLocomotor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2774,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 986,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 532,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 18.8,
+ "rule_violation_fns": 17,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p20\batch_report.json

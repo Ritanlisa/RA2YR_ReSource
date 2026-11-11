@@ -90,3 +90,4 @@
 {"layer": "D", "part": 17, "n": 20, "seconds": 12.0, "ok": true, "verdicts": {"COMPILE_FAIL": 17, "NO_CLS": 2, "NO_PSEUDO": 1}}
 {"layer": "D", "part": 18, "n": 20, "seconds": 13.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"layer": "D", "part": 19, "n": 20, "seconds": 14.1, "ok": true, "verdicts": {"NO_CLS": 2, "COMPILE_FAIL": 17, "NO_PSEUDO": 1}}
+{"layer": "D", "part": 20, "n": 20, "seconds": 14.3, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "NO_CLS": 1}}
