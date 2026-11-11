@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dc400 nullsub_43 -> _addr_6D
+[conv] 0x6dcdc0 sub_6DCDC0 -> _addr_6D
+[conv] 0x6dcf10 sub_6DCF10 -> _addr_6D
+[conv] 0x6dcf60 sub_6DCF60 -> _addr_6D
+[conv] 0x6e5980 sub_6E5980 -> _addr_6E
+[conv] 0x6e59e0 sub_6E59E0 -> _addr_6E
+[conv] 0x6e5b20 sub_6E5B20 -> _addr_6E
+[conv] 0x6e7db0 sub_6E7DB0 -> _addr_6E
+[conv] 0x6e88d0 sub_6E88D0 -> _addr_6E
+[conv] 0x6e8950 sub_6E8950 -> _addr_6E
+[conv] 0x6f04e0 sub_6F04E0 -> _addr_6F
+[conv] 0x6f0660 sub_6F0660 -> _addr_6F
+[conv] 0x6f2040 Helper_6F2040 -> Helper
+[conv] 0x6f2a10 sub_6F2A10 -> _addr_6F
+[conv] 0x6f2a70 sub_6F2A70 -> _addr_6F
+[conv] 0x70d180 SetGlobalFlag -> _addr_70
+[conv] 0x710860 sub_710860 -> _addr_71
+[conv] 0x710a80 sub_710A80 -> _addr_71
+[conv] 0x717e60 sub_717E60 -> _addr_71
+[conv] 0x71a1c0 sub_71A1C0 -> _addr_71
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=2
+[era] _addr_6F                 rc=2
+[era] Helper                   rc=0
+[era] _addr_70                 rc=0
+[era] _addr_71                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6dc400   MATCH            nullsub_43
+[diff] 0x6dcdc0   MISMATCH         sub_6DCDC0
+[diff] 0x6dcf10   MISMATCH         sub_6DCF10
+[diff] 0x6dcf60   MATCH            sub_6DCF60
+[diff] 0x6e5980   MISMATCH         sub_6E5980
+[diff] 0x6e59e0   MISMATCH         sub_6E59E0
+[diff] 0x6e7db0   MISMATCH         sub_6E7DB0
+[diff] 0x6e88d0   MISMATCH         sub_6E88D0
+[diff] 0x6f04e0   MISMATCH         sub_6F04E0
+[diff] 0x6f0660   MATCH            sub_6F0660
+[diff] 0x6f2a70   MISMATCH         sub_6F2A70
+[diff] 0x6f2040   MISMATCH         Helper_6F2040
+[diff] 0x70d180   MATCH            SetGlobalFlag
+[diff] 0x710860   MISMATCH         sub_710860
+[diff] 0x710a80   MATCH            sub_710A80
+[diff] 0x717e60   MISMATCH         sub_717E60
+[ledger] 0x6dc400 nullsub_43 -> OK (attempt 2)
+[ledger] 0x6dcdc0 sub_6DCDC0 -> NG (attempt 2)
+[ledger] 0x6dcf10 sub_6DCF10 -> NG (attempt 2)
+[ledger] 0x6dcf60 sub_6DCF60 -> OK (attempt 2)
+[ledger] 0x6e5980 sub_6E5980 -> NG (attempt 2)
+[ledger] 0x6e59e0 sub_6E59E0 -> NG (attempt 2)
+[ledger] 0x6e5b20 sub_6E5B20 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6e7db0 sub_6E7DB0 -> NG (attempt 2)
+[ledger] 0x6e88d0 sub_6E88D0 -> NG (attempt 2)
+[ledger] 0x6e8950 sub_6E8950 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f04e0 sub_6F04E0 -> NG (attempt 2)
+[ledger] 0x6f0660 sub_6F0660 -> OK (attempt 2)
+[ledger] 0x6f2040 Helper_6F2040 -> NG (attempt 2)
+[ledger] 0x6f2a10 sub_6F2A10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f2a70 sub_6F2A70 -> NG (attempt 2)
+[ledger] 0x70d180 SetGlobalFlag -> OK (attempt 2)
+[ledger] 0x710860 sub_710860 -> NG (attempt 2)
+[ledger] 0x710a80 sub_710A80 -> OK (attempt 2)
+[ledger] 0x717e60 sub_717E60 -> NG (attempt 2)
+[ledger] 0x71a1c0 sub_71A1C0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 5,
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "codegen_shape": 3,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 31.2,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p18\batch_report.json

@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x6dc400",
+  "batch": "nocls",
+  "name": "nullsub_43",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x6dcdc0",
+  "batch": "nocls",
+  "name": "sub_6DCDC0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6dcf10",
+  "batch": "nocls",
+  "name": "sub_6DCF10",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6dcf60",
+  "batch": "nocls",
+  "name": "sub_6DCF60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6e5980",
+  "batch": "nocls",
+  "name": "sub_6E5980",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6e59e0",
+  "batch": "nocls",
+  "name": "sub_6E59E0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6e5b20",
+  "batch": "nocls",
+  "name": "sub_6E5B20",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x6e7db0",
+  "batch": "nocls",
+  "name": "sub_6E7DB0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6e88d0",
+  "batch": "nocls",
+  "name": "sub_6E88D0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6e8950",
+  "batch": "nocls",
+  "name": "sub_6E8950",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6f04e0",
+  "batch": "nocls",
+  "name": "sub_6F04E0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6f0660",
+  "batch": "nocls",
+  "name": "sub_6F0660",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6f2040",
+  "batch": "nocls",
+  "name": "Helper_6F2040",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6f2a10",
+  "batch": "nocls",
+  "name": "sub_6F2A10",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6f2a70",
+  "batch": "nocls",
+  "name": "sub_6F2A70",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x70d180",
+  "batch": "nocls",
+  "name": "SetGlobalFlag",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x710860",
+  "batch": "nocls",
+  "name": "sub_710860",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x710a80",
+  "batch": "nocls",
+  "name": "sub_710A80",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x717e60",
+  "batch": "nocls",
+  "name": "sub_717E60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x71a1c0",
+  "batch": "nocls",
+  "name": "sub_71A1C0",
+  "cc": "unknown"
+ }
+]

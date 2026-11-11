@@ -1,0 +1,11 @@
+{
+ "addr": "0x710A80",
+ "name": "sub_710A80",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x710A80",
+ "bytes_hex": "33c066a358ebb00066a35aebb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

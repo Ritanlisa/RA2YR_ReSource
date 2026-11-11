@@ -15365,11 +15365,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x6dc400": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6dc400",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "nullsub_43",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6dc450": {
   "attempts": 5,
@@ -15407,25 +15407,25 @@
   "status": "NG"
  },
  "0x6dcdc0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6dcdc0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_6DCDC0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6dcf10": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6dcf10",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 xor eax, eax",
+  "name": "sub_6DCF10",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6dcf60": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6dcf60",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6DCF60",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6e0040": {
   "attempts": 1,
@@ -15568,25 +15568,25 @@
   "status": "OK"
  },
  "0x6e5980": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6e5980",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f4548]",
+  "name": "sub_6E5980",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6e59e0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6e59e0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fild dword ptr [0xb0e810]",
+  "name": "sub_6E59E0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6e5b20": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6e5b20",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6E5B20",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6e5e70": {
   "attempts": 1,
@@ -15673,11 +15673,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x6e7db0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6e7db0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 push ecx",
+  "name": "sub_6E7DB0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6e8000": {
   "attempts": 1,
@@ -15722,18 +15722,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x6e88d0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6e88d0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_6E88D0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6e8950": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6e8950",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6E8950",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6ea0d0": {
   "attempts": 1,
@@ -15848,18 +15848,18 @@
   "status": "OK"
  },
  "0x6f04e0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6f04e0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f4798]",
+  "name": "sub_6F04E0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6f0660": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6f0660",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6F0660",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6f1870": {
   "attempts": 1,
@@ -15890,11 +15890,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x6f2040": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6f2040",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+10 jle 0x6f2063",
+  "name": "Helper_6F2040",
+  "note": "decomp_batch r2: MISMATCH/signedness",
+  "status": "NG"
  },
  "0x6f20a0": {
   "attempts": 5,
@@ -15918,18 +15918,18 @@
   "status": "OK"
  },
  "0x6f2a10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6f2a10",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6F2A10",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6f2a70": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x6f2a70",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+5 mov dword ptr [0xb0eb20], 0",
+  "name": "sub_6F2A70",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x6f4a40": {
   "attempts": 1,
@@ -16149,11 +16149,11 @@
   "status": "NG"
  },
  "0x70d180": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x70d180",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "SetGlobalFlag",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x70dd90": {
   "attempts": 5,
@@ -16240,18 +16240,18 @@
   "status": "NG"
  },
  "0x710860": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x710860",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+19 xor edx, edx",
+  "name": "sub_710860",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x710a80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x710a80",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_710A80",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x711840": {
   "attempts": 1,
@@ -16338,11 +16338,11 @@
   "status": "NG"
  },
  "0x717e60": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x717e60",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f4fd0]",
+  "name": "sub_717E60",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x719ee0": {
   "attempts": 1,
@@ -16359,11 +16359,11 @@
   "status": "NG"
  },
  "0x71a1c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x71a1c0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_71A1C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x71a210": {
   "attempts": 1,

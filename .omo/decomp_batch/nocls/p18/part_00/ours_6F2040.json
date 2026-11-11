@@ -1,0 +1,33 @@
+{
+ "symbol": "?Helper_6F2040@@YAHXZ",
+ "sym_key": "Unnamed::Helper_6F2040",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "a1000000005633f685c07617a1000000008b0cb0e800000000a100000000463bf072e95ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_TeamTypePool@@3PAXA",
+   "sym_key": "g_TeamTypePool"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "?ProcessTaskForce@TeamTypeClass@@QAEHXZ",
+   "sym_key": "TeamTypeClass::ProcessTaskForce"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_MultiplayerLogState@@3IA",
+   "sym_key": "g_MultiplayerLogState"
+  }
+ ]
+}
