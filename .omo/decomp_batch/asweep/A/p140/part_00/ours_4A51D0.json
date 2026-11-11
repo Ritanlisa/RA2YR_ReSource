@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckNone@Flag@@QAE_NXZ",
+ "sym_key": "Flag::CheckNone",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8a411884c0750a8a411984c07503b001c332c0c3",
+ "relocs": []
+}

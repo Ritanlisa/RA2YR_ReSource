@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsVisible@Window@@QAE_NXZ",
+ "sym_key": "Window::IsVisible",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8a411884c0740a8a411984c07403b001c332c0c3",
+ "relocs": []
+}

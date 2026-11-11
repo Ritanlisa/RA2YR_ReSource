@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B640",
+ "name": "Timer::Start",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B640",
+ "bytes_hex": "8b5424048bc18b0d84eda8008908895008c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

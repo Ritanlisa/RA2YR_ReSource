@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p140\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b2c50 sub_7B2C50 -> _addr_7B
+[conv] 0x46b640 Timer::Start -> Timer
+[conv] 0x4a5110 Window::IsVisible -> Window
+[conv] 0x4a51d0 Flag::CheckNone -> Flag
+[conv] 0x4e8180 sub_4E8180 -> _addr_4E
+[conv] 0x4e81a0 sub_4E81A0 -> _addr_4E
+[conv] 0x4e81c0 sub_4E81C0 -> _addr_4E
+[conv] 0x4e81e0 sub_4E81E0 -> _addr_4E
+[conv] 0x4e8200 sub_4E8200 -> _addr_4E
+[conv] 0x4e8220 sub_4E8220 -> _addr_4E
+[conv] 0x5a9920 ObjectClass::sub_5A9920 -> ObjectClass
+[conv] 0x633a20 ObjectClass::sub_633A20 -> ObjectClass
+[conv] 0x633ac0 ObjectClass::ExecuteActionPlanManager_Helper -> ObjectClass
+[conv] 0x637db0 ScriptAction::SetField10 -> ScriptAction
+[conv] 0x655890 ObjectClass::sub_655890 -> ObjectClass
+[conv] 0x68bcc0 ScenarioClass::Get_Waypoint_Location -> ScenarioClass
+[conv] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> ScenarioClass
+[conv] 0x6abc40 Network_Process_6ABC40 -> Network_Process
+[conv] 0x724ab0 ToolTipManager::release -> ToolTipManager
+[conv] 0x72a1a0 TunnelLocomotionClass::ShortFunc_72A1A0 -> TunnelLocomotionClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=0
+[era] Timer                    rc=0
+[era] Window                   rc=0
+[era] Flag                     rc=0
+[era] _addr_4E                 rc=0
+[era] ObjectClass              rc=2
+[era] ScriptAction             rc=0
+[era] ScenarioClass            rc=2
+[era] Network_Process          rc=2
+[era] ToolTipManager           rc=2
+[era] TunnelLocomotionClass    rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b2c50   MISMATCH         sub_7B2C50
+[diff] 0x46b640   MISMATCH         Timer::Start
+[diff] 0x4a5110   MATCH            Window::IsVisible
+[diff] 0x4a51d0   MATCH            Flag::CheckNone
+[diff] 0x4e8180   MISMATCH         sub_4E8180
+[diff] 0x4e81a0   MISMATCH         sub_4E81A0
+[diff] 0x4e81c0   MISMATCH         sub_4E81C0
+[diff] 0x4e81e0   MISMATCH         sub_4E81E0
+[diff] 0x4e8200   MISMATCH         sub_4E8200
+[diff] 0x4e8220   MISMATCH         sub_4E8220
+[diff] 0x633a20   MISMATCH         ObjectClass::sub_633A20
+[diff] 0x633ac0   MISMATCH         ObjectClass::ExecuteActionPlanManager_Helper
+[diff] 0x655890   MATCH            ObjectClass::sub_655890
+[diff] 0x637db0   MISMATCH         ScriptAction::SetField10
+[diff] 0x72a1a0   MISMATCH         TunnelLocomotionClass::ShortFunc_72A1A0
+[ledger] 0x7b2c50 sub_7B2C50 -> NG (attempt 1)
+[ledger] 0x46b640 Timer::Start -> NG (attempt 1)
+[ledger] 0x4a5110 Window::IsVisible -> OK (attempt 1)
+[ledger] 0x4a51d0 Flag::CheckNone -> OK (attempt 1)
+[ledger] 0x4e8180 sub_4E8180 -> NG (attempt 1)
+[ledger] 0x4e81a0 sub_4E81A0 -> NG (attempt 1)
+[ledger] 0x4e81c0 sub_4E81C0 -> NG (attempt 1)
+[ledger] 0x4e81e0 sub_4E81E0 -> NG (attempt 1)
+[ledger] 0x4e8200 sub_4E8200 -> NG (attempt 1)
+[ledger] 0x4e8220 sub_4E8220 -> NG (attempt 1)
+[ledger] 0x5a9920 ObjectClass::sub_5A9920 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633a20 ObjectClass::sub_633A20 -> NG (attempt 1)
+[ledger] 0x633ac0 ObjectClass::ExecuteActionPlanManager_Helper -> NG (attempt 1)
+[ledger] 0x637db0 ScriptAction::SetField10 -> NG (attempt 1)
+[ledger] 0x655890 ObjectClass::sub_655890 -> OK (attempt 1)
+[ledger] 0x68bcc0 ScenarioClass::Get_Waypoint_Location -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68bf30 ScenarioClass::Set_Default_Waypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6abc40 Network_Process_6ABC40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724ab0 ToolTipManager::release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72a1a0 TunnelLocomotionClass::ShortFunc_72A1A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 3,
+  "COMPILE_FAIL": 5
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 1,
+  "width_mismatch": 1,
+  "ret_norm": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p140\batch_report.json

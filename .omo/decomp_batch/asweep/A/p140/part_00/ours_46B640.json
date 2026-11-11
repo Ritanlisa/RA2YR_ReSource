@@ -1,0 +1,15 @@
+{
+ "symbol": "?Start@Timer@@QAEPAV1@H@Z",
+ "sym_key": "Timer::Start",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b5424048901895108c20400",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

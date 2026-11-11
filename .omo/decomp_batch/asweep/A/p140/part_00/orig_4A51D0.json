@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A51D0",
+ "name": "Flag::CheckNone",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A51D0",
+ "bytes_hex": "8a411884c0750a8a411984c07503b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

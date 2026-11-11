@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetField10@ScriptAction@@QAE_NXZ",
+ "sym_key": "ScriptAction::SetField10",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "a00000000084c0740883f904750333c0c3b801000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3PADA",
+   "sym_key": "DataGlobal_AC4CF4"
+  }
+ ]
+}

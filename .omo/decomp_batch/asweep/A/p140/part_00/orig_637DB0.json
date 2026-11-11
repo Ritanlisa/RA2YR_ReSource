@@ -1,0 +1,11 @@
+{
+ "addr": "0x637DB0",
+ "name": "ScriptAction::SetField10",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637DB0",
+ "bytes_hex": "a0f44cac0084c0740883f904750332c0c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
