@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x535be0",
+  "name": "Map::IsCellFlag",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 15,
+  "part": "p57",
+  "unit": "CommandClass",
+  "emitted": "CommandClass::IsCellFlag",
+  "first_diff": {
+   "orig": "+12 ret 4",
+   "ours": "+12 ret 8"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x536740",
+  "name": "CreateTeamCommand::performAction_37",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 15,
+  "part": "p57",
+  "unit": "PlanningModeCommandClass",
+  "emitted": "PlanningModeCommandClass::performAction_37",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x54e1f0",
+  "name": "sub_54E1F0",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 15,
+  "part": "p57",
+  "unit": "_addr_54",
+  "emitted": "sub_54E1F0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 xor al, al"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x54ee00",
+  "name": "sub_54EE00",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 15,
+  "part": "p57",
+  "unit": "_addr_54",
+  "emitted": "sub_54EE00",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 xor al, al"
+  },
+  "ours_size": 15
+ },
+ {
+  "addr": "0x55aef0",
+  "name": "sub_55AEF0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p58",
+  "unit": "_addr_55",
+  "emitted": "sub_55AEF0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x58b6d0",
+  "name": "sub_58B6D0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p58",
+  "unit": "_addr_58",
+  "emitted": "sub_58B6D0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x5e25d0",
+  "name": "sub_5E25D0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p59",
+  "unit": "_addr_5E",
+  "emitted": "sub_5E25D0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x629120",
+  "name": "sub_629120",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p60",
+  "unit": "_addr_62",
+  "emitted": "sub_629120",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x65d860",
+  "name": "sub_65D860",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p61",
+  "unit": "_addr_65",
+  "emitted": "sub_65D860",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x65f940",
+  "name": "sub_65F940",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p61",
+  "unit": "_addr_65",
+  "emitted": "sub_65F940",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6921f0",
+  "name": "sub_6921F0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p61",
+  "unit": "_addr_69",
+  "emitted": "sub_6921F0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6af0b0",
+  "name": "sub_6AF0B0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p61",
+  "unit": "_addr_6A",
+  "emitted": "sub_6AF0B0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6b5210",
+  "name": "sub_6B5210",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6B",
+  "emitted": "sub_6B5210",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6e4cf0",
+  "name": "sub_6E4CF0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E4CF0",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6e8a20",
+  "name": "sub_6E8A20",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E8A20",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x6f2a40",
+  "name": "sub_6F2A40",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_6F",
+  "emitted": "sub_6F2A40",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov dword ptr [0], 0"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x717f90",
+  "name": "sub_717F90",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p62",
+  "unit": "_addr_71",
+  "emitted": "sub_717F90",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov word ptr [0], 0"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x728990",
+  "name": "sub_728990",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 15,
+  "part": "p63",
+  "unit": "_addr_72",
+  "emitted": "sub_728990",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov word ptr [0], 0"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x728a50",
+  "name": "JumpjetLocomotionClass::ShortFunc_728A50",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 15,
+  "part": "p63",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::ShortFunc_728A50",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov ecx, dword ptr [esp + 4]"
+  },
+  "ours_size": 17
+ },
+ {
+  "addr": "0x433c80",
+  "name": "sub_433C80",
+  "family": "WIDTH",
+  "path": "regalloc",
+  "size": 16,
+  "part": "p65",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_433C80",
+  "first_diff": {
+   "orig": "+0 mov ax, word ptr [esp + 4]",
+   "ours": "+0 mov al, byte ptr [esp + 4]"
+  },
+  "ours_size": 14
+ }
+]
