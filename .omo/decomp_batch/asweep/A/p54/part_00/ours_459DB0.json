@@ -1,0 +1,15 @@
+{
+ "symbol": "?ClearLimpetCheck@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::ClearLimpetCheck",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b0d00000000890859c3",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_TerrainTypeTable@@3IA",
+   "sym_key": "g_TerrainTypeTable"
+  }
+ ]
+}

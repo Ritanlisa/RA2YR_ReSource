@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_43B0E0@@YAHXZ",
+ "sym_key": "Unnamed::sub_43B0E0",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "c705000000000000000033c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_TerrainTypeTable@@3IA",
+   "sym_key": "g_TerrainTypeTable"
+  }
+ ]
+}

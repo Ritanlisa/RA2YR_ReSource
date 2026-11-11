@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p54\part_00
+=== convert (20 addrs) ===
+[conv] 0x421e50 sub_421E50 -> _addr_42
+[conv] 0x4274c0 sub_4274C0 -> _addr_42
+[conv] 0x4291b0 sub_4291B0 -> _addr_42
+[conv] 0x429730 sub_429730 -> _addr_42
+[conv] 0x42e5d0 sub_42E5D0 -> _addr_42
+[conv] 0x430140 sub_430140 -> _addr_43
+[conv] 0x4357b0 sub_4357B0 -> _addr_43
+[conv] 0x4384e0 sub_4384E0 -> _addr_43
+[conv] 0x439640 sub_439640 -> _addr_43
+[conv] 0x43a300 sub_43A300 -> _addr_43
+[conv] 0x43b0e0 sub_43B0E0 -> _addr_43
+[conv] 0x459db0 TechnoClass::ClearLimpetCheck -> TechnoClass
+[conv] 0x45b140 sub_45B140 -> _addr_45
+[conv] 0x466270 sub_466270 -> _addr_46
+[conv] 0x46cb10 sub_46CB10 -> _addr_46
+[conv] 0x4716e0 sub_4716E0 -> _addr_47
+[conv] 0x473330 sub_473330 -> _addr_47
+[conv] 0x4736e0 sub_4736E0 -> _addr_47
+[conv] 0x474180 sub_474180 -> _addr_47
+[conv] 0x478b50 sub_478B50 -> _addr_47
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=0
+[era] _addr_43                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x421e50   MISMATCH         sub_421E50
+[diff] 0x4274c0   MATCH            sub_4274C0
+[diff] 0x4291b0   MATCH            sub_4291B0
+[diff] 0x429730   MISMATCH         sub_429730
+[diff] 0x42e5d0   MISMATCH         sub_42E5D0
+[diff] 0x430140   MATCH            sub_430140
+[diff] 0x4357b0   MISMATCH         sub_4357B0
+[diff] 0x4384e0   MATCH            sub_4384E0
+[diff] 0x439640   MATCH            sub_439640
+[diff] 0x43a300   MATCH            sub_43A300
+[diff] 0x43b0e0   MISMATCH         sub_43B0E0
+[diff] 0x459db0   MISMATCH         TechnoClass::ClearLimpetCheck
+[diff] 0x45b140   MATCH            sub_45B140
+[diff] 0x466270   MISMATCH         sub_466270
+[diff] 0x46cb10   MATCH            sub_46CB10
+[diff] 0x4716e0   MATCH            sub_4716E0
+[diff] 0x473330   MATCH            sub_473330
+[diff] 0x4736e0   MATCH            sub_4736E0
+[diff] 0x474180   MATCH            sub_474180
+[diff] 0x478b50   MATCH            sub_478B50
+[ledger] 0x421e50 sub_421E50 -> NG (attempt 1)
+[ledger] 0x4274c0 sub_4274C0 -> OK (attempt 1)
+[ledger] 0x4291b0 sub_4291B0 -> OK (attempt 1)
+[ledger] 0x429730 sub_429730 -> NG (attempt 1)
+[ledger] 0x42e5d0 sub_42E5D0 -> NG (attempt 1)
+[ledger] 0x430140 sub_430140 -> OK (attempt 1)
+[ledger] 0x4357b0 sub_4357B0 -> NG (attempt 1)
+[ledger] 0x4384e0 sub_4384E0 -> OK (attempt 1)
+[ledger] 0x439640 sub_439640 -> OK (attempt 1)
+[ledger] 0x43a300 sub_43A300 -> OK (attempt 1)
+[ledger] 0x43b0e0 sub_43B0E0 -> NG (attempt 1)
+[ledger] 0x459db0 TechnoClass::ClearLimpetCheck -> NG (attempt 1)
+[ledger] 0x45b140 sub_45B140 -> OK (attempt 1)
+[ledger] 0x466270 sub_466270 -> NG (attempt 1)
+[ledger] 0x46cb10 sub_46CB10 -> OK (attempt 1)
+[ledger] 0x4716e0 sub_4716E0 -> OK (attempt 1)
+[ledger] 0x473330 sub_473330 -> OK (attempt 1)
+[ledger] 0x4736e0 sub_4736E0 -> OK (attempt 1)
+[ledger] 0x474180 sub_474180 -> OK (attempt 1)
+[ledger] 0x478b50 sub_478B50 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "MATCH": 13
+ },
+ "pathologies": {
+  "extern_reloc": 6,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 65.0,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p54\batch_report.json

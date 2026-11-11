@@ -1,0 +1,11 @@
+{
+ "addr": "0x459DB0",
+ "name": "BuildingClass::ClearLimpetCheck",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459DB0",
+ "bytes_hex": "8b4424048b0d18c889008908c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
