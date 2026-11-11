@@ -4305,7 +4305,7 @@
   "status": "OK"
  },
  "0x6234b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SymbolTable::Rebuild",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4333,7 +4333,7 @@
   "status": "OK"
  },
  "0x624be0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "Dialog::GrowBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4375,7 +4375,7 @@
   "status": "NG"
  },
  "0x626690": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4431,14 +4431,14 @@
   "status": "OK"
  },
  "0x62e380": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ParticleSystemClass::CreateParticle",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x62e4c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ParticleClass::CreateInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4536,7 +4536,7 @@
   "status": "OK"
  },
  "0x635060": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+49 je 0x63510e",
   "name": "FactoryClass::FinishProduction",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
@@ -4550,7 +4550,7 @@
   "status": "OK"
  },
  "0x636ce0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ScriptAction::ClearBuildingState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4592,7 +4592,7 @@
   "status": "NG"
  },
  "0x6403a0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "PowerClass::getDrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4613,7 +4613,7 @@
   "status": "OK"
  },
  "0x644630": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "WarheadTypeClass::applyDamage",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4676,14 +4676,14 @@
   "status": "OK"
  },
  "0x652cf0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RadarClass::Destru_vt05",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x653760": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4697,7 +4697,7 @@
   "status": "NG"
  },
  "0x656cb0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4711,14 +4711,14 @@
   "status": "OK"
  },
  "0x658970": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+2 mov ebp, dword ptr [esp + 0xc]",
   "name": "RadarHashVector::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x658b10": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+2 mov ebp, dword ptr [esp + 0xc]",
   "name": "RadarHashVector::ComputeHashIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -4774,7 +4774,7 @@
   "status": "OK"
  },
  "0x65b800": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RadSiteClass::Tick",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4837,14 +4837,14 @@
   "status": "OK"
  },
  "0x661850": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6632e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4858,7 +4858,7 @@
   "status": "OK"
  },
  "0x664440": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4921,7 +4921,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x68c710": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4963,7 +4963,7 @@
   "status": "OK"
  },
  "0x697e70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
   "note": "decomp_batch r2: COMPILE_FAIL",

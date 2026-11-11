@@ -5,7 +5,7 @@
 
 int ParticleClass::CreateInstance(int * p0, float p1, int p2)
 {
-        if ( *(unsigned int *)((char *)this ->u32_AC + 660) == -1 )
+        if ( *(unsigned int *)(this->u32_AC + 660) == -1 )
         {
             return (int)(0);
         }
@@ -14,7 +14,7 @@ int ParticleClass::CreateInstance(int * p0, float p1, int p2)
         {
             return (int)(0);
         }
-        int v6 = ((ParticleClass *)((int)v5))->Construct(*((unsigned int *)g_BuildingProductionQueue + *(unsigned int *)((char *)this ->u32_AC + 660)), p0, p1, this);
+        int v6 = ((ParticleClass *)((int)v5))->Construct(*((unsigned int *)g_BuildingProductionQueue + *(unsigned int *)(this->u32_AC + 660)), p0, p1, this);
         if ( v6 == 0 )
         {
             return (int)(0);
@@ -24,29 +24,29 @@ int ParticleClass::CreateInstance(int * p0, float p1, int p2)
         {
             return (int)(0);
         }
-        char * v8 = (char *)this ->u32_C4;
-        char * v9;
-        char * v10;
-        char * v11;
-        if ( (char *)this ->q0CC < v8
-        || ((char *)this ->q0C9 || v8 == 0)
-        && (v9 = (char *)this ->q0D0, v9 > 0)
-        && (*(unsigned char (__stdcall **)(int, int, unsigned int))((char *)this ->u32_BC + 8))((char *)this + 188, v8 + v9, 0) )
+        int v8 = (unsigned int)(this->u32_C4);
+        int v9;
+        int v10;
+        int v11;
+        if ( this->q0CC < v8
+        || (this->q0C9 || v8 == 0)
+        && (v9 = this->q0D0, v9 > 0)
+        && (*(unsigned char (__stdcall **)(int, int, unsigned int))(this->u32_BC + 8))((char *)this + 188, v8 + v9, 0) )
         {
-            v10 = (char *)this ->q0CC;
-            v11 = (char *)this ->ptr_C0;
-            (char *)this ->q0CC = (unsigned int)(v10 + 1);
+            v10 = (unsigned int)(this->q0CC);
+            v11 = (unsigned int)(this->ptr_C0);
+            this->q0CC = v10 + 1;
             *(unsigned int *)(v11 + 4 * v10) = v6;
         }
-        char * v12 = (char *)this ->q0CC;
-        char * v13 = (char *)this ->ptr_C0;
+        int v12 = (unsigned int)(this->q0CC);
+        int v13 = (unsigned int)(this->ptr_C0);
         if ( v12 < p2 )
         {
-            v7 = (unsigned int)(v12);
+            v7 = v12;
         }
         int v14 = (int)abs32(((Random *)(g_ScenarioClass_Instance + 134))->State()) % v7;
-        int v15 = (unsigned int)(v12 - 2);
-        int v16 = (unsigned int)(v12 - v14);
+        int v15 = v12 - 2;
+        int v16 = v12 - v14;
         unsigned int * v17;
         int v18;
         if ( v15 > v16 - 2 )

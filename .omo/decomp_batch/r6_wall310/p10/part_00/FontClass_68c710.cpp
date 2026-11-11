@@ -16,7 +16,7 @@ char * FontClass::InitMetrics(char * p0, int p1, int p2, int p3, int p4, char p5
         } while ( v8 );
         *((unsigned int *)this + 193) = _strdup(p0);
         *((unsigned short *)this + 388) = *(unsigned short *)p0;
-        (char *)this ->m30A = *(unsigned char *)(p0 + 2);
+        this->m30A = *(unsigned char *)(p0 + 2);
         *((unsigned int *)this + 195) = 0;
         *((unsigned int *)this + 196) = p2;
         *((unsigned int *)this + 197) = 16;
