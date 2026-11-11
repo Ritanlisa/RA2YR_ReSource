@@ -1,0 +1,15 @@
+{
+ "symbol": "?QuaternionMathMultiply@unknown@@QAIPAMPAM00@Z",
+ "sym_key": "unknown::QuaternionMathMultiply",
+ "size": 242,
+ "link_base": 0,
+ "bytes_hex": "518b44240c8b4c2408d9400cd9410cd94104d84808d94108d84804dee9d900d8cad9c9d9c9dec1d9c2d809dec1d95c2400d94108d808d94008d809dee9d94004d8cad9c9d9c9dec1d9c2d84904dec1d95c2408d901d84804d94104d808dee9d94008d8cad9c9d9c9dec1d9cad84908dec2d9c9d95c240cd9400cd8c9d901d808d94108d84808dec1d94104d84804dec1dee9d9c9ddd8d944240cd9442408d9442400d9c3d8ccd9c3d8ccdec1d9c2d8cbdec1d9c1d8cadec1dd0500000000d8d9dfe0f6c4407518d9c9d8f1d9c9d9cad8f2d9cad9cbd8f3d9cbd9ccd8f4d9ccddd8d91a8bc2d95a04d95a08d95a0c59c20800",
+ "relocs": [
+  {
+   "off": 186,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

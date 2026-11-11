@@ -1,0 +1,81 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c6660 unknown::RotateBitBufferRight -> unknown
+[conv] 0x5c67a0 unknown::RotateBitBufferLeft -> unknown
+[conv] 0x7df3c2 unknown::Object_Calc_7DF3C2 -> unknown
+[conv] 0x7d5178 ObjectClass::_cvtdate -> ObjectClass
+[conv] 0x7df500 unknown::Object_Calc_7DF500 -> unknown
+[conv] 0x6613a0 unknown::ComputeColorSaturation -> unknown
+[conv] 0x7df640 unknown::Object_Calc_7DF640 -> unknown
+[conv] 0x7df280 unknown::Object_Calc_7DF280 -> unknown
+[conv] 0x645ed0 unknown::QuaternionMathMultiply -> unknown
+[conv] 0x42bca0 unknown::sub_42BCA0 -> unknown
+[conv] 0x551e50 unknown::DecompressCoreLCW -> unknown
+[conv] 0x4270d0 unknown::sub_4270D0 -> unknown
+[conv] 0x7d5c12 ObjectClass::_parse_cmdline -> ObjectClass
+[conv] 0x63f2e0 unknown::Audio_Process -> unknown
+[conv] 0x7c3270 unknown::Audio_Process_7C3270 -> unknown
+[conv] 0x7be670 UnitClass::Audio_Render_7BE670 -> UnitClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] ObjectClass              rc=2
+[era] UnitClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x645ed0   MISMATCH         unknown::QuaternionMathMultiply
+[diff] 0x7c3270   MISMATCH         unknown::Audio_Process_7C3270
+[ledger] 0x5c6660 RotateBitBufferRight -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c67a0 RotateBitBufferLeft -> COMPILE_FAIL (attempt 1)
+[ledger] 0x748af0 0x748af0 -> PENDING (attempt 1)
+[ledger] 0x7c4260 0x7c4260 -> PENDING (attempt 1)
+[ledger] 0x7df3c2 Object_Calc_7DF3C2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5178 _cvtdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7df500 Object_Calc_7DF500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7df640 Object_Calc_7DF640 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7df280 Object_Calc_7DF280 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3d60 0x7c3d60 -> PENDING (attempt 1)
+[ledger] 0x6b4240 0x6b4240 -> PENDING (attempt 1)
+[ledger] 0x645ed0 QuaternionMathMultiply -> NG (attempt 1)
+[ledger] 0x42bca0 sub_42BCA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x551e50 DecompressCoreLCW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4270d0 sub_4270D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5c12 _parse_cmdline -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63f2e0 Audio_Process -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3270 Audio_Process_7C3270 -> NG (attempt 1)
+[ledger] 0x7be670 Audio_Render_7BE670 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1037,
+ "verdicts": {
+  "MISMATCH": 283,
+  "MATCH": 411,
+  "COMPILE_FAIL": 312,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 24,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 109,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.2,
+ "match_rate_of_total_pct": 39.6,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p03\batch_report.json

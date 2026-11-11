@@ -615,6 +615,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4270d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_4270D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x427290": {
   "attempts": 5,
   "first_diff": null,
@@ -663,6 +670,13 @@
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x42bca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_42BCA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x42d8f0": {
   "attempts": 9,
@@ -3541,6 +3555,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x551e50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DecompressCoreLCW",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x552b10": {
   "attempts": 9,
   "first_diff": null,
@@ -4241,6 +4262,20 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c6660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RotateBitBufferRight",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5c67a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RotateBitBufferLeft",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5c71e0": {
   "attempts": 1,
   "first_diff": null,
@@ -4892,6 +4927,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x63f2e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Process",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x63f7b0": {
   "attempts": 5,
   "first_diff": "+0 jmp 0x652cf0",
@@ -4982,6 +5024,13 @@
   "name": "ParticleTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x645ed0": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x40",
+  "name": "QuaternionMathMultiply",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x646980": {
   "attempts": 1,
@@ -5157,6 +5206,13 @@
   "name": "VtableStub::RetZero_eax_35",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6613a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ComputeColorSaturation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x661850": {
   "attempts": 11,
@@ -5451,6 +5507,13 @@
   "name": "SlaveManagerClass::StubReturn72",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6b4240": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b4240",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x6b44a0": {
   "attempts": 7,
@@ -6404,6 +6467,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x748af0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x748af0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x74a960": {
   "attempts": 5,
   "first_diff": null,
@@ -7244,12 +7314,40 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7be670": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Render_7BE670",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c3270": {
+  "attempts": 1,
+  "first_diff": "+1 mov eax, dword ptr [ecx + 0x80]",
+  "name": "Audio_Process_7C3270",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
  "0x7c35c0": {
   "attempts": 2,
   "first_diff": "+2 push esi",
   "name": "AbstractClass::finalizeDestruction",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7c3d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c3d60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7c4260": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c4260",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7c6b70": {
   "attempts": 1,
@@ -7440,6 +7538,20 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7d5178": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_cvtdate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7d5c12": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_parse_cmdline",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7d7ee0": {
   "attempts": 1,
   "first_diff": null,
@@ -7537,6 +7649,34 @@
   "name": "Object_Calc_7DF191",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7df280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object_Calc_7DF280",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7df3c2": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object_Calc_7DF3C2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7df500": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object_Calc_7DF500",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7df640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object_Calc_7DF640",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7df7c0": {
   "attempts": 1,
