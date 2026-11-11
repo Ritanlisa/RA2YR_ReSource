@@ -1,0 +1,8 @@
+{
+ "symbol": "?RequestMapSnapshot@ObjectClass@@QAEPAVAbstractClass@@PAH@Z",
+ "sym_key": "ObjectClass::RequestMapSnapshot",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b91640d000089108b89680d0000894804c20400",
+ "relocs": []
+}

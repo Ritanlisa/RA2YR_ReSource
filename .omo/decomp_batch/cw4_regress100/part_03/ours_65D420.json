@@ -1,0 +1,8 @@
+{
+ "symbol": "?Write@RawFileClass@@QAEEXZ",
+ "sym_key": "RawFileClass::Write",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "8b511433c083faff0f95c0c3",
+ "relocs": []
+}

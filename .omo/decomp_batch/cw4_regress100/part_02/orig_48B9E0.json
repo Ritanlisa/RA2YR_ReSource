@@ -1,0 +1,11 @@
+{
+ "addr": "0x48B9E0",
+ "name": "Terrain::GetTileType",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48B9E0",
+ "bytes_hex": "8b41408b5424048b49348b04908d04408b14c18d04c180e201f6da1bd223c2c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

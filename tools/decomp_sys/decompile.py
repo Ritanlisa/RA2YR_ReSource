@@ -941,6 +941,16 @@ def run_function(addr, reg, views, idx):
     passes.pass_local_retype(ctx)
     passes.pass_assign_harmonize(ctx)
     passes.pass_scope_shrink(ctx)
+    # CW4: scope_shrink materializes the statement tree; the TEXT passes
+    # after it (branch_polarity) edit ctx.lines, but pass_era_normalize
+    # re-renders from ctx.stmts while it is still set -- which silently
+    # discarded every branch_polarity rewrite (313 A-layer JCC_INVERT
+    # functions still emitted the if/else `je` layout).  Render once here
+    # so ctx.lines are authoritative for the remaining text passes.
+    if ctx.stmts is not None:
+        from pseudo import render as _render
+        ctx.lines = _render(ctx.stmts)
+        ctx.stmts = None
     passes.pass_branch_polarity(ctx)
     passes.pass_ret_view_align(ctx)
     passes.pass_era_normalize(ctx)

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemIndex@_DynamicVectorClass_G@@QAEIH@Z",
+ "sym_key": "_DynamicVectorClass_G::GetItemIndex",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0750533c0c204008b4424048b51042bc2d1e8c20400",
+ "relocs": []
+}

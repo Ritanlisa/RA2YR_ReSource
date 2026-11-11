@@ -1,0 +1,39 @@
+{
+ "symbol": "?Hash_Check_5E94D0@@YAHXZ",
+ "sym_key": "Unnamed::Hash_Check_5E94D0",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "538b1d00000000568b3500000000578b3d0000000033c0ba000000008b0a85c9740d3bce74083bcf74043bcb75014083c20481fa000000007ce25f5e5bc3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 24,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_PlayerNameListEnd@@3EA",
+   "sym_key": "g_PlayerNameListEnd"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemIndex_1@_DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct@@QAEIH@Z",
+ "sym_key": "_DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::GetItemIndex_1",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0750533c0c204008b5424048b41042bd0b8abaaaaaaf7e28bc2c1e803c20400",
+ "relocs": []
+}

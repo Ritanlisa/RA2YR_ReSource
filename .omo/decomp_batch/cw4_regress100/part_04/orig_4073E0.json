@@ -1,0 +1,11 @@
+{
+ "addr": "0x4073E0",
+ "name": "AudioQueue::GetNextAlt",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4073E0",
+ "bytes_hex": "85c9740b8b0185c074073b4008750233c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

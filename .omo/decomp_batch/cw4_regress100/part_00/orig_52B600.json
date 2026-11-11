@@ -1,0 +1,11 @@
+{
+ "addr": "0x52B600",
+ "name": "SortedArray::CheckCache",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x52B600",
+ "bytes_hex": "8b411085c0740f8b4c24048b003b017505b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

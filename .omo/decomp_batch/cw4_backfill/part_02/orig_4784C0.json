@@ -1,0 +1,11 @@
+{
+ "addr": "0x4784C0",
+ "name": "FilePipe_38::Write",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4784C0",
+ "bytes_hex": "8a410c84c0750533c0c204008b5424048b41042bd0b8abaaaaaaf7e28bc2d1e8c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

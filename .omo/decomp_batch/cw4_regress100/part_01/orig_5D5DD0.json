@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5DD0",
+ "name": "Dialog::GetMode3",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5DD0",
+ "bytes_hex": "8a413cf6d81bc083e00583c0fec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

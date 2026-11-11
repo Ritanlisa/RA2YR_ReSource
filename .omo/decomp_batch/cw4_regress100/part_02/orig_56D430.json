@@ -1,0 +1,11 @@
+{
+ "addr": "0x56D430",
+ "name": "Cell::CoordToIndex",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56D430",
+ "bytes_hex": "8b81f80000008b89f40000008d4408018b4c24040fbf51020fbf090fafc203c1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

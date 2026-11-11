@@ -1,0 +1,15 @@
+{
+ "symbol": "?RequestMatchWOL_Helper@@YAPAHXZ",
+ "sym_key": "Unnamed::RequestMatchWOL_Helper",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?stru_B77F68@@3EA",
+   "sym_key": "stru_B77F68"
+  }
+ ]
+}

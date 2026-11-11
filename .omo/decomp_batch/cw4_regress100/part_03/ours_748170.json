@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeIdentifier@UnitTypeClass@@QAEHXZ",
+ "sym_key": "UnitTypeClass::GetTypeIdentifier",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b828000000c3",
+ "relocs": []
+}

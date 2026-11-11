@@ -1,0 +1,8 @@
+{
+ "symbol": "?LoadTypeData@_VectorClass_PAVSuperWeaponTypeClass@@QAEIH@Z",
+ "sym_key": "_VectorClass_PAVSuperWeaponTypeClass::LoadTypeData",
+ "size": 27,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0750533c0c204008b4424048b51042bc2c1e802c20400",
+ "relocs": []
+}

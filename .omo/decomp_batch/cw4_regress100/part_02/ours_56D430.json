@@ -1,0 +1,8 @@
+{
+ "symbol": "?CoordToIndex@Cell@@QAEHPAF@Z",
+ "sym_key": "Cell::CoordToIndex",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8b81f80000008b89f40000008d4408018b4c24040fbf51020fbf090fafc203c1c20400",
+ "relocs": []
+}

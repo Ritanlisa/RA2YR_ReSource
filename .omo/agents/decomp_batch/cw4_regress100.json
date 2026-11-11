@@ -1,0 +1,402 @@
+[
+ {
+  "addr": "0x48c850",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5c0e60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x70ddf0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x71b1a0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7dbc57",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x473450",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x50e690",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x76a570",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7ab330",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x730930",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x65d870",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x74fdb0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x72d030",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6e69e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x75c7e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x692270",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x52b600",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x403460",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7754b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x43ab20",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x487c80",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x56c200",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x46d2c0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x69ebe0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x408540",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6e6530",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5bd980",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4ee800",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x63dcb0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x53e720",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5d5dd0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5e94d0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x600010",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x71d2f0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7bab40",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4370b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5d07c0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x45b150",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x731cc0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x72b510",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x58b2e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x56d430",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6b49e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4aebe0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7cf037",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x753af0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5b2fb0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x40df60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5f7620",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5f42b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6b7b90",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x65f950",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x465920",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x63e7b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x75a880",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x72f4f0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6ff950",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x48b9e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x663790",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x712130",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x769d60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6e69f0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x63dd30",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x724c60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x543310",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x65d420",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x748170",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6d61c0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x71b790",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x71fd60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x40e1b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7533a0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x50e7a0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4a0f50",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x41c890",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x724540",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7ac4b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x67a8a0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6ca7f0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4b4870",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6dc5b0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x512750",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4913c0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7b0370",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6b43e0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6c95a0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x72cab0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x53dc00",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x735060",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x642b10",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x5b2f60",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x72d200",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x7db060",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x70dd90",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6d6170",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x6810c0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4e9190",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x58b7f0",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x552830",
+  "family": "cw4_regress100"
+ },
+ {
+  "addr": "0x4073e0",
+  "family": "cw4_regress100"
+ }
+]

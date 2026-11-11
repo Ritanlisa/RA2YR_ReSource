@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_7@@YAXXZ",
+ "sym_key": "Unnamed::unknown_libname_7",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CCINIClass_INI_AI@@3IA",
+   "sym_key": "CCINIClass_INI_AI"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?DestroyHashTableINIClass@HashTable@@QAEPADXZ",
+   "sym_key": "HashTable::DestroyHashTableINIClass"
+  }
+ ]
+}

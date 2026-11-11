@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField3@NetworkBuffer@@QAEHXZ",
+ "sym_key": "NetworkBuffer::GetField3",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000200c3",
+ "relocs": []
+}

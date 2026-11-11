@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetItemIndex@_VectorClass_VHSVClass@@QAEIH@Z",
+ "sym_key": "_VectorClass_VHSVClass::GetItemIndex",
+ "size": 35,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0750533c0c204008b5424048b41042bd0b8abaaaaaaf7e28bc2d1e8c20400",
+ "relocs": []
+}

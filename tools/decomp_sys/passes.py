@@ -4322,37 +4322,180 @@ def pass_macro_residual_sweep(ctx):
     ctx.lines = text.split("\n")
 
 
+def _cbrace_close(text, open_idx, ch_open="{", ch_close="}"):
+    """Index of the matching close for text[open_idx], -1 when unbalanced."""
+    depth = 0
+    for k in range(open_idx, len(text)):
+        c = text[k]
+        if c == ch_open:
+            depth += 1
+        elif c == ch_close:
+            depth -= 1
+            if depth == 0:
+                return k
+    return -1
+
+
+def _tail_ifelse_parts(lines):
+    """Split `PREFIX; if (C) { A } else { B }` into its pieces.
+
+    Returns (prefix_lines, indent, cond, then_body, else_body) or None.
+    The if/else must be the LAST top-level construct and both arms must
+    terminate with `return` (semantic equivalence of the guard rewrite).
+    """
+    text = "\n".join(lines)
+    starts = [k for k, ln in enumerate(lines) if re.match(r"^\s*if\s*\(", ln)]
+    for k in reversed(starts):
+        sub = "\n".join(lines[k:])
+        m = re.match(r"(\s*)if\s*\(", sub)
+        if not m:
+            continue
+        ind = m.group(1)
+        p_open = m.end() - 1
+        p_close = _cbrace_close(sub, p_open, "(", ")")
+        if p_close < 0:
+            continue
+        cond = sub[p_open + 1:p_close].strip()
+        rest = sub[p_close + 1:]
+        b_open = rest.find("{")
+        if b_open < 0 or rest[:b_open].strip():
+            continue
+        b_close = _cbrace_close(rest, b_open)
+        if b_close < 0:
+            continue
+        then_body = rest[b_open + 1:b_close]
+        after = rest[b_close + 1:]
+        if not re.match(r"\s*else\s*\{", after):
+            continue
+        e_open = after.find("{")
+        e_close = _cbrace_close(after, e_open)
+        if e_close < 0 or after[e_close + 1:].strip():
+            continue
+        else_body = after[e_open + 1:e_close]
+
+        def _ret_tail(t):
+            ls = [x for x in t.split("\n") if x.strip()]
+            return bool(ls) and ls[-1].strip().startswith("return")
+
+        if not (_ret_tail(then_body) and _ret_tail(else_body)):
+            continue
+        return (lines[:k], ind, cond, then_body.strip("\n"),
+                else_body.strip("\n"))
+    return None
+
+
+_JCC_ALIAS = {
+    "jz": "je", "jnz": "jne", "jnae": "jb", "jc": "jb",
+    "jnb": "jae", "jnc": "jae", "jnbe": "ja", "jna": "jbe",
+    "jnge": "jl", "jnl": "jge", "jnle": "jg", "jng": "jle",
+    "jpe": "jp", "jpo": "jnp",
+}
+
+
+def _first_jcc(disasm_lines):
+    """First conditional jump of the original binary, canonical spelling."""
+    for ln in disasm_lines:
+        m = re.match(r"^\w+:\s+(j\w+)", ln.strip())
+        if not m:
+            continue
+        mn = m.group(1)
+        if mn == "jmp":
+            continue
+        return _JCC_ALIAS.get(mn, mn)
+    return None
+
+
+# jcc lowered by `if (C) {A} else {B}` for each top-level C form.
+# Both signedness spellings are accepted; the guard form's jcc is the
+# complement within the SAME family (see CW4 evidence, report_cw4.md).
+_IFELSE_JCC = {
+    ">":  ("jle", "jbe"),
+    ">=": ("jl", "jb"),
+    "<":  ("jge", "jae"),
+    "<=": ("jg", "ja"),
+    "==": ("jne",),
+    "!=": ("je",),
+}
+_GUARD_JCC = {
+    ">":  ("jg", "ja"),
+    ">=": ("jge", "jae"),
+    "<":  ("jl", "jb"),
+    "<=": ("jle", "jbe"),
+    "==": ("je",),
+    "!=": ("jne",),
+}
+
+
+def _top_cmp_op(cond):
+    """Top-level comparison operator of cond (None when not a comparison)."""
+    depth = 0
+    i = 0
+    while i < len(cond):
+        c = cond[i]
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+        elif cond.startswith("->", i):
+            i += 2
+            continue
+        elif depth == 0:
+            for op in ("==", "!=", "<=", ">="):
+                if cond.startswith(op, i):
+                    return op
+            if c in "<>":
+                return c
+        i += 1
+    return None
+
+
 def pass_branch_polarity(ctx):
-    """if/else -> early-return form when the ORIGINAL's first conditional
-    jump is true-polarity (`jne`/`jnz` to the out-of-line then-block).
+    """if/else -> negated-guard form when the ORIGINAL binary's first jcc
+    is the guard polarity.
 
-    `if (c) { return A; } else { return B; }` compiles je (else laid
-    out-of-line); the ORIGINAL source form `if (c) return A; return B;`
-    compiles jne (then out-of-line).  Same semantics, different bytes --
-    align with the binary when the whole body is this shape."""
-    dis = "\n".join(ctx.ex.disasm_lines)
-    jm = re.search(r"\bj(n?e|n?z)\b", dis)
-    if not jm or jm.group(1) in ("e", "z"):
-        return                       # je/jz or no jcc: keep if/else form
-    text = "\n".join(ctx.lines)
-    # R6c: the a-block line pattern `(?:[ ]+.*\n)+?` is ambiguous per
-    # line ([ ]+ vs .* both match spaces) -> exponential backtracking on
-    # non-matching bodies (SidebarClass::InitPositions hang).  The atomic
-    # space-run (Python 3.11+) gives each line exactly one parse.
-    pat = re.compile(
-        r"^[ ]*if \((?P<c>[^\n]+)\)\n[ ]*\{\n"
-        r"(?P<a>(?:(?>[ ]+)[^\n]*\n)+?)[ ]*\}\n"
-        r"[ ]*else\n[ ]*\{\n(?P<b>[ ]*return [^\n]+)\n[ ]*\}\n?$")
-    m = pat.match(text)
-    if not m:
+    CW4 correction (2026-11-12): the old transform emitted
+    `if (c) { A } B`, which compiles to the SAME `je`-family layout as the
+    if/else it replaced -- a codegen no-op (A-layer census: all 313
+    JCC_INVERT functions still emitted the if/else polarity).  The
+    original source form for the opposite polarity is the NEGATED guard:
+
+        if (C) { return A; } else { return B; }
+            ->  if (!(C)) { return B; } return A;
+
+    Verified by CW4 auto-trial on the A layer: 313/342 JCC_INVERT+PLUS
+    byte MATCH with exactly this body (report_cw4.md).
+
+    Polarity model (deterministic, no trial): compute the jcc that the
+    current if/else form lowers to for condition C, and the jcc of the
+    negated guard form.  Apply only when the ORIGINAL's first jcc is the
+    guard polarity (both signed and unsigned spellings accepted).
+    Semantic-equivalence precondition: both arms end with `return`."""
+    parts = _tail_ifelse_parts(ctx.lines)
+    if not parts:
         return
-    new = "if (%s)\n{\n%s}\n%s\n" % (m.group("c"), m.group("a"),
-                                     m.group("b"))
-    ctx.lines = new.split("\n")
+    prefix, ind, cond, then_body, else_body = parts
+    jcc = _first_jcc(ctx.ex.disasm_lines)
+    if not jcc:
+        return
+    op = _top_cmp_op(cond)
+    if op in _GUARD_JCC:
+        want = _GUARD_JCC[op]
+    elif cond.startswith("!") and not cond.startswith("!="):
+        want = ("je",)                  # if (!x) A else B -> guard if (x) B A
+    else:
+        want = ("jne",)                 # zero test -> guard jne
+    if jcc not in want:
+        return                          # keep the if/else form
+    new = [ln for ln in prefix]
+    pad = ind or "    "
+    new.append("%sif ( !(%s) )" % (pad, cond))
+    new.append("%s{" % pad)
+    new.extend(else_body.split("\n"))
+    new.append("%s}" % pad)
+    new.extend(then_body.split("\n"))
+    ctx.lines = new
     ctx.note("branch_polarity",
-             "if/else -> early-return form (orig first jcc is %s)"
-             % jm.group(0))
-
+             "if/else -> negated guard form (orig first jcc is %s)" % jcc)
 
 def pass_ret_view_align(ctx):
     """`return this->M;` where the registry says int-family return but the

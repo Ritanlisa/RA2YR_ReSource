@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetDB@CCINIClass@@QAEHXZ",
+ "sym_key": "CCINIClass::GetDB",
+ "size": 4,
+ "link_base": 0,
+ "bytes_hex": "8b4104c3",
+ "relocs": []
+}

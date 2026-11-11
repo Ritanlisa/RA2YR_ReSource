@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E94D0",
+ "name": "Hash_Check_5E94D0",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E94D0",
+ "bytes_hex": "538b1dac11ac00568b35a411ac00578b3da811ac0033c0ba90daa8008b0a85c9740d3bce74083bcf74043bcb75014083c20481fab0daa8007ce25f5e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

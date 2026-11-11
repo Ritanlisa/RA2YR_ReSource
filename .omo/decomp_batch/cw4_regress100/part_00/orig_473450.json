@@ -1,0 +1,11 @@
+{
+ "addr": "0x473450",
+ "name": "CCINIClass::GetDB",
+ "size": 4,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x473450",
+ "bytes_hex": "8b4104c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
