@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DDCAB",
+ "name": "_get_int_arg_1",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DDCAB",
+ "bytes_hex": "8b4424048300048b008b40fcc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

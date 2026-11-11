@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F33A0",
+ "name": "StringBuffer::Reset",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F33A0",
+ "bytes_hex": "8b410cc60000c7411400000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

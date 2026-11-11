@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2F57",
+ "name": "?what_exception__UBEPBDXZ",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2F57",
+ "bytes_hex": "8b410485c07505b814997f00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

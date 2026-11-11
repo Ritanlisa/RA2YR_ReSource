@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetNext@Queue@@QAEHXZ",
+ "sym_key": "Queue::GetNext",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b0185c074073b4008750233c0c3",
+ "relocs": []
+}

@@ -49,3 +49,4 @@
 {"layer": "A", "part": 48, "n": 20, "seconds": 12.5, "ok": true, "verdicts": {"MATCH": 18, "MISMATCH": 2}}
 {"layer": "A", "part": 49, "n": 20, "seconds": 13.6, "ok": true, "verdicts": {"MATCH": 17, "MISMATCH": 3}}
 {"layer": "A", "part": 50, "n": 20, "seconds": 11.7, "ok": true, "verdicts": {"MATCH": 16, "MISMATCH": 4}}
+{"layer": "A", "part": 51, "n": 20, "seconds": 13.9, "ok": true, "verdicts": {"MISMATCH": 6, "COMPILE_FAIL": 3, "MATCH": 11}}

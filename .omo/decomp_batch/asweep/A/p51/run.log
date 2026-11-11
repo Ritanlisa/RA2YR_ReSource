@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p51\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cea84 _get_int_arg -> _addr_7C
+[conv] 0x7d2995 _get_int_arg_0 -> _addr_7D
+[conv] 0x7d2f57 ObjectClass::what_exception__UBEPBDXZ -> ObjectClass
+[conv] 0x7ddcab _get_int_arg_1 -> _addr_7D
+[conv] 0x407000 Audio::IsSoundEnabled -> Audio
+[conv] 0x407470 Queue::GetNext -> Queue
+[conv] 0x407f80 ObjectClass::sub_407F80 -> ObjectClass
+[conv] 0x41c050 FootClass::ProcessTick -> FootClass
+[conv] 0x42d5f0 _VectorClass_G::Clear -> _VectorClass_G
+[conv] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> BuildingTypeClass
+[conv] 0x4e19f0 GadgetClass::IsPrimaryInstance -> GadgetClass
+[conv] 0x4f28b0 _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem::CanScroll -> _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem
+[conv] 0x4f3fc0 _VectorCursor_IV_DynamicVectorClass_I::AddRef -> _VectorCursor_IV_DynamicVectorClass_I
+[conv] 0x50d9c0 TechnoClass::IsTechInfiltrated -> TechnoClass
+[conv] 0x50d9d0 TechnoClass::IsProductionInfiltrated -> TechnoClass
+[conv] 0x53bad0 ChronoScreen::IsActive -> ChronoScreen
+[conv] 0x5d5dc0 MultiplayerGameMode::GetModeNeg2 -> MultiplayerGameMode
+[conv] 0x5d5dd0 MultiplayerGameMode::GetMode3 -> MultiplayerGameMode
+[conv] 0x5f33a0 StringBuffer::Reset -> StringBuffer
+[conv] 0x5f5930 ObjectClass::IsNotNull -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=0
+[era] Audio                    rc=2
+[era] Queue                    rc=0
+[era] FootClass                rc=0
+[era] _VectorClass_G           rc=0
+[era] BuildingTypeClass        rc=2
+[era] GadgetClass              rc=2
+[era] _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem rc=0
+[era] _VectorCursor_IV_DynamicVectorClass_I rc=0
+[era] TechnoClass              rc=0
+[era] ChronoScreen             rc=0
+[era] MultiplayerGameMode      rc=0
+[era] StringBuffer             rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cea84   MISMATCH         _get_int_arg
+[diff] 0x7d2995   MISMATCH         _get_int_arg_0
+[diff] 0x7ddcab   MISMATCH         _get_int_arg_1
+[diff] 0x7d2f57   MISMATCH         ObjectClass::what_exception__UBEPBDXZ
+[diff] 0x407f80   MATCH            ObjectClass::sub_407F80
+[diff] 0x5f5930   MISMATCH         ObjectClass::IsNotNull
+[diff] 0x407470   MATCH            Queue::GetNext
+[diff] 0x41c050   MATCH            FootClass::ProcessTick
+[diff] 0x42d5f0   MATCH            _VectorClass_G::Clear
+[diff] 0x4f28b0   MATCH            _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem::CanScroll
+[diff] 0x4f3fc0   MATCH            _VectorCursor_IV_DynamicVectorClass_I::AddRef
+[diff] 0x50d9c0   MISMATCH         TechnoClass::IsTechInfiltrated
+[diff] 0x50d9d0   MATCH            TechnoClass::IsProductionInfiltrated
+[diff] 0x53bad0   MATCH            ChronoScreen::IsActive
+[diff] 0x5d5dc0   MATCH            MultiplayerGameMode::GetModeNeg2
+[diff] 0x5d5dd0   MATCH            MultiplayerGameMode::GetMode3
+[diff] 0x5f33a0   MATCH            StringBuffer::Reset
+[ledger] 0x7cea84 _get_int_arg -> NG (attempt 1)
+[ledger] 0x7d2995 _get_int_arg_0 -> NG (attempt 1)
+[ledger] 0x7d2f57 ObjectClass::what_exception__UBEPBDXZ -> NG (attempt 1)
+[ledger] 0x7ddcab _get_int_arg_1 -> NG (attempt 1)
+[ledger] 0x407000 Audio::IsSoundEnabled -> COMPILE_FAIL (attempt 1)
+[ledger] 0x407470 Queue::GetNext -> OK (attempt 1)
+[ledger] 0x407f80 ObjectClass::sub_407F80 -> OK (attempt 1)
+[ledger] 0x41c050 FootClass::ProcessTick -> OK (attempt 1)
+[ledger] 0x42d5f0 _VectorClass_G::Clear -> OK (attempt 1)
+[ledger] 0x45ec90 BuildingTypeClass::GetFoundationWidth -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e19f0 GadgetClass::IsPrimaryInstance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f28b0 _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem::CanScroll -> OK (attempt 1)
+[ledger] 0x4f3fc0 _VectorCursor_IV_DynamicVectorClass_I::AddRef -> OK (attempt 1)
+[ledger] 0x50d9c0 TechnoClass::IsTechInfiltrated -> NG (attempt 1)
+[ledger] 0x50d9d0 TechnoClass::IsProductionInfiltrated -> OK (attempt 1)
+[ledger] 0x53bad0 ChronoScreen::IsActive -> OK (attempt 1)
+[ledger] 0x5d5dc0 MultiplayerGameMode::GetModeNeg2 -> OK (attempt 1)
+[ledger] 0x5d5dd0 MultiplayerGameMode::GetMode3 -> OK (attempt 1)
+[ledger] 0x5f33a0 StringBuffer::Reset -> OK (attempt 1)
+[ledger] 0x5f5930 ObjectClass::IsNotNull -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 3,
+  "MATCH": 11
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 64.7,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p51\batch_report.json

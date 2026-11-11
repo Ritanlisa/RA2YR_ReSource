@@ -1,0 +1,11 @@
+{
+ "addr": "0x407470",
+ "name": "Queue::GetNext",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x407470",
+ "bytes_hex": "8b0185c074073b4008750233c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

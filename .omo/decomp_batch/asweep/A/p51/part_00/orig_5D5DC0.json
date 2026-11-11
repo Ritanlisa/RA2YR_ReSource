@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5DC0",
+ "name": "Dialog::GetModeNeg2",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5DC0",
+ "bytes_hex": "8a413ff6d81bc083e00283c0fec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetMode3@MultiplayerGameMode@@QAEHXZ",
+ "sym_key": "MultiplayerGameMode::GetMode3",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8a413cf6d81bc083e00583c0fec3",
+ "relocs": []
+}

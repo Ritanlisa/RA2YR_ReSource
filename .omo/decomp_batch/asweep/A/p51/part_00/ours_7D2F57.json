@@ -1,0 +1,15 @@
+{
+ "symbol": "?what_exception__UBEPBDXZ@ObjectClass@@QAEPBDXZ",
+ "sym_key": "ObjectClass::what_exception__UBEPBDXZ",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b410485c07505b800000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "??_C@_0BC@OIDF@Unknown?5exception?$AA@",
+   "sym_key": "??_C@_0BC@OIDF@Unknown?5exception?$AA@"
+  }
+ ]
+}
