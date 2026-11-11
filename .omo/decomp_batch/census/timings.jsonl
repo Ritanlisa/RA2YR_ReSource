@@ -29,3 +29,4 @@
 {"layer": "A", "part": 23, "n": 20, "seconds": 16.8, "ok": true, "verdicts": {"MATCH": 2, "MISMATCH": 10, "NO_CLS": 1, "COMPILE_FAIL": 7}}
 {"layer": "A", "part": 24, "n": 20, "seconds": 16.8, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 1, "NO_CLS": 3, "MATCH": 3}}
 {"layer": "A", "part": 25, "n": 20, "seconds": 17.2, "ok": true, "verdicts": {"MISMATCH": 16, "COMPILE_FAIL": 3, "NO_CLS": 1}}
+{"layer": "A", "part": 26, "n": 20, "seconds": 16.2, "ok": true, "verdicts": {"COMPILE_FAIL": 8, "MISMATCH": 9, "MATCH": 1, "NO_CLS": 2}}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6C9900",
+ "name": "Render_Parse",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6C9900",
+ "bytes_hex": "8bc1c70000000000c74004b0040000c74008ffffff00c7400c0f000000c7401002000000c7401400000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

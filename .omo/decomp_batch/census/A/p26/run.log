@@ -1,0 +1,100 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f1f70 TeamTypeClass::FindFirstInstance -> TeamTypeClass
+[conv] 0x4ca6b0 FactoryClass::IsQueued -> FactoryClass
+[conv] 0x634770 ObjectClass::Render_Render_634770 -> ObjectClass
+[conv] 0x7ca8c6 unknown::_wcschr -> unknown
+[conv] 0x638c40 ObjectClass::ExecuteActionPlanManager_Helper_638C40 -> ObjectClass
+[conv] 0x459840 HouseClass::GetRepairStepAmount -> HouseClass
+[conv] 0x7bc890 _BlitTrans_G::sub_7BC890 -> _BlitTrans_G
+[conv] 0x6c9900 ObjectClass::Render_Parse -> ObjectClass
+[conv] 0x5b3ff0 unknown::InsertIntoHashTree -> unknown
+[conv] 0x4101c0 AbstractClass::InitVtables -> AbstractClass
+[conv] 0x74fd20 unknown::GetMaxPacketSize -> unknown
+[conv] 0x626070 ObjectClass::sub_626070 -> ObjectClass
+[conv] 0x4b6400 JumpjetLocomotionClass::StubReturnZero_4 -> JumpjetLocomotionClass
+[conv] 0x660f10 LoadGame::RemoveItem -> LoadGame
+[conv] 0x74f6f0 ObjectClass::DestroyVeinholeMonster_Destroy_74F6F0 -> ObjectClass
+[conv] 0x634290 Array::FindValue -> Array
+[conv] 0x40d6c0 _VectorClass_PAVMixFileClass::GetSize -> _VectorClass_PAVMixFileClass
+[conv] 0x43ac50 _VectorClass_PAVNeuronClass::Activate -> _VectorClass_PAVNeuronClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeamTypeClass            rc=2
+[era] FactoryClass             rc=0
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] HouseClass               rc=0
+[era] _BlitTrans_G             rc=2
+[era] AbstractClass            rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] LoadGame                 rc=0
+[era] Array                    rc=2
+[era] _VectorClass_PAVMixFileClass rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ca6b0   MISMATCH         FactoryClass::IsQueued
+[diff] 0x634770   MISMATCH         ObjectClass::Render_Render_634770
+[diff] 0x638c40   MISMATCH         ObjectClass::ExecuteActionPlanManager_Helper_638C40
+[diff] 0x6c9900   MISMATCH         ObjectClass::Render_Parse
+[diff] 0x74f6f0   MISMATCH         ObjectClass::DestroyVeinholeMonster_Destroy_74F6F0
+[diff] 0x5b3ff0   MISMATCH         unknown::InsertIntoHashTree
+[diff] 0x459840   MATCH            HouseClass::GetRepairStepAmount
+[diff] 0x660f10   MISMATCH         LoadGame::RemoveItem
+[diff] 0x40d6c0   MISMATCH         _VectorClass_PAVMixFileClass::GetSize
+[diff] 0x43ac50   MISMATCH         _VectorClass_PAVNeuronClass::Activate
+[ledger] 0x6f1f70 TeamTypeClass::FindFirstInstance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca6b0 FactoryClass::IsQueued -> NG (attempt 1)
+[ledger] 0x634770 Render_Render_634770 -> NG (attempt 1)
+[ledger] 0x7ca8c6 _wcschr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x638c40 ExecuteActionPlanManager_Helper_638C40 -> NG (attempt 1)
+[ledger] 0x459840 HouseClass::GetRepairStepAmount -> OK (attempt 1)
+[ledger] 0x7bc890 sub_7BC890 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c9900 Render_Parse -> NG (attempt 1)
+[ledger] 0x5b3ff0 InsertIntoHashTree -> NG (attempt 1)
+[ledger] 0x4101c0 AbstractClass::InitVtables -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d92e1 0x7d92e1 -> PENDING (attempt 1)
+[ledger] 0x74fd20 Network::GetMaxPacketSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x626070 sub_626070 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b6400 JumpjetLocomotionClass::StubReturnZero_4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ea8e0 0x5ea8e0 -> PENDING (attempt 1)
+[ledger] 0x660f10 LoadGame::RemoveItem -> NG (attempt 1)
+[ledger] 0x74f6f0 DestroyVeinholeMonster_Destroy_74F6F0 -> NG (attempt 1)
+[ledger] 0x634290 Array::FindValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40d6c0 VectorClass_ptr_MixFileClass::GetSize -> NG (attempt 1)
+[ledger] 0x43ac50 NeuronClass_25::Activate -> NG (attempt 1)
+======================================================================
+{
+ "total": 1577,
+ "verdicts": {
+  "MISMATCH": 412,
+  "MATCH": 501,
+  "COMPILE_FAIL": 349,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 308,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 7,
+  "codegen_shape": 150,
+  "ret_norm": 5,
+  "frame_sched": 60,
+  "const_fold": 14,
+  "branch_polarity": 29,
+  "regalloc": 52,
+  "branch_order": 67,
+  "width_mismatch": 4,
+  "extern_reloc": 16,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 54.9,
+ "match_rate_of_total_pct": 31.8,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p26\batch_report.json

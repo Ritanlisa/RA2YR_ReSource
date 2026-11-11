@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3FF0",
+ "name": "InsertIntoHashTree",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3FF0",
+ "bytes_hex": "8b0285c07417568b71088b50083bd68d50047c028bd08b0285c075ee5e890ac70100000000c7410400000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

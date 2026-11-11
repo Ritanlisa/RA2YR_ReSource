@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CA6B0",
+ "name": "FactoryClass::IsQueued",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CA6B0",
+ "bytes_hex": "8b515033c05685d27e138b49448b7424083b31740e4083c1043bc27cf432c05ec20400b0015ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

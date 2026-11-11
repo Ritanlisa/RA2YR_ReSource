@@ -1,0 +1,8 @@
+{
+ "symbol": "?Render_Parse@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::Render_Parse",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8bc1c70000000000c74004b0040000c74008ffffff00c7400c0f000000c6401001c6401400c3",
+ "relocs": []
+}

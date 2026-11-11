@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetRepairStepAmount@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::GetRepairStepAmount",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b91200500008b82a40e000085c0751a8b82a80e000085c075108b82ac0e000085c075068b81f4060000c3",
+ "relocs": []
+}
