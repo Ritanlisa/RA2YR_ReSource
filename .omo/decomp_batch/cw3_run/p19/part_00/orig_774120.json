@@ -1,0 +1,11 @@
+{
+ "addr": "0x774120",
+ "name": "WinModemClass::Construct",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x774120",
+ "bytes_hex": "568bf16800200000c70688747f00e8e44c050089462433c083c40489465489465888465088465189466889466489460489460889460c894610894614894618c7465cffffffff8bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

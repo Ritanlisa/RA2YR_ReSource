@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitINIChain@RulesClass@@QAEPAV1@HH@Z",
+ "sym_key": "RulesClass::InitINIChain",
+ "size": 82,
+ "link_base": 0,
+ "bytes_hex": "568b4424088bf133d28b4e0c89560480e10189460883c9013bc2894e0c88560c891674288b4c240c3bca7409894e048bc65ec208008d14850000000052e80000000083c404894604c6460c018bc65ec20800",
+ "relocs": [
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}

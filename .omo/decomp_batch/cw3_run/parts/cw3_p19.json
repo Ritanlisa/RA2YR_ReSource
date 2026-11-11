@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x538b30",
+  "name": "RulesClass::InitINIChain",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x63a230",
+  "name": "PlanManager::Notify",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 3 from 'unsigned char' to 'const char *'"
+ },
+ {
+  "addr": "0x69d770",
+  "name": "MapFile::Constructor",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x765b60",
+  "name": "Campaign_WorldDominationTour_16::QueryInterface",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_V_rc_ptr_VConflict_Worl"
+ },
+ {
+  "addr": "0x774120",
+  "name": "WinModemClass::Construct",
+  "cls": null,
+  "size": 74,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x625f60",
+  "name": "HashTable_flat::FindString",
+  "cls": null,
+  "size": 75,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'strncmp' : cannot convert parameter 3 from 'char *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x43a6b0",
+  "name": "sub_43A6B0",
+  "cls": null,
+  "size": 76,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'void (void ** )' : cannot convert parameter 1 from 'unsigned int *' to 'void ** '"
+ },
+ {
+  "addr": "0x513cb0",
+  "name": "SaveGame::WriteObject",
+  "cls": null,
+  "size": 77,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->vfptr' must point to class/struct/union"
+ },
+ {
+  "addr": "0x65c250",
+  "name": "WinMain_Helper_65C250",
+  "cls": null,
+  "size": 77,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x7cbb8d",
+  "name": "__mbsnccnt",
+  "cls": null,
+  "size": 78,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p0'"
+ },
+ {
+  "addr": "0x63a0d0",
+  "name": "System_Get",
+  "cls": null,
+  "size": 79,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x48df30",
+  "name": "LookupNameIndex",
+  "cls": null,
+  "size": 80,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x63e880",
+  "name": "SidebarClass::addToList",
+  "cls": null,
+  "size": 80,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x71ab60",
+  "name": "ObjectClass::UnlinkFromFactory",
+  "cls": null,
+  "size": 81,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x4887f0",
+  "name": "sub_4887F0",
+  "cls": null,
+  "size": 83,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x4cb760",
+  "name": "TerrainInitMap",
+  "cls": null,
+  "size": 84,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x7b6ee0",
+  "name": "sub_7B6EE0",
+  "cls": null,
+  "size": 84,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'_strcmpi' : none of the 2 overloads can convert parameter 1 from type 'unsigned char'"
+ },
+ {
+  "addr": "0x451e40",
+  "name": "BuildingClass::ClearAnims",
+  "cls": null,
+  "size": 86,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'ClearAnims' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x68cab0",
+  "name": "Network_Assign",
+  "cls": null,
+  "size": 86,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x50ff50",
+  "name": "HouseClass::AddCoordTrackingEntry",
+  "cls": null,
+  "size": 87,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'>=' : no conversion from 'int' to 'void *'"
+ }
+]

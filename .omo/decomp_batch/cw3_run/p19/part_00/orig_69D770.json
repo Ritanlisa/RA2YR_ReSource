@@ -1,0 +1,11 @@
+{
+ "addr": "0x69D770",
+ "name": "MapFile::Constructor",
+ "size": 74,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69D770",
+ "bytes_hex": "8b442404568bf133d23bc2895604894608c6460c0188560dc70674127f0074248b4c240c3bca7409894e048bc65ec20800c1e00250e86db6120083c404894604c6460d018bc65ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

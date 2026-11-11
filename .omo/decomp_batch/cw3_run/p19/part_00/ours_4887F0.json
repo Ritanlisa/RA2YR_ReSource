@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4887F0@ColorListClass@@QAEHXZ",
+ "sym_key": "ColorListClass::sub_4887F0",
+ "size": 74,
+ "link_base": 0,
+ "bytes_hex": "5356578bf933db8b87740100008db77401000056891fff500c899f900100008b46043bc3891e7411385e0d740c50e80000000083c404895e048bcf885e0d895e08e8000000005f5e5bc3",
+ "relocs": [
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?Destruct@ListClass@@QAEHXZ",
+   "sym_key": "ListClass::Destruct"
+  }
+ ]
+}
