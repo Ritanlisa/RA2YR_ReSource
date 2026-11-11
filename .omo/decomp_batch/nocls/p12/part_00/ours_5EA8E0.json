@@ -1,0 +1,33 @@
+{
+ "symbol": "?RefreshLobbyAll_Helper_5EA8E0@@YIHH@Z",
+ "sym_key": "Unnamed::RefreshLobbyAll_Helper_5EA8E0",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b048d0000000085c074183b050000000074163b0500000000740e3b05000000007406837877017506b801000000c333c0c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerTeam@@3HA",
+   "sym_key": "g_Lobby_PlayerTeam"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerSide@@3HA",
+   "sym_key": "g_Lobby_PlayerSide"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?g_Lobby_PlayerColor@@3HA",
+   "sym_key": "g_Lobby_PlayerColor"
+  }
+ ]
+}

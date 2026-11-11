@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5c8930",
+  "batch": "nocls",
+  "name": "sub_5C8930",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x5c91f0",
+  "batch": "nocls",
+  "name": "sub_5C91F0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c9280",
+  "batch": "nocls",
+  "name": "sub_5C9280",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c9560",
+  "batch": "nocls",
+  "name": "sub_5C9560",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c9ae0",
+  "batch": "nocls",
+  "name": "sub_5C9AE0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x5cacd0",
+  "batch": "nocls",
+  "name": "sub_5CACD0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5cb340",
+  "batch": "nocls",
+  "name": "sub_5CB340",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5cd310",
+  "batch": "nocls",
+  "name": "nullsub_190",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x5d5960",
+  "batch": "nocls",
+  "name": "sub_5D5960",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5d5980",
+  "batch": "nocls",
+  "name": "sub_5D5980",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5d5a50",
+  "batch": "nocls",
+  "name": "sub_5D5A50",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5d5ac0",
+  "batch": "nocls",
+  "name": "System_Init",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5d8ef0",
+  "batch": "nocls",
+  "name": "sub_5D8EF0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5dacd0",
+  "batch": "nocls",
+  "name": "sub_5DACD0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5dad60",
+  "batch": "nocls",
+  "name": "sub_5DAD60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5e2430",
+  "batch": "nocls",
+  "name": "sub_5E2430",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5e2460",
+  "batch": "nocls",
+  "name": "sub_5E2460",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5e3ab0",
+  "batch": "nocls",
+  "name": "SendMultiplayerStartSignal",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5e8d90",
+  "batch": "nocls",
+  "name": "Network_Handle_5E8D90",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x5ea8e0",
+  "batch": "nocls",
+  "name": "RefreshLobbyAll_Helper_5EA8E0",
+  "cc": "fastcall"
+ }
+]

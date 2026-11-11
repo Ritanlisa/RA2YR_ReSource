@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c8930 sub_5C8930 -> _addr_5C
+[conv] 0x5c91f0 sub_5C91F0 -> _addr_5C
+[conv] 0x5c9280 sub_5C9280 -> _addr_5C
+[conv] 0x5c9560 sub_5C9560 -> _addr_5C
+[conv] 0x5c9ae0 sub_5C9AE0 -> _addr_5C
+[conv] 0x5cacd0 sub_5CACD0 -> _addr_5C
+[conv] 0x5cb340 sub_5CB340 -> _addr_5C
+[conv] 0x5cd310 nullsub_190 -> _addr_5C
+[conv] 0x5d5960 sub_5D5960 -> _addr_5D
+[conv] 0x5d5980 sub_5D5980 -> _addr_5D
+[conv] 0x5d5a50 sub_5D5A50 -> _addr_5D
+[conv] 0x5d5ac0 System_Init -> System
+[conv] 0x5d8ef0 sub_5D8EF0 -> _addr_5D
+[conv] 0x5dacd0 sub_5DACD0 -> _addr_5D
+[conv] 0x5dad60 sub_5DAD60 -> _addr_5D
+[conv] 0x5e2430 sub_5E2430 -> _addr_5E
+[conv] 0x5e2460 sub_5E2460 -> _addr_5E
+[conv] 0x5e3ab0 SendMultiplayerStartSignal -> _addr_5E
+[conv] 0x5e8d90 Network_Handle_5E8D90 -> Network_Handle
+[conv] 0x5ea8e0 RefreshLobbyAll_Helper_5EA8E0 -> RefreshLobbyAll_Helper
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5C                 rc=2
+[era] _addr_5D                 rc=2
+[era] System                   rc=2
+[era] _addr_5E                 rc=2
+[era] Network_Handle           rc=0
+[era] RefreshLobbyAll_Helper   rc=0
+=== diffasm byte-compare ===
+[diff] 0x5c8930   MISMATCH         sub_5C8930
+[diff] 0x5c9280   MISMATCH         sub_5C9280
+[diff] 0x5c9560   MISMATCH         sub_5C9560
+[diff] 0x5c9ae0   MISMATCH         sub_5C9AE0
+[diff] 0x5cacd0   MISMATCH         sub_5CACD0
+[diff] 0x5cb340   MATCH            sub_5CB340
+[diff] 0x5cd310   MATCH            nullsub_190
+[diff] 0x5d5960   MISMATCH         sub_5D5960
+[diff] 0x5d5a50   MATCH            sub_5D5A50
+[diff] 0x5dacd0   MATCH            sub_5DACD0
+[diff] 0x5dad60   MISMATCH         sub_5DAD60
+[diff] 0x5e2460   MISMATCH         sub_5E2460
+[diff] 0x5e8d90   MISMATCH         Network_Handle_5E8D90
+[diff] 0x5ea8e0   MISMATCH         RefreshLobbyAll_Helper_5EA8E0
+[ledger] 0x5c8930 sub_5C8930 -> NG (attempt 2)
+[ledger] 0x5c91f0 sub_5C91F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c9280 sub_5C9280 -> NG (attempt 2)
+[ledger] 0x5c9560 sub_5C9560 -> NG (attempt 2)
+[ledger] 0x5c9ae0 sub_5C9AE0 -> NG (attempt 2)
+[ledger] 0x5cacd0 sub_5CACD0 -> NG (attempt 2)
+[ledger] 0x5cb340 sub_5CB340 -> OK (attempt 2)
+[ledger] 0x5cd310 nullsub_190 -> OK (attempt 2)
+[ledger] 0x5d5960 sub_5D5960 -> NG (attempt 2)
+[ledger] 0x5d5980 sub_5D5980 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d5a50 sub_5D5A50 -> OK (attempt 2)
+[ledger] 0x5d5ac0 System_Init -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5d8ef0 sub_5D8EF0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5dacd0 sub_5DACD0 -> OK (attempt 2)
+[ledger] 0x5dad60 sub_5DAD60 -> NG (attempt 2)
+[ledger] 0x5e2430 sub_5E2430 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e2460 sub_5E2460 -> NG (attempt 2)
+[ledger] 0x5e3ab0 SendMultiplayerStartSignal -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e8d90 Network_Handle_5E8D90 -> NG (attempt 2)
+[ledger] 0x5ea8e0 RefreshLobbyAll_Helper_5EA8E0 -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 6,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 6,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p12\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5EA8E0",
+ "name": "RefreshLobbyAll_Helper_5EA8E0",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5EA8E0",
+ "bytes_hex": "8b0c8d90daa80033c085c974183b0da411ac0074163b0da811ac00740e3b0dac11ac007406837977017505b801000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

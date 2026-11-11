@@ -1,0 +1,15 @@
+{
+ "symbol": "?Network_Handle_5E8D90@@YIXHJ@Z",
+ "sym_key": "Unnamed::Network_Handle_5E8D90",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "89148d00000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?g_NetworkPlayerName@@3HA",
+   "sym_key": "g_NetworkPlayerName"
+  }
+ ]
+}
