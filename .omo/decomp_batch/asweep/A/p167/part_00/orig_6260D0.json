@@ -1,0 +1,11 @@
+{
+ "addr": "0x6260D0",
+ "name": "Block::Copy",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6260D0",
+ "bytes_hex": "568b7424088bc13bc6740b57b9c00000008bf8f3a55f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

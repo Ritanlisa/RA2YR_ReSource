@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D8C90",
+ "name": "PlayerClass::IsValidIndex",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D8C90",
+ "bytes_hex": "8b44240485c07c0d3b0584daa8007d05b001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

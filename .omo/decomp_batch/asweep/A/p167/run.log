@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p167\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d5a80 sub_5D5A80 -> _addr_5D
+[conv] 0x5d8c30 sub_5D8C30 -> _addr_5D
+[conv] 0x5d8c90 MultiplayerTeam::IsValidIndex -> MultiplayerTeam
+[conv] 0x5d8f50 sub_5D8F50 -> _addr_5D
+[conv] 0x5da6a0 sub_5DA6A0 -> _addr_5D
+[conv] 0x5daec0 sub_5DAEC0 -> _addr_5D
+[conv] 0x5e2600 sub_5E2600 -> _addr_5E
+[conv] 0x5ef4c0 sub_5EF4C0 -> _addr_5E
+[conv] 0x5f15a0 sub_5F15A0 -> _addr_5F
+[conv] 0x5f6fb0 sub_5F6FB0 -> _addr_5F
+[conv] 0x5fa2a0 sub_5FA2A0 -> _addr_5F
+[conv] 0x5fc340 sub_5FC340 -> _addr_5F
+[conv] 0x5fe230 sub_5FE230 -> _addr_5F
+[conv] 0x5ff190 sub_5FF190 -> _addr_5F
+[conv] 0x600510 sub_600510 -> _addr_60
+[conv] 0x6260d0 Block::Copy -> Block
+[conv] 0x629150 sub_629150 -> _addr_62
+[conv] 0x62dc10 sub_62DC10 -> _addr_62
+[conv] 0x630b70 sub_630B70 -> _addr_63
+[conv] 0x6335a0 sub_6335A0 -> _addr_63
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5D                 rc=0
+[era] MultiplayerTeam          rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_60                 rc=0
+[era] Block                    rc=0
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d5a80   MISMATCH         sub_5D5A80
+[diff] 0x5d8c30   MISMATCH         sub_5D8C30
+[diff] 0x5d8f50   MISMATCH         sub_5D8F50
+[diff] 0x5da6a0   MISMATCH         sub_5DA6A0
+[diff] 0x5daec0   MISMATCH         sub_5DAEC0
+[diff] 0x5d8c90   MISMATCH         MultiplayerTeam::IsValidIndex
+[diff] 0x5e2600   MISMATCH         sub_5E2600
+[diff] 0x5ef4c0   MISMATCH         sub_5EF4C0
+[diff] 0x5f15a0   MISMATCH         sub_5F15A0
+[diff] 0x5f6fb0   MISMATCH         sub_5F6FB0
+[diff] 0x5fa2a0   MISMATCH         sub_5FA2A0
+[diff] 0x5fc340   MISMATCH         sub_5FC340
+[diff] 0x5fe230   MISMATCH         sub_5FE230
+[diff] 0x5ff190   MISMATCH         sub_5FF190
+[diff] 0x600510   MISMATCH         sub_600510
+[diff] 0x6260d0   MATCH            Block::Copy
+[diff] 0x629150   MISMATCH         sub_629150
+[diff] 0x62dc10   MISMATCH         sub_62DC10
+[diff] 0x630b70   MISMATCH         sub_630B70
+[diff] 0x6335a0   MISMATCH         sub_6335A0
+[ledger] 0x5d5a80 sub_5D5A80 -> NG (attempt 1)
+[ledger] 0x5d8c30 sub_5D8C30 -> NG (attempt 1)
+[ledger] 0x5d8c90 MultiplayerTeam::IsValidIndex -> NG (attempt 1)
+[ledger] 0x5d8f50 sub_5D8F50 -> NG (attempt 1)
+[ledger] 0x5da6a0 sub_5DA6A0 -> NG (attempt 1)
+[ledger] 0x5daec0 sub_5DAEC0 -> NG (attempt 1)
+[ledger] 0x5e2600 sub_5E2600 -> NG (attempt 1)
+[ledger] 0x5ef4c0 sub_5EF4C0 -> NG (attempt 1)
+[ledger] 0x5f15a0 sub_5F15A0 -> NG (attempt 1)
+[ledger] 0x5f6fb0 sub_5F6FB0 -> NG (attempt 1)
+[ledger] 0x5fa2a0 sub_5FA2A0 -> NG (attempt 1)
+[ledger] 0x5fc340 sub_5FC340 -> NG (attempt 1)
+[ledger] 0x5fe230 sub_5FE230 -> NG (attempt 1)
+[ledger] 0x5ff190 sub_5FF190 -> NG (attempt 1)
+[ledger] 0x600510 sub_600510 -> NG (attempt 1)
+[ledger] 0x6260d0 Block::Copy -> OK (attempt 1)
+[ledger] 0x629150 sub_629150 -> NG (attempt 1)
+[ledger] 0x62dc10 sub_62DC10 -> NG (attempt 1)
+[ledger] 0x630b70 sub_630B70 -> NG (attempt 1)
+[ledger] 0x6335a0 sub_6335A0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 18,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p167\batch_report.json
