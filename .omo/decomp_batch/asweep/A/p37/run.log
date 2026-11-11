@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p37\part_00
+=== convert (20 addrs) ===
+[conv] 0x6cfe10 ObjectClass::sub_6CFE10 -> ObjectClass
+[conv] 0x6e5560 ScenarioClass::checkMissionObjectives -> ScenarioClass
+[conv] 0x6ede80 ObjectClass::sub_6EDE80 -> ObjectClass
+[conv] 0x6f9db0 TechnoClass::GetID -> TechnoClass
+[conv] 0x717ae0 ObjectTypeClass::loadTypeMember_5717AE0 -> ObjectTypeClass
+[conv] 0x71fa40 ObjectClass::sub_71FA40 -> ObjectClass
+[conv] 0x726920 ObjectClass::sub_726920 -> ObjectClass
+[conv] 0x72a660 TextLabelClass::setTarget -> TextLabelClass
+[conv] 0x75cb20 WalkLocomotionClass::SmallStub_75CB20 -> WalkLocomotionClass
+[conv] 0x76ff20 Trigger::executeActions -> Trigger
+[conv] 0x7748a0 WinModemClass::Release -> WinModemClass
+[conv] 0x7754a0 WinModemClass::ddtor -> WinModemClass
+[conv] 0x7754b0 WinModemClass::HangUp -> WinModemClass
+[conv] 0x7be660 TechnoClass::Audio_Process_7BE660 -> TechnoClass
+[conv] 0x65fb70 sub_65FB70 -> _addr_65
+[conv] 0x406730 sub_406730 -> _addr_40
+[conv] 0x406740 ___setargv -> _addr_40
+[conv] 0x411580 XSurface::IsLocked -> XSurface
+[conv] 0x429200 sub_429200 -> _addr_42
+[conv] 0x433560 sub_433560 -> _addr_43
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] ScenarioClass            rc=0
+[era] TechnoClass              rc=0
+[era] ObjectTypeClass          rc=0
+[era] TextLabelClass           rc=0
+[era] WalkLocomotionClass      rc=0
+[era] Trigger                  rc=2
+[era] WinModemClass            rc=0
+[era] _addr_65                 rc=2
+[era] _addr_40                 rc=0
+[era] XSurface                 rc=0
+[era] _addr_42                 rc=2
+[era] _addr_43                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6cfe10   MATCH            ObjectClass::sub_6CFE10
+[diff] 0x6ede80   MATCH            ObjectClass::sub_6EDE80
+[diff] 0x71fa40   MISMATCH         ObjectClass::sub_71FA40
+[diff] 0x726920   MISMATCH         ObjectClass::sub_726920
+[diff] 0x6e5560   MATCH            ScenarioClass::checkMissionObjectives
+[diff] 0x6f9db0   MATCH            TechnoClass::GetID
+[diff] 0x7be660   MATCH            TechnoClass::Audio_Process_7BE660
+[diff] 0x717ae0   MATCH            ObjectTypeClass::loadTypeMember_5717AE0
+[diff] 0x72a660   MATCH            TextLabelClass::setTarget
+[diff] 0x75cb20   MISMATCH         WalkLocomotionClass::SmallStub_75CB20
+[diff] 0x7748a0   MATCH            WinModemClass::Release
+[diff] 0x7754a0   MATCH            WinModemClass::ddtor
+[diff] 0x7754b0   MATCH            WinModemClass::HangUp
+[diff] 0x406730   MISMATCH         sub_406730
+[diff] 0x406740   MISMATCH         ___setargv
+[diff] 0x411580   MATCH            XSurface::IsLocked
+[ledger] 0x6cfe10 ObjectClass::sub_6CFE10 -> OK (attempt 1)
+[ledger] 0x6e5560 ScenarioClass::checkMissionObjectives -> OK (attempt 1)
+[ledger] 0x6ede80 ObjectClass::sub_6EDE80 -> OK (attempt 1)
+[ledger] 0x6f9db0 TechnoClass::GetID -> OK (attempt 1)
+[ledger] 0x717ae0 ObjectTypeClass::loadTypeMember_5717AE0 -> OK (attempt 1)
+[ledger] 0x71fa40 ObjectClass::sub_71FA40 -> NG (attempt 1)
+[ledger] 0x726920 ObjectClass::sub_726920 -> NG (attempt 1)
+[ledger] 0x72a660 TextLabelClass::setTarget -> OK (attempt 1)
+[ledger] 0x75cb20 WalkLocomotionClass::SmallStub_75CB20 -> NG (attempt 1)
+[ledger] 0x76ff20 Trigger::executeActions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7748a0 WinModemClass::Release -> OK (attempt 1)
+[ledger] 0x7754a0 WinModemClass::ddtor -> OK (attempt 1)
+[ledger] 0x7754b0 WinModemClass::HangUp -> OK (attempt 1)
+[ledger] 0x7be660 TechnoClass::Audio_Process_7BE660 -> OK (attempt 1)
+[ledger] 0x65fb70 sub_65FB70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406730 sub_406730 -> NG (attempt 1)
+[ledger] 0x406740 ___setargv -> NG (attempt 1)
+[ledger] 0x411580 XSurface::IsLocked -> OK (attempt 1)
+[ledger] 0x429200 sub_429200 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x433560 sub_433560 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "ret_norm": 1,
+  "regalloc": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 68.8,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p37\batch_report.json

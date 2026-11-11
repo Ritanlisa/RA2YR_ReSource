@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetID@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::GetID",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b811c0200008b4030c3",
+ "relocs": []
+}

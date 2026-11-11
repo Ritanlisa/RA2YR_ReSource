@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A660",
+ "name": "ObjectClass::setTarget",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A660",
+ "bytes_hex": "8b442404894130c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

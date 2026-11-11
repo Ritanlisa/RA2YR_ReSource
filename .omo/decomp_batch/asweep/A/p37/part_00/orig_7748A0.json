@@ -1,0 +1,11 @@
+{
+ "addr": "0x7748A0",
+ "name": "WinModemClass::Release",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7748A0",
+ "bytes_hex": "8b442404894160c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

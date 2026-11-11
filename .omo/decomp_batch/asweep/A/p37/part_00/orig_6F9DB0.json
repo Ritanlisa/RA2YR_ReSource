@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F9DB0",
+ "name": "TechnoClass::GetID",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F9DB0",
+ "bytes_hex": "8b811c0200008b4030c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsLocked@XSurface@@QAEEXZ",
+ "sym_key": "XSurface::IsLocked",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b510c33c085d20f95c0c3",
+ "relocs": []
+}

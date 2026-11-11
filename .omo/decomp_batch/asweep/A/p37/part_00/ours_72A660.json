@@ -1,0 +1,8 @@
+{
+ "symbol": "?setTarget@TextLabelClass@@QAEHH@Z",
+ "sym_key": "TextLabelClass::setTarget",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b442404894130c20400",
+ "relocs": []
+}
