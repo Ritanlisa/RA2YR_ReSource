@@ -1,0 +1,15 @@
+{
+ "symbol": "?vt_03@CaptureManagerClass@@QAEXXZ",
+ "sym_key": "CaptureManagerClass::vt_03",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b4610895e143bc37411385e11740c50e80000000083c404895e04885e11895e0c5e5bc3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

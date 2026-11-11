@@ -384,6 +384,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40b6a0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "EventClass::initEvent",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x40bac0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x40bacc",
@@ -509,6 +516,13 @@
   "name": "0x40dc50",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x40dd70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::IsTechnoType",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x40df60": {
   "attempts": 1,
@@ -719,6 +733,13 @@
   "name": "0x413590",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4135a0": {
+  "attempts": 1,
+  "first_diff": "+1 mov esi, dword ptr [esp + 8]",
+  "name": "ObjectClass::HasLinkedObject",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x413af0": {
   "attempts": 1,
@@ -943,6 +964,13 @@
   "name": "AirstrikeClass::StubReturn71",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x41dde0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_AirstrikeClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x41e210": {
   "attempts": 1,
@@ -1916,6 +1944,13 @@
   "name": "CaptureManagerClass::GetTypeIdentifier",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x472a80": {
+  "attempts": 1,
+  "first_diff": "+6 mov eax, dword ptr [esi + 4]",
+  "name": "CaptureManagerClass::vt_03",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x472b40": {
   "attempts": 1,
@@ -3184,6 +3219,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a4ad0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "CStreamClass::ClearBuffer",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4a4b30": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -4283,6 +4325,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4e8290": {
+  "attempts": 1,
+  "first_diff": "+22 call 0x7c8b3d",
+  "name": "HouseClass::COMStub_3",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x4e82e0": {
   "attempts": 1,
   "first_diff": null,
@@ -4304,6 +4353,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e86c0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_TubeClass::Destroy_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4e8930": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4e893c",
@@ -4318,6 +4374,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e8ae0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_HouseTypeClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4e8cf0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4e8cfc",
@@ -4331,6 +4394,13 @@
   "name": "VectorClass_ptr_SmudgeTypeClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e8f00": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_AnimTypeClass::Destroy_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x4e9050": {
   "attempts": 1,
@@ -4793,6 +4863,13 @@
   "name": "AbstractClass::checkPassability",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x50e560": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_UAngerStruct::Destroy_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x50ea70": {
   "attempts": 1,
@@ -5682,6 +5759,13 @@
   "name": "0x53c890",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x53da40": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_IonBlastClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x53da90": {
   "attempts": 1,
@@ -6586,6 +6670,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x588ce0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "_DynamicVectorClass_UZoneConnectionClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x589370": {
   "attempts": 4,
   "first_diff": "+12 push edi",
@@ -7230,6 +7321,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c5070": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "DynamicVectorClass_ptr_NodeNameType::ddtor",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x5c5120": {
   "attempts": 1,
   "first_diff": null,
@@ -7530,6 +7628,13 @@
   "name": "WideString::WordWrap",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5d50e0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "MSFont_18::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5d5870": {
   "attempts": 1,
@@ -10709,6 +10814,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x6f7970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::CheckCellPassable3",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6f9dc0": {
   "attempts": 5,
   "first_diff": null,
@@ -11353,6 +11465,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7287f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7287f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x72a200": {
   "attempts": 5,
   "first_diff": null,
@@ -11885,6 +12004,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x752020": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x752020",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7534e0": {
   "attempts": 1,
   "first_diff": "+0 cmp ecx, -1",
@@ -12270,6 +12396,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x767ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x767ca0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x767e50": {
   "attempts": 1,
   "first_diff": null,
@@ -12645,6 +12778,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x77b230",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x77b690": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77b690",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

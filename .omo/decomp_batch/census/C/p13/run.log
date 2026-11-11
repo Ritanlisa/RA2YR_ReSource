@@ -1,0 +1,107 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f7970 TechnoClass::CheckCellPassable3 -> TechnoClass
+[conv] 0x4135a0 unknown::HasLinkedObject -> unknown
+[conv] 0x40dd70 AbstractClass::IsTechnoType -> AbstractClass
+[conv] 0x40b6a0 _DynamicVectorClass_PAVTechnoClass::initEvent -> _DynamicVectorClass_PAVTechnoClass
+[conv] 0x41dde0 _DynamicVectorClass_PAVAirstrikeClass::Destroy -> _DynamicVectorClass_PAVAirstrikeClass
+[conv] 0x472a80 CaptureManagerClass::vt_03 -> CaptureManagerClass
+[conv] 0x4a4ad0 _DynamicVectorClass_PAU_DDSURFACEDESC::ClearBuffer -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4e8290 DynamicVector::COMStub_3 -> DynamicVector
+[conv] 0x4e86c0 _DynamicVectorClass_PAVWaveClass::Destroy_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4e8ae0 _DynamicVectorClass_PAVHouseTypeClass::Destroy -> _DynamicVectorClass_PAVHouseTypeClass
+[conv] 0x4e8f00 _DynamicVectorClass_PAVInfantryTypeClass::Destroy_0 -> _DynamicVectorClass_PAVInfantryTypeClass
+[conv] 0x50e560 _DynamicVectorClass_UAngerStruct::Destroy_0 -> _DynamicVectorClass_UAngerStruct
+[conv] 0x53da40 _DynamicVectorClass_PAVIonBlastClass::Destroy -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x588ce0 _DynamicVectorClass_UZoneConnectionClass::ddtor -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x5c5070 _DynamicVectorClass_PAUNodeNameType::ddtor -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5d50e0 _DynamicVectorClass_UAcceleratorTracker::Destroy -> _DynamicVectorClass_UAcceleratorTracker
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] unknown                  rc=0
+[era] AbstractClass            rc=2
+[era] _DynamicVectorClass_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVAirstrikeClass rc=0
+[era] CaptureManagerClass      rc=0
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVWaveClass rc=0
+[era] _DynamicVectorClass_PAVHouseTypeClass rc=0
+[era] _DynamicVectorClass_PAVInfantryTypeClass rc=0
+[era] _DynamicVectorClass_UAngerStruct rc=0
+[era] _DynamicVectorClass_PAVIonBlastClass rc=0
+[era] _DynamicVectorClass_UZoneConnectionClass rc=0
+[era] _DynamicVectorClass_PAUNodeNameType rc=0
+[era] _DynamicVectorClass_UAcceleratorTracker rc=0
+=== diffasm byte-compare ===
+[diff] 0x4135a0   MISMATCH         unknown::HasLinkedObject
+[diff] 0x40b6a0   MISMATCH         _DynamicVectorClass_PAVTechnoClass::initEvent
+[diff] 0x41dde0   MISMATCH         _DynamicVectorClass_PAVAirstrikeClass::Destroy
+[diff] 0x472a80   MISMATCH         CaptureManagerClass::vt_03
+[diff] 0x4a4ad0   MISMATCH         _DynamicVectorClass_PAU_DDSURFACEDESC::ClearBuffer
+[diff] 0x4e8290   MISMATCH         DynamicVector::COMStub_3
+[diff] 0x4e86c0   MISMATCH         _DynamicVectorClass_PAVWaveClass::Destroy_0
+[diff] 0x4e8ae0   MISMATCH         _DynamicVectorClass_PAVHouseTypeClass::Destroy
+[diff] 0x4e8f00   MISMATCH         _DynamicVectorClass_PAVInfantryTypeClass::Destroy_0
+[diff] 0x50e560   MISMATCH         _DynamicVectorClass_UAngerStruct::Destroy_0
+[diff] 0x53da40   MISMATCH         _DynamicVectorClass_PAVIonBlastClass::Destroy
+[diff] 0x588ce0   MISMATCH         _DynamicVectorClass_UZoneConnectionClass::ddtor
+[diff] 0x5c5070   MISMATCH         _DynamicVectorClass_PAUNodeNameType::ddtor
+[diff] 0x5d50e0   MISMATCH         _DynamicVectorClass_UAcceleratorTracker::Destroy
+[ledger] 0x7287f0 0x7287f0 -> PENDING (attempt 1)
+[ledger] 0x752020 0x752020 -> PENDING (attempt 1)
+[ledger] 0x767ca0 0x767ca0 -> PENDING (attempt 1)
+[ledger] 0x77b690 0x77b690 -> PENDING (attempt 1)
+[ledger] 0x6f7970 TechnoClass::CheckCellPassable3 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4135a0 ObjectClass::HasLinkedObject -> NG (attempt 1)
+[ledger] 0x40dd70 AbstractClass::IsTechnoType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40b6a0 EventClass::initEvent -> NG (attempt 1)
+[ledger] 0x41dde0 VectorClass_ptr_AirstrikeClass::Destroy -> NG (attempt 1)
+[ledger] 0x472a80 CaptureManagerClass::vt_03 -> NG (attempt 1)
+[ledger] 0x4a4ad0 CStreamClass::ClearBuffer -> NG (attempt 1)
+[ledger] 0x4e8290 HouseClass::COMStub_3 -> NG (attempt 1)
+[ledger] 0x4e86c0 VectorClass_ptr_TubeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x4e8ae0 VectorClass_ptr_HouseTypeClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e8f00 VectorClass_ptr_AnimTypeClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x50e560 VectorClass_UAngerStruct::Destroy_0 -> NG (attempt 1)
+[ledger] 0x53da40 VectorClass_ptr_IonBlastClass::Destroy -> NG (attempt 1)
+[ledger] 0x588ce0 _DynamicVectorClass_UZoneConnectionClass::ddtor -> NG (attempt 1)
+[ledger] 0x5c5070 DynamicVectorClass_ptr_NodeNameType::ddtor -> NG (attempt 1)
+[ledger] 0x5d50e0 MSFont_18::Destroy -> NG (attempt 1)
+======================================================================
+{
+ "total": 1959,
+ "verdicts": {
+  "MISMATCH": 548,
+  "MATCH": 512,
+  "COMPILE_FAIL": 477,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 410,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 183,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 64,
+  "branch_polarity": 34,
+  "regalloc": 87,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 48.3,
+ "match_rate_of_total_pct": 26.1,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p13\batch_report.json

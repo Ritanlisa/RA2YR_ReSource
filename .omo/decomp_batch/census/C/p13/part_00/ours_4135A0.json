@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasLinkedObject@unknown@@QAG_NH@Z",
+ "sym_key": "unknown::HasLinkedObject",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "568b74240c568b06ff90bc0100008b80e000000085c0740a3bc67406b0015ec2080032c05ec20800",
+ "relocs": []
+}

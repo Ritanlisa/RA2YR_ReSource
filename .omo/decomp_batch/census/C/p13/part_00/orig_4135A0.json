@@ -1,0 +1,11 @@
+{
+ "addr": "0x4135A0",
+ "name": "ObjectClass::HasLinkedObject",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4135A0",
+ "bytes_hex": "568b7424088bce8b06ff90bc0100008b80e000000085c0740a3bc67406b0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
