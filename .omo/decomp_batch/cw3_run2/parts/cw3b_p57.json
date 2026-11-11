@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x787010",
+  "name": "LoginFlowWOL",
+  "cls": null,
+  "size": 1882,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.ambientSoundController' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4ce840",
+  "name": "DropPod::ProcessLanding",
+  "cls": null,
+  "size": 1898,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5cf8e0",
+  "name": "MSChoiceClass::LoadFromINI",
+  "cls": null,
+  "size": 1935,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'unknown_libname_74' : cannot convert parameter 1 from 'unsigned int *' to 'int'"
+ },
+ {
+  "addr": "0x5bb6e0",
+  "name": "Modem::EnumerateDevices",
+  "cls": null,
+  "size": 2022,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5b4ee0",
+  "name": "ModemGuest::InitDialog",
+  "cls": null,
+  "size": 2058,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ },
+ {
+  "addr": "0x5b20f0",
+  "name": "Movement::CalcVelocity",
+  "cls": null,
+  "size": 2101,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4c1f20",
+  "name": "Lightning::Draw",
+  "cls": null,
+  "size": 2159,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x485af0",
+  "name": "BuildingClass::VisualizePlacement",
+  "cls": null,
+  "size": 2191,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x616980",
+  "name": "ButtonOwnerDraw::DlgProc",
+  "cls": null,
+  "size": 2254,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x4ab9b0",
+  "name": "PlayerClass::ExecuteCommand",
+  "cls": null,
+  "size": 2298,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x511850",
+  "name": "HouseTypeClass::LoadFromINI",
+  "cls": null,
+  "size": 2325,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'_EBX' : undeclared identifier"
+ },
+ {
+  "addr": "0x50a5c0",
+  "name": "HouseClass::AIBuildBase",
+  "cls": null,
+  "size": 2375,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x772080",
+  "name": "WeaponTypeClass::ReadINI",
+  "cls": null,
+  "size": 2405,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5f1fa0",
+  "name": "NullModemClass::DetectModem",
+  "cls": null,
+  "size": 2476,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x73e5e0",
+  "name": "VoxelTypeClass::ReadINI",
+  "cls": null,
+  "size": 2508,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x788b00",
+  "name": "CreateAccountWOL",
+  "cls": null,
+  "size": 2558,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x749f30",
+  "name": "VoxelAnimClass::Update",
+  "cls": null,
+  "size": 2599,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2019",
+  "first_msg": "expected preprocessor directive, found '3'"
+ },
+ {
+  "addr": "0x43fb20",
+  "name": "BuildingClass::ProcessSpreadEffect",
+  "cls": null,
+  "size": 2651,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x793d20",
+  "name": "NegotiateNetworkConnection",
+  "cls": null,
+  "size": 2699,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x5054b0",
+  "name": "HouseClass::GenerateAIBuildListEnsureSanity",
+  "cls": null,
+  "size": 2755,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'"
+ }
+]
