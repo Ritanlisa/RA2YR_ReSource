@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6B60",
+ "name": "DecodeAudioSampleWord",
+ "size": 84,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6B60",
+ "bytes_hex": "8b44240c5603c08bf04885f6743e8b742408578d780133c081e6ffff0000668b0283c2022bc68b74241081e6ff00000083c1022bc633f6668941fec1e81024014f8844241075cf5f5ec20c008a44240c5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

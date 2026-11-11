@@ -1,0 +1,63 @@
+{
+ "symbol": "?UI_Handle_63AB00@@YGDHH@Z",
+ "sym_key": "Unnamed::UI_Handle_63AB00",
+ "size": 114,
+ "link_base": 0,
+ "bytes_hex": "8b4424048a0d0000000033d224008ad1c60500000000000bc284c974528b0d0000000085c97f488b0d0000000085c9743e8b4424048b15000000002bc250e80000000083c40483f8037f248b4c24088b15000000002bca51e80000000083c40483f8037f0ac7050000000000000000c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CB0@@3EA",
+   "sym_key": "DataGlobal_AC4CB0"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C68@@3IA",
+   "sym_key": "DataGlobal_AC4C68"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C6C@@3IA",
+   "sym_key": "DataGlobal_AC4C6C"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  }
+ ]
+}

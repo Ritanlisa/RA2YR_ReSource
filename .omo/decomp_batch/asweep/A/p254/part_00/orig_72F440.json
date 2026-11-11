@@ -1,0 +1,11 @@
+{
+ "addr": "0x72F440",
+ "name": "Game::InitializeToolTipColor",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72F440",
+ "bytes_hex": "85c9751966a1d8f9b0008a0ddaf9b00066a31cfab000880d1efab000c383f9017519668b1504fbb000a006fbb0006689151cfab000a21efab000c3668b0da0fab0008a15a2fab00066890d1cfab00088151efab000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

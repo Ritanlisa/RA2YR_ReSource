@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FC980",
+ "name": "Network::SendOffer",
+ "size": 87,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FC980",
+ "bytes_hex": "8a81f701000083ec0c84c08a81f6010000754084c075368a81f801000084c0752c56c681f601000001a184eda8008db19802000033d289068b4424088946048a81f60100008956085e83c40cc38a81f601000083c40cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

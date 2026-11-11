@@ -1,0 +1,15 @@
+{
+ "symbol": "?globalHelper_0FDCC0@@YIPAIPAHH@Z",
+ "sym_key": "Unnamed::globalHelper_0FDCC0",
+ "size": 89,
+ "link_base": 0,
+ "bytes_hex": "8bc1538b0d00000000568b349133c98a9ea902000084db751d8a9ea802000084db751383be940200007e740a8a9eaa02000084db7405b9f4ffffff8b9e980200005e83fb095b75014983fa7e750149c70000000000894804c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_BuildingTypeClass_Array@@3PAXA",
+   "sym_key": "g_BuildingTypeClass_Array"
+  }
+ ]
+}

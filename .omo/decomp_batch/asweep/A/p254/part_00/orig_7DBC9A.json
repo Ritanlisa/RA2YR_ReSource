@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DBC9A",
+ "name": "__set_statfp",
+ "size": 86,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DBC9A",
+ "bytes_hex": "558bec51518a4d08f6c101740adb2d04d78700db5d089bf6c10874109bdfe0db2d04d78700dd5df89b9bdfe0f6c110740adb2d10d78700dd5df89bf6c1047409d9eed9e8def1ddd89bf6c1207406d9ebdd5df89bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

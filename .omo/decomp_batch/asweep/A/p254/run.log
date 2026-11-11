@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p254\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d53b0 _VectorClass_UAcceleratorTracker::AddRef -> _VectorClass_UAcceleratorTracker
+[conv] 0x6f2290 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::AddRef -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x487690 DisplayClass::AdvanceFrameCounter -> DisplayClass
+[conv] 0x5b3650 MissionClass::COMStub_125 -> MissionClass
+[conv] 0x5f96b0 TheaterObjectTypeClassSpecificID -> _addr_5F
+[conv] 0x50f1b0 _VectorClass_UScoutStruct::AddRef -> _VectorClass_UScoutStruct
+[conv] 0x5becc0 ObjectClass::sub_5BECC0 -> ObjectClass
+[conv] 0x5c6b60 DecodeAudioSampleWord -> _addr_5C
+[conv] 0x636f00 ObjectClass::sub_636F00 -> ObjectClass
+[conv] 0x53e3c0 TimerPool::AllocSlot -> TimerPool
+[conv] 0x58bdc0 TileData::Constructor -> TileData
+[conv] 0x63ab00 UI_Handle_63AB00 -> UI_Handle
+[conv] 0x72f440 Game::InitializeToolTipColor -> Game
+[conv] 0x7bcaf0 sub_7BCAF0 -> _addr_7B
+[conv] 0x7dbc9a __set_statfp -> _addr_7D
+[conv] 0x755bf0 sub_755BF0 -> _addr_75
+[conv] 0x4fc980 Network::SendOffer -> Network
+[conv] 0x5fdcc0 globalHelper_0FDCC0 -> _addr_5F
+[conv] 0x7350c0 ToWideStringChar -> _addr_73
+[conv] 0x4f4e53 sub_4F4E53 -> _addr_4F
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_UAcceleratorTracker rc=2
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=2
+[era] DisplayClass             rc=2
+[era] MissionClass             rc=0
+[era] _addr_5F                 rc=2
+[era] _VectorClass_UScoutStruct rc=0
+[era] ObjectClass              rc=2
+[era] _addr_5C                 rc=0
+[era] TimerPool                rc=2
+[era] TileData                 rc=2
+[era] UI_Handle                rc=0
+[era] Game                     rc=0
+[era] _addr_7B                 rc=2
+[era] _addr_7D                 rc=0
+[era] _addr_75                 rc=2
+[era] Network                  rc=0
+[era] _addr_73                 rc=0
+[era] _addr_4F                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5b3650   MISMATCH         MissionClass::COMStub_125
+[diff] 0x5fdcc0   MISMATCH         globalHelper_0FDCC0
+[diff] 0x50f1b0   MISMATCH         _VectorClass_UScoutStruct::AddRef
+[diff] 0x5becc0   MISMATCH         ObjectClass::sub_5BECC0
+[diff] 0x5c6b60   MISMATCH         DecodeAudioSampleWord
+[diff] 0x63ab00   MISMATCH         UI_Handle_63AB00
+[diff] 0x72f440   MISMATCH         Game::InitializeToolTipColor
+[diff] 0x7dbc9a   MISMATCH         __set_statfp
+[diff] 0x4fc980   MISMATCH         Network::SendOffer
+[diff] 0x7350c0   MISMATCH         ToWideStringChar
+[ledger] 0x5d53b0 _VectorClass_UAcceleratorTracker::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f2290 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487690 DisplayClass::AdvanceFrameCounter -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b3650 MissionClass::COMStub_125 -> NG (attempt 1)
+[ledger] 0x5f96b0 TheaterObjectTypeClassSpecificID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f1b0 _VectorClass_UScoutStruct::AddRef -> NG (attempt 1)
+[ledger] 0x5becc0 ObjectClass::sub_5BECC0 -> NG (attempt 1)
+[ledger] 0x5c6b60 DecodeAudioSampleWord -> NG (attempt 1)
+[ledger] 0x636f00 ObjectClass::sub_636F00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e3c0 TimerPool::AllocSlot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58bdc0 TileData::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ab00 UI_Handle_63AB00 -> NG (attempt 1)
+[ledger] 0x72f440 Game::InitializeToolTipColor -> NG (attempt 1)
+[ledger] 0x7bcaf0 sub_7BCAF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dbc9a __set_statfp -> NG (attempt 1)
+[ledger] 0x755bf0 sub_755BF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fc980 Network::SendOffer -> NG (attempt 1)
+[ledger] 0x5fdcc0 globalHelper_0FDCC0 -> NG (attempt 1)
+[ledger] 0x7350c0 ToWideStringChar -> NG (attempt 1)
+[ledger] 0x4f4e53 sub_4F4E53 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 10,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 5,
+  "regalloc": 2,
+  "ret_norm": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p254\batch_report.json

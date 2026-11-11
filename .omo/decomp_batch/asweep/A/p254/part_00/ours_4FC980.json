@@ -1,0 +1,15 @@
+{
+ "symbol": "?SendOffer@Network@@QAEDXZ",
+ "sym_key": "Network::SendOffer",
+ "size": 94,
+ "link_base": 0,
+ "bytes_hex": "518b44240033d28a91f6010000538a99f701000024000bc284db753f84c075378a99f801000084db752dc681f601000001a1000000008981980200008b44240489819c02000024010c01c781a0020000000000005b59c324000bc25b59c3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

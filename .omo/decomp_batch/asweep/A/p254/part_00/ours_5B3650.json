@@ -1,0 +1,8 @@
+{
+ "symbol": "?COMStub_125@MissionClass@@QAEHHHH@Z",
+ "sym_key": "MissionClass::COMStub_125",
+ "size": 85,
+ "link_base": 0,
+ "bytes_hex": "8b81ac000000568b74240883f81c750783fe05743ceb0583f81374358b91b400000083faff751789b1ac0000008981b0000000c681b8000000005ec20c0089b1ac0000008991b0000000c681b8000000005ec20c00",
+ "relocs": []
+}

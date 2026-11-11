@@ -1,0 +1,8 @@
+{
+ "symbol": "?DecodeAudioSampleWord@@YIEHPAGGEH@Z",
+ "sym_key": "Unnamed::DecodeAudioSampleWord",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "8b44240c578d3c0085ff75088a44240c5fc20c00568b74240c83c1fe668b0281e6ffff000025ffff000083c1022bc68b74241081e6ff00000083c2022bc633f6668901c1f81024014f8844241075cd5e5fc20c00",
+ "relocs": []
+}
