@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x751900",
+  "name": "VectorClass_ptr_VocClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_DynamicVectorClass_PAVVocClass",
+  "emitted": "_DynamicVectorClass_PAVVocClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x75190c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40f610",
+  "name": "VectorClass_ptr_WarheadTypeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PAVWarheadTypeClass",
+  "emitted": "_DynamicVectorClass_PAVWarheadTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x40f61c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4eecc0",
+  "name": "VectorClass_ptr_ParticleTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVParticleTypeClass",
+  "emitted": "_VectorClass_PAVParticleTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4eeccc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x769fc0",
+  "name": "Map_WorldDominationTour_20::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p190",
+  "unit": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+  "emitted": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x769fcc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x45a8c0",
+  "name": "VectorClass_ptr_Reestablish::Get",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PAVReestablish",
+  "emitted": "_VectorClass_PAVReestablish::Get",
+  "first_diff": {
+   "orig": "+5 jne 0x45a8cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6b8190",
+  "name": "SpawnManagerClass_25::LoadState",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p188",
+  "unit": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass",
+  "emitted": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState",
+  "first_diff": {
+   "orig": "+5 jne 0x6b819c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40b6d0",
+  "name": "MoveFeedback::Update",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PAVTechnoClass",
+  "emitted": "_DynamicVectorClass_PAVTechnoClass::Update",
+  "first_diff": {
+   "orig": "+5 jne 0x40b6dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x6dcb30",
+  "name": "VectorClass_UDirtyAreaStruct___16::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p188",
+  "unit": "_VectorClass_PAVShadowControlClass",
+  "emitted": "_VectorClass_PAVShadowControlClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x6dcb3c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8870",
+  "name": "ParticleSystemClass_32_::GetElementIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVAircraftClass",
+  "emitted": "_DynamicVectorClass_PAVAircraftClass::GetElementIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e887c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5c5750",
+  "name": "CoopCampaignVector::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_VectorClass_PAVCoopCampaignClass",
+  "emitted": "_VectorClass_PAVCoopCampaignClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x5c575c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8570",
+  "name": "VectorClass_ptr_AITriggerTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_DynamicVectorClass_PAVTriggerClass",
+  "emitted": "_DynamicVectorClass_PAVTriggerClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e857c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ea7e0",
+  "name": "VectorClass_ptr_TriggerTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_VectorClass_PAVTriggerTypeClass",
+  "emitted": "_VectorClass_PAVTriggerTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ea7ec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50b730",
+  "name": "House::IsCurrentPlayer",
+  "family": "JCC_INVERT",
+  "path": "codegen_shape",
+  "size": 35,
+  "part": "p202",
+  "unit": "House",
+  "emitted": "House::IsCurrentPlayer",
+  "first_diff": {
+   "orig": "+7 mov al, byte ptr [ecx + 0x1ec]",
+   "ours": "+7 jne 0x20"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x6cab30",
+  "name": "VectorClass_ptr_SubTitle::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p188",
+  "unit": "_VectorClass_PAVSubTitle",
+  "emitted": "_VectorClass_PAVSubTitle::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x6cab3c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x69c870",
+  "name": "_VectorClass_W4DiskID::updatePlayer",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p187",
+  "unit": "_VectorClass_W4DiskID",
+  "emitted": "_VectorClass_W4DiskID::updatePlayer",
+  "first_diff": {
+   "orig": "+5 jne 0x69c87c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x7659d0",
+  "name": "Campaign_WorldDominationTour_16::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+  "emitted": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x7659dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ec920",
+  "name": "VectorClass_ptr_HouseTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVHouseTypeClass",
+  "emitted": "_VectorClass_PAVHouseTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ec92c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4a4b00",
+  "name": "CStreamClass::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p176",
+  "unit": "_DynamicVectorClass_PAU_DDSURFACEDESC",
+  "emitted": "_DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4a4b0c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x67c360",
+  "name": "DynamicVector::RemoveAt",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::RemoveAt",
+  "first_diff": {
+   "orig": "+9 jge 0x67c38c",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x5eed70",
+  "name": "VectorClass_cptr_MultiMission::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p185",
+  "unit": "_VectorClass_PBVMultiMission",
+  "emitted": "_VectorClass_PBVMultiMission::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x5eed7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]

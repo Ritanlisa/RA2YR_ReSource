@@ -1,0 +1,718 @@
+{
+ "summary": {
+  "verdicts": {
+   "MATCH": 18,
+   "NO_VARIANT": 2
+  },
+  "by_family_total": {
+   "JCC_INVERT": 20
+  },
+  "by_family_hits": {
+   "JCC_INVERT": 18
+  }
+ },
+ "results": [
+  {
+   "addr": "0x751900",
+   "name": "VectorClass_ptr_VocClass::GetItemIndex",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAVVocClass",
+   "method": "GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVVocClass",
+   "head": "unsigned int _DynamicVectorClass_PAVVocClass::GetItemIndex(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x75190c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x40f610",
+   "name": "VectorClass_ptr_WarheadTypeClass::GetItemIndex",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAVWarheadTypeClass",
+   "method": "GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVWarheadTypeClass",
+   "head": "unsigned int _DynamicVectorClass_PAVWarheadTypeClass::GetItemIndex(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x40f61c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x4eecc0",
+   "name": "VectorClass_ptr_ParticleTypeClass::LoadTypeData",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVParticleTypeClass",
+   "method": "LoadTypeData",
+   "unit": "_VectorClass_PAVParticleTypeClass",
+   "head": "unsigned int _VectorClass_PAVParticleTypeClass::LoadTypeData(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4eeccc",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x769fc0",
+   "name": "Map_WorldDominationTour_20::Write",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "method": "Write",
+   "unit": "_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+   "head": "unsigned int _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Write(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x769fcc",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);"
+  },
+  {
+   "addr": "0x45a8c0",
+   "name": "VectorClass_ptr_Reestablish::Get",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVReestablish",
+   "method": "Get",
+   "unit": "_VectorClass_PAVReestablish",
+   "head": "unsigned int _VectorClass_PAVReestablish::Get(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x45a8cc",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x6b8190",
+   "name": "SpawnManagerClass_25::LoadState",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass",
+   "method": "LoadState",
+   "unit": "_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass",
+   "head": "unsigned int _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass::LoadState(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x6b819c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x40b6d0",
+   "name": "MoveFeedback::Update",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAVTechnoClass",
+   "method": "Update",
+   "unit": "_DynamicVectorClass_PAVTechnoClass",
+   "head": "unsigned int _DynamicVectorClass_PAVTechnoClass::Update(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x40b6dc",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x6dcb30",
+   "name": "VectorClass_UDirtyAreaStruct___16::GetCapacity",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVShadowControlClass",
+   "method": "GetCapacity",
+   "unit": "_VectorClass_PAVShadowControlClass",
+   "head": "unsigned int _VectorClass_PAVShadowControlClass::GetCapacity(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x6dcb3c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x4e8870",
+   "name": "ParticleSystemClass_32_::GetElementIndex",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAVAircraftClass",
+   "method": "GetElementIndex",
+   "unit": "_DynamicVectorClass_PAVAircraftClass",
+   "head": "unsigned int _DynamicVectorClass_PAVAircraftClass::GetElementIndex(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4e887c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x5c5750",
+   "name": "CoopCampaignVector::Write",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVCoopCampaignClass",
+   "method": "Write",
+   "unit": "_VectorClass_PAVCoopCampaignClass",
+   "head": "unsigned int _VectorClass_PAVCoopCampaignClass::Write(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x5c575c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x4e8570",
+   "name": "VectorClass_ptr_AITriggerTypeClass::GetItemIndex_0",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAVTriggerClass",
+   "method": "GetItemIndex_0",
+   "unit": "_DynamicVectorClass_PAVTriggerClass",
+   "head": "unsigned int _DynamicVectorClass_PAVTriggerClass::GetItemIndex_0(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4e857c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x4ea7e0",
+   "name": "VectorClass_ptr_TriggerTypeClass::LoadTypeData",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVTriggerTypeClass",
+   "method": "LoadTypeData",
+   "unit": "_VectorClass_PAVTriggerTypeClass",
+   "head": "unsigned int _VectorClass_PAVTriggerTypeClass::LoadTypeData(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4ea7ec",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x50b730",
+   "name": "House::IsCurrentPlayer",
+   "family": "JCC_INVERT",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "House",
+   "method": "IsCurrentPlayer",
+   "unit": "House",
+   "head": "unsigned char House::IsCurrentPlayer()",
+   "baseline_first_diff": {
+    "orig": "+7 mov al, byte ptr [ecx + 0x1ec]",
+    "ours": "+7 jne 0x20"
+   }
+  },
+  {
+   "addr": "0x6cab30",
+   "name": "VectorClass_ptr_SubTitle::GetCapacity",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVSubTitle",
+   "method": "GetCapacity",
+   "unit": "_VectorClass_PAVSubTitle",
+   "head": "unsigned int _VectorClass_PAVSubTitle::GetCapacity(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x6cab3c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x69c870",
+   "name": "_VectorClass_W4DiskID::updatePlayer",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_W4DiskID",
+   "method": "updatePlayer",
+   "unit": "_VectorClass_W4DiskID",
+   "head": "unsigned int _VectorClass_W4DiskID::updatePlayer(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x69c87c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x7659d0",
+   "name": "Campaign_WorldDominationTour_16::Write",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+   "method": "Write",
+   "unit": "_VectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+   "head": "unsigned int _VectorClass_V_rc_ptr_VConflict_WorldDominationTour::Write(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x7659dc",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 3);"
+  },
+  {
+   "addr": "0x4ec920",
+   "name": "VectorClass_ptr_HouseTypeClass::LoadTypeData",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PAVHouseTypeClass",
+   "method": "LoadTypeData",
+   "unit": "_VectorClass_PAVHouseTypeClass",
+   "head": "unsigned int _VectorClass_PAVHouseTypeClass::LoadTypeData(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4ec92c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x4a4b00",
+   "name": "CStreamClass::PointerToIndex",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_DynamicVectorClass_PAU_DDSURFACEDESC",
+   "method": "PointerToIndex",
+   "unit": "_DynamicVectorClass_PAU_DDSURFACEDESC",
+   "head": "unsigned int _DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x4a4b0c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  },
+  {
+   "addr": "0x67c360",
+   "name": "DynamicVector::RemoveAt",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "DynamicVector",
+   "method": "RemoveAt",
+   "unit": "DynamicVector",
+   "head": "char DynamicVector::RemoveAt(int p0)",
+   "baseline_first_diff": {
+    "orig": "+9 jge 0x67c38c",
+    "ours": "+9 jl 0x10"
+   }
+  },
+  {
+   "addr": "0x5eed70",
+   "name": "VectorClass_cptr_MultiMission::GetCapacity",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "MATCH",
+   "accepted": "V_IF_GUARD",
+   "variants": [
+    {
+     "vid": "V_IF_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MATCH",
+     "ours_size": 27
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_VectorClass_PBVMultiMission",
+   "method": "GetCapacity",
+   "unit": "_VectorClass_PBVMultiMission",
+   "head": "unsigned int _VectorClass_PBVMultiMission::GetCapacity(int p0)",
+   "baseline_first_diff": {
+    "orig": "+5 jne 0x5eed7c",
+    "ours": "+5 je 0x16"
+   },
+   "variants_generated": [
+    "V_IF_GUARD",
+    "V_IF_GUARD_EQ",
+    "V_IF_SWAPNEG"
+   ],
+   "accepted_kind": "if_else",
+   "accepted_desc": "if(C){A}else{B} -> if(!C){B} A (guard, jne layout)",
+   "ours_size": 27,
+   "accepted_body": "        if ( !((this->m_C & 0xFF)) )\n        {\n            return (unsigned int)(0);\n        }\n            return (unsigned int)((unsigned int)(p0 - this->m004[0]) >> 2);"
+  }
+ ]
+}
