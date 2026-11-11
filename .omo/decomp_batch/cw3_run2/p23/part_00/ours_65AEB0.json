@@ -1,0 +1,27 @@
+{
+ "symbol": "?ProcessEvent@RadioClass@@QAEPAID@Z",
+ "sym_key": "RadioClass::ProcessEvent",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "53568bf133db8b86e4000000891e3bc3895e04895e08895e0c899ee0000000741a8b8eec000000f6c5ff740f50e80000000083c404899ee40000008bce889eed000000899ee8000000891e895e04895e08895e0ce800000000f644240c01740956e80000000083c4048bc65e5bc20400",
+ "relocs": [
+  {
+   "off": 46,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 85,
+   "type": "REL32",
+   "sym": "?Dtor@ObjectClass@@QAEHXZ",
+   "sym_key": "ObjectClass::Dtor"
+  },
+  {
+   "off": 98,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

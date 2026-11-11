@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ac820 TacticalClass::SetObserverMode -> TacticalClass
+[conv] 0x4ac8c0 BuildingClass::TogglePower2 -> BuildingClass
+[conv] 0x65aeb0 RadioClass::ProcessEvent -> RadioClass
+[conv] 0x5b1aa0 MechLocomotionClass::IsPositionWithinThreshold_0 -> MechLocomotionClass
+[conv] 0x6896c0 ScenarioClass::SetCountryFlag -> ScenarioClass
+[conv] 0x4af540 LocomotionClass::Initialize -> LocomotionClass
+[conv] 0x69ec50 LocomotionClass::Process -> LocomotionClass
+[conv] 0x74d5d0 VeinholeMonsterClass::ProcessExpansion -> VeinholeMonsterClass
+[conv] 0x410260 AbstractClass::QueryInterface -> AbstractClass
+[conv] 0x5125a0 HouseTypeClass::QueryInterface -> HouseTypeClass
+[conv] 0x5980c0 Random::Gaussian -> Random
+[conv] 0x5cc970 MSBinkAnim::Play -> MSBinkAnim
+[conv] 0x624be0 Dialog::GrowBuffer -> Dialog
+[conv] 0x5b4270 HashTree::MarkEntry -> HashTree
+[conv] 0x44f640 BuildingClass::GetFactoryPosition -> BuildingClass
+[conv] 0x451330 BuildingClass::GetCrewCount -> BuildingClass
+[conv] 0x486d90 ObjectClass::sub_486D90 -> ObjectClass
+[conv] 0x4cbba0 FootClass::FindPathWithRetry -> FootClass
+[conv] 0x5cd4d0 MSBitPrintAnim::Draw -> MSBitPrintAnim
+[conv] 0x4a0a50 EnumConnectionPointsClass::ddtor -> EnumConnectionPointsClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TacticalClass            rc=2
+[era] BuildingClass            rc=2
+[era] RadioClass               rc=0
+[era] MechLocomotionClass      rc=0
+[era] ScenarioClass            rc=2
+[era] LocomotionClass          rc=2
+[era] VeinholeMonsterClass     rc=2
+[era] AbstractClass            rc=2
+[era] HouseTypeClass           rc=2
+[era] Random                   rc=2
+[era] MSBinkAnim               rc=2
+[era] Dialog                   rc=2
+[era] HashTree                 rc=2
+[era] ObjectClass              rc=2
+[era] FootClass                rc=2
+[era] MSBitPrintAnim           rc=2
+[era] EnumConnectionPointsClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x65aeb0   MISMATCH         RadioClass::ProcessEvent
+[diff] 0x5b1aa0   MISMATCH         MechLocomotionClass::IsPositionWithinThreshold_0
+[ledger] 0x4ac820 TacticalClass::SetObserverMode -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4ac8c0 BuildingClass::TogglePower2 -> COMPILE_FAIL (attempt 6)
+[ledger] 0x65aeb0 RadioClass::ProcessEvent -> NG (attempt 6)
+[ledger] 0x5b1aa0 MechLocomotionClass::IsPositionWithinThreshold_0 -> NG (attempt 6)
+[ledger] 0x6896c0 ScenarioClass::SetCountryFlag -> COMPILE_FAIL (attempt 6)
+[ledger] 0x4af540 LocomotionClass::Initialize -> COMPILE_FAIL (attempt 6)
+[ledger] 0x69ec50 LocomotionClass::Process -> COMPILE_FAIL (attempt 6)
+[ledger] 0x74d5d0 VeinholeMonsterClass::ProcessExpansion -> COMPILE_FAIL (attempt 6)
+[ledger] 0x410260 AbstractClass::QueryInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5125a0 HouseTypeClass::QueryInterface -> COMPILE_FAIL (attempt 6)
+[ledger] 0x5980c0 Random::Gaussian -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cc970 MSBinkAnim::Play -> COMPILE_FAIL (attempt 12)
+[ledger] 0x624be0 Dialog::GrowBuffer -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5b4270 HashTree::MarkEntry -> COMPILE_FAIL (attempt 12)
+[ledger] 0x44f640 BuildingClass::GetFactoryPosition -> COMPILE_FAIL (attempt 14)
+[ledger] 0x451330 BuildingClass::GetCrewCount -> COMPILE_FAIL (attempt 12)
+[ledger] 0x486d90 ObjectClass::sub_486D90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4cbba0 FootClass::FindPathWithRetry -> COMPILE_FAIL (attempt 12)
+[ledger] 0x5cd4d0 MSBitPrintAnim::Draw -> COMPILE_FAIL (attempt 14)
+[ledger] 0x4a0a50 EnumConnectionPointsClass::ddtor -> COMPILE_FAIL (attempt 12)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p23\batch_report.json
