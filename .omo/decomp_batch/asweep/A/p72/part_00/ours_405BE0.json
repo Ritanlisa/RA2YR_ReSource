@@ -1,0 +1,15 @@
+{
+ "symbol": "?Init@AudioController@@QAEHXZ",
+ "sym_key": "AudioController::Init",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "33c0c7410c000000008901894104894108c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87E294@@3IA",
+   "sym_key": "DataGlobal_87E294"
+  }
+ ]
+}

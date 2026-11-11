@@ -1,0 +1,11 @@
+{
+ "addr": "0x405BE0",
+ "name": "AudioController::Init",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x405BE0",
+ "bytes_hex": "33c0c7410c94e287008901894104894108c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

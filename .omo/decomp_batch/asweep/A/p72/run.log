@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p72\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d2e6e ObjectClass::sub_7D2E6E -> ObjectClass
+[conv] 0x750030 FootClass::CheckAccelLimit -> FootClass
+[conv] 0x405be0 AudioController::Init -> AudioController
+[conv] 0x406ad0 sub_406AD0 -> _addr_40
+[conv] 0x4073c0 AudioQueue::GetNext -> AudioQueue
+[conv] 0x4073e0 AudioQueue::GetNextAlt -> AudioQueue
+[conv] 0x40af40 sub_40AF40 -> _addr_40
+[conv] 0x40b500 sub_40B500 -> _addr_40
+[conv] 0x40c740 sub_40C740 -> _addr_40
+[conv] 0x40d150 sub_40D150 -> _addr_40
+[conv] 0x40df70 sub_40DF70 -> _addr_40
+[conv] 0x40e730 sub_40E730 -> _addr_40
+[conv] 0x40ede0 sub_40EDE0 -> _addr_40
+[conv] 0x40f450 sub_40F450 -> _addr_40
+[conv] 0x40faf0 sub_40FAF0 -> _addr_40
+[conv] 0x410110 sub_410110 -> _addr_41
+[conv] 0x4107c0 sub_4107C0 -> _addr_41
+[conv] 0x412810 sub_412810 -> _addr_41
+[conv] 0x413c70 sub_413C70 -> _addr_41
+[conv] 0x41d220 sub_41D220 -> _addr_41
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] FootClass                rc=0
+[era] AudioController          rc=0
+[era] _addr_40                 rc=0
+[era] AudioQueue               rc=0
+[era] _addr_41                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x750030   MISMATCH         FootClass::CheckAccelLimit
+[diff] 0x405be0   MISMATCH         AudioController::Init
+[diff] 0x406ad0   MATCH            sub_406AD0
+[diff] 0x40af40   MATCH            sub_40AF40
+[diff] 0x40b500   MATCH            sub_40B500
+[diff] 0x40c740   MATCH            sub_40C740
+[diff] 0x40d150   MATCH            sub_40D150
+[diff] 0x40df70   MATCH            sub_40DF70
+[diff] 0x40e730   MATCH            sub_40E730
+[diff] 0x40ede0   MATCH            sub_40EDE0
+[diff] 0x40f450   MATCH            sub_40F450
+[diff] 0x40faf0   MATCH            sub_40FAF0
+[diff] 0x4073c0   MATCH            AudioQueue::GetNext
+[diff] 0x4073e0   MATCH            AudioQueue::GetNextAlt
+[diff] 0x410110   MATCH            sub_410110
+[diff] 0x4107c0   MATCH            sub_4107C0
+[diff] 0x412810   MATCH            sub_412810
+[diff] 0x413c70   MATCH            sub_413C70
+[diff] 0x41d220   MATCH            sub_41D220
+[ledger] 0x7d2e6e ObjectClass::sub_7D2E6E -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750030 FootClass::CheckAccelLimit -> NG (attempt 1)
+[ledger] 0x405be0 AudioController::Init -> NG (attempt 1)
+[ledger] 0x406ad0 sub_406AD0 -> OK (attempt 1)
+[ledger] 0x4073c0 AudioQueue::GetNext -> OK (attempt 1)
+[ledger] 0x4073e0 AudioQueue::GetNextAlt -> OK (attempt 1)
+[ledger] 0x40af40 sub_40AF40 -> OK (attempt 1)
+[ledger] 0x40b500 sub_40B500 -> OK (attempt 1)
+[ledger] 0x40c740 sub_40C740 -> OK (attempt 1)
+[ledger] 0x40d150 sub_40D150 -> OK (attempt 1)
+[ledger] 0x40df70 sub_40DF70 -> OK (attempt 1)
+[ledger] 0x40e730 sub_40E730 -> OK (attempt 1)
+[ledger] 0x40ede0 sub_40EDE0 -> OK (attempt 1)
+[ledger] 0x40f450 sub_40F450 -> OK (attempt 1)
+[ledger] 0x40faf0 sub_40FAF0 -> OK (attempt 1)
+[ledger] 0x410110 sub_410110 -> OK (attempt 1)
+[ledger] 0x4107c0 sub_4107C0 -> OK (attempt 1)
+[ledger] 0x412810 sub_412810 -> OK (attempt 1)
+[ledger] 0x413c70 sub_413C70 -> OK (attempt 1)
+[ledger] 0x41d220 sub_41D220 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 2,
+  "MATCH": 17
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 89.5,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p72\batch_report.json

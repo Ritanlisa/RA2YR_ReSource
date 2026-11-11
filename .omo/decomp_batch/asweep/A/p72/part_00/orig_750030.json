@@ -1,0 +1,11 @@
+{
+ "addr": "0x750030",
+ "name": "FootClass::CheckAccelLimit",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750030",
+ "bytes_hex": "d901d81db4377e00dfe0f6c401750333c0",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

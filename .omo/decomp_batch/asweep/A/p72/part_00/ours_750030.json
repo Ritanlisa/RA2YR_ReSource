@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckAccelLimit@FootClass@@QAEHXZ",
+ "sym_key": "FootClass::CheckAccelLimit",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "51d901dc1d00000000dfe0f6c401740d684c007500e80000000083c404e8000000008b44240059c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "__real@8@40008000000000000000",
+   "sym_key": "_real@8@40008000000000000000"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?JUMPOUT@@YAHHZZ",
+   "sym_key": "JUMPOUT"
+  },
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?nullsub_52@@YAXXZ",
+   "sym_key": "nullsub_52"
+  }
+ ]
+}
