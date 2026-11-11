@@ -18,3 +18,4 @@
 {"part": 17, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 18, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 19, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
+{"part": 20, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 16, "TWO_FOUR_INSNS": 3, "RET_ARITY": 1}, "by_family_hits": {}}}
