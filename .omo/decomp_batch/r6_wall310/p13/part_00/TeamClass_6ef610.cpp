@@ -5,7 +5,7 @@
 void TeamClass::PlayMemberAnimation(int p0, char p1)
 {
         int v3 = *(unsigned int *)(p0 + 4);
-        char * v4;
+        int v4;
         int v5;
         void * v6;
         void ** v7;
@@ -14,7 +14,7 @@ void TeamClass::PlayMemberAnimation(int p0, char p1)
         unsigned char v11[12];
         if ( p1
         && (unsigned short)v3 < DataGlobal_8B4160
-        && (v4 = (char *)this ->firstUnit, v5 = ((v3 >> 16) & 0xFFFF), v6 = (void *)*((unsigned int *)g_AnimTypeCount + (unsigned short)v3), v4) )
+        && (v4 = this->firstUnit, v5 = ((v3 >> 16) & 0xFFFF), v6 = (void *)*((unsigned int *)g_AnimTypeCount + (unsigned short)v3), v4) )
         {
             do
             {
@@ -28,13 +28,13 @@ void TeamClass::PlayMemberAnimation(int p0, char p1)
                         ((BuildingClass *)(v9))->AimTurret((unsigned char *)v4);
                     }
                 }
-                v4 = (char *)(*(unsigned int *)(v4 + 1496));
+                v4 = *(unsigned int *)(v4 + 1496);
             } while ( v4 );
-            (char *)this ->stepCompleted = 1;
+            this->stepCompleted = 1;
         }
         else
         {
-            (char *)this ->stepCompleted = 1;
+            this->stepCompleted = 1;
         }
 }
 
