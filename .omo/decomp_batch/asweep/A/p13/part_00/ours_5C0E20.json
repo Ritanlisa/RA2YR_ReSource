@@ -1,0 +1,8 @@
+{
+ "symbol": "?initUnits@MultiplayerBattle@@QAEDXZ",
+ "sym_key": "MultiplayerBattle::initUnits",
+ "size": 3,
+ "link_base": 0,
+ "bytes_hex": "b001c3",
+ "relocs": []
+}

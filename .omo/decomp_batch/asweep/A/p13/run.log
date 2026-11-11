@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p13\part_00
+=== convert (20 addrs) ===
+[conv] 0x55ace0 LocomotionClass::Stub16 -> LocomotionClass
+[conv] 0x5ae570 nullsub_170 -> _addr_5A
+[conv] 0x5ae580 nullsub_171 -> _addr_5A
+[conv] 0x5ae590 MSEngine::StubReturnFalse -> MSEngine
+[conv] 0x5b3a50 ObjectClass::StubReturnFalse -> ObjectClass
+[conv] 0x5c0e20 MultiplayerBattle::initUnits -> MultiplayerBattle
+[conv] 0x5c0e30 MultiplayerGameMode::StubReturnFalse -> MultiplayerGameMode
+[conv] 0x5c0e80 MultiplayerGameMode::StubReturnFalse4 -> MultiplayerGameMode
+[conv] 0x5c0ee0 MultiplayerGameMode::initTriggers -> MultiplayerGameMode
+[conv] 0x5c0ef0 MultiplayerGameMode::StubReturnFalse6 -> MultiplayerGameMode
+[conv] 0x5c0f00 MultiplayerGameMode::StubReturnFalse7 -> MultiplayerGameMode
+[conv] 0x5c0f50 MultiplayerGameMode::StubReturnFalse8 -> MultiplayerGameMode
+[conv] 0x5c0f60 MultiplayerGameMode::StubReturnFalse9 -> MultiplayerGameMode
+[conv] 0x5c0fc0 MultiplayerGameMode::StubReturnFalse11 -> MultiplayerGameMode
+[conv] 0x5c0fd0 MultiplayerGameMode::initWaypoints -> MultiplayerGameMode
+[conv] 0x5c3700 MPCooperative::StubReturnFalse -> MPCooperative
+[conv] 0x5c4ee0 MPCooperative::assignResources -> MPCooperative
+[conv] 0x5c4ef0 MPCooperative::setUpAlliances -> MPCooperative
+[conv] 0x5c4f00 MPCooperative::initTurnOrder -> MPCooperative
+[conv] 0x5c5e30 FreeForAll::processTriggerEvents -> FreeForAll
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LocomotionClass          rc=0
+[era] _addr_5A                 rc=0
+[era] MSEngine                 rc=0
+[era] ObjectClass              rc=0
+[era] MultiplayerBattle        rc=0
+[era] MultiplayerGameMode      rc=0
+[era] MPCooperative            rc=0
+[era] FreeForAll               rc=0
+=== diffasm byte-compare ===
+[diff] 0x55ace0   MATCH            LocomotionClass::Stub16
+[diff] 0x5ae570   MISMATCH         nullsub_170
+[diff] 0x5ae580   MISMATCH         nullsub_171
+[diff] 0x5ae590   MISMATCH         MSEngine::StubReturnFalse
+[diff] 0x5b3a50   MISMATCH         ObjectClass::StubReturnFalse
+[diff] 0x5c0e20   MATCH            MultiplayerBattle::initUnits
+[diff] 0x5c0e30   MATCH            MultiplayerGameMode::StubReturnFalse
+[diff] 0x5c0e80   MATCH            MultiplayerGameMode::StubReturnFalse4
+[diff] 0x5c0ee0   MATCH            MultiplayerGameMode::initTriggers
+[diff] 0x5c0ef0   MATCH            MultiplayerGameMode::StubReturnFalse6
+[diff] 0x5c0f00   MATCH            MultiplayerGameMode::StubReturnFalse7
+[diff] 0x5c0f50   MATCH            MultiplayerGameMode::StubReturnFalse8
+[diff] 0x5c0f60   MATCH            MultiplayerGameMode::StubReturnFalse9
+[diff] 0x5c0fc0   MATCH            MultiplayerGameMode::StubReturnFalse11
+[diff] 0x5c0fd0   MATCH            MultiplayerGameMode::initWaypoints
+[diff] 0x5c3700   MATCH            MPCooperative::StubReturnFalse
+[diff] 0x5c4ee0   MATCH            MPCooperative::assignResources
+[diff] 0x5c4ef0   MATCH            MPCooperative::setUpAlliances
+[diff] 0x5c4f00   MATCH            MPCooperative::initTurnOrder
+[diff] 0x5c5e30   MATCH            FreeForAll::processTriggerEvents
+[ledger] 0x55ace0 LocomotionClass::Stub16 -> OK (attempt 1)
+[ledger] 0x5ae570 nullsub_170 -> NG (attempt 1)
+[ledger] 0x5ae580 nullsub_171 -> NG (attempt 1)
+[ledger] 0x5ae590 MSEngine::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x5b3a50 ObjectClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x5c0e20 MultiplayerBattle::initUnits -> OK (attempt 1)
+[ledger] 0x5c0e30 MultiplayerGameMode::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x5c0e80 MultiplayerGameMode::StubReturnFalse4 -> OK (attempt 1)
+[ledger] 0x5c0ee0 MultiplayerGameMode::initTriggers -> OK (attempt 1)
+[ledger] 0x5c0ef0 MultiplayerGameMode::StubReturnFalse6 -> OK (attempt 1)
+[ledger] 0x5c0f00 MultiplayerGameMode::StubReturnFalse7 -> OK (attempt 1)
+[ledger] 0x5c0f50 MultiplayerGameMode::StubReturnFalse8 -> OK (attempt 1)
+[ledger] 0x5c0f60 MultiplayerGameMode::StubReturnFalse9 -> OK (attempt 1)
+[ledger] 0x5c0fc0 MultiplayerGameMode::StubReturnFalse11 -> OK (attempt 1)
+[ledger] 0x5c0fd0 MultiplayerGameMode::initWaypoints -> OK (attempt 1)
+[ledger] 0x5c3700 MPCooperative::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x5c4ee0 MPCooperative::assignResources -> OK (attempt 1)
+[ledger] 0x5c4ef0 MPCooperative::setUpAlliances -> OK (attempt 1)
+[ledger] 0x5c4f00 MPCooperative::initTurnOrder -> OK (attempt 1)
+[ledger] 0x5c5e30 FreeForAll::processTriggerEvents -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 3,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 80.0,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p13\batch_report.json

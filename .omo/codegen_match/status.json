@@ -12263,6 +12263,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x55ace0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "LocomotionClass::Stub16",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::Stub16",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x55acf0": {
   "attempts": 8,
   "clean": true,
@@ -13172,6 +13184,40 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5ae570": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 ret 4",
+  "name": "nullsub_170",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "nullsub_170",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ae580": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 ret 4",
+  "name": "nullsub_171",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "nullsub_171",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ae590": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 4",
+  "name": "MSEngine::StubReturnFalse",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "MSEngine_Destru::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5afd10": {
   "attempts": 2,
   "first_diff": "+6 fdiv qword ptr [0x7edb58]",
@@ -13512,6 +13558,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5b3a50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 ret 8",
+  "name": "ObjectClass::StubReturnFalse",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "IPersistStream::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5b3b10": {
   "attempts": 2,
   "first_diff": null,
@@ -13802,6 +13860,30 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x5c0e20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerBattle::initUnits",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::initUnits",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0e30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c0e40": {
   "attempts": 1,
   "clean": true,
@@ -13850,6 +13932,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5c0e80": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse4",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse4",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c0ed0": {
   "attempts": 8,
   "clean": true,
@@ -13858,6 +13952,42 @@
   "name": "MultiplayerGameMode::StubReturnFalse5",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "ScenarioClass::StubReturnFalse5",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0ee0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::initTriggers",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::initTriggers",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0ef0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse6",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse6",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0f00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse7",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse7",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -13910,6 +14040,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5c0f50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse8",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse8",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0f60": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse9",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse9",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c0f70": {
   "attempts": 1,
   "first_diff": null,
@@ -13937,6 +14091,30 @@
   "name": "MultiplayerGameMode::StubReturnTrue7",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "ScenarioClass::StubReturnTrue7",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0fc0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::StubReturnFalse11",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::StubReturnFalse11",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0fd0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MultiplayerGameMode::initWaypoints",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::initWaypoints",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -14018,6 +14196,54 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c3700": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPCooperative::StubReturnFalse",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPCooperative::StubReturnFalse",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c4ee0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPCooperative::assignResources",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPCooperative::assignResources",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c4ef0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPCooperative::setUpAlliances",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPCooperative::setUpAlliances",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c4f00": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPCooperative::initTurnOrder",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPCooperative::initTurnOrder",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5c5070": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -14047,6 +14273,18 @@
   "name": "FreeForAll::AssignPlayerIndex_0",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "PlayerClass::AssignPlayerIndex_0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c5e30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FreeForAll::processTriggerEvents",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "ScenarioClass::processTriggerEvents",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
