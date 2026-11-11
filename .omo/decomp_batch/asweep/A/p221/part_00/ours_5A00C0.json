@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetTileDataField14@MapClass@@QAGHPAF@Z",
+ "sym_key": "MapClass::GetTileDataField14",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b150000000085d274218b4c24080fbf41020faf05000000000fbf0903c18d0480c1e0048b441038c2080083c8ffc20800",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  }
+ ]
+}

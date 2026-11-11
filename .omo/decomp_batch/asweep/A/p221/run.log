@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p221\part_00
+=== convert (20 addrs) ===
+[conv] 0x50bcd0 HouseClass::CreateRadarOutage -> HouseClass
+[conv] 0x50fac0 _VectorClass__N::GetSize -> _VectorClass__N
+[conv] 0x510820 HouseClass::processAIEvents -> HouseClass
+[conv] 0x53dda0 Explosion::RemoveItem -> Explosion
+[conv] 0x5a00c0 MapClass::GetTileDataField14 -> MapClass
+[conv] 0x5ad790 Vector4::EraseAt -> Vector4
+[conv] 0x5e23d0 ObjectClass::Network_Check -> ObjectClass
+[conv] 0x5f5b50 ObjectClass::SetReference -> ObjectClass
+[conv] 0x6107a0 sub_6107A0 -> _addr_61
+[conv] 0x63e590 Array::RemoveAt -> Array
+[conv] 0x63ef70 Vector4::EraseAt_Copy -> Vector4
+[conv] 0x63f000 FactoryClass::RemoveItem -> FactoryClass
+[conv] 0x652560 ObjectClass::Network_Process_652560 -> ObjectClass
+[conv] 0x65ca80 BufferIOFileClass::Construct -> BufferIOFileClass
+[conv] 0x67c360 DynamicVector::RemoveAt -> DynamicVector
+[conv] 0x67c3f0 DynamicVector::RemoveAt2 -> DynamicVector
+[conv] 0x69f040 JumpjetLocomotionClass::StubReturnZero_13 -> JumpjetLocomotionClass
+[conv] 0x6ce320 SuperClass::RemoveFromPointerArray -> SuperClass
+[conv] 0x70d190 TechnoClass::GetRangeModifier -> TechnoClass
+[conv] 0x717db0 TechnoTypeClass::RemoveItem -> TechnoTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] _VectorClass__N          rc=0
+[era] Explosion                rc=0
+[era] MapClass                 rc=0
+[era] Vector4                  rc=0
+[era] ObjectClass              rc=0
+[era] _addr_61                 rc=0
+[era] Array                    rc=0
+[era] FactoryClass             rc=2
+[era] BufferIOFileClass        rc=2
+[era] DynamicVector            rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] SuperClass               rc=0
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=2
+=== diffasm byte-compare ===
+[diff] 0x50fac0   MISMATCH         _VectorClass__N::GetSize
+[diff] 0x53dda0   MISMATCH         Explosion::RemoveItem
+[diff] 0x5a00c0   MISMATCH         MapClass::GetTileDataField14
+[diff] 0x5ad790   MISMATCH         Vector4::EraseAt
+[diff] 0x63ef70   MISMATCH         Vector4::EraseAt_Copy
+[diff] 0x5e23d0   MISMATCH         ObjectClass::Network_Check
+[diff] 0x5f5b50   MISMATCH         ObjectClass::SetReference
+[diff] 0x652560   MISMATCH         ObjectClass::Network_Process_652560
+[diff] 0x6107a0   MISMATCH         sub_6107A0
+[diff] 0x63e590   MISMATCH         Array::RemoveAt
+[diff] 0x67c360   MISMATCH         DynamicVector::RemoveAt
+[diff] 0x67c3f0   MISMATCH         DynamicVector::RemoveAt2
+[diff] 0x6ce320   MISMATCH         SuperClass::RemoveFromPointerArray
+[diff] 0x70d190   MISMATCH         TechnoClass::GetRangeModifier
+[ledger] 0x50bcd0 HouseClass::CreateRadarOutage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50fac0 _VectorClass__N::GetSize -> NG (attempt 1)
+[ledger] 0x510820 HouseClass::processAIEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53dda0 Explosion::RemoveItem -> NG (attempt 1)
+[ledger] 0x5a00c0 MapClass::GetTileDataField14 -> NG (attempt 1)
+[ledger] 0x5ad790 Vector4::EraseAt -> NG (attempt 1)
+[ledger] 0x5e23d0 ObjectClass::Network_Check -> NG (attempt 1)
+[ledger] 0x5f5b50 ObjectClass::SetReference -> NG (attempt 1)
+[ledger] 0x6107a0 sub_6107A0 -> NG (attempt 1)
+[ledger] 0x63e590 Array::RemoveAt -> NG (attempt 1)
+[ledger] 0x63ef70 Vector4::EraseAt_Copy -> NG (attempt 1)
+[ledger] 0x63f000 FactoryClass::RemoveItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x652560 ObjectClass::Network_Process_652560 -> NG (attempt 1)
+[ledger] 0x65ca80 BufferIOFileClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67c360 DynamicVector::RemoveAt -> NG (attempt 1)
+[ledger] 0x67c3f0 DynamicVector::RemoveAt2 -> NG (attempt 1)
+[ledger] 0x69f040 JumpjetLocomotionClass::StubReturnZero_13 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ce320 SuperClass::RemoveFromPointerArray -> NG (attempt 1)
+[ledger] 0x70d190 TechnoClass::GetRangeModifier -> NG (attempt 1)
+[ledger] 0x717db0 TechnoTypeClass::RemoveItem -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 14
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_order": 11,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p221\batch_report.json

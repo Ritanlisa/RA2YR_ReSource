@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetRangeModifier@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::GetRangeModifier",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b81f000000083e0023c02751d8b4c240433c081f9dc0500000f9fc04825dc05000005f4010000c204008b442404c20400",
+ "relocs": []
+}

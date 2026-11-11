@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5B50",
+ "name": "ObjectClass::SetReference",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5B50",
+ "bytes_hex": "8b413485c0740e8b502c4a89502cc74134000000008b44240485c0740f8941348b482c4189482cb001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x70D190",
+ "name": "TechnoClass::GetRangeModifier",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70D190",
+ "bytes_hex": "8b81f000000083e0023c02751d8b4c240433c081f9dc0500000f9ec0482524faffff05d0070000c204008b442404c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

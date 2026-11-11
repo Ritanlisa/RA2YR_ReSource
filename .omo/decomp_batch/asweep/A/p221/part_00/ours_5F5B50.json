@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetReference@ObjectClass@@QAEDH@Z",
+ "sym_key": "ObjectClass::SetReference",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8b413485c0740e8b502c4a89502cc74134000000008b44240485c0750532c0c204008941348b482c4189482cb001c20400",
+ "relocs": []
+}

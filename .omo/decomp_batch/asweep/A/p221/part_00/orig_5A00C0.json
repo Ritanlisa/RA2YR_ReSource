@@ -1,0 +1,11 @@
+{
+ "addr": "0x5A00C0",
+ "name": "MapClass::GetTileDataField14",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5A00C0",
+ "bytes_hex": "8b1510edab0085d2750683c8ffc204008b4c24040fbf41020faf05dcc289000fbf0903c18d0480c1e0048b441038c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

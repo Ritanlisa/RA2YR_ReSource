@@ -1,0 +1,8 @@
+{
+ "symbol": "?RemoveFromPointerArray@SuperClass@@QAEDH@Z",
+ "sym_key": "SuperClass::RemoveFromPointerArray",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b51108b4424043bc27c0532c0c204004a3bc28951107d16568b5104408b34828d14828972fc8b51103bc27cec5eb001c20400",
+ "relocs": []
+}
