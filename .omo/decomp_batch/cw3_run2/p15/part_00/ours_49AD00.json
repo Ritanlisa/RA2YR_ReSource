@@ -1,0 +1,21 @@
+{
+ "symbol": "?QueryInterface@_RLEBlitTransLucent25AlphaZReadWarp_G@@QAEPAID@Z",
+ "sym_key": "_RLEBlitTransLucent25AlphaZReadWarp_G::QueryInterface",
+ "size": 57,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4608c7060000000050e8000000008a44240c83c404a801c7460800000000c70600000000740956e80000000083c4048b065ec20400",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "REL32",
+   "sym": "?FractalNoise__Dtor@@YAHPAX@Z",
+   "sym_key": "FractalNoise__Dtor"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

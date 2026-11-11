@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x40d400 sub_40D400 -> _addr_40
+[conv] 0x49a4e0 _BlitTransLucent50AlphaZRead_G::Blit -> _BlitTransLucent50AlphaZRead_G
+[conv] 0x49aa40 _RLEBlitTransZRemapXlatAlpha_G::QueryInterface -> _RLEBlitTransZRemapXlatAlpha_G
+[conv] 0x49ad00 _RLEBlitTransLucent25AlphaZReadWarp_G::QueryInterface -> _RLEBlitTransLucent25AlphaZReadWarp_G
+[conv] 0x4a6cb0 sub_4A6CB0 -> _addr_4A
+[conv] 0x4e6820 sub_4E6820 -> _addr_4E
+[conv] 0x4e6da0 sub_4E6DA0 -> _addr_4E
+[conv] 0x4e7320 sub_4E7320 -> _addr_4E
+[conv] 0x4e78a0 sub_4E78A0 -> _addr_4E
+[conv] 0x4e7f70 sub_4E7F70 -> _addr_4E
+[conv] 0x5d8270 AbstractClass::applyRevealToCell -> AbstractClass
+[conv] 0x6590d0 sub_6590D0 -> _addr_65
+[conv] 0x6e5b20 sub_6E5B20 -> _addr_6E
+[conv] 0x725710 sub_725710 -> _addr_72
+[conv] 0x40d3c0 sub_40D3C0 -> _addr_40
+[conv] 0x4662e0 sub_4662E0 -> _addr_46
+[conv] 0x4e6560 sub_4E6560 -> _addr_4E
+[conv] 0x4e6ae0 sub_4E6AE0 -> _addr_4E
+[conv] 0x4e7060 sub_4E7060 -> _addr_4E
+[conv] 0x4e7660 sub_4E7660 -> _addr_4E
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=2
+[era] _BlitTransLucent50AlphaZRead_G rc=0
+[era] _RLEBlitTransZRemapXlatAlpha_G rc=0
+[era] _RLEBlitTransLucent25AlphaZReadWarp_G rc=0
+[era] _addr_4A                 rc=2
+[era] _addr_4E                 rc=2
+[era] AbstractClass            rc=2
+[era] _addr_65                 rc=2
+[era] _addr_6E                 rc=2
+[era] _addr_72                 rc=2
+[era] _addr_46                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x49a4e0   MISMATCH         _BlitTransLucent50AlphaZRead_G::Blit
+[diff] 0x49aa40   MISMATCH         _RLEBlitTransZRemapXlatAlpha_G::QueryInterface
+[diff] 0x49ad00   MISMATCH         _RLEBlitTransLucent25AlphaZReadWarp_G::QueryInterface
+[diff] 0x4e6da0   MISMATCH         sub_4E6DA0
+[diff] 0x4e78a0   MISMATCH         sub_4E78A0
+[ledger] 0x40d400 sub_40D400 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x49a4e0 _BlitTransLucent50AlphaZRead_G::Blit -> NG (attempt 3)
+[ledger] 0x49aa40 _RLEBlitTransZRemapXlatAlpha_G::QueryInterface -> NG (attempt 3)
+[ledger] 0x49ad00 _RLEBlitTransLucent25AlphaZReadWarp_G::QueryInterface -> NG (attempt 3)
+[ledger] 0x4a6cb0 sub_4A6CB0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e6820 sub_4E6820 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e6da0 sub_4E6DA0 -> NG (attempt 4)
+[ledger] 0x4e7320 sub_4E7320 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e78a0 sub_4E78A0 -> NG (attempt 4)
+[ledger] 0x4e7f70 sub_4E7F70 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x5d8270 AbstractClass::applyRevealToCell -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6590d0 sub_6590D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6e5b20 sub_6E5B20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x725710 sub_725710 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x40d3c0 sub_40D3C0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4662e0 sub_4662E0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e6560 sub_4E6560 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e6ae0 sub_4E6AE0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e7060 sub_4E7060 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4e7660 sub_4E7660 -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p15\batch_report.json

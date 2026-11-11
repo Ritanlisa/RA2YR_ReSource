@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x40d400",
+  "name": "sub_40D400",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'MixFileClass_Array_Alt' : undeclared identifier"
+ },
+ {
+  "addr": "0x49a4e0",
+  "name": "BlitTransLucent50AlphaZRead_ushort::Blit",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_BlitTransLucent50AlphaZRead_G'"
+ },
+ {
+  "addr": "0x49aa40",
+  "name": "RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_RLEBlitTransZRemapXlatAlpha_G'"
+ },
+ {
+  "addr": "0x49ad00",
+  "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_RLEBlitTransLucent25AlphaZReadWarp_G'"
+ },
+ {
+  "addr": "0x4a6cb0",
+  "name": "sub_4A6CB0",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e6820",
+  "name": "sub_4E6820",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e6da0",
+  "name": "sub_4E6DA0",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e7320",
+  "name": "sub_4E7320",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e78a0",
+  "name": "sub_4E78A0",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e7f70",
+  "name": "sub_4E7F70",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x5d8270",
+  "name": "AbstractClass::applyRevealToCell",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x6590d0",
+  "name": "sub_6590D0",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x6e5b20",
+  "name": "sub_6E5B20",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x725710",
+  "name": "sub_725710",
+  "cls": null,
+  "size": 59,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x40d3c0",
+  "name": "sub_40D3C0",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'MixFileClass_Array_Alt' : undeclared identifier"
+ },
+ {
+  "addr": "0x4662e0",
+  "name": "sub_4662E0",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'atexit' : none of the 2 overloads can convert parameter 1 from type 'int (__cdecl *)(const void *,const vo"
+ },
+ {
+  "addr": "0x4e6560",
+  "name": "sub_4E6560",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e6ae0",
+  "name": "sub_4E6AE0",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e7060",
+  "name": "sub_4E7060",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4e7660",
+  "name": "sub_4E7660",
+  "cls": null,
+  "size": 61,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ }
+]
