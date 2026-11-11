@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x71a210 sub_71A210 -> _addr_71
+[conv] 0x71a3d0 sub_71A3D0 -> _addr_71
+[conv] 0x71d420 sub_71D420 -> _addr_71
+[conv] 0x71e520 sub_71E520 -> _addr_71
+[conv] 0x71e5e0 sub_71E5E0 -> _addr_71
+[conv] 0x71e600 sub_71E600 -> _addr_71
+[conv] 0x721460 sub_721460 -> _addr_72
+[conv] 0x7214e0 sub_7214E0 -> _addr_72
+[conv] 0x721570 sub_721570 -> _addr_72
+[conv] 0x7236d0 nullsub_158 -> _addr_72
+[conv] 0x723b60 sub_723B60 -> _addr_72
+[conv] 0x723c40 sub_723C40 -> _addr_72
+[conv] 0x7256d0 sub_7256D0 -> _addr_72
+[conv] 0x725710 sub_725710 -> _addr_72
+[conv] 0x725e40 sub_725E40 -> _addr_72
+[conv] 0x725f00 sub_725F00 -> _addr_72
+[conv] 0x725f30 sub_725F30 -> _addr_72
+[conv] 0x7271d0 sub_7271D0 -> _addr_72
+[conv] 0x727df0 sub_727DF0 -> _addr_72
+[conv] 0x727fb0 sub_727FB0 -> _addr_72
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=2
+[era] _addr_72                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x71a210   MISMATCH         sub_71A210
+[diff] 0x71d420   MISMATCH         sub_71D420
+[diff] 0x71e520   MISMATCH         sub_71E520
+[diff] 0x71e5e0   MISMATCH         sub_71E5E0
+[diff] 0x71e600   MATCH            sub_71E600
+[diff] 0x7214e0   MISMATCH         sub_7214E0
+[diff] 0x723c40   MATCH            sub_723C40
+[diff] 0x725e40   MISMATCH         sub_725E40
+[diff] 0x725f30   MATCH            sub_725F30
+[diff] 0x727df0   MISMATCH         sub_727DF0
+[diff] 0x727fb0   MATCH            sub_727FB0
+[ledger] 0x71a210 sub_71A210 -> NG (attempt 2)
+[ledger] 0x71a3d0 sub_71A3D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x71d420 sub_71D420 -> NG (attempt 2)
+[ledger] 0x71e520 sub_71E520 -> NG (attempt 2)
+[ledger] 0x71e5e0 sub_71E5E0 -> NG (attempt 2)
+[ledger] 0x71e600 sub_71E600 -> OK (attempt 2)
+[ledger] 0x721460 sub_721460 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7214e0 sub_7214E0 -> NG (attempt 2)
+[ledger] 0x721570 sub_721570 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7236d0 nullsub_158 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x723b60 sub_723B60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x723c40 sub_723C40 -> OK (attempt 2)
+[ledger] 0x7256d0 sub_7256D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x725710 sub_725710 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x725e40 sub_725E40 -> NG (attempt 2)
+[ledger] 0x725f00 sub_725F00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x725f30 sub_725F30 -> OK (attempt 2)
+[ledger] 0x7271d0 sub_7271D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x727df0 sub_727DF0 -> NG (attempt 2)
+[ledger] 0x727fb0 sub_727FB0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 9,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "extern_reloc": 6,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 36.4,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p19\batch_report.json
