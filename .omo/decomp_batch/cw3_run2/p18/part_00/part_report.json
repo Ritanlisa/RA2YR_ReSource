@@ -1,0 +1,452 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "const_fold": 17,
+   "regalloc": 2
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x510310",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ea9e4",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_BuildingType::Constructor_0",
+   "emitted": "_VectorClass_PBVTeamTypeClass::Constructor_0",
+   "unit": "_VectorClass_PBVTeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5135c0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7eac68",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "TypeList_Infantry::Constructor_1",
+   "emitted": "_DynamicVectorClass_PBVAircraftTypeClass::Constructor_1",
+   "unit": "_DynamicVectorClass_PBVAircraftTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x54a760",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ecd0c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "IsometricTileTypeClass::Constructor",
+   "emitted": "_DynamicVectorClass_PAG::Constructor",
+   "unit": "_DynamicVectorClass_PAG",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x557170",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed0ec",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_ptr_LineTrail::QueryInterface",
+   "emitted": "_VectorClass_PAVLineTrail::QueryInterface",
+   "unit": "_VectorClass_PAVLineTrail",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x58aae0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ed560",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_W4PassabilityType::Constructor_1",
+   "emitted": "_DynamicVectorClass_W4PassabilityType::Constructor_1",
+   "unit": "_DynamicVectorClass_W4PassabilityType",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5ad610",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7eda4c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_N::Constructor_VectorClass_double_",
+   "emitted": "_DynamicVectorClass_N::Constructor_VectorClass_double_",
+   "unit": "_DynamicVectorClass_N",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5d1710",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7eeb74",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "MSPCXAnim_42::Constructor_VectorClass_Point2D_",
+   "emitted": "_DynamicVectorClass_VPoint2D::Constructor_VectorClass_Point2D_",
+   "unit": "_DynamicVectorClass_VPoint2D",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5d2ca0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7eec24",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "CampaignProperties_WorldDominationTour_22::QueryInterface",
+   "emitted": "_VectorClass_PAVMSAnim::QueryInterface",
+   "unit": "_VectorClass_PAVMSAnim",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x5d8900",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7eed40",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "MultiplayerModeVector2::Destruct",
+   "emitted": "_DynamicVectorClass_PAVMultiplayerGameMode::Destruct",
+   "unit": "_DynamicVectorClass_PAVMultiplayerGameMode",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "7/9",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x6287b0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7ef7f0",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2",
+   "emitted": "_DynamicVectorClass_VHSVClass::Destructor_2",
+   "unit": "_DynamicVectorClass_VHSVClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x63ee80",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7efe24",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "BlowPipe_23::Destructor_0",
+   "emitted": "_DynamicVectorClass_PAVEventClass::Destructor_0",
+   "unit": "_DynamicVectorClass_PAVEventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x664ac0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7f0c4c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "RocketLocomotionClass_17::QueryInterface",
+   "emitted": "_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass::QueryInterface",
+   "unit": "_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x67c0b0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7f0d7c",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "SmudgeTypeVector::QueryInterface",
+   "emitted": "_VectorClass_PBVSmudgeTypeClass::QueryInterface",
+   "unit": "_VectorClass_PBVSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x6b1930",
+   "batch": "cw3_C",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p18\\part_00\\VectorClass_6b1930.cpp(7) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\cw3_run2\\p18\\part_00\\VectorClass_6b1930.cpp(8",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AbstractClass::checkAIResources",
+   "emitted": "VectorClass::checkAIResources",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/1",
+   "rule_violations": 0,
+   "clean": false
+  },
+  {
+   "addr": "0x6c64d0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7f3748",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_K::Constructor",
+   "emitted": "_DynamicVectorClass_K::Constructor",
+   "unit": "_DynamicVectorClass_K",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x717b70",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 73B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7e4424",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "TypeList_cptr_ParticleSystemTypeClass::QueryInterface",
+   "emitted": "_TypeList_PBVParticleSystemTypeClass::QueryInterface",
+   "unit": "_TypeList_PBVParticleSystemTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/6",
+   "rule_violations": 1,
+   "orig_size": 73,
+   "ours_size": 73,
+   "clean": false
+  },
+  {
+   "addr": "0x74bfa0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7f65f4",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "VectorClass_E::QueryInterface",
+   "emitted": "_VectorClass_E::QueryInterface",
+   "unit": "_VectorClass_E",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x76a720",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 73B ours 79B",
+   "first_diff": {
+    "orig": "+6 mov dword ptr [esi], 0x7f71a4",
+    "ours": "+6 mov dword ptr [esi], 0"
+   },
+   "pathology": "const_fold",
+   "name": "MSFrameAnim::setScale",
+   "emitted": "_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour::setScale",
+   "unit": "_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/8",
+   "rule_violations": 0,
+   "orig_size": 73,
+   "ours_size": 79,
+   "clean": false
+  },
+  {
+   "addr": "0x477be0",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 74B ours 70B",
+   "first_diff": {
+    "orig": "+24 mov dword ptr [esi], 0x7e4db8",
+    "ours": "+24 mov dword ptr [esi], edx"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass::Construct",
+   "emitted": "VectorClass::Construct",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 2,
+   "orig_size": 74,
+   "ours_size": 70,
+   "clean": false
+  },
+  {
+   "addr": "0x4f2c00",
+   "batch": "cw3_C",
+   "verdict": "MISMATCH",
+   "note": "orig 74B ours 70B",
+   "first_diff": {
+    "orig": "+24 mov dword ptr [esi], 0x7ea624",
+    "ours": "+24 mov dword ptr [esi], edx"
+   },
+   "pathology": "regalloc",
+   "name": "sub_4F2C00",
+   "emitted": "VectorClass::sub_4F2C00",
+   "unit": "VectorClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "6/6",
+   "rule_violations": 2,
+   "orig_size": 74,
+   "ours_size": 70,
+   "clean": false
+  }
+ ]
+}

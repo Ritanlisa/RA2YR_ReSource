@@ -1,0 +1,11 @@
+{
+ "addr": "0x54A760",
+ "name": "IsometricTileTypeClass::Constructor",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54A760",
+ "bytes_hex": "568bf18b4604c7060ccd7e0085c074178a4e0d84c9741050e8c0e3270083c404c74604000000008a442408c6460d00a801c7460800000000740956e89de3270083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
