@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6c8e50",
+  "name": "sub_6C8E50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p169",
+  "unit": "_addr_6C",
+  "emitted": "sub_6C8E50",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0bf50], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6c95c0",
+  "name": "sub_6C95C0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p169",
+  "unit": "_addr_6C",
+  "emitted": "sub_6C95C0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0bfc0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6cade0",
+  "name": "sub_6CADE0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p169",
+  "unit": "_addr_6C",
+  "emitted": "sub_6CADE0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0c078], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6cfb80",
+  "name": "sub_6CFB80",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p169",
+  "unit": "_addr_6C",
+  "emitted": "sub_6CFB80",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0cd20], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6d1a00",
+  "name": "sub_6D1A00",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p169",
+  "unit": "_addr_6D",
+  "emitted": "sub_6D1A00",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0ceb0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6cde80",
+  "name": "nullsub_235",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p16",
+  "unit": "_addr_6C",
+  "emitted": "nullsub_235",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x6d2b50",
+  "name": "nullsub_238",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p16",
+  "unit": "_addr_6D",
+  "emitted": "nullsub_238",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret "
+  },
+  "ours_size": 1
+ },
+ {
+  "addr": "0x6f60c0",
+  "name": "TechnoClass::vt_entry_448",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p16",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::vt_entry_448",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x709a20",
+  "name": "TechnoClass::COMStub_Return0_287",
+  "family": "RET_VOID_STUB",
+  "path": "codegen_shape",
+  "size": 3,
+  "part": "p16",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::COMStub_Return0_287",
+  "first_diff": {
+   "orig": "+0 ret 4",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x709a30",
+  "name": "IPersistStream::Stub",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 3,
+  "part": "p16",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::Stub",
+  "first_diff": {
+   "orig": "+0 ret 8",
+   "ours": "+0 ret 4"
+  },
+  "ours_size": 3
+ },
+ {
+  "addr": "0x6dcf40",
+  "name": "sub_6DCF40",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6D",
+  "emitted": "sub_6DCF40",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e6d0], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6e4d20",
+  "name": "sub_6E4D20",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E4D20",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e768], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6e5aa0",
+  "name": "sub_6E5AA0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E5AA0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e800], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6e6a10",
+  "name": "sub_6E6A10",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E6A10",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e898], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6e7e40",
+  "name": "sub_6E7E40",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E7E40",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e918], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6e8a50",
+  "name": "sub_6E8A50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6E",
+  "emitted": "sub_6E8A50",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0e998], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6f0640",
+  "name": "sub_6F0640",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_6F",
+  "emitted": "sub_6F0640",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0ea18], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x70c5f0",
+  "name": "ObjectClass::IsNotShrouded",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 26,
+  "part": "p170",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::IsNotShrouded",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0x270]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0x270]"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x710ab0",
+  "name": "sub_710AB0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p170",
+  "unit": "_addr_71",
+  "emitted": "sub_710AB0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb0eba8], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x711e90",
+  "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+  "family": "WIDTH",
+  "path": "branch_polarity",
+  "size": 26,
+  "part": "p170",
+  "unit": "TechnoTypeClass",
+  "emitted": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+  "first_diff": {
+   "orig": "+8 je 0x711ea7",
+   "ours": "+8 je 0x1a"
+  },
+  "ours_size": 29
+ }
+]

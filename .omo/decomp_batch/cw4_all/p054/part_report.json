@@ -1,0 +1,440 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 18,
+   "NO_HIT": 2
+  },
+  "by_family_total": {
+   "RELOC_KEY": 13,
+   "RET_ARITY": 3,
+   "RET_VOID_STUB": 2,
+   "STRUCTURAL": 1,
+   "WIDTH": 1
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x6c8e50",
+   "name": "sub_6C8E50",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6C8E50",
+   "unit": "_addr_6C",
+   "head": "int __cdecl sub_6C8E50()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bf50], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6c95c0",
+   "name": "sub_6C95C0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6C95C0",
+   "unit": "_addr_6C",
+   "head": "int __cdecl sub_6C95C0()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bfc0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6cade0",
+   "name": "sub_6CADE0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6CADE0",
+   "unit": "_addr_6C",
+   "head": "int __cdecl sub_6CADE0()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0c078], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6cfb80",
+   "name": "sub_6CFB80",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6CFB80",
+   "unit": "_addr_6C",
+   "head": "int __cdecl sub_6CFB80()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0cd20], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6d1a00",
+   "name": "sub_6D1A00",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6D1A00",
+   "unit": "_addr_6D",
+   "head": "int __cdecl sub_6D1A00()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0ceb0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6cde80",
+   "name": "nullsub_235",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "nullsub_235",
+   "unit": "_addr_6C",
+   "head": "void __cdecl nullsub_235(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 ret 8",
+    "ours": "+0 ret "
+   }
+  },
+  {
+   "addr": "0x6d2b50",
+   "name": "nullsub_238",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "nullsub_238",
+   "unit": "_addr_6D",
+   "head": "void __cdecl nullsub_238(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 ret 8",
+    "ours": "+0 ret "
+   }
+  },
+  {
+   "addr": "0x6f60c0",
+   "name": "TechnoClass::vt_entry_448",
+   "family": "RET_VOID_STUB",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "vt_entry_448",
+   "unit": "TechnoClass",
+   "head": "int __stdcall TechnoClass::vt_entry_448(int p0)",
+   "baseline_first_diff": {
+    "orig": "+0 ret 8",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x709a20",
+   "name": "TechnoClass::COMStub_Return0_287",
+   "family": "RET_VOID_STUB",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "COMStub_Return0_287",
+   "unit": "TechnoClass",
+   "head": "int __stdcall TechnoClass::COMStub_Return0_287()",
+   "baseline_first_diff": {
+    "orig": "+0 ret 4",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x709a30",
+   "name": "IPersistStream::Stub",
+   "family": "RET_ARITY",
+   "path": "cc_mismatch",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "Stub",
+   "unit": "TechnoClass",
+   "head": "void TechnoClass::Stub(int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 ret 8",
+    "ours": "+0 ret 4"
+   }
+  },
+  {
+   "addr": "0x6dcf40",
+   "name": "sub_6DCF40",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6DCF40",
+   "unit": "_addr_6D",
+   "head": "int __cdecl sub_6DCF40()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e6d0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6e4d20",
+   "name": "sub_6E4D20",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6E4D20",
+   "unit": "_addr_6E",
+   "head": "int __cdecl sub_6E4D20()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e768], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6e5aa0",
+   "name": "sub_6E5AA0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6E5AA0",
+   "unit": "_addr_6E",
+   "head": "int __cdecl sub_6E5AA0()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e800], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6e6a10",
+   "name": "sub_6E6A10",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6E6A10",
+   "unit": "_addr_6E",
+   "head": "int __cdecl sub_6E6A10()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e898], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6e7e40",
+   "name": "sub_6E7E40",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6E7E40",
+   "unit": "_addr_6E",
+   "head": "int __cdecl sub_6E7E40()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e918], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6e8a50",
+   "name": "sub_6E8A50",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6E8A50",
+   "unit": "_addr_6E",
+   "head": "int __cdecl sub_6E8A50()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0e998], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x6f0640",
+   "name": "sub_6F0640",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_6F0640",
+   "unit": "_addr_6F",
+   "head": "int __cdecl sub_6F0640()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0ea18], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x70c5f0",
+   "name": "ObjectClass::IsNotShrouded",
+   "family": "STRUCTURAL",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_ELSE_FROM_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(C){A}else{return B}",
+     "checker": "clean",
+     "seconds": 0.12,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0x270]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0x270]"
+     },
+     "ours_size": 12
+    },
+    {
+     "vid": "V_IF_GUARD_FROM_TAIL",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(!C){return B} A",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0x270]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0x270]"
+     },
+     "ours_size": 12
+    },
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [ecx + 0x270]",
+      "ours": "+0 mov eax, dword ptr [ecx + 0x270]"
+     },
+     "ours_size": 12
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TechnoClass",
+   "method": "IsNotShrouded",
+   "unit": "TechnoClass",
+   "head": "unsigned char TechnoClass::IsNotShrouded()",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, byte ptr [ecx + 0x270]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0x270]"
+   },
+   "variants_generated": [
+    "V_IF_ELSE_FROM_GUARD",
+    "V_IF_GUARD_FROM_TAIL",
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x710ab0",
+   "name": "sub_710AB0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_710AB0",
+   "unit": "_addr_71",
+   "head": "int __cdecl sub_710AB0()",
+   "baseline_first_diff": {
+    "orig": "+5 mov dword ptr [0xb0eba8], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   }
+  },
+  {
+   "addr": "0x711e90",
+   "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+   "family": "WIDTH",
+   "path": "branch_polarity",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+8 je 0x711ea7",
+      "ours": "+8 je 0x1a"
+     },
+     "ours_size": 29
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TechnoTypeClass",
+   "method": "CanAttackMove_IgnoreWeapon",
+   "unit": "TechnoTypeClass",
+   "head": "bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()",
+   "baseline_first_diff": {
+    "orig": "+8 je 0x711ea7",
+    "ours": "+8 je 0x1a"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  }
+ ]
+}
