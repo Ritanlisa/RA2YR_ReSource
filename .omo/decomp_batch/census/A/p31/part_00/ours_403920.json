@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateStats@AudioThread@@QAEH_J@Z",
+ "sym_key": "AudioThread::UpdateStats",
+ "size": 146,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c8b5c2410568bf1578bfd8b56288b4e2c2bfa571bd9e8000000008b4e488b562483c40441894e488b4e1c897e103bca895e147c147f0a8b56188b4e203bd1760833c9894e18894e1c3b5e1c720d77053b7e187606897e18895e1c3b5e0c720a77053b7e087603ff464c3b5e34720d77053b7e307606897e30895e348b4c2418896e28894e2c5f5e5d5bc20800",
+ "relocs": [
+  {
+   "off": 28,
+   "type": "REL32",
+   "sym": "?HIDWORD@@YAHHZZ",
+   "sym_key": "HIDWORD"
+  }
+ ]
+}

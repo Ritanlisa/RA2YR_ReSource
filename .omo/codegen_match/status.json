@@ -6,6 +6,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x401640": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [ecx]",
+  "name": "AudioIndex::GetSampleInformation",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
  "0x401940": {
   "attempts": 13,
   "first_diff": null,
@@ -53,6 +60,13 @@
   "first_diff": "+0 sub esp, 0xc",
   "name": "AudioQueue::FindBestChannel",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x403920": {
+  "attempts": 1,
+  "first_diff": "+2 push esi",
+  "name": "AudioThread::UpdateStats",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x403d30": {
@@ -2190,6 +2204,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x48e480": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x48e480",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x48e610": {
   "attempts": 1,
   "first_diff": null,
@@ -2210,6 +2231,13 @@
   "name": "0x48e680",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x491820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_491820",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x491b40": {
   "attempts": 1,
@@ -2271,6 +2299,27 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_492830",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x493500": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_493500",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x493600": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_493600",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x493710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_493710",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -2432,6 +2481,13 @@
   "attempts": 8,
   "first_diff": "+0 push ebx",
   "name": "BlitTransLucent25AlphaZReadWrite_ushort::AddRef",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x496170": {
+  "attempts": 1,
+  "first_diff": "+4 push ebx",
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
@@ -2747,6 +2803,13 @@
   "attempts": 10,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4a1ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Power::FlagProcess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -3772,6 +3835,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4e3320": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetResourceIDHardcodedCSF",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4e4820": {
   "attempts": 9,
   "first_diff": null,
@@ -4681,6 +4751,13 @@
   "name": "INIClass::GetStringByIndex",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x52ace0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GenericList::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x52b170": {
   "attempts": 5,
@@ -5627,6 +5704,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x565660": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DamageArea::CalcScatterOffset",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5656d0": {
   "attempts": 1,
   "first_diff": null,
@@ -5998,6 +6082,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5affe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetRenderCoordinate_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5b1aa0": {
   "attempts": 4,
   "first_diff": null,
@@ -6031,6 +6122,13 @@
   "first_diff": "+0 mov eax, dword ptr [esp + 4]",
   "name": "Math::Abs16Cmp",
   "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
+ "0x5b29c0": {
+  "attempts": 1,
+  "first_diff": "+0 mov edx, dword ptr [esp + 8]",
+  "name": "Movement::CompareAbsCoords",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x5b2c40": {
@@ -6256,6 +6354,13 @@
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5bd730": {
+  "attempts": 1,
+  "first_diff": "+69 fmul dword ptr [eax + edi + 0x1c]",
+  "name": "Matrix::Scale",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x5bd850": {
   "attempts": 1,
@@ -7923,6 +8028,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x65c6d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SeedInitRNG",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x65c780": {
   "attempts": 1,
   "first_diff": "+0 cmp byte ptr [ecx], 0",
@@ -8874,6 +8986,13 @@
   "name": "0x6caca0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6cb4d0": {
+  "attempts": 1,
+  "first_diff": "+6 je 0x6cb552",
+  "name": "SuperClass::SetOnHold",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x6cb830": {
   "attempts": 8,
@@ -9959,6 +10078,13 @@
   "name": "TriggerTypeClass::GetAuxField",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x727cf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "String::Trim",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x727df0": {
   "attempts": 1,
@@ -11591,6 +11717,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7c6e94": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c6e94",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7c6fc8": {
   "attempts": 1,
   "first_diff": null,
@@ -12064,6 +12197,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_7E00A6",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7e0170": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObfuscateDataBlock",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  }

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetSampleInformation@unknown@@QAIPAIPAHH0@Z",
+ "sym_key": "unknown::GetSampleInformation",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b0a8d04c08d0c818b442408c700040000008b51188950088b511c83e2014289500c8b51208950188a511cf6c2087411c7400401000000c7401002000000c20800c74004000000008b491cc1e90283e10141894810c20800",
+ "relocs": []
+}

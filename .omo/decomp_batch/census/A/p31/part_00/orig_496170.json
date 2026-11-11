@@ -1,0 +1,11 @@
+{
+ "addr": "0x496170",
+ "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x496170",
+ "bytes_hex": "8b542410538b442408558be9568b742414578b4d0485d28b097e228a1e4684db750933db8a1e2bd346eb014a85d27feb8b7c241cf7da2bfa8d0450eb048b7c241c85ff7e458a164684d28854241c75188a16468854241c8b54241c81e2ff0000002bfa8d0450eb1e8b54241c33db81e2ff00000083c0024f8a1c0a8b5508668b145a668950fe85ff7fbb5f5e5d5bc22800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

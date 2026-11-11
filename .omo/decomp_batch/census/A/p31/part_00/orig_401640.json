@@ -1,0 +1,11 @@
+{
+ "addr": "0x401640",
+ "name": "AudioIndex::GetSampleInformation",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x401640",
+ "bytes_hex": "8b098d04d28d0c818b442404c700040000008b51188950088b511c80e201f6da1bd2f7da4289500c8b51208950188a511cf6c2087411c7400401000000c7401002000000c20400c74004000000008b491c80e104f6d91bc9f7d941894810c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

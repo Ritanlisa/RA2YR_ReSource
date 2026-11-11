@@ -1,0 +1,15 @@
+{
+ "symbol": "?CompareAbsCoords@Movement@@QAEDPAF0@Z",
+ "sym_key": "Movement::CompareAbsCoords",
+ "size": 128,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b5424045355668b1a8be9668b0856668b75005766894c24188bc60fbff90fbfcb25ffff0000897c24142bc150c1ff1fe8000000008b4c24188bd733d183c4042bd73bd07d298b4424182bde6685db7c0f03f05f668975005e5d32c05bc208002bf05f668975005e5d32c05bc208005f66895d005e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 53,
+   "type": "REL32",
+   "sym": "?abs16@@YAHHZZ",
+   "sym_key": "abs16"
+  }
+ ]
+}

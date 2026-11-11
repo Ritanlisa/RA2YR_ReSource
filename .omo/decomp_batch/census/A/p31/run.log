@@ -1,0 +1,101 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p31\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e3320 ObjectClass::GetResourceIDHardcodedCSF -> ObjectClass
+[conv] 0x401640 unknown::GetSampleInformation -> unknown
+[conv] 0x7e0170 unknown::ObfuscateDataBlock -> unknown
+[conv] 0x5b29c0 Movement::CompareAbsCoords -> Movement
+[conv] 0x727cf0 String::Trim -> String
+[conv] 0x52ace0 GenericList::Constructor -> GenericList
+[conv] 0x565660 DamageArea::CalcScatterOffset -> DamageArea
+[conv] 0x493500 _BlitPlainXlatZReadWrite_G::sub_493500 -> _BlitPlainXlatZReadWrite_G
+[conv] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> JumpjetLocomotionClass
+[conv] 0x493600 _BlitTransXlatZReadWrite_G::sub_493600 -> _BlitTransXlatZReadWrite_G
+[conv] 0x491820 _RLEBlitTransXlat_E::sub_491820 -> _RLEBlitTransXlat_E
+[conv] 0x5bd730 Matrix::Scale -> Matrix
+[conv] 0x4a1ca0 Power::FlagProcess -> Power
+[conv] 0x6cb4d0 SuperClass::SetOnHold -> SuperClass
+[conv] 0x493710 _BlitTransZRemapXlatZReadWrite_G::sub_493710 -> _BlitTransZRemapXlatZReadWrite_G
+[conv] 0x496170 _RLEBlitTransZRemapXlat_G::Blit_RLE_Remap -> _RLEBlitTransZRemapXlat_G
+[conv] 0x403920 AudioThread::UpdateStats -> AudioThread
+[conv] 0x65c6d0 ObjectClass::SeedInitRNG -> ObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] Movement                 rc=0
+[era] String                   rc=2
+[era] GenericList              rc=2
+[era] DamageArea               rc=2
+[era] _BlitPlainXlatZReadWrite_G rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] _BlitTransXlatZReadWrite_G rc=2
+[era] _RLEBlitTransXlat_E      rc=2
+[era] Matrix                   rc=0
+[era] Power                    rc=2
+[era] SuperClass               rc=0
+[era] _BlitTransZRemapXlatZReadWrite_G rc=2
+[era] _RLEBlitTransZRemapXlat_G rc=0
+[era] AudioThread              rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e3320   MATCH            ObjectClass::GetResourceIDHardcodedCSF
+[diff] 0x401640   MISMATCH         unknown::GetSampleInformation
+[diff] 0x5b29c0   MISMATCH         Movement::CompareAbsCoords
+[diff] 0x5bd730   MISMATCH         Matrix::Scale
+[diff] 0x6cb4d0   MISMATCH         SuperClass::SetOnHold
+[diff] 0x496170   MISMATCH         _RLEBlitTransZRemapXlat_G::Blit_RLE_Remap
+[diff] 0x403920   MISMATCH         AudioThread::UpdateStats
+[ledger] 0x4e3320 GetResourceIDHardcodedCSF -> OK (attempt 1)
+[ledger] 0x401640 AudioIndex::GetSampleInformation -> NG (attempt 1)
+[ledger] 0x7e0170 ObfuscateDataBlock -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b29c0 Movement::CompareAbsCoords -> NG (attempt 1)
+[ledger] 0x727cf0 String::Trim -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52ace0 GenericList::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x565660 DamageArea::CalcScatterOffset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x493500 sub_493500 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5affe0 JumpjetLocomotionClass::GetRenderCoordinate_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e480 0x48e480 -> PENDING (attempt 1)
+[ledger] 0x493600 sub_493600 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491820 sub_491820 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd730 Matrix::Scale -> NG (attempt 1)
+[ledger] 0x4a1ca0 Power::FlagProcess -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cb4d0 SuperClass::SetOnHold -> NG (attempt 1)
+[ledger] 0x493710 sub_493710 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496170 BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap -> NG (attempt 1)
+[ledger] 0x403920 AudioThread::UpdateStats -> NG (attempt 1)
+[ledger] 0x7c6e94 0x7c6e94 -> PENDING (attempt 1)
+[ledger] 0x65c6d0 SeedInitRNG -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1677,
+ "verdicts": {
+  "MISMATCH": 472,
+  "MATCH": 504,
+  "COMPILE_FAIL": 381,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 312,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 159,
+  "ret_norm": 5,
+  "frame_sched": 61,
+  "const_fold": 50,
+  "branch_polarity": 33,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 8,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 51.6,
+ "match_rate_of_total_pct": 30.1,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p31\batch_report.json

@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetOnHold@SuperClass@@QAEDD@Z",
+ "sym_key": "SuperClass::SetOnHold",
+ "size": 161,
+ "link_base": 0,
+ "bytes_hex": "8a416d5384c00f848b0000008a416e84c00f85800000008a5c240833d28a51700fbec33bc274708a416084c0746984db750f8b41288a90f500000084d2744deb048b4424088b513083faff74278b413855568b35000000008bee2bea3be87c0433c0eb042bc603c25e894138c74130ffffffff5d837930ff7512a100000000c6417000894130b0015bc2040024018859700c015bc204008b4424085b2400c20400",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  },
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

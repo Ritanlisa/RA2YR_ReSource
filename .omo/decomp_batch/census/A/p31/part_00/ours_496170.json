@@ -1,0 +1,8 @@
+{
+ "symbol": "?Blit_RLE_Remap@_RLEBlitTransZRemapXlat_G@@QAEHHPAEHHHHHHHH@Z",
+ "sym_key": "_RLEBlitTransZRemapXlat_G::Blit_RLE_Remap",
+ "size": 149,
+ "link_base": 0,
+ "bytes_hex": "8b5424108b44240453558be95685d28b4d04577f0a8b54241c8b7c2418eb268b7c24188a1f4784db74034aeb0733db8a1f2bd34785d27febf7da8bf28b54241c2bd68d047085d27e458a1f4784db885c241874208b74241883c0024a81e6ff00000033db8a1c0e8b7508668b345e668970feeb168a1f47885c241c8b74241c81e6ff0000002bd68d047085d27fbb5f5e5d5bc22800",
+ "relocs": []
+}
