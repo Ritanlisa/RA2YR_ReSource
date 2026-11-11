@@ -1,0 +1,45 @@
+[resume] 0/2 already decided, 2 to run
+======================================================================
+PART 1/1  (2 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p32\part_00
+=== convert (2 addrs) ===
+[conv] 0x574600 unknown::globalHelper_074600 -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x574600   MISMATCH         unknown::globalHelper_074600
+[ledger] 0x574600 globalHelper_074600 -> NG (attempt 1)
+[ledger] 0x7c6c79 0x7c6c79 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1679,
+ "verdicts": {
+  "MISMATCH": 473,
+  "MATCH": 504,
+  "COMPILE_FAIL": 381,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 313,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 160,
+  "ret_norm": 5,
+  "frame_sched": 61,
+  "const_fold": 50,
+  "branch_polarity": 33,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 8,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 51.6,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p32\batch_report.json

@@ -1,0 +1,45 @@
+{
+ "symbol": "?globalHelper_074600@unknown@@QAI_NHHH@Z",
+ "sym_key": "unknown::globalHelper_074600",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "8b44240453bb02000000563bc3754a8b0d00000000b0043bd18b4c24108ad8750838811a01000074103b1500000000750f38811a01000075075eb0015bc20800a1000000003bd074748d70033bd6746d8d70013bd67466eb5683f80474075e32c05bc20800a1000000008b4c24103bd0750f38991a01000075075eb0015bc208003b1500000000750f38991a01000075075eb0015bc20800a1000000003bd0741c8d70033bd674158d70013bd6740e83c0023bd074075e32c05bc2080033c033d28a811a0100005e0fbecb3bc15b0f94c28ac2c20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC1E8@@3IA",
+   "sym_key": "DataGlobal_ABC1E8"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E38@@3IA",
+   "sym_key": "DataGlobal_AA0E38"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundTable2@@3IA",
+   "sym_key": "g_TerrainSoundTable2"
+  },
+  {
+   "off": 102,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABC1D0@@3IA",
+   "sym_key": "DataGlobal_ABC1D0"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1540@@3IA",
+   "sym_key": "DataGlobal_AA1540"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "?g_TerrainSoundConfig@@3IA",
+   "sym_key": "g_TerrainSoundConfig"
+  }
+ ]
+}

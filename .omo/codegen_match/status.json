@@ -5767,6 +5767,13 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x574600": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "globalHelper_074600",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x578290": {
   "attempts": 8,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x114]",
@@ -11714,6 +11721,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7c6b70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7c6c79": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7c6c79",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

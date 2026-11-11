@@ -1,0 +1,26 @@
+[
+ {
+  "addr": "0x574600",
+  "name": "globalHelper_074600",
+  "cls": "unknown",
+  "size": 187,
+  "family": "censusA",
+  "layer": "A",
+  "reason": "leaf",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7c6c79",
+  "name": "sub_7C6C79",
+  "cls": "",
+  "size": 198,
+  "family": "censusA",
+  "layer": "A",
+  "reason": "leaf",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ }
+]
