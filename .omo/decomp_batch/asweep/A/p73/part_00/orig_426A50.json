@@ -1,0 +1,11 @@
+{
+ "addr": "0x426A50",
+ "name": "AnimFile::Load",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426A50",
+ "bytes_hex": "8a91a60000008b81cc00000084d2740148c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

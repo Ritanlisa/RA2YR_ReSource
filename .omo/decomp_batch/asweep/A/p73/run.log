@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p73\part_00
+=== convert (20 addrs) ===
+[conv] 0x41e310 sub_41E310 -> _addr_41
+[conv] 0x4208a0 sub_4208A0 -> _addr_42
+[conv] 0x420e70 AlphaShapeClass::SD_vt10 -> AlphaShapeClass
+[conv] 0x421e60 sub_421E60 -> _addr_42
+[conv] 0x426a50 AnimFile::Load -> AnimFile
+[conv] 0x4274d0 sub_4274D0 -> _addr_42
+[conv] 0x4291c0 sub_4291C0 -> _addr_42
+[conv] 0x42b1f0 Object::ComputeAllocationSize -> Object
+[conv] 0x430150 sub_430150 -> _addr_43
+[conv] 0x4357c0 sub_4357C0 -> _addr_43
+[conv] 0x4384f0 sub_4384F0 -> _addr_43
+[conv] 0x439650 sub_439650 -> _addr_43
+[conv] 0x43a310 sub_43A310 -> _addr_43
+[conv] 0x43b0f0 sub_43B0F0 -> _addr_43
+[conv] 0x45b150 sub_45B150 -> _addr_45
+[conv] 0x46bb80 sub_46BB80 -> _addr_46
+[conv] 0x46cb20 sub_46CB20 -> _addr_46
+[conv] 0x46d2d0 sub_46D2D0 -> _addr_46
+[conv] 0x4716f0 sub_4716F0 -> _addr_47
+[conv] 0x473340 sub_473340 -> _addr_47
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] AlphaShapeClass          rc=0
+[era] AnimFile                 rc=0
+[era] Object                   rc=0
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x41e310   MATCH            sub_41E310
+[diff] 0x4208a0   MATCH            sub_4208A0
+[diff] 0x421e60   MATCH            sub_421E60
+[diff] 0x4274d0   MATCH            sub_4274D0
+[diff] 0x4291c0   MATCH            sub_4291C0
+[diff] 0x420e70   MATCH            AlphaShapeClass::SD_vt10
+[diff] 0x426a50   MATCH            AnimFile::Load
+[diff] 0x42b1f0   MATCH            Object::ComputeAllocationSize
+[diff] 0x430150   MATCH            sub_430150
+[diff] 0x4357c0   MATCH            sub_4357C0
+[diff] 0x4384f0   MATCH            sub_4384F0
+[diff] 0x439650   MATCH            sub_439650
+[diff] 0x43a310   MATCH            sub_43A310
+[diff] 0x43b0f0   MATCH            sub_43B0F0
+[diff] 0x45b150   MATCH            sub_45B150
+[diff] 0x46bb80   MATCH            sub_46BB80
+[diff] 0x46cb20   MATCH            sub_46CB20
+[diff] 0x46d2d0   MATCH            sub_46D2D0
+[diff] 0x4716f0   MATCH            sub_4716F0
+[diff] 0x473340   MATCH            sub_473340
+[ledger] 0x41e310 sub_41E310 -> OK (attempt 1)
+[ledger] 0x4208a0 sub_4208A0 -> OK (attempt 1)
+[ledger] 0x420e70 AlphaShapeClass::SD_vt10 -> OK (attempt 1)
+[ledger] 0x421e60 sub_421E60 -> OK (attempt 1)
+[ledger] 0x426a50 AnimFile::Load -> OK (attempt 1)
+[ledger] 0x4274d0 sub_4274D0 -> OK (attempt 1)
+[ledger] 0x4291c0 sub_4291C0 -> OK (attempt 1)
+[ledger] 0x42b1f0 Object::ComputeAllocationSize -> OK (attempt 1)
+[ledger] 0x430150 sub_430150 -> OK (attempt 1)
+[ledger] 0x4357c0 sub_4357C0 -> OK (attempt 1)
+[ledger] 0x4384f0 sub_4384F0 -> OK (attempt 1)
+[ledger] 0x439650 sub_439650 -> OK (attempt 1)
+[ledger] 0x43a310 sub_43A310 -> OK (attempt 1)
+[ledger] 0x43b0f0 sub_43B0F0 -> OK (attempt 1)
+[ledger] 0x45b150 sub_45B150 -> OK (attempt 1)
+[ledger] 0x46bb80 sub_46BB80 -> OK (attempt 1)
+[ledger] 0x46cb20 sub_46CB20 -> OK (attempt 1)
+[ledger] 0x46d2d0 sub_46D2D0 -> OK (attempt 1)
+[ledger] 0x4716f0 sub_4716F0 -> OK (attempt 1)
+[ledger] 0x473340 sub_473340 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p73\batch_report.json

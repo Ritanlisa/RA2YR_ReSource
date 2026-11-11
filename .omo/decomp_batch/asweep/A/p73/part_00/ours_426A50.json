@@ -1,0 +1,8 @@
+{
+ "symbol": "?Load@AnimFile@@QAEHXZ",
+ "sym_key": "AnimFile::Load",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8a91a60000008b81cc00000084d2740148c3",
+ "relocs": []
+}
