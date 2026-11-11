@@ -1,0 +1,123 @@
+{
+ "symbol": "?FindMoveTarget@FootClass@@QAEPAHPAHHH@Z",
+ "sym_key": "FootClass::FindMoveTarget",
+ "size": 691,
+ "link_base": 0,
+ "bytes_hex": "83ec38a100000000578bf98d54243252578b0f8944241cff51488b08c1e90866894c24048b5004c1ea088d4c243466895424068b44240451b9f801000089442438e80000000083b8ec0000000575118b4424408b5424345f891083c438c20c008b4c244456b80100000083ceff3bc8894424108974240c0f8e24020000538b5c244c558b6c2450897424288974241c3bf00f8fe90100008b44241c894424248b4c242c8bd133d081e2ff00000033ca8b542442894c242c8b4c244003ce03d033cd8d44241081e1ff0000005033e98bcf33d581e2ff00000033ea896c2414e80000000084c074288d4c241051b9f8010000e8000000008bc8e8000000003b4424147e0c8b54241089442414895424208b4424408b5424428d0c308b44243033c881e1ff00000033c18b4c241803d18bcf33d081e2ff00000033c28d542410528944243489442414e80000000084c074288d442410b9f801000050e8000000008bc8e8000000003b4424147e0c8b4c241089442414894c24208b44241c8b4c24348bd033d181e2ff00000033ca8b542442894c24348b4c244003c803d633cb8d44241081e1ff0000005033d98bcf33d381e2ff00000033da895c2414e80000000084c074288d4c241051b9f8010000e8000000008bc8e8000000003b4424147e0c8b54241089442414895424208b4424408b4c24188d14088b4424388b4c244233d081e2ff00000003ce33c28d54241033c85281e1ff00000033c18bcf8944243c89442414e80000000084c074288d442410b9f801000050e8000000008bc8e8000000003b4424147e0c8b4c241089442414894c24208b442418463bf07f13668b54241c66895424248b442424e92efeffff837c2414ff75278b7424288b4424188b4c241c40494e894c241c8b4c24503bc189442418897424280f8cf0fdffff5d5b8b4424448b4c24185e5f890883c438c20c00",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 223,
+   "type": "REL32",
+   "sym": "?IsValidDestination@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::IsValidDestination"
+  },
+  {
+   "off": 237,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 249,
+   "type": "REL32",
+   "sym": "?GetNthOfType@Building@@QAEHXZ",
+   "sym_key": "Building::GetNthOfType"
+  },
+  {
+   "off": 328,
+   "type": "REL32",
+   "sym": "?IsValidDestination@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::IsValidDestination"
+  },
+  {
+   "off": 341,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 347,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 354,
+   "type": "REL32",
+   "sym": "?GetNthOfType@Building@@QAEHXZ",
+   "sym_key": "Building::GetNthOfType"
+  },
+  {
+   "off": 444,
+   "type": "REL32",
+   "sym": "?IsValidDestination@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::IsValidDestination"
+  },
+  {
+   "off": 458,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 463,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 470,
+   "type": "REL32",
+   "sym": "?GetNthOfType@Building@@QAEHXZ",
+   "sym_key": "Building::GetNthOfType"
+  },
+  {
+   "off": 549,
+   "type": "REL32",
+   "sym": "?IsValidDestination@Cell@@QAE_NPAX@Z",
+   "sym_key": "Cell::IsValidDestination"
+  },
+  {
+   "off": 562,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 568,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 575,
+   "type": "REL32",
+   "sym": "?GetNthOfType@Building@@QAEHXZ",
+   "sym_key": "Building::GetNthOfType"
+  }
+ ]
+}
