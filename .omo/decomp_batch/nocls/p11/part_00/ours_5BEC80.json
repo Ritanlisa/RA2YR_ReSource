@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_5BEC80@@YAHXZ",
+ "sym_key": "Unnamed::sub_5BEC80",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF318@@3IA",
+   "sym_key": "DataGlobal_ABF318"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF31C@@3IA",
+   "sym_key": "DataGlobal_ABF31C"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABF320@@3IA",
+   "sym_key": "DataGlobal_ABF320"
+  }
+ ]
+}

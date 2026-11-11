@@ -9716,18 +9716,18 @@
   "status": "OK"
  },
  "0x5b1f00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5b1f00",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5B1F00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5b20a0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5b20a0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5B20A0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5b20f0": {
   "attempts": 1,
@@ -9758,18 +9758,18 @@
   "status": "NG"
  },
  "0x5b2c40": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5b2c40",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7edc88]",
+  "name": "sub_5B2C40",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5b2d80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5b2d80",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5B2D80",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5b2da0": {
   "attempts": 1,
@@ -9940,11 +9940,11 @@
   "status": "NG"
  },
  "0x5b3b10": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5b3b10",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5B3B10",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5b3ff0": {
   "attempts": 1,
@@ -9961,11 +9961,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x5b4310": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5b4310",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "WinMainSetup_Setup_5B4310",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5b43e0": {
   "attempts": 1,
@@ -9996,18 +9996,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x5b7620": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5b7620",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+6 fdiv qword ptr [0x7edf68]",
+  "name": "sub_5B7620",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5b7700": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5b7700",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fild dword ptr [0xabf108]",
+  "name": "sub_5B7700",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5b9550": {
   "attempts": 1,
@@ -10073,53 +10073,53 @@
   "status": "NG"
  },
  "0x5bd850": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5bd850",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7edfa0]",
+  "name": "sub_5BD850",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5bd920": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5bd920",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 push ecx",
+  "name": "sub_5BD920",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5beba0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5beba0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5BEBA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5bec80": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5bec80",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5BEC80",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5beca0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5beca0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+5 mov dword ptr [0xabf348], 0",
+  "name": "sub_5BECA0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5bf390": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5bf390",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "EnqueueAsyncIOMovie",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5bf630": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5bf630",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5BF630",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5c02e0": {
   "attempts": 7,
@@ -10192,25 +10192,25 @@
   "status": "OK"
  },
  "0x5c1160": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x5c1160",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7ee270]",
+  "name": "sub_5C1160",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x5c1260": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5c1260",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5C1260",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5c1290": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5c1290",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5C1290",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5c1300": {
   "attempts": 4,
@@ -10283,11 +10283,11 @@
   "status": "OK"
  },
  "0x5c5ad0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5c5ad0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_5C5AD0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x5c5d30": {
   "attempts": 11,
@@ -10311,11 +10311,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x5c6dd0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x5c6dd0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "MultiplyAddBigInteger",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5c71e0": {
   "attempts": 1,

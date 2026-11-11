@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x5b1f00",
+  "batch": "nocls",
+  "name": "sub_5B1F00",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b20a0",
+  "batch": "nocls",
+  "name": "sub_5B20A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b2c40",
+  "batch": "nocls",
+  "name": "sub_5B2C40",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b2d80",
+  "batch": "nocls",
+  "name": "sub_5B2D80",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b3b10",
+  "batch": "nocls",
+  "name": "sub_5B3B10",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x5b4310",
+  "batch": "nocls",
+  "name": "WinMainSetup_Setup_5B4310",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b7620",
+  "batch": "nocls",
+  "name": "sub_5B7620",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5b7700",
+  "batch": "nocls",
+  "name": "sub_5B7700",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5bd850",
+  "batch": "nocls",
+  "name": "sub_5BD850",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5bd920",
+  "batch": "nocls",
+  "name": "sub_5BD920",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5beba0",
+  "batch": "nocls",
+  "name": "sub_5BEBA0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5bec80",
+  "batch": "nocls",
+  "name": "sub_5BEC80",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5beca0",
+  "batch": "nocls",
+  "name": "sub_5BECA0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5bf390",
+  "batch": "nocls",
+  "name": "EnqueueAsyncIOMovie",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x5bf630",
+  "batch": "nocls",
+  "name": "sub_5BF630",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c1160",
+  "batch": "nocls",
+  "name": "sub_5C1160",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c1260",
+  "batch": "nocls",
+  "name": "sub_5C1260",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c1290",
+  "batch": "nocls",
+  "name": "sub_5C1290",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c5ad0",
+  "batch": "nocls",
+  "name": "sub_5C5AD0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x5c6dd0",
+  "batch": "nocls",
+  "name": "MultiplyAddBigInteger",
+  "cc": "fastcall"
+ }
+]

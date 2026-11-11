@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b1f00 sub_5B1F00 -> _addr_5B
+[conv] 0x5b20a0 sub_5B20A0 -> _addr_5B
+[conv] 0x5b2c40 sub_5B2C40 -> _addr_5B
+[conv] 0x5b2d80 sub_5B2D80 -> _addr_5B
+[conv] 0x5b3b10 sub_5B3B10 -> _addr_5B
+[conv] 0x5b4310 WinMainSetup_Setup_5B4310 -> WinMainSetup_Setup
+[conv] 0x5b7620 sub_5B7620 -> _addr_5B
+[conv] 0x5b7700 sub_5B7700 -> _addr_5B
+[conv] 0x5bd850 sub_5BD850 -> _addr_5B
+[conv] 0x5bd920 sub_5BD920 -> _addr_5B
+[conv] 0x5beba0 sub_5BEBA0 -> _addr_5B
+[conv] 0x5bec80 sub_5BEC80 -> _addr_5B
+[conv] 0x5beca0 sub_5BECA0 -> _addr_5B
+[conv] 0x5bf390 EnqueueAsyncIOMovie -> _addr_5B
+[conv] 0x5bf630 sub_5BF630 -> _addr_5B
+[conv] 0x5c1160 sub_5C1160 -> _addr_5C
+[conv] 0x5c1260 sub_5C1260 -> _addr_5C
+[conv] 0x5c1290 sub_5C1290 -> _addr_5C
+[conv] 0x5c5ad0 sub_5C5AD0 -> _addr_5C
+[conv] 0x5c6dd0 MultiplyAddBigInteger -> _addr_5C
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=2
+[era] WinMainSetup_Setup       rc=2
+[era] _addr_5C                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5b20a0   MATCH            sub_5B20A0
+[diff] 0x5b2c40   MISMATCH         sub_5B2C40
+[diff] 0x5b2d80   MATCH            sub_5B2D80
+[diff] 0x5b7620   MISMATCH         sub_5B7620
+[diff] 0x5b7700   MISMATCH         sub_5B7700
+[diff] 0x5bd850   MISMATCH         sub_5BD850
+[diff] 0x5bd920   MISMATCH         sub_5BD920
+[diff] 0x5bec80   MATCH            sub_5BEC80
+[diff] 0x5beca0   MISMATCH         sub_5BECA0
+[diff] 0x5bf630   MISMATCH         sub_5BF630
+[diff] 0x5c1160   MISMATCH         sub_5C1160
+[diff] 0x5c1290   MATCH            sub_5C1290
+[diff] 0x5c5ad0   MATCH            sub_5C5AD0
+[ledger] 0x5b1f00 sub_5B1F00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b20a0 sub_5B20A0 -> OK (attempt 2)
+[ledger] 0x5b2c40 sub_5B2C40 -> NG (attempt 2)
+[ledger] 0x5b2d80 sub_5B2D80 -> OK (attempt 2)
+[ledger] 0x5b3b10 sub_5B3B10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b4310 WinMainSetup_Setup_5B4310 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5b7620 sub_5B7620 -> NG (attempt 2)
+[ledger] 0x5b7700 sub_5B7700 -> NG (attempt 2)
+[ledger] 0x5bd850 sub_5BD850 -> NG (attempt 2)
+[ledger] 0x5bd920 sub_5BD920 -> NG (attempt 2)
+[ledger] 0x5beba0 sub_5BEBA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bec80 sub_5BEC80 -> OK (attempt 2)
+[ledger] 0x5beca0 sub_5BECA0 -> NG (attempt 2)
+[ledger] 0x5bf390 EnqueueAsyncIOMovie -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5bf630 sub_5BF630 -> NG (attempt 2)
+[ledger] 0x5c1160 sub_5C1160 -> NG (attempt 2)
+[ledger] 0x5c1260 sub_5C1260 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5c1290 sub_5C1290 -> OK (attempt 2)
+[ledger] 0x5c5ad0 sub_5C5AD0 -> OK (attempt 2)
+[ledger] 0x5c6dd0 MultiplyAddBigInteger -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MATCH": 5,
+  "MISMATCH": 8
+ },
+ "pathologies": {
+  "extern_reloc": 6,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 38.5,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p11\batch_report.json
