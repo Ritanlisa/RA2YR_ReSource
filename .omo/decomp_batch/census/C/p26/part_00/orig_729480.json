@@ -1,0 +1,11 @@
+{
+ "addr": "0x729480",
+ "name": "FootClass::Cleanup",
+ "size": 93,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x729480",
+ "bytes_hex": "83ec08578b793485ff897c2408743a8b4130568b712883feff74128b1584eda8002bd63bd07d042bc2eb0233c02bf85e897c2404db442404da742408dc1d18177e00dfe0f6c440740fc74118000000008b490ce8f85bdbff5f83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

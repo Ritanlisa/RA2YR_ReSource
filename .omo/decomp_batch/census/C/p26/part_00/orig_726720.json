@@ -1,0 +1,11 @@
+{
+ "addr": "0x726720",
+ "name": "TeamClass::AddToBuildQueue",
+ "size": 92,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726720",
+ "bytes_hex": "568bf1c6463001a1a0f6b0003905a8f6b0007c2e8a0da5f6b00084c9750485c075388b0dacf6b00085c97e2e03c8a198f6b0006a0051b998f6b000ff500884c074188b0da8f6b0008bc141890da8f6b0008b0d9cf6b0008934815ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

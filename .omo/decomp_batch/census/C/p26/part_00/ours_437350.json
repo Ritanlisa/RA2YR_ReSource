@@ -1,0 +1,15 @@
+{
+ "symbol": "?BlitterCopySimpleSHP@unknown@@QAIDPAH0HH0HHHH@Z",
+ "sym_key": "unknown::BlitterCopySimpleSHP",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "8b4c240c83ec205356578b7c24348bf2518b078d54241c5257ff50788bd88b0656ff50788b4c244c8b5424486a00518b4c244c528b54244c518b4c244c528b5424445153578d4c242c52518bd08bcee8000000005f5e5b83c420c22000",
+ "relocs": [
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?BlitterCopySHP@@YIDPAX000H00HHHHH@Z",
+   "sym_key": "BlitterCopySHP"
+  }
+ ]
+}

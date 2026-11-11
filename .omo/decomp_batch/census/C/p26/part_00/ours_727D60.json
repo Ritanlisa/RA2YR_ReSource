@@ -1,0 +1,21 @@
+{
+ "symbol": "?Trim@WideString@@QAEPAGXZ",
+ "sym_key": "WideString::Trim",
+ "size": 107,
+ "link_base": 0,
+ "bytes_hex": "56578bf985ff745e668b078bf76685c07426663d20007720668b460283c6026685c07406663d200076ee3bf7740a5657e80000000083c40857e80000000083c40448782266833e008d0cc7741966833920771366c70100004883e90285c07c0666833e0075e78bc75f5ec3",
+ "relocs": [
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  }
+ ]
+}

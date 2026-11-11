@@ -1,0 +1,304 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 6,
+   "COMPILE_FAIL": 9,
+   "MISMATCH": 5
+  },
+  "pathologies": {
+   "codegen_shape": 1,
+   "cc_mismatch": 1,
+   "width_mismatch": 1,
+   "regalloc": 1,
+   "branch_polarity": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x5d5ac0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5d5ac0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x65f9f0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x65f9f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a5e50",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(8) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(9) : error C210",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_4A5E50",
+   "emitted": "ObjectClass::sub_4A5E50",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "7/7",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6cf2c0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 89B ours 86B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 push esi"
+   },
+   "pathology": "codegen_shape",
+   "name": "SwizzleManagerClass::Here_I_Am",
+   "emitted": "SwizzleManagerClass::Here_I_Am",
+   "unit": "SwizzleManagerClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 10,
+   "orig_size": 89,
+   "ours_size": 86
+  },
+  {
+   "addr": "0x68ca50",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\unknown_68ca50.cpp(12) : error C2440: 'initializing' : cannot convert from 'void *' to 'unsigned int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\ce",
+   "first_diff": null,
+   "pathology": null,
+   "name": "FindBuildingAnimByName",
+   "emitted": "unknown::FindBuildingAnimByName",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/4",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x69bd00",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\include\\unknown_69bd00.hpp(25) : error C2146: syntax error : missing ';' before identifier 'Game_PlayerInfoArray'; D:\\RA2YR_ReSource\\.omo\\decom",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_69BD00",
+   "emitted": "unknown::sub_69BD00",
+   "unit": "unknown",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "4/6",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x7781b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7781b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x437350",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 91B ours 93B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 0x1c]",
+    "ours": "+0 mov ecx, dword ptr [esp + 0xc]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "BlitterCopySimpleSHP",
+   "emitted": "unknown::BlitterCopySimpleSHP",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 91,
+   "ours_size": 93
+  },
+  {
+   "addr": "0x726720",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 92B ours 102B",
+   "first_diff": {
+    "orig": "+3 mov byte ptr [esi + 0x30], 1",
+    "ours": "+3 mov eax, dword ptr [esi + 0x30]"
+   },
+   "pathology": "width_mismatch",
+   "name": "TeamClass::AddToBuildQueue",
+   "emitted": "TeamClass::AddToBuildQueue",
+   "unit": "TeamClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "8/9",
+   "rule_violations": 0,
+   "orig_size": 92,
+   "ours_size": 102
+  },
+  {
+   "addr": "0x477db0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\DynamicVectorClass.cpp(8) : error C2059: syntax error : '?'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\DynamicVectorClass.cpp(9)",
+   "first_diff": null,
+   "pathology": null,
+   "name": "DynamicVectorClass::Construct",
+   "emitted": "DynamicVectorClass::Construct",
+   "unit": "DynamicVectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/7",
+   "rule_violations": 4
+  },
+  {
+   "addr": "0x63e1d0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\VectorClass.cpp(12) : error C2275: 'VectorClass' : illegal use of this type as an expression; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ExecuteActionPlanManager_Helper_63E1D0",
+   "emitted": "VectorClass::ExecuteActionPlanManager_Helper_63E1D0",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/6",
+   "rule_violations": 4
+  },
+  {
+   "addr": "0x729480",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 93B ours 99B",
+   "first_diff": {
+    "orig": "+3 push edi",
+    "ours": "+3 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "FootClass::Cleanup",
+   "emitted": "FootClass::Cleanup",
+   "unit": "FootClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "8/8",
+   "rule_violations": 0,
+   "orig_size": 93,
+   "ours_size": 99
+  },
+  {
+   "addr": "0x4af720",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\DriveLocomotionClass.cpp(12) : error C2065: 'IID_IPiggyback' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "DriveLocomotionClass::QueryInterface",
+   "emitted": "DriveLocomotionClass::QueryInterface",
+   "unit": "DriveLocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "6/6",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x626290",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(8) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(9) : error C210",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_626290",
+   "emitted": "ObjectClass::sub_626290",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 11
+  },
+  {
+   "addr": "0x6ace80",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6ace80",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x727d60",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 95B ours 107B",
+   "first_diff": {
+    "orig": "+6 je 0x727dba",
+    "ours": "+6 je 0x66"
+   },
+   "pathology": "branch_polarity",
+   "name": "WideString::Trim",
+   "emitted": "WideString::Trim",
+   "unit": "WideString",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/4",
+   "rule_violations": 4,
+   "orig_size": 95,
+   "ours_size": 107
+  },
+  {
+   "addr": "0x606740",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x606740",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7dc468",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(8) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\ObjectClass.cpp(9) : error C210",
+   "first_diff": null,
+   "pathology": null,
+   "name": "__setmode_lk",
+   "emitted": "ObjectClass::__setmode_lk",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x598030",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\unknown_598030.cpp(9) : error C2106: '=' : left operand must be l-value; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p26\\part_00\\unknown_59803",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Range_RandomInt",
+   "emitted": "unknown::Range_RandomInt",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/4",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x631c10",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x631c10",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

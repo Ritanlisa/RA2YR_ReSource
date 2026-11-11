@@ -1,0 +1,89 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x4a5e50 ObjectClass::sub_4A5E50 -> ObjectClass
+[conv] 0x6cf2c0 SwizzleManagerClass::Here_I_Am -> SwizzleManagerClass
+[conv] 0x68ca50 unknown::FindBuildingAnimByName -> unknown
+[conv] 0x69bd00 unknown::sub_69BD00 -> unknown
+[conv] 0x437350 unknown::BlitterCopySimpleSHP -> unknown
+[conv] 0x726720 TeamClass::AddToBuildQueue -> TeamClass
+[conv] 0x477db0 DynamicVectorClass::Construct -> DynamicVectorClass
+[conv] 0x63e1d0 VectorClass::ExecuteActionPlanManager_Helper_63E1D0 -> VectorClass
+[conv] 0x729480 FootClass::Cleanup -> FootClass
+[conv] 0x4af720 DriveLocomotionClass::QueryInterface -> DriveLocomotionClass
+[conv] 0x626290 ObjectClass::sub_626290 -> ObjectClass
+[conv] 0x727d60 WideString::Trim -> WideString
+[conv] 0x7dc468 ObjectClass::__setmode_lk -> ObjectClass
+[conv] 0x598030 unknown::Range_RandomInt -> unknown
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] SwizzleManagerClass      rc=0
+[era] unknown                  rc=2
+[era] TeamClass                rc=0
+[era] DynamicVectorClass       rc=2
+[era] VectorClass              rc=2
+[era] FootClass                rc=0
+[era] DriveLocomotionClass     rc=2
+[era] WideString               rc=0
+=== diffasm byte-compare ===
+[diff] 0x6cf2c0   MISMATCH         SwizzleManagerClass::Here_I_Am
+[diff] 0x437350   MISMATCH         unknown::BlitterCopySimpleSHP
+[diff] 0x726720   MISMATCH         TeamClass::AddToBuildQueue
+[diff] 0x729480   MISMATCH         FootClass::Cleanup
+[diff] 0x727d60   MISMATCH         WideString::Trim
+[ledger] 0x5d5ac0 0x5d5ac0 -> PENDING (attempt 1)
+[ledger] 0x65f9f0 0x65f9f0 -> PENDING (attempt 1)
+[ledger] 0x4a5e50 sub_4A5E50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf2c0 SwizzleManagerClass::Here_I_Am -> NG (attempt 1)
+[ledger] 0x68ca50 FindBuildingAnimByName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69bd00 sub_69BD00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7781b0 0x7781b0 -> PENDING (attempt 1)
+[ledger] 0x437350 BlitterCopySimpleSHP -> NG (attempt 1)
+[ledger] 0x726720 TeamClass::AddToBuildQueue -> NG (attempt 1)
+[ledger] 0x477db0 DynamicVectorClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e1d0 ExecuteActionPlanManager_Helper_63E1D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x729480 FootClass::Cleanup -> NG (attempt 1)
+[ledger] 0x4af720 DriveLocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x626290 sub_626290 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ace80 0x6ace80 -> PENDING (attempt 1)
+[ledger] 0x727d60 WideString::Trim -> NG (attempt 1)
+[ledger] 0x606740 0x606740 -> PENDING (attempt 1)
+[ledger] 0x7dc468 __setmode_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x598030 Range_RandomInt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631c10 0x631c10 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2219,
+ "verdicts": {
+  "MISMATCH": 605,
+  "MATCH": 521,
+  "COMPILE_FAIL": 584,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 495,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 191,
+  "ret_norm": 7,
+  "frame_sched": 66,
+  "const_fold": 66,
+  "branch_polarity": 43,
+  "regalloc": 98,
+  "branch_order": 73,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 24,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 46.3,
+ "match_rate_of_total_pct": 23.5,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p26\batch_report.json

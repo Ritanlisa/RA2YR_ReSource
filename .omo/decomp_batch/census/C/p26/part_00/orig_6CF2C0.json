@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CF2C0",
+ "name": "SwizzleManagerClass::Here_I_Am",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CF2C0",
+ "bytes_hex": "8b442404538b5c240c568b482c8d701c578b7c24188b46083bc87c228a4e0d84c9750485c0752a8b4e1485c97e238b1603c86a00518bceff520884c074138b46108b56048d4801894e10891cc2897cc2045f5e33c05bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

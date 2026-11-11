@@ -1,0 +1,11 @@
+{
+ "addr": "0x437350",
+ "name": "BlitterCopySimpleSHP",
+ "size": 91,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x437350",
+ "bytes_hex": "8b44241c83ec2053568bf1578b4c24448b7c24308bda6a008b542444508b442444518b4c2444528b542444508b07518d4c242452518bcfff50788b168bce50578d4424405350ff52788bd08bcee80e0000005f5e5b83c420c21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
