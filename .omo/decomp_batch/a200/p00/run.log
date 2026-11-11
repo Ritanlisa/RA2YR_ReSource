@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x408530 ObjectClass::nullsub_2 -> ObjectClass
+[conv] 0x459de0 TechnoClass::COMStub_Return0_205 -> TechnoClass
+[conv] 0x4e6140 nullsub_54 -> _addr_4E
+[conv] 0x5c0f40 MultiplayerGameMode::StubReturnTrue5 -> MultiplayerGameMode
+[conv] 0x65fa60 ScreenEffect::StubReturn -> ScreenEffect
+[conv] 0x7393b0 nullsub_248 -> _addr_73
+[conv] 0x7cf116 _isintTOSret -> _addr_7C
+[conv] 0x41c060 FootClass::vt_entry_4E4 -> FootClass
+[conv] 0x459e00 TechnoClass::StubReturnFalse4 -> TechnoClass
+[conv] 0x4db250 FootClass::COMStub_Return0_69 -> FootClass
+[conv] 0x5c0e40 MultiplayerGameMode::StubReturnFalse2 -> MultiplayerGameMode
+[conv] 0x5f4340 ObjectClass::COMStub_Return0_72 -> ObjectClass
+[conv] 0x6c8e70 ObjectClass::_0Iostream_init_QAE_XZ_5 -> ObjectClass
+[conv] 0x7dbc57 ReturnNull5 -> _addr_7D
+[conv] 0x634950 ObjectClass::sub_634950 -> ObjectClass
+[conv] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> ObjectClass
+[conv] 0x5375b0 View4CommandClass::performAction_159 -> View4CommandClass
+[conv] 0x5c61e0 Hash_Check_5C61E0 -> Hash_Check
+[conv] 0x72bbb0 UI_Create_72BBB0 -> UI_Create
+[conv] 0x72ce50 UI_Create_72CE50 -> UI_Create
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=0
+[era] _addr_4E                 rc=0
+[era] MultiplayerGameMode      rc=0
+[era] ScreenEffect             rc=0
+[era] _addr_73                 rc=0
+[era] _addr_7C                 rc=0
+[era] FootClass                rc=0
+[era] _addr_7D                 rc=0
+[era] View4CommandClass        rc=0
+[era] Hash_Check               rc=0
+[era] UI_Create                rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f4340   MISMATCH         ObjectClass::COMStub_Return0_72
+[diff] 0x6c8e70   MATCH            ObjectClass::_0Iostream_init_QAE_XZ_5
+[diff] 0x634950   MATCH            ObjectClass::sub_634950
+[diff] 0x459de0   MISMATCH         TechnoClass::COMStub_Return0_205
+[diff] 0x459e00   MATCH            TechnoClass::StubReturnFalse4
+[diff] 0x4e6140   MATCH            nullsub_54
+[diff] 0x5c0f40   MATCH            MultiplayerGameMode::StubReturnTrue5
+[diff] 0x5c0e40   MATCH            MultiplayerGameMode::StubReturnFalse2
+[diff] 0x65fa60   MATCH            ScreenEffect::StubReturn
+[diff] 0x7393b0   MATCH            nullsub_248
+[diff] 0x7cf116   MATCH            _isintTOSret
+[diff] 0x41c060   MATCH            FootClass::vt_entry_4E4
+[diff] 0x4db250   MISMATCH         FootClass::COMStub_Return0_69
+[diff] 0x7dbc57   MATCH            ReturnNull5
+[diff] 0x5375b0   MISMATCH         View4CommandClass::performAction_159
+[diff] 0x5c61e0   MATCH            Hash_Check_5C61E0
+[diff] 0x72bbb0   MATCH            UI_Create_72BBB0
+[diff] 0x72ce50   MATCH            UI_Create_72CE50
+[ledger] 0x408530 ObjectClass::nullsub_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x459de0 TechnoClass::COMStub_Return0_205 -> NG (attempt 1)
+[ledger] 0x4e6140 nullsub_54 -> OK (attempt 1)
+[ledger] 0x5c0f40 MultiplayerGameMode::StubReturnTrue5 -> OK (attempt 1)
+[ledger] 0x65fa60 ScreenEffect::StubReturn -> OK (attempt 1)
+[ledger] 0x7393b0 nullsub_248 -> OK (attempt 1)
+[ledger] 0x7cf116 _isintTOSret -> OK (attempt 1)
+[ledger] 0x41c060 FootClass::vt_entry_4E4 -> OK (attempt 1)
+[ledger] 0x459e00 TechnoClass::StubReturnFalse4 -> OK (attempt 1)
+[ledger] 0x4db250 FootClass::COMStub_Return0_69 -> NG (attempt 1)
+[ledger] 0x5c0e40 MultiplayerGameMode::StubReturnFalse2 -> OK (attempt 1)
+[ledger] 0x5f4340 ObjectClass::COMStub_Return0_72 -> NG (attempt 1)
+[ledger] 0x6c8e70 ObjectClass::_0Iostream_init_QAE_XZ_5 -> OK (attempt 1)
+[ledger] 0x7dbc57 ReturnNull5 -> OK (attempt 1)
+[ledger] 0x634950 ObjectClass::sub_634950 -> OK (attempt 1)
+[ledger] 0x4263c0 ObjectClass::COMStub_Ret8487648_36 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5375b0 View4CommandClass::performAction_159 -> NG (attempt 1)
+[ledger] 0x5c61e0 Hash_Check_5C61E0 -> OK (attempt 1)
+[ledger] 0x72bbb0 UI_Create_72BBB0 -> OK (attempt 1)
+[ledger] 0x72ce50 UI_Create_72CE50 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 4,
+  "MATCH": 14
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "cc_mismatch": 1,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 77.8,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p00\batch_report.json
