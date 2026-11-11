@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x496d10 _RLEBlitTransLucent75ZReadWarp_G::sub_496D10 -> _RLEBlitTransLucent75ZReadWarp_G
+[conv] 0x496fb0 _RLEBlitTransLucent25ZReadWarp_G::sub_496FB0 -> _RLEBlitTransLucent25ZReadWarp_G
+[conv] 0x6a8220 SidebarClass::InitCameoGrid -> SidebarClass
+[conv] 0x7d7ee0 unknown_libname_76 -> _addr_7D
+[conv] 0x42fd30 EncodeBitmapRGB -> _addr_42
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x5c71e0 ShiftBigIntAndScan -> _addr_5C
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x6a89e0 ObjectClass::sub_6A89E0 -> ObjectClass
+[conv] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> _RLEBlitTransLucent50Alpha_G
+[conv] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> _RLEBlitTransLucent75Alpha_G
+[conv] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> _RLEBlitTransLucent25Alpha_G
+[conv] 0x5c6660 RotateBitBufferRight -> _addr_5C
+[conv] 0x5c67a0 RotateBitBufferLeft -> _addr_5C
+[conv] 0x75edf0 Voxel::BlendShadowColor -> Voxel
+[conv] 0x4caf20 VoxelAnimClass::ProcessFrame -> VoxelAnimClass
+[conv] 0x7df3c2 Object_Calc_7DF3C2 -> Object_Calc
+[conv] 0x7d5178 ObjectClass::_cvtdate -> ObjectClass
+[conv] 0x7df500 Object_Calc_7DF500 -> Object_Calc
+[conv] 0x6613a0 ComputeColorSaturation -> _addr_66
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransLucent75ZReadWarp_G rc=0
+[era] _RLEBlitTransLucent25ZReadWarp_G rc=0
+[era] SidebarClass             rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_42                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_5C                 rc=2
+[era] _RLEBlitTransLucent50Alpha_G rc=2
+[era] _RLEBlitTransLucent75Alpha_G rc=2
+[era] _RLEBlitTransLucent25Alpha_G rc=2
+[era] Voxel                    rc=0
+[era] VoxelAnimClass           rc=2
+[era] Object_Calc              rc=2
+[era] _addr_66                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x496d10   MISMATCH         _RLEBlitTransLucent75ZReadWarp_G::sub_496D10
+[diff] 0x496fb0   MISMATCH         _RLEBlitTransLucent25ZReadWarp_G::sub_496FB0
+[diff] 0x7d5178   MISMATCH         ObjectClass::_cvtdate
+[diff] 0x75edf0   MISMATCH         Voxel::BlendShadowColor
+[ledger] 0x496d10 _RLEBlitTransLucent75ZReadWarp_G::sub_496D10 -> NG (attempt 3)
+[ledger] 0x496fb0 _RLEBlitTransLucent25ZReadWarp_G::sub_496FB0 -> NG (attempt 3)
+[ledger] 0x6a8220 SidebarClass::InitCameoGrid -> COMPILE_FAIL (attempt 12)
+[ledger] 0x7d7ee0 unknown_libname_76 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42fd30 EncodeBitmapRGB -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c71e0 ShiftBigIntAndScan -> COMPILE_FAIL (attempt 3)
+[ledger] 0x63d2d0 ObjectClass::sub_63D2D0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a89e0 ObjectClass::sub_6A89E0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x497cf0 _RLEBlitTransLucent50Alpha_G::AddRef -> COMPILE_FAIL (attempt 13)
+[ledger] 0x497b80 _RLEBlitTransLucent75Alpha_G::AddRef -> COMPILE_FAIL (attempt 13)
+[ledger] 0x497e60 _RLEBlitTransLucent25Alpha_G::AddRef -> COMPILE_FAIL (attempt 11)
+[ledger] 0x5c6660 RotateBitBufferRight -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c67a0 RotateBitBufferLeft -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75edf0 Voxel::BlendShadowColor -> NG (attempt 11)
+[ledger] 0x4caf20 VoxelAnimClass::ProcessFrame -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7df3c2 Object_Calc_7DF3C2 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7d5178 ObjectClass::_cvtdate -> NG (attempt 3)
+[ledger] 0x7df500 Object_Calc_7DF500 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6613a0 ComputeColorSaturation -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 16
+ },
+ "pathologies": {
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p02\batch_report.json
