@@ -9825,7 +9825,7 @@
   "status": "NG"
  },
  "0x4526f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "name_prefix",
   "first_diff": "+0 push ebx",
@@ -12670,7 +12670,7 @@
   "status": "NG"
  },
  "0x476420": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -19868,7 +19868,7 @@
   "this_as_id": false
  },
  "0x4b62c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -22841,7 +22841,7 @@
   "this_as_id": false
  },
  "0x4d02b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -38394,7 +38394,7 @@
   "this_as_id": false
  },
  "0x559d60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -39853,7 +39853,7 @@
   "this_as_id": false
  },
  "0x578390": {
-  "attempts": 10,
+  "attempts": 11,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49145,7 +49145,7 @@
   "this_as_id": false
  },
  "0x5e8dc0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -49307,7 +49307,7 @@
   "this_as_id": false
  },
  "0x5e9c00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "AssignPlayerColor",
@@ -59030,7 +59030,7 @@
   "status": "NG"
  },
  "0x674650": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -59042,7 +59042,7 @@
   "this_as_id": false
  },
  "0x679cc0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_679CC0",
@@ -61046,7 +61046,7 @@
   "this_as_id": false
  },
  "0x6964c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -62435,15 +62435,15 @@
   "status": "OK"
  },
  "0x6a4930": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+1 push esi",
   "name": "SideClass::Init",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "SideClass::Init",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x6a4a00": {
@@ -62700,7 +62700,7 @@
   "this_as_id": false
  },
  "0x6abb60": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63043,7 +63043,7 @@
   "this_as_id": false
  },
  "0x6af4a0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -63840,7 +63840,7 @@
   "this_as_id": false
  },
  "0x6b55f0": {
-  "attempts": 11,
+  "attempts": 12,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -69361,7 +69361,7 @@
   "this_as_id": false
  },
  "0x6e15f0": {
-  "attempts": 12,
+  "attempts": 13,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -70659,7 +70659,7 @@
   "this_as_id": false
  },
  "0x6ee310": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -75406,15 +75406,15 @@
   "this_as_id": false
  },
  "0x728710": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
-  "first_diff": null,
+  "first_diff": "+4 mov dl, 1",
   "name": "TubeClass::ProcessEvent",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "TubeClass::ProcessEvent",
   "rule_violations": 1,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7287f0": {
@@ -76921,7 +76921,7 @@
   "status": "NG"
  },
  "0x72f350": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "House_Load",
@@ -90061,7 +90061,7 @@
   "this_as_id": false
  },
  "0x7d6830": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "___init_monetary",

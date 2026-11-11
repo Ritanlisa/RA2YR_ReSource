@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7d6830",
+  "name": "___init_monetary",
+  "cls": null,
+  "size": 203,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'_get_lc_lconv' : cannot convert parameter 1 from 'void ** ' to 'int'"
+ },
+ {
+  "addr": "0x679cc0",
+  "name": "sub_679CC0",
+  "cls": null,
+  "size": 204,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2371",
+  "first_msg": "'TEXTMETRICA' : redefinition"
+ },
+ {
+  "addr": "0x578390",
+  "name": "MapClass::IsRectInBounds",
+  "cls": null,
+  "size": 205,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6964c0",
+  "name": "NetworkDialog::Dispatch",
+  "cls": null,
+  "size": 205,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x476420",
+  "name": "INIClass::GetCoord2",
+  "cls": null,
+  "size": 206,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'strtok' : none of the 2 overloads can convert parameter 2 from type 'int (__cdecl *)(const void *,const void *"
+ },
+ {
+  "addr": "0x6a4930",
+  "name": "SideClass::Init",
+  "cls": null,
+  "size": 207,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x559d60",
+  "name": "LoadOptions::AddRef",
+  "cls": null,
+  "size": 209,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->MouseClass_field_0x0' must point to class/struct/union"
+ },
+ {
+  "addr": "0x6ee310",
+  "name": "TeamClass::SelectAreaAttackTarget",
+  "cls": null,
+  "size": 209,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.vfptr3' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6b55f0",
+  "name": "SmudgeTypeClass::vt_entry_A0",
+  "cls": null,
+  "size": 210,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x72f350",
+  "name": "House_Load",
+  "cls": null,
+  "size": 210,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2673",
+  "first_msg": "'House_Load' : global functions do not have 'this' pointers"
+ },
+ {
+  "addr": "0x4526f0",
+  "name": "BuildingClass::SelectWeaponSlot",
+  "cls": null,
+  "size": 211,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'TechnoClass__GetAudioEntry' : cannot convert parameter 1 from 'class TechnoClass *' to 'int'"
+ },
+ {
+  "addr": "0x5e9c00",
+  "name": "AssignPlayerColor",
+  "cls": null,
+  "size": 212,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x5e8dc0",
+  "name": "Player::BuildListString",
+  "cls": null,
+  "size": 214,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.DeleteAndZero_field_0x04' must have class/struct/union type"
+ },
+ {
+  "addr": "0x728710",
+  "name": "TubeClass::ProcessEvent",
+  "cls": null,
+  "size": 214,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x4d02b0",
+  "name": "VoxelAnimClass::UpdateMatrix",
+  "cls": null,
+  "size": 215,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Cell__GetGroundHeight' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x6e15f0",
+  "name": "ObjectClass::ReadINIEntry",
+  "cls": null,
+  "size": 215,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'strncpy' : cannot convert parameter 3 from 'char *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x6af4a0",
+  "name": "SlaveManagerClass::Constructor_SlaveManagerClass",
+  "cls": null,
+  "size": 217,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x4b62c0",
+  "name": "DropPodLocomotionClass::UpdateMovement",
+  "cls": null,
+  "size": 218,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x674650",
+  "name": "SidebarClass::ReadButtonList",
+  "cls": null,
+  "size": 219,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'strtok' : none of the 2 overloads can convert parameter 2 from type 'int (__cdecl *)(const void *,const vo"
+ },
+ {
+  "addr": "0x6abb60",
+  "name": "HouseClass::RemoveFromProductionQueue",
+  "cls": null,
+  "size": 221,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'int *' to 'unsigned int *'"
+ }
+]
