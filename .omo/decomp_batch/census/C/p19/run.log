@@ -1,0 +1,82 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p19\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b9710 NetworkGameSetup::ReadRulesEngineerCount -> NetworkGameSetup
+[conv] 0x71ffe0 TextButtonClass::checkWeaponCooldown -> TextButtonClass
+[conv] 0x4112d0 MapClass::isLocationShrouded -> MapClass
+[conv] 0x491c10 _RLEBlitTransXlatZRead_E::sub_491C10 -> _RLEBlitTransXlatZRead_E
+[conv] 0x496490 _RLEBlitTransLucent50_G::sub_496490 -> _RLEBlitTransLucent50_G
+[conv] 0x4971f0 _RLEBlitTransXlatZReadWrite_G::sub_4971F0 -> _RLEBlitTransXlatZReadWrite_G
+[conv] 0x498490 _RLEBlitTransZRemapXlatAlphaZRead_G::Release -> _RLEBlitTransZRemapXlatAlphaZRead_G
+[conv] 0x4af970 JumpjetLocomotionClass::CheckPiggybackState -> JumpjetLocomotionClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NetworkGameSetup         rc=2
+[era] TextButtonClass          rc=2
+[era] MapClass                 rc=2
+[era] _RLEBlitTransXlatZRead_E rc=0
+[era] _RLEBlitTransLucent50_G  rc=0
+[era] _RLEBlitTransXlatZReadWrite_G rc=0
+[era] _RLEBlitTransZRemapXlatAlphaZRead_G rc=0
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x491c10   MISMATCH         _RLEBlitTransXlatZRead_E::sub_491C10
+[diff] 0x496490   MISMATCH         _RLEBlitTransLucent50_G::sub_496490
+[diff] 0x4971f0   MISMATCH         _RLEBlitTransXlatZReadWrite_G::sub_4971F0
+[diff] 0x498490   MATCH            _RLEBlitTransZRemapXlatAlphaZRead_G::Release
+[diff] 0x4af970   MISMATCH         JumpjetLocomotionClass::CheckPiggybackState
+[ledger] 0x5b9710 NetworkGameSetup::ReadRulesEngineerCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71ffe0 AbstractClass::checkWeaponCooldown -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4112d0 MapClass::isLocationShrouded -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5ef8 0x7d5ef8 -> PENDING (attempt 1)
+[ledger] 0x491c10 sub_491C10 -> NG (attempt 1)
+[ledger] 0x496490 sub_496490 -> NG (attempt 1)
+[ledger] 0x4971f0 sub_4971F0 -> NG (attempt 1)
+[ledger] 0x498490 RLEBlitTransZRemapXlatAlphaZRead_ushort::Release -> OK (attempt 1)
+[ledger] 0x4af970 JumpjetLocomotionClass::CheckPiggybackState -> NG (attempt 1)
+[ledger] 0x5b4310 0x5b4310 -> PENDING (attempt 1)
+[ledger] 0x40d400 0x40d400 -> PENDING (attempt 1)
+[ledger] 0x4a6cb0 0x4a6cb0 -> PENDING (attempt 1)
+[ledger] 0x4e6820 0x4e6820 -> PENDING (attempt 1)
+[ledger] 0x4e6da0 0x4e6da0 -> PENDING (attempt 1)
+[ledger] 0x4e7320 0x4e7320 -> PENDING (attempt 1)
+[ledger] 0x4e78a0 0x4e78a0 -> PENDING (attempt 1)
+[ledger] 0x4e7f70 0x4e7f70 -> PENDING (attempt 1)
+[ledger] 0x6590d0 0x6590d0 -> PENDING (attempt 1)
+[ledger] 0x6e5b20 0x6e5b20 -> PENDING (attempt 1)
+[ledger] 0x725710 0x725710 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 2079,
+ "verdicts": {
+  "MISMATCH": 577,
+  "MATCH": 520,
+  "COMPILE_FAIL": 501,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 468,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 186,
+  "ret_norm": 5,
+  "frame_sched": 65,
+  "const_fold": 65,
+  "branch_polarity": 37,
+  "regalloc": 94,
+  "branch_order": 68,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 21,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.4,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p19\batch_report.json

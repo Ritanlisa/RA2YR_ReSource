@@ -482,6 +482,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40d400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40d400",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40d6c0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -696,6 +703,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_410E70",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4112d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapClass::isLocationShrouded",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -2589,6 +2603,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x491c10": {
+  "attempts": 1,
+  "first_diff": "+55 ret 0x2c",
+  "name": "sub_491C10",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x491c50": {
   "attempts": 1,
   "first_diff": null,
@@ -2918,6 +2939,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x496490": {
+  "attempts": 1,
+  "first_diff": "+55 ret 0x2c",
+  "name": "sub_496490",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x4965b0": {
   "attempts": 1,
   "first_diff": null,
@@ -2987,6 +3015,13 @@
   "name": "sub_497100",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4971f0": {
+  "attempts": 1,
+  "first_diff": "+55 ret 0x2c",
+  "name": "sub_4971F0",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x497230": {
   "attempts": 1,
@@ -3078,6 +3113,13 @@
   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
+ },
+ "0x498490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::Release",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4984d0": {
   "attempts": 8,
@@ -3464,6 +3506,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4a6cb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4a6cb0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4a7900": {
   "attempts": 10,
   "first_diff": "+11 jne 0x4a7967",
@@ -3603,6 +3652,13 @@
   "name": "LocomotionClass::Initialize",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4af970": {
+  "attempts": 1,
+  "first_diff": "+17 jne 0x4af9a4",
+  "name": "JumpjetLocomotionClass::CheckPiggybackState",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x4afb80": {
   "attempts": 9,
@@ -4532,6 +4588,41 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x4e64a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e6820": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e6820",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e6da0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e6da0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e7320": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e7320",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e78a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e78a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x4e7f70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e7f70",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -7461,6 +7552,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5b4310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5b4310",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5b43e0": {
   "attempts": 1,
   "first_diff": null,
@@ -7481,6 +7579,13 @@
   "name": "0x5b7700",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5b9710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NetworkGameSetup::ReadRulesEngineerCount",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5bbed0": {
   "attempts": 10,
@@ -9358,6 +9463,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6590d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6590d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x659540": {
   "attempts": 1,
   "first_diff": null,
@@ -11073,6 +11185,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6e5b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6e5b20",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x6e6470": {
   "attempts": 1,
   "first_diff": "+15 call 0x410320",
@@ -11731,6 +11850,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x71ffe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::checkWeaponCooldown",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x720070": {
   "attempts": 11,
   "first_diff": null,
@@ -11891,6 +12017,13 @@
   "name": "UI_Remove",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x725710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x725710",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x725e40": {
   "attempts": 1,
@@ -14495,6 +14628,13 @@
   "name": "_parse_cmdline",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7d5ef8": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d5ef8",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7d6a1d": {
   "attempts": 1,

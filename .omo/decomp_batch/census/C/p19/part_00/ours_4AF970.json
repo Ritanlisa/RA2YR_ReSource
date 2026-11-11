@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckPiggybackState@JumpjetLocomotionClass@@QAG_NH@Z",
+ "sym_key": "JumpjetLocomotionClass::CheckPiggybackState",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "568b7424088b4eec8d46ec50ff511084c075248b465085c0741d8a464d84c074168b56f48a82ad06000084c07509b8010000005ec2080033c05ec20800",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AF970",
+ "name": "JumpjetLocomotionClass::CheckPiggybackState",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AF970",
+ "bytes_hex": "568b7424088b4eec8d46ec50ff511084c075218b465085c0741a8a464d84c074138b56f48a82ad06000084c07506b0015ec2040032c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
