@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x55ad80",
+  "name": "sub_55AD80",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_55",
+  "emitted": "sub_55AD80",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ed368]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x55ada0",
+  "name": "sub_55ADA0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_55",
+  "emitted": "sub_55ADA0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x55ca30",
+  "name": "sub_55CA30",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_55",
+  "emitted": "sub_55CA30",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ed3a0]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x55ca50",
+  "name": "sub_55CA50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_55",
+  "emitted": "sub_55CA50",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x55f7d0",
+  "name": "sub_55F7D0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_55",
+  "emitted": "sub_55F7D0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x561740",
+  "name": "sub_561740",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_56",
+  "emitted": "sub_561740",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0xabd488]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 30
+ },
+ {
+  "addr": "0x58b160",
+  "name": "sub_58B160",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_58",
+  "emitted": "sub_58B160",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ed600]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x58b180",
+  "name": "sub_58B180",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p94",
+  "unit": "_addr_58",
+  "emitted": "sub_58B180",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x58b370",
+  "name": "sub_58B370",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_58",
+  "emitted": "sub_58B370",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ed610]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x58b390",
+  "name": "sub_58B390",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_58",
+  "emitted": "sub_58B390",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x58b560",
+  "name": "sub_58B560",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_58",
+  "emitted": "sub_58B560",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7ed620]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x58b580",
+  "name": "sub_58B580",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_58",
+  "emitted": "sub_58B580",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5adb50",
+  "name": "sub_5ADB50",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5A",
+  "emitted": "sub_5ADB50",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7edb38]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5adb70",
+  "name": "sub_5ADB70",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5A",
+  "emitted": "sub_5ADB70",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5afd30",
+  "name": "sub_5AFD30",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5A",
+  "emitted": "sub_5AFD30",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5b1bd0",
+  "name": "sub_5B1BD0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5B",
+  "emitted": "sub_5B1BD0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7edc60]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5b1bf0",
+  "name": "sub_5B1BF0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5B",
+  "emitted": "sub_5B1BF0",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5b1f30",
+  "name": "sub_5B1F30",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5B",
+  "emitted": "sub_5B1F30",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7edc70]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5b1f50",
+  "name": "sub_5B1F50",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5B",
+  "emitted": "sub_5B1F50",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [0x7e1718]",
+   "ours": "+0 fld qword ptr [0]"
+  },
+  "ours_size": 19
+ },
+ {
+  "addr": "0x5b2bc0",
+  "name": "sub_5B2BC0",
+  "family": "FP_RECIP",
+  "path": "extern_reloc",
+  "size": 19,
+  "part": "p95",
+  "unit": "_addr_5B",
+  "emitted": "sub_5B2BC0",
+  "first_diff": {
+   "orig": "+6 fdiv qword ptr [0x7edc80]",
+   "ours": "+6 fmul qword ptr [0]"
+  },
+  "ours_size": 19
+ }
+]
