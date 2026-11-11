@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x659030",
+  "batch": "nocls",
+  "name": "sub_659030",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6590d0",
+  "batch": "nocls",
+  "name": "sub_6590D0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x65af80",
+  "batch": "nocls",
+  "name": "sub_65AF80",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65b000",
+  "batch": "nocls",
+  "name": "sub_65B000",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65d7d0",
+  "batch": "nocls",
+  "name": "sub_65D7D0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65d8e0",
+  "batch": "nocls",
+  "name": "DeployScriptActionPlane",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x65f850",
+  "batch": "nocls",
+  "name": "sub_65F850",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65f970",
+  "batch": "nocls",
+  "name": "sub_65F970",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65f990",
+  "batch": "nocls",
+  "name": "sub_65F990",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x65f9f0",
+  "batch": "nocls",
+  "name": "sub_65F9F0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x661df0",
+  "batch": "nocls",
+  "name": "sub_661DF0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x663620",
+  "batch": "nocls",
+  "name": "sub_663620",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x664380",
+  "batch": "nocls",
+  "name": "nullsub_33",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x664cb0",
+  "batch": "nocls",
+  "name": "sub_664CB0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x679cc0",
+  "batch": "nocls",
+  "name": "sub_679CC0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x679ec0",
+  "batch": "nocls",
+  "name": "unknown_libname_29",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x67c510",
+  "batch": "nocls",
+  "name": "sub_67C510",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x67c610",
+  "batch": "nocls",
+  "name": "sub_67C610",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x67c650",
+  "batch": "nocls",
+  "name": "sub_67C650",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x684060",
+  "batch": "nocls",
+  "name": "SetScenarioClassTimer",
+  "cc": "fastcall"
+ }
+]

@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x659030 sub_659030 -> _addr_65
+[conv] 0x6590d0 sub_6590D0 -> _addr_65
+[conv] 0x65af80 sub_65AF80 -> _addr_65
+[conv] 0x65b000 sub_65B000 -> _addr_65
+[conv] 0x65d7d0 sub_65D7D0 -> _addr_65
+[conv] 0x65d8e0 DeployScriptActionPlane -> _addr_65
+[conv] 0x65f850 sub_65F850 -> _addr_65
+[conv] 0x65f970 sub_65F970 -> _addr_65
+[conv] 0x65f990 sub_65F990 -> _addr_65
+[conv] 0x65f9f0 sub_65F9F0 -> _addr_65
+[conv] 0x661df0 sub_661DF0 -> _addr_66
+[conv] 0x663620 sub_663620 -> _addr_66
+[conv] 0x664380 nullsub_33 -> _addr_66
+[conv] 0x664cb0 sub_664CB0 -> _addr_66
+[conv] 0x679cc0 sub_679CC0 -> _addr_67
+[conv] 0x679ec0 unknown_libname_29 -> _addr_67
+[conv] 0x67c510 sub_67C510 -> _addr_67
+[conv] 0x67c610 sub_67C610 -> _addr_67
+[conv] 0x67c650 sub_67C650 -> _addr_67
+[conv] 0x684060 SetScenarioClassTimer -> _addr_68
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_65                 rc=2
+[era] _addr_66                 rc=0
+[era] _addr_67                 rc=2
+[era] _addr_68                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x659030   MATCH            sub_659030
+[diff] 0x65af80   MISMATCH         sub_65AF80
+[diff] 0x65b000   MISMATCH         sub_65B000
+[diff] 0x65d7d0   MISMATCH         sub_65D7D0
+[diff] 0x65f850   MISMATCH         sub_65F850
+[diff] 0x65f970   MISMATCH         sub_65F970
+[diff] 0x65f990   MATCH            sub_65F990
+[diff] 0x65f9f0   MISMATCH         sub_65F9F0
+[diff] 0x661df0   MISMATCH         sub_661DF0
+[diff] 0x663620   MISMATCH         sub_663620
+[diff] 0x664380   MATCH            nullsub_33
+[diff] 0x664cb0   MATCH            sub_664CB0
+[diff] 0x67c510   MISMATCH         sub_67C510
+[diff] 0x67c650   MATCH            sub_67C650
+[ledger] 0x659030 sub_659030 -> OK (attempt 2)
+[ledger] 0x6590d0 sub_6590D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65af80 sub_65AF80 -> NG (attempt 2)
+[ledger] 0x65b000 sub_65B000 -> NG (attempt 2)
+[ledger] 0x65d7d0 sub_65D7D0 -> NG (attempt 2)
+[ledger] 0x65d8e0 DeployScriptActionPlane -> COMPILE_FAIL (attempt 2)
+[ledger] 0x65f850 sub_65F850 -> NG (attempt 2)
+[ledger] 0x65f970 sub_65F970 -> NG (attempt 2)
+[ledger] 0x65f990 sub_65F990 -> OK (attempt 2)
+[ledger] 0x65f9f0 sub_65F9F0 -> NG (attempt 2)
+[ledger] 0x661df0 sub_661DF0 -> NG (attempt 2)
+[ledger] 0x663620 sub_663620 -> NG (attempt 2)
+[ledger] 0x664380 nullsub_33 -> OK (attempt 2)
+[ledger] 0x664cb0 sub_664CB0 -> OK (attempt 2)
+[ledger] 0x679cc0 sub_679CC0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x679ec0 unknown_libname_29 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67c510 sub_67C510 -> NG (attempt 2)
+[ledger] 0x67c610 sub_67C610 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x67c650 sub_67C650 -> OK (attempt 2)
+[ledger] 0x684060 SetScenarioClassTimer -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 5,
+  "COMPILE_FAIL": 6,
+  "MISMATCH": 9
+ },
+ "pathologies": {
+  "extern_reloc": 6,
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 35.7,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p15\batch_report.json

@@ -12971,18 +12971,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x659030": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x659030",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_659030",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6590d0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x6590d0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_6590D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x659540": {
   "attempts": 1,
@@ -13027,18 +13027,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x65af80": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65af80",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+6 fdiv qword ptr [0x7f0790]",
+  "name": "sub_65AF80",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x65b000": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65b000",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f0798]",
+  "name": "sub_65B000",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x65b3a0": {
   "attempts": 5,
@@ -13202,46 +13202,46 @@
   "status": "OK"
  },
  "0x65d7d0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65d7d0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fild dword ptr [0xb04c98]",
+  "name": "sub_65D7D0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x65d8e0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x65d8e0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "DeployScriptActionPlane",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x65f850": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65f850",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f0988]",
+  "name": "sub_65F850",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x65f970": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65f970",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+5 mov dword ptr [0xb04de8], 0",
+  "name": "sub_65F970",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x65f990": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x65f990",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_65F990",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x65f9f0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x65f9f0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 mov cl, byte ptr [0xb04d28]",
+  "name": "sub_65F9F0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x65fe00": {
   "attempts": 1,
@@ -13300,11 +13300,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x661df0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x661df0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 push ecx",
+  "name": "sub_661DF0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x662240": {
   "attempts": 1,
@@ -13328,11 +13328,11 @@
   "status": "OK"
  },
  "0x663620": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x663620",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+6 fdiv qword ptr [0x7f0c18]",
+  "name": "sub_663620",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x663cd0": {
   "attempts": 1,
@@ -13342,11 +13342,11 @@
   "status": "NG"
  },
  "0x664380": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x664380",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "nullsub_33",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x664440": {
   "attempts": 9,
@@ -13377,11 +13377,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x664cb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x664cb0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_664CB0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6691e0": {
   "attempts": 1,
@@ -13419,18 +13419,18 @@
   "status": "COMPILE_FAIL"
  },
  "0x679cc0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x679cc0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_679CC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x679ec0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x679ec0",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "unknown_libname_29",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x679f70": {
   "attempts": 1,
@@ -13503,25 +13503,25 @@
   "status": "COMPILE_FAIL"
  },
  "0x67c510": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "0x67c510",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "attempts": 2,
+  "first_diff": "+0 fld qword ptr [0x7f0e30]",
+  "name": "sub_67C510",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x67c610": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x67c610",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_67C610",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x67c650": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x67c650",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "sub_67C650",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x67d300": {
   "attempts": 1,
@@ -13622,11 +13622,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x684060": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
-  "name": "0x684060",
-  "note": "decomp_batch r2: NO_CLS",
-  "status": "PENDING"
+  "name": "SetScenarioClassTimer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x685dc0": {
   "attempts": 1,
