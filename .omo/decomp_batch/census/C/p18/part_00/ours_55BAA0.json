@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetDeployState@LogicClass@@QAGDHD@Z",
+ "sym_key": "LogicClass::SetDeployState",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "568b7424088a869800000084c0741a8b44240c8b4c24085056e80000000084c07407c686980000000132c05ec20c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?RenderStatusText@DisplayClass@@QAE_NHD@Z",
+   "sym_key": "DisplayClass::RenderStatusText"
+  }
+ ]
+}

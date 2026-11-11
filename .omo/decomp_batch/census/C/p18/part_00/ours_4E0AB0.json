@@ -1,0 +1,15 @@
+{
+ "symbol": "?Destroy@_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass@@QAEXXZ",
+ "sym_key": "_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Destroy",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "568bf18b4604c746100000000085c0741b8b4e0cf6c5ff741383c0fc50e80000000083c404c74604000000008b460cc746080000000080e40089460c5ec3",
+ "relocs": [
+  {
+   "off": 30,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

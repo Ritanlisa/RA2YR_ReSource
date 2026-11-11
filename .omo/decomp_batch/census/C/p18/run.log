@@ -1,0 +1,95 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ffd50 ObjectClass::sub_4FFD50 -> ObjectClass
+[conv] 0x628860 _VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear -> _VectorClass_U_HashObject_VHashString_PAVSchemeNode
+[conv] 0x631c80 Pipe::Dtor -> Pipe
+[conv] 0x65d4d0 AbstractClass::checkAICondition -> AbstractClass
+[conv] 0x7bbab0 XSurface::Fill -> XSurface
+[conv] 0x723ce0 ScriptTypeClass::FormatToString -> ScriptTypeClass
+[conv] 0x4114b0 StreamClass::ReadAndSeek -> StreamClass
+[conv] 0x4e0ab0 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Destroy -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e24a0 unknown::GetElapsedMS -> unknown
+[conv] 0x4e5900 unknown::SetComboBoxSelection -> unknown
+[conv] 0x55baa0 LogicClass::SetDeployState -> LogicClass
+[conv] 0x60c4a0 unknown::ResizeDialogAndEnum -> unknown
+[conv] 0x6f1f30 TeamTypeClass::FlashAllInstances -> TeamTypeClass
+[conv] 0x55a970 LocomotionClass::ReleaseRef -> LocomotionClass
+[conv] 0x75f610 WaveClass::UpdateWave -> WaveClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _VectorClass_U_HashObject_VHashString_PAVSchemeNode rc=2
+[era] Pipe                     rc=2
+[era] AbstractClass            rc=2
+[era] XSurface                 rc=2
+[era] ScriptTypeClass          rc=0
+[era] StreamClass              rc=2
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] unknown                  rc=2
+[era] LogicClass               rc=0
+[era] TeamTypeClass            rc=2
+[era] LocomotionClass          rc=2
+[era] WaveClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x4ffd50   MISMATCH         ObjectClass::sub_4FFD50
+[diff] 0x723ce0   MISMATCH         ScriptTypeClass::FormatToString
+[diff] 0x4e0ab0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Destroy
+[diff] 0x4e24a0   MISMATCH         unknown::GetElapsedMS
+[diff] 0x4e5900   MISMATCH         unknown::SetComboBoxSelection
+[diff] 0x55baa0   MISMATCH         LogicClass::SetDeployState
+[ledger] 0x723b60 0x723b60 -> PENDING (attempt 1)
+[ledger] 0x746fb0 0x746fb0 -> PENDING (attempt 1)
+[ledger] 0x763450 0x763450 -> PENDING (attempt 1)
+[ledger] 0x770150 0x770150 -> PENDING (attempt 1)
+[ledger] 0x4ffd50 sub_4FFD50 -> NG (attempt 1)
+[ledger] 0x628860 DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631c80 Pipe::Dtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65d4d0 AbstractClass::checkAICondition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x777e00 0x777e00 -> PENDING (attempt 1)
+[ledger] 0x7bbab0 XSurface::Fill -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723ce0 ScriptTypeClass::FormatToString -> NG (attempt 1)
+[ledger] 0x4114b0 StreamClass::ReadAndSeek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0ab0 VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy -> NG (attempt 1)
+[ledger] 0x4e24a0 Time::GetElapsedMS -> NG (attempt 1)
+[ledger] 0x4e5900 SetComboBoxSelection -> NG (attempt 1)
+[ledger] 0x55baa0 ObjectClass::SetDeployState -> NG (attempt 1)
+[ledger] 0x60c4a0 SkirmishDialog::ResizeDialogAndEnum -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f1f30 TeamTypeClass::FlashAllInstances -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a970 COM::ReleaseRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75f610 WaveClass::UpdateWave -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2059,
+ "verdicts": {
+  "MISMATCH": 573,
+  "MATCH": 519,
+  "COMPILE_FAIL": 498,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 456,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 186,
+  "ret_norm": 5,
+  "frame_sched": 65,
+  "const_fold": 65,
+  "branch_polarity": 36,
+  "regalloc": 94,
+  "branch_order": 68,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 18,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.5,
+ "match_rate_of_total_pct": 25.2,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p18\batch_report.json

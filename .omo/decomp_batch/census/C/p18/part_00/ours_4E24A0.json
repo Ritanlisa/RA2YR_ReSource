@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetElapsedMS@unknown@@QAEIXZ",
+ "sym_key": "unknown::GetElapsedMS",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b0d000000003bc176178d0c498bd18d0c402bcab81f85eb51f7e18bc2c1e804c38d4c49038bd18d0c402bcab81f85eb51f7e18bc2c1e804c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?timeGetTime@@YGKXZ",
+   "sym_key": "timeGetTime"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3F14@@3IA",
+   "sym_key": "DataGlobal_8B3F14"
+  }
+ ]
+}

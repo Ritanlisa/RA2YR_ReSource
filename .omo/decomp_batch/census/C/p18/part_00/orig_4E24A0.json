@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E24A0",
+ "name": "Time::GetElapsedMS",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E24A0",
+ "bytes_hex": "ff1530157e008b0d143f8b003bc177132bc1488d0c40b81f85eb51f7e18bc2c1e804c32bc18d0c40b81f85eb51f7e18bc2c1e804c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

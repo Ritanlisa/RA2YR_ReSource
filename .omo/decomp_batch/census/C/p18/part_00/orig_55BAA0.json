@@ -1,0 +1,11 @@
+{
+ "addr": "0x55BAA0",
+ "name": "ObjectClass::SetDeployState",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55BAA0",
+ "bytes_hex": "568b7424088a869800000084c07406b0015ec208008b44240c5056e8f05effff84c0740cb0018886980000005ec2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

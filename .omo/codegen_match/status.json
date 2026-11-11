@@ -706,6 +706,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4114b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "StreamClass::ReadAndSeek",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4114f0": {
   "attempts": 1,
   "first_diff": null,
@@ -4367,6 +4374,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x4e0ab0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4e0ca0": {
   "attempts": 1,
   "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
@@ -4430,6 +4444,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4e24a0": {
+  "attempts": 1,
+  "first_diff": "+0 call dword ptr [0x7e1530]",
+  "name": "Time::GetElapsedMS",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x4e24e0": {
   "attempts": 1,
   "first_diff": null,
@@ -4478,6 +4499,13 @@
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4e5900": {
+  "attempts": 1,
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "SetComboBoxSelection",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x4e5d60": {
   "attempts": 11,
@@ -4919,6 +4947,13 @@
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4ffd50": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0xc",
+  "name": "sub_4FFD50",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x501160": {
   "attempts": 9,
@@ -6558,6 +6593,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x55a970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "COM::ReleaseRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x55a9b0": {
   "attempts": 9,
   "first_diff": null,
@@ -6655,6 +6697,13 @@
   "name": "RadarClass::SetGlobal",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x55baa0": {
+  "attempts": 1,
+  "first_diff": "+13 je 0x55bab5",
+  "name": "ObjectClass::SetDeployState",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x55c0e0": {
   "attempts": 1,
@@ -8469,6 +8518,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x60c4a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SkirmishDialog::ResizeDialogAndEnum",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x60d430": {
   "attempts": 1,
   "first_diff": null,
@@ -8609,6 +8665,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x628860": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x628ad0": {
   "attempts": 1,
   "first_diff": "+5 jne 0x628adc",
@@ -8748,6 +8811,13 @@
   "name": "ParticleSystemClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x631c80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Pipe::Dtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x631d30": {
   "attempts": 1,
@@ -9441,6 +9511,13 @@
   "name": "RawFileClass::Write",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x65d4d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::checkAICondition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x65d660": {
   "attempts": 5,
@@ -11178,6 +11255,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x6f1f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamTypeClass::FlashAllInstances",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6f1f70": {
   "attempts": 1,
   "first_diff": null,
@@ -11752,12 +11836,26 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x723b60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x723b60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x723c40": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x723c40",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x723ce0": {
+  "attempts": 1,
+  "first_diff": "+7 je 0x723d0e",
+  "name": "ScriptTypeClass::FormatToString",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x724540": {
   "attempts": 1,
@@ -12185,6 +12283,13 @@
   "name": "TechnoClass::processIronCurtainExpiry",
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
+ },
+ "0x746fb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x746fb0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7473d0": {
   "attempts": 1,
@@ -12711,6 +12816,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x75f610": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WaveClass::UpdateWave",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x75f880": {
   "attempts": 5,
   "first_diff": null,
@@ -12750,6 +12862,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7633f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x763450": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x763450",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -13110,6 +13229,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x770150": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x770150",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7701c0": {
   "attempts": 1,
   "first_diff": null,
@@ -13256,6 +13382,13 @@
   "name": "GameOptions::GetEntry",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x777e00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x777e00",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x778540": {
   "attempts": 1,
@@ -13788,6 +13921,13 @@
   "name": "XSurface::entry_1C_",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7bbab0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "XSurface::Fill",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7bc890": {
   "attempts": 1,

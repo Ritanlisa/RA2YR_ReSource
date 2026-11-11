@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E5900",
+ "name": "SetComboBoxSelection",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E5900",
+ "bytes_hex": "8b442404538b1d90147e00565783f8ff8bf28bf9750d6a006a0068470100005657ffd36a005068500100005657ffd35f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

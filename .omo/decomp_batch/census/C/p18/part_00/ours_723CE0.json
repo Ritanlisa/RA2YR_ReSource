@@ -1,0 +1,21 @@
+{
+ "symbol": "?FormatToString@ScriptTypeClass@@QAEIPAD@Z",
+ "sym_key": "ScriptTypeClass::FormatToString",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "578b7c240885ff750633c05fc204008b41048b095051680000000057e80000000083c9ff33c083c410f2aef7d1495f8bc1c20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "??_C@_05BBIB@?$CFd?0?$CFd?$AA@",
+   "sym_key": "??_C@_05BBIB@?$CFd?0?$CFd?$AA@"
+  },
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  }
+ ]
+}

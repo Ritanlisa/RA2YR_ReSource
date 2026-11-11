@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_4FFD50@ObjectClass@@QAEHHH@Z",
+ "sym_key": "ObjectClass::sub_4FFD50",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b44240483ec0c85c0568bf1750a83c8ff5e83c40cc208008b088d5424045250ff5148508bcee8000000005e83c40cc20800",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "?FindPath@PathfindingClass@@QAEHPAX@Z",
+   "sym_key": "PathfindingClass::FindPath"
+  }
+ ]
+}

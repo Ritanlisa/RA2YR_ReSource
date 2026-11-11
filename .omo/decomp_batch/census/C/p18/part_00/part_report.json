@@ -1,0 +1,316 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 5,
+   "MISMATCH": 6,
+   "COMPILE_FAIL": 9
+  },
+  "pathologies": {
+   "frame_sched": 1,
+   "branch_order": 1,
+   "regalloc": 2,
+   "cc_mismatch": 1,
+   "branch_polarity": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x723b60",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x723b60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x746fb0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x746fb0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x763450",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x763450",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x770150",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x770150",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4ffd50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 49B ours 50B",
+   "first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 mov eax, dword ptr [esp + 4]"
+   },
+   "pathology": "frame_sched",
+   "name": "sub_4FFD50",
+   "emitted": "ObjectClass::sub_4FFD50",
+   "unit": "ObjectClass",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 49,
+   "ours_size": 50
+  },
+  {
+   "addr": "0x628860",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\_VectorClass_U_HashObject_VHashString_PAVSchemeNode.cpp(9) : error C2664: 'Copy' : cannot convert parameter 1 from 'const char *' to 'void *'",
+   "first_diff": null,
+   "pathology": null,
+   "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear",
+   "emitted": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode::Clear",
+   "unit": "_VectorClass_U_HashObject_VHashString_PAVSchemeNode",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "5/5",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x631c80",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\Pipe.cpp(10) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\Pipe.cpp(10) : error C2001: newl",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Pipe::Dtor",
+   "emitted": "Pipe::Dtor",
+   "unit": "Pipe",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "9/9",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x65d4d0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\AbstractClass.cpp(9) : error C2653: 'rc_ptr_base' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AbstractClass::checkAICondition",
+   "emitted": "AbstractClass::checkAICondition",
+   "unit": "AbstractClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "7/7",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x777e00",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x777e00",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7bbab0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\XSurface.cpp(10) : error C2660: 'GetRect' : function does not take 2 parameters; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\XSurf",
+   "first_diff": null,
+   "pathology": null,
+   "name": "XSurface::Fill",
+   "emitted": "XSurface::Fill",
+   "unit": "XSurface",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x723ce0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 52B ours 52B",
+   "first_diff": {
+    "orig": "+7 je 0x723d0e",
+    "ours": "+7 jne 0xf"
+   },
+   "pathology": "branch_order",
+   "name": "ScriptTypeClass::FormatToString",
+   "emitted": "ScriptTypeClass::FormatToString",
+   "unit": "ScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 52,
+   "ours_size": 52
+  },
+  {
+   "addr": "0x4114b0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\StreamClass.cpp(8) : error C2198: 'int (__stdcall *)(class StreamClass *,unsigned int,int,int)' : too few actual parameters; D:\\RA2YR_ReSource\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "StreamClass::ReadAndSeek",
+   "emitted": "StreamClass::ReadAndSeek",
+   "unit": "StreamClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/9",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x4e0ab0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 53B ours 62B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Destroy",
+   "emitted": "_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::Destroy",
+   "unit": "_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "4/6",
+   "rule_violations": 0,
+   "orig_size": 53,
+   "ours_size": 62
+  },
+  {
+   "addr": "0x4e24a0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 53B ours 62B",
+   "first_diff": {
+    "orig": "+0 call dword ptr [0x7e1530]",
+    "ours": "+0 call 5"
+   },
+   "pathology": "regalloc",
+   "name": "Time::GetElapsedMS",
+   "emitted": "unknown::GetElapsedMS",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 53,
+   "ours_size": 62
+  },
+  {
+   "addr": "0x4e5900",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 53B ours 53B",
+   "first_diff": {
+    "orig": "+0 mov eax, dword ptr [esp + 4]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "cc_mismatch",
+   "name": "SetComboBoxSelection",
+   "emitted": "unknown::SetComboBoxSelection",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 0,
+   "orig_size": 53,
+   "ours_size": 53
+  },
+  {
+   "addr": "0x55baa0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 54B ours 47B",
+   "first_diff": {
+    "orig": "+13 je 0x55bab5",
+    "ours": "+13 je 0x29"
+   },
+   "pathology": "branch_polarity",
+   "name": "ObjectClass::SetDeployState",
+   "emitted": "LogicClass::SetDeployState",
+   "unit": "LogicClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/4",
+   "rule_violations": 4,
+   "orig_size": 54,
+   "ours_size": 47
+  },
+  {
+   "addr": "0x60c4a0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\unknown_60c4a0.cpp(7) : error C2664: 'MoveWindow' : cannot convert parameter 5 from 'unsigned int' to 'void *'; D:\\RA2YR_ReSource\\.omo\\decomp_b",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SkirmishDialog::ResizeDialogAndEnum",
+   "emitted": "unknown::ResizeDialogAndEnum",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "4/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x6f1f30",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\TeamTypeClass.cpp(8) : error C2228: left of '.waveEffect' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\p",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TeamTypeClass::FlashAllInstances",
+   "emitted": "TeamTypeClass::FlashAllInstances",
+   "unit": "TeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x55a970",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\LocomotionClass.cpp(8) : error C2228: left of '.waypoints' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "COM::ReleaseRef",
+   "emitted": "LocomotionClass::ReleaseRef",
+   "unit": "LocomotionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 1
+  },
+  {
+   "addr": "0x75f610",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00\\WaveClass.cpp(10) : error C2446: '==' : no conversion from 'void *' to 'unsigned int'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p18\\part_00",
+   "first_diff": null,
+   "pathology": null,
+   "name": "WaveClass::UpdateWave",
+   "emitted": "WaveClass::UpdateWave",
+   "unit": "WaveClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 2
+  }
+ ]
+}
