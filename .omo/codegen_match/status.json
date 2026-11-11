@@ -23089,6 +23089,28 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5beb00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee090]",
+  "name": "sub_5BEB00",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5BEB00",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5beb20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5BEB20",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5BEB20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5beb40": {
   "attempts": 1,
   "clean": false,
@@ -23574,6 +23596,28 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5c1120": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee268]",
+  "name": "sub_5C1120",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C1120",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c1140": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5C1140",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C1140",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c1160": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7ee270]",
@@ -23779,6 +23823,28 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c5b20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee410]",
+  "name": "sub_5C5B20",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C5B20",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c5b40": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5C5B40",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C5B40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c5c90": {
   "attempts": 1,
   "clean": true,
@@ -23823,6 +23889,28 @@
   "orig_name": "ScenarioClass::processTriggerEvents",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c5ec0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee4f8]",
+  "name": "sub_5C5EC0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C5EC0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c5ee0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5C5EE0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C5EE0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c6030": {
@@ -23918,6 +24006,28 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c9220": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee5e0]",
+  "name": "sub_5C9220",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C9220",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5c9240": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5C9240",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C9240",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5c9280": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7ee5e8]",
@@ -23953,6 +24063,17 @@
   "name": "MultiplayerObserverTeam::QueryInterface",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x5c9540": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee6d8]",
+  "name": "sub_5C9540",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C9540",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5c9560": {
   "attempts": 2,
@@ -24000,6 +24121,28 @@
   "name": "sub_5C9AE0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x5ca450": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee6e8]",
+  "name": "sub_5CA450",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5CA450",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5ca470": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5CA470",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5CA470",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5ca5c0": {
   "attempts": 1,
@@ -24073,6 +24216,28 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5cac50": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+6 fdiv qword ptr [0x7ee7d0]",
+  "name": "sub_5CAC50",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5CAC50",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5cac70": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "sub_5CAC70",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5CAC70",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5cacd0": {
   "attempts": 2,
   "first_diff": "+0 fld qword ptr [0x7ee7d8]",
@@ -24117,6 +24282,30 @@
   "name": "MultiplayerSiegeDefenderTeam::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5cb1c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 fdiv qword ptr [0x7ee800]",
+  "name": "MPBattleClass::onPlayerDisconnect",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "MPBattleClass::onPlayerDisconnect",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5cb1e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "MPBattleClass::getMaximumPlayers",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "MPBattleClass::getMaximumPlayers",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5cb330": {
   "attempts": 1,
@@ -24693,6 +24882,30 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d3810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 fdiv qword ptr [0x7eec78]",
+  "name": "MPBattleClass::validateHouse",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "MPBattleClass::validateHouse",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d3830": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 fld qword ptr [0x7e1718]",
+  "name": "MPBattleClass::validateOwner",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "MPBattleClass::validateOwner",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5d3870": {
   "attempts": 1,
   "clean": false,
@@ -24823,6 +25036,18 @@
   "name": "Timer::DisableHighPrecision",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5d58e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 fdiv qword ptr [0x7eed08]",
+  "name": "MPBattleClass::allyTeams",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "MPBattleClass::allyTeams",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5d5900": {
   "attempts": 1,

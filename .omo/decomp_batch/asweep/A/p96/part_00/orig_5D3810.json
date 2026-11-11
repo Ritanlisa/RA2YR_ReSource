@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D3810",
+ "name": "MPBattleClass::validateHouse",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D3810",
+ "bytes_hex": "dd0530fcab00dc3578ec7e00dd1d80fcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

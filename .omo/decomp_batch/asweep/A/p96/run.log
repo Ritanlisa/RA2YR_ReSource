@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p96\part_00
+=== convert (20 addrs) ===
+[conv] 0x5beb00 sub_5BEB00 -> _addr_5B
+[conv] 0x5beb20 sub_5BEB20 -> _addr_5B
+[conv] 0x5c1120 sub_5C1120 -> _addr_5C
+[conv] 0x5c1140 sub_5C1140 -> _addr_5C
+[conv] 0x5c5b20 sub_5C5B20 -> _addr_5C
+[conv] 0x5c5b40 sub_5C5B40 -> _addr_5C
+[conv] 0x5c5ec0 sub_5C5EC0 -> _addr_5C
+[conv] 0x5c5ee0 sub_5C5EE0 -> _addr_5C
+[conv] 0x5c9220 sub_5C9220 -> _addr_5C
+[conv] 0x5c9240 sub_5C9240 -> _addr_5C
+[conv] 0x5c9540 sub_5C9540 -> _addr_5C
+[conv] 0x5ca450 sub_5CA450 -> _addr_5C
+[conv] 0x5ca470 sub_5CA470 -> _addr_5C
+[conv] 0x5cac50 sub_5CAC50 -> _addr_5C
+[conv] 0x5cac70 sub_5CAC70 -> _addr_5C
+[conv] 0x5cb1c0 MPBattleClass::onPlayerDisconnect -> MPBattleClass
+[conv] 0x5cb1e0 MPBattleClass::getMaximumPlayers -> MPBattleClass
+[conv] 0x5d3810 MPBattleClass::validateHouse -> MPBattleClass
+[conv] 0x5d3830 MPBattleClass::validateOwner -> MPBattleClass
+[conv] 0x5d58e0 MPBattleClass::allyTeams -> MPBattleClass
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5beb00   MISMATCH         sub_5BEB00
+[diff] 0x5beb20   MISMATCH         sub_5BEB20
+[diff] 0x5c1120   MISMATCH         sub_5C1120
+[diff] 0x5c1140   MISMATCH         sub_5C1140
+[diff] 0x5c5b20   MISMATCH         sub_5C5B20
+[diff] 0x5c5b40   MISMATCH         sub_5C5B40
+[diff] 0x5c5ec0   MISMATCH         sub_5C5EC0
+[diff] 0x5c5ee0   MISMATCH         sub_5C5EE0
+[diff] 0x5c9220   MISMATCH         sub_5C9220
+[diff] 0x5c9240   MISMATCH         sub_5C9240
+[diff] 0x5c9540   MISMATCH         sub_5C9540
+[diff] 0x5ca450   MISMATCH         sub_5CA450
+[diff] 0x5ca470   MISMATCH         sub_5CA470
+[diff] 0x5cac50   MISMATCH         sub_5CAC50
+[diff] 0x5cac70   MISMATCH         sub_5CAC70
+[diff] 0x5cb1c0   MISMATCH         MPBattleClass::onPlayerDisconnect
+[diff] 0x5cb1e0   MISMATCH         MPBattleClass::getMaximumPlayers
+[diff] 0x5d3810   MISMATCH         MPBattleClass::validateHouse
+[diff] 0x5d3830   MISMATCH         MPBattleClass::validateOwner
+[diff] 0x5d58e0   MISMATCH         MPBattleClass::allyTeams
+[ledger] 0x5beb00 sub_5BEB00 -> NG (attempt 1)
+[ledger] 0x5beb20 sub_5BEB20 -> NG (attempt 1)
+[ledger] 0x5c1120 sub_5C1120 -> NG (attempt 1)
+[ledger] 0x5c1140 sub_5C1140 -> NG (attempt 1)
+[ledger] 0x5c5b20 sub_5C5B20 -> NG (attempt 1)
+[ledger] 0x5c5b40 sub_5C5B40 -> NG (attempt 1)
+[ledger] 0x5c5ec0 sub_5C5EC0 -> NG (attempt 1)
+[ledger] 0x5c5ee0 sub_5C5EE0 -> NG (attempt 1)
+[ledger] 0x5c9220 sub_5C9220 -> NG (attempt 1)
+[ledger] 0x5c9240 sub_5C9240 -> NG (attempt 1)
+[ledger] 0x5c9540 sub_5C9540 -> NG (attempt 1)
+[ledger] 0x5ca450 sub_5CA450 -> NG (attempt 1)
+[ledger] 0x5ca470 sub_5CA470 -> NG (attempt 1)
+[ledger] 0x5cac50 sub_5CAC50 -> NG (attempt 1)
+[ledger] 0x5cac70 sub_5CAC70 -> NG (attempt 1)
+[ledger] 0x5cb1c0 MPBattleClass::onPlayerDisconnect -> NG (attempt 1)
+[ledger] 0x5cb1e0 MPBattleClass::getMaximumPlayers -> NG (attempt 1)
+[ledger] 0x5d3810 MPBattleClass::validateHouse -> NG (attempt 1)
+[ledger] 0x5d3830 MPBattleClass::validateOwner -> NG (attempt 1)
+[ledger] 0x5d58e0 MPBattleClass::allyTeams -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p96\batch_report.json

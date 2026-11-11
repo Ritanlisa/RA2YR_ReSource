@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D58E0",
+ "name": "MPBattleClass::allyTeams",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D58E0",
+ "bytes_hex": "dd0558fdab00dc3508ed7e00dd1dc8fdab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB1C0",
+ "name": "MPBattleClass::onPlayerDisconnect",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB1C0",
+ "bytes_hex": "dd0528fbab00dc3500e87e00dd1d78fbab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
