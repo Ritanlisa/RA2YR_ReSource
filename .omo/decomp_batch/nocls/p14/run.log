@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x62b480 sub_62B480 -> _addr_62
+[conv] 0x62b5a0 sub_62B5A0 -> _addr_62
+[conv] 0x62dbf0 sub_62DBF0 -> _addr_62
+[conv] 0x631c10 sub_631C10 -> _addr_63
+[conv] 0x633420 sub_633420 -> _addr_63
+[conv] 0x6334e0 sub_6334E0 -> _addr_63
+[conv] 0x63a0d0 System_Get -> System
+[conv] 0x63f4a0 sub_63F4A0 -> _addr_63
+[conv] 0x63f530 sub_63F530 -> _addr_63
+[conv] 0x640630 sub_640630 -> _addr_64
+[conv] 0x642860 sub_642860 -> _addr_64
+[conv] 0x643f20 sub_643F20 -> _addr_64
+[conv] 0x644a40 sub_644A40 -> _addr_64
+[conv] 0x644b60 sub_644B60 -> _addr_64
+[conv] 0x64a630 ProcessNetworkMessage -> _addr_64
+[conv] 0x64ad10 Network_Process_64AD10 -> Network_Process
+[conv] 0x652710 sub_652710 -> _addr_65
+[conv] 0x652820 sub_652820 -> _addr_65
+[conv] 0x652940 sub_652940 -> _addr_65
+[conv] 0x658e80 sub_658E80 -> _addr_65
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_62                 rc=0
+[era] _addr_63                 rc=0
+[era] System                   rc=2
+[era] _addr_64                 rc=2
+[era] Network_Process          rc=2
+[era] _addr_65                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x62b480   MISMATCH         sub_62B480
+[diff] 0x62b5a0   MISMATCH         sub_62B5A0
+[diff] 0x62dbf0   MATCH            sub_62DBF0
+[diff] 0x631c10   MISMATCH         sub_631C10
+[diff] 0x633420   MISMATCH         sub_633420
+[diff] 0x6334e0   MISMATCH         sub_6334E0
+[diff] 0x63f4a0   MATCH            sub_63F4A0
+[diff] 0x63f530   MISMATCH         sub_63F530
+[diff] 0x640630   MISMATCH         sub_640630
+[diff] 0x643f20   MISMATCH         sub_643F20
+[diff] 0x644a40   MISMATCH         sub_644A40
+[diff] 0x652710   MISMATCH         sub_652710
+[diff] 0x652820   MISMATCH         sub_652820
+[diff] 0x652940   MISMATCH         sub_652940
+[ledger] 0x62b480 sub_62B480 -> NG (attempt 2)
+[ledger] 0x62b5a0 sub_62B5A0 -> NG (attempt 2)
+[ledger] 0x62dbf0 sub_62DBF0 -> OK (attempt 2)
+[ledger] 0x631c10 sub_631C10 -> NG (attempt 2)
+[ledger] 0x633420 sub_633420 -> NG (attempt 2)
+[ledger] 0x6334e0 sub_6334E0 -> NG (attempt 2)
+[ledger] 0x63a0d0 System_Get -> COMPILE_FAIL (attempt 2)
+[ledger] 0x63f4a0 sub_63F4A0 -> OK (attempt 2)
+[ledger] 0x63f530 sub_63F530 -> NG (attempt 2)
+[ledger] 0x640630 sub_640630 -> NG (attempt 2)
+[ledger] 0x642860 sub_642860 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x643f20 sub_643F20 -> NG (attempt 2)
+[ledger] 0x644a40 sub_644A40 -> NG (attempt 2)
+[ledger] 0x644b60 sub_644B60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64a630 ProcessNetworkMessage -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64ad10 Network_Process_64AD10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x652710 sub_652710 -> NG (attempt 2)
+[ledger] 0x652820 sub_652820 -> NG (attempt 2)
+[ledger] 0x652940 sub_652940 -> NG (attempt 2)
+[ledger] 0x658e80 sub_658E80 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 2,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 14.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p14\batch_report.json

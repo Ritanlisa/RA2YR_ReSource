@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x62b480",
+  "batch": "nocls",
+  "name": "sub_62B480",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x62b5a0",
+  "batch": "nocls",
+  "name": "sub_62B5A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x62dbf0",
+  "batch": "nocls",
+  "name": "sub_62DBF0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x631c10",
+  "batch": "nocls",
+  "name": "sub_631C10",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x633420",
+  "batch": "nocls",
+  "name": "sub_633420",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x6334e0",
+  "batch": "nocls",
+  "name": "sub_6334E0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x63a0d0",
+  "batch": "nocls",
+  "name": "System_Get",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x63f4a0",
+  "batch": "nocls",
+  "name": "sub_63F4A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x63f530",
+  "batch": "nocls",
+  "name": "sub_63F530",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x640630",
+  "batch": "nocls",
+  "name": "sub_640630",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x642860",
+  "batch": "nocls",
+  "name": "sub_642860",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x643f20",
+  "batch": "nocls",
+  "name": "sub_643F20",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x644a40",
+  "batch": "nocls",
+  "name": "sub_644A40",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x644b60",
+  "batch": "nocls",
+  "name": "sub_644B60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x64a630",
+  "batch": "nocls",
+  "name": "ProcessNetworkMessage",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x64ad10",
+  "batch": "nocls",
+  "name": "Network_Process_64AD10",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x652710",
+  "batch": "nocls",
+  "name": "sub_652710",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x652820",
+  "batch": "nocls",
+  "name": "sub_652820",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x652940",
+  "batch": "nocls",
+  "name": "sub_652940",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x658e80",
+  "batch": "nocls",
+  "name": "sub_658E80",
+  "cc": "unknown"
+ }
+]

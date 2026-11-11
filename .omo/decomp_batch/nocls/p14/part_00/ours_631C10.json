@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_631C10@@YAHPAH0@Z",
+ "sym_key": "Unnamed::sub_631C10",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c240456578b308b398d56708d47705250e80000000083c40885c0753d5381c69a0000008d879a0000008a108a1e8aca3ad3752084c974168a50018a5e018aca3ad3751083c00283c60284c975dc5b5f33c05ec31bc05b83d8ff5f5ec3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_wcscmp",
+   "sym_key": "wcscmp"
+  }
+ ]
+}
