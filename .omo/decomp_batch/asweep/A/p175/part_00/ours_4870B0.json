@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasOccupierBit@Cell@@QAEHD@Z",
+ "sym_key": "Cell::HasOccupierBit",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8bd1b8010000008a4c2404d3e0234278f7d81bc0f7d8c20400",
+ "relocs": []
+}
