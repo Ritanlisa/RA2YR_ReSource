@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x754bc0 ScreenEffect::Stub7 -> ScreenEffect
+[conv] 0x754bd0 ScreenEffect::Stub8 -> ScreenEffect
+[conv] 0x75a410 nullsub_257 -> _addr_75
+[conv] 0x75a420 nullsub_258 -> _addr_75
+[conv] 0x762060 nullsub_46 -> _addr_76
+[conv] 0x762ae0 nullsub_47 -> _addr_76
+[conv] 0x763720 ObjectClass::nullsub_84 -> ObjectClass
+[conv] 0x771780 nullsub_259 -> _addr_77
+[conv] 0x771790 nullsub_260 -> _addr_77
+[conv] 0x777ab0 nullsub_262 -> _addr_77
+[conv] 0x778170 nullsub_48 -> _addr_77
+[conv] 0x77d190 nullsub_263 -> _addr_77
+[conv] 0x796b20 nullsub_264 -> _addr_79
+[conv] 0x7ac4f0 nullsub_265 -> _addr_7A
+[conv] 0x7b1730 WinsockInterfaceClass::GetQueueSize -> WinsockInterfaceClass
+[conv] 0x7bf220 nullsub_49 -> _addr_7B
+[conv] 0x7c8f5d nullsub_268 -> _addr_7C
+[conv] 0x7cda82 nullsub_270 -> _addr_7C
+[conv] 0x7cf037 zerotoxdone -> _addr_7C
+[conv] 0x7cf082 _expbigret -> _addr_7C
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScreenEffect             rc=0
+[era] _addr_75                 rc=0
+[era] _addr_76                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_77                 rc=2
+[era] _addr_79                 rc=0
+[era] _addr_7A                 rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x754bc0   MATCH            ScreenEffect::Stub7
+[diff] 0x754bd0   MATCH            ScreenEffect::Stub8
+[diff] 0x75a410   MATCH            nullsub_257
+[diff] 0x75a420   MATCH            nullsub_258
+[diff] 0x762060   MATCH            nullsub_46
+[diff] 0x762ae0   MATCH            nullsub_47
+[diff] 0x771780   MATCH            nullsub_259
+[diff] 0x771790   MATCH            nullsub_260
+[diff] 0x777ab0   MATCH            nullsub_262
+[diff] 0x77d190   MATCH            nullsub_263
+[diff] 0x796b20   MATCH            nullsub_264
+[diff] 0x7ac4f0   MATCH            nullsub_265
+[diff] 0x7b1730   MATCH            WinsockInterfaceClass::GetQueueSize
+[diff] 0x7bf220   MATCH            nullsub_49
+[diff] 0x7c8f5d   MATCH            nullsub_268
+[diff] 0x7cda82   MATCH            nullsub_270
+[diff] 0x7cf037   MATCH            zerotoxdone
+[diff] 0x7cf082   MATCH            _expbigret
+[ledger] 0x754bc0 ScreenEffect::Stub7 -> OK (attempt 1)
+[ledger] 0x754bd0 ScreenEffect::Stub8 -> OK (attempt 1)
+[ledger] 0x75a410 nullsub_257 -> OK (attempt 1)
+[ledger] 0x75a420 nullsub_258 -> OK (attempt 1)
+[ledger] 0x762060 nullsub_46 -> OK (attempt 1)
+[ledger] 0x762ae0 nullsub_47 -> OK (attempt 1)
+[ledger] 0x763720 ObjectClass::nullsub_84 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x771780 nullsub_259 -> OK (attempt 1)
+[ledger] 0x771790 nullsub_260 -> OK (attempt 1)
+[ledger] 0x777ab0 nullsub_262 -> OK (attempt 1)
+[ledger] 0x778170 nullsub_48 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d190 nullsub_263 -> OK (attempt 1)
+[ledger] 0x796b20 nullsub_264 -> OK (attempt 1)
+[ledger] 0x7ac4f0 nullsub_265 -> OK (attempt 1)
+[ledger] 0x7b1730 WinsockInterfaceClass::GetQueueSize -> OK (attempt 1)
+[ledger] 0x7bf220 nullsub_49 -> OK (attempt 1)
+[ledger] 0x7c8f5d nullsub_268 -> OK (attempt 1)
+[ledger] 0x7cda82 nullsub_270 -> OK (attempt 1)
+[ledger] 0x7cf037 zerotoxdone -> OK (attempt 1)
+[ledger] 0x7cf082 _expbigret -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p07\batch_report.json
