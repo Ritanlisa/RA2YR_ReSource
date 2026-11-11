@@ -1,0 +1,11 @@
+{
+ "addr": "0x493EA0",
+ "name": "BlitTransXlatAlpha_ushort::ddtor",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x493EA0",
+ "bytes_hex": "8b54241c6a00528b542420528b542420528b5424208b01528b542420528b542420528b54242052ff5004c21c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

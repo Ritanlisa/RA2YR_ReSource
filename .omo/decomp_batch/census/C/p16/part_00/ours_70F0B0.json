@@ -1,0 +1,15 @@
+{
+ "symbol": "?MapSpecialDrawMode@TacticalClass@@QAEHH@Z",
+ "sym_key": "TacticalClass::MapSpecialDrawMode",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "568bf1e80000000083fe01750cf6d81bc05e83e03d40c2040083fe0574068bc65ec20400f6d81bc05e83e03a83c005c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "REL32",
+   "sym": "?Render_Draw_731BF0@@YADXZ",
+   "sym_key": "Render_Draw_731BF0"
+  }
+ ]
+}

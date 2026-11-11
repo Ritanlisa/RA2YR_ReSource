@@ -1,0 +1,27 @@
+{
+ "symbol": "?ActivateGlobal@ShpButtonClass@@QAEFXZ",
+ "sym_key": "ShpButtonClass::ActivateGlobal",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "a1000000005685c08bf174118b0850ff5148a100000000508b10ff52548b462024010c018946208935000000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 41,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  }
+ ]
+}

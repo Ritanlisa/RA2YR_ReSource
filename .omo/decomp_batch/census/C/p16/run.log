@@ -1,0 +1,109 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x493210 _BlitTransLucent75ZReadWarp_G::sub_493210 -> _BlitTransLucent75ZReadWarp_G
+[conv] 0x4935d0 _BlitPlainXlatZReadWrite_G::sub_4935D0 -> _BlitPlainXlatZReadWrite_G
+[conv] 0x493a00 _BlitTransLucent75ZReadWrite_G::CallBlit0_0 -> _BlitTransLucent75ZReadWrite_G
+[conv] 0x493ea0 _BlitTransXlatAlpha_G::ddtor -> _BlitTransXlatAlpha_G
+[conv] 0x494400 _BlitTransLucent25Alpha_G::ddtor -> _BlitTransLucent25Alpha_G
+[conv] 0x4948f0 _BlitTranslucentWriteAlpha_G::CallBlit0_4 -> _BlitTranslucentWriteAlpha_G
+[conv] 0x495030 _BlitTransLucent75AlphaZRead_G::ddtor -> _BlitTransLucent75AlphaZRead_G
+[conv] 0x495560 _BlitTransLucent75AlphaZReadWarp_G::GetSize -> _BlitTransLucent75AlphaZReadWarp_G
+[conv] 0x495b60 _BlitTransZRemapXlatAlphaZReadWrite_G::BlitRect -> _BlitTransZRemapXlatAlphaZReadWrite_G
+[conv] 0x554400 ObjectClass::sub_554400 -> ObjectClass
+[conv] 0x70f0b0 TacticalClass::MapSpecialDrawMode -> TacticalClass
+[conv] 0x536140 AddTeamCommand::Read -> AddTeamCommand
+[conv] 0x4e19a0 ShpButtonClass::ActivateGlobal -> ShpButtonClass
+[conv] 0x7aa6a0 CChatEventSink::DispatchStub_18 -> CChatEventSink
+[conv] 0x769ca0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Seek -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x7c94bc unknown::Audio_Write -> unknown
+[conv] 0x753620 AudioMixer::Pump -> AudioMixer
+[conv] 0x7ba590 Straw::Destructor -> Straw
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _BlitTransLucent75ZReadWarp_G rc=0
+[era] _BlitPlainXlatZReadWrite_G rc=0
+[era] _BlitTransLucent75ZReadWrite_G rc=0
+[era] _BlitTransXlatAlpha_G    rc=0
+[era] _BlitTransLucent25Alpha_G rc=0
+[era] _BlitTranslucentWriteAlpha_G rc=0
+[era] _BlitTransLucent75AlphaZRead_G rc=0
+[era] _BlitTransLucent75AlphaZReadWarp_G rc=0
+[era] _BlitTransZRemapXlatAlphaZReadWrite_G rc=0
+[era] ObjectClass              rc=2
+[era] TacticalClass            rc=0
+[era] AddTeamCommand           rc=2
+[era] ShpButtonClass           rc=0
+[era] CChatEventSink           rc=2
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=2
+[era] unknown                  rc=2
+[era] AudioMixer               rc=0
+[era] Straw                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x493210   MISMATCH         _BlitTransLucent75ZReadWarp_G::sub_493210
+[diff] 0x4935d0   MISMATCH         _BlitPlainXlatZReadWrite_G::sub_4935D0
+[diff] 0x493a00   MATCH            _BlitTransLucent75ZReadWrite_G::CallBlit0_0
+[diff] 0x493ea0   MATCH            _BlitTransXlatAlpha_G::ddtor
+[diff] 0x494400   MATCH            _BlitTransLucent25Alpha_G::ddtor
+[diff] 0x4948f0   MATCH            _BlitTranslucentWriteAlpha_G::CallBlit0_4
+[diff] 0x495030   MATCH            _BlitTransLucent75AlphaZRead_G::ddtor
+[diff] 0x495560   MATCH            _BlitTransLucent75AlphaZReadWarp_G::GetSize
+[diff] 0x495b60   MATCH            _BlitTransZRemapXlatAlphaZReadWrite_G::BlitRect
+[diff] 0x70f0b0   MISMATCH         TacticalClass::MapSpecialDrawMode
+[diff] 0x4e19a0   MISMATCH         ShpButtonClass::ActivateGlobal
+[diff] 0x753620   MISMATCH         AudioMixer::Pump
+[ledger] 0x493210 sub_493210 -> NG (attempt 1)
+[ledger] 0x4935d0 sub_4935D0 -> NG (attempt 1)
+[ledger] 0x493a00 BlitTransXlatAlpha_ushort::CallBlit0_0 -> OK (attempt 1)
+[ledger] 0x493ea0 BlitTransXlatAlpha_ushort::ddtor -> OK (attempt 1)
+[ledger] 0x494400 BlitTransLucent25Alpha_ushort::ddtor -> OK (attempt 1)
+[ledger] 0x4948f0 BlitTransXlatAlphaZRead_ushort::CallBlit0_4 -> OK (attempt 1)
+[ledger] 0x495030 BlitTransLucent75AlphaZRead_ushort::ddtor -> OK (attempt 1)
+[ledger] 0x495560 BlitTransLucent75AlphaZReadWarp_ushort::GetSize -> OK (attempt 1)
+[ledger] 0x495b60 BlitTransZRemapXlatAlphaZReadWrite_ushort::BlitRect -> OK (attempt 1)
+[ledger] 0x554400 sub_554400 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x532100 0x532100 -> PENDING (attempt 1)
+[ledger] 0x7cbdaf 0x7cbdaf -> PENDING (attempt 1)
+[ledger] 0x70f0b0 TacticalClass::MapSpecialDrawMode -> NG (attempt 1)
+[ledger] 0x536140 AddTeamCommand::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e19a0 COMObject::ActivateGlobal -> NG (attempt 1)
+[ledger] 0x7aa6a0 CComObject_CChatEventSink___ATL::DispatchStub_18 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769ca0 Map_WorldDominationTour_20::Seek -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c94bc Audio_Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x753620 AudioMixer::Pump -> NG (attempt 1)
+[ledger] 0x7ba590 FileStraw::Destructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2019,
+ "verdicts": {
+  "MISMATCH": 566,
+  "MATCH": 519,
+  "COMPILE_FAIL": 487,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 434,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 3
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 186,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 64,
+  "branch_polarity": 35,
+  "regalloc": 92,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 18,
+  "cc_mismatch": 17,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 47.8,
+ "match_rate_of_total_pct": 25.7,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p16\batch_report.json

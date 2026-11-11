@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E19A0",
+ "name": "COMObject::ActivateGlobal",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E19A0",
+ "bytes_hex": "568bf18b0d903e8b0085c974108b01ff50488b0d903e8b008b11ff52548b462080cc018946208935903e8b005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

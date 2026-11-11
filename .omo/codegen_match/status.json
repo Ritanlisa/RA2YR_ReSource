@@ -2624,12 +2624,26 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x493210": {
+  "attempts": 1,
+  "first_diff": "+42 ret 0x1c",
+  "name": "sub_493210",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x493500": {
   "attempts": 1,
   "first_diff": null,
   "name": "sub_493500",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4935d0": {
+  "attempts": 1,
+  "first_diff": "+42 ret 0x20",
+  "name": "sub_4935D0",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x493600": {
   "attempts": 1,
@@ -2651,6 +2665,13 @@
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x493a00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransXlatAlpha_ushort::CallBlit0_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x493a60": {
   "attempts": 8,
@@ -2680,6 +2701,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x493ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransXlatAlpha_ushort::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x493f30": {
   "attempts": 8,
   "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
@@ -2707,6 +2735,20 @@
   "name": "BlitTransLucent25Alpha_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x494400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent25Alpha_ushort::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4948f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransXlatAlphaZRead_ushort::CallBlit0_4",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x494b60": {
   "attempts": 10,
@@ -2736,6 +2778,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x495030": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent75AlphaZRead_ushort::ddtor",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4950c0": {
   "attempts": 11,
   "first_diff": null,
@@ -2756,6 +2805,13 @@
   "name": "BlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x495560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransLucent75AlphaZReadWarp_ushort::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x495590": {
   "attempts": 9,
@@ -2784,6 +2840,13 @@
   "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x495b60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BlitTransZRemapXlatAlphaZReadWrite_ushort::BlitRect",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x495bc0": {
   "attempts": 8,
@@ -4297,6 +4360,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4e19a0": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "COMObject::ActivateGlobal",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
+ },
  "0x4e1a40": {
   "attempts": 1,
   "first_diff": null,
@@ -5431,6 +5501,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x532100": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x532100",
+  "note": "decomp_batch r2: NO_PSEUDO",
+  "status": "PENDING"
+ },
  "0x535bd0": {
   "attempts": 1,
   "first_diff": null,
@@ -5479,6 +5556,13 @@
   "name": "CreateTeamCommand::performAction_17",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x536140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AddTeamCommand::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x536210": {
   "attempts": 1,
@@ -6219,6 +6303,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Scenario::ComputeDisplayPosition",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x554400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_554400",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11122,6 +11213,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x70f0b0": {
+  "attempts": 1,
+  "first_diff": "+11 jne 0x70f0ca",
+  "name": "TacticalClass::MapSpecialDrawMode",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x70f110": {
   "attempts": 1,
   "first_diff": null,
@@ -12249,6 +12347,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x753620": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [0xb1d4cc]",
+  "name": "AudioMixer::Pump",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
+ },
  "0x7536a0": {
   "attempts": 1,
   "first_diff": null,
@@ -12659,6 +12764,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_767E90",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x769ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Map_WorldDominationTour_20::Seek",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13145,6 +13257,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7aa6a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_18",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7ab340": {
   "attempts": 5,
   "first_diff": null,
@@ -13473,6 +13592,13 @@
   "name": "WWMouseClass::checkBounds",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7ba590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FileStraw::Destructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7bab30": {
   "attempts": 5,
@@ -13936,6 +14062,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7c94bc": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Write",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7c97cb": {
   "attempts": 1,
   "first_diff": null,
@@ -13998,6 +14131,13 @@
   "name": "_iswgraph",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7cbdaf": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7cbdaf",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7cbf00": {
   "attempts": 1,

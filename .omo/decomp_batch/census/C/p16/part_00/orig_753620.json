@@ -1,0 +1,11 @@
+{
+ "addr": "0x753620",
+ "name": "AudioMixer::Pump",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x753620",
+ "bytes_hex": "8b0dccd4b10085c97405e8d149cbffa128d4b10085c07417a128d4b10048a328d4b100790ac70528d4b10000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?Pump@AudioMixer@@QAEHXZ",
+ "sym_key": "AudioMixer::Pump",
+ "size": 30,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07405e800000000a10000000085c0740648a300000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_InfantryDrawState@@3PAXA",
+   "sym_key": "g_InfantryDrawState"
+  },
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ProcessAudioFrame@AudioMixer@@QAEXXZ",
+   "sym_key": "AudioMixer::ProcessAudioFrame"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D428@@3IA",
+   "sym_key": "DataGlobal_B1D428"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1D428@@3IA",
+   "sym_key": "DataGlobal_B1D428"
+  }
+ ]
+}
