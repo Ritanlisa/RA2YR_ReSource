@@ -1,0 +1,33 @@
+{
+ "symbol": "?Map_Check@unknown@@QAIDPAFHHH@Z",
+ "sym_key": "unknown::Map_Check",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "83ec14668b4a04668b025355568b720c66894c241433c93bf157668944241c894c2410894c2414897424200f8ea60000008b7a088b1d0000000033c033ed85ff7e7b8b54241803ca0fbfd18b4c241c03c10fbfc88d040a3bc376538bf12bf23bf3734b8bf22bf13bf373433b0500000000773b8b350000000085f674178bc20faf050000000003c18d0480c1e0048b443038eb0383c8ff3b44242875118b4424108b4c2430403bc1894424107d1d453bef8bc57c968b7424208b4c2414413bce894c24147d11e96fffffff5f5e5db0015b83c414c20c005f5e5d32c05b83c414c20c00",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?g_MapCellHeight_Value@@3IA",
+   "sym_key": "g_MapCellHeight_Value"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_MapCellCount@@3IA",
+   "sym_key": "g_MapCellCount"
+  },
+  {
+   "off": 117,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  }
+ ]
+}

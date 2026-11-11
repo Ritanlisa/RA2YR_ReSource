@@ -1,0 +1,88 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x492370 _RLEBlitTransRemapXlatZReadWrite_E::sub_492370 -> _RLEBlitTransRemapXlatZReadWrite_E
+[conv] 0x5a1e50 unknown::Map_Check -> unknown
+[conv] 0x496d10 _RLEBlitTransLucent75ZReadWarp_G::sub_496D10 -> _RLEBlitTransLucent75ZReadWarp_G
+[conv] 0x496fb0 _RLEBlitTransLucent25ZReadWarp_G::sub_496FB0 -> _RLEBlitTransLucent25ZReadWarp_G
+[conv] 0x59bab0 unknown::Map_Helper_59BAB0 -> unknown
+[conv] 0x7d7ee0 unknown::unknown_libname_76 -> unknown
+[conv] 0x42fd30 unknown::EncodeBitmapRGB -> unknown
+[conv] 0x63d0f0 ObjectClass::Render_Render_63D0F0 -> ObjectClass
+[conv] 0x421b60 unknown::ClipRectIntersection -> unknown
+[conv] 0x50a490 HouseClass::RecordCratePlacement -> HouseClass
+[conv] 0x639e30 unknown::Object_Read -> unknown
+[conv] 0x7cb550 unknown::_strncat -> unknown
+[conv] 0x5c71e0 unknown::ShiftBigIntAndScan -> unknown
+[conv] 0x63d2d0 ObjectClass::sub_63D2D0 -> ObjectClass
+[conv] 0x6a89e0 ObjectClass::sub_6A89E0 -> ObjectClass
+[conv] 0x538d40 ObjectClass::sub_538D40 -> ObjectClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _RLEBlitTransRemapXlatZReadWrite_E rc=2
+[era] unknown                  rc=2
+[era] _RLEBlitTransLucent75ZReadWarp_G rc=2
+[era] _RLEBlitTransLucent25ZReadWarp_G rc=2
+[era] ObjectClass              rc=2
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x5a1e50   MISMATCH         unknown::Map_Check
+[diff] 0x59bab0   MISMATCH         unknown::Map_Helper_59BAB0
+[diff] 0x421b60   MISMATCH         unknown::ClipRectIntersection
+[diff] 0x639e30   MISMATCH         unknown::Object_Read
+[diff] 0x538d40   MISMATCH         ObjectClass::sub_538D40
+[diff] 0x50a490   MISMATCH         HouseClass::RecordCratePlacement
+[ledger] 0x492100 0x492100 -> PENDING (attempt 1)
+[ledger] 0x492370 sub_492370 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a1e50 Map_Check -> NG (attempt 1)
+[ledger] 0x7c6b70 0x7c6b70 -> PENDING (attempt 1)
+[ledger] 0x496d10 sub_496D10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x496fb0 sub_496FB0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x59bab0 Map_Helper_59BAB0 -> NG (attempt 1)
+[ledger] 0x497230 0x497230 -> PENDING (attempt 1)
+[ledger] 0x7d7ee0 unknown_libname_76 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42fd30 EncodeBitmapRGB -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d0f0 Render_Render_63D0F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x421b60 ClipRectIntersection -> NG (attempt 1)
+[ledger] 0x50a490 HouseClass::RecordCratePlacement -> NG (attempt 1)
+[ledger] 0x639e30 Object_Read -> NG (attempt 1)
+[ledger] 0x7cb550 _strncat -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c71e0 ShiftBigIntAndScan -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d2d0 sub_63D2D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a89e0 sub_6A89E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x544690 0x544690 -> PENDING (attempt 1)
+[ledger] 0x538d40 sub_538D40 -> NG (attempt 1)
+======================================================================
+{
+ "total": 1017,
+ "verdicts": {
+  "MISMATCH": 281,
+  "MATCH": 411,
+  "COMPILE_FAIL": 298,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 20,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 3,
+  "codegen_shape": 108,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.4,
+ "match_rate_of_total_pct": 40.4,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p02\batch_report.json

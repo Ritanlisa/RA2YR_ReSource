@@ -1,0 +1,69 @@
+{
+ "symbol": "?Map_Helper_59BAB0@unknown@@QAGDPAFPAHDNN@Z",
+ "sym_key": "unknown::Map_Helper_59BAB0",
+ "size": 293,
+ "link_base": 0,
+ "bytes_hex": "8b4c240ca10000000083ec08568b313bf05775308b41048b15000000003bc275238b5108a1000000003bd075178b410c8b15000000003bc2750a5fb0015e83c408c220008a44242084c00f84990000008b44241803f6c744240c000000000fbf50020fbf008bf82bfe8b35000000002bfa8d7c37ff897c24088b7904df6c2408d1e72bc7c744240c00000000dc0d00000000db41082bc6dc0d000000008d5410ff89542408dee9df6c2408dc0d00000000db410cdc0d00000000dee9d9c1d8cadc4c2424d9c1d8cadc4c242cdec1dc1d00000000dfe0ddd8f6c401ddd8743c5fb0015e83c408c220008b5424180fbf020fbf52023bc67c238b790803fe3bc77d1a8b41043bd07c138b490c03c83bd17d0a5fb0015e83c408c220005f32c05e83c408c22000",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE2F0@@3IA",
+   "sym_key": "DataGlobal_ABE2F0"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE2F4@@3IA",
+   "sym_key": "DataGlobal_ABE2F4"
+  },
+  {
+   "off": 37,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE2F8@@3IA",
+   "sym_key": "DataGlobal_ABE2F8"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABE2FC@@3IA",
+   "sym_key": "DataGlobal_ABE2FC"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_Cell_PositionLUT@@3IA",
+   "sym_key": "g_Cell_PositionLUT"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 153,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 173,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 182,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 208,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  }
+ ]
+}

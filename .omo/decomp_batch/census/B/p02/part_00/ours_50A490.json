@@ -1,0 +1,45 @@
+{
+ "symbol": "?RecordCratePlacement@HouseClass@@QAEDPAH@Z",
+ "sym_key": "HouseClass::RecordCratePlacement",
+ "size": 414,
+ "link_base": 0,
+ "bytes_hex": "83ec14a087010000538b5c241c558be980e30033c9568ac8570bd9896c241884c00f856b0100008b7c24288b8d14570000c744241000000000894c24148b87a00000009981e2ff00000003c28bd8c1fb0885c90f8e390100008b879c0000008bb5085700009981e2ff00000003c2c1f8085053e8000000008b97200500008944242833c983c4088b82f80d000033d20bc88b4424200bc28b163bd175078b4e043bc874598b4424108b4c2414403bc1894424100f8dd90000008b879c00000083c6109981e2ff00000003c2c1f8085053e8000000008b972005000033c933ed83c4088b92f80d00000bc50bca8b163bd175b28b4e043bc875ab8b6c24188b7424108b8508570000c1e60433d28b5c060433c0895c2428eb048b5c24283954241074218b8d0857000066395c01047514c1fb1066395c0106750a8b1d00000000895c01048b8d145700004283c0103bd17cc78b9f200500008a830617000084c07431a1000000008bc833cb81e1ff00000033d985c0741c8b9508570000c70416ffffffff8b9d08570000a10000000089441e045f5e8ac35d5b83c414c20400",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 209,
+   "type": "REL32",
+   "sym": "?__PAIR32__@@YAHHHZZ",
+   "sym_key": "__PAIR32__"
+  },
+  {
+   "off": 315,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EEB4@@3PADA",
+   "sym_key": "DataGlobal_A8EEB4"
+  },
+  {
+   "off": 354,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 394,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EEB4@@3PADA",
+   "sym_key": "DataGlobal_A8EEB4"
+  }
+ ]
+}
