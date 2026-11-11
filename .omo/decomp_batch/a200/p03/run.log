@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p03\part_00
+=== convert (20 addrs) ===
+[conv] 0x65c890 ObjectClass::sub_65C890 -> ObjectClass
+[conv] 0x6cadc0 sub_6CADC0 -> _addr_6C
+[conv] 0x72a400 sub_72A400 -> _addr_72
+[conv] 0x777380 sub_777380 -> _addr_77
+[conv] 0x717ab0 ObjectTypeClass::loadTypeMember_5717AB0 -> ObjectTypeClass
+[conv] 0x40ff90 sub_40FF90 -> _addr_40
+[conv] 0x438390 sub_438390 -> _addr_43
+[conv] 0x48bca0 sub_48BCA0 -> _addr_48
+[conv] 0x4c1bb0 sub_4C1BB0 -> _addr_4C
+[conv] 0x4e6300 sub_4E6300 -> _addr_4E
+[conv] 0x540730 sub_540730 -> _addr_54
+[conv] 0x55f7b0 sub_55F7B0 -> _addr_55
+[conv] 0x5bf610 sub_5BF610 -> _addr_5B
+[conv] 0x5ef320 sub_5EF320 -> _addr_5E
+[conv] 0x640540 sub_640540 -> _addr_64
+[conv] 0x67c4f0 sub_67C4F0 -> _addr_67
+[conv] 0x6b6a30 sub_6B6A30 -> _addr_6B
+[conv] 0x6f04a0 sub_6F04A0 -> _addr_6F
+[conv] 0x728820 sub_728820 -> _addr_72
+[conv] 0x75cce0 sub_75CCE0 -> _addr_75
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_6C                 rc=0
+[era] _addr_72                 rc=0
+[era] _addr_77                 rc=0
+[era] ObjectTypeClass          rc=0
+[era] _addr_40                 rc=0
+[era] _addr_43                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_4E                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_64                 rc=0
+[era] _addr_67                 rc=0
+[era] _addr_6B                 rc=0
+[era] _addr_6F                 rc=0
+[era] _addr_75                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x65c890   MISMATCH         ObjectClass::sub_65C890
+[diff] 0x6cadc0   MATCH            sub_6CADC0
+[diff] 0x72a400   MATCH            sub_72A400
+[diff] 0x728820   MISMATCH         sub_728820
+[diff] 0x777380   MATCH            sub_777380
+[diff] 0x717ab0   MATCH            ObjectTypeClass::loadTypeMember_5717AB0
+[diff] 0x40ff90   MISMATCH         sub_40FF90
+[diff] 0x438390   MISMATCH         sub_438390
+[diff] 0x48bca0   MISMATCH         sub_48BCA0
+[diff] 0x4c1bb0   MISMATCH         sub_4C1BB0
+[diff] 0x4e6300   MISMATCH         sub_4E6300
+[diff] 0x540730   MISMATCH         sub_540730
+[diff] 0x55f7b0   MISMATCH         sub_55F7B0
+[diff] 0x5bf610   MISMATCH         sub_5BF610
+[diff] 0x5ef320   MISMATCH         sub_5EF320
+[diff] 0x640540   MISMATCH         sub_640540
+[diff] 0x67c4f0   MISMATCH         sub_67C4F0
+[diff] 0x6b6a30   MISMATCH         sub_6B6A30
+[diff] 0x6f04a0   MISMATCH         sub_6F04A0
+[diff] 0x75cce0   MISMATCH         sub_75CCE0
+[ledger] 0x65c890 ObjectClass::sub_65C890 -> NG (attempt 1)
+[ledger] 0x6cadc0 sub_6CADC0 -> OK (attempt 1)
+[ledger] 0x72a400 sub_72A400 -> OK (attempt 1)
+[ledger] 0x777380 sub_777380 -> OK (attempt 1)
+[ledger] 0x717ab0 ObjectTypeClass::loadTypeMember_5717AB0 -> OK (attempt 1)
+[ledger] 0x40ff90 sub_40FF90 -> NG (attempt 1)
+[ledger] 0x438390 sub_438390 -> NG (attempt 1)
+[ledger] 0x48bca0 sub_48BCA0 -> NG (attempt 1)
+[ledger] 0x4c1bb0 sub_4C1BB0 -> NG (attempt 1)
+[ledger] 0x4e6300 sub_4E6300 -> NG (attempt 1)
+[ledger] 0x540730 sub_540730 -> NG (attempt 1)
+[ledger] 0x55f7b0 sub_55F7B0 -> NG (attempt 1)
+[ledger] 0x5bf610 sub_5BF610 -> NG (attempt 1)
+[ledger] 0x5ef320 sub_5EF320 -> NG (attempt 1)
+[ledger] 0x640540 sub_640540 -> NG (attempt 1)
+[ledger] 0x67c4f0 sub_67C4F0 -> NG (attempt 1)
+[ledger] 0x6b6a30 sub_6B6A30 -> NG (attempt 1)
+[ledger] 0x6f04a0 sub_6F04A0 -> NG (attempt 1)
+[ledger] 0x728820 sub_728820 -> NG (attempt 1)
+[ledger] 0x75cce0 sub_75CCE0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 16,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "extern_reloc": 15
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p03\batch_report.json
