@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p197\part_00
+=== convert (20 addrs) ===
+[conv] 0x6bf590 _TClassFactory_VSuperWeaponTypeClass::GetSize -> _TClassFactory_VSuperWeaponTypeClass
+[conv] 0x6bf710 _TClassFactory_VSuperClass::GetSize -> _TClassFactory_VSuperClass
+[conv] 0x6bf890 _TClassFactory_VTactical::GetSize -> _TClassFactory_VTactical
+[conv] 0x6bfa10 _TClassFactory_VCellClass::GetSize -> _TClassFactory_VCellClass
+[conv] 0x6bfb90 _TClassFactory_VEMPulseClass::GetSize -> _TClassFactory_VEMPulseClass
+[conv] 0x6bfd10 _TClassFactory_VLightSourceClass::GetSize -> _TClassFactory_VLightSourceClass
+[conv] 0x6c0190 _TClassFactory_VTubeClass::AdjustRefCOM -> _TClassFactory_VTubeClass
+[conv] 0x6c0310 _TClassFactory_VCampaignClass::GetSize -> _TClassFactory_VCampaignClass
+[conv] 0x6c0490 _TClassFactory_VBuildingLightClass::GetSize -> _TClassFactory_VBuildingLightClass
+[conv] 0x6c0610 _TClassFactory_VWaypointPathClass::GetSize -> _TClassFactory_VWaypointPathClass
+[conv] 0x6c0790 _TClassFactory_VTemporalClass::GetSize -> _TClassFactory_VTemporalClass
+[conv] 0x6c0a90 _TClassFactory_VSpawnManagerClass::GetSize -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c0c10 _TClassFactory_VSlaveManagerClass::GetSize -> _TClassFactory_VSlaveManagerClass
+[conv] 0x6c0f10 _TClassFactory_VDiskLaserClass::GetSize -> _TClassFactory_VDiskLaserClass
+[conv] 0x6c1090 _TClassFactory_VParasiteClass::GetSize -> _TClassFactory_VParasiteClass
+[conv] 0x6c1210 _TClassFactory_VBombClass::GetSize -> _TClassFactory_VBombClass
+[conv] 0x6c1390 _TClassFactory_VRadSiteClass::GetSize -> _TClassFactory_VRadSiteClass
+[conv] 0x6c1510 _TClassFactory_VTEventClass::GetSize -> _TClassFactory_VTEventClass
+[conv] 0x6c1690 _TClassFactory_VVoxelAnimTypeClass::GetSize -> _TClassFactory_VVoxelAnimTypeClass
+[conv] 0x6c1810 _TClassFactory_VVoxelAnimClass::GetSize -> _TClassFactory_VVoxelAnimClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VSuperWeaponTypeClass rc=0
+[era] _TClassFactory_VSuperClass rc=0
+[era] _TClassFactory_VTactical rc=0
+[era] _TClassFactory_VCellClass rc=0
+[era] _TClassFactory_VEMPulseClass rc=0
+[era] _TClassFactory_VLightSourceClass rc=0
+[era] _TClassFactory_VTubeClass rc=0
+[era] _TClassFactory_VCampaignClass rc=0
+[era] _TClassFactory_VBuildingLightClass rc=0
+[era] _TClassFactory_VWaypointPathClass rc=0
+[era] _TClassFactory_VTemporalClass rc=0
+[era] _TClassFactory_VSpawnManagerClass rc=0
+[era] _TClassFactory_VSlaveManagerClass rc=0
+[era] _TClassFactory_VDiskLaserClass rc=0
+[era] _TClassFactory_VParasiteClass rc=0
+[era] _TClassFactory_VBombClass rc=0
+[era] _TClassFactory_VRadSiteClass rc=0
+[era] _TClassFactory_VTEventClass rc=0
+[era] _TClassFactory_VVoxelAnimTypeClass rc=0
+[era] _TClassFactory_VVoxelAnimClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6bf590   MISMATCH         _TClassFactory_VSuperWeaponTypeClass::GetSize
+[diff] 0x6bf710   MISMATCH         _TClassFactory_VSuperClass::GetSize
+[diff] 0x6bf890   MISMATCH         _TClassFactory_VTactical::GetSize
+[diff] 0x6bfa10   MISMATCH         _TClassFactory_VCellClass::GetSize
+[diff] 0x6bfb90   MISMATCH         _TClassFactory_VEMPulseClass::GetSize
+[diff] 0x6bfd10   MISMATCH         _TClassFactory_VLightSourceClass::GetSize
+[diff] 0x6c0190   MISMATCH         _TClassFactory_VTubeClass::AdjustRefCOM
+[diff] 0x6c0310   MISMATCH         _TClassFactory_VCampaignClass::GetSize
+[diff] 0x6c0490   MISMATCH         _TClassFactory_VBuildingLightClass::GetSize
+[diff] 0x6c0610   MISMATCH         _TClassFactory_VWaypointPathClass::GetSize
+[diff] 0x6c0790   MISMATCH         _TClassFactory_VTemporalClass::GetSize
+[diff] 0x6c0a90   MISMATCH         _TClassFactory_VSpawnManagerClass::GetSize
+[diff] 0x6c0c10   MISMATCH         _TClassFactory_VSlaveManagerClass::GetSize
+[diff] 0x6c0f10   MISMATCH         _TClassFactory_VDiskLaserClass::GetSize
+[diff] 0x6c1090   MISMATCH         _TClassFactory_VParasiteClass::GetSize
+[diff] 0x6c1210   MISMATCH         _TClassFactory_VBombClass::GetSize
+[diff] 0x6c1390   MISMATCH         _TClassFactory_VRadSiteClass::GetSize
+[diff] 0x6c1510   MISMATCH         _TClassFactory_VTEventClass::GetSize
+[diff] 0x6c1690   MISMATCH         _TClassFactory_VVoxelAnimTypeClass::GetSize
+[diff] 0x6c1810   MISMATCH         _TClassFactory_VVoxelAnimClass::GetSize
+[ledger] 0x6bf590 _TClassFactory_VSuperWeaponTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bf710 _TClassFactory_VSuperClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bf890 _TClassFactory_VTactical::GetSize -> NG (attempt 1)
+[ledger] 0x6bfa10 _TClassFactory_VCellClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bfb90 _TClassFactory_VEMPulseClass::GetSize -> NG (attempt 1)
+[ledger] 0x6bfd10 _TClassFactory_VLightSourceClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0190 _TClassFactory_VTubeClass::AdjustRefCOM -> NG (attempt 1)
+[ledger] 0x6c0310 _TClassFactory_VCampaignClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0490 _TClassFactory_VBuildingLightClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0610 _TClassFactory_VWaypointPathClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0790 _TClassFactory_VTemporalClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0a90 _TClassFactory_VSpawnManagerClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0c10 _TClassFactory_VSlaveManagerClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c0f10 _TClassFactory_VDiskLaserClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1090 _TClassFactory_VParasiteClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1210 _TClassFactory_VBombClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1390 _TClassFactory_VRadSiteClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1510 _TClassFactory_VTEventClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1690 _TClassFactory_VVoxelAnimTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1810 _TClassFactory_VVoxelAnimClass::GetSize -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p197\batch_report.json

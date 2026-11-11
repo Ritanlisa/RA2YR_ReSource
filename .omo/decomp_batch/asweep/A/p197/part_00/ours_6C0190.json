@@ -1,0 +1,8 @@
+{
+ "symbol": "?AdjustRefCOM@_TClassFactory_VTubeClass@@QAGHHH@Z",
+ "sym_key": "_TClassFactory_VTubeClass::AdjustRefCOM",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b54240885d28b480474094189480433c0c20c004989480433c0c20c00",
+ "relocs": []
+}

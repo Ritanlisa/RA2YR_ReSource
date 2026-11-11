@@ -1,0 +1,455 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x6bf590",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_K_32::GetSize",
+   "emitted": "_TClassFactory_VSuperWeaponTypeClass::GetSize",
+   "unit": "_TClassFactory_VSuperWeaponTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6bf710",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_K_38::GetSize",
+   "emitted": "_TClassFactory_VSuperClass::GetSize",
+   "unit": "_TClassFactory_VSuperClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6bf890",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VectorClass_K_44::GetSize",
+   "emitted": "_TClassFactory_VTactical::GetSize",
+   "unit": "_TClassFactory_VTactical",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6bfa10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_CellClass::GetSize",
+   "emitted": "_TClassFactory_VCellClass::GetSize",
+   "unit": "_TClassFactory_VCellClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6bfb90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_EMPulseClass::GetSize",
+   "emitted": "_TClassFactory_VEMPulseClass::GetSize",
+   "unit": "_TClassFactory_VEMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6bfd10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_LightSourceClass::GetSize",
+   "emitted": "_TClassFactory_VLightSourceClass::GetSize",
+   "unit": "_TClassFactory_VLightSourceClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0190",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_CampaignClass::AdjustRefCOM",
+   "emitted": "_TClassFactory_VTubeClass::AdjustRefCOM",
+   "unit": "_TClassFactory_VTubeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0310",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_CampaignClass::GetSize",
+   "emitted": "_TClassFactory_VCampaignClass::GetSize",
+   "unit": "_TClassFactory_VCampaignClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0490",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BuildingLightClass::GetSize",
+   "emitted": "_TClassFactory_VBuildingLightClass::GetSize",
+   "unit": "_TClassFactory_VBuildingLightClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0610",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_WaypointPathClass::GetSize",
+   "emitted": "_TClassFactory_VWaypointPathClass::GetSize",
+   "unit": "_TClassFactory_VWaypointPathClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0790",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TemporalClass::GetSize",
+   "emitted": "_TClassFactory_VTemporalClass::GetSize",
+   "unit": "_TClassFactory_VTemporalClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0a90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_SpawnManagerClass::GetSize",
+   "emitted": "_TClassFactory_VSpawnManagerClass::GetSize",
+   "unit": "_TClassFactory_VSpawnManagerClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0c10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_SlaveManagerClass::GetSize",
+   "emitted": "_TClassFactory_VSlaveManagerClass::GetSize",
+   "unit": "_TClassFactory_VSlaveManagerClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c0f10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_DiskLaserClass::GetSize",
+   "emitted": "_TClassFactory_VDiskLaserClass::GetSize",
+   "unit": "_TClassFactory_VDiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1090",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ParasiteClass::GetSize",
+   "emitted": "_TClassFactory_VParasiteClass::GetSize",
+   "unit": "_TClassFactory_VParasiteClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1210",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BombClass::GetSize",
+   "emitted": "_TClassFactory_VBombClass::GetSize",
+   "unit": "_TClassFactory_VBombClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1390",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_RadSiteClass::GetSize",
+   "emitted": "_TClassFactory_VRadSiteClass::GetSize",
+   "unit": "_TClassFactory_VRadSiteClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1510",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TEventClass::GetSize",
+   "emitted": "_TClassFactory_VTEventClass::GetSize",
+   "unit": "_TClassFactory_VTEventClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1690",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_VoxelAnimTypeClass::GetSize",
+   "emitted": "_TClassFactory_VVoxelAnimTypeClass::GetSize",
+   "unit": "_TClassFactory_VVoxelAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1810",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_VoxelAnimClass::GetSize",
+   "emitted": "_TClassFactory_VVoxelAnimClass::GetSize",
+   "unit": "_TClassFactory_VVoxelAnimClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  }
+ ]
+}
