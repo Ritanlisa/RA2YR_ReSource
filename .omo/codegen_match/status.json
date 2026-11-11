@@ -4155,11 +4155,16 @@
   "this_as_id": false
  },
  "0x411330": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TacticalClass::FillScanlinesTransparent",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4114b0": {
   "attempts": 2,
@@ -8468,11 +8473,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x434500": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x10",
   "name": "FontClass::RenderText",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "FontClass::RenderText",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4346c0": {
   "attempts": 1,
@@ -13073,11 +13083,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x47ff80": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x18",
   "name": "CellClass::GetScreenRect",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "CellClass::GetScreenRect",
+  "rule_violations": 5,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4802a0": {
   "attempts": 10,
@@ -14091,11 +14106,16 @@
   "this_as_id": false
  },
  "0x48b410": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "proto_this",
   "first_diff": null,
-  "name": "ConnectionClass::queueSendPacket",
+  "name": "ModemConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ConnectionClass::queueSendPacket",
+  "rule_violations": 14,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x48b570": {
   "attempts": 4,
@@ -18889,11 +18909,16 @@
   "this_as_id": false
  },
  "0x4b0c40": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "name": "DriveLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4b2630": {
   "attempts": 1,
@@ -24351,11 +24376,15 @@
   "this_as_id": false
  },
  "0x4e8090": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "unknown_libname_18",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "unknown_libname_18",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4e8110": {
   "attempts": 3,
@@ -38662,11 +38691,15 @@
   "status": "NG"
  },
  "0x567f70": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 sub esp, 0x10",
   "name": "TActionClass_Helper",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "TActionClass_Helper",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x568300": {
   "attempts": 1,
@@ -45390,11 +45423,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x5cd0e0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSVQAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MSVQAnim::Play",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5cd310": {
   "attempts": 2,
@@ -45509,11 +45547,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x5ce8c0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MSPCXAnim::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MSPCXAnim::Draw",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5cea40": {
   "attempts": 1,
@@ -50582,11 +50625,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x623120": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Dialog::PumpMessages",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Dialog::PumpMessages",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6234b0": {
   "attempts": 9,
@@ -51402,11 +51450,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x62bb20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::ProcessUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::ProcessUpdate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x62d5e0": {
   "attempts": 1,
@@ -56571,11 +56624,16 @@
   "this_as_id": false
  },
  "0x65fe00": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "Map_Helper_65FE00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x10",
+  "name": "ObjectClass::Map_Helper_65FE00",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "Map_Helper_65FE00",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x660530": {
   "attempts": 1,
@@ -60458,11 +60516,16 @@
   "this_as_id": false
  },
  "0x6a0310": {
-  "attempts": 10,
+  "attempts": 11,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "WalkLocomotionClass::SetWaypointTarget",
+  "name": "ShipLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WalkLocomotionClass::SetWaypointTarget",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6a3da0": {
   "attempts": 1,
@@ -66555,11 +66618,16 @@
   "this_as_id": false
  },
  "0x6d0fd0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "UI_Init_6D0FD0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 sub esp, 0x10",
+  "name": "ObjectClass::UI_Init_6D0FD0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "UI_Init_6D0FD0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6d1810": {
   "attempts": 1,
@@ -66828,11 +66896,16 @@
   "this_as_id": false
  },
  "0x6d6410": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Terrain::ClimbCheck",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d7560": {
   "attempts": 1,
@@ -67000,11 +67073,16 @@
   "status": "OK"
  },
  "0x6da7d0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Tactical::AddCellToDrawList",
+  "rule_violations": 6,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6da980": {
   "attempts": 1,
@@ -71096,11 +71174,16 @@
   "this_as_id": false
  },
  "0x71d160": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TerrainClass::Export",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TerrainClass::Export",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x71d2f0": {
   "attempts": 5,
@@ -72327,11 +72410,16 @@
   "this_as_id": false
  },
  "0x7248c0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TooltipClass::GetText",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TooltipClass::GetText",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x724a30": {
   "attempts": 1,
@@ -85253,11 +85341,16 @@
   "this_as_id": false
  },
  "0x7bcfb0": {
-  "attempts": 11,
+  "attempts": 12,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TacticalMap::FillScanlinesOpaque",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7bd2b0": {
   "attempts": 1,
@@ -86843,7 +86936,7 @@
   "this_as_id": false
  },
  "0x7ceaff": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__ms_p5_mp_test_fdiv",

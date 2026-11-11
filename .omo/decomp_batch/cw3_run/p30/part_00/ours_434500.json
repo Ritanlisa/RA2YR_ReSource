@@ -1,0 +1,105 @@
+{
+ "symbol": "?RenderText@FontClass@@QAEHPAGHHHH@Z",
+ "sym_key": "FontClass::RenderText",
+ "size": 495,
+ "link_base": 0,
+ "bytes_hex": "83ec1853558b6c2424568bf157668b450083c502668b7e24894424206685c00f94c08bcdc74424180000000084c0894c242c0f85810100008b54243cb31f8d42ff8944241c8ac2f6ebb3172ad8885c24148b5c242ceb048b54243c85d20f8414010000395424180f8d5c010000837c241c080f8de3000000668b0d000000008bd766d3ea8b0d000000006633c068000000008ac28bd7d3e0668b0d0000000066d3ea8b0d0000000032c325ff00000033d86633c08ac28bd7d3e0668b0d0000000066d3ea8b0d0000000032c325ff000000d2e233d88b442418508d4c241866895c24188854241ae8000000008b0d000000008b44242433d224008a542412d3fa8b0d0000000081e2ff0000000bd06633c08bea33d28a542411896c2424d3fa8b0d000000008ac28b542410d3e08b0d0000000081e2ff000000d3fa8b0d00000000660fb6d2d3e28b0d00000000d3e58b4c242c0bc20bc5668946248a4424148b542418041f42884424148b44241c48895424188944241c8b4424306aff50518b4c242c518bcee8000000008bc88b44243885c0894c242c740748894424387419668b018d69028bcd894424206685c0894c242c0f859efeffff66897e245f5e5d8bc15b83c418c214006a008d5424306a0052558bce66897e24e8000000008b44242c5f5e5d8d04405b83c418c21400",
+ "relocs": [
+  {
+   "off": 123,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 142,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A80220@@3IA",
+   "sym_key": "DataGlobal_A80220"
+  },
+  {
+   "off": 155,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 164,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 189,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 198,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?Lerp@Color@@QAEEEPAX@Z",
+   "sym_key": "Color::Lerp"
+  },
+  {
+   "off": 238,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 258,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 289,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 303,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 317,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 329,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?RenderGlyph@FontClass@@QAEHGPAXHH@Z",
+   "sym_key": "FontClass::RenderGlyph"
+  },
+  {
+   "off": 474,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  }
+ ]
+}

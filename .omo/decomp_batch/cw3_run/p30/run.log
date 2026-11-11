@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p30\part_00
+=== convert (20 addrs) ===
+[conv] 0x48b410 ModemConnectionClass::queueSendPacket -> ModemConnectionClass
+[conv] 0x6d0fd0 ObjectClass::UI_Init_6D0FD0 -> ObjectClass
+[conv] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> DriveLocomotionClass
+[conv] 0x5cd0e0 MSVQAnim::Play -> MSVQAnim
+[conv] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> ShipLocomotionClass
+[conv] 0x7248c0 TooltipClass::GetText -> TooltipClass
+[conv] 0x5ce8c0 MSPCXAnim::Draw -> MSPCXAnim
+[conv] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> TacticalMap
+[conv] 0x411330 TacticalClass::FillScanlinesTransparent -> TacticalClass
+[conv] 0x6d6410 Terrain::ClimbCheck -> Terrain
+[conv] 0x47ff80 CellClass::GetScreenRect -> CellClass
+[conv] 0x71d160 TerrainClass::Export -> TerrainClass
+[conv] 0x62bb20 ObjectClass::ProcessUpdate -> ObjectClass
+[conv] 0x6da7d0 Tactical::AddCellToDrawList -> Tactical
+[conv] 0x434500 FontClass::RenderText -> FontClass
+[conv] 0x567f70 TActionClass_Helper -> TActionClass
+[conv] 0x65fe00 ObjectClass::Map_Helper_65FE00 -> ObjectClass
+[conv] 0x4e8090 unknown_libname_18 -> _addr_4E
+[conv] 0x7ceaff __ms_p5_mp_test_fdiv -> _addr_7C
+[conv] 0x623120 Dialog::PumpMessages -> Dialog
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ModemConnectionClass     rc=2
+[era] ObjectClass              rc=2
+[era] DriveLocomotionClass     rc=2
+[era] MSVQAnim                 rc=2
+[era] ShipLocomotionClass      rc=2
+[era] TooltipClass             rc=2
+[era] MSPCXAnim                rc=2
+[era] TacticalMap              rc=2
+[era] TacticalClass            rc=2
+[era] Terrain                  rc=2
+[era] CellClass                rc=0
+[era] TerrainClass             rc=2
+[era] Tactical                 rc=2
+[era] FontClass                rc=0
+[era] TActionClass             rc=0
+[era] _addr_4E                 rc=2
+[era] _addr_7C                 rc=2
+[era] Dialog                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x6d0fd0   MISMATCH         ObjectClass::UI_Init_6D0FD0
+[diff] 0x65fe00   MISMATCH         ObjectClass::Map_Helper_65FE00
+[diff] 0x47ff80   MISMATCH         CellClass::GetScreenRect
+[diff] 0x434500   MISMATCH         FontClass::RenderText
+[diff] 0x567f70   MISMATCH         TActionClass_Helper
+[ledger] 0x48b410 ModemConnectionClass::queueSendPacket -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6d0fd0 ObjectClass::UI_Init_6D0FD0 -> NG (attempt 2)
+[ledger] 0x4b0c40 DriveLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5cd0e0 MSVQAnim::Play -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6a0310 ShipLocomotionClass::SetWaypointTarget -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7248c0 TooltipClass::GetText -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5ce8c0 MSPCXAnim::Draw -> COMPILE_FAIL (attempt 10)
+[ledger] 0x7bcfb0 TacticalMap::FillScanlinesOpaque -> COMPILE_FAIL (attempt 12)
+[ledger] 0x411330 TacticalClass::FillScanlinesTransparent -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6d6410 Terrain::ClimbCheck -> COMPILE_FAIL (attempt 10)
+[ledger] 0x47ff80 CellClass::GetScreenRect -> NG (attempt 10)
+[ledger] 0x71d160 TerrainClass::Export -> COMPILE_FAIL (attempt 12)
+[ledger] 0x62bb20 ObjectClass::ProcessUpdate -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6da7d0 Tactical::AddCellToDrawList -> COMPILE_FAIL (attempt 10)
+[ledger] 0x434500 FontClass::RenderText -> NG (attempt 2)
+[ledger] 0x567f70 TActionClass_Helper -> NG (attempt 2)
+[ledger] 0x65fe00 ObjectClass::Map_Helper_65FE00 -> NG (attempt 2)
+[ledger] 0x4e8090 unknown_libname_18 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7ceaff __ms_p5_mp_test_fdiv -> COMPILE_FAIL (attempt 3)
+[ledger] 0x623120 Dialog::PumpMessages -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 15,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "frame_sched": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p30\batch_report.json
