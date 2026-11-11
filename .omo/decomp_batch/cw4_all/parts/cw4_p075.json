@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x7c7350",
+  "name": "Audio_Render_7C7350",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p200",
+  "unit": "Audio_Render",
+  "emitted": "Audio_Render_7C7350",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 20
+ },
+ {
+  "addr": "0x7dd413",
+  "name": "__ungetch",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 33,
+  "part": "p200",
+  "unit": "_addr_7D",
+  "emitted": "__ungetch",
+  "first_diff": {
+   "orig": "+9 cmp dword ptr [0x87dd70], -1",
+   "ours": "+9 cmp dword ptr [0], -1"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c9820",
+  "name": "FirstFloatPositive",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p200",
+  "unit": "_addr_6C",
+  "emitted": "FirstFloatPositive",
+  "first_diff": {
+   "orig": "+0 xor edx, edx",
+   "ours": "+0 fld dword ptr [ecx]"
+  },
+  "ours_size": 48
+ },
+ {
+  "addr": "0x41c610",
+  "name": "CompareFunction",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p200",
+  "unit": "_addr_41",
+  "emitted": "CompareFunction",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x48bc20",
+  "name": "CompareFuncInt",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p200",
+  "unit": "_addr_48",
+  "emitted": "CompareFuncInt",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x50da50",
+  "name": "GlobalHelper_0E44C0_Helper",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 34,
+  "part": "p201",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::GlobalHelper_0E44C0_Helper",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xa8ef98]",
+   "ours": "+0 mov eax, dword ptr [0]"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x5108f0",
+  "name": "globalHelper_0108F0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_51",
+  "emitted": "globalHelper_0108F0",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x52b6a0",
+  "name": "CompareFunc3Int",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_52",
+  "emitted": "CompareFunc3Int",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x52b720",
+  "name": "CompareFunc4Int",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_52",
+  "emitted": "CompareFunc4Int",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x5ad9c0",
+  "name": "sub_5AD9C0",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_5A",
+  "emitted": "sub_5AD9C0",
+  "first_diff": {
+   "orig": "+19 xor edx, edx",
+   "ours": "+19 sbb eax, eax"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x652630",
+  "name": "sub_652630",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_65",
+  "emitted": "sub_652630",
+  "first_diff": {
+   "orig": "+19 xor edx, edx",
+   "ours": "+19 sbb eax, eax"
+  },
+  "ours_size": 25
+ },
+ {
+  "addr": "0x6cf320",
+  "name": "globalHelper_0CF320",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_6C",
+  "emitted": "globalHelper_0CF320",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x725040",
+  "name": "CompareFunc2Int",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "_addr_72",
+  "emitted": "CompareFunc2Int",
+  "first_diff": {
+   "orig": "+23 setge dl",
+   "ours": "+23 setl dl"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x72a9e0",
+  "name": "Rect::Inflate",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 34,
+  "part": "p201",
+  "unit": "Rect",
+  "emitted": "Rect::Inflate",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 45
+ },
+ {
+  "addr": "0x748380",
+  "name": "sub_748380",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 34,
+  "part": "p202",
+  "unit": "_addr_74",
+  "emitted": "sub_748380",
+  "first_diff": {
+   "orig": "+4 jle 0x7483a1",
+   "ours": "+4 jle 0x27"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x7cc0fc",
+  "name": "__unwind_handler",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 34,
+  "part": "p202",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::__unwind_handler",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 36
+ },
+ {
+  "addr": "0x4104c0",
+  "name": "Map::GetInvalidCoord",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 35,
+  "part": "p202",
+  "unit": "AbstractClass",
+  "emitted": "AbstractClass::GetInvalidCoord",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x477930",
+  "name": "ParticleTypeClass::LoadTypeData",
+  "family": "JCC_INVERT_PLUS",
+  "path": "branch_order",
+  "size": 35,
+  "part": "p202",
+  "unit": "_DynamicVectorClass_VRGBClass",
+  "emitted": "_DynamicVectorClass_VRGBClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x47793c",
+   "ours": "+5 je 0x1e"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x50e470",
+  "name": "CellStruct::Equals",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 35,
+  "part": "p202",
+  "unit": "CellStruct",
+  "emitted": "CellStruct::Equals",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [ecx]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x631ee0",
+  "name": "TacticalClass::DecrementCounter",
+  "family": "STRUCTURAL",
+  "path": "eval_order",
+  "size": 35,
+  "part": "p202",
+  "unit": "TacticalClass",
+  "emitted": "TacticalClass::DecrementCounter",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0x38]"
+  },
+  "ours_size": 35
+ }
+]
