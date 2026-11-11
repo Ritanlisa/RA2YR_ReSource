@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p229\part_00
+=== convert (20 addrs) ===
+[conv] 0x69ce60 _VectorClass_PAVMultiMission::GetSize -> _VectorClass_PAVMultiMission
+[conv] 0x69d0c0 _VectorClass_PAUGlobalPacketType::GetSize -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d320 _VectorClass_PAVPhoneEntryClass::GetSize -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b1590 VectorClass::evaluateAIOption -> VectorClass
+[conv] 0x6b8340 VectorClass::initPathState -> VectorClass
+[conv] 0x6b8600 _VectorClass_PAVSpawnManagerClass::GetSize -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6c62f0 _VectorClass_K::GetSize -> _VectorClass_K
+[conv] 0x6caaf0 _VectorClass_PAVSubTitle::GetSize -> _VectorClass_PAVSubTitle
+[conv] 0x6cf6c0 _VectorClass_VSwizzlePointerClass::Init -> _VectorClass_VSwizzlePointerClass
+[conv] 0x6dcaf0 _VectorClass_PAVShadowControlClass::GetSize -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e4970 _VectorClass_PAVTActionClass::Init -> _VectorClass_PAVTActionClass
+[conv] 0x6e6660 _VectorClass_PAVTagTypeClass::GetSize -> _VectorClass_PAVTagTypeClass
+[conv] 0x7238b0 _VectorClass_PAVTiberiumClass::GetSize -> _VectorClass_PAVTiberiumClass
+[conv] 0x724db0 _VectorClass_PBVToolTip::seekString -> _VectorClass_PBVToolTip
+[conv] 0x74f4e0 _VectorClass_PAVVeinholeMonsterClass::Read -> _VectorClass_PAVVeinholeMonsterClass
+[conv] 0x751a50 _VectorClass_PAVVocClass::GetSize -> _VectorClass_PAVVocClass
+[conv] 0x7537d0 _VectorClass_PAVVoxClass::GetSize -> _VectorClass_PAVVoxClass
+[conv] 0x75a5b0 _VectorClass_PAVMovieHandle::GetSize -> _VectorClass_PAVMovieHandle
+[conv] 0x764580 _VectorClass_PAVWaypointPathClass::GetSize -> _VectorClass_PAVWaypointPathClass
+[conv] 0x76a250 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Read -> _VectorClass_PAUAnimationPalette_Map_WorldDominationTour
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVMultiMission rc=2
+[era] _VectorClass_PAUGlobalPacketType rc=2
+[era] _VectorClass_PAVPhoneEntryClass rc=2
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=2
+[era] _VectorClass_K           rc=2
+[era] _VectorClass_PAVSubTitle rc=2
+[era] _VectorClass_VSwizzlePointerClass rc=2
+[era] _VectorClass_PAVShadowControlClass rc=2
+[era] _VectorClass_PAVTActionClass rc=2
+[era] _VectorClass_PAVTagTypeClass rc=2
+[era] _VectorClass_PAVTiberiumClass rc=2
+[era] _VectorClass_PBVToolTip  rc=2
+[era] _VectorClass_PAVVeinholeMonsterClass rc=0
+[era] _VectorClass_PAVVocClass rc=2
+[era] _VectorClass_PAVVoxClass rc=2
+[era] _VectorClass_PAVMovieHandle rc=2
+[era] _VectorClass_PAVWaypointPathClass rc=2
+[era] _VectorClass_PAUAnimationPalette_Map_WorldDominationTour rc=2
+=== diffasm byte-compare ===
+[diff] 0x6b1590   MISMATCH         VectorClass::evaluateAIOption
+[diff] 0x6b8340   MISMATCH         VectorClass::initPathState
+[diff] 0x74f4e0   MISMATCH         _VectorClass_PAVVeinholeMonsterClass::Read
+[ledger] 0x69ce60 _VectorClass_PAVMultiMission::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d0c0 _VectorClass_PAUGlobalPacketType::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d320 _VectorClass_PAVPhoneEntryClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1590 VectorClass::evaluateAIOption -> NG (attempt 1)
+[ledger] 0x6b8340 VectorClass::initPathState -> NG (attempt 1)
+[ledger] 0x6b8600 _VectorClass_PAVSpawnManagerClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c62f0 _VectorClass_K::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6caaf0 _VectorClass_PAVSubTitle::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf6c0 _VectorClass_VSwizzlePointerClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dcaf0 _VectorClass_PAVShadowControlClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4970 _VectorClass_PAVTActionClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6660 _VectorClass_PAVTagTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7238b0 _VectorClass_PAVTiberiumClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x724db0 _VectorClass_PBVToolTip::seekString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f4e0 _VectorClass_PAVVeinholeMonsterClass::Read -> NG (attempt 1)
+[ledger] 0x751a50 _VectorClass_PAVVocClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7537d0 _VectorClass_PAVVoxClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75a5b0 _VectorClass_PAVMovieHandle::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764580 _VectorClass_PAVWaypointPathClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76a250 _VectorClass_PAUAnimationPalette_Map_WorldDominationTour::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p229\batch_report.json
