@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E84D0",
+ "name": "GameConfig::ComputeCRC",
+ "size": 177,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E84D0",
+ "bytes_hex": "81ec0401000053555657b940000000be50e0ab008d7c241433dbf3a5bd10e0ab00b94000000033c0bf50e0ab00896c2410ba40010000f3ab8bfbc1ef1f83fa047c148b450083c504896c24108d1c5803df83ea04eb2233c08bf585d274158bea33d233c98a0ec1e0080bc1464d75f38b6c24108d1c5803df85d27fbc6a0ce8c4081e008be853682878810055e893091e00b9400000008d742424bf50e0ab0083c410f3a55f8bc55e5d5b81c404010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
