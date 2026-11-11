@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C21A0",
+ "name": "MPCooperative::CheckReady",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C21A0",
+ "bytes_hex": "8b442404683207000050ff15a8147e0085c074158b0d68eba800516a01680504000050ff15ac147e00c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,27 @@
+{
+ "symbol": "?CheckReady@MPCooperative@@QAGPAXXZ",
+ "sym_key": "MPCooperative::CheckReady",
+ "size": 47,
+ "link_base": 0,
+ "bytes_hex": "8b442404683207000050e80000000085c074178b0d68000000516a01680504000050e800000000c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?GetDlgItem@@YGPAXPAXH@Z",
+   "sym_key": "GetDlgItem"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 35,
+   "type": "REL32",
+   "sym": "?PostMessageA@@YGHPAXHH0@Z",
+   "sym_key": "PostMessageA"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b4840 sub_6B4840 -> _addr_6B
+[conv] 0x6d1830 sub_6D1830 -> _addr_6D
+[conv] 0x6f7970 TechnoClass::CheckCellPassable3 -> TechnoClass
+[conv] 0x71a1c0 sub_71A1C0 -> _addr_71
+[conv] 0x7287f0 sub_7287F0 -> _addr_72
+[conv] 0x752020 sub_752020 -> _addr_75
+[conv] 0x766d30 VectorClass::ddtor -> VectorClass
+[conv] 0x767ca0 sub_767CA0 -> _addr_76
+[conv] 0x767e90 MSFrameAnim::sub_767E90 -> MSFrameAnim
+[conv] 0x77b690 sub_77B690 -> _addr_77
+[conv] 0x40dd70 AbstractClass::IsTechnoType -> AbstractClass
+[conv] 0x71de10 TerrainTypeClass::GetTileIndex -> TerrainTypeClass
+[conv] 0x766800 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x5c21a0 MPCooperative::CheckReady -> MPCooperative
+[conv] 0x721570 sub_721570 -> _addr_72
+[conv] 0x554400 LoadProgressMgr::sub_554400 -> LoadProgressMgr
+[conv] 0x679f70 VectorClass::Dtor -> VectorClass
+[conv] 0x7cbdaf __cinit -> _addr_7C
+[conv] 0x536140 AddTeamCommand::Read -> AddTeamCommand
+[conv] 0x769ca0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Seek -> _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=0
+[era] _addr_6D                 rc=0
+[era] TechnoClass              rc=2
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+[era] _addr_75                 rc=0
+[era] VectorClass              rc=2
+[era] _addr_76                 rc=0
+[era] MSFrameAnim              rc=0
+[era] _addr_77                 rc=0
+[era] AbstractClass            rc=2
+[era] TerrainTypeClass         rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] MPCooperative            rc=0
+[era] LoadProgressMgr          rc=2
+[era] _addr_7C                 rc=2
+[era] AddTeamCommand           rc=2
+[era] _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+=== diffasm byte-compare ===
+[diff] 0x6b4840   MISMATCH         sub_6B4840
+[diff] 0x6d1830   MISMATCH         sub_6D1830
+[diff] 0x71a1c0   MISMATCH         sub_71A1C0
+[diff] 0x7287f0   MISMATCH         sub_7287F0
+[diff] 0x721570   MISMATCH         sub_721570
+[diff] 0x752020   MISMATCH         sub_752020
+[diff] 0x767ca0   MISMATCH         sub_767CA0
+[diff] 0x767e90   MISMATCH         MSFrameAnim::sub_767E90
+[diff] 0x77b690   MISMATCH         sub_77B690
+[diff] 0x71de10   MISMATCH         TerrainTypeClass::GetTileIndex
+[diff] 0x5c21a0   MISMATCH         MPCooperative::CheckReady
+[diff] 0x769ca0   MISMATCH         _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Seek
+[ledger] 0x6b4840 sub_6B4840 -> NG (attempt 4)
+[ledger] 0x6d1830 sub_6D1830 -> NG (attempt 4)
+[ledger] 0x6f7970 TechnoClass::CheckCellPassable3 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71a1c0 sub_71A1C0 -> NG (attempt 4)
+[ledger] 0x7287f0 sub_7287F0 -> NG (attempt 4)
+[ledger] 0x752020 sub_752020 -> NG (attempt 4)
+[ledger] 0x766d30 VectorClass::ddtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x767ca0 sub_767CA0 -> NG (attempt 4)
+[ledger] 0x767e90 MSFrameAnim::sub_767E90 -> NG (attempt 3)
+[ledger] 0x77b690 sub_77B690 -> NG (attempt 4)
+[ledger] 0x40dd70 AbstractClass::IsTechnoType -> COMPILE_FAIL (attempt 3)
+[ledger] 0x71de10 TerrainTypeClass::GetTileIndex -> NG (attempt 3)
+[ledger] 0x766800 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5c21a0 MPCooperative::CheckReady -> NG (attempt 3)
+[ledger] 0x721570 sub_721570 -> NG (attempt 4)
+[ledger] 0x554400 LoadProgressMgr::sub_554400 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x679f70 VectorClass::Dtor -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cbdaf __cinit -> COMPILE_FAIL (attempt 4)
+[ledger] 0x536140 AddTeamCommand::Read -> COMPILE_FAIL (attempt 3)
+[ledger] 0x769ca0 _VectorClass_V_rc_ptr_VTerritory_WorldDominationTour::Seek -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 8
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "regalloc": 2,
+  "const_fold": 2,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p12\batch_report.json
