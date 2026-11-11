@@ -5166,14 +5166,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x6b5f80": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b6080": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "UnitClass::CreateUnloadPlacementCraters",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5208,7 +5208,7 @@
   "status": "NG"
  },
  "0x6b7c60": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5236,28 +5236,28 @@
   "status": "NG"
  },
  "0x6c6740": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "StaticButtonClass::HitTest",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6c9c60": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BinkMovie::CheckKeyframeTransition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6cb830": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+14 je 0x6cb870",
   "name": "SuperClass::StopPreclickAnim",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x6ce0b0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SuperClass::Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5278,7 +5278,7 @@
   "status": "OK"
  },
  "0x6cf350": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SwizzleManagerClass::ConvertNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5292,7 +5292,7 @@
   "status": "OK"
  },
  "0x6d02b0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SidebarClass::LoadButtonSHPs",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5313,14 +5313,14 @@
   "status": "NG"
  },
  "0x6d6410": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6d8530": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "DisplayClass::ScrollTacticalView",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5334,21 +5334,21 @@
   "status": "NG"
  },
  "0x6da180": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 mov eax, dword ptr [ecx + 0xd90]",
   "name": "TacticalMap::DrawOccupiedRegion",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x6da230": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6da7d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5376,42 +5376,42 @@
   "status": "NG"
  },
  "0x6e0110": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 sub esp, 0x1c",
   "name": "ScenarioClass::Create",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x6e0ef0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "HouseClass::UpdateTechBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1530": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ScenarioClass::PrepareTextDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e15f0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "ObjectClass::ReadINIEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e1780": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TActionClass::PlayAudioAtRandomWP",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6e2970": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "BuildingLightClass::FindAllTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",

@@ -1,0 +1,51 @@
+{
+ "symbol": "?Create@ScenarioClass@@QAEDHHHH@Z",
+ "sym_key": "ScenarioClass::Create",
+ "size": 155,
+ "link_base": 0,
+ "bytes_hex": "83ec14568bf18d4c24048b464450518b0d00000000e8000000008b00c7442414000000008bd089442404c1fa100fbfca0fbfc0c1e108c1e0088d54240c81c180000000058000000052894c24148944240c89442410e8000000006800010000e80000000083c40485c074278b96900000006a0068000000006a008d4c24146a00518b0d1c0000008b14918bc852e800000000b0015e83c414c21000",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ScenarioClass_Instance@@3PAXA",
+   "sym_key": "g_ScenarioClass_Instance"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Get_Waypoint_Location@ScenarioClass@@QAEPAIPAXH@Z",
+   "sym_key": "ScenarioClass::Get_Waypoint_Location"
+  },
+  {
+   "off": 86,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "?Cell__GetGroundHeight@@YGHPAX@Z"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0E6A0@@3IA",
+   "sym_key": "DataGlobal_B0E6A0"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?stru_A83D50@@3PADA",
+   "sym_key": "stru_A83D50"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?Constructor@ParticleSystemClass@@QAEHHPAXH00H@Z",
+   "sym_key": "ParticleSystemClass::Constructor"
+  }
+ ]
+}

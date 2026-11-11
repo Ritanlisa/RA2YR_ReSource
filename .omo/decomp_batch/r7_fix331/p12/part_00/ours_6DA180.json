@@ -1,0 +1,27 @@
+{
+ "symbol": "?DrawOccupiedRegion@TacticalMap@@QAEHXZ",
+ "sym_key": "TacticalMap::DrawOccupiedRegion",
+ "size": 164,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bb1900d000085f675118b81940d000085c0750733c05e83c410c38b91980d00008b819c0d000053578bb9940d00003bd67d068bce8bf28bd13bc77d068bcf8bf88bc18b0dd40000002bd64283790401750f8b897401000033db8a590f8bcbeb0c8b997401000033c9668b4b1e2bc789542414408974240c89442418a100000000897c2410510fbe108d4c24108b1251680000000050ff52545f5b5e83c410c3",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 149,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}
