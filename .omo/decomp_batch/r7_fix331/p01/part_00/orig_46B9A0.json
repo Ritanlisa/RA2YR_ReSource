@@ -1,0 +1,11 @@
+{
+ "addr": "0x46B9A0",
+ "name": "VectorClass_ptr_BulletClass::GetItem_0",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46B9A0",
+ "bytes_hex": "836c240404e946f6ffff",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetItem_0@unknown@@QAGJH@Z",
+ "sym_key": "unknown::GetItem_0",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240883c0fc50e800000000c20800",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?BulletClass__ValidateTarget@@YGJPCX@Z",
+   "sym_key": "?BulletClass__ValidateTarget@@YGJPCX@Z"
+  }
+ ]
+}

@@ -854,21 +854,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x451f60": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+26 je 0x451fe2",
   "name": "BuildingClass::SyncCrateVisuals",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x452360": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x455c20": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -973,7 +973,7 @@
   "status": "NG"
  },
  "0x468430": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1015,11 +1015,11 @@
   "status": "NG"
  },
  "0x46b9a0": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "VectorClass_ptr_BulletClass::GetItem_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x46c850": {
   "attempts": 5,
@@ -1120,11 +1120,11 @@
   "status": "NG"
  },
  "0x475150": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+6 mov eax, dword ptr [esp + 0x94]",
   "name": "BulletTypeClass::ReadTrajectoryFlags",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x475610": {
   "attempts": 4,
@@ -1134,18 +1134,18 @@
   "status": "NG"
  },
  "0x4756f0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475b70": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+11 mov dword ptr [esp + 4], ecx",
   "name": "WeaponTypeClass::ReadTrajectoryData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x475c70": {
   "attempts": 6,
@@ -1190,7 +1190,7 @@
   "status": "NG"
  },
  "0x477740": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1218,14 +1218,14 @@
   "status": "NG"
  },
  "0x47d210": {
-  "attempts": 13,
+  "attempts": 14,
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x47ff80": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "CellClass::GetScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1246,7 +1246,7 @@
   "status": "NG"
  },
  "0x484050": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Tactical::CreateTacticalLightSurface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1309,7 +1309,7 @@
   "status": "NG"
  },
  "0x486ff0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Cell::IsBuildableAdvanced",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1344,7 +1344,7 @@
   "status": "OK"
  },
  "0x487f40": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Rect::Union",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1379,7 +1379,7 @@
   "status": "NG"
  },
  "0x48b410": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "ConnectionClass::queueSendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1421,7 +1421,7 @@
   "status": "OK"
  },
  "0x48bf40": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "ConnectionClass::sendAck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1449,32 +1449,32 @@
   "status": "NG"
  },
  "0x493a60": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+4 mov edx, dword ptr [esp + 0x14]",
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x493b90": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+4 push esi",
   "name": "BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x493cc0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push ebp",
   "name": "BlitPlainXlatAlpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x493df0": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+4 push ebp",
   "name": "BlitTransXlatAlpha_ushort::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x493f30": {
   "attempts": 7,

@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@_BlitPlainXlatAlpha_G@@QAEHHPAEHHHPAGHH@Z",
+ "sym_key": "_BlitPlainXlatAlpha_G::AddRef",
+ "size": 162,
+ "link_base": 0,
+ "bytes_hex": "8b44241c33d285c00f9ec24a23c28bd0c1e20603d08d0490c1f80b3dfe0000007e05b8fe00000055568b7108c1e00903c68be88b44241485c07e628b542420894424248b44240c53578b7c24188d70fe8a0733db8844241c668b0225ffff000083c60283c20247668b5c45008b44241c25ff0000000bd88b4104668b0458668906a1140100003b501c72032b50208b44242c4885c08944242c75b55f5b5e5dc22000",
+ "relocs": [
+  {
+   "off": 130,
+   "type": "DIR32",
+   "sym": "?stru_87E790@@3PADA",
+   "sym_key": "stru_87E790"
+  }
+ ]
+}

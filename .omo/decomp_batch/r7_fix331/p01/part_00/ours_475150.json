@@ -1,0 +1,33 @@
+{
+ "symbol": "?ReadTrajectoryFlags@BulletTypeClass@@QAEDPAEPADH@Z",
+ "sym_key": "BulletTypeClass::ReadTrajectoryFlags",
+ "size": 261,
+ "link_base": 0,
+ "bytes_hex": "81ec88000000894c240432c08b8c24940000008844240885c90f84db0000008b0d0000000085c90f86cd000000538b1d00000000555657894c24108b13be010000008b8ab8000000d3e68b8c24a400000085f1746284c0742ebf0000000083c9ff33c08d6c2418f2aef7d12bf98bf78bfd8be983c9fff2ae8bcd4fc1e902f3a58bcd83e103f3a48d7a2483c9ff33c08d542418f2aef7d12bf98bf78be98bfa83c9fff2ae8bcd4fc1e902f3a58bcd83e103f3a48a4424188b4c241083c30449894c24100f8572ffffff5f5e5d5b84c074298b8c24900000008b94248c0000008d442408508b44240851528b08e80000000081c488000000c20c00b00181c488000000c20c00",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeArray@@3IA",
+   "sym_key": "g_SuperWeaponTypeArray"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 237,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

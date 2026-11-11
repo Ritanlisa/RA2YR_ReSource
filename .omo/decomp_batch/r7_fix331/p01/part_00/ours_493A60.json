@@ -1,0 +1,21 @@
+{
+ "symbol": "?Blit_Alpha_ZReadWrite_Lucent50@_BlitTransLucent50ZReadWrite_G@@QAEHPAGPAEHH0HHH@Z",
+ "sym_key": "_BlitTransLucent50ZReadWrite_G::Blit_Alpha_ZReadWrite_Lucent50",
+ "size": 152,
+ "link_base": 0,
+ "bytes_hex": "8b44240c85c00f8e890000008b150000000053558b6c2418568b742420578b7c24148bd833c0668b063be87d3a8b4424188a0084c074308b6904668b510825ff000000668b444500668b2f66d1e866d1ed23c223ea03c58b6c242066890766892e8b15000000008d46028b7424184683c702897424188bb25c0500003bc672062b82600500008bf08d43ff8bd885db75935f5e5d5bc22000",
+ "relocs": [
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  },
+  {
+   "off": 99,
+   "type": "DIR32",
+   "sym": "?g_ZBufferDescriptor@@3PAVStream@@A",
+   "sym_key": "g_ZBufferDescriptor"
+  }
+ ]
+}
