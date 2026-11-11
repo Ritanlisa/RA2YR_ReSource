@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p176\part_00
+=== convert (20 addrs) ===
+[conv] 0x49e980 _DynamicVectorClass_PAD::Get -> _DynamicVectorClass_PAD
+[conv] 0x49e9e0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::GetCount -> _DynamicVectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49ecb0 _VectorClass_PAV_DynamicVectorClass_PAD::GetCapacity -> _VectorClass_PAV_DynamicVectorClass_PAD
+[conv] 0x49f9b0 CounterClass::Construct -> CounterClass
+[conv] 0x4a0f50 _DynamicVectorClass_PAUIConnectionPoint::PointerToIndex -> _DynamicVectorClass_PAUIConnectionPoint
+[conv] 0x4a1120 _VectorClass_UtagCONNECTDATA::GetCapacity -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4a13a0 _VectorClass_PAUIConnectionPoint::Unadvise -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a4b00 _DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex -> _DynamicVectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a4c90 _VectorClass_PAU_DDSURFACEDESC::Write -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7d50 _DynamicVectorClass_PAVDiskLaserClass::PointerToIndex -> _DynamicVectorClass_PAVDiskLaserClass
+[conv] 0x4a7ee0 _VectorClass_PAVDiskLaserClass::Write -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4b9c70 _DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0 -> _DynamicVectorClass_PAUCrossDissolveEffect
+[conv] 0x4b9e00 VectorClass_ptr_CrossDissolveEffect::GetItemIndex -> VectorClass_ptr_CrossDissolveEffect
+[conv] 0x4ba060 _VectorClass_PAUCrossDissolveEffect::Get -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2c70 _DynamicVectorClass_PAVEBolt::GetItemIndex -> _DynamicVectorClass_PAVEBolt
+[conv] 0x4c2e00 _VectorClass_PAVEBolt::GetCapacity -> _VectorClass_PAVEBolt
+[conv] 0x4c49d0 _DynamicVectorClass_PAVEgoClass::GetItemIndex -> _DynamicVectorClass_PAVEgoClass
+[conv] 0x4c4b60 _VectorClass_PAVEgoClass::GetCapacity -> _VectorClass_PAVEgoClass
+[conv] 0x4c5b90 _DynamicVectorClass_PAVEMPulseClass::GetItemIndex -> _DynamicVectorClass_PAVEMPulseClass
+[conv] 0x4ca8c0 DynamicVector::checkScriptCondition -> DynamicVector
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAD  rc=0
+[era] _DynamicVectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=0
+[era] CounterClass             rc=2
+[era] _DynamicVectorClass_PAUIConnectionPoint rc=0
+[era] _VectorClass_UtagCONNECTDATA rc=0
+[era] _VectorClass_PAUIConnectionPoint rc=0
+[era] _DynamicVectorClass_PAU_DDSURFACEDESC rc=0
+[era] _VectorClass_PAU_DDSURFACEDESC rc=0
+[era] _DynamicVectorClass_PAVDiskLaserClass rc=0
+[era] _VectorClass_PAVDiskLaserClass rc=0
+[era] _DynamicVectorClass_PAUCrossDissolveEffect rc=0
+[era] VectorClass_ptr_CrossDissolveEffect rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] _DynamicVectorClass_PAVEBolt rc=0
+[era] _VectorClass_PAVEBolt    rc=0
+[era] _DynamicVectorClass_PAVEgoClass rc=0
+[era] _VectorClass_PAVEgoClass rc=0
+[era] _DynamicVectorClass_PAVEMPulseClass rc=0
+[era] DynamicVector            rc=0
+=== diffasm byte-compare ===
+[diff] 0x49e980   MISMATCH         _DynamicVectorClass_PAD::Get
+[diff] 0x49e9e0   MISMATCH         _DynamicVectorClass_PAV_DynamicVectorClass_PAD::GetCount
+[diff] 0x49ecb0   MISMATCH         _VectorClass_PAV_DynamicVectorClass_PAD::GetCapacity
+[diff] 0x4a0f50   MISMATCH         _DynamicVectorClass_PAUIConnectionPoint::PointerToIndex
+[diff] 0x4a1120   MISMATCH         _VectorClass_UtagCONNECTDATA::GetCapacity
+[diff] 0x4a13a0   MISMATCH         _VectorClass_PAUIConnectionPoint::Unadvise
+[diff] 0x4a4b00   MISMATCH         _DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex
+[diff] 0x4a4c90   MISMATCH         _VectorClass_PAU_DDSURFACEDESC::Write
+[diff] 0x4a7d50   MISMATCH         _DynamicVectorClass_PAVDiskLaserClass::PointerToIndex
+[diff] 0x4a7ee0   MISMATCH         _VectorClass_PAVDiskLaserClass::Write
+[diff] 0x4b9c70   MISMATCH         _DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0
+[diff] 0x4b9e00   MISMATCH         VectorClass_ptr_CrossDissolveEffect::GetItemIndex
+[diff] 0x4ba060   MISMATCH         _VectorClass_PAUCrossDissolveEffect::Get
+[diff] 0x4c2c70   MISMATCH         _DynamicVectorClass_PAVEBolt::GetItemIndex
+[diff] 0x4c2e00   MISMATCH         _VectorClass_PAVEBolt::GetCapacity
+[diff] 0x4c49d0   MISMATCH         _DynamicVectorClass_PAVEgoClass::GetItemIndex
+[diff] 0x4c4b60   MISMATCH         _VectorClass_PAVEgoClass::GetCapacity
+[diff] 0x4c5b90   MISMATCH         _DynamicVectorClass_PAVEMPulseClass::GetItemIndex
+[diff] 0x4ca8c0   MISMATCH         DynamicVector::checkScriptCondition
+[ledger] 0x49e980 _DynamicVectorClass_PAD::Get -> NG (attempt 1)
+[ledger] 0x49e9e0 _DynamicVectorClass_PAV_DynamicVectorClass_PAD::GetCount -> NG (attempt 1)
+[ledger] 0x49ecb0 _VectorClass_PAV_DynamicVectorClass_PAD::GetCapacity -> NG (attempt 1)
+[ledger] 0x49f9b0 CounterClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0f50 _DynamicVectorClass_PAUIConnectionPoint::PointerToIndex -> NG (attempt 1)
+[ledger] 0x4a1120 _VectorClass_UtagCONNECTDATA::GetCapacity -> NG (attempt 1)
+[ledger] 0x4a13a0 _VectorClass_PAUIConnectionPoint::Unadvise -> NG (attempt 1)
+[ledger] 0x4a4b00 _DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex -> NG (attempt 1)
+[ledger] 0x4a4c90 _VectorClass_PAU_DDSURFACEDESC::Write -> NG (attempt 1)
+[ledger] 0x4a7d50 _DynamicVectorClass_PAVDiskLaserClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x4a7ee0 _VectorClass_PAVDiskLaserClass::Write -> NG (attempt 1)
+[ledger] 0x4b9c70 _DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0 -> NG (attempt 1)
+[ledger] 0x4b9e00 VectorClass_ptr_CrossDissolveEffect::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4ba060 _VectorClass_PAUCrossDissolveEffect::Get -> NG (attempt 1)
+[ledger] 0x4c2c70 _DynamicVectorClass_PAVEBolt::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4c2e00 _VectorClass_PAVEBolt::GetCapacity -> NG (attempt 1)
+[ledger] 0x4c49d0 _DynamicVectorClass_PAVEgoClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4c4b60 _VectorClass_PAVEgoClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4c5b90 _DynamicVectorClass_PAVEMPulseClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4ca8c0 DynamicVector::checkScriptCondition -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 18,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p176\batch_report.json

@@ -12884,6 +12884,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x49e980": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x49e98c",
+  "name": "_DynamicVectorClass_PAD::Get",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "DynamicVectorClass_PAD::Get",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x49e9a0": {
   "attempts": 1,
   "clean": false,
@@ -12894,6 +12906,18 @@
   "orig_name": "DynamicVectorClass_PAD::Clear",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x49e9e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x49e9ec",
+  "name": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::GetCount",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "DynamicVectorClass_PAD::GetCount",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x49ea00": {
@@ -12930,6 +12954,18 @@
   "orig_name": "DynamicVectorClass_PAD_16::Add",
   "rule_violations": 2,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x49ecb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x49ecbc",
+  "name": "_VectorClass_PAV_DynamicVectorClass_PAD::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "DynamicVectorClass_PAD_16::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x49ef10": {
@@ -13062,6 +13098,18 @@
   "orig_name": "CopyProtection::CheckProtectedData",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x49f9b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CounterClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CounterClass::Construct",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x49fa00": {
@@ -13291,6 +13339,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a0f50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a0f5c",
+  "name": "_DynamicVectorClass_PAUIConnectionPoint::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "EnumConnectionPointsClass::PointerToIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a0f70": {
   "attempts": 1,
   "clean": false,
@@ -13301,6 +13361,30 @@
   "orig_name": "ConnectionPointClass_9::EnumConnections",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a1120": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a112c",
+  "name": "_VectorClass_UtagCONNECTDATA::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_UtagCONNECTDATA::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x4a13a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a13ac",
+  "name": "_VectorClass_PAUIConnectionPoint::Unadvise",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ConnectionPointClass_9::Unadvise",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a1540": {
@@ -13709,6 +13793,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x4a4b00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a4b0c",
+  "name": "_DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "CStreamClass::PointerToIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a4b20": {
   "attempts": 1,
   "clean": false,
@@ -13727,6 +13823,18 @@
   "name": "CStreamClass_16::AddRef",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x4a4c90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a4c9c",
+  "name": "_VectorClass_PAU_DDSURFACEDESC::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "CStreamClass_16::Write",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4a4d60": {
   "attempts": 1,
@@ -14201,6 +14309,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4a7d50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a7d5c",
+  "name": "_DynamicVectorClass_PAVDiskLaserClass::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "Dial8Class_48::PointerToIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4a7d70": {
   "attempts": 1,
   "clean": false,
@@ -14211,6 +14331,18 @@
   "orig_name": "Dial8Class_48::Seek",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4a7ee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4a7eec",
+  "name": "_VectorClass_PAVDiskLaserClass::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "Dial8Class_48::Write",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4a7fe0": {
@@ -15481,6 +15613,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4b9c70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4b9c7c",
+  "name": "_DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "FilePipe_30::GetCount_0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4b9c90": {
   "attempts": 1,
   "first_diff": null,
@@ -15488,12 +15632,36 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4b9e00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4b9e0c",
+  "name": "VectorClass_ptr_CrossDissolveEffect::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_CrossDissolveEffect::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4ba020": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
   "name": "VectorClass_ptr_CrossDissolveEffect::GetSize",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x4ba060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4ba06c",
+  "name": "_VectorClass_PAUCrossDissolveEffect::Get",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_CrossDissolveEffect::Get",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4ba250": {
   "attempts": 1,
@@ -15867,6 +16035,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4c2c70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4c2c7c",
+  "name": "_DynamicVectorClass_PAVEBolt::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_EBolt::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4c2c90": {
   "attempts": 1,
   "clean": false,
@@ -15889,6 +16069,18 @@
   "orig_name": "VectorClass_ptr_EBolt::GetSize",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4c2e00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4c2e0c",
+  "name": "_VectorClass_PAVEBolt::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_EBolt::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c2fa0": {
@@ -16056,6 +16248,18 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x4c49d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4c49dc",
+  "name": "_DynamicVectorClass_PAVEgoClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_EgoClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4c49f0": {
   "attempts": 1,
   "clean": false,
@@ -16066,6 +16270,18 @@
   "orig_name": "VectorClass_ptr_EgoClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4c4b60": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4c4b6c",
+  "name": "_VectorClass_PAVEgoClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_EgoClass::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x4c4d30": {
@@ -16295,6 +16511,18 @@
   "name": "EMPulseClass::StubReturn55",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4c5b90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x4c5b9c",
+  "name": "_DynamicVectorClass_PAVEMPulseClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_EMPulseClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4c5bb0": {
   "attempts": 1,
@@ -16922,6 +17150,18 @@
   "name": "FactoryClass::StubReturn116",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4ca8c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
+  "name": "DynamicVector::checkScriptCondition",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "AbstractClass::checkScriptCondition",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4ca8e0": {
   "attempts": 1,

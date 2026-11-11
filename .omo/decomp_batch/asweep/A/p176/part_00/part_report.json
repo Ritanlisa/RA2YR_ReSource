@@ -1,0 +1,452 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 19,
+   "COMPILE_FAIL": 1
+  },
+  "pathologies": {
+   "branch_order": 18,
+   "ret_norm": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x49e980",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x49e98c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVectorClass_PAD::Get",
+   "emitted": "_DynamicVectorClass_PAD::Get",
+   "unit": "_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x49e9e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x49e9ec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVectorClass_PAD::GetCount",
+   "emitted": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD::GetCount",
+   "unit": "_DynamicVectorClass_PAV_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x49ecb0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x49ecbc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "DynamicVectorClass_PAD_16::GetCapacity",
+   "emitted": "_VectorClass_PAV_DynamicVectorClass_PAD::GetCapacity",
+   "unit": "_VectorClass_PAV_DynamicVectorClass_PAD",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x49f9b0",
+   "batch": "censusA",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p176\\part_00\\CounterClass.cpp(14) : error C2143: syntax error : missing ')' before ';'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\asweep\\A\\p176\\part_00\\CounterCl",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CounterClass::Construct",
+   "emitted": "CounterClass::Construct",
+   "unit": "CounterClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/6",
+   "rule_violations": 1,
+   "clean": false
+  },
+  {
+   "addr": "0x4a0f50",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a0f5c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "EnumConnectionPointsClass::PointerToIndex",
+   "emitted": "_DynamicVectorClass_PAUIConnectionPoint::PointerToIndex",
+   "unit": "_DynamicVectorClass_PAUIConnectionPoint",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a1120",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a112c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_UtagCONNECTDATA::GetCapacity",
+   "emitted": "_VectorClass_UtagCONNECTDATA::GetCapacity",
+   "unit": "_VectorClass_UtagCONNECTDATA",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a13a0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a13ac",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "ConnectionPointClass_9::Unadvise",
+   "emitted": "_VectorClass_PAUIConnectionPoint::Unadvise",
+   "unit": "_VectorClass_PAUIConnectionPoint",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4b00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a4b0c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "CStreamClass::PointerToIndex",
+   "emitted": "_DynamicVectorClass_PAU_DDSURFACEDESC::PointerToIndex",
+   "unit": "_DynamicVectorClass_PAU_DDSURFACEDESC",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a4c90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a4c9c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "CStreamClass_16::Write",
+   "emitted": "_VectorClass_PAU_DDSURFACEDESC::Write",
+   "unit": "_VectorClass_PAU_DDSURFACEDESC",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a7d50",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a7d5c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "Dial8Class_48::PointerToIndex",
+   "emitted": "_DynamicVectorClass_PAVDiskLaserClass::PointerToIndex",
+   "unit": "_DynamicVectorClass_PAVDiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4a7ee0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4a7eec",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "Dial8Class_48::Write",
+   "emitted": "_VectorClass_PAVDiskLaserClass::Write",
+   "unit": "_VectorClass_PAVDiskLaserClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4b9c70",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4b9c7c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "FilePipe_30::GetCount_0",
+   "emitted": "_DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0",
+   "unit": "_DynamicVectorClass_PAUCrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4b9e00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4b9e0c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_CrossDissolveEffect::GetItemIndex",
+   "emitted": "VectorClass_ptr_CrossDissolveEffect::GetItemIndex",
+   "unit": "VectorClass_ptr_CrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ba060",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4ba06c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_CrossDissolveEffect::Get",
+   "emitted": "_VectorClass_PAUCrossDissolveEffect::Get",
+   "unit": "_VectorClass_PAUCrossDissolveEffect",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2c70",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4c2c7c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_EBolt::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEBolt::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4c2e00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4c2e0c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_EBolt::GetCapacity",
+   "emitted": "_VectorClass_PAVEBolt::GetCapacity",
+   "unit": "_VectorClass_PAVEBolt",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4c49d0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4c49dc",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_EgoClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEgoClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVEgoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4c4b60",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4c4b6c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_EgoClass::GetCapacity",
+   "emitted": "_VectorClass_PAVEgoClass::GetCapacity",
+   "unit": "_VectorClass_PAVEgoClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4c5b90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+5 jne 0x4c5b9c",
+    "ours": "+5 je 0x16"
+   },
+   "pathology": "branch_order",
+   "name": "VectorClass_ptr_EMPulseClass::GetItemIndex",
+   "emitted": "_DynamicVectorClass_PAVEMPulseClass::GetItemIndex",
+   "unit": "_DynamicVectorClass_PAVEMPulseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "1/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  },
+  {
+   "addr": "0x4ca8c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 27B ours 27B",
+   "first_diff": {
+    "orig": "+0 mov al, byte ptr [ecx + 0xc]",
+    "ours": "+0 mov eax, dword ptr [ecx + 0xc]"
+   },
+   "pathology": "ret_norm",
+   "name": "AbstractClass::checkScriptCondition",
+   "emitted": "DynamicVector::checkScriptCondition",
+   "unit": "DynamicVector",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "this_as_id": false,
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 27,
+   "ours_size": 27,
+   "clean": false
+  }
+ ]
+}
