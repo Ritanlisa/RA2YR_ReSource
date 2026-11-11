@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6e8950",
+  "name": "sub_6E8950",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x723b60",
+  "name": "sub_723B60",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x746fb0",
+  "name": "sub_746FB0",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x763450",
+  "name": "sub_763450",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x770150",
+  "name": "sub_770150",
+  "cls": null,
+  "size": 49,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x628860",
+  "name": "DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear",
+  "cls": null,
+  "size": 50,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'Copy' : cannot convert parameter 1 from 'const char *' to 'void *'"
+ },
+ {
+  "addr": "0x631c80",
+  "name": "Pipe::Dtor",
+  "cls": null,
+  "size": 50,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x65d4d0",
+  "name": "AbstractClass::checkAICondition",
+  "cls": null,
+  "size": 50,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2653",
+  "first_msg": "'rc_ptr_base' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x777e00",
+  "name": "Render_Draw_777E00",
+  "cls": null,
+  "size": 51,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7bbab0",
+  "name": "XSurface::Fill",
+  "cls": null,
+  "size": 51,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2660",
+  "first_msg": "'GetRect' : function does not take 2 parameters"
+ },
+ {
+  "addr": "0x4114b0",
+  "name": "StreamClass::ReadAndSeek",
+  "cls": null,
+  "size": 52,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2198",
+  "first_msg": "'int (__stdcall *)(class StreamClass *,unsigned int,int,int)' : too few actual parameters"
+ },
+ {
+  "addr": "0x60c4a0",
+  "name": "SkirmishDialog::ResizeDialogAndEnum",
+  "cls": null,
+  "size": 54,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'MoveWindow' : cannot convert parameter 5 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x55a970",
+  "name": "COM::ReleaseRef",
+  "cls": null,
+  "size": 55,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.waypoints' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6f1f30",
+  "name": "TeamTypeClass::FlashAllInstances",
+  "cls": null,
+  "size": 55,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.waveEffect' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5b9710",
+  "name": "NetworkGameSetup::ReadRulesEngineerCount",
+  "cls": null,
+  "size": 56,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'HWND' : undeclared identifier"
+ },
+ {
+  "addr": "0x71ffe0",
+  "name": "AbstractClass::checkWeaponCooldown",
+  "cls": null,
+  "size": 56,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2660",
+  "first_msg": "'fireWeapon' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x75f610",
+  "name": "WaveClass::UpdateWave",
+  "cls": null,
+  "size": 56,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'void *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x4112d0",
+  "name": "MapClass::isLocationShrouded",
+  "cls": null,
+  "size": 57,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x7d5ef8",
+  "name": "__FF_MSGBANNER",
+  "cls": null,
+  "size": 57,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x5b4310",
+  "name": "WinMainSetup_Setup_5B4310",
+  "cls": null,
+  "size": 58,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'unsigned int *'"
+ }
+]

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B9710",
+ "name": "NetworkGameSetup::ReadRulesEngineerCount",
+ "size": 56,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B9710",
+ "bytes_hex": "568bf168290500008b0650ff15a8147e0085c074216a006a00680004000050ff15a4147e00b9060000002bc8890d68b2a800c64609015ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
