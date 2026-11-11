@@ -177,6 +177,75 @@ cmake --build build_linux
 | fild vs fld (int vs double) | 坐标类型不同 | 查 IDA 指令确认 |
 | gen/re_impl.cpp 被覆盖 | 手动编辑后 regen 覆盖 | 改 gen_re_impl.py 模板 |
 
+## 机械化反编译产线（2026-11-12 状态）
+
+**使命（用户裁决 2026-11-11）**：机械性反编译做扎实。考核指标 = 全池 19,067 函数的机械反编译覆盖与正确性（编译通过 / 六规则合规 / 字节匹配三层），不是单点匹配率。占位名搁置，后续由 MCP 批量逆向重命名一次性收口。
+
+### 产线架构
+
+伪码（`decompile-results/full_export`）→ `tools/decomp_sys/decompile.py`（签名推导 + 壳生成 + pass 管线）→ `.vc6-8447` era CL（VC6 /O2 /Gy）→ COFF 逐函数切片 → `diffasm` 字节对拍（镜像 VA / rel32 / jcc 归一化）→ 账本 `.omo/codegen_match/status.json`（+ `.omo/agents/decomp_batch/results.jsonl`）。驱动 = `batch_run.py`，20 件/part，每 part 独立 git commit，中断恢复 = 跳过已有 `part_report.json` 的 part。
+
+### 账本现状（`status.json` 实测）
+
+| 项 | 数值 |
+|---|---|
+| 判定条目 | **8,516**（全池 19,067） |
+| OK（字节 MATCH） | **2,653** |
+| NG（MISMATCH，编译过但字节不等） | **3,746** |
+| COMPILE_FAIL | **2,086** |
+| PENDING | 31 |
+
+构成路径：A 层全量放量新增 MATCH 1,638（`report_a_sweep.md` §0，266 part）；CW4 回填 +313（`report_cw4.md` §4，账本 NG 4,059 → 3,746、OK 2,340 → 2,653）。
+
+### 分层编译率与匹配率
+
+| 层 | 定义（普查口径） | 编译率 | 已对拍匹配率 |
+|---|---|---|---|
+| A | leaf, size < 200B | **79.9%**（4,246/5,313） | **38.6%**（1,638/4,246） |
+| B | leaf, 200-500B | **50.0%**（CW3 投影，基线 19.0%） | 未测 |
+| C | call-bearing, < 500B | **64.6%**（CW3 投影，基线 29.8%） | 未测 |
+| D | call-bearing 500B+ / large / indirect-heavy | **19.2%**（CW3 投影，基线 11.2%） | 未测 |
+
+口径差异：A 为 asweep 全量实测（`report_a_sweep.md` §0/§2.2）；B/C/D 为 CW3 用普查同口径样本投影（`report_cw3.md` §4.3）。A 层不是同质池：1-9B 段匹配 82.7%，10-19B / 20-29B 掉到 35.4% / 33.4%，30B 以上编译墙陡增（50-99B 只剩 31.9% 可编译）。
+
+### 已建成的自动武器
+
+- **NO_CLS 自由函数壳通道**（`report_nocls.md`）：`decompile.run_function` 的 `cls is None` 硬失败改为 resolver（vtable_slot_authority 主表槽 + proto + 名字前缀，sentinel 过滤；VSA 地址 int 归一修复 7 件模板 blitter）+ 文件级自由函数通道（`__cdecl/__stdcall/__fastcall`；无类 thiscall 用 `__fastcall` + 显式 `this_`）+ `gen_free_hpp`。**537 → 0**；537 件终判 MATCH 109 / MISMATCH 255 / COMPILE_FAIL 173；7 件经 vtable 槽铁证恢复类归属，530 件如实登记为无类自由函数（不发明类）。
+- **CW4 形态试错引擎**（`report_cw4.md`）：`cw4_variants.py` + `run_cw4.py`。基线不重编译（读 asweep 存盘 ours），把产生 MISMATCH 的原 unit 整目录复制、只替换目标函数体；变体先过 checker 六规则门（只允许不新增违规），再编译 + 对拍，首个 MATCH 即接受。A 层 2,608 件 NG：**317 命中（12.2%）**，其中 **313 件是同一个 if/else 方向规则**；可试面 805 件命中率 39.4%。其余变体族（语句 / 短路交换、常量形态、循环改写、窄返回 cast）**0 命中，已证伪勿重跑**。
+- **if/else 规则已反哺生成器**：`pass_branch_polarity` 改为负化 guard（`if(C){A}else{B}` → `if(!(C)){B} A`，两分支均 return 为语义硬前提）+ 确定性 jcc 极性模型；同时修复管线序静默丢弃（`pass_scope_shrink` 后物化 `ctx.stmts` → `ctx.lines`，旧 pass 的改写此前从未生效）。重放 **313/313 MATCH**，历史 OK 100 件回归 **100/100 MATCH**。
+- **audit 纠偏规则**（`.omo/agents/audit/quality_audit.md` + `remediation_report.md`）：①161B 过拟合案例 `0x602AE0 Dialog::IsSpecialTemplate`：二进制只有 `cmp ecx,imm` 小整数比较（ECX 是对话框 ID），`this == (Dialog*)293` 字节 MATCH 但语义荒谬；修复 = checker 新增 R7 `this-as-id` + `derive_signature` 二进制仲裁（无 `[ecx]` 访存 + ≥2 条 `cmp ecx,imm` + 裸 retn）→ `int __fastcall(int p0)`，161B 保持逐字节全等。②checker 盲区修复 43 件：嵌套 `*((T*)this+N)` 归 R3、span 去重（旧双计 85 条 → 43 条）、补 member-pun `(T*)(&this->m)` 变体；`checker.py` 只增不弱化。③身份漂移 100/100：ledger 写 emitted 身份 + sentinel 类过滤（`unknown`/`Return` 不再当类）+ proto 只接受派生收窄；回归 40/40 + 并发 NO_CLS 新增 109/109 MATCH。
+
+### 管线纪律（硬约束）
+
+1. **每 part commit**：part 目录（cpp/hpp/obj/report/log）+ part batch + results/status/timings 一次提交；asweep 266 part = 266 commit。
+2. **先固化再验证**：接手未提交 WIP 先原样提交（CW2 的 `b0c33e5d8`），再做轮内修复。
+3. **六规则红线**：`checker.py` 不得豁免 / 弱化，`rule_violations` 照实记账（asweep 884 函数 / 16.6% 未洗白；CW3 靶集最终 482 函数 / 2,722 条，未豁免）。
+4. **失败不降级**：COMPILE_FAIL / MISMATCH 同样 emit 完整实现，禁止 stub / 占位 / 跳过；`src/` 与 `tools/csp_export/minclass_solver.py` 全程零改动。
+5. **验收口径分层**：编译通过 ≠ 正确性，必须过字节对拍；试错 / 探针通道不写账本，账本只由正常生成器 + 对拍写入（CW4 先例）。
+
+### 关键工具入口
+
+| 工具 | 用途 |
+|---|---|
+| `tools/decomp_sys/batch_run.py` | 主驱动：转换 → 编译 → COFF 抽取 → 对拍 → 记账 |
+| `tools/decomp_sys/batch_select5.py` | 全池难度分层选择器（A/B/C/D/X），排除 ledger ∪ results 已判定 |
+| `tools/decomp_sys/run_census.py` | 分层普查 / 全量放量驱动（`--max-parts` 块式推进） |
+| `tools/decomp_sys/run_cw3.py` | 编译墙靶集全量重跑（B/C/D 1,180 件先例） |
+| `tools/decomp_sys/run_cw4.py` | 形态试错引擎驱动（`--select` / `--report`） |
+
+配套：`run_nocls.py`（NO_CLS 537 件）、`cw4_variants.py`（变体库）、`checker.py`（六规则自检）、`diffasm`（字节对拍）。工件在 `.omo/agents/decomp_batch/` 与 `.omo/decomp_batch/`。
+
+### 数据轨三段收官（`tools/data_match/`）
+
+- **.idata（收官）**：内容 100% + 槽序 **371/371**。机制 = LINK 6.00.8447 输出 `.idata$4/.idata$5` 前用宿主 msvcrt.dll 的 qsort 按 DLL 名排序贡献（同 DLL 全等键置换）；R9 定性原版 2001 链接机用旧 CRT qsort（VC6 模拟 261/371，今天 msvcrt 仅 64/371，旧二进制不可得）→ 最终配方 = 同版本工具链链接（描述符 15/15、DLL 名串 15/15、hint/name 池 100%、hint 339/339）+ `fix_idata_order.py` 确定性槽序重写（test2 实测 371/371）。报告 = `idata_final.md`。
+- **.rdata（收官）**：**240/240 表逐字节 100% 全等**（六类发射器 struct / guid / mask / float / double / int）。布局规则实证（E1-E5 五组实验）= 同 obj 声明序 / 跨 obj 链接序 / 自然对齐（double 与 struct 数组一律 8）；/GF 池 = 去重 + 不后缀合并 + 逆源序 + 串间 4 字节对齐。覆盖游戏静态数据区 35,796/60,868 = **58.8%**；残余 25,072B 全为指针承载表（随代码重建再生）+ CRT 88,912B（libcmt 自动收敛，/opt:ref 实证）。报告 = `report_w2.md`。
+- **.data（收官）**：**全归因**（892,665 dwords / 14 类零遗漏）。静态镜像类实例 vptr = 0（990 vtable 命中 = 988 type_info + 2 数值巧合）；176 singleton 全在 zero tail，341 条运行期 vptr 安装点 capstone 341/341 一致；CRT 表 = `__xc` 3,944 项 ctor（严格升序 3943/3943）、固定 `.data` 首、表序 = obj 链接序 → TU 声明序；对象布局规则 E-BSS = 跨 obj 链接序 / obj 内（对齐降序 → sizeof 降序 → 声明序）。报告 = `report_w3.md`。
+
+### 当前在途与待办
+
+- **CW5（在途）**：残 871 CF 三族工单（`report_cw5_prep.md`）。F7 调用点实参（C2664 212 件 / 531 站点，裂成 stub 实参槽 A1 / CRT 调用点 A2 / 间接 fn-ptr A3 三个独立机制）；F10 成员视图（C2227/C2036/C2228/C2039 133 件，约 2/3 是壳的成员供给缺口而非视图仲裁）；F8 伪码残留（C2065/C2059 97 件，79 件可加规则，12 件属导出快照陈旧 / 截断需 IDA 重导出）。13 条修复全落地上限 **243/442（55.0%）**，单条最高独立增量 = CW5-1 stub 实参槽 **+56**；分批 P1-P5 独立 commit，单批 (编译→CF) ≠ 0 即回滚。
+- **待办**：W1（diffasm reloc 符号键映射 449 件）/ W2（FP 常量物化 850 件）/ W4（签名与类型确定性 226 件），三项是 CW4 证伪后的确定性修复主线（对应形态分桶 L0-L2）；规则违规残债 ~482 函数（CW3 自检口径）；形态层残余 492 件结构级（STRUCTURAL 446 + FRAME 46 非 CRT，自动试错 ROI <10%，需逐件 IDA 取证）+ 72 件 CRT 内件（VC6 CRT 版本差异，建议移出形态战场）。完整分桶与 ROI 见 `report_shape_census.md`。
+
 ## ⚠️ 当前活跃方向 2：数据段字节级对齐（data-first 战略，2026-11-11 首战完成）
 
 **datamatch 试点已完成（2026-11-11，commit 43def80ab，已推送）**——报告 =
