@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p151\part_00
+=== convert (20 addrs) ===
+[conv] 0x58b720 sub_58B720 -> _addr_58
+[conv] 0x5adb00 sub_5ADB00 -> _addr_5A
+[conv] 0x5afed0 sub_5AFED0 -> _addr_5A
+[conv] 0x5b1b80 sub_5B1B80 -> _addr_5B
+[conv] 0x5b1ee0 sub_5B1EE0 -> _addr_5B
+[conv] 0x5b3aa0 sub_5B3AA0 -> _addr_5B
+[conv] 0x5b47a0 sub_5B47A0 -> _addr_5B
+[conv] 0x5b75d0 sub_5B75D0 -> _addr_5B
+[conv] 0x5bbf70 sub_5BBF70 -> _addr_5B
+[conv] 0x5bcc40 Network::validateConnection -> Network
+[conv] 0x5bd9d0 sub_5BD9D0 -> _addr_5B
+[conv] 0x5beab0 sub_5BEAB0 -> _addr_5B
+[conv] 0x5bf5c0 sub_5BF5C0 -> _addr_5B
+[conv] 0x5c12e0 sub_5C12E0 -> _addr_5C
+[conv] 0x5c5e70 sub_5C5E70 -> _addr_5C
+[conv] 0x5c91d0 sub_5C91D0 -> _addr_5C
+[conv] 0x5c94f0 sub_5C94F0 -> _addr_5C
+[conv] 0x5ca610 sub_5CA610 -> _addr_5C
+[conv] 0x5cac00 sub_5CAC00 -> _addr_5C
+[conv] 0x5cb380 MPBattleClass::isAIAllowed -> MPBattleClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_58                 rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+[era] Network                  rc=0
+[era] _addr_5C                 rc=0
+[era] MPBattleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x58b720   MATCH            sub_58B720
+[diff] 0x5adb00   MATCH            sub_5ADB00
+[diff] 0x5afed0   MATCH            sub_5AFED0
+[diff] 0x5b1b80   MATCH            sub_5B1B80
+[diff] 0x5b1ee0   MATCH            sub_5B1EE0
+[diff] 0x5b3aa0   MATCH            sub_5B3AA0
+[diff] 0x5b47a0   MATCH            sub_5B47A0
+[diff] 0x5b75d0   MATCH            sub_5B75D0
+[diff] 0x5bbf70   MATCH            sub_5BBF70
+[diff] 0x5bd9d0   MATCH            sub_5BD9D0
+[diff] 0x5beab0   MATCH            sub_5BEAB0
+[diff] 0x5bf5c0   MATCH            sub_5BF5C0
+[diff] 0x5bcc40   MATCH            Network::validateConnection
+[diff] 0x5c12e0   MATCH            sub_5C12E0
+[diff] 0x5c5e70   MATCH            sub_5C5E70
+[diff] 0x5c91d0   MATCH            sub_5C91D0
+[diff] 0x5c94f0   MATCH            sub_5C94F0
+[diff] 0x5ca610   MATCH            sub_5CA610
+[diff] 0x5cac00   MATCH            sub_5CAC00
+[diff] 0x5cb380   MATCH            MPBattleClass::isAIAllowed
+[ledger] 0x58b720 sub_58B720 -> OK (attempt 1)
+[ledger] 0x5adb00 sub_5ADB00 -> OK (attempt 1)
+[ledger] 0x5afed0 sub_5AFED0 -> OK (attempt 1)
+[ledger] 0x5b1b80 sub_5B1B80 -> OK (attempt 1)
+[ledger] 0x5b1ee0 sub_5B1EE0 -> OK (attempt 1)
+[ledger] 0x5b3aa0 sub_5B3AA0 -> OK (attempt 1)
+[ledger] 0x5b47a0 sub_5B47A0 -> OK (attempt 1)
+[ledger] 0x5b75d0 sub_5B75D0 -> OK (attempt 1)
+[ledger] 0x5bbf70 sub_5BBF70 -> OK (attempt 1)
+[ledger] 0x5bcc40 Network::validateConnection -> OK (attempt 1)
+[ledger] 0x5bd9d0 sub_5BD9D0 -> OK (attempt 1)
+[ledger] 0x5beab0 sub_5BEAB0 -> OK (attempt 1)
+[ledger] 0x5bf5c0 sub_5BF5C0 -> OK (attempt 1)
+[ledger] 0x5c12e0 sub_5C12E0 -> OK (attempt 1)
+[ledger] 0x5c5e70 sub_5C5E70 -> OK (attempt 1)
+[ledger] 0x5c91d0 sub_5C91D0 -> OK (attempt 1)
+[ledger] 0x5c94f0 sub_5C94F0 -> OK (attempt 1)
+[ledger] 0x5ca610 sub_5CA610 -> OK (attempt 1)
+[ledger] 0x5cac00 sub_5CAC00 -> OK (attempt 1)
+[ledger] 0x5cb380 MPBattleClass::isAIAllowed -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p151\batch_report.json
