@@ -1,0 +1,11 @@
+{
+ "addr": "0x488360",
+ "name": "CheckListClass::ScrollUp",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x488360",
+ "bytes_hex": "8b44240450e856f70c0085c074058b00c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

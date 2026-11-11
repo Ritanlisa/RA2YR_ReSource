@@ -1602,6 +1602,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x46afb0": {
+  "attempts": 1,
+  "first_diff": "+4 mov ecx, dword ptr [esp + 8]",
+  "name": "BulletClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x46b270": {
   "attempts": 5,
   "first_diff": null,
@@ -2119,6 +2126,13 @@
   "name": "Rect::Union",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x488360": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CheckListClass::ScrollUp",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4886a0": {
   "attempts": 7,
@@ -4892,6 +4906,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x535df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_8",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x535ea0": {
   "attempts": 5,
   "first_diff": "+0 mov eax, 0x827048",
@@ -4905,6 +4926,13 @@
   "name": "CreateTeamCommand::performAction_17",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x536210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CSF::GetTeamString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5365a0": {
   "attempts": 5,
@@ -4940,6 +4968,13 @@
   "name": "CreateTeamCommand::performAction_45",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x536840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_47",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x536890": {
   "attempts": 1,
@@ -4983,6 +5018,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x536b20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_71",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x536b80": {
   "attempts": 4,
   "first_diff": null,
@@ -5011,6 +5053,27 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x536ce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_88",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x536ee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_107",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5370d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_125",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x537130": {
   "attempts": 4,
   "first_diff": "+0 call 0x734120",
@@ -5025,12 +5088,33 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5372b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_142",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x537600": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_162",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5378e0": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_178",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x537910": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_180",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x537a50": {
   "attempts": 5,
@@ -5078,6 +5162,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CursorPositionCommandClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x537e90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateTeamCommand::performAction_194",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6088,6 +6179,13 @@
   "name": "MapSeedClass::ddtor",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x597fa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MapSeedClass::GetCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x59bab0": {
   "attempts": 1,
@@ -7297,6 +7395,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x600390",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x600530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x600530",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -8522,6 +8627,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x69adf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "IsRandMap::Sed",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11451,6 +11563,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x775d90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x775d90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x776ea0": {
   "attempts": 1,
   "first_diff": null,
@@ -11500,10 +11619,24 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77ca00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77ca00",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x77cf90": {
   "attempts": 1,
   "first_diff": null,
   "name": "0x77cf90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x77d0f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77d0f0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -12381,6 +12514,13 @@
   "name": "GetCurrentThreadId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7d2183": {
+  "attempts": 1,
+  "first_diff": "+0 cmp dword ptr [esp + 4], -1",
+  "name": "__un_inc",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x7d4c00": {
   "attempts": 1,

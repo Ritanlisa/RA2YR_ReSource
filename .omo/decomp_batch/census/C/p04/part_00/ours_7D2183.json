@@ -1,0 +1,15 @@
+{
+ "symbol": "?__un_inc@unknown@@QAEHHPAH@Z",
+ "sym_key": "unknown::__un_inc",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f8ff74118b4c24085150e80000000083c408c208008b442404c20800",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?ungetc_0@@YAHHPAXZZ",
+   "sym_key": "ungetc_0"
+  }
+ ]
+}

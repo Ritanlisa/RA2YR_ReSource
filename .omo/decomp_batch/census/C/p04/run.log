@@ -1,0 +1,96 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x46afb0 BulletClass::SaveLoad_Prefix_0 -> BulletClass
+[conv] 0x535df0 SetDefenseTabCommandClass::performAction_8 -> SetDefenseTabCommandClass
+[conv] 0x536210 CenterTeamCommand::GetTeamString -> CenterTeamCommand
+[conv] 0x536840 TypeSelectCommandClass::performAction_47 -> TypeSelectCommandClass
+[conv] 0x536b20 StopCommandClass::performAction_71 -> StopCommandClass
+[conv] 0x536ce0 GuardCommandClass::performAction_88 -> GuardCommandClass
+[conv] 0x536ee0 AllianceCommandClass::performAction_107 -> AllianceCommandClass
+[conv] 0x5370d0 CenterREventCommandClass::performAction_125 -> CenterREventCommandClass
+[conv] 0x5372b0 OptionsCommandClass::performAction_142 -> OptionsCommandClass
+[conv] 0x537600 View4CommandClass::performAction_162 -> View4CommandClass
+[conv] 0x537910 SetView4CommandClass::performAction_180 -> SetView4CommandClass
+[conv] 0x537e90 CursorPositionCommandClass::performAction_194 -> CursorPositionCommandClass
+[conv] 0x597fa0 MapSeedClass::GetCell -> MapSeedClass
+[conv] 0x69adf0 IsRandMap::Sed -> IsRandMap
+[conv] 0x7d2183 unknown::__un_inc -> unknown
+[conv] 0x488360 CheckListClass::ScrollUp -> CheckListClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=0
+[era] SetDefenseTabCommandClass rc=2
+[era] CenterTeamCommand        rc=2
+[era] TypeSelectCommandClass   rc=2
+[era] StopCommandClass         rc=2
+[era] GuardCommandClass        rc=2
+[era] AllianceCommandClass     rc=2
+[era] CenterREventCommandClass rc=2
+[era] OptionsCommandClass      rc=2
+[era] View4CommandClass        rc=2
+[era] SetView4CommandClass     rc=2
+[era] CursorPositionCommandClass rc=2
+[era] MapSeedClass             rc=2
+[era] IsRandMap                rc=2
+[era] unknown                  rc=0
+[era] CheckListClass           rc=0
+=== diffasm byte-compare ===
+[diff] 0x46afb0   MISMATCH         BulletClass::SaveLoad_Prefix_0
+[diff] 0x7d2183   MISMATCH         unknown::__un_inc
+[diff] 0x488360   MATCH            CheckListClass::ScrollUp
+[ledger] 0x600530 0x600530 -> PENDING (attempt 1)
+[ledger] 0x77ca00 0x77ca00 -> PENDING (attempt 1)
+[ledger] 0x77d0f0 0x77d0f0 -> PENDING (attempt 1)
+[ledger] 0x46afb0 BulletClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x535df0 CreateTeamCommand::performAction_8 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536210 CSF::GetTeamString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536840 CreateTeamCommand::performAction_47 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536b20 CreateTeamCommand::performAction_71 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536ce0 CreateTeamCommand::performAction_88 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x536ee0 CreateTeamCommand::performAction_107 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5370d0 CreateTeamCommand::performAction_125 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5372b0 CreateTeamCommand::performAction_142 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537600 CreateTeamCommand::performAction_162 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537910 CreateTeamCommand::performAction_180 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537e90 CreateTeamCommand::performAction_194 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x597fa0 MapSeedClass::GetCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69adf0 IsRandMap::Sed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x775d90 0x775d90 -> PENDING (attempt 1)
+[ledger] 0x7d2183 __un_inc -> NG (attempt 1)
+[ledger] 0x488360 CheckListClass::ScrollUp -> OK (attempt 1)
+======================================================================
+{
+ "total": 1779,
+ "verdicts": {
+  "MISMATCH": 496,
+  "MATCH": 509,
+  "COMPILE_FAIL": 430,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 332,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 176,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 51,
+  "branch_polarity": 34,
+  "regalloc": 58,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 9,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 50.6,
+ "match_rate_of_total_pct": 28.6,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p04\batch_report.json

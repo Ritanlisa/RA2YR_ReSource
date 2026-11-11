@@ -1,0 +1,11 @@
+{
+ "addr": "0x46AFB0",
+ "name": "BulletClass::SaveLoad_Prefix_0",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46AFB0",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e85c53faffc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

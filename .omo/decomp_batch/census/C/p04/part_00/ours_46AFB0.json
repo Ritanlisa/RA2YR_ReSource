@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveLoad_Prefix_0@BulletClass@@QAGHPAH0H@Z",
+ "sym_key": "BulletClass::SaveLoad_Prefix_0",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b5424048b4c2408508b025150e800000000c21000",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}
