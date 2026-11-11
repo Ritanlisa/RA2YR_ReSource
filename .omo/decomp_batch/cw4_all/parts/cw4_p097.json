@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x7dd434",
+  "name": "__getextendedkeycode",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 192,
+  "part": "p265",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::__getextendedkeycode",
+  "first_diff": {
+   "orig": "+12 je 0x7dd4a1",
+   "ours": "+12 je 0x5a"
+  },
+  "ours_size": 142
+ },
+ {
+  "addr": "0x555ac0",
+  "name": "QuantizeColorRGB",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 194,
+  "part": "p265",
+  "unit": "_addr_55",
+  "emitted": "QuantizeColorRGB",
+  "first_diff": {
+   "orig": "+105 sub ecx, 0",
+   "ours": "+105 test ecx, ecx"
+  },
+  "ours_size": 198
+ },
+ {
+  "addr": "0x753c60",
+  "name": "sub_753C60",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 6,
+  "part": "p27",
+  "unit": "_addr_75",
+  "emitted": "sub_753C60",
+  "first_diff": {
+   "orig": "+0 mov eax, 0xb2ff78",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x7667f0",
+  "name": "sub_7667F0",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 6,
+  "part": "p27",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_7667F0",
+  "first_diff": {
+   "orig": "+2 mov al, byte ptr [ecx + 0xf]",
+   "ours": "+2 mov al, byte ptr [ecx + 0xd]"
+  },
+  "ours_size": 6
+ },
+ {
+  "addr": "0x407160",
+  "name": "sub_407160",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 7,
+  "part": "p28",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_407160",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 mov edx, dword ptr [ecx]"
+  },
+  "ours_size": 18
+ },
+ {
+  "addr": "0x4080a0",
+  "name": "sub_4080A0",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 7,
+  "part": "p28",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4080A0",
+  "first_diff": {
+   "orig": "+0 lea eax, [ecx + 0xa4]",
+   "ours": "+0 movsx eax, byte ptr [ecx + 0x9e]"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x46d350",
+  "name": "sub_46D350",
+  "family": "POINTER_NULLED",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p28",
+  "unit": "CampaignScore",
+  "emitted": "CampaignScore::sub_46D350",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx], 0x7e4aac",
+   "ours": "+0 mov dword ptr [ecx], 0"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x46d480",
+  "name": "sub_46D480",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 7,
+  "part": "p28",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_46D480",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [ecx + 0x89e000], dl",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x470c30",
+  "name": "sub_470C30",
+  "family": "POINTER_NULLED",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p28",
+  "unit": "CampaignEndScoreClass",
+  "emitted": "CampaignEndScoreClass::sub_470C30",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx], 0x7e4ab8",
+   "ours": "+0 mov dword ptr [ecx], 0"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x5d7cd0",
+  "name": "sub_5D7CD0",
+  "family": "POINTER_NULLED",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p29",
+  "unit": "InitializerBase_MultiplayerGameMode",
+  "emitted": "InitializerBase@MultiplayerGameMode::sub_5D7CD0",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx], 0x7eee74",
+   "ours": "+0 mov dword ptr [ecx], 0"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x624090",
+  "name": "sub_624090",
+  "family": "POINTER_NULLED",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p29",
+  "unit": "DialogControl_OwnerDraw",
+  "emitted": "DialogControl@OwnerDraw::sub_624090",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx], 0x7ef720",
+   "ours": "+0 mov dword ptr [ecx], 0"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x631f30",
+  "name": "sub_631F30",
+  "family": "POINTER_NULLED",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p29",
+  "unit": "PixelFXClass",
+  "emitted": "PixelFXClass::sub_631F30",
+  "first_diff": {
+   "orig": "+0 mov dword ptr [ecx], 0x7efda4",
+   "ours": "+0 mov dword ptr [ecx], 0"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x724570",
+  "name": "sub_724570",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 7,
+  "part": "p30",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::sub_724570",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0x244]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0x234]"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x449a40",
+  "name": "CheckState2",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 8,
+  "part": "p30",
+  "unit": "BuildingClass",
+  "emitted": "BuildingClass::CheckState2",
+  "first_diff": {
+   "orig": "+2 jmp dword ptr [eax + 0x21c]",
+   "ours": "+2 push ecx"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x55cc00",
+  "name": "sub_55CC00",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 8,
+  "part": "p31",
+  "unit": "_addr_55",
+  "emitted": "sub_55CC00",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xabcd58], 1",
+   "ours": "+0 mov byte ptr [0], 1"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x5c0590",
+  "name": "BinkMovieHandle::Release",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 8,
+  "part": "p31",
+  "unit": "BinkMovieHandle",
+  "emitted": "BinkMovieHandle::Release",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x5c05e0",
+  "name": "BinkMovieHandle::BlitToTarget",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 8,
+  "part": "p31",
+  "unit": "BinkMovieHandle",
+  "emitted": "BinkMovieHandle::BlitToTarget",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [ecx + 0x10]",
+   "ours": "+0 mov eax, dword ptr [ecx + 0x10]"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x6f3270",
+  "name": "ObjectClass::Vt34Thunk",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 8,
+  "part": "p32",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::Vt34Thunk",
+  "first_diff": {
+   "orig": "+2 jmp dword ptr [eax + 0x88]",
+   "ours": "+2 push ecx"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x731be0",
+  "name": "sub_731BE0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 8,
+  "part": "p32",
+  "unit": "_addr_73",
+  "emitted": "sub_731BE0",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xb0fe58], 0",
+   "ours": "+0 mov byte ptr [0], 0"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x731cf0",
+  "name": "TechnoClass::GetField",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 8,
+  "part": "p32",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::GetField",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [0xb0fe58], 0",
+   "ours": "+0 mov byte ptr [0], 0"
+  },
+  "ours_size": 8
+ }
+]
