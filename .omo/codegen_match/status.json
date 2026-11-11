@@ -1349,7 +1349,7 @@
   "this_as_id": false
  },
  "0x4095b0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "AudioStreamThreadProc",
@@ -16621,7 +16621,7 @@
   "this_as_id": false
  },
  "0x49be40": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -18805,7 +18805,7 @@
   "this_as_id": false
  },
  "0x4a8960": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -23446,7 +23446,7 @@
   "status": "OK"
  },
  "0x4dbad0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -29364,7 +29364,7 @@
   "status": "NG"
  },
  "0x502a80": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -32792,7 +32792,7 @@
   "this_as_id": false
  },
  "0x52fc20": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -41299,7 +41299,7 @@
   "this_as_id": false
  },
  "0x595ce0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -41481,7 +41481,7 @@
   "this_as_id": false
  },
  "0x5a8720": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "PlaceNeutralCreeps",
@@ -47285,7 +47285,7 @@
   "status": "NG"
  },
  "0x5d1fd0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -48642,7 +48642,7 @@
   "this_as_id": false
  },
  "0x5d9db0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "DetectPortAllocationPattern",
@@ -52970,7 +52970,7 @@
   "this_as_id": false
  },
  "0x62dc50": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -55191,7 +55191,7 @@
   "this_as_id": false
  },
  "0x641b00": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -71362,7 +71362,7 @@
   "status": "NG"
  },
  "0x703860": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -72234,7 +72234,7 @@
   "this_as_id": false
  },
  "0x711840": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -77710,7 +77710,7 @@
   "this_as_id": false
  },
  "0x737180": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "proto_this",
   "first_diff": null,
@@ -84802,7 +84802,7 @@
   "this_as_id": false
  },
  "0x778210": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -85480,7 +85480,7 @@
   "this_as_id": false
  },
  "0x77e900": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "AssignWOLPlayerSide",
@@ -85547,7 +85547,7 @@
   "this_as_id": false
  },
  "0x783270": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "SortWOLPlayerList",
@@ -90537,7 +90537,7 @@
   "this_as_id": false
  },
  "0x7db207": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -90549,7 +90549,7 @@
   "this_as_id": false
  },
  "0x7db68b": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__raise_exc",
