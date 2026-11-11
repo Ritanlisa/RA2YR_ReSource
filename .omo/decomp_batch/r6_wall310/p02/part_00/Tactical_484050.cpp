@@ -30,7 +30,7 @@ int Tactical::CreateTacticalLightSurface(int * p0, int * p1, int * p2, int * p3,
             LODWORD(v15) = (unsigned int)(&p5);
             ((Tactical *)(this))->CalculateTacticalLighting(v7, v11, v8, v12, v9, &v16, v15);
             if ( this->field34
-          && (p1 = (int *)((unsigned int *)v16,
+          && (p1 = (unsigned int *)v16,
               p2 = (unsigned int *)p5,
               p3 = (int *)p4,
               QuantizeColorRGB((int *)&p1, (int *)&p2, (int *)&p3),
@@ -39,7 +39,7 @@ int Tactical::CreateTacticalLightSurface(int * p0, int * p1, int * p2, int * p3,
           && *(unsigned int **)(v13 + 412) == p2
           && (result = *(unsigned int *)(v13 + 416), (int *)result == p3) )
             {
-                *p0 = v13);
+                *p0 = v13;
             }
             else
             {

@@ -137,7 +137,7 @@
    "name_placeholder": false,
    "cls_src": "signals_cls",
    "sites": "8/21",
-   "rule_violations": 2
+   "rule_violations": 7
   },
   {
    "addr": "0x493930",
