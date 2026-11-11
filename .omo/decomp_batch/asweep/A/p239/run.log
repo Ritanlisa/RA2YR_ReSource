@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p239\part_00
+=== convert (20 addrs) ===
+[conv] 0x40b700 _VectorClass_PAVBombClass::Add -> _VectorClass_PAVBombClass
+[conv] 0x40b960 _VectorClass_PAVTechnoClass::AddRef -> _VectorClass_PAVTechnoClass
+[conv] 0x40beb0 _VectorClass_PBVCommandClass::GetAt -> _VectorClass_PBVCommandClass
+[conv] 0x40c880 _VectorClass_PAVIsometricTileClass::Add -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40ccd0 VectorClass::CompareEqual -> VectorClass
+[conv] 0x40d5a0 _VectorClass_PAVMixFileClass::Add -> _VectorClass_PAVMixFileClass
+[conv] 0x40e850 _VectorClass_PAVScriptClass::Add -> _VectorClass_PAVScriptClass
+[conv] 0x40ef20 _VectorClass_PAVVoxelAnimClass::Add -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f640 _VectorClass_PAVWarheadTypeClass::Add -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40fc10 _VectorClass_PAVWeaponTypeClass::Add -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x41de40 _VectorClass_PAVAirstrikeClass::Add -> _VectorClass_PAVAirstrikeClass
+[conv] 0x421860 _VectorClass_PAVAlphaShapeClass::Add -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x42d600 _VectorClass_I::AddRef -> _VectorClass_I
+[conv] 0x42f5e0 _DynamicVectorClass_VBaseNodeClass::Read -> _DynamicVectorClass_VBaseNodeClass
+[conv] 0x43ab30 _VectorClass_PAVNeuronClass::AddRef -> _VectorClass_PAVNeuronClass
+[conv] 0x45a180 _VectorClass_PBVParticleSystemTypeClass::AddRef -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a3e0 _VectorClass_PAVInfantryClass::Add -> _VectorClass_PAVInfantryClass
+[conv] 0x45a640 _VectorClass_PAVFoggedObjectClass::Add -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x45a760 _VectorClass_PAVReestablish::AddRef -> _VectorClass_PAVReestablish
+[conv] 0x46b660 _VectorClass_PAVBulletClass::Add -> _VectorClass_PAVBulletClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVBombClass rc=2
+[era] _VectorClass_PAVTechnoClass rc=2
+[era] _VectorClass_PBVCommandClass rc=2
+[era] _VectorClass_PAVIsometricTileClass rc=2
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVMixFileClass rc=2
+[era] _VectorClass_PAVScriptClass rc=2
+[era] _VectorClass_PAVVoxelAnimClass rc=2
+[era] _VectorClass_PAVWarheadTypeClass rc=2
+[era] _VectorClass_PAVWeaponTypeClass rc=2
+[era] _VectorClass_PAVAirstrikeClass rc=2
+[era] _VectorClass_PAVAlphaShapeClass rc=2
+[era] _VectorClass_I           rc=2
+[era] _DynamicVectorClass_VBaseNodeClass rc=0
+[era] _VectorClass_PAVNeuronClass rc=2
+[era] _VectorClass_PBVParticleSystemTypeClass rc=2
+[era] _VectorClass_PAVInfantryClass rc=2
+[era] _VectorClass_PAVFoggedObjectClass rc=2
+[era] _VectorClass_PAVReestablish rc=2
+[era] _VectorClass_PAVBulletClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x40ccd0   MISMATCH         VectorClass::CompareEqual
+[diff] 0x42f5e0   MISMATCH         _DynamicVectorClass_VBaseNodeClass::Read
+[ledger] 0x40b700 _VectorClass_PAVBombClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40b960 _VectorClass_PAVTechnoClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40beb0 _VectorClass_PBVCommandClass::GetAt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c880 _VectorClass_PAVIsometricTileClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ccd0 VectorClass::CompareEqual -> NG (attempt 1)
+[ledger] 0x40d5a0 _VectorClass_PAVMixFileClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40e850 _VectorClass_PAVScriptClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40ef20 _VectorClass_PAVVoxelAnimClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f640 _VectorClass_PAVWarheadTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40fc10 _VectorClass_PAVWeaponTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41de40 _VectorClass_PAVAirstrikeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x421860 _VectorClass_PAVAlphaShapeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42d600 _VectorClass_I::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42f5e0 _DynamicVectorClass_VBaseNodeClass::Read -> NG (attempt 1)
+[ledger] 0x43ab30 _VectorClass_PAVNeuronClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a180 _VectorClass_PBVParticleSystemTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a3e0 _VectorClass_PAVInfantryClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a640 _VectorClass_PAVFoggedObjectClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a760 _VectorClass_PAVReestablish::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b660 _VectorClass_PAVBulletClass::Add -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p239\batch_report.json

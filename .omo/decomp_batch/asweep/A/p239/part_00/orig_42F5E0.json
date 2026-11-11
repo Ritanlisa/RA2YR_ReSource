@@ -1,0 +1,11 @@
+{
+ "addr": "0x42F5E0",
+ "name": "BaseClass::Read",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42F5E0",
+ "bytes_hex": "8b51105333c05685d2577e298b7424108b49048b3e39397514668b5904663b5e04750a668b5906663b5e06740b4083c1103bc27ce083c8ff5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
