@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p33\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b1780 IPXInterfaceClass::COMStub_Ret1139 -> IPXInterfaceClass
+[conv] 0x7b2770 WinsockInterfaceClass::Destru_vt16 -> WinsockInterfaceClass
+[conv] 0x7b4160 UDPInterfaceClass::Receive -> UDPInterfaceClass
+[conv] 0x7c9af0 ___toascii -> _addr_7C
+[conv] 0x7cafec __tolower -> _addr_7C
+[conv] 0x645ba0 sub_645BA0 -> _addr_64
+[conv] 0x4011b0 sub_4011B0 -> _addr_40
+[conv] 0x4026b0 AudioStream::Stop -> AudioStream
+[conv] 0x402850 ObjectClass::sub_402850 -> ObjectClass
+[conv] 0x4052e0 ObjectClass::sub_4052E0 -> ObjectClass
+[conv] 0x408d40 ObjectClass::sub_408D40 -> ObjectClass
+[conv] 0x417fd0 AbstractClass::GetField9 -> AbstractClass
+[conv] 0x41c020 TechnoClass::CheckReloadTimer -> TechnoClass
+[conv] 0x4a52d0 ObjectClass::sub_4A52D0 -> ObjectClass
+[conv] 0x4a52e0 ObjectClass::sub_4A52E0 -> ObjectClass
+[conv] 0x5176b0 Flag::IsNot2 -> Flag
+[conv] 0x526b00 INIClass::ResetSection -> INIClass
+[conv] 0x537b40 ScreenCaptureCommandClass::Constructor -> ScreenCaptureCommandClass
+[conv] 0x537dd0 PageUserCommandClass::PageUserCommandClass -> PageUserCommandClass
+[conv] 0x537f10 DeleteCommandClass::Constructor -> DeleteCommandClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXInterfaceClass        rc=0
+[era] WinsockInterfaceClass    rc=0
+[era] UDPInterfaceClass        rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_64                 rc=2
+[era] _addr_40                 rc=0
+[era] AudioStream              rc=0
+[era] ObjectClass              rc=0
+[era] AbstractClass            rc=2
+[era] TechnoClass              rc=0
+[era] Flag                     rc=0
+[era] INIClass                 rc=0
+[era] ScreenCaptureCommandClass rc=2
+[era] PageUserCommandClass     rc=2
+[era] DeleteCommandClass       rc=2
+=== diffasm byte-compare ===
+[diff] 0x7b1780   MATCH            IPXInterfaceClass::COMStub_Ret1139
+[diff] 0x7b2770   MATCH            WinsockInterfaceClass::Destru_vt16
+[diff] 0x7b4160   MATCH            UDPInterfaceClass::Receive
+[diff] 0x7c9af0   MATCH            ___toascii
+[diff] 0x7cafec   MATCH            __tolower
+[diff] 0x4011b0   MATCH            sub_4011B0
+[diff] 0x4026b0   MATCH            AudioStream::Stop
+[diff] 0x402850   MATCH            ObjectClass::sub_402850
+[diff] 0x4052e0   MATCH            ObjectClass::sub_4052E0
+[diff] 0x408d40   MISMATCH         ObjectClass::sub_408D40
+[diff] 0x4a52d0   MISMATCH         ObjectClass::sub_4A52D0
+[diff] 0x4a52e0   MISMATCH         ObjectClass::sub_4A52E0
+[diff] 0x41c020   MISMATCH         TechnoClass::CheckReloadTimer
+[diff] 0x5176b0   MISMATCH         Flag::IsNot2
+[diff] 0x526b00   MATCH            INIClass::ResetSection
+[ledger] 0x7b1780 IPXInterfaceClass::COMStub_Ret1139 -> OK (attempt 1)
+[ledger] 0x7b2770 WinsockInterfaceClass::Destru_vt16 -> OK (attempt 1)
+[ledger] 0x7b4160 UDPInterfaceClass::Receive -> OK (attempt 1)
+[ledger] 0x7c9af0 ___toascii -> OK (attempt 1)
+[ledger] 0x7cafec __tolower -> OK (attempt 1)
+[ledger] 0x645ba0 sub_645BA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4011b0 sub_4011B0 -> OK (attempt 1)
+[ledger] 0x4026b0 AudioStream::Stop -> OK (attempt 1)
+[ledger] 0x402850 ObjectClass::sub_402850 -> OK (attempt 1)
+[ledger] 0x4052e0 ObjectClass::sub_4052E0 -> OK (attempt 1)
+[ledger] 0x408d40 ObjectClass::sub_408D40 -> NG (attempt 1)
+[ledger] 0x417fd0 AbstractClass::GetField9 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41c020 TechnoClass::CheckReloadTimer -> NG (attempt 1)
+[ledger] 0x4a52d0 ObjectClass::sub_4A52D0 -> NG (attempt 1)
+[ledger] 0x4a52e0 ObjectClass::sub_4A52E0 -> NG (attempt 1)
+[ledger] 0x5176b0 Flag::IsNot2 -> NG (attempt 1)
+[ledger] 0x526b00 INIClass::ResetSection -> OK (attempt 1)
+[ledger] 0x537b40 ScreenCaptureCommandClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537dd0 PageUserCommandClass::PageUserCommandClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537f10 DeleteCommandClass::Constructor -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "ret_norm": 2,
+  "width_mismatch": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 66.7,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p33\batch_report.json

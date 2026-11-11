@@ -1,0 +1,8 @@
+{
+ "symbol": "?Destru_vt16@WinsockInterfaceClass@@QAGHHHH@Z",
+ "sym_key": "WinsockInterfaceClass::Destru_vt16",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b801000000c21000",
+ "relocs": []
+}

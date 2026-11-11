@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B4160",
+ "name": "UDPInterfaceClass::Receive",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B4160",
+ "bytes_hex": "668b81fcf20300c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

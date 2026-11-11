@@ -1,0 +1,8 @@
+{
+ "symbol": "?Receive@UDPInterfaceClass@@QAEFXZ",
+ "sym_key": "UDPInterfaceClass::Receive",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "668b81fcf20300c3",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B1780",
+ "name": "IPXInterfaceClass::COMStub_Ret1139",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B1780",
+ "bytes_hex": "b873040000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

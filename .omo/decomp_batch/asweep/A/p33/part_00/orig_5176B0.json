@@ -1,0 +1,11 @@
+{
+ "addr": "0x5176B0",
+ "name": "Flag::IsNot2",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5176B0",
+ "bytes_hex": "8b01f6d0d0e82401c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

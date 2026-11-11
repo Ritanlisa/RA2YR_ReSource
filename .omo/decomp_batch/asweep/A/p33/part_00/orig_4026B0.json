@@ -1,0 +1,11 @@
+{
+ "addr": "0x4026B0",
+ "name": "AudioStream::Stop",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4026B0",
+ "bytes_hex": "8b81d4000000ff602c",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

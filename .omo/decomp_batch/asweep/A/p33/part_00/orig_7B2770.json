@@ -1,0 +1,11 @@
+{
+ "addr": "0x7B2770",
+ "name": "WinsockInterfaceClass::Destru_vt16",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7B2770",
+ "bytes_hex": "b801000000c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
