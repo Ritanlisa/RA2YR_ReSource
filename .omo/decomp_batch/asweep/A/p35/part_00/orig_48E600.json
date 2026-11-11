@@ -1,0 +1,11 @@
+{
+ "addr": "0x48E600",
+ "name": "COMObject::SetMember10",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48E600",
+ "bytes_hex": "8b442404894128c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

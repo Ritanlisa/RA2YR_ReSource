@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetTypeField60@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::GetTypeField60",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b81200500008b4060c3",
+ "relocs": []
+}

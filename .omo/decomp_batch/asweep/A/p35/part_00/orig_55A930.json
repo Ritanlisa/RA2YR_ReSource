@@ -1,0 +1,11 @@
+{
+ "addr": "0x55A930",
+ "name": "StreamClass::GetDirty",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x55A930",
+ "bytes_hex": "8b4424048a400cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

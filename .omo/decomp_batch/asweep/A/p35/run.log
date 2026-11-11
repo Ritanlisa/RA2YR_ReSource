@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p35\part_00
+=== convert (20 addrs) ===
+[conv] 0x410220 AbstractClass::GetVtable3 -> AbstractClass
+[conv] 0x411570 XSurface::Unlock -> XSurface
+[conv] 0x41c1d0 AircraftClass::CheckMissionAbort -> AircraftClass
+[conv] 0x426a80 AbstractClass::getMapCoords -> AbstractClass
+[conv] 0x459ed0 BuildingClass::GetTypeField60 -> BuildingClass
+[conv] 0x48e600 ControlClass::SetMember10 -> ControlClass
+[conv] 0x4b4c00 DriveLocomotionClass::GetField_0x54 -> DriveLocomotionClass
+[conv] 0x4b4c10 DriveLocomotionClass::GetField_0x58 -> DriveLocomotionClass
+[conv] 0x4b4c20 DriveLocomotionClass::GetField_0x48 -> DriveLocomotionClass
+[conv] 0x4e7e20 unknown_libname_15 -> _addr_4E
+[conv] 0x4f4ca0 Flag::IsZero -> Flag
+[conv] 0x4f6e60 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x50c160 ObjectClass::sub_50C160 -> ObjectClass
+[conv] 0x54ae50 JumpjetLocomotionClass::SmallStub_54AE50 -> JumpjetLocomotionClass
+[conv] 0x557d10 ListClass::KillFocus -> ListClass
+[conv] 0x55a930 IUnknown::GetDirty -> IUnknown
+[conv] 0x55f970 unknown_libname_21 -> _addr_55
+[conv] 0x5aff70 JumpjetLocomotionClass::SmallStub_5AFF70 -> JumpjetLocomotionClass
+[conv] 0x5cd3c0 ScoreClass::SetState -> ScoreClass
+[conv] 0x5ceac0 MSAnim::AddRef -> MSAnim
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] XSurface                 rc=0
+[era] AircraftClass            rc=2
+[era] BuildingClass            rc=0
+[era] ControlClass             rc=0
+[era] DriveLocomotionClass     rc=0
+[era] _addr_4E                 rc=2
+[era] Flag                     rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] ListClass                rc=0
+[era] IUnknown                 rc=0
+[era] _addr_55                 rc=2
+[era] ScoreClass               rc=0
+[era] MSAnim                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x410220   MISMATCH         AbstractClass::GetVtable3
+[diff] 0x426a80   MISMATCH         AbstractClass::getMapCoords
+[diff] 0x411570   MATCH            XSurface::Unlock
+[diff] 0x459ed0   MATCH            BuildingClass::GetTypeField60
+[diff] 0x48e600   MATCH            ControlClass::SetMember10
+[diff] 0x4b4c00   MISMATCH         DriveLocomotionClass::GetField_0x54
+[diff] 0x4b4c10   MISMATCH         DriveLocomotionClass::GetField_0x58
+[diff] 0x4b4c20   MISMATCH         DriveLocomotionClass::GetField_0x48
+[diff] 0x4f4ca0   MISMATCH         Flag::IsZero
+[diff] 0x4f6e60   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1
+[diff] 0x54ae50   MISMATCH         JumpjetLocomotionClass::SmallStub_54AE50
+[diff] 0x5aff70   MISMATCH         JumpjetLocomotionClass::SmallStub_5AFF70
+[diff] 0x557d10   MATCH            ListClass::KillFocus
+[diff] 0x55a930   MISMATCH         IUnknown::GetDirty
+[diff] 0x5cd3c0   MATCH            ScoreClass::SetState
+[diff] 0x5ceac0   MATCH            MSAnim::AddRef
+[ledger] 0x410220 AbstractClass::GetVtable3 -> NG (attempt 1)
+[ledger] 0x411570 XSurface::Unlock -> OK (attempt 1)
+[ledger] 0x41c1d0 AircraftClass::CheckMissionAbort -> COMPILE_FAIL (attempt 1)
+[ledger] 0x426a80 AbstractClass::getMapCoords -> NG (attempt 1)
+[ledger] 0x459ed0 BuildingClass::GetTypeField60 -> OK (attempt 1)
+[ledger] 0x48e600 ControlClass::SetMember10 -> OK (attempt 1)
+[ledger] 0x4b4c00 DriveLocomotionClass::GetField_0x54 -> NG (attempt 1)
+[ledger] 0x4b4c10 DriveLocomotionClass::GetField_0x58 -> NG (attempt 1)
+[ledger] 0x4b4c20 DriveLocomotionClass::GetField_0x48 -> NG (attempt 1)
+[ledger] 0x4e7e20 unknown_libname_15 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4ca0 Flag::IsZero -> NG (attempt 1)
+[ledger] 0x4f6e60 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1 -> NG (attempt 1)
+[ledger] 0x50c160 ObjectClass::sub_50C160 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54ae50 JumpjetLocomotionClass::SmallStub_54AE50 -> NG (attempt 1)
+[ledger] 0x557d10 ListClass::KillFocus -> OK (attempt 1)
+[ledger] 0x55a930 IUnknown::GetDirty -> NG (attempt 1)
+[ledger] 0x55f970 unknown_libname_21 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aff70 JumpjetLocomotionClass::SmallStub_5AFF70 -> NG (attempt 1)
+[ledger] 0x5cd3c0 ScoreClass::SetState -> OK (attempt 1)
+[ledger] 0x5ceac0 MSAnim::AddRef -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 6,
+  "COMPILE_FAIL": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 7,
+  "codegen_shape": 2,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 37.5,
+ "match_rate_of_total_pct": 30.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p35\batch_report.json

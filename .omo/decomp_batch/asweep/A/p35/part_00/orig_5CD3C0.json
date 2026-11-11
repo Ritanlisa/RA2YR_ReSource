@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CD3C0",
+ "name": "ScoreClass::SetState",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CD3C0",
+ "bytes_hex": "8a442404884130c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsZero@Flag@@QAEEXZ",
+ "sym_key": "Flag::IsZero",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b1133c085d20f94c0c3",
+ "relocs": []
+}

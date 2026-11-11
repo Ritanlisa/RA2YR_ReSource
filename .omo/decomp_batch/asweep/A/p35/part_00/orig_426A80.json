@@ -1,0 +1,11 @@
+{
+ "addr": "0x426A80",
+ "name": "AbstractClass::getMapCoords",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x426A80",
+ "bytes_hex": "33c0668b81a2000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

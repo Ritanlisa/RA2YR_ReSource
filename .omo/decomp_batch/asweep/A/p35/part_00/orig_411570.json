@@ -1,0 +1,11 @@
+{
+ "addr": "0x411570",
+ "name": "XSurface::Unlock",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x411570",
+ "bytes_hex": "8b410c4889410cb001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

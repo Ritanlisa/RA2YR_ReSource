@@ -1,0 +1,8 @@
+{
+ "symbol": "?Unlock@XSurface@@QAEDXZ",
+ "sym_key": "XSurface::Unlock",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b410c4889410cb001c3",
+ "relocs": []
+}

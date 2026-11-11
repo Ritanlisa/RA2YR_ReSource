@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F4CA0",
+ "name": "Flag::IsZero",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F4CA0",
+ "bytes_hex": "8a1133c084d20f94c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

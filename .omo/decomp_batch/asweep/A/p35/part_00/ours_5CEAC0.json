@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@MSAnim@@QAEDD@Z",
+ "sym_key": "MSAnim::AddRef",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8a44240488410cc20400",
+ "relocs": []
+}

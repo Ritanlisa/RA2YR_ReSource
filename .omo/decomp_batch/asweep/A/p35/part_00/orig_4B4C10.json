@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B4C10",
+ "name": "JumpjetLocomotionClass::GetField_0x58",
+ "size": 10,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B4C10",
+ "bytes_hex": "8b4424048b4058c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
