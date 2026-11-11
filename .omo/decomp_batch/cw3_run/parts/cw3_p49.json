@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x411df0",
+  "name": "InitializeSoundBufferPlayback",
+  "cls": null,
+  "size": 527,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCRITICAL_SECTION'"
+ },
+ {
+  "addr": "0x513d20",
+  "name": "BuildingLightClass::UpdateOscillation",
+  "cls": null,
+  "size": 529,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2660",
+  "first_msg": "'GetZAboveGround' : function does not take 1 parameters"
+ },
+ {
+  "addr": "0x6ea870",
+  "name": "TeamClass::LiberateMember_Start",
+  "cls": null,
+  "size": 532,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'int *' to 'class TeamClass *const '"
+ },
+ {
+  "addr": "0x4da2c0",
+  "name": "FootClass::ProcessMovement",
+  "cls": null,
+  "size": 535,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->buildingType' must point to class/struct/union"
+ },
+ {
+  "addr": "0x79ba60",
+  "name": "ValidateGameJoinWOL",
+  "cls": null,
+  "size": 539,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCRITICAL_SECTION'"
+ },
+ {
+  "addr": "0x76f970",
+  "name": "WorldDominationTour::Territory::Constructor",
+  "cls": null,
+  "size": 541,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x49e510",
+  "name": "INIClass::ClearContents",
+  "cls": null,
+  "size": 545,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'void (unsigned int,int)' : cannot convert parameter 1 from 'void (__stdcall ***  )(unsigned int,int)' to 'unsi"
+ },
+ {
+  "addr": "0x406b10",
+  "name": "InitializeAudioSubsystem",
+  "cls": null,
+  "size": 546,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x603870",
+  "name": "GetDialogControlSHP",
+  "cls": null,
+  "size": 550,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCRITICAL_SECTION'"
+ },
+ {
+  "addr": "0x788800",
+  "name": "LeaveChannelExWOL",
+  "cls": null,
+  "size": 552,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCRITICAL_SECTION'"
+ },
+ {
+  "addr": "0x480a80",
+  "name": "CellClass::ReduceTiberium",
+  "cls": null,
+  "size": 556,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.field_4' must have class/struct/union type"
+ },
+ {
+  "addr": "0x578880",
+  "name": "MapClass::FastCellLookup",
+  "cls": null,
+  "size": 561,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x757360",
+  "name": "ProcessVoxelDepthSamples",
+  "cls": null,
+  "size": 563,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4d1650",
+  "name": "DestructFoggedObjectClass",
+  "cls": null,
+  "size": 566,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x574780",
+  "name": "MapClass::TransitionCliff",
+  "cls": null,
+  "size": 572,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6b8ca0",
+  "name": "GameMode::ReadFlagsFromINI",
+  "cls": null,
+  "size": 574,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'ReadBool_Overwrite' : cannot convert parameter 1 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x5f3900",
+  "name": "ObjectClass::ctor",
+  "cls": null,
+  "size": 577,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4dd0a0",
+  "name": "FootClass::FindMoveTarget",
+  "cls": null,
+  "size": 580,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x4ad7e0",
+  "name": "MapClass::SaveCellTagsToINI",
+  "cls": null,
+  "size": 581,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7b8a00",
+  "name": "WWMouseClass::AddRef",
+  "cls": null,
+  "size": 583,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ }
+]

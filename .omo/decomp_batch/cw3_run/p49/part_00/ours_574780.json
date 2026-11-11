@@ -1,0 +1,69 @@
+{
+ "symbol": "?TransitionCliff@MapClass@@QAGFH@Z",
+ "sym_key": "MapClass::TransitionCliff",
+ "size": 307,
+ "link_base": 0,
+ "bytes_hex": "8b4c240856578bf90fbf41020fbf118d7102c1e00903c23d00000400730e0fbe15340300008b048285c0750c8b01a37c160000b8581600008b404483f84a7c0583f8527e1383f85c7c0583f85f7e0983f8640f85d60000008a01668b1625ff00000080e1000bc14a33d08d4c241081e2ff0000005133c2b9f801000089442414e8000000008b404483f84a7c7c83f8657f778a168b44241080ea02240081e2ff0000008d4c24100bd051b9f801000089542414e8000000008b404483f84a7c3a83f8657f358a078b542410668b3625ff00000080e2008b4c240c0bc24e33f081e6ff00000033c6894424108d44241050e8000000005f5ec208008b4c240c57e8000000005f5ec208008a0e8b542410fec180e20081e1ff0000008d4424100bca50894c24148b4c2410e8000000005f5ec20800",
+ "relocs": [
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 52,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 129,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 241,
+   "type": "REL32",
+   "sym": "?ApplyCliffMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyCliffMod2"
+  },
+  {
+   "off": 256,
+   "type": "REL32",
+   "sym": "?ApplyCliffMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyCliffMod2"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?ApplyCliffMod2@CellClass@@QAEHPAX@Z",
+   "sym_key": "CellClass::ApplyCliffMod2"
+  }
+ ]
+}

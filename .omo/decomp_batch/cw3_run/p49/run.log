@@ -1,0 +1,81 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x411df0 InitializeSoundBufferPlayback -> _addr_41
+[conv] 0x513d20 BuildingLightClass::UpdateOscillation -> BuildingLightClass
+[conv] 0x6ea870 TeamClass::LiberateMember_Start -> TeamClass
+[conv] 0x4da2c0 FootClass::ProcessMovement -> FootClass
+[conv] 0x79ba60 ValidateGameJoinWOL -> _addr_79
+[conv] 0x76f970 ReferenceCounted::Constructor -> ReferenceCounted
+[conv] 0x49e510 INIClass::ClearContents -> INIClass
+[conv] 0x406b10 ObjectClass::InitializeAudioSubsystem -> ObjectClass
+[conv] 0x603870 GetDialogControlSHP -> _addr_60
+[conv] 0x788800 LeaveChannelExWOL -> _addr_78
+[conv] 0x480a80 CellClass::ReduceTiberium -> CellClass
+[conv] 0x578880 MapClass::FastCellLookup -> MapClass
+[conv] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> ObjectClass
+[conv] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> FoggedObjectClass
+[conv] 0x574780 MapClass::TransitionCliff -> MapClass
+[conv] 0x6b8ca0 GameMode::ReadFlagsFromINI -> GameMode
+[conv] 0x5f3900 ObjectClass::ctor -> ObjectClass
+[conv] 0x4dd0a0 FootClass::FindMoveTarget -> FootClass
+[conv] 0x4ad7e0 MapClass::SaveCellTagsToINI -> MapClass
+[conv] 0x7b8a00 WWMouseClass::AddRef -> WWMouseClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_41                 rc=2
+[era] BuildingLightClass       rc=2
+[era] TeamClass                rc=2
+[era] FootClass                rc=2
+[era] _addr_79                 rc=2
+[era] ReferenceCounted         rc=2
+[era] INIClass                 rc=2
+[era] ObjectClass              rc=2
+[era] _addr_60                 rc=2
+[era] _addr_78                 rc=2
+[era] CellClass                rc=2
+[era] MapClass                 rc=2
+[era] FoggedObjectClass        rc=2
+[era] GameMode                 rc=2
+[era] WWMouseClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x4dd0a0   MISMATCH         FootClass::FindMoveTarget
+[diff] 0x574780   MISMATCH         MapClass::TransitionCliff
+[ledger] 0x411df0 InitializeSoundBufferPlayback -> COMPILE_FAIL (attempt 2)
+[ledger] 0x513d20 BuildingLightClass::UpdateOscillation -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ea870 TeamClass::LiberateMember_Start -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4da2c0 FootClass::ProcessMovement -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79ba60 ValidateGameJoinWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x76f970 ReferenceCounted::Constructor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x49e510 INIClass::ClearContents -> COMPILE_FAIL (attempt 2)
+[ledger] 0x406b10 ObjectClass::InitializeAudioSubsystem -> COMPILE_FAIL (attempt 2)
+[ledger] 0x603870 GetDialogControlSHP -> COMPILE_FAIL (attempt 2)
+[ledger] 0x788800 LeaveChannelExWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x480a80 CellClass::ReduceTiberium -> COMPILE_FAIL (attempt 2)
+[ledger] 0x578880 MapClass::FastCellLookup -> COMPILE_FAIL (attempt 2)
+[ledger] 0x757360 ObjectClass::ProcessVoxelDepthSamples -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4d1650 FoggedObjectClass::DestructFoggedObjectClass -> COMPILE_FAIL (attempt 2)
+[ledger] 0x574780 MapClass::TransitionCliff -> NG (attempt 2)
+[ledger] 0x6b8ca0 GameMode::ReadFlagsFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f3900 ObjectClass::ctor -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4dd0a0 FootClass::FindMoveTarget -> NG (attempt 2)
+[ledger] 0x4ad7e0 MapClass::SaveCellTagsToINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b8a00 WWMouseClass::AddRef -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p49\batch_report.json
