@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p211\part_00
+=== convert (20 addrs) ===
+[conv] 0x58a0e0 _DynamicVectorClass_W4PassabilityType::FindItemIndex -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x58a230 _DynamicVectorClass_U_HashObject_II::FindItemIndex_0 -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x58a3a0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58b780 sub_58B780 -> _addr_58
+[conv] 0x5ac8d0 VectorClass_ptr_MapRegionClass::FindItemIndex -> VectorClass_ptr_MapRegionClass
+[conv] 0x5acc90 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem -> _DynamicVectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad0c0 DynamicVector::updatePathfindingGrid -> DynamicVector
+[conv] 0x5c5360 DynamicVector::validatePlayerAction -> DynamicVector
+[conv] 0x5c55c0 _DynamicVectorClass_PAUNodeNameType::GetSize -> _DynamicVectorClass_PAUNodeNameType
+[conv] 0x5c5820 DynamicVector::handlePlayerReady -> DynamicVector
+[conv] 0x5d0d10 _DynamicVectorClass_PAVMSTextEntry::FindIndex -> _DynamicVectorClass_PAVMSTextEntry
+[conv] 0x5d0f70 _DynamicVectorClass_PAVMapSelection::FindIndex_0 -> _DynamicVectorClass_PAVMapSelection
+[conv] 0x5d11d0 _DynamicVectorClass_PAVMapStage::Load -> _DynamicVectorClass_PAVMapStage
+[conv] 0x5d1430 _DynamicVectorClass_PAVMSAnimEntry::FindIndex_0 -> _DynamicVectorClass_PAVMSAnimEntry
+[conv] 0x5d1690 _DynamicVectorClass_PAVMSSfxEntry::FindIndex_1 -> _DynamicVectorClass_PAVMSSfxEntry
+[conv] 0x5d2a10 _DynamicVectorClass_PAVMSAnim::FindItemIndex_0 -> _DynamicVectorClass_PAVMSAnim
+[conv] 0x5d5380 _DynamicVectorClass_PAUHWND::FindItem -> _DynamicVectorClass_PAUHWND
+[conv] 0x5d8520 DynamicVector::setupPlayers -> DynamicVector
+[conv] 0x5eee90 _DynamicVectorClass_PBVMultiMission::FindItemIndex -> _DynamicVectorClass_PBVMultiMission
+[conv] 0x5f9db0 _DynamicVectorClass_PAVObjectTypeClass::FindItemIndex -> _DynamicVectorClass_PAVObjectTypeClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_W4PassabilityType rc=2
+[era] _DynamicVectorClass_U_HashObject_II rc=2
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] _addr_58                 rc=0
+[era] VectorClass_ptr_MapRegionClass rc=0
+[era] _DynamicVectorClass_PAU_WIN32_FIND_DATAA rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAUNodeNameType rc=2
+[era] _DynamicVectorClass_PAVMSTextEntry rc=2
+[era] _DynamicVectorClass_PAVMapSelection rc=2
+[era] _DynamicVectorClass_PAVMapStage rc=2
+[era] _DynamicVectorClass_PAVMSAnimEntry rc=2
+[era] _DynamicVectorClass_PAVMSSfxEntry rc=2
+[era] _DynamicVectorClass_PAVMSAnim rc=2
+[era] _DynamicVectorClass_PAUHWND rc=2
+[era] _DynamicVectorClass_PBVMultiMission rc=2
+[era] _DynamicVectorClass_PAVObjectTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x58b780   MISMATCH         sub_58B780
+[diff] 0x5ac8d0   MISMATCH         VectorClass_ptr_MapRegionClass::FindItemIndex
+[diff] 0x5ad0c0   MISMATCH         DynamicVector::updatePathfindingGrid
+[diff] 0x5c5360   MISMATCH         DynamicVector::validatePlayerAction
+[diff] 0x5c5820   MISMATCH         DynamicVector::handlePlayerReady
+[diff] 0x5d8520   MISMATCH         DynamicVector::setupPlayers
+[ledger] 0x58a0e0 _DynamicVectorClass_W4PassabilityType::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a230 _DynamicVectorClass_U_HashObject_II::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a3a0 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::FindItemIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58b780 sub_58B780 -> NG (attempt 1)
+[ledger] 0x5ac8d0 VectorClass_ptr_MapRegionClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x5acc90 _DynamicVectorClass_PAU_WIN32_FIND_DATAA::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad0c0 DynamicVector::updatePathfindingGrid -> NG (attempt 1)
+[ledger] 0x5c5360 DynamicVector::validatePlayerAction -> NG (attempt 1)
+[ledger] 0x5c55c0 _DynamicVectorClass_PAUNodeNameType::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c5820 DynamicVector::handlePlayerReady -> NG (attempt 1)
+[ledger] 0x5d0d10 _DynamicVectorClass_PAVMSTextEntry::FindIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d0f70 _DynamicVectorClass_PAVMapSelection::FindIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d11d0 _DynamicVectorClass_PAVMapStage::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1430 _DynamicVectorClass_PAVMSAnimEntry::FindIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1690 _DynamicVectorClass_PAVMSSfxEntry::FindIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d2a10 _DynamicVectorClass_PAVMSAnim::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5380 _DynamicVectorClass_PAUHWND::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8520 DynamicVector::setupPlayers -> NG (attempt 1)
+[ledger] 0x5eee90 _DynamicVectorClass_PBVMultiMission::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f9db0 _DynamicVectorClass_PAVObjectTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p211\batch_report.json
