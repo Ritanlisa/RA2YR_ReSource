@@ -972,6 +972,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x416d50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Carryall::MissionStateMachine",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x41a5c0": {
   "attempts": 1,
   "first_diff": null,
@@ -2834,6 +2841,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x4791f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LinkedList_flat::LoadScenarioMixFiles",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x479730": {
   "attempts": 1,
   "first_diff": null,
@@ -2939,6 +2953,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x484180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::CalculateTacticalLighting",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x484d60": {
   "attempts": 1,
   "first_diff": null,
@@ -2964,6 +2985,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingClass::CheckAdjacentCells",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x485590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::ProcessBridgeRepair",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -4042,6 +4070,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MPCooperative::WriteCoopSaveINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x49c5a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignClass::SaveProgress",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -6460,6 +6495,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4fa350": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Sidebar::StartSidebarProduction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4fae50": {
   "attempts": 9,
   "first_diff": null,
@@ -8707,6 +8749,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x55bc00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CompressLCWBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x55c0e0": {
   "attempts": 1,
   "first_diff": null,
@@ -8727,6 +8776,13 @@
   "name": "0x55cc10",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x55f1e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DrawHUD",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x55f7f0": {
   "attempts": 1,
@@ -8977,6 +9033,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CreateMapObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x57acf0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GenerateMapClassCliffTransitions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9320,6 +9383,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "PlaceNeutralCreeps",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5a89d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScheduleMapSeedBuildings",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11640,6 +11710,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x62b5e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleClass::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x62bb20": {
   "attempts": 1,
   "first_diff": null,
@@ -12249,6 +12326,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x63fea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PowerClass::updatePowerBarAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6403a0": {
   "attempts": 9,
   "first_diff": null,
@@ -12568,6 +12652,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TacticalClass::FreeResources",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x655c50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FogOfWar::RevealArea",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15637,6 +15728,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x706640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::UpdateState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x707d20": {
   "attempts": 9,
   "first_diff": null,
@@ -16911,6 +17009,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x73cec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::Draw",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x740810": {
   "attempts": 1,
   "first_diff": null,
@@ -17331,6 +17436,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x750440": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadVocFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7510d0": {
   "attempts": 1,
   "first_diff": null,
@@ -17664,6 +17776,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Voxel::BlendColor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7609e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Voxel::FaceDraw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -18395,6 +18514,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x7775c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7775c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x777b50": {
   "attempts": 5,
   "first_diff": null,
@@ -18619,6 +18745,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x782bb0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x782bb0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x783270": {
   "attempts": 1,
   "first_diff": null,
@@ -18730,6 +18863,13 @@
   "name": "0x79db50",
   "note": "decomp_batch r2: DUP_SKIP",
   "status": "PENDING"
+ },
+ "0x79dfe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GameSetupDlgProcWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x79f0a0": {
   "attempts": 1,

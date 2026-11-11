@@ -1,0 +1,91 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p26\part_00
+=== convert (20 addrs) ===
+[conv] 0x55f1e0 ObjectClass::DrawHUD -> ObjectClass
+[conv] 0x4fa350 Sidebar::StartSidebarProduction -> Sidebar
+[conv] 0x55bc00 unknown::CompressLCWBuffer -> unknown
+[conv] 0x750440 ObjectClass::LoadVocFromINI -> ObjectClass
+[conv] 0x4791f0 CD::LoadScenarioMixFiles -> CD
+[conv] 0x655c50 FogOfWar::RevealArea -> FogOfWar
+[conv] 0x484180 Tactical::CalculateTacticalLighting -> Tactical
+[conv] 0x63fea0 PowerClass::updatePowerBarAnimation -> PowerClass
+[conv] 0x57acf0 unknown::GenerateMapClassCliffTransitions -> unknown
+[conv] 0x5a89d0 unknown::ScheduleMapSeedBuildings -> unknown
+[conv] 0x79dfe0 unknown::GameSetupDlgProcWOL -> unknown
+[conv] 0x62b5e0 ObjectClass::Construct -> ObjectClass
+[conv] 0x49c5a0 CampaignClass::SaveProgress -> CampaignClass
+[conv] 0x485590 CellClass::ProcessBridgeRepair -> CellClass
+[conv] 0x7609e0 Voxel::FaceDraw -> Voxel
+[conv] 0x706640 TechnoClass::UpdateState -> TechnoClass
+[conv] 0x73cec0 TechnoClass::Draw -> TechnoClass
+[conv] 0x416d50 Carryall::MissionStateMachine -> Carryall
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] Sidebar                  rc=2
+[era] unknown                  rc=2
+[era] CD                       rc=2
+[era] FogOfWar                 rc=2
+[era] Tactical                 rc=2
+[era] PowerClass               rc=2
+[era] CampaignClass            rc=2
+[era] CellClass                rc=2
+[era] Voxel                    rc=2
+[era] TechnoClass              rc=2
+[era] Carryall                 rc=2
+=== diffasm byte-compare ===
+[ledger] 0x55f1e0 DrawHUD -> COMPILE_FAIL (attempt 1)
+[ledger] 0x782bb0 0x782bb0 -> PENDING (attempt 1)
+[ledger] 0x7775c0 0x7775c0 -> PENDING (attempt 1)
+[ledger] 0x4fa350 Sidebar::StartSidebarProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55bc00 CompressLCWBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x750440 LoadVocFromINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4791f0 LinkedList_flat::LoadScenarioMixFiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x655c50 FogOfWar::RevealArea -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484180 Tactical::CalculateTacticalLighting -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63fea0 PowerClass::updatePowerBarAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57acf0 GenerateMapClassCliffTransitions -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a89d0 ScheduleMapSeedBuildings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79dfe0 GameSetupDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62b5e0 ParticleClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49c5a0 CampaignClass::SaveProgress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x485590 CellClass::ProcessBridgeRepair -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7609e0 Voxel::FaceDraw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x706640 TechnoClass::UpdateState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x73cec0 TechnoClass::Draw -> COMPILE_FAIL (attempt 1)
+[ledger] 0x416d50 Carryall::MissionStateMachine -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2894,
+ "verdicts": {
+  "MISMATCH": 723,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1093,
+  "DUP_SKIP": 3,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 537,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 249,
+  "ret_norm": 8,
+  "frame_sched": 78,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 119,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 41.9,
+ "match_rate_of_total_pct": 18.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p26\batch_report.json
