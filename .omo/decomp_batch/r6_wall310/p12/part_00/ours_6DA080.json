@@ -1,0 +1,15 @@
+{
+ "symbol": "?HasOccupiedCell@PlayerClass@@QAEHXZ",
+ "sym_key": "PlayerClass::HasOccupiedCell",
+ "size": 215,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b81980d00008b919c0d0000538b99940d000055568bb1900d0000578bfe8beb3bf87e048bf88bc63bea7e048bea8bd32bd52bc742408bf28bd085d289742414895424180f8e8000000085f67e7c8b81b00d0000c74424100000000085c07e6a8b1d000000008b0385c0743980b8900000000074308b43048bb1b00000002bc68b73082bb1b40000003bc77c1803d73bc27d0e3bf57c0a8b44241403c53bf07c1c8b5424188b4424108bb1b00d0000403bc689442410731283c30ceba95f5e5db8010000005b83c40cc35f5e5d33c05b83c40cc3",
+ "relocs": [
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B0CEC8@@3IA",
+   "sym_key": "DataGlobal_B0CEC8"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E4150",
+ "name": "TActionClass::executeGeneticMutatorAction",
+ "size": 174,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E4150",
+ "bytes_hex": "83ec08535556578b3d10eba80083c8ff4f894c241485ff894424107c50a104eba8008d59548d2cb88b45008bf383c0248a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c0740e4f83ed0485ff7dc38b442410eb028bc78b0d10eba8005f5e5d3bc15b7d2b85c07c278b5424048b8a900000008b1504eba80051b9e8f787008b048250e80284fcffb00183c408c2100032c083c408c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

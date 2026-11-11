@@ -1,0 +1,33 @@
+{
+ "symbol": "?executeGeneticMutatorAction@TActionClass@@QAEDHHHH@Z",
+ "sym_key": "TActionClass::executeGeneticMutatorAction",
+ "size": 227,
+ "link_base": 0,
+ "bytes_hex": "51538bd98b0d000000005556570fbe790483c8ff4f85ff895c24100f8c840000000fbe410183c3548d2cb88bf38b450083c0248a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c0743d4f83ed0485ff7c708b45008bf383c0248a088ad13a0e751c84d274148a48018ad13a4e01750e83c00283c60284d275e033c0eb051bc083d8ff85c075c38bc78b0d000000000fbe51045f5e5d3bc25b7d2c85c07c288b5424000fbe49018b9290000000528b148152b9f8010000e800000000b00159c2100083c8ffebc232c059c21000",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 161,
+   "type": "DIR32",
+   "sym": "?stru_A8EB00@@3PADA",
+   "sym_key": "stru_A8EB00"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?executeHarvestAction@TActionClass@@QAEPAIHH@Z",
+   "sym_key": "TActionClass::executeHarvestAction"
+  }
+ ]
+}

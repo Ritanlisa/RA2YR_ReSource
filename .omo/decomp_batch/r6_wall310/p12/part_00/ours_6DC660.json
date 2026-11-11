@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_UDirtyAreaStruct@@QAEDHPAD@Z",
+ "sym_key": "_VectorClass_UDirtyAreaStruct::Release",
+ "size": 269,
+ "link_base": 0,
+ "bytes_hex": "5355568b7424105733ff3bf78be90f84e80000008b5c2418897d0c3bdf74238d46ff85c07c568d43088bce8978f88978fc8938897804c640080083c0144975ebeb3a8d0cb6c1e10251e80000000083c4043bc774258d56ff85d27c1a8d48088bd68979f88979fc8939897904c641080083c1144a75eb8bd8eb0233db3bdfc7450c01000000746c397d00743e8b55083bf27d028bd63bd77e1d33c08b75008d3c1803f083c014b9050000004af3a575eb8b74241433ff8b450cf6c4ff740c50e80000000083c404897d008b550c895d008b5c241833c03bdf8975080f94c033c980e6008ae85f0bca5e894d0c5db0015bc208005f5e5d32c05bc208008b45008bcdff500c5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 192,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
