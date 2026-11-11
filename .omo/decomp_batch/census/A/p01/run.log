@@ -1,0 +1,110 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x410480 AbstractClass::COMStub_Return0_10 -> AbstractClass
+[conv] 0x414a10 unknown::nullsub_71 -> unknown
+[conv] 0x41bf80 TechnoClass::StubReturnFalse5 -> TechnoClass
+[conv] 0x41c140 FootClass::vt_entry_540 -> FootClass
+[conv] 0x426450 ObjectClass::COMStub_Return0_68 -> ObjectClass
+[conv] 0x430580 unknown::nullsub_97 -> unknown
+[conv] 0x459e20 TechnoClass::StubReturnFalse11 -> TechnoClass
+[conv] 0x48e650 GadgetClass::StubReturnFalse -> GadgetClass
+[conv] 0x4b4ca0 IUnknown::Stub5 -> IUnknown
+[conv] 0x4d9c00 FootClass::vt_entry_524 -> FootClass
+[conv] 0x522a50 unknown::nullsub_146 -> unknown
+[conv] 0x55ac20 LocomotionClass::Stub13 -> LocomotionClass
+[conv] 0x5b43e0 ObjectClass::?do_always_noconv_codecvt_base_std__MBE_NXZ_7 -> ObjectClass
+[conv] 0x5c0f70 MultiplayerGameMode::StubReturnFalse10 -> MultiplayerGameMode
+[conv] 0x5cca10 MSBinkAnim::nullsub_189 -> MSBinkAnim
+[conv] 0x5f42c0 ObjectClass::COMStub_Return0_38 -> ObjectClass
+[conv] 0x5f43f0 IUnknown::StubReturnFalse4 -> IUnknown
+[conv] 0x6241e0 SimpleDialogControl_OwnerDraw::StubReturnFalse -> SimpleDialogControl_OwnerDraw
+[conv] 0x681090 ObjectClass::ReadPointerFromECX3 -> ObjectClass
+[conv] 0x6da370 unknown::nullsub_239 -> unknown
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AbstractClass            rc=0
+[era] unknown                  rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] ObjectClass              rc=2
+[era] GadgetClass              rc=0
+[era] IUnknown                 rc=0
+[era] LocomotionClass          rc=0
+[era] MultiplayerGameMode      rc=0
+[era] MSBinkAnim               rc=0
+[era] SimpleDialogControl_OwnerDraw rc=0
+=== diffasm byte-compare ===
+[diff] 0x410480   MISMATCH         AbstractClass::COMStub_Return0_10
+[diff] 0x414a10   MATCH            unknown::nullsub_71
+[diff] 0x430580   MATCH            unknown::nullsub_97
+[diff] 0x522a50   MATCH            unknown::nullsub_146
+[diff] 0x6da370   MATCH            unknown::nullsub_239
+[diff] 0x41bf80   MATCH            TechnoClass::StubReturnFalse5
+[diff] 0x459e20   MATCH            TechnoClass::StubReturnFalse11
+[diff] 0x41c140   MATCH            FootClass::vt_entry_540
+[diff] 0x4d9c00   MATCH            FootClass::vt_entry_524
+[diff] 0x426450   MISMATCH         ObjectClass::COMStub_Return0_68
+[diff] 0x5f42c0   MATCH            ObjectClass::COMStub_Return0_38
+[diff] 0x681090   MATCH            ObjectClass::ReadPointerFromECX3
+[diff] 0x48e650   MISMATCH         GadgetClass::StubReturnFalse
+[diff] 0x4b4ca0   MATCH            IUnknown::Stub5
+[diff] 0x5f43f0   MISMATCH         IUnknown::StubReturnFalse4
+[diff] 0x55ac20   MATCH            LocomotionClass::Stub13
+[diff] 0x5c0f70   MATCH            MultiplayerGameMode::StubReturnFalse10
+[diff] 0x5cca10   MISMATCH         MSBinkAnim::nullsub_189
+[diff] 0x6241e0   MATCH            SimpleDialogControl_OwnerDraw::StubReturnFalse
+[ledger] 0x410480 AbstractClass::COMStub_Return0_10 -> NG (attempt 1)
+[ledger] 0x414a10 nullsub_71 -> OK (attempt 1)
+[ledger] 0x41bf80 TacticalClass::StubReturnFalse5 -> OK (attempt 1)
+[ledger] 0x41c140 FootClass::vt_entry_540 -> OK (attempt 1)
+[ledger] 0x426450 AbstractClass::COMStub_Return0_68 -> NG (attempt 1)
+[ledger] 0x430580 nullsub_97 -> OK (attempt 1)
+[ledger] 0x459e20 BuildingClass::StubReturnFalse11 -> OK (attempt 1)
+[ledger] 0x48e650 CheckListClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x4b4ca0 JumpjetLocomotionClass::Stub5 -> OK (attempt 1)
+[ledger] 0x4d9c00 FootClass::vt_entry_524 -> OK (attempt 1)
+[ledger] 0x522a50 nullsub_146 -> OK (attempt 1)
+[ledger] 0x55ac20 JumpjetLocomotionClass::Stub13 -> OK (attempt 1)
+[ledger] 0x5b43e0 ?do_always_noconv_codecvt_base_std__MBE_NXZ_7 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c0f70 ScenarioClass::StubReturnFalse10 -> OK (attempt 1)
+[ledger] 0x5cca10 nullsub_189 -> NG (attempt 1)
+[ledger] 0x5f42c0 AbstractClass::COMStub_Return0_38 -> OK (attempt 1)
+[ledger] 0x5f43f0 AircraftClass::StubReturnFalse4 -> NG (attempt 1)
+[ledger] 0x6241e0 StreamWrapper::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x681090 ReadPointerFromECX3 -> OK (attempt 1)
+[ledger] 0x6da370 nullsub_239 -> OK (attempt 1)
+======================================================================
+{
+ "total": 1077,
+ "verdicts": {
+  "MISMATCH": 289,
+  "MATCH": 429,
+  "COMPILE_FAIL": 317,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 35,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 113,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.7,
+ "match_rate_of_total_pct": 39.8,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p01\batch_report.json

@@ -279,6 +279,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x410480": {
+  "attempts": 1,
+  "first_diff": "+0 ret 8",
+  "name": "AbstractClass::COMStub_Return0_10",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x410490": {
   "attempts": 7,
   "first_diff": null,
@@ -356,6 +363,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x414a10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "nullsub_71",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x41a9e0": {
   "attempts": 6,
   "first_diff": "+20 mov ecx, esi",
@@ -391,6 +405,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x41bf80": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::StubReturnFalse5",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x41bff0": {
   "attempts": 1,
   "first_diff": "+0 xor al, al",
@@ -418,6 +439,13 @@
   "name": "AircraftClass::CheckDockState",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x41c140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::vt_entry_540",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x41c170": {
   "attempts": 7,
@@ -587,6 +615,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x426450": {
+  "attempts": 1,
+  "first_diff": "+0 ret 8",
+  "name": "AbstractClass::COMStub_Return0_68",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4264c0": {
   "attempts": 1,
   "first_diff": "+2 ret 0x14",
@@ -733,6 +768,13 @@
   "name": "EncodeBitmapRGB",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x430580": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "nullsub_97",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x431800": {
   "attempts": 18,
@@ -934,6 +976,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "BuildingClass::MissionStubReturnZero5",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x459e20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::StubReturnFalse11",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -1482,6 +1531,13 @@
   "name": "COMObject::GetMember09",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x48e650": {
+  "attempts": 1,
+  "first_diff": "+0 ret 0xc",
+  "name": "CheckListClass::StubReturnFalse",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x491b40": {
   "attempts": 1,
@@ -2204,6 +2260,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4b4ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::Stub5",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x4b4cf0": {
   "attempts": 5,
   "first_diff": null,
@@ -2574,6 +2637,13 @@
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4d9c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::vt_entry_524",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4da030": {
   "attempts": 11,
@@ -3111,6 +3181,13 @@
   "attempts": 8,
   "first_diff": null,
   "name": "TechnoClass::GetThreatValue_0",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x522a50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "nullsub_146",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -3730,6 +3807,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x55ac20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::Stub13",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x55ac60": {
   "attempts": 5,
   "first_diff": null,
@@ -4241,6 +4325,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5b43e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "?do_always_noconv_codecvt_base_std__MBE_NXZ_7",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5bbed0": {
   "attempts": 10,
   "first_diff": null,
@@ -4301,6 +4392,13 @@
   "attempts": 7,
   "first_diff": null,
   "name": "ScenarioClass::initTeams",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x5c0f70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::StubReturnFalse10",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -4394,6 +4492,13 @@
   "name": "MSBinkAnim::Play",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5cca10": {
+  "attempts": 1,
+  "first_diff": "+0 ret 4",
+  "name": "nullsub_189",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x5cd0e0": {
   "attempts": 9,
@@ -4563,6 +4668,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f42c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::COMStub_Return0_38",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x5f43c0": {
   "attempts": 1,
   "first_diff": "+0 ret ",
@@ -4576,6 +4688,13 @@
   "name": "AbstractClass::processStateUpdate",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5f43f0": {
+  "attempts": 1,
+  "first_diff": "+0 ret 4",
+  "name": "AircraftClass::StubReturnFalse4",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x5f4730": {
   "attempts": 9,
@@ -4735,6 +4854,13 @@
   "attempts": 7,
   "first_diff": null,
   "name": "ObjectClass::GetMember01",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x6241e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "StreamWrapper::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -5354,6 +5480,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x681090": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ReadPointerFromECX3",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x681100": {
   "attempts": 3,
   "first_diff": null,
@@ -5836,6 +5969,13 @@
   "name": "DisplayClass::GetCoordDelta",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6da370": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "nullsub_239",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6da7d0": {
   "attempts": 9,
