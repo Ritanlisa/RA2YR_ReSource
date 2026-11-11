@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p159\part_00
+=== convert (20 addrs) ===
+[conv] 0x4aeb30 MapClass::SetScrollMode -> MapClass
+[conv] 0x4f4220 RadarClass::initRadarSurface -> RadarClass
+[conv] 0x50e730 _DynamicVectorClass__N::GetItemIndex -> _DynamicVectorClass__N
+[conv] 0x656580 Diplomacy::GetField -> Diplomacy
+[conv] 0x65b510 CellClass::GetOccupiedRatio -> CellClass
+[conv] 0x681200 TechnoClass::Map_Save_681200 -> TechnoClass
+[conv] 0x681220 TechnoClass::sub_681220 -> TechnoClass
+[conv] 0x681240 TechnoClass::Map_Save_681240 -> TechnoClass
+[conv] 0x681260 TechnoClass::sub_681260 -> TechnoClass
+[conv] 0x681280 TechnoClass::Map_Save_681280 -> TechnoClass
+[conv] 0x6812a0 TechnoClass::sub_6812A0 -> TechnoClass
+[conv] 0x6d6170 ObjectClass::RequestMapSnapshot -> ObjectClass
+[conv] 0x74c150 _VectorClass_E::GetCapacity -> _VectorClass_E
+[conv] 0x759830 ObjectClass::Render_Load_759830 -> ObjectClass
+[conv] 0x75a810 TestBitArray -> _addr_75
+[conv] 0x77a870 ObjectClass::Event_Process_77A870 -> ObjectClass
+[conv] 0x77a890 ObjectClass::Event_Process_77A890 -> ObjectClass
+[conv] 0x77a8b0 ObjectClass::Event_Process_77A8B0 -> ObjectClass
+[conv] 0x7cc1b2 __NLG_Notify -> _addr_7C
+[conv] 0x74fff0 VeinholeClass::GetState -> VeinholeClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MapClass                 rc=0
+[era] RadarClass               rc=0
+[era] _DynamicVectorClass__N   rc=0
+[era] Diplomacy                rc=2
+[era] CellClass                rc=0
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=0
+[era] _VectorClass_E           rc=0
+[era] _addr_75                 rc=2
+[era] _addr_7C                 rc=2
+[era] VeinholeClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x4aeb30   MISMATCH         MapClass::SetScrollMode
+[diff] 0x4f4220   MATCH            RadarClass::initRadarSurface
+[diff] 0x50e730   MISMATCH         _DynamicVectorClass__N::GetItemIndex
+[diff] 0x65b510   MISMATCH         CellClass::GetOccupiedRatio
+[diff] 0x681200   MATCH            TechnoClass::Map_Save_681200
+[diff] 0x681240   MISMATCH         TechnoClass::Map_Save_681240
+[diff] 0x681280   MISMATCH         TechnoClass::Map_Save_681280
+[diff] 0x6d6170   MATCH            ObjectClass::RequestMapSnapshot
+[diff] 0x759830   MATCH            ObjectClass::Render_Load_759830
+[diff] 0x77a870   MISMATCH         ObjectClass::Event_Process_77A870
+[diff] 0x77a890   MISMATCH         ObjectClass::Event_Process_77A890
+[diff] 0x77a8b0   MISMATCH         ObjectClass::Event_Process_77A8B0
+[diff] 0x74c150   MISMATCH         _VectorClass_E::GetCapacity
+[diff] 0x74fff0   MISMATCH         VeinholeClass::GetState
+[ledger] 0x4aeb30 MapClass::SetScrollMode -> NG (attempt 1)
+[ledger] 0x4f4220 RadarClass::initRadarSurface -> OK (attempt 1)
+[ledger] 0x50e730 _DynamicVectorClass__N::GetItemIndex -> NG (attempt 1)
+[ledger] 0x656580 Diplomacy::GetField -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65b510 CellClass::GetOccupiedRatio -> NG (attempt 1)
+[ledger] 0x681200 TechnoClass::Map_Save_681200 -> OK (attempt 1)
+[ledger] 0x681220 TechnoClass::sub_681220 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x681240 TechnoClass::Map_Save_681240 -> NG (attempt 1)
+[ledger] 0x681260 TechnoClass::sub_681260 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x681280 TechnoClass::Map_Save_681280 -> NG (attempt 1)
+[ledger] 0x6812a0 TechnoClass::sub_6812A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d6170 ObjectClass::RequestMapSnapshot -> OK (attempt 1)
+[ledger] 0x74c150 _VectorClass_E::GetCapacity -> NG (attempt 1)
+[ledger] 0x759830 ObjectClass::Render_Load_759830 -> OK (attempt 1)
+[ledger] 0x75a810 TestBitArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77a870 ObjectClass::Event_Process_77A870 -> NG (attempt 1)
+[ledger] 0x77a890 ObjectClass::Event_Process_77A890 -> NG (attempt 1)
+[ledger] 0x77a8b0 ObjectClass::Event_Process_77A8B0 -> NG (attempt 1)
+[ledger] 0x7cc1b2 __NLG_Notify -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74fff0 VeinholeClass::GetState -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "MATCH": 4,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_order": 3,
+  "const_fold": 2,
+  "branch_polarity": 3
+ },
+ "match_rate_of_decided_pct": 28.6,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p159\batch_report.json

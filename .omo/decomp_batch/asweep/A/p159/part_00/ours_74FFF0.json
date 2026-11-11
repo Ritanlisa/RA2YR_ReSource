@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetState@VeinholeClass@@QAEHXZ",
+ "sym_key": "VeinholeClass::GetState",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "5133c08a0189442400db442400dc1d00000000dfe0f6c4017407b80100000059c333c059c3",
+ "relocs": [
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

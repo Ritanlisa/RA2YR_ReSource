@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetOccupiedRatio@CellClass@@QAEHXZ",
+ "sym_key": "CellClass::GetOccupiedRatio",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "568b716c85f67e0d8b417033d20faf414cf7f65ec333c05ec3",
+ "relocs": []
+}

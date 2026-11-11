@@ -13092,6 +13092,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4aeb30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+6 mov dword ptr [ecx + 0x11a0], eax",
+  "name": "MapClass::SetScrollMode",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MapClass::SetScrollMode",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x4aeba0": {
   "attempts": 1,
   "clean": true,
@@ -18717,6 +18729,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4f4220": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "RadarClass::initRadarSurface",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RadarClass::initRadarSurface",
+  "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4f42a0": {
   "attempts": 1,
   "clean": false,
@@ -19541,6 +19565,18 @@
   "orig_name": "VectorClass_BuildingType::GetElement",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x50e730": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x50e73c",
+  "name": "_DynamicVectorClass__N::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass__N::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x50e750": {
@@ -36986,6 +37022,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x656580": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Diplomacy::GetField",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Diplomacy::GetField",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x656cb0": {
   "attempts": 9,
   "first_diff": null,
@@ -37535,6 +37583,18 @@
   "orig_name": "RadSiteClass::SetSpread",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x65b510": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+6 jg 0x65b51c",
+  "name": "CellClass::GetOccupiedRatio",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "CellClass::GetOccupiedRatio",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x65b800": {
@@ -39090,6 +39150,78 @@
   "orig_name": "sub_6811F0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x681200": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::Map_Save_681200",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Map_Save_681200",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x681220": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::sub_681220",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_681220",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x681240": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+6 mov dword ptr [ecx + 0x3e0], edx",
+  "name": "TechnoClass::Map_Save_681240",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Map_Save_681240",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x681260": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::sub_681260",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_681260",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x681280": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+6 mov dword ptr [ecx + 0x3e8], edx",
+  "name": "TechnoClass::Map_Save_681280",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "Map_Save_681280",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6812a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": null,
+  "name": "TechnoClass::sub_6812A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_6812A0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6812c0": {
@@ -44748,6 +44880,18 @@
   "name": "Tactical::SetTacticalPosition",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x6d6170": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::RequestMapSnapshot",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "RequestMapSnapshot",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x6d6410": {
   "attempts": 9,
@@ -52127,6 +52271,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x74c150": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x74c15c",
+  "name": "_VectorClass_E::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_E::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x74c170": {
   "attempts": 2,
   "first_diff": null,
@@ -52406,6 +52562,18 @@
   "name": "VeterancyStruct::IsVeteran",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x74fff0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 fld dword ptr [ecx]",
+  "name": "VeinholeClass::GetState",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "VeinholeClass::GetState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x750010": {
   "attempts": 1,
@@ -53189,6 +53357,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x759830": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::Render_Load_759830",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Render_Load_759830",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x759e50": {
   "attempts": 1,
   "clean": true,
@@ -53314,6 +53494,17 @@
   "name": "ResetAnimSystem",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ResetAnimSystem",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x75a810": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "TestBitArray",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TestBitArray",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -56570,6 +56761,42 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x77a870": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 je 0x77a885",
+  "name": "ObjectClass::Event_Process_77A870",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Event_Process_77A870",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77a890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 je 0x77a8a5",
+  "name": "ObjectClass::Event_Process_77A890",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Event_Process_77A890",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x77a8b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 je 0x77a8c5",
+  "name": "ObjectClass::Event_Process_77A8B0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "Event_Process_77A8B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x77b070": {
   "attempts": 1,
   "clean": true,
@@ -59460,6 +59687,17 @@
   "orig_name": "__NLG_Notify1",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x7cc1b2": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "__NLG_Notify",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "__NLG_Notify",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x7cc309": {

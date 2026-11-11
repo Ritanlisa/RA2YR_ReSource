@@ -1,0 +1,11 @@
+{
+ "addr": "0x4AEB30",
+ "name": "MapClass::SetScrollMode",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4AEB30",
+ "bytes_hex": "8b44240485c08981a01100000f95c088819c110000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

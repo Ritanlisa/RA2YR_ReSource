@@ -1,0 +1,15 @@
+{
+ "symbol": "?initRadarSurface@RadarClass@@QAEPAV1@XZ",
+ "sym_key": "RadarClass::initRadarSurface",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8bc133c9894804894808c7400c02000000c70000000000c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?vt_GScreenClass@@3IA",
+   "sym_key": "vt_GScreenClass"
+  }
+ ]
+}

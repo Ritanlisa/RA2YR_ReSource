@@ -1,0 +1,11 @@
+{
+ "addr": "0x65B510",
+ "name": "CellClass::GetOccupiedRatio",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65B510",
+ "bytes_hex": "568b716c85f67f0433c05ec38b41700faf414c99f7fe5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

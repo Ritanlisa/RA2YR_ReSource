@@ -1,0 +1,8 @@
+{
+ "symbol": "?Event_Process_77A870@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::Event_Process_77A870",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b412c83f8ff74158b510880e20183ca018951088b54240403c289412cc20400",
+ "relocs": []
+}

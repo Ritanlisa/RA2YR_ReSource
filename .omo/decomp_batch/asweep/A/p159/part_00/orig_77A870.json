@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A870",
+ "name": "Event_Process_77A870",
+ "size": 24,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A870",
+ "bytes_hex": "8b412c83f8ff740d8b542404c641080103c289412cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

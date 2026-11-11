@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCapacity@_VectorClass_E@@QAEHH@Z",
+ "sym_key": "_VectorClass_E::GetCapacity",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8a410c84c0740c8b4424048b51042bc2c2040033c0c20400",
+ "relocs": []
+}
