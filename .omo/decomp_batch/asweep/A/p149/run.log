@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p149\part_00
+=== convert (20 addrs) ===
+[conv] 0x4f2c50 sub_4F2C50 -> _addr_4F
+[conv] 0x4f3120 sub_4F3120 -> _addr_4F
+[conv] 0x4f3890 sub_4F3890 -> _addr_4F
+[conv] 0x4f3b60 sub_4F3B60 -> _addr_4F
+[conv] 0x4f4ee0 sub_4F4EE0 -> _addr_4F
+[conv] 0x50e430 HouseClass::processRadar -> HouseClass
+[conv] 0x510cf0 sub_510CF0 -> _addr_51
+[conv] 0x5111e0 sub_5111E0 -> _addr_51
+[conv] 0x513c00 sub_513C00 -> _addr_51
+[conv] 0x517a30 sub_517A30 -> _addr_51
+[conv] 0x5256d0 sub_5256D0 -> _addr_52
+[conv] 0x52b7a0 sub_52B7A0 -> _addr_52
+[conv] 0x539300 sub_539300 -> _addr_53
+[conv] 0x539540 sub_539540 -> _addr_53
+[conv] 0x53ca10 sub_53CA10 -> _addr_53
+[conv] 0x53ca50 sub_53CA50 -> _addr_53
+[conv] 0x53dde0 sub_53DDE0 -> _addr_53
+[conv] 0x53f220 sub_53F220 -> _addr_53
+[conv] 0x53f880 sub_53F880 -> _addr_53
+[conv] 0x5408d0 sub_5408D0 -> _addr_54
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4F                 rc=0
+[era] HouseClass               rc=0
+[era] _addr_51                 rc=0
+[era] _addr_52                 rc=0
+[era] _addr_53                 rc=0
+[era] _addr_54                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4f2c50   MATCH            sub_4F2C50
+[diff] 0x4f3120   MATCH            sub_4F3120
+[diff] 0x4f3890   MATCH            sub_4F3890
+[diff] 0x4f3b60   MATCH            sub_4F3B60
+[diff] 0x4f4ee0   MATCH            sub_4F4EE0
+[diff] 0x50e430   MISMATCH         HouseClass::processRadar
+[diff] 0x510cf0   MATCH            sub_510CF0
+[diff] 0x5111e0   MATCH            sub_5111E0
+[diff] 0x513c00   MATCH            sub_513C00
+[diff] 0x517a30   MATCH            sub_517A30
+[diff] 0x5256d0   MATCH            sub_5256D0
+[diff] 0x52b7a0   MATCH            sub_52B7A0
+[diff] 0x539300   MATCH            sub_539300
+[diff] 0x539540   MATCH            sub_539540
+[diff] 0x53ca10   MATCH            sub_53CA10
+[diff] 0x53ca50   MISMATCH         sub_53CA50
+[diff] 0x53dde0   MATCH            sub_53DDE0
+[diff] 0x53f220   MATCH            sub_53F220
+[diff] 0x53f880   MATCH            sub_53F880
+[diff] 0x5408d0   MATCH            sub_5408D0
+[ledger] 0x4f2c50 sub_4F2C50 -> OK (attempt 1)
+[ledger] 0x4f3120 sub_4F3120 -> OK (attempt 1)
+[ledger] 0x4f3890 sub_4F3890 -> OK (attempt 1)
+[ledger] 0x4f3b60 sub_4F3B60 -> OK (attempt 1)
+[ledger] 0x4f4ee0 sub_4F4EE0 -> OK (attempt 1)
+[ledger] 0x50e430 HouseClass::processRadar -> NG (attempt 1)
+[ledger] 0x510cf0 sub_510CF0 -> OK (attempt 1)
+[ledger] 0x5111e0 sub_5111E0 -> OK (attempt 1)
+[ledger] 0x513c00 sub_513C00 -> OK (attempt 1)
+[ledger] 0x517a30 sub_517A30 -> OK (attempt 1)
+[ledger] 0x5256d0 sub_5256D0 -> OK (attempt 1)
+[ledger] 0x52b7a0 sub_52B7A0 -> OK (attempt 1)
+[ledger] 0x539300 sub_539300 -> OK (attempt 1)
+[ledger] 0x539540 sub_539540 -> OK (attempt 1)
+[ledger] 0x53ca10 sub_53CA10 -> OK (attempt 1)
+[ledger] 0x53ca50 sub_53CA50 -> NG (attempt 1)
+[ledger] 0x53dde0 sub_53DDE0 -> OK (attempt 1)
+[ledger] 0x53f220 sub_53F220 -> OK (attempt 1)
+[ledger] 0x53f880 sub_53F880 -> OK (attempt 1)
+[ledger] 0x5408d0 sub_5408D0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "ret_norm": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p149\batch_report.json

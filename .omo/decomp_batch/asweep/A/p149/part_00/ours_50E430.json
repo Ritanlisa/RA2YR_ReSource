@@ -1,0 +1,8 @@
+{
+ "symbol": "?processRadar@HouseClass@@QAEDDDD@Z",
+ "sym_key": "HouseClass::processRadar",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "568bf18a4c24088a54240c8b0633c881e1ff00000033c88a4424100bd081e2ff0000000bca81e1ff0000ff890e5ec20c00",
+ "relocs": []
+}
