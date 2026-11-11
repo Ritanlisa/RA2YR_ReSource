@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckCollisionFlags@ParticleClass@@QAGHHPAHH@Z",
+ "sym_key": "ParticleClass::CheckCollisionFlags",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c2408568b74240850518b1652e800000000c78648010000010000005ec21000",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXHPAH@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

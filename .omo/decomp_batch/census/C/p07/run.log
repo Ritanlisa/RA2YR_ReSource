@@ -1,0 +1,88 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e8270 HouseClass::initAngerStruct -> HouseClass
+[conv] 0x537fc0 MultiplayerSyncCommandClass::performAction_199 -> MultiplayerSyncCommandClass
+[conv] 0x538120 SidebarUpCommandClass::performAction_210 -> SidebarUpCommandClass
+[conv] 0x538280 StopCommandClass::performAction_221 -> StopCommandClass
+[conv] 0x5383e0 SetDefenseTabCommandClass::performAction_232 -> SetDefenseTabCommandClass
+[conv] 0x5d7fd0 AbstractClass::checkVisibility -> AbstractClass
+[conv] 0x62d810 ParticleClass::CheckCollisionFlags -> ParticleClass
+[conv] 0x769dc0 _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor -> _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H
+[conv] 0x53ec70 EventClass::GetKeyStateSafe -> EventClass
+[conv] 0x7bd2b0 UnitClass::Audio_Process_7BD2B0 -> UnitClass
+[conv] 0x5e2f60 Dialog::ShowPlayerName -> Dialog
+[conv] 0x473650 Math::InitArcTan -> Math
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=2
+[era] MultiplayerSyncCommandClass rc=2
+[era] SidebarUpCommandClass    rc=2
+[era] StopCommandClass         rc=2
+[era] SetDefenseTabCommandClass rc=2
+[era] AbstractClass            rc=2
+[era] ParticleClass            rc=0
+[era] _VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H rc=2
+[era] EventClass               rc=2
+[era] UnitClass                rc=0
+[era] Dialog                   rc=2
+[era] Math                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x62d810   MISMATCH         ParticleClass::CheckCollisionFlags
+[diff] 0x7bd2b0   MATCH            UnitClass::Audio_Process_7BD2B0
+[diff] 0x473650   MISMATCH         Math::InitArcTan
+[ledger] 0x4e8270 HouseClass::initAngerStruct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537fc0 CreateTeamCommand::performAction_199 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538120 CreateTeamCommand::performAction_210 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538280 CreateTeamCommand::performAction_221 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5383e0 CreateTeamCommand::performAction_232 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d7fd0 AbstractClass::checkVisibility -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62d810 ParticleClass::CheckCollisionFlags -> NG (attempt 1)
+[ledger] 0x769dc0 Map_WorldDominationTour_20::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53ec70 EventClass::GetKeyStateSafe -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd2b0 Audio_Process_7BD2B0 -> OK (attempt 1)
+[ledger] 0x5e2f60 Dialog::ShowPlayerName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40c6a0 0x40c6a0 -> PENDING (attempt 1)
+[ledger] 0x413bd0 0x413bd0 -> PENDING (attempt 1)
+[ledger] 0x435720 0x435720 -> PENDING (attempt 1)
+[ledger] 0x473650 Math::InitArcTan -> NG (attempt 1)
+[ledger] 0x4a1670 0x4a1670 -> PENDING (attempt 1)
+[ledger] 0x4c4e10 0x4c4e10 -> PENDING (attempt 1)
+[ledger] 0x4e1020 0x4e1020 -> PENDING (attempt 1)
+[ledger] 0x5235a0 0x5235a0 -> PENDING (attempt 1)
+[ledger] 0x54e160 0x54e160 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1839,
+ "verdicts": {
+  "MISMATCH": 514,
+  "MATCH": 510,
+  "COMPILE_FAIL": 456,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 347,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 181,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 60,
+  "branch_polarity": 34,
+  "regalloc": 60,
+  "branch_order": 67,
+  "width_mismatch": 6,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 49.8,
+ "match_rate_of_total_pct": 27.7,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p07\batch_report.json

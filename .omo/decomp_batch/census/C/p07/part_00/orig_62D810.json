@@ -1,0 +1,11 @@
+{
+ "addr": "0x62D810",
+ "name": "ParticleClass::CheckCollisionFlags",
+ "size": 32,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x62D810",
+ "bytes_hex": "8b44240c8b4c2408568b742408505156e8fb2adeffc68630010000015ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

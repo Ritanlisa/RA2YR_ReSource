@@ -1,0 +1,274 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 9,
+   "MISMATCH": 2,
+   "MATCH": 1,
+   "NO_CLS": 8
+  },
+  "pathologies": {
+   "codegen_shape": 2
+  },
+  "match_rate_of_decided_pct": 33.3,
+  "match_rate_of_total_pct": 5.0
+ },
+ "results": [
+  {
+   "addr": "0x4e8270",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\include\\HouseClass.hpp(21) : error C2653: 'std' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\in",
+   "first_diff": null,
+   "pathology": null,
+   "name": "HouseClass::initAngerStruct",
+   "emitted": "HouseClass::initAngerStruct",
+   "unit": "HouseClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x537fc0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\MultiplayerSyncCommandClass.cpp(8) : error C2653: 'CommandClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CreateTeamCommand::performAction_199",
+   "emitted": "MultiplayerSyncCommandClass::performAction_199",
+   "unit": "MultiplayerSyncCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x538120",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\SidebarUpCommandClass.cpp(8) : error C2653: 'CommandClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CreateTeamCommand::performAction_210",
+   "emitted": "SidebarUpCommandClass::performAction_210",
+   "unit": "SidebarUpCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x538280",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\StopCommandClass.cpp(8) : error C2653: 'CommandClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CreateTeamCommand::performAction_221",
+   "emitted": "StopCommandClass::performAction_221",
+   "unit": "StopCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5383e0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\SetDefenseTabCommandClass.cpp(8) : error C2653: 'CommandClass' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CreateTeamCommand::performAction_232",
+   "emitted": "SetDefenseTabCommandClass::performAction_232",
+   "unit": "SetDefenseTabCommandClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x5d7fd0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\AbstractClass.cpp(8) : error C2653: 'MultiplayerGameMode' : is not a class or namespace name; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\",
+   "first_diff": null,
+   "pathology": null,
+   "name": "AbstractClass::checkVisibility",
+   "emitted": "AbstractClass::checkVisibility",
+   "unit": "AbstractClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "5/5",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x62d810",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 32B ours 37B",
+   "first_diff": {
+    "orig": "+15 push esi",
+    "ours": "+15 mov edx, dword ptr [esi]"
+   },
+   "pathology": "codegen_shape",
+   "name": "ParticleClass::CheckCollisionFlags",
+   "emitted": "ParticleClass::CheckCollisionFlags",
+   "unit": "ParticleClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 37
+  },
+  {
+   "addr": "0x769dc0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H.cpp(8) : error C2039: '__pad_0' : is not a member of '_VectorCursor_V_TRect_H_V_VectorClass_V_T",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Map_WorldDominationTour_20::Constructor",
+   "emitted": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H::Constructor",
+   "unit": "_VectorCursor_V_TRect_H_V_VectorClass_V_TRect_H",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/4",
+   "rule_violations": 3
+  },
+  {
+   "addr": "0x53ec70",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\include\\EventClass.hpp(20) : error C2146: syntax error : missing ';' before identifier 'GetKeyStateSafe'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\c",
+   "first_diff": null,
+   "pathology": null,
+   "name": "EventClass::GetKeyStateSafe",
+   "emitted": "EventClass::GetKeyStateSafe",
+   "unit": "EventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/8",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7bd2b0",
+   "batch": "censusC",
+   "verdict": "MATCH",
+   "note": "32B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Audio_Process_7BD2B0",
+   "emitted": "UnitClass::Audio_Process_7BD2B0",
+   "unit": "UnitClass",
+   "name_placeholder": false,
+   "cls_src": "proto_this",
+   "sites": "3/4",
+   "rule_violations": 0,
+   "orig_size": 32,
+   "ours_size": 32
+  },
+  {
+   "addr": "0x5e2f60",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\Dialog.cpp(8) : error C2065: 'HWND' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p07\\part_00\\Dialog.cpp(8) : error C21",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Dialog::ShowPlayerName",
+   "emitted": "Dialog::ShowPlayerName",
+   "unit": "Dialog",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x40c6a0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40c6a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x413bd0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x413bd0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x435720",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x435720",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x473650",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 51B",
+   "first_diff": {
+    "orig": "+0 fild dword ptr [0x89e278]",
+    "ours": "+0 sub esp, 8"
+   },
+   "pathology": "codegen_shape",
+   "name": "Math::InitArcTan",
+   "emitted": "Math::InitArcTan",
+   "unit": "Math",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 33,
+   "ours_size": 51
+  },
+  {
+   "addr": "0x4a1670",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4a1670",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c4e10",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c4e10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e1020",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e1020",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5235a0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5235a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x54e160",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x54e160",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}
