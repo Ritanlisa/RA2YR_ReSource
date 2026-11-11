@@ -1,0 +1,83 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p210\part_00
+=== convert (20 addrs) ===
+[conv] 0x50ee50 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::FindItemIndex -> _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50f710 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x50f970 _DynamicVectorClass_PBVTeamTypeClass::FindItemIndex_0 -> _DynamicVectorClass_PBVTeamTypeClass
+[conv] 0x513340 _DynamicVectorClass_PBVUnitTypeClass::Read -> _DynamicVectorClass_PBVUnitTypeClass
+[conv] 0x513710 _DynamicVectorClass_PBVAircraftTypeClass::Read -> _DynamicVectorClass_PBVAircraftTypeClass
+[conv] 0x525400 _DynamicVectorClass_PBVAnimTypeClass::Init -> _DynamicVectorClass_PBVAnimTypeClass
+[conv] 0x538750 DynamicVector::performAction_242 -> DynamicVector
+[conv] 0x53c750 _DynamicVectorClass_PBVAnimClass::FindItem -> _DynamicVectorClass_PBVAnimClass
+[conv] 0x53dcd0 _DynamicVectorClass_PAVIonBlastClass::FindItemIndex -> _DynamicVectorClass_PAVIonBlastClass
+[conv] 0x53f020 ObjectClass::sub_53F020 -> ObjectClass
+[conv] 0x53f050 ObjectClass::sub_53F050 -> ObjectClass
+[conv] 0x53f0b0 ObjectClass::sub_53F0B0 -> ObjectClass
+[conv] 0x54a480 _DynamicVectorClass_PAG::FindItem -> _DynamicVectorClass_PAG
+[conv] 0x54a6e0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::FindItemIndex -> _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54eb20 _DynamicVectorClass_PAUKamikazeControl::FindItem -> _DynamicVectorClass_PAUKamikazeControl
+[conv] 0x551560 _DynamicVectorClass_PAVLaserDrawClass::FindItemIndex -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x5554f0 _DynamicVectorClass_PAVLightSourceClass::FindItemIndex -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555750 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::FindItemIndex_0 -> _DynamicVectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x558470 _DynamicVectorClass_PBG::getItemCount -> _DynamicVectorClass_PBG
+[conv] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> _DynamicVectorClass_USubzoneConnectionStruct
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass rc=2
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] _DynamicVectorClass_PBVTeamTypeClass rc=2
+[era] _DynamicVectorClass_PBVUnitTypeClass rc=2
+[era] _DynamicVectorClass_PBVAircraftTypeClass rc=2
+[era] _DynamicVectorClass_PBVAnimTypeClass rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PBVAnimClass rc=2
+[era] _DynamicVectorClass_PAVIonBlastClass rc=2
+[era] ObjectClass              rc=2
+[era] _DynamicVectorClass_PAG  rc=2
+[era] _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass rc=2
+[era] _DynamicVectorClass_PAUKamikazeControl rc=2
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=2
+[era] _DynamicVectorClass_PAVLightSourceClass rc=2
+[era] _DynamicVectorClass_PAVPendingCellClass_LightSourceClass rc=2
+[era] _DynamicVectorClass_PBG  rc=2
+[era] _DynamicVectorClass_USubzoneConnectionStruct rc=2
+=== diffasm byte-compare ===
+[diff] 0x50f710   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1
+[diff] 0x538750   MISMATCH         DynamicVector::performAction_242
+[ledger] 0x50ee50 _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f710 VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1 -> NG (attempt 1)
+[ledger] 0x50f970 _DynamicVectorClass_PBVTeamTypeClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513340 _DynamicVectorClass_PBVUnitTypeClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513710 _DynamicVectorClass_PBVAircraftTypeClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x525400 _DynamicVectorClass_PBVAnimTypeClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x538750 DynamicVector::performAction_242 -> NG (attempt 1)
+[ledger] 0x53c750 _DynamicVectorClass_PBVAnimClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53dcd0 _DynamicVectorClass_PAVIonBlastClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f020 ObjectClass::sub_53F020 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f050 ObjectClass::sub_53F050 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53f0b0 ObjectClass::sub_53F0B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a480 _DynamicVectorClass_PAG::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a6e0 _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54eb20 _DynamicVectorClass_PAUKamikazeControl::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x551560 _DynamicVectorClass_PAVLaserDrawClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5554f0 _DynamicVectorClass_PAVLightSourceClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555750 _DynamicVectorClass_PAVPendingCellClass_LightSourceClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558470 _DynamicVectorClass_PBG::getItemCount -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5892d0 _DynamicVectorClass_USubzoneConnectionStruct::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p210\batch_report.json
