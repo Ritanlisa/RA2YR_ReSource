@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p234\part_00
+=== convert (20 addrs) ===
+[conv] 0x46b560 BulletClass::PowerDrainProcess -> BulletClass
+[conv] 0x46c750 BulletTypeClass::GetClassIdentifier -> BulletTypeClass
+[conv] 0x46cf80 CampaignClass::ddtor -> CampaignClass
+[conv] 0x485200 CellClass::ddtor -> CellClass
+[conv] 0x4a7c30 DiskLaserClass::ddtor -> DiskLaserClass
+[conv] 0x4b4830 DriveLocomotionClass::ddtor -> DriveLocomotionClass
+[conv] 0x4b6200 DropPodLocomotionClass::ddtor -> DropPodLocomotionClass
+[conv] 0x4c59f0 EMPulseClass::ddtor -> EMPulseClass
+[conv] 0x4ca230 FactoryClass::ddtor -> FactoryClass
+[conv] 0x4cfc80 FlyLocomotionClass::ddtor -> FlyLocomotionClass
+[conv] 0x4d27d0 FoggedObjectClass::GetClassIdentifier -> FoggedObjectClass
+[conv] 0x512640 HouseTypeClass::GetClassIdentifier -> HouseTypeClass
+[conv] 0x523300 InfantryClass::GetClassID -> InfantryClass
+[conv] 0x524c70 InfantryTypeClass::GetClassIdentifier -> InfantryTypeClass
+[conv] 0x543ab0 IsometricTileClass::nullsub_0 -> IsometricTileClass
+[conv] 0x549d90 IsometricTileTypeClass::GetClassIdentifier -> IsometricTileTypeClass
+[conv] 0x54b710 JumpjetLocomotionClass::GetClassIdentifier -> JumpjetLocomotionClass
+[conv] 0x555080 LightSourceClass::ddtor -> LightSourceClass
+[conv] 0x5b1960 MechLocomotionClass::ddtor -> MechLocomotionClass
+[conv] 0x5fec30 OverlayTypeClass::GetClassIdentifier -> OverlayTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BulletClass              rc=2
+[era] BulletTypeClass          rc=2
+[era] CampaignClass            rc=2
+[era] CellClass                rc=0
+[era] DiskLaserClass           rc=2
+[era] DriveLocomotionClass     rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] EMPulseClass             rc=2
+[era] FactoryClass             rc=2
+[era] FlyLocomotionClass       rc=2
+[era] FoggedObjectClass        rc=2
+[era] HouseTypeClass           rc=2
+[era] InfantryClass            rc=2
+[era] InfantryTypeClass        rc=2
+[era] IsometricTileClass       rc=2
+[era] IsometricTileTypeClass   rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] LightSourceClass         rc=2
+[era] MechLocomotionClass      rc=2
+[era] OverlayTypeClass         rc=2
+=== diffasm byte-compare ===
+[diff] 0x485200   MISMATCH         CellClass::ddtor
+[ledger] 0x46b560 BulletClass::PowerDrainProcess -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46c750 BulletTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46cf80 CampaignClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x485200 CellClass::ddtor -> NG (attempt 1)
+[ledger] 0x4a7c30 DiskLaserClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b4830 DriveLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b6200 DropPodLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c59f0 EMPulseClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca230 FactoryClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4cfc80 FlyLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d27d0 FoggedObjectClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512640 HouseTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x523300 InfantryClass::GetClassID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x524c70 InfantryTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x543ab0 IsometricTileClass::nullsub_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x549d90 IsometricTileTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54b710 JumpjetLocomotionClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555080 LightSourceClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b1960 MechLocomotionClass::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fec30 OverlayTypeClass::GetClassIdentifier -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p234\batch_report.json

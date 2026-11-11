@@ -10094,6 +10094,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x46b560": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BulletClass::PowerDrainProcess",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BulletClass::PowerDrainProcess",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x46b5a0": {
   "attempts": 1,
   "clean": true,
@@ -10317,6 +10329,18 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x46c750": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BulletTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BulletTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x46c820": {
   "attempts": 1,
   "clean": true,
@@ -10447,6 +10471,18 @@
   "orig_name": "sub_46CB40",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x46cf80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "CampaignClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "CampaignClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x46d070": {
@@ -12156,6 +12192,18 @@
   "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x485200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 8]",
+  "name": "CellClass::ddtor",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CellClass::ddtor",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x485240": {
   "attempts": 1,
@@ -16144,6 +16192,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a7c30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "DiskLaserClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DiskLaserClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4a7c70": {
   "attempts": 5,
   "first_diff": null,
@@ -16783,6 +16843,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4b4830": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "DriveLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DriveLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4b4870": {
   "attempts": 4,
   "clean": true,
@@ -17180,6 +17252,18 @@
   "orig_name": "JumpjetLocomotionClass::GetSpeedCoordinate",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4b6200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "DropPodLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "DropPodLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4b62c0": {
@@ -18527,6 +18611,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4c59f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "EMPulseClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "EMPulseClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c5aa0": {
   "attempts": 5,
   "first_diff": null,
@@ -19231,6 +19327,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4ca230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FactoryClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FactoryClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ca580": {
   "attempts": 1,
   "clean": true,
@@ -19806,6 +19914,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4cfc80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FlyLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FlyLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4cfe80": {
   "attempts": 1,
   "first_diff": null,
@@ -19986,6 +20106,18 @@
   "name": "FoggedObjectClass::GetObjectSize",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4d27d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "FoggedObjectClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FoggedObjectClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4d28c0": {
   "attempts": 1,
@@ -26729,6 +26861,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x512640": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "HouseTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x512710": {
   "attempts": 5,
   "first_diff": null,
@@ -27506,6 +27650,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x523300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "InfantryClass::GetClassID",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryClass::GetClassID",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x523340": {
   "attempts": 5,
   "first_diff": null,
@@ -27671,6 +27827,18 @@
   "name": "0x5247c0",
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
+ },
+ "0x524c70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "InfantryTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "InfantryTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x524cb0": {
   "attempts": 1,
@@ -30696,6 +30864,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x543ab0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IsometricTileClass::nullsub_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "nullsub_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x543af0": {
   "attempts": 1,
   "clean": true,
@@ -30945,6 +31125,18 @@
   "orig_name": "IsometricTileTypeClass::vt_entry_6C",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x549d90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "IsometricTileTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "IsometricTileTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x54a120": {
@@ -31243,6 +31435,18 @@
   "orig_name": "JumpjetLocomotionClass::SmallStub_54AE50",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x54b710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "JumpjetLocomotionClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x54b8d0": {
@@ -32224,6 +32428,18 @@
   "orig_name": "sub_554620",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x555080": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "LightSourceClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "LightSourceClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5550c0": {
@@ -36277,6 +36493,18 @@
   "orig_name": "JumpjetLocomotionClass::InitMultiFieldArray",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x5b1960": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MechLocomotionClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MechLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5b19d0": {
@@ -43995,6 +44223,18 @@
   "name": "OverlayTypeClass::PowerDrainUpdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5fec30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "OverlayTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "OverlayTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5fed00": {
   "attempts": 4,
