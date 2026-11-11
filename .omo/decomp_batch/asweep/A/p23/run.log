@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p23\part_00
+=== convert (20 addrs) ===
+[conv] 0x71a120 TeleportLocomotionClass::SmallStub_71A120 -> TeleportLocomotionClass
+[conv] 0x72afe0 sub_72AFE0 -> _addr_72
+[conv] 0x72aff0 UI_Draw_72AFF0 -> UI_Draw
+[conv] 0x72b000 sub_72B000 -> _addr_72
+[conv] 0x72b020 sub_72B020 -> _addr_72
+[conv] 0x72b030 UI_Draw_72B030 -> UI_Draw
+[conv] 0x72b040 sub_72B040 -> _addr_72
+[conv] 0x72b050 UI_Helper_72B050 -> UI_Helper
+[conv] 0x72b330 sub_72B330 -> _addr_72
+[conv] 0x72b340 Render_Render_72B340 -> Render_Render
+[conv] 0x72b350 sub_72B350 -> _addr_72
+[conv] 0x72b360 Render_Render_72B360 -> Render_Render
+[conv] 0x72b380 Map_Load_72B380 -> Map_Load
+[conv] 0x72b4f0 sub_72B4F0 -> _addr_72
+[conv] 0x72b500 Render_Render_72B500 -> Render_Render
+[conv] 0x72b510 sub_72B510 -> _addr_72
+[conv] 0x72b520 Render_Render_72B520 -> Render_Render
+[conv] 0x72b9b0 sub_72B9B0 -> _addr_72
+[conv] 0x72b9c0 sub_72B9C0 -> _addr_72
+[conv] 0x72b9d0 UI_Create_72B9D0 -> UI_Create
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TeleportLocomotionClass  rc=0
+[era] _addr_72                 rc=0
+[era] UI_Draw                  rc=0
+[era] UI_Helper                rc=0
+[era] Render_Render            rc=0
+[era] Map_Load                 rc=0
+[era] UI_Create                rc=0
+=== diffasm byte-compare ===
+[diff] 0x71a120   MATCH            TeleportLocomotionClass::SmallStub_71A120
+[diff] 0x72afe0   MATCH            sub_72AFE0
+[diff] 0x72b000   MATCH            sub_72B000
+[diff] 0x72b020   MATCH            sub_72B020
+[diff] 0x72b040   MATCH            sub_72B040
+[diff] 0x72b330   MATCH            sub_72B330
+[diff] 0x72b350   MATCH            sub_72B350
+[diff] 0x72b4f0   MATCH            sub_72B4F0
+[diff] 0x72b510   MATCH            sub_72B510
+[diff] 0x72b9b0   MATCH            sub_72B9B0
+[diff] 0x72b9c0   MATCH            sub_72B9C0
+[diff] 0x72aff0   MATCH            UI_Draw_72AFF0
+[diff] 0x72b030   MATCH            UI_Draw_72B030
+[diff] 0x72b050   MATCH            UI_Helper_72B050
+[diff] 0x72b340   MATCH            Render_Render_72B340
+[diff] 0x72b360   MATCH            Render_Render_72B360
+[diff] 0x72b500   MATCH            Render_Render_72B500
+[diff] 0x72b520   MATCH            Render_Render_72B520
+[diff] 0x72b380   MATCH            Map_Load_72B380
+[diff] 0x72b9d0   MATCH            UI_Create_72B9D0
+[ledger] 0x71a120 TeleportLocomotionClass::SmallStub_71A120 -> OK (attempt 1)
+[ledger] 0x72afe0 sub_72AFE0 -> OK (attempt 1)
+[ledger] 0x72aff0 UI_Draw_72AFF0 -> OK (attempt 1)
+[ledger] 0x72b000 sub_72B000 -> OK (attempt 1)
+[ledger] 0x72b020 sub_72B020 -> OK (attempt 1)
+[ledger] 0x72b030 UI_Draw_72B030 -> OK (attempt 1)
+[ledger] 0x72b040 sub_72B040 -> OK (attempt 1)
+[ledger] 0x72b050 UI_Helper_72B050 -> OK (attempt 1)
+[ledger] 0x72b330 sub_72B330 -> OK (attempt 1)
+[ledger] 0x72b340 Render_Render_72B340 -> OK (attempt 1)
+[ledger] 0x72b350 sub_72B350 -> OK (attempt 1)
+[ledger] 0x72b360 Render_Render_72B360 -> OK (attempt 1)
+[ledger] 0x72b380 Map_Load_72B380 -> OK (attempt 1)
+[ledger] 0x72b4f0 sub_72B4F0 -> OK (attempt 1)
+[ledger] 0x72b500 Render_Render_72B500 -> OK (attempt 1)
+[ledger] 0x72b510 sub_72B510 -> OK (attempt 1)
+[ledger] 0x72b520 Render_Render_72B520 -> OK (attempt 1)
+[ledger] 0x72b9b0 sub_72B9B0 -> OK (attempt 1)
+[ledger] 0x72b9c0 sub_72B9C0 -> OK (attempt 1)
+[ledger] 0x72b9d0 UI_Create_72B9D0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p23\batch_report.json

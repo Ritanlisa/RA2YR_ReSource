@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B520",
+ "name": "Render_Render_72B520",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B520",
+ "bytes_hex": "a1a0fbb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

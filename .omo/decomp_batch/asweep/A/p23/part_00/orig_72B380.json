@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B380",
+ "name": "Map_Load_72B380",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B380",
+ "bytes_hex": "a190fbb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
