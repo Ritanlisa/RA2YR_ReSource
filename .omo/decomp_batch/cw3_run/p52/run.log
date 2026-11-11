@@ -1,0 +1,78 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p52\part_00
+=== convert (20 addrs) ===
+[conv] 0x7bc2b0 ClipLine -> _addr_7B
+[conv] 0x6951f0 FindAndValidateMap -> _addr_69
+[conv] 0x609e20 FilterDialogButtonAction -> _addr_60
+[conv] 0x5f03b0 NullModem::TestConnection -> NullModem
+[conv] 0x6d7560 TacticalClass::RenderIsometric -> TacticalClass
+[conv] 0x6d5c50 TechnoClass::RenderRadarBlips -> TechnoClass
+[conv] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> ObjectClass
+[conv] 0x6ae3f0 Skirmish::Setup_DlgProc -> Skirmish
+[conv] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> ObjectClass
+[conv] 0x70b280 TechnoClass::ComputeAimVector -> TechnoClass
+[conv] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> FlyLocomotionClass
+[conv] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> TechnoClass
+[conv] 0x778f30 LocalizeWOLDateString -> _addr_77
+[conv] 0x6ea0d0 ObjectClass::SelectTeamProductionBuilding -> ObjectClass
+[conv] 0x658330 TabClass::DrawPower -> TabClass
+[conv] 0x778710 ObjectClass::LoadAccountInfoWOL -> ObjectClass
+[conv] 0x6d7c00 TacticalClass::DrawTerrain -> TacticalClass
+[conv] 0x7510d0 Audio::InitFromINI -> Audio
+[conv] 0x5f7a90 VoxelAnimType::LoadSection -> VoxelAnimType
+[conv] 0x4feee0 HouseClass::AIInfantryProduction -> HouseClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=0
+[era] _addr_69                 rc=2
+[era] _addr_60                 rc=2
+[era] NullModem                rc=2
+[era] TacticalClass            rc=2
+[era] TechnoClass              rc=2
+[era] ObjectClass              rc=2
+[era] Skirmish                 rc=2
+[era] FlyLocomotionClass       rc=2
+[era] _addr_77                 rc=2
+[era] TabClass                 rc=2
+[era] Audio                    rc=2
+[era] VoxelAnimType            rc=2
+[era] HouseClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x7bc2b0   MISMATCH         ClipLine
+[ledger] 0x7bc2b0 ClipLine -> NG (attempt 2)
+[ledger] 0x6951f0 FindAndValidateMap -> COMPILE_FAIL (attempt 2)
+[ledger] 0x609e20 FilterDialogButtonAction -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f03b0 NullModem::TestConnection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d7560 TacticalClass::RenderIsometric -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d5c50 TechnoClass::RenderRadarBlips -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ef700 ObjectClass::DeployTeamMembersAtStart -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ae3f0 Skirmish::Setup_DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x64a7b0 ObjectClass::RenderPlayerLatencyBars -> COMPILE_FAIL (attempt 2)
+[ledger] 0x70b280 TechnoClass::ComputeAimVector -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4cfe80 FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6f79a0 TechnoClass::GetBridgeDamageMult -> COMPILE_FAIL (attempt 2)
+[ledger] 0x778f30 LocalizeWOLDateString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ea0d0 ObjectClass::SelectTeamProductionBuilding -> COMPILE_FAIL (attempt 2)
+[ledger] 0x658330 TabClass::DrawPower -> COMPILE_FAIL (attempt 2)
+[ledger] 0x778710 ObjectClass::LoadAccountInfoWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d7c00 TacticalClass::DrawTerrain -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7510d0 Audio::InitFromINI -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f7a90 VoxelAnimType::LoadSection -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4feee0 HouseClass::AIInfantryProduction -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 1,
+  "COMPILE_FAIL": 19
+ },
+ "pathologies": {
+  "frame_sched": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p52\batch_report.json

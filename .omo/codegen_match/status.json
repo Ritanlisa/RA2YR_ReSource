@@ -22700,11 +22700,16 @@
   "this_as_id": false
  },
  "0x4cfe80": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget",
+  "rule_violations": 8,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4d0180": {
   "attempts": 2,
@@ -29136,11 +29141,16 @@
   "this_as_id": false
  },
  "0x4feee0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "HouseClass::AIInfantryProduction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::AIInfantryProduction",
+  "rule_violations": 7,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ff540": {
   "attempts": 1,
@@ -49321,11 +49331,16 @@
   "this_as_id": false
  },
  "0x5f03b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "NullModem::TestConnection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "NullModem::TestConnection",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f1350": {
   "attempts": 2,
@@ -50404,11 +50419,16 @@
   "this_as_id": false
  },
  "0x5f7a90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelAnimType::LoadSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelAnimType::LoadSection",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f96b0": {
   "attempts": 1,
@@ -51442,11 +51462,15 @@
   "this_as_id": false
  },
  "0x609e20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "FilterDialogButtonAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FilterDialogButtonAction",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x60b1d0": {
   "attempts": 2,
@@ -55712,11 +55736,16 @@
   "this_as_id": false
  },
  "0x64a7b0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
-  "name": "RenderPlayerLatencyBars",
+  "name": "ObjectClass::RenderPlayerLatencyBars",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RenderPlayerLatencyBars",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x64ad10": {
   "attempts": 3,
@@ -56184,11 +56213,16 @@
   "this_as_id": false
  },
  "0x658330": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TabClass::DrawPower",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TabClass::DrawPower",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6588c0": {
   "attempts": 1,
@@ -60554,11 +60588,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x6951f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "FindAndValidateMap",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FindAndValidateMap",
+  "rule_violations": 3,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6954c0": {
   "attempts": 1,
@@ -62535,11 +62573,16 @@
   "status": "NG"
  },
  "0x6ae3f0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "Skirmish::Setup_DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Skirmish::Setup_DlgProc",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6aef40": {
   "attempts": 1,
@@ -68219,11 +68262,16 @@
   "this_as_id": false
  },
  "0x6d5c50": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "proto_this",
   "first_diff": null,
-  "name": "RenderRadarBlips",
+  "name": "TechnoClass::RenderRadarBlips",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "RenderRadarBlips",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d5f60": {
   "attempts": 5,
@@ -68306,11 +68354,16 @@
   "this_as_id": false
  },
  "0x6d7560": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TacticalClass::RenderIsometric",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TacticalClass::RenderIsometric",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d7840": {
   "attempts": 1,
@@ -68320,11 +68373,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x6d7c00": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TacticalClass::DrawTerrain",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TacticalClass::DrawTerrain",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d7f20": {
   "attempts": 1,
@@ -70105,11 +70163,16 @@
   "this_as_id": false
  },
  "0x6ea0d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "SelectTeamProductionBuilding",
+  "name": "ObjectClass::SelectTeamProductionBuilding",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SelectTeamProductionBuilding",
+  "rule_violations": 10,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6ea3e0": {
   "attempts": 10,
@@ -70265,11 +70328,16 @@
   "this_as_id": false
  },
  "0x6ef700": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "DeployTeamMembersAtStart",
+  "name": "ObjectClass::DeployTeamMembersAtStart",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DeployTeamMembersAtStart",
+  "rule_violations": 4,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6ef9e0": {
   "attempts": 1,
@@ -70756,11 +70824,16 @@
   "this_as_id": false
  },
  "0x6f79a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::GetBridgeDamageMult",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TechnoClass::GetBridgeDamageMult",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6f7ca0": {
   "attempts": 1,
@@ -71093,11 +71166,16 @@
   "this_as_id": false
  },
  "0x70b280": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::ComputeAimVector",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TechnoClass::ComputeAimVector",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x70c5a0": {
   "attempts": 1,
@@ -78805,11 +78883,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x7510d0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "Audio::InitFromINI",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Audio::InitFromINI",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7515c0": {
   "attempts": 1,
@@ -84331,18 +84414,27 @@
   "this_as_id": false
  },
  "0x778710": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "LoadAccountInfoWOL",
+  "name": "ObjectClass::LoadAccountInfoWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LoadAccountInfoWOL",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x778f30": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "LocalizeWOLDateString",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "LocalizeWOLDateString",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x779dd0": {
   "attempts": 2,
@@ -87140,11 +87232,15 @@
   "this_as_id": false
  },
  "0x7bc2b0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+6 sub esp, 0x64",
   "name": "ClipLine",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "ClipLine",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7bc580": {
   "attempts": 1,
