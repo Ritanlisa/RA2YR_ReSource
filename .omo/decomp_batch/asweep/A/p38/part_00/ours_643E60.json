@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsActive@LoadScreen@@QAEEXZ",
+ "sym_key": "LoadScreen::IsActive",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b516433c085d20f95c0c3",
+ "relocs": []
+}

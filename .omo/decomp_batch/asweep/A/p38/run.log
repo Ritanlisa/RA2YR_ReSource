@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p38\part_00
+=== convert (20 addrs) ===
+[conv] 0x487df0 Cell::IsBridge2 -> Cell
+[conv] 0x488690 GadgetClass::DetachPrimary -> GadgetClass
+[conv] 0x4b4be0 DriveLocomotionClass::SetByteField -> DriveLocomotionClass
+[conv] 0x4b4bf0 DriveLocomotionClass::SetByteField_0 -> DriveLocomotionClass
+[conv] 0x4b6be0 ObjectClass::sub_4B6BE0 -> ObjectClass
+[conv] 0x4c9470 TechnoClass::GetWeaponType -> TechnoClass
+[conv] 0x4e1470 DialogControl::IsHidden -> DialogControl
+[conv] 0x4e7ce0 sub_4E7CE0 -> _addr_4E
+[conv] 0x4e7de0 sub_4E7DE0 -> _addr_4E
+[conv] 0x4f42a0 GScreenClass::Add -> GScreenClass
+[conv] 0x4f42e0 GScreenClass::Get -> GScreenClass
+[conv] 0x539570 sub_539570 -> _addr_53
+[conv] 0x53b400 PsyDom::IsActive -> PsyDom
+[conv] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> SynchronizeMultiplayerGameStart
+[conv] 0x63b090 sub_63B090 -> _addr_63
+[conv] 0x643e60 LoadScreen::IsActive -> LoadScreen
+[conv] 0x65c630 ObjectClass::unknown_libname_28 -> ObjectClass
+[conv] 0x660530 Render_Render_660530 -> Render_Render
+[conv] 0x6a4220 ShipLocomotionClass::SetByteField_2 -> ShipLocomotionClass
+[conv] 0x6abac0 PlayerClass::HasPlayers -> PlayerClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Cell                     rc=0
+[era] GadgetClass              rc=2
+[era] DriveLocomotionClass     rc=0
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] DialogControl            rc=0
+[era] _addr_4E                 rc=2
+[era] GScreenClass             rc=0
+[era] _addr_53                 rc=0
+[era] PsyDom                   rc=0
+[era] SynchronizeMultiplayerGameStart rc=0
+[era] _addr_63                 rc=0
+[era] LoadScreen               rc=0
+[era] Render_Render            rc=0
+[era] ShipLocomotionClass      rc=0
+[era] PlayerClass              rc=0
+=== diffasm byte-compare ===
+[diff] 0x487df0   MATCH            Cell::IsBridge2
+[diff] 0x4b4be0   MISMATCH         DriveLocomotionClass::SetByteField
+[diff] 0x4b4bf0   MISMATCH         DriveLocomotionClass::SetByteField_0
+[diff] 0x4b6be0   MISMATCH         ObjectClass::sub_4B6BE0
+[diff] 0x65c630   MATCH            ObjectClass::unknown_libname_28
+[diff] 0x4c9470   MATCH            TechnoClass::GetWeaponType
+[diff] 0x4e1470   MATCH            DialogControl::IsHidden
+[diff] 0x4e7de0   MISMATCH         sub_4E7DE0
+[diff] 0x4f42a0   MISMATCH         GScreenClass::Add
+[diff] 0x4f42e0   MISMATCH         GScreenClass::Get
+[diff] 0x539570   MATCH            sub_539570
+[diff] 0x53b400   MATCH            PsyDom::IsActive
+[diff] 0x58bc20   MISMATCH         SynchronizeMultiplayerGameStart_Start
+[diff] 0x63b090   MISMATCH         sub_63B090
+[diff] 0x643e60   MATCH            LoadScreen::IsActive
+[diff] 0x660530   MISMATCH         Render_Render_660530
+[diff] 0x6a4220   MISMATCH         ShipLocomotionClass::SetByteField_2
+[diff] 0x6abac0   MATCH            PlayerClass::HasPlayers
+[ledger] 0x487df0 Cell::IsBridge2 -> OK (attempt 1)
+[ledger] 0x488690 GadgetClass::DetachPrimary -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b4be0 DriveLocomotionClass::SetByteField -> NG (attempt 1)
+[ledger] 0x4b4bf0 DriveLocomotionClass::SetByteField_0 -> NG (attempt 1)
+[ledger] 0x4b6be0 ObjectClass::sub_4B6BE0 -> NG (attempt 1)
+[ledger] 0x4c9470 TechnoClass::GetWeaponType -> OK (attempt 1)
+[ledger] 0x4e1470 DialogControl::IsHidden -> OK (attempt 1)
+[ledger] 0x4e7ce0 sub_4E7CE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e7de0 sub_4E7DE0 -> NG (attempt 1)
+[ledger] 0x4f42a0 GScreenClass::Add -> NG (attempt 1)
+[ledger] 0x4f42e0 GScreenClass::Get -> NG (attempt 1)
+[ledger] 0x539570 sub_539570 -> OK (attempt 1)
+[ledger] 0x53b400 PsyDom::IsActive -> OK (attempt 1)
+[ledger] 0x58bc20 SynchronizeMultiplayerGameStart_Start -> NG (attempt 1)
+[ledger] 0x63b090 sub_63B090 -> NG (attempt 1)
+[ledger] 0x643e60 LoadScreen::IsActive -> OK (attempt 1)
+[ledger] 0x65c630 ObjectClass::unknown_libname_28 -> OK (attempt 1)
+[ledger] 0x660530 Render_Render_660530 -> NG (attempt 1)
+[ledger] 0x6a4220 ShipLocomotionClass::SetByteField_2 -> NG (attempt 1)
+[ledger] 0x6abac0 PlayerClass::HasPlayers -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 8,
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 10
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "regalloc": 1,
+  "extern_reloc": 6
+ },
+ "match_rate_of_decided_pct": 44.4,
+ "match_rate_of_total_pct": 40.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p38\batch_report.json

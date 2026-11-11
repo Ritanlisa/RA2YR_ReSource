@@ -1,0 +1,11 @@
+{
+ "addr": "0x53B400",
+ "name": "PsyDom::IsActive",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53B400",
+ "bytes_hex": "a1c0faa90085c00f95c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

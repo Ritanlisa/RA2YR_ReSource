@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetByteField_2@ShipLocomotionClass@@QAGHH@Z",
+ "sym_key": "ShipLocomotionClass::SetByteField_2",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b442404c64061018b00c20800",
+ "relocs": []
+}

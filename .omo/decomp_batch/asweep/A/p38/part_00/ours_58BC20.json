@@ -1,0 +1,15 @@
+{
+ "symbol": "?SynchronizeMultiplayerGameStart_Start@@YAXXZ",
+ "sym_key": "Unnamed::SynchronizeMultiplayerGameStart_Start",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "c7050000000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABED0C@@3IA",
+   "sym_key": "DataGlobal_ABED0C"
+  }
+ ]
+}

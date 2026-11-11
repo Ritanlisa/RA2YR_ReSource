@@ -1,0 +1,15 @@
+{
+ "symbol": "?Render_Render_660530@@YA_NXZ",
+ "sym_key": "Unnamed::Render_Render_660530",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b0d0000000033c085c90f94c0c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_TriggerEventState@@3IA",
+   "sym_key": "g_TriggerEventState"
+  }
+ ]
+}

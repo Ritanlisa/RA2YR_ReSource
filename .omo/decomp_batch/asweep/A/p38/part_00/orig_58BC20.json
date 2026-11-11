@@ -1,0 +1,11 @@
+{
+ "addr": "0x58BC20",
+ "name": "SynchronizeMultiplayerGameStart_Start",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x58BC20",
+ "bytes_hex": "c7050cedab0000000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

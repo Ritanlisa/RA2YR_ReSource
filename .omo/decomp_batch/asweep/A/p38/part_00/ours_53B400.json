@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsActive@PsyDom@@QAE_NXZ",
+ "sym_key": "PsyDom::IsActive",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c00f95c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?PsyDom_Status@@3IA",
+   "sym_key": "PsyDom_Status"
+  }
+ ]
+}

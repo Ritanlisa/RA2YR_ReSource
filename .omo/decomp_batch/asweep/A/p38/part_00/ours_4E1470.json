@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsHidden@DialogControl@@QAEEXZ",
+ "sym_key": "DialogControl::IsHidden",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8a511e33c084d20f94c0c3",
+ "relocs": []
+}

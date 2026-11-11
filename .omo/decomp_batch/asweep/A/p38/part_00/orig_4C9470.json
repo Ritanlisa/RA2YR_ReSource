@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C9470",
+ "name": "TechnoClass::GetWeaponType",
+ "size": 11,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C9470",
+ "bytes_hex": "8b4424048b098908c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
