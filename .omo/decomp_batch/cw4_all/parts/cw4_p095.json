@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5afb80",
+  "name": "TransformMatrix3x4Point",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 120,
+  "part": "p261",
+  "unit": "_addr_5A",
+  "emitted": "TransformMatrix3x4Point",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 fld dword ptr [edx + 0x18]"
+  },
+  "ours_size": 92
+ },
+ {
+  "addr": "0x620870",
+  "name": "sub_620870",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 121,
+  "part": "p261",
+  "unit": "_addr_62",
+  "emitted": "sub_620870",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x7d15a0",
+  "name": "_strlen",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 123,
+  "part": "p261",
+  "unit": "_addr_7D",
+  "emitted": "_strlen",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 114
+ },
+ {
+  "addr": "0x4c6860",
+  "name": "ScriptAction::InitActionFields",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 125,
+  "part": "p261",
+  "unit": "ScriptAction",
+  "emitted": "ScriptAction::InitActionFields",
+  "first_diff": {
+   "orig": "+8 jl 0x4c68ca",
+   "ours": "+8 jge 0x1d"
+  },
+  "ours_size": 100
+ },
+ {
+  "addr": "0x5c6370",
+  "name": "DecodeLengthLCW",
+  "family": "FRAME",
+  "path": "ret_norm",
+  "size": 126,
+  "part": "p261",
+  "unit": "_addr_5C",
+  "emitted": "DecodeLengthLCW",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [edx]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 164
+ },
+ {
+  "addr": "0x5f6790",
+  "name": "Network_Process_5F6790",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 127,
+  "part": "p261",
+  "unit": "Network_Process",
+  "emitted": "Network_Process_5F6790",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 93
+ },
+ {
+  "addr": "0x5ae8f0",
+  "name": "Matrix3x3::Multiply",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 129,
+  "part": "p261",
+  "unit": "Matrix3x3",
+  "emitted": "Matrix3x3::Multiply",
+  "first_diff": {
+   "orig": "+0 push ecx",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 143
+ },
+ {
+  "addr": "0x631e50",
+  "name": "TacticalClass::InterpolateColor",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 130,
+  "part": "p261",
+  "unit": "TacticalClass",
+  "emitted": "TacticalClass::InterpolateColor",
+  "first_diff": {
+   "orig": "+13 add esi, eax",
+   "ours": "+13 add eax, esi"
+  },
+  "ours_size": 128
+ },
+ {
+  "addr": "0x494920",
+  "name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "cc_mismatch",
+  "size": 131,
+  "part": "p261",
+  "unit": "_BlitTranslucent50NonzeroAlpha_G",
+  "emitted": "_BlitTranslucent50NonzeroAlpha_G::Blit_Alpha_Lucent50",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+   "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+  },
+  "ours_size": 131
+ },
+ {
+  "addr": "0x494a40",
+  "name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "cc_mismatch",
+  "size": 131,
+  "part": "p261",
+  "unit": "_BlitTranslucent50ZeroAlpha_G",
+  "emitted": "_BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+   "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+  },
+  "ours_size": 131
+ },
+ {
+  "addr": "0x6d1fe0",
+  "name": "TacticalClass::AdjustForZShapeMove",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 132,
+  "part": "p261",
+  "unit": "TacticalClass",
+  "emitted": "TacticalClass::AdjustForZShapeMove",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 117
+ },
+ {
+  "addr": "0x7bc580",
+  "name": "sub_7BC580",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 132,
+  "part": "p262",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_7BC580",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 sub esp, 0xc"
+  },
+  "ours_size": 146
+ },
+ {
+  "addr": "0x4960a0",
+  "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Xlat",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 133,
+  "part": "p262",
+  "unit": "_RLEBlitTransXlat_G",
+  "emitted": "_RLEBlitTransXlat_G::Blit_RLE_Xlat",
+  "first_diff": {
+   "orig": "+10 mov esi, dword ptr [esp + 0x10]",
+   "ours": "+10 test edx, edx"
+  },
+  "ours_size": 137
+ },
+ {
+  "addr": "0x758e10",
+  "name": "sub_758E10",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 133,
+  "part": "p262",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_758E10",
+  "first_diff": {
+   "orig": "+0 sub esp, 8",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 147
+ },
+ {
+  "addr": "0x53d960",
+  "name": "GenerateLightningStormGlow_Helper",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 133,
+  "part": "p262",
+  "unit": "GenerateLightningStormGlow",
+  "emitted": "GenerateLightningStormGlow_Helper",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 push ebx"
+  },
+  "ours_size": 141
+ },
+ {
+  "addr": "0x4ca1a0",
+  "name": "ProductionQueue::CompleteOrCancel",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 134,
+  "part": "p262",
+  "unit": "ProductionQueue",
+  "emitted": "ProductionQueue::CompleteOrCancel",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 61
+ },
+ {
+  "addr": "0x517360",
+  "name": "sub_517360",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 134,
+  "part": "p262",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_517360",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 sub esp, 8"
+  },
+  "ours_size": 200
+ },
+ {
+  "addr": "0x6612c0",
+  "name": "Color::Lerp",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 134,
+  "part": "p262",
+  "unit": "Color",
+  "emitted": "Color::Lerp",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 165
+ },
+ {
+  "addr": "0x557570",
+  "name": "ListClass::Set_Position",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 136,
+  "part": "p262",
+  "unit": "ListClass",
+  "emitted": "ListClass::Set_Position",
+  "first_diff": {
+   "orig": "+108 jle 0x5575eb",
+   "ours": "+108 jg 0x7b"
+  },
+  "ours_size": 136
+ },
+ {
+  "addr": "0x6d62e0",
+  "name": "IsoCoord::ToScreenOffset",
+  "family": "IMM",
+  "path": "const_fold",
+  "size": 137,
+  "part": "p262",
+  "unit": "IsoCoord",
+  "emitted": "IsoCoord::ToScreenOffset",
+  "first_diff": {
+   "orig": "+1 mov esi, dword ptr [esp + 8]",
+   "ours": "+1 mov esi, dword ptr [esp + 0xc]"
+  },
+  "ours_size": 137
+ }
+]

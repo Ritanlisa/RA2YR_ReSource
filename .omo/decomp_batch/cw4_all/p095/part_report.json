@@ -1,0 +1,646 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 10,
+   "NO_HIT": 10
+  },
+  "by_family_total": {
+   "FRAME": 10,
+   "STRUCTURAL": 6,
+   "JCC_LAYOUT_PLUS": 2,
+   "JCC_INVERT": 1,
+   "IMM": 1
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x5afb80",
+   "name": "TransformMatrix3x4Point",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "TransformMatrix3x4Point",
+   "unit": "_addr_5A",
+   "head": "float * __fastcall TransformMatrix3x4Point(float * p0, float * p1, float * p2)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 fld dword ptr [edx + 0x18]"
+   }
+  },
+  {
+   "addr": "0x620870",
+   "name": "sub_620870",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_620870",
+   "unit": "_addr_62",
+   "head": "int __fastcall sub_620870(unsigned short p0)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 push esi"
+   }
+  },
+  {
+   "addr": "0x7d15a0",
+   "name": "_strlen",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_LOOP_DO2WHILE",
+     "kind": "loop",
+     "desc": "do{B}while(C) -> while(C){B}",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov ecx, dword ptr [esp + 4]",
+      "ours": "+0 push ebx"
+     },
+     "ours_size": 100
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "_strlen",
+   "unit": "_addr_7D",
+   "head": "size_t __cdecl _strlen(const char * p0)",
+   "baseline_first_diff": {
+    "orig": "+0 mov ecx, dword ptr [esp + 4]",
+    "ours": "+0 push ebx"
+   },
+   "variants_generated": [
+    "V_LOOP_DO2WHILE"
+   ]
+  },
+  {
+   "addr": "0x4c6860",
+   "name": "ScriptAction::InitActionFields",
+   "family": "STRUCTURAL",
+   "path": "branch_order",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `result` inlined at use",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+8 jl 0x4c68ca",
+      "ours": "+8 jge 0x1d"
+     },
+     "ours_size": 100
+    },
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p0 < 0)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+8 jl 0x4c68ca",
+      "ours": "+8 jge 0x1d"
+     },
+     "ours_size": 100
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "ScriptAction",
+   "method": "InitActionFields",
+   "unit": "ScriptAction",
+   "head": "char * ScriptAction::InitActionFields(int p0, int p1, char p2, char p3, int p4, char p5, int p6, char p7, int p8, char p9)",
+   "baseline_first_diff": {
+    "orig": "+8 jl 0x4c68ca",
+    "ours": "+8 jge 0x1d"
+   },
+   "variants_generated": [
+    "V_ORD_INLINE_TEMP",
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x5c6370",
+   "name": "DecodeLengthLCW",
+   "family": "FRAME",
+   "path": "ret_norm",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_DROP_NARROW",
+     "kind": "micro",
+     "desc": "return (char/short/bool)(X) -> return X",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov al, byte ptr [edx]",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 164
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "DecodeLengthLCW",
+   "unit": "_addr_5C",
+   "head": "char __fastcall DecodeLengthLCW(int p0, unsigned char * p1, int p2)",
+   "baseline_first_diff": {
+    "orig": "+0 mov al, byte ptr [edx]",
+    "ours": "+0 push ecx"
+   },
+   "variants_generated": [
+    "V_MICRO_DROP_NARROW"
+   ]
+  },
+  {
+   "addr": "0x5f6790",
+   "name": "Network_Process_5F6790",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "Network_Process_5F6790",
+   "unit": "Network_Process",
+   "head": "int * __fastcall Network_Process_5F6790(int * p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x5ae8f0",
+   "name": "Matrix3x3::Multiply",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "Matrix3x3",
+   "method": "Multiply",
+   "unit": "Matrix3x3",
+   "head": "float * Matrix3x3::Multiply(float * p0)",
+   "baseline_first_diff": {
+    "orig": "+0 push ecx",
+    "ours": "+0 sub esp, 8"
+   }
+  },
+  {
+   "addr": "0x631e50",
+   "name": "TacticalClass::InterpolateColor",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+13 add esi, eax",
+      "ours": "+13 add eax, esi"
+     },
+     "ours_size": 128
+    },
+    {
+     "vid": "V_ORD_SWAPN",
+     "kind": "order",
+     "desc": "swap last adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.05,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+13 add esi, eax",
+      "ours": "+13 add eax, esi"
+     },
+     "ours_size": 128
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `v4` inlined at use",
+     "checker": "clean",
+     "seconds": 0.06,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+13 add esi, eax",
+      "ours": "+13 add eax, esi"
+     },
+     "ours_size": 128
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "TacticalClass",
+   "method": "InterpolateColor",
+   "unit": "TacticalClass",
+   "head": "int TacticalClass::InterpolateColor(int p0)",
+   "baseline_first_diff": {
+    "orig": "+13 add esi, eax",
+    "ours": "+13 add eax, esi"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_SWAPN",
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x494920",
+   "name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50",
+   "family": "JCC_LAYOUT_PLUS",
+   "path": "cc_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p2 > 0)",
+     "checker": "clean",
+     "seconds": 0.1,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+      "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+     },
+     "ours_size": 131
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_BlitTranslucent50NonzeroAlpha_G",
+   "method": "Blit_Alpha_Lucent50",
+   "unit": "_BlitTranslucent50NonzeroAlpha_G",
+   "head": "unsigned short * _BlitTranslucent50NonzeroAlpha_G::Blit_Alpha_Lucent50(unsigned short * p0, unsigned char * p1, int p2, int p3, int p4, unsigned short * p5, int p6, int p7)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x494a40",
+   "name": "BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0",
+   "family": "JCC_LAYOUT_PLUS",
+   "path": "cc_mismatch",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p2 > 0)",
+     "checker": "clean",
+     "seconds": 0.09,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+      "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+     },
+     "ours_size": 131
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_BlitTranslucent50ZeroAlpha_G",
+   "method": "Blit_Alpha_Lucent50_0",
+   "unit": "_BlitTranslucent50ZeroAlpha_G",
+   "head": "unsigned short * _BlitTranslucent50ZeroAlpha_G::Blit_Alpha_Lucent50_0(unsigned short * p0, unsigned char * p1, int p2, int p3, int p4, unsigned short * p5, int p6, int p7)",
+   "baseline_first_diff": {
+    "orig": "+0 mov edx, dword ptr [esp + 0xc]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x18]"
+   },
+   "variants_generated": [
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x6d1fe0",
+   "name": "TacticalClass::AdjustForZShapeMove",
+   "family": "FRAME",
+   "path": "frame_sched",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "TacticalClass",
+   "method": "AdjustForZShapeMove",
+   "unit": "TacticalClass",
+   "head": "int * __stdcall TacticalClass::AdjustForZShapeMove(int * p0, int * p1)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 mov eax, dword ptr [esp + 0xc]"
+   }
+  },
+  {
+   "addr": "0x7bc580",
+   "name": "sub_7BC580",
+   "family": "FRAME",
+   "path": "frame_sched",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_7BC580",
+   "unit": "ObjectClass",
+   "head": "int ObjectClass::sub_7BC580(double p1, double p2)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 sub esp, 0xc"
+   }
+  },
+  {
+   "addr": "0x4960a0",
+   "name": "BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Xlat",
+   "family": "STRUCTURAL",
+   "path": "codegen_shape",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_LOOP_WHILE2DO",
+     "kind": "loop",
+     "desc": "while(C){B} -> do{B}while(C)",
+     "checker": "clean",
+     "seconds": 0.11,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+10 mov esi, dword ptr [esp + 0x10]",
+      "ours": "+10 test edx, edx"
+     },
+     "ours_size": 133
+    },
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (p3 <= 0)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+10 mov esi, dword ptr [esp + 0x10]",
+      "ours": "+10 test edx, edx"
+     },
+     "ours_size": 137
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "_RLEBlitTransXlat_G",
+   "method": "Blit_RLE_Xlat",
+   "unit": "_RLEBlitTransXlat_G",
+   "head": "int _RLEBlitTransXlat_G::Blit_RLE_Xlat(int p0, unsigned char * p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9)",
+   "baseline_first_diff": {
+    "orig": "+10 mov esi, dword ptr [esp + 0x10]",
+    "ours": "+10 test edx, edx"
+   },
+   "variants_generated": [
+    "V_LOOP_WHILE2DO",
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x758e10",
+   "name": "sub_758E10",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_758E10",
+   "unit": "ObjectClass",
+   "head": "char ObjectClass::sub_758E10(int p0, int p1, int p2, int p3)",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 8",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x53d960",
+   "name": "GenerateLightningStormGlow_Helper",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_IF_ELSE_FROM_GUARD",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(C){A}else{return B}",
+     "checker": "clean",
+     "seconds": 0.13,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 push ebx"
+     },
+     "ours_size": 141
+    },
+    {
+     "vid": "V_IF_GUARD_FROM_TAIL",
+     "kind": "if_else",
+     "desc": "if(C){A} return B -> if(!C){return B} A",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 push ebx"
+     },
+     "ours_size": 141
+    },
+    {
+     "vid": "V_MICRO_SIGNED_CMP",
+     "kind": "micro",
+     "desc": "compare in signed int terms (v4 > v3)",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push esi",
+      "ours": "+0 push ebx"
+     },
+     "ours_size": 141
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "GenerateLightningStormGlow_Helper",
+   "unit": "GenerateLightningStormGlow",
+   "head": "int __stdcall GenerateLightningStormGlow_Helper(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+0 push esi",
+    "ours": "+0 push ebx"
+   },
+   "variants_generated": [
+    "V_IF_ELSE_FROM_GUARD",
+    "V_IF_GUARD_FROM_TAIL",
+    "V_MICRO_SIGNED_CMP"
+   ]
+  },
+  {
+   "addr": "0x4ca1a0",
+   "name": "ProductionQueue::CompleteOrCancel",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ProductionQueue",
+   "method": "CompleteOrCancel",
+   "unit": "ProductionQueue",
+   "head": "char ProductionQueue::CompleteOrCancel()",
+   "baseline_first_diff": {
+    "orig": "+0 sub esp, 0xc",
+    "ours": "+0 push ecx"
+   }
+  },
+  {
+   "addr": "0x517360",
+   "name": "sub_517360",
+   "family": "FRAME",
+   "path": "codegen_shape",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ObjectClass",
+   "method": "sub_517360",
+   "unit": "ObjectClass",
+   "head": "unsigned char ObjectClass::sub_517360(unsigned char p1, unsigned char * p2)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 sub esp, 8"
+   }
+  },
+  {
+   "addr": "0x6612c0",
+   "name": "Color::Lerp",
+   "family": "STRUCTURAL",
+   "path": "regalloc",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_ORD_SWAP0",
+     "kind": "order",
+     "desc": "swap first adjacent simple statements",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ebx",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 152
+    },
+    {
+     "vid": "V_ORD_INLINE_TEMP",
+     "kind": "order",
+     "desc": "single-use temp `v4` inlined at use",
+     "checker": "clean",
+     "seconds": 0.07,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+0 push ebx",
+      "ours": "+0 push ecx"
+     },
+     "ours_size": 165
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "Color",
+   "method": "Lerp",
+   "unit": "Color",
+   "head": "unsigned char Color::Lerp(unsigned char p0, unsigned char * p1)",
+   "baseline_first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push ecx"
+   },
+   "variants_generated": [
+    "V_ORD_SWAP0",
+    "V_ORD_INLINE_TEMP"
+   ]
+  },
+  {
+   "addr": "0x557570",
+   "name": "ListClass::Set_Position",
+   "family": "JCC_INVERT",
+   "path": "branch_order",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": "ListClass",
+   "method": "Set_Position",
+   "unit": "ListClass",
+   "head": "int ListClass::Set_Position(int p0, int p1)",
+   "baseline_first_diff": {
+    "orig": "+108 jle 0x5575eb",
+    "ours": "+108 jg 0x7b"
+   }
+  },
+  {
+   "addr": "0x6d62e0",
+   "name": "IsoCoord::ToScreenOffset",
+   "family": "IMM",
+   "path": "const_fold",
+   "verdict": "NO_HIT",
+   "accepted": null,
+   "variants": [
+    {
+     "vid": "V_CONST_MUL_COMMUTE",
+     "kind": "const",
+     "desc": "literal * x -> x * literal",
+     "checker": "clean",
+     "seconds": 0.08,
+     "result": "MISMATCH",
+     "first_diff": {
+      "orig": "+1 mov esi, dword ptr [esp + 8]",
+      "ours": "+1 mov esi, dword ptr [esp + 0xc]"
+     },
+     "ours_size": 137
+    }
+   ],
+   "baseline": "MISMATCH",
+   "cls": "IsoCoord",
+   "method": "ToScreenOffset",
+   "unit": "IsoCoord",
+   "head": "int __stdcall IsoCoord::ToScreenOffset(int p0, int p1, int * p2, int * p3)",
+   "baseline_first_diff": {
+    "orig": "+1 mov esi, dword ptr [esp + 8]",
+    "ours": "+1 mov esi, dword ptr [esp + 0xc]"
+   },
+   "variants_generated": [
+    "V_CONST_MUL_COMMUTE"
+   ]
+  }
+ ]
+}

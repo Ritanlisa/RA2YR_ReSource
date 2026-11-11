@@ -93,3 +93,4 @@
 {"part": 92, "n": 20, "seconds": 2.1, "summary": {"verdicts": {"NO_HIT": 15, "NO_VARIANT": 5}, "by_family_total": {"STRUCTURAL": 12, "FRAME": 6, "TOKEN_MISMATCH": 1, "WIDTH": 1}, "by_family_hits": {}}}
 {"part": 93, "n": 20, "seconds": 2.1, "summary": {"verdicts": {"NO_HIT": 13, "NO_VARIANT": 7}, "by_family_total": {"STRUCTURAL": 15, "FRAME": 5}, "by_family_hits": {}}}
 {"part": 94, "n": 20, "seconds": 1.6, "summary": {"verdicts": {"NO_VARIANT": 12, "NO_HIT": 8}, "by_family_total": {"STRUCTURAL": 15, "FRAME": 5}, "by_family_hits": {}}}
+{"part": 95, "n": 20, "seconds": 1.9, "summary": {"verdicts": {"NO_VARIANT": 10, "NO_HIT": 10}, "by_family_total": {"FRAME": 10, "STRUCTURAL": 6, "JCC_LAYOUT_PLUS": 2, "JCC_INVERT": 1, "IMM": 1}, "by_family_hits": {}}}
