@@ -1,0 +1,63 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x766d30 VectorClass::ddtor -> VectorClass
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VectorClass              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x766d30 Conflict_WorldDominationTour_12::ddtor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x406920 0x406920 -> PENDING (attempt 1)
+[ledger] 0x410610 0x410610 -> PENDING (attempt 1)
+[ledger] 0x42e430 0x42e430 -> PENDING (attempt 1)
+[ledger] 0x46d120 0x46d120 -> PENDING (attempt 1)
+[ledger] 0x49b180 0x49b180 -> PENDING (attempt 1)
+[ledger] 0x4ba3b0 0x4ba3b0 -> PENDING (attempt 1)
+[ledger] 0x4cc790 0x4cc790 -> PENDING (attempt 1)
+[ledger] 0x511200 0x511200 -> PENDING (attempt 1)
+[ledger] 0x543c60 0x543c60 -> PENDING (attempt 1)
+[ledger] 0x55a4d0 0x55a4d0 -> PENDING (attempt 1)
+[ledger] 0x5b1f00 0x5b1f00 -> PENDING (attempt 1)
+[ledger] 0x5c91f0 0x5c91f0 -> PENDING (attempt 1)
+[ledger] 0x5e2430 0x5e2430 -> PENDING (attempt 1)
+[ledger] 0x62b3d0 0x62b3d0 -> PENDING (attempt 1)
+[ledger] 0x658e80 0x658e80 -> PENDING (attempt 1)
+[ledger] 0x6911b0 0x6911b0 -> PENDING (attempt 1)
+[ledger] 0x6b4840 0x6b4840 -> PENDING (attempt 1)
+[ledger] 0x6d1830 0x6d1830 -> PENDING (attempt 1)
+[ledger] 0x71a1c0 0x71a1c0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1939,
+ "verdicts": {
+  "MISMATCH": 534,
+  "MATCH": 512,
+  "COMPILE_FAIL": 475,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 406,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 183,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 61,
+  "branch_polarity": 34,
+  "regalloc": 76,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 48.9,
+ "match_rate_of_total_pct": 26.4,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p12\batch_report.json

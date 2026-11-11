@@ -1,0 +1,181 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 1,
+   "NO_CLS": 19
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x766d30",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p12\\part_00\\VectorClass.cpp(13) : error C2664: 'int (unsigned int,int)' : cannot convert parameter 1 from 'int (__stdcall ***  )(unsigned int,int)' to 'uns",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Conflict_WorldDominationTour_12::ddtor",
+   "emitted": "VectorClass::ddtor",
+   "unit": "VectorClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "6/6",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x406920",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x406920",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x410610",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x410610",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x42e430",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x42e430",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x46d120",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x46d120",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x49b180",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x49b180",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4ba3b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4ba3b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4cc790",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4cc790",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x511200",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x511200",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x543c60",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x543c60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x55a4d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x55a4d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5b1f00",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5b1f00",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5c91f0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5c91f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5e2430",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5e2430",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x62b3d0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x62b3d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x658e80",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x658e80",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6911b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6911b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6b4840",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6b4840",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6d1830",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6d1830",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x71a1c0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x71a1c0",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}
