@@ -33,7 +33,7 @@
    "addr": "0x448070",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\AnimClass.cpp(73) : error C2440: '=' : cannot convert from 'const int' to 'char *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_0",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p01\\part_00\\AnimClass.cpp(76) : error C2664: 'ChooseHouseEnemy' : cannot convert parameter 1 from 'class AnimClass *const ' to 'int'",
    "first_diff": null,
    "pathology": null,
    "name": "AnimClass::updateAnimation",
@@ -41,8 +41,8 @@
    "unit": "AnimClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "11/11",
-   "rule_violations": 11
+   "sites": "10/10",
+   "rule_violations": 14
   },
   {
    "addr": "0x448160",

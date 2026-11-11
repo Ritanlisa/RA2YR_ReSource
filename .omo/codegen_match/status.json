@@ -763,7 +763,7 @@
   "status": "NG"
  },
  "0x4371d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Helper::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -812,21 +812,21 @@
   "status": "OK"
  },
  "0x448070": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "AnimClass::updateAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x448160": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "FootClass::ProcessPrimarySelect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x44d7d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingClass::GetTargetFacing",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -840,14 +840,14 @@
   "status": "NG"
  },
  "0x44f640": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "BuildingClass::GetFactoryPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x451330": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -861,14 +861,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x452360": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingClass::PowerOff",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x455c20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ObjectClass::GetScreenCoords",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -959,7 +959,7 @@
   "status": "OK"
  },
  "0x465e70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 push ecx",
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
@@ -973,7 +973,7 @@
   "status": "NG"
  },
  "0x468430": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BulletClass::LoseTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1064,7 +1064,7 @@
   "status": "OK"
  },
  "0x472160": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CaptureManagerClass::DrawLinks",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1113,14 +1113,14 @@
   "status": "NG"
  },
  "0x474c70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+38 push 0x8189b0",
   "name": "INIEntry::ReadColor",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
  "0x475150": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BulletTypeClass::ReadTrajectoryFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1134,21 +1134,21 @@
   "status": "NG"
  },
  "0x4756f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseTypeClass::loadCountryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475b70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "WeaponTypeClass::ReadTrajectoryData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x475c70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+12 mov dword ptr [esp + 4], ecx",
   "name": "WeaponTypeClass::ReadVeteranData",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -1162,7 +1162,7 @@
   "status": "NG"
  },
  "0x476240": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+12 push ebp",
   "name": "ObjectTypeClass::ReadTypeListINI",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -1176,7 +1176,7 @@
   "status": "NG"
  },
  "0x476a20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+12 push esi",
   "name": "INIClass::WriteSuperWeaponList",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -1197,14 +1197,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x478340": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+1 push ebp",
   "name": "FilePipe_38::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4784f0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+1 push ebp",
   "name": "ParticleTypeClass::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
