@@ -1,0 +1,8 @@
+{
+ "symbol": "?CalcPosition@Slider@@QAGHHHH@Z",
+ "sym_key": "Slider::CalcPosition",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408b867666666f7e9c1fa038bc256c1e81f03d08bc18bf2b91400000099f7f90354241083fa147d0c33c985d20f9cc14923caeb05b9130000008b5424148d04165e85c07c0e83f8137e098d817c010000c2100033d285c00f9cc24a23c28d04808d0481c21000",
+ "relocs": []
+}

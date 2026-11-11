@@ -1,0 +1,21 @@
+{
+ "symbol": "?TransformPoint@Matrix3x3@@QAEPAMPAM0@Z",
+ "sym_key": "Matrix3x3::TransformPoint",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bf18b4c2408d94110d808d94118d84808dec1d94114d84804dec1d94120d808d94124d84804dec1d94128d84808d94108d84808d94104d84804dec1d901d808dec1d91ed9cae800000000d9c9d8c1d9c9ddd8894604e8000000008946088bc65ec20800",
+ "relocs": [
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 92,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

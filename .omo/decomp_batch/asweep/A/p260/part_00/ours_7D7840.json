@@ -1,0 +1,33 @@
+{
+ "symbol": "?__aullrem@@YAI_K_J@Z",
+ "sym_key": "Unnamed::__aullrem",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "51558b6c241885ed560f84890000008b7424188b44241053578b7c241c8bdd8acb80e101884c2410b9010000008b54241081e2ff000000c1e21fd1ee0bf28bd7d1ebe80000000085db8bfa75d253565750e8000000008bf0f76424200faff58bfa8bd85756e80000000083c40885c00f95c003fe84c0750e3b7c241c720e77063b5c241876062b5c24201bfd8b4424185f2bc35b5e5d59c38b4424148b74241833d28b4c2410f7f66a00565251e8000000005e5d59c3",
+ "relocs": [
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "__aullshr",
+   "sym_key": "_aullshr"
+  },
+  {
+   "off": 82,
+   "type": "REL32",
+   "sym": "__aulldiv",
+   "sym_key": "_aulldiv"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?__CFADD__@@YAHHHZZ",
+   "sym_key": "__CFADD__"
+  },
+  {
+   "off": 174,
+   "type": "REL32",
+   "sym": "__aullrem",
+   "sym_key": "_aullrem"
+  }
+ ]
+}

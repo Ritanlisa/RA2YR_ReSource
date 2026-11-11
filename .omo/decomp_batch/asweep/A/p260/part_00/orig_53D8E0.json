@@ -1,0 +1,11 @@
+{
+ "addr": "0x53D8E0",
+ "name": "ComputeSpiralOffset",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53D8E0",
+ "bytes_hex": "4a5683fa088bc1be010000007c0fb9080000002bd183c108463bd17df68d4c36013bd17d092bd689308950045ec38d0cb5010000003bd18d0c767d092bca89088970045ec38d4c09013bd17d108bce8d34b6f7d92bf289088970045ec38d0cf5000000002bce2bd1f7de89108970045ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

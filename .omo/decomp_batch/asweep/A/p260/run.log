@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p260\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dc7b0 _VectorClass_UDirtyAreaStruct::GetSize -> _VectorClass_UDirtyAreaStruct
+[conv] 0x724a30 TechnoClass::sub_724A30 -> TechnoClass
+[conv] 0x4e4f50 __cfltcvt_init -> _addr_4E
+[conv] 0x4afcc0 JumpjetLocomotionClass::GetRenderCoordinate -> JumpjetLocomotionClass
+[conv] 0x514d10 JumpjetLocomotionClass::HasScoreDisplayChanged_514D10 -> JumpjetLocomotionClass
+[conv] 0x5af4d0 Matrix3x3::TransformPoint -> Matrix3x3
+[conv] 0x69f3d0 JumpjetLocomotionClass::GetRenderCoordinate_1 -> JumpjetLocomotionClass
+[conv] 0x75ac00 JumpjetLocomotionClass::GetRenderCoordinate_2 -> JumpjetLocomotionClass
+[conv] 0x53d8e0 ComputeSpiralOffset -> _addr_53
+[conv] 0x4865d0 Cell::IsGroundTypeRange -> Cell
+[conv] 0x6dc5e0 _VectorClass_UDirtyAreaStruct::AddRef -> _VectorClass_UDirtyAreaStruct
+[conv] 0x6eae60 TeamClass::ExecuteAction -> TeamClass
+[conv] 0x754740 sub_754740 -> _addr_75
+[conv] 0x412a40 Slider::CalcPosition -> Slider
+[conv] 0x4919b0 _RLEBlitTransRemapDest_E::sub_4919B0 -> _RLEBlitTransRemapDest_E
+[conv] 0x49f3a0 sub_49F3A0 -> _addr_49
+[conv] 0x5c6230 sub_5C6230 -> _addr_5C
+[conv] 0x5af000 ObjectClass::sub_5AF000 -> ObjectClass
+[conv] 0x7d7840 __aullrem -> _addr_7D
+[conv] 0x472640 CaptureManagerClass::NeedsToDrawLinks -> CaptureManagerClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_UDirtyAreaStruct rc=0
+[era] TechnoClass              rc=2
+[era] _addr_4E                 rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] Matrix3x3                rc=0
+[era] _addr_53                 rc=0
+[era] Cell                     rc=2
+[era] TeamClass                rc=2
+[era] _addr_75                 rc=2
+[era] Slider                   rc=0
+[era] _RLEBlitTransRemapDest_E rc=2
+[era] _addr_49                 rc=2
+[era] _addr_5C                 rc=0
+[era] ObjectClass              rc=0
+[era] _addr_7D                 rc=0
+[era] CaptureManagerClass      rc=2
+=== diffasm byte-compare ===
+[diff] 0x6dc7b0   MISMATCH         _VectorClass_UDirtyAreaStruct::GetSize
+[diff] 0x6dc5e0   MISMATCH         _VectorClass_UDirtyAreaStruct::AddRef
+[diff] 0x5af4d0   MISMATCH         Matrix3x3::TransformPoint
+[diff] 0x53d8e0   MISMATCH         ComputeSpiralOffset
+[diff] 0x412a40   MISMATCH         Slider::CalcPosition
+[diff] 0x5c6230   MISMATCH         sub_5C6230
+[diff] 0x5af000   MISMATCH         ObjectClass::sub_5AF000
+[diff] 0x7d7840   MISMATCH         __aullrem
+[ledger] 0x6dc7b0 _VectorClass_UDirtyAreaStruct::GetSize -> NG (attempt 1)
+[ledger] 0x724a30 TechnoClass::sub_724A30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e4f50 __cfltcvt_init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4afcc0 JumpjetLocomotionClass::GetRenderCoordinate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x514d10 JumpjetLocomotionClass::HasScoreDisplayChanged_514D10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5af4d0 Matrix3x3::TransformPoint -> NG (attempt 1)
+[ledger] 0x69f3d0 JumpjetLocomotionClass::GetRenderCoordinate_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75ac00 JumpjetLocomotionClass::GetRenderCoordinate_2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53d8e0 ComputeSpiralOffset -> NG (attempt 1)
+[ledger] 0x4865d0 Cell::IsGroundTypeRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc5e0 _VectorClass_UDirtyAreaStruct::AddRef -> NG (attempt 1)
+[ledger] 0x6eae60 TeamClass::ExecuteAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x754740 sub_754740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x412a40 Slider::CalcPosition -> NG (attempt 1)
+[ledger] 0x4919b0 _RLEBlitTransRemapDest_E::sub_4919B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49f3a0 sub_49F3A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6230 sub_5C6230 -> NG (attempt 1)
+[ledger] 0x5af000 ObjectClass::sub_5AF000 -> NG (attempt 1)
+[ledger] 0x7d7840 __aullrem -> NG (attempt 1)
+[ledger] 0x472640 CaptureManagerClass::NeedsToDrawLinks -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 12
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "frame_sched": 1,
+  "branch_polarity": 1,
+  "cc_mismatch": 1,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p260\batch_report.json

@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_UDirtyAreaStruct@@QAEDH@Z",
+ "sym_key": "_VectorClass_UDirtyAreaStruct::AddRef",
+ "size": 129,
+ "link_base": 0,
+ "bytes_hex": "8b4424045355568b5008578b79083bfa756633f685ff7f095f5e5db0015bc204008b50048b41048bea8a48108a5a102be83acb75438bc82bc88d4c110c8b108b1c283bd375328b50048b59f83bd375288b50088b59fc3bd3751e8b500c8b193bd375154683c01483c1143bf77daa8a50108a59043ad374c55f5e5d32c05bc20400",
+ "relocs": []
+}

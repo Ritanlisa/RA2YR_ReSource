@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AF4D0",
+ "name": "Matrix3x3::TransformPoint",
+ "size": 113,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AF4D0",
+ "bytes_hex": "83ec0c8b442414d94104d84804d94108d84808dec1d900d809dec1d95c2400d94114d84804d94110d8088b542400dec1d94118d84808dec1d95c2404d94124d84804d94120d808dec1d94128d848088b4424108bc8dec189118b542404d95c24088951048b54240889510883c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

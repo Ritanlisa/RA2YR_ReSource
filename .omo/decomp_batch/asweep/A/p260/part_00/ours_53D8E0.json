@@ -1,0 +1,8 @@
+{
+ "symbol": "?ComputeSpiralOffset@@YIPAHPAHH@Z",
+ "sym_key": "Unnamed::ComputeSpiralOffset",
+ "size": 120,
+ "link_base": 0,
+ "bytes_hex": "568d72ff83fe08578bc1ba010000007c0fbf080000002bf783c708423bfe7ef68d4c12013bf17c468d0c95010000003bf18d0c527c2e8d4c09013bf17c178d3cd5000000008bca2bfaf7d92bf75f89308948045ec38d0c925f2bce5ef7da8910894804c32bce5f89088950045ec32bf25f89700489105ec3",
+ "relocs": []
+}

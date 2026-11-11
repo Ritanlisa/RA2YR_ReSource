@@ -1,0 +1,11 @@
+{
+ "addr": "0x412A40",
+ "name": "Slider::CalcPosition",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x412A40",
+ "bytes_hex": "8b4c2404568bc1be1400000099f7feb8676666668bf2f7e98b4c240cc1fa038bc2c1e81f03d08d043185c05e7c0c83f8137e07b913000000eb0a33c985c00f9cc14923c88b44240c03c285c07c1383f8137e0eb8130000008d04808d0481c20c0033d285c00f9cc24a23c28d04808d0481c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

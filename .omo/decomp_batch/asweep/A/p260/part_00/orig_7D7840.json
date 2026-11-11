@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7840",
+ "name": "__aullrem",
+ "size": 117,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7840",
+ "bytes_hex": "538b4424140bc075188b4c24108b44240c33d2f7f18b442408f7f18bc233d2eb508bc88b5c24108b54240c8b442408d1e9d1dbd1ead1d80bc975f4f7f38bc8f764241491f764241003d1720e3b54240c7708720e3b44240876082b4424101b5424142b4424081b54240cf7daf7d883da005bc21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
