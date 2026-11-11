@@ -1,0 +1,11 @@
+{
+ "addr": "0x705D10",
+ "name": "BuildingClass::SetPlanningToken",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x705D10",
+ "bytes_hex": "8b442404898114050000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

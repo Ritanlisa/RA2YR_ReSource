@@ -1,0 +1,11 @@
+{
+ "addr": "0x681110",
+ "name": "Map_Save_681110",
+ "size": 13,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x681110",
+ "bytes_hex": "8b442404898188010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

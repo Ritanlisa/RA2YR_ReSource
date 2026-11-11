@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPlanningToken@BuildingClass@@QAEHH@Z",
+ "sym_key": "BuildingClass::SetPlanningToken",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "8b442404898114050000c20400",
+ "relocs": []
+}

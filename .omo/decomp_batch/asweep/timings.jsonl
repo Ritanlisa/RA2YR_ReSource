@@ -47,3 +47,4 @@
 {"layer": "A", "part": 46, "n": 20, "seconds": 12.7, "ok": true, "verdicts": {"MATCH": 17, "MISMATCH": 3}}
 {"layer": "A", "part": 47, "n": 20, "seconds": 13.1, "ok": true, "verdicts": {"MATCH": 19, "COMPILE_FAIL": 1}}
 {"layer": "A", "part": 48, "n": 20, "seconds": 12.5, "ok": true, "verdicts": {"MATCH": 18, "MISMATCH": 2}}
+{"layer": "A", "part": 49, "n": 20, "seconds": 13.6, "ok": true, "verdicts": {"MATCH": 17, "MISMATCH": 3}}

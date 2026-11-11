@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p49\part_00
+=== convert (20 addrs) ===
+[conv] 0x681110 ObjectClass::Map_Save_681110 -> ObjectClass
+[conv] 0x681130 ObjectClass::Map_Save_681130 -> ObjectClass
+[conv] 0x6812c0 TechnoClass::Map_Save_6812C0 -> TechnoClass
+[conv] 0x69ade0 ObjectClass::sub_69ADE0 -> ObjectClass
+[conv] 0x69c4f0 _VectorClass_W4DiskID::Seek -> _VectorClass_W4DiskID
+[conv] 0x69c5f0 _VectorClass_PAVMultiMission::Get -> _VectorClass_PAVMultiMission
+[conv] 0x69c6b0 _VectorClass_PAVPhoneEntryClass::Get -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b1400 _VectorClass_PAUSlaveControl_SlaveManagerClass::Seek -> _VectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b81b0 _VectorClass_PAUSpawnControl_SpawnManagerClass::SaveState -> _VectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6b8210 _VectorClass_PAVSpawnManagerClass::Get -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x6beda0 _VectorClass_K::Clear -> _VectorClass_K
+[conv] 0x6ca810 _VectorClass_PAVSubTitle::Get -> _VectorClass_PAVSubTitle
+[conv] 0x6ce2c0 SuperClass::SetCurrentFrame -> SuperClass
+[conv] 0x6dc5d0 _VectorClass_PAVShadowControlClass::Clear -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e6530 _VectorClass_PAVTagTypeClass::Get -> _VectorClass_PAVTagTypeClass
+[conv] 0x705d10 BuildingClass::SetPlanningToken -> BuildingClass
+[conv] 0x70c610 TechnoClass::SetFocus -> TechnoClass
+[conv] 0x70fe40 ObjectClass::sub_70FE40 -> ObjectClass
+[conv] 0x71b290 _VectorClass_PAVTemporalClass::Get -> _VectorClass_PAVTemporalClass
+[conv] 0x71fbf0 _VectorClass_PAVTEventClass::Get -> _VectorClass_PAVTEventClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=0
+[era] _VectorClass_W4DiskID    rc=0
+[era] _VectorClass_PAVMultiMission rc=0
+[era] _VectorClass_PAVPhoneEntryClass rc=0
+[era] _VectorClass_PAUSlaveControl_SlaveManagerClass rc=0
+[era] _VectorClass_PAUSpawnControl_SpawnManagerClass rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _VectorClass_K           rc=0
+[era] _VectorClass_PAVSubTitle rc=0
+[era] SuperClass               rc=0
+[era] _VectorClass_PAVShadowControlClass rc=0
+[era] _VectorClass_PAVTagTypeClass rc=0
+[era] BuildingClass            rc=0
+[era] _VectorClass_PAVTemporalClass rc=0
+[era] _VectorClass_PAVTEventClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x681110   MATCH            ObjectClass::Map_Save_681110
+[diff] 0x681130   MATCH            ObjectClass::Map_Save_681130
+[diff] 0x69ade0   MATCH            ObjectClass::sub_69ADE0
+[diff] 0x70fe40   MISMATCH         ObjectClass::sub_70FE40
+[diff] 0x6812c0   MISMATCH         TechnoClass::Map_Save_6812C0
+[diff] 0x70c610   MATCH            TechnoClass::SetFocus
+[diff] 0x69c4f0   MATCH            _VectorClass_W4DiskID::Seek
+[diff] 0x69c5f0   MATCH            _VectorClass_PAVMultiMission::Get
+[diff] 0x69c6b0   MATCH            _VectorClass_PAVPhoneEntryClass::Get
+[diff] 0x6b1400   MATCH            _VectorClass_PAUSlaveControl_SlaveManagerClass::Seek
+[diff] 0x6b81b0   MATCH            _VectorClass_PAUSpawnControl_SpawnManagerClass::SaveState
+[diff] 0x6b8210   MATCH            _VectorClass_PAVSpawnManagerClass::Get
+[diff] 0x6beda0   MATCH            _VectorClass_K::Clear
+[diff] 0x6ca810   MATCH            _VectorClass_PAVSubTitle::Get
+[diff] 0x6ce2c0   MISMATCH         SuperClass::SetCurrentFrame
+[diff] 0x6dc5d0   MATCH            _VectorClass_PAVShadowControlClass::Clear
+[diff] 0x6e6530   MATCH            _VectorClass_PAVTagTypeClass::Get
+[diff] 0x705d10   MATCH            BuildingClass::SetPlanningToken
+[diff] 0x71b290   MATCH            _VectorClass_PAVTemporalClass::Get
+[diff] 0x71fbf0   MATCH            _VectorClass_PAVTEventClass::Get
+[ledger] 0x681110 ObjectClass::Map_Save_681110 -> OK (attempt 1)
+[ledger] 0x681130 ObjectClass::Map_Save_681130 -> OK (attempt 1)
+[ledger] 0x6812c0 TechnoClass::Map_Save_6812C0 -> NG (attempt 1)
+[ledger] 0x69ade0 ObjectClass::sub_69ADE0 -> OK (attempt 1)
+[ledger] 0x69c4f0 _VectorClass_W4DiskID::Seek -> OK (attempt 1)
+[ledger] 0x69c5f0 _VectorClass_PAVMultiMission::Get -> OK (attempt 1)
+[ledger] 0x69c6b0 _VectorClass_PAVPhoneEntryClass::Get -> OK (attempt 1)
+[ledger] 0x6b1400 _VectorClass_PAUSlaveControl_SlaveManagerClass::Seek -> OK (attempt 1)
+[ledger] 0x6b81b0 _VectorClass_PAUSpawnControl_SpawnManagerClass::SaveState -> OK (attempt 1)
+[ledger] 0x6b8210 _VectorClass_PAVSpawnManagerClass::Get -> OK (attempt 1)
+[ledger] 0x6beda0 _VectorClass_K::Clear -> OK (attempt 1)
+[ledger] 0x6ca810 _VectorClass_PAVSubTitle::Get -> OK (attempt 1)
+[ledger] 0x6ce2c0 SuperClass::SetCurrentFrame -> NG (attempt 1)
+[ledger] 0x6dc5d0 _VectorClass_PAVShadowControlClass::Clear -> OK (attempt 1)
+[ledger] 0x6e6530 _VectorClass_PAVTagTypeClass::Get -> OK (attempt 1)
+[ledger] 0x705d10 BuildingClass::SetPlanningToken -> OK (attempt 1)
+[ledger] 0x70c610 TechnoClass::SetFocus -> OK (attempt 1)
+[ledger] 0x70fe40 ObjectClass::sub_70FE40 -> NG (attempt 1)
+[ledger] 0x71b290 _VectorClass_PAVTemporalClass::Get -> OK (attempt 1)
+[ledger] 0x71fbf0 _VectorClass_PAVTEventClass::Get -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p49\batch_report.json
