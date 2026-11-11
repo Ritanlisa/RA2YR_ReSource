@@ -1,0 +1,11 @@
+{
+ "addr": "0x49AD00",
+ "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::QueryInterface",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49AD00",
+ "bytes_hex": "568bf1b9a8e887008b4608c706b0537e0050e85955f8ff8a442408c7460800000000a801c706a05b7e00740956e80bde320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

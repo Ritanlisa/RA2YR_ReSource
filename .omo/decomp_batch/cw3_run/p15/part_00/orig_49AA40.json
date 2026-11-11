@@ -1,0 +1,11 @@
+{
+ "addr": "0x49AA40",
+ "name": "RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x49AA40",
+ "bytes_hex": "568bf1b9a8e887008b460cc70660547e0050e81958f8ff8a442408c7460c00000000a801c706a05b7e00740956e8cbe0320083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
