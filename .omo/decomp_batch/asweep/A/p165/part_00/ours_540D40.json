@@ -1,0 +1,8 @@
+{
+ "symbol": "?createConnection@IPXManagerClass@@QAEPAIXZ",
+ "sym_key": "IPXManagerClass::createConnection",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b414885c074128b50288951648b502c8951688b403089416cc3",
+ "relocs": []
+}

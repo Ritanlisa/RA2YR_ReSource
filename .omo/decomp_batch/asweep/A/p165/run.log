@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p165\part_00
+=== convert (20 addrs) ===
+[conv] 0x53c9f0 sub_53C9F0 -> _addr_53
+[conv] 0x53f410 sub_53F410 -> _addr_53
+[conv] 0x53fa70 sub_53FA70 -> _addr_53
+[conv] 0x5408b0 sub_5408B0 -> _addr_54
+[conv] 0x540d40 IPXManagerClass::createConnection -> IPXManagerClass
+[conv] 0x5432f0 sub_5432F0 -> _addr_54
+[conv] 0x543e30 sub_543E30 -> _addr_54
+[conv] 0x54ac00 sub_54AC00 -> _addr_54
+[conv] 0x54e220 sub_54E220 -> _addr_54
+[conv] 0x54ee30 sub_54EE30 -> _addr_54
+[conv] 0x54fd80 sub_54FD80 -> _addr_54
+[conv] 0x552a20 sub_552A20 -> _addr_55
+[conv] 0x554600 sub_554600 -> _addr_55
+[conv] 0x555d80 sub_555D80 -> _addr_55
+[conv] 0x556960 sub_556960 -> _addr_55
+[conv] 0x55a6a0 sub_55A6A0 -> _addr_55
+[conv] 0x55af20 sub_55AF20 -> _addr_55
+[conv] 0x55cbd0 sub_55CBD0 -> _addr_55
+[conv] 0x55f950 sub_55F950 -> _addr_55
+[conv] 0x5618e0 sub_5618E0 -> _addr_56
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_53                 rc=0
+[era] _addr_54                 rc=0
+[era] IPXManagerClass          rc=0
+[era] _addr_55                 rc=0
+[era] _addr_56                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x53c9f0   MISMATCH         sub_53C9F0
+[diff] 0x53f410   MISMATCH         sub_53F410
+[diff] 0x53fa70   MISMATCH         sub_53FA70
+[diff] 0x5408b0   MISMATCH         sub_5408B0
+[diff] 0x5432f0   MISMATCH         sub_5432F0
+[diff] 0x543e30   MISMATCH         sub_543E30
+[diff] 0x54ac00   MISMATCH         sub_54AC00
+[diff] 0x54e220   MISMATCH         sub_54E220
+[diff] 0x54ee30   MISMATCH         sub_54EE30
+[diff] 0x54fd80   MISMATCH         sub_54FD80
+[diff] 0x540d40   MATCH            IPXManagerClass::createConnection
+[diff] 0x552a20   MISMATCH         sub_552A20
+[diff] 0x554600   MISMATCH         sub_554600
+[diff] 0x555d80   MISMATCH         sub_555D80
+[diff] 0x556960   MISMATCH         sub_556960
+[diff] 0x55a6a0   MISMATCH         sub_55A6A0
+[diff] 0x55af20   MISMATCH         sub_55AF20
+[diff] 0x55cbd0   MISMATCH         sub_55CBD0
+[diff] 0x55f950   MISMATCH         sub_55F950
+[diff] 0x5618e0   MISMATCH         sub_5618E0
+[ledger] 0x53c9f0 sub_53C9F0 -> NG (attempt 1)
+[ledger] 0x53f410 sub_53F410 -> NG (attempt 1)
+[ledger] 0x53fa70 sub_53FA70 -> NG (attempt 1)
+[ledger] 0x5408b0 sub_5408B0 -> NG (attempt 1)
+[ledger] 0x540d40 IPXManagerClass::createConnection -> OK (attempt 1)
+[ledger] 0x5432f0 sub_5432F0 -> NG (attempt 1)
+[ledger] 0x543e30 sub_543E30 -> NG (attempt 1)
+[ledger] 0x54ac00 sub_54AC00 -> NG (attempt 1)
+[ledger] 0x54e220 sub_54E220 -> NG (attempt 1)
+[ledger] 0x54ee30 sub_54EE30 -> NG (attempt 1)
+[ledger] 0x54fd80 sub_54FD80 -> NG (attempt 1)
+[ledger] 0x552a20 sub_552A20 -> NG (attempt 1)
+[ledger] 0x554600 sub_554600 -> NG (attempt 1)
+[ledger] 0x555d80 sub_555D80 -> NG (attempt 1)
+[ledger] 0x556960 sub_556960 -> NG (attempt 1)
+[ledger] 0x55a6a0 sub_55A6A0 -> NG (attempt 1)
+[ledger] 0x55af20 sub_55AF20 -> NG (attempt 1)
+[ledger] 0x55cbd0 sub_55CBD0 -> NG (attempt 1)
+[ledger] 0x55f950 sub_55F950 -> NG (attempt 1)
+[ledger] 0x5618e0 sub_5618E0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 19
+ },
+ "match_rate_of_decided_pct": 5.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p165\batch_report.json
