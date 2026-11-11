@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p48\part_00
+=== convert (20 addrs) ===
+[conv] 0x5d50d0 _VectorClass_PAUHWND::GetSize -> _VectorClass_PAUHWND
+[conv] 0x5eec00 _VectorClass_PBVMultiMission::Capacity -> _VectorClass_PBVMultiMission
+[conv] 0x5f9b50 _VectorClass_PAVObjectTypeClass::Get -> _VectorClass_PAVObjectTypeClass
+[conv] 0x600010 _VectorClass_PAVSpotLightClass::Get -> _VectorClass_PAVSpotLightClass
+[conv] 0x627d70 _VectorClass_PAVColorScheme::Get -> _VectorClass_PAVColorScheme
+[conv] 0x62b0c0 _VectorClass_PAVParasiteClass::Get -> _VectorClass_PAVParasiteClass
+[conv] 0x6301f0 ObjectClass::SetMember59 -> ObjectClass
+[conv] 0x6347a0 ObjectClass::sub_6347A0 -> ObjectClass
+[conv] 0x63dbb0 _VectorClass_PAVPlanningMemberClass::Get -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63dc70 _VectorClass_PAVPlanningNodeClass::Seek -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63dcd0 _VectorClass_PAVEventClass::Seek -> _VectorClass_PAVEventClass
+[conv] 0x63dd30 _VectorClass_PAVPlanningTokenClass::Get -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x642b10 Scenario::SetDword32 -> Scenario
+[conv] 0x646464 ObjectClass::sub_646464 -> ObjectClass
+[conv] 0x65a230 _VectorClass_PAVRadBeam::Get -> _VectorClass_PAVRadBeam
+[conv] 0x65bf40 _VectorClass_PAVRadSiteClass::Get -> _VectorClass_PAVRadSiteClass
+[conv] 0x660cd0 _VectorClass_PAVRadarEventClass::Get -> _VectorClass_PAVRadarEventClass
+[conv] 0x664800 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::UpdateMovement -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67a6d0 _VectorClass_PBVSmudgeTypeClass::Clear -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67a980 _VectorClass_PBVTerrainTypeClass::SaveToINI -> _VectorClass_PBVTerrainTypeClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAUHWND     rc=0
+[era] _VectorClass_PBVMultiMission rc=0
+[era] _VectorClass_PAVObjectTypeClass rc=0
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _VectorClass_PAVColorScheme rc=0
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] Scenario                 rc=0
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] _VectorClass_PAVRadarEventClass rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=0
+[era] _VectorClass_PBVSmudgeTypeClass rc=0
+[era] _VectorClass_PBVTerrainTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5d50d0   MATCH            _VectorClass_PAUHWND::GetSize
+[diff] 0x5eec00   MATCH            _VectorClass_PBVMultiMission::Capacity
+[diff] 0x5f9b50   MATCH            _VectorClass_PAVObjectTypeClass::Get
+[diff] 0x600010   MATCH            _VectorClass_PAVSpotLightClass::Get
+[diff] 0x627d70   MATCH            _VectorClass_PAVColorScheme::Get
+[diff] 0x62b0c0   MATCH            _VectorClass_PAVParasiteClass::Get
+[diff] 0x6301f0   MATCH            ObjectClass::SetMember59
+[diff] 0x6347a0   MISMATCH         ObjectClass::sub_6347A0
+[diff] 0x646464   MISMATCH         ObjectClass::sub_646464
+[diff] 0x63dbb0   MATCH            _VectorClass_PAVPlanningMemberClass::Get
+[diff] 0x63dc70   MATCH            _VectorClass_PAVPlanningNodeClass::Seek
+[diff] 0x63dcd0   MATCH            _VectorClass_PAVEventClass::Seek
+[diff] 0x63dd30   MATCH            _VectorClass_PAVPlanningTokenClass::Get
+[diff] 0x642b10   MATCH            Scenario::SetDword32
+[diff] 0x65a230   MATCH            _VectorClass_PAVRadBeam::Get
+[diff] 0x65bf40   MATCH            _VectorClass_PAVRadSiteClass::Get
+[diff] 0x660cd0   MATCH            _VectorClass_PAVRadarEventClass::Get
+[diff] 0x664800   MATCH            _VectorClass_PAUConnectionListStruct_OwnerTalkClass::UpdateMovement
+[diff] 0x67a6d0   MATCH            _VectorClass_PBVSmudgeTypeClass::Clear
+[diff] 0x67a980   MATCH            _VectorClass_PBVTerrainTypeClass::SaveToINI
+[ledger] 0x5d50d0 _VectorClass_PAUHWND::GetSize -> OK (attempt 1)
+[ledger] 0x5eec00 _VectorClass_PBVMultiMission::Capacity -> OK (attempt 1)
+[ledger] 0x5f9b50 _VectorClass_PAVObjectTypeClass::Get -> OK (attempt 1)
+[ledger] 0x600010 _VectorClass_PAVSpotLightClass::Get -> OK (attempt 1)
+[ledger] 0x627d70 _VectorClass_PAVColorScheme::Get -> OK (attempt 1)
+[ledger] 0x62b0c0 _VectorClass_PAVParasiteClass::Get -> OK (attempt 1)
+[ledger] 0x6301f0 ObjectClass::SetMember59 -> OK (attempt 1)
+[ledger] 0x6347a0 ObjectClass::sub_6347A0 -> NG (attempt 1)
+[ledger] 0x63dbb0 _VectorClass_PAVPlanningMemberClass::Get -> OK (attempt 1)
+[ledger] 0x63dc70 _VectorClass_PAVPlanningNodeClass::Seek -> OK (attempt 1)
+[ledger] 0x63dcd0 _VectorClass_PAVEventClass::Seek -> OK (attempt 1)
+[ledger] 0x63dd30 _VectorClass_PAVPlanningTokenClass::Get -> OK (attempt 1)
+[ledger] 0x642b10 Scenario::SetDword32 -> OK (attempt 1)
+[ledger] 0x646464 ObjectClass::sub_646464 -> NG (attempt 1)
+[ledger] 0x65a230 _VectorClass_PAVRadBeam::Get -> OK (attempt 1)
+[ledger] 0x65bf40 _VectorClass_PAVRadSiteClass::Get -> OK (attempt 1)
+[ledger] 0x660cd0 _VectorClass_PAVRadarEventClass::Get -> OK (attempt 1)
+[ledger] 0x664800 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::UpdateMovement -> OK (attempt 1)
+[ledger] 0x67a6d0 _VectorClass_PBVSmudgeTypeClass::Clear -> OK (attempt 1)
+[ledger] 0x67a980 _VectorClass_PBVTerrainTypeClass::SaveToINI -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "cc_mismatch": 1,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 18,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p48\batch_report.json
