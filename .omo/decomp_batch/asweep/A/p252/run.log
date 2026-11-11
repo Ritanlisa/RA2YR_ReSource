@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p252\part_00
+=== convert (20 addrs) ===
+[conv] 0x409d90 sub_409D90 -> _addr_40
+[conv] 0x426e80 UnitClass::sub_426E80 -> UnitClass
+[conv] 0x431170 BufferIO::FindActiveChannel -> BufferIO
+[conv] 0x5899e0 _VectorClass_USubzoneTrackingStruct::GetSize -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x5c7db0 Math_Compute -> Math
+[conv] 0x634310 BuildingClass::CopyTypeDataForRender -> BuildingClass
+[conv] 0x42fae0 _VectorClass_VBaseNodeClass::Read -> _VectorClass_VBaseNodeClass
+[conv] 0x4527d0 BuildingClass::HasOccupantAudio -> BuildingClass
+[conv] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> HoverLocomotionClass
+[conv] 0x5e9240 NetworkLobby::AssignPlayerSlot -> NetworkLobby
+[conv] 0x5f5230 ObjectClass::Unlink -> ObjectClass
+[conv] 0x710700 Coord::Divide -> Coord
+[conv] 0x76f600 WDTClass::GetCellType -> WDTClass
+[conv] 0x7b39d0 ObjectClass::sub_7B39D0 -> ObjectClass
+[conv] 0x430590 ObjectClass::sub_430590 -> ObjectClass
+[conv] 0x5173f0 ObjectClass::sub_5173F0 -> ObjectClass
+[conv] 0x54a900 SetBitfieldBit -> _addr_54
+[conv] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> JumpjetLocomotionClass
+[conv] 0x5b0120 MechLocomotionClass::SyncMatrixTransformState -> MechLocomotionClass
+[conv] 0x5e9510 NetworkLobby::CheckMinPlayers -> NetworkLobby
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] UnitClass                rc=2
+[era] BufferIO                 rc=0
+[era] _VectorClass_USubzoneTrackingStruct rc=0
+[era] Math                     rc=0
+[era] BuildingClass            rc=0
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] HoverLocomotionClass     rc=2
+[era] NetworkLobby             rc=2
+[era] ObjectClass              rc=2
+[era] Coord                    rc=0
+[era] WDTClass                 rc=0
+[era] _addr_54                 rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] MechLocomotionClass      rc=2
+=== diffasm byte-compare ===
+[diff] 0x409d90   MATCH            sub_409D90
+[diff] 0x431170   MISMATCH         BufferIO::FindActiveChannel
+[diff] 0x5899e0   MISMATCH         _VectorClass_USubzoneTrackingStruct::GetSize
+[diff] 0x5c7db0   MISMATCH         Math_Compute
+[diff] 0x634310   MISMATCH         BuildingClass::CopyTypeDataForRender
+[diff] 0x4527d0   MISMATCH         BuildingClass::HasOccupantAudio
+[diff] 0x42fae0   MISMATCH         _VectorClass_VBaseNodeClass::Read
+[diff] 0x5f5230   MISMATCH         ObjectClass::Unlink
+[diff] 0x430590   MISMATCH         ObjectClass::sub_430590
+[diff] 0x5173f0   MISMATCH         ObjectClass::sub_5173F0
+[diff] 0x710700   MISMATCH         Coord::Divide
+[diff] 0x76f600   MISMATCH         WDTClass::GetCellType
+[diff] 0x54a900   MISMATCH         SetBitfieldBit
+[ledger] 0x409d90 sub_409D90 -> OK (attempt 1)
+[ledger] 0x426e80 UnitClass::sub_426E80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431170 BufferIO::FindActiveChannel -> NG (attempt 1)
+[ledger] 0x5899e0 _VectorClass_USubzoneTrackingStruct::GetSize -> NG (attempt 1)
+[ledger] 0x5c7db0 Math_Compute -> NG (attempt 1)
+[ledger] 0x634310 BuildingClass::CopyTypeDataForRender -> NG (attempt 1)
+[ledger] 0x42fae0 _VectorClass_VBaseNodeClass::Read -> NG (attempt 1)
+[ledger] 0x4527d0 BuildingClass::HasOccupantAudio -> NG (attempt 1)
+[ledger] 0x516320 HoverLocomotionClass::HasScoreDisplayChanged_516320 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9240 NetworkLobby::AssignPlayerSlot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f5230 ObjectClass::Unlink -> NG (attempt 1)
+[ledger] 0x710700 Coord::Divide -> NG (attempt 1)
+[ledger] 0x76f600 WDTClass::GetCellType -> NG (attempt 1)
+[ledger] 0x7b39d0 ObjectClass::sub_7B39D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x430590 ObjectClass::sub_430590 -> NG (attempt 1)
+[ledger] 0x5173f0 ObjectClass::sub_5173F0 -> NG (attempt 1)
+[ledger] 0x54a900 SetBitfieldBit -> NG (attempt 1)
+[ledger] 0x54d9b0 JumpjetLocomotionClass::GetConditionedCoordinate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b0120 MechLocomotionClass::SyncMatrixTransformState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9510 NetworkLobby::CheckMinPlayers -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 1,
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "branch_order": 3,
+  "regalloc": 3,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p252\batch_report.json

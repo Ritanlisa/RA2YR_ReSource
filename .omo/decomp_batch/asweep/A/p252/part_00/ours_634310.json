@@ -1,0 +1,8 @@
+{
+ "symbol": "?CopyTypeDataForRender@BuildingClass@@QAEHHH@Z",
+ "sym_key": "BuildingClass::CopyTypeDataForRender",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "8b51105333c0565785d27e228b71048b7c24148bce8b1e393b74174083c1043bc27d0b8b19393b75f283f8ff750433c0eb038b04868b50048b442410b91b0000008bf28bf883c26cf3a5668b0a5f6689486c8a52025e88506e5bc20800",
+ "relocs": []
+}

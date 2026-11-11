@@ -1,0 +1,11 @@
+{
+ "addr": "0x710700",
+ "name": "Coord::Divide",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x710700",
+ "bytes_hex": "568b74240c85f65775178b44240c33c98bf833d2890f8957048977085f5ec208008b015399f7fe8bf88b410499f7fe8bd88b410899f7fe8b4c24108bd1893a895a045b5f5e8942088bc1c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

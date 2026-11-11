@@ -1,0 +1,11 @@
+{
+ "addr": "0x634310",
+ "name": "BuildingClass::CopyTypeDataForRender",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x634310",
+ "bytes_hex": "8b51105333c0565785d27e208b71048b7c24148bce8b19393b740c4083c1043bc27cf233c0eb0c83f8ff750433c0eb038b04868b70048b442410b91b0000008bf8f3a566a5a45f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

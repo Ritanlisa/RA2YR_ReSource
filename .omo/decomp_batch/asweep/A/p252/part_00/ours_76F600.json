@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCellType@WDTClass@@QAEHI@Z",
+ "sym_key": "WDTClass::GetCellType",
+ "size": 77,
+ "link_base": 0,
+ "bytes_hex": "8b510c85d274418b411085c0743a8b4c2404568b72203bce5e732d33d28a14088bc285c07508b801000000c204004885c07508b802000000c2040083f8017508b803000000c2040033c0c20400",
+ "relocs": []
+}

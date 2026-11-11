@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindActiveChannel@BufferIO@@QAEHH@Z",
+ "sym_key": "BufferIO::FindActiveChannel",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "8b416053555685c05774388b7c241433ed8bf1b30233d28bce8b0185c0741284580c740d83ffff741c3bb81001000074144283c10483fa037cdf4583c66483fd087cd233c05f5e5d5bc20400",
+ "relocs": []
+}

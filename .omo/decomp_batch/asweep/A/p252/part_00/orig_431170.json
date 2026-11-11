@@ -1,0 +1,11 @@
+{
+ "addr": "0x431170",
+ "name": "BufferIO::FindActiveChannel",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x431170",
+ "bytes_hex": "8b416053555685c05774388b7c241433ed8bf1b30233d28bce8b0185c0741284580c740d83ffff741c3bb81001000074144283c10483fa037cdf4583c60c83fd087cd233c05f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

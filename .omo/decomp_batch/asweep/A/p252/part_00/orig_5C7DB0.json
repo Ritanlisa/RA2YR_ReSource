@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C7DB0",
+ "name": "Math_Compute",
+ "size": 76,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C7DB0",
+ "bytes_hex": "538b5c240c5633f685db7e3855578b7c241481e7ffff000033c033ed668b02668b290fafc703ee83c20203c566890183c102c1e8104b8bf075de6601315f5d5e5bc208006601315e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

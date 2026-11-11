@@ -1,0 +1,11 @@
+{
+ "addr": "0x54A900",
+ "name": "SetBitfieldBit",
+ "size": 78,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x54A900",
+ "bytes_hex": "53568bc28bf18bc881e10700008079054983c9f841b301d2e38b4c240c85c999741583e20703c2c1f80303c65e8a080acb5b8808c2040083e20703c2c1f80303c65ef6d38a0822cb5b8808c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

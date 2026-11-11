@@ -1,0 +1,8 @@
+{
+ "symbol": "?Unlink@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::Unlink",
+ "size": 93,
+ "link_base": 0,
+ "bytes_hex": "518b4134568b7424043bc6751285c0740e8b502c4a89502cc74134000000008b542404578bfa240081e7ff0000000bc75f84d274118b41303bf0750a85f674068b40308941308b91880000003bf25e750ac781880000000000000059c3",
+ "relocs": []
+}

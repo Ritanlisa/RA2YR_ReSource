@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F5230",
+ "name": "Object::Unlink",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F5230",
+ "bytes_hex": "8b41348b5424043bc2751485c07410568b702c4e89702cc74134000000005e8a44240884c074118b41303bd0750a85d274068b40308941303b9188000000750ac7818800000000000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

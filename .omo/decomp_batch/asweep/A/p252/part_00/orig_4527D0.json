@@ -1,0 +1,11 @@
+{
+ "addr": "0x4527D0",
+ "name": "BuildingClass::HasOccupantAudio",
+ "size": 77,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4527D0",
+ "bytes_hex": "8b812005000053568a90a10c000084d274055eb0015bc38a810207000084c074270fbef033d285f67e1e81c1ec0500008b0185c0740a8a98a10c000084db75d24283c1043bd67ce85e32c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

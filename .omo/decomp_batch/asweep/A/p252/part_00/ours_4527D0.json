@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasOccupantAudio@BuildingClass@@QAEEXZ",
+ "sym_key": "BuildingClass::HasOccupantAudio",
+ "size": 79,
+ "link_base": 0,
+ "bytes_hex": "8b812005000053568a90a10c000084d275338a810207000084c0742e33d284c00fbef07e258b89ec0500008b0185c0740a8a98a10c000084db750a4283c1043bd67d07ebe65eb0015bc35e32c05bc3",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetBitfieldBit@@YIPAEHHH@Z",
+ "sym_key": "Unnamed::SetBitfieldBit",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "53568bc28bf18bc881e10700008079054983c9f8419983e207b30103c2d2e38b4c240cc1f80303c685c9740b8a085e0acb5b8808c204008a085ef6d322d988185bc20400",
+ "relocs": []
+}
