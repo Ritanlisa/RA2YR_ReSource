@@ -1,0 +1,8 @@
+{
+ "symbol": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+ "sym_key": "Waypoint::InitInvalid",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8bc1b1ff8808884801884802884803884804884805884806884807884808884809c3",
+ "relocs": []
+}

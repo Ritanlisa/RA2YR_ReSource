@@ -1,0 +1,8 @@
+{
+ "symbol": "?Inflate@Rect@@QAGHPAUtagRECT@@HH@Z",
+ "sym_key": "Rect::Inflate",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "518b4c24008b4424008b1103d089118b510403d003c08951048b51082bd08951088b510c2bd089510c59c21000",
+ "relocs": []
+}

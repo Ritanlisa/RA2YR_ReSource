@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p201\part_00
+=== convert (20 addrs) ===
+[conv] 0x50da50 ObjectClass::GlobalHelper_0E44C0_Helper -> ObjectClass
+[conv] 0x5108f0 globalHelper_0108F0 -> _addr_51
+[conv] 0x512570 HouseTypeClass::LoadHouse -> HouseTypeClass
+[conv] 0x512960 HouseTypeClass::readStartUnit -> HouseTypeClass
+[conv] 0x52b6a0 CompareFunc3Int -> _addr_52
+[conv] 0x52b720 CompareFunc4Int -> _addr_52
+[conv] 0x53ecb0 Waypoint::InitInvalid -> Waypoint
+[conv] 0x5ac400 TypeList::BuildingTypeConstructor -> TypeList
+[conv] 0x5ad9c0 sub_5AD9C0 -> _addr_5A
+[conv] 0x652630 sub_652630 -> _addr_65
+[conv] 0x67a390 TypeList::VoxelAnimConstructor -> TypeList
+[conv] 0x67a4f0 TypeList::Construct -> TypeList
+[conv] 0x67a600 TypeList::ConstructSmudge -> TypeList
+[conv] 0x67a740 UnitTypeList::Constructor -> UnitTypeList
+[conv] 0x67a820 TypeList::InfantryConstructor -> TypeList
+[conv] 0x67a8b0 RulesClass::readParticles -> RulesClass
+[conv] 0x6cf320 globalHelper_0CF320 -> _addr_6C
+[conv] 0x717af0 TechnoTypeClass::Constructor -> TechnoTypeClass
+[conv] 0x725040 CompareFunc2Int -> _addr_72
+[conv] 0x72a9e0 Rect::Inflate -> Rect
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] _addr_51                 rc=0
+[era] HouseTypeClass           rc=2
+[era] _addr_52                 rc=0
+[era] Waypoint                 rc=0
+[era] TypeList                 rc=2
+[era] _addr_5A                 rc=0
+[era] _addr_65                 rc=0
+[era] UnitTypeList             rc=2
+[era] RulesClass               rc=2
+[era] _addr_6C                 rc=0
+[era] TechnoTypeClass          rc=2
+[era] _addr_72                 rc=0
+[era] Rect                     rc=0
+=== diffasm byte-compare ===
+[diff] 0x50da50   MISMATCH         ObjectClass::GlobalHelper_0E44C0_Helper
+[diff] 0x5108f0   MISMATCH         globalHelper_0108F0
+[diff] 0x52b6a0   MISMATCH         CompareFunc3Int
+[diff] 0x52b720   MISMATCH         CompareFunc4Int
+[diff] 0x53ecb0   MATCH            Waypoint::InitInvalid
+[diff] 0x5ad9c0   MISMATCH         sub_5AD9C0
+[diff] 0x652630   MISMATCH         sub_652630
+[diff] 0x6cf320   MISMATCH         globalHelper_0CF320
+[diff] 0x725040   MISMATCH         CompareFunc2Int
+[diff] 0x72a9e0   MISMATCH         Rect::Inflate
+[ledger] 0x50da50 ObjectClass::GlobalHelper_0E44C0_Helper -> NG (attempt 1)
+[ledger] 0x5108f0 globalHelper_0108F0 -> NG (attempt 1)
+[ledger] 0x512570 HouseTypeClass::LoadHouse -> COMPILE_FAIL (attempt 1)
+[ledger] 0x512960 HouseTypeClass::readStartUnit -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52b6a0 CompareFunc3Int -> NG (attempt 1)
+[ledger] 0x52b720 CompareFunc4Int -> NG (attempt 1)
+[ledger] 0x53ecb0 Waypoint::InitInvalid -> OK (attempt 1)
+[ledger] 0x5ac400 TypeList::BuildingTypeConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad9c0 sub_5AD9C0 -> NG (attempt 1)
+[ledger] 0x652630 sub_652630 -> NG (attempt 1)
+[ledger] 0x67a390 TypeList::VoxelAnimConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a4f0 TypeList::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a600 TypeList::ConstructSmudge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a740 UnitTypeList::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a820 TypeList::InfantryConstructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67a8b0 RulesClass::readParticles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf320 globalHelper_0CF320 -> NG (attempt 1)
+[ledger] 0x717af0 TechnoTypeClass::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x725040 CompareFunc2Int -> NG (attempt 1)
+[ledger] 0x72a9e0 Rect::Inflate -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 9,
+  "COMPILE_FAIL": 10,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 8
+ },
+ "match_rate_of_decided_pct": 10.0,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p201\batch_report.json

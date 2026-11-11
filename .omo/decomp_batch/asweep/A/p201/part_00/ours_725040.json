@@ -1,0 +1,8 @@
+{
+ "symbol": "?CompareFunc2Int@@YAHPAH0@Z",
+ "sym_key": "Unnamed::CompareFunc2Int",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c24088b008b093bc1750333c0c333d23bc10f9cc24a83e2024a8bc2c3",
+ "relocs": []
+}

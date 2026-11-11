@@ -1,0 +1,11 @@
+{
+ "addr": "0x53ECB0",
+ "name": "Waypoint::InitInvalid",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53ECB0",
+ "bytes_hex": "8bc1b1ff8808884801884802884803884804884805884806884807884808884809c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

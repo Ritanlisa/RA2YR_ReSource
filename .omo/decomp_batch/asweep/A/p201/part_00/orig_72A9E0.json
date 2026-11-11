@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A9E0",
+ "name": "Rect::Inflate",
+ "size": 34,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A9E0",
+ "bytes_hex": "8b0103c289018b410403c28941048d04128b51082bd08951088b510c2bd089510cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
