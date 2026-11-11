@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e0ef0 HouseClass::UpdateTechBuildings -> HouseClass
+[conv] 0x6e2970 BuildingLightClass::FindAllTargets -> BuildingLightClass
+[conv] 0x652cf0 RadarClass::Destru_vt05 -> RadarClass
+[conv] 0x697e70 SessionClass::IsValidHouse -> SessionClass
+[conv] 0x6403a0 PowerClass::getDrain -> PowerClass
+[conv] 0x510970 DistributionVector_BuildingType::Construct -> DistributionVector_BuildingType
+[conv] 0x54da50 JumpjetLocomotionClass::StubReturnZero_10 -> JumpjetLocomotionClass
+[conv] 0x468430 BulletClass::LoseTarget -> BulletClass
+[conv] 0x556a20 ObjectClass::checkLimbo -> ObjectClass
+[conv] 0x55a9b0 LocomotionClass::QueryInterface -> LocomotionClass
+[conv] 0x5cb790 ObjectClass::TerritoryUpdateDisplayWOL -> ObjectClass
+[conv] 0x5e9290 NetworkLobby::CheckLobbyConditions -> NetworkLobby
+[conv] 0x4024a0 AudioSample::ResetState -> AudioSample
+[conv] 0x70b1d0 TechnoClass::RevealAreaConditional -> TechnoClass
+[conv] 0x4a00b0 EnumConnectionsClass::ddtor -> EnumConnectionsClass
+[conv] 0x4a4780 Surface::CreateSurfacePalette -> Surface
+[conv] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> MapClass
+[conv] 0x4a9650 BuildingClass::MarkExitPath -> BuildingClass
+[conv] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> UnitClass
+[conv] 0x7adf70 HashMap::Shrink2 -> HashMap
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] BuildingLightClass       rc=2
+[era] RadarClass               rc=2
+[era] SessionClass             rc=2
+[era] PowerClass               rc=2
+[era] DistributionVector_BuildingType rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] BulletClass              rc=2
+[era] ObjectClass              rc=2
+[era] LocomotionClass          rc=2
+[era] NetworkLobby             rc=2
+[era] AudioSample              rc=2
+[era] TechnoClass              rc=2
+[era] EnumConnectionsClass     rc=2
+[era] Surface                  rc=2
+[era] MapClass                 rc=2
+[era] BuildingClass            rc=2
+[era] UnitClass                rc=2
+[era] HashMap                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e0ef0   MISMATCH         HouseClass::UpdateTechBuildings
+[diff] 0x54da50   MISMATCH         JumpjetLocomotionClass::StubReturnZero_10
+[ledger] 0x6e0ef0 HouseClass::UpdateTechBuildings -> NG (attempt 11)
+[ledger] 0x6e2970 BuildingLightClass::FindAllTargets -> COMPILE_FAIL (attempt 13)
+[ledger] 0x652cf0 RadarClass::Destru_vt05 -> COMPILE_FAIL (attempt 10)
+[ledger] 0x697e70 SessionClass::IsValidHouse -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6403a0 PowerClass::getDrain -> COMPILE_FAIL (attempt 10)
+[ledger] 0x510970 DistributionVector_BuildingType::Construct -> COMPILE_FAIL (attempt 2)
+[ledger] 0x54da50 JumpjetLocomotionClass::StubReturnZero_10 -> NG (attempt 10)
+[ledger] 0x468430 BulletClass::LoseTarget -> COMPILE_FAIL (attempt 10)
+[ledger] 0x556a20 ObjectClass::checkLimbo -> COMPILE_FAIL (attempt 10)
+[ledger] 0x55a9b0 LocomotionClass::QueryInterface -> COMPILE_FAIL (attempt 10)
+[ledger] 0x5cb790 ObjectClass::TerritoryUpdateDisplayWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5e9290 NetworkLobby::CheckLobbyConditions -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4024a0 AudioSample::ResetState -> COMPILE_FAIL (attempt 10)
+[ledger] 0x70b1d0 TechnoClass::RevealAreaConditional -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a00b0 EnumConnectionsClass::ddtor -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a4780 Surface::CreateSurfacePalette -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a95a0 MapClass::SetCellFlagsAlongPath -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a9650 BuildingClass::MarkExitPath -> COMPILE_FAIL (attempt 10)
+[ledger] 0x6b6080 UnitClass::CreateUnloadPlacementCraters -> COMPILE_FAIL (attempt 11)
+[ledger] 0x7adf70 HashMap::Shrink2 -> COMPILE_FAIL (attempt 10)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 13,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p24\batch_report.json
