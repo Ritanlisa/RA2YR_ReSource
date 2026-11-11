@@ -4970,7 +4970,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x69b7e0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4984,14 +4984,14 @@
   "status": "OK"
  },
  "0x69db30": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69deb0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5005,14 +5005,14 @@
   "status": "COMPILE_FAIL"
  },
  "0x69f290": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a0310": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "WalkLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5026,7 +5026,7 @@
   "status": "OK"
  },
  "0x6a4130": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_15",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5054,56 +5054,56 @@
   "status": "OK"
  },
  "0x6a5090": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SidebarClass::InitPositions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a6140": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+0 push ebp",
   "name": "Sidebar::FindProductionType",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x6a6a00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_245",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a80a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+12 mov byte ptr [eax + 4], dl",
   "name": "TabClass::updateTabProduction",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
  "0x6a8220": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SidebarClass::InitCameoGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a8710": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TabCameoListClass::AddCameo_ReplaceItAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6ac5f0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TActionClass::executeHarvestAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b1020": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SlaveManagerClass::ShouldWakeUpNow",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5124,14 +5124,14 @@
   "status": "OK"
  },
  "0x6b44a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+6 xor ebx, ebx",
   "name": "VectorClass_UUndoInfoStruct::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x6b4650": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": "+6 xor ebx, ebx",
   "name": "VectorClass_UUndoInfoStruct::SetCapacity",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -5159,21 +5159,21 @@
   "status": "OK"
  },
  "0x6b55f0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b5f80": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Cell::IsWalkable",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6b6080": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "UnitClass::CreateUnloadPlacementCraters",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -5208,7 +5208,7 @@
   "status": "NG"
  },
  "0x6b7c60": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "UnitClass::ClearTargetRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
