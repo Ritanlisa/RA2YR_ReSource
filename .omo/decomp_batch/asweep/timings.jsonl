@@ -240,3 +240,4 @@
 {"layer": "A", "part": 239, "n": 20, "seconds": 14.3, "ok": true, "verdicts": {"COMPILE_FAIL": 18, "MISMATCH": 2}}
 {"layer": "A", "part": 240, "n": 20, "seconds": 6.7, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
 {"layer": "A", "part": 241, "n": 20, "seconds": 7.5, "ok": true, "verdicts": {"COMPILE_FAIL": 20}}
+{"layer": "A", "part": 242, "n": 20, "seconds": 13.6, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}

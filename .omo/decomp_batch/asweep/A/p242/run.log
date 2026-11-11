@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p242\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ed3a0 _VectorClass_PAVSmudgeTypeClass::Add -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed860 _VectorClass_PAVBuildingTypeClass::Add -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4edac0 _VectorClass_PAVAircraftTypeClass::Add -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4edd20 _VectorClass_PAVUnitTypeClass::Add -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4edf80 _VectorClass_PAVAnimTypeClass::Add -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee1e0 _VectorClass_PAVInfantryTypeClass::Add -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x4ee440 _VectorClass_PAVBulletTypeClass::Add -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee6a0 _VectorClass_PAVVoxelAnimTypeClass::Add -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4ee900 _VectorClass_PAVIsometricTileTypeClass::Add -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eedc0 _VectorClass_PAVParticleSystemTypeClass::Add -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef020 _VectorClass_PAVSuperWeaponTypeClass::Add -> _VectorClass_PAVSuperWeaponTypeClass
+[conv] 0x4ef280 _VectorClass_PAVAbstractTypeClass::Add -> _VectorClass_PAVAbstractTypeClass
+[conv] 0x4f28e0 _VectorClass_PAVGraphicMenuItem::AddRef -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x50def0 HouseClass::GetCurrentOption -> HouseClass
+[conv] 0x50e910 _VectorClass_PBVBuildingTypeClass::AddRef -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x50ec20 _VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef -> _VectorClass_PAUStartingTechnoStruct_HouseClass
+[conv] 0x50f4e0 _VectorClass_PAUBuildChoiceClass_HouseClass::Add -> _VectorClass_PAUBuildChoiceClass_HouseClass
+[conv] 0x50f740 _VectorClass_PBVTeamTypeClass::CompareVectors -> _VectorClass_PBVTeamTypeClass
+[conv] 0x513010 _VectorClass_PBVUnitTypeClass::AddRef -> _VectorClass_PBVUnitTypeClass
+[conv] 0x5250d0 _VectorClass_PBVAnimTypeClass::AddRef -> _VectorClass_PBVAnimTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVSmudgeTypeClass rc=2
+[era] _VectorClass_PAVBuildingTypeClass rc=2
+[era] _VectorClass_PAVAircraftTypeClass rc=2
+[era] _VectorClass_PAVUnitTypeClass rc=2
+[era] _VectorClass_PAVAnimTypeClass rc=2
+[era] _VectorClass_PAVInfantryTypeClass rc=2
+[era] _VectorClass_PAVBulletTypeClass rc=2
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PAVIsometricTileTypeClass rc=2
+[era] _VectorClass_PAVParticleSystemTypeClass rc=2
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=2
+[era] _VectorClass_PAVAbstractTypeClass rc=2
+[era] _VectorClass_PAVGraphicMenuItem rc=2
+[era] HouseClass               rc=0
+[era] _VectorClass_PBVBuildingTypeClass rc=2
+[era] _VectorClass_PAUStartingTechnoStruct_HouseClass rc=2
+[era] _VectorClass_PAUBuildChoiceClass_HouseClass rc=2
+[era] _VectorClass_PBVTeamTypeClass rc=2
+[era] _VectorClass_PBVUnitTypeClass rc=2
+[era] _VectorClass_PBVAnimTypeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x50def0   MISMATCH         HouseClass::GetCurrentOption
+[ledger] 0x4ed3a0 _VectorClass_PAVSmudgeTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed860 _VectorClass_PAVBuildingTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edac0 _VectorClass_PAVAircraftTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edd20 _VectorClass_PAVUnitTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4edf80 _VectorClass_PAVAnimTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee1e0 _VectorClass_PAVInfantryTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee440 _VectorClass_PAVBulletTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee6a0 _VectorClass_PAVVoxelAnimTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee900 _VectorClass_PAVIsometricTileTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eedc0 _VectorClass_PAVParticleSystemTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef020 _VectorClass_PAVSuperWeaponTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ef280 _VectorClass_PAVAbstractTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f28e0 _VectorClass_PAVGraphicMenuItem::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50def0 HouseClass::GetCurrentOption -> NG (attempt 1)
+[ledger] 0x50e910 _VectorClass_PBVBuildingTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ec20 _VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f4e0 _VectorClass_PAUBuildChoiceClass_HouseClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f740 _VectorClass_PBVTeamTypeClass::CompareVectors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x513010 _VectorClass_PBVUnitTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5250d0 _VectorClass_PBVAnimTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p242\batch_report.json

@@ -24792,6 +24792,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ed3a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSmudgeTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed4c0": {
   "attempts": 1,
   "clean": false,
@@ -24873,6 +24885,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ed860": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVBuildingTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BuildingTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed980": {
   "attempts": 1,
   "clean": false,
@@ -24906,6 +24930,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_SmudgeTypeClass::FindItemIndex_1",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4edac0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAircraftTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -24954,6 +24990,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4edd20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVUnitTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_UnitTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ede40": {
   "attempts": 1,
   "clean": false,
@@ -24987,6 +25035,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_AircraftTypeClass::FindItemIndex_0",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4edf80": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAnimTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25026,6 +25086,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ee1e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVInfantryTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_InfantryTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee300": {
   "attempts": 1,
   "clean": false,
@@ -25054,6 +25126,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_AnimTypeClass::FindItemIndex_0",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4ee440": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVBulletTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BulletTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25093,6 +25177,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x4ee6a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVVoxelAnimTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee7c0": {
   "attempts": 1,
   "clean": false,
@@ -25126,6 +25222,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4ee900": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVIsometricTileTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_IsometricTileTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25203,6 +25311,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4eedc0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVParticleSystemTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleSystemTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4eeee0": {
   "attempts": 1,
   "clean": false,
@@ -25236,6 +25356,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex_0",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4ef020": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSuperWeaponTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SuperWeaponTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25279,6 +25411,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex_1",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x4ef280": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVAbstractTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AbstractTypeClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -25542,6 +25686,18 @@
   "orig_name": "Map::CanScroll",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x4f28e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVGraphicMenuItem::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseClass_24::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4f2920": {
@@ -26734,6 +26890,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x50def0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov ax, word ptr [ecx + 0x5494]",
+  "name": "HouseClass::GetCurrentOption",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "HouseClass::GetCurrentOption",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50df30": {
   "attempts": 6,
   "first_diff": "+0 mov eax, dword ptr [0xa8ef98]",
@@ -27090,6 +27258,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x50e910": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVBuildingTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_BuildingType::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50ea30": {
   "attempts": 1,
   "clean": false,
@@ -27127,6 +27307,18 @@
   "name": "VectorClass::InsertAt",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x50ec20": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUStartingTechnoStruct_HouseClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UAngerStruct___16::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50ed40": {
   "attempts": 1,
@@ -27224,6 +27416,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50f4e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUBuildChoiceClass_HouseClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50f600": {
   "attempts": 1,
   "clean": false,
@@ -27258,6 +27462,18 @@
   "orig_name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex_1",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x50f740": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVTeamTypeClass::CompareVectors",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_BuildingType::CompareVectors",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x50f860": {
@@ -27958,6 +28174,18 @@
   "name": "TypeList_Infantry::GetSize",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x513010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVUnitTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "HouseTypeClass_36::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x513100": {
   "attempts": 1,
@@ -28833,6 +29061,18 @@
   "orig_name": "_VectorClass_PBVAnimTypeClass::SaveToINI",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5250d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVAnimTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_VectorClass_PBVAnimTypeClass::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x5251f0": {

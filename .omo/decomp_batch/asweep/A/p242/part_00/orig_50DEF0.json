@@ -1,0 +1,11 @@
+{
+ "addr": "0x50DEF0",
+ "name": "HouseClass::GetCurrentOption",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50DEF0",
+ "bytes_hex": "668b8194540000663b0598efa800751f668b9196540000663b159aefa800750f8b4424048b89905400008908c204008b4424048b91945400008910c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

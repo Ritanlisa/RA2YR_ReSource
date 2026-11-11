@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetCurrentOption@HouseClass@@QAEPAIPAH@Z",
+ "sym_key": "HouseClass::GetCurrentOption",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b9194540000663b1500000000751d8bc2c1f810663b05b6030000750f8b4424048b89905400008908c204008b4424048910c20400",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EEB4@@3PADA",
+   "sym_key": "DataGlobal_A8EEB4"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  }
+ ]
+}
