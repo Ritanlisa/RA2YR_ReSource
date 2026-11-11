@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p44\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e83a0 _VectorClass_PAVSuperClass::Get -> _VectorClass_PAVSuperClass
+[conv] 0x4e8460 _VectorClass_PAVBuildingLightClass::Get -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e84c0 _VectorClass_PAVParticleClass::SaveToINI -> _VectorClass_PAVParticleClass
+[conv] 0x4e8520 _VectorClass_PAVTeamClass::Get -> _VectorClass_PAVTeamClass
+[conv] 0x4e8530 _VectorClass_PAUThemeControl::Clear -> _VectorClass_PAUThemeControl
+[conv] 0x4e8590 _VectorClass_PAVTriggerClass::Get -> _VectorClass_PAVTriggerClass
+[conv] 0x4e8650 _VectorClass_PAVTubeClass::Get -> _VectorClass_PAVTubeClass
+[conv] 0x4e86b0 _VectorClass_PAVParticleSystemClass::Get -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4e8710 _VectorClass_PAVWaveClass::Get -> _VectorClass_PAVWaveClass
+[conv] 0x4e8770 _VectorClass_PAVOverlayClass::Get -> _VectorClass_PAVOverlayClass
+[conv] 0x4e87d0 _VectorClass_PAVSmudgeClass::Write -> _VectorClass_PAVSmudgeClass
+[conv] 0x4e8830 _VectorClass_PAVTerrainClass::Write -> _VectorClass_PAVTerrainClass
+[conv] 0x4e8890 _VectorClass_PAVAircraftClass::Get -> _VectorClass_PAVAircraftClass
+[conv] 0x4e88f0 _VectorClass_PAVUnitClass::Get -> _VectorClass_PAVUnitClass
+[conv] 0x4e8950 _VectorClass_PAVHouseClass::Get -> _VectorClass_PAVHouseClass
+[conv] 0x4e8a10 _VectorClass_PAVFactoryClass::Get -> _VectorClass_PAVFactoryClass
+[conv] 0x4e8a70 _VectorClass_PAVCampaignClass::Get -> _VectorClass_PAVCampaignClass
+[conv] 0x4e8ad0 _VectorClass_PAVSideClass::Get -> _VectorClass_PAVSideClass
+[conv] 0x4e8b30 _VectorClass_PAVHouseTypeClass::Get -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4e8b90 _VectorClass_PAVTaskForceClass::Get -> _VectorClass_PAVTaskForceClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVSuperClass rc=0
+[era] _VectorClass_PAVBuildingLightClass rc=0
+[era] _VectorClass_PAVParticleClass rc=0
+[era] _VectorClass_PAVTeamClass rc=0
+[era] _VectorClass_PAUThemeControl rc=0
+[era] _VectorClass_PAVTriggerClass rc=0
+[era] _VectorClass_PAVTubeClass rc=0
+[era] _VectorClass_PAVParticleSystemClass rc=0
+[era] _VectorClass_PAVWaveClass rc=0
+[era] _VectorClass_PAVOverlayClass rc=0
+[era] _VectorClass_PAVSmudgeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVAircraftClass rc=0
+[era] _VectorClass_PAVUnitClass rc=0
+[era] _VectorClass_PAVHouseClass rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVSideClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e83a0   MATCH            _VectorClass_PAVSuperClass::Get
+[diff] 0x4e8460   MATCH            _VectorClass_PAVBuildingLightClass::Get
+[diff] 0x4e84c0   MATCH            _VectorClass_PAVParticleClass::SaveToINI
+[diff] 0x4e8520   MATCH            _VectorClass_PAVTeamClass::Get
+[diff] 0x4e8530   MATCH            _VectorClass_PAUThemeControl::Clear
+[diff] 0x4e8590   MATCH            _VectorClass_PAVTriggerClass::Get
+[diff] 0x4e8650   MATCH            _VectorClass_PAVTubeClass::Get
+[diff] 0x4e86b0   MATCH            _VectorClass_PAVParticleSystemClass::Get
+[diff] 0x4e8710   MATCH            _VectorClass_PAVWaveClass::Get
+[diff] 0x4e8770   MATCH            _VectorClass_PAVOverlayClass::Get
+[diff] 0x4e87d0   MATCH            _VectorClass_PAVSmudgeClass::Write
+[diff] 0x4e8830   MATCH            _VectorClass_PAVTerrainClass::Write
+[diff] 0x4e8890   MATCH            _VectorClass_PAVAircraftClass::Get
+[diff] 0x4e88f0   MATCH            _VectorClass_PAVUnitClass::Get
+[diff] 0x4e8950   MATCH            _VectorClass_PAVHouseClass::Get
+[diff] 0x4e8a10   MATCH            _VectorClass_PAVFactoryClass::Get
+[diff] 0x4e8a70   MATCH            _VectorClass_PAVCampaignClass::Get
+[diff] 0x4e8ad0   MATCH            _VectorClass_PAVSideClass::Get
+[diff] 0x4e8b30   MATCH            _VectorClass_PAVHouseTypeClass::Get
+[diff] 0x4e8b90   MATCH            _VectorClass_PAVTaskForceClass::Get
+[ledger] 0x4e83a0 _VectorClass_PAVSuperClass::Get -> OK (attempt 1)
+[ledger] 0x4e8460 _VectorClass_PAVBuildingLightClass::Get -> OK (attempt 1)
+[ledger] 0x4e84c0 _VectorClass_PAVParticleClass::SaveToINI -> OK (attempt 1)
+[ledger] 0x4e8520 _VectorClass_PAVTeamClass::Get -> OK (attempt 1)
+[ledger] 0x4e8530 _VectorClass_PAUThemeControl::Clear -> OK (attempt 1)
+[ledger] 0x4e8590 _VectorClass_PAVTriggerClass::Get -> OK (attempt 1)
+[ledger] 0x4e8650 _VectorClass_PAVTubeClass::Get -> OK (attempt 1)
+[ledger] 0x4e86b0 _VectorClass_PAVParticleSystemClass::Get -> OK (attempt 1)
+[ledger] 0x4e8710 _VectorClass_PAVWaveClass::Get -> OK (attempt 1)
+[ledger] 0x4e8770 _VectorClass_PAVOverlayClass::Get -> OK (attempt 1)
+[ledger] 0x4e87d0 _VectorClass_PAVSmudgeClass::Write -> OK (attempt 1)
+[ledger] 0x4e8830 _VectorClass_PAVTerrainClass::Write -> OK (attempt 1)
+[ledger] 0x4e8890 _VectorClass_PAVAircraftClass::Get -> OK (attempt 1)
+[ledger] 0x4e88f0 _VectorClass_PAVUnitClass::Get -> OK (attempt 1)
+[ledger] 0x4e8950 _VectorClass_PAVHouseClass::Get -> OK (attempt 1)
+[ledger] 0x4e8a10 _VectorClass_PAVFactoryClass::Get -> OK (attempt 1)
+[ledger] 0x4e8a70 _VectorClass_PAVCampaignClass::Get -> OK (attempt 1)
+[ledger] 0x4e8ad0 _VectorClass_PAVSideClass::Get -> OK (attempt 1)
+[ledger] 0x4e8b30 _VectorClass_PAVHouseTypeClass::Get -> OK (attempt 1)
+[ledger] 0x4e8b90 _VectorClass_PAVTaskForceClass::Get -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p44\batch_report.json
