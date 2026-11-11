@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_49F190@@YAXXZ",
+ "sym_key": "Unnamed::sub_49F190",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "c705a80000001a2d4454c705ac000000fb21f93fc3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F5D8@@3GA",
+   "sym_key": "DataGlobal_89F5D8"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_89F5D8@@3GA",
+   "sym_key": "DataGlobal_89F5D8"
+  }
+ ]
+}

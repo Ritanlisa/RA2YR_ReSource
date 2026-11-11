@@ -2,3 +2,4 @@
 {"part": 1, "n": 20, "seconds": 12.4, "ok": true, "verdicts": {"MISMATCH": 10, "MATCH": 6, "COMPILE_FAIL": 4}}
 {"part": 2, "n": 20, "seconds": 13.9, "ok": true, "verdicts": {"MISMATCH": 11, "COMPILE_FAIL": 5, "MATCH": 4}}
 {"part": 3, "n": 20, "seconds": 14.2, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 9, "MATCH": 5}}
+{"part": 4, "n": 20, "seconds": 15.0, "ok": true, "verdicts": {"MISMATCH": 6, "COMPILE_FAIL": 10, "MATCH": 4}}
