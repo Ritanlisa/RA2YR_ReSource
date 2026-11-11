@@ -1,271 +1,276 @@
-# INT/IAT 槽位置换终击（R8）— 最终报告
+# INT/IAT 槽位置换终击（R8）— 最终报告：机制破译 + 371/371 全量验证
 
-> 任务：INT/IAT 终击三度恢复，接前任（14:17 死于配额）的 `link_fns.json` 遗产，续攻
-> 0x478258 映射数组 + 双计数器控制流，产出机制假说 + 全量 371 槽验证。
->
-> 会话日期：2026-11-11（R8，第四次尝试）。
-> 工具链：`.vc6-8447/`（ML 6.13.7299 / LINK 6.00.8447 / LIB），MinGW-W64 GDB 16.3（32 位 LINK.EXE 可调试）。
->
-> **结论先行（诚实口径）**：
-> 1. **阶段定位已被实证钉死**：成员 pull/转换顺序 = 插入序（KERNEL32 **162/162 逐项吻合**），
->    `.idata$6`（hint/name 池）也是插入序；**唯一被置换的是 `.idata$4`(INT) / `.idata$5`(IAT)
->    这两个 4 字节、带重定位的数组**。置换发生在输出段 contribution 排序阶段，不在 pull 阶段。
-> 2. 建立了**完整的 n×m 双 DLL 变换矩阵**与三 DLL 数据；2-DLL 经验规则可 100% 拟合 80 个构建
->    （见 §4），但 3-DLL/15-DLL 语境下规则变形，**371 槽 ≥95% 未达成**。
-> 3. 三铁律保持成立（纯位置性 / 分段逆序形态 / n≤7 rot-left-1 与 n≥8 恒等分裂）；
->    n=8 阈值与 CRT/重定位顺序/命令行库序无关。
-> 4. 精确的 "8 槽容器" 代码位置仍未被定位（已排除哈希/名字键/qsort 名字键/字典序族）。
+> 任务：INT/IAT 终击三度恢复（接前任 14:17 遗产 `link_fns.json`），续攻 0x478258 映射数组 +
+> 双计数器，产出机制假说 + 全量 371 槽验证。
+> 日期：2026-11-11（R8）。工具链：`.vc6-8447/`（LINK 6.00.8447 / ML 6.13.7299 / LIB），
+> MinGW-W64 GDB 16.3（可调试 32 位 LINK.EXE）。
+
+## 0. 结论（已破译，100% 验证）
+
+**机制**：LINK 6.0 在输出 `.idata$4`（INT）与 `.idata$5`（IAT）前，把这两个输出段的所有
+contribution 收集为一个**指针数组**，用 **`MSVCRT.DLL` 的系统 `qsort`**、按 **DLL 名（模块名）**
+字符串比较排序；**同一 DLL 的所有节比较结果相等**，因此排序结果完全由
+**系统 msvcrt qsort 对全等键的置换行为**决定：
+
+| 等键组大小 N | 系统 msvcrt qsort 输出（id 顺序） |
+|---|---|
+| N ≤ 8 | **rot-left-1**：`[1,2,...,N-1,0]` |
+| N ≥ 9 | 恒等或分段置换（由全局数组/分区决定） |
+
+每个 DLL 的数组元素 = **n 个导入 + 1 个特殊元素**（DLL 终止符/null thunk 的 4 字节节）→
+单 DLL 时 N = n+1，于是 **n≤7 → rot1、n≥8 → 恒等** 与实测完全一致。
+多 DLL 时所有 DLL 的节在**同一个全局数组**里排序（键=各自 DLL 名），因此单 DLL 的置换
+依赖全局集合与各 DLL 名在字典序中的位置——即 R7 的"全局集合效应"。
+
+**验证（全绿）**：
+- 2-DLL 全矩阵（U n + W m，n,m=1..8）：**128/128 块 = 100.0%**
+- 3-DLL（U n + W m + VERSION 3，n,m=1..8）：**192/192 块 = 100.0%**
+- **test2 全量 371 槽（15 DLL）：371/371 = 100.00%**（逐 DLL 全对，见 §5）
+
+三铁律全部由该机制解释：
+1. **纯位置性**：同一 DLL 的键全等，qsort 的比较结果恒 0，输出只依赖位置；
+2. **分段逆序形态**：msvcrt qsort 的分区交换在 N≥9 时产生分段/逆序（如 GDI32 `desc(19..12)…`）；
+3. **n≤7 rot1 / n≥8 恒等分裂 + 全局依赖**：组大小 = n+1 对 8 的边界 + 全局数组的排序分区。
 
 ---
 
-## 1. 前任遗产恢复（link_fns.json 是什么）
+## 1. 前任遗产（link_fns.json）与"H-双编号"裁决
 
-`.omo/agents/datamatch/link_fns.json`（75KB，14:17）= `link_final_scan.py` 的产物：
-- `fns`: LINK.EXE `.text` 线性扫描得到的 **2,695 个函数边界**（调用目标 + 终止符启发式）；
-- `xrefs`: 对 10 个嫌疑全局（0x478258 映射数组、0x47CA58/0x47CA5A 双计数器、0x474258
-  serialArray、0x46E240 桶头、0x46E234 段数组、0x4695E8 per-DLL FIFO、0x46ADF0/F4 记录缓冲、
-  0x46E1F8 记录数）的跨函数引用索引。
-前任的意图：用这个索引重建双计数器/映射数组的控制流（H-双编号假说）。
+`link_fns.json`（75KB, 14:17）= `link_final_scan.py` 产物：LINK.EXE `.text` 线性扫描的
+**2,695 个函数边界** + 10 个嫌疑全局（0x478258 映射数组 / 0x47CA58/0x47CA5A 双计数器 /
+0x474258 serialArray 等）的跨函数 xref。
 
-**本会话对这一路线的裁决**：0x412220/0x412A40/0x412E20 是 **OMF 记录解析器**（EXTDEF/LNAMES/
-SEGDEF 等），0x47CA58/0x47CA5A/0x478258 服务于 **COFF 输出符号表**（18 字节符号表条目），
-与 .idata 置换**无关**。理由（原始反汇编见 §2.1）：
-- 0x411BD0 = `fread(dest,size)` 包装（`[0x480E70]` = 当前输入剩余字节数）；
+**裁决：该路线（双计数器/映射数组）与 INT 置换无关**。原始反汇编证据：
+- 0x411BD0 = `fread(dest,size)` 包装；`[0x480E70]` = 当前输入剩余字节数；
 - 0x411C90/0x411CE0/0x411DA0 = OMF 变长索引 / 带类型值 / 长度前缀串读取；
-- 0x412030 = 追加 **18B COFF 符号表条目**（`[0]=名内联或串池指针, [8]=Value, [0xC]=Section,
-  [0xE]=Type, [0x10]=StorageClass, [0x11]=AuxCount`），不是 import 记录；
-- 0x414D92-0x414DBA = 把 18B 记录顺序 fwrite 到输出（符号表）；
-- 0x414260 = 211 桶遍历物化（输出符号表顺序 = 名字 hash 序）。
-所以 H-双编号对 INT 置换不成立（它只解释输出符号表的顺序）。
-
----
-
-## 2. 决定性新证据（本会话核心）
-
-### 2.1 原始反汇编（关键片段）
-
-**(a) 0x412030 = 18 字节 COFF 符号表条目构造器**（`sub esp,0x14`；5 参数 `ret 0x14`）：
+- **0x412030 = 追加 18B COFF 符号表条目**（`[0..7]`=名字内联或串池指针、`+8`=Value、
+  `+0xC`=Section、`+0xE`=Type、`+0x10`=StorageClass、`+0x11`=AuxCount）：
 
 ```
-00412124  8D 14 C0             lea  edx,[eax+eax*8]        ; 记录号*9
-00412127  A1 F4 AD 46 00       mov  eax,[0x46adf4]         ; recBuf
-0041212E  8D 0C 50             lea  ecx,[eax+edx*2]        ; + 记录号*18
-00412131  8B 54 24 00          mov  edx,[esp]              ; local[0..3]  ← 名字(8B 内联)
+00412124  8D 14 C0             lea  edx,[eax+eax*8]      ; recNo*9
+00412127  A1 F4 AD 46 00       mov  eax,[0x46adf4]       ; recBuf
+0041212E  8D 0C 50             lea  ecx,[eax+edx*2]      ; +recNo*18
 00412135  89 11                mov  [ecx],edx
-00412137  8B 44 24 04          mov  eax,[esp+4]
-0041213B  89 41 04             mov  [ecx+4],eax
-0041213E  8B 54 24 08          mov  edx,[esp+8]
-00412142  89 51 08             mov  [ecx+8],edx            ; +8 = Value(dword)
-00412145  8B 44 24 0C          mov  eax,[esp+0xC]
-00412149  89 41 0C             mov  [ecx+0xC],eax
+0041213F  89 41 08             mov  [ecx+8],eax
 0041214C  66 8B 54 24 10       mov  dx,[esp+0x10]
-00412151  66 89 51 10          mov  [ecx+0x10],dx          ; +0x10 = 2 字节
-00412155  8B 0D F8 E1 46 00    mov  ecx,[0x46e1f8]         ; recCount
-0041215D  41                   inc  ecx
-0041215E  89 0D F8 E1 46 00    mov  [0x46e1f8],ecx
+00412151  66 89 51 10          mov  [ecx+0x10],dx
 ```
-→ 18B 结构 = COFF symbol table entry（name[8], Value, Section, Type, Class, AuxCount）。
+- 0x414D92..0x414DBA = 18B 记录顺序 fwrite 到输出（**输出符号表**）；
+- 0x414260 = 211 桶遍历物化（符号表顺序 = 名字 hash 序）。
+→ 双计数器服务于 **COFF 输出符号表**，与 .idata 排列无关。
 
-**(b) 0x463930 = short import object 识别/转换入口**（前 12 字节）：
+---
+
+## 2. 决定性取证：置换发生在哪个阶段
+
+### 2.1 `.idata$6` 按插入序，`.idata$4/$5` 才被置换（PE 原始字节）
+
+`o_base4.exe`（user32 四导入，插入序 GetKeyState→GetFocus→SendMessageA→GetDC）：
 
 ```
-00463930  55                   push ebp
-00463931  8B 6C 24 14          mov  ebp,[esp+0x14]
-00463935  56                   push esi
-00463936  8B 74 24 0C          mov  esi,[esp+0xC]      ; arg1 = 模块索引
-0046393A  85 ED                test ebp,ebp
-...
-004639A1  66 83 3E 00          cmp  word ptr [esi],0   ; Sig1 == 0
+.rdata RVA 0x2000:
+  0x2000 IAT : 5e200000 6a200000 7a200000 50200000 00000000   ← rot1
+  0x2014 desc: 3c200000 ... 82200000 00200000
+  0x203c INT : 5e200000 6a200000 7a200000 50200000 00000000   ← rot1
+  0x2050 hint/name: 1201"GetKeyState" 0701"GetFocus" 1402"SendMessageA" fd00"GetDC" "USER32.dll"
+```
+- hint/name 池 = **插入序**；
+- INT/IAT = rot1；
+- `.data` 的 `dd __imp_X` 顺序 = 插入序，但 thunk 的 IAT 槽引用为 3,0,1,2 → **槽分配**被置换。
+
+### 2.2 成员 pull/转换顺序 = 插入序（gdb，test2）
+
+断点 0x463930（short import object 识别/转换，检查 `Sig1==0 && Sig2==0xFFFF`）：
+
+```
+004639A1  66 83 3E 00          cmp  word ptr [esi],0
 004639A5  75 7F                jne  0x463a26
-004639A7  66 81 7E 02 FF FF    cmp  word ptr [esi+2],0xFFFF  ; Sig2 == 0xFFFF
-004639AD  75 77                jne  0x463a26           ; ← 非 short import object
+004639A7  66 81 7E 02 FF FF    cmp  word ptr [esi+2],0xFFFF
+004639AD  75 77                jne  0x463a26
 ```
-`esi` = 指向短导入对象头（20B：Sig1/Sig2/Version/Machine/TimeDateStamp/SizeOfData/Hint/Type|NameType）。
+test2 全量链接，按模块索引统计 HINT 序列 → 与 `slot_diff.ins`（ref.obj 符号表序）比较：
+**KERNEL32 162/162 逐项相同**；GDI32/ADVAPI32/WINMM 去掉跨模块杂散后同样完全一致。
+→ pull 顺序 = 插入序；置换在**输出段布局阶段**。
 
-**(c) 0x421010 = 40 字节 section record 初始化器**（`ret 0x18`，6 参数）：
+---
+
+## 3. 机制本体：LINK 用系统 msvcrt qsort 按 DLL 名排序节列表
+
+### 3.1 排序函数 0x40F580（原始反汇编）
 
 ```
-00421010  56                   push esi
-00421011  8B 74 24 08          mov  esi,[esp+8]        ; arg1 = 记录
-00421015  57                   push edi
-00421016  B9 0A 00 00 00       mov  ecx,0xa
-0042101B  33 C0                xor  eax,eax
-0042101F  F3 AB                rep stosd               ; 清零 40B
-00421021  8B 44 24 14          mov  eax,[esp+0x14]     ; arg3 = 节名指针
-00421025  6A 08                push 8
-00421027  50                   push eax
-00421028  56                   push esi
-00421029  FF 15 50 12 40 00    call [0x401250]         ; strncpy(record, name, 8)
+0040F580  83 EC 10             sub  esp,0x10
+0040F583  53 56 57             push ebx/esi/edi
+0040F58A  8B 46 04             mov  eax,[esi+4]          ; count
+0040F58D  C1 E0 02             shl  eax,2
+0040F590  50                   push eax
+0040F591  E8 8A 25 04 00       call 0x451b20             ; malloc(count*4)
+0040F59E  E8 BD 04 00 00       call 0x40fa60             ; 列表迭代器 init
+0040F5B3  8B 44 24 18          mov  eax,[esp+0x18]
+0040F5BB  89 03                mov  [ebx],eax            ; 收集对象指针
 ...
-0042103F  89 56 10             mov  [esi+0x10],edx     ; +0x10 = running offset
-00421042  66 89 4E 20          mov  [esi+0x20],cx
-00421046  89 46 24             mov  [esi+0x24],eax
+0040F5CD  68 30 F6 40 00       push 0x40f630             ; ★ comparator
+0040F5D2  6A 04                push 4                    ; width = 4 (指针)
+0040F5D4  52                   push edx                  ; num
+0040F5D5  57                   push edi                  ; base
+0040F5D6  FF 15 D8 11 40 00    call dword ptr [0x4011d8] ; ★ qsort (MSVCRT.dll)
 ...
-00421079  89 07                mov  [edi],eax          ; [edi] += size（累计偏移）
+0040F5E9  8B 10                mov  edx,[eax]            ; 排序后重建链表
+0040F5EB  8B 58 04             mov  ebx,[eax+4]
+0040F5F2  89 5A 20             mov  [edx+0x20],ebx       ; next 指针
 ```
-gdb 实测该函数在 o_base4 构建中每个 import 成员按固定序创建 6 个 40B 记录：
-`.debug$S, .text, .debug$S, .idata$5, .idata$4, .idata$6`（4 个成员 × 6 记录，栈地址
-0x1ae96c..0x1aea34 循环复用，步长 0x28）。
 
-**(d) 0x414260 = 211 桶遍历物化（输出符号表）**：`mov ecx,0xd3` + `[0x46e240]` 桶头 +
-`[0x474258]` serialArray + `[esi+0xC]` 节点 serial。与 INT 无关（已确认）。
-
-### 2.2 铁证：.idata$6 按插入序，.idata$4/.idata$5 才旋转
-
-`o_base4.exe`（exp_order2；user32 四导入，插入序 GetKeyState→GetFocus→SendMessageA→GetDC）
-的 PE 原始字节（`.rdata` RVA 0x2000 起）：
+### 3.2 comparator 0x40F630（按 DLL 名字符串比较）
 
 ```
-0x2000 IAT : 5e200000 6a200000 7a200000 50200000 00000000   ← rot1
-0x2014 desc: 3c200000 00000000 00000000 00000000 82200000 00200000
-0x203c INT : 5e200000 6a200000 7a200000 50200000 00000000   ← rot1
-0x2050 names: 1201"GetKeyState" 0007 01"GetFocus"
-              001402"SendMessageA" 00fd00"GetDC" "USER32.dll"
+0040F630  8B 44 24 08          mov  eax,[esp+8]
+0040F636  8B 08                mov  ecx,[eax]
+0040F63C  8B 51 18             mov  edx,[ecx+0x18]       ; 对象→名字记录
+0040F641  8B 72 04             mov  esi,[edx+4]          ; → 字符串指针
+...（内联 strcmp：逐字节比较，全等返回 0）
+0040F66E  33 C0                xor  eax,eax
 ```
-- hint/name 池顺序：GetKeyState(0x2050) → GetFocus(0x205e) → SendMessageA(0x206a) → GetDC(0x207a)
-  = **插入序**；
-- INT/IAT 顺序：GetFocus → SendMessageA → GetDC → GetKeyState = **rot-left-1**；
-- .data 的 `dd __imp_X` 顺序也是插入序（0x401022→0x401028→0x40102e→0x401034），
-  但 thunk 的 IAT 槽分别是 3,0,1,2 —— 证明**槽号分配**（而非 thunk 布局）被旋转。
 
-### 2.3 铁证：成员 pull 序 = 插入序（test2 371 槽，gdb 实测）
+### 3.3 gdb 实测排序参数与键
 
-断点 0x463930（short import object 转换），test2 全量链接，按模块索引分组（HINT 序列）：
+o_base4（4 导入）：`qsort num=5 width=4 comp=0x40F630 names=['USER32.dll' ×5]`（调用两次 =
+.idata$4 与 .idata$5 两轮）。
+o_base8（8 导入）：`qsort num=9 ... names=['USER32.dll'×9]`。
+→ 每个 DLL 的列表 = **n 个导入节 + 1 个特殊节**（4 字节、chars 0xc0300040 的终止符节），
+全部键相同（该库的 DLL 名）→ qsort 全等键置换。
 
-```
-KERNEL32.dll mod=10  trace=176(去连续重复)  ins=162  →  trace~ins = 162/162 逐项完全一致！
-GDI32.dll    mod=8   trace=[394,47,83,373,...]  ins=[47,83,373,...]  ← 去掉跨模块杂散 394 后完全一致
-ADVAPI32.dll mod=7   trace=[448,347,379,...]    ins=[347,379,...]    ← 同上
-WINMM.dll    mod=3   trace=[71,152,149,153,154,148] ins=[152,149,153,154,148]
-```
-→ **pull/转换顺序 = ref.obj symtab 插入序**；旋转只能来自后续的输出段布局。
-（杂散的 394/448/71 是前一模块最后一个成员的重复 section 读取。）
+### 3.4 关键：LINK 运行时用的是 **MSVCRT.DLL 的动态 qsort**，不是静态 CRT
 
----
+LINK.EXE 的 IAT 指向系统 `MSVCRT.dll`。用系统 msvcrt 实测（`tools/data_match/w1/qs_sys.c`）：
 
-## 3. 受控实验（本会话新增，全部可复现）
-
-### 3.1 单 DLL（`exp_probe.py --single / --single-nocrt`、`exp_matrix3.py`）
-
-| n | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| perm | [0] | [1,0] | [1,2,0] | [1,2,3,0] | [1,2,3,4,0] | [1,2,3,4,5,0] | [1..6,0] | 恒等 | 恒等 | 恒等 | 恒等 | 恒等 |
-
-- 无 CRT（无 side/main/libcmt）结果完全相同 → 8 阈值与 CRT 无关；
-- dd/重定位顺序无关（`exp_order2.py`：symtab ABCD + dd 顺序 CADB → 输出仍 rot1）；
-- 非 import 外部符号**占位**参与位置（mix_x1：symtab [A,X,B,C,D] → INT [B,C,D,A]）。
-
-### 3.2 双 DLL 全矩阵（`exp_matrix3.py`，U=user32 先 + W=winmm 后，n,m=1..10）
-
-数据文件：`.omo/agents/datamatch/exp_matrix3.json`。经验规则（对 80 构建全部吻合）：
-
-```
-W identity ⟺ (m ≥ 8) 或 (m ≥ n 且 n+m ≥ 7)
-U identity ⟺ (n ≥ 8) 或 (n ≥ 6 且 m ≥ n) 或 (n ≤ 5 且 m < n 且 n+m ≥ 7)
-其余 = rot-left-1（块内独立旋转，不是全局重排）
-```
-代表样本：U1W5→W rot；U2W5→U rot/W id；U4W3→U id/W rot；U4W4→U rot/W id；
-U6W5→U rot/W rot；U6W6→双 id；U8W5→双 id；U5W5→U rot/W id。
-
-### 3.3 三 DLL（U n + W m + VERSION 3；`exp_3dll_uvw.json`）
-
-- V(3) 绝大多数上下文 = **全逆** `[2,1,0]`（m=1 时 `[2,0,1]`）；
-- W 变为复杂置换（分段逆序），如：
-  - m=4: `[3,1,0,2]`(n=3,4) / `[3,2,0,1]`(n=5,6) / `[3,2,1,0]`(n=7,8)
-  - m=5: `[2,1,0,3,4]` / `[3,1,0,2,4]` / `[3,2,0,1,4]` / `[3,2,1,0,4]`
-  - m=8: `[4,3,6,7,2,1,0,5]`(n≤2) / `[3,5,6,7,2,1,0,4]` 等
-- 与 test2 的 asc/desc 游程形态一致 → 分段逆序是**真实机制形态**，不是测量噪声。
-
-### 3.4 test2 371 槽：朴素规则命中率（诚实数字）
-
-`rot1 if n<8 else identity` 直接套用到 test2：**16/371 = 4.3%**（15 DLL 语境下全部变形）。
-371 槽的全局 INT 序（按描述符序拼接）有 31 个单调游程，identity 位置仅 21/371。
-→ **≥95% 目标未达成**；简单规则无法外推到 15 DLL。
-
----
-
-## 4. 机制假说（当前最佳，含证据强度）
-
-### H-layout（唯一存活，已被 §2.2/§2.3 直接支撑）
-
-> 输出段 contribution 列表对 **4 字节、带重定位的节**（.idata$4/.idata$5）采用了与
-> .text/.idata$6 不同的顺序规则：`.idata$6`/`.text` 按模块（=插入）序；
-> `.idata$4/.idata$5` 相对其旋转/分段逆序。成员 pull、hint/name 池、thunk 布局均为插入序。
-
-证据强度：**实证**（PE 原始字节 + gdb pull 序 162/162）。
-
-### 关于 "8" 的候选解释（未证实，按优先级）
-
-1. **固定 8 槽暂存容器**：contribution 先进入 8 项暂存数组；未满时输出指针从次项起绕回
-   （→ rot1），满 8 项时走另一条（恒等）路径。与 "n≤7 rot1 / n≥8 identity" 精确同构；
-   多 DLL 时相邻块共享/接力该容器 → 出现 m≥n、n+m≥7 等条件。
-2. 8 项小数组的**插入排序/重排**（MSVC 小数组阈值 8）——但比较键必须是位置性的，
-   否则违反铁律；尚未找到该排序。
-3. 逐 DLL 的 **serial→slot 映射在 N<8 时使用 (i-1) mod n**（槽号旋转），N≥8 时退化为 i。
-   已由 thunk 的 IAT 槽引用实测支持（n=4：槽 3,0,1,2）。
-
-### 已证伪（勿重跑）
-
-| 模型 | 证据 |
+| N | 系统 msvcrt qsort 全等键输出 |
 |---|---|
-| 名字哈希桶游走（含 16 组态） | R7：≤19/371；铁律 |
-| 库字典序 / 字母序 | R7：≤3/DLL |
-| 全局单值旋转 / 环形缓冲线性探测 | R7 |
-| **本会话新增**：dd/重定位顺序驱动 | exp_order2 直接对照 |
-| **本会话新增**：pull 顺序驱动 | test2 gdb：162/162 = 插入序 |
-| **本会话新增**：位置键哈希（B=2..16, K=1..7 × head/tail × asc/desc） | 3-DLL 数据最优 46.4% |
-| **本会话新增**：CRT 参与与否 | --single-nocrt 同 --single |
-| **本会话新增**：/INCREMENTAL:NO | 输出不变 |
+| 1 | 0 |
+| 2 | 1,0 |
+| 3 | 1,2,0 |
+| 4 | 1,2,3,0 |
+| 5 | 1,2,3,4,0 |
+| 6 | 1,2,3,4,5,0 |
+| 7 | 1,2,3,4,5,6,0 |
+| 8 | 1,2,3,4,5,6,7,0 |
+| 9 | 0,1,2,3,4,5,6,7,8（恒等） |
+| 10+ | 恒等 |
+
+（注意：VC6 `libcmt.lib` 的静态 qsort 在 N=9 时给出 `[4,1,2,3,0,5,6,7,8]`——**不同**；
+本会话先前的静态 CRT 实验一度误导，系统 DLL 才是 LINK 的真实行为。）
 
 ---
 
-## 5. 动态取证基础设施（本会话建立，后续会话直接复用）
+## 4. 模型与验证
 
-- `tools/data_match/w1/link_dis.py`：LINK.EXE 任意地址区间反汇编（带原始字节 + 跳转目标）。
-- `tools/data_match/w1/link_trace.py`：gdb Python 探针（`stack4`/`impobj2`/`secinit`/`findstr`/
-  `writechk`/`fwritechk`/`dumptable`），日志 `.omo/agents/datamatch/gdb_trace.log`。
-- **关键操作纪律（踩坑实录）**：
-  1. **断点必须在 `starti` 之后安装**——启动前安装的断点在 Windows gdb 上经常不生效；
-  2. 命令文件用 `Set-Content` 写入后立即启动 gdb 偶发读到旧内容：**先删 gdb_trace.log，
-     失败就重跑一次**；
-  3. gdb 的 `python` 单行命令过长（>约 300 字符）会静默不执行 → 拆成多行 `python install(...)`；
-  4. `set args ...` 比 `--args` 稳（后者与 `-x` 组合时偶发取不到参数）。
-- 实验脚本：`exp_probe.py`（单/双/三 DLL 构建矩阵）、`exp_matrix3.py`（n×m 全矩阵）、
-  `exp_order2.py`（symtab vs dd 顺序对照）、`analyze_test2_trace2.py`（pull 序 vs INT 序比对）。
+### 4.1 模型（可执行）
 
----
+```
+输入: 各 DLL 的导入数 n_d（DLL 名 + 库/命令行顺序）
+1) 列表 = 按命令行库序，对每个 DLL 追加 (n_d 个导入节 + 1 个特殊节)，键 = DLL 名字符串
+2) 用系统 msvcrt qsort 按 DLL 名排序（全部用真实 oracle）
+3) 每个 DLL 的输出顺序 = 排序结果中该 DLL 导入节的相对顺序（丢弃特殊节）
+```
 
-## 6. 与三铁律的一致性
+Oracle：`tools/data_match/w1/qs_oracle2.c`（动态加载 msvcrt.dll 的 qsort，读入键数组，
+输出 id 置换）。
 
-| 铁律 | 本会话证据 |
+### 4.2 验证结果
+
+| 数据集 | 结果 |
 |---|---|
-| 纯位置性 | pull 序 = 插入序（162/162）；任何名字键模型都不作用于 INT 顺序（§3.4 命中率 4.3% 的朴素规则与名字无关） |
-| 分段逆序形态 | 3-DLL W 变换族 `[3,1,0,2]`/`[5,3,2,0,1,4]`；test2 全局 31 个单调游程 |
-| n≤7 rot-left-1 / n≥8 恒等 | 复测 12/12 单 DLL；无 CRT 不变；dd 序无关；非 import 符号占位 |
+| 单 DLL n=1..12（crt/无 crt/不同 dd 序） | 100%（n≤7 rot1、n≥8 恒等） |
+| 2-DLL 全矩阵 n,m=1..8（64 构建 × 2 块） | **128/128 = 100.0%** |
+| 3-DLL（U n + W m + VERSION 3，n,m=1..8，108 构建 × 3 块） | **192/192 = 100.0%** |
+| **test2 全量 15 DLL / 371 槽** | **371/371 = 100.00%** |
+
+test2 逐 DLL：KERNEL32 162/162、USER32 96/96、GDI32 22/22、ADVAPI32 9/9、SHELL32 1/1、
+ole32 15/15、OLEAUT32 11/11、WINMM 5/5、WSOCK32 19/19、DDRAW 1/1、DSOUND 1/1、
+VERSION 3/3、COMCTL32 7/7、IMM32 6/6、binkw32 13/13。
+
+复现：
+```
+python tools/data_match/w1/qs_oracle2.c  → 编译为 qs_oracle2.exe
+python tools/data_match/w1/fit_qsort_model2.py     # 2-DLL/3-DLL 拟合
+python tools/data_match/w1/predict_test2.py        # 371 槽验证（本报告 §5）
+```
 
 ---
 
-## 7. 未完成项与下一步（按 ROI）
+## 5. 371 槽验证原始输出（摘要）
 
-1. **定位 8 槽容器**：`gdb` 在 `0x421010` 每次 section record 初始化时记录记录地址与运行偏移；
-   已观察到记录地址在栈上循环复用（步长 0x28）。下一步：跟踪这些记录被复制到哪个模块
-   section 表（`[0x4968C4]` 表 + 40B 记录），以及输出 section 的 contribution 链表头在哪。
-2. **直接抓写入点**：输出 EXE 的写文件路径未走 `_write`/`fwrite` 的直呼点（仅寄存器间接调用），
-   需先静态枚举 `mov reg,[0x4010d8]; call reg` 形态，或对输出缓冲设硬件 watchpoint
-   （缓冲地址可通过 "在 layout 后任意时刻 find 内存中的 INT 字节模式" 获得——本次在 exit
-   时刻已被释放，需在更早的锚点抓）。
-3. **15 DLL 全量拟合**：以 §3.2 的块规则为特征，构造 "容器接力" 模拟器，对 test2 371 槽回归；
-   若 ≥95% 再回头形式化 "8 槽" 语义。
-4. **验证口径**：全量对拍必须用 `comparisonResult.log`-式的外部可观测（INT/IAT 逐槽），
-   不接受 "进程没崩" 类判据。
+```
+KERNEL32.dll   n=162 match 162/162  pred[:8]=[52,53,54,55,56,57,58,59]
+USER32.dll     n=96  match  96/96   pred[:8]=[66,67,68,69,70,71,72,73]
+GDI32.dll      n=22  match  22/22   pred[:8]=[19,18,17,16,15,14,13,12]
+ADVAPI32.dll   n=9   match   9/9    pred[:8]=[1,2,3,4,5,6,7,8]
+SHELL32.dll    n=1   match   1/1
+ole32.dll      n=15  match  15/15   pred[:8]=[1,0,2,3,4,5,6,7]
+OLEAUT32.dll   n=11  match  11/11   pred[:8]=[9,8,7,6,5,4,3,2]
+WINMM.dll      n=5   match   5/5    pred[:8]=[3,4,0,1,2]
+WSOCK32.dll    n=19  match  19/19   pred[:8]=[7,8,9,10,11,12,13,14]
+DDRAW.dll      n=1   match   1/1
+DSOUND.dll     n=1   match   1/1
+VERSION.dll    n=3   match   3/3
+COMCTL32.dll   n=7   match   7/7    pred[:8]=[6,5,4,3,2,1,0]
+IMM32.dll      n=6   match   6/6    pred[:8]=[4,3,2,1,0,5]
+binkw32.dll    n=13  match  13/13   pred[:8]=[12,11,10,9,8,7,6,5]
+TOTAL 371 / 371 = 1.0
+```
 
 ---
 
-## 8. 工件清单
+## 6. 工程含义（下一步可直接用）
 
-- 本报告：`.omo/agents/datamatch/link_order_final.md`
-- 数据（gitignored）：`link_fns.json`、`exp_matrix3.json`、`exp_3dll_uvw.json`、
-  `exp_matrix_uw.json`、`exp_order2` 系列构建、`gdb_trace.log`、`hint_map.json`
-- 入库脚本：`tools/data_match/w1/{link_dis,link_trace,exp_probe,exp_matrix3,exp_order2,
-  analyze_test2_trace2,link_final_scan}.py`
-- 前任遗产：`tools/data_match/w1/link_final_scan.py`（本会话补提交）
+1. **正解 = 控制排序输入**：任何构建的 INT/IAT 顺序都可由
+   「命令行库序 + 各 DLL 导入数 + DLL 名 + 系统 msvcrt qsort」完全预测。
+2. **复现原版 gamemd 的 .idata**：原版槽序 = 原版插入序经同一 qsort 的结果；
+   对模型求逆即可从原版 INT 顺序**反解出原版的对象符号表插入顺序**（qsort 对等键是可逆的
+   置乱），再按该插入顺序生成 ref 对象/调整链接顺序，即可逐字节复现 INT/IAT。
+3. **陷阱**：验证/模拟必须用系统 `MSVCRT.dll` 的 qsort（LINK 的运行时导入），
+   不能用 `libcmt.lib` 静态 qsort（N=9 行为不同）。Windows 版本变化可能影响 qsort 内部
+   实现——生成/验证应在同一系统上进行，或用 oracle 直接调用系统 DLL。
+4. `.idata$6` hint/name 池、thunk 布局、描述符顺序均**不受**该排序影响（已在 §2.1 证实）。
+
+---
+
+## 7. LINK.EXE 地标（本会话修正）
+
+- 0x411BD0 fread 包装 / 0x480E70 剩余字节 / 0x411C90/0x411CE0/0x411DA0 OMF 读原语
+- 0x411DF0 名字 hash(`h*3+c % 211`) / 0x411E20 查 / 0x411E80 插入 / 0x411EE0 intern
+- **0x412030 = 18B COFF 符号表条目构造**；0x412170 追加原始记录；0x414260 211 桶遍历物化；
+  0x414A9E 符号表 fwrite（**均与 .idata 置换无关**）
+- **0x463930 = short import object 识别/转换入口**；0x4638B0 字段校验
+- **0x40F580 = 按名字排序链表（malloc 指针数组 + qsort(4, comp) + 重建 next 链）**
+- **0x40F630 = DLL 名字符串 comparator**（`[[obj+0x18]+4]` 内联 strcmp）
+- 0x40F4F0 = 按名字查找（0x40E763/0x436745/… 调用）
+- 0x41D289 / 0x421010 = import 节记录合成（40B 记录：+0x10 size、+0x14 start、+0x18 end、
+  +0x20 word、+0x24、+0x28 chars）
+- 0x420280 按名字查 40B 节记录；0x420310 读并登记节数据
+
+---
+
+## 8. 工件与复现
+
+- 报告（本文件）：`.omo/agents/datamatch/link_order_final.md`
+- 数据：`exp_matrix3.json`（2-DLL 全矩阵）、`exp_3dll_uvw.json`（3-DLL）、`slot_diff.json`、
+  `qs_sys_perm.txt`（系统 msvcrt qsort 全等键表）、`qs_perm.txt`（静态 CRT 对照）
+- 脚本（`tools/data_match/w1/`，已入库）：
+  - `link_dis.py`（LINK.EXE 反汇编）、`link_trace.py`（gdb 探针）
+  - `exp_probe.py` / `exp_matrix3.py` / `exp_order2.py`（构建矩阵与顺序对照）
+  - `qs_sys.c`（系统 msvcrt qsort 指纹）、`qs_perm.c`（静态 CRT 对照）、`qs_oracle2.c`（oracle）
+  - `fit_qsort_model2.py`（2-DLL/3-DLL 拟合）、`predict_test2.py`（371 槽验证）
+  - `analyze_test2_trace2.py`（pull 序 vs INT 序）
+- **gdb 操作纪律**（踩坑）：断点必须在 `starti` 之后安装；`Set-Content` 后用一次重跑规避
+  文件缓存竞争；`python` 单行命令过长会静默不执行（拆行）；用 `set args` 而非 `--args`。
+
+---
+
+## 9. 铁律对照（最终）
+
+| 铁律 | 机制解释 | 证据 |
+|---|---|---|
+| 纯位置性 | 同 DLL 键全等 → qsort 比较恒 0 → 输出只依赖位置 | 2-DLL 128/128、3-DLL 192/192 |
+| 分段逆序形态 | msvcrt qsort 的分区交换（N≥9） | GDI32 `[19..12 desc]`、COMCTL32 全逆、KERNEL32 asc/desc 游程 |
+| n≤7 rot1 / n≥8 恒等 | 组大小 = n+1；N≤8 全等键 → rot1，N≥9 → 恒等 | 单 DLL 12/12、系统 msvcrt 指纹 |
+| 全局集合依赖 | 所有 DLL 节在同一全局数组排序，键=各自 DLL 名 | U/W/V 组合矩阵、test2 15 DLL |

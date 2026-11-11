@@ -81,6 +81,46 @@ class Probe(gdb.Breakpoint):
                 log("%s %s" % (self.pname, cstr(u32(esp + 8))))
             elif self.kind == "ret_only":
                 log("%s hit esp=%08x" % (self.pname, esp))
+            elif self.kind == "objdump":
+                base = u32(esp)
+                num = u32(esp + 4)
+                width = u32(esp + 8)
+                log("%s OBJDUMP num=%s width=%s" % (self.pname, num, width))
+                if base and num and width == 4 and num < 40:
+                    for i in range(min(num, 20)):
+                        p = u32(base + i * 4)
+                        w = [u32(p + 4 * k) for k in range(10)] if p else []
+                        strs = []
+                        for off in (8, 0xC, 0x10, 0x14):
+                            v = u32(p + off) if p else 0
+                            strs.append(cstr(v, 20) if v else None)
+                        log("   %2d p=%08x w=%s strs=%s" % (i, p or 0, [hex(x) if x else 0 for x in w], strs))
+            elif self.kind == "qsortnames":
+                base = u32(esp)
+                num = u32(esp + 4)
+                width = u32(esp + 8)
+                comp = u32(esp + 0xC)
+                names = []
+                if base and num and width == 4 and num < 200:
+                    for i in range(min(num, 60)):
+                        p = u32(base + i * 4)
+                        nm = None
+                        if p:
+                            np = u32(p + 0x18)
+                            if np:
+                                sp = u32(np + 4)
+                                if sp:
+                                    nm = cstr(sp, 16)
+                        names.append(nm)
+                log("%s qsort num=%s width=%s comp=%08x names=%s" %
+                    (self.pname, num, width, comp or 0, names))
+            elif self.kind == "qsortchk":
+                base = u32(esp)
+                num = u32(esp + 4)
+                width = u32(esp + 8)
+                comp = u32(esp + 0xC)
+                log("%s qsort base=%08x num=%s width=%s comp=%08x" %
+                    (self.pname, base or 0, num, width, comp or 0))
             elif self.kind == "secrec":
                 esi = reg("esi")
                 if esi:

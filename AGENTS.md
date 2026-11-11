@@ -222,6 +222,21 @@ cmake --build build_linux
   段）；LINK.EXE 地标图 + 头号假说「双计数器 0x47CA58/0x47CA5A+映射数组 0x478258
   分叉」入档。报告 = `.omo/agents/datamatch/link_order_report.md`；实验脚本入库
   `tools/data_match/w1/{xref_*,fit_dictwalk,exp_*}.py`。
+- **✅✅ INT/IAT 置换已破译（R8，2026-11-11 第四会话）**：机制 = **LINK 6.0 用系统
+  `MSVCRT.DLL` 的 `qsort` 按 DLL 名排序 `.idata$4`/`.idata$5` 的节列表**；同一 DLL 的
+  所有节键相等 → 排序输出 = msvcrt 全等键置换（组大小 N≤8 → rot-left-1；N≥9 → 恒等/
+  分段）。每个 DLL 列表 = n 导入 + 1 终止符节 → 单 DLL n≤7 rot1 / n≥8 恒等的分裂。
+  **验证全绿：2-DLL 128/128 块、3-DLL 192/192 块、test2 全量 371/371 槽 = 100.00%**。
+  证据：排序函数 0x40F580（malloc 指针数组 + `qsort(width=4, comp=0x40F630)` + 重建
+  next 链）、comparator 0x40F630（`[[obj+0x18]+4]` DLL 名字符串内联 strcmp）；gdb 实测
+  o_base4 `num=5 names=['USER32.dll'×5]`、o_base8 `num=9 ×9`。**陷阱：LINK 运行时用系统
+  msvcrt.dll 的 qsort，不是 libcmt 静态 qsort（N=9 行为不同），模拟必须调系统 DLL
+  （oracle = `tools/data_match/w1/qs_oracle2.c`）**。前任"双计数器/映射数组"路线已证伪
+  （0x412030 等 = 18B COFF **输出符号表**条目，与 .idata 无关）。报告 =
+  `.omo/agents/datamatch/link_order_final.md`；验证 = `predict_test2.py`、
+  `fit_qsort_model2.py`、`qs_sys.c`。工程含义：INT/IAT 顺序可由「命令行库序 + 各 DLL
+  导入数 + DLL 名 + 系统 msvcrt qsort」完全预测；对模型求逆可从原版槽序反解原版插入序，
+  进而逐字节复现 .idata。
 
 ## ⚠️ 当前活跃方向：CSP 机械重建（2026-09-20 定案，覆盖旧管线）
 
