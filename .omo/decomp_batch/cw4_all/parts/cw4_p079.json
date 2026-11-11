@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5ad0c0",
+  "name": "DynamicVector::updatePathfindingGrid",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::updatePathfindingGrid",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x5c5360",
+  "name": "MPCooperative::validatePlayerAction",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::validatePlayerAction",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x5c5820",
+  "name": "MPCooperative::handlePlayerReady",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::handlePlayerReady",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x5d8520",
+  "name": "ScenarioClass::setupPlayers",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p211",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::setupPlayers",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x5fb2e0",
+  "name": "Rules::GetProductionTimeMult",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 38,
+  "part": "p212",
+  "unit": "Rules",
+  "emitted": "Rules::GetProductionTimeMult",
+  "first_diff": {
+   "orig": "+6 je 0x5fb303",
+   "ours": "+6 je 0x26"
+  },
+  "ours_size": 43
+ },
+ {
+  "addr": "0x660f50",
+  "name": "VectorClass_ptr_RadarEventClass::FindItemIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p212",
+  "unit": "VectorClass_ptr_RadarEventClass",
+  "emitted": "VectorClass_ptr_RadarEventClass::FindItemIndex",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x69d430",
+  "name": "VectorClass_ptr_GlobalPacketType::FindItemIndex_1",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 38,
+  "part": "p212",
+  "unit": "VectorClass_ptr_GlobalPacketType",
+  "emitted": "VectorClass_ptr_GlobalPacketType::FindItemIndex_1",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x424cb0",
+  "name": "AnimClass::InWhichLayer_AttachedObjectLayer",
+  "family": "MEMBER_OFFSET",
+  "path": "const_fold",
+  "size": 39,
+  "part": "p213",
+  "unit": "AnimClass",
+  "emitted": "AnimClass::InWhichLayer_AttachedObjectLayer",
+  "first_diff": {
+   "orig": "+26 mov eax, dword ptr [eax + 0x364]",
+   "ours": "+26 mov eax, dword ptr [eax + 0x5ec]"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x4e7ea0",
+  "name": "sub_4E7EA0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 39,
+  "part": "p214",
+  "unit": "_addr_4E",
+  "emitted": "sub_4E7EA0",
+  "first_diff": {
+   "orig": "+0 mov eax, 0xa802d4",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x58d070",
+  "name": "SetLayerDataMap",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 39,
+  "part": "p214",
+  "unit": "_addr_58",
+  "emitted": "SetLayerDataMap",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 48
+ },
+ {
+  "addr": "0x7c8df0",
+  "name": "_strrchr",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 39,
+  "part": "p214",
+  "unit": "_addr_7C",
+  "emitted": "_strrchr",
+  "first_diff": {
+   "orig": "+0 push ebp",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 86
+ },
+ {
+  "addr": "0x6433d0",
+  "name": "Progress::GetAverage",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 39,
+  "part": "p214",
+  "unit": "Progress",
+  "emitted": "Progress::GetAverage",
+  "first_diff": {
+   "orig": "+1 movsx edx, byte ptr [ecx + 0x61]",
+   "ours": "+1 fld qword ptr [0]"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x456f80",
+  "name": "TechnoClass::ProcessMissionDeploy",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p214",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::ProcessMissionDeploy",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0xf0]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x465de0",
+  "name": "VectorClass_TPoint3D_int::Clear",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p214",
+  "unit": "_VectorClass_V_TPoint3D_H",
+  "emitted": "_VectorClass_V_TPoint3D_H::Clear",
+  "first_diff": {
+   "orig": "+7 push esi",
+   "ours": "+7 lea eax, [eax + eax*2]"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x55f690",
+  "name": "CheckNetworkSync",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::CheckNetworkSync",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 xor edx, edx"
+  },
+  "ours_size": 45
+ },
+ {
+  "addr": "0x5b36b0",
+  "name": "AbstractClass::COMStub_126",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 40,
+  "part": "p215",
+  "unit": "MissionClass",
+  "emitted": "MissionClass::COMStub_126",
+  "first_diff": {
+   "orig": "+9 je 0x5b36d5",
+   "ours": "+9 jne 0xe"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x656e90",
+  "name": "RadarClass::SetFlag",
+  "family": "TWO_FOUR_INSNS",
+  "path": "branch_polarity",
+  "size": 40,
+  "part": "p215",
+  "unit": "RadarClass",
+  "emitted": "RadarClass::SetFlag",
+  "first_diff": {
+   "orig": "+19 jne 0x656eaf",
+   "ours": "+19 jne 0x20"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x6b4410",
+  "name": "VectorClass_UUndoInfoStruct::Clear",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "_VectorClass_UUndoInfoStruct",
+  "emitted": "_VectorClass_UUndoInfoStruct::Clear",
+  "first_diff": {
+   "orig": "+7 push esi",
+   "ours": "+7 lea eax, [eax + eax*2]"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x763f60",
+  "name": "AbstractClass::fireSuperWeapon",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "_VectorClass_VWaypointClass",
+  "emitted": "_VectorClass_VWaypointClass::fireSuperWeapon",
+  "first_diff": {
+   "orig": "+7 push esi",
+   "ours": "+7 lea eax, [eax + eax*2]"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x767f80",
+  "name": "MSFrameAnim::UpdateFrame",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "MSFrameAnim",
+  "emitted": "MSFrameAnim::UpdateFrame",
+  "first_diff": {
+   "orig": "+4 push ebx",
+   "ours": "+4 mov dword ptr [eax], 0"
+  },
+  "ours_size": 36
+ }
+]
