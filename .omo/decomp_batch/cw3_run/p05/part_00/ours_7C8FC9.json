@@ -1,0 +1,21 @@
+{
+ "symbol": "?_pow@@YANNN@Z",
+ "sym_key": "Unnamed::_pow",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "e8000000008b4424108b4c240c8b542408508b442408515250e8000000008944241c83c410db44240cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "REL32",
+   "sym": "?_fload_withFB@@YAHXZ",
+   "sym_key": "_fload_withFB"
+  },
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?CIpow_Helper@@YAHHHHH@Z",
+   "sym_key": "CIpow_Helper"
+  }
+ ]
+}

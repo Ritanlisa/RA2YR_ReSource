@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x7d1512 GetCurrentThreadId::_0 -> GetCurrentThreadId
+[conv] 0x7dceaa IsBadWritePtr -> _addr_7D
+[conv] 0x7dcee0 GetCurrentThread::_0 -> GetCurrentThread
+[conv] 0x7dcf22 GetCurrentProcessId::_0 -> GetCurrentProcessId
+[conv] 0x7dcf3a GetEnvironmentStrings -> _addr_7D
+[conv] 0x7dcf7c CompareStringW -> _addr_7D
+[conv] 0x407510 VtableStub::Push_407510 -> VtableStub
+[conv] 0x7b9d70 WWMouseClass::checkStatus -> WWMouseClass
+[conv] 0x5d5880 Timer::DisableHighPrecision -> Timer
+[conv] 0x7c8fc9 _pow -> _addr_7C
+[conv] 0x510ac0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9 -> VectorClass_ptr_BuildChoiceClass_int_ouseClass
+[conv] 0x679ec0 unknown_libname_29 -> _addr_67
+[conv] 0x77cf90 unknown_libname_43 -> _addr_77
+[conv] 0x7af4d0 unknown_libname_66 -> _addr_7A
+[conv] 0x556510 LightConvertClass::sub_556510 -> LightConvertClass
+[conv] 0x766900 rc_ptr::System_Init_766900 -> rc_ptr
+[conv] 0x7c8e17 _2_YAPAXI_Z -> _addr_7C
+[conv] 0x4093b0 Audio::Callback -> Audio
+[conv] 0x6bf1c0 _TClassFactory_VTerrainTypeClass::AddRef -> _TClassFactory_VTerrainTypeClass
+[conv] 0x6c0240 _TClassFactory_VCampaignClass::AddRef -> _TClassFactory_VCampaignClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] GetCurrentThreadId       rc=2
+[era] _addr_7D                 rc=2
+[era] GetCurrentThread         rc=2
+[era] GetCurrentProcessId      rc=2
+[era] VtableStub               rc=2
+[era] WWMouseClass             rc=2
+[era] Timer                    rc=0
+[era] _addr_7C                 rc=0
+[era] VectorClass_ptr_BuildChoiceClass_int_ouseClass rc=0
+[era] _addr_67                 rc=0
+[era] _addr_77                 rc=2
+[era] _addr_7A                 rc=2
+[era] LightConvertClass        rc=0
+[era] rc_ptr                   rc=0
+[era] Audio                    rc=2
+[era] _TClassFactory_VTerrainTypeClass rc=0
+[era] _TClassFactory_VCampaignClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x7dceaa   MISMATCH         IsBadWritePtr
+[diff] 0x7dcf7c   MISMATCH         CompareStringW
+[diff] 0x5d5880   MISMATCH         Timer::DisableHighPrecision
+[diff] 0x7c8fc9   MISMATCH         _pow
+[diff] 0x7c8e17   MISMATCH         _2_YAPAXI_Z
+[diff] 0x510ac0   MISMATCH         VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9
+[diff] 0x679ec0   MATCH            unknown_libname_29
+[diff] 0x556510   MISMATCH         LightConvertClass::sub_556510
+[diff] 0x766900   MISMATCH         rc_ptr::System_Init_766900
+[diff] 0x6bf1c0   MISMATCH         _TClassFactory_VTerrainTypeClass::AddRef
+[diff] 0x6c0240   MISMATCH         _TClassFactory_VCampaignClass::AddRef
+[ledger] 0x7d1512 GetCurrentThreadId::_0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7dceaa IsBadWritePtr -> NG (attempt 3)
+[ledger] 0x7dcee0 GetCurrentThread::_0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7dcf22 GetCurrentProcessId::_0 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7dcf3a GetEnvironmentStrings -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7dcf7c CompareStringW -> NG (attempt 3)
+[ledger] 0x407510 VtableStub::Push_407510 -> COMPILE_FAIL (attempt 7)
+[ledger] 0x7b9d70 WWMouseClass::checkStatus -> COMPILE_FAIL (attempt 7)
+[ledger] 0x5d5880 Timer::DisableHighPrecision -> NG (attempt 7)
+[ledger] 0x7c8fc9 _pow -> NG (attempt 4)
+[ledger] 0x510ac0 VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9 -> NG (attempt 7)
+[ledger] 0x679ec0 unknown_libname_29 -> OK (attempt 3)
+[ledger] 0x77cf90 unknown_libname_43 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7af4d0 unknown_libname_66 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x556510 LightConvertClass::sub_556510 -> NG (attempt 2)
+[ledger] 0x766900 rc_ptr::System_Init_766900 -> NG (attempt 2)
+[ledger] 0x7c8e17 _2_YAPAXI_Z -> NG (attempt 2)
+[ledger] 0x4093b0 Audio::Callback -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6bf1c0 _TClassFactory_VTerrainTypeClass::AddRef -> NG (attempt 6)
+[ledger] 0x6c0240 _TClassFactory_VCampaignClass::AddRef -> NG (attempt 6)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 10,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 1,
+  "frame_sched": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 9.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p05\batch_report.json

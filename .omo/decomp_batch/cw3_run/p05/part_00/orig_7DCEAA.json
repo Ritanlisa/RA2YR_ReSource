@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DCEAA",
+ "name": "IsBadWritePtr",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DCEAA",
+ "bytes_hex": "ff259c127e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

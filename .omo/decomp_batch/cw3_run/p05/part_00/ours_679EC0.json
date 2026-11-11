@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_29@@YAHXZ",
+ "sym_key": "Unnamed::unknown_libname_29",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "b900000000e900000000",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_887180@@3IA",
+   "sym_key": "DataGlobal_887180"
+  },
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?ComputeHashSHA1@Hash@@QAEHXZ",
+   "sym_key": "Hash::ComputeHashSHA1"
+  }
+ ]
+}

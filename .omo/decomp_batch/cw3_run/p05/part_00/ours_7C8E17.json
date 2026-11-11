@@ -1,0 +1,15 @@
+{
+ "symbol": "?_2_YAPAXI_Z@@YAPAXI@Z",
+ "sym_key": "Unnamed::_2_YAPAXI_Z",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b4424046a0150e80000000083c408c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "REL32",
+   "sym": "?_nh_malloc@@YAHHHZZ",
+   "sym_key": "_nh_malloc"
+  }
+ ]
+}
