@@ -1,0 +1,11 @@
+{
+ "addr": "0x7AC9D0",
+ "name": "GetBuddyEntryWOL",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7AC9D0",
+ "bytes_hex": "8b44240885c07c1c3b017d188bd0c1e2052bd08b41088d0cd08b542404b001890ac2080032c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

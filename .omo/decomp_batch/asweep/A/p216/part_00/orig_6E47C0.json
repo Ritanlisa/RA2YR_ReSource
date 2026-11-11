@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E47C0",
+ "name": "ScriptAction::CopyStructField",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E47C0",
+ "bytes_hex": "568b74240c8bc1573bf07409b9080000008bf8f3a58bf08b44240cb9080000008bf8f3a55f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

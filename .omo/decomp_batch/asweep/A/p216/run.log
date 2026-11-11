@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p216\part_00
+=== convert (20 addrs) ===
+[conv] 0x541040 IPXManagerClass::send -> IPXManagerClass
+[conv] 0x578850 TActionClass::executeSellAction -> TActionClass
+[conv] 0x588960 ObjectClass::Object_Create -> ObjectClass
+[conv] 0x588c60 CellStruct::Sub -> CellStruct
+[conv] 0x588d30 _VectorClass_UZoneConnectionClass::Seek -> _VectorClass_UZoneConnectionClass
+[conv] 0x5ae980 Matrix3x4::Translate -> Matrix3x4
+[conv] 0x6107e0 ObjectClass::sub_6107E0 -> ObjectClass
+[conv] 0x645cd0 ObjectClass::sub_645CD0 -> ObjectClass
+[conv] 0x6588e0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Seek -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x689760 ScenarioClass::GetGlobalStateByID -> ScenarioClass
+[conv] 0x689a00 ScenarioClass::GetLocalStateByID -> ScenarioClass
+[conv] 0x6e47c0 ScriptAction::CopyStructField -> ScriptAction
+[conv] 0x72a060 JumpjetLocomotionClass::IsStateInRange -> JumpjetLocomotionClass
+[conv] 0x7ac9d0 ObjectClass::GetBuddyEntryWOL -> ObjectClass
+[conv] 0x7c3690 Render_Render_7C3690 -> Render_Render
+[conv] 0x7d36ac _setSBCS -> _addr_7D
+[conv] 0x7d7754 __isatty -> _addr_7D
+[conv] 0x7d8d3b __set_exp -> _addr_7D
+[conv] 0x7e01d2 sub_7E01D2 -> _addr_7E
+[conv] 0x5bdb90 System_Handle -> System
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXManagerClass          rc=2
+[era] TActionClass             rc=0
+[era] ObjectClass              rc=2
+[era] CellStruct               rc=2
+[era] _VectorClass_UZoneConnectionClass rc=0
+[era] Matrix3x4                rc=2
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] ScenarioClass            rc=2
+[era] ScriptAction             rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] Render_Render            rc=2
+[era] _addr_7D                 rc=2
+[era] _addr_7E                 rc=2
+[era] System                   rc=2
+=== diffasm byte-compare ===
+[diff] 0x578850   MATCH            TActionClass::executeSellAction
+[diff] 0x588960   MISMATCH         ObjectClass::Object_Create
+[diff] 0x6107e0   MISMATCH         ObjectClass::sub_6107E0
+[diff] 0x645cd0   MISMATCH         ObjectClass::sub_645CD0
+[diff] 0x7ac9d0   MISMATCH         ObjectClass::GetBuddyEntryWOL
+[diff] 0x588d30   MATCH            _VectorClass_UZoneConnectionClass::Seek
+[diff] 0x6588e0   MATCH            _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Seek
+[diff] 0x689760   MISMATCH         ScenarioClass::GetGlobalStateByID
+[diff] 0x6e47c0   MATCH            ScriptAction::CopyStructField
+[diff] 0x72a060   MISMATCH         JumpjetLocomotionClass::IsStateInRange
+[diff] 0x7d36ac   MISMATCH         _setSBCS
+[ledger] 0x541040 IPXManagerClass::send -> COMPILE_FAIL (attempt 1)
+[ledger] 0x578850 TActionClass::executeSellAction -> OK (attempt 1)
+[ledger] 0x588960 ObjectClass::Object_Create -> NG (attempt 1)
+[ledger] 0x588c60 CellStruct::Sub -> COMPILE_FAIL (attempt 1)
+[ledger] 0x588d30 _VectorClass_UZoneConnectionClass::Seek -> OK (attempt 1)
+[ledger] 0x5ae980 Matrix3x4::Translate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6107e0 ObjectClass::sub_6107E0 -> NG (attempt 1)
+[ledger] 0x645cd0 ObjectClass::sub_645CD0 -> NG (attempt 1)
+[ledger] 0x6588e0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Seek -> OK (attempt 1)
+[ledger] 0x689760 ScenarioClass::GetGlobalStateByID -> NG (attempt 1)
+[ledger] 0x689a00 ScenarioClass::GetLocalStateByID -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e47c0 ScriptAction::CopyStructField -> OK (attempt 1)
+[ledger] 0x72a060 JumpjetLocomotionClass::IsStateInRange -> NG (attempt 1)
+[ledger] 0x7ac9d0 ObjectClass::GetBuddyEntryWOL -> NG (attempt 1)
+[ledger] 0x7c3690 Render_Render_7C3690 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d36ac _setSBCS -> NG (attempt 1)
+[ledger] 0x7d7754 __isatty -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d8d3b __set_exp -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7e01d2 sub_7E01D2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bdb90 System_Handle -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MATCH": 4,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "width_mismatch": 1,
+  "frame_sched": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 36.4,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p216\batch_report.json

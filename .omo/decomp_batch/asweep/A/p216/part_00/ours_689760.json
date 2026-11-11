@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetGlobalStateByID@ScenarioClass@@QAEDIPAE@Z",
+ "sym_key": "ScenarioClass::GetGlobalStateByID",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b44240483f831760532c0c208008d14808d04d08b5424088a8c81281d0000b001880ac20800",
+ "relocs": []
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x588960",
+ "name": "Object_Create",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x588960",
+ "bytes_hex": "8b81480100008b5424043bc27c028bc233d289814801000085c00f9ec24a23c2898148010000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

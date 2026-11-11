@@ -1,0 +1,11 @@
+{
+ "addr": "0x72A060",
+ "name": "JumpjetLocomotionClass::IsStateInRange",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72A060",
+ "bytes_hex": "8b4424048b401485c0741983f801741483f807740f83f802740a83f806740532c0c20400b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

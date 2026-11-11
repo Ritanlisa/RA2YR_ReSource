@@ -1,0 +1,11 @@
+{
+ "addr": "0x578850",
+ "name": "TActionClass::executeSellAction",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x578850",
+ "bytes_hex": "8b81000100008b91fc000000568d74020189b11c0100008bb1f40000002bf203f089b1200100005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

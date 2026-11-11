@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D36AC",
+ "name": "_setSBCS",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D36AC",
+ "bytes_hex": "576a405933c0bf6089b700f3abaa33c0bf5088b700a34088b700a35c88b700a3648ab700ababab5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

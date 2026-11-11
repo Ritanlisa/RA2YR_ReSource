@@ -1,0 +1,8 @@
+{
+ "symbol": "?CopyStructField@ScriptAction@@QAEPAXPAXPBX@Z",
+ "sym_key": "ScriptAction::CopyStructField",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "568b74240c8bc1573bf07409b9080000008bf8f3a58bf08b44240cb9080000008bf8f3a55f5ec20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetBuddyEntryWOL@ObjectClass@@QAEDPAHH@Z",
+ "sym_key": "ObjectClass::GetBuddyEntryWOL",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b54240885d27c1e3b117d1a8b41088bcac1e1052bca8b5424048d0cc824010c01890ac2080080e2008bc2c20800",
+ "relocs": []
+}
