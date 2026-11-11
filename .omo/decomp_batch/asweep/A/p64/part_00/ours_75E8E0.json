@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_75E8E0@@YAHXZ",
+ "sym_key": "Unnamed::sub_75E8E0",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a30000000066a300000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45D78@@3GA",
+   "sym_key": "DataGlobal_B45D78"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45D7A@@3GA",
+   "sym_key": "DataGlobal_B45D7A"
+  }
+ ]
+}
