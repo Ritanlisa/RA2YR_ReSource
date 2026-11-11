@@ -1,0 +1,11 @@
+{
+ "addr": "0x4BBC70",
+ "name": "GetBitShift_Blue",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4BBC70",
+ "bytes_hex": "a1d80d8a00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

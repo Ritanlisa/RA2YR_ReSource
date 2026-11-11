@@ -2684,6 +2684,17 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x426740": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_426740",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_426740",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4270d0": {
   "attempts": 1,
   "first_diff": null,
@@ -2739,6 +2750,18 @@
   "name": "ObjectTypeClass::Thunk_AnimTypeClass_sub_428E40",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x428e50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E50",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AnimTypeClass::Thunk_AnimTypeClass_sub_428E50",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -3174,6 +3197,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x436900": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BuildingLightClass::SD_vt12",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BuildingLightClass::SD_vt12",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4369e0": {
   "attempts": 1,
   "clean": true,
@@ -3186,12 +3221,36 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4369f0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BuildingLightClass::SD_vt30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BuildingLightClass::SD_vt30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x436f40": {
   "attempts": 1,
   "first_diff": null,
   "name": "BuildingLightClass::SD_vt13",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4370b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "BuildingLightClass::SD_vt11",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "BuildingLightClass::SD_vt11",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x437190": {
   "attempts": 2,
@@ -7255,6 +7314,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4b6690": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "LocomotionClass::CheckState5",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::CheckState5",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x4b66e0": {
   "attempts": 5,
   "first_diff": null,
@@ -7410,6 +7481,72 @@
   "name": "DSurface::BlitStretch",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x4bbc30": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitShift_Red",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitShift_Red",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4bbc40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitShift_Green",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitShift_Green",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4bbc50": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitMask_Green",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitMask_Green",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4bbc60": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitMask_Blue",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitMask_Blue",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4bbc70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitShift_Blue",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitShift_Blue",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4bbc80": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "GetBitMask_Red",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "GetBitMask_Red",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x4bbc90": {
   "attempts": 3,
@@ -8581,6 +8718,18 @@
   "name": "GaugeClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "GaugeClass::Stub",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x4e30c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "GaugeClass::Thunk_COMObject_sub_4E30C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "COMObject::Thunk_COMObject_sub_4E30C0",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -10994,6 +11143,18 @@
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
  },
+ "0x536c10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x82744c",
+  "name": "DeployCommandClass::performAction_80",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x536c90": {
   "attempts": 1,
   "first_diff": null,
@@ -11008,12 +11169,84 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x536d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x8274b0",
+  "name": "ScatterCommandClass::performAction_90",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_90",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536d90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x8274e0",
+  "name": "CenterViewCommandClass::performAction_95",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_95",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536e30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x827514",
+  "name": "CenterBaseCommandClass::performAction_100",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_100",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536eb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x827548",
+  "name": "AllianceCommandClass::performAction_105",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_105",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x536ee0": {
   "attempts": 1,
   "first_diff": null,
   "name": "CreateTeamCommand::performAction_107",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x536f30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x82757c",
+  "name": "ToggleRepairCommandClass::performAction_110",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_110",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x536fb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, 0x8275b4",
+  "name": "ToggleSellCommandClass::performAction_114",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "CreateTeamCommand::performAction_114",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5370d0": {
   "attempts": 1,

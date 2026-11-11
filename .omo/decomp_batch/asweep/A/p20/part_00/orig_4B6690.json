@@ -1,0 +1,11 @@
+{
+ "addr": "0x4B6690",
+ "name": "JumpjetLocomotionClass::CheckState5",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4B6690",
+ "bytes_hex": "83c8ffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

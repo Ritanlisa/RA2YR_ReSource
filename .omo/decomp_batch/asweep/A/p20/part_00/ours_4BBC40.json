@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetBitShift_Green@@YAHXZ",
+ "sym_key": "Unnamed::GetBitShift_Green",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  }
+ ]
+}

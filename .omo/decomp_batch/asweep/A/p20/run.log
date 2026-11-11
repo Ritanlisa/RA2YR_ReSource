@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p20\part_00
+=== convert (20 addrs) ===
+[conv] 0x426740 sub_426740 -> _addr_42
+[conv] 0x428e50 AnimTypeClass::Thunk_AnimTypeClass_sub_428E50 -> AnimTypeClass
+[conv] 0x436900 BuildingLightClass::SD_vt12 -> BuildingLightClass
+[conv] 0x4369f0 BuildingLightClass::SD_vt30 -> BuildingLightClass
+[conv] 0x4370b0 BuildingLightClass::SD_vt11 -> BuildingLightClass
+[conv] 0x4b6690 LocomotionClass::CheckState5 -> LocomotionClass
+[conv] 0x4bbc30 GetBitShift_Red -> GetBitShift
+[conv] 0x4bbc40 GetBitShift_Green -> GetBitShift
+[conv] 0x4bbc50 GetBitMask_Green -> GetBitMask
+[conv] 0x4bbc60 GetBitMask_Blue -> GetBitMask
+[conv] 0x4bbc70 GetBitShift_Blue -> GetBitShift
+[conv] 0x4bbc80 GetBitMask_Red -> GetBitMask
+[conv] 0x4e30c0 GaugeClass::Thunk_COMObject_sub_4E30C0 -> GaugeClass
+[conv] 0x536c10 DeployCommandClass::performAction_80 -> DeployCommandClass
+[conv] 0x536d10 ScatterCommandClass::performAction_90 -> ScatterCommandClass
+[conv] 0x536d90 CenterViewCommandClass::performAction_95 -> CenterViewCommandClass
+[conv] 0x536e30 CenterBaseCommandClass::performAction_100 -> CenterBaseCommandClass
+[conv] 0x536eb0 AllianceCommandClass::performAction_105 -> AllianceCommandClass
+[conv] 0x536f30 ToggleRepairCommandClass::performAction_110 -> ToggleRepairCommandClass
+[conv] 0x536fb0 ToggleSellCommandClass::performAction_114 -> ToggleSellCommandClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=0
+[era] AnimTypeClass            rc=0
+[era] BuildingLightClass       rc=0
+[era] LocomotionClass          rc=0
+[era] GetBitShift              rc=0
+[era] GetBitMask               rc=0
+[era] GaugeClass               rc=0
+[era] DeployCommandClass       rc=0
+[era] ScatterCommandClass      rc=0
+[era] CenterViewCommandClass   rc=0
+[era] CenterBaseCommandClass   rc=0
+[era] AllianceCommandClass     rc=0
+[era] ToggleRepairCommandClass rc=0
+[era] ToggleSellCommandClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x426740   MATCH            sub_426740
+[diff] 0x428e50   MATCH            AnimTypeClass::Thunk_AnimTypeClass_sub_428E50
+[diff] 0x436900   MATCH            BuildingLightClass::SD_vt12
+[diff] 0x4369f0   MATCH            BuildingLightClass::SD_vt30
+[diff] 0x4370b0   MATCH            BuildingLightClass::SD_vt11
+[diff] 0x4b6690   MATCH            LocomotionClass::CheckState5
+[diff] 0x4bbc30   MATCH            GetBitShift_Red
+[diff] 0x4bbc40   MATCH            GetBitShift_Green
+[diff] 0x4bbc70   MATCH            GetBitShift_Blue
+[diff] 0x4bbc50   MATCH            GetBitMask_Green
+[diff] 0x4bbc60   MATCH            GetBitMask_Blue
+[diff] 0x4bbc80   MATCH            GetBitMask_Red
+[diff] 0x4e30c0   MATCH            GaugeClass::Thunk_COMObject_sub_4E30C0
+[diff] 0x536c10   MISMATCH         DeployCommandClass::performAction_80
+[diff] 0x536d10   MISMATCH         ScatterCommandClass::performAction_90
+[diff] 0x536d90   MISMATCH         CenterViewCommandClass::performAction_95
+[diff] 0x536e30   MISMATCH         CenterBaseCommandClass::performAction_100
+[diff] 0x536eb0   MISMATCH         AllianceCommandClass::performAction_105
+[diff] 0x536f30   MISMATCH         ToggleRepairCommandClass::performAction_110
+[diff] 0x536fb0   MISMATCH         ToggleSellCommandClass::performAction_114
+[ledger] 0x426740 sub_426740 -> OK (attempt 1)
+[ledger] 0x428e50 AnimTypeClass::Thunk_AnimTypeClass_sub_428E50 -> OK (attempt 1)
+[ledger] 0x436900 BuildingLightClass::SD_vt12 -> OK (attempt 1)
+[ledger] 0x4369f0 BuildingLightClass::SD_vt30 -> OK (attempt 1)
+[ledger] 0x4370b0 BuildingLightClass::SD_vt11 -> OK (attempt 1)
+[ledger] 0x4b6690 LocomotionClass::CheckState5 -> OK (attempt 1)
+[ledger] 0x4bbc30 GetBitShift_Red -> OK (attempt 1)
+[ledger] 0x4bbc40 GetBitShift_Green -> OK (attempt 1)
+[ledger] 0x4bbc50 GetBitMask_Green -> OK (attempt 1)
+[ledger] 0x4bbc60 GetBitMask_Blue -> OK (attempt 1)
+[ledger] 0x4bbc70 GetBitShift_Blue -> OK (attempt 1)
+[ledger] 0x4bbc80 GetBitMask_Red -> OK (attempt 1)
+[ledger] 0x4e30c0 GaugeClass::Thunk_COMObject_sub_4E30C0 -> OK (attempt 1)
+[ledger] 0x536c10 DeployCommandClass::performAction_80 -> NG (attempt 1)
+[ledger] 0x536d10 ScatterCommandClass::performAction_90 -> NG (attempt 1)
+[ledger] 0x536d90 CenterViewCommandClass::performAction_95 -> NG (attempt 1)
+[ledger] 0x536e30 CenterBaseCommandClass::performAction_100 -> NG (attempt 1)
+[ledger] 0x536eb0 AllianceCommandClass::performAction_105 -> NG (attempt 1)
+[ledger] 0x536f30 ToggleRepairCommandClass::performAction_110 -> NG (attempt 1)
+[ledger] 0x536fb0 ToggleSellCommandClass::performAction_114 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "extern_reloc": 7
+ },
+ "match_rate_of_decided_pct": 65.0,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p20\batch_report.json
