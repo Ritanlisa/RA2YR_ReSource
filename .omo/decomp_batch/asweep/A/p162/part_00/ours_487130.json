@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateOccupiedState@BuildingClass@@QAEPAV1@D@Z",
+ "sym_key": "BuildingClass::updateOccupiedState",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8bc1ba010000008a4c2404d3e28b4878f7d223ca894878c20400",
+ "relocs": []
+}

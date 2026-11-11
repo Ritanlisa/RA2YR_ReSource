@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p162\part_00
+=== convert (20 addrs) ===
+[conv] 0x4357e0 sub_4357E0 -> _addr_43
+[conv] 0x439670 sub_439670 -> _addr_43
+[conv] 0x43a330 sub_43A330 -> _addr_43
+[conv] 0x43b110 sub_43B110 -> _addr_43
+[conv] 0x45b170 sub_45B170 -> _addr_45
+[conv] 0x4662a0 sub_4662A0 -> _addr_46
+[conv] 0x46bba0 sub_46BBA0 -> _addr_46
+[conv] 0x46cb40 sub_46CB40 -> _addr_46
+[conv] 0x46d2f0 sub_46D2F0 -> _addr_46
+[conv] 0x473360 sub_473360 -> _addr_47
+[conv] 0x473710 sub_473710 -> _addr_47
+[conv] 0x4741b0 sub_4741B0 -> _addr_47
+[conv] 0x478b80 sub_478B80 -> _addr_47
+[conv] 0x47b320 sub_47B320 -> _addr_47
+[conv] 0x4866d0 ObjectClass::sub_4866D0 -> ObjectClass
+[conv] 0x4866f0 ObjectClass::sub_4866F0 -> ObjectClass
+[conv] 0x486730 Value::InRange -> Value
+[conv] 0x487130 BuildingClass::updateOccupiedState -> BuildingClass
+[conv] 0x489160 sub_489160 -> _addr_48
+[conv] 0x48be40 sub_48BE40 -> _addr_48
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+[era] ObjectClass              rc=0
+[era] Value                    rc=0
+[era] BuildingClass            rc=0
+[era] _addr_48                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4357e0   MISMATCH         sub_4357E0
+[diff] 0x439670   MISMATCH         sub_439670
+[diff] 0x43a330   MISMATCH         sub_43A330
+[diff] 0x43b110   MISMATCH         sub_43B110
+[diff] 0x45b170   MISMATCH         sub_45B170
+[diff] 0x4662a0   MISMATCH         sub_4662A0
+[diff] 0x46bba0   MISMATCH         sub_46BBA0
+[diff] 0x46cb40   MISMATCH         sub_46CB40
+[diff] 0x46d2f0   MISMATCH         sub_46D2F0
+[diff] 0x473360   MISMATCH         sub_473360
+[diff] 0x473710   MISMATCH         sub_473710
+[diff] 0x4741b0   MISMATCH         sub_4741B0
+[diff] 0x478b80   MISMATCH         sub_478B80
+[diff] 0x47b320   MISMATCH         sub_47B320
+[diff] 0x4866d0   MISMATCH         ObjectClass::sub_4866D0
+[diff] 0x4866f0   MISMATCH         ObjectClass::sub_4866F0
+[diff] 0x486730   MISMATCH         Value::InRange
+[diff] 0x487130   MISMATCH         BuildingClass::updateOccupiedState
+[diff] 0x489160   MISMATCH         sub_489160
+[diff] 0x48be40   MISMATCH         sub_48BE40
+[ledger] 0x4357e0 sub_4357E0 -> NG (attempt 1)
+[ledger] 0x439670 sub_439670 -> NG (attempt 1)
+[ledger] 0x43a330 sub_43A330 -> NG (attempt 1)
+[ledger] 0x43b110 sub_43B110 -> NG (attempt 1)
+[ledger] 0x45b170 sub_45B170 -> NG (attempt 1)
+[ledger] 0x4662a0 sub_4662A0 -> NG (attempt 1)
+[ledger] 0x46bba0 sub_46BBA0 -> NG (attempt 1)
+[ledger] 0x46cb40 sub_46CB40 -> NG (attempt 1)
+[ledger] 0x46d2f0 sub_46D2F0 -> NG (attempt 1)
+[ledger] 0x473360 sub_473360 -> NG (attempt 1)
+[ledger] 0x473710 sub_473710 -> NG (attempt 1)
+[ledger] 0x4741b0 sub_4741B0 -> NG (attempt 1)
+[ledger] 0x478b80 sub_478B80 -> NG (attempt 1)
+[ledger] 0x47b320 sub_47B320 -> NG (attempt 1)
+[ledger] 0x4866d0 ObjectClass::sub_4866D0 -> NG (attempt 1)
+[ledger] 0x4866f0 ObjectClass::sub_4866F0 -> NG (attempt 1)
+[ledger] 0x486730 Value::InRange -> NG (attempt 1)
+[ledger] 0x487130 BuildingClass::updateOccupiedState -> NG (attempt 1)
+[ledger] 0x489160 sub_489160 -> NG (attempt 1)
+[ledger] 0x48be40 sub_48BE40 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 16,
+  "signedness": 3,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p162\batch_report.json
