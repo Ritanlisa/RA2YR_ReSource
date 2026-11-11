@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D3470",
+ "name": "MPBattleClass::populateTeamDropdownForPlayer",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D3470",
+ "bytes_hex": "33c0a300fcab00a304fcab00a308fcab00a30cfcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

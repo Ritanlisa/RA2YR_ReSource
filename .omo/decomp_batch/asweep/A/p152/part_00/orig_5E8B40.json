@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E8B40",
+ "name": "Game::ResetFlags",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E8B40",
+ "bytes_hex": "32c0a2c80aac00a2ec0aac00a2a40eac00a2100bac00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,33 @@
+{
+ "symbol": "?populateTeamDropdownForPlayer@MPBattleClass@@QAEHXZ",
+ "sym_key": "MPBattleClass::populateTeamDropdownForPlayer",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC00@@3IA",
+   "sym_key": "DataGlobal_ABFC00"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC04@@3IA",
+   "sym_key": "DataGlobal_ABFC04"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC08@@3IA",
+   "sym_key": "DataGlobal_ABFC08"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC0C@@3IA",
+   "sym_key": "DataGlobal_ABFC0C"
+  }
+ ]
+}

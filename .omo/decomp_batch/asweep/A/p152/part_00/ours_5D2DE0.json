@@ -1,0 +1,33 @@
+{
+ "symbol": "?drawTeamDropdown@MPBattleClass@@QAEHXZ",
+ "sym_key": "MPBattleClass::drawTeamDropdown",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFBD0@@3IA",
+   "sym_key": "DataGlobal_ABFBD0"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFBD4@@3IA",
+   "sym_key": "DataGlobal_ABFBD4"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFBD8@@3IA",
+   "sym_key": "DataGlobal_ABFBD8"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFBDC@@3IA",
+   "sym_key": "DataGlobal_ABFBDC"
+  }
+ ]
+}

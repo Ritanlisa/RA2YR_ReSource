@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p152\part_00
+=== convert (20 addrs) ===
+[conv] 0x5cb570 MPBattleClass::isTeamsAllowed -> MPBattleClass
+[conv] 0x5cedb0 MPBattleClass::firstValidMapIndex -> MPBattleClass
+[conv] 0x5d2de0 MPBattleClass::drawTeamDropdown -> MPBattleClass
+[conv] 0x5d3470 MPBattleClass::populateTeamDropdownForPlayer -> MPBattleClass
+[conv] 0x5d4c30 MPBattleClass::onDialogCreated -> MPBattleClass
+[conv] 0x5d5aa0 sub_5D5AA0 -> _addr_5D
+[conv] 0x5d8a40 sub_5D8A40 -> _addr_5D
+[conv] 0x5d8f70 sub_5D8F70 -> _addr_5D
+[conv] 0x5d8f90 sub_5D8F90 -> _addr_5D
+[conv] 0x5da4b0 sub_5DA4B0 -> _addr_5D
+[conv] 0x5e2410 sub_5E2410 -> _addr_5E
+[conv] 0x5e8b40 Game::ResetFlags -> Game
+[conv] 0x5ef2d0 sub_5EF2D0 -> _addr_5E
+[conv] 0x5f13b0 sub_5F13B0 -> _addr_5F
+[conv] 0x5f38e0 sub_5F38E0 -> _addr_5F
+[conv] 0x5f6fd0 sub_5F6FD0 -> _addr_5F
+[conv] 0x5fa2c0 sub_5FA2C0 -> _addr_5F
+[conv] 0x5fc360 sub_5FC360 -> _addr_5F
+[conv] 0x5fe040 sub_5FE040 -> _addr_5F
+[conv] 0x600320 sub_600320 -> _addr_60
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MPBattleClass            rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5E                 rc=0
+[era] Game                     rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_60                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x5cb570   MATCH            MPBattleClass::isTeamsAllowed
+[diff] 0x5cedb0   MATCH            MPBattleClass::firstValidMapIndex
+[diff] 0x5d2de0   MATCH            MPBattleClass::drawTeamDropdown
+[diff] 0x5d3470   MATCH            MPBattleClass::populateTeamDropdownForPlayer
+[diff] 0x5d4c30   MATCH            MPBattleClass::onDialogCreated
+[diff] 0x5d5aa0   MATCH            sub_5D5AA0
+[diff] 0x5d8a40   MATCH            sub_5D8A40
+[diff] 0x5d8f70   MATCH            sub_5D8F70
+[diff] 0x5d8f90   MATCH            sub_5D8F90
+[diff] 0x5da4b0   MATCH            sub_5DA4B0
+[diff] 0x5e2410   MATCH            sub_5E2410
+[diff] 0x5ef2d0   MATCH            sub_5EF2D0
+[diff] 0x5e8b40   MATCH            Game::ResetFlags
+[diff] 0x5f13b0   MATCH            sub_5F13B0
+[diff] 0x5f38e0   MATCH            sub_5F38E0
+[diff] 0x5f6fd0   MATCH            sub_5F6FD0
+[diff] 0x5fa2c0   MATCH            sub_5FA2C0
+[diff] 0x5fc360   MATCH            sub_5FC360
+[diff] 0x5fe040   MATCH            sub_5FE040
+[diff] 0x600320   MATCH            sub_600320
+[ledger] 0x5cb570 MPBattleClass::isTeamsAllowed -> OK (attempt 1)
+[ledger] 0x5cedb0 MPBattleClass::firstValidMapIndex -> OK (attempt 1)
+[ledger] 0x5d2de0 MPBattleClass::drawTeamDropdown -> OK (attempt 1)
+[ledger] 0x5d3470 MPBattleClass::populateTeamDropdownForPlayer -> OK (attempt 1)
+[ledger] 0x5d4c30 MPBattleClass::onDialogCreated -> OK (attempt 1)
+[ledger] 0x5d5aa0 sub_5D5AA0 -> OK (attempt 1)
+[ledger] 0x5d8a40 sub_5D8A40 -> OK (attempt 1)
+[ledger] 0x5d8f70 sub_5D8F70 -> OK (attempt 1)
+[ledger] 0x5d8f90 sub_5D8F90 -> OK (attempt 1)
+[ledger] 0x5da4b0 sub_5DA4B0 -> OK (attempt 1)
+[ledger] 0x5e2410 sub_5E2410 -> OK (attempt 1)
+[ledger] 0x5e8b40 Game::ResetFlags -> OK (attempt 1)
+[ledger] 0x5ef2d0 sub_5EF2D0 -> OK (attempt 1)
+[ledger] 0x5f13b0 sub_5F13B0 -> OK (attempt 1)
+[ledger] 0x5f38e0 sub_5F38E0 -> OK (attempt 1)
+[ledger] 0x5f6fd0 sub_5F6FD0 -> OK (attempt 1)
+[ledger] 0x5fa2c0 sub_5FA2C0 -> OK (attempt 1)
+[ledger] 0x5fc360 sub_5FC360 -> OK (attempt 1)
+[ledger] 0x5fe040 sub_5FE040 -> OK (attempt 1)
+[ledger] 0x600320 sub_600320 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 100.0,
+ "match_rate_of_total_pct": 100.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p152\batch_report.json

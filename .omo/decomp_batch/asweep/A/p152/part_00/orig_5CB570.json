@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CB570",
+ "name": "MPBattleClass::isTeamsAllowed",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CB570",
+ "bytes_hex": "33c0a388fbab00a38cfbab00a390fbab00a394fbab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

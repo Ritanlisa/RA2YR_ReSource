@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CEDB0",
+ "name": "MPBattleClass::firstValidMapIndex",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CEDB0",
+ "bytes_hex": "33c0a3b0fbab00a3b4fbab00a3b8fbab00a3bcfbab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

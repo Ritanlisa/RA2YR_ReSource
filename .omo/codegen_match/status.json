@@ -30113,6 +30113,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5cb570": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::isTeamsAllowed",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::isTeamsAllowed",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5cb6c0": {
   "attempts": 5,
   "first_diff": null,
@@ -30358,6 +30370,18 @@
   "name": "MSOverlayAnim::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5cedb0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::firstValidMapIndex",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::firstValidMapIndex",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5cf760": {
   "attempts": 1,
@@ -30647,6 +30671,30 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d2de0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::drawTeamDropdown",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::drawTeamDropdown",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d3470": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::populateTeamDropdownForPlayer",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::populateTeamDropdownForPlayer",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d37c0": {
   "attempts": 1,
   "clean": true,
@@ -30779,6 +30827,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d4c30": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "MPBattleClass::onDialogCreated",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "MPBattleClass::onDialogCreated",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d50d0": {
   "attempts": 1,
   "clean": false,
@@ -30905,6 +30965,17 @@
   "name": "sub_5D5A60",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5D5A60",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d5aa0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D5AA0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D5AA0",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -31184,6 +31255,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d8a40": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D8A40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D8A40",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d8a90": {
   "attempts": 1,
   "clean": false,
@@ -31352,6 +31434,28 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5d8f70": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D8F70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D8F70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5d8f90": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5D8F90",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5D8F90",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5d8fb0": {
   "attempts": 1,
   "clean": false,
@@ -31389,6 +31493,17 @@
   "name": "Network_Connect",
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
+ },
+ "0x5da4b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5DA4B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5DA4B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5da500": {
   "attempts": 1,
@@ -31591,6 +31706,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5e2410": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5E2410",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5E2410",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5e2430": {
   "attempts": 2,
   "first_diff": null,
@@ -31719,6 +31845,18 @@
   "name": "SkirmishSetup_Setup_5E8590",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5e8b40": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Game::ResetFlags",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "Game::ResetFlags",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5e8d90": {
   "attempts": 2,
@@ -31863,6 +32001,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5ef2d0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5EF2D0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5EF2D0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5ef320": {
   "attempts": 1,
   "clean": false,
@@ -31953,6 +32102,17 @@
   "name": "AppendStringBuilderChar",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5f13b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5F13B0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5F13B0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5f1400": {
   "attempts": 1,
@@ -32242,6 +32402,17 @@
   "name": "sub_5F38C0",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x5f38e0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5F38E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5F38E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5f3900": {
   "attempts": 1,
@@ -32765,6 +32936,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5f6fd0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5F6FD0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5F6FD0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5f75b0": {
   "attempts": 1,
   "clean": true,
@@ -32926,6 +33108,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x5fa2c0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5FA2C0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5FA2C0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x5fa430": {
   "attempts": 1,
   "clean": false,
@@ -33032,6 +33225,17 @@
   "name": "sub_5FC320",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_5FC320",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x5fc360": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5FC360",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5FC360",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -33160,6 +33364,17 @@
   "name": "OverlayClass::updateOverlayState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5fe040": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_5FE040",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_5FE040",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x5fe090": {
   "attempts": 1,
@@ -33380,6 +33595,17 @@
   "note": "decomp_batch r2: MATCH",
   "orig_name": "VectorClass_ptr_SpotLightClass::Get",
   "rule_violations": 1,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x600320": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_600320",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_600320",
+  "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
  },

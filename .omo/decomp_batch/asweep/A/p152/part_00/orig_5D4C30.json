@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D4C30",
+ "name": "MPBattleClass::onDialogCreated",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D4C30",
+ "bytes_hex": "33c0a3a8fcab00a3acfcab00a3b0fcab00a3b4fcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

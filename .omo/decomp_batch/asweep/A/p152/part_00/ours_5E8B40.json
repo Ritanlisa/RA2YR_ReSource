@@ -1,0 +1,33 @@
+{
+ "symbol": "?ResetFlags@Game@@QAEDXZ",
+ "sym_key": "Game::ResetFlags",
+ "size": 23,
+ "link_base": 0,
+ "bytes_hex": "32c0a200000000a200000000a200000000a200000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC0AC8@@3EA",
+   "sym_key": "DataGlobal_AC0AC8"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC0AEC@@3EA",
+   "sym_key": "DataGlobal_AC0AEC"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC0EA4@@3EA",
+   "sym_key": "DataGlobal_AC0EA4"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC0B10@@3EA",
+   "sym_key": "DataGlobal_AC0B10"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D2DE0",
+ "name": "MPBattleClass::drawTeamDropdown",
+ "size": 23,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D2DE0",
+ "bytes_hex": "33c0a3d0fbab00a3d4fbab00a3d8fbab00a3dcfbab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
