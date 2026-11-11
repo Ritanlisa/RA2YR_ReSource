@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p02\part_00
+=== convert (20 addrs) ===
+[conv] 0x40dc40 sub_40DC40 -> _addr_40
+[conv] 0x46d2c0 sub_46D2C0 -> _addr_46
+[conv] 0x4c6500 sub_4C6500 -> _addr_4C
+[conv] 0x5394f0 sub_5394F0 -> _addr_53
+[conv] 0x5afe80 sub_5AFE80 -> _addr_5A
+[conv] 0x5f3890 sub_5F3890 -> _addr_5F
+[conv] 0x683210 sub_683210 -> _addr_68
+[conv] 0x6e7e10 sub_6E7E10 -> _addr_6E
+[conv] 0x754ab0 sub_754AB0 -> _addr_75
+[conv] 0x405130 ObjectClass::sub_405130 -> ObjectClass
+[conv] 0x6bf5c0 COMClassFactory::Construct -> COMClassFactory
+[conv] 0x6c2440 ObjectClass::WinMain_Helper_6C2440 -> ObjectClass
+[conv] 0x6c5140 ObjectClass::WinMain_Helper_6C5140 -> ObjectClass
+[conv] 0x4b65f0 DropPodLocomotionClass::ShortFunc_4B65F0 -> DropPodLocomotionClass
+[conv] 0x403e90 sub_403E90 -> _addr_40
+[conv] 0x42e5e0 sub_42E5E0 -> _addr_42
+[conv] 0x4b4ff0 DropListClass::KillFocus -> DropListClass
+[conv] 0x510cb0 sub_510CB0 -> _addr_51
+[conv] 0x556940 sub_556940 -> _addr_55
+[conv] 0x5d3990 MPBattleClass::randomHumanCountryIndex -> MPBattleClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_53                 rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_68                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_75                 rc=0
+[era] ObjectClass              rc=2
+[era] COMClassFactory          rc=2
+[era] DropPodLocomotionClass   rc=0
+[era] _addr_42                 rc=0
+[era] DropListClass            rc=0
+[era] _addr_51                 rc=0
+[era] _addr_55                 rc=0
+[era] MPBattleClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x40dc40   MATCH            sub_40DC40
+[diff] 0x403e90   MATCH            sub_403E90
+[diff] 0x46d2c0   MATCH            sub_46D2C0
+[diff] 0x4c6500   MISMATCH         sub_4C6500
+[diff] 0x5394f0   MISMATCH         sub_5394F0
+[diff] 0x5afe80   MATCH            sub_5AFE80
+[diff] 0x5f3890   MISMATCH         sub_5F3890
+[diff] 0x683210   MISMATCH         sub_683210
+[diff] 0x6e7e10   MATCH            sub_6E7E10
+[diff] 0x754ab0   MATCH            sub_754AB0
+[diff] 0x405130   MISMATCH         ObjectClass::sub_405130
+[diff] 0x4b65f0   MISMATCH         DropPodLocomotionClass::ShortFunc_4B65F0
+[diff] 0x42e5e0   MATCH            sub_42E5E0
+[diff] 0x4b4ff0   MISMATCH         DropListClass::KillFocus
+[diff] 0x510cb0   MATCH            sub_510CB0
+[diff] 0x556940   MATCH            sub_556940
+[diff] 0x5d3990   MATCH            MPBattleClass::randomHumanCountryIndex
+[ledger] 0x40dc40 sub_40DC40 -> OK (attempt 1)
+[ledger] 0x46d2c0 sub_46D2C0 -> OK (attempt 1)
+[ledger] 0x4c6500 sub_4C6500 -> NG (attempt 1)
+[ledger] 0x5394f0 sub_5394F0 -> NG (attempt 1)
+[ledger] 0x5afe80 sub_5AFE80 -> OK (attempt 1)
+[ledger] 0x5f3890 sub_5F3890 -> NG (attempt 1)
+[ledger] 0x683210 sub_683210 -> NG (attempt 1)
+[ledger] 0x6e7e10 sub_6E7E10 -> OK (attempt 1)
+[ledger] 0x754ab0 sub_754AB0 -> OK (attempt 1)
+[ledger] 0x405130 ObjectClass::sub_405130 -> NG (attempt 1)
+[ledger] 0x6bf5c0 COMClassFactory::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2440 ObjectClass::WinMain_Helper_6C2440 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5140 ObjectClass::WinMain_Helper_6C5140 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b65f0 DropPodLocomotionClass::ShortFunc_4B65F0 -> NG (attempt 1)
+[ledger] 0x403e90 sub_403E90 -> OK (attempt 1)
+[ledger] 0x42e5e0 sub_42E5E0 -> OK (attempt 1)
+[ledger] 0x4b4ff0 DropListClass::KillFocus -> NG (attempt 1)
+[ledger] 0x510cb0 sub_510CB0 -> OK (attempt 1)
+[ledger] 0x556940 sub_556940 -> OK (attempt 1)
+[ledger] 0x5d3990 MPBattleClass::randomHumanCountryIndex -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 10,
+  "MISMATCH": 7,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "extern_reloc": 4,
+  "branch_order": 1,
+  "width_mismatch": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 58.8,
+ "match_rate_of_total_pct": 50.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p02\batch_report.json

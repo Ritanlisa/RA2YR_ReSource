@@ -1,0 +1,8 @@
+{
+ "symbol": "?KillFocus@DropListClass@@QAEHXZ",
+ "sym_key": "DropListClass::KillFocus",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8d81b000000050ff914c010000c3",
+ "relocs": []
+}

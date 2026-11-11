@@ -1,0 +1,27 @@
+{
+ "symbol": "?randomHumanCountryIndex@MPBattleClass@@QAEHXZ",
+ "sym_key": "MPBattleClass::randomHumanCountryIndex",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "33c0a300000000a300000000a300000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC48@@3IA",
+   "sym_key": "DataGlobal_ABFC48"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC4C@@3IA",
+   "sym_key": "DataGlobal_ABFC4C"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_ABFC50@@3IA",
+   "sym_key": "DataGlobal_ABFC50"
+  }
+ ]
+}

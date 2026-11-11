@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D3990",
+ "name": "MPBattleClass::randomHumanCountryIndex",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D3990",
+ "bytes_hex": "33c0a348fcab00a34cfcab00a350fcab00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
