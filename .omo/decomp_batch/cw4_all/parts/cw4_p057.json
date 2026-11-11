@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x77b260",
+  "name": "sub_77B260",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_77",
+  "emitted": "sub_77B260",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb73660], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x77b860",
+  "name": "sub_77B860",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_77",
+  "emitted": "sub_77B860",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb77a00], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x7b0d70",
+  "name": "sub_7B0D70",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_7B",
+  "emitted": "sub_7B0D70",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb78008], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x7b19a0",
+  "name": "sub_7B19A0",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_7B",
+  "emitted": "sub_7B19A0",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb78088], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x7b2d70",
+  "name": "sub_7B2D70",
+  "family": "RELOC_KEY",
+  "path": "extern_reloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_7B",
+  "emitted": "sub_7B2D70",
+  "first_diff": {
+   "orig": "+5 mov dword ptr [0xb78110], 0",
+   "ours": "+5 mov dword ptr [0], 0"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x7cac4c",
+  "name": "?FindCompleteObject_YAPAXPAPAX_Z",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 26,
+  "part": "p172",
+  "unit": "_addr_7C",
+  "emitted": "FindCompleteObject_YAPAXPAPAX_Z",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x40b2e0",
+  "name": "VectorClass::GetCapacity",
+  "family": "STRUCTURAL",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "VectorClass",
+  "emitted": "VectorClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40b2ec",
+   "ours": "+5 je 0x17"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x40b670",
+  "name": "MoveFeedback::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PAVBombClass",
+  "emitted": "_DynamicVectorClass_PAVBombClass::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x40b67c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40b860",
+  "name": "VectorClass_ptr_BombClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_VectorClass_PAVBombClass",
+  "emitted": "_VectorClass_PAVBombClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40b86c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40c010",
+  "name": "VectorClass_cptr_CommandClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_VectorClass_PBVCommandClass",
+  "emitted": "_VectorClass_PBVCommandClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40c01c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40c260",
+  "name": "EventClass::dequeueEvent",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PAVLightConvertClass",
+  "emitted": "_DynamicVectorClass_PAVLightConvertClass::dequeueEvent",
+  "first_diff": {
+   "orig": "+5 jne 0x40c26c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40c3f0",
+  "name": "VectorClass_ptr_LightConvertClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_VectorClass_PAVLightConvertClass",
+  "emitted": "_VectorClass_PAVLightConvertClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40c3fc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40c9e0",
+  "name": "VectorClass_ptr_IsometricTileClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_VectorClass_PAVIsometricTileClass",
+  "emitted": "_VectorClass_PAVIsometricTileClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40c9ec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40ce30",
+  "name": "ObjectVector::Remove",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_VectorClass_PAVObjectClass",
+  "emitted": "_VectorClass_PAVObjectClass::Remove",
+  "first_diff": {
+   "orig": "+5 jne 0x40ce3c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40d570",
+  "name": "MouseClass::updateCursorState",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PAVMixFileClass",
+  "emitted": "_DynamicVectorClass_PAVMixFileClass::updateCursorState",
+  "first_diff": {
+   "orig": "+5 jne 0x40d57c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40d9a0",
+  "name": "sub_40D9A0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 27,
+  "part": "p173",
+  "unit": "_addr_40",
+  "emitted": "sub_40D9A0",
+  "first_diff": {
+   "orig": "+0 mov eax, 0x885182",
+   "ours": "+0 xor eax, eax"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x40eef0",
+  "name": "VectorClass_ptr_VoxelAnimClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PAVVoxelAnimClass",
+  "emitted": "_DynamicVectorClass_PAVVoxelAnimClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x40eefc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40f080",
+  "name": "VectorClass_ptr_VoxelAnimClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_PAVVoxelAnimClass",
+  "emitted": "_VectorClass_PAVVoxelAnimClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x40f08c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40f7a0",
+  "name": "VectorClass_ptr_WarheadTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_PAVWarheadTypeClass",
+  "emitted": "_VectorClass_PAVWarheadTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x40f7ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40fd70",
+  "name": "VectorClass_ptr_WeaponTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_PAVWeaponTypeClass",
+  "emitted": "_VectorClass_PAVWeaponTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x40fd7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]

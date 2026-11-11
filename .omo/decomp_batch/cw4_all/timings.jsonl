@@ -55,3 +55,4 @@
 {"part": 54, "n": 20, "seconds": 0.5, "summary": {"verdicts": {"NO_VARIANT": 18, "NO_HIT": 2}, "by_family_total": {"RELOC_KEY": 13, "RET_ARITY": 3, "RET_VOID_STUB": 2, "STRUCTURAL": 1, "WIDTH": 1}, "by_family_hits": {}}}
 {"part": 55, "n": 20, "seconds": 0.2, "summary": {"verdicts": {"NO_VARIANT": 18, "NO_HIT": 2}, "by_family_total": {"RELOC_KEY": 18, "STRUCTURAL": 2}, "by_family_hits": {}}}
 {"part": 56, "n": 20, "seconds": 0.2, "summary": {"verdicts": {"NO_VARIANT": 19, "NO_HIT": 1}, "by_family_total": {"RELOC_KEY": 19, "REG_ALLOC": 1}, "by_family_hits": {}}}
+{"part": 57, "n": 20, "seconds": 1.8, "summary": {"verdicts": {"NO_VARIANT": 6, "NO_HIT": 2, "MATCH": 12}, "by_family_total": {"RELOC_KEY": 5, "STRUCTURAL": 2, "JCC_INVERT": 12, "TWO_FOUR_INSNS": 1}, "by_family_hits": {"JCC_INVERT": 12}}}
