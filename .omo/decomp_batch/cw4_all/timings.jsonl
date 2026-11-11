@@ -96,3 +96,4 @@
 {"part": 95, "n": 20, "seconds": 1.9, "summary": {"verdicts": {"NO_VARIANT": 10, "NO_HIT": 10}, "by_family_total": {"FRAME": 10, "STRUCTURAL": 6, "JCC_LAYOUT_PLUS": 2, "JCC_INVERT": 1, "IMM": 1}, "by_family_hits": {}}}
 {"part": 96, "n": 20, "seconds": 2.7, "summary": {"verdicts": {"NO_HIT": 14, "NO_VARIANT": 6}, "by_family_total": {"STRUCTURAL": 14, "FRAME": 5, "REG_ALLOC": 1}, "by_family_hits": {}}}
 {"part": 97, "n": 20, "seconds": 0.6, "summary": {"verdicts": {"NO_VARIANT": 17, "NO_HIT": 3}, "by_family_total": {"STRUCTURAL": 5, "TWO_FOUR_INSNS": 3, "MEMBER_OFFSET": 2, "ONE_INSN": 1, "POINTER_NULLED": 5, "FRAME": 1, "RELOC_KEY": 3}, "by_family_hits": {}}}
+{"part": 98, "n": 20, "seconds": 0.9, "summary": {"verdicts": {"NO_VARIANT": 14, "NO_HIT": 6}, "by_family_total": {"REG_ALLOC": 1, "TWO_FOUR_INSNS": 4, "WIDTH": 2, "RET_ARITY": 10, "STRUCTURAL": 2, "ONE_INSN": 1}, "by_family_hits": {}}}

@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x408d40",
+  "name": "sub_408D40",
+  "family": "REG_ALLOC",
+  "path": "regalloc",
+  "size": 9,
+  "part": "p33",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_408D40",
+  "first_diff": {
+   "orig": "+3 mov ecx, dword ptr [ecx + 0x50]",
+   "ours": "+3 mov edx, dword ptr [ecx + 0x50]"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x41c020",
+  "name": "AircraftClass::CheckReloadTimer",
+  "family": "TWO_FOUR_INSNS",
+  "path": "ret_norm",
+  "size": 9,
+  "part": "p33",
+  "unit": "TechnoClass",
+  "emitted": "TechnoClass::CheckReloadTimer",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0x1d8]",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 13
+ },
+ {
+  "addr": "0x4a52d0",
+  "name": "sub_4A52D0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "width_mismatch",
+  "size": 9,
+  "part": "p33",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4A52D0",
+  "first_diff": {
+   "orig": "+0 mov byte ptr [ecx + 0x18], 0",
+   "ours": "+0 mov dword ptr [ecx + 0x18], 0x100"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x4a52e0",
+  "name": "sub_4A52E0",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 9,
+  "part": "p33",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4A52E0",
+  "first_diff": {
+   "orig": "+0 xor al, al",
+   "ours": "+0 mov dword ptr [ecx + 0x18], 0"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x5176b0",
+  "name": "Flag::IsNot2",
+  "family": "WIDTH",
+  "path": "ret_norm",
+  "size": 9,
+  "part": "p33",
+  "unit": "Flag",
+  "emitted": "Flag::IsNot2",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx]",
+   "ours": "+0 mov al, byte ptr [ecx]"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x633a40",
+  "name": "sub_633A40",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 9,
+  "part": "p34",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_633A40",
+  "first_diff": {
+   "orig": "+6 ret 4",
+   "ours": "+6 ret 8"
+  },
+  "ours_size": 9
+ },
+ {
+  "addr": "0x76b080",
+  "name": "ComStreamClass::initStream",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 9,
+  "part": "p34",
+  "unit": "ComStreamClass",
+  "emitted": "ComStreamClass::initStream",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0x44]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0x44]"
+  },
+  "ours_size": 11
+ },
+ {
+  "addr": "0x7cc1a9",
+  "name": "__NLG_Notify1",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 9,
+  "part": "p34",
+  "unit": "_addr_7C",
+  "emitted": "__NLG_Notify1",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push 0x7cc1bc"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x4065f0",
+  "name": "ObjectClass::sub_4065F0",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p34",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4065F0",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x410220",
+  "name": "AbstractClass::GetVtable3",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "AbstractClass",
+  "emitted": "AbstractClass::GetVtable3",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x426a80",
+  "name": "AbstractClass::getMapCoords",
+  "family": "ONE_INSN",
+  "path": "codegen_shape",
+  "size": 10,
+  "part": "p35",
+  "unit": "AbstractClass",
+  "emitted": "AbstractClass::getMapCoords",
+  "first_diff": {
+   "orig": "+0 xor eax, eax",
+   "ours": "+0 mov ax, word ptr [ecx + 0xa2]"
+  },
+  "ours_size": 8
+ },
+ {
+  "addr": "0x4b4c00",
+  "name": "JumpjetLocomotionClass::GetField_0x54",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "DriveLocomotionClass",
+  "emitted": "DriveLocomotionClass::GetField_0x54",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x4b4c10",
+  "name": "JumpjetLocomotionClass::GetField_0x58",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "DriveLocomotionClass",
+  "emitted": "DriveLocomotionClass::GetField_0x58",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x4b4c20",
+  "name": "JumpjetLocomotionClass::GetField_0x48",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "DriveLocomotionClass",
+  "emitted": "DriveLocomotionClass::GetField_0x48",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x4f4ca0",
+  "name": "Flag::IsZero",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "Flag",
+  "emitted": "Flag::IsZero",
+  "first_diff": {
+   "orig": "+0 mov dl, byte ptr [ecx]",
+   "ours": "+0 mov edx, dword ptr [ecx]"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x4f6e60",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1",
+  "family": "TWO_FOUR_INSNS",
+  "path": "codegen_shape",
+  "size": 10,
+  "part": "p35",
+  "unit": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "emitted": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 12
+ },
+ {
+  "addr": "0x54ae50",
+  "name": "JumpjetLocomotionClass::SmallStub_54AE50",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::SmallStub_54AE50",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x55a930",
+  "name": "StreamClass::GetDirty",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "IUnknown",
+  "emitted": "IUnknown::GetDirty",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x5aff70",
+  "name": "JumpjetLocomotionClass::SmallStub_5AFF70",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 10,
+  "part": "p35",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::SmallStub_5AFF70",
+  "first_diff": {
+   "orig": "+7 ret 4",
+   "ours": "+7 ret 8"
+  },
+  "ours_size": 10
+ },
+ {
+  "addr": "0x633b00",
+  "name": "sub_633B00",
+  "family": "RET_ARITY",
+  "path": "ret_norm",
+  "size": 10,
+  "part": "p36",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_633B00",
+  "first_diff": {
+   "orig": "+4 mov dword ptr [ecx + 0x70], eax",
+   "ours": "+4 mov byte ptr [ecx + 0x70], al"
+  },
+  "ours_size": 10
+ }
+]
