@@ -1,0 +1,11 @@
+{
+ "addr": "0x411510",
+ "name": "Surface::GetRect",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x411510",
+ "bytes_hex": "8b4424045356578b79048b49088bd833d233f68913897304897b085f5e894b0c5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

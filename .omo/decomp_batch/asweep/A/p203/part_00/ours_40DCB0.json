@@ -1,0 +1,33 @@
+{
+ "symbol": "?FindName@AbstractType@@QAEPADXZ",
+ "sym_key": "AbstractType::FindName",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "a10000000033d23908740f83c008423d000000007d0c390875f18b04d500000000c3b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816EE4@@3IA",
+   "sym_key": "DataGlobal_816EE4"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817134@@3IA",
+   "sym_key": "DataGlobal_817134"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816EE0@@3IA",
+   "sym_key": "DataGlobal_816EE0"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_817130@@3IA",
+   "sym_key": "DataGlobal_817130"
+  }
+ ]
+}

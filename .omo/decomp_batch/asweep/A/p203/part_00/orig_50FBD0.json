@@ -1,0 +1,11 @@
+{
+ "addr": "0x50FBD0",
+ "name": "VectorClass__N::Destroy_0",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50FBD0",
+ "bytes_hex": "568b711033c085f67e138b5424088b49048a123814017408403bc67cf683c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

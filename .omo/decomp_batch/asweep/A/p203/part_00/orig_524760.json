@@ -1,0 +1,11 @@
+{
+ "addr": "0x524760",
+ "name": "InfantryTypeClass::GetDefaultDimensions",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x524760",
+ "bytes_hex": "a1ccf2a8005657b9550000008d34008b44240c8bf88bd1890f8957048977085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Check@WOLGameList@@QAE_NH@Z",
+ "sym_key": "WOLGameList::Check",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b442404568b71248b501c3bd65e750f8b40108b51283bc2750533c0c20400b801000000c20400",
+ "relocs": []
+}

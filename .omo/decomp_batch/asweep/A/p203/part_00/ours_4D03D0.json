@@ -1,0 +1,8 @@
+{
+ "symbol": "?CompareCoordinateMagnitude@UnitClass@@QAE_NPAF@Z",
+ "sym_key": "UnitClass::CompareCoordinateMagnitude",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "0fbf118b4c240456578bc20fbf318bcec1f91f8bf933fec1f81f2bf98bc833ca2bc83bcf5f0f9dc05ec20400",
+ "relocs": []
+}

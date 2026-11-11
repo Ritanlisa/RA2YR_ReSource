@@ -1,0 +1,11 @@
+{
+ "addr": "0x4D03D0",
+ "name": "UnitClass::CompareCoordinateMagnitude",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4D03D0",
+ "bytes_hex": "8b442404560fbf00998bf00fbf0133f233c92bf29933c22bc23bc65e0f9dc18ac1c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

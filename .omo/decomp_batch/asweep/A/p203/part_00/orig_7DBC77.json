@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DBC77",
+ "name": "__ctrlfp",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DBC77",
+ "bytes_hex": "558bec519bd97dfc8b450c8bc8234508f7d1234dfc0bc8894d0cd96d0c0fbf45fcc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

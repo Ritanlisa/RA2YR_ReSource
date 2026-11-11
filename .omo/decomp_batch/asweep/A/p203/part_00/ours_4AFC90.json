@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetCoordinate@JumpjetLocomotionClass@@QAGPAIPAH0@Z",
+ "sym_key": "JumpjetLocomotionClass::GetCoordinate",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "568b742408d94634e8000000008b56388b76308bc88b44240c89308948048950085ec20c00",
+ "relocs": [
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

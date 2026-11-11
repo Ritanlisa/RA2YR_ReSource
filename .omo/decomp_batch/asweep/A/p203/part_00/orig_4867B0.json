@@ -1,0 +1,11 @@
+{
+ "addr": "0x4867B0",
+ "name": "Cell::IsShore",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4867B0",
+ "bytes_hex": "8b41388b0d180eaa003bc174148b0d4807aa003bc17c0783c1103bc17c0332c0c3b001c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

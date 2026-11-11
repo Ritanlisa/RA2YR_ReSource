@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetRect@Surface@@QAEPAIPAH@Z",
+ "sym_key": "Surface::GetRect",
+ "size": 32,
+ "link_base": 0,
+ "bytes_hex": "8b51048b4424048b4908c70000000000c740040000000089500889480cc20400",
+ "relocs": []
+}

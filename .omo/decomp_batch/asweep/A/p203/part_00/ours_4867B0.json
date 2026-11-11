@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsShore@Cell@@QAE_NXZ",
+ "sym_key": "Cell::IsShore",
+ "size": 36,
+ "link_base": 0,
+ "bytes_hex": "8b41388b0d000000003bc174148b0d000000003bc1720783c1103bc1720332c0c3b001c3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0E18@@3IA",
+   "sym_key": "DataGlobal_AA0E18"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA0748@@3IA",
+   "sym_key": "DataGlobal_AA0748"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A840",
+ "name": "WOLGameList::Check",
+ "size": 35,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A840",
+ "bytes_hex": "8b442404568b71248b501c3bd65e7405b001c204008b40108b51283bc20f95c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

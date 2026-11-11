@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p203\part_00
+=== convert (20 addrs) ===
+[conv] 0x77a840 WOLGameList::Check -> WOLGameList
+[conv] 0x7b5410 ObjectClass::sub_7B5410 -> ObjectClass
+[conv] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> _addr_7C
+[conv] 0x7cc186 __abnormal_termination -> _addr_7C
+[conv] 0x7dbc77 __ctrlfp -> _addr_7D
+[conv] 0x40dcb0 AbstractType::FindName -> AbstractType
+[conv] 0x411510 Surface::GetRect -> Surface
+[conv] 0x41cbf0 AircraftTypeClass::vt_entry_7C -> AircraftTypeClass
+[conv] 0x430f30 MapClass::isCellAccessible -> MapClass
+[conv] 0x45dd20 ObjectClass::sub_45DD20 -> ObjectClass
+[conv] 0x4790b0 SetSoundWarning -> _addr_47
+[conv] 0x4867b0 Cell::IsShore -> Cell
+[conv] 0x4afc90 JumpjetLocomotionClass::GetCoordinate -> JumpjetLocomotionClass
+[conv] 0x4b5b40 JumpjetLocomotionClass::GetSpeedCoordinate -> JumpjetLocomotionClass
+[conv] 0x4d03d0 UnitClass::CompareCoordinateMagnitude -> UnitClass
+[conv] 0x50fbd0 _DynamicVectorClass__N::Destroy_0 -> _DynamicVectorClass__N
+[conv] 0x524760 InfantryTypeClass::GetDefaultDimensions -> InfantryTypeClass
+[conv] 0x588de0 DynamicVector::initCellVectors -> DynamicVector
+[conv] 0x589000 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::GetItemIndex_1 -> _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x58aa60 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetCapacity -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] WOLGameList              rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=2
+[era] _addr_7D                 rc=0
+[era] AbstractType             rc=0
+[era] Surface                  rc=0
+[era] AircraftTypeClass        rc=2
+[era] MapClass                 rc=2
+[era] _addr_47                 rc=2
+[era] Cell                     rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] UnitClass                rc=0
+[era] _DynamicVectorClass__N   rc=0
+[era] InfantryTypeClass        rc=0
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+=== diffasm byte-compare ===
+[diff] 0x77a840   MISMATCH         WOLGameList::Check
+[diff] 0x7b5410   MISMATCH         ObjectClass::sub_7B5410
+[diff] 0x7dbc77   MISMATCH         __ctrlfp
+[diff] 0x40dcb0   MISMATCH         AbstractType::FindName
+[diff] 0x411510   MISMATCH         Surface::GetRect
+[diff] 0x4867b0   MISMATCH         Cell::IsShore
+[diff] 0x4afc90   MISMATCH         JumpjetLocomotionClass::GetCoordinate
+[diff] 0x4b5b40   MISMATCH         JumpjetLocomotionClass::GetSpeedCoordinate
+[diff] 0x4d03d0   MISMATCH         UnitClass::CompareCoordinateMagnitude
+[diff] 0x50fbd0   MISMATCH         _DynamicVectorClass__N::Destroy_0
+[diff] 0x524760   MISMATCH         InfantryTypeClass::GetDefaultDimensions
+[diff] 0x588de0   MISMATCH         DynamicVector::initCellVectors
+[diff] 0x589000   MISMATCH         _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::GetItemIndex_1
+[diff] 0x58aa60   MISMATCH         _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetCapacity
+[ledger] 0x77a840 WOLGameList::Check -> NG (attempt 1)
+[ledger] 0x7b5410 ObjectClass::sub_7B5410 -> NG (attempt 1)
+[ledger] 0x7caef1 PMDtoOffset_YAHPAXABUPMD___Z -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc186 __abnormal_termination -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7dbc77 __ctrlfp -> NG (attempt 1)
+[ledger] 0x40dcb0 AbstractType::FindName -> NG (attempt 1)
+[ledger] 0x411510 Surface::GetRect -> NG (attempt 1)
+[ledger] 0x41cbf0 AircraftTypeClass::vt_entry_7C -> COMPILE_FAIL (attempt 1)
+[ledger] 0x430f30 MapClass::isCellAccessible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45dd20 ObjectClass::sub_45DD20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4790b0 SetSoundWarning -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4867b0 Cell::IsShore -> NG (attempt 1)
+[ledger] 0x4afc90 JumpjetLocomotionClass::GetCoordinate -> NG (attempt 1)
+[ledger] 0x4b5b40 JumpjetLocomotionClass::GetSpeedCoordinate -> NG (attempt 1)
+[ledger] 0x4d03d0 UnitClass::CompareCoordinateMagnitude -> NG (attempt 1)
+[ledger] 0x50fbd0 _DynamicVectorClass__N::Destroy_0 -> NG (attempt 1)
+[ledger] 0x524760 InfantryTypeClass::GetDefaultDimensions -> NG (attempt 1)
+[ledger] 0x588de0 DynamicVector::initCellVectors -> NG (attempt 1)
+[ledger] 0x589000 _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x58aa60 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::GetCapacity -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "branch_order": 4,
+  "codegen_shape": 3,
+  "extern_reloc": 2,
+  "eval_order": 1,
+  "signedness": 1,
+  "width_mismatch": 1,
+  "regalloc": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p203\batch_report.json
