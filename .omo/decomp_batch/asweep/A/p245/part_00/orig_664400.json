@@ -1,0 +1,11 @@
+{
+ "addr": "0x664400",
+ "name": "Network::reconnect",
+ "size": 62,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x664400",
+ "bytes_hex": "8b51105333c05685d2577e2c8b71048b7c24108bce8b190fbe1b3bdf740e4083c1043bc27cef5f5e5bc208008b0486668b4c2414668948255f5e5bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

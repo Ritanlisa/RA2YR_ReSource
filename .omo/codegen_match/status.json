@@ -51250,6 +51250,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x65bf50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVRadSiteClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_RadSiteClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x65c070": {
   "attempts": 1,
   "clean": false,
@@ -52044,6 +52056,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x660ce0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVRadarEventClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_RadarEventClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x660e00": {
   "attempts": 1,
   "clean": false,
@@ -52454,6 +52478,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x664400": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "Network::reconnect",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Network::reconnect",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x664440": {
   "attempts": 9,
   "first_diff": null,
@@ -52483,6 +52519,18 @@
   "orig_name": "RocketLocomotionClass_17::UpdateMovement",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x664810": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RocketLocomotionClass_17::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x664930": {
@@ -52843,6 +52891,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x67aaf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVVoxelAnimTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TypeList_VoxelAnim::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x67ac10": {
   "attempts": 1,
   "clean": false,
@@ -52879,6 +52939,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x67ae70": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVSmudgeTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_VectorClass_PBVSmudgeTypeClass::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x67af90": {
   "attempts": 1,
   "clean": false,
@@ -52912,6 +52984,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "TypeList_VoxelAnim::TypeList_vt04",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x67b1f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PBVTerrainTypeClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "TypeList_cptr_TerrainTypeClass::AddRef",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -54919,6 +55003,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x69c710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_W4DiskID::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "_VectorClass_W4DiskID::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x69c750": {
   "attempts": 1,
   "first_diff": "+1 push ebp",
@@ -55012,6 +55108,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x69cfa0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUGlobalPacketType::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_GlobalPacketType::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x69d0c0": {
   "attempts": 1,
   "clean": false,
@@ -55045,6 +55153,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "VectorClass_ptr_GlobalPacketType::FindItemIndex_0",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x69d200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVPhoneEntryClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_PhoneEntryClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -56237,6 +56357,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x6b1470": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SlaveManagerClass_25::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6b1560": {
   "attempts": 1,
   "first_diff": "+6 mov eax, dword ptr [esi + 4]",
@@ -56277,6 +56409,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "SlaveManagerClass_25::Read",
   "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6b16d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSlaveManagerClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SlaveManagerClass::Add",
+  "rule_violations": 2,
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
@@ -57092,6 +57236,18 @@
   "orig_name": "VectorClass_ptr_SpawnManagerClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6b8220": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "SpawnManagerClass_25::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6b8340": {
@@ -59508,6 +59664,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6c61d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_K::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_K::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6c62f0": {
   "attempts": 1,
   "clean": false,
@@ -60115,6 +60283,18 @@
   "orig_name": "VectorClass_ptr_SubTitle::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6ca820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVSubTitle::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SubTitle::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6ca910": {
@@ -61533,6 +61713,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6dc9d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVShadowControlClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UDirtyAreaStruct___16::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6dcaf0": {
   "attempts": 1,
   "clean": false,
@@ -61880,6 +62072,18 @@
   "name": "Tactical_42::UpdateView",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x6e4850": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTActionClass::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Tactical_42::AddRef",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6e4890": {
   "attempts": 1,
@@ -62335,6 +62539,18 @@
   "orig_name": "VectorClass_ptr_TagTypeClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6e6540": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTagTypeClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TagTypeClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6e6630": {
@@ -64968,6 +65184,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x71b2a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTemporalClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TemporalClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x71b3c0": {
   "attempts": 1,
   "clean": false,
@@ -65515,6 +65743,18 @@
   "orig_name": "VectorClass_ptr_TEventClass::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x71fc00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_VectorClass_PAVTEventClass::Add",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_TEventClass::Add",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x71fd20": {

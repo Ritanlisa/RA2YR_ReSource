@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p245\part_00
+=== convert (20 addrs) ===
+[conv] 0x65bf50 _VectorClass_PAVRadSiteClass::Add -> _VectorClass_PAVRadSiteClass
+[conv] 0x660ce0 _VectorClass_PAVRadarEventClass::Add -> _VectorClass_PAVRadarEventClass
+[conv] 0x664400 Network::reconnect -> Network
+[conv] 0x664810 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef -> _VectorClass_PAUConnectionListStruct_OwnerTalkClass
+[conv] 0x67aaf0 _VectorClass_PBVVoxelAnimTypeClass::AddRef -> _VectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67ae70 _VectorClass_PBVSmudgeTypeClass::AddRef -> _VectorClass_PBVSmudgeTypeClass
+[conv] 0x67b1f0 _VectorClass_PBVTerrainTypeClass::AddRef -> _VectorClass_PBVTerrainTypeClass
+[conv] 0x69c710 _VectorClass_W4DiskID::AddRef -> _VectorClass_W4DiskID
+[conv] 0x69cfa0 _VectorClass_PAUGlobalPacketType::Add -> _VectorClass_PAUGlobalPacketType
+[conv] 0x69d200 _VectorClass_PAVPhoneEntryClass::Add -> _VectorClass_PAVPhoneEntryClass
+[conv] 0x6b1470 _VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef -> _VectorClass_PAUSlaveControl_SlaveManagerClass
+[conv] 0x6b16d0 _VectorClass_PAVSlaveManagerClass::Add -> _VectorClass_PAVSlaveManagerClass
+[conv] 0x6b8220 _VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef -> _VectorClass_PAUSpawnControl_SpawnManagerClass
+[conv] 0x6c61d0 _VectorClass_K::AddRef -> _VectorClass_K
+[conv] 0x6ca820 _VectorClass_PAVSubTitle::Add -> _VectorClass_PAVSubTitle
+[conv] 0x6dc9d0 _VectorClass_PAVShadowControlClass::AddRef -> _VectorClass_PAVShadowControlClass
+[conv] 0x6e4850 _VectorClass_PAVTActionClass::AddRef -> _VectorClass_PAVTActionClass
+[conv] 0x6e6540 _VectorClass_PAVTagTypeClass::Add -> _VectorClass_PAVTagTypeClass
+[conv] 0x71b2a0 _VectorClass_PAVTemporalClass::Add -> _VectorClass_PAVTemporalClass
+[conv] 0x71fc00 _VectorClass_PAVTEventClass::Add -> _VectorClass_PAVTEventClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVRadSiteClass rc=2
+[era] _VectorClass_PAVRadarEventClass rc=2
+[era] Network                  rc=0
+[era] _VectorClass_PAUConnectionListStruct_OwnerTalkClass rc=2
+[era] _VectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _VectorClass_PBVSmudgeTypeClass rc=2
+[era] _VectorClass_PBVTerrainTypeClass rc=2
+[era] _VectorClass_W4DiskID    rc=2
+[era] _VectorClass_PAUGlobalPacketType rc=2
+[era] _VectorClass_PAVPhoneEntryClass rc=2
+[era] _VectorClass_PAUSlaveControl_SlaveManagerClass rc=2
+[era] _VectorClass_PAVSlaveManagerClass rc=2
+[era] _VectorClass_PAUSpawnControl_SpawnManagerClass rc=2
+[era] _VectorClass_K           rc=2
+[era] _VectorClass_PAVSubTitle rc=2
+[era] _VectorClass_PAVShadowControlClass rc=2
+[era] _VectorClass_PAVTActionClass rc=2
+[era] _VectorClass_PAVTagTypeClass rc=2
+[era] _VectorClass_PAVTemporalClass rc=2
+[era] _VectorClass_PAVTEventClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x664400   MISMATCH         Network::reconnect
+[ledger] 0x65bf50 _VectorClass_PAVRadSiteClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660ce0 _VectorClass_PAVRadarEventClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x664400 Network::reconnect -> NG (attempt 1)
+[ledger] 0x664810 _VectorClass_PAUConnectionListStruct_OwnerTalkClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67aaf0 _VectorClass_PBVVoxelAnimTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67ae70 _VectorClass_PBVSmudgeTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b1f0 _VectorClass_PBVTerrainTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c710 _VectorClass_W4DiskID::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cfa0 _VectorClass_PAUGlobalPacketType::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d200 _VectorClass_PAVPhoneEntryClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b1470 _VectorClass_PAUSlaveControl_SlaveManagerClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b16d0 _VectorClass_PAVSlaveManagerClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b8220 _VectorClass_PAUSpawnControl_SpawnManagerClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c61d0 _VectorClass_K::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ca820 _VectorClass_PAVSubTitle::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dc9d0 _VectorClass_PAVShadowControlClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e4850 _VectorClass_PAVTActionClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6540 _VectorClass_PAVTagTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71b2a0 _VectorClass_PAVTemporalClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71fc00 _VectorClass_PAVTEventClass::Add -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p245\batch_report.json
