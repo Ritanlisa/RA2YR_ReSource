@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetRelatedObject@Pipe@@QAEHXZ",
+ "sym_key": "Pipe::GetRelatedObject",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b410485c074078b0850ff5104c333c0c3",
+ "relocs": []
+}

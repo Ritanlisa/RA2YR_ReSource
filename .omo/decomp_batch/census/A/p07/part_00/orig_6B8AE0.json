@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B8AE0",
+ "name": "ScenarioClass::ResetIntroFlags",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B8AE0",
+ "bytes_hex": "8b01258880f8ff0d888000008901c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

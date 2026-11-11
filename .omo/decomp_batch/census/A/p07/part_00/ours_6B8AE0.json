@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetIntroFlags@ScenarioClass@@QAEIXZ",
+ "sym_key": "ScenarioClass::ResetIntroFlags",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "8b01258880f8ff0d888000008901c3",
+ "relocs": []
+}

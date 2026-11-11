@@ -1,0 +1,75 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x631d30 Pipe::GetRelatedObject -> Pipe
+[conv] 0x6b8ae0 ScenarioClass::ResetIntroFlags -> ScenarioClass
+[conv] 0x76bfe0 Conflict::GetOwnerHouse -> Conflict
+[conv] 0x4059f0 ObjectClass::sub_4059F0 -> ObjectClass
+[conv] 0x50d9e0 HouseClass::GetInfSelfHealStep -> HouseClass
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Pipe                     rc=0
+[era] ScenarioClass            rc=0
+[era] Conflict                 rc=0
+[era] ObjectClass              rc=0
+[era] HouseClass               rc=0
+=== diffasm byte-compare ===
+[diff] 0x631d30   MISMATCH         Pipe::GetRelatedObject
+[diff] 0x6b8ae0   MATCH            ScenarioClass::ResetIntroFlags
+[diff] 0x76bfe0   MATCH            Conflict::GetOwnerHouse
+[diff] 0x4059f0   MATCH            ObjectClass::sub_4059F0
+[diff] 0x50d9e0   MISMATCH         HouseClass::GetInfSelfHealStep
+[ledger] 0x54fd50 0x54fd50 -> PENDING (attempt 1)
+[ledger] 0x55f920 0x55f920 -> PENDING (attempt 1)
+[ledger] 0x5b20a0 0x5b20a0 -> PENDING (attempt 1)
+[ledger] 0x5c1290 0x5c1290 -> PENDING (attempt 1)
+[ledger] 0x5d5a50 0x5d5a50 -> PENDING (attempt 1)
+[ledger] 0x5f6f80 0x5f6f80 -> PENDING (attempt 1)
+[ledger] 0x631d30 GameClass::GetRelatedObject -> NG (attempt 1)
+[ledger] 0x652820 0x652820 -> PENDING (attempt 1)
+[ledger] 0x664cb0 0x664cb0 -> PENDING (attempt 1)
+[ledger] 0x69ebe0 0x69ebe0 -> PENDING (attempt 1)
+[ledger] 0x6b8ae0 ScenarioClass::ResetIntroFlags -> OK (attempt 1)
+[ledger] 0x6dcf10 0x6dcf10 -> PENDING (attempt 1)
+[ledger] 0x710a80 0x710a80 -> PENDING (attempt 1)
+[ledger] 0x725f30 0x725f30 -> PENDING (attempt 1)
+[ledger] 0x735320 0x735320 -> PENDING (attempt 1)
+[ledger] 0x75ce30 0x75ce30 -> PENDING (attempt 1)
+[ledger] 0x76bfe0 Conflict::GetOwnerHouse -> OK (attempt 1)
+[ledger] 0x77b230 0x77b230 -> PENDING (attempt 1)
+[ledger] 0x4059f0 sub_4059F0 -> OK (attempt 1)
+[ledger] 0x50d9e0 HouseClass::GetInfSelfHealStep -> NG (attempt 1)
+======================================================================
+{
+ "total": 1197,
+ "verdicts": {
+  "MISMATCH": 301,
+  "MATCH": 486,
+  "COMPILE_FAIL": 320,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 83,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 117,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 46,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.8,
+ "match_rate_of_total_pct": 40.6,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p07\batch_report.json

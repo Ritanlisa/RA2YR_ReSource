@@ -1,0 +1,11 @@
+{
+ "addr": "0x76BFE0",
+ "name": "Conflict::GetOwnerHouse",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76BFE0",
+ "bytes_hex": "8b410c85c074058b402448c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

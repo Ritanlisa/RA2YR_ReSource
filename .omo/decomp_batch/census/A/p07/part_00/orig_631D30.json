@@ -1,0 +1,11 @@
+{
+ "addr": "0x631D30",
+ "name": "GameClass::GetRelatedObject",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x631D30",
+ "bytes_hex": "8b490485c974058b01ff600433c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
