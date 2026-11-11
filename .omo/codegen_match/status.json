@@ -412,6 +412,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x40a090": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_40A090",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x40a7a0": {
   "attempts": 5,
   "first_diff": null,
@@ -1097,6 +1104,13 @@
   "name": "AircraftTypeClass::GetDimensions",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x41cc20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AircraftTypeClass::LoadTypeData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x41cfa0": {
   "attempts": 2,
@@ -1909,6 +1923,13 @@
   "name": "0x43b010",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4456d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::UpdateSidebar",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x448070": {
   "attempts": 8,
@@ -4107,6 +4128,13 @@
   "name": "CreditsScreen::Init",
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
+ },
+ "0x4a3e40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DDraw::CapabilityCheck",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4a4780": {
   "attempts": 9,
@@ -8119,6 +8147,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x559ed0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x55a1a0": {
   "attempts": 1,
   "first_diff": null,
@@ -8508,6 +8543,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CellClass::applyTileDamage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x583ad0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_583AD0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9197,6 +9239,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5b57d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_5B57D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5b7620": {
   "attempts": 1,
   "first_diff": null,
@@ -9252,6 +9301,13 @@
   "name": "Debug::ScrollText",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5bd5c0": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x7c",
+  "name": "File::ParseFileHVA",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x5bd730": {
   "attempts": 1,
@@ -10604,6 +10660,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x60b1d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UI_Get_60B1D0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x60b740": {
   "attempts": 1,
   "first_diff": null,
@@ -11661,6 +11724,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x64a630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x64a630",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x64ad10": {
   "attempts": 1,
   "first_diff": null,
@@ -11721,6 +11791,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CellClass::DrawWrapper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x654320": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RadarClass::Destru_vt34",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13684,6 +13761,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c6de0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Read_6C6DE0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c8d50": {
   "attempts": 1,
   "first_diff": null,
@@ -13954,6 +14038,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Tactical::AddCellToDrawList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6dbb60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical::DrawOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14517,6 +14608,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6fda00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::GetFiringAngle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7011a0": {
   "attempts": 1,
   "first_diff": null,
@@ -14537,6 +14635,13 @@
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x703e70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ScanNeighborCells",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x705d20": {
   "attempts": 5,
@@ -16113,6 +16218,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x751ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_751EA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x752020": {
   "attempts": 1,
   "first_diff": null,
@@ -16911,6 +17023,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7714b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerritorySelectWDT_Delete",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7719e0": {
   "attempts": 1,
   "first_diff": null,
@@ -17282,6 +17401,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7937b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CComObject_CChatEventSink___ATL::DispatchConnectionPairs",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x796de0": {
   "attempts": 1,
   "first_diff": null,
@@ -17328,6 +17454,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Map_Handle_7A2800",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7a9800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CComObject_CChatEventSink___ATL::DispatchStub_27",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -18520,6 +18653,13 @@
   "name": "0x7d461e",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7d4a10": {
+  "attempts": 1,
+  "first_diff": "+0 push ebp",
+  "name": "_raise",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7d4c00": {
   "attempts": 1,

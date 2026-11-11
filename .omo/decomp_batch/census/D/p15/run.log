@@ -1,0 +1,94 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p15\part_00
+=== convert (20 addrs) ===
+[conv] 0x7714b0 TechnoClass::TerritorySelectWDT_Delete -> TechnoClass
+[conv] 0x5bd5c0 File::ParseFileHVA -> File
+[conv] 0x654320 RadarClass::Destru_vt34 -> RadarClass
+[conv] 0x7a9800 CChatEventSink::DispatchStub_27 -> CChatEventSink
+[conv] 0x6c6de0 ObjectClass::Audio_Read_6C6DE0 -> ObjectClass
+[conv] 0x4456d0 BuildingClass::UpdateSidebar -> BuildingClass
+[conv] 0x751ea0 unknown::sub_751EA0 -> unknown
+[conv] 0x60b1d0 unknown::UI_Get_60B1D0 -> unknown
+[conv] 0x40a090 TechnoClass::sub_40A090 -> TechnoClass
+[conv] 0x6dbb60 Tactical::DrawOverlay -> Tactical
+[conv] 0x6fda00 TechnoClass::GetFiringAngle -> TechnoClass
+[conv] 0x559ed0 LoadOptions::Read -> LoadOptions
+[conv] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> CComObject_CChatEventSink___ATL
+[conv] 0x703e70 TechnoClass::ScanNeighborCells -> TechnoClass
+[conv] 0x7d4a10 unknown::_raise -> unknown
+[conv] 0x4a3e40 DDraw::CapabilityCheck -> DDraw
+[conv] 0x41cc20 AircraftTypeClass::LoadTypeData -> AircraftTypeClass
+[conv] 0x5b57d0 ObjectClass::sub_5B57D0 -> ObjectClass
+[conv] 0x583ad0 ObjectClass::sub_583AD0 -> ObjectClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=2
+[era] File                     rc=0
+[era] RadarClass               rc=2
+[era] CChatEventSink           rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] unknown                  rc=2
+[era] Tactical                 rc=2
+[era] LoadOptions              rc=2
+[era] CComObject_CChatEventSink___ATL rc=2
+[era] DDraw                    rc=2
+[era] AircraftTypeClass        rc=2
+=== diffasm byte-compare ===
+[diff] 0x5bd5c0   MISMATCH         File::ParseFileHVA
+[diff] 0x7d4a10   MISMATCH         unknown::_raise
+[ledger] 0x7714b0 TerritorySelectWDT_Delete -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5bd5c0 File::ParseFileHVA -> NG (attempt 1)
+[ledger] 0x654320 RadarClass::Destru_vt34 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a9800 CComObject_CChatEventSink___ATL::DispatchStub_27 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c6de0 Audio_Read_6C6DE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4456d0 FootClass::UpdateSidebar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x751ea0 sub_751EA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b1d0 UI_Get_60B1D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40a090 sub_40A090 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6dbb60 Tactical::DrawOverlay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fda00 TechnoClass::GetFiringAngle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x559ed0 LoadOptions::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x64a630 0x64a630 -> PENDING (attempt 1)
+[ledger] 0x7937b0 CComObject_CChatEventSink___ATL::DispatchConnectionPairs -> COMPILE_FAIL (attempt 1)
+[ledger] 0x703e70 TechnoClass::ScanNeighborCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d4a10 _raise -> NG (attempt 1)
+[ledger] 0x4a3e40 DDraw::CapabilityCheck -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41cc20 AircraftTypeClass::LoadTypeData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b57d0 sub_5B57D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x583ad0 sub_583AD0 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2674,
+ "verdicts": {
+  "MISMATCH": 712,
+  "MATCH": 521,
+  "COMPILE_FAIL": 898,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 526,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 7,
+  "frame_sched": 74,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 116,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.3,
+ "match_rate_of_total_pct": 19.5,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p15\batch_report.json

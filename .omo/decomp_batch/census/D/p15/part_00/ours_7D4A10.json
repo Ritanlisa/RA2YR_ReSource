@@ -1,0 +1,129 @@
+{
+ "symbol": "?_raise@unknown@@QAEHH@Z",
+ "sym_key": "unknown::_raise",
+ "size": 392,
+ "link_base": 0,
+ "bytes_hex": "83ec08538b5c241055568d43fe5783f814c7442410000000000f875c01000033c98a8800000000ff248d000000008b2d00000000bf00000000eb42e8000000008bf08b56505253e8000000008bf883c40883c7088b2feb398b2d00000000bf00000000eb188b2d00000000bf00000000eb0b8b2d00000000bf000000006a01c744241401000000e80000000083c4048bf385ed75198b44241085c0740a6a01e80000000083c4046a03e80000000083fb08740a83fb0b740583fb04755c8b465483fb088944241cc746540000000075498b4658c746588c0000008b0d000000008b150000000003d1894424143bca732f8d0449c1e0028b565083c00c41c74402fc000000008b15000000008b3d0000000003fa3bcf72dfeb06c707000000008b44241085c0740a6a01e80000000083c40483fb0875298b46585053ffd583c4088b4c241c83fb08894e5475078b5424148956585f5e5d33c05b83c408c2040053ffd583c40483fb0b74d683fb0474d15f5e5d33c05b83c408c204005f5e5d83c8ff5b83c408c20400",
+ "relocs": [
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "$L1221",
+   "sym_key": "$L1221"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "$L1222",
+   "sym_key": "$L1222"
+  },
+  {
+   "off": 48,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782DC@@3IA",
+   "sym_key": "CRTGlobal_B782DC"
+  },
+  {
+   "off": 53,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782DC@@3IA",
+   "sym_key": "CRTGlobal_B782DC"
+  },
+  {
+   "off": 60,
+   "type": "REL32",
+   "sym": "?_getptd@@YAHXZ",
+   "sym_key": "_getptd"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?siglookup@@YAHHHZZ",
+   "sym_key": "siglookup"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E8@@3IA",
+   "sym_key": "CRTGlobal_B782E8"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E8@@3IA",
+   "sym_key": "CRTGlobal_B782E8"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E0@@3IA",
+   "sym_key": "CRTGlobal_B782E0"
+  },
+  {
+   "off": 108,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E0@@3IA",
+   "sym_key": "CRTGlobal_B782E0"
+  },
+  {
+   "off": 116,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E4@@3IA",
+   "sym_key": "CRTGlobal_B782E4"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B782E4@@3IA",
+   "sym_key": "CRTGlobal_B782E4"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "?_lock@@YAHHZZ",
+   "sym_key": "_lock"
+  },
+  {
+   "off": 160,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  },
+  {
+   "off": 170,
+   "type": "REL32",
+   "sym": "__exit",
+   "sym_key": "_exit"
+  },
+  {
+   "off": 220,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB98@@3IA",
+   "sym_key": "DataGlobal_87CB98"
+  },
+  {
+   "off": 226,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB9C@@3IA",
+   "sym_key": "DataGlobal_87CB9C"
+  },
+  {
+   "off": 263,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB98@@3IA",
+   "sym_key": "DataGlobal_87CB98"
+  },
+  {
+   "off": 269,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87CB9C@@3IA",
+   "sym_key": "DataGlobal_87CB9C"
+  },
+  {
+   "off": 298,
+   "type": "REL32",
+   "sym": "?_unlock@@YAHHZZ",
+   "sym_key": "_unlock"
+  }
+ ]
+}
