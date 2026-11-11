@@ -1,0 +1,93 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p12\part_00
+=== convert (20 addrs) ===
+[conv] 0x41e5e0 AITriggerTypeClass::ProcessPower -> AITriggerTypeClass
+[conv] 0x6acd60 Skirmish::EnableSpawnButtons -> Skirmish
+[conv] 0x7b63c0 unknown::ProcessStringAndCopy -> unknown
+[conv] 0x6edb50 TeamClass::AssignAttackTarget -> TeamClass
+[conv] 0x7b71d0 ObjectClass::Render_Helper_7B71D0 -> ObjectClass
+[conv] 0x5b9f30 CellClass::SetOccupancy -> CellClass
+[conv] 0x7d68fb unknown::__get_lc_lconv -> unknown
+[conv] 0x703590 MapClass::FindPlacementCellsAlt -> MapClass
+[conv] 0x627170 FileSystem::findFile -> FileSystem
+[conv] 0x638e60 ObjectClass::SelectScriptNode -> ObjectClass
+[conv] 0x453240 BuildingClass::TraverseBridgeSegments -> BuildingClass
+[conv] 0x425280 AnimClass::SaveLoad_Prefix -> AnimClass
+[conv] 0x7090a0 TechnoClass::VoiceAttack -> TechnoClass
+[conv] 0x7759e0 unknown::MessageDialogLoopAlt -> unknown
+[conv] 0x402040 AudioController::Constructor -> AudioController
+[conv] 0x632740 BigInt::DecryptBlock -> BigInt
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AITriggerTypeClass       rc=0
+[era] Skirmish                 rc=2
+[era] unknown                  rc=2
+[era] TeamClass                rc=2
+[era] ObjectClass              rc=2
+[era] CellClass                rc=2
+[era] MapClass                 rc=2
+[era] FileSystem               rc=2
+[era] BuildingClass            rc=2
+[era] AnimClass                rc=2
+[era] TechnoClass              rc=2
+[era] AudioController          rc=2
+[era] BigInt                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x41e5e0   MISMATCH         AITriggerTypeClass::ProcessPower
+[diff] 0x7b63c0   MISMATCH         unknown::ProcessStringAndCopy
+[diff] 0x632740   MISMATCH         BigInt::DecryptBlock
+[ledger] 0x41e5e0 AITriggerTypeClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x6acd60 Skirmish::EnableSpawnButtons -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b63c0 ProcessStringAndCopy -> NG (attempt 1)
+[ledger] 0x64ad10 0x64ad10 -> PENDING (attempt 1)
+[ledger] 0x6edb50 TeamClass::AssignAttackTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x684060 0x684060 -> PENDING (attempt 1)
+[ledger] 0x7b71d0 Render_Helper_7B71D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b9f30 CellClass::SetOccupancy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d68fb __get_lc_lconv -> COMPILE_FAIL (attempt 1)
+[ledger] 0x703590 MapClass::FindPlacementCellsAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x609cf0 0x609cf0 -> PENDING (attempt 1)
+[ledger] 0x627170 FileSystem::findFile -> COMPILE_FAIL (attempt 1)
+[ledger] 0x638e60 SelectScriptNode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x453240 BuildingClass::TraverseBridgeSegments -> COMPILE_FAIL (attempt 1)
+[ledger] 0x425280 AnimClass::SaveLoad_Prefix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7090a0 TechnoClass::VoiceAttack -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7759e0 MessageDialogLoopAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77bcb0 0x77bcb0 -> PENDING (attempt 1)
+[ledger] 0x402040 AudioController::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x632740 BigInt::DecryptBlock -> NG (attempt 1)
+======================================================================
+{
+ "total": 2614,
+ "verdicts": {
+  "MISMATCH": 706,
+  "MATCH": 521,
+  "COMPILE_FAIL": 847,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 523,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 245,
+  "ret_norm": 7,
+  "frame_sched": 72,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 115,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.5,
+ "match_rate_of_total_pct": 19.9,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p12\batch_report.json
