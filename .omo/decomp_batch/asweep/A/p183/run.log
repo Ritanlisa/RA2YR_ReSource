@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p183\part_00
+=== convert (20 addrs) ===
+[conv] 0x551300 _DynamicVectorClass_PAVLaserDrawClass::GetItemIndex -> _DynamicVectorClass_PAVLaserDrawClass
+[conv] 0x551490 _VectorClass_PAVLaserDrawClass::GetCapacity -> _VectorClass_PAVLaserDrawClass
+[conv] 0x555230 _DynamicVectorClass_PAVLightSourceClass::GetItemIndex -> _DynamicVectorClass_PAVLightSourceClass
+[conv] 0x555420 _VectorClass_PAVLightSourceClass::GetCapacity -> _VectorClass_PAVLightSourceClass
+[conv] 0x555680 _VectorClass_PAVPendingCellClass_LightSourceClass::GetCapacity -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556ee0 _DynamicVectorClass_PAVLineTrail::GetItemIndex -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x557070 _VectorClass_PAVLineTrail::GetCapacity -> _VectorClass_PAVLineTrail
+[conv] 0x558210 _DynamicVectorClass_PBG::selectItem -> _DynamicVectorClass_PBG
+[conv] 0x5583a0 _VectorClass_PBG::GetCapacity -> _VectorClass_PBG
+[conv] 0x55a180 _DynamicVectorClass_PAVFileEntryClass::vt05 -> _DynamicVectorClass_PAVFileEntryClass
+[conv] 0x55a310 _VectorClass_PAVFileEntryClass::PointerToIndex -> _VectorClass_PAVFileEntryClass
+[conv] 0x55f6c0 SyncDelay::Check -> SyncDelay
+[conv] 0x588d10 _DynamicVectorClass_UZoneConnectionClass::Write -> _DynamicVectorClass_UZoneConnectionClass
+[conv] 0x588f30 _DynamicVectorClass_W4PassabilityType::GetItemIndex -> _DynamicVectorClass_W4PassabilityType
+[conv] 0x588f90 _DynamicVectorClass_U_HashObject_II::GetItemIndex_0 -> _DynamicVectorClass_U_HashObject_II
+[conv] 0x589530 VectorClass::initSubzoneData -> VectorClass
+[conv] 0x589e00 VectorClass::InitCellVe_vt05 -> VectorClass
+[conv] 0x58a010 _VectorClass_W4PassabilityType::GetCapacity -> _VectorClass_W4PassabilityType
+[conv] 0x58a820 _VectorClass_U_HashObject_II::GetCapacity -> _VectorClass_U_HashObject_II
+[conv] 0x5ac3d0 VectorClass_ptr_MapRegionClass::GetItemIndex -> VectorClass_ptr_MapRegionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVLaserDrawClass rc=0
+[era] _VectorClass_PAVLaserDrawClass rc=0
+[era] _DynamicVectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVLightSourceClass rc=0
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=0
+[era] _DynamicVectorClass_PAVLineTrail rc=0
+[era] _VectorClass_PAVLineTrail rc=0
+[era] _DynamicVectorClass_PBG  rc=0
+[era] _VectorClass_PBG         rc=0
+[era] _DynamicVectorClass_PAVFileEntryClass rc=0
+[era] _VectorClass_PAVFileEntryClass rc=0
+[era] SyncDelay                rc=0
+[era] _DynamicVectorClass_UZoneConnectionClass rc=0
+[era] _DynamicVectorClass_W4PassabilityType rc=0
+[era] _DynamicVectorClass_U_HashObject_II rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_W4PassabilityType rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] VectorClass_ptr_MapRegionClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x551300   MISMATCH         _DynamicVectorClass_PAVLaserDrawClass::GetItemIndex
+[diff] 0x551490   MISMATCH         _VectorClass_PAVLaserDrawClass::GetCapacity
+[diff] 0x555230   MISMATCH         _DynamicVectorClass_PAVLightSourceClass::GetItemIndex
+[diff] 0x555420   MISMATCH         _VectorClass_PAVLightSourceClass::GetCapacity
+[diff] 0x555680   MISMATCH         _VectorClass_PAVPendingCellClass_LightSourceClass::GetCapacity
+[diff] 0x556ee0   MISMATCH         _DynamicVectorClass_PAVLineTrail::GetItemIndex
+[diff] 0x557070   MISMATCH         _VectorClass_PAVLineTrail::GetCapacity
+[diff] 0x558210   MISMATCH         _DynamicVectorClass_PBG::selectItem
+[diff] 0x5583a0   MISMATCH         _VectorClass_PBG::GetCapacity
+[diff] 0x55a180   MISMATCH         _DynamicVectorClass_PAVFileEntryClass::vt05
+[diff] 0x55a310   MISMATCH         _VectorClass_PAVFileEntryClass::PointerToIndex
+[diff] 0x55f6c0   MISMATCH         SyncDelay::Check
+[diff] 0x588d10   MISMATCH         _DynamicVectorClass_UZoneConnectionClass::Write
+[diff] 0x588f30   MISMATCH         _DynamicVectorClass_W4PassabilityType::GetItemIndex
+[diff] 0x588f90   MISMATCH         _DynamicVectorClass_U_HashObject_II::GetItemIndex_0
+[diff] 0x589530   MISMATCH         VectorClass::initSubzoneData
+[diff] 0x589e00   MISMATCH         VectorClass::InitCellVe_vt05
+[diff] 0x58a010   MISMATCH         _VectorClass_W4PassabilityType::GetCapacity
+[diff] 0x58a820   MISMATCH         _VectorClass_U_HashObject_II::GetCapacity
+[diff] 0x5ac3d0   MISMATCH         VectorClass_ptr_MapRegionClass::GetItemIndex
+[ledger] 0x551300 _DynamicVectorClass_PAVLaserDrawClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x551490 _VectorClass_PAVLaserDrawClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x555230 _DynamicVectorClass_PAVLightSourceClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x555420 _VectorClass_PAVLightSourceClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x555680 _VectorClass_PAVPendingCellClass_LightSourceClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x556ee0 _DynamicVectorClass_PAVLineTrail::GetItemIndex -> NG (attempt 1)
+[ledger] 0x557070 _VectorClass_PAVLineTrail::GetCapacity -> NG (attempt 1)
+[ledger] 0x558210 _DynamicVectorClass_PBG::selectItem -> NG (attempt 1)
+[ledger] 0x5583a0 _VectorClass_PBG::GetCapacity -> NG (attempt 1)
+[ledger] 0x55a180 _DynamicVectorClass_PAVFileEntryClass::vt05 -> NG (attempt 1)
+[ledger] 0x55a310 _VectorClass_PAVFileEntryClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x55f6c0 SyncDelay::Check -> NG (attempt 1)
+[ledger] 0x588d10 _DynamicVectorClass_UZoneConnectionClass::Write -> NG (attempt 1)
+[ledger] 0x588f30 _DynamicVectorClass_W4PassabilityType::GetItemIndex -> NG (attempt 1)
+[ledger] 0x588f90 _DynamicVectorClass_U_HashObject_II::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x589530 VectorClass::initSubzoneData -> NG (attempt 1)
+[ledger] 0x589e00 VectorClass::InitCellVe_vt05 -> NG (attempt 1)
+[ledger] 0x58a010 _VectorClass_W4PassabilityType::GetCapacity -> NG (attempt 1)
+[ledger] 0x58a820 _VectorClass_U_HashObject_II::GetCapacity -> NG (attempt 1)
+[ledger] 0x5ac3d0 VectorClass_ptr_MapRegionClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 19,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p183\batch_report.json

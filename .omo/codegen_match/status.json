@@ -27522,6 +27522,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x551300": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55130c",
+  "name": "_DynamicVectorClass_PAVLaserDrawClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LaserDrawClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x551320": {
   "attempts": 1,
   "clean": false,
@@ -27540,6 +27552,18 @@
   "name": "VectorClass_ptr_LaserDrawClass::Add",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x551490": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55149c",
+  "name": "_VectorClass_PAVLaserDrawClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LaserDrawClass::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5517d0": {
   "attempts": 1,
@@ -27914,6 +27938,18 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x555230": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55523c",
+  "name": "_DynamicVectorClass_PAVLightSourceClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LightSourceClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x555250": {
   "attempts": 1,
   "clean": false,
@@ -27945,6 +27981,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x555420": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55542c",
+  "name": "_VectorClass_PAVLightSourceClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LightSourceClass::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x555610": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -27958,6 +28006,18 @@
   "name": "VectorClass_ptr_PendingCellClass_LightSourceClass::GetSize",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x555680": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55568c",
+  "name": "_VectorClass_PAVPendingCellClass_LightSourceClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_PendingCellClass_LightSourceClass::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5558c0": {
   "attempts": 2,
@@ -28249,6 +28309,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x556ee0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x556eec",
+  "name": "_DynamicVectorClass_PAVLineTrail::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LineTrail::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x556f00": {
   "attempts": 1,
   "clean": false,
@@ -28259,6 +28331,18 @@
   "orig_name": "VectorClass_ptr_LineTrail::Get",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x557070": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55707c",
+  "name": "_VectorClass_PAVLineTrail::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_LineTrail::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x557140": {
@@ -28360,6 +28444,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x558210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55821c",
+  "name": "_DynamicVectorClass_PBG::selectItem",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "CheckListClass::selectItem",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x558230": {
   "attempts": 1,
   "clean": false,
@@ -28370,6 +28466,18 @@
   "orig_name": "VectorClass_PBG::Count",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5583a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x5583ac",
+  "name": "_VectorClass_PBG::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_PBG::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x558530": {
@@ -28480,12 +28588,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x55a180": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55a18c",
+  "name": "_DynamicVectorClass_PAVFileEntryClass::vt05",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "LoadOptions::vt05",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x55a1a0": {
   "attempts": 1,
   "first_diff": null,
   "name": "LoadOptions::vt06",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x55a310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x55a31c",
+  "name": "_VectorClass_PAVFileEntryClass::PointerToIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "LoadOptions::PointerToIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x55a3e0": {
   "attempts": 1,
@@ -29171,6 +29303,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x55f6c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 je 0x55f6d6",
+  "name": "SyncDelay::Check",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "SyncDelay::Check",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x55f760": {
   "attempts": 1,
   "clean": true,
@@ -29758,6 +29902,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x588d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x588d1c",
+  "name": "_DynamicVectorClass_UZoneConnectionClass::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "_DynamicVectorClass_UZoneConnectionClass::Write",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x588ef0": {
   "attempts": 1,
   "clean": false,
@@ -29770,6 +29926,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x588f30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x588f3c",
+  "name": "_DynamicVectorClass_W4PassabilityType::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_W4PassabilityType::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x588f50": {
   "attempts": 1,
   "clean": false,
@@ -29780,6 +29948,18 @@
   "orig_name": "VectorClass_W4PassabilityType::Clear",
   "rule_violations": 1,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x588f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x588f9c",
+  "name": "_DynamicVectorClass_U_HashObject_II::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_W4PassabilityType::GetItemIndex_0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x589030": {
@@ -29801,6 +29981,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x589530": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x58953c",
+  "name": "VectorClass::initSubzoneData",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass::initSubzoneData",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x589a30": {
   "attempts": 1,
   "first_diff": "+5 jne 0x589a3c",
@@ -29808,12 +30000,36 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x589e00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x589e0c",
+  "name": "VectorClass::InitCellVe_vt05",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass::InitCellVe_vt05",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x589ef0": {
   "attempts": 1,
   "first_diff": "+1 push ebp",
   "name": "VectorClass_W4PassabilityType::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x58a010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x58a01c",
+  "name": "_VectorClass_W4PassabilityType::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_W4PassabilityType::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x58a110": {
   "attempts": 1,
@@ -29835,6 +30051,18 @@
   "name": "VectorClass_W4PassabilityType::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x58a820": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x58a82c",
+  "name": "_VectorClass_U_HashObject_II::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_UHashObject_uint_uint::GetCapacity",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x58a8f0": {
   "attempts": 6,
@@ -30501,6 +30729,18 @@
   "orig_name": "??0_ReaderWriterLock_details_Concurrency__QAE_XZ",
   "rule_violations": 2,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5ac3d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+5 jne 0x5ac3dc",
+  "name": "VectorClass_ptr_MapRegionClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "VectorClass_ptr_MapRegionClass::GetItemIndex",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5ac3f0": {
