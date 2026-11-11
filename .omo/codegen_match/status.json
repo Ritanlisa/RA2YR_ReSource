@@ -216,6 +216,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x407080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x407080",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4071a0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, edx",
@@ -4687,6 +4694,13 @@
   "first_diff": null,
   "name": "0x523540",
   "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x5247c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5247c0",
+  "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
  },
  "0x524d40": {
@@ -10359,6 +10373,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x7473d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7473d0",
+  "note": "decomp_batch r2: NO_EXPORT",
+  "status": "PENDING"
+ },
  "0x7474b0": {
   "attempts": 9,
   "first_diff": null,
@@ -11758,6 +11779,125 @@
   "name": "AudioCodec::Decode",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x7c8362": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e1300]",
+  "name": "FindClose",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c83aa": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e11e0]",
+  "name": "CloseHandle",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c83ec": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetDriveTypeA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c842e": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadResource",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c8470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "lstrlenA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c84b2": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DeleteFileA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c84f4": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e110c]",
+  "name": "MulDiv",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c8536": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e11b0]",
+  "name": "TerminateProcess",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c857e": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CreateEventA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c85c0": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e1194]",
+  "name": "GetComputerNameA",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c8602": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e14a0]",
+  "name": "EnableWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c8644": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PeekMessageA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c8686": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DialogBoxIndirectParamA",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c86c8": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "GetKeyState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c870a": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EndPaint",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7c8752": {
+  "attempts": 1,
+  "first_diff": "+0 jmp dword ptr [0x7e14d0]",
+  "name": "SetForegroundWindow",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x7c8794": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScreenToClient",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7c87d6": {
   "attempts": 1,

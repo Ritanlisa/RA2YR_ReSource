@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8362",
+ "name": "FindClose",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8362",
+ "bytes_hex": "ff2500137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

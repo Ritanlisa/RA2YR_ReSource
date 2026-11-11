@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8602",
+ "name": "EnableWindow",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8602",
+ "bytes_hex": "ff25a0147e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

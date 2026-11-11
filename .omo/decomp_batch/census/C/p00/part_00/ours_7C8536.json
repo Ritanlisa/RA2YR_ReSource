@@ -1,0 +1,15 @@
+{
+ "symbol": "?TerminateProcess@unknown@@QAGHPAXI@Z",
+ "sym_key": "unknown::TerminateProcess",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24085051e80000000083c408c20c00",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?__imp_TerminateProcess@@YAHPAXHZZ",
+   "sym_key": "__imp_TerminateProcess"
+  }
+ ]
+}

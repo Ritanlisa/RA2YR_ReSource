@@ -1,0 +1,85 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c8362 unknown::FindClose -> unknown
+[conv] 0x7c83aa unknown::CloseHandle -> unknown
+[conv] 0x7c83ec unknown::GetDriveTypeA -> unknown
+[conv] 0x7c842e unknown::LoadResource -> unknown
+[conv] 0x7c8470 unknown::lstrlenA -> unknown
+[conv] 0x7c84b2 unknown::DeleteFileA -> unknown
+[conv] 0x7c84f4 unknown::MulDiv -> unknown
+[conv] 0x7c8536 unknown::TerminateProcess -> unknown
+[conv] 0x7c857e unknown::CreateEventA -> unknown
+[conv] 0x7c85c0 unknown::GetComputerNameA -> unknown
+[conv] 0x7c8602 unknown::EnableWindow -> unknown
+[conv] 0x7c8644 unknown::PeekMessageA -> unknown
+[conv] 0x7c8686 unknown::DialogBoxIndirectParamA -> unknown
+[conv] 0x7c86c8 unknown::GetKeyState -> unknown
+[conv] 0x7c870a unknown::EndPaint -> unknown
+[conv] 0x7c8752 unknown::SetForegroundWindow -> unknown
+[conv] 0x7c8794 unknown::ScreenToClient -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c8362   MISMATCH         unknown::FindClose
+[diff] 0x7c83aa   MISMATCH         unknown::CloseHandle
+[diff] 0x7c84f4   MISMATCH         unknown::MulDiv
+[diff] 0x7c8536   MISMATCH         unknown::TerminateProcess
+[diff] 0x7c85c0   MISMATCH         unknown::GetComputerNameA
+[diff] 0x7c8602   MISMATCH         unknown::EnableWindow
+[diff] 0x7c8752   MISMATCH         unknown::SetForegroundWindow
+[ledger] 0x407080 0x407080 -> PENDING (attempt 1)
+[ledger] 0x5247c0 0x5247c0 -> PENDING (attempt 1)
+[ledger] 0x7473d0 0x7473d0 -> PENDING (attempt 1)
+[ledger] 0x7c8362 FindClose -> NG (attempt 1)
+[ledger] 0x7c83aa CloseHandle -> NG (attempt 1)
+[ledger] 0x7c83ec GetDriveTypeA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c842e LoadResource -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8470 lstrlenA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c84b2 DeleteFileA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c84f4 MulDiv -> NG (attempt 1)
+[ledger] 0x7c8536 TerminateProcess -> NG (attempt 1)
+[ledger] 0x7c857e CreateEventA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c85c0 GetComputerNameA -> NG (attempt 1)
+[ledger] 0x7c8602 EnableWindow -> NG (attempt 1)
+[ledger] 0x7c8644 PeekMessageA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8686 DialogBoxIndirectParamA -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c86c8 GetKeyState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c870a EndPaint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8752 SetForegroundWindow -> NG (attempt 1)
+[ledger] 0x7c8794 ScreenToClient -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1699,
+ "verdicts": {
+  "MISMATCH": 480,
+  "MATCH": 504,
+  "COMPILE_FAIL": 391,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 314,
+  "NO_EXPORT": 6
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 167,
+  "ret_norm": 5,
+  "frame_sched": 61,
+  "const_fold": 50,
+  "branch_polarity": 33,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 8,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 51.2,
+ "match_rate_of_total_pct": 29.7,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p00\batch_report.json

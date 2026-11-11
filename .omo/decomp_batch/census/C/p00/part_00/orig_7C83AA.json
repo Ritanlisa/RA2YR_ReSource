@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C83AA",
+ "name": "CloseHandle",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C83AA",
+ "bytes_hex": "ff25e0117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
