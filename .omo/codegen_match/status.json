@@ -6741,7 +6741,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7b3310": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "UDPInterfaceClass::CheckStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6797,14 +6797,14 @@
   "status": "OK"
  },
  "0x7b9d70": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "WWMouseClass::checkStatus",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7b9d80": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "WWMouseClass::checkVisible",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6881,7 +6881,7 @@
   "status": "OK"
  },
  "0x7bcfb0": {
-  "attempts": 10,
+  "attempts": 11,
   "first_diff": null,
   "name": "TacticalMap::FillScanlinesOpaque",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6909,7 +6909,7 @@
   "status": "NG"
  },
  "0x7c891a": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "OleUninitialize::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6958,42 +6958,42 @@
   "status": "NG"
  },
  "0x7d1512": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "GetCurrentThreadId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcee0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "GetCurrentThread::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcf22": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
