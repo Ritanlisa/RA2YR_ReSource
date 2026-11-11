@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_7C8F96@unknown@@QAEHH@Z",
+ "sym_key": "unknown::sub_7C8F96",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404a100000000890d00000000c20400",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B7819C@@3IA",
+   "sym_key": "CRTGlobal_B7819C"
+  },
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B7819C@@3IA",
+   "sym_key": "CRTGlobal_B7819C"
+  }
+ ]
+}

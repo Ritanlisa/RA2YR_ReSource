@@ -55,6 +55,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x405170": {
+  "attempts": 1,
+  "first_diff": "+7 mov eax, 0x816204",
+  "name": "VocClass::GetSampleName",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x4052f0": {
   "attempts": 11,
   "first_diff": "+0 push esi",
@@ -314,6 +321,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x40dc50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40dc50",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40df60": {
   "attempts": 1,
   "first_diff": null,
@@ -341,6 +355,13 @@
   "name": "AbstractClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x410450": {
+  "attempts": 1,
+  "first_diff": "+0 mov ecx, dword ptr [esp + 4]",
+  "name": "AbstractClass::IsClean",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x410480": {
   "attempts": 1,
@@ -566,6 +587,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x41c850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x41c850",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x41cbe0": {
   "attempts": 1,
   "first_diff": null,
@@ -782,6 +810,13 @@
   "name": "AnimTypeClass::StubReturnFalse",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x429740": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x429740",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x42a5b0": {
   "attempts": 18,
@@ -1160,6 +1195,13 @@
   "name": "VectorClass_TPoint3D_int::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x466280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x466280",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4664c0": {
   "attempts": 2,
@@ -1594,6 +1636,13 @@
   "name": "ListClass::COMStub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x489140": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x489140",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x48ace0": {
   "attempts": 5,
@@ -2917,6 +2966,13 @@
   "name": "VectorClass_ptr_ConvertClass::MarkDirty",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4e1a40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::SetPositionXY",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x4e30a0": {
   "attempts": 1,
@@ -5557,6 +5613,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x636eb0": {
+  "attempts": 1,
+  "first_diff": "+4 jns 0x636eb9",
+  "name": "ExecuteActionPlanManager_Helper_636EB0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x637030": {
   "attempts": 1,
   "first_diff": null,
@@ -5723,6 +5786,13 @@
   "first_diff": "+0 sub esp, 0x40",
   "name": "ToQuaternionMatrix",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
+ "0x64de80": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "ComputeHash",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x652820": {
@@ -6397,6 +6467,62 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x6bf440": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "COMClassFactory_5::Construct",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c01c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C01C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c10c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C10C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c1fc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C1FC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c2d40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C2D40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c3c40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C3C40",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c49c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C49C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6c58c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WinMain_Helper_6C58C0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c6740": {
   "attempts": 9,
   "first_diff": null,
@@ -6746,6 +6872,13 @@
   "name": "TeamClass::UpdateReadinessState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6ef450": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_6EF450",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x6ef610": {
   "attempts": 9,
@@ -8580,6 +8713,13 @@
   "name": "sub_7C8B38",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x7c8f96": {
+  "attempts": 1,
+  "first_diff": "+15 ret ",
+  "name": "sub_7C8F96",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
  },
  "0x7c8fc9": {
   "attempts": 1,

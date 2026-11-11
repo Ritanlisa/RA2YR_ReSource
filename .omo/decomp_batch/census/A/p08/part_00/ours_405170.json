@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetSampleName@VocClass@@QAEPADXZ",
+ "sym_key": "VocClass::GetSampleName",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c08d416c7505b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_816204@@3PADA",
+   "sym_key": "DataGlobal_816204"
+  }
+ ]
+}

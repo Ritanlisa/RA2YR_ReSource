@@ -1,0 +1,88 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x636eb0 ObjectClass::ExecuteActionPlanManager_Helper_636EB0 -> ObjectClass
+[conv] 0x6bf440 COMClassFactory::Construct -> COMClassFactory
+[conv] 0x6c01c0 ObjectClass::WinMain_Helper_6C01C0 -> ObjectClass
+[conv] 0x6c10c0 ObjectClass::WinMain_Helper_6C10C0 -> ObjectClass
+[conv] 0x6c1fc0 ObjectClass::WinMain_Helper_6C1FC0 -> ObjectClass
+[conv] 0x6c2d40 ObjectClass::WinMain_Helper_6C2D40 -> ObjectClass
+[conv] 0x6c3c40 ObjectClass::WinMain_Helper_6C3C40 -> ObjectClass
+[conv] 0x6c49c0 ObjectClass::WinMain_Helper_6C49C0 -> ObjectClass
+[conv] 0x6c58c0 ObjectClass::WinMain_Helper_6C58C0 -> ObjectClass
+[conv] 0x7c8f96 unknown::sub_7C8F96 -> unknown
+[conv] 0x410450 AbstractClass::IsClean -> AbstractClass
+[conv] 0x4e1a40 GadgetClass::SetPositionXY -> GadgetClass
+[conv] 0x64de80 unknown::ComputeHash -> unknown
+[conv] 0x6ef450 ObjectClass::sub_6EF450 -> ObjectClass
+[conv] 0x405170 VocClass::GetSampleName -> VocClass
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] COMClassFactory          rc=2
+[era] unknown                  rc=0
+[era] AbstractClass            rc=0
+[era] GadgetClass              rc=0
+[era] VocClass                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x636eb0   MISMATCH         ObjectClass::ExecuteActionPlanManager_Helper_636EB0
+[diff] 0x6ef450   MATCH            ObjectClass::sub_6EF450
+[diff] 0x7c8f96   MISMATCH         unknown::sub_7C8F96
+[diff] 0x64de80   MISMATCH         unknown::ComputeHash
+[diff] 0x410450   MISMATCH         AbstractClass::IsClean
+[diff] 0x4e1a40   MATCH            GadgetClass::SetPositionXY
+[diff] 0x405170   MISMATCH         VocClass::GetSampleName
+[ledger] 0x636eb0 ExecuteActionPlanManager_Helper_636EB0 -> NG (attempt 1)
+[ledger] 0x6bf440 COMClassFactory_5::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c01c0 WinMain_Helper_6C01C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c10c0 WinMain_Helper_6C10C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1fc0 WinMain_Helper_6C1FC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2d40 WinMain_Helper_6C2D40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3c40 WinMain_Helper_6C3C40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c49c0 WinMain_Helper_6C49C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c58c0 WinMain_Helper_6C58C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c8f96 sub_7C8F96 -> NG (attempt 1)
+[ledger] 0x410450 AbstractClass::IsClean -> NG (attempt 1)
+[ledger] 0x4e1a40 ObjectClass::SetPositionXY -> OK (attempt 1)
+[ledger] 0x64de80 ComputeHash -> NG (attempt 1)
+[ledger] 0x6ef450 sub_6EF450 -> OK (attempt 1)
+[ledger] 0x405170 VocClass::GetSampleName -> NG (attempt 1)
+[ledger] 0x40dc50 0x40dc50 -> PENDING (attempt 1)
+[ledger] 0x41c850 0x41c850 -> PENDING (attempt 1)
+[ledger] 0x429740 0x429740 -> PENDING (attempt 1)
+[ledger] 0x466280 0x466280 -> PENDING (attempt 1)
+[ledger] 0x489140 0x489140 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1217,
+ "verdicts": {
+  "MISMATCH": 306,
+  "MATCH": 488,
+  "COMPILE_FAIL": 328,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 88,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 120,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 46,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 5,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.5,
+ "match_rate_of_total_pct": 40.1,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p08\batch_report.json

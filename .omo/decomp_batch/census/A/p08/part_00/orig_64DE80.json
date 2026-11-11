@@ -1,0 +1,11 @@
+{
+ "addr": "0x64DE80",
+ "name": "ComputeHash",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x64DE80",
+ "bytes_hex": "568b318bc6c1e81f8d04705e03c28901c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

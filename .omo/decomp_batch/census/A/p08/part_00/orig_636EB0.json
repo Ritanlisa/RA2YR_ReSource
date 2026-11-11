@@ -1,0 +1,11 @@
+{
+ "addr": "0x636EB0",
+ "name": "ExecuteActionPlanManager_Helper_636EB0",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x636EB0",
+ "bytes_hex": "8b411448790333c0c38b49088b0481c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
