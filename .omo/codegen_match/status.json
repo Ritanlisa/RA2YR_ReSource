@@ -49950,6 +49950,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c1990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTActionClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TActionClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c19c0": {
   "attempts": 1,
   "clean": false,
@@ -49968,6 +49980,18 @@
   "name": "TClassFactory_TriggerClass::GetClassName",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c1b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTriggerClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TriggerClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c1b40": {
   "attempts": 1,
@@ -50000,6 +50024,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c1e10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VScriptClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ScriptClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1e40": {
   "attempts": 1,
   "clean": false,
@@ -50019,12 +50055,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c1f90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VScriptTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_ScriptTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c1fc0": {
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C1FC0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c2110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTagClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TagClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c2140": {
   "attempts": 1,
@@ -50036,6 +50096,18 @@
   "orig_name": "WinMain_Helper_6C2140",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c2290": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTagTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TagTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c22c0": {
@@ -50057,6 +50129,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTeamClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TeamClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c2440": {
   "attempts": 1,
   "clean": false,
@@ -50069,6 +50153,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c2590": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTeamTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TeamTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c25c0": {
   "attempts": 1,
   "clean": false,
@@ -50079,6 +50175,18 @@
   "orig_name": "WinMain_Helper_6C25C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c2710": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VTaskForceClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_TaskForceClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c2740": {
@@ -50100,6 +50208,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2890": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VUnitTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_UnitTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c28c0": {
   "attempts": 1,
   "clean": false,
@@ -50110,6 +50230,18 @@
   "orig_name": "WinMain_Helper_6C28C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c2a10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VBuildingTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_BuildingTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c2a40": {
@@ -50157,12 +50289,36 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c2d10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VInfantryTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_InfantryTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c2d40": {
   "attempts": 1,
   "first_diff": null,
   "name": "WinMain_Helper_6C2D40",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c2e90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VBulletTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_BulletTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c2ec0": {
   "attempts": 1,
@@ -50174,6 +50330,18 @@
   "orig_name": "WinMain_Helper_6C2EC0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3010": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VIsometricTileTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_IsometricTileTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3040": {
@@ -50188,6 +50356,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c3190": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VOverlayTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_OverlayTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c31c0": {
   "attempts": 1,
   "clean": false,
@@ -50198,6 +50378,18 @@
   "orig_name": "WinMain_Helper_6C31C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3310": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VSmudgeTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_SmudgeTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3340": {
@@ -50219,6 +50411,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6c3490": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VUnitClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_UnitClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c34c0": {
   "attempts": 1,
   "clean": false,
@@ -50229,6 +50433,18 @@
   "orig_name": "WinMain_Helper_6C34C0",
   "rule_violations": 1,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6c3610": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VBuildingClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_BuildingClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6c3640": {
@@ -50300,6 +50516,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6c3a90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VAnimClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_AnimClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6c3ac0": {
   "attempts": 1,
   "clean": false,
@@ -50318,6 +50546,18 @@
   "name": "TClassFactory_AnimTypeClass::GetClassName",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x6c3c10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+4 test eax, eax",
+  "name": "_TClassFactory_VAnimTypeClass::GetSize",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "TClassFactory_AnimTypeClass::GetSize",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c3c40": {
   "attempts": 1,

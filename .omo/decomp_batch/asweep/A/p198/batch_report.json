@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "codegen_shape": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 20,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x6c1990",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TActionClass::GetSize",
+   "emitted": "_TClassFactory_VTActionClass::GetSize",
+   "unit": "_TClassFactory_VTActionClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1b10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TriggerClass::GetSize",
+   "emitted": "_TClassFactory_VTriggerClass::GetSize",
+   "unit": "_TClassFactory_VTriggerClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1e10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ScriptClass::GetSize",
+   "emitted": "_TClassFactory_VScriptClass::GetSize",
+   "unit": "_TClassFactory_VScriptClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c1f90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_ScriptTypeClass::GetSize",
+   "emitted": "_TClassFactory_VScriptTypeClass::GetSize",
+   "unit": "_TClassFactory_VScriptTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2110",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TagClass::GetSize",
+   "emitted": "_TClassFactory_VTagClass::GetSize",
+   "unit": "_TClassFactory_VTagClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2290",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TagTypeClass::GetSize",
+   "emitted": "_TClassFactory_VTagTypeClass::GetSize",
+   "unit": "_TClassFactory_VTagTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2410",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TeamClass::GetSize",
+   "emitted": "_TClassFactory_VTeamClass::GetSize",
+   "unit": "_TClassFactory_VTeamClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2590",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TeamTypeClass::GetSize",
+   "emitted": "_TClassFactory_VTeamTypeClass::GetSize",
+   "unit": "_TClassFactory_VTeamTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2710",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_TaskForceClass::GetSize",
+   "emitted": "_TClassFactory_VTaskForceClass::GetSize",
+   "unit": "_TClassFactory_VTaskForceClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2890",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_UnitTypeClass::GetSize",
+   "emitted": "_TClassFactory_VUnitTypeClass::GetSize",
+   "unit": "_TClassFactory_VUnitTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2a10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BuildingTypeClass::GetSize",
+   "emitted": "_TClassFactory_VBuildingTypeClass::GetSize",
+   "unit": "_TClassFactory_VBuildingTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2d10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_InfantryTypeClass::GetSize",
+   "emitted": "_TClassFactory_VInfantryTypeClass::GetSize",
+   "unit": "_TClassFactory_VInfantryTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c2e90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BulletTypeClass::GetSize",
+   "emitted": "_TClassFactory_VBulletTypeClass::GetSize",
+   "unit": "_TClassFactory_VBulletTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3010",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_IsometricTileTypeClass::GetSize",
+   "emitted": "_TClassFactory_VIsometricTileTypeClass::GetSize",
+   "unit": "_TClassFactory_VIsometricTileTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3190",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_OverlayTypeClass::GetSize",
+   "emitted": "_TClassFactory_VOverlayTypeClass::GetSize",
+   "unit": "_TClassFactory_VOverlayTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3310",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_SmudgeTypeClass::GetSize",
+   "emitted": "_TClassFactory_VSmudgeTypeClass::GetSize",
+   "unit": "_TClassFactory_VSmudgeTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3490",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_UnitClass::GetSize",
+   "emitted": "_TClassFactory_VUnitClass::GetSize",
+   "unit": "_TClassFactory_VUnitClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3610",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_BuildingClass::GetSize",
+   "emitted": "_TClassFactory_VBuildingClass::GetSize",
+   "unit": "_TClassFactory_VBuildingClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3a90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_AnimClass::GetSize",
+   "emitted": "_TClassFactory_VAnimClass::GetSize",
+   "unit": "_TClassFactory_VAnimClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  },
+  {
+   "addr": "0x6c3c10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 33B ours 33B",
+   "first_diff": {
+    "orig": "+4 test eax, eax",
+    "ours": "+4 mov edx, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "TClassFactory_AnimTypeClass::GetSize",
+   "emitted": "_TClassFactory_VAnimTypeClass::GetSize",
+   "unit": "_TClassFactory_VAnimTypeClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "this_as_id": false,
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 33,
+   "ours_size": 33,
+   "clean": false
+  }
+ ]
+}

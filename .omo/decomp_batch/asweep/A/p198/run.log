@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p198\part_00
+=== convert (20 addrs) ===
+[conv] 0x6c1990 _TClassFactory_VTActionClass::GetSize -> _TClassFactory_VTActionClass
+[conv] 0x6c1b10 _TClassFactory_VTriggerClass::GetSize -> _TClassFactory_VTriggerClass
+[conv] 0x6c1e10 _TClassFactory_VScriptClass::GetSize -> _TClassFactory_VScriptClass
+[conv] 0x6c1f90 _TClassFactory_VScriptTypeClass::GetSize -> _TClassFactory_VScriptTypeClass
+[conv] 0x6c2110 _TClassFactory_VTagClass::GetSize -> _TClassFactory_VTagClass
+[conv] 0x6c2290 _TClassFactory_VTagTypeClass::GetSize -> _TClassFactory_VTagTypeClass
+[conv] 0x6c2410 _TClassFactory_VTeamClass::GetSize -> _TClassFactory_VTeamClass
+[conv] 0x6c2590 _TClassFactory_VTeamTypeClass::GetSize -> _TClassFactory_VTeamTypeClass
+[conv] 0x6c2710 _TClassFactory_VTaskForceClass::GetSize -> _TClassFactory_VTaskForceClass
+[conv] 0x6c2890 _TClassFactory_VUnitTypeClass::GetSize -> _TClassFactory_VUnitTypeClass
+[conv] 0x6c2a10 _TClassFactory_VBuildingTypeClass::GetSize -> _TClassFactory_VBuildingTypeClass
+[conv] 0x6c2d10 _TClassFactory_VInfantryTypeClass::GetSize -> _TClassFactory_VInfantryTypeClass
+[conv] 0x6c2e90 _TClassFactory_VBulletTypeClass::GetSize -> _TClassFactory_VBulletTypeClass
+[conv] 0x6c3010 _TClassFactory_VIsometricTileTypeClass::GetSize -> _TClassFactory_VIsometricTileTypeClass
+[conv] 0x6c3190 _TClassFactory_VOverlayTypeClass::GetSize -> _TClassFactory_VOverlayTypeClass
+[conv] 0x6c3310 _TClassFactory_VSmudgeTypeClass::GetSize -> _TClassFactory_VSmudgeTypeClass
+[conv] 0x6c3490 _TClassFactory_VUnitClass::GetSize -> _TClassFactory_VUnitClass
+[conv] 0x6c3610 _TClassFactory_VBuildingClass::GetSize -> _TClassFactory_VBuildingClass
+[conv] 0x6c3a90 _TClassFactory_VAnimClass::GetSize -> _TClassFactory_VAnimClass
+[conv] 0x6c3c10 _TClassFactory_VAnimTypeClass::GetSize -> _TClassFactory_VAnimTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _TClassFactory_VTActionClass rc=0
+[era] _TClassFactory_VTriggerClass rc=0
+[era] _TClassFactory_VScriptClass rc=0
+[era] _TClassFactory_VScriptTypeClass rc=0
+[era] _TClassFactory_VTagClass rc=0
+[era] _TClassFactory_VTagTypeClass rc=0
+[era] _TClassFactory_VTeamClass rc=0
+[era] _TClassFactory_VTeamTypeClass rc=0
+[era] _TClassFactory_VTaskForceClass rc=0
+[era] _TClassFactory_VUnitTypeClass rc=0
+[era] _TClassFactory_VBuildingTypeClass rc=0
+[era] _TClassFactory_VInfantryTypeClass rc=0
+[era] _TClassFactory_VBulletTypeClass rc=0
+[era] _TClassFactory_VIsometricTileTypeClass rc=0
+[era] _TClassFactory_VOverlayTypeClass rc=0
+[era] _TClassFactory_VSmudgeTypeClass rc=0
+[era] _TClassFactory_VUnitClass rc=0
+[era] _TClassFactory_VBuildingClass rc=0
+[era] _TClassFactory_VAnimClass rc=0
+[era] _TClassFactory_VAnimTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x6c1990   MISMATCH         _TClassFactory_VTActionClass::GetSize
+[diff] 0x6c1b10   MISMATCH         _TClassFactory_VTriggerClass::GetSize
+[diff] 0x6c1e10   MISMATCH         _TClassFactory_VScriptClass::GetSize
+[diff] 0x6c1f90   MISMATCH         _TClassFactory_VScriptTypeClass::GetSize
+[diff] 0x6c2110   MISMATCH         _TClassFactory_VTagClass::GetSize
+[diff] 0x6c2290   MISMATCH         _TClassFactory_VTagTypeClass::GetSize
+[diff] 0x6c2410   MISMATCH         _TClassFactory_VTeamClass::GetSize
+[diff] 0x6c2590   MISMATCH         _TClassFactory_VTeamTypeClass::GetSize
+[diff] 0x6c2710   MISMATCH         _TClassFactory_VTaskForceClass::GetSize
+[diff] 0x6c2890   MISMATCH         _TClassFactory_VUnitTypeClass::GetSize
+[diff] 0x6c2a10   MISMATCH         _TClassFactory_VBuildingTypeClass::GetSize
+[diff] 0x6c2d10   MISMATCH         _TClassFactory_VInfantryTypeClass::GetSize
+[diff] 0x6c2e90   MISMATCH         _TClassFactory_VBulletTypeClass::GetSize
+[diff] 0x6c3010   MISMATCH         _TClassFactory_VIsometricTileTypeClass::GetSize
+[diff] 0x6c3190   MISMATCH         _TClassFactory_VOverlayTypeClass::GetSize
+[diff] 0x6c3310   MISMATCH         _TClassFactory_VSmudgeTypeClass::GetSize
+[diff] 0x6c3490   MISMATCH         _TClassFactory_VUnitClass::GetSize
+[diff] 0x6c3610   MISMATCH         _TClassFactory_VBuildingClass::GetSize
+[diff] 0x6c3a90   MISMATCH         _TClassFactory_VAnimClass::GetSize
+[diff] 0x6c3c10   MISMATCH         _TClassFactory_VAnimTypeClass::GetSize
+[ledger] 0x6c1990 _TClassFactory_VTActionClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1b10 _TClassFactory_VTriggerClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1e10 _TClassFactory_VScriptClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c1f90 _TClassFactory_VScriptTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2110 _TClassFactory_VTagClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2290 _TClassFactory_VTagTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2410 _TClassFactory_VTeamClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2590 _TClassFactory_VTeamTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2710 _TClassFactory_VTaskForceClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2890 _TClassFactory_VUnitTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2a10 _TClassFactory_VBuildingTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2d10 _TClassFactory_VInfantryTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c2e90 _TClassFactory_VBulletTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3010 _TClassFactory_VIsometricTileTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3190 _TClassFactory_VOverlayTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3310 _TClassFactory_VSmudgeTypeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3490 _TClassFactory_VUnitClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3610 _TClassFactory_VBuildingClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3a90 _TClassFactory_VAnimClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3c10 _TClassFactory_VAnimTypeClass::GetSize -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p198\batch_report.json
