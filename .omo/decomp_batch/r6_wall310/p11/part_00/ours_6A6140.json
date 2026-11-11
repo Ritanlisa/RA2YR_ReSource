@@ -1,0 +1,39 @@
+{
+ "symbol": "?FindProductionType@Sidebar@@QAEDHHH@Z",
+ "sym_key": "Sidebar::FindProductionType",
+ "size": 193,
+ "link_base": 0,
+ "bytes_hex": "538b5c2410558b6c241056578d45ff8bf183f838773a33c98a8800000000ff248d00000000b802000000eb27b803000000eb205355e80000000083c40833d283f8050f94c28bc2eb0ab801000000eb0383c8ff8bc8c1e1052bc88d14c833c98d04908d9486441500008b84869815000085c07e448d7a58396f047504391f740a413bc87d3383c734ebed8d04496a0068f80100008d0c818b44241c89448a64c6423d01c6423c01e80000000083c408b0015f5e5d5bc20c005f5e5d32c05bc20c00",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "$L1174",
+   "sym_key": "$L1174"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "$L1175",
+   "sym_key": "$L1175"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?GetHouseTechLevel@@YAHZZ",
+   "sym_key": "GetHouseTechLevel"
+  },
+  {
+   "off": 144,
+   "type": "DIR32",
+   "sym": "?stru_87F5F0@@3PADA",
+   "sym_key": "stru_87F5F0"
+  },
+  {
+   "off": 168,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetCapacity@_DynamicVectorClass_UUndoInfoStruct@@QAEDHPAH@Z",
+ "sym_key": "_DynamicVectorClass_UUndoInfoStruct::SetCapacity",
+ "size": 275,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c565733ff3bef8bf1750a8b06ff500ce9e30000008b542418897e0c3bd78bc274208d4dff85c97c478bcd8d42088978f88978fc893883c00c4975f28bc28bd8eb348d546d00c1e20252e80000000083c4043bc7741e8d4dff85c97c138bd58d48088979f88979fc893983c10c4a75f28bd8eb0233db3bdfc7460c0100000075095f5e5d32c05bc20800393e744b8b7e083bef7d028bfd85ff7e2533d28b2e8bc203c58d0c1a83c20c4f8b2889298b68048969048b400889410875e18b6c24148b460cf6c4ff740f50e80000000083c404c7060000000033ff8b460c891e8b5c241833c93bdf896e080f94c133d280e4008af10bd089560c8b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 80,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 207,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
