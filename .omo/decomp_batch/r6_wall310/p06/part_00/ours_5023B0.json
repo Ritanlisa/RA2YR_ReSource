@@ -1,0 +1,27 @@
+{
+ "symbol": "?FindByCell@Waypoint@@QAEPAIPAG@Z",
+ "sym_key": "Waypoint::FindByCell",
+ "size": 131,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c2410565733ff897c24108d9910020000833b00751c6a40e80000000083c40485c0740a578bc8e800000000eb0233c089038b0b33f68b413885c07e2956e8000000008b08c1e908663b4d00750c8b5004c1ea08663b5502741d8b0b463b713872db8b7c24104783ff0c897c24107d0583c304eb9c33c05f5e5d5b59c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 44,
+   "type": "REL32",
+   "sym": "?Construct@WaypointPathClass@@QAEPAV1@I@Z",
+   "sym_key": "WaypointPathClass::Construct"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "?GetElement@Array@@QAEHH@Z",
+   "sym_key": "Array::GetElement"
+  }
+ ]
+}
