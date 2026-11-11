@@ -2310,14 +2310,14 @@
   "status": "NG"
  },
  "0x4caf20": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "VoxelAnimClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4cbba0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "FootClass::FindPathWithRetry",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2366,28 +2366,28 @@
   "status": "OK"
  },
  "0x4d2a10": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": "+2 mov ebp, dword ptr [esp + 0xc]",
   "name": "FoggedObject_DrawVector::Release",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x4d2bc0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4da030": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "InfantryClass::ProcessExitQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4daf10": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "FootClass::UpdateState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2457,21 +2457,21 @@
   "status": "OK"
  },
  "0x4e4820": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Lobby::FillPlayerFactions",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5310": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "Lobby::InvalidateFactionCombos",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4e5d60": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2534,49 +2534,49 @@
   "status": "COMPILE_FAIL"
  },
  "0x4fae50": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "SuperWeapon::FireSuperWeaponHouseClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fc6d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::ClearLowPowerTargets",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4fd060": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::FindBuildingOfType",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x501160": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CCINIClass::WriteHouses",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x5022f0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+10 xor esi, esi",
   "name": "WaypointClass::IsCoordinateUsed",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x5023b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+8 xor esi, esi",
   "name": "Waypoint::FindByCell",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x509610": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "TriggerClass::ValidateTeamTriggerConditions",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2604,7 +2604,7 @@
   "status": "NG"
  },
  "0x50b760": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "BuildingTypeClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2618,7 +2618,7 @@
   "status": "NG"
  },
  "0x50e0e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::LostPoweredCenter",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2632,7 +2632,7 @@
   "status": "NG"
  },
  "0x50e280": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "HouseClass::ReactivateTechnos",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2660,7 +2660,7 @@
   "status": "NG"
  },
  "0x50f9e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": "+0 push ebx",
   "name": "VectorClass__N::Remove",
   "note": "decomp_batch r2: MISMATCH/regalloc",

@@ -40,7 +40,7 @@ char InfantryClass::ProcessExitQueue()
                         v7 = (unsigned int)(this->q_5B0[1]);
                         if ( this->q_5B0[3] < v7
                 || ((((movementDestination) & 0xFF) = this->q_5B0[9], (unsigned char)movementDestination) || v7 == 0)
-                && (movementDestination = (AbstractClass *)(*(AbstractClass **)&this->q_5B0[16], (int)movementDestination > 0)
+                && (movementDestination = *(AbstractClass **)&this->q_5B0[16], (int)movementDestination > 0)
                 && (((movementDestination) & 0xFF) = (*(int (__stdcall **)(int *, int, unsigned int))(this->FootClass_field_abstract_array_5AC[0]
                                                                                             + 8))(
                                                     this->FootClass_field_abstract_array_5AC,
@@ -48,7 +48,7 @@ char InfantryClass::ProcessExitQueue()
                                                     0),
                     (unsigned char)movementDestination) )
                         {
-                            movementDestination = *(AbstractClass **)&this->q_5B0[12]);
+                            movementDestination = (AbstractClass *)(*(AbstractClass **)&this->q_5B0[12]);
                             v8 = (unsigned int)(this->q_5B0);
                             this->q_5B0[3] = (unsigned int)((char *)&movementDestination->vfptr + 1);
                             *(unsigned int *)(v8 + 4 * (unsigned int)movementDestination) = (unsigned int)(vtable0);

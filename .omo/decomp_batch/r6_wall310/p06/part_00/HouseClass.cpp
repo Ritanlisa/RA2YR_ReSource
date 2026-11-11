@@ -127,9 +127,9 @@ int HouseClass::FindBuildingOfType(int p0, int p1)
 
 void HouseClass::LostPoweredCenter(int p0)
 {
-        char * v3;
-        v3 = (char *)this ->poweredUnitCenters - 1;
-        (char *)this ->poweredUnitCenters = (unsigned int)(v3);
+        int v3;
+        v3 = (unsigned int)(this->poweredUnitCenters - 1);
+        this->poweredUnitCenters = v3;
         char v4;
         int v5;
         int v6;
@@ -163,7 +163,7 @@ void HouseClass::LostPoweredCenter(int p0)
                             }
                             goto LABEL_16;
                         }
-                        if ( (char *)this ->currentPlayer || (char *)this ->PlayerControl )
+                        if ( this->currentPlayer || this->PlayerControl )
                         {
                             LABEL_16:
                 if ( g_IKnowWhatImDoing == 0 )

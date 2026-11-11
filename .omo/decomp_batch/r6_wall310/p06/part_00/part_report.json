@@ -295,8 +295,8 @@
    "unit": "HouseClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "16/16",
-   "rule_violations": 2
+   "sites": "14/14",
+   "rule_violations": 3
   },
   {
    "addr": "0x50e280",
