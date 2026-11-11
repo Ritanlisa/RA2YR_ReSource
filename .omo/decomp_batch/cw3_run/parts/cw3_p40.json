@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x48bf40",
+  "name": "ConnectionClass::sendAck",
+  "cls": null,
+  "size": 242,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'unsigned short *' to 'unsigned short'"
+ },
+ {
+  "addr": "0x4acac0",
+  "name": "MapClass::ProcessVisibilityFlags",
+  "cls": null,
+  "size": 242,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x42df90",
+  "name": "BitmapClass::ProcessFrame",
+  "cls": null,
+  "size": 245,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x6430c0",
+  "name": "sub_6430C0",
+  "cls": null,
+  "size": 245,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'CharToWideString' : cannot convert parameter 1 from 'unsigned short' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x6e6e20",
+  "name": "BuildingLoadQueue::GetNext",
+  "cls": null,
+  "size": 246,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4d9e70",
+  "name": "TeamClass::CheckCohesion",
+  "cls": null,
+  "size": 247,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x40'"
+ },
+ {
+  "addr": "0x5b9550",
+  "name": "ModemGuest::UpdateGuestPlayerInfo",
+  "cls": null,
+  "size": 248,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x40'"
+ },
+ {
+  "addr": "0x6f19b0",
+  "name": "SmallFunc_6F19B0",
+  "cls": null,
+  "size": 249,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->__pad_0' must point to class/struct/union"
+ },
+ {
+  "addr": "0x448160",
+  "name": "FootClass::ProcessPrimarySelect",
+  "cls": null,
+  "size": 251,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x4fbf60",
+  "name": "HouseClass::DroppedFlag",
+  "cls": null,
+  "size": 252,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x407680",
+  "name": "StartAddress",
+  "cls": null,
+  "size": 254,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier '_DWORD'"
+ },
+ {
+  "addr": "0x7cc309",
+  "name": "__mbstowcs_lk",
+  "cls": null,
+  "size": 256,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LPCCH'"
+ },
+ {
+  "addr": "0x474430",
+  "name": "INIClass::WriteDigest",
+  "cls": null,
+  "size": 258,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2039",
+  "first_msg": "'Pipe_field_0x0C' : is not a member of 'Pipe'"
+ },
+ {
+  "addr": "0x5edde0",
+  "name": "EnablePlayerSlotControls",
+  "cls": null,
+  "size": 262,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x41d380",
+  "name": "AirstrikeClass::AirstrikeClass",
+  "cls": null,
+  "size": 263,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2380",
+  "first_msg": "type(s) preceding 'AirstrikeClass' (constructor with return type, or illegal redefinition of curr"
+ },
+ {
+  "addr": "0x6a92e0",
+  "name": "ObjectClass::GetSidebarTooltip",
+  "cls": null,
+  "size": 264,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.Type' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4db8a0",
+  "name": "sub_4DB8A0",
+  "cls": null,
+  "size": 265,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'g_CLSID_DriveLocomotion' : undeclared identifier"
+ },
+ {
+  "addr": "0x720480",
+  "name": "ThemeClass::ReadThemeEntry",
+  "cls": null,
+  "size": 266,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'ReadBool_Overwrite' : cannot convert parameter 2 from 'unsigned char' to 'void *'"
+ },
+ {
+  "addr": "0x4b64e0",
+  "name": "JumpjetLocomotionClass::LoadLocomotionFromStream_0",
+  "cls": null,
+  "size": 267,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'pad_0' : undeclared identifier"
+ },
+ {
+  "addr": "0x6269a0",
+  "name": "System_Reset",
+  "cls": null,
+  "size": 268,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.Type' must have class/struct/union type"
+ }
+]
