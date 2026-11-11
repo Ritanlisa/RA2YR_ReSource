@@ -44,6 +44,13 @@ typedef unsigned long       ULONG_PTR;
 typedef long                LRESULT;
 typedef unsigned int        WPARAM;
 typedef long                LPARAM;
+typedef short               SHORT;
+typedef int                 INT_PTR;
+typedef long                LSTATUS;
+typedef unsigned long       REGSAM;
+typedef unsigned short      u_short;
+typedef unsigned long       u_long;
+typedef unsigned short *    LPWORD;
 typedef void *              LPVOID;
 typedef const void *        LPCVOID;
 typedef char *              LPSTR;
@@ -81,6 +88,7 @@ typedef void *              HRSRC;
 typedef void *              HIMC;
 typedef void *              HKL;
 typedef unsigned int        SOCKET;
+typedef HKEY *              PHKEY;
 
 // ---- COM / DDraw basics
 struct _GUID_era {
@@ -94,6 +102,7 @@ typedef struct _GUID_era CLSID;
 typedef struct _GUID_era IID;
 typedef const IID &     REFIID;
 typedef const CLSID &   REFCLSID;
+typedef CLSID *         LPCLSID;
 typedef GUID *          LPGUID;
 struct IUnknown;
 typedef IUnknown *      LPUNKNOWN;
@@ -149,7 +158,22 @@ struct _BY_HANDLE_FILE_INFORMATION {
 typedef int (__stdcall * DLGPROC)();
 struct tagPAINTSTRUCT { unsigned char __pad[64]; };
 typedef struct tagPAINTSTRUCT PAINTSTRUCT;
-struct tagLOGFONTA { unsigned char __pad[60]; };
+struct tagLOGFONTA {
+    long  lfHeight;
+    long  lfWidth;
+    long  lfEscapement;
+    long  lfOrientation;
+    long  lfWeight;
+    unsigned char lfItalic;
+    unsigned char lfUnderline;
+    unsigned char lfStrikeOut;
+    unsigned char lfCharSet;
+    unsigned char lfOutPrecision;
+    unsigned char lfClipPrecision;
+    unsigned char lfQuality;
+    unsigned char lfPitchAndFamily;
+    char  lfFaceName[32];
+};
 typedef struct tagLOGFONTA LOGFONTA;
 typedef struct tagLOGFONTA * LPLOGFONTA;
 struct _OSVERSIONINFOA { unsigned char __pad[148]; };
@@ -175,6 +199,7 @@ struct DLGTEMPLATE_era {
     short          cy;
 };
 typedef struct DLGTEMPLATE_era DLGTEMPLATE;
+typedef const DLGTEMPLATE * LPCDLGTEMPLATEA;
 struct _WIN32_FIND_DATAA_era { unsigned char __pad[320]; };
 typedef struct _WIN32_FIND_DATAA_era _WIN32_FIND_DATAA;
 struct IStream;

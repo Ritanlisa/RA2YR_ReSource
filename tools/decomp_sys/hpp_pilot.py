@@ -148,6 +148,7 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("#include <string.h>   // memset (whole-object zero init)")
     lines.append("#include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)")
     lines.append("#include <stdio.h>    // sprintf/sscanf/printf (R5)")
+    lines.append("#include <math.h>     // fabs/sqrt/pow (CW2: bodies call them)")
     lines.append("#include <stdarg.h>   // va_list (R5)")
     lines.append("")
     lines.append("class %s" % cls_ident(cls))
@@ -296,24 +297,41 @@ def gen_free_hpp(unit, extra_notes=(), used_globals=None, extra_externs=None,
         lines.append("// %s" % n)
 
     fwd = set()
+
+    def _fwd_ok_free(n):
+        """CW2: same gate as gen_class_hpp -- bare, declarable names only."""
+        if not n:
+            return False
+        n = n.strip()
+        if n in _PRIM_TYPES or n in WIDTH_OF or n in ERA_TYPE_NAMES:
+            return False
+        return bool(re.match(r"^[A-Za-z_]\w*$", n))
+
     if extra_fwd:
         for n in extra_fwd:
-            if not n or _is_prim(n) or n in _PRIM_TYPES or n in WIDTH_OF:
-                continue
-            fwd.add(n)
+            if _fwd_ok_free(n):
+                fwd.add(n)
     if used_globals:
         gnames = set(used_globals)
         for name in list(used_globals):
             ty = used_globals[name]
             if ty.endswith("*"):
                 b = ty.replace("*", "").strip()
-                if b and not _is_prim(b) and b not in _PRIM_TYPES \
-                        and b not in WIDTH_OF:
+                if b and not _is_prim(b):
                     if b in gnames:
                         used_globals[name] = "void *"
                         continue
-                    fwd.add(b)
+                    if _fwd_ok_free(b):
+                        fwd.add(b)
         fwd -= gnames
+    # CW2: extern-block return types (`extern Coord3D * __fastcall f(...)`)
+    # are never scanned by the member/param walk -- the undeclared return
+    # class was C2143 "missing ';' before '*'" on the declaration itself.
+    for d in (extra_externs or []):
+        body = d.replace("extern", " ", 1)
+        for m in re.finditer(r"\b([A-Za-z_]\w*)\s*\*", body):
+            if _fwd_ok_free(m.group(1)):
+                fwd.add(m.group(1))
     if fwd:
         lines.append("// forward declarations")
         lines.extend("class %s;" % f for f in sorted(fwd))
@@ -322,9 +340,11 @@ def gen_free_hpp(unit, extra_notes=(), used_globals=None, extra_externs=None,
     lines.append("#ifndef %s" % guard)
     lines.append("#define %s" % guard)
     lines.append("")
+    lines.append('#include "era_types.h"  // CW2: Win32/IDA type aliases (types only)')
     lines.append("#include <string.h>   // memset (whole-object zero init)")
     lines.append("#include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)")
     lines.append("#include <stdio.h>    // sprintf/sscanf/printf (R5)")
+    lines.append("#include <math.h>     // fabs/sqrt/pow (CW2: bodies call them)")
     lines.append("#include <stdarg.h>   // va_list (R5)")
     lines.append("")
     if used_globals:

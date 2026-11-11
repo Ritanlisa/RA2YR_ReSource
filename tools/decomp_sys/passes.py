@@ -2608,6 +2608,10 @@ _KNOWN_API_SIGS = {
     "GetParent": ("void *", "__stdcall", ["void *"]),
     "GetClientRect": ("int", "__stdcall", ["void *", "tagRECT *"]),
     "GetWindowRect": ("int", "__stdcall", ["void *", "tagRECT *"]),
+    # CW2: GDI object selection rejects a scalar slot for the object handle
+    # (`SelectObject(void *, void *)` vs registry's int).
+    "SelectObject": ("void *", "__stdcall", ["void *", "void *"]),
+    "DeleteObject": ("int", "__stdcall", ["void *"]),
 }
 
 
@@ -2627,9 +2631,20 @@ def _ctx_ptr_names(ctx, text):
     for t, n in ctx.sig.get("params_spelled") or []:
         if t.endswith("*"):
             s.add(n)
+        else:
+            # CW2: era pointer typedefs (HRSRC/HWND/LPPOINT/LPMSG...) are
+            # pointers even though the spelling has no '*'.
+            core = re.sub(r"^(?:const\s+|struct\s+|class\s+)+", "", t).strip()
+            if core in _PTR_TY_NAMES:
+                s.add(n)
     for n, t in (getattr(ctx, "used_globals", None) or {}).items():
         if str(t).endswith("*"):
             s.add(n)
+        else:
+            core = re.sub(r"^(?:const\s+|struct\s+|class\s+)+", "",
+                          str(t)).strip()
+            if core in _PTR_TY_NAMES:
+                s.add(n)
     return s
 
 _CALL_KEYWORDS = {
@@ -2771,6 +2786,60 @@ def pass_unknown_symbols(ctx):
                 "known Win32 API -> extern %s %s %s(%s)"
                 % (ret, cc, name, plist), True))
             continue
+        # CW2: IAT import thunks (`__imp_LoadResource`) mirror the imported
+        # function's prototype.  The fabricated call-shape extern
+        # (`extern int __imp_X(void *, int, ...)`) rejected the very
+        # arguments the real prototype accepts (C2664 HRSRC->int).
+        if name.startswith("__imp_"):
+            _ia, _irec = ctx.reg.function_by_name(name[len("__imp_"):])
+            if _irec is not None:
+                _iret = spell_type(_irec.get("ret") or "int")
+                if _iret in ("unknown", ""):
+                    _iret = "int"
+                _icc = {"stdcall": " __stdcall",
+                        "fastcall": " __fastcall"}.get(
+                            _irec.get("cc") or "", "")
+                _iparts = []
+                for _i, _p in enumerate(_irec.get("params") or []):
+                    _ty = spell_type(_p.get("type") or "int")
+                    if "(" in _ty:
+                        _ty = "void *"
+                    _iparts.append(_ty)
+                # arity guard (same policy as the registry path): the import
+                # record may omit parameters -- never emit a prototype
+                # narrower than the observed call site (C2660).
+                _obs = []
+                for _cm in re.finditer(r"\b%s\s*\(" % re.escape(name),
+                                       text):
+                    _cl = _balanced_close(text, _cm.end() - 1)
+                    if _cl < 0:
+                        continue
+                    _inner = text[_cm.end():_cl].strip()
+                    if _inner:
+                        _a = _split_args(_inner)
+                        if len(_a) > len(_obs):
+                            _obs = _a
+                _ptrn = _ctx_ptr_names(ctx, text)
+                for _i, _a0 in enumerate(_obs):
+                    if _i < len(_iparts):
+                        continue
+                    # CW2: `const void *` accepts both const and non-const
+                    # pointer arguments; a plain `void *` slot rejects the
+                    # very common `const char *` argument (C2664).
+                    _iparts.append("const void *" if _arg_is_pointerish(
+                        _a0.strip(), _ptrn) else "int")
+                _plist = ", ".join("%s a%d" % (t, i)
+                                   for i, t in enumerate(_iparts))
+                if len(_iparts) < len(_obs):
+                    _plist = _plist + ", ..." if _plist else "..."
+                ctx.used_callee_exts.append(
+                    "extern %s%s %s(%s);" % (_iret, _icc, name, _plist))
+                declared.add(name)
+                ctx.sites.append(Site(
+                    "callee", name + "(...)",
+                    "IAT thunk -> prototype of %s (registry)"
+                    % name[len("__imp_"):], True))
+                continue
         # R6: registry retry under the ??-mangled spelling.  The export
         # collapses `??2_YAPAXI_Z` to `__2_YAPAXI_Z`; a plain lookup misses
         # and the callee fell back to `extern int`, which broke every
@@ -4133,6 +4202,17 @@ def pass_era_normalize(ctx):
     # CW2: IDA register annotations (`double@<st0>`, `char@<cf>`) anywhere
     # in the body/decls are not C++ (C2018 unknown character '0x40').
     text = re.sub(r"@<[^>]*>", "", text)
+    # CW2: namespace-qualified class spellings (`struct Concurrency::
+    # ISchedulerProxy *`) name types no pilot hpp declares (C2653).  The
+    # pointer width is the ABI truth, so degrade the cast spelling.
+    text = re.sub(
+        r"\(\s*(?:struct|class)\s+[A-Za-z_]\w*::[A-Za-z_]\w*\s*\*+\s*\)",
+        "(void *)", text)
+    # CW2: IDA renders a vtable install as `&Class::`vftable'` -- the
+    # backtick spelling is not C++ (C2018).  Pilot shells carry no vtable
+    # object, so the install value degrades to 0 (address constant only).
+    text = re.sub(r"&\s*[A-Za-z_]\w*(?:::[A-Za-z_]\w*)*::`vftable'",
+                  "0", text)
     text = re.sub(r"\(int\)\s*\(\(", "((", text)
     text = text.replace("(unsigned __int8 *)", "(unsigned char*)")
     text = text.replace("(__int8 *)", "(char*)")
@@ -4298,6 +4378,23 @@ _SCALAR_TYS = {
     "unsigned __int32", "unsigned __int64",
 }
 
+# CW2: era_types.h names whose typedef IS a pointer (`typedef void *HWND`).
+# A cast to one of these yields a pointer value even when the expression
+# has no other pointer evidence: `(HWND)this` / `(LPPOINT)&Rect` used to
+# stay in an `int` extern slot -> C2664 on MoveWindow/ClientToScreen.
+_PTR_TY_NAMES = {
+    "LPVOID", "LPCVOID", "LPSTR", "LPCSTR", "LPWSTR", "LPCWSTR", "BSTR",
+    "LPCOLESTR", "PCNZWCH", "LPCCH", "LPBYTE", "LPDWORD", "LPLONG",
+    "LPGUID", "LPUNKNOWN", "LPPOINT", "LPRECT", "LPMSG",
+    "LPCRITICAL_SECTION", "LPSECURITY_ATTRIBUTES", "LPTEXTMETRICA",
+    "LPSTREAM", "LPDIRECTDRAW", "LPDIRECTDRAWSURFACE",
+    "LPDIRECTDRAWPALETTE", "LPDIRECTDRAWCLIPPER", "LPCDLGTEMPLATEA",
+    "LPLOGFONTA", "PHKEY", "LPCLSID", "LPWORD", "FARPROC", "DLGPROC",
+    "HWND", "HINSTANCE", "HDC", "HGDIOBJ", "HGLOBAL", "HLOCAL", "HMODULE",
+    "HANDLE", "HBRUSH", "HPEN", "HFONT", "HBITMAP", "HICON", "HCURSOR",
+    "HMENU", "HKEY", "HRGN", "HRSRC", "HIMC", "HKL",
+}
+
 
 def _arg_is_pointerish(s, ptr_names=None):
     """R7.1: does this call ARGUMENT carry a pointer form?
@@ -4325,6 +4422,16 @@ def _arg_is_pointerish(s, ptr_names=None):
         return _arg_is_pointerish(s2, names)
     if _SCALAR_CAST.match(s):
         return False
+    # CW2: an explicit cast to a POINTER spelling yields a pointer value
+    # (`(HWND)this`, `(LPPOINT)&Rect`, `(char *)&buf`).  The cast head is
+    # authoritative for pointer-ness just as _SCALAR_CAST is for scalars.
+    m = re.match(r"^\(\s*(?:const\s+)?(?:struct\s+|class\s+)?"
+                 r"([A-Za-z_]\w*)\s*(\*+)?\s*\)", s)
+    if m:
+        if m.group(2):
+            return True
+        if m.group(1) in _PTR_TY_NAMES:
+            return True
     # address-of is pointer evidence even when its operand ends with a
     # subscript (`&this->m134[4]` -- MapClass::FreeAllCells fncast slot)
     if s.startswith("&") and not s.startswith("&&"):
