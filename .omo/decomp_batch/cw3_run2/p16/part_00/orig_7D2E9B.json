@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D2E9B",
+ "name": "??0exception_QAE_ABQBD_Z",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D2E9B",
+ "bytes_hex": "56578b7c240c8bf1c7060c997f00ff37e8f0e6ffff4050e8605fffff5989460485c059740aff3750e8281d00005959c74608010000008bc65f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

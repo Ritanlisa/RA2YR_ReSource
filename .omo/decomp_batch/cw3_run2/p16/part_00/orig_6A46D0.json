@@ -1,0 +1,11 @@
+{
+ "addr": "0x6A46D0",
+ "name": "HouseTypeClass::Find",
+ "size": 61,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6A46D0",
+ "bytes_hex": "a130418b005633f65785c08bf97e23a124418b00578b0cb083c12451e82f46120083c40885c07410a130418b00463bf07cdd5f83c8ff5ec38bc65f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

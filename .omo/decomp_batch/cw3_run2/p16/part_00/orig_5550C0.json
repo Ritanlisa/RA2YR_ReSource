@@ -1,0 +1,11 @@
+{
+ "addr": "0x5550C0",
+ "name": "LightSourceClass::Write",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5550C0",
+ "bytes_hex": "8b442408568b7424085056e8b0b2ebff85c07c2d85f674278d4c240c518bcee8dcb0ebffc70628d07e00c746040cd07e00c7460804d07e00c7460cfccf7e0033c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

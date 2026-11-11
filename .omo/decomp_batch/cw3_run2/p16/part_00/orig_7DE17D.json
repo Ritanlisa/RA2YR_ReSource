@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DE17D",
+ "name": "__putch",
+ "size": 68,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DE17D",
+ "bytes_hex": "558bec518a4508833d84dd8700fe88450b7505e87bffffffa184dd870083f8ff741d8d4dfc6a00518d4d0b6a015150ff1544137e0085c074060fb6450bc9c383c8ffc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

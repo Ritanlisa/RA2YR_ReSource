@@ -1,0 +1,91 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e7be0 sub_4E7BE0 -> _addr_4E
+[conv] 0x543e70 sub_543E70 -> _addr_54
+[conv] 0x629190 sub_629190 -> _addr_62
+[conv] 0x6a46d0 HouseTypeClass::Find -> HouseTypeClass
+[conv] 0x71a3d0 sub_71A3D0 -> _addr_71
+[conv] 0x7256d0 sub_7256D0 -> _addr_72
+[conv] 0x7d2e9b exception::_0exception_QAE_ABQBD_Z -> exception
+[conv] 0x4de710 FootClass::PopAndProcess -> FootClass
+[conv] 0x77c840 sub_77C840 -> _addr_77
+[conv] 0x4c3c90 ObjectClass::sub_4C3C90 -> ObjectClass
+[conv] 0x75cbe0 WalkLocomotionClass::ProcessMove -> WalkLocomotionClass
+[conv] 0x46da20 sub_46DA20 -> _addr_46
+[conv] 0x7de17d __putch -> _addr_7D
+[conv] 0x466660 BulletClass::CalculateSpreadAngle -> BulletClass
+[conv] 0x5550c0 LightSourceClass::Write -> LightSourceClass
+[conv] 0x7693f0 WDTGame::ToggleTeamMode -> WDTGame
+[conv] 0x72d730 Game::LoadMultiplayerScoreAssets -> Game
+[conv] 0x439080 TechnoClass::checkRange -> TechnoClass
+[conv] 0x72bac0 WOLobby_Load -> WOLobby
+[conv] 0x72d120 UI_Show -> UI
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4E                 rc=2
+[era] _addr_54                 rc=2
+[era] _addr_62                 rc=2
+[era] HouseTypeClass           rc=0
+[era] _addr_71                 rc=2
+[era] _addr_72                 rc=2
+[era] exception                rc=0
+[era] FootClass                rc=2
+[era] _addr_77                 rc=2
+[era] ObjectClass              rc=2
+[era] WalkLocomotionClass      rc=2
+[era] _addr_46                 rc=2
+[era] _addr_7D                 rc=0
+[era] BulletClass              rc=2
+[era] LightSourceClass         rc=0
+[era] WDTGame                  rc=0
+[era] Game                     rc=2
+[era] TechnoClass              rc=0
+[era] WOLobby                  rc=2
+[era] UI                       rc=2
+=== diffasm byte-compare ===
+[diff] 0x6a46d0   MISMATCH         HouseTypeClass::Find
+[diff] 0x7d2e9b   MISMATCH         exception::_0exception_QAE_ABQBD_Z
+[diff] 0x7de17d   MISMATCH         __putch
+[diff] 0x5550c0   MISMATCH         LightSourceClass::Write
+[diff] 0x7693f0   MISMATCH         WDTGame::ToggleTeamMode
+[diff] 0x439080   MISMATCH         TechnoClass::checkRange
+[ledger] 0x4e7be0 sub_4E7BE0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x543e70 sub_543E70 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x629190 sub_629190 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x6a46d0 HouseTypeClass::Find -> NG (attempt 3)
+[ledger] 0x71a3d0 sub_71A3D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7256d0 sub_7256D0 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7d2e9b exception::_0exception_QAE_ABQBD_Z -> NG (attempt 3)
+[ledger] 0x4de710 FootClass::PopAndProcess -> COMPILE_FAIL (attempt 3)
+[ledger] 0x77c840 sub_77C840 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x4c3c90 ObjectClass::sub_4C3C90 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x75cbe0 WalkLocomotionClass::ProcessMove -> COMPILE_FAIL (attempt 3)
+[ledger] 0x46da20 sub_46DA20 -> COMPILE_FAIL (attempt 4)
+[ledger] 0x7de17d __putch -> NG (attempt 3)
+[ledger] 0x466660 BulletClass::CalculateSpreadAngle -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5550c0 LightSourceClass::Write -> NG (attempt 3)
+[ledger] 0x7693f0 WDTGame::ToggleTeamMode -> NG (attempt 3)
+[ledger] 0x72d730 Game::LoadMultiplayerScoreAssets -> COMPILE_FAIL (attempt 3)
+[ledger] 0x439080 TechnoClass::checkRange -> NG (attempt 9)
+[ledger] 0x72bac0 WOLobby_Load -> COMPILE_FAIL (attempt 4)
+[ledger] 0x72d120 UI_Show -> COMPILE_FAIL (attempt 4)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 14,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "const_fold": 2,
+  "regalloc": 3,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p16\batch_report.json

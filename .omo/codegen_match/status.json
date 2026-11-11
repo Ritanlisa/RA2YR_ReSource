@@ -9131,7 +9131,7 @@
   "this_as_id": false
  },
  "0x439080": {
-  "attempts": 8,
+  "attempts": 9,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x28]",
@@ -11088,7 +11088,7 @@
   "status": "NG"
  },
  "0x466660": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -11757,7 +11757,7 @@
   "status": "NG"
  },
  "0x46da20": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_46DA20",
@@ -21007,7 +21007,7 @@
   "this_as_id": false
  },
  "0x4c3c90": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -23522,7 +23522,7 @@
   "status": "OK"
  },
  "0x4de710": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": null,
@@ -24889,7 +24889,7 @@
   "this_as_id": false
  },
  "0x4e7be0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_4E7BE0",
@@ -35876,7 +35876,7 @@
   "this_as_id": false
  },
  "0x543e70": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_543E70",
@@ -37520,15 +37520,15 @@
   "this_as_id": false
  },
  "0x5550c0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
-  "first_diff": null,
+  "first_diff": "+11 call 0x410380",
   "name": "LightSourceClass::Write",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
   "orig_name": "LightSourceClass::Write",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x555130": {
@@ -52549,7 +52549,7 @@
   "this_as_id": false
  },
  "0x629190": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_629190",
@@ -62397,7 +62397,7 @@
   "this_as_id": false
  },
  "0x6a46d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov eax, dword ptr [0x8b4130]",
@@ -72913,7 +72913,7 @@
   "this_as_id": false
  },
  "0x71a3d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_71A3D0",
@@ -74759,7 +74759,7 @@
   "this_as_id": false
  },
  "0x7256d0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_7256D0",
@@ -76248,7 +76248,7 @@
   "this_as_id": false
  },
  "0x72bac0": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "WOLobby_Load",
@@ -76646,7 +76646,7 @@
   "this_as_id": false
  },
  "0x72d120": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "UI_Show",
@@ -76745,7 +76745,7 @@
   "this_as_id": false
  },
  "0x72d730": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -80854,7 +80854,7 @@
   "status": "OK"
  },
  "0x75cbe0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": null,
@@ -82550,7 +82550,7 @@
   "this_as_id": false
  },
  "0x7693f0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "signals_cls",
   "first_diff": "+0 mov al, byte ptr [esp + 8]",
@@ -85306,7 +85306,7 @@
   "this_as_id": false
  },
  "0x77c840": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
   "first_diff": null,
   "name": "sub_77C840",
@@ -89833,7 +89833,7 @@
   "this_as_id": false
  },
  "0x7d2e9b": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "cls_src": "backfill",
   "first_diff": "+0 push esi",
@@ -90857,7 +90857,7 @@
   "this_as_id": false
  },
  "0x7de17d": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": "+0 push ebp",
   "name": "__putch",

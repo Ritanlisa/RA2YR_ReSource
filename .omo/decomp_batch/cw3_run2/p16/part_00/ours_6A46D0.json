@@ -1,0 +1,45 @@
+{
+ "symbol": "?Find@HouseTypeClass@@QAEHXZ",
+ "sym_key": "HouseTypeClass::Find",
+ "size": 97,
+ "link_base": 0,
+ "bytes_hex": "a1700300005633f65785c08bf97f065f83c8ff5ec3a1640300005725ff0000008b0883c12451e80000000083c40885c0742aa170030000463bf07dd38b15640300005781e2ff0000008b04b283c02450e80000000083c40885c075d68bc65f5ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?FootClass_Array@@3IA",
+   "sym_key": "FootClass_Array"
+  },
+  {
+   "off": 81,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

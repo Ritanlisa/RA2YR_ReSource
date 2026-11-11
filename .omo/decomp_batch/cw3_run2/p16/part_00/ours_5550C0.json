@@ -1,0 +1,21 @@
+{
+ "symbol": "?Write@LightSourceClass@@QAGHPAH@Z",
+ "sym_key": "LightSourceClass::Write",
+ "size": 69,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7424085056e80000000085c07c2d85f674278d4c240c518bcee800000000c70600000000c7460400000000c7460800000000c7460c0000000033c05ec20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix_0@@YGHPAXPAH@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix_0"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "?InitVtables@AbstractClass@@QAEPAV1@H@Z",
+   "sym_key": "AbstractClass::InitVtables"
+  }
+ ]
+}

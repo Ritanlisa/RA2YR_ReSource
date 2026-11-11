@@ -1,0 +1,33 @@
+{
+ "symbol": "?__putch@@YAHH@Z",
+ "sym_key": "Unnamed::__putch",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "518b44240889442400a10000000083f8fe750ae800000000a10000000083f8ff74208d4c24006a00518d5424136a015250e80000000085c0740833c08a44240959c383c8ff59c3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?hConsoleOutput@@3PAXA",
+   "sym_key": "hConsoleOutput"
+  },
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "?__initconout@@YAHXZ",
+   "sym_key": "__initconout"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?hConsoleOutput@@3PAXA",
+   "sym_key": "hConsoleOutput"
+  },
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?WriteConsoleA@@YGHPAX0H0H@Z",
+   "sym_key": "WriteConsoleA"
+  }
+ ]
+}
