@@ -18181,11 +18181,16 @@
   "status": "NG"
  },
  "0x4a7b90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "DiskLaserClass::Write",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DiskLaserClass::Write",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4a7c30": {
   "attempts": 1,
@@ -20048,11 +20053,16 @@
   "status": "OK"
  },
  "0x4bb000": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "DSurface::RestoreIfLost",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "DSurface::RestoreIfLost",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4bbb00": {
   "attempts": 4,
@@ -27734,11 +27744,15 @@
   "this_as_id": false
  },
  "0x4f1840": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "ShowGameDialog",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ShowGameDialog",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4f1b60": {
   "attempts": 1,
@@ -27934,11 +27948,16 @@
   "status": "NG"
  },
  "0x4f3720": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+8 mov ecx, dword ptr [esi + 0x24]",
   "name": "GraphicMenuImageItem::Draw",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "GraphicMenuImageItem::Draw",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f3890": {
   "attempts": 1,
@@ -34429,11 +34448,16 @@
   "status": "NG"
  },
  "0x540670": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "IPXGlobalConnClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "IPXGlobalConnClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x540710": {
   "attempts": 1,
@@ -47011,11 +47035,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x5d64c0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "ListBox::Refresh",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+1 mov ebx, dword ptr [0x7e14a4]",
+  "name": "MultiplayerGameMode::Refresh",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "orig_name": "ListBox::Refresh",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5d6790": {
   "attempts": 1,
@@ -49183,11 +49212,16 @@
   "status": "NG"
  },
  "0x5f60a0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "ObjectClass::SetCellOverlayFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ObjectClass::SetCellOverlayFlag",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5f6250": {
   "attempts": 1,
@@ -59751,11 +59785,15 @@
   "this_as_id": false
  },
  "0x69a340": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "sub_69A340",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_69A340",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x69acc0": {
   "attempts": 1,
@@ -63077,11 +63115,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x6bf510": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "VectorClass_K_32::ddtor",
+  "name": "_TClassFactory_VSuperWeaponTypeClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VectorClass_K_32::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6bf590": {
   "attempts": 1,
@@ -63120,11 +63163,16 @@
   "this_as_id": false
  },
  "0x6bf690": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "VectorClass_K_38::ddtor",
+  "name": "_TClassFactory_VSuperClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VectorClass_K_38::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6bf710": {
   "attempts": 1,
@@ -63472,11 +63520,16 @@
   "this_as_id": false
  },
  "0x6c0a10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "TClassFactory_SpawnManagerClass::ddtor",
+  "name": "_TClassFactory_VSpawnManagerClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_SpawnManagerClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c0a90": {
   "attempts": 1,
@@ -63836,11 +63889,16 @@
   "this_as_id": false
  },
  "0x6c1f10": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TClassFactory_ScriptTypeClass::GetClassIdentifier",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 mov edi, dword ptr [esp + 0x18]",
+  "name": "_TClassFactory_VScriptTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TClassFactory_ScriptTypeClass::GetClassIdentifier",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6c1f90": {
   "attempts": 1,
@@ -64432,11 +64490,16 @@
   "this_as_id": false
  },
  "0x6c4010": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "TClassFactory_DriveLocomotionClass::ddtor",
+  "name": "_TClassFactory_VDriveLocomotionClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_DriveLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c4090": {
   "attempts": 1,
@@ -64657,11 +64720,16 @@
   "this_as_id": false
  },
  "0x6c4c10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "TClassFactory_TeleportLocomotionClass::ddtor",
+  "name": "_TClassFactory_VTeleportLocomotionClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_TeleportLocomotionClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c4c90": {
   "attempts": 1,
@@ -64736,11 +64804,16 @@
   "this_as_id": false
  },
  "0x6c5090": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "TClassFactory_BulletClass::ddtor",
+  "name": "_TClassFactory_VBulletClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TClassFactory_BulletClass::ddtor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6c5110": {
   "attempts": 1,
@@ -79640,11 +79713,16 @@
   "this_as_id": false
  },
  "0x765bb0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "COMClass::createInstance",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "COMClass::createInstance",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x765d50": {
   "attempts": 1,
@@ -83351,7 +83429,7 @@
   "this_as_id": false
  },
  "0x7982d0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "sub_7982D0",
@@ -85084,11 +85162,15 @@
   "status": "NG"
  },
  "0x7b7dd0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "FormatWideString",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "FormatWideString",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b7f90": {
   "attempts": 1,
@@ -87408,7 +87490,7 @@
   "this_as_id": false
  },
  "0x7d461e": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "___wtomb_environ",
@@ -87611,11 +87693,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x7d7374": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "_ProcessCodePage",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "_ProcessCodePage",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7d73da": {
   "attempts": 1,

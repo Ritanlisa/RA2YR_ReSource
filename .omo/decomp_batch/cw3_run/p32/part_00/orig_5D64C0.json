@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D64C0",
+ "name": "ListBox::Refresh",
+ "size": 114,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D64C0",
+ "bytes_hex": "538b1da4147e0055578b7c24106a006a00688401000057ffd38b44241433ed8b481085c97e46568b4c24188b51048b34aa566a0068cd04000057ffd38b4c241c894424143bf1750f6a0050688601000057ffd38b4424145650689a01000057ffd38b442418453b68107cbc5e5f5d5bc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
