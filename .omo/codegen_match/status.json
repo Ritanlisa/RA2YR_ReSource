@@ -1291,11 +1291,15 @@
   "status": "OK"
  },
  "0x409030": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "WriteAudioStreamToFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "WriteAudioStreamToFile",
+  "rule_violations": 5,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4090f0": {
   "attempts": 7,
@@ -12434,11 +12438,16 @@
   "this_as_id": false
  },
  "0x475540": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "SuperWeaponTypeClass::FindOrCreate",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "SuperWeaponTypeClass::FindOrCreate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x475610": {
   "attempts": 4,
@@ -18660,11 +18669,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x4acda0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "MapClass::RevealCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MapClass::RevealCell",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ad7e0": {
   "attempts": 1,
@@ -18681,11 +18695,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x4adff0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
   "first_diff": null,
   "name": "HouseClass::RevealShroudForAllies",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "HouseClass::RevealShroudForAllies",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4aea20": {
   "attempts": 1,
@@ -28143,11 +28162,15 @@
   "this_as_id": false
  },
  "0x4f3b80": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "sub_4F3B80",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_4F3B80",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4f3fc0": {
   "attempts": 1,
@@ -28693,11 +28716,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x4fc6d0": {
-  "attempts": 9,
-  "first_diff": null,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 sub esp, 8",
   "name": "HouseClass::ClearLowPowerTargets",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "orig_name": "HouseClass::ClearLowPowerTargets",
+  "rule_violations": 5,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4fc980": {
   "attempts": 1,
@@ -43361,11 +43389,15 @@
   "this_as_id": false
  },
  "0x5bf390": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "EnqueueAsyncIOMovie",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "EnqueueAsyncIOMovie",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5bf5c0": {
   "attempts": 1,
@@ -44059,11 +44091,16 @@
   "status": "NG"
  },
  "0x5c2040": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "MPCooperative::StartGame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "MPCooperative::StartGame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5c21a0": {
   "attempts": 2,
@@ -52812,11 +52849,16 @@
   "this_as_id": false
  },
  "0x635490": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "Render_Render_635490",
+  "name": "ObjectClass::Render_Render_635490",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Render_Render_635490",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6357d0": {
   "attempts": 1,
@@ -59148,11 +59190,16 @@
   "this_as_id": false
  },
  "0x690a10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "ScoreScreen::LoadScoreFont",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ScoreScreen::LoadScoreFont",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x690fc0": {
   "attempts": 1,
@@ -62573,11 +62620,15 @@
   "this_as_id": false
  },
  "0x6b6230": {
-  "attempts": 2,
+  "attempts": 3,
+  "clean": false,
   "first_diff": null,
   "name": "ShowAudioSettingsDialog",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ShowAudioSettingsDialog",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6b6a30": {
   "attempts": 1,
@@ -67946,11 +67997,16 @@
   "this_as_id": false
  },
  "0x6e1980": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TActionClass::executeGuardAreaAction",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TActionClass::executeGuardAreaAction",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6e21d0": {
   "attempts": 1,
@@ -69218,11 +69274,16 @@
   "status": "OK"
  },
  "0x6ef610": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "TeamClass::PlayMemberAnimation",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TeamClass::PlayMemberAnimation",
+  "rule_violations": 2,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6ef700": {
   "attempts": 1,
@@ -76154,11 +76215,16 @@
   "this_as_id": false
  },
  "0x746420": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "TechnoClass::CaptureTurret",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "TechnoClass::CaptureTurret",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7464e0": {
   "attempts": 10,
@@ -82088,11 +82154,16 @@
   "this_as_id": false
  },
  "0x770f10": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
-  "name": "sub_770F10",
+  "name": "ObjectClass::sub_770F10",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "sub_770F10",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7712c0": {
   "attempts": 1,
@@ -83831,11 +83902,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x79da90": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "ExtractChatCommand",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "ExtractChatCommand",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x79db50": {
   "attempts": 1,
@@ -84369,11 +84444,15 @@
   "this_as_id": false
  },
  "0x7afad0": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "Team_Start_7AFAD0",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "Team_Start_7AFAD0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b0210": {
   "attempts": 1,
@@ -85393,11 +85472,16 @@
   "status": "NG"
  },
  "0x7b5d70": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "String::CopyTruncated",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "String::CopyTruncated",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x7b60e0": {
   "attempts": 1,
@@ -87395,7 +87479,7 @@
   "this_as_id": false
  },
  "0x7cde75": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__setlocale_get_all",
@@ -87962,7 +88046,7 @@
   "this_as_id": false
  },
  "0x7d5ac0": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
   "first_diff": null,
   "name": "__setenvp",

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4FC6D0",
+ "name": "HouseClass::ClearLowPowerTargets",
+ "size": 181,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4FC6D0",
+ "bytes_hex": "83ec08a188eca800535533ed33db894c240885c00f8e950000005657a17ceca8008b34a88bcee8253121008bf88b861c0200003bf874203b7c241075638b86c002000085c074108b88bc02000056e80d5cf7ff84c075493b7c241075433bf3743f8b4e6c894c24148b8e7802000085c97405e8f9e52100a1e07188008b166a006a018b88a80f00006a016a00518d4424286a00508bceff926c0100008bdeeb01453b2d88eca8000f8c6fffffff5f5e5d5b83c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
