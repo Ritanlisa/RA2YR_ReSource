@@ -1,0 +1,75 @@
+{
+ "symbol": "?PrintFontLayout@unknown@@QAIHHPAGPAH1HDHHHH@Z",
+ "sym_key": "unknown::PrintFontLayout",
+ "size": 242,
+ "link_base": 0,
+ "bytes_hex": "83ec0c8b4424145355568b08578b78088bf2894c24182bf98a0d0000000081e6ff000000d3ee8b0d0000000033db8ade8954241033d28b680cd3e68b0d000000008a542412d3fb8b0d0000000089442414d3e38b0d00000000d3fa8b0d000000000bf38b58048a4424302bebd3e28b4c2428894c24100bf2a80474228d44242457508b4424288d5424305250e8000000008bc52b442424992bc2d1f803d88b4c24106a01e8000000008b4c2414518b4c2414e800000000568b7424148bcee8000000008b5424408b44243c8b4c2430528b54241c508b4424285155575352505356e80000000033c05f5e5d5b83c40cc22400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 40,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Blue@@3IA",
+   "sym_key": "g_BitMask_Blue"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Green@@3IA",
+   "sym_key": "g_BitMask_Green"
+  },
+  {
+   "off": 85,
+   "type": "DIR32",
+   "sym": "?g_BitMask_Red@@3IA",
+   "sym_key": "g_BitMask_Red"
+  },
+  {
+   "off": 93,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Blue@@3IA",
+   "sym_key": "g_BitShift_Blue"
+  },
+  {
+   "off": 141,
+   "type": "REL32",
+   "sym": "?Layout@Text@@QAEDPAX00H@Z",
+   "sym_key": "Text::Layout"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?Swap@Char@@QAEDD@Z",
+   "sym_key": "Char::Swap"
+  },
+  {
+   "off": 179,
+   "type": "REL32",
+   "sym": "?SetRect@TextGroup@@QAEPAIPAX@Z",
+   "sym_key": "TextGroup::SetRect"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?Set@Property@@QAEFF@Z",
+   "sym_key": "Property::Set"
+  },
+  {
+   "off": 226,
+   "type": "REL32",
+   "sym": "?Font__Print@@YGDHHPAGHHHHDHH@Z",
+   "sym_key": "Font__Print"
+  }
+ ]
+}

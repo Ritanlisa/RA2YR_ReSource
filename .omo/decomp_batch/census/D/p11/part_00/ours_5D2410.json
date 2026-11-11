@@ -1,0 +1,99 @@
+{
+ "symbol": "?FrameLoop@GameClass@@QAEHH@Z",
+ "sym_key": "GameClass::FrameLoop",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "535556578bf9e8000000008b6c24148bd8be010000008bcfe8000000008b078bcfff50088b4c2414e8000000008b0d00000000518bcfe8000000008b15000000008bcf52e800000000e800000000a09c01000084c0752883fbff74138bcfe8000000002bc33bc67c0433f6eb022bf08bcfe8000000008bcfe8000000008bd86a00e80000000083fbff8bce74118bcfe8000000002bc33bc67d0c8bce2bc885c90f8f70ffffff8bcfe80000000083fd018bd80f94c18d45ffbe0100000084c98be80f844fffffff5f5e5d5bc20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Dispatch@Event@@QAEDXZ",
+   "sym_key": "Event::Dispatch"
+  },
+  {
+   "off": 41,
+   "type": "REL32",
+   "sym": "?WaitForIdle@DDraw@@QAEHXZ",
+   "sym_key": "DDraw::WaitForIdle"
+  },
+  {
+   "off": 47,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "?RenderToSurface@DSurface@@QAEHPAX@Z",
+   "sym_key": "DSurface::RenderToSurface"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden@@3PAXA",
+   "sym_key": "g_DSurface_Hidden"
+  },
+  {
+   "off": 69,
+   "type": "REL32",
+   "sym": "?loadScenarioFiles@GameClass@@QAEHH@Z",
+   "sym_key": "GameClass::loadScenarioFiles"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?MessageLoop@@YAPAXXZ",
+   "sym_key": "MessageLoop"
+  },
+  {
+   "off": 79,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3PADA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 95,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?HandleSuspend@DDraw@@QAEDXZ",
+   "sym_key": "DDraw::HandleSuspend"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 130,
+   "type": "REL32",
+   "sym": "?Sleep@@YGXH@Z",
+   "sym_key": "Sleep"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  }
+ ]
+}

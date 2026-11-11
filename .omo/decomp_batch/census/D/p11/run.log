@@ -1,0 +1,97 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x41d380 AirstrikeClass::AirstrikeClass -> AirstrikeClass
+[conv] 0x6a92e0 ObjectClass::GetSidebarTooltip -> ObjectClass
+[conv] 0x4db8a0 TechnoClass::sub_4DB8A0 -> TechnoClass
+[conv] 0x720480 ThemeClass::ReadThemeEntry -> ThemeClass
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+[conv] 0x6fd460 TechnoClass::CreateRadarBlip -> TechnoClass
+[conv] 0x660840 LoadGame::LoadTriggerEvents -> LoadGame
+[conv] 0x621040 unknown::PrintFontLayout -> unknown
+[conv] 0x5d2410 GameClass::FrameLoop -> GameClass
+[conv] 0x4157c0 TechnoClass::ReturnToBase -> TechnoClass
+[conv] 0x595bc0 CCFileClass::Load -> CCFileClass
+[conv] 0x7011a0 ObjectClass::sub_7011A0 -> ObjectClass
+[conv] 0x7680c0 WorldDomination::SetupTerritoryNodes -> WorldDomination
+[conv] 0x4a0190 EnumConnectionsClass::_vt06 -> EnumConnectionsClass
+[conv] 0x4e43c0 ObjectClass::InitGameDropdownColors -> ObjectClass
+[conv] 0x6b56d0 SmudgeTypeClass::GetSize -> SmudgeTypeClass
+[conv] 0x633d30 TechnoClass::ClearScriptPlanningData -> TechnoClass
+[conv] 0x4fbe40 HouseClass::IsCellOccupied -> HouseClass
+[conv] 0x766c10 _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour::Release -> _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] AirstrikeClass           rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] ThemeClass               rc=2
+[era] JumpjetLocomotionClass   rc=2
+[era] LoadGame                 rc=2
+[era] unknown                  rc=0
+[era] GameClass                rc=0
+[era] CCFileClass              rc=2
+[era] WorldDomination          rc=2
+[era] EnumConnectionsClass     rc=2
+[era] SmudgeTypeClass          rc=2
+[era] HouseClass               rc=2
+[era] _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+=== diffasm byte-compare ===
+[diff] 0x621040   MISMATCH         unknown::PrintFontLayout
+[diff] 0x5d2410   MISMATCH         GameClass::FrameLoop
+[ledger] 0x41d380 AirstrikeClass::AirstrikeClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a92e0 ObjectClass::GetSidebarTooltip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4db8a0 sub_4DB8A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x720480 ThemeClass::ReadThemeEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6269a0 System_Reset -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fd460 TechnoClass::CreateRadarBlip -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660840 LoadGame::LoadTriggerEvents -> COMPILE_FAIL (attempt 1)
+[ledger] 0x621040 PrintFontLayout -> NG (attempt 1)
+[ledger] 0x5d2410 GameClass::FrameLoop -> NG (attempt 1)
+[ledger] 0x4157c0 TechnoClass::ReturnToBase -> COMPILE_FAIL (attempt 1)
+[ledger] 0x595bc0 CCFileClass::Load -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7011a0 sub_7011A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7680c0 WorldDomination::SetupTerritoryNodes -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a0190 EnumConnectionsClass::_vt06 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e43c0 InitGameDropdownColors -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b56d0 SmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x633d30 TechnoClass::ClearScriptPlanningData -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fbe40 HouseClass::IsCellOccupied -> COMPILE_FAIL (attempt 1)
+[ledger] 0x766c10 Conflict_WorldDominationTour_12::Release -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2594,
+ "verdicts": {
+  "MISMATCH": 703,
+  "MATCH": 521,
+  "COMPILE_FAIL": 834,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 519,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 243,
+  "ret_norm": 7,
+  "frame_sched": 72,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 114,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.6,
+ "match_rate_of_total_pct": 20.1,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p11\batch_report.json

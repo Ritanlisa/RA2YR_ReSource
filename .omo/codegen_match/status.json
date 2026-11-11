@@ -923,6 +923,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4157c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ReturnToBase",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x41a9e0": {
   "attempts": 6,
   "first_diff": "+20 mov ecx, esi",
@@ -1109,6 +1116,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "AircraftTypeClass::ddtor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x41d380": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AirstrikeClass::AirstrikeClass",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -3905,6 +3919,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a0190": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "EnumConnectionsClass::_vt06",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a0630": {
   "attempts": 9,
   "first_diff": null,
@@ -4462,6 +4483,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_4",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4b64e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::LoadLocomotionFromStream_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5165,6 +5193,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x4db8a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_4DB8A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4dba40": {
   "attempts": 1,
   "first_diff": null,
@@ -5374,6 +5409,13 @@
   "name": "GetResourceIDHardcodedCSF",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e43c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InitGameDropdownColors",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4e4820": {
   "attempts": 9,
@@ -6039,6 +6081,13 @@
   "name": "sub_4FBD80",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x4fbe40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::IsCellOccupied",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4fbf60": {
   "attempts": 1,
@@ -8532,6 +8581,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x595bc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CCFileClass::Load",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5975e0": {
   "attempts": 2,
   "first_diff": "+15 jl 0x5975f6",
@@ -9638,6 +9694,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5d2410": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x18",
+  "name": "GameClass::FrameLoop",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x5d2750": {
   "attempts": 1,
   "first_diff": "+5 jne 0x5d275c",
@@ -10401,6 +10464,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x621040": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x10",
+  "name": "PrintFontLayout",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
+ },
  "0x623120": {
   "attempts": 1,
   "first_diff": null,
@@ -10573,6 +10643,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "FlagSystem::GetNextActive",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6269a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "System_Reset",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10869,6 +10946,13 @@
   "name": "sub_633B80",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x633d30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::ClearScriptPlanningData",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x633e50": {
   "attempts": 3,
@@ -11731,6 +11815,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x660840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadGame::LoadTriggerEvents",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x660f10": {
   "attempts": 1,
   "first_diff": "+9 jge 0x660f3c",
@@ -12550,6 +12641,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6a92e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::GetSidebarTooltip",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6a94f0": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -12764,6 +12862,13 @@
   "attempts": 10,
   "first_diff": null,
   "name": "SmudgeTypeClass::vt_entry_A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6b56d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmudgeTypeClass::GetSize",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -14132,6 +14237,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6fd460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::CreateRadarBlip",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7011a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_7011A0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7036c0": {
   "attempts": 10,
   "first_diff": "+0 sub esp, 0xc",
@@ -14654,6 +14773,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_720440",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x720480": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ThemeClass::ReadThemeEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -16106,6 +16232,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x766c10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Conflict_WorldDominationTour_12::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x766d30": {
   "attempts": 1,
   "first_diff": null,
@@ -16166,6 +16299,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "ConstructWDTSelection_Create_767FB0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7680c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WorldDomination::SetupTerritoryNodes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
