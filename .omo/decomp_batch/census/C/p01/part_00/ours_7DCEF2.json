@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetHandleCount@unknown@@QAGII@Z",
+ "sym_key": "unknown::SetHandleCount",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b44240850e80000000083c404c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__imp_SetHandleCount@@YAHHZZ",
+   "sym_key": "__imp_SetHandleCount"
+  }
+ ]
+}

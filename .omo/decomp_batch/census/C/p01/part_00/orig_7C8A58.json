@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8A58",
+ "name": "_BinkOpen_8",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8A58",
+ "bytes_hex": "ff259c157e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

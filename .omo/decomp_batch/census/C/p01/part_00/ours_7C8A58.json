@@ -1,0 +1,15 @@
+{
+ "symbol": "?_BinkOpen_8@unknown@@QAEHHH@Z",
+ "sym_key": "unknown::_BinkOpen_8",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c24045051e80000000083c408c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?BinkOpen@@YAHHHZZ",
+   "sym_key": "BinkOpen"
+  }
+ ]
+}

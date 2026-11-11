@@ -455,7 +455,7 @@
   "status": "PENDING"
  },
  "0x40e1b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x40e1b0",
   "note": "decomp_batch r2: NO_CLS",
@@ -3878,7 +3878,7 @@
   "status": "PENDING"
  },
  "0x4e8110": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x4e8110",
   "note": "decomp_batch r2: NO_CLS",
@@ -4928,7 +4928,7 @@
   "status": "NG"
  },
  "0x536c00": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x536c00",
   "note": "decomp_batch r2: NO_PSEUDO",
@@ -11900,35 +11900,35 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c87d6": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "RedrawWindow",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c8818": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "GetTextMetricsA",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c885a": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e1084]",
   "name": "GetBkMode",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x7c889c": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "RegOpenKeyExA",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c88e4": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CLSIDFromString",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -11942,21 +11942,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x7c892c": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "SysFreeString",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c896e": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ntohl",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7c89b0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "sendto",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -12005,14 +12005,14 @@
   "status": "NG"
  },
  "0x7c8a16": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x7c8a16",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
  "0x7c8a58": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e159c]",
   "name": "_BinkOpen_8",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -12040,7 +12040,7 @@
   "status": "NG"
  },
  "0x7c8fc9": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x7c8fc9",
   "note": "decomp_batch r2: NO_CLS",
@@ -12187,14 +12187,14 @@
   "status": "OK"
  },
  "0x7dce62": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e127c]",
   "name": "HeapFree",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x7dceaa": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "IsBadWritePtr",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -12208,7 +12208,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7dcef2": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e12c8]",
   "name": "SetHandleCount",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
@@ -12222,21 +12222,21 @@
   "status": "COMPILE_FAIL"
  },
  "0x7dcf3a": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "0x7dcf3a",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
  "0x7dcf7c": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "CompareStringW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcfbe": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": "+0 jmp dword ptr [0x7e1380]",
   "name": "VariantInit",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",

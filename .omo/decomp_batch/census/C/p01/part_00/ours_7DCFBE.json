@@ -1,0 +1,15 @@
+{
+ "symbol": "?VariantInit@unknown@@QAGXPAH@Z",
+ "sym_key": "unknown::VariantInit",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b44240850e80000000059c20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?__imp_VariantInit@@YAHPAXZZ",
+   "sym_key": "__imp_VariantInit"
+  }
+ ]
+}

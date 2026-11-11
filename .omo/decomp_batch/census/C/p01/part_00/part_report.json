@@ -1,0 +1,301 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "COMPILE_FAIL": 9,
+   "MISMATCH": 5,
+   "NO_CLS": 5,
+   "NO_PSEUDO": 1
+  },
+  "pathologies": {
+   "codegen_shape": 5
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x7c87d6",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c87d6.hpp(20) : error C2143: syntax error : missing ',' before '*'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\i",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RedrawWindow",
+   "emitted": "unknown::RedrawWindow",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c8818",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c8818.hpp(20) : error C2061: syntax error : identifier 'LPTEXTMETRICA'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_",
+   "first_diff": null,
+   "pathology": null,
+   "name": "GetTextMetricsA",
+   "emitted": "unknown::GetTextMetricsA",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c885a",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 16B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1084]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "GetBkMode",
+   "emitted": "unknown::GetBkMode",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 16
+  },
+  {
+   "addr": "0x7c889c",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c889c.hpp(20) : error C2143: syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\p",
+   "first_diff": null,
+   "pathology": null,
+   "name": "RegOpenKeyExA",
+   "emitted": "unknown::RegOpenKeyExA",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c88e4",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c88e4.hpp(20) : error C2061: syntax error : identifier 'LPCOLESTR'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\u",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CLSIDFromString",
+   "emitted": "unknown::CLSIDFromString",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c892c",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c892c.hpp(20) : error C2061: syntax error : identifier 'BSTR'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\unknow",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SysFreeString",
+   "emitted": "unknown::SysFreeString",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c896e",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c896e.hpp(20) : error C2143: syntax error : missing ';' before '__stdcall'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\p",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ntohl",
+   "emitted": "unknown::ntohl",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c89b0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7c89b0.hpp(20) : error C2061: syntax error : identifier 'SOCKET'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\unkn",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sendto",
+   "emitted": "unknown::sendto",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c8a16",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7c8a16",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7c8a58",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 21B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e159c]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "_BinkOpen_8",
+   "emitted": "unknown::_BinkOpen_8",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x7dce62",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 26B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e127c]",
+    "ours": "+0 mov eax, dword ptr [esp + 0x10]"
+   },
+   "pathology": "codegen_shape",
+   "name": "HeapFree",
+   "emitted": "unknown::HeapFree",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 26
+  },
+  {
+   "addr": "0x7dceaa",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7dceaa.hpp(20) : error C2061: syntax error : identifier 'UINT_PTR'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\un",
+   "first_diff": null,
+   "pathology": null,
+   "name": "IsBadWritePtr",
+   "emitted": "unknown::IsBadWritePtr",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7dcef2",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 16B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e12c8]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "SetHandleCount",
+   "emitted": "unknown::SetHandleCount",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 16
+  },
+  {
+   "addr": "0x7dcf3a",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7dcf3a",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7dcf7c",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\include\\unknown_7dcf7c.hpp(20) : error C2061: syntax error : identifier 'PCNZWCH'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p01\\part_00\\unk",
+   "first_diff": null,
+   "pathology": null,
+   "name": "CompareStringW",
+   "emitted": "unknown::CompareStringW",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7dcfbe",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 6B ours 14B",
+   "first_diff": {
+    "orig": "+0 jmp dword ptr [0x7e1380]",
+    "ours": "+0 mov eax, dword ptr [esp + 8]"
+   },
+   "pathology": "codegen_shape",
+   "name": "VariantInit",
+   "emitted": "unknown::VariantInit",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/1",
+   "rule_violations": 0,
+   "orig_size": 6,
+   "ours_size": 14
+  },
+  {
+   "addr": "0x536c00",
+   "batch": "censusC",
+   "verdict": "NO_PSEUDO",
+   "note": "empty Hex-Rays body (8B disasm)",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x7c8fc9",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x7c8fc9",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40e1b0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40e1b0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e8110",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e8110",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

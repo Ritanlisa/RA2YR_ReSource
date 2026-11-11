@@ -1,0 +1,81 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c87d6 unknown::RedrawWindow -> unknown
+[conv] 0x7c8818 unknown::GetTextMetricsA -> unknown
+[conv] 0x7c885a unknown::GetBkMode -> unknown
+[conv] 0x7c889c unknown::RegOpenKeyExA -> unknown
+[conv] 0x7c88e4 unknown::CLSIDFromString -> unknown
+[conv] 0x7c892c unknown::SysFreeString -> unknown
+[conv] 0x7c896e unknown::ntohl -> unknown
+[conv] 0x7c89b0 unknown::sendto -> unknown
+[conv] 0x7c8a58 unknown::_BinkOpen_8 -> unknown
+[conv] 0x7dce62 unknown::HeapFree -> unknown
+[conv] 0x7dceaa unknown::IsBadWritePtr -> unknown
+[conv] 0x7dcef2 unknown::SetHandleCount -> unknown
+[conv] 0x7dcf7c unknown::CompareStringW -> unknown
+[conv] 0x7dcfbe unknown::VariantInit -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c885a   MISMATCH         unknown::GetBkMode
+[diff] 0x7c8a58   MISMATCH         unknown::_BinkOpen_8
+[diff] 0x7dce62   MISMATCH         unknown::HeapFree
+[diff] 0x7dcef2   MISMATCH         unknown::SetHandleCount
+[diff] 0x7dcfbe   MISMATCH         unknown::VariantInit
+[ledger] 0x7c87d6 RedrawWindow -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8818 GetTextMetricsA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c885a GetBkMode -> NG (attempt 2)
+[ledger] 0x7c889c RegOpenKeyExA -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c88e4 CLSIDFromString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c892c SysFreeString -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c896e ntohl -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c89b0 sendto -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8a16 0x7c8a16 -> PENDING (attempt 2)
+[ledger] 0x7c8a58 _BinkOpen_8 -> NG (attempt 2)
+[ledger] 0x7dce62 HeapFree -> NG (attempt 2)
+[ledger] 0x7dceaa IsBadWritePtr -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcef2 SetHandleCount -> NG (attempt 2)
+[ledger] 0x7dcf3a 0x7dcf3a -> PENDING (attempt 2)
+[ledger] 0x7dcf7c CompareStringW -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7dcfbe VariantInit -> NG (attempt 2)
+[ledger] 0x536c00 0x536c00 -> PENDING (attempt 2)
+[ledger] 0x7c8fc9 0x7c8fc9 -> PENDING (attempt 2)
+[ledger] 0x40e1b0 0x40e1b0 -> PENDING (attempt 2)
+[ledger] 0x4e8110 0x4e8110 -> PENDING (attempt 2)
+======================================================================
+{
+ "total": 1719,
+ "verdicts": {
+  "MISMATCH": 485,
+  "MATCH": 504,
+  "COMPILE_FAIL": 400,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 319,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 1
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 172,
+  "ret_norm": 5,
+  "frame_sched": 61,
+  "const_fold": 50,
+  "branch_polarity": 33,
+  "regalloc": 57,
+  "branch_order": 67,
+  "width_mismatch": 5,
+  "extern_reloc": 16,
+  "cc_mismatch": 8,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 51.0,
+ "match_rate_of_total_pct": 29.3,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p01\batch_report.json
