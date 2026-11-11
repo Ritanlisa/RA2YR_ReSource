@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p212\part_00
+=== convert (20 addrs) ===
+[conv] 0x5fb2e0 Rules::GetProductionTimeMult -> Rules
+[conv] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> _DynamicVectorClass_PAVSpotLightClass
+[conv] 0x628040 _DynamicVectorClass_PAVColorScheme::FindItemIndex -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x62b300 _DynamicVectorClass_PAVParasiteClass::FindItemIndex -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x63e020 _DynamicVectorClass_PAVPlanningMemberClass::FindItemIndex -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63e8d0 _DynamicVectorClass_PAVEventClass::FindItemIndex_0 -> _DynamicVectorClass_PAVEventClass
+[conv] 0x63ec20 _DynamicVectorClass_PAVPlanningTokenClass::FindItemIndex_1 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x65a470 _DynamicVectorClass_PAVRadBeam::FindItemIndex -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65c180 _DynamicVectorClass_PAVRadSiteClass::FindItemIndex -> _DynamicVectorClass_PAVRadSiteClass
+[conv] 0x660b80 ScriptActionQueue::PushNext -> ScriptActionQueue
+[conv] 0x660bb0 ObjectClass::UI_Create_734120_Create -> ObjectClass
+[conv] 0x660f50 VectorClass_ptr_RadarEventClass::FindItemIndex -> VectorClass_ptr_RadarEventClass
+[conv] 0x67add0 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetSize -> _DynamicVectorClass_PBVVoxelAnimTypeClass
+[conv] 0x67b150 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt04 -> _DynamicVectorClass_PBVSmudgeTypeClass
+[conv] 0x67b4d0 _DynamicVectorClass_PBVTerrainTypeClass::GetSize -> _DynamicVectorClass_PBVTerrainTypeClass
+[conv] 0x69c940 _TypeList_W4DiskID::Read -> _TypeList_W4DiskID
+[conv] 0x69cf70 _DynamicVectorClass_PAVMultiMission::FindItemIndex -> _DynamicVectorClass_PAVMultiMission
+[conv] 0x69d1d0 _DynamicVectorClass_PAUGlobalPacketType::FindItemIndex_0 -> _DynamicVectorClass_PAUGlobalPacketType
+[conv] 0x69d430 VectorClass_ptr_GlobalPacketType::FindItemIndex_1 -> VectorClass_ptr_GlobalPacketType
+[conv] 0x6b16a0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Read -> _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Rules                    rc=0
+[era] _DynamicVectorClass_PAVSpotLightClass rc=2
+[era] _DynamicVectorClass_PAVColorScheme rc=2
+[era] _DynamicVectorClass_PAVParasiteClass rc=2
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=2
+[era] _DynamicVectorClass_PAVEventClass rc=2
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=2
+[era] _DynamicVectorClass_PAVRadBeam rc=2
+[era] _DynamicVectorClass_PAVRadSiteClass rc=2
+[era] ScriptActionQueue        rc=2
+[era] ObjectClass              rc=2
+[era] VectorClass_ptr_RadarEventClass rc=0
+[era] _DynamicVectorClass_PBVVoxelAnimTypeClass rc=2
+[era] _DynamicVectorClass_PBVSmudgeTypeClass rc=2
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=2
+[era] _TypeList_W4DiskID       rc=2
+[era] _DynamicVectorClass_PAVMultiMission rc=2
+[era] _DynamicVectorClass_PAUGlobalPacketType rc=2
+[era] VectorClass_ptr_GlobalPacketType rc=0
+[era] _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x5fb2e0   MISMATCH         Rules::GetProductionTimeMult
+[diff] 0x660f50   MISMATCH         VectorClass_ptr_RadarEventClass::FindItemIndex
+[diff] 0x69d430   MISMATCH         VectorClass_ptr_GlobalPacketType::FindItemIndex_1
+[ledger] 0x5fb2e0 Rules::GetProductionTimeMult -> NG (attempt 1)
+[ledger] 0x600250 _DynamicVectorClass_PAVSpotLightClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x628040 _DynamicVectorClass_PAVColorScheme::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x62b300 _DynamicVectorClass_PAVParasiteClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e020 _DynamicVectorClass_PAVPlanningMemberClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e8d0 _DynamicVectorClass_PAVEventClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63ec20 _DynamicVectorClass_PAVPlanningTokenClass::FindItemIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65a470 _DynamicVectorClass_PAVRadBeam::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65c180 _DynamicVectorClass_PAVRadSiteClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660b80 ScriptActionQueue::PushNext -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660bb0 ObjectClass::UI_Create_734120_Create -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660f50 VectorClass_ptr_RadarEventClass::FindItemIndex -> NG (attempt 1)
+[ledger] 0x67add0 _DynamicVectorClass_PBVVoxelAnimTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b150 _DynamicVectorClass_PBVSmudgeTypeClass::TypeList_vt04 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67b4d0 _DynamicVectorClass_PBVTerrainTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69c940 _TypeList_W4DiskID::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69cf70 _DynamicVectorClass_PAVMultiMission::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d1d0 _DynamicVectorClass_PAUGlobalPacketType::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69d430 VectorClass_ptr_GlobalPacketType::FindItemIndex_1 -> NG (attempt 1)
+[ledger] 0x6b16a0 _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 17
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p212\batch_report.json

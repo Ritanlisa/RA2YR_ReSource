@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetProductionTimeMult@Rules@@QAEPADH@Z",
+ "sym_key": "Rules::GetProductionTimeMult",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c0741e8b0983f8057c0ac1e0039941f7f9c204008d04c18b048500000000c2040033c0c20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?off_832CEC@@3IA",
+   "sym_key": "off_832CEC"
+  }
+ ]
+}

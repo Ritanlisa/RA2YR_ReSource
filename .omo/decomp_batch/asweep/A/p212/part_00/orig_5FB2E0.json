@@ -1,0 +1,11 @@
+{
+ "addr": "0x5FB2E0",
+ "name": "Rules::GetProductionTimeMult",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5FB2E0",
+ "bytes_hex": "8b44240485c0741b8b0983f8057d0d8d14c18b0495ec2c8300c20400c1e0039941f7f9c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
