@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F35F0",
+ "name": "NullModemClass::CheckStatus",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F35F0",
+ "bytes_hex": "8b413885c074078b40048b4038c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

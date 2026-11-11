@@ -1,0 +1,8 @@
+{
+ "symbol": "?checkHotspot@WWMouseClass@@QAEHHH@Z",
+ "sym_key": "WWMouseClass::checkHotspot",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b54240889411c895120c20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetSpread@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::SetSpread",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c07c06898140010000c20400",
+ "relocs": []
+}

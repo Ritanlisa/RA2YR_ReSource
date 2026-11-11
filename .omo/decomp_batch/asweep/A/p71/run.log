@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p71\part_00
+=== convert (20 addrs) ===
+[conv] 0x5f1ea0 Count::GetCountQueue -> Count
+[conv] 0x5f35d0 NullModemClass::Receive -> NullModemClass
+[conv] 0x5f35f0 NullModemClass::CheckStatus -> NullModemClass
+[conv] 0x624110 SimpleDialogControl::Constructor -> SimpleDialogControl
+[conv] 0x631f10 ObjectClass::sub_631F10 -> ObjectClass
+[conv] 0x6594f0 TechnoClass::drawTiberiumPips -> TechnoClass
+[conv] 0x659510 ObjectClass::SpreadRadiationAreaEffect_Helper -> ObjectClass
+[conv] 0x6915d0 SessionClass::SetField -> SessionClass
+[conv] 0x6a4280 JumpjetLocomotionClass::GetLinkedLocomotorPointer_0 -> JumpjetLocomotionClass
+[conv] 0x6aace0 ObjectClass::sub_6AACE0 -> ObjectClass
+[conv] 0x6b7b90 SpawnManagerClass::SetTarget -> SpawnManagerClass
+[conv] 0x6c9690 Float::Accumulate -> Float
+[conv] 0x6d4e00 ObjectClass::sub_6D4E00 -> ObjectClass
+[conv] 0x6dc430 GetCoordDataMap -> _addr_6D
+[conv] 0x708c10 TechnoClass::GetGlobalValue -> TechnoClass
+[conv] 0x70ddd0 TechnoClass::SetSpread -> TechnoClass
+[conv] 0x70de00 TechnoClass::SetMember81 -> TechnoClass
+[conv] 0x71a100 JumpjetLocomotionClass::ShortFunc_71A100 -> JumpjetLocomotionClass
+[conv] 0x75cba0 JumpjetLocomotionClass::ShortFunc_75CBA0 -> JumpjetLocomotionClass
+[conv] 0x7ba380 WWMouseClass::checkHotspot -> WWMouseClass
+=== emit 11 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Count                    rc=0
+[era] NullModemClass           rc=0
+[era] SimpleDialogControl      rc=2
+[era] ObjectClass              rc=0
+[era] TechnoClass              rc=2
+[era] SessionClass             rc=0
+[era] JumpjetLocomotionClass   rc=0
+[era] SpawnManagerClass        rc=0
+[era] Float                    rc=0
+[era] _addr_6D                 rc=2
+[era] WWMouseClass             rc=0
+=== diffasm byte-compare ===
+[diff] 0x5f1ea0   MATCH            Count::GetCountQueue
+[diff] 0x5f35d0   MATCH            NullModemClass::Receive
+[diff] 0x5f35f0   MATCH            NullModemClass::CheckStatus
+[diff] 0x631f10   MISMATCH         ObjectClass::sub_631F10
+[diff] 0x659510   MATCH            ObjectClass::SpreadRadiationAreaEffect_Helper
+[diff] 0x6aace0   MISMATCH         ObjectClass::sub_6AACE0
+[diff] 0x6d4e00   MATCH            ObjectClass::sub_6D4E00
+[diff] 0x6594f0   MATCH            TechnoClass::drawTiberiumPips
+[diff] 0x70ddd0   MATCH            TechnoClass::SetSpread
+[diff] 0x70de00   MATCH            TechnoClass::SetMember81
+[diff] 0x6915d0   MATCH            SessionClass::SetField
+[diff] 0x6a4280   MISMATCH         JumpjetLocomotionClass::GetLinkedLocomotorPointer_0
+[diff] 0x71a100   MISMATCH         JumpjetLocomotionClass::ShortFunc_71A100
+[diff] 0x75cba0   MISMATCH         JumpjetLocomotionClass::ShortFunc_75CBA0
+[diff] 0x6b7b90   MATCH            SpawnManagerClass::SetTarget
+[diff] 0x6c9690   MISMATCH         Float::Accumulate
+[diff] 0x7ba380   MATCH            WWMouseClass::checkHotspot
+[ledger] 0x5f1ea0 Count::GetCountQueue -> OK (attempt 1)
+[ledger] 0x5f35d0 NullModemClass::Receive -> OK (attempt 1)
+[ledger] 0x5f35f0 NullModemClass::CheckStatus -> OK (attempt 1)
+[ledger] 0x624110 SimpleDialogControl::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631f10 ObjectClass::sub_631F10 -> NG (attempt 1)
+[ledger] 0x6594f0 TechnoClass::drawTiberiumPips -> OK (attempt 1)
+[ledger] 0x659510 ObjectClass::SpreadRadiationAreaEffect_Helper -> OK (attempt 1)
+[ledger] 0x6915d0 SessionClass::SetField -> OK (attempt 1)
+[ledger] 0x6a4280 JumpjetLocomotionClass::GetLinkedLocomotorPointer_0 -> NG (attempt 1)
+[ledger] 0x6aace0 ObjectClass::sub_6AACE0 -> NG (attempt 1)
+[ledger] 0x6b7b90 SpawnManagerClass::SetTarget -> OK (attempt 1)
+[ledger] 0x6c9690 Float::Accumulate -> NG (attempt 1)
+[ledger] 0x6d4e00 ObjectClass::sub_6D4E00 -> OK (attempt 1)
+[ledger] 0x6dc430 GetCoordDataMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708c10 TechnoClass::GetGlobalValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70ddd0 TechnoClass::SetSpread -> OK (attempt 1)
+[ledger] 0x70de00 TechnoClass::SetMember81 -> OK (attempt 1)
+[ledger] 0x71a100 JumpjetLocomotionClass::ShortFunc_71A100 -> NG (attempt 1)
+[ledger] 0x75cba0 JumpjetLocomotionClass::ShortFunc_75CBA0 -> NG (attempt 1)
+[ledger] 0x7ba380 WWMouseClass::checkHotspot -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "cc_mismatch": 4
+ },
+ "match_rate_of_decided_pct": 64.7,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p71\batch_report.json

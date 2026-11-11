@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetLinkedLocomotorPointer_0@JumpjetLocomotionClass@@QAGEH@Z",
+ "sym_key": "JumpjetLocomotionClass::GetLinkedLocomotorPointer_0",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b4c240833c08b515085d20f95c0c20800",
+ "relocs": []
+}

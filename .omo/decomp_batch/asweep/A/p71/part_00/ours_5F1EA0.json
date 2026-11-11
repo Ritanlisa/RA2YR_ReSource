@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetCountQueue@Count@@QAEHXZ",
+ "sym_key": "Count::GetCountQueue",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b413885c074078b40048b4028c333c0c3",
+ "relocs": []
+}

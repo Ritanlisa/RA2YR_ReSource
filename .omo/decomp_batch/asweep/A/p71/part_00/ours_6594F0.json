@@ -1,0 +1,8 @@
+{
+ "symbol": "?drawTiberiumPips@TechnoClass@@QAEHHH@Z",
+ "sym_key": "TechnoClass::drawTiberiumPips",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b542408894140895144c20800",
+ "relocs": []
+}

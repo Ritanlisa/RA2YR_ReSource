@@ -1,0 +1,11 @@
+{
+ "addr": "0x6915D0",
+ "name": "SessionClass::SetField",
+ "size": 17,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6915D0",
+ "bytes_hex": "8b41248b492c3b88a00000001bc0f7d8c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
