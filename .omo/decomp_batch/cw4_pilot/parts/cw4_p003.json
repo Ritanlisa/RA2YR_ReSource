@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4e0480",
+  "name": "AbstractClassVector::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p177",
+  "unit": "_VectorClass_PAVAbstractClass",
+  "emitted": "_VectorClass_PAVAbstractClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x4e048c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x54a220",
+  "name": "VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p182",
+  "unit": "_DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass",
+  "emitted": "_DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x54a22c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x74f520",
+  "name": "?::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_VectorClass_PAVVeinholeMonsterClass",
+  "emitted": "_VectorClass_PAVVeinholeMonsterClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x74f52c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50e4d0",
+  "name": "VectorClass_UScoutStruct___33::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_DynamicVectorClass_PBVBuildingTypeClass",
+  "emitted": "_DynamicVectorClass_PBVBuildingTypeClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x50e4dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40e820",
+  "name": "VectorClass_ptr_ScriptClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PAVScriptClass",
+  "emitted": "_DynamicVectorClass_PAVScriptClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x40e82c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x405160",
+  "name": "sub_405160",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 16,
+  "part": "p65",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_405160",
+  "first_diff": {
+   "orig": "+7 jne 0x40516c",
+   "ours": "+7 je 0xd"
+  },
+  "ours_size": 16
+ },
+ {
+  "addr": "0x459fc0",
+  "name": "TypeList_cptr_ParticleSystemTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PBVParticleSystemTypeClass",
+  "emitted": "_DynamicVectorClass_PBVParticleSystemTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x459fcc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4eb3c0",
+  "name": "ParticleSystemClass_16::Read",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_VectorClass_PAVSmudgeClass",
+  "emitted": "_VectorClass_PAVSmudgeClass::Read",
+  "first_diff": {
+   "orig": "+5 jne 0x4eb3cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x69c690",
+  "name": "VectorClass_ptr_GlobalPacketType::GetItemIndex_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p187",
+  "unit": "VectorClass_ptr_GlobalPacketType",
+  "emitted": "VectorClass_ptr_GlobalPacketType::GetItemIndex_1",
+  "first_diff": {
+   "orig": "+5 jne 0x69c69c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4a7ee0",
+  "name": "Dial8Class_48::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p176",
+  "unit": "_VectorClass_PAVDiskLaserClass",
+  "emitted": "_VectorClass_PAVDiskLaserClass::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x4a7eec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x69dfc0",
+  "name": "SidebarClass::startButtonFlash",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 40,
+  "part": "p215",
+  "unit": "SidebarClass",
+  "emitted": "SidebarClass::startButtonFlash",
+  "first_diff": {
+   "orig": "+5 jne 0x69dfe3",
+   "ours": "+5 je 0xc"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x555420",
+  "name": "VectorClass_ptr_LightSourceClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_VectorClass_PAVLightSourceClass",
+  "emitted": "_VectorClass_PAVLightSourceClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x55542c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x54ea50",
+  "name": "JumpjetLocomotionClass_26::Write",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p182",
+  "unit": "_VectorClass_PAUKamikazeControl",
+  "emitted": "_VectorClass_PAUKamikazeControl::Write",
+  "first_diff": {
+   "orig": "+5 jne 0x54ea5c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ebae0",
+  "name": "VectorClass_ptr_UnitClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p179",
+  "unit": "_VectorClass_PAVUnitClass",
+  "emitted": "_VectorClass_PAVUnitClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x4ebaec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x58a820",
+  "name": "VectorClass_UHashObject_uint_uint::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_VectorClass_U_HashObject_II",
+  "emitted": "_VectorClass_U_HashObject_II::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x58a82c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x477870",
+  "name": "_DynamicVectorClass_H::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_H",
+  "emitted": "_DynamicVectorClass_H::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x47787c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x63e470",
+  "name": "BlowPipe_23::GetCount_1",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p186",
+  "unit": "_VectorClass_PAVPlanningNodeClass",
+  "emitted": "_VectorClass_PAVPlanningNodeClass::GetCount_1",
+  "first_diff": {
+   "orig": "+5 jne 0x63e47c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ee0e0",
+  "name": "VectorClass_ptr_AnimTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p180",
+  "unit": "_VectorClass_PAVAnimTypeClass",
+  "emitted": "_VectorClass_PAVAnimTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ee0ec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x45a2e0",
+  "name": "TypeList_Particle::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_PBVParticleSystemTypeClass",
+  "emitted": "_VectorClass_PBVParticleSystemTypeClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x45a2ec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x588f30",
+  "name": "VectorClass_W4PassabilityType::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_DynamicVectorClass_W4PassabilityType",
+  "emitted": "_DynamicVectorClass_W4PassabilityType::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x588f3c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]
