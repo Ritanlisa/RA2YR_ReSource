@@ -1,0 +1,11 @@
+{
+ "addr": "0x4EDC20",
+ "name": "VectorClass_ptr_AircraftTypeClass::LoadTypeData",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4EDC20",
+ "bytes_hex": "8a410c84c0750533c0c204008b4424048b51042bc2c1e802c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

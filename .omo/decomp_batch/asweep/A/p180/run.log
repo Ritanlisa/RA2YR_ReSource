@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p180\part_00
+=== convert (20 addrs) ===
+[conv] 0x4ebd40 _VectorClass_PAVHouseClass::GetCapacity -> _VectorClass_PAVHouseClass
+[conv] 0x4ebfa0 VectorClass::GetIndex -> VectorClass
+[conv] 0x4ec200 _VectorClass_PAVFactoryClass::GetCapacity -> _VectorClass_PAVFactoryClass
+[conv] 0x4ec460 _VectorClass_PAVCampaignClass::GetCapacity -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec920 _VectorClass_PAVHouseTypeClass::LoadTypeData -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4ecde0 _VectorClass_PAVTeamTypeClass::LoadTypeData -> _VectorClass_PAVTeamTypeClass
+[conv] 0x4ed040 _VectorClass_PAVScriptTypeClass::LoadTypeData -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed2a0 _VectorClass_PAVOverlayTypeClass::LoadTypeData -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed500 _VectorClass_PAVSmudgeTypeClass::LoadTypeData -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed760 _VectorClass_PAVTerrainTypeClass::LoadTypeData -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4ed9c0 _VectorClass_PAVBuildingTypeClass::Remove -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4edc20 _VectorClass_PAVAircraftTypeClass::LoadTypeData -> _VectorClass_PAVAircraftTypeClass
+[conv] 0x4ede80 _VectorClass_PAVUnitTypeClass::LoadTypeData -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4ee0e0 _VectorClass_PAVAnimTypeClass::LoadTypeData -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee5a0 _VectorClass_PAVBulletTypeClass::LoadTypeData -> _VectorClass_PAVBulletTypeClass
+[conv] 0x4ee800 _VectorClass_PAVVoxelAnimTypeClass::LoadTypeData -> _VectorClass_PAVVoxelAnimTypeClass
+[conv] 0x4eea60 _VectorClass_PAVIsometricTileTypeClass::LoadTypeData -> _VectorClass_PAVIsometricTileTypeClass
+[conv] 0x4eecc0 _VectorClass_PAVParticleTypeClass::LoadTypeData -> _VectorClass_PAVParticleTypeClass
+[conv] 0x4eef20 _VectorClass_PAVParticleSystemTypeClass::LoadTypeData -> _VectorClass_PAVParticleSystemTypeClass
+[conv] 0x4ef180 _VectorClass_PAVSuperWeaponTypeClass::LoadTypeData -> _VectorClass_PAVSuperWeaponTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVHouseClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVFactoryClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _VectorClass_PAVHouseTypeClass rc=0
+[era] _VectorClass_PAVTeamTypeClass rc=0
+[era] _VectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVOverlayTypeClass rc=0
+[era] _VectorClass_PAVSmudgeTypeClass rc=0
+[era] _VectorClass_PAVTerrainTypeClass rc=0
+[era] _VectorClass_PAVBuildingTypeClass rc=0
+[era] _VectorClass_PAVAircraftTypeClass rc=0
+[era] _VectorClass_PAVUnitTypeClass rc=0
+[era] _VectorClass_PAVAnimTypeClass rc=0
+[era] _VectorClass_PAVBulletTypeClass rc=0
+[era] _VectorClass_PAVVoxelAnimTypeClass rc=0
+[era] _VectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleTypeClass rc=0
+[era] _VectorClass_PAVParticleSystemTypeClass rc=0
+[era] _VectorClass_PAVSuperWeaponTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4ebd40   MISMATCH         _VectorClass_PAVHouseClass::GetCapacity
+[diff] 0x4ebfa0   MISMATCH         VectorClass::GetIndex
+[diff] 0x4ec200   MISMATCH         _VectorClass_PAVFactoryClass::GetCapacity
+[diff] 0x4ec460   MISMATCH         _VectorClass_PAVCampaignClass::GetCapacity
+[diff] 0x4ec920   MISMATCH         _VectorClass_PAVHouseTypeClass::LoadTypeData
+[diff] 0x4ecde0   MISMATCH         _VectorClass_PAVTeamTypeClass::LoadTypeData
+[diff] 0x4ed040   MISMATCH         _VectorClass_PAVScriptTypeClass::LoadTypeData
+[diff] 0x4ed2a0   MISMATCH         _VectorClass_PAVOverlayTypeClass::LoadTypeData
+[diff] 0x4ed500   MISMATCH         _VectorClass_PAVSmudgeTypeClass::LoadTypeData
+[diff] 0x4ed760   MISMATCH         _VectorClass_PAVTerrainTypeClass::LoadTypeData
+[diff] 0x4ed9c0   MISMATCH         _VectorClass_PAVBuildingTypeClass::Remove
+[diff] 0x4edc20   MISMATCH         _VectorClass_PAVAircraftTypeClass::LoadTypeData
+[diff] 0x4ede80   MISMATCH         _VectorClass_PAVUnitTypeClass::LoadTypeData
+[diff] 0x4ee0e0   MISMATCH         _VectorClass_PAVAnimTypeClass::LoadTypeData
+[diff] 0x4ee5a0   MISMATCH         _VectorClass_PAVBulletTypeClass::LoadTypeData
+[diff] 0x4ee800   MISMATCH         _VectorClass_PAVVoxelAnimTypeClass::LoadTypeData
+[diff] 0x4eea60   MISMATCH         _VectorClass_PAVIsometricTileTypeClass::LoadTypeData
+[diff] 0x4eecc0   MISMATCH         _VectorClass_PAVParticleTypeClass::LoadTypeData
+[diff] 0x4eef20   MISMATCH         _VectorClass_PAVParticleSystemTypeClass::LoadTypeData
+[diff] 0x4ef180   MISMATCH         _VectorClass_PAVSuperWeaponTypeClass::LoadTypeData
+[ledger] 0x4ebd40 _VectorClass_PAVHouseClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ebfa0 VectorClass::GetIndex -> NG (attempt 1)
+[ledger] 0x4ec200 _VectorClass_PAVFactoryClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ec460 _VectorClass_PAVCampaignClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ec920 _VectorClass_PAVHouseTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ecde0 _VectorClass_PAVTeamTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ed040 _VectorClass_PAVScriptTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ed2a0 _VectorClass_PAVOverlayTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ed500 _VectorClass_PAVSmudgeTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ed760 _VectorClass_PAVTerrainTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ed9c0 _VectorClass_PAVBuildingTypeClass::Remove -> NG (attempt 1)
+[ledger] 0x4edc20 _VectorClass_PAVAircraftTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ede80 _VectorClass_PAVUnitTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ee0e0 _VectorClass_PAVAnimTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ee5a0 _VectorClass_PAVBulletTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ee800 _VectorClass_PAVVoxelAnimTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4eea60 _VectorClass_PAVIsometricTileTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4eecc0 _VectorClass_PAVParticleTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4eef20 _VectorClass_PAVParticleSystemTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4ef180 _VectorClass_PAVSuperWeaponTypeClass::LoadTypeData -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "branch_order": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p180\batch_report.json
