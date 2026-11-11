@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p243\part_00
+=== convert (20 addrs) ===
+[conv] 0x538520 _VectorClass_PAVCCINIClass::AddRef -> _VectorClass_PAVCCINIClass
+[conv] 0x53c520 _VectorClass_PBVAnimClass::AddRef -> _VectorClass_PBVAnimClass
+[conv] 0x53daa0 _VectorClass_PAVIonBlastClass::Add -> _VectorClass_PAVIonBlastClass
+[conv] 0x54a250 _VectorClass_PAG::Get -> _VectorClass_PAG
+[conv] 0x54a4b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Add -> _VectorClass_PAUTileInsertType_IsometricTileTypeClass
+[conv] 0x54e8f0 _VectorClass_PAUKamikazeControl::AddRef -> _VectorClass_PAUKamikazeControl
+[conv] 0x5552c0 _VectorClass_PAVLightSourceClass::Add -> _VectorClass_PAVLightSourceClass
+[conv] 0x555520 _VectorClass_PAVPendingCellClass_LightSourceClass::Add -> _VectorClass_PAVPendingCellClass_LightSourceClass
+[conv] 0x556f10 _VectorClass_PAVLineTrail::Add -> _VectorClass_PAVLineTrail
+[conv] 0x558240 _VectorClass_PBG::Get -> _VectorClass_PBG
+[conv] 0x55a1b0 _VectorClass_PAVFileEntryClass::vt01 -> _VectorClass_PAVFileEntryClass
+[conv] 0x5654e0 ObjectClass::sub_5654E0 -> ObjectClass
+[conv] 0x589ca0 _VectorClass_PAVCellClass::InitCellVe_vt01 -> _VectorClass_PAVCellClass
+[conv] 0x589eb0 _VectorClass_W4PassabilityType::AddRef -> _VectorClass_W4PassabilityType
+[conv] 0x58a260 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x5ac6a0 _VectorClass_PAVMapRegionClass::Add -> _VectorClass_PAVMapRegionClass
+[conv] 0x5aca60 _VectorClass_PAU_WIN32_FIND_DATAA::AddRef -> _VectorClass_PAU_WIN32_FIND_DATAA
+[conv] 0x5ad0f0 _VectorClass_N::AddRef -> _VectorClass_N
+[conv] 0x5c0ad0 _VectorClass_PBD::CompareVector -> _VectorClass_PBD
+[conv] 0x5c5130 _VectorClass_PAUMPlayerScoreType::AddRef -> _VectorClass_PAUMPlayerScoreType
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVCCINIClass rc=2
+[era] _VectorClass_PBVAnimClass rc=2
+[era] _VectorClass_PAVIonBlastClass rc=2
+[era] _VectorClass_PAG         rc=2
+[era] _VectorClass_PAUTileInsertType_IsometricTileTypeClass rc=2
+[era] _VectorClass_PAUKamikazeControl rc=2
+[era] _VectorClass_PAVLightSourceClass rc=2
+[era] _VectorClass_PAVPendingCellClass_LightSourceClass rc=2
+[era] _VectorClass_PAVLineTrail rc=2
+[era] _VectorClass_PBG         rc=2
+[era] _VectorClass_PAVFileEntryClass rc=2
+[era] ObjectClass              rc=2
+[era] _VectorClass_PAVCellClass rc=2
+[era] _VectorClass_W4PassabilityType rc=2
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=2
+[era] _VectorClass_PAVMapRegionClass rc=2
+[era] _VectorClass_PAU_WIN32_FIND_DATAA rc=2
+[era] _VectorClass_N           rc=0
+[era] _VectorClass_PBD         rc=2
+[era] _VectorClass_PAUMPlayerScoreType rc=2
+=== diffasm byte-compare ===
+[diff] 0x5ad0f0   MISMATCH         _VectorClass_N::AddRef
+[ledger] 0x538520 _VectorClass_PAVCCINIClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53c520 _VectorClass_PBVAnimClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53daa0 _VectorClass_PAVIonBlastClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a250 _VectorClass_PAG::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54a4b0 _VectorClass_PAUTileInsertType_IsometricTileTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e8f0 _VectorClass_PAUKamikazeControl::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5552c0 _VectorClass_PAVLightSourceClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x555520 _VectorClass_PAVPendingCellClass_LightSourceClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556f10 _VectorClass_PAVLineTrail::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x558240 _VectorClass_PBG::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x55a1b0 _VectorClass_PAVFileEntryClass::vt01 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5654e0 ObjectClass::sub_5654E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589ca0 _VectorClass_PAVCellClass::InitCellVe_vt01 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589eb0 _VectorClass_W4PassabilityType::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58a260 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ac6a0 _VectorClass_PAVMapRegionClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5aca60 _VectorClass_PAU_WIN32_FIND_DATAA::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad0f0 _VectorClass_N::AddRef -> NG (attempt 1)
+[ledger] 0x5c0ad0 _VectorClass_PBD::CompareVector -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c5130 _VectorClass_PAUMPlayerScoreType::AddRef -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 19,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p243\batch_report.json
