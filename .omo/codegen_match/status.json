@@ -1666,98 +1666,98 @@
   "status": "COMPILE_FAIL"
  },
  "0x498150": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZRead_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4982e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4984d0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4986d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4988c0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZRead_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498ac0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498cd0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x498ed0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWarp_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4990e0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499280": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransXlatAlphaZReadWrite_ushort::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499430": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransZRemapXlatAlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499650": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent75AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499860": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent50AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x499a90": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "RLEBlitTransLucent25AlphaZReadWrite_ushort::AddRef",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1771,7 +1771,7 @@
   "status": "NG"
  },
  "0x49e400": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CampaignClass::FindMission",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -1785,35 +1785,35 @@
   "status": "OK"
  },
  "0x4a00b0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "EnumConnectionsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0630": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "ConnectionPointClass::Unadvise",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a0a50": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "EnumConnectionPointsClass::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2600": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CountdownTimer::UpdateDisplay",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4a2cd0": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "CStreamClass::CopyStreamToBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",

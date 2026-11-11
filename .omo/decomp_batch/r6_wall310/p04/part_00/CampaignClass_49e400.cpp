@@ -4,19 +4,19 @@
 
 char CampaignClass::FindMission(char * p0, int * p1)
 {
-        if ( !(char *)this ->scenario )
+        if ( !this->scenario )
         {
             ((CampaignClass *)(this))->LoadFromINI();
         }
         int v10;
         v10 = 0;
         int v4;
-        char * v5;
+        int v5;
         int v6;
         bool v7;
         int v9;
         int v11;
-        if ( (char *)this ->q05C > 0 )
+        if ( this->q05C > 0 )
         {
             v9 = 0;
             while ( 2 )
@@ -25,7 +25,7 @@ char CampaignClass::FindMission(char * p0, int * p1)
                 v11 = 0;
                 do
                 {
-                    v5 = (char *)(v9 + (char *)this ->scenario);
+                    v5 = v9 + this->scenario;
                     v6 = 0;
                     if ( *(char *)(v5 + 8) > 0 )
                     {
@@ -36,21 +36,21 @@ char CampaignClass::FindMission(char * p0, int * p1)
                         {
                             ++v6;
                             v4 += 780;
-                            v5 = (char *)this ->scenario + v9;
+                            v5 = (unsigned int)(this->scenario + v9);
                             if ( v6 >= *(char *)(v5 + 8) )
                             {
                                 v4 = v11;
                                 goto LABEL_10;
                             }
                         }
-                        *p0 = (unsigned int)((char *)this ->scenario + 76 * v10);
+                        *p0 = (unsigned int)(this->scenario + 76 * v10);
                         return (char)(1);
                     }
                     LABEL_10:
             v4 += 260;
                     v11 = v4;
                 } while ( v4 < 780 );
-                v7 = ++v10 < (char *)this ->q05C;
+                v7 = ++v10 < this->q05C;
                 v9 += 76;
                 if ( v7 )
                 {

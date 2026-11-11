@@ -31,7 +31,7 @@ int __stdcall EnumConnectionPointsClass::ddtor(int * p0, unsigned int p1, int p2
         int v10;
         for ( i = 0; i < p0; *(unsigned int *)(v4 - 4) = *(unsigned int *)(this->m010 + 4 * v9) )
         {
-            EnumConnectionPointsClass_field_0x04 = this->m004;
+            EnumConnectionPointsClass_field_0x04 = (unsigned int)(this->m004);
             if ( EnumConnectionPointsClass_field_0x04 >= this->m01C )
             {
                 break;
