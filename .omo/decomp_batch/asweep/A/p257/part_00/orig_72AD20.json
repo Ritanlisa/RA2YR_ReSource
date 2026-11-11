@@ -1,0 +1,11 @@
+{
+ "addr": "0x72AD20",
+ "name": "Display::GetViewport",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72AD20",
+ "bytes_hex": "83ec108b15b46f88008bc18b0db06f8800538a1d7ceba800568b35bc6f880057894c240c33c933ff895424108b15b86f880084db750f8a1d6beda80084db7505b9a80000008bd881eaa800000083ee20890b897b045f89530889730c5e5b83c410c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

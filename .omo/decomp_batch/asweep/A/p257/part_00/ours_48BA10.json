@@ -1,0 +1,8 @@
+{
+ "symbol": "?initQueue@ConnectionClass@@QAEII@Z",
+ "sym_key": "ConnectionClass::initQueue",
+ "size": 84,
+ "link_base": 0,
+ "bytes_hex": "8b4118563d000100005775208b51148b711c8b7c240c2bd603d7b07f3ac28951141bc0f7d8c1ea0803c2eb168b7c240c8d70018b411433d203c7897118894114f7f689411c8b41203bf876038979205f5ec20400",
+ "relocs": []
+}

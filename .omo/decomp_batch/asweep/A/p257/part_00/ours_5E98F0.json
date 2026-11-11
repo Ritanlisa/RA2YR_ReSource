@@ -1,0 +1,8 @@
+{
+ "symbol": "?IndexToDlgID@PlayerSlot@@QAEHXZ",
+ "sym_key": "PlayerSlot::IndexToDlgID",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8bc185c07506b811040000c383f8017506b812040000c383f8027506b813040000c383f8037506b814040000c383f8047506b815040000c383f8057506b816040000c383f8067506b817040000c383e807f7d81bc025e7fbffff0518040000c3",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?TrackState@GadgetClass@@QAEDHH@Z",
+ "sym_key": "GadgetClass::TrackState",
+ "size": 92,
+ "link_base": 0,
+ "bytes_hex": "8b4110568b742408573bf0754a8b54241083fa02751e8bf833c08a411481e700ffffff0bc784c0750bc6411401c741080100000085c074053b5118721a85f6741683fa037504c6411400897110895118c74108010000005f5ec20800",
+ "relocs": []
+}

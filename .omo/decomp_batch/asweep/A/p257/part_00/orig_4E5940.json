@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E5940",
+ "name": "GetResourceID4CSF",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E5940",
+ "bytes_hex": "8bc185c07506b86d070000c383f8017506b86e070000c383f8027506b86f070000c383f8037506b870070000c383f8047506b871070000c383f8057506b872070000c383f8067506b873070000c383e807f7d81bc0258bf8ffff0574070000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

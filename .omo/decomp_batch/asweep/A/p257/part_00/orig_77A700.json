@@ -1,0 +1,11 @@
+{
+ "addr": "0x77A700",
+ "name": "GadgetClass::TrackState",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77A700",
+ "bytes_hex": "8b411056578b7c240c3bf8751b837c24100275478a411484c075405fc6411401c64108015ec208008b7424108b51183bf20f9dc285c07504b201eb0484d2741b85ff741784d2741383fe037504c6411400897910897118c64108015f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

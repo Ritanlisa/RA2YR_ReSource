@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetResourceID3CSF@ObjectClass@@QAEHXZ",
+ "sym_key": "ObjectClass::GetResourceID3CSF",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8bc185c07506b8a3060000c383f8017506b8a4060000c383f8027506b8a5060000c383f8037506b8a6060000c383f8047506b8a7060000c383f8057506b8a8060000c383f8067506b8aa060000c383e807f7d81bc02554f9ffff05ab060000c3",
+ "relocs": []
+}

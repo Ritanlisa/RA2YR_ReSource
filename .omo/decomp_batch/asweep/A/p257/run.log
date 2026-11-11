@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p257\part_00
+=== convert (20 addrs) ===
+[conv] 0x4e41d0 ObjectClass::GetResourceIDCSF -> ObjectClass
+[conv] 0x4e4e60 ObjectClass::GetResourceID3CSF -> ObjectClass
+[conv] 0x4e5940 ObjectClass::GetResourceID4CSF -> ObjectClass
+[conv] 0x5e98f0 PlayerSlot::IndexToDlgID -> PlayerSlot
+[conv] 0x5eaad0 ObjectClass::RefreshLobbyAll_Helper_5EAAD0 -> ObjectClass
+[conv] 0x6c96e0 ObjectClass::sub_6C96E0 -> ObjectClass
+[conv] 0x735120 CharToWideString -> _addr_73
+[conv] 0x77a700 GadgetClass::TrackState -> GadgetClass
+[conv] 0x4ac310 DisplayClass::InitViewBounds -> DisplayClass
+[conv] 0x655050 ObjectClass::sub_655050 -> ObjectClass
+[conv] 0x680ff0 GameState::Reset -> GameState
+[conv] 0x48ba10 ConnectionClass::initQueue -> ConnectionClass
+[conv] 0x494490 _BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatWriteAlpha_G
+[conv] 0x6615d0 sub_6615D0 -> _addr_66
+[conv] 0x72ad20 Display::GetViewport -> Display
+[conv] 0x732210 SelectFactionThemeMusic_Helper -> SelectFactionThemeMusic
+[conv] 0x568350 Tactical::IsCellVisible -> Tactical
+[conv] 0x589300 _VectorClass_UZoneConnectionClass::AddRef -> _VectorClass_UZoneConnectionClass
+[conv] 0x5b2fd0 MissionClass::ForceMission -> MissionClass
+[conv] 0x74b8f0 VoxelAnimTypeClass::GetData -> VoxelAnimTypeClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] PlayerSlot               rc=0
+[era] _addr_73                 rc=0
+[era] GadgetClass              rc=0
+[era] DisplayClass             rc=2
+[era] GameState                rc=0
+[era] ConnectionClass          rc=0
+[era] _BlitTransXlatWriteAlpha_G rc=2
+[era] _addr_66                 rc=2
+[era] Display                  rc=0
+[era] SelectFactionThemeMusic  rc=2
+[era] Tactical                 rc=2
+[era] _VectorClass_UZoneConnectionClass rc=2
+[era] MissionClass             rc=0
+[era] VoxelAnimTypeClass       rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e41d0   MATCH            ObjectClass::GetResourceIDCSF
+[diff] 0x4e4e60   MATCH            ObjectClass::GetResourceID3CSF
+[diff] 0x4e5940   MATCH            ObjectClass::GetResourceID4CSF
+[diff] 0x5eaad0   MATCH            ObjectClass::RefreshLobbyAll_Helper_5EAAD0
+[diff] 0x655050   MISMATCH         ObjectClass::sub_655050
+[diff] 0x5e98f0   MATCH            PlayerSlot::IndexToDlgID
+[diff] 0x735120   MISMATCH         CharToWideString
+[diff] 0x77a700   MISMATCH         GadgetClass::TrackState
+[diff] 0x680ff0   MATCH            GameState::Reset
+[diff] 0x48ba10   MISMATCH         ConnectionClass::initQueue
+[diff] 0x72ad20   MISMATCH         Display::GetViewport
+[diff] 0x5b2fd0   MISMATCH         MissionClass::ForceMission
+[diff] 0x74b8f0   MATCH            VoxelAnimTypeClass::GetData
+[ledger] 0x4e41d0 ObjectClass::GetResourceIDCSF -> OK (attempt 1)
+[ledger] 0x4e4e60 ObjectClass::GetResourceID3CSF -> OK (attempt 1)
+[ledger] 0x4e5940 ObjectClass::GetResourceID4CSF -> OK (attempt 1)
+[ledger] 0x5e98f0 PlayerSlot::IndexToDlgID -> OK (attempt 1)
+[ledger] 0x5eaad0 ObjectClass::RefreshLobbyAll_Helper_5EAAD0 -> OK (attempt 1)
+[ledger] 0x6c96e0 ObjectClass::sub_6C96E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x735120 CharToWideString -> NG (attempt 1)
+[ledger] 0x77a700 GadgetClass::TrackState -> NG (attempt 1)
+[ledger] 0x4ac310 DisplayClass::InitViewBounds -> COMPILE_FAIL (attempt 1)
+[ledger] 0x655050 ObjectClass::sub_655050 -> NG (attempt 1)
+[ledger] 0x680ff0 GameState::Reset -> OK (attempt 1)
+[ledger] 0x48ba10 ConnectionClass::initQueue -> NG (attempt 1)
+[ledger] 0x494490 _BlitTransXlatWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6615d0 sub_6615D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72ad20 Display::GetViewport -> NG (attempt 1)
+[ledger] 0x732210 SelectFactionThemeMusic_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x568350 Tactical::IsCellVisible -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589300 _VectorClass_UZoneConnectionClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b2fd0 MissionClass::ForceMission -> NG (attempt 1)
+[ledger] 0x74b8f0 VoxelAnimTypeClass::GetData -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 7,
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 6
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 53.8,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p257\batch_report.json

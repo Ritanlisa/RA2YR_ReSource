@@ -1,0 +1,21 @@
+{
+ "symbol": "?ForceMission@MissionClass@@QAEHXZ",
+ "sym_key": "MissionClass::ForceMission",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "518b81ac00000083f81c8b442400750783f805750259c333d28981ac000000c781b4000000ffffffff8891b80000008991bc000000a1000000008981c00000008991c40000008b89c8000000a10000000089018b44240089410489510859c3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

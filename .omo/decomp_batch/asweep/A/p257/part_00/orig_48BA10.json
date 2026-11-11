@@ -1,0 +1,11 @@
+{
+ "addr": "0x48BA10",
+ "name": "ConnectionClass::initQueue",
+ "size": 98,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x48BA10",
+ "bytes_hex": "8b411833d2563d0001000057752c8b7c240c8b711c8bc72bc68b711403f08971148bc681e6ff00000083fe7f7605ba01000000c1e80803c2eb168b7c240c8d70018b411433d203c7897118894114f7f689411c8b41203bf876038979205f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

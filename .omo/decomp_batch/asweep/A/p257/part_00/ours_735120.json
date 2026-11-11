@@ -1,0 +1,33 @@
+{
+ "symbol": "?CharToWideString@@YIPADPAE@Z",
+ "sym_key": "Unnamed::CharToWideString",
+ "size": 95,
+ "link_base": 0,
+ "bytes_hex": "85c9750333c0c3a1000000008a11c1e00b56050000000057bf0004000084d28bf0741b85ff7417660fb6d266891683c6024183ffff74014f8a1184d275e566c706000066c780fe07000000008a0d000000005f415e83e107890d00000000c3",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1CF94@@3IA",
+   "sym_key": "DataGlobal_B1CF94"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B13F24@@3EA",
+   "sym_key": "DataGlobal_B13F24"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1CF94@@3IA",
+   "sym_key": "DataGlobal_B1CF94"
+  },
+  {
+   "off": 90,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B1CF94@@3IA",
+   "sym_key": "DataGlobal_B1CF94"
+  }
+ ]
+}

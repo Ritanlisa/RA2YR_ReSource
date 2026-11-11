@@ -1,0 +1,11 @@
+{
+ "addr": "0x735120",
+ "name": "CharToWideString",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x735120",
+ "bytes_hex": "85c9750333c0c3a194cfb100538a1956c1e00b05243fb1005784dbbe000400008bd0741a85f67416660fb63966893a83c2024183feff74014e80390075e666c702000066c780fe07000000008b0d94cfb1005f415e83e1075b890d94cfb100c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

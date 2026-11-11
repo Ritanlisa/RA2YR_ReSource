@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetViewport@Display@@QAEPAHXZ",
+ "sym_key": "Display::GetViewport",
+ "size": 68,
+ "link_base": 0,
+ "bytes_hex": "8bc1568a0d0000000033f684c9750f8a0d0000000084c97505bea80000008b0d000000008b150000000081c158ffffff83c2e08930c740040000000089480889500c5ec3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB7C@@3EA",
+   "sym_key": "DataGlobal_A8EB7C"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_ArmageddonMode@@3_NA",
+   "sym_key": "g_ArmageddonMode"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenBounds@@3IA",
+   "sym_key": "g_CreditsScreenBounds"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?g_CreditsScreenConfig@@3IA",
+   "sym_key": "g_CreditsScreenConfig"
+  }
+ ]
+}

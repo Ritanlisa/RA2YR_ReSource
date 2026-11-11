@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B2FD0",
+ "name": "MissionClass::ForceMission",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B2FD0",
+ "bytes_hex": "8b81ac00000083ec0c83f81c8b442410750583f805744633d28981ac000000c781b4000000ffffffff8891b80000008991bc000000a184eda8008981c00000008991c4000000a184eda80081c1c800000089018b44240489410489510883c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

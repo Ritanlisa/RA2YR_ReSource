@@ -1,0 +1,11 @@
+{
+ "addr": "0x74B8F0",
+ "name": "VoxelAnimTypeClass::GetData",
+ "size": 99,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74B8F0",
+ "bytes_hex": "8b442404568bb1f802000033d23bf075068991f80200003981e402000075068991e40200003981e802000075068991e80200003981ec02000075068991ec0200003981d402000075068991d40200008bb1fc0200003bf05e75068991fc020000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
