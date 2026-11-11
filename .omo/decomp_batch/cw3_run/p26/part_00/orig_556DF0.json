@@ -1,0 +1,11 @@
+{
+ "addr": "0x556DF0",
+ "name": "Game_Destroy",
+ "size": 192,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556DF0",
+ "bytes_hex": "51a188cbab00535733db33ff3bc37e7a56a17ccbab008b34b83bf374628b46043bc374098998a8000000895e048b1578cbab008d4c240c51b978cbab0089742410ff521083f8ff742d8b0d88cbab003bc17d23493bc1890d88cbab007d188b0d7ccbab00408b1481895481fc8b0d88cbab003bc17ce856e8d11c270083c404a188cbab00473bf87c885ea17ccbab00891d88cbab003bc37417381d85cbab00740f50e8a61c270083c404891d7ccbab00881d85cbab00891d80cbab005f5b59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

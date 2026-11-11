@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7b2ff0",
+  "name": "UDPInterfaceClass_Destru::Flush",
+  "cls": null,
+  "size": 177,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing ',' before identifier 'p1'"
+ },
+ {
+  "addr": "0x69fb20",
+  "name": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
+  "cls": null,
+  "size": 178,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'Owner' : is not a member of 'ShipLocomotionClass'"
+ },
+ {
+  "addr": "0x720140",
+  "name": "AbstractClass::fireWeapon",
+  "cls": null,
+  "size": 178,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.m_1' must have class/struct/union type"
+ },
+ {
+  "addr": "0x4fd060",
+  "name": "HouseClass::FindBuildingOfType",
+  "cls": null,
+  "size": 179,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x6c9c60",
+  "name": "BinkMovie::CheckKeyframeTransition",
+  "cls": null,
+  "size": 179,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'m000' : is not a member of 'BinkMovie'"
+ },
+ {
+  "addr": "0x6e1530",
+  "name": "ScenarioClass::PrepareTextDisplay",
+  "cls": null,
+  "size": 179,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x486ff0",
+  "name": "Cell::IsBuildableAdvanced",
+  "cls": null,
+  "size": 182,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'class ObjectClass *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x5cd410",
+  "name": "MSBitPrintAnim::SetText",
+  "cls": null,
+  "size": 182,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'g_GameFontObject' : undeclared identifier"
+ },
+ {
+  "addr": "0x63d210",
+  "name": "ActionScenarioClassCoordToScreen",
+  "cls": null,
+  "size": 184,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'LCTYPE'"
+ },
+ {
+  "addr": "0x6acca0",
+  "name": "Map_Handle_6ACCA0",
+  "cls": null,
+  "size": 187,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'SendDlgItemMessageA' : cannot convert parameter 1 from 'void *' to 'int'"
+ },
+ {
+  "addr": "0x7b3310",
+  "name": "UDPInterfaceClass::CheckStatus",
+  "cls": null,
+  "size": 188,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2296",
+  "first_msg": "'&' : illegal, left operand has type 'void *'"
+ },
+ {
+  "addr": "0x726400",
+  "name": "BuildingClass::ProcessUpgradeEffects",
+  "cls": null,
+  "size": 190,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2036",
+  "first_msg": "'void *' : unknown size"
+ },
+ {
+  "addr": "0x556df0",
+  "name": "Game_Destroy",
+  "cls": null,
+  "size": 192,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x7b4b50",
+  "name": "sub_7B4B50",
+  "cls": null,
+  "size": 195,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x6e6f20",
+  "name": "BuildingLoadQueue::Find",
+  "cls": null,
+  "size": 196,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2228",
+  "first_msg": "left of '.uniqueId' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7464e0",
+  "name": "TechnoClass::TransferTurret",
+  "cls": null,
+  "size": 196,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'void *' to 'class CellClass *'"
+ },
+ {
+  "addr": "0x50e0e0",
+  "name": "HouseClass::LostPoweredCenter",
+  "cls": null,
+  "size": 198,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2446",
+  "first_msg": "'==' : no conversion from 'class HouseClass *const ' to 'unsigned int'"
+ },
+ {
+  "addr": "0x5eacd0",
+  "name": "RefreshLobbyAll_Get_5EACD0",
+  "cls": null,
+  "size": 199,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4a0630",
+  "name": "ConnectionPointClass::Unadvise",
+  "cls": null,
+  "size": 200,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x5d5f30",
+  "name": "MultiplayerGameMode::Find",
+  "cls": null,
+  "size": 201,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ }
+]

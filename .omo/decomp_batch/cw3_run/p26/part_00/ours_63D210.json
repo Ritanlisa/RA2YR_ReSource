@@ -1,0 +1,39 @@
+{
+ "symbol": "?ActionScenarioClassCoordToScreen@@YIPAVBuildingClass@@PAHPBXH@Z",
+ "sym_key": "Unnamed::ActionScenarioClassCoordToScreen",
+ "size": 182,
+ "link_base": 0,
+ "bytes_hex": "81ec9400000083c8ff538bd983c9ff85d20f848e0000005657b91b0000008bf28d7c24308d542430f3a566a58d4c240ca4e8000000008b088b50048b400883f9ff75263bd175223bc1751e8bb424a400000085f674138b068d4c24245156ff50588b088b50048b40088954241c894424208d54240c8d442418894c24188b0d000000005250e8000000008b150000000033c08b4c240ca00000000003ca8b5424105f03c25e894304890b8bc35b81c494000000c20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?GetScenarioClassActionCoords@@YIPAVCoord3D@@PAX0@Z",
+   "sym_key": "GetScenarioClassActionCoords"
+  },
+  {
+   "off": 127,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 134,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 140,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_Map_VisibleRect@@3_NA",
+   "sym_key": "g_Map_VisibleRect"
+  }
+ ]
+}
