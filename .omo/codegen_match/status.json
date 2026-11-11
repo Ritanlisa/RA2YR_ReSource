@@ -2667,11 +2667,11 @@
   "status": "NG"
  },
  "0x50fb20": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass__N::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x510a20": {
   "attempts": 3,
@@ -2877,7 +2877,7 @@
   "status": "OK"
  },
  "0x523250": {
-  "attempts": 5,
+  "attempts": 6,
   "first_diff": null,
   "name": "InfantryClass::ComputeTransform",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -2933,25 +2933,25 @@
   "status": "OK"
  },
  "0x526960": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+13 je 0x526a17",
   "name": "INIClass::GetKeyCount",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x526a30": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "INIClass::FindKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x526cc0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+9 push esi",
   "name": "INIClass::GetStringByIndex",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x52b170": {
   "attempts": 2,
@@ -2961,7 +2961,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x52b2b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "INIClass::deleteSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3164,7 +3164,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x5388a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "SortedArray::RemoveByKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3192,18 +3192,18 @@
   "status": "NG"
  },
  "0x53ef60": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "first_diff": "+0 mov eax, ecx",
   "name": "Network::processPacket",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "status": "NG"
  },
  "0x53f0e0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov edx, dword ptr [esp + 4]",
   "name": "Network::FormatAddress",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x53f1f0": {
   "attempts": 2,
@@ -3220,28 +3220,28 @@
   "status": "OK"
  },
  "0x53fbd0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "IPXGlobalConnClass::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x540340": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "IPXGlobalConnClass::SendPacket",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x540c60": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Network::SetConnectionParams",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x540dc0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "SessionClass::initLAN",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3255,14 +3255,14 @@
   "status": "OK"
  },
  "0x542520": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "IPXManagerClass::ProcessQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x547230": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TacticalClass::DrawCellOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3290,14 +3290,14 @@
   "status": "OK"
  },
  "0x54b8d0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x54da50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_10",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3318,14 +3318,14 @@
   "status": "NG"
  },
  "0x54fe60": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TimerClass::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x552b10": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Scenario::ComputeDisplayPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3360,7 +3360,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x556a20": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ObjectClass::checkLimbo",
   "note": "decomp_batch r2: COMPILE_FAIL",

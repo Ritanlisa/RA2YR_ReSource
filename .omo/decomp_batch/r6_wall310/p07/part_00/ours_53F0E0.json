@@ -1,0 +1,63 @@
+{
+ "symbol": "?FormatAddress@Network@@QAEPADPAG@Z",
+ "sym_key": "Network::FormatAddress",
+ "size": 196,
+ "link_base": 0,
+ "bytes_hex": "558b6c240885ed75028be98b15000000008b450483fa0189442408756933d256668b55088b7500c1ea08575233d28bc88a55088bfec1f9085233d28a54241a81e1ff0000005152c1ef0825ff00000051c1ee1081e7ff0000005081e6ff00000033c08a450057565750680000000068e4000000e80000000083c430b8e40000005f5e5dc204008b098bd081e1ffff000025ff000000c1fa085133c98a4c240e81e2ff00000052515250680000000068e4000000e80000000083c41cb8e40000005dc20400",
+ "relocs": [
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "??_C@_0DE@BPMD@?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?3?5?$CF02X?5?$CF02X?5@",
+   "sym_key": "??_C@_0DE@BPMD@?$CF02X?5?$CF02X?5?$CF02X?5?$CF02X?5?3?5?$CF02X?5?$CF02X?5@"
+  },
+  {
+   "off": 111,
+   "type": "DIR32",
+   "sym": "?stru_AA0398@@3PADA",
+   "sym_key": "stru_AA0398"
+  },
+  {
+   "off": 116,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 124,
+   "type": "DIR32",
+   "sym": "?stru_AA0398@@3PADA",
+   "sym_key": "stru_AA0398"
+  },
+  {
+   "off": 170,
+   "type": "DIR32",
+   "sym": "??_C@_0BB@IJI@?$CFd?4?$CFd?4?$CFd?4?$CFd?5?$DL?5?$CFd?$AA@",
+   "sym_key": "??_C@_0BB@IJI@?$CFd?4?$CFd?4?$CFd?4?$CFd?5?$DL?5?$CFd?$AA@"
+  },
+  {
+   "off": 175,
+   "type": "DIR32",
+   "sym": "?stru_AA0398@@3PADA",
+   "sym_key": "stru_AA0398"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "_sprintf",
+   "sym_key": "sprintf"
+  },
+  {
+   "off": 188,
+   "type": "DIR32",
+   "sym": "?stru_AA0398@@3PADA",
+   "sym_key": "stru_AA0398"
+  }
+ ]
+}

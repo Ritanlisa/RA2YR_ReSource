@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetCapacity@_DynamicVectorClass__N@@QAEDHPAD@Z",
+ "sym_key": "_DynamicVectorClass__N::SetCapacity",
+ "size": 121,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf185ff74528b06c7460c0100000085c074358b4e083bf97d028bcf33c085c97e0f8b16403bc18a5402ff885407ff7cf18b460cf6c4ff740f50e80000000083c404c706000000008b460c893e80e400897e0889460ceb078b068bceff500c8b46088b4e103bc17d038946105fb0015ec20800",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

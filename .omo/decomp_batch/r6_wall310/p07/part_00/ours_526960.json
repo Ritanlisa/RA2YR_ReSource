@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetKeyCount@INIClass@@QAEHPAE@Z",
+ "sym_key": "INIClass::GetKeyCount",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec0c85d256578bf10f848f00000033c08bfa8944240883c9ff8944240c89442410f2aef7d14951528d4c2410e8000000008bf88b462c85c0897c2418745f8b463885c07404393874108d4c2418e80000000085c074478946388b462c897c241885c074238b463885c07404393874108d4c2418e80000000085c0740b8946388b763883c604eb05be000000008b3685f6740b8b46305f5e83c40cc204005f33c05e83c40cc20400",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIXZ",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 121,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIXZ",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 141,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B7882C@@3EA",
+   "sym_key": "DataGlobal_B7882C"
+  }
+ ]
+}

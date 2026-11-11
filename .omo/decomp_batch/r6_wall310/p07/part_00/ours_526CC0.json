@@ -1,0 +1,33 @@
+{
+ "symbol": "?GetStringByIndex@INIClass@@QAEHPAEH@Z",
+ "sym_key": "INIClass::GetStringByIndex",
+ "size": 184,
+ "link_base": 0,
+ "bytes_hex": "8b54240483ec0c85d253568bd90f849000000033c0578944240c8bfa8944241083c9ff89442414f2aef7d14951528d4c2414e8000000008bf08b432c85c08974241c5f745e8d4c2418e80000000084c075108d4c2418e80000000085c074448943388d4c241889742418e8000000008b0085c0742e8b54241c8b48303bd173238b401885c0741c8b480485c974158b700885f6740e85d274148bc14a8b480485c975eb5e33c05b83c40cc208008b400c5e5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "REL32",
+   "sym": "?Add_Buffer@Checksummer@@QAEHPAXH@Z",
+   "sym_key": "Checksummer::Add_Buffer"
+  },
+  {
+   "off": 74,
+   "type": "REL32",
+   "sym": "?CheckCache@SortedArray@@QAE_NXZ",
+   "sym_key": "SortedArray::CheckCache"
+  },
+  {
+   "off": 87,
+   "type": "REL32",
+   "sym": "?BinarySearch@SortedArray@@QAEIXZ",
+   "sym_key": "SortedArray::BinarySearch"
+  },
+  {
+   "off": 107,
+   "type": "REL32",
+   "sym": "?FindValue@SortedArray@@QAEPAXXZ",
+   "sym_key": "SortedArray::FindValue"
+  }
+ ]
+}
