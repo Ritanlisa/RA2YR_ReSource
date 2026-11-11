@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "purpose": "Global variable type evidence that outranks the IDA-plate prefix default. pass_globals defaults `dword_X` to `unsigned int`; the original function's own comparison instruction can PROVE the value is signed (MSVC canonicalizes int-vs-unsigned to an unsigned compare, so a signed jcc over the loaded value means every operand of that compare is signed).",
+    "evidence_rule": "entry exists only when a function's original disasm compares the loaded global with a SIGNED jcc (jl/jle/jg/jge) and the emitted code produced the unsigned twin (jb/jbe/ja/jae). Type is the signed spelling of the same width.",
+    "generated": "2026-11-11 R8"
+  },
+  "globals": {
+    "DataGlobal_ABAD28": {
+      "addr": "0xABAD28",
+      "type": "int",
+      "evidence": "0x4865B0/0x486650/0x486670 CellClass range checks: cmp [this+38h], [ABAD28]; jl/jge (signed) while emitted unsigned"
+    },
+    "DataGlobal_ABC2C8": {
+      "addr": "0xABC2C8",
+      "type": "int",
+      "evidence": "0x486900 CellClass::IsActiveOrNext: cmp/jne over [ABC2C8]; equality-only, width must stay dword (no sign flip needed); 0x4865B0 family signed range checks"
+    },
+    "DataGlobal_AA10A4": {
+      "addr": "0xAA10A4",
+      "type": "int",
+      "evidence": "0x486650 CellClass::InMapDataRange: cmp [this+38h], [AA10A4]; jl/jge (signed) while emitted unsigned"
+    },
+    "DataGlobal_ABC2B0": {
+      "addr": "0xABC2B0",
+      "type": "int",
+      "evidence": "0x486670 CellClass::InBounds: cmp [this+38h], [ABC2B0]; jl/jge (signed) while emitted unsigned"
+    },
+    "g_CrateProcessState": {
+      "addr": "0xB0F4F8",
+      "type": "int",
+      "evidence": "0x722390/0x722E50 BuildingClass::FreeUpgradeQueue loops: cmp i, [B0F4F8]; jle (signed) while emitted unsigned"
+    },
+    "g_CellPositionOffset": {
+      "addr": "0x87F8E0",
+      "type": "int",
+      "evidence": "0x56D100 MapSeed::CheckTileMatch: lea ecx,[esi+eax*2] with eax=[87F8E0]; cmp edx,ecx; jg (signed) while emitted unsigned"
+    }
+  }
+}

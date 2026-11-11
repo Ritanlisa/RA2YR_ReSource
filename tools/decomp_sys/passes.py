@@ -236,6 +236,48 @@ _GLOBAL_PREFIX_TYPE = {
 }
 
 
+# ---------------------------------------------------------------- global ty evid
+# R8: the IDA-plate default for a dword global is `unsigned int`.  When the
+# ORIGINAL function compares that value with a signed jcc, MSVC's usual
+# arithmetic conversions prove the compared operands signed (int-vs-unsigned
+# canonicalizes to an unsigned compare, which would have produced jb/jae).
+# `anchors/global_type_evidence.json` records exactly those globals with the
+# proving function; the spelling here is the signed twin of the same width.
+_GLOBAL_TY_EVIDENCE = {}
+
+
+def _load_global_ty_evidence():
+    if not _GLOBAL_TY_EVIDENCE:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "..", "anchors",
+                            "global_type_evidence.json")
+        try:
+            with open(path, encoding="utf-8") as f:
+                _GLOBAL_TY_EVIDENCE.update(
+                    (json.load(f) or {}).get("globals") or {})
+        except (OSError, ValueError):
+            pass
+    return _GLOBAL_TY_EVIDENCE
+
+
+def _global_ty_evidence(name, addr=None):
+    ev = _load_global_ty_evidence()
+    e = ev.get(name)
+    if e is None and addr:
+        try:
+            a = int(addr, 16) & 0xFFFFFFFF
+        except (TypeError, ValueError):
+            return None
+        for n2, e2 in ev.items():
+            try:
+                if int(e2.get("addr", ""), 16) & 0xFFFFFFFF == a:
+                    return e2.get("type")
+            except (TypeError, ValueError):
+                continue
+        return None
+    return (e or {}).get("type")
+
+
 def pass_globals(ctx):
     body = "\n".join(ctx.lines)
     seen = set()
@@ -251,6 +293,12 @@ def pass_globals(ctx):
             ty = g.get("type") or _GLOBAL_PREFIX_TYPE.get(
                 m.group(0).split("_")[0], "unsigned int")
             ty = spell_type(ty)
+            ev = _global_ty_evidence(g["name"], g.get("addr"))
+            if ev:
+                ty = ev
+                ctx.note("global_type_evidence",
+                         "%s -> %s (binary comparison evidence)" %
+                         (g["name"], ty))
             ctx.used_globals[g["name"]] = ty
             ctx.sites.append(Site(
                 "global", m.group(0),
@@ -302,6 +350,12 @@ def pass_globals(ctx):
                 continue
             if ident not in ctx.used_globals:
                 ty = spell_type(g.get("type") or "int")
+                ev = _global_ty_evidence(ident, g.get("addr"))
+                if ev:
+                    ty = ev
+                    ctx.note("global_type_evidence",
+                             "%s -> %s (binary comparison evidence)"
+                             % (ident, ty))
                 ctx.used_globals[ident] = ty
                 ctx.sites.append(Site(
                     "global", ident,
@@ -4418,8 +4472,7 @@ def pass_global_canon(ctx):
     ctx.lines = text.split("\n")
 
 
-# ---------------------------------------------------------------- R8 pair64
-# Hex-Rays renders a 64-bit value assembled from two 32-bit halves as
+# ---------------------------------------------------------------- R8 pair64# Hex-Rays renders a 64-bit value assembled from two 32-bit halves as
 # `__PAIR64__(high, low)` -- an IDA macro that does not exist in the era
 # compiler (the call site fell through to an extern declaration and
 # became C2664 AudioMixer::PlaySample 0x4071C0).  Expand it to the exact
@@ -4458,3 +4511,39 @@ def pass_pair64(ctx):
     ctx.lines = "".join(out).split("\n")
     ctx.note("pair64", "__PAIR64__(hi,lo) -> 64-bit shift/or (%d site%s)"
              % (n, "" if n == 1 else "s"))
+
+
+# ---------------------------------------------------------------- R8 signed
+# A global carried as a char[] byte-arithmetic vehicle gets its dword READS
+# through `*(unsigned int *)&((char *)G)[...]`.  When the binary proves the
+# value is signed (global_type_evidence), that read cast is the only thing
+# keeping the comparison unsigned (usual arithmetic conversions promote the
+# signed lhs to unsigned): rewrite the read to `*(int *)`.
+_SIGNED_G_READ = re.compile(
+    r"\*\(\s*unsigned int\s*\*\s*\)\s*&\s*\(\s*\(\s*char\s*\*\s*\)\s*"
+    r"(?P<g>[A-Za-z_]\w*)\s*\)")
+
+
+def pass_signed_globals(ctx):
+    ev = _load_global_ty_evidence()
+    if not ev:
+        return
+    text = "\n".join(ctx.lines)
+    n = 0
+
+    def repl(m):
+        nonlocal n
+        g = m.group("g")
+        e = ev.get(g)
+        if not e or e.get("type") not in ("int", "short", "long",
+                                          "signed char"):
+            return m.group(0)
+        n += 1
+        return m.group(0).replace("unsigned int", "int", 1)
+
+    text = _SIGNED_G_READ.sub(repl, text)
+    if n:
+        ctx.lines = text.split("\n")
+        ctx.note("signed_global_read",
+                 "%d unsigned dword read%s of evidence-signed global "
+                 "spelling(s) -> int" % (n, "" if n == 1 else "s"))

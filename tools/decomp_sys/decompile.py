@@ -657,6 +657,8 @@ def run_function(addr, reg, views, idx):
     # R8: canonical data-symbol spellings LAST (text authority after
     # era_normalize re-render); codegen-neutral reloc-key fix.
     passes.pass_global_canon(ctx)
+    # R8: signed-evidence global reads (byte-carrier cast form)
+    passes.pass_signed_globals(ctx)
 
     # unit selection (rule 2: cpp <-> hpp same name):
     # D-fix 1 -- the OWNING CLASS names the unit so a corrected fn->cls
