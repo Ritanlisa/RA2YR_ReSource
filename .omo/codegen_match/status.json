@@ -4683,7 +4683,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x653760": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4697,7 +4697,7 @@
   "status": "NG"
  },
  "0x656cb0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "RadarClass::SetViewMode",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4725,18 +4725,18 @@
   "status": "NG"
  },
  "0x658de0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "RadarHashVector::Construct",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x659570": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "first_diff": "+0 mov al, byte ptr [ecx + 9]",
   "name": "sub_659570",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
  },
  "0x65a820": {
   "attempts": 2,
@@ -4746,7 +4746,7 @@
   "status": "NG"
  },
  "0x65aeb0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "RadioClass::ProcessEvent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4774,7 +4774,7 @@
   "status": "OK"
  },
  "0x65b800": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "RadSiteClass::Tick",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4823,7 +4823,7 @@
   "status": "NG"
  },
  "0x65d660": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "ReferenceCounted::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4837,14 +4837,14 @@
   "status": "OK"
  },
  "0x661850": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "Random::AdvanceRandomBytes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6632e0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ComputeFloatExpression_3",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4858,7 +4858,7 @@
   "status": "OK"
  },
  "0x664440": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "EventClass::validateEventType",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4886,11 +4886,11 @@
   "status": "OK"
  },
  "0x681100": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "LoadOptions::GetData",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x681120": {
   "attempts": 5,
@@ -4914,14 +4914,14 @@
   "status": "OK"
  },
  "0x6896c0": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "ScenarioClass::SetCountryFlag",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x68c710": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "FontClass::InitMetrics",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4963,14 +4963,14 @@
   "status": "OK"
  },
  "0x697e70": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "SessionClass::IsValidHouse",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69b7e0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "SessionClass::AssignColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -4984,35 +4984,35 @@
   "status": "OK"
  },
  "0x69db30": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SHA1::Transform",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69deb0": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "ShapeButton::Draw",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69ec50": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "LocomotionClass::Process",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x69f290": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnTrue_5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x6a0310": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "WalkLocomotionClass::SetWaypointTarget",
   "note": "decomp_batch r2: COMPILE_FAIL",

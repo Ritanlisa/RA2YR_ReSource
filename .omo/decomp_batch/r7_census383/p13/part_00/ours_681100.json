@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetData@LoadOptions@@QAEPADXZ",
+ "sym_key": "LoadOptions::GetData",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8d8108010000c3",
+ "relocs": []
+}

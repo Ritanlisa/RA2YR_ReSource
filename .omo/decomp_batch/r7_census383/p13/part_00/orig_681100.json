@@ -1,0 +1,11 @@
+{
+ "addr": "0x681100",
+ "name": "LoadOptions::GetData",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x681100",
+ "bytes_hex": "8d8108010000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
