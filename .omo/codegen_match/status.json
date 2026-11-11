@@ -1322,6 +1322,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x420f40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UpdateSpotlightsFoo",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x421850": {
   "attempts": 1,
   "first_diff": null,
@@ -1783,6 +1790,13 @@
   "name": "Field::Int_Set",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x434120": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FontClass::RenderGlyph",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x434500": {
   "attempts": 1,
@@ -2880,6 +2894,13 @@
   "attempts": 15,
   "first_diff": null,
   "name": "CellClass::SetWallOwner",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x47e470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SetCellClassOccupancyFlags",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -5025,6 +5046,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4c54e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ApplyEMPPulseEffect",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4c58c0": {
   "attempts": 9,
   "first_diff": null,
@@ -6264,6 +6292,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4f1ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadFromINIGraphicMenu",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4f2920": {
   "attempts": 1,
   "first_diff": "+1 push ebp",
@@ -6390,6 +6425,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4f4780": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Frame::Present",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4f4c20": {
   "attempts": 3,
   "first_diff": "+2 mov byte ptr [eax], 0",
@@ -6410,6 +6452,13 @@
   "name": "HouseClass::AddPower",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4f9b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HouseClass::HandleAlliance",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4fae50": {
   "attempts": 9,
@@ -6648,6 +6697,13 @@
   "name": "TechnoClass::MapHouseRelationIndex",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x50db00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "House::ChooseHouseEnemy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x50df30": {
   "attempts": 6,
@@ -7355,6 +7411,13 @@
   "name": "0x532100",
   "note": "decomp_batch r2: NO_PSEUDO",
   "status": "PENDING"
+ },
+ "0x533fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AllocateSurfaceScreenSurfaces",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x535bd0": {
   "attempts": 1,
@@ -9224,6 +9287,13 @@
   "name": "0x5a1f60",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5a2f50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SmoothTerrainMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5a33f0": {
   "attempts": 1,
@@ -12788,6 +12858,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x65d8e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x65d8e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x65f850": {
   "attempts": 1,
   "first_diff": null,
@@ -14552,6 +14629,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6c8ff0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DlgProcScoreScreen",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c98e0": {
   "attempts": 1,
   "first_diff": "+0 mov ecx, dword ptr [ecx + 4]",
@@ -15524,6 +15608,20 @@
   "name": "TechnoClass::ScanNeighborCells",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7049c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DrawTacticalMapLine",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x705860": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x60",
+  "name": "TechnoClass::DrawAirstrikeFlare_SetContext",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x705d20": {
   "attempts": 5,
@@ -16771,6 +16869,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x736579": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::UpdateBehavior",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x736990": {
   "attempts": 1,
   "first_diff": null,
@@ -17940,6 +18045,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x76dad0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerritorySelectWDT",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x76e2f0": {
   "attempts": 1,
   "first_diff": null,
@@ -18353,6 +18465,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x77a080": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveProfileWOL",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x77a7c0": {
   "attempts": 1,
   "first_diff": "+91 je 0x77a82e",
@@ -18521,6 +18640,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x78db70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WOLLogin::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x78ebc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DlgProcGameSetup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x78f200": {
   "attempts": 1,
   "first_diff": null,
@@ -18590,6 +18723,13 @@
   "name": "ExtractChatCommand",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x79db50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x79db50",
+  "note": "decomp_batch r2: DUP_SKIP",
+  "status": "PENDING"
  },
  "0x79f0a0": {
   "attempts": 1,

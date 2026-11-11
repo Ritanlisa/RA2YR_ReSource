@@ -1,0 +1,147 @@
+{
+ "symbol": "?DrawAirstrikeFlare_SetContext@unknown@@QAGHHHHHHH@Z",
+ "sym_key": "unknown::DrawAirstrikeFlare_SetContext",
+ "size": 743,
+ "link_base": 0,
+ "bytes_hex": "83ec305355568d44242c578d4c244850518b0d00000000e8000000008b0d000000008d54241c8d4424545250e8000000008b4c2450e8000000008b4c245cbfe0ffffff2bf8e8000000008b4c241c8b5c24302bcbbde0ffffff512be8e8000000008b74244c8b4c244c8b15000000008944243c8bc68b1a2bc150e8000000008b0d0000000083c4088944243451ff938400000084c00f84420200008b0d000000008b1d00000000680e01000068be000000e8000000003dff000000884424137e05c6442413ff3b7424480f8d940000008b0d000000008b44241cbeff000000d3fe8b0d000000008d50018954241883c0fe8d542414894424148b03d3e68d4c241856515253ff50308b03568b4c24208d51fe41894c241c895424188d4c241c8d542418515253ff50308d542418568b44242052488944241c894424208b0b8d44241c5053ff51308d542418568b442420528944241c894424208b0b8d44241c5053ff51308b4c241c8b7424302bce8bc5894c243c2bc7894c245033c9894424188944245cbd640000008974242c894c2414eb048b7424308b4424509983e20303c2c1f80203c6894424288b44245c9983e20303c28bf08bc19983e2038d4c2413c1fe0203c203f7c1f8025605ff00000057508d542434518d44243c525068000000008bcbe8000000008b4c24348b4424383bc17f448b54242c8b44242842405689542428578d4c241b89442428558d54242c518d442434525068000000008bcbe8000000008b4c242c8b542428494a894c242489542420eb3e8b44242c8b4c24285689442428578d54241b894c2428558d44242c528d4c2434505168000000008bcbe8000000008b54242c8b442428895424248944242056578d4c241b558d54242c518d442434525068000000008bcbe8000000008bfe8b7424508b54243c8b4424148b4c242803f20501ffffff83ed19894c242c8b4c2418897424508b74245c3d03fdffff0f9cc203f18bc884d28974245c894c24140f84b6feffff5f5e5d5b83c430c21c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 24,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 30,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 45,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?ZCoordToScreenY@@YI_JH@Z",
+   "sym_key": "ZCoordToScreenY"
+  },
+  {
+   "off": 93,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 107,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 123,
+   "type": "REL32",
+   "sym": "?abs32@@YAHHZZ",
+   "sym_key": "abs32"
+  },
+  {
+   "off": 129,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 157,
+   "type": "DIR32",
+   "sym": "?Randomizer_Global@@3IA",
+   "sym_key": "Randomizer_Global"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?g_DSurface_Hidden_2@@3PAXA",
+   "sym_key": "g_DSurface_Hidden_2"
+  },
+  {
+   "off": 178,
+   "type": "REL32",
+   "sym": "?Range@Random@@QAEHHH@Z",
+   "sym_key": "Random::Range"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Green_0@@3IA",
+   "sym_key": "g_BitShift_Green_0"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?g_BitShift_Red@@3IA",
+   "sym_key": "g_BitShift_Red"
+  },
+  {
+   "off": 478,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 485,
+   "type": "REL32",
+   "sym": "?DrawWaveform@AudioStream@@QAEDPAX000HHH@Z",
+   "sym_key": "AudioStream::DrawWaveform"
+  },
+  {
+   "off": 538,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 545,
+   "type": "REL32",
+   "sym": "?DrawWaveform@AudioStream@@QAEDPAX000HHH@Z",
+   "sym_key": "AudioStream::DrawWaveform"
+  },
+  {
+   "off": 604,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 611,
+   "type": "REL32",
+   "sym": "?DrawWaveform@AudioStream@@QAEDPAX000HHH@Z",
+   "sym_key": "AudioStream::DrawWaveform"
+  },
+  {
+   "off": 650,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 657,
+   "type": "REL32",
+   "sym": "?DrawWaveform@AudioStream@@QAEDPAX000HHH@Z",
+   "sym_key": "AudioStream::DrawWaveform"
+  }
+ ]
+}

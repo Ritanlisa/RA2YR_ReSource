@@ -1,0 +1,88 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c54e0 ObjectClass::ApplyEMPPulseEffect -> ObjectClass
+[conv] 0x434120 FontClass::RenderGlyph -> FontClass
+[conv] 0x50db00 House::ChooseHouseEnemy -> House
+[conv] 0x4f9b70 HouseClass::HandleAlliance -> HouseClass
+[conv] 0x76dad0 TechnoClass::TerritorySelectWDT -> TechnoClass
+[conv] 0x6c8ff0 unknown::DlgProcScoreScreen -> unknown
+[conv] 0x420f40 unknown::UpdateSpotlightsFoo -> unknown
+[conv] 0x736579 InfantryClass::UpdateBehavior -> InfantryClass
+[conv] 0x77a080 ObjectClass::SaveProfileWOL -> ObjectClass
+[conv] 0x47e470 unknown::SetCellClassOccupancyFlags -> unknown
+[conv] 0x4f4780 Frame::Present -> Frame
+[conv] 0x78ebc0 unknown::DlgProcGameSetup -> unknown
+[conv] 0x705860 unknown::DrawAirstrikeFlare_SetContext -> unknown
+[conv] 0x78db70 unknown::DlgProc -> unknown
+[conv] 0x533fd0 unknown::AllocateSurfaceScreenSurfaces -> unknown
+[conv] 0x7049c0 unknown::DrawTacticalMapLine -> unknown
+[conv] 0x4f1ca0 ObjectClass::LoadFromINIGraphicMenu -> ObjectClass
+[conv] 0x5a2f50 ObjectClass::SmoothTerrainMap -> ObjectClass
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] FontClass                rc=2
+[era] House                    rc=2
+[era] HouseClass               rc=2
+[era] TechnoClass              rc=2
+[era] unknown                  rc=2
+[era] InfantryClass            rc=2
+[era] Frame                    rc=2
+=== diffasm byte-compare ===
+[diff] 0x705860   MISMATCH         unknown::DrawAirstrikeFlare_SetContext
+[ledger] 0x4c54e0 ApplyEMPPulseEffect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x434120 FontClass::RenderGlyph -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50db00 House::ChooseHouseEnemy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f9b70 HouseClass::HandleAlliance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x76dad0 TerritorySelectWDT -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c8ff0 DlgProcScoreScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420f40 UpdateSpotlightsFoo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x736579 InfantryClass::UpdateBehavior -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77a080 SaveProfileWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x47e470 SetCellClassOccupancyFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4780 Frame::Present -> COMPILE_FAIL (attempt 1)
+[ledger] 0x78ebc0 DlgProcGameSetup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x705860 TechnoClass::DrawAirstrikeFlare_SetContext -> NG (attempt 1)
+[ledger] 0x65d8e0 0x65d8e0 -> PENDING (attempt 1)
+[ledger] 0x78db70 WOLLogin::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x533fd0 AllocateSurfaceScreenSurfaces -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7049c0 DrawTacticalMapLine -> COMPILE_FAIL (attempt 1)
+[ledger] 0x79db50 0x79db50 -> PENDING (attempt 1)
+[ledger] 0x4f1ca0 LoadFromINIGraphicMenu -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a2f50 SmoothTerrainMap -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2874,
+ "verdicts": {
+  "MISMATCH": 723,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1075,
+  "DUP_SKIP": 3,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 535,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 249,
+  "ret_norm": 8,
+  "frame_sched": 78,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 119,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 41.9,
+ "match_rate_of_total_pct": 18.1,
+ "rule_violation_fns": 14,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p25\batch_report.json
