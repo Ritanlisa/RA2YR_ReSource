@@ -80,6 +80,9 @@ TYPE_OF_CAST = {
 
 def spell_type(ty):
     t = (ty or "").strip()
+    # CW2: IDA register annotations (`double@<st0>`, `char@<cf>`) are not
+    # C++ and poison every declaration they touch (C2018 '0x40').
+    t = re.sub(r"@<[^>]*>", "", t).strip()
     if not t:
         return "int"
     if t in TYPE_MAP:
@@ -89,11 +92,48 @@ def spell_type(ty):
     # pilot stub (codegen-neutral for decl-only sites)
     if "(" in t:
         return "void *"
+    # CW2: qualified / mangled type spellings (`std::locale::facet *`,
+    # `struct Concurrency::ISchedulerProxy *`) are not declarable -- the
+    # namespace or nested class is not declared in a pilot hpp (C2653).
+    # Pointer width is the ABI truth; degrade the spelling, not the bits.
+    base_core = re.sub(r"^(?:struct|class|union)\s+", "", t.rstrip("*").strip())
+    if "::" in base_core or "?" in t or "`" in t:
+        return "void *" if t.rstrip().endswith("*") else "int"
     m = re.match(r"^([^*]+?)\s*(\*+)$", t)
     if m:
         base = spell_type(m.group(1))
         return (base + " " if base else "") + m.group(2)
     return re.sub(r"\s+", " ", t)
+
+
+# CW2: names provided by tools/decomp_sys/era_types.h.  hpp_pilot must never
+# forward-declare these as classes (`class LONG;` made `volatile LONG *` a
+# "volatile class LONG *" -> C2664 on InterlockedIncrement).
+ERA_TYPE_NAMES = {
+    "_UNKNOWN", "_DWORD", "_WORD", "_BYTE", "_QWORD",
+    "DWORD", "WORD", "BYTE", "BOOL", "UINT", "USHORT", "UCHAR", "CHAR",
+    "LONG", "ULONG", "COLORREF", "ATOM", "LCTYPE", "MMRESULT", "UINT_PTR",
+    "ULONG_PTR", "LRESULT", "WPARAM", "LPARAM", "LPVOID", "LPCVOID",
+    "LPSTR", "LPCSTR", "LPWSTR", "LPCWSTR", "BSTR", "LPCOLESTR", "PCNZWCH",
+    "LPCCH", "LPBYTE", "LPDWORD", "LPLONG", "FARPROC",
+    "HWND", "HINSTANCE", "HDC", "HGDIOBJ", "HGLOBAL", "HLOCAL", "HMODULE",
+    "HANDLE", "HBRUSH", "HPEN", "HFONT", "HBITMAP", "HICON", "HCURSOR",
+    "HMENU", "HKEY", "HRGN", "HRSRC", "HIMC", "HKL", "SOCKET",
+    "GUID", "CLSID", "IID", "REFIID", "REFCLSID", "LPGUID", "LPUNKNOWN",
+    "VARIANT", "SAFEARRAY",
+    "POINT", "LPPOINT", "RECT", "LPRECT", "FILETIME", "SYSTEMTIME", "MSG",
+    "LPMSG", "CRITICAL_SECTION", "LPCRITICAL_SECTION",
+    "LPSECURITY_ATTRIBUTES", "TEXTMETRICA", "LPTEXTMETRICA", "DLGTEMPLATE",
+    "_WIN32_FIND_DATAA", "LPSTREAM", "LPDIRECTDRAW", "LPDIRECTDRAWSURFACE",
+    "LPDIRECTDRAWPALETTE", "LPDIRECTDRAWCLIPPER",
+    "_EA", "_EBX", "_ECX", "_EDX", "_ESI", "_EDI", "_EBP", "_ESP",
+    # header-owned typedefs: never forward-declare as a class
+    "FILE", "size_t", "va_list", "wchar_t", "int8_t", "int16_t", "int32_t",
+    "int64_t", "uint8_t", "uint16_t", "uint32_t", "uint64_t",
+    "intptr_t", "uintptr_t", "DLGPROC", "PAINTSTRUCT", "LOGFONTA",
+    "OSVERSIONINFOA", "_BY_HANDLE_FILE_INFORMATION", "TEXTMETRICA",
+    "LPTEXTMETRICA", "tagTEXTMETRICA", "tagPAINTSTRUCT", "tagLOGFONTA",
+}
 
 
 def strip_line_comments(body_lines):
@@ -888,8 +928,6 @@ def pass_this_ptr_math(ctx):
             return _addr_view(int(m.group("off")) * scale, m.group(0),
                               "bare this+N address")
         text = _BARE_THIS_ADDR.sub(bare_addr_repl, text)
-
-
 
     # R4: bare `*this` (a dword read at offset 0, emitted by IDA when the
     # proto types this as `int *this`) -- `*this` in C++ is the OBJECT, so
@@ -2541,16 +2579,74 @@ _CRT_NAMES = {
     "pow", "sin", "cos", "tan", "atan", "atan2", "floor", "ceil", "fabs",
     "tolower", "toupper", "isalpha", "isdigit", "isspace", "getenv", "exit",
     "abort", "qmemcpy",
+    # CW2: wide-char / underscore CRT family.  These ARE declared by the
+    # CRT headers every pilot hpp includes; emitting our own `extern int
+    # wcslen(int, ...)` made the compiler see TWO overloads (C2665 family)
+    # or fight the header (C2371).  Let the header own the prototype and
+    # let _crt_string_casts fix argument spellings.
+    "wcslen", "wcscpy", "wcscmp", "wcscat", "wcsncpy", "wcsncmp",
+    "wcsstr", "wcschr", "wcsrchr", "wcsrev", "wcsicmp", "_wcsicmp",
+    "_wcsupr", "_wcslwr", "_wcstombs", "mbstowcs",
+    "_strcmpi", "_stricmp", "_strnicmp", "strtok", "_strrev",
+    "strupr", "strlwr", "atof", "strtod", "strtol", "strtoul",
+    "atexit", "vsprintf", "vswprintf", "_snprintf", "snprintf",
 }
+
+# CW2: Win32 APIs whose real prototypes matter for compile (volatile /
+# pointer slots).  Used only when the registry has no record; the emitted
+# extern keeps IDA's symbol spelling (reloc key unchanged).
+_KNOWN_API_SIGS = {
+    "InterlockedIncrement": ("long", "__stdcall", ["volatile long *"]),
+    "InterlockedDecrement": ("long", "__stdcall", ["volatile long *"]),
+    "InterlockedExchange": ("long", "__stdcall",
+                            ["volatile long *", "long"]),
+    "InterlockedCompareExchange": ("long", "__stdcall",
+                                   ["volatile long *", "long", "long"]),
+    "SendMessageA": ("long", "__stdcall",
+                     ["void *", "unsigned int", "unsigned int", "long"]),
+    "GetDlgItem": ("void *", "__stdcall", ["void *", "int"]),
+    "GetParent": ("void *", "__stdcall", ["void *"]),
+    "GetClientRect": ("int", "__stdcall", ["void *", "tagRECT *"]),
+    "GetWindowRect": ("int", "__stdcall", ["void *", "tagRECT *"]),
+}
+
+
+def _ptr_names_in(text):
+    """Locals declared as pointers (initializer allowed: `void *p = f();`)."""
+    out = set()
+    for m in re.finditer(
+            r"\b(?:const\s+)?\w[\w\s:]*?\*\s*([A-Za-z_]\w*)\s*(?:=|;|\[)",
+            text):
+        out.add(m.group(1))
+    return out
+
+
+def _ctx_ptr_names(ctx, text):
+    """Pointer-typed names visible at a call site: params, locals, globals."""
+    s = _ptr_names_in(text)
+    for t, n in ctx.sig.get("params_spelled") or []:
+        if t.endswith("*"):
+            s.add(n)
+    for n, t in (getattr(ctx, "used_globals", None) or {}).items():
+        if str(t).endswith("*"):
+            s.add(n)
+    return s
 
 _CALL_KEYWORDS = {
     "if", "for", "while", "switch", "return", "sizeof", "do", "else",
-    "case", "defined", "catch", "throw", "new", "delete", "abs16", "abs64",
-    "abs", "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
-    "BYTE3", "WORD1", "SLOWORD", "SHIWORD",
+    "case", "default", "defined", "catch", "throw", "new", "delete",
+    "goto", "break", "continue", "this", "true", "false",
+    "abs16", "abs64", "abs",
+    "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
+    "BYTE3", "WORD1", "SLOWORD", "SHIWORD", "LODWORD", "HIDWORD",
     # calling-convention tokens appear inside fn-pointer casts
     "__thiscall", "__stdcall", "__cdecl", "__fastcall", "__userpurge",
+    "__usercall", "__pascal",
 }
+# CW2: kept as an alias -- an earlier session redefined this set further
+# down the module, and Python's late name lookup made pass_unknown_symbols
+# use the SMALLER set (`extern int else(void *, ...);` -> C2143 'else'
+# poisoned 13 census units).  One definition, one truth.
 
 # bare type spellings must never become `extern int int(...);`
 _TYPE_KEYWORDS = {
@@ -2657,6 +2753,24 @@ def pass_unknown_symbols(ctx):
                 "CRT operator -> extern %s %s(%s) (known signature)"
                 % (ret, name, params), True))
             continue
+        # CW2: known Win32 APIs whose real prototype is compile-critical
+        # (`InterlockedIncrement(volatile LONG *)` cannot take a plain
+        # `void *` slot without dropping volatile -> C2664).  Must run
+        # BEFORE the registry lookup: the registry sometimes carries a
+        # loose record for these imports and would re-flatten the slot.
+        api = _KNOWN_API_SIGS.get(name)
+        if api is not None:
+            ret, cc, ptypes = api
+            plist = ", ".join("%s a%d" % (t, i)
+                              for i, t in enumerate(ptypes))
+            ctx.used_callee_exts.append(
+                "extern %s %s %s(%s);" % (ret, cc, name, plist))
+            declared.add(name)
+            ctx.sites.append(Site(
+                "callee", name + "(...)",
+                "known Win32 API -> extern %s %s %s(%s)"
+                % (ret, cc, name, plist), True))
+            continue
         # R6: registry retry under the ??-mangled spelling.  The export
         # collapses `??2_YAPAXI_Z` to `__2_YAPAXI_Z`; a plain lookup misses
         # and the callee fell back to `extern int`, which broke every
@@ -2700,15 +2814,11 @@ def pass_unknown_symbols(ctx):
             # that rejects the observed argument (C2664 ObjectClass* ->
             # int, char[128] -> unsigned char*), while floats/doubles
             # and 64-bit slots carry ABI meaning and must be kept.
-            ptr_names_ = set()
-            for t_, n_ in ctx.sig.get("params_spelled") or []:
-                if t_.endswith("*"):
-                    ptr_names_.add(n_)
+            # CW2: pointer-typed names visible here: params, pointer locals
+            # (initializer allowed), and pointer-typed registry globals.
+            ptr_names_ = _ctx_ptr_names(ctx, text)
             for m2 in re.finditer(
                     r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text):
-                ptr_names_.add(m2.group(1))
-            for m2 in re.finditer(
-                    r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*;", text):
                 ptr_names_.add(m2.group(1))
             plist_parts = []
             for i, p in enumerate(rparams):
@@ -2738,6 +2848,22 @@ def pass_unknown_symbols(ctx):
                 "registry callee -> extern %s%s %s(%s)"
                 % (ret, rcc, name, plist), True))
             continue
+        # CW2: known Win32 APIs whose real prototype is compile-critical
+        # (`InterlockedIncrement(volatile LONG *)` cannot take a plain
+        # `void *` slot without dropping volatile -> C2664).
+        api = _KNOWN_API_SIGS.get(name)
+        if api is not None:
+            ret, cc, ptypes = api
+            plist = ", ".join("%s a%d" % (t, i)
+                              for i, t in enumerate(ptypes))
+            ctx.used_callee_exts.append(
+                "extern %s %s %s(%s);" % (ret, cc, name, plist))
+            declared.add(name)
+            ctx.sites.append(Site(
+                "callee", name + "(...)",
+                "known Win32 API -> extern %s %s %s(%s)"
+                % (ret, cc, name, plist), True))
+            continue
         # R7: `extern int f(...)` is a C2059 ('...') hard error in VC6
         # (an ellipsis needs a named first parameter) and `extern int
         # f();` is C++ ZERO-arg (C2660 on 2-arg calls).  Spell the
@@ -2761,11 +2887,8 @@ def pass_unknown_symbols(ctx):
                 plist = []
                 arr_locals_ = set(m2.group(1) for m2 in re.finditer(
                     r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text))
-                ptr_locals_ = set(m2.group(1) for m2 in re.finditer(
-                    r"\b\w[\w\s]*?\*\s*([A-Za-z_]\w*)\s*;", text))
-                for t_, n_ in ctx.sig.get("params_spelled") or []:
-                    if t_.endswith("*"):
-                        ptr_locals_.add(n_)
+                # CW2: pointer locals/params/globals (initializer allowed)
+                ptr_locals_ = _ctx_ptr_names(ctx, text)
             for i, a0 in enumerate(args):
                 s0 = a0.strip()
                 while len(plist) <= i:
@@ -4007,6 +4130,9 @@ def pass_era_normalize(ctx):
     # compilation -- the keyword inside a cast does not change codegen here,
     # __stdcall compiles.
     text = text.replace("__thiscall", "__stdcall")
+    # CW2: IDA register annotations (`double@<st0>`, `char@<cf>`) anywhere
+    # in the body/decls are not C++ (C2018 unknown character '0x40').
+    text = re.sub(r"@<[^>]*>", "", text)
     text = re.sub(r"\(int\)\s*\(\(", "((", text)
     text = text.replace("(unsigned __int8 *)", "(unsigned char*)")
     text = text.replace("(__int8 *)", "(char*)")
@@ -4116,11 +4242,8 @@ def _proto_ret_void(proto):
     m = re.match(r"^(.*?)\s*\(", p)
     return bool(m) and m.group(1).strip() == "void"
 
-_CALL_KEYWORDS = {
-    "if", "for", "while", "switch", "return", "sizeof", "abs",
-    "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
-    "BYTE3", "WORD1", "SLOWORD", "SHIWORD",
-}
+# CW2: _CALL_KEYWORDS is defined once near pass_unknown_symbols -- the old
+# duplicate here shadowed it at import time and lost else/do/new/delete.
 
 
 def _split_args(argstr):
@@ -4445,10 +4568,8 @@ def pass_callees(ctx):
             arr_locals = set(m.group(1) for m in re.finditer(
                 r"\b([A-Za-z_]\w*)\s*\[\s*\d+\s*\]\s*;", text))
             plist = []
-            ptr_names_ = set(arr_locals)
-            for t, n in ctx.sig.get("params_spelled") or []:
-                if t.endswith("*"):
-                    ptr_names_.add(n)
+            # CW2: pointer locals (initializer allowed) + pointer globals
+            ptr_names_ = set(arr_locals) | _ctx_ptr_names(ctx, text)
             for i, a0 in enumerate(args):
                 a0s = a0.strip()
                 if a0s in sig_ptys:

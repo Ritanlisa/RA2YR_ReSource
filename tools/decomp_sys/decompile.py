@@ -101,6 +101,26 @@ def _proto_ret(proto):
     return m.group(1).strip() if m else ""
 
 
+def sanitize_ident(name):
+    """CW2: IDA/mangled names are not C++ identifiers.
+
+    `?GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPA...` (a
+    mangled fragment the registry kept as a function name) and any name
+    carrying `@`/`?`/`<`/`>` cannot be declared (C2018/C2653 families).
+    The mapping is the same one the object extractor uses for the class
+    half; the emitted symbol spelling stays deterministic.
+    """
+    n = (name or "").strip()
+    tilde = n.startswith("~")
+    n = n.lstrip("?~")
+    n = re.sub(r"[^A-Za-z0-9_]", "_", n)
+    if not n:
+        n = "unnamed"
+    if n[0].isdigit():
+        n = "_" + n
+    return ("~" if tilde else "") + n
+
+
 # ---------------------------------------------------------------- cc evidence
 #
 # R4: calling-convention arbitration needs the binary, not the registry.
@@ -397,6 +417,7 @@ def derive_signature(reg, ex):
         if att["cls"]:
             cls, cls_src = att["cls"], "resolve:%s" % att["src"]
     method = fn.get("method") or (name.split("::")[-1] if "::" in name else name)
+    method = sanitize_ident(method)
     ret = spell_type(fn.get("ret") or "int")
     ret_notes = []
     # Audit-rem ③: proto `T *this` is accepted only when T derives from the
@@ -448,6 +469,9 @@ def derive_signature(reg, ex):
 
     def _scrub_param(part):
         part = part.strip()
+        # CW2: IDA register annotations ride INSIDE the type spelling
+        # (`double@<st0>`, `char@<cf>` -> C2018 unknown character '0x40').
+        part = re.sub(r"@<[^>]*>", "", part).strip()
         while True:
             m = re.match(r"^(.*\S)\s+([A-Za-z_]\w*)$", part)
             if m and m.group(2) not in _TY_WORDS and \
@@ -455,6 +479,16 @@ def derive_signature(reg, ex):
                 part = m.group(1)
             else:
                 break
+        # CW2: IDA also writes the parameter NAME glued after the star
+        # (`char *Destination`, `const wchar_t *Str`) -- the loop above
+        # needs whitespace before the name and never fires there, so the
+        # emitted prototype read `char *Destination p0` (C2146 missing ','
+        # before identifier 'p0').  Strip one trailing identifier after a
+        # star when it is not a type word.
+        m = re.match(r"^(.*\*)\s*([A-Za-z_]\w*)$", part)
+        if m and m.group(2) not in _TY_WORDS and \
+                not m.group(2).startswith("__"):
+            part = m.group(1).strip()
         return part
     if fn.get("params"):
         for p in fn["params"]:
@@ -925,6 +959,30 @@ def emit_cpp(ctx, unit, hpp_name=None):
 
 # ---------------------------------------------------------------- era compile
 
+ERA_TYPES_SRC = os.path.join(HERE, "era_types.h")
+
+
+def write_era_types(inc_dir):
+    """CW2: drop the shared types-only preamble into the unit include dir.
+
+    Every generated hpp starts with `#include "era_types.h"`; the driver
+    compiles with `/I <out>/include`, so the file lives next to the hpps.
+    """
+    os.makedirs(inc_dir, exist_ok=True)
+    with open(ERA_TYPES_SRC, encoding="utf-8") as f:
+        data = f.read()
+    dst = os.path.join(inc_dir, "era_types.h")
+    try:
+        with open(dst, encoding="utf-8") as f:
+            if f.read() == data:
+                return dst
+    except OSError:
+        pass
+    with open(dst, "w", encoding="utf-8", newline="\n") as f:
+        f.write(data)
+    return dst
+
+
 def era_compile(cpp_path, outdir):
     sys.path.insert(0, os.path.join(ROOT, "tools", "codegen_match"))
     from build_era import era_env
@@ -967,6 +1025,7 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     inc_dir = os.path.join(args.out, "include")
     os.makedirs(inc_dir, exist_ok=True)
+    write_era_types(inc_dir)
 
     contexts = []
     for addr in addrs:

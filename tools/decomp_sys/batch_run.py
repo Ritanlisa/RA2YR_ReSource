@@ -233,6 +233,7 @@ def run_part(addrs, batch_src, out, reg, idx):
     for stale in os.listdir(inc_dir):
         if stale.endswith((".hpp", ".h")):
             os.remove(os.path.join(inc_dir, stale))
+    decompile.write_era_types(inc_dir)
     for stale in os.listdir(out):
         if stale.endswith((".cpp", ".obj", ".hpp")):
             os.remove(os.path.join(out, stale))

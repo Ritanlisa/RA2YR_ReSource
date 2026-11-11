@@ -16,7 +16,7 @@ Emission:
 """
 import re
 
-from passes import WIDTH_OF
+from passes import WIDTH_OF, spell_type, ERA_TYPE_NAMES
 
 
 def guard_of(cls):
@@ -59,35 +59,63 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     # forward declarations for class-typed pointer members / param types
     # (undeclared class names in member decls were C2143 batch failures)
     fwd = set()
+
+    def _fwd_ok(n):
+        """CW2: only bare, declarable class names get `class X;`.
+
+        Rejects: primitives, era_types.h names (LONG/HWND/... -- declaring
+        `class LONG;` turned `volatile LONG *` into `volatile class LONG *`
+        -> C2664), qualified/nested spellings (`A::B;` is C2143), and any
+        spelling carrying IDA decoration.
+        """
+        if not n:
+            return False
+        n = n.strip()
+        if n in _PRIM_TYPES or n in WIDTH_OF or n in ERA_TYPE_NAMES:
+            return False
+        if not re.match(r"^[A-Za-z_]\w*$", n):
+            return False
+        if n == cls_ident(cls):
+            return False
+        return True
+
     for off in offs:
         arr = arrs.get(off)
         if arr and not _is_prim(arr["elem"]) and not arr["elem"].endswith("*"):
-            fwd.add(arr["elem"])
+            if _fwd_ok(arr["elem"]):
+                fwd.add(arr["elem"])
         for v in scal.get(off, {}).values():
             b = (v.get("type") or "").replace("*", "").strip()
-            if v.get("type", "").endswith("*") and b and not _is_prim(b) \
-                    and b != cls_ident(cls):
-                fwd.add(b)
+            if v.get("type", "").endswith("*") and b and not _is_prim(b):
+                if _fwd_ok(b):
+                    fwd.add(b)
     for s in sigs:
         if s["ret"].endswith("*"):
             b = s["ret"].replace("*", "").strip()
-            if b and not _is_prim(b) and b != cls_ident(cls):
-                fwd.add(b)
+            if b and not _is_prim(b):
+                if _fwd_ok(b):
+                    fwd.add(b)
         for t, _n in s["params_spelled"]:
             if t.endswith("*"):
                 b = t.replace("*", "").strip()
-                if b and not _is_prim(b) and b != cls_ident(cls):
-                    fwd.add(b)
+                if b and not _is_prim(b):
+                    if _fwd_ok(b):
+                        fwd.add(b)
     if extra_fwd:
         # R4: cast-only class references in the emitted bodies
         # ((AnimClass *)x) need a forward declaration; the member/param
         # scan above never sees them (C2065 AnimClass family).
         for n in extra_fwd:
-            if not n or n == cls_ident(cls) or _is_prim(n):
-                continue
-            if n in _PRIM_TYPES or n in WIDTH_OF:
-                continue
-            fwd.add(n)
+            if _fwd_ok(n):
+                fwd.add(n)
+    # CW2: extern-block return/param types (`extern Coord3D * __fastcall
+    # f(...)`) were never scanned -- `Coord3D` then hit C2143 "missing ';'
+    # before '*'" on the declaration itself (18 census units).
+    for d in (extra_externs or []):
+        body = d.replace("extern", " ", 1)
+        for m in re.finditer(r"\b([A-Za-z_]\w*)\s*\*", body):
+            if _fwd_ok(m.group(1)):
+                fwd.add(m.group(1))
     # R5: class-typed globals (`extern Stream * g_ZBufferDescriptor`) --
     # the type names an undeclared class (C2143 BlitTrans hpp family).
     # COLLISION: a global VARIABLE whose name equals a class name (the
@@ -99,13 +127,13 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             ty = used_globals[name]
             if ty.endswith("*"):
                 b = ty.replace("*", "").strip()
-                if b and not _is_prim(b) and b != cls_ident(cls) \
-                        and b not in _PRIM_TYPES and b not in WIDTH_OF:
+                if b and not _is_prim(b):
                     if b in gnames:
                         # class name == sibling global name: degrade
                         used_globals[name] = "void *"
                         continue
-                    fwd.add(b)
+                    if _fwd_ok(b):
+                        fwd.add(b)
         fwd -= gnames
     fwd.discard(cls_ident(cls))
     if fwd:
@@ -116,6 +144,7 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
     lines.append("#ifndef %s" % guard_of(cls))
     lines.append("#define %s" % guard_of(cls))
     lines.append("")
+    lines.append('#include "era_types.h"  // CW2: Win32/IDA type aliases (types only)')
     lines.append("#include <string.h>   // memset (whole-object zero init)")
     lines.append("#include <stdlib.h>   // qsort/abs/atoi (CRT calls in bodies)")
     lines.append("#include <stdio.h>    // sprintf/sscanf/printf (R5)")
@@ -133,14 +162,15 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
         roles = scal.get(off, {})
         entries = []          # full declaration strings (sans indent)
         if arr:
+            elem = spell_type(arr["elem"])
             if arr["count"] > 0:
-                entries.append("%s %s[%d];" % (arr["elem"], arr["name"],
+                entries.append("%s %s[%d];" % (elem, arr["name"],
                                                 arr["count"]))
             else:
                 # unknown-count element view: 1-element carrier (VC6 rejects
                 # `T x[];` members with C2133; indexing past [0] compiles)
                 entries.append("%s %s[1];  /* element view */"
-                               % (arr["elem"], arr["name"]))
+                               % (elem, arr["name"]))
             emitted_names.add(arr["name"])
         for role in ("byte", "word", "dword", "qword", "ptr"):
             v = roles.get(role)
@@ -149,7 +179,7 @@ def gen_class_hpp(cls, views, sigs, registry_size, extra_notes=(),
             nm = v["name"]
             if nm in emitted_names:
                 nm = nm + "_" + role
-            entries.append("%s %s;" % (v["type"], nm))
+            entries.append("%s %s;" % (spell_type(v["type"]), nm))
             emitted_names.add(nm)
         return entries
 
