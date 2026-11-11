@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C857E",
+ "name": "CreateEventA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C857E",
+ "bytes_hex": "ff2568117e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

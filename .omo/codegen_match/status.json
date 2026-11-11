@@ -35426,11 +35426,15 @@
   "status": "NG"
  },
  "0x551c60": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
   "first_diff": null,
   "name": "BitStreamIOLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "BitStreamIOLCW",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x551e50": {
   "attempts": 2,
@@ -75872,11 +75876,16 @@
   "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
-  "attempts": 9,
+  "attempts": 10,
+  "clean": false,
+  "cls_src": "signals_cls",
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelRenderer::DrawSection",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x757790": {
   "attempts": 12,
@@ -83540,32 +83549,48 @@
   "status": "NG"
  },
  "0x7c83ec": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e125c]",
   "name": "GetDriveTypeA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetDriveTypeA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c842e": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1230]",
   "name": "LoadResource",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "LoadResource",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8470": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e11ac]",
   "name": "lstrlenA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "lstrlenA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c84b2": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e10e0]",
   "name": "DeleteFileA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DeleteFileA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c84f4": {
   "attempts": 1,
@@ -83582,11 +83607,15 @@
   "status": "NG"
  },
  "0x7c857e": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1168]",
   "name": "CreateEventA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CreateEventA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c85c0": {
   "attempts": 1,
@@ -83603,32 +83632,48 @@
   "status": "NG"
  },
  "0x7c8644": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1484]",
   "name": "PeekMessageA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "PeekMessageA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8686": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13d8]",
   "name": "DialogBoxIndirectParamA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "DialogBoxIndirectParamA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c86c8": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e13a8]",
   "name": "GetKeyState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetKeyState",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c870a": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1504]",
   "name": "EndPaint",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "EndPaint",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8752": {
   "attempts": 1,
@@ -83638,25 +83683,37 @@
   "status": "NG"
  },
  "0x7c8794": {
-  "attempts": 5,
-  "first_diff": null,
+  "attempts": 6,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1458]",
   "name": "ScreenToClient",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ScreenToClient",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c87d6": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e142c]",
   "name": "RedrawWindow",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RedrawWindow",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c8818": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1064]",
   "name": "GetTextMetricsA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "GetTextMetricsA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c885a": {
   "attempts": 2,
@@ -83666,46 +83723,71 @@
   "status": "NG"
  },
  "0x7c889c": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e100c]",
   "name": "RegOpenKeyExA",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "RegOpenKeyExA",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c88e4": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e15f0]",
   "name": "CLSIDFromString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CLSIDFromString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c891a": {
-  "attempts": 8,
-  "first_diff": null,
-  "name": "OleUninitialize::0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 9,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 jmp dword ptr [0x7e15d0]",
+  "name": "OleUninitialize::_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "OleUninitialize::0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c892c": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1364]",
   "name": "SysFreeString",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "SysFreeString",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c896e": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1544]",
   "name": "ntohl",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ntohl",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c89b0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 jmp dword ptr [0x7e1558]",
   "name": "sendto",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sendto",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x7c89f2": {
   "attempts": 6,

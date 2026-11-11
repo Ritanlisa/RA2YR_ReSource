@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetTextMetricsA@@YGHPAXPAUtagTEXTMETRICA@@@Z",
+ "sym_key": "Unnamed::GetTextMetricsA",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b4c24045051e800000000c20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?__imp_GetTextMetricsA@@YGHPBX0@Z",
+   "sym_key": "__imp_GetTextMetricsA"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?PeekMessageA@@YGHPAUtagMSG@@PAXIII@Z",
+ "sym_key": "Unnamed::PeekMessageA",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b4424148b4c24108b54240c508b44240c518b4c240c525051e800000000c21400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?__imp_PeekMessageA@@YGHPBX0HHH@Z",
+   "sym_key": "__imp_PeekMessageA"
+  }
+ ]
+}

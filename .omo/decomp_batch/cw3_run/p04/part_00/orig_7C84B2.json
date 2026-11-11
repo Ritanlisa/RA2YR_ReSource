@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C84B2",
+ "name": "DeleteFileA",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C84B2",
+ "bytes_hex": "ff25e0107e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

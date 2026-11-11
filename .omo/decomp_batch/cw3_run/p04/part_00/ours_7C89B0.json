@@ -1,0 +1,15 @@
+{
+ "symbol": "?sendto@@YGHIPBDHHPBVsockaddr@@H@Z",
+ "sym_key": "Unnamed::sendto",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b4424188b4c24148b542410508b442410518b4c2410528b542410505152e800000000c21800",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?__imp_sendto@@YGHHPBXHH0H@Z",
+   "sym_key": "__imp_sendto"
+  }
+ ]
+}
