@@ -1,0 +1,8 @@
+{
+ "symbol": "?StubReturnTrue@TacticalClass@@QAEXXZ",
+ "sym_key": "TacticalClass::StubReturnTrue",
+ "size": 1,
+ "link_base": 0,
+ "bytes_hex": "c3",
+ "relocs": []
+}

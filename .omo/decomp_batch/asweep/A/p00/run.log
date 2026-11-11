@@ -1,0 +1,107 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p00\part_00
+=== convert (20 addrs) ===
+[conv] 0x40cc10 LogicClass::StubReturnFalse -> LogicClass
+[conv] 0x40d260 nullsub_56 -> _addr_40
+[conv] 0x40d300 ObjectClass::nullsub_57 -> ObjectClass
+[conv] 0x40eb80 nullsub_59 -> _addr_40
+[conv] 0x40ec00 nullsub_60 -> _addr_40
+[conv] 0x40f240 nullsub_61 -> _addr_40
+[conv] 0x40f250 nullsub_62 -> _addr_40
+[conv] 0x40f260 nullsub_63 -> _addr_40
+[conv] 0x410470 AbstractClass::StubReturnFalse -> AbstractClass
+[conv] 0x410570 AbstractClass::COMStub_Return0_23 -> AbstractClass
+[conv] 0x41b900 TacticalClass::StubReturnTrue -> TacticalClass
+[conv] 0x41bfe0 TechnoClass::vt_entry_428 -> TechnoClass
+[conv] 0x41c000 TechnoClass::StubReturnTrue2 -> TechnoClass
+[conv] 0x41c0f0 FootClass::vt_entry_514 -> FootClass
+[conv] 0x41c100 FootClass::StubReturnFalse -> FootClass
+[conv] 0x41c110 FootClass::StubReturnVoid -> FootClass
+[conv] 0x41dc50 AirstrikeClass::StubReturnFalse -> AirstrikeClass
+[conv] 0x420130 ObjectClass::nullsub_53 -> ObjectClass
+[conv] 0x420360 nullsub_88 -> _addr_42
+[conv] 0x423920 nullsub_89 -> _addr_42
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LogicClass               rc=0
+[era] _addr_40                 rc=0
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] TacticalClass            rc=0
+[era] TechnoClass              rc=0
+[era] FootClass                rc=0
+[era] AirstrikeClass           rc=0
+[era] _addr_42                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x40cc10   MATCH            LogicClass::StubReturnFalse
+[diff] 0x40d260   MATCH            nullsub_56
+[diff] 0x40eb80   MATCH            nullsub_59
+[diff] 0x40ec00   MATCH            nullsub_60
+[diff] 0x40f240   MATCH            nullsub_61
+[diff] 0x40f250   MATCH            nullsub_62
+[diff] 0x40f260   MATCH            nullsub_63
+[diff] 0x410470   MISMATCH         AbstractClass::StubReturnFalse
+[diff] 0x410570   MISMATCH         AbstractClass::COMStub_Return0_23
+[diff] 0x41b900   MATCH            TacticalClass::StubReturnTrue
+[diff] 0x41bfe0   MISMATCH         TechnoClass::vt_entry_428
+[diff] 0x41c000   MATCH            TechnoClass::StubReturnTrue2
+[diff] 0x41c0f0   MATCH            FootClass::vt_entry_514
+[diff] 0x41c100   MATCH            FootClass::StubReturnFalse
+[diff] 0x41c110   MATCH            FootClass::StubReturnVoid
+[diff] 0x41dc50   MATCH            AirstrikeClass::StubReturnFalse
+[diff] 0x420360   MATCH            nullsub_88
+[diff] 0x423920   MATCH            nullsub_89
+[ledger] 0x40cc10 LogicClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x40d260 nullsub_56 -> OK (attempt 1)
+[ledger] 0x40d300 ObjectClass::nullsub_57 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40eb80 nullsub_59 -> OK (attempt 1)
+[ledger] 0x40ec00 nullsub_60 -> OK (attempt 1)
+[ledger] 0x40f240 nullsub_61 -> OK (attempt 1)
+[ledger] 0x40f250 nullsub_62 -> OK (attempt 1)
+[ledger] 0x40f260 nullsub_63 -> OK (attempt 1)
+[ledger] 0x410470 AbstractClass::StubReturnFalse -> NG (attempt 1)
+[ledger] 0x410570 AbstractClass::COMStub_Return0_23 -> NG (attempt 1)
+[ledger] 0x41b900 TacticalClass::StubReturnTrue -> OK (attempt 1)
+[ledger] 0x41bfe0 TechnoClass::vt_entry_428 -> NG (attempt 1)
+[ledger] 0x41c000 TechnoClass::StubReturnTrue2 -> OK (attempt 1)
+[ledger] 0x41c0f0 FootClass::vt_entry_514 -> OK (attempt 1)
+[ledger] 0x41c100 FootClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x41c110 FootClass::StubReturnVoid -> OK (attempt 1)
+[ledger] 0x41dc50 AirstrikeClass::StubReturnFalse -> OK (attempt 1)
+[ledger] 0x420130 ObjectClass::nullsub_53 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x420360 nullsub_88 -> OK (attempt 1)
+[ledger] 0x423920 nullsub_89 -> OK (attempt 1)
+======================================================================
+{
+ "total": 3211,
+ "verdicts": {
+  "MISMATCH": 1105,
+  "MATCH": 741,
+  "COMPILE_FAIL": 1344,
+  "DUP_SKIP": 4,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 15,
+  "codegen_shape": 347,
+  "ret_norm": 10,
+  "frame_sched": 81,
+  "const_fold": 77,
+  "branch_polarity": 57,
+  "regalloc": 136,
+  "branch_order": 98,
+  "width_mismatch": 11,
+  "extern_reloc": 236,
+  "cc_mismatch": 29,
+  "signedness": 8
+ },
+ "match_rate_of_decided_pct": 40.1,
+ "match_rate_of_total_pct": 23.1,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p00\batch_report.json
