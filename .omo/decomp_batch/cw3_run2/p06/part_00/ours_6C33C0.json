@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@_TClassFactory_VUnitClass@@QAGJXZ",
+ "sym_key": "_TClassFactory_VUnitClass::AddRef",
+ "size": 18,
+ "link_base": 0,
+ "bytes_hex": "518b44240083c00450e80000000059c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?InterlockedIncrement@@YGJPCJ@Z",
+   "sym_key": "InterlockedIncrement"
+  }
+ ]
+}

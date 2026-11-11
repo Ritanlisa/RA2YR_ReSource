@@ -1,0 +1,11 @@
+{
+ "addr": "0x76BC60",
+ "name": "WDTState_4::Constructor",
+ "size": 18,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76BC60",
+ "bytes_hex": "568bf1e8c817efffc706a4bf7e008bc65ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

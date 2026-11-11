@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x6c12c0",
+  "name": "TClassFactory_RadSiteClass::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InterlockedIncrement' : cannot convert parameter 1 from 'volatile class LONG *' to 'void *'"
+ },
+ {
+  "addr": "0x6c2340",
+  "name": "TClassFactory_TeamClass::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InterlockedIncrement' : cannot convert parameter 1 from 'volatile class LONG *' to 'void *'"
+ },
+ {
+  "addr": "0x6c33c0",
+  "name": "TClassFactory_UnitClass::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InterlockedIncrement' : cannot convert parameter 1 from 'volatile class LONG *' to 'void *'"
+ },
+ {
+  "addr": "0x6c45c0",
+  "name": "TClassFactory_TunnelLocomotionClass::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InterlockedIncrement' : cannot convert parameter 1 from 'volatile class LONG *' to"
+ },
+ {
+  "addr": "0x6c5640",
+  "name": "SuperWeaponClass::ProcessCharged",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'InterlockedIncrement' : cannot convert parameter 1 from 'volatile class LONG *' to 'void *"
+ },
+ {
+  "addr": "0x7d9fac",
+  "name": "sub_7D9FAC",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x433040",
+  "name": "BinkMovie::RenderFrameToSurface",
+  "cls": null,
+  "size": 18,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'MovieHandle' : is not a member of 'BinkMovieHandle'"
+ },
+ {
+  "addr": "0x5aff50",
+  "name": "sub_5AFF50",
+  "cls": null,
+  "size": 18,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x76bc60",
+  "name": "WDTState_4::Constructor",
+  "cls": null,
+  "size": 18,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'rc_ptr' : undeclared identifier"
+ },
+ {
+  "addr": "0x7d8496",
+  "name": "unknown_libname_78",
+  "cls": null,
+  "size": 19,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x536950",
+  "name": "CreateTeamCommand::performAction_58",
+  "cls": null,
+  "size": 20,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'UpdateUnitHealthTooltip' : cannot convert parameter 1 from 'bool' to 'void *'"
+ },
+ {
+  "addr": "0x7a2730",
+  "name": "Network_Create_7A2730",
+  "cls": null,
+  "size": 21,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before '__stdcall'"
+ },
+ {
+  "addr": "0x40d310",
+  "name": "sub_40D310",
+  "cls": null,
+  "size": 22,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2665",
+  "first_msg": "'atexit' : none of the 2 overloads can convert parameter 1 from type 'int (__cdecl *)(const void *,const voi"
+ },
+ {
+  "addr": "0x600530",
+  "name": "sub_600530",
+  "cls": null,
+  "size": 22,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'atexit' : cannot convert parameter 1 from 'int (const void *,const void *)' to 'void (__cdecl *)(void)'"
+ },
+ {
+  "addr": "0x77ca00",
+  "name": "sub_77CA00",
+  "cls": null,
+  "size": 22,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x77d0f0",
+  "name": "sub_77D0F0",
+  "cls": null,
+  "size": 22,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x535df0",
+  "name": "CreateTeamCommand::performAction_8",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ },
+ {
+  "addr": "0x536210",
+  "name": "CSF::GetTeamString",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'unsigned short' to 'int *'"
+ },
+ {
+  "addr": "0x536840",
+  "name": "CreateTeamCommand::performAction_47",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'unsigned short' to 'int *'"
+ },
+ {
+  "addr": "0x536b20",
+  "name": "CreateTeamCommand::performAction_71",
+  "cls": null,
+  "size": 23,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2664",
+  "first_msg": "'GetStringCSF' : cannot convert parameter 1 from 'char []' to 'int *'"
+ }
+]
