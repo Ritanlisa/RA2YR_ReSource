@@ -1,0 +1,48 @@
+[resume] 0/4 already decided, 4 to run
+======================================================================
+PART 1/1  (4 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p04\part_00
+=== convert (4 addrs) ===
+[conv] 0x55c0e0 unknown::DecodeBlockLCW -> unknown
+[conv] 0x7c7f20 unknown::Audio_Helper_7C7F20 -> unknown
+[conv] 0x551c60 unknown::BitStreamIOLCW -> unknown
+=== emit 1 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+=== diffasm byte-compare ===
+[ledger] 0x55c0e0 DecodeBlockLCW -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c7f20 Audio_Helper_7C7F20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x552640 0x552640 -> PENDING (attempt 1)
+[ledger] 0x551c60 BitStreamIOLCW -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1041,
+ "verdicts": {
+  "MISMATCH": 283,
+  "MATCH": 411,
+  "COMPILE_FAIL": 315,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 25,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 4,
+  "codegen_shape": 109,
+  "ret_norm": 2,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 23,
+  "regalloc": 43,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 59.2,
+ "match_rate_of_total_pct": 39.5,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\B\p04\batch_report.json

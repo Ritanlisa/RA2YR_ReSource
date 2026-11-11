@@ -1,0 +1,50 @@
+[
+ {
+  "addr": "0x55c0e0",
+  "name": "DecodeBlockLCW",
+  "cls": "unknown",
+  "size": 457,
+  "family": "censusB",
+  "layer": "B",
+  "reason": "leaf-medium",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7c7f20",
+  "name": "Audio_Helper_7C7F20",
+  "cls": "unknown",
+  "size": 466,
+  "family": "censusB",
+  "layer": "B",
+  "reason": "leaf-medium",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 12
+ },
+ {
+  "addr": "0x552640",
+  "name": "sub_552640",
+  "cls": "",
+  "size": 482,
+  "family": "censusB",
+  "layer": "B",
+  "reason": "leaf-medium",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x551c60",
+  "name": "BitStreamIOLCW",
+  "cls": "unknown",
+  "size": 484,
+  "family": "censusB",
+  "layer": "B",
+  "reason": "leaf-medium",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ }
+]

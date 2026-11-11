@@ -3555,12 +3555,26 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x551c60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BitStreamIOLCW",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x551e50": {
   "attempts": 1,
   "first_diff": null,
   "name": "DecompressCoreLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x552640": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x552640",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x552b10": {
   "attempts": 9,
@@ -3713,6 +3727,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "RadarClass::SetGlobal",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x55c0e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DecodeBlockLCW",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -7362,6 +7383,13 @@
   "name": "0x7c6fc8",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7c7f20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Helper_7C7F20",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7c81db": {
   "attempts": 6,

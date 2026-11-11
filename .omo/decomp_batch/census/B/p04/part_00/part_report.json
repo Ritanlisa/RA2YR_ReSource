@@ -1,0 +1,67 @@
+{
+ "summary": {
+  "total": 4,
+  "verdicts": {
+   "COMPILE_FAIL": 3,
+   "NO_CLS": 1
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x55c0e0",
+   "batch": "censusB",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(119) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(172) : error C2100: i",
+   "first_diff": null,
+   "pathology": null,
+   "name": "DecodeBlockLCW",
+   "emitted": "unknown::DecodeBlockLCW",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/2",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7c7f20",
+   "batch": "censusB",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(119) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(172) : error C2100: i",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Audio_Helper_7C7F20",
+   "emitted": "unknown::Audio_Helper_7C7F20",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "2/47",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x552640",
+   "batch": "censusB",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x552640",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x551c60",
+   "batch": "censusB",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(119) : error C2100: illegal indirection; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\B\\p04\\part_00\\unknown.cpp(172) : error C2100: i",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BitStreamIOLCW",
+   "emitted": "unknown::BitStreamIOLCW",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/9",
+   "rule_violations": 0
+  }
+ ]
+}
