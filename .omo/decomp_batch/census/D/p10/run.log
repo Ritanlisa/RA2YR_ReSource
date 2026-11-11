@@ -1,0 +1,102 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p10\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b7f90 unknown::ToWideStringCharAlt -> unknown
+[conv] 0x4acac0 MapClass::ProcessVisibilityFlags -> MapClass
+[conv] 0x6ce910 SuperWeaponTypeClass::SD_vt13 -> SuperWeaponTypeClass
+[conv] 0x577ab0 ShroudClass::Reset -> ShroudClass
+[conv] 0x6430c0 unknown::sub_6430C0 -> unknown
+[conv] 0x53ad00 unknown::UpdateSurfaceAnimations -> unknown
+[conv] 0x4d9e70 FootClass::CheckCohesion -> FootClass
+[conv] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> ModemGuest
+[conv] 0x6f19b0 unknown::SmallFunc_6F19B0 -> unknown
+[conv] 0x6ba580 unknown::BlitTransparent -> unknown
+[conv] 0x721040 unknown::LoadGame_Start -> unknown
+[conv] 0x4fbf60 HouseClass::DroppedFlag -> HouseClass
+[conv] 0x54e590 AbstractClass::processStateTransition -> AbstractClass
+[conv] 0x407680 unknown::StartAddress -> unknown
+[conv] 0x7cc309 unknown::__mbstowcs_lk -> unknown
+[conv] 0x42f070 BaseClass::LoadArrayFields -> BaseClass
+[conv] 0x474430 CCINIClass::WriteDigest -> CCINIClass
+[conv] 0x5f6250 ObjectClass::ProcessPower -> ObjectClass
+[conv] 0x62d5e0 BuildingClass::AdjustHeight -> BuildingClass
+[conv] 0x5edde0 unknown::EnablePlayerSlotControls -> unknown
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] MapClass                 rc=2
+[era] SuperWeaponTypeClass     rc=0
+[era] ShroudClass              rc=0
+[era] FootClass                rc=2
+[era] ModemGuest               rc=2
+[era] HouseClass               rc=2
+[era] AbstractClass            rc=0
+[era] BaseClass                rc=0
+[era] CCINIClass               rc=2
+[era] ObjectClass              rc=0
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x53ad00   MISMATCH         unknown::UpdateSurfaceAnimations
+[diff] 0x6ba580   MISMATCH         unknown::BlitTransparent
+[diff] 0x721040   MISMATCH         unknown::LoadGame_Start
+[diff] 0x6ce910   MISMATCH         SuperWeaponTypeClass::SD_vt13
+[diff] 0x577ab0   MISMATCH         ShroudClass::Reset
+[diff] 0x54e590   MISMATCH         AbstractClass::processStateTransition
+[diff] 0x42f070   MISMATCH         BaseClass::LoadArrayFields
+[diff] 0x5f6250   MISMATCH         ObjectClass::ProcessPower
+[diff] 0x62d5e0   MISMATCH         BuildingClass::AdjustHeight
+[ledger] 0x7b7f90 ToWideStringCharAlt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4acac0 MapClass::ProcessVisibilityFlags -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ce910 SuperWeaponTypeClass::SD_vt13 -> NG (attempt 1)
+[ledger] 0x577ab0 ShroudClass::Reset -> NG (attempt 1)
+[ledger] 0x6430c0 sub_6430C0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53ad00 UpdateSurfaceAnimations -> NG (attempt 1)
+[ledger] 0x4d9e70 TeamClass::CheckCohesion -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ba580 Surface::BlitTransparent -> NG (attempt 1)
+[ledger] 0x721040 LoadGame_Start -> NG (attempt 1)
+[ledger] 0x4fbf60 HouseClass::DroppedFlag -> COMPILE_FAIL (attempt 1)
+[ledger] 0x54e590 AbstractClass::processStateTransition -> NG (attempt 1)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc309 __mbstowcs_lk -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42f070 BaseClass::LoadArrayFields -> NG (attempt 1)
+[ledger] 0x474430 INIClass::WriteDigest -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f6250 HouseClass::ProcessPower -> NG (attempt 1)
+[ledger] 0x62d5e0 ParticleClass::AdjustHeight -> NG (attempt 1)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2574,
+ "verdicts": {
+  "MISMATCH": 701,
+  "MATCH": 521,
+  "COMPILE_FAIL": 816,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 519,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 242,
+  "ret_norm": 7,
+  "frame_sched": 71,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 114,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.6,
+ "match_rate_of_total_pct": 20.2,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p10\batch_report.json

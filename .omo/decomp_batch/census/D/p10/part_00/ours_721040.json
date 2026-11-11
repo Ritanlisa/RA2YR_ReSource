@@ -1,0 +1,123 @@
+{
+ "symbol": "?LoadGame_Start@unknown@@QAGHH@Z",
+ "sym_key": "unknown::LoadGame_Start",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "518b44240c5356578b086a008d54241c6a0452508bf0ff510c8bf885ff0f8cc90000008b066a008d4c24106a045156ff500c8bf885ff0f8cb0000000a00000000084c00f84a30000008b542418b90000000052e800000000a0000000008b74240c84c00f84830000008b5c24148bcbe80000000085c07474a00000000084c0756b83feff893500000000746083fefe745b3b350000000074538bcbe8000000008b0d0000000085c97442a00000000084c07414e80000000085c0750b8b0d00000000e8000000008b0d00000000e80000000085c074168b0d0000000085c97405e800000000c60500000000018bc75f5e5b59c20800",
+ "relocs": [
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EBA5@@3EA",
+   "sym_key": "DataGlobal_A8EBA5"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?unk_A83D10@@3EA",
+   "sym_key": "unk_A83D10"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Play@ThemeClass@@QAEHH@Z",
+   "sym_key": "ThemeClass::Play"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?g_ThemeMIXLoaded@@3EA",
+   "sym_key": "g_ThemeMIXLoaded"
+  },
+  {
+   "off": 112,
+   "type": "REL32",
+   "sym": "?IsSoundEnabled@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundEnabled"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8ED64@@3_NA",
+   "sym_key": "DataGlobal_A8ED64"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D18@@3IA",
+   "sym_key": "DataGlobal_A83D18"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D14@@3IA",
+   "sym_key": "DataGlobal_A83D14"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 162,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D3C@@3IA",
+   "sym_key": "DataGlobal_A83D3C"
+  },
+  {
+   "off": 171,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D21@@3EA",
+   "sym_key": "DataGlobal_A83D21"
+  },
+  {
+   "off": 180,
+   "type": "REL32",
+   "sym": "?IsBuffering@AudioSample@@QAEHXZ",
+   "sym_key": "AudioSample::IsBuffering"
+  },
+  {
+   "off": 190,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D3C@@3IA",
+   "sym_key": "DataGlobal_A83D3C"
+  },
+  {
+   "off": 195,
+   "type": "REL32",
+   "sym": "?Release@Audio@@QAEXXZ",
+   "sym_key": "Audio::Release"
+  },
+  {
+   "off": 201,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D3C@@3IA",
+   "sym_key": "DataGlobal_A83D3C"
+  },
+  {
+   "off": 206,
+   "type": "REL32",
+   "sym": "?IsSoundPlaying@Audio@@QAEHXZ",
+   "sym_key": "Audio::IsSoundPlaying"
+  },
+  {
+   "off": 216,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D3C@@3IA",
+   "sym_key": "DataGlobal_A83D3C"
+  },
+  {
+   "off": 225,
+   "type": "REL32",
+   "sym": "?RequestBuffer@ThemeClass@@QAEHXZ",
+   "sym_key": "ThemeClass::RequestBuffer"
+  },
+  {
+   "off": 231,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A83D21@@3EA",
+   "sym_key": "DataGlobal_A83D21"
+  }
+ ]
+}

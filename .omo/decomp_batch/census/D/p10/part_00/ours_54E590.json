@@ -1,0 +1,27 @@
+{
+ "symbol": "?processStateTransition@AbstractClass@@QAEXH@Z",
+ "sym_key": "AbstractClass::processStateTransition",
+ "size": 206,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5356578bf98b771c4e78528b5f108b54241c8b04b38d0cb33b1074123b500474454e78398b41fc83e9043b1075ee8b0cb351e8000000008b4f1c83c4043bf17d1c498bc63bf1894f1c7d128b4f10408b1481895481fc8b4f1c3bc17cee5f5e5b83c40cc204008b028d4c240c51ff504833d28d4c241c8a50058b44241c2400510bd0b90000000089542420e8000000008b57108bd8538b04b28b00508b08ff91c80300008b57106a006a018b04b28b00508b08ff91e80100008b57105f8b04b25e8958045b83c40cc20400",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 134,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  }
+ ]
+}

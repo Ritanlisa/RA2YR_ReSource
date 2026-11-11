@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CE910",
+ "name": "SuperWeaponTypeClass::SD_vt13",
+ "size": 243,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CE910",
+ "bytes_hex": "56578b7c240c8bf157e8c222d4ff8b86980000008bcf50e82434ddff8b8ebc000000518bcfe81634ddff8b96a00000008bcf52e80834ddff8b86a40000008bcf50e8fa33ddff8b8ea8000000518bcfe8ec33ddff8b96ac0000008bcf52e8de33ddff8a86e60000008bcf50e82033ddff8a8ee7000000518bcfe81233ddff8a96ed0000008bcf52e80433ddff8a86ee0000008bcf50e8f632ddff8b8ef0000000518bcfe89833ddff8a96f40000008bcf52e8da32ddff8b86b00000008bcf50e87c33ddff8b8eb4000000518bcfe86e33ddff8a96e50000008bcf52e8b032ddff8a86f50000008bcf50e8a232ddff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

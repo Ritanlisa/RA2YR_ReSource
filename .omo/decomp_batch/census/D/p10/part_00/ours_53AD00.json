@@ -1,0 +1,87 @@
+{
+ "symbol": "?UpdateSurfaceAnimations@unknown@@QAIHHHHH@Z",
+ "sym_key": "unknown::UpdateSurfaceAnimations",
+ "size": 249,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec08538b5c2418558b6c24185633f6578bfa85c07620a1000000008b54241c53558b04b05257508b08ff5104a100000000463bf072e0a10000000033f685c0762fa1000000008b04b083b810030000017e148b800c0300008b54241c53558b08525750ff5104a100000000463bf072d133c08d4c24108944241089442414e80000000085c089442424744533f6e80000000085c0894424207e258b44242453558b48048b14b18b820c0300008b54242452578b0850ff5104463b7424207cdb8d4c2410e80000000085c08944242475bbb900000000e8000000006a016800000000e80000000083c4085f5e5d5b83c408c20c00",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F69C@@3IA",
+   "sym_key": "DataGlobal_87F69C"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_SurfaceAnimState@@3IA",
+   "sym_key": "g_SurfaceAnimState"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_AnimClass_SaveState@@3IA",
+   "sym_key": "g_AnimClass_SaveState"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?GetNextActive@FlagSystem@@QAEHXZ",
+   "sym_key": "FlagSystem::GetNextActive"
+  },
+  {
+   "off": 148,
+   "type": "REL32",
+   "sym": "?Surface_Update@@YAHXZ",
+   "sym_key": "Surface_Update"
+  },
+  {
+   "off": 202,
+   "type": "REL32",
+   "sym": "?GetNextActive@FlagSystem@@QAEHXZ",
+   "sym_key": "FlagSystem::GetNextActive"
+  },
+  {
+   "off": 215,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 220,
+   "type": "REL32",
+   "sym": "?UpdateLightingPostProcess@MapClass@@QAEHXZ",
+   "sym_key": "MapClass::UpdateLightingPostProcess"
+  },
+  {
+   "off": 227,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3IA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 232,
+   "type": "REL32",
+   "sym": "?MapClass__MarkForRedraw@@YAHPAXH@Z",
+   "sym_key": "MapClass__MarkForRedraw"
+  }
+ ]
+}

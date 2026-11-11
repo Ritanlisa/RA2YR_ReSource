@@ -1,0 +1,45 @@
+{
+ "symbol": "?AdjustHeight@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::AdjustHeight",
+ "size": 214,
+ "link_base": 0,
+ "bytes_hex": "83ec10568bf18b86ac0000008b801403000085c0750ae8000000005e83c410c34885c00f849d0000004885c00f859f000000d986e40000008b86a00000008b96a4000000dc1d000000008944240c33c98a8e9c00000089542410894c2408894c2404dfe0f6c441750c8b960001000003d189542404d986e4000000dc1d00000000dfe0f6c441752a8d4424085750e8000000008d4c24088bf851e8000000003bc75f7e0eb00188862d0100008886310100000fbe168d4424045056ff92d00600005e83c410c38bcee8000000008b4424045e83c410c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?UpdateFloatPosition@BuildingClass@@QAEHXZ",
+   "sym_key": "BuildingClass::UpdateFloatPosition"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 125,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 143,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 155,
+   "type": "REL32",
+   "sym": "?Cell__GetGroundHeight@@YGHPAX@Z",
+   "sym_key": "Cell__GetGroundHeight"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?CheckWaterImpact@ParticleClass@@QAEXXZ",
+   "sym_key": "ParticleClass::CheckWaterImpact"
+  }
+ ]
+}
