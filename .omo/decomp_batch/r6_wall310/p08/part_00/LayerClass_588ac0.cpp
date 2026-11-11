@@ -40,9 +40,9 @@ int LayerClass::ClearFactoryCellAssignments()
                         for ( i = 0; i < v6; ++i )
                         {
                             v9 = ((short)(v7 + v15) << 9) + (short)(i + v14);
-                            if ( v9 >= 0x40000 || (v10 = (int *)(*(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
+                            if ( v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
                             {
-                                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF));
+                                v11 = (v11 & ~0xFF) | ((i + v14) & 0xFF);
                                 v11 = (v11 & ~0xFF) | ((v7 + v15) & 0xFF);
                                 g_MissionQueueFrame.briefing[139] = v11;
                                 v10 = &g_MissionQueueFrame.briefing[130];

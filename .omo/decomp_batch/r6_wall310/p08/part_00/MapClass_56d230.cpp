@@ -17,9 +17,9 @@ short MapClass::GetTileIndex(short * p0, int p1, char p2)
         if ( p2 )
         {
             v6 = *p0 + (p0[1] << 9);
-            if ( v6 >= 0x40000 || (v7 = (int *)(*(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
+            if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v6)) == 0 )
             {
-                g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0);
+                g_MissionQueueFrame.briefing[139] = *(unsigned int *)p0;
                 v7 = &g_MissionQueueFrame.briefing[130];
             }
             if ( (v7[80] & 0x100) != 0 )
@@ -37,9 +37,9 @@ short MapClass::GetTileIndex(short * p0, int p1, char p2)
                 else
                 {
                     v10 = *p0 + (p0[1] << 9);
-                    if ( v10 < 0x40000 && (v11 = (int *)(*(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
+                    if ( v10 < 0x40000 && (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) != 0 )
                     {
-                        NeighbourContent = v11);
+                        NeighbourContent = v11;
                     }
                     else
                     {

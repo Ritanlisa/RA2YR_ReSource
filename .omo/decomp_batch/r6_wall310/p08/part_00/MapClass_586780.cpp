@@ -54,9 +54,9 @@ bool MapClass::IsAreaFree(int * p0, int p1)
             v9 = v7 + v8 < 0;
             v10 = v7 + v8;
             v17 = (v17 & ~0xFF) | ((v6) & 0xFF);
-            if ( v9 || v10 >= 0x40000 || (v11 = (int *)(*(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) == 0 )
+            if ( v9 || v10 >= 0x40000 || (v11 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v10)) == 0 )
             {
-                v12 = &g_MissionQueueFrame.briefing[130]);
+                v12 = &g_MissionQueueFrame.briefing[130];
                 g_MissionQueueFrame.briefing[139] = v17;
             }
             else

@@ -45,9 +45,9 @@ char CrateClass::FindPlacement()
             v8 = v5 + v7 < 0;
             v9 = v5 + v7;
             *(unsigned int *)v13 = v14;
-            if ( v8 || v9 >= 0x40000 || (v10 = (int *)(*(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
+            if ( v8 || v9 >= 0x40000 || (v10 = *(int **)(*(unsigned int *)&((char *)stru_87F5F0)[0x58 + (732)] + 4 * v9)) == 0 )
             {
-                g_MissionQueueFrame.briefing[139] = v14);
+                g_MissionQueueFrame.briefing[139] = v14;
                 v10 = &g_MissionQueueFrame.briefing[130];
             }
             if ( v10[59] == 2 )

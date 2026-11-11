@@ -72,7 +72,7 @@
    "unit": "CrateClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "9/11",
+   "sites": "8/10",
    "rule_violations": 4
   },
   {
@@ -87,7 +87,7 @@
    "unit": "MapClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "11/12",
+   "sites": "10/11",
    "rule_violations": 2
   },
   {
@@ -159,7 +159,7 @@
    "addr": "0x578460",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_578460.cpp(15) : error C2440: '=' : cannot convert from 'bool' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_578460.cpp(17) : error C2228: left of '.briefing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
    "first_diff": null,
    "pathology": null,
    "name": "LayerClass::IsWithinUsableArea",
@@ -167,7 +167,7 @@
    "unit": "LayerClass",
    "name_placeholder": false,
    "cls_src": "signals_cls",
-   "sites": "3/4",
+   "sites": "2/3",
    "rule_violations": 16
   },
   {
@@ -249,7 +249,7 @@
    "addr": "0x588ac0",
    "batch": "adhoc",
    "verdict": "COMPILE_FAIL",
-   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_588ac0.cpp(43) : error C2440: '=' : cannot convert from 'bool' to 'int *'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall310\\p08\\part_00\\LayerClass_588ac0.cpp(47) : error C2228: left of '.briefing' must have class/struct/union type; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\r6_wall31",
    "first_diff": null,
    "pathology": null,
    "name": "LayerClass::ClearFactoryCellAssignments",
@@ -257,7 +257,7 @@
    "unit": "LayerClass",
    "name_placeholder": false,
    "cls_src": "backfill",
-   "sites": "5/8",
+   "sites": "4/7",
    "rule_violations": 20
   },
   {
