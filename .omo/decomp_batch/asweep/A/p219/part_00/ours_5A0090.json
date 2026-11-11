@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetObstruction@MapClass@@QAGHPAFH@Z",
+ "sym_key": "MapClass::SetObstruction",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "8b150000000085d274258b4c24080fbf41020faf05000000000fbf0903c18b4c240c8d0480c1e004894c0238c20c008b442408c20c00",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_MapTileArray@@3PAXA",
+   "sym_key": "g_MapTileArray"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?g_MapCellWidth@@3IA",
+   "sym_key": "g_MapCellWidth"
+  }
+ ]
+}

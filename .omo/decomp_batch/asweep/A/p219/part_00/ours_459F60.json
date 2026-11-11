@@ -1,0 +1,8 @@
+{
+ "symbol": "?Equals@Coord3D@@QAEHPAI@Z",
+ "sym_key": "Coord3D::Equals",
+ "size": 46,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b11563b10751d8b51048b70043bd675138b49088b50083bca7509b8010000005ec2040033c05ec20400",
+ "relocs": []
+}

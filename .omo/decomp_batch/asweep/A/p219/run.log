@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p219\part_00
+=== convert (20 addrs) ===
+[conv] 0x735390 sub_735390 -> _addr_73
+[conv] 0x7bc610 _BlitTrans_E::sub_7BC610 -> _BlitTrans_E
+[conv] 0x7db113 ___shr_12 -> _addr_7D
+[conv] 0x7dbc2a __errcode -> _addr_7D
+[conv] 0x41c460 Vector2::NormalizeNonZero -> Vector2
+[conv] 0x41b5e0 AircraftClass::vt_entry_200 -> AircraftClass
+[conv] 0x459f60 Coord3D::Equals -> Coord3D
+[conv] 0x465d40 BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable -> BuildingClass
+[conv] 0x637070 WinMain_Helper_637070 -> WinMain_Helper
+[conv] 0x642740 CoordStruct::Set2 -> CoordStruct
+[conv] 0x65ad90 RadioClass::FindLinkIndex -> RadioClass
+[conv] 0x6ef9e0 TechnoClass::IsDeployed -> TechnoClass
+[conv] 0x726690 TriggerClass::FireAction -> TriggerClass
+[conv] 0x7db0e5 ___shl_12 -> _addr_7D
+[conv] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> JumpjetLocomotionClass
+[conv] 0x437160 Vector3::Subtract -> Vector3
+[conv] 0x5a0090 MapClass::SetObstruction -> MapClass
+[conv] 0x5ac570 _VectorClass_V_TRect_H::Shutdown -> _VectorClass_V_TRect_H
+[conv] 0x6c96b0 Float::SubtractClamped -> Float
+[conv] 0x6ce240 Coord3D::Add -> Coord3D
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_73                 rc=0
+[era] _BlitTrans_E             rc=2
+[era] _addr_7D                 rc=0
+[era] Vector2                  rc=2
+[era] AircraftClass            rc=0
+[era] Coord3D                  rc=0
+[era] BuildingClass            rc=2
+[era] WinMain_Helper           rc=0
+[era] CoordStruct              rc=0
+[era] RadioClass               rc=0
+[era] TechnoClass              rc=2
+[era] TriggerClass             rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] Vector3                  rc=0
+[era] MapClass                 rc=0
+[era] _VectorClass_V_TRect_H   rc=0
+[era] Float                    rc=0
+=== diffasm byte-compare ===
+[diff] 0x735390   MATCH            sub_735390
+[diff] 0x7db113   MISMATCH         ___shr_12
+[diff] 0x7dbc2a   MISMATCH         __errcode
+[diff] 0x7db0e5   MISMATCH         ___shl_12
+[diff] 0x41b5e0   MISMATCH         AircraftClass::vt_entry_200
+[diff] 0x459f60   MATCH            Coord3D::Equals
+[diff] 0x6ce240   MISMATCH         Coord3D::Add
+[diff] 0x637070   MISMATCH         WinMain_Helper_637070
+[diff] 0x642740   MISMATCH         CoordStruct::Set2
+[diff] 0x65ad90   MISMATCH         RadioClass::FindLinkIndex
+[diff] 0x726690   MISMATCH         TriggerClass::FireAction
+[diff] 0x437160   MISMATCH         Vector3::Subtract
+[diff] 0x5a0090   MISMATCH         MapClass::SetObstruction
+[diff] 0x5ac570   MISMATCH         _VectorClass_V_TRect_H::Shutdown
+[diff] 0x6c96b0   MISMATCH         Float::SubtractClamped
+[ledger] 0x735390 sub_735390 -> OK (attempt 1)
+[ledger] 0x7bc610 _BlitTrans_E::sub_7BC610 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7db113 ___shr_12 -> NG (attempt 1)
+[ledger] 0x7dbc2a __errcode -> NG (attempt 1)
+[ledger] 0x41c460 Vector2::NormalizeNonZero -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41b5e0 AircraftClass::vt_entry_200 -> NG (attempt 1)
+[ledger] 0x459f60 Coord3D::Equals -> OK (attempt 1)
+[ledger] 0x465d40 BuildingClass::Is1x1AndUndeployable_BuildingMassSelectable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x637070 WinMain_Helper_637070 -> NG (attempt 1)
+[ledger] 0x642740 CoordStruct::Set2 -> NG (attempt 1)
+[ledger] 0x65ad90 RadioClass::FindLinkIndex -> NG (attempt 1)
+[ledger] 0x6ef9e0 TechnoClass::IsDeployed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x726690 TriggerClass::FireAction -> NG (attempt 1)
+[ledger] 0x7db0e5 ___shl_12 -> NG (attempt 1)
+[ledger] 0x4cca90 JumpjetLocomotionClass::ComputeFloatExpression -> COMPILE_FAIL (attempt 1)
+[ledger] 0x437160 Vector3::Subtract -> NG (attempt 1)
+[ledger] 0x5a0090 MapClass::SetObstruction -> NG (attempt 1)
+[ledger] 0x5ac570 _VectorClass_V_TRect_H::Shutdown -> NG (attempt 1)
+[ledger] 0x6c96b0 Float::SubtractClamped -> NG (attempt 1)
+[ledger] 0x6ce240 Coord3D::Add -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 2,
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 13
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "branch_polarity": 3,
+  "extern_reloc": 1,
+  "regalloc": 4
+ },
+ "match_rate_of_decided_pct": 13.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p219\batch_report.json

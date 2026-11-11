@@ -1,0 +1,8 @@
+{
+ "symbol": "?Subtract@Vector3@@QAEPAHPAH0@Z",
+ "sym_key": "Vector3::Subtract",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b510456578b70048b78082bd68b71088b092bf78b388b44240c2bcf5f89700889088950045ec20800",
+ "relocs": []
+}

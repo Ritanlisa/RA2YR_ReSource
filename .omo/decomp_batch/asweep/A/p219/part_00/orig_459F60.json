@@ -1,0 +1,11 @@
+{
+ "addr": "0x459F60",
+ "name": "Coord3D::Equals",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x459F60",
+ "bytes_hex": "8b4424048b11563b10751d8b51048b70043bd675138b49088b50083bca7509b8010000005ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

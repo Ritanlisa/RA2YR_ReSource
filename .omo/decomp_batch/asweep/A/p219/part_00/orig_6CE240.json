@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CE240",
+ "name": "Coord3D::Add",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CE240",
+ "bytes_hex": "8b442408568b31578b108b790403d68b700403f78b78088b410803f88b44240c8bc889118971048979085f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

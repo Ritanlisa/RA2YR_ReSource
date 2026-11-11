@@ -1,0 +1,15 @@
+{
+ "symbol": "?___shr_12@@YAPAHPAH@Z",
+ "sym_key": "Unnamed::___shr_12",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "568b74240857b9010000008b7e048b56088bc7e8000000008b0e8946048b4608d1e9c1e71fd1e80bcf894608890e8bc65f5ec3",
+ "relocs": [
+  {
+   "off": 20,
+   "type": "REL32",
+   "sym": "__allshr",
+   "sym_key": "_allshr"
+  }
+ ]
+}

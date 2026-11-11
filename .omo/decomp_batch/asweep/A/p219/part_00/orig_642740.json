@@ -1,0 +1,11 @@
+{
+ "addr": "0x642740",
+ "name": "CoordStruct::Set2",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x642740",
+ "bytes_hex": "8b5424048bc10fbf4a020fbf12c1e10881c180000000c1e2088948048b4c240881c2800000008948088910c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

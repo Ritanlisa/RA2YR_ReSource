@@ -1,0 +1,11 @@
+{
+ "addr": "0x637070",
+ "name": "WinMain_Helper_637070",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x637070",
+ "bytes_hex": "33c033c9a2f44cac00a2f54cac00a3cc4cac00a3384cac00a3f04bac00a3684cac00890d6c4cac00a2b04cac00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

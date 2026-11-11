@@ -1,0 +1,11 @@
+{
+ "addr": "0x726690",
+ "name": "TriggerClass::FireAction",
+ "size": 46,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x726690",
+ "bytes_hex": "8b5424048b41243bc27507c74124000000008b41283bc275068b402889412839512c7507c7412c00000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

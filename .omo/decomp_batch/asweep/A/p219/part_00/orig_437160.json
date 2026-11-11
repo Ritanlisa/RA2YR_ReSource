@@ -1,0 +1,11 @@
+{
+ "addr": "0x437160",
+ "name": "Vector3::Subtract",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x437160",
+ "bytes_hex": "8b4424088b1156578b308b78042bd68b71048b49082bf78b78088b44240c2bcf8bf88917897704894f085f5ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

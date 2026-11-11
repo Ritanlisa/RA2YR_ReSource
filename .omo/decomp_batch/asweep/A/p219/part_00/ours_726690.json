@@ -1,0 +1,8 @@
+{
+ "symbol": "?FireAction@TriggerClass@@QAEHHH@Z",
+ "sym_key": "TriggerClass::FireAction",
+ "size": 50,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b41243bc27507c74124000000008b41283bc275068b4028894128578b792c3bfa5f7507c7412c00000000c20800",
+ "relocs": []
+}

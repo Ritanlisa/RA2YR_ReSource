@@ -1,0 +1,8 @@
+{
+ "symbol": "?Add@Coord3D@@QAEPAIPAH0@Z",
+ "sym_key": "Coord3D::Add",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8b442408568b7104578b50048b790803d68b700803f78b388b0103f88b44240c89388970085f8950045ec20800",
+ "relocs": []
+}

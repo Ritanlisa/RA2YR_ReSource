@@ -1,0 +1,57 @@
+{
+ "symbol": "?WinMain_Helper_637070@@YAHXZ",
+ "sym_key": "Unnamed::WinMain_Helper_637070",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "33c0a200000000a200000000a300000000a300000000a300000000a300000000a300000000a200000000c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF5@@3EA",
+   "sym_key": "DataGlobal_AC4CF5"
+  },
+  {
+   "off": 13,
+   "type": "DIR32",
+   "sym": "?g_ScriptPool@@3IA",
+   "sym_key": "g_ScriptPool"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?g_ScriptState@@3IA",
+   "sym_key": "g_ScriptState"
+  },
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_ScriptActionPool@@3IA",
+   "sym_key": "g_ScriptActionPool"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C68@@3IA",
+   "sym_key": "DataGlobal_AC4C68"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C6C@@3IA",
+   "sym_key": "DataGlobal_AC4C6C"
+  },
+  {
+   "off": 38,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CB0@@3EA",
+   "sym_key": "DataGlobal_AC4CB0"
+  }
+ ]
+}

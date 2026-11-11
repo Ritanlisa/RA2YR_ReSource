@@ -1,0 +1,15 @@
+{
+ "symbol": "?SubtractClamped@Float@@QAENMH@Z",
+ "sym_key": "Float::SubtractClamped",
+ "size": 78,
+ "link_base": 0,
+ "bytes_hex": "518b4424088b54240025ff00000080e2000bc28b54240c89442400d90491d9442408ded9dfe0f6c4417412d90491d8642408d91c91db44240059c20800dd0500000000d91c91db44240059c20800",
+ "relocs": [
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

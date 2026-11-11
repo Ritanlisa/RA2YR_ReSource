@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DB113",
+ "name": "___shr_12",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DB113",
+ "bytes_hex": "8b44240456578b50088b48048bf28bf9c1e61fd1e90bce8948048b08c1e71fd1e9d1ea0bcf5f89500889085ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

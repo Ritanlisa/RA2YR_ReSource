@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AC570",
+ "name": "MSEngine::Shutdown",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AC570",
+ "bytes_hex": "8b4424088b5104c1e00403c2568bc88b4424088bd08b3189328b71048972048b71088972085e8b490c894a0cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

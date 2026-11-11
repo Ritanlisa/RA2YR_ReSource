@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DBC2A",
+ "name": "__errcode",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DBC2A",
+ "bytes_hex": "8a442404a82074046a05eb16a80874046a01eb0ea80474046a02eb06a80174046a0358c30fb6c083e002d1e0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

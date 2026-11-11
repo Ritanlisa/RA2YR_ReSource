@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindLinkIndex@RadioClass@@QAEHH@Z",
+ "sym_key": "RadioClass::FindLinkIndex",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b5424045685d257742a8bb1e800000033c085f67e1e8b89e400000039117417403bc67d0f8b790483c1043bfa75f15f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}

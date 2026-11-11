@@ -1,0 +1,11 @@
+{
+ "addr": "0x5A0090",
+ "name": "MapClass::SetObstruction",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5A0090",
+ "bytes_hex": "8b1510edab0085d274228b4c24040fbf41020faf05dcc289000fbf0903c18b4c24088d0480c1e004894c1038c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
