@@ -1,0 +1,57 @@
+{
+ "symbol": "?Fire_LightningStorm@HouseClass@@QAEDD@Z",
+ "sym_key": "HouseClass::Fire_LightningStorm",
+ "size": 202,
+ "link_base": 0,
+ "bytes_hex": "83ec08568bf1e80000000084c00f85b000000083be00560000ff0f84a3000000a1b40300000fbec8894c24048bd00fbf8ef054000081e2ffff00003bca668b15b6030000754853570fbfbef254000033db668bda3bfb5f5b75348b86ec54000083f801750e8d4424088bce50e800000000eb0d8d4c240850518bcee8000000008b08a1b4030000668b15b6030000663bc8894c2404750ac1f910663bca8ac274228b96540200008d86540200008d4c24105150ff52108d5424048bce5250e8000000005e83c408c20400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "REL32",
+   "sym": "?LightningStorm__IsActive@@YADXZ",
+   "sym_key": "LightningStorm__IsActive"
+  },
+  {
+   "off": 33,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 64,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 109,
+   "type": "REL32",
+   "sym": "?FindSWBuilding@HouseClass@@QAEPAIPAX@Z",
+   "sym_key": "HouseClass::FindSWBuilding"
+  },
+  {
+   "off": 124,
+   "type": "REL32",
+   "sym": "?FindSWTarget@HouseClass@@QAEPAIPAXH@Z",
+   "sym_key": "HouseClass::FindSWTarget"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 138,
+   "type": "DIR32",
+   "sym": "?DataGlobal_A8EB00@@3IA",
+   "sym_key": "DataGlobal_A8EB00"
+  },
+  {
+   "off": 191,
+   "type": "REL32",
+   "sym": "?FireSuperWeaponHouseClass@SuperWeapon@@QAEDHH@Z",
+   "sym_key": "SuperWeapon::FireSuperWeaponHouseClass"
+  }
+ ]
+}
