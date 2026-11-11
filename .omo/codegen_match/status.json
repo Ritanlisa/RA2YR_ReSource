@@ -6711,6 +6711,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x426990": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_426990",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_426990",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x426a50": {
   "attempts": 1,
   "clean": true,
@@ -29280,6 +29292,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x510e10": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+4 push esi",
+  "name": "FormatHouseClassPlayerName",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "FormatHouseClassPlayerName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x510f60": {
   "attempts": 1,
   "clean": false,
@@ -35709,6 +35732,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x555ac0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+105 sub ecx, 0",
+  "name": "QuantizeColorRGB",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "QuantizeColorRGB",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x555b90": {
   "attempts": 1,
   "clean": true,
@@ -37647,6 +37681,18 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x56da10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ObjectClass::GetRegionMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "GetRegionMap",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x56e7c0": {
   "attempts": 10,
   "first_diff": "+0 mov eax, dword ptr [esp + 8]",
@@ -37667,6 +37713,17 @@
   "name": "globalHelper_074600",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x5746c0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+160 jne 0x57476f",
+  "name": "globalHelper_0746C0",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "globalHelper_0746C0",
+  "rule_violations": 6,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x574780": {
   "attempts": 1,
@@ -40020,6 +40077,17 @@
   "name": "TransformMatrix3x4Point",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "TransformMatrix3x4Point",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5afc20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+16 fld dword ptr [esp + 8]",
+  "name": "InvertMatrix3x3Signs",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "InvertMatrix3x3Signs",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -63654,6 +63722,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6cae00": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ecx",
+  "name": "sub_6CAE00",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_6CAE00",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cb4d0": {
   "attempts": 1,
   "first_diff": "+6 je 0x6cb552",
@@ -64763,6 +64842,17 @@
   "orig_name": "nullsub_41",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x6d8640": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "ClampCoordMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ClampCoordMap",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x6d9ef0": {
@@ -82990,6 +83080,17 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x7c5f3d": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "Event_Process_7C5F3D",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Event_Process_7C5F3D",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x7c5fff": {
   "attempts": 1,
   "clean": false,
@@ -83053,6 +83154,17 @@
   "name": "sub_7C6D40",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "orig_name": "sub_7C6D40",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7c6dd6": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 push ebp",
+  "name": "sub_7C6DD6",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_7C6DD6",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false
@@ -83721,6 +83833,17 @@
   "orig_name": "?PMDtoOffset_YAHPAXABUPMD___Z",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x7caf30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "_strchr",
+  "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
+  "orig_name": "_strchr",
+  "rule_violations": 0,
+  "status": "PENDING",
   "this_as_id": false
  },
  "0x7cafec": {
@@ -84839,6 +84962,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7d7e1c": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 push ebp",
+  "name": "ObjectClass::___dtold",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "___dtold",
+  "rule_violations": 4,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7d7ee0": {
   "attempts": 1,
   "first_diff": null,
@@ -85267,6 +85402,18 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "__ungetch",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7dd434": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+12 je 0x7dd4a1",
+  "name": "ObjectClass::__getextendedkeycode",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "__getextendedkeycode",
+  "rule_violations": 5,
   "status": "NG",
   "this_as_id": false
  },

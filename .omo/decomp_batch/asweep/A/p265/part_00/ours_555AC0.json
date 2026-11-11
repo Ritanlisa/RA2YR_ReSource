@@ -1,0 +1,21 @@
+{
+ "symbol": "?QuantizeColorRGB@@YIPAHPAH00@Z",
+ "sym_key": "Unnamed::QuantizeColorRGB",
+ "size": 198,
+ "link_base": 0,
+ "bytes_hex": "568bf1578b063de80300007c05b8e803000089068b023de80300007c05b8e803000089028b44240c8b0881f9e80300007c05b9e803000089088b3e33c985ff0f9ec14923cf890e8b3a33c985ff0f9ec14923cf890a8b3833c985ff0f9ec14923cf89088b0d0000000085c9743f83f901754f8b3e83e7c0893e8b0a83e1c0890a8b3883e7c089388b0d0000000083f902752f8b3e83e7e0893e8b3283e6e05f89328b0883e1e05e8908c204008b3e83e780893e8b3283e68089328b0883e18089085f5ec20400",
+ "relocs": [
+  {
+   "off": 101,
+   "type": "DIR32",
+   "sym": "?g_lParam@@3IA",
+   "sym_key": "g_lParam"
+  },
+  {
+   "off": 137,
+   "type": "DIR32",
+   "sym": "?g_lParam@@3IA",
+   "sym_key": "g_lParam"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+======================================================================
+PART 1/1  (13 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p265\part_00
+=== convert (13 addrs) ===
+[conv] 0x5746c0 globalHelper_0746C0 -> _addr_57
+[conv] 0x510e10 FormatHouseClassPlayerName -> _addr_51
+[conv] 0x5afc20 InvertMatrix3x3Signs -> _addr_5A
+[conv] 0x7d7e1c ObjectClass::___dtold -> ObjectClass
+[conv] 0x426990 ObjectClass::sub_426990 -> ObjectClass
+[conv] 0x7caf30 _strchr -> _addr_7C
+[conv] 0x7c6dd6 sub_7C6DD6 -> _addr_7C
+[conv] 0x6d8640 ClampCoordMap -> _addr_6D
+[conv] 0x6cae00 sub_6CAE00 -> _addr_6C
+[conv] 0x7dd434 ObjectClass::__getextendedkeycode -> ObjectClass
+[conv] 0x555ac0 QuantizeColorRGB -> _addr_55
+[conv] 0x7c5f3d Event_Process_7C5F3D -> Event_Process
+[conv] 0x56da10 ObjectClass::GetRegionMap -> ObjectClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_57                 rc=0
+[era] _addr_51                 rc=0
+[era] _addr_5A                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=0
+[era] _addr_6D                 rc=2
+[era] _addr_6C                 rc=0
+[era] _addr_55                 rc=0
+[era] Event_Process            rc=2
+=== diffasm byte-compare ===
+[diff] 0x5746c0   MISMATCH         globalHelper_0746C0
+[diff] 0x510e10   MISMATCH         FormatHouseClassPlayerName
+[diff] 0x5afc20   MISMATCH         InvertMatrix3x3Signs
+[diff] 0x7d7e1c   MISMATCH         ObjectClass::___dtold
+[diff] 0x7dd434   MISMATCH         ObjectClass::__getextendedkeycode
+[diff] 0x7c6dd6   MISMATCH         sub_7C6DD6
+[diff] 0x6cae00   MISMATCH         sub_6CAE00
+[diff] 0x555ac0   MISMATCH         QuantizeColorRGB
+[ledger] 0x5746c0 globalHelper_0746C0 -> NG (attempt 1)
+[ledger] 0x510e10 FormatHouseClassPlayerName -> NG (attempt 1)
+[ledger] 0x5afc20 InvertMatrix3x3Signs -> NG (attempt 1)
+[ledger] 0x7d7e1c ObjectClass::___dtold -> NG (attempt 1)
+[ledger] 0x426990 ObjectClass::sub_426990 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7caf30 _strchr -> PENDING (attempt 1)
+[ledger] 0x7c6dd6 sub_7C6DD6 -> NG (attempt 1)
+[ledger] 0x6d8640 ClampCoordMap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cae00 sub_6CAE00 -> NG (attempt 1)
+[ledger] 0x7dd434 ObjectClass::__getextendedkeycode -> NG (attempt 1)
+[ledger] 0x555ac0 QuantizeColorRGB -> NG (attempt 1)
+[ledger] 0x7c5f3d Event_Process_7C5F3D -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56da10 ObjectClass::GetRegionMap -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 13,
+ "verdicts": {
+  "MISMATCH": 8,
+  "COMPILE_FAIL": 4,
+  "OBJ_EXTRACT_FAIL": 1
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "codegen_shape": 6
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p265\batch_report.json

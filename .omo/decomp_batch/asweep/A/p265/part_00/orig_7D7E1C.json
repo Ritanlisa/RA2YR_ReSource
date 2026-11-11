@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D7E1C",
+ "name": "___dtold",
+ "size": 182,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D7E1C",
+ "bytes_hex": "558bec518b550c535657668b4206bfff0700008bc82500800000c1e90423cf89450c8b42048b120fb7d9be0000008025ffff0f0085db8975fc74133bdf74088db9003c0000eb28bfff7f0000eb2133db3bc375123bd3750e8b4508895804891866895808eb4b8db9013c0000895dfc8bcac1e915c1e00b0bc88b45080b4dfcc1e20b894804891085ce751d8b1003c98bdac1eb1f0bd98d0c12890889580481c7ffff00008bcbebdf8b4d0c0bcf668948085f5e5bc9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

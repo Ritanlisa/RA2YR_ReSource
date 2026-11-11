@@ -1,0 +1,11 @@
+{
+ "addr": "0x5AFC20",
+ "name": "InvertMatrix3x3Signs",
+ "size": 181,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5AFC20",
+ "bytes_hex": "83ec308bc1568b0a57894c24088b4a10d9442408d84a0c894c240c8b4a20894c24108b4a04d9442410d84a2c894c24188b4a14894c241c8b4a24dec1d944240cd84a1c894c24208b4a08894c24288b4a18dec1894c242c8b4a28894c2430b90c000000d9e0d95c2414d9442418d84a0cd9442420d84a2c8d7424088bf8dec1d944241cd84a1cdec1d9e0d95c2424d9442428d84a0cd9442430d84a2cdec1d944242cd84a1cdec1d9e0d95c2434f3a55f5e83c430c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

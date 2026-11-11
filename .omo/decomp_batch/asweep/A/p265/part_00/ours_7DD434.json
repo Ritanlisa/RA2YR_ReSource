@@ -1,0 +1,27 @@
+{
+ "symbol": "?__getextendedkeycode@ObjectClass@@QAEPAEH@Z",
+ "sym_key": "ObjectClass::__getextendedkeycode",
+ "size": 142,
+ "link_base": 0,
+ "bytes_hex": "8b54240453568b5a0cf6c701744c668b520833c966391500000000b800000000741633f6668b350000000083c00a413bc67d5466391075f3f6c303740f8d04895e5b8d840038da8700c204008d84891aed43005ed1e05bc2040033c0668b4208f6c31074098d04c5aada8700eb078d04c5a8da87008a0884c9740580f9e075078a480184c9750233c05e5bc20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DA30@@3EA",
+   "sym_key": "DataGlobal_87DA30"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DA30@@3EA",
+   "sym_key": "DataGlobal_87DA30"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87DAA8@@3GA",
+   "sym_key": "DataGlobal_87DAA8"
+  }
+ ]
+}
