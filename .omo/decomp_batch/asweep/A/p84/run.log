@@ -1,0 +1,95 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p84\part_00
+=== convert (20 addrs) ===
+[conv] 0x771c10 sub_771C10 -> _addr_77
+[conv] 0x773410 sub_773410 -> _addr_77
+[conv] 0x77b240 sub_77B240 -> _addr_77
+[conv] 0x77b840 sub_77B840 -> _addr_77
+[conv] 0x7af260 sub_7AF260 -> _addr_7A
+[conv] 0x7b0d50 sub_7B0D50 -> _addr_7B
+[conv] 0x7b1980 sub_7B1980 -> _addr_7B
+[conv] 0x7b2d50 sub_7B2D50 -> _addr_7B
+[conv] 0x7ba360 WWMouseClass::updatePosition -> WWMouseClass
+[conv] 0x7d8ee3 __frnd -> _addr_7D
+[conv] 0x48acf0 RulesClass::GetFiringDistance -> RulesClass
+[conv] 0x42f470 _VectorClass_VCell::Seek -> _VectorClass_VCell
+[conv] 0x473960 sub_473960 -> _addr_47
+[conv] 0x487110 BuildingClass::checkOccupant -> BuildingClass
+[conv] 0x487ce0 CellClass::RadLevel_Increase -> CellClass
+[conv] 0x48dfd0 sub_48DFD0 -> _addr_48
+[conv] 0x48e030 sub_48E030 -> _addr_48
+[conv] 0x48e090 globalHelper_08E090 -> _addr_48
+[conv] 0x49ea10 MixFileClass::Init -> MixFileClass
+[conv] 0x4c2c10 UnitClass::updateHarvesting -> UnitClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=0
+[era] _addr_7A                 rc=0
+[era] _addr_7B                 rc=0
+[era] WWMouseClass             rc=2
+[era] _addr_7D                 rc=0
+[era] RulesClass               rc=0
+[era] _VectorClass_VCell       rc=0
+[era] _addr_47                 rc=2
+[era] BuildingClass            rc=0
+[era] CellClass                rc=0
+[era] _addr_48                 rc=2
+[era] MixFileClass             rc=0
+[era] UnitClass                rc=0
+=== diffasm byte-compare ===
+[diff] 0x771c10   MATCH            sub_771C10
+[diff] 0x773410   MATCH            sub_773410
+[diff] 0x77b240   MATCH            sub_77B240
+[diff] 0x77b840   MATCH            sub_77B840
+[diff] 0x7af260   MATCH            sub_7AF260
+[diff] 0x7b0d50   MATCH            sub_7B0D50
+[diff] 0x7b1980   MATCH            sub_7B1980
+[diff] 0x7b2d50   MATCH            sub_7B2D50
+[diff] 0x7d8ee3   MISMATCH         __frnd
+[diff] 0x48acf0   MISMATCH         RulesClass::GetFiringDistance
+[diff] 0x42f470   MATCH            _VectorClass_VCell::Seek
+[diff] 0x487110   MISMATCH         BuildingClass::checkOccupant
+[diff] 0x487ce0   MATCH            CellClass::RadLevel_Increase
+[diff] 0x49ea10   MISMATCH         MixFileClass::Init
+[diff] 0x4c2c10   MATCH            UnitClass::updateHarvesting
+[ledger] 0x771c10 sub_771C10 -> OK (attempt 1)
+[ledger] 0x773410 sub_773410 -> OK (attempt 1)
+[ledger] 0x77b240 sub_77B240 -> OK (attempt 1)
+[ledger] 0x77b840 sub_77B840 -> OK (attempt 1)
+[ledger] 0x7af260 sub_7AF260 -> OK (attempt 1)
+[ledger] 0x7b0d50 sub_7B0D50 -> OK (attempt 1)
+[ledger] 0x7b1980 sub_7B1980 -> OK (attempt 1)
+[ledger] 0x7b2d50 sub_7B2D50 -> OK (attempt 1)
+[ledger] 0x7ba360 WWMouseClass::updatePosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d8ee3 __frnd -> NG (attempt 1)
+[ledger] 0x48acf0 RulesClass::GetFiringDistance -> NG (attempt 1)
+[ledger] 0x42f470 _VectorClass_VCell::Seek -> OK (attempt 1)
+[ledger] 0x473960 sub_473960 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x487110 BuildingClass::checkOccupant -> NG (attempt 1)
+[ledger] 0x487ce0 CellClass::RadLevel_Increase -> OK (attempt 1)
+[ledger] 0x48dfd0 sub_48DFD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e030 sub_48E030 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48e090 globalHelper_08E090 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ea10 MixFileClass::Init -> NG (attempt 1)
+[ledger] 0x4c2c10 UnitClass::updateHarvesting -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 11,
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 1,
+  "width_mismatch": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 73.3,
+ "match_rate_of_total_pct": 55.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p84\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x42F470",
+ "name": "RandomMap::Seek",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42F470",
+ "bytes_hex": "8b41048b4c24088b14888b4424048910c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?checkOccupant@BuildingClass@@QAEPAV1@D@Z",
+ "sym_key": "BuildingClass::checkOccupant",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8bc1ba010000008a4c2404d3e2095078c20400",
+ "relocs": []
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?__frnd@@YAHN@Z",
+ "sym_key": "Unnamed::__frnd",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "558bec83ec08d9fcdd45f8e8000000008be55dc3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

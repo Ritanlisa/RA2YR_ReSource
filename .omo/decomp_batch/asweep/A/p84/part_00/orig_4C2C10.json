@@ -1,0 +1,11 @@
+{
+ "addr": "0x4C2C10",
+ "name": "UnitClass::updateHarvesting",
+ "size": 19,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4C2C10",
+ "bytes_hex": "8b412033d23bc274098990dc060000895120c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

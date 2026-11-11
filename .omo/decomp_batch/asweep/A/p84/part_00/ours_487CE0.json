@@ -1,0 +1,8 @@
+{
+ "symbol": "?RadLevel_Increase@CellClass@@QAEXN@Z",
+ "sym_key": "CellClass::RadLevel_Increase",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "dd442404dc81f0000000dd99f0000000c20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Seek@_VectorClass_VCell@@QAEPAIPAHH@Z",
+ "sym_key": "_VectorClass_VCell::Seek",
+ "size": 19,
+ "link_base": 0,
+ "bytes_hex": "8b41048b4c24088b14888b4424048910c20800",
+ "relocs": []
+}
