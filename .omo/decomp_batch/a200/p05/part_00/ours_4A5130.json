@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckFlag24@BuildingClass@@QAE_NXZ",
+ "sym_key": "BuildingClass::CheckFlag24",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8a411884c0740a8a411984c07503b001c332c0c3",
+ "relocs": []
+}

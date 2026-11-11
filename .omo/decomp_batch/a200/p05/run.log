@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x717ea0 sub_717EA0 -> _addr_71
+[conv] 0x727e30 sub_727E30 -> _addr_72
+[conv] 0x74c200 sub_74C200 -> _addr_74
+[conv] 0x765e00 sub_765E00 -> _addr_76
+[conv] 0x7732d0 sub_7732D0 -> _addr_77
+[conv] 0x4a5130 BuildingClass::CheckFlag24 -> BuildingClass
+[conv] 0x407450 LinkedList::Init -> LinkedList
+[conv] 0x77a760 ObjectClass::MainLobbyDlgProcWOL_Helper -> ObjectClass
+[conv] 0x77ce10 sub_77CE10 -> _addr_77
+[conv] 0x42e620 sub_42E620 -> _addr_42
+[conv] 0x48b0c0 sub_48B0C0 -> _addr_48
+[conv] 0x4c3bf0 sub_4C3BF0 -> _addr_4C
+[conv] 0x523680 sub_523680 -> _addr_52
+[conv] 0x55f760 sub_55F760 -> _addr_55
+[conv] 0x5d37c0 sub_5D37C0 -> _addr_5D
+[conv] 0x652660 sub_652660 -> _addr_65
+[conv] 0x6b8ee0 sub_6B8EE0 -> _addr_6B
+[conv] 0x71d370 sub_71D370 -> _addr_71
+[conv] 0x765d50 sub_765D50 -> _addr_76
+[conv] 0x5be990 Render_Render_5BE990 -> Render_Render
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=0
+[era] _addr_74                 rc=0
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] BuildingClass            rc=0
+[era] LinkedList               rc=0
+[era] ObjectClass              rc=0
+[era] _addr_42                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_52                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_6B                 rc=0
+[era] Render_Render            rc=2
+=== diffasm byte-compare ===
+[diff] 0x717ea0   MISMATCH         sub_717EA0
+[diff] 0x71d370   MATCH            sub_71D370
+[diff] 0x727e30   MISMATCH         sub_727E30
+[diff] 0x74c200   MISMATCH         sub_74C200
+[diff] 0x765e00   MISMATCH         sub_765E00
+[diff] 0x765d50   MATCH            sub_765D50
+[diff] 0x7732d0   MISMATCH         sub_7732D0
+[diff] 0x77ce10   MATCH            sub_77CE10
+[diff] 0x4a5130   MATCH            BuildingClass::CheckFlag24
+[diff] 0x407450   MISMATCH         LinkedList::Init
+[diff] 0x77a760   MISMATCH         ObjectClass::MainLobbyDlgProcWOL_Helper
+[diff] 0x42e620   MATCH            sub_42E620
+[diff] 0x48b0c0   MATCH            sub_48B0C0
+[diff] 0x4c3bf0   MATCH            sub_4C3BF0
+[diff] 0x523680   MATCH            sub_523680
+[diff] 0x55f760   MATCH            sub_55F760
+[diff] 0x5d37c0   MATCH            sub_5D37C0
+[diff] 0x652660   MATCH            sub_652660
+[diff] 0x6b8ee0   MATCH            sub_6B8EE0
+[ledger] 0x717ea0 sub_717EA0 -> NG (attempt 1)
+[ledger] 0x727e30 sub_727E30 -> NG (attempt 1)
+[ledger] 0x74c200 sub_74C200 -> NG (attempt 1)
+[ledger] 0x765e00 sub_765E00 -> NG (attempt 1)
+[ledger] 0x7732d0 sub_7732D0 -> NG (attempt 1)
+[ledger] 0x4a5130 BuildingClass::CheckFlag24 -> OK (attempt 1)
+[ledger] 0x407450 LinkedList::Init -> NG (attempt 1)
+[ledger] 0x77a760 ObjectClass::MainLobbyDlgProcWOL_Helper -> NG (attempt 1)
+[ledger] 0x77ce10 sub_77CE10 -> OK (attempt 1)
+[ledger] 0x42e620 sub_42E620 -> OK (attempt 1)
+[ledger] 0x48b0c0 sub_48B0C0 -> OK (attempt 1)
+[ledger] 0x4c3bf0 sub_4C3BF0 -> OK (attempt 1)
+[ledger] 0x523680 sub_523680 -> OK (attempt 1)
+[ledger] 0x55f760 sub_55F760 -> OK (attempt 1)
+[ledger] 0x5d37c0 sub_5D37C0 -> OK (attempt 1)
+[ledger] 0x652660 sub_652660 -> OK (attempt 1)
+[ledger] 0x6b8ee0 sub_6B8EE0 -> OK (attempt 1)
+[ledger] 0x71d370 sub_71D370 -> OK (attempt 1)
+[ledger] 0x765d50 sub_765D50 -> OK (attempt 1)
+[ledger] 0x5be990 Render_Render_5BE990 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 7,
+  "MATCH": 12,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "extern_reloc": 5,
+  "regalloc": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 63.2,
+ "match_rate_of_total_pct": 60.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p05\batch_report.json
