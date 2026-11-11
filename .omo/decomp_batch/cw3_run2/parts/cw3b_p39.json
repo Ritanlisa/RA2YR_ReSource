@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x5d67b0",
+  "name": "GameConfig::Constructor",
+  "cls": null,
+  "size": 222,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x4fb840",
+  "name": "BuildingPlacement::Activate",
+  "cls": null,
+  "size": 223,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'unsigned int *' to 'unsigned int'"
+ },
+ {
+  "addr": "0x434bf0",
+  "name": "sub_434BF0",
+  "cls": null,
+  "size": 224,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'InitContext' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x772eb0",
+  "name": "WeaponTypeClass::SaveLoad_Prefix_0",
+  "cls": null,
+  "size": 225,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2100",
+  "first_msg": "illegal indirection"
+ },
+ {
+  "addr": "0x557d20",
+  "name": "ListClass::Destru_vt50",
+  "cls": null,
+  "size": 226,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.m_1' must have class/struct/union type"
+ },
+ {
+  "addr": "0x5d2260",
+  "name": "GameClass::loadScenarioFiles",
+  "cls": null,
+  "size": 226,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.lineTrailer' must have class/struct/union type"
+ },
+ {
+  "addr": "0x438210",
+  "name": "BlowStraw::Get",
+  "cls": null,
+  "size": 227,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'initializing' : cannot convert from 'char *' to 'int'"
+ },
+ {
+  "addr": "0x6e35f0",
+  "name": "sub_6E35F0",
+  "cls": null,
+  "size": 228,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LightningStorm__Start' : cannot convert parameter 4 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x436f40",
+  "name": "BuildingLightClass::SD_vt13",
+  "cls": null,
+  "size": 229,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'Add_double' : cannot convert parameter 2 from 'unsigned int' to 'void *'"
+ },
+ {
+  "addr": "0x731af0",
+  "name": "BlowStraw_29_Get",
+  "cls": null,
+  "size": 229,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LightningStorm__Start' : cannot convert parameter 4 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x796de0",
+  "name": "Game::CreateAIPlayer",
+  "cls": null,
+  "size": 231,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7af3d0",
+  "name": "GetRegionStringWOL",
+  "cls": null,
+  "size": 231,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'LightningStorm__Start' : cannot convert parameter 4 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x682150",
+  "name": "Map_Read",
+  "cls": null,
+  "size": 232,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'InitContext' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x6b4a50",
+  "name": "UnitClass::Create",
+  "cls": null,
+  "size": 234,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2653",
+  "first_msg": "'SmudgeClass' : is not a class or namespace name"
+ },
+ {
+  "addr": "0x5ce7d0",
+  "name": "MSPCXAnim::Load",
+  "cls": null,
+  "size": 236,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'pad_0' : undeclared identifier"
+ },
+ {
+  "addr": "0x5d1b30",
+  "name": "MSEngine::Destruct",
+  "cls": null,
+  "size": 237,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x4cd510",
+  "name": "JumpjetLocomotionClass::IsMapCoordVisible",
+  "cls": null,
+  "size": 238,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2227",
+  "first_msg": "left of '->location' must point to class/struct/union"
+ },
+ {
+  "addr": "0x6bec60",
+  "name": "GameClass::Shutdown",
+  "cls": null,
+  "size": 239,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.lineTrailer' must have class/struct/union type"
+ },
+ {
+  "addr": "0x6ce0b0",
+  "name": "SuperClass::Reset",
+  "cls": null,
+  "size": 240,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.ForbiddenHouses' must have class/struct/union type"
+ },
+ {
+  "addr": "0x7b7f90",
+  "name": "ToWideStringCharAlt",
+  "cls": null,
+  "size": 241,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2665",
+  "first_msg": "'wcslen' : none of the 2 overloads can convert parameter 1 from type 'const int *'"
+ }
+]
