@@ -1,0 +1,8 @@
+{
+ "symbol": "?setTileIndex@CellClass@@QAEFH@Z",
+ "sym_key": "CellClass::setTileIndex",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b5104568bf003d057c1fe1081e6ffff00008bfac1e61081e70000ffff81e2ffff000003f75f33f28971045ec20400",
+ "relocs": []
+}

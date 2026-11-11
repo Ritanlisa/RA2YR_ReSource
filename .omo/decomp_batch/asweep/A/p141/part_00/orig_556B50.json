@@ -1,0 +1,11 @@
+{
+ "addr": "0x556B50",
+ "name": "ObjectClass::updateMissionState",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x556B50",
+ "bytes_hex": "a178eba80085c08b4424047502d1e0894108c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

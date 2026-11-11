@@ -1,0 +1,8 @@
+{
+ "symbol": "?Next@EnumConnectionsClass@@QAGHHH@Z",
+ "sym_key": "EnumConnectionsClass::Next",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c24088b501c03d189501c33c0c20c00",
+ "relocs": []
+}

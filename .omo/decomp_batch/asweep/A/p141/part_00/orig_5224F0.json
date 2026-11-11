@@ -1,0 +1,11 @@
+{
+ "addr": "0x5224F0",
+ "name": "TechnoClass::updateTurretRotation",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5224F0",
+ "bytes_hex": "8b81c006000033c983b8c4060000ff0f9fc18ac1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5A9940",
+ "name": "Cell::Clear",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5A9940",
+ "bytes_hex": "8bc166c700000066c740020000c74004ffffffffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

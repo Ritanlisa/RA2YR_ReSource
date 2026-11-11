@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p141\part_00
+=== convert (20 addrs) ===
+[conv] 0x72a8a0 sub_72A8A0 -> _addr_72
+[conv] 0x72a8c0 sub_72A8C0 -> _addr_72
+[conv] 0x72a900 sub_72A900 -> _addr_72
+[conv] 0x72a920 sub_72A920 -> _addr_72
+[conv] 0x72a960 sub_72A960 -> _addr_72
+[conv] 0x72a980 sub_72A980 -> _addr_72
+[conv] 0x749020 HouseClass::IncrementStat -> HouseClass
+[conv] 0x7cf465 __check_overflow_exit -> _addr_7C
+[conv] 0x7d92cd __finite -> _addr_7D
+[conv] 0x405140 ObjectClass::sub_405140 -> ObjectClass
+[conv] 0x42e6d0 CellClass::setTileIndex -> CellClass
+[conv] 0x4a0160 EnumConnectionsClass::Next -> EnumConnectionsClass
+[conv] 0x4a0af0 EnumConnectionPointsClass::Next -> EnumConnectionPointsClass
+[conv] 0x4ca580 FactoryClass::Revert -> FactoryClass
+[conv] 0x5224f0 TechnoClass::updateTurretRotation -> TechnoClass
+[conv] 0x556b50 ObjectClass::updateMissionState -> ObjectClass
+[conv] 0x55a6f0 LocomotionClass::Construct -> LocomotionClass
+[conv] 0x5a9940 Cell::Clear -> Cell
+[conv] 0x5bda20 sub_5BDA20 -> _addr_5B
+[conv] 0x5c65b0 BigInt_Helper -> BigInt
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] HouseClass               rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] ObjectClass              rc=0
+[era] CellClass                rc=0
+[era] EnumConnectionsClass     rc=0
+[era] EnumConnectionPointsClass rc=0
+[era] FactoryClass             rc=0
+[era] TechnoClass              rc=0
+[era] LocomotionClass          rc=2
+[era] Cell                     rc=0
+[era] _addr_5B                 rc=0
+[era] BigInt                   rc=0
+=== diffasm byte-compare ===
+[diff] 0x72a8a0   MISMATCH         sub_72A8A0
+[diff] 0x72a8c0   MISMATCH         sub_72A8C0
+[diff] 0x72a900   MISMATCH         sub_72A900
+[diff] 0x72a920   MISMATCH         sub_72A920
+[diff] 0x72a960   MISMATCH         sub_72A960
+[diff] 0x72a980   MISMATCH         sub_72A980
+[diff] 0x749020   MATCH            HouseClass::IncrementStat
+[diff] 0x7cf465   MISMATCH         __check_overflow_exit
+[diff] 0x405140   MISMATCH         ObjectClass::sub_405140
+[diff] 0x556b50   MISMATCH         ObjectClass::updateMissionState
+[diff] 0x42e6d0   MISMATCH         CellClass::setTileIndex
+[diff] 0x4a0160   MISMATCH         EnumConnectionsClass::Next
+[diff] 0x4a0af0   MISMATCH         EnumConnectionPointsClass::Next
+[diff] 0x4ca580   MATCH            FactoryClass::Revert
+[diff] 0x5224f0   MISMATCH         TechnoClass::updateTurretRotation
+[diff] 0x5a9940   MISMATCH         Cell::Clear
+[diff] 0x5bda20   MATCH            sub_5BDA20
+[diff] 0x5c65b0   MATCH            BigInt_Helper
+[ledger] 0x72a8a0 sub_72A8A0 -> NG (attempt 1)
+[ledger] 0x72a8c0 sub_72A8C0 -> NG (attempt 1)
+[ledger] 0x72a900 sub_72A900 -> NG (attempt 1)
+[ledger] 0x72a920 sub_72A920 -> NG (attempt 1)
+[ledger] 0x72a960 sub_72A960 -> NG (attempt 1)
+[ledger] 0x72a980 sub_72A980 -> NG (attempt 1)
+[ledger] 0x749020 HouseClass::IncrementStat -> OK (attempt 1)
+[ledger] 0x7cf465 __check_overflow_exit -> NG (attempt 1)
+[ledger] 0x7d92cd __finite -> COMPILE_FAIL (attempt 1)
+[ledger] 0x405140 ObjectClass::sub_405140 -> NG (attempt 1)
+[ledger] 0x42e6d0 CellClass::setTileIndex -> NG (attempt 1)
+[ledger] 0x4a0160 EnumConnectionsClass::Next -> NG (attempt 1)
+[ledger] 0x4a0af0 EnumConnectionPointsClass::Next -> NG (attempt 1)
+[ledger] 0x4ca580 FactoryClass::Revert -> OK (attempt 1)
+[ledger] 0x5224f0 TechnoClass::updateTurretRotation -> NG (attempt 1)
+[ledger] 0x556b50 ObjectClass::updateMissionState -> NG (attempt 1)
+[ledger] 0x55a6f0 LocomotionClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a9940 Cell::Clear -> NG (attempt 1)
+[ledger] 0x5bda20 sub_5BDA20 -> OK (attempt 1)
+[ledger] 0x5c65b0 BigInt_Helper -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "MATCH": 4,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "extern_reloc": 7,
+  "codegen_shape": 2,
+  "branch_order": 1,
+  "regalloc": 1,
+  "cc_mismatch": 2,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 22.2,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 3,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p141\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A0AF0",
+ "name": "EnumConnectionPointsClass::Next",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A0AF0",
+ "bytes_hex": "8b4424048b4c24088b500403d189500433c0c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

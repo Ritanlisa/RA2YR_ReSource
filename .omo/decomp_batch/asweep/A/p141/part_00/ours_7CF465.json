@@ -1,0 +1,15 @@
+{
+ "symbol": "?__check_overflow_exit@@YAXXZ",
+ "sym_key": "Unnamed::__check_overflow_exit",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "688df47c00e80000000059c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?JUMPOUT@@YAHHZZ",
+   "sym_key": "JUMPOUT"
+  }
+ ]
+}

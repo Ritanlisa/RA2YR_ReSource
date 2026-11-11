@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_405140@ObjectClass@@QAENXZ",
+ "sym_key": "ObjectClass::sub_405140",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "a10000000085c07404db4154c3dd0500000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_AudioConfigState@@3IA",
+   "sym_key": "g_AudioConfigState"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

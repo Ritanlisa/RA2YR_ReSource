@@ -1,0 +1,8 @@
+{
+ "symbol": "?IncrementStat@HouseClass@@QAEHH@Z",
+ "sym_key": "HouseClass::IncrementStat",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b91000800003bc27d03ff0481c20400",
+ "relocs": []
+}

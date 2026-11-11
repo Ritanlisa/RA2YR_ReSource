@@ -1,0 +1,8 @@
+{
+ "symbol": "?updateTurretRotation@TechnoClass@@QAE_NXZ",
+ "sym_key": "TechnoClass::updateTurretRotation",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b81c006000083c9ff3b88c40600001bc0f7d8c3",
+ "relocs": []
+}
