@@ -1,0 +1,11 @@
+{
+ "addr": "0x661D80",
+ "name": "Animation::UpdateBobOffset",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x661D80",
+ "bytes_hex": "dd05004eb000dc25284eb00083ec08dd1c24e8b98fe6ffdc0d204eb00083c408dc0d38177e00e855411600a3784eb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
