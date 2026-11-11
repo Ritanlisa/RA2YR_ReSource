@@ -1,0 +1,15 @@
+{
+ "symbol": "?StubReturnZero_5@JumpjetLocomotionClass@@QAE_NXZ",
+ "sym_key": "JumpjetLocomotionClass::StubReturnZero_5",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "6683791400567e368b41088b511083f8ff74148b3500000000578bfe2bf83bfa5f731b2bc603d085d27413668b015e662b410433c96685c00f9fc18ac1c332c05ec3",
+ "relocs": [
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

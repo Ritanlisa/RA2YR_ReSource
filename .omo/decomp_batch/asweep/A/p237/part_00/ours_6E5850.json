@@ -1,0 +1,21 @@
+{
+ "symbol": "?IsOnlyInstanceOfType@TagClass@@QAEDXZ",
+ "sym_key": "TagClass::IsOnlyInstanceOfType",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "5356578b3d0000000033f685ff76268b15000000008b023bc1740a8b40248b59243bc3740a463bf7730b83c204ebe65f5e32c05bc35f5eb0015bc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_GameObjectCleanup@@3IA",
+   "sym_key": "g_GameObjectCleanup"
+  },
+  {
+   "off": 17,
+   "type": "DIR32",
+   "sym": "?g_TagClassCount@@3PAXA",
+   "sym_key": "g_TagClassCount"
+  }
+ ]
+}

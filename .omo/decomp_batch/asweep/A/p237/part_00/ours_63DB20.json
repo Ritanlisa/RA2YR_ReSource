@@ -1,0 +1,8 @@
+{
+ "symbol": "?HandlePlanningModeClick_Handle@ObjectClass@@QAEHPAI@Z",
+ "sym_key": "ObjectClass::HandlePlanningModeClick_Handle",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b11568b7424088b063bc27227578b790803fa3bc75f731c8b46048b51043bc27c128b490c03ca3bc17309b8010000005ec2040033c05ec20400",
+ "relocs": []
+}

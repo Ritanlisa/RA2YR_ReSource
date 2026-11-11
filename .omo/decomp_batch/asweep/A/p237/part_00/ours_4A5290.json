@@ -1,0 +1,15 @@
+{
+ "symbol": "?UpdateTimerWithElapsed@BuildingClass@@QAEDXZ",
+ "sym_key": "BuildingClass::UpdateTimerWithElapsed",
+ "size": 91,
+ "link_base": 0,
+ "bytes_hex": "518b54240033c08a411880e2000bc284c074468b51088b41105383faff5674188b3500000000578bfe2bfa3bf85f720433c0eb042bd603c28b51148a59192bd05e89511033d284db0f94c233d05b81e2ff00000033c288411959c3",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

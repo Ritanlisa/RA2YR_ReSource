@@ -1,0 +1,11 @@
+{
+ "addr": "0x544E30",
+ "name": "AccumulateMIXFileIndex",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x544E30",
+ "bytes_hex": "81f9ffff00008bc17501c3538b1d8810aa00555633f65785db7e198b3d7c10aa008b17390a7f0d8b6a0483c70403c5463bf37ced5f5e5d5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

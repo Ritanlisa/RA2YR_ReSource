@@ -1,0 +1,21 @@
+{
+ "symbol": "?AccumulateMIXFileIndex@@YIHH@Z",
+ "sym_key": "Unnamed::AccumulateMIXFileIndex",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "53555681f9ffff0000578bc1742b8b1d0000000033ff85db761f8b35000000008b16390a77138b6a0483c60403c5473bfb73068b16390a76ed5f5e5d5bc3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA1088@@3IA",
+   "sym_key": "DataGlobal_AA1088"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AA107C@@3IA",
+   "sym_key": "DataGlobal_AA107C"
+  }
+ ]
+}

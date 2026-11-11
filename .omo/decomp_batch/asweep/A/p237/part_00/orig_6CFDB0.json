@@ -1,0 +1,11 @@
+{
+ "addr": "0x6CFDB0",
+ "name": "globalHelper_0CFDB0",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6CFDB0",
+ "bytes_hex": "a168fcb000890d54cbb000568b5008a16cfcb0000fafd18b002bc28b1560fcb0008b4a088b3203ce5e3bc1a32cccb0007f06890d2cccb000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

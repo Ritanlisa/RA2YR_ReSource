@@ -1,0 +1,11 @@
+{
+ "addr": "0x645D20",
+ "name": "Float4::Copy",
+ "size": 59,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x645D20",
+ "bytes_hex": "8b44240856d900d919d94004d95904d94008d95908d9400c8b442408d9590c8b318bd089328b71048972048b71088972088b490c5e894a0cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

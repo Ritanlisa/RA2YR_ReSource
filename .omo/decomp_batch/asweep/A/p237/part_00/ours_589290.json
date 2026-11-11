@@ -1,0 +1,8 @@
+{
+ "symbol": "?EraseAt@Vector8@@QAEDH@Z",
+ "sym_key": "Vector8::EraseAt",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b51108b4424043bc27c052400c204004a3bc28951107d1c568b5104408b34c28974c2f88b74c2048974c2fc8b51103bc27ce65e24010c01c20400",
+ "relocs": []
+}

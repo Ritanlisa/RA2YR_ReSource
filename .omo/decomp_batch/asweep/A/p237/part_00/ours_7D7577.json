@@ -1,0 +1,8 @@
+{
+ "symbol": "?_LcidFromHexString@@YAHPAD@Z",
+ "sym_key": "Unnamed::_LcidFromHexString",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b54240433c08a0a4284c9742e80f9617c0a80f9667f0580c1d9eb0d80f9417c0880f9467f0380c1f983c0fd0fbec9c1e00403c18a0a4284c975d2c3",
+ "relocs": []
+}

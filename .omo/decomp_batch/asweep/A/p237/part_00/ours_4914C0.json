@@ -1,0 +1,8 @@
+{
+ "symbol": "?getFactoryCount@BlitTransXlat@@QAEEPAE0HHHHHH@Z",
+ "sym_key": "BlitTransXlat::getFactoryCount",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b44240c85c07e308b54240453568b742410578bf88a064684c08844241874118b4424188b590425ff0000008a04038802424f75e05f5e5bc22000",
+ "relocs": []
+}

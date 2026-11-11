@@ -1,0 +1,8 @@
+{
+ "symbol": "?PointInRect@WDTSurface@@QAEHPAI@Z",
+ "sym_key": "WDTSurface::PointInRect",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b4154568b7424088b163bd07227578b795c03f83bd75f731c8b46048b51583bc27c128b496003ca3bc17d09b8010000005ec2040033c05ec20400",
+ "relocs": []
+}

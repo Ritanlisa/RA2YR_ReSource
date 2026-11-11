@@ -1,0 +1,33 @@
+{
+ "symbol": "?Copy@Float4@@QAEPAIPAHPAM@Z",
+ "sym_key": "Float4::Copy",
+ "size": 81,
+ "link_base": 0,
+ "bytes_hex": "56578b7c24108bf1d907e8000000008806d94704e800000000894604d94708e800000000894608d9470ce8000000008b0e89460c8b44240c5f89088b56048950048b4e088948088b560c89500c5ec20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 21,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 32,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 43,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  }
+ ]
+}

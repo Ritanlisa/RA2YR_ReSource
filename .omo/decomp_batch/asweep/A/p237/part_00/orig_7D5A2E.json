@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D5A2E",
+ "name": "_xcptlookup",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D5A2E",
+ "bytes_hex": "8b5424088b0da4cb8700568b7424083932578bc274118d3c498d3cba83c00c3bc77304393075f58d0c498d0c8a3bc173043930740233c05f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

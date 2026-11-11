@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p237\part_00
+=== convert (20 addrs) ===
+[conv] 0x544e30 AccumulateMIXFileIndex -> _addr_54
+[conv] 0x589290 Vector8::EraseAt -> Vector8
+[conv] 0x6cfdb0 globalHelper_0CFDB0 -> _addr_6C
+[conv] 0x6e5850 TagClass::IsOnlyInstanceOfType -> TagClass
+[conv] 0x7d7577 _LcidFromHexString -> _addr_7D
+[conv] 0x4785f0 _DynamicVectorClass_VRGBClass::Init -> _DynamicVectorClass_VRGBClass
+[conv] 0x4a5290 BuildingClass::UpdateTimerWithElapsed -> BuildingClass
+[conv] 0x4afb00 ObjectClass::sub_4AFB00 -> ObjectClass
+[conv] 0x4c94f0 JumpjetLocomotionClass::StubReturnZero_6 -> JumpjetLocomotionClass
+[conv] 0x63db20 ObjectClass::HandlePlanningModeClick_Handle -> ObjectClass
+[conv] 0x7c3230 Render_Render_7C3230 -> Render_Render
+[conv] 0x7d5a2e ObjectClass::_xcptlookup -> ObjectClass
+[conv] 0x42d8b0 _VectorClass_G::AddRef -> _VectorClass_G
+[conv] 0x4914c0 BlitTransXlat::getFactoryCount -> BlitTransXlat
+[conv] 0x53ed20 NetworkID::Assign -> NetworkID
+[conv] 0x645d20 Float4::Copy -> Float4
+[conv] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> ScenarioClass
+[conv] 0x769440 WDTSurface::PointInRect -> WDTSurface
+[conv] 0x4b6bf0 ObjectClass::sub_4B6BF0 -> ObjectClass
+[conv] 0x4c94b0 JumpjetLocomotionClass::StubReturnZero_5 -> JumpjetLocomotionClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_54                 rc=0
+[era] Vector8                  rc=0
+[era] _addr_6C                 rc=0
+[era] TagClass                 rc=0
+[era] _addr_7D                 rc=0
+[era] _DynamicVectorClass_VRGBClass rc=2
+[era] BuildingClass            rc=0
+[era] ObjectClass              rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] Render_Render            rc=2
+[era] _VectorClass_G           rc=2
+[era] BlitTransXlat            rc=0
+[era] NetworkID                rc=0
+[era] Float4                   rc=0
+[era] ScenarioClass            rc=2
+[era] WDTSurface               rc=0
+=== diffasm byte-compare ===
+[diff] 0x544e30   MISMATCH         AccumulateMIXFileIndex
+[diff] 0x589290   MISMATCH         Vector8::EraseAt
+[diff] 0x6cfdb0   MISMATCH         globalHelper_0CFDB0
+[diff] 0x6e5850   MISMATCH         TagClass::IsOnlyInstanceOfType
+[diff] 0x7d7577   MISMATCH         _LcidFromHexString
+[diff] 0x4a5290   MISMATCH         BuildingClass::UpdateTimerWithElapsed
+[diff] 0x4afb00   MISMATCH         ObjectClass::sub_4AFB00
+[diff] 0x63db20   MISMATCH         ObjectClass::HandlePlanningModeClick_Handle
+[diff] 0x7d5a2e   MISMATCH         ObjectClass::_xcptlookup
+[diff] 0x4c94f0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_6
+[diff] 0x4c94b0   MISMATCH         JumpjetLocomotionClass::StubReturnZero_5
+[diff] 0x4914c0   MATCH            BlitTransXlat::getFactoryCount
+[diff] 0x53ed20   MISMATCH         NetworkID::Assign
+[diff] 0x645d20   MISMATCH         Float4::Copy
+[diff] 0x769440   MISMATCH         WDTSurface::PointInRect
+[ledger] 0x544e30 AccumulateMIXFileIndex -> NG (attempt 1)
+[ledger] 0x589290 Vector8::EraseAt -> NG (attempt 1)
+[ledger] 0x6cfdb0 globalHelper_0CFDB0 -> NG (attempt 1)
+[ledger] 0x6e5850 TagClass::IsOnlyInstanceOfType -> NG (attempt 1)
+[ledger] 0x7d7577 _LcidFromHexString -> NG (attempt 1)
+[ledger] 0x4785f0 _DynamicVectorClass_VRGBClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a5290 BuildingClass::UpdateTimerWithElapsed -> NG (attempt 1)
+[ledger] 0x4afb00 ObjectClass::sub_4AFB00 -> NG (attempt 1)
+[ledger] 0x4c94f0 JumpjetLocomotionClass::StubReturnZero_6 -> NG (attempt 1)
+[ledger] 0x63db20 ObjectClass::HandlePlanningModeClick_Handle -> NG (attempt 1)
+[ledger] 0x7c3230 Render_Render_7C3230 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5a2e ObjectClass::_xcptlookup -> NG (attempt 1)
+[ledger] 0x42d8b0 _VectorClass_G::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4914c0 BlitTransXlat::getFactoryCount -> OK (attempt 1)
+[ledger] 0x53ed20 NetworkID::Assign -> NG (attempt 1)
+[ledger] 0x645d20 Float4::Copy -> NG (attempt 1)
+[ledger] 0x68bd80 ScenarioClass::Is_Waypoint_Valid -> COMPILE_FAIL (attempt 1)
+[ledger] 0x769440 WDTSurface::PointInRect -> NG (attempt 1)
+[ledger] 0x4b6bf0 ObjectClass::sub_4B6BF0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c94b0 JumpjetLocomotionClass::StubReturnZero_5 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 14,
+  "COMPILE_FAIL": 5,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_order": 3,
+  "extern_reloc": 1,
+  "regalloc": 4,
+  "branch_polarity": 1,
+  "ret_norm": 1,
+  "eval_order": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 6.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p237\batch_report.json

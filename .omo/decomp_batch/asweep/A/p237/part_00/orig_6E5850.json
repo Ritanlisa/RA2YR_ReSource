@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E5850",
+ "name": "TagClass::IsOnlyInstanceOfType",
+ "size": 57,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E5850",
+ "bytes_hex": "5356578b3d30e7b00033d285ff7e1e8b3524e7b0008b063bc1740a8b40248b59243bc3740e4283c6043bd77ce85f5eb0015bc35f5e32c05bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

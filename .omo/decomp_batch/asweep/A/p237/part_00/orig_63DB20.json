@@ -1,0 +1,11 @@
+{
+ "addr": "0x63DB20",
+ "name": "HandlePlanningModeClick_Handle",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63DB20",
+ "bytes_hex": "8b11568b7424088b063bc27c27578b790803fa3bc75f7d1c8b46048b51043bc27c128b490c03ca3bc17d09b8010000005ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

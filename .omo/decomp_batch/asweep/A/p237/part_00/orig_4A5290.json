@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A5290",
+ "name": "BuildingClass::UpdateTimerWithElapsed",
+ "size": 58,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A5290",
+ "bytes_hex": "8a411884c074328b4110568b710883feff74128b1584eda8002bd63bd07d042bc2eb0233c08b51145e2bd08951108a411984c00f94c0884119c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

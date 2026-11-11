@@ -1,0 +1,15 @@
+{
+ "symbol": "?Assign@NetworkID@@QAEFPAHHF@Z",
+ "sym_key": "NetworkID::Assign",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b10895104668b400466894108a10000000083f801750d8b442404668b10668911c20c00668b44240c668901c20c00",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}
