@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p240\part_00
+=== convert (20 addrs) ===
+[conv] 0x472da0 _VectorClass_PAVCaptureManagerClass::Add -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x477c30 _VectorClass_H::CompareEqual -> _VectorClass_H
+[conv] 0x477fc0 _VectorClass_PAVTechnoTypeClass::AddRef -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x48ad70 _VectorClass_PAUDamageGroup::AddRef -> _VectorClass_PAUDamageGroup
+[conv] 0x49ae80 _VectorClass_PAVConvertClass::Add -> _VectorClass_PAVConvertClass
+[conv] 0x49ea30 _VectorClass_PAD::AddRef -> _VectorClass_PAD
+[conv] 0x4a1240 _VectorClass_PAUIConnectionPoint::AddRef -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a7d80 _VectorClass_PAVDiskLaserClass::AddRef -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4b9ca0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4b9f00 _VectorClass_PAUCrossDissolveEffect::AddRef -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4c2ca0 _VectorClass_PAVEBolt::Add -> _VectorClass_PAVEBolt
+[conv] 0x4c4a00 _VectorClass_PAVEgoClass::Add -> _VectorClass_PAVEgoClass
+[conv] 0x4c5bc0 _VectorClass_PAVEMPulseClass::Add -> _VectorClass_PAVEMPulseClass
+[conv] 0x4ca8f0 _VectorClass_PBVTechnoTypeClass::AddRef -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4e0320 _VectorClass_PAVAbstractClass::AddRef -> _VectorClass_PAVAbstractClass
+[conv] 0x4e0580 _VectorClass_PAVFootClass::AddRef -> _VectorClass_PAVFootClass
+[conv] 0x4e9460 _VectorClass_PAVBuildingClass::Get -> _VectorClass_PAVBuildingClass
+[conv] 0x4e96c0 _VectorClass_PAVSuperClass::Add -> _VectorClass_PAVSuperClass
+[conv] 0x4e9920 _VectorClass_PAVAITriggerTypeClass::Add -> _VectorClass_PAVAITriggerTypeClass
+[conv] 0x4e9b80 _VectorClass_PAVBuildingLightClass::Add -> _VectorClass_PAVBuildingLightClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVCaptureManagerClass rc=2
+[era] _VectorClass_H           rc=2
+[era] _VectorClass_PAVTechnoTypeClass rc=2
+[era] _VectorClass_PAUDamageGroup rc=2
+[era] _VectorClass_PAVConvertClass rc=2
+[era] _VectorClass_PAD         rc=2
+[era] _VectorClass_PAUIConnectionPoint rc=2
+[era] _VectorClass_PAVDiskLaserClass rc=2
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=2
+[era] _VectorClass_PAUCrossDissolveEffect rc=2
+[era] _VectorClass_PAVEBolt    rc=2
+[era] _VectorClass_PAVEgoClass rc=2
+[era] _VectorClass_PAVEMPulseClass rc=2
+[era] _VectorClass_PBVTechnoTypeClass rc=2
+[era] _VectorClass_PAVAbstractClass rc=2
+[era] _VectorClass_PAVFootClass rc=2
+[era] _VectorClass_PAVBuildingClass rc=2
+[era] _VectorClass_PAVSuperClass rc=2
+[era] _VectorClass_PAVAITriggerTypeClass rc=2
+[era] _VectorClass_PAVBuildingLightClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x472da0 _VectorClass_PAVCaptureManagerClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477c30 _VectorClass_H::CompareEqual -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477fc0 _VectorClass_PAVTechnoTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48ad70 _VectorClass_PAUDamageGroup::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ae80 _VectorClass_PAVConvertClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ea30 _VectorClass_PAD::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a1240 _VectorClass_PAUIConnectionPoint::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a7d80 _VectorClass_PAVDiskLaserClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9ca0 _DynamicVectorClass_PAUButtonFadeEffect::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9f00 _VectorClass_PAUCrossDissolveEffect::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c2ca0 _VectorClass_PAVEBolt::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c4a00 _VectorClass_PAVEgoClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5bc0 _VectorClass_PAVEMPulseClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ca8f0 _VectorClass_PBVTechnoTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0320 _VectorClass_PAVAbstractClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0580 _VectorClass_PAVFootClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9460 _VectorClass_PAVBuildingClass::Get -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e96c0 _VectorClass_PAVSuperClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9920 _VectorClass_PAVAITriggerTypeClass::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9b80 _VectorClass_PAVBuildingLightClass::Add -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 20,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p240\batch_report.json
