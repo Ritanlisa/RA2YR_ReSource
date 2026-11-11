@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcscmp@@YAHPBH0@Z",
+ "sym_key": "Unnamed::_wcscmp",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "8b542404568b74240c578b02668b0e8bf981e7ffff00002bc7751e6685c97419668b4e028b420483c60283c2048bf981e7ffff00002bc774e25f5e85c07d0483c8ffc37e05b801000000c3",
+ "relocs": []
+}

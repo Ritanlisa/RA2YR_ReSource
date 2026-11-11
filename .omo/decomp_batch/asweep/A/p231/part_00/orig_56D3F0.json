@@ -1,0 +1,11 @@
+{
+ "addr": "0x56D3F0",
+ "name": "CellToTileIndexMap",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56D3F0",
+ "bytes_hex": "8b81f80000008b91f4000000568d4410018b5424080fbf72020fbf120fafc603c25e790533c0c204008b496c3bc17c038d41ffc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

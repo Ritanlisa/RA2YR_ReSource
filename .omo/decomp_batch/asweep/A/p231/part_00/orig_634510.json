@@ -1,0 +1,11 @@
+{
+ "addr": "0x634510",
+ "name": "ComputeBounds",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x634510",
+ "bytes_hex": "83ec08568bf28bc6578b7c2414992bc28b542418d1f8f7d8897c240803f803d08bc189385f89500489700889700c5e83c408c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

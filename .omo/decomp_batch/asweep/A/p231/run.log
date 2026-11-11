@@ -1,0 +1,99 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p231\part_00
+=== convert (20 addrs) ===
+[conv] 0x5b3700 MissionClass::FindName -> MissionClass
+[conv] 0x634510 ComputeBounds -> _addr_63
+[conv] 0x69f250 ShipLocomotionClass::InitMovementState_0 -> ShipLocomotionClass
+[conv] 0x6abcd0 globalHelper_0ABCD0 -> _addr_6A
+[conv] 0x7099e0 TechnoClass::IsTimerExpired -> TechnoClass
+[conv] 0x75a790 AnimSystem::Init -> AnimSystem
+[conv] 0x7ca5d3 _wcscmp -> _addr_7C
+[conv] 0x7cc0a5 __abstract_sw -> _addr_7C
+[conv] 0x693060 ScrollClass::GetHotspot -> ScrollClass
+[conv] 0x413a30 Coord::ToCell -> Coord
+[conv] 0x42f930 _DynamicVectorClass_VCell::Read -> _DynamicVectorClass_VCell
+[conv] 0x452210 BuildingClass::EnableTogglePower -> BuildingClass
+[conv] 0x4a1200 _DynamicVectorClass_UtagCONNECTDATA::FindItemIndex -> _DynamicVectorClass_UtagCONNECTDATA
+[conv] 0x4d2cd0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x504860 ObjectClass::Team_Helper -> ObjectClass
+[conv] 0x50f170 _DynamicVectorClass_UAngerStruct::FindItemIndex_0 -> _DynamicVectorClass_UAngerStruct
+[conv] 0x50f4a0 DynamicVector::selectBestTarget -> DynamicVector
+[conv] 0x50ffb0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex -> _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x56d3f0 ObjectClass::CellToTileIndexMap -> ObjectClass
+[conv] 0x5c0340 VQMovieHandle::computePathDistance -> VQMovieHandle
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MissionClass             rc=0
+[era] _addr_63                 rc=0
+[era] ShipLocomotionClass      rc=0
+[era] _addr_6A                 rc=0
+[era] TechnoClass              rc=0
+[era] AnimSystem               rc=2
+[era] _addr_7C                 rc=0
+[era] ScrollClass              rc=2
+[era] Coord                    rc=0
+[era] _DynamicVectorClass_VCell rc=2
+[era] BuildingClass            rc=0
+[era] _DynamicVectorClass_UtagCONNECTDATA rc=2
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] ObjectClass              rc=0
+[era] _DynamicVectorClass_UAngerStruct rc=2
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=2
+[era] VQMovieHandle            rc=0
+=== diffasm byte-compare ===
+[diff] 0x5b3700   MISMATCH         MissionClass::FindName
+[diff] 0x634510   MISMATCH         ComputeBounds
+[diff] 0x69f250   MISMATCH         ShipLocomotionClass::InitMovementState_0
+[diff] 0x6abcd0   MISMATCH         globalHelper_0ABCD0
+[diff] 0x7099e0   MISMATCH         TechnoClass::IsTimerExpired
+[diff] 0x7ca5d3   MISMATCH         _wcscmp
+[diff] 0x7cc0a5   MISMATCH         __abstract_sw
+[diff] 0x413a30   MISMATCH         Coord::ToCell
+[diff] 0x452210   MISMATCH         BuildingClass::EnableTogglePower
+[diff] 0x504860   MISMATCH         ObjectClass::Team_Helper
+[diff] 0x56d3f0   MISMATCH         ObjectClass::CellToTileIndexMap
+[diff] 0x50f4a0   MISMATCH         DynamicVector::selectBestTarget
+[diff] 0x5c0340   MISMATCH         VQMovieHandle::computePathDistance
+[ledger] 0x5b3700 MissionClass::FindName -> NG (attempt 1)
+[ledger] 0x634510 ComputeBounds -> NG (attempt 1)
+[ledger] 0x69f250 ShipLocomotionClass::InitMovementState_0 -> NG (attempt 1)
+[ledger] 0x6abcd0 globalHelper_0ABCD0 -> NG (attempt 1)
+[ledger] 0x7099e0 TechnoClass::IsTimerExpired -> NG (attempt 1)
+[ledger] 0x75a790 AnimSystem::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7ca5d3 _wcscmp -> NG (attempt 1)
+[ledger] 0x7cc0a5 __abstract_sw -> NG (attempt 1)
+[ledger] 0x693060 ScrollClass::GetHotspot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x413a30 Coord::ToCell -> NG (attempt 1)
+[ledger] 0x42f930 _DynamicVectorClass_VCell::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x452210 BuildingClass::EnableTogglePower -> NG (attempt 1)
+[ledger] 0x4a1200 _DynamicVectorClass_UtagCONNECTDATA::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d2cd0 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x504860 ObjectClass::Team_Helper -> NG (attempt 1)
+[ledger] 0x50f170 _DynamicVectorClass_UAngerStruct::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f4a0 DynamicVector::selectBestTarget -> NG (attempt 1)
+[ledger] 0x50ffb0 _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56d3f0 ObjectClass::CellToTileIndexMap -> NG (attempt 1)
+[ledger] 0x5c0340 VQMovieHandle::computePathDistance -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 7
+ },
+ "pathologies": {
+  "codegen_shape": 7,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "width_mismatch": 1,
+  "ret_norm": 1,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p231\batch_report.json

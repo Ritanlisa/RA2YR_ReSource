@@ -1,0 +1,8 @@
+{
+ "symbol": "?EnableTogglePower@BuildingClass@@QAEPAEXZ",
+ "sym_key": "BuildingClass::EnableTogglePower",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "53c68160060000018b895c050000ba1500000033db8b013bc3741388981a010000c6801b0100000188981901000083c1044a75e15bc3",
+ "relocs": []
+}

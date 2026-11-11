@@ -1,0 +1,8 @@
+{
+ "symbol": "?CellToTileIndexMap@ObjectClass@@QAEHPAF@Z",
+ "sym_key": "ObjectClass::CellToTileIndexMap",
+ "size": 58,
+ "link_base": 0,
+ "bytes_hex": "8b81f80000008b91f4000000568d4410018b5424080fbf72020fbf120fafc603c25e790533c0c2040033d28a516c8bca3bc17c038d41ffc20400",
+ "relocs": []
+}

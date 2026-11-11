@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B3700",
+ "name": "MissionClass::FindName",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B3700",
+ "bytes_hex": "8bc132d2b101885004885005885007884806884808884809bafca9f1d2b94d62903f895010895018c700ffffffff89481489481cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

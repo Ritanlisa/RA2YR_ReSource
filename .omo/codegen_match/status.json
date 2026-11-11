@@ -4144,6 +4144,18 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x413a30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 push ecx",
+  "name": "Coord::ToCell",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "Coord::ToCell",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x413af0": {
   "attempts": 2,
   "first_diff": "+6 fdiv qword ptr [0x7e2238]",
@@ -7307,6 +7319,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x42f930": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_VCell::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "RandomMap::Read",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x42f9c0": {
   "attempts": 8,
   "first_diff": "+0 push ecx",
@@ -8732,6 +8756,18 @@
   "name": "BuildingClass::SetConnectedBuildingMission",
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
+ },
+ "0x452210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 mov byte ptr [ecx + 0x660], 1",
+  "name": "BuildingClass::EnableTogglePower",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "BuildingClass::EnableTogglePower",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x452250": {
   "attempts": 1,
@@ -14951,6 +14987,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4a1200": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_UtagCONNECTDATA::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UtagCONNECTDATA::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4a1360": {
   "attempts": 1,
   "clean": false,
@@ -19843,6 +19891,18 @@
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4d2cd0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FoggedObjectClass::Read",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4d2d60": {
   "attempts": 1,
@@ -25113,6 +25173,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x504860": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+10 jle 0x504893",
+  "name": "ObjectClass::Team_Helper",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "Team_Helper",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5054b0": {
   "attempts": 1,
   "first_diff": null,
@@ -25871,6 +25943,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50f170": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_UAngerStruct::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UAngerStruct::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50f330": {
   "attempts": 1,
   "clean": false,
@@ -25892,6 +25976,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "VectorClass_UScoutStruct::GetCapacity",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50f4a0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+11 jle 0x50f4cc",
+  "name": "DynamicVector::selectBestTarget",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "AbstractClass::selectBestTarget",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -26041,6 +26137,18 @@
   "name": "HouseClass::AddCoordTrackingEntry",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x50ffb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass__N_18::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x510310": {
   "attempts": 1,
@@ -33770,6 +33878,18 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x56d3f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+41 mov ecx, dword ptr [ecx + 0x6c]",
+  "name": "ObjectClass::CellToTileIndexMap",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "CellToTileIndexMap",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x56d430": {
   "attempts": 1,
   "clean": true,
@@ -36603,6 +36723,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x5b3700": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+2 xor dl, dl",
+  "name": "MissionClass::FindName",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "MissionClass::FindName",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x5b3950": {
   "attempts": 1,
   "clean": false,
@@ -37571,6 +37703,18 @@
   "orig_name": "nullsub_176",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x5c0340": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+23 lea eax, [ecx + 0x24]",
+  "name": "VQMovieHandle::computePathDistance",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "AbstractClass::computePathDistance",
+  "rule_violations": 2,
+  "status": "NG",
   "this_as_id": false
  },
  "0x5c03c0": {
@@ -45660,6 +45804,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x634510": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 sub esp, 8",
+  "name": "ComputeBounds",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ComputeBounds",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x634700": {
   "attempts": 3,
   "first_diff": "+0 mov eax, dword ptr [ecx + 0x30]",
@@ -51596,6 +51751,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x693060": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ScrollClass::GetHotspot",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "MouseClass::GetHotspot",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x6938c0": {
   "attempts": 1,
   "first_diff": null,
@@ -52713,6 +52880,18 @@
   "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
  },
+ "0x69f250": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [esp + 4]",
+  "name": "ShipLocomotionClass::InitMovementState_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "JumpjetLocomotionClass::InitMovementState_0",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x69f290": {
   "attempts": 10,
   "first_diff": null,
@@ -53208,6 +53387,17 @@
   "orig_name": "Network_Process_6ABC40",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6abcd0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 cmp ecx, 0x10",
+  "name": "globalHelper_0ABCD0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "globalHelper_0ABCD0",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x6ac5f0": {
@@ -60694,6 +60884,18 @@
   "orig_name": "IPersistStream::IsDirty",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x7099e0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+15 je 0x709a0b",
+  "name": "TechnoClass::IsTimerExpired",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "orig_name": "TechnoClass::IsTimerExpired",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x709a20": {
@@ -68754,6 +68956,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x75a790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AnimSystem::Init",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "AnimSystem::Init",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x75a7d0": {
   "attempts": 1,
   "clean": false,
@@ -75890,6 +76104,17 @@
   "note": "decomp_batch r2: MISMATCH/cc_mismatch",
   "status": "NG"
  },
+ "0x7ca5d3": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+10 mov cx, word ptr [esi]",
+  "name": "_wcscmp",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "_wcscmp",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x7ca650": {
   "attempts": 1,
   "clean": false,
@@ -76045,6 +76270,17 @@
   "name": "__clearfp",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "__clearfp",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x7cc0a5": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+4 xor eax, eax",
+  "name": "__abstract_sw",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "__abstract_sw",
   "rule_violations": 0,
   "status": "NG",
   "this_as_id": false

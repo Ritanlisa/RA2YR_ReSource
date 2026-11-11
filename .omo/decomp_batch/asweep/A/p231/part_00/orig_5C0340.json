@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C0340",
+ "name": "AbstractClass::computePathDistance",
+ "size": 54,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C0340",
+ "bytes_hex": "8b41108b5424048950248b41108b5424088950288b49108d412483c1348b1089118b50048951048b50088951088b400c89410cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

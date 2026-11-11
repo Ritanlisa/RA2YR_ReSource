@@ -1,0 +1,11 @@
+{
+ "addr": "0x7099E0",
+ "name": "TechnoClass::IsTimerExpired",
+ "size": 53,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7099E0",
+ "bytes_hex": "8b91680100008b817001000083faff741a8b0d84eda8002bca3bc87d0c2bc133c985c00f94c18ac1c333c033c985c00f94c18ac1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

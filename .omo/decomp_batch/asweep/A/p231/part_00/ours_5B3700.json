@@ -1,0 +1,8 @@
+{
+ "symbol": "?FindName@MissionClass@@QAEPAEXZ",
+ "sym_key": "MissionClass::FindName",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8bc18b48048b500881e1010000ff81e20100ffff83c90183ca01894804b9fca9f1d2895008894810894818c700ffffffffc740144d62903fc6401c4dc3",
+ "relocs": []
+}

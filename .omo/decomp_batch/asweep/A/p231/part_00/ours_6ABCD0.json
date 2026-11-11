@@ -1,0 +1,21 @@
+{
+ "symbol": "?globalHelper_0ABCD0@@YIEHHH@Z",
+ "sym_key": "Unnamed::globalHelper_0ABCD0",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "8d41fd83f825772433c98a8800000000ff248d00000000b002c20400b003c2040033c083fa050f94c0c204000cffc20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "$L1802",
+   "sym_key": "$L1802"
+  },
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "$L1803",
+   "sym_key": "$L1803"
+  }
+ ]
+}

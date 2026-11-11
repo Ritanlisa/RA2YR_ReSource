@@ -229,3 +229,4 @@
 {"layer": "A", "part": 228, "n": 20, "seconds": 14.7, "ok": true, "verdicts": {"COMPILE_FAIL": 19, "MISMATCH": 1}}
 {"layer": "A", "part": 229, "n": 20, "seconds": 13.4, "ok": true, "verdicts": {"COMPILE_FAIL": 17, "MISMATCH": 3}}
 {"layer": "A", "part": 230, "n": 20, "seconds": 15.1, "ok": true, "verdicts": {"COMPILE_FAIL": 6, "MISMATCH": 13, "MATCH": 1}}
+{"layer": "A", "part": 231, "n": 20, "seconds": 15.0, "ok": true, "verdicts": {"MISMATCH": 13, "COMPILE_FAIL": 7}}

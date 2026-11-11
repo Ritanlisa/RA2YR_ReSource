@@ -1,0 +1,15 @@
+{
+ "symbol": "?InitMovementState_0@ShipLocomotionClass@@QAGPAIPAHH@Z",
+ "sym_key": "ShipLocomotionClass::InitMovementState_0",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048b44240889411c8941188b15000000008d412089108b54240889512433d289512889512cc20c00",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

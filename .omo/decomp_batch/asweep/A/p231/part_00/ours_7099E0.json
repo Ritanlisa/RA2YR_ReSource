@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsTimerExpired@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::IsTimerExpired",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b91680100008b817001000083faff74188b0d00000000568bf12bf23bf05e730c2bc103c20f94c0c385c07503b001c332c0c3",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

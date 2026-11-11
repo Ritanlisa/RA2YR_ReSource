@@ -1,0 +1,8 @@
+{
+ "symbol": "?computePathDistance@VQMovieHandle@@QAEHHH@Z",
+ "sym_key": "VQMovieHandle::computePathDistance",
+ "size": 55,
+ "link_base": 0,
+ "bytes_hex": "8b41108b5424048950248b41108b5424088950288b49108b51248d412483c13489118b50048951048b50088951088b400c89410cc20800",
+ "relocs": []
+}
