@@ -3066,25 +3066,25 @@
   "status": "NG"
  },
  "0x536970": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x827374",
   "name": "CreateTeamCommand::performAction_59",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x536a10": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x8273b0",
   "name": "CreateTeamCommand::performAction_65",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x536b10": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x8273e8",
   "name": "CreateTeamCommand::performAction_70",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x536b80": {
   "attempts": 4,
@@ -3094,11 +3094,11 @@
   "status": "OK"
  },
  "0x536b90": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x82741c",
   "name": "CreateTeamCommand::performAction_75",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x537130": {
   "attempts": 4,
@@ -3108,14 +3108,14 @@
   "status": "NG"
  },
  "0x537a50": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x8278a0",
   "name": "Commands::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x537a60": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Commands::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3136,25 +3136,25 @@
   "status": "NG"
  },
  "0x537b50": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x827a18",
   "name": "ScreenCaptureCommandClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x537de0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x827a7c",
   "name": "PageUserCommandClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x537f20": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 mov eax, 0x827b3c",
   "name": "DeleteCommandClass::AddRef",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x537f90": {
   "attempts": 4,
@@ -3164,14 +3164,14 @@
   "status": "OK"
  },
  "0x5388a0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SortedArray::RemoveByKey",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x538980": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "SortedArray::FindPair",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3206,7 +3206,7 @@
   "status": "NG"
  },
  "0x53f1f0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "Multiplayer::Screen",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3220,28 +3220,28 @@
   "status": "OK"
  },
  "0x53fbd0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "IPXGlobalConnClass::Flush",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x540340": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 sub esp, 0x414",
   "name": "IPXGlobalConnClass::SendPacket",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x540c60": {
-  "attempts": 7,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+15 push eax",
   "name": "Network::SetConnectionParams",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x540dc0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "SessionClass::initLAN",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3255,14 +3255,14 @@
   "status": "OK"
  },
  "0x542520": {
-  "attempts": 9,
+  "attempts": 10,
   "first_diff": null,
   "name": "IPXManagerClass::ProcessQueue",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x547230": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "TacticalClass::DrawCellOverlay",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -3290,14 +3290,14 @@
   "status": "OK"
  },
  "0x54b8d0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::ConvertCoordToCell_0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x54da50": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::StubReturnZero_10",
   "note": "decomp_batch r2: COMPILE_FAIL",

@@ -1,0 +1,21 @@
+{
+ "symbol": "?SetConnectionParams@IPXManagerClass@@QAEHHHHD@Z",
+ "sym_key": "IPXManagerClass::SetConnectionParams",
+ "size": 156,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b54240c568bf18b4c240c894e5c8bce894658895660e8000000008bcee8000000008a44241484c074128b4e608b565c8b06518b4e58525156ff50388b464433c985c07e30578d46148b108b7e5883c00441897a288b7e5c8b9060ffffff897a2c8b9060ffffff8b7e60897a308b56443bca72d55f8b465085c074188b4e588948288b56508b465c89422c8b4e508b56608951305ec21000",
+ "relocs": [
+  {
+   "off": 27,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  },
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?Log@Debug@@QAEXXZ",
+   "sym_key": "Debug::Log"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?AddRef@DeleteCommandClass@@QAEPADXZ",
+ "sym_key": "DeleteCommandClass::AddRef",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aDelete@@3PADA",
+   "sym_key": "aDelete"
+  }
+ ]
+}

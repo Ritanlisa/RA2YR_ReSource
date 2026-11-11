@@ -1,0 +1,33 @@
+{
+ "symbol": "?SendPacket@IPXGlobalConnClass@@QAEHHF@Z",
+ "sym_key": "IPXGlobalConnClass::SendPacket",
+ "size": 159,
+ "link_base": 0,
+ "bytes_hex": "83ec0c538bd955568b4b0433ed33f68b412885c07f0b5e5d33c05b83c40cc208005756e8000000008bf8f60702755b8b471885c074548b4424208b4f1c50e80000000084c074430fbf54242433c9668b4f203bca75348d4c2410e8000000008d4c24146a008d5424148bc65152508d4424288d4c242c50518b4b04c744242c0c0000004ee800000000458b4b04463b7128728f5f8bc55e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "?GetTileIndex@Terrain@@QAEHH@Z",
+   "sym_key": "Terrain::GetTileIndex"
+  },
+  {
+   "off": 63,
+   "type": "REL32",
+   "sym": "?Compare@NetworkID@@QAE_NH@Z",
+   "sym_key": "NetworkID::Compare"
+  },
+  {
+   "off": 91,
+   "type": "REL32",
+   "sym": "?InitInvalid@Waypoint@@QAEPAV1@XZ",
+   "sym_key": "Waypoint::InitInvalid"
+  },
+  {
+   "off": 133,
+   "type": "REL32",
+   "sym": "?ExtractEntry@PacketQueue@@QAEHPAX0H000@Z",
+   "sym_key": "PacketQueue::ExtractEntry"
+  }
+ ]
+}
