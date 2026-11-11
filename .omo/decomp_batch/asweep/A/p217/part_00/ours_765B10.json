@@ -1,0 +1,8 @@
+{
+ "symbol": "?unregisterObject@_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour@@QAEHH@Z",
+ "sym_key": "_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::unregisterObject",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "568b711033c05785f67e258b49048b54240c83c1048b520439117417403bc67d0f8b790883c1083bfa75f15f5ec2040083c8ff5f5ec20400",
+ "relocs": []
+}

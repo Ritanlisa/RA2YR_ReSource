@@ -1,0 +1,8 @@
+{
+ "symbol": "?Seek@Anim_Voices_WorldDominationTour@@QAGPAIPAH@Z",
+ "sym_key": "Anim_Voices_WorldDominationTour::Seek",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048b5424048b4424048951048b5424048951088b542404890189510cc20800",
+ "relocs": []
+}

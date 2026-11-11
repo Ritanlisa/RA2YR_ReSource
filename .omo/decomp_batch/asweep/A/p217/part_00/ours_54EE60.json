@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetState@NetworkSession@@QAEPAV1@XZ",
+ "sym_key": "NetworkSession::ResetState",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8bd15733c0b9400000008d7a14890289420489420c894210898214030000898218030000f3ab8b025fc3",
+ "relocs": []
+}

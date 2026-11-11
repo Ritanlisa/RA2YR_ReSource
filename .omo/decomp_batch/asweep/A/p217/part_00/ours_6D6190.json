@@ -1,0 +1,8 @@
+{
+ "symbol": "?ComputeDelta@ObjectClass@@QAEPAHPAH@Z",
+ "sym_key": "ObjectClass::ComputeDelta",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b91680d00008b81b0000000568bb1b40000002bd68bb1640d00002bf08b44240889308950045ec20400",
+ "relocs": []
+}

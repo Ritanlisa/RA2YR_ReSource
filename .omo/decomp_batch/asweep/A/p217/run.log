@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p217\part_00
+=== convert (20 addrs) ===
+[conv] 0x54ee60 NetworkSession::ResetState -> NetworkSession
+[conv] 0x5ae9b0 Matrix3x3::ApplyCol0 -> Matrix3x3
+[conv] 0x5ae9e0 Matrix3x3::ApplyCol1 -> Matrix3x3
+[conv] 0x5da080 NetworkLobby::GetPlayerCount -> NetworkLobby
+[conv] 0x6d6190 ObjectClass::ComputeDelta -> ObjectClass
+[conv] 0x735090 CopyWideToChar -> _addr_73
+[conv] 0x765b10 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::unregisterObject -> _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour
+[conv] 0x766f40 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::IndexOf -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x76a100 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::getCurrentFrame -> _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour
+[conv] 0x76bb90 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Read -> _DynamicVectorClass_V_rc_ptr_VWDTTerritory
+[conv] 0x771990 Anim_Voices_WorldDominationTour::Seek -> Anim_Voices_WorldDominationTour
+[conv] 0x7ca45f _wcscat -> _addr_7C
+[conv] 0x484ab0 InfantryClass::IsTunnelEntrance -> InfantryClass
+[conv] 0x4863a0 ObjectClass::sub_4863A0 -> ObjectClass
+[conv] 0x5a9980 ObjectClass::sub_5A9980 -> ObjectClass
+[conv] 0x5ae860 Matrix3x4::Identity -> Matrix3x4
+[conv] 0x5bcc60 ObjectClass::sub_5BCC60 -> ObjectClass
+[conv] 0x5d5de0 MultiplayerGameMode::IsValid -> MultiplayerGameMode
+[conv] 0x6cdff0 SuperClass::ExecuteAction -> SuperClass
+[conv] 0x74f730 ObjectClass::sub_74F730 -> ObjectClass
+=== emit 15 units ===
+=== rule self-check ===
+=== era compile ===
+[era] NetworkSession           rc=0
+[era] Matrix3x3                rc=2
+[era] NetworkLobby             rc=0
+[era] ObjectClass              rc=2
+[era] _addr_73                 rc=2
+[era] _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VWDTTerritory rc=0
+[era] Anim_Voices_WorldDominationTour rc=0
+[era] _addr_7C                 rc=0
+[era] InfantryClass            rc=2
+[era] Matrix3x4                rc=0
+[era] MultiplayerGameMode      rc=0
+[era] SuperClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x54ee60   MISMATCH         NetworkSession::ResetState
+[diff] 0x5da080   MISMATCH         NetworkLobby::GetPlayerCount
+[diff] 0x6d6190   MISMATCH         ObjectClass::ComputeDelta
+[diff] 0x4863a0   MISMATCH         ObjectClass::sub_4863A0
+[diff] 0x5bcc60   MISMATCH         ObjectClass::sub_5BCC60
+[diff] 0x765b10   MISMATCH         _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::unregisterObject
+[diff] 0x766f40   MISMATCH         _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::IndexOf
+[diff] 0x76a100   MISMATCH         _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::getCurrentFrame
+[diff] 0x76bb90   MISMATCH         _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Read
+[diff] 0x771990   MISMATCH         Anim_Voices_WorldDominationTour::Seek
+[diff] 0x7ca45f   MISMATCH         _wcscat
+[diff] 0x5ae860   MATCH            Matrix3x4::Identity
+[diff] 0x5d5de0   MISMATCH         MultiplayerGameMode::IsValid
+[ledger] 0x54ee60 NetworkSession::ResetState -> NG (attempt 1)
+[ledger] 0x5ae9b0 Matrix3x3::ApplyCol0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae9e0 Matrix3x3::ApplyCol1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5da080 NetworkLobby::GetPlayerCount -> NG (attempt 1)
+[ledger] 0x6d6190 ObjectClass::ComputeDelta -> NG (attempt 1)
+[ledger] 0x735090 CopyWideToChar -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765b10 _DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::unregisterObject -> NG (attempt 1)
+[ledger] 0x766f40 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::IndexOf -> NG (attempt 1)
+[ledger] 0x76a100 _DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::getCurrentFrame -> NG (attempt 1)
+[ledger] 0x76bb90 _DynamicVectorClass_V_rc_ptr_VWDTTerritory::Read -> NG (attempt 1)
+[ledger] 0x771990 Anim_Voices_WorldDominationTour::Seek -> NG (attempt 1)
+[ledger] 0x7ca45f _wcscat -> NG (attempt 1)
+[ledger] 0x484ab0 InfantryClass::IsTunnelEntrance -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4863a0 ObjectClass::sub_4863A0 -> NG (attempt 1)
+[ledger] 0x5a9980 ObjectClass::sub_5A9980 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ae860 Matrix3x4::Identity -> OK (attempt 1)
+[ledger] 0x5bcc60 ObjectClass::sub_5BCC60 -> NG (attempt 1)
+[ledger] 0x5d5de0 MultiplayerGameMode::IsValid -> NG (attempt 1)
+[ledger] 0x6cdff0 SuperClass::ExecuteAction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x74f730 ObjectClass::sub_74F730 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "cc_mismatch": 2,
+  "regalloc": 2,
+  "branch_polarity": 2,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 7.7,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p217\batch_report.json

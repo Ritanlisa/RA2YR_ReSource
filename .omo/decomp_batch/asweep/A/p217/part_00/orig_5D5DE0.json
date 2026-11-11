@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5DE0",
+ "name": "GameMode::IsValid",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5DE0",
+ "bytes_hex": "8a413f84c08b442404740a83f8fe750532c0c2040085c07c0d83f8037f08b801000000c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

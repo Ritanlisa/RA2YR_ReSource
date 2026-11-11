@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcscat@@YAPAGPAHPBH@Z",
+ "sym_key": "Unnamed::_wcscat",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8b4424048bc8668338007419568b74240c668b1683c60466891183c1046683390075ee5ec38b542404c3",
+ "relocs": []
+}

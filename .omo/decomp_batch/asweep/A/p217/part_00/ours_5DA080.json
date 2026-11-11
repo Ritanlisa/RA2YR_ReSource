@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPlayerCount@NetworkLobby@@QAGHD@Z",
+ "sym_key": "NetworkLobby::GetPlayerCount",
+ "size": 42,
+ "link_base": 0,
+ "bytes_hex": "8a4c2408b802000000f6c1017405b803000000f6c102740140f6c104740140f6c120740383c005c20800",
+ "relocs": []
+}

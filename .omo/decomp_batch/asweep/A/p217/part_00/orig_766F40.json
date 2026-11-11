@@ -1,0 +1,11 @@
+{
+ "addr": "0x766F40",
+ "name": "Conflict_WorldDominationTour_12::IndexOf",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x766F40",
+ "bytes_hex": "8b511033c05685d27e198b7424088b490483c1048b76043931740b4083c1083bc27cf483c8ff5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

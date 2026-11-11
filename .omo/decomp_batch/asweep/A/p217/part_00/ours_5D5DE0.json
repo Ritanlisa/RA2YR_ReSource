@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsValid@MultiplayerGameMode@@QAE_NI@Z",
+ "sym_key": "MultiplayerGameMode::IsValid",
+ "size": 34,
+ "link_base": 0,
+ "bytes_hex": "8a413f84c08b442404740583f8fe740d83f8047308b801000000c2040033c0c20400",
+ "relocs": []
+}

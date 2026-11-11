@@ -1,0 +1,11 @@
+{
+ "addr": "0x771990",
+ "name": "Territory_WorldDominationTour_8::Seek",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x771990",
+ "bytes_hex": "8b4424048b5424f08bc883ec1089118b5424048951048b5424088951088b54240c89510c83c410c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5DA080",
+ "name": "NetworkLobby::GetPlayerCount",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5DA080",
+ "bytes_hex": "8a4c2404b802000000f6c1017405b803000000f6c102740140f6c104740140f6c120740383c005c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Identity@Matrix3x4@@QAEHXZ",
+ "sym_key": "Matrix3x4::Identity",
+ "size": 43,
+ "link_base": 0,
+ "bytes_hex": "ba0000803f33c0891189410489410889410c89411089511489411889411c89412089412489512889412cc3",
+ "relocs": []
+}
