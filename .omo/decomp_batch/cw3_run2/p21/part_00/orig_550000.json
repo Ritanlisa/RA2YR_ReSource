@@ -1,0 +1,11 @@
+{
+ "addr": "0x550000",
+ "name": "Game::loadCampaignData",
+ "size": 116,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x550000",
+ "bytes_hex": "51a188c8ab0085c0746856a17cc8ab008b3085f674528b1578c8ab008d4c240451b978c8ab0089742408ff521083f8ff742d8b0d88c8ab003bc17d23493bc1890d88c8ab007d188b0d7cc8ab00408b1481895481fc8b0d88c8ab003bc17ce856e8d88a270083c404a188c8ab0085c0759a5e59c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

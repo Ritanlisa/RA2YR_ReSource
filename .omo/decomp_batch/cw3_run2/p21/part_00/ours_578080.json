@@ -1,0 +1,39 @@
+{
+ "symbol": "?GetGroundHeight@Cell@@QAGHPAH@Z",
+ "sym_key": "Cell::GetGroundHeight",
+ "size": 126,
+ "link_base": 0,
+ "bytes_hex": "83ec088b442410568b088b400489442408894c24049981e2ff00000003c28bd1c1f8088bc8c1ea08c1e10903ca78190fbe35380300003bce7d0e0fbe35340300008b0c8e85c975258b742414b95816000033d681e2ff00000033f28bd633d081e2ff00000033d689157c1600008d44240450e8000000005e83c408c20800",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 61,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F5F0@@3IA",
+   "sym_key": "DataGlobal_87F5F0"
+  },
+  {
+   "off": 77,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_MissionQueueFrame@@3HA",
+   "sym_key": "g_MissionQueueFrame"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?InitTables@Isometric@@QAE_JPAX@Z",
+   "sym_key": "Isometric::InitTables"
+  }
+ ]
+}

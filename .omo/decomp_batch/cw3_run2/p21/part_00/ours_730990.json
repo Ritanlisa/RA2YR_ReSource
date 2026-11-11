@@ -1,0 +1,33 @@
+{
+ "symbol": "?SidebarHasAvailableUnit@ObjectClass@@QAEDXZ",
+ "sym_key": "ObjectClass::SidebarHasAvailableUnit",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "a1000000005355565733ff85c08bd98be877075f5e5db0015bc3a1000000008b34b885f674418a868100000084c07537a1000000008b8e1c02000085c07407e800000000eb068a81ed01000084c074178a868300000084c0750d8b86140200008d4bff3bc1740c473bfd7cae5f5e5db0015bc35f5e5d32c05bc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_SidebarState@@3IA",
+   "sym_key": "g_SidebarState"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_TechnoClass_Count@@3PAXA",
+   "sym_key": "g_TechnoClass_Count"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3PAIA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 64,
+   "type": "REL32",
+   "sym": "?IsHumanPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsHumanPlayer"
+  }
+ ]
+}

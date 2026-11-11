@@ -1,0 +1,27 @@
+{
+ "symbol": "?Process@SHA1@@QAEHHH@Z",
+ "sym_key": "SHA1::Process",
+ "size": 130,
+ "link_base": 0,
+ "bytes_hex": "568bf18d44240c8d4c240850518bcec70600000000e8000000008b44240c85c0745a9983e23f578b7c240c03c2c1f80685c07e2e53558bd88d6e185557e8000000008b4e2cb84000000003c803f8894e2c8b4c24184b2bc885db894c241875db5d5b8d5424108d44240c52508bce897c2414e8000000005f5ec2080033c05ec20800",
+ "relocs": [
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?ProcessBlock@SHA1@@QAEPAHPAX0@Z",
+   "sym_key": "SHA1::ProcessBlock"
+  },
+  {
+   "off": 62,
+   "type": "REL32",
+   "sym": "?SHA1__Transform@@YGIPAX0@Z",
+   "sym_key": "SHA1__Transform"
+  },
+  {
+   "off": 115,
+   "type": "REL32",
+   "sym": "?ProcessBlock@SHA1@@QAEPAHPAX0@Z",
+   "sym_key": "SHA1::ProcessBlock"
+  }
+ ]
+}
