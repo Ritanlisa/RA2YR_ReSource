@@ -1,0 +1,79 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p40\part_00
+=== convert (20 addrs) ===
+[conv] 0x48bf40 ConnectionClass::sendAck -> ConnectionClass
+[conv] 0x4acac0 MapClass::ProcessVisibilityFlags -> MapClass
+[conv] 0x42df90 Base64Straw::ProcessFrame -> Base64Straw
+[conv] 0x6430c0 sub_6430C0 -> _addr_64
+[conv] 0x6e6e20 BuildingLoadQueue::GetNext -> BuildingLoadQueue
+[conv] 0x4d9e70 FootClass::CheckCohesion -> FootClass
+[conv] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> ModemGuest
+[conv] 0x6f19b0 SmallFunc_6F19B0 -> SmallFunc
+[conv] 0x448160 BuildingClass::ProcessPrimarySelect -> BuildingClass
+[conv] 0x4fbf60 HouseClass::DroppedFlag -> HouseClass
+[conv] 0x407680 StartAddress -> _addr_40
+[conv] 0x7cc309 __mbstowcs_lk -> _addr_7C
+[conv] 0x474430 CCINIClass::WriteDigest -> CCINIClass
+[conv] 0x5edde0 EnablePlayerSlotControls -> _addr_5E
+[conv] 0x41d380 AirstrikeClass::AirstrikeClass -> AirstrikeClass
+[conv] 0x6a92e0 ObjectClass::GetSidebarTooltip -> ObjectClass
+[conv] 0x4db8a0 TechnoClass::sub_4DB8A0 -> TechnoClass
+[conv] 0x720480 ThemeClass::ReadThemeEntry -> ThemeClass
+[conv] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> JumpjetLocomotionClass
+[conv] 0x6269a0 ObjectClass::System_Reset -> ObjectClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ConnectionClass          rc=2
+[era] MapClass                 rc=2
+[era] Base64Straw              rc=2
+[era] _addr_64                 rc=2
+[era] BuildingLoadQueue        rc=2
+[era] FootClass                rc=2
+[era] ModemGuest               rc=2
+[era] SmallFunc                rc=2
+[era] BuildingClass            rc=2
+[era] HouseClass               rc=2
+[era] _addr_40                 rc=2
+[era] _addr_7C                 rc=2
+[era] CCINIClass               rc=2
+[era] _addr_5E                 rc=2
+[era] AirstrikeClass           rc=2
+[era] ObjectClass              rc=2
+[era] TechnoClass              rc=2
+[era] ThemeClass               rc=2
+[era] JumpjetLocomotionClass   rc=2
+=== diffasm byte-compare ===
+[ledger] 0x48bf40 ConnectionClass::sendAck -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4acac0 MapClass::ProcessVisibilityFlags -> COMPILE_FAIL (attempt 3)
+[ledger] 0x42df90 Base64Straw::ProcessFrame -> COMPILE_FAIL (attempt 11)
+[ledger] 0x6430c0 sub_6430C0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6e6e20 BuildingLoadQueue::GetNext -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4d9e70 FootClass::CheckCohesion -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5b9550 ModemGuest::UpdateGuestPlayerInfo -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6f19b0 SmallFunc_6F19B0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x448160 BuildingClass::ProcessPrimarySelect -> COMPILE_FAIL (attempt 13)
+[ledger] 0x4fbf60 HouseClass::DroppedFlag -> COMPILE_FAIL (attempt 3)
+[ledger] 0x407680 StartAddress -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7cc309 __mbstowcs_lk -> COMPILE_FAIL (attempt 3)
+[ledger] 0x474430 CCINIClass::WriteDigest -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5edde0 EnablePlayerSlotControls -> COMPILE_FAIL (attempt 3)
+[ledger] 0x41d380 AirstrikeClass::AirstrikeClass -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6a92e0 ObjectClass::GetSidebarTooltip -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4db8a0 TechnoClass::sub_4DB8A0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x720480 ThemeClass::ReadThemeEntry -> COMPILE_FAIL (attempt 3)
+[ledger] 0x4b64e0 JumpjetLocomotionClass::LoadLocomotionFromStream_0 -> COMPILE_FAIL (attempt 3)
+[ledger] 0x6269a0 ObjectClass::System_Reset -> COMPILE_FAIL (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run2\p40\batch_report.json
