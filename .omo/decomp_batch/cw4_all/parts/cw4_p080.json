@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x769d30",
+  "name": "Map_WorldDominationTour_43::Seek",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "_VectorClass_VCentroid_WorldDominationTour",
+  "emitted": "_VectorClass_VCentroid_WorldDominationTour::Seek",
+  "first_diff": {
+   "orig": "+7 push esi",
+   "ours": "+7 lea eax, [eax + eax*2]"
+  },
+  "ours_size": 37
+ },
+ {
+  "addr": "0x7d58c8",
+  "name": "_store_dt",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::_store_dt",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 8]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x775940",
+  "name": "Dialog::FindByHandle",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 40,
+  "part": "p215",
+  "unit": "Dialog",
+  "emitted": "Dialog::FindByHandle",
+  "first_diff": {
+   "orig": "+5 dec eax",
+   "ours": "+5 push esi"
+  },
+  "ours_size": 53
+ },
+ {
+  "addr": "0x4726c0",
+  "name": "CaptureManagerClass::IsOverloading",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 41,
+  "part": "p215",
+  "unit": "CaptureManagerClass",
+  "emitted": "CaptureManagerClass::IsOverloading",
+  "first_diff": {
+   "orig": "+15 jle 0x4726e4",
+   "ours": "+15 jbe 0x24"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x6107e0",
+  "name": "sub_6107E0",
+  "family": "WIDTH",
+  "path": "width_mismatch",
+  "size": 41,
+  "part": "p216",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_6107E0",
+  "first_diff": {
+   "orig": "+15 mov dword ptr [eax + 0x10], ecx",
+   "ours": "+15 mov byte ptr [eax + 0x10], cl"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x645cd0",
+  "name": "sub_645CD0",
+  "family": "RET_ARITY",
+  "path": "frame_sched",
+  "size": 41,
+  "part": "p216",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_645CD0",
+  "first_diff": {
+   "orig": "+0 fld dword ptr [esp + 4]",
+   "ours": "+0 fild dword ptr [esp + 4]"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x689760",
+  "name": "ScenarioClass::GetGlobalStateByID",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 41,
+  "part": "p216",
+  "unit": "ScenarioClass",
+  "emitted": "ScenarioClass::GetGlobalStateByID",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 cmp eax, 0x31"
+  },
+  "ours_size": 38
+ },
+ {
+  "addr": "0x72a060",
+  "name": "JumpjetLocomotionClass::IsStateInRange",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 41,
+  "part": "p216",
+  "unit": "JumpjetLocomotionClass",
+  "emitted": "JumpjetLocomotionClass::IsStateInRange",
+  "first_diff": {
+   "orig": "+7 test eax, eax",
+   "ours": "+7 cmp eax, 2"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x7ac9d0",
+  "name": "GetBuddyEntryWOL",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 41,
+  "part": "p216",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::GetBuddyEntryWOL",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 8]",
+   "ours": "+0 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 46
+ },
+ {
+  "addr": "0x7d36ac",
+  "name": "_setSBCS",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 41,
+  "part": "p216",
+  "unit": "_addr_7D",
+  "emitted": "_setSBCS",
+  "first_diff": {
+   "orig": "+1 push 0x40",
+   "ours": "+1 mov ecx, 0x40"
+  },
+  "ours_size": 52
+ },
+ {
+  "addr": "0x54ee60",
+  "name": "NetworkSession::ResetState",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "codegen_shape",
+  "size": 42,
+  "part": "p217",
+  "unit": "NetworkSession",
+  "emitted": "NetworkSession::ResetState",
+  "first_diff": {
+   "orig": "+2 xor eax, eax",
+   "ours": "+2 push edi"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x5da080",
+  "name": "NetworkLobby::GetPlayerCount",
+  "family": "RET_ARITY",
+  "path": "cc_mismatch",
+  "size": 42,
+  "part": "p217",
+  "unit": "NetworkLobby",
+  "emitted": "NetworkLobby::GetPlayerCount",
+  "first_diff": {
+   "orig": "+0 mov cl, byte ptr [esp + 4]",
+   "ours": "+0 mov cl, byte ptr [esp + 8]"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x6d6190",
+  "name": "ObjectClass::ComputeDelta",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 42,
+  "part": "p217",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::ComputeDelta",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 0xb0]",
+   "ours": "+0 mov edx, dword ptr [ecx + 0xd68]"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x765b10",
+  "name": "COMClass::unregisterObject",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 42,
+  "part": "p217",
+  "unit": "_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour",
+  "emitted": "_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::unregisterObject",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 56
+ },
+ {
+  "addr": "0x766f40",
+  "name": "Conflict_WorldDominationTour_12::IndexOf",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 42,
+  "part": "p217",
+  "unit": "_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+  "emitted": "_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::IndexOf",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 56
+ },
+ {
+  "addr": "0x76a100",
+  "name": "MSFrameAnim::getCurrentFrame",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 42,
+  "part": "p217",
+  "unit": "_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour",
+  "emitted": "_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour::getCurrentFrame",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 56
+ },
+ {
+  "addr": "0x76bb90",
+  "name": "WDTState_4::Read",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 42,
+  "part": "p217",
+  "unit": "_DynamicVectorClass_V_rc_ptr_VWDTTerritory",
+  "emitted": "_DynamicVectorClass_V_rc_ptr_VWDTTerritory::Read",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 0x10]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 56
+ },
+ {
+  "addr": "0x771990",
+  "name": "Territory_WorldDominationTour_8::Seek",
+  "family": "FRAME",
+  "path": "regalloc",
+  "size": 42,
+  "part": "p217",
+  "unit": "Anim_Voices_WorldDominationTour",
+  "emitted": "Anim_Voices_WorldDominationTour::Seek",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 mov ecx, dword ptr [esp + 4]"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x7ca45f",
+  "name": "_wcscat",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 42,
+  "part": "p217",
+  "unit": "_addr_7C",
+  "emitted": "_wcscat",
+  "first_diff": {
+   "orig": "+10 je 0x7ca473",
+   "ours": "+10 je 0x25"
+  },
+  "ours_size": 42
+ },
+ {
+  "addr": "0x4863a0",
+  "name": "E4Recv_4863A0::sub_4863A0",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "signedness",
+  "size": 43,
+  "part": "p217",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_4863A0",
+  "first_diff": {
+   "orig": "+11 jl 0x4863b4",
+   "ours": "+11 jb 0x14"
+  },
+  "ours_size": 46
+ }
+]
