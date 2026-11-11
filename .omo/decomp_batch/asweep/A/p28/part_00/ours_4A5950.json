@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ@ObjectClass@@QAEIXZ",
+ "sym_key": "ObjectClass::GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81b4000000c3",
+ "relocs": []
+}

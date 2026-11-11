@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_46D480@ObjectClass@@QAE_JH@Z",
+ "sym_key": "ObjectClass::sub_46D480",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b74240456e8000000008b4c24148b54240c83c4048881000000008bc65e83c408c20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?BYTE4@@YAHHZZ",
+   "sym_key": "BYTE4"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?g_GameModeOptionState@@3IA",
+   "sym_key": "g_GameModeOptionState"
+  }
+ ]
+}

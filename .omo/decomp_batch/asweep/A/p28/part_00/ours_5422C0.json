@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ@ObjectClass@@QAEIXZ",
+ "sym_key": "ObjectClass::GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8b81a8000000c3",
+ "relocs": []
+}

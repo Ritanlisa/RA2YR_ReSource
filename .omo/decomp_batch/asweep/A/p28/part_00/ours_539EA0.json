@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_539EA0@@YIXD@Z",
+ "sym_key": "Unnamed::sub_539EA0",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "880d00000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?LightningStorm_Active@@3EA",
+   "sym_key": "LightningStorm_Active"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x487C80",
+ "name": "?GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ",
+ "size": 7,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487C80",
+ "bytes_hex": "8b81f8000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

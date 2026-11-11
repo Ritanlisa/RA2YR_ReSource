@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p28\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c3740 sub_7C3740 -> _addr_7C
+[conv] 0x7d06e2 sub_7D06E2 -> _addr_7D
+[conv] 0x7db060 sub_7DB060 -> _addr_7D
+[conv] 0x4034a0 ObjectClass::GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ -> ObjectClass
+[conv] 0x405490 ObjectClass::sub_405490 -> ObjectClass
+[conv] 0x407160 ObjectClass::sub_407160 -> ObjectClass
+[conv] 0x4072b0 ObjectClass::sub_4072B0 -> ObjectClass
+[conv] 0x4080a0 ObjectClass::sub_4080A0 -> ObjectClass
+[conv] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> ObjectClass
+[conv] 0x46d350 CampaignScore::sub_46D350 -> CampaignScore
+[conv] 0x46d480 ObjectClass::sub_46D480 -> ObjectClass
+[conv] 0x470c30 CampaignEndScoreClass::sub_470C30 -> CampaignEndScoreClass
+[conv] 0x487c80 ObjectClass::GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ -> ObjectClass
+[conv] 0x4a5950 ObjectClass::GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ -> ObjectClass
+[conv] 0x4c38d0 ObjectClass::sub_4C38D0 -> ObjectClass
+[conv] 0x539ea0 sub_539EA0 -> _addr_53
+[conv] 0x5422c0 ObjectClass::GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ -> ObjectClass
+[conv] 0x543af0 IsometricTileClass::nullsub_0_0 -> IsometricTileClass
+[conv] 0x55af50 ObjectClass::Map_Init -> ObjectClass
+[conv] 0x5bcc30 ObjectClass::sub_5BCC30 -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=0
+[era] ObjectClass              rc=2
+[era] CampaignScore            rc=0
+[era] CampaignEndScoreClass    rc=0
+[era] _addr_53                 rc=0
+[era] IsometricTileClass       rc=0
+=== diffasm byte-compare ===
+[diff] 0x7c3740   MATCH            sub_7C3740
+[diff] 0x7d06e2   MATCH            sub_7D06E2
+[diff] 0x7db060   MATCH            sub_7DB060
+[diff] 0x4034a0   MATCH            ObjectClass::GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ
+[diff] 0x405490   MATCH            ObjectClass::sub_405490
+[diff] 0x407160   MISMATCH         ObjectClass::sub_407160
+[diff] 0x4072b0   MATCH            ObjectClass::sub_4072B0
+[diff] 0x4080a0   MISMATCH         ObjectClass::sub_4080A0
+[diff] 0x46d480   MISMATCH         ObjectClass::sub_46D480
+[diff] 0x487c80   MATCH            ObjectClass::GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ
+[diff] 0x4a5950   MATCH            ObjectClass::GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ
+[diff] 0x4c38d0   MATCH            ObjectClass::sub_4C38D0
+[diff] 0x5422c0   MATCH            ObjectClass::GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ
+[diff] 0x55af50   MATCH            ObjectClass::Map_Init
+[diff] 0x5bcc30   MATCH            ObjectClass::sub_5BCC30
+[diff] 0x46d350   MISMATCH         CampaignScore::sub_46D350
+[diff] 0x470c30   MISMATCH         CampaignEndScoreClass::sub_470C30
+[diff] 0x539ea0   MATCH            sub_539EA0
+[diff] 0x543af0   MATCH            IsometricTileClass::nullsub_0_0
+[ledger] 0x7c3740 sub_7C3740 -> OK (attempt 1)
+[ledger] 0x7d06e2 sub_7D06E2 -> OK (attempt 1)
+[ledger] 0x7db060 sub_7DB060 -> OK (attempt 1)
+[ledger] 0x4034a0 ObjectClass::GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ -> OK (attempt 1)
+[ledger] 0x405490 ObjectClass::sub_405490 -> OK (attempt 1)
+[ledger] 0x407160 ObjectClass::sub_407160 -> NG (attempt 1)
+[ledger] 0x4072b0 ObjectClass::sub_4072B0 -> OK (attempt 1)
+[ledger] 0x4080a0 ObjectClass::sub_4080A0 -> NG (attempt 1)
+[ledger] 0x426a73 ObjectClass::UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46d350 CampaignScore::sub_46D350 -> NG (attempt 1)
+[ledger] 0x46d480 ObjectClass::sub_46D480 -> NG (attempt 1)
+[ledger] 0x470c30 CampaignEndScoreClass::sub_470C30 -> NG (attempt 1)
+[ledger] 0x487c80 ObjectClass::GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ -> OK (attempt 1)
+[ledger] 0x4a5950 ObjectClass::GetNumExternalThreads_SchedulerProxy_details_Concurrency__QAEIXZ -> OK (attempt 1)
+[ledger] 0x4c38d0 ObjectClass::sub_4C38D0 -> OK (attempt 1)
+[ledger] 0x539ea0 sub_539EA0 -> OK (attempt 1)
+[ledger] 0x5422c0 ObjectClass::GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ -> OK (attempt 1)
+[ledger] 0x543af0 IsometricTileClass::nullsub_0_0 -> OK (attempt 1)
+[ledger] 0x55af50 ObjectClass::Map_Init -> OK (attempt 1)
+[ledger] 0x5bcc30 ObjectClass::sub_5BCC30 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "regalloc": 1,
+  "codegen_shape": 2,
+  "const_fold": 2
+ },
+ "match_rate_of_decided_pct": 73.7,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p28\batch_report.json
