@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p208\part_00
+=== convert (20 addrs) ===
+[conv] 0x4cab20 DynamicVector::validateScriptArgs -> DynamicVector
+[conv] 0x4e0550 _DynamicVectorClass_PAVAbstractClass::Find -> _DynamicVectorClass_PAVAbstractClass
+[conv] 0x4e9430 DynamicVector::COMStub_4 -> DynamicVector
+[conv] 0x4e9690 _DynamicVectorClass_PAVBuildingClass::FindItem -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e98f0 _DynamicVectorClass_PAVSuperClass::FindItemIndex -> _DynamicVectorClass_PAVSuperClass
+[conv] 0x4e9db0 _DynamicVectorClass_PAVBuildingLightClass::FindItemIndex -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4ea010 _DynamicVectorClass_PAVParticleClass::Init -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4ea270 _DynamicVectorClass_PAVTeamClass::FindItemIndex -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4ea650 _DynamicVectorClass_PAVTriggerClass::FindItemIndex_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4eab10 _DynamicVectorClass_PAVTubeClass::FindItemIndex -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4ead70 _DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0 -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4eafd0 _DynamicVectorClass_PAVWaveClass::FindItemIndex_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4eb230 _DynamicVectorClass_PAVOverlayClass::FindItemIndex_1 -> _DynamicVectorClass_PAVOverlayClass
+[conv] 0x4eb490 _DynamicVectorClass_PAVSmudgeClass::processParticleFrame -> _DynamicVectorClass_PAVSmudgeClass
+[conv] 0x4eb6f0 _DynamicVectorClass_PAVTerrainClass::FindParticle2 -> _DynamicVectorClass_PAVTerrainClass
+[conv] 0x4eb950 _DynamicVectorClass_PAVAircraftClass::FindElementByValue -> _DynamicVectorClass_PAVAircraftClass
+[conv] 0x4ebbb0 _DynamicVectorClass_PAVUnitClass::FindItemIndex -> _DynamicVectorClass_PAVUnitClass
+[conv] 0x4ebe10 _DynamicVectorClass_PAVHouseClass::FindItemIndex_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4ec2d0 _DynamicVectorClass_PAVFactoryClass::FindItemIndex_1 -> _DynamicVectorClass_PAVFactoryClass
+[conv] 0x4ec530 _DynamicVectorClass_PAVCampaignClass::FindItemIndex -> _DynamicVectorClass_PAVCampaignClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] DynamicVector            rc=0
+[era] _DynamicVectorClass_PAVAbstractClass rc=2
+[era] _DynamicVectorClass_PAVBuildingClass rc=2
+[era] _DynamicVectorClass_PAVSuperClass rc=2
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=2
+[era] _DynamicVectorClass_PAVParticleClass rc=2
+[era] _DynamicVectorClass_PAVTeamClass rc=2
+[era] _DynamicVectorClass_PAVTriggerClass rc=2
+[era] _DynamicVectorClass_PAVTubeClass rc=2
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=2
+[era] _DynamicVectorClass_PAVWaveClass rc=2
+[era] _DynamicVectorClass_PAVOverlayClass rc=2
+[era] _DynamicVectorClass_PAVSmudgeClass rc=2
+[era] _DynamicVectorClass_PAVTerrainClass rc=2
+[era] _DynamicVectorClass_PAVAircraftClass rc=2
+[era] _DynamicVectorClass_PAVUnitClass rc=2
+[era] _DynamicVectorClass_PAVHouseClass rc=2
+[era] _DynamicVectorClass_PAVFactoryClass rc=2
+[era] _DynamicVectorClass_PAVCampaignClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4cab20   MISMATCH         DynamicVector::validateScriptArgs
+[diff] 0x4e9430   MISMATCH         DynamicVector::COMStub_4
+[ledger] 0x4cab20 DynamicVector::validateScriptArgs -> NG (attempt 1)
+[ledger] 0x4e0550 _DynamicVectorClass_PAVAbstractClass::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9430 DynamicVector::COMStub_4 -> NG (attempt 1)
+[ledger] 0x4e9690 _DynamicVectorClass_PAVBuildingClass::FindItem -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e98f0 _DynamicVectorClass_PAVSuperClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9db0 _DynamicVectorClass_PAVBuildingLightClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea010 _DynamicVectorClass_PAVParticleClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea270 _DynamicVectorClass_PAVTeamClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea650 _DynamicVectorClass_PAVTriggerClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eab10 _DynamicVectorClass_PAVTubeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ead70 _DynamicVectorClass_PAVParticleSystemClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eafd0 _DynamicVectorClass_PAVWaveClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb230 _DynamicVectorClass_PAVOverlayClass::FindItemIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb490 _DynamicVectorClass_PAVSmudgeClass::processParticleFrame -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb6f0 _DynamicVectorClass_PAVTerrainClass::FindParticle2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb950 _DynamicVectorClass_PAVAircraftClass::FindElementByValue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebbb0 _DynamicVectorClass_PAVUnitClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebe10 _DynamicVectorClass_PAVHouseClass::FindItemIndex_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec2d0 _DynamicVectorClass_PAVFactoryClass::FindItemIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec530 _DynamicVectorClass_PAVCampaignClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "COMPILE_FAIL": 18
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p208\batch_report.json
