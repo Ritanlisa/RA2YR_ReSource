@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x406620",
+  "name": "AbstractTypeClass::sub_406620",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 28,
+  "part": "p190",
+  "unit": "AbstractTypeClass",
+  "emitted": "AbstractTypeClass::sub_406620",
+  "first_diff": {
+   "orig": "+0 cmp edx, 0x64",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 39
+ },
+ {
+  "addr": "0x40b120",
+  "name": "_VectorClass_USubzoneConnectionStruct::Clear",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p190",
+  "unit": "_VectorClass_USubzoneConnectionStruct",
+  "emitted": "_VectorClass_USubzoneConnectionStruct::Clear",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x426630",
+  "name": "CDTimerClass::TimeRemaining",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 28,
+  "part": "p190",
+  "unit": "Locomotor",
+  "emitted": "Locomotor::TimeRemaining",
+  "first_diff": {
+   "orig": "+8 je 0x42664b",
+   "ours": "+8 je 0x21"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x4a0f00",
+  "name": "VectorClass_UtagCONNECTDATA::Clear",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p190",
+  "unit": "_VectorClass_UtagCONNECTDATA",
+  "emitted": "_VectorClass_UtagCONNECTDATA::Clear",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x4e19d0",
+  "name": "COMObject::DeactivateGlobal",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 28,
+  "part": "p191",
+  "unit": "ShpButtonClass",
+  "emitted": "ShpButtonClass::DeactivateGlobal",
+  "first_diff": {
+   "orig": "+0 cmp dword ptr [0x8b3e90], ecx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 38
+ },
+ {
+  "addr": "0x50e5b0",
+  "name": "VectorClass_UAngerStruct::Clear",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_UAngerStruct",
+  "emitted": "_VectorClass_UAngerStruct::Clear",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x50e620",
+  "name": "VectorClass_UScoutStruct::Clear",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_UScoutStruct",
+  "emitted": "_VectorClass_UScoutStruct::Clear",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x50e7c0",
+  "name": "VectorClass__N_18::Clear",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass",
+  "emitted": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Clear",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x5d5130",
+  "name": "VectorClass_UAcceleratorTracker::Clear",
+  "family": "JCC_LAYOUT_PLUS",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_UAcceleratorTracker",
+  "emitted": "_VectorClass_UAcceleratorTracker::Clear",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x643e90",
+  "name": "Progress::GetWeighted",
+  "family": "STRUCTURAL",
+  "path": "width_mismatch",
+  "size": 28,
+  "part": "p191",
+  "unit": "Progress",
+  "emitted": "Progress::GetWeighted",
+  "first_diff": {
+   "orig": "+0 movsx edx, byte ptr [ecx + 0x61]",
+   "ours": "+0 fild dword ptr [esp + 4]"
+  },
+  "ours_size": 7
+ },
+ {
+  "addr": "0x6f2210",
+  "name": "TeamTypeClass_28::Seek",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 28,
+  "part": "p191",
+  "unit": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass",
+  "emitted": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Seek",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [ecx + 4]",
+   "ours": "+0 mov ecx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 28
+ },
+ {
+  "addr": "0x431f30",
+  "name": "BufferIOFileClass::Read",
+  "family": "STRUCTURAL",
+  "path": "ret_norm",
+  "size": 29,
+  "part": "p191",
+  "unit": "BufferIOFileClass",
+  "emitted": "BufferIOFileClass::Read",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0x25]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 44
+ },
+ {
+  "addr": "0x4b69b0",
+  "name": "HouseClass::initDropshipData",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 29,
+  "part": "p192",
+  "unit": "HouseClass",
+  "emitted": "HouseClass::initDropshipData",
+  "first_diff": {
+   "orig": "+2 mov ecx, dword ptr [0xa8ed84]",
+   "ours": "+2 mov ecx, dword ptr [0]"
+  },
+  "ours_size": 35
+ },
+ {
+  "addr": "0x540fa0",
+  "name": "Network::GetConnectionSpeed",
+  "family": "ROTATE_EXACT",
+  "path": "signedness",
+  "size": 29,
+  "part": "p192",
+  "unit": "IPXManagerClass",
+  "emitted": "IPXManagerClass::GetConnectionSpeed",
+  "first_diff": {
+   "orig": "+11 jge 0x540fb7",
+   "ours": "+11 jae 0x17"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x54f650",
+  "name": "EventQueue::Check",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 29,
+  "part": "p192",
+  "unit": "EventQueue",
+  "emitted": "EventQueue::Check",
+  "first_diff": {
+   "orig": "+14 je 0x54f669",
+   "ours": "+14 jne 0x14"
+  },
+  "ours_size": 29
+ },
+ {
+  "addr": "0x6da160",
+  "name": "TacticalClass::ResetScrollBounds",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 29,
+  "part": "p192",
+  "unit": "TacticalClass",
+  "emitted": "TacticalClass::ResetScrollBounds",
+  "first_diff": {
+   "orig": "+2 xor edx, edx",
+   "ours": "+2 mov dword ptr [ecx + 0xd90], eax"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x7ca405",
+  "name": "_wcslen",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 29,
+  "part": "p192",
+  "unit": "_addr_7C",
+  "emitted": "_wcslen",
+  "first_diff": {
+   "orig": "+11 je 0x7ca41c",
+   "ours": "+11 je 0x23"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x4f6910",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 30,
+  "part": "p193",
+  "unit": "VectorClass_ptr_BuildChoiceClass_int_ouseClass",
+  "emitted": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 26
+ },
+ {
+  "addr": "0x557ac0",
+  "name": "Array::GetClamped",
+  "family": "TWO_FOUR_INSNS",
+  "path": "branch_order",
+  "size": 30,
+  "part": "p193",
+  "unit": "ListClass",
+  "emitted": "ListClass::GetClamped",
+  "first_diff": {
+   "orig": "+5 jne 0x557aca",
+   "ours": "+5 je 0x1b"
+  },
+  "ours_size": 32
+ },
+ {
+  "addr": "0x5f75c0",
+  "name": "ObjectTypeClass::InitTripleTen",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 30,
+  "part": "p193",
+  "unit": "ObjectTypeClass",
+  "emitted": "ObjectTypeClass::InitTripleTen",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 mov ecx, 0xa"
+  },
+  "ours_size": 20
+ }
+]
