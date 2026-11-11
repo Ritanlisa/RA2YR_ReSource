@@ -1,0 +1,78 @@
+[resume] 0/15 already decided, 15 to run
+======================================================================
+PART 1/1  (15 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p33\part_00
+=== convert (15 addrs) ===
+[conv] 0x47c3d0 Object::FindClosestObjectCell -> Object
+[conv] 0x7170a0 TechnoTypeClass::DeserializeArrays -> TechnoTypeClass
+[conv] 0x5a7e90 unknown::Object_Helper_5A7E90 -> unknown
+[conv] 0x659ee0 ObjectClass::Weapon_Update_Update_659EE0 -> ObjectClass
+[conv] 0x58c6f0 unknown::Memory_Helper_58C6F0 -> unknown
+[conv] 0x57c870 unknown::globalHelper_07C870 -> unknown
+[conv] 0x485460 BuildingClass::CheckAdjacentCells -> BuildingClass
+[conv] 0x733cd0 ObjectClass::sub_733CD0 -> ObjectClass
+[conv] 0x6d0fd0 ObjectClass::UI_Init_6D0FD0 -> ObjectClass
+[conv] 0x4138c0 Coord::ToGridIndex -> Coord
+[conv] 0x62bb20 ObjectClass::ProcessUpdate -> ObjectClass
+[conv] 0x434500 FontClass::RenderText -> FontClass
+[conv] 0x567f70 unknown::TActionClass_Helper -> unknown
+[conv] 0x65fe00 ObjectClass::Map_Helper_65FE00 -> ObjectClass
+=== emit 7 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Object                   rc=2
+[era] TechnoTypeClass          rc=2
+[era] unknown                  rc=2
+[era] ObjectClass              rc=2
+[era] BuildingClass            rc=2
+[era] Coord                    rc=0
+[era] FontClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x4138c0   MISMATCH         Coord::ToGridIndex
+[ledger] 0x47c3d0 Object::FindClosestObjectCell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7170a0 ObjectTypeClass::DeserializeArrays -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5a7e90 Object_Helper_5A7E90 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x659ee0 Weapon_Update_Update_659EE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58c6f0 Memory_Helper_58C6F0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x57c870 globalHelper_07C870 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x485460 BuildingClass::CheckAdjacentCells -> COMPILE_FAIL (attempt 1)
+[ledger] 0x733cd0 sub_733CD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7bd470 0x7bd470 -> PENDING (attempt 1)
+[ledger] 0x6d0fd0 UI_Init_6D0FD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4138c0 Coord::ToGridIndex -> NG (attempt 1)
+[ledger] 0x62bb20 ObjectClass::ProcessUpdate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x434500 FontClass::RenderText -> COMPILE_FAIL (attempt 1)
+[ledger] 0x567f70 TActionClass_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x65fe00 Map_Helper_65FE00 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2354,
+ "verdicts": {
+  "MISMATCH": 657,
+  "MATCH": 521,
+  "COMPILE_FAIL": 661,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 501,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 225,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 66,
+  "branch_polarity": 46,
+  "regalloc": 104,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 44.2,
+ "match_rate_of_total_pct": 22.1,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p33\batch_report.json

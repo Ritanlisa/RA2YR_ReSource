@@ -1,0 +1,21 @@
+{
+ "symbol": "?ToGridIndex@Coord@@QAEHHHH@Z",
+ "sym_key": "Coord::ToGridIndex",
+ "size": 337,
+ "link_base": 0,
+ "bytes_hex": "518b442408538b5c24145556894c240c8b08575350ff91f80200008b44241cf6c48075050fbff0eb0233f685c07c08c1f8100fbfe8eb0233edb8cdccccccbf13000000f725000000008bca8bc6c1e90433d2f7f13bc777028bf8b8cdccccccf725000000008bf28bc5c1ee0433d2f7f683f8137e05b8130000008d1480f6c7808d2c9775050fbfc3eb0233c085db7c08c1fb100fbffbeb0233ff33d2f7f1b9130000003bc17f028bc88bc799f7fe83f8137e05b8130000008d04808d3c813bef0f84830000008b5c24108d446d008d5424188b0cc38d34c35256ff511083f8ff74218b4e103bc17d1a493bc1894e1073128b4e04408b1481895481fc8b4e103bc172ee8d047f8b4cc3108d34c38b44c3083bc872218a4e0d84c9750485c075298b4e1485c97e228b1603c86a005156ff520884c074138b46108b56048d4801894e108b4c2418890c825f5e5d5b59c20c00",
+ "relocs": [
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "?g_AircraftTrackerPool@@3PADA",
+   "sym_key": "g_AircraftTrackerPool"
+  },
+  {
+   "off": 97,
+   "type": "DIR32",
+   "sym": "?g_AircraftTrackerState@@3PADA",
+   "sym_key": "g_AircraftTrackerState"
+  }
+ ]
+}

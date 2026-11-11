@@ -846,6 +846,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x4138c0": {
+  "attempts": 1,
+  "first_diff": "+1 mov edx, dword ptr [esp + 0x10]",
+  "name": "Coord::ToGridIndex",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x413af0": {
   "attempts": 1,
   "first_diff": null,
@@ -1594,6 +1601,13 @@
   "name": "Field::Int_Set",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x434500": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FontClass::RenderText",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4349b0": {
   "attempts": 1,
@@ -2477,6 +2491,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x47c3d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object::FindClosestObjectCell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x47d210": {
   "attempts": 15,
   "first_diff": null,
@@ -2525,6 +2546,13 @@
   "name": "JumpjetLocomotionClass::FindClosestOccupiableCell",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x485460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::CheckAdjacentCells",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x486380": {
   "attempts": 14,
@@ -7664,6 +7692,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x567f70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TActionClass_Helper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x56bbe0": {
   "attempts": 1,
   "first_diff": null,
@@ -7796,6 +7831,13 @@
   "name": "0x578d80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x57c870": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "globalHelper_07C870",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x580b70": {
   "attempts": 1,
@@ -7972,6 +8014,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x58c6f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Memory_Helper_58C6F0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x58d010": {
   "attempts": 1,
   "first_diff": null,
@@ -8039,6 +8088,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "sub_5A4FA0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5a7e90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Object_Helper_5A7E90",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9890,6 +9946,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x62bb20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::ProcessUpdate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x62d770": {
   "attempts": 5,
   "first_diff": null,
@@ -10660,6 +10723,13 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "status": "NG"
  },
+ "0x659ee0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Weapon_Update_Update_659EE0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x65a330": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -10876,6 +10946,13 @@
   "name": "0x65f9f0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x65fe00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Map_Helper_65FE00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x660f10": {
   "attempts": 1,
@@ -12361,6 +12438,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6d0fd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UI_Init_6D0FD0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6d1830": {
   "attempts": 1,
   "first_diff": null,
@@ -13081,6 +13165,13 @@
   "name": "0x710a80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7170a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectTypeClass::DeserializeArrays",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x717a30": {
   "attempts": 1,
@@ -13914,6 +14005,13 @@
   "name": "AbstractClass::processRadarEvent",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x733cd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_733CD0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7344a0": {
   "attempts": 1,
@@ -15839,6 +15937,13 @@
   "name": "AudioStream::CalcReadPos",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7bd470": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7bd470",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x7be670": {
   "attempts": 1,
