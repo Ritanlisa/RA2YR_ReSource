@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x4e3830",
+  "name": "CountryCombo::IDToIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 105,
+  "part": "p258",
+  "unit": "CountryCombo",
+  "emitted": "CountryCombo::IDToIndex",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 cmp ecx, 0x6a1"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x4e4230",
+  "name": "StartCombo::IDToIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 105,
+  "part": "p258",
+  "unit": "StartCombo",
+  "emitted": "StartCombo::IDToIndex",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 cmp ecx, 0x6a2"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x4e4ec0",
+  "name": "Dialog::SideIDToIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 105,
+  "part": "p258",
+  "unit": "Dialog",
+  "emitted": "Dialog::SideIDToIndex",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 cmp ecx, 0x6a3"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x5e9950",
+  "name": "Dialog::MapPlayerIDToIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 105,
+  "part": "p259",
+  "unit": "Dialog",
+  "emitted": "Dialog::MapPlayerIDToIndex",
+  "first_diff": {
+   "orig": "+0 mov eax, ecx",
+   "ours": "+0 cmp ecx, 0x411"
+  },
+  "ours_size": 96
+ },
+ {
+  "addr": "0x722140",
+  "name": "TiberiumClass::UpdateField",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 105,
+  "part": "p259",
+  "unit": "TiberiumClass",
+  "emitted": "TiberiumClass::UpdateField",
+  "first_diff": {
+   "orig": "+27 mov eax, dword ptr [ecx + 0xd4]",
+   "ours": "+27 mov esi, dword ptr [ecx + 0xd4]"
+  },
+  "ours_size": 105
+ },
+ {
+  "addr": "0x53ee00",
+  "name": "Network::IsBroadcastAddr",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 106,
+  "part": "p259",
+  "unit": "Network",
+  "emitted": "Network::IsBroadcastAddr",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0x828140]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 56
+ },
+ {
+  "addr": "0x5c6a30",
+  "name": "Crypto_Helper",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 106,
+  "part": "p259",
+  "unit": "Crypto",
+  "emitted": "Crypto_Helper",
+  "first_diff": {
+   "orig": "+4 push esi",
+   "ours": "+4 test eax, eax"
+  },
+  "ours_size": 97
+ },
+ {
+  "addr": "0x5c6490",
+  "name": "EncodeVarInt_Helper",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 107,
+  "part": "p259",
+  "unit": "EncodeVarInt",
+  "emitted": "EncodeVarInt_Helper",
+  "first_diff": {
+   "orig": "+8 mov ebx, dword ptr [edx + eax*4 - 4]",
+   "ours": "+8 mov ecx, dword ptr [edx + eax*4 - 4]"
+  },
+  "ours_size": 98
+ },
+ {
+  "addr": "0x4a52f0",
+  "name": "Animation::GetProgress",
+  "family": "FRAME",
+  "path": "ret_norm",
+  "size": 108,
+  "part": "p259",
+  "unit": "Animation",
+  "emitted": "Animation::GetProgress",
+  "first_diff": {
+   "orig": "+0 mov al, byte ptr [ecx + 0x18]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 86
+ },
+ {
+  "addr": "0x522780",
+  "name": "InfantryClass::InitProductionLimits",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 109,
+  "part": "p259",
+  "unit": "InfantryClass",
+  "emitted": "InfantryClass::InitProductionLimits",
+  "first_diff": {
+   "orig": "+14 je 0x5227e5",
+   "ours": "+14 je 0x69"
+  },
+  "ours_size": 113
+ },
+ {
+  "addr": "0x56bcd0",
+  "name": "CellClass::GetTileData",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 109,
+  "part": "p259",
+  "unit": "CellClass",
+  "emitted": "CellClass::GetTileData",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 106
+ },
+ {
+  "addr": "0x6b0a20",
+  "name": "SlaveManagerClass::LostSlave",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 110,
+  "part": "p259",
+  "unit": "SlaveManagerClass",
+  "emitted": "SlaveManagerClass::LostSlave",
+  "first_diff": {
+   "orig": "+3 sub esp, 0xc",
+   "ours": "+3 push ebx"
+  },
+  "ours_size": 101
+ },
+ {
+  "addr": "0x4cac40",
+  "name": "Math::Sqrt",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 110,
+  "part": "p259",
+  "unit": "Math",
+  "emitted": "Math::Sqrt",
+  "first_diff": {
+   "orig": "+0 fld qword ptr [esp + 4]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 122
+ },
+ {
+  "addr": "0x5af4d0",
+  "name": "Matrix3x3::TransformPoint",
+  "family": "FRAME",
+  "path": "frame_sched",
+  "size": 113,
+  "part": "p260",
+  "unit": "Matrix3x3",
+  "emitted": "Matrix3x3::TransformPoint",
+  "first_diff": {
+   "orig": "+0 sub esp, 0xc",
+   "ours": "+0 mov eax, dword ptr [esp + 4]"
+  },
+  "ours_size": 105
+ },
+ {
+  "addr": "0x53d8e0",
+  "name": "ComputeSpiralOffset",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 113,
+  "part": "p260",
+  "unit": "_addr_53",
+  "emitted": "ComputeSpiralOffset",
+  "first_diff": {
+   "orig": "+0 dec edx",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 120
+ },
+ {
+  "addr": "0x6dc5e0",
+  "name": "VectorClass_UDirtyAreaStruct::AddRef",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 114,
+  "part": "p260",
+  "unit": "_VectorClass_UDirtyAreaStruct",
+  "emitted": "_VectorClass_UDirtyAreaStruct::AddRef",
+  "first_diff": {
+   "orig": "+16 jne 0x6dc649",
+   "ours": "+16 jne 0x78"
+  },
+  "ours_size": 129
+ },
+ {
+  "addr": "0x412a40",
+  "name": "Slider::CalcPosition",
+  "family": "STRUCTURAL",
+  "path": "cc_mismatch",
+  "size": 116,
+  "part": "p260",
+  "unit": "Slider",
+  "emitted": "Slider::CalcPosition",
+  "first_diff": {
+   "orig": "+0 mov ecx, dword ptr [esp + 4]",
+   "ours": "+0 mov ecx, dword ptr [esp + 8]"
+  },
+  "ours_size": 105
+ },
+ {
+  "addr": "0x5c6230",
+  "name": "sub_5C6230",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 116,
+  "part": "p260",
+  "unit": "_addr_5C",
+  "emitted": "sub_5C6230",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push edi"
+  },
+  "ours_size": 112
+ },
+ {
+  "addr": "0x5af000",
+  "name": "sub_5AF000",
+  "family": "FRAME",
+  "path": "codegen_shape",
+  "size": 117,
+  "part": "p260",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5AF000",
+  "first_diff": {
+   "orig": "+0 fld dword ptr [ecx + 4]",
+   "ours": "+0 sub esp, 0x10"
+  },
+  "ours_size": 301
+ },
+ {
+  "addr": "0x7d7840",
+  "name": "__aullrem",
+  "family": "FRAME",
+  "path": "regalloc",
+  "size": 117,
+  "part": "p260",
+  "unit": "_addr_7D",
+  "emitted": "__aullrem",
+  "first_diff": {
+   "orig": "+0 push ebx",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 182
+ }
+]
