@@ -1,0 +1,11 @@
+{
+ "addr": "0x4346C0",
+ "name": "Font::GetGlyphDataForChar",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4346C0",
+ "bytes_hex": "8b490433c085c97425568b742408578b791881e6ffff000033d2668b14775f85d25e740a8b41144a0fafc203411cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

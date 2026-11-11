@@ -1,0 +1,8 @@
+{
+ "symbol": "?Connect@NullModemClass@@QAEHHHHH@Z",
+ "sym_key": "NullModemClass::Connect",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b54240c8941608b4424048951648b513889415c8942288b41388b516089502c8b41388b4964894830c21000",
+ "relocs": []
+}

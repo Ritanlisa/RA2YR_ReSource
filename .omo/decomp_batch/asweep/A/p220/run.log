@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p220\part_00
+=== convert (20 addrs) ===
+[conv] 0x72aa10 CubicBezierAdvance -> _addr_72
+[conv] 0x735060 BulkCharToWide -> _addr_73
+[conv] 0x77d940 Network::IsMultiplayerActive -> Network
+[conv] 0x7ca650 ObjectClass::__alloca_probe -> ObjectClass
+[conv] 0x7cc653 _wcsncnt -> _addr_7C
+[conv] 0x455da0 BuildingClass::CheckSpecialUpdateFlags -> BuildingClass
+[conv] 0x4e1970 ShpButtonClass::TrackCurrent -> ShpButtonClass
+[conv] 0x502d30 HouseClass::FindOwner -> HouseClass
+[conv] 0x56bc50 Cell::PosToLinearIndex -> Cell
+[conv] 0x5f1bc0 NullModemClass::Connect -> NullModemClass
+[conv] 0x7da4bf _wcsncnt_0 -> _addr_7D
+[conv] 0x7dde50 __strrev -> _addr_7D
+[conv] 0x422b80 TerrainClass::ClearAnimationLinkFlags -> TerrainClass
+[conv] 0x4346c0 Font::GetGlyphDataForChar -> Font
+[conv] 0x45add0 DynamicVector::RemoveItem -> DynamicVector
+[conv] 0x45ae10 Vector::RemoveAt -> Vector
+[conv] 0x45e8b0 ObjectClass::sub_45E8B0 -> ObjectClass
+[conv] 0x4af930 JumpjetLocomotionClass::StubReturnZero_0 -> JumpjetLocomotionClass
+[conv] 0x4e0ed0 FootClass::RemoveFromPointerArray -> FootClass
+[conv] 0x50bc90 HouseClass::CreatePowerOutage -> HouseClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_73                 rc=0
+[era] Network                  rc=0
+[era] ObjectClass              rc=2
+[era] _addr_7C                 rc=0
+[era] BuildingClass            rc=0
+[era] ShpButtonClass           rc=0
+[era] HouseClass               rc=2
+[era] Cell                     rc=0
+[era] NullModemClass           rc=0
+[era] _addr_7D                 rc=0
+[era] TerrainClass             rc=0
+[era] Font                     rc=0
+[era] DynamicVector            rc=0
+[era] Vector                   rc=0
+[era] JumpjetLocomotionClass   rc=2
+[era] FootClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x72aa10   MISMATCH         CubicBezierAdvance
+[diff] 0x735060   MATCH            BulkCharToWide
+[diff] 0x77d940   MISMATCH         Network::IsMultiplayerActive
+[diff] 0x7cc653   MISMATCH         _wcsncnt
+[diff] 0x455da0   MATCH            BuildingClass::CheckSpecialUpdateFlags
+[diff] 0x4e1970   MISMATCH         ShpButtonClass::TrackCurrent
+[diff] 0x56bc50   MISMATCH         Cell::PosToLinearIndex
+[diff] 0x5f1bc0   MISMATCH         NullModemClass::Connect
+[diff] 0x7da4bf   MISMATCH         _wcsncnt_0
+[diff] 0x7dde50   MISMATCH         __strrev
+[diff] 0x422b80   MISMATCH         TerrainClass::ClearAnimationLinkFlags
+[diff] 0x4346c0   MISMATCH         Font::GetGlyphDataForChar
+[diff] 0x45add0   MISMATCH         DynamicVector::RemoveItem
+[diff] 0x45ae10   MISMATCH         Vector::RemoveAt
+[ledger] 0x72aa10 CubicBezierAdvance -> NG (attempt 1)
+[ledger] 0x735060 BulkCharToWide -> OK (attempt 1)
+[ledger] 0x77d940 Network::IsMultiplayerActive -> NG (attempt 1)
+[ledger] 0x7ca650 ObjectClass::__alloca_probe -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cc653 _wcsncnt -> NG (attempt 1)
+[ledger] 0x455da0 BuildingClass::CheckSpecialUpdateFlags -> OK (attempt 1)
+[ledger] 0x4e1970 ShpButtonClass::TrackCurrent -> NG (attempt 1)
+[ledger] 0x502d30 HouseClass::FindOwner -> COMPILE_FAIL (attempt 1)
+[ledger] 0x56bc50 Cell::PosToLinearIndex -> NG (attempt 1)
+[ledger] 0x5f1bc0 NullModemClass::Connect -> NG (attempt 1)
+[ledger] 0x7da4bf _wcsncnt_0 -> NG (attempt 1)
+[ledger] 0x7dde50 __strrev -> NG (attempt 1)
+[ledger] 0x422b80 TerrainClass::ClearAnimationLinkFlags -> NG (attempt 1)
+[ledger] 0x4346c0 Font::GetGlyphDataForChar -> NG (attempt 1)
+[ledger] 0x45add0 DynamicVector::RemoveItem -> NG (attempt 1)
+[ledger] 0x45ae10 Vector::RemoveAt -> NG (attempt 1)
+[ledger] 0x45e8b0 ObjectClass::sub_45E8B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4af930 JumpjetLocomotionClass::StubReturnZero_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0ed0 FootClass::RemoveFromPointerArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50bc90 HouseClass::CreatePowerOutage -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 2,
+  "COMPILE_FAIL": 6
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "extern_reloc": 1,
+  "ret_norm": 1,
+  "cc_mismatch": 1,
+  "regalloc": 2,
+  "signedness": 1,
+  "branch_order": 2
+ },
+ "match_rate_of_decided_pct": 14.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p220\batch_report.json

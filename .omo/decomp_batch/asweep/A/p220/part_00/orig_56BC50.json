@@ -1,0 +1,11 @@
+{
+ "addr": "0x56BC50",
+ "name": "Cell::PosToLinearIndex",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56BC50",
+ "bytes_hex": "8b4c2404560fbf41029983e20303c2c1f8028bf0c1e60603f00fbf019983e20303c2c1f8028d8470830000005ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

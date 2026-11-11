@@ -1,0 +1,11 @@
+{
+ "addr": "0x72AA10",
+ "name": "CubicBezierAdvance",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72AA10",
+ "bytes_hex": "8b01568b710403c289018b44240803f0f7da8971048b7108d1e2f7d803f28b510cd1e003d089710889510c5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

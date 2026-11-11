@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcsncnt@@YAHPAGH@Z",
+ "sym_key": "Unnamed::_wcsncnt",
+ "size": 60,
+ "link_base": 0,
+ "bytes_hex": "8b542408568b7424088bca85d28bc6750433c05ec366833e00740c83c0024974176683380075f485c9740d6683380075072bc65ed1f840c38bc25ec3",
+ "relocs": []
+}

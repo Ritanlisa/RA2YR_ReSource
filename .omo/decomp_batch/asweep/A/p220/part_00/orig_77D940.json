@@ -1,0 +1,11 @@
+{
+ "addr": "0x77D940",
+ "name": "Network::IsMultiplayerActive",
+ "size": 47,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x77D940",
+ "bytes_hex": "51833d38b2a80004740432c059c3a1246bb70085c07514a1306bb700c1e808240188442403750432c059c3b00159c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?RemoveItem@DynamicVector@@QAEDH@Z",
+ "sym_key": "DynamicVector::RemoveItem",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b51108b4424043bc27c052400c204004a3bc28951107d14568b5104408b3482897482fc8b51103bc27cee5e24010c01c20400",
+ "relocs": []
+}

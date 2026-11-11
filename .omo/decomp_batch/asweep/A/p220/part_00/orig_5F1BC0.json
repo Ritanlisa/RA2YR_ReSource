@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F1BC0",
+ "name": "NullModemClass::Connect",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F1BC0",
+ "bytes_hex": "8b5424088b4424048951608b54240c8951648b513889415c8942288b41388b516089502c8b41388b4964894830c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

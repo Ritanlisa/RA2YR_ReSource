@@ -1,0 +1,8 @@
+{
+ "symbol": "?PosToLinearIndex@Cell@@QAGHPAF@Z",
+ "sym_key": "Cell::PosToLinearIndex",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "8b4c2408560fbf41029983e20303c2c1f8028bf0c1e60603f00fbf019983e20303c2c1f8028d8470830000005ec20800",
+ "relocs": []
+}

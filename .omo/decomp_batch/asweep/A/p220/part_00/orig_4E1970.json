@@ -1,0 +1,11 @@
+{
+ "addr": "0x4E1970",
+ "name": "COMObject::TrackCurrent",
+ "size": 48,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4E1970",
+ "bytes_hex": "8a411d84c08a442404740ca8117408890d883e8b00eb08390d883e8b00750ea844740ac705883e8b0000000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

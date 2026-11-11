@@ -1,0 +1,11 @@
+{
+ "addr": "0x422B80",
+ "name": "TerrainClass::ClearAnimationLinkFlags",
+ "size": 49,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x422B80",
+ "bytes_hex": "85c9742ca1b8e9a80033d285c07e21a1ace9a8008b04903988cc0000007507c6809501000000a1b8e9a800423bd07cdfc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

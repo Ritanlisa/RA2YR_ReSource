@@ -1,0 +1,21 @@
+{
+ "symbol": "?TrackCurrent@ShpButtonClass@@QAEDD@Z",
+ "sym_key": "ShpButtonClass::TrackCurrent",
+ "size": 39,
+ "link_base": 0,
+ "bytes_hex": "8b411c8a442404f6c4ff740aa8117406890d00000000a844740ac7050000000000000000c20400",
+ "relocs": [
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E88@@3IA",
+   "sym_key": "DataGlobal_8B3E88"
+  },
+  {
+   "off": 28,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E88@@3IA",
+   "sym_key": "DataGlobal_8B3E88"
+  }
+ ]
+}

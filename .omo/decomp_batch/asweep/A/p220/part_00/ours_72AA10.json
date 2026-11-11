@@ -1,0 +1,8 @@
+{
+ "symbol": "?CubicBezierAdvance@@YIHPAHHH@Z",
+ "sym_key": "Unnamed::CubicBezierAdvance",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b01568b710403c289018b44240803f0f7da8971048b7108d1e203f28bd0f7da8971088b710cd1e203f2f7d889710c5ed1e0c20400",
+ "relocs": []
+}

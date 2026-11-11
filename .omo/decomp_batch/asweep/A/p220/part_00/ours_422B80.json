@@ -1,0 +1,27 @@
+{
+ "symbol": "?ClearAnimationLinkFlags@TerrainClass@@QAEXXZ",
+ "sym_key": "TerrainClass::ClearAnimationLinkFlags",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "85c9742ca10000000033d285c07621a1000000008b04903988cc0000007507c6809501000000a100000000423bd072dfc3",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_AnimClassCount@@3IA",
+   "sym_key": "g_AnimClassCount"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_AnimClassPool@@3PAXA",
+   "sym_key": "g_AnimClassPool"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_AnimClassCount@@3IA",
+   "sym_key": "g_AnimClassCount"
+  }
+ ]
+}

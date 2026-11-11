@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetGlyphDataForChar@Font@@QAEHG@Z",
+ "sym_key": "Font::GetGlyphDataForChar",
+ "size": 51,
+ "link_base": 0,
+ "bytes_hex": "8b490485c974278b542404568b711881e2ffff000033c0668b04565e6685c0740d488b511c0faf411403c2c2040033c0c20400",
+ "relocs": []
+}
