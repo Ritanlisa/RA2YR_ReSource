@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetRedraw@Rect@@QAEHD@Z",
+ "sym_key": "Rect::SetRedraw",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8a54240433c03ad0740f89411489411889411c894120c204008b411cc7411801000000894114894120c20400",
+ "relocs": []
+}

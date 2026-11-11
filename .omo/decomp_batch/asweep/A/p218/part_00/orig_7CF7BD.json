@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CF7BD",
+ "name": "___sbh_find_block",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CF7BD",
+ "bytes_hex": "a1948bb7008d0c80a1988bb7008d0c883bc173148b5424042b500c81fa00001000720783c014ebe833c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

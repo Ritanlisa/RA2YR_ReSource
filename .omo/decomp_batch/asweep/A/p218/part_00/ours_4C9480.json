@@ -1,0 +1,15 @@
+{
+ "symbol": "?Active@TimerClass@@QAEHXZ",
+ "sym_key": "TimerClass::Active",
+ "size": 52,
+ "link_base": 0,
+ "bytes_hex": "8b411485c0770333c0c38b41088b491083f8ff74178b1500000000568bf22bf03bf15e7c0333c0c32bc203c833c085c90f95c0c3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "DIR32",
+   "sym": "?g_CurrentFrame@@3PAXA",
+   "sym_key": "g_CurrentFrame"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7759B0",
+ "name": "Dialog::FindByPtr",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7759B0",
+ "bytes_hex": "a1502fb7004885c07c178d14c5282db7003b0a750485c07f0b4883ea0885c07df033c0c38b04c5202db700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x53EF30",
+ "name": "NetworkID::Compare",
+ "size": 45,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53EF30",
+ "bytes_hex": "8bc18b5424048b0d408182005683e90257f7d91bc98d700483e1028d7a0483c10433c0f3a65f5e0f94c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

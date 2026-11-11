@@ -1,0 +1,8 @@
+{
+ "symbol": "?_swap@ObjectClass@@QAEPADPAD0H@Z",
+ "sym_key": "ObjectClass::_swap",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c24083bc15674178b74241085f6740f538a198a108818408811414e75f35b5ec20c00",
+ "relocs": []
+}

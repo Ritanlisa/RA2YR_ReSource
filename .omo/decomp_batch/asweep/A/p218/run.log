@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p218\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cf7bd ___sbh_find_block -> _addr_7C
+[conv] 0x7d12e6 _strncnt -> _addr_7D
+[conv] 0x7da9a2 _strncnt_0 -> _addr_7D
+[conv] 0x48baa0 Rect::SetRedraw -> Rect
+[conv] 0x4f4c70 String::Copy -> String
+[conv] 0x4f4cb0 String::CopyChecked -> String
+[conv] 0x544e00 TechnoClass::Map_Get -> TechnoClass
+[conv] 0x55aca0 LocomotionClass::GetCoord3D -> LocomotionClass
+[conv] 0x58bb00 Map_Helper_58BB00 -> Map_Helper
+[conv] 0x6d9fc0 TacticalClass::UpdateScrollMaxBounds -> TacticalClass
+[conv] 0x70ece0 TechnoClass::Fire -> TechnoClass
+[conv] 0x781380 sub_781380 -> _addr_78
+[conv] 0x7c3710 Render_Render_7C3710 -> Render_Render
+[conv] 0x7c8cea ObjectClass::_swap -> ObjectClass
+[conv] 0x7759b0 Dialog::FindByPtr -> Dialog
+[conv] 0x4c9480 TimerClass::Active -> TimerClass
+[conv] 0x53ef30 NetworkID::Compare -> NetworkID
+[conv] 0x5b4590 MixFileClass::LinkIntoPool -> MixFileClass
+[conv] 0x5e9470 NetworkLobby::IsValidPlayerName -> NetworkLobby
+[conv] 0x734270 Selection::ClearGlobals -> Selection
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=0
+[era] _addr_7D                 rc=2
+[era] Rect                     rc=0
+[era] String                   rc=0
+[era] TechnoClass              rc=2
+[era] LocomotionClass          rc=2
+[era] Map_Helper               rc=2
+[era] TacticalClass            rc=0
+[era] _addr_78                 rc=0
+[era] Render_Render            rc=0
+[era] ObjectClass              rc=0
+[era] Dialog                   rc=0
+[era] TimerClass               rc=0
+[era] NetworkID                rc=0
+[era] MixFileClass             rc=2
+[era] NetworkLobby             rc=0
+[era] Selection                rc=2
+=== diffasm byte-compare ===
+[diff] 0x7cf7bd   MISMATCH         ___sbh_find_block
+[diff] 0x48baa0   MATCH            Rect::SetRedraw
+[diff] 0x4f4c70   MATCH            String::Copy
+[diff] 0x4f4cb0   MATCH            String::CopyChecked
+[diff] 0x544e00   MISMATCH         TechnoClass::Map_Get
+[diff] 0x6d9fc0   MATCH            TacticalClass::UpdateScrollMaxBounds
+[diff] 0x781380   MISMATCH         sub_781380
+[diff] 0x7c3710   MATCH            Render_Render_7C3710
+[diff] 0x7c8cea   MISMATCH         ObjectClass::_swap
+[diff] 0x7759b0   MISMATCH         Dialog::FindByPtr
+[diff] 0x4c9480   MISMATCH         TimerClass::Active
+[diff] 0x53ef30   MATCH            NetworkID::Compare
+[diff] 0x5e9470   MATCH            NetworkLobby::IsValidPlayerName
+[ledger] 0x7cf7bd ___sbh_find_block -> NG (attempt 1)
+[ledger] 0x7d12e6 _strncnt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7da9a2 _strncnt_0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48baa0 Rect::SetRedraw -> OK (attempt 1)
+[ledger] 0x4f4c70 String::Copy -> OK (attempt 1)
+[ledger] 0x4f4cb0 String::CopyChecked -> OK (attempt 1)
+[ledger] 0x544e00 TechnoClass::Map_Get -> NG (attempt 1)
+[ledger] 0x55aca0 LocomotionClass::GetCoord3D -> COMPILE_FAIL (attempt 1)
+[ledger] 0x58bb00 Map_Helper_58BB00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6d9fc0 TacticalClass::UpdateScrollMaxBounds -> OK (attempt 1)
+[ledger] 0x70ece0 TechnoClass::Fire -> COMPILE_FAIL (attempt 1)
+[ledger] 0x781380 sub_781380 -> NG (attempt 1)
+[ledger] 0x7c3710 Render_Render_7C3710 -> OK (attempt 1)
+[ledger] 0x7c8cea ObjectClass::_swap -> NG (attempt 1)
+[ledger] 0x7759b0 Dialog::FindByPtr -> NG (attempt 1)
+[ledger] 0x4c9480 TimerClass::Active -> NG (attempt 1)
+[ledger] 0x53ef30 NetworkID::Compare -> OK (attempt 1)
+[ledger] 0x5b4590 MixFileClass::LinkIntoPool -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9470 NetworkLobby::IsValidPlayerName -> OK (attempt 1)
+[ledger] 0x734270 Selection::ClearGlobals -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 6,
+  "COMPILE_FAIL": 7,
+  "MATCH": 7
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "codegen_shape": 2,
+  "regalloc": 1,
+  "branch_polarity": 1,
+  "width_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 53.8,
+ "match_rate_of_total_pct": 35.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p218\batch_report.json

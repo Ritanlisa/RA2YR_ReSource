@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateScrollMaxBounds@TacticalClass@@QAEHPAH@Z",
+ "sym_key": "TacticalClass::UpdateScrollMaxBounds",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b81900d000085c0750a8b81940d000085c074158b4424048b108991980d00008b400489819c0d0000c20400",
+ "relocs": []
+}

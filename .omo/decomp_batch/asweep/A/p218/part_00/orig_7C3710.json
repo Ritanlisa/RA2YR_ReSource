@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C3710",
+ "name": "Render_Render_7C3710",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C3710",
+ "bytes_hex": "33c08a81f200000089028b44240433d28a91f300000089108b44240833d28a9108010000891083c8ffc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

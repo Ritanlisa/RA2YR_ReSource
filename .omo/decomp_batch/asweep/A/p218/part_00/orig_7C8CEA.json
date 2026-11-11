@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8CEA",
+ "name": "_swap",
+ "size": 44,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8CEA",
+ "bytes_hex": "8b4424048b4c24083bc156741d8b5424108bf24a85f67412538d72018a198a108818408811414e75f35b5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

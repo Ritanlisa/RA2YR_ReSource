@@ -1,0 +1,8 @@
+{
+ "symbol": "?Map_Get@TechnoClass@@QAEPAIH@Z",
+ "sym_key": "TechnoClass::Map_Get",
+ "size": 44,
+ "link_base": 0,
+ "bytes_hex": "8b442404568bb1f0020000578bd08d7eff3bc77e0399f7fe5f8bc185d25e74098b80bc0200004a75f7c20400",
+ "relocs": []
+}

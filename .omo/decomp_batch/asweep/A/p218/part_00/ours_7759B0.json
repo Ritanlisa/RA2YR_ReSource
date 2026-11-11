@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindByPtr@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::FindByPtr",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "a100000000488d14c5282db7003b0a750485c07f0848780d83ea08ebf08b04c500000000c333c0c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DialogTrackingList@@3IA",
+   "sym_key": "g_DialogTrackingList"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_ClipboardBuffer@@3PAXA",
+   "sym_key": "g_ClipboardBuffer"
+  }
+ ]
+}

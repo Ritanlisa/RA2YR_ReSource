@@ -1,0 +1,15 @@
+{
+ "symbol": "?Compare@NetworkID@@QAE_NH@Z",
+ "sym_key": "NetworkID::Compare",
+ "size": 45,
+ "link_base": 0,
+ "bytes_hex": "8bc18b5424048b0d000000005683e90257f7d91bc98d700483e1028d7a0483c10433c0f3a65f5e0f94c0c20400",
+ "relocs": [
+  {
+   "off": 8,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}

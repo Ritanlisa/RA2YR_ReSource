@@ -1,0 +1,33 @@
+{
+ "symbol": "?___sbh_find_block@@YAPADH@Z",
+ "sym_key": "Unnamed::___sbh_find_block",
+ "size": 64,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000005657b8000000008d0c89c1e10281c10000000081f900000000761a8b54240c8b780c8bf22bf781fe00001000720983c0143bc172ea33c05f5ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?CRTGlobal_B78B94@@3IA",
+   "sym_key": "CRTGlobal_B78B94"
+  },
+  {
+   "off": 9,
+   "type": "DIR32",
+   "sym": "?lp@@YAHPBX0@Z",
+   "sym_key": "lp"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?lp@@YAHPBX0@Z",
+   "sym_key": "lp"
+  },
+  {
+   "off": 27,
+   "type": "DIR32",
+   "sym": "?lp@@YAHPBX0@Z",
+   "sym_key": "lp"
+  }
+ ]
+}
