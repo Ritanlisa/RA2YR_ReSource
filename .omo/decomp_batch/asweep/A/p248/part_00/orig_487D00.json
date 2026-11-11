@@ -1,0 +1,11 @@
+{
+ "addr": "0x487D00",
+ "name": "CellClass::RadLevel_Decrease",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x487D00",
+ "bytes_hex": "dd81f0000000dc642404dd91f0000000dd0500287e00d8d9dfe0f6c4417519c781f000000000000000c781f400000000000000ddd8c20800dd99f0000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

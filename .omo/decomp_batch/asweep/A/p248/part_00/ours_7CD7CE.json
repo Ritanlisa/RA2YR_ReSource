@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcscspn@@YAIPBG0@Z",
+ "sym_key": "Unnamed::_wcscspn",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578bc566837d0000742d8b5c2418668b3b6685ff8bd37416668b308bcf663bce7415668b4a0283c2026685c975ef83c0026683380075da5f2bc55e5dd1f85bc3",
+ "relocs": []
+}

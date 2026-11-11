@@ -1,0 +1,15 @@
+{
+ "symbol": "?RadLevel_Decrease@CellClass@@QAEXN@Z",
+ "sym_key": "CellClass::RadLevel_Decrease",
+ "size": 63,
+ "link_base": 0,
+ "bytes_hex": "dd81f0000000dc642404dc1500000000dd91f0000000dfe0f6c4017509dd99f0000000c2080033c08981f00000008981f4000000ddd88881f0000000c20800",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

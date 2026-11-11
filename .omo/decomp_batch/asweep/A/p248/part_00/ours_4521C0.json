@@ -1,0 +1,8 @@
+{
+ "symbol": "?DisableTemporal@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::DisableTemporal",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "c68160060000008b895c05000056ba150000008b0185c074218bb0ac000000c6801a01000001c6801b0100000089b01c010000c680190100000183c1044a75d35ec3",
+ "relocs": []
+}

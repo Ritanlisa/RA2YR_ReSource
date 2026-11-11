@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CF3D5",
+ "name": "__fload_withFB",
+ "size": 67,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CF3D5",
+ "bytes_hex": "8b4204250000f07f3d0000f07f7403dd02c38b420483ec0a0d0000ff7f894424068b42048b0a0fa4c80bc1e10b89442404890c24db2c2483c40aa9000000008b4204c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x403820",
+ "name": "AudioStream::Reset",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x403820",
+ "bytes_hex": "33c0890189410489410889410c89411089411489411889411c89412889412c894148894150c741408813000089414489413089413489413889413c89415489414cc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

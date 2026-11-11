@@ -1,0 +1,15 @@
+{
+ "symbol": "?__fload_withFB@@YANHPAI@Z",
+ "sym_key": "Unnamed::__fload_withFB",
+ "size": 59,
+ "link_base": 0,
+ "bytes_hex": "8b54240883ec088b4204250000f07f3d0000f07f7406dd0283c408c38b028b5204b90b000000e8000000008944240089542404dd44240083c408c3",
+ "relocs": [
+  {
+   "off": 39,
+   "type": "REL32",
+   "sym": "__allshl",
+   "sym_key": "_allshl"
+  }
+ ]
+}

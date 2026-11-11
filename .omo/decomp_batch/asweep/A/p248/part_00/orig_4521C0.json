@@ -1,0 +1,11 @@
+{
+ "addr": "0x4521C0",
+ "name": "BuildingClass::DisableTemporal",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4521C0",
+ "bytes_hex": "c68160060000005681c15c050000ba150000008b0185c074218bb0ac000000c6801a01000001c6801b0100000089b01c010000c680190100000183c1044a75d35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

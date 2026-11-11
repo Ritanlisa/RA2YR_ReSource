@@ -1,0 +1,8 @@
+{
+ "symbol": "?Reset@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::Reset",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "33c0c7414088130000890189410489410889410c89411089411489411889411c89412889412c89414889415089414489413089413489413889413c89415489414cc3",
+ "relocs": []
+}

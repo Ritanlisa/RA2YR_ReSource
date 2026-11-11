@@ -1,0 +1,94 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p248\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cc682 _wcsstr -> _addr_7C
+[conv] 0x7cd7ce _wcscspn -> _addr_7C
+[conv] 0x487d00 CellClass::RadLevel_Decrease -> CellClass
+[conv] 0x403820 AudioStream::Reset -> AudioStream
+[conv] 0x4521c0 BuildingClass::DisableTemporal -> BuildingClass
+[conv] 0x4f3090 GraphicMenuAnimItem::Release -> GraphicMenuAnimItem
+[conv] 0x505f80 globalHelper_005F80 -> _addr_50
+[conv] 0x5ad220 _VectorClass_N::GetSize -> _VectorClass_N
+[conv] 0x634360 ObjectClass::sub_634360 -> ObjectClass
+[conv] 0x554100 LoadingScreen::AdjustForResolution -> LoadingScreen
+[conv] 0x53e420 Object::RemoveObjectArray -> Object
+[conv] 0x7cf0ae __ffexpm1 -> _addr_7C
+[conv] 0x7cf3d5 __fload_withFB -> _addr_7C
+[conv] 0x4d2f00 sub_4D2F00 -> _addr_4D
+[conv] 0x523440 BinaryArraySearch -> _addr_52
+[conv] 0x52af00 INIClass::findSection -> INIClass
+[conv] 0x52b6d0 UI_Find -> UI
+[conv] 0x52b750 System_Search -> System
+[conv] 0x580b20 CellClass::updateLighting -> CellClass
+[conv] 0x5fc120 HotkeyOptions_Helper -> HotkeyOptions
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7C                 rc=2
+[era] CellClass                rc=2
+[era] AudioStream              rc=0
+[era] BuildingClass            rc=0
+[era] GraphicMenuAnimItem      rc=0
+[era] _addr_50                 rc=2
+[era] _VectorClass_N           rc=2
+[era] ObjectClass              rc=0
+[era] LoadingScreen            rc=2
+[era] Object                   rc=2
+[era] _addr_4D                 rc=0
+[era] _addr_52                 rc=0
+[era] INIClass                 rc=2
+[era] UI                       rc=0
+[era] System                   rc=0
+[era] HotkeyOptions            rc=0
+=== diffasm byte-compare ===
+[diff] 0x7cd7ce   MISMATCH         _wcscspn
+[diff] 0x7cf3d5   MISMATCH         __fload_withFB
+[diff] 0x487d00   MISMATCH         CellClass::RadLevel_Decrease
+[diff] 0x403820   MISMATCH         AudioStream::Reset
+[diff] 0x4521c0   MISMATCH         BuildingClass::DisableTemporal
+[diff] 0x4f3090   MISMATCH         GraphicMenuAnimItem::Release
+[diff] 0x634360   MISMATCH         ObjectClass::sub_634360
+[diff] 0x4d2f00   MISMATCH         sub_4D2F00
+[diff] 0x523440   MISMATCH         BinaryArraySearch
+[diff] 0x52b6d0   MISMATCH         UI_Find
+[diff] 0x52b750   MISMATCH         System_Search
+[diff] 0x5fc120   MISMATCH         HotkeyOptions_Helper
+[ledger] 0x7cc682 _wcsstr -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cd7ce _wcscspn -> NG (attempt 1)
+[ledger] 0x487d00 CellClass::RadLevel_Decrease -> NG (attempt 1)
+[ledger] 0x403820 AudioStream::Reset -> NG (attempt 1)
+[ledger] 0x4521c0 BuildingClass::DisableTemporal -> NG (attempt 1)
+[ledger] 0x4f3090 GraphicMenuAnimItem::Release -> NG (attempt 1)
+[ledger] 0x505f80 globalHelper_005F80 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ad220 _VectorClass_N::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x634360 ObjectClass::sub_634360 -> NG (attempt 1)
+[ledger] 0x554100 LoadingScreen::AdjustForResolution -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53e420 Object::RemoveObjectArray -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cf0ae __ffexpm1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cf3d5 __fload_withFB -> NG (attempt 1)
+[ledger] 0x4d2f00 sub_4D2F00 -> NG (attempt 1)
+[ledger] 0x523440 BinaryArraySearch -> NG (attempt 1)
+[ledger] 0x52af00 INIClass::findSection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52b6d0 UI_Find -> NG (attempt 1)
+[ledger] 0x52b750 System_Search -> NG (attempt 1)
+[ledger] 0x580b20 CellClass::updateLighting -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fc120 HotkeyOptions_Helper -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 8,
+  "MISMATCH": 12
+ },
+ "pathologies": {
+  "codegen_shape": 3,
+  "extern_reloc": 1,
+  "regalloc": 7,
+  "eval_order": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p248\batch_report.json

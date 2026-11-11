@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F3090",
+ "name": "GraphicMenuAnimItem::Release",
+ "size": 66,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F3090",
+ "bytes_hex": "8a41095684c074348b7424088b51108b063bc27c27578b791803fa3bc75f7d1c8b46048b51143bc27c128b491c03ca3bc17d09b8010000005ec2040033c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
