@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetSHPFrame@BuildingClass@@QAEHH@Z",
+ "sym_key": "BuildingClass::GetSHPFrame",
+ "size": 178,
+ "link_base": 0,
+ "bytes_hex": "568bf18b460885c07505e8000000008b4c2408f6c1107422f6c5407416f6c508740a8b86c00000005ec204008b46585ec204008b46705ec204008bc183e00683e802745883e802743d83e8027422f6c54074078b46545ec20400850d0000000074078b462c5ec204008b46105ec20400f6c508740a8b86c40000005ec204008b465c5ec20400f6c508740a8b86c80000005ec204008b46605ec20400f6c508740a8b86cc0000005ec204008b46645ec20400",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?InitTables@ConvertClass@@QAEPAIXZ",
+   "sym_key": "ConvertClass::InitTables"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "?dword_81DC24@@3IA",
+   "sym_key": "dword_81DC24"
+  }
+ ]
+}

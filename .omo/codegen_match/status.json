@@ -419,6 +419,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4095b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AudioStreamThreadProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x40a090": {
   "attempts": 1,
   "first_diff": null,
@@ -3254,6 +3261,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x490b90": {
+  "attempts": 1,
+  "first_diff": "+15 mov eax, dword ptr [esp + 8]",
+  "name": "BuildingClass::GetSHPFrame",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x491330": {
   "attempts": 1,
   "first_diff": "+42 ret 0x24",
@@ -5465,6 +5479,13 @@
   "name": "FootClass::vt_entry_54C",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4dbad0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::BeginPowerUpdate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4dbda0": {
   "attempts": 1,
@@ -9071,6 +9092,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x595ce0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CleanupRandomMapCache",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5975e0": {
   "attempts": 2,
   "first_diff": "+15 jl 0x5975f6",
@@ -9152,6 +9180,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Object_Helper_5A7E90",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5a8720": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PlaceNeutralCreeps",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10674,6 +10709,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5f03b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NullModem::TestConnection",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5f1350": {
   "attempts": 1,
   "first_diff": null,
@@ -11079,6 +11121,13 @@
   "name": "0x609cf0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x609e20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FilterDialogButtonAction",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x60b1d0": {
   "attempts": 1,
@@ -11499,6 +11548,13 @@
   "name": "0x62dbf0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x62dc50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ParticleSystemClass::Constructor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x62e380": {
   "attempts": 9,
@@ -12046,6 +12102,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x641b00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadMapPreviewImage",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x642860": {
   "attempts": 1,
   "first_diff": null,
@@ -12206,6 +12269,13 @@
   "name": "0x64a630",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x64a7b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RenderPlayerLatencyBars",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x64ad10": {
   "attempts": 1,
@@ -13159,6 +13229,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6951f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FindAndValidateMap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x695570": {
   "attempts": 1,
   "first_diff": null,
@@ -13488,6 +13565,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6a8420": {
+  "attempts": 1,
+  "first_diff": "+6 mov esi, dword ptr [esp + 0x1c]",
+  "name": "RadarClass::GetBlip",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x6a8710": {
   "attempts": 10,
   "first_diff": null,
@@ -13564,6 +13648,13 @@
   "name": "0x6ace80",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6ae3f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Skirmish::Setup_DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6aef60": {
   "attempts": 1,
@@ -14538,6 +14629,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6d5c50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RenderRadarBlips",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6d5f60": {
   "attempts": 5,
   "first_diff": "+0 sub esp, 8",
@@ -14563,6 +14661,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Terrain::ClimbCheck",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6d7560": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::RenderIsometric",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -15049,6 +15154,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6ef700": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DeployTeamMembersAtStart",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6efa10": {
   "attempts": 1,
   "first_diff": null,
@@ -15230,6 +15342,13 @@
   "name": "TechnoClass::TransitionEffectState",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x703860": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::UpdatePowerDrain",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x703e70": {
   "attempts": 1,
@@ -16460,6 +16579,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "TechnoClass::IsC4AnimationActive",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x737180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UpdateInfantryIdleWander",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -18815,6 +18941,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7bc2b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ClipLine",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7bc890": {
   "attempts": 1,
   "first_diff": null,
@@ -19652,6 +19785,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "_$I10_OUTPUT",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x7db68b": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "__raise_exc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
