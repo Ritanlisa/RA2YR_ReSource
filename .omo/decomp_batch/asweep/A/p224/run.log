@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p224\part_00
+=== convert (20 addrs) ===
+[conv] 0x49ef40 _VectorClass_PAD::Add -> _VectorClass_PAD
+[conv] 0x4a1360 _VectorClass_PAUIConnectionPoint::Advise -> _VectorClass_PAUIConnectionPoint
+[conv] 0x4a4c50 _VectorClass_PAU_DDSURFACEDESC::Read -> _VectorClass_PAU_DDSURFACEDESC
+[conv] 0x4a7ea0 _VectorClass_PAVDiskLaserClass::Read -> _VectorClass_PAVDiskLaserClass
+[conv] 0x4b9dc0 VectorClass_ptr_CrossDissolveEffect::FindItemIndex_0 -> VectorClass_ptr_CrossDissolveEffect
+[conv] 0x4c4b20 _VectorClass_PAVEgoClass::GetSize -> _VectorClass_PAVEgoClass
+[conv] 0x4c5ce0 _VectorClass_PAVEMPulseClass::GetSize -> _VectorClass_PAVEMPulseClass
+[conv] 0x4caa10 _VectorClass_PBVTechnoTypeClass::Read -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4e0440 _VectorClass_PAVAbstractClass::Read -> _VectorClass_PAVAbstractClass
+[conv] 0x4e06a0 _VectorClass_PAVFootClass::Read -> _VectorClass_PAVFootClass
+[conv] 0x4e9320 VectorClass::vt_04 -> VectorClass
+[conv] 0x4e9580 _VectorClass_PAVBuildingClass::GetSize -> _VectorClass_PAVBuildingClass
+[conv] 0x4e97e0 _VectorClass_PAVSuperClass::GetSize -> _VectorClass_PAVSuperClass
+[conv] 0x4e9ca0 _VectorClass_PAVBuildingLightClass::GetSize -> _VectorClass_PAVBuildingLightClass
+[conv] 0x4e9f00 _VectorClass_PAVParticleClass::vt_04 -> _VectorClass_PAVParticleClass
+[conv] 0x4ea160 _VectorClass_PAVTeamClass::GetSize -> _VectorClass_PAVTeamClass
+[conv] 0x4ea3c0 _VectorClass_PAUThemeControl::GetSize -> _VectorClass_PAUThemeControl
+[conv] 0x4ea540 _VectorClass_PAVTriggerClass::GetSize -> _VectorClass_PAVTriggerClass
+[conv] 0x4ea7a0 _VectorClass_PAVTriggerTypeClass::GetSize -> _VectorClass_PAVTriggerTypeClass
+[conv] 0x4eaa00 _VectorClass_PAVTubeClass::GetSize -> _VectorClass_PAVTubeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAD         rc=2
+[era] _VectorClass_PAUIConnectionPoint rc=2
+[era] _VectorClass_PAU_DDSURFACEDESC rc=2
+[era] _VectorClass_PAVDiskLaserClass rc=2
+[era] VectorClass_ptr_CrossDissolveEffect rc=0
+[era] _VectorClass_PAVEgoClass rc=2
+[era] _VectorClass_PAVEMPulseClass rc=2
+[era] _VectorClass_PBVTechnoTypeClass rc=2
+[era] _VectorClass_PAVAbstractClass rc=2
+[era] _VectorClass_PAVFootClass rc=2
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVBuildingClass rc=2
+[era] _VectorClass_PAVSuperClass rc=2
+[era] _VectorClass_PAVBuildingLightClass rc=2
+[era] _VectorClass_PAVParticleClass rc=2
+[era] _VectorClass_PAVTeamClass rc=2
+[era] _VectorClass_PAUThemeControl rc=2
+[era] _VectorClass_PAVTriggerClass rc=2
+[era] _VectorClass_PAVTriggerTypeClass rc=2
+[era] _VectorClass_PAVTubeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x4b9dc0   MISMATCH         VectorClass_ptr_CrossDissolveEffect::FindItemIndex_0
+[diff] 0x4e9320   MISMATCH         VectorClass::vt_04
+[ledger] 0x49ef40 _VectorClass_PAD::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a1360 _VectorClass_PAUIConnectionPoint::Advise -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a4c50 _VectorClass_PAU_DDSURFACEDESC::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a7ea0 _VectorClass_PAVDiskLaserClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b9dc0 VectorClass_ptr_CrossDissolveEffect::FindItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4c4b20 _VectorClass_PAVEgoClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c5ce0 _VectorClass_PAVEMPulseClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4caa10 _VectorClass_PBVTechnoTypeClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0440 _VectorClass_PAVAbstractClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e06a0 _VectorClass_PAVFootClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9320 VectorClass::vt_04 -> NG (attempt 1)
+[ledger] 0x4e9580 _VectorClass_PAVBuildingClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e97e0 _VectorClass_PAVSuperClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9ca0 _VectorClass_PAVBuildingLightClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9f00 _VectorClass_PAVParticleClass::vt_04 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea160 _VectorClass_PAVTeamClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea3c0 _VectorClass_PAUThemeControl::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea540 _VectorClass_PAVTriggerClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ea7a0 _VectorClass_PAVTriggerTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eaa00 _VectorClass_PAVTubeClass::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p224\batch_report.json
