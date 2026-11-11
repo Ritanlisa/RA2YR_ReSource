@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p177\part_00
+=== convert (20 addrs) ===
+[conv] 0x4caa50 _VectorClass_PBVTechnoTypeClass::Write -> _VectorClass_PBVTechnoTypeClass
+[conv] 0x4cc770 TechnoClass::UpdateThunk -> TechnoClass
+[conv] 0x4d2960 DynamicVector::setMissionState -> DynamicVector
+[conv] 0x4d2ba0 _VectorClass_UDrawRecord_FoggedObjectClass::Write -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e01c0 DynamicVector::queueMission -> DynamicVector
+[conv] 0x4e0220 FoggedObjectClass::PointerToIndex -> FoggedObjectClass
+[conv] 0x4e0480 _VectorClass_PAVAbstractClass::Write -> _VectorClass_PAVAbstractClass
+[conv] 0x4e06e0 _VectorClass_PAVFootClass::Write -> _VectorClass_PAVFootClass
+[conv] 0x4e0af0 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetItemIndex -> _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e82c0 DynamicVector::COMStub_5 -> DynamicVector
+[conv] 0x4e8320 _DynamicVectorClass_PAVBuildingClass::PointerToIndex -> _DynamicVectorClass_PAVBuildingClass
+[conv] 0x4e83e0 _DynamicVectorClass_PAVAITriggerTypeClass::GetItemIndex -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4e8440 _DynamicVectorClass_PAVBuildingLightClass::GetItemIndex -> _DynamicVectorClass_PAVBuildingLightClass
+[conv] 0x4e84a0 _DynamicVectorClass_PAVParticleClass::LoadTypeData -> _DynamicVectorClass_PAVParticleClass
+[conv] 0x4e8500 _DynamicVectorClass_PAVTeamClass::GetItemIndex -> _DynamicVectorClass_PAVTeamClass
+[conv] 0x4e8570 _DynamicVectorClass_PAVTriggerClass::GetItemIndex_0 -> _DynamicVectorClass_PAVTriggerClass
+[conv] 0x4e8630 _DynamicVectorClass_PAVTubeClass::GetItemIndex -> _DynamicVectorClass_PAVTubeClass
+[conv] 0x4e8690 _DynamicVectorClass_PAVParticleSystemClass::GetItemIndex_0 -> _DynamicVectorClass_PAVParticleSystemClass
+[conv] 0x4e86f0 _DynamicVectorClass_PAVWaveClass::GetItemIndex_0 -> _DynamicVectorClass_PAVWaveClass
+[conv] 0x4e8750 _DynamicVectorClass_PAVOverlayClass::GetItemIndex_1 -> _DynamicVectorClass_PAVOverlayClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PBVTechnoTypeClass rc=0
+[era] TechnoClass              rc=0
+[era] DynamicVector            rc=0
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] FoggedObjectClass        rc=2
+[era] _VectorClass_PAVAbstractClass rc=0
+[era] _VectorClass_PAVFootClass rc=0
+[era] _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _DynamicVectorClass_PAVBuildingClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVBuildingLightClass rc=0
+[era] _DynamicVectorClass_PAVParticleClass rc=0
+[era] _DynamicVectorClass_PAVTeamClass rc=0
+[era] _DynamicVectorClass_PAVTriggerClass rc=0
+[era] _DynamicVectorClass_PAVTubeClass rc=0
+[era] _DynamicVectorClass_PAVParticleSystemClass rc=0
+[era] _DynamicVectorClass_PAVWaveClass rc=0
+[era] _DynamicVectorClass_PAVOverlayClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x4caa50   MISMATCH         _VectorClass_PBVTechnoTypeClass::Write
+[diff] 0x4cc770   MISMATCH         TechnoClass::UpdateThunk
+[diff] 0x4d2960   MISMATCH         DynamicVector::setMissionState
+[diff] 0x4e01c0   MISMATCH         DynamicVector::queueMission
+[diff] 0x4e82c0   MISMATCH         DynamicVector::COMStub_5
+[diff] 0x4d2ba0   MISMATCH         _VectorClass_UDrawRecord_FoggedObjectClass::Write
+[diff] 0x4e0480   MISMATCH         _VectorClass_PAVAbstractClass::Write
+[diff] 0x4e06e0   MISMATCH         _VectorClass_PAVFootClass::Write
+[diff] 0x4e0af0   MISMATCH         _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetItemIndex
+[diff] 0x4e8320   MISMATCH         _DynamicVectorClass_PAVBuildingClass::PointerToIndex
+[diff] 0x4e83e0   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::GetItemIndex
+[diff] 0x4e8440   MISMATCH         _DynamicVectorClass_PAVBuildingLightClass::GetItemIndex
+[diff] 0x4e84a0   MISMATCH         _DynamicVectorClass_PAVParticleClass::LoadTypeData
+[diff] 0x4e8500   MISMATCH         _DynamicVectorClass_PAVTeamClass::GetItemIndex
+[diff] 0x4e8570   MISMATCH         _DynamicVectorClass_PAVTriggerClass::GetItemIndex_0
+[diff] 0x4e8630   MISMATCH         _DynamicVectorClass_PAVTubeClass::GetItemIndex
+[diff] 0x4e8690   MISMATCH         _DynamicVectorClass_PAVParticleSystemClass::GetItemIndex_0
+[diff] 0x4e86f0   MISMATCH         _DynamicVectorClass_PAVWaveClass::GetItemIndex_0
+[diff] 0x4e8750   MISMATCH         _DynamicVectorClass_PAVOverlayClass::GetItemIndex_1
+[ledger] 0x4caa50 _VectorClass_PBVTechnoTypeClass::Write -> NG (attempt 1)
+[ledger] 0x4cc770 TechnoClass::UpdateThunk -> NG (attempt 1)
+[ledger] 0x4d2960 DynamicVector::setMissionState -> NG (attempt 1)
+[ledger] 0x4d2ba0 _VectorClass_UDrawRecord_FoggedObjectClass::Write -> NG (attempt 1)
+[ledger] 0x4e01c0 DynamicVector::queueMission -> NG (attempt 1)
+[ledger] 0x4e0220 FoggedObjectClass::PointerToIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0480 _VectorClass_PAVAbstractClass::Write -> NG (attempt 1)
+[ledger] 0x4e06e0 _VectorClass_PAVFootClass::Write -> NG (attempt 1)
+[ledger] 0x4e0af0 _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e82c0 DynamicVector::COMStub_5 -> NG (attempt 1)
+[ledger] 0x4e8320 _DynamicVectorClass_PAVBuildingClass::PointerToIndex -> NG (attempt 1)
+[ledger] 0x4e83e0 _DynamicVectorClass_PAVAITriggerTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8440 _DynamicVectorClass_PAVBuildingLightClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e84a0 _DynamicVectorClass_PAVParticleClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4e8500 _DynamicVectorClass_PAVTeamClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8570 _DynamicVectorClass_PAVTriggerClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8630 _DynamicVectorClass_PAVTubeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e8690 _DynamicVectorClass_PAVParticleSystemClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e86f0 _DynamicVectorClass_PAVWaveClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8750 _DynamicVectorClass_PAVOverlayClass::GetItemIndex_1 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 19,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 16,
+  "ret_norm": 3
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p177\batch_report.json

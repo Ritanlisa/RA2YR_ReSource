@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CC770",
+ "name": "TechnoClass::UpdateThunk",
+ "size": 27,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CC770",
+ "bytes_hex": "8b0185c0741248c6410400a80189017404c6410401b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

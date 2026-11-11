@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateThunk@TechnoClass@@QAEDXZ",
+ "sym_key": "TechnoClass::UpdateThunk",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b0185c0750332c0c38d50ff8b410424008911f6c201894104740724010c01894104b001c3",
+ "relocs": []
+}
