@@ -1,0 +1,374 @@
+{
+ "summary": {
+  "verdicts": {
+   "NO_VARIANT": 20
+  },
+  "by_family_total": {
+   "RELOC_KEY": 11,
+   "FP_RECIP": 9
+  },
+  "by_family_hits": {}
+ },
+ "results": [
+  {
+   "addr": "0x466120",
+   "name": "sub_466120",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_466120",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_466120()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x46ba00",
+   "name": "sub_46BA00",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_46BA00",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_46BA00()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4908]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x46ba20",
+   "name": "sub_46BA20",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_46BA20",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_46BA20()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x46c9a0",
+   "name": "sub_46C9A0",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_46C9A0",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_46C9A0()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e49e8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x46d150",
+   "name": "sub_46D150",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_46D150",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_46D150()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4a98]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x46d170",
+   "name": "sub_46D170",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_46D170",
+   "unit": "_addr_46",
+   "head": "void __cdecl sub_46D170()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x471570",
+   "name": "sub_471570",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_471570",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_471570()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4ac0]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x471590",
+   "name": "sub_471590",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_471590",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_471590()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x4731c0",
+   "name": "sub_4731C0",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4731C0",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_4731C0()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4be0]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x4731e0",
+   "name": "sub_4731E0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4731E0",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_4731E0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x473570",
+   "name": "sub_473570",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_473570",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_473570()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4bf0]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x473590",
+   "name": "sub_473590",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_473590",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_473590()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x474030",
+   "name": "sub_474030",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_474030",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_474030()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x4789e0",
+   "name": "sub_4789E0",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_4789E0",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_4789E0()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4e98]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x478a00",
+   "name": "sub_478A00",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_478A00",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_478A00()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x47b180",
+   "name": "sub_47B180",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_47B180",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_47B180()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e4ea8]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x47b1a0",
+   "name": "sub_47B1A0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_47B1A0",
+   "unit": "_addr_47",
+   "head": "void __cdecl sub_47B1A0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x488fc0",
+   "name": "sub_488FC0",
+   "family": "FP_RECIP",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_488FC0",
+   "unit": "_addr_48",
+   "head": "void __cdecl sub_488FC0()",
+   "baseline_first_diff": {
+    "orig": "+6 fdiv qword ptr [0x7e5128]",
+    "ours": "+6 fmul qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x488fe0",
+   "name": "sub_488FE0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_488FE0",
+   "unit": "_addr_48",
+   "head": "void __cdecl sub_488FE0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  },
+  {
+   "addr": "0x48bcc0",
+   "name": "sub_48BCC0",
+   "family": "RELOC_KEY",
+   "path": "extern_reloc",
+   "verdict": "NO_VARIANT",
+   "accepted": null,
+   "variants": [],
+   "baseline": "MISMATCH",
+   "cls": null,
+   "method": "sub_48BCC0",
+   "unit": "_addr_48",
+   "head": "void __cdecl sub_48BCC0()",
+   "baseline_first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   }
+  }
+ ]
+}
