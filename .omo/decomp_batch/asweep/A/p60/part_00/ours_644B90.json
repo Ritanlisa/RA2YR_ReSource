@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_644B90@@YAHXZ",
+ "sym_key": "Unnamed::sub_644B90",
+ "size": 15,
+ "link_base": 0,
+ "bytes_hex": "33c066a30000000066a300000000c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5090@@3GA",
+   "sym_key": "DataGlobal_AC5090"
+  },
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC5092@@3GA",
+   "sym_key": "DataGlobal_AC5092"
+  }
+ ]
+}
