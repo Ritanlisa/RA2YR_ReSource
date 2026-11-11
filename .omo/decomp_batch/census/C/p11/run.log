@@ -1,0 +1,65 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x6938c0 ScrollClass::ReleaseCapture -> ScrollClass
+[conv] 0x767e90 MSFrameAnim::sub_767E90 -> MSFrameAnim
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ScrollClass              rc=2
+[era] MSFrameAnim              rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4c9810 0x4c9810 -> PENDING (attempt 1)
+[ledger] 0x4f41a0 0x4f41a0 -> PENDING (attempt 1)
+[ledger] 0x53fa10 0x53fa10 -> PENDING (attempt 1)
+[ledger] 0x555d20 0x555d20 -> PENDING (attempt 1)
+[ledger] 0x5adc90 0x5adc90 -> PENDING (attempt 1)
+[ledger] 0x5c1260 0x5c1260 -> PENDING (attempt 1)
+[ledger] 0x5d8ef0 0x5d8ef0 -> PENDING (attempt 1)
+[ledger] 0x5ff130 0x5ff130 -> PENDING (attempt 1)
+[ledger] 0x644b60 0x644b60 -> PENDING (attempt 1)
+[ledger] 0x67c610 0x67c610 -> PENDING (attempt 1)
+[ledger] 0x6acae0 0x6acae0 -> PENDING (attempt 1)
+[ledger] 0x6cad80 0x6cad80 -> PENDING (attempt 1)
+[ledger] 0x6f2a10 0x6f2a10 -> PENDING (attempt 1)
+[ledger] 0x725f00 0x725f00 -> PENDING (attempt 1)
+[ledger] 0x74ace0 0x74ace0 -> PENDING (attempt 1)
+[ledger] 0x767280 0x767280 -> PENDING (attempt 1)
+[ledger] 0x777340 0x777340 -> PENDING (attempt 1)
+[ledger] 0x40d9c0 0x40d9c0 -> PENDING (attempt 1)
+[ledger] 0x6938c0 Mouse::ReleaseCapture -> COMPILE_FAIL (attempt 1)
+[ledger] 0x767e90 sub_767E90 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1919,
+ "verdicts": {
+  "MISMATCH": 534,
+  "MATCH": 512,
+  "COMPILE_FAIL": 474,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 387,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 183,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 61,
+  "branch_polarity": 34,
+  "regalloc": 76,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 48.9,
+ "match_rate_of_total_pct": 26.7,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p11\batch_report.json

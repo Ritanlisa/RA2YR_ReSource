@@ -1,0 +1,188 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 18,
+   "COMPILE_FAIL": 2
+  },
+  "pathologies": {},
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4c9810",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c9810",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4f41a0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4f41a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x53fa10",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x53fa10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x555d20",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x555d20",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5adc90",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5adc90",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5c1260",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5c1260",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5d8ef0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5d8ef0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5ff130",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5ff130",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x644b60",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x644b60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x67c610",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x67c610",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6acae0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6acae0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6cad80",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6cad80",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6f2a10",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x6f2a10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x725f00",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x725f00",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x74ace0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x74ace0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x767280",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x767280",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x777340",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x777340",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x40d9c0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40d9c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x6938c0",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p11\\part_00\\ScrollClass.cpp(11) : error C2065: 'HWND' : undeclared identifier; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p11\\part_00\\ScrollClass.cpp(11)",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Mouse::ReleaseCapture",
+   "emitted": "ScrollClass::ReleaseCapture",
+   "unit": "ScrollClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "3/3",
+   "rule_violations": 2
+  },
+  {
+   "addr": "0x767e90",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p11\\part_00\\MSFrameAnim.cpp(13) : error C2018: unknown character '0x60'; D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p11\\part_00\\MSFrameAnim.cpp(13) : err",
+   "first_diff": null,
+   "pathology": null,
+   "name": "sub_767E90",
+   "emitted": "MSFrameAnim::sub_767E90",
+   "unit": "MSFrameAnim",
+   "name_placeholder": true,
+   "cls_src": "backfill",
+   "sites": "10/10",
+   "rule_violations": 0
+  }
+ ]
+}
