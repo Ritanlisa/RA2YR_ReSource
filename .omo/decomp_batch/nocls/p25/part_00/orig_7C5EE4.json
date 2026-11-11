@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C5EE4",
+ "name": "CRT_FPU_InitControlWord",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C5EE4",
+ "bytes_hex": "558bec83ec0c9b9bd97dfe9b668b45fe25ffff0000a3802d8200c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

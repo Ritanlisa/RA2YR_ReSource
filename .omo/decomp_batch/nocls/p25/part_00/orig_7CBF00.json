@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CBF00",
+ "name": "__clearfp",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CBF00",
+ "bytes_hex": "558bec51dd7dfcdbe2ff75fce89401000059c9c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

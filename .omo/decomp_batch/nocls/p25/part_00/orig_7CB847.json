@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CB847",
+ "name": "_isleadbyte",
+ "size": 21,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CB847",
+ "bytes_hex": "0fb64424048b0d90c58700668b04412500800000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

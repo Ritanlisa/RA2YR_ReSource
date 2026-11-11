@@ -1,0 +1,27 @@
+{
+ "symbol": "?___iscsymf@@YAHH@Z",
+ "sym_key": "Unnamed::___iscsymf",
+ "size": 67,
+ "link_base": 0,
+ "bytes_hex": "a1000000005683f8017f148b742408a100000000668b04702503010000eb128b742408680301000056e80000000083c40885c0750783fe5f74025ec3b8010000005ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?SrcSizeInBytes@@3IA",
+   "sym_key": "SrcSizeInBytes"
+  },
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87C590@@3IA",
+   "sym_key": "DataGlobal_87C590"
+  },
+  {
+   "off": 42,
+   "type": "REL32",
+   "sym": "?_isctype@@YAHHHZZ",
+   "sym_key": "_isctype"
+  }
+ ]
+}

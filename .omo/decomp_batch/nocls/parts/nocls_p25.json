@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x7b1820",
+  "batch": "nocls",
+  "name": "sub_7B1820",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7bd470",
+  "batch": "nocls",
+  "name": "sub_7BD470",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c3d60",
+  "batch": "nocls",
+  "name": "sub_7C3D60",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c4260",
+  "batch": "nocls",
+  "name": "sub_7C4260",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c5ee0",
+  "batch": "nocls",
+  "name": "sub_7C5EE0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7c5ee4",
+  "batch": "nocls",
+  "name": "CRT_FPU_InitControlWord",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7c6b70",
+  "batch": "nocls",
+  "name": "sub_7C6B70",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c6c79",
+  "batch": "nocls",
+  "name": "sub_7C6C79",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c6e94",
+  "batch": "nocls",
+  "name": "sub_7C6E94",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c6fc8",
+  "batch": "nocls",
+  "name": "sub_7C6FC8",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c8a16",
+  "batch": "nocls",
+  "name": "InitCommonControls",
+  "cc": "stdcall"
+ },
+ {
+  "addr": "0x7c8f5e",
+  "batch": "nocls",
+  "name": "__cfltcvt_init_13",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7c8fc9",
+  "batch": "nocls",
+  "name": "_pow",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c97cb",
+  "batch": "nocls",
+  "name": "__toupper",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7c9af8",
+  "batch": "nocls",
+  "name": "___iscsymf",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7cb847",
+  "batch": "nocls",
+  "name": "_isleadbyte",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7cbdaf",
+  "batch": "nocls",
+  "name": "__cinit",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7cbf00",
+  "batch": "nocls",
+  "name": "__clearfp",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7cd95f",
+  "batch": "nocls",
+  "name": "nullsub_269",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7cde75",
+  "batch": "nocls",
+  "name": "__setlocale_get_all",
+  "cc": "unknown"
+ }
+]

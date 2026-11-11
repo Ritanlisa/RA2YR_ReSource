@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p25\part_00
+=== convert (20 addrs) ===
+[conv] 0x7b1820 sub_7B1820 -> _addr_7B
+[conv] 0x7bd470 sub_7BD470 -> _addr_7B
+[conv] 0x7c3d60 sub_7C3D60 -> _addr_7C
+[conv] 0x7c4260 sub_7C4260 -> _addr_7C
+[conv] 0x7c5ee0 sub_7C5EE0 -> _addr_7C
+[conv] 0x7c5ee4 CRT_FPU_InitControlWord -> CRT_FPU
+[conv] 0x7c6b70 sub_7C6B70 -> _addr_7C
+[conv] 0x7c6c79 sub_7C6C79 -> _addr_7C
+[conv] 0x7c6e94 sub_7C6E94 -> _addr_7C
+[conv] 0x7c6fc8 sub_7C6FC8 -> _addr_7C
+[conv] 0x7c8a16 InitCommonControls -> _addr_7C
+[conv] 0x7c8f5e __cfltcvt_init_13 -> _addr_7C
+[conv] 0x7c8fc9 _pow -> _addr_7C
+[conv] 0x7c97cb __toupper -> _addr_7C
+[conv] 0x7c9af8 ___iscsymf -> _addr_7C
+[conv] 0x7cb847 _isleadbyte -> _addr_7C
+[conv] 0x7cbdaf __cinit -> _addr_7C
+[conv] 0x7cbf00 __clearfp -> _addr_7C
+[conv] 0x7cd95f nullsub_269 -> _addr_7C
+[conv] 0x7cde75 __setlocale_get_all -> _addr_7C
+=== emit 3 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=2
+[era] CRT_FPU                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x7b1820   MISMATCH         sub_7B1820
+[diff] 0x7bd470   MISMATCH         sub_7BD470
+[diff] 0x7c3d60   MISMATCH         sub_7C3D60
+[diff] 0x7c4260   MISMATCH         sub_7C4260
+[diff] 0x7c6b70   MISMATCH         sub_7C6B70
+[diff] 0x7c6c79   MISMATCH         sub_7C6C79
+[diff] 0x7c6e94   MISMATCH         sub_7C6E94
+[diff] 0x7c6fc8   MISMATCH         sub_7C6FC8
+[diff] 0x7c8a16   MISMATCH         InitCommonControls
+[diff] 0x7c97cb   MATCH            __toupper
+[diff] 0x7c9af8   MISMATCH         ___iscsymf
+[diff] 0x7cb847   MISMATCH         _isleadbyte
+[diff] 0x7cbf00   MISMATCH         __clearfp
+[diff] 0x7cd95f   MATCH            nullsub_269
+[diff] 0x7c5ee4   MISMATCH         CRT_FPU_InitControlWord
+[ledger] 0x7b1820 sub_7B1820 -> NG (attempt 2)
+[ledger] 0x7bd470 sub_7BD470 -> NG (attempt 2)
+[ledger] 0x7c3d60 sub_7C3D60 -> NG (attempt 2)
+[ledger] 0x7c4260 sub_7C4260 -> NG (attempt 2)
+[ledger] 0x7c5ee0 sub_7C5EE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c5ee4 CRT_FPU_InitControlWord -> NG (attempt 2)
+[ledger] 0x7c6b70 sub_7C6B70 -> NG (attempt 2)
+[ledger] 0x7c6c79 sub_7C6C79 -> NG (attempt 2)
+[ledger] 0x7c6e94 sub_7C6E94 -> NG (attempt 2)
+[ledger] 0x7c6fc8 sub_7C6FC8 -> NG (attempt 2)
+[ledger] 0x7c8a16 InitCommonControls -> NG (attempt 3)
+[ledger] 0x7c8f5e __cfltcvt_init_13 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7c8fc9 _pow -> COMPILE_FAIL (attempt 3)
+[ledger] 0x7c97cb __toupper -> OK (attempt 2)
+[ledger] 0x7c9af8 ___iscsymf -> NG (attempt 2)
+[ledger] 0x7cb847 _isleadbyte -> NG (attempt 2)
+[ledger] 0x7cbdaf __cinit -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7cbf00 __clearfp -> NG (attempt 2)
+[ledger] 0x7cd95f nullsub_269 -> OK (attempt 2)
+[ledger] 0x7cde75 __setlocale_get_all -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 5,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 2,
+  "regalloc": 4,
+  "codegen_shape": 6,
+  "branch_order": 1
+ },
+ "match_rate_of_decided_pct": 13.3,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p25\batch_report.json

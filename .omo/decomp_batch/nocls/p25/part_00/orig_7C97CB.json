@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C97CB",
+ "name": "__toupper",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C97CB",
+ "bytes_hex": "8b44240483c0e0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

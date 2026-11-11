@@ -1,0 +1,15 @@
+{
+ "symbol": "?CRT_FPU_InitControlWord@@YAHXZ",
+ "sym_key": "Unnamed::CRT_FPU_InitControlWord",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "518b44240025ffff0000a30000000059c3",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "DIR32",
+   "sym": "?DataGlobal_822D80@@3IA",
+   "sym_key": "DataGlobal_822D80"
+  }
+ ]
+}

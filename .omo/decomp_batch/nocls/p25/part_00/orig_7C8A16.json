@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8A16",
+ "name": "InitCommonControls",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8A16",
+ "bytes_hex": "ff252c107e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

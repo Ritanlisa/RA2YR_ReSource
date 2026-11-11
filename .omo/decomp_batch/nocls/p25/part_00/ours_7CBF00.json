@@ -1,0 +1,15 @@
+{
+ "symbol": "?__clearfp@@YAIXZ",
+ "sym_key": "Unnamed::__clearfp",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "dbe2e900000000",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "REL32",
+   "sym": "?_abstract_sw@@YAHXZ",
+   "sym_key": "_abstract_sw"
+  }
+ ]
+}
