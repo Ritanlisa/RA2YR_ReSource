@@ -1,0 +1,21 @@
+{
+ "symbol": "?GetProgress@Animation@@QAENXZ",
+ "sym_key": "Animation::GetProgress",
+ "size": 86,
+ "link_base": 0,
+ "bytes_hex": "518b51608b44240033d081e2ff00000033c284c08944240074368b411485c0742f8b41088b491083f8ff894c240074208b1500000000568bf22bf03bf15e7208dd050000000059c32bc203c8894c2400db44240059c3",
+ "relocs": [
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 66,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  }
+ ]
+}

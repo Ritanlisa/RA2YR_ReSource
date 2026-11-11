@@ -1,0 +1,11 @@
+{
+ "addr": "0x56BCD0",
+ "name": "CellClass::GetTileData",
+ "size": 109,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56BCD0",
+ "bytes_hex": "8b4c24040fbf41020fbf11c1e00903c278143d000004007d0d8b1524f987008b048285c0750c8b01a374dcab00b850dcab008b482456894c24080fbf44240a9983e20303c2c1f8028bf0c1e60603f00fbfc19983e20303c28b54240cc1f8028d0c705e8b848af0590000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

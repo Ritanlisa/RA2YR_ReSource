@@ -1,0 +1,8 @@
+{
+ "symbol": "?UpdateField@TiberiumClass@@QAEHHH@Z",
+ "sym_key": "TiberiumClass::UpdateField",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "8b91d4000000578b7c24084a784353568b81c8000000393c9075318bb1d40000003bd67d274e8bc23bd689b1d40000007d1a8bb1c8000000408b1c868d3486895efc8bb1d40000003bc67ce64a79c15e5b8b81e00000003bc75f750ac781e000000000000000c20800",
+ "relocs": []
+}

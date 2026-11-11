@@ -1,0 +1,11 @@
+{
+ "addr": "0x722140",
+ "name": "TiberiumClass::UpdateField",
+ "size": 105,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x722140",
+ "bytes_hex": "8b91d4000000578b7c24084a784353568b81c8000000393c9075318b81d40000003bd07d278d70ff8bc23bd689b1d40000007d188bb1c8000000408b1c86895c86fc8bb1d40000003bc67ce84a79c15e5b8b81e00000003bc75f750ac781e000000000000000c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

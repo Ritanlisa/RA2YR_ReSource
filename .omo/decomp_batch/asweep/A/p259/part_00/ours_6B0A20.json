@@ -1,0 +1,15 @@
+{
+ "symbol": "?LostSlave@SlaveManagerClass@@QAEHH@Z",
+ "sym_key": "SlaveManagerClass::LostSlave",
+ "size": 101,
+ "link_base": 0,
+ "bytes_hex": "8b41485356485778568b713c8b7c24108b1c868d1486393b740d4878428b5afc83ea04393b75f38b04868b1085d2740ac782dc02000000000000c70000000000c74004060000008b15000000008b493083c00889108b5424108950048948085f5e5bc20400",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

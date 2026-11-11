@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p259\part_00
+=== convert (20 addrs) ===
+[conv] 0x5e9950 Dialog::MapPlayerIDToIndex -> Dialog
+[conv] 0x722140 TiberiumClass::UpdateField -> TiberiumClass
+[conv] 0x492b00 _BlitTransXlatZRead_G::sub_492B00 -> _BlitTransXlatZRead_G
+[conv] 0x4fa2e0 HouseClass::SetThreat_Bounds -> HouseClass
+[conv] 0x53ee00 Network::IsBroadcastAddr -> Network
+[conv] 0x5c6a30 Crypto_Helper -> Crypto
+[conv] 0x64cd30 sub_64CD30 -> _addr_64
+[conv] 0x660be0 ObjectClass::UI_Create_734120_Create_660BE0 -> ObjectClass
+[conv] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> _BlitTransXlatMultWriteAlpha_G
+[conv] 0x5c6490 EncodeVarInt_Helper -> EncodeVarInt
+[conv] 0x4a52f0 Animation::GetProgress -> Animation
+[conv] 0x554150 LoadingScreen::CalcProgressBarRect -> LoadingScreen
+[conv] 0x493830 _BlitTransDarkenZReadWrite_G::sub_493830 -> _BlitTransDarkenZReadWrite_G
+[conv] 0x522780 InfantryClass::InitProductionLimits -> InfantryClass
+[conv] 0x56bcd0 CellClass::GetTileData -> CellClass
+[conv] 0x5d39d0 SessionClass::saveSettings -> SessionClass
+[conv] 0x6b0a20 SlaveManagerClass::LostSlave -> SlaveManagerClass
+[conv] 0x4cac40 Math::Sqrt -> Math
+[conv] 0x49e8e0 INISectionList::Constructor -> INISectionList
+[conv] 0x52af50 INIClass::sectionExists -> INIClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Dialog                   rc=0
+[era] TiberiumClass            rc=0
+[era] _BlitTransXlatZRead_G    rc=2
+[era] HouseClass               rc=2
+[era] Network                  rc=0
+[era] Crypto                   rc=0
+[era] _addr_64                 rc=2
+[era] ObjectClass              rc=2
+[era] _BlitTransXlatMultWriteAlpha_G rc=2
+[era] EncodeVarInt             rc=0
+[era] Animation                rc=0
+[era] LoadingScreen            rc=2
+[era] _BlitTransDarkenZReadWrite_G rc=2
+[era] InfantryClass            rc=0
+[era] CellClass                rc=0
+[era] SessionClass             rc=2
+[era] SlaveManagerClass        rc=0
+[era] Math                     rc=0
+[era] INISectionList           rc=2
+[era] INIClass                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5e9950   MISMATCH         Dialog::MapPlayerIDToIndex
+[diff] 0x722140   MISMATCH         TiberiumClass::UpdateField
+[diff] 0x53ee00   MISMATCH         Network::IsBroadcastAddr
+[diff] 0x5c6a30   MISMATCH         Crypto_Helper
+[diff] 0x5c6490   MISMATCH         EncodeVarInt_Helper
+[diff] 0x4a52f0   MISMATCH         Animation::GetProgress
+[diff] 0x522780   MISMATCH         InfantryClass::InitProductionLimits
+[diff] 0x56bcd0   MISMATCH         CellClass::GetTileData
+[diff] 0x6b0a20   MISMATCH         SlaveManagerClass::LostSlave
+[diff] 0x4cac40   MISMATCH         Math::Sqrt
+[ledger] 0x5e9950 Dialog::MapPlayerIDToIndex -> NG (attempt 1)
+[ledger] 0x722140 TiberiumClass::UpdateField -> NG (attempt 1)
+[ledger] 0x492b00 _BlitTransXlatZRead_G::sub_492B00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4fa2e0 HouseClass::SetThreat_Bounds -> COMPILE_FAIL (attempt 1)
+[ledger] 0x53ee00 Network::IsBroadcastAddr -> NG (attempt 1)
+[ledger] 0x5c6a30 Crypto_Helper -> NG (attempt 1)
+[ledger] 0x64cd30 sub_64CD30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x660be0 ObjectClass::UI_Create_734120_Create_660BE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x494590 _BlitTransXlatMultWriteAlpha_G::Blit_ZRead_AlphaBlend -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c6490 EncodeVarInt_Helper -> NG (attempt 1)
+[ledger] 0x4a52f0 Animation::GetProgress -> NG (attempt 1)
+[ledger] 0x554150 LoadingScreen::CalcProgressBarRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x493830 _BlitTransDarkenZReadWrite_G::sub_493830 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522780 InfantryClass::InitProductionLimits -> NG (attempt 1)
+[ledger] 0x56bcd0 CellClass::GetTileData -> NG (attempt 1)
+[ledger] 0x5d39d0 SessionClass::saveSettings -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b0a20 SlaveManagerClass::LostSlave -> NG (attempt 1)
+[ledger] 0x4cac40 Math::Sqrt -> NG (attempt 1)
+[ledger] 0x49e8e0 INISectionList::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x52af50 INIClass::sectionExists -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 10,
+  "COMPILE_FAIL": 10
+ },
+ "pathologies": {
+  "codegen_shape": 5,
+  "regalloc": 2,
+  "ret_norm": 1,
+  "branch_polarity": 1,
+  "cc_mismatch": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p259\batch_report.json

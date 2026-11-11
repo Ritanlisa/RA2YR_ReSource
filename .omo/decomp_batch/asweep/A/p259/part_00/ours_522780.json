@@ -1,0 +1,27 @@
+{
+ "symbol": "?InitProductionLimits@InfantryClass@@QAEHXZ",
+ "sym_key": "InfantryClass::InitProductionLimits",
+ "size": 113,
+ "link_base": 0,
+ "bytes_hex": "8b81c00600008a90300d000084d274598b811c020000c681d80100000189811c0500008b80e801000085c0742a83f8017512a1400200008b805c0d0000898118050000c38b15400200008b82600d0000898118050000c3a1400200008b80580d0000898118050000c3c681d801000000c3",
+ "relocs": [
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 70,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 88,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "symbol": "?IsBroadcastAddr@Network@@QAEHXZ",
+ "sym_key": "Network::IsBroadcastAddr",
+ "size": 56,
+ "link_base": 0,
+ "bytes_hex": "51833d0000000001752a8a11b0ff3ad075163841017511384102750c38410475138a51058854240338410475078a41058844240333c059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}

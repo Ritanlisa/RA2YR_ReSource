@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B0A20",
+ "name": "SlaveManagerClass::LostSlave",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B0A20",
+ "bytes_hex": "8b414883ec0c4853565778598b713c8b7c241c8d14868b1a393b74114883ea0485c07df25f5e5b83c40cc204008b04868b1085d2740ac782dc02000000000000c70000000000c74004060000008b1584eda8008b493083c00889108b5424108950048948085f5e5b83c40cc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

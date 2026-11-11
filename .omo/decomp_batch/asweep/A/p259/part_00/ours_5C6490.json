@@ -1,0 +1,8 @@
+{
+ "symbol": "?EncodeVarInt_Helper@@YIHPAEPADH@Z",
+ "sym_key": "Unnamed::EncodeVarInt_Helper",
+ "size": 98,
+ "link_base": 0,
+ "bytes_hex": "8b44240453558be98b4c82fc5685c98d7402ff570f9cc0f6d83bf27609380675054e3bf277f78a1e33ff84db7d0485c97d09f6c380750c85c97d08884500bf010000008a063bf288042f8d4701740c8a4eff4e880c28403bf275f45f5e5d5bc20400",
+ "relocs": []
+}

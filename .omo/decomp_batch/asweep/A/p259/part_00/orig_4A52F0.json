@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A52F0",
+ "name": "Animation::GetProgress",
+ "size": 108,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A52F0",
+ "bytes_hex": "8a411883ec0884c07458568b711485f689742408750bdd0518177e005e83c408c38b51088b411083faff74238b0d84eda8002bca3bc87d152bc12bf0897424045edb442400da74240483c408c333c02bf0897424045edb442400da74240483c408c3dd0518177e0083c408c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

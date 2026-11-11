@@ -1,0 +1,27 @@
+{
+ "symbol": "?GetTileData@CellClass@@QAGHPAFH@Z",
+ "sym_key": "CellClass::GetTileData",
+ "size": 106,
+ "link_base": 0,
+ "bytes_hex": "8b5424080fbf42020fbf0ac1e00903c13d00000400730d8b0d000000008b0c8185c9750d8b12b9000000008915000000008b412456c1e8100fbfc09983e20303c2c1f8028bf0c1e60603f00fbf41249983e20303c28b542410c1f8028d0c705e8b848af0590000c20c00",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 39,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 45,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  }
+ ]
+}

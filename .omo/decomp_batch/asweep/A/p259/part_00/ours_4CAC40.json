@@ -1,0 +1,27 @@
+{
+ "symbol": "?Sqrt@Math@@QAENN@Z",
+ "sym_key": "Math::Sqrt",
+ "size": 122,
+ "link_base": 0,
+ "bytes_hex": "51dd4424088b4424088b4c2400dd442408dc1d0000000025ff00000080e1000bc189442400dfe0f6c4407544dd442408dc1d00000000dfe0f6c441740cddd8dd442408dc0d00000000d95c24088b542408c1ea1783ea7f0fbfc224fe05fe000000c1e01689442408db44240859c20800ddd8db44240059c20800",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 50,
+   "type": "DIR32",
+   "sym": "__real@8@00000000000000000000",
+   "sym_key": "_real@8@00000000000000000000"
+  },
+  {
+   "off": 69,
+   "type": "DIR32",
+   "sym": "__real@8@bfff8000000000000000",
+   "sym_key": "_real@8@bfff8000000000000000"
+  }
+ ]
+}

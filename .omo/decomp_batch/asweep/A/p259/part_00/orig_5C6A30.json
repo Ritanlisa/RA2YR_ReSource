@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6A30",
+ "name": "Crypto_Helper",
+ "size": 106,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6A30",
+ "bytes_hex": "8b44240c568bf04885f674564053558b6c2410894424188a442414578b1a8b75008b7c241803f381e7ff00000003fe3bf3720c84c0740485ff740432c0eb02b0018b74241c893983c50483c20483c1044e884424188974241c75c15f5d5b5ec20c008a44240c5ec20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

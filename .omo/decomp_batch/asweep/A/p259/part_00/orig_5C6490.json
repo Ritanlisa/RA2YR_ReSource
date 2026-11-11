@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C6490",
+ "name": "EncodeVarInt_Helper",
+ "size": 107,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C6490",
+ "bytes_hex": "8b44240453558be98b5c82fc5685db0f9cc18ad98d7402fff6db1adb5781e3ff0000003bf27609381e75054e3bf277f78a0633ff2480740484c9740884c0750c84c97408885d00bf010000008a0688042f473bf2740c8a4eff4e880c2f473bf275f48bc75f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

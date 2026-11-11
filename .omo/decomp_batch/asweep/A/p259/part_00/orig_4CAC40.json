@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CAC40",
+ "name": "Math::Sqrt",
+ "size": 110,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CAC40",
+ "bytes_hex": "dd442404d81548177e00dfe0f6c4407409ddd8d90548177e00c3d81548177e00dfe0f6c4417406dc0d00497e00d95c24048b4c24048bc181e1ffff7f00c1e81783e87fa801740681c90000800066d1f80fbfc0c1e90a83c07f8b0c8dbc508600c1e01703c8894c2404d9442404c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
