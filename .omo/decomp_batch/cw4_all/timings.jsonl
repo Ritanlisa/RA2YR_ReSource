@@ -7,3 +7,4 @@
 {"part": 6, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RELOC_KEY": 10, "FP_RECIP": 10}, "by_family_hits": {}}}
 {"part": 7, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"RELOC_KEY": 10, "FP_RECIP": 10}, "by_family_hits": {}}}
 {"part": 8, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FP_RECIP": 3, "RELOC_KEY": 2, "FOLD_STORE": 15}, "by_family_hits": {}}}
+{"part": 9, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
