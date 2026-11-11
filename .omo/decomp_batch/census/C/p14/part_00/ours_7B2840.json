@@ -1,0 +1,15 @@
+{
+ "symbol": "?getSocketCount@_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass@@QAEXXZ",
+ "sym_key": "_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketCount",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "568bf15733ff8b4610897e143bc77411f6c4ff740c50e80000000083c404897e048b4610897e0c80e4005f8946105ec3",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

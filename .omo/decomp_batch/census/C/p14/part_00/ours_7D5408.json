@@ -1,0 +1,15 @@
+{
+ "symbol": "?__strdup@unknown@@QAEPADPBD@Z",
+ "sym_key": "unknown::__strdup",
+ "size": 83,
+ "link_base": 0,
+ "bytes_hex": "568b74240885f65774428bfe83c9ff33c0f2aef7d151e8000000008bd083c40485d274288bfe83c9ff33c053f2aef7d12bf98bf78bd98bfa8bc7c1e902f3a58bcb5b83e103f3a45f5ec204005f33c05ec20400",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "_malloc",
+   "sym_key": "malloc"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x71FBA0",
+ "name": "VectorClass_ptr_TEventClass::Destroy",
+ "size": 42,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x71FBA0",
+ "bytes_hex": "53568bf133db8b4604895e103bc37411385e0d740c50e8828f0a0083c404895e04885e0d895e085e5bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

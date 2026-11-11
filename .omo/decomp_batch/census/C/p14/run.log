@@ -1,0 +1,83 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p14\part_00
+=== convert (20 addrs) ===
+[conv] 0x63dbc0 _DynamicVectorClass_PAVPlanningBranchClass::Destroy_0 -> _DynamicVectorClass_PAVPlanningBranchClass
+[conv] 0x67a930 _DynamicVectorClass_PBVTerrainTypeClass::GetClassIdentifier -> _DynamicVectorClass_PBVTerrainTypeClass
+[conv] 0x6bed50 _DynamicVectorClass_K::Destroy -> _DynamicVectorClass_K
+[conv] 0x71fba0 _DynamicVectorClass_PAVTEventClass::Destroy -> _DynamicVectorClass_PAVTEventClass
+[conv] 0x7b2840 _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketCount -> _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass
+[conv] 0x766800 _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer -> _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour
+[conv] 0x71de10 TerrainTypeClass::GetTileIndex -> TerrainTypeClass
+[conv] 0x7d5408 unknown::__strdup -> unknown
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PBVTerrainTypeClass rc=0
+[era] _DynamicVectorClass_K    rc=0
+[era] _DynamicVectorClass_PAVTEventClass rc=0
+[era] _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass rc=0
+[era] _DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour rc=2
+[era] TerrainTypeClass         rc=2
+[era] unknown                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x63dbc0   MISMATCH         _DynamicVectorClass_PAVPlanningBranchClass::Destroy_0
+[diff] 0x67a930   MISMATCH         _DynamicVectorClass_PBVTerrainTypeClass::GetClassIdentifier
+[diff] 0x6bed50   MISMATCH         _DynamicVectorClass_K::Destroy
+[diff] 0x71fba0   MISMATCH         _DynamicVectorClass_PAVTEventClass::Destroy
+[diff] 0x7b2840   MISMATCH         _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketCount
+[diff] 0x7d5408   MISMATCH         unknown::__strdup
+[ledger] 0x63dbc0 VectorClass_ptr_PlanningMemberClass::Destroy_0 -> NG (attempt 1)
+[ledger] 0x67a930 TypeList_cptr_TerrainTypeClass::GetClassIdentifier -> NG (attempt 1)
+[ledger] 0x6bed50 VectorClass_K::Destroy -> NG (attempt 1)
+[ledger] 0x71fba0 VectorClass_ptr_TEventClass::Destroy -> NG (attempt 1)
+[ledger] 0x7b2840 IPXInterfaceClass::getSocketCount -> NG (attempt 1)
+[ledger] 0x752340 0x752340 -> PENDING (attempt 1)
+[ledger] 0x766800 Conflict_WorldDominationTour_12_::ReleaseBuffer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x71de10 TerrainTypeClass::GetTileIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d5408 __strdup -> NG (attempt 1)
+[ledger] 0x40e6c0 0x40e6c0 -> PENDING (attempt 1)
+[ledger] 0x421df0 0x421df0 -> PENDING (attempt 1)
+[ledger] 0x45b0e0 0x45b0e0 -> PENDING (attempt 1)
+[ledger] 0x47b290 0x47b290 -> PENDING (attempt 1)
+[ledger] 0x4a6ba0 0x4a6ba0 -> PENDING (attempt 1)
+[ledger] 0x4c64a0 0x4c64a0 -> PENDING (attempt 1)
+[ledger] 0x4e6410 0x4e6410 -> PENDING (attempt 1)
+[ledger] 0x539250 0x539250 -> PENDING (attempt 1)
+[ledger] 0x5518e0 0x5518e0 -> PENDING (attempt 1)
+[ledger] 0x58b270 0x58b270 -> PENDING (attempt 1)
+[ledger] 0x5bd920 0x5bd920 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1979,
+ "verdicts": {
+  "MISMATCH": 554,
+  "MATCH": 512,
+  "COMPILE_FAIL": 479,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 422,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 184,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 64,
+  "branch_polarity": 34,
+  "regalloc": 92,
+  "branch_order": 67,
+  "width_mismatch": 7,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 48.0,
+ "match_rate_of_total_pct": 25.9,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p14\batch_report.json

@@ -1,0 +1,264 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 6,
+   "NO_CLS": 12,
+   "COMPILE_FAIL": 2
+  },
+  "pathologies": {
+   "regalloc": 5,
+   "codegen_shape": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x63dbc0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 48B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_PlanningMemberClass::Destroy_0",
+   "emitted": "_DynamicVectorClass_PAVPlanningBranchClass::Destroy_0",
+   "unit": "_DynamicVectorClass_PAVPlanningBranchClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/5",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x67a930",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 48B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "TypeList_cptr_TerrainTypeClass::GetClassIdentifier",
+   "emitted": "_DynamicVectorClass_PBVTerrainTypeClass::GetClassIdentifier",
+   "unit": "_DynamicVectorClass_PBVTerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/5",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x6bed50",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 48B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_K::Destroy",
+   "emitted": "_DynamicVectorClass_K::Destroy",
+   "unit": "_DynamicVectorClass_K",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/5",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x71fba0",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 48B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "VectorClass_ptr_TEventClass::Destroy",
+   "emitted": "_DynamicVectorClass_PAVTEventClass::Destroy",
+   "unit": "_DynamicVectorClass_PAVTEventClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/5",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x7b2840",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 42B ours 48B",
+   "first_diff": {
+    "orig": "+0 push ebx",
+    "ours": "+0 push esi"
+   },
+   "pathology": "regalloc",
+   "name": "IPXInterfaceClass::getSocketCount",
+   "emitted": "_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass::getSocketCount",
+   "unit": "_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/5",
+   "rule_violations": 1,
+   "orig_size": 42,
+   "ours_size": 48
+  },
+  {
+   "addr": "0x752340",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x752340",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x766800",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p14\\part_00\\_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour.cpp(14) : error C2664: 'int (unsigned int,int)' : cannot convert parameter 1 from ",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Conflict_WorldDominationTour_12_::ReleaseBuffer",
+   "emitted": "_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour::ReleaseBuffer",
+   "unit": "_DynamicVectorClass_V_rc_ptr_VGameOption_WorldDominationTour",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "1/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x71de10",
+   "batch": "censusC",
+   "verdict": "COMPILE_FAIL",
+   "note": "D:\\RA2YR_ReSource\\.omo\\decomp_batch\\census\\C\\p14\\part_00\\TerrainTypeClass.cpp(11) : error C2228: left of '.ImpactWaterSound' must have class/struct/union type",
+   "first_diff": null,
+   "pathology": null,
+   "name": "TerrainTypeClass::GetTileIndex",
+   "emitted": "TerrainTypeClass::GetTileIndex",
+   "unit": "TerrainTypeClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0
+  },
+  {
+   "addr": "0x7d5408",
+   "batch": "censusC",
+   "verdict": "MISMATCH",
+   "note": "orig 43B ours 83B",
+   "first_diff": {
+    "orig": "+7 je 0x7d542f",
+    "ours": "+7 push edi"
+   },
+   "pathology": "codegen_shape",
+   "name": "__strdup",
+   "emitted": "unknown::__strdup",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 43,
+   "ours_size": 83
+  },
+  {
+   "addr": "0x40e6c0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40e6c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x421df0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x421df0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x45b0e0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x45b0e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x47b290",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x47b290",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4a6ba0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4a6ba0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c64a0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c64a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e6410",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e6410",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x539250",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x539250",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5518e0",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5518e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x58b270",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x58b270",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5bd920",
+   "batch": "censusC",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5bd920",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

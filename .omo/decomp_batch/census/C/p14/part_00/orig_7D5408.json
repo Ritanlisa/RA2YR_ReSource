@@ -1,0 +1,11 @@
+{
+ "addr": "0x7D5408",
+ "name": "__strdup",
+ "size": 43,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7D5408",
+ "bytes_hex": "568b74240885f6741e56e889c1ffff4050e81240ffff5985c059740b5650e8c5f7ffff59595ec333c05ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

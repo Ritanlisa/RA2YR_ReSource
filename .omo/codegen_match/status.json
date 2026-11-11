@@ -545,6 +545,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40e6c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40e6c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40e840": {
   "attempts": 1,
   "first_diff": null,
@@ -1067,6 +1074,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x421ce0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x421df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x421df0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -1672,6 +1686,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x45b0e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x45b0e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x465d70": {
   "attempts": 5,
   "first_diff": null,
@@ -2145,6 +2166,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x47b1c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x47b290": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x47b290",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -3282,6 +3310,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a6ba0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4a6ba0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4a7900": {
   "attempts": 10,
   "first_diff": "+11 jne 0x4a7967",
@@ -3814,6 +3849,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4c64a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c64a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4c81d0": {
   "attempts": 1,
   "first_diff": null,
@@ -4289,6 +4331,13 @@
   "name": "Lobby::InvalidatePlayerSlots",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4e6410": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e6410",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4e64a0": {
   "attempts": 1,
@@ -5718,6 +5767,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x539250": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x539250",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5392c0": {
   "attempts": 1,
   "first_diff": null,
@@ -6093,6 +6149,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x5517f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x5518e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5518e0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -6712,6 +6775,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x58b270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x58b270",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x58b3d0": {
   "attempts": 1,
   "first_diff": null,
@@ -7192,6 +7262,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x5bd850",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x5bd920": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5bd920",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -8651,6 +8728,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x63dbc0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_PlanningMemberClass::Destroy_0",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x63dc10": {
   "attempts": 1,
   "first_diff": null,
@@ -9259,6 +9343,13 @@
   "name": "RulesClass::readWarheads",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x67a930": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "TypeList_cptr_TerrainTypeClass::GetClassIdentifier",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x67a960": {
   "attempts": 1,
@@ -9959,6 +10050,13 @@
   "name": "0x6bb220",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6bed50": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_K::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x6bef90": {
   "attempts": 1,
@@ -11115,6 +11213,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x71de10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TerrainTypeClass::GetTileIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x71e330": {
   "attempts": 5,
   "first_diff": null,
@@ -11191,6 +11296,13 @@
   "name": "TEventClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x71fba0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "VectorClass_ptr_TEventClass::Destroy",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x71fd20": {
   "attempts": 1,
@@ -12011,6 +12123,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x752340": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x752340",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x7534e0": {
   "attempts": 1,
   "first_diff": "+0 cmp ecx, -1",
@@ -12353,6 +12472,13 @@
   "name": "sub_7667E0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x766800": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Conflict_WorldDominationTour_12_::ReleaseBuffer",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x766900": {
   "attempts": 1,
@@ -13089,6 +13215,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7b2840": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "IPXInterfaceClass::getSocketCount",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
  "0x7b2ff0": {
   "attempts": 9,
   "first_diff": null,
@@ -13795,6 +13928,13 @@
   "name": "_cvtdate",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7d5408": {
+  "attempts": 1,
+  "first_diff": "+7 je 0x7d542f",
+  "name": "__strdup",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7d5c12": {
   "attempts": 1,
