@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetField@GameOption@@QAEHXZ",
+ "sym_key": "GameOption::GetField",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "8b818c0100008b00c3",
+ "relocs": []
+}

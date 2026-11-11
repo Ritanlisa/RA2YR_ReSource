@@ -1,0 +1,11 @@
+{
+ "addr": "0x5565F0",
+ "name": "Hash::Reset",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5565F0",
+ "bytes_hex": "33c0894104894108c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Reset@LinkClass@@QAEHXZ",
+ "sym_key": "LinkClass::Reset",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "33c0894104894108c3",
+ "relocs": []
+}

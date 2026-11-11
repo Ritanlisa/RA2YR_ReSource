@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p34\part_00
+=== convert (20 addrs) ===
+[conv] 0x5565f0 LinkClass::Reset -> LinkClass
+[conv] 0x5d7580 ObjectClass::sub_5D7580 -> ObjectClass
+[conv] 0x624080 ObjectClass::sub_624080 -> ObjectClass
+[conv] 0x629710 ObjectClass::sub_629710 -> ObjectClass
+[conv] 0x633a40 ObjectClass::sub_633A40 -> ObjectClass
+[conv] 0x6406e0 ObjectClass::unknown_libname_27 -> ObjectClass
+[conv] 0x681080 ObjectClass::Map_Save_681080 -> ObjectClass
+[conv] 0x69acc0 GameOption::GetField -> GameOption
+[conv] 0x723ea0 GadgetClass::Show -> GadgetClass
+[conv] 0x723eb0 GadgetClass::Hide -> GadgetClass
+[conv] 0x74ff30 ObjectClass::unknown_libname_35 -> ObjectClass
+[conv] 0x750080 Crate::processCratePickup -> Crate
+[conv] 0x76b080 ComStreamClass::initStream -> ComStreamClass
+[conv] 0x7b4620 ObjectClass::unknown_libname_73 -> ObjectClass
+[conv] 0x7cc1a9 __NLG_Notify1 -> _addr_7C
+[conv] 0x402430 ObjectClass::sub_402430 -> ObjectClass
+[conv] 0x4065f0 ObjectClass::sub_4065F0 -> ObjectClass
+[conv] 0x407530 PushFrontLinkedListAlt -> _addr_40
+[conv] 0x407b40 AudioQueue::IsEmpty -> AudioQueue
+[conv] 0x407b50 AudioQueue::IsNotEmpty -> AudioQueue
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] LinkClass                rc=0
+[era] ObjectClass              rc=2
+[era] GameOption               rc=0
+[era] GadgetClass              rc=0
+[era] Crate                    rc=0
+[era] ComStreamClass           rc=0
+[era] _addr_7C                 rc=0
+[era] _addr_40                 rc=0
+[era] AudioQueue               rc=0
+=== diffasm byte-compare ===
+[diff] 0x5565f0   MATCH            LinkClass::Reset
+[diff] 0x629710   MATCH            ObjectClass::sub_629710
+[diff] 0x633a40   MISMATCH         ObjectClass::sub_633A40
+[diff] 0x6406e0   MATCH            ObjectClass::unknown_libname_27
+[diff] 0x681080   MATCH            ObjectClass::Map_Save_681080
+[diff] 0x74ff30   MATCH            ObjectClass::unknown_libname_35
+[diff] 0x7b4620   MATCH            ObjectClass::unknown_libname_73
+[diff] 0x402430   MATCH            ObjectClass::sub_402430
+[diff] 0x4065f0   MISMATCH         ObjectClass::sub_4065F0
+[diff] 0x69acc0   MATCH            GameOption::GetField
+[diff] 0x723ea0   MATCH            GadgetClass::Show
+[diff] 0x723eb0   MATCH            GadgetClass::Hide
+[diff] 0x750080   MATCH            Crate::processCratePickup
+[diff] 0x76b080   MISMATCH         ComStreamClass::initStream
+[diff] 0x7cc1a9   MISMATCH         __NLG_Notify1
+[diff] 0x407530   MATCH            PushFrontLinkedListAlt
+[diff] 0x407b40   MATCH            AudioQueue::IsEmpty
+[diff] 0x407b50   MATCH            AudioQueue::IsNotEmpty
+[ledger] 0x5565f0 LinkClass::Reset -> OK (attempt 1)
+[ledger] 0x5d7580 ObjectClass::sub_5D7580 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x624080 ObjectClass::sub_624080 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x629710 ObjectClass::sub_629710 -> OK (attempt 1)
+[ledger] 0x633a40 ObjectClass::sub_633A40 -> NG (attempt 1)
+[ledger] 0x6406e0 ObjectClass::unknown_libname_27 -> OK (attempt 1)
+[ledger] 0x681080 ObjectClass::Map_Save_681080 -> OK (attempt 1)
+[ledger] 0x69acc0 GameOption::GetField -> OK (attempt 1)
+[ledger] 0x723ea0 GadgetClass::Show -> OK (attempt 1)
+[ledger] 0x723eb0 GadgetClass::Hide -> OK (attempt 1)
+[ledger] 0x74ff30 ObjectClass::unknown_libname_35 -> OK (attempt 1)
+[ledger] 0x750080 Crate::processCratePickup -> OK (attempt 1)
+[ledger] 0x76b080 ComStreamClass::initStream -> NG (attempt 1)
+[ledger] 0x7b4620 ObjectClass::unknown_libname_73 -> OK (attempt 1)
+[ledger] 0x7cc1a9 __NLG_Notify1 -> NG (attempt 1)
+[ledger] 0x402430 ObjectClass::sub_402430 -> OK (attempt 1)
+[ledger] 0x4065f0 ObjectClass::sub_4065F0 -> NG (attempt 1)
+[ledger] 0x407530 PushFrontLinkedListAlt -> OK (attempt 1)
+[ledger] 0x407b40 AudioQueue::IsEmpty -> OK (attempt 1)
+[ledger] 0x407b50 AudioQueue::IsNotEmpty -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 4
+ },
+ "pathologies": {
+  "cc_mismatch": 2,
+  "regalloc": 2
+ },
+ "match_rate_of_decided_pct": 77.8,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 8,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p34\batch_report.json

@@ -1,0 +1,11 @@
+{
+ "addr": "0x750080",
+ "name": "Crate::processCratePickup",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750080",
+ "bytes_hex": "c70100000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

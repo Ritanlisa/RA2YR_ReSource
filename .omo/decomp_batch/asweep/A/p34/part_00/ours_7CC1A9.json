@@ -1,0 +1,15 @@
+{
+ "symbol": "?__NLG_Notify1@@YAXH@Z",
+ "sym_key": "Unnamed::__NLG_Notify1",
+ "size": 12,
+ "link_base": 0,
+ "bytes_hex": "68bcc17c00e80000000059c3",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?JUMPOUT@@YAHHZZ",
+   "sym_key": "JUMPOUT"
+  }
+ ]
+}

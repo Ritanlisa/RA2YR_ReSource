@@ -1,0 +1,8 @@
+{
+ "symbol": "?processCratePickup@Crate@@QAEXH@Z",
+ "sym_key": "Crate::processCratePickup",
+ "size": 9,
+ "link_base": 0,
+ "bytes_hex": "c70100000000c20400",
+ "relocs": []
+}

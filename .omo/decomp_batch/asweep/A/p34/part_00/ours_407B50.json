@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsNotEmpty@AudioQueue@@QAIHH@Z",
+ "sym_key": "AudioQueue::IsNotEmpty",
+ "size": 10,
+ "link_base": 0,
+ "bytes_hex": "8b411489909c000000c3",
+ "relocs": []
+}

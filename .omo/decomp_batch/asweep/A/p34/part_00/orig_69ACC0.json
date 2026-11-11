@@ -1,0 +1,11 @@
+{
+ "addr": "0x69ACC0",
+ "name": "GameOption::GetField",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69ACC0",
+ "bytes_hex": "8b818c0100008b00c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CC1A9",
+ "name": "__NLG_Notify1",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CC1A9",
+ "bytes_hex": "5351bbd0c18700eb0a",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
