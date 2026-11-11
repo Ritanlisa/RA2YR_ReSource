@@ -1,0 +1,8 @@
+{
+ "symbol": "?Clear@_VectorClass_UScoutStruct@@QAEHHH@Z",
+ "sym_key": "_VectorClass_UScoutStruct::Clear",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b49048b5424088b442404568b34d189308a4cd1048848045ec20800",
+ "relocs": []
+}

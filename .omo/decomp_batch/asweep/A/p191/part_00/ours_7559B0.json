@@ -1,0 +1,15 @@
+{
+ "symbol": "?CopyAudioData@@YIPADPADH@Z",
+ "sym_key": "Unnamed::CopyAudioData",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "568d34528bc157c1e60481c600000000b90c0000008bf8f3a55f5ec3",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B45188@@3EA",
+   "sym_key": "DataGlobal_B45188"
+  }
+ ]
+}

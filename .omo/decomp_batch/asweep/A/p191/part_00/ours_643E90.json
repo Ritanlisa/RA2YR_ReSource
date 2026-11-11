@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetWeighted@Progress@@QAENH@Z",
+ "sym_key": "Progress::GetWeighted",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "db442404c20400",
+ "relocs": []
+}

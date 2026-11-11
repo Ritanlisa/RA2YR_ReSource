@@ -1,0 +1,21 @@
+{
+ "symbol": "?DeactivateGlobal@ShpButtonClass@@QAEFXZ",
+ "sym_key": "ShpButtonClass::DeactivateGlobal",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "51390d0000000075168b412024fe0cfe894120c705000000000000000059c3668b44240059c3",
+ "relocs": [
+  {
+   "off": 3,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  },
+  {
+   "off": 21,
+   "type": "DIR32",
+   "sym": "?DataGlobal_8B3E90@@3IA",
+   "sym_key": "DataGlobal_8B3E90"
+  }
+ ]
+}

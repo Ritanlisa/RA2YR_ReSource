@@ -1,0 +1,11 @@
+{
+ "addr": "0x643E90",
+ "name": "Progress::GetWeighted",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x643E90",
+ "bytes_hex": "0fbe51618b4424043bc27c06dd4148c20400dd44c108dc7148c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

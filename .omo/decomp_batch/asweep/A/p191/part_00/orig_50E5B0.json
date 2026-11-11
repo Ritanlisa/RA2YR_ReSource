@@ -1,0 +1,11 @@
+{
+ "addr": "0x50E5B0",
+ "name": "VectorClass_UAngerStruct::Clear",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x50E5B0",
+ "bytes_hex": "8b41048b4c24088b14c88d0cc88b44240489108b4904894804c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

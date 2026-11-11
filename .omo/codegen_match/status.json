@@ -18,6 +18,17 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x401190": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_401190",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_401190",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4011b0": {
   "attempts": 1,
   "clean": true,
@@ -6865,6 +6876,18 @@
   "name": "sub_431920",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x431f30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x25]",
+  "name": "BufferIOFileClass::Read",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "orig_name": "BufferIOFileClass::Read",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4324b0": {
   "attempts": 6,
@@ -17001,6 +17024,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x4c91c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "FrameSnapshot::Init",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "FrameSnapshot::Init",
+  "rule_violations": 1,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4c9220": {
   "attempts": 6,
   "first_diff": "+0 mov edx, dword ptr [esp + 4]",
@@ -18754,6 +18789,18 @@
   "name": "COMObject::ActivateGlobal",
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
+ },
+ "0x4e19d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+0 cmp dword ptr [0x8b3e90], ecx",
+  "name": "ShpButtonClass::DeactivateGlobal",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "COMObject::DeactivateGlobal",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4e19f0": {
   "attempts": 1,
@@ -22496,6 +22543,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50e450": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "BuildLocation::InitCandidate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "BuildLocation::InitCandidate",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x50e4d0": {
   "attempts": 1,
   "clean": false,
@@ -22563,6 +22622,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x50e5b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_UAngerStruct::Clear",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UAngerStruct::Clear",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x50e600": {
   "attempts": 1,
   "clean": false,
@@ -22572,6 +22643,18 @@
   "note": "decomp_batch r2: MISMATCH/ret_norm",
   "orig_name": "AbstractClass::setTargetCoordinates",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50e620": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_UScoutStruct::Clear",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UScoutStruct::Clear",
+  "rule_violations": 3,
   "status": "NG",
   "this_as_id": false
  },
@@ -22656,6 +22739,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "VectorClass__N_18::GetItemIndex",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x50e7c0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Clear",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass__N_18::Clear",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -26878,6 +26973,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x549b30": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_549B30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_549B30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x54a140": {
   "attempts": 5,
   "first_diff": null,
@@ -30046,6 +30152,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x588fb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_U_HashObject_II::Clear",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UHashObject_uint_uint::Clear",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x589030": {
   "attempts": 1,
   "clean": false,
@@ -31536,6 +31654,18 @@
   "name": "Movement::CalcVelocity",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5b2930": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "Movement::Check",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "Movement::Check",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x5b2950": {
   "attempts": 9,
@@ -35471,6 +35601,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "MSFont_18::PointerToIndex8",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x5d5130": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 4]",
+  "name": "_VectorClass_UAcceleratorTracker::Clear",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "VectorClass_UAcceleratorTracker::Clear",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -41389,6 +41531,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x643e90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+0 movsx edx, byte ptr [ecx + 0x61]",
+  "name": "Progress::GetWeighted",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "orig_name": "Progress::GetWeighted",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x643ee0": {
   "attempts": 1,
   "clean": false,
@@ -41864,6 +42018,17 @@
   "name": "Network_Process_64AD10",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x64ae30": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_64AE30",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_64AE30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x64de80": {
   "attempts": 1,
@@ -43102,6 +43267,18 @@
   "name": "ComPtr::Constructor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "orig_name": "ComPtr::Constructor",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x65d460": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "ComPtr::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "ComPtr::Release",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
   "this_as_id": false
@@ -50466,6 +50643,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x6cf540": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 4]",
+  "name": "_VectorClass_VSwizzlePointerClass::Lookup",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "SwizzleManagerClass_19::Lookup",
+  "rule_violations": 2,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6cf560": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -52449,6 +52638,18 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "orig_name": "TeamTypeClass_28::PointerToIndex",
   "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
+ "0x6f2210": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov eax, dword ptr [ecx + 4]",
+  "name": "_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Seek",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "orig_name": "TeamTypeClass_28::Seek",
+  "rule_violations": 2,
   "status": "NG",
   "this_as_id": false
  },
@@ -54796,6 +54997,18 @@
   "name": "ThemeClass::InitializeThemes",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x720940": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+9 jae 0x720954",
+  "name": "ScenarioClass::processEndgame",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "orig_name": "ScenarioClass::processEndgame",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x720a80": {
   "attempts": 10,
@@ -59605,6 +59818,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x753af0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "sub_753AF0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_753AF0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x753c60": {
   "attempts": 1,
   "clean": false,
@@ -59835,6 +60059,17 @@
   "name": "AudioConfig::InitDefault",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "AudioConfig::InitDefault",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x7559b0": {
+  "attempts": 1,
+  "clean": true,
+  "first_diff": null,
+  "name": "CopyAudioData",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "CopyAudioData",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false

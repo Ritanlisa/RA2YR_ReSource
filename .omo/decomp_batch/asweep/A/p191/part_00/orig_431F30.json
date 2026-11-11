@@ -1,0 +1,11 @@
+{
+ "addr": "0x431F30",
+ "name": "BufferIOFileClass::Read",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x431F30",
+ "bytes_hex": "8a412584c0740a8a412984c07403b001c38b511433c083faff0f95c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

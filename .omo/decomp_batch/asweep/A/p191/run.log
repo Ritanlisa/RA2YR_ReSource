@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p191\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c91c0 FrameSnapshot::Init -> FrameSnapshot
+[conv] 0x4e19d0 ShpButtonClass::DeactivateGlobal -> ShpButtonClass
+[conv] 0x50e450 BuildLocation::InitCandidate -> BuildLocation
+[conv] 0x50e5b0 _VectorClass_UAngerStruct::Clear -> _VectorClass_UAngerStruct
+[conv] 0x50e620 _VectorClass_UScoutStruct::Clear -> _VectorClass_UScoutStruct
+[conv] 0x50e7c0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Clear -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x549b30 sub_549B30 -> _addr_54
+[conv] 0x588fb0 _VectorClass_U_HashObject_II::Clear -> _VectorClass_U_HashObject_II
+[conv] 0x5b2930 Movement::Check -> Movement
+[conv] 0x5d5130 _VectorClass_UAcceleratorTracker::Clear -> _VectorClass_UAcceleratorTracker
+[conv] 0x643e90 Progress::GetWeighted -> Progress
+[conv] 0x64ae30 sub_64AE30 -> _addr_64
+[conv] 0x65d460 ComPtr::Release -> ComPtr
+[conv] 0x6cf540 _VectorClass_VSwizzlePointerClass::Lookup -> _VectorClass_VSwizzlePointerClass
+[conv] 0x6f2210 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Seek -> _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass
+[conv] 0x720940 ScenarioClass::processEndgame -> ScenarioClass
+[conv] 0x753af0 sub_753AF0 -> _addr_75
+[conv] 0x7559b0 CopyAudioData -> _addr_75
+[conv] 0x401190 sub_401190 -> _addr_40
+[conv] 0x431f30 BufferIOFileClass::Read -> BufferIOFileClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] FrameSnapshot            rc=2
+[era] ShpButtonClass           rc=0
+[era] BuildLocation            rc=2
+[era] _VectorClass_UAngerStruct rc=0
+[era] _VectorClass_UScoutStruct rc=0
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=0
+[era] _addr_54                 rc=0
+[era] _VectorClass_U_HashObject_II rc=0
+[era] Movement                 rc=2
+[era] _VectorClass_UAcceleratorTracker rc=0
+[era] Progress                 rc=0
+[era] _addr_64                 rc=0
+[era] ComPtr                   rc=2
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass rc=0
+[era] ScenarioClass            rc=0
+[era] _addr_75                 rc=0
+[era] _addr_40                 rc=2
+[era] BufferIOFileClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x4e19d0   MISMATCH         ShpButtonClass::DeactivateGlobal
+[diff] 0x50e5b0   MISMATCH         _VectorClass_UAngerStruct::Clear
+[diff] 0x50e620   MISMATCH         _VectorClass_UScoutStruct::Clear
+[diff] 0x50e7c0   MISMATCH         _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Clear
+[diff] 0x549b30   MATCH            sub_549B30
+[diff] 0x588fb0   MISMATCH         _VectorClass_U_HashObject_II::Clear
+[diff] 0x5d5130   MISMATCH         _VectorClass_UAcceleratorTracker::Clear
+[diff] 0x643e90   MISMATCH         Progress::GetWeighted
+[diff] 0x64ae30   MATCH            sub_64AE30
+[diff] 0x6cf540   MISMATCH         _VectorClass_VSwizzlePointerClass::Lookup
+[diff] 0x6f2210   MISMATCH         _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Seek
+[diff] 0x720940   MISMATCH         ScenarioClass::processEndgame
+[diff] 0x753af0   MATCH            sub_753AF0
+[diff] 0x7559b0   MATCH            CopyAudioData
+[diff] 0x431f30   MISMATCH         BufferIOFileClass::Read
+[ledger] 0x4c91c0 FrameSnapshot::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e19d0 ShpButtonClass::DeactivateGlobal -> NG (attempt 1)
+[ledger] 0x50e450 BuildLocation::InitCandidate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50e5b0 _VectorClass_UAngerStruct::Clear -> NG (attempt 1)
+[ledger] 0x50e620 _VectorClass_UScoutStruct::Clear -> NG (attempt 1)
+[ledger] 0x50e7c0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::Clear -> NG (attempt 1)
+[ledger] 0x549b30 sub_549B30 -> OK (attempt 1)
+[ledger] 0x588fb0 _VectorClass_U_HashObject_II::Clear -> NG (attempt 1)
+[ledger] 0x5b2930 Movement::Check -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5130 _VectorClass_UAcceleratorTracker::Clear -> NG (attempt 1)
+[ledger] 0x643e90 Progress::GetWeighted -> NG (attempt 1)
+[ledger] 0x64ae30 sub_64AE30 -> OK (attempt 1)
+[ledger] 0x65d460 ComPtr::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf540 _VectorClass_VSwizzlePointerClass::Lookup -> NG (attempt 1)
+[ledger] 0x6f2210 _VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass::Seek -> NG (attempt 1)
+[ledger] 0x720940 ScenarioClass::processEndgame -> NG (attempt 1)
+[ledger] 0x753af0 sub_753AF0 -> OK (attempt 1)
+[ledger] 0x7559b0 CopyAudioData -> OK (attempt 1)
+[ledger] 0x401190 sub_401190 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x431f30 BufferIOFileClass::Read -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 5,
+  "MISMATCH": 11,
+  "MATCH": 4
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "regalloc": 7,
+  "width_mismatch": 1,
+  "branch_order": 1,
+  "ret_norm": 1
+ },
+ "match_rate_of_decided_pct": 26.7,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p191\batch_report.json

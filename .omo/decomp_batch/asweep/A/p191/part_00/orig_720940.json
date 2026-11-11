@@ -1,0 +1,11 @@
+{
+ "addr": "0x720940",
+ "name": "ScenarioClass::processEndgame",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x720940",
+ "bytes_hex": "8b4424048b51243bc273098b49188b0481c20400b870478400c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

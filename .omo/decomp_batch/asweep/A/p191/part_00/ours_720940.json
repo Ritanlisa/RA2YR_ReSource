@@ -1,0 +1,15 @@
+{
+ "symbol": "?processEndgame@ScenarioClass@@QAEPADI@Z",
+ "sym_key": "ScenarioClass::processEndgame",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b51243bc27208a100000000c204008b49188b0481c20400",
+ "relocs": [
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?aNoTheme@@3HA",
+   "sym_key": "aNoTheme"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D5130",
+ "name": "VectorClass_UAcceleratorTracker::Clear",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D5130",
+ "bytes_hex": "8b51048b4c24088b442404568b34ca89305e8b4cca04894804c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

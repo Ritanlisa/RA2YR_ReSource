@@ -1,0 +1,11 @@
+{
+ "addr": "0x7559B0",
+ "name": "CopyAudioData",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7559B0",
+ "bytes_hex": "568d34528bc157c1e60481c68851b400b90c0000008bf8f3a55f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
