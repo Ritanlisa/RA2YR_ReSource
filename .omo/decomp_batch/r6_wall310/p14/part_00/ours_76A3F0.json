@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_VCentroid_WorldDominationTour@@QAEDHPAD@Z",
+ "sym_key": "_VectorClass_VCentroid_WorldDominationTour::Release",
+ "size": 266,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c565733ff3bef8bf10f84e60000008b442418897e0c3bc78bd8741c8d4dff85c97c4983c0088bcd8978f88978fc893883c00c4975f2eb348d546d00c1e20252e80000000083c4043bc7741e8d4dff85c97c138d48088bd58979f88979fc893983c10c4a75f28bd8eb0233db3bdfc7460c010000007475393e74498b7e083bef7d028bfd85ff7e2333d28b068d0c1a03c283c20c4f8b2889298b68048969048b400889410875e38b6c24148b460cf6c4ff740f50e80000000083c404c7060000000033ff8b460c891e8b5c241833c93bdf896e080f94c133d280e4008af15f0bd0b00189560c5e5d5bc208005f5e5d32c05bc208008b168bceff520c5f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 70,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 186,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

@@ -6041,7 +6041,7 @@
   "status": "OK"
  },
  "0x7474b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "UnitTypeClass::CreateUnit",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6132,11 +6132,11 @@
   "status": "OK"
  },
  "0x74c030": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ebx",
   "name": "VectorClass_E::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x74d5d0": {
   "attempts": 1,
@@ -6146,7 +6146,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x74d670": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "ObjectClass::IsCellSuitableForPlacement",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6174,14 +6174,14 @@
   "status": "OK"
  },
  "0x74f960": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x74fa20": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "GameClass::ReadVersionFile2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6209,49 +6209,49 @@
   "status": "COMPILE_FAIL"
  },
  "0x753e00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Viewport::Clear",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756dd0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VoxelModel::LoadVXLHeader",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x756f80": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VoxelModel::ParseSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7575a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSection",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757790": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "VoxelRenderer::DrawSectionLines",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x757e70": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VoxelRenderer::ProcessVoxelData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x758030": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "VoxelRenderer::RenderFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6307,14 +6307,14 @@
   "status": "OK"
  },
  "0x75edf0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::BlendShadowColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x75f140": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::loadSectionData",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6335,7 +6335,7 @@
   "status": "OK"
  },
  "0x760190": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Voxel::BlendColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6349,7 +6349,7 @@
   "status": "OK"
  },
  "0x763a50": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "Waypoint::FindCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6398,11 +6398,11 @@
   "status": "COMPILE_FAIL"
  },
  "0x76a3f0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+6 xor ebx, ebx",
   "name": "Map_WorldDominationTour_43::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x76a5a0": {
   "attempts": 3,
@@ -6650,7 +6650,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x7adf70": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "HashMap::Shrink2",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6671,7 +6671,7 @@
   "status": "NG"
  },
  "0x7ae460": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "HashMap::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -6685,7 +6685,7 @@
   "status": "NG"
  },
  "0x7aec00": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "HashTable_flat::Shrink",
   "note": "decomp_batch r2: COMPILE_FAIL",
