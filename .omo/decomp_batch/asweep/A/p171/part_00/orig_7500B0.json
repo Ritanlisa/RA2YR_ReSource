@@ -1,0 +1,11 @@
+{
+ "addr": "0x7500B0",
+ "name": "Timer::SetFlag",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7500B0",
+ "bytes_hex": "8a44240484c07409c70100000040c20400c70100000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

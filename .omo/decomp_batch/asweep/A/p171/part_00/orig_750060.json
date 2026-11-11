@@ -1,0 +1,11 @@
+{
+ "addr": "0x750060",
+ "name": "Team_Create_750060",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x750060",
+ "bytes_hex": "8a44240484c07409c701000080bec20400c70100000000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

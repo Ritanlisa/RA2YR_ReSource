@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetFlag@Timer@@QAEDD@Z",
+ "sym_key": "Timer::SetFlag",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b5424048b442404568bf2240081e6ff0000000bc65ef6da1bd281e2000000408911c20400",
+ "relocs": []
+}
