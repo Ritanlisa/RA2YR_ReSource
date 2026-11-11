@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DA1C0",
+ "name": "FootClass::ClearSomeVector",
+ "size": 15,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DA1C0",
+ "bytes_hex": "8b81ac05000081c1ac050000ff600c",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Draw@GaugeClass@@QAE_NH@Z",
+ "sym_key": "GaugeClass::Draw",
+ "size": 24,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c00f95c288512d33c985c00f95c18ac1c20400",
+ "relocs": []
+}

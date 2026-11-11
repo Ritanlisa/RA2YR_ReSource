@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p56\part_00
+=== convert (20 addrs) ===
+[conv] 0x4c6080 sub_4C6080 -> _addr_4C
+[conv] 0x4c8390 sub_4C8390 -> _addr_4C
+[conv] 0x4c9840 sub_4C9840 -> _addr_4C
+[conv] 0x4cbb50 sub_4CBB50 -> _addr_4C
+[conv] 0x4cc0b0 sub_4CC0B0 -> _addr_4C
+[conv] 0x4cc930 sub_4CC930 -> _addr_4C
+[conv] 0x4d0700 sub_4D0700 -> _addr_4D
+[conv] 0x4da020 globalHelper_0DA020 -> _addr_4D
+[conv] 0x4da1c0 FootClass::ClearSomeVector -> FootClass
+[conv] 0x4df0d0 FootClass::ClearPathIndex -> FootClass
+[conv] 0x4df1c0 TechnoClass::vt_entry_4AC -> TechnoClass
+[conv] 0x4df310 TechnoClass::vt_entry_4C4 -> TechnoClass
+[conv] 0x4e10b0 sub_4E10B0 -> _addr_4E
+[conv] 0x4e1cb0 sub_4E1CB0 -> _addr_4E
+[conv] 0x4e30b0 GaugeClass::Draw -> GaugeClass
+[conv] 0x4e6470 sub_4E6470 -> _addr_4E
+[conv] 0x4f1090 sub_4F1090 -> _addr_4F
+[conv] 0x4f41d0 sub_4F41D0 -> _addr_4F
+[conv] 0x4f50a0 sub_4F50A0 -> _addr_4F
+[conv] 0x510ca0 sub_510CA0 -> _addr_51
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_4C                 rc=2
+[era] _addr_4D                 rc=0
+[era] FootClass                rc=0
+[era] TechnoClass              rc=0
+[era] _addr_4E                 rc=0
+[era] GaugeClass               rc=0
+[era] _addr_4F                 rc=0
+[era] _addr_51                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4c6080   MATCH            sub_4C6080
+[diff] 0x4c9840   MATCH            sub_4C9840
+[diff] 0x4cbb50   MISMATCH         sub_4CBB50
+[diff] 0x4cc0b0   MATCH            sub_4CC0B0
+[diff] 0x4cc930   MISMATCH         sub_4CC930
+[diff] 0x4d0700   MATCH            sub_4D0700
+[diff] 0x4da020   MATCH            globalHelper_0DA020
+[diff] 0x4da1c0   MISMATCH         FootClass::ClearSomeVector
+[diff] 0x4df0d0   MATCH            FootClass::ClearPathIndex
+[diff] 0x4df1c0   MATCH            TechnoClass::vt_entry_4AC
+[diff] 0x4df310   MATCH            TechnoClass::vt_entry_4C4
+[diff] 0x4e10b0   MATCH            sub_4E10B0
+[diff] 0x4e1cb0   MATCH            sub_4E1CB0
+[diff] 0x4e6470   MATCH            sub_4E6470
+[diff] 0x4e30b0   MISMATCH         GaugeClass::Draw
+[diff] 0x4f1090   MATCH            sub_4F1090
+[diff] 0x4f41d0   MATCH            sub_4F41D0
+[diff] 0x4f50a0   MISMATCH         sub_4F50A0
+[diff] 0x510ca0   MATCH            sub_510CA0
+[ledger] 0x4c6080 sub_4C6080 -> OK (attempt 1)
+[ledger] 0x4c8390 sub_4C8390 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c9840 sub_4C9840 -> OK (attempt 1)
+[ledger] 0x4cbb50 sub_4CBB50 -> NG (attempt 1)
+[ledger] 0x4cc0b0 sub_4CC0B0 -> OK (attempt 1)
+[ledger] 0x4cc930 sub_4CC930 -> NG (attempt 1)
+[ledger] 0x4d0700 sub_4D0700 -> OK (attempt 1)
+[ledger] 0x4da020 globalHelper_0DA020 -> OK (attempt 1)
+[ledger] 0x4da1c0 FootClass::ClearSomeVector -> NG (attempt 1)
+[ledger] 0x4df0d0 FootClass::ClearPathIndex -> OK (attempt 1)
+[ledger] 0x4df1c0 TechnoClass::vt_entry_4AC -> OK (attempt 1)
+[ledger] 0x4df310 TechnoClass::vt_entry_4C4 -> OK (attempt 1)
+[ledger] 0x4e10b0 sub_4E10B0 -> OK (attempt 1)
+[ledger] 0x4e1cb0 sub_4E1CB0 -> OK (attempt 1)
+[ledger] 0x4e30b0 GaugeClass::Draw -> NG (attempt 1)
+[ledger] 0x4e6470 sub_4E6470 -> OK (attempt 1)
+[ledger] 0x4f1090 sub_4F1090 -> OK (attempt 1)
+[ledger] 0x4f41d0 sub_4F41D0 -> OK (attempt 1)
+[ledger] 0x4f50a0 sub_4F50A0 -> NG (attempt 1)
+[ledger] 0x510ca0 sub_510CA0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 5
+ },
+ "pathologies": {
+  "extern_reloc": 3,
+  "codegen_shape": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 73.7,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p56\batch_report.json
