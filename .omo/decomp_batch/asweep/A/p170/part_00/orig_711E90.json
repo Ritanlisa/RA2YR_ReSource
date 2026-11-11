@@ -1,0 +1,11 @@
+{
+ "addr": "0x711E90",
+ "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x711E90",
+ "bytes_hex": "8b819808000085c0740d8a81c806000084c07503b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

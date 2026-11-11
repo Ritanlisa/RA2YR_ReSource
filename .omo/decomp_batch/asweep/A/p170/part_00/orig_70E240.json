@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E240",
+ "name": "IsNonNullPtr",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E240",
+ "bytes_hex": "8b44240485c0740d8338007408b801000000c2040033c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsNonNullPtr@@YGHPAI@Z",
+ "sym_key": "Unnamed::IsNonNullPtr",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b44240485c0740d8338007408b801000000c2040033c0c20400",
+ "relocs": []
+}

@@ -168,3 +168,4 @@
 {"layer": "A", "part": 167, "n": 20, "seconds": 13.7, "ok": true, "verdicts": {"MISMATCH": 19, "MATCH": 1}}
 {"layer": "A", "part": 168, "n": 20, "seconds": 12.3, "ok": true, "verdicts": {"MISMATCH": 19, "MATCH": 1}}
 {"layer": "A", "part": 169, "n": 20, "seconds": 10.5, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "A", "part": 170, "n": 20, "seconds": 12.4, "ok": true, "verdicts": {"MISMATCH": 17, "MATCH": 1, "COMPILE_FAIL": 2}}

@@ -1,0 +1,92 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p170\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dcf40 sub_6DCF40 -> _addr_6D
+[conv] 0x6e4d20 sub_6E4D20 -> _addr_6E
+[conv] 0x6e5aa0 sub_6E5AA0 -> _addr_6E
+[conv] 0x6e6a10 sub_6E6A10 -> _addr_6E
+[conv] 0x6e7e40 sub_6E7E40 -> _addr_6E
+[conv] 0x6e8a50 sub_6E8A50 -> _addr_6E
+[conv] 0x6f0640 sub_6F0640 -> _addr_6F
+[conv] 0x70c5f0 TechnoClass::IsNotShrouded -> TechnoClass
+[conv] 0x70e240 IsNonNullPtr -> _addr_70
+[conv] 0x710ab0 sub_710AB0 -> _addr_71
+[conv] 0x711e90 TechnoTypeClass::CanAttackMove_IgnoreWeapon -> TechnoTypeClass
+[conv] 0x717fc0 sub_717FC0 -> _addr_71
+[conv] 0x71a390 sub_71A390 -> _addr_71
+[conv] 0x71b770 sub_71B770 -> _addr_71
+[conv] 0x71d560 sub_71D560 -> _addr_71
+[conv] 0x720400 sub_720400 -> _addr_72
+[conv] 0x721600 sub_721600 -> _addr_72
+[conv] 0x725290 sub_725290 -> _addr_72
+[conv] 0x725f60 sub_725F60 -> _addr_72
+[conv] 0x726c40 sub_726C40 -> _addr_72
+=== emit 8 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6D                 rc=0
+[era] _addr_6E                 rc=0
+[era] _addr_6F                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_70                 rc=0
+[era] _addr_71                 rc=0
+[era] TechnoTypeClass          rc=0
+[era] _addr_72                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6dcf40   MISMATCH         sub_6DCF40
+[diff] 0x6e4d20   MISMATCH         sub_6E4D20
+[diff] 0x6e5aa0   MISMATCH         sub_6E5AA0
+[diff] 0x6e6a10   MISMATCH         sub_6E6A10
+[diff] 0x6e7e40   MISMATCH         sub_6E7E40
+[diff] 0x6e8a50   MISMATCH         sub_6E8A50
+[diff] 0x6f0640   MISMATCH         sub_6F0640
+[diff] 0x70c5f0   MISMATCH         TechnoClass::IsNotShrouded
+[diff] 0x70e240   MATCH            IsNonNullPtr
+[diff] 0x710ab0   MISMATCH         sub_710AB0
+[diff] 0x717fc0   MISMATCH         sub_717FC0
+[diff] 0x71a390   MISMATCH         sub_71A390
+[diff] 0x71b770   MISMATCH         sub_71B770
+[diff] 0x71d560   MISMATCH         sub_71D560
+[diff] 0x711e90   MISMATCH         TechnoTypeClass::CanAttackMove_IgnoreWeapon
+[diff] 0x725290   MISMATCH         sub_725290
+[diff] 0x725f60   MISMATCH         sub_725F60
+[diff] 0x726c40   MISMATCH         sub_726C40
+[ledger] 0x6dcf40 sub_6DCF40 -> NG (attempt 1)
+[ledger] 0x6e4d20 sub_6E4D20 -> NG (attempt 1)
+[ledger] 0x6e5aa0 sub_6E5AA0 -> NG (attempt 1)
+[ledger] 0x6e6a10 sub_6E6A10 -> NG (attempt 1)
+[ledger] 0x6e7e40 sub_6E7E40 -> NG (attempt 1)
+[ledger] 0x6e8a50 sub_6E8A50 -> NG (attempt 1)
+[ledger] 0x6f0640 sub_6F0640 -> NG (attempt 1)
+[ledger] 0x70c5f0 TechnoClass::IsNotShrouded -> NG (attempt 1)
+[ledger] 0x70e240 IsNonNullPtr -> OK (attempt 1)
+[ledger] 0x710ab0 sub_710AB0 -> NG (attempt 1)
+[ledger] 0x711e90 TechnoTypeClass::CanAttackMove_IgnoreWeapon -> NG (attempt 1)
+[ledger] 0x717fc0 sub_717FC0 -> NG (attempt 1)
+[ledger] 0x71a390 sub_71A390 -> NG (attempt 1)
+[ledger] 0x71b770 sub_71B770 -> NG (attempt 1)
+[ledger] 0x71d560 sub_71D560 -> NG (attempt 1)
+[ledger] 0x720400 sub_720400 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721600 sub_721600 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x725290 sub_725290 -> NG (attempt 1)
+[ledger] 0x725f60 sub_725F60 -> NG (attempt 1)
+[ledger] 0x726c40 sub_726C40 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 17,
+  "MATCH": 1,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "extern_reloc": 15,
+  "ret_norm": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 5.6,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p170\batch_report.json

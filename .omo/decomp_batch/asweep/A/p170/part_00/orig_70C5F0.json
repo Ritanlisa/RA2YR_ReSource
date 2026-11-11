@@ -1,0 +1,11 @@
+{
+ "addr": "0x70C5F0",
+ "name": "ObjectClass::IsNotShrouded",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70C5F0",
+ "bytes_hex": "8a817002000084c0750d8a817102000084c07503b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
