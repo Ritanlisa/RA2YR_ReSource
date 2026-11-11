@@ -22,3 +22,4 @@
 {"part": 21, "n": 20, "seconds": 20.2, "ok": true, "verdicts": {"MATCH": 4, "COMPILE_FAIL": 6, "MISMATCH": 10}}
 {"part": 22, "n": 20, "seconds": 18.4, "ok": true, "verdicts": {"MISMATCH": 13, "MATCH": 3, "COMPILE_FAIL": 4}}
 {"part": 23, "n": 20, "seconds": 18.0, "ok": true, "verdicts": {"MATCH": 5, "COMPILE_FAIL": 11, "MISMATCH": 4}}
+{"part": 24, "n": 20, "seconds": 19.2, "ok": true, "verdicts": {"COMPILE_FAIL": 12, "MISMATCH": 6, "MATCH": 2}}

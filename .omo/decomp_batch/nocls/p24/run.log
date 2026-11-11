@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p24\part_00
+=== convert (20 addrs) ===
+[conv] 0x77c9a0 sub_77C9A0 -> _addr_77
+[conv] 0x77ca00 sub_77CA00 -> _addr_77
+[conv] 0x77ca60 sub_77CA60 -> _addr_77
+[conv] 0x77cf90 unknown_libname_43 -> _addr_77
+[conv] 0x77d0f0 sub_77D0F0 -> _addr_77
+[conv] 0x77d160 sub_77D160 -> _addr_77
+[conv] 0x77d8d0 unknown_libname_55 -> _addr_77
+[conv] 0x77e780 sub_77E780 -> _addr_77
+[conv] 0x7813b0 sub_7813B0 -> _addr_78
+[conv] 0x781cf0 sub_781CF0 -> _addr_78
+[conv] 0x782bb0 FindBuddyList -> _addr_78
+[conv] 0x783270 SortWOLPlayerList -> _addr_78
+[conv] 0x797640 LoginWOL -> _addr_79
+[conv] 0x7982d0 sub_7982D0 -> _addr_79
+[conv] 0x79f0a0 sub_79F0A0 -> _addr_79
+[conv] 0x7af280 sub_7AF280 -> _addr_7A
+[conv] 0x7af4d0 unknown_libname_66 -> _addr_7A
+[conv] 0x7b0370 RequestMatchWOL_Helper -> RequestMatchWOL
+[conv] 0x7b0c10 sub_7B0C10 -> _addr_7B
+[conv] 0x7b0cb0 sub_7B0CB0 -> _addr_7B
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_77                 rc=2
+[era] _addr_78                 rc=2
+[era] _addr_79                 rc=2
+[era] _addr_7A                 rc=2
+[era] RequestMatchWOL          rc=0
+[era] _addr_7B                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x77d8d0   MISMATCH         unknown_libname_55
+[diff] 0x77e780   MATCH            sub_77E780
+[diff] 0x7813b0   MISMATCH         sub_7813B0
+[diff] 0x781cf0   MISMATCH         sub_781CF0
+[diff] 0x79f0a0   MISMATCH         sub_79F0A0
+[diff] 0x7af280   MISMATCH         sub_7AF280
+[diff] 0x7b0370   MATCH            RequestMatchWOL_Helper
+[diff] 0x7b0c10   MISMATCH         sub_7B0C10
+[ledger] 0x77c9a0 sub_77C9A0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77ca00 sub_77CA00 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77ca60 sub_77CA60 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77cf90 unknown_libname_43 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d0f0 sub_77D0F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d160 sub_77D160 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x77d8d0 unknown_libname_55 -> NG (attempt 2)
+[ledger] 0x77e780 sub_77E780 -> OK (attempt 2)
+[ledger] 0x7813b0 sub_7813B0 -> NG (attempt 2)
+[ledger] 0x781cf0 sub_781CF0 -> NG (attempt 2)
+[ledger] 0x782bb0 FindBuddyList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x783270 SortWOLPlayerList -> COMPILE_FAIL (attempt 2)
+[ledger] 0x797640 LoginWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7982d0 sub_7982D0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x79f0a0 sub_79F0A0 -> NG (attempt 2)
+[ledger] 0x7af280 sub_7AF280 -> NG (attempt 2)
+[ledger] 0x7af4d0 unknown_libname_66 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7b0370 RequestMatchWOL_Helper -> OK (attempt 2)
+[ledger] 0x7b0c10 sub_7B0C10 -> NG (attempt 2)
+[ledger] 0x7b0cb0 sub_7B0CB0 -> COMPILE_FAIL (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 6,
+  "MATCH": 2
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "branch_order": 2,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 25.0,
+ "match_rate_of_total_pct": 10.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p24\batch_report.json

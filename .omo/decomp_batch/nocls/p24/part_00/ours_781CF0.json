@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_781CF0@@YAEPBXPAPAD@Z",
+ "sym_key": "Unnamed::sub_781CF0",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048b542408568b41088b72083bc65e75118b41048b4a045051e80000000083c408c333d285c00f95c2f7da83e2fe428ac2c3",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "REL32",
+   "sym": "__strcmpi",
+   "sym_key": "_strcmpi"
+  }
+ ]
+}

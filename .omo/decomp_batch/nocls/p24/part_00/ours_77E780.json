@@ -1,0 +1,27 @@
+{
+ "symbol": "?sub_77E780@@YAHXZ",
+ "sym_key": "Unnamed::sub_77E780",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "a1000000008b0d0000000033c18b0d0000000033c1c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?CCINIClass_ArtHash@@3IA",
+   "sym_key": "CCINIClass_ArtHash"
+  },
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?CCINIClass_AIHash@@3IA",
+   "sym_key": "CCINIClass_AIHash"
+  },
+  {
+   "off": 15,
+   "type": "DIR32",
+   "sym": "?CCINIClass_RulesHash@@3IA",
+   "sym_key": "CCINIClass_RulesHash"
+  }
+ ]
+}

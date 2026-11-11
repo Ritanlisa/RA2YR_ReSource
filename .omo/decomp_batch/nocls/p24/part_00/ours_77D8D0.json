@@ -1,0 +1,21 @@
+{
+ "symbol": "?unknown_libname_55@@YAPAXXZ",
+ "sym_key": "Unnamed::unknown_libname_55",
+ "size": 13,
+ "link_base": 0,
+ "bytes_hex": "33c98a0d00000000e900000000",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?g_INI_Key_Battleclans@@3EA",
+   "sym_key": "g_INI_Key_Battleclans"
+  },
+  {
+   "off": 9,
+   "type": "REL32",
+   "sym": "?ShowDialog@WebBrowser@@QAEPAXXZ",
+   "sym_key": "WebBrowser::ShowDialog"
+  }
+ ]
+}

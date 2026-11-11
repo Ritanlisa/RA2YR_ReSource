@@ -1,0 +1,122 @@
+[
+ {
+  "addr": "0x77c9a0",
+  "batch": "nocls",
+  "name": "sub_77C9A0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77ca00",
+  "batch": "nocls",
+  "name": "sub_77CA00",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77ca60",
+  "batch": "nocls",
+  "name": "sub_77CA60",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77cf90",
+  "batch": "nocls",
+  "name": "unknown_libname_43",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x77d0f0",
+  "batch": "nocls",
+  "name": "sub_77D0F0",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77d160",
+  "batch": "nocls",
+  "name": "sub_77D160",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77d8d0",
+  "batch": "nocls",
+  "name": "unknown_libname_55",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x77e780",
+  "batch": "nocls",
+  "name": "sub_77E780",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7813b0",
+  "batch": "nocls",
+  "name": "sub_7813B0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x781cf0",
+  "batch": "nocls",
+  "name": "sub_781CF0",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x782bb0",
+  "batch": "nocls",
+  "name": "FindBuddyList",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x783270",
+  "batch": "nocls",
+  "name": "SortWOLPlayerList",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x797640",
+  "batch": "nocls",
+  "name": "LoginWOL",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x7982d0",
+  "batch": "nocls",
+  "name": "sub_7982D0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x79f0a0",
+  "batch": "nocls",
+  "name": "sub_79F0A0",
+  "cc": "fastcall"
+ },
+ {
+  "addr": "0x7af280",
+  "batch": "nocls",
+  "name": "sub_7AF280",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7af4d0",
+  "batch": "nocls",
+  "name": "unknown_libname_66",
+  "cc": "cdecl"
+ },
+ {
+  "addr": "0x7b0370",
+  "batch": "nocls",
+  "name": "RequestMatchWOL_Helper",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7b0c10",
+  "batch": "nocls",
+  "name": "sub_7B0C10",
+  "cc": "unknown"
+ },
+ {
+  "addr": "0x7b0cb0",
+  "batch": "nocls",
+  "name": "sub_7B0CB0",
+  "cc": "unknown"
+ }
+]
