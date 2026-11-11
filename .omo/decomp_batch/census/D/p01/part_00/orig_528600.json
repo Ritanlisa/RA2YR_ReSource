@@ -1,0 +1,11 @@
+{
+ "addr": "0x528600",
+ "name": "INIClass::GetString2",
+ "size": 96,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x528600",
+ "bytes_hex": "81ec0002000053568bf1578b8c2414020000e829ce28008b8c24100200008bf8e81bce2800dd84241802000083ec088bd88d442414dd1c2468d85b820050e8b1082a0083c4108d4c240c5157538bcee80c0000005f5e5b81c400020000c21000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

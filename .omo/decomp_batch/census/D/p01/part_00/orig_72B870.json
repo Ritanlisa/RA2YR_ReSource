@@ -1,0 +1,11 @@
+{
+ "addr": "0x72B870",
+ "name": "LoadProgressMgr_Release_72B870",
+ "size": 97,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72B870",
+ "bytes_hex": "8b0da0fbb0005633f63bce740c8b016a01ff108935a0fbb000a19cfbb0003bc6740f50e8a5d2090083c40489359cfbb000a194fbb0003bc6740f50e88dd2090083c404893594fbb0008b0d98fbb0003bce740c8b116a01ff12893598fbb0005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

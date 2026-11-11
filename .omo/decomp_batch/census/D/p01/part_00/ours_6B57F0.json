@@ -1,0 +1,45 @@
+{
+ "symbol": "?PowerDrainUpdate@SmudgeTypeClass@@QAEHPAH@Z",
+ "sym_key": "SmudgeTypeClass::PowerDrainUpdate",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "56578b7c240c8bf157e8000000008b869402000050e8000000008b54240c33c98a8ea002000080e2000bca518bcfe8000000008b4c240c33c08a86a102000080e1000bc18bcf50e8000000008b969802000052e8000000008b869c02000050e8000000005f5ec20400",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?ProcessPower@AbstractTypeClass@@QAEHPAX@Z",
+   "sym_key": "AbstractTypeClass::ProcessPower"
+  },
+  {
+   "off": 22,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 47,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?FlagProcess@Power@@QAEHH@Z",
+   "sym_key": "Power::FlagProcess"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  },
+  {
+   "off": 96,
+   "type": "REL32",
+   "sym": "?Power__TimerProcess@@YGHH@Z",
+   "sym_key": "Power__TimerProcess"
+  }
+ ]
+}

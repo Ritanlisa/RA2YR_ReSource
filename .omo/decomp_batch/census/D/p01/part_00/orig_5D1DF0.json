@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D1DF0",
+ "name": "MSEngine::ProcessEvents",
+ "size": 88,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D1DF0",
+ "bytes_hex": "83ec0c53568bf1578d4c2410e83f6e0f008b5c24208944240c895c24148d7e188b078d4c241c518bcfff501083f8ff741e8b561c8b0c828b01ff501c84c0750f85db760b6a018bcee8d3050000ebd15f5e5b83c40cc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

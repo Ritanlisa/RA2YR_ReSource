@@ -1,0 +1,11 @@
+{
+ "addr": "0x6B57F0",
+ "name": "SmudgeTypeClass::PowerDrainUpdate",
+ "size": 89,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6B57F0",
+ "bytes_hex": "56578b7c240c8bf157e8e2b3d5ff8b86940200008bcf50e844c5deff8a8ea0020000518bcfe886c4deff8a96a10200008bcf52e878c4deff8b86980200008bcf50e81ac5deff8b8e9c020000518bcfe80cc5deff5f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

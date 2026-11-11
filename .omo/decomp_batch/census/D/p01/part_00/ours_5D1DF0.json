@@ -1,0 +1,21 @@
+{
+ "symbol": "?ProcessEvents@MSEngine@@QAEHDH@Z",
+ "sym_key": "MSEngine::ProcessEvents",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "5356578bf1e8000000008b5c24148d7e188b078d4c24105157ff501083f8ff741f8b561c8b0482508b08ff511c84c0750f85db740b6a018bcee800000000ebd15f5e5bc20800",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "REL32",
+   "sym": "?GetTicks@Timer@@QAEKXZ",
+   "sym_key": "Timer::GetTicks"
+  },
+  {
+   "off": 58,
+   "type": "REL32",
+   "sym": "?FrameLoop@GameClass@@QAEHH@Z",
+   "sym_key": "GameClass::FrameLoop"
+  }
+ ]
+}

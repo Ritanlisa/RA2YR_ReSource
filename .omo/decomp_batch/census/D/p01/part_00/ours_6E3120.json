@@ -1,0 +1,39 @@
+{
+ "symbol": "?SmallFunc_6E3120@ObjectClass@@QAEDHPAPAPAXPAHHH1H@Z",
+ "sym_key": "ObjectClass::SmallFunc_6E3120",
+ "size": 112,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b4c2418568bb09000000085c9750632c05ec21c0081fe252300007507e800000000eb2483feff750632c05ec21c008bcee80000000084c08bce7407e800000000eb05e80000000085c0750632c05ec21c008b4c24108b54240c56518b4c241052e800000000b0015ec21c00",
+ "relocs": [
+  {
+   "off": 34,
+   "type": "REL32",
+   "sym": "?GetField11@Property@@QAEHXZ",
+   "sym_key": "Property::GetField11"
+  },
+  {
+   "off": 54,
+   "type": "REL32",
+   "sym": "?IsSpecialType@BuildingType@@QAE_NXZ",
+   "sym_key": "BuildingType::IsSpecialType"
+  },
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?FindOwnerHouse@BuildingType@@QAEHXZ",
+   "sym_key": "BuildingType::FindOwnerHouse"
+  },
+  {
+   "off": 72,
+   "type": "REL32",
+   "sym": "?FindOwner@HouseClass@@QAEHXZ",
+   "sym_key": "HouseClass::FindOwner"
+  },
+  {
+   "off": 102,
+   "type": "REL32",
+   "sym": "?RespawnStartingBuildings@HouseClass@@QAEHPAX0H@Z",
+   "sym_key": "HouseClass::RespawnStartingBuildings"
+  }
+ ]
+}

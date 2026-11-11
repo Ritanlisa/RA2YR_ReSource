@@ -1,0 +1,98 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p01\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e3120 ObjectClass::SmallFunc_6E3120 -> ObjectClass
+[conv] 0x603f60 unknown::WOLobby_Setup -> unknown
+[conv] 0x70e140 TechnoClass::SelectWeaponSlot -> TechnoClass
+[conv] 0x60b740 ObjectClass::sub_60B740 -> ObjectClass
+[conv] 0x5d1df0 MSEngine::ProcessEvents -> MSEngine
+[conv] 0x6b57f0 SmudgeTypeClass::PowerDrainUpdate -> SmudgeTypeClass
+[conv] 0x4cb8b0 ObjectClass::sub_4CB8B0 -> ObjectClass
+[conv] 0x49f5c0 CopyProtection::CheckLauncher -> CopyProtection
+[conv] 0x7b7600 WideString::Reassign -> WideString
+[conv] 0x7d9d7f unknown::_mbtowc -> unknown
+[conv] 0x7d96a8 ObjectClass::__lock_fhandle -> ObjectClass
+[conv] 0x528600 INIClass::GetString2 -> INIClass
+[conv] 0x7740a0 WebBrowser::GoForward -> WebBrowser
+[conv] 0x72b870 ObjectClass::LoadProgressMgr_Release_72B870 -> ObjectClass
+[conv] 0x7d73f9 unknown::_TestDefaultLanguage -> unknown
+[conv] 0x766880 rc_ptr::System_Init_766880 -> rc_ptr
+[conv] 0x7b0220 ComStreamClass::seekToPosition -> ComStreamClass
+[conv] 0x5ce330 ObjectClass::sub_5CE330 -> ObjectClass
+[conv] 0x479a40 unknown::sub_479A40 -> unknown
+[conv] 0x540670 IPXGlobalConnClass::QueryInterface -> IPXGlobalConnClass
+=== emit 12 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] TechnoClass              rc=2
+[era] MSEngine                 rc=0
+[era] SmudgeTypeClass          rc=0
+[era] CopyProtection           rc=2
+[era] WideString               rc=2
+[era] INIClass                 rc=0
+[era] WebBrowser               rc=2
+[era] rc_ptr                   rc=2
+[era] ComStreamClass           rc=2
+[era] IPXGlobalConnClass       rc=2
+=== diffasm byte-compare ===
+[diff] 0x6e3120   MISMATCH         ObjectClass::SmallFunc_6E3120
+[diff] 0x72b870   MISMATCH         ObjectClass::LoadProgressMgr_Release_72B870
+[diff] 0x5d1df0   MISMATCH         MSEngine::ProcessEvents
+[diff] 0x6b57f0   MISMATCH         SmudgeTypeClass::PowerDrainUpdate
+[diff] 0x528600   MISMATCH         INIClass::GetString2
+[ledger] 0x6e3120 SmallFunc_6E3120 -> NG (attempt 1)
+[ledger] 0x603f60 WOLobby_Setup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70e140 TechnoClass::SelectWeaponSlot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x60b740 sub_60B740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d1df0 MSEngine::ProcessEvents -> NG (attempt 1)
+[ledger] 0x6b57f0 SmudgeTypeClass::PowerDrainUpdate -> NG (attempt 1)
+[ledger] 0x4cb8b0 sub_4CB8B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49f5c0 CopyProtection::CheckLauncher -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7600 WideString::Reassign -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d9d7f _mbtowc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d96a8 __lock_fhandle -> COMPILE_FAIL (attempt 1)
+[ledger] 0x528600 INIClass::GetString2 -> NG (attempt 1)
+[ledger] 0x7740a0 WebBrowser::GoForward -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72b870 LoadProgressMgr_Release_72B870 -> NG (attempt 1)
+[ledger] 0x7d73f9 _TestDefaultLanguage -> COMPILE_FAIL (attempt 1)
+[ledger] 0x766880 System_Init_766880 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b0220 ComStreamClass::seekToPosition -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5ce330 sub_5CE330 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x479a40 sub_479A40 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x540670 IPXGlobalConnClass::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2394,
+ "verdicts": {
+  "MISMATCH": 669,
+  "MATCH": 521,
+  "COMPILE_FAIL": 683,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 505,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 230,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 66,
+  "branch_polarity": 48,
+  "regalloc": 107,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 43.8,
+ "match_rate_of_total_pct": 21.8,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p01\batch_report.json
