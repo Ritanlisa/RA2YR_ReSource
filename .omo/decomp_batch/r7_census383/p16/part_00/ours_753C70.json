@@ -1,0 +1,15 @@
+{
+ "symbol": "?DriverGet@unknown@@QAEPAHXZ",
+ "sym_key": "unknown::DriverGet",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D928@@3IA",
+   "sym_key": "DataGlobal_B2D928"
+  }
+ ]
+}
