@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b3cd0 sub_6B3CD0 -> _addr_6B
+[conv] 0x6b4240 Map_Helper_6B4240 -> Map_Helper
+[conv] 0x6b4840 sub_6B4840 -> _addr_6B
+[conv] 0x6b4a10 sub_6B4A10 -> _addr_6B
+[conv] 0x6b6230 ShowAudioSettingsDialog -> _addr_6B
+[conv] 0x6b6a70 sub_6B6A70 -> _addr_6B
+[conv] 0x6b8920 sub_6B8920 -> _addr_6B
+[conv] 0x6b8a00 sub_6B8A00 -> _addr_6B
+[conv] 0x6bb220 sub_6BB220 -> _addr_6B
+[conv] 0x6c6930 sub_6C6930 -> _addr_6C
+[conv] 0x6c6a00 sub_6C6A00 -> _addr_6C
+[conv] 0x6c6ab0 sub_6C6AB0 -> _addr_6C
+[conv] 0x6c8d50 sub_6C8D50 -> _addr_6C
+[conv] 0x6cac40 sub_6CAC40 -> _addr_6C
+[conv] 0x6caca0 sub_6CACA0 -> _addr_6C
+[conv] 0x6cad80 sub_6CAD80 -> _addr_6C
+[conv] 0x6ce550 sub_6CE550 -> _addr_6C
+[conv] 0x6d1830 sub_6D1830 -> _addr_6D
+[conv] 0x6d18e0 sub_6D18E0 -> _addr_6D
+[conv] 0x6d19e0 sub_6D19E0 -> _addr_6D
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_6B                 rc=2
+[era] Map_Helper               rc=2
+[era] _addr_6C                 rc=2
+[era] _addr_6D                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x6b4a10   MISMATCH         sub_6B4A10
+[diff] 0x6b6a70   MISMATCH         sub_6B6A70
+[diff] 0x6b8920   MISMATCH         sub_6B8920
+[diff] 0x6b8a00   MISMATCH         sub_6B8A00
+[diff] 0x6bb220   MATCH            sub_6BB220
+[diff] 0x6c6930   MISMATCH         sub_6C6930
+[diff] 0x6c6a00   MISMATCH         sub_6C6A00
+[diff] 0x6c6ab0   MATCH            sub_6C6AB0
+[diff] 0x6cac40   MISMATCH         sub_6CAC40
+[diff] 0x6caca0   MISMATCH         sub_6CACA0
+[diff] 0x6ce550   MISMATCH         sub_6CE550
+[diff] 0x6d18e0   MISMATCH         sub_6D18E0
+[diff] 0x6d19e0   MATCH            sub_6D19E0
+[ledger] 0x6b3cd0 sub_6B3CD0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4240 Map_Helper_6B4240 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4840 sub_6B4840 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b4a10 sub_6B4A10 -> NG (attempt 2)
+[ledger] 0x6b6230 ShowAudioSettingsDialog -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6b6a70 sub_6B6A70 -> NG (attempt 2)
+[ledger] 0x6b8920 sub_6B8920 -> NG (attempt 2)
+[ledger] 0x6b8a00 sub_6B8A00 -> NG (attempt 2)
+[ledger] 0x6bb220 sub_6BB220 -> OK (attempt 2)
+[ledger] 0x6c6930 sub_6C6930 -> NG (attempt 2)
+[ledger] 0x6c6a00 sub_6C6A00 -> NG (attempt 2)
+[ledger] 0x6c6ab0 sub_6C6AB0 -> OK (attempt 2)
+[ledger] 0x6c8d50 sub_6C8D50 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6cac40 sub_6CAC40 -> NG (attempt 2)
+[ledger] 0x6caca0 sub_6CACA0 -> NG (attempt 2)
+[ledger] 0x6cad80 sub_6CAD80 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ce550 sub_6CE550 -> NG (attempt 2)
+[ledger] 0x6d1830 sub_6D1830 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6d18e0 sub_6D18E0 -> NG (attempt 2)
+[ledger] 0x6d19e0 sub_6D19E0 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 7,
+  "MISMATCH": 10,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 23.1,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p17\batch_report.json
