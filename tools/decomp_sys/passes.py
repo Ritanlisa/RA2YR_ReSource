@@ -177,6 +177,23 @@ class ClassView(object):
             "name": name, "type": era_type, "width": width, "src": src or "-"}
 
     def add_array(self, cls, off, name, elem, count, src):
+        cur = self.arrays.setdefault(cls, {}).get(off)
+        if cur is not None:
+            # CW3-2: one offset can be read through several value shapes
+            # (`*(void **)&m[3]` read vs `*(_DWORD *)&m[3] = 0` store).
+            # Keep the POINTER element spelling -- it satisfies both uses
+            # (a scalar assignment of 0 into a pointer element is legal),
+            # while the reverse would reject the pointer load (C2440).
+            ce = cur.get("elem") or ""
+            ne = elem or ""
+            if ce.endswith("*") and not ne.endswith("*"):
+                elem = ce
+            if not name:
+                name = cur.get("name")
+            if not count:
+                count = cur.get("count") or 0
+            if not src:
+                src = cur.get("src")
         self.arrays.setdefault(cls, {})[off] = {
             "name": name, "elem": elem, "count": count, "src": src or "-"}
 
@@ -267,7 +284,8 @@ def pass_param_rename(ctx):
     ctx.lines = body.split("\n")
 
 
-_GLOBAL_RE = re.compile(r"\b(dword|word|byte|qword|flt|dbl|unk)_[0-9A-Fa-f]{6,}\b")
+_GLOBAL_RE = re.compile(
+    r"\b(dword|word|byte|qword|flt|dbl|unk|stru|off)_[0-9A-Fa-f]{6,}\b")
 
 _GLOBAL_PREFIX_TYPE = {
     "dword": "unsigned int", "word": "unsigned short",
@@ -284,6 +302,32 @@ _GLOBAL_PREFIX_TYPE = {
 # `anchors/global_type_evidence.json` records exactly those globals with the
 # proving function; the spelling here is the signed twin of the same width.
 _GLOBAL_TY_EVIDENCE = {}
+
+# CW3-3: IDA's own global type table (anchors/ida_global_types.json, addr ->
+# {name,type}).  The export bodies were rendered against THESE types, so for
+# `.member` chains they name the exact owner class -- the registry
+# `global_types` channel is binary-comparison evidence and often only says
+# `uint32_t`/`void*`.
+_IDA_GTYPES = {}
+
+
+def _ida_global_type_index():
+    if "idx" not in _IDA_GTYPES:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "..", "anchors", "ida_global_types.json")
+        idx = {}
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f) or {}
+            for k, v in raw.items():
+                try:
+                    idx[int(k, 16)] = v
+                except (TypeError, ValueError):
+                    continue
+        except (OSError, ValueError):
+            pass
+        _IDA_GTYPES["idx"] = idx
+    return _IDA_GTYPES["idx"]
 
 
 def _load_global_ty_evidence():
@@ -601,41 +645,103 @@ def pass_struct_globals(ctx):
     #       model).
     gmo = getattr(ctx.reg, "global_member_offset", None)
 
+    def _global_addr(base):
+        rec = (getattr(ctx.reg, "reg", {}) or {}).get("globals", {}).get(base)
+        if isinstance(rec, dict) and rec.get("addr"):
+            try:
+                return int(str(rec["addr"]), 16)
+            except (TypeError, ValueError):
+                return None
+        return None
+
+    def _owner_from_ida_type(base):
+        """IDA's declared global type -> a registry class owning its members.
+
+        The export bodies were RENDERED against IDA's global type, so that
+        type is the exact owner for `.member`/`[i].member` chains.  The
+        registry global type (`global_types.json`, binary-comparison
+        evidence) is often just `uint32_t`/`void*` and carries no owner.
+        """
+        a = _global_addr(base)
+        if a is None:
+            return None
+        idx = _ida_global_type_index()
+        e = idx.get(a)
+        if not e:
+            return None
+        ty = (e.get("type") or "").strip()
+        ty = re.sub(r"\[\]$", "", ty).strip()
+        ty = ty.rstrip("*").strip()
+        ty = re.sub(r"^(?:const|struct|class|union)\s+", "", ty).strip()
+        if not ty or "(" in ty or " " in ty:
+            return None
+        k = ctx.reg.class_key(ty)
+        return k
+
+    def _owner_from_name(base):
+        cand = base
+        for pre in ("g_", "s_"):
+            if cand.startswith(pre):
+                cand = cand[len(pre):]
+                break
+        cand = re.sub(r"_(?:Array|array)$", "", cand)
+        cand = re.sub(r"\[\]$", "", cand)
+        cand = re.sub(r"_\d+$", "", cand)
+        return ctx.reg.class_key(cand)
+
+    def _member_hit(base, mem):
+        """(offset, type) via reverse index, else via an owner class."""
+        hit = gmo(mem) if gmo is not None else None
+        if hit is not None:
+            return hit
+        for owner in (_owner_from_ida_type(base), _owner_from_name(base)):
+            if not owner:
+                continue
+            r = ctx.reg.member_offset_by_ida_name(owner, mem)
+            if r is not None and r[0] is not None:
+                return (r[0], (r[1] or {}).get("type"))
+            inh = getattr(ctx.reg, "member_offset_inherited", None)
+            if inh is not None:
+                r = inh(owner, mem)
+                if r is not None and r[0] is not None:
+                    return (r[0], (r[1] or {}).get("type"))
+        return None
+
     def _named_mem_sub(m):
         nonlocal changed
         base, mem = m.group(1), m.group(2)
-        if not _named_global_ok(base):
+        stru_base = base.startswith("stru_")
+        if not stru_base and not _named_global_ok(base):
             return m.group(0)
-        if gmo is None:
-            return m.group(0)
-        hit = gmo(mem)
+        hit = _member_hit(base, mem)
         if hit is None:
             return m.group(0)
+        if stru_base:
+            # registry-less IDA-plate struct global: byte carrier
+            ctx.used_globals.setdefault(base, "char[]")
         off, ty = hit
         sp = spell_type(ty) if ty else "int"
         if sp not in WIDTH_OF and not sp.endswith("*"):
             sp = "int"
         addr = "((char *)&%s)" % base
-        j = m.end()
-        idx_expr = None
-        if j < len(text) and text[j] == "[":
-            k = _balanced_close(text, j)
-            if k > 0:
-                idx_expr = text[j + 1:k]
+        # CW3-3: the index is part of the match now (the old manual scan
+        # left the original `[i]` in place -> `(...)[i][i]`, C2109).
+        idx_expr = (m.group("idx") or "")[1:-1] if m.group("idx") else None
         changed += 1
-        if idx_expr is not None:
+        if idx_expr is not None and idx_expr.strip():
             ctx.sites.append(Site(
-                "global", "%s.%s" % (base, mem),
-                "named member view -> ((%s *)(%s + 0x%X))[idx] (registry "
-                "reverse index, unique offset)" % (sp, addr, off), True))
+                "global", "%s.%s[%s]" % (base, mem, idx_expr[:40]),
+                "named member view -> ((%s *)(%s + 0x%X))[idx] (reverse "
+                "index/owner class)" % (sp, addr, off), True))
             return "((%s *)(%s + 0x%X))[%s]" % (sp, addr, off, idx_expr)
         ctx.sites.append(Site(
             "global", "%s.%s" % (base, mem),
-            "named member view -> *(%s *)(%s + 0x%X) (registry reverse "
-            "index, unique offset)" % (sp, addr, off), True))
+            "named member view -> *(%s *)(%s + 0x%X) (reverse index/owner "
+            "class)" % (sp, addr, off), True))
         return "(*(%s *)(%s + 0x%X))" % (sp, addr, off)
 
     text = re.sub(r"(?<![\w.>])([A-Za-z_]\w*)\.([A-Za-z_]\w*)"
+                  r"(?P<idx>\[[^\[\]]*\])?"
                   r"(?![\w(])(?!\s*\()", _named_mem_sub, text)
 
     # 3. G->__pad_H[idx] -- member through a global POINTER variable
@@ -683,6 +789,49 @@ def pass_struct_globals(ctx):
             "global-ptr pad member -> char* arithmetic (0x%X)" % off, True))
     out.append(text[pos:])
     text = "".join(out)
+
+    # CW3-3b: scalar-typed globals that this body only ever SUBSCRIPTS
+    # (`g_VoxelOffsetTable[e]`, `Direction_X_Offsets[i]`) need an ARRAY
+    # declaration; `extern unsigned int G;` + `G[i]` is C2109/C2036.  An
+    # IDA `T[]` type supplies the element; otherwise the registry scalar
+    # spelling is the element.  Bare value uses veto the upgrade (a real
+    # scalar must not become a pointer).
+    for gname in list((getattr(ctx, "used_globals", None) or {})):
+        gty = ctx.used_globals[gname]
+        if gty.endswith("[]") or gty.endswith("*"):
+            continue
+        occ = list(re.finditer(r"(?<![\w.>])%s\b" % re.escape(gname), text))
+        if not occ:
+            continue
+        indexed = False
+        veto = False
+        for om in occ:
+            tail = text[om.end():om.end() + 3]
+            pre = text[max(0, om.start() - 1):om.start()]
+            if re.match(r"\s*\[", tail):
+                indexed = True
+            elif pre == "&":
+                pass          # &G: address-of is array-compatible
+            else:
+                veto = True
+                break
+        if not indexed or veto:
+            continue
+        elem = None
+        a = _global_addr(gname)
+        if a is not None:
+            e = _ida_global_type_index().get(a)
+            ety = ((e or {}).get("type") or "").strip()
+            if ety.endswith("[]"):
+                elem = spell_type(re.sub(r"\[\]$", "", ety).strip())
+        if not elem:
+            elem = spell_type(gty)
+        if elem not in WIDTH_OF:
+            continue
+        ctx.used_globals[gname] = elem + "[]"
+        ctx.note("global_array_view",
+                 "%s: registry scalar %s only subscripted in this body -> "
+                 "extern %s %s[]" % (gname, gty, elem, gname))
 
     if changed:
         ctx.sites.append(Site(
@@ -1206,6 +1355,11 @@ def pass_intrinsics_lobyte(ctx):
     read of a narrow member; else previous bool/int rewrite.
     """
     lines = ctx.lines
+    # CW3-4: pointer-declared locals need the byte/word store, not the
+    # masked-dword merge -- `v1 = (v1 & ~0xFF) | ...` on `_DWORD *v1` is
+    # C2296.  era_types.h spells the macro as an address-of lvalue, so the
+    # ORIGINAL macro form is already the correct store for these.
+    _ptr_locals = _ptr_names_in("\n".join(lines))
     out = []
     i = 0
     while i < len(lines):
@@ -1298,6 +1452,17 @@ def pass_intrinsics_lobyte(ctx):
 
         # ---------- local target: v ----------
         var = target
+        if var in _ptr_locals:
+            # pointer-typed local: keep the era macro (lvalue byte/word
+            # store through &var; C2296 otherwise).  Sighting still recorded.
+            _record_sighting(ctx, macro, var, None, None, via)
+            out.append(raw)
+            ctx.sites.append(Site(
+                "intrinsic", "%s(%s) = %s" % (macro, var, expr),
+                "pointer-declared local -- byte/word macro store kept "
+                "(masked-dword merge would be C2296)", True))
+            i += 1
+            continue
         _record_sighting(ctx, macro, var, None, None, via)
         # local sourced from a narrow member?  single pure def `v = this->M`
         src_off = None
@@ -1503,7 +1668,7 @@ def _local_member_source_narrow(ctx, var):
 # ---------------------------------------------------------------- pass 3: members
 
 _CAST_DEREF_MEM = re.compile(
-    r"\*\(\s*(?P<ty>_?\w+)\s*\*\s*\)\s*"
+    r"\*\(\s*(?P<ty>[A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*\s*\*+)\s*\)\s*"
     r"(?P<amp>&\s*)?this->(?P<mem>[A-Za-z_]\w*)"
     r"(?P<idx>\[[^\]\[]*\])?")
 
@@ -1595,6 +1760,16 @@ def _member_record_for(ctx, mem_name):
         off = int(mm.group(1), 16)
         return off, {"offset": off, "name": mem_name, "type": None,
                      "width": 4}, "offset-name-synth"
+    # CW3-2: hpp-convention pad names (`__pad_0`, `__pad_1C`) also encode
+    # their byte offset.  Without this, `this->__pad_0` fell into the
+    # offset-name path with an unresolvable offset and the pilot hpp emitted
+    # a gap pad named `__pad_000` (body/hpp name split -> C2039), while the
+    # template-instance classes only carry these til names at all.
+    pm = re.match(r"^__pad_?([0-9A-Fa-f]{1,6})$", mem_name or "")
+    if pm:
+        off = int(pm.group(1), 16)
+        return off, {"offset": off, "name": mem_name, "type": None,
+                     "width": 4}, "pad-name-synth"
     return r
 
 
@@ -1939,6 +2114,14 @@ def pass_member_shapes(ctx):
         ty, amp, mem, idx = (m.group("ty"), m.group("amp"),
                              m.group("mem"), m.group("idx"))
         read_ty = TYPE_OF_CAST.get(ty) or spell_type(ty)
+        # CW3-2: the regex now captures the FULL cast spelling including its
+        # stars (`void **`, `unsigned __int8 *`).  The outer `*` dereferences
+        # the result, so the VALUE type loses exactly one star
+        # (`*(void **)&m` -> void *); this keeps the emitted view element
+        # type value-compatible and is what the old bare-`_DWORD` capture
+        # produced for the scalar families.
+        if read_ty.rstrip().endswith("*"):
+            read_ty = re.sub(r"\s*\*$", "", read_ty).strip()
         read_w = WIDTH_OF.get(read_ty, 4)
         cls = ctx.sig["cls"]
         moff, rec, src = _member_record_for(ctx, mem)
@@ -2410,6 +2593,14 @@ def pass_member_shapes(ctx):
     for dm in re.finditer(
             r"\b([A-Z]\w*)\s*\*\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;", text):
         ptr_typed[dm.group(2)] = dm.group(1)
+    # CW3-3: VALUE-declared class locals (`Rect v34;`) own their member
+    # accesses too; without the shell members `v34.X` was C2039 on an empty
+    # pad-only class block.  Same view recording as the pointer form.
+    for dm in re.finditer(
+            r"\b([A-Z]\w*)\s+([A-Za-z_]\w*)\s*(?:=[^;]*)?;", text):
+        ck = ctx.reg.class_key(dm.group(1))
+        if ck:
+            ptr_typed.setdefault(dm.group(2), ck)
     for gname, gty in (getattr(ctx, "used_globals", None) or {}).items():
         if gty.endswith("*"):
             b = gty.replace("*", "").strip()
@@ -2653,7 +2844,8 @@ _CALL_KEYWORDS = {
     "goto", "break", "continue", "this", "true", "false",
     "abs16", "abs64", "abs",
     "LOBYTE", "HIBYTE", "LOWORD", "HIWORD", "BYTE1", "BYTE2",
-    "BYTE3", "WORD1", "SLOWORD", "SHIWORD", "LODWORD", "HIDWORD",
+    "BYTE3", "BYTE4", "WORD1", "WORD2", "SLOWORD", "SHIWORD", "LODWORD",
+    "HIDWORD",
     # calling-convention tokens appear inside fn-pointer casts
     "__thiscall", "__stdcall", "__cdecl", "__fastcall", "__userpurge",
     "__usercall", "__pascal",
@@ -4012,12 +4204,16 @@ _RESIDUAL_MACROS = {
     "LOBYTE": (1, 0, False), "HIBYTE": (1, 1, False),
     "BYTE1": (1, 1, False), "BYTE2": (1, 2, False), "BYTE3": (1, 3, False),
     "LOWORD": (2, 0, False), "HIWORD": (2, 2, False), "WORD1": (2, 2, False),
+    # CW3-4: 64-bit slice spellings (WORD2 = third word / BYTE4 = fifth
+    # byte).  Left unconsumed they became `extern int WORD2(...)` calls
+    # -> `WORD2(x) = v` C2106.  Same arithmetic fallback, byte offsets.
+    "WORD2": (2, 4, False), "BYTE4": (1, 4, False),
     "SLOWORD": (2, 0, True), "SHIWORD": (2, 2, True),
 }
 
 _RESIDUAL_MACRO_CALL = re.compile(
-    r"\b(LOBYTE|HIBYTE|BYTE1|BYTE2|BYTE3|LOWORD|HIWORD|WORD1|SLOWORD|SHIWORD)"
-    r"\(")
+    r"\b(LOBYTE|HIBYTE|BYTE1|BYTE2|BYTE3|BYTE4|LOWORD|HIWORD|WORD1|WORD2|"
+    r"SLOWORD|SHIWORD)\(")
 
 _IDA_TYPE_WORDS = [
     (r"\b_QWORD\b", "__int64"), (r"\b_DWORD\b", "unsigned int"),
@@ -4076,8 +4272,6 @@ def pass_macro_residual_sweep(ctx):
         for m in _RESIDUAL_MACRO_CALL.finditer(text):
             if m.start() < pos:
                 continue
-            if re.match(r"^[+\-*/|&^%]?=(?!=)", text[m.end():m.end() + 3]):
-                continue        # store forms (handled upstream)
             macro = m.group(1)
             w, sh, sgn = _RESIDUAL_MACROS[macro]
             start = m.end()
@@ -4093,6 +4287,14 @@ def pass_macro_residual_sweep(ctx):
                         break
             if end < 0:
                 continue        # unbalanced: leave untouched
+            # CW3-4: store forms are handled upstream and era_types.h spells
+            # the macro as an lvalue -- the operator lives AFTER the closing
+            # paren (`LOBYTE(v5) = ...`), so the old check (taken right after
+            # the '(' ) never skipped a store and rewrote it into the
+            # non-lvalue `((v5) & 0xFF) = ...` (C2106 batch family).
+            if re.match(r"^\s*[+\-*/|&^%]?=(?!=)",
+                        text[end + 1:end + 5]):
+                continue
             arg = text[start:end]
             mask = "0xFF" if w == 1 else "0xFFFF"
             rep = "((%s) & %s)" % (arg, mask) if not sh else \
@@ -4208,12 +4410,30 @@ def pass_era_normalize(ctx):
     text = re.sub(
         r"\(\s*(?:struct|class)\s+[A-Za-z_]\w*::[A-Za-z_]\w*\s*\*+\s*\)",
         "(void *)", text)
+    # CW3-4: VC6 has no `LL`/`ULL` literal suffixes (C2059 bad suffix on
+    # number).  IDA's 64-bit magic-constant divisions carry them; spell the
+    # same value with a C-style cast instead (codegen-identical constant).
+    text = re.sub(r"\b(\d+)ULL\b", r"(unsigned __int64)\1", text)
+    text = re.sub(r"\b(\d+)LL\b", r"(__int64)\1", text)
     # CW2: IDA renders a vtable install as `&Class::`vftable'` -- the
     # backtick spelling is not C++ (C2018).  Pilot shells carry no vtable
     # object, so the install value degrades to 0 (address constant only).
-    text = re.sub(r"&\s*[A-Za-z_]\w*(?:::[A-Za-z_]\w*)*::`vftable'",
-                  "0", text)
-    text = re.sub(r"\(int\)\s*\(\(", "((", text)
+    # CW3-2: template instantiations spell their arguments
+    # (`VectorClass<int>::`vftable'`, `VectorClass<TechnoClass *>::...`) --
+    # the old identifier-only pattern stopped at `<` (C2065/C2275/C2018
+    # family, 102 functions).  Allow balanced `<...>` groups per segment.
+    text = re.sub(
+        r"&\s*[A-Za-z_]\w*(?:\s*<[^<>]*>)?"
+        r"(?:::[A-Za-z_]\w*(?:\s*<[^<>]*>)?)*::`vftable'",
+        "0", text)
+    # CW3-3: `(int)((x))` double-paren cleanup -- but NEVER when the inner
+    # expression starts with a POINTER cast: `(int)((char **)&G)[1]` is an
+    # int context around a pointer element and dropping the cast turned it
+    # into `char * < int` (C2446 BuildingClass family).
+    text = re.sub(
+        r"\(int\)\s*\(\((?!\s*(?:const\s+)?(?:struct\s+|class\s+)?"
+        r"(?:char|unsigned|signed|void|int|long|short|float|double)\s*\*+)",
+        "((", text)
     text = text.replace("(unsigned __int8 *)", "(unsigned char*)")
     text = text.replace("(__int8 *)", "(char*)")
     text = re.sub(r"(\W)!\s*(\w+)(\s*[;&|)]|$)", r"\1\2 == 0\3", text)
@@ -4233,7 +4453,7 @@ def pass_era_normalize(ctx):
     ret_ty = ctx.sig.get("ret") or "int"
     if ret_ty != "void":
         def _ret_wrap(m):
-            expr = m.group(2).strip()
+            expr = m.group(2).strip().rstrip(";").rstrip()
             if not expr:
                 return m.group(0)
             return "%sreturn (%s)(%s);" % (m.group(1), ret_ty, expr)
@@ -4552,7 +4772,22 @@ def pass_callees(ctx):
         addr, rec = ctx.reg.function_by_name(qual)
         owner = qual.rsplit("::", 1)[0] if "::" in qual else None
         method = qual.rsplit("::", 1)[-1]
-        if rec is not None and rec.get("cls") and \
+        # CW3-5 (F3): `Class::Method(args)` was ALWAYS rendered as a member
+        # call whenever the registry had a cls -- including helper
+        # pseudo-classes that only name a family of free functions.  Math is
+        # the canonical case: size=0/no vtable, cc=unknown, one double
+        # param, called `Math::RoundToInt(expr)`.  The old member path
+        # treated `expr` as the RECEIVER -> `((Math *)(double))->RoundToInt()`
+        # (C2440, 61 first-errors).  Receiver evidence is required now:
+        # a size-0/no-vtable class whose registry convention is `unknown`
+        # never owns a receiver; emit the free `Owner__Method(args)` form.
+        _rec_cls = (rec or {}).get("cls")
+        _clsrec = (ctx.reg.classes.get(_rec_cls) or {}) if _rec_cls else {}
+        _helper_cls = not (_clsrec.get("size") or _clsrec.get("vtable"))
+        _force_free = (_helper_cls and
+                       str((rec or {}).get("cc") or "").lower() in
+                       ("unknown", ""))
+        if rec is not None and rec.get("cls") and not _force_free and \
                 str(rec.get("cc") or "thiscall") in (
                     "thiscall", "__fastcall", "__stdcall", "unknown", None,
                     "__thiscall"):
@@ -4677,10 +4912,25 @@ def pass_callees(ctx):
             plist = []
             # CW2: pointer locals (initializer allowed) + pointer globals
             ptr_names_ = set(arr_locals) | _ctx_ptr_names(ctx, text)
+            # CW3-5: when the registry arity matches the call, NON-int-family
+            # registry types (double / short / class pointers) are the
+            # authoritative param spellings -- `Math__RoundToInt(double)`
+            # must not degrade to an int slot (default-argument conversion
+            # would silently change the codegen).  int placeholders keep the
+            # old arg-form-driven behaviour.
+            _reg_params = (rec or {}).get("params") or []
+            _reg_ty_ok = (rec is not None and
+                          len(_reg_params) == len(args))
             for i, a0 in enumerate(args):
                 a0s = a0.strip()
                 if a0s in sig_ptys:
                     pt = sig_ptys[a0s]
+                elif _reg_ty_ok and (
+                        spell_type(_reg_params[i].get("type") or "int")
+                        not in ("int", "unsigned int", "long",
+                                "unsigned long", "_DWORD", "short",
+                                "unsigned short")):
+                    pt = spell_type(_reg_params[i].get("type") or "int")
                 elif a0s in arr_locals:
                     pt = "void *"
                 elif _arg_ptrish_ctx(a0s, ptr_names_):

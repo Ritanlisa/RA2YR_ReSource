@@ -140,7 +140,31 @@ typedef struct tagMSG MSG;
 typedef MSG *          LPMSG;
 // NOTE: the exact tag names matter -- emitted locals spell
 // `struct tagTEXTMETRICA tm;` / `struct _BY_HANDLE_FILE_INFORMATION fi;`.
-struct tagTEXTMETRICA { unsigned char __pad[56]; };
+// CW3: real TEXTMETRICA layout (the pad-only stand-in rejected the member
+// reads the export bodies spell: `tmAveCharWidth` C2039).  56 bytes total.
+struct tagTEXTMETRICA {
+    long tmHeight;
+    long tmAscent;
+    long tmDescent;
+    long tmInternalLeading;
+    long tmExternalLeading;
+    long tmAveCharWidth;
+    long tmMaxCharWidth;
+    long tmWeight;
+    long tmOverhang;
+    long tmDigitizedAspectX;
+    long tmDigitizedAspectY;
+    unsigned char tmFirstChar;
+    unsigned char tmLastChar;
+    unsigned char tmDefaultChar;
+    unsigned char tmBreakChar;
+    unsigned char tmItalic;
+    unsigned char tmUnderlined;
+    unsigned char tmStruckOut;
+    unsigned char tmPitchAndFamily;
+    unsigned char tmCharSet;
+    unsigned char __pad_tail[3];
+};
 typedef struct tagTEXTMETRICA TEXTMETRICA;
 typedef struct tagTEXTMETRICA * LPTEXTMETRICA;
 struct _BY_HANDLE_FILE_INFORMATION {
@@ -255,6 +279,12 @@ typedef unsigned int        _ESP;
 #endif
 #ifndef WORD1
 #define WORD1(x)   (*(unsigned short *)((char *)&(x) + 2))
+#endif
+#ifndef WORD2
+#define WORD2(x)   (*(unsigned short *)((char *)&(x) + 4))
+#endif
+#ifndef BYTE4
+#define BYTE4(x)   (*(unsigned char  *)((char *)&(x) + 4))
 #endif
 #ifndef SLOWORD
 #define SLOWORD(x) (*(short *)&(x))

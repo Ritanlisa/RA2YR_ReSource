@@ -415,7 +415,12 @@ def _parse_stmts(text):
             stmts.append(node)
             continue
         if s.startswith("return"):
-            stmts.append(Stmt("return", s[6:].strip()))
+            # CW3-2: the chunk splitter can leave the statement terminator
+            # glued to the expression (`return this->__pad_0;;` after
+            # re-render was `return (T *)(this->__pad_0;)` -- C2059).  A
+            # return expression never carries a trailing `;`.
+            stmts.append(Stmt("return",
+                              s[6:].strip().rstrip(";").rstrip()))
             i += 1
             continue
         if s.startswith("goto "):

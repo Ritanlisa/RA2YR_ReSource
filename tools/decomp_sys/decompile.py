@@ -493,6 +493,74 @@ def derive_signature(reg, ex):
     if fn.get("params"):
         for p in fn["params"]:
             params.append((spell_type(p.get("type") or "int"), p.get("name") or "p0"))
+        # CW3-1 (F1): registry params are the signals all-`int` placeholder
+        # channel; the export proto carries IDA's live pointer typing.  The
+        # old precedence (registry wins whenever non-empty) emitted `int p4`
+        # for `_DWORD *a4` -> `*p4` C2100.  Merge slot-by-slot: a pointer
+        # proto spelling overrides an int-family registry placeholder; every
+        # other registry spelling (real bool/float/class names, `[]`)
+        # survives untouched.  Arity must agree exactly (a `this` slot or a
+        # varargs tail shifts alignment -- honest skip).
+        _INT_PARAM_FAMILY = {
+            "int", "unsigned int", "long", "unsigned long", "_DWORD",
+            "short", "unsigned short", "int32_t", "uint32_t", "__int32",
+            "unsigned __int32", "int16_t", "uint16_t",
+        }
+        ptypes = []
+        proto_has_this = bool(re.search(r"\bthis\b", ex.proto or ""))
+        _pp = ex.proto or ""
+        for _c in ("__thiscall", "__stdcall", "__cdecl", "__fastcall",
+                   "__userpurge"):
+            _pp = _pp.replace(_c, " ")
+        _pm = re.search(r"\((.*)\)\s*$", _pp)
+        if _pm:
+            _inner = _pm.group(1).strip()
+            if _inner and _inner != "void":
+                for _part in _inner.split(","):
+                    _part = _part.strip()
+                    if not _part:
+                        continue
+                    if _part == "..." or _part.rstrip("*").strip() == "...":
+                        continue
+                    if _part.endswith("this") or _part == "this":
+                        continue
+                    ptypes.append(spell_type(_scrub_param(_part)))
+        # Some signals rows count the receiver as p0 (thiscall families whose
+        # proto dropped it from the explicit list).  pass_param_rename maps
+        # the body's a2..aN against param_names[0..] (base=2 when this_at_a1),
+        # i.e. it treats the registry list as EXPLICIT params only -- so the
+        # proto's explicit types belong on params[0..], and the trailing
+        # phantom slot (the receiver) is dropped from the declaration.  The
+        # binary epilogue arbitration below re-checks the resulting arity.
+        if ptypes and len(ptypes) == len(params) - 1 and proto_has_this and \
+                params:
+            merged = [
+                ((pty, nm) if (ty in _INT_PARAM_FAMILY and pty.endswith("*"))
+                 else (ty, nm))
+                for (ty, nm), pty in zip(params[:len(ptypes)], ptypes)]
+            for (ty, nm), pty in zip(params[:len(ptypes)], ptypes):
+                if ty in _INT_PARAM_FAMILY and pty.endswith("*"):
+                    ret_notes.append(
+                        ("proto_param_over_int",
+                         "param %s: registry int placeholder %s -> proto %s "
+                         "(receiver slot dropped)" % (nm, ty, pty)))
+            ret_notes.append(
+                ("proto_receiver_param_dropped",
+                 "registry counted the receiver as %s -- dropped trailing "
+                 "phantom slot for thiscall" % params[-1][1]))
+            params = merged
+        elif ptypes and len(ptypes) == len(params):
+            merged = [
+                ((pty, nm) if (ty in _INT_PARAM_FAMILY and pty.endswith("*"))
+                 else (ty, nm))
+                for (ty, nm), pty in zip(params, ptypes)]
+            for (ty, nm), pty in zip(params, ptypes):
+                if ty in _INT_PARAM_FAMILY and pty.endswith("*"):
+                    ret_notes.append(
+                        ("proto_param_over_int",
+                         "param %s: registry int placeholder %s -> proto %s"
+                         % (nm, ty, pty)))
+            params = merged
     else:
         # export proto fallback: strip cc + this
         proto = ex.proto
