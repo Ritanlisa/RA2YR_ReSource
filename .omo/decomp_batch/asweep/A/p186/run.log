@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p186\part_00
+=== convert (20 addrs) ===
+[conv] 0x600180 _VectorClass_PAVSpotLightClass::GetCapacity -> _VectorClass_PAVSpotLightClass
+[conv] 0x627d50 _DynamicVectorClass_PAVColorScheme::GetCount -> _DynamicVectorClass_PAVColorScheme
+[conv] 0x62b0a0 _DynamicVectorClass_PAVParasiteClass::GetItemIndex -> _DynamicVectorClass_PAVParasiteClass
+[conv] 0x62b230 _VectorClass_PAVParasiteClass::GetCapacity -> _VectorClass_PAVParasiteClass
+[conv] 0x63db90 _DynamicVectorClass_PAVPlanningMemberClass::GetItemIndex -> _DynamicVectorClass_PAVPlanningMemberClass
+[conv] 0x63dbf0 _DynamicVectorClass_PAVPlanningBranchClass::GetItemIndex_0 -> _DynamicVectorClass_PAVPlanningBranchClass
+[conv] 0x63dc50 _DynamicVectorClass_PAVPlanningNodeClass::Write -> _DynamicVectorClass_PAVPlanningNodeClass
+[conv] 0x63dcb0 _DynamicVectorClass_PAVEventClass::GetCount -> _DynamicVectorClass_PAVEventClass
+[conv] 0x63dd10 _DynamicVectorClass_PAVPlanningTokenClass::GetCount_0 -> _DynamicVectorClass_PAVPlanningTokenClass
+[conv] 0x63dea0 _VectorClass_PAVPlanningMemberClass::GetCapacity -> _VectorClass_PAVPlanningMemberClass
+[conv] 0x63e470 _VectorClass_PAVPlanningNodeClass::GetCount_1 -> _VectorClass_PAVPlanningNodeClass
+[conv] 0x63e7b0 _VectorClass_PAVEventClass::Write -> _VectorClass_PAVEventClass
+[conv] 0x63eab0 _VectorClass_PAVPlanningTokenClass::GetCapacity -> _VectorClass_PAVPlanningTokenClass
+[conv] 0x6458b0 ParticleTypeClass::GetType -> ParticleTypeClass
+[conv] 0x656e50 RadarClass::IsActiveMode -> RadarClass
+[conv] 0x6588c0 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::GetCount -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x658af0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Write -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x65a210 _DynamicVectorClass_PAVRadBeam::GetItemIndex -> _DynamicVectorClass_PAVRadBeam
+[conv] 0x65c0b0 _VectorClass_PAVRadSiteClass::GetCapacity -> _VectorClass_PAVRadSiteClass
+[conv] 0x660cb0 VectorClass_ptr_RadarEventClass::GetItemIndex -> VectorClass_ptr_RadarEventClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVSpotLightClass rc=0
+[era] _DynamicVectorClass_PAVColorScheme rc=0
+[era] _DynamicVectorClass_PAVParasiteClass rc=0
+[era] _VectorClass_PAVParasiteClass rc=0
+[era] _DynamicVectorClass_PAVPlanningMemberClass rc=0
+[era] _DynamicVectorClass_PAVPlanningBranchClass rc=0
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=0
+[era] _DynamicVectorClass_PAVEventClass rc=0
+[era] _DynamicVectorClass_PAVPlanningTokenClass rc=0
+[era] _VectorClass_PAVPlanningMemberClass rc=0
+[era] _VectorClass_PAVPlanningNodeClass rc=0
+[era] _VectorClass_PAVEventClass rc=0
+[era] _VectorClass_PAVPlanningTokenClass rc=0
+[era] ParticleTypeClass        rc=0
+[era] RadarClass               rc=2
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVRadBeam rc=0
+[era] _VectorClass_PAVRadSiteClass rc=0
+[era] VectorClass_ptr_RadarEventClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x600180   MISMATCH         _VectorClass_PAVSpotLightClass::GetCapacity
+[diff] 0x627d50   MISMATCH         _DynamicVectorClass_PAVColorScheme::GetCount
+[diff] 0x62b0a0   MISMATCH         _DynamicVectorClass_PAVParasiteClass::GetItemIndex
+[diff] 0x62b230   MISMATCH         _VectorClass_PAVParasiteClass::GetCapacity
+[diff] 0x63db90   MISMATCH         _DynamicVectorClass_PAVPlanningMemberClass::GetItemIndex
+[diff] 0x63dbf0   MISMATCH         _DynamicVectorClass_PAVPlanningBranchClass::GetItemIndex_0
+[diff] 0x63dc50   MISMATCH         _DynamicVectorClass_PAVPlanningNodeClass::Write
+[diff] 0x63dcb0   MISMATCH         _DynamicVectorClass_PAVEventClass::GetCount
+[diff] 0x63dd10   MISMATCH         _DynamicVectorClass_PAVPlanningTokenClass::GetCount_0
+[diff] 0x63dea0   MISMATCH         _VectorClass_PAVPlanningMemberClass::GetCapacity
+[diff] 0x63e470   MISMATCH         _VectorClass_PAVPlanningNodeClass::GetCount_1
+[diff] 0x63e7b0   MISMATCH         _VectorClass_PAVEventClass::Write
+[diff] 0x63eab0   MISMATCH         _VectorClass_PAVPlanningTokenClass::GetCapacity
+[diff] 0x6458b0   MATCH            ParticleTypeClass::GetType
+[diff] 0x6588c0   MISMATCH         _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::GetCount
+[diff] 0x658af0   MISMATCH         _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Write
+[diff] 0x65a210   MISMATCH         _DynamicVectorClass_PAVRadBeam::GetItemIndex
+[diff] 0x65c0b0   MISMATCH         _VectorClass_PAVRadSiteClass::GetCapacity
+[diff] 0x660cb0   MISMATCH         VectorClass_ptr_RadarEventClass::GetItemIndex
+[ledger] 0x600180 _VectorClass_PAVSpotLightClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x627d50 _DynamicVectorClass_PAVColorScheme::GetCount -> NG (attempt 1)
+[ledger] 0x62b0a0 _DynamicVectorClass_PAVParasiteClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x62b230 _VectorClass_PAVParasiteClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x63db90 _DynamicVectorClass_PAVPlanningMemberClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x63dbf0 _DynamicVectorClass_PAVPlanningBranchClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x63dc50 _DynamicVectorClass_PAVPlanningNodeClass::Write -> NG (attempt 1)
+[ledger] 0x63dcb0 _DynamicVectorClass_PAVEventClass::GetCount -> NG (attempt 1)
+[ledger] 0x63dd10 _DynamicVectorClass_PAVPlanningTokenClass::GetCount_0 -> NG (attempt 1)
+[ledger] 0x63dea0 _VectorClass_PAVPlanningMemberClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x63e470 _VectorClass_PAVPlanningNodeClass::GetCount_1 -> NG (attempt 1)
+[ledger] 0x63e7b0 _VectorClass_PAVEventClass::Write -> NG (attempt 1)
+[ledger] 0x63eab0 _VectorClass_PAVPlanningTokenClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x6458b0 ParticleTypeClass::GetType -> OK (attempt 1)
+[ledger] 0x656e50 RadarClass::IsActiveMode -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6588c0 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::GetCount -> NG (attempt 1)
+[ledger] 0x658af0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Write -> NG (attempt 1)
+[ledger] 0x65a210 _DynamicVectorClass_PAVRadBeam::GetItemIndex -> NG (attempt 1)
+[ledger] 0x65c0b0 _VectorClass_PAVRadSiteClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x660cb0 VectorClass_ptr_RadarEventClass::GetItemIndex -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 18,
+  "MATCH": 1,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "branch_order": 18
+ },
+ "match_rate_of_decided_pct": 5.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p186\batch_report.json
