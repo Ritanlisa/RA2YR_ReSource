@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_723B20@@YAXXZ",
+ "sym_key": "Unnamed::sub_723B20",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "c7050000000001000000c7050400000000000000c3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_BuildingClass_Capacity@@3_KA",
+   "sym_key": "g_BuildingClass_Capacity"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?g_BuildingClass_Capacity@@3_KA",
+   "sym_key": "g_BuildingClass_Capacity"
+  }
+ ]
+}
