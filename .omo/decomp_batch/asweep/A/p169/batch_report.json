@@ -1,0 +1,457 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MISMATCH": 20
+  },
+  "pathologies": {
+   "extern_reloc": 20
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0,
+  "rule_violation_fns": 0,
+  "parts": 1
+ },
+ "results": [
+  {
+   "addr": "0x68cd00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb05570], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_68CD00",
+   "emitted": "sub_68CD00",
+   "unit": "_addr_68",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x691380",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb05610], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_691380",
+   "emitted": "sub_691380",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x693b30",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb05730], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_693B30",
+   "emitted": "sub_693B30",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6956b0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb057b0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6956B0",
+   "emitted": "sub_6956B0",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x696ef0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb07770], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_696EF0",
+   "emitted": "sub_696EF0",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x69ec10",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb07828], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_69EC10",
+   "emitted": "sub_69EC10",
+   "unit": "_addr_69",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6a4530",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb07898], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6A4530",
+   "emitted": "sub_6A4530",
+   "unit": "_addr_6A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6a4bf0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b390], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6A4BF0",
+   "emitted": "sub_6A4BF0",
+   "unit": "_addr_6A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6acb40",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b588], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6ACB40",
+   "emitted": "sub_6ACB40",
+   "unit": "_addr_6A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6af0e0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b620], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6AF0E0",
+   "emitted": "sub_6AF0E0",
+   "unit": "_addr_6A",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6b2370",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b6c8], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B2370",
+   "emitted": "sub_6B2370",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6b6bd0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b870], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B6BD0",
+   "emitted": "sub_6B6BD0",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6b8ac0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0b908], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6B8AC0",
+   "emitted": "sub_6B8AC0",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6bb240",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bcd0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6BB240",
+   "emitted": "sub_6BB240",
+   "unit": "_addr_6B",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6c6a90",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bda0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C6A90",
+   "emitted": "sub_6C6A90",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6c8e50",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bf50], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C8E50",
+   "emitted": "sub_6C8E50",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6c95c0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0bfc0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6C95C0",
+   "emitted": "sub_6C95C0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6cade0",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0c078], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CADE0",
+   "emitted": "sub_6CADE0",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6cfb80",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0cd20], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6CFB80",
+   "emitted": "sub_6CFB80",
+   "unit": "_addr_6C",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  },
+  {
+   "addr": "0x6d1a00",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 26B ours 26B",
+   "first_diff": {
+    "orig": "+5 mov dword ptr [0xb0ceb0], 0",
+    "ours": "+5 mov dword ptr [0], 0"
+   },
+   "pathology": "extern_reloc",
+   "name": "sub_6D1A00",
+   "emitted": "sub_6D1A00",
+   "unit": "_addr_6D",
+   "name_placeholder": true,
+   "cls_src": null,
+   "this_as_id": false,
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 26,
+   "ours_size": 26,
+   "clean": false
+  }
+ ]
+}
