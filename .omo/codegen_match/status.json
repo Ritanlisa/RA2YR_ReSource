@@ -2960,6 +2960,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x481a00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CrateClass::ProcessPickup",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x484050": {
   "attempts": 9,
   "first_diff": null,
@@ -4721,6 +4728,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "JumpjetLocomotionClass::SetWaypointTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4b2630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotion::Update",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -7258,6 +7272,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x519630": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::RepairBridge",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x51f660": {
   "attempts": 1,
   "first_diff": null,
@@ -7521,6 +7542,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "LoadExpansionMixFiles",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x530460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MixFile::LoadAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -9026,6 +9054,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "MapClass::TransitionCliff",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x576ba0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::PropagateTerrainVariant5",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -11332,6 +11367,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5fb320": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HotkeyOptions::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5fbf70": {
   "attempts": 7,
   "first_diff": null,
@@ -11570,12 +11612,26 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x612b70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TabControl::WndProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x616980": {
   "attempts": 1,
   "first_diff": null,
   "name": "ButtonOwnerDraw::DlgProc",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x61d950": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x61d950",
+  "note": "decomp_batch r2: DUP_SKIP",
+  "status": "PENDING"
  },
  "0x621040": {
   "attempts": 1,
@@ -12690,6 +12746,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x648710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "QueueNetworkProcessor",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x649ca0": {
   "attempts": 1,
   "first_diff": null,
@@ -13299,6 +13362,20 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6691e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Rules::ReadMiscINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x66d530": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RulesClass::LoadFromINI",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x671ea0": {
   "attempts": 1,
   "first_diff": "+0 mov eax, dword ptr [0x7f0ca0]",
@@ -13424,6 +13501,13 @@
   "name": "0x67c650",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x67d300": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SaveGame::Start",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x67fde0": {
   "attempts": 1,
@@ -14096,6 +14180,13 @@
   "name": "SmallFunc_6A94F0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x6a9540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Sidebar::UpdateProductionDisplay",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6abb60": {
   "attempts": 1,
@@ -15840,6 +15931,20 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6f7ca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::EvaluateTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6f8df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::SelectAutoTarget_Start_AU",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6f9dc0": {
   "attempts": 5,
   "first_diff": null,
@@ -15865,6 +15970,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "TechnoClass::GetFiringAngle",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6fdd50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TechnoClass::FireWeapon",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -17219,6 +17331,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x739ec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ProcessSell",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x73cec0": {
   "attempts": 1,
   "first_diff": null,
@@ -17253,6 +17372,13 @@
   "name": "TechnoClass::GetAmmoCount_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x741970": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "UnitClass::AssignDestination_SyncLog",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7438f0": {
   "attempts": 1,
@@ -19099,6 +19225,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "Dialog::CloseAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x799ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "OptionsDlgProcWOL",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },

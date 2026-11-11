@@ -1,0 +1,91 @@
+[resume] 0/19 already decided, 19 to run
+======================================================================
+PART 1/1  (19 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p29\part_00
+=== convert (19 addrs) ===
+[conv] 0x5fb320 unknown::DlgProc -> unknown
+[conv] 0x612b70 unknown::WndProc -> unknown
+[conv] 0x6f7ca0 TechnoClass::EvaluateTarget -> TechnoClass
+[conv] 0x576ba0 CellClass::PropagateTerrainVariant5 -> CellClass
+[conv] 0x530460 MixFile::LoadAll -> MixFile
+[conv] 0x799ea0 unknown::OptionsDlgProcWOL -> unknown
+[conv] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> TechnoClass
+[conv] 0x6a9540 Sidebar::UpdateProductionDisplay -> Sidebar
+[conv] 0x67d300 SaveGame::Start -> SaveGame
+[conv] 0x739ec0 BuildingClass::ProcessSell -> BuildingClass
+[conv] 0x519630 InfantryClass::RepairBridge -> InfantryClass
+[conv] 0x648710 unknown::QueueNetworkProcessor -> unknown
+[conv] 0x741970 Class_7F5C70::AssignDestination_SyncLog -> Class_7F5C70
+[conv] 0x481a00 CrateClass::ProcessPickup -> CrateClass
+[conv] 0x6fdd50 TechnoClass::FireWeapon -> TechnoClass
+[conv] 0x4b2630 JumpjetLocomotion::Update -> JumpjetLocomotion
+[conv] 0x6691e0 Rules::ReadMiscINI -> Rules
+[conv] 0x66d530 RulesClass::LoadFromINI -> RulesClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] unknown                  rc=2
+[era] TechnoClass              rc=2
+[era] CellClass                rc=2
+[era] MixFile                  rc=2
+[era] Sidebar                  rc=2
+[era] SaveGame                 rc=2
+[era] BuildingClass            rc=2
+[era] InfantryClass            rc=2
+[era] Class_7F5C70             rc=2
+[era] CrateClass               rc=2
+[era] JumpjetLocomotion        rc=2
+[era] Rules                    rc=2
+[era] RulesClass               rc=2
+=== diffasm byte-compare ===
+[ledger] 0x5fb320 HotkeyOptions::DlgProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x612b70 TabControl::WndProc -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f7ca0 TechnoClass::EvaluateTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x576ba0 CellClass::PropagateTerrainVariant5 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x61d950 0x61d950 -> PENDING (attempt 1)
+[ledger] 0x530460 MixFile::LoadAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x799ea0 OptionsDlgProcWOL -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f8df0 TechnoClass::SelectAutoTarget_Start_AU -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a9540 Sidebar::UpdateProductionDisplay -> COMPILE_FAIL (attempt 1)
+[ledger] 0x67d300 SaveGame::Start -> COMPILE_FAIL (attempt 1)
+[ledger] 0x739ec0 BuildingClass::ProcessSell -> COMPILE_FAIL (attempt 1)
+[ledger] 0x519630 InfantryClass::RepairBridge -> COMPILE_FAIL (attempt 1)
+[ledger] 0x648710 QueueNetworkProcessor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x741970 UnitClass::AssignDestination_SyncLog -> COMPILE_FAIL (attempt 1)
+[ledger] 0x481a00 CrateClass::ProcessPickup -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6fdd50 TechnoClass::FireWeapon -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b2630 JumpjetLocomotion::Update -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6691e0 Rules::ReadMiscINI -> COMPILE_FAIL (attempt 1)
+[ledger] 0x66d530 RulesClass::LoadFromINI -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2953,
+ "verdicts": {
+  "MISMATCH": 724,
+  "MATCH": 521,
+  "COMPILE_FAIL": 1150,
+  "DUP_SKIP": 4,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 537,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 7
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 249,
+  "ret_norm": 8,
+  "frame_sched": 79,
+  "const_fold": 71,
+  "branch_polarity": 52,
+  "regalloc": 119,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 41.8,
+ "match_rate_of_total_pct": 17.6,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p29\batch_report.json
