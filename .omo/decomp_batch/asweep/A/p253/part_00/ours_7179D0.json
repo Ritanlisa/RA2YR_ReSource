@@ -1,0 +1,8 @@
+{
+ "symbol": "?loadTypeMember_57179D0@ObjectTypeClass@@QAEHHPAH@Z",
+ "sym_key": "ObjectTypeClass::loadTypeMember_57179D0",
+ "size": 75,
+ "link_base": 0,
+ "bytes_hex": "8b4424083bc8741e8b1089118b50048951048b50088951088b500c89510c668b4010668941108b4424048b1189108b51048950048b51088950088b510c89500c668b491066894810c20800",
+ "relocs": []
+}

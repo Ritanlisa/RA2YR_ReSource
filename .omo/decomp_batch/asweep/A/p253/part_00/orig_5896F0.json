@@ -1,0 +1,11 @@
+{
+ "addr": "0x5896F0",
+ "name": "VectorClass_USubzoneTrackingStruct::AddRef",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5896F0",
+ "bytes_hex": "8b44240453568b71088b5008573bf2753733d285f67e298b40048b490483c01c83c11c668b79fc663b78fc751b8b398b183bfb75134283c02483c1243bd67ce35f5eb0015bc204005f5e32c05bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p253\part_00
+=== convert (20 addrs) ===
+[conv] 0x42f620 _VectorClass_VCell::AddRef -> _VectorClass_VCell
+[conv] 0x4e12f0 ShpButtonClass::Construct -> ShpButtonClass
+[conv] 0x4f4ce0 String::Equals -> String
+[conv] 0x4f4d30 ObjectClass::sub_4F4D30 -> ObjectClass
+[conv] 0x54e360 ObjectClass::sub_54E360 -> ObjectClass
+[conv] 0x465f80 _VectorClass_V_TPoint3D_H::GetSize -> _VectorClass_V_TPoint3D_H
+[conv] 0x481130 BuildingPlacement::IsPlacementFlagSet -> BuildingPlacement
+[conv] 0x5896f0 _VectorClass_USubzoneTrackingStruct::AddRef -> _VectorClass_USubzoneTrackingStruct
+[conv] 0x658aa0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read -> _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x6b45d0 _VectorClass_UUndoInfoStruct::GetSize -> _VectorClass_UUndoInfoStruct
+[conv] 0x70e2b0 TechnoClass::IronCurtain -> TechnoClass
+[conv] 0x764260 VectorClass::checkSpecialCooldown -> VectorClass
+[conv] 0x76a520 _VectorClass_VCentroid_WorldDominationTour::Read -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x7179d0 ObjectTypeClass::loadTypeMember_57179D0 -> ObjectTypeClass
+[conv] 0x4a0f80 _VectorClass_UtagCONNECTDATA::AddRef -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4d29b0 _VectorClass_UDrawRecord_FoggedObjectClass::AddRef -> _VectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4e07e0 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x50ee80 _VectorClass_UAngerStruct::AddRef -> _VectorClass_UAngerStruct
+[conv] 0x50fc00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::AddRef -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x5d07f0 _VectorClass_VPoint2D::Get -> _VectorClass_VPoint2D
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_VCell       rc=2
+[era] ShpButtonClass           rc=2
+[era] String                   rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_V_TPoint3D_H rc=2
+[era] BuildingPlacement        rc=0
+[era] _VectorClass_USubzoneTrackingStruct rc=0
+[era] _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] _VectorClass_UUndoInfoStruct rc=2
+[era] TechnoClass              rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=2
+[era] ObjectTypeClass          rc=0
+[era] _VectorClass_UtagCONNECTDATA rc=2
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=2
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=2
+[era] _VectorClass_UAngerStruct rc=2
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=2
+[era] _VectorClass_VPoint2D    rc=2
+=== diffasm byte-compare ===
+[diff] 0x4f4ce0   MISMATCH         String::Equals
+[diff] 0x4f4d30   MISMATCH         ObjectClass::sub_4F4D30
+[diff] 0x481130   MISMATCH         BuildingPlacement::IsPlacementFlagSet
+[diff] 0x5896f0   MISMATCH         _VectorClass_USubzoneTrackingStruct::AddRef
+[diff] 0x70e2b0   MISMATCH         TechnoClass::IronCurtain
+[diff] 0x764260   MISMATCH         VectorClass::checkSpecialCooldown
+[diff] 0x7179d0   MISMATCH         ObjectTypeClass::loadTypeMember_57179D0
+[ledger] 0x42f620 _VectorClass_VCell::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e12f0 ShpButtonClass::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4f4ce0 String::Equals -> NG (attempt 1)
+[ledger] 0x4f4d30 ObjectClass::sub_4F4D30 -> NG (attempt 1)
+[ledger] 0x54e360 ObjectClass::sub_54E360 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x465f80 _VectorClass_V_TPoint3D_H::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x481130 BuildingPlacement::IsPlacementFlagSet -> NG (attempt 1)
+[ledger] 0x5896f0 _VectorClass_USubzoneTrackingStruct::AddRef -> NG (attempt 1)
+[ledger] 0x658aa0 _VectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b45d0 _VectorClass_UUndoInfoStruct::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x70e2b0 TechnoClass::IronCurtain -> NG (attempt 1)
+[ledger] 0x764260 VectorClass::checkSpecialCooldown -> NG (attempt 1)
+[ledger] 0x76a520 _VectorClass_VCentroid_WorldDominationTour::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7179d0 ObjectTypeClass::loadTypeMember_57179D0 -> NG (attempt 1)
+[ledger] 0x4a0f80 _VectorClass_UtagCONNECTDATA::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d29b0 _VectorClass_UDrawRecord_FoggedObjectClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e07e0 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50ee80 _VectorClass_UAngerStruct::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50fc00 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d07f0 _VectorClass_VPoint2D::Get -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "branch_polarity": 2,
+  "cc_mismatch": 1,
+  "codegen_shape": 2,
+  "eval_order": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p253\batch_report.json

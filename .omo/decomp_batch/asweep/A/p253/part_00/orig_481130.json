@@ -1,0 +1,11 @@
+{
+ "addr": "0x481130",
+ "name": "BuildingPlacement::IsPlacementFlagSet",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x481130",
+ "bytes_hex": "568b74240885f6744183fe01743c8a44240c84c0741a8a8128010000ba010000008bce5ed3e222c2f6d81bc040c208008a8124010000ba010000008bce5ed3e222c2f6d81bc040c2080032c05ec20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

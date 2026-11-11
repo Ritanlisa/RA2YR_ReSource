@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsPlacementFlagSet@BuildingPlacement@@QAE_NID@Z",
+ "sym_key": "BuildingPlacement::IsPlacementFlagSet",
+ "size": 76,
+ "link_base": 0,
+ "bytes_hex": "568b74240883fe028bc1730632c05ec208008a4c240c84c974198a8028010000b2018bce5ed2e222d0f6da1bd2428ac2c208008a8024010000b2018bce5ed2e222d0f6da1bd2428ac2c20800",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?AddRef@_VectorClass_USubzoneTrackingStruct@@QAEDH@Z",
+ "sym_key": "_VectorClass_USubzoneTrackingStruct::AddRef",
+ "size": 90,
+ "link_base": 0,
+ "bytes_hex": "8b44240453568b71088b5008573bf2754133d285f67f085f5eb0015bc204008b49048b400483c11c83c01c668b79fc663b78fc751d8b398b183bfb75154283c0243bd67dd2668b792083c124663b78fc74e35f5e32c05bc20400",
+ "relocs": []
+}

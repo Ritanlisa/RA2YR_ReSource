@@ -1,0 +1,15 @@
+{
+ "symbol": "?IronCurtain@TechnoClass@@QAEHHHD@Z",
+ "sym_key": "TechnoClass::IronCurtain",
+ "size": 71,
+ "link_base": 0,
+ "bytes_hex": "8b54240ca1000000008991900100008b54240489818c0100008991940100008a54240c33c03ad08981a4010000740dc781c401000001000000c20c008981c401000033c0c20c00",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  }
+ ]
+}

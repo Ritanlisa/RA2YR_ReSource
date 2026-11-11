@@ -1,0 +1,11 @@
+{
+ "addr": "0x70E2B0",
+ "name": "TechnoClass::IronCurtain",
+ "size": 80,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70E2B0",
+ "bytes_hex": "a184eda80083ec0c8b542410568db18c01000089818c0100008b44240889460433c08981a40100008956088a54241c3ad05e7410c781c40100000100000083c40cc20c008981c401000083c40cc20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
