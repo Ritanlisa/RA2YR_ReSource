@@ -1,0 +1,11 @@
+{
+ "addr": "0x4CAD00",
+ "name": "Math::ArcTan2",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4CAD00",
+ "bytes_hex": "dd442404d80db4238200e8f1b12f008ac8992bc280e101d1f825ff1f00807910480d00e0ffff4079070500280000eb05050008000084c974083dff2700007d0140d9048584f08400c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

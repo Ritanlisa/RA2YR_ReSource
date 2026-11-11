@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p17\part_00
+=== convert (20 addrs) ===
+[conv] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> VoxelAnimClass
+[conv] 0x5ceb80 MSShapeAnim::QueryInterface -> MSShapeAnim
+[conv] 0x40bc60 _VectorClass_PAVTechnoClass::QueryInterface -> _VectorClass_PAVTechnoClass
+[conv] 0x40d850 _DynamicVectorClass_PAVMixFileClass::applyCursorSettings -> _DynamicVectorClass_PAVMixFileClass
+[conv] 0x420630 _VectorClass_PAVAlphaLightingRemapClass::QueryInterface -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x43acb0 _VectorClass_PAVNeuronClass::QueryInterface -> _VectorClass_PAVNeuronClass
+[conv] 0x473000 _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___ -> _VectorClass_PAUControlNode
+[conv] 0x478680 _VectorClass_PAVTechnoTypeClass::Add -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x49fce0 CounterClass::QueryInterface -> CounterClass
+[conv] 0x4ba250 _VectorClass_PAUCrossDissolveEffect::Add -> _VectorClass_PAUCrossDissolveEffect
+[conv] 0x4cad00 Math::ArcTan2 -> Math
+[conv] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> _DynamicVectorClass_UDrawRecord_FoggedObjectClass
+[conv] 0x4ef710 _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4efa80 _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4efdf0 _VectorClass_PAVTerrainClass::QueryInterface -> _VectorClass_PAVTerrainClass
+[conv] 0x4f01b0 _VectorClass_PAVCampaignClass::QueryInterface -> _VectorClass_PAVCampaignClass
+[conv] 0x4f0520 _DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___ -> _DynamicVectorClass_PAVScriptTypeClass
+[conv] 0x4f0890 _VectorClass_PAVUnitTypeClass::QueryInterface -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4f0c00 _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x50e7e0 _TypeList_PBVTeamTypeClass::Constructor -> _TypeList_PBVTeamTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] VoxelAnimClass           rc=2
+[era] MSShapeAnim              rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _DynamicVectorClass_PAVMixFileClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_PAVNeuronClass rc=0
+[era] _VectorClass_PAUControlNode rc=0
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] CounterClass             rc=0
+[era] _VectorClass_PAUCrossDissolveEffect rc=0
+[era] Math                     rc=0
+[era] _DynamicVectorClass_UDrawRecord_FoggedObjectClass rc=0
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVCampaignClass rc=0
+[era] _DynamicVectorClass_PAVScriptTypeClass rc=0
+[era] _VectorClass_PAVUnitTypeClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _TypeList_PBVTeamTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x5ceb80   MISMATCH         MSShapeAnim::QueryInterface
+[diff] 0x40bc60   MISMATCH         _VectorClass_PAVTechnoClass::QueryInterface
+[diff] 0x40d850   MISMATCH         _DynamicVectorClass_PAVMixFileClass::applyCursorSettings
+[diff] 0x420630   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::QueryInterface
+[diff] 0x43acb0   MISMATCH         _VectorClass_PAVNeuronClass::QueryInterface
+[diff] 0x473000   MISMATCH         _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___
+[diff] 0x478680   MISMATCH         _VectorClass_PAVTechnoTypeClass::Add
+[diff] 0x49fce0   MISMATCH         CounterClass::QueryInterface
+[diff] 0x4ba250   MISMATCH         _VectorClass_PAUCrossDissolveEffect::Add
+[diff] 0x4cad00   MISMATCH         Math::ArcTan2
+[diff] 0x4d2d60   MISMATCH         _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface
+[diff] 0x4ef710   MISMATCH         _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___
+[diff] 0x4efa80   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___
+[diff] 0x4efdf0   MISMATCH         _VectorClass_PAVTerrainClass::QueryInterface
+[diff] 0x4f01b0   MISMATCH         _VectorClass_PAVCampaignClass::QueryInterface
+[diff] 0x4f0520   MISMATCH         _DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___
+[diff] 0x4f0890   MISMATCH         _VectorClass_PAVUnitTypeClass::QueryInterface
+[diff] 0x4f0c00   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___
+[diff] 0x50e7e0   MISMATCH         _TypeList_PBVTeamTypeClass::Constructor
+[ledger] 0x749b20 VoxelAnimClass::DrawVoxelFrame -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5ceb80 MSShapeAnim::QueryInterface -> NG (attempt 2)
+[ledger] 0x40bc60 _VectorClass_PAVTechnoClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x40d850 _DynamicVectorClass_PAVMixFileClass::applyCursorSettings -> NG (attempt 2)
+[ledger] 0x420630 _VectorClass_PAVAlphaLightingRemapClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x43acb0 _VectorClass_PAVNeuronClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x473000 _VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___ -> NG (attempt 2)
+[ledger] 0x478680 _VectorClass_PAVTechnoTypeClass::Add -> NG (attempt 2)
+[ledger] 0x49fce0 CounterClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ba250 _VectorClass_PAUCrossDissolveEffect::Add -> NG (attempt 2)
+[ledger] 0x4cad00 Math::ArcTan2 -> NG (attempt 2)
+[ledger] 0x4d2d60 _DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4ef710 _DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___ -> NG (attempt 2)
+[ledger] 0x4efa80 _DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___ -> NG (attempt 2)
+[ledger] 0x4efdf0 _VectorClass_PAVTerrainClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f01b0 _VectorClass_PAVCampaignClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0520 _DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___ -> NG (attempt 2)
+[ledger] 0x4f0890 _VectorClass_PAVUnitTypeClass::QueryInterface -> NG (attempt 2)
+[ledger] 0x4f0c00 _DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___ -> NG (attempt 2)
+[ledger] 0x50e7e0 _TypeList_PBVTeamTypeClass::Constructor -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 1,
+  "MISMATCH": 19
+ },
+ "pathologies": {
+  "const_fold": 18,
+  "extern_reloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p17\batch_report.json

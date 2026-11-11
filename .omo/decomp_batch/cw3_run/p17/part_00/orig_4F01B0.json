@@ -1,0 +1,11 @@
+{
+ "addr": "0x4F01B0",
+ "name": "VectorClass_ptr_CampaignClass::QueryInterface",
+ "size": 73,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4F01B0",
+ "bytes_hex": "568bf18b4604c70604a07e0085c074178a4e0d84c9741050e870892d0083c404c74604000000008a442408c6460d00a801c7460800000000740956e84d892d0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x749b20",
+  "name": "VoxelAnimClass::DrawVoxelFrame",
+  "cls": null,
+  "size": 71,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2227",
+  "first_msg": "left of '->copyFlags' must point to class/struct/union"
+ },
+ {
+  "addr": "0x5ceb80",
+  "name": "MSOverlayAnim::QueryInterface",
+  "cls": null,
+  "size": 72,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x40bc60",
+  "name": "VectorClass_BombClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVTechnoClass'"
+ },
+ {
+  "addr": "0x40d850",
+  "name": "MouseClass::applyCursorSettings",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVMixFileClass'"
+ },
+ {
+  "addr": "0x420630",
+  "name": "AITriggerTypeClass_40::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVAlphaLightingRemapClass'"
+ },
+ {
+  "addr": "0x43acb0",
+  "name": "NeuronClass_25::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVNeuronClass'"
+ },
+ {
+  "addr": "0x473000",
+  "name": "CaptureManagerClass::Constructor_VectorClass_ControlNode___",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAUControlNode'"
+ },
+ {
+  "addr": "0x478680",
+  "name": "TypeList_TechnoType::Add",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVTechnoTypeClass'"
+ },
+ {
+  "addr": "0x49fce0",
+  "name": "CounterClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x4ba250",
+  "name": "VectorClass_ptr_CrossDissolveEffect::Add",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAUCrossDissolveEffect'"
+ },
+ {
+  "addr": "0x4cad00",
+  "name": "Math::ArcTan2",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2440",
+  "first_msg": "'type cast' : cannot convert from 'double' to 'class Math *'"
+ },
+ {
+  "addr": "0x4d2d60",
+  "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_UDrawRecord_FoggedO"
+ },
+ {
+  "addr": "0x4ef710",
+  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVAITriggerTypeClass'"
+ },
+ {
+  "addr": "0x4efa80",
+  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVTriggerTypeClass'"
+ },
+ {
+  "addr": "0x4efdf0",
+  "name": "ParticleSystemClass_32::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVTerrainClass'"
+ },
+ {
+  "addr": "0x4f01b0",
+  "name": "VectorClass_ptr_CampaignClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVCampaignClass'"
+ },
+ {
+  "addr": "0x4f0520",
+  "name": "VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVScriptTypeClass'"
+ },
+ {
+  "addr": "0x4f0890",
+  "name": "VectorClass_ptr_UnitTypeClass::QueryInterface",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_VectorClass_PAVUnitTypeClass'"
+ },
+ {
+  "addr": "0x4f0c00",
+  "name": "VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2039",
+  "first_msg": "'__pad_0' : is not a member of '_DynamicVectorClass_PAVIsometricTileTypeCla"
+ },
+ {
+  "addr": "0x50e7e0",
+  "name": "VectorClass_BuildingType::Constructor",
+  "cls": null,
+  "size": 73,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'VectorClass' : undeclared identifier"
+ }
+]

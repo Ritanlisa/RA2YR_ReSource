@@ -1,0 +1,11 @@
+{
+ "addr": "0x5CEB80",
+ "name": "MSOverlayAnim::QueryInterface",
+ "size": 72,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5CEB80",
+ "bytes_hex": "568bf18b461cc70610e97e0085c0741b8a4e3c84c9741450e8a09f1f0083c404c7461c00000000c6463c008a442408c706e8e87e00a801740956e87e9f1f0083c4048bc65ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1789,11 +1789,16 @@
   "this_as_id": false
  },
  "0x40bc60": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_BombClass::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e180c",
+  "name": "_VectorClass_PAVTechnoClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_BombClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x40bd50": {
   "attempts": 1,
@@ -2495,11 +2500,16 @@
   "this_as_id": false
  },
  "0x40d850": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "MouseClass::applyCursorSettings",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e1a64",
+  "name": "_DynamicVectorClass_PAVMixFileClass::applyCursorSettings",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MouseClass::applyCursorSettings",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x40d8a0": {
   "attempts": 1,
@@ -5985,11 +5995,16 @@
   "status": "NG"
  },
  "0x420630": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "AITriggerTypeClass_40::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e2af0",
+  "name": "_VectorClass_PAVAlphaLightingRemapClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "AITriggerTypeClass_40::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4206d0": {
   "attempts": 1,
@@ -9232,11 +9247,16 @@
   "this_as_id": false
  },
  "0x43acb0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "NeuronClass_25::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e3e54",
+  "name": "_VectorClass_PAVNeuronClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "NeuronClass_25::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x43adf0": {
   "attempts": 1,
@@ -11821,11 +11841,16 @@
   "status": "NG"
  },
  "0x473000": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "CaptureManagerClass::Constructor_VectorClass_ControlNode___",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e4bc4",
+  "name": "_VectorClass_PAUControlNode::Constructor_VectorClass_ControlNode___",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CaptureManagerClass::Constructor_VectorClass_ControlNode___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4731c0": {
   "attempts": 1,
@@ -12585,11 +12610,16 @@
   "this_as_id": false
  },
  "0x478680": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "TypeList_TechnoType::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e4df8",
+  "name": "_VectorClass_PAVTechnoTypeClass::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "TypeList_TechnoType::Add",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4787e0": {
   "attempts": 1,
@@ -16538,11 +16568,16 @@
   "this_as_id": false
  },
  "0x49fce0": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e4db8",
   "name": "CounterClass::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "CounterClass::QueryInterface",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x49fd30": {
   "attempts": 1,
@@ -19606,11 +19641,16 @@
   "this_as_id": false
  },
  "0x4ba250": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_CrossDissolveEffect::Add",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e8520",
+  "name": "_VectorClass_PAUCrossDissolveEffect::Add",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_CrossDissolveEffect::Add",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4ba390": {
   "attempts": 1,
@@ -21480,11 +21520,16 @@
   "this_as_id": false
  },
  "0x4cad00": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "name_prefix",
+  "first_diff": "+0 fld qword ptr [esp + 4]",
   "name": "Math::ArcTan2",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "Math::ArcTan2",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4cadb0": {
   "attempts": 4,
@@ -22262,11 +22307,16 @@
   "this_as_id": false
  },
  "0x4d2d60": {
-  "attempts": 1,
-  "first_diff": null,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e8bc0",
   "name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "_DynamicVectorClass_UDrawRecord_FoggedObjectClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4d2ed0": {
   "attempts": 2,
@@ -27137,53 +27187,88 @@
   "this_as_id": false
  },
  "0x4ef710": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e9b84",
+  "name": "_DynamicVectorClass_PAVAITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4efa80": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e9bc4",
+  "name": "_DynamicVectorClass_PAVTriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4efdf0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "ParticleSystemClass_32::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7e9e04",
+  "name": "_VectorClass_PAVTerrainClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "ParticleSystemClass_32::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f01b0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_CampaignClass::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ea004",
+  "name": "_VectorClass_PAVCampaignClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_CampaignClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f0520": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ea144",
+  "name": "_DynamicVectorClass_PAVScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f0890": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_UnitTypeClass::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ea2c4",
+  "name": "_VectorClass_PAVUnitTypeClass::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_UnitTypeClass::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f0c00": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ea404",
+  "name": "_DynamicVectorClass_PAVIsometricTileTypeClass::Constructor_VectorClass_IsometricTileTypeClass___",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f0ed0": {
   "attempts": 1,
@@ -29045,11 +29130,16 @@
   "this_as_id": false
  },
  "0x50e7e0": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "VectorClass_BuildingType::Constructor",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ea9e4",
+  "name": "_TypeList_PBVTeamTypeClass::Constructor",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "VectorClass_BuildingType::Constructor",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x50e910": {
   "attempts": 1,
@@ -44919,11 +45009,16 @@
   "this_as_id": false
  },
  "0x5ceb80": {
-  "attempts": 1,
-  "first_diff": null,
-  "name": "MSOverlayAnim::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+6 mov dword ptr [esi], 0x7ee910",
+  "name": "MSShapeAnim::QueryInterface",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "orig_name": "MSOverlayAnim::QueryInterface",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5cedb0": {
   "attempts": 1,
@@ -74973,11 +75068,16 @@
   "this_as_id": false
  },
  "0x749b20": {
-  "attempts": 1,
+  "attempts": 2,
+  "clean": false,
+  "cls_src": "backfill",
   "first_diff": null,
   "name": "VoxelAnimClass::DrawVoxelFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "orig_name": "VoxelAnimClass::DrawVoxelFrame",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x749f30": {
   "attempts": 1,
