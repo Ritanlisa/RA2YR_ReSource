@@ -1,0 +1,386 @@
+ exp6c
+
+ Timestamp is 6af47cd0 (Wed Nov 11 22:33:52 2026)
+
+ Preferred load address is 00400000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000032b6H .text                   CODE
+ 0002:00000000 000000b8H .idata$5                DATA
+ 0002:000000b8 00000394H .rdata                  DATA
+ 0002:0000044c 00000014H .idata$2                DATA
+ 0002:00000460 00000014H .idata$3                DATA
+ 0002:00000474 000000b8H .idata$4                DATA
+ 0002:0000052c 00000320H .idata$6                DATA
+ 0002:0000084c 00000000H .edata                  DATA
+ 0003:00000000 00000004H .CRT$XCA                DATA
+ 0003:00000004 00000018H .CRT$XCU                DATA
+ 0003:0000001c 00000004H .CRT$XCZ                DATA
+ 0003:00000020 00000004H .CRT$XIA                DATA
+ 0003:00000024 00000008H .CRT$XIC                DATA
+ 0003:0000002c 00000004H .CRT$XIZ                DATA
+ 0003:00000030 00000004H .CRT$XPA                DATA
+ 0003:00000034 00000004H .CRT$XPZ                DATA
+ 0003:00000038 00000004H .CRT$XTA                DATA
+ 0003:0000003c 00000004H .CRT$XTZ                DATA
+ 0003:00000040 00000330H .data                   DATA
+ 0003:00000370 000005acH .bss                    DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000180       ??0X1@@QAE@XZ              00401180 f   exp_bss6c.obj
+ 0001:00000190       ??_EX1@@UAEPAXI@Z          00401190 f i exp_bss6c.obj
+ 0001:00000190       ??_GX1@@UAEPAXI@Z          00401190 f i exp_bss6c.obj
+ 0001:000001b0       ??1X1@@UAE@XZ              004011b0 f   exp_bss6c.obj
+ 0001:000001c0       ??0X2@@QAE@XZ              004011c0 f   exp_bss6c.obj
+ 0001:000001d0       ??_EX2@@UAEPAXI@Z          004011d0 f i exp_bss6c.obj
+ 0001:000001d0       ??_GX2@@UAEPAXI@Z          004011d0 f i exp_bss6c.obj
+ 0001:000001f0       ??1X2@@UAE@XZ              004011f0 f   exp_bss6c.obj
+ 0001:00000200       ??0X3@@QAE@XZ              00401200 f   exp_bss6c.obj
+ 0001:00000210       ??_GX3@@UAEPAXI@Z          00401210 f i exp_bss6c.obj
+ 0001:00000210       ??_EX3@@UAEPAXI@Z          00401210 f i exp_bss6c.obj
+ 0001:00000230       ??1X3@@UAE@XZ              00401230 f   exp_bss6c.obj
+ 0001:00000240       ??0X4@@QAE@XZ              00401240 f   exp_bss6c.obj
+ 0001:00000250       ??_EX4@@UAEPAXI@Z          00401250 f i exp_bss6c.obj
+ 0001:00000250       ??_GX4@@UAEPAXI@Z          00401250 f i exp_bss6c.obj
+ 0001:00000270       ??1X4@@UAE@XZ              00401270 f   exp_bss6c.obj
+ 0001:00000280       ??0X5@@QAE@XZ              00401280 f   exp_bss6c.obj
+ 0001:00000290       ??_EX5@@UAEPAXI@Z          00401290 f i exp_bss6c.obj
+ 0001:00000290       ??_GX5@@UAEPAXI@Z          00401290 f i exp_bss6c.obj
+ 0001:000002b0       ??1X5@@UAE@XZ              004012b0 f   exp_bss6c.obj
+ 0001:000002c0       ??0X6@@QAE@XZ              004012c0 f   exp_bss6c.obj
+ 0001:000002d0       ??_EX6@@UAEPAXI@Z          004012d0 f i exp_bss6c.obj
+ 0001:000002d0       ??_GX6@@UAEPAXI@Z          004012d0 f i exp_bss6c.obj
+ 0001:000002f0       ??1X6@@UAE@XZ              004012f0 f   exp_bss6c.obj
+ 0001:00000300       ?f@X1@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000300       ?f@X4@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000300       ?f@X2@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000300       ?f@X5@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000300       ?f@X6@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000300       ?f@X3@@UAEHXZ              00401300 f   exp_bss6c.obj
+ 0001:00000310       _main                      00401310 f   exp_bss6c.obj
+ 0001:00000340       __onexit                   00401340 f   libcmt:onexit.obj
+ 0001:000003be       _atexit                    004013be f   libcmt:onexit.obj
+ 0001:000003d0       ___onexitinit              004013d0 f   libcmt:onexit.obj
+ 0001:000003ff       ??3@YAXPAX@Z               004013ff f   libcmt:delete.obj
+ 0001:0000040a       _mainCRTStartup            0040140a f   libcmt:crt0.obj
+ 0001:000004fa       __amsg_exit                004014fa f   libcmt:crt0.obj
+ 0001:00000543       __cinit                    00401543 f   libcmt:crt0dat.obj
+ 0001:00000570       _exit                      00401570 f   libcmt:crt0dat.obj
+ 0001:00000581       __exit                     00401581 f   libcmt:crt0dat.obj
+ 0001:00000637       __lockexit                 00401637 f   libcmt:crt0dat.obj
+ 0001:00000640       __unlockexit               00401640 f   libcmt:crt0dat.obj
+ 0001:00000663       _realloc                   00401663 f   libcmt:realloc.obj
+ 0001:0000079b       __msize                    0040179b f   libcmt:msize.obj
+ 0001:000007e0       _malloc                    004017e0 f   libcmt:malloc.obj
+ 0001:000007f2       __nh_malloc                004017f2 f   libcmt:malloc.obj
+ 0001:0000081e       __heap_alloc               0040181e f   libcmt:malloc.obj
+ 0001:0000086c       _free                      0040186c f   libcmt:free.obj
+ 0001:000008b4       __XcptFilter               004018b4 f   libcmt:winxfltr.obj
+ 0001:00000a2c       __setenvp                  00401a2c f   libcmt:stdenvp.obj
+ 0001:00000ae5       __setargv                  00401ae5 f   libcmt:stdargv.obj
+ 0001:00000d32       ___crtGetEnvironmentStringsA 00401d32 f   libcmt:a_env.obj
+ 0001:00000e64       __ioinit                   00401e64 f   libcmt:ioinit.obj
+ 0001:00001020       __mtinit                   00402020 f   libcmt:tidtable.obj
+ 0001:00001074       __initptd                  00402074 f   libcmt:tidtable.obj
+ 0001:00001087       __getptd                   00402087 f   libcmt:tidtable.obj
+ 0001:000010ee       __heap_init                004020ee f   libcmt:heapinit.obj
+ 0001:0000112c       __global_unwind2           0040212c f   libcmt:exsup.obj
+ 0001:0000116e       __local_unwind2            0040216e f   libcmt:exsup.obj
+ 0001:000011c6       __NLG_Return2              004021c6 f   libcmt:exsup.obj
+ 0001:000011d6       __abnormal_termination     004021d6 f   libcmt:exsup.obj
+ 0001:000011f9       __NLG_Notify1              004021f9 f   libcmt:exsup.obj
+ 0001:00001202       __NLG_Notify               00402202 f   libcmt:exsup.obj
+ 0001:00001215       __NLG_Dispatch             00402215 f   libcmt:exsup.obj
+ 0001:00001224       __except_handler3          00402224 f   libcmt:exsup3.obj
+ 0001:000012e1       __seh_longjmp_unwind@4     004022e1 f   libcmt:exsup3.obj
+ 0001:000012fc       __FF_MSGBANNER             004022fc f   libcmt:crt0msg.obj
+ 0001:00001335       __NMSG_WRITE               00402335 f   libcmt:crt0msg.obj
+ 0001:00001488       __mtinitlocks              00402488 f   libcmt:mlock.obj
+ 0001:000014b1       __lock                     004024b1 f   libcmt:mlock.obj
+ 0001:00001512       __unlock                   00402512 f   libcmt:mlock.obj
+ 0001:00001527       __callnewh                 00402527 f   libcmt:handler.obj
+ 0001:00001542       ___sbh_heap_init           00402542 f   libcmt:sbheap.obj
+ 0001:00001580       ___sbh_find_block          00402580 f   libcmt:sbheap.obj
+ 0001:000015ab       ___sbh_free_block          004025ab f   libcmt:sbheap.obj
+ 0001:000018d6       ___sbh_alloc_block         004028d6 f   libcmt:sbheap.obj
+ 0001:00001bdf       ___sbh_alloc_new_region    00402bdf f   libcmt:sbheap.obj
+ 0001:00001c90       ___sbh_alloc_new_group     00402c90 f   libcmt:sbheap.obj
+ 0001:00001d8b       ___sbh_resize_block        00402d8b f   libcmt:sbheap.obj
+ 0001:00002090       _memcpy                    00403090 f   libcmt:memcpy.obj
+ 0001:000023d0       _strcpy                    004033d0 f   libcmt:strcat.obj
+ 0001:000023e0       _strcat                    004033e0 f   libcmt:strcat.obj
+ 0001:000024c0       _strlen                    004034c0 f   libcmt:strlen.obj
+ 0001:0000253b       __setmbcp                  0040353b f   libcmt:mbctype.obj
+ 0001:00002913       ___initmbctable            00403913 f   libcmt:mbctype.obj
+ 0001:0000292f       _calloc                    0040392f f   libcmt:calloc.obj
+ 0001:000029bc       ___crtMessageBoxA          004039bc f   libcmt:crtmbox.obj
+ 0001:00002a50       _strncpy                   00403a50 f   libcmt:strncpy.obj
+ 0001:00002b50       _memmove                   00403b50 f   libcmt:memmove.obj
+ 0001:00002e85       ___crtLCMapStringA         00403e85 f   libcmt:a_map.obj
+ 0001:000030d4       ___crtGetStringTypeA       004040d4 f   libcmt:a_str.obj
+ 0001:00003220       _memset                    00404220 f   libcmt:memset.obj
+ 0001:00003280       __chkstk                   00404280 f   libcmt:chkstk.obj
+ 0001:00003280       __alloca_probe             00404280 f   libcmt:chkstk.obj
+ 0001:000032b0       _RtlUnwind@16              004042b0 f   kernel32:KERNEL32.dll
+ 0002:00000000       __imp__GetCommandLineA@0   00405000     kernel32:KERNEL32.dll
+ 0002:00000004       __imp__GetVersion@0        00405004     kernel32:KERNEL32.dll
+ 0002:00000008       __imp__ExitProcess@4       00405008     kernel32:KERNEL32.dll
+ 0002:0000000c       __imp__TerminateProcess@8  0040500c     kernel32:KERNEL32.dll
+ 0002:00000010       __imp__GetCurrentProcess@0 00405010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__HeapReAlloc@16      00405014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__HeapAlloc@12        00405018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__HeapSize@12         0040501c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__HeapFree@12         00405020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__UnhandledExceptionFilter@4 00405024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__GetModuleFileNameA@12 00405028     kernel32:KERNEL32.dll
+ 0002:0000002c       __imp__FreeEnvironmentStringsA@4 0040502c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp__FreeEnvironmentStringsW@4 00405030     kernel32:KERNEL32.dll
+ 0002:00000034       __imp__WideCharToMultiByte@32 00405034     kernel32:KERNEL32.dll
+ 0002:00000038       __imp__GetEnvironmentStrings@0 00405038     kernel32:KERNEL32.dll
+ 0002:0000003c       __imp__GetEnvironmentStringsW@0 0040503c     kernel32:KERNEL32.dll
+ 0002:00000040       __imp__SetHandleCount@4    00405040     kernel32:KERNEL32.dll
+ 0002:00000044       __imp__GetStdHandle@4      00405044     kernel32:KERNEL32.dll
+ 0002:00000048       __imp__GetFileType@4       00405048     kernel32:KERNEL32.dll
+ 0002:0000004c       __imp__GetStartupInfoA@4   0040504c     kernel32:KERNEL32.dll
+ 0002:00000050       __imp__GetCurrentThreadId@0 00405050     kernel32:KERNEL32.dll
+ 0002:00000054       __imp__TlsSetValue@8       00405054     kernel32:KERNEL32.dll
+ 0002:00000058       __imp__TlsAlloc@0          00405058     kernel32:KERNEL32.dll
+ 0002:0000005c       __imp__SetLastError@4      0040505c     kernel32:KERNEL32.dll
+ 0002:00000060       __imp__TlsGetValue@4       00405060     kernel32:KERNEL32.dll
+ 0002:00000064       __imp__GetLastError@0      00405064     kernel32:KERNEL32.dll
+ 0002:00000068       __imp__HeapDestroy@4       00405068     kernel32:KERNEL32.dll
+ 0002:0000006c       __imp__HeapCreate@12       0040506c     kernel32:KERNEL32.dll
+ 0002:00000070       __imp__VirtualFree@12      00405070     kernel32:KERNEL32.dll
+ 0002:00000074       __imp__RtlUnwind@16        00405074     kernel32:KERNEL32.dll
+ 0002:00000078       __imp__WriteFile@20        00405078     kernel32:KERNEL32.dll
+ 0002:0000007c       __imp__InitializeCriticalSection@4 0040507c     kernel32:KERNEL32.dll
+ 0002:00000080       __imp__EnterCriticalSection@4 00405080     kernel32:KERNEL32.dll
+ 0002:00000084       __imp__LeaveCriticalSection@4 00405084     kernel32:KERNEL32.dll
+ 0002:00000088       __imp__VirtualAlloc@16     00405088     kernel32:KERNEL32.dll
+ 0002:0000008c       __imp__GetCPInfo@8         0040508c     kernel32:KERNEL32.dll
+ 0002:00000090       __imp__GetACP@0            00405090     kernel32:KERNEL32.dll
+ 0002:00000094       __imp__GetOEMCP@0          00405094     kernel32:KERNEL32.dll
+ 0002:00000098       __imp__GetProcAddress@8    00405098     kernel32:KERNEL32.dll
+ 0002:0000009c       __imp__LoadLibraryA@4      0040509c     kernel32:KERNEL32.dll
+ 0002:000000a0       __imp__MultiByteToWideChar@24 004050a0     kernel32:KERNEL32.dll
+ 0002:000000a4       __imp__LCMapStringA@24     004050a4     kernel32:KERNEL32.dll
+ 0002:000000a8       __imp__LCMapStringW@24     004050a8     kernel32:KERNEL32.dll
+ 0002:000000ac       __imp__GetStringTypeA@20   004050ac     kernel32:KERNEL32.dll
+ 0002:000000b0       __imp__GetStringTypeW@16   004050b0     kernel32:KERNEL32.dll
+ 0002:000000b4       \177KERNEL32_NULL_THUNK_DATA 004050b4     kernel32:KERNEL32.dll
+ 0002:000000b8       ??_7X1@@6B@                004050b8     exp_bss6c.obj
+ 0002:000000c0       ??_7X2@@6B@                004050c0     exp_bss6c.obj
+ 0002:000000c8       ??_7X3@@6B@                004050c8     exp_bss6c.obj
+ 0002:000000d0       ??_7X4@@6B@                004050d0     exp_bss6c.obj
+ 0002:000000d8       ??_7X5@@6B@                004050d8     exp_bss6c.obj
+ 0002:000000e0       ??_7X6@@6B@                004050e0     exp_bss6c.obj
+ 0002:000000f4       ??_C@_0P@GGKG@runtime?5error?5?$AA@ 004050f4     libcmt:crt0msg.obj
+ 0002:00000104       ??_C@_02PIMC@?$AN?6?$AA@   00405104     libcmt:crt0msg.obj
+ 0002:00000108       ??_C@_0O@DELO@TLOSS?5error?$AN?6?$AA@ 00405108     libcmt:crt0msg.obj
+ 0002:00000118       ??_C@_0N@OMLL@SING?5error?$AN?6?$AA@ 00405118     libcmt:crt0msg.obj
+ 0002:00000128       ??_C@_0P@OJAK@DOMAIN?5error?$AN?6?$AA@ 00405128     libcmt:crt0msg.obj
+ 0002:00000138       ??_C@_0CF@EANP@R6028?$AN?6?9?5unable?5to?5initialize?5he@ 00405138     libcmt:crt0msg.obj
+ 0002:00000160       ??_C@_0DF@ECGN@R6027?$AN?6?9?5not?5enough?5space?5for?5lo@ 00405160     libcmt:crt0msg.obj
+ 0002:00000198       ??_C@_0DF@FKAC@R6026?$AN?6?9?5not?5enough?5space?5for?5st@ 00405198     libcmt:crt0msg.obj
+ 0002:000001d0       ??_C@_0CG@DPMN@R6025?$AN?6?9?5pure?5virtual?5function?5c@ 004051d0     libcmt:crt0msg.obj
+ 0002:000001f8       ??_C@_0DF@CKIP@R6024?$AN?6?9?5not?5enough?5space?5for?5_o@ 004051f8     libcmt:crt0msg.obj
+ 0002:00000230       ??_C@_0CJ@GGOE@R6019?$AN?6?9?5unable?5to?5open?5console?5@ 00405230     libcmt:crt0msg.obj
+ 0002:0000025c       ??_C@_0CB@LBOB@R6018?$AN?6?9?5unexpected?5heap?5error?$AN?6@ 0040525c     libcmt:crt0msg.obj
+ 0002:00000280       ??_C@_0CN@FPEG@R6017?$AN?6?9?5unexpected?5multithread?5@ 00405280     libcmt:crt0msg.obj
+ 0002:000002b0       ??_C@_0CM@OBIC@R6016?$AN?6?9?5not?5enough?5space?5for?5th@ 004052b0     libcmt:crt0msg.obj
+ 0002:000002dc       ??_C@_0CB@HPAL@?$AN?6abnormal?5program?5termination?$AN?6@ 004052dc     libcmt:crt0msg.obj
+ 0002:00000300       ??_C@_0CM@JOOB@R6009?$AN?6?9?5not?5enough?5space?5for?5en@ 00405300     libcmt:crt0msg.obj
+ 0002:0000032c       ??_C@_0CK@OIBL@R6008?$AN?6?9?5not?5enough?5space?5for?5ar@ 0040532c     libcmt:crt0msg.obj
+ 0002:00000358       ??_C@_0CF@LKPB@R6002?$AN?6?9?5floating?5point?5not?5load@ 00405358     libcmt:crt0msg.obj
+ 0002:00000380       ??_C@_0CF@JPDF@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@ 00405380     libcmt:crt0msg.obj
+ 0002:000003a8       ??_C@_02JJJH@?6?6?$AA@     004053a8     libcmt:crt0msg.obj
+ 0002:000003ac       ??_C@_0BK@DEOK@Runtime?5Error?$CB?6?6Program?3?5?$AA@ 004053ac     libcmt:crt0msg.obj
+ 0002:000003c8       ??_C@_03NAME@?4?4?4?$AA@   004053c8     libcmt:crt0msg.obj
+ 0002:000003cc       ??_C@_0BH@NNCD@?$DMprogram?5name?5unknown?$DO?$AA@ 004053cc     libcmt:crt0msg.obj
+ 0002:000003e4       ??_C@_0BD@NJFP@GetLastActivePopup?$AA@ 004053e4     libcmt:crtmbox.obj
+ 0002:000003f8       ??_C@_0BA@GILI@GetActiveWindow?$AA@ 004053f8     libcmt:crtmbox.obj
+ 0002:00000408       ??_C@_0M@PKCK@MessageBoxA?$AA@ 00405408     libcmt:crtmbox.obj
+ 0002:00000414       ??_C@_0L@HKL@user32?4dll?$AA@ 00405414     libcmt:crtmbox.obj
+ 0002:00000420       ??_C@_01A@?$AA?$AA@        00405420     libcmt:a_map.obj
+ 0002:00000424       ??_C@_13A@?$AA?$AA?$AA?$AA@ 00405424     libcmt:a_map.obj
+ 0002:0000044c       __IMPORT_DESCRIPTOR_KERNEL32 0040544c     kernel32:KERNEL32.dll
+ 0002:00000460       __NULL_IMPORT_DESCRIPTOR   00405460     kernel32:KERNEL32.dll
+ 0003:00000000       ___xc_a                    00406000     libcmt:crt0init.obj
+ 0003:0000001c       ___xc_z                    0040601c     libcmt:crt0init.obj
+ 0003:00000020       ___xi_a                    00406020     libcmt:crt0init.obj
+ 0003:0000002c       ___xi_z                    0040602c     libcmt:crt0init.obj
+ 0003:00000030       ___xp_a                    00406030     libcmt:crt0init.obj
+ 0003:00000034       ___xp_z                    00406034     libcmt:crt0init.obj
+ 0003:00000038       ___xt_a                    00406038     libcmt:crt0init.obj
+ 0003:0000003c       ___xt_z                    0040603c     libcmt:crt0init.obj
+ 0003:00000040       __aexit_rtn                00406040     libcmt:crt0.obj
+ 0003:00000044       ___app_type                00406044     libcmt:crt0.obj
+ 0003:00000048       __XcptActTab               00406048     libcmt:winxfltr.obj
+ 0003:000000c0       __First_FPE_Indx           004060c0     libcmt:winxfltr.obj
+ 0003:000000c4       __Num_FPE                  004060c4     libcmt:winxfltr.obj
+ 0003:000000c8       __XcptActTabSize           004060c8     libcmt:winxfltr.obj
+ 0003:000000cc       __XcptActTabCount          004060cc     libcmt:winxfltr.obj
+ 0003:000000d0       ___badioinfo               004060d0     libcmt:ioinit.obj
+ 0003:000000f4       ___tlsindex                004060f4     libcmt:tidtable.obj
+ 0003:000000f8       __amblksiz                 004060f8     libcmt:heapinit.obj
+ 0003:000000fc       __NLG_Destination          004060fc     libcmt:exsup.obj
+ 0003:000001a0       __locktable                004061a0     libcmt:mlock.obj
+ 0003:00000260       ___sbh_threshold           00406260     libcmt:sbheap.obj
+ 0003:00000370       ?g_x1@@3VX1@@A             00406370     exp_bss6c.obj
+ 0003:00000378       ?g_x2@@3VX2@@A             00406378     exp_bss6c.obj
+ 0003:00000380       ?g_x3@@3VX3@@A             00406380     exp_bss6c.obj
+ 0003:00000388       ?g_x4@@3VX4@@A             00406388     exp_bss6c.obj
+ 0003:00000390       ?g_x5@@3VX5@@A             00406390     exp_bss6c.obj
+ 0003:00000398       ?g_x6@@3VX6@@A             00406398     exp_bss6c.obj
+ 0003:000003a0       __aenvptr                  004063a0     libcmt:crt0.obj
+ 0003:000003a4       __wenvptr                  004063a4     libcmt:crt0.obj
+ 0003:000003a8       ___error_mode              004063a8     libcmt:crt0.obj
+ 0003:000003ac       __umaskval                 004063ac     libcmt:crt0dat.obj
+ 0003:000003b0       __osver                    004063b0     libcmt:crt0dat.obj
+ 0003:000003b4       __winver                   004063b4     libcmt:crt0dat.obj
+ 0003:000003b8       __winmajor                 004063b8     libcmt:crt0dat.obj
+ 0003:000003bc       __winminor                 004063bc     libcmt:crt0dat.obj
+ 0003:000003c0       ___argc                    004063c0     libcmt:crt0dat.obj
+ 0003:000003c4       ___argv                    004063c4     libcmt:crt0dat.obj
+ 0003:000003c8       ___wargv                   004063c8     libcmt:crt0dat.obj
+ 0003:000003cc       __environ                  004063cc     libcmt:crt0dat.obj
+ 0003:000003d0       ___initenv                 004063d0     libcmt:crt0dat.obj
+ 0003:000003d4       __wenviron                 004063d4     libcmt:crt0dat.obj
+ 0003:000003d8       ___winitenv                004063d8     libcmt:crt0dat.obj
+ 0003:000003dc       __pgmptr                   004063dc     libcmt:crt0dat.obj
+ 0003:000003e0       __wpgmptr                  004063e0     libcmt:crt0dat.obj
+ 0003:000003e4       __exitflag                 004063e4     libcmt:crt0dat.obj
+ 0003:000003e8       __C_Termination_Done       004063e8     libcmt:crt0dat.obj
+ 0003:000003ec       __C_Exit_Done              004063ec     libcmt:crt0dat.obj
+ 0003:000004f8       __adbgmsg                  004064f8     libcmt:crt0msg.obj
+ 0003:00000560       ?_pnhHeap@@3P6AHI@ZA       00406560     libcmt:handler.obj
+ 0003:00000564       __newmode                  00406564     libcmt:_newmode.obj
+ 0003:00000578       ___lc_handle               00406578     libcmt:nlsdata2.obj
+ 0003:00000590       ___lc_codepage             00406590     libcmt:nlsdata2.obj
+ 0003:00000594       ___lc_collate_cp           00406594     libcmt:nlsdata2.obj
+ 0003:000005a0       ___mbcodepage              004065a0     <common>
+ 0003:000005b0       ___mbulinfo                004065b0     <common>
+ 0003:000005bc       ___ismbcodepage            004065bc     <common>
+ 0003:000005c0       __mbcasemap                004065c0     <common>
+ 0003:000006c0       __mbctype                  004066c0     <common>
+ 0003:000007c4       ___mblcid                  004067c4     <common>
+ 0003:000007c8       ___sbh_sizeHeaderList      004067c8     <common>
+ 0003:000007cc       ___sbh_indGroupDefer       004067cc     <common>
+ 0003:000007d0       ___sbh_pHeaderScan         004067d0     <common>
+ 0003:000007d4       ___sbh_pHeaderDefer        004067d4     <common>
+ 0003:000007d8       ___sbh_cntHeaderList       004067d8     <common>
+ 0003:000007dc       ___sbh_pHeaderList         004067dc     <common>
+ 0003:000007e0       __crtheap                  004067e0     <common>
+ 0003:00000800       ___pioinfo                 00406800     <common>
+ 0003:00000900       __nhandle                  00406900     <common>
+ 0003:00000904       ___env_initialized         00406904     <common>
+ 0003:00000908       ___mbctype_initialized     00406908     <common>
+ 0003:0000090c       ___onexitend               0040690c     <common>
+ 0003:00000910       ___onexitbegin             00406910     <common>
+ 0003:00000914       __FPinit                   00406914     <common>
+ 0003:00000918       __acmdln                   00406918     <common>
+
+ entry point at        0001:0000040a
+
+ Static symbols
+
+ 0001:00000000       _$E4                       00401000 f   exp_bss6c.obj
+ 0001:00000010       _$E1                       00401010 f   exp_bss6c.obj
+ 0001:00000020       _$E3                       00401020 f   exp_bss6c.obj
+ 0001:00000030       _$E2                       00401030 f   exp_bss6c.obj
+ 0001:00000040       _$E9                       00401040 f   exp_bss6c.obj
+ 0001:00000050       _$E6                       00401050 f   exp_bss6c.obj
+ 0001:00000060       _$E8                       00401060 f   exp_bss6c.obj
+ 0001:00000070       _$E7                       00401070 f   exp_bss6c.obj
+ 0001:00000080       _$E14                      00401080 f   exp_bss6c.obj
+ 0001:00000090       _$E11                      00401090 f   exp_bss6c.obj
+ 0001:000000a0       _$E13                      004010a0 f   exp_bss6c.obj
+ 0001:000000b0       _$E12                      004010b0 f   exp_bss6c.obj
+ 0001:000000c0       _$E19                      004010c0 f   exp_bss6c.obj
+ 0001:000000d0       _$E16                      004010d0 f   exp_bss6c.obj
+ 0001:000000e0       _$E18                      004010e0 f   exp_bss6c.obj
+ 0001:000000f0       _$E17                      004010f0 f   exp_bss6c.obj
+ 0001:00000100       _$E24                      00401100 f   exp_bss6c.obj
+ 0001:00000110       _$E21                      00401110 f   exp_bss6c.obj
+ 0001:00000120       _$E23                      00401120 f   exp_bss6c.obj
+ 0001:00000130       _$E22                      00401130 f   exp_bss6c.obj
+ 0001:00000140       _$E29                      00401140 f   exp_bss6c.obj
+ 0001:00000150       _$E26                      00401150 f   exp_bss6c.obj
+ 0001:00000160       _$E28                      00401160 f   exp_bss6c.obj
+ 0001:00000170       _$E27                      00401170 f   exp_bss6c.obj
+ 0001:000030a9       _strncnt                   004040a9 f   libcmt:a_map.obj
+ 0001:00002bc0       LeadUp1                    00403bc0 f   libcmt:memmove.obj
+ 0001:00002bec       LeadUp2                    00403bec f   libcmt:memmove.obj
+ 0001:00002c10       LeadUp3                    00403c10 f   libcmt:memmove.obj
+ 0001:00002c8f       UnwindUp0                  00403c8f f   libcmt:memmove.obj
+ 0001:00002c7c       UnwindUp1                  00403c7c f   libcmt:memmove.obj
+ 0001:00002c74       UnwindUp2                  00403c74 f   libcmt:memmove.obj
+ 0001:00002c6c       UnwindUp3                  00403c6c f   libcmt:memmove.obj
+ 0001:00002c64       UnwindUp4                  00403c64 f   libcmt:memmove.obj
+ 0001:00002c5c       UnwindUp5                  00403c5c f   libcmt:memmove.obj
+ 0001:00002c54       UnwindUp6                  00403c54 f   libcmt:memmove.obj
+ 0001:00002c4c       UnwindUp7                  00403c4c f   libcmt:memmove.obj
+ 0001:00002ca8       TrailUp0                   00403ca8 f   libcmt:memmove.obj
+ 0001:00002cb0       TrailUp1                   00403cb0 f   libcmt:memmove.obj
+ 0001:00002cbc       TrailUp2                   00403cbc f   libcmt:memmove.obj
+ 0001:00002cd0       TrailUp3                   00403cd0 f   libcmt:memmove.obj
+ 0001:00002d48       LeadDown1                  00403d48 f   libcmt:memmove.obj
+ 0001:00002d68       LeadDown2                  00403d68 f   libcmt:memmove.obj
+ 0001:00002d90       LeadDown3                  00403d90 f   libcmt:memmove.obj
+ 0001:00002de4       UnwindDown7                00403de4 f   libcmt:memmove.obj
+ 0001:00002dec       UnwindDown6                00403dec f   libcmt:memmove.obj
+ 0001:00002df4       UnwindDown5                00403df4 f   libcmt:memmove.obj
+ 0001:00002dfc       UnwindDown4                00403dfc f   libcmt:memmove.obj
+ 0001:00002e04       UnwindDown3                00403e04 f   libcmt:memmove.obj
+ 0001:00002e0c       UnwindDown2                00403e0c f   libcmt:memmove.obj
+ 0001:00002e14       UnwindDown1                00403e14 f   libcmt:memmove.obj
+ 0001:00002e27       UnwindDown0                00403e27 f   libcmt:memmove.obj
+ 0001:00002e40       TrailDown0                 00403e40 f   libcmt:memmove.obj
+ 0001:00002e48       TrailDown1                 00403e48 f   libcmt:memmove.obj
+ 0001:00002e58       TrailDown2                 00403e58 f   libcmt:memmove.obj
+ 0001:00002e6c       TrailDown3                 00403e6c f   libcmt:memmove.obj
+ 0001:000026e8       _getSystemCP               004036e8 f   libcmt:mbctype.obj
+ 0001:00002732       _CPtoLCID                  00403732 f   libcmt:mbctype.obj
+ 0001:00002765       _setSBCS                   00403765 f   libcmt:mbctype.obj
+ 0001:0000278e       _setSBUpLow                0040378e f   libcmt:mbctype.obj
+ 0001:00002100       LeadUp1                    00403100 f   libcmt:memcpy.obj
+ 0001:0000212c       LeadUp2                    0040312c f   libcmt:memcpy.obj
+ 0001:00002150       LeadUp3                    00403150 f   libcmt:memcpy.obj
+ 0001:000021cf       UnwindUp0                  004031cf f   libcmt:memcpy.obj
+ 0001:000021bc       UnwindUp1                  004031bc f   libcmt:memcpy.obj
+ 0001:000021b4       UnwindUp2                  004031b4 f   libcmt:memcpy.obj
+ 0001:000021ac       UnwindUp3                  004031ac f   libcmt:memcpy.obj
+ 0001:000021a4       UnwindUp4                  004031a4 f   libcmt:memcpy.obj
+ 0001:0000219c       UnwindUp5                  0040319c f   libcmt:memcpy.obj
+ 0001:00002194       UnwindUp6                  00403194 f   libcmt:memcpy.obj
+ 0001:0000218c       UnwindUp7                  0040318c f   libcmt:memcpy.obj
+ 0001:000021e8       TrailUp0                   004031e8 f   libcmt:memcpy.obj
+ 0001:000021f0       TrailUp1                   004031f0 f   libcmt:memcpy.obj
+ 0001:000021fc       TrailUp2                   004031fc f   libcmt:memcpy.obj
+ 0001:00002210       TrailUp3                   00403210 f   libcmt:memcpy.obj
+ 0001:00002288       LeadDown1                  00403288 f   libcmt:memcpy.obj
+ 0001:000022a8       LeadDown2                  004032a8 f   libcmt:memcpy.obj
+ 0001:000022d0       LeadDown3                  004032d0 f   libcmt:memcpy.obj
+ 0001:00002324       UnwindDown7                00403324 f   libcmt:memcpy.obj
+ 0001:0000232c       UnwindDown6                0040332c f   libcmt:memcpy.obj
+ 0001:00002334       UnwindDown5                00403334 f   libcmt:memcpy.obj
+ 0001:0000233c       UnwindDown4                0040333c f   libcmt:memcpy.obj
+ 0001:00002344       UnwindDown3                00403344 f   libcmt:memcpy.obj
+ 0001:0000234c       UnwindDown2                0040334c f   libcmt:memcpy.obj
+ 0001:00002354       UnwindDown1                00403354 f   libcmt:memcpy.obj
+ 0001:00002367       UnwindDown0                00403367 f   libcmt:memcpy.obj
+ 0001:00002380       TrailDown0                 00403380 f   libcmt:memcpy.obj
+ 0001:00002388       TrailDown1                 00403388 f   libcmt:memcpy.obj
+ 0001:00002398       TrailDown2                 00403398 f   libcmt:memcpy.obj
+ 0001:000023ac       TrailDown3                 004033ac f   libcmt:memcpy.obj
+ 0001:00001144       _gu_return                 00402144 f   libcmt:exsup.obj
+ 0001:0000114c       __unwind_handler           0040214c f   libcmt:exsup.obj
+ 0001:00000b7e       _parse_cmdline             00401b7e f   libcmt:stdargv.obj
+ 0001:000009f2       _xcptlookup                004019f2 f   libcmt:winxfltr.obj
+ 0001:00000592       _doexit                    00401592 f   libcmt:crt0dat.obj
+ 0001:00000649       __initterm                 00401649 f   libcmt:crt0dat.obj
+ 0001:0000051f       _fast_error_exit           0040151f f   libcmt:crt0.obj
+
+ 80 bytes saved through ICF
+

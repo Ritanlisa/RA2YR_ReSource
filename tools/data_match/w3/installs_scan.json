@@ -1,0 +1,2048 @@
+[
+{
+"site": "0x40b563",
+"dst": "0x87f5d8",
+"vtable": "0x7e17cc",
+"cls": "?$DynamicVectorClass@PAVBombClass@@"
+},
+{
+"site": "0x40b587",
+"dst": "0x87f5f0",
+"vtable": "0x7e17ac",
+"cls": "?$DynamicVectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x40b5d4",
+"dst": "0x87f5f0",
+"vtable": "0x7e180c",
+"cls": "?$VectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x40b60a",
+"dst": "0x87f5d8",
+"vtable": "0x7e17ec",
+"cls": "?$VectorClass@PAVBombClass@@"
+},
+{
+"site": "0x40bded",
+"dst": "0x87f658",
+"vtable": "0x7e182c",
+"cls": "?$DynamicVectorClass@PBVCommandClass@@"
+},
+{
+"site": "0x40be18",
+"dst": "0x87f658",
+"vtable": "0x7e184c",
+"cls": "?$VectorClass@PBVCommandClass@@"
+},
+{
+"site": "0x40c1cd",
+"dst": "0x87f698",
+"vtable": "0x7e186c",
+"cls": "?$DynamicVectorClass@PAVLightConvertClass@@"
+},
+{
+"site": "0x40c1f8",
+"dst": "0x87f698",
+"vtable": "0x7e188c",
+"cls": "?$VectorClass@PAVLightConvertClass@@"
+},
+{
+"site": "0x40c7bd",
+"dst": "0x87f750",
+"vtable": "0x7e18bc",
+"cls": "?$DynamicVectorClass@PAVIsometricTileClass@@"
+},
+{
+"site": "0x40c7e8",
+"dst": "0x87f750",
+"vtable": "0x7e18dc",
+"cls": "?$VectorClass@PAVIsometricTileClass@@"
+},
+{
+"site": "0x40cbac",
+"dst": "0x87f778",
+"vtable": "0x7e18fc",
+"cls": "LogicClass"
+},
+{
+"site": "0x40cbc8",
+"dst": "0x87f778",
+"vtable": "0x7e192c",
+"cls": "?$VectorClass@PAVObjectClass@@"
+},
+{
+"site": "0x40d1b2",
+"dst": "0x87f7e8",
+"vtable": "0x7e1964",
+"cls": "MouseClass"
+},
+{
+"site": "0x40d1bc",
+"dst": "0x884d00",
+"vtable": "0x7e195c",
+"cls": null
+},
+{
+"site": "0x40d35d",
+"dst": "0x884d90",
+"vtable": "0x7e1a44",
+"cls": "?$DynamicVectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d388",
+"dst": "0x884d90",
+"vtable": "0x7e1a64",
+"cls": "?$VectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d3dd",
+"dst": "0x884dc0",
+"vtable": "0x7e1a44",
+"cls": "?$DynamicVectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d408",
+"dst": "0x884dc0",
+"vtable": "0x7e1a64",
+"cls": "?$VectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d45d",
+"dst": "0x884da8",
+"vtable": "0x7e1a44",
+"cls": "?$DynamicVectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d488",
+"dst": "0x884da8",
+"vtable": "0x7e1a64",
+"cls": "?$VectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d4dd",
+"dst": "0x884de0",
+"vtable": "0x7e1a44",
+"cls": "?$DynamicVectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40d508",
+"dst": "0x884de0",
+"vtable": "0x7e1a64",
+"cls": "?$VectorClass@PAVMixFileClass@@"
+},
+{
+"site": "0x40dfd0",
+"dst": "0x887190",
+"vtable": "0x7e1b0c",
+"cls": "GenericNode"
+},
+{
+"site": "0x40dfe9",
+"dst": "0x88718c",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x40dffd",
+"dst": "0x88718c",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x40e031",
+"dst": "0x887180",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x40e080",
+"dst": "0x887218",
+"vtable": "0x7e1b0c",
+"cls": "GenericNode"
+},
+{
+"site": "0x40e099",
+"dst": "0x887214",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x40e0ad",
+"dst": "0x887214",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x40e0e1",
+"dst": "0x887208",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x40e130",
+"dst": "0x887138",
+"vtable": "0x7e1b0c",
+"cls": "GenericNode"
+},
+{
+"site": "0x40e149",
+"dst": "0x887134",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x40e15d",
+"dst": "0x887134",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x40e191",
+"dst": "0x887128",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x40e1e0",
+"dst": "0x887068",
+"vtable": "0x7e1b0c",
+"cls": "GenericNode"
+},
+{
+"site": "0x40e1f9",
+"dst": "0x887064",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x40e20d",
+"dst": "0x887064",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x40e241",
+"dst": "0x887058",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x40e290",
+"dst": "0x8870d0",
+"vtable": "0x7e1b0c",
+"cls": "GenericNode"
+},
+{
+"site": "0x40e2a9",
+"dst": "0x8870cc",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x40e2bd",
+"dst": "0x8870cc",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x40e2f1",
+"dst": "0x8870c0",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x40e78d",
+"dst": "0x8872b0",
+"vtable": "0x7e1b24",
+"cls": "?$DynamicVectorClass@PAVScriptClass@@"
+},
+{
+"site": "0x40e7b8",
+"dst": "0x8872b0",
+"vtable": "0x7e1b44",
+"cls": "?$VectorClass@PAVScriptClass@@"
+},
+{
+"site": "0x40ee5d",
+"dst": "0x887388",
+"vtable": "0x7e1e2c",
+"cls": "?$DynamicVectorClass@PAVVoxelAnimClass@@"
+},
+{
+"site": "0x40ee88",
+"dst": "0x887388",
+"vtable": "0x7e1e4c",
+"cls": "?$VectorClass@PAVVoxelAnimClass@@"
+},
+{
+"site": "0x40f4ad",
+"dst": "0x8874c0",
+"vtable": "0x7e1e84",
+"cls": "?$DynamicVectorClass@PAVWarheadTypeClass@@"
+},
+{
+"site": "0x40f4d8",
+"dst": "0x8874c0",
+"vtable": "0x7e1ea4",
+"cls": "?$VectorClass@PAVWarheadTypeClass@@"
+},
+{
+"site": "0x40fb4d",
+"dst": "0x887568",
+"vtable": "0x7e1ed4",
+"cls": "?$DynamicVectorClass@PAVWeaponTypeClass@@"
+},
+{
+"site": "0x40fb78",
+"dst": "0x887568",
+"vtable": "0x7e1ef4",
+"cls": "?$VectorClass@PAVWeaponTypeClass@@"
+},
+{
+"site": "0x4128bc",
+"dst": "0x889e08",
+"vtable": "0x7e17ac",
+"cls": "?$DynamicVectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x41d29d",
+"dst": "0x889fb8",
+"vtable": "0x7e293c",
+"cls": "?$DynamicVectorClass@PAVAirstrikeClass@@"
+},
+{
+"site": "0x41d2c8",
+"dst": "0x889fb8",
+"vtable": "0x7e295c",
+"cls": "?$VectorClass@PAVAirstrikeClass@@"
+},
+{
+"site": "0x42009d",
+"dst": "0x88a080",
+"vtable": "0x7e2ad0",
+"cls": "?$DynamicVectorClass@PAVAlphaLightingRemapClass@@"
+},
+{
+"site": "0x4200ce",
+"dst": "0x88a080",
+"vtable": "0x7e2af0",
+"cls": "?$VectorClass@PAVAlphaLightingRemapClass@@"
+},
+{
+"site": "0x4208fd",
+"dst": "0x88a0f0",
+"vtable": "0x7e3238",
+"cls": "?$DynamicVectorClass@PAVAlphaShapeClass@@"
+},
+{
+"site": "0x420928",
+"dst": "0x88a0f0",
+"vtable": "0x7e3258",
+"cls": "?$VectorClass@PAVAlphaShapeClass@@"
+},
+{
+"site": "0x429200",
+"dst": "0x89a29c",
+"vtable": "0x7e36d4",
+"cls": "ApplicationClass"
+},
+{
+"site": "0x43856d",
+"dst": "0x89c668",
+"vtable": "0x7e17cc",
+"cls": "?$DynamicVectorClass@PAVBombClass@@"
+},
+{
+"site": "0x438598",
+"dst": "0x89c668",
+"vtable": "0x7e17ec",
+"cls": "?$VectorClass@PAVBombClass@@"
+},
+{
+"site": "0x4662fd",
+"dst": "0x89de18",
+"vtable": "0x7e4678",
+"cls": "?$DynamicVectorClass@PAVBulletClass@@"
+},
+{
+"site": "0x46632e",
+"dst": "0x89de18",
+"vtable": "0x7e4698",
+"cls": "?$VectorClass@PAVBulletClass@@"
+},
+{
+"site": "0x47176d",
+"dst": "0x89e0f0",
+"vtable": "0x7e4ad4",
+"cls": "?$DynamicVectorClass@PAVCaptureManagerClass@@"
+},
+{
+"site": "0x471798",
+"dst": "0x89e0f0",
+"vtable": "0x7e4af4",
+"cls": "?$VectorClass@PAVCaptureManagerClass@@"
+},
+{
+"site": "0x48e6bd",
+"dst": "0x89ecf8",
+"vtable": "0x7e5318",
+"cls": "?$DynamicVectorClass@PAVConvertClass@@"
+},
+{
+"site": "0x48e6ee",
+"dst": "0x89ecf8",
+"vtable": "0x7e5338",
+"cls": "?$VectorClass@PAVConvertClass@@"
+},
+{
+"site": "0x49b3bd",
+"dst": "0x89f524",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x49b3d1",
+"dst": "0x89f524",
+"vtable": "0x7e1afc",
+"cls": "?$List@PAUINISection@INIClass@@"
+},
+{
+"site": "0x49b405",
+"dst": "0x89f518",
+"vtable": "0x7e1af4",
+"cls": "CCINIClass"
+},
+{
+"site": "0x4a6c8d",
+"dst": "0x8a0208",
+"vtable": "0x7e5edc",
+"cls": "?$DynamicVectorClass@PAVDiskLaserClass@@"
+},
+{
+"site": "0x4a6cb8",
+"dst": "0x8a0208",
+"vtable": "0x7e5efc",
+"cls": "?$VectorClass@PAVDiskLaserClass@@"
+},
+{
+"site": "0x4a86fb",
+"dst": "0x8a06f8",
+"vtable": "0x7e608c",
+"cls": "TacticalClass@DisplayClass"
+},
+{
+"site": "0x4c1dad",
+"dst": "0x8a0e88",
+"vtable": "0x7e868c",
+"cls": "?$DynamicVectorClass@PAVEBolt@@"
+},
+{
+"site": "0x4c1dd8",
+"dst": "0x8a0e88",
+"vtable": "0x7e86ac",
+"cls": "?$VectorClass@PAVEBolt@@"
+},
+{
+"site": "0x4c3c2d",
+"dst": "0x8a3770",
+"vtable": "0x7e86dc",
+"cls": "?$DynamicVectorClass@PAVEgoClass@@"
+},
+{
+"site": "0x4c3c58",
+"dst": "0x8a3770",
+"vtable": "0x7e86fc",
+"cls": "?$VectorClass@PAVEgoClass@@"
+},
+{
+"site": "0x4c522d",
+"dst": "0x8a3870",
+"vtable": "0x7e873c",
+"cls": "?$DynamicVectorClass@PAVEMPulseClass@@"
+},
+{
+"site": "0x4c525e",
+"dst": "0x8a3870",
+"vtable": "0x7e875c",
+"cls": "?$VectorClass@PAVEMPulseClass@@"
+},
+{
+"site": "0x4d076d",
+"dst": "0x8b3d10",
+"vtable": "0x7e44f4",
+"cls": "?$DynamicVectorClass@PAVFoggedObjectClass@@"
+},
+{
+"site": "0x4d079e",
+"dst": "0x8b3d10",
+"vtable": "0x7e4514",
+"cls": "?$VectorClass@PAVFoggedObjectClass@@"
+},
+{
+"site": "0x4d317d",
+"dst": "0x8b3dc0",
+"vtable": "0x7e8c28",
+"cls": "?$DynamicVectorClass@PAVFootClass@@"
+},
+{
+"site": "0x4d31a8",
+"dst": "0x8b3dc0",
+"vtable": "0x7e8c48",
+"cls": "?$VectorClass@PAVFootClass@@"
+},
+{
+"site": "0x4e64fd",
+"dst": "0xa8b200",
+"vtable": "0x7e9b64",
+"cls": "?$DynamicVectorClass@PAVAITriggerTypeClass@@"
+},
+{
+"site": "0x4e6528",
+"dst": "0xa8b200",
+"vtable": "0x7e9b84",
+"cls": "?$VectorClass@PAVAITriggerTypeClass@@"
+},
+{
+"site": "0x4e657d",
+"dst": "0x8b4178",
+"vtable": "0x7e9ba4",
+"cls": "?$DynamicVectorClass@PAVTriggerTypeClass@@"
+},
+{
+"site": "0x4e65a8",
+"dst": "0x8b4178",
+"vtable": "0x7e9bc4",
+"cls": "?$VectorClass@PAVTriggerTypeClass@@"
+},
+{
+"site": "0x4e65fd",
+"dst": "0xa8eae8",
+"vtable": "0x7e9be4",
+"cls": "?$DynamicVectorClass@PAVTriggerClass@@"
+},
+{
+"site": "0x4e6628",
+"dst": "0xa8eae8",
+"vtable": "0x7e9c04",
+"cls": "?$VectorClass@PAVTriggerClass@@"
+},
+{
+"site": "0x4e667d",
+"dst": "0x8b4190",
+"vtable": "0x7e9c24",
+"cls": "?$DynamicVectorClass@PAVBuildingLightClass@@"
+},
+{
+"site": "0x4e66a8",
+"dst": "0x8b4190",
+"vtable": "0x7e9c44",
+"cls": "?$VectorClass@PAVBuildingLightClass@@"
+},
+{
+"site": "0x4e66fd",
+"dst": "0xa80208",
+"vtable": "0x7e9c64",
+"cls": "?$DynamicVectorClass@PAVParticleSystemClass@@"
+},
+{
+"site": "0x4e6728",
+"dst": "0xa80208",
+"vtable": "0x7e9c84",
+"cls": "?$VectorClass@PAVParticleSystemClass@@"
+},
+{
+"site": "0x4e677d",
+"dst": "0x8b4138",
+"vtable": "0x7e9ca4",
+"cls": "?$DynamicVectorClass@PAVTubeClass@@"
+},
+{
+"site": "0x4e67a8",
+"dst": "0x8b4138",
+"vtable": "0x7e9cc4",
+"cls": "?$VectorClass@PAVTubeClass@@"
+},
+{
+"site": "0x4e67fd",
+"dst": "0xa8ec38",
+"vtable": "0x7e9ce4",
+"cls": "?$DynamicVectorClass@PAVWaveClass@@"
+},
+{
+"site": "0x4e6828",
+"dst": "0xa8ec38",
+"vtable": "0x7e9d04",
+"cls": "?$VectorClass@PAVWaveClass@@"
+},
+{
+"site": "0x4e687d",
+"dst": "0xa8ed40",
+"vtable": "0x7e4678",
+"cls": "?$DynamicVectorClass@PAVBulletClass@@"
+},
+{
+"site": "0x4e68a8",
+"dst": "0xa8ed40",
+"vtable": "0x7e4698",
+"cls": "?$VectorClass@PAVBulletClass@@"
+},
+{
+"site": "0x4e68fd",
+"dst": "0xa8ec50",
+"vtable": "0x7e9d24",
+"cls": "?$DynamicVectorClass@PAVOverlayClass@@"
+},
+{
+"site": "0x4e6928",
+"dst": "0xa8ec50",
+"vtable": "0x7e9d44",
+"cls": "?$VectorClass@PAVOverlayClass@@"
+},
+{
+"site": "0x4e697d",
+"dst": "0xa83dc8",
+"vtable": "0x7e9d64",
+"cls": "?$DynamicVectorClass@PAVParticleClass@@"
+},
+{
+"site": "0x4e69a8",
+"dst": "0xa83dc8",
+"vtable": "0x7e9d84",
+"cls": "?$VectorClass@PAVParticleClass@@"
+},
+{
+"site": "0x4e69fd",
+"dst": "0xa8b1e0",
+"vtable": "0x7e9da4",
+"cls": "?$DynamicVectorClass@PAVSmudgeClass@@"
+},
+{
+"site": "0x4e6a28",
+"dst": "0xa8b1e0",
+"vtable": "0x7e9dc4",
+"cls": "?$VectorClass@PAVSmudgeClass@@"
+},
+{
+"site": "0x4e6a7d",
+"dst": "0xa8e988",
+"vtable": "0x7e9de4",
+"cls": "?$DynamicVectorClass@PAVTerrainClass@@"
+},
+{
+"site": "0x4e6aa8",
+"dst": "0xa8e988",
+"vtable": "0x7e9e04",
+"cls": "?$VectorClass@PAVTerrainClass@@"
+},
+{
+"site": "0x4e6afd",
+"dst": "0xa83de8",
+"vtable": "0x7e43c8",
+"cls": "?$DynamicVectorClass@PAVInfantryClass@@"
+},
+{
+"site": "0x4e6b28",
+"dst": "0xa83de8",
+"vtable": "0x7e43e8",
+"cls": "?$VectorClass@PAVInfantryClass@@"
+},
+{
+"site": "0x4e6b7d",
+"dst": "0xa8eb40",
+"vtable": "0x7e9e24",
+"cls": "?$DynamicVectorClass@PAVBuildingClass@@"
+},
+{
+"site": "0x4e6ba8",
+"dst": "0xa8eb40",
+"vtable": "0x7e9e44",
+"cls": "?$VectorClass@PAVBuildingClass@@"
+},
+{
+"site": "0x4e6bfd",
+"dst": "0xa8e390",
+"vtable": "0x7e9e64",
+"cls": "?$DynamicVectorClass@PAVAircraftClass@@"
+},
+{
+"site": "0x4e6c28",
+"dst": "0xa8e390",
+"vtable": "0x7e9e84",
+"cls": "?$VectorClass@PAVAircraftClass@@"
+},
+{
+"site": "0x4e6c7d",
+"dst": "0x8b4108",
+"vtable": "0x7e9ea4",
+"cls": "?$DynamicVectorClass@PAVUnitClass@@"
+},
+{
+"site": "0x4e6ca8",
+"dst": "0x8b4108",
+"vtable": "0x7e9ec4",
+"cls": "?$VectorClass@PAVUnitClass@@"
+},
+{
+"site": "0x4e6cfd",
+"dst": "0xa80228",
+"vtable": "0x7e9ee4",
+"cls": "?$DynamicVectorClass@PAVHouseClass@@"
+},
+{
+"site": "0x4e6d28",
+"dst": "0xa80228",
+"vtable": "0x7e9f04",
+"cls": "?$VectorClass@PAVHouseClass@@"
+},
+{
+"site": "0x4e6d7d",
+"dst": "0xa8e9a8",
+"vtable": "0x7e9f24",
+"cls": "?$DynamicVectorClass@PAVAnimClass@@"
+},
+{
+"site": "0x4e6da8",
+"dst": "0xa8e9a8",
+"vtable": "0x7e9f44",
+"cls": "?$VectorClass@PAVAnimClass@@"
+},
+{
+"site": "0x4e6dfd",
+"dst": "0x8b40e8",
+"vtable": "0x7e9f64",
+"cls": "?$DynamicVectorClass@PAVTeamClass@@"
+},
+{
+"site": "0x4e6e28",
+"dst": "0x8b40e8",
+"vtable": "0x7e9f84",
+"cls": "?$VectorClass@PAVTeamClass@@"
+},
+{
+"site": "0x4e6e7d",
+"dst": "0xa83e30",
+"vtable": "0x7e9fa4",
+"cls": "?$DynamicVectorClass@PAVFactoryClass@@"
+},
+{
+"site": "0x4e6ea8",
+"dst": "0xa83e30",
+"vtable": "0x7e9fc4",
+"cls": "?$VectorClass@PAVFactoryClass@@"
+},
+{
+"site": "0x4e6efd",
+"dst": "0xa83cf8",
+"vtable": "0x7e9fe4",
+"cls": "?$DynamicVectorClass@PAVCampaignClass@@"
+},
+{
+"site": "0x4e6f28",
+"dst": "0xa83cf8",
+"vtable": "0x7ea004",
+"cls": "?$VectorClass@PAVCampaignClass@@"
+},
+{
+"site": "0x4e6f7d",
+"dst": "0x8b4120",
+"vtable": "0x7ea024",
+"cls": "?$DynamicVectorClass@PAVSideClass@@"
+},
+{
+"site": "0x4e6fa8",
+"dst": "0x8b4120",
+"vtable": "0x7ea044",
+"cls": "?$VectorClass@PAVSideClass@@"
+},
+{
+"site": "0x4e6ffd",
+"dst": "0xa83c98",
+"vtable": "0x7ea064",
+"cls": "?$DynamicVectorClass@PAVHouseTypeClass@@"
+},
+{
+"site": "0x4e7028",
+"dst": "0xa83c98",
+"vtable": "0x7ea084",
+"cls": "?$VectorClass@PAVHouseTypeClass@@"
+},
+{
+"site": "0x4e707d",
+"dst": "0xa8e8d0",
+"vtable": "0x7ea0a4",
+"cls": "?$DynamicVectorClass@PAVTaskForceClass@@"
+},
+{
+"site": "0x4e70a8",
+"dst": "0xa8e8d0",
+"vtable": "0x7ea0c4",
+"cls": "?$VectorClass@PAVTaskForceClass@@"
+},
+{
+"site": "0x4e70fd",
+"dst": "0xa8eca0",
+"vtable": "0x7ea0e4",
+"cls": "?$DynamicVectorClass@PAVTeamTypeClass@@"
+},
+{
+"site": "0x4e7128",
+"dst": "0xa8eca0",
+"vtable": "0x7ea104",
+"cls": "?$VectorClass@PAVTeamTypeClass@@"
+},
+{
+"site": "0x4e717d",
+"dst": "0x8b41c8",
+"vtable": "0x7ea124",
+"cls": "?$DynamicVectorClass@PAVScriptTypeClass@@"
+},
+{
+"site": "0x4e71a8",
+"dst": "0x8b41c8",
+"vtable": "0x7ea144",
+"cls": "?$VectorClass@PAVScriptTypeClass@@"
+},
+{
+"site": "0x4e71fd",
+"dst": "0xa83d80",
+"vtable": "0x7ea164",
+"cls": "?$DynamicVectorClass@PAVOverlayTypeClass@@"
+},
+{
+"site": "0x4e7228",
+"dst": "0xa83d80",
+"vtable": "0x7ea184",
+"cls": "?$VectorClass@PAVOverlayTypeClass@@"
+},
+{
+"site": "0x4e727d",
+"dst": "0xa8ec18",
+"vtable": "0x7ea1a4",
+"cls": "?$DynamicVectorClass@PAVSmudgeTypeClass@@"
+},
+{
+"site": "0x4e72a8",
+"dst": "0xa8ec18",
+"vtable": "0x7ea1c4",
+"cls": "?$VectorClass@PAVSmudgeTypeClass@@"
+},
+{
+"site": "0x4e72fd",
+"dst": "0xa8e318",
+"vtable": "0x7ea1e4",
+"cls": "?$DynamicVectorClass@PAVTerrainTypeClass@@"
+},
+{
+"site": "0x4e7328",
+"dst": "0xa8e318",
+"vtable": "0x7ea204",
+"cls": "?$VectorClass@PAVTerrainTypeClass@@"
+},
+{
+"site": "0x4e737d",
+"dst": "0xa83c68",
+"vtable": "0x7ea224",
+"cls": "?$DynamicVectorClass@PAVBuildingTypeClass@@"
+},
+{
+"site": "0x4e73a8",
+"dst": "0xa83c68",
+"vtable": "0x7ea244",
+"cls": "?$VectorClass@PAVBuildingTypeClass@@"
+},
+{
+"site": "0x4e73fd",
+"dst": "0xa8b218",
+"vtable": "0x7ea264",
+"cls": "?$DynamicVectorClass@PAVAircraftTypeClass@@"
+},
+{
+"site": "0x4e7428",
+"dst": "0xa8b218",
+"vtable": "0x7ea284",
+"cls": "?$VectorClass@PAVAircraftTypeClass@@"
+},
+{
+"site": "0x4e747d",
+"dst": "0xa83ce0",
+"vtable": "0x7ea2a4",
+"cls": "?$DynamicVectorClass@PAVUnitTypeClass@@"
+},
+{
+"site": "0x4e74a8",
+"dst": "0xa83ce0",
+"vtable": "0x7ea2c4",
+"cls": "?$VectorClass@PAVUnitTypeClass@@"
+},
+{
+"site": "0x4e74fd",
+"dst": "0x8b4150",
+"vtable": "0x7ea2e4",
+"cls": "?$DynamicVectorClass@PAVAnimTypeClass@@"
+},
+{
+"site": "0x4e7528",
+"dst": "0x8b4150",
+"vtable": "0x7ea304",
+"cls": "?$VectorClass@PAVAnimTypeClass@@"
+},
+{
+"site": "0x4e757d",
+"dst": "0xa8e348",
+"vtable": "0x7ea324",
+"cls": "?$DynamicVectorClass@PAVInfantryTypeClass@@"
+},
+{
+"site": "0x4e75a8",
+"dst": "0xa8e348",
+"vtable": "0x7ea344",
+"cls": "?$VectorClass@PAVInfantryTypeClass@@"
+},
+{
+"site": "0x4e75fd",
+"dst": "0xa83c80",
+"vtable": "0x7ea364",
+"cls": "?$DynamicVectorClass@PAVBulletTypeClass@@"
+},
+{
+"site": "0x4e7628",
+"dst": "0xa83c80",
+"vtable": "0x7ea384",
+"cls": "?$VectorClass@PAVBulletTypeClass@@"
+},
+{
+"site": "0x4e767d",
+"dst": "0xa8eb28",
+"vtable": "0x7ea3a4",
+"cls": "?$DynamicVectorClass@PAVVoxelAnimTypeClass@@"
+},
+{
+"site": "0x4e76a8",
+"dst": "0xa8eb28",
+"vtable": "0x7ea3c4",
+"cls": "?$VectorClass@PAVVoxelAnimTypeClass@@"
+},
+{
+"site": "0x4e76fd",
+"dst": "0xa8ed28",
+"vtable": "0x7ea3e4",
+"cls": "?$DynamicVectorClass@PAVIsometricTileTypeClass@@"
+},
+{
+"site": "0x4e7728",
+"dst": "0xa8ed28",
+"vtable": "0x7ea404",
+"cls": "?$VectorClass@PAVIsometricTileTypeClass@@"
+},
+{
+"site": "0x4e777d",
+"dst": "0xa83d98",
+"vtable": "0x7ea424",
+"cls": "?$DynamicVectorClass@PAVParticleTypeClass@@"
+},
+{
+"site": "0x4e77a8",
+"dst": "0xa83d98",
+"vtable": "0x7ea444",
+"cls": "?$VectorClass@PAVParticleTypeClass@@"
+},
+{
+"site": "0x4e77fd",
+"dst": "0xa83d68",
+"vtable": "0x7ea464",
+"cls": "?$DynamicVectorClass@PAVParticleSystemTypeClass@@"
+},
+{
+"site": "0x4e7828",
+"dst": "0xa83d68",
+"vtable": "0x7ea484",
+"cls": "?$VectorClass@PAVParticleSystemTypeClass@@"
+},
+{
+"site": "0x4e787d",
+"dst": "0xa8e330",
+"vtable": "0x7ea4a4",
+"cls": "?$DynamicVectorClass@PAVSuperWeaponTypeClass@@"
+},
+{
+"site": "0x4e78a8",
+"dst": "0xa8e330",
+"vtable": "0x7ea4c4",
+"cls": "?$VectorClass@PAVSuperWeaponTypeClass@@"
+},
+{
+"site": "0x4e78fd",
+"dst": "0xa83cb8",
+"vtable": "0x7ea4e4",
+"cls": "?$DynamicVectorClass@PAVSuperClass@@"
+},
+{
+"site": "0x4e7928",
+"dst": "0xa83cb8",
+"vtable": "0x7ea504",
+"cls": "?$VectorClass@PAVSuperClass@@"
+},
+{
+"site": "0x4e797d",
+"dst": "0xa83d50",
+"vtable": "0x7ea4e4",
+"cls": "?$DynamicVectorClass@PAVSuperClass@@"
+},
+{
+"site": "0x4e79a8",
+"dst": "0xa83d50",
+"vtable": "0x7ea504",
+"cls": "?$VectorClass@PAVSuperClass@@"
+},
+{
+"site": "0x4e79fd",
+"dst": "0xa8ec78",
+"vtable": "0x7e17ac",
+"cls": "?$DynamicVectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x4e7a28",
+"dst": "0xa8ec78",
+"vtable": "0x7e180c",
+"cls": "?$VectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x4e7a7d",
+"dst": "0xa8eb00",
+"vtable": "0x7e858c",
+"cls": "?$DynamicVectorClass@PAVTechnoTypeClass@@"
+},
+{
+"site": "0x4e7aa8",
+"dst": "0xa8eb00",
+"vtable": "0x7e4df8",
+"cls": "?$VectorClass@PAVTechnoTypeClass@@"
+},
+{
+"site": "0x4e7afd",
+"dst": "0xa8e360",
+"vtable": "0x7e4f64",
+"cls": "?$DynamicVectorClass@PAVObjectClass@@"
+},
+{
+"site": "0x4e7b28",
+"dst": "0xa8e360",
+"vtable": "0x7e192c",
+"cls": "?$VectorClass@PAVObjectClass@@"
+},
+{
+"site": "0x4e7b7d",
+"dst": "0xa8e968",
+"vtable": "0x7ea524",
+"cls": "?$DynamicVectorClass@PAVAbstractTypeClass@@"
+},
+{
+"site": "0x4e7ba8",
+"dst": "0xa8e968",
+"vtable": "0x7ea544",
+"cls": "?$VectorClass@PAVAbstractTypeClass@@"
+},
+{
+"site": "0x4e7bfd",
+"dst": "0x8b41e0",
+"vtable": "0x7e9e24",
+"cls": "?$DynamicVectorClass@PAVBuildingClass@@"
+},
+{
+"site": "0x4e7c28",
+"dst": "0x8b41e0",
+"vtable": "0x7e9e44",
+"cls": "?$VectorClass@PAVBuildingClass@@"
+},
+{
+"site": "0x4e7c7d",
+"dst": "0xa83e00",
+"vtable": "0x7e9f24",
+"cls": "?$DynamicVectorClass@PAVAnimClass@@"
+},
+{
+"site": "0x4e7ca8",
+"dst": "0xa83e00",
+"vtable": "0x7e9f44",
+"cls": "?$VectorClass@PAVAnimClass@@"
+},
+{
+"site": "0x4e7ce0",
+"dst": "0xa8e8c8",
+"vtable": "0x7ea564",
+"cls": "TiberianSunClassFactory"
+},
+{
+"site": "0x4e7d5d",
+"dst": "0xa8ecb8",
+"vtable": "0x7e4f64",
+"cls": "?$DynamicVectorClass@PAVObjectClass@@"
+},
+{
+"site": "0x4e7d88",
+"dst": "0xa8ecb8",
+"vtable": "0x7e192c",
+"cls": "?$VectorClass@PAVObjectClass@@"
+},
+{
+"site": "0x4e7de0",
+"dst": "0xa8ece0",
+"vtable": "0x7ea57c",
+"cls": "VersionClass"
+},
+{
+"site": "0x4e7e58",
+"dst": "0xa83d24",
+"vtable": "0x7ea584",
+"cls": "?$VectorClass@PAUThemeControl@@"
+},
+{
+"site": "0x4e7f4d",
+"dst": "0x8b41a8",
+"vtable": "0x7ea5a4",
+"cls": "?$DynamicVectorClass@PAVTagClass@@"
+},
+{
+"site": "0x4e7f78",
+"dst": "0x8b41a8",
+"vtable": "0x7ea5c4",
+"cls": "?$VectorClass@PAVTagClass@@"
+},
+{
+"site": "0x4e7fcd",
+"dst": "0x8b40c8",
+"vtable": "0x7ea5a4",
+"cls": "?$DynamicVectorClass@PAVTagClass@@"
+},
+{
+"site": "0x4e7ff8",
+"dst": "0x8b40c8",
+"vtable": "0x7ea5c4",
+"cls": "?$VectorClass@PAVTagClass@@"
+},
+{
+"site": "0x4f510d",
+"dst": "0xa8efc8",
+"vtable": "0x7ea7b4",
+"cls": "?$DynamicVectorClass@PAUBuildChoiceClass@HouseClass@@"
+},
+{
+"site": "0x4f513e",
+"dst": "0xa8efc8",
+"vtable": "0x7ea7d4",
+"cls": "?$VectorClass@PAUBuildChoiceClass@HouseClass@@"
+},
+{
+"site": "0x53959d",
+"dst": "0xa9fa60",
+"vtable": "0x7ebfcc",
+"cls": "?$DynamicVectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x5395ce",
+"dst": "0xa9fa60",
+"vtable": "0x7ebfec",
+"cls": "?$VectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x53963d",
+"dst": "0xa9f9d0",
+"vtable": "0x7ebfcc",
+"cls": "?$DynamicVectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x53966e",
+"dst": "0xa9f9d0",
+"vtable": "0x7ebfec",
+"cls": "?$VectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x5396dd",
+"dst": "0xa9fa18",
+"vtable": "0x7ebfcc",
+"cls": "?$DynamicVectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x53970e",
+"dst": "0xa9fa18",
+"vtable": "0x7ebfec",
+"cls": "?$VectorClass@PBVAnimClass@@"
+},
+{
+"site": "0x53ca8d",
+"dst": "0xaa0118",
+"vtable": "0x7ec05c",
+"cls": "?$DynamicVectorClass@PAVIonBlastClass@@"
+},
+{
+"site": "0x53cabe",
+"dst": "0xaa0118",
+"vtable": "0x7ec07c",
+"cls": "?$VectorClass@PAVIonBlastClass@@"
+},
+{
+"site": "0x543e8d",
+"dst": "0xaa1078",
+"vtable": "0x7ecbdc",
+"cls": "?$DynamicVectorClass@PAUTileInsertType@IsometricTileTypeClass@@"
+},
+{
+"site": "0x543ebe",
+"dst": "0xaa1078",
+"vtable": "0x7ecbfc",
+"cls": "?$VectorClass@PAUTileInsertType@IsometricTileTypeClass@@"
+},
+{
+"site": "0x54e298",
+"dst": "0xabc604",
+"vtable": "0x7ece7c",
+"cls": "?$DynamicVectorClass@PAUKamikazeControl@@"
+},
+{
+"site": "0x54e31d",
+"dst": "0xabc604",
+"vtable": "0x7ece9c",
+"cls": "?$VectorClass@PAUKamikazeControl@@"
+},
+{
+"site": "0x54fddd",
+"dst": "0xabc878",
+"vtable": "0x7ecedc",
+"cls": "?$DynamicVectorClass@PAVLaserDrawClass@@"
+},
+{
+"site": "0x54fe0e",
+"dst": "0xabc878",
+"vtable": "0x7ecefc",
+"cls": "?$VectorClass@PAVLaserDrawClass@@"
+},
+{
+"site": "0x55465d",
+"dst": "0xabca10",
+"vtable": "0x7ecf7c",
+"cls": "?$DynamicVectorClass@PAVLightSourceClass@@"
+},
+{
+"site": "0x554688",
+"dst": "0xabca10",
+"vtable": "0x7ecf9c",
+"cls": "?$VectorClass@PAVLightSourceClass@@"
+},
+{
+"site": "0x5546dd",
+"dst": "0xabca40",
+"vtable": "0x7ecfbc",
+"cls": "?$DynamicVectorClass@PAVPendingCellClass@LightSourceClass@@"
+},
+{
+"site": "0x55470e",
+"dst": "0xabca40",
+"vtable": "0x7ecfdc",
+"cls": "?$VectorClass@PAVPendingCellClass@LightSourceClass@@"
+},
+{
+"site": "0x5569bd",
+"dst": "0xabcb78",
+"vtable": "0x7ed0cc",
+"cls": "?$DynamicVectorClass@PAVLineTrail@@"
+},
+{
+"site": "0x5569e8",
+"dst": "0xabcb78",
+"vtable": "0x7ed0ec",
+"cls": "?$VectorClass@PAVLineTrail@@"
+},
+{
+"site": "0x58bc4d",
+"dst": "0xabdf90",
+"vtable": "0x7ed858",
+"cls": "?$DynamicVectorClass@PAVMapRegionClass@@"
+},
+{
+"site": "0x58bc7e",
+"dst": "0xabdf90",
+"vtable": "0x7ed878",
+"cls": "?$VectorClass@PAVMapRegionClass@@"
+},
+{
+"site": "0x5b3af6",
+"dst": "0xabefd8",
+"vtable": "0x7edf38",
+"cls": "?$List@PAVMixFileClass@@"
+},
+{
+"site": "0x5b3b2b",
+"dst": "0xabefd8",
+"vtable": "0x7e1b04",
+"cls": "GenericList"
+},
+{
+"site": "0x5bf7ed",
+"dst": "0xabf390",
+"vtable": "0x7ee0b4",
+"cls": "?$DynamicVectorClass@PBD"
+},
+{
+"site": "0x5bf818",
+"dst": "0xabf390",
+"vtable": "0x7ee0d4",
+"cls": "?$VectorClass@PBD"
+},
+{
+"site": "0x5d4c6d",
+"dst": "0xabfc90",
+"vtable": "0x7eec8c",
+"cls": "?$DynamicVectorClass@PAUHWND__@@"
+},
+{
+"site": "0x5d4c98",
+"dst": "0xabfc90",
+"vtable": "0x7eecac",
+"cls": "?$VectorClass@PAUHWND__@@"
+},
+{
+"site": "0x5d4ced",
+"dst": "0xabfcb8",
+"vtable": "0x7eeccc",
+"cls": "?$DynamicVectorClass@UAcceleratorTracker@@"
+},
+{
+"site": "0x5d4d18",
+"dst": "0xabfcb8",
+"vtable": "0x7eecec",
+"cls": "?$VectorClass@UAcceleratorTracker@@"
+},
+{
+"site": "0x5d5af1",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d5b28",
+"dst": "0xabfda0",
+"vtable": "0x7eed40",
+"cls": "?$VectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d5e45",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d5ea5",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d5f01",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d604d",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d60a0",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d6181",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5d61d4",
+"dst": "0xabfda0",
+"vtable": "0x7eed20",
+"cls": "?$DynamicVectorClass@PAVMultiplayerGameMode@@"
+},
+{
+"site": "0x5f700d",
+"dst": "0xac1418",
+"vtable": "0x7ef26c",
+"cls": "?$DynamicVectorClass@PAVObjectTypeClass@@"
+},
+{
+"site": "0x5f703e",
+"dst": "0xac1418",
+"vtable": "0x7ef28c",
+"cls": "?$VectorClass@PAVObjectTypeClass@@"
+},
+{
+"site": "0x5ff1ed",
+"dst": "0xac1678",
+"vtable": "0x7ef6bc",
+"cls": "?$DynamicVectorClass@PAVSpotLightClass@@"
+},
+{
+"site": "0x5ff218",
+"dst": "0xac1678",
+"vtable": "0x7ef6dc",
+"cls": "?$VectorClass@PAVSpotLightClass@@"
+},
+{
+"site": "0x6291ad",
+"dst": "0xac4910",
+"vtable": "0x7ef824",
+"cls": "?$DynamicVectorClass@PAVParasiteClass@@"
+},
+{
+"site": "0x6291d8",
+"dst": "0xac4910",
+"vtable": "0x7ef844",
+"cls": "?$VectorClass@PAVParasiteClass@@"
+},
+{
+"site": "0x6335fd",
+"dst": "0xac4b48",
+"vtable": "0x7efe04",
+"cls": "?$DynamicVectorClass@PAVEventClass@@"
+},
+{
+"site": "0x63362e",
+"dst": "0xac4b48",
+"vtable": "0x7efe24",
+"cls": "?$VectorClass@PAVEventClass@@"
+},
+{
+"site": "0x63369d",
+"dst": "0xac4c98",
+"vtable": "0x7efe44",
+"cls": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x6336ce",
+"dst": "0xac4c98",
+"vtable": "0x7efe64",
+"cls": "?$VectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x63373d",
+"dst": "0xac4c40",
+"vtable": "0x7e17ac",
+"cls": "?$DynamicVectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x63376e",
+"dst": "0xac4c40",
+"vtable": "0x7e180c",
+"cls": "?$VectorClass@PAVTechnoClass@@"
+},
+{
+"site": "0x6337dd",
+"dst": "0xac4b30",
+"vtable": "0x7efe44",
+"cls": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x63380e",
+"dst": "0xac4b30",
+"vtable": "0x7efe64",
+"cls": "?$VectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x63387d",
+"dst": "0xac4c18",
+"vtable": "0x7efe44",
+"cls": "?$DynamicVectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x6338ae",
+"dst": "0xac4c18",
+"vtable": "0x7efe64",
+"cls": "?$VectorClass@PAVPlanningNodeClass@@"
+},
+{
+"site": "0x63391d",
+"dst": "0xac4c78",
+"vtable": "0x7efe84",
+"cls": "?$DynamicVectorClass@PAVPlanningTokenClass@@"
+},
+{
+"site": "0x63394e",
+"dst": "0xac4c78",
+"vtable": "0x7efea4",
+"cls": "?$VectorClass@PAVPlanningTokenClass@@"
+},
+{
+"site": "0x6429a5",
+"dst": "0xac4f58",
+"vtable": "0x7f0064",
+"cls": "ProgressScreenClass"
+},
+{
+"site": "0x65288e",
+"dst": "0xb04a10",
+"vtable": "0x7f02bc",
+"cls": "RTacticalClass@RadarClass"
+},
+{
+"site": "0x6590ad",
+"dst": "0xb04a60",
+"vtable": "0x7f0484",
+"cls": "?$DynamicVectorClass@PAVRadBeam@@"
+},
+{
+"site": "0x6590d8",
+"dst": "0xb04a60",
+"vtable": "0x7f04a4",
+"cls": "?$VectorClass@PAVRadBeam@@"
+},
+{
+"site": "0x65b17d",
+"dst": "0xb04bd0",
+"vtable": "0x7f07a4",
+"cls": "?$DynamicVectorClass@PAVRadSiteClass@@"
+},
+{
+"site": "0x65b1a8",
+"dst": "0xb04bd0",
+"vtable": "0x7f07c4",
+"cls": "?$VectorClass@PAVRadSiteClass@@"
+},
+{
+"site": "0x65f9cd",
+"dst": "0xb04da8",
+"vtable": "0x7f0aac",
+"cls": "?$DynamicVectorClass@PAVRadarEventClass@@"
+},
+{
+"site": "0x65f9fe",
+"dst": "0xb04da8",
+"vtable": "0x7f0acc",
+"cls": "?$VectorClass@PAVRadarEventClass@@"
+},
+{
+"site": "0x66381d",
+"dst": "0xb052d0",
+"vtable": "0x7f0c2c",
+"cls": "?$DynamicVectorClass@PAUConnectionListStruct@OwnerTalkClass@@"
+},
+{
+"site": "0x6638a4",
+"dst": "0xb052d0",
+"vtable": "0x7f0c4c",
+"cls": "?$VectorClass@PAUConnectionListStruct@OwnerTalkClass@@"
+},
+{
+"site": "0x68c34d",
+"dst": "0xb054d0",
+"vtable": "0x7ef790",
+"cls": "?$DynamicVectorClass@PAVColorScheme@@"
+},
+{
+"site": "0x68c378",
+"dst": "0xb054d0",
+"vtable": "0x7ef7b0",
+"cls": "?$VectorClass@PAVColorScheme@@"
+},
+{
+"site": "0x6a4c2b",
+"dst": "0xb07e58",
+"vtable": "0x7f2f44",
+"cls": "SBGadgetClass@SidebarClass"
+},
+{
+"site": "0x6af13d",
+"dst": "0xb0b5f0",
+"vtable": "0x7f315c",
+"cls": "?$DynamicVectorClass@PAVSlaveManagerClass@@"
+},
+{
+"site": "0x6af168",
+"dst": "0xb0b5f0",
+"vtable": "0x7f317c",
+"cls": "?$VectorClass@PAVSlaveManagerClass@@"
+},
+{
+"site": "0x6b23cd",
+"dst": "0xb0b650",
+"vtable": "0x7f327c",
+"cls": "?$DynamicVectorClass@UUndoInfoStruct@@"
+},
+{
+"site": "0x6b23f8",
+"dst": "0xb0b650",
+"vtable": "0x7f329c",
+"cls": "?$VectorClass@UUndoInfoStruct@@"
+},
+{
+"site": "0x6b6c2d",
+"dst": "0xb0b880",
+"vtable": "0x7f35e4",
+"cls": "?$DynamicVectorClass@PAVSpawnManagerClass@@"
+},
+{
+"site": "0x6b6c58",
+"dst": "0xb0b880",
+"vtable": "0x7f3604",
+"cls": "?$VectorClass@PAVSpawnManagerClass@@"
+},
+{
+"site": "0x6bb27d",
+"dst": "0xb0bc88",
+"vtable": "0x7f3728",
+"cls": "?$DynamicVectorClass@K"
+},
+{
+"site": "0x6bb2a8",
+"dst": "0xb0bc88",
+"vtable": "0x7f3748",
+"cls": "?$VectorClass@K"
+},
+{
+"site": "0x6cf087",
+"dst": "0xb0c114",
+"vtable": "0x7f4134",
+"cls": "?$DynamicVectorClass@VSwizzlePointerClass@@"
+},
+{
+"site": "0x6cf0b4",
+"dst": "0xb0c12c",
+"vtable": "0x7f4134",
+"cls": "?$DynamicVectorClass@VSwizzlePointerClass@@"
+},
+{
+"site": "0x6cf0c8",
+"dst": "0xb0c110",
+"vtable": "0x7f4108",
+"cls": "SwizzleManagerClass"
+},
+{
+"site": "0x6cf0f6",
+"dst": "0xb0c110",
+"vtable": "0x7f4108",
+"cls": "SwizzleManagerClass"
+},
+{
+"site": "0x6cf10e",
+"dst": "0xb0c12c",
+"vtable": "0x7f4154",
+"cls": "?$VectorClass@VSwizzlePointerClass@@"
+},
+{
+"site": "0x6cf144",
+"dst": "0xb0c114",
+"vtable": "0x7f4154",
+"cls": "?$VectorClass@VSwizzlePointerClass@@"
+},
+{
+"site": "0x6d1a7d",
+"dst": "0xb0ce78",
+"vtable": "0x7f429c",
+"cls": "?$DynamicVectorClass@UDirtyAreaStruct@@"
+},
+{
+"site": "0x6d1aae",
+"dst": "0xb0ce78",
+"vtable": "0x7f42bc",
+"cls": "?$VectorClass@UDirtyAreaStruct@@"
+},
+{
+"site": "0x6d1b2d",
+"dst": "0xb0cde8",
+"vtable": "0x7f42dc",
+"cls": "?$DynamicVectorClass@PAVShadowControlClass@@"
+},
+{
+"site": "0x6d1b5e",
+"dst": "0xb0cde8",
+"vtable": "0x7f42fc",
+"cls": "?$VectorClass@PAVShadowControlClass@@"
+},
+{
+"site": "0x6dcf9d",
+"dst": "0xb0e658",
+"vtable": "0x7f43d0",
+"cls": "?$DynamicVectorClass@PAVTActionClass@@"
+},
+{
+"site": "0x6dcfc8",
+"dst": "0xb0e658",
+"vtable": "0x7f43f0",
+"cls": "?$VectorClass@PAVTActionClass@@"
+},
+{
+"site": "0x6e4d7d",
+"dst": "0xb0e720",
+"vtable": "0x7ea5a4",
+"cls": "?$DynamicVectorClass@PAVTagClass@@"
+},
+{
+"site": "0x6e4da8",
+"dst": "0xb0e720",
+"vtable": "0x7ea5c4",
+"cls": "?$VectorClass@PAVTagClass@@"
+},
+{
+"site": "0x6e5afd",
+"dst": "0xb0e780",
+"vtable": "0x7f4558",
+"cls": "?$DynamicVectorClass@PAVTagTypeClass@@"
+},
+{
+"site": "0x6e5b28",
+"dst": "0xb0e780",
+"vtable": "0x7f4578",
+"cls": "?$VectorClass@PAVTagTypeClass@@"
+},
+{
+"site": "0x71a3ed",
+"dst": "0xb0ec60",
+"vtable": "0x7f5114",
+"cls": "?$DynamicVectorClass@PAVTemporalClass@@"
+},
+{
+"site": "0x71a418",
+"dst": "0xb0ec60",
+"vtable": "0x7f5134",
+"cls": "?$VectorClass@PAVTemporalClass@@"
+},
+{
+"site": "0x71e63d",
+"dst": "0xb0f1a0",
+"vtable": "0x7f550c",
+"cls": "?$DynamicVectorClass@PAVTEventClass@@"
+},
+{
+"site": "0x71e668",
+"dst": "0xb0f1a0",
+"vtable": "0x7f552c",
+"cls": "?$VectorClass@PAVTEventClass@@"
+},
+{
+"site": "0x72165d",
+"dst": "0xb0f4e8",
+"vtable": "0x7f56bc",
+"cls": "?$DynamicVectorClass@PAVTiberiumClass@@"
+},
+{
+"site": "0x721688",
+"dst": "0xb0f4e8",
+"vtable": "0x7f56dc",
+"cls": "?$VectorClass@PAVTiberiumClass@@"
+},
+{
+"site": "0x7252ed",
+"dst": "0xb0f720",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725318",
+"dst": "0xb0f720",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72536d",
+"dst": "0xb0f670",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725398",
+"dst": "0xb0f670",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x7253ed",
+"dst": "0xb0f618",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725418",
+"dst": "0xb0f618",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72546d",
+"dst": "0xb0f708",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725498",
+"dst": "0xb0f708",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x7254ed",
+"dst": "0xb0f5b8",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725518",
+"dst": "0xb0f5b8",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72556d",
+"dst": "0xb0f640",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725598",
+"dst": "0xb0f640",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x7255ed",
+"dst": "0xb0f658",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725618",
+"dst": "0xb0f658",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72566d",
+"dst": "0xb0f5f0",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725698",
+"dst": "0xb0f5f0",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x7256ed",
+"dst": "0xb0f5d8",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725718",
+"dst": "0xb0f5d8",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72576d",
+"dst": "0xb0f6c8",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725798",
+"dst": "0xb0f6c8",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x7257ed",
+"dst": "0xb0f6f0",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725818",
+"dst": "0xb0f6f0",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x72586d",
+"dst": "0xb0f698",
+"vtable": "0x7e91ec",
+"cls": "?$DynamicVectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x725898",
+"dst": "0xb0f698",
+"vtable": "0x7e920c",
+"cls": "?$VectorClass@PAVAbstractClass@@"
+},
+{
+"site": "0x74c39d",
+"dst": "0xb1d290",
+"vtable": "0x7f663c",
+"cls": "?$DynamicVectorClass@PAVVeinholeMonsterClass@@"
+},
+{
+"site": "0x74c3ce",
+"dst": "0xb1d290",
+"vtable": "0x7f665c",
+"cls": "?$VectorClass@PAVVeinholeMonsterClass@@"
+},
+{
+"site": "0x75031d",
+"dst": "0xb1d378",
+"vtable": "0x7f68ac",
+"cls": "?$DynamicVectorClass@PAVVocClass@@"
+},
+{
+"site": "0x750348",
+"dst": "0xb1d378",
+"vtable": "0x7f68cc",
+"cls": "?$VectorClass@PAVVocClass@@"
+},
+{
+"site": "0x75222d",
+"dst": "0xb1d4a0",
+"vtable": "0x7f6904",
+"cls": "?$DynamicVectorClass@PAVVoxClass@@"
+},
+{
+"site": "0x752258",
+"dst": "0xb1d4a0",
+"vtable": "0x7f6924",
+"cls": "?$VectorClass@PAVVoxClass@@"
+},
+{
+"site": "0x7539f8",
+"dst": "0xb2d928",
+"vtable": "0x7e2104",
+"cls": "XSurface"
+},
+{
+"site": "0x753a16",
+"dst": "0xb2d928",
+"vtable": "0x7e2070",
+"cls": "BSurface"
+},
+{
+"site": "0x753a3a",
+"dst": "0xb2d928",
+"vtable": "0x7e2198",
+"cls": "Surface"
+},
+{
+"site": "0x753a78",
+"dst": "0xb2d7f0",
+"vtable": "0x7e2104",
+"cls": "XSurface"
+},
+{
+"site": "0x753a96",
+"dst": "0xb2d7f0",
+"vtable": "0x7e2070",
+"cls": "BSurface"
+},
+{
+"site": "0x753aba",
+"dst": "0xb2d7f0",
+"vtable": "0x7e2198",
+"cls": "Surface"
+},
+{
+"site": "0x75919d",
+"dst": "0xb45b58",
+"vtable": "0x7f6984",
+"cls": "?$DynamicVectorClass@PAVMovieHandle@@"
+},
+{
+"site": "0x7591c8",
+"dst": "0xb45b58",
+"vtable": "0x7f69a4",
+"cls": "?$VectorClass@PAVMovieHandle@@"
+},
+{
+"site": "0x7635ad",
+"dst": "0xb72608",
+"vtable": "0x7f6e04",
+"cls": "?$DynamicVectorClass@PAVWaypointPathClass@@"
+},
+{
+"site": "0x7635d8",
+"dst": "0xb72608",
+"vtable": "0x7f6e24",
+"cls": "?$VectorClass@PAVWaypointPathClass@@"
+},
+{
+"site": "0x76608d",
+"dst": "0xb72760",
+"vtable": "0x7f6fd4",
+"cls": "?$DynamicVectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@"
+},
+{
+"site": "0x7660b9",
+"dst": "0xb72760",
+"vtable": "0x7f6ff4",
+"cls": "?$VectorClass@V?$rc_ptr@VGameOption@WorldDominationTour@@@@"
+},
+{
+"site": "0x77d12f",
+"dst": "0xb75e48",
+"vtable": "0x7f3f44",
+"cls": "?$rc_ptr@VPlayerProfile@@"
+},
+{
+"site": "0x77d140",
+"dst": "0xb75e48",
+"vtable": "0x7f3f44",
+"cls": "?$rc_ptr@VPlayerProfile@@"
+},
+{
+"site": "0x7b011f",
+"dst": "0xb77f58",
+"vtable": "0x7f70ec",
+"cls": "?$rc_ptr@VWDTState@@"
+},
+{
+"site": "0x7b0130",
+"dst": "0xb77f58",
+"vtable": "0x7f70ec",
+"cls": "?$rc_ptr@VWDTState@@"
+},
+{
+"site": "0x7b015f",
+"dst": "0xb77f70",
+"vtable": "0x7f70ec",
+"cls": "?$rc_ptr@VWDTState@@"
+},
+{
+"site": "0x7b0170",
+"dst": "0xb77f70",
+"vtable": "0x7f70ec",
+"cls": "?$rc_ptr@VWDTState@@"
+},
+{
+"site": "0x7b019f",
+"dst": "0xb77f68",
+"vtable": "0x7f6f24",
+"cls": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+},
+{
+"site": "0x7b01b0",
+"dst": "0xb77f68",
+"vtable": "0x7f6f24",
+"cls": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+},
+{
+"site": "0x7b01df",
+"dst": "0xb77f78",
+"vtable": "0x7f6f24",
+"cls": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+},
+{
+"site": "0x7b01f0",
+"dst": "0xb77f78",
+"vtable": "0x7f6f24",
+"cls": "?$rc_ptr@VCampaign@WorldDominationTour@@"
+}
+]

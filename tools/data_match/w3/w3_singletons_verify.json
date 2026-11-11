@@ -1,0 +1,429 @@
+{
+ "count": 16,
+ "sample": [
+  {
+   "va": 8910296,
+   "name": "dword_87F5D8",
+   "type": "?$DynamicVectorClass@PAVBombClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x40b563",
+     "vtable": "0x7e17cc",
+     "vtable_cls": "?$DynamicVectorClass@PAVBombClass@@",
+     "match_kind": "self",
+     "disasm": "0040b563 mov dword ptr [0x87f5d8], 0x7e17cc",
+     "verified_mov": true
+    },
+    {
+     "site": "0x40b60a",
+     "vtable": "0x7e17ec",
+     "vtable_cls": "?$VectorClass@PAVBombClass@@",
+     "match_kind": "base",
+     "disasm": "0040b60a mov dword ptr [0x87f5d8], 0x7e17ec",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 24,
+   "size_fits_gap": null
+  },
+  {
+   "va": 8941656,
+   "name": "dword_887058",
+   "type": "CCINIClass",
+   "class_size": 88,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x40e241",
+     "vtable": "0x7e1af4",
+     "vtable_cls": "CCINIClass",
+     "match_kind": "self",
+     "disasm": "0040e241 mov dword ptr [0x887058], 0x7e1af4",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 12,
+   "size_fits_gap": false
+  },
+  {
+   "va": 8941968,
+   "name": "dword_887190",
+   "type": "GenericNode",
+   "class_size": 8,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x40dfd0",
+     "vtable": "0x7e1b0c",
+     "vtable_cls": "GenericNode",
+     "match_kind": "self",
+     "disasm": "0040dfd0 mov dword ptr [0x887190], 0x7e1b0c",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 120,
+   "size_fits_gap": true
+  },
+  {
+   "va": 8954096,
+   "name": "dword_88A0F0",
+   "type": "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4208fd",
+     "vtable": "0x7e3238",
+     "vtable_cls": "?$DynamicVectorClass@PAVAlphaShapeClass@@",
+     "match_kind": "self",
+     "disasm": "004208fd mov dword ptr [0x88a0f0], 0x7e3238",
+     "verified_mov": true
+    },
+    {
+     "site": "0x420928",
+     "vtable": "0x7e3258",
+     "vtable_cls": "?$VectorClass@PAVAlphaShapeClass@@",
+     "match_kind": "base",
+     "disasm": "00420928 mov dword ptr [0x88a0f0], 0x7e3258",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 65964,
+   "size_fits_gap": null
+  },
+  {
+   "va": 9058160,
+   "name": "dword_8A3770",
+   "type": "?$DynamicVectorClass@PAVEgoClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4c3c2d",
+     "vtable": "0x7e86dc",
+     "vtable_cls": "?$DynamicVectorClass@PAVEgoClass@@",
+     "match_kind": "self",
+     "disasm": "004c3c2d mov dword ptr [0x8a3770], 0x7e86dc",
+     "verified_mov": true
+    },
+    {
+     "site": "0x4c3c58",
+     "vtable": "0x7e86fc",
+     "vtable_cls": "?$VectorClass@PAVEgoClass@@",
+     "match_kind": "base",
+     "disasm": "004c3c58 mov dword ptr [0x8a3770], 0x7e86fc",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 256,
+   "size_fits_gap": null
+  },
+  {
+   "va": 9126288,
+   "name": "dword_8B4190",
+   "type": "?$DynamicVectorClass@PAVBuildingLightClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4e667d",
+     "vtable": "0x7e9c24",
+     "vtable_cls": "?$DynamicVectorClass@PAVBuildingLightClass@@",
+     "match_kind": "self",
+     "disasm": "004e667d mov dword ptr [0x8b4190], 0x7e9c24",
+     "verified_mov": true
+    },
+    {
+     "site": "0x4e66a8",
+     "vtable": "0x7e9c44",
+     "vtable_cls": "?$VectorClass@PAVBuildingLightClass@@",
+     "match_kind": "base",
+     "disasm": "004e66a8 mov dword ptr [0x8b4190], 0x7e9c44",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 24,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11025656,
+   "name": "dword_A83CF8",
+   "type": "?$DynamicVectorClass@PAVCampaignClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4e6efd",
+     "vtable": "0x7e9fe4",
+     "vtable_cls": "?$DynamicVectorClass@PAVCampaignClass@@",
+     "match_kind": "self",
+     "disasm": "004e6efd mov dword ptr [0xa83cf8], 0x7e9fe4",
+     "verified_mov": true
+    },
+    {
+     "site": "0x4e6f28",
+     "vtable": "0x7ea004",
+     "vtable_cls": "?$VectorClass@PAVCampaignClass@@",
+     "match_kind": "base",
+     "disasm": "004e6f28 mov dword ptr [0xa83cf8], 0x7ea004",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 44,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11055616,
+   "name": "AITriggerTypeClass_Array",
+   "type": "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4e64fd",
+     "vtable": "0x7e9b64",
+     "vtable_cls": "?$DynamicVectorClass@PAVAITriggerTypeClass@@",
+     "match_kind": "self",
+     "disasm": "004e64fd mov dword ptr [0xa8b200], 0x7e9b64",
+     "verified_mov": true
+    },
+    {
+     "site": "0x4e6528",
+     "vtable": "0x7e9b84",
+     "vtable_cls": "?$VectorClass@PAVAITriggerTypeClass@@",
+     "match_kind": "base",
+     "disasm": "004e6528 mov dword ptr [0xa8b200], 0x7e9b84",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 24,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11069864,
+   "name": "AnimClass_Array",
+   "type": "?$DynamicVectorClass@PAVAnimClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4e6d7d",
+     "vtable": "0x7e9f24",
+     "vtable_cls": "?$DynamicVectorClass@PAVAnimClass@@",
+     "match_kind": "self",
+     "disasm": "004e6d7d mov dword ptr [0xa8e9a8], 0x7e9f24",
+     "verified_mov": true
+    },
+    {
+     "site": "0x4e6da8",
+     "vtable": "0x7e9f44",
+     "vtable_cls": "?$VectorClass@PAVAnimClass@@",
+     "match_kind": "base",
+     "disasm": "004e6da8 mov dword ptr [0xa8e9a8], 0x7e9f44",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 320,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11070688,
+   "name": "g_CoordScatterManager",
+   "type": "VersionClass",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x4e7de0",
+     "vtable": "0x7ea57c",
+     "vtable_cls": "VersionClass",
+     "match_kind": "self",
+     "disasm": "004e7de0 mov dword ptr [0xa8ece0], 0x7ea57c",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 72,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11258384,
+   "name": "dword_ABCA10",
+   "type": "?$DynamicVectorClass@PAVLightSourceClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x55465d",
+     "vtable": "0x7ecf7c",
+     "vtable_cls": "?$DynamicVectorClass@PAVLightSourceClass@@",
+     "match_kind": "self",
+     "disasm": "0055465d mov dword ptr [0xabca10], 0x7ecf7c",
+     "verified_mov": true
+    },
+    {
+     "site": "0x554688",
+     "vtable": "0x7ecf9c",
+     "vtable_cls": "?$VectorClass@PAVLightSourceClass@@",
+     "match_kind": "base",
+     "disasm": "00554688 mov dword ptr [0xabca10], 0x7ecf9c",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 48,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11290896,
+   "name": "dword_AC4910",
+   "type": "?$DynamicVectorClass@PAVParasiteClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x6291ad",
+     "vtable": "0x7ef824",
+     "vtable_cls": "?$DynamicVectorClass@PAVParasiteClass@@",
+     "match_kind": "self",
+     "disasm": "006291ad mov dword ptr [0xac4910], 0x7ef824",
+     "verified_mov": true
+    },
+    {
+     "site": "0x6291d8",
+     "vtable": "0x7ef844",
+     "vtable_cls": "?$VectorClass@PAVParasiteClass@@",
+     "match_kind": "base",
+     "disasm": "006291d8 mov dword ptr [0xac4910], 0x7ef844",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 544,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11554216,
+   "name": "dword_B04DA8",
+   "type": "?$DynamicVectorClass@PAVRadarEventClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x65f9cd",
+     "vtable": "0x7f0aac",
+     "vtable_cls": "?$DynamicVectorClass@PAVRadarEventClass@@",
+     "match_kind": "self",
+     "disasm": "0065f9cd mov dword ptr [0xb04da8], 0x7f0aac",
+     "verified_mov": true
+    },
+    {
+     "site": "0x65f9fe",
+     "vtable": "0x7f0acc",
+     "vtable_cls": "?$VectorClass@PAVRadarEventClass@@",
+     "match_kind": "base",
+     "disasm": "0065f9fe mov dword ptr [0xb04da8], 0x7f0acc",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 1320,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11587048,
+   "name": "dword_B0CDE8",
+   "type": "?$DynamicVectorClass@PAVShadowControlClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x6d1b2d",
+     "vtable": "0x7f42dc",
+     "vtable_cls": "?$DynamicVectorClass@PAVShadowControlClass@@",
+     "match_kind": "self",
+     "disasm": "006d1b2d mov dword ptr [0xb0cde8], 0x7f42dc",
+     "verified_mov": true
+    },
+    {
+     "site": "0x6d1b5e",
+     "vtable": "0x7f42fc",
+     "vtable_cls": "?$VectorClass@PAVShadowControlClass@@",
+     "match_kind": "base",
+     "disasm": "006d1b5e mov dword ptr [0xb0cde8], 0x7f42fc",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 144,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11597336,
+   "name": "dword_B0F618",
+   "type": "?$DynamicVectorClass@PAVAbstractClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x7253ed",
+     "vtable": "0x7e91ec",
+     "vtable_cls": "?$DynamicVectorClass@PAVAbstractClass@@",
+     "match_kind": "self",
+     "disasm": "007253ed mov dword ptr [0xb0f618], 0x7e91ec",
+     "verified_mov": true
+    },
+    {
+     "site": "0x725418",
+     "vtable": "0x7e920c",
+     "vtable_cls": "?$VectorClass@PAVAbstractClass@@",
+     "match_kind": "base",
+     "disasm": "00725418 mov dword ptr [0xb0f618], 0x7e920c",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 40,
+   "size_fits_gap": null
+  },
+  {
+   "va": 11654304,
+   "name": "dword_B1D4A0",
+   "type": "?$DynamicVectorClass@PAVVoxClass@@",
+   "class_size": 0,
+   "static_bytes_zero": true,
+   "static_hex": "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+   "installs": [
+    {
+     "site": "0x75222d",
+     "vtable": "0x7f6904",
+     "vtable_cls": "?$DynamicVectorClass@PAVVoxClass@@",
+     "match_kind": "self",
+     "disasm": "0075222d mov dword ptr [0xb1d4a0], 0x7f6904",
+     "verified_mov": true
+    },
+    {
+     "site": "0x752258",
+     "vtable": "0x7f6924",
+     "vtable_cls": "?$VectorClass@PAVVoxClass@@",
+     "match_kind": "base",
+     "disasm": "00752258 mov dword ptr [0xb1d4a0], 0x7f6924",
+     "verified_mov": true
+    }
+   ],
+   "gap_to_next": 66384,
+   "size_fits_gap": null
+  }
+ ]
+}
