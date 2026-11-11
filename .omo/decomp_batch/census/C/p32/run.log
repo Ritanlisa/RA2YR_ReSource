@@ -1,0 +1,98 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x6dcb50 _DynamicVectorClass_PAVShadowControlClass::SetCapacity_0 -> _DynamicVectorClass_PAVShadowControlClass
+[conv] 0x75a610 _DynamicVectorClass_PAVMovieHandle::SetCapacity -> _DynamicVectorClass_PAVMovieHandle
+[conv] 0x69fb20 ShipLocomotionClass::ComputeAudio3DRotation_1 -> ShipLocomotionClass
+[conv] 0x4517d0 TechnoClass::sub_4517D0 -> TechnoClass
+[conv] 0x63d210 unknown::ActionScenarioClassCoordToScreen -> unknown
+[conv] 0x726400 BuildingClass::ProcessUpgradeEffects -> BuildingClass
+[conv] 0x556df0 ObjectClass::Game_Destroy -> ObjectClass
+[conv] 0x7b4b50 ObjectClass::sub_7B4B50 -> ObjectClass
+[conv] 0x5eacd0 ObjectClass::RefreshLobbyAll_Get_5EACD0 -> ObjectClass
+[conv] 0x5d5f30 MultiplayerGameMode::Find -> MultiplayerGameMode
+[conv] 0x6e7330 ObjectClass::System_Read_6E7330 -> ObjectClass
+[conv] 0x68bdc0 ScenarioClass::ReadWaypoints -> ScenarioClass
+[conv] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> BuildingClass
+[conv] 0x5d09c0 _DynamicVectorClass_VPoint2D::AllocCopyData_8B -> _DynamicVectorClass_VPoint2D
+[conv] 0x6c6d00 ObjectClass::Audio_Read_6C6D00 -> ObjectClass
+[conv] 0x7d7491 unknown::_crtGetLocaleInfoA_16 -> unknown
+[conv] 0x430f70 PlayerClass::FindNearestWaypoint -> PlayerClass
+[conv] 0x6cf5a0 _VectorClass_VSwizzlePointerClass::Release -> _VectorClass_VSwizzlePointerClass
+[conv] 0x7ad690 _CComObject_VCDownloadEventSink_ATL::QueryInterface -> _CComObject_VCDownloadEventSink_ATL
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _DynamicVectorClass_PAVShadowControlClass rc=0
+[era] _DynamicVectorClass_PAVMovieHandle rc=0
+[era] ShipLocomotionClass      rc=2
+[era] TechnoClass              rc=0
+[era] unknown                  rc=2
+[era] BuildingClass            rc=2
+[era] ObjectClass              rc=2
+[era] MultiplayerGameMode      rc=2
+[era] ScenarioClass            rc=2
+[era] _DynamicVectorClass_VPoint2D rc=0
+[era] PlayerClass              rc=2
+[era] _VectorClass_VSwizzlePointerClass rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+=== diffasm byte-compare ===
+[diff] 0x6dcb50   MISMATCH         _DynamicVectorClass_PAVShadowControlClass::SetCapacity_0
+[diff] 0x75a610   MISMATCH         _DynamicVectorClass_PAVMovieHandle::SetCapacity
+[diff] 0x4517d0   MISMATCH         TechnoClass::sub_4517D0
+[diff] 0x5d09c0   MISMATCH         _DynamicVectorClass_VPoint2D::AllocCopyData_8B
+[diff] 0x6cf5a0   MISMATCH         _VectorClass_VSwizzlePointerClass::Release
+[ledger] 0x6dcb50 VectorClass_UDirtyAreaStruct::SetCapacity_0 -> NG (attempt 1)
+[ledger] 0x75a610 VectorClass_ptr_MovieHandle::SetCapacity -> NG (attempt 1)
+[ledger] 0x69fb20 JumpjetLocomotionClass::ComputeAudio3DRotation_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4517d0 sub_4517D0 -> NG (attempt 1)
+[ledger] 0x63d210 ActionScenarioClassCoordToScreen -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6acca0 0x6acca0 -> PENDING (attempt 1)
+[ledger] 0x726400 BuildingClass::ProcessUpgradeEffects -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556df0 Game_Destroy -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b4b50 sub_7B4B50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5eacd0 RefreshLobbyAll_Get_5EACD0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5f30 MultiplayerGameMode::Find -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e7330 System_Read_6E7330 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x68bdc0 ScenarioClass::ReadWaypoints -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42f260 BuildingClass::MarkUpgradeComponentUsed -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d09c0 MSPCXAnim_42::AllocCopyData_8B -> NG (attempt 1)
+[ledger] 0x6c6d00 Audio_Read_6C6D00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d7491 _crtGetLocaleInfoA_16 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x430f70 PlayerClass::FindNearestWaypoint -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cf5a0 SwizzleManagerClass_19::Release -> NG (attempt 1)
+[ledger] 0x7ad690 WonlineStringDialogControl_28::QueryInterface -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2339,
+ "verdicts": {
+  "MISMATCH": 656,
+  "MATCH": 521,
+  "COMPILE_FAIL": 648,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 500,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 4
+ },
+ "pathologies": {
+  "eval_order": 10,
+  "codegen_shape": 225,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 66,
+  "branch_polarity": 46,
+  "regalloc": 103,
+  "branch_order": 77,
+  "width_mismatch": 8,
+  "extern_reloc": 18,
+  "cc_mismatch": 25,
+  "signedness": 3
+ },
+ "match_rate_of_decided_pct": 44.3,
+ "match_rate_of_total_pct": 22.3,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p32\batch_report.json

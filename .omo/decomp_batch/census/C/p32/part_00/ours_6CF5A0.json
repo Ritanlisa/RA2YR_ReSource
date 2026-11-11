@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_VectorClass_VSwizzlePointerClass@@QAEDHPAH@Z",
+ "sym_key": "_VectorClass_VSwizzlePointerClass::Release",
+ "size": 267,
+ "link_base": 0,
+ "bytes_hex": "5153558b6c241033db563beb578bf10f84e50000008b44241c895e0c3bc38bf874168d4dff85c97c3f8bcd891889580483c0084975f5eb308d14ed0000000052e80000000083c4043bc3741a8d55ff8bc885d27c0d8bd5891989590483c1084a75f58bf8eb0233ff3bfbc7460c01000000747d391e74508b4e083be9894c24107d068bcd894c241033c03bcb7e268b168bcb83c3088b2cc28d14c2892c39408b5204895439048b4c24103bc17ce08b6c241833db8b460cf6c4ff740b50e80000000083c404891e8b560c896e088b6c241c33c03beb893e0f94c033c980e6008ae85f0bcab001894e0c5e5d5b59c208005f5e5d32c05b59c208008b068bceff500c5f5e5db0015b59c20800",
+ "relocs": [
+  {
+   "off": 65,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

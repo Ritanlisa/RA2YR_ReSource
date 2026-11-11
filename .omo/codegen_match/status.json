@@ -1448,6 +1448,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x42f260": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::MarkUpgradeComponentUsed",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x42f4f0": {
   "attempts": 6,
   "first_diff": "+0 push ecx",
@@ -1489,6 +1496,13 @@
   "name": "nullsub_97",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x430f70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "PlayerClass::FindNearestWaypoint",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x431800": {
   "attempts": 18,
@@ -1762,6 +1776,13 @@
   "name": "BuildingClass::GetCrewCount",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4517d0": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x28",
+  "name": "sub_4517D0",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x451e40": {
   "attempts": 1,
@@ -7349,6 +7370,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x556df0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Game_Destroy",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x557170": {
   "attempts": 1,
   "first_diff": null,
@@ -8896,6 +8924,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
+ "0x5d09c0": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "MSPCXAnim_42::AllocCopyData_8B",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x5d0d40": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -9056,6 +9091,13 @@
   "name": "ScenarioClass::MissionStubReturnZero",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5d5f30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "MultiplayerGameMode::Find",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5d6310": {
   "attempts": 7,
@@ -9231,6 +9273,13 @@
   "name": "0x5ea8e0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x5eacd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RefreshLobbyAll_Get_5EACD0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x5ef280": {
   "attempts": 8,
@@ -10191,6 +10240,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x63d210": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ActionScenarioClassCoordToScreen",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x63d2d0": {
   "attempts": 1,
   "first_diff": null,
@@ -11080,6 +11136,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x68bdc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ScenarioClass::ReadWaypoints",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x68c030": {
   "attempts": 1,
   "first_diff": "+4 test eax, eax",
@@ -11388,6 +11451,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x69fb20": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "JumpjetLocomotionClass::ComputeAudio3DRotation_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6a0310": {
   "attempts": 10,
   "first_diff": null,
@@ -11532,6 +11602,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x6acae0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6acca0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6acca0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -12109,6 +12186,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6c6d00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Audio_Read_6C6D00",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6c8d50": {
   "attempts": 1,
   "first_diff": null,
@@ -12247,6 +12331,13 @@
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
   "name": "SwizzleManagerClass_19::AddRef",
   "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
+ "0x6cf5a0": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "SwizzleManagerClass_19::Release",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
  "0x6cf700": {
@@ -12394,6 +12485,13 @@
   "first_diff": "+0 push ecx",
   "name": "VectorClass_UDirtyAreaStruct::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x6dcb50": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_UDirtyAreaStruct::SetCapacity_0",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
  "0x6dcdc0": {
@@ -12617,6 +12715,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "BuildingLoadQueue::FindObject",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x6e7330": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "System_Read_6E7330",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -13466,6 +13571,13 @@
   "name": "0x725f30",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x726400": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::ProcessUpgradeEffects",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7265c0": {
   "attempts": 1,
@@ -14369,6 +14481,13 @@
   "name": "0x75a100",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x75a610": {
+  "attempts": 1,
+  "first_diff": "+1 push ebp",
+  "name": "VectorClass_ptr_MovieHandle::SetCapacity",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x75a9b0": {
   "attempts": 1,
@@ -15329,6 +15448,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x7ad690": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WonlineStringDialogControl_28::QueryInterface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7ad930": {
   "attempts": 3,
   "first_diff": "+2 push ebp",
@@ -15524,6 +15650,13 @@
   "name": "String::Reassign",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x7b4b50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_7B4B50",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b4c20": {
   "attempts": 8,
@@ -16308,6 +16441,13 @@
   "name": "_fix_grouping_0",
   "note": "decomp_batch r2: OBJ_EXTRACT_FAIL",
   "status": "PENDING"
+ },
+ "0x7d7491": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "_crtGetLocaleInfoA_16",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7d7c1b": {
   "attempts": 1,

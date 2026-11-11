@@ -1,0 +1,21 @@
+{
+ "symbol": "?sub_4517D0@TechnoClass@@QAEHH@Z",
+ "sym_key": "TechnoClass::sub_4517D0",
+ "size": 171,
+ "link_base": 0,
+ "bytes_hex": "83ec24535556578bf98d4c241c8b075157ff90ac0000008bc833db8b41048b118b6908894424188d875c05000089542414894424108b4c24108b3185f6744c8b97200500008d4c24288d841a7c0f000050518b0d00000000e8000000008b088b54241403ca8b50088b400403d503442418894424208b06894c241c8d4c241c51568954242cff90b40100008b54241083c34483c20481fb94050000895424107c945f5e5d5b83c424c20400",
+ "relocs": [
+  {
+   "off": 84,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "?TransformCell@Matrix3x4@@QAEPAVAbstractClass@@PAX0@Z",
+   "sym_key": "Matrix3x4::TransformCell"
+  }
+ ]
+}
