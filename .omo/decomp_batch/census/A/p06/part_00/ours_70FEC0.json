@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasLocation@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::HasLocation",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8b91d001000033c085d20f95c0c3",
+ "relocs": []
+}

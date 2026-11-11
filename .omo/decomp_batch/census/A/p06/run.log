@@ -1,0 +1,87 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p06\part_00
+=== convert (20 addrs) ===
+[conv] 0x6e4840 _VectorClass_PAVTActionClass::UpdateView -> _VectorClass_PAVTActionClass
+[conv] 0x724540 SidebarClass::updateStripPosition -> SidebarClass
+[conv] 0x7536a0 _VectorClass_PAVVoxClass::Get -> _VectorClass_PAVVoxClass
+[conv] 0x7b4310 _VectorClass_PAE::Count -> _VectorClass_PAE
+[conv] 0x4085a0 Struct::ZeroInit32 -> Struct
+[conv] 0x70fec0 ObjectClass::HasLocation -> ObjectClass
+[conv] 0x76bfa0 WDTObject::GetSize -> WDTObject
+[conv] 0x407440 unknown::InsertBeforeLinkedList -> unknown
+[conv] 0x487180 BuildingClass::evaulateDefense -> BuildingClass
+=== emit 9 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVTActionClass rc=0
+[era] SidebarClass             rc=0
+[era] _VectorClass_PAVVoxClass rc=0
+[era] _VectorClass_PAE         rc=0
+[era] Struct                   rc=0
+[era] ObjectClass              rc=0
+[era] WDTObject                rc=0
+[era] unknown                  rc=0
+[era] BuildingClass            rc=0
+=== diffasm byte-compare ===
+[diff] 0x6e4840   MATCH            _VectorClass_PAVTActionClass::UpdateView
+[diff] 0x724540   MATCH            SidebarClass::updateStripPosition
+[diff] 0x7536a0   MATCH            _VectorClass_PAVVoxClass::Get
+[diff] 0x7b4310   MATCH            _VectorClass_PAE::Count
+[diff] 0x4085a0   MATCH            Struct::ZeroInit32
+[diff] 0x70fec0   MATCH            ObjectClass::HasLocation
+[diff] 0x76bfa0   MATCH            WDTObject::GetSize
+[diff] 0x407440   MISMATCH         unknown::InsertBeforeLinkedList
+[diff] 0x487180   MATCH            BuildingClass::evaulateDefense
+[ledger] 0x6e4840 Tactical_42::UpdateView -> OK (attempt 1)
+[ledger] 0x724540 SidebarClass::updateStripPosition -> OK (attempt 1)
+[ledger] 0x7536a0 VectorClass_ptr_VoxClass::Get -> OK (attempt 1)
+[ledger] 0x7b4310 VectorClass_PAE::Count -> OK (attempt 1)
+[ledger] 0x4085a0 Struct::ZeroInit32 -> OK (attempt 1)
+[ledger] 0x53bae0 0x53bae0 -> PENDING (attempt 1)
+[ledger] 0x70fec0 ObjectClass::HasLocation -> OK (attempt 1)
+[ledger] 0x76bfa0 WDTObject::GetSize -> OK (attempt 1)
+[ledger] 0x407440 InsertBeforeLinkedList -> NG (attempt 1)
+[ledger] 0x40df60 0x40df60 -> PENDING (attempt 1)
+[ledger] 0x41c840 0x41c840 -> PENDING (attempt 1)
+[ledger] 0x4335a0 0x4335a0 -> PENDING (attempt 1)
+[ledger] 0x46bb70 0x46bb70 -> PENDING (attempt 1)
+[ledger] 0x487180 BuildingClass::evaulateDefense -> OK (attempt 1)
+[ledger] 0x4a2300 0x4a2300 -> PENDING (attempt 1)
+[ledger] 0x4c4ea0 0x4c4ea0 -> PENDING (attempt 1)
+[ledger] 0x4d30f0 0x4d30f0 -> PENDING (attempt 1)
+[ledger] 0x4e32d0 0x4e32d0 -> PENDING (attempt 1)
+[ledger] 0x52b960 0x52b960 -> PENDING (attempt 1)
+[ledger] 0x53f3e0 0x53f3e0 -> PENDING (attempt 1)
+======================================================================
+{
+ "total": 1177,
+ "verdicts": {
+  "MISMATCH": 299,
+  "MATCH": 483,
+  "COMPILE_FAIL": 320,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 68,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 117,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 10,
+  "branch_polarity": 24,
+  "regalloc": 45,
+  "branch_order": 17,
+  "width_mismatch": 2,
+  "extern_reloc": 10,
+  "cc_mismatch": 4,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.8,
+ "match_rate_of_total_pct": 41.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p06\batch_report.json

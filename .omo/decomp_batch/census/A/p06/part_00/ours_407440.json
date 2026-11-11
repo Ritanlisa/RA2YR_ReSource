@@ -1,0 +1,8 @@
+{
+ "symbol": "?InsertBeforeLinkedList@unknown@@QAIHPAH0@Z",
+ "sym_key": "unknown::InsertBeforeLinkedList",
+ "size": 21,
+ "link_base": 0,
+ "bytes_hex": "8b4c24048951048b028901890a8b11894a04c20400",
+ "relocs": []
+}

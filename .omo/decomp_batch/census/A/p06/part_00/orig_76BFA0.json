@@ -1,0 +1,11 @@
+{
+ "addr": "0x76BFA0",
+ "name": "WDTObject::GetSize",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x76BFA0",
+ "bytes_hex": "8b410c85c074048b4018c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

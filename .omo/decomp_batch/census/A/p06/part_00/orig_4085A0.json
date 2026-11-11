@@ -1,0 +1,11 @@
+{
+ "addr": "0x4085A0",
+ "name": "Struct::ZeroInit32",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4085A0",
+ "bytes_hex": "578bf9b90800000033c0f3ab5fc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

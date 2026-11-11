@@ -1,0 +1,261 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "MATCH": 8,
+   "NO_CLS": 11,
+   "MISMATCH": 1
+  },
+  "pathologies": {
+   "eval_order": 1
+  },
+  "match_rate_of_decided_pct": 88.9,
+  "match_rate_of_total_pct": 40.0
+ },
+ "results": [
+  {
+   "addr": "0x6e4840",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Tactical_42::UpdateView",
+   "emitted": "_VectorClass_PAVTActionClass::UpdateView",
+   "unit": "_VectorClass_PAVTActionClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x724540",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "SidebarClass::updateStripPosition",
+   "emitted": "SidebarClass::updateStripPosition",
+   "unit": "SidebarClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "3/3",
+   "rule_violations": 0,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x7536a0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "VectorClass_ptr_VoxClass::Get",
+   "emitted": "_VectorClass_PAVVoxClass::Get",
+   "unit": "_VectorClass_PAVVoxClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x7b4310",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "13B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "VectorClass_PAE::Count",
+   "emitted": "_VectorClass_PAE::Count",
+   "unit": "_VectorClass_PAE",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 13,
+   "ours_size": 13
+  },
+  {
+   "addr": "0x4085a0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "14B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "Struct::ZeroInit32",
+   "emitted": "Struct::ZeroInit32",
+   "unit": "Struct",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 0,
+   "orig_size": 14,
+   "ours_size": 14
+  },
+  {
+   "addr": "0x53bae0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x53bae0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x70fec0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "14B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "ObjectClass::HasLocation",
+   "emitted": "ObjectClass::HasLocation",
+   "unit": "ObjectClass",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 2,
+   "orig_size": 14,
+   "ours_size": 14
+  },
+  {
+   "addr": "0x76bfa0",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "14B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "WDTObject::GetSize",
+   "emitted": "WDTObject::GetSize",
+   "unit": "WDTObject",
+   "name_placeholder": false,
+   "cls_src": "signals_cls",
+   "sites": "0/0",
+   "rule_violations": 3,
+   "orig_size": 14,
+   "ours_size": 14
+  },
+  {
+   "addr": "0x407440",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 15B ours 21B",
+   "first_diff": {
+    "orig": "+0 mov dword ptr [edx + 4], ecx",
+    "ours": "+0 mov ecx, dword ptr [esp + 4]"
+   },
+   "pathology": "eval_order",
+   "name": "InsertBeforeLinkedList",
+   "emitted": "unknown::InsertBeforeLinkedList",
+   "unit": "unknown",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "1/1",
+   "rule_violations": 1,
+   "orig_size": 15,
+   "ours_size": 21
+  },
+  {
+   "addr": "0x40df60",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x40df60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x41c840",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x41c840",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4335a0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4335a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x46bb70",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x46bb70",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x487180",
+   "batch": "censusA",
+   "verdict": "MATCH",
+   "note": "15B",
+   "first_diff": null,
+   "pathology": null,
+   "name": "BuildingClass::evaulateDefense",
+   "emitted": "BuildingClass::evaulateDefense",
+   "unit": "BuildingClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "0/0",
+   "rule_violations": 1,
+   "orig_size": 15,
+   "ours_size": 15
+  },
+  {
+   "addr": "0x4a2300",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4a2300",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4c4ea0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c4ea0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4d30f0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4d30f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e32d0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e32d0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x52b960",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x52b960",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x53f3e0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x53f3e0",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}

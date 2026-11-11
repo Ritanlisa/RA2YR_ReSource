@@ -167,6 +167,13 @@
   "note": "smoke B",
   "status": "OK"
  },
+ "0x407440": {
+  "attempts": 1,
+  "first_diff": "+0 mov dword ptr [edx + 4], ecx",
+  "name": "InsertBeforeLinkedList",
+  "note": "decomp_batch r2: MISMATCH/eval_order",
+  "status": "NG"
+ },
  "0x407510": {
   "attempts": 6,
   "first_diff": null,
@@ -192,6 +199,13 @@
   "attempts": 6,
   "first_diff": null,
   "name": "AudioController::GetOffset",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x4085a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Struct::ZeroInit32",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -292,6 +306,13 @@
   "name": "MouseClass::ProcessInput",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x40df60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40df60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x40e1b0": {
   "attempts": 1,
@@ -530,6 +551,13 @@
   "name": "TechnoClass::processAttackState",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x41c840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x41c840",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x41cbe0": {
   "attempts": 1,
@@ -867,6 +895,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x4335a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4335a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4335e0": {
   "attempts": 4,
   "first_diff": "+0 sub esp, 0x14",
@@ -1182,6 +1217,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x46bb70": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x46bb70",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x46c850": {
   "attempts": 5,
   "first_diff": null,
@@ -1494,6 +1536,13 @@
   "attempts": 11,
   "first_diff": "+6 cmp word ptr [ecx + edx*2 + 0x7c], ax",
   "name": "Cell::IsPassableOffset",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x487180": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::evaulateDefense",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -2134,6 +2183,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a2300": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4a2300",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4a2600": {
   "attempts": 9,
   "first_diff": null,
@@ -2561,6 +2617,13 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x4c4ea0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4c4ea0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4c4ef0": {
   "attempts": 9,
   "first_diff": "+0 sub esp, 0x40",
@@ -2757,6 +2820,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4d30f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4d30f0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4d9c00": {
   "attempts": 1,
   "first_diff": null,
@@ -2847,6 +2917,13 @@
   "name": "GaugeClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e32d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e32d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4e4820": {
   "attempts": 9,
@@ -3471,6 +3548,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x52b960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x52b960",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x535bd0": {
   "attempts": 1,
   "first_diff": null,
@@ -3730,6 +3814,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x53bae0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x53bae0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x53da90": {
   "attempts": 1,
   "first_diff": null,
@@ -3764,6 +3855,13 @@
   "name": "Multiplayer::Screen",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x53f3e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x53f3e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x53f4e0": {
   "attempts": 9,
@@ -6453,6 +6551,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6e4840": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Tactical_42::UpdateView",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x6e5890": {
   "attempts": 5,
   "first_diff": null,
@@ -6698,6 +6803,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x70fec0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ObjectClass::HasLocation",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x717a30": {
   "attempts": 1,
   "first_diff": null,
@@ -6898,6 +7010,13 @@
   "attempts": 5,
   "first_diff": null,
   "name": "TiberiumClass::Stub",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
+ "0x724540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SidebarClass::updateStripPosition",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
@@ -7349,6 +7468,13 @@
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
  },
+ "0x7536a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_ptr_VoxClass::Get",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
+ },
  "0x753c70": {
   "attempts": 3,
   "first_diff": null,
@@ -7614,6 +7740,13 @@
   "name": "File::LoadWDTDecompress",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x76bfa0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WDTObject::GetSize",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x76f020": {
   "attempts": 1,
@@ -7950,6 +8083,13 @@
   "name": "UDPInterfaceClass::Reset",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x7b4310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VectorClass_PAE::Count",
+  "note": "decomp_batch r2: MATCH",
+  "status": "OK"
  },
  "0x7b4940": {
   "attempts": 6,
