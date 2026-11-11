@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsPassableOffset@Cell@@QAEEH@Z",
+ "sym_key": "Cell::IsPassableOffset",
+ "size": 17,
+ "link_base": 0,
+ "bytes_hex": "8b54240433c0663944517c0f9fc0c20400",
+ "relocs": []
+}

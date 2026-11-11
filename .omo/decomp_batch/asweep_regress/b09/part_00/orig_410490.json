@@ -1,0 +1,11 @@
+{
+ "addr": "0x410490",
+ "name": "AbstractClass::computeDistanceSquared",
+ "size": 4,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x410490",
+ "bytes_hex": "83c8ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

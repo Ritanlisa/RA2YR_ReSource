@@ -1,0 +1,12 @@
+[
+ {"addr": "0x401940", "name": "RawFileClass::GetMember06", "family": "regress"},
+ {"addr": "0x486380", "name": "Cell::IsEmpty", "family": "regress"},
+ {"addr": "0x4870d0", "name": "Cell::IsPassableOffset", "family": "regress"},
+ {"addr": "0x406540", "name": "AbstractTypeClass::sub_406540", "family": "regress"},
+ {"addr": "0x4065c0", "name": "AbstractTypeClass::sub_4065C0", "family": "regress"},
+ {"addr": "0x4065d0", "name": "AbstractTypeClass::sub_4065D0", "family": "regress"},
+ {"addr": "0x4065e0", "name": "AbstractTypeClass::sub_4065E0", "family": "regress"},
+ {"addr": "0x406640", "name": "AbstractTypeClass::sub_406640", "family": "regress"},
+ {"addr": "0x410490", "name": "AbstractClass::computeDistanceSquared", "family": "regress"},
+ {"addr": "0x411540", "name": "Surface::GetWidth", "family": "regress"}
+]

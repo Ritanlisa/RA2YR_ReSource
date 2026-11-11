@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsEmpty@Cell@@QAE_NXZ",
+ "sym_key": "Cell::IsEmpty",
+ "size": 20,
+ "link_base": 0,
+ "bytes_hex": "8b41383dffff0000740785c0740332c0c3b001c3",
+ "relocs": []
+}
