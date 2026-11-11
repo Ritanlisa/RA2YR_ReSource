@@ -1,0 +1,69 @@
+{
+ "symbol": "?Undeploy@ObjectClass@@QAEEXZ",
+ "sym_key": "ObjectClass::Undeploy",
+ "size": 361,
+ "link_base": 0,
+ "bytes_hex": "a10000000083ec1c85c0568bf10f844b0100008b868000000085c00f853d0100008b0656ff90500100008b0e6a0156ff91dc0000008b166a0056ff922401000056e80000000033c98a4e3ce8000000008b4e50e8000000008b0656ff908800000085c0743b8b0e56ff91880000008a883402000084c97428a10000000085c0741483f805740f8b56048d460450ff521083f8fe740b56b900000000e8000000008b0656ff908800000085c00f84910000008b0e56ff91880000008b88ac00000085c9747e8b168d442414575056ff52488b08894c240c8b5004895424108b40088d4c24088d54240c518b0d00000000528944241ce8000000008b0656ff90880000008b88ac0000008b7c24086a010fbf4104992bc2d1f82bf80fbf4102992bc2d1f88bd08b44240cf7da03c28944240c0fbf51040fbf490252515750e8000000005f8b1656ff921c0100002401c78680000000000000000c015e83c41cc38b4424045e240083c41cc3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_WTFMode@@3IA",
+   "sym_key": "g_WTFMode"
+  },
+  {
+   "off": 66,
+   "type": "REL32",
+   "sym": "?RemoveTarget@@YGXH@Z",
+   "sym_key": "RemoveTarget"
+  },
+  {
+   "off": 76,
+   "type": "REL32",
+   "sym": "?Stop@AudioController@@QAEPAIXZ",
+   "sym_key": "AudioController::Stop"
+  },
+  {
+   "off": 84,
+   "type": "REL32",
+   "sym": "?Stop@AudioFile@@QAEHXZ",
+   "sym_key": "AudioFile::Stop"
+  },
+  {
+   "off": 121,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  },
+  {
+   "off": 151,
+   "type": "DIR32",
+   "sym": "?g_GameConfigManager@@3IA",
+   "sym_key": "g_GameConfigManager"
+  },
+  {
+   "off": 156,
+   "type": "REL32",
+   "sym": "?RemoveItem@VectorClass@@QAEHH@Z",
+   "sym_key": "VectorClass::RemoveItem"
+  },
+  {
+   "off": 235,
+   "type": "DIR32",
+   "sym": "?g_TacticalClass_Instance@@3IA",
+   "sym_key": "g_TacticalClass_Instance"
+  },
+  {
+   "off": 245,
+   "type": "REL32",
+   "sym": "?To_Screen@Coord@@QAE_NPAX0@Z",
+   "sym_key": "Coord::To_Screen"
+  },
+  {
+   "off": 317,
+   "type": "REL32",
+   "sym": "?Cell__CreateCrater@@YGDHHHHH@Z",
+   "sym_key": "Cell__CreateCrater"
+  }
+ ]
+}

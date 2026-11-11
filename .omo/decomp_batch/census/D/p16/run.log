@@ -1,0 +1,97 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x6b0300 BuildingClass::FindPlacementCells2 -> BuildingClass
+[conv] 0x4de7b0 FootClass::IsTargetInRange -> FootClass
+[conv] 0x465960 AbstractClass::LoadTheaterSHP -> AbstractClass
+[conv] 0x5f4d30 ObjectClass::Undeploy -> ObjectClass
+[conv] 0x5e8590 ObjectClass::SkirmishSetup_Setup_5E8590 -> ObjectClass
+[conv] 0x4a3c30 unknown::FadePalette -> unknown
+[conv] 0x4a6360 unknown::RenderTextLabelWordWrap -> unknown
+[conv] 0x7b60e0 ObjectClass::sub_7B60E0 -> ObjectClass
+[conv] 0x530000 ObjectClass::LoadExpansionMixFiles -> ObjectClass
+[conv] 0x7b7a60 String::Tokenize2 -> String
+[conv] 0x4de940 FootClass::CheckCellPassable -> FootClass
+[conv] 0x6523a0 Network::SendUnreachable -> Network
+[conv] 0x4a71a0 DiskLaserClass::Fire -> DiskLaserClass
+[conv] 0x72d460 CampaignScore::LoadScreenAssets -> CampaignScore
+[conv] 0x654ea0 RadarClass::UpdateBlips -> RadarClass
+[conv] 0x58ef10 ObjectClass::ResetMapState -> ObjectClass
+[conv] 0x6ba230 HashTable::RemoveEntry -> HashTable
+[conv] 0x7298f0 AnimClass::GetAnimation -> AnimClass
+[conv] 0x484d60 InfantryClass::CanMoveThroughCell -> InfantryClass
+=== emit 13 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BuildingClass            rc=2
+[era] FootClass                rc=2
+[era] AbstractClass            rc=2
+[era] ObjectClass              rc=2
+[era] unknown                  rc=2
+[era] String                   rc=0
+[era] Network                  rc=2
+[era] DiskLaserClass           rc=2
+[era] CampaignScore            rc=2
+[era] RadarClass               rc=0
+[era] HashTable                rc=2
+[era] AnimClass                rc=2
+[era] InfantryClass            rc=2
+=== diffasm byte-compare ===
+[diff] 0x4de940   MISMATCH         FootClass::CheckCellPassable
+[diff] 0x5f4d30   MISMATCH         ObjectClass::Undeploy
+[diff] 0x7b7a60   MISMATCH         String::Tokenize2
+[diff] 0x654ea0   MISMATCH         RadarClass::UpdateBlips
+[ledger] 0x6b3cd0 0x6b3cd0 -> PENDING (attempt 1)
+[ledger] 0x6b0300 BuildingClass::FindPlacementCells2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4de7b0 FootClass::IsTargetInRange -> COMPILE_FAIL (attempt 1)
+[ledger] 0x465960 AbstractClass::LoadTheaterSHP -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5f4d30 ObjectClass::Undeploy -> NG (attempt 1)
+[ledger] 0x5e8590 SkirmishSetup_Setup_5E8590 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a3c30 FadePalette -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a6360 RenderTextLabelWordWrap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b60e0 sub_7B60E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x530000 LoadExpansionMixFiles -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7b7a60 String::Tokenize2 -> NG (attempt 1)
+[ledger] 0x4de940 FootClass::CheckCellPassable -> NG (attempt 1)
+[ledger] 0x6523a0 Network::SendUnreachable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a71a0 DiskLaserClass::Fire -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72d460 CampaignScore::LoadScreenAssets -> COMPILE_FAIL (attempt 1)
+[ledger] 0x654ea0 RadarClass::UpdateBlips -> NG (attempt 1)
+[ledger] 0x58ef10 ResetMapState -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6ba230 HashTable_flat::RemoveEntry -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7298f0 AnimClass::GetAnimation -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484d60 InfantryClass::CanMoveThroughCell -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2694,
+ "verdicts": {
+  "MISMATCH": 716,
+  "MATCH": 521,
+  "COMPILE_FAIL": 913,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 527,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 12,
+  "codegen_shape": 247,
+  "ret_norm": 8,
+  "frame_sched": 76,
+  "const_fold": 70,
+  "branch_polarity": 52,
+  "regalloc": 117,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 42.1,
+ "match_rate_of_total_pct": 19.3,
+ "rule_violation_fns": 11,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p16\batch_report.json

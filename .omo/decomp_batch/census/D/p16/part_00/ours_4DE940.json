@@ -1,0 +1,51 @@
+{
+ "symbol": "?CheckCellPassable@FootClass@@QAEFH@Z",
+ "sym_key": "FootClass::CheckCellPassable",
+ "size": 497,
+ "link_base": 0,
+ "bytes_hex": "83ec34535556578bf9578b07ff90840000008bb0f00500008b5c24488bc68b971c0200000fafc6894424248b4424488bcb8974243033c881e1ff00000033d98b4a30894c242c8b0d000000003bc1752e8b178d4424385057ff52488b5424488b580433c980e2008a48010bcac1eb088bc133c325ff00000033c1894424488bcef7d98be9894c24343bee894c2410894c241c0f8d4c0100003bce0f8d370100008b7424488b4424188bd5c1fe100fafd503f58954242033f081e6ff00000033c68b74244803f189742414eb088b5424208b4424188b74241433f081e6ff00000033c68bf389442418894424288b44242433f081e6ff00000033de8bf10faff103f23bf00f8dac0000008d442428b90000000050e8000000008b74242c8bf8568bcfe80000000033c325ff00000033d884db747e568bcfe8000000008bb7e400000085f674258b0e56ff512c83f801740a83f80f740583f80275098b1656ff92200400008b763085f675db8bcfe8000000008bd885db8bf374348b0d000000008b831c0200008bd180e30081e2ff0000000bda3bc174178b066a006a0056ff50688bd885db7407c68680000000018b6c241c8b4c24108b5424148b74243041423bce894c2410895424140f8cfdfeffff8b4c2434894c2410453bee896c241c0f8cb4feffff5f5e668bc35d5b83c434c20400",
+ "relocs": [
+  {
+   "off": 72,
+   "type": "DIR32",
+   "sym": "?g_FootClass_Pool@@3IA",
+   "sym_key": "g_FootClass_Pool"
+  },
+  {
+   "off": 270,
+   "type": "DIR32",
+   "sym": "?DataGlobal_87F7E8@@3PADA",
+   "sym_key": "DataGlobal_87F7E8"
+  },
+  {
+   "off": 276,
+   "type": "REL32",
+   "sym": "?To_CellObj@CellCoord@@QAEPAXPAX@Z",
+   "sym_key": "CellCoord::To_CellObj"
+  },
+  {
+   "off": 290,
+   "type": "REL32",
+   "sym": "?IsPassableOffset@Cell@@QAEHH@Z",
+   "sym_key": "Cell::IsPassableOffset"
+  },
+  {
+   "off": 311,
+   "type": "REL32",
+   "sym": "?updateLocomotion@FootClass@@QAEHH@Z",
+   "sym_key": "FootClass::updateLocomotion"
+  },
+  {
+   "off": 365,
+   "type": "REL32",
+   "sym": "?IsBridge@Cell@@QAEPAIXZ",
+   "sym_key": "Cell::IsBridge"
+  },
+  {
+   "off": 379,
+   "type": "DIR32",
+   "sym": "?HouseClass_Player@@3PAXA",
+   "sym_key": "HouseClass_Player"
+  }
+ ]
+}

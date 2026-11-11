@@ -2148,6 +2148,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x465960": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AbstractClass::LoadTheaterSHP",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x465d70": {
   "attempts": 5,
   "first_diff": null,
@@ -2838,6 +2845,13 @@
   "attempts": 9,
   "first_diff": null,
   "name": "Tactical::CreateTacticalLightSurface",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x484d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "InfantryClass::CanMoveThroughCell",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -4129,6 +4143,13 @@
   "note": "decomp_batch r2: MISMATCH/width_mismatch",
   "status": "NG"
  },
+ "0x4a3c30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FadePalette",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a3e40": {
   "attempts": 1,
   "first_diff": null,
@@ -4213,6 +4234,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4a6360": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "RenderTextLabelWordWrap",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4a6b30": {
   "attempts": 1,
   "first_diff": null,
@@ -4233,6 +4261,13 @@
   "name": "0x4a6cb0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4a71a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DiskLaserClass::Fire",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4a7900": {
   "attempts": 10,
@@ -5367,6 +5402,20 @@
   "name": "FootClass::PopAndProcess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4de7b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "FootClass::IsTargetInRange",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x4de940": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x28",
+  "name": "FootClass::CheckCellPassable",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x4df040": {
   "attempts": 1,
@@ -7024,6 +7073,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "CampaignMenu::DlgProc",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x530000": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadExpansionMixFiles",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -8742,6 +8798,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x58ef10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "ResetMapState",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x595680": {
   "attempts": 1,
   "first_diff": null,
@@ -10212,6 +10275,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x5e8590": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SkirmishSetup_Setup_5E8590",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5e8d90": {
   "attempts": 1,
   "first_diff": null,
@@ -10400,6 +10470,13 @@
   "name": "ObjectClass::GetPlacementScreenRect",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5f4d30": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [0xa8e9a0]",
+  "name": "ObjectClass::Undeploy",
+  "note": "decomp_batch r2: MISMATCH/ret_norm",
+  "status": "NG"
  },
  "0x5f5f30": {
   "attempts": 7,
@@ -11745,6 +11822,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x6523a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Network::SendUnreachable",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6525a0": {
   "attempts": 1,
   "first_diff": "+1 push ebp",
@@ -11800,6 +11884,13 @@
   "name": "RadarClass::Destru_vt34",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x654ea0": {
+  "attempts": 1,
+  "first_diff": "+0 sub esp, 0x30",
+  "name": "RadarClass::UpdateBlips",
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x6551c0": {
   "attempts": 1,
@@ -13061,6 +13152,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6b0300": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::FindPlacementCells2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6b0d10": {
   "attempts": 1,
   "first_diff": "+9 jne 0x6b0d4e",
@@ -13135,6 +13233,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x6b2390",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x6b3cd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x6b3cd0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -13347,6 +13452,13 @@
   "name": "sub_6B94E0",
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
+ },
+ "0x6ba230": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "HashTable_flat::RemoveEntry",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6ba580": {
   "attempts": 1,
@@ -15532,6 +15644,13 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x7298f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AnimClass::GetAnimation",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x72a020": {
   "attempts": 1,
   "first_diff": "+33 call 0x55abb0",
@@ -15664,6 +15783,13 @@
   "name": "0x72d430",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x72d460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CampaignScore::LoadScreenAssets",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x72d730": {
   "attempts": 1,
@@ -17821,6 +17947,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x7b60e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_7B60E0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7b63c0": {
   "attempts": 1,
   "first_diff": "+1 push ebx",
@@ -17869,6 +18002,13 @@
   "name": "WideString::Reassign",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x7b7a60": {
+  "attempts": 1,
+  "first_diff": "+0 push ebx",
+  "name": "String::Tokenize2",
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x7b7dd0": {
   "attempts": 1,
