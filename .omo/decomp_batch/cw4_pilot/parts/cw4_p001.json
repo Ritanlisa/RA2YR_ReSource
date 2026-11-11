@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x477d90",
+  "name": "_VectorClass_H::vt05",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_VectorClass_H",
+  "emitted": "_VectorClass_H::vt05",
+  "first_diff": {
+   "orig": "+5 jne 0x477d9c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x71fbd0",
+  "name": "VectorClass_ptr_TEventClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_DynamicVectorClass_PAVTEventClass",
+  "emitted": "_DynamicVectorClass_PAVTEventClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x71fbdc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x67c3f0",
+  "name": "DynamicVector::RemoveAt2",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 49,
+  "part": "p221",
+  "unit": "DynamicVector",
+  "emitted": "DynamicVector::RemoveAt2",
+  "first_diff": {
+   "orig": "+9 jge 0x67c41c",
+   "ours": "+9 jl 0x10"
+  },
+  "ours_size": 49
+ },
+ {
+  "addr": "0x4b9c70",
+  "name": "FilePipe_30::GetCount_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p176",
+  "unit": "_DynamicVectorClass_PAUCrossDissolveEffect",
+  "emitted": "_DynamicVectorClass_PAUCrossDissolveEffect::GetCount_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4b9c7c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x555680",
+  "name": "VectorClass_ptr_PendingCellClass_LightSourceClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p183",
+  "unit": "_VectorClass_PAVPendingCellClass_LightSourceClass",
+  "emitted": "_VectorClass_PAVPendingCellClass_LightSourceClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x55568c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x724df0",
+  "name": "ToolTipClass::setString",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_VectorClass_PBVToolTip",
+  "emitted": "_VectorClass_PBVToolTip::setString",
+  "first_diff": {
+   "orig": "+5 jne 0x724dfc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x40be80",
+  "name": "MoveFeedback::GetIndex2",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p173",
+  "unit": "_DynamicVectorClass_PBVCommandClass",
+  "emitted": "_DynamicVectorClass_PBVCommandClass::GetIndex2",
+  "first_diff": {
+   "orig": "+5 jne 0x40be8c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4a1120",
+  "name": "VectorClass_UtagCONNECTDATA::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p176",
+  "unit": "_VectorClass_UtagCONNECTDATA",
+  "emitted": "_VectorClass_UtagCONNECTDATA::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x4a112c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x54a3b0",
+  "name": "VectorClass_PAG::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p182",
+  "unit": "_VectorClass_PAG",
+  "emitted": "_VectorClass_PAG::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x54a3bc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e8c90",
+  "name": "VectorClass_ptr_ScriptTypeClass::GetItemIndex_0",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVOverlayTypeClass",
+  "emitted": "_DynamicVectorClass_PAVOverlayTypeClass::GetItemIndex_0",
+  "first_diff": {
+   "orig": "+5 jne 0x4e8c9c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5eebe0",
+  "name": "VectorClass_cptr_MultiMission::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p185",
+  "unit": "_DynamicVectorClass_PBVMultiMission",
+  "emitted": "_DynamicVectorClass_PBVMultiMission::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x5eebec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x5c50a0",
+  "name": "DynamicVectorClass_ptr_NodeNameType::Get",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p184",
+  "unit": "_DynamicVectorClass_PAUNodeNameType",
+  "emitted": "_DynamicVectorClass_PAUNodeNameType::Get",
+  "first_diff": {
+   "orig": "+5 jne 0x5c50ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x50f640",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_PAUBuildChoiceClass_HouseClass",
+  "emitted": "_VectorClass_PAUBuildChoiceClass_HouseClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x50f64c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4203a0",
+  "name": "AITriggerTypeClass_40::PointerToIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_DynamicVectorClass_PAVAlphaLightingRemapClass",
+  "emitted": "_DynamicVectorClass_PAVAlphaLightingRemapClass::PointerToIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4203ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4219c0",
+  "name": "VectorClass_ptr_AlphaShapeClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p174",
+  "unit": "_VectorClass_PAVAlphaShapeClass",
+  "emitted": "_VectorClass_PAVAlphaShapeClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x4219cc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x75a460",
+  "name": "VectorClass_ptr_MovieHandle::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p189",
+  "unit": "_DynamicVectorClass_PAVMovieHandle",
+  "emitted": "_DynamicVectorClass_PAVMovieHandle::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x75a46c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4ef3e0",
+  "name": "VectorClass_ptr_AbstractTypeClass::LoadTypeData",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p181",
+  "unit": "_VectorClass_PAVAbstractTypeClass",
+  "emitted": "_VectorClass_PAVAbstractTypeClass::LoadTypeData",
+  "first_diff": {
+   "orig": "+5 jne 0x4ef3ec",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x4e88d0",
+  "name": "VectorClass_ptr_UnitClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p178",
+  "unit": "_DynamicVectorClass_PAVUnitClass",
+  "emitted": "_DynamicVectorClass_PAVUnitClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x4e88dc",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x7b2a00",
+  "name": "VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::GetCapacity",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p190",
+  "unit": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass",
+  "emitted": "_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass::GetCapacity",
+  "first_diff": {
+   "orig": "+5 jne 0x7b2a0c",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ },
+ {
+  "addr": "0x45a0a0",
+  "name": "VectorClass_ptr_FoggedObjectClass::GetItemIndex",
+  "family": "JCC_INVERT",
+  "path": "branch_order",
+  "size": 27,
+  "part": "p175",
+  "unit": "_DynamicVectorClass_PAVFoggedObjectClass",
+  "emitted": "_DynamicVectorClass_PAVFoggedObjectClass::GetItemIndex",
+  "first_diff": {
+   "orig": "+5 jne 0x45a0ac",
+   "ours": "+5 je 0x16"
+  },
+  "ours_size": 27
+ }
+]

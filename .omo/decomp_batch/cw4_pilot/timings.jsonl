@@ -1,1 +1,2 @@
 {"part": 0, "n": 20, "seconds": 4.4, "summary": {"verdicts": {"MATCH": 20}, "by_family_total": {"JCC_INVERT": 20}, "by_family_hits": {"JCC_INVERT": 20}}}
+{"part": 1, "n": 20, "seconds": 2.3, "summary": {"verdicts": {"MATCH": 19, "NO_VARIANT": 1}, "by_family_total": {"JCC_INVERT": 20}, "by_family_hits": {"JCC_INVERT": 19}}}
