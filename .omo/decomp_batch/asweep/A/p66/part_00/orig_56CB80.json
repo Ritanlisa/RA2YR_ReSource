@@ -1,0 +1,11 @@
+{
+ "addr": "0x56CB80",
+ "name": "Cell::DecodeFlags",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x56CB80",
+ "bytes_hex": "8b098bc183e10fc1e80c83e00f0bc1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetPlayerSide@SessionClass@@QAEHXZ",
+ "sym_key": "SessionClass::GetPlayerSide",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "8b514cb8feffffff3bd074038b414bc3",
+ "relocs": []
+}

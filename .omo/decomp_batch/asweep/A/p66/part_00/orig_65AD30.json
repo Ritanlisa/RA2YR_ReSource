@@ -1,0 +1,11 @@
+{
+ "addr": "0x65AD30",
+ "name": "TechnoClass::GetVecTechnoMember",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x65AD30",
+ "bytes_hex": "8b81e40000008b4c24048b0488c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

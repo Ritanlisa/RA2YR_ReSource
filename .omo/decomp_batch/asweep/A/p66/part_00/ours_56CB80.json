@@ -1,0 +1,8 @@
+{
+ "symbol": "?DecodeFlags@Cell@@QAEHXZ",
+ "sym_key": "Cell::DecodeFlags",
+ "size": 16,
+ "link_base": 0,
+ "bytes_hex": "33c0668b018b09c1e80c83e10f0bc1c3",
+ "relocs": []
+}

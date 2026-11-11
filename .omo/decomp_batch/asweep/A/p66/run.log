@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p66\part_00
+=== convert (20 addrs) ===
+[conv] 0x56cb80 Cell::DecodeFlags -> Cell
+[conv] 0x5a9bf0 ObjectClass::_0_ReaderWriterLock_details_Concurrency__QAE_XZ -> ObjectClass
+[conv] 0x5bd560 ObjectClass::sub_5BD560 -> ObjectClass
+[conv] 0x5c09a0 ObjectClass::MainWindowProc_Helper_5C09A0 -> ObjectClass
+[conv] 0x5d8fb0 ObjectClass::sub_5D8FB0 -> ObjectClass
+[conv] 0x625ae0 LinkedList::PushFront -> LinkedList
+[conv] 0x65ad30 TechnoClass::GetVecTechnoMember -> TechnoClass
+[conv] 0x65ad40 Array::Get -> Array
+[conv] 0x65d430 ComPtr::Constructor -> ComPtr
+[conv] 0x696f10 SessionClass::GetPlayerSide -> SessionClass
+[conv] 0x696f20 SessionClass::GetPlayerColor -> SessionClass
+[conv] 0x6bee40 ClassFactory_CStream::Construct -> ClassFactory_CStream
+[conv] 0x6befc0 ClassFactory_Wave::Construct -> ClassFactory_Wave
+[conv] 0x6bf140 COMClassFactory::Construct -> COMClassFactory
+[conv] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> ObjectClass
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Cell                     rc=0
+[era] ObjectClass              rc=2
+[era] LinkedList               rc=0
+[era] TechnoClass              rc=0
+[era] Array                    rc=0
+[era] ComPtr                   rc=2
+[era] SessionClass             rc=0
+[era] ClassFactory_CStream     rc=2
+[era] ClassFactory_Wave        rc=2
+[era] COMClassFactory          rc=2
+=== diffasm byte-compare ===
+[diff] 0x56cb80   MISMATCH         Cell::DecodeFlags
+[diff] 0x5a9bf0   MATCH            ObjectClass::_0_ReaderWriterLock_details_Concurrency__QAE_XZ
+[diff] 0x5bd560   MISMATCH         ObjectClass::sub_5BD560
+[diff] 0x5d8fb0   MATCH            ObjectClass::sub_5D8FB0
+[diff] 0x625ae0   MISMATCH         LinkedList::PushFront
+[diff] 0x65ad30   MATCH            TechnoClass::GetVecTechnoMember
+[diff] 0x65ad40   MATCH            Array::Get
+[diff] 0x696f10   MISMATCH         SessionClass::GetPlayerSide
+[diff] 0x696f20   MISMATCH         SessionClass::GetPlayerColor
+[ledger] 0x56cb80 Cell::DecodeFlags -> NG (attempt 1)
+[ledger] 0x5a9bf0 ObjectClass::_0_ReaderWriterLock_details_Concurrency__QAE_XZ -> OK (attempt 1)
+[ledger] 0x5bd560 ObjectClass::sub_5BD560 -> NG (attempt 1)
+[ledger] 0x5c09a0 ObjectClass::MainWindowProc_Helper_5C09A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d8fb0 ObjectClass::sub_5D8FB0 -> OK (attempt 1)
+[ledger] 0x625ae0 LinkedList::PushFront -> NG (attempt 1)
+[ledger] 0x65ad30 TechnoClass::GetVecTechnoMember -> OK (attempt 1)
+[ledger] 0x65ad40 Array::Get -> OK (attempt 1)
+[ledger] 0x65d430 ComPtr::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696f10 SessionClass::GetPlayerSide -> NG (attempt 1)
+[ledger] 0x696f20 SessionClass::GetPlayerColor -> NG (attempt 1)
+[ledger] 0x6bee40 ClassFactory_CStream::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6befc0 ClassFactory_Wave::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf140 COMClassFactory::Construct -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6bf2c0 0x6bf2c0 -> PENDING (attempt 1)
+[ledger] 0x6bf740 0x6bf740 -> PENDING (attempt 1)
+[ledger] 0x6bf8c0 0x6bf8c0 -> PENDING (attempt 1)
+[ledger] 0x6bfa40 0x6bfa40 -> PENDING (attempt 1)
+[ledger] 0x6bfbc0 0x6bfbc0 -> PENDING (attempt 1)
+[ledger] 0x6bfd40 ObjectClass::WinMain_Helper_6BFD40 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "MATCH": 4,
+  "COMPILE_FAIL": 6,
+  "DUP_SKIP": 5
+ },
+ "pathologies": {
+  "codegen_shape": 2,
+  "const_fold": 3
+ },
+ "match_rate_of_decided_pct": 44.4,
+ "match_rate_of_total_pct": 20.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p66\batch_report.json

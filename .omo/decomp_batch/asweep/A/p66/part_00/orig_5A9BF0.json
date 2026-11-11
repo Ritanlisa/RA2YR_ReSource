@@ -1,0 +1,11 @@
+{
+ "addr": "0x5A9BF0",
+ "name": "??0_ReaderWriterLock_details_Concurrency__QAE_XZ",
+ "size": 16,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5A9BF0",
+ "bytes_hex": "8bc1c70000000000c7400400000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
