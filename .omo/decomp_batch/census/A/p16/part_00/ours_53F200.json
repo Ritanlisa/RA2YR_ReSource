@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetPort@Network@@QAEFF@Z",
+ "sym_key": "Network::SetPort",
+ "size": 28,
+ "link_base": 0,
+ "bytes_hex": "833d0000000002750b668b442404668901c20400668b442404c20400",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?DataGlobal_828140@@3IA",
+   "sym_key": "DataGlobal_828140"
+  }
+ ]
+}

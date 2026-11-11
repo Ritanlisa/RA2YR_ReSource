@@ -1,0 +1,66 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x4870f0 HouseClass::HasType -> HouseClass
+[conv] 0x53f200 Network::SetPort -> Network
+=== emit 2 units ===
+=== rule self-check ===
+=== era compile ===
+[era] HouseClass               rc=0
+[era] Network                  rc=0
+=== diffasm byte-compare ===
+[diff] 0x4870f0   MISMATCH         HouseClass::HasType
+[diff] 0x53f200   MISMATCH         Network::SetPort
+[ledger] 0x6e5980 0x6e5980 -> PENDING (attempt 1)
+[ledger] 0x6f04e0 0x6f04e0 -> PENDING (attempt 1)
+[ledger] 0x717e60 0x717e60 -> PENDING (attempt 1)
+[ledger] 0x71d420 0x71d420 -> PENDING (attempt 1)
+[ledger] 0x7214e0 0x7214e0 -> PENDING (attempt 1)
+[ledger] 0x725e40 0x725e40 -> PENDING (attempt 1)
+[ledger] 0x72a2c0 0x72a2c0 -> PENDING (attempt 1)
+[ledger] 0x7344a0 0x7344a0 -> PENDING (attempt 1)
+[ledger] 0x749230 0x749230 -> PENDING (attempt 1)
+[ledger] 0x7501c0 0x7501c0 -> PENDING (attempt 1)
+[ledger] 0x759040 0x759040 -> PENDING (attempt 1)
+[ledger] 0x7633f0 0x7633f0 -> PENDING (attempt 1)
+[ledger] 0x767180 0x767180 -> PENDING (attempt 1)
+[ledger] 0x76a930 0x76a930 -> PENDING (attempt 1)
+[ledger] 0x76f330 0x76f330 -> PENDING (attempt 1)
+[ledger] 0x771b10 0x771b10 -> PENDING (attempt 1)
+[ledger] 0x77b100 0x77b100 -> PENDING (attempt 1)
+[ledger] 0x7b0c10 0x7b0c10 -> PENDING (attempt 1)
+[ledger] 0x4870f0 HouseClass::HasType -> NG (attempt 1)
+[ledger] 0x53f200 Network::SetPort -> NG (attempt 1)
+======================================================================
+{
+ "total": 1377,
+ "verdicts": {
+  "MISMATCH": 311,
+  "MATCH": 489,
+  "COMPILE_FAIL": 329,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 241,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 121,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 24,
+  "regalloc": 47,
+  "branch_order": 18,
+  "width_mismatch": 2,
+  "extern_reloc": 12,
+  "cc_mismatch": 6,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 61.1,
+ "match_rate_of_total_pct": 35.5,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p16\batch_report.json

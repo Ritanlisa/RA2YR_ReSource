@@ -1,0 +1,11 @@
+{
+ "addr": "0x53F200",
+ "name": "Network::SetPort",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x53F200",
+ "bytes_hex": "833d40818200027508668b442404668901c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

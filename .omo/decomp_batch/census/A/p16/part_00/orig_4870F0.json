@@ -1,0 +1,11 @@
+{
+ "addr": "0x4870F0",
+ "name": "HouseClass::HasType",
+ "size": 20,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4870F0",
+ "bytes_hex": "8b54240433c066398451ac0000000f9fc0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

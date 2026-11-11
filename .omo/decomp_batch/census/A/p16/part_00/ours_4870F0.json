@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasType@HouseClass@@QAEEH@Z",
+ "sym_key": "HouseClass::HasType",
+ "size": 22,
+ "link_base": 0,
+ "bytes_hex": "8b5424046633c0663b8451ac0000001bc0f7d8c20400",
+ "relocs": []
+}

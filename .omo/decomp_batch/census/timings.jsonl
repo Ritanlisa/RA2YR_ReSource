@@ -19,3 +19,4 @@
 {"layer": "A", "part": 13, "n": 20, "seconds": 2.2, "ok": true, "verdicts": {"NO_CLS": 20}}
 {"layer": "A", "part": 14, "n": 20, "seconds": 2.3, "ok": true, "verdicts": {"NO_CLS": 20}}
 {"layer": "A", "part": 15, "n": 20, "seconds": 2.2, "ok": true, "verdicts": {"NO_CLS": 20}}
+{"layer": "A", "part": 16, "n": 20, "seconds": 14.7, "ok": true, "verdicts": {"NO_CLS": 18, "MISMATCH": 2}}
