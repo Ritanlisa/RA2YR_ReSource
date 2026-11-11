@@ -1,0 +1,120 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x40e9b0 _VectorClass_PAVScriptClass::GetCapacity -> _VectorClass_PAVScriptClass
+[conv] 0x420530 _VectorClass_PAVAlphaLightingRemapClass::Write -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x42fb30 _VectorClass_VBaseNodeClass::Write -> _VectorClass_VBaseNodeClass
+[conv] 0x46b610 VectorClass_ptr_BulletClass::GetItemIndex -> VectorClass_ptr_BulletClass
+[conv] 0x478120 _VectorClass_PAVTechnoTypeClass::GetIndex -> _VectorClass_PAVTechnoTypeClass
+[conv] 0x49ef80 _VectorClass_PAD::Remove -> _VectorClass_PAD
+[conv] 0x4b9c10 _DynamicVectorClass_PAUButtonFadeEffect::GetCount -> _DynamicVectorClass_PAUButtonFadeEffect
+[conv] 0x4c5d20 _VectorClass_PAVEMPulseClass::GetCapacity -> _VectorClass_PAVEMPulseClass
+[conv] 0x4e09e0 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetCapacity -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x4e85d0 _DynamicVectorClass_PAVTriggerTypeClass::GetItemIndex_1 -> _DynamicVectorClass_PAVTriggerTypeClass
+[conv] 0x4e8930 _DynamicVectorClass_PAVHouseClass::GetItemIndex_0 -> _DynamicVectorClass_PAVHouseClass
+[conv] 0x4e8cf0 _DynamicVectorClass_PAVSmudgeTypeClass::GetItemIndex -> _DynamicVectorClass_PAVSmudgeTypeClass
+[conv] 0x4e9050 _DynamicVectorClass_PAVIsometricTileTypeClass::GetItemIndex_0 -> _DynamicVectorClass_PAVIsometricTileTypeClass
+[conv] 0x4e9f40 _VectorClass_PAVParticleClass::vt_05 -> _VectorClass_PAVParticleClass
+[conv] 0x4eb620 _VectorClass_PAVTerrainClass::Read -> _VectorClass_PAVTerrainClass
+[conv] 0x4ecb80 _VectorClass_PAVTaskForceClass::GetCapacity -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ee340 _VectorClass_PAVInfantryTypeClass::LoadTypeData -> _VectorClass_PAVInfantryTypeClass
+[conv] 0x4f2a40 _VectorClass_PAVGraphicMenuItem::Write -> _VectorClass_PAVGraphicMenuItem
+[conv] 0x50ea70 _VectorClass_PBVBuildingTypeClass::GetCapacity -> _VectorClass_PBVBuildingTypeClass
+[conv] 0x512da0 _VectorClass_PBVInfantryTypeClass::Remove -> _VectorClass_PBVInfantryTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVScriptClass rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] VectorClass_ptr_BulletClass rc=0
+[era] _VectorClass_PAVTechnoTypeClass rc=0
+[era] _VectorClass_PAD         rc=0
+[era] _DynamicVectorClass_PAUButtonFadeEffect rc=0
+[era] _VectorClass_PAVEMPulseClass rc=0
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=0
+[era] _DynamicVectorClass_PAVTriggerTypeClass rc=0
+[era] _DynamicVectorClass_PAVHouseClass rc=0
+[era] _DynamicVectorClass_PAVSmudgeTypeClass rc=0
+[era] _DynamicVectorClass_PAVIsometricTileTypeClass rc=0
+[era] _VectorClass_PAVParticleClass rc=0
+[era] _VectorClass_PAVTerrainClass rc=0
+[era] _VectorClass_PAVTaskForceClass rc=0
+[era] _VectorClass_PAVInfantryTypeClass rc=0
+[era] _VectorClass_PAVGraphicMenuItem rc=0
+[era] _VectorClass_PBVBuildingTypeClass rc=0
+[era] _VectorClass_PBVInfantryTypeClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x40e9b0   MISMATCH         _VectorClass_PAVScriptClass::GetCapacity
+[diff] 0x420530   MISMATCH         _VectorClass_PAVAlphaLightingRemapClass::Write
+[diff] 0x42fb30   MISMATCH         _VectorClass_VBaseNodeClass::Write
+[diff] 0x46b610   MISMATCH         VectorClass_ptr_BulletClass::GetItemIndex
+[diff] 0x478120   MISMATCH         _VectorClass_PAVTechnoTypeClass::GetIndex
+[diff] 0x49ef80   MISMATCH         _VectorClass_PAD::Remove
+[diff] 0x4b9c10   MISMATCH         _DynamicVectorClass_PAUButtonFadeEffect::GetCount
+[diff] 0x4c5d20   MISMATCH         _VectorClass_PAVEMPulseClass::GetCapacity
+[diff] 0x4e09e0   MISMATCH         _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetCapacity
+[diff] 0x4e85d0   MISMATCH         _DynamicVectorClass_PAVTriggerTypeClass::GetItemIndex_1
+[diff] 0x4e8930   MISMATCH         _DynamicVectorClass_PAVHouseClass::GetItemIndex_0
+[diff] 0x4e8cf0   MISMATCH         _DynamicVectorClass_PAVSmudgeTypeClass::GetItemIndex
+[diff] 0x4e9050   MISMATCH         _DynamicVectorClass_PAVIsometricTileTypeClass::GetItemIndex_0
+[diff] 0x4e9f40   MISMATCH         _VectorClass_PAVParticleClass::vt_05
+[diff] 0x4eb620   MISMATCH         _VectorClass_PAVTerrainClass::Read
+[diff] 0x4ecb80   MISMATCH         _VectorClass_PAVTaskForceClass::GetCapacity
+[diff] 0x4ee340   MISMATCH         _VectorClass_PAVInfantryTypeClass::LoadTypeData
+[diff] 0x4f2a40   MISMATCH         _VectorClass_PAVGraphicMenuItem::Write
+[diff] 0x50ea70   MISMATCH         _VectorClass_PBVBuildingTypeClass::GetCapacity
+[diff] 0x512da0   MISMATCH         _VectorClass_PBVInfantryTypeClass::Remove
+[ledger] 0x40e9b0 VectorClass_ptr_ScriptClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x420530 AITriggerTypeClass_40::Write -> NG (attempt 1)
+[ledger] 0x42fb30 BaseNodeClass_Vector::Write -> NG (attempt 1)
+[ledger] 0x46b610 VectorClass_ptr_BulletClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x478120 TypeList_TechnoType::GetIndex -> NG (attempt 1)
+[ledger] 0x49ef80 StringVector::Remove -> NG (attempt 1)
+[ledger] 0x4b9c10 FilePipe_30::GetCount -> NG (attempt 1)
+[ledger] 0x4c5d20 VectorClass_ptr_EMPulseClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4e09e0 VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4e85d0 VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1 -> NG (attempt 1)
+[ledger] 0x4e8930 VectorClass_ptr_UnitClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e8cf0 VectorClass_ptr_SmudgeTypeClass::GetItemIndex -> NG (attempt 1)
+[ledger] 0x4e9050 VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex_0 -> NG (attempt 1)
+[ledger] 0x4e9f40 ParticleSystemClass::vt_05 -> NG (attempt 1)
+[ledger] 0x4eb620 ParticleSystemClass_32::Read -> NG (attempt 1)
+[ledger] 0x4ecb80 VectorClass_ptr_TaskForceClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x4ee340 VectorClass_ptr_InfantryTypeClass::LoadTypeData -> NG (attempt 1)
+[ledger] 0x4f2a40 HouseClass_24::Write -> NG (attempt 1)
+[ledger] 0x50ea70 VectorClass_BuildingType::GetCapacity -> NG (attempt 1)
+[ledger] 0x512da0 InfantryTypeVector::Remove -> NG (attempt 1)
+======================================================================
+{
+ "total": 1477,
+ "verdicts": {
+  "MISMATCH": 344,
+  "MATCH": 495,
+  "COMPILE_FAIL": 330,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 1,
+  "NO_CLS": 301,
+  "NO_EXPORT": 4
+ },
+ "pathologies": {
+  "eval_order": 5,
+  "codegen_shape": 123,
+  "ret_norm": 4,
+  "frame_sched": 60,
+  "const_fold": 11,
+  "branch_polarity": 26,
+  "regalloc": 48,
+  "branch_order": 41,
+  "width_mismatch": 3,
+  "extern_reloc": 15,
+  "cc_mismatch": 6,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 59.0,
+ "match_rate_of_total_pct": 33.5,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\A\p21\batch_report.json

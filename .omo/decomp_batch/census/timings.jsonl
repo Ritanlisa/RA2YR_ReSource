@@ -24,3 +24,4 @@
 {"layer": "A", "part": 18, "n": 20, "seconds": 11.8, "ok": true, "verdicts": {"NO_CLS": 19, "MATCH": 1}}
 {"layer": "A", "part": 19, "n": 20, "seconds": 15.0, "ok": true, "verdicts": {"NO_CLS": 14, "MISMATCH": 6}}
 {"layer": "A", "part": 20, "n": 20, "seconds": 15.7, "ok": true, "verdicts": {"NO_CLS": 15, "MISMATCH": 5}}
+{"layer": "A", "part": 21, "n": 20, "seconds": 16.9, "ok": true, "verdicts": {"MISMATCH": 20}}

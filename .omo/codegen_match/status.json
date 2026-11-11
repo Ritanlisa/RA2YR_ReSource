@@ -412,6 +412,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x40e9b0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x40e9bc",
+  "name": "VectorClass_ptr_ScriptClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x40ee20": {
   "attempts": 1,
   "first_diff": null,
@@ -790,6 +797,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x420530": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x42053c",
+  "name": "AITriggerTypeClass_40::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4208c0": {
   "attempts": 1,
   "first_diff": null,
@@ -1033,6 +1047,13 @@
   "first_diff": "+0 push ecx",
   "name": "BaseNodeClass_Vector::Release",
   "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
+ },
+ "0x42fb30": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x42fb3c",
+  "name": "BaseNodeClass_Vector::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
  },
  "0x42fd30": {
@@ -1441,6 +1462,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x46b610": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x46b61c",
+  "name": "VectorClass_ptr_BulletClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x46b630": {
   "attempts": 1,
   "first_diff": null,
@@ -1692,6 +1720,13 @@
   "name": "VtableStub::Method_477740",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x478120": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x47812c",
+  "name": "TypeList_TechnoType::GetIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x478340": {
   "attempts": 6,
@@ -2498,6 +2533,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x49ef80": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x49ef8c",
+  "name": "StringVector::Remove",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x49f190": {
   "attempts": 1,
   "first_diff": null,
@@ -2981,6 +3023,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x4b9c10": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4b9c1c",
+  "name": "FilePipe_30::GetCount",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4b9c90": {
   "attempts": 1,
   "first_diff": null,
@@ -3099,6 +3148,13 @@
   "name": "EMPulseClass::StubReturn55",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4c5d20": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4c5d2c",
+  "name": "VectorClass_ptr_EMPulseClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x4c6390": {
   "attempts": 1,
@@ -3394,6 +3450,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e09e0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e09ec",
+  "name": "VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4e14a0": {
   "attempts": 10,
   "first_diff": null,
@@ -3513,12 +3576,26 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e85d0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e85dc",
+  "name": "VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4e85f0": {
   "attempts": 1,
   "first_diff": null,
   "name": "VectorClass_ptr_TriggerTypeClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e8930": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e893c",
+  "name": "VectorClass_ptr_UnitClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x4e89b0": {
   "attempts": 1,
@@ -3527,6 +3604,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e8cf0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e8cfc",
+  "name": "VectorClass_ptr_SmudgeTypeClass::GetItemIndex",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4e8d10": {
   "attempts": 1,
   "first_diff": null,
@@ -3534,12 +3618,54 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4e9050": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e905c",
+  "name": "VectorClass_ptr_VoxelAnimTypeClass::GetItemIndex_0",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x4e90d0": {
   "attempts": 1,
   "first_diff": null,
   "name": "VectorClass_ptr_ParticleTypeClass::Get",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e9f40": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4e9f4c",
+  "name": "ParticleSystemClass::vt_05",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4eb620": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4eb62c",
+  "name": "ParticleSystemClass_32::Read",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4ecb80": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4ecb8c",
+  "name": "VectorClass_ptr_TaskForceClass::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4ee340": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4ee34c",
+  "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
+ "0x4f2a40": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x4f2a4c",
+  "name": "HouseClass_24::Write",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x4f2b40": {
   "attempts": 4,
@@ -3793,6 +3919,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x50ea70": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x50ea7c",
+  "name": "VectorClass_BuildingType::GetCapacity",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
+ },
  "0x50eb70": {
   "attempts": 4,
   "first_diff": "+0 push esi",
@@ -3960,6 +4093,13 @@
   "name": "HouseTypeClass::loadBuildLimits",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x512da0": {
+  "attempts": 1,
+  "first_diff": "+5 jne 0x512dac",
+  "name": "InfantryTypeVector::Remove",
+  "note": "decomp_batch r2: MISMATCH/branch_order",
+  "status": "NG"
  },
  "0x5139e0": {
   "attempts": 4,
