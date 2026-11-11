@@ -1,0 +1,33 @@
+{
+ "symbol": "?Map_Setup_6DA980@@YAXXZ",
+ "sym_key": "Unnamed::Map_Setup_6DA980",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b0d000000005685c957763733c08d51ff4989150000000085c97e2733d28b0d00000000408d3c11b90500000083c2148d7714f3a58b0d000000003bc172df85c977c95f5ec3",
+ "relocs": [
+  {
+   "off": 2,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 20,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_CraterPool@@3PAXA",
+   "sym_key": "g_CraterPool"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?g_CraterCreationState@@3IA",
+   "sym_key": "g_CraterCreationState"
+  }
+ ]
+}

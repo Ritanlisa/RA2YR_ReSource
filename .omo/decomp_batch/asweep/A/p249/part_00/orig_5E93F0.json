@@ -1,0 +1,11 @@
+{
+ "addr": "0x5E93F0",
+ "name": "IsKnownPointer",
+ "size": 69,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5E93F0",
+ "bytes_hex": "85c9743e3b0d9c11ac0074363b0da011ac00742e3b0db011ac0074263b0db411ac00741e3b0da411ac0074163b0da811ac00740e3b0dac11ac007406b801000000c333c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p249\part_00
+=== convert (20 addrs) ===
+[conv] 0x636e60 ArrayClass::GetAt_Wrap -> ArrayClass
+[conv] 0x710890 Object_Helper_710890 -> Object_Helper
+[conv] 0x5c6500 sub_5C6500 -> _addr_5C
+[conv] 0x42f7f0 _VectorClass_VCell::GetSize -> _VectorClass_VCell
+[conv] 0x568300 LayerClass::CoordinatesLegal -> LayerClass
+[conv] 0x5e93f0 ObjectClass::IsKnownPointer -> ObjectClass
+[conv] 0x6460c0 sub_6460C0 -> _addr_64
+[conv] 0x646110 sub_646110 -> _addr_64
+[conv] 0x4912b0 _BlitTransXlat_G::sub_4912B0 -> _BlitTransXlat_G
+[conv] 0x491740 _BlitTransRemapXlat_E::sub_491740 -> _BlitTransRemapXlat_E
+[conv] 0x4a10d0 _VectorClass_UtagCONNECTDATA::GetSize -> _VectorClass_UtagCONNECTDATA
+[conv] 0x4e0990 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetSize -> _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass
+[conv] 0x50f000 _VectorClass_UAngerStruct::GetSize -> _VectorClass_UAngerStruct
+[conv] 0x50fdb0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetSize -> _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass
+[conv] 0x510f60 BuildingType::IsSpecialType -> BuildingType
+[conv] 0x5c69e0 CompareBigIntLE -> _addr_5C
+[conv] 0x5d0950 _VectorClass_VPoint2D::GetSize -> _VectorClass_VPoint2D
+[conv] 0x5d5530 _VectorClass_UAcceleratorTracker::GetSize -> _VectorClass_UAcceleratorTracker
+[conv] 0x661350 Palette::CalcColorDistance -> Palette
+[conv] 0x6da980 Map_Setup_6DA980 -> Map_Setup
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ArrayClass               rc=2
+[era] Object_Helper            rc=0
+[era] _addr_5C                 rc=0
+[era] _VectorClass_VCell       rc=2
+[era] LayerClass               rc=2
+[era] ObjectClass              rc=0
+[era] _addr_64                 rc=0
+[era] _BlitTransXlat_G         rc=2
+[era] _BlitTransRemapXlat_E    rc=2
+[era] _VectorClass_UtagCONNECTDATA rc=2
+[era] _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass rc=2
+[era] _VectorClass_UAngerStruct rc=2
+[era] _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass rc=2
+[era] BuildingType             rc=2
+[era] _VectorClass_VPoint2D    rc=2
+[era] _VectorClass_UAcceleratorTracker rc=2
+[era] Palette                  rc=0
+[era] Map_Setup                rc=0
+=== diffasm byte-compare ===
+[diff] 0x710890   MISMATCH         Object_Helper_710890
+[diff] 0x5c6500   MISMATCH         sub_5C6500
+[diff] 0x5c69e0   MISMATCH         CompareBigIntLE
+[diff] 0x5e93f0   MATCH            ObjectClass::IsKnownPointer
+[diff] 0x6460c0   MISMATCH         sub_6460C0
+[diff] 0x646110   MISMATCH         sub_646110
+[diff] 0x661350   MISMATCH         Palette::CalcColorDistance
+[diff] 0x6da980   MISMATCH         Map_Setup_6DA980
+[ledger] 0x636e60 ArrayClass::GetAt_Wrap -> COMPILE_FAIL (attempt 1)
+[ledger] 0x710890 Object_Helper_710890 -> NG (attempt 1)
+[ledger] 0x5c6500 sub_5C6500 -> NG (attempt 1)
+[ledger] 0x42f7f0 _VectorClass_VCell::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x568300 LayerClass::CoordinatesLegal -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e93f0 ObjectClass::IsKnownPointer -> OK (attempt 1)
+[ledger] 0x6460c0 sub_6460C0 -> NG (attempt 1)
+[ledger] 0x646110 sub_646110 -> NG (attempt 1)
+[ledger] 0x4912b0 _BlitTransXlat_G::sub_4912B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x491740 _BlitTransRemapXlat_E::sub_491740 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4a10d0 _VectorClass_UtagCONNECTDATA::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e0990 _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50f000 _VectorClass_UAngerStruct::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x50fdb0 _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x510f60 BuildingType::IsSpecialType -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c69e0 CompareBigIntLE -> NG (attempt 1)
+[ledger] 0x5d0950 _VectorClass_VPoint2D::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5d5530 _VectorClass_UAcceleratorTracker::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x661350 Palette::CalcColorDistance -> NG (attempt 1)
+[ledger] 0x6da980 Map_Setup_6DA980 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 12,
+  "MISMATCH": 7,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "regalloc": 2,
+  "ret_norm": 1,
+  "frame_sched": 2,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 12.5,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p249\batch_report.json

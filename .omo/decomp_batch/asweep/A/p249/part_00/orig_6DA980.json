@@ -1,0 +1,11 @@
+{
+ "addr": "0x6DA980",
+ "name": "Map_Setup_6DA980",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6DA980",
+ "bytes_hex": "8b0d88ceb00085c97e3b56577e354933d285c9890d88ceb0007e2833c08b0d7cceb000428d7408148d3c08b90500000083c014f3a58b0d88ceb0003bd17cde85c97fcb5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

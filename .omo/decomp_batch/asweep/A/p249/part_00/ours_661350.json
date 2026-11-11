@@ -1,0 +1,8 @@
+{
+ "symbol": "?CalcColorDistance@Palette@@QAEEPAE@Z",
+ "sym_key": "Palette::CalcColorDistance",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "8b01558b6c24088bc85681e1ff00000033d2578a55008bf92bfa79042bd18bfa8bc833d28a5501c1f90881e1ff0000008bf12bf279042bd18bf2c1f81025ff00000033d28a55028bc82bca79042bd08bca8d04778d0c495f5e8d04415dc20400",
+ "relocs": []
+}

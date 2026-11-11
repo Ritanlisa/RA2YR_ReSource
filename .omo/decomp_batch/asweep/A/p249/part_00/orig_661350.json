@@ -1,0 +1,11 @@
+{
+ "addr": "0x661350",
+ "name": "Palette::CalcColorDistance",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x661350",
+ "bytes_hex": "56578b7c240c33d28a1133c08a078bf22bf07902f7de33c033d28a47018a51012bd07902f7da33c08a47028bf833c08a41022bc77902f7d88d0c568d14405f5e8d044ac20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,11 @@
+{
+ "addr": "0x5C69E0",
+ "name": "CompareBigIntLE",
+ "size": 70,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5C69E0",
+ "bytes_hex": "56578b7c240c8b44b9fc8d74b9fc8b4cbafc8d54bafc3bc17213771983ee0483ea044f741a8b068b0a3bc173ed5f83c8ff5ec204005fb8010000005ec204005f33c05ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
