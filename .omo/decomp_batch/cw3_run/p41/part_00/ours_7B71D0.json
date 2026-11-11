@@ -1,0 +1,99 @@
+{
+ "symbol": "?Render_Helper_7B71D0@ObjectClass@@QAEDPBGI@Z",
+ "sym_key": "ObjectClass::Render_Helper_7B71D0",
+ "size": 335,
+ "link_base": 0,
+ "bytes_hex": "51538bd9568b0385c00f84f600000050e8000000008b74241883c4043bf076118b0350e80000000083c404894424148bf08b0b555751e8000000008b7c241c8be857e80000000003c58d54000252e8000000008be88b0350e8000000005789442424e8000000008b7c242403c78bfd8d4c000233c08bd1c1e902f3ab8bca83e103f3aa8b035055e8000000008b0b51e8000000008bd6f7dac1e21f2bd603c28d7c00028b44243850e8000000008b5424408bcf03c28d747500897424348d7c45008bc1c1e902f3a58bc883e103f3a48b74243c56e8000000008b7c24388d0c008bd1c1e902f3a58bca83e103f3a48b0350e80000000083c42c892bb0015f5d5e5b59c208008b742410c7030000000085f6740c56e80000000083c40440eb05b8010000008d0c0051e80000000083c404890385f666c7000000740c8b135652e80000000083c4085eb0015b59c20800",
+ "relocs": [
+  {
+   "off": 17,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 36,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 55,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 67,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 79,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 89,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 99,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 136,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 169,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 213,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 242,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 277,
+   "type": "REL32",
+   "sym": "_wcslen",
+   "sym_key": "wcslen"
+  },
+  {
+   "off": 297,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 320,
+   "type": "REL32",
+   "sym": "_wcscpy",
+   "sym_key": "wcscpy"
+  }
+ ]
+}

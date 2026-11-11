@@ -1,0 +1,27 @@
+{
+ "symbol": "?_vt06@EnumConnectionsClass@@QAGHPAH@Z",
+ "sym_key": "EnumConnectionsClass::_vt06",
+ "size": 258,
+ "link_base": 0,
+ "bytes_hex": "8b442408565733ff3bc7750a5fb8034000805ec208006a24e8000000008bf083c4043bf7750a5fb80e0007805ec2080053558b6c24148d5e04897e08897e0c8d4504c64610013bd8c6461100893b74638bcbe8000000008b450c3bc789460c744b8d0cc50000000051e80000000083c4043bc7894608743b8b460c33d23bc7c64611017e2e8b45088b4e088d3cd50000000003c703cf428b3889398b40048941048b460c3bd072dd33ffeb07897e08c64611008b4d14894e148b5518895618893b8b6d1c8bc1896e1c5d85c0897e20893e5b76148b46088b04f8508b08ff51048b4614473bf872ec8b1656c7462000000000ff52045f8b44240c893033c05ec20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?ClearAndFree2@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::ClearAndFree2"
+  },
+  {
+   "off": 106,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  }
+ ]
+}
