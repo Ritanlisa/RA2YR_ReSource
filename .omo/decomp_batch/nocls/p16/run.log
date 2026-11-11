@@ -1,0 +1,87 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p16\part_00
+=== convert (20 addrs) ===
+[conv] 0x68cb80 sub_68CB80 -> _addr_68
+[conv] 0x6911b0 sub_6911B0 -> _addr_69
+[conv] 0x691220 sub_691220 -> _addr_69
+[conv] 0x692220 sub_692220 -> _addr_69
+[conv] 0x693940 sub_693940 -> _addr_69
+[conv] 0x693a70 sub_693A70 -> _addr_69
+[conv] 0x695570 sub_695570 -> _addr_69
+[conv] 0x696d70 sub_696D70 -> _addr_69
+[conv] 0x69a340 sub_69A340 -> _addr_69
+[conv] 0x69eb10 sub_69EB10 -> _addr_69
+[conv] 0x69eb80 sub_69EB80 -> _addr_69
+[conv] 0x69ebe0 sub_69EBE0 -> _addr_69
+[conv] 0x69ebf0 sub_69EBF0 -> _addr_69
+[conv] 0x6a4410 sub_6A4410 -> _addr_6A
+[conv] 0x6acae0 sub_6ACAE0 -> _addr_6A
+[conv] 0x6acca0 Map_Handle_6ACCA0 -> Map_Handle
+[conv] 0x6ace80 sub_6ACE80 -> _addr_6A
+[conv] 0x6aef60 sub_6AEF60 -> _addr_6A
+[conv] 0x6aefc0 sub_6AEFC0 -> _addr_6A
+[conv] 0x6b2390 sub_6B2390 -> _addr_6B
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_68                 rc=0
+[era] _addr_69                 rc=2
+[era] _addr_6A                 rc=2
+[era] Map_Handle               rc=2
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x68cb80   MISMATCH         sub_68CB80
+[diff] 0x691220   MISMATCH         sub_691220
+[diff] 0x692220   MISMATCH         sub_692220
+[diff] 0x693940   MATCH            sub_693940
+[diff] 0x693a70   MISMATCH         sub_693A70
+[diff] 0x695570   MISMATCH         sub_695570
+[diff] 0x696d70   MISMATCH         sub_696D70
+[diff] 0x69eb80   MISMATCH         sub_69EB80
+[diff] 0x69ebe0   MATCH            sub_69EBE0
+[diff] 0x69ebf0   MISMATCH         sub_69EBF0
+[diff] 0x6a4410   MISMATCH         sub_6A4410
+[diff] 0x6ace80   MISMATCH         sub_6ACE80
+[diff] 0x6aef60   MISMATCH         sub_6AEF60
+[diff] 0x6aefc0   MISMATCH         sub_6AEFC0
+[diff] 0x6b2390   MATCH            sub_6B2390
+[ledger] 0x68cb80 sub_68CB80 -> NG (attempt 2)
+[ledger] 0x6911b0 sub_6911B0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x691220 sub_691220 -> NG (attempt 2)
+[ledger] 0x692220 sub_692220 -> NG (attempt 2)
+[ledger] 0x693940 sub_693940 -> OK (attempt 2)
+[ledger] 0x693a70 sub_693A70 -> NG (attempt 2)
+[ledger] 0x695570 sub_695570 -> NG (attempt 2)
+[ledger] 0x696d70 sub_696D70 -> NG (attempt 2)
+[ledger] 0x69a340 sub_69A340 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69eb10 sub_69EB10 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x69eb80 sub_69EB80 -> NG (attempt 2)
+[ledger] 0x69ebe0 sub_69EBE0 -> OK (attempt 2)
+[ledger] 0x69ebf0 sub_69EBF0 -> NG (attempt 2)
+[ledger] 0x6a4410 sub_6A4410 -> NG (attempt 2)
+[ledger] 0x6acae0 sub_6ACAE0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6acca0 Map_Handle_6ACCA0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x6ace80 sub_6ACE80 -> NG (attempt 2)
+[ledger] 0x6aef60 sub_6AEF60 -> NG (attempt 2)
+[ledger] 0x6aefc0 sub_6AEFC0 -> NG (attempt 2)
+[ledger] 0x6b2390 sub_6B2390 -> OK (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "COMPILE_FAIL": 5,
+  "MATCH": 3
+ },
+ "pathologies": {
+  "extern_reloc": 8,
+  "codegen_shape": 2,
+  "const_fold": 1,
+  "branch_polarity": 1
+ },
+ "match_rate_of_decided_pct": 20.0,
+ "match_rate_of_total_pct": 15.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\nocls\p16\batch_report.json

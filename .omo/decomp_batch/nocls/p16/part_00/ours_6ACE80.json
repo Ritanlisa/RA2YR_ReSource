@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_6ACE80@@YIXPAXH@Z",
+ "sym_key": "Unnamed::sub_6ACE80",
+ "size": 96,
+ "link_base": 0,
+ "bytes_hex": "5356578bf985ff7453a10000000085c0744a85d2b801000000bb080000007e093bd37d058bc28d5a013bc38bf07d2d56e8000000008bd0a10000000083c40485c0740b8a483c84c974046a03eb026afe8bcfe800000000463bf37cd35f5e5bc3",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 49,
+   "type": "REL32",
+   "sym": "?GetResourceID4CSF@@YAHPAX@Z",
+   "sym_key": "GetResourceID4CSF"
+  },
+  {
+   "off": 56,
+   "type": "DIR32",
+   "sym": "?g_GameStateFlags@@3IA",
+   "sym_key": "g_GameStateFlags"
+  },
+  {
+   "off": 83,
+   "type": "REL32",
+   "sym": "?SetupLobbyPlayerSlots@@YI_NPAXHH@Z",
+   "sym_key": "SetupLobbyPlayerSlots"
+  }
+ ]
+}
