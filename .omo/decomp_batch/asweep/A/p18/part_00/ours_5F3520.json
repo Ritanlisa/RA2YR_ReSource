@@ -1,0 +1,8 @@
+{
+ "symbol": "?COMStub_Return0@NullModemClass@@QAGHXZ",
+ "sym_key": "NullModemClass::COMStub_Return0",
+ "size": 5,
+ "link_base": 0,
+ "bytes_hex": "33c0c20400",
+ "relocs": []
+}

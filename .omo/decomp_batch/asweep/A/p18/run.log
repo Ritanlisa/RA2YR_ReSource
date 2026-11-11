@@ -1,0 +1,93 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p18\part_00
+=== convert (20 addrs) ===
+[conv] 0x42e6c0 sub_42E6C0 -> _addr_42
+[conv] 0x430610 ObjectClass::sub_430610 -> ObjectClass
+[conv] 0x476ea0 ObjectClass::sub_476EA0 -> ObjectClass
+[conv] 0x484f10 globalHelper_084F10 -> _addr_48
+[conv] 0x535cf0 CommandClass::vt02 -> CommandClass
+[conv] 0x5ae4f0 sub_5AE4F0 -> _addr_5A
+[conv] 0x5b43f0 ReturnTrue -> _addr_5B
+[conv] 0x5f3520 NullModemClass::COMStub_Return0 -> NullModemClass
+[conv] 0x5f4240 ObjectClass::COMStub_29 -> ObjectClass
+[conv] 0x5f4250 ObjectClass::COMStub_28 -> ObjectClass
+[conv] 0x5f4320 ObjectClass::COMStub_64 -> ObjectClass
+[conv] 0x5f4350 ObjectClass::COMStub_81 -> ObjectClass
+[conv] 0x5f4360 ObjectClass::COMStub_80 -> ObjectClass
+[conv] 0x5f4390 ObjectClass::COMStub_90 -> ObjectClass
+[conv] 0x636520 ObjectClass::sub_636520 -> ObjectClass
+[conv] 0x636530 ObjectClass::sub_636530 -> ObjectClass
+[conv] 0x659560 ObjectClass::sub_659560 -> ObjectClass
+[conv] 0x65c580 RAMFileClass::nullsub_0_8 -> RAMFileClass
+[conv] 0x65e650 sub_65E650 -> _addr_65
+[conv] 0x6ba680 sub_6BA680 -> _addr_6B
+=== emit 10 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_42                 rc=0
+[era] ObjectClass              rc=2
+[era] _addr_48                 rc=0
+[era] CommandClass             rc=0
+[era] _addr_5A                 rc=0
+[era] _addr_5B                 rc=0
+[era] NullModemClass           rc=0
+[era] RAMFileClass             rc=0
+[era] _addr_65                 rc=0
+[era] _addr_6B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x42e6c0   MATCH            sub_42E6C0
+[diff] 0x430610   MISMATCH         ObjectClass::sub_430610
+[diff] 0x5f4240   MATCH            ObjectClass::COMStub_29
+[diff] 0x5f4250   MATCH            ObjectClass::COMStub_28
+[diff] 0x5f4320   MATCH            ObjectClass::COMStub_64
+[diff] 0x5f4350   MATCH            ObjectClass::COMStub_81
+[diff] 0x5f4360   MATCH            ObjectClass::COMStub_80
+[diff] 0x5f4390   MATCH            ObjectClass::COMStub_90
+[diff] 0x636520   MATCH            ObjectClass::sub_636520
+[diff] 0x636530   MATCH            ObjectClass::sub_636530
+[diff] 0x659560   MISMATCH         ObjectClass::sub_659560
+[diff] 0x484f10   MATCH            globalHelper_084F10
+[diff] 0x535cf0   MISMATCH         CommandClass::vt02
+[diff] 0x5ae4f0   MATCH            sub_5AE4F0
+[diff] 0x5b43f0   MATCH            ReturnTrue
+[diff] 0x5f3520   MATCH            NullModemClass::COMStub_Return0
+[diff] 0x65c580   MATCH            RAMFileClass::nullsub_0_8
+[diff] 0x65e650   MATCH            sub_65E650
+[diff] 0x6ba680   MATCH            sub_6BA680
+[ledger] 0x42e6c0 sub_42E6C0 -> OK (attempt 1)
+[ledger] 0x430610 ObjectClass::sub_430610 -> NG (attempt 1)
+[ledger] 0x476ea0 ObjectClass::sub_476EA0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x484f10 globalHelper_084F10 -> OK (attempt 1)
+[ledger] 0x535cf0 CommandClass::vt02 -> NG (attempt 1)
+[ledger] 0x5ae4f0 sub_5AE4F0 -> OK (attempt 1)
+[ledger] 0x5b43f0 ReturnTrue -> OK (attempt 1)
+[ledger] 0x5f3520 NullModemClass::COMStub_Return0 -> OK (attempt 1)
+[ledger] 0x5f4240 ObjectClass::COMStub_29 -> OK (attempt 1)
+[ledger] 0x5f4250 ObjectClass::COMStub_28 -> OK (attempt 1)
+[ledger] 0x5f4320 ObjectClass::COMStub_64 -> OK (attempt 1)
+[ledger] 0x5f4350 ObjectClass::COMStub_81 -> OK (attempt 1)
+[ledger] 0x5f4360 ObjectClass::COMStub_80 -> OK (attempt 1)
+[ledger] 0x5f4390 ObjectClass::COMStub_90 -> OK (attempt 1)
+[ledger] 0x636520 ObjectClass::sub_636520 -> OK (attempt 1)
+[ledger] 0x636530 ObjectClass::sub_636530 -> OK (attempt 1)
+[ledger] 0x659560 ObjectClass::sub_659560 -> NG (attempt 1)
+[ledger] 0x65c580 RAMFileClass::nullsub_0_8 -> OK (attempt 1)
+[ledger] 0x65e650 sub_65E650 -> OK (attempt 1)
+[ledger] 0x6ba680 sub_6BA680 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "MISMATCH": 3,
+  "COMPILE_FAIL": 1
+ },
+ "pathologies": {
+  "width_mismatch": 3
+ },
+ "match_rate_of_decided_pct": 84.2,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p18\batch_report.json

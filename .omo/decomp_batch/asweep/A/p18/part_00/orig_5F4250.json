@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F4250",
+ "name": "AbstractClass::COMStub_28",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F4250",
+ "bytes_hex": "33c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

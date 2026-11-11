@@ -1,0 +1,11 @@
+{
+ "addr": "0x5B43F0",
+ "name": "ReturnTrue",
+ "size": 5,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5B43F0",
+ "bytes_hex": "b001c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
