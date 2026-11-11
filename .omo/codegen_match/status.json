@@ -3079,6 +3079,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x4cba60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4cba60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x4cbba0": {
   "attempts": 10,
   "first_diff": null,
@@ -3155,6 +3162,13 @@
   "name": "FoggedObjectClass::ResizeArray",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4d2fc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4d2fc0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4d30f0": {
   "attempts": 1,
@@ -3267,6 +3281,13 @@
   "name": "GaugeClass::Stub",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x4e31a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4e31a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4e32d0": {
   "attempts": 1,
@@ -3393,6 +3414,13 @@
   "name": "VectorCursor_uint_DynamicVectorClass_uint::ddtor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4f40c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x4f40c0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x4f42d0": {
   "attempts": 1,
@@ -3695,6 +3723,13 @@
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
  },
+ "0x5112b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5112b0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x512280": {
   "attempts": 1,
   "first_diff": null,
@@ -3853,6 +3888,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x5234e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x523540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x523540",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -4213,6 +4255,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x53c890": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x53c890",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x53da90": {
   "attempts": 1,
   "first_diff": null,
@@ -4282,6 +4331,13 @@
   "name": "IPXGlobalConnClass::SendPacket",
   "note": "decomp_batch r2: MISMATCH/frame_sched",
   "status": "NG"
+ },
+ "0x540750": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x540750",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x540c60": {
   "attempts": 8,
@@ -4367,6 +4423,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x54aac0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x54aac0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x54b8d0": {
   "attempts": 9,
   "first_diff": null,
@@ -4401,6 +4464,13 @@
   "name": "InputManager::EnqueueInputEvent",
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
+ },
+ "0x54fc60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x54fc60",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x54fd50": {
   "attempts": 1,
@@ -4450,6 +4520,13 @@
   "name": "Scenario::ComputeDisplayPosition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x5544e0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5544e0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x555130": {
   "attempts": 5,
@@ -4527,6 +4604,13 @@
   "name": "LoadOptions::vt06",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x55a540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x55a540",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x55a940": {
   "attempts": 1,
@@ -4644,6 +4728,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x55cc10",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x55f7f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x55f7f0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -4857,6 +4948,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x58b3d0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x58b3d0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x58b7c0": {
   "attempts": 1,
   "first_diff": null,
@@ -4941,6 +5039,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5afd90": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5afd90",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5afe90": {
   "attempts": 1,
   "first_diff": null,
@@ -4982,6 +5087,13 @@
   "name": "Math::Abs16Cmp",
   "note": "decomp_batch r2: MISMATCH/eval_order",
   "status": "NG"
+ },
+ "0x5b2c40": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5b2c40",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5b2e10": {
   "attempts": 5,
@@ -5186,6 +5298,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5bd850": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5bd850",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5bec80": {
   "attempts": 1,
   "first_diff": null,
@@ -5256,6 +5375,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x5c1160": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5c1160",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5c1290": {
   "attempts": 1,
   "first_diff": null,
@@ -5312,6 +5438,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5c9280": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5c9280",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x5c9560": {
   "attempts": 1,
   "first_diff": null,
@@ -5332,6 +5465,13 @@
   "name": "ScenarioClass::ClearFlag_0",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x5cacd0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x5cacd0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
  },
  "0x5cb340": {
   "attempts": 1,
