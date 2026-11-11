@@ -696,11 +696,15 @@
   "this_as_id": false
  },
  "0x406920": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_406920",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_406920",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x406950": {
   "attempts": 1,
@@ -3943,11 +3947,15 @@
   "status": "NG"
  },
  "0x410610": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_410610",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_410610",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x410640": {
   "attempts": 1,
@@ -7556,11 +7564,15 @@
   "this_as_id": false
  },
  "0x42e430": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_42E430",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_42E430",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x42e460": {
   "attempts": 1,
@@ -11203,11 +11215,15 @@
   "status": "OK"
  },
  "0x46d120": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_46D120",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_46D120",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x46d150": {
   "attempts": 1,
@@ -15824,14 +15840,14 @@
   "this_as_id": false
  },
  "0x49b180": {
-  "attempts": 3,
+  "attempts": 4,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_49B180",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "orig_name": "sub_49B180",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x49b1b0": {
@@ -19527,11 +19543,15 @@
   "this_as_id": false
  },
  "0x4ba3b0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_4BA3B0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_4BA3B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4ba3e0": {
   "attempts": 1,
@@ -21677,11 +21697,15 @@
   "this_as_id": false
  },
  "0x4cc790": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_4CC790",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_4CC790",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4cc7c0": {
   "attempts": 2,
@@ -29582,11 +29606,15 @@
   "this_as_id": false
  },
  "0x511200": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_511200",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_511200",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x511230": {
   "attempts": 1,
@@ -34239,11 +34267,15 @@
   "this_as_id": false
  },
  "0x543c60": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_543C60",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_543C60",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x543c90": {
   "attempts": 1,
@@ -36867,11 +36899,15 @@
   "this_as_id": false
  },
  "0x55a4d0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_55A4D0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_55A4D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x55a500": {
   "attempts": 1,
@@ -40808,11 +40844,15 @@
   "this_as_id": false
  },
  "0x5b1f00": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_5B1F00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5B1F00",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5b1f30": {
   "attempts": 1,
@@ -43757,11 +43797,15 @@
   "this_as_id": false
  },
  "0x5c91f0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_5C91F0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5C91F0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5c9220": {
   "attempts": 1,
@@ -46793,11 +46837,15 @@
   "this_as_id": false
  },
  "0x5e2430": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_5E2430",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_5E2430",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x5e2460": {
   "attempts": 2,
@@ -50258,11 +50306,15 @@
   "this_as_id": false
  },
  "0x62b3d0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_62B3D0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_62B3D0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x62b400": {
   "attempts": 1,
@@ -53964,11 +54016,15 @@
   "status": "COMPILE_FAIL"
  },
  "0x658e80": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_658E80",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_658E80",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x658eb0": {
   "attempts": 1,
@@ -57558,11 +57614,15 @@
   "status": "NG"
  },
  "0x6911b0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 fld qword ptr [0x7e1710]",
   "name": "sub_6911B0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_6911B0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x6911e0": {
   "attempts": 1,
@@ -71150,11 +71210,15 @@
   "status": "NG"
  },
  "0x725f00": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 push ecx",
   "name": "sub_725F00",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_725F00",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x725f30": {
   "attempts": 2,
@@ -74679,11 +74743,15 @@
   "this_as_id": false
  },
  "0x74ace0": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "clean": false,
+  "first_diff": "+0 push ecx",
   "name": "sub_74ACE0",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "sub_74ACE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x74ad10": {
   "attempts": 1,
@@ -78203,14 +78271,14 @@
   "this_as_id": false
  },
  "0x767280": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "sub_767280",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_767280",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x7672b0": {
@@ -80579,14 +80647,14 @@
   "this_as_id": false
  },
  "0x777340": {
-  "attempts": 2,
+  "attempts": 3,
   "clean": false,
-  "first_diff": null,
+  "first_diff": "+0 push ecx",
   "name": "sub_777340",
-  "note": "decomp_batch r2: COMPILE_FAIL",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "orig_name": "sub_777340",
   "rule_violations": 0,
-  "status": "COMPILE_FAIL",
+  "status": "NG",
   "this_as_id": false
  },
  "0x777370": {

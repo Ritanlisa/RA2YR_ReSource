@@ -1,0 +1,103 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p11\part_00
+=== convert (20 addrs) ===
+[conv] 0x725f00 sub_725F00 -> _addr_72
+[conv] 0x74ace0 sub_74ACE0 -> _addr_74
+[conv] 0x767280 sub_767280 -> _addr_76
+[conv] 0x777340 sub_777340 -> _addr_77
+[conv] 0x406920 sub_406920 -> _addr_40
+[conv] 0x410610 sub_410610 -> _addr_41
+[conv] 0x42e430 sub_42E430 -> _addr_42
+[conv] 0x46d120 sub_46D120 -> _addr_46
+[conv] 0x49b180 sub_49B180 -> _addr_49
+[conv] 0x4ba3b0 sub_4BA3B0 -> _addr_4B
+[conv] 0x4cc790 sub_4CC790 -> _addr_4C
+[conv] 0x511200 sub_511200 -> _addr_51
+[conv] 0x543c60 sub_543C60 -> _addr_54
+[conv] 0x55a4d0 sub_55A4D0 -> _addr_55
+[conv] 0x5b1f00 sub_5B1F00 -> _addr_5B
+[conv] 0x5c91f0 sub_5C91F0 -> _addr_5C
+[conv] 0x5e2430 sub_5E2430 -> _addr_5E
+[conv] 0x62b3d0 sub_62B3D0 -> _addr_62
+[conv] 0x658e80 sub_658E80 -> _addr_65
+[conv] 0x6911b0 sub_6911B0 -> _addr_69
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] _addr_74                 rc=0
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+[era] _addr_42                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4B                 rc=0
+[era] _addr_4C                 rc=0
+[era] _addr_51                 rc=0
+[era] _addr_54                 rc=0
+[era] _addr_55                 rc=0
+[era] _addr_5B                 rc=0
+[era] _addr_5C                 rc=0
+[era] _addr_5E                 rc=0
+[era] _addr_62                 rc=0
+[era] _addr_65                 rc=0
+[era] _addr_69                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x725f00   MISMATCH         sub_725F00
+[diff] 0x74ace0   MISMATCH         sub_74ACE0
+[diff] 0x767280   MISMATCH         sub_767280
+[diff] 0x777340   MISMATCH         sub_777340
+[diff] 0x406920   MISMATCH         sub_406920
+[diff] 0x410610   MISMATCH         sub_410610
+[diff] 0x42e430   MISMATCH         sub_42E430
+[diff] 0x46d120   MISMATCH         sub_46D120
+[diff] 0x49b180   MISMATCH         sub_49B180
+[diff] 0x4ba3b0   MISMATCH         sub_4BA3B0
+[diff] 0x4cc790   MISMATCH         sub_4CC790
+[diff] 0x511200   MISMATCH         sub_511200
+[diff] 0x543c60   MISMATCH         sub_543C60
+[diff] 0x55a4d0   MISMATCH         sub_55A4D0
+[diff] 0x5b1f00   MISMATCH         sub_5B1F00
+[diff] 0x5c91f0   MISMATCH         sub_5C91F0
+[diff] 0x5e2430   MISMATCH         sub_5E2430
+[diff] 0x62b3d0   MISMATCH         sub_62B3D0
+[diff] 0x658e80   MISMATCH         sub_658E80
+[diff] 0x6911b0   MISMATCH         sub_6911B0
+[ledger] 0x725f00 sub_725F00 -> NG (attempt 3)
+[ledger] 0x74ace0 sub_74ACE0 -> NG (attempt 3)
+[ledger] 0x767280 sub_767280 -> NG (attempt 3)
+[ledger] 0x777340 sub_777340 -> NG (attempt 3)
+[ledger] 0x406920 sub_406920 -> NG (attempt 3)
+[ledger] 0x410610 sub_410610 -> NG (attempt 3)
+[ledger] 0x42e430 sub_42E430 -> NG (attempt 3)
+[ledger] 0x46d120 sub_46D120 -> NG (attempt 3)
+[ledger] 0x49b180 sub_49B180 -> NG (attempt 4)
+[ledger] 0x4ba3b0 sub_4BA3B0 -> NG (attempt 3)
+[ledger] 0x4cc790 sub_4CC790 -> NG (attempt 3)
+[ledger] 0x511200 sub_511200 -> NG (attempt 3)
+[ledger] 0x543c60 sub_543C60 -> NG (attempt 3)
+[ledger] 0x55a4d0 sub_55A4D0 -> NG (attempt 3)
+[ledger] 0x5b1f00 sub_5B1F00 -> NG (attempt 3)
+[ledger] 0x5c91f0 sub_5C91F0 -> NG (attempt 3)
+[ledger] 0x5e2430 sub_5E2430 -> NG (attempt 3)
+[ledger] 0x62b3d0 sub_62B3D0 -> NG (attempt 3)
+[ledger] 0x658e80 sub_658E80 -> NG (attempt 3)
+[ledger] 0x6911b0 sub_6911B0 -> NG (attempt 3)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "codegen_shape": 4,
+  "extern_reloc": 16
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p11\batch_report.json
