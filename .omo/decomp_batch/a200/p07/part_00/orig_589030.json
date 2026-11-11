@@ -1,0 +1,11 @@
+{
+ "addr": "0x589030",
+ "name": "VectorClass_UHashObject_uint_SubzoneConn::Clear",
+ "size": 37,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x589030",
+ "bytes_hex": "8b4424088b49048d04408b14818d0c818b44240489108b51048950048a4908884808c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

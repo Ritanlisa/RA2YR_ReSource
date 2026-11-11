@@ -1,0 +1,11 @@
+{
+ "addr": "0x70F050",
+ "name": "TechnoClass::ProcessCellClearance",
+ "size": 30,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x70F050",
+ "bytes_hex": "8b44240456578bf883c9ff83caff890f83ceff8957048977085f5ec20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

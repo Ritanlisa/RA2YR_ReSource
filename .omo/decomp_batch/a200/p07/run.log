@@ -1,0 +1,98 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p07\part_00
+=== convert (20 addrs) ===
+[conv] 0x65a3a0 _VectorClass_PAVRadBeam::GetCapacity -> _VectorClass_PAVRadBeam
+[conv] 0x6b8640 _VectorClass_PAVSpawnManagerClass::GetCapacity -> _VectorClass_PAVSpawnManagerClass
+[conv] 0x751a90 _VectorClass_PAVVocClass::GetCapacity -> _VectorClass_PAVVocClass
+[conv] 0x46f5e0 ErrorCode::Map -> ErrorCode
+[conv] 0x5f6940 IUnknown::SetPosition -> IUnknown
+[conv] 0x70f050 TechnoClass::ProcessCellClearance -> TechnoClass
+[conv] 0x711ec0 TechnoTypeClass::GetBuildCost -> TechnoTypeClass
+[conv] 0x43a100 Vector3::AddAssign -> Vector3
+[conv] 0x6c0910 _TClassFactory_VAirstrikeClass::GetSize -> _TClassFactory_VAirstrikeClass
+[conv] 0x6c3790 _TClassFactory_VAircraftClass::GetSize -> _TClassFactory_VAircraftClass
+[conv] 0x726f80 HouseClass::HasType25Building -> HouseClass
+[conv] 0x67a470 AnimTypeList::Constructor -> AnimTypeList
+[conv] 0x696ff0 SessionClass::SetOption -> SessionClass
+[conv] 0x6260a0 ObjectClass::sub_6260A0 -> ObjectClass
+[conv] 0x589030 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::Clear -> _VectorClass_U_HashObject_IUSubzoneConnectionStruct
+[conv] 0x42d880 _DynamicVectorClass_I::GetSize -> _DynamicVectorClass_I
+[conv] 0x4e9b50 _DynamicVectorClass_PAVAITriggerTypeClass::FindItemIndex -> _DynamicVectorClass_PAVAITriggerTypeClass
+[conv] 0x4ee670 _DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1 -> _DynamicVectorClass_PAVBulletTypeClass
+[conv] 0x557140 _DynamicVectorClass_PAVLineTrail::FindItemIndex -> _DynamicVectorClass_PAVLineTrail
+[conv] 0x63e620 _DynamicVectorClass_PAVPlanningNodeClass::Read -> _DynamicVectorClass_PAVPlanningNodeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVRadBeam  rc=0
+[era] _VectorClass_PAVSpawnManagerClass rc=0
+[era] _VectorClass_PAVVocClass rc=0
+[era] ErrorCode                rc=0
+[era] IUnknown                 rc=0
+[era] TechnoClass              rc=0
+[era] TechnoTypeClass          rc=2
+[era] Vector3                  rc=0
+[era] _TClassFactory_VAirstrikeClass rc=0
+[era] _TClassFactory_VAircraftClass rc=0
+[era] HouseClass               rc=0
+[era] AnimTypeList             rc=2
+[era] SessionClass             rc=0
+[era] ObjectClass              rc=2
+[era] _VectorClass_U_HashObject_IUSubzoneConnectionStruct rc=0
+[era] _DynamicVectorClass_I    rc=2
+[era] _DynamicVectorClass_PAVAITriggerTypeClass rc=2
+[era] _DynamicVectorClass_PAVBulletTypeClass rc=2
+[era] _DynamicVectorClass_PAVLineTrail rc=2
+[era] _DynamicVectorClass_PAVPlanningNodeClass rc=2
+=== diffasm byte-compare ===
+[diff] 0x65a3a0   MISMATCH         _VectorClass_PAVRadBeam::GetCapacity
+[diff] 0x6b8640   MISMATCH         _VectorClass_PAVSpawnManagerClass::GetCapacity
+[diff] 0x751a90   MISMATCH         _VectorClass_PAVVocClass::GetCapacity
+[diff] 0x46f5e0   MISMATCH         ErrorCode::Map
+[diff] 0x5f6940   MISMATCH         IUnknown::SetPosition
+[diff] 0x70f050   MISMATCH         TechnoClass::ProcessCellClearance
+[diff] 0x43a100   MISMATCH         Vector3::AddAssign
+[diff] 0x6c0910   MISMATCH         _TClassFactory_VAirstrikeClass::GetSize
+[diff] 0x6c3790   MISMATCH         _TClassFactory_VAircraftClass::GetSize
+[diff] 0x726f80   MISMATCH         HouseClass::HasType25Building
+[diff] 0x696ff0   MISMATCH         SessionClass::SetOption
+[diff] 0x589030   MATCH            _VectorClass_U_HashObject_IUSubzoneConnectionStruct::Clear
+[ledger] 0x65a3a0 _VectorClass_PAVRadBeam::GetCapacity -> NG (attempt 1)
+[ledger] 0x6b8640 _VectorClass_PAVSpawnManagerClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x751a90 _VectorClass_PAVVocClass::GetCapacity -> NG (attempt 1)
+[ledger] 0x46f5e0 ErrorCode::Map -> NG (attempt 1)
+[ledger] 0x5f6940 IUnknown::SetPosition -> NG (attempt 1)
+[ledger] 0x70f050 TechnoClass::ProcessCellClearance -> NG (attempt 1)
+[ledger] 0x711ec0 TechnoTypeClass::GetBuildCost -> COMPILE_FAIL (attempt 1)
+[ledger] 0x43a100 Vector3::AddAssign -> NG (attempt 1)
+[ledger] 0x6c0910 _TClassFactory_VAirstrikeClass::GetSize -> NG (attempt 1)
+[ledger] 0x6c3790 _TClassFactory_VAircraftClass::GetSize -> NG (attempt 1)
+[ledger] 0x726f80 HouseClass::HasType25Building -> NG (attempt 1)
+[ledger] 0x67a470 AnimTypeList::Constructor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x696ff0 SessionClass::SetOption -> NG (attempt 1)
+[ledger] 0x6260a0 ObjectClass::sub_6260A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x589030 _VectorClass_U_HashObject_IUSubzoneConnectionStruct::Clear -> OK (attempt 1)
+[ledger] 0x42d880 _DynamicVectorClass_I::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4e9b50 _DynamicVectorClass_PAVAITriggerTypeClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee670 _DynamicVectorClass_PAVBulletTypeClass::FindItemIndex_1 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x557140 _DynamicVectorClass_PAVLineTrail::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63e620 _DynamicVectorClass_PAVPlanningNodeClass::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 11,
+  "COMPILE_FAIL": 8,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_order": 4,
+  "codegen_shape": 6,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 8.3,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 7,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\a200\p07\batch_report.json

@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetPosition@IUnknown@@QAEHXZ",
+ "sym_key": "IUnknown::SetPosition",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b1089919c0000008b50048991a00000008b40088981a400000059c3",
+ "relocs": []
+}

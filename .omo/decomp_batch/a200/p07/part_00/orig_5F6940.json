@@ -1,0 +1,11 @@
+{
+ "addr": "0x5F6940",
+ "name": "ObjectClass::SetPosition",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5F6940",
+ "bytes_hex": "8b44240481c19c0000008b1089118b50048951048b4008894108c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

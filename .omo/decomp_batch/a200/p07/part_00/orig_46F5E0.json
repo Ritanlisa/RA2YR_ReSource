@@ -1,0 +1,11 @@
+{
+ "addr": "0x46F5E0",
+ "name": "ErrorCode::Map",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x46F5E0",
+ "bytes_hex": "8bc185c07506b811040000c348f7d81bc025edfbffff0512040000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

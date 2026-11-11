@@ -1,0 +1,8 @@
+{
+ "symbol": "?HasType25Building@HouseClass@@QAEDXZ",
+ "sym_key": "HouseClass::HasType25Building",
+ "size": 49,
+ "link_base": 0,
+ "bytes_hex": "518b4424008b89ac00000024005685c9741c8b712cba190000003bf2740c8b492885c9740939512c75f424010c015e59c3",
+ "relocs": []
+}
