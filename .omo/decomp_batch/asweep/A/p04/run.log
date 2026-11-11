@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p04\part_00
+=== convert (20 addrs) ===
+[conv] 0x5c0f80 MultiplayerGameMode::StubReturnTrue6 -> MultiplayerGameMode
+[conv] 0x5c0f90 MultiplayerGameMode::StubReturnTrue7 -> MultiplayerGameMode
+[conv] 0x5d0590 ObjectClass::nullsub_24 -> ObjectClass
+[conv] 0x5d26f0 MSEngine::Release -> MSEngine
+[conv] 0x5daf10 nullsub_194 -> _addr_5D
+[conv] 0x5dfdd0 nullsub_25 -> _addr_5D
+[conv] 0x5dfde0 nullsub_26 -> _addr_5D
+[conv] 0x5dfdf0 nullsub_27 -> _addr_5D
+[conv] 0x5f3340 ObjectClass::nullsub_28 -> ObjectClass
+[conv] 0x5f4310 ObjectClass::COMStub_Return0_63 -> ObjectClass
+[conv] 0x5f4330 ObjectClass::COMStub_Return0_71 -> ObjectClass
+[conv] 0x5f5c10 nullsub_205 -> _addr_5F
+[conv] 0x5f76a0 nullsub_207 -> _addr_5F
+[conv] 0x5fa430 ObjectClass::nullsub_29 -> ObjectClass
+[conv] 0x5fd230 nullsub_208 -> _addr_5F
+[conv] 0x5fd240 nullsub_209 -> _addr_5F
+[conv] 0x5fd250 nullsub_210 -> _addr_5F
+[conv] 0x5fd260 nullsub_211 -> _addr_5F
+[conv] 0x5fe520 nullsub_213 -> _addr_5F
+[conv] 0x60d440 nullsub_31 -> _addr_60
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] MultiplayerGameMode      rc=0
+[era] ObjectClass              rc=2
+[era] MSEngine                 rc=0
+[era] _addr_5D                 rc=0
+[era] _addr_5F                 rc=0
+[era] _addr_60                 rc=2
+=== diffasm byte-compare ===
+[diff] 0x5c0f80   MATCH            MultiplayerGameMode::StubReturnTrue6
+[diff] 0x5c0f90   MATCH            MultiplayerGameMode::StubReturnTrue7
+[diff] 0x5d0590   MISMATCH         ObjectClass::nullsub_24
+[diff] 0x5f3340   MISMATCH         ObjectClass::nullsub_28
+[diff] 0x5f4310   MISMATCH         ObjectClass::COMStub_Return0_63
+[diff] 0x5f4330   MISMATCH         ObjectClass::COMStub_Return0_71
+[diff] 0x5d26f0   MATCH            MSEngine::Release
+[diff] 0x5daf10   MATCH            nullsub_194
+[diff] 0x5dfdd0   MATCH            nullsub_25
+[diff] 0x5dfde0   MATCH            nullsub_26
+[diff] 0x5dfdf0   MATCH            nullsub_27
+[diff] 0x5f5c10   MATCH            nullsub_205
+[diff] 0x5f76a0   MATCH            nullsub_207
+[diff] 0x5fd230   MATCH            nullsub_208
+[diff] 0x5fd240   MATCH            nullsub_209
+[diff] 0x5fd250   MATCH            nullsub_210
+[diff] 0x5fd260   MATCH            nullsub_211
+[diff] 0x5fe520   MATCH            nullsub_213
+[ledger] 0x5c0f80 MultiplayerGameMode::StubReturnTrue6 -> OK (attempt 1)
+[ledger] 0x5c0f90 MultiplayerGameMode::StubReturnTrue7 -> OK (attempt 1)
+[ledger] 0x5d0590 ObjectClass::nullsub_24 -> NG (attempt 1)
+[ledger] 0x5d26f0 MSEngine::Release -> OK (attempt 1)
+[ledger] 0x5daf10 nullsub_194 -> OK (attempt 1)
+[ledger] 0x5dfdd0 nullsub_25 -> OK (attempt 1)
+[ledger] 0x5dfde0 nullsub_26 -> OK (attempt 1)
+[ledger] 0x5dfdf0 nullsub_27 -> OK (attempt 1)
+[ledger] 0x5f3340 ObjectClass::nullsub_28 -> NG (attempt 1)
+[ledger] 0x5f4310 ObjectClass::COMStub_Return0_63 -> NG (attempt 1)
+[ledger] 0x5f4330 ObjectClass::COMStub_Return0_71 -> NG (attempt 1)
+[ledger] 0x5f5c10 nullsub_205 -> OK (attempt 1)
+[ledger] 0x5f76a0 nullsub_207 -> OK (attempt 1)
+[ledger] 0x5fa430 ObjectClass::nullsub_29 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5fd230 nullsub_208 -> OK (attempt 1)
+[ledger] 0x5fd240 nullsub_209 -> OK (attempt 1)
+[ledger] 0x5fd250 nullsub_210 -> OK (attempt 1)
+[ledger] 0x5fd260 nullsub_211 -> OK (attempt 1)
+[ledger] 0x5fe520 nullsub_213 -> OK (attempt 1)
+[ledger] 0x60d440 nullsub_31 -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "MISMATCH": 4,
+  "COMPILE_FAIL": 2
+ },
+ "pathologies": {
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 77.8,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p04\batch_report.json

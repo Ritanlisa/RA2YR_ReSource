@@ -1,0 +1,11 @@
+{
+ "addr": "0x5D26F0",
+ "name": "MSEngine_Destru::Release",
+ "size": 1,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5D26F0",
+ "bytes_hex": "c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
