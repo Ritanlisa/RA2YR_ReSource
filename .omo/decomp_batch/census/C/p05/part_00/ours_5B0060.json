@@ -1,0 +1,15 @@
+{
+ "symbol": "?ShortFunc_5B0060@MechLocomotionClass@@QAGHH@Z",
+ "sym_key": "MechLocomotionClass::ShortFunc_5B0060",
+ "size": 25,
+ "link_base": 0,
+ "bytes_hex": "568b7424086a018d4efce8000000008b0656ff50105ec20800",
+ "relocs": [
+  {
+   "off": 11,
+   "type": "REL32",
+   "sym": "?ProcessMission@BuildingClass@@QAEXD@Z",
+   "sym_key": "BuildingClass::ProcessMission"
+  }
+ ]
+}

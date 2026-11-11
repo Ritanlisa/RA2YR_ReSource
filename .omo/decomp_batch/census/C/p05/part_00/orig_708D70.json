@@ -1,0 +1,11 @@
+{
+ "addr": "0x708D70",
+ "name": "TechnoClass::Vt170",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x708D70",
+ "bytes_hex": "518b018d54240052ff90a80200008b088b442408890859c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

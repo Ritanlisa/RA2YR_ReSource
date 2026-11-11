@@ -1,0 +1,15 @@
+{
+ "symbol": "?updateAnimationState@BuildingClass@@QAEHXZ",
+ "sym_key": "BuildingClass::updateAnimationState",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "0fbf410c83f80b7505e900000000",
+ "relocs": [
+  {
+   "off": 10,
+   "type": "REL32",
+   "sym": "?Alloc76@Memory@@QAEHXZ",
+   "sym_key": "Memory::Alloc76"
+  }
+ ]
+}

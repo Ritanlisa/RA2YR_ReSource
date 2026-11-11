@@ -1,0 +1,11 @@
+{
+ "addr": "0x625390",
+ "name": "ComboBoxOwnerDraw::ComputeMask",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x625390",
+ "bytes_hex": "568bf18b4c2408ff56188b4e0c8bd0b8010000005ed3e04823c2c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

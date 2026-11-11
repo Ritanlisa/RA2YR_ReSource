@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E6470",
+ "name": "TagTypeClass::SaveToINI",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E6470",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e89c9ed2ff85c07c0233c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

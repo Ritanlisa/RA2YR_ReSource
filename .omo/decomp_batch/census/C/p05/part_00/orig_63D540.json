@@ -1,0 +1,11 @@
+{
+ "addr": "0x63D540",
+ "name": "BuildingClass::updateAnimationState",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x63D540",
+ "bytes_hex": "0fbe410c83f80b7505e992470f0083f81d7505e978470f0083c8ffc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

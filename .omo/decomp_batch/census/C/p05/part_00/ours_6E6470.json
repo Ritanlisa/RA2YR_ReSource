@@ -1,0 +1,15 @@
+{
+ "symbol": "?SaveToINI@TagTypeClass@@QAGHPAH0H@Z",
+ "sym_key": "TagTypeClass::SaveToINI",
+ "size": 33,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b4c24088b542404505152e80000000033c985c00f9dc14923c1c21000",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "REL32",
+   "sym": "?AbstractClass__SaveLoad_Prefix@@YGHPAXPAH1@Z",
+   "sym_key": "AbstractClass__SaveLoad_Prefix"
+  }
+ ]
+}

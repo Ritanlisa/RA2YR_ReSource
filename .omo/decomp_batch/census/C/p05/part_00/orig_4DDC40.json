@@ -1,0 +1,11 @@
+{
+ "addr": "0x4DDC40",
+ "name": "FootClass::CheckHeightDiff",
+ "size": 28,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4DDC40",
+ "bytes_hex": "8a818406000084c07c0532c0c204008b44240450e8178e1100c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

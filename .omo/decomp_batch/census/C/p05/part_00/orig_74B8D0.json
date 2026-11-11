@@ -1,0 +1,11 @@
+{
+ "addr": "0x74B8D0",
+ "name": "VoxelAnimTypeClass::SaveLoad_Prefix_0",
+ "size": 29,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x74B8D0",
+ "bytes_hex": "8b44240c8b4c24088b542404505152e86ce0eaff85c07c0233c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

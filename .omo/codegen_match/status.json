@@ -517,6 +517,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x40f270": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x40f270",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x40f2f0": {
   "attempts": 1,
   "first_diff": null,
@@ -600,6 +607,13 @@
   "name": "XSurface::vt_entry_40",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x410e50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "StreamObj::Release",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x410e70": {
   "attempts": 1,
@@ -1671,6 +1685,13 @@
   "name": "0x46bb70",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x46c730": {
+  "attempts": 1,
+  "first_diff": "+15 call 0x5f9950",
+  "name": "BulletTypeClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x46c850": {
   "attempts": 5,
@@ -3790,6 +3811,13 @@
   "attempts": 4,
   "first_diff": "+6 push edi",
   "name": "FootClass::MoveToWeed",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
+ "0x4ddc40": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x684]",
+  "name": "FootClass::CheckHeightDiff",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
@@ -6299,6 +6327,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x5b0060": {
+  "attempts": 1,
+  "first_diff": "+22 ret 4",
+  "name": "JumpjetLocomotionClass::ShortFunc_5B0060",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "status": "NG"
+ },
  "0x5b1aa0": {
   "attempts": 4,
   "first_diff": null,
@@ -7489,6 +7524,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x625390": {
+  "attempts": 1,
+  "first_diff": "+0 push esi",
+  "name": "ComboBoxOwnerDraw::ComputeMask",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
+ },
  "0x625780": {
   "attempts": 4,
   "first_diff": "+13 jbe 0x625824",
@@ -7685,6 +7727,20 @@
   "note": "decomp_batch r2: MISMATCH/regalloc",
   "status": "NG"
  },
+ "0x631e30": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TacticalClass::saveConfig",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x631fe0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_631FE0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x633420": {
   "attempts": 1,
   "first_diff": null,
@@ -7873,6 +7929,13 @@
   "name": "sub_63D2D0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x63d540": {
+  "attempts": 1,
+  "first_diff": "+0 movsx eax, byte ptr [ecx + 0xc]",
+  "name": "BuildingClass::updateAnimationState",
+  "note": "decomp_batch r2: MISMATCH/width_mismatch",
+  "status": "NG"
  },
  "0x63dc10": {
   "attempts": 1,
@@ -8090,6 +8153,13 @@
   "name": "TacticalClass::PixelToCellCheck",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x653f50": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "CellClass::DrawWrapper",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x655740": {
   "attempts": 4,
@@ -9631,6 +9701,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6e6470": {
+  "attempts": 1,
+  "first_diff": "+15 call 0x410320",
+  "name": "TagTypeClass::SaveToINI",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x6e6490": {
   "attempts": 5,
   "first_diff": null,
@@ -9854,6 +9931,13 @@
   "name": "TechnoClass::GetCrew",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x708d70": {
+  "attempts": 1,
+  "first_diff": "+8 call dword ptr [eax + 0x2a8]",
+  "name": "TechnoClass::Vt170",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x7099d0": {
   "attempts": 5,
@@ -10772,6 +10856,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x74b8d0": {
+  "attempts": 1,
+  "first_diff": "+15 call 0x5f9950",
+  "name": "VoxelAnimTypeClass::SaveLoad_Prefix_0",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x74b9f0": {
   "attempts": 5,
   "first_diff": null,
@@ -11619,6 +11710,20 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x77c580": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77c580",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x77c9a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x77c9a0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x77ca00": {
   "attempts": 1,
   "first_diff": null,
@@ -11667,6 +11772,13 @@
   "name": "0x7813b0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x799d10": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Dialog::CloseAll",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7a2730": {
   "attempts": 1,
@@ -11730,6 +11842,13 @@
   "name": "WonlineStringDialogControl_12::FindItem",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7ad460": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "WonlineStringDialogControl_28::Read",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7ad610": {
   "attempts": 5,
@@ -11933,6 +12052,13 @@
   "name": "String::ToLowerCopy",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x7b6760": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DeleteAndZero::Alt",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7b89f0": {
   "attempts": 1,
@@ -12459,6 +12585,13 @@
   "note": "decomp_batch r2: NO_EXPORT",
   "status": "PENDING"
  },
+ "0x7cac34": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "sub_7CAC34",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7cb550": {
   "attempts": 1,
   "first_diff": null,
@@ -12486,6 +12619,13 @@
   "name": "0x7cbf00",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x7cca19": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "String::Wrapper5to4",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x7cd790": {
   "attempts": 1,

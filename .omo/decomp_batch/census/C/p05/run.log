@@ -1,0 +1,103 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p05\part_00
+=== convert (20 addrs) ===
+[conv] 0x7cac34 bad_cast::sub_7CAC34 -> bad_cast
+[conv] 0x631e30 TacticalClass::saveConfig -> TacticalClass
+[conv] 0x410e50 StreamObj::Release -> StreamObj
+[conv] 0x5b0060 MechLocomotionClass::ShortFunc_5B0060 -> MechLocomotionClass
+[conv] 0x7b6760 DeleteAndZero::Alt -> DeleteAndZero
+[conv] 0x708d70 TechnoClass::Vt170 -> TechnoClass
+[conv] 0x7cca19 unknown::Wrapper5to4 -> unknown
+[conv] 0x4ddc40 FootClass::CheckHeightDiff -> FootClass
+[conv] 0x653f50 RadarClass::DrawWrapper -> RadarClass
+[conv] 0x63d540 BuildingClass::updateAnimationState -> BuildingClass
+[conv] 0x799d10 Dialog::CloseAll -> Dialog
+[conv] 0x46c730 BulletTypeClass::SaveLoad_Prefix_0 -> BulletTypeClass
+[conv] 0x631fe0 ObjectClass::sub_631FE0 -> ObjectClass
+[conv] 0x6e6470 TagTypeClass::SaveToINI -> TagTypeClass
+[conv] 0x74b8d0 VoxelAnimTypeClass::SaveLoad_Prefix_0 -> VoxelAnimTypeClass
+[conv] 0x625390 ComboBoxOwnerDraw::ComputeMask -> ComboBoxOwnerDraw
+[conv] 0x7ad460 _CComObject_VCDownloadEventSink_ATL::Read -> _CComObject_VCDownloadEventSink_ATL
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] bad_cast                 rc=2
+[era] TacticalClass            rc=2
+[era] StreamObj                rc=2
+[era] MechLocomotionClass      rc=0
+[era] DeleteAndZero            rc=2
+[era] TechnoClass              rc=0
+[era] unknown                  rc=2
+[era] FootClass                rc=0
+[era] RadarClass               rc=2
+[era] BuildingClass            rc=0
+[era] Dialog                   rc=2
+[era] BulletTypeClass          rc=0
+[era] ObjectClass              rc=2
+[era] TagTypeClass             rc=0
+[era] VoxelAnimTypeClass       rc=0
+[era] ComboBoxOwnerDraw        rc=0
+[era] _CComObject_VCDownloadEventSink_ATL rc=2
+=== diffasm byte-compare ===
+[diff] 0x5b0060   MISMATCH         MechLocomotionClass::ShortFunc_5B0060
+[diff] 0x708d70   MISMATCH         TechnoClass::Vt170
+[diff] 0x4ddc40   MISMATCH         FootClass::CheckHeightDiff
+[diff] 0x63d540   MISMATCH         BuildingClass::updateAnimationState
+[diff] 0x46c730   MISMATCH         BulletTypeClass::SaveLoad_Prefix_0
+[diff] 0x6e6470   MISMATCH         TagTypeClass::SaveToINI
+[diff] 0x74b8d0   MISMATCH         VoxelAnimTypeClass::SaveLoad_Prefix_0
+[diff] 0x625390   MISMATCH         ComboBoxOwnerDraw::ComputeMask
+[ledger] 0x7cac34 sub_7CAC34 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x631e30 TacticalClass::saveConfig -> COMPILE_FAIL (attempt 1)
+[ledger] 0x410e50 StreamObj::Release -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5b0060 JumpjetLocomotionClass::ShortFunc_5B0060 -> NG (attempt 1)
+[ledger] 0x7b6760 DeleteAndZero::Alt -> COMPILE_FAIL (attempt 1)
+[ledger] 0x708d70 TechnoClass::Vt170 -> NG (attempt 1)
+[ledger] 0x7cca19 String::Wrapper5to4 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f270 0x40f270 -> PENDING (attempt 1)
+[ledger] 0x4ddc40 FootClass::CheckHeightDiff -> NG (attempt 1)
+[ledger] 0x653f50 CellClass::DrawWrapper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63d540 BuildingClass::updateAnimationState -> NG (attempt 1)
+[ledger] 0x799d10 Dialog::CloseAll -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46c730 BulletTypeClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x631fe0 sub_631FE0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6e6470 TagTypeClass::SaveToINI -> NG (attempt 1)
+[ledger] 0x74b8d0 VoxelAnimTypeClass::SaveLoad_Prefix_0 -> NG (attempt 1)
+[ledger] 0x77c580 0x77c580 -> PENDING (attempt 1)
+[ledger] 0x77c9a0 0x77c9a0 -> PENDING (attempt 1)
+[ledger] 0x625390 ComboBoxOwnerDraw::ComputeMask -> NG (attempt 1)
+[ledger] 0x7ad460 WonlineStringDialogControl_28::Read -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 1799,
+ "verdicts": {
+  "MISMATCH": 504,
+  "MATCH": 509,
+  "COMPILE_FAIL": 439,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 335,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 179,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 54,
+  "branch_polarity": 34,
+  "regalloc": 58,
+  "branch_order": 67,
+  "width_mismatch": 6,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 50.2,
+ "match_rate_of_total_pct": 28.3,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p05\batch_report.json
