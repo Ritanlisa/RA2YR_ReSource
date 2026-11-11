@@ -1,0 +1,21 @@
+{
+ "symbol": "?Release@_DynamicVectorClass_VRGBClass@@QAEDHPAD@Z",
+ "sym_key": "_DynamicVectorClass_VRGBClass::Release",
+ "size": 271,
+ "link_base": 0,
+ "bytes_hex": "538b5c2408555685db578bf10f84e00000008b7c2418c7460c0000000085ff8bef741f8d43ff85c07c4b8d47028bcbc640fe00c640ff00c6000083c0034975efeb338d0c5b51e80000000083c40485c074218d53ff85d27c168d48028bd3c641fe00c641ff00c6010083c1034a75ef8be8eb0233ed85edc7460c0100000075095f5e5d32c05bc20800833e0074478b7e083bdf7d028bfb85ff7e1f33c98b068d142903c183c1034f668b1866891a8a400288420275e78b5c24148b460cf6c4ff740f50e80000000083c404c706000000008b7c24188b460c33c985ff0f94c133d280e4008af1892e0bd0895e0889560ceb078b168bceff520c8b46088b4e103bc17d038946105f5e5db0015bc20800",
+ "relocs": [
+  {
+   "off": 71,
+   "type": "REL32",
+   "sym": "?__2_YAPAXI_Z@@YAPAXI@Z",
+   "sym_key": "__2_YAPAXI_Z"
+  },
+  {
+   "off": 196,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

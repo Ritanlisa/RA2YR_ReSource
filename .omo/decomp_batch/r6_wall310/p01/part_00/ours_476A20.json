@@ -1,0 +1,39 @@
+{
+ "symbol": "?WriteSuperWeaponList@INIClass@@QAEDPAEPADHPAXHFHHH@Z",
+ "sym_key": "INIClass::WriteSuperWeaponList",
+ "size": 245,
+ "link_base": 0,
+ "bytes_hex": "81ec84000000a000000000538b9c2498000000568bb42490000000894c24085788442410b91f00000033c08d7c241185dbf3ab767e558bd68a44241484c0742ebf0000000083c9ff33c08d6c2414f2aef7d12bf98bf78bfd8be983c9fff2ae8bcd4fc1e902f3a58bcd83e103f3a48b028b0d0000000083c2048d6c24148b3c8183c9ff83c72433c0f2aef7d12bf98bf78bfd8be983c9fff2ae8bcd4fc1e902f3a58bcd83e1034bf3a4758d8bb424980000005d8b8424980000008b4c240c8d5424108b09525056e80000000085f68ad874158b84249c000000f6c4ff740956e80000000083c4045f8ac35e5b81c484000000c22400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 65,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 114,
+   "type": "DIR32",
+   "sym": "?g_SuperWeaponTypeCount@@3PAXA",
+   "sym_key": "g_SuperWeaponTypeCount"
+  },
+  {
+   "off": 200,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 224,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}

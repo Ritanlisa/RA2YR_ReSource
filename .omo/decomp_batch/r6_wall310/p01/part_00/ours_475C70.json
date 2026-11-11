@@ -1,0 +1,39 @@
+{
+ "symbol": "?ReadVeteranData@WeaponTypeClass@@QAEDPAEPADHPAHHFHHH@Z",
+ "sym_key": "WeaponTypeClass::ReadVeteranData",
+ "size": 236,
+ "link_base": 0,
+ "bytes_hex": "81ec84000000a00000000053558bac249c00000056894c240c5788442414b91f00000033c08d7c241585edf3ab76758b9c24980000008a44241484c0742ebf0000000083c9ff33c08d542414f2aef7d12bf98bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca83e103f3a48b0b83c304e8000000008bf883c9ff33c08d542414f2aef7d12bf98bf78bfa8bd183c9fff2ae8bca4fc1e902f3a58bca83e1034df3a475928b8c249c0000008bb424980000008d44241450518b4c241856e80000000085f68ad874158b8424a0000000f6c4ff740956e80000000083c4045f5e8ac35d5b81c484000000c22400",
+ "relocs": [
+  {
+   "off": 7,
+   "type": "DIR32",
+   "sym": "?g_INI_DefaultBuffer@@3EA",
+   "sym_key": "g_INI_DefaultBuffer"
+  },
+  {
+   "off": 63,
+   "type": "DIR32",
+   "sym": "?Str@@YAHPBX0@Z",
+   "sym_key": "Str"
+  },
+  {
+   "off": 114,
+   "type": "REL32",
+   "sym": "?VocClass__GetSampleNameByIndex@@YIPADH@Z",
+   "sym_key": "?VocClass__GetSampleNameByIndex@@YIPADH@Z"
+  },
+  {
+   "off": 190,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  },
+  {
+   "off": 214,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
