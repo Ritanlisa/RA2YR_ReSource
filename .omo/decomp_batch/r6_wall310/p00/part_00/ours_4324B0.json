@@ -1,0 +1,27 @@
+{
+ "symbol": "?SeekInternal@CCFileClass@@QAEHJK@Z",
+ "sym_key": "CCFileClass::SeekInternal",
+ "size": 272,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4628f6c4ff75168b4424108b4c240c50518bcee8000000005e59c208008b442410c64424070085c0740d83f802750f8b564889564ceb07c7464c000000008b4e508b44240c85c9740b3bc17c072bc1c6442407018b4e4c03c185c089464c7d07c7464c000000008b46488b4e4c3bc8760389464c8b56343bc27e698b464c8b4e3c3bc17c0d03d13bc27d072bc1894638eb588bcee8000000008b465085c0742c8b56288b4e4c8b066a0080e6005156895628ff50288b56288b462480e60180ce0180e400895628894624eb1e8b464c6a00508bcee8000000008b462480e400894624eb068b4e4c894e388b465085c074128a4c240784c9740a8b4e4c5e03c159c208008b464c5e59c20800",
+ "relocs": [
+  {
+   "off": 25,
+   "type": "REL32",
+   "sym": "?Seek@FileClass@@QAEHHH@Z",
+   "sym_key": "FileClass::Seek"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?Flush@BufferIO@@QAEDXZ",
+   "sym_key": "BufferIO::Flush"
+  },
+  {
+   "off": 218,
+   "type": "REL32",
+   "sym": "?Seek@FileClass@@QAEHHH@Z",
+   "sym_key": "FileClass::Seek"
+  }
+ ]
+}

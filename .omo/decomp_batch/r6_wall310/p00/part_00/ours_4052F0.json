@@ -1,0 +1,27 @@
+{
+ "symbol": "?Release@VocClass@@QAEHXZ",
+ "sym_key": "VocClass::Release",
+ "size": 239,
+ "link_base": 0,
+ "bytes_hex": "51568bf18b4e18f6c1010f85d80000008b86b0000000535533ed3bc5747b3bb0c00000007573f6c10274098b4c240ce8000000008b8eb0000000e8000000008b86b000000089a8c00000008b8eb000000089a9bc0000008b96b000000089aab40000008b86b000000089a8b80000008b8eb000000089a9900000008b96b000000089aa980000008b86b000000089a89c00000089aeb00000008b86a800000033db3bc57e1c578d7e288b0fe800000000892f8b86a80000004383c7043bd87ce95f8b4e1889aea800000089ae3801000089ae7802000083c9015dc7461c04000000894e185b5e59c38b4424045e59c3",
+ "relocs": [
+  {
+   "off": 48,
+   "type": "REL32",
+   "sym": "?Stop@Voice@@QAEPAXXZ",
+   "sym_key": "Voice::Stop"
+  },
+  {
+   "off": 59,
+   "type": "REL32",
+   "sym": "?ReleaseChannel@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::ReleaseChannel"
+  },
+  {
+   "off": 172,
+   "type": "REL32",
+   "sym": "?Decrement@RefCount@@QAEHXZ",
+   "sym_key": "RefCount::Decrement"
+  }
+ ]
+}

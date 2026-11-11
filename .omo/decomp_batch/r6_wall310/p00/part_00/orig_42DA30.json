@@ -1,0 +1,11 @@
+{
+ "addr": "0x42DA30",
+ "name": "VectorClass_ushort::SetCapacity",
+ "size": 175,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x42DA30",
+ "bytes_hex": "53558b6c240c5685ed578bf1747b8b5c2418c6460c0085db75118d442d0050e8c3b3390083c4048bf8eb028bfb85ffc6460c0174718b460485c0743b8b4e083be97d028bcd33c085c97e128b5604403bc1668b5442fe66895447fe7cee8a460d84c074138b460450e8a0b0390083c404c746040000000033c0897e0485db0f94c0896e0888460deb078b168bceff520c8b46088b4e103bc17d038946105f5e5db0015bc208005f5e5d32c05bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

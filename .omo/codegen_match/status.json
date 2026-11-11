@@ -14,25 +14,25 @@
   "status": "NG"
  },
  "0x4024a0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AudioSample::ResetState",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4035f0": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+0 sub esp, 0xc",
   "name": "AudioQueue::FindBestChannel",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x404700": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+7 xor eax, eax",
   "name": "AudioStream::SetupPlayback",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x4047b0": {
   "attempts": 4,
@@ -42,21 +42,21 @@
   "status": "NG"
  },
  "0x4052f0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+0 push esi",
   "name": "VocClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x405c00": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 10,
+  "first_diff": "+19 je 0x405d31",
   "name": "AudioFileClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
  },
  "0x405d40": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AudioController::Stop",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -133,7 +133,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x4071c0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AudioMixer::PlaySample",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -182,7 +182,7 @@
   "status": "COMPILE_FAIL"
  },
  "0x408a70": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -308,7 +308,7 @@
   "status": "NG"
  },
  "0x411330": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -504,14 +504,14 @@
   "status": "OK"
  },
  "0x41fd60": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterSuccess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x41fe20": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterFailure",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -532,7 +532,7 @@
   "status": "OK"
  },
  "0x420e90": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -644,25 +644,25 @@
   "status": "OK"
  },
  "0x42a5b0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "CellClass::ClearOccupancyGrid",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x42d8f0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 8,
+  "first_diff": "+1 push ebp",
   "name": "VectorClass_ushort::Remove",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x42da30": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+1 push ebp",
   "name": "VectorClass_ushort::SetCapacity",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x42dca0": {
   "attempts": 4,
@@ -672,7 +672,7 @@
   "status": "NG"
  },
  "0x42df90": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "BitmapClass::ProcessFrame",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -686,32 +686,32 @@
   "status": "NG"
  },
  "0x42f4f0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ecx",
   "name": "BaseClass::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x42f9c0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+0 push ecx",
   "name": "BaseNodeClass_Vector::Release",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x431800": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "HouseClass::ProcessData",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x4324b0": {
-  "attempts": 4,
-  "first_diff": null,
+  "attempts": 5,
+  "first_diff": "+1 push ebx",
   "name": "BufferIOFileClass::SeekInternal",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/regalloc",
+  "status": "NG"
  },
  "0x432ab0": {
   "attempts": 4,

@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindBestChannel@unknown@@QAIHHH@Z",
+ "sym_key": "unknown::FindBestChannel",
+ "size": 194,
+ "link_base": 0,
+ "bytes_hex": "83ec088b44240c53555683f8ff578bd8894424107509bb01000000895c2410bf7f00000033ed8d8af8000000897c241c896c241483ceffe80000000085c0747639580c75528a90a4000000f6c21574688b88a0000000f6c201743c3bcf7c2075288b90dc0000003bd6731e8bde2bda81fb6606000072128bf98be88bf2eb0a8bb0dc0000008bf98be83b4c241c7d08894c241c894424148bc8e80000000085c074068b5c2410eb988b44241485c07406397c241c7e028bc55f5e5d5b83c408c20400",
+ "relocs": [
+  {
+   "off": 56,
+   "type": "REL32",
+   "sym": "?GetNext@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNext"
+  },
+  {
+   "off": 154,
+   "type": "REL32",
+   "sym": "?GetNextAlt@AudioQueue@@QAEPAV1@XZ",
+   "sym_key": "AudioQueue::GetNextAlt"
+  }
+ ]
+}

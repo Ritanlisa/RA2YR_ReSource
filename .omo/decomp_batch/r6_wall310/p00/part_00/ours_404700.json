@@ -1,0 +1,15 @@
+{
+ "symbol": "?SetupPlayback@AudioStream@@QAEHXZ",
+ "sym_key": "AudioStream::SetupPlayback",
+ "size": 169,
+ "link_base": 0,
+ "bytes_hex": "8b91a80000005633f633c03bd6578991e00100007457f641182075518b7924558b6f5883fd215d72098b41285f83c01c5ec3f647102074144ab8010000008991e001000089b1ac000000eb0ac781ac000000fffffffff64710407406ff89e001000039b1e00100007f0889770c5f33c05ec38d91f802000089028bb9e00100004683c204403bf77ceff641180875128b4124f640102074098b41285f83c01c5ec3e8000000005f5ec3",
+ "relocs": [
+  {
+   "off": 162,
+   "type": "REL32",
+   "sym": "?SelectRandom@AudioStream@@QAEHXZ",
+   "sym_key": "AudioStream::SelectRandom"
+  }
+ ]
+}
