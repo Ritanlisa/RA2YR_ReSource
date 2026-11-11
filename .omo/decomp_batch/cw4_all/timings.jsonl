@@ -33,3 +33,4 @@
 {"part": 32, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 33, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
 {"part": 34, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 20}, "by_family_hits": {}}}
+{"part": 35, "n": 20, "seconds": 0.0, "summary": {"verdicts": {"NO_VARIANT": 20}, "by_family_total": {"FOLD_STORE": 18, "STRUCTURAL": 2}, "by_family_hits": {}}}
