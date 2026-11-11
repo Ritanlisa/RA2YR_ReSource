@@ -22082,6 +22082,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ec790": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSideClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_CampaignClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ec920": {
   "attempts": 1,
   "clean": false,
@@ -22094,12 +22106,36 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ec9f0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVHouseTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ecb80": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4ecb8c",
   "name": "VectorClass_ptr_TaskForceClass::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4ecc50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTaskForceClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ecda0": {
   "attempts": 1,
@@ -22125,6 +22161,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4eceb0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTeamTypeClass::FindItemIndex_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_HouseTypeClass::FindItemIndex_1",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed040": {
   "attempts": 1,
   "clean": false,
@@ -22137,6 +22185,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ed110": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVScriptTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ScriptTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed2a0": {
   "attempts": 1,
   "clean": false,
@@ -22147,6 +22207,18 @@
   "orig_name": "VectorClass_ptr_OverlayTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ed370": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVOverlayTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ScriptTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ed500": {
@@ -22194,6 +22266,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ed830": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVTerrainTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ed9c0": {
   "attempts": 1,
   "clean": false,
@@ -22204,6 +22288,18 @@
   "orig_name": "VectorClass_ptr_BuildingTypeClass::Remove",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4eda90": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVBuildingTypeClass::FindItemIndex_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SmudgeTypeClass::FindItemIndex_1",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4edb00": {
@@ -22239,6 +22335,18 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4edcf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAircraftTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ede80": {
   "attempts": 1,
   "clean": false,
@@ -22249,6 +22357,18 @@
   "orig_name": "VectorClass_ptr_UnitTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4edf50": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVUnitTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AircraftTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ee0e0": {
@@ -22263,12 +22383,36 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee1b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAnimTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ee340": {
   "attempts": 1,
   "first_diff": "+5 jne 0x4ee34c",
   "name": "VectorClass_ptr_InfantryTypeClass::LoadTypeData",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x4ee410": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVInfantryTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_AnimTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x4ee5a0": {
   "attempts": 1,
@@ -22306,6 +22450,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ee8d0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVVoxelAnimTypeClass::FindItemIndex",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4eea60": {
   "attempts": 1,
   "clean": false,
@@ -22316,6 +22472,18 @@
   "orig_name": "VectorClass_ptr_IsometricTileTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4eeb30": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVIsometricTileTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_VoxelAnimTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4eeb60": {
@@ -22356,6 +22524,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4eeff0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVParticleSystemTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ef110": {
   "attempts": 1,
   "first_diff": "+0 push ebx",
@@ -22375,6 +22555,18 @@
   "status": "NG",
   "this_as_id": false
  },
+ "0x4ef250": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVSuperWeaponTypeClass::FindItemIndex_1",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_ParticleTypeClass::FindItemIndex_1",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x4ef3a0": {
   "attempts": 1,
   "first_diff": "+0 mov al, byte ptr [ecx + 0xc]",
@@ -22392,6 +22584,18 @@
   "orig_name": "VectorClass_ptr_AbstractTypeClass::LoadTypeData",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x4ef4b0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PAVAbstractTypeClass::FindItemIndex_0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_ptr_SuperClass::FindItemIndex_0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
   "this_as_id": false
  },
  "0x4ef710": {
@@ -22645,6 +22849,18 @@
   "name": "HouseClass::processWaypointPlanning",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4f2b10": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov edx, dword ptr [ecx + 0x10]",
+  "name": "DynamicVector::vt_placeholder_08",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "HouseClass::vt_placeholder_08",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4f2b40": {
   "attempts": 7,
@@ -23261,6 +23477,18 @@
   "name": "HouseClass::CheckWinCondition",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x4fce00": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "proto_this",
+  "first_diff": "+35 ret 0xc",
+  "name": "TechnoClass::sub_4FCE00",
+  "note": "decomp_batch r2: MISMATCH/cc_mismatch",
+  "orig_name": "sub_4FCE00",
+  "rule_violations": 1,
+  "status": "NG",
+  "this_as_id": false
  },
  "0x4fce30": {
   "attempts": 1,
@@ -24033,6 +24261,18 @@
   "name": "VectorClass_BuildingType::GetCapacity",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x50eb40": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "_DynamicVectorClass_PBVBuildingTypeClass::GetSize",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "VectorClass_UScoutStruct___33::GetSize",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x50eb70": {
   "attempts": 4,
