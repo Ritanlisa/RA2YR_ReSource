@@ -1,0 +1,15 @@
+{
+ "symbol": "?CheckPlayerOwned@TechnoClass@@QAEEXZ",
+ "sym_key": "TechnoClass::CheckPlayerOwned",
+ "size": 48,
+ "link_base": 0,
+ "bytes_hex": "518b442400568bf1240033c98a8e1b0400000bc184c074158b8e1c020000e80000000084c0750688861b0400005e59c3",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?IsCurrentPlayer@House@@QAEHXZ",
+   "sym_key": "House::IsCurrentPlayer"
+  }
+ ]
+}

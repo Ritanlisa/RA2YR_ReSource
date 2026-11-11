@@ -1,0 +1,21 @@
+{
+ "symbol": "?WriteBuildingTypeNameToINI@HouseClass@@QAEDPAEPADH@Z",
+ "sym_key": "HouseClass::WriteBuildingTypeNameToINI",
+ "size": 38,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b15000000008b04828b90040300008b442408528b5424085052e800000000c20c00",
+ "relocs": [
+  {
+   "off": 6,
+   "type": "DIR32",
+   "sym": "?BuildingTypeClass_AnimTable@@3PAXA",
+   "sym_key": "BuildingTypeClass_AnimTable"
+  },
+  {
+   "off": 31,
+   "type": "REL32",
+   "sym": "?SetString@INIClass@@QAEDPAX00@Z",
+   "sym_key": "INIClass::SetString"
+  }
+ ]
+}

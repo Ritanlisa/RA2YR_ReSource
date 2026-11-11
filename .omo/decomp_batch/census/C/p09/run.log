@@ -1,0 +1,104 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p09\part_00
+=== convert (20 addrs) ===
+[conv] 0x6f4a40 TechnoClass::CheckPlayerOwned -> TechnoClass
+[conv] 0x5cabd0 MultiplayerSiege::QueryInterface -> MultiplayerSiege
+[conv] 0x765790 COMClass::invokeMethod -> COMClass
+[conv] 0x7a2800 unknown::Map_Handle_7A2800 -> unknown
+[conv] 0x773b10 WebBrowser::Write -> WebBrowser
+[conv] 0x474b20 HouseClass::WriteBuildingTypeNameToINI -> HouseClass
+[conv] 0x4c3570 EditClass::Close -> EditClass
+[conv] 0x6bf960 _TClassFactory_VCellClass::GetClassName -> _TClassFactory_VCellClass
+[conv] 0x6c09e0 _TClassFactory_VSpawnManagerClass::GetClassName -> _TClassFactory_VSpawnManagerClass
+[conv] 0x6c1a60 _TClassFactory_VTriggerClass::GetClassName -> _TClassFactory_VTriggerClass
+[conv] 0x6c2ae0 _TClassFactory_VAircraftTypeClass::GetClassName -> _TClassFactory_VAircraftTypeClass
+[conv] 0x6c3b60 _TClassFactory_VAnimTypeClass::GetClassName -> _TClassFactory_VAnimTypeClass
+[conv] 0x6c4be0 _TClassFactory_VTeleportLocomotionClass::GetClassName -> _TClassFactory_VTeleportLocomotionClass
+[conv] 0x6c5de0 _TClassFactory_VNeuronClass::GetClassName -> _TClassFactory_VNeuronClass
+[conv] 0x40bfa0 _VectorClass_PBVCommandClass::SetAt -> _VectorClass_PBVCommandClass
+[conv] 0x421950 _VectorClass_PAVAlphaShapeClass::Remove -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x46b750 _VectorClass_PAVBulletClass::Remove -> _VectorClass_PAVBulletClass
+[conv] 0x49ef10 _VectorClass_PAD::ddtor -> _VectorClass_PAD
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] TechnoClass              rc=0
+[era] MultiplayerSiege         rc=2
+[era] COMClass                 rc=2
+[era] unknown                  rc=2
+[era] WebBrowser               rc=2
+[era] HouseClass               rc=0
+[era] EditClass                rc=0
+[era] _TClassFactory_VCellClass rc=2
+[era] _TClassFactory_VSpawnManagerClass rc=2
+[era] _TClassFactory_VTriggerClass rc=2
+[era] _TClassFactory_VAircraftTypeClass rc=2
+[era] _TClassFactory_VAnimTypeClass rc=2
+[era] _TClassFactory_VTeleportLocomotionClass rc=2
+[era] _TClassFactory_VNeuronClass rc=2
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PAVAlphaShapeClass rc=0
+[era] _VectorClass_PAVBulletClass rc=0
+[era] _VectorClass_PAD         rc=0
+=== diffasm byte-compare ===
+[diff] 0x6f4a40   MISMATCH         TechnoClass::CheckPlayerOwned
+[diff] 0x474b20   MATCH            HouseClass::WriteBuildingTypeNameToINI
+[diff] 0x4c3570   MISMATCH         EditClass::Close
+[diff] 0x40bfa0   MISMATCH         _VectorClass_PBVCommandClass::SetAt
+[diff] 0x421950   MISMATCH         _VectorClass_PAVAlphaShapeClass::Remove
+[diff] 0x46b750   MISMATCH         _VectorClass_PAVBulletClass::Remove
+[diff] 0x49ef10   MISMATCH         _VectorClass_PAD::ddtor
+[ledger] 0x6f4a40 TechnoClass::CheckPlayerOwned -> NG (attempt 1)
+[ledger] 0x5cabd0 MultiplayerSiege::QueryInterface -> COMPILE_FAIL (attempt 1)
+[ledger] 0x765790 COMClass::invokeMethod -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7a2800 Map_Handle_7A2800 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f2040 0x6f2040 -> PENDING (attempt 1)
+[ledger] 0x773b10 WebBrowser::Write -> COMPILE_FAIL (attempt 1)
+[ledger] 0x77d160 0x77d160 -> PENDING (attempt 1)
+[ledger] 0x474b20 HouseClass::WriteBuildingTypeNameToINI -> OK (attempt 1)
+[ledger] 0x4c3570 DropListClass::Close -> NG (attempt 1)
+[ledger] 0x6bf960 TClassFactory_CellClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c09e0 TClassFactory_SpawnManagerClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c1a60 TClassFactory_TriggerClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c2ae0 TClassFactory_AircraftTypeClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c3b60 TClassFactory_AnimTypeClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c4be0 TClassFactory_TeleportLocomotionClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6c5de0 TClassFactory_NeuronClass::GetClassName -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40bfa0 VectorClass_cptr_CommandClass::SetAt -> NG (attempt 1)
+[ledger] 0x421950 VectorClass_ptr_AlphaShapeClass::Remove -> NG (attempt 1)
+[ledger] 0x46b750 VectorClass_ptr_BulletClass::Remove -> NG (attempt 1)
+[ledger] 0x49ef10 StringVector::ddtor -> NG (attempt 1)
+======================================================================
+{
+ "total": 1879,
+ "verdicts": {
+  "MISMATCH": 522,
+  "MATCH": 512,
+  "COMPILE_FAIL": 470,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 363,
+  "NO_EXPORT": 6,
+  "NO_PSEUDO": 2
+ },
+ "pathologies": {
+  "eval_order": 9,
+  "codegen_shape": 182,
+  "ret_norm": 5,
+  "frame_sched": 64,
+  "const_fold": 61,
+  "branch_polarity": 34,
+  "regalloc": 66,
+  "branch_order": 67,
+  "width_mismatch": 6,
+  "extern_reloc": 16,
+  "cc_mismatch": 10,
+  "signedness": 2
+ },
+ "match_rate_of_decided_pct": 49.5,
+ "match_rate_of_total_pct": 27.2,
+ "rule_violation_fns": 6,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\C\p09\batch_report.json

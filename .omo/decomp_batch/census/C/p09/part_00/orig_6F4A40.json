@@ -1,0 +1,11 @@
+{
+ "addr": "0x6F4A40",
+ "name": "TechnoClass::CheckPlayerOwned",
+ "size": 36,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6F4A40",
+ "bytes_hex": "568bf18a861b04000084c074158b8e1c020000e8d86ce1ff84c0750688861b0400005ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

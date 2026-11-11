@@ -1,0 +1,11 @@
+{
+ "addr": "0x474B20",
+ "name": "HouseClass::WriteBuildingTypeNameToINI",
+ "size": 38,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x474B20",
+ "bytes_hex": "8b44240c8b15d454b0008b04828b90040300008b442408528b5424085052e81d3b0b00c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
