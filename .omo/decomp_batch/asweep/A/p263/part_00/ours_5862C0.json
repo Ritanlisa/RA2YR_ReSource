@@ -1,0 +1,27 @@
+{
+ "symbol": "?VeinholeMonsterClass_Update@@YGDPAFH@Z",
+ "sym_key": "Unnamed::VeinholeMonsterClass_Update",
+ "size": 170,
+ "link_base": 0,
+ "bytes_hex": "53558b6c240c56578b7c24180fbf45028bd803c72bdf3bd80f8f830000008b5424140fbf45008bc803c72bcf3bc87f5b8bc233c30fbff325ff00000033d0c1e6098bea0fbfc133e903c681e5ff00000033d53d00000400730e8b2d000000008b44850085c0750b891500000000b8000000008ba8e400000085ed751c8b6c2414410fbf450003c73bc87eb60fbf4d024303cf3bd97f0beb8a5f5e5db0015bc208005f5e5d32c05bc20800",
+ "relocs": [
+  {
+   "off": 91,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 105,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  },
+  {
+   "off": 110,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  }
+ ]
+}

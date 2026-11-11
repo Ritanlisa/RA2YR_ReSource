@@ -1,0 +1,15 @@
+{
+ "symbol": "?ParseWDTTerritories_Parse@ObjectClass@@QAEPAIXZ",
+ "sym_key": "ObjectClass::ParseWDTTerritories_Parse",
+ "size": 105,
+ "link_base": 0,
+ "bytes_hex": "8bc133c98b500c89480489480888481e88481d88482888482e88483481e2000000ffb16489500c88482c884832884835b101b232c70000000000c740101001010088481488481cc740206432000088502a88482988502d884830885031c64038ffc74040ffffffffc3",
+ "relocs": [
+  {
+   "off": 54,
+   "type": "DIR32",
+   "sym": "?vt_WDTTerritory@@3IA",
+   "sym_key": "vt_WDTTerritory"
+  }
+ ]
+}

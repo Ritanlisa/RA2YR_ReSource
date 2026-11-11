@@ -1,0 +1,27 @@
+{
+ "symbol": "?Map_Helper_584030@@YGDPAH@Z",
+ "sym_key": "Unnamed::Map_Helper_584030",
+ "size": 166,
+ "link_base": 0,
+ "bytes_hex": "518b5424085355568b420c8b6a085733ff85c0896c2418894424107e7f8b1d000000008b4c241833f685ed7e5e8b420403c733c125ff00000033c88b0203c633c125ff00000033c88bc1c1f8100fbfc00fbfe9c1e00903c53d0000040073078b048385c0750ba100000000890d000000008b404c83f804740583f80375148b6c2418463bf57ca68b442410473bf87d0ceb955f5e5d32c05b59c204005f5e5db0015b59c20400",
+ "relocs": [
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_Shroud_CellArray@@3IA",
+   "sym_key": "g_Shroud_CellArray"
+  },
+  {
+   "off": 103,
+   "type": "DIR32",
+   "sym": "?g_CellClassArray@@3IA",
+   "sym_key": "g_CellClassArray"
+  },
+  {
+   "off": 109,
+   "type": "DIR32",
+   "sym": "?g_Map_GlobalCellIndex@@3IA",
+   "sym_key": "g_Map_GlobalCellIndex"
+  }
+ ]
+}

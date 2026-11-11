@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_5C63F0@ObjectClass@@QAEIPAEHHH@Z",
+ "sym_key": "ObjectClass::sub_5C63F0",
+ "size": 172,
+ "link_base": 0,
+ "bytes_hex": "518b442410894c2400558b6c240c8d0c850000000056894c2410578b4424148bf02bf13bc17457538b5c241c80e3008bfe8bc3c1e0108bc833cb81e1ff000000c1ef0233c8575155e8000000008bce8ac38afb83e1038bc38bd1c1e0108d7cbd00668bc3c1e902f3ab8bca83c40c83e10303eef3aa8b4424188b4c24185b3bc18bd072028bd18b74240c03f233ff3bc18bd072028bd13bfa730b8a56ff4e8855004547ebe95f5e5d59c21000",
+ "relocs": [
+  {
+   "off": 73,
+   "type": "REL32",
+   "sym": "?memset32@@YAHPAXHHZZ",
+   "sym_key": "memset32"
+  }
+ ]
+}

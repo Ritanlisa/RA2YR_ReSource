@@ -1,0 +1,11 @@
+{
+ "addr": "0x5862C0",
+ "name": "VeinholeMonsterClass_Update",
+ "size": 145,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x5862C0",
+ "bytes_hex": "5355568b7424108b542414570fbf46028bf803c22bfa3bf87f658b2d24f987000fbf068bc803c22bca3bc87f470fbfdf66897c2416c1e3090fbfc103c366894c2414780f3d000004007d088b44850085c0750e8b442414a374dcab00b850dcab0083b8e400000000751e0fbf064103c23bc87ec40fbf4e024703ca3bf97ea15f5e5d32c05bc208005f5e5db0015bc20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

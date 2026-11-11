@@ -1,0 +1,33 @@
+{
+ "symbol": "?sub_4AFED0@ObjectClass@@QAEHH@Z",
+ "sym_key": "ObjectClass::sub_4AFED0",
+ "size": 145,
+ "link_base": 0,
+ "bytes_hex": "83ec08568b713085f68974240874408b41248b512c83f8ff5774188b3d00000000538bdf2bd83bda5b720433d2eb042bc703d02bf25f89742404db442404da742408dc1d00000000dfe0f6c44074398b490cd98128030000d9e1dc1d00000000dfe0f6c4017421d9812c030000d9e1dc1d00000000dfe0f6c401740cb8010000005e83c408c2040033c05e83c408c20400",
+ "relocs": [
+  {
+   "off": 29,
+   "type": "DIR32",
+   "sym": "?TeamTypeClass_Array@@3PADA",
+   "sym_key": "TeamTypeClass_Array"
+  },
+  {
+   "off": 68,
+   "type": "DIR32",
+   "sym": "__real@8@3fff8000000000000000",
+   "sym_key": "_real@8@3fff8000000000000000"
+  },
+  {
+   "off": 92,
+   "type": "DIR32",
+   "sym": "__real@8@3ff7a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff7a3d70a3d70a3d800"
+  },
+  {
+   "off": 113,
+   "type": "DIR32",
+   "sym": "__real@8@3ff7a3d70a3d70a3d800",
+   "sym_key": "_real@8@3ff7a3d70a3d70a3d800"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p263\part_00
+=== convert (20 addrs) ===
+[conv] 0x7c06b0 Audio_Process_7C06B0 -> Audio_Process
+[conv] 0x492c00 _BlitTransZRemapXlatZRead_G::sub_492C00 -> _BlitTransZRemapXlatZRead_G
+[conv] 0x556b70 ObjectClass::Render_Render_556B70 -> ObjectClass
+[conv] 0x7d7a22 ObjectClass::__ShrMan -> ObjectClass
+[conv] 0x40acd0 MoveCoordByDirection -> _addr_40
+[conv] 0x492e10 _BlitTransLucent75ZRead_G::sub_492E10 -> _BlitTransLucent75ZRead_G
+[conv] 0x493050 _BlitTransLucent25ZRead_G::sub_493050 -> _BlitTransLucent25ZRead_G
+[conv] 0x4afed0 ObjectClass::sub_4AFED0 -> ObjectClass
+[conv] 0x69f5e0 ObjectClass::sub_69F5E0 -> ObjectClass
+[conv] 0x535aa0 INIClass::INIClass -> INIClass
+[conv] 0x5c8470 ObjectClass::sub_5C8470 -> ObjectClass
+[conv] 0x584030 Map_Helper_584030 -> Map_Helper
+[conv] 0x5862c0 VeinholeMonsterClass_Update -> VeinholeMonsterClass
+[conv] 0x76aaf0 ObjectClass::ParseWDTTerritories_Parse -> ObjectClass
+[conv] 0x535b30 CCINIClass::CCINIClass -> CCINIClass
+[conv] 0x7cbf8a __abstract_cw -> _addr_7C
+[conv] 0x4932a0 _BlitTransLucent50ZReadWarp_G::sub_4932A0 -> _BlitTransLucent50ZReadWarp_G
+[conv] 0x49cc50 MPCooperative::validateMove -> MPCooperative
+[conv] 0x721140 RulesClass::IsTypeBuildable -> RulesClass
+[conv] 0x5c63f0 ObjectClass::sub_5C63F0 -> ObjectClass
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] Audio_Process            rc=2
+[era] _BlitTransZRemapXlatZRead_G rc=2
+[era] ObjectClass              rc=2
+[era] _addr_40                 rc=2
+[era] _BlitTransLucent75ZRead_G rc=2
+[era] _BlitTransLucent25ZRead_G rc=2
+[era] INIClass                 rc=2
+[era] Map_Helper               rc=0
+[era] VeinholeMonsterClass     rc=0
+[era] CCINIClass               rc=2
+[era] _addr_7C                 rc=0
+[era] _BlitTransLucent50ZReadWarp_G rc=2
+[era] MPCooperative            rc=2
+[era] RulesClass               rc=2
+=== diffasm byte-compare ===
+[diff] 0x4afed0   MISMATCH         ObjectClass::sub_4AFED0
+[diff] 0x69f5e0   MISMATCH         ObjectClass::sub_69F5E0
+[diff] 0x76aaf0   MISMATCH         ObjectClass::ParseWDTTerritories_Parse
+[diff] 0x5c63f0   MISMATCH         ObjectClass::sub_5C63F0
+[diff] 0x584030   MISMATCH         Map_Helper_584030
+[diff] 0x5862c0   MISMATCH         VeinholeMonsterClass_Update
+[diff] 0x7cbf8a   MISMATCH         __abstract_cw
+[ledger] 0x7c06b0 Audio_Process_7C06B0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492c00 _BlitTransZRemapXlatZRead_G::sub_492C00 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x556b70 ObjectClass::Render_Render_556B70 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d7a22 ObjectClass::__ShrMan -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40acd0 MoveCoordByDirection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492e10 _BlitTransLucent75ZRead_G::sub_492E10 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x493050 _BlitTransLucent25ZRead_G::sub_493050 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4afed0 ObjectClass::sub_4AFED0 -> NG (attempt 1)
+[ledger] 0x69f5e0 ObjectClass::sub_69F5E0 -> NG (attempt 1)
+[ledger] 0x535aa0 INIClass::INIClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c8470 ObjectClass::sub_5C8470 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x584030 Map_Helper_584030 -> NG (attempt 1)
+[ledger] 0x5862c0 VeinholeMonsterClass_Update -> NG (attempt 1)
+[ledger] 0x76aaf0 ObjectClass::ParseWDTTerritories_Parse -> NG (attempt 1)
+[ledger] 0x535b30 CCINIClass::CCINIClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7cbf8a __abstract_cw -> NG (attempt 1)
+[ledger] 0x4932a0 _BlitTransLucent50ZReadWarp_G::sub_4932A0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49cc50 MPCooperative::validateMove -> COMPILE_FAIL (attempt 1)
+[ledger] 0x721140 RulesClass::IsTypeBuildable -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5c63f0 ObjectClass::sub_5C63F0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 13,
+  "MISMATCH": 7
+ },
+ "pathologies": {
+  "regalloc": 3,
+  "codegen_shape": 4
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 12,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p263\batch_report.json
