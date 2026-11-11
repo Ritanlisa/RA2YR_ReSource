@@ -1,0 +1,188 @@
+{
+ "summary": {
+  "total": 20,
+  "verdicts": {
+   "NO_CLS": 19,
+   "MISMATCH": 1
+  },
+  "pathologies": {
+   "extern_reloc": 1
+  },
+  "match_rate_of_decided_pct": 0.0,
+  "match_rate_of_total_pct": 0.0
+ },
+ "results": [
+  {
+   "addr": "0x4c6390",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4c6390",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4cc7c0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4cc7c0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4e1b60",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4e1b60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x4f4f50",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x4f4f50",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5234e0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5234e0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x53f270",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x53f270",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x54aa60",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x54aa60",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5517f0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5517f0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5585a0",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5585a0",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x561760",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x561760",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5afd10",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5afd10",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5b7620",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5b7620",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5bf630",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5bf630",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5c9560",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5c9560",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5d5900",
+   "batch": "censusA",
+   "verdict": "MISMATCH",
+   "note": "orig 19B ours 19B",
+   "first_diff": {
+    "orig": "+0 fld qword ptr [0x7e1718]",
+    "ours": "+0 fld qword ptr [0]"
+   },
+   "pathology": "extern_reloc",
+   "name": "MPBattleClass::isMegawealthAllowed",
+   "emitted": "MPBattleClass::isMegawealthAllowed",
+   "unit": "MPBattleClass",
+   "name_placeholder": false,
+   "cls_src": "backfill",
+   "sites": "2/2",
+   "rule_violations": 0,
+   "orig_size": 19,
+   "ours_size": 19
+  },
+  {
+   "addr": "0x5e2460",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5e2460",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x5fa100",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x5fa100",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x600390",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x600390",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x633420",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x633420",
+   "first_diff": null,
+   "pathology": null
+  },
+  {
+   "addr": "0x644a40",
+   "batch": "censusA",
+   "verdict": "NO_CLS",
+   "note": "no registry class for 0x644a40",
+   "first_diff": null,
+   "pathology": null
+  }
+ ]
+}
