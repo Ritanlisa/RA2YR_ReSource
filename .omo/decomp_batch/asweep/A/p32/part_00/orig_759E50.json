@@ -1,0 +1,11 @@
+{
+ "addr": "0x759E50",
+ "name": "AbstractClass::checkBuildProgress",
+ "size": 8,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x759E50",
+ "bytes_hex": "c6815005000000c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

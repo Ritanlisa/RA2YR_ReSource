@@ -1,0 +1,8 @@
+{
+ "symbol": "?Release@SwizzleManagerClass@@QAGHXZ",
+ "sym_key": "SwizzleManagerClass::Release",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b801000000c20400",
+ "relocs": []
+}

@@ -1,0 +1,8 @@
+{
+ "symbol": "?Lookup@SwizzleManagerClass@@QAGHHHH@Z",
+ "sym_key": "SwizzleManagerClass::Lookup",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b801400080c21000",
+ "relocs": []
+}

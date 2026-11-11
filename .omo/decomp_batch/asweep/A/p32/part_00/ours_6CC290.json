@@ -1,0 +1,8 @@
+{
+ "symbol": "?ResetRechargeTime@SuperClass@@QAEXXZ",
+ "sym_key": "SuperClass::ResetRechargeTime",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "c74124ffffffffc3",
+ "relocs": []
+}

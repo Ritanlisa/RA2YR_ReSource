@@ -1,0 +1,8 @@
+{
+ "symbol": "?Remove@SwizzleManagerClass@@QAGHHH@Z",
+ "sym_key": "SwizzleManagerClass::Remove",
+ "size": 8,
+ "link_base": 0,
+ "bytes_hex": "b801400080c20c00",
+ "relocs": []
+}

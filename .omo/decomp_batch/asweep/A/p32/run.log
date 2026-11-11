@@ -1,0 +1,96 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p32\part_00
+=== convert (20 addrs) ===
+[conv] 0x633b20 ObjectClass::sub_633B20 -> ObjectClass
+[conv] 0x633b40 ObjectClass::sub_633B40 -> ObjectClass
+[conv] 0x643e70 VtableStub::_643E70 -> VtableStub
+[conv] 0x663460 RocketLocomotionClass::SmallStub_663460 -> RocketLocomotionClass
+[conv] 0x6a3e50 ShipLocomotionClass::SmallStub_6A3E50 -> ShipLocomotionClass
+[conv] 0x6cc290 SuperClass::ResetRechargeTime -> SuperClass
+[conv] 0x6cf4b0 SwizzleManagerClass::AddRef -> SwizzleManagerClass
+[conv] 0x6cf4c0 SwizzleManagerClass::Release -> SwizzleManagerClass
+[conv] 0x6cf4d0 SwizzleManagerClass::Remove -> SwizzleManagerClass
+[conv] 0x6cf4e0 SwizzleManagerClass::Lookup -> SwizzleManagerClass
+[conv] 0x6cfd20 globalHelper_0CFD20 -> _addr_6C
+[conv] 0x6cfd30 sub_6CFD30 -> _addr_6C
+[conv] 0x6f3270 ObjectClass::Vt34Thunk -> ObjectClass
+[conv] 0x719e20 TeleportLocomotionClass::SmallStub_719E20 -> TeleportLocomotionClass
+[conv] 0x731be0 sub_731BE0 -> _addr_73
+[conv] 0x731cf0 TechnoClass::GetField -> TechnoClass
+[conv] 0x755ac0 sub_755AC0 -> _addr_75
+[conv] 0x759e50 AbstractClass::checkBuildProgress -> AbstractClass
+[conv] 0x75c7e0 WalkLocomotionClass::SmallStub_75C7E0 -> WalkLocomotionClass
+[conv] 0x773ba0 WebBrowser::UnlockRegion -> WebBrowser
+=== emit 14 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=0
+[era] VtableStub               rc=0
+[era] RocketLocomotionClass    rc=0
+[era] ShipLocomotionClass      rc=0
+[era] SuperClass               rc=0
+[era] SwizzleManagerClass      rc=0
+[era] _addr_6C                 rc=2
+[era] TeleportLocomotionClass  rc=0
+[era] _addr_73                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_75                 rc=2
+[era] AbstractClass            rc=0
+[era] WalkLocomotionClass      rc=0
+[era] WebBrowser               rc=0
+=== diffasm byte-compare ===
+[diff] 0x633b20   MATCH            ObjectClass::sub_633B20
+[diff] 0x633b40   MATCH            ObjectClass::sub_633B40
+[diff] 0x6f3270   MISMATCH         ObjectClass::Vt34Thunk
+[diff] 0x643e70   MATCH            VtableStub::_643E70
+[diff] 0x663460   MATCH            RocketLocomotionClass::SmallStub_663460
+[diff] 0x6a3e50   MATCH            ShipLocomotionClass::SmallStub_6A3E50
+[diff] 0x6cc290   MATCH            SuperClass::ResetRechargeTime
+[diff] 0x6cf4b0   MATCH            SwizzleManagerClass::AddRef
+[diff] 0x6cf4c0   MATCH            SwizzleManagerClass::Release
+[diff] 0x6cf4d0   MATCH            SwizzleManagerClass::Remove
+[diff] 0x6cf4e0   MATCH            SwizzleManagerClass::Lookup
+[diff] 0x719e20   MATCH            TeleportLocomotionClass::SmallStub_719E20
+[diff] 0x731be0   MISMATCH         sub_731BE0
+[diff] 0x731cf0   MISMATCH         TechnoClass::GetField
+[diff] 0x759e50   MATCH            AbstractClass::checkBuildProgress
+[diff] 0x75c7e0   MATCH            WalkLocomotionClass::SmallStub_75C7E0
+[diff] 0x773ba0   MATCH            WebBrowser::UnlockRegion
+[ledger] 0x633b20 ObjectClass::sub_633B20 -> OK (attempt 1)
+[ledger] 0x633b40 ObjectClass::sub_633B40 -> OK (attempt 1)
+[ledger] 0x643e70 VtableStub::_643E70 -> OK (attempt 1)
+[ledger] 0x663460 RocketLocomotionClass::SmallStub_663460 -> OK (attempt 1)
+[ledger] 0x6a3e50 ShipLocomotionClass::SmallStub_6A3E50 -> OK (attempt 1)
+[ledger] 0x6cc290 SuperClass::ResetRechargeTime -> OK (attempt 1)
+[ledger] 0x6cf4b0 SwizzleManagerClass::AddRef -> OK (attempt 1)
+[ledger] 0x6cf4c0 SwizzleManagerClass::Release -> OK (attempt 1)
+[ledger] 0x6cf4d0 SwizzleManagerClass::Remove -> OK (attempt 1)
+[ledger] 0x6cf4e0 SwizzleManagerClass::Lookup -> OK (attempt 1)
+[ledger] 0x6cfd20 globalHelper_0CFD20 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6cfd30 sub_6CFD30 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6f3270 ObjectClass::Vt34Thunk -> NG (attempt 1)
+[ledger] 0x719e20 TeleportLocomotionClass::SmallStub_719E20 -> OK (attempt 1)
+[ledger] 0x731be0 sub_731BE0 -> NG (attempt 1)
+[ledger] 0x731cf0 TechnoClass::GetField -> NG (attempt 1)
+[ledger] 0x755ac0 sub_755AC0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x759e50 AbstractClass::checkBuildProgress -> OK (attempt 1)
+[ledger] 0x75c7e0 WalkLocomotionClass::SmallStub_75C7E0 -> OK (attempt 1)
+[ledger] 0x773ba0 WebBrowser::UnlockRegion -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 14,
+  "COMPILE_FAIL": 3,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 82.4,
+ "match_rate_of_total_pct": 70.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p32\batch_report.json

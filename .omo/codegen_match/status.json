@@ -18632,6 +18632,18 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x633b20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_633B20",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_633B20",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x633b30": {
   "attempts": 1,
   "clean": true,
@@ -18640,6 +18652,18 @@
   "name": "ObjectClass::sub_633B30",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "sub_633B30",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x633b40": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ObjectClass::sub_633B40",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "sub_633B40",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -19337,6 +19361,18 @@
   "name": "sub_6430C0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x643e70": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "signals_cls",
+  "first_diff": null,
+  "name": "VtableStub::_643E70",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "VtableStub::643E70",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x643f20": {
   "attempts": 2,
@@ -20300,6 +20336,18 @@
   "orig_name": "nullsub_224",
   "rule_violations": 0,
   "status": "NG",
+  "this_as_id": false
+ },
+ "0x663460": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "RocketLocomotionClass::SmallStub_663460",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_663460",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x6635b0": {
@@ -21289,6 +21337,18 @@
   "name": "nullsub_230",
   "note": "decomp_batch r2: MATCH",
   "orig_name": "nullsub_230",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6a3e50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "ShipLocomotionClass::SmallStub_6A3E50",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_6A3E50",
   "rule_violations": 0,
   "status": "OK",
   "this_as_id": false
@@ -22652,6 +22712,18 @@
   "status": "COMPILE_FAIL",
   "this_as_id": false
  },
+ "0x6cc290": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SuperClass::ResetRechargeTime",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SuperClass::ResetRechargeTime",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x6cde80": {
   "attempts": 1,
   "clean": false,
@@ -22769,6 +22841,54 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x6cf4b0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SwizzleManagerClass::AddRef",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SwizzleManagerClass::AddRef",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6cf4c0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SwizzleManagerClass::Release",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SwizzleManagerClass::Release",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6cf4d0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SwizzleManagerClass::Remove",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SwizzleManagerClass::Remove",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
+ "0x6cf4e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "SwizzleManagerClass::Lookup",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "SwizzleManagerClass::Lookup",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
+ },
  "0x6cf560": {
   "attempts": 1,
   "first_diff": "+2 mov esi, dword ptr [ecx + 8]",
@@ -22789,6 +22909,28 @@
   "name": "SwizzleManagerClass_19::Add",
   "note": "decomp_batch r2: MISMATCH/branch_order",
   "status": "NG"
+ },
+ "0x6cfd20": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "globalHelper_0CFD20",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "globalHelper_0CFD20",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x6cfd30": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_6CFD30",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_6CFD30",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
  },
  "0x6d0260": {
   "attempts": 11,
@@ -23726,6 +23868,18 @@
   "note": "decomp_batch r2: MISMATCH/extern_reloc",
   "status": "NG"
  },
+ "0x6f3270": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "signals_cls",
+  "first_diff": "+2 jmp dword ptr [eax + 0x88]",
+  "name": "ObjectClass::Vt34Thunk",
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "orig_name": "ObjectClass::Vt34Thunk",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x6f4a40": {
   "attempts": 1,
   "first_diff": "+0 push esi",
@@ -24421,6 +24575,18 @@
   "orig_name": "JumpjetLocomotionClass::ResetMovementState",
   "rule_violations": 0,
   "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
+ "0x719e20": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "TeleportLocomotionClass::SmallStub_719E20",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_719E20",
+  "rule_violations": 0,
+  "status": "OK",
   "this_as_id": false
  },
  "0x719ee0": {
@@ -26443,6 +26609,17 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x731be0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": "+0 mov byte ptr [0xb0fe58], 0",
+  "name": "sub_731BE0",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "sub_731BE0",
+  "rule_violations": 0,
+  "status": "NG",
+  "this_as_id": false
+ },
  "0x731cb0": {
   "attempts": 1,
   "clean": true,
@@ -26463,6 +26640,18 @@
   "orig_name": "Map_Handle_731CC0",
   "rule_violations": 0,
   "status": "OK",
+  "this_as_id": false
+ },
+ "0x731cf0": {
+  "attempts": 1,
+  "clean": false,
+  "cls_src": "backfill",
+  "first_diff": "+0 mov byte ptr [0xb0fe58], 0",
+  "name": "TechnoClass::GetField",
+  "note": "decomp_batch r2: MISMATCH/extern_reloc",
+  "orig_name": "TechnoClass::GetField",
+  "rule_violations": 0,
+  "status": "NG",
   "this_as_id": false
  },
  "0x732d00": {
@@ -27443,6 +27632,17 @@
   "status": "OK",
   "this_as_id": false
  },
+ "0x755ac0": {
+  "attempts": 1,
+  "clean": false,
+  "first_diff": null,
+  "name": "sub_755AC0",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "orig_name": "sub_755AC0",
+  "rule_violations": 0,
+  "status": "COMPILE_FAIL",
+  "this_as_id": false
+ },
  "0x755db0": {
   "attempts": 1,
   "first_diff": null,
@@ -27526,6 +27726,18 @@
   "name": "sub_759140",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x759e50": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "AbstractClass::checkBuildProgress",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "AbstractClass::checkBuildProgress",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x759ea0": {
   "attempts": 1,
@@ -27645,6 +27857,18 @@
   "name": "WalkLocomotionClass::BeginMove",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
+ },
+ "0x75c7e0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WalkLocomotionClass::SmallStub_75C7E0",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "JumpjetLocomotionClass::SmallStub_75C7E0",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x75ca80": {
   "attempts": 3,
@@ -28709,6 +28933,18 @@
   "name": "WebBrowser::LockRegion",
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
+ },
+ "0x773ba0": {
+  "attempts": 1,
+  "clean": true,
+  "cls_src": "backfill",
+  "first_diff": null,
+  "name": "WebBrowser::UnlockRegion",
+  "note": "decomp_batch r2: MATCH",
+  "orig_name": "WebBrowser::UnlockRegion",
+  "rule_violations": 0,
+  "status": "OK",
+  "this_as_id": false
  },
  "0x773bb0": {
   "attempts": 6,
