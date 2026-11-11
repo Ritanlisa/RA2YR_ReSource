@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x5bcc60",
+  "name": "sub_5BCC60",
+  "family": "IMM",
+  "path": "cc_mismatch",
+  "size": 43,
+  "part": "p217",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::sub_5BCC60",
+  "first_diff": {
+   "orig": "+40 ret 0x10",
+   "ours": "+40 ret 0x14"
+  },
+  "ours_size": 43
+ },
+ {
+  "addr": "0x5d5de0",
+  "name": "GameMode::IsValid",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 43,
+  "part": "p217",
+  "unit": "MultiplayerGameMode",
+  "emitted": "MultiplayerGameMode::IsValid",
+  "first_diff": {
+   "orig": "+9 je 0x5d5df5",
+   "ours": "+9 je 0x10"
+  },
+  "ours_size": 34
+ },
+ {
+  "addr": "0x7cf7bd",
+  "name": "___sbh_find_block",
+  "family": "STRUCTURAL",
+  "path": "extern_reloc",
+  "size": 43,
+  "part": "p218",
+  "unit": "_addr_7C",
+  "emitted": "___sbh_find_block",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [0xb78b94]",
+   "ours": "+0 mov ecx, dword ptr [0]"
+  },
+  "ours_size": 64
+ },
+ {
+  "addr": "0x781380",
+  "name": "sub_781380",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 44,
+  "part": "p218",
+  "unit": "_addr_78",
+  "emitted": "sub_781380",
+  "first_diff": {
+   "orig": "+4 mov ecx, dword ptr [esp + 8]",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 47
+ },
+ {
+  "addr": "0x7c8cea",
+  "name": "_swap",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 44,
+  "part": "p218",
+  "unit": "ObjectClass",
+  "emitted": "ObjectClass::_swap",
+  "first_diff": {
+   "orig": "+11 je 0x7c8d14",
+   "ours": "+11 je 0x24"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x7759b0",
+  "name": "Dialog::FindByPtr",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 44,
+  "part": "p218",
+  "unit": "Dialog",
+  "emitted": "Dialog::FindByPtr",
+  "first_diff": {
+   "orig": "+6 test eax, eax",
+   "ours": "+6 lea edx, [eax*8 + 0xb72d28]"
+  },
+  "ours_size": 40
+ },
+ {
+  "addr": "0x4c9480",
+  "name": "TimerClass::Active",
+  "family": "STRUCTURAL",
+  "path": "width_mismatch",
+  "size": 45,
+  "part": "p218",
+  "unit": "TimerClass",
+  "emitted": "TimerClass::Active",
+  "first_diff": {
+   "orig": "+0 cmp word ptr [ecx + 0x14], 0",
+   "ours": "+0 mov eax, dword ptr [ecx + 0x14]"
+  },
+  "ours_size": 52
+ },
+ {
+  "addr": "0x7db113",
+  "name": "___shr_12",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 45,
+  "part": "p219",
+  "unit": "_addr_7D",
+  "emitted": "___shr_12",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 4]",
+   "ours": "+0 push esi"
+  },
+  "ours_size": 51
+ },
+ {
+  "addr": "0x7dbc2a",
+  "name": "__errcode",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 45,
+  "part": "p219",
+  "unit": "_addr_7D",
+  "emitted": "__errcode",
+  "first_diff": {
+   "orig": "+6 je 0x7dbc36",
+   "ours": "+6 je 0xb"
+  },
+  "ours_size": 38
+ },
+ {
+  "addr": "0x41b5e0",
+  "name": "MissionClass::vt_entry_200",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 46,
+  "part": "p219",
+  "unit": "AircraftClass",
+  "emitted": "AircraftClass::vt_entry_200",
+  "first_diff": {
+   "orig": "+9 je 0x41b60b",
+   "ours": "+9 je 0x2f"
+  },
+  "ours_size": 50
+ },
+ {
+  "addr": "0x637070",
+  "name": "WinMain_Helper_637070",
+  "family": "TWO_FOUR_INSNS",
+  "path": "extern_reloc",
+  "size": 46,
+  "part": "p219",
+  "unit": "WinMain_Helper",
+  "emitted": "WinMain_Helper_637070",
+  "first_diff": {
+   "orig": "+2 xor ecx, ecx",
+   "ours": "+2 mov byte ptr [0], al"
+  },
+  "ours_size": 43
+ },
+ {
+  "addr": "0x642740",
+  "name": "CoordStruct::Set2",
+  "family": "TOKEN_MISMATCH",
+  "path": "regalloc",
+  "size": 46,
+  "part": "p219",
+  "unit": "CoordStruct",
+  "emitted": "CoordStruct::Set2",
+  "first_diff": {
+   "orig": "+6 movsx ecx, word ptr [edx + 2]",
+   "ours": "+6 movsx ecx, word ptr [edx]"
+  },
+  "ours_size": 46
+ },
+ {
+  "addr": "0x65ad90",
+  "name": "RadioClass::FindLinkIndex",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 46,
+  "part": "p219",
+  "unit": "RadioClass",
+  "emitted": "RadioClass::FindLinkIndex",
+  "first_diff": {
+   "orig": "+0 push esi",
+   "ours": "+0 mov edx, dword ptr [esp + 4]"
+  },
+  "ours_size": 60
+ },
+ {
+  "addr": "0x726690",
+  "name": "TriggerClass::FireAction",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 46,
+  "part": "p219",
+  "unit": "TriggerClass",
+  "emitted": "TriggerClass::FireAction",
+  "first_diff": {
+   "orig": "+31 cmp dword ptr [ecx + 0x2c], edx",
+   "ours": "+31 push edi"
+  },
+  "ours_size": 50
+ },
+ {
+  "addr": "0x7db0e5",
+  "name": "___shl_12",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 46,
+  "part": "p219",
+  "unit": "_addr_7D",
+  "emitted": "___shl_12",
+  "first_diff": {
+   "orig": "+5 push edi",
+   "ours": "+5 mov ecx, dword ptr [eax]"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x437160",
+  "name": "Vector3::Subtract",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 47,
+  "part": "p219",
+  "unit": "Vector3",
+  "emitted": "Vector3::Subtract",
+  "first_diff": {
+   "orig": "+4 mov edx, dword ptr [ecx]",
+   "ours": "+4 mov edx, dword ptr [ecx + 4]"
+  },
+  "ours_size": 45
+ },
+ {
+  "addr": "0x5a0090",
+  "name": "MapClass::SetObstruction",
+  "family": "STRUCTURAL",
+  "path": "branch_polarity",
+  "size": 47,
+  "part": "p219",
+  "unit": "MapClass",
+  "emitted": "MapClass::SetObstruction",
+  "first_diff": {
+   "orig": "+8 je 0x5a00bc",
+   "ours": "+8 je 0x2f"
+  },
+  "ours_size": 54
+ },
+ {
+  "addr": "0x5ac570",
+  "name": "MSEngine::Shutdown",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 47,
+  "part": "p219",
+  "unit": "_VectorClass_V_TRect_H",
+  "emitted": "_VectorClass_V_TRect_H::Shutdown",
+  "first_diff": {
+   "orig": "+0 mov eax, dword ptr [esp + 8]",
+   "ours": "+0 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 41
+ },
+ {
+  "addr": "0x6c96b0",
+  "name": "Float::SubtractClamped",
+  "family": "STRUCTURAL",
+  "path": "codegen_shape",
+  "size": 47,
+  "part": "p219",
+  "unit": "Float",
+  "emitted": "Float::SubtractClamped",
+  "first_diff": {
+   "orig": "+0 mov edx, dword ptr [esp + 8]",
+   "ours": "+0 push ecx"
+  },
+  "ours_size": 78
+ },
+ {
+  "addr": "0x6ce240",
+  "name": "Coord3D::Add",
+  "family": "STRUCTURAL",
+  "path": "regalloc",
+  "size": 47,
+  "part": "p219",
+  "unit": "Coord3D",
+  "emitted": "Coord3D::Add",
+  "first_diff": {
+   "orig": "+5 mov esi, dword ptr [ecx]",
+   "ours": "+5 mov esi, dword ptr [ecx + 4]"
+  },
+  "ours_size": 45
+ }
+]
