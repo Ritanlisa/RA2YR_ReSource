@@ -86,3 +86,4 @@
 {"layer": "A", "part": 85, "n": 20, "seconds": 17.2, "ok": true, "verdicts": {"COMPILE_FAIL": 7, "MATCH": 5, "MISMATCH": 8}}
 {"layer": "A", "part": 86, "n": 20, "seconds": 10.6, "ok": true, "verdicts": {"MISMATCH": 20}}
 {"layer": "A", "part": 87, "n": 20, "seconds": 8.9, "ok": true, "verdicts": {"MISMATCH": 20}}
+{"layer": "A", "part": 88, "n": 20, "seconds": 10.7, "ok": true, "verdicts": {"MISMATCH": 20}}

@@ -1,0 +1,86 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p88\part_00
+=== convert (20 addrs) ===
+[conv] 0x435660 sub_435660 -> _addr_43
+[conv] 0x438370 sub_438370 -> _addr_43
+[conv] 0x4394d0 sub_4394D0 -> _addr_43
+[conv] 0x4394f0 sub_4394F0 -> _addr_43
+[conv] 0x43a190 sub_43A190 -> _addr_43
+[conv] 0x43af70 sub_43AF70 -> _addr_43
+[conv] 0x43af90 sub_43AF90 -> _addr_43
+[conv] 0x45afd0 sub_45AFD0 -> _addr_45
+[conv] 0x45aff0 sub_45AFF0 -> _addr_45
+[conv] 0x466100 sub_466100 -> _addr_46
+[conv] 0x466120 sub_466120 -> _addr_46
+[conv] 0x46ba00 sub_46BA00 -> _addr_46
+[conv] 0x46ba20 sub_46BA20 -> _addr_46
+[conv] 0x46c9a0 sub_46C9A0 -> _addr_46
+[conv] 0x46d150 sub_46D150 -> _addr_46
+[conv] 0x46d170 sub_46D170 -> _addr_46
+[conv] 0x471570 sub_471570 -> _addr_47
+[conv] 0x471590 sub_471590 -> _addr_47
+[conv] 0x4731c0 sub_4731C0 -> _addr_47
+[conv] 0x4731e0 sub_4731E0 -> _addr_47
+=== emit 4 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_43                 rc=0
+[era] _addr_45                 rc=0
+[era] _addr_46                 rc=0
+[era] _addr_47                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x435660   MISMATCH         sub_435660
+[diff] 0x438370   MISMATCH         sub_438370
+[diff] 0x4394d0   MISMATCH         sub_4394D0
+[diff] 0x4394f0   MISMATCH         sub_4394F0
+[diff] 0x43a190   MISMATCH         sub_43A190
+[diff] 0x43af70   MISMATCH         sub_43AF70
+[diff] 0x43af90   MISMATCH         sub_43AF90
+[diff] 0x45afd0   MISMATCH         sub_45AFD0
+[diff] 0x45aff0   MISMATCH         sub_45AFF0
+[diff] 0x466100   MISMATCH         sub_466100
+[diff] 0x466120   MISMATCH         sub_466120
+[diff] 0x46ba00   MISMATCH         sub_46BA00
+[diff] 0x46ba20   MISMATCH         sub_46BA20
+[diff] 0x46c9a0   MISMATCH         sub_46C9A0
+[diff] 0x46d150   MISMATCH         sub_46D150
+[diff] 0x46d170   MISMATCH         sub_46D170
+[diff] 0x471570   MISMATCH         sub_471570
+[diff] 0x471590   MISMATCH         sub_471590
+[diff] 0x4731c0   MISMATCH         sub_4731C0
+[diff] 0x4731e0   MISMATCH         sub_4731E0
+[ledger] 0x435660 sub_435660 -> NG (attempt 1)
+[ledger] 0x438370 sub_438370 -> NG (attempt 1)
+[ledger] 0x4394d0 sub_4394D0 -> NG (attempt 1)
+[ledger] 0x4394f0 sub_4394F0 -> NG (attempt 1)
+[ledger] 0x43a190 sub_43A190 -> NG (attempt 1)
+[ledger] 0x43af70 sub_43AF70 -> NG (attempt 1)
+[ledger] 0x43af90 sub_43AF90 -> NG (attempt 1)
+[ledger] 0x45afd0 sub_45AFD0 -> NG (attempt 1)
+[ledger] 0x45aff0 sub_45AFF0 -> NG (attempt 1)
+[ledger] 0x466100 sub_466100 -> NG (attempt 1)
+[ledger] 0x466120 sub_466120 -> NG (attempt 1)
+[ledger] 0x46ba00 sub_46BA00 -> NG (attempt 1)
+[ledger] 0x46ba20 sub_46BA20 -> NG (attempt 1)
+[ledger] 0x46c9a0 sub_46C9A0 -> NG (attempt 1)
+[ledger] 0x46d150 sub_46D150 -> NG (attempt 1)
+[ledger] 0x46d170 sub_46D170 -> NG (attempt 1)
+[ledger] 0x471570 sub_471570 -> NG (attempt 1)
+[ledger] 0x471590 sub_471590 -> NG (attempt 1)
+[ledger] 0x4731c0 sub_4731C0 -> NG (attempt 1)
+[ledger] 0x4731e0 sub_4731E0 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 20
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p88\batch_report.json
