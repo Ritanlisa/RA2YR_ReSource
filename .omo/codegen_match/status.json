@@ -6958,42 +6958,42 @@
   "status": "NG"
  },
  "0x7d1512": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "GetCurrentThreadId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcee0": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "GetCurrentThread::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dcf22": {
-  "attempts": 4,
+  "attempts": 5,
   "first_diff": null,
   "name": "GetCurrentProcessId::0",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7df9c0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfae0": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Voxel::FacePixelBufferEx",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x7dfc00": {
-  "attempts": 7,
+  "attempts": 8,
   "first_diff": null,
   "name": "Voxel::FacePixelBuffer3",
   "note": "decomp_batch r2: COMPILE_FAIL",
