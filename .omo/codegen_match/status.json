@@ -1910,6 +1910,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x4526f0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "BuildingClass::SelectWeaponSlot",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x455c20": {
   "attempts": 9,
   "first_diff": null,
@@ -2435,6 +2442,13 @@
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
+ "0x475540": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SuperWeaponTypeClass::FindOrCreate",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x475610": {
   "attempts": 4,
   "first_diff": "+8 lea edx, [esp]",
@@ -2476,6 +2490,13 @@
   "name": "ObjectTypeClass::ReadTypeListINI",
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
+ },
+ "0x476420": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "INIClass::GetCoord2",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4766f0": {
   "attempts": 4,
@@ -4374,6 +4395,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x4b62c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "DropPodLocomotionClass::UpdateMovement",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x4b6400": {
   "attempts": 1,
   "first_diff": null,
@@ -4912,6 +4940,13 @@
   "name": "0x4cc7c0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x4d02b0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "VoxelAnimClass::UpdateMatrix",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x4d0390": {
   "attempts": 5,
@@ -7797,6 +7832,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x559d60": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "LoadOptions::AddRef",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x55a1a0": {
   "attempts": 1,
   "first_diff": null,
@@ -9750,6 +9792,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x5e8dc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Player::BuildListString",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x5e9290": {
   "attempts": 9,
   "first_diff": null,
@@ -9775,6 +9824,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "SelectLobbyCountry",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x5e9c00": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "AssignPlayerColor",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
@@ -10709,6 +10765,13 @@
   "note": "decomp_batch r2: MISMATCH/branch_polarity",
   "status": "NG"
  },
+ "0x635490": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "Render_Render_635490",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x635e90": {
   "attempts": 1,
   "first_diff": null,
@@ -11626,6 +11689,20 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x674650": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SidebarClass::ReadButtonList",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
+ "0x679cc0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x679cc0",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
  "0x679ec0": {
   "attempts": 1,
   "first_diff": null,
@@ -11962,6 +12039,13 @@
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
+ "0x6964c0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "NetworkDialog::Dispatch",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x696d70": {
   "attempts": 1,
   "first_diff": null,
@@ -12228,6 +12312,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6a4930": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SideClass::Init",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6a5090": {
   "attempts": 9,
   "first_diff": null,
@@ -12332,6 +12423,13 @@
   "name": "0x6aefc0",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
+ },
+ "0x6af4a0": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "SlaveManagerClass::Constructor_SlaveManagerClass",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
  },
  "0x6b0d10": {
   "attempts": 1,
@@ -13649,6 +13747,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x6ee310": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TeamClass::SelectAreaAttackTarget",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x6ef450": {
   "attempts": 1,
   "first_diff": null,
@@ -14615,6 +14720,13 @@
   "note": "decomp_batch r2: MATCH",
   "status": "OK"
  },
+ "0x728710": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "TubeClass::ProcessEvent",
+  "note": "decomp_batch r2: COMPILE_FAIL",
+  "status": "COMPILE_FAIL"
+ },
  "0x7287f0": {
   "attempts": 1,
   "first_diff": null,
@@ -14748,6 +14860,13 @@
   "note": "decomp_batch r2: MISMATCH/const_fold",
   "status": "NG"
  },
+ "0x72d350": {
+  "attempts": 1,
+  "first_diff": "+0 mov al, byte ptr [0xb0fbac]",
+  "name": "FileSystem::CleanupTrees",
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
+ },
  "0x72d430": {
   "attempts": 1,
   "first_diff": null,
@@ -14780,6 +14899,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x72e990",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x72f350": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x72f350",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },
@@ -16981,6 +17107,13 @@
   "note": "decomp_batch r2: MISMATCH/codegen_shape",
   "status": "NG"
  },
+ "0x7c3750": {
+  "attempts": 1,
+  "first_diff": "+15 je 0x7c37c5",
+  "name": "Audio_Process_7C3750",
+  "note": "decomp_batch r2: MISMATCH/branch_polarity",
+  "status": "NG"
+ },
  "0x7c3d60": {
   "attempts": 1,
   "first_diff": null,
@@ -17601,6 +17734,13 @@
   "attempts": 1,
   "first_diff": null,
   "name": "0x7d5ef8",
+  "note": "decomp_batch r2: NO_CLS",
+  "status": "PENDING"
+ },
+ "0x7d6830": {
+  "attempts": 1,
+  "first_diff": null,
+  "name": "0x7d6830",
   "note": "decomp_batch r2: NO_CLS",
   "status": "PENDING"
  },

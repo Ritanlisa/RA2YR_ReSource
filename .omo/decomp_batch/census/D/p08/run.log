@@ -1,0 +1,97 @@
+[resume] 0/20 already decided, 20 to run
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p08\part_00
+=== convert (20 addrs) ===
+[conv] 0x475540 SuperWeaponTypeClass::FindOrCreate -> SuperWeaponTypeClass
+[conv] 0x635490 ObjectClass::Render_Render_635490 -> ObjectClass
+[conv] 0x6964c0 NetworkDialog::Dispatch -> NetworkDialog
+[conv] 0x476420 INIClass::GetCoord2 -> INIClass
+[conv] 0x6a4930 SideClass::Init -> SideClass
+[conv] 0x7c3750 TechnoClass::Audio_Process_7C3750 -> TechnoClass
+[conv] 0x6ee310 TeamClass::SelectAreaAttackTarget -> TeamClass
+[conv] 0x559d60 LoadOptions::AddRef -> LoadOptions
+[conv] 0x4526f0 BuildingClass::SelectWeaponSlot -> BuildingClass
+[conv] 0x5e9c00 unknown::AssignPlayerColor -> unknown
+[conv] 0x72d350 FileSystem::CleanupTrees -> FileSystem
+[conv] 0x728710 TubeClass::ProcessEvent -> TubeClass
+[conv] 0x5e8dc0 Player::BuildListString -> Player
+[conv] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> VoxelAnimClass
+[conv] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> SlaveManagerClass
+[conv] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> DropPodLocomotionClass
+[conv] 0x674650 SidebarClass::ReadButtonList -> SidebarClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] SuperWeaponTypeClass     rc=2
+[era] ObjectClass              rc=2
+[era] NetworkDialog            rc=2
+[era] INIClass                 rc=2
+[era] SideClass                rc=2
+[era] TechnoClass              rc=0
+[era] TeamClass                rc=2
+[era] LoadOptions              rc=2
+[era] BuildingClass            rc=2
+[era] unknown                  rc=2
+[era] FileSystem               rc=0
+[era] TubeClass                rc=2
+[era] Player                   rc=2
+[era] VoxelAnimClass           rc=2
+[era] SlaveManagerClass        rc=2
+[era] DropPodLocomotionClass   rc=2
+[era] SidebarClass             rc=2
+=== diffasm byte-compare ===
+[diff] 0x7c3750   MISMATCH         TechnoClass::Audio_Process_7C3750
+[diff] 0x72d350   MISMATCH         FileSystem::CleanupTrees
+[ledger] 0x475540 SuperWeaponTypeClass::FindOrCreate -> COMPILE_FAIL (attempt 1)
+[ledger] 0x635490 Render_Render_635490 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d6830 0x7d6830 -> PENDING (attempt 1)
+[ledger] 0x679cc0 0x679cc0 -> PENDING (attempt 1)
+[ledger] 0x6964c0 NetworkDialog::Dispatch -> COMPILE_FAIL (attempt 1)
+[ledger] 0x476420 INIClass::GetCoord2 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6a4930 SideClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7c3750 Audio_Process_7C3750 -> NG (attempt 1)
+[ledger] 0x6ee310 TeamClass::SelectAreaAttackTarget -> COMPILE_FAIL (attempt 1)
+[ledger] 0x559d60 LoadOptions::AddRef -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72f350 0x72f350 -> PENDING (attempt 1)
+[ledger] 0x4526f0 BuildingClass::SelectWeaponSlot -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e9c00 AssignPlayerColor -> COMPILE_FAIL (attempt 1)
+[ledger] 0x72d350 FileSystem::CleanupTrees -> NG (attempt 1)
+[ledger] 0x728710 TubeClass::ProcessEvent -> COMPILE_FAIL (attempt 1)
+[ledger] 0x5e8dc0 Player::BuildListString -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4d02b0 VoxelAnimClass::UpdateMatrix -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6af4a0 SlaveManagerClass::Constructor_SlaveManagerClass -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4b62c0 DropPodLocomotionClass::UpdateMovement -> COMPILE_FAIL (attempt 1)
+[ledger] 0x674650 SidebarClass::ReadButtonList -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 2534,
+ "verdicts": {
+  "MISMATCH": 690,
+  "MATCH": 521,
+  "COMPILE_FAIL": 787,
+  "DUP_SKIP": 2,
+  "OBJ_EXTRACT_FAIL": 2,
+  "NO_CLS": 519,
+  "NO_EXPORT": 8,
+  "NO_PSEUDO": 5
+ },
+ "pathologies": {
+  "eval_order": 11,
+  "codegen_shape": 238,
+  "ret_norm": 7,
+  "frame_sched": 68,
+  "const_fold": 70,
+  "branch_polarity": 51,
+  "regalloc": 111,
+  "branch_order": 77,
+  "width_mismatch": 9,
+  "extern_reloc": 19,
+  "cc_mismatch": 25,
+  "signedness": 4
+ },
+ "match_rate_of_decided_pct": 43.0,
+ "match_rate_of_total_pct": 20.6,
+ "rule_violation_fns": 9,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\census\D\p08\batch_report.json

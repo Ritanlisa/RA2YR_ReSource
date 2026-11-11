@@ -1,0 +1,11 @@
+{
+ "addr": "0x72D350",
+ "name": "FileSystem::CleanupTrees",
+ "size": 213,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x72D350",
+ "bytes_hex": "a0acfbb0005333db3ac30f84c3000000a070fcb000563ac3881dacfbb00074208b3534fbb0003bf374108bcee87f11f7ff56e8b6b7090083c404881d70fcb000a071fcb000891d34fbb0003ac374208b3500fbb0003bf374108bcee85011f7ff56e887b7090083c404881d71fcb000a072fcb000891d00fbb0003ac374208b3530fbb0003bf374108bcee82111f7ff56e858b7090083c404881d72fcb000a1a4fbb000891d30fbb0003bc35e740f50e839b7090083c404891da4fbb0008b0da8fbb0003bcb740c8b016a01ff10891da8fbb0005bc3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
