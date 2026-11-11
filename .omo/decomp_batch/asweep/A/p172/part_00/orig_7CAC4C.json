@@ -1,0 +1,11 @@
+{
+ "addr": "0x7CAC4C",
+ "name": "?FindCompleteObject_YAPAXPAPAX_Z",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7CAC4C",
+ "bytes_hex": "8b4c24048b018b50fc8bc12b42048b520885d274042bca0301c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

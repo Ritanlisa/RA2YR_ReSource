@@ -1,0 +1,11 @@
+{
+ "addr": "0x772AC0",
+ "name": "InfantryClass::startPanic",
+ "size": 26,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x772AC0",
+ "bytes_hex": "8b81ac00000085c0740d8a884401000084c97403b001c332c0c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

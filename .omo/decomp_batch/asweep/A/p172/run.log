@@ -1,0 +1,89 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p172\part_00
+=== convert (20 addrs) ===
+[conv] 0x764a00 sub_764A00 -> _addr_76
+[conv] 0x765f40 sub_765F40 -> _addr_76
+[conv] 0x7672e0 sub_7672E0 -> _addr_76
+[conv] 0x767ae0 sub_767AE0 -> _addr_76
+[conv] 0x76aa70 sub_76AA70 -> _addr_76
+[conv] 0x76be70 sub_76BE70 -> _addr_76
+[conv] 0x76c270 sub_76C270 -> _addr_76
+[conv] 0x76f450 sub_76F450 -> _addr_76
+[conv] 0x770250 sub_770250 -> _addr_77
+[conv] 0x771c30 sub_771C30 -> _addr_77
+[conv] 0x772ac0 InfantryClass::startPanic -> InfantryClass
+[conv] 0x773430 sub_773430 -> _addr_77
+[conv] 0x7773a0 sub_7773A0 -> _addr_77
+[conv] 0x7786c0 sub_7786C0 -> _addr_77
+[conv] 0x77b260 sub_77B260 -> _addr_77
+[conv] 0x77b860 sub_77B860 -> _addr_77
+[conv] 0x7b0d70 sub_7B0D70 -> _addr_7B
+[conv] 0x7b19a0 sub_7B19A0 -> _addr_7B
+[conv] 0x7b2d70 sub_7B2D70 -> _addr_7B
+[conv] 0x7cac4c FindCompleteObject_YAPAXPAPAX_Z -> _addr_7C
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_76                 rc=0
+[era] _addr_77                 rc=0
+[era] InfantryClass            rc=0
+[era] _addr_7B                 rc=0
+[era] _addr_7C                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x764a00   MISMATCH         sub_764A00
+[diff] 0x765f40   MISMATCH         sub_765F40
+[diff] 0x7672e0   MISMATCH         sub_7672E0
+[diff] 0x767ae0   MISMATCH         sub_767AE0
+[diff] 0x76aa70   MISMATCH         sub_76AA70
+[diff] 0x76be70   MISMATCH         sub_76BE70
+[diff] 0x76c270   MISMATCH         sub_76C270
+[diff] 0x76f450   MISMATCH         sub_76F450
+[diff] 0x770250   MISMATCH         sub_770250
+[diff] 0x771c30   MISMATCH         sub_771C30
+[diff] 0x773430   MISMATCH         sub_773430
+[diff] 0x7773a0   MISMATCH         sub_7773A0
+[diff] 0x7786c0   MISMATCH         sub_7786C0
+[diff] 0x77b260   MISMATCH         sub_77B260
+[diff] 0x77b860   MISMATCH         sub_77B860
+[diff] 0x772ac0   MISMATCH         InfantryClass::startPanic
+[diff] 0x7b0d70   MISMATCH         sub_7B0D70
+[diff] 0x7b19a0   MISMATCH         sub_7B19A0
+[diff] 0x7b2d70   MISMATCH         sub_7B2D70
+[diff] 0x7cac4c   MISMATCH         FindCompleteObject_YAPAXPAPAX_Z
+[ledger] 0x764a00 sub_764A00 -> NG (attempt 1)
+[ledger] 0x765f40 sub_765F40 -> NG (attempt 1)
+[ledger] 0x7672e0 sub_7672E0 -> NG (attempt 1)
+[ledger] 0x767ae0 sub_767AE0 -> NG (attempt 1)
+[ledger] 0x76aa70 sub_76AA70 -> NG (attempt 1)
+[ledger] 0x76be70 sub_76BE70 -> NG (attempt 1)
+[ledger] 0x76c270 sub_76C270 -> NG (attempt 1)
+[ledger] 0x76f450 sub_76F450 -> NG (attempt 1)
+[ledger] 0x770250 sub_770250 -> NG (attempt 1)
+[ledger] 0x771c30 sub_771C30 -> NG (attempt 1)
+[ledger] 0x772ac0 InfantryClass::startPanic -> NG (attempt 1)
+[ledger] 0x773430 sub_773430 -> NG (attempt 1)
+[ledger] 0x7773a0 sub_7773A0 -> NG (attempt 1)
+[ledger] 0x7786c0 sub_7786C0 -> NG (attempt 1)
+[ledger] 0x77b260 sub_77B260 -> NG (attempt 1)
+[ledger] 0x77b860 sub_77B860 -> NG (attempt 1)
+[ledger] 0x7b0d70 sub_7B0D70 -> NG (attempt 1)
+[ledger] 0x7b19a0 sub_7B19A0 -> NG (attempt 1)
+[ledger] 0x7b2d70 sub_7B2D70 -> NG (attempt 1)
+[ledger] 0x7cac4c FindCompleteObject_YAPAXPAPAX_Z -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 20
+ },
+ "pathologies": {
+  "extern_reloc": 18,
+  "branch_polarity": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 2,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p172\batch_report.json

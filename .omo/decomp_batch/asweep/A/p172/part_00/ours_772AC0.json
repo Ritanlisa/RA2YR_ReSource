@@ -1,0 +1,8 @@
+{
+ "symbol": "?startPanic@InfantryClass@@QAE_NXZ",
+ "sym_key": "InfantryClass::startPanic",
+ "size": 29,
+ "link_base": 0,
+ "bytes_hex": "8b81ac00000085c074108a884401000084c97406b801000000c333c0c3",
+ "relocs": []
+}
