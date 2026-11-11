@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_193@CursorPositionCommandClass@@QAEPADXZ",
+ "sym_key": "CursorPositionCommandClass::performAction_193",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "b800000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_827ADC@@3PADA",
+   "sym_key": "DataGlobal_827ADC"
+  }
+ ]
+}

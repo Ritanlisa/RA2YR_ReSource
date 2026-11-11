@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_183@FollowCommandClass@@QAEPADXZ",
+ "sym_key": "FollowCommandClass::performAction_183",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aFollow@@3HA",
+   "sym_key": "aFollow"
+  }
+ ]
+}

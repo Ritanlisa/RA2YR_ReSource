@@ -1,0 +1,101 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p21\part_00
+=== convert (20 addrs) ===
+[conv] 0x537030 BeaconPlacementCommandClass::performAction_119 -> BeaconPlacementCommandClass
+[conv] 0x5370c0 CenterREventCommandClass::performAction_124 -> CenterREventCommandClass
+[conv] 0x537140 SidebarUpCommandClass::performAction_129 -> SidebarUpCommandClass
+[conv] 0x537260 OptionsCommandClass::performAction_139 -> OptionsCommandClass
+[conv] 0x5372e0 View1CommandClass::performAction_144 -> View1CommandClass
+[conv] 0x5373d0 View2CommandClass::performAction_149 -> View2CommandClass
+[conv] 0x5374c0 View3CommandClass::performAction_154 -> View3CommandClass
+[conv] 0x5376a0 SetView1CommandClass::performAction_163 -> SetView1CommandClass
+[conv] 0x537760 SetView2CommandClass::performAction_168 -> SetView2CommandClass
+[conv] 0x537820 SetView3CommandClass::performAction_173 -> SetView3CommandClass
+[conv] 0x5379a0 FollowCommandClass::performAction_183 -> FollowCommandClass
+[conv] 0x537ab0 MultiplayerSyncCommandClass::performAction_188 -> MultiplayerSyncCommandClass
+[conv] 0x537ac0 MultiplayerSyncCommandClass::performAction_189 -> MultiplayerSyncCommandClass
+[conv] 0x537ad0 MultiplayerSyncCommandClass::performAction_190 -> MultiplayerSyncCommandClass
+[conv] 0x537ae0 MultiplayerSyncCommandClass::performAction_191 -> MultiplayerSyncCommandClass
+[conv] 0x537e80 CursorPositionCommandClass::performAction_193 -> CursorPositionCommandClass
+[conv] 0x53e720 UI_Update -> UI
+[conv] 0x540c50 ObjectClass::sub_540C50 -> ObjectClass
+[conv] 0x543a90 AbstractClass::COMStub_Ret176_12 -> AbstractClass
+[conv] 0x54df90 JumpjetLocomotionClass::CheckAttachStatus -> JumpjetLocomotionClass
+=== emit 17 units ===
+=== rule self-check ===
+=== era compile ===
+[era] BeaconPlacementCommandClass rc=0
+[era] CenterREventCommandClass rc=0
+[era] SidebarUpCommandClass    rc=0
+[era] OptionsCommandClass      rc=0
+[era] View1CommandClass        rc=0
+[era] View2CommandClass        rc=0
+[era] View3CommandClass        rc=0
+[era] SetView1CommandClass     rc=0
+[era] SetView2CommandClass     rc=0
+[era] SetView3CommandClass     rc=0
+[era] FollowCommandClass       rc=0
+[era] MultiplayerSyncCommandClass rc=2
+[era] CursorPositionCommandClass rc=0
+[era] UI                       rc=0
+[era] ObjectClass              rc=2
+[era] AbstractClass            rc=0
+[era] JumpjetLocomotionClass   rc=0
+=== diffasm byte-compare ===
+[diff] 0x537030   MISMATCH         BeaconPlacementCommandClass::performAction_119
+[diff] 0x5370c0   MISMATCH         CenterREventCommandClass::performAction_124
+[diff] 0x537140   MISMATCH         SidebarUpCommandClass::performAction_129
+[diff] 0x537260   MISMATCH         OptionsCommandClass::performAction_139
+[diff] 0x5372e0   MISMATCH         View1CommandClass::performAction_144
+[diff] 0x5373d0   MISMATCH         View2CommandClass::performAction_149
+[diff] 0x5374c0   MISMATCH         View3CommandClass::performAction_154
+[diff] 0x5376a0   MISMATCH         SetView1CommandClass::performAction_163
+[diff] 0x537760   MISMATCH         SetView2CommandClass::performAction_168
+[diff] 0x537820   MISMATCH         SetView3CommandClass::performAction_173
+[diff] 0x5379a0   MISMATCH         FollowCommandClass::performAction_183
+[diff] 0x537ab0   MISMATCH         MultiplayerSyncCommandClass::performAction_188
+[diff] 0x537ad0   MISMATCH         MultiplayerSyncCommandClass::performAction_190
+[diff] 0x537ae0   MATCH            MultiplayerSyncCommandClass::performAction_191
+[diff] 0x537e80   MATCH            CursorPositionCommandClass::performAction_193
+[diff] 0x53e720   MATCH            UI_Update
+[diff] 0x543a90   MATCH            AbstractClass::COMStub_Ret176_12
+[diff] 0x54df90   MATCH            JumpjetLocomotionClass::CheckAttachStatus
+[ledger] 0x537030 BeaconPlacementCommandClass::performAction_119 -> NG (attempt 1)
+[ledger] 0x5370c0 CenterREventCommandClass::performAction_124 -> NG (attempt 1)
+[ledger] 0x537140 SidebarUpCommandClass::performAction_129 -> NG (attempt 1)
+[ledger] 0x537260 OptionsCommandClass::performAction_139 -> NG (attempt 1)
+[ledger] 0x5372e0 View1CommandClass::performAction_144 -> NG (attempt 1)
+[ledger] 0x5373d0 View2CommandClass::performAction_149 -> NG (attempt 1)
+[ledger] 0x5374c0 View3CommandClass::performAction_154 -> NG (attempt 1)
+[ledger] 0x5376a0 SetView1CommandClass::performAction_163 -> NG (attempt 1)
+[ledger] 0x537760 SetView2CommandClass::performAction_168 -> NG (attempt 1)
+[ledger] 0x537820 SetView3CommandClass::performAction_173 -> NG (attempt 1)
+[ledger] 0x5379a0 FollowCommandClass::performAction_183 -> NG (attempt 1)
+[ledger] 0x537ab0 MultiplayerSyncCommandClass::performAction_188 -> NG (attempt 1)
+[ledger] 0x537ac0 MultiplayerSyncCommandClass::performAction_189 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x537ad0 MultiplayerSyncCommandClass::performAction_190 -> NG (attempt 1)
+[ledger] 0x537ae0 MultiplayerSyncCommandClass::performAction_191 -> OK (attempt 1)
+[ledger] 0x537e80 CursorPositionCommandClass::performAction_193 -> OK (attempt 1)
+[ledger] 0x53e720 UI_Update -> OK (attempt 1)
+[ledger] 0x540c50 ObjectClass::sub_540C50 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x543a90 AbstractClass::COMStub_Ret176_12 -> OK (attempt 1)
+[ledger] 0x54df90 JumpjetLocomotionClass::CheckAttachStatus -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 13,
+  "COMPILE_FAIL": 2,
+  "MATCH": 5
+ },
+ "pathologies": {
+  "extern_reloc": 11,
+  "codegen_shape": 1,
+  "const_fold": 1
+ },
+ "match_rate_of_decided_pct": 27.8,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p21\batch_report.json

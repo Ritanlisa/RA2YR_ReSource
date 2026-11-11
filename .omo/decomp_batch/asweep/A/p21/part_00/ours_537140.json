@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_129@SidebarUpCommandClass@@QAEPADXZ",
+ "sym_key": "SidebarUpCommandClass::performAction_129",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aSidebarup@@3HA",
+   "sym_key": "aSidebarup"
+  }
+ ]
+}

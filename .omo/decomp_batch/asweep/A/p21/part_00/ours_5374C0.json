@@ -1,0 +1,15 @@
+{
+ "symbol": "?performAction_154@View3CommandClass@@QAEPADXZ",
+ "sym_key": "View3CommandClass::performAction_154",
+ "size": 6,
+ "link_base": 0,
+ "bytes_hex": "a100000000c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?aView3@@3HA",
+   "sym_key": "aView3"
+  }
+ ]
+}
