@@ -1,0 +1,302 @@
+[
+ {
+  "addr": "0x6c0490",
+  "name": "TClassFactory_BuildingLightClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VBuildingLightClass",
+  "emitted": "_TClassFactory_VBuildingLightClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0610",
+  "name": "TClassFactory_WaypointPathClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VWaypointPathClass",
+  "emitted": "_TClassFactory_VWaypointPathClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0790",
+  "name": "TClassFactory_TemporalClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VTemporalClass",
+  "emitted": "_TClassFactory_VTemporalClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0a90",
+  "name": "TClassFactory_SpawnManagerClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VSpawnManagerClass",
+  "emitted": "_TClassFactory_VSpawnManagerClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0c10",
+  "name": "TClassFactory_SlaveManagerClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VSlaveManagerClass",
+  "emitted": "_TClassFactory_VSlaveManagerClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c0f10",
+  "name": "TClassFactory_DiskLaserClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VDiskLaserClass",
+  "emitted": "_TClassFactory_VDiskLaserClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1090",
+  "name": "TClassFactory_ParasiteClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VParasiteClass",
+  "emitted": "_TClassFactory_VParasiteClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1210",
+  "name": "TClassFactory_BombClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VBombClass",
+  "emitted": "_TClassFactory_VBombClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1390",
+  "name": "TClassFactory_RadSiteClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VRadSiteClass",
+  "emitted": "_TClassFactory_VRadSiteClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1510",
+  "name": "TClassFactory_TEventClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VTEventClass",
+  "emitted": "_TClassFactory_VTEventClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1690",
+  "name": "TClassFactory_VoxelAnimTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VVoxelAnimTypeClass",
+  "emitted": "_TClassFactory_VVoxelAnimTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1810",
+  "name": "TClassFactory_VoxelAnimClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p197",
+  "unit": "_TClassFactory_VVoxelAnimClass",
+  "emitted": "_TClassFactory_VVoxelAnimClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1990",
+  "name": "TClassFactory_TActionClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTActionClass",
+  "emitted": "_TClassFactory_VTActionClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1b10",
+  "name": "TClassFactory_TriggerClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTriggerClass",
+  "emitted": "_TClassFactory_VTriggerClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1e10",
+  "name": "TClassFactory_ScriptClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VScriptClass",
+  "emitted": "_TClassFactory_VScriptClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c1f90",
+  "name": "TClassFactory_ScriptTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VScriptTypeClass",
+  "emitted": "_TClassFactory_VScriptTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2110",
+  "name": "TClassFactory_TagClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTagClass",
+  "emitted": "_TClassFactory_VTagClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2290",
+  "name": "TClassFactory_TagTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTagTypeClass",
+  "emitted": "_TClassFactory_VTagTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2410",
+  "name": "TClassFactory_TeamClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTeamClass",
+  "emitted": "_TClassFactory_VTeamClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ },
+ {
+  "addr": "0x6c2590",
+  "name": "TClassFactory_TeamTypeClass::GetSize",
+  "family": "RET_ARITY",
+  "path": "codegen_shape",
+  "size": 33,
+  "part": "p198",
+  "unit": "_TClassFactory_VTeamTypeClass",
+  "emitted": "_TClassFactory_VTeamTypeClass::GetSize",
+  "first_diff": {
+   "orig": "+4 test eax, eax",
+   "ours": "+4 mov edx, dword ptr [esp + 8]"
+  },
+  "ours_size": 33
+ }
+]
