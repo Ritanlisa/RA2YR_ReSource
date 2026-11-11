@@ -1,0 +1,11 @@
+{
+ "addr": "0x626660",
+ "name": "HashStringMod31",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x626660",
+ "bytes_hex": "8a1133c084d2741f568d34400fbed28d04b0be1f0000008d044299f7fe418bc28a1184d275e35ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

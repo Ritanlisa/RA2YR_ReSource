@@ -1,0 +1,11 @@
+{
+ "addr": "0x69DFC0",
+ "name": "SidebarClass::startButtonFlash",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x69DFC0",
+ "bytes_hex": "8b413885c0751c8b4424048b54240889413803c289413c8a44240c884134b001c20c0032c0c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

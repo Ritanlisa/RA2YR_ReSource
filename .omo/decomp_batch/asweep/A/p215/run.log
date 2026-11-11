@@ -1,0 +1,100 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p215\part_00
+=== convert (20 addrs) ===
+[conv] 0x55f690 ObjectClass::CheckNetworkSync -> ObjectClass
+[conv] 0x5b36b0 MissionClass::COMStub_126 -> MissionClass
+[conv] 0x626660 HashStringMod31 -> _addr_62
+[conv] 0x646d20 sub_646D20 -> _addr_64
+[conv] 0x646dc0 sub_646DC0 -> _addr_64
+[conv] 0x656e90 RadarClass::SetFlag -> RadarClass
+[conv] 0x65a1b0 ObjectClass::Render_Render_65A1B0 -> ObjectClass
+[conv] 0x6638e0 ObjectClass::sub_6638E0 -> ObjectClass
+[conv] 0x69dfc0 SidebarClass::startButtonFlash -> SidebarClass
+[conv] 0x6b4410 _VectorClass_UUndoInfoStruct::Clear -> _VectorClass_UUndoInfoStruct
+[conv] 0x763f60 _VectorClass_VWaypointClass::fireSuperWeapon -> _VectorClass_VWaypointClass
+[conv] 0x767f80 MSFrameAnim::UpdateFrame -> MSFrameAnim
+[conv] 0x769d30 _VectorClass_VCentroid_WorldDominationTour::Seek -> _VectorClass_VCentroid_WorldDominationTour
+[conv] 0x7c91a5 CIpow_Helper_Helper -> CIpow_Helper
+[conv] 0x7d58c8 ObjectClass::_store_dt -> ObjectClass
+[conv] 0x775940 Dialog::FindByHandle -> Dialog
+[conv] 0x42d510 CellStruct::Add -> CellStruct
+[conv] 0x42f3f0 _VectorClass_VBaseNodeClass::Seek -> _VectorClass_VBaseNodeClass
+[conv] 0x4726c0 CaptureManagerClass::IsOverloading -> CaptureManagerClass
+[conv] 0x4d2980 _VectorClass_UDrawRecord_FoggedObjectClass::Seek -> _VectorClass_UDrawRecord_FoggedObjectClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] ObjectClass              rc=2
+[era] MissionClass             rc=0
+[era] _addr_62                 rc=0
+[era] _addr_64                 rc=0
+[era] RadarClass               rc=0
+[era] SidebarClass             rc=0
+[era] _VectorClass_UUndoInfoStruct rc=0
+[era] _VectorClass_VWaypointClass rc=0
+[era] MSFrameAnim              rc=0
+[era] _VectorClass_VCentroid_WorldDominationTour rc=0
+[era] CIpow_Helper             rc=2
+[era] Dialog                   rc=0
+[era] CellStruct               rc=2
+[era] _VectorClass_VBaseNodeClass rc=0
+[era] CaptureManagerClass      rc=0
+[era] _VectorClass_UDrawRecord_FoggedObjectClass rc=0
+=== diffasm byte-compare ===
+[diff] 0x55f690   MISMATCH         ObjectClass::CheckNetworkSync
+[diff] 0x65a1b0   MATCH            ObjectClass::Render_Render_65A1B0
+[diff] 0x7d58c8   MISMATCH         ObjectClass::_store_dt
+[diff] 0x5b36b0   MISMATCH         MissionClass::COMStub_126
+[diff] 0x626660   MISMATCH         HashStringMod31
+[diff] 0x646d20   MATCH            sub_646D20
+[diff] 0x646dc0   MATCH            sub_646DC0
+[diff] 0x656e90   MISMATCH         RadarClass::SetFlag
+[diff] 0x69dfc0   MISMATCH         SidebarClass::startButtonFlash
+[diff] 0x6b4410   MISMATCH         _VectorClass_UUndoInfoStruct::Clear
+[diff] 0x763f60   MISMATCH         _VectorClass_VWaypointClass::fireSuperWeapon
+[diff] 0x767f80   MISMATCH         MSFrameAnim::UpdateFrame
+[diff] 0x769d30   MISMATCH         _VectorClass_VCentroid_WorldDominationTour::Seek
+[diff] 0x775940   MISMATCH         Dialog::FindByHandle
+[diff] 0x42f3f0   MATCH            _VectorClass_VBaseNodeClass::Seek
+[diff] 0x4726c0   MISMATCH         CaptureManagerClass::IsOverloading
+[diff] 0x4d2980   MATCH            _VectorClass_UDrawRecord_FoggedObjectClass::Seek
+[ledger] 0x55f690 ObjectClass::CheckNetworkSync -> NG (attempt 1)
+[ledger] 0x5b36b0 MissionClass::COMStub_126 -> NG (attempt 1)
+[ledger] 0x626660 HashStringMod31 -> NG (attempt 1)
+[ledger] 0x646d20 sub_646D20 -> OK (attempt 1)
+[ledger] 0x646dc0 sub_646DC0 -> OK (attempt 1)
+[ledger] 0x656e90 RadarClass::SetFlag -> NG (attempt 1)
+[ledger] 0x65a1b0 ObjectClass::Render_Render_65A1B0 -> OK (attempt 1)
+[ledger] 0x6638e0 ObjectClass::sub_6638E0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69dfc0 SidebarClass::startButtonFlash -> NG (attempt 1)
+[ledger] 0x6b4410 _VectorClass_UUndoInfoStruct::Clear -> NG (attempt 1)
+[ledger] 0x763f60 _VectorClass_VWaypointClass::fireSuperWeapon -> NG (attempt 1)
+[ledger] 0x767f80 MSFrameAnim::UpdateFrame -> NG (attempt 1)
+[ledger] 0x769d30 _VectorClass_VCentroid_WorldDominationTour::Seek -> NG (attempt 1)
+[ledger] 0x7c91a5 CIpow_Helper_Helper -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7d58c8 ObjectClass::_store_dt -> NG (attempt 1)
+[ledger] 0x775940 Dialog::FindByHandle -> NG (attempt 1)
+[ledger] 0x42d510 CellStruct::Add -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42f3f0 _VectorClass_VBaseNodeClass::Seek -> OK (attempt 1)
+[ledger] 0x4726c0 CaptureManagerClass::IsOverloading -> NG (attempt 1)
+[ledger] 0x4d2980 _VectorClass_UDrawRecord_FoggedObjectClass::Seek -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 12,
+  "MATCH": 5,
+  "COMPILE_FAIL": 3
+ },
+ "pathologies": {
+  "codegen_shape": 8,
+  "branch_order": 2,
+  "branch_polarity": 1,
+  "signedness": 1
+ },
+ "match_rate_of_decided_pct": 29.4,
+ "match_rate_of_total_pct": 25.0,
+ "rule_violation_fns": 4,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p215\batch_report.json

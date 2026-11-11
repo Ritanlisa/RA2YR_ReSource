@@ -1,0 +1,21 @@
+{
+ "symbol": "?FindByHandle@Dialog@@QAEHXZ",
+ "sym_key": "Dialog::FindByHandle",
+ "size": 53,
+ "link_base": 0,
+ "bytes_hex": "a100000000568d50ff8b34d52c2db7008d04d52c2db7003bce740d4a78138b70f883e8083bce75f38b04d5000000005ec333c05ec3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?g_DialogTrackingList@@3IA",
+   "sym_key": "g_DialogTrackingList"
+  },
+  {
+   "off": 43,
+   "type": "DIR32",
+   "sym": "?stru_B72D28@@3PADA",
+   "sym_key": "stru_B72D28"
+  }
+ ]
+}

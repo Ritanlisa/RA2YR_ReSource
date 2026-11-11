@@ -1,0 +1,11 @@
+{
+ "addr": "0x775940",
+ "name": "Dialog::FindByHandle",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x775940",
+ "bytes_hex": "a1502fb7004885c07c138d14c52c2db7003b0a740b4883ea0885c07df433c0c38b04c5282db700c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

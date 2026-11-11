@@ -1,0 +1,8 @@
+{
+ "symbol": "?Seek@_VectorClass_VCentroid_WorldDominationTour@@QAEPAIPAHH@Z",
+ "sym_key": "_VectorClass_VCentroid_WorldDominationTour::Seek",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b49048d04408b14818d0c818b44240489108b51048950048b4908894808c20800",
+ "relocs": []
+}

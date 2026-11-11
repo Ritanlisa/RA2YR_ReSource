@@ -1,0 +1,8 @@
+{
+ "symbol": "?startButtonFlash@SidebarClass@@QAEDHHD@Z",
+ "sym_key": "SidebarClass::startButtonFlash",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b413885c0740532c0c20c008b4424048b54240889413803c289413c8a44240c884134b001c20c00",
+ "relocs": []
+}

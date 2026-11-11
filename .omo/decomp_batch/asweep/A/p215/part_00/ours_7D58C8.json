@@ -1,0 +1,8 @@
+{
+ "symbol": "?_store_dt@ObjectClass@@QAEPAEPAEH@Z",
+ "sym_key": "ObjectClass::_store_dt",
+ "size": 54,
+ "link_base": 0,
+ "bytes_hex": "568b74240cb8676666668b4c2408f7eec1fa028bc2c1e81f03d08bc680c230be0a000000881199f7fe8d41025e80c230885101c20800",
+ "relocs": []
+}

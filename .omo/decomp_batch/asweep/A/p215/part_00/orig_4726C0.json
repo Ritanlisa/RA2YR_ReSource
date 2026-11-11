@@ -1,0 +1,11 @@
+{
+ "addr": "0x4726C0",
+ "name": "CaptureManagerClass::IsOverloading",
+ "size": 41,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4726C0",
+ "bytes_hex": "8a414084c0741d8b41348b513c3bc27e138b41448b54240485c00f9fc1880ab001c2040032c0c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

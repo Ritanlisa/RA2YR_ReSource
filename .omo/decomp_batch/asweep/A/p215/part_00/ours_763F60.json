@@ -1,0 +1,8 @@
+{
+ "symbol": "?fireSuperWeapon@_VectorClass_VWaypointClass@@QAEPAIPAHH@Z",
+ "sym_key": "_VectorClass_VWaypointClass::fireSuperWeapon",
+ "size": 37,
+ "link_base": 0,
+ "bytes_hex": "8b4424088b49048d04408b14818d0c818b44240489108b51048950048b4908894808c20800",
+ "relocs": []
+}

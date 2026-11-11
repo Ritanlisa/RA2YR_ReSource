@@ -1,0 +1,15 @@
+{
+ "symbol": "?sub_646D20@@YAPAIXZ",
+ "sym_key": "Unnamed::sub_646D20",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "b800000000ba0700000033c9c740f8ffffffff8948fc890889480489480889480c83c0184a75e5c3",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AFA280@@3EA",
+   "sym_key": "DataGlobal_AFA280"
+  }
+ ]
+}

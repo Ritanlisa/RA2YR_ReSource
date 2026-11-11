@@ -1,0 +1,8 @@
+{
+ "symbol": "?Seek@_VectorClass_VBaseNodeClass@@QAEHHH@Z",
+ "sym_key": "_VectorClass_VBaseNodeClass::Seek",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8b5424088b4104c1e20403d08b4424048b0a89088b4a048948048a4a088848088b520c89500cc20800",
+ "relocs": []
+}

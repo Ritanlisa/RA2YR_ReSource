@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetFlag@RadarClass@@QAEHD@Z",
+ "sym_key": "RadarClass::SetFlag",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8a91da140000b80100000084d28881d9140000750b8a54240433c084d20f95c08881da140000c20400",
+ "relocs": []
+}

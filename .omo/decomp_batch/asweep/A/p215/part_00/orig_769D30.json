@@ -1,0 +1,11 @@
+{
+ "addr": "0x769D30",
+ "name": "Map_WorldDominationTour_43::Seek",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x769D30",
+ "bytes_hex": "8b4424088b4904568d04408d14818b4424088bc88b3289318b72048971045e8b5208895108c20800",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

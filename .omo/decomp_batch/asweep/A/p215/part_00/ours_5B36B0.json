@@ -1,0 +1,8 @@
+{
+ "symbol": "?COMStub_126@MissionClass@@QAEDXZ",
+ "sym_key": "MissionClass::COMStub_126",
+ "size": 40,
+ "link_base": 0,
+ "bytes_hex": "8b81b000000083f8ff750332c0c38981ac000000c781b0000000ffffffffc681b800000000b001c3",
+ "relocs": []
+}

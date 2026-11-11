@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsOverloading@CaptureManagerClass@@QAEDPA_N@Z",
+ "sym_key": "CaptureManagerClass::IsOverloading",
+ "size": 41,
+ "link_base": 0,
+ "bytes_hex": "8a414084c0741d8b41348b513c3bc276138b41448b54240485c00f9fc1880ab001c2040032c0c20400",
+ "relocs": []
+}

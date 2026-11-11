@@ -1,0 +1,11 @@
+{
+ "addr": "0x656E90",
+ "name": "RadarClass::SetFlag",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x656E90",
+ "bytes_hex": "8a91da140000b80100000084d28881d9140000750a8a54240484d2750233c08881da140000c20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

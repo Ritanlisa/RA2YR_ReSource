@@ -1,0 +1,11 @@
+{
+ "addr": "0x767F80",
+ "name": "MSFrameAnim::UpdateFrame",
+ "size": 40,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x767F80",
+ "bytes_hex": "8b442404538bd833c933d256890bbe8002000057bfe0010000895304897308897b0c5f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
