@@ -1,0 +1,255 @@
+{
+ "symbol": "?RenderFrame@Voxel@@QAEPAMXZ",
+ "sym_key": "Voxel::RenderFrame",
+ "size": 662,
+ "link_base": 0,
+ "bytes_hex": "83ec30a100000000894c24108b0d00000000535533ed03c18b150000000089442410a100000000896c241403c2df6c24108b0d000000008b150000000089442410896c2414dc0d0000000003d1a1000000005633f63bc557d95c2424df6c241889542418896c241cdc0d00000000d95c2428df6c2418dc0d00000000d95c242c7620bf000000008d4424245057e800000000a10000000083c4084683c7483bf072e5a1000000003bc5761aba00000000b9000000008bf0890a81c18800000083c2044e75f28d48ff3bcd7e47bb01000000bf000000003bd87d2b2bc38d4f048be88b178b31d94224d94624ded9dfe0f6c40174048937891183c1044d75e3a10000000033ed438d48ff83c7048d53ff3bd17cc3392d0000000074253bcd7c488d348d24d8b2008d79018b068d4c242451508b08e80000000083ee044f75ebeb2733f63bc57e21bf000000008b078d54242452508b08e800000000a1000000004683c7043bf072e4a1000000008b1d000000002bc3896c241c8944241883ec08df6c2420dd1c24e8000000008b0d000000008bd8a100000000896c24242bc1895c241889442420df6c2420dd1c24e800000000d94424188bf8e80000000050e800000000992bc2be80000000d1f82bf08bc7992bc283c3088d4f08bf7c000000d1f8895c241c83ee04d944241c2bf8894c2420893d00000000893500000000891d00000000890d00000000e80000000050e800000000d944243499dd5c24082bc283c4088bd8d1fbe800000000d94424302bc3dd1c2489442420e8000000008b4c24208bd8d944241c894c242ce80000000050e800000000992bc28b54241cd1f883c40c2bd88b442414895c242889542434894424388974242c897c2430b9060000008b4424208d7424248bf8f3a55f5e5d5b83c430c3",
+ "relocs": [
+  {
+   "off": 4,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D948@@3IA",
+   "sym_key": "DataGlobal_B2D948"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E0@@3IA",
+   "sym_key": "DataGlobal_B2D5E0"
+  },
+  {
+   "off": 26,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E4@@3IA",
+   "sym_key": "DataGlobal_B2D5E4"
+  },
+  {
+   "off": 35,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D94C@@3IA",
+   "sym_key": "DataGlobal_B2D94C"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E8@@3IA",
+   "sym_key": "DataGlobal_B2D5E8"
+  },
+  {
+   "off": 57,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D950@@3IA",
+   "sym_key": "DataGlobal_B2D950"
+  },
+  {
+   "off": 71,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 78,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB70@@3IA",
+   "sym_key": "DataGlobal_B2FB70"
+  },
+  {
+   "off": 106,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 120,
+   "type": "DIR32",
+   "sym": "__real@8@3ffe8000000000000000",
+   "sym_key": "_real@8@3ffe8000000000000000"
+  },
+  {
+   "off": 131,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B3FF78@@3EA",
+   "sym_key": "DataGlobal_B3FF78"
+  },
+  {
+   "off": 142,
+   "type": "REL32",
+   "sym": "?InitializeTileAudioOcclusion@@YAHPAX0@Z",
+   "sym_key": "InitializeTileAudioOcclusion"
+  },
+  {
+   "off": 147,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB70@@3IA",
+   "sym_key": "DataGlobal_B2FB70"
+  },
+  {
+   "off": 163,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D820@@3IA",
+   "sym_key": "DataGlobal_B2D820"
+  },
+  {
+   "off": 172,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D824@@3EA",
+   "sym_key": "DataGlobal_B2D824"
+  },
+  {
+   "off": 177,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D958@@3EA",
+   "sym_key": "DataGlobal_B2D958"
+  },
+  {
+   "off": 210,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D824@@3EA",
+   "sym_key": "DataGlobal_B2D824"
+  },
+  {
+   "off": 255,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D820@@3IA",
+   "sym_key": "DataGlobal_B2D820"
+  },
+  {
+   "off": 277,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B43180@@3IA",
+   "sym_key": "DataGlobal_B43180"
+  },
+  {
+   "off": 308,
+   "type": "REL32",
+   "sym": "?ProcessColor@Voxel@@QAEHPAX0@Z",
+   "sym_key": "Voxel::ProcessColor"
+  },
+  {
+   "off": 327,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D824@@3EA",
+   "sym_key": "DataGlobal_B2D824"
+  },
+  {
+   "off": 342,
+   "type": "REL32",
+   "sym": "?ProcessColor@Voxel@@QAEHPAX0@Z",
+   "sym_key": "Voxel::ProcessColor"
+  },
+  {
+   "off": 347,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D820@@3IA",
+   "sym_key": "DataGlobal_B2D820"
+  },
+  {
+   "off": 360,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D948@@3IA",
+   "sym_key": "DataGlobal_B2D948"
+  },
+  {
+   "off": 366,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E0@@3IA",
+   "sym_key": "DataGlobal_B2D5E0"
+  },
+  {
+   "off": 391,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 397,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D5E4@@3IA",
+   "sym_key": "DataGlobal_B2D5E4"
+  },
+  {
+   "off": 404,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2D94C@@3IA",
+   "sym_key": "DataGlobal_B2D94C"
+  },
+  {
+   "off": 430,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 441,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 447,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 500,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB64@@3IA",
+   "sym_key": "DataGlobal_B2FB64"
+  },
+  {
+   "off": 506,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB60@@3IA",
+   "sym_key": "DataGlobal_B2FB60"
+  },
+  {
+   "off": 512,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB68@@3IA",
+   "sym_key": "DataGlobal_B2FB68"
+  },
+  {
+   "off": 518,
+   "type": "DIR32",
+   "sym": "?DataGlobal_B2FB6C@@3IA",
+   "sym_key": "DataGlobal_B2FB6C"
+  },
+  {
+   "off": 523,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 529,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  },
+  {
+   "off": 552,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 570,
+   "type": "REL32",
+   "sym": "?Math__RoundToInt@@YA_JN@Z",
+   "sym_key": "Math__RoundToInt"
+  },
+  {
+   "off": 589,
+   "type": "REL32",
+   "sym": "__ftol",
+   "sym_key": "_ftol"
+  },
+  {
+   "off": 595,
+   "type": "REL32",
+   "sym": "?SLODWORD@@YAHHZZ",
+   "sym_key": "SLODWORD"
+  }
+ ]
+}

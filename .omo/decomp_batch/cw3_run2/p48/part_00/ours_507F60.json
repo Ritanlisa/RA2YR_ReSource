@@ -1,0 +1,45 @@
+{
+ "symbol": "?CollectAircraftBuildCandidates@HouseClass@@QAEHHH@Z",
+ "sym_key": "HouseClass::CollectAircraftBuildCandidates",
+ "size": 295,
+ "link_base": 0,
+ "bytes_hex": "83ec0c5355568bf157897424188b4e3481c198000000e8000000008ac88b463433dbbd01000000895c24148b80bc000000d3e53bc3742183f801750e8b0d400200008db970090000eb198b15400200008dba8c090000eb0ba1400200008db8540900008b47104889442410786f8b0f5057ff51188bf085aecc06000074518b4424188b96340600003b90d4010000773f8b862c15000085c07e358b4424248b4810515056e80000000084c0742285db7c148b4424146a008d5424186a0a52ff500884c0740a8d049d000000004389308b44241048894424107802eb918b7424208d4c241433c03bf1894604894608c6460c0188460d890674128bcee80000000033c089460889460488460d895e10c746140a000000c706000000008bc65f5e5d5b83c40cc20800",
+ "relocs": [
+  {
+   "off": 23,
+   "type": "REL32",
+   "sym": "?FindByName@SuperWeaponTypeClass@@QAEHXZ",
+   "sym_key": "SuperWeaponTypeClass::FindByName"
+  },
+  {
+   "off": 62,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 76,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 89,
+   "type": "DIR32",
+   "sym": "?DSurface_ViewBounds@@3IA",
+   "sym_key": "DSurface_ViewBounds"
+  },
+  {
+   "off": 165,
+   "type": "REL32",
+   "sym": "?HouseClass__PrerequisitesForTechnoTypeAreListed@@YGDHHH@Z",
+   "sym_key": "HouseClass__PrerequisitesForTechnoTypeAreListed"
+  },
+  {
+   "off": 252,
+   "type": "REL32",
+   "sym": "?Cleanup4@VectorClass@@QAEXXZ",
+   "sym_key": "VectorClass::Cleanup4"
+  }
+ ]
+}

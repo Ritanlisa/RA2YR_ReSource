@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x773e90",
+  "name": "WebBrowser::ShowDialog",
+  "cls": null,
+  "size": 478,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2079",
+  "first_msg": "'Rect' uses undefined struct 'tagRECT'"
+ },
+ {
+  "addr": "0x507f60",
+  "name": "HouseClass::CollectAircraftBuildCandidates",
+  "cls": null,
+  "size": 481,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x457aa0",
+  "name": "BuildingClass::CreateFoggedObjects",
+  "cls": null,
+  "size": 483,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'int (void *,void *)' : cannot convert parameter 1 from 'int' to 'void *'"
+ },
+ {
+  "addr": "0x512290",
+  "name": "HouseTypeClass::SaveLoad_Prefix",
+  "cls": null,
+  "size": 485,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x4fc9e0",
+  "name": "HouseClass::CheckWinCondition",
+  "cls": null,
+  "size": 487,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x7712c0",
+  "name": "ScoreScreen::RemoveItem",
+  "cls": null,
+  "size": 490,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2228",
+  "first_msg": "left of '.DeleteAndZero_field_0x08' must have class/struct/union type"
+ },
+ {
+  "addr": "0x565800",
+  "name": "MapClass::Destru_vt05",
+  "cls": null,
+  "size": 493,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2109",
+  "first_msg": "subscript requires array or pointer type"
+ },
+ {
+  "addr": "0x50a150",
+  "name": "HouseClass::Fire_PsyDom",
+  "cls": null,
+  "size": 497,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x610950",
+  "name": "TriggerClass::FindByEventType",
+  "cls": null,
+  "size": 500,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned int *'"
+ },
+ {
+  "addr": "0x528c00",
+  "name": "INIClass::ReadString",
+  "cls": null,
+  "size": 502,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'BinarySearchAlt' : cannot convert parameter 1 from 'int *' to 'int'"
+ },
+ {
+  "addr": "0x5098f0",
+  "name": "HouseClass::UpdateAITryFireSW",
+  "cls": null,
+  "size": 504,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2065",
+  "first_msg": "'DynamicVectorClass' : undeclared identifier"
+ },
+ {
+  "addr": "0x5a33f0",
+  "name": "GenerateTerrainHeightMapInternal",
+  "cls": null,
+  "size": 507,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2102",
+  "first_msg": "'&' requires l-value"
+ },
+ {
+  "addr": "0x7cf125",
+  "name": "_usepowhlp",
+  "cls": null,
+  "size": 510,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x689470",
+  "name": "ScenarioClass::SaveLoad_Prefix_0",
+  "cls": null,
+  "size": 511,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2446",
+  "first_msg": "'!=' : no conversion from 'const int' to 'class ScenarioClass *const '"
+ },
+ {
+  "addr": "0x5cca20",
+  "name": "MSVQAnim::Construct",
+  "cls": null,
+  "size": 513,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x738680",
+  "name": "TechnoClass::CreateDeathAnim",
+  "cls": null,
+  "size": 516,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing ')' before 'this'"
+ },
+ {
+  "addr": "0x5f4520",
+  "name": "ObjectClass::HandleSelection",
+  "cls": null,
+  "size": 517,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2440",
+  "first_msg": "'=' : cannot convert from 'void *' to 'unsigned char *'"
+ },
+ {
+  "addr": "0x5c6dd0",
+  "name": "MultiplyAddBigInteger",
+  "cls": null,
+  "size": 519,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2110",
+  "first_msg": "cannot add two pointers"
+ },
+ {
+  "addr": "0x754510",
+  "name": "Voxel::RenderFrame",
+  "cls": null,
+  "size": 521,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2106",
+  "first_msg": "'=' : left operand must be l-value"
+ },
+ {
+  "addr": "0x5f5940",
+  "name": "ObjectClass::ParachuteDrop",
+  "cls": null,
+  "size": 524,
+  "family": "cw3_D",
+  "layer": "D",
+  "first_code": "C2664",
+  "first_msg": "'IsCoordVisibleMap' : cannot convert parameter 1 from 'class ObjectClass *' to 'int'"
+ }
+]
