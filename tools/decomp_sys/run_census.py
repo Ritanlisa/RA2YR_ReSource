@@ -61,6 +61,8 @@ def main():
     ap.add_argument("--no-commit", action="store_true")
     ap.add_argument("--timeout", type=int, default=1800,
                     help="per-part timeout seconds (default 1800)")
+    ap.add_argument("--max-parts", type=int, default=0,
+                    help="stop after N outstanding parts (blocked progress)")
     args = ap.parse_args()
 
     outroot = os.path.join(ROOT, ".omo", "decomp_batch", args.run)
@@ -85,6 +87,8 @@ def main():
         if os.path.exists(os.path.join(pdir, "part_00", "part_report.json")):
             continue
         todo.append((L, pi, ents))
+    if args.max_parts:
+        todo = todo[:args.max_parts]
     print("[plan] %d parts total, %d to run (%d functions)"
           % (len(plan), len(todo), sum(len(e) for _, _, e in todo)))
 
@@ -98,7 +102,13 @@ def main():
         os.makedirs(pdir, exist_ok=True)
         log_path = os.path.join(pdir, "run.log")
         cmd = [sys.executable, BATCH_RUN, "--batch", part_file,
-               "--out", pdir, "--chunk", str(args.chunk), "--resume"]
+               "--out", pdir, "--chunk", str(args.chunk)]
+        # NOTE (asweep, 2026-11-12): batch_run's --resume folds the ENTIRE
+        # results.jsonl history into the per-part batch_report.json (merged =
+        # done + part), which turned a 20-fn part report into a 1.7MB
+        # cumulative dump -> repo bloat over 266 committed parts.  Part-level
+        # resume via part_report.json existence is the authoritative cached
+        # check; omit --resume so each part report covers only its own part.
         print("[part %d/%d] %s (%d fns) ..." %
               (idx + 1, len(todo), tag, len(ents)), flush=True)
         t0 = time.time()
