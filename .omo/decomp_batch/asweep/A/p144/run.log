@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p144\part_00
+=== convert (20 addrs) ===
+[conv] 0x72a8e0 sub_72A8E0 -> _addr_72
+[conv] 0x72a940 sub_72A940 -> _addr_72
+[conv] 0x746400 TechnoClass::processParasiteAttachment -> TechnoClass
+[conv] 0x77ce30 sub_77CE30 -> _addr_77
+[conv] 0x7c3670 TechnoClass::sub_7C3670 -> TechnoClass
+[conv] 0x40af80 sub_40AF80 -> _addr_40
+[conv] 0x40bd50 sub_40BD50 -> _addr_40
+[conv] 0x40c780 sub_40C780 -> _addr_40
+[conv] 0x40cf80 sub_40CF80 -> _addr_40
+[conv] 0x40da00 sub_40DA00 -> _addr_40
+[conv] 0x40da80 sub_40DA80 -> _addr_40
+[conv] 0x40dc90 sub_40DC90 -> _addr_40
+[conv] 0x40ec10 sub_40EC10 -> _addr_40
+[conv] 0x40f220 sub_40F220 -> _addr_40
+[conv] 0x40ff40 sub_40FF40 -> _addr_40
+[conv] 0x410150 sub_410150 -> _addr_41
+[conv] 0x410cc0 sub_410CC0 -> _addr_41
+[conv] 0x411680 sub_411680 -> _addr_41
+[conv] 0x412850 sub_412850 -> _addr_41
+[conv] 0x413cb0 sub_413CB0 -> _addr_41
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_72                 rc=0
+[era] TechnoClass              rc=0
+[era] _addr_77                 rc=0
+[era] _addr_40                 rc=0
+[era] _addr_41                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x72a8e0   MISMATCH         sub_72A8E0
+[diff] 0x72a940   MISMATCH         sub_72A940
+[diff] 0x746400   MATCH            TechnoClass::processParasiteAttachment
+[diff] 0x7c3670   MATCH            TechnoClass::sub_7C3670
+[diff] 0x77ce30   MATCH            sub_77CE30
+[diff] 0x40af80   MATCH            sub_40AF80
+[diff] 0x40bd50   MATCH            sub_40BD50
+[diff] 0x40c780   MATCH            sub_40C780
+[diff] 0x40cf80   MATCH            sub_40CF80
+[diff] 0x40da00   MATCH            sub_40DA00
+[diff] 0x40da80   MATCH            sub_40DA80
+[diff] 0x40dc90   MATCH            sub_40DC90
+[diff] 0x40ec10   MATCH            sub_40EC10
+[diff] 0x40f220   MATCH            sub_40F220
+[diff] 0x40ff40   MATCH            sub_40FF40
+[diff] 0x410150   MATCH            sub_410150
+[diff] 0x410cc0   MATCH            sub_410CC0
+[diff] 0x411680   MATCH            sub_411680
+[diff] 0x412850   MATCH            sub_412850
+[diff] 0x413cb0   MATCH            sub_413CB0
+[ledger] 0x72a8e0 sub_72A8E0 -> NG (attempt 1)
+[ledger] 0x72a940 sub_72A940 -> NG (attempt 1)
+[ledger] 0x746400 TechnoClass::processParasiteAttachment -> OK (attempt 1)
+[ledger] 0x77ce30 sub_77CE30 -> OK (attempt 1)
+[ledger] 0x7c3670 TechnoClass::sub_7C3670 -> OK (attempt 1)
+[ledger] 0x40af80 sub_40AF80 -> OK (attempt 1)
+[ledger] 0x40bd50 sub_40BD50 -> OK (attempt 1)
+[ledger] 0x40c780 sub_40C780 -> OK (attempt 1)
+[ledger] 0x40cf80 sub_40CF80 -> OK (attempt 1)
+[ledger] 0x40da00 sub_40DA00 -> OK (attempt 1)
+[ledger] 0x40da80 sub_40DA80 -> OK (attempt 1)
+[ledger] 0x40dc90 sub_40DC90 -> OK (attempt 1)
+[ledger] 0x40ec10 sub_40EC10 -> OK (attempt 1)
+[ledger] 0x40f220 sub_40F220 -> OK (attempt 1)
+[ledger] 0x40ff40 sub_40FF40 -> OK (attempt 1)
+[ledger] 0x410150 sub_410150 -> OK (attempt 1)
+[ledger] 0x410cc0 sub_410CC0 -> OK (attempt 1)
+[ledger] 0x411680 sub_411680 -> OK (attempt 1)
+[ledger] 0x412850 sub_412850 -> OK (attempt 1)
+[ledger] 0x413cb0 sub_413CB0 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 2,
+  "MATCH": 18
+ },
+ "pathologies": {
+  "extern_reloc": 2
+ },
+ "match_rate_of_decided_pct": 90.0,
+ "match_rate_of_total_pct": 90.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p144\batch_report.json

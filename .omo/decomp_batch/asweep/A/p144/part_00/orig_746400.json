@@ -1,0 +1,11 @@
+{
+ "addr": "0x746400",
+ "name": "TechnoClass::processParasiteAttachment",
+ "size": 22,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x746400",
+ "bytes_hex": "8b81c406000033c98a901b0e000084d20f94c18ac1c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
