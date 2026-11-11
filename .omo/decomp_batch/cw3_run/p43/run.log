@@ -1,0 +1,82 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p43\part_00
+=== convert (20 addrs) ===
+[conv] 0x5239d0 InfantryClass::DTOR -> InfantryClass
+[conv] 0x7daf28 ___getlocaleinfo -> _addr_7D
+[conv] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> MSOverlayAnim
+[conv] 0x427940 LoadBuildingTypeClassTheatreSHP -> _addr_42
+[conv] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> MSFadeAnim
+[conv] 0x71c930 TerrainClass::ApplyCellModifications -> TerrainClass
+[conv] 0x779f10 ObjectClass::SavePersonaConfigWOL -> ObjectClass
+[conv] 0x779dd0 ObjectClass::LoadConfigWOL -> ObjectClass
+[conv] 0x5f4730 IUnknown::GetPlacementScreenRect -> IUnknown
+[conv] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> ObjectClass
+[conv] 0x459470 BuildingClass::UpdateDamageAnim -> BuildingClass
+[conv] 0x4a8bf0 MouseClass::SetBounds -> MouseClass
+[conv] 0x4a8d50 MIXClass::CopyHeader -> MIXClass
+[conv] 0x722af0 BuildingClass::AddOccupancy -> BuildingClass
+[conv] 0x634cc0 ScriptAction::FindBuildingMatch -> ScriptAction
+[conv] 0x52d640 CampaignMenu::DlgProc -> CampaignMenu
+[conv] 0x5fc380 Object::SpawnAtCell -> Object
+[conv] 0x722d00 BuildingClass::ClearOccupancyData -> BuildingClass
+[conv] 0x545000 TheatreClass::InitView -> TheatreClass
+[conv] 0x524d70 InfantryTypeClass::ddtor -> InfantryTypeClass
+=== emit 16 units ===
+=== rule self-check ===
+=== era compile ===
+[era] InfantryClass            rc=2
+[era] _addr_7D                 rc=2
+[era] MSOverlayAnim            rc=2
+[era] _addr_42                 rc=2
+[era] MSFadeAnim               rc=2
+[era] TerrainClass             rc=2
+[era] ObjectClass              rc=2
+[era] IUnknown                 rc=2
+[era] BuildingClass            rc=2
+[era] MouseClass               rc=2
+[era] MIXClass                 rc=2
+[era] ScriptAction             rc=2
+[era] CampaignMenu             rc=2
+[era] Object                   rc=2
+[era] TheatreClass             rc=2
+[era] InfantryTypeClass        rc=0
+=== diffasm byte-compare ===
+[diff] 0x722d00   MISMATCH         BuildingClass::ClearOccupancyData
+[diff] 0x524d70   MISMATCH         InfantryTypeClass::ddtor
+[ledger] 0x5239d0 InfantryClass::DTOR -> COMPILE_FAIL (attempt 2)
+[ledger] 0x7daf28 ___getlocaleinfo -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5cc550 MSOverlayAnim::DrawPlacementPreview -> COMPILE_FAIL (attempt 10)
+[ledger] 0x427940 LoadBuildingTypeClassTheatreSHP -> COMPILE_FAIL (attempt 3)
+[ledger] 0x5cc110 MSFadeAnim::DrawConstructionFrame -> COMPILE_FAIL (attempt 10)
+[ledger] 0x71c930 TerrainClass::ApplyCellModifications -> COMPILE_FAIL (attempt 2)
+[ledger] 0x779f10 ObjectClass::SavePersonaConfigWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x779dd0 ObjectClass::LoadConfigWOL -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5f4730 IUnknown::GetPlacementScreenRect -> COMPILE_FAIL (attempt 10)
+[ledger] 0x76e2f0 ObjectClass::Team_Start_76E2F0 -> COMPILE_FAIL (attempt 2)
+[ledger] 0x459470 BuildingClass::UpdateDamageAnim -> COMPILE_FAIL (attempt 2)
+[ledger] 0x4a8bf0 MouseClass::SetBounds -> COMPILE_FAIL (attempt 10)
+[ledger] 0x4a8d50 MIXClass::CopyHeader -> COMPILE_FAIL (attempt 12)
+[ledger] 0x722af0 BuildingClass::AddOccupancy -> COMPILE_FAIL (attempt 2)
+[ledger] 0x634cc0 ScriptAction::FindBuildingMatch -> COMPILE_FAIL (attempt 2)
+[ledger] 0x52d640 CampaignMenu::DlgProc -> COMPILE_FAIL (attempt 2)
+[ledger] 0x5fc380 Object::SpawnAtCell -> COMPILE_FAIL (attempt 2)
+[ledger] 0x722d00 BuildingClass::ClearOccupancyData -> NG (attempt 2)
+[ledger] 0x545000 TheatreClass::InitView -> COMPILE_FAIL (attempt 2)
+[ledger] 0x524d70 InfantryTypeClass::ddtor -> NG (attempt 2)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 18,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\cw3_run\p43\batch_report.json

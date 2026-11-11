@@ -1,0 +1,75 @@
+{
+ "symbol": "?ddtor@InfantryTypeClass@@QAEHD@Z",
+ "sym_key": "InfantryTypeClass::ddtor",
+ "size": 218,
+ "link_base": 0,
+ "bytes_hex": "83ec0853568bf133dbba01000000891e895e04895e08895e0ce8000000008b0d000000008d44240850680000000089742410ff511083f8ff742d8b0d000000003bc17323493bc1890d0000000073188b0d00000000408b1481895481fc8b0d000000003bc172e88b862c03000050e8000000008b464c83c4043bc3899e2c030000895e4874148b4e54f6c5ff740c50e80000000083c404895e4c8b4e48895e50894c240c895e4c8bce885e55895e44885e51895e40885e4d895e48e800000000f644241401740956e80000000083c4048bc65e5b83c408c20400",
+ "relocs": [
+  {
+   "off": 26,
+   "type": "REL32",
+   "sym": "?AbstractClass__AnnounceExpiredPointer@@YIXPAPAXH@Z",
+   "sym_key": "AbstractClass__AnnounceExpiredPointer"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?InfantryTypeClass_Array@@3IA",
+   "sym_key": "InfantryTypeClass_Array"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?InfantryTypeClass_Array@@3IA",
+   "sym_key": "InfantryTypeClass_Array"
+  },
+  {
+   "off": 60,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 73,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 81,
+   "type": "DIR32",
+   "sym": "?Factory_ExitCellTable@@3PAXA",
+   "sym_key": "Factory_ExitCellTable"
+  },
+  {
+   "off": 95,
+   "type": "DIR32",
+   "sym": "?g_LoadScreenProgress@@3IA",
+   "sym_key": "g_LoadScreenProgress"
+  },
+  {
+   "off": 111,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 144,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  },
+  {
+   "off": 188,
+   "type": "REL32",
+   "sym": "?DTOR@TechnoTypeClass@@QAEHXZ",
+   "sym_key": "TechnoTypeClass::DTOR"
+  },
+  {
+   "off": 201,
+   "type": "REL32",
+   "sym": "?__3_YAXPAX_Z@@YAXPAX@Z",
+   "sym_key": "__3_YAXPAX_Z"
+  }
+ ]
+}
