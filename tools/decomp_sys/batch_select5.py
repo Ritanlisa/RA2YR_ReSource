@@ -222,13 +222,17 @@ def main():
                   % Counter(e["cls"] for e in out).most_common(6))
 
     if not args.dry_run:
+        # the "all" roll-up is the four difficulty strata only; the X bucket
+        # (no full_export block) is reported apart and must not clobber it.
         merged = []
         for _L, _p, out in written:
-            merged.extend(out)
-        mpath = os.path.join(OUT_DIR, "batch_%s_all.json" % args.tag)
-        with open(mpath, "w", encoding="utf-8") as f:
-            json.dump(merged, f, ensure_ascii=False, indent=1)
-        print("total selected %d -> %s" % (len(merged), mpath))
+            if _L in "ABCD":
+                merged.extend(out)
+        if merged:
+            mpath = os.path.join(OUT_DIR, "batch_%s_all.json" % args.tag)
+            with open(mpath, "w", encoding="utf-8") as f:
+                json.dump(merged, f, ensure_ascii=False, indent=1)
+            print("total selected %d -> %s" % (len(merged), mpath))
         for _L, p, _o in written:
             print("  %s" % p)
     return 0

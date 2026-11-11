@@ -1,0 +1,59 @@
+{
+ "sampled": {
+  "A": 642,
+  "B": 84,
+  "C": 675,
+  "D": 599,
+  "X": 4
+ },
+ "verdicts": {
+  "A": {
+   "COMPILE_FAIL": 67,
+   "NO_CLS": 291,
+   "MATCH": 93,
+   "MISMATCH": 190,
+   "OBJ_EXTRACT_FAIL": 1
+  },
+  "B": {
+   "COMPILE_FAIL": 46,
+   "NO_CLS": 22,
+   "MISMATCH": 16
+  },
+  "C": {
+   "NO_CLS": 188,
+   "NO_EXPORT": 2,
+   "MISMATCH": 184,
+   "COMPILE_FAIL": 280,
+   "NO_PSEUDO": 4,
+   "MATCH": 17
+  },
+  "D": {
+   "NO_CLS": 36,
+   "MISMATCH": 67,
+   "COMPILE_FAIL": 489,
+   "NO_EXPORT": 2,
+   "NO_PSEUDO": 3,
+   "DUP_SKIP": 2
+  },
+  "X": {
+   "NO_EXPORT": 4
+  }
+ },
+ "remaining_pool": {
+  "D": 3715,
+  "C": 6839,
+  "A": 5513
+ },
+ "throughput": {
+  "n": 2000,
+  "seconds": 1740.0,
+  "fns_per_hour": 4137.9,
+  "parts": 102
+ },
+ "extrapolation": {
+  "remaining": 16067,
+  "match_observed": 970.9,
+  "match_ceiling": 3122.9,
+  "hours_at_current_tput": 3.88
+ }
+}

@@ -1,0 +1,50 @@
+[
+ {
+  "addr": "0x750041",
+  "name": "nullsub_52",
+  "cls": "",
+  "size": 0,
+  "family": "censusX",
+  "layer": "X",
+  "reason": "no-export",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7caacb",
+  "name": "RTtypeid_Helper",
+  "cls": "bad_typeid",
+  "size": 0,
+  "family": "censusX",
+  "layer": "X",
+  "reason": "no-export",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7cabfb",
+  "name": "??0bad_cast_QAE_ABQBD_Z",
+  "cls": "bad_cast",
+  "size": 0,
+  "family": "censusX",
+  "layer": "X",
+  "reason": "no-export",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ },
+ {
+  "addr": "0x7dc6fa",
+  "name": "_abort",
+  "cls": "",
+  "size": 0,
+  "family": "censusX",
+  "layer": "X",
+  "reason": "no-export",
+  "n_calls": 0,
+  "n_indirect": 0,
+  "n_ds": 0
+ }
+]
