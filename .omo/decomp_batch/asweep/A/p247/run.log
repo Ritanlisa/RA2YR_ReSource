@@ -1,0 +1,97 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p247\part_00
+=== convert (20 addrs) ===
+[conv] 0x69bc20 IPXConnClass::closeConnection -> IPXConnClass
+[conv] 0x4c9e60 FactoryClass::StartProduction -> FactoryClass
+[conv] 0x517590 DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare -> DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode
+[conv] 0x5c6d90 sub_5C6D90 -> _addr_5C
+[conv] 0x5e2ba0 Network::processQueue -> Network
+[conv] 0x63aac0 UI_Handle -> UI
+[conv] 0x658c20 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex -> _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass
+[conv] 0x69e010 SidebarClass::updateFlashTimer -> SidebarClass
+[conv] 0x6b4760 _DynamicVectorClass_UUndoInfoStruct::FindItemIndex -> _DynamicVectorClass_UUndoInfoStruct
+[conv] 0x764420 DynamicVector::processSpecialEffect -> DynamicVector
+[conv] 0x7ca3c5 _wcsrchr -> _addr_7C
+[conv] 0x7cb504 _wcsncat -> _addr_7C
+[conv] 0x4a35a0 ColorStruct::SetRGB -> ColorStruct
+[conv] 0x4a3840 StructTable::Append -> StructTable
+[conv] 0x522cb0 TechnoClass::IsEnteringOrCapturingStructure -> TechnoClass
+[conv] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> IsometricTileTypeClass
+[conv] 0x6346b0 ScriptAction::FindItemByValue -> ScriptAction
+[conv] 0x6e8780 HouseClass::GetMaxBuildLevel -> HouseClass
+[conv] 0x720960 ObjectClass::sub_720960 -> ObjectClass
+[conv] 0x75cb30 WalkLocomotionClass::InitMultiFieldArray_1 -> WalkLocomotionClass
+=== emit 19 units ===
+=== rule self-check ===
+=== era compile ===
+[era] IPXConnClass             rc=2
+[era] FactoryClass             rc=2
+[era] DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode rc=0
+[era] _addr_5C                 rc=0
+[era] Network                  rc=2
+[era] UI                       rc=0
+[era] _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass rc=2
+[era] SidebarClass             rc=2
+[era] _DynamicVectorClass_UUndoInfoStruct rc=2
+[era] DynamicVector            rc=0
+[era] _addr_7C                 rc=0
+[era] ColorStruct              rc=0
+[era] StructTable              rc=2
+[era] TechnoClass              rc=0
+[era] IsometricTileTypeClass   rc=2
+[era] ScriptAction             rc=0
+[era] HouseClass               rc=0
+[era] ObjectClass              rc=2
+[era] WalkLocomotionClass      rc=0
+=== diffasm byte-compare ===
+[diff] 0x517590   MISMATCH         DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare
+[diff] 0x5c6d90   MISMATCH         sub_5C6D90
+[diff] 0x63aac0   MISMATCH         UI_Handle
+[diff] 0x764420   MISMATCH         DynamicVector::processSpecialEffect
+[diff] 0x7ca3c5   MISMATCH         _wcsrchr
+[diff] 0x7cb504   MISMATCH         _wcsncat
+[diff] 0x4a35a0   MISMATCH         ColorStruct::SetRGB
+[diff] 0x522cb0   MATCH            TechnoClass::IsEnteringOrCapturingStructure
+[diff] 0x6346b0   MISMATCH         ScriptAction::FindItemByValue
+[diff] 0x6e8780   MISMATCH         HouseClass::GetMaxBuildLevel
+[diff] 0x75cb30   MISMATCH         WalkLocomotionClass::InitMultiFieldArray_1
+[ledger] 0x69bc20 IPXConnClass::closeConnection -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4c9e60 FactoryClass::StartProduction -> COMPILE_FAIL (attempt 1)
+[ledger] 0x517590 DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare -> NG (attempt 1)
+[ledger] 0x5c6d90 sub_5C6D90 -> NG (attempt 1)
+[ledger] 0x5e2ba0 Network::processQueue -> COMPILE_FAIL (attempt 1)
+[ledger] 0x63aac0 UI_Handle -> NG (attempt 1)
+[ledger] 0x658c20 _DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x69e010 SidebarClass::updateFlashTimer -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6b4760 _DynamicVectorClass_UUndoInfoStruct::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x764420 DynamicVector::processSpecialEffect -> NG (attempt 1)
+[ledger] 0x7ca3c5 _wcsrchr -> NG (attempt 1)
+[ledger] 0x7cb504 _wcsncat -> NG (attempt 1)
+[ledger] 0x4a35a0 ColorStruct::SetRGB -> NG (attempt 1)
+[ledger] 0x4a3840 StructTable::Append -> COMPILE_FAIL (attempt 1)
+[ledger] 0x522cb0 TechnoClass::IsEnteringOrCapturingStructure -> OK (attempt 1)
+[ledger] 0x549dd0 IsometricTileTypeClass::GetTileIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x6346b0 ScriptAction::FindItemByValue -> NG (attempt 1)
+[ledger] 0x6e8780 HouseClass::GetMaxBuildLevel -> NG (attempt 1)
+[ledger] 0x720960 ObjectClass::sub_720960 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x75cb30 WalkLocomotionClass::InitMultiFieldArray_1 -> NG (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 9,
+  "MISMATCH": 10,
+  "MATCH": 1
+ },
+ "pathologies": {
+  "branch_polarity": 1,
+  "codegen_shape": 5,
+  "extern_reloc": 1,
+  "regalloc": 3
+ },
+ "match_rate_of_decided_pct": 9.1,
+ "match_rate_of_total_pct": 5.0,
+ "rule_violation_fns": 5,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p247\batch_report.json

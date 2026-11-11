@@ -1,0 +1,45 @@
+{
+ "symbol": "?InitMultiFieldArray_1@WalkLocomotionClass@@QAGPAIPAH@Z",
+ "sym_key": "WalkLocomotionClass::InitMultiFieldArray_1",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b4c2404a1000000008941188b150000000089511ca1000000008941208b15000000008d412489108b15000000008951288b150000000089512cc20800",
+ "relocs": [
+  {
+   "off": 5,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 14,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 22,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  },
+  {
+   "off": 31,
+   "type": "DIR32",
+   "sym": "?g_AsyncMovieState@@3IA",
+   "sym_key": "g_AsyncMovieState"
+  },
+  {
+   "off": 42,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState1@@3IA",
+   "sym_key": "g_MovieFrameState1"
+  },
+  {
+   "off": 51,
+   "type": "DIR32",
+   "sym": "?g_MovieFrameState2@@3IA",
+   "sym_key": "g_MovieFrameState2"
+  }
+ ]
+}

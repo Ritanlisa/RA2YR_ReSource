@@ -1,0 +1,8 @@
+{
+ "symbol": "?IsEnteringOrCapturingStructure@TechnoClass@@QAEHXZ",
+ "sym_key": "TechnoClass::IsEnteringOrCapturingStructure",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "8b81c406000083f80b743083f80c742b83f80d742683f80e742183f80f741c83f822741783f823741283f824740d83f814740883f815740333c0c3b801000000c3",
+ "relocs": []
+}

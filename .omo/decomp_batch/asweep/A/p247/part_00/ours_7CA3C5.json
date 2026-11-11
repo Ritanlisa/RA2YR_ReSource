@@ -1,0 +1,8 @@
+{
+ "symbol": "?_wcsrchr@@YAPAGPBGG@Z",
+ "sym_key": "Unnamed::_wcsrchr",
+ "size": 61,
+ "link_base": 0,
+ "bytes_hex": "8b54240466833a008d4a02740c33c0668b0183c10285c075f48d41fe668b4c24083bc2740c663908740783e8023bc275f433d2663b080f95c24a23c2c3",
+ "relocs": []
+}

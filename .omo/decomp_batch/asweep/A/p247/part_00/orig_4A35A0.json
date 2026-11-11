@@ -1,0 +1,11 @@
+{
+ "addr": "0x4A35A0",
+ "name": "ColorStruct::SetRGB",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x4A35A0",
+ "bytes_hex": "8b4424048b5424080d00ffffff81e2ff000000c1e0080bc28b54240cc1e00881e2ff0000000bc2894150894130894110b8000000ff894154894134894114c20c00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

@@ -1,0 +1,51 @@
+{
+ "symbol": "?UI_Handle@@YGDHH@Z",
+ "sym_key": "Unnamed::UI_Handle",
+ "size": 62,
+ "link_base": 0,
+ "bytes_hex": "a00000000083c9ff84c0890d00000000c6050000000001890d00000000741ca10000000085c07f138b4424048b4c2408a300000000890d00000000c20800",
+ "relocs": [
+  {
+   "off": 1,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CF4@@3EA",
+   "sym_key": "DataGlobal_AC4CF4"
+  },
+  {
+   "off": 12,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C68@@3IA",
+   "sym_key": "DataGlobal_AC4C68"
+  },
+  {
+   "off": 18,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4CB0@@3EA",
+   "sym_key": "DataGlobal_AC4CB0"
+  },
+  {
+   "off": 25,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C6C@@3IA",
+   "sym_key": "DataGlobal_AC4C6C"
+  },
+  {
+   "off": 32,
+   "type": "DIR32",
+   "sym": "?g_SelectionManager@@3IA",
+   "sym_key": "g_SelectionManager"
+  },
+  {
+   "off": 49,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C68@@3IA",
+   "sym_key": "DataGlobal_AC4C68"
+  },
+  {
+   "off": 55,
+   "type": "DIR32",
+   "sym": "?DataGlobal_AC4C6C@@3IA",
+   "sym_key": "DataGlobal_AC4C6C"
+  }
+ ]
+}

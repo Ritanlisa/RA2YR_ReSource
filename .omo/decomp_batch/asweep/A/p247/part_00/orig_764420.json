@@ -1,0 +1,11 @@
+{
+ "addr": "0x764420",
+ "name": "AbstractClass::processSpecialEffect",
+ "size": 64,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x764420",
+ "bytes_hex": "8b5110535533c0565785d27e298b7424148b49048b3e393975148b59048b6e043bdd750a8b59088b6e083bdd740b4083c10c3bc27ce083c8ff5f5e5d5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

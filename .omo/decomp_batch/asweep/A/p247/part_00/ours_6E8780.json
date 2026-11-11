@@ -1,0 +1,15 @@
+{
+ "symbol": "?GetMaxBuildLevel@HouseClass@@QAEHXZ",
+ "sym_key": "HouseClass::GetMaxBuildLevel",
+ "size": 65,
+ "link_base": 0,
+ "bytes_hex": "568bb19c00000033c085f67e32578b3d000000008d91a80000008b0a8b89340600003bc87f1083f9ff750d85ff7409b80b000000eb028bc183c2084e75dc5f5ec3",
+ "relocs": [
+  {
+   "off": 16,
+   "type": "DIR32",
+   "sym": "?g_GameMode_Current@@3IA",
+   "sym_key": "g_GameMode_Current"
+  }
+ ]
+}

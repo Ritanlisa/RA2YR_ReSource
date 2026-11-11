@@ -1,0 +1,8 @@
+{
+ "symbol": "?processSpecialEffect@DynamicVector@@QAEHPAH@Z",
+ "sym_key": "DynamicVector::processSpecialEffect",
+ "size": 66,
+ "link_base": 0,
+ "bytes_hex": "5355568b711033c05785f67e2b8b5424148b49048b3a393975148b59048b6a043bdd750a8b59088b6a083bdd740d403bc67d0583c10cebde83c8ff5f5e5d5bc20400",
+ "relocs": []
+}

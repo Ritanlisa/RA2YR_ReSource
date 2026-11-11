@@ -1,0 +1,11 @@
+{
+ "addr": "0x6346B0",
+ "name": "ScriptAction::FindItemByValue",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6346B0",
+ "bytes_hex": "8b51105333c0565785d27e248b71048b7c24108bce8b19393b74104083c1043bc27cf25f5e33c05bc2040083f8ff75085f5e33c05bc204008b04865f5e5bc20400",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

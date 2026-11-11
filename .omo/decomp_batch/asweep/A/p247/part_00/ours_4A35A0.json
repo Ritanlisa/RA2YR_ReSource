@@ -1,0 +1,8 @@
+{
+ "symbol": "?SetRGB@ColorStruct@@QAEHEEE@Z",
+ "sym_key": "ColorStruct::SetRGB",
+ "size": 70,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b54240825ff00000081e2ff0000000d00ffffffc1e0080bc28b54240cc1e00881e2ff0000000bc2894150894130894110b8000000ff894154894134894114c20c00",
+ "relocs": []
+}

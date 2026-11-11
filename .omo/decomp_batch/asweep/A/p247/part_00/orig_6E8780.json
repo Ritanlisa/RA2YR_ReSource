@@ -1,0 +1,11 @@
+{
+ "addr": "0x6E8780",
+ "name": "HouseClass::GetMaxBuildLevel",
+ "size": 65,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x6E8780",
+ "bytes_hex": "8b919c00000033c085d27e3456578b3d38b2a8008db1a80000008b0e8b89340600003bc87e048bc1eb0e83f9ff750985ff7405b80b00000083c6084a75dc5f5ec3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
