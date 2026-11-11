@@ -1,0 +1,84 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p223\part_00
+=== convert (20 addrs) ===
+[conv] 0x40f040 _VectorClass_PAVVoxelAnimClass::GetSize -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f760 _VectorClass_PAVWarheadTypeClass::GetSize -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40fd30 _VectorClass_PAVWeaponTypeClass::GetSize -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x41df60 _VectorClass_PAVAirstrikeClass::GetSize -> _VectorClass_PAVAirstrikeClass
+[conv] 0x4204f0 _VectorClass_PAVAlphaLightingRemapClass::Read -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x421980 _VectorClass_PAVAlphaShapeClass::GetSize -> _VectorClass_PAVAlphaShapeClass
+[conv] 0x42d720 _VectorClass_I::FindItemIndex -> _VectorClass_I
+[conv] 0x433ca0 TextGroup::SetRect -> TextGroup
+[conv] 0x45a2a0 _VectorClass_PBVParticleSystemTypeClass::GetSize -> _VectorClass_PBVParticleSystemTypeClass
+[conv] 0x45a500 VectorClass::GetSize -> VectorClass
+[conv] 0x45a880 _VectorClass_PAVReestablish::GetSize -> _VectorClass_PAVReestablish
+[conv] 0x45ac30 _VectorClass_PAVFoggedObjectClass::GetSize -> _VectorClass_PAVFoggedObjectClass
+[conv] 0x46b780 _VectorClass_PAVBulletClass::GetSize -> _VectorClass_PAVBulletClass
+[conv] 0x472c60 _VectorClass_PAUControlNode::IndexOf -> _VectorClass_PAUControlNode
+[conv] 0x472ec0 _VectorClass_PAVCaptureManagerClass::GetSize -> _VectorClass_PAVCaptureManagerClass
+[conv] 0x477d50 _VectorClass_H::vt04 -> _VectorClass_H
+[conv] 0x48ae90 _VectorClass_PAUDamageGroup::GetSize -> _VectorClass_PAUDamageGroup
+[conv] 0x492670 _BlitTransDarken_G::sub_492670 -> _BlitTransDarken_G
+[conv] 0x49afa0 _VectorClass_PAVConvertClass::GetSize -> _VectorClass_PAVConvertClass
+[conv] 0x49ec70 _VectorClass_PAV_DynamicVectorClass_PAD::GetSize -> _VectorClass_PAV_DynamicVectorClass_PAD
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVVoxelAnimClass rc=2
+[era] _VectorClass_PAVWarheadTypeClass rc=2
+[era] _VectorClass_PAVWeaponTypeClass rc=2
+[era] _VectorClass_PAVAirstrikeClass rc=2
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=2
+[era] _VectorClass_PAVAlphaShapeClass rc=2
+[era] _VectorClass_I           rc=2
+[era] TextGroup                rc=2
+[era] _VectorClass_PBVParticleSystemTypeClass rc=2
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVReestablish rc=2
+[era] _VectorClass_PAVFoggedObjectClass rc=2
+[era] _VectorClass_PAVBulletClass rc=2
+[era] _VectorClass_PAUControlNode rc=2
+[era] _VectorClass_PAVCaptureManagerClass rc=2
+[era] _VectorClass_H           rc=2
+[era] _VectorClass_PAUDamageGroup rc=2
+[era] _BlitTransDarken_G       rc=2
+[era] _VectorClass_PAVConvertClass rc=2
+[era] _VectorClass_PAV_DynamicVectorClass_PAD rc=2
+=== diffasm byte-compare ===
+[diff] 0x45a500   MISMATCH         VectorClass::GetSize
+[ledger] 0x40f040 _VectorClass_PAVVoxelAnimClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40f760 _VectorClass_PAVWarheadTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40fd30 _VectorClass_PAVWeaponTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x41df60 _VectorClass_PAVAirstrikeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4204f0 _VectorClass_PAVAlphaLightingRemapClass::Read -> COMPILE_FAIL (attempt 1)
+[ledger] 0x421980 _VectorClass_PAVAlphaShapeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x42d720 _VectorClass_I::FindItemIndex -> COMPILE_FAIL (attempt 1)
+[ledger] 0x433ca0 TextGroup::SetRect -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a2a0 _VectorClass_PBVParticleSystemTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45a500 VectorClass::GetSize -> NG (attempt 1)
+[ledger] 0x45a880 _VectorClass_PAVReestablish::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x45ac30 _VectorClass_PAVFoggedObjectClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x46b780 _VectorClass_PAVBulletClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472c60 _VectorClass_PAUControlNode::IndexOf -> COMPILE_FAIL (attempt 1)
+[ledger] 0x472ec0 _VectorClass_PAVCaptureManagerClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x477d50 _VectorClass_H::vt04 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x48ae90 _VectorClass_PAUDamageGroup::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x492670 _BlitTransDarken_G::sub_492670 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49afa0 _VectorClass_PAVConvertClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x49ec70 _VectorClass_PAV_DynamicVectorClass_PAD::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 19,
+  "MISMATCH": 1
+ },
+ "pathologies": {
+  "codegen_shape": 1
+ },
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 1,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p223\batch_report.json
