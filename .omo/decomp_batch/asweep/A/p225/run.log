@@ -1,0 +1,80 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p225\part_00
+=== convert (20 addrs) ===
+[conv] 0x4eac60 _VectorClass_PAVParticleSystemClass::GetSize -> _VectorClass_PAVParticleSystemClass
+[conv] 0x4eb120 _VectorClass_PAVOverlayClass::GetSize -> _VectorClass_PAVOverlayClass
+[conv] 0x4eb380 _VectorClass_PAVSmudgeClass::Init -> _VectorClass_PAVSmudgeClass
+[conv] 0x4eb5e0 _VectorClass_PAVTerrainClass::Init -> _VectorClass_PAVTerrainClass
+[conv] 0x4eb840 _VectorClass_PAVAircraftClass::GetSize -> _VectorClass_PAVAircraftClass
+[conv] 0x4ebaa0 _VectorClass_PAVUnitClass::GetSize -> _VectorClass_PAVUnitClass
+[conv] 0x4ebd00 _VectorClass_PAVHouseClass::GetSize -> _VectorClass_PAVHouseClass
+[conv] 0x4ebf60 _VectorClass_PAVAnimClass::GetSize -> _VectorClass_PAVAnimClass
+[conv] 0x4ec1c0 _VectorClass_PAVFactoryClass::GetSize -> _VectorClass_PAVFactoryClass
+[conv] 0x4ec420 _VectorClass_PAVCampaignClass::GetSize -> _VectorClass_PAVCampaignClass
+[conv] 0x4ec8e0 _VectorClass_PAVHouseTypeClass::GetSize -> _VectorClass_PAVHouseTypeClass
+[conv] 0x4ecb40 _VectorClass_PAVTaskForceClass::GetSize -> _VectorClass_PAVTaskForceClass
+[conv] 0x4ed000 _VectorClass_PAVScriptTypeClass::GetSize -> _VectorClass_PAVScriptTypeClass
+[conv] 0x4ed260 _VectorClass_PAVOverlayTypeClass::GetSize -> _VectorClass_PAVOverlayTypeClass
+[conv] 0x4ed4c0 _VectorClass_PAVSmudgeTypeClass::GetSize -> _VectorClass_PAVSmudgeTypeClass
+[conv] 0x4ed720 _VectorClass_PAVTerrainTypeClass::GetSize -> _VectorClass_PAVTerrainTypeClass
+[conv] 0x4ed980 _VectorClass_PAVBuildingTypeClass::GetSize -> _VectorClass_PAVBuildingTypeClass
+[conv] 0x4ede40 _VectorClass_PAVUnitTypeClass::GetSize -> _VectorClass_PAVUnitTypeClass
+[conv] 0x4ee0a0 _VectorClass_PAVAnimTypeClass::GetSize -> _VectorClass_PAVAnimTypeClass
+[conv] 0x4ee300 _VectorClass_PAVInfantryTypeClass::GetSize -> _VectorClass_PAVInfantryTypeClass
+=== emit 20 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _VectorClass_PAVParticleSystemClass rc=2
+[era] _VectorClass_PAVOverlayClass rc=2
+[era] _VectorClass_PAVSmudgeClass rc=2
+[era] _VectorClass_PAVTerrainClass rc=2
+[era] _VectorClass_PAVAircraftClass rc=2
+[era] _VectorClass_PAVUnitClass rc=2
+[era] _VectorClass_PAVHouseClass rc=2
+[era] _VectorClass_PAVAnimClass rc=2
+[era] _VectorClass_PAVFactoryClass rc=2
+[era] _VectorClass_PAVCampaignClass rc=2
+[era] _VectorClass_PAVHouseTypeClass rc=2
+[era] _VectorClass_PAVTaskForceClass rc=2
+[era] _VectorClass_PAVScriptTypeClass rc=2
+[era] _VectorClass_PAVOverlayTypeClass rc=2
+[era] _VectorClass_PAVSmudgeTypeClass rc=2
+[era] _VectorClass_PAVTerrainTypeClass rc=2
+[era] _VectorClass_PAVBuildingTypeClass rc=2
+[era] _VectorClass_PAVUnitTypeClass rc=2
+[era] _VectorClass_PAVAnimTypeClass rc=2
+[era] _VectorClass_PAVInfantryTypeClass rc=2
+=== diffasm byte-compare ===
+[ledger] 0x4eac60 _VectorClass_PAVParticleSystemClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb120 _VectorClass_PAVOverlayClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb380 _VectorClass_PAVSmudgeClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb5e0 _VectorClass_PAVTerrainClass::Init -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4eb840 _VectorClass_PAVAircraftClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebaa0 _VectorClass_PAVUnitClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebd00 _VectorClass_PAVHouseClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ebf60 _VectorClass_PAVAnimClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec1c0 _VectorClass_PAVFactoryClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec420 _VectorClass_PAVCampaignClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ec8e0 _VectorClass_PAVHouseTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ecb40 _VectorClass_PAVTaskForceClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed000 _VectorClass_PAVScriptTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed260 _VectorClass_PAVOverlayTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed4c0 _VectorClass_PAVSmudgeTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed720 _VectorClass_PAVTerrainTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ed980 _VectorClass_PAVBuildingTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ede40 _VectorClass_PAVUnitTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee0a0 _VectorClass_PAVAnimTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+[ledger] 0x4ee300 _VectorClass_PAVInfantryTypeClass::GetSize -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "COMPILE_FAIL": 20
+ },
+ "pathologies": {},
+ "match_rate_of_decided_pct": 0.0,
+ "match_rate_of_total_pct": 0.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p225\batch_report.json
