@@ -1,0 +1,8 @@
+{
+ "symbol": "?ScrollUp@DropListClass@@QAEHXZ",
+ "sym_key": "DropListClass::ScrollUp",
+ "size": 14,
+ "link_base": 0,
+ "bytes_hex": "8d81b000000050ff9144010000c3",
+ "relocs": []
+}

@@ -1,0 +1,90 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p74\part_00
+=== convert (20 addrs) ===
+[conv] 0x4736f0 sub_4736F0 -> _addr_47
+[conv] 0x474190 sub_474190 -> _addr_47
+[conv] 0x478b60 sub_478B60 -> _addr_47
+[conv] 0x47b300 sub_47B300 -> _addr_47
+[conv] 0x48be20 sub_48BE20 -> _addr_48
+[conv] 0x48c860 sub_48C860 -> _addr_48
+[conv] 0x48e440 sub_48E440 -> _addr_48
+[conv] 0x49b330 sub_49B330 -> _addr_49
+[conv] 0x49f290 sub_49F290 -> _addr_49
+[conv] 0x49ff00 sub_49FF00 -> _addr_49
+[conv] 0x4a1710 sub_4A1710 -> _addr_4A
+[conv] 0x4a2310 sub_4A2310 -> _addr_4A
+[conv] 0x4a6c10 sub_4A6C10 -> _addr_4A
+[conv] 0x4a85f0 sub_4A85F0 -> _addr_4A
+[conv] 0x4af4e0 sub_4AF4E0 -> _addr_4A
+[conv] 0x4b5010 DropListClass::GetItemData -> DropListClass
+[conv] 0x4b55b0 DropListClass::ScrollUp -> DropListClass
+[conv] 0x4b5a50 sub_4B5A50 -> _addr_4B
+[conv] 0x4b6950 sub_4B6950 -> _addr_4B
+[conv] 0x4ba560 sub_4BA560 -> _addr_4B
+=== emit 6 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_47                 rc=0
+[era] _addr_48                 rc=0
+[era] _addr_49                 rc=0
+[era] _addr_4A                 rc=0
+[era] DropListClass            rc=0
+[era] _addr_4B                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x4736f0   MATCH            sub_4736F0
+[diff] 0x474190   MATCH            sub_474190
+[diff] 0x478b60   MATCH            sub_478B60
+[diff] 0x47b300   MATCH            sub_47B300
+[diff] 0x48be20   MATCH            sub_48BE20
+[diff] 0x48c860   MATCH            sub_48C860
+[diff] 0x48e440   MATCH            sub_48E440
+[diff] 0x49b330   MATCH            sub_49B330
+[diff] 0x49f290   MATCH            sub_49F290
+[diff] 0x49ff00   MATCH            sub_49FF00
+[diff] 0x4a1710   MATCH            sub_4A1710
+[diff] 0x4a2310   MATCH            sub_4A2310
+[diff] 0x4a6c10   MATCH            sub_4A6C10
+[diff] 0x4a85f0   MATCH            sub_4A85F0
+[diff] 0x4af4e0   MISMATCH         sub_4AF4E0
+[diff] 0x4b5010   MISMATCH         DropListClass::GetItemData
+[diff] 0x4b55b0   MISMATCH         DropListClass::ScrollUp
+[diff] 0x4b5a50   MATCH            sub_4B5A50
+[diff] 0x4b6950   MATCH            sub_4B6950
+[diff] 0x4ba560   MATCH            sub_4BA560
+[ledger] 0x4736f0 sub_4736F0 -> OK (attempt 1)
+[ledger] 0x474190 sub_474190 -> OK (attempt 1)
+[ledger] 0x478b60 sub_478B60 -> OK (attempt 1)
+[ledger] 0x47b300 sub_47B300 -> OK (attempt 1)
+[ledger] 0x48be20 sub_48BE20 -> OK (attempt 1)
+[ledger] 0x48c860 sub_48C860 -> OK (attempt 1)
+[ledger] 0x48e440 sub_48E440 -> OK (attempt 1)
+[ledger] 0x49b330 sub_49B330 -> OK (attempt 1)
+[ledger] 0x49f290 sub_49F290 -> OK (attempt 1)
+[ledger] 0x49ff00 sub_49FF00 -> OK (attempt 1)
+[ledger] 0x4a1710 sub_4A1710 -> OK (attempt 1)
+[ledger] 0x4a2310 sub_4A2310 -> OK (attempt 1)
+[ledger] 0x4a6c10 sub_4A6C10 -> OK (attempt 1)
+[ledger] 0x4a85f0 sub_4A85F0 -> OK (attempt 1)
+[ledger] 0x4af4e0 sub_4AF4E0 -> NG (attempt 1)
+[ledger] 0x4b5010 DropListClass::GetItemData -> NG (attempt 1)
+[ledger] 0x4b55b0 DropListClass::ScrollUp -> NG (attempt 1)
+[ledger] 0x4b5a50 sub_4B5A50 -> OK (attempt 1)
+[ledger] 0x4b6950 sub_4B6950 -> OK (attempt 1)
+[ledger] 0x4ba560 sub_4BA560 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 17,
+  "MISMATCH": 3
+ },
+ "pathologies": {
+  "const_fold": 1,
+  "codegen_shape": 2
+ },
+ "match_rate_of_decided_pct": 85.0,
+ "match_rate_of_total_pct": 85.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p74\batch_report.json
