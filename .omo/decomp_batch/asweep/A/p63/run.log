@@ -1,0 +1,88 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p63\part_00
+=== convert (20 addrs) ===
+[conv] 0x71a360 sub_71A360 -> _addr_71
+[conv] 0x71b740 sub_71B740 -> _addr_71
+[conv] 0x71d530 sub_71D530 -> _addr_71
+[conv] 0x71e5b0 sub_71E5B0 -> _addr_71
+[conv] 0x7203d0 sub_7203D0 -> _addr_72
+[conv] 0x7215d0 sub_7215D0 -> _addr_72
+[conv] 0x723c30 sub_723C30 -> _addr_72
+[conv] 0x725260 sub_725260 -> _addr_72
+[conv] 0x726c10 sub_726C10 -> _addr_72
+[conv] 0x727f60 sub_727F60 -> _addr_72
+[conv] 0x728990 sub_728990 -> _addr_72
+[conv] 0x728a50 JumpjetLocomotionClass::ShortFunc_728A50 -> JumpjetLocomotionClass
+[conv] 0x72a3f0 sub_72A3F0 -> _addr_72
+[conv] 0x72a850 sub_72A850 -> _addr_72
+[conv] 0x730920 sub_730920 -> _addr_73
+[conv] 0x7345d0 sub_7345D0 -> _addr_73
+[conv] 0x747080 sub_747080 -> _addr_74
+[conv] 0x749340 sub_749340 -> _addr_74
+[conv] 0x74ad10 sub_74AD10 -> _addr_74
+[conv] 0x74c330 sub_74C330 -> _addr_74
+=== emit 5 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_71                 rc=0
+[era] _addr_72                 rc=2
+[era] JumpjetLocomotionClass   rc=0
+[era] _addr_73                 rc=0
+[era] _addr_74                 rc=0
+=== diffasm byte-compare ===
+[diff] 0x71a360   MATCH            sub_71A360
+[diff] 0x71b740   MATCH            sub_71B740
+[diff] 0x71d530   MATCH            sub_71D530
+[diff] 0x71e5b0   MATCH            sub_71E5B0
+[diff] 0x723c30   MATCH            sub_723C30
+[diff] 0x725260   MATCH            sub_725260
+[diff] 0x726c10   MATCH            sub_726C10
+[diff] 0x727f60   MATCH            sub_727F60
+[diff] 0x728990   MISMATCH         sub_728990
+[diff] 0x72a3f0   MATCH            sub_72A3F0
+[diff] 0x72a850   MATCH            sub_72A850
+[diff] 0x728a50   MISMATCH         JumpjetLocomotionClass::ShortFunc_728A50
+[diff] 0x730920   MATCH            sub_730920
+[diff] 0x7345d0   MATCH            sub_7345D0
+[diff] 0x747080   MATCH            sub_747080
+[diff] 0x749340   MATCH            sub_749340
+[diff] 0x74ad10   MATCH            sub_74AD10
+[diff] 0x74c330   MATCH            sub_74C330
+[ledger] 0x71a360 sub_71A360 -> OK (attempt 1)
+[ledger] 0x71b740 sub_71B740 -> OK (attempt 1)
+[ledger] 0x71d530 sub_71D530 -> OK (attempt 1)
+[ledger] 0x71e5b0 sub_71E5B0 -> OK (attempt 1)
+[ledger] 0x7203d0 sub_7203D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x7215d0 sub_7215D0 -> COMPILE_FAIL (attempt 1)
+[ledger] 0x723c30 sub_723C30 -> OK (attempt 1)
+[ledger] 0x725260 sub_725260 -> OK (attempt 1)
+[ledger] 0x726c10 sub_726C10 -> OK (attempt 1)
+[ledger] 0x727f60 sub_727F60 -> OK (attempt 1)
+[ledger] 0x728990 sub_728990 -> NG (attempt 1)
+[ledger] 0x728a50 JumpjetLocomotionClass::ShortFunc_728A50 -> NG (attempt 1)
+[ledger] 0x72a3f0 sub_72A3F0 -> OK (attempt 1)
+[ledger] 0x72a850 sub_72A850 -> OK (attempt 1)
+[ledger] 0x730920 sub_730920 -> OK (attempt 1)
+[ledger] 0x7345d0 sub_7345D0 -> OK (attempt 1)
+[ledger] 0x747080 sub_747080 -> OK (attempt 1)
+[ledger] 0x749340 sub_749340 -> OK (attempt 1)
+[ledger] 0x74ad10 sub_74AD10 -> OK (attempt 1)
+[ledger] 0x74c330 sub_74C330 -> OK (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MATCH": 16,
+  "COMPILE_FAIL": 2,
+  "MISMATCH": 2
+ },
+ "pathologies": {
+  "extern_reloc": 1,
+  "regalloc": 1
+ },
+ "match_rate_of_decided_pct": 88.9,
+ "match_rate_of_total_pct": 80.0,
+ "rule_violation_fns": 0,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p63\batch_report.json
