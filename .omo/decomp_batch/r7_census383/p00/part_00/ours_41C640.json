@@ -1,0 +1,15 @@
+{
+ "symbol": "?processIdleState@TechnoClass@@QAEHHPAXPAPAX@Z",
+ "sym_key": "TechnoClass::processIdleState",
+ "size": 26,
+ "link_base": 0,
+ "bytes_hex": "8b44240c8b542408508b44240883c0fc5250e800000000c20c00",
+ "relocs": [
+  {
+   "off": 19,
+   "type": "REL32",
+   "sym": "?QueryInterface@AircraftClass@@QAEHPAX00@Z",
+   "sym_key": "AircraftClass::QueryInterface"
+  }
+ ]
+}

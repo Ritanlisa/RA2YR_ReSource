@@ -1,0 +1,8 @@
+{
+ "symbol": "?CheckDockState@FootClass@@QAEDXZ",
+ "sym_key": "FootClass::CheckDockState",
+ "size": 7,
+ "link_base": 0,
+ "bytes_hex": "8a81b8060000c3",
+ "relocs": []
+}

@@ -14,7 +14,7 @@
   "status": "NG"
  },
  "0x4024a0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AudioSample::ResetState",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -56,7 +56,7 @@
   "status": "NG"
  },
  "0x405d40": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AudioController::Stop",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -119,21 +119,21 @@
   "status": "OK"
  },
  "0x407010": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Audio::GetEnabled",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x407070": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 xor edx, edx",
   "name": "Audio::GetFlag",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x4071c0": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AudioMixer::PlaySample",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -147,7 +147,7 @@
   "status": "OK"
  },
  "0x407510": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
   "name": "VtableStub::Push_407510",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -175,14 +175,14 @@
   "status": "OK"
  },
  "0x408600": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AudioNode::Release",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x408a70": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AudioMixer::SetupChannels",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -224,14 +224,14 @@
   "status": "OK"
  },
  "0x40a7a0": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "Audio::GetDirectSound",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x40cc00": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "VectorClass_ptr_IsometricTileClass::GetItem",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -266,7 +266,7 @@
   "status": "OK"
  },
  "0x410260": {
-  "attempts": 1,
+  "attempts": 2,
   "first_diff": null,
   "name": "AbstractClass::QueryInterface",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -287,11 +287,11 @@
   "status": "OK"
  },
  "0x4105e0": {
-  "attempts": 3,
+  "attempts": 4,
   "first_diff": null,
-  "name": "IRTTITypeInfo::QueryInterface",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "name": "0x4105e0",
+  "note": "decomp_batch r2: DUP_SKIP",
+  "status": "PENDING"
  },
  "0x4105f0": {
   "attempts": 3,
@@ -308,7 +308,7 @@
   "status": "NG"
  },
  "0x411330": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "TacticalClass::FillScanlinesTransparent",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -357,11 +357,11 @@
   "status": "NG"
  },
  "0x41b910": {
-  "attempts": 6,
-  "first_diff": null,
+  "attempts": 7,
+  "first_diff": "+2 jmp dword ptr [eax + 0x50]",
   "name": "AircraftClass::MissionStubReturnZero",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/codegen_shape",
+  "status": "NG"
  },
  "0x41b9e0": {
   "attempts": 5,
@@ -406,11 +406,11 @@
   "status": "NG"
  },
  "0x41c070": {
-  "attempts": 2,
-  "first_diff": null,
+  "attempts": 3,
+  "first_diff": "+0 mov al, byte ptr [ecx + 0x6b6]",
   "name": "AircraftClass::CheckDockState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/const_fold",
+  "status": "NG"
  },
  "0x41c170": {
   "attempts": 7,
@@ -434,11 +434,11 @@
   "status": "OK"
  },
  "0x41c640": {
-  "attempts": 3,
-  "first_diff": null,
+  "attempts": 4,
+  "first_diff": "+0 sub dword ptr [esp + 4], 4",
   "name": "TechnoClass::processIdleState",
-  "note": "decomp_batch r2: COMPILE_FAIL",
-  "status": "COMPILE_FAIL"
+  "note": "decomp_batch r2: MISMATCH/frame_sched",
+  "status": "NG"
  },
  "0x41c650": {
   "attempts": 3,
@@ -504,14 +504,14 @@
   "status": "OK"
  },
  "0x41fd60": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterSuccess",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x41fe20": {
-  "attempts": 6,
+  "attempts": 7,
   "first_diff": null,
   "name": "AITriggerTypeClass::RegisterFailure",
   "note": "decomp_batch r2: COMPILE_FAIL",
@@ -532,14 +532,14 @@
   "status": "OK"
  },
  "0x420e90": {
-  "attempts": 8,
+  "attempts": 9,
   "first_diff": null,
   "name": "AirstrikeClass::UpdateAll",
   "note": "decomp_batch r2: COMPILE_FAIL",
   "status": "COMPILE_FAIL"
  },
  "0x425260": {
-  "attempts": 2,
+  "attempts": 3,
   "first_diff": null,
   "name": "AnimClass::SetField8",
   "note": "decomp_batch r2: COMPILE_FAIL",
