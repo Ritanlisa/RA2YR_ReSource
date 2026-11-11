@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8E17",
+ "name": "??2_YAPAXI_Z",
+ "size": 14,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8E17",
+ "bytes_hex": "6a01ff742408e8200600005959c3",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

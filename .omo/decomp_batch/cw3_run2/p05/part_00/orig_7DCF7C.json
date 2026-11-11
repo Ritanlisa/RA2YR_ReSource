@@ -1,0 +1,11 @@
+{
+ "addr": "0x7DCF7C",
+ "name": "CompareStringW",
+ "size": 6,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7DCF7C",
+ "bytes_hex": "ff2528137e00",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}

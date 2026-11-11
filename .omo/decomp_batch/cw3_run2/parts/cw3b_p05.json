@@ -1,0 +1,202 @@
+[
+ {
+  "addr": "0x7d1512",
+  "name": "GetCurrentThreadId::0",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : 'constant'"
+ },
+ {
+  "addr": "0x7dceaa",
+  "name": "IsBadWritePtr",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'UINT_PTR'"
+ },
+ {
+  "addr": "0x7dcee0",
+  "name": "GetCurrentThread::0",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : 'constant'"
+ },
+ {
+  "addr": "0x7dcf22",
+  "name": "GetCurrentProcessId::0",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : 'constant'"
+ },
+ {
+  "addr": "0x7dcf3a",
+  "name": "GetEnvironmentStrings",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7dcf7c",
+  "name": "CompareStringW",
+  "cls": null,
+  "size": 6,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2061",
+  "first_msg": "syntax error : identifier 'PCNZWCH'"
+ },
+ {
+  "addr": "0x407510",
+  "name": "VtableStub::Push_407510",
+  "cls": null,
+  "size": 8,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2562",
+  "first_msg": "'Push_407510' : 'void' function returning a value"
+ },
+ {
+  "addr": "0x7b9d70",
+  "name": "WWMouseClass::checkStatus",
+  "cls": null,
+  "size": 8,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2040",
+  "first_msg": "'showCursor' : 'void (void)' differs in levels of indirection from 'int'"
+ },
+ {
+  "addr": "0x5d5880",
+  "name": "Timer::DisableHighPrecision",
+  "cls": null,
+  "size": 9,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2146",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x7c8fc9",
+  "name": "_pow",
+  "cls": null,
+  "size": 9,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'LODWORD' : undeclared identifier"
+ },
+ {
+  "addr": "0x510ac0",
+  "name": "VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9",
+  "cls": null,
+  "size": 10,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2143",
+  "first_msg": "syntax error : missing '"
+ },
+ {
+  "addr": "0x679ec0",
+  "name": "unknown_libname_29",
+  "cls": null,
+  "size": 10,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2371",
+  "first_msg": "'TEXTMETRICA' : redefinition"
+ },
+ {
+  "addr": "0x77cf90",
+  "name": "unknown_libname_43",
+  "cls": null,
+  "size": 10,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DeleteAndZero' : undeclared identifier"
+ },
+ {
+  "addr": "0x7af4d0",
+  "name": "unknown_libname_66",
+  "cls": null,
+  "size": 10,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2065",
+  "first_msg": "'DeleteAndZero' : undeclared identifier"
+ },
+ {
+  "addr": "0x556510",
+  "name": "sub_556510",
+  "cls": null,
+  "size": 11,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2018",
+  "first_msg": "unknown character '0x60'"
+ },
+ {
+  "addr": "0x766900",
+  "name": "System_Init_766900",
+  "cls": null,
+  "size": 11,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2275",
+  "first_msg": "'rc_ptr' : illegal use of this type as an expression"
+ },
+ {
+  "addr": "0x7c8e17",
+  "name": "??2_YAPAXI_Z",
+  "cls": null,
+  "size": 14,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2059",
+  "first_msg": "syntax error : '?'"
+ },
+ {
+  "addr": "0x4093b0",
+  "name": "Audio::Callback",
+  "cls": null,
+  "size": 16,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "C2064",
+  "first_msg": "term does not evaluate to a function"
+ },
+ {
+  "addr": "0x6bf1c0",
+  "name": "VectorClass_K_20::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 17B ours 18B"
+ },
+ {
+  "addr": "0x6c0240",
+  "name": "TClassFactory_CampaignClass::AddRef",
+  "cls": null,
+  "size": 17,
+  "family": "cw3_C",
+  "layer": "C",
+  "first_code": "NONE",
+  "first_msg": "orig 17B ours 18B"
+ }
+]

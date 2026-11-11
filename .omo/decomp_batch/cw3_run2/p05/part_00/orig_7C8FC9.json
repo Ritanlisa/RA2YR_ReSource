@@ -1,0 +1,11 @@
+{
+ "addr": "0x7C8FC9",
+ "name": "_pow",
+ "size": 9,
+ "size_source": "functions.json",
+ "section": ".text",
+ "base_va": "0x7C8FC9",
+ "bytes_hex": "8d54240ce803640000",
+ "relocs": [],
+ "exe": "D:\\RA2MD\\gamemd.exe"
+}
