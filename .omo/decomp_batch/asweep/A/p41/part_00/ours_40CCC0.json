@@ -1,0 +1,8 @@
+{
+ "symbol": "?GetAt@VectorClass@@QAEHH@Z",
+ "sym_key": "VectorClass::GetAt",
+ "size": 11,
+ "link_base": 0,
+ "bytes_hex": "8b4424048b448104c20400",
+ "relocs": []
+}

@@ -1,0 +1,102 @@
+======================================================================
+PART 1/1  (20 fns) -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p41\part_00
+=== convert (20 addrs) ===
+[conv] 0x407150 EndBufferMixer -> _addr_40
+[conv] 0x4072d0 DListNode::InitEmpty -> DListNode
+[conv] 0x40b690 _VectorClass_PAVBombClass::Get -> _VectorClass_PAVBombClass
+[conv] 0x40b6f0 _VectorClass_PAVTechnoClass::Show -> _VectorClass_PAVTechnoClass
+[conv] 0x40bea0 _VectorClass_PBVCommandClass::Capacity -> _VectorClass_PBVCommandClass
+[conv] 0x40c280 _VectorClass_PAVLightConvertClass::Get -> _VectorClass_PAVLightConvertClass
+[conv] 0x40c870 _VectorClass_PAVIsometricTileClass::Get -> _VectorClass_PAVIsometricTileClass
+[conv] 0x40ccc0 VectorClass::GetAt -> VectorClass
+[conv] 0x40ef10 _VectorClass_PAVVoxelAnimClass::Get -> _VectorClass_PAVVoxelAnimClass
+[conv] 0x40f630 _VectorClass_PAVWarheadTypeClass::Get -> _VectorClass_PAVWarheadTypeClass
+[conv] 0x40fc00 _VectorClass_PAVWeaponTypeClass::Get -> _VectorClass_PAVWeaponTypeClass
+[conv] 0x41c160 FootClass::ProcessTick3 -> FootClass
+[conv] 0x41de30 _VectorClass_PAVAirstrikeClass::Get -> _VectorClass_PAVAirstrikeClass
+[conv] 0x41fd30 ObjectClass::sub_41FD30 -> ObjectClass
+[conv] 0x41fd40 ObjectClass::sub_41FD40 -> ObjectClass
+[conv] 0x41fd50 ObjectClass::sub_41FD50 -> ObjectClass
+[conv] 0x4203c0 _VectorClass_PAVAlphaLightingRemapClass::Seek -> _VectorClass_PAVAlphaLightingRemapClass
+[conv] 0x424c90 BuildingClass::SetField95 -> BuildingClass
+[conv] 0x424ca0 Function::Method_424CA0 -> Function
+[conv] 0x425510 AnimClass::CheckEndOfSequence -> AnimClass
+=== emit 18 units ===
+=== rule self-check ===
+=== era compile ===
+[era] _addr_40                 rc=0
+[era] DListNode                rc=2
+[era] _VectorClass_PAVBombClass rc=0
+[era] _VectorClass_PAVTechnoClass rc=0
+[era] _VectorClass_PBVCommandClass rc=0
+[era] _VectorClass_PAVLightConvertClass rc=0
+[era] _VectorClass_PAVIsometricTileClass rc=0
+[era] VectorClass              rc=0
+[era] _VectorClass_PAVVoxelAnimClass rc=0
+[era] _VectorClass_PAVWarheadTypeClass rc=0
+[era] _VectorClass_PAVWeaponTypeClass rc=0
+[era] FootClass                rc=0
+[era] _VectorClass_PAVAirstrikeClass rc=0
+[era] ObjectClass              rc=0
+[era] _VectorClass_PAVAlphaLightingRemapClass rc=0
+[era] BuildingClass            rc=0
+[era] Function                 rc=0
+[era] AnimClass                rc=2
+=== diffasm byte-compare ===
+[diff] 0x407150   MISMATCH         EndBufferMixer
+[diff] 0x40b690   MATCH            _VectorClass_PAVBombClass::Get
+[diff] 0x40b6f0   MATCH            _VectorClass_PAVTechnoClass::Show
+[diff] 0x40bea0   MATCH            _VectorClass_PBVCommandClass::Capacity
+[diff] 0x40c280   MATCH            _VectorClass_PAVLightConvertClass::Get
+[diff] 0x40c870   MATCH            _VectorClass_PAVIsometricTileClass::Get
+[diff] 0x40ccc0   MISMATCH         VectorClass::GetAt
+[diff] 0x40ef10   MATCH            _VectorClass_PAVVoxelAnimClass::Get
+[diff] 0x40f630   MATCH            _VectorClass_PAVWarheadTypeClass::Get
+[diff] 0x40fc00   MATCH            _VectorClass_PAVWeaponTypeClass::Get
+[diff] 0x41c160   MATCH            FootClass::ProcessTick3
+[diff] 0x41de30   MATCH            _VectorClass_PAVAirstrikeClass::Get
+[diff] 0x41fd30   MISMATCH         ObjectClass::sub_41FD30
+[diff] 0x41fd40   MISMATCH         ObjectClass::sub_41FD40
+[diff] 0x41fd50   MISMATCH         ObjectClass::sub_41FD50
+[diff] 0x4203c0   MATCH            _VectorClass_PAVAlphaLightingRemapClass::Seek
+[diff] 0x424c90   MATCH            BuildingClass::SetField95
+[diff] 0x424ca0   MATCH            Function::Method_424CA0
+[ledger] 0x407150 EndBufferMixer -> NG (attempt 1)
+[ledger] 0x4072d0 DListNode::InitEmpty -> COMPILE_FAIL (attempt 1)
+[ledger] 0x40b690 _VectorClass_PAVBombClass::Get -> OK (attempt 1)
+[ledger] 0x40b6f0 _VectorClass_PAVTechnoClass::Show -> OK (attempt 1)
+[ledger] 0x40bea0 _VectorClass_PBVCommandClass::Capacity -> OK (attempt 1)
+[ledger] 0x40c280 _VectorClass_PAVLightConvertClass::Get -> OK (attempt 1)
+[ledger] 0x40c870 _VectorClass_PAVIsometricTileClass::Get -> OK (attempt 1)
+[ledger] 0x40ccc0 VectorClass::GetAt -> NG (attempt 1)
+[ledger] 0x40ef10 _VectorClass_PAVVoxelAnimClass::Get -> OK (attempt 1)
+[ledger] 0x40f630 _VectorClass_PAVWarheadTypeClass::Get -> OK (attempt 1)
+[ledger] 0x40fc00 _VectorClass_PAVWeaponTypeClass::Get -> OK (attempt 1)
+[ledger] 0x41c160 FootClass::ProcessTick3 -> OK (attempt 1)
+[ledger] 0x41de30 _VectorClass_PAVAirstrikeClass::Get -> OK (attempt 1)
+[ledger] 0x41fd30 ObjectClass::sub_41FD30 -> NG (attempt 1)
+[ledger] 0x41fd40 ObjectClass::sub_41FD40 -> NG (attempt 1)
+[ledger] 0x41fd50 ObjectClass::sub_41FD50 -> NG (attempt 1)
+[ledger] 0x4203c0 _VectorClass_PAVAlphaLightingRemapClass::Seek -> OK (attempt 1)
+[ledger] 0x424c90 BuildingClass::SetField95 -> OK (attempt 1)
+[ledger] 0x424ca0 Function::Method_424CA0 -> OK (attempt 1)
+[ledger] 0x425510 AnimClass::CheckEndOfSequence -> COMPILE_FAIL (attempt 1)
+======================================================================
+{
+ "total": 20,
+ "verdicts": {
+  "MISMATCH": 5,
+  "COMPILE_FAIL": 2,
+  "MATCH": 13
+ },
+ "pathologies": {
+  "codegen_shape": 1,
+  "eval_order": 1,
+  "cc_mismatch": 3
+ },
+ "match_rate_of_decided_pct": 72.2,
+ "match_rate_of_total_pct": 65.0,
+ "rule_violation_fns": 10,
+ "parts": 1
+}
+report -> D:\RA2YR_ReSource\.omo\decomp_batch\asweep\A\p41\batch_report.json
